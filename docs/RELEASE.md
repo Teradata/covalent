@@ -32,7 +32,7 @@ Execute `npm run build` to build the code you want to release.
 
 #### Release
 
-Execute `npm run release` to publish to NPM. At the moment it goes into every package within `deploy/platform` that has a `package.json` file and publishes into [public NPM registry](https://www.npmjs.com/).  
+Execute `npm run publish` to publish to NPM. At the moment it goes into every package within `deploy/platform` that has a `package.json` file and publishes into [public NPM registry](https://www.npmjs.com/).  
 It will fail to publish if you try to upload a version that already exists in the registry. Use wisely.
 
 NOTE: Tagging version and merging to master/develop would have to be done manually.
