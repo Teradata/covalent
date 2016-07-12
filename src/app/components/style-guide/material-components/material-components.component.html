@@ -1,0 +1,1146 @@
+<md-card>
+  <md-card-header>
+    <md-icon md-card-avatar>change_history</md-icon>
+    <md-card-title class="md-display-1">Material Components</md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>With Angular-Material 2.0, we get all these components.</p>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Buttons</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-card-actions>
+      <button md-button>FLAT</button>
+      <button md-raised-button>RAISED</button>
+      <button md-icon-button>
+        <md-icon>favorite</md-icon>
+      </button>
+      <button md-fab>
+        <md-icon>add</md-icon>
+      </button>
+      <button md-mini-fab>
+        <md-icon>add</md-icon>
+      </button>
+    </md-card-actions>
+
+  </md-card-content>
+
+  <md-card-content>
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Basic Buttons -->
+      <button md-button>FLAT</button>
+      <button md-raised-button>RAISED</button>
+      <!-- Button with icon -->
+      <button md-icon-button>
+        <md-icon>favorite</md-icon>
+      </button>
+      <!-- FAB Buttons -->
+      <button md-fab>
+        <md-icon>add</md-icon>
+      </button>
+      <button md-mini-fab>
+        <md-icon>add</md-icon>
+      </button>
+    ]]>
+    </td-highlight>
+  </md-card-content>
+
+  <md-card-content>
+    <md-card-actions>
+      <button md-raised-button color="primary">PRIMARY</button>
+      <button md-raised-button color="accent">ACCENT</button>
+      <button md-raised-button color="warn">WARN</button>
+      <button md-button disabled>off</button>
+      <button md-raised-button disabled>off</button>
+      <button md-mini-fab disabled><md-icon>check circle</md-icon></button>
+    </md-card-actions>
+
+  </md-card-content>
+
+  <md-card-content>
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Themed Buttons -->
+      <button md-raised-button color="primary">PRIMARY</button>
+      <button md-raised-button color="accent">ACCENT</button>
+      <button md-raised-button color="warn">WARN</button>
+      <!-- Disabled Buttons -->
+      <button md-button disabled>off</button>
+      <button md-raised-button disabled>off</button>
+      <button md-mini-fab disabled><md-icon>check circle</md-icon></button>
+    ]]>
+    </td-highlight>
+  </md-card-content>
+
+
+</md-card>
+
+<md-card>
+  <md-card-title>Cards</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row" layout-align="start start">
+      <div layout="column" flex="50">
+        <md-card>
+          <md-card-title>Card Heading</md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>
+            <p>Basic card with Header</p>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div layout="column" flex="50">
+        <md-card>
+          <md-card-title-group>
+            <img md-card-sm-image src="https://avatars0.githubusercontent.com/u/3086352?v=3&s=84">
+            <md-card-title>Card with title</md-card-title>
+            <md-card-subtitle>Subtitle</md-card-subtitle>
+          </md-card-title-group>
+          <md-divider></md-divider>
+          <md-card-content>
+            <p>Basic card with Header and <code>md-card-sm-image</code></p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+  <md-card-content>
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Basic Card -->
+      <md-card>
+        <md-card-title>Card Heading</md-card-title>
+        <md-divider></md-divider>
+        <md-card-content>
+          <p>Basic card with Header</p>
+        </md-card-content>
+      </md-card>
+      <!-- Basic Card with image in header-->
+      <md-card>
+        <md-card-title-group>
+          <img md-card-sm-image src="https://avatars0.githubusercontent.com/u/3086352?v=3&s=84">
+          <md-card-title>Card with title</md-card-title>
+          <md-card-subtitle>Subtitle</md-card-subtitle>
+        </md-card-title-group>
+        <md-divider></md-divider>
+        <md-card-content>
+          <p>Basic card with Header and <code>md-card-sm-image</code></p>
+        </md-card-content>
+      </md-card>
+    ]]>
+    </td-highlight>
+
+  </md-card-content>
+  <md-card-content>
+
+    <div layout="row" layout-align="start start">
+      <div layout="column" flex="50">
+
+        <md-card>
+          <md-card-subtitle>Subtitle first</md-card-subtitle>
+          <md-card-title>Card with title</md-card-title>
+          <md-card-content>
+                <p>This is supporting text.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+          </md-card-content>
+          <md-card-actions>
+                <button md-button>LIKE</button>
+                <button md-button>SHARE</button>
+          </md-card-actions>
+        </md-card>
+      </div>
+      <div layout="column" flex="50">
+        <md-card>
+          <md-card-header>
+            <img md-card-avatar src="https://avatars0.githubusercontent.com/u/3079819?v=3&s=84">
+            <md-card-title>Header title</md-card-title>
+            <md-card-subtitle>Header subtitle</md-card-subtitle>
+          </md-card-header>
+          <img md-card-image src="https://angular.io/resources/images/backgrounds/superhero-paper.png">
+          <md-card-content>
+            <p>Here is some more content</p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+  <md-card-content>
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Card Actions -->
+      <md-card>
+        <md-card-subtitle>Subtitle first</md-card-subtitle>
+        <md-card-title>Card with title</md-card-title>
+        <md-card-content>
+              <p>This is supporting text.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+        </md-card-content>
+        <md-card-actions>
+              <button md-button>LIKE</button>
+              <button md-button>SHARE</button>
+        </md-card-actions>
+      </md-card>
+      <!-- Card with Images -->
+      <md-card>
+        <md-card-header>
+          <img md-card-avatar src="https://avatars0.githubusercontent.com/u/3079819?v=3&s=84">
+          <md-card-title>Header title</md-card-title>
+          <md-card-subtitle>Header subtitle</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="https://angular.io/resources/images/backgrounds/superhero-paper.png">
+        <md-card-content>
+          <p>Here is some more content</p>
+        </md-card-content>
+      </md-card>
+    ]]>
+    </td-highlight>
+
+  </md-card-content>
+</md-card>
+
+
+
+<md-card>
+  <md-card-title>Checkbox</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row" layout-align="start start">
+      <div layout="column" flex="50" style="padding-right: 10px;">
+        <h3>Basic Usage</h3>
+        <md-list>
+          <md-list-item *ngFor="let grocery of groceries">
+            <md-checkbox [checked]="grocery.bought">
+              {{grocery.name}}
+            </md-checkbox>
+          </md-list-item>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        </md-list>
+        <td-highlight lang="html">
+        <![CDATA[
+          <!-- Basic Usage -->
+          <md-list>
+            <md-list-item *ngFor="let grocery of groceries">
+              <md-checkbox [checked]="grocery.bought">
+                { { grocery.name } }
+              </md-checkbox>
+            </md-list-item>
+          </md-list>
+        ]]>
+        </td-highlight>
+
+      </div>
+      <div layout="column" flex="50">
+        <h3>Usage within Forms</h3>
+        <form>
+          <div layout="row" layout-align="start center">
+            <md-checkbox [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
+              I have read and agree to the terms of service.
+            </md-checkbox>
+            <button md-raised-button [disabled]="!user.agreesToTOS" style="margin-left: 10px;">Sign Up</button>
+          </div>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-checkbox align="end">
+            I come after my label.
+          </md-checkbox>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-checkbox>I come before my label</md-checkbox>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        </form>
+
+        <td-highlight lang="html">
+        <![CDATA[
+          <!-- Usage within Forms -->
+          <form (ngSubmit)="saveUser()">
+            <div layout="row" layout-align="start center">
+              <md-checkbox [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
+                I have read and agree to the terms of service.
+              </md-checkbox>
+              <button type="submit" md-raised-button [disabled]="!user.agreesToTOS">Sign Up</button>
+            </div>
+
+            <md-checkbox align="end">
+              I come after my label.
+            </md-checkbox>
+
+            <md-checkbox>I come before my label</md-checkbox>
+          </form>
+        ]]>
+        </td-highlight>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
+
+
+<md-card>
+  <md-card-title>Icons</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content layout="row">
+
+    <div flex="50" layout="column" style="padding-right: 10px;">
+      <h3>Basic Icons</h3>
+      <div>
+        <md-icon>account_circle</md-icon>
+        <md-icon>help</md-icon>
+        <md-icon>delete</md-icon>
+        <md-icon>favorite</md-icon>
+        <md-icon>star</md-icon>
+        <md-icon>done_all</md-icon>
+        <md-icon>description</md-icon>
+        <md-icon>open_in_new</md-icon>
+        <md-icon>question_answer</md-icon>
+        <md-icon>schedule</md-icon>
+      </div>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <div>
+        <md-icon>thumb_up</md-icon>
+        <md-icon>today</md-icon>
+        <md-icon>warning</md-icon>
+        <md-icon>airplay</md-icon>
+        <md-icon>comment</md-icon>
+        <md-icon>settings</md-icon>
+        <md-icon>room</md-icon>
+        <md-icon>stars</md-icon>
+        <md-icon>touch_app</md-icon>
+        <md-icon>trending_up</md-icon>
+      </div>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <div>
+        <md-icon>view_list</md-icon>
+        <md-icon>view_module</md-icon>
+        <md-icon>view_quilt</md-icon>
+        <md-icon>view_week</md-icon>
+        <md-icon>view_headline</md-icon>
+        <md-icon>dashboard</md-icon>
+        <md-icon>subject</md-icon>
+        <md-icon>view_carousel</md-icon>
+        <md-icon>playlist_add_check</md-icon>
+        <md-icon>playlist_add</md-icon>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      </div>
+      <td-highlight lang="html">
+        <![CDATA[
+          <!-- Basic -->
+          <md-icon>account_circle</md-icon>
+        ]]>
+        </td-highlight>
+    </div>
+
+    <div flex="50">
+      <md-card-actions>
+        <h3>Icons with Buttons</h3>
+        <button md-icon-button>
+            <md-icon class="md-24">favorite</md-icon>
+        </button>
+        <button md-fab>
+            <md-icon class="md-24">shopping_cart</md-icon>
+        </button>
+        <button md-mini-fab>
+            <md-icon class="md-24">add</md-icon>
+        </button>
+        <button md-mini-fab disabled><md-icon>backup</md-icon></button>
+      </md-card-actions>
+      <td-highlight lang="html">
+      <![CDATA[
+        <!-- Icons and Buttons -->
+        <button md-icon-button>
+            <md-icon class="md-24">favorite</md-icon>
+        </button>
+        <button md-fab>
+            <md-icon class="md-24">shopping_cart</md-icon>
+        </button>
+        <button md-mini-fab>
+            <md-icon class="md-24">add</md-icon>
+        </button>
+        <button md-mini-fab disabled><md-icon>backup</md-icon></button>
+      ]]>
+      </td-highlight>
+    </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Input</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <form>
+      <md-input style="margin-right: 20px;" placeholder="Company (disabled)" disabled value="Google">
+      </md-input>
+
+      <md-input placeholder="amount" align="end">
+        <span md-prefix>$&nbsp;</span>
+        <span md-suffix>.00</span>
+      </md-input>
+
+      <div layout="row" layout-align="start center">
+        <md-input placeholder="First name" style="margin-right: 20px; width: 100%;"></md-input>
+        <md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input>
+      </div>
+      <div layout="row" layout-align="start center">
+        <md-input style="margin-right: 20px; width: 100%;" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
+        <md-input style="width: 100%;" placeholder="Address 2"></md-input>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <md-input placeholder="City"></md-input>
+        <md-input placeholder="State"></md-input>
+        <md-input #postalCode class="demo-full-width" maxLength="5"
+                      placeholder="Postal Code"
+                      value="94043">
+          <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
+        </md-input>
+      </div>
+    </form>
+  </md-card-content>
+  <md-card-content>
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Inputs -->
+      <form>
+        <md-input style="margin-right: 20px;" placeholder="Company (disabled)" disabled value="Google">
+        </md-input>
+
+        <md-input placeholder="amount" align="end">
+          <span md-prefix>$&nbsp;</span>
+          <span md-suffix>.00</span>
+        </md-input>
+
+        <div layout="row" layout-align="start center">
+          <md-input placeholder="First name" style="margin-right: 20px; width: 100%;"></md-input>
+          <md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input>
+        </div>
+        <div layout="row" layout-align="start center">
+          <md-input style="margin-right: 20px; width: 100%;" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
+          <md-input style="width: 100%;" placeholder="Address 2"></md-input>
+        </div>
+        <div layout="row" layout-align="space-between center">
+          <md-input placeholder="City"></md-input>
+          <md-input placeholder="State"></md-input>
+          <md-input #postalCode class="demo-full-width" maxLength="5"
+                        placeholder="Postal Code"
+                        value="94043">
+            <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
+          </md-input>
+        </div>
+      </form>
+    ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+
+
+<md-card>
+  <md-card-title>Lists</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <!-- Simple list -->
+    <h3>Simple List</h3>
+    <md-list>
+      <md-list-item> Pepper </md-list-item>
+      <md-list-item> Salt </md-list-item>
+      <md-list-item> Paprika </md-list-item>
+    </md-list>
+
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Simple list -->
+      <md-list>
+        <md-list-item> Pepper </md-list-item>
+        <md-list-item> Salt </md-list-item>
+        <md-list-item> Paprika </md-list-item>
+      </md-list>
+    ]]>
+    </td-highlight>
+
+    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+    <!-- Checkbox list -->
+    <h3>Checkbox list</h3>
+
+    <md-list>
+      <template ngFor let-todo [ngForOf]="todos">
+        <md-list-item>
+          <div layout="row" layout-align="start center" style="width: 100%;">
+            <div flex>
+              <md-checkbox [checked]="todo.finished">
+                {{todo.name}}
+              </md-checkbox>
+            </div>
+            <div><md-icon>more_horiz</md-icon></div>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+      </template>
+    </md-list>
+
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- Checkbox list -->
+      <md-list>
+        <template ngFor let-todo [ngForOf]="todos">
+          <md-list-item>
+            <div layout="row" layout-align="start center" style="width: 100%;">
+              <div flex>
+                <md-checkbox [checked]="todo.finished">
+                  { { todo.name } }
+                </md-checkbox>
+              </div>
+              <div><md-icon>more_horiz</md-icon></div>
+            </div>
+          </md-list-item>
+          <md-divider></md-divider>
+        </template>
+      </md-list>
+    ]]>
+    </td-highlight>
+
+    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+    <!-- list with links (nav list) -->
+    <h3>Nav list (list with links)</h3>
+
+    <md-nav-list>
+      <a md-list-item href="..." *ngFor="let message of messages"> {{ message.from }} </a>
+    </md-nav-list>
+
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- list with links (nav list) -->
+
+      <md-nav-list>
+        <a md-list-item href="..." *ngFor="let message of messages"> { { message.from } } </a>
+      </md-nav-list>
+    ]]>
+    </td-highlight>
+
+    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+
+    <!-- list with Avatars-->
+    <h3>List with Avatars</h3>
+
+    <md-list>
+      <md-list-item *ngFor="let message of messages">
+        <img md-list-avatar src="{{message.photo}}" alt="">
+        <h3 md-line> {{message.from}} </h3>
+        <p md-line>
+          <span> {{message.subject}} </span>
+          <span class="demo-2"> -- {{message.message}} </span>
+        </p>
+      </md-list-item>
+    </md-list>
+
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- list with Avatars-->
+      <md-list>
+        <md-list-item *ngFor="let message of messages">
+          <img md-list-avatar src="{ { message.photo } }" alt="">
+          <h3 md-line> { { message.from } } </h3>
+          <p md-line>
+            <span> { { message.subject } } </span>
+            <span class="demo-2"> -- { { message.message } } </span>
+          </p>
+        </md-list-item>
+      </md-list>
+    ]]>
+    </td-highlight>
+
+    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+    <!-- list with Icons-->
+    <h3>List with Icons</h3>
+
+    <md-list>
+      <md-list-item *ngFor="let message of messages">
+        <md-icon md-list-avatar>home</md-icon>
+        <h3 md-line> {{message.from}} </h3>
+        <p md-line>
+          <span> {{message.subject}} </span>
+          <span class="demo-2"> -- {{message.message}} </span>
+        </p>
+      </md-list-item>
+    </md-list>
+
+    <td-highlight lang="html">
+    <![CDATA[
+      <!-- list with Icons-->
+      <md-list>
+        <md-list-item *ngFor="let message of messages">
+          <md-icon md-list-avatar>home</md-icon>
+          <h3 md-line> { { message.from } } </h3>
+          <p md-line>
+            <span> { { message.subject } } </span>
+            <span class="demo-2"> -- { { message.message } } </span>
+          </p>
+        </md-list-item>
+      </md-list>
+    ]]>
+    </td-highlight>
+
+  </md-card-content>
+</md-card>
+
+
+<md-card>
+  <md-card-title>Progress</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content layout="row">
+
+    <div flex="48" style="padding-right: 20px;">
+      <h3>Progress Bars</h3>
+      <h4>Determinate</h4>
+      <md-progress-bar mode="determinate" value="40"></md-progress-bar>
+
+
+      <h4>Indeterminate</h4>
+      <md-progress-bar mode="indeterminate"></md-progress-bar>
+
+      <h4>Buffer</h4>
+      <md-progress-bar mode="buffer" value="15" bufferValue="15"></md-progress-bar>
+
+      <h4>Query</h4>
+      <md-progress-bar mode="query"></md-progress-bar>
+
+      <h4>Colors</h4>
+
+      <md-progress-bar mode="indeterminate" color="primary"></md-progress-bar>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <!-- Progress Bars-->
+        <h4>Determinate</h4>
+        <md-progress-bar mode="determinate" value="40"></md-progress-bar>
+
+
+        <h4>Indeterminate</h4>
+        <md-progress-bar mode="indeterminate"></md-progress-bar>
+
+        <h4>Buffer</h4>
+        <md-progress-bar mode="buffer" value="15" bufferValue="15"></md-progress-bar>
+
+        <h4>Query</h4>
+        <md-progress-bar mode="query"></md-progress-bar>
+
+        <h4>Colors</h4>
+
+        <md-progress-bar mode="indeterminate" color="primary"></md-progress-bar>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
+      ]]>
+      </td-highlight>
+
+    </div>
+
+    <div flex="48">
+      <!-- Progress circles-->
+      <h3>Progress Circles</h3>
+
+      <div layout="row">
+
+        <div>
+          <h4>Determinate</h4>
+          <md-progress-circle mode="determinate" value="66"></md-progress-circle>
+
+        </div>
+
+        <div>
+
+          <h4>indeterminate</h4>
+          <md-progress-circle mode="indeterminate"></md-progress-circle>
+
+        </div>
+
+        <div>
+
+          <h4>Spinner</h4>
+          <md-spinner></md-spinner>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <h4>Colors</h4>
+        <div layout="row">
+          <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
+          <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+          <md-progress-circle mode="indeterminate" color="warn"></md-progress-circle>
+        </div>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+      </div>
+
+      <td-highlight lang="html">
+      <![CDATA[
+        <!-- Progress Circles -->
+
+      <div layout="row">
+        <div>
+          <h4>Determinate</h4>
+          <md-progress-circle mode="determinate" value="66"></md-progress-circle>
+        </div>
+
+        <div>
+          <h4>indeterminate</h4>
+          <md-progress-circle mode="indeterminate"></md-progress-circle>
+        </div>
+
+        <div>
+          <h4>Spinner</h4>
+          <md-spinner></md-spinner>
+        </div>
+      </div>
+
+      <div>
+        <h4>Colors</h4>
+        <div layout="row">
+          <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
+          <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+          <md-progress-circle mode="indeterminate" color="warn"></md-progress-circle>
+        </div>
+      </div>
+      ]]>
+      </td-highlight>
+
+
+    </div>
+  </md-card-content>
+</md-card>
+
+
+
+<md-card>
+  <md-card-title>Radios</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content layout="row">
+
+    <div flex="48" style="padding-right: 20px;">
+      <!-- Basic Radios -->
+      <h3>Basic Radios</h3>
+
+      <md-radio-group name="group1">
+        <md-radio-button style="padding-right:10px;" name="group1">Option 1  </md-radio-button>
+        <md-radio-button style="padding-right:10px;" name="group1">Option 2  </md-radio-button>
+        <md-radio-button style="padding-right:10px;" name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
+      </md-radio-group>
+
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+      <td-highlight lang="html">
+      <![CDATA[
+        <!-- Basic Radios -->
+        <md-radio-group name="group1">
+          <md-radio-button style="padding-right:10px;" name="group1">Option 1  </md-radio-button>
+          <md-radio-button style="padding-right:10px;" name="group1">Option 2  </md-radio-button>
+          <md-radio-button style="padding-right:10px;" name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
+        </md-radio-group>
+      ]]>
+      </td-highlight>
+
+    </div>
+
+    <div flex="48">
+      <!-- Dynamic Radios -->
+      <h3>Dynamic Radios</h3>
+
+      <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
+        <md-radio-button style="padding-right:10px;" *ngFor="let season of seasonOptions" name="more_options" [value]="season">
+          {{season}}
+        </md-radio-button>
+      </md-radio-group>
+      <p>Your favorite season is: <strong>{{favoriteSeason}}</strong></p>
+      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+      <td-highlight lang="html">
+      <![CDATA[
+        <!-- Dynamic Radios -->
+        <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
+          <md-radio-button style="padding-right:10px;" *ngFor="let season of seasonOptions" name="more_options" [value]="season">
+            {{season}}
+          </md-radio-button>
+        </md-radio-group>
+        <p>Your favorite season is: <strong>{ { favoriteSeason } }</strong></p>
+      ]]>
+      </td-highlight>
+    </div>
+  </md-card-content>
+</md-card>
+
+
+
+  <md-card>
+  <md-card-title>Sidenav</md-card-title>
+  <md-divider></md-divider>
+
+  <md-card-content>
+
+    <md-sidenav-layout class="demo-sidenav-layout">
+      <md-sidenav #start (open)="myinput.focus()" mode="side" class="md-padding">
+        Start Side Drawer
+        <br>
+        <button md-button (click)="start.close()">Close</button>
+        <br>
+        <button md-button (click)="end.open()">Open End Side</button>
+        <br>
+        <button md-button
+                (click)="start.mode = (start.mode == 'push' ? 'over' : (start.mode == 'over' ? 'side' : 'push'))">Toggle Mode</button>
+        <div>Mode: {{start.mode}}</div>
+        <br>
+        <input #myinput>
+      </md-sidenav>
+
+      <md-sidenav #end align="end" class="md-padding">
+        End Side Drawer
+        <br>
+        <button md-button (click)="end.close()">Close</button>
+      </md-sidenav>
+
+      <div class="demo-sidenav-content" class="md-padding">
+        <h1>My Content</h1>
+
+        <div>
+          <button md-raised-button (click)="start.toggle()">Toggle Start Side Drawer</button>
+          <button md-raised-button (click)="end.toggle()">Toggle End Side Drawer</button>
+        </div>
+
+        <p>This is a paragraph</p>
+
+        <p>This is a paragraph</p>
+
+        <p>This is a paragraph</p>
+      </div>
+    </md-sidenav-layout>
+
+    <h2>Content after Sidenav</h2>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <md-sidenav-layout class="demo-sidenav-layout">
+          <md-sidenav #start (open)="myinput.focus()" mode="side" class="md-padding">
+            Start Side Drawer
+            <br>
+            <button md-button (click)="start.close()">Close</button>
+            <br>
+            <button md-button (click)="end.open()">Open End Side</button>
+            <br>
+            <button md-button
+                    (click)="start.mode = (start.mode == 'push' ? 'over' : (start.mode == 'over' ? 'side' : 'push'))">Toggle Mode</button>
+            <div>Mode: {{start.mode}}</div>
+            <br>
+            <input #myinput>
+          </md-sidenav>
+
+          <md-sidenav #end align="end" class="md-padding">
+            End Side Drawer
+            <br>
+            <button md-button (click)="end.close()">Close</button>
+          </md-sidenav>
+
+          <div class="demo-sidenav-content" class="md-padding">
+            <h1>My Content</h1>
+
+            <div>
+              <button md-raised-button (click)="start.toggle()">Toggle Start Side Drawer</button>
+              <button md-raised-button (click)="end.toggle()">Toggle End Side Drawer</button>
+            </div>
+
+            <p>This is a paragraph</p>
+
+            <p>This is a paragraph</p>
+
+            <p>This is a paragraph</p>
+          </div>
+        </md-sidenav-layout>
+
+        <h2>Content after Sidenav</h2>
+      ]]>
+      </td-highlight>
+
+</md-card-content>
+</md-card>
+
+
+  <md-card>
+  <md-card-title>Toolbar</md-card-title>
+  <md-divider></md-divider>
+
+  <md-card-content>
+
+    <div class="demo-toolbar">
+
+      <p>
+        <md-toolbar layout="row">
+          <md-icon class="demo-toolbar-icon">menu</md-icon>
+          <span flex style="padding-left: 10px;">Default Toolbar</span>
+
+          <md-icon>code</md-icon>
+        </md-toolbar>
+      </p>
+
+      <p>
+        <md-toolbar color="primary">
+          <md-icon class="demo-toolbar-icon">menu</md-icon>
+          <span flex style="padding-left: 10px;">Primary Toolbar</span>
+
+          <md-icon>code</md-icon>
+        </md-toolbar>
+      </p>
+
+      <p>
+        <md-toolbar color="accent">
+          <md-icon class="demo-toolbar-icon">menu</md-icon>
+          <span flex style="padding-left: 10px;">Accent Toolbar</span>
+
+          <md-icon>code</md-icon>
+        </md-toolbar>
+      </p>
+
+      <p>
+        <md-toolbar color="accent">
+          <span>Custom Toolbar</span>
+          <md-toolbar-row>
+            <span>Second Line</span>
+          </md-toolbar-row>
+        </md-toolbar>
+      </p>
+
+      <p>
+        <md-toolbar color="primary">
+          <span>Custom Toolbar</span>
+
+          <md-toolbar-row>
+            <span flex>Second Line</span>
+
+            <md-icon class="demo-toolbar-icon">verified_user</md-icon>
+          </md-toolbar-row>
+
+          <md-toolbar-row>
+            <span flex>Third Line</span>
+
+            <md-icon class="demo-toolbar-icon">favorite</md-icon>
+            <md-icon class="demo-toolbar-icon">delete</md-icon>
+          </md-toolbar-row>
+        </md-toolbar>
+      </p>
+
+    </div>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <div class="demo-toolbar">
+          <p>
+            <md-toolbar layout="row">
+              <md-icon class="demo-toolbar-icon">menu</md-icon>
+              <span flex style="padding-left: 10px;">Default Toolbar</span>
+
+              <md-icon>code</md-icon>
+            </md-toolbar>
+          </p>
+
+          <p>
+            <md-toolbar color="primary">
+              <md-icon class="demo-toolbar-icon">menu</md-icon>
+              <span flex style="padding-left: 10px;">Primary Toolbar</span>
+
+              <md-icon>code</md-icon>
+            </md-toolbar>
+          </p>
+
+          <p>
+            <md-toolbar color="accent">
+              <md-icon class="demo-toolbar-icon">menu</md-icon>
+              <span flex style="padding-left: 10px;">Accent Toolbar</span>
+
+              <md-icon>code</md-icon>
+            </md-toolbar>
+          </p>
+
+          <p>
+            <md-toolbar color="accent">
+              <span>Custom Toolbar</span>
+              <md-toolbar-row>
+                <span>Second Line</span>
+              </md-toolbar-row>
+            </md-toolbar>
+          </p>
+
+          <p>
+            <md-toolbar color="primary">
+              <span>Custom Toolbar</span>
+
+              <md-toolbar-row>
+                <span flex>Second Line</span>
+
+                <md-icon class="demo-toolbar-icon">verified_user</md-icon>
+              </md-toolbar-row>
+
+              <md-toolbar-row>
+                <span flex>Third Line</span>
+
+                <md-icon class="demo-toolbar-icon">favorite</md-icon>
+                <md-icon class="demo-toolbar-icon">delete</md-icon>
+              </md-toolbar-row>
+            </md-toolbar>
+          </p>
+
+        </div>
+      ]]>
+      </td-highlight>
+
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Tabs</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group>
+      <md-tab>
+        <template md-tab-label>One</template>
+        <template md-tab-content>
+          <h3 class="md-title">First tab content</h3>
+          <p>Plaid echo park knausgaard normcore franzen cronut. Pickled humblebrag tofu hoodie, umami salvia farm-to-table schlitz try-hard food truck knausgaard pabst. Yuccie portland jean shorts, authentic mixtape waistcoat gentrify blue bottle. Fixie kickstarter church-key small batch seitan, shabby chic vegan listicle before they sold out. Hammock raw denim flannel tousled seitan you probably haven't heard of them. Trust fund man bun pug, kickstarter artisan selvage letterpress cornhole tote bag butcher locavore. Affogato try-hard kickstarter seitan, DIY pickled hella godard pork belly four loko ugh.</p>
+        </template>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Two</template>
+        <template md-tab-content>
+          <h3 class="md-title">Second tab content</h3>
+          <p>Hashtag distillery skateboard man bun gochujang, salvia man braid art party meggings heirloom kitsch farm-to-table. Franzen beard fingerstache gentrify, heirloom portland ennui XOXO microdosing kitsch plaid. Chicharrones bushwick chia, banh mi irony tattooed hammock butcher shabby chic taxidermy semiotics marfa post-ironic. Blue bottle keffiyeh farm-to-table ennui, chambray pitchfork art party pinterest artisan pop-up. Etsy banjo marfa, blue bottle kombucha crucifix XOXO tousled beard. Tilde disrupt kale chips bicycle rights skateboard master cleanse hella shoreditch, meditation retro shabby chic vice heirloom. Etsy listicle vice actually, iPhone chia hoodie four loko.</p>
+        </template>
+      </md-tab>
+    </md-tab-group>
+    <md-divider></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <md-tab-group>
+          <md-tab>
+            <template md-tab-label>First tab content</template>
+            <template md-tab-content>
+              <h1>First content</h1>
+              <p>...</p>
+            </template>
+          </md-tab>
+          <md-tab>
+            <template md-tab-label>Second tab content</template>
+            <template md-tab-content>
+              <h1>Second tab content</h1>
+              <p>...</p>
+            </template>
+          </md-tab>
+        </md-tab-group>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Slide Toggle</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row" layout-align="start start">
+      <div layout="column" flex="50" style="padding-right: 10px;">
+        <h3>Basic Usage</h3>
+        <md-list>
+          <md-list-item *ngFor="let system of systems">
+            <md-slide-toggle [(ngModel)]="system.on">
+              {{system.name}}
+            </md-slide-toggle>
+          </md-list-item>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        </md-list>
+        <td-highlight lang="html">
+        <![CDATA[
+          <!-- Basic Usage -->
+          <md-list>
+            <md-list-item *ngFor="let system of systems">
+              <md-slide-toggle [(ngModel)]="system.on" (change)="doSomething($event)">
+                { {system.name} }
+              </md-slide-toggle>
+            </md-list-item>
+          </md-list>
+        ]]>
+        </td-highlight>
+
+      </div>
+      <div layout="column" flex="50">
+        <h3>Usage within Forms</h3>
+        <form>
+          <div layout="row" layout-align="start center">
+            <md-slide-toggle color="accent" [(ngModel)]="house.lockHouse" name="lockHouse">
+              Lock?
+            </md-slide-toggle>
+            <md-icon *ngIf="house.lockHouse" style="margin-left: 10px;">lock</md-icon>
+          </div>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-slide-toggle disabled>
+            I am disabled.
+          </md-slide-toggle>
+          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        </form>
+
+        <td-highlight lang="html">
+        <![CDATA[
+          <!-- Usage within Forms -->
+          <form>
+            <div layout="row" layout-align="start center">
+              <md-slide-toggle color="accent" [(ngModel)]="house.lockHouse" (change)="lock($event)" name="lockHouse">
+                Lock?
+              </md-slide-toggle>
+              <md-icon *ngIf="house.lockHouse">lock</md-icon>
+            </div>
+
+            <md-slide-toggle disabled>
+              I am disabled.
+            </md-slide-toggle>
+          </form>
+        ]]>
+        </td-highlight>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Grid List</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-grid-list cols="4">
+      <md-grid-tile colspan="3" rowspan="1" [style.background]="'lightblue'">One</md-grid-tile>
+      <md-grid-tile colspan="1" rowspan="2" [style.background]="'lightgreen'">Two</md-grid-tile>
+      <md-grid-tile colspan="1" rowspan="1" [style.background]="'lightpink'">Three</md-grid-tile>
+      <md-grid-tile colspan="2" rowspan="1" [style.background]="'#DDBDF1'">Four</md-grid-tile>
+    </md-grid-list>
+    <md-divider></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <md-grid-list cols="4">
+          <md-grid-tile colspan="3" rowspan="1" [style.background]="'lightblue'">
+            ...
+          </md-grid-tile>
+          <md-grid-tile colspan="1" rowspan="2" [style.background]="'lightblue'">
+            ...
+          </md-grid-tile>
+          <md-grid-tile colspan="1" rowspan="1" [style.background]="'lightblue'">
+            ...
+          </md-grid-tile>
+          <md-grid-tile colspan="1" rowspan="2" [style.background]="'lightblue'">
+            ...
+          </md-grid-tile>
+        </md-grid-list>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>

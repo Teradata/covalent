@@ -1,0 +1,166 @@
+<md-card>
+  <md-card-title>Markdown</md-card-title>
+  <md-card-subtitle>Parse markdown files</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-markdown>
+      <pre><code>
+# Heading (H1) 
+      
+## Sub Heading (H2)
+
+### Steps (H3)
+    
+###List Items
+
+* One
+* Two
+* Three
+
+## GH Flavored Block quotes & Tasklist
+
+#### Tasklists 
+- [ ] This is still pending
+- [x] This task is done
+
+#### Inline Code `Github`
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+
+##Links
+
+<p>There are two ways to create links.</p>
+
+[I'm an inline-style link](https://www.google.com)
+
+##Images
+
+Reference-style:
+![alt text][logo]
+
+[logo]: http://www.teradata.com/images/Homepage2015/teradata-logo-2x.png "Teradata Labs"
+</code></pre>
+
+<p>Here's our logo (hover to see the title text):</p>
+
+<pre><code>Inline `code` has `back-ticks` around it.
+</code></pre>
+
+<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+
+<p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.</p>
+
+<pre lang="no-highlight"><code>```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
+```python
+s = "Python syntax highlighting"
+print s
+```
+</code></pre>
+
+<p>
+Blockquotes
+
+<pre lang="no-highlight"><code>&gt; Blockquotes are very handy in email to emulate reply text.
+&gt; This line is part of the same quote.
+
+Quote break.
+
+&gt; This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+</code></pre>
+
+<blockquote>
+<p>Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote.</p>
+</blockquote>
+
+<p>Quote break.</p>
+
+<blockquote>
+<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>
+</blockquote>
+
+<p>Inline HTML
+
+
+<pre><code>Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+</code></pre>
+
+</td-markdown>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdMarkdownComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h2><code><![CDATA[<td-markdown>]]></code></h2>
+     <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
+     <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
+     <p>Note: <code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
+     <td-highlight lang="javascript">
+      module.exports = function(defaults) {
+        return new Angular2App(defaults, {
+          vendorNpmFiles: [
+            ...
+            'showdown/dist/showdown.js'
+          ]
+        });
+      };
+    </td-highlight>
+    and
+    <td-highlight lang="html">
+      <![CDATA[
+        <script src="vendor/showdown/dist/showdown.js"></script>
+      ]]>
+    </td-highlight>
+    <h3>Example:</h3>
+    <p>HTML</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+          # Heading 
+          ## Sub Heading (H2)
+          ### Steps (H2)
+          </code></pre>
+        </td-markdown>
+         ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdMarkdownComponent } from '@covalent/markdown';
+        ...
+          directives: [ TdMarkdownComponent ]
+        })
+        export class Demo {
+
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>

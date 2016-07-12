@@ -1,0 +1,198 @@
+<td-layout-nav logo="app/assets/icons/teradata.svg" title="Covalent">
+  <td-layout-card-over>
+      <div layout="row" layout-align="start center">
+        <md-icon class="md-icon-svg-lg" svgSrc="app/assets/icons/covalent.svg"></md-icon>
+        <div>
+          <md-card-title>Teradata Covalent UI Platform</md-card-title>
+        <md-card-subtitle>a UI platform built on Angular 2.0 + Material Design</md-card-subtitle>
+        </div>
+      </div>
+    <md-divider></md-divider>
+    <md-nav-list hide-gt-sm>
+      <template let-item let-last="last" ngFor [ngForOf]="items">
+        <a md-list-item [routerLink]="[item.route]">
+          <md-icon md-list-avatar>{{item.icon}}</md-icon>
+          <h3 md-line> {{item.title}} </h3>
+          <p md-line> {{item.description}} </p>
+        </a>
+        <md-divider *ngIf="!last" md-inset></md-divider>
+      </template>
+    </md-nav-list>
+    <div layout="row" layout-wrap hide-xs hide-sm class="push-sm">
+      <template let-item let-last="last" ngFor [ngForOf]="items">
+        <div flex-md="50" flex-gt-md="25" layout="column">
+          <md-card [routerLink]="[item.route]" class="md-card-colored" flex>
+            <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+              <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
+            </md-toolbar>
+            <md-card-content>
+              <div layout="column" layout-padding>
+                <div class="md-subhead">{{item.title}}</div>
+                <div class="md-caption tc-grey-600"> {{item.description}} </div>   
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+      </template>
+    </div>
+    <md-divider></md-divider>
+    <md-card-actions>
+      <a href="https://docs.google.com/a/teradata.com/forms/d/13s-xEYpC2bVPl6FV7KEKXM7unL7a2LPbPXjZqABD-9Q/viewform" target="_blank" md-button color="primary">Contact Teradata UX</a>
+      <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button>Report Bug or Request Feature</a>
+    </md-card-actions>
+    <after-card>
+      <h3 class="md-title">FAQs</h3>
+      <td-expansion-panel label="What is the Covalent?" sublabel="what is this thing?">
+        <div class="md-padding">
+          Covalent is a UI Platform that combines design language and a web framework, built on Angular 2.0 & Angular-Material (Design).
+          It will give you a quickstart to build a modern web application UI and ensure consistency across Teradata products.
+          Some of the most important features:
+          <ul>
+            <li>Angular-Material 2.0</li>
+            <li>Angular 2.0 Command-line interface (CLI) for builds, deploys, testing & more</li>
+            <li>Drastically simplified interface layouts (for dashboards, lists, etc)</li>
+            <li>Custom web components (stepper, file upload, expansion panels & more)</li>
+            <li>750+ Material Design icons</li>
+            <li>Style Guide with brand standards, color palettes & tips</li>
+            <li>Design Patterns for consistent, reusable web components such as cards, forms, etc</li>
+            <li>Testing Tools for unit tests and end-to-end tests</li>
+            <li>Quickstart app to get started right away!</li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Why Covalent?" sublabel="what's up with that name?">
+        <div class="md-padding">
+          We follow the Atomic Design principles, applying them to Angular-Material web components. In Atomic Design, several atoms (such as buttons and inputs) form molecules (such as a search box).
+          Our covalent bonds are these molecules we're building on top of Angular-Material. Also, covalent bonds are liquid and conform to their container, just like our responsive layouts!
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Why would I use this?" sublabel="can't I just build my own?">
+        <div class="md-padding">
+          By using a unified UI Platform there are a ton of benefits. Here are some highlights:
+          <ul>
+            <li>Angular-Material v2 doesn't have a full app quickstart</li>
+            <li>Angular-Material v2 doesn't have the flexbox layout from v1</li>
+            <li>We provide several custom components such as stepper & expansion panels</li>
+            <li>These layouts & components are being develop for enterprise solutions</li>
+            <li>You get a selection for UI layouts out the box</li>
+            <li>We will continuously add tools like Syntax Highlighting & Markdown</li>
+            <li>We will always maintain native compatibility with Angular 2 & Material 2</li>
+            <li>We will always follow the principles of the official Material Design spec</li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Why Material Design?" sublabel="what's so great about Material?">
+        <div class="md-padding">
+          By adopting Material Design along with Angular, we get a style guide spec perfectly matched with an incredbly powerful and modern web framework, all for free.
+          Along with that, there are lots of other great benefits such as:
+          <ul>
+            <li>It’s a design spec married to code implementation</li>
+            <li>Official implementations from the the designer/developer (Google)</li>
+            <li>The spec keeps growing & iterating for you w/o your time</li>
+            <li>So many devices & breakpoints have been considered</li>
+            <li>Familiarity for Users, Designers & Developers</li>
+            <li>Focused on Accessibility (out the box)</li>
+            <li>Design & Code are open sourced for you</li>
+            <li>It's a natural bridge to agile development</li>
+            <li>Inspiration, Community & Resources from around the world</li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="But won't we look like Google?" sublabel="great question, you're not alone in that concern">
+        <div class="md-padding">
+          With any new framework people's intial reaction is that they'll lose their company brand or identity.
+          Consider when 960 grids came out, or Bootstrap from Twitter. Many said "All sites will look the same!".
+          They weren't completely wrong for a time when adoption began, but with time, usage & innovation, your uniqueness always shines through!
+          Also consider:
+          <ul>
+            <li>Material Design is being embraced across the web and not specific to Google anymore</li>
+            <li>Think of Material Design as a native Web SDK. Just as you would if you developed an OSX or iOS app.</li>
+            <li>It's a good thing for onboarding users if the patterns are familiar.</li>
+            <li>Think of your favorite iOS, Android or Windows app that aheres to the OS's design. Aren’t the features more important? What really is the “brand”?</li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Why Angular 2.0?" sublabel="why not React/Ember/Java/etc?">
+        <div class="md-padding">
+          <p>The short answer: we have to pick something & Angular has won the adoption war.</p>
+          The longer answer:
+          Before passing judgement if you have Angular 1.x experience, remember 2.0 is a complete rewrite & very different.
+          Angular 2.0 moved from an opinionate framework to a sophistated platform. What's that mean?
+          With ES2015 (previously ES6) and the power of Typescript, Angular 2.0 is a much more native JavaScript platform with coding paradigmns & power previously reserved for backend languages.
+          This means many more Teradata employees can jump into the frontend and ramp up to productivity.
+          Also there's tons of other benefits like:
+          <ul>
+            <li>New & exciting software to learn & advocate</li>
+            <li>More easily attract new hires</li>
+            <li>An incredibly powerful standardized CLI we don't have to build</li>
+            <li>More powerful IDEs for development</li>
+            <li>Integrated testing tools</li>
+            <li>Native mobile & desktop app support</li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="What's not included?" sublabel="what is my team responsible for building?">
+        <div class="md-padding">
+          We give you everything you need to quickly get started on your UI, but you have the domain knowledge and are the expert in your product.
+          You'll need to build all the custom views, controllers & services for your product, and hook them up to your RESTful APIs.
+          Don't worry though, we have detailed docs & tips, and there's a wealth of help on the internet (it's why we chose such a popular platform).
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Can I help build Covalent?" sublabel="heck yeah!">
+        <div class="md-padding">
+          We'd LOVE any type of contribution and collaboration! There's all kinds of ways you can join in:
+          <ul>
+            <li>Submit a bug (cool)</li>
+            <li>Open a pull request to fix a bug (cooler)</li>
+            <li>Suggest a new feature (which we'll prioritize by demand)</li>
+            <li>Open a pull request with new feature (make sure it follows the guidelines)</li>
+            <li>Give us feedback on any aspect of this site or the platform</li>
+            <li><a href="http://www.teradata.com/careers/" target="_blank">Join the Teradata UX team!</a></li>
+          </ul>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="What is the full vision?" sublabel="good news: we've put some thought into it">
+        <div class="md-padding">
+          <md-card>
+            <md-card-content>
+              <div class="md-subhead">
+                To build an atomic, standardized, reusable UI component platform for Teradata to use for all user interfaces based on Material Design, while collaborating in an open source model.
+              </div>
+            </md-card-content>
+          </md-card>
+          <div class="md-padding">
+            The UX team is extremely lean & agile (notice agile is lower case). We have a simple list of milestones and issues prioritized by demand across products.
+            Some big ticket items are underway such as TD Charts, an extensive & standardized component built on Google Charts (continuing w/ the Google web stack).
+            We're also building Dynamic Forms which will allow products to build complex forms with a simple key:value pair JSON structure.
+            Remember, we're agile so our roadmap is iterative & bite sized for frequent, rapid releases.
+          </div>
+        </div>
+        <md-nav-list>
+          <a md-list-item href="https://github.com/teradata/covalent/releases" target="_blank">
+            <md-icon>launch</md-icon>
+            <h3 md-line>Releases</h3>
+            <p md-line>Our latest version you can use today!</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item href="https://github.com/teradata/covalent/milestones" target="_blank">
+            <md-icon>launch</md-icon>
+            <h3 md-line>Milestones</h3>
+            <p md-line>Rough time estimates</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item href="https://github.com/teradata/covalent/issues" target="_blank">
+            <md-icon>launch</md-icon>
+            <h3 md-line>Feature Requests & Bugs</h3>
+            <p md-line>Priotized by demand</p>
+          </a>
+        </md-nav-list>
+      </td-expansion-panel>
+      <md-divider></md-divider>
+      <div layout="row" layout-align="start center" layout-padding>
+        <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
+        <span flex></span>
+        <md-icon class="md-icon-ux" svgSrc="app/assets/icons/teradata-ux.svg"></md-icon>
+      </div>
+    </after-card>
+  </td-layout-card-over>
+</td-layout-nav>

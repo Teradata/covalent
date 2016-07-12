@@ -1,0 +1,27 @@
+<div layout="column" layout-fill>
+  <md-content flex layout="row" layout-fill>
+    <md-sidenav #list align="start" mode="side" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1" flex-gt-xs="35">
+      <md-toolbar color="primary" class="md-whiteframe-z1">
+        <button md-button (click)="menuClick()" class="md-icon-button"><md-icon class="md-24">menu</md-icon></button>
+        <md-icon *ngIf="icon">{{icon}}</md-icon>
+        <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
+        <span>{{title}}</span>
+        <ng-content select="list-toolbar-content"></ng-content>
+      </md-toolbar>
+      <md-content flex class="list">
+        <md-nav-list>
+          <ng-content select="list-items"></ng-content>
+        </md-nav-list>
+      </md-content>
+    </md-sidenav>
+    <md-content layout="column" layout-fill class="content">
+      <md-toolbar color="primary" class="md-whiteframe-z1">
+        <button md-button (click)="list.toggle()" class="md-icon-button" hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
+        <ng-content select="nav-toolbar-content"></ng-content>
+      </md-toolbar>
+      <md-content flex layout-fill>
+        <ng-content></ng-content>
+      </md-content>
+    </md-content>
+  </md-content>
+</div>

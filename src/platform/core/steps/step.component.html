@@ -1,0 +1,53 @@
+<div class="td-step" layout="row">
+  <div flex="initial" class="td-step-status">
+    <div class="td-circle"
+         [class.md-inactive]="(!active && !isComplete()) || disabled"
+         [class.md-complete]="isComplete() && !active"
+         [class.md-active]="active"
+         *ngIf="!isRequired() && !isComplete()">
+      <span *ngIf="(active || !isComplete())">{{number || ''}}</span>
+    </div>
+    <div class="td-complete" *ngIf="isComplete()">
+      <md-icon class="md-complete">check_circle</md-icon>
+    </div>
+    <div class="td-triangle"
+         [class.bg-muted]="disabled"
+         *ngIf="isRequired()">
+      <md-icon class="md-warn">warning</md-icon>
+    </div>
+    <div class="td-line"></div>
+  </div>
+  <div flex>
+    <md-nav-list>
+      <a [tabIndex]="disabled? -1 : 0"
+         (keydown.enter)="clickEvent()"
+         (click)="clickEvent()"
+         md-list-item>
+        <div [class.md-disabled]="(!active && !isComplete()) || disabled"
+             [class.md-warn]="isRequired() && !disabled"
+             layout="row"
+             flex>
+          <div>
+            <div class="md-body-2">{{label || 'Step ' + (number || '')}}</div>
+            <div class="md-caption td-step-sublabel">{{sublabel}}</div>
+          </div>
+          <span flex></span>
+          <md-icon *ngIf="isComplete() && !active && !disabled">mode_edit</md-icon>
+        </div>
+      </a>
+    </md-nav-list>
+    <div>
+      <div [tdToggle]="!active">
+        <div class="td-step-active">
+          <ng-content></ng-content>
+        </div>
+        <div layout="row">
+          <ng-content select="td-step-actions"></ng-content>
+        </div>
+      </div>
+      <div [tdToggle]="active || !isComplete()">
+        <ng-content select="td-step-summary"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

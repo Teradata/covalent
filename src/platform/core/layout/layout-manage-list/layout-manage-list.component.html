@@ -1,0 +1,19 @@
+<div layout="column" layout-fill>
+  <md-content flex layout="row" layout-fill>
+    <md-sidenav #end align="end" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
+      <md-content flex class="list">
+        <md-nav-list>
+          <ng-content select="list-items"></ng-content>
+        </md-nav-list>
+      </md-content>
+    </md-sidenav>
+    <md-content layout="column" layout-fill class="content">
+      <md-toolbar class="md-whiteframe-z1">
+        <ng-content select="toolbar-buttons"></ng-content>
+      </md-toolbar>
+      <md-content flex>
+        <ng-content></ng-content>
+      </md-content>
+    </md-content>
+  </md-content>
+</div>

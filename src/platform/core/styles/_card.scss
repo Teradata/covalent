@@ -1,0 +1,51 @@
+@import 'variables';
+
+body {
+    md-card {
+        padding: 0;
+        margin: 8px;
+        md-card-header {
+            height: auto;
+        }
+        [md-card-avatar] {
+            font-size: $md-card-header-size;
+            line-height: $md-card-header-size;
+            margin: 16px 0 0 15px;
+        }
+        [md-card-image] {
+            width: 100%;
+            margin: 0;
+        }
+        md-card-title {
+            padding-top: $padding;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+        md-card-subtitle {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+        md-card-content {
+            padding: $padding;
+        }
+        &, & .md-card {
+            & md-card-actions:last-child {
+                padding: $padding / 2;
+                margin: 0;
+            }
+        }
+        form {
+            &.md-card-search-box {
+                md-icon {
+                    width: 24px; 
+                    color: #999; 
+                    padding: 13px 0 0 12px;
+                }
+                input {
+                    border: none; 
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

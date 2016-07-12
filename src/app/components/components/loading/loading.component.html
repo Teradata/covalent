@@ -1,0 +1,149 @@
+<md-card>
+  <md-card-title>Loading</md-card-title>
+  <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Replace Loading Registered: {{replaceRegistered}} times</p>
+    <p>Circular Loading</p>
+    <div *tdLoading="'test'" *loadingType="'circular'" layout="column" flex>
+      <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
+      </md-input>
+      <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
+      </md-input>
+    </div>
+    <p>Linear Loading</p>
+    <template tdLoading="test2" loadingType="linear">
+      <div layout="column" flex>
+        <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
+        </md-input>
+        <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
+        </md-input>
+      </div>
+    </template>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="registerCircleLoadingOverlay()">3 Second Circle Loading Overlay</button>
+    <button md-button color="primary" (click)="registerLinearLoadingOverlay()">3 Second Linear Loading Overlay</button>
+    <button md-button color="primary" (click)="registerLoadingReplace()">Register Loading Replace</button>
+    <button md-button color="primary" (click)="resolveLoadingReplace()">Resolve Loading Replace</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdLoadingDirective</md-card-title>
+  <md-card-subtitle>How to use this directive</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code>tdLoading</code></h2>
+    <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
+    <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<template>]]></code> element.</p>
+    <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
+    <h3>Properties:</h3>
+    <p>The <code>tdLoading</code> component has {{loadingAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML (*) syntax:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div *tdLoading="'stringName'" *loadingType="'circular'|'linear'">
+          ...
+        </div>
+      ]]>
+    </td-highlight>   
+    <p>HTML <![CDATA[<template>]]> syntax</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <template tdLoading="stringName" loadingType="circular|linear">
+          ...
+        </template>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdLoadingDirective, TdLoadingService } from '@covalent/core';
+        ...
+          directives: [ TdLoadingDirective ],
+          providers: [ TdLoadingService ]
+        })
+        export class Demo {
+          constructor(private _loadingService: TdLoadingService) {
+            ...
+          }
+
+          registerLoading(): void {
+            this._loadingService.register('stringName');
+          }
+
+          resolveLoading(): void {
+            this._loadingService.resolve('stringName');
+          }
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+ <md-card>
+  <md-card-title>TdLoadingService</md-card-title>
+  <md-card-subtitle>How to use this service</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code>TdLoadingService</code></h2>
+    <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
+    <p>Simply add this service as a provider to be able to use it in a component.</p>
+    <p>TdLoadingService.createOverlayComponent() method recieves as parameter an object that implements the [ILoadingOptions] interface.</p>
+    <td-highlight lang="typescript">
+      interface ILoadingOptions {
+        name: string;
+        type?: LoadingType;
+      }
+    </td-highlight>
+    <h3>Methods:</h3>
+    <p>The <code>TdLoadingService</code> service has {{loadingServiceMethods.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { ViewContainerRef } from '@angular/core';
+        import { TdLoadingService, ILoadingOptions, LoadingType } from '@covalent/core';
+        ...
+          providers: [ TdLoadingService ]
+        })
+        export class Demo {
+          constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
+            let options: ILoadingOptions = {
+              name: 'stringName',
+              type: LoadingType.Circular,
+            };
+            this._loadingService.createOverlayComponent(options, viewContainerRef);
+          }
+
+          registerLoading(): void {
+            this._loadingService.register('stringName');
+          }
+
+          resolveLoading(): void {
+            this._loadingService.resolve('stringName');
+          }
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

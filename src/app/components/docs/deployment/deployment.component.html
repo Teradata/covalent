@@ -1,0 +1,47 @@
+<md-card>
+  <md-card-title>Deployment</md-card-title>
+  <md-card-subtitle>Deploy your app via CLI</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h3>Command Line Deploy Tasks</h3>
+     <p>You can deploy your apps quickly via:</p>
+    <td-highlight lang="html">
+      ng github-pages:deploy --message "Optional commit message"
+    </td-highlight>
+
+    <p>This will do the following:</p>
+
+    <ul>
+    <li>creates GitHub repo for the current project if one doesn't exist</li>
+    <li>rebuilds the app in production mode at the current <code>HEAD</code></li>
+    <li>creates a local <code>gh-pages</code> branch if one doesn't exist</li>
+    <li>moves your app to the <code>gh-pages</code> branch and creates a commit</li>
+    <li>edit the base tag in index.html to support github pages</li>
+    <li>pushes the <code>gh-pages</code> branch to github</li>
+    <li>returns back to the original <code>HEAD</code></li>
+    </ul>
+
+    <p>Creating the repo requires a token from github, and the remaining functionality
+    relies on ssh authentication for all git operations that communicate with github.com.
+    To simplify the authentication, be sure to <a target="_blank" href="https://help.github.com/articles/generating-ssh-keys/">setup your ssh keys</a>.</p>
+
+    <p>If you are deploying a <a target="_blank" href="https://help.github.com/articles/user-organization-and-project-pages/">user or organization page</a>, you can instead use the following command:</p>
+
+    <td-highlight lang="html">
+      ng github-pages:deploy --user-page --message "Optional commit message"
+    </td-highlight>
+
+    <p>This command pushes the app to the <code>master</code> branch on the github repo instead
+    of pushing to <code>gh-pages</code>, since user and organization pages require this.</p>
+
+    <h3>Creating a build</h3>
+    <p>The build artifacts will be stored in the dist/ directory.</p>
+   <td-highlight lang="html">
+     ng build
+   </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli#deploying-the-app-via-github-pages">Angular CLI Docs</a>
+  </md-card-actions>
+</md-card>

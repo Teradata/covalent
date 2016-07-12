@@ -1,0 +1,61 @@
+<md-card>
+  <md-card-header>
+    <md-icon md-card-avatar>color_lens</md-icon>
+    <md-card-title class="md-display-1">Logo</md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Your company logo can be implemented with <code>md-icon</code>.</p>
+    
+    <p class="md-body-1">For example:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <md-icon class="md-icon-logo" svgSrc="app/assets/icons/teradata.svg"></md-icon>
+      ]]>
+    </td-highlight>
+    <p class="md-body-1">The code above will output a 100x26px inline SVG:</p>
+    <md-icon class="md-icon-logo" svgSrc="app/assets/icons/teradata.svg"></md-icon>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" [routerLink]="['iconography']">
+    More on iconography
+    </a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Toolbar Placement</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout-nav logo="app/assets/icons/teradata.svg" title="App Title">
+    </td-layout-nav>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Sidenav Placement</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-sidenav-layout>
+      <md-sidenav opened="true" mode="side">
+        <md-toolbar layout="row">
+          <md-icon class="md-icon-logo" svgSrc="app/assets/icons/teradata.svg"></md-icon>
+          <span flex>App Title</span>
+        </md-toolbar>
+        <div class="md-padding">
+        <p>Sidenav content</p>
+        </div>
+
+      </md-sidenav>
+
+      <div>
+        <md-card class="md-padding">
+          <p>Main Content</p>
+          <p>Main Content</p>
+          <button md-raised-button>Example Button</button>
+        </md-card>
+      </div>
+    </md-sidenav-layout>
+  </md-card-content>
+</md-card>

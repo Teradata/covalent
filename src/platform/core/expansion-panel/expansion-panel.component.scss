@@ -1,0 +1,56 @@
+@import '../styles/variables';
+@import '../styles/default-theme';
+@import '../styles/shadows';
+
+:host {
+  background-color: #fff;
+  display: block;
+  box-shadow: $whiteframe-shadow-1dp;
+  
+  .panel {
+    transition: 1s all ease;
+    margin: 0;
+  }
+
+  &:first-of-type {
+    & .td-expanded {
+      margin-bottom: $margin;
+    }
+  }
+  &:not(:first-of-type):not(:last-of-type) {
+    & .td-expanded {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+  &:last-of-type {
+    & .td-expanded {
+      margin-top: $margin;
+    }
+  }
+  md-nav-list:first-of-type,
+  md-list:first-of-type {
+    padding-top: 0;
+  }
+}
+.md-disabled {
+  &, & * {
+    color: md-color($md-grey, 500);
+  }
+}
+md-nav-list {
+  padding: 0;
+}
+md-icon {
+  color: md-color($md-grey, 500);
+}
+.td-expansion-primary,
+.td-expansion-secondary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}
+.td-expansion-secondary {
+  color: md-color($md-grey, 700);
+}

@@ -1,0 +1,112 @@
+@import '../core/styles/variables';
+@import '../core/styles/default-theme';
+
+$code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+
+pre,
+code,
+.highlight {
+  font-family: $code-font;
+}
+pre {
+  display: block;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: white;
+  font-family: $code-font;
+  line-height: 1.45;
+  tab-size: 2;
+  -webkit-font-smoothing: auto;
+  -webkit-text-size-adjust: none;
+  position: relative;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+code {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.highlight {
+  display: block;
+  overflow-wrap: break-word;
+  color: md-color($md-indigo, 50);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Use host as a parent here since hljs renders after dom & doesn't get Angular shadowdom */
+:host {
+  display: block;
+  overflow-x: auto;
+  background: #292348;
+  color: white;
+  padding: $padding;
+  & + :host {
+    margin-top: $margin; /* 2nd neighbor & beyond will have margin */
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: md-color($md-purple, 200);
+  }
+
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-regexp,
+  .hljs-deletion {
+    color: md-color($md-pink, A100);
+  }
+
+  .hljs-number,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params,
+  .hljs-meta,
+  .hljs-link {
+    color: md-color($md-orange, 200);
+  }
+
+  .hljs-attribute {
+    color: md-color($md-deep-orange, 200);
+  }
+
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition {
+    color: md-color($md-lime, 200);
+  }
+
+  .hljs-title,
+  .hljs-section {
+    color: md-color($md-light-blue, 200);
+  }
+
+  .hljs-keyword {
+    color: md-color($md-teal, A200);
+  }
+
+  .hljs-selector-tag {
+    color: md-color($md-blue, A100);
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+}

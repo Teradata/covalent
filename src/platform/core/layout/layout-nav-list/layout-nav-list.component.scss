@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/shadows';
+@import '../../styles/default-theme';
+
+@mixin toolbar-theme($palette) {
+  color: md-color($palette, default-contrast);
+}
+md-toolbar {
+  box-shadow: $md-shadow-bottom-z-1;
+  z-index: 1;
+  &.md-primary {
+    @include toolbar-theme($md-primary);
+  }
+}
+.md-sidenav-left {
+    z-index: 1;
+}
+.list {
+    background-color: #fff;
+    text-align: start;
+}
+.content {
+    overflow: hidden;
+    padding-bottom: 65px;
+}

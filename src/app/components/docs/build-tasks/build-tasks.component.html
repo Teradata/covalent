@@ -1,0 +1,76 @@
+<md-card>
+  <md-card-title>Build Tasks</md-card-title>
+  <md-card-subtitle>Angular CLI Build Tasks</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h3>Command Line Build Tasks</h3>
+     <h4>Important: Make sure you have Node 4 or greater!</h4>
+     <p>
+       First install the CLI
+     </p>
+     <td-highlight lang="html">
+       npm install -g angular-cli
+     </td-highlight>
+     <h4>Local server</h4>
+     <p>
+       Serve your app locally by navingating to the directory and running:
+     </p>
+     <td-highlight lang="html">
+       ng serve
+     </td-highlight>
+     <p>
+       Which will serve to <code>http://localhost:4200/</code> by default.
+     </p>
+     <h4>Generating content</h4>
+     <p>
+       You can use the <code>ng generate</code> (or just <code>ng g</code>)
+     </p>
+     <td-highlight lang="html">
+       ng g component my-new-component
+     </td-highlight>
+     <p>
+       You can find all possible blueprints in the table below:
+     </p>
+     <table cellpadding="10">
+       <thead>
+        <tr>
+        <th>Scaffold</th>
+        <th>Usage</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>Component</td>
+        <td><code>ng g component my-new-component</code></td>
+        </tr>
+        <tr>
+        <td>Directive</td>
+        <td><code>ng g directive my-new-directive</code></td>
+        </tr>
+        <tr>
+        <td>Pipe</td>
+        <td><code>ng g pipe my-new-pipe</code></td>
+        </tr>
+        <tr>
+        <td>Service</td>
+        <td><code>ng g service my-new-service</code></td>
+        </tr>
+        <tr>
+        <td>Class</td>
+        <td><code>ng g class my-new-class</code></td>
+        </tr>
+        <tr>
+        <td>Interface</td>
+        <td><code>ng g interface my-new-interface</code></td>
+        </tr>
+        <tr>
+        <td>Enum</td>
+        <td><code>ng g enum my-new-enum</code></td>
+        </tr>
+        </tbody>
+      </table>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli">Angular CLI Docs</a>
+  </md-card-actions>
+</md-card>

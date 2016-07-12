@@ -1,0 +1,30 @@
+{
+  "project": {
+    "version": "0.4.0",
+    "name": "covalent"
+  },
+  "apps": [
+    {
+      "main": "src/main.ts",
+      "tsconfig": "src/tsconfig.json"
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "config/protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "config/karma.conf.js"
+    }
+  },
+  "defaults": {
+    "prefix": "docs",
+    "sourceDir": "src",
+    "styleExt": "css",
+    "lazyRoutePrefix": "+"
+  }
+}

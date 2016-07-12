@@ -1,0 +1,66 @@
+<md-card>
+  <md-card-title>Getting Started</md-card-title>
+  <md-card-subtitle>Start using the Teradata UI Platform</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h3>Covalent Quickstart</h3>
+     <h4>Create a new repo based on the covalent-quickstart</h4>
+     <p>Clone the covalent-quickstart into a new project folder (e.g. my-product).</p>
+     <td-highlight lang="html">
+       git clone git@github.com:teradata/covalent-quickstart.git my-product
+       cd my-product
+      </td-highlight>
+      <p>Remove the git directory to start clean</p>
+      <td-highlight lang="html">
+        rm -rf .git
+      </td-highlight>
+      <h3>Create a new Git repository for your product</h3>
+      <p>You could start writing code now and throw it all away when you're done. If you'd rather preserve your work under source control, consider taking the following steps.</p>
+      <p>Initialize this project as a local git repo and make the first commit:</p>
+      <td-highlight lang="html">
+        git init
+        git add .
+        git commit -m "Initial commit"
+      </td-highlight>
+      <p>Create a remote repository for this project on the service of your choice.</p>
+      <td-highlight lang="html">
+        git remote add origin
+        git push -u origin master
+      </td-highlight>
+      <md-divider></md-divider>
+      <h3>Start Developing!</h3>
+      <h4>Prerequisites</h4>
+      <ul>
+        <li>Node 4.4.4+</li>
+        <li>NPM 3+</li>
+        <li>Angular CLI</li>
+        <li>Protractor (for testing)</li>
+        <li>TSLint (for code style)</li>
+      </ul>
+      <h4>If you don't have the Angular CLI, install:</h4>
+      <td-highlight lang="html">
+        npm i -g angular-cli@1.0.0-beta.8
+      </td-highlight>
+      <h4>To install Protractor & TSLint for testing:</h4>
+      <td-highlight lang="html">
+        npm install -g protractor
+        npm install -g tslint typescript
+      </td-highlight>
+      <h4>Then update the webdriver manager:</h4>
+      <td-highlight lang="html">
+        webdriver-manager update
+      </td-highlight>
+      <h4>Install Node packages</h4>
+      <td-highlight lang="html">
+        npm i
+      </td-highlight>
+      <h4>Run the Angular-CLI local server</h4>
+      <td-highlight lang="html">
+        ng serve
+      </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart">Quickstart Repo</a>
+  </md-card-actions>
+</md-card>

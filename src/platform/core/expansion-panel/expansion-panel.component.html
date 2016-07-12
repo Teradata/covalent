@@ -1,0 +1,28 @@
+<div class="panel" 
+     [class.td-expanded]="expand">
+  <md-nav-list>
+    <a [tabIndex]="disabled? -1 : 0"
+       (keydown.enter)="clickEvent()"
+       (click)="clickEvent()"       
+       md-list-item>
+      <div [class.md-disabled]="disabled"
+           layout="row" 
+           layout-align="start center" 
+           flex>
+        <div class="md-subhead td-expansion-primary" flex-gt-xs="33">{{label || 'Click to expand '}}</div>
+        <div class="md-body-1 td-expansion-secondary">{{sublabel}}</div>
+        <span flex></span>
+        <md-icon *ngIf="!expand && !disabled">keyboard_arrow_down</md-icon>
+        <md-icon *ngIf="expand">keyboard_arrow_up</md-icon>
+      </div>
+    </a>
+  </md-nav-list>
+  <div>
+    <div [tdToggle]="!expand">
+      <ng-content></ng-content>
+    </div>
+    <div [tdToggle]="expand">
+      <ng-content select="td-expansion-summary"></ng-content>
+    </div>
+  </div>
+</div>

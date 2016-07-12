@@ -1,0 +1,183 @@
+<md-card>
+  <md-card-title>Expansion Panels</md-card-title>
+  <md-card-subtitle>Expand & collapse containers</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+  <p>Expand/Collapse Event for Expansion 1: {{expandCollapseExpansion1Msg}}</p>
+  <div layout-gt-xs="row" layout-align-gt-xs="center start">
+    <div flex-gt-xs="90">
+      <td-expansion-panel label="Google" 
+                          sublabel="1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA" 
+                          [expand]="expansion1" 
+                          [disabled]="disabled"
+                          (expanded)="expandExpansion1Event()"
+                          (collapsed)="collapseExpansion1Event()">
+        <td-expansion-summary>
+          <md-list>
+            <md-list-item>
+              <md-icon md-list-avatar>pin_drop</md-icon>
+              <h3 md-line>Google</h3>
+              <h4 md-line>Headquarters</h4>
+              <p md-line>
+                1600 Amphitheatre Pkwy<br/>Mountain View, CA 94043, USA
+              </p>
+            </md-list-item>
+          </md-list>
+        </td-expansion-summary>
+        <form class="md-padding">
+          <md-input class="demo-full-width" placeholder="Company (disabled)" disabled value="Google">
+          </md-input>
+          <table style="width: 100%" cellspacing="0"><tr>
+            <td><md-input placeholder="First name" style="width: 100%"></md-input></td>
+            <td><md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input></td>
+          </tr></table>
+          <p>
+            <md-input class="demo-full-width" placeholder="Address" value="1600 Amphitheatre Pkwy"></md-input>
+            <md-input class="demo-full-width" placeholder="Address 2"></md-input>
+          </p>
+          <table style="width: 100%" cellspacing="0"><tr>
+            <td><md-input class="demo-full-width" placeholder="City"></md-input></td>
+            <td><md-input class="demo-full-width" placeholder="State"></md-input></td>
+            <td><md-input #postalCode class="demo-full-width" maxLength="5"
+                          placeholder="Postal Code"
+                          value="94043">
+            </md-input></td>
+          </tr></table>
+          <md-divider></md-divider>
+          <div layout="row" layout-margin layout-align="end center">
+            
+            <button md-button>Cancel</button>
+            <button md-button color="accent">Save</button>
+          </div>
+        </form>
+      </td-expansion-panel>
+      <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
+        <div class="md-padding">
+          <h3 class="md-subhead">md-padding class</h3>
+          <div>Demo 1</div>
+          <div>Demo 2</div>
+          <div>Demo 3</div>
+          <div>Demo 4</div>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
+        <div>no md-padding class</div>
+        <div>Phase 2</div>
+        <div>Phase 3</div>
+        <div>Phase 4</div>
+      </td-expansion-panel>
+    </div>
+  </div>
+ </md-card-content>
+ <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All Expansion Panels</button>
+    <button md-button color="primary" (click)="toggleExpansion1()">Toggle Expansion 1</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdExpansionPanelComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-expansion-panel>]]></code></h2>
+    <p>Use <code><![CDATA[<td-expansion-panel>]]></code> element to add expand/collapse feature to your html blocks</p>
+    <p>Place your html in <code><![CDATA[<td-expansion-panel>]]></code> element.</p>
+    <h3>Behavior:</h3>
+    <md-list>
+        <a md-list-item layout-align="row">
+          <h3 md-line> Collapsed panel</h3>
+          <p md-line> A collapsed panel displays summary information. Upon selecting the collapsed panel, it expands to display the full expansion panel. </p>
+        </a>
+        <md-divider></md-divider>
+        <a md-list-item layout-align="row">
+          <h3 md-line> Expanded panel</h3>
+          <p md-line> Upon selection, a collapsed panel expands, allowing users to add or edit information. Helper text may be added to the panel to assist the user. </p>
+        </a>
+    </md-list>
+    <h3>Usage:</h3>
+    <p>The <code><![CDATA[<td-expansion-panel>]]></code> component can be used two ways:</p>
+    <md-list>  
+        <a md-list-item layout-align="row">
+          <h3 md-line> Editing</h3>
+          <p md-line> Expansion panels are best used for lightweight editing of an element, such as selecting a value for a setting. </p>
+        </a>
+        <md-divider></md-divider>
+        <a md-list-item layout-align="row">
+          <h3 md-line> Creation flows</h3>
+          <p md-line> Expansion panels may be displayed in a sequence to form creation flows. </p>
+        </a>
+    </md-list>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-expansion-panel>]]></code> component has {{expansionAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="last" ngFor [ngForOf]="expansionAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML: Editing</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-expansion-panel label="Google" sublabel="1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA">
+          <td-expansion-summary>
+            <md-list>
+              <md-list-item>
+                <md-icon md-list-avatar>pin_drop</md-icon>
+                <h3 md-line>Google</h3>
+                <h4 md-line>Headquarters</h4>
+                <p md-line>
+                  1600 Amphitheatre Pkwy<br/>Mountain View, CA 94043, USA
+                </p>
+              </md-list-item>
+            </md-list>
+          </td-expansion-summary>
+          <form class="md-padding">
+            ...
+          </form>
+        </td-expansion-panel>
+      ]]>
+    </td-highlight>
+    <p>HTML: Creation Flows</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-expansion-panel label="Label" sublabel="Sublabel" [expand]="expand" [disabled]="disabled" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()">
+          <div class="md-padding">
+            <h3 class="md-subhead">md-padding class</h3>
+            <div>Demo 1</div>
+            <div>Demo 2</div>
+            <div>Demo 3</div>
+            <div>Demo 4</div>
+          </div>
+        </td-expansion-panel>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdExpansionPanelComponent } from '@covalent/core';
+        ...
+          directives: [ TdExpansionPanelComponent ]
+        })
+        export class Demo {
+
+          expand: boolean = false;
+          disabled: boolean = false;
+          
+          expandedEvent(): void {
+            ...
+          }
+          
+          collapsedEvent(): void {
+            ...
+          }
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+

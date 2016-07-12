@@ -1,0 +1,28 @@
+:host {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  z-index: 0;
+
+  md-nav-list a[md-list-item] .md-list-item {
+    font-size: 14px;
+  }
+}
+.md-sidenav-left {
+    width: 257px;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.list {
+    background-color: #fff;
+    text-align: start;
+}
+.content {
+    overflow: hidden;
+}

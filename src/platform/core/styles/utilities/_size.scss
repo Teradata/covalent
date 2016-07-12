@@ -1,0 +1,22 @@
+$size-list: 12 16 24 32 50 64 72 100 128 256;
+@each $current-size in $size-list {
+    $i: index($size-list, $current-size);
+    .size-#{$current-size} {
+        height: #{$current-size}px;
+        width: #{$current-size}px;
+    }
+}
+@each $current-size in $size-list {
+    $i: index($size-list, $current-size);
+    .size-height-#{$current-size} {
+        height: #{$current-size}px;
+        width: auto;
+    }
+}
+@each $current-size in $size-list {
+    $i: index($size-list, $current-size);
+    .size-width-#{$current-size} {
+        width: #{$current-size}px;
+        height: auto;
+    }
+}

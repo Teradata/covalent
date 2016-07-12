@@ -1,0 +1,20 @@
+<div [tdFade]="animation"
+     (fadeOut)="outAnimationCompleted()"
+     (fadeIn)="inAnimationCompleted()"
+     [style.min-height]="getHeight()"
+     class="td-loading"
+     [class.td-overlay]="overlay"
+     layout="row"
+     layout-align="center center"
+     layout-padding
+     flex>
+    <md-progress-circle *ngIf="isCircular()" 
+                        mode="indeterminate" 
+                        color="primary" 
+                        [style.height]="getCircleDiameter()">
+    </md-progress-circle>
+    <md-progress-bar *ngIf="isLinear()" 
+                     mode="indeterminate" 
+                     color="primary">
+    </md-progress-bar>
+</div>

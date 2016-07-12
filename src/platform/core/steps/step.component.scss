@@ -1,0 +1,99 @@
+@import '../styles/variables';
+@import '../styles/default-theme';
+
+:host {
+  &:not(:last-of-type) .td-line {
+    border-left: 1px solid gainsboro;
+  }
+}
+md-nav-list {
+  padding: 0;
+}
+.md-caption {
+  color: md-color($md-grey, 700);
+}
+.md-disabled {
+  &, & * {
+    color: md-color($md-grey, 500);
+  }
+}
+.md-warn {
+  &, & * {
+    color: md-color($md-red, 700);
+  }
+}
+.md-complete {
+  color: md-color($md-green, 700);
+}
+md-icon {
+  &.md-warn {
+    font-size: $step-circle;
+    height: $step-circle;
+    width: $step-circle;
+  }
+  &.md-complete {
+    font-size: $step-circle + 2;
+    height: $step-circle;
+    width: $step-circle;
+  }
+}
+.td-step {
+  position: relative;
+  min-height: 28px /* circle-size */ ;
+  margin-top: 8px;
+}
+.td-step-status {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+  width: 32px;
+  padding-top: 5px;
+  text-align: center;
+}
+.td-circle {
+  height: $step-circle;
+  width: $step-circle;
+  line-height: $step-circle;
+  border-radius: 99%;
+  position: relative;
+  left: 5px;
+  color: #ffffff;
+  text-align: center;
+  &.md-active {
+    background-color: md-color($md-blue, 700);
+  }
+  &.md-inactive {
+    background-color: md-color($md-grey, 500);
+  }
+  & md-icon {
+    fill: #ffffff;
+    margin-top: 2px;
+    font-weight: bold;
+  }
+}
+.td-triangle {
+  position: relative;
+  left: 1px;
+  color: md-color($md-red, 700);
+}
+.td-line {
+  position: absolute;
+  left: 16px;
+  bottom: 0px;
+  top: 36px;
+}
+.td-step-sublabel {
+  line-height: 14px;
+  font-weight: normal;
+}
+.td-step-active,
+:host td-step-summary,
+:host td-step-actions {
+  padding-top: $padding;
+  padding-left: $padding;
+  display: block;
+}
+:host td-step-actions {
+  margin-bottom: $margin;
+}

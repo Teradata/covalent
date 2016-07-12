@@ -1,0 +1,12 @@
+<div layout="column" layout-fill>
+  <md-toolbar color="primary" class="md-whiteframe-z1">
+    <button md-button (click)="menuClick()" class="md-icon-button"><md-icon class="md-24">menu</md-icon></button>
+    <md-icon *ngIf="icon">{{icon}}</md-icon>
+    <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
+    <span>{{title}}</span>
+    <ng-content select="toolbar-content"></ng-content>
+  </md-toolbar>
+  <md-content flex class="content">
+    <ng-content></ng-content>
+  </md-content>
+</div>

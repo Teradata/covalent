@@ -1,0 +1,17 @@
+<td-layout-nav-list #list logo="app/assets/icons/teradata.svg" title="Covalent">
+  <list-items>
+    <template let-item let-last="last" ngFor [ngForOf]="items">
+        <a md-list-item [routerLink]="[item.route]">
+          <md-icon md-list-avatar>{{item.icon}}</md-icon>
+          <h3 md-line> {{item.title}} </h3>
+          <p md-line> {{item.description}} </p>
+        </a>
+        <md-divider *ngIf="!last" md-inset></md-divider>
+      </template>
+  </list-items>
+  <nav-toolbar-content layout="row" layout-align="center center" flex>
+    <span>Documentation</span>
+    <span flex></span>
+  </nav-toolbar-content>
+  <router-outlet></router-outlet>
+</td-layout-nav-list>

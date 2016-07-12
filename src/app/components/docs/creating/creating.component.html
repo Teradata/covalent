@@ -1,0 +1,37 @@
+<md-card>
+  <md-card-title>Creating new views</md-card-title>
+  <md-card-subtitle>Harness the power of the new Angular CLI</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h3>Generate Route</h3>
+     <p>Using the CLI, nagivate into the directory you want the new route, then simply:</p>
+     <td-highlight lang="html">
+       ng generate route my-route
+      </td-highlight>
+      <p>The CLI will do the heavy lifting and:</p>
+      <ul>
+        <li>Generate the directory, css, html, spec.ts, component.ts &amp; index.ts</li>
+        <li>Add an @import and new route in the parent directory</li>
+        <li>Update system-config.ts for you!</li>
+      </ul>
+      <p>
+        Basically it does all the irritating little things for you.
+      </p>
+      <p>
+        Now you simply creating your route html and logic for this new "view"!
+      </p>
+      <h3>Make sure you import any directives you want, for example in my-route.component.ts:</h3>
+      <td-highlight lang="typescript">
+        import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+        import { TdHighlightComponent } from '@covalent/highlight';
+       </td-highlight>
+       <h3>And define those directives in @Component:</h3>
+       <td-highlight lang="typescript">
+         directives: [ MD_CARD_DIRECTIVES, TdHighlightComponent ]
+        </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli#generating-a-route">Angular CLI Docs</a>
+  </md-card-actions>
+</md-card>

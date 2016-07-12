@@ -1,0 +1,144 @@
+<md-card>
+  <md-card-title>Pipes</md-card-title>
+  <md-card-subtitle>Custom Angular pipes (filters)</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <blockquote class="md-subhead pull-left-none">Every application starts out with what seems like a simple task: get data, transform them, and show them to users. Getting data could be as simple as creating a local variable or as complex as streaming data over a Websocket.</blockquote>
+
+    <blockquote class="md-subhead pull-left-none">A pipe takes in data as input and transforms it to a desired output.</blockquote>
+
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <cite class="text-normal"><a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank">
+    More on Angular 2 pipes
+    </a></cite>
+  </md-card-actions>
+</md-card>
+
+ <md-card>
+  <md-card-title>Digits Conversion</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">The <code>digits</code> pipe takes a number and converts the output to an appropriate numerical measurement with an optional <code>precision</code> argument.</p>
+    <md-list>
+      <md-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 md-line>Digits: {{ log.digits }}</h3>
+        <!-- output with bytes pipe -->
+        <p md-line>Converted: {{ log.digits | digits }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" md-line>With precision argument: {{ log.digits | digits:log.precision }} </p>
+      </md-list-item>
+    </md-list>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-list>
+            <md-list-item *ngFor="let log of logs">
+              <!-- original output -->
+              <h3 md-line>Digits: { { log.digits } }</h3>
+              <!-- output with digits pipe -->
+              <p md-line>Converted: { { log.digits | digits } }</p>
+              <!-- output with precision aurgument -->
+              <p md-line>With precision argument: { { log.digits | digits:log.precision } } </p>
+            </md-list-item>
+          </md-list>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+
+ <md-card>
+  <md-card-title>Byte Conversion</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">The <code>bytes</code> pipe takes a number and converts the output to an appropriate data measurement with an optional <code>precision</code> argument.</p>
+    <md-list>
+      <md-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 md-line>Bytes: {{ log.bytes }}</h3>
+        <!-- output with bytes pipe -->
+        <p md-line>Converted: {{ log.bytes | bytes }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" md-line>With precision argument: {{ log.bytes | bytes:log.precision }} </p>
+      </md-list-item>
+    </md-list>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-list>
+            <md-list-item *ngFor="let log of logs">
+              <!-- original output -->
+              <h3 md-line>Bytes: { { log.bytes } }</h3>
+              <!-- output with bytes pipe -->
+              <p md-line>Converted: { { log.bytes | bytes } }</p>
+              <!-- output with precision aurgument -->
+              <p md-line>With precision argument: { { log.bytes | bytes:log.precision } } </p>
+            </md-list-item>
+          </md-list>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+
+ <md-card>
+  <md-card-title>Time Ago</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29 17:59:59</code>) and tranforms it to the amount of time that has gone by. </p>
+    <md-list>
+      <md-list-item *ngFor="let log of logs">
+        <h3 md-line>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
+        <p *ngIf="log.reference" md-line>Reference: {{ log.reference }} </p>
+      </md-list-item>
+    </md-list>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-list>
+            <md-list-item *ngFor="let log of logs">
+              <!-- original output -->
+              { { log.timestamp } } | 
+              <!-- output with timeAgo pipe -->
+              { { log.timestamp | timeAgo:reference } } //reference is optional
+            </md-list-item>
+          </md-list>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+
+  <md-card>
+  <md-card-title>Time Difference</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29 17:59:59</code>).</p>
+    <md-list>
+      <md-list-item *ngFor="let log of logs">
+        <!-- Start and end time output -->
+        <h3 md-line>Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}</h3>
+        <!-- output with timeDifference pipe -->
+        <p md-line>Difference: {{ log.timestamp | timeDifference:log.timestampend }}</p>
+        <!-- outputs the time difference relative to the current time -->
+        <p md-line>Difference relative to current time: {{ log.timestamp | timeDifference }}</p>
+      </md-list-item>
+    </md-list>
+    <p class="md-body-1"><strong>Note: </strong> Using this pipe without arguments outputs the time difference relative to the current time. </p>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-list>
+            <md-list-item *ngFor="let log of logs">
+              <!-- Start and end time output -->
+              <h3 md-line>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
+              <!-- output with timeDifference pipe -->
+              <p md-line>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
+              <!-- outputs the time difference relative to the current time -->
+              <p md-line>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
+            </md-list-item>
+          </md-list>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>

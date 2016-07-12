@@ -1,0 +1,144 @@
+<md-card>
+  <md-card-title>Stepper (Wizard)</md-card-title>
+  <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Change Event: {{stepChangeMsg}}</p>
+    <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
+    <td-steps (stepChange)="stepChange($event)">
+      <td-step label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [disabled]="disabled" [active]="activeStep1" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+        STEP CONTENT GOES HERE
+      </td-step>
+      <td-step #step2 label="Required Step" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
+        STEP CONTENT GOES HERE  
+        <td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
+          <button md-button (click)="step2.active = false">Cancel</button>
+        </td-step-actions>
+      </td-step>
+      <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+        STEP CONTENT GOES HERE  
+        <td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
+          <button md-button (click)="step3.active = false">Cancel</button>
+        </td-step-actions>
+        <td-step-summary>
+          STEP SUMMARY GOES HERE
+        </td-step-summary>
+      </td-step>
+    </td-steps>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All Steps</button>
+    <button md-button color="primary" (click)="toggleActiveStep1()">Toggle Active Step 1</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdStepsComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-steps>]]></code></h2>
+    <p>Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a <code><![CDATA[<td-steps>]]></code> element.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-steps>]]></code> component has {{stepsAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="stepsAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-steps (stepChange)="change($event)" multiple>
+          <td-step>
+            ...
+          </td-step>
+          ...
+        </td-steps>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TD_STEPS_DIRECTIVES, IStepChangeEvent } from '@covalent/core';
+        ...
+          directives: [ TD_STEPS_DIRECTIVES ]
+        })
+        export class Demo {
+          change(event: IStepChangeEvent): void {
+            ...
+          };
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
+ <md-card>
+  <md-card-title>TdStepComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-step>]]></code></h2>
+    <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
+    <p>Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>, <code>StepState.Required</code> and <code>StepState.Complete</code>].</p>
+    <p>Enum values can be replaced with strings ["none", "required" and "complete"].</p>
+    <p>Note: Components in angular 2.x do not have 2-way binding, so the active variable might be off sync with its [TdStepComponent] sometimes.</p>
+    <p>You can keep it in sync with the (activated/deactivated) events if there is a need to do it.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-step>]]></code> component has {{stepAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="stepAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
+          ...
+          <td-step-actions>
+            ... add button elements for the step content (optional)
+          </td-step-actions>
+          <td-step-summary>
+            ... add summary that will be shown when step in is "complete" state (optional)
+          </td-step-summary>
+        </td-step>        
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TD_STEPS_DIRECTIVES, StepState } from '@covalent/core';
+        ...
+          directives: [ TD_STEPS_DIRECTIVES ]
+        })
+        export class Demo {
+        
+          active: boolean = false;
+          disabled: boolean = false;
+          state: StepState = StepState.Required; // or state: string = "required";
+          
+          activeEvent(): void {
+            ...
+          };
+          
+          deactiveEvent(): void {
+            ...
+          };
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

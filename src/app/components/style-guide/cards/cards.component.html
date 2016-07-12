@@ -1,0 +1,320 @@
+<md-card>
+  <md-card-header>
+    <md-icon md-card-avatar>view_agenda</md-icon>
+    <md-card-title class="md-display-1">Cards</md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Several examples of Material Design card patterns, all from the official spec.</p>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Standard Card</md-card-title>
+  <md-card-subtitle>A basic info card</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-card-title>Standard Card</md-card-title>
+        <md-card-subtitle>Subtitle</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-card-content>
+          <p>Standard card with content</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+        </md-card-content>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <button md-button color="accent">Action</button>
+          <button md-button>Cancel</button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-card>
+            <md-card-title>Standard Card</md-card-title>
+            <md-card-subtitle>Subtitle</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+              <p>Standard card with content</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+              <button md-button color="accent">Action</button>
+              <button md-button>Cancel</button>
+            </md-card-actions>
+          </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Login Card</md-card-title>
+  <md-card-subtitle>A login form card</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-card-title>Corporate Login</md-card-title>
+        <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-card-content>
+          <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
+            <md-input flex placeholder="Username" type="text" ngControl="username" required>
+              <span md-prefix><md-icon>person</md-icon></span>
+            </md-input>
+            <md-input flex placeholder="Password" type="password" ngControl="password" required>
+              <span md-prefix><md-icon>lock</md-icon></span>
+            </md-input>
+          </form>
+        </md-card-content>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <button [disabled]="!loginForm.form.valid" md-raised-button color="primary">Sign In</button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-card>
+            <md-card-title>Corporate Login</md-card-title>
+            <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+              <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
+                <md-input flex placeholder="Username" type="text" ngControl="username" [(ngModel)]="user" required>
+                  <span md-prefix><md-icon>person</md-icon></span>
+                </md-input>
+                <md-input flex placeholder="Password" type="password" ngControl="password" [(ngModel)]="pass" required>
+                  <span md-prefix><md-icon>lock</md-icon></span>
+                </md-input>
+              </form>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+              <button [disabled]="!loginForm.form.valid" md-raised-button color="primary" (click)="login()">Sign In</button>
+            </md-card-actions>
+          </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Metadata List Card</md-card-title>
+  <md-card-subtitle>A card with metadata for an item detail</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-card-title>Item Info</md-card-title>
+        <md-card-subtitle>Info about this item</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-list>
+          <h3 md-subheader>Metadata</h3>
+          <md-list-item>
+              <md-icon md-list-avatar>account_box</md-icon>
+              <h4 md-line>John Jameson</h4>
+              <p md-line>Owner</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>description</md-icon>
+              <h4 md-line>An item description</h4>
+              <p md-line>Description</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>vpn_key</md-icon>
+              <h4 md-line>1141e8e8-8d24-4956-93c2</h4>
+              <p md-line>API Key</p>
+          </md-list-item>
+          <md-divider></md-divider>
+          <h3 md-subheader>Dates</h3>
+          <md-list-item>
+              <md-icon md-list-avatar>access_time</md-icon>
+              <h4 md-line>Wed, July 6, 2016 11:13 AM</h4>
+              <p md-line>Last Updated</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>today</md-icon>
+              <h4 md-line>Wed, July 4, 2016 09:11 AM</h4>
+              <p md-line>Created</p>
+          </md-list-item>
+        </md-list>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <button md-button color="accent">Edit</button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-card>
+            <md-card-title>Item Info</md-card-title>
+            <md-card-subtitle>Info about this item</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-list>
+              <h3 md-subheader>Metadata</h3>
+              <md-list-item>
+                  <md-icon md-list-avatar>account_box</md-icon>
+                  <h4 md-line>John Jameson</h4>
+                  <p md-line>Owner</p>
+              </md-list-item>
+              <md-divider md-inset></md-divider>
+              <md-list-item>
+                  <md-icon md-list-avatar>description</md-icon>
+                  <h4 md-line>An item description</h4>
+                  <p md-line>Description</p>
+              </md-list-item>
+              <md-divider md-inset></md-divider>
+              <md-list-item>
+                  <md-icon md-list-avatar>vpn_key</md-icon>
+                  <h4 md-line>1141e8e8-8d24-4956-93c2</h4>
+                  <p md-line>API Key</p>
+              </md-list-item>
+              <md-divider></md-divider>
+              <h3 md-subheader>Dates</h3>
+              <md-list-item>
+                  <md-icon md-list-avatar>access_time</md-icon>
+                  <h4 md-line>Wed, July 6, 2016 11:13 AM</h4>
+                  <p md-line>Last Updated</p>
+              </md-list-item>
+              <md-divider md-inset></md-divider>
+              <md-list-item>
+                  <md-icon md-list-avatar>today</md-icon>
+                  <h4 md-line>Wed, July 4, 2016 09:11 AM</h4>
+                  <p md-line>Created</p>
+              </md-list-item>
+            </md-list>
+            <md-divider></md-divider>
+            <md-card-actions>
+              <button md-button color="accent">Edit</button>
+            </md-card-actions>
+          </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>CRUD Manage List Card</md-card-title>
+  <md-card-subtitle>A card with faux-columns, tabs & search</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-card-title layout>
+          <md-input class="text-sm" placeholder="search items" flex>
+            <span md-prefix><md-icon>search</md-icon></span>
+          </md-input>
+        </md-card-title>
+        <md-list class="pull-top">
+          <md-list-item>
+            <md-icon md-list-avatar>apps</md-icon>
+            <h3 md-line>App Name</h3>
+            <span flex></span>
+            <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
+            <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
+          </md-list-item>
+          <template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
+            <a md-list-item>
+              <md-icon md-list-avatar>dns</md-icon>
+              <h3 md-line> Item {{i}} </h3>
+              <p md-line> Item description </p>
+              <span flex></span>
+              <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
+              <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
+            </a>
+            <md-divider *ngIf="!last" md-inset></md-divider>
+          </template>
+        </md-list>
+      </md-card>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-card>
+            <md-card-title layout>
+              <md-input class="text-sm" placeholder="search items" flex>
+                <span md-prefix><md-icon>search</md-icon></span>
+              </md-input>
+            </md-card-title>
+            <md-list class="pull-top">
+              <md-list-item>
+                <md-icon md-list-avatar>apps</md-icon>
+                <h3 md-line>App Name</h3>
+                <span flex></span>
+                <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
+                <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
+              </md-list-item>
+              <template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
+                <a md-list-item>
+                  <md-icon md-list-avatar>dns</md-icon>
+                  <h3 md-line> Item {{i}} </h3>
+                  <p md-line> Item description </p>
+                  <span flex></span>
+                  <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
+                  <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
+                </a>
+                <md-divider *ngIf="!last" md-inset></md-divider>
+              </template>
+            </md-list>
+          </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Card with header & images</md-card-title>
+  <md-card-subtitle>A card with header, avatar & image</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-card-header>
+            <img md-card-avatar src="https://placekitten.com/g/40/40">
+            <md-card-title>Header title</md-card-title>
+            <md-card-subtitle>Header subtitle</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="https://placekitten.com/600/400">
+        <md-card-content>
+          <h3 class="md-subhead">Content title</h3>
+          <p class="md-body-1">Here is some more content</p>
+        </md-card-content>
+      </md-card>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-card>
+            <md-card-header>
+                <img md-card-avatar src="https://placekitten.com/g/40/40">
+                <md-card-title>Header title</md-card-title>
+                <md-card-subtitle>Header subtitle</md-card-subtitle>
+            </md-card-header>
+            <img md-card-image src="https://placekitten.com/600/400">
+            <md-card-content>
+              <h3 class="md-subhead">Content title</h3>
+              <p class="md-body-1">Here is some more content</p>
+            </md-card-content>
+          </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Resources</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://material.google.com/components/cards.html" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>Card Specs</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="https://www.google.com/search/about/learn-more/now/" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>Google Now Cards</span>
+    </a>
+  </md-nav-list>
+</md-card>

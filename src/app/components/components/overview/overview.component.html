@@ -1,0 +1,24 @@
+<md-card>
+  <md-card-title>Teradata Components</md-card-title>
+  <md-card-subtitle>Custom Angular 2.0 components, directives & pipes</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <p>We've built a series of extensions for Angular-Material 2.0 that follow the Material Design spec:</p>
+  </md-card-content>
+  <div layout="row" layout-wrap hide-xs hide-sm class="push-sm">
+    <template let-item let-last="last" ngFor [ngForOf]="items">
+      <div flex-md="50" flex-gt-md="25" layout="column">
+        <md-card [routerLink]="[item.route]" class="md-card-colored" flex>
+          <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+            <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
+          </md-toolbar>
+          <md-card-content>
+            <div layout="column" layout-padding>
+              <div class="md-subhead">{{item.title}}</div>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+    </template>
+  </div>
+</md-card>

@@ -1,0 +1,25 @@
+<md-card>
+  <md-card-title>Material Design Icons</md-card-title>
+  <md-card-subtitle>Access 750+ SVG or Font icons</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3>Font Icons</h3>
+    <p>Font icons using ligatures are the default option and simple to use:</p>
+    <td-highlight lang="html">
+    <![CDATA[ <md-icon>home</md-icon> ]]>
+    </td-highlight>
+    <p>
+      which renders <md-icon>home</md-icon>
+    </p>
+    <h3>SVG Icons (from URLS)</h3>
+    <p>SVG icons can be used either by directly specifying the icon's URL, or by associating an icon name with a URL and then referring to the name. To use a URL directly, set the svgSrc input:</p>
+   <td-highlight lang="html">
+     <![CDATA[ <md-icon svgSrc="/assets/sun.svg"></md-icon> ]]>
+   </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://design.google.com/icons/">Search Icons</a>
+    <a md-button [routerLink]="['../../style-guide','iconography']">Demo Icons</a>
+  </md-card-actions>
+</md-card>

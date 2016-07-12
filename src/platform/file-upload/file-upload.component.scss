@@ -1,0 +1,46 @@
+@import "../core/styles/variables";
+@import "../core/styles/elevation";
+
+button {
+  padding-left: 0;
+  padding-right: 0;
+  label {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    md-icon {
+      position: relative;
+      top: 6px;
+      padding-right: 5px;
+    }
+    input.md-file-upload-input {
+      display: none;
+    }
+  }
+}
+.td-file-cancel {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 24px;
+  left: -12px;
+  md-icon {
+    background-color: white;
+    border-radius: 12px;
+  }
+}
+/**
+* Class that is added ondragenter by the [TdFileDrop] directive.
+*/
+.drop-zone {
+  // Animation.
+  border-radius: 3px;
+  transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
+              md-elevation-transition-property-value();
+  @include md-elevation(8);
+  * {
+    pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+  }
+}

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Clear deploy/ so that we guarantee there are no stale artifacts.
+echo "Cleaning deploy/"
+rm -rf ./deploy
+
+# Perform a build.
+gulp build
+
+# Inline the css and html into the component files.
+echo "ToDo inline replace"

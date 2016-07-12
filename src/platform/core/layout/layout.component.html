@@ -1,0 +1,27 @@
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sideMenu>
+    <md-toolbar>
+      <div layout="column">
+        <span layout="row" layout-align="start center">
+          <md-icon *ngIf="icon">{{icon}}</md-icon>
+          <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
+          <span class="md-subhead">{{title}}</span>
+        </span>
+        <a *ngIf="displayName" (click)="toggleUserMenu()" class="md-body-1 md-toolbar-link" layout="row" layout-align="space-around center">
+          <span>{{displayName}}</span>
+          <md-icon *ngIf="!isShowUserMenu()">arrow_drop_down</md-icon>
+          <md-icon *ngIf="isShowUserMenu()">arrow_drop_up</md-icon>
+        </a>
+      </div>
+    </md-toolbar>
+    <md-nav-list *ngIf="isShowUserMenu()">
+      <a md-list-item (click)="logoutClick()"><md-icon>exit_to_app</md-icon> Logout</a>
+    </md-nav-list>
+    <md-nav-list *ngIf="!isShowUserMenu()">
+      <ng-content select="menu-items"></ng-content>
+      <md-divider></md-divider>
+      <a md-list-item (click)="sideMenu.close()"><md-icon>cancel</md-icon> Close</a>
+    </md-nav-list>
+  </md-sidenav>
+  <ng-content></ng-content>
+</md-sidenav-layout>

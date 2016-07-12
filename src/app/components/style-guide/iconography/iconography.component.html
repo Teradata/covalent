@@ -1,0 +1,52 @@
+<md-card>
+   <md-card-header>
+    <md-icon md-card-avatar>insert_emoticon</md-icon>
+    <md-card-title class="md-display-1">Iconography</md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title">Ligature Material Icons</h3>
+    <p class="md-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
+    <p class="md-body-1">
+      Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
+    </p>
+    <p>This entire library of icons is licensed under Creative Common Attribution 4.0 International License (CC-BY 4.0) and can be used within Teradata products with no attribution (the icon library just can't be sold standalone).</p>
+    <h3 class="md-title">Usage</h3>
+    <p>Using font icon within the Teradata UI Plaform is extremely simple:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <md-icon class="tc-green-700">thumb_up</md-icon>
+        <md-icon>thumb_down</md-icon>
+      ]]>
+    </td-highlight>
+    <p>Which renders:</p>
+    <md-icon class="tc-green-700">thumb_up</md-icon>
+    <md-icon>thumb_down</md-icon>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions> 
+    <a md-button color="primary" href="https://design.google.com/icons" target="_blank">
+      Material Icons Library
+    </a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Search Icons</md-card-title>
+  <md-card-subtitle>Current icons bundled with platform</md-card-subtitle>
+  <md-divider></md-divider>
+  <form layout="row" layout-aligh="center center" class="md-card-search-box">
+    <md-icon>search</md-icon>
+    <input flex class="md-padding block" [(ngModel)]="query" name="query" (keyup)="filter()" type="text"
+    placeholder="Filter icons by" autofocus>
+  </form>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
+      <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
+          <md-icon>{{icon}}</md-icon>
+          <p class="md-caption">{{icon}}</p>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

@@ -1,0 +1,203 @@
+<td-layout-nav logo="app/assets/icons/teradata.svg" title="Covalent">
+  <td-layout-manage-list #list>
+    <list-items>
+      <a md-list-item>
+        <md-icon>folder</md-icon>
+        Item Name
+      </a>
+      <a md-list-item>
+        <md-icon>people</md-icon>
+        Item Name
+      </a>
+      <a md-list-item>
+        <md-icon>star</md-icon>
+        Item Name
+      </a>
+      <a md-list-item>
+        <md-icon>delete</md-icon>
+        Item Name
+      </a>
+    </list-items>
+    <toolbar-buttons layout="row" layout-align="start center" flex>
+      <span flex></span>
+      <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+    </toolbar-buttons>
+    <md-card>
+      <md-card-title>
+        <div layout="row" layout-align="start center">
+          <button md-button class="md-icon-button md-icon-button-mini" (click)="goBack()">
+            <md-icon >arrow_back</md-icon>
+          </button>
+          Manage List Layout
+        </div>
+      </md-card-title>
+      <md-card-subtitle>Content/object management views (this page is using manage list)</md-card-subtitle>
+      <md-divider></md-divider>
+      <md-card-content>
+        <div layout-gt-md="row">
+          <div flex-gt-md="50">
+            <td-steps multiple>
+              <td-step [active]="true" label="Step 1: td-layout" sublabel="td-layout is the wrapper component">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
+                    <p md-line>The wrapper of your entire layout</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>#layout</code></h3>
+                    <p md-line>The ID and local reference of your sidenav</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>title?: string</code></h3>
+                    <p md-line>The title of your sidenav</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>logo?: string</code></h3>
+                    <p md-line>The path to your sidenav logo</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </td-step>
+              <td-step [active]="true" label="Step 2: menu-items" sublabel="the sidenav menu items">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<menu-items>]]></code></h3>
+                    <p md-line>The menu items wrapper</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
+                    <p md-line>Loops over the routes from your Class</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
+                    <p md-line>The SVG or font icon, depending on what you're using</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </td-step>
+              <td-step [active]="true" label="Step 3: td-layout-manage-list" sublabel="the main content area of the layout">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-manage-list>]]></code></h3>
+                    <p md-line>Builds the top toolbar, left nav and content area</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>#list</code></h3>
+                    <p md-line>The ID and local reference of your list</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>title?: string</code></h3>
+                    <p md-line>The title of your toolbar</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>logo?: string</code></h3>
+                    <p md-line>The path to your toolbar logo</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<list-items>]]></code></h3>
+                    <p md-line>The list items wrapper</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
+                    <p md-line>Loads html for each route (view)</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </td-step>
+              <td-step [active]="true" label="Step 3: toolbar-buttons" sublabel="the management toolbar above content">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<toolbar-buttons>]]></code></h3>
+                    <p md-line>The toolbar wrapper</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<span flex>]]></code></h3>
+                    <p md-line>Used as a spacer between buttons</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code class="text-sm"><![CDATA[<button md-button class="md-icon-button">]]></code></h3>
+                    <p md-line>Toolbar icon buttons</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </td-step>
+            </td-steps>
+          </div>
+          <div flex-gt-md="50">
+            <h3 class="md-title">HTML</h3>
+            <td-highlight lang="html">
+                <![CDATA[
+                <td-layout #layout title="Sidenav Title" logo="path/to/sidenav-logo.svg">
+                  <menu-items>
+                    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
+                      <md-icon>{ {item.icon} }</md-icon>
+                      { {item.title} }
+                    </a>
+                  </menu-items>
+                  <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
+                    <list-items>
+                      <template let-item let-last="last" ngFor [ngForOf]="items">
+                          <a md-list-item [routerLink]="[item.route]">
+                            <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                            { {item.title} }
+                          </a>
+                      </template>
+                    </list-items>
+                    <toolbar-buttons layout="row" layout-align="start center" flex>
+                      <span flex></span>
+                      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+                    </toolbar-buttons>
+                    <router-outlet></router-outlet>
+                  </td-layout-manage-list>
+                </td-layout>
+                ]]>
+            </td-highlight>
+            <h3 class="md-title">TypeScript routes for sidenav</h3>
+            <td-highlight lang="typescript">
+              export class YourComponent {
+
+                routes: Object[] = [
+                  {
+                    title: "Home", route: "/", icon: "home"
+                  }, {
+                    title: "Documentation", route: "/docs", icon: "library_books"
+                  }, {
+                    title: "Style Guide", route: "/style-guide", icon: "color_lens"
+                  }, {
+                    title: "Design Patterns", route: "/design-patterns", icon: "burst_mode"
+                  }, {
+                    title: "Layouts", route: "/layouts", icon: "view_quilt"
+                  }, {
+                    title: "Teradata Components", route: "/components", icon: "picture_in_picture"
+                  }
+                ];
+
+                items: Object[] = [
+                  {
+                    title: "Item Name", route: "/", icon: "layout", description: "Item description"
+                  }
+                ];
+
+              }
+            </td-highlight>
+          </div>
+        </div>
+      </md-card-content>
+    </md-card>
+  </td-layout-manage-list>
+</td-layout-nav>

@@ -1,0 +1,59 @@
+<md-card>
+  <md-card-title>Testing</md-card-title>
+  <md-card-subtitle>Deploy your app via CLI</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3>Install TSLint for TypeScript</h3>
+     <p>First ensure you have Protractor and TSLint installed, setup for TypeScript and updated Webdriver</p>
+    <td-highlight>
+      npm install -g tslint typescript
+      npm install -g protractor
+      webdriver-manager update
+      ./node_modules/.bin/webdriver-manager update
+    </td-highlight>
+     <h3>Running unit tests</h3>
+     <p>Tests will execute after a build is executed via Karma, and it will automatically watch your files for changes.
+     </p>
+     <p>
+      You can run tests a single time via --watch=false, and turn off building of the app via --build=false (useful for running it at the same time as ng serve).
+    </p>
+    <td-highlight>
+      ng test
+    </td-highlight>
+    <h3>Running end-to-end tests</h3>
+    <p>Before running the tests make sure you are serving the app via ng serve.
+    </p>
+    <p>
+      End-to-end tests are ran via Protractor.
+    </p>
+
+    <td-highlight>
+      ng e2e
+    </td-highlight>
+    <h3>Linting and formatting code</h3>
+    <p>You can lint your app code by running ng lint. This will use the lint npm script that in generated projects uses tslint.
+    </p>
+    <td-highlight>
+      ng lint
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli#running-unit-tests">Angular CLI Docs</a>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Resources</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="http://karma-runner.github.io/0.13/index.html" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>More on Karma (Unit Tests)</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="http://www.protractortest.org/" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>More on Protractor (End to End Tests)</span>
+    </a>
+  </md-nav-list>
+</md-card>
