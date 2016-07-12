@@ -12,8 +12,8 @@ echo 'Created and Checked out gh-pages branch'
 git reset --hard origin/develop
 
 cp -r dist/* .
-sed -i '' 's:<base href=\"/\">:<base href=\"/pages/teradata/covalent/\">:' index.html
-echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/pages/teradata/covalent/"> in index.html'
+sed -i '' 's:<base href=\"/\">:<base href=\"/covalent/\">:' index.html
+echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/covalent/"> in index.html'
 
 echo 'Tracking files'
 git add -A .
