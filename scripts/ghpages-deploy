@@ -3,7 +3,7 @@ echo 'Checking out develop branch to base deployment from it.'
 git checkout develop
 
 echo 'Started building process.'
-ng build
+ng build -prod
 
 git branch -f gh-pages
 git checkout gh-pages
