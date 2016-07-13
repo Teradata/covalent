@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "0.4.0",
+  "version": "0.4.0-1",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material 2",
   "keywords": [
@@ -85,6 +85,7 @@
     "gulp": "3.9.1",
     "gulp-bump": "2.1.0",
     "gulp-help": "1.6.1",
+    "gulp-if": "2.0.1",
     "gulp-sass": "2.3.2",
     "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "2.13.6",
@@ -100,6 +101,7 @@
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "3.3.0",
     "require-dir": "0.3.0",
+    "semver": "5.2.0",
     "ts-node": "0.9.3",
     "tslint": "3.11.0",
     "typescript": "^1.8.10",

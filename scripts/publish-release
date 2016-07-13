@@ -6,7 +6,7 @@ npm login --scope=$scope
 
 for package in ./deploy/platform/*
 do
-  npm publish ${package}
+  npm publish ${package} --access=public
 done
 
 #logout when finished
