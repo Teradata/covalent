@@ -92,6 +92,7 @@
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.4.0",
     "karma": "0.13.22",
+    "karma-firefox-launcher": "1.0.0",
     "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.0",
     "merge2": "1.0.2",

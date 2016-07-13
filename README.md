@@ -1,5 +1,7 @@
 # Teradata Web Platform
 
+[![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent)
+
 The Teradata Web Platform is a reusable platform for building web applications with common standards and tooling. It is based on Angular 2 and Material Design.
 
 **Vision: To build an atomic, reusable component platform for Teradata to consume, while collaborating in an open source model.**
