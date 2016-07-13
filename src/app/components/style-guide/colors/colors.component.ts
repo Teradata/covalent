@@ -7,6 +7,8 @@ import { MdToolbar } from '@angular2-material/toolbar';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
 
+import { TdHighlightComponent } from '../../../../platform/highlight';
+
 @Component({
   directives: [
     MdButton,
@@ -16,6 +18,7 @@ import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
     MdToolbar,
     MD_LIST_DIRECTIVES,
     MD_GRID_LIST_DIRECTIVES,
+    TdHighlightComponent,
   ],
   moduleId: module.id,
   selector: 'td-style-guide-colors',
@@ -23,5 +26,27 @@ import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
   templateUrl: 'colors.component.html',
 })
 export class ColorsComponent {
-
+  colors: string[] = [
+    'red',
+    'pink',
+    'purple',
+    'deep-purple',
+    'indigo',
+    'blue',
+    'light-blue',
+    'cyan',
+    'teal',
+    'green',
+    'light-green',
+    'lime',
+    'yellow',
+    'amber',
+    'orange',
+    'deep-orange'
+  ]
+  neutrals: string[] = [
+    'brown',
+    'grey',
+    'blue-grey'
+  ]
 }

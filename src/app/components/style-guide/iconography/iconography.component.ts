@@ -23,7 +23,29 @@ import { TdOrderByPipe } from '../../../../platform/core';
   templateUrl: 'iconography.component.html',
 })
 export class IconographyComponent implements OnInit {
-
+  colors: string[] = [
+    'red',
+    'pink',
+    'purple',
+    'deep-purple',
+    'indigo',
+    'blue',
+    'light-blue',
+    'cyan',
+    'teal',
+    'green',
+    'light-green',
+    'lime',
+    'yellow',
+    'amber',
+    'orange',
+    'deep-orange'
+  ]
+  neutrals: string[] = [
+    'brown',
+    'grey',
+    'blue-grey'
+  ]
   /* TODO: Add service pulling in these icon names */
   icons: string[] = [
     'access_alarm',
