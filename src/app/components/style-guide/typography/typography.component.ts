@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { MdAnchor } from '@angular2-material/button';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MdIcon } from '@angular2-material/icon';
 
@@ -8,7 +8,7 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
   directives: [
-    MdAnchor,
+    MD_BUTTON_DIRECTIVES,
     MD_CARD_DIRECTIVES,
     MdIcon,
     TdHighlightComponent,
@@ -35,11 +35,11 @@ export class TypographyComponent {
     'yellow',
     'amber',
     'orange',
-    'deep-orange'
-  ]
+    'deep-orange',
+  ];
   neutrals: string[] = [
     'brown',
     'grey',
-    'blue-grey'
-  ]
+    'blue-grey',
+  ];
 }

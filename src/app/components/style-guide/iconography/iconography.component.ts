@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MdAnchor } from '@angular2-material/button';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MdIcon } from '@angular2-material/icon';
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
+import { MdIcon } from '@angular2-material/icon';
 
 import { TdHighlightComponent } from '../../../../platform/highlight';
 import { TdOrderByPipe } from '../../../../platform/core';
 
 @Component({
   directives: [
-    MdAnchor,
+    MD_BUTTON_DIRECTIVES,
     MD_CARD_DIRECTIVES,
     MD_INPUT_DIRECTIVES,
     MdIcon,
@@ -39,13 +39,13 @@ export class IconographyComponent implements OnInit {
     'yellow',
     'amber',
     'orange',
-    'deep-orange'
-  ]
+    'deep-orange',
+  ];
   neutrals: string[] = [
     'brown',
     'grey',
-    'blue-grey'
-  ]
+    'blue-grey',
+  ];
   /* TODO: Add service pulling in these icon names */
   icons: string[] = [
     'access_alarm',
@@ -837,11 +837,4 @@ export class IconographyComponent implements OnInit {
       return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
     }.bind(this));
   }
-
-  // TODO: Add secondary action for single icon after selected
-  // select(item){
-  //   this.query = item;
-  //   this.filteredList = [];
-  // }
-
 }
