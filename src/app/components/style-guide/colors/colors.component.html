@@ -234,6 +234,67 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-title>CSS Background Colors</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>To manually color a background, use our simple bgc utility class:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div class="bgc-green-700">green background</div>
+      ]]>
+    </td-highlight>
+    <p>choose from any of the material colors, in hues from 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 (and A100, A200, A400, A700 for all except brown, grey &amp; blue-grey)</p>
+    <div layout-gt-sm="row" layout-wrap>
+      <div flex-gt-sm="20" *ngFor="let color of colors">
+        <md-card>
+          <div class="md-caption pad-xs">class="bgc-{{color}}-"</div>
+          <div class="tc-grey-800">
+            <div class="bgc-{{color}}-50 pad-xs">50</div>
+            <div class="bgc-{{color}}-100 pad-xs">100</div>
+            <div class="bgc-{{color}}-200 pad-xs">200</div>
+            <div class="bgc-{{color}}-300 pad-xs">300</div>
+          </div>
+          <div class="tc-{{color}}-50">
+            <div class="bgc-{{color}}-400 pad-xs">400</div>
+            <div class="bgc-{{color}}-500 pad-xs">500</div>
+            <div class="bgc-{{color}}-600 pad-xs">600</div>
+            <div class="bgc-{{color}}-700 pad-xs">700</div>
+            <div class="bgc-{{color}}-800 pad-xs">800</div>
+            <div class="bgc-{{color}}-900 pad-xs">900</div>
+          </div>
+          <div class="tc-grey-800">
+            <div class="bgc-{{color}}-A100 pad-xs">A100</div>
+          </div>
+          <div class="tc-{{color}}-50">
+            <div class="bgc-{{color}}-A200 pad-xs">A200</div>
+            <div class="bgc-{{color}}-A400 pad-xs">A400</div>
+            <div class="bgc-{{color}}-A700 pad-xs">A700</div>
+          </div>
+        </md-card>
+      </div>
+      <div flex-gt-sm="20" *ngFor="let color of neutrals">
+        <md-card>
+          <div class="md-caption pad-xs">class="bgc-{{color}}-"</div>
+          <div class="tc-grey-800">
+            <div class="bgc-{{color}}-50 pad-xs">50</div>
+            <div class="bgc-{{color}}-100 pad-xs">100</div>
+            <div class="bgc-{{color}}-200 pad-xs">200</div>
+            <div class="bgc-{{color}}-300 pad-xs">300</div>
+          </div>
+          <div class="tc-{{color}}-50">
+            <div class="bgc-{{color}}-400 pad-xs">400</div>
+            <div class="bgc-{{color}}-500 pad-xs">500</div>
+            <div class="bgc-{{color}}-600 pad-xs">600</div>
+            <div class="bgc-{{color}}-700 pad-xs">700</div>
+            <div class="bgc-{{color}}-800 pad-xs">800</div>
+            <div class="bgc-{{color}}-900 pad-xs">900</div>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>Material Design Color Resources</md-card-title>
   <md-divider></md-divider>
   <md-nav-list>
