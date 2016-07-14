@@ -70,6 +70,7 @@ const barrels: string[] = [
   'app/components/style-guide/typography',
   'app/components/style-guide/material-components',
   'app/components/style-guide/cards',
+  'app/components/style-guide/utility-styles',
   /** @cli-barrel */
 ];
 
