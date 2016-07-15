@@ -11,7 +11,7 @@ export class TdTimeAgoPipe implements PipeTransform {
 
     // If not a valid timestamp, return 'Invalid Date'
     if (!time.getTime()) {
-      return time;
+      return 'Invalid Date';
     }
 
     // For unit testing, we need to be able to declare a static start time

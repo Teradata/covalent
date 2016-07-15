@@ -7,6 +7,7 @@ __karma__.loaded = function () {
 
 var distPath = '/base/dist/';
 var appPath = distPath + 'app/';
+var platformPath = distPath + 'platform/';
 
 function isJsFile(path) {
   return path.slice(-3) == '.js';
@@ -16,13 +17,13 @@ function isSpecFile(path) {
   return path.slice(-8) == '.spec.js';
 }
 
-function isAppFile(path) {
-  return isJsFile(path) && (path.substr(0, appPath.length) == appPath);
+function isAppOrPlatformFile(path) {
+  return isJsFile(path) && ((path.substr(0, appPath.length) == appPath) || (path.substr(0, platformPath.length) == platformPath));
 }
 
 var allSpecFiles = Object.keys(window.__karma__.files)
   .filter(isSpecFile)
-  .filter(isAppFile);
+  .filter(isAppOrPlatformFile);
 
 // Load our SystemJS configuration.
 System.config({
