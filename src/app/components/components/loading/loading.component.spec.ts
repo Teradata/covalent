@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -15,12 +15,15 @@ import { TdLoadingService } from '../../../../platform/core';
 describe('Component: LoadingDemo', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [
-    LoadingDemoComponent,
-    Injector,
-    ViewContainerRef,
-    TdLoadingService,
-  ]);
+  beforeEach(() => {
+    addProviders([
+      LoadingDemoComponent,
+      Injector,
+      ViewContainerRef,
+      TdLoadingService,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

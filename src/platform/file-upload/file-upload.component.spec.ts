@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { TdFileUploadComponent } from './file-upload.component';
 describe('Component: TdFileUpload', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [TdFileUploadComponent]);
+  beforeEach(() => {
+    addProviders([
+      TdFileUploadComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -15,10 +15,13 @@ import { TD_LAYOUT_PROVIDERS } from '../../../platform/core';
 describe('Component: Docs', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [
-    DocsComponent,
-    TD_LAYOUT_PROVIDERS,
-  ]);
+  beforeEach(() => {
+    addProviders([
+      DocsComponent,
+      TD_LAYOUT_PROVIDERS,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

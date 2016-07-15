@@ -48,8 +48,8 @@ System.import('system-config.js').then(function() {
     testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
       testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
       );
-    testing.beforeEachProviders(function(){
-      return [
+    testing.beforeEach(function(){
+      testing.addProviders([
         testingRouter.ROUTER_DIRECTIVES,
         testingRouter.RouterOutletMap,
         testingHttp.HTTP_PROVIDERS,
@@ -58,7 +58,7 @@ System.import('system-config.js').then(function() {
         testingIcon.MdIconRegistry,
         { provide: testingRouter.Router, useValue: {} },
         { provide: testingRouter.ActivatedRoute, useValue: {} },
-      ];
+      ]);
     });
   });
 }).then(function() {

@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { TdExpansionPanelComponent } from './expansion-panel.component';
 describe('Component: Button', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [TdExpansionPanelComponent]);
+  beforeEach(() => {
+    addProviders([
+      TdExpansionPanelComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

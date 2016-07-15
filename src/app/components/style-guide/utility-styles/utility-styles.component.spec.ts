@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { UtilityStylesComponent } from './utility-styles.component';
 describe('Component: UtilityStyles', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [UtilityStylesComponent]);
+  beforeEach(() => {
+    addProviders([
+      UtilityStylesComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
