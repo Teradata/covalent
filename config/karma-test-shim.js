@@ -55,7 +55,9 @@ System.import('system-config.js').then(function() {
         testingHttp.HTTP_PROVIDERS,
         testingForms.disableDeprecatedForms(),
         testingForms.provideForms(),
-        testingIcon.MdIconRegistry
+        testingIcon.MdIconRegistry,
+        { provide: testingRouter.Router, useValue: {} },
+        { provide: testingRouter.ActivatedRoute, useValue: {} },
       ];
     });
   });

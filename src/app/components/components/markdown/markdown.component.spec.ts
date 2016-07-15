@@ -53,4 +53,3 @@ describe('Component: MarkdownDemoTestController', () => {
 })
 class MarkdownDemoTestControllerComponent {
 }
-

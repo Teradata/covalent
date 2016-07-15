@@ -42,4 +42,3 @@ describe('Component: Cards', () => {
 })
 class CardsTestControllerComponent {
 }
-

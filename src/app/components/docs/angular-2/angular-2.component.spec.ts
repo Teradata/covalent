@@ -42,4 +42,3 @@ describe('Component: Angular2', () => {
 })
 class Angular2TestControllerComponent {
 }
-

@@ -42,4 +42,3 @@ describe('Component: AngularMaterial', () => {
 })
 class AngularMaterialTestControllerComponent {
 }
-

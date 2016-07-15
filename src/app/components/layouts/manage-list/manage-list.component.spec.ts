@@ -11,16 +11,13 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ManageListComponent } from './manage-list.component';
 import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
-import { Router } from '@angular/router';
 
 describe('Component: ManageList', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
   beforeEachProviders(() => [
     ManageListComponent,
     TD_LAYOUT_PROVIDERS,
-    {provide: Router, useClass: Mock},
   ]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
@@ -49,4 +46,3 @@ describe('Component: ManageList', () => {
 })
 class ManageListTestControllerComponent {
 }
-

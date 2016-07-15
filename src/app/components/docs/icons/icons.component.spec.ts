@@ -10,16 +10,12 @@ import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testin
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { IconsComponent } from './icons.component';
-import { Router, ActivatedRoute } from '@angular/router';
 
 describe('Component: Icons', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
   beforeEachProviders(() => [
     IconsComponent,
-    {provide: Router, useClass: Mock},
-    {provide: ActivatedRoute, useClass: Mock},
   ]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
@@ -45,8 +41,6 @@ describe('Component: Icons', () => {
   template: `
     <td-docs-icons></td-docs-icons>
   `,
-
 })
 class IconsTestControllerComponent {
 }
-

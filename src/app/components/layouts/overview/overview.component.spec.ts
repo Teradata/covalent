@@ -46,4 +46,3 @@ describe('Component: LayoutsOverview', () => {
 })
 class OverviewTestControllerComponent {
 }
-

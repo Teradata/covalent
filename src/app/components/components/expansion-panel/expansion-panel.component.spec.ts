@@ -42,4 +42,3 @@ describe('Component: ExpansionPanelDemo', () => {
 })
 class ExpansionPanelDemoTestControllerComponent {
 }
-

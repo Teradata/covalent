@@ -42,4 +42,3 @@ describe('Component: BuildTasks', () => {
 })
 class BuildTasksTestControllerComponent {
 }
-

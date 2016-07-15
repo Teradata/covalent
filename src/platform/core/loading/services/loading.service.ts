@@ -1,5 +1,5 @@
 import { Injectable, ComponentResolver, ComponentFactory } from '@angular/core';
-import { ApplicationRef, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
+import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -29,7 +29,7 @@ export class TdLoadingService {
   private _loadingObservables: {[key: string]: Observable<any>} = {};
 
   constructor(private _componentResolver: ComponentResolver,
-              private _applicationRef: ApplicationRef) {
+              private _injector: Injector) {
   }
 
   /**
@@ -155,7 +155,7 @@ export class TdLoadingService {
     return new Promise((resolve: Function) => {
       this._componentResolver.resolveComponent(TdLoadingComponent)
       .then((cf: ComponentFactory<any>) => {
-        this._context[name].loadingRef = cf.create(this._applicationRef.injector);
+        this._context[name].loadingRef = cf.create(this._injector);
         this._context[name].times = 0;
         this._mapOptions(options, this._context[name].loadingRef.instance);
         let compRef: ILoadingRef = {

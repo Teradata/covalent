@@ -42,4 +42,3 @@ describe('Component: Deployment', () => {
 })
 class DeploymentTestControllerComponent {
 }
-

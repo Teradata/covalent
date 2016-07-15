@@ -42,4 +42,3 @@ describe('Component: Button', () => {
 })
 class TdExpansionTestControllerComponent {
 }
-

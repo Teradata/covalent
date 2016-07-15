@@ -7,8 +7,7 @@ import {
   inject,
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement, ViewContainerRef, ApplicationRef, provide } from '@angular/core';
-import { MockApplicationRef } from '@angular/core/testing';
+import { Component, DebugElement, ViewContainerRef, Injector } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { LoadingDemoComponent } from './loading.component';
 import { TdLoadingService } from '../../../../platform/core';
@@ -18,8 +17,8 @@ describe('Component: LoadingDemo', () => {
 
   beforeEachProviders(() => [
     LoadingDemoComponent,
+    Injector,
     ViewContainerRef,
-    provide(ApplicationRef, { useClass: MockApplicationRef }),
     TdLoadingService,
   ]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {

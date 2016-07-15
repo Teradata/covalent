@@ -46,4 +46,3 @@ describe('Component: Home', () => {
 })
 class HomeTestControllerComponent {
 }
-

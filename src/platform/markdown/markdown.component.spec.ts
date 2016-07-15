@@ -42,4 +42,3 @@ describe('Component: TdMarkdown', () => {
 })
 class TdMarkdownTestControllerComponent {
 }
-

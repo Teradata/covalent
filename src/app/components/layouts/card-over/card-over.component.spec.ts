@@ -11,16 +11,13 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CardOverComponent } from './card-over.component';
 import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
-import { Router } from '@angular/router';
 
 describe('Component: CardOver', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
   beforeEachProviders(() => [
     CardOverComponent,
     TD_LAYOUT_PROVIDERS,
-    {provide: Router, useClass: Mock},
   ]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
@@ -49,4 +46,3 @@ describe('Component: CardOver', () => {
 })
 class CardOverTestControllerComponent {
 }
-

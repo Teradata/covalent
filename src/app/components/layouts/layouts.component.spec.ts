@@ -42,4 +42,3 @@ describe('Component: Layouts', () => {
 })
 class LayoutsTestControllerComponent {
 }
-
