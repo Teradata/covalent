@@ -1,5 +1,25 @@
 <td-layout-nav logo="app/assets/icons/teradata.svg" title="Covalent">
   <td-layout-card-over title="Layout Options" subtitle="We offer 4 Material Design layouts for you">
+    <md-card-content>
+      <div layout="row" layout-padding>
+        <a md-button flex [routerLink]="'nav-view'">
+          <img src="app/assets/images/nav-view.png" alt="Navigation View">
+          <div class="md-subtitle">Nav View</div>
+        </a>
+        <a md-button flex [routerLink]="'nav-list'">
+          <img src="app/assets/images/nav-list.png" alt="Navigation and List">
+          <div class="md-subtitle">Nav List</div>
+        </a>
+        <a md-button flex [routerLink]="'card-over'">
+          <img src="app/assets/images/card-over.png" alt="Card Overlap View">
+          <div class="md-subtitle">Card Over</div>
+        </a>
+        <a md-button flex [routerLink]="'manage-list'">
+         <img src="app/assets/images/manage-list.png" alt="Management List">
+         <div class="md-subtitle">Manage List</div>
+        </a>
+      </div>
+    </md-card-content>
     <md-nav-list>
       <template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item [routerLink]="[item.route]">
