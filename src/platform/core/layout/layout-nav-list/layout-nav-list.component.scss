@@ -20,6 +20,10 @@
         display: flex;
         position: relative;
         height: 100%;
+        &.md-sidenav-closed {
+          visibility: visible;
+          transform: translate3d(0, 0, 0);
+        }
       }
       & > md-content {
         margin-left: 0 !important;
