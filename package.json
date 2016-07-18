@@ -13,7 +13,7 @@
     "e2e-test": "protractor ./config/protractor.conf.js",
     "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\"",
     "typings": "typings install --global",
-    "postinstall": "npm run typings",
+    "postinstall": "npm run typings && webdriver-manager update && bash ./node_modules/.bin/webdriver-manager update",
     "pretest": "rm -rf ./dist && ng build",
     "test": "karma start ./config/karma.conf.js",
     "bump-dev": "gulp bump-version",
