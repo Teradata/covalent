@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MdUniqueSelectionDispatcher } from '@angular2-material/core';
-import { MdButton } from '@angular2-material/button';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MdIcon } from '@angular2-material/icon';
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
@@ -15,12 +15,14 @@ import { MdCheckbox } from '@angular2-material/checkbox';
 import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { MD_SLIDE_TOGGLE_DIRECTIVES } from '@angular2-material/slide-toggle';
 import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
+import { MD_MENU_DIRECTIVES } from '@angular2-material/menu';
 
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
   directives: [
-    MdButton,
+    ROUTER_DIRECTIVES,
+    MD_BUTTON_DIRECTIVES,
     MD_CARD_DIRECTIVES,
     MdIcon,
     MD_INPUT_DIRECTIVES,
@@ -37,6 +39,7 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
     MD_SLIDE_TOGGLE_DIRECTIVES,
     MD_GRID_LIST_DIRECTIVES,
     TdHighlightComponent,
+    MD_MENU_DIRECTIVES,
   ],
   moduleId: module.id,
   providers: [ MdUniqueSelectionDispatcher ],
@@ -95,20 +98,20 @@ export class MaterialComponentsComponent {
   ];
 
   messages: Object[] = [{
-      from: 'Parsey McParseface',
-      message: 'message example',
-      photo: 'https://github.td.teradata.com/avatars/u/179?s=40',
-      subject: 'subject line',
+      from: 'Ali Connors',
+      message: 'I will be in your neighborhood',
+      photo: 'https://api.adorable.io/avatars/40/1.png',
+      subject: 'Brunch this weekend?',
     }, {
-      from: 'Parsey McParseface',
-      message: 'message example',
-      photo: 'https://github.td.teradata.com/avatars/u/179?s=40',
-      subject: 'subject line',
+      from: 'Trevor Hansen',
+      message: 'Wish I could but we have plans',
+      photo: 'https://api.adorable.io/avatars/40/2.png',
+      subject: 'Re: Brunch this weekend?',
     }, {
-      from: 'Parsey McParseface',
-      message: 'message example',
-      photo: 'https://github.td.teradata.com/avatars/u/179?s=40',
-      subject: 'subject line',
+      from: 'Sandra Adams',
+      message: 'Do you have Paris recommendations instead?',
+      photo: 'https://api.adorable.io/avatars/40/3.png',
+      subject: 'Re: Brunch this weekend?',
     },
   ];
 
