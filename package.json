@@ -62,6 +62,7 @@
     "@angular2-material/icon": "2.0.0-alpha.6-2",
     "@angular2-material/input": "2.0.0-alpha.6-2",
     "@angular2-material/list": "2.0.0-alpha.6-2",
+    "@angular2-material/menu": "2.0.0-alpha.6-2",
     "@angular2-material/progress-bar": "2.0.0-alpha.6-2",
     "@angular2-material/progress-circle": "2.0.0-alpha.6-2",
     "@angular2-material/radio": "2.0.0-alpha.6-2",
