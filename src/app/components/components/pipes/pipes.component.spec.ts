@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { PipesComponent } from './pipes.component';
 describe('Component: Pipes', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [PipesComponent]);
+  beforeEach(() => {
+    addProviders([
+      PipesComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

@@ -9,16 +9,14 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { OverviewComponent } from './overview.component';
-import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
+import { UtilityStylesComponent } from './utility-styles.component';
 
-describe('Component: LayoutsOverview', () => {
+describe('Component: UtilityStyles', () => {
   let builder: TestComponentBuilder;
 
   beforeEach(() => {
     addProviders([
-      OverviewComponent,
-      TD_LAYOUT_PROVIDERS,
+      UtilityStylesComponent,
     ]);
   });
 
@@ -26,14 +24,14 @@ describe('Component: LayoutsOverview', () => {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([OverviewComponent], (component: OverviewComponent) => {
+  it('should inject the component', inject([UtilityStylesComponent], (component: UtilityStylesComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(OverviewTestControllerComponent)
+    return builder.createAsync(UtilityStylesTestControllerComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(OverviewComponent));
+        let query: DebugElement = fixture.debugElement.query(By.directive(UtilityStylesComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -41,11 +39,11 @@ describe('Component: LayoutsOverview', () => {
 });
 
 @Component({
-  directives: [OverviewComponent],
+  directives: [UtilityStylesComponent],
   selector: 'td-test',
   template: `
-    <td-layouts-overview></td-layouts-overview>
+    <td-utility-styles></td-utility-styles>
   `,
 })
-class OverviewTestControllerComponent {
+class UtilityStylesTestControllerComponent {
 }

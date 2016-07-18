@@ -7,6 +7,7 @@ __karma__.loaded = function () {
 
 var distPath = '/base/dist/';
 var appPath = distPath + 'app/';
+var platformPath = distPath + 'platform/';
 
 function isJsFile(path) {
   return path.slice(-3) == '.js';
@@ -16,13 +17,13 @@ function isSpecFile(path) {
   return path.slice(-8) == '.spec.js';
 }
 
-function isAppFile(path) {
-  return isJsFile(path) && (path.substr(0, appPath.length) == appPath);
+function isAppOrPlatformFile(path) {
+  return isJsFile(path) && ((path.substr(0, appPath.length) == appPath) || (path.substr(0, platformPath.length) == platformPath));
 }
 
 var allSpecFiles = Object.keys(window.__karma__.files)
   .filter(isSpecFile)
-  .filter(isAppFile);
+  .filter(isAppOrPlatformFile);
 
 // Load our SystemJS configuration.
 System.config({
@@ -48,15 +49,17 @@ System.import('system-config.js').then(function() {
     testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
       testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
       );
-    testing.beforeEachProviders(function(){
-      return [
+    testing.beforeEach(function(){
+      testing.addProviders([
         testingRouter.ROUTER_DIRECTIVES,
         testingRouter.RouterOutletMap,
         testingHttp.HTTP_PROVIDERS,
         testingForms.disableDeprecatedForms(),
         testingForms.provideForms(),
-        testingIcon.MdIconRegistry
-      ];
+        testingIcon.MdIconRegistry,
+        { provide: testingRouter.Router, useValue: {} },
+        { provide: testingRouter.ActivatedRoute, useValue: {} },
+      ]);
     });
   });
 }).then(function() {

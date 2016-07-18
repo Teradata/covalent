@@ -57,6 +57,11 @@ export class StyleGuideComponent {
     icon: 'view_agenda',
     route: 'cards',
     title: 'Cards',
+  }, {
+    description: 'Utility CSS classes',
+    icon: 'build',
+    route: 'utility-styles',
+    title: 'Utility Styles',
   }];
 
 }

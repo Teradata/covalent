@@ -18,6 +18,7 @@ export class TdDigitsPipe implements PipeTransform {
     let k: number = 1000;
     let sizes: string[] = ['', 'K', 'M', 'B', 'T', 'Q'];
     let i: number = Math.floor(Math.log(digits) / Math.log(k));
-    return parseFloat((digits / Math.pow(k, i)).toFixed(precision)) + ' ' + sizes[i];
+    let size: string = sizes[i];
+    return parseFloat((digits / Math.pow(k, i)).toFixed(precision)) + (size ? ' ' + size : '');
   }
 }

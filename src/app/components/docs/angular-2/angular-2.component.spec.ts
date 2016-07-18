@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { Angular2Component } from './angular-2.component';
 describe('Component: Angular2', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [Angular2Component]);
+  beforeEach(() => {
+    addProviders([
+      Angular2Component,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -42,4 +47,3 @@ describe('Component: Angular2', () => {
 })
 class Angular2TestControllerComponent {
 }
-

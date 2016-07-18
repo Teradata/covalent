@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -11,17 +11,17 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { NavViewComponent } from './nav-view.component';
 import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
-import { Router } from '@angular/router';
 
 describe('Component: NavView', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
-  beforeEachProviders(() => [
-    NavViewComponent,
-    TD_LAYOUT_PROVIDERS,
-    {provide: Router, useClass: Mock},
-  ]);
+  beforeEach(() => {
+    addProviders([
+      NavViewComponent,
+      TD_LAYOUT_PROVIDERS,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -49,4 +49,3 @@ describe('Component: NavView', () => {
 })
 class NavViewTestControllerComponent {
 }
-

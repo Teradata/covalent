@@ -30,7 +30,71 @@
     </a>
   </md-card-actions>
 </md-card>
+<md-card>
+  <md-card-title>CSS Icon (Font or SVG) Colors</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple tc utility class:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        /* this will be  green font icon */
+        <md-icon class="tc-green-700">palette</md-icon>
 
+        /* this will be  green filled SVG icon */
+        <md-icon class="fill-green-700" svgIcon="/path/to/palette.svg"></md-icon>
+      ]]>
+    </td-highlight>
+    <p>choose from any of the material colors, in hues from 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 (and A100, A200, A400, A700 for all except brown, grey &amp; blue-grey)</p>
+    <div layout-gt-sm="row" layout-wrap>
+      <div flex-gt-sm="20" *ngFor="let color of colors">
+        <md-card>
+          <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-50">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-100">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-200">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-300">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-400">palette</span></md-icon>
+          </div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-500">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-600">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-700">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-800">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-900">palette</span></md-icon>
+          </div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-A100">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-A200">palette</span></md-icon>
+          </div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-A400">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-A700">palette</span></md-icon>
+          </div>
+        </md-card>
+      </div>
+      <div flex-gt-sm="20" *ngFor="let color of neutrals">
+        <md-card>
+          <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-50">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-100">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-200">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-300">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-400">palette</span></md-icon>
+          </div>
+          <div class="bgc-{{color}}-50">
+            <md-icon><span class="tc-{{color}}-500">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-600">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-700">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-800">palette</span></md-icon>
+            <md-icon><span class="tc-{{color}}-900">palette</span></md-icon>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
 <md-card>
   <md-card-title>Search Icons</md-card-title>
   <md-card-subtitle>Current icons bundled with platform</md-card-subtitle>
