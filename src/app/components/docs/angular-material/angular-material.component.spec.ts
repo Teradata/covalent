@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { AngularMaterialComponent } from './angular-material.component';
 describe('Component: AngularMaterial', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [AngularMaterialComponent]);
+  beforeEach(() => {
+    addProviders([
+      AngularMaterialComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -42,4 +47,3 @@ describe('Component: AngularMaterial', () => {
 })
 class AngularMaterialTestControllerComponent {
 }
-

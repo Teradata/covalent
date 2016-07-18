@@ -43,8 +43,8 @@ export class TdTimeDifferencePipe implements PipeTransform {
     }
 
     return (days > 0 ? days + daysFormatted : daysFormatted) +
-     pad.substring(0, pad.length - (hours + '').length) + hours + ' hours ' +
-     pad.substring(0, pad.length - (minutes + '').length) + minutes + ' minutes ' +
-     pad.substring(0, pad.length - (seconds + '').length) + seconds + ' seconds ';
+     pad.substring(0, pad.length - (hours + '').length) + hours + ':' +
+     pad.substring(0, pad.length - (minutes + '').length) + minutes + ':' +
+     pad.substring(0, pad.length - (seconds + '').length) + seconds;
   }
 }

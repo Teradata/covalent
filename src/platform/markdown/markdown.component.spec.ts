@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { TdMarkdownComponent } from './markdown.component';
 describe('Component: TdMarkdown', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [TdMarkdownComponent]);
+  beforeEach(() => {
+    addProviders([
+      TdMarkdownComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -42,4 +47,3 @@ describe('Component: TdMarkdown', () => {
 })
 class TdMarkdownTestControllerComponent {
 }
-

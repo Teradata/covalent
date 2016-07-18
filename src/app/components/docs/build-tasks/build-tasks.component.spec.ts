@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { BuildTasksComponent } from './build-tasks.component';
 describe('Component: BuildTasks', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [BuildTasksComponent]);
+  beforeEach(() => {
+    addProviders([
+      BuildTasksComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -42,4 +47,3 @@ describe('Component: BuildTasks', () => {
 })
 class BuildTasksTestControllerComponent {
 }
-

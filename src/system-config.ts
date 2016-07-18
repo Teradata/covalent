@@ -96,6 +96,7 @@ const materialPackages: string[] = [
   'toolbar',
   'grid-list',
   'slide-toggle',
+  'menu',
 ];
 
 materialPackages.forEach(function(pkg: string): void {

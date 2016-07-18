@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { DeploymentComponent } from './deployment.component';
 describe('Component: Deployment', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [DeploymentComponent]);
+  beforeEach(() => {
+    addProviders([
+      DeploymentComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -42,4 +47,3 @@ describe('Component: Deployment', () => {
 })
 class DeploymentTestControllerComponent {
 }
-

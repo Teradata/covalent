@@ -1,20 +1,26 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
   inject,
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement } from '@angular/core';
+import { Component, DebugElement, Renderer } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdHighlightComponent } from './highlight.component';
 
 describe('Component: TdHighlight', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [TdHighlightComponent]);
+  beforeEach(() => {
+    addProviders([
+      TdHighlightComponent,
+      Renderer,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

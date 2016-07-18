@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -11,18 +11,17 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { LogoComponent } from './logo.component';
 import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 describe('Component: StyleGuideLogo', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
-  beforeEachProviders(() => [
-    LogoComponent,
-    TD_LAYOUT_PROVIDERS,
-    {provide: Router, useClass: Mock},
-    {provide: ActivatedRoute, useClass: Mock},
-  ]);
+  beforeEach(() => {
+    addProviders([
+      LogoComponent,
+      TD_LAYOUT_PROVIDERS,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
