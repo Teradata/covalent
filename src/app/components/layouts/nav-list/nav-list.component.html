@@ -14,14 +14,7 @@
     <span flex></span>
   </nav-toolbar-content>
   <md-card>
-    <md-card-title>
-      <div layout="row" layout-align="start center">
-        <button md-button class="md-icon-button md-icon-button-mini" (click)="goBack()">
-          <md-icon >arrow_back</md-icon>
-        </button>
-        Nav List Layout
-      </div>
-    </md-card-title>
+    <md-card-title>Nav List Layout</md-card-title>
     <md-card-subtitle>The Nav View with an embedded list (this page is using nav list)</md-card-subtitle>
     <md-divider></md-divider>
     <md-card-content>
@@ -165,5 +158,11 @@
         </div>
       </div>
     </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row">
+        <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+        <span flex></span>
+        <a md-button color="accent" [routerLink]="'/layouts/card-over'">Card Over</a>
+    </md-card-actions>
   </md-card>
 </td-layout-nav-list>
