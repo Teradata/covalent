@@ -10,6 +10,7 @@ import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testin
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { MediaDemoComponent } from './media.component';
+import { TdMediaService } from '../../../../platform/core';
 
 describe('Component: MediaDemo', () => {
   let builder: TestComponentBuilder;
@@ -17,6 +18,7 @@ describe('Component: MediaDemo', () => {
   beforeEach(() => {
     addProviders([
       MediaDemoComponent,
+      TdMediaService,
     ]);
   });
 
