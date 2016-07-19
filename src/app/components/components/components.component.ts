@@ -55,6 +55,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown',
   }, {
+    description: 'Check media query for responsive apps.',
+    icon: 'devices',
+    route: 'media',
+    title: 'Media',
+  }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
     route: 'pipes',

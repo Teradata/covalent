@@ -48,6 +48,11 @@ export class OverviewComponent {
       route: 'markdown',
       title: 'Markdown',
     }, {
+      color: 'red-700',
+      icon: 'devices',
+      route: 'media',
+      title: 'Media',
+    }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
       route: 'pipes',

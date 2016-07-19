@@ -46,6 +46,7 @@ const barrels: string[] = [
   'app/components/components/file-upload',
   'app/components/components/loading',
   'app/components/components/pipes',
+  'app/components/components/media',
   'app/components/components/markdown',
   'app/components/docs',
   'app/components/docs/overview',
