@@ -16,6 +16,7 @@ describe('TdTimeAgoPipe', () => {
 
   it('should return "Invalid Date" with an invalid date', () => {
     expect(pipe.transform(undefined, undefined)).toEqual('Invalid Date');
+    expect(pipe.transform(undefined, time)).toEqual('Invalid Date');
     expect(pipe.transform('', undefined)).toEqual('Invalid Date');
     expect(pipe.transform('', '')).toEqual('Invalid Date');
     expect(pipe.transform({}, {})).toEqual('Invalid Date');
@@ -24,7 +25,10 @@ describe('TdTimeAgoPipe', () => {
 
   it('should return a time ago string', () => {
     // 1 second
+    expect(pipe.transform(time, undefined)).toEqual('1 second ago');
     expect(pipe.transform(time, time)).toEqual('1 second ago');
+    expect(pipe.transform(new Date(time), time)).toEqual('1 second ago');
+    expect(pipe.transform(new Date(time).toString(), time)).toEqual('1 second ago');
     // < 1 minute
     expect(pipe.transform(time - 1000 * 37, time)).toEqual('37 seconds ago');
     // 1 minute

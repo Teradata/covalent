@@ -4,7 +4,7 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-phantomjs-launcher')
+      require('karma-firefox-launcher')
     ],
     customLaunchers: {
       // chrome setup for travis CI using chromium
@@ -36,7 +36,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Firefox'],
     singleRun: false
   });
 };

@@ -46,6 +46,7 @@ const barrels: string[] = [
   'app/components/components/file-upload',
   'app/components/components/loading',
   'app/components/components/pipes',
+  'app/components/components/media',
   'app/components/components/markdown',
   'app/components/docs',
   'app/components/docs/overview',
@@ -70,6 +71,7 @@ const barrels: string[] = [
   'app/components/style-guide/typography',
   'app/components/style-guide/material-components',
   'app/components/style-guide/cards',
+  'app/components/style-guide/utility-styles',
   /** @cli-barrel */
 ];
 
@@ -95,6 +97,7 @@ const materialPackages: string[] = [
   'toolbar',
   'grid-list',
   'slide-toggle',
+  'menu',
 ];
 
 materialPackages.forEach(function(pkg: string): void {

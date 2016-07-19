@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -15,10 +15,13 @@ import { TD_LAYOUT_PROVIDERS } from '../../../platform/core';
 describe('Component: Components', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [
-    ComponentsComponent,
-    TD_LAYOUT_PROVIDERS,
-  ]);
+  beforeEach(() => {
+    addProviders([
+      ComponentsComponent,
+      TD_LAYOUT_PROVIDERS,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -28,7 +31,7 @@ describe('Component: Components', () => {
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(ComponentsTestControllerComponent)
+    builder.createAsync(ComponentsTestControllerComponent)
       .then((fixture: ComponentFixture<any>) => {
         let query: DebugElement = fixture.debugElement.query(By.directive(ComponentsComponent));
         expect(query).toBeTruthy();
@@ -46,4 +49,3 @@ describe('Component: Components', () => {
 })
 class ComponentsTestControllerComponent {
 }
-

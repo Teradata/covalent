@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { TypographyComponent } from './typography.component';
 describe('Component: StyleGuidetypography', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [TypographyComponent]);
+  beforeEach(() => {
+    addProviders([
+      TypographyComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

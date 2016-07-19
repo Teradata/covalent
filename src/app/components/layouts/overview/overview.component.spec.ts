@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -15,10 +15,13 @@ import { TD_LAYOUT_PROVIDERS } from '../../../../platform/core';
 describe('Component: LayoutsOverview', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [
-    OverviewComponent,
-    TD_LAYOUT_PROVIDERS,
-  ]);
+  beforeEach(() => {
+    addProviders([
+      OverviewComponent,
+      TD_LAYOUT_PROVIDERS,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -46,4 +49,3 @@ describe('Component: LayoutsOverview', () => {
 })
 class OverviewTestControllerComponent {
 }
-

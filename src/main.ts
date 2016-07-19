@@ -7,6 +7,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 
 import { DocsAppComponent, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
+import { TD_MEDIA_PROVIDERS } from './platform/core';
 
 if (environment.production) {
   enableProdMode();
@@ -18,4 +19,5 @@ bootstrap(DocsAppComponent, [
   MdIconRegistry,
   HTTP_PROVIDERS,
   APP_ROUTER_PROVIDERS,
+  TD_MEDIA_PROVIDERS,
 ]);

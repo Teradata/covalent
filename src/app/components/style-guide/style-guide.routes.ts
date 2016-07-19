@@ -8,6 +8,7 @@ import { IconographyComponent } from './iconography';
 import { ColorsComponent } from './colors';
 import { MaterialComponentsComponent } from './material-components';
 import { CardsComponent } from './cards';
+import { UtilityStylesComponent } from './utility-styles';
 
 export const styleGuideRoutes: RouterConfig = [{
   children: [{
@@ -31,6 +32,9 @@ export const styleGuideRoutes: RouterConfig = [{
     }, {
       component: CardsComponent,
       path: 'cards',
+    }, {
+      component: UtilityStylesComponent,
+      path: 'utility-styles',
     },
   ],
   component: StyleGuideComponent,

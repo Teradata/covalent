@@ -83,125 +83,47 @@
   <md-card-title>Cards</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <div layout="row" layout-align="start start">
-      <div layout="column" flex="50">
-        <md-card>
-          <md-card-title>Card Heading</md-card-title>
-          <md-divider></md-divider>
-          <md-card-content>
-            <p>Basic card with Header</p>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div layout="column" flex="50">
-        <md-card>
-          <md-card-title-group>
-            <img md-card-sm-image src="https://avatars0.githubusercontent.com/u/3086352?v=3&s=84">
-            <md-card-title>Card with title</md-card-title>
-            <md-card-subtitle>Subtitle</md-card-subtitle>
-          </md-card-title-group>
-          <md-divider></md-divider>
-          <md-card-content>
-            <p>Basic card with Header and <code>md-card-sm-image</code></p>
-          </md-card-content>
-        </md-card>
-      </div>
-    </div>
-  </md-card-content>
-  <md-card-content>
+    <md-card>
+      <md-card-title>Standard Card</md-card-title>
+      <md-card-subtitle>Subtitle</md-card-subtitle>
+      <md-divider></md-divider>
+      <md-card-content>
+        <p>Standard card with content</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button color="accent">Action</button>
+        <button md-button>Cancel</button>
+      </md-card-actions>
+    </md-card>
     <td-highlight lang="html">
     <![CDATA[
       <!-- Basic Card -->
       <md-card>
-        <md-card-title>Card Heading</md-card-title>
+        <md-card-title>Standard Card</md-card-title>
+        <md-card-subtitle>Subtitle</md-card-subtitle>
         <md-divider></md-divider>
         <md-card-content>
-          <p>Basic card with Header</p>
+          <p>Standard card with content</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
         </md-card-content>
-      </md-card>
-      <!-- Basic Card with image in header-->
-      <md-card>
-        <md-card-title-group>
-          <img md-card-sm-image src="https://avatars0.githubusercontent.com/u/3086352?v=3&s=84">
-          <md-card-title>Card with title</md-card-title>
-          <md-card-subtitle>Subtitle</md-card-subtitle>
-        </md-card-title-group>
         <md-divider></md-divider>
-        <md-card-content>
-          <p>Basic card with Header and <code>md-card-sm-image</code></p>
-        </md-card-content>
-      </md-card>
-    ]]>
-    </td-highlight>
-
-  </md-card-content>
-  <md-card-content>
-
-    <div layout="row" layout-align="start start">
-      <div layout="column" flex="50">
-
-        <md-card>
-          <md-card-subtitle>Subtitle first</md-card-subtitle>
-          <md-card-title>Card with title</md-card-title>
-          <md-card-content>
-                <p>This is supporting text.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-          </md-card-content>
-          <md-card-actions>
-                <button md-button>LIKE</button>
-                <button md-button>SHARE</button>
-          </md-card-actions>
-        </md-card>
-      </div>
-      <div layout="column" flex="50">
-        <md-card>
-          <md-card-header>
-            <img md-card-avatar src="https://avatars0.githubusercontent.com/u/3079819?v=3&s=84">
-            <md-card-title>Header title</md-card-title>
-            <md-card-subtitle>Header subtitle</md-card-subtitle>
-          </md-card-header>
-          <img md-card-image src="https://angular.io/resources/images/backgrounds/superhero-paper.png">
-          <md-card-content>
-            <p>Here is some more content</p>
-          </md-card-content>
-        </md-card>
-      </div>
-    </div>
-  </md-card-content>
-  <md-card-content>
-    <td-highlight lang="html">
-    <![CDATA[
-      <!-- Card Actions -->
-      <md-card>
-        <md-card-subtitle>Subtitle first</md-card-subtitle>
-        <md-card-title>Card with title</md-card-title>
-        <md-card-content>
-              <p>This is supporting text.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-        </md-card-content>
         <md-card-actions>
-              <button md-button>LIKE</button>
-              <button md-button>SHARE</button>
+          <button md-button color="accent">Action</button>
+          <button md-button>Cancel</button>
         </md-card-actions>
       </md-card>
-      <!-- Card with Images -->
-      <md-card>
-        <md-card-header>
-          <img md-card-avatar src="https://avatars0.githubusercontent.com/u/3079819?v=3&s=84">
-          <md-card-title>Header title</md-card-title>
-          <md-card-subtitle>Header subtitle</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image src="https://angular.io/resources/images/backgrounds/superhero-paper.png">
-        <md-card-content>
-          <p>Here is some more content</p>
-        </md-card-content>
-      </md-card>
     ]]>
     </td-highlight>
 
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" [routerLink]="['/style-guide/cards']">More on Cards</a>
+  </md-card-actions>
 </md-card>
 
 
@@ -363,6 +285,10 @@
       </td-highlight>
     </div>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" [routerLink]="['/style-guide/iconography']">More on Icons</a>
+  </md-card-actions>
 </md-card>
 
 <md-card>
@@ -432,9 +358,6 @@
     </td-highlight>
   </md-card-content>
 </md-card>
-
-
-
 <md-card>
   <md-card-title>Lists</md-card-title>
   <md-divider></md-divider>
@@ -506,15 +429,20 @@
     <h3>Nav list (list with links)</h3>
 
     <md-nav-list>
-      <a md-list-item href="..." *ngFor="let message of messages"> {{ message.from }} </a>
+      <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <a md-list-item [routerLink]="['/style-guide/material-components']"> {{item.from}} </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
     </md-nav-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with links (nav list) -->
-
       <md-nav-list>
-        <a md-list-item href="..." *ngFor="let message of messages"> { { message.from } } </a>
+        <template let-item let-last="last" ngFor [ngForOf]="messages">
+          <a md-list-item [routerLink]="..."> { {item.from}}  </a>
+          <md-divider *ngIf="!last"></md-divider>
+        </template>
       </md-nav-list>
     ]]>
     </td-highlight>
@@ -523,31 +451,31 @@
 
 
     <!-- list with Avatars-->
-    <h3>List with Avatars</h3>
+    <h3>2 Line List Items with Avatars and inset dividers</h3>
 
     <md-list>
-      <md-list-item *ngFor="let message of messages">
-        <img md-list-avatar src="{{message.photo}}" alt="">
-        <h3 md-line> {{message.from}} </h3>
-        <p md-line>
-          <span> {{message.subject}} </span>
-          <span class="demo-2"> -- {{message.message}} </span>
-        </p>
-      </md-list-item>
+      <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <md-list-item>
+          <img md-list-avatar src="{{item.photo}}" alt="">
+          <h3 md-line> {{item.from}} </h3>
+          <p md-line> {{item.subject}} - {{item.message}} </p>
+        </md-list-item>
+        <md-divider *ngIf="!last" md-inset></md-divider>
+      </template>
     </md-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with Avatars-->
       <md-list>
-        <md-list-item *ngFor="let message of messages">
-          <img md-list-avatar src="{ { message.photo } }" alt="">
-          <h3 md-line> { { message.from } } </h3>
-          <p md-line>
-            <span> { { message.subject } } </span>
-            <span class="demo-2"> -- { { message.message } } </span>
-          </p>
-        </md-list-item>
+        <template let-item let-last="last" ngFor [ngForOf]="messages">
+          <md-list-item>
+            <img md-list-avatar src="{ {item.photo} }" alt="">
+            <h3 md-line> { {item.from} } </h3>
+            <p md-line> { {item.subject} } - { {item.message} } </p>
+          </md-list-item>
+          <md-divider *ngIf="!last" md-inset></md-divider>
+        </template>
       </md-list>
     ]]>
     </td-highlight>
@@ -555,38 +483,39 @@
     <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
 
     <!-- list with Icons-->
-    <h3>List with Icons</h3>
+    <h3>3 Line List Item with Icons and inset dividers</h3>
 
     <md-list>
-      <md-list-item *ngFor="let message of messages">
-        <md-icon md-list-avatar>home</md-icon>
-        <h3 md-line> {{message.from}} </h3>
-        <p md-line>
-          <span> {{message.subject}} </span>
-          <span class="demo-2"> -- {{message.message}} </span>
-        </p>
-      </md-list-item>
+      <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <md-list-item>
+          <md-icon md-list-avatar>person</md-icon>
+          <h3 md-line> {{item.from}} </h3>
+          <h4 md-line> {{item.subject}} </h4>
+          <p md-line> {{item.message}} </p>
+        </md-list-item>
+        <md-divider *ngIf="!last" md-inset></md-divider>
+      </template>
     </md-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with Icons-->
       <md-list>
-        <md-list-item *ngFor="let message of messages">
-          <md-icon md-list-avatar>home</md-icon>
-          <h3 md-line> { { message.from } } </h3>
-          <p md-line>
-            <span> { { message.subject } } </span>
-            <span class="demo-2"> -- { { message.message } } </span>
-          </p>
-        </md-list-item>
+        <template let-item let-last="last" ngFor [ngForOf]="messages">
+          <md-list-item>
+            <md-icon md-list-avatar>person</md-icon>
+            <h3 md-line> { {item.from} } </h3>
+            <h4 md-line> { {item.subject} } </h4>
+            <p md-line> { {item.message} } </p>
+          </md-list-item>
+          <md-divider *ngIf="!last" md-inset></md-divider>
+        </template>
       </md-list>
     ]]>
     </td-highlight>
 
   </md-card-content>
 </md-card>
-
 
 <md-card>
   <md-card-title>Progress</md-card-title>
@@ -882,123 +811,130 @@
   <md-card-content>
 
     <div class="demo-toolbar">
-
-      <p>
-        <md-toolbar layout="row">
-          <md-icon class="demo-toolbar-icon">menu</md-icon>
-          <span flex style="padding-left: 10px;">Default Toolbar</span>
-
-          <md-icon>code</md-icon>
-        </md-toolbar>
-      </p>
-
-      <p>
-        <md-toolbar color="primary">
-          <md-icon class="demo-toolbar-icon">menu</md-icon>
-          <span flex style="padding-left: 10px;">Primary Toolbar</span>
-
-          <md-icon>code</md-icon>
-        </md-toolbar>
-      </p>
-
-      <p>
-        <md-toolbar color="accent">
-          <md-icon class="demo-toolbar-icon">menu</md-icon>
-          <span flex style="padding-left: 10px;">Accent Toolbar</span>
-
-          <md-icon>code</md-icon>
-        </md-toolbar>
-      </p>
-
-      <p>
-        <md-toolbar color="accent">
-          <span>Custom Toolbar</span>
-          <md-toolbar-row>
-            <span>Second Line</span>
-          </md-toolbar-row>
-        </md-toolbar>
-      </p>
-
-      <p>
-        <md-toolbar color="primary">
-          <span>Custom Toolbar</span>
-
-          <md-toolbar-row>
-            <span flex>Second Line</span>
-
-            <md-icon class="demo-toolbar-icon">verified_user</md-icon>
-          </md-toolbar-row>
-
-          <md-toolbar-row>
-            <span flex>Third Line</span>
-
-            <md-icon class="demo-toolbar-icon">favorite</md-icon>
-            <md-icon class="demo-toolbar-icon">delete</md-icon>
-          </md-toolbar-row>
-        </md-toolbar>
-      </p>
+      <p>The default color toolbar:</p>
+      <md-toolbar>
+        <button md-button href="#" md-icon-button>
+          <md-icon>menu</md-icon>
+        </button>
+        <span>Default Toolbar</span>
+        <span flex></span>
+        <button md-button href="#" md-icon-button>
+          <md-icon>search</md-icon>
+        </button>
+        <button md-button href="#" md-icon-button>
+          <md-icon>more_vert</md-icon>
+        </button>
+      </md-toolbar>
+      <p>The primary color toolbar:</p>
+      <md-toolbar color="primary">
+        <button md-button href="#" md-icon-button>
+          <md-icon>menu</md-icon>
+        </button>
+        <span>Primary Toolbar</span>
+        <span flex></span>
+        <button md-button href="#" md-icon-button>
+          <md-icon>search</md-icon>
+        </button>
+        <button md-button href="#" md-icon-button>
+          <md-icon>more_vert</md-icon>
+        </button>
+      </md-toolbar>
+      <p>The accent color toolbar:</p>
+      <md-toolbar color="accent">
+        <button md-button href="#" md-icon-button>
+          <md-icon>menu</md-icon>
+        </button>
+        <span>Accent Toolbar</span>
+        <span flex></span>
+        <button md-button href="#" md-icon-button>
+          <md-icon>search</md-icon>
+        </button>
+        <button md-button href="#" md-icon-button>
+          <md-icon>more_vert</md-icon>
+        </button>
+      </md-toolbar>
+      <p>An accent toolbar using the second toolbar row:</p>
+      <md-toolbar color="accent">
+        <md-toolbar-row>
+          <span>Second Line Toolbar</span>
+        </md-toolbar-row>
+      </md-toolbar>
+      <p>A primary toolbar using the third toolbar row:</p>
+      <md-toolbar color="primary">
+        <md-toolbar-row></md-toolbar-row>
+        <md-toolbar-row>
+          <span flex>Third Line Toolbar</span>
+          <md-icon class="demo-toolbar-icon">favorite</md-icon>
+          <md-icon class="demo-toolbar-icon">delete</md-icon>
+        </md-toolbar-row>
+      </md-toolbar>
 
     </div>
 
     <td-highlight lang="html">
       <![CDATA[
-        <div class="demo-toolbar">
-          <p>
-            <md-toolbar layout="row">
-              <md-icon class="demo-toolbar-icon">menu</md-icon>
-              <span flex style="padding-left: 10px;">Default Toolbar</span>
-
-              <md-icon>code</md-icon>
-            </md-toolbar>
-          </p>
-
-          <p>
-            <md-toolbar color="primary">
-              <md-icon class="demo-toolbar-icon">menu</md-icon>
-              <span flex style="padding-left: 10px;">Primary Toolbar</span>
-
-              <md-icon>code</md-icon>
-            </md-toolbar>
-          </p>
-
-          <p>
-            <md-toolbar color="accent">
-              <md-icon class="demo-toolbar-icon">menu</md-icon>
-              <span flex style="padding-left: 10px;">Accent Toolbar</span>
-
-              <md-icon>code</md-icon>
-            </md-toolbar>
-          </p>
-
-          <p>
-            <md-toolbar color="accent">
-              <span>Custom Toolbar</span>
-              <md-toolbar-row>
-                <span>Second Line</span>
-              </md-toolbar-row>
-            </md-toolbar>
-          </p>
-
-          <p>
-            <md-toolbar color="primary">
-              <span>Custom Toolbar</span>
-
-              <md-toolbar-row>
-                <span flex>Second Line</span>
-
-                <md-icon class="demo-toolbar-icon">verified_user</md-icon>
-              </md-toolbar-row>
-
-              <md-toolbar-row>
-                <span flex>Third Line</span>
-
-                <md-icon class="demo-toolbar-icon">favorite</md-icon>
-                <md-icon class="demo-toolbar-icon">delete</md-icon>
-              </md-toolbar-row>
-            </md-toolbar>
-          </p>
-
-        </div>
+        <!-- toolbar start -->
+        <md-toolbar>
+          <button md-button href="#" md-icon-button>
+            <md-icon>menu</md-icon>
+          </button>
+          <span>Default Toolbar</span>
+          <span flex></span>
+          <button md-button href="#" md-icon-button>
+            <md-icon>search</md-icon>
+          </button>
+          <button md-button href="#" md-icon-button>
+            <md-icon>more_vert</md-icon>
+          </button>
+        </md-toolbar>
+        <!-- toolbar end -->
+        <!-- toolbar start -->
+        <md-toolbar color="primary">
+          <button md-button href="#" md-icon-button>
+            <md-icon>menu</md-icon>
+          </button>
+          <span>Primary Toolbar</span>
+          <span flex></span>
+          <button md-button href="#" md-icon-button>
+            <md-icon>search</md-icon>
+          </button>
+          <button md-button href="#" md-icon-button>
+            <md-icon>more_vert</md-icon>
+          </button>
+        </md-toolbar>
+        <!-- toolbar end -->
+        <!-- toolbar start -->
+        <md-toolbar color="accent">
+          <button md-button href="#" md-icon-button>
+            <md-icon>menu</md-icon>
+          </button>
+          <span>Accent Toolbar</span>
+          <span flex></span>
+          <button md-button href="#" md-icon-button>
+            <md-icon>search</md-icon>
+          </button>
+          <button md-button href="#" md-icon-button>
+            <md-icon>more_vert</md-icon>
+          </button>
+        </md-toolbar>
+        <!-- toolbar end -->
+        <!-- toolbar start -->
+        <md-toolbar color="accent">
+          <md-toolbar-row>
+            <span>Second Line Toolbar</span>
+          </md-toolbar-row>
+        </md-toolbar>
+        <!-- toolbar end -->
+        <!-- toolbar start -->
+        <md-toolbar color="primary">
+          <md-toolbar-row></md-toolbar-row>
+          <md-toolbar-row>
+            <span flex>Third Line Toolbar</span>
+            <md-icon class="demo-toolbar-icon">favorite</md-icon>
+            <md-icon class="demo-toolbar-icon">delete</md-icon>
+          </md-toolbar-row>
+        </md-toolbar>
+        <!-- toolbar end -->
       ]]>
       </td-highlight>
 

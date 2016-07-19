@@ -26,14 +26,7 @@
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
     </toolbar-buttons>
     <md-card>
-      <md-card-title>
-        <div layout="row" layout-align="start center">
-          <button md-button class="md-icon-button md-icon-button-mini" (click)="goBack()">
-            <md-icon >arrow_back</md-icon>
-          </button>
-          Manage List Layout
-        </div>
-      </md-card-title>
+      <md-card-title> Manage List Layout</md-card-title>
       <md-card-subtitle>Content/object management views (this page is using manage list)</md-card-subtitle>
       <md-divider></md-divider>
       <md-card-content>
@@ -198,6 +191,10 @@
           </div>
         </div>
       </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions layout="row">
+          <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+      </md-card-actions>
     </md-card>
   </td-layout-manage-list>
 </td-layout-nav>

@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { MarkdownDemoComponent } from './markdown.component';
 describe('Component: MarkdownDemoTestController', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [MarkdownDemoComponent]);
+  beforeEach(() => {
+    addProviders([
+      MarkdownDemoComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -53,4 +58,3 @@ describe('Component: MarkdownDemoTestController', () => {
 })
 class MarkdownDemoTestControllerComponent {
 }
-

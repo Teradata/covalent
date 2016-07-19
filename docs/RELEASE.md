@@ -16,8 +16,8 @@ Execute `npm test` to test the code with `tslint` and `karma`, provided the code
 
 #### Bump Version
 
-First, double check what kind of release is going to be published. It varies if its a `dev`, `patch`, `minor` or `major` release.  
-Execute `npm run bump-[dev|patch|minor|major]` to bump the release.   
+First, double check what kind of release is going to be published. It varies if its a `dev`, `patch`, `minor`, `major` or `[version]` release.  
+Execute `npm run bump-[dev|patch|minor|major]` to bump the release or execute `gulp bump-version --ver [version]`.   
 NOTE: Caution when using this command, since it will change the version on every module's package.json within `src/platform`.
 
 #### Build
@@ -32,7 +32,7 @@ Execute `npm run build` to build the code you want to release.
 
 #### Release
 
-Execute `npm run release` to publish to NPM. At the moment it goes into every package within `deploy/platform` that has a `package.json` file and publishes into [public NPM registry](https://www.npmjs.com/).  
+Execute `npm run publish` to publish to NPM. At the moment it goes into every package within `deploy/platform` that has a `package.json` file and publishes into [public NPM registry](https://www.npmjs.com/).  
 It will fail to publish if you try to upload a version that already exists in the registry. Use wisely.
 
 NOTE: Tagging version and merging to master/develop would have to be done manually.
@@ -44,9 +44,9 @@ NOTE: Tagging version and merging to master/develop would have to be done manual
 
 #### Start Release
 
-Execute `npm run start-release -- [version] [bump]` to start the automatic release process. The steps executed are:
+Execute `npm run start-release -- [version]` to start the automatic release process. The steps executed are:
   1. Creating a `release/[version]` branch using `git flow release`.
-  2. Bumping its version to a [bump] release and commiting bumped version files.
+  2. Bumping its version to [version] release and commiting bumped version files.
   3. Publishing `release/[version]` branch into repository. 
   4. Executes `npm run test`.
 
