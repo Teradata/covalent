@@ -18,8 +18,9 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   private _classes: string[] = [];
 
   /**
-   * tdMediaToggle: MediaQuery
-   * Toggles attributes, classes and styles if query is matched or not'.
+   * tdMediaToggle: string
+   * Media query used to evaluate screen/window size.
+   * Toggles attributes, classes and styles if media query is matched.
    */
   @Input('tdMediaToggle')
   set query(query: string) {
@@ -30,8 +31,8 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   /**
-   * attributes: {[key: string]: string}
-   * Attributes to be toggled'.
+   * mediaAttributes: {[key: string]: string}
+   * Attributes to be toggled when media query matches.
    */
   @Input('mediaAttributes')
   set attributes(attributes: any) {
@@ -39,8 +40,8 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   /**
-   * classes: string[]
-   * CSS Classes to be toggled'.
+   * mediaClasses: string[]
+   * CSS Classes to be toggled when media query matches.
    */
   @Input('mediaClasses')
   set classes(classes: string[]) {
@@ -48,8 +49,8 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   /**
-   * styles: {[key: string]: string}
-   * CSS Styles to be toggled'.
+   * mediaStyles: {[key: string]: string}
+   * CSS Styles to be toggled when media query matches.
    */
   @Input('mediaStyles')
   set styles(styles: any) {
@@ -59,8 +60,8 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   constructor(private _renderer: Renderer, private _elementRef: ElementRef, private _mediaService: TdMediaService) { }
 
   ngOnInit(): void {
-    this._mediaChange(this._mediaService.evaluate(this._query));
-    this._subscription = this._mediaService.register(this._query).subscribe((matches: boolean) => {
+    this._mediaChange(this._mediaService.query(this._query));
+    this._subscription = this._mediaService.registerQuery(this._query).subscribe((matches: boolean) => {
       this._mediaChange(matches);
     });
   }

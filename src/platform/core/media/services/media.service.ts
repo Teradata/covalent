@@ -29,21 +29,23 @@ export class TdMediaService {
   }
 
   /**
-   * Evaluates the query to see if it matches the window and returns 'true' or 'false'.
+   * Used to evaluate whether a given media query is true or false given the current device's screen / window size.
    */
-  public evaluate(query: string): boolean {
+  public query(query: string): boolean {
     if (this._queryMap.get(query.toLowerCase())) {
-      query = this._queryMap.get(query);
+      query = this._queryMap.get(query.toLowerCase());
     }
     return window.matchMedia(query).matches;
   }
 
   /**
-   * Creates an observable for the query passed as argument, and returns it.
+   * Registers a media query and returns an [Observable] that will re-evaluate and 
+   * return if the given media query matches on window resize.
+   * Note: don't forget to unsubscribe from [Observable] when finished watching.
    */
-  public register(query: string): Observable<any> {
+  public registerQuery(query: string): Observable<any> {
     if (this._queryMap.get(query.toLowerCase())) {
-      query = this._queryMap.get(query);
+      query = this._queryMap.get(query.toLowerCase());
     }
     if (!this._querySources[query]) {
       this._querySources[query] = new Subject<any>();
