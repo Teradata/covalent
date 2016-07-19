@@ -5,7 +5,7 @@ set -e
 
 echo "Started release $version"
 
-git flow release start $version develop
+git flow release start v$version develop
 
 gulp bump-version --ver $version
 
@@ -13,8 +13,11 @@ git add -A .
 
 git commit -a -m "Version bump"
 
-echo "Publishing release $version"
-git flow release publish $version
+echo "Publishing release v$version"
+git flow release publish v$version
+
+echo "Executed tslint test"
+npm run tslint
 
 echo "Executed unit tests"
 npm run test

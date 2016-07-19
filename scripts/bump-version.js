@@ -5,6 +5,7 @@ var bump = require('gulp-bump');
 var gulpif = require('gulp-if');
 var util = require('gulp-util');
 var semver = require('semver');
+var merge = require('merge2');
 var config = require('../build.conf');
 
 var minimist = require('minimist');
@@ -25,7 +26,13 @@ gulp.task('bump-version', function(){
         message: '--ver selected as input is not supported.'
       });
   };
-  return gulp.src(config.paths.packagejson)
+  var mainPackageJson = gulp.src('package.json')
   .pipe(gulpif(isVerType, bump({type: options.ver}), bump({version: options.ver})))
   .pipe(gulp.dest('.'));
+
+  var platformPackageJsons = gulp.src(config.paths.packagejson)
+  .pipe(gulpif(isVerType, bump({type: options.ver}), bump({version: options.ver})))
+  .pipe(gulp.dest('src/'))
+
+  return merge(mainPackageJson, platformPackageJsons);
 });

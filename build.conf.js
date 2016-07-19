@@ -3,10 +3,7 @@
 module.exports = {
   paths: {
     packagejson: [
-      '**/**/package.json',
-      '!dist/**',
-      '!deploy/**',
-      '!node_modules/**'
+      'src/**/package.json'
     ],
     tsfiles: [
       'src/typings.d.ts',
