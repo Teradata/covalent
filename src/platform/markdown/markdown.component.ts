@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 declare var showdown: any;
 
@@ -11,10 +11,6 @@ declare var showdown: any;
 export class TdMarkdownComponent implements AfterViewInit {
 
   @ViewChild('markdown') content: ElementRef;
-
-  constructor(private renderer: Renderer) {
-
-  }
 
   ngAfterViewInit(): void {
     let code: string = this.content.nativeElement.innerText;

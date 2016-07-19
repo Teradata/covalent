@@ -70,6 +70,7 @@ const barrels: string[] = [
   'app/components/style-guide/typography',
   'app/components/style-guide/material-components',
   'app/components/style-guide/cards',
+  'app/components/style-guide/utility-styles',
   /** @cli-barrel */
 ];
 
@@ -95,6 +96,7 @@ const materialPackages: string[] = [
   'toolbar',
   'grid-list',
   'slide-toggle',
+  'menu',
 ];
 
 materialPackages.forEach(function(pkg: string): void {

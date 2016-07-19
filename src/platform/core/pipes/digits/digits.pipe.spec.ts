@@ -20,10 +20,11 @@ describe('TdDigitsPipe', () => {
 
   it('should return formatted digits', () => {
     expect(pipe.transform('34', undefined)).toEqual('34');
-    expect(pipe.transform(0.45, undefined)).toEqual('0.5');
-    expect(pipe.transform(0.724, 2)).toEqual('0.72');
+    expect(pipe.transform(0.45, undefined)).toEqual(0.45);
+    expect(pipe.transform(0.724, undefined)).toEqual(0.724);
     expect(pipe.transform(535, undefined)).toEqual('535');
     expect(pipe.transform(138540, undefined)).toEqual('138.5 K');
+    expect(pipe.transform(138540, 2)).toEqual('138.54 K');
     expect(pipe.transform(1571800, undefined)).toEqual('1.6 M');
     expect(pipe.transform(1571800, 3)).toEqual('1.572 M');
     expect(pipe.transform(10000000, undefined)).toEqual('10 M');

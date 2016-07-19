@@ -5,7 +5,7 @@
   <md-card-content>
     <p>Replace Loading Registered: {{replaceRegistered}} times</p>
     <p>Circular Loading</p>
-    <div *tdLoading="'test'" *loadingType="'circular'" layout="column" flex>
+    <div *tdLoading="'test'" loadingType="circular" layout="column" flex>
       <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
       </md-input>
       <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
@@ -53,7 +53,7 @@
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <div *tdLoading="'stringName'" *loadingType="'circular'|'linear'">
+        <div *tdLoading="'stringName'" loadingType="circular|linear">
           ...
         </div>
       ]]>

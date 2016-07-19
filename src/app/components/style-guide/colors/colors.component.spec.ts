@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { ColorsComponent } from './colors.component';
 describe('Component: StyleGuideColors', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [ColorsComponent]);
+  beforeEach(() => {
+    addProviders([
+      ColorsComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

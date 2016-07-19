@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -14,7 +14,12 @@ import { ProductIconsComponent } from './product-icons.component';
 describe('Component: StyleGuideProductIcons', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [ProductIconsComponent]);
+  beforeEach(() => {
+    addProviders([
+      ProductIconsComponent,
+    ]);
+  });
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));

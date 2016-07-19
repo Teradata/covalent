@@ -6,6 +6,52 @@
 @mixin toolbar-theme($palette) {
   color: md-color($palette, default-contrast);
 }
+:host {
+  md-sidenav-layout {
+    & > md-content {
+      margin-left: 0 !important;
+    }
+  }
+  @media (min-width: 600px) {
+    md-sidenav-layout {
+      display: flex;
+      height: 100%;
+      & > md-sidenav {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 382px;
+        flex: 0 0 auto;
+        transition: none;
+        &.md-sidenav-closed,
+        &.md-sidenav-closing {
+          visibility: visible;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      & > md-content {
+        margin-left: 0 !important;
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+  }
+  @media (max-width: 599px) {
+    md-sidenav-layout {
+
+      & > md-sidenav {
+        &.md-sidenav-opened,
+        &.md-sidenav-opening,
+        &.md-sidenav-closing {
+          z-index: 3;
+        }
+      }
+      & > md-content {
+        z-index: 2;
+      }
+    }
+  }
+}
 md-toolbar {
   box-shadow: $md-shadow-bottom-z-1;
   z-index: 1;
@@ -19,6 +65,7 @@ md-toolbar {
 .list {
     background-color: #fff;
     text-align: start;
+    
 }
 .content {
     overflow: hidden;
