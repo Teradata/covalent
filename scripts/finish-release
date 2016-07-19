@@ -4,7 +4,7 @@ version=$1
 set -e
 
 echo "Finished release $version"
-git flow release finish ${version}
+git flow release finish $version
 
 echo "Pushed tag $version to main repo"
 git push --tags
