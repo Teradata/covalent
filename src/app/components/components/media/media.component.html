@@ -1,0 +1,134 @@
+<md-card>
+  <md-card-title>Media Queries</md-card-title>
+  <md-card-subtitle>Responsive service & directive (for attributes)</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Media Queries:</p>
+    <md-list>
+      <template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
+        <a md-list-item layout-align="row">
+          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" md-line> {{demo.query}}</h3>
+          <p md-line> matches: {{demo.value}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>    
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdMediaService</md-card-title>
+  <md-card-subtitle>How to use this service</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code>TdMediaService</code></h2>
+    <p>This service is designed to provide basic media query evaluation for responsive applications.</p>
+    <p>It has pre-programmed support for media queries that match the layout 
+      <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
+    </p>
+    <md-list>
+      <template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{bpoint.breakpoint}}</h3>
+          <p md-line> {{bpoint.query}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Methods:</h3>
+    <p>The <code>TdMediaService</code> service has {{mediaServiceMethods.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, NgZone, OnInit, OnDestroy } from '@angular/core';
+        import { TdMediaService } from '@covalent/core';
+        import { Subscription } from 'rxjs/Subscription';
+        ...
+          providers: [ TdMediaService ]
+        })
+        export class Demo implements OnInit, OnDestroy {
+          isSmallScreen: boolean = false;
+          private _querySubscription: Subscription;
+
+          constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) { 
+          }
+
+          checkScreen(): void {
+            this._ngZone.run(() => {
+              this.isSmallScreen = this._mediaService.query('sm'); // or '(min-width: 960px) and (max-width: 1279px)'
+            });
+          }
+
+          watchScreen(): void {
+            this._querySubscription = this._mediaService.registerQuery('sm').subscribe((matches: boolean) => {
+              this._ngZone.run(() => {
+                this.isSmallScreen = matches;
+              });
+            });
+          }
+
+          ngOnInit(): void {
+            this.watchScreen();
+          }
+
+          ngOnDestroy(): void {
+            this._querySubscription.unsubscribe();
+          }
+        }
+      ]]>
+    </td-highlight>
+    <p>Note: Always unsubscribe from [Observable] objects when not using them anymore.</p>
+    <p>A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy] interface.</p>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdMediaToggleDirective</md-card-title>
+  <md-card-subtitle>How to use this directive</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code>tdMediaToggle</code></h2>
+    <p>Simply add the <code>tdMediaToggle</code> attibute with a "media query" value to the element you want to modify depending on screen size.</p>
+    <h3>Properties:</h3>
+    <p>The <code>tdMediaToggle</code> directive has {{mediaAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div tdMediaToggle="sm" [mediaClasses]="['classOne', 'classTwo']" 
+          [mediaAttributes]="{title: 'tooltip'}" [mediaStyles]="{color: 'red'}">
+          ...
+        </div>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdMediaToggleDirective, TdMediaService } from '@covalent/core';
+        ...
+          directives: [ TdMediaToggleDirective ],
+          providers: [ TdMediaService ]
+        })
+        export class Demo {
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>

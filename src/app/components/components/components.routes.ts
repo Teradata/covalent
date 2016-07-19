@@ -8,6 +8,7 @@ import { ExpansionPanelDemoComponent } from './expansion-panel';
 import { FileUploadDemoComponent } from './file-upload';
 import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
+import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
 
 export const componentsRoutes: RouterConfig = [{
@@ -32,6 +33,9 @@ export const componentsRoutes: RouterConfig = [{
     }, {
       component: MarkdownDemoComponent,
       path: 'markdown',
+    }, {
+      component: MediaDemoComponent,
+      path: 'media',
     }, {
       component: PipesComponent,
       path: 'pipes',

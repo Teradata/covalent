@@ -70,3 +70,14 @@ export { TdDigitsPipe } from './pipes/digits/digits.pipe';
  * SERVICES
  */
 export { RESTService, IRestTransform, IRestConfig, IRestQuery, IHttp } from './services/rest.service';
+
+/**
+ * MEDIA
+ */
+import { TdMediaService } from './media/services/media.service';
+
+export const TD_MEDIA_PROVIDERS: Type[] = [
+  TdMediaService,
+];
+export { TdMediaService } from './media/services/media.service';
+export { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
