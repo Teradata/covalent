@@ -3,7 +3,7 @@
 module.exports = {
   paths: {
     packagejson: [
-      'src/**/package.json'
+      'src/**/**/package.json'
     ],
     tsfiles: [
       'src/typings.d.ts',
