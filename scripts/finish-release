@@ -3,10 +3,10 @@ version=$1
 
 set -e
 
-echo "Finished release $version"
-git flow release finish ${version}
+echo "Finished release v$version"
+git flow release finish v$version
 
-echo "Pushed tag $version to main repo"
+echo "Pushed tag v$version to main repo"
 git push --tags
 
 echo "Pushing changes into develop"
