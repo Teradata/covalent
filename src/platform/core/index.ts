@@ -67,11 +67,6 @@ export { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 export { TdDigitsPipe } from './pipes/digits/digits.pipe';
 
 /**
- * SERVICES
- */
-export { RESTService, IRestTransform, IRestConfig, IRestQuery, IHttp } from './services/rest.service';
-
-/**
  * MEDIA
  */
 import { TdMediaService } from './media/services/media.service';

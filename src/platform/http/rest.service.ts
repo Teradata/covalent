@@ -75,9 +75,7 @@ export abstract class RESTService<T> {
 
   public create(obj: T): Observable<T> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
-    // Need to do this till angular fixes the automatic body content type detection issue.
-    requestOptions.headers.append('Content-Type', 'application/json');
-    let request: Observable<Response> = this.http.post(this.buildUrl(), JSON.stringify(obj), requestOptions);
+    let request: Observable<Response> = this.http.post(this.buildUrl(), obj, requestOptions);
     return request.map((res: Response) => {
       if (res.status === 201) {
         return <T>this.transform(res);
@@ -97,9 +95,7 @@ export abstract class RESTService<T> {
 
   public update(id: string | number, obj: T): Observable<T> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
-    // Need to do this till angular fixes the automatic body content type detection issue.
-    requestOptions.headers.append('Content-Type', 'application/json');
-    let request: Observable<Response> = this.http.patch(this.buildUrl(id), JSON.stringify(obj), requestOptions);
+    let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
     return request.map<T>((res: Response) => {
       return <T>this.transform(res);
     }).catch<any>((error: Response) => {
