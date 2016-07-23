@@ -41,7 +41,7 @@ export class CustomInterceptor implements IHttpInterceptor {
 
 ```
 
-Also, you need to bootstrap the interceptors provider
+Also, you need to bootstrap the interceptor providers
 ```
 import { HTTP_PROVIDERS } from '@angular/http';
 import { provideInterceptors } from '@covalent/http';
@@ -72,7 +72,7 @@ Methods:
 
 ### Usage
 
-Service provided with methods that wrap the any service with the core http methods to facilitate REST API calls.
+Abstract class provided with methods that wraps http services to facilitate REST API calls.
 ```
 export interface IHttp {
   delete: (url: string, options?: RequestOptionsArgs) => Observable<Response>;
@@ -95,7 +95,7 @@ export class CustomRESTService extends RESTService<any> {
 
   constructor(private _http: Http) { // or constructor(private _http: HttpInterceptorService) {
     super(_http, {
-      baseUrl: www.api.com,
+      baseUrl: 'www.api.com',
       path: '/path/to/endpoint',
       transform: (res: Response): any => res.json(),
     });
@@ -110,9 +110,9 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `query` | `function(query?: IRestQuery)` | Creates a GET request to the built endpoint URL.
-| `get` | `function(id: string | number)` | Creates a GET request to the built endpoint URL, adding the ID at the end.
-| `create` | `function(obj: T)` | Creates a POST request to the built endpoint URL.
-| `update` | `function(id: string | number, obj: T)` | Creates a PATCH request to the built endpoint URL, adding the ID at the end.
-| `delete` | `function(id: string | number)` | Creates a DELETE request to the built endpoint URL, adding the ID at the end.
+| `query` | `function(query?: IRestQuery)` | Creates a GET request to the generated endpoint URL.
+| `get` | `function(id: string | number)` | Creates a GET request to the generated endpoint URL, adding the ID at the end.
+| `create` | `function(obj: T)` | Creates a POST request to the generated endpoint URL.
+| `update` | `function(id: string | number, obj: T)` | Creates a PATCH request to the generated endpoint URL, adding the ID at the end.
+| `delete` | `function(id: string | number)` | Creates a DELETE request to the generated endpoint URL, adding the ID at the end.
 | `buildUrl` | `function(id?: string | number, query?: IRestQuery)` | Builds the endpoint URL with the configured properties and arguments passed in the method.
