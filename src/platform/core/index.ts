@@ -65,6 +65,7 @@ export { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 export { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
 export { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 export { TdDigitsPipe } from './pipes/digits/digits.pipe';
+export { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
 /**
  * SERVICES

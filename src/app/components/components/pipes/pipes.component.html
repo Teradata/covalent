@@ -142,3 +142,32 @@
     </td-highlight>
   </md-card-content>
  </md-card>
+
+   <md-card>
+  <md-card-title>Truncate</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">The <code>truncate</code> pipe limits a string to a specified <code>length</code> and adds an ellipsis.</p>
+    <md-list>
+      <md-list-item *ngFor="let log of logs">
+        <!-- original value output -->
+        <h3 md-line>Original value: <code>{{ log.text_value }}</code></h3>
+        <!-- truncated value output -->
+        <p md-line>Truncate with a length value of <code>{{ log.truncate_length }}</code>: {{ log.text_value | truncate:log.truncate_length }}</p>
+      </md-list-item>
+    </md-list>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-list>
+            <md-list-item *ngFor="let log of logs">
+              <!-- original value output -->
+              <h3 md-line>Original value: <code>{ { log.text_value } }</code></h3>
+              <!-- truncated value output -->
+              <p md-line>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
+            </md-list-item>
+          </md-list>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>
