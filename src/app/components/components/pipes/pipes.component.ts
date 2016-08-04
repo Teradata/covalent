@@ -5,7 +5,13 @@ import { MdIcon } from '@angular2-material/icon';
 import { MdAnchor } from '@angular2-material/button';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
-import { TdDigitsPipe, TdBytesPipe, TdTimeAgoPipe, TdTimeDifferencePipe, TdTruncatePipe } from '../../../../platform/core';
+import {
+  TdDigitsPipe,
+  TdBytesPipe,
+  TdTimeAgoPipe,
+  TdTimeDifferencePipe,
+  TdTruncatePipe,
+} from '../../../../platform/core';
 
 import { TdHighlightComponent } from '../../../../platform/highlight';
 

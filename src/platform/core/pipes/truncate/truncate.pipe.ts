@@ -15,10 +15,10 @@ export class TdTruncatePipe implements PipeTransform {
 
     if (text.length > length) {
       if (truncated.lastIndexOf(' ') > 0) {
-        truncated = truncated.substring(0, text.lastIndexOf(' ')).trim();
+        truncated = truncated.trim();
       }
 
-      truncated += '...';
+      truncated += '…';
     }
 
     return truncated;
