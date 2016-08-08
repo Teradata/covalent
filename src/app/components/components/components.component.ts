@@ -64,6 +64,11 @@ export class ComponentsComponent {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
+  }, {
+    description: 'Draw Line Chart.',
+    icon: 'show_chart',
+    route: 'line-chart',
+    title: 'Line Chart',
   }];
 
 }

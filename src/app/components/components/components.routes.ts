@@ -10,6 +10,7 @@ import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
+import { LineChartDemoComponent } from './line-chart';
 
 export const componentsRoutes: RouterConfig = [{
   children: [{
@@ -39,7 +40,10 @@ export const componentsRoutes: RouterConfig = [{
     }, {
       component: PipesComponent,
       path: 'pipes',
-    },
+    }, {
+      component: LineChartDemoComponent,
+      path: 'line-chart',
+    }
   ],
   component: ComponentsComponent,
   path: 'components',

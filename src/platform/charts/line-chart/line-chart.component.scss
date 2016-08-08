@@ -1,0 +1,41 @@
+:host {
+
+  .axis {
+  font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 200px;
+  }
+
+  .header {
+    border-radius: 2px 2px 0px 0px;
+    background-color: lightgrey;
+    color: grey;
+    margin-top: 50px;
+    margin-left: 200px;
+    padding-top: 20px;
+    width: 960px;
+    height: 40px;
+    text-align: center;
+  }
+
+}

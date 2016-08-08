@@ -13,14 +13,16 @@ module.exports = function(defaults) {
       'rxjs/**/*.js',
       '@angular/**/*.js',
       '@angular2-material/**/*.js',
-      'showdown/dist/showdown.js'
+      'showdown/dist/showdown.js',
+      'd3/build/d3.min.js'
     ],
     polyfills: [
       'vendor/es6-shim/es6-shim.js',
       'vendor/reflect-metadata/Reflect.js',
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js',
-      'vendor/showdown/dist/showdown.js'
+      'vendor/showdown/dist/showdown.js',
+      'vendor/d3/build/d3.min.js'
     ]
   });
 };

@@ -57,6 +57,11 @@ export class OverviewComponent {
       icon: 'filter_list',
       route: 'pipes',
       title: 'Pipes',
+    }, {
+      color: 'orange-700',
+      icon: 'chrome_reader_mode',
+      route: 'line-chart',
+      title: 'line-chart',
     },
   ];
 }

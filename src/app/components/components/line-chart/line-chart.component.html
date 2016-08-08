@@ -1,0 +1,62 @@
+<md-card>
+  <md-card-title>Line Chart</md-card-title>
+  <md-card-subtitle>Generate Line Chart</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-line-chart filePath="platform/charts/line-chart/data.tsv" xName="Date" yName="Values" dateFormat="%d-%b-%y" title="Values/Year Line Chart">
+    <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
+    </td-line-chart>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdLineChartComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h2><code><![CDATA[<td-line-chart>]]></code></h2>
+     <p>Use <code><![CDATA[<td-line-chart>]]></code> element to draw a line chart</p>
+     <p>Wrap your code snippets in <code><![CDATA[<td-line-chart>]]></code></p>
+     <p>Note: <code>d3.min.js</code> needs to be added as vendor and referenced in `index.html`.</p>
+     <td-highlight lang="javascript">
+      module.exports = function(defaults) {
+        return new Angular2App(defaults, {
+          vendorNpmFiles: [
+            ...
+            'd3/build/d3.min.js'
+          ]
+        });
+      };
+    </td-highlight>
+    and
+    <td-highlight lang="html">
+      <![CDATA[
+        <script src="vendor/d3/build/d3.min.js"></script>
+      ]]>
+    </td-highlight>
+    <h3>Example:</h3>
+    <p>HTML</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-line-chart>
+          <pre><code>
+          <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
+          </code></pre>
+        </td-line-chart>
+         ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdLineChartComponent } from '@covalent/charts';
+        ...
+          directives: [ TdLineChartComponent ]
+        })
+        export class Demo {
+
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>
