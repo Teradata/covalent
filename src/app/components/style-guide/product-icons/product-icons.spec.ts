@@ -1,49 +1,31 @@
 import {
-  beforeEach,
-  addProviders,
-  describe,
-  expect,
-  it,
+  TestBed,
   inject,
-} from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+  ComponentFixture,
+  TestComponentBuilder } from '@angular/core/testing';
+
 import { ProductIconsComponent } from './product-icons.component';
 
-describe('Component: StyleGuideProductIcons', () => {
+describe('Component: ProductIcons', () => {
   let builder: TestComponentBuilder;
 
-  beforeEach(() => {
-    addProviders([
+  TestBed.configureTestingModule({
+    providers: [
       ProductIconsComponent,
-    ]);
+    ],
   });
+
+  TestBed.compileComponents();
 
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([ProductIconsComponent], (component: ProductIconsComponent) => {
-    expect(component).toBeTruthy();
-  }));
-
   it('should create the component', inject([], () => {
-    return builder.createAsync(ProductIconsTestControllerComponent)
+    return builder.createAsync(ProductIconsComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(ProductIconsComponent));
-        expect(query).toBeTruthy();
-        expect(query.componentInstance).toBeTruthy();
+        let component: ProductIconsComponent = fixture.componentInstance;
+        expect(component).toBeTruthy();
       });
   }));
 });
-
-@Component({
-  directives: [ProductIconsComponent],
-  selector: 'td-test',
-  template: `
-    <td-style-guide-product-icons></td-style-guide-product-icons>
-  `,
-})
-class ProductIconsTestControllerComponent {
-}
