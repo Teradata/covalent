@@ -113,6 +113,10 @@ import { TdLoadingService } from './loading/services/loading.service';
 import { TdLoadingDirective } from './loading/directives/loading.directive';
 import { TdLoadingComponent } from './loading/loading.component';
 
+export const TD_LOADING_ENTRY_COMPONENTS: Type[] = [
+  TdLoadingComponent,
+];
+
 export { LoadingType } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 export { TdLoadingDirective } from './loading/directives/loading.directive'

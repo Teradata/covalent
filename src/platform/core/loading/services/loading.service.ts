@@ -1,4 +1,4 @@
-import { Injectable, ComponentResolver, ComponentFactory } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -28,7 +28,7 @@ export class TdLoadingService {
   private _loadingSources: {[key: string]: Subject<any>} = {};
   private _loadingObservables: {[key: string]: Observable<any>} = {};
 
-  constructor(private _componentResolver: ComponentResolver,
+  constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _injector: Injector) {
   }
 
@@ -153,17 +153,15 @@ export class TdLoadingService {
       throw 'Name duplication: Loading Component name conflict.';
     }
     return new Promise((resolve: Function) => {
-      this._componentResolver.resolveComponent(TdLoadingComponent)
-      .then((cf: ComponentFactory<any>) => {
-        this._context[name].loadingRef = cf.create(this._injector);
-        this._context[name].times = 0;
-        this._mapOptions(options, this._context[name].loadingRef.instance);
-        let compRef: ILoadingRef = {
-          observable: this._registerLoadingComponent(name),
-          ref: this._context[name].loadingRef,
-        };
-        resolve(compRef);
-      });
+      this._context[name].loadingRef = this._componentFactoryResolver
+        .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+      this._context[name].times = 0;
+      this._mapOptions(options, this._context[name].loadingRef.instance);
+      let compRef: ILoadingRef = {
+        observable: this._registerLoadingComponent(name),
+        ref: this._context[name].loadingRef,
+      };
+      resolve(compRef);
     });
   }
 
