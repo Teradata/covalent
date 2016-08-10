@@ -29,7 +29,6 @@ const barrels: string[] = [
   'rxjs',
 
   // Library specific barrels.
-  'platform',
   'platform/core',
   'platform/highlight',
   'platform/file-upload',
@@ -41,14 +40,6 @@ const barrels: string[] = [
   'app/components/docs',
   'app/components/layouts',
   'app/components/style-guide',
-  'app/components/style-guide/colors',
-  'app/components/style-guide/iconography',
-  'app/components/style-guide/logo',
-  'app/components/style-guide/product-icons',
-  'app/components/style-guide/typography',
-  'app/components/style-guide/material-components',
-  'app/components/style-guide/cards',
-  'app/components/style-guide/utility-styles',
   /** @cli-barrel */
 ];
 

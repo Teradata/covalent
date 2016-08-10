@@ -31,10 +31,10 @@ import { CovalentMarkdownModule } from '../platform/markdown';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     appRoutes,
-  ],
+  ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-  ], // additional providers
+  ], // additional providers needed for this module
   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
   bootstrap: [ DocsAppComponent ],
 })
