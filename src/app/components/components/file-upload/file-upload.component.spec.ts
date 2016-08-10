@@ -5,7 +5,7 @@ import {
   TestComponentBuilder,
 } from '@angular/core/testing';
 
-import { FileUploadDemoComponent } from './highlight.component';
+import { FileUploadDemoComponent } from './file-upload.component';
 
 describe('Component: FileUploadDemo', () => {
   let builder: TestComponentBuilder;
