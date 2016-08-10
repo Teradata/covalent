@@ -83,21 +83,24 @@ barrels.forEach((barrelName: string) => {
 // Angular Material 2 Packages
 const materialPackages: string[] = [
   'button',
+  'button-toggle',
   'card',
   'checkbox',
   'core',
+  'grid-list',
   'icon',
   'input',
   'list',
+  'menu',
   'progress-bar',
   'progress-circle',
   'radio',
   'sidenav',
+  'slider',
+  'slide-toggle',
   'tabs',
   'toolbar',
-  'grid-list',
-  'slide-toggle',
-  'menu',
+  'tooltip',
 ];
 
 materialPackages.forEach(function(pkg: string): void {
