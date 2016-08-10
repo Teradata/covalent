@@ -2,7 +2,8 @@ import {
   TestBed,
   inject,
   ComponentFixture,
-  TestComponentBuilder } from '@angular/core/testing';
+  TestComponentBuilder,
+} from '@angular/core/testing';
 
 import { ProductIconsComponent } from './product-icons.component';
 

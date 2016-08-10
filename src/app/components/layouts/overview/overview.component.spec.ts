@@ -1,12 +1,13 @@
 import {
   TestBed,
   inject,
+  ComponentFixture,
+  TestComponentBuilder,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/core/testing';
 
 import { OverviewComponent } from './overview.component';
 
-describe('Component: Overview', () => {
+describe('Component: LayoutsOverview', () => {
   let builder: TestComponentBuilder;
 
   TestBed.configureTestingModule({

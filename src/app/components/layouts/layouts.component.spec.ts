@@ -1,8 +1,9 @@
 import {
   TestBed,
   inject,
+  ComponentFixture,
+  TestComponentBuilder,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/core/testing';
 
 import { LayoutsComponent } from './layouts.component';
 

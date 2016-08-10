@@ -1,8 +1,9 @@
 import {
   TestBed,
   inject,
+  ComponentFixture,
+  TestComponentBuilder,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/core/testing';
 
 import { NavViewComponent } from './nav-view.component';
 
