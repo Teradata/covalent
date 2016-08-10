@@ -5,7 +5,7 @@ import { TdMediaService } from '../../../../platform/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-media-demo',
+  selector: 'media-demo',
   styleUrls: [ 'media.component.css' ],
   templateUrl: 'media.component.html',
 })

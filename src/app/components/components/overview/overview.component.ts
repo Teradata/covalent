@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-components-overview',
+  selector: 'components-overview',
   styleUrls: ['overview.component.css'],
   templateUrl: 'overview.component.html',
 })

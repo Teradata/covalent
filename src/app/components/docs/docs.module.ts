@@ -5,14 +5,14 @@ import { JsonpModule } from '@angular/http';
 import { docsRoutes } from './docs.routes';
 
 import { DocsComponent } from './docs.component';
-import { DocsOverviewComponent } from './overview';
-import { CreatingComponent } from './creating';
-import { AngularMaterialComponent } from './angular-material';
-import { Angular2Component } from './angular-2';
-import { BuildTasksComponent } from './build-tasks';
-import { DeploymentComponent } from './deployment';
-import { IconsComponent } from './icons';
-import { TestingComponent } from './testing';
+import { DocsOverviewComponent } from './overview/overview.component';
+import { CreatingComponent } from './creating/creating.component';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { Angular2Component } from './angular-2/angular-2.component';
+import { BuildTasksComponent } from './build-tasks/build-tasks.component';
+import { DeploymentComponent } from './deployment/deployment.component';
+import { IconsComponent } from './icons/icons.component';
+import { TestingComponent } from './testing/testing.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentFileModule } from '../../../platform/file-upload';

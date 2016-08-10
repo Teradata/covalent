@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-markdown-demo',
+  selector: 'markdown-demo',
   styleUrls: ['markdown.component.css'],
   templateUrl: 'markdown.component.html',
 })

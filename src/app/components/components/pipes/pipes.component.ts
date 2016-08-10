@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-pipes',
+  selector: 'pipes-demo',
   styleUrls: [ 'pipes.component.css' ],
   templateUrl: 'pipes.component.html',
 })

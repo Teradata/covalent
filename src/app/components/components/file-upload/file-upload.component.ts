@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-file-upload-demo',
+  selector: 'file-upload-demo',
   styleUrls: ['file-upload.component.css'],
   templateUrl: 'file-upload.component.html',
 })

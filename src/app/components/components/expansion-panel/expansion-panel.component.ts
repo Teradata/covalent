@@ -1,17 +1,8 @@
 import { Component } from '@angular/core';
 
-import { MdInput } from '@angular2-material/input';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdIcon } from '@angular2-material/icon';
-import { MdButton } from '@angular2-material/button';
-
-import { TdExpansionPanelComponent } from '../../../../platform/core';
-import { TdHighlightComponent } from '../../../../platform/highlight';
-
 @Component({
   moduleId: module.id,
-  selector: 'td-expansion-panel-demo',
+  selector: 'expansion-panel-demo',
   styleUrls: ['expansion-panel.component.css'],
   templateUrl: 'expansion-panel.component.html',
 })

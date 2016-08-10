@@ -4,7 +4,7 @@ import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../plat
 
 @Component({
   moduleId: module.id,
-  selector: 'td-loading-demo',
+  selector: 'loading-demo',
   styleUrls: [ 'loading.component.css' ],
   templateUrl: 'loading.component.html',
 })
