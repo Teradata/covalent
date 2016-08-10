@@ -1,4 +1,4 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components.component';
 import { OverviewComponent }  from './overview';
@@ -11,7 +11,7 @@ import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
 
-export const componentsRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
       component: OverviewComponent,
       path: '',
@@ -44,3 +44,5 @@ export const componentsRoutes: RouterConfig = [{
   component: ComponentsComponent,
   path: 'components',
 }];
+
+export const componentsRoutes: any = RouterModule.forRoot(routes, { useHash: true });

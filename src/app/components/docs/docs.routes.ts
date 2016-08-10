@@ -1,4 +1,4 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { DocsComponent } from './docs.component';
 import { OverviewComponent } from './overview';
@@ -10,7 +10,7 @@ import { DeploymentComponent } from './deployment';
 import { IconsComponent } from './icons';
 import { TestingComponent } from './testing';
 
-export const docsRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
       component: OverviewComponent,
       path: '',
@@ -40,3 +40,5 @@ export const docsRoutes: RouterConfig = [{
   component: DocsComponent,
   path: 'docs',
 }];
+
+export const docsRoutes: any = RouterModule.forRoot(routes, { useHash: true });

@@ -36,7 +36,7 @@ const barrels: string[] = [
   'platform/markdown',
 
   // App specific barrels.
-  'app',
+  'app/',
   'app/components/home',
   'app/components/components',
   'app/components/components/overview',
