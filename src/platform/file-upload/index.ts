@@ -3,9 +3,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 import { MdCoreModule, MdRippleModule, PortalModule,
          OverlayModule, RtlModule, MdLiveAnnouncer } from '@angular2-material/core';
@@ -51,8 +50,8 @@ export { TdFileService, IUploadOptions } from './services/file.service';
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     FormsModule,
-    RouterModule,
     CommonModule,
     MaterialModule,
   ],
