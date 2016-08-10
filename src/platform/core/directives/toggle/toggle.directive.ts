@@ -1,7 +1,6 @@
 import { Directive, ElementRef, Input, HostBinding, Renderer, AnimationPlayer } from '@angular/core';
 import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
 import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
-import { TimerWrapper } from '@angular/common/src/facade/async';
 
 @Directive({
   selector: '[tdToggle]',
@@ -27,7 +26,7 @@ export class TdToggleDirective {
   @Input('tdToggle')
   set state(state: boolean) {
     this._state = state;
-    TimerWrapper.clearTimeout(this._timeoutNumber);
+    clearTimeout(this._timeoutNumber);
     if (state) {
       this.hide();
     } else {
@@ -89,13 +88,10 @@ export class TdToggleDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g. hide event started before show event is completed.
      */
-    this._timeoutNumber = TimerWrapper.setTimeout(
-      () => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
-        this._hiddenState = this._state;
-      },
-      this.duration
-    );
+    this._timeoutNumber = setTimeout(() => {
+      this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
+      this._hiddenState = this._state;
+    }, this.duration);
   }
 
   /**
@@ -138,12 +134,9 @@ export class TdToggleDirective {
        * before the previous one ends. The onComplete event is not executed.
        * e.g. hide event started before show event is completed.
        */
-      this._timeoutNumber = TimerWrapper.setTimeout(
-        () => {
-          this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-        },
-        this.duration
-      );
+      this._timeoutNumber = setTimeout(() => {
+        this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+      }, this.duration);
     });
   }
 }

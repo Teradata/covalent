@@ -2,7 +2,6 @@ import { Directive, ElementRef, Input, Output, EventEmitter, HostBinding } from 
 import { Renderer, AnimationPlayer } from '@angular/core';
 import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
 import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
-import { TimerWrapper } from '@angular/common/src/facade/async';
 
 @Directive({
   selector: '[tdFade]',
@@ -29,7 +28,7 @@ export class TdFadeDirective {
   @Input('tdFade')
   set state(state: boolean) {
     this._state = state;
-    TimerWrapper.clearTimeout(this._timeoutNumber);
+    clearTimeout(this._timeoutNumber);
     if (state) {
       this.hide();
     } else {
@@ -102,15 +101,13 @@ export class TdFadeDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g.hide event started before show event is completed.
      */
-    this._timeoutNumber = TimerWrapper.setTimeout(
-      () => {
-        TimerWrapper.setTimeout(
-          () => { this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none'); }, 0);
-        this._hiddenState = this._state;
-        this.fadeOut.emit(undefined);
-      },
-      this.duration
-    );
+    this._timeoutNumber = setTimeout(() => {
+      setTimeout(() => {
+        this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
+      }, 0);
+      this._hiddenState = this._state;
+      this.fadeOut.emit(undefined);
+    }, this.duration);
   }
 
   /**
@@ -138,12 +135,9 @@ export class TdFadeDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g. hide event started before show event is completed.
      */
-    this._timeoutNumber = TimerWrapper.setTimeout(
-      () => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-        this.fadeIn.emit(undefined);
-      },
-      this.duration
-    );
+    this._timeoutNumber = setTimeout(() => {
+      this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+      this.fadeIn.emit(undefined);
+    }, this.duration);
   }
 }

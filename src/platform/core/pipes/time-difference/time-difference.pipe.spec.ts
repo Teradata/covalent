@@ -1,9 +1,3 @@
-import {
-  describe,
-  expect,
-  beforeEach,
-  it,
-} from '@angular/core/testing';
 import { TdTimeDifferencePipe } from './time-difference.pipe';
 
 describe('TdTimeDifferencePipe', () => {
