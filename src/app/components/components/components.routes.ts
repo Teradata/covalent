@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components.component';
-import { OverviewComponent }  from './overview';
+import { ComponentsOverviewComponent }  from './overview';
 import { HighlightDemoComponent } from './highlight';
 import { StepsDemoComponent } from './steps';
 import { ExpansionPanelDemoComponent } from './expansion-panel';
@@ -13,7 +13,7 @@ import { PipesComponent } from './pipes';
 
 const routes: Routes = [{
   children: [{
-      component: OverviewComponent,
+      component: ComponentsOverviewComponent,
       path: '',
     }, {
       component: HighlightDemoComponent,

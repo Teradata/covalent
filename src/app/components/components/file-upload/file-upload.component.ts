@@ -8,13 +8,6 @@ import { TdFileUploadComponent } from '../../../../platform/file-upload';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    TdFileUploadComponent,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-file-upload-demo',
   styleUrls: ['file-upload.component.css'],

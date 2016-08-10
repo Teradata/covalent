@@ -9,15 +9,6 @@ import { MdAnchor } from '@angular2-material/button';
 import { TD_LAYOUT_DIRECTIVES, TdExpansionPanelComponent } from '../../../platform/core';
 
 @Component({
-  directives: [
-    ROUTER_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdIcon,
-    MdAnchor,
-    TD_LAYOUT_DIRECTIVES,
-    TdExpansionPanelComponent,
-  ],
   moduleId: module.id,
   selector: 'td-home',
   styleUrls: ['home.component.css'],

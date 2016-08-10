@@ -9,7 +9,6 @@ import { MdButton } from '@angular2-material/button';
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  directives: [ MdToolbar , MD_SIDENAV_DIRECTIVES, MdIcon, MdButton ],
   moduleId: module.id,
   selector: 'td-layout-nav',
   styleUrls: [ 'layout-nav.component.css' ],

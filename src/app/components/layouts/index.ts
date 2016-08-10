@@ -1,1 +1,1 @@
-export { LayoutsComponent } from './layouts.component';
+export { LayoutsModule } from './layouts.module';

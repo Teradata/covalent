@@ -7,12 +7,6 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    TdHighlightComponent,
-    MD_BUTTON_DIRECTIVES,
-  ],
   moduleId: module.id,
   selector: 'td-utility-styles',
   templateUrl: 'utility-styles.component.html',

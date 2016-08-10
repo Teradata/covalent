@@ -7,7 +7,6 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { TdToggleDirective } from '../directives/toggle/toggle.directive';
 
 @Component({
-  directives: [ TdToggleDirective, MdIcon, MD_LIST_DIRECTIVES ],
   moduleId: module.id,
   selector: 'td-expansion-panel',
   styleUrls: [ 'expansion-panel.component.css' ],

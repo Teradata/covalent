@@ -7,14 +7,6 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    MD_INPUT_DIRECTIVES,
-    MdButton,
-    MD_LIST_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-design-patterns-cards',
   styleUrls: ['cards.component.css'],

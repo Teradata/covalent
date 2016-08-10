@@ -8,13 +8,6 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { TD_LAYOUT_DIRECTIVES } from '../../../platform/core';
 
 @Component({
-  directives: [
-    ROUTER_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    TD_LAYOUT_DIRECTIVES,
-    MdButton,
-    MdIcon,
-  ],
   moduleId: module.id,
   selector: 'td-style-guide',
   styleUrls: ['style-guide.component.css'],

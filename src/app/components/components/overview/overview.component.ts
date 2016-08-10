@@ -5,18 +5,12 @@ import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MdIcon } from '@angular2-material/icon';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    ROUTER_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdIcon,
-  ],
   moduleId: module.id,
   selector: 'td-components-overview',
   styleUrls: ['overview.component.css'],
   templateUrl: 'overview.component.html',
 })
-export class OverviewComponent {
+export class ComponentsOverviewComponent {
   items: Object[] = [{
       color: 'pink-700',
       icon: 'code',

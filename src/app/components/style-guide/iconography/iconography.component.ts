@@ -9,15 +9,7 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
 import { TdOrderByPipe } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    MD_BUTTON_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MD_INPUT_DIRECTIVES,
-    MdIcon,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  pipes: [ TdOrderByPipe ],
   selector: 'td-style-guide-iconography',
   styleUrls: ['iconography.component.css'],
   templateUrl: 'iconography.component.html',

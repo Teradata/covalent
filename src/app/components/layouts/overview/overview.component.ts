@@ -7,18 +7,12 @@ import { MdIcon } from '@angular2-material/icon';
 import { TD_LAYOUT_DIRECTIVES } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    TD_LAYOUT_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdIcon,
-    ROUTER_DIRECTIVES,
-  ],
   moduleId: module.id,
   selector: 'td-layouts-overview',
   styleUrls: ['overview.component.css'],
   templateUrl: 'overview.component.html',
 })
-export class OverviewComponent {
+export class LayoutsOverviewComponent {
 
   items: Object[] = [{
     description: 'A simple layout with toolbar & sidenav',

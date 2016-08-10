@@ -6,7 +6,6 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 @Component({
-  directives: [ MdToolbar , MD_LIST_DIRECTIVES, MD_CARD_DIRECTIVES ],
   moduleId: module.id,
   selector: 'td-layout-card-over',
   styleUrls: [ 'layout-card-over.component.css' ],

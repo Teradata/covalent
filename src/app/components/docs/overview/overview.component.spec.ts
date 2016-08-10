@@ -5,14 +5,14 @@ import {
   TestComponentBuilder,
 } from '@angular/core/testing';
 
-import { OverviewComponent } from './overview.component';
+import { DocsOverviewComponent } from './overview.component';
 
 describe('Component: DocsOverview', () => {
   let builder: TestComponentBuilder;
 
   TestBed.configureTestingModule({
     providers: [
-      OverviewComponent,
+      DocsOverviewComponent,
     ],
   });
 
@@ -23,9 +23,9 @@ describe('Component: DocsOverview', () => {
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(OverviewComponent)
+    return builder.createAsync(DocsOverviewComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let component: OverviewComponent = fixture.componentInstance;
+        let component: DocsOverviewComponent = fixture.componentInstance;
         expect(component).toBeTruthy();
       });
   }));

@@ -14,11 +14,6 @@ export enum LoadingType {
 }
 
 @Component({
-  directives: [
-    MD_PROGRESS_BAR_DIRECTIVES,
-    MD_PROGRESS_CIRCLE_DIRECTIVES,
-    TdFadeDirective,
-  ],
   moduleId: module.id,
   selector: 'td-loading',
   styleUrls: [ 'loading.component.css' ],

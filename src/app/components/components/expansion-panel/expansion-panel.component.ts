@@ -10,15 +10,6 @@ import { TdExpansionPanelComponent } from '../../../../platform/core';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    TdExpansionPanelComponent,
-    MdInput,
-    MD_LIST_DIRECTIVES,
-    MdIcon,
-    MdButton,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-expansion-panel-demo',
   styleUrls: ['expansion-panel.component.css'],

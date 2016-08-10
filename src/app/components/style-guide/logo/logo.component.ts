@@ -11,17 +11,6 @@ import { TD_LAYOUT_DIRECTIVES } from '../../../../platform/core';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MdButton,
-    MdAnchor,
-    MD_CARD_DIRECTIVES,
-    MD_SIDENAV_DIRECTIVES,
-    ROUTER_DIRECTIVES,
-    TD_LAYOUT_DIRECTIVES,
-    MdIcon,
-    MdToolbar,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-style-guide-logo',
   styleUrls: ['logo.component.css'],

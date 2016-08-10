@@ -12,7 +12,6 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { TdLayoutService } from './services/layout.service';
 
 @Component({
-  directives: [ MdToolbar , MD_SIDENAV_DIRECTIVES, MdIcon, MdButton, MD_LIST_DIRECTIVES ],
   moduleId: module.id,
   providers: [ TdLayoutService ],
   selector: 'td-layout',

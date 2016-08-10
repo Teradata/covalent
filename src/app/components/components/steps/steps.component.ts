@@ -8,13 +8,6 @@ import { TD_STEPS_DIRECTIVES, StepState, IStepChangeEvent } from '../../../../pl
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    TD_STEPS_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-steps-demo',
   styleUrls: [ 'steps.component.css' ],

@@ -20,27 +20,6 @@ import { MD_MENU_DIRECTIVES } from '@angular2-material/menu';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    ROUTER_DIRECTIVES,
-    MD_BUTTON_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    MD_INPUT_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdProgressBar,
-    MdProgressCircle,
-    MdSpinner,
-    MdRadioButton,
-    MdRadioGroup,
-    MD_SIDENAV_DIRECTIVES,
-    MdToolbar,
-    MdCheckbox,
-    MD_TABS_DIRECTIVES,
-    MD_SLIDE_TOGGLE_DIRECTIVES,
-    MD_GRID_LIST_DIRECTIVES,
-    TdHighlightComponent,
-    MD_MENU_DIRECTIVES,
-  ],
   moduleId: module.id,
   providers: [ MdUniqueSelectionDispatcher ],
   selector: 'td-design-patterns-material-components',

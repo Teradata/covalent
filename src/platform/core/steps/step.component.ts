@@ -13,7 +13,6 @@ export enum StepState {
 }
 
 @Component({
-  directives: [ MdIcon, MD_LIST_DIRECTIVES, TdToggleDirective ],
   moduleId: module.id,
   selector: 'td-step',
   styleUrls: [ 'step.component.css' ],

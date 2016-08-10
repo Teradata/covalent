@@ -5,14 +5,8 @@ import { TdMarkdownComponent } from '../../../../platform/markdown';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    TdMarkdownComponent,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  selector: 'td-markdown',
+  selector: 'td-markdown-demo',
   styleUrls: ['markdown.component.css'],
   templateUrl: 'markdown.component.html',
 })

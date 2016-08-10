@@ -8,7 +8,6 @@ import { MdAnchor } from '@angular2-material/button';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [ MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MdIcon, MdAnchor, TdHighlightComponent ],
   moduleId: module.id,
   selector: 'td-docs-testing',
   styleUrls: ['testing.component.css'],

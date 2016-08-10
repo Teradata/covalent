@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { DocsComponent } from './docs.component';
-import { OverviewComponent } from './overview';
+import { DocsOverviewComponent } from './overview';
 import { CreatingComponent } from './creating';
 import { AngularMaterialComponent } from './angular-material';
 import { Angular2Component } from './angular-2';
@@ -12,7 +12,7 @@ import { TestingComponent } from './testing';
 
 const routes: Routes = [{
   children: [{
-      component: OverviewComponent,
+      component: DocsOverviewComponent,
       path: '',
     }, {
       component: Angular2Component,

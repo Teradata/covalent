@@ -6,7 +6,6 @@ import { MdIcon } from '@angular2-material/icon';
 import { MdAnchor } from '@angular2-material/button';
 
 @Component({
-  directives: [ MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MdIcon, MdAnchor ],
   moduleId: module.id,
   selector: 'td-docs-angular-2',
   styleUrls: ['angular-2.component.css'],

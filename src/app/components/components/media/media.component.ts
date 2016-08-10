@@ -10,14 +10,6 @@ import { TdMediaToggleDirective, TdMediaService } from '../../../../platform/cor
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    MD_INPUT_DIRECTIVES,
-    TdMediaToggleDirective,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-media-demo',
   styleUrls: [ 'media.component.css' ],

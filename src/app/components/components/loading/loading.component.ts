@@ -9,14 +9,6 @@ import { TdLoadingDirective, TdLoadingService, ILoadingOptions, LoadingType } fr
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    MD_INPUT_DIRECTIVES,
-    TdLoadingDirective,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   providers: [TdLoadingService],
   selector: 'td-loading-demo',

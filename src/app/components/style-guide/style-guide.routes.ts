@@ -1,4 +1,4 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { StyleGuideComponent } from './style-guide.component';
 import { LogoComponent } from './logo';
@@ -10,7 +10,7 @@ import { MaterialComponentsComponent } from './material-components';
 import { CardsComponent } from './cards';
 import { UtilityStylesComponent } from './utility-styles';
 
-export const styleGuideRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
       component: LogoComponent,
       path: '',
@@ -40,3 +40,5 @@ export const styleGuideRoutes: RouterConfig = [{
   component: StyleGuideComponent,
   path: 'style-guide',
 }];
+
+export const styleGuideRoutes: any = RouterModule.forRoot(routes, { useHash: true });

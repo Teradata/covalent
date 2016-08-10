@@ -10,15 +10,6 @@ import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_BUTTON_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    MdToolbar,
-    MD_LIST_DIRECTIVES,
-    MD_GRID_LIST_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
   selector: 'td-style-guide-colors',
   styleUrls: ['colors.component.css'],

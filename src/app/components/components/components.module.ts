@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, JsonpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { MaterialModule, TD_MEDIA_PROVIDERS } from '../../../platform/core';
+import { JsonpModule } from '@angular/http';
 
 import { componentsRoutes } from './components.routes';
 
 import { ComponentsComponent } from './components.component';
-import { OverviewComponent }  from './overview';
+import { ComponentsOverviewComponent }  from './overview';
 import { HighlightDemoComponent } from './highlight';
 import { StepsDemoComponent } from './steps';
 import { ExpansionPanelDemoComponent } from './expansion-panel';
@@ -19,12 +15,15 @@ import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
 
-
+import { CovalentCoreModule } from '../../../platform/core';
+import { CovalentFileModule } from '../../../platform/file-upload';
+import { CovalentHighlightModule } from '../../../platform/highlight';
+import { CovalentMarkdownModule } from '../../../platform/markdown';
 
 @NgModule({
   declarations: [
     ComponentsComponent,
-    OverviewComponent,
+    ComponentsOverviewComponent,
     HighlightDemoComponent,
     StepsDemoComponent,
     ExpansionPanelDemoComponent,
@@ -35,16 +34,12 @@ import { PipesComponent } from './pipes';
     PipesComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
     JsonpModule,
-    MaterialModule,
-    RouterModule,
+    CovalentCoreModule.forRoot(),
+    CovalentFileModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
     componentsRoutes,
-  ],
-  providers: [
-    TD_MEDIA_PROVIDERS,
   ],
 })
 export class ComponentsModule {}

@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, JsonpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { MaterialModule, TD_MEDIA_PROVIDERS } from '../../../platform/core';
+import { JsonpModule } from '@angular/http';
 
 import { docsRoutes } from './docs.routes';
 
-
 import { DocsComponent } from './docs.component';
-import { OverviewComponent } from './overview';
+import { DocsOverviewComponent } from './overview';
 import { CreatingComponent } from './creating';
 import { AngularMaterialComponent } from './angular-material';
 import { Angular2Component } from './angular-2';
@@ -19,11 +14,15 @@ import { DeploymentComponent } from './deployment';
 import { IconsComponent } from './icons';
 import { TestingComponent } from './testing';
 
+import { CovalentCoreModule } from '../../../platform/core';
+import { CovalentFileModule } from '../../../platform/file-upload';
+import { CovalentHighlightModule } from '../../../platform/highlight';
+import { CovalentMarkdownModule } from '../../../platform/markdown';
 
 @NgModule({
   declarations: [
     DocsComponent,
-    OverviewComponent,
+    DocsOverviewComponent,
     CreatingComponent,
     AngularMaterialComponent,
     Angular2Component,
@@ -33,16 +32,12 @@ import { TestingComponent } from './testing';
     TestingComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
     JsonpModule,
-    MaterialModule,
-    RouterModule,
+    CovalentCoreModule.forRoot(),
+    CovalentFileModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
     docsRoutes,
-  ],
-  providers: [
-    TD_MEDIA_PROVIDERS,
   ],
 })
 export class DocsModule {}

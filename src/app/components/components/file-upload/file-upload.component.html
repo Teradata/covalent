@@ -119,7 +119,7 @@
     <h2><code>[tdFileDrop]</code></h2>
     <p>Add the directive wherever you want to add drop support to an element to bind a [File | FileList] into a class model.</p>
     <p>To add effect when <code>ongragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.</p>
-    <p>Note: if element has child elements, add <code>* { pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.</p>
+    <p>Note: if element has child elements, add <code>* {{'{'}} pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.</p>
     <h3>Properties:</h3>
     <p>The <code>[tdFileDrop]</code> directive has {{dropDirectiveAttrs.length}} properties:</p>
     <md-list>
@@ -141,7 +141,7 @@
     </td-highlight>
     <p>CSS:</p>
     <td-highlight lang="css">
-      .drop-zone {
+      .drop-zone {{'{'}}
         border: 2px dotted whitesmoke;
         background-color: red;
         opacity: 0.5;
@@ -173,11 +173,11 @@
     <p>Service provided with methods that wrap complexity for as easier file upload experience.</p>
     <p>Service.upload() method recieves as parameter an object that implements the [IUploadOptions] interface.</p>
     <td-highlight lang="typescript">
-      interface IUploadOptions { 
+      interface IUploadOptions {{'{'}} 
         url: string;
         method: 'post' | 'put';
         file: File;
-        headers?: {[key: string]: string};
+        headers?: {{'{'}}[key: string]: string};
       }
     </td-highlight>
     <h3>Methods:</h3>

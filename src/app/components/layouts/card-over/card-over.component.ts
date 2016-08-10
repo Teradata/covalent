@@ -9,16 +9,6 @@ import { TD_LAYOUT_DIRECTIVES, TD_STEPS_DIRECTIVES } from '../../../../platform/
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_BUTTON_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdIcon,
-    TD_LAYOUT_DIRECTIVES,
-    TdHighlightComponent,
-    TD_STEPS_DIRECTIVES,
-    ROUTER_DIRECTIVES,
-  ],
   moduleId: module.id,
   selector: 'td-layouts-card-over',
   styleUrls: ['card-over.component.css'],

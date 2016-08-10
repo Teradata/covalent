@@ -1,1 +1,1 @@
-export { OverviewComponent } from './overview.component';
+export { LayoutsOverviewComponent } from './overview.component';

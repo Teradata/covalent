@@ -1,1 +1,1 @@
-export { OverviewComponent } from './overview.component';
+export { DocsOverviewComponent } from './overview.component';

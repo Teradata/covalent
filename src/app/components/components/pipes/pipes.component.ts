@@ -16,15 +16,7 @@ import {
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MdIcon,
-    MdAnchor,
-    MD_LIST_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  pipes: [ TdDigitsPipe, TdBytesPipe, TdTimeAgoPipe, TdTimeDifferencePipe, TdTruncatePipe ],
   selector: 'td-pipes',
   styleUrls: [ 'pipes.component.css' ],
   templateUrl: 'pipes.component.html',
