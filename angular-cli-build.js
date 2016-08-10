@@ -13,7 +13,7 @@ module.exports = function(defaults) {
       'rxjs/**/*.js',
       'hammerjs/*.min.js',
       '@angular/**/*.js',
-      '@angular2-material/**/*.js',
+      '@angular2-material/**/*.+(js|css)',
       'showdown/dist/showdown.js',
     ],
     polyfills: [
