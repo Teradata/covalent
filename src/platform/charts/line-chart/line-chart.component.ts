@@ -1,6 +1,9 @@
 import { Component, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-
-declare var d3: any;
+import { scaleLinear, scaleTime } from 'd3-scale';
+/*import { scaleLinear, scaleTime } from 'd3-scale';
+import { json, line } from 'd3';
+import { arc } from 'd3-shape';
+import { axisTop, axisRight, axisBottom, axisLeft } from 'd3-axis';*/
 
 @Component({
   moduleId: module.id,
@@ -10,7 +13,7 @@ declare var d3: any;
 })
 export class TdLineChartComponent implements AfterViewInit {
 
-  private _margin = {top: 50, right: 50, bottom: 50, left: 50};
+  private _margin = {top: 50, right: 150, bottom: 50, left: 50};
   private _width: number;
   private _height: number;
   private _padding: number;
@@ -73,26 +76,36 @@ export class TdLineChartComponent implements AfterViewInit {
       this._width = 960 - this._margin.left - this._margin.right;
       this._height = 500 - this._margin.top - this._margin.bottom;
       this._padding = 100;
+
+      var x = scaleTime()
+          .range([0, this._width]);
       
-      if(dateFormat !== undefined){
+      /*if(dateFormat !== undefined){
           var parseTime = d3.timeParse(dateFormat);
       }
 
-      var x = d3.scaleTime()
+      var x = scaleTime()
           .range([0, this._width]);
 
-      var y = d3.scaleLinear()
+      var y = scaleLinear()
           .range([this._height, 0]);
 
-      var line = d3.line()
+      /*var line = d3.line()
           .x(function(d) { return x(d.date); })
           .y(function(d) { return y(d.close); });
 
-      var svg = d3.select('#linechart').append("svg")
-          .attr("width", this._width + this._margin.left + this._margin.right)
-          .attr("height", this._height + this._margin.top + this._margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + this._padding + "," + this._margin.top + ")");
+          let viewBoxWidth = this._width + this._margin.left + this._margin.right;
+          let viewBoxHeight = this._height + this._margin.top + this._margin.bottom;
+          
+      var svg = d3.select('#linechart')
+            .classed("svg-container", true)
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + viewBoxWidth + " " + (viewBoxHeight))
+            //class to make it responsive
+            .classed("svg-content-responsive", true)
+            .append("g")
+            .attr("transform", "translate(" + this._padding + "," + this._margin.top + ")");
 
       d3.tsv(filePath, type, (error, data) => {
         if (error) throw error;
@@ -116,7 +129,7 @@ export class TdLineChartComponent implements AfterViewInit {
 
         svg.append("text")
             .attr("text-anchor", "middle")
-            .attr("transform", "translate("+ (0 - this._padding/2) + "," + (this._height/2)+")")
+            .attr("transform", "translate("+ (0 - this._padding/2 - this._margin.left/2) + "," + (this._height/2)+")")
             .text(yName);
 
         svg.append("text")
@@ -135,7 +148,7 @@ export class TdLineChartComponent implements AfterViewInit {
         d.date = parseTime(d.date);
         d.close = +d.close;
         return d;
-      }
+      }*/
     }
 
 }

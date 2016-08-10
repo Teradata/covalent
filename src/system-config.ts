@@ -27,6 +27,14 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'd3-array',
+  'd3-array',
+  'd3-axis',
+  'd3-request',
+  'd3-scale',
+  'd3-selection',
+  'd3-shape',
+  'd3-time-format',
 
   // Library specific barrels.
   'platform',
@@ -111,6 +119,10 @@ materialPackages.forEach(function(pkg: string): void {
   };
 });
 
+/*const d3packages: any = {
+  'd3':{format: 'cjs',defaultExtension: 'js', main: 'index.js'}
+};*/
+
 /** Type declaration for ambient System. */
 declare var System: any;
 
@@ -121,6 +133,13 @@ System.config({
     'rxjs': 'vendor/rxjs',
     'main': 'main.js',
     '@angular2-material': 'vendor/@angular2-material',
+    'd3-array': 'vendor/d3-shape',
+    'd3-axis': 'vendor/d3-axis',
+    'd3-request': 'vendor/d3-request',
+    'd3-scale': 'vendor/d3-scale',
+    'd3-selection': 'vendor/d3-selection',
+    'd3-shape': 'vendor/d3-shape',
+    'd3-time-format': 'vendor/d3-time-format',
   },
   packages: cliSystemConfigPackages,
 });

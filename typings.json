@@ -6,5 +6,13 @@
   },
   "globalDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
+  },
+  "dependencies": {
+    "d3": "registry:npm/d3#3.0.0+20160723033700",
+    "d3-array": "registry:npm/d3-array#1.0.0+20160701011035",
+    "d3-axis": "registry:npm/d3-axis#1.0.0+20160701011035",
+    "d3-scale": "registry:npm/d3-scale#1.0.0+20160707082208",
+    "d3-selection": "registry:npm/d3-selection#1.0.0+20160701011035",
+    "d3-shape": "registry:npm/d3-shape#1.0.0+20160701011035"
   }
 }
