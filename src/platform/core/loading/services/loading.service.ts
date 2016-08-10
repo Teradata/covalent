@@ -46,24 +46,22 @@ export class TdLoadingService {
   public createOverlayComponent(options: ILoadingOptions, viewContainerRef: ViewContainerRef): void {
     (<IInternalLoadingOptions>options).height = undefined;
     (<IInternalLoadingOptions>options).overlay = true;
-    this._createComponent(options)
-    .then((loadingRef: ILoadingRef) => {
-      let loading: boolean = false;
-      loadingRef.observable
-      .subscribe((registered: number) => {
-        let instance: TdLoadingComponent = loadingRef.ref.instance;
-        if (registered > 0 && !loading) {
-          loading = true;
-          viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          instance.startInAnimation();
-        } else if (registered <= 0 && loading) {
-          loading = false;
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-          });
-        }
-      });
+    let loadingRef: ILoadingRef = this._createComponent(options);
+    let loading: boolean = false;
+    loadingRef.observable
+    .subscribe((registered: number) => {
+      let instance: TdLoadingComponent = loadingRef.ref.instance;
+      if (registered > 0 && !loading) {
+        loading = true;
+        viewContainerRef.insert(loadingRef.ref.hostView, 0);
+        instance.startInAnimation();
+      } else if (registered <= 0 && loading) {
+        loading = false;
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+        });
+      }
     });
   }
 
@@ -84,29 +82,27 @@ export class TdLoadingService {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
     (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling.scrollHeight;
     (<IInternalLoadingOptions>options).overlay = false;
-    this._createComponent(options)
-    .then((loadingRef: ILoadingRef) => {
-      let loading: boolean = false;
-      loadingRef.observable
-      .subscribe((registered: number) => {
-        let instance: TdLoadingComponent = loadingRef.ref.instance;
-        if (registered > 0 && !loading) {
-          loading = true;
-          let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
-          if (index < 0) {
-            viewContainerRef.clear();
-            viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          }
-          instance.startInAnimation();
-        } else if (registered <= 0 && loading) {
-          loading = false;
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.createEmbeddedView(templateRef);
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-          });
+    let loadingRef: ILoadingRef = this._createComponent(options);
+    let loading: boolean = false;
+    loadingRef.observable
+    .subscribe((registered: number) => {
+      let instance: TdLoadingComponent = loadingRef.ref.instance;
+      if (registered > 0 && !loading) {
+        loading = true;
+        let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
+        if (index < 0) {
+          viewContainerRef.clear();
+          viewContainerRef.insert(loadingRef.ref.hostView, 0);
         }
-      });
+        instance.startInAnimation();
+      } else if (registered <= 0 && loading) {
+        loading = false;
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.createEmbeddedView(templateRef);
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+        });
+      }
     });
   }
 
@@ -142,7 +138,7 @@ export class TdLoadingService {
    * Creates a generic [TdLoadingComponent] and its context. 
    * Returns a promise that resolves to a [ILoadingRef] with the created [ComponentRef] and its referenced [Observable].
    */
-  private _createComponent(options: IInternalLoadingOptions): Promise<ILoadingRef> {
+  private _createComponent(options: IInternalLoadingOptions): ILoadingRef {
     let name: string = options.name;
     if (!name) {
       throw 'Name is required for Loading Component.';
@@ -152,17 +148,15 @@ export class TdLoadingService {
     } else {
       throw 'Name duplication: Loading Component name conflict.';
     }
-    return new Promise((resolve: Function) => {
-      this._context[name].loadingRef = this._componentFactoryResolver
-        .resolveComponentFactory(TdLoadingComponent).create(this._injector);
-      this._context[name].times = 0;
-      this._mapOptions(options, this._context[name].loadingRef.instance);
-      let compRef: ILoadingRef = {
-        observable: this._registerLoadingComponent(name),
-        ref: this._context[name].loadingRef,
-      };
-      resolve(compRef);
-    });
+    this._context[name].loadingRef = this._componentFactoryResolver
+      .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+    this._context[name].times = 0;
+    this._mapOptions(options, this._context[name].loadingRef.instance);
+    let compRef: ILoadingRef = {
+      observable: this._registerLoadingComponent(name),
+      ref: this._context[name].loadingRef,
+    };
+    return compRef;
   }
 
   /**
