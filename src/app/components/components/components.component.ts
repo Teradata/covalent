@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { TD_LAYOUT_DIRECTIVES } from '../../../platform/core';
 
 @Component({
   moduleId: module.id,

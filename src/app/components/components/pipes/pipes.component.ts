@@ -1,27 +1,11 @@
 import { Component } from '@angular/core';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MdIcon } from '@angular2-material/icon';
-import { MdAnchor } from '@angular2-material/button';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import {
-  TdDigitsPipe,
-  TdBytesPipe,
-  TdTimeAgoPipe,
-  TdTimeDifferencePipe,
-  TdTruncatePipe,
-} from '../../../../platform/core';
-
-import { TdHighlightComponent } from '../../../../platform/highlight';
-
 @Component({
   moduleId: module.id,
   selector: 'td-pipes',
   styleUrls: [ 'pipes.component.css' ],
   templateUrl: 'pipes.component.html',
 })
-
 export class PipesComponent {
 
   public logs: Object[] = [
