@@ -3,6 +3,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
 
 @Component({
+  providers: [TdLoadingService], // TODOBUG Remove when we upstream fixes from AC
   moduleId: module.id,
   selector: 'loading-demo',
   styleUrls: [ 'loading.component.css' ],
