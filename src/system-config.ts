@@ -37,15 +37,9 @@ const barrels: string[] = [
 
   // App specific barrels.
   'app/',
-  'app/components/home',
   'app/components/components',
   'app/components/docs',
   'app/components/layouts',
-  'app/components/layouts/overview',
-  'app/components/layouts/nav-view',
-  'app/components/layouts/nav-list',
-  'app/components/layouts/card-over',
-  'app/components/layouts/manage-list',
   'app/components/style-guide',
   'app/components/style-guide/colors',
   'app/components/style-guide/iconography',

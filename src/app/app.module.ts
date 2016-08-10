@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { JsonpModule } from '@angular/http';
 
 import { DocsAppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { ComponentsModule } from './components/components/';
 import { DocsModule } from './components/docs/';
-import { HomeComponent } from './components/home/';
 import { LayoutsModule } from './components/layouts/';
 import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
