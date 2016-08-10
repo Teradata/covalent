@@ -1,5 +1,4 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { TimerWrapper } from '@angular/core/src/facade/async';
 
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -70,20 +69,16 @@ export class LoadingDemoComponent {
 
   registerCircleLoadingOverlay(): void {
     this._loadingService.register('test.overlay');
-    TimerWrapper.setTimeout(
-      () => {
-        this._loadingService.resolve('test.overlay');
-      },
-      3000);
+    setTimeout(() => {
+      this._loadingService.resolve('test.overlay');
+    }, 3000);
   }
 
   registerLinearLoadingOverlay(): void {
     this._loadingService.register('test.overlay2');
-    TimerWrapper.setTimeout(
-      () => {
-        this._loadingService.resolve('test.overlay2');
-      },
-      3000);
+    setTimeout(() => {
+      this._loadingService.resolve('test.overlay2');
+    }, 3000);
   }
 
   registerLoadingReplace(): void {
