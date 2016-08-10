@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { JsonpModule } from '@angular/http';
-
 import { componentsRoutes } from './components.routes';
 
 import { ComponentsComponent } from './components.component';
@@ -34,7 +32,6 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
     PipesComponent,
   ],
   imports: [
-    JsonpModule,
     CovalentCoreModule.forRoot(),
     CovalentFileModule.forRoot(),
     CovalentHighlightModule,

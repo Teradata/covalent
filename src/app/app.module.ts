@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { JsonpModule } from '@angular/http';
-
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ComponentsModule } from './components/components/';
@@ -21,7 +19,6 @@ import { CovalentMarkdownModule } from '../platform/markdown';
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
-    JsonpModule,
     ComponentsModule,
     DocsModule,
     LayoutsModule,

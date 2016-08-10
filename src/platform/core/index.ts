@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -180,6 +180,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     FormsModule,
     RouterModule,
     CommonModule,
@@ -199,6 +200,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
   exports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     FormsModule,
     RouterModule,
     CommonModule,

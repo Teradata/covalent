@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { JsonpModule } from '@angular/http';
-
 import { styleGuideRoutes } from './style-guide.routes';
 
 import { StyleGuideComponent } from './style-guide.component';
@@ -15,9 +13,7 @@ import { CardsComponent } from './cards/cards.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
-import { CovalentMarkdownModule } from '../../../platform/markdown';
 
 @NgModule({
   declarations: [
@@ -32,11 +28,8 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
     UtilityStylesComponent,
   ],
   imports: [
-    JsonpModule,
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule,
-    CovalentMarkdownModule,
     styleGuideRoutes,
   ],
 })

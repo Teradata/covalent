@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { JsonpModule } from '@angular/http';
-
 import { docsRoutes } from './docs.routes';
 
 import { DocsComponent } from './docs.component';
@@ -15,9 +13,7 @@ import { IconsComponent } from './icons/icons.component';
 import { TestingComponent } from './testing/testing.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
-import { CovalentMarkdownModule } from '../../../platform/markdown';
 
 @NgModule({
   declarations: [
@@ -32,11 +28,8 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
     TestingComponent,
   ],
   imports: [
-    JsonpModule,
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule,
-    CovalentMarkdownModule,
     docsRoutes,
   ],
 })
