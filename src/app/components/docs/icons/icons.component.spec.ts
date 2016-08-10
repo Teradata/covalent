@@ -1,49 +1,31 @@
 import {
-  beforeEach,
-  addProviders,
-  describe,
-  expect,
-  it,
+  TestBed,
   inject,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestComponentBuilder } from '@angular/core/testing';
+
 import { IconsComponent } from './icons.component';
 
 describe('Component: Icons', () => {
   let builder: TestComponentBuilder;
 
-  beforeEach(() => {
-    addProviders([
+  TestBed.configureTestingModule({
+    providers: [
       IconsComponent,
-    ]);
+    ],
   });
+
+  TestBed.compileComponents();
 
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([IconsComponent], (component: IconsComponent) => {
-    expect(component).toBeTruthy();
-  }));
-
   it('should create the component', inject([], () => {
-    return builder.createAsync(IconsTestControllerComponent)
+    return builder.createAsync(IconsComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(IconsComponent));
-        expect(query).toBeTruthy();
-        expect(query.componentInstance).toBeTruthy();
+        let component: IconsComponent = fixture.componentInstance;
+        expect(component).toBeTruthy();
       });
   }));
 });
-
-@Component({
-  directives: [IconsComponent],
-  selector: 'td-test',
-  template: `
-    <td-docs-icons></td-docs-icons>
-  `,
-})
-class IconsTestControllerComponent {
-}

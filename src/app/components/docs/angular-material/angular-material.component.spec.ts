@@ -1,49 +1,31 @@
 import {
-  beforeEach,
-  addProviders,
-  describe,
-  expect,
-  it,
+  TestBed,
   inject,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestComponentBuilder } from '@angular/core/testing';
+
 import { AngularMaterialComponent } from './angular-material.component';
 
 describe('Component: AngularMaterial', () => {
   let builder: TestComponentBuilder;
 
-  beforeEach(() => {
-    addProviders([
+  TestBed.configureTestingModule({
+    providers: [
       AngularMaterialComponent,
-    ]);
+    ],
   });
+
+  TestBed.compileComponents();
 
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([AngularMaterialComponent], (component: AngularMaterialComponent) => {
-    expect(component).toBeTruthy();
-  }));
-
   it('should create the component', inject([], () => {
-    return builder.createAsync(AngularMaterialTestControllerComponent)
+    return builder.createAsync(AngularMaterialComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(AngularMaterialComponent));
-        expect(query).toBeTruthy();
-        expect(query.componentInstance).toBeTruthy();
+        let component: AngularMaterialComponent = fixture.componentInstance;
+        expect(component).toBeTruthy();
       });
   }));
 });
-
-@Component({
-  directives: [AngularMaterialComponent],
-  selector: 'td-test',
-  template: `
-    <td-docs-angular-material></td-docs-angular-material>
-  `,
-})
-class AngularMaterialTestControllerComponent {
-}
