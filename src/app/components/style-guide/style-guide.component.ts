@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-import { MdButton } from '@angular2-material/button';
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TD_LAYOUT_DIRECTIVES } from '../../../platform/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-style-guide',
+  selector: 'app-style-guide',
   styleUrls: ['style-guide.component.css'],
   templateUrl: 'style-guide.component.html',
 })
