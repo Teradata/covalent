@@ -1,49 +1,32 @@
 import {
-  beforeEach,
-  addProviders,
-  describe,
-  expect,
-  it,
+  TestBed,
   inject,
+  ComponentFixture,
+  TestComponentBuilder,
 } from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+
 import { StepsDemoComponent } from './steps.component';
 
 describe('Component: StepsDemo', () => {
   let builder: TestComponentBuilder;
 
-  beforeEach(() => {
-    addProviders([
+  TestBed.configureTestingModule({
+    providers: [
       StepsDemoComponent,
-    ]);
+    ],
   });
+
+  TestBed.compileComponents();
 
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([StepsDemoComponent], (component: StepsDemoComponent) => {
-    expect(component).toBeTruthy();
-  }));
-
   it('should create the component', inject([], () => {
-    return builder.createAsync(StepsDemoTestControllerComponent)
+    return builder.createAsync(StepsDemoComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(StepsDemoComponent));
-        expect(query).toBeTruthy();
-        expect(query.componentInstance).toBeTruthy();
+        let component: StepsDemoComponent = fixture.componentInstance;
+        expect(component).toBeTruthy();
       });
   }));
 });
-
-@Component({
-  directives: [StepsDemoComponent],
-  selector: 'td-test',
-  template: `
-    <td-steps-demo></td-steps-demo>
-  `,
-})
-class StepsDemoTestControllerComponent {
-}
