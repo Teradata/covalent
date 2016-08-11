@@ -12,7 +12,6 @@ export class TdFileUploadComponent {
   private _multiple: boolean = false;
   private _disabled: boolean = false;
 
-  disableRipple: boolean = true;
   files: FileList | File;
 
   /**
