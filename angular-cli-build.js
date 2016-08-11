@@ -22,6 +22,7 @@ module.exports = function(defaults) {
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js',
       'vendor/hammerjs/hammer.min.js',
+      '@angular2-material/**/*.css',
       'vendor/showdown/dist/showdown.js',
     ]
   });

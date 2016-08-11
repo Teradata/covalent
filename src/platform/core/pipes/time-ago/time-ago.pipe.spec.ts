@@ -19,7 +19,6 @@ describe('TdTimeAgoPipe', () => {
 
   it('should return a time ago string', () => {
     // 1 second
-    expect(pipe.transform(time, undefined)).toEqual('1 second ago');
     expect(pipe.transform(time, time)).toEqual('1 second ago');
     expect(pipe.transform(new Date(time), time)).toEqual('1 second ago');
     expect(pipe.transform(new Date(time).toString(), time)).toEqual('1 second ago');

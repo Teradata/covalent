@@ -35,7 +35,7 @@ System.import('system-config.js').then(function() {
   return Promise.all([
     System.import('@angular/core/testing'),
     System.import('@angular/platform-browser-dynamic/testing'),
-    System.import('@angular/router'),
+    System.import('@angular/router/testing'),
     System.import('@angular/http'),
     System.import('@angular/forms'),
     System.import('@angular2-material/icon')
@@ -46,20 +46,17 @@ System.import('system-config.js').then(function() {
     var testingHttp = providers[3];
     var testingForms = providers[4];
     var testingIcon = providers[5];
-    testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-      testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
+    testing.TestBed.initTestEnvironment(testingBrowser.BrowserDynamicTestingModule,
+      testingBrowser.platformBrowserDynamicTesting()
       );
-    testing.beforeEach(function(){
-      testing.addProviders([
-        testingRouter.ROUTER_DIRECTIVES,
-        testingRouter.RouterOutletMap,
-        testingHttp.HTTP_PROVIDERS,
-        testingForms.disableDeprecatedForms(),
-        testingForms.provideForms(),
-        testingIcon.MdIconRegistry,
-        { provide: testingRouter.Router, useValue: {} },
-        { provide: testingRouter.ActivatedRoute, useValue: {} },
-      ]);
+    testing.TestBed.configureTestingModule({
+      providers: [
+        testingRouter.RouterTestingModule,
+        testingHttp.HttpModule,
+        testingHttp.JsonpModule,
+        testingForms.FormsModule,
+        testingIcon.MdIconModule,
+      ],
     });
   });
 }).then(function() {
