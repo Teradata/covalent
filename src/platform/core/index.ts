@@ -61,7 +61,7 @@ const MATERIAL_MODULES: Type[] = [
 @NgModule({
   imports: MATERIAL_MODULES,
   exports: MATERIAL_MODULES,
-  providers: [MdLiveAnnouncer],
+  providers: [ MdLiveAnnouncer ],
 })
 export class MaterialModule { }
 
