@@ -3,7 +3,8 @@
     <button md-raised-button
             [color]="defaultColor" 
             [disabled]="disabled"
-            (keyup.enter)="fileBrowse.click()"> 
+            (keyup.enter)="fileBrowse.click()"
+            (click)="fileBrowse.click()"> 
       <label [multiple]="multiple" 
              [disabled]="disabled"
              (fileDrop)="files = $event"
