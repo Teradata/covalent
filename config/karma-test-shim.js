@@ -50,7 +50,7 @@ System.import('system-config.js').then(function() {
       testingBrowser.platformBrowserDynamicTesting()
       );
     testing.TestBed.configureTestingModule({
-      providers: [
+      imports: [
         testingRouter.RouterTestingModule,
         testingHttp.HttpModule,
         testingHttp.JsonpModule,
