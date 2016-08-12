@@ -65,7 +65,6 @@ const MATERIAL_MODULES: Type[] = [
 })
 export class MaterialModule { }
 
-
 /**
  * COMPONENTS
  */

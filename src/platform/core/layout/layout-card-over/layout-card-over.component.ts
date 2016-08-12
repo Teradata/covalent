@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-
 @Component({
   moduleId: module.id,
   selector: 'td-layout-card-over',

@@ -27,8 +27,6 @@ describe('Component: App', () => {
       .then((fixture: ComponentFixture<any>) => {
         let component: DocsAppComponent = fixture.componentInstance;
         expect(component).toBeTruthy();
-        console.log('a');
       });
   }));
 });
-

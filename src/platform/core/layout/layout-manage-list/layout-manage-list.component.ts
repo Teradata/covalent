@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MD_SIDENAV_DIRECTIVES, MdSidenav } from '@angular2-material/sidenav';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MdSidenav } from '@angular2-material/sidenav';
 
 import { TdLayoutService } from '../services/layout.service';
 

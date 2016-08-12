@@ -1,11 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TdToggleDirective } from '../directives/toggle/toggle.directive';
-
 export enum StepState {
   None = <any>'none',
   Required = <any>'required',
