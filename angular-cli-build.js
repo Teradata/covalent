@@ -14,14 +14,7 @@ module.exports = function(defaults) {
       '@angular/**/*.js',
       '@angular2-material/**/*.js',
       'showdown/dist/showdown.js',
-      'd3-array/**/*.js',
-      'd3-array/**/*.js',
-      'd3-axis/**/*.js',
-      'd3-request/**/*.js',
-      'd3-scale/**/*.js',
-      'd3-selection/**/*.js',
-      'd3-shape/**/*.js',
-      'd3-time-format/**/*.js'
+      'd3/build/d3.min.js'
     ],
     polyfills: [
       'vendor/es6-shim/es6-shim.js',

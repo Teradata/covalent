@@ -1,5 +1,6 @@
-import { Component, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { scaleLinear, scaleTime } from 'd3-scale';
+import {Component, Input, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+
+declare var d3: any;
 
 @Component({
   moduleId: module.id,
@@ -17,68 +18,114 @@ export class TdLineChartComponent implements AfterViewInit {
   @ViewChild('linechart') content: ElementRef;
 
   /**
-  * filePath?: string.
-  */
+   * filePath?: string.
+   */
   @Input('filePath') filePath: string = '';
 
   /**
-  * xName?: string.
-  */
+   * contentType?: string.
+   * Content Type of the Chart
+   */
+  @Input('contentType') contentType: string = '';
+
+  /**
+   * xName?: string.
+   */
   @Input('xName') xName: string = '';
 
   /**
-  ** xName?: string.
-  */
-  @Input('yName') yName: string = '';
-  
-  /**
-  * xType?: string.
-  */
-  @Input('xType') xType: string = '';
-
-  /**
-  * yType?: string.
-  */
-  @Input('yType') yType: string = '';
-  
-  /**
-   * xTitle?: string.
+   ** xName?: string.
    */
-  @Input('xTitle') xTitle: string = '';
+  @Input('yName') yName: string = '';
 
   /**
-  * xType?: string.
-  */
-  @Input('yTitle') yTitle: string = '';
-  
-  /**
-  * title?: string.
-  * Title of the Chart
-  */
+   * title?: string.
+   * Title of the Chart
+   */
   @Input('title') title: string = '';
 
-  /**
-  * timeFormat?: string.
-  * Format for the time units
-  */
-  @Input('dateFormat') dateFormat: string = '';
-
   ngAfterViewInit(): void {
-      this.render(this.filePath, this.xName, this.yName, this.dateFormat, this.title);
+    this.render();
   }
-  
-  render(filePath: string, xName: string, yName: string, dateFormat: string, title: string) {
-      /* the following code is commented as it won't load the page. Please uncomment it while testing the import build 
-      
-      this._margin.top = 50;
-      this._width = 960 - this._margin.left - this._margin.right;
-      this._height = 500 - this._margin.top - this._margin.bottom;
-      this._padding = 100;
 
-      var x = scaleTime()
-          .range([0, this._width]);
-      */
-      
+  render(): void {
+    this._margin.top = 50;
+    this._width = 960 - this._margin.left - this._margin.right;
+    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._padding = 100;
+
+    var x = d3.scaleLinear()
+      .range([0, this._width]);
+
+    var y = d3.scaleLinear()
+      .range([this._height, 0]);
+
+    var line = d3.line()
+      .x((d) => {
+        return x(d[this.xName]);
+      })
+      .y((d) => {
+        return y(d[this.yName]);
+      });
+
+    let viewBoxWidth = this._width + this._margin.left + this._margin.right;
+    let viewBoxHeight = this._height + this._margin.top + this._margin.bottom;
+
+    var svg = d3.select('#linechart')
+      .classed("svg-container", true)
+      .append("svg")
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", "0 0 " + viewBoxWidth + " " + (viewBoxHeight))
+      .classed("svg-content-responsive", true)
+      .append("g")
+      .attr("transform", "translate(" + this._padding + "," + this._margin.top + ")");
+
+    enum ParseContent {
+      json = d3.json,
+      csv = d3.csv,
+      tsv = d3.tsv
     }
 
+    ParseContent[this.contentType](this.filePath, (error, data) => {
+      if (error) throw error;
+
+      x.domain(d3.extent(data, (d) => {
+        return d[this.xName];
+      }));
+      y.domain(d3.extent(data, (d) => {
+        return d[this.yName];
+      }));
+
+      svg.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + this._height + ")")
+        .call(d3.axisBottom(x));
+
+      svg.append("g")
+        .attr("class", "axis axis--y")
+        .call(d3.axisLeft(y));
+
+      svg.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", line);
+
+      svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("transform", "translate(" + (0 - this._padding / 2 - this._margin.left / 2) + "," + (this._height / 2) + ")")
+        .text(this.yName);
+
+      svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("transform", "translate(" + (this._width / 2) + "," + (this._height + (this._padding / 2)) + ")")
+        .text(this.xName);
+
+      svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("transform", "translate(" + (this._width / 2) + "," + (0 - (this._margin.top / 2)) + ")")
+        .text(this.title)
+        .attr("class", "title");
+
+    });
+  }
 }
