@@ -119,10 +119,6 @@ materialPackages.forEach(function(pkg: string): void {
   };
 });
 
-/*const d3packages: any = {
-  'd3':{format: 'cjs',defaultExtension: 'js', main: 'index.js'}
-};*/
-
 /** Type declaration for ambient System. */
 declare var System: any;
 

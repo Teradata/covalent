@@ -5,9 +5,7 @@
     "selenium-webdriver": "registry:dt/selenium-webdriver#2.44.0+20160317120654"
   },
   "globalDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
-  },
-  "dependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
     "d3": "registry:npm/d3#3.0.0+20160723033700",
     "d3-array": "registry:npm/d3-array#1.0.0+20160701011035",
     "d3-axis": "registry:npm/d3-axis#1.0.0+20160701011035",
