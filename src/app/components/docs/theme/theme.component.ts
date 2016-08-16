@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
@@ -12,13 +12,8 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
   directives: [ ROUTER_DIRECTIVES, MD_CARD_DIRECTIVES, MdIcon, MdAnchor, TdHighlightComponent ],
   selector: 'td-docs-theme',
   templateUrl: 'theme.component.html',
-  styleUrls: ['theme.component.css']
+  styleUrls: ['theme.component.css'],
 })
-export class ThemeComponent implements OnInit {
-
-  constructor() {}
-
-  ngOnInit() {
-  }
+export class ThemeComponent {
 
 }
