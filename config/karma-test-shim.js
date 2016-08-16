@@ -38,14 +38,16 @@ System.import('system-config.js').then(function() {
     System.import('@angular/router'),
     System.import('@angular/http'),
     System.import('@angular/forms'),
-    System.import('@angular2-material/icon')
+    System.import('@angular/core'),
+    System.import('@angular2-material/icon'),
   ]).then(function (providers) {
     var testing = providers[0];
     var testingBrowser = providers[1];
     var testingRouter = providers[2];
     var testingHttp = providers[3];
     var testingForms = providers[4];
-    var testingIcon = providers[5];
+    var testingCore = providers[5];
+    var testingIcon = providers[6];
     testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
       testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
       );
@@ -59,6 +61,7 @@ System.import('system-config.js').then(function() {
         testingIcon.MdIconRegistry,
         { provide: testingRouter.Router, useValue: {} },
         { provide: testingRouter.ActivatedRoute, useValue: {} },
+        testingCore.ChangeDetectorRef,
       ]);
     });
   });

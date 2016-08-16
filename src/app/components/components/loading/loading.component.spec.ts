@@ -7,10 +7,10 @@ import {
   inject,
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component, DebugElement, ViewContainerRef, Injector } from '@angular/core';
+import { Component, DebugElement, ViewContainerRef, Injector, ComponentFactoryResolver } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { LoadingDemoComponent } from './loading.component';
-import { TdLoadingService } from '../../../../platform/core';
+import { TdLoadingService, TD_LOADING_ENTRY_COMPONENTS } from '../../../../platform/core';
 
 describe('Component: LoadingDemo', () => {
   let builder: TestComponentBuilder;
@@ -21,6 +21,11 @@ describe('Component: LoadingDemo', () => {
       Injector,
       ViewContainerRef,
       TdLoadingService,
+      { provide: ComponentFactoryResolver, useValue: {resolveComponentFactory: function(): any{
+        return {create: function(): any{
+          return {instance: {}};
+        }};
+      }}},
     ]);
   });
 
@@ -48,6 +53,7 @@ describe('Component: LoadingDemo', () => {
   template: `
     <td-loading-demo></td-loading-demo>
   `,
+  precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
 })
 class LoadingDemoTestControllerComponent {
 }
