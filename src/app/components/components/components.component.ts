@@ -60,6 +60,11 @@ export class ComponentsComponent {
     route: 'media',
     title: 'Media Queries',
   }, {
+    description: 'Http wrappers and helpers',
+    icon: 'http',
+    route: 'http',
+    title: 'Http',
+  }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
     route: 'pipes',

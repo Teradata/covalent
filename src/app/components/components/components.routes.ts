@@ -9,6 +9,7 @@ import { FileUploadDemoComponent } from './file-upload';
 import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
+import { HttpDemoComponent } from './http';
 import { PipesComponent } from './pipes';
 
 export const componentsRoutes: RouterConfig = [{
@@ -36,6 +37,9 @@ export const componentsRoutes: RouterConfig = [{
     }, {
       component: MediaDemoComponent,
       path: 'media',
+    }, {
+      component: HttpDemoComponent,
+      path: 'http',
     }, {
       component: PipesComponent,
       path: 'pipes',

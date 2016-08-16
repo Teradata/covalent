@@ -53,6 +53,11 @@ export class OverviewComponent {
       route: 'media',
       title: 'Media',
     }, {
+      color: 'indigo-700',
+      icon: 'http',
+      route: 'http',
+      title: 'Http',
+    }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
       route: 'pipes',
