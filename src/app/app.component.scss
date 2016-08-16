@@ -111,5 +111,10 @@ $md-warn: #C62828;
                 background-color: $md-accent-opacity;
             }
         }
+        &.md-slide-toggle-focused {
+            .md-ink-ripple {
+                background-color: $md-accent-opacity;
+            }
+        }
     }
 }
