@@ -6,7 +6,7 @@
     <p>Change Event: {{stepChangeMsg}}</p>
     <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
     <td-steps (stepChange)="stepChange($event)">
-      <td-step label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [disabled]="disabled" [active]="activeStep1" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+      <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
         STEP CONTENT GOES HERE
       </td-step>
       <td-step #step2 label="Required Step" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
@@ -31,7 +31,7 @@
   <md-divider></md-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All Steps</button>
-    <button md-button color="primary" (click)="toggleActiveStep1()">Toggle Active Step 1</button>
+    <button md-button color="primary" (click)="step1.toggle()">Toggle Active Step 1</button>
   </md-card-actions>
 </md-card>
 <md-card>
@@ -106,9 +106,10 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
+        <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
           ...
           <td-step-actions>
+            <button (click)="step.close()">Close</button>
             ... add button elements for the step content (optional)
           </td-step-actions>
           <td-step-summary>
