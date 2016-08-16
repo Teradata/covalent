@@ -11,7 +11,8 @@
     <md-progress-circle *ngIf="isCircular()" 
                         mode="indeterminate" 
                         color="primary" 
-                        [style.height]="getCircleDiameter()">
+                        [style.height]="getCircleDiameter()"
+                        [style.width]="getCircleDiameter()">
     </md-progress-circle>
     <md-progress-bar *ngIf="isLinear()" 
                      mode="indeterminate" 
