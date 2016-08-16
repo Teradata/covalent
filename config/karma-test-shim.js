@@ -34,36 +34,22 @@ System.import('system-config.js').then(function() {
   // Load and configure the TestComponentBuilder.
   return Promise.all([
     System.import('@angular/core/testing'),
-    System.import('@angular/platform-browser-dynamic/testing'),
-    System.import('@angular/router/testing'),
-    System.import('@angular/http'),
-    System.import('@angular/forms'),
-    System.import('@angular2-material/icon')
+    System.import('@angular/platform-browser-dynamic/testing')
   ]).then(function (providers) {
     var testing = providers[0];
     var testingBrowser = providers[1];
-    var testingRouter = providers[2];
-    var testingHttp = providers[3];
-    var testingForms = providers[4];
-    var testingIcon = providers[5];
-    testing.TestBed.initTestEnvironment(testingBrowser.BrowserDynamicTestingModule,
-      testingBrowser.platformBrowserDynamicTesting()
-      );
-    testing.TestBed.configureTestingModule({
-      imports: [
-        testingRouter.RouterTestingModule,
-        testingHttp.HttpModule,
-        testingHttp.JsonpModule,
-        testingForms.FormsModule,
-        testingIcon.MdIconModule,
-      ],
-    });
+
+    testing.TestBed.initTestEnvironment(
+        testingBrowser.BrowserDynamicTestingModule,
+        testingBrowser.platformBrowserDynamicTesting());
   });
 }).then(function() {
   // Finally, load all spec files.
   // This will run the tests directly.
   return Promise.all(
     allSpecFiles.map(function (moduleName) {
-      return System.import(moduleName);
+      return System.import(moduleName).then(function(module) {
+        return module;
+      });
     }));
 }).then(__karma__.start, __karma__.error);
