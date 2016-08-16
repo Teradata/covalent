@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MdIcon } from '@angular2-material/icon';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
-import { TdLayoutComponent } from '../platform/core';
+import { TdLayoutComponent, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
 
 @Component({
   directives: [
@@ -17,6 +17,7 @@ import { TdLayoutComponent } from '../platform/core';
   selector: 'td-docs-app',
   styleUrls: ['app.component.css'],
   templateUrl: 'app.component.html',
+  precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
 })
 export class DocsAppComponent {
 
