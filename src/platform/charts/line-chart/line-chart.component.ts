@@ -128,7 +128,7 @@ export class TdLineChartComponent implements AfterViewInit {
             .attr("text-anchor", "middle")
             .attr("transform", "translate("+ (this._width/2) + "," + (0-(this._margin.top/2)) +")")
             .text(title)
-            .attr("class", "title");
+            .attr("class", "md-title");
       });
 
       function type(d) {
