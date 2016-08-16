@@ -26,6 +26,8 @@ module.exports = {
       'src/**/MaterialIcons-Regular.ttf',
       'src/**/MaterialIcons-Regular.woff',
       'src/**/MaterialIcons-Regular.woff2',
+      'src/**/**.scss',
+      '!src/app/**/**.scss',
       'src/**/**.html',
       'src/**/**.md',
       'src/**/**.js',
