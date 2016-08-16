@@ -67,6 +67,7 @@ Methods:
 | `patch` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a PATCH method to a URL, executing the interceptors as part of the request pipeline.
 | `post` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a POST method to a URL, executing the interceptors as part of the request pipeline.
 | `put` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a PUT method to a URL, executing the interceptors as part of the request pipeline.
+| `request` | `function(url: string | Request, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a generic request to a URL, executing the interceptors as part of the request pipeline.
 
 # RESTService
 
@@ -81,6 +82,7 @@ export interface IHttp {
   patch: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
   post: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
   put: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
+  request: (url: string | Request, options: RequestOptionsArgs) => Observable<Response>;
 }
 ```
 
