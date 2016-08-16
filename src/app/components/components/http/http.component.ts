@@ -52,6 +52,11 @@ export class HttpDemoComponent {
                   executing the interceptors as part of the request pipeline.`,
     name: 'put',
     type: 'function(url: string, data: any, options: RequestOptionsArgs)',
+  }, {
+    description: `Uses underlying ng2 [http] to request a generic request to a URL,
+                  executing the interceptors as part of the request pipeline.`,
+    name: 'request',
+    type: 'function(url: string | Request, options: RequestOptionsArgs)',
   }];
 
   restServiceMethods: Object[] = [{
