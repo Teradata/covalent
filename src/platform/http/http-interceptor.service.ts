@@ -1,5 +1,5 @@
 import { Injectable, Type, Provider, Injector } from '@angular/core';
-import { Http, RequestOptionsArgs, Response } from '@angular/http';
+import { Http, RequestOptionsArgs, Response, Request } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
@@ -19,6 +19,16 @@ export class HttpInterceptorService {
     requestInterceptors.forEach((interceptor: Type) => {
       this.requestInterceptors.push(<IHttpInterceptor>_injector.get(interceptor));
     });
+  }
+
+  request(url: string | Request, options: RequestOptionsArgs = {}): Observable<Response> {
+    this._requestConfig(options);
+    return this._http.request(url, options)
+      .do((response: Response) => {
+        return this._responseResolve(response);
+      }).catch((error: Response) => {
+        return this._errorResolve(error);
+      });
   }
 
   delete(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
