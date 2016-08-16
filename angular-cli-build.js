@@ -21,8 +21,7 @@ module.exports = function(defaults) {
       'vendor/reflect-metadata/Reflect.js',
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js',
-      'vendor/showdown/dist/showdown.js',
-      'vendor/d3/build/d3.min.js'
+      'vendor/showdown/dist/showdown.js'
     ]
   });
 };
