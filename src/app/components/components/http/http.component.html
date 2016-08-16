@@ -96,13 +96,28 @@
         @Injectable()
         export class CustomRESTService extends RESTService<any> {
 
-          constructor(private _http: Http) { // or constructor(private _http: HttpInterceptorService) {
+          constructor(private _http: Http /* or HttpInterceptorService */) {
             super(_http, {
               baseUrl: 'www.api.com',
               path: '/path/to/endpoint',
               transform: (res: Response): any => res.json(),
             });
           }
+        }
+      ]]>
+    </td-highlight>
+    <p>Note: the constructor takes any object that implements the methods in [IHttp] interface.</p>
+    <p>This can be the angular2 [Http] service, the covalent [HttpInterceptorService] or a custom service.</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        export interface IHttp {
+          delete: (url: string, options?: RequestOptionsArgs) => Observable<Response>;
+          get: (url: string, options?: RequestOptionsArgs) => Observable<Response>;
+          head: (url: string, options?: RequestOptionsArgs) => Observable<Response>;
+          patch: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
+          post: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
+          put: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
+          request: (url: string | Request, options: RequestOptionsArgs) => Observable<Response>;
         }
       ]]>
     </td-highlight>
