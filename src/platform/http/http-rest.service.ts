@@ -1,4 +1,4 @@
-import { Headers, RequestOptionsArgs, Response } from '@angular/http';
+import { Headers, RequestOptionsArgs, Response, Request } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
 
@@ -24,6 +24,7 @@ export interface IHttp {
   patch: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
   post: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
   put: (url: string, body: any, options?: RequestOptionsArgs) => Observable<Response>;
+  request: (url: string | Request, options?: RequestOptionsArgs) => Observable<Response>;
 }
 
 export abstract class RESTService<T> {
