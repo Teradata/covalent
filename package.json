@@ -85,7 +85,7 @@
     "showdown": "1.4.2"
   },
   "devDependencies": {
-    "angular-cli": "1.0.0-beta.8",
+    "angular-cli": "1.0.0-beta.10",
     "codelyzer": "0.0.26",
     "del": "2.2.0",
     "ember-cli-inject-live-reload": "1.4.0",
