@@ -2,6 +2,8 @@
 
 `td-json-formatter` renders a javascript object in Json format the same way the chrome/firefox console would render it using `console.log()`.
 
+Hovering on nodes will bring out a preview tooltip of the first 5 objects/properties of the node.
+
 The tree is collapsable/expandable so you can navigate through its nodes.
 
 ## API Summary
@@ -24,5 +26,3 @@ Example for HTML usage:
 <td-json-formatter [data]="object" key="root" [levelsOpen]="1">
 </td-json-formatter>
  ```
- 
-Hovering on nodes will bring out a preview tooltip of the first 5 objects/properties of the node.
