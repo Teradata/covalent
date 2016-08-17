@@ -37,7 +37,6 @@ export class JsonFormatterDemoComponent {
     type: 'number',
   }];
 
-  levelsOpen: number = 1;
   data: Object = {
     'stringProperty': 'This is a string',
     'dateProperty': new Date(),
@@ -58,17 +57,4 @@ export class JsonFormatterDemoComponent {
     },
     'emptyArray': [],
   };
-
-  expandLevel(): void {
-    if (this.levelsOpen < 3) {
-      this.levelsOpen++;
-    }
-  }
-
-  collapseLevel(): void {
-    if (this.levelsOpen > 0) {
-      this.levelsOpen--;
-    }
-  }
-
 }

@@ -8,13 +8,8 @@
       {{data | json}}
     </td-highlight>
     <p>Formatted Object:</p>
-    <td-json-formatter [data]="data" [levelsOpen]="levelsOpen"></td-json-formatter>
+    <td-json-formatter [data]="data" [levelsOpen]="1"></td-json-formatter>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="expandLevel()">Expand Level</button>
-    <button md-button color="primary" (click)="collapseLevel()">Collapse Level</button>
-  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>TdJsonFormatterComponent</md-card-title>
