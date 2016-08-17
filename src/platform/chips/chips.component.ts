@@ -67,7 +67,7 @@ export class TdChipsComponent implements ControlValueAccessor {
   }
 
   addItem(value: string): boolean {
-    if (this._value.indexOf(value) > -1) {
+    if (value.trim() === '' || this._value.indexOf(value) > -1) {
       return false;
     }
     if (this.searchItems && this.requireMatch) {
