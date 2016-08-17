@@ -62,7 +62,7 @@ export class JsonFormatterDemoComponent {
   };
 
   expandLevel(): void {
-    if (this.levelsOpen < 4) {
+    if (this.levelsOpen < 3) {
       this.levelsOpen++;
     }
   }
