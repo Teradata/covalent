@@ -38,6 +38,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
   private _requireMatch: boolean = false;
 
   matches: boolean = true;
+  focused: boolean = false;
 
   @Input('items') items: string[] = [];
   @Input('requireMatch')
@@ -99,6 +100,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
     this._value.splice(index, 1);
     this.remove.emit(value);
     this.onChange(this._value);
+    return true;
+  }
+
+  handleFocus(): boolean {
+    this.focused = true;
+    return true;
+  }
+
+  handleBlur(): boolean {
+    this.focused = false;
+    this.onTouched();
     return true;
   }
 
