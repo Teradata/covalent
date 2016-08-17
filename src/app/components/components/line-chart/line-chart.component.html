@@ -3,8 +3,15 @@
   <md-card-subtitle>Generate Line Chart</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <td-line-chart filePath="platform/charts/line-chart/data.tsv" contentType="tsv" xName="x" yName="y" title="x/y Line Chart">
-    <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
+    <td-line-chart filePath="platform/charts/line-chart/data.tsv"
+                   contentType="tsv"
+                   bottomAxis="col1"
+                   bottomAxisTitle="Day Offset"
+                   leftAxisTitle="Temperature"
+                   [lineColumns]="['col2', 'col3','col4']"
+                   [lineTitles]="['New York','San Francisco', 'Austin']"
+                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                   chartTitle="Temperature Trend">
     </td-line-chart>
   </md-card-content>
 </md-card>
@@ -15,7 +22,6 @@
   <md-card-content>
      <h2><code><![CDATA[<td-line-chart>]]></code></h2>
      <p>Use <code><![CDATA[<td-line-chart>]]></code> element to draw a line chart</p>
-     <p>Wrap your code snippets in <code><![CDATA[<td-line-chart>]]></code></p>
      <p>Note: <code>d3.min.js</code> needs to be added as vendor and referenced in `index.html`.</p>
      <td-highlight lang="javascript">
       module.exports = function(defaults) {
@@ -38,12 +44,27 @@
 
     <td-highlight lang="html">
       <![CDATA[
-        <td-line-chart>
-          <pre><code>
-          <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
-          </code></pre>
-        </td-line-chart>
+      <td-line-chart filePath="platform/charts/line-chart/data.tsv"
+                     contentType="tsv"
+                     bottomAxis="col1"
+                     bottomAxisTitle="Day Offset"
+                     leftAxisTitle="Temperature"
+                     [lineColumns]="['col2', 'col3','col4']"
+                     [lineTitles]="['New York','San Francisco', 'Austin']"
+                     [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                     chartTitle="Temperature Trend">
+      </td-line-chart>
          ]]>
+    </td-highlight>
+    <p>Data Sample</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+      col1,col2,col3,col4
+      1,63.4,62.7,72.2
+      2,58.0,59.9,67.7
+      3,53.3,59.1,69.4
+      ]]>
     </td-highlight>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
@@ -52,7 +73,7 @@
         ...
           directives: [ TdLineChartComponent ]
         })
-        export class Demo {
+        export class LineChartDemoComponent {
 
         }
       ]]>
