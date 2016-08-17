@@ -35,6 +35,7 @@ const barrels: string[] = [
   'platform/file-upload',
   'platform/markdown',
   'platform/http',
+  'platform/chips',
 
   // App specific barrels.
   'app',
