@@ -1,6 +1,6 @@
 # td-json-formatter
 
-`td-json-formatter` renders a javascript object in JSON format the same way the chrome/firefox console would render it using `console.log()`.
+`td-json-formatter` renders a javascript object in Json format the same way the chrome/firefox console would render it using `console.log()`.
 
 The tree is collapsable/expandable so you can navigate through its nodes.
 
