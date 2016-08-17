@@ -54,16 +54,12 @@ export class TdChipsComponent implements ControlValueAccessor {
   }
 
   get filteredSearchItems(): string[] {
+    if (!this._value) {
+      return [];
+    }
     return this.searchItems.filter((item: string) => {
       return this._value.indexOf(item) < 0;
     });
-  }
-
-  isEmpty(value: string): boolean {
-    if (value.length === 0) {
-      return true;
-    }
-    return false;
   }
 
   addItem(value: string): boolean {
