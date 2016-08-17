@@ -1,6 +1,6 @@
 <div flex>
   <template let-chip ngFor [ngForOf]="value">
-    <td-chip>{{chip}}<md-icon *ngIf="!readOnly" (click)="removeItem(chip)">cancel</md-icon></td-chip>
+    <td-chip><span>{{chip}}</span><md-icon *ngIf="!readOnly" (click)="removeItem(chip)">cancel</md-icon></td-chip>
   </template>
   <td-autocomplete #autocomplete 
                    [hidden]="readOnly" 
