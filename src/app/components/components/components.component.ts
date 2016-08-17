@@ -65,6 +65,11 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }, {
+    description: 'Build a list of strings',
+    icon: 'playlist_add',
+    route: 'chips',
+    title: 'Chips',
+  }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
     route: 'pipes',

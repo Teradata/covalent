@@ -50,6 +50,7 @@ const barrels: string[] = [
   'app/components/components/pipes',
   'app/components/components/media',
   'app/components/components/http',
+  'app/components/components/chips',
   'app/components/components/markdown',
   'app/components/docs',
   'app/components/docs/overview',

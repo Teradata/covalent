@@ -10,6 +10,7 @@ import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { HttpDemoComponent } from './http';
+import { ChipsDemoComponent } from './chips';
 import { PipesComponent } from './pipes';
 
 export const componentsRoutes: RouterConfig = [{
@@ -40,6 +41,9 @@ export const componentsRoutes: RouterConfig = [{
     }, {
       component: HttpDemoComponent,
       path: 'http',
+    }, {
+      component: ChipsDemoComponent,
+      path: 'chips',
     }, {
       component: PipesComponent,
       path: 'pipes',

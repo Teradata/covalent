@@ -58,6 +58,11 @@ export class OverviewComponent {
       route: 'http',
       title: 'Http',
     }, {
+      color: 'grey-700',
+      icon: 'playlist_add',
+      route: 'chips',
+      title: 'Chips',
+    }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
       route: 'pipes',
