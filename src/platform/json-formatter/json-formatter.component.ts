@@ -44,7 +44,8 @@ export class TdJsonFormatterComponent {
     this._key = key;
   }
   get key(): string {
-    return this._key ? this._key.substring(0, TdJsonFormatterComponent.KEY_MAX_LENGTH) : this._key;
+    let elipsis: string = this._key && this._key.length > TdJsonFormatterComponent.KEY_MAX_LENGTH ? '…' : '';
+    return this._key ? this._key.substring(0, TdJsonFormatterComponent.KEY_MAX_LENGTH) + elipsis : this._key;
   }
 
   @Input('data')
