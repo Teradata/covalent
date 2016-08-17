@@ -1,6 +1,6 @@
 <td-layout-nav logo="app/assets/icons/teradata.svg" title="Covalent">
   <td-layout-manage-list #list>
-    <list-items>
+    <md-nav-list>
       <a md-list-item>
         <md-icon>folder</md-icon>
         Item Name
@@ -17,7 +17,7 @@
         <md-icon>delete</md-icon>
         Item Name
       </a>
-    </list-items>
+    </md-nav-list>
     <toolbar-buttons layout="row" layout-align="start center" flex>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
@@ -99,8 +99,8 @@
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
-                    <h3 md-line><code><![CDATA[<list-items>]]></code></h3>
-                    <p md-line>The list items wrapper</p>
+                    <h3 md-line><code><![CDATA[<md-nav-list>]]></code></h3>
+                    <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -143,14 +143,14 @@
                     </a>
                   </menu-items>
                   <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
-                    <list-items>
+                    <md-nav-list>
                       <template let-item let-last="last" ngFor [ngForOf]="items">
                           <a md-list-item [routerLink]="[item.route]">
                             <md-icon md-list-avatar>{ {item.icon} }</md-icon>
                             { {item.title} }
                           </a>
                       </template>
-                    </list-items>
+                    </md-nav-list>
                     <toolbar-buttons layout="row" layout-align="start center" flex>
                       <span flex></span>
                       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
