@@ -58,6 +58,11 @@ export class OverviewComponent {
       route: 'http',
       title: 'Http',
     }, {
+      color: 'teal-700',
+      icon: 'input',
+      route: 'json-formatter',
+      title: 'Json Formatter',
+    }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
       route: 'pipes',

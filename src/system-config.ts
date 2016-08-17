@@ -35,6 +35,7 @@ const barrels: string[] = [
   'platform/file-upload',
   'platform/markdown',
   'platform/http',
+  'platform/json-formatter',
 
   // App specific barrels.
   'app',
@@ -49,6 +50,7 @@ const barrels: string[] = [
   'app/components/components/pipes',
   'app/components/components/media',
   'app/components/components/http',
+  'app/components/components/json-formatter',
   'app/components/components/markdown',
   'app/components/docs',
   'app/components/docs/overview',

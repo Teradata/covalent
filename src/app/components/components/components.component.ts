@@ -65,6 +65,11 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }, {
+    description: 'Format your JavaScript objects',
+    icon: 'input',
+    route: 'json-formatter',
+    title: 'Json Formatter',
+  }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
     route: 'pipes',
