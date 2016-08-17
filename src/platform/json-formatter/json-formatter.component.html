@@ -1,6 +1,7 @@
 <div class="td-json-formatter-wrapper">
   <a class="td-key"
      [class.td-key-node]="hasChildren()"
+     [class.td-key-leaf]="!hasChildren()"
      [tabIndex]="isObject()? 0 : -1"
      (keydown.enter)="toggle()"
      layout="row"

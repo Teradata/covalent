@@ -20,10 +20,13 @@
     & .td-key,
     & .td-object-children {
       padding-left: 24px;
+      &.td-key-leaf {
+        padding-left: 48px;
+      }
     }
   }
   .key {
-    color: md-color($md-primary, default-contrast);
+    color: md-color($md-primary);
   }
   .value {
     margin-left: 5px;
@@ -32,14 +35,14 @@
       text-decoration: line-through;
     }
     .string {
-      color: md-color($md-warn, default-contrast);
+      color: md-color($md-warn);
       word-break: break-word;
     }
     .number { 
-      color: md-color($md-accent, default-contrast);
+      color: md-color($md-accent);
     }
     .boolean { 
-      color: md-color($md-accent, default-contrast);
+      color: md-color($md-accent);
     }
     .null { 
       color: gray; 
@@ -48,7 +51,7 @@
       color: gray; 
     }
     .function { 
-      color: md-color($md-primary, default-contrast);
+      color: md-color($md-primary);
     }
     .date { 
       color: black;
