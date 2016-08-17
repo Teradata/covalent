@@ -3,6 +3,20 @@
   <md-card-subtitle>Build a list of strings</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    <p>Basic Demo</p>
     <td-chips></td-chips>
+    <p>Autocomplete Demo</p>
+    <td-chips [items]="items"></td-chips>
+    <p>Autocomplete and requireMatch Demo</p>
+    <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" requireMatch></td-chips>
+    <p>ReadOnly Demo</p>
+    <td-chips [(ngModel)]="itemsReadOnly" [readOnly]="1"></td-chips>
+    <p>Form Demo</p>
+    <form #form="ngForm">
+      <td-chips #spy [items]="items" [(ngModel)]="itemsForms" name="selections" requireMatch></td-chips>
+      <p>Dirty: {{form.form.dirty}}</p>
+      <p>Pristine: {{form.form.pristine}}</p>
+      <p>Touched: {{form.controls.selections?.touched}}</p>
+    </form>
   </md-card-content>
 </md-card>

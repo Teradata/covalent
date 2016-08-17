@@ -24,4 +24,24 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
 })
 export class ChipsDemoComponent {
 
+  items: string[] = [
+    'stepper',
+    'expansion-panel',
+    'markdown',
+    'highlight',
+    'loading',
+    'media',
+    'chips',
+    'http',
+    'json-formatter',
+    'pipes',
+    'need more?',
+  ];
+
+  itemsRequireMatch: string[] = this.items.slice(0, 6);
+
+  itemsReadOnly: string[] = this.items.slice(2, 8);
+
+  itemsForms: string[] = this.items.slice(6, 11);
+
 }
