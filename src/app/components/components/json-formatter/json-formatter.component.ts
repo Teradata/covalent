@@ -45,9 +45,7 @@ export class JsonFormatterDemoComponent {
     'booleanProperty': true,
     'numberArray': [1, 2, 3, 4, 5, 6],
     'objectArray': [{
-        prop: undefined,
-      }, {
-        prop: [1, 2],
+        'prop': undefined,
       }, {
       },
     ],
