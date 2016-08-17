@@ -1,5 +1,5 @@
 <td-layout-nav-list #list logo="app/assets/icons/teradata.svg" title="Covalent">
-  <md-nav-list>
+  <md-nav-list list-items>
     <template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item (click)="list.toggle()">
           <md-icon md-list-avatar>{{item.icon}}</md-icon>
@@ -48,7 +48,7 @@
             <td-step [active]="true" label="Step 2: menu-items" sublabel="the sidenav menu items">
               <md-list>
                 <md-list-item>
-                  <h3 md-line><code><![CDATA[<menu-items>]]></code></h3>
+                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
                   <p md-line>The menu items wrapper</p>
                 </md-list-item>
                 <md-divider></md-divider>
@@ -87,7 +87,7 @@
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-nav-list>]]></code></h3>
+                  <h3 md-line><code><![CDATA[<md-nav-list list-items>]]></code></h3>
                   <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
                 </md-list-item>
                 <md-divider></md-divider>
@@ -105,12 +105,12 @@
           <td-highlight lang="html">
               <![CDATA[
               <td-layout #layout title="Sidenav Title" logo="path/to/sidenav-logo.svg">
-                <menu-items>
+                <md-nav-list menu-items>
                   <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
                     <md-icon>{ {item.icon} }</md-icon>
                     { {item.title} }
                   </a>
-                </menu-items>
+                </md-nav-list>
                 <td-layout-nav-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
                   <md-nav-list>
                     <template let-item let-last="last" ngFor [ngForOf]="items">
