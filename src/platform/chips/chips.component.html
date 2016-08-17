@@ -4,7 +4,7 @@
   </template>
   <td-autocomplete #autocomplete 
                    [hidden]="readOnly" 
-                   [searchItems]="filteredSearchItems"
+                   [searchItems]="filteredItems"
                    (focus)="focused = $event"
                    (blur)="(focused = $event) || (matches = autocomplete.clear())"
                    (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>

@@ -38,7 +38,7 @@ export class TdChipsComponent implements ControlValueAccessor {
 
   matches: boolean = true;
 
-  @Input('searchItems') searchItems: string[] = [];
+  @Input('items') items: string[] = [];
   @Input('requireMatch') requireMatch: boolean = false;
   @Input('readOnly') readOnly: boolean = false;
 
@@ -53,11 +53,11 @@ export class TdChipsComponent implements ControlValueAccessor {
     }
   }
 
-  get filteredSearchItems(): string[] {
+  get filteredItems(): string[] {
     if (!this._value) {
       return [];
     }
-    return this.searchItems.filter((item: string) => {
+    return this.items.filter((item: string) => {
       return this._value.indexOf(item) < 0;
     });
   }
@@ -66,8 +66,8 @@ export class TdChipsComponent implements ControlValueAccessor {
     if (value.trim() === '' || this._value.indexOf(value) > -1) {
       return false;
     }
-    if (this.searchItems && this.requireMatch) {
-      if (this.searchItems.indexOf(value) < 0) {
+    if (this.items && this.requireMatch) {
+      if (this.items.indexOf(value) < 0) {
         return false;
       }
     }
