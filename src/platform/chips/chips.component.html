@@ -6,7 +6,7 @@
                    [hidden]="readOnly" 
                    [searchItems]="filteredItems"
                    (focus)="focused = $event"
-                   (blur)="(focused = $event) || (matches = autocomplete.clear())"
+                   (blur)="onTouched() || (focused = $event) || (matches = autocomplete.clear())"
                    (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
   <div class="md-input-underline"
        [class.md-disabled]="disabled">

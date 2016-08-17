@@ -1,8 +1,8 @@
-import { Component, Input, Output, forwardRef } from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-const noop: () => void = () => {
+const noop: any = () => {
   // empty method
 };
 
@@ -28,18 +28,25 @@ import { TdChipComponent } from './chip.component';
   styleUrls: [ 'chips.component.css' ],
   templateUrl: 'chips.component.html',
 })
-export class TdChipsComponent implements ControlValueAccessor {
+export class TdChipsComponent implements ControlValueAccessor, DoCheck {
 
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
   private _value: any = [];
-  /** Callback registered via registerOnTouched (ControlValueAccessor) */
-  private _onTouchedCallback: () => void = noop;
-  /** Callback registered via registerOnChange (ControlValueAccessor) */
-  private _onChangeCallback: (_: any) => void = noop;
+  private _length: number = 0;
+  private _requireMatch: boolean = false;
 
   matches: boolean = true;
 
   @Input('items') items: string[] = [];
-  @Input('requireMatch') requireMatch: boolean = false;
+  @Input('requireMatch')
+  set requireMatch(requireMatch: any) {
+    this._requireMatch = requireMatch !== '' ? (requireMatch === 'true' || requireMatch === true) : true;
+  }
+  get requireMatch(): any {
+    return this._requireMatch;
+  }
   @Input('readOnly') readOnly: boolean = false;
 
   @Output('add') add: EventEmitter<string> = new EventEmitter<string>();
@@ -49,7 +56,14 @@ export class TdChipsComponent implements ControlValueAccessor {
   @Input() set value(v: any) {
     if (v !== this._value) {
       this._value = v;
-      this._onChangeCallback(v);
+      this._length = this._value ? this._value.length : 0;
+    }
+  }
+
+  ngDoCheck(): void {
+    if (this._value && this._value.length !== this._length) {
+      this._length = this._value.length;
+      this.onChange(this._value);
     }
   }
 
@@ -73,6 +87,7 @@ export class TdChipsComponent implements ControlValueAccessor {
     }
     this._value.push(value);
     this.add.emit(value);
+    this.onChange(this._value);
     return true;
   }
 
@@ -83,31 +98,39 @@ export class TdChipsComponent implements ControlValueAccessor {
     }
     this._value.splice(index, 1);
     this.remove.emit(value);
+    this.onChange(this._value);
     return true;
   }
 
   /**
    * Implemented as part of ControlValueAccessor.
-   * TODO: internal
    */
   writeValue(value: any): void {
-    this._value = value;
+    this.value = value;
   }
 
   /**
    * Implemented as part of ControlValueAccessor.
-   * TODO: internal
    */
   registerOnChange(fn: any): void {
-    this._onChangeCallback = fn;
+    this.onChange = fn;
   }
 
   /**
    * Implemented as part of ControlValueAccessor.
-   * TODO: internal
    */
   registerOnTouched(fn: any): void {
-    this._onTouchedCallback = fn;
+    this.onTouched = fn;
   }
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  onChange = (_: any) => noop;
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  onTouched = () => noop;
 
 }
