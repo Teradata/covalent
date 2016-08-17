@@ -14,7 +14,14 @@ import { MdIcon } from '@angular2-material/icon';
 })
 export class TdJsonFormatterComponent {
 
+  /**
+   * Max length for property names. Any names bigger than this get trunctated.
+   */
   private static KEY_MAX_LENGTH: number = 30;
+
+  /**
+   * Max tooltip preview elements.
+   */
   private static PREVIEW_LIMIT: number = 5;
 
   private _key: string;
@@ -23,6 +30,10 @@ export class TdJsonFormatterComponent {
   private _open: boolean = false;
   private _levelsOpen: number = 0;
 
+  /**
+   * levelsOpen?: number
+   * Levels opened by default when JS object is formatted and rendered.
+   */
   @Input('levelsOpen')
   set levelsOpen(levelsOpen: number) {
     if (!Number.isInteger(levelsOpen)) {
@@ -39,6 +50,10 @@ export class TdJsonFormatterComponent {
     return this._open;
   }
 
+  /**
+   * key?: string
+   * Tag to be displayed next to formatted object.
+   */
   @Input('key')
   set key(key: string) {
     this._key = key;
@@ -48,6 +63,10 @@ export class TdJsonFormatterComponent {
     return this._key ? this._key.substring(0, TdJsonFormatterComponent.KEY_MAX_LENGTH) + elipsis : this._key;
   }
 
+  /**
+   * data: any
+   * JS object to be formatted.
+   */
   @Input('data')
   set data(data: any) {
     this._data = data;
@@ -61,6 +80,9 @@ export class TdJsonFormatterComponent {
     return this._children;
   }
 
+  /**
+   * Toggles collapse/expanded state of component.
+   */
   toggle(): void {
     this._open = !this._open;
   }
@@ -77,6 +99,9 @@ export class TdJsonFormatterComponent {
     return this.children.length > 0;
   }
 
+  /**
+   * Gets parsed value depending on value type.
+   */
   getValue(value: any): string {
     let type: string = this.getType(value);
     if (type === 'undefined' || (type === 'null')) {
@@ -94,6 +119,10 @@ export class TdJsonFormatterComponent {
     return value;
   }
 
+  /**
+   * Gets type of object.
+   * returns 'null' if object is null and 'date' if value is object and can be parsed to a date.
+   */
   getType(object: any): string {
     if (typeof object === 'object') {
       if (!object) {
@@ -109,7 +138,10 @@ export class TdJsonFormatterComponent {
     return typeof object;
   }
 
-  // From http://stackoverflow.com/a/332429
+  /**
+   * Generates string representation depending if its an object or function.
+   * see: http://stackoverflow.com/a/332429
+   */
   getObjectName(): string {
     let object: any = this._data;
     if (this.isObject() && !object.constructor) {
@@ -124,6 +156,9 @@ export class TdJsonFormatterComponent {
     }
   }
 
+  /**
+   * Creates preview of nodes children to render in tooltip depending if its an array or an object.
+   */
   getPreview(): string {
     let previewData: string[];
     let startChar: string = '{';
