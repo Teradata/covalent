@@ -5,7 +5,8 @@
       <md-icon *ngIf="!readOnly"
                [tabIndex]="0" 
                (keydown.enter)="removeItem(chip)" 
-               (click)="removeItem(chip)">cancel</md-icon>
+               (click)="removeItem(chip)"
+               title="Delete">cancel</md-icon>
     </td-chip>
   </template>
   <td-autocomplete #autocomplete 
