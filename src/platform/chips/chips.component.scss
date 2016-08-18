@@ -87,6 +87,9 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
 
 :host {
   md-input {
+    input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
+      display: none;
+    }
     .md-input-underline {
       display: none;
     }
