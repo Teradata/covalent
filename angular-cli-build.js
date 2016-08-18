@@ -14,7 +14,8 @@ module.exports = function(defaults) {
       '@angular/**/*.js',
       '@angular2-material/**/*.js',
       'showdown/dist/showdown.js',
-      'd3/build/d3.min.js'
+      'd3/build/d3.min.js',
+      'd3-scale-chromatic/build/d3-scale-chromatic.min.js'
     ],
     polyfills: [
       'vendor/es6-shim/es6-shim.js',
