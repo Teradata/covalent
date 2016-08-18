@@ -1,5 +1,5 @@
 <a name="0.6.0"></a>
-# [0.6.0](https://github.com/Teradata/covalent/compare/v0.5.0...v0.6.0) (2016-08-18)
+# [0.6.0](https://github.com/Teradata/covalent/tree/v0.6.0) (2016-08-18)
 
 
 ### Bug Fixes
@@ -32,7 +32,6 @@
 
 * **badge:** Added dependency badge to README ([147c06965227a481591e09e3d21cb46a413d9990](https://github.com/Teradata/covalent/commit/147c06965227a481591e09e3d21cb46a413d9990))
 * **deploy:** Use hash urls for github pages ([92352314187a3592091ac7b6df4c2126e4d76d96](https://github.com/Teradata/covalent/commit/92352314187a3592091ac7b6df4c2126e4d76d96)), closes [#33](https://github.com/Teradata/covalent/issues/33)
-
 
 
 ### BREAKING CHANGES
