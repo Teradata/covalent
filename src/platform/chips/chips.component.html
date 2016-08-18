@@ -12,7 +12,7 @@
   <td-autocomplete #autocomplete 
                    [disabled]="readOnly" 
                    [searchItems]="filteredItems"
-                   [placeholder]="placeholder"
+                   [placeholder]="readOnly? '' : placeholder"
                    (focus)="handleFocus()"
                    (blur)="handleBlur() && (matches = autocomplete.clear())"
                    (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
