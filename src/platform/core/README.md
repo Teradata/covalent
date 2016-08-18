@@ -38,7 +38,7 @@ Properties:
 | `title` | `string` | Title to be displayed.
 | `icon` | `string` | Uses material icon names.
 | `displayName` | `string` | Username to be displayed.
-| `tdOnLogout` | `function()` | Function executed when logout it pressed.
+| `logout` | `function()` | Function executed when logout it pressed.
 
 #### td-layout-nav
 
