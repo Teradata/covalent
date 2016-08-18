@@ -18,11 +18,6 @@ import { MdIcon } from '@angular2-material/icon';
 })
 export class OverviewComponent {
   items: Object[] = [{
-      color: 'pink-700',
-      icon: 'code',
-      route: 'syntax-highlighting',
-      title: 'Syntax Highlighting',
-    }, {
       color: 'deep-purple-700',
       icon: 'view_list',
       route: 'steps',
@@ -43,6 +38,16 @@ export class OverviewComponent {
       route: 'loading',
       title: 'Loading',
     }, {
+      color: 'pink-700',
+      icon: 'code',
+      route: 'syntax-highlighting',
+      title: 'Syntax Highlighting',
+    }, {
+      color: 'teal-700',
+      icon: 'input',
+      route: 'json-formatter',
+      title: 'Json Formatter',
+    }, {
       color: 'orange-700',
       icon: 'chrome_reader_mode',
       route: 'markdown',
@@ -57,11 +62,6 @@ export class OverviewComponent {
       icon: 'http',
       route: 'http',
       title: 'Http',
-    }, {
-      color: 'teal-700',
-      icon: 'input',
-      route: 'json-formatter',
-      title: 'Json Formatter',
     }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
