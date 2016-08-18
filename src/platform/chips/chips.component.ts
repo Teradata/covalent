@@ -74,13 +74,15 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
 
   /**
    * add?: function
-   * Method to be executed when item is added as chip through the autocomplete.
+   * Method to be executed when string is added as chip through the autocomplete.
+   * Sends chip value as event.
    */
   @Output('add') add: EventEmitter<string> = new EventEmitter<string>();
 
   /**
-   * add?: function
-   * Method to be executed when item is removed as chip with the "remove" button.
+   * remove?: function
+   * Method to be executed when string is removed as chip with the "remove" button.
+   * Sends chip value as event.
    */
   @Output('remove') remove: EventEmitter<string> = new EventEmitter<string>();
 

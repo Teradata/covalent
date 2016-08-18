@@ -33,10 +33,20 @@ export class ChipsDemoComponent {
     name: 'readOnly?',
     type: 'boolean',
   }, {
-    description: `Validates input against the provided list before adding it to the model.
+    description: `Validates input against the provided search list before adding it to the model.
                   If it doesnt exist, it cancels the event.`,
     name: 'requireMatch?',
     type: 'boolean',
+  }, {
+    description: `Method to be executed when string is added as chip through the autocomplete.
+                  Sends chip value as event.`,
+    name: 'add?',
+    type: 'function',
+  }, {
+    description: `Method to be executed when string is removed as chip with the "remove" button.
+                  Sends chip value as event.`,
+    name: 'remove?',
+    type: 'function',
   }];
 
   items: string[] = [
