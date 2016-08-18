@@ -69,6 +69,11 @@ export class ComponentsComponent {
     icon: 'show_chart',
     route: 'line-chart',
     title: 'Line Chart',
+  }, {
+    description: 'Draw Bar Chart.',
+    icon: 'show_chart',
+    route: 'bar-chart',
+    title: 'Bar Chart',
   }];
 
 }

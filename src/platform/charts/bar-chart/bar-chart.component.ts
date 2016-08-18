@@ -4,22 +4,22 @@ declare var d3: any;
 
 @Component({
   moduleId: module.id,
-  selector: 'td-line-chart',
-  styleUrls: ['line-chart.component.css'],
-  templateUrl: 'line-chart.component.html',
+  selector: 'td-bar-chart',
+  styleUrls: ['bar-chart.component.css'],
+  templateUrl: 'bar-chart.component.html',
 })
 
-export class TdLineChartComponent implements AfterViewInit {
+export class TdBarChartComponent implements AfterViewInit {
 
   private _margin = {top: 50, right: 150, bottom: 50, left: 50};
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _lineColumns: string[] = [];
-  private _lineTitles: string[] = [];
+  private _lineColumns: string;
+  private _lineTitles: string;
   private _lineColors: string[] = [];
 
-  @ViewChild('linechart') content: ElementRef;
+  @ViewChild('barchart') content: ElementRef;
 
   /**
    * filePath?: string.
@@ -54,12 +54,12 @@ export class TdLineChartComponent implements AfterViewInit {
   @Input('chartTitle') chartTitle: string = '';
 
   @Input('lineColumns')
-  set lineColumns(lineColumns: string[]) {
+  set lineColumns(lineColumns: string) {
     this._lineColumns = lineColumns;
   }
 
   @Input('lineTitles')
-  set lineTitles(lineTitles: string[]) {
+  set lineTitles(lineTitles: string) {
     this._lineTitles = lineTitles;
   }
 
@@ -78,19 +78,16 @@ export class TdLineChartComponent implements AfterViewInit {
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
-    var x = d3.scaleLinear().range([0, this._width]);
-    var y = d3.scaleLinear().range([this._height, 0]);
-    var color = d3.scaleOrdinal(this._lineColors);
+    let color = this._lineColors.length === 0 ? d3.schemePaired : d3.scaleOrdinal(this._lineColors);
 
-    var drawLine = d3.line()
-      .curve(d3.curveBasis)
-      .x(function(d) { return x(d.xValue); })
-      .y(function(d) { return y(d.yValue); });
+    // set the ranges
+    var x = d3.scaleBand().range([0, this._width]).padding(0.1);
+    var y = d3.scaleLinear().range([this._height, 0]);
 
     let viewBoxWidth = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight = this._height + this._margin.top + this._margin.bottom;
 
-    var svg = d3.select('#linechart')
+    var svg = d3.select('#barchart')
       .classed("svg-container", true)
       .append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
@@ -108,29 +105,29 @@ export class TdLineChartComponent implements AfterViewInit {
     ParseContent[this.contentType](this.filePath, (error, data) => {
       if (error) throw error;
 
-      var lines = this._lineColumns.map((id) => {
-        return {
-          id: id,
-          values: data.map((d) => {
-            return {xValue: d[this.bottomAxis], yValue: d[id]};
-          })
-        };
+      data.forEach((d) => {
+        d[this._lineColumns] = +d[this._lineColumns];
       });
 
-      x.domain(d3.extent(data, (d) => { return d[this.bottomAxis]; }));
+      x.domain(data.map((d) => { return d[this.bottomAxis]; }));
+      y.domain([0, d3.max(data, (d) => { return d[this._lineColumns]; })]);
 
-      y.domain([
-        d3.min(lines, function(c) { return d3.min(c.values, function(d) { return d.yValue; }); }),
-        d3.max(lines, function(c) { return d3.max(c.values, function(d) { return d.yValue; }); })
-      ]);
+
+      svg.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", (d) => { return x(d[this.bottomAxis]); })
+        .attr("width", x.bandwidth())
+        .attr("y", (d) => { return y(d[this._lineColumns]); })
+        .attr("height", (d) => { return this._height - y(d[this._lineColumns]); })
+        .attr("fill", (d, i) => { if(i > 11) { i = (i - 11);} {}let abc = (typeof color === 'object' ? color[i] : color(i)); return abc;});
 
       svg.append("g")
-        .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + this._height + ")")
         .call(d3.axisBottom(x));
 
       svg.append("g")
-        .attr("class", "axis axis--y")
         .call(d3.axisLeft(y))
         .append("text")
         .attr("transform", "rotate(-90)")
@@ -138,24 +135,6 @@ export class TdLineChartComponent implements AfterViewInit {
         .attr("dy", "0.71em")
         .attr("fill", "#000")
         .text(this.leftAxisTitle);
-
-      var line = svg.selectAll(".lineTitle")
-        .data(lines)
-        .enter().append("g")
-        .attr("class", "lineTitle");
-
-      line.append("path")
-        .attr("class", "line")
-        .attr("d", function(d) { return drawLine(d.values); })
-        .style("stroke", function(d) { return color(d.id); });
-
-      line.append("text")
-        .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
-        .attr("transform", function(d) { return "translate(" + x(d.value.xValue) + "," + y(d.value.yValue) + ")"; })
-        .attr("x", 3)
-        .attr("dy", "0.35em")
-        .style("font", "10px sans-serif")
-        .text((d,i) => { return this._lineTitles[i];});
 
       svg.append("text")
         .attr("text-anchor", "middle")

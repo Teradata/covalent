@@ -1,0 +1,57 @@
+$black-primary: rgba(0, 0, 0, 0.87);
+$black-secondary: rgba(0, 0, 0, 0.54);
+$black-tertiary: rgba(0, 0, 0, 0.38);
+
+$white-primary: rgba(255, 255, 255, 0.87);
+$white-secondary: rgba(255, 255, 255, 0.54);
+$white-tertiary: rgba(255, 255, 255, 0.38);
+
+$md-primary: #F57C00;
+$md-primary-opacity: rgba(245, 124, 0, 0.12);
+$md-accent: #0288D1;
+$md-accent-opacity: rgba(2, 136, 209, 0.12);
+
+:host {
+  text {
+    fill: $black-secondary;
+  }
+  .axis {
+  font-size: 10px;
+    path,
+    line {
+      fill: none;
+      stroke: $black-tertiary;
+    }
+  }
+  .line {
+    fill: none;
+    stroke: $md-accent;
+    stroke-width: 2px;
+  }
+  .header {
+    border-radius: 2px 2px 0px 0px;
+    color: $black-tertiary;
+    margin-top: 50px;
+    margin-left: 200px;
+    padding-top: 20px;
+    width: 960px;
+    height: 40px;
+    text-align: center;
+  }
+
+  .svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+  }
+  .svg-content-responsive {
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+  }
+
+}
