@@ -1,5 +1,5 @@
 <td-layout-nav-list #list logo="app/assets/icons/teradata.svg" title="Covalent">
-  <list-items>
+  <md-nav-list list-items>
     <template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item [routerLink]="[item.route]" (click)="list.toggle()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
 true}">
@@ -9,7 +9,7 @@ true}">
         </a>
         <md-divider *ngIf="!last" md-inset></md-divider>
       </template>
-  </list-items>
+  </md-nav-list>
   <nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>Documentation</span>
     <span flex></span>
