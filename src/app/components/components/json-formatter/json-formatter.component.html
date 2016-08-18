@@ -1,14 +1,16 @@
 <md-card>
-  <md-card-title>Json Formatter</md-card-title>
-  <md-card-subtitle>Format your JavaScript objects</md-card-subtitle>
+  <md-card-title>JSON Formatter</md-card-title>
+  <md-card-subtitle>JSON object tree with collapsible nodes</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Original Object:</p>
+    <h3 class="md-title">Object using JSON Formatting:</h3>
+    <p>(Use mouse or keyboard to expand/collapse nodes)</p>
+    <td-json-formatter [data]="data" [levelsOpen]="2"></td-json-formatter>
+    <md-divider class="push-top"></md-divider>
+    <h3 class="md-title">Original JSON Object:</h3>
     <td-highlight lang="json">
       {{data | json}}
     </td-highlight>
-    <p>Formatted Object:</p>
-    <td-json-formatter [data]="data" [levelsOpen]="1"></td-json-formatter>
   </md-card-content>
 </md-card>
 <md-card>
