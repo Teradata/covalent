@@ -117,4 +117,12 @@ $md-warn: #C62828;
             }
         }
     }
+    md-nav-list {
+        [md-list-item].active {
+            md-icon {
+                background-color: $md-accent;
+                color: white;
+            }
+        }
+    }
 }
