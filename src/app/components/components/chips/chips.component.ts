@@ -38,6 +38,10 @@ export class ChipsDemoComponent {
     name: 'requireMatch?',
     type: 'boolean',
   }, {
+    description: `Placeholder for the autocomplete input.`,
+    name: 'placeholder?',
+    type: 'string',
+  }, {
     description: `Method to be executed when string is added as chip through the autocomplete.
                   Sends chip value as event.`,
     name: 'add?',
@@ -48,6 +52,8 @@ export class ChipsDemoComponent {
     name: 'remove?',
     type: 'function',
   }];
+
+  readOnly: boolean = false;
 
   items: string[] = [
     'stepper',
@@ -68,5 +74,9 @@ export class ChipsDemoComponent {
   itemsReadOnly: string[] = this.items.slice(2, 8);
 
   itemsForms: string[] = this.items.slice(6, 11);
+
+  toggleReadOnly(): void {
+    this.readOnly = !this.readOnly;
+  }
 
 }

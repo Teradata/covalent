@@ -4,21 +4,23 @@
   <md-divider></md-divider>
   <md-card-content>
     <p>Basic Demo</p>
-    <td-chips></td-chips>
+    <td-chips placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
     <p>Autocomplete Demo</p>
-    <td-chips [items]="items"></td-chips>
+    <td-chips [items]="items" placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
     <p>Autocomplete and requireMatch Demo</p>
-    <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" requireMatch></td-chips>
-    <p>ReadOnly Demo</p>
-    <td-chips [(ngModel)]="itemsReadOnly" [readOnly]="1"></td-chips>
+    <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
     <p>Form Demo</p>
     <form #form="ngForm">
-      <td-chips #spy [items]="items" [(ngModel)]="itemsForms" name="selections" requireMatch></td-chips>
+      <td-chips #spy [items]="items" [(ngModel)]="itemsForms" name="selections" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
       <p>Dirty: {{form.form.dirty}}</p>
       <p>Pristine: {{form.form.pristine}}</p>
       <p>Touched: {{form.controls.selections?.touched}}</p>
     </form>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleReadOnly()">Toggle ReadOnly</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>TdChipsComponent</md-card-title>
@@ -43,7 +45,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-chips [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
+        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
         </td-chips>        
       ]]>
     </td-highlight>
