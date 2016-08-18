@@ -1,0 +1,24 @@
+<div flex>
+  <md-input flex="100" 
+            [(ngModel)]="value"
+            [placeholder]="placeholder"
+            [autofocus]="autoFocus"
+            [list]="listName"
+            [max]="max"
+            [maxLength]="maxLength"
+            [min]="min"
+            [minLength]="minLength"
+            [readonly]="readOnly"
+            [disabled]="disabled"
+            [required]="required"
+            [name]="name"
+            (keyup.enter)="handleItemSelect()"
+            (focus)="handleFocus()"
+            (blur)="handleBlur()">
+  </md-input>
+  <datalist [id]="listName">
+    <template let-item ngFor [ngForOf]="searchItems">
+      <option [value]="item"></option>
+    </template>
+  </datalist>
+</div>

@@ -1,0 +1,25 @@
+<div flex>
+  <template let-chip ngFor [ngForOf]="value">
+    <td-chip>
+      <span>{{chip}}</span>
+      <md-icon *ngIf="!readOnly"
+               [tabIndex]="0" 
+               (keydown.enter)="removeItem(chip)" 
+               (click)="removeItem(chip)"
+               title="Delete">cancel</md-icon>
+    </td-chip>
+  </template>
+  <td-autocomplete #autocomplete 
+                   [disabled]="readOnly" 
+                   [searchItems]="filteredItems"
+                   [placeholder]="readOnly? '' : placeholder"
+                   (focus)="handleFocus()"
+                   (blur)="handleBlur() && (matches = autocomplete.clear())"
+                   (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
+  <div class="md-input-underline"
+       [class.md-disabled]="disabled">
+    <span class="md-input-ripple"
+          [class.md-focused]="focused"
+          [class.md-warn]="!matches"></span>
+  </div>
+</div>
