@@ -45,6 +45,11 @@ export class ComponentsComponent {
     route: 'file-upload',
     title: 'File Upload',
   }, {
+    description: 'Build a list of strings',
+    icon: 'playlist_add',
+    route: 'chips',
+    title: 'Chips',
+  }, {
     description: 'Circular or linear progress loader',
     icon: 'hourglass_empty',
     route: 'loading',
@@ -64,11 +69,6 @@ export class ComponentsComponent {
     icon: 'http',
     route: 'http',
     title: 'Http',
-  }, {
-    description: 'Build a list of strings',
-    icon: 'playlist_add',
-    route: 'chips',
-    title: 'Chips',
   }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',

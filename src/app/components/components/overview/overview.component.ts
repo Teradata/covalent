@@ -38,6 +38,11 @@ export class OverviewComponent {
       route: 'file-upload',
       title: 'File Upload',
     }, {
+      color: 'grey-700',
+      icon: 'playlist_add',
+      route: 'chips',
+      title: 'Chips',
+    }, {
       color: 'light-green-700',
       icon: 'hourglass_empty',
       route: 'loading',
@@ -57,11 +62,6 @@ export class OverviewComponent {
       icon: 'http',
       route: 'http',
       title: 'Http',
-    }, {
-      color: 'grey-700',
-      icon: 'playlist_add',
-      route: 'chips',
-      title: 'Chips',
     }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
