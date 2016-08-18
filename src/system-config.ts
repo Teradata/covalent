@@ -36,6 +36,7 @@ const barrels: string[] = [
   'platform/markdown',
   'platform/http',
   'platform/json-formatter',
+  'platform/chips',
 
   // App specific barrels.
   'app',
@@ -51,6 +52,7 @@ const barrels: string[] = [
   'app/components/components/media',
   'app/components/components/http',
   'app/components/components/json-formatter',
+  'app/components/components/chips',
   'app/components/components/markdown',
   'app/components/docs',
   'app/components/docs/overview',
