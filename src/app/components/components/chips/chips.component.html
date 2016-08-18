@@ -43,7 +43,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-chips [items]="items" [(ngModel)]="model" readOnly="readOnly" requireMatch>
+        <td-chips [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
         </td-chips>        
       ]]>
     </td-highlight>
@@ -62,6 +62,13 @@
             'string3'
           ];
           model: string[] = [];
+
+          add(value: string): void {
+            ...
+          }
+          remove(value: string): void {
+            ...
+          }
         }
       ]]>
     </td-highlight>
