@@ -15,13 +15,31 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
 :host {
   display: block;
   padding: 0px 5px 0px 5px;
-}
-
-td-chip {
-  md-icon {
+  .td-chip {
+    display: inline-block;;
+    background: md-color($md-grey, 300);;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default;
+    border-radius: 16px;
+    line-height: 32px;
+    margin: 8px 8px 0 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+    max-width: 100%;
     position: relative;
-    top: 5px;
-    left: 5px;
+    md-icon {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      height: 18px;
+      width: 18px;
+      font-size: 19px;
+      color: rgba(0, 0, 0, 0.23);
+      &:hover {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
   }
 }
 
