@@ -18,11 +18,6 @@ import { MdIcon } from '@angular2-material/icon';
 })
 export class OverviewComponent {
   items: Object[] = [{
-      color: 'pink-700',
-      icon: 'code',
-      route: 'syntax-highlighting',
-      title: 'Syntax Highlighting',
-    }, {
       color: 'deep-purple-700',
       icon: 'view_list',
       route: 'steps',
@@ -39,7 +34,7 @@ export class OverviewComponent {
       title: 'File Upload',
     }, {
       color: 'grey-700',
-      icon: 'playlist_add',
+      icon: 'label',
       route: 'chips',
       title: 'Chips',
     }, {
@@ -47,6 +42,16 @@ export class OverviewComponent {
       icon: 'hourglass_empty',
       route: 'loading',
       title: 'Loading',
+    }, {
+      color: 'pink-700',
+      icon: 'code',
+      route: 'syntax-highlighting',
+      title: 'Highlighting',
+    }, {
+      color: 'teal-700',
+      icon: 'format_indent_increase',
+      route: 'json-formatter',
+      title: 'JSON Formatter',
     }, {
       color: 'orange-700',
       icon: 'chrome_reader_mode',

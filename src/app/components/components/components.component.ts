@@ -25,11 +25,6 @@ export class ComponentsComponent {
     route: '.',
     title: 'Teradata Components',
   }, {
-    description: 'Highlighting your code snippets',
-    icon: 'code',
-    route: 'syntax-highlighting',
-    title: 'Syntax Highlighting',
-  }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
     route: 'steps',
@@ -45,15 +40,25 @@ export class ComponentsComponent {
     route: 'file-upload',
     title: 'File Upload',
   }, {
-    description: 'Build a list of strings',
-    icon: 'playlist_add',
+    description: 'Small blocks for multiple items',
+    icon: 'label_outline',
     route: 'chips',
-    title: 'Chips',
+    title: 'Chips & Autocomplete',
   }, {
     description: 'Circular or linear progress loader',
     icon: 'hourglass_empty',
     route: 'loading',
     title: 'Loading',
+  }, {
+    description: 'Highlighting your code snippets',
+    icon: 'code',
+    route: 'syntax-highlighting',
+    title: 'Syntax Highlighting',
+  }, {
+    description: 'JSON object tree with collapsible nodes',
+    icon: 'format_indent_increase',
+    route: 'json-formatter',
+    title: 'JSON Formatter',
   }, {
     description: 'Parse markdown files.',
     icon: 'chrome_reader_mode',
