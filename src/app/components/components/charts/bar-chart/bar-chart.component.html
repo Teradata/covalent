@@ -44,15 +44,15 @@
 
     <td-highlight lang="html">
       <![CDATA[
-      <td-bar-chart filePath="platform/charts/bar-chart/data.tsv"
-                     contentType="tsv"
-                     bottomAxis="col1"
-                     bottomAxisTitle="Day Offset"
-                     leftAxisTitle="Temperature"
-                     [lineColumns]="['col2', 'col3','col4']"
-                     [lineTitles]="['New York','San Francisco', 'Austin']"
-                     [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
-                     chartTitle="Temperature Trend">
+      <td-bar-chart dataSrc="platform/charts/bar-chart/data.csv"
+                    contentType="csv"
+                    bottomAxis="salesperson"
+                    bottomAxisTitle="Day Offset"
+                    leftAxisTitle="Sales"
+                    lineColumns="sales"
+                    lineTitles="Sales"
+                    [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                    chartTitle="Sales Bar Chart">
       </td-bar-chart>
          ]]>
     </td-highlight>
@@ -60,10 +60,13 @@
 
     <td-highlight lang="html">
       <![CDATA[
-      col1,col2,col3,col4
-      1,63.4,62.7,72.2
-      2,58.0,59.9,67.7
-      3,53.3,59.1,69.4
+      salesperson,sales
+      Bob,33
+      Robin,12
+      Anne,41
+      Mark,16
+      Joe,59
+      Eve,38
       ]]>
     </td-highlight>
     <p>Typescript:</p>
