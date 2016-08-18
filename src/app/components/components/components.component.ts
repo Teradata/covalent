@@ -40,10 +40,10 @@ export class ComponentsComponent {
     route: 'file-upload',
     title: 'File Upload',
   }, {
-    description: 'Build a list of strings',
-    icon: 'playlist_add',
+    description: 'Small blocks for multiple items',
+    icon: 'label_outline',
     route: 'chips',
-    title: 'Chips',
+    title: 'Chips & Autocomplete',
   }, {
     description: 'Circular or linear progress loader',
     icon: 'hourglass_empty',

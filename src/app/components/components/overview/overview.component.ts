@@ -34,7 +34,7 @@ export class OverviewComponent {
       title: 'File Upload',
     }, {
       color: 'grey-700',
-      icon: 'playlist_add',
+      icon: 'label',
       route: 'chips',
       title: 'Chips',
     }, {
@@ -46,12 +46,12 @@ export class OverviewComponent {
       color: 'pink-700',
       icon: 'code',
       route: 'syntax-highlighting',
-      title: 'Syntax Highlighting',
+      title: 'Highlighting',
     }, {
       color: 'teal-700',
-      icon: 'input',
+      icon: 'format_indent_increase',
       route: 'json-formatter',
-      title: 'Json Formatter',
+      title: 'JSON Formatter',
     }, {
       color: 'orange-700',
       icon: 'chrome_reader_mode',
