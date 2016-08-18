@@ -24,6 +24,21 @@ import { TdHighlightComponent } from '../../../../platform/highlight';
 })
 export class ChipsDemoComponent {
 
+  chipsAttrs: Object[] = [{
+    description: `Enables Autocompletion with the provided list of strings.`,
+    name: 'items?',
+    type: 'string[]',
+  }, {
+    description: `Disables the chip input and removal.`,
+    name: 'readOnly?',
+    type: 'boolean',
+  }, {
+    description: `Validates input against the provided list before adding it to the model.
+                  If it doesnt exist, it cancels the event.`,
+    name: 'requireMatch?',
+    type: 'boolean',
+  }];
+
   items: string[] = [
     'stepper',
     'expansion-panel',
