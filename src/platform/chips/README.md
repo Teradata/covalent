@@ -13,6 +13,7 @@ Properties:
 | `items?` | `string[]` | Enables Autocompletion with the provided list of search strings.
 | `readOnly` | `boolean` | Disables the chip input and removal.
 | `requireMatch?` | `boolean` | Validates input against the provided search list before adding it to the model. If it doesnt exist, it cancels the event.
+| `placeholder?` | `string` | Placeholder for the autocomplete input.
 | `add?` | `function` | Method to be executed when string is added as chip through the autocomplete. Sends chip value as event.
 | `remove?` | `function` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
 
@@ -21,6 +22,6 @@ Properties:
 Example for HTML usage:
 
  ```html
-<td-chips [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="addEvent($event)" (remove)="removeEvent($event)" requireMatch>
+<td-chips placeholder="placeholder" [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="addEvent($event)" (remove)="removeEvent($event)" requireMatch>
 </td-chips>  
  ```

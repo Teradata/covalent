@@ -73,6 +73,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
   @Input('readOnly') readOnly: boolean = false;
 
   /**
+   * placeholder?: string
+   * Placeholder for the autocomplete input.
+   */
+  @Input('placeholder') placeholder: string;
+
+  /**
    * add?: function
    * Method to be executed when string is added as chip through the autocomplete.
    * Sends chip value as event.
