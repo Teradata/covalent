@@ -29,7 +29,7 @@ There are five types of layouts:
 
 #### td-layout
 
-`<menu-items>` is used to include items in the sidenav.
+`<md-nav-list menu-items>` is used to include items in the sidenav.
 
 Properties:
 
@@ -46,7 +46,7 @@ Properties:
 
 #### td-layout-nav-list
 
-`<md-nav-list>` is used to include items in the left side list.
+`<md-nav-list list-items>` is used to include items in the left side list.
 `<list-toolbar-content>` is used to include items in the left side toolbar.
 `<nav-toolbar-content>` is used to include items in the right side toolbar.
 
@@ -61,7 +61,7 @@ Properties:
 
 #### td-layout-manage-items
 
-`<md-nav-list>` is used to include items in the left side list.
+`<md-nav-list list-items>` is used to include items in the left side list.
 `<toolbar-content>` is used to include items in the toolbar.
 
 #### Usage
@@ -92,7 +92,7 @@ Example Nav List Layout:
     <span flex></span>
     <button md-button (click)="search()" class="md-icon-button"><md-icon class="md-24">search</md-icon></button>
   </list-toolbar-content>
-  <md-nav-list>
+  <md-nav-list list-items>
     <a md-list-item>
     <md-icon md-list-avatar>dashboard</md-icon>
     <h3 md-line> Item Name </h3>
@@ -113,7 +113,7 @@ Example for Manage List Layout / Nav Layout combo:
 ```html
 <td-layout-nav>
   <td-layout-manage-list #list>
-    <md-nav-list>
+    <md-nav-list list-items>
       ...
     </md-nav-list>
     <toolbar-buttons>
