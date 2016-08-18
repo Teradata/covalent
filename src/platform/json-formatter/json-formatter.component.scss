@@ -8,12 +8,14 @@
   padding-top: 2px;
   padding-bottom: 2px;
   .td-key {
-    &.td-key-node:focus {
-      background-color: #F5F5F5
-    }
-    &.td-key-node:hover {
-      cursor: pointer;
-      background-color: rgba(158,158,158,0.2);
+    &.td-key-node {
+      &:focus,
+      &:hover {
+        background-color: rgba(158,158,158,0.1);
+      }
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   .td-object-children {
