@@ -25,11 +25,6 @@ export class ComponentsComponent {
     route: '.',
     title: 'Teradata Components',
   }, {
-    description: 'Highlighting your code snippets',
-    icon: 'code',
-    route: 'syntax-highlighting',
-    title: 'Syntax Highlighting',
-  }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
     route: 'steps',
@@ -50,6 +45,16 @@ export class ComponentsComponent {
     route: 'loading',
     title: 'Loading',
   }, {
+    description: 'Highlighting your code snippets',
+    icon: 'code',
+    route: 'syntax-highlighting',
+    title: 'Syntax Highlighting',
+  }, {
+    description: 'JSON object tree with collapsible nodes',
+    icon: 'format_indent_increase',
+    route: 'json-formatter',
+    title: 'JSON Formatter',
+  }, {
     description: 'Parse markdown files.',
     icon: 'chrome_reader_mode',
     route: 'markdown',
@@ -64,11 +69,6 @@ export class ComponentsComponent {
     icon: 'http',
     route: 'http',
     title: 'Http',
-  }, {
-    description: 'Format your JavaScript objects',
-    icon: 'input',
-    route: 'json-formatter',
-    title: 'Json Formatter',
   }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
