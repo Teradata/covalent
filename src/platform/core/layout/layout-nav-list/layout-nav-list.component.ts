@@ -6,12 +6,11 @@ import { MdToolbar } from '@angular2-material/toolbar';
 import { MD_SIDENAV_DIRECTIVES, MdSidenav } from '@angular2-material/sidenav';
 import { MdIcon } from '@angular2-material/icon';
 import { MdButton } from '@angular2-material/button';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  directives: [ MdToolbar , MD_SIDENAV_DIRECTIVES, MdIcon, MdButton, MD_LIST_DIRECTIVES],
+  directives: [ MdToolbar , MD_SIDENAV_DIRECTIVES, MdIcon, MdButton ],
   moduleId: module.id,
   selector: 'td-layout-nav-list',
   styleUrls: [ 'layout-nav-list.component.css' ],

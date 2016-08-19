@@ -1,0 +1,60 @@
+<md-card>
+  <md-card-title>JSON Formatter</md-card-title>
+  <md-card-subtitle>JSON object tree with collapsible nodes</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title">Object using JSON Formatting:</h3>
+    <p>(Use mouse or keyboard to expand/collapse nodes)</p>
+    <td-json-formatter [data]="data" [levelsOpen]="2"></td-json-formatter>
+    <md-divider class="push-top"></md-divider>
+    <h3 class="md-title">Original JSON Object:</h3>
+    <td-highlight lang="json">
+      {{data | json}}
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdJsonFormatterComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-json-formatter>]]></code></h2>
+    <p>Simply add the <code><![CDATA[<td-json-formatter>]]></code> element and pass the object to be formatted as a <code>[data]</code> input.</p>
+    <p>Hovering on nodes will bring out a preview tooltip of the first 5 objects/properties of the node.</p>
+    <p>The tree is collapsable/expandable so you can navigate through its nodes.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-json-formatter>]]></code> component has {{jsonFormatterAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="jsonFormatterAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-json-formatter [data]="object" [levelsOpen]="1">
+        </td-json-formatter>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdJsonFormatterComponent } from '@covalent/json-formatter';
+        ...
+          directives: [ TdJsonFormatterComponent ]
+        })
+        export class Demo {
+          object: any = {
+            property: 'value',
+            array: [1, 2, 3]
+          };
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+ </md-card>

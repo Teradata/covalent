@@ -1,0 +1,63 @@
+@import '../core/styles/variables';
+@import '../core/styles/default-theme';
+
+:host {
+  display: block;
+}
+.td-json-formatter-wrapper {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  .td-key {
+    &.td-key-node {
+      &:focus,
+      &:hover {
+        background-color: rgba(158,158,158,0.1);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .td-object-children {
+    & .td-key,
+    & .td-object-children {
+      padding-left: 24px;
+      &.td-key-leaf {
+        padding-left: 48px;
+      }
+    }
+  }
+  .key {
+    color: md-color($md-primary);
+  }
+  .value {
+    margin-left: 5px;
+    .td-empty {
+      opacity: .5;
+      text-decoration: line-through;
+    }
+    .string {
+      color: md-color($md-warn);
+      word-break: break-word;
+    }
+    .number { 
+      color: md-color($md-accent);
+    }
+    .boolean { 
+      color: md-color($md-accent);
+    }
+    .null { 
+      color: gray; 
+    }
+    .undefined { 
+      color: gray; 
+    }
+    .function { 
+      color: md-color($md-primary);
+    }
+    .date { 
+      color: black;
+      word-break: break-word;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit } from '@angular/core';
+import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
 import { LoadingType } from '../loading.component';
@@ -7,7 +7,7 @@ import { TdLoadingService, ILoadingOptions } from '../services/loading.service';
 @Directive({
   selector: '[tdLoading]',
 })
-export class TdLoadingDirective implements OnInit {
+export class TdLoadingDirective implements OnInit, OnDestroy {
 
   private _type: LoadingType;
   private _name: string;
@@ -38,13 +38,17 @@ export class TdLoadingDirective implements OnInit {
     }
   }
 
-  constructor(private _viewContainer: ViewContainerRef, private _templateRef: TemplateRef<Object>,
-              private _loadingService: TdLoadingService) {
-    this._viewContainer.createEmbeddedView(this._templateRef);
-  }
+  constructor(private _viewContainer: ViewContainerRef,
+              private _templateRef: TemplateRef<Object>,
+              private _loadingService: TdLoadingService) {}
 
   ngOnInit(): void {
+    this._viewContainer.createEmbeddedView(this._templateRef);
     this._registerComponent();
+  }
+
+  ngOnDestroy(): void {
+    this._loadingService.removeComponent(this._name);
   }
 
   /**

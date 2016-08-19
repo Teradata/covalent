@@ -20,8 +20,8 @@
   <div flex>
     <md-nav-list>
       <a [tabIndex]="disabled? -1 : 0"
-         (keydown.enter)="clickEvent()"
-         (click)="clickEvent()"
+         (keydown.enter)="toggle()"
+         (click)="toggle()"
          md-list-item>
         <div [class.md-disabled]="(!active && !isComplete()) || disabled"
              [class.md-warn]="isRequired() && !disabled"

@@ -43,6 +43,12 @@ export { TdStepComponent, StepState } from './steps/step.component';
 export { TdStepsComponent, IStepChangeEvent } from './steps/steps.component';
 
 // Loading
+import { TdLoadingComponent } from './loading/loading.component';
+
+export const TD_LOADING_ENTRY_COMPONENTS: Type[] = [
+  TdLoadingComponent,
+];
+
 export { LoadingType } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 export { TdLoadingDirective } from './loading/directives/loading.directive';
@@ -65,11 +71,7 @@ export { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 export { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
 export { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 export { TdDigitsPipe } from './pipes/digits/digits.pipe';
-
-/**
- * SERVICES
- */
-export { RESTService, IRestTransform, IRestConfig, IRestQuery, IHttp } from './services/rest.service';
+export { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
 /**
  * MEDIA

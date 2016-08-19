@@ -1,0 +1,37 @@
+{
+  "name": "@covalent/chips",
+  "version": "0.6.0",
+  "description": "Teradata UI Platform Chips Module",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "chips",
+    "list"
+  ],
+  "scripts": {
+  },
+  "engines": {
+    "node": ">4.4 < 5",
+    "npm": ">= 3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>"
+  ],
+  "dependencies": {
+    "@covalent/core": "0.6.0"
+  }
+}

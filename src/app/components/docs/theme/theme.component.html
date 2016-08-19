@@ -1,0 +1,114 @@
+<md-card>
+  <md-card-title>Custom Theme</md-card-title>
+  <md-card-subtitle>SCSS variables to customize the color scheme</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-card>
+      <md-card-content>
+        IMPORTANT: This is a temporary workaround until a real <a href="https://github.com/angular/material2/issues/123" target="_blank">theming solution is solved upstream</a> in Angular-Material2.
+        Once they have that fixed, we'll remove this workaround.
+      </md-card-content>
+    </md-card>
+    <h3>SCSS Variables</h3>
+    <p>If you're using the <a href="https://github.com/Teradata/covalent-quickstart" target="_blank">Covalent Quickstart App</a>, edit <a href="https://github.com/Teradata/covalent-quickstart/blob/develop/src/app/app.component.scss" target="_blank">/src/app/app.component.scss</a></p>
+    <p>For the easiest route, just update these SCSS variables:</p>
+    <td-highlight lang="css">
+      /* Variables */
+      $md-primary: #0097A7;
+      $md-primary-opacity: rgba(0, 151, 167, 0.12);
+      $md-accent: #FF4081;
+      $md-accent-opacity: rgba(255, 64, 129, 0.12);
+      $md-warn: #FF9100;
+    </td-highlight>
+    <p>
+      and we'll override the core material2 styles with your theme preferences.
+    </p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://material.google.com/style/color.html">Material Design Colors</a>
+    <a md-button [routerLink]="['../../style-guide','colors']">Teradata Color Style Guide</a>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Material Design Color Palette</md-card-title>
+  <md-card-subtitle>Choose a primary, accent and warn color from the official Material color palette.</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title"><span class="tc-light-blue-700">Light Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
+    <div layout-gt-xs="row" layout-margin>
+      <div flex-gt-xs="50" class="pad-top-sm">
+        <td-highlight lang="css">
+          /* Variables */
+          $md-primary: #0288D1;
+          $md-primary-opacity: rgba(2, 136, 209, 0.12);
+          $md-accent: #F57C00;
+          $md-accent-opacity: rgba(245, 124, 0, 0.12);
+          $md-warn: #D32F2F;
+        </td-highlight>
+      </div>
+      <div flex-gt-xs="50">
+        <md-card class="top-toolbar">
+          <md-toolbar class="bgc-light-blue-700 tc-white">
+            <md-toolbar-row>
+              <span></span>
+            </md-toolbar-row>
+            <md-toolbar-row>
+              <span>Toolbar</span>
+            </md-toolbar-row>
+          </md-toolbar>
+          <md-card-content>
+            <button md-fab class="md-fab md-fab-position-bottom-right bgc-orange-700">
+              <md-icon class="md-24">add</md-icon>
+            </button>
+            <h3>View title</h3>
+            <p>
+              When using a primary color in your palette, this color should be the most widely used across all screens and components.
+            </p>
+            <p>
+              Palettes with a secondary color may use this color to indicate a related action or information.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+    <md-divider></md-divider>
+    <h3 class="md-title"><span class="tc-orange-700">Orange Primary</span> / <span class="tc-light-blue-700">Light Blue Accent</span></h3>
+    <div layout-gt-xs="row" layout-margin>
+      <div flex-gt-xs="50" class="pad-top-sm">
+        <td-highlight lang="css">
+          /* Variables */
+          $md-primary: #F57C00;
+          $md-primary-opacity: rgba(245, 124, 0, 0.12);
+          $md-accent: #0288D1;
+          $md-accent-opacity: rgba(2, 136, 209, 0.12);
+          $md-warn: #D32F2F;
+        </td-highlight>
+      </div>
+      <div flex-gt-xs="50">
+        <md-card class="top-toolbar">
+          <md-toolbar class="bgc-orange-700 tc-white">
+            <md-toolbar-row>
+              <span></span>
+            </md-toolbar-row>
+            <md-toolbar-row>
+              <span>Toolbar</span>
+            </md-toolbar-row>
+          </md-toolbar>
+          <md-card-content>
+            <button md-fab class="md-fab md-fab-position-bottom-right bgc-light-blue-700">
+              <md-icon class="md-24">add</md-icon>
+            </button>
+            <h3>View title</h3>
+            <p>
+              When using a primary color in your palette, this color should be the most widely used across all screens and components.
+            </p>
+            <p>
+              Palettes with a secondary color may use this color to indicate a related action or information.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

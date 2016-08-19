@@ -17,11 +17,13 @@
     <md-nav-list *ngIf="isShowUserMenu()">
       <a md-list-item (click)="logoutClick()"><md-icon>exit_to_app</md-icon> Logout</a>
     </md-nav-list>
-    <md-nav-list *ngIf="!isShowUserMenu()">
-      <ng-content select="menu-items"></ng-content>
-      <md-divider></md-divider>
-      <a md-list-item (click)="sideMenu.close()"><md-icon>cancel</md-icon> Close</a>
-    </md-nav-list>
+    <div *ngIf="!isShowUserMenu()">
+      <ng-content select="[menu-items]"></ng-content>
+      <md-nav-list>
+        <md-divider></md-divider>
+        <a md-list-item (click)="sideMenu.close()"><md-icon>cancel</md-icon> Close</a>
+      </md-nav-list>
+    </div>
   </md-sidenav>
   <ng-content></ng-content>
 </md-sidenav-layout>
