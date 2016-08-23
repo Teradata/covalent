@@ -1,6 +1,6 @@
 import {Component, Input, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 
-declare var d3: any;
+declare let d3: any;
 
 @Component({
   moduleId: module.id,
@@ -11,7 +11,7 @@ declare var d3: any;
 
 export class TdBarChartComponent implements AfterViewInit {
 
-  private _margin = {top: 50, right: 150, bottom: 50, left: 50};
+  private _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
   private _width: number;
   private _height: number;
   private _padding: number;
@@ -22,8 +22,8 @@ export class TdBarChartComponent implements AfterViewInit {
   /*
   * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
   */
-  private _mdBarColorPalette: any[] = ['#fce4ec', '#f8bbd0', '#f48fb1', '#f06292', '#ec407a', '#e91e63', '#d81b60', '#c2185b', '#7b1fa2',
-    '#6a1b9a', '#4a148c', '#4527a0', '#311b92', '#1a237e'];
+  private _mdBarColorPalette: any[] = ['#fce4ec', '#f8bbd0', '#f48fb1', '#f06292', '#ec407a', '#e91e63', '#d81b60', 
+  '#c2185b', '#7b1fa2', '#6a1b9a', '#4a148c', '#4527a0', '#311b92', '#1a237e'];
 
   @ViewChild('barchart') content: ElementRef;
 
@@ -49,9 +49,19 @@ export class TdBarChartComponent implements AfterViewInit {
   @Input('bottomAxisTitle') bottomAxisTitle: string = '';
 
   /**
-   ** leftAxisTitle?: string.
+   * leftAxisTitle?: string.
    */
   @Input('leftAxisTitle') leftAxisTitle: string = '';
+
+  /**
+   * shadowColor?: string.
+   */
+  @Input('shadowColor') shadowColor: string = '';
+
+  /**
+   * fillOpacity?: number.
+   */
+  @Input('fillOpacity') fillOpacity: number = 0;
 
   /**
    * chartTitle?: string.
@@ -88,45 +98,45 @@ export class TdBarChartComponent implements AfterViewInit {
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
-    let fillBarColors = this._barColors.length === 0 ? this._mdBarColorPalette : d3.scaleOrdinal(this._barColors);
+    let fillBarColors: any = this._barColors.length === 0 ? this._mdBarColorPalette : d3.scaleOrdinal(this._barColors);
 
     // set the ranges
-    var x = d3.scaleBand().range([0, this._width]).padding(0.1);
-    var y = d3.scaleLinear().range([this._height, 0]);
+    let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
+    let y: any = d3.scaleLinear().range([this._height, 0]);
 
-    let viewBoxWidth = this._width + this._margin.left + this._margin.right;
-    let viewBoxHeight = this._height + this._margin.top + this._margin.bottom;
+    let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
+    let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
 
-    var svg = d3.select('.barchart')
-      .classed("svg-container", true)
-      .append("svg")
-      .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", "0 0 " + viewBoxWidth + " " + (viewBoxHeight))
-      .classed("svg-content-responsive", true)
-      .append("g")
-      .attr("transform", "translate(" + this._padding + "," + this._margin.top + ")");
+    let svg: any = d3.select('.barchart')
+      .classed('svg-container', true)
+      .append('svg')
+      .attr('preserveAspectRatio', 'xMinYMin meet')
+      .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
+      .classed('svg-content-responsive', true)
+      .append('g')
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
 
-    var defs = svg.append("defs");
+    let defs: any = svg.append('defs');
 
-    var filter = defs.append("filter")
-      .attr("id", "drop-shadow")
-      .attr("height", this._zDepthConfig[0]);
+    let filter: any = defs.append('filter')
+      .attr('id', 'drop-shadow')
+      .attr('height', this._zDepthConfig[0]);
 
-    filter.append("feGaussianBlur")
-      .attr("in", "SourceAlpha")
-      .attr("stdDeviation", this._zDepthConfig[1])
-      .attr("result", "blur");
+    filter.append('feGaussianBlur')
+      .attr('in', 'SourceAlpha')
+      .attr('stdDeviation', this._zDepthConfig[1])
+      .attr('result', 'blur');
 
-    filter.append("feOffset")
-      .attr("in", "blur")
-      .attr("dx", this._zDepthConfig[2])
-      .attr("dy", this._zDepthConfig[3])
-      .attr("result", "offsetBlur");
+    filter.append('feOffset')
+      .attr('in', 'blur')
+      .attr('dx', this._zDepthConfig[2])
+      .attr('dy', this._zDepthConfig[3])
+      .attr('result', 'offsetBlur');
 
     // feFlood flood-color is the drop-shadow color
     filter.append('feFlood')
-      .attr('flood-color', 'rgba(0, 0, 0, 0.54)');
-    
+      .attr('flood-color', this.shadowColor);
+
     // this is needed to apply the feFlood
     filter.append('feComposite')
       .attr('in2', 'offsetBlur')
@@ -134,18 +144,18 @@ export class TdBarChartComponent implements AfterViewInit {
 
     // overlay original SourceGraphic over translated blurred opacity by using
     // feMerge filter. Order of specifying inputs is important!
-    var feMerge = filter.append("feMerge");
+    let feMerge: any = filter.append('feMerge');
 
     // NOTE: we need the empty feMergeNode to apply the feComposite & feFlood
-    feMerge.append("feMergeNode")
-    feMerge.append("feMergeNode")
-      .attr("in", "SourceGraphic");
+    feMerge.append('feMergeNode');
+    feMerge.append('feMergeNode')
+      .attr('in', 'SourceGraphic');
 
     // feComponentTransfer linear slope adjusts the opacity of the ENTIRE SVG 
-    var feComponentTransfer = filter.append("feComponentTransfer");
-    feComponentTransfer.append("feFuncA")
-      .attr("type", "linear")
-      .attr("slope", "0.9");
+    let feComponentTransfer: any = filter.append('feComponentTransfer');
+    feComponentTransfer.append('feFuncA')
+      .attr('type', 'linear')
+      .attr('slope', this.fillOpacity);
 
     enum ParseContent {
       json = d3.json,
@@ -154,45 +164,49 @@ export class TdBarChartComponent implements AfterViewInit {
     }
 
     ParseContent[this.contentType](this.dataSrc, (error, data) => {
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
 
-      data.forEach((d) => {
+      data.forEach((d: any) => {
         d[this._barColumns] = +d[this._barColumns];
       });
 
-      x.domain(data.map((d) => { return d[this.bottomAxis]; }));
-      y.domain([0, d3.max(data, (d) => { return d[this._barColumns]; })]);
+      x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
+      y.domain([0, d3.max(data, (d: any) => { return d[this._barColumns]; })]);
 
 
-      svg.selectAll(".bar")
+      svg.selectAll('.bar')
         .data(data)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("x", (d) => { return x(d[this.bottomAxis]); })
-        .attr("width", x.bandwidth())
-        .attr("y", (d) => { return y(d[this._barColumns]); })
-        .attr("height", (d) => { return this._height - y(d[this._barColumns]); })
-        .attr("fill", (d, i) => { let color = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color; })
-        .style("filter", "url(#drop-shadow)");
+        .enter().append('rect')
+        .attr('class', 'bar')
+        .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
+        .attr('width', x.bandwidth())
+        .attr('y', (d: any) => { return y(d[this._barColumns]); })
+        .attr('height', (d) => { return this._height - y(d[this._barColumns]); })
+        .attr('fill', (d: any, i: number) => {
+          let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
+        })
+        .style('filter', 'url(#drop-shadow)');
 
-      svg.append("g")
-        .attr("transform", "translate(0," + this._height + ")")
+      svg.append('g')
+        .attr('transform', 'translate(0,' + this._height + ')')
         .call(d3.axisBottom(x));
 
-      svg.append("g")
+      svg.append('g')
         .call(d3.axisLeft(y))
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", "0.71em")
-        .attr("fill", "#000")
+        .append('text')
+        .attr('transform', 'rotate(-90)')
+        .attr('y', 6)
+        .attr('dy', '0.71em')
+        .attr('fill', '#000')
         .text(this.leftAxisTitle);
 
-      svg.append("text")
-        .attr("text-anchor", "middle")
-        .attr("transform", "translate(" + (this._width / 2) + "," + (0 - (this._margin.top / 2)) + ")")
+      svg.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this.chartTitle)
-        .attr("class", "md-title");
+        .attr('class', 'md-title');
 
     });
   }
