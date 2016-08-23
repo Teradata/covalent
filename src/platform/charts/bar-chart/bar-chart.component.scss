@@ -53,5 +53,26 @@ $md-accent-opacity: rgba(2, 136, 209, 0.12);
       top: 10px;
       left: 0;
   }
+  #z-depth5 {
+    height:130%;
+    feGaussianBlur {
+      stdDeviation: 5;
+    }
+    feOffset {
+      dx: 5;
+      dy: 5;
+    }
+  }
+
+  #z-depth4 {
+    height:130%;
+    feGaussianBlur {
+      stdDeviation: 4;
+    }
+    feOffset {
+      dx: 4;
+      dy: 4;
+    }
+  }
 
 }

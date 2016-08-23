@@ -8,9 +8,8 @@
                    bottomAxis="salesperson"
                    bottomAxisTitle="Day Offset"
                    leftAxisTitle="Sales"
-                   lineColumns="sales"
-                   lineTitles="Sales"
-                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                   barColumns="sales"
+                   [zDepthConfig]="['130%', 5, 5, 5]"
                    chartTitle="Sales Bar Chart">
     </td-bar-chart>
   </md-card-content>
@@ -49,9 +48,9 @@
                     bottomAxis="salesperson"
                     bottomAxisTitle="Day Offset"
                     leftAxisTitle="Sales"
-                    lineColumns="sales"
+                    barColumns="sales"
                     lineTitles="Sales"
-                    [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                    [barColors]="['#3366cc', '#dc3912', '#ff9900']"
                     chartTitle="Sales Bar Chart">
       </td-bar-chart>
          ]]>

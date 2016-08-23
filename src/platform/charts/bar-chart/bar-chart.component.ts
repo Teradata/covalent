@@ -15,9 +15,15 @@ export class TdBarChartComponent implements AfterViewInit {
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _lineColumns: string;
-  private _lineTitles: string;
-  private _lineColors: string[] = [];
+  private _barColumns: string;
+  private _barColors: string[] = [];
+  private _zDepthConfig: any[] = [];
+
+  /*
+  * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
+  */
+  private _mdBarColorPalette: any[] = ['#fce4ec', '#f8bbd0', '#f48fb1', '#f06292', '#ec407a', '#e91e63', '#d81b60', '#c2185b', '#7b1fa2',
+    '#6a1b9a', '#4a148c', '#4527a0', '#311b92', '#1a237e'];
 
   @ViewChild('barchart') content: ElementRef;
 
@@ -53,19 +59,23 @@ export class TdBarChartComponent implements AfterViewInit {
    */
   @Input('chartTitle') chartTitle: string = '';
 
-  @Input('lineColumns')
-  set lineColumns(lineColumns: string) {
-    this._lineColumns = lineColumns;
+  @Input('barColumns')
+  set barColumns(barColumns: string) {
+    this._barColumns = barColumns;
   }
 
-  @Input('lineTitles')
-  set lineTitles(lineTitles: string) {
-    this._lineTitles = lineTitles;
+  /**
+   * barColors?: string[].
+   * Two colors for generating color palette for the Chart
+   */
+  @Input('barColors')
+  set barColors(barColors: string[]) {
+    this._barColors = barColors;
   }
 
-  @Input('lineColors')
-  set lineColors(lineColors: string[]) {
-    this._lineColors = lineColors;
+  @Input('zDepthConfig')
+  set zDepthConfig(zDepthConfig: any[]) {
+    this._zDepthConfig = zDepthConfig;
   }
 
   ngAfterViewInit(): void {
@@ -78,7 +88,7 @@ export class TdBarChartComponent implements AfterViewInit {
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
-    let color = this._lineColors.length === 0 ? d3.schemePaired : d3.scaleOrdinal(this._lineColors);
+    let fillBarColors = this._barColors.length === 0 ? this._mdBarColorPalette : d3.scaleOrdinal(this._barColors);
 
     // set the ranges
     var x = d3.scaleBand().range([0, this._width]).padding(0.1);
@@ -96,6 +106,32 @@ export class TdBarChartComponent implements AfterViewInit {
       .append("g")
       .attr("transform", "translate(" + this._padding + "," + this._margin.top + ")");
 
+    var defs = svg.append("defs");
+
+    var filter = defs.append("filter")
+      .attr("id", "drop-shadow")
+      .attr("height", this._zDepthConfig[0]);
+
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceAlpha")
+      .attr("stdDeviation", this._zDepthConfig[1])
+      .attr("result", "blur");
+
+    filter.append("feOffset")
+      .attr("in", "blur")
+      .attr("dx", this._zDepthConfig[2])
+      .attr("dy", this._zDepthConfig[3])
+      .attr("result", "offsetBlur");
+
+    // overlay original SourceGraphic over translated blurred opacity by using
+    // feMerge filter. Order of specifying inputs is important!
+    var feMerge = filter.append("feMerge");
+
+    feMerge.append("feMergeNode")
+      .attr("in", "offsetBlur")
+    feMerge.append("feMergeNode")
+      .attr("in", "SourceGraphic");
+
     enum ParseContent {
       json = d3.json,
       csv = d3.csv,
@@ -106,11 +142,11 @@ export class TdBarChartComponent implements AfterViewInit {
       if (error) throw error;
 
       data.forEach((d) => {
-        d[this._lineColumns] = +d[this._lineColumns];
+        d[this._barColumns] = +d[this._barColumns];
       });
 
       x.domain(data.map((d) => { return d[this.bottomAxis]; }));
-      y.domain([0, d3.max(data, (d) => { return d[this._lineColumns]; })]);
+      y.domain([0, d3.max(data, (d) => { return d[this._barColumns]; })]);
 
 
       svg.selectAll(".bar")
@@ -119,9 +155,10 @@ export class TdBarChartComponent implements AfterViewInit {
         .attr("class", "bar")
         .attr("x", (d) => { return x(d[this.bottomAxis]); })
         .attr("width", x.bandwidth())
-        .attr("y", (d) => { return y(d[this._lineColumns]); })
-        .attr("height", (d) => { return this._height - y(d[this._lineColumns]); })
-        .attr("fill", (d, i) => { if(i > 11) { i = (i - 11);} {}let abc = (typeof color === 'object' ? color[i] : color(i)); return abc;});
+        .attr("y", (d) => { return y(d[this._barColumns]); })
+        .attr("height", (d) => { return this._height - y(d[this._barColumns]); })
+        .attr("fill", (d, i) => { let color = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color; })
+        .style("filter", "url(#drop-shadow)");
 
       svg.append("g")
         .attr("transform", "translate(0," + this._height + ")")
