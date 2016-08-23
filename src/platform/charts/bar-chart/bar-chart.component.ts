@@ -123,14 +123,29 @@ export class TdBarChartComponent implements AfterViewInit {
       .attr("dy", this._zDepthConfig[3])
       .attr("result", "offsetBlur");
 
+    // feFlood flood-color is the drop-shadow color
+    filter.append('feFlood')
+      .attr('flood-color', 'rgba(0, 0, 0, 0.54)');
+    
+    // this is needed to apply the feFlood
+    filter.append('feComposite')
+      .attr('in2', 'offsetBlur')
+      .attr('operator', 'in');
+
     // overlay original SourceGraphic over translated blurred opacity by using
     // feMerge filter. Order of specifying inputs is important!
     var feMerge = filter.append("feMerge");
 
+    // NOTE: we need the empty feMergeNode to apply the feComposite & feFlood
     feMerge.append("feMergeNode")
-      .attr("in", "offsetBlur")
     feMerge.append("feMergeNode")
       .attr("in", "SourceGraphic");
+
+    // feComponentTransfer linear slope adjusts the opacity of the ENTIRE SVG 
+    var feComponentTransfer = filter.append("feComponentTransfer");
+    feComponentTransfer.append("feFuncA")
+      .attr("type", "linear")
+      .attr("slope", "0.9");
 
     enum ParseContent {
       json = d3.json,
