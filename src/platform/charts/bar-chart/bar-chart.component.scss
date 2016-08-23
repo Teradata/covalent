@@ -1,10 +1,12 @@
 $black-primary: rgba(0, 0, 0, 0.87);
 $black-secondary: rgba(0, 0, 0, 0.54);
 $black-tertiary: rgba(0, 0, 0, 0.38);
+$black-opacity: rgba(0, 0, 0, 0.12);
 
 $white-primary: rgba(255, 255, 255, 0.87);
 $white-secondary: rgba(255, 255, 255, 0.54);
 $white-tertiary: rgba(255, 255, 255, 0.38);
+$white-opacity: rgba(255, 255, 255, 0.12);
 
 $md-primary: #F57C00;
 $md-primary-opacity: rgba(245, 124, 0, 0.12);
@@ -53,26 +55,18 @@ $md-accent-opacity: rgba(2, 136, 209, 0.12);
       top: 10px;
       left: 0;
   }
-  #z-depth5 {
-    height:130%;
-    feGaussianBlur {
-      stdDeviation: 5;
+  .grid {
+    line {
+      stroke: $black-opacity;
     }
-    feOffset {
-      dx: 5;
-      dy: 5;
+    path {
+      stroke-width: 0;
     }
   }
-
-  #z-depth4 {
-    height:130%;
-    feGaussianBlur {
-      stdDeviation: 4;
-    }
-    feOffset {
-      dx: 4;
-      dy: 4;
+  .ticks {
+    line,
+    path {
+      stroke: $black-opacity;
     }
   }
-
 }

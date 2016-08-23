@@ -22,8 +22,8 @@ export class TdBarChartComponent implements AfterViewInit {
   /*
   * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
   */
-  private _mdBarColorPalette: any[] = ['#fce4ec', '#f8bbd0', '#f48fb1', '#f06292', '#ec407a', '#e91e63', '#d81b60', 
-  '#c2185b', '#7b1fa2', '#6a1b9a', '#4a148c', '#4527a0', '#311b92', '#1a237e'];
+  private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60', 
+  '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
   @ViewChild('barchart') content: ElementRef;
 
@@ -189,11 +189,30 @@ export class TdBarChartComponent implements AfterViewInit {
         })
         .style('filter', 'url(#drop-shadow)');
 
+      // add the X gridlines
       svg.append('g')
+        .attr('class', 'grid grid-x')
+        .attr('transform', 'translate(0,' + this._height + ')')
+        .call(d3.axisBottom(x)
+            .tickSize(-this._height)
+            .tickFormat('')
+        );
+
+      // add the Y gridlines
+      svg.append('g')
+        .attr('class', 'grid grid-y')
+        .call(d3.axisLeft(y)
+            .tickSize(-this._width)
+            .tickFormat('')
+        );
+
+      svg.append('g')
+        .attr('class', 'ticks ticks-x')
         .attr('transform', 'translate(0,' + this._height + ')')
         .call(d3.axisBottom(x));
 
       svg.append('g')
+        .attr('class', 'ticks ticks-y')
         .call(d3.axisLeft(y))
         .append('text')
         .attr('transform', 'rotate(-90)')
