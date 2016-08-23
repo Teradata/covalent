@@ -90,7 +90,7 @@ export class TdLineChartComponent implements AfterViewInit {
     let viewBoxWidth = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight = this._height + this._margin.top + this._margin.bottom;
 
-    var svg = d3.select('#linechart')
+    var svg = d3.select('.linechart')
       .classed("svg-container", true)
       .append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
