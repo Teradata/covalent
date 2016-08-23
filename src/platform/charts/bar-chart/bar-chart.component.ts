@@ -28,9 +28,9 @@ export class TdBarChartComponent implements AfterViewInit {
   @ViewChild('barchart') content: ElementRef;
 
   /**
-   * filePath?: string.
+   * dataSrc?: string.
    */
-  @Input('filePath') filePath: string = '';
+  @Input('dataSrc') dataSrc: string = '';
 
   /**
    * contentType?: string.
@@ -138,7 +138,7 @@ export class TdBarChartComponent implements AfterViewInit {
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.filePath, (error, data) => {
+    ParseContent[this.contentType](this.dataSrc, (error, data) => {
       if (error) throw error;
 
       data.forEach((d) => {

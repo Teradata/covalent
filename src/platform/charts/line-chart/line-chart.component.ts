@@ -22,9 +22,9 @@ export class TdLineChartComponent implements AfterViewInit {
   @ViewChild('linechart') content: ElementRef;
 
   /**
-   * filePath?: string.
+   * dataSrc?: string.
    */
-  @Input('filePath') filePath: string = '';
+  @Input('dataSrc') dataSrc: string = '';
 
   /**
    * contentType?: string.
@@ -105,7 +105,7 @@ export class TdLineChartComponent implements AfterViewInit {
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.filePath, (error, data) => {
+    ParseContent[this.contentType](this.dataSrc, (error, data) => {
       if (error) throw error;
 
       var lines = this._lineColumns.map((id) => {

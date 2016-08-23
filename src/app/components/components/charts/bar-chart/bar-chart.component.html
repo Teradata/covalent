@@ -3,7 +3,7 @@
   <md-card-subtitle>Generate Bar Chart</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <td-bar-chart filePath="platform/charts/bar-chart/data.csv"
+    <td-bar-chart dataSrc="platform/charts/bar-chart/data.csv"
                    contentType="csv"
                    bottomAxis="salesperson"
                    bottomAxisTitle="Day Offset"
@@ -49,8 +49,7 @@
                     bottomAxisTitle="Day Offset"
                     leftAxisTitle="Sales"
                     barColumns="sales"
-                    lineTitles="Sales"
-                    [barColors]="['#3366cc', '#dc3912', '#ff9900']"
+                    [zDepthConfig]="['130%', 5, 5, 5]"
                     chartTitle="Sales Bar Chart">
       </td-bar-chart>
          ]]>
