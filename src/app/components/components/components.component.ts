@@ -65,15 +65,10 @@ export class ComponentsComponent {
     route: 'pipes',
     title: 'Pipes',
   }, {
-    description: 'Single or Multi Line Chart.',
+    description: 'Responsive Charts',
     icon: 'show_chart',
-    route: 'line-chart',
-    title: 'Line Chart',
-  }, {
-    description: 'Custom Bar Chart.',
-    icon: 'insert_chart',
-    route: 'bar-chart',
-    title: 'Bar Chart',
+    route: 'chart',
+    title: 'Charts',
   }];
 
 }

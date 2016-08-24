@@ -10,8 +10,7 @@ import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
-import { LineChartDemoComponent } from './charts/line-chart';
-import { BarChartDemoComponent } from './charts/bar-chart';
+import { ChartDemoComponent } from './charts';
 
 export const componentsRoutes: RouterConfig = [{
   children: [{
@@ -42,12 +41,9 @@ export const componentsRoutes: RouterConfig = [{
       component: PipesComponent,
       path: 'pipes',
     }, {
-      component: LineChartDemoComponent,
-      path: 'line-chart',
-    }, {
-      component: BarChartDemoComponent,
-      path: 'bar-chart',
-    }
+      component: ChartDemoComponent,
+      path: 'chart',
+    },
   ],
   component: ComponentsComponent,
   path: 'components',

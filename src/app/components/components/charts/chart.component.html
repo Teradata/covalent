@@ -1,0 +1,187 @@
+<md-card>
+  <md-card-title>Covalent Charts</md-card-title>
+  <md-card-subtitle>Responsive charts for Browsers</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-title>Bar Chart</md-card-title>
+  <md-card-content>
+    <td-chart>
+      <td-bar-chart dataSrc="platform/charts/bar-chart/data.csv"
+                     contentType="csv"
+                     bottomAxis="salesperson"
+                     bottomAxisTitle="Day Offset"
+                     leftAxisTitle="Sales"
+                     barColumns="sales"
+                     [zDepthConfig]="['125%', 2, 0, 2]"
+                     shadowColor="rgba(0, 0, 0, 0.54)"
+                     fillOpacity="1"
+                     chartTitle="Sales Bar Chart">
+      </td-bar-chart>
+      <md-divider></md-divider>
+      <md-card-title>Single/Multi Line Chart</md-card-title>
+      <td-line-chart dataSrc="platform/charts/line-chart/data.tsv"
+                   contentType="tsv"
+                   bottomAxis="col1"
+                   bottomAxisTitle="Day Offset"
+                   leftAxisTitle="Temperature"
+                   [lineColumns]="['col2', 'col3','col4']"
+                   [lineTitles]="['New York','San Francisco', 'Austin']"
+                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                   chartTitle="Temperature Trend">
+    </td-line-chart>
+    </td-chart>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdChartComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <h2><code><![CDATA[<td-chart>]]></code></h2>
+     <p>Use <code><![CDATA[<td-chart>]]></code> element to draw charts</p>
+     <p>Note: <code>d3.min.js</code> needs to be added as vendor and referenced in `index.html`.</p>
+     <td-highlight lang="javascript">
+      module.exports = function(defaults) {
+        return new Angular2App(defaults, {
+          vendorNpmFiles: [
+            ...
+            'd3/build/d3.min.js'
+          ]
+        });
+      };
+    </td-highlight>
+    and
+    <td-highlight lang="html">
+      <![CDATA[
+        <script src="vendor/d3/build/d3.min.js"></script>
+      ]]>
+    </td-highlight>
+    <h3>Example:</h3>
+    <p>HTML</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-chart>
+          <td-bar-chart>
+            ...
+          </td-bar-chart>
+          <td-line-chart>
+            ...
+          </td-line-chart>
+        </td-chart>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdChartComponent } from '@covalent/charts';
+        ...
+          directives: [ TdChartComponent ]
+        })
+        export class ChartDemoComponent {
+
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>
+<md-card>
+  <md-card-title>TdBarChartComponent</md-card-title>
+  <md-card-subtitle>Use this component to draw Bar Chart</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-bar-chart>]]></code></h2>
+    <p>Use <code><![CDATA[<td-bar-chart>]]></code> element wrapped inside <code><![CDATA[<td-chart>]]></code> element to create a Bar Chart.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-bar-chart>]]></code> component has {{barChartAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="barChartAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <p>Use <code><![CDATA[<td-bar-chart>]]></code> element and add above propeties as attributes</p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-bar-chart dataSrc="platform/charts/bar-chart/data.csv"
+                     contentType="csv"
+                     bottomAxis="salesperson"
+                     bottomAxisTitle="Day Offset"
+                     leftAxisTitle="Sales"
+                     barColumns="sales"
+                     [zDepthConfig]="['125%', 2, 0, 2]"
+                     shadowColor="rgba(0, 0, 0, 0.54)"
+                     fillOpacity="1"
+                     chartTitle="Sales Bar Chart">
+      </td-bar-chart>
+         ]]>
+    </td-highlight>
+    <p>Data Sample of dataSrc</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+      salesperson,sales
+      Bob,33
+      Robin,12
+      Anne,41
+      Mark,16
+      Joe,59
+      Eve,38
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>
+<md-card>
+  <md-card-title>TdLineChartComponent</md-card-title>
+  <md-card-subtitle>Use this component to draw Line Chart</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-line-chart>]]></code></h2>
+    <p>Use <code><![CDATA[<td-line-chart>]]></code> element wrapped inside <code><![CDATA[<td-chart>]]></code> element to draw a single or multi line chart</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-bar-chart>]]></code> component has {{lineChartAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="lineChartAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <p>Use <code><![CDATA[<td-bar-chart>]]></code> element and add above propeties as attributes</p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-line-chart dataSrc="platform/charts/line-chart/data.tsv"
+                   contentType="tsv"
+                   bottomAxis="col1"
+                   bottomAxisTitle="Day Offset"
+                   leftAxisTitle="Temperature"
+                   [lineColumns]="['col2', 'col3','col4']"
+                   [lineTitles]="['New York','San Francisco', 'Austin']"
+                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']"
+                   chartTitle="Temperature Trend">
+      </td-line-chart>
+         ]]>
+    </td-highlight>
+    <p>Data Sample</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+      col1,col2,col3,col4
+      1,63.4,62.7,72.2
+      2,58.0,59.9,67.7
+      3,53.3,59.1,69.4
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>

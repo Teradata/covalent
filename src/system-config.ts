@@ -42,6 +42,7 @@ const barrels: string[] = [
   'platform/highlight',
   'platform/file-upload',
   'platform/markdown',
+  'platform/charts',
   'platform/charts/line-chart',
   'platform/charts/bar-chart',
 
@@ -58,8 +59,7 @@ const barrels: string[] = [
   'app/components/components/pipes',
   'app/components/components/media',
   'app/components/components/markdown',
-  'app/components/components/charts/line-chart',
-  'app/components/components/charts/bar-chart',
+  'app/components/components/charts',
   'app/components/docs',
   'app/components/docs/overview',
   'app/components/docs/creating',
