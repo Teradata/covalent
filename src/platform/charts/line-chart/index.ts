@@ -1,1 +1,1 @@
-export { TdLineChartComponent } from './line-chart.component';
+export { TdChartLineComponent } from './line-chart.component';

@@ -4,12 +4,12 @@ declare let d3: any;
 
 @Component({
   moduleId: module.id,
-  selector: 'td-line-chart',
+  selector: 'td-chart-line',
   styleUrls: ['line-chart.component.css'],
   templateUrl: 'line-chart.component.html',
 })
 
-export class TdLineChartComponent implements AfterViewInit {
+export class TdChartLineComponent implements AfterViewInit {
 
   private _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
   private _width: number;

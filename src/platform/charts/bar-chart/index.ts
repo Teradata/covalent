@@ -1,1 +1,1 @@
-export { TdBarChartComponent } from './bar-chart.component';
+export { TdChartBarComponent } from './bar-chart.component';

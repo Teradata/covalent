@@ -9,14 +9,14 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { TdBarChartComponent } from './bar-chart.component';
+import { TdChartBarComponent } from './bar-chart.component';
 
-describe('Component: TdBarChart', () => {
+describe('Component: TdChartBar', () => {
   let builder: TestComponentBuilder;
 
   beforeEach(() => {
     addProviders([
-      TdBarChartComponent,
+      TdChartBarComponent,
     ]);
   });
 
@@ -24,14 +24,14 @@ describe('Component: TdBarChart', () => {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([TdBarChartComponent], (component: TdBarChartComponent) => {
+  it('should inject the component', inject([TdChartBarComponent], (component: TdChartBarComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(TdBarChartTestControllerComponent)
+    return builder.createAsync(TdChartBarTestControllerComponent)
       .then((fixture: ComponentFixture<any>) => {
-        let query: DebugElement = fixture.debugElement.query(By.directive(TdBarChartComponent));
+        let query: DebugElement = fixture.debugElement.query(By.directive(TdChartBarComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -39,11 +39,11 @@ describe('Component: TdBarChart', () => {
 });
 
 @Component({
-  directives: [TdBarChartComponent],
+  directives: [TdChartBarComponent],
   selector: 'td-test',
   template: `
-    <td-bar-chart></td-bar-chart>
+    <td-chart-bar></td-chart-bar>
   `,
 })
-class TdBarChartTestControllerComponent {
+class TdChartBarTestControllerComponent {
 }

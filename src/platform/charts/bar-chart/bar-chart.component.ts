@@ -4,12 +4,12 @@ declare let d3: any;
 
 @Component({
   moduleId: module.id,
-  selector: 'td-bar-chart',
+  selector: 'td-chart-bar',
   styleUrls: ['bar-chart.component.css'],
   templateUrl: 'bar-chart.component.html',
 })
 
-export class TdBarChartComponent implements AfterViewInit {
+export class TdChartBarComponent implements AfterViewInit {
 
   private _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
   private _width: number;
@@ -18,11 +18,15 @@ export class TdBarChartComponent implements AfterViewInit {
   private _barColumns: string;
   private _barColors: string[] = [];
   private _zDepthConfig: any[] = [];
+  private _tickHeightSize: number = 0;
+  private _tickWidthSize: number = 0;
+  private _grid: string = '';
+  private _palette: string[] = [];
 
   /*
   * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
   */
-  private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60', 
+  private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
   @ViewChild('barchart') content: ElementRef;
@@ -88,6 +92,12 @@ export class TdBarChartComponent implements AfterViewInit {
     this._zDepthConfig = zDepthConfig;
   }
 
+  @Input() ticks: boolean;
+
+  @Input() grid: boolean;
+
+  @Input() palette: any[];
+
   ngAfterViewInit(): void {
     this.render();
   }
@@ -98,7 +108,20 @@ export class TdBarChartComponent implements AfterViewInit {
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
-    let fillBarColors: any = this._barColors.length === 0 ? this._mdBarColorPalette : d3.scaleOrdinal(this._barColors);
+    if (this.ticks) {
+      this._tickHeightSize = -this._height;
+      this._tickWidthSize = -this._width;
+    }
+
+    if (this.grid) {
+      this._grid = 'grid';
+    }
+
+    if (this.palette) {
+      this._palette = this.palette;
+    }
+
+    let fillBarColors: any = this._palette.length === 0 ? this._mdBarColorPalette : this._palette;
 
     // set the ranges
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
@@ -163,7 +186,7 @@ export class TdBarChartComponent implements AfterViewInit {
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.dataSrc, (error, data) => {
+    ParseContent[this.contentType](this.dataSrc, (error: string, data: any) => {
       if (error) {
         throw error;
       }
@@ -183,7 +206,7 @@ export class TdBarChartComponent implements AfterViewInit {
         .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
         .attr('width', x.bandwidth())
         .attr('y', (d: any) => { return y(d[this._barColumns]); })
-        .attr('height', (d) => { return this._height - y(d[this._barColumns]); })
+        .attr('height', (d: number) => { return this._height - y(d[this._barColumns]); })
         .attr('fill', (d: any, i: number) => {
           let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
         })
@@ -191,19 +214,19 @@ export class TdBarChartComponent implements AfterViewInit {
 
       // add the X gridlines
       svg.append('g')
-        .attr('class', 'grid grid-x')
+        .attr('class', this._grid)
         .attr('transform', 'translate(0,' + this._height + ')')
         .call(d3.axisBottom(x)
-            .tickSize(-this._height)
-            .tickFormat('')
+             .tickSize(this._tickHeightSize)
+             .tickFormat('')
         );
 
       // add the Y gridlines
       svg.append('g')
-        .attr('class', 'grid grid-y')
+        .attr('class', this._grid)
         .call(d3.axisLeft(y)
-            .tickSize(-this._width)
-            .tickFormat('')
+             .tickSize(this._tickWidthSize)
+             .tickFormat('')
         );
 
       svg.append('g')

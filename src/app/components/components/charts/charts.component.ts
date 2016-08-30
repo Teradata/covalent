@@ -1,27 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { TdChartComponent } from '../../../../platform/charts';
-import { TdBarChartComponent } from '../../../../platform/charts/bar-chart';
-import { TdLineChartComponent } from '../../../../platform/charts/line-chart';
+import { TdChartsComponent } from '../../../../platform/charts';
+import { TdChartBarComponent } from '../../../../platform/charts/bar-chart';
+import { TdChartLineComponent } from '../../../../platform/charts/line-chart';
 import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
   directives: [
     MD_CARD_DIRECTIVES,
     MD_LIST_DIRECTIVES,
-    TdChartComponent,
-    TdBarChartComponent,
-    TdLineChartComponent,
+    TdChartsComponent,
+    TdChartBarComponent,
+    TdChartLineComponent,
     TdHighlightComponent,
   ],
   moduleId: module.id,
-  selector: 'td-chart',
-  styleUrls: ['chart.component.css'],
-  templateUrl: 'chart.component.html',
+  selector: 'td-charts',
+  styleUrls: ['charts.component.css'],
+  templateUrl: 'charts.component.html',
 })
 
-export class ChartDemoComponent {
+export class ChartsDemoComponent implements OnInit {
+
+  @ViewChild(TdChartsComponent) tdChartsComponent: TdChartsComponent;
+
+  colorPalette: any[];
+  ticksFlag: boolean = true;
+  gridFlag: boolean = true;
+  paletteErrorMsg: string = '';
+
+  chartsAttr: Object[] = [{
+    description: 'Sets value as true/false for redering ticks',
+    name: 'ticksFlag?',
+    type: 'boolean',
+  }, {
+    description: 'Sets value as true/false for redering grid',
+    name: 'gridFlag?',
+    type: 'boolean',
+  }, {
+    description: 'Sets value as true/false for redering grid',
+    name: 'colorPalette?',
+    type: 'any[]',
+  }];
 
   barChartAttrs: Object[] = [{
     description: 'Sets data source for the Bar Chart',
@@ -63,6 +84,18 @@ export class ChartDemoComponent {
     description: 'Sets the Chart Title.',
     name: 'chartTitle?',
     type: 'string',
+  }, {
+    description: 'Gets value based on ticksFlag from td-charts',
+    name: 'ticks?',
+    type: 'boolean',
+  }, {
+    description: 'Gets value based on gridFlag from td-charts',
+    name: 'grid?',
+    type: 'boolean',
+  }, {
+    description: 'Gets value based on colorPalette from td-charts',
+    name: 'palette?',
+    type: 'any[]',
   }];
 
   lineChartAttrs: Object[] = [{
@@ -102,5 +135,19 @@ export class ChartDemoComponent {
     name: 'chartTitle?',
     type: 'string',
   }];
+
+  /**
+   * Generate Color Palette based on user input colors
+   */
+  ngOnInit(): void {
+    let paletteObj: {} = this.tdChartsComponent.generatePalette('cyan', 'indigo');
+    for (let key in paletteObj) {
+      if (key === 'error') {
+        this.paletteErrorMsg = paletteObj[key];
+      } else {
+        this.colorPalette = paletteObj[key];
+      }
+    }
+  }
 
 }

@@ -1,1 +1,1 @@
-export { TdChartComponent } from './chart.component';
+export { TdChartsComponent } from './charts.component';

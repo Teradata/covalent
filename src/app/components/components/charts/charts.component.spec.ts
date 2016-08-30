@@ -9,14 +9,14 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { ChartDemoComponent } from './chart.component';
+import { ChartsDemoComponent } from './charts.component';
 
-describe('Component: ChartDemoTestController', () => {
+describe('Component: ChartsDemoTestController', () => {
   let builder: TestComponentBuilder;
 
   beforeEach(() => {
     addProviders([
-      ChartDemoComponent,
+      ChartsDemoComponent,
     ]);
   });
 
@@ -27,8 +27,8 @@ describe('Component: ChartDemoTestController', () => {
   it(
     'should inject the component',
     inject(
-      [ChartDemoComponent],
-      (component: ChartDemoComponent) => {
+      [ChartsDemoComponent],
+      (component: ChartsDemoComponent) => {
         expect(component).toBeTruthy();
       })
   );
@@ -38,9 +38,9 @@ describe('Component: ChartDemoTestController', () => {
     inject(
       [],
       () => {
-        return builder.createAsync(ChartDemoTestControllerComponent)
+        return builder.createAsync(ChartsDemoTestControllerComponent)
           .then((fixture: ComponentFixture<any>) => {
-            let query: DebugElement = fixture.debugElement.query(By.directive(ChartDemoComponent));
+            let query: DebugElement = fixture.debugElement.query(By.directive(ChartsDemoComponent));
             expect(query).toBeTruthy();
             expect(query.componentInstance).toBeTruthy();
           });
@@ -50,11 +50,11 @@ describe('Component: ChartDemoTestController', () => {
 });
 
 @Component({
-  directives: [ChartDemoComponent],
+  directives: [ChartsDemoComponent],
   selector: 'td-test',
   template: `
-    <td-chart></td-chart>
+    <td-charts></td-charts>
   `,
 })
-class ChartDemoTestControllerComponent {
+class ChartsDemoTestControllerComponent {
 }

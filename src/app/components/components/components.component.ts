@@ -67,7 +67,7 @@ export class ComponentsComponent {
   }, {
     description: 'Responsive Charts',
     icon: 'show_chart',
-    route: 'chart',
+    route: 'charts',
     title: 'Charts',
   }];
 

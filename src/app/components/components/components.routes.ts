@@ -10,7 +10,7 @@ import { LoadingDemoComponent } from './loading';
 import { MarkdownDemoComponent } from './markdown';
 import { MediaDemoComponent } from './media';
 import { PipesComponent } from './pipes';
-import { ChartDemoComponent } from './charts';
+import { ChartsDemoComponent } from './charts';
 
 export const componentsRoutes: RouterConfig = [{
   children: [{
@@ -41,8 +41,8 @@ export const componentsRoutes: RouterConfig = [{
       component: PipesComponent,
       path: 'pipes',
     }, {
-      component: ChartDemoComponent,
-      path: 'chart',
+      component: ChartsDemoComponent,
+      path: 'charts',
     },
   ],
   component: ComponentsComponent,
