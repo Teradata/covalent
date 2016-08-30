@@ -59,9 +59,9 @@ export class OverviewComponent {
       title: 'Pipes',
     }, {
       color: 'orange-700',
-      icon: 'chrome_reader_mode',
-      route: 'line-chart',
-      title: 'line-chart',
+      icon: 'show_chart',
+      route: 'charts',
+      title: 'Charts',
     },
   ];
 }

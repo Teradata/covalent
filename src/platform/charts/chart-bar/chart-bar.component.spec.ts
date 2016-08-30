@@ -9,7 +9,7 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { TdChartBarComponent } from './bar-chart.component';
+import { TdChartBarComponent } from './chart-bar.component';
 
 describe('Component: TdChartBar', () => {
   let builder: TestComponentBuilder;

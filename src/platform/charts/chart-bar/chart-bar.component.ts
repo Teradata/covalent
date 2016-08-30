@@ -5,8 +5,8 @@ declare let d3: any;
 @Component({
   moduleId: module.id,
   selector: 'td-chart-bar',
-  styleUrls: ['bar-chart.component.css'],
-  templateUrl: 'bar-chart.component.html',
+  styleUrls: ['chart-bar.component.css'],
+  templateUrl: 'chart-bar.component.html',
 })
 
 export class TdChartBarComponent implements AfterViewInit {

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
-import { TdChartBarComponent } from './bar-chart/bar-chart.component';
-import { TdChartLineComponent } from './line-chart/line-chart.component';
+import { TdChartBarComponent } from './chart-bar/chart-bar.component';
+import { TdChartLineComponent } from './chart-line/chart-line.component';
 
 @Component({
   directives: [
@@ -20,7 +20,6 @@ export class TdChartsComponent {
   private _firstColor: string[];
   private _secondColor: string[];
   private _colorPalette: string[];
-  private _errorMsg: string[];
 
   // Core color palettes.
   private _mdRed: any[] = ['#ffebee', '#ffcdd2', '#ef9a9a', '#e57373', '#ef5350', '#f44336', '#e53935', '#d32f2f',
@@ -109,12 +108,12 @@ export class TdChartsComponent {
     if (this._paletteMap.get(firstColor)) {
       this._firstColor = this._paletteMap.get(firstColor).slice(0, 6);
     } else {
-      return {'error': 'First Palette color not found, rendering palette from default palette!!'};
+      return {'error': 'First palette color not found, rendering default palette!!'};
     }
     if (this._paletteMap.get(secondColor)) {
       this._secondColor = this._paletteMap.get(secondColor).slice(6, 14);
     } else {
-      return {'error': 'Second Palette color not found, rendering palette from default palette!!'};
+      return {'error': 'Second palette color not found, rendering default palette!!'};
     }
     this._colorPalette = this._firstColor.concat(this._secondColor);
     return {'color' : this._colorPalette};

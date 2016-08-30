@@ -5,8 +5,8 @@ declare let d3: any;
 @Component({
   moduleId: module.id,
   selector: 'td-chart-line',
-  styleUrls: ['line-chart.component.css'],
-  templateUrl: 'line-chart.component.html',
+  styleUrls: ['chart-line.component.css'],
+  templateUrl: 'chart-line.component.html',
 })
 
 export class TdChartLineComponent implements AfterViewInit {
@@ -113,7 +113,7 @@ export class TdChartLineComponent implements AfterViewInit {
       let lines: Object = this._lineColumns.map((id: any) => {
         return {
           id: id,
-          values: data.map((d) => {
+          values: data.map((d: any) => {
             return {xValue: d[this.bottomAxis], yValue: d[id]};
           }),
         };

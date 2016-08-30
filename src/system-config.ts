@@ -43,8 +43,8 @@ const barrels: string[] = [
   'platform/file-upload',
   'platform/markdown',
   'platform/charts',
-  'platform/charts/line-chart',
-  'platform/charts/bar-chart',
+  'platform/charts/chart-line',
+  'platform/charts/chart-bar',
 
   // App specific barrels.
   'app',
