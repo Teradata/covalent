@@ -12,7 +12,7 @@ import { MdButtonModule } from '@angular2-material/button';
 import { MdIconModule } from '@angular2-material/icon';
 import { MdTooltipModule } from '@angular2-material/tooltip';
 
-const MATERIAL_MODULES: Type[] = [
+const MATERIAL_MODULES: Type<any>[] = [
   MdCoreModule,
   MdButtonModule,
   MdIconModule,
@@ -35,7 +35,7 @@ import { TdFileDropDirective } from './directives/file-drop.directive';
 import { TdFileUploadComponent } from './file-upload.component';
 import { TdFileService } from './services/file.service';
 
-export const TD_FILE_DIRECTIVES: Type[] = [
+export const TD_FILE_DIRECTIVES: Type<any>[] = [
   TdFileSelectDirective,
   TdFileDropDirective,
   TdFileUploadComponent,

@@ -32,7 +32,7 @@ import { MdTabsModule } from '@angular2-material/tabs';
 import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdTooltipModule } from '@angular2-material/tooltip';
 
-const MATERIAL_MODULES: Type[] = [
+const MATERIAL_MODULES: Type<any>[] = [
   MdCoreModule,
   MdButtonModule,
   MdButtonToggleModule,
@@ -77,7 +77,7 @@ import { TdLayoutCardOverComponent } from './layout/layout-card-over/layout-card
 import { TdLayoutManageListComponent } from './layout/layout-manage-list/layout-manage-list.component';
 import { TdLayoutService } from './layout/services/layout.service';
 
-export const TD_LAYOUT_DIRECTIVES: Type[] = [
+export const TD_LAYOUT_DIRECTIVES: Type<any>[] = [
   TdLayoutComponent,
   TdLayoutNavComponent,
   TdLayoutNavListComponent,
@@ -85,7 +85,7 @@ export const TD_LAYOUT_DIRECTIVES: Type[] = [
   TdLayoutManageListComponent,
 ];
 
-export const TD_LAYOUT_PROVIDERS: Type[] = [
+export const TD_LAYOUT_PROVIDERS: Type<any>[] = [
   TdLayoutService,
 ];
 
@@ -99,7 +99,7 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 import { TdStepsComponent } from './steps/steps.component';
 import { TdStepComponent } from './steps/step.component';
 
-export const TD_STEPS_DIRECTIVES: Type[] = [
+export const TD_STEPS_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
 ];
@@ -112,7 +112,7 @@ import { TdLoadingService } from './loading/services/loading.service';
 import { TdLoadingDirective } from './loading/directives/loading.directive';
 import { TdLoadingComponent } from './loading/loading.component';
 
-export const TD_LOADING_ENTRY_COMPONENTS: Type[] = [
+export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
 
@@ -145,7 +145,7 @@ import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
-export const TD_PIPES: Type[] = [
+export const TD_PIPES: Type<any>[] = [
   TdOrderByPipe,
   TdTimeAgoPipe,
   TdTimeDifferencePipe,
