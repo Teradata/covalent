@@ -1,25 +1,10 @@
 import { Component } from '@angular/core';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-
-import { TdHighlightComponent } from '../../../../platform/highlight';
-import { TdJsonFormatterComponent } from '../../../../platform/json-formatter';
-
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    TdHighlightComponent,
-    TdJsonFormatterComponent,
-  ],
   moduleId: module.id,
   selector: 'td-json-formatter-demo',
   styleUrls: ['json-formatter.component.css'],
   templateUrl: 'json-formatter.component.html',
-
 })
 export class JsonFormatterDemoComponent {
 
