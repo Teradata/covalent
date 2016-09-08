@@ -91,16 +91,16 @@ $md-warn: #C62828;
     md-progress-circle,
     md-spinner {
         path {
-            stroke: $md-primary;
+            stroke: $md-primary !important;
         }
         &[color='accent'] {
             path {
-                stroke: $md-accent;
+                stroke: $md-accent !important;
             }
         }
         &[color='warn'] {
             path {
-                stroke: $md-warn;
+                stroke: $md-warn !important;
             }
         }
     }
