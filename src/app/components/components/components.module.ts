@@ -21,6 +21,7 @@ import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
+import { CovalentChipsModule } from '../../../platform/chips';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentJsonFormatterModule,
+    CovalentChipsModule,
     componentsRoutes,
   ],
 })
