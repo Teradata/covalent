@@ -15,9 +15,9 @@ export class TdFadeDirective {
   /**
    * duration?: number
    * Sets duration of fade animation in miliseconds.
-   * Defaults to 500 ms.
+   * Defaults to 250 ms.
    */
-  @Input() duration: number = 500;
+  @Input() duration: number = 250;
 
   /**
    * tdFade: boolean
@@ -80,20 +80,14 @@ export class TdFadeDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    let startStyles: [string, any][] = [
-          ['opacity', 0],
-        ];
-    let endStyles: [string, any][] = [
-          ['opacity', 1],
-        ];
     let keyFrames: any[] = [{
         styles: {
-          styles: new Map<string, any>(startStyles),
+          styles: [{'opacity': 1}],
         },
         offset: 0,
       }, {
         styles: {
-          styles: new Map<string, any>(endStyles),
+          styles: [{'opacity': 0}],
         },
         offset: 1,
       },
@@ -124,20 +118,14 @@ export class TdFadeDirective {
    */
   show(): void {
     this._hiddenState = this._state;
-    let startStyles: [string, any][] = [
-          ['opacity', 1],
-        ];
-    let endStyles: [string, any][] = [
-          ['opacity', 0],
-        ];
     let keyFrames: any[] = [{
         styles: {
-          styles: new Map<string, any>(startStyles),
+          styles: [{'opacity': 0}],
         },
         offset: 0,
       }, {
         styles: {
-          styles: new Map<string, any>(endStyles),
+          styles: [{'opacity': 1}],
         },
         offset: 1,
       },
