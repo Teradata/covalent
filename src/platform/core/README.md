@@ -116,9 +116,9 @@ Example for Manage List Layout / Nav Layout combo:
     <md-nav-list list-items>
       ...
     </md-nav-list>
-    <toolbar-buttons>
+    <div toolbar-buttons>
       ...
-    </toolbar-buttons>
+    </div>
     ... /* content */
   </td-layout-manage-list>
 </td-layout-nav>

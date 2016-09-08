@@ -18,13 +18,13 @@
         Item Name
       </a>
     </md-nav-list>
-    <toolbar-buttons layout="row" layout-align="start center" flex>
+    <div toolbar-buttons layout="row" layout-align="start center" flex>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
-    </toolbar-buttons>
+    </div>
     <md-card>
       <md-card-title> Manage List Layout</md-card-title>
       <md-card-subtitle>Content/object management views (this page is using manage list)</md-card-subtitle>
@@ -110,10 +110,10 @@
                   <md-divider></md-divider>
                 </md-list>
               </td-step>
-              <td-step [active]="true" label="Step 3: toolbar-buttons" sublabel="the management toolbar above content">
+              <td-step [active]="true" label="Step 3: div[toolbar-buttons]" sublabel="the management toolbar above content">
                 <md-list>
                   <md-list-item>
-                    <h3 md-line><code><![CDATA[<toolbar-buttons>]]></code></h3>
+                    <h3 md-line><code><![CDATA[<div toolbar-buttons>]]></code></h3>
                     <p md-line>The toolbar wrapper</p>
                   </md-list-item>
                   <md-divider></md-divider>
@@ -151,10 +151,10 @@
                           </a>
                       </template>
                     </md-nav-list>
-                    <toolbar-buttons layout="row" layout-align="start center" flex>
+                    <div toolbar-buttons layout="row" layout-align="start center" flex>
                       <span flex></span>
                       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
-                    </toolbar-buttons>
+                    </div>
                     <router-outlet></router-outlet>
                   </td-layout-manage-list>
                 </td-layout>
