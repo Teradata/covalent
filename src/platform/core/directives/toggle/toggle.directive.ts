@@ -1,6 +1,4 @@
 import { Directive, ElementRef, Input, HostBinding, Renderer, AnimationPlayer } from '@angular/core';
-import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
-import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
 
 @Directive({
   selector: '[tdToggle]',
@@ -67,15 +65,17 @@ export class TdToggleDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    let keyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        height: this._element.nativeElement.scrollHeight + 'px',
-        overflow: 'hidden',
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        height: '0',
-        overflow: 'hidden',
-      }])),
+    let keyFrames: any[] = [{
+        style: {
+          height: this._element.nativeElement.scrollHeight + 'px',
+          overflow: 'hidden',
+        },
+      }, {
+        styles: {
+          height: '0',
+          overflow: 'hidden',
+        },
+      },
     ];
 
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
@@ -100,13 +100,17 @@ export class TdToggleDirective {
    */
   show(): void {
     this._hiddenState = this._state;
-    let startKeyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        overflow: 'hidden',
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        overflow: 'hidden',
-      }])),
+    let startKeyFrames: any[] = [{
+        style: {
+          overflow: 'hidden',
+        },
+        offset: 0,
+      }, {
+        styles: {
+          overflow: 'hidden',
+        },
+        offset: 1,
+      },
     ];
 
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
@@ -114,16 +118,20 @@ export class TdToggleDirective {
       .animate(this._element.nativeElement, undefined, startKeyFrames, 0, 0, 'ease-in');
     startingAnimation.play();
     startingAnimation.onDone(() => {
-      let keyFrames: AnimationKeyframe[] = [
-        new AnimationKeyframe(0, new AnimationStyles([{
+      let keyFrames: any[] = [{
+        style: {
           height: '0',
           overflow: 'hidden',
-        }])),
-        new AnimationKeyframe(1, new AnimationStyles([{
+        },
+        offset: 0,
+      }, {
+        styles: {
           height: this._element.nativeElement.scrollHeight + 'px',
           overflow: 'hidden',
-        }])),
-      ];
+        },
+        offset: 1,
+      },
+    ];
 
       let animation: AnimationPlayer = this._renderer
         .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');

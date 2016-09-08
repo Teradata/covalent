@@ -59,11 +59,46 @@ const MATERIAL_MODULES: Type<any>[] = [
 ];
 
 @NgModule({
+  imports: [
+    MdButtonModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    MdGridListModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdListModule.forRoot(),
+    MdProgressBarModule.forRoot(),
+    MdProgressCircleModule.forRoot(),
+    MdRippleModule.forRoot(),
+    MdSidenavModule.forRoot(),
+    MdTabsModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    PortalModule.forRoot(),
+    RtlModule.forRoot(),
+
+    // These modules include providers.
+    MdButtonToggleModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdMenuModule.forRoot(),
+    MdRadioModule.forRoot(),
+    MdSliderModule.forRoot(),
+    MdSlideToggleModule.forRoot(),
+    MdTooltipModule.forRoot(),
+    OverlayModule.forRoot(),
+  ],
+  exports: MATERIAL_MODULES,
+  providers: [MdLiveAnnouncer]
+})
+export class MaterialRootModule { }
+
+@NgModule({
   imports: MATERIAL_MODULES,
   exports: MATERIAL_MODULES,
-  providers: [ MdLiveAnnouncer ],
 })
-export class MaterialModule { }
+export class MaterialModule {
+  static forRoot(): ModuleWithProviders {
+    return {ngModule: MaterialRootModule};
+  }
+}
 
 /**
  * COMPONENTS
@@ -183,7 +218,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     FormsModule,
     RouterModule,
     CommonModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
   ],
   declarations: [
     TdMediaToggleDirective,

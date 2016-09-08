@@ -5,6 +5,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "mapRoot": "",
+    "lib": ["es6", "es2015", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,

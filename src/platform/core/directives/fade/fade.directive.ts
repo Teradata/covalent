@@ -1,7 +1,5 @@
 import { Directive, ElementRef, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Renderer, AnimationPlayer } from '@angular/core';
-import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
-import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
 
 @Directive({
   selector: '[tdFade]',
@@ -82,13 +80,17 @@ export class TdFadeDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    let keyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        opacity: 1,
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        opacity: 0,
-      }])),
+    let keyFrames: any[] = [{
+        style: {
+          opacity: 1,
+        },
+        offset: 0,
+      }, {
+        styles: {
+          opacity: 0,
+        },
+        offset: 1,
+      },
     ];
 
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
@@ -116,13 +118,17 @@ export class TdFadeDirective {
    */
   show(): void {
     this._hiddenState = this._state;
-    let keyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        opacity: 0,
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        opacity: 1,
-      }])),
+    let keyFrames: any[] = [{
+        style: {
+          opacity: 0,
+        },
+        offset: 0,
+      }, {
+        styles: {
+          opacity: 1,
+        },
+        offset: 1,
+      },
     ];
 
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
