@@ -1,11 +1,11 @@
 <div layout="column" layout-fill>
   <div class="md-content" flex layout="row" layout-fill>
     <md-sidenav hide-xs #end align="end" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
-      <div class="md-content" flex class="list">
+      <div flex class="md-content list">
         <ng-content select="[list-items]"></ng-content>
       </div>
     </md-sidenav>
-    <div class="md-content" layout="column" layout-fill class="content">
+    <div layout="column" layout-fill class="md-content content">
       <md-toolbar class="md-whiteframe-z1">
         <ng-content select="[toolbar-buttons]"></ng-content>
       </md-toolbar>
