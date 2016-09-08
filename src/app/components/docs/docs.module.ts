@@ -11,6 +11,7 @@ import { BuildTasksComponent } from './build-tasks/build-tasks.component';
 import { DeploymentComponent } from './deployment/deployment.component';
 import { IconsComponent } from './icons/icons.component';
 import { TestingComponent } from './testing/testing.component';
+import { ThemeComponent } from './theme/theme.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -26,6 +27,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     DeploymentComponent,
     IconsComponent,
     TestingComponent,
+    ThemeComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),

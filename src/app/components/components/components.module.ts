@@ -11,6 +11,9 @@ import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { HttpDemoComponent } from './http/http.component';
+import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
+import { ChipsDemoComponent } from './chips/chips.component';
 import { PipesComponent } from './pipes/pipes.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
@@ -29,6 +32,9 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
     LoadingDemoComponent,
     MarkdownDemoComponent,
     MediaDemoComponent,
+    HttpDemoComponent,
+    JsonFormatterDemoComponent,
+    ChipsDemoComponent,
     PipesComponent,
   ],
   imports: [
