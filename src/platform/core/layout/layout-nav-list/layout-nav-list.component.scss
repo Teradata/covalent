@@ -8,7 +8,7 @@
 }
 :host {
   md-sidenav-layout {
-    & > md-content {
+    & > .md-content {
       margin-left: 0 !important;
     }
   }
@@ -29,7 +29,7 @@
           transform: translate3d(0, 0, 0);
         }
       }
-      & > md-content {
+      & > .md-content {
         margin-left: 0 !important;
         display: flex;
         flex-grow: 1;
@@ -46,7 +46,7 @@
           z-index: 3;
         }
       }
-      & > md-content {
+      & > .md-content {
         z-index: 2;
       }
     }

@@ -2,12 +2,12 @@
 @import 'default-theme';
 
 // Overall app layout height
-md-sidenav-layout > md-content {
+md-sidenav-layout > .md-content {
   height: 100%;
   overflow: hidden;
 }
 
-md-content {
+.md-content {
 
   display: block;
   position: relative;
@@ -36,7 +36,7 @@ md-content {
 
 // Theme
 
-md-content {
+.md-content {
   color: md-color($md-foreground, text);
   background-color: md-color($md-background, 200);
 }
