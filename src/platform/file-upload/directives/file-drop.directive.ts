@@ -71,7 +71,8 @@ export class TdFileDropDirective {
   onDragOver(event: Event): void {
     let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
-    if (this._disabled || (!this._multiple && transfer.items.length > 1)) {
+    if (this._disabled || (!this._multiple &&
+      ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
       transfer.dropEffect = 'none';
     } else {
       transfer.dropEffect = 'copy';
