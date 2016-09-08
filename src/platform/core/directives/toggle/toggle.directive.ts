@@ -65,16 +65,24 @@ export class TdToggleDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
+    let startStyles: [string, any][] = [
+            ['height', this._element.nativeElement.scrollHeight + 'px'],
+            ['overflow', 'hidden'],
+          ];
+    let endStyles: [string, any][] = [
+            ['height', 0],
+            ['overflow', 'hidden'],
+          ];
     let keyFrames: any[] = [{
-        style: {
-          height: this._element.nativeElement.scrollHeight + 'px',
-          overflow: 'hidden',
+        styles: {
+          styles: new Map<string, any>(startStyles),
         },
+        offset: 0,
       }, {
         styles: {
-          height: '0',
-          overflow: 'hidden',
+          styles: new Map<string, any>(endStyles),
         },
+        offset: 1,
       },
     ];
 
@@ -100,14 +108,17 @@ export class TdToggleDirective {
    */
   show(): void {
     this._hiddenState = this._state;
+    let startKeyStyles: [string, any][] = [
+            ['overflow', 'hidden'],
+          ];
     let startKeyFrames: any[] = [{
-        style: {
-          overflow: 'hidden',
+        styles: {
+          styles: new Map<string, any>(startKeyStyles),
         },
         offset: 0,
       }, {
         styles: {
-          overflow: 'hidden',
+          styles: new Map<string, any>(startKeyStyles),
         },
         offset: 1,
       },
@@ -118,20 +129,26 @@ export class TdToggleDirective {
       .animate(this._element.nativeElement, undefined, startKeyFrames, 0, 0, 'ease-in');
     startingAnimation.play();
     startingAnimation.onDone(() => {
+      let startStyles: [string, any][] = [
+            ['height', 0],
+            ['overflow', 'hidden'],
+          ];
+      let endStyles: [string, any][] = [
+            ['height', this._element.nativeElement.scrollHeight + 'px'],
+            ['overflow', 'hidden'],
+          ];
       let keyFrames: any[] = [{
-        style: {
-          height: '0',
-          overflow: 'hidden',
+          styles: {
+            styles: new Map<string, any>(startStyles),
+          },
+          offset: 0,
+        }, {
+          styles: {
+            styles: new Map<string, any>(endStyles),
+          },
+          offset: 1,
         },
-        offset: 0,
-      }, {
-        styles: {
-          height: this._element.nativeElement.scrollHeight + 'px',
-          overflow: 'hidden',
-        },
-        offset: 1,
-      },
-    ];
+      ];
 
       let animation: AnimationPlayer = this._renderer
         .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');

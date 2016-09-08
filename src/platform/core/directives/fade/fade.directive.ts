@@ -80,14 +80,20 @@ export class TdFadeDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
+    let startStyles: [string, any][] = [
+          ['opacity', 0],
+        ];
+    let endStyles: [string, any][] = [
+          ['opacity', 1],
+        ];
     let keyFrames: any[] = [{
-        style: {
-          opacity: 1,
+        styles: {
+          styles: new Map<string, any>(startStyles),
         },
         offset: 0,
       }, {
         styles: {
-          opacity: 0,
+          styles: new Map<string, any>(endStyles),
         },
         offset: 1,
       },
@@ -118,14 +124,20 @@ export class TdFadeDirective {
    */
   show(): void {
     this._hiddenState = this._state;
+    let startStyles: [string, any][] = [
+          ['opacity', 1],
+        ];
+    let endStyles: [string, any][] = [
+          ['opacity', 0],
+        ];
     let keyFrames: any[] = [{
-        style: {
-          opacity: 0,
+        styles: {
+          styles: new Map<string, any>(startStyles),
         },
         offset: 0,
       }, {
         styles: {
-          opacity: 1,
+          styles: new Map<string, any>(endStyles),
         },
         offset: 1,
       },
