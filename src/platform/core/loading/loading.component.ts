@@ -59,14 +59,17 @@ export class TdLoadingComponent {
     if (this.height) {
       return `${this.height}px`;
     }
-    return 'auto';
+    return '150px';
   }
 
   getCircleDiameter(): string {
     if (this.height) {
-      return `${this.height / 2}px`;
+      let diameter: number = this.height * (2 / 3);
+      if (diameter < 80) {
+        return `${diameter}px`;
+      }
     }
-    return 'auto';
+    return '80px';
   }
 
   isCircular(): boolean {

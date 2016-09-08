@@ -9,6 +9,7 @@ import { BuildTasksComponent } from './build-tasks/build-tasks.component';
 import { DeploymentComponent } from './deployment/deployment.component';
 import { IconsComponent } from './icons/icons.component';
 import { TestingComponent } from './testing/testing.component';
+import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [{
   children: [{
@@ -35,6 +36,9 @@ const routes: Routes = [{
     }, {
       component: TestingComponent,
       path: 'testing',
+    }, {
+      component: ThemeComponent,
+      path: 'theme',
     },
   ],
   component: DocsComponent,

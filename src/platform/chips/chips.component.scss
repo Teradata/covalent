@@ -1,0 +1,97 @@
+@import '../core/styles/variables';
+@import '../core/styles/default-theme';
+
+// Underline colors.
+$md-input-underline-color: md-color($md-foreground, hint-text);
+$md-input-underline-color-accent: md-color($md-accent);
+$md-input-underline-color-warn: md-color($md-warn);
+$md-input-underline-disabled-color: md-color($md-foreground, hint-text);
+$md-input-underline-focused-color: md-color($md-primary);
+
+// Gradient for showing the dashed line when the input is disabled.
+$md-input-underline-disabled-background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
+
+:host {
+  display: block;
+  padding: 0px 5px 0px 5px;
+  .td-chip {
+    display: inline-block;;
+    background: md-color($md-grey, 300);;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default;
+    border-radius: 16px;
+    line-height: 32px;
+    margin: 8px 8px 0 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    md-icon {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      height: 18px;
+      width: 18px;
+      font-size: 19px;
+      color: rgba(0, 0, 0, 0.23);
+      &:hover {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
+  }
+}
+
+.md-input-underline {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin-top: 4px;
+  border-top: 1px solid $md-input-underline-color;
+
+  &.md-disabled {
+    border-top: 0;
+    background-image: $md-input-underline-disabled-background-image;
+    background-position: 0;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .md-input-ripple {
+    position: absolute;
+    height: 2px;
+    z-index: 1;
+    background-color: $md-input-underline-focused-color;
+    top: -1px;
+    width: 100%;
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+                opacity $swift-ease-out-duration $swift-ease-out-timing-function;
+    &.md-accent {
+      background-color: $md-input-underline-color-accent;
+    }
+    &.md-warn {
+      background-color: $md-input-underline-color-warn;
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    &.md-focused {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+}
+
+:host {
+  md-input {
+    input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
+      display: none;
+    }
+    .md-input-underline {
+      display: none;
+    }
+  }
+}

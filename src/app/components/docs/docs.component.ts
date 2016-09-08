@@ -44,6 +44,11 @@ export class DocsComponent {
     route: 'icons',
     title: 'SVG Icon Sets',
   }, {
+    description: 'Customize the SCSS color scheme',
+    icon: 'palette',
+    route: 'theme',
+    title: 'Custom Theme',
+  }, {
     description: 'A full suite of test tools',
     icon: 'playlist_add_check',
     route: 'testing',

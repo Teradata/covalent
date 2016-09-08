@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
 import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
 
@@ -9,7 +9,7 @@ import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../plat
   styleUrls: [ 'loading.component.css' ],
   templateUrl: 'loading.component.html',
 })
-export class LoadingDemoComponent {
+export class LoadingDemoComponent implements AfterViewInit {
 
   demo: {name?: string, description?: string} = {};
   demo2: {name?: string, description?: string} = {};
@@ -26,13 +26,15 @@ export class LoadingDemoComponent {
   }];
 
   loadingServiceMethods: Object[] = [{
-    description: 'Registers a request for the loading mask referenced by the name parameter.',
+    description: `Registers a request for the loading mask referenced by the name parameter.
+                  Can optionally pass registers argument to set a number of register calls.`,
     name: 'register',
-    type: 'function(name: string)',
+    type: 'function(name: string, registers: number = 1)',
   }, {
-    description: 'Resolves a request for the loading mask referenced by the name parameter.',
+    description: `Resolves a request for the loading mask referenced by the name parameter.
+                  Can optionally pass resolves argument to set a number of resolve calls.`,
     name: 'resolve',
-    type: 'function(name: string)',
+    type: 'function(name: string, resolves: number = 1)',
   }, {
     description: `Creates a fullscreen loading mask and attaches it to the viewContainerRef.
                   Only displayed when the mask has a request registered on it.`,
@@ -40,7 +42,9 @@ export class LoadingDemoComponent {
     type: 'function(options: ILoadingOptions, viewContainerRef: ViewContainerRef)',
   }];
 
-  constructor(viewContainer: ViewContainerRef, private _loadingService: TdLoadingService) {
+  constructor(viewContainer: ViewContainerRef,
+              private _changeDetectorRef: ChangeDetectorRef,
+              private _loadingService: TdLoadingService) {
     let options: ILoadingOptions = {
       name: 'test.overlay',
       type: LoadingType.Circular,
@@ -51,6 +55,11 @@ export class LoadingDemoComponent {
       type: LoadingType.Linear,
     };
     this._loadingService.createOverlayComponent(options2, viewContainer);
+  }
+
+  ngAfterViewInit(): void {
+    this.registerLoadingReplace();
+    this._changeDetectorRef.detectChanges();
   }
 
   registerCircleLoadingOverlay(): void {
@@ -68,9 +77,9 @@ export class LoadingDemoComponent {
   }
 
   registerLoadingReplace(): void {
-    this.replaceRegistered++;
     this._loadingService.register('test');
     this._loadingService.register('test2');
+    this.replaceRegistered++;
   }
 
   resolveLoadingReplace(): void {

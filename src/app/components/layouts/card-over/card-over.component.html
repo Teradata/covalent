@@ -34,7 +34,7 @@
             <td-step [active]="true" label="Step 2: menu-items" sublabel="the sidenav menu items">
               <md-list>
                 <md-list-item>
-                  <h3 md-line><code><![CDATA[<menu-items>]]></code></h3>
+                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
                   <p md-line>The menu items wrapper</p>
                 </md-list-item>
                 <md-divider></md-divider>
@@ -100,12 +100,12 @@
           <td-highlight lang="html">
             <![CDATA[
             <td-layout #layout title="Sidenav Title" logo="path/to/sidenav-logo.svg">
-              <menu-items>
+              <md-nav-list menu-items>
                 <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
                   <md-icon>{ {item.icon} }</md-icon>
                   { {item.title} }
                 </a>
-              </menu-items>
+              </md-nav-list>
               <td-layout-nav title="Toolbar Title" logo="path/to/toolbar-logo.svg">
                 <td-layout-card-over title="Card Title" subtitle="Card subtitle">
                   <router-outlet></router-outlet>

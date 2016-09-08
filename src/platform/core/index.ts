@@ -197,11 +197,6 @@ export { TdDigitsPipe } from './pipes/digits/digits.pipe';
 export { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
 /**
- * SERVICES
- */
-export { RESTService, IRestTransform, IRestConfig, IRestQuery, IHttp } from './services/rest.service';
-
-/**
  * MEDIA
  */
 import { TdMediaService } from './media/services/media.service';

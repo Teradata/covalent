@@ -2,9 +2,7 @@
   <div class="md-content" flex layout="row" layout-fill>
     <md-sidenav hide-xs #end align="end" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
       <div class="md-content" flex class="list">
-        <md-nav-list>
-          <ng-content select="list-items"></ng-content>
-        </md-nav-list>
+        <ng-content select="[list-items]"></ng-content>
       </div>
     </md-sidenav>
     <div class="md-content" layout="column" layout-fill class="content">

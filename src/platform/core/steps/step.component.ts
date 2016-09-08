@@ -107,11 +107,28 @@ export class TdStepComponent {
   @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
 
   /**
-   * Method executed when [TdStepComponent] is clicked.
+   * Toggle active state of [TdStepComponent]
+   * retuns 'true' if successful, else 'false'.
    */
-  clickEvent(): void {
-    this._setActive(!this._active);
-  };
+  toggle(): boolean {
+    return this._setActive(!this._active);
+  }
+
+  /**
+   * Opens [TdStepComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  open(): boolean {
+    return this._setActive(true);
+  }
+
+  /**
+   * Closes [TdStepComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  close(): boolean {
+    return this._setActive(false);
+  }
 
   /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.
@@ -130,10 +147,11 @@ export class TdStepComponent {
   /**
    * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated] 
    * event if 'false'. (Blocked if [disabled] is 'true')
+   * returns true if successfully changed state
    */
-  private _setActive(newActive: boolean): void {
+  private _setActive(newActive: boolean): boolean {
     if (this._disabled) {
-      return;
+      return false;
     }
     if (this._active !== newActive) {
       this._active = newActive;
@@ -142,7 +160,9 @@ export class TdStepComponent {
       } else {
         this._onDeactivated();
       }
+      return true;
     }
+    return false;
   };
 
   private _onActivated(): void {

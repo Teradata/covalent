@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material 2",
   "keywords": [
@@ -17,7 +17,7 @@
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "pretest": "rm -rf ./dist && ng build",
     "test": "npm run karma",
-    "karma": "karma start ./config/karma.conf.js",
+    "karma": "karma start ./config/karma.conf.js --single-run",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",

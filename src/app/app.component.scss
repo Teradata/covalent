@@ -55,9 +55,17 @@ $md-warn: #C62828;
     .md-input-placeholder.md-focused {
         color: $md-primary !important;
     }
-    .md-progress-bar-fill::after,
+    .md-progress-bar-fill::after {
+        background-color: $md-primary !important;
+    }
     .md-input-underline .md-input-ripple {
         background-color: $md-primary !important;
+        &.md-accent {
+            background-color: $md-accent !important;
+        }
+        &.md-warn {
+            background-color: $md-warn !important;
+        }
     }
     .md-progress-bar-buffer {
         background-color: lighten($md-primary, 40%) !important;
@@ -109,6 +117,19 @@ $md-warn: #C62828;
             }
             .md-slide-toggle-bar {
                 background-color: $md-accent-opacity;
+            }
+        }
+        &.md-slide-toggle-focused {
+            .md-ink-ripple {
+                background-color: $md-accent-opacity;
+            }
+        }
+    }
+    md-nav-list {
+        [md-list-item].active {
+            md-icon {
+                background-color: $md-accent;
+                color: white;
             }
         }
     }

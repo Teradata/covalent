@@ -39,6 +39,9 @@ const barrels: string[] = [
   'platform/highlight',
   'platform/file-upload',
   'platform/markdown',
+  'platform/http',
+  'platform/json-formatter',
+  'platform/chips',
 
   // App specific barrels.
   'app/',

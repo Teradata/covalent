@@ -29,7 +29,7 @@ There are five types of layouts:
 
 #### td-layout
 
-`<menu-items>` is used to include items in the sidenav.
+`<md-nav-list menu-items>` is used to include items in the sidenav.
 
 Properties:
 
@@ -38,7 +38,7 @@ Properties:
 | `title` | `string` | Title to be displayed.
 | `icon` | `string` | Uses material icon names.
 | `displayName` | `string` | Username to be displayed.
-| `tdOnLogout` | `function()` | Function executed when logout it pressed.
+| `logout` | `function()` | Function executed when logout it pressed.
 
 #### td-layout-nav
 
@@ -46,7 +46,7 @@ Properties:
 
 #### td-layout-nav-list
 
-`<list-items>` is used to include items in the left side list.
+`<md-nav-list list-items>` is used to include items in the left side list.
 `<list-toolbar-content>` is used to include items in the left side toolbar.
 `<nav-toolbar-content>` is used to include items in the right side toolbar.
 
@@ -61,7 +61,7 @@ Properties:
 
 #### td-layout-manage-items
 
-`<list-items>` is used to include items in the left side list.
+`<md-nav-list list-items>` is used to include items in the left side list.
 `<toolbar-content>` is used to include items in the toolbar.
 
 #### Usage
@@ -92,14 +92,14 @@ Example Nav List Layout:
     <span flex></span>
     <button md-button (click)="search()" class="md-icon-button"><md-icon class="md-24">search</md-icon></button>
   </list-toolbar-content>
-  <list-items>
+  <md-nav-list list-items>
     <a md-list-item>
     <md-icon md-list-avatar>dashboard</md-icon>
     <h3 md-line> Item Name </h3>
     <p md-line> Item description </p>
     </a>
     <md-divider *ngIf="!last" md-inset></md-divider>
-  </list-items>
+  </md-nav-list>
   <nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>View Name</span>
     <span flex></span>
@@ -113,9 +113,9 @@ Example for Manage List Layout / Nav Layout combo:
 ```html
 <td-layout-nav>
   <td-layout-manage-list #list>
-    <list-items>
+    <md-nav-list list-items>
       ...
-    </list-items>
+    </md-nav-list>
     <toolbar-buttons>
       ...
     </toolbar-buttons>

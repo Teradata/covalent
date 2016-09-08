@@ -38,6 +38,7 @@
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
     <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<template>]]></code> element.</p>
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
+    <p>Note: when used on load, should be registered in [TdLoadingService] after 'AfterViewInit#ngAfterViewInit()' component hook cycle.</p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> component has {{loadingAttrs.length}} properties:</p>
     <md-list>
@@ -69,10 +70,11 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdLoadingDirective, TdLoadingService } from '@covalent/core';
+        import { TdLoadingDirective, TdLoadingService, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
         ...
           directives: [ TdLoadingDirective ],
-          providers: [ TdLoadingService ]
+          providers: [ TdLoadingService ],
+          precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
         })
         export class Demo {
           constructor(private _loadingService: TdLoadingService) {
@@ -122,9 +124,10 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ILoadingOptions, LoadingType } from '@covalent/core';
+        import { TdLoadingService, ILoadingOptions, LoadingType, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
         ...
-          providers: [ TdLoadingService ]
+          providers: [ TdLoadingService ],
+          precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
         })
         export class Demo {
           constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {

@@ -1,10 +1,14 @@
-import { Injectable, ComponentFactoryResolver } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, NgZone } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { TdLoadingComponent, LoadingType } from '../loading.component';
+
+const noop: () => void = () => {
+  // empty function
+};
 
 export interface ILoadingOptions {
   name: string;
@@ -29,7 +33,8 @@ export class TdLoadingService {
   private _loadingObservables: {[key: string]: Observable<any>} = {};
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _injector: Injector) {
+              private _injector: Injector,
+              private _ngZone: NgZone) {
   }
 
   /**
@@ -53,13 +58,19 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        viewContainerRef.insert(loadingRef.ref.hostView, 0);
-        instance.startInAnimation();
+        this._ngZone.runOutsideAngular(() => {
+          viewContainerRef.insert(loadingRef.ref.hostView, 0);
+          instance.startInAnimation();
+          this._ngZone.run(noop);
+        });
       } else if (registered <= 0 && loading) {
         loading = false;
-        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-          subs.unsubscribe();
-          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+        this._ngZone.runOutsideAngular(() => {
+          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+            subs.unsubscribe();
+            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+            this._ngZone.run(noop);
+          });
         });
       }
     });
@@ -89,18 +100,24 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
-        if (index < 0) {
-          viewContainerRef.clear();
-          viewContainerRef.insert(loadingRef.ref.hostView, 0);
-        }
-        instance.startInAnimation();
+        this._ngZone.runOutsideAngular(() => {
+          let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
+          if (index < 0) {
+            viewContainerRef.clear();
+            viewContainerRef.insert(loadingRef.ref.hostView, 0);
+          }
+          instance.startInAnimation();
+          this._ngZone.run(noop);
+        });
       } else if (registered <= 0 && loading) {
         loading = false;
-        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-          subs.unsubscribe();
-          viewContainerRef.createEmbeddedView(templateRef);
-          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+        this._ngZone.runOutsideAngular(() => {
+          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+            subs.unsubscribe();
+            viewContainerRef.createEmbeddedView(templateRef);
+            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
+            this._ngZone.run(noop);
+          });
         });
       }
     });
@@ -110,28 +127,58 @@ export class TdLoadingService {
    * params:
    * - name: string
    * 
-   * Resolves a request for the loading mask referenced by the name parameter.
+   * Removes loading mask from service context.
    */
-  public register(name: string): void {
-    if (this._loadingSources[name]) {
-      this._loadingSources[name].next(++this._context[name].times);
+  public removeComponent(name: string): void {
+    if (this._context[name]) {
+      this._loadingSources[name] = undefined;
+      delete this._loadingSources[name];
+      this._context[name].loadingRef.destroy();
+      this._context[name] = undefined;
+      delete this._context[name];
     }
   }
 
   /**
    * params:
    * - name: string
+   * - registers?: number
+   * returns: true if successful
+   * 
+   * Resolves a request for the loading mask referenced by the name parameter.
+   * Can optionally pass registers argument to set a number of register calls.
+   */
+  public register(name: string, registers: number = 1): boolean {
+    if (this._loadingSources[name]) {
+      registers = registers < 1 ? 1 : registers;
+      this._context[name].times += registers;
+      this._loadingSources[name].next(this._context[name].times);
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * params:
+   * - name: string
+   * - resolves?: number
+   * returns: true if successful
    * 
    * Registers a request for the loading mask referenced by the name parameter.
+   * Can optionally pass resolves argument to set a number of resolve calls.
    */
-  public resolve(name: string): void {
+  public resolve(name: string, resolves: number = 1): boolean {
     if (this._loadingSources[name]) {
-      let times: number = 0;
+      resolves = resolves < 1 ? 1 : resolves;
       if (this._context[name].times > 0) {
-        times = --this._context[name].times;
+        let times: number = this._context[name].times;
+        times -= resolves;
+        this._context[name].times = times < 0 ? 0 : times;
       }
-      this._loadingSources[name].next(times);
+      this._loadingSources[name].next(this._context[name].times);
+      return true;
     }
+    return false;
   }
 
   /**

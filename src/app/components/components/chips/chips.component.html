@@ -1,0 +1,73 @@
+<md-card>
+  <md-card-title>Chips &amp; Autocomplete</md-card-title>
+  <md-card-subtitle>Small blocks for multiple items</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Basic Demo</p>
+    <td-chips placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
+    <p>Autocomplete Demo</p>
+    <td-chips [items]="items" placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
+    <p>Autocomplete and requireMatch Demo</p>
+    <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>      
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleReadOnly()">Toggle ReadOnly</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdChipsComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-chips>]]></code></h2>
+    <p>Use <code><![CDATA[<td-chips>]]></code> element to generate a list of strings as chips.</p>
+    <p>Add the [items] attribute to enable the autocomplete with a search list, and [requireMatch] to validate the input against the provided search list.</p>
+    <p>When used with <a target="_blank" href="https://angular.io/docs/ts/latest/guide/forms.html">forms</a>, you can track change-states [dirty/pristine] and [touched/untouched].</p>
+    <p>Since <code>[(ngModel)]</code> would be an array, you need to implement a custom validator for [valid/invalid] when its empty.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-chips>]]></code> component has {{chipsAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="chipsAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
+        </td-chips>        
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdChipsComponent } from '@covalent/chips';
+        ...
+          directives: [ TdChipsComponent ]
+        })
+        export class Demo {
+          readOnly: boolean: false;
+          items: string[] = [
+            'string1',
+            'string2',
+            'string3'
+          ];
+          model: string[] = [];
+
+          add(value: string): void {
+            ...
+          }
+          remove(value: string): void {
+            ...
+          }
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
