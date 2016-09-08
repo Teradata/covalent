@@ -86,7 +86,7 @@ const MATERIAL_MODULES: Type<any>[] = [
     OverlayModule.forRoot(),
   ],
   exports: MATERIAL_MODULES,
-  providers: [MdLiveAnnouncer]
+  providers: [MdLiveAnnouncer],
 })
 export class MaterialRootModule { }
 

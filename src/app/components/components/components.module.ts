@@ -20,6 +20,7 @@ import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
+import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
     CovalentFileModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
+    CovalentJsonFormatterModule,
     componentsRoutes,
   ],
 })
