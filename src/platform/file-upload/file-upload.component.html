@@ -2,13 +2,13 @@
   <div *ngIf="!files">
     <button md-raised-button
             [color]="defaultColor" 
+            [multiple]="multiple" 
             [disabled]="disabled"
             (keyup.enter)="fileBrowse.click()"
-            (click)="fileBrowse.click()"> 
-      <label [multiple]="multiple" 
-             [disabled]="disabled"
-             (fileDrop)="files = $event"
-             tdFileDrop>   
+            (click)="fileBrowse.click()"
+            (fileDrop)="files = $event"
+            tdFileDrop> 
+      <label>   
         <md-icon>attachment</md-icon>Choose a File...
       </label>
     </button>
