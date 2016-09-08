@@ -1,12 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { MdIcon } from '@angular2-material/icon';
-
 @Component({
-  directives: [
-    MdIcon,
-    TdJsonFormatterComponent,
-  ],
   moduleId: module.id,
   selector: 'td-json-formatter',
   styleUrls: [ 'json-formatter.component.css' ],

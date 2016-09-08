@@ -48,7 +48,7 @@ Properties:
 
 `<md-nav-list list-items>` is used to include items in the left side list.
 `<list-toolbar-content>` is used to include items in the left side toolbar.
-`<nav-toolbar-content>` is used to include items in the right side toolbar.
+`<div nav-toolbar-content>` is used to include items in the right side toolbar.
 
 #### td-layout-card-over
 
@@ -100,10 +100,10 @@ Example Nav List Layout:
     </a>
     <md-divider *ngIf="!last" md-inset></md-divider>
   </md-nav-list>
-  <nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>View Name</span>
     <span flex></span>
-  </nav-toolbar-content>
+  </div>
   ...
 </td-layout-nav-list>
 ```

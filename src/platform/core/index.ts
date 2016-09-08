@@ -132,11 +132,13 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
-import { TdStepComponent } from './steps/step.component';
+import { TdStepComponent, TdStepActionsComponent, TdStepSummaryComponent } from './steps/step.component';
 
 export const TD_STEPS_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
+  TdStepActionsComponent,
+  TdStepSummaryComponent,
 ];
 
 export { TdStepComponent, StepState } from './steps/step.component';
@@ -158,7 +160,13 @@ export { TdLoadingDirective } from './loading/directives/loading.directive'
 // Expansion
 export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
-import { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
+import { TdExpansionPanelComponent,
+         TdExpansionPanelSummaryComponent } from './expansion-panel/expansion-panel.component';
+
+export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
+  TdExpansionPanelComponent,
+  TdExpansionPanelSummaryComponent,
+];
 
 /**
  * DIRECTIVES
@@ -222,7 +230,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEPS_DIRECTIVES,
-    TdExpansionPanelComponent,
+    TD_EXPANSION_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
   ],
@@ -241,7 +249,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEPS_DIRECTIVES,
-    TdExpansionPanelComponent,
+    TD_EXPANSION_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
   ],

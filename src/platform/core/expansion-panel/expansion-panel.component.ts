@@ -3,6 +3,13 @@ import { EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
+  selector: 'td-expansion-summary',
+  template: '<ng-content></ng-content>',
+})
+export class TdExpansionPanelSummaryComponent {}
+
+@Component({
+  moduleId: module.id,
   selector: 'td-expansion-panel',
   styleUrls: [ 'expansion-panel.component.css' ],
   templateUrl: 'expansion-panel.component.html',
