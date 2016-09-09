@@ -1,4 +1,5 @@
-import {Component, Input, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+import {Component, Input, AfterViewInit, ViewChild, ElementRef, Inject, forwardRef} from '@angular/core';
+import { TdChartsComponent } from '../charts.component';
 
 declare let d3: any;
 
@@ -16,12 +17,16 @@ export class TdChartBarComponent implements AfterViewInit {
   private _height: number;
   private _padding: number;
   private _barColumns: string;
-  private _barColors: string[] = [];
   private _zDepthConfig: any[] = [];
   private _tickHeightSize: number = 0;
   private _tickWidthSize: number = 0;
   private _grid: string = '';
-  private _palette: string[] = [];
+  private _colorPalette: string[] = [];
+  private _parentObj: any;
+  private _chartTitle: string;
+  private _shadowColor: string;
+  private _fillOpacity: number = 0;
+  private _leftAxisTitle: string;
 
   /*
   * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
@@ -47,56 +52,14 @@ export class TdChartBarComponent implements AfterViewInit {
    */
   @Input('bottomAxis') bottomAxis: string = '';
 
-  /**
-   * bottomAxisTitle?: string.
-   */
-  @Input('bottomAxisTitle') bottomAxisTitle: string = '';
-
-  /**
-   * leftAxisTitle?: string.
-   */
-  @Input('leftAxisTitle') leftAxisTitle: string = '';
-
-  /**
-   * shadowColor?: string.
-   */
-  @Input('shadowColor') shadowColor: string = '';
-
-  /**
-   * fillOpacity?: number.
-   */
-  @Input('fillOpacity') fillOpacity: number = 0;
-
-  /**
-   * chartTitle?: string.
-   * Title of the Chart
-   */
-  @Input('chartTitle') chartTitle: string = '';
-
   @Input('barColumns')
   set barColumns(barColumns: string) {
     this._barColumns = barColumns;
   }
 
-  /**
-   * barColors?: string[].
-   * Two colors for generating color palette for the Chart
-   */
-  @Input('barColors')
-  set barColors(barColors: string[]) {
-    this._barColors = barColors;
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
+    this._parentObj = _parent;
   }
-
-  @Input('zDepthConfig')
-  set zDepthConfig(zDepthConfig: any[]) {
-    this._zDepthConfig = zDepthConfig;
-  }
-
-  @Input() ticks: boolean;
-
-  @Input() grid: boolean;
-
-  @Input() palette: any[];
 
   ngAfterViewInit(): void {
     this.render();
@@ -108,20 +71,40 @@ export class TdChartBarComponent implements AfterViewInit {
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
-    if (this.ticks) {
+    if (this._parentObj.chartTitle) {
+      this._chartTitle = this._parentObj.chartTitle;
+    }
+
+    if (this._parentObj.colorPalette) {
+      this._colorPalette = this._parentObj.colorPalette;
+    }
+
+    if (this._parentObj.ticks === 'true') {
       this._tickHeightSize = -this._height;
       this._tickWidthSize = -this._width;
     }
 
-    if (this.grid) {
+    if (this._parentObj.grid === 'true') {
       this._grid = 'grid';
     }
 
-    if (this.palette) {
-      this._palette = this.palette;
+    if (this._parentObj.zDepthConfig) {
+      this._zDepthConfig =  this._parentObj.zDepthConfig;
     }
 
-    let fillBarColors: any = this._palette.length === 0 ? this._mdBarColorPalette : this._palette;
+    if (this._parentObj.shadowColor) {
+      this._shadowColor = this._parentObj.shadowColor;
+    }
+
+    if (this._parentObj.fillOpacity) {
+      this._fillOpacity = this._parentObj.fillOpacity;
+    }
+
+    if (this._parentObj.leftAxisTitle) {
+      this._leftAxisTitle = this._parentObj.leftAxisTitle;
+    }
+
+    let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
 
     // set the ranges
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
@@ -158,7 +141,7 @@ export class TdChartBarComponent implements AfterViewInit {
 
     // feFlood flood-color is the drop-shadow color
     filter.append('feFlood')
-      .attr('flood-color', this.shadowColor);
+      .attr('flood-color', this._shadowColor);
 
     // this is needed to apply the feFlood
     filter.append('feComposite')
@@ -178,7 +161,7 @@ export class TdChartBarComponent implements AfterViewInit {
     let feComponentTransfer: any = filter.append('feComponentTransfer');
     feComponentTransfer.append('feFuncA')
       .attr('type', 'linear')
-      .attr('slope', this.fillOpacity);
+      .attr('slope', this._fillOpacity);
 
     enum ParseContent {
       json = d3.json,
@@ -242,12 +225,12 @@ export class TdChartBarComponent implements AfterViewInit {
         .attr('y', 6)
         .attr('dy', '0.71em')
         .attr('fill', '#000')
-        .text(this.leftAxisTitle);
+        .text(this._leftAxisTitle);
 
       svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-        .text(this.chartTitle)
+        .text(this._chartTitle)
         .attr('class', 'md-title');
 
     });

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import { TdChartBarComponent } from './chart-bar/chart-bar.component';
 import { TdChartLineComponent } from './chart-line/chart-line.component';
@@ -17,9 +17,6 @@ import { TdChartLineComponent } from './chart-line/chart-line.component';
 export class TdChartsComponent {
 
   private _paletteMap: Map<string, any[]> = new Map<string, any[]>();
-  private _firstColor: string[];
-  private _secondColor: string[];
-  private _colorPalette: string[];
 
   // Core color palettes.
   private _mdRed: any[] = ['#ffebee', '#ffcdd2', '#ef9a9a', '#e57373', '#ef5350', '#f44336', '#e53935', '#d32f2f',
@@ -76,8 +73,38 @@ export class TdChartsComponent {
   private _mdGrey: any[] = ['#ffffff', '#fafafa', '#f5f5f5', '#eeeeee', '#e0e0e0', '#bdbdbd', '#9e9e9e', '#757575',
   '#616161', '#424242', '#212121', '#000000', '#ffffff', '#eeeeee', '#bdbdbd', '#616161'];
 
-  private _mdBlueGrey: any[] = ['#eceff1', '#cfd8dc', '#b0bec5', '#90a4ae', '#78909c', '#607d8b', '#546e7a', 
+  private _mdBlueGrey: any[] = ['#eceff1', '#cfd8dc', '#b0bec5', '#90a4ae', '#78909c', '#607d8b', '#546e7a',
   '#455a64', '#37474f', '#263238', '#cfd8dc', '#b0bec5', '#78909c', '#455a64'];
+
+  /**
+   * chartTitle?: string.
+   * Title of the Chart
+   */
+   @Input('chartTitle') chartTitle: string = '';
+  /**
+   * bottomAxisTitle?: string.
+   */
+   @Input('bottomAxisTitle') bottomAxisTitle: string = '';
+
+  /**
+   * leftAxisTitle?: string.
+   */
+  @Input('leftAxisTitle') leftAxisTitle: string = '';
+
+  /**
+   * shadowColor?: string.
+   */
+  @Input('shadowColor') shadowColor: string = '';
+
+  /**
+   * fillOpacity?: number.
+   */
+  @Input('fillOpacity') fillOpacity: number = 0;
+
+  @Input('ticks') ticks: boolean;
+  @Input('grid') grid: boolean;
+  @Input('zDepthConfig') zDepthConfig: any[];
+  colorPalette: string[];
 
   constructor() {
     this._paletteMap.set('red', this._mdRed);
@@ -102,21 +129,18 @@ export class TdChartsComponent {
   }
 
   /**
-   * Method executed when upload button is clicked.
+   * Method to generate color Palette.
    */
   generatePalette(firstColor: string, secondColor: string): any {
-    if (this._paletteMap.get(firstColor)) {
-      this._firstColor = this._paletteMap.get(firstColor).slice(0, 6);
-    } else {
+    if (!this._paletteMap.get(firstColor)) {
       return {'error': 'First palette color not found, rendering default palette!!'};
     }
-    if (this._paletteMap.get(secondColor)) {
-      this._secondColor = this._paletteMap.get(secondColor).slice(6, 14);
-    } else {
+    if (!this._paletteMap.get(secondColor)) {
       return {'error': 'Second palette color not found, rendering default palette!!'};
     }
-    this._colorPalette = this._firstColor.concat(this._secondColor);
-    return {'color' : this._colorPalette};
+    this.colorPalette = this._paletteMap.get(firstColor).slice(0, 6)
+      .concat(this._paletteMap.get(secondColor).slice(6, 14));
+    return {'color' : this.colorPalette};
   }
 
 }
