@@ -103,7 +103,7 @@ export class TdChartsComponent {
 
   @Input('ticks') ticks: boolean;
   @Input('grid') grid: boolean;
-  @Input('zDepthConfig') zDepthConfig: any[];
+  @Input('shadowDepth') shadowDepth: any[];
   colorPalette: string[];
 
   constructor() {

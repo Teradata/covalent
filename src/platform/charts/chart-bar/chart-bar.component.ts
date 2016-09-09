@@ -17,7 +17,7 @@ export class TdChartBarComponent implements AfterViewInit {
   private _height: number;
   private _padding: number;
   private _barColumns: string;
-  private _zDepthConfig: any[] = [];
+  private _shadowDepth: any[] = [];
   private _tickHeightSize: number = 0;
   private _tickWidthSize: number = 0;
   private _grid: string = '';
@@ -88,8 +88,8 @@ export class TdChartBarComponent implements AfterViewInit {
       this._grid = 'grid';
     }
 
-    if (this._parentObj.zDepthConfig) {
-      this._zDepthConfig =  this._parentObj.zDepthConfig;
+    if (this._parentObj.shadowDepth) {
+      this._shadowDepth =  this._parentObj.shadowDepth;
     }
 
     if (this._parentObj.shadowColor) {
@@ -126,17 +126,17 @@ export class TdChartBarComponent implements AfterViewInit {
 
     let filter: any = defs.append('filter')
       .attr('id', 'drop-shadow')
-      .attr('height', this._zDepthConfig[0]);
+      .attr('height', this._shadowDepth[0]);
 
     filter.append('feGaussianBlur')
       .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', this._zDepthConfig[1])
+      .attr('stdDeviation', this._shadowDepth[1])
       .attr('result', 'blur');
 
     filter.append('feOffset')
       .attr('in', 'blur')
-      .attr('dx', this._zDepthConfig[2])
-      .attr('dy', this._zDepthConfig[3])
+      .attr('dx', this._shadowDepth[2])
+      .attr('dy', this._shadowDepth[3])
       .attr('result', 'offsetBlur');
 
     // feFlood flood-color is the drop-shadow color

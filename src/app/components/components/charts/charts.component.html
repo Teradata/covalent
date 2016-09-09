@@ -10,10 +10,10 @@
                 leftAxisTitle="Sales"
                 grid='true'
                 ticks='true'
-                [zDepthConfig]="['125%', 2, 0, 2]"
+                [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="1">
-      <td-chart-bar [palette]='colorPalette' 
+      <td-chart-bar [colors]='colorPalette' 
                      dataSrc="platform/charts/chart-bar/data.csv"
                      contentType="csv"
                      bottomAxis="salesperson"
@@ -27,7 +27,7 @@
                 leftAxisTitle="Temperature"
                 grid='true'
                 ticks='true'
-                [zDepthConfig]="['125%', 2, 0, 2]"
+                [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="1">
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
@@ -35,7 +35,7 @@
                    bottomAxis="col1"
                    [lineColumns]="['col2', 'col3','col4']"
                    [lineTitles]="['New York','San Francisco', 'Austin']"
-                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']">
+                   [colors]="['#3366cc', '#dc3912', '#ff9900']">
       </td-chart-line>
     </td-charts>
   </md-card-content>
@@ -83,7 +83,7 @@
       <![CDATA[
         <td-charts bottomAxisTitle="Day Offset"
                      leftAxisTitle="Sales"
-                     [zDepthConfig]="['125%', 2, 0, 2]"
+                     [shadowDepth]="['125%', 2, 0, 2]"
                      shadowColor="rgba(0, 0, 0, 0.54)"
                      fillOpacity="1"
                      chartTitle="Sales Bar Chart"
@@ -149,7 +149,7 @@
                      contentType="csv"
                      bottomAxis="salesperson"
                      barColumns="sales"
-                     [palette]='colorPalette'>
+                     [colors]='colorPalette'>
       </td-chart-bar>
          ]]>
     </td-highlight>

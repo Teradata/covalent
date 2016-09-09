@@ -18,9 +18,9 @@ export class TdChartLineComponent implements AfterViewInit {
   private _padding: number;
   private _lineColumns: string[] = [];
   private _lineTitles: string[] = [];
-  private _lineColors: string[] = [];
+  private _colors: string[] = [];
 
-  private _zDepthConfig: any[] = [];
+  private _shadowDepth: any[] = [];
   private _tickHeightSize: number = 0;
   private _tickWidthSize: number = 0;
   private _grid: string = '';
@@ -59,9 +59,9 @@ export class TdChartLineComponent implements AfterViewInit {
     this._lineTitles = lineTitles;
   }
 
-  @Input('lineColors')
-  set lineColors(lineColors: string[]) {
-    this._lineColors = lineColors;
+  @Input('colors')
+  set colors(colors: string[]) {
+    this._colors = colors;
   }
 
   constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
@@ -95,8 +95,8 @@ export class TdChartLineComponent implements AfterViewInit {
       this._grid = 'grid';
     }
 
-    if (this._parentObj.zDepthConfig) {
-      this._zDepthConfig =  this._parentObj.zDepthConfig;
+    if (this._parentObj.shadowDepth) {
+      this._shadowDepth =  this._parentObj.shadowDepth;
     }
 
     if (this._parentObj.shadowColor) {
@@ -113,7 +113,7 @@ export class TdChartLineComponent implements AfterViewInit {
 
     let x: any = d3.scaleLinear().range([0, this._width]);
     let y: any = d3.scaleLinear().range([this._height, 0]);
-    let color: any = d3.scaleOrdinal(this._lineColors);
+    let color: any = d3.scaleOrdinal(this._colors);
 
     let drawLine: any = d3.line()
       .curve(d3.curveBasis)
@@ -136,17 +136,17 @@ export class TdChartLineComponent implements AfterViewInit {
 
     let filter: any = defs.append('filter')
       .attr('id', 'drop-shadow')
-      .attr('height', this._zDepthConfig[0]);
+      .attr('height', this._shadowDepth[0]);
 
     filter.append('feGaussianBlur')
       .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', this._zDepthConfig[1])
+      .attr('stdDeviation', this._shadowDepth[1])
       .attr('result', 'blur');
 
     filter.append('feOffset')
       .attr('in', 'blur')
-      .attr('dx', this._zDepthConfig[2])
-      .attr('dy', this._zDepthConfig[3])
+      .attr('dx', this._shadowDepth[2])
+      .attr('dy', this._shadowDepth[3])
       .attr('result', 'offsetBlur');
 
     // feFlood flood-color is the drop-shadow color

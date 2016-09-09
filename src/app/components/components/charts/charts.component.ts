@@ -41,8 +41,8 @@ export class ChartsDemoComponent implements OnInit {
     name: 'leftAxisTitle?',
     type: 'string',
   }, {
-    description: 'Set the parameters for zDepthConfig',
-    name: 'zDepthConfig?',
+    description: 'Set the parameters for shadowDepth',
+    name: 'shadowDepth?',
     type: 'array[]',
   }, {
     description: 'Sets shadow color for the bars.',
@@ -80,7 +80,7 @@ export class ChartsDemoComponent implements OnInit {
     type: 'string',
   }, {
     description: 'Gets value based on colorPalette from td-charts',
-    name: 'palette?',
+    name: 'colors?',
     type: 'any[]',
   }];
 
@@ -106,7 +106,7 @@ export class ChartsDemoComponent implements OnInit {
     type: 'array[]',
   }, {
     description: 'Sets the color for single/multi lines;',
-    name: 'lineColors?',
+    name: 'colors?',
     type: 'string',
   }];
 
