@@ -13,9 +13,9 @@ export class TdToggleDirective {
   /**
    * duration?: number
    * Sets duration of toggle animation in miliseconds.
-   * Defaults to 250 ms.
+   * Defaults to 150 ms.
    */
-  @Input() duration: number = 250;
+  @Input() duration: number = 150;
 
   /**
    * tdToggle: boolean
