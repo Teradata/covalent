@@ -6,6 +6,8 @@
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="platform/core/styles/platform.css">
+  <link rel="stylesheet" href="vendor/@angular2-material/core/style/core.css">
+  <link rel="stylesheet" href="vendor/@angular2-material/core/overlay/overlay.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Service worker support is disabled by default.
@@ -21,12 +23,12 @@
   -->
 </head>
 <body>
-  <td-docs-app>Loading...</td-docs-app>
+  <docs-covalent>Loading...</docs-covalent>
 
-  <script src="vendor/es6-shim/es6-shim.js"></script>
-  <script src="vendor/reflect-metadata/Reflect.js"></script>
+  <script src="vendor/core-js/client/core.js"></script>
   <script src="vendor/systemjs/dist/system.src.js"></script>
   <script src="vendor/zone.js/dist/zone.js"></script>
+  <script src="vendor/hammerjs/hammer.min.js"></script>
   <script src="vendor/showdown/dist/showdown.js"></script>
   
   <script>

@@ -1,4 +1,4 @@
-import { Injectable, Type, Provider, Injector } from '@angular/core';
+import { Injectable, Type, ValueProvider, Injector } from '@angular/core';
 import { Http, RequestOptionsArgs, Response, Request } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -15,8 +15,8 @@ export class HttpInterceptorService {
 
   requestInterceptors: IHttpInterceptor[] = [];
 
-  constructor(private _http: Http, private _injector: Injector, requestInterceptors: Type[]) {
-    requestInterceptors.forEach((interceptor: Type) => {
+  constructor(private _http: Http, private _injector: Injector, requestInterceptors: Type<any>[]) {
+    requestInterceptors.forEach((interceptor: Type<any>) => {
       this.requestInterceptors.push(<IHttpInterceptor>_injector.get(interceptor));
     });
   }
@@ -123,16 +123,17 @@ export class HttpInterceptorService {
 
 }
 
-export function provideInterceptors(requestInterceptors: Type[] = []): any[] {
+export function provideInterceptors(requestInterceptors: Type<any>[] = []): any[] {
   let providers: any[] = [];
-  requestInterceptors.forEach((interceptor: Type) => {
+  requestInterceptors.forEach((interceptor: Type<any>) => {
     providers.push(interceptor);
   });
-  providers.push(new Provider(HttpInterceptorService, {
+  providers.push({
+    provide: HttpInterceptorService,
     useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
       return new HttpInterceptorService(http, injector, requestInterceptors);
     },
     deps: [Http, Injector],
-  }));
+  });
   return providers;
 }

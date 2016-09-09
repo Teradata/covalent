@@ -1,11 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TdToggleDirective } from '../directives/toggle/toggle.directive';
-
 export enum StepState {
   None = <any>'none',
   Required = <any>'required',
@@ -13,7 +8,20 @@ export enum StepState {
 }
 
 @Component({
-  directives: [ MdIcon, MD_LIST_DIRECTIVES, TdToggleDirective ],
+  moduleId: module.id,
+  selector: 'td-step-actions',
+  template: '<ng-content></ng-content>',
+})
+export class TdStepActionsComponent {}
+
+@Component({
+  moduleId: module.id,
+  selector: 'td-step-summary',
+  template: '<ng-content></ng-content>',
+})
+export class TdStepSummaryComponent {}
+
+@Component({
   moduleId: module.id,
   selector: 'td-step',
   styleUrls: [ 'step.component.css' ],

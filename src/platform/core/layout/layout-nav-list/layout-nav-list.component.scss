@@ -6,16 +6,16 @@
 @mixin toolbar-theme($palette) {
   color: md-color($palette, default-contrast);
 }
-:host {
+:host /deep/ {
   md-sidenav-layout {
-    & > md-content {
+    & > .md-sidenav-content {
       margin-left: 0 !important;
     }
   }
   @media (min-width: 600px) {
     md-sidenav-layout {
-      display: flex;
       height: 100%;
+      display: flex;
       & > md-sidenav {
         display: flex;
         position: relative;
@@ -29,7 +29,7 @@
           transform: translate3d(0, 0, 0);
         }
       }
-      & > md-content {
+      & > .md-sidenav-content {
         margin-left: 0 !important;
         display: flex;
         flex-grow: 1;
@@ -46,7 +46,7 @@
           z-index: 3;
         }
       }
-      & > md-content {
+      & > .md-sidenav-content {
         z-index: 2;
       }
     }
@@ -68,6 +68,6 @@ md-toolbar {
     
 }
 .content {
-    overflow: hidden;
-    padding-bottom: 65px;
+    // overflow: hidden;
+    // padding-bottom: 65px;
 }

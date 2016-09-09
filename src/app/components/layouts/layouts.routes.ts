@@ -1,15 +1,15 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { LayoutsComponent } from './layouts.component';
-import { OverviewComponent } from './overview';
-import { NavViewComponent } from './nav-view';
-import { NavListComponent } from './nav-list';
-import { CardOverComponent } from './card-over';
-import { ManageListComponent } from './manage-list';
+import { LayoutsOverviewComponent } from './overview/overview.component';
+import { NavViewComponent } from './nav-view/nav-view.component';
+import { NavListComponent } from './nav-list/nav-list.component';
+import { CardOverComponent } from './card-over/card-over.component';
+import { ManageListComponent } from './manage-list/manage-list.component';
 
-export const layoutsRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
-      component: OverviewComponent,
+      component: LayoutsOverviewComponent,
       path: '',
     }, {
       component: NavViewComponent,
@@ -28,3 +28,5 @@ export const layoutsRoutes: RouterConfig = [{
   component: LayoutsComponent,
   path: 'layouts',
 }];
+
+export const layoutsRoutes: any = RouterModule.forRoot(routes, { useHash: true });

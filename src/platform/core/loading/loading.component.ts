@@ -3,22 +3,12 @@ import { Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { MD_PROGRESS_BAR_DIRECTIVES } from '@angular2-material/progress-bar';
-import { MD_PROGRESS_CIRCLE_DIRECTIVES } from '@angular2-material/progress-circle';
-
-import { TdFadeDirective } from '../directives/fade/fade.directive';
-
 export enum LoadingType {
   Circular = <any>'circular',
   Linear = <any>'linear'
 }
 
 @Component({
-  directives: [
-    MD_PROGRESS_BAR_DIRECTIVES,
-    MD_PROGRESS_CIRCLE_DIRECTIVES,
-    TdFadeDirective,
-  ],
   moduleId: module.id,
   selector: 'td-loading',
   styleUrls: [ 'loading.component.css' ],

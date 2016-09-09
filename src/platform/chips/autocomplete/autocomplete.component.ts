@@ -2,8 +2,6 @@ import { Component, Input, Output, forwardRef } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
-
 const noop: () => void = () => {
   // empty method
 };
@@ -15,9 +13,6 @@ export const TD_AUTOCOMPLETE_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 @Component({
-  directives: [
-    MD_INPUT_DIRECTIVES,
-  ],
   providers: [ TD_AUTOCOMPLETE_CONTROL_VALUE_ACCESSOR ],
   moduleId: module.id,
   selector: 'td-autocomplete',

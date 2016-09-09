@@ -1,15 +1,9 @@
-import {
-  describe,
-  expect,
-  beforeEach,
-  it,
-} from '@angular/core/testing';
 import { TdTimeDifferencePipe } from './time-difference.pipe';
 
 describe('TdTimeDifferencePipe', () => {
   let pipe: TdTimeDifferencePipe;
   let start: number = Date.now();
-  let end: number = Date.now();
+  let end: number = new Date(start).getTime();
 
   beforeEach(() => {
     pipe = new TdTimeDifferencePipe();
@@ -26,7 +20,6 @@ describe('TdTimeDifferencePipe', () => {
 
   it('should return a time ago string', () =>  {
     // 0 second
-    expect(pipe.transform(start, undefined)).toEqual('00:00:00');
     expect(pipe.transform(start, end)).toEqual('00:00:00');
     expect(pipe.transform(new Date(start), end)).toEqual('00:00:00');
     expect(pipe.transform(new Date(start).toString(), end)).toEqual('00:00:00');

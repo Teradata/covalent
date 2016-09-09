@@ -2,24 +2,28 @@
   <div *ngIf="!files">
     <button md-raised-button
             [color]="defaultColor" 
+            [multiple]="multiple" 
             [disabled]="disabled"
-            (keyup.enter)="fileBrowse.click()"> 
-      <label [multiple]="multiple" 
-             [disabled]="disabled"
-             (fileDrop)="files = $event"
-             tdFileDrop>   
+            (keyup.enter)="fileBrowse.click()"
+            (click)="fileBrowse.click()"
+            (fileDrop)="files = $event"
+            tdFileDrop> 
+      <label>   
         <md-icon>attachment</md-icon>Choose a File...
-        <input #fileBrowse class="md-file-upload-input" type="file"
-               [attr.accept]="accept"                
-               [(ngModel)]="files"
-               [multiple]="multiple" 
-               [disabled]="disabled"
-               tdFileSelect>
       </label>
     </button>
+    <input #fileBrowse 
+           class="md-file-upload-input" 
+           type="file"
+           [attr.accept]="accept"                
+           [(ngModel)]="files"
+           [multiple]="multiple" 
+           [disabled]="disabled"
+           tdFileSelect>
   </div>
   <div *ngIf="files" layout="row">
-    <button #fileUpload md-raised-button
+    <button #fileUpload 
+            md-raised-button
             [color]="activeColor"
             (keyup.delete)="cancel()"
             (keyup.backspace)="cancel()"

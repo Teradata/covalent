@@ -1,22 +1,15 @@
-import { provideRouter, RouterConfig, Route } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home';
+import { HomeComponent } from './components/home/home.component';
 
-import { componentsRoutes } from './components/components/components.routes';
-import { docsRoutes } from './components/docs/docs.routes';
-import { layoutsRoutes } from './components/layouts/layouts.routes';
-import { styleGuideRoutes } from './components/style-guide/style-guide.routes';
-
-export const routes: RouterConfig = [{
+const routes: Routes = [{
     component: HomeComponent,
     path: '',
   },
-  ...componentsRoutes,
-  ...docsRoutes,
-  ...layoutsRoutes,
-  ...styleGuideRoutes,
 ];
 
-export const APP_ROUTER_PROVIDERS: Route[] = [
-  provideRouter(routes),
+export const appRoutingProviders: any[] = [
+
 ];
+
+export const appRoutes: any = RouterModule.forRoot(routes, { useHash: true });

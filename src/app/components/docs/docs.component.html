@@ -1,8 +1,11 @@
 <td-layout-nav-list #list logo="app/assets/icons/teradata.svg" title="Covalent">
   <md-nav-list list-items>
     <template let-item let-last="last" ngFor [ngForOf]="items">
-        <a md-list-item [routerLink]="[item.route]" (click)="list.toggle()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-true}">
+        <a md-list-item 
+           [routerLink]="[item.route]" 
+           [routerLinkActive]="['active']" 
+           [routerLinkActiveOptions]="{exact:true}" 
+           (click)="list.toggle()">
           <md-icon md-list-avatar>{{item.icon}}</md-icon>
           <h3 md-line> {{item.title}} </h3>
           <p md-line> {{item.description}} </p>
@@ -10,9 +13,9 @@ true}">
         <md-divider *ngIf="!last" md-inset></md-divider>
       </template>
   </md-nav-list>
-  <nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>Documentation</span>
     <span flex></span>
-  </nav-toolbar-content>
+  </div>
   <router-outlet></router-outlet>
 </td-layout-nav-list>

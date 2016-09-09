@@ -15,7 +15,7 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
 :host {
   display: block;
   padding: 0px 5px 0px 5px;
-  .td-chip {
+  /deep/ .td-chip {
     display: inline-block;;
     background: md-color($md-grey, 300);;
     color: rgba(0, 0, 0, 0.87);
@@ -86,7 +86,7 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
 }
 
 :host {
-  md-input {
+   /deep/ md-input {
     input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
       display: none;
     }

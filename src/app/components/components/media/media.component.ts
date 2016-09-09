@@ -1,25 +1,11 @@
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
-
-import { TdMediaToggleDirective, TdMediaService } from '../../../../platform/core';
-import { TdHighlightComponent } from '../../../../platform/highlight';
+import { TdMediaService } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    MD_INPUT_DIRECTIVES,
-    TdMediaToggleDirective,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  selector: 'td-media-demo',
+  selector: 'media-demo',
   styleUrls: [ 'media.component.css' ],
   templateUrl: 'media.component.html',
 })

@@ -9,10 +9,10 @@
         <md-divider *ngIf="!last" md-inset></md-divider>
       </template>
   </md-nav-list>
-  <nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>Nav List Layout</span>
     <span flex></span>
-  </nav-toolbar-content>
+  </div>
   <md-card>
     <md-card-title>Nav List Layout</md-card-title>
     <md-card-subtitle>The Nav View with an embedded list (this page is using nav list)</md-card-subtitle>
@@ -129,31 +129,31 @@
           </td-highlight>
           <h3 class="md-title">TypeScript routes for sidenav</h3>
           <td-highlight lang="typescript">
-            export class YourComponent {
+            <![CDATA[
+              export class YourComponent {
 
-              routes: Object[] = [
-                {
-                  title: "Home", route: "/", icon: "home"
-                }, {
-                  title: "Documentation", route: "/docs", icon: "library_books"
-                }, {
-                  title: "Style Guide", route: "/style-guide", icon: "color_lens"
-                }, {
-                  title: "Design Patterns", route: "/design-patterns", icon: "burst_mode"
-                }, {
-                  title: "Layouts", route: "/layouts", icon: "view_quilt"
-                }, {
-                  title: "Teradata Components", route: "/components", icon: "picture_in_picture"
-                }
-              ];
+                routes: Object[] = [
+                  {
+                    title: "Home", route: "/", icon: "home"
+                  }, {
+                    title: "Documentation", route: "/docs", icon: "library_books"
+                  }, {
+                    title: "Style Guide", route: "/style-guide", icon: "color_lens"
+                  }, {
+                    title: "Layouts", route: "/layouts", icon: "view_quilt"
+                  }, {
+                    title: "Teradata Components", route: "/components", icon: "picture_in_picture"
+                  }
+                ];
 
-              items: Object[] = [
-                {
-                  title: "Item Name", route: "/", icon: "layout", description: "Item description"
-                }
-              ];
+                items: Object[] = [
+                  {
+                    title: "Item Name", route: "/", icon: "layout", description: "Item description"
+                  }
+                ];
 
-            }
+              }
+            ]]>
           </td-highlight>
         </div>
       </div>

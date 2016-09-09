@@ -1,20 +1,26 @@
 import {
-  addProviders,
-  describe,
-  expect,
-  it,
+  TestBed,
   inject,
+  ComponentFixture,
 } from '@angular/core/testing';
-import { DocsAppComponent } from '../app/app.component';
 
-beforeEach(() => {
-  addProviders([
-    DocsAppComponent,
-  ]);
-});
+import { DocsAppComponent } from './app.component';
 
-describe('App: ', () => {
-  it('should create the app', inject([DocsAppComponent], (app: DocsAppComponent) => {
-      expect(app).toBeTruthy();
+describe('Component: App', () => {
+
+  TestBed.configureTestingModule({
+    providers: [
+      DocsAppComponent,
+    ],
+  });
+
+  TestBed.compileComponents();
+
+  beforeEach(inject([], function(): void {
+
+  }));
+
+  it('should create the component', inject([], () => {
+    
   }));
 });

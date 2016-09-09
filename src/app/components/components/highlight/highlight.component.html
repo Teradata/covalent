@@ -5,19 +5,19 @@
   <md-card-content>
      <p>Simply wrap your code snippets in <code><![CDATA[<td-highlight>]]></code></p>
      <p>To use HTML brackets &lt; and &gt; wrap the code with &lt;![CDATA[ and ]]&gt; or replace with HTMLs character entities <![CDATA[ &lt; and &gt; ]]></p>
-     <p>Also, to display model binding, add spaces between curly braces like:<code>{ { } }</code> </p>
+     <p>Also, to display model binding, add spaces between curly braces like:<code>{{ '{' }}{{ '{' }} } }</code> </p>
      <p>like:</p>
      <td-highlight lang="html">
         <![CDATA[
         <td-highlight lang="html">
           <h1>hello world!</h1>
-          <span>{ {property} }</span>
+          <span>{{'{'}} {{'{'}}property} }</span>
         </td-highlight>
         ]]>
     </td-highlight>
     <p>here's what CSS looks like:</p>
     <td-highlight lang="css">       
-      pre {
+      pre {{'{'}}
         display: block;
         overflow-x: auto;
         padding: 0;

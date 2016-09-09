@@ -196,7 +196,7 @@ export class TdLoadingService {
       throw 'Name duplication: Loading Component name conflict.';
     }
     this._context[name].loadingRef = this._componentFactoryResolver
-    .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+      .resolveComponentFactory(TdLoadingComponent).create(this._injector);
     this._context[name].times = 0;
     this._mapOptions(options, this._context[name].loadingRef.instance);
     let compRef: ILoadingRef = {

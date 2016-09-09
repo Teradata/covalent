@@ -1,22 +1,10 @@
 import { Component } from '@angular/core';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-
-import { TD_STEPS_DIRECTIVES, StepState, IStepChangeEvent } from '../../../../platform/core';
-import { TdHighlightComponent } from '../../../../platform/highlight';
+import { StepState, IStepChangeEvent } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    TD_STEPS_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  selector: 'td-steps-demo',
+  selector: 'steps-demo',
   styleUrls: [ 'steps.component.css' ],
   templateUrl: 'steps.component.html',
 })
