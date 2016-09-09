@@ -14,11 +14,9 @@
   }
   @media (min-width: 600px) {
     md-sidenav-layout {
-      display: flex;
       height: 100%;
       & > md-sidenav {
         display: flex;
-        // position: relative;
         height: 100%;
         width: 382px;
         flex: 0 0 auto;
