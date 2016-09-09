@@ -113,17 +113,24 @@ $md-warn: #C62828;
     md-slide-toggle {
         &.md-checked {
             .md-slide-toggle-thumb {
-                background-color: $md-accent;
+                background-color: $md-accent !important;
             }
             .md-slide-toggle-bar {
-                background-color: $md-accent-opacity;
+                background-color: $md-accent-opacity !important;
             }
         }
         &.md-slide-toggle-focused {
             .md-ink-ripple {
-                background-color: $md-accent-opacity;
+                background-color: $md-accent-opacity !important;
             }
         }
+    }
+    .md-slider-thumb::after {
+        background-color: $md-accent;
+        border-color: $md-accent;
+    }
+    .md-slider-track-fill {
+        background-color: $md-accent;
     }
     md-nav-list {
         [md-list-item].active {
