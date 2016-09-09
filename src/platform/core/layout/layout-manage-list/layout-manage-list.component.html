@@ -1,11 +1,11 @@
 <div layout="column" layout-fill>
-  <div class="md-content" flex layout="row" layout-fill>
-    <md-sidenav hide-xs #end align="end" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
+  <md-sidenav-layout class="md-content" flex layout="row" layout-fill>
+    <md-sidenav opened hide-xs #end align="start" mode="side" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
       <div flex class="md-content list">
         <ng-content select="[list-items]"></ng-content>
       </div>
     </md-sidenav>
-    <div layout="column" layout-fill class="md-content content">
+    <div layout="column" class="md-content content">
       <md-toolbar class="md-whiteframe-z1">
         <ng-content select="[toolbar-buttons]"></ng-content>
       </md-toolbar>
@@ -13,5 +13,5 @@
         <ng-content></ng-content>
       </div>
     </div>
-  </div>
+  </md-sidenav-layout>
 </div>

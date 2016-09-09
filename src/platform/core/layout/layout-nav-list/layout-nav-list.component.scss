@@ -18,7 +18,7 @@
       height: 100%;
       & > md-sidenav {
         display: flex;
-        position: relative;
+        // position: relative;
         height: 100%;
         width: 382px;
         flex: 0 0 auto;
@@ -68,6 +68,6 @@ md-toolbar {
     
 }
 .content {
-    overflow: hidden;
-    padding-bottom: 65px;
+    // overflow: hidden;
+    // padding-bottom: 65px;
 }
