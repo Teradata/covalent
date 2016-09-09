@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-json-formatter-demo',
+  selector: 'json-formatter-demo',
   styleUrls: ['json-formatter.component.css'],
   templateUrl: 'json-formatter.component.html',
 })

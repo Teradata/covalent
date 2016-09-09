@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-chips-demo',
+  selector: 'chips-demo',
   styleUrls: ['chips.component.css'],
   templateUrl: 'chips.component.html',
 })
