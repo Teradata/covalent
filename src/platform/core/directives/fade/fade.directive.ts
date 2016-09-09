@@ -80,22 +80,20 @@ export class TdFadeDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    let keyFrames: any[] = [{
-        styles: {
-          styles: [{'opacity': 1}],
-        },
-        offset: 0,
-      }, {
-        styles: {
-          styles: [{'opacity': 0}],
-        },
-        offset: 1,
-      },
-    ];
-
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
     let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');
+      .animate(this._element.nativeElement, undefined, [{
+          styles: {
+            styles: [{'opacity': 1}],
+          },
+          offset: 0,
+        }, {
+          styles: {
+            styles: [{'opacity': 0}],
+          },
+          offset: 1,
+        },
+      ], this.duration, 0, 'ease-in');
     animation.play();
 
     /**
@@ -118,22 +116,20 @@ export class TdFadeDirective {
    */
   show(): void {
     this._hiddenState = this._state;
-    let keyFrames: any[] = [{
-        styles: {
-          styles: [{'opacity': 0}],
-        },
-        offset: 0,
-      }, {
-        styles: {
-          styles: [{'opacity': 1}],
-        },
-        offset: 1,
-      },
-    ];
-
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
     let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');
+      .animate(this._element.nativeElement, undefined, [{
+          styles: {
+            styles: [{'opacity': 0}],
+          },
+          offset: 0,
+        }, {
+          styles: {
+            styles: [{'opacity': 1}],
+          },
+          offset: 1,
+        },
+      ], this.duration, 0, 'ease-in');
     animation.play();
 
     /**
