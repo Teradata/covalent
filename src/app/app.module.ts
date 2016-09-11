@@ -11,6 +11,7 @@ import { appRoutes, appRoutingProviders } from './app.routes';
 import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
 import { CovalentFileModule } from '../platform/file-upload';
 import { CovalentHighlightModule } from '../platform/highlight';
+import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentJsonFormatterModule } from '../platform/json-formatter';
 import { CovalentChipsModule } from '../platform/chips';
@@ -27,6 +28,7 @@ import { CovalentChipsModule } from '../platform/chips';
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
     CovalentFileModule.forRoot(),
+    CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentJsonFormatterModule,
