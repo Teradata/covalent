@@ -4,6 +4,14 @@
 
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular/core/testing': 'vendor/@angular/core/bundles/core-testing.umd.js',
+  '@angular/compiler/testing': 'vendor/@angular/compiler/bundles/compiler-testing.umd.js',
+  '@angular/router/testing': 'vendor/@angular/router/bundles/router-testing.umd.js',
+  '@angular/http/testing': 'vendor/@angular/http/bundles/http-testing.umd.js',
+  '@angular/common/testing': 'vendor/@angular/common/bundles/common-testing.umd.js',
+  '@angular/platform-browser/testing': 'vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.js',
+  '@angular/platform-browser-dynamic/testing':
+  'vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
 };
 
 /** User packages configuration. */
@@ -14,7 +22,7 @@ const packages: any = {
 /*
  * Everything underneath this line is managed by the CLI.
  */
-const angularPackages = {
+const angularPackages: any = {
   // Angular specific barrels.
   '@angular/core': { main: 'bundles/core.umd.js'},
   '@angular/core/testing': { main: 'bundles/core-testing.umd.js'},
