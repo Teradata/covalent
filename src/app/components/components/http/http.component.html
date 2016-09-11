@@ -51,17 +51,22 @@
         }
       ]]>
     </td-highlight>
-    <p>Bootstrap interceptor providers:</p>
+    <p>Import the [CovalentHttpModule] using the <code>forRoot()</code> method with the desired interceptors in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { HTTP_PROVIDERS } from '@angular/http';
-        import { provideInterceptors } from '@covalent/http';
+        import { HttpModule } from '@angular/http';
+        import { CovalentHttpModule } from '@covalent/http';
         import { CustomInterceptor } from 'dir/to/interceptor';
 
-        bootstrap(AppComponent, [
-          HTTP_PROVIDERS,
-          provideInterceptors([CustomInterceptor]),
-        ]);
+        @NgModule({
+          imports: [
+            HttpModule, /* or CovalentCoreModule.forRoot() */
+            CovalentHttpModule.forRoot([CustomInterceptor]),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
     <p>After that, just inject [HttpInterceptorService] and use it for your requests.</p>
