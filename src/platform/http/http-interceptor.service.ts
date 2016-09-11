@@ -1,4 +1,4 @@
-import { Injectable, Type, ValueProvider, Injector } from '@angular/core';
+import { Injectable, Type, Injector } from '@angular/core';
 import { Http, RequestOptionsArgs, Response, Request } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -121,19 +121,4 @@ export class HttpInterceptorService {
     });
   }
 
-}
-
-export function provideInterceptors(requestInterceptors: Type<any>[] = []): any[] {
-  let providers: any[] = [];
-  requestInterceptors.forEach((interceptor: Type<any>) => {
-    providers.push(interceptor);
-  });
-  providers.push({
-    provide: HttpInterceptorService,
-    useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-      return new HttpInterceptorService(http, injector, requestInterceptors);
-    },
-    deps: [Http, Injector],
-  });
-  return providers;
 }
