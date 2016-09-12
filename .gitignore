@@ -12,6 +12,10 @@
 # IDEs and editors
 /.idea
 /.vscode
+.project
+.classpath
+*.launch
+.settings/
 
 # misc
 /.sass-cache
@@ -29,3 +33,4 @@ testem.log
 
 #System Files
 .DS_Store
+Thumbs.db
