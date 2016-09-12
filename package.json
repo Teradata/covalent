@@ -82,8 +82,7 @@
     "systemjs": "0.19.31",
     "zone.js": "0.6.17",
     "hammerjs": "^2.0.8",
-    "showdown": "1.4.2",
-    "highlightjs": "8.7.0"
+    "showdown": "1.4.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.0",

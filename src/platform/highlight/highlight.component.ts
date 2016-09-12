@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, Renderer } from '@angular/core';
+import './highlight.pack.js';
 
 declare var hljs: any;
 
