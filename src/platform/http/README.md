@@ -29,7 +29,9 @@ export interface IHttpInterceptor {
 ```
 Every method is optional, so you can just implement the ones that are needed.
 
-Example:
+## Setup
+
+Create your custom interceptors by implementing [IHttpInterceptor]:
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -56,17 +58,21 @@ export class CustomInterceptor implements IHttpInterceptor {
 
 ```
 
-Also, you need to bootstrap the interceptor providers
+Then, import the [CovalentHttpModule] using the forRoot() method with the desired interceptors in your NgModule:
 
 ```typescript
-import { HTTP_PROVIDERS } from '@angular/http';
-import { provideInterceptors } from '@covalent/http';
+import { HttpModule } from '@angular/http';
+import { CovalentHttpModule } from '@covalent/http';
 import { CustomInterceptor } from 'dir/to/interceptor';
-
-bootstrap(AppComponent, [
-  HTTP_PROVIDERS,
-  provideInterceptors([CustomInterceptor]),
-]);
+@NgModule({
+  imports: [
+    HttpModule, /* or CovalentCoreModule.forRoot() */
+    CovalentHttpModule.forRoot([CustomInterceptor]),
+    ...
+  ],
+  ...
+})
+export class MyModule {}
 ```
 
 After that, just inject [HttpInterceptorService] and use it for your requests.
