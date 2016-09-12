@@ -1,4 +1,4 @@
-import { Injectable, ComponentFactoryResolver, NgZone } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -33,8 +33,7 @@ export class TdLoadingService {
   private _loadingObservables: {[key: string]: Observable<any>} = {};
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _injector: Injector,
-              private _ngZone: NgZone) {
+              private _injector: Injector) {
   }
 
   /**
@@ -58,19 +57,13 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        this._ngZone.runOutsideAngular(() => {
-          viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          instance.startInAnimation();
-          this._ngZone.run(noop);
-        });
+        viewContainerRef.insert(loadingRef.ref.hostView, 0);
+        instance.startInAnimation();
       } else if (registered <= 0 && loading) {
         loading = false;
-        this._ngZone.runOutsideAngular(() => {
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-            this._ngZone.run(noop);
-          });
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
         });
       }
     });
@@ -101,24 +94,18 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        this._ngZone.runOutsideAngular(() => {
-          let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
-          if (index < 0) {
-            viewContainerRef.clear();
-            viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          }
-          instance.startInAnimation();
-          this._ngZone.run(noop);
-        });
+        let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
+        if (index < 0) {
+          viewContainerRef.clear();
+          viewContainerRef.insert(loadingRef.ref.hostView, 0);
+        }
+        instance.startInAnimation();
       } else if (registered <= 0 && loading) {
         loading = false;
-        this._ngZone.runOutsideAngular(() => {
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.createEmbeddedView(templateRef);
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-            this._ngZone.run(noop);
-          });
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.createEmbeddedView(templateRef);
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
         });
       }
     });
