@@ -14,6 +14,7 @@ module.exports = function(defaults) {
       '@angular/**/*.js',
       '@angular2-material/**/*.+(js|css)',
       'showdown/dist/showdown.js',
+      'highlightjs/highlight.pack.js'
     ],
     polyfills: [
       'vendor/core-js/client/core.js',
@@ -22,6 +23,7 @@ module.exports = function(defaults) {
       'vendor/hammerjs/hammer.min.js',
       '@angular2-material/**/*.css',
       'vendor/showdown/dist/showdown.js',
+      'vendor/highlightjs/highlight.pack.js'
     ]
   });
 };
