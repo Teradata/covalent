@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -38,7 +37,6 @@ import { CovalentChipsModule } from '../platform/chips';
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ], // additional providers needed for this module
   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
   bootstrap: [ DocsAppComponent ],
