@@ -57,4 +57,4 @@ const routes: Routes = [{
   path: 'components',
 }];
 
-export const componentsRoutes: any = RouterModule.forRoot(routes, { useHash: true });
+export const componentsRoutes: any = RouterModule.forChild(routes);
