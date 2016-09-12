@@ -6,10 +6,6 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { TdLoadingComponent, LoadingType } from '../loading.component';
 
-const noop: () => void = () => {
-  // empty function
-};
-
 export interface ILoadingOptions {
   name: string;
   type?: LoadingType;
