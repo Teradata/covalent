@@ -29,7 +29,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
   ],
   imports: [
     CovalentCoreModule.forRoot(),
-    CovalentHighlightModule,
+    CovalentHighlightModule.forRoot(),
     styleGuideRoutes,
   ],
 })

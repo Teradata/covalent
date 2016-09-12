@@ -27,7 +27,7 @@ import { CovalentChipsModule } from '../platform/chips';
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
     CovalentFileModule.forRoot(),
-    CovalentHighlightModule,
+    CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule,
     CovalentJsonFormatterModule,
     CovalentChipsModule,
