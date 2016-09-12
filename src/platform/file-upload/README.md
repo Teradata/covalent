@@ -1,6 +1,6 @@
 # td-file-upload
 
-### Usage
+## Usage
 
 Add the element wherever you want to bind a [File | FileList] into a class model without additional elements.
 
@@ -33,7 +33,7 @@ export class Demo {
 } 
 ```
 
-### API Summary
+## API Summary
 
 Properties:
 
@@ -43,9 +43,27 @@ Properties:
 | `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [mdButton] and defaults to 'accent'.
 | `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [mdButton] and defaults to 'warn'.
 | `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-| `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in <input/> element.
+| `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
 | `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
+
+## Setup
+
+Import the [CovalentFileModule] using the forRoot() method in your NgModule:
+
+```typescript
+import { HttpModule } from '@angular/http';
+import { CovalentFileModule } from '@covalent/file-upload';
+@NgModule({
+  imports: [
+    HttpModule, /* or CovalentCoreModule.forRoot() */
+    CovalentFileModule.forRoot(),
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
 
 # tdFileSelect
 
@@ -61,7 +79,7 @@ Example for usage:
 <input type="file" tdFileSelect [(ngModel)]="files" multiple>
 ```
 
-### API Summary
+## API Summary
 
 Properties:
 
@@ -72,7 +90,7 @@ Properties:
 
 # tdFileDrop
 
-### Usage
+## Usage
 
 Add the directive wherever you want to add drop support to an element to bind a [File | FileList] into a class model.
 
@@ -87,7 +105,7 @@ Example for usage:
 </div> 
 ```
 
-### API Summary
+## API Summary
 
 Properties:
 
@@ -99,7 +117,7 @@ Properties:
 
 # tdFileService
 
-### Usage
+## Usage
 
 Service provided with methods that wrap complexity for as easier file upload experience.
 
@@ -142,7 +160,7 @@ export class Demo {
 }
 ```
 
-### API Summary
+## API Summary
 
 Methods:
 
