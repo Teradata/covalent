@@ -40,16 +40,14 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
+        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
         </td-chips>        
       ]]>
     </td-highlight>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdChipsComponent } from '@covalent/chips';
         ...
-          directives: [ TdChipsComponent ]
         })
         export class Demo {
           readOnly: boolean: false;
@@ -67,6 +65,21 @@
             ...
           }
         }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentChipsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentChipsModule } from '@covalent/chips';
+        @NgModule({
+          imports: [
+            CovalentChipsModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>
