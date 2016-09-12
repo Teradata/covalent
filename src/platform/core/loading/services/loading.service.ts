@@ -91,7 +91,8 @@ export class TdLoadingService {
   public createReplaceComponent(options: ILoadingOptions, viewContainerRef: ViewContainerRef,
                                 templateRef: TemplateRef<Object>): void {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
-    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling.scrollHeight;
+    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling ?
+      nativeElement.nextElementSibling.scrollHeight : undefined;
     (<IInternalLoadingOptions>options).overlay = false;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
@@ -190,13 +191,13 @@ export class TdLoadingService {
     if (!name) {
       throw 'Name is required for Loading Component.';
     }
-    if (!this._context[name]) {
+    if (!this._context[name] || options.overlay) {
       this._context[name] = {};
     } else {
       throw 'Name duplication: Loading Component name conflict.';
     }
     this._context[name].loadingRef = this._componentFactoryResolver
-      .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+    .resolveComponentFactory(TdLoadingComponent).create(this._injector);
     this._context[name].times = 0;
     this._mapOptions(options, this._context[name].loadingRef.instance);
     let compRef: ILoadingRef = {
