@@ -5,13 +5,13 @@
   <md-card-content>
      <p>Simply wrap your code snippets in <code><![CDATA[<td-highlight>]]></code></p>
      <p>To use HTML brackets &lt; and &gt; wrap the code with &lt;![CDATA[ and ]]&gt; or replace with HTMLs character entities <![CDATA[ &lt; and &gt; ]]></p>
-     <p>Also, to display model binding, add spaces between curly braces like:<code>{{ '{' }}{{ '{' }} } }</code> </p>
-     <p>like:</p>
+     <p>Also, to display model binding, add spaces between curly braces like:<code>{{ '{' }} {{ '{' }} } }</code> and wrap them with &lt;![CDATA[ and ]]&gt;
+     <h3>Example:</h3>
      <td-highlight lang="html">
         <![CDATA[
         <td-highlight lang="html">
           <h1>hello world!</h1>
-          <span>{{'{'}} {{'{'}}property} }</span>
+          <span>{ {property} }</span>
         </td-highlight>
         ]]>
     </td-highlight>
@@ -62,6 +62,40 @@
           }
         }
       }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p><code>highlight.pack.js</code> needs to be added as vendor (installed as a <code>highlightjs</code> dependency).</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        module.exports = function(defaults) {
+          return new Angular2App(defaults, {
+            vendorNpmFiles: [
+              ...
+              'highlightjs/highlight.pack.js'
+            ]
+          });
+        };
+      ]]>
+    </td-highlight>
+    <p>Reference the script in the <code>index.html</code> file.</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <script src="vendor/highlightjs/highlight.pack.js"></script>
+      ]]>
+    </td-highlight>
+    <p>Then, import the [CovalentHighlightModule] using the forRoot() method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentHighlightModule } from '@covalent/highlight';
+        @NgModule({
+          imports: [
+            CovalentHighlightModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>
