@@ -24,8 +24,8 @@
         <md-divider *ngIf="!last"></md-divider>
       </template>
     </md-list>
-    <h3>Example:</h3>
-    <p>Typescript:</p>
+    <h3>Setup:</h3>
+    <p>Create your custom interceptors by implementing [IHttpInterceptor]:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { Injectable } from '@angular/core';
@@ -51,7 +51,7 @@
         }
       ]]>
     </td-highlight>
-    <p>Import the [CovalentHttpModule] using the <code>forRoot()</code> method with the desired interceptors in your NgModule:</p>
+    <p>Then, import the [CovalentHttpModule] using the <code>forRoot()</code> method with the desired interceptors in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { HttpModule } from '@angular/http';
