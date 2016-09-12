@@ -115,11 +115,25 @@ Underscores
   <md-card-subtitle>How to use this component</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-     <h2><code><![CDATA[<td-markdown>]]></code></h2>
-     <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
-     <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
-     <p>Note: <code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
-     <td-highlight lang="javascript">
+    <h2><code><![CDATA[<td-markdown>]]></code></h2>
+    <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
+    <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <td-markdown>
+            <pre><code>
+            # Heading 
+            ## Sub Heading (H2)
+            ### Steps (H2)
+            </code></pre>
+          </td-markdown>
+          ]]>
+      </td-highlight>
+    <h3>Setup:</h3>
+    <p><code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
+    <td-highlight lang="javascript">
       module.exports = function(defaults) {{'{'}}
         return new Angular2App(defaults, {{'{'}}
           vendorNpmFiles: [
@@ -129,36 +143,24 @@ Underscores
         });
       };
     </td-highlight>
-    and
+    <p>Reference the script in the `index.html` file.</p>
     <td-highlight lang="html">
       <![CDATA[
         <script src="vendor/showdown/dist/showdown.js"></script>
       ]]>
     </td-highlight>
-    <h3>Example:</h3>
-    <p>HTML</p>
-
+    <p>Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-markdown>
-          <pre><code>
-          # Heading 
-          ## Sub Heading (H2)
-          ### Steps (H2)
-          </code></pre>
-        </td-markdown>
-         ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdMarkdownComponent } from '@covalent/markdown';
-        ...
-          directives: [ TdMarkdownComponent ]
+        import { CovalentMarkdownModule } from '@covalent/markdown';
+        @NgModule({
+          imports: [
+            CovalentMarkdownModule.forRoot(),
+            ...
+          ],
+          ...
         })
-        export class Demo {
-
-        }
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>
