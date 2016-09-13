@@ -15,9 +15,17 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/@angular2-material/core/style/core.css",
+        "../node_modules/@angular2-material/core/overlay/overlay.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/core-js/client/core.js",
+        "../node_modules/zone.js/dist/zone.js",
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/showdown/dist/showdown.js",
+        "../node_modules/highlight.js/lib/highlight.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
@@ -38,8 +46,6 @@
     }
   },
   "defaults": {
-    "prefix": "docs",
-    "sourceDir": "src",
     "styleExt": "css",
     "prefixInterfaces": false,
     "lazyRoutePrefix": "+"
