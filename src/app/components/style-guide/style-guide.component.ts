@@ -47,6 +47,11 @@ export class StyleGuideComponent {
     icon: 'build',
     route: 'utility-styles',
     title: 'Utility Styles',
+  }, {
+    description: 'Design templates & libraries',
+    icon: 'cloud_download',
+    route: 'resources',
+    title: 'Resources',
   }];
 
 }

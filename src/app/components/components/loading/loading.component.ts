@@ -1,9 +1,8 @@
-import { Component, ViewContainerRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit } from '@angular/core';
 
 import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
 
 @Component({
-  providers: [TdLoadingService], // TODOBUG Remove when we upstream fixes from AC
   selector: 'loading-demo',
   styleUrls: [ 'app/components/components/loading/loading.component.scss' ],
   templateUrl: 'app/components/components/loading/loading.component.html',
@@ -42,7 +41,6 @@ export class LoadingDemoComponent implements AfterViewInit {
   }];
 
   constructor(viewContainer: ViewContainerRef,
-              private _changeDetectorRef: ChangeDetectorRef,
               private _loadingService: TdLoadingService) {
     let options: ILoadingOptions = {
       name: 'test.overlay',
@@ -58,7 +56,6 @@ export class LoadingDemoComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.registerLoadingReplace();
-    this._changeDetectorRef.detectChanges();
   }
 
   registerCircleLoadingOverlay(): void {

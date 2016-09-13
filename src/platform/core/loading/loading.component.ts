@@ -17,18 +17,17 @@ export class TdLoadingComponent {
 
   private _animationIn: Subject<any> = new Subject<any>();
   private _animationOut: Subject<any> = new Subject<any>();
-  private _animation: boolean = true;
   private _overlay: boolean = false;
 
   /**
    * Flag for animation
    */
-  set animation(animation: boolean) {
-    this._animation = animation;
-  }
-  get animation(): boolean {
-    return this._animation;
-  }
+  animation: boolean = false;
+
+  /**
+   * Flag for mode
+   */
+  mode: string = 'indeterminate';
 
   /**
    * overlay: boolean
@@ -91,7 +90,8 @@ export class TdLoadingComponent {
    * Starts in animation and returns an observable for completition event.
    */
   startInAnimation(): Observable<any> {
-    this._animation = false;
+    this.animation = false;
+    this.mode = 'indeterminate';
     return this._animationIn.asObservable();
   }
 
@@ -99,7 +99,11 @@ export class TdLoadingComponent {
    * Starts out animation and returns an observable for completition event.
    */
   startOutAnimation(): Observable<any> {
-    this._animation = true;
+    this.animation = true;
+    /* need to switch back and forth from determinate/indeterminate so the setInterval()
+    * inside md-progress-circle stops and protractor doesnt timeout waiting to sync.
+    */
+    this.mode = 'determinate';
     return this._animationOut.asObservable();
   }
 }

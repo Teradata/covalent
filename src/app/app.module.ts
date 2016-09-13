@@ -14,6 +14,7 @@ import { appRoutes, appRoutingProviders } from './app.routes';
 import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
 import { CovalentFileModule } from '../platform/file-upload';
 import { CovalentHighlightModule } from '../platform/highlight';
+import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentJsonFormatterModule } from '../platform/json-formatter';
 import { CovalentChipsModule } from '../platform/chips';
@@ -24,16 +25,18 @@ import { CovalentChipsModule } from '../platform/chips';
      HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserModule,
     ComponentsModule,
     DocsModule,
     LayoutsModule,
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
     CovalentFileModule.forRoot(),
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
-    CovalentJsonFormatterModule,
-    CovalentChipsModule,
+    CovalentHttpModule.forRoot(),
+    CovalentHighlightModule.forRoot(),
+    CovalentMarkdownModule.forRoot(),
+    CovalentJsonFormatterModule.forRoot(),
+    CovalentChipsModule.forRoot(),
     appRoutes,
     BrowserModule,
     FormsModule,
