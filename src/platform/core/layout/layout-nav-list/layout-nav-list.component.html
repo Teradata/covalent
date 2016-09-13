@@ -7,7 +7,7 @@
           <md-icon *ngIf="icon">{{icon}}</md-icon>
           <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
           <span>{{title}}</span>
-          <ng-content select="list-toolbar-content"></ng-content>
+          <ng-content select="[list-toolbar-content]"></ng-content>
         </md-toolbar>
         <div flex class="list md-content">
           <ng-content select="[list-items]"></ng-content>
