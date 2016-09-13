@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-resources',
-  templateUrl: 'resources.component.html',
-  styleUrls: ['resources.component.css']
+  templateUrl: 'app/components/style-guide/resources/resources.component.html',
+  styleUrls: ['app/components/style-guide/resources/resources.component.scss'],
 })
 export class ResourcesComponent {
 

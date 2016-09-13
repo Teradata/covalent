@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'layouts-card-over',
-  styleUrls: ['card-over.component.css'],
-  templateUrl: 'card-over.component.html',
+  styleUrls: ['app/components/layouts/card-over/card-over.component.scss'],
+  templateUrl: 'app/components/layouts/card-over/card-over.component.html',
 })
 export class CardOverComponent {
 

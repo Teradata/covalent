@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'file-upload-demo',
-  styleUrls: ['file-upload.component.css'],
-  templateUrl: 'file-upload.component.html',
+  styleUrls: ['app/components/components/file-upload/file-upload.component.scss'],
+  templateUrl: 'app/components/components/file-upload/file-upload.component.html',
 })
 export class FileUploadDemoComponent {
 

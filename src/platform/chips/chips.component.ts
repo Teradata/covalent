@@ -14,10 +14,9 @@ export const TD_CHIPS_CONTROL_VALUE_ACCESSOR: any = {
 
 @Component({
   providers: [ TD_CHIPS_CONTROL_VALUE_ACCESSOR ],
-  moduleId: module.id,
   selector: 'td-chips',
-  styleUrls: [ 'chips.component.css' ],
-  templateUrl: 'chips.component.html',
+  styleUrls: [ 'platform/chips/chips.component.scss' ],
+  templateUrl: 'platform/chips/chips.component.html',
 })
 export class TdChipsComponent implements ControlValueAccessor, DoCheck {
 

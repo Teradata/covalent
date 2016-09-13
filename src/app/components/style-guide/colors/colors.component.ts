@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-colors',
-  styleUrls: ['colors.component.css'],
-  templateUrl: 'colors.component.html',
+  styleUrls: ['app/components/style-guide/colors/colors.component.scss'],
+  templateUrl: 'app/components/style-guide/colors/colors.component.html',
 })
 export class ColorsComponent {
   colors: string[] = [

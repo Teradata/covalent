@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-creating',
-  styleUrls: ['creating.component.css'],
-  templateUrl: 'creating.component.html',
+  styleUrls: ['app/components/docs/creating/creating.component.scss'],
+  templateUrl: 'app/components/docs/creating/creating.component.html',
 })
 export class CreatingComponent {
 

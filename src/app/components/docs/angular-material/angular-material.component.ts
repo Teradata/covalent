@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-angular-material',
-  styleUrls: ['angular-material.component.css'],
-  templateUrl: 'angular-material.component.html',
+  styleUrls: ['app/components/docs/angular-material/angular-material.component.scss'],
+  templateUrl: 'app/components/docs/angular-material/angular-material.component.html',
 })
 export class AngularMaterialComponent {
 

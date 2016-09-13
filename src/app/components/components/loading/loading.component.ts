@@ -3,10 +3,9 @@ import { Component, ViewContainerRef, AfterViewInit } from '@angular/core';
 import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'loading-demo',
-  styleUrls: [ 'loading.component.css' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: [ 'app/components/components/loading/loading.component.scss' ],
+  templateUrl: 'app/components/components/loading/loading.component.html',
 })
 export class LoadingDemoComponent implements AfterViewInit {
 

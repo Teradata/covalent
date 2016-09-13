@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,7 +22,7 @@ import { CovalentChipsModule } from '../platform/chips';
 @NgModule({
   declarations: [
     DocsAppComponent,
-    HomeComponent,
+     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
@@ -36,11 +38,14 @@ import { CovalentChipsModule } from '../platform/chips';
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
     appRoutes,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
   ], // additional providers needed for this module
-  entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
-  bootstrap: [ DocsAppComponent ],
+   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+   bootstrap: [ DocsAppComponent ],
 })
 export class AppModule {}

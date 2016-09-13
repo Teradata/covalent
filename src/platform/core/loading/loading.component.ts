@@ -9,10 +9,9 @@ export enum LoadingType {
 }
 
 @Component({
-  moduleId: module.id,
   selector: 'td-loading',
-  styleUrls: [ 'loading.component.css' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: [ 'platform/core/loading/loading.component.scss' ],
+  templateUrl: 'platform/core/loading/loading.component.html',
 })
 export class TdLoadingComponent {
 

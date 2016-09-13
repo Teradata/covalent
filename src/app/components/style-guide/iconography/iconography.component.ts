@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-iconography',
-  styleUrls: ['iconography.component.css'],
-  templateUrl: 'iconography.component.html',
+  styleUrls: ['app/components/style-guide/iconography/iconography.component.scss'],
+  templateUrl: 'app/components/style-guide/iconography/iconography.component.html',
 })
 export class IconographyComponent implements OnInit {
   colors: string[] = [

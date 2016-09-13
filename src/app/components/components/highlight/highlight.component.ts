@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'highlight-demo',
-  styleUrls: ['highlight.component.css'],
-  templateUrl: 'highlight.component.html',
+  styleUrls: ['app/components/components/highlight/highlight.component.scss'],
+  templateUrl: 'app/components/components/highlight/highlight.component.html',
 })
 export class HighlightDemoComponent {
 

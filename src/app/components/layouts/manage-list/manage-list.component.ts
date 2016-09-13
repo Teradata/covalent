@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'layouts-manage-list',
-  styleUrls: ['manage-list.component.css'],
-  templateUrl: 'manage-list.component.html',
+  styleUrls: ['app/components/layouts/manage-list/manage-list.component.scss'],
+  templateUrl: 'app/components/layouts/manage-list/manage-list.component.html',
 })
 export class ManageListComponent {
 

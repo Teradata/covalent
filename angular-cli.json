@@ -5,8 +5,33 @@
   },
   "apps": [
     {
-      "main": "src/main.ts",
-      "tsconfig": "src/tsconfig.json"
+      "root": "src",
+      "outDir": "dist",
+      "assets": "assets",
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",
+        "../node_modules/@angular2-material/core/style/core.css",
+        "../node_modules/@angular2-material/core/overlay/overlay.css",
+        "platform/core/styles/platform.scss"
+      ],
+      "scripts": [
+        "../node_modules/core-js/client/core.js",
+        "../node_modules/zone.js/dist/zone.js",
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/showdown/dist/showdown.js",
+        "../node_modules/highlight.js/lib/highlight.js"
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts",
+        "dev": "environments/environment.dev.ts"
+      }
     }
   ],
   "addons": [],
@@ -22,9 +47,8 @@
     }
   },
   "defaults": {
-    "prefix": "docs",
-    "sourceDir": "src",
-    "styleExt": "css",
+    "styleExt": "scss",
+    "prefixInterfaces": false,
     "lazyRoutePrefix": "+"
   }
 }

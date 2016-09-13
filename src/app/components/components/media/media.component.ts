@@ -4,10 +4,9 @@ import { Subscription } from 'rxjs/Subscription';
 import { TdMediaService } from '../../../../platform/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'media-demo',
-  styleUrls: [ 'media.component.css' ],
-  templateUrl: 'media.component.html',
+  styleUrls: [ 'app/components/components/media/media.component.scss' ],
+  templateUrl: 'app/components/components/media/media.component.html',
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-deployment',
-  styleUrls: ['deployment.component.css'],
-  templateUrl: 'deployment.component.html',
+  styleUrls: ['app/components/docs/deployment/deployment.component.scss'],
+  templateUrl: 'app/components/docs/deployment/deployment.component.html',
 })
 export class DeploymentComponent {
 

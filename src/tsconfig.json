@@ -4,20 +4,22 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "",
-    "lib": ["es6", "es2015", "dom"],
-    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "mapRoot": "./",
+    "module": "es6",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "../dist/",
-    "rootDir": ".",
+    "outDir": "../dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
-    "inlineSources": true
-  },
-  "files": [
-    "main.ts",
-    "typings.d.ts"
-  ]
+    "inlineSources": true,
+  
+    "typeRoots": [
+        "../node_modules/@types"
+    ],
+    "types": [
+      "jasmine", "hammerjs"
+    ]
+  }
 }
