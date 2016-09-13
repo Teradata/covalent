@@ -5,6 +5,7 @@ module.exports = {
     packagejson: [
       'src/**/**/package.json'
     ],
+    deployed: 'deploy/platform/',
     tsfiles: [
       'src/typings.d.ts',
       '!src/main.ts',
