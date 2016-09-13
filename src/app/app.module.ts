@@ -21,7 +21,7 @@ import { CovalentChipsModule } from '../platform/chips';
 @NgModule({
   declarations: [
     DocsAppComponent,
-    HomeComponent,
+     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     ComponentsModule,
@@ -42,7 +42,7 @@ import { CovalentChipsModule } from '../platform/chips';
   providers: [
     appRoutingProviders,
   ], // additional providers needed for this module
-  entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
-  bootstrap: [ DocsAppComponent ],
+   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+   bootstrap: [ DocsAppComponent ],
 })
 export class AppModule {}

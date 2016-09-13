@@ -16,6 +16,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
+        "platform/core/styles/platform.scss",
         "../node_modules/@angular2-material/core/style/core.css",
         "../node_modules/@angular2-material/core/overlay/overlay.css"
       ],

@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-json-formatter',
-  styleUrls: [ 'json-formatter.component.css' ],
-  templateUrl: 'json-formatter.component.html',
+  styleUrls: [ 'platform/json-formatter/json-formatter.component.scss' ],
+  templateUrl: 'platform/json-formatter/json-formatter.component.html',
 })
 export class TdJsonFormatterComponent {
 

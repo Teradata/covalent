@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-typography',
-  styleUrls: ['typography.component.css'],
-  templateUrl: 'typography.component.html',
+  styleUrls: ['app/components/style-guide/typography/typography.component.scss'],
+  templateUrl: 'app/components/style-guide/typography/typography.component.html',
 })
 export class TypographyComponent {
   colors: string[] = [

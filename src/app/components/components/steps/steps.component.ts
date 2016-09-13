@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 import { StepState, IStepChangeEvent } from '../../../../platform/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'steps-demo',
-  styleUrls: [ 'steps.component.css' ],
-  templateUrl: 'steps.component.html',
+  styleUrls: [ 'app/components/components/steps/steps.component.scss' ],
+  templateUrl: 'app/components/components/steps/steps.component.html',
 })
 export class StepsDemoComponent {
 

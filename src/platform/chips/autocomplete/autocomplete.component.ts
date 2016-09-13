@@ -14,10 +14,9 @@ export const TD_AUTOCOMPLETE_CONTROL_VALUE_ACCESSOR: any = {
 
 @Component({
   providers: [ TD_AUTOCOMPLETE_CONTROL_VALUE_ACCESSOR ],
-  moduleId: module.id,
   selector: 'td-autocomplete',
-  styleUrls: [ 'autocomplete.component.css' ],
-  templateUrl: 'autocomplete.component.html',
+  styleUrls: [ 'platform/chips/autocomplete/autocomplete.component.scss' ],
+  templateUrl: 'platform/chips/autocomplete/autocomplete.component.html',
 })
 export class TdAutoCompleteComponent implements ControlValueAccessor {
 

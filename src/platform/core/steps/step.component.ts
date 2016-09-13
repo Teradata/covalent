@@ -8,24 +8,23 @@ export enum StepState {
 }
 
 @Component({
-  moduleId: module.id,
+
   selector: 'td-step-actions',
   template: '<ng-content></ng-content>',
 })
 export class TdStepActionsComponent {}
 
 @Component({
-  moduleId: module.id,
+
   selector: 'td-step-summary',
   template: '<ng-content></ng-content>',
 })
 export class TdStepSummaryComponent {}
 
 @Component({
-  moduleId: module.id,
   selector: 'td-step',
-  styleUrls: [ 'step.component.css' ],
-  templateUrl: 'step.component.html',
+  styleUrls: [ 'platform/core/steps/step.component.scss' ],
+  templateUrl: 'platform/core/steps/step.component.html',
 })
 export class TdStepComponent {
 
@@ -159,7 +158,7 @@ export class TdStepComponent {
   };
 
   /**
-   * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated] 
+   * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated]
    * event if 'false'. (Blocked if [disabled] is 'true')
    * returns true if successfully changed state
    */

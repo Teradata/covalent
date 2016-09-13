@@ -8,20 +8,12 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    /*"outDir": "../dist/e2e",
-    "rootDir": ".",*/
     "outDir": "../dist/out-tsc-e2e",
     "sourceMap": true,
     "target": "es5",
     "inlineSources": true,
-  //},
-
-  /* webpack "files": [
-    "./typings.d.ts"
-  ]*/
-
-  "typeRoots": [
-      "../node_modules/@types"
-    ]
+    "typeRoots": [
+        "../node_modules/@types"
+      ]
   }
 }
