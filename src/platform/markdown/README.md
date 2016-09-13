@@ -6,11 +6,13 @@
 
 ## Installation
 
-### This component can be installed as npm package and can be included by importing from @covalent/markdown.
+This component can be installed as npm package and can be included by importing from @covalent/markdown.
 
-#### Steps
-* `showdown.js` needs to be added as vendor (installed as a `markdown` dependency).
-```
+## Setup
+
+`showdown.js` needs to be added as vendor (installed as a `markdown` dependency).
+
+```typescript
 module.exports = function(defaults) {
   return new Angular2App(defaults, {
     vendorNpmFiles: [
@@ -20,10 +22,26 @@ module.exports = function(defaults) {
   });
 };
 ```
-* Reference the script in the `index.html` file.
-```
+Reference the script in the `index.html` file.
+
+```html
 <script src="vendor/showdown/dist/showdown.js"></script>
 ```
+
+Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:
+
+```typescript
+import { CovalentMarkdownModule } from '@covalent/markdown';
+@NgModule({
+  imports: [
+    CovalentMarkdownModule.forRoot(),
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
+
 Markdown has been tested successfully with:
 
   * Chrome 
@@ -31,22 +49,10 @@ Markdown has been tested successfully with:
   * Safari
 
 ## Extended documentation
-Check our [http://localhost:4200/components/markdown] for examples and a more in-depth documentation on usage.
+Check our [demo](https://teradata.github.io/covalent/#/components/markdown) for examples and a more in-depth documentation on usage.
 
 
 ## Quick Example
-
-```ts
-import { TdMarkdownComponent } from '@covalent/markdown';
-...
-  directives: [ TdMarkdownComponent ]
-})
-export class Demo {
-
-}
-```
-
-### html
 
 ```html
 <td-markdown>
@@ -72,9 +78,3 @@ Above examples should output...
     - [x] This task is done
     - [ ] This is still pending
    ```
-
-
-## Live DEMO
-
-Check a live Demo here http://localhost:4200/components/markdown
-
