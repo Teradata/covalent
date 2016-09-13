@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +23,7 @@ import { CovalentChipsModule } from '../platform/chips';
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserModule,
     ComponentsModule,
     DocsModule,
     LayoutsModule,

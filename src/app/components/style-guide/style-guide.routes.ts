@@ -45,4 +45,4 @@ const routes: Routes = [{
   path: 'style-guide',
 }];
 
-export const styleGuideRoutes: any = RouterModule.forRoot(routes, { useHash: true });
+export const styleGuideRoutes: any = RouterModule.forChild(routes);

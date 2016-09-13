@@ -29,4 +29,4 @@ const routes: Routes = [{
   path: 'layouts',
 }];
 
-export const layoutsRoutes: any = RouterModule.forRoot(routes, { useHash: true });
+export const layoutsRoutes: any = RouterModule.forChild(routes);

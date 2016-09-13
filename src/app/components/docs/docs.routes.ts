@@ -45,4 +45,4 @@ const routes: Routes = [{
   path: 'docs',
 }];
 
-export const docsRoutes: any = RouterModule.forRoot(routes, { useHash: true });
+export const docsRoutes: any = RouterModule.forChild(routes);
