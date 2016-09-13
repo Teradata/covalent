@@ -44,7 +44,7 @@ import { CovalentChipsModule } from '../../../platform/chips';
     CovalentFileModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule,
+    CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
     componentsRoutes,
   ],
