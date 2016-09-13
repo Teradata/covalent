@@ -155,7 +155,6 @@ export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
 
 export { LoadingType } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
-export { TdLoadingDirective } from './loading/directives/loading.directive'
 
 // Expansion
 export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
