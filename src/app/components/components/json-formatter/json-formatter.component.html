@@ -44,9 +44,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdJsonFormatterComponent } from '@covalent/json-formatter';
         ...
-          directives: [ TdJsonFormatterComponent ]
         })
         export class Demo {
           object: any = {
@@ -54,6 +52,21 @@
             array: [1, 2, 3]
           };
         }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentJsonFormatterModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
+        @NgModule({
+          imports: [
+            CovalentJsonFormatterModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>

@@ -17,11 +17,27 @@ Properties:
 | `add?` | `function` | Method to be executed when string is added as chip through the autocomplete. Sends chip value as event.
 | `remove?` | `function` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
 
+## Setup
+
+Import the [CovalentChipsModule] using the forRoot() method in your NgModule:
+
+```typescript
+import { CovalentChipsModule } from '@covalent/chips';
+@NgModule({
+  imports: [
+    CovalentChipsModule.forRoot(),
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
+
 ## Usage
 
 Example for HTML usage:
 
  ```html
-<td-chips placeholder="placeholder" [items]="items" [(ngModel)]="model" readOnly="readOnly" (add)="addEvent($event)" (remove)="removeEvent($event)" requireMatch>
+<td-chips placeholder="placeholder" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" (add)="addEvent($event)" (remove)="removeEvent($event)" requireMatch>
 </td-chips>  
  ```

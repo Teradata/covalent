@@ -49,7 +49,7 @@ export class ComponentsComponent {
     route: 'json-formatter',
     title: 'JSON Formatter',
   }, {
-    description: 'Parse markdown files.',
+    description: 'Parse markdown code',
     icon: 'chrome_reader_mode',
     route: 'markdown',
     title: 'Markdown',

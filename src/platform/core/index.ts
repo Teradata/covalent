@@ -1,11 +1,9 @@
 import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 /**
  * ANGULAR2 MATERIAL MODULES
@@ -155,7 +153,6 @@ export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
 
 export { LoadingType } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
-export { TdLoadingDirective } from './loading/directives/loading.directive'
 
 // Expansion
 export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
@@ -215,11 +212,9 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
 
 @NgModule({
   imports: [
-    BrowserModule,
     HttpModule,
     JsonpModule,
     FormsModule,
-    RouterModule,
     CommonModule,
     MaterialModule.forRoot(),
   ],
@@ -235,11 +230,9 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdToggleDirective,
   ],
   exports: [
-    BrowserModule,
     HttpModule,
     JsonpModule,
     FormsModule,
-    RouterModule,
     CommonModule,
     MaterialModule,
 
