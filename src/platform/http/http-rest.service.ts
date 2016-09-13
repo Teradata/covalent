@@ -14,7 +14,7 @@ export interface IRestConfig {
 }
 
 export interface IRestQuery {
-  [key: string]: boolean | number | string;
+  [key: string]: any;
 }
 
 export interface IHttp {

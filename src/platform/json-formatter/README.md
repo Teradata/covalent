@@ -16,13 +16,29 @@ Properties:
 | `data` | `any` | JS object to be formatted.
 | `levelsOpen?` | `number` | Levels opened by default when JS object is formatted and rendered.
 
+## Setup
+
+Import the [CovalentJsonFormatterModule] using the forRoot() method in your NgModule:
+
+```typescript
+import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
+@NgModule({
+  imports: [
+    CovalentJsonFormatterModule.forRoot(),
+    ...
+  ],
+  ...
+})
+export class MyModule {}
+```
+
 ## Usage
 
 Simply add the component and pass the object to be formatted as a [data] input.
 
 Example for HTML usage:
 
- ```html
+```html
 <td-json-formatter [data]="object" key="root" [levelsOpen]="1">
 </td-json-formatter>
- ```
+```

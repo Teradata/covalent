@@ -38,9 +38,9 @@
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
     <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<template>]]></code> element.</p>
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
-    <p>Note: when used on load, should be registered in [TdLoadingService] after 'AfterViewInit#ngAfterViewInit()' component hook cycle.</p>
+    <p>Note: when used on page load, <code>tdLoading</code> should be registered in [TdLoadingService] after 'AfterViewInit#ngAfterViewInit()' component hook cycle.</p>
     <h3>Properties:</h3>
-    <p>The <code>tdLoading</code> component has {{loadingAttrs.length}} properties:</p>
+    <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
     <md-list>
       <template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
         <a md-list-item layout-align="row">
@@ -50,7 +50,7 @@
         <md-divider *ngIf="!last"></md-divider>
       </template>
     </md-list>
-    <h3>Example:</h3>
+    <h3>Example(after setup):</h3>
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
       <![CDATA[
@@ -70,11 +70,8 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdLoadingDirective, TdLoadingService, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+        import { TdLoadingService } from '@covalent/core';
         ...
-          directives: [ TdLoadingDirective ],
-          providers: [ TdLoadingService ],
-          precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
         })
         export class Demo {
           constructor(private _loadingService: TdLoadingService) {
@@ -89,6 +86,23 @@
             this._loadingService.resolve('stringName');
           }
         }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method and set [TD_LOADING_ENTRY_COMPONENTS] as 'entryComponents' in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+
+        @NgModule({
+          imports: [
+            CovalentCoreModule.forRoot(),
+            ...
+          ],
+          entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>
@@ -119,16 +133,13 @@
         <md-divider *ngIf="!last"></md-divider>
       </template>
     </md-list>
-    <h3>Example:</h3>
+    <h3>Example(after setup):</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ILoadingOptions, LoadingType, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+        import { TdLoadingService, ILoadingOptions, LoadingType } from '@covalent/core';
         ...
-          providers: [ TdLoadingService ],
-          precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
-        })
         export class Demo {
           constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
             let options: ILoadingOptions = {

@@ -1,14 +1,10 @@
-import { Injectable, ComponentFactoryResolver, NgZone } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { TdLoadingComponent, LoadingType } from '../loading.component';
-
-const noop: () => void = () => {
-  // empty function
-};
 
 export interface ILoadingOptions {
   name: string;
@@ -33,8 +29,7 @@ export class TdLoadingService {
   private _loadingObservables: {[key: string]: Observable<any>} = {};
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _injector: Injector,
-              private _ngZone: NgZone) {
+              private _injector: Injector) {
   }
 
   /**
@@ -58,19 +53,13 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        this._ngZone.runOutsideAngular(() => {
-          viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          instance.startInAnimation();
-          this._ngZone.run(noop);
-        });
+        viewContainerRef.insert(loadingRef.ref.hostView, 0);
+        instance.startInAnimation();
       } else if (registered <= 0 && loading) {
         loading = false;
-        this._ngZone.runOutsideAngular(() => {
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-            this._ngZone.run(noop);
-          });
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
         });
       }
     });
@@ -91,7 +80,8 @@ export class TdLoadingService {
   public createReplaceComponent(options: ILoadingOptions, viewContainerRef: ViewContainerRef,
                                 templateRef: TemplateRef<Object>): void {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
-    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling.scrollHeight;
+    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling ?
+      nativeElement.nextElementSibling.scrollHeight : undefined;
     (<IInternalLoadingOptions>options).overlay = false;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
@@ -100,24 +90,18 @@ export class TdLoadingService {
       let instance: TdLoadingComponent = loadingRef.ref.instance;
       if (registered > 0 && !loading) {
         loading = true;
-        this._ngZone.runOutsideAngular(() => {
-          let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
-          if (index < 0) {
-            viewContainerRef.clear();
-            viewContainerRef.insert(loadingRef.ref.hostView, 0);
-          }
-          instance.startInAnimation();
-          this._ngZone.run(noop);
-        });
+        let index: number = viewContainerRef.indexOf(loadingRef.ref.hostView);
+        if (index < 0) {
+          viewContainerRef.clear();
+          viewContainerRef.insert(loadingRef.ref.hostView, 0);
+        }
+        instance.startInAnimation();
       } else if (registered <= 0 && loading) {
         loading = false;
-        this._ngZone.runOutsideAngular(() => {
-          let subs: Subscription = instance.startOutAnimation().subscribe(() => {
-            subs.unsubscribe();
-            viewContainerRef.createEmbeddedView(templateRef);
-            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
-            this._ngZone.run(noop);
-          });
+        let subs: Subscription = instance.startOutAnimation().subscribe(() => {
+          subs.unsubscribe();
+          viewContainerRef.createEmbeddedView(templateRef);
+          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.ref.hostView));
         });
       }
     });
@@ -190,13 +174,13 @@ export class TdLoadingService {
     if (!name) {
       throw 'Name is required for Loading Component.';
     }
-    if (!this._context[name]) {
+    if (!this._context[name] || options.overlay) {
       this._context[name] = {};
     } else {
       throw 'Name duplication: Loading Component name conflict.';
     }
     this._context[name].loadingRef = this._componentFactoryResolver
-      .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+    .resolveComponentFactory(TdLoadingComponent).create(this._injector);
     this._context[name].times = 0;
     this._mapOptions(options, this._context[name].loadingRef.instance);
     let compRef: ILoadingRef = {
