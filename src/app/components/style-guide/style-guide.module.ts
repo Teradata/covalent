@@ -11,6 +11,7 @@ import { ColorsComponent } from './colors/colors.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { CardsComponent } from './cards/cards.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -26,6 +27,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MaterialComponentsComponent,
     CardsComponent,
     UtilityStylesComponent,
+    ResourcesComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),

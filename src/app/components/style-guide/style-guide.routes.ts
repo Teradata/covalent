@@ -9,6 +9,7 @@ import { ColorsComponent } from './colors/colors.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { CardsComponent } from './cards/cards.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 const routes: Routes = [{
   children: [{
@@ -35,10 +36,13 @@ const routes: Routes = [{
     }, {
       component: UtilityStylesComponent,
       path: 'utility-styles',
+    }, {
+      component: ResourcesComponent,
+      path: 'resources',
     },
   ],
   component: StyleGuideComponent,
   path: 'style-guide',
 }];
 
-export const styleGuideRoutes: any = RouterModule.forRoot(routes, { useHash: true });
+export const styleGuideRoutes: any = RouterModule.forChild(routes);
