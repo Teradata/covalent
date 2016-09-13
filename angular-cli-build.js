@@ -13,7 +13,7 @@ module.exports = function(defaults) {
       'hammerjs/*.min.js',
       '@angular/**/*.js',
       '@angular2-material/**/*.+(js|css)',
-      'showdown/dist/showdown.js',
+      'showdown/dist/showdown.js'
     ],
     polyfills: [
       'vendor/core-js/client/core.js',
@@ -21,7 +21,7 @@ module.exports = function(defaults) {
       'vendor/zone.js/dist/zone.js',
       'vendor/hammerjs/hammer.min.js',
       '@angular2-material/**/*.css',
-      'vendor/showdown/dist/showdown.js',
+      'vendor/showdown/dist/showdown.js'
     ]
   });
 };
