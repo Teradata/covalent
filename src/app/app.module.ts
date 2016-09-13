@@ -32,7 +32,7 @@ import { CovalentChipsModule } from '../platform/chips';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentJsonFormatterModule,
-    CovalentChipsModule,
+    CovalentChipsModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [
