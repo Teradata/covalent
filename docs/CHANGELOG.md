@@ -134,7 +134,7 @@ more information.
       ...
     </div>
 
-    <div class=".md-content">
+    <div class="md-content">
       ...
     </div>  
   ```
