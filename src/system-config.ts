@@ -41,6 +41,7 @@ const angularPackages: any = {
 const barrels: string[] = [
   // Thirdparty barrels.
   'rxjs',
+  'highlight.js/lib',
 
   // Library specific barrels.
   'platform/core',
@@ -105,6 +106,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'highlight.js/lib': 'vendor/highlight.js/lib',
     'main': 'main.js',
     '@angular2-material': 'vendor/@angular2-material',
   },
