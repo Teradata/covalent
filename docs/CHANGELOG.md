@@ -89,9 +89,9 @@ more information.
     ]
   ```
 
-* **layouts:** Changed placeholders to accept attributes since angular2 complains if the element doesnt exist. ([ab67c403d0aad3022e2e0112dfd62a89295c4f4b](https://github.com/Teradata/covalent/commit/ab67c403d0aad3022e2e0112dfd62a89295c4f4b))
+* **layouts:** Changed placeholders to accept attributes since angular2 complains if the element doesnt exist, and turned md-content into a class since `angular2-material` never intended for it to be a component. ([ab67c403d0aad3022e2e0112dfd62a89295c4f4b](https://github.com/Teradata/covalent/commit/ab67c403d0aad3022e2e0112dfd62a89295c4f4b))
 
-    Before:
+    Before(elements):
 
   ```html
     <toolbar-content>
@@ -101,9 +101,21 @@ more information.
     <list-toolbar-content>
       ...
     </list-toolbar-content>
+
+    <toolbar-buttons>
+      ...
+    </toolbar-buttons>
+
+    <nav-toolbar-content>
+      ...
+    </nav-toolbar-content>
+
+    <md-content>
+      ...
+    </md-content>
   ```
 
-    After:
+    After(attributes):
 
   ```html
     <div toolbar-content>
@@ -113,6 +125,18 @@ more information.
     <div list-toolbar-content>
       ...
     </div>
+
+    <div toolbar-buttons>
+      ...
+    </div>
+
+    <div nav-toolbar-content>
+      ...
+    </div>
+
+    <div class=".md-content">
+      ...
+    </div>  
   ```
 
 <a name="0.6.0"></a>
