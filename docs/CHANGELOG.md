@@ -1,5 +1,5 @@
 <a name="0.7.0"></a>
-# [0.7.0](https://github.com/Teradata/covalent/tree/v0.7.0) (2016-09-14)
+# [0.7.0 Beetlejuice Candycrush](https://github.com/Teradata/covalent/tree/v0.7.0) (2016-09-14)
 
 
 ## Bug Fixes
@@ -115,7 +115,7 @@ more information.
   ```
 
 <a name="0.6.0"></a>
-# [0.6.0](https://github.com/Teradata/covalent/tree/v0.6.0) (2016-08-19)
+# [0.6.0 Blubberdick Charizard](https://github.com/Teradata/covalent/tree/v0.6.0) (2016-08-19)
 
 
 ## Bug Fixes
