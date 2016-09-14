@@ -1,18 +1,15 @@
 #!/bin/bash
-version=$1
-
 set -e
 
-echo "Finished release v$version"
-git flow release finish v$version
-
-echo "Pushed tag v$version to main repo"
+echo "Pushed tag to main repo"
 git push --tags
 
 echo "Pushing changes into develop"
+git checkout develop
 git push origin develop
 
 echo "Pushing changes into master"
+git checkout master
 git push origin master
 
 echo "Building master branch"
