@@ -65,7 +65,36 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentHighlightModule] using the forRoot() method in your NgModule:</p>
+    <p><code>highlight.js</code> needs to be added as vendor (installed as a <code>highlight.js</code> dependency).</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        module.exports = function(defaults) {
+          return new Angular2App(defaults, {
+            vendorNpmFiles: [
+              ...
+              'highlight.js/lib/**'
+            ]
+          });
+        };
+      ]]>
+    </td-highlight>
+    <p>Reference the module in the <code>system-config.js</code> file.</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        const barrels: string[] = [
+          'highlight.js/lib',
+        ];
+        System.config({
+          map: {
+            ...
+            'highlight.js/lib': 'vendor/highlight.js/lib',
+            ...
+          },
+          packages: cliSystemConfigPackages,
+        });
+      ]]>
+    </td-highlight>
+    <p>Then, import the [CovalentHighlightModule] using the forRoot() method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentHighlightModule } from '@covalent/highlight';
