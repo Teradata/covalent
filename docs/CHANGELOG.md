@@ -115,7 +115,7 @@ more information.
   ```
 
 <a name="0.6.0"></a>
-# [0.6.0 Blubberdick Charizard](https://github.com/Teradata/covalent/tree/v0.6.0) (2016-08-19)
+# [0.6.0 Butterfree Cumbersome](https://github.com/Teradata/covalent/tree/v0.6.0) (2016-08-19)
 
 
 ## Bug Fixes
