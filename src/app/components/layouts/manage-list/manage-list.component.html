@@ -76,16 +76,11 @@
                   <md-divider></md-divider>
                 </md-list>
               </td-step>
-              <td-step [active]="true" label="Step 3: td-layout-manage-list" sublabel="the main content area of the layout">
+              <td-step [active]="true" label="Step 3: td-layout-nav" sublabel="the main content wrapper">
                 <md-list>
                   <md-list-item>
                     <h3 md-line><code><![CDATA[<td-layout-manage-list>]]></code></h3>
-                    <p md-line>Builds the top toolbar, left nav and content area</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>#list</code></h3>
-                    <p md-line>The ID and local reference of your list</p>
+                    <p md-line>Builds the top toolbar</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -96,6 +91,15 @@
                   <md-list-item>
                     <h3 md-line><code>logo?: string</code></h3>
                     <p md-line>The path to your toolbar logo</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </td-step>
+              <td-step [active]="true" label="Step 4: td-layout-manage-list" sublabel="the inner content area">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-manage-list>]]></code></h3>
+                    <p md-line>Builds the left nav and content area</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -110,11 +114,16 @@
                   <md-divider></md-divider>
                 </md-list>
               </td-step>
-              <td-step [active]="true" label="Step 3: div[toolbar-buttons]" sublabel="the management toolbar above content">
+              <td-step [active]="true" label="Step 5: div[toolbar-buttons]" sublabel="the management toolbar above content">
                 <md-list>
                   <md-list-item>
                     <h3 md-line><code><![CDATA[<div toolbar-buttons>]]></code></h3>
                     <p md-line>The toolbar wrapper</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<span>Title</span>]]></code></h3>
+                    <p md-line>Optional toolbar title</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -142,21 +151,24 @@
                       { {item.title} }
                     </a>
                   </md-nav-list>
-                  <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
-                    <md-nav-list list-items>
-                      <template let-item let-last="last" ngFor [ngForOf]="items">
-                          <a md-list-item [routerLink]="[item.route]">
-                            <md-icon md-list-avatar>{ {item.icon} }</md-icon>
-                            { {item.title} }
-                          </a>
-                      </template>
-                    </md-nav-list>
-                    <div toolbar-buttons layout="row" layout-align="start center" flex>
-                      <span flex></span>
-                      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
-                    </div>
-                    <router-outlet></router-outlet>
-                  </td-layout-manage-list>
+                  <td-layout-nav title="Toolbar Title" logo="path/to/toolbar-logo.svg">
+                    <td-layout-manage-list #list>
+                      <md-nav-list list-items>
+                        <template let-item let-last="last" ngFor [ngForOf]="items">
+                            <a md-list-item [routerLink]="[item.route]">
+                              <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                              { {item.title} }
+                            </a>
+                        </template>
+                      </md-nav-list>
+                      <div toolbar-buttons layout="row" layout-align="start center" flex>
+                        <span>Optional Toolbar Title</span>
+                        <span flex></span>
+                        <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+                      </div>
+                      <router-outlet></router-outlet>
+                    </td-layout-manage-list>
+                  </td-layout-nav>
                 </td-layout>
                 ]]>
             </td-highlight>
