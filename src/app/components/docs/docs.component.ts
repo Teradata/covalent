@@ -49,6 +49,11 @@ export class DocsComponent {
     route: 'theme',
     title: 'Custom Theme',
   }, {
+    description: 'Mock data API prototyping server',
+    icon: 'wifi_tethering',
+    route: 'mock-data',
+    title: 'Mock Data Server',
+  }, {
     description: 'A full suite of test tools',
     icon: 'playlist_add_check',
     route: 'testing',
