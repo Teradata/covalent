@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   selector: 'style-guide-resources',
   templateUrl: 'resources.component.html',
-  styleUrls: ['resources.component.css']
+  styleUrls: ['resources.component.css'],
 })
 export class ResourcesComponent {
 
