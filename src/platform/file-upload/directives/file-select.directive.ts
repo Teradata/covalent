@@ -45,8 +45,8 @@ export class TdFileSelectDirective {
    */
   @HostListener('change', ['$event'])
   onChange(event: Event): void {
-    if (event.srcElement instanceof HTMLInputElement) {
-      let fileInputEl: HTMLInputElement = (<HTMLInputElement>event.srcElement);
+    if (event.target instanceof HTMLInputElement) {
+      let fileInputEl: HTMLInputElement = (<HTMLInputElement>event.target);
       let files: FileList = fileInputEl.files;
       if (files.length) {
         let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];

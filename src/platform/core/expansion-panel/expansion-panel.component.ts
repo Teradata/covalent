@@ -1,13 +1,14 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TdToggleDirective } from '../directives/toggle/toggle.directive';
+@Component({
+  moduleId: module.id,
+  selector: 'td-expansion-summary',
+  template: '<ng-content></ng-content>',
+})
+export class TdExpansionPanelSummaryComponent {}
 
 @Component({
-  directives: [ TdToggleDirective, MdIcon, MD_LIST_DIRECTIVES ],
   moduleId: module.id,
   selector: 'td-expansion-panel',
   styleUrls: [ 'expansion-panel.component.css' ],

@@ -20,14 +20,16 @@
       <p>
         Now you simply creating your route html and logic for this new "view"!
       </p>
-      <h3>Make sure you import any directives you want, for example in my-route.component.ts:</h3>
+      <h3>Make sure you import any additional modules you want to use and declare any components you create in your main module.</h3>
+      <h3>for example in app.module.ts:</h3>
       <td-highlight lang="typescript">
-        import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-        import { TdHighlightComponent } from '@covalent/highlight';
+        import {{'{'}} CovalentCoreModule } from '@covalent/core';
+        import {{'{'}} CustomComponent } from 'dir/to/component';
        </td-highlight>
-       <h3>And define those directives in @Component:</h3>
+       <h3>And define those declarations/imports in @NgModule:</h3>
        <td-highlight lang="typescript">
-         directives: [ MD_CARD_DIRECTIVES, TdHighlightComponent ]
+         declarations: [ CustomComponent ],
+         imports: [ CovalentCoreModule.forRoot() ]
         </td-highlight>
   </md-card-content>
   <md-divider></md-divider>

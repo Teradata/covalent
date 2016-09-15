@@ -4,6 +4,14 @@
 
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular/core/testing': 'vendor/@angular/core/bundles/core-testing.umd.js',
+  '@angular/compiler/testing': 'vendor/@angular/compiler/bundles/compiler-testing.umd.js',
+  '@angular/router/testing': 'vendor/@angular/router/bundles/router-testing.umd.js',
+  '@angular/http/testing': 'vendor/@angular/http/bundles/http-testing.umd.js',
+  '@angular/common/testing': 'vendor/@angular/common/bundles/common-testing.umd.js',
+  '@angular/platform-browser/testing': 'vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.js',
+  '@angular/platform-browser-dynamic/testing':
+  'vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
 };
 
 /** User packages configuration. */
@@ -14,22 +22,28 @@ const packages: any = {
 /*
  * Everything underneath this line is managed by the CLI.
  */
-const barrels: string[] = [
+const angularPackages: any = {
   // Angular specific barrels.
-  '@angular/core',
-  '@angular/common',
-  '@angular/compiler',
-  '@angular/forms',
-  '@angular/http',
-  '@angular/router',
-  '@angular/platform-browser',
-  '@angular/platform-browser-dynamic',
+  '@angular/core': { main: 'bundles/core.umd.js'},
+  '@angular/core/testing': { main: 'bundles/core-testing.umd.js'},
+  '@angular/common': { main: 'bundles/common.umd.js'},
+  '@angular/compiler': { main: 'bundles/compiler.umd.js'},
+  '@angular/http': { main: 'bundles/http.umd.js'},
+  '@angular/forms': { main: 'bundles/forms.umd.js'},
+  '@angular/router': { main: 'bundles/router.umd.js'},
+  '@angular/platform-browser': { main: 'bundles/platform-browser.umd.js'},
+  '@angular/platform-browser-dynamic': { main: 'bundles/platform-browser-dynamic.umd.js'},
+  '@angular/platform-browser-dynamic/testing': {
+    main: 'bundles/platform-browser-dynamic-testing.umd.js',
+  },
+};
 
+const barrels: string[] = [
   // Thirdparty barrels.
   'rxjs',
+  'highlight.js/lib',
 
   // Library specific barrels.
-  'platform',
   'platform/core',
   'platform/highlight',
   'platform/file-upload',
@@ -39,50 +53,15 @@ const barrels: string[] = [
   'platform/chips',
 
   // App specific barrels.
-  'app',
-  'app/components/home',
+  'app/',
   'app/components/components',
-  'app/components/components/overview',
-  'app/components/components/highlight',
-  'app/components/components/steps',
-  'app/components/components/expansion-panel',
-  'app/components/components/file-upload',
-  'app/components/components/loading',
-  'app/components/components/pipes',
-  'app/components/components/media',
-  'app/components/components/http',
-  'app/components/components/json-formatter',
-  'app/components/components/chips',
-  'app/components/components/markdown',
   'app/components/docs',
-  'app/components/docs/overview',
-  'app/components/docs/creating',
-  'app/components/docs/angular-material',
-  'app/components/docs/angular-2',
-  'app/components/docs/build-tasks',
-  'app/components/docs/deployment',
-  'app/components/docs/icons',
-  'app/components/docs/theme',
-  'app/components/docs/testing',
   'app/components/layouts',
-  'app/components/layouts/overview',
-  'app/components/layouts/nav-view',
-  'app/components/layouts/nav-list',
-  'app/components/layouts/card-over',
-  'app/components/layouts/manage-list',
   'app/components/style-guide',
-  'app/components/style-guide/colors',
-  'app/components/style-guide/iconography',
-  'app/components/style-guide/logo',
-  'app/components/style-guide/product-icons',
-  'app/components/style-guide/typography',
-  'app/components/style-guide/material-components',
-  'app/components/style-guide/cards',
-  'app/components/style-guide/utility-styles',
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
+const cliSystemConfigPackages: any = angularPackages;
 barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
@@ -90,21 +69,24 @@ barrels.forEach((barrelName: string) => {
 // Angular Material 2 Packages
 const materialPackages: string[] = [
   'button',
+  'button-toggle',
   'card',
   'checkbox',
   'core',
+  'grid-list',
   'icon',
   'input',
   'list',
+  'menu',
   'progress-bar',
   'progress-circle',
   'radio',
   'sidenav',
+  'slider',
+  'slide-toggle',
   'tabs',
   'toolbar',
-  'grid-list',
-  'slide-toggle',
-  'menu',
+  'tooltip',
 ];
 
 materialPackages.forEach(function(pkg: string): void {
@@ -112,7 +94,7 @@ materialPackages.forEach(function(pkg: string): void {
   packages[name] = {
     defaultExtension: 'js',
     format: 'cjs',
-    main: pkg + '.js',
+    main: pkg + '.umd.js',
   };
 });
 
@@ -124,6 +106,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'highlight.js/lib': 'vendor/highlight.js/lib',
     'main': 'main.js',
     '@angular2-material': 'vendor/@angular2-material',
   },

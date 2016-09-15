@@ -1,4 +1,102 @@
 import { Type } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
+/**
+ * ANGULAR2 MATERIAL MODULES
+ */
+
+import { MdCoreModule, MdRippleModule, PortalModule,
+         OverlayModule, RtlModule, MdLiveAnnouncer } from '@angular2-material/core';
+import { MdButtonToggleModule } from '@angular2-material/button-toggle';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCheckboxModule } from '@angular2-material/checkbox';
+import { MdRadioModule } from '@angular2-material/radio';
+import { MdSlideToggleModule } from '@angular2-material/slide-toggle';
+import { MdSliderModule } from '@angular2-material/slider';
+import { MdSidenavModule } from '@angular2-material/sidenav';
+import { MdListModule } from '@angular2-material/list';
+import { MdGridListModule } from '@angular2-material/grid-list';
+import { MdCardModule } from '@angular2-material/card';
+import { MdIconModule } from '@angular2-material/icon';
+import { MdMenuModule } from '@angular2-material/menu';
+import { MdProgressCircleModule } from '@angular2-material/progress-circle';
+import { MdProgressBarModule } from '@angular2-material/progress-bar';
+import { MdInputModule } from '@angular2-material/input';
+import { MdTabsModule } from '@angular2-material/tabs';
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdTooltipModule } from '@angular2-material/tooltip';
+
+const MATERIAL_MODULES: Type<any>[] = [
+  MdCoreModule,
+  MdButtonModule,
+  MdButtonToggleModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdGridListModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdProgressBarModule,
+  MdProgressCircleModule,
+  MdRadioModule,
+  MdRippleModule,
+  MdSidenavModule,
+  MdSliderModule,
+  MdSlideToggleModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule,
+  OverlayModule,
+  PortalModule,
+  RtlModule,
+];
+
+@NgModule({
+  imports: [
+    MdButtonModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    MdGridListModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdListModule.forRoot(),
+    MdProgressBarModule.forRoot(),
+    MdProgressCircleModule.forRoot(),
+    MdRippleModule.forRoot(),
+    MdSidenavModule.forRoot(),
+    MdTabsModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    PortalModule.forRoot(),
+    RtlModule.forRoot(),
+
+    // These modules include providers.
+    MdButtonToggleModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdMenuModule.forRoot(),
+    MdRadioModule.forRoot(),
+    MdSliderModule.forRoot(),
+    MdSlideToggleModule.forRoot(),
+    MdTooltipModule.forRoot(),
+    OverlayModule.forRoot(),
+  ],
+  exports: MATERIAL_MODULES,
+  providers: [MdLiveAnnouncer],
+})
+export class MaterialRootModule { }
+
+@NgModule({
+  imports: MATERIAL_MODULES,
+  exports: MATERIAL_MODULES,
+})
+export class MaterialModule {
+  static forRoot(): ModuleWithProviders {
+    return {ngModule: MaterialRootModule};
+  }
+}
 
 /**
  * COMPONENTS
@@ -12,7 +110,7 @@ import { TdLayoutCardOverComponent } from './layout/layout-card-over/layout-card
 import { TdLayoutManageListComponent } from './layout/layout-manage-list/layout-manage-list.component';
 import { TdLayoutService } from './layout/services/layout.service';
 
-export const TD_LAYOUT_DIRECTIVES: Type[] = [
+export const TD_LAYOUT_DIRECTIVES: Type<any>[] = [
   TdLayoutComponent,
   TdLayoutNavComponent,
   TdLayoutNavListComponent,
@@ -20,7 +118,7 @@ export const TD_LAYOUT_DIRECTIVES: Type[] = [
   TdLayoutManageListComponent,
 ];
 
-export const TD_LAYOUT_PROVIDERS: Type[] = [
+export const TD_LAYOUT_PROVIDERS: Type<any>[] = [
   TdLayoutService,
 ];
 
@@ -32,33 +130,47 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
-import { TdStepComponent } from './steps/step.component';
+import { TdStepComponent, TdStepActionsComponent, TdStepSummaryComponent } from './steps/step.component';
 
-export const TD_STEPS_DIRECTIVES: Type[] = [
+export const TD_STEPS_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
+  TdStepActionsComponent,
+  TdStepSummaryComponent,
 ];
 
 export { TdStepComponent, StepState } from './steps/step.component';
 export { TdStepsComponent, IStepChangeEvent } from './steps/steps.component';
 
 // Loading
+import { TdLoadingService } from './loading/services/loading.service';
+import { TdLoadingDirective } from './loading/directives/loading.directive';
 import { TdLoadingComponent } from './loading/loading.component';
 
-export const TD_LOADING_ENTRY_COMPONENTS: Type[] = [
+export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
 
 export { LoadingType } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
-export { TdLoadingDirective } from './loading/directives/loading.directive';
 
 // Expansion
 export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
+import { TdExpansionPanelComponent,
+         TdExpansionPanelSummaryComponent } from './expansion-panel/expansion-panel.component';
+
+export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
+  TdExpansionPanelComponent,
+  TdExpansionPanelSummaryComponent,
+];
+
 /**
  * DIRECTIVES
  */
+
+import { TdToggleDirective } from './directives/toggle/toggle.directive';
+import { TdFadeDirective } from './directives/fade/fade.directive';
 
 export { TdToggleDirective } from './directives/toggle/toggle.directive';
 export { TdFadeDirective } from './directives/fade/fade.directive';
@@ -66,6 +178,22 @@ export { TdFadeDirective } from './directives/fade/fade.directive';
 /**
  * PIPES
  */
+import { TdOrderByPipe } from './pipes/orderby/orderby.pipe';
+import { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
+import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
+import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
+import { TdDigitsPipe } from './pipes/digits/digits.pipe';
+import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
+
+export const TD_PIPES: Type<any>[] = [
+  TdOrderByPipe,
+  TdTimeAgoPipe,
+  TdTimeDifferencePipe,
+  TdBytesPipe,
+  TdDigitsPipe,
+  TdTruncatePipe,
+];
+
 export { TdOrderByPipe } from './pipes/orderby/orderby.pipe';
 export { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 export { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
@@ -77,9 +205,53 @@ export { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
  * MEDIA
  */
 import { TdMediaService } from './media/services/media.service';
+import { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
 
-export const TD_MEDIA_PROVIDERS: Type[] = [
-  TdMediaService,
-];
 export { TdMediaService } from './media/services/media.service';
 export { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
+
+@NgModule({
+  imports: [
+    HttpModule,
+    JsonpModule,
+    FormsModule,
+    CommonModule,
+    MaterialModule.forRoot(),
+  ],
+  declarations: [
+    TdMediaToggleDirective,
+    TD_PIPES,
+    TD_LAYOUT_DIRECTIVES,
+    TdLoadingDirective,
+    TdLoadingComponent,
+    TD_STEPS_DIRECTIVES,
+    TD_EXPANSION_DIRECTIVES,
+    TdFadeDirective,
+    TdToggleDirective,
+  ],
+  exports: [
+    HttpModule,
+    JsonpModule,
+    FormsModule,
+    CommonModule,
+    MaterialModule,
+
+    TdMediaToggleDirective,
+    TD_PIPES,
+    TD_LAYOUT_DIRECTIVES,
+    TdLoadingDirective,
+    TdLoadingComponent,
+    TD_STEPS_DIRECTIVES,
+    TD_EXPANSION_DIRECTIVES,
+    TdFadeDirective,
+    TdToggleDirective,
+  ],
+})
+export class CovalentCoreModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CovalentCoreModule,
+      providers: [ TdMediaService, TdLayoutService, TdLoadingService ],
+    };
+  }
+}

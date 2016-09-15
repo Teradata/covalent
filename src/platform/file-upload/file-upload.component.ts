@@ -1,14 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { MdButton } from '@angular2-material/button';
-import { MdIcon } from '@angular2-material/icon';
-
-import { TdFileSelectDirective } from './directives/file-select.directive';
-import { TdFileDropDirective } from './directives/file-drop.directive';
-
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  directives: [ MdButton, MdIcon, TdFileSelectDirective, TdFileDropDirective ],
   moduleId: module.id,
   selector: 'td-file-upload',
   styleUrls: ['file-upload.component.css'],

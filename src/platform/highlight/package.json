@@ -1,6 +1,6 @@
 {
   "name": "@covalent/highlight",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Teradata UI Platform Highlight Module",
   "keywords": [
     "angular",
@@ -32,6 +32,7 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.6.0"
+    "@covalent/core": "0.7.0",
+    "highlight.js": "9.6.0"
   }
 }

@@ -12,16 +12,7 @@ export const TD_CHIPS_CONTROL_VALUE_ACCESSOR: any = {
   multi: true,
 };
 
-import { MdIcon } from '@angular2-material/icon';
-import { TdAutoCompleteComponent } from './autocomplete/autocomplete.component';
-import { TdChipComponent } from './chip.component';
-
 @Component({
-  directives: [
-    MdIcon,
-    TdAutoCompleteComponent,
-    TdChipComponent,
-  ],
   providers: [ TD_CHIPS_CONTROL_VALUE_ACCESSOR ],
   moduleId: module.id,
   selector: 'td-chips',

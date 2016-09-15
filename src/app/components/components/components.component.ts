@@ -1,19 +1,8 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { TD_LAYOUT_DIRECTIVES } from '../../../platform/core';
 
 @Component({
-  directives: [
-    ROUTER_DIRECTIVES,
-    MdIcon,
-    MD_LIST_DIRECTIVES,
-    TD_LAYOUT_DIRECTIVES,
-  ],
   moduleId: module.id,
-  selector: 'td-components',
+  selector: 'app-components',
   styleUrls: ['components.component.css'],
   templateUrl: 'components.component.html',
 })
@@ -60,7 +49,7 @@ export class ComponentsComponent {
     route: 'json-formatter',
     title: 'JSON Formatter',
   }, {
-    description: 'Parse markdown files.',
+    description: 'Parse markdown code',
     icon: 'chrome_reader_mode',
     route: 'markdown',
     title: 'Markdown',

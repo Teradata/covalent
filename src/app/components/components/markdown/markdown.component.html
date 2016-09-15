@@ -1,8 +1,12 @@
 <md-card>
   <md-card-title>Markdown</md-card-title>
-  <md-card-subtitle>Parse markdown files</md-card-subtitle>
+  <md-card-subtitle>Parse markdown code</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    <md-card>
+      <md-card-content><h4>Imporant Note:</h4>You must wrap all markdown in <code>&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</code> and maintain whitespace.</md-card-content>
+    </md-card>
+    <h3>Basic Markdown</h3>
     <td-markdown>
       <pre><code>
 # Heading (H1) 
@@ -17,46 +21,86 @@
 * Two
 * Three
 
-## GH Flavored Block quotes & Tasklist
-
-#### Tasklists 
-- [ ] This is still pending
-- [x] This task is done
-
-#### Inline Code `Github`
-
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
 Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
+      </code></pre>
+    </td-markdown>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+    # Heading (H1) 
+          
+    ## Sub Heading (H2)
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+    ### Steps (H3)
+        
+    ###List Items
 
-##Links
+    * One
+    * Two
+    * Three
 
-<p>There are two ways to create links.</p>
+    Emphasis, aka italics, with *asterisks* or _underscores_.
 
-[I'm an inline-style link](https://www.google.com)
+    Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
-##Images
+    Combined emphasis with **asterisks and _underscores_**.
+          </code></pre>
+        </td-markdown>
+      ]]>
+    </td-highlight>
+    <h3>Links &amp; Images</h3>
+    <p>There are two ways to create links. Inline & reference:</p>
+    <td-markdown>
+      <pre><code>
+[I'm an inline-style link](https://teradata.github.io/)
 
-Reference-style:
+[I'm a reference-style link case does not matter][Teradata Github Landing]
+
+[teradata github Landing]: https://teradata.github.io/
+
+Inline image
+![alt text here](app/assets/icons/teradata.svg)
+
+Reference-style image:
 ![alt text][logo]
 
-[logo]: http://www.teradata.com/images/Homepage2015/teradata-logo-2x.png "Teradata Labs"
-</code></pre>
+[logo]: app/assets/icons/teradata.svg "Teradata Labs"
+      </code></pre>
+    </td-markdown>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+    [I'm an inline-style link](https://teradata.github.io/)
 
-<p>Here's our logo (hover to see the title text):</p>
+    [I'm a reference-style link case does not matter][Teradata Github Landing]
 
-<pre><code>Inline `code` has `back-ticks` around it.
-</code></pre>
+    [teradata github Landing]: https://teradata.github.io/
 
-<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+    Inline image
+    ![alt text here](app/assets/icons/teradata.svg)
 
-<p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.</p>
+    Reference-style image:
+    ![alt text][logo]
 
-<pre lang="no-highlight"><code>```javascript
+    [logo]: app/assets/icons/teradata.svg "Teradata Labs"
+          </code></pre>
+        </td-markdown>
+      ]]>
+    </td-highlight>
+    <h3>Inline Code &amp; Snippets</h3>
+    <p>Inline has `back-ticks` around it.</p>
+    <p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. </p>
+    <td-markdown>
+      <pre><code>
+`this is an inline code snippet`
+
+```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
 ```
@@ -65,34 +109,56 @@ alert(s);
 s = "Python syntax highlighting"
 print s
 ```
-</code></pre>
+      </code></pre>
+    </td-markdown>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+    `this is an inline code snippet`
 
-<p>
-Blockquotes
+    ```javascript
+    var s = "JavaScript syntax highlighting";
+    alert(s);
+    ```
 
-<pre lang="no-highlight"><code>&gt; Blockquotes are very handy in email to emulate reply text.
-&gt; This line is part of the same quote.
+    ```python
+    s = "Python syntax highlighting"
+    print s
+    ```
+          </code></pre>
+        </td-markdown>
+      ]]>
+    </td-highlight>
+    <h3>Blockquotes</h3>
+    <td-markdown>
+      <pre><code>
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
 
 Quote break.
 
-&gt; This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-</code></pre>
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+      </code></pre>
+    </td-markdown>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+    > Blockquotes are very handy in email to emulate reply text.
+    > This line is part of the same quote.
 
-<blockquote>
-<p>Blockquotes are very handy in email to emulate reply text.
-This line is part of the same quote.</p>
-</blockquote>
+    Quote break.
 
-<p>Quote break.</p>
-
-<blockquote>
-<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>
-</blockquote>
-
-<p>Inline HTML
-
-
-<pre><code>Three or more...
+    > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+          </code></pre>
+        </td-markdown>
+      ]]>
+    </td-highlight>
+    <h3>Dividers</h3>
+    <td-markdown>
+      <pre><code>
+Three or more...
 
 ---
 
@@ -105,9 +171,29 @@ Asterisks
 ___
 
 Underscores
-</code></pre>
+      </code></pre>
+    </td-markdown>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-markdown>
+          <pre><code>
+    Three or more...
 
-</td-markdown>
+    ---
+
+    Hyphens
+
+    ***
+
+    Asterisks
+
+    ___
+
+    Underscores
+          </code></pre>
+        </td-markdown>
+      ]]>
+    </td-highlight>
   </md-card-content>
 </md-card>
 <md-card>
@@ -115,13 +201,27 @@ Underscores
   <md-card-subtitle>How to use this component</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-     <h2><code><![CDATA[<td-markdown>]]></code></h2>
-     <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
-     <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
-     <p>Note: <code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
-     <td-highlight lang="javascript">
-      module.exports = function(defaults) {
-        return new Angular2App(defaults, {
+    <h2><code><![CDATA[<td-markdown>]]></code></h2>
+    <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
+    <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <td-markdown>
+            <pre><code>
+            # Heading 
+            ## Sub Heading (H2)
+            ### Steps (H2)
+            </code></pre>
+          </td-markdown>
+          ]]>
+      </td-highlight>
+    <h3>Setup:</h3>
+    <p><code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
+    <td-highlight lang="javascript">
+      module.exports = function(defaults) {{'{'}}
+        return new Angular2App(defaults, {{'{'}}
           vendorNpmFiles: [
             ...
             'showdown/dist/showdown.js'
@@ -129,36 +229,24 @@ Underscores
         });
       };
     </td-highlight>
-    and
+    <p>Reference the script in the `index.html` file.</p>
     <td-highlight lang="html">
       <![CDATA[
         <script src="vendor/showdown/dist/showdown.js"></script>
       ]]>
     </td-highlight>
-    <h3>Example:</h3>
-    <p>HTML</p>
-
+    <p>Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-markdown>
-          <pre><code>
-          # Heading 
-          ## Sub Heading (H2)
-          ### Steps (H2)
-          </code></pre>
-        </td-markdown>
-         ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdMarkdownComponent } from '@covalent/markdown';
-        ...
-          directives: [ TdMarkdownComponent ]
+        import { CovalentMarkdownModule } from '@covalent/markdown';
+        @NgModule({
+          imports: [
+            CovalentMarkdownModule.forRoot(),
+            ...
+          ],
+          ...
         })
-        export class Demo {
-
-        }
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>

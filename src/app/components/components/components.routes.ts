@@ -1,22 +1,22 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components.component';
-import { OverviewComponent }  from './overview';
-import { HighlightDemoComponent } from './highlight';
-import { StepsDemoComponent } from './steps';
-import { ExpansionPanelDemoComponent } from './expansion-panel';
-import { FileUploadDemoComponent } from './file-upload';
-import { LoadingDemoComponent } from './loading';
-import { MarkdownDemoComponent } from './markdown';
-import { MediaDemoComponent } from './media';
-import { HttpDemoComponent } from './http';
-import { JsonFormatterDemoComponent } from './json-formatter';
-import { ChipsDemoComponent } from './chips';
-import { PipesComponent } from './pipes';
+import { ComponentsOverviewComponent }  from './overview/overview.component';
+import { HighlightDemoComponent } from './highlight/highlight.component';
+import { StepsDemoComponent } from './steps/steps.component';
+import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
+import { FileUploadDemoComponent } from './file-upload/file-upload.component';
+import { LoadingDemoComponent } from './loading/loading.component';
+import { MarkdownDemoComponent } from './markdown/markdown.component';
+import { MediaDemoComponent } from './media/media.component';
+import { HttpDemoComponent } from './http/http.component';
+import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
+import { ChipsDemoComponent } from './chips/chips.component';
+import { PipesComponent } from './pipes/pipes.component';
 
-export const componentsRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
-      component: OverviewComponent,
+      component: ComponentsOverviewComponent,
       path: '',
     }, {
       component: HighlightDemoComponent,
@@ -56,3 +56,5 @@ export const componentsRoutes: RouterConfig = [{
   component: ComponentsComponent,
   path: 'components',
 }];
+
+export const componentsRoutes: any = RouterModule.forChild(routes);

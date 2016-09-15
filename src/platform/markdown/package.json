@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Teradata UI Platform Markdown Module",
   "keywords": [
     "angular",
@@ -30,7 +30,7 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.6.0",
+    "@covalent/core": "0.7.0",
     "showdown": "1.4.2"
   }
 }

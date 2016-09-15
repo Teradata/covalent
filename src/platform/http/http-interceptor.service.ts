@@ -1,4 +1,4 @@
-import { Injectable, Type, Provider, Injector } from '@angular/core';
+import { Injectable, Type, Injector } from '@angular/core';
 import { Http, RequestOptionsArgs, Response, Request } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -13,126 +13,79 @@ export interface IHttpInterceptor {
 @Injectable()
 export class HttpInterceptorService {
 
-  requestInterceptors: IHttpInterceptor[] = [];
+  private _requestInterceptors: IHttpInterceptor[] = [];
 
-  constructor(private _http: Http, private _injector: Injector, requestInterceptors: Type[]) {
-    requestInterceptors.forEach((interceptor: Type) => {
-      this.requestInterceptors.push(<IHttpInterceptor>_injector.get(interceptor));
+  constructor(private _http: Http, private _injector: Injector, requestInterceptors: Type<any>[]) {
+    requestInterceptors.forEach((interceptor: Type<any>) => {
+      this._requestInterceptors.push(<IHttpInterceptor>_injector.get(interceptor));
     });
   }
 
   request(url: string | Request, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.request(url, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.request(url, this._requestResolve(options)));
   }
 
   delete(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.delete(url, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.delete(url, this._requestResolve(options)));
   }
 
   get(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.get(url, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.get(url, this._requestResolve(options)));
   }
 
   head(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.head(url, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.head(url, this._requestResolve(options)));
   }
 
   patch(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.patch(url, data, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.patch(url, data, this._requestResolve(options)));
   }
 
   post(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.post(url, data, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.post(url, data, this._requestResolve(options)));
   }
 
   put(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    this._requestConfig(options);
-    return this._http.put(url, data, options)
-      .do((response: Response) => {
-        return this._responseResolve(response);
-      }).catch((error: Response) => {
-        return this._errorResolve(error);
-      });
+    return this._setupRequest(this._http.put(url, data, this._requestResolve(options)));
   }
 
-  private _requestConfig(requestOptions: RequestOptionsArgs): void {
-    this.requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
+  private _setupRequest(responseObservable: Observable<Response>): Observable<Response> {
+    return new Observable<any>((subscriber: Subscriber<any>) => {
+      responseObservable.do((response: Response) => {
+        subscriber.next(this._responseResolve(response));
+      }).catch((error: Response) => {
+        return new Observable<any>(() => {
+          subscriber.error(this._responseErrorResolve(error));
+        });
+      }).subscribe();
+    });
+  }
+
+  private _requestResolve(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+    this._requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onRequest) {
         requestOptions = interceptor.onRequest(requestOptions);
       }
     });
+    return requestOptions;
   }
 
-  private _responseResolve(response: Response): Observable<Response> {
-    this.requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
+  private _responseResolve(response: Response): Response {
+    this._requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onResponse) {
         response = interceptor.onResponse(response);
       }
     });
-    return new Observable<any>((subscriber: Subscriber<any>) => {
-      subscriber.next(response);
-    });
+    return response;
   }
 
-  private _errorResolve(error: Response): Observable<Response> {
-    this.requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
+  private _responseErrorResolve(error: Response): Response {
+    this._requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onResponseError) {
         error = interceptor.onResponseError(error);
       }
     });
-    return new Observable<any>((subscriber: Subscriber<any>) => {
-      subscriber.error(error);
-    });
+    return error;
   }
 
-}
-
-export function provideInterceptors(requestInterceptors: Type[] = []): any[] {
-  let providers: any[] = [];
-  requestInterceptors.forEach((interceptor: Type) => {
-    providers.push(interceptor);
-  });
-  providers.push(new Provider(HttpInterceptorService, {
-    useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-      return new HttpInterceptorService(http, injector, requestInterceptors);
-    },
-    deps: [Http, Injector],
-  }));
-  return providers;
 }

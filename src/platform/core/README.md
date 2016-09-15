@@ -42,13 +42,13 @@ Properties:
 
 #### td-layout-nav
 
-`<toolbar-content>` is used to include items in the toolbar.
+`<div toolbar-content>` is used to include items in the toolbar.
 
 #### td-layout-nav-list
 
 `<md-nav-list list-items>` is used to include items in the left side list.
-`<list-toolbar-content>` is used to include items in the left side toolbar.
-`<nav-toolbar-content>` is used to include items in the right side toolbar.
+`<div list-toolbar-content>` is used to include items in the left side toolbar.
+`<div nav-toolbar-content>` is used to include items in the right side toolbar.
 
 #### td-layout-card-over
 
@@ -62,7 +62,7 @@ Properties:
 #### td-layout-manage-items
 
 `<md-nav-list list-items>` is used to include items in the left side list.
-`<toolbar-content>` is used to include items in the toolbar.
+`<div toolbar-content>` is used to include items in the toolbar.
 
 #### Usage
 
@@ -74,10 +74,10 @@ Example Nav Layout / Main Layout combo:
     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
   </menu-items>
   <td-layout-nav title="Toolbar Title">
-    <toolbar-content layout="row" layout-align="center center" flex>
+    <div toolbar-content layout="row" layout-align="center center" flex>
       <span>Title</span>
       <span flex></span>
-    </toolbar-content>
+    </div>
     CONTENT
   </td-layout-nav>
 </td-layout>
@@ -87,11 +87,11 @@ Example Nav List Layout:
 
 ```html
 <td-layout-nav-list #list>
-  <list-toolbar-content layout="row" layout-align="center center" flex>
+  <div list-toolbar-content layout="row" layout-align="center center" flex>
     <span>App Name</span>
     <span flex></span>
     <button md-button (click)="search()" class="md-icon-button"><md-icon class="md-24">search</md-icon></button>
-  </list-toolbar-content>
+  </div>
   <md-nav-list list-items>
     <a md-list-item>
     <md-icon md-list-avatar>dashboard</md-icon>
@@ -100,10 +100,10 @@ Example Nav List Layout:
     </a>
     <md-divider *ngIf="!last" md-inset></md-divider>
   </md-nav-list>
-  <nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div nav-toolbar-content layout="row" layout-align="center center" flex>
     <span>View Name</span>
     <span flex></span>
-  </nav-toolbar-content>
+  </div>
   ...
 </td-layout-nav-list>
 ```
@@ -116,9 +116,9 @@ Example for Manage List Layout / Nav Layout combo:
     <md-nav-list list-items>
       ...
     </md-nav-list>
-    <toolbar-buttons>
+    <div toolbar-buttons>
       ...
-    </toolbar-buttons>
+    </div>
     ... /* content */
   </td-layout-manage-list>
 </td-layout-nav>

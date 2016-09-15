@@ -11,7 +11,6 @@ export interface IStepChangeEvent {
 }
 
 @Component({
-  directives: [ TdStepComponent ],
   moduleId: module.id,
   selector: 'td-steps',
   styleUrls: [ 'steps.component.css' ],

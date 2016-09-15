@@ -10,4 +10,7 @@ md-toolbar {
     .md-icon-logo {
         margin-right: 10px;
     }
+    [md-icon-button] {
+        margin: 0 6px;
+    }
 }

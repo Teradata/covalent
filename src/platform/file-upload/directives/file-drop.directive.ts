@@ -43,6 +43,14 @@ export class TdFileDropDirective {
     return this._multiple ? '' : undefined;
   }
 
+  /**
+   * Binds native 'disabled' attribute if [disabled] property is 'true'.
+   */
+  @HostBinding('attr.disabled')
+  get disabledBinding(): string {
+    return this._disabled ? '' : undefined;
+  }
+
   constructor(private _renderer: Renderer, private _element: ElementRef) {
   }
 
@@ -71,7 +79,8 @@ export class TdFileDropDirective {
   onDragOver(event: Event): void {
     let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
-    if (this._disabled || (!this._multiple && transfer.items.length > 1)) {
+    if (this._disabled || (!this._multiple &&
+      ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
       transfer.dropEffect = 'none';
     } else {
       transfer.dropEffect = 'copy';

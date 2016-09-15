@@ -1,25 +1,10 @@
-import { Component, ViewContainerRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit } from '@angular/core';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
-
-import { TdLoadingDirective, TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
-import { TdHighlightComponent } from '../../../../platform/highlight';
+import { TdLoadingService, ILoadingOptions, LoadingType } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    MD_INPUT_DIRECTIVES,
-    TdLoadingDirective,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  providers: [TdLoadingService],
-  selector: 'td-loading-demo',
+  selector: 'loading-demo',
   styleUrls: [ 'loading.component.css' ],
   templateUrl: 'loading.component.html',
 })
@@ -57,7 +42,6 @@ export class LoadingDemoComponent implements AfterViewInit {
   }];
 
   constructor(viewContainer: ViewContainerRef,
-              private _changeDetectorRef: ChangeDetectorRef,
               private _loadingService: TdLoadingService) {
     let options: ILoadingOptions = {
       name: 'test.overlay',
@@ -73,7 +57,6 @@ export class LoadingDemoComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.registerLoadingReplace();
-    this._changeDetectorRef.detectChanges();
   }
 
   registerCircleLoadingOverlay(): void {
