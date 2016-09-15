@@ -16,7 +16,6 @@ export class TdLayoutManageListComponent {
 
   private _transitioning: boolean = false;
 
-
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
