@@ -18,7 +18,6 @@ export class LoadingDemoComponent implements AfterViewInit {
   replaceRegistered: number = 0;
   determinate: boolean = false;
 
-
   loadingAttrs: Object[] = [{
     description: 'Name reference of the loading mask, used to register/resolve requests to the mask.',
     name: 'tdLoading',
