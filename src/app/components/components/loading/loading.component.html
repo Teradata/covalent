@@ -3,16 +3,27 @@
   <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Replace Loading Registered: {{replaceRegistered}} times</p>
-    <p>Circular Loading</p>
-    <div *tdLoading="'test'" loadingType="circular" layout="column" flex>
-      <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-      </md-input>
-      <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-      </md-input>
+    <div layout="row" layout-align="start center" flex>
+      <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
+        <md-button-toggle md-tooltip="Determinate" [value]="0"><md-icon>timer_off</md-icon></md-button-toggle>
+        <md-button-toggle md-tooltip="Indeterminate" [value]="1"><md-icon>timer</md-icon></md-button-toggle>
+      </md-button-toggle-group>
+      <span flex="5"></span>
+      <span>Loading Registered: {{replaceRegistered}} times</span>
     </div>
-    <p>Linear Loading</p>
-    <template tdLoading="test2" loadingType="linear">
+    <div *ngIf="!determinate">
+      <h3>Indeterminate Mode</h3>
+      <p>Circular Type</p>
+      <template tdLoading="test.indeterminate">
+        <div layout="column" flex>
+          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
+          </md-input>
+          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
+          </md-input>
+        </div>
+      </template>
+      <p>Linear Type</p>
+      <template tdLoading="test2.indeterminate" loadingType="linear">
       <div layout="column" flex>
         <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
         </md-input>
@@ -20,13 +31,35 @@
         </md-input>
       </div>
     </template>
+    </div>
+    <div *ngIf="determinate">
+      <h3>Determinate Mode</h3>
+      <p>Circular Type</p>
+      <template tdLoading="test.determinate" loadingMode="determinate">
+        <div layout="column" flex>
+          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
+          </md-input>
+          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
+          </md-input>
+        </div>
+      </template>
+      <p>Linear Type</p>
+      <template tdLoading="test2.determinate" loadingType="linear" loadingMode="determinate">
+        <div layout="column" flex>
+          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
+          </md-input>
+          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
+          </md-input>
+        </div>
+      </template>
+    </div>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="registerCircleLoadingOverlay()">3 Second Circle Loading Overlay</button>
-    <button md-button color="primary" (click)="registerLinearLoadingOverlay()">3 Second Linear Loading Overlay</button>
-    <button md-button color="primary" (click)="registerLoadingReplace()">Register Loading Replace</button>
-    <button md-button color="primary" (click)="resolveLoadingReplace()">Resolve Loading Replace</button>
+    <button md-button color="primary" (click)="registerCircleLoadingMain()">3 Second Circle Loading Main</button>
+    <button md-button color="primary" (click)="registerLinearLoadingMain()">3 Second Linear Loading Main</button>
+    <button md-button color="primary" (click)="registerLoadingDirective()">Register Loading Directive</button>
+    <button md-button color="primary" (click)="resolveLoadingDirective()">Resolve Loading Directive</button>
   </md-card-actions>
 </md-card>
 <md-card>
@@ -62,7 +95,7 @@
     <p>HTML <![CDATA[<template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
-        <template tdLoading="stringName" loadingType="circular|linear">
+        <template tdLoading="stringName" loadingType="circular|linear" loadingMode="ciruclar|linear">
           ...
         </template>
       ]]>
@@ -84,6 +117,10 @@
 
           resolveLoading(): void {
             this._loadingService.resolve('stringName');
+          }
+
+          changeValue(value: number): void { // Usage only enabled on [LoadingMode.Determinate] mode.
+            this._loadingService.setValue('stringName', value);
           }
         }
       ]]>
@@ -120,6 +157,7 @@
       interface ILoadingOptions {{'{'}}
         name: string;
         type?: LoadingType;
+        mode?: LoadingMode;
       }
     </td-highlight>
     <h3>Methods:</h3>
@@ -138,13 +176,14 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ILoadingOptions, LoadingType } from '@covalent/core';
+        import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '@covalent/core';
         ...
         export class Demo {
           constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
             let options: ILoadingOptions = {
               name: 'stringName',
               type: LoadingType.Circular,
+              mode: LoadingMode.Indeterminate,
             };
             this._loadingService.createOverlayComponent(options, viewContainerRef);
           }
