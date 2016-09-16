@@ -8,6 +8,11 @@ export enum LoadingType {
   Linear = <any>'linear'
 }
 
+export enum LoadingMode {
+  Determinate = <any>'determinate',
+  Indeterminate = <any>'indeterminate'
+}
+
 @Component({
   moduleId: module.id,
   selector: 'td-loading',
@@ -18,7 +23,14 @@ export class TdLoadingComponent {
 
   private _animationIn: Subject<any> = new Subject<any>();
   private _animationOut: Subject<any> = new Subject<any>();
-  private _overlay: boolean = false;
+  private _mode: LoadingMode = LoadingMode.Indeterminate;
+  private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
+  private _reset: boolean = true;
+
+  // Flag to reset the loader value and animation before removing it from DOM
+  get reset(): boolean {
+    return this._reset;
+  }
 
   /**
    * Flag for animation
@@ -26,33 +38,37 @@ export class TdLoadingComponent {
   animation: boolean = false;
 
   /**
-   * Flag for mode
+   * Sets mode of [TdLoadingComponent] to LoadingMode.Determinate or LoadingMode.Indeterminate
    */
-  mode: string = 'indeterminate';
+  set mode(mode: LoadingMode) {
+    this._defaultMode = mode;
+  }
+  get mode(): LoadingMode {
+    return this._mode;
+  }
+
+  /**
+   * Sets value of [TdLoadingComponent] if mode is 'LoadingMode.Determinate'
+   */
+  value: number = 0;
 
   /**
    * overlay: boolean
    * Sets if [TdLoadingComponent] is fullscreen or not.
    */
-  @Input('overlay')
-  set overlay(overlay: boolean) {
-    this._overlay = overlay;
-  }
-  get overlay(): boolean {
-    return this._overlay;
-  }
+  overlay: boolean = false;
 
   /**
    * height: number
    * Sets height of [TdLoadingComponent].
    */
-  @Input() height: number;
+  height: number;
 
   /**
    * type: LoadingType
    * Sets type of [TdLoadingComponent] rendered.
    */
-  @Input() type: LoadingType = LoadingType.Circular;
+  type: LoadingType = LoadingType.Circular;
 
   getHeight(): string {
     if (this.height) {
@@ -84,7 +100,16 @@ export class TdLoadingComponent {
   }
 
   outAnimationCompleted(): void {
-    this._animationOut.next(undefined);
+    /* little hack to reset the loader value and animation before removing it from DOM
+    * else, the loader will appear with prev value when its registered again
+    * and will do an animation going prev value to 0.
+    */
+    this._reset = false;
+    this.value = 0;
+    setTimeout(() => {
+      this._reset = true;
+      this._animationOut.next(undefined);
+    });
   }
 
   /**
@@ -92,7 +117,10 @@ export class TdLoadingComponent {
    */
   startInAnimation(): Observable<any> {
     this.animation = false;
-    this.mode = 'indeterminate';
+    /* need to switch back to the selected mode, so we have saved it in another variable
+    *  and then recover it. (issue with protractor)
+    */
+    this._mode = this._defaultMode;
     return this._animationIn.asObservable();
   }
 
@@ -104,7 +132,7 @@ export class TdLoadingComponent {
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
     * inside md-progress-circle stops and protractor doesnt timeout waiting to sync.
     */
-    this.mode = 'determinate';
+    this._mode = LoadingMode.Determinate;
     return this._animationOut.asObservable();
   }
 }

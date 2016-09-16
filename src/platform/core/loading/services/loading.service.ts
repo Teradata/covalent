@@ -4,11 +4,12 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { TdLoadingComponent, LoadingType } from '../loading.component';
+import { TdLoadingComponent, LoadingType, LoadingMode } from '../loading.component';
 
 export interface ILoadingOptions {
   name: string;
   type?: LoadingType;
+  mode?: LoadingMode;
 }
 
 interface IInternalLoadingOptions extends ILoadingOptions {
@@ -166,6 +167,26 @@ export class TdLoadingService {
   }
 
   /**
+   * params:
+   * - name: string
+   * - value: number
+   * returns: true if successful
+   * 
+   * Set value on a loading mask referenced by the name parameter.
+   * Usage only available if its mode is 'determinate'.
+   */
+  public setValue(name: string, value: number): boolean {
+    if (this._loadingSources[name]) {
+      let instance: TdLoadingComponent = this._context[name].loadingRef.instance;
+      if (instance.mode === LoadingMode.Determinate) {
+        instance.value = value;
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * Creates a generic [TdLoadingComponent] and its context. 
    * Returns a promise that resolves to a [ILoadingRef] with the created [ComponentRef] and its referenced [Observable].
    */
@@ -200,6 +221,9 @@ export class TdLoadingService {
     }
     if (options.height !== undefined) {
       instance.height = options.height;
+    }
+    if (options.mode !== undefined) {
+      instance.mode = options.mode;
     }
   }
 
