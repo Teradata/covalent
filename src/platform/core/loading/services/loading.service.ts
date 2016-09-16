@@ -177,7 +177,7 @@ export class TdLoadingService {
     if (!this._context[name] || options.overlay) {
       this._context[name] = {};
     } else {
-      throw 'Name duplication: Loading Component name conflict.';
+      throw `Name duplication: Loading  Component name conflict with ${name}.`;
     }
     this._context[name].loadingRef = this._componentFactoryResolver
     .resolveComponentFactory(TdLoadingComponent).create(this._injector);
