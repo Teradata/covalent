@@ -173,12 +173,12 @@ export class TdLoadingService {
    * returns: true if successful
    * 
    * Set value on a loading mask referenced by the name parameter.
-   * Usage only available if its mode is 'determinate'.
+   * Usage only available if its mode is 'determinate' and if loading is showing.
    */
   public setValue(name: string, value: number): boolean {
     if (this._loadingSources[name]) {
       let instance: TdLoadingComponent = this._context[name].loadingRef.instance;
-      if (instance.mode === LoadingMode.Determinate) {
+      if (instance.mode === LoadingMode.Determinate && !instance.animation) {
         instance.value = value;
         return true;
       }
