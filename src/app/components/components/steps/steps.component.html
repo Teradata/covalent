@@ -32,6 +32,21 @@
         </td-step-summary>
       </td-step>
     </td-steps>
+    <h3>Standalone Step</h3>
+    <td-step label="Standalone Step" sublabel="Does not require a <td-steps> wrapper to render." [disabled]="disabled">
+      STEP CONTENT GOES HERE  
+      <td-step-actions>
+        <button md-raised-button color="primary">Accept</button>
+        <button md-button>Cancel</button>
+      </td-step-actions>
+    </td-step>
+    <td-step label="Standalone Complete Step" sublabel="It also did not require a <td-steps> wrapper to render." state="complete" [disabled]="disabled">
+      STEP CONTENT GOES HERE  
+      <td-step-actions>
+        <button md-raised-button color="primary">Accept</button>
+        <button md-button>Cancel</button>
+      </td-step-actions>
+    </td-step>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
