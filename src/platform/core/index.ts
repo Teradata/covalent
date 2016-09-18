@@ -130,17 +130,19 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
+import { TdStepHeaderComponent } from './steps/step-header.component';
 import { TdStepComponent, TdStepActionsComponent, TdStepSummaryComponent } from './steps/step.component';
 
 export const TD_STEPS_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
+  TdStepHeaderComponent,
   TdStepActionsComponent,
   TdStepSummaryComponent,
 ];
 
-export { TdStepComponent, StepState } from './steps/step.component';
-export { TdStepsComponent, IStepChangeEvent } from './steps/steps.component';
+export { TdStepComponent, StepState  } from './steps/step.component';
+export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.component';
 
 // Loading
 import { TdLoadingService } from './loading/services/loading.service';

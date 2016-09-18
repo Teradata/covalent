@@ -10,6 +10,11 @@ export interface IStepChangeEvent {
   prevStep: number;
 }
 
+export enum StepMode {
+  Vertical = <any>'vertical',
+  Horizontal = <any>'horizontal'
+}
+
 @Component({
   moduleId: module.id,
   selector: 'td-steps',
@@ -21,7 +26,31 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   private _prevStep: number = 0;
   private _subcriptions: Subscription[] = [];
   private _multiple: boolean = false;
+  private _mode: StepMode = StepMode.Vertical;
   @ContentChildren(TdStepComponent) private _steps: QueryList<TdStepComponent>;
+
+  get steps(): TdStepComponent[] {
+    return this._steps.toArray();
+  }
+
+  /**
+   * mode?: StepMode or ["vertical" | "horizontal"]
+   * Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]
+   */
+  @Input('mode')
+  set mode(mode: StepMode) {
+    switch (mode) {
+      case StepMode.Horizontal:
+        this._mode = StepMode.Horizontal;
+        break;
+      default:
+        this._mode = StepMode.Vertical;
+    }
+    this._changeMode();
+  }
+  get mode(): StepMode {
+    return this._mode;
+  }
 
   /**
    * multiple?: boolean
@@ -47,6 +76,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
     let stepCount: number = 0;
     this._steps.toArray().forEach((step: TdStepComponent) => {
       step.number = ++stepCount;
+      step.mode = this._mode;
       let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
         this._onStepSelection(step.number);
       });
@@ -61,6 +91,31 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
     this._subcriptions.forEach((subs: Subscription) => {
       subs.unsubscribe();
     });
+  }
+
+  /**
+   * Returns 'true' if [mode] equals to [StepMode.Horizontal | 'horizontal'], else 'false'.
+   */
+  isHorizontal(): boolean {
+    return this._mode === StepMode.Horizontal;
+  }
+
+  /**
+   * Returns 'true' if [mode] equals to [StepMode.Vertical | 'vertical'], else 'false'.
+   */
+  isVertical(): boolean {
+    return this._mode === StepMode.Vertical;
+  }
+
+  /**
+   * Changes the mode on [TdStepComponent] children so their layout its rearranged.
+   */
+  private _changeMode(): void {
+    if (this._steps) {
+      this._steps.toArray().forEach((step: TdStepComponent) => {
+        step.mode = this._mode;
+      });
+    }
   }
 
   /**

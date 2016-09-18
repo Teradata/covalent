@@ -1,45 +1,25 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
-import { StepMode } from './steps.component';
-
-export enum StepState {
-  None = <any>'none',
-  Required = <any>'required',
-  Complete = <any>'complete'
-}
+import { StepState } from './step.component';
 
 @Component({
   moduleId: module.id,
-  selector: 'td-step-actions',
-  template: '<ng-content></ng-content>',
+  selector: 'td-step-header',
+  styleUrls: [ 'step-header.component.css' ],
+  templateUrl: 'step-header.component.html',
 })
-export class TdStepActionsComponent {}
-
-@Component({
-  moduleId: module.id,
-  selector: 'td-step-summary',
-  template: '<ng-content></ng-content>',
-})
-export class TdStepSummaryComponent {}
-
-@Component({
-  moduleId: module.id,
-  selector: 'td-step',
-  styleUrls: [ 'step.component.css' ],
-  templateUrl: 'step.component.html',
-})
-export class TdStepComponent {
+export class TdStepHeaderComponent {
 
   private _number: number;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
-  private _mode: StepMode = StepMode.Vertical;
 
   /**
-   * Number assigned by [TdStepsComponent] parent element.
+   * Number assigned to [TdStepHeaderComponent].
    */
+  @Input('number')
   set number(num: number) {
     if (this._number > 0) {
       return;
@@ -51,28 +31,21 @@ export class TdStepComponent {
   }
 
   /**
-   * Mode assigned by [TdStepsComponent] parent element.
-   */
-  set mode(mode: StepMode) {
-    this._mode = mode;
-  }
-
-  /**
    * label?: string
-   * Sets label of [TdStepComponent] header.
+   * Sets label of [TdStepHeaderComponent].
    * Defaults to 'Step #'
    */
   @Input('label') label: string;
 
   /**
    * sublabel?: string
-   * Sets sublabel of [TdStepComponent] header.
+   * Sets sublabel of [TdStepHeaderComponent].
    */
   @Input('sublabel') sublabel: string;
 
   /**
    * active?: boolean
-   * Toggles [TdStepComponent] between active/deactive.
+   * Toggles [TdStepHeaderComponent] between active/deactive.
    */
   @Input('active')
   set active(active: boolean) {
@@ -84,7 +57,7 @@ export class TdStepComponent {
 
   /**
    * disabled?: boolean
-   * Disables icon and header, blocks click event and sets [TdStepComponent] to deactive if 'true'.
+   * Disables icon and header, blocks click event and sets [TdStepHeaderComponent] to deactive if 'true'.
    */
   @Input('disabled')
   set disabled(disabled: boolean) {
@@ -100,11 +73,11 @@ export class TdStepComponent {
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
-   * Sets state of [TdStepComponent] depending on value.
+   * Sets state of [TdStepHeaderComponent] depending on value.
    * Defaults to [StepState.None | 'none'].
    */
   @Input('state')
-  set state(state: StepState) {
+  set state(state: any) {
     switch (state) {
       case StepState.Complete:
         this._state = StepState.Complete;
@@ -117,44 +90,25 @@ export class TdStepComponent {
         break;
     }
   };
-  get state(): StepState {
-    return this._state;
-  }
 
   /**
    * activated?: function
-   * Event emitted when [TdStepComponent] is activated.
+   * Event emitted when [TdStepHeaderComponent] is activated.
    */
   @Output('activated') onActivated: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * deactivated?: function
-   * Event emitted when [TdStepComponent] is deactivated.
+   * Event emitted when [TdStepHeaderComponent] is deactivated.
    */
   @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
 
   /**
-   * Toggle active state of [TdStepComponent]
+   * Toggle active state of [TdStepHeaderComponent]
    * retuns 'true' if successful, else 'false'.
    */
   toggle(): boolean {
     return this._setActive(!this._active);
-  }
-
-  /**
-   * Opens [TdStepComponent]
-   * retuns 'true' if successful, else 'false'.
-   */
-  open(): boolean {
-    return this._setActive(true);
-  }
-
-  /**
-   * Closes [TdStepComponent]
-   * retuns 'true' if successful, else 'false'.
-   */
-  close(): boolean {
-    return this._setActive(false);
   }
 
   /**
@@ -165,18 +119,11 @@ export class TdStepComponent {
   };
 
   /**
-   * Returns 'true' if [mode] equals to [StepMode.Horizontal | 'horizontal'], else 'false'.
+   * Returns 'true' if [state] equals to [StepState.Required | 'required'], else 'false'.
    */
-  isHorizontal(): boolean {
-    return this._mode === StepMode.Horizontal;
-  }
-
-  /**
-   * Returns 'true' if [mode] equals to [StepMode.Vertical | 'vertical'], else 'false'.
-   */
-  isVertical(): boolean {
-    return this._mode === StepMode.Vertical;
-  }
+  isRequired(): boolean {
+    return this._state === StepState.Required;
+  };
 
   /**
    * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated] 

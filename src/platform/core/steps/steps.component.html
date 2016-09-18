@@ -1,3 +1,16 @@
-<div class="td-steps">
-  <ng-content></ng-content>
+<div *ngIf="isHorizontal()" class="td-steps-header" layout="row">
+  <template let-step let-last="last" ngFor [ngForOf]="steps">
+    <td-step-header [number]="step.number" 
+                    [label]="step.label" 
+                    [sublabel]="mode === 'vertical' ? step.sublabel : step.sublabel | truncate:30" 
+                    [active]="step.active" 
+                    [disabled]="step.disabled" 
+                    [state]="step.state"
+                    (activated)="step.open()"
+                    (deactivated)="step.close()"
+                    [md-tooltip]="step.sublabel">
+    </td-step-header>
+    <span *ngIf="!last" class="td-horizontal-line" flex></span>
+  </template>
 </div>
+<ng-content></ng-content>
