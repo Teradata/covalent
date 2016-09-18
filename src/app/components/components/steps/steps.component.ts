@@ -19,6 +19,10 @@ export class StepsDemoComponent {
     description: 'Defines if there can be one or multiple [TdStepComponent] elements active at the same time.',
     name: 'multiple?',
     type: 'boolean',
+  }, {
+    description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
+    name: 'mode?',
+    type: 'StepMode or ["vertical" | "horizontal"]',
   }];
 
   stepAttrs: Object[] = [{
@@ -66,6 +70,7 @@ export class StepsDemoComponent {
     type: 'function()',
   }];
 
+  mode: number = 0;
   stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;

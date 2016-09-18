@@ -3,9 +3,14 @@
   <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    <md-button-toggle-group name="mode" [(ngModel)]="mode">
+      <md-button-toggle md-tooltip="Vertical" [value]="0"><md-icon>swap_vert</md-icon></md-button-toggle>
+      <md-button-toggle md-tooltip="Horizontal" [value]="1"><md-icon>swap_horiz</md-icon></md-button-toggle>
+    </md-button-toggle-group>
     <p>Change Event: {{stepChangeMsg}}</p>
     <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
-    <td-steps (stepChange)="stepChange($event)">
+    <h3>{{mode ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
+    <td-steps (stepChange)="stepChange($event)" [mode]="mode ? 'horizontal' : 'vertical'">
       <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
         STEP CONTENT GOES HERE
       </td-step>
@@ -56,7 +61,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-steps (stepChange)="change($event)" multiple>
+        <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'" multiple>
           <td-step>
             ...
           </td-step>
