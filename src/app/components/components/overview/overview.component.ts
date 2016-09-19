@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'components-overview',
-  styleUrls: ['overview.component.css'],
-  templateUrl: 'overview.component.html',
+  styleUrls: ['app/components/components/overview/overview.component.scss'],
+  templateUrl: 'app/components/components/overview/overview.component.html',
 })
 export class ComponentsOverviewComponent {
   items: Object[] = [{

@@ -8,11 +8,10 @@ import { MdSidenav } from '@angular2-material/sidenav';
 import { TdLayoutService } from './services/layout.service';
 
 @Component({
-  moduleId: module.id,
   providers: [ TdLayoutService ],
   selector: 'td-layout',
-  styleUrls: [ 'layout.component.css' ],
-  templateUrl: 'layout.component.html',
+  styleUrls: [ 'platform/core/layout/layout.component.scss' ],
+  templateUrl: 'platform/core/layout/layout.component.html',
 })
 export class TdLayoutComponent implements OnDestroy, AfterViewInit {
 

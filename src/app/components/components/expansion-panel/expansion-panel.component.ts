@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'expansion-panel-demo',
-  styleUrls: ['expansion-panel.component.css'],
-  templateUrl: 'expansion-panel.component.html',
+  styleUrls: ['app/components/components/expansion-panel/expansion-panel.component.scss'],
+  templateUrl: 'app/components/components/expansion-panel/expansion-panel.component.html',
 })
 export class ExpansionPanelDemoComponent {
 
@@ -21,7 +20,7 @@ export class ExpansionPanelDemoComponent {
     name: 'expand?',
     type: 'boolean',
   }, {
-    description: `Hides icon and disables header, blocks click event and sets [TdExpansionPanelComponent] 
+    description: `Hides icon and disables header, blocks click event and sets [TdExpansionPanelComponent]
                   to collapse if "true".`,
     name: 'disabled?',
     type: 'boolean',

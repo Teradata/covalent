@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'utility-styles',
-  templateUrl: 'utility-styles.component.html',
-  styleUrls: ['utility-styles.component.css'],
+  templateUrl: 'app/components/style-guide/utility-styles/utility-styles.component.html',
+  styleUrls: ['app/components/style-guide/utility-styles/utility-styles.component.scss'],
 })
 export class UtilityStylesComponent {
 

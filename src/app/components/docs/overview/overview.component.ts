@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-overview',
-  styleUrls: ['overview.component.css'],
-  templateUrl: 'overview.component.html',
+  styleUrls: ['app/components/docs/overview/overview.component.scss'],
+  templateUrl: 'app/components/docs/overview/overview.component.html',
 })
 export class DocsOverviewComponent {
 

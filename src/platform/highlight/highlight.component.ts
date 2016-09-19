@@ -4,10 +4,10 @@ import 'highlight.js/lib';
 declare var hljs: any;
 
 @Component({
-  moduleId: module.id,
+
   selector: 'td-highlight',
-  styleUrls: ['highlight.component.css'],
-  templateUrl: 'highlight.component.html',
+  styleUrls: ['platform/highlight/highlight.component.scss'],
+  templateUrl: 'platform/highlight/highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {
 

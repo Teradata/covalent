@@ -3,10 +3,10 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 declare var showdown: any;
 
 @Component({
-  moduleId: module.id,
+
   selector: 'td-markdown',
-  styleUrls: ['markdown.component.css'],
-  templateUrl: 'markdown.component.html',
+  styleUrls: ['platform/markdown/markdown.component.scss'],
+  templateUrl: 'platform/markdown/markdown.component.html',
 })
 export class TdMarkdownComponent implements AfterViewInit {
 

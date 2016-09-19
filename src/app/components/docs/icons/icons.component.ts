@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-icons',
-  styleUrls: ['icons.component.css'],
-  templateUrl: 'icons.component.html',
+  styleUrls: ['app/components/docs/icons/icons.component.scss'],
+  templateUrl: 'app/components/docs/icons/icons.component.html',
 })
 export class IconsComponent {
 

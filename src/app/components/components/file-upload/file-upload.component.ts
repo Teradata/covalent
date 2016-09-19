@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'file-upload-demo',
-  styleUrls: ['file-upload.component.css'],
-  templateUrl: 'file-upload.component.html',
+  styleUrls: ['app/components/components/file-upload/file-upload.component.scss'],
+  templateUrl: 'app/components/components/file-upload/file-upload.component.html',
 })
 export class FileUploadDemoComponent {
 
@@ -13,7 +12,7 @@ export class FileUploadDemoComponent {
     name: 'multiple?',
     type: 'boolean',
   }, {
-    description: `Sets files accepted when opening the file browser dialog. 
+    description: `Sets files accepted when opening the file browser dialog.
                   Same as "accept" attribute in <input/> element.`,
     name: 'accept?',
     type: 'string',
@@ -40,19 +39,19 @@ export class FileUploadDemoComponent {
   }];
 
   selectDirectiveAttrs: Object[] = [{
-    description: `Sets whether multiple files can be selected at once in host element, or just a single file. 
+    description: `Sets whether multiple files can be selected at once in host element, or just a single file.
                   Can also be "multiple" native attribute.`,
     name: 'multiple?',
     type: 'boolean',
   }, {
-    description: `Event emitted when a file or files are selected in host [HTMLInputElement]. 
+    description: `Event emitted when a file or files are selected in host [HTMLInputElement].
                   Emits a [FileList | File] object. Alternative to not use [(ngModel)].`,
     name: 'fileSelect?',
     type: 'function($event)',
   }];
 
   dropDirectiveAttrs: Object[] = [{
-    description: `Sets whether multiple files can be dropped at once in host element, or just a single file. 
+    description: `Sets whether multiple files can be dropped at once in host element, or just a single file.
                   Can also be "multiple" native attribute.`,
     name: 'multiple?',
     type: 'boolean',
@@ -61,14 +60,14 @@ export class FileUploadDemoComponent {
     name: 'disabled?',
     type: 'boolean',
   }, {
-    description: `Event emitted when a file or files are dropped in host element after being validated. 
+    description: `Event emitted when a file or files are dropped in host element after being validated.
                   Emits a [FileList | File] object.`,
     name: 'fileDrop?',
     type: 'function($event)',
   }];
 
   uploadServiceMethods: Object[] = [{
-    description: `Uses underlying [XMLHttpRequest] to upload a file to a url. 
+    description: `Uses underlying [XMLHttpRequest] to upload a file to a url.
                   Will be depricated when angular2 fixes [Http] to allow [FormData] as body.`,
     name: 'upload',
     type: 'function(IUploadOptions)',
