@@ -20,24 +20,6 @@
                      barColumns="sales">
       </td-chart-bar>
     </td-charts>
-    <md-divider></md-divider>
-    <md-card-title>Single/Multi Line Chart</md-card-title>
-    <td-charts chartTitle="Temperature Trend"
-                bottomAxisTitle="Day Offset"
-                leftAxisTitle="Temperature"
-                grid='true'
-                ticks='true'
-                [shadowDepth]="['125%', 2, 0, 2]"
-                shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="1">
-      <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
-                   contentType="tsv"
-                   bottomAxis="col1"
-                   [lineColumns]="['col2', 'col3','col4']"
-                   [lineTitles]="['New York','San Francisco', 'Austin']"
-                   [colors]="['#3366cc', '#dc3912', '#ff9900']">
-      </td-chart-line>
-    </td-charts>
   </md-card-content>
 </md-card>
 <md-card>

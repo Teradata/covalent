@@ -32,23 +32,9 @@ export class TdChartLineComponent implements AfterViewInit {
   private _leftAxisTitle: string;
 
   @ViewChild('linechart') content: ElementRef;
-
-  /**
-   * dataSrc?: string.
-   */
   @Input('dataSrc') dataSrc: string = '';
-
-  /**
-   * contentType?: string.
-   * Content Type of the Chart
-   */
   @Input('contentType') contentType: string = '';
-
-  /**
-   * bottomAxis?: string.
-   */
   @Input('bottomAxis') bottomAxis: string = '';
-
   @Input('lineColumns')
   set lineColumns(lineColumns: string[]) {
     this._lineColumns = lineColumns;
@@ -123,14 +109,18 @@ export class TdChartLineComponent implements AfterViewInit {
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
 
-    let svg: any = d3.select('.linechart')
+    let svg: any = d3.select('.chart-svg')
+      .append('g')
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+
+    /*let svg: any = d3.select('.linechart')
       .classed('svg-container', true)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
       .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
       .classed('svg-content-responsive', true)
       .append('g')
-      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');*/
 
     let defs: any = svg.append('defs');
 

@@ -28,30 +28,13 @@ export class TdChartBarComponent implements AfterViewInit {
   private _fillOpacity: number = 0;
   private _leftAxisTitle: string;
 
-  /*
-  * Choose _mdBarColorPalette in case no barColors are provided by user for generating color palette
-  */
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
   @ViewChild('barchart') content: ElementRef;
-
-  /**
-   * dataSrc?: string.
-   */
   @Input('dataSrc') dataSrc: string = '';
-
-  /**
-   * contentType?: string.
-   * Content Type of the Chart
-   */
   @Input('contentType') contentType: string = '';
-
-  /**
-   * bottomAxis?: string.
-   */
   @Input('bottomAxis') bottomAxis: string = '';
-
   @Input('barColumns')
   set barColumns(barColumns: string) {
     this._barColumns = barColumns;
@@ -106,21 +89,24 @@ export class TdChartBarComponent implements AfterViewInit {
 
     let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
 
-    // set the ranges
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
     let y: any = d3.scaleLinear().range([this._height, 0]);
 
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
 
-    let svg: any = d3.select('.barchart')
+    let svg: any = d3.select('.chart-svg')
+      .append('g')
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+
+    /*let svg: any = d3.select('.charts')
       .classed('svg-container', true)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
       .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
       .classed('svg-content-responsive', true)
       .append('g')
-      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');*/
 
     let defs: any = svg.append('defs');
 
@@ -139,25 +125,19 @@ export class TdChartBarComponent implements AfterViewInit {
       .attr('dy', this._shadowDepth[3])
       .attr('result', 'offsetBlur');
 
-    // feFlood flood-color is the drop-shadow color
     filter.append('feFlood')
       .attr('flood-color', this._shadowColor);
 
-    // this is needed to apply the feFlood
     filter.append('feComposite')
       .attr('in2', 'offsetBlur')
       .attr('operator', 'in');
 
-    // overlay original SourceGraphic over translated blurred opacity by using
-    // feMerge filter. Order of specifying inputs is important!
     let feMerge: any = filter.append('feMerge');
 
-    // NOTE: we need the empty feMergeNode to apply the feComposite & feFlood
     feMerge.append('feMergeNode');
     feMerge.append('feMergeNode')
       .attr('in', 'SourceGraphic');
 
-    // feComponentTransfer linear slope adjusts the opacity of the ENTIRE SVG 
     let feComponentTransfer: any = filter.append('feComponentTransfer');
     feComponentTransfer.append('feFuncA')
       .attr('type', 'linear')
@@ -195,7 +175,6 @@ export class TdChartBarComponent implements AfterViewInit {
         })
         .style('filter', 'url(#drop-shadow)');
 
-      // add the X gridlines
       svg.append('g')
         .attr('class', this._grid)
         .attr('transform', 'translate(0,' + this._height + ')')
@@ -204,7 +183,6 @@ export class TdChartBarComponent implements AfterViewInit {
              .tickFormat('')
         );
 
-      // add the Y gridlines
       svg.append('g')
         .attr('class', this._grid)
         .call(d3.axisLeft(y)
