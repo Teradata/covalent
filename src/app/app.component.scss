@@ -55,9 +55,17 @@ $md-warn: #C62828;
     .md-input-placeholder.md-focused {
         color: $md-primary !important;
     }
-    .md-progress-bar-fill::after,
+    .md-progress-bar-fill::after {
+        background-color: $md-primary !important;
+    }
     .md-input-underline .md-input-ripple {
         background-color: $md-primary !important;
+        &.md-accent {
+            background-color: $md-accent !important;
+        }
+        &.md-warn {
+            background-color: $md-warn !important;
+        }
     }
     .md-progress-bar-buffer {
         background-color: lighten($md-primary, 40%) !important;
@@ -83,16 +91,16 @@ $md-warn: #C62828;
     md-progress-circle,
     md-spinner {
         path {
-            stroke: $md-primary;
+            stroke: $md-primary !important;
         }
         &[color='accent'] {
             path {
-                stroke: $md-accent;
+                stroke: $md-accent !important;
             }
         }
         &[color='warn'] {
             path {
-                stroke: $md-warn;
+                stroke: $md-warn !important;
             }
         }
     }
@@ -105,10 +113,33 @@ $md-warn: #C62828;
     md-slide-toggle {
         &.md-checked {
             .md-slide-toggle-thumb {
-                background-color: $md-accent;
+                background-color: $md-accent !important;
             }
             .md-slide-toggle-bar {
-                background-color: $md-accent-opacity;
+                background-color: $md-accent-opacity !important;
+            }
+        }
+        &.md-slide-toggle-focused {
+            .md-ink-ripple {
+                background-color: $md-accent-opacity !important;
+            }
+        }
+    }
+    .md-slider-thumb::after {
+        background-color: $md-accent;
+        border-color: $md-accent;
+    }
+    .md-slider-track-fill {
+        background-color: $md-accent;
+    }
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-avatar] {
+                background-color: $md-accent;
+                color: white;
+            }
+            md-icon[md-list-icon] {
+                color: $md-accent;
             }
         }
     }

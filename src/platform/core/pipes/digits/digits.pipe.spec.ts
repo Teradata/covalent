@@ -1,9 +1,3 @@
-import {
-  describe,
-  expect,
-  beforeEach,
-  it,
-} from '@angular/core/testing';
 import { TdDigitsPipe } from './digits.pipe';
 
 describe('TdDigitsPipe', () => {

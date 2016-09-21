@@ -35,7 +35,7 @@
               <td-step [active]="true" label="Step 2: menu-items" sublabel="the sidenav menu items">
                 <md-list>
                   <md-list-item>
-                    <h3 md-line><code><![CDATA[<menu-items>]]></code></h3>
+                    <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
                     <p md-line>The menu items wrapper (will be moved to sidenav automatically)</p>
                   </md-list-item>
                   <md-divider></md-divider>
@@ -82,12 +82,12 @@
             <td-highlight lang="html">
                 <![CDATA[
                 <td-layout #layout title="Sidenav Title" logo="path/to/sidenav-logo.svg">
-                  <menu-items>
+                  <md-nav-list menu-items>
                     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
                       <md-icon>{ {item.icon} }</md-icon>
                       { {item.title} }
                     </a>
-                  </menu-items>
+                  </md-nav-list>
                   <td-layout-nav title="Toolbar Title" logo="path/to/toolbar-logo.svg">
                     <router-outlet></router-outlet>
                   </td-layout-nav>
@@ -96,25 +96,25 @@
             </td-highlight>
             <h3 class="md-title">TypeScript routes for sidenav</h3>
             <td-highlight lang="typescript">
-              export class YourComponent {
+              <![CDATA[
+                export class YourComponent {
 
-                routes: Object[] = [
-                  {
-                    title: "Home", route: "/", icon: "home"
-                  }, {
-                    title: "Documentation", route: "/docs", icon: "library_books"
-                  }, {
-                    title: "Style Guide", route: "/style-guide", icon: "color_lens"
-                  }, {
-                    title: "Design Patterns", route: "/design-patterns", icon: "burst_mode"
-                  }, {
-                    title: "Layouts", route: "/layouts", icon: "view_quilt"
-                  }, {
-                    title: "Teradata Components", route: "/components", icon: "picture_in_picture"
-                  }
-                ];
+                  routes: Object[] = [
+                    {
+                      title: "Home", route: "/", icon: "home"
+                    }, {
+                      title: "Documentation", route: "/docs", icon: "library_books"
+                    }, {
+                      title: "Style Guide", route: "/style-guide", icon: "color_lens"
+                    }, {
+                      title: "Layouts", route: "/layouts", icon: "view_quilt"
+                    }, {
+                      title: "Teradata Components", route: "/components", icon: "picture_in_picture"
+                    }
+                  ];
 
-              }
+                }
+              ]]>
             </td-highlight>
           </div>
         </div>

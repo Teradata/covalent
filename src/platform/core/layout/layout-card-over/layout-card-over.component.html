@@ -8,6 +8,6 @@
       <md-divider *ngIf="title || subtitle"></md-divider>
       <ng-content></ng-content>
     </md-card>
-    <ng-content select="after-card"></ng-content>
+    <ng-content select="[after-card]"></ng-content>
   </div>
 </div>

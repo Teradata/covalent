@@ -2,20 +2,19 @@ import { Component } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MD_SIDENAV_DIRECTIVES, MdSidenav } from '@angular2-material/sidenav';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MdSidenav } from '@angular2-material/sidenav';
 
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  directives: [ MdToolbar , MD_SIDENAV_DIRECTIVES, MD_LIST_DIRECTIVES],
   moduleId: module.id,
   selector: 'td-layout-manage-list',
   styleUrls: [ 'layout-manage-list.component.css' ],
   templateUrl: 'layout-manage-list.component.html',
 })
 export class TdLayoutManageListComponent {
+
+  private _transitioning: boolean = false;
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
@@ -36,21 +35,36 @@ export class TdLayoutManageListComponent {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): void {
-    this._sideNav.toggle();
+    if (!this._transitioning) {
+      this._transitioning = true;
+      this._sideNav.toggle().then(() => {
+        this._transitioning = false;
+      });
+    }
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
   public open(): void {
-    this._sideNav.open();
+    if (!this._transitioning) {
+      this._transitioning = true;
+      this._sideNav.open().then(() => {
+        this._transitioning = false;
+      });
+    }
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
   public close(): void {
-    this._sideNav.close();
+    if (!this._transitioning) {
+      this._transitioning = true;
+      this._sideNav.close().then(() => {
+        this._transitioning = false;
+      });
+    }
   }
 
   /**

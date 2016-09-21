@@ -88,12 +88,12 @@ md-icon {
   font-weight: normal;
 }
 .td-step-active,
-:host td-step-summary,
-:host td-step-actions {
+:host /deep/ td-step-summary,
+:host /deep/ td-step-actions {
   padding-top: $padding;
   padding-left: $padding;
   display: block;
 }
-:host td-step-actions {
+:host /deep/ td-step-actions {
   margin-bottom: $margin;
 }

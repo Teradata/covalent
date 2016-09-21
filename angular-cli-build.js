@@ -8,21 +8,23 @@ module.exports = function(defaults) {
       'systemjs/dist/system-polyfills.js',
       'systemjs/dist/system.src.js',
       'zone.js/dist/*.js',
-      'es6-shim/es6-shim.js',
-      'reflect-metadata/*.js',
+      'core-js/client/core.js',
       'rxjs/**/*.js',
+      'hammerjs/*.min.js',
       '@angular/**/*.js',
-      '@angular2-material/**/*.js',
+      '@angular2-material/**/*.+(js|css)',
       'showdown/dist/showdown.js',
+      'highlight.js/lib/**',
       'd3/build/d3.min.js',
-      'd3-scale-chromatic/build/d3-scale-chromatic.min.js'
     ],
     polyfills: [
-      'vendor/es6-shim/es6-shim.js',
-      'vendor/reflect-metadata/Reflect.js',
+      'vendor/core-js/client/core.js',
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js',
-      'vendor/showdown/dist/showdown.js'
+      'vendor/hammerjs/hammer.min.js',
+      '@angular2-material/**/*.css',
+      'vendor/showdown/dist/showdown.js',
+      'vendor/highlight.js/lib/**'
     ]
   });
 };

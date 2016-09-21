@@ -1,16 +1,17 @@
-import { RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { StyleGuideComponent } from './style-guide.component';
-import { LogoComponent } from './logo';
-import { ProductIconsComponent } from './product-icons';
-import { TypographyComponent } from './typography';
-import { IconographyComponent } from './iconography';
-import { ColorsComponent } from './colors';
-import { MaterialComponentsComponent } from './material-components';
-import { CardsComponent } from './cards';
-import { UtilityStylesComponent } from './utility-styles';
+import { LogoComponent } from './logo/logo.component';
+import { ProductIconsComponent } from './product-icons/product-icons.component';
+import { TypographyComponent } from './typography/typography.component';
+import { IconographyComponent } from './iconography/iconography.component';
+import { ColorsComponent } from './colors/colors.component';
+import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { CardsComponent } from './cards/cards.component';
+import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
+import { ResourcesComponent } from './resources/resources.component';
 
-export const styleGuideRoutes: RouterConfig = [{
+const routes: Routes = [{
   children: [{
       component: LogoComponent,
       path: '',
@@ -35,8 +36,13 @@ export const styleGuideRoutes: RouterConfig = [{
     }, {
       component: UtilityStylesComponent,
       path: 'utility-styles',
+    }, {
+      component: ResourcesComponent,
+      path: 'resources',
     },
   ],
   component: StyleGuideComponent,
   path: 'style-guide',
 }];
+
+export const styleGuideRoutes: any = RouterModule.forChild(routes);

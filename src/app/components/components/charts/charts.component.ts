@@ -1,28 +1,13 @@
 import { Component, ViewChild, OnInit} from '@angular/core';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { TdChartsComponent } from '../../../../platform/charts';
-import { TdChartBarComponent } from '../../../../platform/charts/chart-bar';
-import { TdChartLineComponent } from '../../../../platform/charts/chart-line';
-import { TdHighlightComponent } from '../../../../platform/highlight';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    TdChartsComponent,
-    TdChartBarComponent,
-    TdChartLineComponent,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  selector: 'td-charts',
+  selector: 'charts-demo',
   styleUrls: ['charts.component.css'],
   templateUrl: 'charts.component.html',
 })
-
 export class ChartsDemoComponent implements OnInit {
-
   @ViewChild(TdChartsComponent) tdChartsComponent: TdChartsComponent;
 
   colorPalette: any[];
@@ -123,5 +108,4 @@ export class ChartsDemoComponent implements OnInit {
         }
       }
     }
-
 }

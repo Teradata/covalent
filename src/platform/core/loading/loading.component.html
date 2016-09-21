@@ -9,9 +9,10 @@
      layout-padding
      flex>
     <md-progress-circle *ngIf="isCircular()" 
-                        mode="indeterminate" 
+                        [mode]="mode" 
                         color="primary" 
-                        [style.height]="getCircleDiameter()">
+                        [style.height]="getCircleDiameter()"
+                        [style.width]="getCircleDiameter()">
     </md-progress-circle>
     <md-progress-bar *ngIf="isLinear()" 
                      mode="indeterminate" 

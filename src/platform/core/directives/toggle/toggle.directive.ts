@@ -1,7 +1,4 @@
 import { Directive, ElementRef, Input, HostBinding, Renderer, AnimationPlayer } from '@angular/core';
-import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
-import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
-import { TimerWrapper } from '@angular/common/src/facade/async';
 
 @Directive({
   selector: '[tdToggle]',
@@ -16,9 +13,9 @@ export class TdToggleDirective {
   /**
    * duration?: number
    * Sets duration of toggle animation in miliseconds.
-   * Defaults to 250 ms.
+   * Defaults to 150 ms.
    */
-  @Input() duration: number = 250;
+  @Input() duration: number = 150;
 
   /**
    * tdToggle: boolean
@@ -27,7 +24,7 @@ export class TdToggleDirective {
   @Input('tdToggle')
   set state(state: boolean) {
     this._state = state;
-    TimerWrapper.clearTimeout(this._timeoutNumber);
+    clearTimeout(this._timeoutNumber);
     if (state) {
       this.hide();
     } else {
@@ -68,20 +65,26 @@ export class TdToggleDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    let keyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        height: this._element.nativeElement.scrollHeight + 'px',
-        overflow: 'hidden',
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        height: '0',
-        overflow: 'hidden',
-      }])),
-    ];
-
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
     let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');
+      .animate(this._element.nativeElement, undefined, [{
+          styles: {
+            styles: [
+              {'height': this._element.nativeElement.scrollHeight + 'px'},
+              {'overflow': 'hidden'},
+            ],
+          },
+          offset: 0,
+        }, {
+          styles: {
+            styles: [
+              {'height': 0},
+              {'overflow': 'hidden'},
+            ],
+          },
+          offset: 1,
+        },
+      ], this.duration, 0, 'ease-in');
     animation.play();
 
     /**
@@ -89,13 +92,10 @@ export class TdToggleDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g. hide event started before show event is completed.
      */
-    this._timeoutNumber = TimerWrapper.setTimeout(
-      () => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
-        this._hiddenState = this._state;
-      },
-      this.duration
-    );
+    this._timeoutNumber = setTimeout(() => {
+      this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
+      this._hiddenState = this._state;
+    }, this.duration);
   }
 
   /**
@@ -104,33 +104,46 @@ export class TdToggleDirective {
    */
   show(): void {
     this._hiddenState = this._state;
-    let startKeyFrames: AnimationKeyframe[] = [
-      new AnimationKeyframe(0, new AnimationStyles([{
-        overflow: 'hidden',
-      }])),
-      new AnimationKeyframe(1, new AnimationStyles([{
-        overflow: 'hidden',
-      }])),
-    ];
 
     this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
     let startingAnimation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, startKeyFrames, 0, 0, 'ease-in');
+      .animate(this._element.nativeElement, undefined, [{
+          styles: {
+            styles: [
+              {'overflow': 'hidden'},
+            ],
+          },
+          offset: 0,
+        }, {
+          styles: {
+            styles: [
+              {'overflow': 'hidden'},
+            ],
+          },
+          offset: 1,
+        },
+      ], 0, 0, 'ease-in');
     startingAnimation.play();
     startingAnimation.onDone(() => {
-      let keyFrames: AnimationKeyframe[] = [
-        new AnimationKeyframe(0, new AnimationStyles([{
-          height: '0',
-          overflow: 'hidden',
-        }])),
-        new AnimationKeyframe(1, new AnimationStyles([{
-          height: this._element.nativeElement.scrollHeight + 'px',
-          overflow: 'hidden',
-        }])),
-      ];
-
       let animation: AnimationPlayer = this._renderer
-        .animate(this._element.nativeElement, undefined, keyFrames, this.duration, 0, 'ease-in');
+        .animate(this._element.nativeElement, undefined, [{
+            styles: {
+              styles: [
+                {'height': 0},
+                {'overflow': 'hidden'},
+              ],
+            },
+            offset: 0,
+          }, {
+            styles: {
+              styles: [
+                {'height': this._element.nativeElement.scrollHeight + 'px'},
+                {'overflow': 'hidden'},
+              ],
+            },
+            offset: 1,
+          },
+        ], this.duration, 0, 'ease-in');
       animation.play();
 
       /**
@@ -138,12 +151,9 @@ export class TdToggleDirective {
        * before the previous one ends. The onComplete event is not executed.
        * e.g. hide event started before show event is completed.
        */
-      this._timeoutNumber = TimerWrapper.setTimeout(
-        () => {
-          this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-        },
-        this.duration
-      );
+      this._timeoutNumber = setTimeout(() => {
+        this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+      }, this.duration);
     });
   }
 }

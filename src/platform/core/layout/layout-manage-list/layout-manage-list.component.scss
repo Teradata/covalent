@@ -6,23 +6,53 @@
   position: relative;
   display: flex;
   z-index: 0;
-
+  overflow: hidden;
+}
+:host /deep/ {
   md-nav-list a[md-list-item] .md-list-item {
     font-size: 14px;
   }
-}
-.md-sidenav-left {
-    width: 257px;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    z-index: 2;
+  md-sidenav-layout {
+    & > .md-sidenav-content {
+      margin-left: 0 !important;
+    }
+  }
+  @media (max-width: 599px) {
+    md-sidenav-layout {
+      & > md-sidenav {
+        width: 100%;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    md-sidenav-layout {
+      height: 100%;
+      display: flex;
+      & > md-sidenav {
+        width: 257px;
+        transition: none;
+        display: flex;
+        position: relative;
+        height: 100%;
+        min-height: 100%;
+        flex: 0 0 auto;
+        &.md-sidenav-closed,
+        &.md-sidenav-closing {
+          visibility: visible;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      & > .md-sidenav-content {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+  }
 }
 .list {
     background-color: #fff;
     text-align: start;
 }
 .content {
-    overflow: hidden;
+     overflow: hidden;
 }

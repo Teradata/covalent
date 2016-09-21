@@ -1,20 +1,8 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TD_LAYOUT_DIRECTIVES } from '../../../platform/core';
 
 @Component({
- directives: [
-    ROUTER_DIRECTIVES,
-    MdIcon,
-    MD_LIST_DIRECTIVES,
-    TD_LAYOUT_DIRECTIVES,
-  ],
   moduleId: module.id,
-  selector: 'td-docs',
+  selector: 'app-docs',
   styleUrls: ['docs.component.css'],
   templateUrl: 'docs.component.html',
 })
@@ -55,6 +43,16 @@ export class DocsComponent {
     icon: 'photo_size_select_actual',
     route: 'icons',
     title: 'SVG Icon Sets',
+  }, {
+    description: 'Customize the SCSS color scheme',
+    icon: 'palette',
+    route: 'theme',
+    title: 'Custom Theme',
+  }, {
+    description: 'Mock data API prototyping server',
+    icon: 'wifi_tethering',
+    route: 'mock-data',
+    title: 'Mock Data Server',
   }, {
     description: 'A full suite of test tools',
     icon: 'playlist_add_check',

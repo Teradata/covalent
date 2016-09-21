@@ -5,6 +5,7 @@ module.exports = {
     packagejson: [
       'src/**/**/package.json'
     ],
+    deployed: 'deploy/platform/',
     tsfiles: [
       'src/typings.d.ts',
       '!src/main.ts',
@@ -26,6 +27,8 @@ module.exports = {
       'src/**/MaterialIcons-Regular.ttf',
       'src/**/MaterialIcons-Regular.woff',
       'src/**/MaterialIcons-Regular.woff2',
+      'src/**/**.scss',
+      '!src/app/**/**.scss',
       'src/**/**.html',
       'src/**/**.md',
       'src/**/**.js',

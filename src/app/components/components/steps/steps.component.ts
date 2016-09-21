@@ -1,22 +1,10 @@
 import { Component } from '@angular/core';
 
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-
-import { TD_STEPS_DIRECTIVES, StepState, IStepChangeEvent } from '../../../../platform/core';
-import { TdHighlightComponent } from '../../../../platform/highlight';
+import { StepState, IStepChangeEvent } from '../../../../platform/core';
 
 @Component({
-  directives: [
-    MD_CARD_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MdButton,
-    TD_STEPS_DIRECTIVES,
-    TdHighlightComponent,
-  ],
   moduleId: module.id,
-  selector: 'td-steps-demo',
+  selector: 'steps-demo',
   styleUrls: [ 'steps.component.css' ],
   templateUrl: 'steps.component.html',
 })
@@ -61,20 +49,28 @@ export class StepsDemoComponent {
     description: 'Event emitted when [TdStepComponent] is deactivated.',
     name: 'deactivated?',
     type: 'function()',
+  }, {
+    description: `Toggle active state of [TdStepComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'toggle',
+    type: 'function()',
+  }, {
+    description: `Opens [TdStepComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'open',
+    type: 'function()',
+  }, {
+    description: `Closes [TdStepComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'close',
+    type: 'function()',
   }];
 
   stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
-  activeStep1: boolean = false;
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
-
-  toggleActiveStep1(): void {
-    if (!this.disabled) {
-      this.activeStep1 = !this.activeStep1;
-    }
-  }
 
   toggleRequiredStep2(): void {
     this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);

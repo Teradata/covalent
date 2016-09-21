@@ -5,6 +5,10 @@ rm -rf ./deploy
 
 # Perform a build.
 gulp build
-
+echo "Platform compiled..."
 # Inline the css and html into the component files.
-echo "ToDo inline replace"
+gulp inline-resource-files
+echo "Files inlined..."
+# Bundle
+gulp rollup-code
+echo "Bundled..."

@@ -1,13 +1,11 @@
 import {Component, Input} from '@angular/core';
 
-import { TdChartBarComponent } from './chart-bar/chart-bar.component';
-import { TdChartLineComponent } from './chart-line/chart-line.component';
 
 @Component({
-  directives: [
+  /*directives: [
     TdChartBarComponent,
     TdChartLineComponent,
-  ],
+  ],*/
   moduleId: module.id,
   selector: 'td-charts',
   styleUrls: ['charts.component.css'],

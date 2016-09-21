@@ -1,0 +1,75 @@
+<md-card>
+  <md-card-title>Mock Data Server</md-card-title>
+  <md-card-subtitle>Prototype against a real API server with mock data</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <p><a href="https://github.com/Teradata/covalent-quickstart">Covalent Quickstart</a> includes the ultimate prototyping tool, a localhost Mock API!</p>
+     <p>With the mock API server, you can develop against realistic API service endpoints, and model the mock data closely to your production data!</p>
+     <p>Important: You'll need to open a new tab or window to run the API server if you're already running ng serve:</p>
+      <td-highlight lang="html">
+        cd mock-api/
+      </td-highlight>
+      <p>Pick your OS flavor ( .osx, .linux or .exe)</p>
+      <td-highlight lang="html">
+        ./covalent-data.osx 
+      </td-highlight>
+      <p>You should see the server running starting with:</p>
+      <td-highlight lang="html">
+        INFO[0000] ################################################################## 
+        INFO[0000] ########                                                  ######## 
+        INFO[0000] ######## Teradata Covalent Atomic Data mock API server    ######## 
+        INFO[0000] ######## Copyright 2016 by Teradata. All rights reserved. ######## 
+        INFO[0000] ######## This software is covered under the MIT license.  ######## 
+        INFO[0000] ########                                                  ######## 
+        INFO[0000] ##################################################################
+      </td-highlight>
+      <md-divider></md-divider>
+      <h3>Customizing Mock Data Schema</h3>
+      <p>You can easily modify or create new schemas for mock data in the <code>/mock-api/schemas/</code> directory.</p>
+      <p>For example to modify the mock users , edit <code>mock-api/schemas/users.yaml</code></p>
+      <td-highlight lang="html">
+        # this is a sample schema file for a user object.
+
+        ---
+        initial_entries: 10
+        randomize: false
+        displayname: _firstname_ _lastname_
+        id: _firstname_._lastname_
+        email: _firstname_._lastname_@_company_.com
+        created: _createdtimestamp_
+        last_access: _itemtimestamp_
+        site_admin: _admin_
+        ...
+      </td-highlight>
+      <h3>Modifying Mock Data</h3>
+      <p>Dynamic data is wrapped in _underscores_ that match up to text files in <code>/mock-api/datum/</code>.</p>
+      <p>For example the <code>_firstname_</code> in the yaml above just looks for <code>/mock-api/datum/firstname.txt</code>, and each value is on a single line:</p>
+      <td-highlight lang="html">
+        Aaron
+        Benjamin
+        Carl
+        Olive
+        ...
+      </td-highlight>
+      <h3>Consuming Mock Data Endpoints</h3>
+      <p>The Mock API Server generates real endpoints that can be consumed in Angular 2 services.</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+        import { Injectable } from '@angular/core';
+        import { Response } from '@angular/http';
+        import { HttpInterceptorService } from '@covalent/http';
+
+        @Injectable()
+        export class ItemsService {
+
+          private mockApiData: string = 'http://localhost:8080/items';
+          ...
+        ]]>
+      </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart">Covalent Quickstart Repo</a>
+    <a md-button color="primary" target="_blank" href="https://github.com/teradata/covalent-data">Covalent Data Repo</a>
+  </md-card-actions>
+</md-card>

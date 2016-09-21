@@ -3,22 +3,12 @@ import { Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { MD_PROGRESS_BAR_DIRECTIVES } from '@angular2-material/progress-bar';
-import { MD_PROGRESS_CIRCLE_DIRECTIVES } from '@angular2-material/progress-circle';
-
-import { TdFadeDirective } from '../directives/fade/fade.directive';
-
 export enum LoadingType {
   Circular = <any>'circular',
   Linear = <any>'linear'
 }
 
 @Component({
-  directives: [
-    MD_PROGRESS_BAR_DIRECTIVES,
-    MD_PROGRESS_CIRCLE_DIRECTIVES,
-    TdFadeDirective,
-  ],
   moduleId: module.id,
   selector: 'td-loading',
   styleUrls: [ 'loading.component.css' ],
@@ -28,18 +18,17 @@ export class TdLoadingComponent {
 
   private _animationIn: Subject<any> = new Subject<any>();
   private _animationOut: Subject<any> = new Subject<any>();
-  private _animation: boolean = true;
   private _overlay: boolean = false;
 
   /**
    * Flag for animation
    */
-  set animation(animation: boolean) {
-    this._animation = animation;
-  }
-  get animation(): boolean {
-    return this._animation;
-  }
+  animation: boolean = false;
+
+  /**
+   * Flag for mode
+   */
+  mode: string = 'indeterminate';
 
   /**
    * overlay: boolean
@@ -69,14 +58,17 @@ export class TdLoadingComponent {
     if (this.height) {
       return `${this.height}px`;
     }
-    return 'auto';
+    return '150px';
   }
 
   getCircleDiameter(): string {
     if (this.height) {
-      return `${this.height / 2}px`;
+      let diameter: number = this.height * (2 / 3);
+      if (diameter < 80) {
+        return `${diameter}px`;
+      }
     }
-    return 'auto';
+    return '80px';
   }
 
   isCircular(): boolean {
@@ -99,7 +91,8 @@ export class TdLoadingComponent {
    * Starts in animation and returns an observable for completition event.
    */
   startInAnimation(): Observable<any> {
-    this._animation = false;
+    this.animation = false;
+    this.mode = 'indeterminate';
     return this._animationIn.asObservable();
   }
 
@@ -107,7 +100,11 @@ export class TdLoadingComponent {
    * Starts out animation and returns an observable for completition event.
    */
   startOutAnimation(): Observable<any> {
-    this._animation = true;
+    this.animation = true;
+    /* need to switch back and forth from determinate/indeterminate so the setInterval()
+    * inside md-progress-circle stops and protractor doesnt timeout waiting to sync.
+    */
+    this.mode = 'determinate';
     return this._animationOut.asObservable();
   }
 }
