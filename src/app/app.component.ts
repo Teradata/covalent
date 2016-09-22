@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'docs-covalent',
-  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class DocsAppComponent {
 

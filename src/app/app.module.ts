@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { DocsAppComponent } from './app.component';
 import { ComponentsModule } from './components/components/';
+import { HomeModule } from './components/home/';
 import { DocsModule } from './components/docs/';
 import { LayoutsModule } from './components/layouts/';
 import { StyleGuideModule } from './components/style-guide/';
-import { HomeModule } from './components/home/home.module';
 import { appRoutes, appRoutingProviders } from './app.routing';
 
 import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
@@ -18,14 +18,11 @@ import { CovalentJsonFormatterModule } from '../platform/json-formatter';
 import { CovalentChipsModule } from '../platform/chips';
 
 @NgModule({
-  declarations: [
-    DocsAppComponent,
-  ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
     ComponentsModule,
-    DocsModule,
     HomeModule,
+    DocsModule,
     LayoutsModule,
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
@@ -36,11 +33,14 @@ import { CovalentChipsModule } from '../platform/chips';
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
     appRoutes,
-  ], // modules needed to run this module
+  ],
+  declarations: [
+    DocsAppComponent,
+  ],
   providers: [
     appRoutingProviders,
-  ], // additional providers needed for this module
+  ],
   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
-  bootstrap: [ DocsAppComponent ],
+  bootstrap: [DocsAppComponent],
 })
-export class AppModule {}
+export class AppModule { }
