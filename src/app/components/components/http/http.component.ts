@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'http-demo',
-  styleUrls: [ 'app/components/components/http/http.component.scss' ],
-  templateUrl: 'app/components/components/http/http.component.html',
+  styleUrls: [ 'http.component.scss' ],
+  templateUrl: 'http.component.html',
 })
 export class HttpDemoComponent {
 

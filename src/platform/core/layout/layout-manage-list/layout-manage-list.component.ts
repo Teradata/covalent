@@ -8,8 +8,8 @@ import { TdLayoutService } from '../services/layout.service';
 
 @Component({
   selector: 'td-layout-manage-list',
-  styleUrls: [ 'platform/core/layout/layout-manage-list/layout-manage-list.component.scss' ],
-  templateUrl: 'platform/core/layout/layout-manage-list/layout-manage-list.component.html',
+  styleUrls: [ 'layout-manage-list.component.scss' ],
+  templateUrl: 'layout-manage-list.component.html',
 })
 export class TdLayoutManageListComponent {
 

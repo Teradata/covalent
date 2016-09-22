@@ -12,8 +12,8 @@ export interface IStepChangeEvent {
 
 @Component({
   selector: 'td-steps',
-  styleUrls: [ 'platform/core/steps/steps.component.scss' ],
-  templateUrl: 'platform/core/steps/steps.component.html',
+  styleUrls: [ 'steps.component.scss' ],
+  templateUrl: 'steps.component.html',
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
 

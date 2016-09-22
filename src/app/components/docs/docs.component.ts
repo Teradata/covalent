@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs',
-  styleUrls: ['app/components/docs/docs.component.scss'],
-  templateUrl: 'app/components/docs/docs.component.html',
+  styleUrls: ['docs.component.scss'],
+  templateUrl: 'docs.component.html',
 })
 export class DocsComponent {
 

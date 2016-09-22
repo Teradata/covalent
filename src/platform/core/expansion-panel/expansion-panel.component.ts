@@ -9,8 +9,8 @@ export class TdExpansionPanelSummaryComponent {}
 
 @Component({
   selector: 'td-expansion-panel',
-  styleUrls: [ 'platform/core/expansion-panel/expansion-panel.component.scss' ],
-  templateUrl: 'platform/core/expansion-panel/expansion-panel.component.html',
+  styleUrls: [ 'expansion-panel.component.scss' ],
+  templateUrl: 'expansion-panel.component.html',
 })
 export class TdExpansionPanelComponent {
 

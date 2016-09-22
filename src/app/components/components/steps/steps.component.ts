@@ -4,8 +4,8 @@ import { StepState, IStepChangeEvent } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
-  styleUrls: [ 'app/components/components/steps/steps.component.scss' ],
-  templateUrl: 'app/components/components/steps/steps.component.html',
+  styleUrls: [ 'steps.component.scss' ],
+  templateUrl: 'steps.component.html',
 })
 export class StepsDemoComponent {
 

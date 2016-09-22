@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'layouts-overview',
-  styleUrls: ['app/components/layouts/overview/overview.component.scss'],
-  templateUrl: 'app/components/layouts/overview/overview.component.html',
+  styleUrls: ['overview.component.scss'],
+  templateUrl: 'overview.component.html',
 })
 export class LayoutsOverviewComponent {
 

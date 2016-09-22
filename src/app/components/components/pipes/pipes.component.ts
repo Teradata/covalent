@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pipes-demo',
-  styleUrls: [ 'app/components/components/pipes/pipes.component.scss' ],
-  templateUrl: 'app/components/components/pipes/pipes.component.html',
+  styleUrls: [ 'pipes.component.scss' ],
+  templateUrl: 'pipes.component.html',
 })
 export class PipesComponent {
 

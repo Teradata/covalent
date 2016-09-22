@@ -4,8 +4,8 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
   changeDetection: ChangeDetectionStrategy.OnPush,
 
   selector: 'td-file-upload',
-  styleUrls: ['platform/file-upload/file-upload.component.scss'],
-  templateUrl: 'platform/file-upload/file-upload.component.html',
+  styleUrls: ['file-upload.component.scss'],
+  templateUrl: 'file-upload.component.html',
 })
 export class TdFileUploadComponent {
 

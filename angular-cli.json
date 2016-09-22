@@ -20,7 +20,12 @@
         "../node_modules/@angular2-material/core/style/core.css",
         "../node_modules/@angular2-material/core/overlay/overlay.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/showdown/dist/showdown.js",
+        "../node_modules/highlight.js/lib/highlight.js",
+        "../node_modules/highlight.js/lib/index.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

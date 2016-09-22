@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'style-guide-typography',
-  styleUrls: ['app/components/style-guide/typography/typography.component.scss'],
-  templateUrl: 'app/components/style-guide/typography/typography.component.html',
+  styleUrls: ['typography.component.scss'],
+  templateUrl: 'typography.component.html',
 })
 export class TypographyComponent {
   colors: string[] = [

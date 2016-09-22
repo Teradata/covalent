@@ -22,8 +22,8 @@ export class TdStepSummaryComponent {}
 @Component({
 
   selector: 'td-step',
-  styleUrls: [ 'platform/core/steps/step.component.scss' ],
-  templateUrl: 'platform/core/steps/step.component.html',
+  styleUrls: [ 'step.component.scss' ],
+  templateUrl: 'step.component.html',
 })
 export class TdStepComponent {
 

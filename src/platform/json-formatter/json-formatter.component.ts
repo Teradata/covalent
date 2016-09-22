@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
 
   selector: 'td-json-formatter',
-  styleUrls: [ 'platform/json-formatter/json-formatter.component.scss' ],
-  templateUrl: 'platform/json-formatter/json-formatter.component.html',
+  styleUrls: [ 'json-formatter.component.scss' ],
+  templateUrl: 'json-formatter.component.html',
 })
 export class TdJsonFormatterComponent {
 

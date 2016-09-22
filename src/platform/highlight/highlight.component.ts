@@ -6,8 +6,8 @@ declare var hljs: any;
 @Component({
 
   selector: 'td-highlight',
-  styleUrls: ['platform/highlight/highlight.component.scss'],
-  templateUrl: 'platform/highlight/highlight.component.html',
+  styleUrls: ['highlight.component.scss'],
+  templateUrl: 'highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {
 

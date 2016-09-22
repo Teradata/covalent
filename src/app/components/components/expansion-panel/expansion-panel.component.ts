@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'expansion-panel-demo',
-  styleUrls: ['app/components/components/expansion-panel/expansion-panel.component.scss'],
-  templateUrl: 'app/components/components/expansion-panel/expansion-panel.component.html',
+  styleUrls: ['expansion-panel.component.scss'],
+  templateUrl: 'expansion-panel.component.html',
 })
 export class ExpansionPanelDemoComponent {
 

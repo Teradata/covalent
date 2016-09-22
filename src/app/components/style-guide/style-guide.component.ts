@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-style-guide',
-  styleUrls: ['app/components/style-guide/style-guide.component.scss'],
-  templateUrl: 'app/components/style-guide/style-guide.component.html',
+  styleUrls: ['style-guide.component.scss'],
+  templateUrl: 'style-guide.component.html',
 })
 export class StyleGuideComponent {
 

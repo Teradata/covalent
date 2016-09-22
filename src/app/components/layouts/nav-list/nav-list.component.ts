@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'layouts-nav-list',
-  styleUrls: ['app/components/layouts/nav-list/nav-list.component.scss'],
-  templateUrl: 'app/components/layouts/nav-list/nav-list.component.html',
+  styleUrls: ['nav-list.component.scss'],
+  templateUrl: 'nav-list.component.html',
 })
 export class NavListComponent {
   items: Object[] = [{
