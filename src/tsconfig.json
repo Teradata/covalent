@@ -17,8 +17,5 @@
     "types": [
       "jasmine", "hammerjs"
     ]
-  },
-  "exclude": [
-    "**/*.spec.*"
-  ]
+  }
 }
