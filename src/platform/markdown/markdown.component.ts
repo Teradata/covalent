@@ -3,7 +3,6 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 declare var showdown: any;
 
 @Component({
-
   selector: 'td-markdown',
   styleUrls: ['markdown.component.scss'],
   templateUrl: 'markdown.component.html',
