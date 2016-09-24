@@ -11,6 +11,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 install:
+  - npm i process-nextick-args util-deprecate
   - npm install
   - ./node_modules/.bin/ng build
 
