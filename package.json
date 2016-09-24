@@ -81,9 +81,7 @@
     "highlight.js": "9.6.0",
     "rxjs": "5.0.0-beta.12",
     "showdown": "1.4.2",
-    "systemjs": "0.19.31",
-    "zone.js": "0.6.21",
-    "webpack": "2.1.0-beta.22"
+    "zone.js": "0.6.21"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
@@ -121,6 +119,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "sass-loader": "^4.0.2",
     "semver": "5.2.0",
+    "ts-node": "1.2.1",
     "tslint": "^3.15.1",
     "typescript": "2.0.2"
   }
