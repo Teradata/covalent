@@ -1,11 +1,7 @@
 import {Component, Input} from '@angular/core';
-
+declare let d3: any;
 
 @Component({
-  /*directives: [
-    TdChartBarComponent,
-    TdChartLineComponent,
-  ],*/
   moduleId: module.id,
   selector: 'td-charts',
   styleUrls: ['charts.component.css'],
@@ -74,34 +70,20 @@ export class TdChartsComponent {
   private _mdBlueGrey: any[] = ['#eceff1', '#cfd8dc', '#b0bec5', '#90a4ae', '#78909c', '#607d8b', '#546e7a',
   '#455a64', '#37474f', '#263238', '#cfd8dc', '#b0bec5', '#78909c', '#455a64'];
 
-  /**
-   * chartTitle?: string.
-   * Title of the Chart
-   */
-   @Input('chartTitle') chartTitle: string = '';
-  /**
-   * bottomAxisTitle?: string.
-   */
-   @Input('bottomAxisTitle') bottomAxisTitle: string = '';
+  private _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
+  private _width: number;
+  private _height: number;
+  private _padding: number;
 
-  /**
-   * leftAxisTitle?: string.
-   */
-  @Input('leftAxisTitle') leftAxisTitle: string = '';
-
-  /**
-   * shadowColor?: string.
-   */
-  @Input('shadowColor') shadowColor: string = '';
-
-  /**
-   * fillOpacity?: number.
-   */
-  @Input('fillOpacity') fillOpacity: number = 0;
-
-  @Input('ticks') ticks: boolean;
-  @Input('grid') grid: boolean;
-  @Input('shadowDepth') shadowDepth: any[];
+  @Input() chartTitle: string = '';
+  @Input() bottomAxisTitle: string = '';
+  @Input() leftAxisTitle: string = '';
+  @Input() shadowColor: string = '';
+  @Input() fillOpacity: number = 0;
+  @Input() ticks: boolean;
+  @Input() grid: boolean;
+  @Input() shadowDepth: any[];
+  @Input() sort: boolean = false;
   colorPalette: string[];
 
   constructor() {
@@ -124,6 +106,63 @@ export class TdChartsComponent {
     this._paletteMap.set('brown', this._mdBrown);
     this._paletteMap.set('grey', this._mdGrey);
     this._paletteMap.set('blueGrey', this._mdBlueGrey);
+  }
+
+  drawContainer(className: string): void {
+    this._margin.top = 50;
+    this._width = 960 - this._margin.left - this._margin.right;
+    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._padding = 100;
+
+    let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
+    let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
+
+    let svg: any = d3.select('.' + className)
+      .classed('svg-container', true)
+      .append('svg')
+      .attr('preserveAspectRatio', 'xMinYMin meet')
+      .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
+      .classed('svg-content-responsive', true)
+      .append('g')
+      .classed(className + 'G', true)
+      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+
+    // let defs: any = d3.select('.svg-content-responsive').append('defs');
+
+    let defs: any = svg.append('defs');
+
+    let filter: any = defs.append('filter')
+      .attr('id', 'drop-shadow')
+      .attr('height', this.shadowDepth[0]);
+
+    filter.append('feGaussianBlur')
+      .attr('in', 'SourceAlpha')
+      .attr('stdDeviation', this.shadowDepth[1])
+      .attr('result', 'blur');
+
+    filter.append('feOffset')
+      .attr('in', 'blur')
+      .attr('dx', this.shadowDepth[2])
+      .attr('dy', this.shadowDepth[3])
+      .attr('result', 'offsetBlur');
+
+    filter.append('feFlood')
+      .attr('flood-color', this.shadowColor);
+
+    filter.append('feComposite')
+      .attr('in2', 'offsetBlur')
+      .attr('operator', 'in');
+
+    let feMerge: any = filter.append('feMerge');
+
+    feMerge.append('feMergeNode');
+    feMerge.append('feMergeNode')
+      .attr('in', 'SourceGraphic');
+
+    let feComponentTransfer: any = filter.append('feComponentTransfer');
+    feComponentTransfer.append('feFuncA')
+      .attr('type', 'linear')
+      .attr('slope', this.fillOpacity);
   }
 
   /**

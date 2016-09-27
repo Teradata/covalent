@@ -45,6 +45,10 @@ export class ChartsDemoComponent implements OnInit {
     description: 'Sets value as true/false for redering grid',
     name: 'grid?',
     type: 'boolean',
+  }, {
+    description: 'Sets value as true/false for sorting chart data',
+    name: 'sort?',
+    type: 'boolean',
   }];
 
   barChartAttrs: Object[] = [{

@@ -32,9 +32,9 @@ export class TdChartLineComponent implements AfterViewInit {
   private _leftAxisTitle: string;
 
   @ViewChild('linechart') content: ElementRef;
-  @Input('dataSrc') dataSrc: string = '';
-  @Input('contentType') contentType: string = '';
-  @Input('bottomAxis') bottomAxis: string = '';
+  @Input() dataSrc: string = '';
+  @Input() contentType: string = '';
+  @Input() bottomAxis: string = '';
   @Input('lineColumns')
   set lineColumns(lineColumns: string[]) {
     this._lineColumns = lineColumns;
@@ -72,12 +72,12 @@ export class TdChartLineComponent implements AfterViewInit {
       this._colorPalette = this._parentObj.colorPalette;
     }
 
-    if (this._parentObj.ticks === 'true') {
+    if (this._parentObj.ticks === true) {
       this._tickHeightSize = -this._height;
       this._tickWidthSize = -this._width;
     }
 
-    if (this._parentObj.grid === 'true') {
+    if (this._parentObj.grid === true) {
       this._grid = 'grid';
     }
 
@@ -106,62 +106,9 @@ export class TdChartLineComponent implements AfterViewInit {
       .x((d: any) => { return x(d.xValue); })
       .y((d: any) => { return y(d.yValue); });
 
-    let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
-    let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
+    this._parentObj.drawContainer('linechart');
 
-    let svg: any = d3.select('.chart-svg')
-      .append('g')
-      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
-
-    /*let svg: any = d3.select('.linechart')
-      .classed('svg-container', true)
-      .append('svg')
-      .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
-      .classed('svg-content-responsive', true)
-      .append('g')
-      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');*/
-
-    let defs: any = svg.append('defs');
-
-    let filter: any = defs.append('filter')
-      .attr('id', 'drop-shadow')
-      .attr('height', this._shadowDepth[0]);
-
-    filter.append('feGaussianBlur')
-      .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', this._shadowDepth[1])
-      .attr('result', 'blur');
-
-    filter.append('feOffset')
-      .attr('in', 'blur')
-      .attr('dx', this._shadowDepth[2])
-      .attr('dy', this._shadowDepth[3])
-      .attr('result', 'offsetBlur');
-
-    // feFlood flood-color is the drop-shadow color
-    filter.append('feFlood')
-      .attr('flood-color', this._shadowColor);
-
-    // this is needed to apply the feFlood
-    filter.append('feComposite')
-      .attr('in2', 'offsetBlur')
-      .attr('operator', 'in');
-
-    // overlay original SourceGraphic over translated blurred opacity by using
-    // feMerge filter. Order of specifying inputs is important!
-    let feMerge: any = filter.append('feMerge');
-
-    // NOTE: we need the empty feMergeNode to apply the feComposite & feFlood
-    feMerge.append('feMergeNode');
-    feMerge.append('feMergeNode')
-      .attr('in', 'SourceGraphic');
-
-    // feComponentTransfer linear slope adjusts the opacity of the ENTIRE SVG 
-    let feComponentTransfer: any = filter.append('feComponentTransfer');
-    feComponentTransfer.append('feFuncA')
-      .attr('type', 'linear')
-      .attr('slope', this._fillOpacity);
+    let svg: any = d3.select('.linechartG');
 
     enum ParseContent {
       json = d3.json,
@@ -190,7 +137,6 @@ export class TdChartLineComponent implements AfterViewInit {
         d3.max(lines, (c: any) => { return d3.max(c.values, (d: any) => { return d.yValue; }); }),
       ]);
 
-      // add the X gridlines
       svg.append('g')
         .attr('class', this._grid)
         .attr('transform', 'translate(0,' + this._height + ')')
@@ -199,7 +145,6 @@ export class TdChartLineComponent implements AfterViewInit {
              .tickFormat('')
         );
 
-      // add the Y gridlines
       svg.append('g')
         .attr('class', this._grid)
         .call(d3.axisLeft(y)

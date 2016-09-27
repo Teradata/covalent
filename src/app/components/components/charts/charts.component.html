@@ -8,17 +8,36 @@
     <td-charts chartTitle="Sales Bar Chart"
                 bottomAxisTitle="Day Offset"
                 leftAxisTitle="Sales"
-                grid='true'
-                ticks='true'
+                [grid]="true"
+                [ticks]="true"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="1">
-      <td-chart-bar colors='colorPalette' 
+                fillOpacity="1"
+                [sort]="true">
+      <td-chart-bar colors="colorPalette"
                      dataSrc="platform/charts/chart-bar/data.csv"
                      contentType="csv"
                      bottomAxis="salesperson"
                      barColumns="sales">
       </td-chart-bar>
+    </td-charts>
+  <md-divider></md-divider>
+    <md-card-title>Single/Multi Line Chart</md-card-title>
+    <td-charts chartTitle="Temperature Trend"
+                bottomAxisTitle="Day Offset"
+                leftAxisTitle="Temperature"
+                [grid]="true"
+                [ticks]="true"
+                [shadowDepth]="['125%', 2, 0, 2]"
+                shadowColor="rgba(0, 0, 0, 0.54)"
+                fillOpacity="1">
+      <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
+                   contentType="tsv"
+                   bottomAxis="col1"
+                   [lineColumns]="['col2', 'col3','col4']"
+                   [lineTitles]="['New York','San Francisco', 'Austin']"
+                   [colors]="['#3366cc', '#dc3912', '#ff9900']">
+      </td-chart-line>
     </td-charts>
   </md-card-content>
 </md-card>
@@ -69,8 +88,9 @@
                      shadowColor="rgba(0, 0, 0, 0.54)"
                      fillOpacity="1"
                      chartTitle="Sales Bar Chart"
-                     [ticks]='ticksFlag'
-                     [grid]='gridFlag'>
+                     ticks='true'
+                     grid='true'
+                     sort='true'>
           <td-chart-bar>
             ...
           </td-chart-bar>
@@ -172,17 +192,16 @@
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
     <h3>Example:</h3>
     <p>HTML</p>
+
     <td-highlight lang="html">
       <![CDATA[
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
-                   contentType="tsv"
-                   bottomAxis="col1"
-                   [lineColumns]="['col2', 'col3','col4']"
-                   [lineTitles]="['New York','San Francisco', 'Austin']"
-                   [lineColors]="['#3366cc', '#dc3912', '#ff9900']">
+                     contentType="tsv"
+                     bottomAxis="col1">
       </td-chart-line>
          ]]>
     </td-highlight>
+
     <p>Data Sample</p>
 
     <td-highlight lang="html">

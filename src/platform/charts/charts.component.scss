@@ -13,19 +13,9 @@ $md-primary-opacity: rgba(245, 124, 0, 0.12);
 $md-accent: #0288D1;
 $md-accent-opacity: rgba(2, 136, 209, 0.12);
 
-:host {
+:host /deep/ {
   text {
     fill: $black-secondary;
-  }
-  .header {
-    border-radius: 2px 2px 0px 0px;
-    color: $black-tertiary;
-    margin-top: 50px;
-    margin-left: 200px;
-    padding-top: 20px;
-    width: 960px;
-    height: 40px;
-    text-align: center;
   }
   .svg-container {
     display: inline-block;

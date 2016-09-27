@@ -1,7 +1,7 @@
 $black-tertiary: rgba(0, 0, 0, 0.38);
 $md-accent: #0288D1;
 
-:host {
+:host /deep/ {
   .axis {
   font-size: 10px;
     path,
