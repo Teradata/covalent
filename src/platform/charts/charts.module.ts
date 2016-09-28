@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TdChartsComponent } from './charts.component';
 import { TdChartBarComponent } from './chart-bar/chart-bar.component';
 import { TdChartLineComponent } from './chart-line/chart-line.component';
+import { TdChartAreaComponent } from './chart-area/chart-area.component';
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import { TdChartLineComponent } from './chart-line/chart-line.component';
     TdChartsComponent,
     TdChartBarComponent,
     TdChartLineComponent,
+    TdChartAreaComponent,
   ],
   exports: [
     TdChartsComponent,
     TdChartBarComponent,
     TdChartLineComponent,
+    TdChartAreaComponent,
   ],
 })
 export class CovalentChartsModule {

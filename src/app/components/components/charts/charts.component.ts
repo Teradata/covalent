@@ -99,6 +99,28 @@ export class ChartsDemoComponent implements OnInit {
     type: 'string',
   }];
 
+  areaChartAttrs: Object[] = [{
+    description: 'Sets data source for the Bar Chart',
+    name: 'dataSrc?',
+    type: 'string',
+  }, {
+    description: 'Sets content type of the data source',
+    name: 'contentType?',
+    type: 'string',
+  }, {
+    description: 'Sets the name for bottom axis; should match with the column name defined in data source',
+    name: 'bottomAxis?',
+    type: 'string',
+  }, {
+    description: 'Sets the name for single/multi lines; should match with the columns names defined in data source',
+    name: 'areaColumns?',
+    type: 'array[]',
+  }, {
+    description: 'Sets the color for area chart and sroke;',
+    name: 'colors?',
+    type: 'string',
+  }];
+
   /**
    * Generate Color Palette based on user input colors
    */

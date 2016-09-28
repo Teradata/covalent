@@ -21,7 +21,7 @@
                      barColumns="sales">
       </td-chart-bar>
     </td-charts>
-  <md-divider></md-divider>
+    <md-divider></md-divider>
     <md-card-title>Single/Multi Line Chart</md-card-title>
     <td-charts chartTitle="Temperature Trend"
                 bottomAxisTitle="Day Offset"
@@ -38,6 +38,24 @@
                    [lineTitles]="['New York','San Francisco', 'Austin']"
                    [colors]="['#3366cc', '#dc3912', '#ff9900']">
       </td-chart-line>
+    </td-charts>
+    <md-divider></md-divider>
+    <md-card-title>Area Chart</md-card-title>
+    <td-charts chartTitle="Area Chart"
+                bottomAxisTitle="X"
+                leftAxisTitle="Numbers"
+                [grid]="true"
+                [ticks]="true"
+                [shadowDepth]="['125%', 2, 0, 2]"
+                shadowColor="rgba(0, 0, 0, 0.54)"
+                fillOpacity="1"
+                [sort]="true">
+      <td-chart-area [colors]="['#03a9f4', '#0277bd']"
+                     dataSrc="platform/charts/chart-area/data.json"
+                     contentType="json"
+                     bottomAxis="x"
+                     areaColumns="y">
+      </td-chart-area>
     </td-charts>
   </md-card-content>
 </md-card>
@@ -94,6 +112,8 @@
           <td-chart-bar>
             ...
           </td-chart-bar>
+        </td-charts>
+        <td-charts>
           <td-chart-line>
             ...
           </td-chart-line>
@@ -210,6 +230,61 @@
       1,63.4,62.7,72.2
       2,58.0,59.9,67.7
       3,53.3,59.1,69.4
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>
+<md-card>
+  <md-card-title>TdChartAreaComponent</md-card-title>
+  <md-card-subtitle>Use this component to draw Area Chart</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-chart-area>]]></code></h2>
+    <p>Use <code><![CDATA[<td-chart-area>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to draw an area chart</p>
+    <h3>Properties:</h3>
+    <p>This component has {{areaChartAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="areaChartAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-chart-area [colors]="['#03a9f4', '#0277bd']"
+                      dataSrc="platform/charts/chart-area/data.json"
+                      contentType="json"
+                      bottomAxis="x"
+                      areaColumns="y">
+        </td-chart-area>
+         ]]>
+    </td-highlight>
+
+    <p>Data Sample</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        [{
+          "x": 0,
+          "y": 250
+        }, {
+            "x": 40,
+            "y": 170
+        }, {
+            "x": 80,
+            "y": 140
+        }, {
+            "x": 120,
+            "y": 220
+        }]
       ]]>
     </td-highlight>
   </md-card-content>
