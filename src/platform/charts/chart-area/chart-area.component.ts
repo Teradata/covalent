@@ -126,6 +126,12 @@ export class TdChartAreaComponent implements AfterViewInit {
       x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
       y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
+      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
+
+      d3.select('#rectClip rect')
+      .transition().duration(3000)
+        .attr('width', this._width);
+
       svg.append('g')
         .classed('chart-area', true);
 
@@ -145,17 +151,11 @@ export class TdChartAreaComponent implements AfterViewInit {
        .attr('d', valueline)
        .attr('clip-path', 'url(#rectClip)');
 
-      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
-
       svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this._chartTitle)
         .attr('class', 'md-title');
-
-      d3.select('#rectClip rect')
-      .transition().duration(3000)
-        .attr('width', this._width);
 
     });
   }
