@@ -22,9 +22,7 @@
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
-        "../node_modules/showdown/dist/showdown.js",
-        "../node_modules/highlight.js/lib/highlight.js",
-        "../node_modules/highlight.js/lib/index.js"
+        "../node_modules/showdown/dist/showdown.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
