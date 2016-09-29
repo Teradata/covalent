@@ -16,8 +16,8 @@ export class TdChartLineComponent implements AfterViewInit {
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _lineColumns: string[] = [];
-  private _lineTitles: string[] = [];
+  private _columns: string[] = [];
+  private _titles: string[] = [];
   private _colors: string[] = [];
 
   private _shadowDepth: any[] = [];
@@ -35,14 +35,14 @@ export class TdChartLineComponent implements AfterViewInit {
   @Input() dataSrc: string = '';
   @Input() contentType: string = '';
   @Input() bottomAxis: string = '';
-  @Input('lineColumns')
-  set lineColumns(lineColumns: string[]) {
-    this._lineColumns = lineColumns;
+  @Input('columns')
+  set columns(columns: string[]) {
+    this._columns = columns;
   }
 
-  @Input('lineTitles')
-  set lineTitles(lineTitles: string[]) {
-    this._lineTitles = lineTitles;
+  @Input('titles')
+  set titles(titles: string[]) {
+    this._titles = titles;
   }
 
   @Input('colors')
@@ -106,9 +106,11 @@ export class TdChartLineComponent implements AfterViewInit {
       .x((d: any) => { return x(d.xValue); })
       .y((d: any) => { return y(d.yValue); });
 
-    this._parentObj.drawContainer('linechart');
+    let containerDiv: any = (this.content.nativeElement);
 
-    let svg: any = d3.select('.linechartG');
+    this._parentObj.drawContainer(containerDiv, 'linechart');
+
+    let svg: any = d3.select(containerDiv).selectAll('.linechartG');
 
     enum ParseContent {
       json = d3.json,
@@ -121,7 +123,7 @@ export class TdChartLineComponent implements AfterViewInit {
         throw error;
       }
 
-      let lines: Object = this._lineColumns.map((id: any) => {
+      let lines: Object = this._columns.map((id: any) => {
         return {
           id: id,
           values: data.map((d: any) => {
@@ -137,37 +139,11 @@ export class TdChartLineComponent implements AfterViewInit {
         d3.max(lines, (c: any) => { return d3.max(c.values, (d: any) => { return d.yValue; }); }),
       ]);
 
-      svg.append('g')
-        .attr('class', this._grid)
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x)
-             .tickSize(this._tickHeightSize)
-             .tickFormat('')
-        );
+      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
 
-      svg.append('g')
-        .attr('class', this._grid)
-        .call(d3.axisLeft(y)
-             .tickSize(this._tickWidthSize)
-             .tickFormat('')
-        );
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-x')
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x));
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-y')
-        .call(d3.axisLeft(y))
-        .append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '0.71em')
-        .attr('fill', '#000')
-        .text(this._leftAxisTitle);
-
-      let line: any = svg.selectAll('.lineTitle')
+      let line: any = svg.append('g')
+        .classed('chart-lines', true)
+        .selectAll('.lineTitle')
         .data(lines)
         .enter().append('g')
         .attr('class', 'lineTitle');
@@ -184,7 +160,7 @@ export class TdChartLineComponent implements AfterViewInit {
         .attr('x', 3)
         .attr('dy', '0.35em')
         .style('font', '10px sans-serif')
-        .text((d: any, i: number) => { return this._lineTitles[i]; });
+        .text((d: any, i: number) => { return this._titles[i]; });
 
       svg.append('text')
         .attr('text-anchor', 'middle')

@@ -74,6 +74,9 @@ export class TdChartsComponent {
   private _width: number;
   private _height: number;
   private _padding: number;
+  private _tickHeightSize: number = 0;
+  private _tickWidthSize: number = 0;
+  private _gridClass: string;
 
   @Input() chartTitle: string = '';
   @Input() bottomAxisTitle: string = '';
@@ -108,7 +111,7 @@ export class TdChartsComponent {
     this._paletteMap.set('blueGrey', this._mdBlueGrey);
   }
 
-  drawContainer(className: string): void {
+  drawContainer(containerDiv: string, className: string): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = 500 - this._margin.top - this._margin.bottom;
@@ -117,7 +120,7 @@ export class TdChartsComponent {
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
 
-    let svg: any = d3.select('.' + className)
+    let svg: any = d3.select(containerDiv)
       .classed('svg-container', true)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
@@ -126,8 +129,6 @@ export class TdChartsComponent {
       .append('g')
       .classed(className + 'G', true)
       .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
-
-    // let defs: any = d3.select('.svg-content-responsive').append('defs');
 
     let defs: any = svg.append('defs');
 
@@ -163,6 +164,47 @@ export class TdChartsComponent {
     feComponentTransfer.append('feFuncA')
       .attr('type', 'linear')
       .attr('slope', this.fillOpacity);
+  }
+
+  drawGridsAndTicks(svgElem: any, x: any, y: any, leftAxisTitle: string): void {
+    if (this.ticks === true) {
+      this._tickHeightSize = -this._height;
+      this._tickWidthSize = -this._width;
+    }
+
+    if (this.grid === true) {
+      this._gridClass = 'grid';
+    }
+
+    svgElem.append('g')
+        .attr('class', this._gridClass)
+        .attr('transform', 'translate(0,' + this._height + ')')
+        .call(d3.axisBottom(x)
+             .tickSize(this._tickHeightSize)
+             .tickFormat('')
+        );
+
+    svgElem.append('g')
+      .attr('class', this._gridClass)
+      .call(d3.axisLeft(y)
+            .tickSize(this._tickWidthSize)
+            .tickFormat('')
+      );
+
+    svgElem.append('g')
+      .attr('class', 'ticks ticks-x')
+      .attr('transform', 'translate(0,' + this._height + ')')
+      .call(d3.axisBottom(x));
+
+    svgElem.append('g')
+      .attr('class', 'ticks ticks-y')
+      .call(d3.axisLeft(y))
+      .append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 6)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(leftAxisTitle);
   }
 
   /**

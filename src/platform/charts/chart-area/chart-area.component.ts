@@ -1,4 +1,4 @@
-import {Component, Input, AfterViewInit, Inject, forwardRef} from '@angular/core';
+import {Component, Input, AfterViewInit, Inject, forwardRef, ViewChild, ElementRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 
 declare let d3: any;
@@ -16,7 +16,7 @@ export class TdChartAreaComponent implements AfterViewInit {
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _areaColumns: string;
+  private _columns: string;
   private _tickHeightSize: number = 0;
   private _tickWidthSize: number = 0;
   private _grid: string = '';
@@ -27,12 +27,13 @@ export class TdChartAreaComponent implements AfterViewInit {
   private _sort: boolean;
   private _colors: string[] = [];
 
+  @ViewChild('areachart') content: ElementRef;
   @Input('') dataSrc: string = '';
   @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
-  @Input('areaColumns')
-  set areaColumns(areaColumns: string) {
-    this._areaColumns = areaColumns;
+  @Input('columns')
+  set columns(columns: string) {
+    this._columns = columns;
   }
 
   @Input('colors')
@@ -82,27 +83,29 @@ export class TdChartAreaComponent implements AfterViewInit {
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
     let y: any = d3.scaleLinear().range([this._height, 0]);
 
-    // define the area
     let area: any = d3.area()
       .x((d: any) => { return x(d[this.bottomAxis]); })
       .y0(this._height)
-      .y1((d: any) => { return y(d[this._areaColumns]); })
+      .y1((d: any) => { return y(d[this._columns]); })
       .curve(d3.curveCardinal);
 
-    // define the line
     let valueline: any = d3.line()
         .x((d: any) => { return x(d[this.bottomAxis]); })
-        .y((d: any) => { return y(d[this._areaColumns]); });
+        .y((d: any) => { return y(d[this._columns]); });
 
-    this._parentObj.drawContainer('areachart');
+    let containerDiv: any = (this.content.nativeElement);
 
-    let svg: any = d3.select('.areachartG');
+    this._parentObj.drawContainer(containerDiv, 'areachart');
 
-    svg.append('clipPath')
-    .attr('id', 'rectClip')
-    .append('rect')
-      .attr('width', 0)
-      .attr('height', this._height);
+    let svg: any = d3.select(containerDiv).selectAll('.areachartG');
+
+    if (d3.select('#rectClip rect').size() === 0) {
+      svg.append('clipPath')
+      .attr('id', 'rectClip')
+      .append('rect')
+        .attr('width', 0)
+        .attr('height', this._height);
+    }
 
     enum ParseContent {
       json = d3.json,
@@ -117,13 +120,17 @@ export class TdChartAreaComponent implements AfterViewInit {
 
       data.forEach((d: any) => {
           d[this.bottomAxis] = d[this.bottomAxis];
-          d[this._areaColumns] = +d[this._areaColumns];
+          d[this._columns] = +d[this._columns];
       });
 
       x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
-      y.domain([0, d3.max(data, (d: any) => { return d[this._areaColumns]; })]);
+      y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
-      svg.append('path')
+      svg.append('g')
+        .classed('chart-area', true);
+
+      d3.select(containerDiv).selectAll('.chart-area')
+       .append('path')
        .data([data])
        .attr('class', 'area')
        .attr('fill', this._colors[0])
@@ -131,41 +138,14 @@ export class TdChartAreaComponent implements AfterViewInit {
        .attr('d', area)
        .attr('clip-path', 'url(#rectClip)');
 
-      svg.append('path')
+      d3.select(containerDiv).selectAll('.chart-area')
+       .append('path')
        .data([data])
        .attr('class', 'line')
        .attr('d', valueline)
        .attr('clip-path', 'url(#rectClip)');
 
-      svg.append('g')
-        .attr('class', this._grid)
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x)
-             .tickSize(this._tickHeightSize)
-             .tickFormat('')
-        );
-
-      svg.append('g')
-        .attr('class', this._grid)
-        .call(d3.axisLeft(y)
-             .tickSize(this._tickWidthSize)
-             .tickFormat('')
-        );
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-x')
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x));
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-y')
-        .call(d3.axisLeft(y))
-        .append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '0.71em')
-        .attr('fill', '#000')
-        .text(this._leftAxisTitle);
+      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
 
       svg.append('text')
         .attr('text-anchor', 'middle')

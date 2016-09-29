@@ -1,5 +1,4 @@
-import { Component, ViewChild, OnInit} from '@angular/core';
-import { TdChartsComponent } from '../../../../platform/charts';
+import { Component} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +6,8 @@ import { TdChartsComponent } from '../../../../platform/charts';
   styleUrls: ['charts.component.css'],
   templateUrl: 'charts.component.html',
 })
-export class ChartsDemoComponent implements OnInit {
-  @ViewChild(TdChartsComponent) tdChartsComponent: TdChartsComponent;
+export class ChartsDemoComponent {
 
-  colorPalette: any[];
   paletteErrorMsg: string = '';
 
   chartsAttr: Object[] = [{
@@ -121,17 +118,4 @@ export class ChartsDemoComponent implements OnInit {
     type: 'string',
   }];
 
-  /**
-   * Generate Color Palette based on user input colors
-   */
-    ngOnInit(): void {
-      let paletteObj: {} = this.tdChartsComponent.generatePalette('cyan', 'indigo');
-      for (let key in paletteObj) {
-        if (key === 'error') {
-          this.paletteErrorMsg = paletteObj[key];
-        } else {
-          this.colorPalette = paletteObj[key];
-        }
-      }
-    }
 }

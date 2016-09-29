@@ -4,7 +4,6 @@
   <md-divider></md-divider>
   <md-card-title>Bar Chart</md-card-title>
   <md-card-content>
-    <p>{{paletteErrorMsg}}</p>
     <td-charts chartTitle="Sales Bar Chart"
                 bottomAxisTitle="Day Offset"
                 leftAxisTitle="Sales"
@@ -14,14 +13,13 @@
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="1"
                 [sort]="true">
-      <td-chart-bar colors="colorPalette"
+      <td-chart-bar [colors]="['cyan', 'indigo']"
                      dataSrc="platform/charts/chart-bar/data.csv"
                      contentType="csv"
                      bottomAxis="salesperson"
-                     barColumns="sales">
+                     columns="sales">
       </td-chart-bar>
     </td-charts>
-    <md-divider></md-divider>
     <md-card-title>Single/Multi Line Chart</md-card-title>
     <td-charts chartTitle="Temperature Trend"
                 bottomAxisTitle="Day Offset"
@@ -34,8 +32,8 @@
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
                    contentType="tsv"
                    bottomAxis="col1"
-                   [lineColumns]="['col2', 'col3','col4']"
-                   [lineTitles]="['New York','San Francisco', 'Austin']"
+                   [columns]="['col2', 'col3','col4']"
+                   [titles]="['New York','San Francisco', 'Austin']"
                    [colors]="['#3366cc', '#dc3912', '#ff9900']">
       </td-chart-line>
     </td-charts>
@@ -54,7 +52,7 @@
                      dataSrc="platform/charts/chart-area/data.json"
                      contentType="json"
                      bottomAxis="x"
-                     areaColumns="y">
+                     columns="y">
       </td-chart-area>
     </td-charts>
   </md-card-content>
@@ -170,7 +168,7 @@
       <td-chart-bar dataSrc="platform/charts/chart-bar/data.csv"
                      contentType="csv"
                      bottomAxis="salesperson"
-                     barColumns="sales"
+                     columns="sales"
                      [colors]='colorPalette'>
       </td-chart-bar>
          ]]>
@@ -263,7 +261,7 @@
                       dataSrc="platform/charts/chart-area/data.json"
                       contentType="json"
                       bottomAxis="x"
-                      areaColumns="y">
+                      columns="y">
         </td-chart-area>
          ]]>
     </td-highlight>

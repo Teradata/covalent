@@ -1,4 +1,4 @@
-import {Component, Input, AfterViewInit, Inject, forwardRef} from '@angular/core';
+import {Component, Input, AfterViewInit, ViewChild, ElementRef, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 
 declare let d3: any;
@@ -16,10 +16,7 @@ export class TdChartBarComponent implements AfterViewInit {
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _barColumns: string;
-  private _tickHeightSize: number = 0;
-  private _tickWidthSize: number = 0;
-  private _grid: string = '';
+  private _columns: string;
   private _colorPalette: string[] = [];
   private _parentObj: any;
   private _chartTitle: string;
@@ -30,12 +27,14 @@ export class TdChartBarComponent implements AfterViewInit {
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
+  @ViewChild('barchart') content: ElementRef;
   @Input('') dataSrc: string = '';
   @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
-  @Input('barColumns')
-  set barColumns(barColumns: string) {
-    this._barColumns = barColumns;
+  @Input('') colors: string[];
+  @Input('columns')
+  set columns(columns: string) {
+    this._columns = columns;
   }
 
   constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
@@ -56,19 +55,6 @@ export class TdChartBarComponent implements AfterViewInit {
       this._chartTitle = this._parentObj.chartTitle;
     }
 
-    if (this._parentObj.colorPalette) {
-      this._colorPalette = this._parentObj.colorPalette;
-    }
-
-    if (this._parentObj.ticks === true) {
-      this._tickHeightSize = -this._height;
-      this._tickWidthSize = -this._width;
-    }
-
-    if (this._parentObj.grid === true) {
-      this._grid = 'grid';
-    }
-
     if (this._parentObj.sort) {
       this._sort = this._parentObj.sort;
     }
@@ -81,12 +67,21 @@ export class TdChartBarComponent implements AfterViewInit {
       this._leftAxisTitle = this._parentObj.leftAxisTitle;
     }
 
+    let paletteObj: {} = this._parentObj.generatePalette(this.colors[0], this.colors[1]);
+
+    for (let key in paletteObj) {
+      if (key === 'color') {
+        this._colorPalette = paletteObj[key];
+      }
+    }
+
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
     let y: any = d3.scaleLinear().range([this._height, 0]);
+    let containerDiv: any = (this.content.nativeElement);
 
-    this._parentObj.drawContainer('barchart');
+    this._parentObj.drawContainer(containerDiv, 'barchart');
 
-    let svg: any = d3.select('.barchartG');
+    let svg: any = d3.select(containerDiv).selectAll('.barchartG');
 
     enum ParseContent {
       json = d3.json,
@@ -100,20 +95,24 @@ export class TdChartBarComponent implements AfterViewInit {
       }
 
       data.forEach((d: any) => {
-        d[this._barColumns] = +d[this._barColumns];
+        d[this._columns] = +d[this._columns];
       });
 
       x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
-      y.domain([0, d3.max(data, (d: any) => { return d[this._barColumns]; })]);
+      y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
-      svg.selectAll('.bar')
+      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
+
+      svg.append('g')
+        .classed('chart-bars', true)
+        .selectAll('.bar')
         .data(data)
         .enter().append('rect')
         .attr('class', 'bar')
         .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
         .attr('width', x.bandwidth())
-        .attr('y', (d: any) => { return y(d[this._barColumns]); })
-        .attr('height', (d: number) => { return this._height - y(d[this._barColumns]); })
+        .attr('y', (d: any) => { return y(d[this._columns]); })
+        .attr('height', (d: number) => { return this._height - y(d[this._columns]); })
         .attr('fill', (d: any, i: number) => {
           if (this._sort === false) {
             let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
@@ -128,36 +127,6 @@ export class TdChartBarComponent implements AfterViewInit {
         this.sortAndTransition(svg, data, x, y);
       }
 
-      svg.append('g')
-        .attr('class', this._grid)
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x)
-             .tickSize(this._tickHeightSize)
-             .tickFormat('')
-        );
-
-      svg.append('g')
-        .attr('class', this._grid)
-        .call(d3.axisLeft(y)
-             .tickSize(this._tickWidthSize)
-             .tickFormat('')
-        );
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-x')
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x));
-
-      svg.append('g')
-        .attr('class', 'ticks ticks-y')
-        .call(d3.axisLeft(y))
-        .append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '0.71em')
-        .attr('fill', '#000')
-        .text(this._leftAxisTitle);
-
       svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
@@ -170,7 +139,7 @@ export class TdChartBarComponent implements AfterViewInit {
   sortAndTransition(chartSvg: any, data: any, x: any, y: any): void {
 
     let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
-    let x0: any = x.domain(data.sort((a: any, b: any) => { return b[this._barColumns] - a[this._barColumns]; })
+    let x0: any = x.domain(data.sort((a: any, b: any) => { return b[this._columns] - a[this._columns]; })
         .map((d: number) => { return d[this.bottomAxis]; }))
         .copy();
 
@@ -193,4 +162,5 @@ export class TdChartBarComponent implements AfterViewInit {
       .selectAll('g')
         .delay(delay);
   }
+
 }
