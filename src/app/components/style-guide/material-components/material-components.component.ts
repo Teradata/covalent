@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-material-components',
@@ -91,4 +92,14 @@ export class MaterialComponentsComponent {
   house: Object = {
     lockHouse: false,
   };
+
+  _snackBarConfig: MdSnackBarConfig;
+
+  constructor(private _snackBarService: MdSnackBar, viewContainerRef: ViewContainerRef) {
+    this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+  }
+
+  showSnackBar(): void {
+    this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+  }
 }

@@ -1144,3 +1144,28 @@
       </td-highlight>
   </md-card-content>
 </md-card>
+<md-card>
+  <md-card-title>Snack Bar</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <button md-raised-button (click)="showSnackBar()">Show Snack Bar</button>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, ViewContainerRef } from '@angular/core';
+        import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+        ...
+
+        private _snackBarConfig: MdSnackBarConfig;
+        
+        constructor(private _snackBarService: MdSnackBar, viewContainerRef: ViewContainerRef) {
+          this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+        }
+
+        showSnackBar(): void {
+          this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+        }
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
