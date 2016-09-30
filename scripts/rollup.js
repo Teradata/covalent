@@ -53,10 +53,7 @@ gulp.task('rollup-code', '', function() {
         return rollup({
           entry: path.join(config.paths.deployed, name, 'index.js'),
           context: 'window',
-          external: Object.keys(globals).concat(components.map(name => `@covalent/${name}`)),
-          plugins: [
-            commonjs({ jsnext: true, main: true }),
-          ]
+          external: Object.keys(globals).concat(components.map(name => `@covalent/${name}`))
         });
       })
       .then((bundle) => {
