@@ -161,8 +161,8 @@
         <h3>Usage within Forms</h3>
         <form>
           <div layout="row" layout-align="start center">
-            <md-checkbox [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
-              I have read and agree to the terms of service.
+            <md-checkbox flex="initial" [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
+              I agree to the terms
             </md-checkbox>
             <button md-raised-button [disabled]="!user.agreesToTOS" style="margin-left: 10px;">Sign Up</button>
           </div>

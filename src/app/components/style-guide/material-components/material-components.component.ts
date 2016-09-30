@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'design-patterns-material-components',
-  styleUrls: ['material-components.component.css'],
+  styleUrls: ['material-components.component.scss'],
   templateUrl: 'material-components.component.html',
 })
 export class MaterialComponentsComponent {

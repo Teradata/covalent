@@ -1,3 +1,5 @@
+import { browser } from 'protractor/globals';
+
 describe('hello, protractor', function(): void {
   describe('index', function(): void {
     browser.get('/');

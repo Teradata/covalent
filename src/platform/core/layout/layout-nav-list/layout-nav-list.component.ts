@@ -7,9 +7,8 @@ import { MdSidenav } from '@angular2-material/sidenav';
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-layout-nav-list',
-  styleUrls: [ 'layout-nav-list.component.css' ],
+  styleUrls: [ 'layout-nav-list.component.scss' ],
   templateUrl: 'layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent {
