@@ -13,6 +13,7 @@ import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { DataTableDemoComponent } from './data-table/data-table.component';
 
 const routes: Routes = [{
   children: [{
@@ -51,6 +52,9 @@ const routes: Routes = [{
     }, {
       component: PipesComponent,
       path: 'pipes',
+    }, {
+      component: DataTableDemoComponent,
+      path: 'data-table',
     },
   ],
   component: ComponentsComponent,

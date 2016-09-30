@@ -1,0 +1,62 @@
+<md-toolbar *ngIf="_title && !_searchVisible">
+  <span>{{_title}}</span>
+  <span flex></span>
+  <button md-button md-icon-button (click)="toggleSearch()">
+    <md-icon *ngIf="_search">search</md-icon>
+  </button>
+</md-toolbar>
+
+<md-toolbar *ngIf="_searchVisible">
+  <md-icon>search</md-icon>
+  <form flex name="filter.form">
+    <input #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
+  </form>
+  <button md-button md-icon-button (click)="toggleSearch()">
+    <md-icon>close</md-icon>
+  </button>
+</md-toolbar>
+
+<td-table-container>
+  <table td-table>
+    <thead td-head>
+      <tr td-row>
+        <th td-column *ngIf="_rowSelection">
+          <md-checkbox
+            *ngIf="_multiple"
+            [checked]="areAllSelected()"
+            (change)="selectAll($event.checked)">
+          </md-checkbox>
+        </th>
+        <th td-column *ngFor="let column of columns">
+          <span>{{column.label}}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody td-body>
+      <tr td-row *ngFor="let row of _visibleData">
+        <td td-cell *ngIf="_rowSelection">
+          <md-checkbox
+            [checked]="row[_rowSelectionField]"
+            (change)="select(row, $event.checked)">
+          </md-checkbox>
+        </td>
+        <td td-cell *ngFor="let column of columns">
+          {{ row[column.name] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td-table-container>
+
+<md-toolbar *ngIf="hasPagination()">
+  <span>
+    Page {{ _currentPage }} of {{ _totalPages }}
+  </span>
+  <span flex></span>
+  <button md-button md-icon-button (click)="prevPage()">
+    <md-icon *ngIf="_search">keyboard_arrow_left</md-icon>
+  </button>
+  <button md-button md-icon-button (click)="nextPage()">
+    <md-icon *ngIf="_search">keyboard_arrow_right</md-icon>
+  </button>
+</md-toolbar>

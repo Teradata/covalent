@@ -1,0 +1,61 @@
+<md-card>
+  <md-card-title>Data Table</md-card-title>
+  <md-card-subtitle>Data driven table layout with search and pagination</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Basic Demo</p>
+
+    <td-data-table
+      [data]="data"
+      [columns]="columns"
+      [multiple]="multiple"
+      [rowSelection]="rowSelection"
+      search="true"
+      title="Search and pagination enabled"
+      pageSize="5">
+    </td-data-table>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-data-table
+      [data]="data"
+      [multiple]="multiple"
+      [rowSelection]="rowSelection"
+      title="Simple data, no columns">
+    </td-data-table>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-data-table
+      [data]="data"
+      [columns]="columns"
+      [multiple]="multiple"
+      [rowSelection]="rowSelection"
+      title="Simple data with columns">
+    </td-data-table>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-data-table
+      [data]="data"
+      [multiple]="multiple"
+      rowSelection="checked"
+      title="Custom selection field">
+    </td-data-table>
+
+    <!--<pre>
+      {{data|json}}
+    </pre>-->
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleRowSelection()">
+      Toggle RowSelection
+      ({{rowSelection ? 'ON' : 'OFF'}})
+    </button>
+    <button md-button color="primary" (click)="toggleRowSelectionMultiple()">
+      Toggle RowSelectionMultiple
+      ({{multiple ? 'ON' : 'OFF'}})
+    </button>
+  </md-card-actions>
+</md-card>

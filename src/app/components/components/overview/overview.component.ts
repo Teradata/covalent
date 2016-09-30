@@ -61,6 +61,11 @@ export class ComponentsOverviewComponent {
       icon: 'filter_list',
       route: 'pipes',
       title: 'Pipes',
+    }, {
+      color: 'green-700',
+      icon: 'grid_on',
+      route: 'data-table',
+      title: 'Data Table',
     },
   ];
 }

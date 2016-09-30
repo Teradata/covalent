@@ -67,6 +67,11 @@ export class ComponentsComponent {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
+  }, {
+    description: 'Data Table',
+    icon: 'grid_on',
+    route: 'data-table',
+    title: 'Data Table',
   }];
 
 }

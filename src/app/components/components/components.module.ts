@@ -15,6 +15,7 @@ import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { DataTableDemoComponent } from './data-table/data-table.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentFileModule } from '../../../platform/file-upload';
@@ -22,6 +23,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
 import { CovalentChipsModule } from '../../../platform/chips';
+import { CovalentDataTableModule } from '../../../platform/data-table';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CovalentChipsModule } from '../../../platform/chips';
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
     PipesComponent,
+    DataTableDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
@@ -46,6 +49,7 @@ import { CovalentChipsModule } from '../../../platform/chips';
     CovalentMarkdownModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
+    CovalentDataTableModule.forRoot(),
     componentsRoutes,
   ],
 })
