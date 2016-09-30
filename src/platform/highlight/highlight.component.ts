@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, Renderer } from '@angular/core';
 /* tslint:disable-next-line */ 
-//let hljs: any = require('highlight.js/lib');
+let hljs: any = require('highlight.js/lib');
 
 @Component({
   selector: 'td-highlight',
