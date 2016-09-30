@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular2-material/sidenav';
+import { MdSidenav } from '@angular/material';
 
 import { TdLayoutService } from '../services/layout.service';
 
