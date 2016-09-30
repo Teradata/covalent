@@ -1,12 +1,10 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, Renderer } from '@angular/core';
-import 'highlight.js/lib';
-
-declare var hljs: any;
+/* tslint:disable-next-line */ 
+let hljs: any = require('highlight.js/lib');
 
 @Component({
-  moduleId: module.id,
   selector: 'td-highlight',
-  styleUrls: ['highlight.component.css'],
+  styleUrls: ['highlight.component.scss'],
   templateUrl: 'highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {

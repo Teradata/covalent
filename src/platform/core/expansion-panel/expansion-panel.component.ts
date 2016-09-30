@@ -2,16 +2,14 @@ import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-expansion-summary',
   template: '<ng-content></ng-content>',
 })
 export class TdExpansionPanelSummaryComponent {}
 
 @Component({
-  moduleId: module.id,
   selector: 'td-expansion-panel',
-  styleUrls: [ 'expansion-panel.component.css' ],
+  styleUrls: [ 'expansion-panel.component.scss' ],
   templateUrl: 'expansion-panel.component.html',
 })
 export class TdExpansionPanelComponent {
@@ -80,7 +78,7 @@ export class TdExpansionPanelComponent {
   };
 
   /**
-   * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed] 
+   * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed]
    * event if 'false'. (Blocked if [disabled] is 'true')
    */
   private _setExpand(newExpand: boolean): void {

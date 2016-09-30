@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-colors',
-  styleUrls: ['colors.component.css'],
+  styleUrls: ['colors.component.scss'],
   templateUrl: 'colors.component.html',
 })
 export class ColorsComponent {

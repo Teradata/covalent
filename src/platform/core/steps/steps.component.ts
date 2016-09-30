@@ -11,9 +11,8 @@ export interface IStepChangeEvent {
 }
 
 @Component({
-  moduleId: module.id,
   selector: 'td-steps',
-  styleUrls: [ 'steps.component.css' ],
+  styleUrls: [ 'steps.component.scss' ],
   templateUrl: 'steps.component.html',
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
@@ -40,7 +39,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   @Output('stepChange') onStepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
 
   /**
-   * Executed after content is initialized, loops through any [TdStepComponent] children elements, 
+   * Executed after content is initialized, loops through any [TdStepComponent] children elements,
    * assigns them a number and subscribes as an observer to their [onActivated] event.
    */
   ngAfterContentInit(): void {
@@ -64,7 +63,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   }
 
   /**
-   * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent] 
+   * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent]
    * and emits [onStepChange] event.
    */
   private _onStepSelection(stepNumber: number): void {

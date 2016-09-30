@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-components',
-  styleUrls: ['components.component.css'],
+  styleUrls: ['components.component.scss'],
   templateUrl: 'components.component.html',
 })
 export class ComponentsComponent {

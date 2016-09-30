@@ -143,4 +143,30 @@ $md-warn: #C62828;
             }
         }
     }
+    a[md-icon-button] {
+        line-height: 36px;
+    }
+    .md-tab-label {
+        flex-grow: 1;
+    }
+    /* md-hint styles were missing from material2 */
+    md-hint {
+        position: absolute;
+        font-size: 75%;
+        bottom: -0.5em;
+
+        &.md-right {
+            right: 0;
+        }
+
+        [dir='rtl'] & {
+            right: 0;
+            left: auto;
+
+            &.md-right {
+            right: auto;
+            left: 0;
+            }
+        }
+    }
 }

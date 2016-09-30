@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-typography',
-  styleUrls: ['typography.component.css'],
+  styleUrls: ['typography.component.scss'],
   templateUrl: 'typography.component.html',
 })
 export class TypographyComponent {

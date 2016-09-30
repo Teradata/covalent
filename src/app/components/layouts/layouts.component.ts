@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-layouts',
-  styleUrls: ['layouts.component.css'],
+  styleUrls: ['layouts.component.scss'],
   templateUrl: 'layouts.component.html',
 })
 export class LayoutsComponent {
