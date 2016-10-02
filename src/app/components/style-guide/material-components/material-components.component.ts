@@ -89,6 +89,15 @@ export class MaterialComponentsComponent {
     },
   ];
 
+  dogs: Object[] = [
+    { name: 'Porter', human: 'Kara' },
+    { name: 'Mal', human: 'Jeremy' },
+    { name: 'Koby', human: 'Igor' },
+    { name: 'Razzle', human: 'Ward' },
+    { name: 'Molly', human: 'Rob' },
+    { name: 'Husi', human: 'Matias' },
+  ];
+
   house: Object = {
     lockHouse: false,
   };
