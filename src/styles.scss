@@ -1,0 +1,22 @@
+@import "./theme";
+/* You can add global styles to this file, and also import other style files */
+md-divider {
+    border-top-color: rgba(black, 0.12) !important;
+}
+md-nav-list {
+    [md-list-item].active {
+        md-icon[md-list-avatar] {
+            background-color: md-color($accent);
+            color: md-color($accent, default-contrast)
+        }
+        md-icon[md-list-icon] {
+            color: md-color($accent);
+        }
+    }
+}
+a[md-icon-button] {
+    line-height: 36px;
+}
+.md-tab-label {
+    flex-grow: 1;
+}

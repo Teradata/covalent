@@ -1,24 +1,5 @@
 @import "../theme";
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
-    md-divider {
-        border-top-color: rgba(black, 0.12);
-    }
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-avatar] {
-                background-color: md-color($accent);
-                color: md-color($accent, default-contrast)
-            }
-            md-icon[md-list-icon] {
-                color: md-color($accent);
-            }
-        }
-    }
-    a[md-icon-button] {
-        line-height: 36px;
-    }
-    .md-tab-label {
-        flex-grow: 1;
-    }
+    
 }

@@ -15,7 +15,7 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
+        "styles.scss",
         "theme.scss",
         "platform/core/styles/platform.scss",
         "../node_modules/@angular/material/core/overlay/overlay.css"
