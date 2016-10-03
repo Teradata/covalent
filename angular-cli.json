@@ -15,10 +15,10 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
+        "styles.scss",
+        "theme.scss",
         "platform/core/styles/platform.scss",
-        "../node_modules/@angular2-material/core/style/core.css",
-        "../node_modules/@angular2-material/core/overlay/overlay.css"
+        "../node_modules/@angular/material/core/overlay/overlay.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",

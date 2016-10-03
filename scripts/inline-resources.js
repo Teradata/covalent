@@ -89,6 +89,7 @@ function inlineStyle(filePath, content) {
     const urls = eval(styleUrls);
     return 'styles: ['
       + urls.map(styleUrl => {
+          styleUrl = styleUrl.replace('scss', 'css'); //look for built css instead of scss
           const styleFile = path.join(path.dirname(filePath), styleUrl);
           const styleContent = fs.readFileSync(styleFile, 'utf-8');
           const shortenedStyle = styleContent

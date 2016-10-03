@@ -987,6 +987,77 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-title>Grid list with images and headers or footers</md-card-title>
+  <md-tab-group>
+    <md-tab>
+      <template md-tab-label>Headers</template>
+      <template md-tab-content>
+        <md-grid-list cols="3" rowHeight="200px">
+          <md-grid-tile *ngFor="let dog of dogs" style="background:gray">
+            <md-grid-tile-header>
+              <md-icon md-grid-avatar>info_outline</md-icon>
+              {{dog.name}}
+            </md-grid-tile-header>
+            <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+          </md-grid-tile>
+        </md-grid-list>
+        <md-divider></md-divider>
+        <md-card-content>
+          <td-highlight lang="html">
+            <![CDATA[
+              <md-grid-list cols="3" rowHeight="200px">
+                <md-grid-tile *ngFor="let dog of dogs">
+                  <md-grid-tile-header>
+                    <md-icon md-grid-avatar>info_outline</md-icon>
+                    { { dog.name } }
+                  </md-grid-tile-header>
+                  <img src="">
+                </md-grid-tile>
+              </md-grid-list>
+              ]]>
+          </td-highlight>
+        </md-card-content>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Footers</template>
+      <template md-tab-content>
+        <md-grid-list cols="3" rowHeight="200px">
+          <md-grid-tile *ngFor="let dog of dogs">
+            <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+            <md-grid-tile-footer>
+              <h3 md-line>{{dog.name}}</h3>
+              <span md-line>Human: {{dog.human}}</span>
+              <md-icon>star_border</md-icon>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+        </md-grid-list>
+        <md-divider></md-divider>
+        <md-card-content>
+          <td-highlight lang="html">
+            <![CDATA[
+              <md-grid-list cols="3" rowHeight="200px">
+                <md-grid-tile *ngFor="let dog of dogs">
+                  <img src="">
+                  <md-grid-tile-footer>
+                    <h3 md-line>{ { dog.name } }</h3>
+                    <span md-line>Human: { { dog.human } }</span>
+                    <md-icon>star_border</md-icon>
+                  </md-grid-tile-footer>
+                </md-grid-tile>
+              </md-grid-list>
+              ]]>
+          </td-highlight>
+        </md-card-content>
+      </template>
+    </md-tab>
+  </md-tab-group>
+  <md-card-content>
+    
+  </md-card-content>
+</md-card>
+
+<md-card>
   <md-card-title>Tooltips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
@@ -1140,6 +1211,76 @@
         <md-slider step="5"></md-slider>
         <md-slider tick-interval="auto"></md-slider>
         <md-slider tick-interval="3" step="4"></md-slider>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Snack Bar</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <button md-raised-button (click)="showSnackBar()">Show Snack Bar</button>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, ViewContainerRef } from '@angular/core';
+        import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef } from '@angular/material';
+        ...
+        ...
+        private _snackBarConfig: MdSnackBarConfig;
+        
+        constructor(private _snackBarService: MdSnackBar, viewContainerRef: ViewContainerRef) {
+          this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+        }
+
+        showSnackBar(): void {
+          let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+          setTimeout(() => {
+            snackBarRef.dismiss();
+          }, 3000);
+        }
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Dialog</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <button md-raised-button (click)="showAlertDialog()">Show Alert</button>
+    <button md-raised-button (click)="showConfirmDialog()">Show Confirmation</button>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+          import { Component, ViewContainerRef } from '@angular/core';
+          import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+          import { CustomAlertDialogComponent, CustomConfirmDialogComponent } from 'path/to/customdialogs'
+          ...
+          ...
+          private _dialogConfig: MdDialogConfig;
+
+          constructor(private _dialogService: MdDialog,
+                      viewContainerRef: ViewContainerRef) {
+            this._dialogConfig = new MdDialogConfig();
+            this._dialogConfig.viewContainerRef = viewContainerRef;
+          }
+
+          showAlertDialog(): void {
+            let dialogRef: MdDialogRef<CustomAlertDialogComponent> =
+            this._dialogService.open(CustomAlertDialogComponent, this._dialogConfig);
+          }
+
+          showConfirmDialog(): void {
+            let dialogRef: MdDialogRef<CustomConfirmDialogComponent> =
+            this._dialogService.open(CustomConfirmDialogComponent, this._dialogConfig);
+            dialogRef.afterClosed().subscribe((data: boolean) => {
+              if (data) {
+                // clicked yes
+              } else {
+                // clicked no
+              }
+            });
+          }
         ]]>
       </td-highlight>
   </md-card-content>

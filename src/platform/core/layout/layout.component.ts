@@ -3,7 +3,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { MdSidenav } from '@angular2-material/sidenav';
+import { MdSidenav } from '@angular/material';
 
 import { TdLayoutService } from './services/layout.service';
 
