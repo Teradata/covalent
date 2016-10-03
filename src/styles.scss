@@ -1,8 +1,7 @@
-@import "./theme";
-/* You can add global styles to this file, and also import other style files */
-md-divider {
-    border-top-color: rgba(black, 0.12) !important;
-}
+@import "theme";
+// You can add global styles to this file that will cascade like normal CSS
+
+// Active icon color in list nav
 md-nav-list {
     [md-list-item].active {
         md-icon[md-list-avatar] {
@@ -14,9 +13,13 @@ md-nav-list {
         }
     }
 }
+
+// Href line height wasn't right for md-icon-button
 a[md-icon-button] {
     line-height: 36px;
 }
+
+// Stretch tab labels until there is an attribute for it
 .md-tab-label {
     flex-grow: 1;
 }
