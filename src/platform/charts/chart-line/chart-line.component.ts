@@ -35,6 +35,9 @@ export class TdChartLineComponent implements AfterViewInit {
   @Input() dataSrc: string = '';
   @Input() contentType: string = '';
   @Input() bottomAxis: string = '';
+  @Input() transition: boolean = true;
+  @Input() transitionDuration: number;
+  @Input() transitionDelay: number;
   @Input('columns')
   set columns(columns: string[]) {
     this._columns = columns;
@@ -63,6 +66,11 @@ export class TdChartLineComponent implements AfterViewInit {
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
+
+    let t: any = d3.transition()
+            .duration(this.transitionDuration)
+            .delay(this.transitionDelay)
+            .ease(d3.easeLinear);
 
     if (this._parentObj.chartTitle) {
       this._chartTitle = this._parentObj.chartTitle;
@@ -141,18 +149,30 @@ export class TdChartLineComponent implements AfterViewInit {
 
       this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
 
+      let linesElems: any = document.getElementsByClassName('line');
+
       let line: any = svg.append('g')
         .classed('chart-lines', true)
         .selectAll('.lineTitle')
-        .data(lines)
-        .enter().append('g')
-        .attr('class', 'lineTitle');
+        .data(lines);
 
-      line.append('path')
+      line.enter().append('path')
         .attr('class', 'line')
+        .merge(line)
         .attr('d', (d: any) => { return drawLine(d.values); })
         .style('stroke', (d: any) => { return color(d.id); })
+        .attr('stroke-dasharray', (d: any, i: any) => { if (this.transition === true) {
+          return linesElems[i].getTotalLength(); }
+        })
+        .attr('stroke-dashoffset', (d: any, i: any) => { if (this.transition === true) {
+          return linesElems[i].getTotalLength(); }
+        })
         .style('filter', 'url(#drop-shadow)');
+
+      if (this.transition === true) {
+        svg.selectAll('.line').transition(t)
+            .attr('stroke-dashoffset', 0);
+      }
 
       line.append('text')
         .datum((d: any) => { return {id: d.id, value: d.values[d.values.length - 1]}; })

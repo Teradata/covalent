@@ -22,7 +22,6 @@ export class TdChartBarComponent implements AfterViewInit {
   private _chartTitle: string;
   private _shadowColor: string;
   private _leftAxisTitle: string;
-  private _sort: boolean;
 
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
@@ -32,10 +31,15 @@ export class TdChartBarComponent implements AfterViewInit {
   @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
   @Input('') colors: string[];
+  @Input() transition: boolean = true;
+  @Input() transitionDuration: number;
+  @Input() transitionDelay: number;
   @Input('columns')
   set columns(columns: string) {
     this._columns = columns;
   }
+
+  paletteError: string;
 
   constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
     this._parentObj = _parent;
@@ -53,10 +57,6 @@ export class TdChartBarComponent implements AfterViewInit {
 
     if (this._parentObj.chartTitle) {
       this._chartTitle = this._parentObj.chartTitle;
-    }
-
-    if (this._parentObj.sort) {
-      this._sort = this._parentObj.sort;
     }
 
     if (this._parentObj.shadowColor) {
@@ -114,7 +114,7 @@ export class TdChartBarComponent implements AfterViewInit {
         .attr('y', (d: any) => { return y(d[this._columns]); })
         .attr('height', (d: number) => { return this._height - y(d[this._columns]); })
         .attr('fill', (d: any, i: number) => {
-          if (this._sort === false) {
+          if (this.transition === false) {
             let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
             let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
           } else {
@@ -123,7 +123,7 @@ export class TdChartBarComponent implements AfterViewInit {
         })
         .style('filter', 'url(#drop-shadow)');
 
-      if (this._sort === true) {
+      if (this.transition === true) {
         this.sortAndTransition(svg, data, x, y);
       }
 
@@ -146,8 +146,8 @@ export class TdChartBarComponent implements AfterViewInit {
     chartSvg.selectAll('.bar')
         .sort((a: any, b: any) => { return x0(a[this.bottomAxis]) - x0(b[this.bottomAxis]); });
 
-    let transition: any = chartSvg.transition().duration(750);
-    let delay: any = (d: number, i: number) => { return i * 50; };
+    let transition: any = chartSvg.transition().duration(this.transitionDuration);
+    let delay: any = (d: number, i: number) => { return i * this.transitionDelay; };
 
     transition.selectAll('.bar')
         .delay(delay)

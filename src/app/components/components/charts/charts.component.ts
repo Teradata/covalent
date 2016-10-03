@@ -8,8 +8,6 @@ import { Component} from '@angular/core';
 })
 export class ChartsDemoComponent {
 
-  paletteErrorMsg: string = '';
-
   chartsAttr: Object[] = [{
     description: 'Sets the Chart Title.',
     name: 'chartTitle?',
@@ -42,10 +40,6 @@ export class ChartsDemoComponent {
     description: 'Sets value as true/false for redering grid',
     name: 'grid?',
     type: 'boolean',
-  }, {
-    description: 'Sets value as true/false for sorting chart data',
-    name: 'sort?',
-    type: 'boolean',
   }];
 
   barChartAttrs: Object[] = [{
@@ -68,6 +62,18 @@ export class ChartsDemoComponent {
     description: 'Gets value based on colorPalette from td-charts',
     name: 'colors?',
     type: 'any[]',
+  }, {
+    description: 'Sets the flag as true or false for transitions;',
+    name: 'transition?',
+    type: 'boolean',
+  }, {
+    description: 'Sets the duration for transition;',
+    name: 'transitionDuration?',
+    type: 'number',
+  }, {
+    description: 'Sets the delay time before transition starts;',
+    name: 'transitionDelay?',
+    type: 'number',
   }];
 
   lineChartAttrs: Object[] = [{
@@ -94,6 +100,18 @@ export class ChartsDemoComponent {
     description: 'Sets the color for single/multi lines;',
     name: 'colors?',
     type: 'string',
+  }, {
+    description: 'Sets the flag as true or false for transitions;',
+    name: 'transition?',
+    type: 'boolean',
+  }, {
+    description: 'Sets the duration for transition;',
+    name: 'transitionDuration?',
+    type: 'number',
+  }, {
+    description: 'Sets the delay time before transition starts;',
+    name: 'transitionDelay?',
+    type: 'number',
   }];
 
   areaChartAttrs: Object[] = [{
@@ -116,6 +134,18 @@ export class ChartsDemoComponent {
     description: 'Sets the color for area chart and sroke;',
     name: 'colors?',
     type: 'string',
+  }, {
+    description: 'Sets the flag as true or false for transitions;',
+    name: 'transition?',
+    type: 'boolean',
+  }, {
+    description: 'Sets the duration for transition;',
+    name: 'transitionDuration?',
+    type: 'number',
+  }, {
+    description: 'Sets the delay time before transition starts;',
+    name: 'transitionDelay?',
+    type: 'number',
   }];
 
 }

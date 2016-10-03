@@ -11,15 +11,18 @@
                 [ticks]="true"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="1"
-                [sort]="true">
+                fillOpacity="1">
       <td-chart-bar [colors]="['cyan', 'indigo']"
                      dataSrc="platform/charts/chart-bar/data.csv"
                      contentType="csv"
                      bottomAxis="salesperson"
-                     columns="sales">
+                     columns="sales"
+                     [transition]="true"
+                     transitionDuration="750"
+                     transitionDelay="50">
       </td-chart-bar>
     </td-charts>
+    <md-divider></md-divider>
     <md-card-title>Single/Multi Line Chart</md-card-title>
     <td-charts chartTitle="Temperature Trend"
                 bottomAxisTitle="Day Offset"
@@ -34,7 +37,10 @@
                    bottomAxis="col1"
                    [columns]="['col2', 'col3','col4']"
                    [titles]="['New York','San Francisco', 'Austin']"
-                   [colors]="['#3366cc', '#dc3912', '#ff9900']">
+                   [colors]="['#3366cc', '#dc3912', '#ff9900']"
+                   [transition]="true"
+                   transitionDuration="5000"
+                   transitionDelay="3000">
       </td-chart-line>
     </td-charts>
     <md-divider></md-divider>
@@ -46,13 +52,15 @@
                 [ticks]="true"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="1"
-                [sort]="true">
+                fillOpacity="1">
       <td-chart-area [colors]="['#03a9f4', '#0277bd']"
                      dataSrc="platform/charts/chart-area/data.json"
                      contentType="json"
                      bottomAxis="x"
-                     columns="y">
+                     columns="y"
+                     [transition]="true"
+                     transitionDuration="3000"
+                     transitionDelay="2000">
       </td-chart-area>
     </td-charts>
   </md-card-content>
@@ -105,8 +113,7 @@
                      fillOpacity="1"
                      chartTitle="Sales Bar Chart"
                      ticks='true'
-                     grid='true'
-                     sort='true'>
+                     grid='true'>
           <td-chart-bar>
             ...
           </td-chart-bar>
@@ -169,7 +176,10 @@
                      contentType="csv"
                      bottomAxis="salesperson"
                      columns="sales"
-                     [colors]='colorPalette'>
+                     [colors]="['cyan', 'indigo']"
+                     [transition]="true"
+                     transitionDuration="3000"
+                     transitionDelay="2000">
       </td-chart-bar>
          ]]>
     </td-highlight>
@@ -215,7 +225,10 @@
       <![CDATA[
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
                      contentType="tsv"
-                     bottomAxis="col1">
+                     bottomAxis="col1"
+                     [transition]="true"
+                     transitionDuration="3000"
+                     transitionDelay="2000">
       </td-chart-line>
          ]]>
     </td-highlight>
@@ -261,7 +274,10 @@
                       dataSrc="platform/charts/chart-area/data.json"
                       contentType="json"
                       bottomAxis="x"
-                      columns="y">
+                      columns="y"
+                      [transition]="true"
+                      transitionDuration="3000"
+                      transitionDelay="2000">
         </td-chart-area>
          ]]>
     </td-highlight>

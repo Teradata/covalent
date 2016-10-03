@@ -86,8 +86,9 @@ export class TdChartsComponent {
   @Input() ticks: boolean;
   @Input() grid: boolean;
   @Input() shadowDepth: any[];
-  @Input() sort: boolean = false;
   colorPalette: string[];
+
+  paletteErrorMsg: string;
 
   constructor() {
     this._paletteMap.set('red', this._mdRed);
@@ -211,15 +212,17 @@ export class TdChartsComponent {
    * Method to generate color Palette.
    */
   generatePalette(firstColor: string, secondColor: string): any {
-    if (!this._paletteMap.get(firstColor)) {
-      return {'error': 'First palette color not found, rendering default palette!!'};
-    }
-    if (!this._paletteMap.get(secondColor)) {
-      return {'error': 'Second palette color not found, rendering default palette!!'};
-    }
-    this.colorPalette = this._paletteMap.get(firstColor).slice(0, 6)
+    if (!this._paletteMap.get(firstColor) && !this._paletteMap.get(secondColor)) {
+      this.paletteErrorMsg = 'Palette colors not found, rendering the default palette!!';
+    } else if (!this._paletteMap.get(firstColor)) {
+      this.paletteErrorMsg = 'First palette color not found, rendering the default palette!!';
+    } else if (!this._paletteMap.get(secondColor)) {
+      this.paletteErrorMsg = 'Second palette color not found, rendering the default palette!!';
+    } else {
+      this.colorPalette = this._paletteMap.get(firstColor).slice(0, 6)
       .concat(this._paletteMap.get(secondColor).slice(6, 14));
-    return {'color' : this.colorPalette};
+      return {'color' : this.colorPalette};
+    }
   }
 
 }

@@ -17,6 +17,9 @@ $md-accent-opacity: rgba(2, 136, 209, 0.12);
   text {
     fill: $black-secondary;
   }
+  p {
+    color: $black-secondary;
+  }
   .svg-container {
     display: inline-block;
     position: relative;

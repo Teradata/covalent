@@ -31,6 +31,9 @@ export class TdChartAreaComponent implements AfterViewInit {
   @Input('') dataSrc: string = '';
   @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
+  @Input() transition: boolean = true;
+  @Input() transitionDuration: number;
+  @Input() transitionDelay: number;
   @Input('columns')
   set columns(columns: string) {
     this._columns = columns;
@@ -128,9 +131,15 @@ export class TdChartAreaComponent implements AfterViewInit {
 
       this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
 
-      d3.select('#rectClip rect')
-      .transition().duration(3000)
+      if (this.transition === true) {
+        d3.select('#rectClip rect')
+        .transition().duration(this.transitionDuration)
+        .delay(this.transitionDelay)
         .attr('width', this._width);
+      } else {
+        d3.select('#rectClip rect')
+        .attr('width', this._width);
+      }
 
       svg.append('g')
         .classed('chart-area', true);
@@ -156,7 +165,6 @@ export class TdChartAreaComponent implements AfterViewInit {
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this._chartTitle)
         .attr('class', 'md-title');
-
     });
   }
 }
