@@ -1224,9 +1224,9 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { Component, ViewContainerRef } from '@angular/core';
-        import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+        import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef } from '@angular/material';
         ...
-
+        ...
         private _snackBarConfig: MdSnackBarConfig;
         
         constructor(private _snackBarService: MdSnackBar, viewContainerRef: ViewContainerRef) {
@@ -1234,8 +1234,53 @@
         }
 
         showSnackBar(): void {
-          this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+          let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+          setTimeout(() => {
+            snackBarRef.dismiss();
+          }, 3000);
         }
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Dialog</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <button md-raised-button (click)="showAlertDialog()">Show Alert</button>
+    <button md-raised-button (click)="showConfirmDialog()">Show Confirmation</button>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+          import { Component, ViewContainerRef } from '@angular/core';
+          import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+          import { CustomAlertDialogComponent, CustomConfirmDialogComponent } from 'path/to/customdialogs'
+          ...
+          ...
+          private _dialogConfig: MdDialogConfig;
+
+          constructor(private _dialogService: MdDialog,
+                      viewContainerRef: ViewContainerRef) {
+            this._dialogConfig = new MdDialogConfig();
+            this._dialogConfig.viewContainerRef = viewContainerRef;
+          }
+
+          showAlertDialog(): void {
+            let dialogRef: MdDialogRef<CustomAlertDialogComponent> =
+            this._dialogService.open(CustomAlertDialogComponent, this._dialogConfig);
+          }
+
+          showConfirmDialog(): void {
+            let dialogRef: MdDialogRef<CustomConfirmDialogComponent> =
+            this._dialogService.open(CustomConfirmDialogComponent, this._dialogConfig);
+            dialogRef.afterClosed().subscribe((data: boolean) => {
+              if (data) {
+                // clicked yes
+              } else {
+                // clicked no
+              }
+            });
+          }
         ]]>
       </td-highlight>
   </md-card-content>
