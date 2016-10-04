@@ -2,6 +2,8 @@ import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+import { MdInputModule } from '@angular/material';
+
 import { CovalentCoreModule } from '../core';
 
 import { TdDataTableComponent } from './data-table.component';
@@ -26,6 +28,7 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
 
 @NgModule({
   imports: [
+    MdInputModule.forRoot(),
     CovalentCoreModule.forRoot(),
     CommonModule,
     FormsModule,

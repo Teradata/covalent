@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, QueryList, Renderer } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MdInput } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
@@ -30,7 +31,7 @@ export class TdDataTableComponent implements OnInit {
   private _searchTerm: string = '';
   private _searchTermControl: FormControl = new FormControl();
 
-  @ViewChild('searchTerm') _searchTermInput: ElementRef;
+  @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
 
   /** td-data-table element attributes */
   @Input('title') _title: string;
@@ -153,7 +154,7 @@ export class TdDataTableComponent implements OnInit {
   }
 
   focusOnSearch(): void {
-    this.renderer.invokeElementMethod(this._searchTermInput.nativeElement, 'focus');
+    this._searchTermInput.first.focus();
   }
 
   nextPage(): void {
