@@ -1,20 +1,21 @@
-<md-toolbar *ngIf="_title && !_searchVisible">
-  <span>{{_title}}</span>
+<div layout="row" layout-align="start center" *ngIf="_title && !_searchVisible">
+  <span class="md-subhead">{{_title}}</span>
   <span flex></span>
-  <button md-button md-icon-button (click)="toggleSearch()">
-    <md-icon *ngIf="_search">search</md-icon>
+  <button md-icon-button (click)="toggleSearch()">
+    <md-icon *ngIf="_search">filter_list</md-icon>
   </button>
-</md-toolbar>
+</div>
 
-<md-toolbar *ngIf="_searchVisible">
+<div layout="row" layout-align="start center" *ngIf="_searchVisible">
   <md-icon>search</md-icon>
-  <form flex name="filter.form">
-    <input #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
+  <form flex layout="row" name="filter.form">
+    <md-input flex #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
+    </md-input>
   </form>
-  <button md-button md-icon-button (click)="toggleSearch()">
+  <button md-icon-button (click)="toggleSearch()">
     <md-icon>close</md-icon>
   </button>
-</md-toolbar>
+</div>
 
 <td-table-container *ngIf="_visibleData.length > 0">
   <table td-table>
@@ -28,7 +29,7 @@
           </md-checkbox>
         </th>
         <th td-column *ngFor="let column of columns">
-          <span>{{column.label}}</span>
+          <span class="md-caption">{{column.label}}</span>
         </th>
       </tr>
     </thead>
@@ -41,32 +42,29 @@
           </md-checkbox>
         </td>
         <td td-cell *ngFor="let column of columns">
-          {{ row[column.name] }}
+          <span class="md-body-1">{{ row[column.name] }}</span>
         </td>
       </tr>
     </tbody>
   </table>
 </td-table-container>
 
-<div *ngIf="_visibleData.length < 1">
+<div class="md-body-1" *ngIf="_visibleData.length < 1">
   No results
 </div>
 
-<md-toolbar *ngIf="hasPagination && hasData">
+<div layout="row" layout-align="end center" class="md-caption md-table-pagination" *ngIf="hasPagination && hasData">
   <span>
-    Page {{ _currentPage }} of {{ _totalPages }}
+    {{ _currentPage }} of {{ _totalPages }}
   </span>
-  <span flex></span>
-  <button md-button md-icon-button (click)="prevPage()">
+  <button md-icon-button (click)="prevPage()">
     <md-icon *ngIf="_search">keyboard_arrow_left</md-icon>
   </button>
-  <button md-button md-icon-button (click)="nextPage()">
+  <button md-icon-button (click)="nextPage()">
     <md-icon *ngIf="_search">keyboard_arrow_right</md-icon>
   </button>
-</md-toolbar>
+</div>
 
-<md-toolbar *ngIf="hasPagination && !hasData">
-  <span>
-    No pages.
-  </span>
-</md-toolbar>
+<div class="md-body-1" *ngIf="hasPagination && !hasData">
+  No pages
+</div>
