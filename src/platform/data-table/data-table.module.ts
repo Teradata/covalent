@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { CovalentCoreModule } from '../core';
 
 import { TdDataTableComponent } from './data-table.component';
-import { TdDataTableContainerComponent } from './components/container.component';
 
 import { TdDataTableTableDirective } from './directives/table.directive';
 import { TdDataTableHeadDirective } from './directives/head.directive';
@@ -16,7 +15,6 @@ import { TdDataTableCellDirective } from './directives/cell.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
-  TdDataTableContainerComponent,
 
   TdDataTableTableDirective,
   TdDataTableHeadDirective,

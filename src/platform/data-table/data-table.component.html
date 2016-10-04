@@ -17,7 +17,7 @@
   </button>
 </div>
 
-<td-table-container *ngIf="_visibleData.length > 0">
+<div class="md-table-container" *ngIf="_visibleData.length > 0">
   <table td-table>
     <thead td-head>
       <tr td-row>
@@ -47,7 +47,7 @@
       </tr>
     </tbody>
   </table>
-</td-table-container>
+</div>
 
 <div class="md-body-1" *ngIf="_visibleData.length < 1">
   No results
