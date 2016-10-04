@@ -9,8 +9,6 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class TdDataTableComponent implements OnInit {
 
-  private static NO_PAGINATION: number = 0;
-
   /** internal attributes */
   private _data: any[];
   private _visibleData: any[];
@@ -22,7 +20,7 @@ export class TdDataTableComponent implements OnInit {
   private _hasData: boolean = false;
 
   /** pagination */
-  private _pageSize: number = TdDataTableComponent.NO_PAGINATION;
+  private _pageSize: number = 0;
   private _currentPage: number = 0;
   private _totalPages: number = 0;
   private _hasPagination: boolean = false;
