@@ -31,11 +31,11 @@ export class DataTableDemoComponent {
   rowSelection: boolean = false;
   multiple: boolean = true;
 
-  toggleRowSelection() {
+  toggleRowSelection(): void {
     this.rowSelection = !this.rowSelection;
   }
 
-  toggleRowSelectionMultiple() {
+  toggleRowSelectionMultiple(): void {
     this.multiple = !this.multiple;
   }
 }

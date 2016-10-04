@@ -1,4 +1,4 @@
-import { Directive, Input, EventEmitter } from '@angular/core';
+import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[td-table]',
