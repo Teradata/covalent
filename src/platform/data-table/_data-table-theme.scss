@@ -1,0 +1,58 @@
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+$background: $md-light-theme-background;
+$accent: md-palette($md-light-blue, 50);;
+
+// Table
+.md-row {
+  border-bottom-color: md-color($foreground, divider);
+}
+.md-column {
+  color: md-color($foreground, secondary-text);
+  md-icon {
+    &.md-sort-icon {
+      color: md-color($foreground, disabled);
+    }
+  }
+  &.md-active,
+  &.md-active md-icon {
+    color: md-color($foreground, base);
+  }
+}
+&.md-row-select tbody.md-body > tr.md-row {
+  &:not([disabled]):hover {
+    background-color: md-color($background, 'hover');
+  }
+  &.md-selected {
+    background-color: md-color($accent, 0.12);
+  }
+}
+
+// Pagination
+.md-table-pagination {
+  color: md-color($foreground, secondary-text);
+
+  md-select {
+    &:not([disabled]):focus .md-select-value {
+      color: md-color($foreground, secondary-text);
+    }
+  }
+}
+
+// Dialog
+md-edit-dialog {
+  background-color: md-color($background, dialog);
+  > .md-content {
+    .md-title {
+      color: md-color($foreground, text);
+    }
+    md-input-container {
+      .md-errors-spacer {
+        color: md-color($foreground, secondary-text);
+      }
+    }
+  }
+}
