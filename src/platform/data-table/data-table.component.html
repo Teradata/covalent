@@ -16,7 +16,7 @@
   </button>
 </md-toolbar>
 
-<td-table-container>
+<td-table-container *ngIf="_visibleData.length > 0">
   <table td-table>
     <thead td-head>
       <tr td-row>
@@ -48,7 +48,11 @@
   </table>
 </td-table-container>
 
-<md-toolbar *ngIf="hasPagination()">
+<div *ngIf="_visibleData.length < 1">
+  No results
+</div>
+
+<md-toolbar *ngIf="hasPagination && hasData">
   <span>
     Page {{ _currentPage }} of {{ _totalPages }}
   </span>
@@ -59,4 +63,10 @@
   <button md-button md-icon-button (click)="nextPage()">
     <md-icon *ngIf="_search">keyboard_arrow_right</md-icon>
   </button>
+</md-toolbar>
+
+<md-toolbar *ngIf="hasPagination && !hasData">
+  <span>
+    No pages.
+  </span>
 </md-toolbar>
