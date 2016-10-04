@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { MdSnackBar, MdSnackBarConfig, MdDialog, MdSnackBarRef,
+        MdDialogConfig, MdDialogRef } from '@angular/material';
 
 @Component({
-  moduleId: module.id,
   selector: 'design-patterns-material-components',
-  styleUrls: ['material-components.component.css'],
+  styleUrls: ['material-components.component.scss'],
   templateUrl: 'material-components.component.html',
 })
 export class MaterialComponentsComponent {
@@ -89,7 +90,94 @@ export class MaterialComponentsComponent {
     },
   ];
 
+  dogs: Object[] = [
+    { name: 'Porter', human: 'Kara' },
+    { name: 'Mal', human: 'Jeremy' },
+    { name: 'Koby', human: 'Igor' },
+    { name: 'Razzle', human: 'Ward' },
+    { name: 'Molly', human: 'Rob' },
+    { name: 'Husi', human: 'Matias' },
+  ];
+
   house: Object = {
     lockHouse: false,
   };
+
+  _snackBarConfig: MdSnackBarConfig;
+  _dialogConfig: MdDialogConfig;
+
+  constructor(private _snackBarService: MdSnackBar,
+              private _dialogService: MdDialog,
+              viewContainerRef: ViewContainerRef) {
+    this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+    this._dialogConfig = new MdDialogConfig();
+    this._dialogConfig.viewContainerRef = viewContainerRef;
+  }
+
+  showSnackBar(): void {
+    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', this._snackBarConfig);
+    setTimeout(() => {
+      snackBarRef.dismiss();
+    }, 3000);
+  }
+
+  showAlertDialog(): void {
+    let dialogRef: MdDialogRef<TdAlertDialogComponent> =
+    this._dialogService.open(TdAlertDialogComponent, this._dialogConfig);
+    dialogRef.componentInstance.title = 'Alert Title';
+    dialogRef.componentInstance.message = 'This is an alert dialog with a custom message.';
+  }
+
+  showConfirmDialog(): void {
+    let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
+    this._dialogService.open(TdConfirmDialogComponent, this._dialogConfig);
+    dialogRef.componentInstance.title = 'Confirmation Title';
+    dialogRef.componentInstance.message = 'This is a confirmation dialog. Like what you see in covalent?';
+    dialogRef.afterClosed().subscribe((data: any) => {
+      let snackBarRef: MdSnackBarRef<any>;
+      if (data) {
+        snackBarRef = this._snackBarService.open('You clicked Yes :D', 'Ok', this._snackBarConfig);
+      } else {
+        snackBarRef = this._snackBarService.open('You clicked No :(', 'Ok', this._snackBarConfig);
+      }
+      setTimeout(() => {
+        snackBarRef.dismiss();
+      }, 3000);
+    });
+  }
+}
+
+@Component({
+  selector: 'td-alert-dialog',
+  template: `
+  <h3>{{title}}</h3>
+  <p>{{message}}</p>
+  <div layout="row">
+    <span flex></span>
+    <button md-button color="accent" (click)="dialogRef.close()">Close</button>
+  </div>`,
+})
+export class TdAlertDialogComponent {
+  title: string = 'Alert';
+  message: string = '';
+
+  constructor(public dialogRef: MdDialogRef<TdAlertDialogComponent>) { }
+}
+
+@Component({
+  selector: 'td-confirm-dialog',
+  template: `
+  <h3>{{title}}</h3>
+  <p>{{message}}</p>
+  <div layout="row">
+    <span flex></span>
+    <button md-button color="accent" (click)="dialogRef.close(true)">Yes</button>
+    <button md-button color="accent" (click)="dialogRef.close(false)">No</button>
+  </div>`,
+})
+export class TdConfirmDialogComponent {
+  title: string = 'Confirmation';
+  message: string = '';
+
+  constructor(public dialogRef: MdDialogRef<TdConfirmDialogComponent>) { }
 }

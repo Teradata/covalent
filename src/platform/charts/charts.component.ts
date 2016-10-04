@@ -2,9 +2,8 @@ import {Component, Input} from '@angular/core';
 declare let d3: any;
 
 @Component({
-  moduleId: module.id,
   selector: 'td-charts',
-  styleUrls: ['charts.component.css'],
+  styleUrls: ['charts.component.scss'],
   templateUrl: 'charts.component.html',
 })
 

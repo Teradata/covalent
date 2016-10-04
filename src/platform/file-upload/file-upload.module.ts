@@ -5,29 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { MdCoreModule, MdRippleModule, PortalModule,
-         OverlayModule, RtlModule, MdLiveAnnouncer } from '@angular2-material/core';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdIconModule } from '@angular2-material/icon';
-import { MdTooltipModule } from '@angular2-material/tooltip';
-
-const MATERIAL_MODULES: Type<any>[] = [
-  MdCoreModule,
-  MdButtonModule,
-  MdIconModule,
-  MdRippleModule,
-  MdTooltipModule,
-  OverlayModule,
-  PortalModule,
-  RtlModule,
-];
-
-@NgModule({
-  imports: MATERIAL_MODULES,
-  exports: MATERIAL_MODULES,
-  providers: [MdLiveAnnouncer],
-})
-export class MaterialModule { }
+import { MaterialModule } from '@angular/material';
 
 import { TdFileSelectDirective } from './directives/file-select.directive';
 import { TdFileDropDirective } from './directives/file-drop.directive';
@@ -46,7 +24,7 @@ export const TD_FILE_DIRECTIVES: Type<any>[] = [
     JsonpModule,
     FormsModule,
     CommonModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
   ],
   declarations: [
     TD_FILE_DIRECTIVES,

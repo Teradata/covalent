@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-logo',
-  styleUrls: ['logo.component.css'],
+  styleUrls: ['logo.component.scss'],
   templateUrl: 'logo.component.html',
 })
 export class LogoComponent {

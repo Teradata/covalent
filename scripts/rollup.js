@@ -27,28 +27,7 @@ gulp.task('rollup-code', '', function() {
     '@angular/router': 'ng.router',
     '@angular/platform-browser': 'ng.platformBrowser',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
-
-    // Angular dependencies
-    
-    '@angular2-material/button': 'md.button',
-    '@angular2-material/button-toggle': 'md.buttonToggle',
-    '@angular2-material/card': 'md.card',
-    '@angular2-material/checkbox': 'md.checkbox',
-    '@angular2-material/core': 'md.core',
-    '@angular2-material/grid-list': 'md.gridList',
-    '@angular2-material/icon': 'md.icon',
-    '@angular2-material/input': 'md.input',
-    '@angular2-material/list': 'md.list',
-    '@angular2-material/menu': 'md.menu',
-    '@angular2-material/progress-bar': 'md.progressBar',
-    '@angular2-material/progress-circle': 'md.progressCircle',
-    '@angular2-material/radio': 'md.radio',
-    '@angular2-material/sidenav': 'md.sidenav',
-    '@angular2-material/slider': 'md.slider',
-    '@angular2-material/slide-toggle': 'md.slideToggle',
-    '@angular2-material/tabs': 'md.tabs',
-    '@angular2-material/toolbar': 'md.toolbar',
-    '@angular2-material/tooltip': 'md.tooltip',
+    '@angular/material': 'ng.material',
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
@@ -74,10 +53,7 @@ gulp.task('rollup-code', '', function() {
         return rollup({
           entry: path.join(config.paths.deployed, name, 'index.js'),
           context: 'window',
-          external: Object.keys(globals).concat(components.map(name => `@covalent/${name}`)),
-          plugins: [
-            commonjs({ jsnext: true, main: true }),
-          ]
+          external: Object.keys(globals).concat(components.map(name => `@covalent/${name}`))
         });
       })
       .then((bundle) => {

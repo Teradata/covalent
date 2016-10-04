@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'components-overview',
-  styleUrls: ['overview.component.css'],
+  styleUrls: ['overview.component.scss'],
   templateUrl: 'overview.component.html',
 })
 export class ComponentsOverviewComponent {

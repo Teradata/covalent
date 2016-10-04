@@ -5,36 +5,10 @@
   <title>Teradata Covalent - Angular Material Design UI Platform</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="platform/core/styles/platform.css">
-  <link rel="stylesheet" href="vendor/@angular2-material/core/style/core.css">
-  <link rel="stylesheet" href="vendor/@angular2-material/core/overlay/overlay.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Service worker support is disabled by default.
-       Install the worker script and uncomment to enable.
-       Only enable service workers in production.
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/worker.js').catch(function(err) {
-        console.log('Error installing service worker: ', err);
-      });
-    }
-  </script>
-  -->
-</head>
+  </head>
 <body>
   <docs-covalent>Loading...</docs-covalent>
-
-  <script src="vendor/core-js/client/core.js"></script>
-  <script src="vendor/systemjs/dist/system.src.js"></script>
-  <script src="vendor/zone.js/dist/zone.js"></script>
-  <script src="vendor/hammerjs/hammer.min.js"></script>
-  <script src="vendor/showdown/dist/showdown.js"></script>
-  <script src="vendor/d3/build/d3.min.js"></script>
-  <script>
-    System.import('system-config.js').then(function () {
-      System.import('main');
-    }).catch(console.error.bind(console));
-  </script>
 </body>
 </html>

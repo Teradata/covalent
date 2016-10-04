@@ -8,7 +8,8 @@ import { ProductIconsComponent } from './product-icons/product-icons.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { ColorsComponent } from './colors/colors.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { MaterialComponentsComponent, TdConfirmDialogComponent,
+         TdAlertDialogComponent } from './material-components/material-components.component';
 import { CardsComponent } from './cards/cards.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
@@ -28,11 +29,14 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     CardsComponent,
     UtilityStylesComponent,
     ResourcesComponent,
+    TdAlertDialogComponent,
+    TdConfirmDialogComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     styleGuideRoutes,
   ],
+  entryComponents: [ TdAlertDialogComponent, TdConfirmDialogComponent ],
 })
 export class StyleGuideModule {}

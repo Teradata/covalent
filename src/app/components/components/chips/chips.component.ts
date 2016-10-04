@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'chips-demo',
-  styleUrls: ['chips.component.css'],
+  styleUrls: ['chips.component.scss'],
   templateUrl: 'chips.component.html',
 })
 export class ChipsDemoComponent {

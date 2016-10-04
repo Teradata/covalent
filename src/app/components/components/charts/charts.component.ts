@@ -1,9 +1,8 @@
 import { Component} from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'charts-demo',
-  styleUrls: ['charts.component.css'],
+  styleUrls: ['charts.component.scss'],
   templateUrl: 'charts.component.html',
 })
 export class ChartsDemoComponent {

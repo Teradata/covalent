@@ -4,9 +4,8 @@ import { Input, Output, EventEmitter } from '@angular/core';
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-layout-nav',
-  styleUrls: [ 'layout-nav.component.css' ],
+  styleUrls: [ 'layout-nav.component.scss' ],
   templateUrl: 'layout-nav.component.html',
 })
 export class TdLayoutNavComponent {

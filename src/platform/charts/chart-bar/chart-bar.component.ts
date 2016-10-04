@@ -4,9 +4,8 @@ import { TdChartsComponent } from '../charts.component';
 declare let d3: any;
 
 @Component({
-  moduleId: module.id,
   selector: 'td-chart-bar',
-  styleUrls: ['chart-bar.component.css'],
+  styleUrls: ['chart-bar.component.scss'],
   templateUrl: 'chart-bar.component.html',
 })
 

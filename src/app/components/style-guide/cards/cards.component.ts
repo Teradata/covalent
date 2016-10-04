@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'design-patterns-cards',
-  styleUrls: ['cards.component.css'],
+  styleUrls: ['cards.component.scss'],
   templateUrl: 'cards.component.html',
 })
 export class CardsComponent {

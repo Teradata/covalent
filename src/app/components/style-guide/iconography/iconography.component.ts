@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'style-guide-iconography',
-  styleUrls: ['iconography.component.css'],
+  styleUrls: ['iconography.component.scss'],
   templateUrl: 'iconography.component.html',
 })
 export class IconographyComponent implements OnInit {

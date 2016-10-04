@@ -53,6 +53,7 @@ export class HttpInterceptorService {
     return new Observable<any>((subscriber: Subscriber<any>) => {
       responseObservable.do((response: Response) => {
         subscriber.next(this._responseResolve(response));
+        subscriber.complete();
       }).catch((error: Response) => {
         return new Observable<any>(() => {
           subscriber.error(this._responseErrorResolve(error));
