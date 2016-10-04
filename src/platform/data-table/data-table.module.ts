@@ -14,8 +14,6 @@ import { TdDataTableRowDirective } from './directives/row.directive';
 import { TdDataTableColumnDirective } from './directives/column.directive';
 import { TdDataTableCellDirective } from './directives/cell.directive';
 
-import { TdDataTableSearchPipe } from './pipes/search.pipe';
-
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableContainerComponent,
@@ -37,7 +35,6 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   ],
   declarations: [
     TD_DATA_TABLE_DIRECTIVES,
-    TdDataTableSearchPipe,
   ],
   exports: [
     TD_DATA_TABLE_DIRECTIVES,
