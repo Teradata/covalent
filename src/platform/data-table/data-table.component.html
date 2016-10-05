@@ -28,8 +28,8 @@
             (change)="selectAll($event.checked)">
           </md-checkbox>
         </th>
-        <th td-column *ngFor="let column of columns" [ngClass]="{'md-clickable': _sorting}" (click)="setSorting(column)">
-          <span class="md-caption">
+        <th td-column *ngFor="let column of columns" [ngClass]="{'md-clickable': _sorting}">
+          <span class="md-caption" (click)="setSorting(column)">
             {{column.label}}
             <md-icon *ngIf="column === _sortBy && _sortOrder === _ascending">
               keyboard_arrow_down
