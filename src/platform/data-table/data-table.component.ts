@@ -150,11 +150,17 @@ export class TdDataTableComponent implements OnInit {
 
     if (this._searchVisible) {
       setTimeout(this.focusOnSearch.bind(this));
+    } else {
+      setTimeout(this.clearSearch.bind(this));
     }
   }
 
   focusOnSearch(): void {
     this._searchTermInput.first.focus();
+  }
+
+  clearSearch(): void {
+    this._searchTermControl.setValue('');
   }
 
   nextPage(): void {
