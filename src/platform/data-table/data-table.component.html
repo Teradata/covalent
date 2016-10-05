@@ -32,10 +32,10 @@
           <span class="md-caption" (click)="setSorting(column)">
             {{column.label}}
             <md-icon *ngIf="column === _sortBy && _sortOrder === _ascending">
-              keyboard_arrow_down
+              arrow_upward
             </md-icon>
             <md-icon *ngIf="column === _sortBy && _sortOrder === _descending">
-              keyboard_arrow_up
+              arrow_downward
             </md-icon>
           </span>
         </th>
