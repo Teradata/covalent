@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
+
+import { TdDataTableSortingOrder } from '../../../../platform/data-table';
 
 @Component({
   selector: 'data-table-demo',
@@ -29,6 +31,7 @@ export class DataTableDemoComponent {
   ];
 
   sortBy: string = 'name';
+  sortOrder: string = 'ASC';
 
   rowSelection: boolean = false;
   multiple: boolean = true;
@@ -51,9 +54,14 @@ export class DataTableDemoComponent {
     }
   }
 
-  sortChanged(event): void {
-    if (this.sortBy !== event.column.name) {
-      this.sortBy = event.column.name;
-    }
+  toggleSortOrder(): void {
+    this.sortOrder = this.sortOrder === 'ASC' ? 'DESC' : 'ASC';
+  }
+
+  sortChanged(changes): void {
+    const { column, order } = changes; 
+
+    this.sortBy = column.name;
+    this.sortOrder = order == TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
   }
 }

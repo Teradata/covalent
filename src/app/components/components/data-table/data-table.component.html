@@ -11,6 +11,7 @@
       [multiple]="multiple"
       [rowSelection]="rowSelection"
       [sortBy]="sortBy"
+      [sortOrder]="sortOrder"
       search="true"
       title="Search and pagination enabled"
       pageSize="5"
@@ -20,6 +21,11 @@
     <button md-button color="primary" (click)="toggleSortBy()">
       Toggle SortBy
       ({{sortBy}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleSortOrder()">
+      Toggle SortOrder
+      ({{sortOrder}})
     </button>
   </md-card-content>
   <md-divider></md-divider>
