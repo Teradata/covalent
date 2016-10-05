@@ -1,7 +1,23 @@
-import { Component, OnInit, Input, ViewChildren, QueryList, Renderer } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
+
+import * as _ from "lodash";
+
+export enum TdDataTableSortingOrder {
+  Ascending, Descending
+};
+
+export interface TdDataTableColumn { 
+  name: string, 
+  label: string 
+};
+
+export interface TdDataTableSortChanged {
+  column: TdDataTableColumn,
+  order: TdDataTableSortingOrder
+};
 
 @Component({
   selector: 'td-data-table',
@@ -13,12 +29,13 @@ export class TdDataTableComponent implements OnInit {
   /** internal attributes */
   private _data: any[];
   private _visibleData: any[];
-  private _columns: { name: string, label: string }[];
+  private _columns: TdDataTableColumn[];
   private _rowSelection: boolean;
   private _rowSelectionField: string = 'selected';
   private _multiple: boolean = true;
   private _search: boolean = false;
   private _hasData: boolean = false;
+  private _initialized: boolean = false;
 
   /** pagination */
   private _pageSize: number = 0;
@@ -26,12 +43,24 @@ export class TdDataTableComponent implements OnInit {
   private _totalPages: number = 0;
   private _hasPagination: boolean = false;
 
+  /** sorting */
+  private _sorting: boolean = false;
+  private _sortBy: TdDataTableColumn;
+  private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
+
+  private _sortByColumnName: string;
+  private _ascending = TdDataTableSortingOrder.Ascending; 
+  private _descending = TdDataTableSortingOrder.Descending; 
+
   /** search by term */
   private _searchVisible: boolean = false;
   private _searchTerm: string = '';
   private _searchTermControl: FormControl = new FormControl();
 
   @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
+
+  /** events */
+  @Output() sortChanged: EventEmitter<TdDataTableSortChanged> = new EventEmitter<TdDataTableSortChanged>();
 
   /** td-data-table element attributes */
   @Input('title') _title: string;
@@ -82,10 +111,10 @@ export class TdDataTableComponent implements OnInit {
   }
 
   @Input('columns')
-  set columns(cols: { name: string, label: string }[]) {
+  set columns(cols: TdDataTableColumn[]) {
     this._columns = cols;
   }
-  get columns(): { name: string, label: string }[] {
+  get columns(): TdDataTableColumn[] {
     if (this._columns) {
       return this._columns;
     }
@@ -106,6 +135,34 @@ export class TdDataTableComponent implements OnInit {
     return this._columns;
   }
 
+  @Input('sorting')
+  set sorting(sorting: string | boolean) {
+    this._sorting = sorting !== '' ? (sorting === 'true' || sorting === true) : true;
+  }
+
+  @Input('sortBy') 
+  set sortBy(columnName: string) {
+    if (!columnName) {
+      return;
+    }
+    this._sortByColumnName = columnName;
+    this._sorting = true;
+    this.filterData();
+  }
+
+  @Input('sortOrder')
+  set sortOrder(order: string) {
+    if (order.toUpperCase() === 'DESC') {
+      this._sortOrder = TdDataTableSortingOrder.Descending;
+      this.notifySortChanged();
+    } else if (order.toUpperCase() === '' || order.toUpperCase() === 'ASC') {
+      this._sortOrder = TdDataTableSortingOrder.Ascending;
+      this.notifySortChanged();
+    } else {
+      throw '[sortOrder] must be empty, ASC or DESC';
+    }
+  }
+
   set hasPagination(pagination: boolean) {
     this._hasPagination = pagination;
   }
@@ -123,6 +180,11 @@ export class TdDataTableComponent implements OnInit {
     this._searchTermControl.valueChanges
       .debounceTime(250)
       .subscribe(this.searchTermChanged.bind(this));
+  }
+
+  ngAfterViewInit(): void {
+    this._initialized = true;
+    this.filterData();
   }
 
   areAllSelected(): boolean {
@@ -163,6 +225,21 @@ export class TdDataTableComponent implements OnInit {
     this._searchTermControl.setValue('');
   }
 
+  setSorting(column: TdDataTableColumn): void {
+    if (this._sortBy === column) {
+      this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
+        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending  
+    } else {
+      this._sortBy = column;
+      this.notifySortChanged();
+    }
+    this.filterData();
+  }
+
+  notifySortChanged(): void {
+    this.sortChanged.next({ column: this._sortBy, order: this._sortOrder });
+  }
+
   nextPage(): void {
     if (this._currentPage < this._totalPages) {
       this._currentPage = this._currentPage + 1;
@@ -190,6 +267,10 @@ export class TdDataTableComponent implements OnInit {
   private filterData(): void {
     this._visibleData = this._data;
 
+    if (!this._initialized) {
+      return;
+    }
+
     let filter: string = this._searchTerm.toLowerCase();
     if (filter) {
       this._visibleData = this._visibleData.filter((item: any) => {
@@ -199,6 +280,24 @@ export class TdDataTableComponent implements OnInit {
         });
         return !(typeof res === 'undefined');
       });
+    }
+
+    if (this._sortByColumnName) {
+      const column = this.columns.find((c: any) => c.name === this._sortByColumnName);
+      if (!column) {
+        throw '[sortBy] must be a valid column name';
+      }
+
+      this._sortBy = column;
+      this._sortByColumnName = undefined;
+      this.notifySortChanged();
+    }
+
+    if (this._sorting && this._sortBy) {
+      this._visibleData = _.sortBy(this._visibleData, this._sortBy.name);
+      if (this._sortOrder === TdDataTableSortingOrder.Descending) {
+        this._visibleData = _.reverse(this._visibleData);
+      }
     }
 
     if (this.hasPagination) {

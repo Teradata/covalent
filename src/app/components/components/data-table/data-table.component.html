@@ -10,10 +10,17 @@
       [columns]="columns"
       [multiple]="multiple"
       [rowSelection]="rowSelection"
+      [sortBy]="sortBy"
       search="true"
       title="Search and pagination enabled"
-      pageSize="5">
+      pageSize="5"
+      (sortChanged)="sortChanged($event)">
     </td-data-table>
+
+    <button md-button color="primary" (click)="toggleSortBy()">
+      Toggle SortBy
+      ({{sortBy}})
+    </button>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-content>
@@ -56,6 +63,10 @@
     <button md-button color="primary" (click)="toggleRowSelectionMultiple()">
       Toggle RowSelectionMultiple
       ({{multiple ? 'ON' : 'OFF'}})
+    </button>
+    <button md-button color="primary" (click)="toggleSortBy()">
+      Toggle SortBy
+      ({{sortBy}})
     </button>
   </md-card-actions>
 </md-card>

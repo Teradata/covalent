@@ -28,6 +28,8 @@ export class DataTableDemoComponent {
     { name: 'Rita Lee', phone: '555-555-4042' },
   ];
 
+  sortBy: string = 'name';
+
   rowSelection: boolean = false;
   multiple: boolean = true;
 
@@ -37,5 +39,21 @@ export class DataTableDemoComponent {
 
   toggleRowSelectionMultiple(): void {
     this.multiple = !this.multiple;
+  }
+
+  toggleSortBy(): void {
+    const columns = this.columns.map((c: any) => c.name);
+    const idx = columns.indexOf(this.sortBy);
+    if (idx < columns.length - 1) {
+      this.sortBy = columns[idx + 1];
+    } else {
+      this.sortBy = columns[0];
+    }
+  }
+
+  sortChanged(event): void {
+    if (this.sortBy !== event.column.name) {
+      this.sortBy = event.column.name;
+    }
   }
 }
