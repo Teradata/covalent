@@ -2,6 +2,28 @@
   <md-card-title>Covalent Charts</md-card-title>
   <md-card-subtitle>Responsive charts for Browsers</md-card-subtitle>
   <md-divider></md-divider>
+  <md-card-title>Time Series Line Chart</md-card-title>
+    <td-charts chartTitle="Prices Trend"
+                bottomAxisTitle="Year"
+                leftAxisTitle="Prices($)"
+                [grid]="true"
+                [ticks]="true"
+                [shadowDepth]="['125%', 2, 0, 2]"
+                shadowColor="rgba(0, 0, 0, 0.54)"
+                fillOpacity="1">
+      <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
+                   contentType="csv"
+                   timeSeries="true"
+                   bottomAxis="date"
+                   [columns]="['close']"
+                   [titles]="['close']"
+                   [colors]="['#3366cc', '#dc3912', '#ff9900']"
+                   [transition]="true"
+                   transitionDuration="5000"
+                   transitionDelay="3000">
+      </td-chart-line>
+    </td-charts>
+    <md-divider></md-divider>
   <md-card-title>Bar Chart</md-card-title>
   <md-card-content>
     <td-charts chartTitle="Sales Bar Chart"
@@ -135,7 +157,7 @@
         export class ChartDemoComponent {
 
           @ViewChild(TdChartsComponent) tdChartsComponent: TdChartsComponent;
-          
+
           colorPalette: any[];
           paletteErrorMsg: string = '';
 
