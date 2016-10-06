@@ -21,29 +21,29 @@
   <table td-table>
     <thead td-head>
       <tr td-row>
-        <th td-column *ngIf="_rowSelection">
+        <th td-column class="md-checkbox-column" *ngIf="_rowSelection">
           <md-checkbox
             *ngIf="_multiple"
             [checked]="areAllSelected()"
             (change)="selectAll($event.checked)">
           </md-checkbox>
         </th>
-        <th td-column *ngFor="let column of columns" [ngClass]="{'md-clickable': _sorting}">
+        <th td-column *ngFor="let column of columns" [ngClass]="{'md-clickable': _sorting, 'md-active': column === _sortBy}">
           <span class="md-caption" (click)="setSorting(column)">
             {{column.label}}
-            <md-icon *ngIf="column === _sortBy && _sortOrder === _ascending">
-              arrow_upward
-            </md-icon>
-            <md-icon *ngIf="column === _sortBy && _sortOrder === _descending">
-              arrow_downward
-            </md-icon>
           </span>
+          <md-icon *ngIf="column === _sortBy && _sortOrder === _ascending">
+            arrow_upward
+          </md-icon>
+          <md-icon *ngIf="column === _sortBy && _sortOrder === _descending">
+            arrow_downward
+          </md-icon>
         </th>
       </tr>
     </thead>
     <tbody td-body>
       <tr td-row *ngFor="let row of _visibleData">
-        <td td-cell *ngIf="_rowSelection">
+        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
           <md-checkbox
             [checked]="row[_rowSelectionField]"
             (change)="select(row, $event.checked)">
