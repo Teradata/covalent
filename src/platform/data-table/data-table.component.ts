@@ -11,7 +11,9 @@ export enum TdDataTableSortingOrder {
 
 export interface TdDataTableColumn { 
   name: string, 
-  label: string 
+  label: string,
+  numeric?: boolean,
+  format?: { (value: any): any };
 };
 
 export interface TdDataTableSortChanged {
@@ -177,6 +179,7 @@ export class TdDataTableComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
+    this.preprocessData();
     this._initialized = true;
     this.filterData();
   }
@@ -248,6 +251,16 @@ export class TdDataTableComponent implements OnInit {
   prevPage(): void {
     this._currentPage = Math.max(this._currentPage - 1, 1);
     this.filterData();
+  }
+
+  private preprocessData(): void {
+    this._data = _.cloneDeep(this._data);
+    this._data = this._data.map((row: any) => {
+      this.columns.filter((c: any) => c.format).forEach((c: any) => {
+        row[c.name] = c.format(row[c.name]);
+      });
+      return row;
+    });
   }
 
   private searchTermChanged(value: string): void {

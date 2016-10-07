@@ -28,14 +28,22 @@
             (change)="selectAll($event.checked)">
           </md-checkbox>
         </th>
-        <th td-column *ngFor="let column of columns" [ngClass]="{'md-clickable': _sorting, 'md-active': column === _sortBy}">
+        <th td-column 
+            *ngFor="let column of columns" 
+            [ngClass]="{'md-clickable': _sorting, 'md-active': column === _sortBy, 'md-numeric': column.numeric, 'md-asc': column === _sortBy && _sortOrder === _ascending, 'md-desc': _sortOrder === !(column === _sortBy) || _descending}">
+          <md-icon class="md-sort-icon" *ngIf="column.numeric && (_sortOrder === _ascending || !(column === _sortBy))">
+            arrow_upward
+          </md-icon>
+          <md-icon class="md-sort-icon" *ngIf="column.numeric && _sortOrder === _descending && column === _sortBy">
+            arrow_downward
+          </md-icon>
           <span class="md-caption" (click)="setSorting(column)">
             {{column.label}}
           </span>
-          <md-icon *ngIf="column === _sortBy && _sortOrder === _ascending">
+          <md-icon class="md-sort-icon" *ngIf="!column.numeric && (_sortOrder === _ascending || !(column === _sortBy))">
             arrow_upward
           </md-icon>
-          <md-icon *ngIf="column === _sortBy && _sortOrder === _descending">
+          <md-icon class="md-sort-icon" *ngIf="!column.numeric && _sortOrder === _descending && column === _sortBy">
             arrow_downward
           </md-icon>
         </th>
@@ -43,13 +51,13 @@
     </thead>
     <tbody td-body>
       <tr td-row *ngFor="let row of _visibleData">
-        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
+        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection"> 
           <md-checkbox
             [checked]="row[_rowSelectionField]"
             (change)="select(row, $event.checked)">
           </md-checkbox>
         </td>
-        <td td-cell *ngFor="let column of columns">
+        <td td-cell *ngFor="let column of columns" [ngClass]="{'md-numeric': column.numeric}">
           <span class="md-body-1">{{ row[column.name] }}</span>
         </td>
       </tr>
