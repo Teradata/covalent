@@ -18,10 +18,12 @@ export class TdChartLineComponent implements AfterViewInit {
   private _parentObj: any;
   private _chartTitle: string;
   private _leftAxisTitle: string;
+  private _contentType: string;
+  private _bottomAxisDisplay: string;
+  private _leftAxisDisplay: string;
 
   @ViewChild('linechart') content: ElementRef;
   @Input() dataSrc: string = '';
-  @Input() contentType: string = '';
   @Input() bottomAxis: string = '';
   @Input() transition: boolean = true;
   @Input() transitionDuration: number;
@@ -51,12 +53,12 @@ export class TdChartLineComponent implements AfterViewInit {
             .delay(this.transitionDelay)
             .ease(d3.easeLinear);
 
-    let parseTime = d3.timeParse('%d-%b-%y');
-    let stringCol = function(record: any, bottomAxis: string): string { return record[bottomAxis]; }
-    let dateCol = function(record: any, bottomAxis: string): Date { return parseTime(record[bottomAxis]);}
+    let parseTime: any = d3.timeParse('%d-%b-%y');
+    let stringCol: any = function(record: any, bottomAxis: string): string { return record[bottomAxis]; };
+    let dateCol: any = function(record: any, bottomAxis: string): Date { return parseTime(record[bottomAxis]); };
 
-    let row = this.timeSeries ? dateCol : stringCol;
-    let xScale = this.timeSeries ? d3.scaleTime : d3.scaleLinear;
+    let row: Function = this.timeSeries ? dateCol : stringCol;
+    let xScale: Function = this.timeSeries ? d3.scaleTime : d3.scaleLinear;
 
     let x: any = xScale().range([0, this._width]);
     let y: any = d3.scaleLinear().range([this._height, 0]);
@@ -73,14 +75,16 @@ export class TdChartLineComponent implements AfterViewInit {
 
     let svg: any = d3.select(containerDiv).selectAll('.linechartG');
 
+    this._contentType = this.dataSrc.substr(this.dataSrc.lastIndexOf('.') + 1);
+
     enum ParseContent {
       json = d3.json,
       csv = d3.csv,
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.dataSrc, (error: string, data: any) => {
-      if (error) {throw error;}
+    ParseContent[this._contentType](this.dataSrc, (error: string, data: any) => {
+      if (error) { throw error; }
 
       let lines: Object = this.columns.map((id: any) => {
         return {
@@ -98,25 +102,29 @@ export class TdChartLineComponent implements AfterViewInit {
         d3.max(lines, (c: any) => { return d3.max(c.values, (d: any) => { return d.yValue; }); }),
       ]);
 
-      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
-
-      let linesElems: any = document.getElementsByClassName('line');
+      this._parentObj.drawGridsAndTicks(svg, x, y);
 
       let line: any = svg.append('g')
         .classed('chart-lines', true)
         .selectAll('.lineTitle')
         .data(lines);
 
+      let transitionFlag: boolean = this.transition;
+
       line.enter().append('path')
         .attr('class', 'line')
         .merge(line)
         .attr('d', (d: any) => { return drawLine(d.values); })
         .style('stroke', (d: any) => { return color(d.id); })
-        .attr('stroke-dasharray', (d: any, i: any) => { if (this.transition === true) {
-          return linesElems[i].getTotalLength(); }
+        .attr('stroke-dasharray', function(d: any): number {
+          if (transitionFlag === true) {
+            return this.getTotalLength();
+          }
         })
-        .attr('stroke-dashoffset', (d: any, i: any) => { if (this.transition === true) {
-          return linesElems[i].getTotalLength(); }
+        .attr('stroke-dashoffset', function(d: any): number {
+          if (transitionFlag === true) {
+            return this.getTotalLength();
+          }
         })
         .style('filter', 'url(#drop-shadow)');
 
@@ -138,6 +146,14 @@ export class TdChartLineComponent implements AfterViewInit {
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this._chartTitle)
         .attr('class', 'md-title');
+
+      svg.append('text')
+      .attr('y', -15)
+      .classed('axisTitle', true)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(this._leftAxisTitle);
+
     });
   }
 }

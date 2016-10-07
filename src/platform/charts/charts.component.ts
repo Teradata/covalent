@@ -76,6 +76,8 @@ export class TdChartsComponent {
   private _tickHeightSize: number = 0;
   private _tickWidthSize: number = 0;
   private _gridClass: string;
+  private _bottomAxisDisplay: string;
+  private _leftAxisDisplay: string;
 
   @Input() chartTitle: string = '';
   @Input() bottomAxisTitle: string = '';
@@ -85,8 +87,9 @@ export class TdChartsComponent {
   @Input() ticks: boolean;
   @Input() grid: boolean;
   @Input() shadowDepth: any[];
+  @Input() showBottomAxis: boolean = true;
+  @Input() showLeftAxis: boolean = true;
   colorPalette: string[];
-
   paletteErrorMsg: string;
 
   constructor() {
@@ -166,7 +169,7 @@ export class TdChartsComponent {
       .attr('slope', this.fillOpacity);
   }
 
-  drawGridsAndTicks(svgElem: any, x: any, y: any, leftAxisTitle: string): void {
+  drawGridsAndTicks(svgElem: any, x: any, y: any): void {
     if (this.ticks === true) {
       this._tickHeightSize = -this._height;
       this._tickWidthSize = -this._width;
@@ -174,6 +177,18 @@ export class TdChartsComponent {
 
     if (this.grid === true) {
       this._gridClass = 'grid';
+    }
+
+    if (this.showBottomAxis === true) {
+      this._bottomAxisDisplay = 'block';
+    } else {
+      this._bottomAxisDisplay = 'none';
+    }
+
+    if (this.showLeftAxis === true) {
+      this._leftAxisDisplay = 'block';
+    } else {
+      this._leftAxisDisplay = 'none';
     }
 
     svgElem.append('g')
@@ -194,17 +209,13 @@ export class TdChartsComponent {
     svgElem.append('g')
       .attr('class', 'ticks ticks-x')
       .attr('transform', 'translate(0,' + this._height + ')')
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      .attr('display', this._bottomAxisDisplay);
 
     svgElem.append('g')
       .attr('class', 'ticks ticks-y')
       .call(d3.axisLeft(y))
-      .append('text')
-      .attr('transform', 'rotate(-90)')
-      .attr('y', 6)
-      .attr('dy', '0.71em')
-      .attr('fill', '#000')
-      .text(leftAxisTitle);
+      .attr('display', this._leftAxisDisplay);
   }
 
   /**

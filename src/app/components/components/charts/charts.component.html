@@ -12,7 +12,6 @@
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="1">
       <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
-                   contentType="csv"
                    timeSeries="true"
                    bottomAxis="date"
                    [columns]="['close']"
@@ -36,7 +35,6 @@
                 fillOpacity="1">
       <td-chart-bar [colors]="['cyan', 'indigo']"
                      dataSrc="platform/charts/chart-bar/data.csv"
-                     contentType="csv"
                      bottomAxis="salesperson"
                      columns="sales"
                      [transition]="true"
@@ -55,7 +53,6 @@
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="1">
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
-                   contentType="tsv"
                    bottomAxis="col1"
                    [columns]="['col2', 'col3','col4']"
                    [titles]="['New York','San Francisco', 'Austin']"
@@ -77,7 +74,6 @@
                 fillOpacity="1">
       <td-chart-area [colors]="['#03a9f4', '#0277bd']"
                      dataSrc="platform/charts/chart-area/data.json"
-                     contentType="json"
                      bottomAxis="x"
                      columns="y"
                      [transition]="true"
@@ -195,7 +191,6 @@
     <td-highlight lang="html">
       <![CDATA[
       <td-chart-bar dataSrc="platform/charts/chart-bar/data.csv"
-                     contentType="csv"
                      bottomAxis="salesperson"
                      columns="sales"
                      [colors]="['cyan', 'indigo']"
@@ -246,7 +241,6 @@
     <td-highlight lang="html">
       <![CDATA[
       <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
-                     contentType="tsv"
                      bottomAxis="col1"
                      [transition]="true"
                      transitionDuration="3000"
@@ -294,7 +288,6 @@
       <![CDATA[
         <td-chart-area [colors]="['#03a9f4', '#0277bd']"
                       dataSrc="platform/charts/chart-area/data.json"
-                      contentType="json"
                       bottomAxis="x"
                       columns="y"
                       [transition]="true"

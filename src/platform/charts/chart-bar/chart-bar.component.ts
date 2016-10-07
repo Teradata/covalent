@@ -21,13 +21,14 @@ export class TdChartBarComponent implements AfterViewInit {
   private _chartTitle: string;
   private _shadowColor: string;
   private _leftAxisTitle: string;
+  private _contentType: string;
 
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
   @ViewChild('barchart') content: ElementRef;
   @Input('') dataSrc: string = '';
-  @Input('') contentType: string = '';
+  // @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
   @Input('') colors: string[];
   @Input() transition: boolean = true;
@@ -53,6 +54,8 @@ export class TdChartBarComponent implements AfterViewInit {
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = 500 - this._margin.top - this._margin.bottom;
     this._padding = 100;
+
+    this._contentType = this.dataSrc.substr(this.dataSrc.lastIndexOf('.') + 1);
 
     if (this._parentObj.chartTitle) {
       this._chartTitle = this._parentObj.chartTitle;
@@ -88,7 +91,7 @@ export class TdChartBarComponent implements AfterViewInit {
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.dataSrc, (error: string, data: any) => {
+    ParseContent[this._contentType](this.dataSrc, (error: string, data: any) => {
       if (error) {
         throw error;
       }
@@ -100,7 +103,7 @@ export class TdChartBarComponent implements AfterViewInit {
       x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
       y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
-      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
+      this._parentObj.drawGridsAndTicks(svg, x, y);
 
       svg.append('g')
         .classed('chart-bars', true)
@@ -131,6 +134,13 @@ export class TdChartBarComponent implements AfterViewInit {
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this._chartTitle)
         .attr('class', 'md-title');
+
+      svg.append('text')
+      .attr('y', -15)
+      .classed('axisTitle', true)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(this._leftAxisTitle);
 
     });
   }

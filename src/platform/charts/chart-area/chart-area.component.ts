@@ -25,10 +25,10 @@ export class TdChartAreaComponent implements AfterViewInit {
   private _leftAxisTitle: string;
   private _sort: boolean;
   private _colors: string[] = [];
+  private _contentType: string;
 
   @ViewChild('areachart') content: ElementRef;
   @Input('') dataSrc: string = '';
-  @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
   @Input() transition: boolean = true;
   @Input() transitionDuration: number;
@@ -61,23 +61,6 @@ export class TdChartAreaComponent implements AfterViewInit {
       this._chartTitle = this._parentObj.chartTitle;
     }
 
-    if (this._parentObj.ticks === true) {
-      this._tickHeightSize = -this._height;
-      this._tickWidthSize = -this._width;
-    }
-
-    if (this._parentObj.grid === true) {
-      this._grid = 'grid';
-    }
-
-    if (this._parentObj.sort) {
-      this._sort = this._parentObj.sort;
-    }
-
-    if (this._parentObj.shadowColor) {
-      this._shadowColor = this._parentObj.shadowColor;
-    }
-
     if (this._parentObj.leftAxisTitle) {
       this._leftAxisTitle = this._parentObj.leftAxisTitle;
     }
@@ -101,6 +84,8 @@ export class TdChartAreaComponent implements AfterViewInit {
 
     let svg: any = d3.select(containerDiv).selectAll('.areachartG');
 
+    this._contentType = this.dataSrc.substr(this.dataSrc.lastIndexOf('.') + 1);
+
     if (d3.select('#rectClip rect').size() === 0) {
       svg.append('clipPath')
       .attr('id', 'rectClip')
@@ -115,7 +100,7 @@ export class TdChartAreaComponent implements AfterViewInit {
       tsv = d3.tsv
     }
 
-    ParseContent[this.contentType](this.dataSrc, (error: string, data: any) => {
+    ParseContent[this._contentType](this.dataSrc, (error: string, data: any) => {
       if (error) {
         throw error;
       }
@@ -128,7 +113,7 @@ export class TdChartAreaComponent implements AfterViewInit {
       x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
       y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
-      this._parentObj.drawGridsAndTicks(svg, x, y, this._leftAxisTitle);
+      this._parentObj.drawGridsAndTicks(svg, x, y);
 
       if (this.transition === true) {
         d3.select('#rectClip rect')
@@ -150,20 +135,29 @@ export class TdChartAreaComponent implements AfterViewInit {
        .attr('fill', this._colors[0])
        .attr('stroke', this._colors[1])
        .attr('d', area)
-       .attr('clip-path', 'url(#rectClip)');
+       .attr('clip-path', 'url(#rectClip)')
+       .style('filter', 'url(#drop-shadow)');
 
       d3.select(containerDiv).selectAll('.chart-area')
        .append('path')
        .data([data])
        .attr('class', 'line')
        .attr('d', valueline)
-       .attr('clip-path', 'url(#rectClip)');
+       .attr('clip-path', 'url(#rectClip)')
+       .style('filter', 'url(#drop-shadow)');
 
       svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
         .text(this._chartTitle)
         .attr('class', 'md-title');
+
+      svg.append('text')
+      .attr('y', -15)
+      .classed('axisTitle', true)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(this._leftAxisTitle);
     });
   }
 }
