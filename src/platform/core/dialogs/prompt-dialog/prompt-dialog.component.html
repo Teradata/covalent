@@ -2,14 +2,14 @@
   <td-dialog-title *ngIf="title">
     {{title}}
   </td-dialog-title>
-  <td-dialog-content layout="column" class="md-body-1 tc-grey-600">
+  <td-dialog-content layout="column" class="md-subhead tc-grey-700">
     {{message}}
     <form #form="ngForm" layout="row" flex>
       <md-input [(ngModel)]="value" name="value" required flex></md-input>
     </form>
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button color="accent" (click)="cancel()">{{cancelButton}}</button>
+    <button md-button (click)="cancel()">{{cancelButton}}</button>
     <button md-button color="accent" [disabled]="!form.valid" (click)="accept()">{{acceptButton}}</button>
   </td-dialog-actions>
 </td-dialog>

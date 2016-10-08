@@ -2,11 +2,11 @@
   <td-dialog-title *ngIf="title">
     {{title}}
   </td-dialog-title>
-  <td-dialog-content class="md-body-1 tc-grey-600">
+  <td-dialog-content class="md-subhead tc-grey-700">
     {{message}}
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button color="accent" (click)="cancel()">{{cancelButton}}</button>
+    <button md-button (click)="cancel()">{{cancelButton}}</button>
     <button md-button color="accent" (click)="accept()">{{acceptButton}}</button>
   </td-dialog-actions>
 </td-dialog>
