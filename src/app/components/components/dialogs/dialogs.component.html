@@ -1,0 +1,87 @@
+<md-card>
+  <md-card-title>Alert and Confirm</md-card-title>
+  <md-card-subtitle>Quick alert and confirm dialogs</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="openAlert()">Open Alert</button>
+    <button md-button color="primary" (click)="openConfirm()">Open Confirm</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdDialogService</md-card-title>
+  <md-card-subtitle>How to use this service</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code>TdDialogService</code></h2>
+    <p>Service provided with methods that wrap the material2 [MdDialog] service and provide an easier experience for alerts and confirm dialogs.</p>
+    <h3>Methods:</h3>
+    <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example(after setup):</h3>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { ViewContainerRef } from '@angular/core';
+        import { TdDialogService } from '@covalent/core';
+        ...
+        })
+        export class Demo {
+          constructor(private _dialogService: TdDialogService,
+                      private _viewContainerRef: ViewContainerRef) {
+            ...
+          }
+
+          openAlert(): void {
+            this._dialogService.openAlert({
+              title: 'Alert',
+              message: 'This is how simple it is to create an alert with this wrapper service.',
+              viewContainerRef: this._viewContainerRef,
+              closeButton: 'Close'
+            });
+          }
+
+          openConfirm(): void {
+            this._dialogService.openConfirm({
+              title: 'Confirm',
+              message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
+              cancelButton: 'Disagree',
+              acceptButton: 'Agree',
+              viewContainerRef: this._viewContainerRef,
+            }).afterClosed().subscribe((accept: boolean) => {
+              if (accept) {
+                // DO SOMETHING
+              } else {
+                // DO SOMETHING ELSE
+              }
+            });
+          }
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentCoreModule } from '@covalent/core';
+
+        @NgModule({
+          imports: [
+            CovalentCoreModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+    <p>After that, just inject [DialogService] and use it for your dialogs.</p>
+  </md-card-content>
+</md-card>

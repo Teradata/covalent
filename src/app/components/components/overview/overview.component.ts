@@ -32,6 +32,11 @@ export class ComponentsOverviewComponent {
       route: 'loading',
       title: 'Loading',
     }, {
+      color: 'amber-700',
+      icon: 'open_in_browser',
+      route: 'dialogs',
+      title: 'Alert and Confirm',
+    }, {
       color: 'pink-700',
       icon: 'code',
       route: 'syntax-highlighting',

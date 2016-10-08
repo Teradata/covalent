@@ -38,6 +38,11 @@ export class ComponentsComponent {
     route: 'loading',
     title: 'Loading',
   }, {
+    description: 'Quick alert and confirm dialogs',
+    icon: 'open_in_browser',
+    route: 'dialogs',
+    title: 'Alert and Confirm',
+  }, {
     description: 'Highlighting your code snippets',
     icon: 'code',
     route: 'syntax-highlighting',
