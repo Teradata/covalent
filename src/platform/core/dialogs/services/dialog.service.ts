@@ -30,6 +30,18 @@ export class TdDialogService {
 
   constructor(private _dialogService: MdDialog) {}
 
+  /**
+   * params:
+   * - alertConfig: IAlertConfig {
+   *     title?: string;
+   *     message: string;
+   *     viewContainerRef: ViewContainerRef;
+   *     closeButton?: string;
+   * }
+   *
+   * Opens an alert dialog with the provided config.
+   * Returns an MdDialogRef<TdAlertDialogComponent> object.
+   */
   public openAlert(alertConfig: IAlertConfig): MdDialogRef<TdAlertDialogComponent> {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
     dialogConfig.viewContainerRef = alertConfig.viewContainerRef;
@@ -44,6 +56,19 @@ export class TdDialogService {
     return dialogRef;
   }
 
+  /**
+   * params:
+   * - confirmConfig: IConfirmConfig {
+   *     title?: string;
+   *     message: string;
+   *     viewContainerRef: ViewContainerRef;
+   *     acceptButton?: string;
+   *     cancelButton?: string;
+   * }
+   *
+   * Opens a confirm dialog with the provided config.
+   * Returns an MdDialogRef<TdConfirmDialogComponent> object.
+   */
   public openConfirm(confirmConfig: IConfirmConfig): MdDialogRef<TdConfirmDialogComponent> {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
     dialogConfig.viewContainerRef = confirmConfig.viewContainerRef;
@@ -61,6 +86,19 @@ export class TdDialogService {
     return dialogRef;
   }
 
+  /**
+   * params:
+   * - promptConfig: IPromptConfig {
+   *     title?: string;
+   *     message: string;
+   *     viewContainerRef: ViewContainerRef;
+   *     acceptButton?: string;
+   *     cancelButton?: string;
+   * }
+   *
+   * Opens a prompt dialog with the provided config.
+   * Returns an MdDialogRef<TdPromptDialogComponent> object.
+   */
   public openPrompt(promptConfig: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
     dialogConfig.viewContainerRef = promptConfig.viewContainerRef;
