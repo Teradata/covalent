@@ -2,6 +2,9 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { MdSnackBar, MdSnackBarConfig, MdDialog, MdSnackBarRef,
         MdDialogConfig, MdDialogRef } from '@angular/material';
 
+import { TdAlertDialogComponent } from '../../../../platform/core';
+import { TdConfirmDialogComponent } from '../../../../platform/core';
+
 @Component({
   selector: 'design-patterns-material-components',
   styleUrls: ['material-components.component.scss'],
@@ -145,39 +148,4 @@ export class MaterialComponentsComponent {
       }, 3000);
     });
   }
-}
-
-@Component({
-  selector: 'td-alert-dialog',
-  template: `
-  <h3>{{title}}</h3>
-  <p>{{message}}</p>
-  <div layout="row">
-    <span flex></span>
-    <button md-button color="accent" (click)="dialogRef.close()">Close</button>
-  </div>`,
-})
-export class TdAlertDialogComponent {
-  title: string = 'Alert';
-  message: string = '';
-
-  constructor(public dialogRef: MdDialogRef<TdAlertDialogComponent>) { }
-}
-
-@Component({
-  selector: 'td-confirm-dialog',
-  template: `
-  <h3>{{title}}</h3>
-  <p>{{message}}</p>
-  <div layout="row">
-    <span flex></span>
-    <button md-button color="accent" (click)="dialogRef.close(true)">Yes</button>
-    <button md-button color="accent" (click)="dialogRef.close(false)">No</button>
-  </div>`,
-})
-export class TdConfirmDialogComponent {
-  title: string = 'Confirmation';
-  message: string = '';
-
-  constructor(public dialogRef: MdDialogRef<TdConfirmDialogComponent>) { }
 }
