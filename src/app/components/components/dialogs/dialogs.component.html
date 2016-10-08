@@ -45,7 +45,7 @@
             this._dialogService.openAlert({
               message: 'This is how simple it is to create an alert with this wrapper service.',
               viewContainerRef: this._viewContainerRef, //OPTIONAL if setDefaultViewContainerRef is used.
-              title: 'Alert', //OPTIONAL
+              title: 'Alert', //OPTIONAL, hides if not provided
               closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
             });
           }
@@ -54,7 +54,7 @@
             this._dialogService.openConfirm({
               message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
               viewContainerRef: this._viewContainerRef, //OPTIONAL if setDefaultViewContainerRef is used.
-              title: 'Confirm', //OPTIONAL
+              title: 'Confirm', //OPTIONAL, hides if not provided
               cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
               acceptButton: 'Agree', //OPTIONAL, defaults to 'ACCEPT'
             }).afterClosed().subscribe((accept: boolean) => {
@@ -70,7 +70,7 @@
             this._dialogService.openPrompt({
               message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
               viewContainerRef: this._viewContainerRef, //OPTIONAL if setDefaultViewContainerRef is used.
-              title: 'Prompt', //OPTIONAL
+              title: 'Prompt', //OPTIONAL, hides if not provided
               value: 'Prepopulated value', //OPTIONAL
               cancelButton: 'Cancel', //OPTIONAL, defaults to 'CANCEL'
               acceptButton: 'Ok', //OPTIONAL, defaults to 'ACCEPT'
