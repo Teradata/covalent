@@ -8,7 +8,7 @@ import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.componen
 interface IDialogConfig {
   title?: string;
   message: string;
-  viewContainerRef: ViewContainerRef;
+  viewContainerRef?: ViewContainerRef;
 }
 
 interface IAlertConfig extends IDialogConfig {
@@ -27,40 +27,51 @@ interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
 
+  private _viewContainerRef: ViewContainerRef;
+
   constructor(private _dialogService: MdDialog) {}
 
   /**
    * params:
-   * - alertConfig: IAlertConfig {
-   *     title?: string;
+   * - viewContainerRef: ViewContainerRef
+   * 
+   * Sets a detaulf ViewContainerRef object to which all dialogs will belong to.
+   */
+  public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
+    this._viewContainerRef = viewContainerRef;
+  }
+
+  /**
+   * params:
+   * - config: IAlertConfig {
    *     message: string;
-   *     viewContainerRef: ViewContainerRef;
+   *     title?: string;
+   *     viewContainerRef?: ViewContainerRef;
    *     closeButton?: string;
    * }
    *
    * Opens an alert dialog with the provided config.
    * Returns an MdDialogRef<TdAlertDialogComponent> object.
    */
-  public openAlert(alertConfig: IAlertConfig): MdDialogRef<TdAlertDialogComponent> {
-    let dialogConfig: MdDialogConfig = new MdDialogConfig();
-    dialogConfig.viewContainerRef = alertConfig.viewContainerRef;
+  public openAlert(config: IAlertConfig): MdDialogRef<TdAlertDialogComponent> {
+    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
     let dialogRef: MdDialogRef<TdAlertDialogComponent> =
       this._dialogService.open(TdAlertDialogComponent, dialogConfig);
     let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
-    alertDialogComponent.title = alertConfig.title;
-    alertDialogComponent.message = alertConfig.message;
-    if (alertConfig.closeButton) {
-      alertDialogComponent.closeButton = alertConfig.closeButton;
+    alertDialogComponent.title = config.title;
+    alertDialogComponent.message = config.message;
+    if (config.closeButton) {
+      alertDialogComponent.closeButton = config.closeButton;
     }
     return dialogRef;
   }
 
   /**
    * params:
-   * - confirmConfig: IConfirmConfig {
-   *     title?: string;
+   * - config: IConfirmConfig {
    *     message: string;
-   *     viewContainerRef: ViewContainerRef;
+   *     title?: string;
+   *     viewContainerRef?: ViewContainerRef;
    *     acceptButton?: string;
    *     cancelButton?: string;
    * }
@@ -68,29 +79,29 @@ export class TdDialogService {
    * Opens a confirm dialog with the provided config.
    * Returns an MdDialogRef<TdConfirmDialogComponent> object.
    */
-  public openConfirm(confirmConfig: IConfirmConfig): MdDialogRef<TdConfirmDialogComponent> {
-    let dialogConfig: MdDialogConfig = new MdDialogConfig();
-    dialogConfig.viewContainerRef = confirmConfig.viewContainerRef;
+  public openConfirm(config: IConfirmConfig): MdDialogRef<TdConfirmDialogComponent> {
+    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
     let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
       this._dialogService.open(TdConfirmDialogComponent, dialogConfig);
     let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
-    confirmDialogComponent.title = confirmConfig.title;
-    confirmDialogComponent.message = confirmConfig.message;
-    if (confirmConfig.acceptButton) {
-      confirmDialogComponent.acceptButton = confirmConfig.acceptButton;
+    confirmDialogComponent.title = config.title;
+    confirmDialogComponent.message = config.message;
+    if (config.acceptButton) {
+      confirmDialogComponent.acceptButton = config.acceptButton;
     }
-    if (confirmConfig.cancelButton) {
-      confirmDialogComponent.cancelButton = confirmConfig.cancelButton;
+    if (config.cancelButton) {
+      confirmDialogComponent.cancelButton = config.cancelButton;
     }
     return dialogRef;
   }
 
   /**
    * params:
-   * - promptConfig: IPromptConfig {
-   *     title?: string;
+   * - config: IPromptConfig {
    *     message: string;
-   *     viewContainerRef: ViewContainerRef;
+   *     title?: string;
+   *     value?: string;
+   *     viewContainerRef?: ViewContainerRef;
    *     acceptButton?: string;
    *     cancelButton?: string;
    * }
@@ -98,22 +109,30 @@ export class TdDialogService {
    * Opens a prompt dialog with the provided config.
    * Returns an MdDialogRef<TdPromptDialogComponent> object.
    */
-  public openPrompt(promptConfig: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
-    let dialogConfig: MdDialogConfig = new MdDialogConfig();
-    dialogConfig.viewContainerRef = promptConfig.viewContainerRef;
+  public openPrompt(config: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
+    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
     let dialogRef: MdDialogRef<TdPromptDialogComponent> =
       this._dialogService.open(TdPromptDialogComponent, dialogConfig);
     let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
-    promptDialogComponent.title = promptConfig.title;
-    promptDialogComponent.message = promptConfig.message;
-    promptDialogComponent.value = promptConfig.value;
-    if (promptConfig.acceptButton) {
-      promptDialogComponent.acceptButton = promptConfig.acceptButton;
+    promptDialogComponent.title = config.title;
+    promptDialogComponent.message = config.message;
+    promptDialogComponent.value = config.value;
+    if (config.acceptButton) {
+      promptDialogComponent.acceptButton = config.acceptButton;
     }
-    if (promptConfig.cancelButton) {
-      promptDialogComponent.cancelButton = promptConfig.cancelButton;
+    if (config.cancelButton) {
+      promptDialogComponent.cancelButton = config.cancelButton;
     }
     return dialogRef;
+  }
+
+  private _createConfig(viewContainerRef: ViewContainerRef): MdDialogConfig {
+    let dialogConfig: MdDialogConfig = new MdDialogConfig();
+    dialogConfig.viewContainerRef = viewContainerRef ? viewContainerRef : this._viewContainerRef;
+    if (!dialogConfig.viewContainerRef) {
+      throw 'ViewContainerRef was not provided for dialog.';
+    }
+    return dialogConfig;
   }
 
 }
