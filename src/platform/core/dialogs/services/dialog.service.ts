@@ -24,7 +24,6 @@ interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
 
-
 @Injectable()
 export class TdDialogService {
 

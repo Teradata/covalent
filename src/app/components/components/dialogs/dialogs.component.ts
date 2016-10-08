@@ -41,12 +41,6 @@ export class DialogsDemoComponent {
       cancelButton: 'Disagree',
       acceptButton: 'Agree',
       viewContainerRef: this._viewContainerRef,
-    }).afterClosed().subscribe((accept: boolean) => {
-      if (accept) {
-        console.log(accept);
-      } else {
-        console.log(accept);
-      }
     });
   }
 
@@ -58,12 +52,6 @@ export class DialogsDemoComponent {
       cancelButton: 'Cancel',
       acceptButton: 'Ok',
       viewContainerRef: this._viewContainerRef,
-    }).afterClosed().subscribe((newValue: string) => {
-      if (newValue) {
-        console.log(newValue);
-      } else {
-        console.log(newValue);
-      }
     });
   }
 }
