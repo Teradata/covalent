@@ -38,10 +38,10 @@ export class ComponentsComponent {
     route: 'loading',
     title: 'Loading',
   }, {
-    description: 'Quick alert and confirm dialogs',
+    description: 'Quick way to use alert, confirm and prompt dialogs',
     icon: 'open_in_browser',
     route: 'dialogs',
-    title: 'Alert and Confirm',
+    title: 'Simple Dialogs',
   }, {
     description: 'Highlighting your code snippets',
     icon: 'code',

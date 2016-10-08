@@ -1,10 +1,11 @@
 <md-card>
-  <md-card-title>Alert and Confirm</md-card-title>
-  <md-card-subtitle>Quick alert and confirm dialogs</md-card-subtitle>
+  <md-card-title>Simple Dialogs</md-card-title>
+  <md-card-subtitle>Quick way to use alert, confirm and prompt dialogs</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="openAlert()">Open Alert</button>
     <button md-button color="primary" (click)="openConfirm()">Open Confirm</button>
+    <button md-button color="primary" (click)="openPrompt()">Open Prompt</button>
   </md-card-actions>
 </md-card>
 <md-card>
@@ -13,7 +14,7 @@
   <md-divider></md-divider>
   <md-card-content>
     <h2><code>TdDialogService</code></h2>
-    <p>Service provided with methods that wrap the material2 [MdDialog] service and provide an easier experience for alerts and confirm dialogs.</p>
+    <p>Service provided with methods that wrap the material2 [MdDialog] service and provide an easier experience for simple dialogs.</p>
     <h3>Methods:</h3>
     <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
     <md-list>
@@ -57,6 +58,23 @@
               viewContainerRef: this._viewContainerRef,
             }).afterClosed().subscribe((accept: boolean) => {
               if (accept) {
+                // DO SOMETHING
+              } else {
+                // DO SOMETHING ELSE
+              }
+            });
+          }
+
+          openPrompt(): void {
+            this._dialogService.openPrompt({
+              title: 'Prompt',
+              message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
+              value: 'Populated value',
+              cancelButton: 'Cancel',
+              acceptButton: 'Ok',
+              viewContainerRef: this._viewContainerRef,
+            }).afterClosed().subscribe((newValue: string) => {
+              if (newValue) {
                 // DO SOMETHING
               } else {
                 // DO SOMETHING ELSE

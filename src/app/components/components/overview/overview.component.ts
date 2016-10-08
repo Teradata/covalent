@@ -35,7 +35,7 @@ export class ComponentsOverviewComponent {
       color: 'amber-700',
       icon: 'open_in_browser',
       route: 'dialogs',
-      title: 'Alert and Confirm',
+      title: 'Simple Dialogs',
     }, {
       color: 'pink-700',
       icon: 'code',
