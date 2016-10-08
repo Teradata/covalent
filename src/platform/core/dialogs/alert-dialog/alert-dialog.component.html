@@ -1,0 +1,8 @@
+<div class="td-alert-wrapper">
+  <h3 *ngIf="title" class="td-alert-title">{{title}}</h3>
+  <div class="td-alert-content md-body-1 tc-grey-600">{{message}}</div>
+  <div class="td-alert-actions" layout="row">
+    <span flex></span>
+    <button md-button color="accent" (click)="close()">{{closeButton}}</button>
+  </div>
+</div>

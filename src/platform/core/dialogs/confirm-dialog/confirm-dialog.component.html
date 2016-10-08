@@ -1,0 +1,9 @@
+<div class="td-confirm-wrapper">
+  <h3 *ngIf="title" class="td-confirm-title">{{title}}</h3>
+  <div class="td-confirm-content md-body-1 tc-grey-600">{{message}}</div>
+  <div class="td-confirm-actions" layout="row">
+    <span flex></span>
+    <button md-button color="accent" (click)="cancel()">{{cancelButton}}</button>
+    <button md-button color="accent" (click)="accept()">{{acceptButton}}</button>
+  </div>
+</div>

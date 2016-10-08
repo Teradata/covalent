@@ -74,6 +74,21 @@ export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
   TdExpansionPanelSummaryComponent,
 ];
 
+// Dialogs
+
+import { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
+import { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+import { TdDialogService } from './dialogs/services/dialog.service';
+
+export const TD_DIALOG_DIRECTIVES: Type<any>[] = [
+  TdAlertDialogComponent,
+  TdConfirmDialogComponent,
+];
+
+export { TdDialogService } from './dialogs/services/dialog.service';
+export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
+export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+
 /**
  * DIRECTIVES
  */
@@ -135,6 +150,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingComponent,
     TD_STEPS_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
+    TD_DIALOG_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
   ],
@@ -152,15 +168,17 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingComponent,
     TD_STEPS_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
+    TD_DIALOG_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
   ],
+  entryComponents: [ TD_DIALOG_DIRECTIVES ],
 })
 export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService, TdLayoutService, TdLoadingService ],
+      providers: [ TdMediaService, TdLayoutService, TdLoadingService, TdDialogService ],
     };
   }
 }
