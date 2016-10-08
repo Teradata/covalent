@@ -42,20 +42,20 @@
 
           openAlert(): void {
             this._dialogService.openAlert({
-              title: 'Alert',
-              message: 'This is how simple it is to create an alert with this wrapper service.',
               viewContainerRef: this._viewContainerRef,
-              closeButton: 'Close'
+              message: 'This is how simple it is to create an alert with this wrapper service.',
+              title: 'Alert', //OPTIONAL
+              closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
             });
           }
 
           openConfirm(): void {
             this._dialogService.openConfirm({
-              title: 'Confirm',
-              message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
-              cancelButton: 'Disagree',
-              acceptButton: 'Agree',
               viewContainerRef: this._viewContainerRef,
+              message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
+              title: 'Confirm', //OPTIONAL
+              cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
+              acceptButton: 'Agree', //OPTIONAL, defaults to 'ACCEPT'
             }).afterClosed().subscribe((accept: boolean) => {
               if (accept) {
                 // DO SOMETHING
@@ -67,12 +67,12 @@
 
           openPrompt(): void {
             this._dialogService.openPrompt({
-              title: 'Prompt',
-              message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
-              value: 'Populated value',
-              cancelButton: 'Cancel',
-              acceptButton: 'Ok',
               viewContainerRef: this._viewContainerRef,
+              message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
+              title: 'Prompt', //OPTIONAL
+              value: 'Prepopulated value', //OPTIONAL
+              cancelButton: 'Cancel', //OPTIONAL, defaults to 'CANCEL'
+              acceptButton: 'Ok', //OPTIONAL, defaults to 'ACCEPT'
             }).afterClosed().subscribe((newValue: string) => {
               if (newValue) {
                 // DO SOMETHING
