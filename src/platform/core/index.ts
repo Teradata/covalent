@@ -80,11 +80,13 @@ import { TdDialogComponent, TdDialogTitleDirective,
          TdDialogActionsDirective, TdDialogContentDirective } from './dialogs/dialog.component';
 import { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+import { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
 import { TdDialogService } from './dialogs/services/dialog.service';
 
 const TD_DIALOG_DIRECTIVES: Type<any>[] = [
   TdAlertDialogComponent,
   TdConfirmDialogComponent,
+  TdPromptDialogComponent,
   TdDialogComponent,
   TdDialogTitleDirective,
   TdDialogActionsDirective,
@@ -94,12 +96,14 @@ const TD_DIALOG_DIRECTIVES: Type<any>[] = [
 export const TD_DIALOG_ENTRY_COMPONENTS: Type<any>[] = [
   TdAlertDialogComponent,
   TdConfirmDialogComponent,
+  TdPromptDialogComponent,
 ];
 
 export { TdDialogService } from './dialogs/services/dialog.service';
 export { TdDialogComponent, TdDialogTitleDirective } from './dialogs/dialog.component';
 export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+export { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
 
 /**
  * DIRECTIVES

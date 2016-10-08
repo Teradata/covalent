@@ -3,6 +3,7 @@ import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 
 interface IDialogConfig {
   title?: string;
@@ -18,6 +19,11 @@ interface IConfirmConfig extends IDialogConfig {
   acceptButton?: string;
   cancelButton?: string;
 }
+
+interface IPromptConfig extends IConfirmConfig {
+  value?: string;
+}
+
 
 @Injectable()
 export class TdDialogService {
@@ -51,6 +57,24 @@ export class TdDialogService {
     }
     if (confirmConfig.cancelButton) {
       confirmDialogComponent.cancelButton = confirmConfig.cancelButton;
+    }
+    return dialogRef;
+  }
+
+  public openPrompt(promptConfig: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
+    let dialogConfig: MdDialogConfig = new MdDialogConfig();
+    dialogConfig.viewContainerRef = promptConfig.viewContainerRef;
+    let dialogRef: MdDialogRef<TdPromptDialogComponent> =
+      this._dialogService.open(TdPromptDialogComponent, dialogConfig);
+    let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
+    promptDialogComponent.title = promptConfig.title;
+    promptDialogComponent.message = promptConfig.message;
+    promptDialogComponent.value = promptConfig.value;
+    if (promptConfig.acceptButton) {
+      promptDialogComponent.acceptButton = promptConfig.acceptButton;
+    }
+    if (promptConfig.cancelButton) {
+      promptDialogComponent.cancelButton = promptConfig.cancelButton;
     }
     return dialogRef;
   }
