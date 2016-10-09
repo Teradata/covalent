@@ -5,5 +5,4 @@ import { Directive } from '@angular/core';
   host: { 'class': 'md-head' },
 })
 export class TdDataTableHeadDirective {
-
 }
