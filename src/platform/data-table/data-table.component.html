@@ -18,7 +18,9 @@
 </div>
 
 <div class="md-table-container" *ngIf="_visibleData.length > 0">
-  <table td-table [attr.md-ripple]="_rowSelection === true">
+  <table td-table
+         [class.md-row-select]="_rowSelection"
+         [attr.md-ripple]="_rowSelection === true">
     <thead td-head>
       <tr td-row>
         <th td-column class="md-checkbox-column" *ngIf="_rowSelection">
@@ -30,11 +32,16 @@
         </th>
         <th td-column 
             *ngFor="let column of columns" 
-            [ngClass]="{'md-clickable': _sorting, 'md-active': column === _sortBy, 'md-numeric': column.numeric, 'md-asc': (column === _sortBy && _sortOrder === _ascending), 'md-desc': (column === _sortBy && _sortOrder === _descending)}">
+            [class.md-clickable]="_sorting"
+            [class.md-active]="column === _sortBy"
+            [class.md-numeric]="column.numeric"
+            [class.md-asc]="(column === _sortBy && _sortOrder === _ascending)"
+            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)">
           <md-icon 
             class="md-sort-icon" 
             *ngIf="column.numeric"
-            [ngClass]="{'md-asc': _sortOrder === _ascending, 'md-desc': _sortOrder === _descending}">
+            [class.md-asc]="_sortOrder === _ascending"
+            [class.md-desc]="_sortOrder === _descending">
             arrow_upward
           </md-icon>
           <span class="md-caption" (click)="setSorting(column)">
@@ -43,21 +50,27 @@
           <md-icon 
             class="md-sort-icon" 
             *ngIf="!column.numeric"
-            [ngClass]="{'md-asc': _sortOrder === _ascending, 'md-desc': _sortOrder === _descending}">
+            [class.md-asc]="_sortOrder === _ascending"
+            [class.md-desc]="_sortOrder === _descending">
             arrow_upward
           </md-icon>
         </th>
       </tr>
     </thead>
     <tbody td-body>
-      <tr td-row *ngFor="let row of _visibleData" (click)="select(row, !row[_rowSelectionField])" >
+      <tr td-row
+          [class.md-selected]="row[_rowSelectionField]"
+          *ngFor="let row of _visibleData"
+          (click)="select(row, !row[_rowSelectionField])">
         <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection"> 
           <md-checkbox
             [checked]="row[_rowSelectionField]"
             (change)="select(row, $event.checked)">
           </md-checkbox>
         </td>
-        <td td-cell *ngFor="let column of columns" [ngClass]="{'md-numeric': column.numeric}">
+        <td td-cell
+            [class.md-numeric]="column.numeric"
+            *ngFor="let column of columns">
           <span class="md-body-1">{{ row[column.name] }}</span>
         </td>
       </tr>
