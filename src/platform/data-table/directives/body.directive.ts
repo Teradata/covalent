@@ -1,8 +1,13 @@
-import { Directive } from '@angular/core';
+import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[td-body]',
-  host: { 'class': 'md-body' },
 })
 export class TdDataTableBodyDirective {
+
+  @HostBinding('class')
+  get classes(): string[] {
+    return ['md-body'];
+  }
+
 }
