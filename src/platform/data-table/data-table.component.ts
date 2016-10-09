@@ -54,8 +54,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
 
   private _sortByColumnName: string;
   private _sortOrderName: string;
-  private _ascending = TdDataTableSortingOrder.Ascending; 
-  private _descending = TdDataTableSortingOrder.Descending; 
 
   /** search by term */
   private _searchVisible: boolean = false;
@@ -254,6 +252,14 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   prevPage(): void {
     this._currentPage = Math.max(this._currentPage - 1, 1);
     this.filterData();
+  }
+
+  isAscending(): boolean {
+    return this._sortOrder === TdDataTableSortingOrder.Ascending;
+  }
+
+  isDescending(): boolean {
+    return this._sortOrder === TdDataTableSortingOrder.Descending;
   }
 
   private preprocessData(): void {

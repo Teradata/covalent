@@ -35,13 +35,13 @@
             [class.md-clickable]="_sorting"
             [class.md-active]="column === _sortBy"
             [class.md-numeric]="column.numeric"
-            [class.md-asc]="(column === _sortBy && _sortOrder === _ascending)"
-            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)">
+            [class.md-asc]="(column === _sortBy && isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())">
           <md-icon 
             class="md-sort-icon" 
             *ngIf="_sorting && column.numeric"
-            [class.md-asc]="_sortOrder === _ascending"
-            [class.md-desc]="_sortOrder === _descending"
+            [class.md-asc]="(!(column === _sortBy) || isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())"
             (click)="_sorting && setSorting(column)">
             arrow_upward
           </md-icon>
@@ -52,8 +52,8 @@
           <md-icon 
             class="md-sort-icon" 
             *ngIf="_sorting && !column.numeric"
-            [class.md-asc]="_sortOrder === _ascending"
-            [class.md-desc]="_sortOrder === _descending"
+            [class.md-asc]="(!(column === _sortBy) || isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())"
             (click)="_sorting && setSorting(column)">
             arrow_upward
           </md-icon>
