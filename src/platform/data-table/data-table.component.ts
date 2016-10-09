@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output,
+         EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 export enum TdDataTableSortingOrder {
   Ascending, Descending
@@ -12,6 +13,7 @@ export enum TdDataTableSortingOrder {
 export interface TdDataTableColumn { 
   name: string, 
   label: string,
+  tooltip?: string;
   numeric?: boolean,
   format?: { (value: any): any };
 };
@@ -26,7 +28,7 @@ export interface TdDataTableSortChanged {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit {
+export class TdDataTableComponent implements OnInit, AfterViewInit {
 
   /** internal attributes */
   private _data: any[];

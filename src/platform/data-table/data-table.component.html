@@ -17,7 +17,7 @@
   </button>
 </div>
 
-<div class="md-table-container" *ngIf="_visibleData.length > 0">
+<div class="md-table-container" *ngIf="_visibleData.length > 0" title>
   <table td-table
          [class.md-row-select]="_rowSelection"
          [attr.md-ripple]="_rowSelection === true">
@@ -46,7 +46,8 @@
             arrow_upward
           </md-icon>
           <span class="md-caption" (click)="_sorting && setSorting(column)">
-            {{column.label}}
+            <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
+            <span *ngIf="!column.tooltip">{{column.label}}</span>
           </span>
           <md-icon 
             class="md-sort-icon" 

@@ -32,6 +32,14 @@
   <md-card-content>
     <td-data-table
       [data]="data"
+      [columns]="tooltipColumns"
+      title="Basic Demo with tooltips">
+    </td-data-table>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-data-table
+      [data]="data"
       [multiple]="multiple"
       [rowSelection]="rowSelection"
       title="Simple data, no columns">
