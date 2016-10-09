@@ -43,6 +43,11 @@ export class ComponentsComponent {
     route: 'dialogs',
     title: 'Simple Dialogs',
   }, {
+    description: 'Data Table',
+    icon: 'grid_on',
+    route: 'data-table',
+    title: 'Data Table',
+  }, {
     description: 'Highlighting your code snippets',
     icon: 'code',
     route: 'syntax-highlighting',
@@ -72,11 +77,6 @@ export class ComponentsComponent {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
-  }, {
-    description: 'Data Table',
-    icon: 'grid_on',
-    route: 'data-table',
-    title: 'Data Table',
   }];
 
 }
