@@ -3,6 +3,7 @@ import { Component, ViewChildren, QueryList } from '@angular/core';
 import { TdDataTableSortingOrder } from '../../../../platform/data-table';
 
 const NUMBER_FORMAT = (v: {value: number}) => v.value; 
+const DECIMAL_FORMAT = (v: {value: number}) => v.value.toFixed(2); 
 
 @Component({
   selector: 'data-table-demo',
@@ -14,9 +15,9 @@ export class DataTableDemoComponent {
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-    { name: 'fat', label: 'Fat (g)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'protein', label: 'Protein (g)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
     { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
