@@ -1,6 +1,7 @@
 @import 'data-table-theme';
 
 $backdrop-index: 80;
+$checkbox-size: 18px;
 
 .md-table-container {
   display: block;
@@ -164,10 +165,18 @@ table.md-table {
     &.md-numeric {
       text-align: right;
     }
+  }
 
+  td.md-checkbox-cell,
+  th.md-checkbox-column {
+    width: $checkbox-size;
+    font-size: 0 !important;
     md-checkbox {
-      margin: 0;
-      width: 20px;
+      /deep/ .md-checkbox-inner-container {
+        width: $checkbox-size;
+        height: $checkbox-size;
+        margin: 0;
+      }
     }
   }
 
