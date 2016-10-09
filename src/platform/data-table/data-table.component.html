@@ -36,20 +36,21 @@
             [class.md-active]="column === _sortBy"
             [class.md-numeric]="column.numeric"
             [class.md-asc]="(column === _sortBy && _sortOrder === _ascending)"
-            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)">
+            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)"
+            (click)="_sorting && setSorting(column)">
           <md-icon 
             class="md-sort-icon" 
-            *ngIf="column.numeric"
+            *ngIf="_sorting && column.numeric"
             [class.md-asc]="_sortOrder === _ascending"
             [class.md-desc]="_sortOrder === _descending">
             arrow_upward
           </md-icon>
-          <span class="md-caption" (click)="setSorting(column)">
+          <span class="md-caption">
             {{column.label}}
           </span>
           <md-icon 
             class="md-sort-icon" 
-            *ngIf="!column.numeric"
+            *ngIf="_sorting && !column.numeric"
             [class.md-asc]="_sortOrder === _ascending"
             [class.md-desc]="_sortOrder === _descending">
             arrow_upward
