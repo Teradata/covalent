@@ -1,13 +1,9 @@
-import { Directive, HostBinding } from '@angular/core';
+import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[td-column]',
+  host: { 'class': 'md-column' },
 })
 export class TdDataTableColumnDirective {
-
-  @HostBinding('class')
-  get classes(): string {
-    return 'md-column';
-  }
 
 }
