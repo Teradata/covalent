@@ -6,8 +6,8 @@ import { Directive, HostBinding } from '@angular/core';
 export class TdDataTableBodyDirective {
 
   @HostBinding('class')
-  get classes(): string[] {
-    return ['md-body'];
+  get classes(): string {
+    return 'md-body';
   }
 
 }

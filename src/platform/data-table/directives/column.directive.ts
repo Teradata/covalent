@@ -6,8 +6,8 @@ import { Directive, HostBinding } from '@angular/core';
 export class TdDataTableColumnDirective {
 
   @HostBinding('class')
-  get classes(): string[] {
-    return ['md-column'];
+  get classes(): string {
+    return 'md-column';
   }
 
 }
