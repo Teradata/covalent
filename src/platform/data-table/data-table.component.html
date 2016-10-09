@@ -62,11 +62,10 @@
       <tr td-row
           [class.md-selected]="row[_rowSelectionField]"
           *ngFor="let row of _visibleData"
-          (click)="select(row, !row[_rowSelectionField])">
-        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection"> 
+          (click)="select(row, !row[_rowSelectionField], $event)">
+        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
           <md-checkbox
-            [checked]="row[_rowSelectionField]"
-            (change)="select(row, $event.checked)">
+            [checked]="row[_rowSelectionField]">
           </md-checkbox>
         </td>
         <td td-cell

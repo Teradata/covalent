@@ -194,7 +194,8 @@ export class TdDataTableComponent implements OnInit {
     this._data.forEach((d: any) => d[this._rowSelectionField] = checked);
   }
 
-  select(row: any, checked: boolean): void {
+  select(row: any, checked: boolean, event: Event): void {
+    event.preventDefault();
     // clears all the fields for the dataset
     if (!this._multiple) {
       this.selectAll(false);
