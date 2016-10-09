@@ -52,8 +52,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   private _sortBy: TdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
-  private _sortOrderName: string;
-
   /** search by term */
   private _searchVisible: boolean = false;
   private _searchTerm: string = '';
@@ -159,7 +157,13 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
 
   @Input('sortOrder')
   set sortOrder(order: string) {
-    this._sortOrderName = order.toUpperCase() || 'ASC';
+    let sortOrder: string = order ? order.toUpperCase() : 'ASC';
+    if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
+      throw '[sortOrder] must be empty, ASC or DESC';
+    }
+
+    this._sortOrder = sortOrder === 'ASC' ?
+      TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
     this.filterData();
   }
 
@@ -230,7 +234,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   setSorting(column: TdDataTableColumn): void {
     if (this._sortBy === column) {
       this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
-        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending  
+        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
     } else {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
@@ -304,16 +308,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
         });
         return !(typeof res === 'undefined');
       });
-    }
-
-    if (this._sortOrderName) {
-      if (this._sortOrderName !== 'DESC' && this._sortOrderName !== 'ASC') {
-        throw '[sortOrder] must be empty, ASC or DESC';
-      }
-
-      this._sortOrder = this._sortOrderName === 'ASC' ? 
-        TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending
-      this._sortOrderName = undefined;
     }
 
     if (this._sorting && this._sortBy) {
