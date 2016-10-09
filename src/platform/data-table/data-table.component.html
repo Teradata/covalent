@@ -36,23 +36,24 @@
             [class.md-active]="column === _sortBy"
             [class.md-numeric]="column.numeric"
             [class.md-asc]="(column === _sortBy && _sortOrder === _ascending)"
-            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)"
-            (click)="_sorting && setSorting(column)">
+            [class.md-desc]="(column === _sortBy && _sortOrder === _descending)">
           <md-icon 
             class="md-sort-icon" 
             *ngIf="_sorting && column.numeric"
             [class.md-asc]="_sortOrder === _ascending"
-            [class.md-desc]="_sortOrder === _descending">
+            [class.md-desc]="_sortOrder === _descending"
+            (click)="_sorting && setSorting(column)">
             arrow_upward
           </md-icon>
-          <span class="md-caption">
+          <span class="md-caption" (click)="_sorting && setSorting(column)">
             {{column.label}}
           </span>
           <md-icon 
             class="md-sort-icon" 
             *ngIf="_sorting && !column.numeric"
             [class.md-asc]="_sortOrder === _ascending"
-            [class.md-desc]="_sortOrder === _descending">
+            [class.md-desc]="_sortOrder === _descending"
+            (click)="_sorting && setSorting(column)">
             arrow_upward
           </md-icon>
         </th>
@@ -62,7 +63,7 @@
       <tr td-row
           [class.md-selected]="row[_rowSelectionField]"
           *ngFor="let row of _visibleData"
-          (click)="select(row, !row[_rowSelectionField], $event)">
+          (click)="_rowSelection && select(row, !row[_rowSelectionField], $event)">
         <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
           <md-checkbox
             [checked]="row[_rowSelectionField]">
