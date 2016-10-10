@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular2-material/sidenav';
+import { MdSidenav } from '@angular/material';
 
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-layout-manage-list',
-  styleUrls: [ 'layout-manage-list.component.css' ],
+  styleUrls: [ 'layout-manage-list.component.scss' ],
   templateUrl: 'layout-manage-list.component.html',
 })
 export class TdLayoutManageListComponent {

@@ -9,12 +9,16 @@ module.exports = {
     tsfiles: [
       'src/typings.d.ts',
       '!src/main.ts',
-      '!src/system-config.ts',
+      '!src/polyfills.ts',
+      '!src/test.ts',
       'src/**/**.ts',
       '!src/**/**/**spec.ts',
-      '!src/app/**/**.ts'
+      '!src/app/**/**.ts',
+      '!src/environments/**/**.ts'
     ],
     styles: [
+      '!src/theme.scss',
+      '!src/styles.css',
       'src/**/**.scss',
       '!src/app/**/**.scss',
       'src/**/**.css',
@@ -27,6 +31,7 @@ module.exports = {
       'src/**/MaterialIcons-Regular.ttf',
       'src/**/MaterialIcons-Regular.woff',
       'src/**/MaterialIcons-Regular.woff2',
+      '!src/theme.scss',
       'src/**/**.scss',
       '!src/app/**/**.scss',
       'src/**/**.html',

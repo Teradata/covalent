@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'components-overview',
-  styleUrls: ['overview.component.css'],
+  styleUrls: ['overview.component.scss'],
   templateUrl: 'overview.component.html',
 })
 export class ComponentsOverviewComponent {
@@ -32,6 +31,11 @@ export class ComponentsOverviewComponent {
       icon: 'hourglass_empty',
       route: 'loading',
       title: 'Loading',
+    }, {
+      color: 'amber-700',
+      icon: 'open_in_browser',
+      route: 'dialogs',
+      title: 'Simple Dialogs',
     }, {
       color: 'pink-700',
       icon: 'code',

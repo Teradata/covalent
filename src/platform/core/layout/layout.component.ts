@@ -3,15 +3,14 @@ import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { MdSidenav } from '@angular2-material/sidenav';
+import { MdSidenav } from '@angular/material';
 
 import { TdLayoutService } from './services/layout.service';
 
 @Component({
-  moduleId: module.id,
   providers: [ TdLayoutService ],
   selector: 'td-layout',
-  styleUrls: [ 'layout.component.css' ],
+  styleUrls: [ 'layout.component.scss' ],
   templateUrl: 'layout.component.html',
 })
 export class TdLayoutComponent implements OnDestroy, AfterViewInit {

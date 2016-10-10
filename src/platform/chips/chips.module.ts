@@ -3,8 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { MdInputModule } from '@angular2-material/input';
-import { MdIconModule } from '@angular2-material/icon';
+import { MdInputModule, MdIconModule } from '@angular/material';
 
 import { TdChipsComponent } from './chips.component';
 import { TdChipComponent } from './chip.component';

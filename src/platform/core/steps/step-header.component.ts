@@ -4,9 +4,8 @@ import { EventEmitter } from '@angular/core';
 import { StepState } from './step.component';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-step-header',
-  styleUrls: [ 'step-header.component.css' ],
+  styleUrls: [ 'step-header.component.scss' ],
   templateUrl: 'step-header.component.html',
 })
 export class TdStepHeaderComponent {

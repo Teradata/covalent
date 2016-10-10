@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
-import { LoadingType } from '../loading.component';
+import { LoadingType, LoadingMode } from '../loading.component';
 import { TdLoadingService, ILoadingOptions } from '../services/loading.service';
 
 @Directive({
@@ -10,6 +10,7 @@ import { TdLoadingService, ILoadingOptions } from '../services/loading.service';
 export class TdLoadingDirective implements OnInit, OnDestroy {
 
   private _type: LoadingType;
+  private _mode: LoadingMode;
   private _name: string;
 
   /**
@@ -38,6 +39,23 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * LoadingMode?: LoadingMode or ['determinate' | 'indeterminate']
+   * Sets the mode of loading mask depending on value.
+   * Defaults to [LoadingMode.Indeterminate | 'indeterminate'].
+   */
+  @Input('loadingMode')
+  set mode(mode: LoadingMode) {
+    switch (mode) {
+      case LoadingMode.Determinate:
+        this._mode = LoadingMode.Determinate;
+        break;
+      default:
+        this._mode = LoadingMode.Indeterminate;
+        break;
+    }
+  }
+
   constructor(private _viewContainer: ViewContainerRef,
               private _templateRef: TemplateRef<Object>,
               private _loadingService: TdLoadingService) {}
@@ -62,6 +80,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     let options: ILoadingOptions = {
       name: this._name,
       type: this._type,
+      mode: this._mode,
     };
     this._loadingService.createReplaceComponent(options, this._viewContainer, this._templateRef);
   }

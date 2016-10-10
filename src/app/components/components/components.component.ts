@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-components',
-  styleUrls: ['components.component.css'],
+  styleUrls: ['components.component.scss'],
   templateUrl: 'components.component.html',
 })
 export class ComponentsComponent {
@@ -38,6 +37,11 @@ export class ComponentsComponent {
     icon: 'hourglass_empty',
     route: 'loading',
     title: 'Loading',
+  }, {
+    description: 'Quick way to use alert, confirm and prompt dialogs',
+    icon: 'open_in_browser',
+    route: 'dialogs',
+    title: 'Simple Dialogs',
   }, {
     description: 'Highlighting your code snippets',
     icon: 'code',

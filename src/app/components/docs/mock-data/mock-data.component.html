@@ -5,13 +5,10 @@
   <md-card-content>
      <p><a href="https://github.com/Teradata/covalent-quickstart">Covalent Quickstart</a> includes the ultimate prototyping tool, a localhost Mock API!</p>
      <p>With the mock API server, you can develop against realistic API service endpoints, and model the mock data closely to your production data!</p>
-     <p>Important: You'll need to open a new tab or window to run the API server if you're already running ng serve:</p>
-      <td-highlight lang="html">
-        cd mock-api/
-      </td-highlight>
-      <p>Pick your OS flavor ( .osx, .linux or .exe)</p>
-      <td-highlight lang="html">
-        ./covalent-data.osx 
+     <p>The mock api server is called <a href="https://github.com/Teradata/covalent-data">Covalent Data</a> and is available as an <a href="https://www.npmjs.com/package/@covalent/data">npm package</a>.</p>
+     <p>Covalent Quickstart integrates Covalent Data in its installation, so no additional steps are required to use it. In the covalent quickstart directory, simply run:</p>
+      <td-highlight>
+        npm run start-api
       </td-highlight>
       <p>You should see the server running starting with:</p>
       <td-highlight lang="html">
@@ -22,6 +19,10 @@
         INFO[0000] ######## This software is covered under the MIT license.  ######## 
         INFO[0000] ########                                                  ######## 
         INFO[0000] ##################################################################
+      </td-highlight>
+      <p>The server is running as a background process so it's still possible to use the terminal for other commands.  To stop covalent data, type:</p>
+      <td-highlight>
+        npm run stop-api
       </td-highlight>
       <md-divider></md-divider>
       <h3>Customizing Mock Data Schema</h3>
@@ -66,6 +67,7 @@
           ...
         ]]>
       </td-highlight>
+      <p>The Covalent Data Mock API Server actually stores data in memory, so it's possible to add, update, and delete records. All changes made will be erased once Covalent Data is stopped. See the Covalent Data repo for more information.</p>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
