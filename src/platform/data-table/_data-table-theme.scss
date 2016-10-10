@@ -10,6 +10,10 @@ $accent: md-palette($md-light-blue, 50);;
 .md-row {
   border-bottom-color: md-color($foreground, divider);
 }
+.md-checkbox-cell,
+.md-checkbox-column {
+  color: md-color($foreground, secondary-text);
+}
 .md-column {
   color: md-color($foreground, secondary-text);
   md-icon {

@@ -22,6 +22,18 @@ export class DataTableDemoComponent {
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
   ];
+  private tooltip: string = 'Here you would explain what this column is.';
+  private tooltipColumns: any[] = [
+    { name: 'name',  label: 'Dessert (100g serving)', tooltip: this.tooltip },
+    { name: 'type', label: 'Type', tooltip: this.tooltip },
+    { name: 'calories', label: 'Calories', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
+    { name: 'fat', label: 'Fat (g)', tooltip: this.tooltip, numeric: true, format: DECIMAL_FORMAT },
+    { name: 'carbs', label: 'Carbs (g)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
+    { name: 'protein', label: 'Protein (g)', tooltip: this.tooltip, numeric: true, format: DECIMAL_FORMAT },
+    { name: 'sodium', label: 'Sodium (mg)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
+    { name: 'calcium', label: 'Calcium (%)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
+    { name: 'iron', label: 'Iron (%)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
+  ];
 
   private data: any[] = [
       {

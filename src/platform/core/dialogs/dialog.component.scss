@@ -1,0 +1,27 @@
+.td-dialog-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.td-dialog-content {
+  margin-bottom: 16px;
+}
+
+.td-dialog-actions {
+  position: relative;
+  top: 16px;
+  left: 16px;
+}
+
+:host {
+  display: block;
+  .td-dialog-actions {
+    /deep/ button {
+      text-transform: uppercase;
+      margin-left: 8px;
+      padding-left: 8px;
+      padding-right: 8px;
+      min-width: 64px;
+    }
+  }
+}

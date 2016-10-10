@@ -32,6 +32,16 @@ export class ComponentsOverviewComponent {
       route: 'loading',
       title: 'Loading',
     }, {
+      color: 'amber-700',
+      icon: 'open_in_browser',
+      route: 'dialogs',
+      title: 'Simple Dialogs',
+    }, {
+      color: 'green-700',
+      icon: 'grid_on',
+      route: 'data-table',
+      title: 'Data Table',
+    }, {
       color: 'pink-700',
       icon: 'code',
       route: 'syntax-highlighting',
@@ -61,11 +71,6 @@ export class ComponentsOverviewComponent {
       icon: 'filter_list',
       route: 'pipes',
       title: 'Pipes',
-    }, {
-      color: 'green-700',
-      icon: 'grid_on',
-      route: 'data-table',
-      title: 'Data Table',
     },
   ];
 }

@@ -1,0 +1,12 @@
+<div class="td-dialog-wrapper">
+  <h3 class="td-dialog-title md-title" *ngIf="dialogTitle.length > 0">
+    <ng-content select="td-dialog-title"></ng-content>
+  </h3>
+  <div class="td-dialog-content" *ngIf="dialogContent.length > 0">
+    <ng-content select="td-dialog-content"></ng-content>
+  </div>
+  <div class="td-dialog-actions" *ngIf="dialogActions.length > 0" layout="row">
+    <span flex></span>
+    <ng-content select="td-dialog-actions"></ng-content>
+  </div>
+</div>

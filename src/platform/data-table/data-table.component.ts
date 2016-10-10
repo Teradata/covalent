@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output,
+         EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 export enum TdDataTableSortingOrder {
   Ascending, Descending
@@ -12,6 +13,7 @@ export enum TdDataTableSortingOrder {
 export interface TdDataTableColumn { 
   name: string, 
   label: string,
+  tooltip?: string;
   numeric?: boolean,
   format?: { (value: any): any };
 };
@@ -26,7 +28,7 @@ export interface TdDataTableSortChanged {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit {
+export class TdDataTableComponent implements OnInit, AfterViewInit {
 
   /** internal attributes */
   private _data: any[];
@@ -49,11 +51,6 @@ export class TdDataTableComponent implements OnInit {
   private _sorting: boolean = false;
   private _sortBy: TdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-
-  private _sortByColumnName: string;
-  private _sortOrderName: string;
-  private _ascending = TdDataTableSortingOrder.Ascending; 
-  private _descending = TdDataTableSortingOrder.Descending; 
 
   /** search by term */
   private _searchVisible: boolean = false;
@@ -148,14 +145,25 @@ export class TdDataTableComponent implements OnInit {
     if (!columnName) {
       return;
     }
-    this._sortByColumnName = columnName;
+    const column = this.columns.find((c: any) => c.name === columnName);
+    if (!column) {
+      throw '[sortBy] must be a valid column name';
+    }
+
+    this._sortBy = column;
     this._sorting = true;
     this.filterData();
   }
 
   @Input('sortOrder')
   set sortOrder(order: string) {
-    this._sortOrderName = order.toUpperCase() || 'ASC';
+    let sortOrder: string = order ? order.toUpperCase() : 'ASC';
+    if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
+      throw '[sortOrder] must be empty, ASC or DESC';
+    }
+
+    this._sortOrder = sortOrder === 'ASC' ?
+      TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
     this.filterData();
   }
 
@@ -194,7 +202,8 @@ export class TdDataTableComponent implements OnInit {
     this._data.forEach((d: any) => d[this._rowSelectionField] = checked);
   }
 
-  select(row: any, checked: boolean): void {
+  select(row: any, checked: boolean, event: Event): void {
+    event.preventDefault();
     // clears all the fields for the dataset
     if (!this._multiple) {
       this.selectAll(false);
@@ -225,7 +234,7 @@ export class TdDataTableComponent implements OnInit {
   setSorting(column: TdDataTableColumn): void {
     if (this._sortBy === column) {
       this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
-        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending  
+        TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
     } else {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
@@ -251,6 +260,14 @@ export class TdDataTableComponent implements OnInit {
   prevPage(): void {
     this._currentPage = Math.max(this._currentPage - 1, 1);
     this.filterData();
+  }
+
+  isAscending(): boolean {
+    return this._sortOrder === TdDataTableSortingOrder.Ascending;
+  }
+
+  isDescending(): boolean {
+    return this._sortOrder === TdDataTableSortingOrder.Descending;
   }
 
   private preprocessData(): void {
@@ -291,27 +308,6 @@ export class TdDataTableComponent implements OnInit {
         });
         return !(typeof res === 'undefined');
       });
-    }
-
-    if (this._sortByColumnName || this._sortOrderName) {
-      if (this._sortByColumnName) {
-        const column = this.columns.find((c: any) => c.name === this._sortByColumnName);
-        if (!column) {
-          throw '[sortBy] must be a valid column name';
-        }
-
-        this._sortBy = column;
-        this._sortByColumnName = undefined;
-      }
-      if (this._sortOrderName) {
-        if (this._sortOrderName !== 'DESC' && this._sortOrderName !== 'ASC') {
-          throw '[sortOrder] must be empty, ASC or DESC';
-        }
-
-        this._sortOrder = this._sortOrderName === 'ASC' ? 
-          TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending
-        this._sortOrderName = undefined;
-      }
     }
 
     if (this._sorting && this._sortBy) {
