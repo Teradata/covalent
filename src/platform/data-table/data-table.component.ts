@@ -45,7 +45,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   private _pageSize: number = 0;
   private _currentPage: number = 0;
   private _totalPages: number = 0;
-  private _hasPagination: boolean = false;
+  private _pagination: boolean = false;
 
   /** sorting */
   private _sorting: boolean = false;
@@ -78,7 +78,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
     } else {
       this._pageSize = size;
     }
-    this.hasPagination = true;
+    this._pagination = true;
     this.resetPagination();
   }
 
@@ -167,11 +167,10 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
     this.filterData();
   }
 
-  set hasPagination(pagination: boolean) {
-    this._hasPagination = pagination;
-  }
-  get hasPagination(): boolean {
-    return this._hasPagination;
+  @Input('pagination')
+  set pagination(pagination: string | boolean) {
+    this._pagination = pagination !== '' ? (pagination === 'true' || pagination === true) : true;
+    this.resetPagination();
   }
 
   get hasData(): boolean {
@@ -317,7 +316,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
       }
     }
 
-    if (this.hasPagination) {
+    if (this._pagination) {
       const pageStart: number = (this._currentPage - 1) * this._pageSize;
       const pageEnd: number = Math.min(pageStart + this._pageSize, this._visibleData.length);
 

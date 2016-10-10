@@ -33,7 +33,7 @@
         <th td-column 
             *ngFor="let column of columns" 
             [class.md-clickable]="_sorting"
-            [class.md-active]="column === _sortBy"
+            [class.md-active]="_sorting && column === _sortBy"
             [class.md-numeric]="column.numeric"
             [class.md-asc]="(column === _sortBy && isAscending())"
             [class.md-desc]="(column === _sortBy && isDescending())">
@@ -84,7 +84,7 @@
   No results
 </div>
 
-<div layout="row" layout-align="end center" class="md-caption md-table-pagination" *ngIf="hasPagination && hasData">
+<div layout="row" layout-align="end center" class="md-caption md-table-pagination" *ngIf="_pagination && hasData">
   <span>
     {{ _currentPage }} of {{ _totalPages }}
   </span>
@@ -96,6 +96,6 @@
   </button>
 </div>
 
-<div class="md-body-1" *ngIf="hasPagination && !hasData">
+<div class="md-body-1" *ngIf="_pagination && !hasData">
   No pages
 </div>
