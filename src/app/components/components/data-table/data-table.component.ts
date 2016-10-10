@@ -24,6 +24,8 @@ export class DataTableDemoComponent {
   ];
 
   private sorting = true;
+  private pagination = true;
+  private pageSize = 5;
 
   private data: any[] = [
       {
@@ -134,9 +136,7 @@ export class DataTableDemoComponent {
   }
 
   toggleSorting(): void {
-    console.log('- sorting', this.sorting);
     this.sorting = !this.sorting;
-    console.log('+ sorting', this.sorting);
   }
 
   toggleSortBy(): void {
@@ -162,6 +162,17 @@ export class DataTableDemoComponent {
       this.columns.forEach((c: any) => delete c.tooltip);
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
+    }
+  }
+
+  togglePagination(): void {
+    this.pagination = !this.pagination;
+  }
+
+  togglePageSize(): void {
+    this.pageSize += 5;
+    if (this.pageSize > 15) {
+      this.pageSize = 5;
     }
   }
 

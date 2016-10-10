@@ -13,9 +13,10 @@
       [sorting]="sorting"
       [sortBy]="sortBy"
       [sortOrder]="sortOrder"
+      [pagination]="pagination"
+      [pageSize]="pageSize"
       search="true"
       title="Search and pagination enabled"
-      pageSize="5"
       (sortChanged)="sortChanged($event)">
     </td-data-table>
 
@@ -50,6 +51,16 @@
     <button md-button color="primary" (click)="toggleTooltips()">
       Toggle Tooltip
       ({{areTooltipsOn() ? 'ON' : 'OFF'}})
+    </button>
+
+    <button md-button color="primary" (click)="togglePagination()">
+      Toggle Pagination
+      ({{pagination ? 'ON' : 'OFF'}})
+    </button>
+
+    <button md-button color="primary" (click)="togglePageSize()" [disabled]="!pagination">
+      Change Page Size
+      ({{pageSize}})
     </button>
   </md-card-actions>
 </md-card>
