@@ -52,6 +52,11 @@ export class ComponentsOverviewComponent {
       route: 'markdown',
       title: 'Markdown',
     }, {
+      color: 'light-blue-700',
+      icon: 'show_chart',
+      route: 'charts',
+      title: 'Charts',
+    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',
@@ -66,11 +71,6 @@ export class ComponentsOverviewComponent {
       icon: 'filter_list',
       route: 'pipes',
       title: 'Pipes',
-    }, {
-      color: 'orange-700',
-      icon: 'show_chart',
-      route: 'charts',
-      title: 'Charts',
     },
   ];
 }

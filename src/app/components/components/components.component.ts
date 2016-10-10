@@ -58,6 +58,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown',
   }, {
+    description: 'Responsive Charts',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'Charts',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
@@ -72,11 +77,6 @@ export class ComponentsComponent {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
-  }, {
-    description: 'Responsive Charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'Charts',
   }];
 
 }
