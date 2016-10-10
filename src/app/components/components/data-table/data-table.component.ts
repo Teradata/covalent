@@ -22,18 +22,8 @@ export class DataTableDemoComponent {
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
   ];
-  private tooltip: string = 'Here you would explain what this column is.';
-  private tooltipColumns: any[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', tooltip: this.tooltip },
-    { name: 'type', label: 'Type', tooltip: this.tooltip },
-    { name: 'calories', label: 'Calories', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
-    { name: 'fat', label: 'Fat (g)', tooltip: this.tooltip, numeric: true, format: DECIMAL_FORMAT },
-    { name: 'carbs', label: 'Carbs (g)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
-    { name: 'protein', label: 'Protein (g)', tooltip: this.tooltip, numeric: true, format: DECIMAL_FORMAT },
-    { name: 'sodium', label: 'Sodium (mg)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
-    { name: 'calcium', label: 'Calcium (%)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
-    { name: 'iron', label: 'Iron (%)', tooltip: this.tooltip, numeric: true, format: NUMBER_FORMAT },
-  ];
+
+  private sorting = true;
 
   private data: any[] = [
       {
@@ -143,6 +133,12 @@ export class DataTableDemoComponent {
     this.multiple = !this.multiple;
   }
 
+  toggleSorting(): void {
+    console.log('- sorting', this.sorting);
+    this.sorting = !this.sorting;
+    console.log('+ sorting', this.sorting);
+  }
+
   toggleSortBy(): void {
     const columns = this.columns.map((c: any) => c.name);
     const idx = columns.indexOf(this.sortBy);
@@ -155,6 +151,18 @@ export class DataTableDemoComponent {
 
   toggleSortOrder(): void {
     this.sortOrder = this.sortOrder === 'ASC' ? 'DESC' : 'ASC';
+  }
+
+  areTooltipsOn(): boolean {
+    return this.columns[0].hasOwnProperty('tooltip');
+  }
+
+  toggleTooltips(): void {
+    if (this.columns[0].tooltip) {
+      this.columns.forEach((c: any) => delete c.tooltip);
+    } else {
+      this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
+    }
   }
 
   sortChanged(changes): void {

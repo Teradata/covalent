@@ -10,6 +10,7 @@
       [columns]="columns"
       [multiple]="multiple"
       [rowSelection]="rowSelection"
+      [sorting]="sorting"
       [sortBy]="sortBy"
       [sortOrder]="sortOrder"
       search="true"
@@ -18,69 +19,37 @@
       (sortChanged)="sortChanged($event)">
     </td-data-table>
 
-    <button md-button color="primary" (click)="toggleSortBy()">
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleSorting()">
+      Toggle Sorting
+      ({{sorting ? 'ON' : 'OFF'}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleSortBy()" [disabled]="!sorting">
       Toggle SortBy
       ({{sortBy}})
     </button>
 
-    <button md-button color="primary" (click)="toggleSortOrder()">
+    <button md-button color="primary" (click)="toggleSortOrder()" [disabled]="!sorting">
       Toggle SortOrder
       ({{sortOrder}})
     </button>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
-    <td-data-table
-      [data]="data"
-      [columns]="tooltipColumns"
-      title="Basic Demo with tooltips">
-    </td-data-table>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
-    <td-data-table
-      [data]="data"
-      [multiple]="multiple"
-      [rowSelection]="rowSelection"
-      title="Simple data, no columns">
-    </td-data-table>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
-    <td-data-table
-      [data]="data"
-      [columns]="columns"
-      [multiple]="multiple"
-      [rowSelection]="rowSelection"
-      title="Simple data with columns">
-    </td-data-table>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
-    <td-data-table
-      [data]="data"
-      [multiple]="multiple"
-      rowSelection="checked"
-      title="Custom selection field">
-    </td-data-table>
 
-    <!--<pre>
-      {{data|json}}
-    </pre>-->
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
     <button md-button color="primary" (click)="toggleRowSelection()">
       Toggle RowSelection
       ({{rowSelection ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleRowSelectionMultiple()">
+
+    <button md-button color="primary" (click)="toggleRowSelectionMultiple()" [disabled]="!rowSelection">
       Toggle RowSelectionMultiple
       ({{multiple ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleSortBy()">
-      Toggle SortBy
-      ({{sortBy}})
+
+    <button md-button color="primary" (click)="toggleTooltips()">
+      Toggle Tooltip
+      ({{areTooltipsOn() ? 'ON' : 'OFF'}})
     </button>
   </md-card-actions>
 </md-card>
