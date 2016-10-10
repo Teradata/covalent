@@ -22,8 +22,7 @@
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
-        "../node_modules/showdown/dist/showdown.js",
-        "../node_modules/d3/build/d3.min.js"
+        "../node_modules/showdown/dist/showdown.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

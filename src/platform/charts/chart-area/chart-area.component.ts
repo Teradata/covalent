@@ -1,7 +1,7 @@
 import {Component, Input, AfterViewInit, Inject, forwardRef, ViewChild, ElementRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
-
-declare let d3: any;
+/* tslint:disable-next-line */ 
+let d3: any = require('d3');
 
 @Component({
   selector: 'td-chart-area',

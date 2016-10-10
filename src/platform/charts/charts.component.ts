@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-declare let d3: any;
+/* tslint:disable-next-line */ 
+let d3: any = require('d3');
 
 @Component({
   selector: 'td-charts',
