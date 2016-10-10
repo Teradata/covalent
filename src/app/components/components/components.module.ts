@@ -14,6 +14,7 @@ import { MediaDemoComponent } from './media/media.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
+import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 
@@ -39,6 +40,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     HttpDemoComponent,
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
+    DialogsDemoComponent,
     PipesComponent,
     ChartsDemoComponent,
   ],
