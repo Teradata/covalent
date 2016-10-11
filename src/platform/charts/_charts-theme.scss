@@ -1,0 +1,26 @@
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+$background: $md-light-theme-background;
+
+:host /deep/ {
+  text {
+    fill: md-color($foreground, secondary-text);
+  }
+  p {
+    color: md-color($foreground, secondary-text);
+  }
+  .grid {
+    line {
+      stroke: md-color($foreground, divider);
+    }
+  }
+  .ticks {
+    line,
+    path {
+      stroke: md-color($foreground, divider);
+    }
+  }
+}
