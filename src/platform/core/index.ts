@@ -114,12 +114,28 @@ export { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.c
 /**
  * DIRECTIVES
  */
-
 import { TdToggleDirective } from './directives/toggle/toggle.directive';
 import { TdFadeDirective } from './directives/fade/fade.directive';
 
 export { TdToggleDirective } from './directives/toggle/toggle.directive';
 export { TdFadeDirective } from './directives/fade/fade.directive';
+
+/**
+ * VALIDATORS
+ */
+import { TdMinValidator } from './validators/min.validator';
+import { TdMaxValidator } from './validators/max.validator';
+import { TdNumberRequiredValidator } from './validators/number-required.validator';
+
+export const TD_VALIDATORS: Type<any>[] = [
+  TdMinValidator,
+  TdMaxValidator,
+  TdNumberRequiredValidator,
+];
+
+export { TdMinValidator } from './validators/min.validator';
+export { TdMaxValidator } from './validators/max.validator';
+export { TdNumberRequiredValidator } from './validators/number-required.validator';
 
 /**
  * PIPES
@@ -175,6 +191,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_DIALOG_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
+    TD_VALIDATORS,
   ],
   exports: [
     HttpModule,
@@ -193,6 +210,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_DIALOG_DIRECTIVES,
     TdFadeDirective,
     TdToggleDirective,
+    TD_VALIDATORS,
   ],
   entryComponents: [ TD_DIALOG_ENTRY_COMPONENTS ],
 })
