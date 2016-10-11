@@ -62,6 +62,9 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    */
   ngAfterContentInit(): void {
     let stepCount: number = 0;
+    if (this._steps.toArray().length < 1) {
+      throw `No [td-step]'s were defined in this component. At least one [td-step] is required.`;
+    }
     this._steps.toArray().forEach((step: TdStepComponent) => {
       step.number = ++stepCount;
       let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
