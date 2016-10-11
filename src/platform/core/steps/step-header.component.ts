@@ -15,6 +15,16 @@ export class TdStepHeaderComponent {
   @Input('number') number: number;
 
   /**
+   * Label of [TdStepHeaderComponent].
+   */
+  @Input('label') label: string;
+
+  /**
+   * Sublabel of [TdStepHeaderComponent].
+   */
+  @Input('sublabel') sublabel: string;
+
+  /**
    * active?: boolean
    * Toggles [TdStepHeaderComponent] between active/deactive.
    */
