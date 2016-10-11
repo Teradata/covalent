@@ -44,7 +44,7 @@ import { TdStepBodyComponent } from './steps/step-body/step-body.component';
 import { TdStepComponent, TdStepActionsDirective, TdStepSummaryDirective,
          TdStepContentDirective } from './steps/step.component';
 
-export const TD_STEPS_DIRECTIVES: Type<any>[] = [
+export const TD_STEP_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
   TdStepHeaderComponent,
@@ -117,9 +117,17 @@ export { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.c
 
 import { TdToggleDirective } from './directives/toggle/toggle.directive';
 import { TdFadeDirective } from './directives/fade/fade.directive';
+import { TdAutoTrimDirective } from './directives/auto-trim/auto-trim.directive';
+
+export const TD_PLATFORM_DIRECTIVES: Type<any>[] = [
+  TdToggleDirective,
+  TdFadeDirective,
+  TdAutoTrimDirective,
+];
 
 export { TdToggleDirective } from './directives/toggle/toggle.directive';
 export { TdFadeDirective } from './directives/fade/fade.directive';
+export { TdAutoTrimDirective } from './directives/auto-trim/auto-trim.directive';
 
 /**
  * PIPES
@@ -170,11 +178,10 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
-    TD_STEPS_DIRECTIVES,
+    TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
     TD_DIALOG_DIRECTIVES,
-    TdFadeDirective,
-    TdToggleDirective,
+    TD_PLATFORM_DIRECTIVES,
   ],
   exports: [
     HttpModule,
@@ -188,11 +195,10 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
-    TD_STEPS_DIRECTIVES,
+    TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
     TD_DIALOG_DIRECTIVES,
-    TdFadeDirective,
-    TdToggleDirective,
+    TD_PLATFORM_DIRECTIVES,
   ],
   entryComponents: [ TD_DIALOG_ENTRY_COMPONENTS ],
 })
