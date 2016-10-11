@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { StepState } from './step.component';
+import { StepState } from '../step.component';
 
 @Component({
   selector: 'td-step-header',
