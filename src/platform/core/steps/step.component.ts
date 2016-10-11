@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Output, TemplateRef,
-         ViewContainerRef, ContentChild } from '@angular/core';
+         ViewContainerRef, ContentChild, AfterViewInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
@@ -40,7 +40,7 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
   selector: 'td-step',
   template: '<ng-content></ng-content>',
 })
-export class TdStepComponent {
+export class TdStepComponent implements AfterViewInit {
 
   private _number: number;
   private _active: boolean = false;
@@ -62,6 +62,12 @@ export class TdStepComponent {
   }
   get number(): number {
     return this._number;
+  }
+
+  ngAfterViewInit(): void {
+    if (this.number === undefined) {
+      throw 'The [td-step] component needs to have a [td-steps] parent component to work.';
+    }
   }
 
   /**
