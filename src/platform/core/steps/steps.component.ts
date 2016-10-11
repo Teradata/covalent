@@ -24,7 +24,6 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
   private _prevStep: number = 0;
   private _subcriptions: Subscription[] = [];
-  private _multiple: boolean = false;
   private _mode: StepMode = StepMode.Vertical;
   @ContentChildren(TdStepComponent) private _steps: QueryList<TdStepComponent>;
 
@@ -45,19 +44,9 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
       default:
         this._mode = StepMode.Vertical;
     }
-    this._changeMode();
   }
   get mode(): StepMode {
     return this._mode;
-  }
-
-  /**
-   * multiple?: boolean
-   * Defines if there can be one or multiple [TdStepComponent] elements active at the same time.
-   */
-  @Input('multiple')
-  set multiple(multiple: any) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
   }
 
   /**
@@ -75,7 +64,6 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
     let stepCount: number = 0;
     this._steps.toArray().forEach((step: TdStepComponent) => {
       step.number = ++stepCount;
-      step.mode = this._mode;
       let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
         this._onStepSelection(step.number);
       });
@@ -106,15 +94,10 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
     return this._mode === StepMode.Vertical;
   }
 
-  /**
-   * Changes the mode on [TdStepComponent] children so their layout its rearranged.
-   */
-  private _changeMode(): void {
-    if (this._steps) {
-      this._steps.toArray().forEach((step: TdStepComponent) => {
-        step.mode = this._mode;
-      });
-    }
+  areStepsActive(): boolean {
+    return this._steps.filter((step: TdStepComponent) => {
+      return step.active;
+    }).length > 0;
   }
 
   /**
@@ -129,9 +112,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
         newStep: stepNumber,
         prevStep: prevStep,
       };
-      if (!this._multiple) {
-        this._deactivateAllBut(stepNumber);
-      }
+      this._deactivateAllBut(stepNumber);
       this.onStepChange.emit(event);
     }
   }

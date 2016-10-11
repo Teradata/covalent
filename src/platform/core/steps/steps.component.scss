@@ -1,7 +1,13 @@
 @import '../styles/variables';
+@import '../styles/default-theme';
 
-.td-steps-header {
-  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
+.td-line-wrapper,
+.td-step {
+  position: relative;
+}
+
+.td-line-wrapper {
+  width: 24px;  
 }
 
 .td-horizontal-line {
@@ -10,4 +16,16 @@
   position: relative;
   top: 36px;
   min-width: 15px;
+}
+
+.td-vertical-line {
+  position: absolute;
+  left: 20px;
+  bottom: -16px;
+  top: -16px;
+  border-left: 1px solid gainsboro;
+}
+
+.td-steps-header {
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
 }
