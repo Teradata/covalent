@@ -16,10 +16,6 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
     name: 'stepChange?',
     type: 'function($event)',
   }, {
-    description: 'Defines if there can be one or multiple [TdStepComponent] elements active at the same time.',
-    name: 'multiple?',
-    type: 'boolean',
-  }, {
     description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
     name: 'mode?',
     type: 'StepMode or ["vertical" | "horizontal"]',
@@ -72,9 +68,8 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
 
   querySubscription: Subscription;
   mode: number = 1;
+  horizontal: boolean = true;
   isScreenGtSm: boolean = false;
-  makeHorizontal: boolean = false;
-  responsiveStepper: boolean = false;
   stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
@@ -98,16 +93,18 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
     this.querySubscription = this._mediaService.registerQuery('gt-sm').subscribe((matches: boolean) => {
       this._ngZone.run(() => {
         this.isScreenGtSm = matches;
-        if (this.responsiveStepper) {
-          this.mode = matches ? 1 : 0;
+        if (this.mode === 2) {
+          this.horizontal = matches;
         }
       });
     });
   }
 
-  changeResponsive(): void {
-    if (this.responsiveStepper) {
-      this.mode = this.isScreenGtSm ? 1 : 0;
+  modeChange(): void {
+    if (this.mode === 2) {
+      this.horizontal = this.isScreenGtSm;
+    } else {
+      this.horizontal = this.mode === 1;
     }
   }
 
