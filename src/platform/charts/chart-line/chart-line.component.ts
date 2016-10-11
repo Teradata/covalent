@@ -156,7 +156,7 @@ export class TdChartLineComponent implements AfterViewInit {
 
       svg.append('text')
       .classed('axisTitle', true)
-      .attr('transform', 'translate(' + (this._width + 20) + ',' + (this._height + 10) + ')')
+      .attr('transform', 'translate(' + (this._width / 2 - 20) + ',' + (this._height + 40) + ')')
       .text(this._bottomAxisTitle);
     });
   }
