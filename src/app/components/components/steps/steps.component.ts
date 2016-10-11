@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
-import { StepState, IStepChangeEvent } from '../../../../platform/core';
+import { StepState, IStepChangeEvent, TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
   styleUrls: [ 'steps.component.scss' ],
   templateUrl: 'steps.component.html',
 })
-export class StepsDemoComponent {
+export class StepsDemoComponent implements OnInit, OnDestroy {
 
   stepsAttrs: Object[] = [{
     description: `Method to be executed when [onStepChange] event is emitted.
@@ -69,12 +70,46 @@ export class StepsDemoComponent {
     type: 'function()',
   }];
 
-  mode: number = 0;
+  querySubscription: Subscription;
+  mode: number = 1;
+  isScreenGtSm: boolean = false;
+  makeHorizontal: boolean = false;
+  responsiveStepper: boolean = false;
   stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
+
+  constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {
+  }
+
+  ngOnInit(): void {
+    this.watchScreen();
+  }
+  ngOnDestroy(): void {
+    this.querySubscription.unsubscribe();
+  }
+
+  watchScreen(): void {
+    this._ngZone.run(() => {
+      this.isScreenGtSm = this._mediaService.query('gt-sm');
+    });
+    this.querySubscription = this._mediaService.registerQuery('gt-sm').subscribe((matches: boolean) => {
+      this._ngZone.run(() => {
+        this.isScreenGtSm = matches;
+        if (this.responsiveStepper) {
+          this.mode = matches ? 1 : 0;
+        }
+      });
+    });
+  }
+
+  changeResponsive(): void {
+    if (this.responsiveStepper) {
+      this.mode = this.isScreenGtSm ? 1 : 0;
+    }
+  }
 
   toggleRequiredStep2(): void {
     this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
