@@ -70,7 +70,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'" multiple>
+        <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'">
           <td-step>
             ...
           </td-step>
@@ -135,14 +135,16 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
-          ...
-          <td-step-actions>
+          <template td-step-content>
+
+          </template>
+          <template td-step-actions>
             <button (click)="step.close()">Close</button>
             ... add button elements for the step content (optional)
-          </td-step-actions>
-          <td-step-summary>
+          </template>
+          <template td-step-summary>
             ... add summary that will be shown when step in is "complete" state (optional)
-          </td-step-summary>
+          </template>
         </td-step>        
       ]]>
     </td-highlight>
