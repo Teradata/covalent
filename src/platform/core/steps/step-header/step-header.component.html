@@ -1,6 +1,7 @@
 <div class="td-step-header" layout="row" layout-align="start center" flex>
   <md-nav-list flex>
     <a md-list-item
+        [class.md-interaction-disabled]="disabled"
         [tabIndex]="disabled ? -1 : 0" flex>
       <div class="md-ripple-boundary"
           md-ripple

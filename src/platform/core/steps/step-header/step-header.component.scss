@@ -16,6 +16,9 @@ $step-circle: 24px;
     [md-list-item]:focus {
       outline: none;
     }
+    [md-list-item].md-interaction-disabled .md-list-item {
+      background: none !important;
+    }
     .md-list-item {
       flex: 1;
       height: 72px !important;
