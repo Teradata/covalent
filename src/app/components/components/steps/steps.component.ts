@@ -67,7 +67,7 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   }];
 
   querySubscription: Subscription;
-  mode: number = 1;
+  mode: number = 0;
   horizontal: boolean = true;
   isScreenGtSm: boolean = false;
   stepChangeMsg: string = 'No change detected yet.';
