@@ -1,0 +1,16 @@
+<div layout="row" flex>
+  <ng-content></ng-content>
+  <div flex>
+    <div [tdToggle]="!active">
+      <div class="td-step-content">
+        <ng-content select="[td-step-body-content]"></ng-content>
+      </div>
+      <div layout="row" class="td-step-actions">
+        <ng-content select="[td-step-body-actions]"></ng-content>
+      </div>
+    </div>
+    <div [tdToggle]="active || !isComplete()" class="td-step-summary">
+      <ng-content select="[td-step-body-summary]"></ng-content>
+    </div>
+  </div>
+</div>
