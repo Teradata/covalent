@@ -39,8 +39,8 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
-import { TdStepHeaderComponent } from './steps/step-header.component';
-import { TdStepBodyComponent } from './steps/step-body.component';
+import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
+import { TdStepBodyComponent } from './steps/step-body/step-body.component';
 import { TdStepComponent, TdStepActionsDirective, TdStepSummaryDirective,
          TdStepContentDirective } from './steps/step.component';
 
