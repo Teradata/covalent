@@ -10,7 +10,7 @@ export enum StepState {
 }
 
 @Directive({
-  selector: 'template[td-step-content]',
+  selector: '[td-step-content]template',
 })
 export class TdStepContentDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -19,7 +19,7 @@ export class TdStepContentDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: 'template[td-step-actions]',
+  selector: '[td-step-actions]template',
 })
 export class TdStepActionsDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -28,7 +28,7 @@ export class TdStepActionsDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: 'template[td-step-summary]',
+  selector: '[td-step-summary]template',
 })
 export class TdStepSummaryDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -62,12 +62,6 @@ export class TdStepComponent implements AfterViewInit {
   }
   get number(): number {
     return this._number;
-  }
-
-  ngAfterViewInit(): void {
-    if (this.number === undefined) {
-      throw 'The [td-step] component needs to have a [td-steps] parent component to work.';
-    }
   }
 
   /**
@@ -145,6 +139,12 @@ export class TdStepComponent implements AfterViewInit {
    * Event emitted when [TdStepComponent] is deactivated.
    */
   @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
+
+  ngAfterViewInit(): void {
+    if (this.number === undefined) {
+      throw 'The [td-step] component needs to have a [td-steps] parent component to work.';
+    }
+  }
 
   /**
    * Toggle active state of [TdStepComponent]
