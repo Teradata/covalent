@@ -65,12 +65,15 @@ export class TdStepComponent {
   }
 
   /**
-   * Label of [TdStepComponent].
+   * label?: string
+   * Sets label of [TdStepComponent] header.
+   * Defaults to 'Step #'
    */
   @Input('label') label: string;
 
   /**
-   * Sublabel of [TdStepComponent].
+   * sublabel?: string
+   * Sets sublabel of [TdStepComponent] header.
    */
   @Input('sublabel') sublabel: string;
 
