@@ -1,5 +1,10 @@
-@import '../styles/variables';
-@import '../styles/default-theme';
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+@import '~@angular/material/core/style/elevation';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+$background: $md-light-theme-background;
 
 .td-line-wrapper,
 .td-step {
@@ -11,10 +16,14 @@
 }
 
 .td-horizontal-line {
-  border-bottom: 1px solid gainsboro;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: md-color($foreground, divider);
   height: 1px;
   position: relative;
   top: 36px;
+  margin-left: -6px;
+  margin-right: -3px;
   min-width: 15px;
 }
 
@@ -23,9 +32,11 @@
   left: 20px;
   bottom: -16px;
   top: -16px;
-  border-left: 1px solid gainsboro;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: md-color($foreground, divider);
 }
 
 .td-steps-header {
-  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
+  @include md-elevation(1);
 }
