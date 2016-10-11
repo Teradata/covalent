@@ -1,7 +1,7 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef,
+         ViewContainerRef, ContentChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-
-import { StepMode } from './steps.component';
+import { TemplatePortalDirective } from '@angular/material';
 
 export enum StepState {
   None = <any>'none',
@@ -9,23 +9,36 @@ export enum StepState {
   Complete = <any>'complete'
 }
 
-@Component({
-  selector: 'td-step-actions',
-  template: '<ng-content></ng-content>',
+@Directive({
+  selector: 'template[td-step-content]',
 })
-export class TdStepActionsComponent {}
+export class TdStepContentDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
-@Component({
-  selector: 'td-step-summary',
-  template: '<ng-content></ng-content>',
+@Directive({
+  selector: 'template[td-step-actions]',
 })
-export class TdStepSummaryComponent {}
+export class TdStepActionsDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
+  selector: 'template[td-step-summary]',
+})
+export class TdStepSummaryDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Component({
-
   selector: 'td-step',
-  styleUrls: [ 'step.component.scss' ],
-  templateUrl: 'step.component.html',
+  template: '<ng-content></ng-content>',
 })
 export class TdStepComponent {
 
@@ -33,7 +46,10 @@ export class TdStepComponent {
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
-  private _mode: StepMode = StepMode.Vertical;
+
+  @ContentChild(TdStepContentDirective) stepContent: TdStepContentDirective;
+  @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
+  @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
 
   /**
    * Number assigned by [TdStepsComponent] parent element.
@@ -49,22 +65,12 @@ export class TdStepComponent {
   }
 
   /**
-   * Mode assigned by [TdStepsComponent] parent element.
-   */
-  set mode(mode: StepMode) {
-    this._mode = mode;
-  }
-
-  /**
-   * label?: string
-   * Sets label of [TdStepComponent] header.
-   * Defaults to 'Step #'
+   * Label of [TdStepComponent].
    */
   @Input('label') label: string;
 
   /**
-   * sublabel?: string
-   * Sets sublabel of [TdStepComponent] header.
+   * Sublabel of [TdStepComponent].
    */
   @Input('sublabel') sublabel: string;
 
@@ -161,20 +167,6 @@ export class TdStepComponent {
   isComplete(): boolean {
     return this._state === StepState.Complete;
   };
-
-  /**
-   * Returns 'true' if [mode] equals to [StepMode.Horizontal | 'horizontal'], else 'false'.
-   */
-  isHorizontal(): boolean {
-    return this._mode === StepMode.Horizontal;
-  }
-
-  /**
-   * Returns 'true' if [mode] equals to [StepMode.Vertical | 'vertical'], else 'false'.
-   */
-  isVertical(): boolean {
-    return this._mode === StepMode.Vertical;
-  }
 
   /**
    * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated]
