@@ -16,14 +16,10 @@ export class TdChartAreaComponent implements AfterViewInit {
   private _height: number;
   private _padding: number;
   private _columns: string;
-  private _tickHeightSize: number = 0;
-  private _tickWidthSize: number = 0;
-  private _grid: string = '';
   private _parentObj: any;
   private _chartTitle: string;
-  private _shadowColor: string;
   private _leftAxisTitle: string;
-  private _sort: boolean;
+  private _bottomAxisTitle: string;
   private _colors: string[] = [];
   private _contentType: string;
 
@@ -48,22 +44,17 @@ export class TdChartAreaComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this._chartTitle = this._parentObj.chartTitle;
+    this._leftAxisTitle = this._parentObj.leftAxisTitle;
+    this._bottomAxisTitle = this._parentObj.bottomAxisTitle;
     this.drawChart();
   }
 
   drawChart(): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
-    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
     this._padding = 100;
-
-    if (this._parentObj.chartTitle) {
-      this._chartTitle = this._parentObj.chartTitle;
-    }
-
-    if (this._parentObj.leftAxisTitle) {
-      this._leftAxisTitle = this._parentObj.leftAxisTitle;
-    }
 
     let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
     let y: any = d3.scaleLinear().range([this._height, 0]);
@@ -153,11 +144,16 @@ export class TdChartAreaComponent implements AfterViewInit {
         .attr('class', 'md-title');
 
       svg.append('text')
-      .attr('y', -15)
-      .classed('axisTitle', true)
-      .attr('dy', '0.71em')
-      .attr('fill', '#000')
-      .text(this._leftAxisTitle);
+        .attr('y', -15)
+        .classed('axisTitle', true)
+        .attr('dy', '0.71em')
+        .attr('fill', '#000')
+        .text(this._leftAxisTitle);
+
+      svg.append('text')
+        .classed('axisTitle', true)
+        .attr('transform', 'translate(' + (this._width + 20) + ',' + (this._height + 10) + ')')
+        .text(this._bottomAxisTitle);
     });
   }
 }

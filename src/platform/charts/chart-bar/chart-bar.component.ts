@@ -21,6 +21,7 @@ export class TdChartBarComponent implements AfterViewInit {
   private _chartTitle: string;
   private _shadowColor: string;
   private _leftAxisTitle: string;
+  private _bottomAxisTitle: string;
   private _contentType: string;
 
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
@@ -28,7 +29,6 @@ export class TdChartBarComponent implements AfterViewInit {
 
   @ViewChild('barchart') content: ElementRef;
   @Input('') dataSrc: string = '';
-  // @Input('') contentType: string = '';
   @Input('') bottomAxis: string = '';
   @Input('') colors: string[];
   @Input() transition: boolean = true;
@@ -46,28 +46,19 @@ export class TdChartBarComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this._chartTitle = this._parentObj.chartTitle;
+    this._leftAxisTitle = this._parentObj.leftAxisTitle;
+    this._bottomAxisTitle = this._parentObj.bottomAxisTitle;
     this.drawChart();
   }
 
   drawChart(): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
-    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
     this._contentType = this.dataSrc.substr(this.dataSrc.lastIndexOf('.') + 1);
-
-    if (this._parentObj.chartTitle) {
-      this._chartTitle = this._parentObj.chartTitle;
-    }
-
-    if (this._parentObj.shadowColor) {
-      this._shadowColor = this._parentObj.shadowColor;
-    }
-
-    if (this._parentObj.leftAxisTitle) {
-      this._leftAxisTitle = this._parentObj.leftAxisTitle;
-    }
 
     let paletteObj: {} = this._parentObj.generatePalette(this.colors[0], this.colors[1]);
 
@@ -142,6 +133,11 @@ export class TdChartBarComponent implements AfterViewInit {
       .attr('fill', '#000')
       .text(this._leftAxisTitle);
 
+      svg.append('text')
+      .classed('axisTitle', true)
+      .attr('transform', 'translate(' + (this._width + 20) + ',' + (this._height + 10) + ')')
+      .text(this._bottomAxisTitle);
+
     });
   }
 
@@ -160,7 +156,7 @@ export class TdChartBarComponent implements AfterViewInit {
 
     transition.selectAll('.bar')
         .delay(delay)
-        .attr('x', (d: any) => { return x0(d[this.bottomAxis]); })
+        .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
         .attr('fill', (d: any, i: number) => {
         let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i));
         return color;

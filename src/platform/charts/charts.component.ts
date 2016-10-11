@@ -81,8 +81,6 @@ export class TdChartsComponent {
   private _leftAxisDisplay: string;
 
   @Input() chartTitle: string = '';
-  @Input() bottomAxisTitle: string = '';
-  @Input() leftAxisTitle: string = '';
   @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 0;
   @Input() ticks: boolean;
@@ -90,6 +88,9 @@ export class TdChartsComponent {
   @Input() shadowDepth: any[];
   @Input() showBottomAxis: boolean = true;
   @Input() showLeftAxis: boolean = true;
+  @Input() leftAxisTitle: string;
+  @Input() bottomAxisTitle: string;
+  @Input() chartHeight: number;
   colorPalette: string[];
   paletteErrorMsg: string;
 
@@ -118,7 +119,7 @@ export class TdChartsComponent {
   drawContainer(containerDiv: string, className: string): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
-    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._height = this.chartHeight - this._margin.top - this._margin.bottom;
     this._padding = 100;
 
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
@@ -171,10 +172,8 @@ export class TdChartsComponent {
   }
 
   drawGridsAndTicks(svgElem: any, x: any, y: any): void {
-    if (this.ticks === true) {
-      this._tickHeightSize = -this._height;
-      this._tickWidthSize = -this._width;
-    }
+    this._tickHeightSize = this.ticks ? -this._height : 0;
+    this._tickWidthSize = this.ticks ? -this._width : 0;
 
     if (this.grid === true) {
       this._gridClass = 'grid';

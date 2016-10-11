@@ -18,9 +18,8 @@ export class TdChartLineComponent implements AfterViewInit {
   private _parentObj: any;
   private _chartTitle: string;
   private _leftAxisTitle: string;
+  private _bottomAxisTitle: string;
   private _contentType: string;
-  private _bottomAxisDisplay: string;
-  private _leftAxisDisplay: string;
 
   @ViewChild('linechart') content: ElementRef;
   @Input() dataSrc: string = '';
@@ -40,13 +39,14 @@ export class TdChartLineComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this._chartTitle = this._parentObj.chartTitle;
     this._leftAxisTitle = this._parentObj.leftAxisTitle;
+    this._bottomAxisTitle = this._parentObj.bottomAxisTitle;
     this.drawLineChart();
   }
 
   drawLineChart(): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
-    this._height = 500 - this._margin.top - this._margin.bottom;
+    this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
 
     let t: any = d3.transition()
             .duration(this.transitionDuration)
@@ -154,6 +154,10 @@ export class TdChartLineComponent implements AfterViewInit {
       .attr('fill', '#000')
       .text(this._leftAxisTitle);
 
+      svg.append('text')
+      .classed('axisTitle', true)
+      .attr('transform', 'translate(' + (this._width + 20) + ',' + (this._height + 10) + ')')
+      .text(this._bottomAxisTitle);
     });
   }
 }
