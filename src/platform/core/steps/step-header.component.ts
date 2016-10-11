@@ -26,19 +26,19 @@ export class TdStepHeaderComponent {
 
   /**
    * active?: boolean
-   * Toggles [TdStepHeaderComponent] between active/deactive.
+   * Sets for active/inactive states on header.
    */
   @Input('active') active: boolean;
 
   /**
    * disabled?: boolean
-   * Disables icon and header, blocks click event and sets [TdStepHeaderComponent] to deactive if 'true'.
+   * Sets styles for disabled state on icon and header.
    */
   @Input('disabled') disabled: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
-   * Sets state of [TdStepHeaderComponent] depending on value.
+   * Sets styles for state of header.
    * Defaults to [StepState.None | 'none'].
    */
   @Input('state') state: StepState = StepState.None;
