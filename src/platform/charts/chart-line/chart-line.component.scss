@@ -1,18 +1,6 @@
-$black-tertiary: rgba(0, 0, 0, 0.38);
-$md-accent: #0288D1;
-
 :host /deep/ {
-  .axis {
-  font-size: 10px;
-    path,
-    line {
-      fill: none;
-      stroke: $black-tertiary;
-    }
-  }
   .line {
     fill: none;
-    stroke: $md-accent;
     stroke-width: 2px;
   }
 }
