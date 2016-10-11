@@ -3,28 +3,42 @@
   <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    <div layout="row" layout-align="start center">
+      <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
+        <md-button-toggle md-tooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> Vertical</md-button-toggle>
+        <md-button-toggle md-tooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> Horizontal</md-button-toggle>
+        <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> Responsive (gt-sm)</md-button-toggle>
+      </md-button-toggle-group>
+    </div>
     <p>Change Event: {{stepChangeMsg}}</p>
     <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
-    <td-steps (stepChange)="stepChange($event)">
-      <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
-        STEP CONTENT GOES HERE
+    <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
+    <td-steps (stepChange)="stepChange($event)" [mode]="horizontal ? 'horizontal' : 'vertical'">
+      <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+        <template td-step-content>
+          Include any content you like for an active stepper 
+        </template>
       </td-step>
-      <td-step #step2 label="Required Step" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
-        STEP CONTENT GOES HERE  
-        <td-step-actions>
+      <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
+        <template td-step-content>
+          This step is required!
+        </template>
+        <template td-step-actions>
           <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
           <button md-button (click)="step2.active = false">Cancel</button>
-        </td-step-actions>
+        </template>
       </td-step>
       <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
-        STEP CONTENT GOES HERE  
-        <td-step-actions>
+        <template td-step-content>
+          Mark this step complete and get a summary
+        </template>
+        <template td-step-summary>
+          Use an optional step summary to summarize the info in this step
+        </template>
+        <template td-step-actions>
           <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
           <button md-button (click)="step3.active = false">Cancel</button>
-        </td-step-actions>
-        <td-step-summary>
-          STEP SUMMARY GOES HERE
-        </td-step-summary>
+        </template>
       </td-step>
     </td-steps>
   </md-card-content>
@@ -56,7 +70,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-steps (stepChange)="change($event)" multiple>
+        <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'">
           <td-step>
             ...
           </td-step>
@@ -121,14 +135,16 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
-          ...
-          <td-step-actions>
+          <template td-step-content>
+            ... add content that will be shown when the step is "active"
+          </template>
+          <template td-step-actions>
             <button (click)="step.close()">Close</button>
             ... add button elements for the step content (optional)
-          </td-step-actions>
-          <td-step-summary>
+          </template>
+          <template td-step-summary>
             ... add summary that will be shown when step in is "complete" state (optional)
-          </td-step-summary>
+          </template>
         </td-step>        
       ]]>
     </td-highlight>

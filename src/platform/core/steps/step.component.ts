@@ -1,5 +1,7 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef,
+         ViewContainerRef, ContentChild, AfterViewInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { TemplatePortalDirective } from '@angular/material';
 
 export enum StepState {
   None = <any>'none',
@@ -7,30 +9,47 @@ export enum StepState {
   Complete = <any>'complete'
 }
 
-@Component({
-  selector: 'td-step-actions',
-  template: '<ng-content></ng-content>',
+@Directive({
+  selector: '[td-step-content]template',
 })
-export class TdStepActionsComponent {}
+export class TdStepContentDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
-@Component({
-  selector: 'td-step-summary',
-  template: '<ng-content></ng-content>',
+@Directive({
+  selector: '[td-step-actions]template',
 })
-export class TdStepSummaryComponent {}
+export class TdStepActionsDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
+  selector: '[td-step-summary]template',
+})
+export class TdStepSummaryDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Component({
-
   selector: 'td-step',
-  styleUrls: [ 'step.component.scss' ],
-  templateUrl: 'step.component.html',
+  template: '<ng-content></ng-content>',
 })
-export class TdStepComponent {
+export class TdStepComponent implements AfterViewInit {
 
   private _number: number;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
+
+  @ContentChild(TdStepContentDirective) stepContent: TdStepContentDirective;
+  @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
+  @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
 
   /**
    * Number assigned by [TdStepsComponent] parent element.
@@ -92,7 +111,7 @@ export class TdStepComponent {
    * Defaults to [StepState.None | 'none'].
    */
   @Input('state')
-  set state(state: any) {
+  set state(state: StepState) {
     switch (state) {
       case StepState.Complete:
         this._state = StepState.Complete;
@@ -105,6 +124,9 @@ export class TdStepComponent {
         break;
     }
   };
+  get state(): StepState {
+    return this._state;
+  }
 
   /**
    * activated?: function
@@ -117,6 +139,12 @@ export class TdStepComponent {
    * Event emitted when [TdStepComponent] is deactivated.
    */
   @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
+
+  ngAfterViewInit(): void {
+    if (this.number === undefined) {
+      throw 'The [td-step] component needs to have a [td-steps] parent component to work.';
+    }
+  }
 
   /**
    * Toggle active state of [TdStepComponent]
@@ -147,13 +175,6 @@ export class TdStepComponent {
    */
   isComplete(): boolean {
     return this._state === StepState.Complete;
-  };
-
-  /**
-   * Returns 'true' if [state] equals to [StepState.Required | 'required'], else 'false'.
-   */
-  isRequired(): boolean {
-    return this._state === StepState.Required;
   };
 
   /**
