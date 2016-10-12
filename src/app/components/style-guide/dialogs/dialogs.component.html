@@ -9,11 +9,11 @@
     <p>Toasts &amp; Snackbars provide brief feedback about an operation through a message at the bottom of the screen. This information is transient and will go away momentarily.</p>
     <p>Inline errors are use in forms for validation, warnings and errors.</p>
     <div layout="row" class="push-top">
-      <a md-button class="md-whiteframe-z1" [routerLink]="['mock-data']" md-ripple flex>
-        <div class="inset">
+      <div class="md-whiteframe-z1" flex>
+        <div class="inset text-center">
           <h4><span class="tc-orange-800 md-title">Important:</span> we recommend using full-page forms for creation instead of dialogs.</h4>
         </div>
-      </a>
+      </div>
     </div>
   </md-card-content>
 </md-card>
@@ -29,6 +29,50 @@
     <p>Example for a confirmation on an action:</p>
     <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+
+        <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+      import { TdDialogService } from '@covalent/core';
+      ...
+      constructor(private _dialogService: TdDialogService,
+                  private _viewContainerRef: ViewContainerRef) {
+      }
+      openAlert(): void {
+        this._dialogService.openAlert({
+          message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
+          viewContainerRef: this._viewContainerRef,
+          title: '401 Permissions Error!',
+          closeButton: 'Dismiss',
+        });
+      }
+      openConfirm(): void {
+        this._dialogService.openConfirm({
+          message: 'Are you sure you want to delete this item? It\'s used on other items.',
+          viewContainerRef: this._viewContainerRef,
+          title: 'Confirm',
+          cancelButton: 'No, Cancel',
+          acceptButton: 'Yes, Delete',
+        }).afterClosed().subscribe((accept: boolean) => {
+          if (accept) {
+            // DO SOMETHING
+          } else {
+            // DO SOMETHING ELSE
+          }
+        });
+      }
+      ]]>
+    </td-highlight>
+  </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>Toast (Snack Bar)</md-card-title>
@@ -37,6 +81,36 @@
   <md-card-content>
     <p>Example toast usage for a simple confirmation:</p>
     <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+      import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef } from '@angular/material';
+      ...
+      export class ToastsComponent {
+        _snackBarConfig: MdSnackBarConfig;
+        constructor(private _viewContainerRef: ViewContainerRef,
+                    private _snackBarService: MdSnackBar) {
+          this._snackBarConfig = new MdSnackBarConfig(_viewContainerRef);
+        }
+        showSnackBar(): void {
+          let snackBarRef: MdSnackBarRef<any> = this._snackBarService
+            .open('Direct message sent!', 'Dismiss', this._snackBarConfig);
+          setTimeout(() => {
+            snackBarRef.dismiss();
+          }, 3000);
+        }
+      }
+      ]]>
+    </td-highlight>
   </md-card-content>
 </md-card>
 <md-card>
@@ -47,31 +121,31 @@
     <form #myForm="ngForm">
       <div layout-gt-xs="row" layout-margin>
         <md-input #firstNameForm="ngModel" flex placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim>
-          <md-hint [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">This field is required</md-hint>
+          <md-hint [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</md-hint>
         </md-input>
         <md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim>
-          <md-hint [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">This field is required</md-hint>
+          <md-hint [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</md-hint>
         </md-input>
       </div>
       <div layout-gt-xs="row" layout-margin>
-        <md-input #adressEl #addressForm="ngModel" flex placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
-          <md-hint [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">This field is required</md-hint>
+        <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
+          <md-hint [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</md-hint>
           <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
         </md-input>
-        <md-input flex placeholder="City" tdAutoTrim>
-          
-        </md-input>
-        <md-input #stateForm="ngModel" flex="10" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim>
+        <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
+      </div>
+      <div layout-gt-xs="row" layout-margin>
+        <md-input #stateForm="ngModel" flex="20" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim>
           <md-hint [hidden]="stateForm.pristine" class="tc-red-600">
-            <span [hidden]="!stateForm.errors?.required">This field is required</span>
-            <span [hidden]="!stateForm.errors?.pattern">2 upper case required.</span>
+            <span [hidden]="!stateForm.errors?.required">Required</span>
+            <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
           </md-hint>
           <md-hint align="end">e.g CA</md-hint>
         </md-input>
-        <md-input #zipForm="ngModel" flex="20" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required>
+        <md-input #zipForm="ngModel" flex="25" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required>
           <md-hint [hidden]="zipForm.pristine" class="tc-red-600">
-            <span [hidden]="!zipForm.errors?.required">This field is required</span>
-            <span [hidden]="!zipForm.errors?.pattern">This field required 5 digits</span>
+            <span [hidden]="!zipForm.errors?.required">Required</span>
+            <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
           </md-hint>
           <md-hint align="end">e.g 92101</md-hint>
         </md-input>
@@ -79,7 +153,47 @@
     </form>
   </md-card-content>
   <md-divider></md-divider>
-  <md-card-actions>
+  <div class="inset">
     <button md-raised-button [disabled]="!myForm.valid">Submit Form</button>
-  </md-card-actions>
+  </div>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <form #myForm="ngForm">
+          <div layout-gt-xs="row" layout-margin>
+            <md-input #firstNameForm="ngModel" flex placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim>
+              <md-hint [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+            </md-input>
+            <md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim>
+              <md-hint [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+            </md-input>
+          </div>
+          <div layout-gt-xs="row" layout-margin>
+            <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
+              <md-hint [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</md-hint>
+              <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
+            </md-input>
+            <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
+          </div>
+          <div layout-gt-xs="row" layout-margin>
+            <md-input #stateForm="ngModel" flex="20" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim>
+              <md-hint [hidden]="stateForm.pristine" class="tc-red-600">
+                <span [hidden]="!stateForm.errors?.required">Required</span>
+                <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
+              </md-hint>
+              <md-hint align="end">e.g CA</md-hint>
+            </md-input>
+            <md-input #zipForm="ngModel" flex="25" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required>
+              <md-hint [hidden]="zipForm.pristine" class="tc-red-600">
+                <span [hidden]="!zipForm.errors?.required">Required</span>
+                <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+              </md-hint>
+              <md-hint align="end">e.g 92101</md-hint>
+            </md-input>
+          </div>
+        </form>
+      ]]>
+    </td-highlight>
+  </md-card-content>
 </md-card>
