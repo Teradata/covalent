@@ -118,22 +118,6 @@ export class TdChartLineComponent extends ChartComponent {
       .style('font', '10px sans-serif')
       .text((d: any, i: number) => { return this.titles[i]; });
 
-    svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-      .text(this._chartTitle)
-      .attr('class', 'md-title');
-
-    svg.append('text')
-    .attr('y', -15)
-    .classed('axisTitle', true)
-    .attr('dy', '0.71em')
-    .attr('fill', '#000')
-    .text(this._leftAxisTitle);
-
-    svg.append('text')
-    .classed('axisTitle', true)
-    .attr('transform', 'translate(' + (this._width / 2 - 20) + ',' + (this._height + 40) + ')')
-    .text(this._bottomAxisTitle);
+    super.configureChart(svg);
   }
 }
