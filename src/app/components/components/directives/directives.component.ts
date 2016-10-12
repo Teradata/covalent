@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'directives-demo',
   styleUrls: [ 'directives.component.scss' ],
   templateUrl: 'directives.component.html',
 })
-export class DirectivesComponent implements OnInit {
+export class DirectivesComponent {
 
   toggleDiv: boolean = true;
 
-  toggle(): any {
+  toggle(): void {
     this.toggleDiv = !this.toggleDiv;
   }
 }
