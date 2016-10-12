@@ -82,7 +82,7 @@ export class TdChartsComponent {
 
   @Input() chartTitle: string = '';
   @Input() shadowColor: string = '';
-  @Input() fillOpacity: number = 0;
+  @Input() fillOpacity: number = 1;
   @Input() ticks: boolean;
   @Input() grid: boolean;
   @Input() shadowDepth: any[];
