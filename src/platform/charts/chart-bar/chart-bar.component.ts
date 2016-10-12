@@ -2,7 +2,7 @@ import {Component, Input, ElementRef, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 export interface IChartData {
@@ -59,7 +59,7 @@ export class TdChartBarComponent extends ChartComponent {
 
     let containerDiv: any = (this._elementRef.nativeElement);
 
-    this._parentObj.drawContainer(containerDiv, 'barchart');
+    let defsId: string = this._parentObj.drawContainer(containerDiv, 'barchart');
 
     let svg: any = d3.select(containerDiv).selectAll('.barchartG');
 
@@ -90,7 +90,7 @@ export class TdChartBarComponent extends ChartComponent {
           return '#fff';
         }
       })
-      .style('filter', 'url(#drop-shadow)');
+      .style('filter', 'url(#' + defsId + ')');
 
     if (this.transition === true) {
       this._sortAndTransition(svg, data, x, y);

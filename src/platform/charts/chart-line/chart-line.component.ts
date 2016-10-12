@@ -2,7 +2,7 @@ import {Component, Input, ElementRef, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 @Component({
@@ -58,7 +58,7 @@ export class TdChartLineComponent extends ChartComponent {
 
     let containerDiv: any = (this._elementRef.nativeElement);
 
-    this._parentObj.drawContainer(containerDiv, 'linechart');
+    let defsId: string = this._parentObj.drawContainer(containerDiv, 'linechart');
 
     let svg: any = d3.select(containerDiv).selectAll('.linechartG');
 
@@ -83,11 +83,12 @@ export class TdChartLineComponent extends ChartComponent {
     let line: any = svg.append('g')
       .classed('chart-lines', true)
       .selectAll('.lineTitle')
-      .data(lines);
+      .data(lines)
+      .enter();
 
     let transitionFlag: boolean = this.transition;
 
-    line.enter().append('path')
+    line.append('path')
       .attr('class', 'line')
       .merge(line)
       .attr('d', (d: any) => { return drawLine(d.values); })

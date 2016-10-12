@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 @Component({
@@ -116,7 +116,7 @@ export class TdChartsComponent {
     this._paletteMap.set('blueGrey', this._mdBlueGrey);
   }
 
-  drawContainer(containerDiv: string, className: string): void {
+  drawContainer(containerDiv: string, className: string): string {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = this.chartHeight - this._margin.top - this._margin.bottom;
@@ -137,8 +137,12 @@ export class TdChartsComponent {
 
     let defs: any = svg.append('defs');
 
+    let defsStr: string = Math.random().toString().slice(2);
+
+    let defsClass: string = 'drop-shadow' + defsStr;
+
     let filter: any = defs.append('filter')
-      .attr('id', 'drop-shadow')
+      .attr('id', defsClass)
       .attr('height', this.shadowDepth[0]);
 
     filter.append('feGaussianBlur')
@@ -169,6 +173,8 @@ export class TdChartsComponent {
     feComponentTransfer.append('feFuncA')
       .attr('type', 'linear')
       .attr('slope', this.fillOpacity);
+
+    return defsClass;
   }
 
   drawGridsAndTicks(svgElem: any, x: any, y: any): void {

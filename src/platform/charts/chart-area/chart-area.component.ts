@@ -2,7 +2,7 @@ import {Component, Input, Inject, forwardRef, ElementRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 export interface IChartData {
@@ -62,7 +62,7 @@ export class TdChartAreaComponent extends ChartComponent {
 
     let containerDiv: any = (this._elementRef.nativeElement);
 
-    this._parentObj.drawContainer(containerDiv, 'areachart');
+    let defsId: string = this._parentObj.drawContainer(containerDiv, 'areachart');
 
     let svg: any = d3.select(containerDiv).selectAll('.areachartG');
 
@@ -108,7 +108,7 @@ export class TdChartAreaComponent extends ChartComponent {
       .attr('stroke', this._colors[1])
       .attr('d', area)
       .attr('clip-path', 'url(#rectClip)')
-      .style('filter', 'url(#drop-shadow)');
+      .style('filter', 'url(#' + defsId + ')');
 
     d3.select(containerDiv).selectAll('.chart-area')
       .append('path')
@@ -116,7 +116,7 @@ export class TdChartAreaComponent extends ChartComponent {
       .attr('class', 'line')
       .attr('d', valueline)
       .attr('clip-path', 'url(#rectClip)')
-      .style('filter', 'url(#drop-shadow)');
+      .style('filter', 'url(#' + defsId + ')');
 
     svg.append('text')
       .attr('text-anchor', 'middle')
