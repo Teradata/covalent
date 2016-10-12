@@ -28,7 +28,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
     query: 'md',
     value: false,
   }, {
-    query: 'gt-gm',
+    query: 'gt-md',
     value: false,
   }, {
     query: 'lg',

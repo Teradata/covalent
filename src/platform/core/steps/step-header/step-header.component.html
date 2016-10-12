@@ -1,0 +1,37 @@
+<div class="td-step-header" layout="row" layout-align="start center" flex>
+  <md-nav-list flex>
+    <a md-list-item
+        [class.md-interaction-disabled]="disabled"
+        [tabIndex]="disabled ? -1 : 0" flex>
+      <div class="md-ripple-boundary"
+          md-ripple
+          [md-ripple-disabled]="disabled"
+          layout="row" 
+          layout-align="start center"
+          flex>
+        <div class="td-circle"
+            [class.md-inactive]="(!active && !isComplete()) || disabled"
+            [class.md-active]="active && !disabled"
+            *ngIf="!isRequired() && !isComplete()">
+          <span *ngIf="(active || !isComplete())">{{number || ''}}</span>
+        </div>
+        <div class="td-complete" *ngIf="isComplete()">
+          <md-icon class="md-complete">check_circle</md-icon>
+        </div>
+        <div class="td-triangle"
+            [class.bg-muted]="disabled"
+            *ngIf="isRequired()">
+          <md-icon class="md-warn">warning</md-icon>
+        </div>
+        <div class="td-step-label"
+              [class.md-disabled]="(!active && !isComplete()) || disabled"
+              [class.md-warn]="isRequired() && !disabled">
+          <div class="md-body-2">{{label}}</div>
+          <div class="md-caption td-step-sublabel">{{sublabel}}</div>
+        </div>
+        <span flex></span>
+        <md-icon class="td-edit-icon" *ngIf="isComplete() && !active && !disabled">mode_edit</md-icon>
+      </div>
+    </a>
+  </md-nav-list>
+</div>

@@ -3,27 +3,48 @@
   <md-card-subtitle>Responsive charts for Browsers</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-title>Time Series Line Chart</md-card-title>
-    <td-charts chartTitle="Prices Trend"
-                bottomAxisTitle="Year"
-                leftAxisTitle="Prices($)"
-                [grid]="true"
-                [ticks]="true"
-                [shadowDepth]="['125%', 2, 0, 2]"
-                shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="1"
-                chartHeight="450">
-      <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
-                   timeSeries="true"
-                   bottomAxis="date"
-                   [columns]="['close']"
-                   [titles]="['close']"
-                   [colors]="['#3366cc', '#dc3912', '#ff9900']"
-                   [transition]="true"
-                   transitionDuration="5000"
-                   transitionDelay="3000">
-      </td-chart-line>
-    </td-charts>
-    <md-divider></md-divider>
+  <td-charts chartTitle="Prices Trend"
+              bottomAxisTitle="Year"
+              leftAxisTitle="Prices($)"
+              [grid]="true"
+              [ticks]="true"
+              [shadowDepth]="['125%', 2, 0, 2]"
+              shadowColor="rgba(0, 0, 0, 0.54)"
+              fillOpacity="1"
+              chartHeight="450">
+    <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
+                  timeSeries="true"
+                  bottomAxis="date"
+                  [columns]="['close']"
+                  [titles]="['close']"
+                  [colors]="['#E91E63']"
+                  [transition]="true"
+                  transitionDuration="500"
+                  transitionDelay="1000">
+    </td-chart-line>
+  </td-charts>
+  <md-divider></md-divider>
+  <md-card-title>Sparkline Chart</md-card-title>
+  <td-charts chartTitle="Prices Trend"
+              [grid]="true"
+              [ticks]="false"
+              showLeftAxis="false"
+              [shadowDepth]="['125%', 2, 0, 2]"
+              shadowColor="rgba(0, 0, 0, 0.54)"
+              fillOpacity="1"
+              chartHeight="150">
+    <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
+                  timeSeries="true"
+                  bottomAxis="date"
+                  [columns]="['close']"
+                  [titles]="['close']"
+                  [colors]="['#00E676']"
+                  [transition]="true"
+                  transitionDuration="500"
+                  transitionDelay="1000">
+    </td-chart-line>
+  </td-charts>
+  <md-divider></md-divider>
   <md-card-title>Bar Chart</md-card-title>
   <md-card-content>
     <td-charts chartTitle="Sales Bar Chart"
@@ -35,7 +56,7 @@
                 shadowColor="rgba(0, 0, 0, 0.54)"
                 fillOpacity="0.5"
                 chartHeight="450">
-      <td-chart-bar [colors]="['cyan', 'indigo']"
+      <td-chart-bar [colors]="['pink', 'deep-purple']"
                      dataSrc="platform/charts/chart-bar/data.csv"
                      bottomAxis="salesperson"
                      columns="sales"
@@ -59,10 +80,10 @@
                    bottomAxis="col1"
                    [columns]="['col2', 'col3','col4']"
                    [titles]="['New York','San Francisco', 'Austin']"
-                   [colors]="['#3366cc', '#dc3912', '#ff9900']"
+                   [colors]="['#304FFE', '#00B8D4', '#FF3D00']"
                    [transition]="true"
-                   transitionDuration="5000"
-                   transitionDelay="3000">
+                   transitionDuration="1000"
+                   transitionDelay="2000">
       </td-chart-line>
     </td-charts>
     <md-divider></md-divider>
@@ -81,7 +102,7 @@
                      bottomAxis="x"
                      columns="y"
                      [transition]="true"
-                     transitionDuration="3000"
+                     transitionDuration="1000"
                      transitionDelay="2000">
       </td-chart-area>
     </td-charts>

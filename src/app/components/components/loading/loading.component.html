@@ -5,12 +5,11 @@
   <md-card-content>
     <div layout="row" layout-align="start center" flex>
       <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
-        <md-button-toggle md-tooltip="Indeterminate" [value]="0"><md-icon>timer_off</md-icon></md-button-toggle>
-        <md-button-toggle md-tooltip="Determinate" [value]="1"><md-icon>timer</md-icon></md-button-toggle>
+        <md-button-toggle md-tooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
+        <md-button-toggle md-tooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
       </md-button-toggle-group>
-      <span flex="5"></span>
-      <span>Loading Registered: {{replaceRegistered}} times</span>
     </div>
+    <p>Loading Registered: {{replaceRegistered}} times</p>
     <div *ngIf="!determinate">
       <h3>Indeterminate Mode</h3>
       <p>Circular Type</p>
