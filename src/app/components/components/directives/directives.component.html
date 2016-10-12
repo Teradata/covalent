@@ -1,0 +1,64 @@
+<md-card>
+  <md-card-title>Directives</md-card-title>
+  <md-card-subtitle>Core Covalent directives &amp; utilities</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>A directive is essentially like a component functionally without a template. There are structural and attribute directives.</p>
+    <p>Structural directives can change the DOM layout by adding and removing DOM elements. NgFor and NgIf are two familiar examples.</p>
+    <p>An Attribute directive can change the appearance or behavior of an element. The built-in NgStyle directive, for example, can change several element styles at the same time.</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank">
+    More on Angular 2 directives
+    </a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Autotrim directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>tdAutoTrim</code> on an input to automatically trim the characters.</p>
+    <p>Try entering white spaces before or after a word this input:</p>
+    <div layout="row">
+      <md-input flex tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"></md-input>
+    </div>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-input tdAutoTrim [(ngModel)]="yourmodel" placeholder="This will be autotrimmed"></md-input>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Toggle directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>[tdToggle]="variable"</code> on an element to toggle it open or closed (used in Stepper &amp; Expansion Panels).</p>
+    <p>Click on this to open a div:</p>
+    <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
+    <div [tdToggle]="toggleDiv" [hidden]>
+      Reveal or hide with a toggle click!
+    </div>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
+          <div [tdToggle]="toggleDiv" [hidden]>
+            Reveal or hide with a toggle click!
+          </div>
+        ]]>
+    </td-highlight>
+    <p>TypeScript:</p>
+    <td-highlight lang="typescript">
+        toggleDiv: boolean = true;
+
+        toggle(): any {{ '{' }}
+          this.toggleDiv = !this.toggleDiv;
+        {{ '}' }}
+    </td-highlight>
+  </md-card-content>
+</md-card>

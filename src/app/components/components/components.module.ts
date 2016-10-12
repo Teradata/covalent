@@ -15,6 +15,7 @@ import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
+import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
@@ -39,6 +40,7 @@ import { CovalentChipsModule } from '../../../platform/chips';
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
     DialogsDemoComponent,
+    DirectivesComponent,
     PipesComponent,
   ],
   imports: [
