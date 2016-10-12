@@ -103,7 +103,7 @@ export class TdChartLineComponent extends ChartComponent {
           return this.getTotalLength();
         }
       })
-      .style('filter', 'url(#drop-shadow)');
+      .style('filter', 'url(#' + defsId + ')');
 
     if (this.transition === true) {
       svg.selectAll('.line').transition(t)
