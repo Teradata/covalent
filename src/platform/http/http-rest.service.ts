@@ -98,7 +98,11 @@ export abstract class RESTService<T> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
     return request.map<T>((res: Response) => {
-      return <T>this.transform(res);
+      if (res.status === 200) {
+        return this.transform(res);
+      } else {
+        return res;
+      }
     }).catch<any>((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
