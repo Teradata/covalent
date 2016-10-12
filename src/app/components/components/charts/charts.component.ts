@@ -147,4 +147,17 @@ export class ChartsDemoComponent {
     type: 'number',
   }];
 
+  jsonData: any = [
+    {'x': 'Jan', 'y': 70},
+    {'x': 'Feb', 'y': 190},
+    {'x': 'Mar', 'y': 220},
+    {'x': 'Apr', 'y': 160},
+    {'x': 'May', 'y': 240},
+    {'x': 'Jun', 'y': 70},
+    {'x': 'Jul', 'y': 190},
+    {'x': 'Aug', 'y': 210},
+    {'x': 'Sep', 'y': 150},
+    {'x': 'Oct', 'y': 170},
+    {'x': 'Nov', 'y': 150},
+    {'x': 'Dec', 'y': 260}];
 }

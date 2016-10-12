@@ -2,6 +2,7 @@
   <md-card-title>Covalent Charts</md-card-title>
   <md-card-subtitle>Responsive charts for Browsers</md-card-subtitle>
   <md-divider></md-divider>
+  <md-card-content>
   <md-card-title>Time Series Line Chart</md-card-title>
   <td-charts chartTitle="Prices Trend"
               bottomAxisTitle="Year"
@@ -43,7 +44,6 @@
   </td-charts>
   <md-divider></md-divider>
   <md-card-title>Bar Chart</md-card-title>
-  <md-card-content>
     <td-charts chartTitle="Sales Bar Chart"
                 bottomAxisTitle="Day Offset"
                 leftAxisTitle="Sales"
@@ -51,13 +51,9 @@
                 [ticks]="true"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="0.5">
+                fillOpacity="0.95">
       <td-chart-bar [colors]="['pink', 'deep-purple']"
-                    [data]="[{'x':40,'y':70},
-                            {'x':60,'y':190},
-                            {'x':80,'y':220},
-                            {'x':100,'y':160},
-                            {'x':200,'y':240}]"
+                    [data]="jsonData"
                      bottomAxis="x"
                      columns="y"
                      [transition]="true"
@@ -93,7 +89,7 @@
                 [ticks]="true"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="0.9">
+                fillOpacity="0.75">
       <td-chart-area [colors]="['#03a9f4', '#0277bd']"
                      dataSrc="platform/charts/chart-area/data.json"
                     bottomAxis="x"
@@ -102,6 +98,36 @@
                      transitionDuration="1000"
                      transitionDelay="2000">
       </td-chart-area>
+    </td-charts>
+    <md-divider></md-divider>
+  <md-card-title>Combo Chart</md-card-title>
+  <td-charts chartTitle="Sales Bar Chart"
+                bottomAxisTitle="Day Offset"
+                leftAxisTitle="Sales"
+                [grid]="true"
+                [ticks]="true"
+                [shadowDepth]="['125%', 2, 0, 2]"
+                shadowColor="rgba(0, 0, 0, 0.54)"
+                fillOpacity="0.95">
+      <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
+                  timeSeries="true"
+                  bottomAxis="date"
+                  [columns]="['close']"
+                  [titles]="['close']"
+                  [colors]="['#03a9f4']"
+                  [transition]="true"
+                  transitionDuration="500"
+                  transitionDelay="1000">
+      </td-chart-line>
+      <td-chart-bar [colors]="['orange', 'deep-orange']"
+                    [data]="jsonData"
+                     bottomAxis="x"
+                     columns="y"
+                     [transition]="true"
+                     transitionDuration="750"
+                     transitionDelay="50">
+      </td-chart-bar>
+      
     </td-charts>
   </md-card-content>
 </md-card>
