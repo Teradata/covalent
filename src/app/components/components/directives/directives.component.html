@@ -41,7 +41,11 @@
     <p>Click on this to open a div:</p>
     <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
     <div [tdToggle]="toggleDiv" [hidden]>
-      Reveal or hide with a toggle click!
+      <md-card>
+        <md-card-title>Toggle Card</md-card-title>
+        <md-card-content>Reveal or hide with a toggle click!</md-card-content>
+        <md-card-actions><button md-raised-button color="primary" (click)="toggle()">Toggle Out</button></md-card-actions>
+      </md-card>
     </div>
     <p>HTML:</p>
     <td-highlight lang="html">
@@ -49,6 +53,40 @@
           <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
           <div [tdToggle]="toggleDiv" [hidden]>
             Reveal or hide with a toggle click!
+          </div>
+        ]]>
+    </td-highlight>
+    <p>TypeScript:</p>
+    <td-highlight lang="typescript">
+        toggleDiv: boolean = true;
+
+        toggle(): any {{ '{' }}
+          this.toggleDiv = !this.toggleDiv;
+        {{ '}' }}
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Fade directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>[tdFade]="variable"</code> on an element to fade it in and out.</p>
+    <p>Click on this to open a div:</p>
+    <button md-raised-button color="accent" (click)="fade()">Fade</button>
+    <div [tdFade]="fadeDiv" [hidden]>
+      <md-card>
+        <md-card-title>Fade Card</md-card-title>
+        <md-card-content>Fade in or out with a click!</md-card-content>
+        <md-card-actions><button md-raised-button color="primary" (click)="fade()">Fade Out</button></md-card-actions>
+      </md-card>
+    </div>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button color="accent" (click)="fade()">Toggle</button>
+          <div [tdFade]="fadeDiv" [hidden]>
+            This one fades in and out!
           </div>
         ]]>
     </td-highlight>
