@@ -17,7 +17,8 @@ export class DialogsToastsComponent {
     this._snackBarConfig = new MdSnackBarConfig(_viewContainerRef);
   }
   showSnackBar(): void {
-    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Direct message sent!', 'Dismiss', this._snackBarConfig);
+    let snackBarRef: MdSnackBarRef<any> = this._snackBarService
+      .open('Direct message sent!', 'Dismiss', this._snackBarConfig);
     setTimeout(() => {
       snackBarRef.dismiss();
     }, 3000);

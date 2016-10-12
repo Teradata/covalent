@@ -58,5 +58,5 @@ export class StyleGuideComponent {
     icon: 'filter_none',
     route: 'dialogs',
     title: 'Dialog Patterns',
-  },];
+  }];
 }
