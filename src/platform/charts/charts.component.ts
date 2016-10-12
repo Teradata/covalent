@@ -90,7 +90,7 @@ export class TdChartsComponent {
   @Input() showLeftAxis: boolean = true;
   @Input() leftAxisTitle: string;
   @Input() bottomAxisTitle: string;
-  @Input() chartHeight: number;
+  @Input() chartHeight: number = 450;
   colorPalette: string[];
   paletteErrorMsg: string;
 

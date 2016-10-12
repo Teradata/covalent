@@ -10,7 +10,6 @@
               [ticks]="true"
               [shadowDepth]="['125%', 2, 0, 2]"
               shadowColor="rgba(0, 0, 0, 0.54)"
-              fillOpacity="1"
               chartHeight="450">
     <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
                   timeSeries="true"
@@ -31,7 +30,6 @@
               showLeftAxis="false"
               [shadowDepth]="['125%', 2, 0, 2]"
               shadowColor="rgba(0, 0, 0, 0.54)"
-              fillOpacity="1"
               chartHeight="150">
     <td-chart-line dataSrc="platform/charts/chart-line/datatime.csv"
                   timeSeries="true"
@@ -57,9 +55,13 @@
                 fillOpacity="0.5"
                 chartHeight="450">
       <td-chart-bar [colors]="['pink', 'deep-purple']"
-                     dataSrc="platform/charts/chart-bar/data.csv"
-                     bottomAxis="salesperson"
-                     columns="sales"
+                    [data]="[{'x':40,'y':70},
+                            {'x':60,'y':190},
+                            {'x':80,'y':220},
+                            {'x':100,'y':160},
+                            {'x':200,'y':240}]"
+                     bottomAxis="x"
+                     columns="y"
                      [transition]="true"
                      transitionDuration="750"
                      transitionDelay="50">
@@ -99,8 +101,8 @@
                 chartHeight="450">
       <td-chart-area [colors]="['#03a9f4', '#0277bd']"
                      dataSrc="platform/charts/chart-area/data.json"
-                     bottomAxis="x"
-                     columns="y"
+                    bottomAxis="x"
+                    columns="y"
                      [transition]="true"
                      transitionDuration="1000"
                      transitionDelay="2000">
