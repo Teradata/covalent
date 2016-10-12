@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 /* tslint:disable-next-line */
 let d3: any = require('d3');
 
@@ -8,7 +8,7 @@ let d3: any = require('d3');
   templateUrl: 'charts.component.html',
 })
 
-export class TdChartsComponent {
+export class TdChartsComponent implements OnInit {
 
   private _paletteMap: Map<string, any[]> = new Map<string, any[]>();
 
@@ -93,8 +93,10 @@ export class TdChartsComponent {
   @Input() chartHeight: number = 450;
   colorPalette: string[];
   paletteErrorMsg: string;
+  container: HTMLElement;
 
-  constructor() {
+  constructor(elementRef: ElementRef) {
+    this.container = elementRef.nativeElement;
     this._paletteMap.set('red', this._mdRed);
     this._paletteMap.set('pink', this._mdPink);
     this._paletteMap.set('purple', this._mdPurple);
@@ -116,7 +118,7 @@ export class TdChartsComponent {
     this._paletteMap.set('blueGrey', this._mdBlueGrey);
   }
 
-  drawContainer(containerDiv: string, className: string): string {
+  ngOnInit(): void {
     this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = this.chartHeight - this._margin.top - this._margin.bottom;
@@ -125,17 +127,21 @@ export class TdChartsComponent {
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
 
-    let svg: any = d3.select(containerDiv)
+    d3.select(this.container)
       .classed('svg-container', true)
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
       .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
       .classed('svg-content-responsive', true)
       .append('g')
-      .classed(className + 'G', true)
+      .classed('chartG', true)
       .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+  }
 
-    let defs: any = svg.append('defs');
+  drawContainer(): string {
+    let defs: any = d3.select(this.container)
+                      .select('svg')
+                      .append('defs');
 
     let defsStr: string = Math.random().toString().slice(2);
 

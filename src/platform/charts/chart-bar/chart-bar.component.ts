@@ -1,4 +1,4 @@
-import {Component, Input, ElementRef, Inject, forwardRef} from '@angular/core';
+import {Component, Input, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -40,8 +40,7 @@ export class TdChartBarComponent extends ChartComponent {
     this._columns = columns;
   }
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent,
-              private _elementRef: ElementRef) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
     super(_parent);
   }
 
@@ -57,11 +56,9 @@ export class TdChartBarComponent extends ChartComponent {
     let x: any = d3.scaleBand().range([0, this._width]);
     let y: any = d3.scaleLinear().range([this._height, 0]);
 
-    let containerDiv: any = (this._elementRef.nativeElement);
+    let defsId: string = this._parentObj.drawContainer();
 
-    let defsId: string = this._parentObj.drawContainer(containerDiv, 'barchart');
-
-    let svg: any = d3.select(containerDiv).selectAll('.barchartG');
+    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
 
     data.forEach((d: any) => {
       d[this._columns] = +d[this._columns];
@@ -103,8 +100,8 @@ export class TdChartBarComponent extends ChartComponent {
 
     let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
     let x0: any = x.domain(data.sort((a: any, b: any) => { return b[this._columns] - a[this._columns]; })
-        .map((d: number) => { return d[this.bottomAxis]; }))
-        .copy();
+    .map((d: number) => { return d[this.bottomAxis]; }))
+    .copy();
 
     chartSvg.selectAll('.bar')
         .sort((a: any, b: any) => { return x0(a[this.bottomAxis]) - x0(b[this.bottomAxis]); });

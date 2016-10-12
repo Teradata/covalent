@@ -1,4 +1,4 @@
-import {Component, Input, ElementRef, Inject, forwardRef} from '@angular/core';
+import {Component, Input, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -29,8 +29,7 @@ export class TdChartLineComponent extends ChartComponent {
   @Input() titles: string[];
   @Input() colors: string[];
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent,
-              private _elementRef: ElementRef) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
     super(_parent);
   }
 
@@ -56,11 +55,9 @@ export class TdChartLineComponent extends ChartComponent {
       .x((d: any) => { return x(d.xValue); })
       .y((d: any) => { return y(d.yValue); });
 
-    let containerDiv: any = (this._elementRef.nativeElement);
+    let defsId: string = this._parentObj.drawContainer();
 
-    let defsId: string = this._parentObj.drawContainer(containerDiv, 'linechart');
-
-    let svg: any = d3.select(containerDiv).selectAll('.linechartG');
+    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
 
     let lines: Object = this.columns.map((id: any) => {
       return {

@@ -41,8 +41,7 @@ export class TdChartAreaComponent extends ChartComponent {
     this._colors = colors;
   }
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent,
-              private _elementRef: ElementRef) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
     super(_parent);
   }
 
@@ -60,11 +59,9 @@ export class TdChartAreaComponent extends ChartComponent {
         .x((d: any) => { return x(d[this.bottomAxis]); })
         .y((d: any) => { return y(d[this._columns]); });
 
-    let containerDiv: any = (this._elementRef.nativeElement);
+    let defsId: string = this._parentObj.drawContainer();
 
-    let defsId: string = this._parentObj.drawContainer(containerDiv, 'areachart');
-
-    let svg: any = d3.select(containerDiv).selectAll('.areachartG');
+    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
 
     if (d3.select('#rectClip rect').size() === 0) {
       svg.append('clipPath')
@@ -100,7 +97,7 @@ export class TdChartAreaComponent extends ChartComponent {
     svg.append('g')
       .classed('chart-area', true);
 
-    d3.select(containerDiv).selectAll('.chart-area')
+    d3.select(this._parentObj.container).selectAll('.chart-area')
       .append('path')
       .data([data])
       .attr('class', 'area')
@@ -110,7 +107,7 @@ export class TdChartAreaComponent extends ChartComponent {
       .attr('clip-path', 'url(#rectClip)')
       .style('filter', 'url(#' + defsId + ')');
 
-    d3.select(containerDiv).selectAll('.chart-area')
+    d3.select(this._parentObj.container).selectAll('.chart-area')
       .append('path')
       .data([data])
       .attr('class', 'line')
