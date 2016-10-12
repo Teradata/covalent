@@ -1,6 +1,6 @@
 import {Component, Input, AfterViewInit, ViewChild, ElementRef, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 @Component({
@@ -19,7 +19,6 @@ export class TdChartBarComponent implements AfterViewInit {
   private _colorPalette: string[] = [];
   private _parentObj: any;
   private _chartTitle: string;
-  private _shadowColor: string;
   private _leftAxisTitle: string;
   private _bottomAxisTitle: string;
   private _contentType: string;
@@ -72,7 +71,7 @@ export class TdChartBarComponent implements AfterViewInit {
     let y: any = d3.scaleLinear().range([this._height, 0]);
     let containerDiv: any = (this.content.nativeElement);
 
-    this._parentObj.drawContainer(containerDiv, 'barchart');
+    let defsId: string = this._parentObj.drawContainer(containerDiv, 'barchart');
 
     let svg: any = d3.select(containerDiv).selectAll('.barchartG');
 
@@ -114,7 +113,7 @@ export class TdChartBarComponent implements AfterViewInit {
             return '#fff';
           }
         })
-        .style('filter', 'url(#drop-shadow)');
+        .style('filter', 'url(#' + defsId + ')');
 
       if (this.transition === true) {
         this.sortAndTransition(svg, data, x, y);

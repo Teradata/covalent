@@ -1,6 +1,6 @@
 import {Component, Input, AfterViewInit, Inject, forwardRef, ViewChild, ElementRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 @Component({
@@ -71,7 +71,7 @@ export class TdChartAreaComponent implements AfterViewInit {
 
     let containerDiv: any = (this.content.nativeElement);
 
-    this._parentObj.drawContainer(containerDiv, 'areachart');
+    let defsId: string = this._parentObj.drawContainer(containerDiv, 'areachart');
 
     let svg: any = d3.select(containerDiv).selectAll('.areachartG');
 
@@ -127,7 +127,7 @@ export class TdChartAreaComponent implements AfterViewInit {
        .attr('stroke', this._colors[1])
        .attr('d', area)
        .attr('clip-path', 'url(#rectClip)')
-       .style('filter', 'url(#drop-shadow)');
+       .style('filter', 'url(#' + defsId + ')');
 
       d3.select(containerDiv).selectAll('.chart-area')
        .append('path')
@@ -135,7 +135,7 @@ export class TdChartAreaComponent implements AfterViewInit {
        .attr('class', 'line')
        .attr('d', valueline)
        .attr('clip-path', 'url(#rectClip)')
-       .style('filter', 'url(#drop-shadow)');
+       .style('filter', 'url(#' + defsId + ')');
 
       svg.append('text')
         .attr('text-anchor', 'middle')
