@@ -1,0 +1,64 @@
+<md-card>
+  <md-card-header>
+    <md-icon md-card-avatar>filter_none</md-icon>
+    <md-card-title class="md-display-1">Dialogs, Toasts and Inline Errors</md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>In Material Design, it's recommended to reserve dialogs to  inform users about a specific task and may contain critical information, such as a verbose/critical error, and alert or a confirmation of an action.</p>
+    <p>Toasts &amp; Snackbars provide brief feedback about an operation through a message at the bottom of the screen. This information is transient and will go away momentarily.</p>
+    <p>Inline errors are use in forms for validation, warnings and errors.</p>
+    <div layout="row" class="push-top">
+      <a md-button class="md-whiteframe-z1" [routerLink]="['mock-data']" md-ripple flex>
+        <div class="inset">
+          <h4><span class="tc-orange-800 md-title">Important:</span> we recommend using full-page forms for creation instead of dialogs.</h4>
+        </div>
+      </a>
+    </div>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Dialog (Modal)</md-card-title>
+  <md-card-subtitle>A floating card that blocks underlying functions</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Example dialog usage:</p>
+    <p>Example for an API error or warning:</p>
+    <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+    <md-divider class="push-top"></md-divider>
+    <p>Example for a confirmation on an action:</p>
+    <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Toast (Snack Bar)</md-card-title>
+  <md-card-subtitle>Brief, floating confirmation for an action taken.</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Example toast usage for a simple confirmation:</p>
+    <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Inline Errors</md-card-title>
+  <md-card-subtitle>For forms and inputs use inline errors for contextual feedback:</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <form #myForm>
+      <div layout-gt-xs="row" layout-margin>
+        <md-input flex placeholder="Firstname"></md-input>
+        <md-input flex placeholder="Lastname"></md-input>
+      </div>
+      <div layout-gt-xs="row" layout-margin>
+        <md-input flex placeholder="Address"></md-input>
+        <md-input flex placeholder="City"></md-input>
+        <md-input flex="10" placeholder="State"></md-input>
+        <md-input flex="20" placeholder="Zip"></md-input>
+      </div>
+    </form>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-raised-button>Submit Form</button>
+  </md-card-actions>
+</md-card>
