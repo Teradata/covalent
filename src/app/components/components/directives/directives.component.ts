@@ -8,8 +8,12 @@ import { Component } from '@angular/core';
 export class DirectivesComponent {
 
   toggleDiv: boolean = true;
+  fadeDiv: boolean = true;
 
   toggle(): void {
     this.toggleDiv = !this.toggleDiv;
+  }
+  fade(): void {
+    this.fadeDiv = !this.fadeDiv;
   }
 }

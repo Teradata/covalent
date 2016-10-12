@@ -130,6 +130,23 @@ export { TdFadeDirective } from './directives/fade/fade.directive';
 export { TdAutoTrimDirective } from './directives/auto-trim/auto-trim.directive';
 
 /**
+ * VALIDATORS
+ */
+import { TdMinValidator } from './validators/min.validator';
+import { TdMaxValidator } from './validators/max.validator';
+import { TdNumberRequiredValidator } from './validators/number-required.validator';
+
+export const TD_VALIDATORS: Type<any>[] = [
+  TdMinValidator,
+  TdMaxValidator,
+  TdNumberRequiredValidator,
+];
+
+export { TdMinValidator } from './validators/min.validator';
+export { TdMaxValidator } from './validators/max.validator';
+export { TdNumberRequiredValidator } from './validators/number-required.validator';
+
+/**
  * PIPES
  */
 import { TdOrderByPipe } from './pipes/orderby/orderby.pipe';
@@ -182,6 +199,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_EXPANSION_DIRECTIVES,
     TD_DIALOG_DIRECTIVES,
     TD_PLATFORM_DIRECTIVES,
+    TD_VALIDATORS,
   ],
   exports: [
     HttpModule,
@@ -199,6 +217,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_EXPANSION_DIRECTIVES,
     TD_DIALOG_DIRECTIVES,
     TD_PLATFORM_DIRECTIVES,
+    TD_VALIDATORS,
   ],
   entryComponents: [ TD_DIALOG_ENTRY_COMPONENTS ],
 })

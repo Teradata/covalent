@@ -202,7 +202,7 @@
       "element"
     ],
     "directive-selector-prefix": [
-      true,
+      false,
       "td"
     ],
     "component-selector-prefix": [ // This will be checked in PR's since we only want `td-` prefix for platform components, not docs not product components.
