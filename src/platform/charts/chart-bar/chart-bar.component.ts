@@ -1,36 +1,37 @@
-import {Component, Input, AfterViewInit, ViewChild, ElementRef, Inject, forwardRef} from '@angular/core';
+import {Component, Input, ElementRef, Inject, forwardRef} from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
+import { ChartComponent, IChartData } from '../abstract-chart.component';
+
 /* tslint:disable-next-line */ 
 let d3: any = require('d3');
+
+export interface IChartData {
+  [key: string]: any;
+}
 
 @Component({
   selector: 'td-chart-bar',
   styleUrls: ['chart-bar.component.scss'],
   templateUrl: 'chart-bar.component.html',
 })
+export class TdChartBarComponent extends ChartComponent {
 
-export class TdChartBarComponent implements AfterViewInit {
-
-  private _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
-  private _width: number;
-  private _height: number;
-  private _padding: number;
   private _columns: string;
   private _colorPalette: string[] = [];
-  private _parentObj: any;
-  private _chartTitle: string;
-  private _shadowColor: string;
-  private _leftAxisTitle: string;
-  private _bottomAxisTitle: string;
-  private _contentType: string;
 
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
   '#c2185b', '#9C27B0', '#6A1B9A', '#4A148C', '#311B92', '#512DA8', '#673AB7', '#9575CD', '#B39DDB'];
 
-  @ViewChild('barchart') content: ElementRef;
-  @Input('') dataSrc: string = '';
-  @Input('') bottomAxis: string = '';
-  @Input('') colors: string[];
+  @Input()
+  set dataSrc(dataSrc: string) {
+    super.setDataSrc(dataSrc);
+  }
+  @Input()
+  set data(data: IChartData[]) {
+    super.setData(data);
+  }
+  @Input() bottomAxis: string = '';
+  @Input() colors: string[];
   @Input() transition: boolean = true;
   @Input() transitionDuration: number;
   @Input() transitionDelay: number;
@@ -39,27 +40,12 @@ export class TdChartBarComponent implements AfterViewInit {
     this._columns = columns;
   }
 
-  paletteError: string;
-
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
-    this._parentObj = _parent;
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent,
+              private _elementRef: ElementRef) {
+    super(_parent);
   }
 
-  ngAfterViewInit(): void {
-    this._chartTitle = this._parentObj.chartTitle;
-    this._leftAxisTitle = this._parentObj.leftAxisTitle;
-    this._bottomAxisTitle = this._parentObj.bottomAxisTitle;
-    this.drawChart();
-  }
-
-  drawChart(): void {
-    this._margin.top = 50;
-    this._width = 960 - this._margin.left - this._margin.right;
-    this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
-    this._padding = 100;
-
-    this._contentType = this.dataSrc.substr(this.dataSrc.lastIndexOf('.') + 1);
-
+  renderChart(data: any): void {
     let paletteObj: {} = this._parentObj.generatePalette(this.colors[0], this.colors[1]);
 
     for (let key in paletteObj) {
@@ -68,80 +54,68 @@ export class TdChartBarComponent implements AfterViewInit {
       }
     }
 
-    let x: any = d3.scaleBand().range([0, this._width]).padding(0.1);
+    let x: any = d3.scaleBand().range([0, this._width]);
     let y: any = d3.scaleLinear().range([this._height, 0]);
-    let containerDiv: any = (this.content.nativeElement);
+
+    let containerDiv: any = (this._elementRef.nativeElement);
 
     this._parentObj.drawContainer(containerDiv, 'barchart');
 
     let svg: any = d3.select(containerDiv).selectAll('.barchartG');
 
-    enum ParseContent {
-      json = d3.json,
-      csv = d3.csv,
-      tsv = d3.tsv
+    data.forEach((d: any) => {
+      d[this._columns] = +d[this._columns];
+    });
+
+    x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
+    y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
+
+    this._parentObj.drawGridsAndTicks(svg, x, y);
+
+    svg.append('g')
+      .classed('chart-bars', true)
+      .selectAll('.bar')
+      .data(data)
+      .enter().append('rect')
+      .attr('class', 'bar')
+      .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
+      .attr('width', x.bandwidth())
+      .attr('y', (d: any) => { return y(d[this._columns]); })
+      .attr('height', (d: number) => { return this._height - y(d[this._columns]); })
+      .attr('fill', (d: any, i: number) => {
+        if (this.transition === false) {
+          let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
+          let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
+        } else {
+          return '#fff';
+        }
+      })
+      .style('filter', 'url(#drop-shadow)');
+
+    if (this.transition === true) {
+      this._sortAndTransition(svg, data, x, y);
     }
 
-    ParseContent[this._contentType](this.dataSrc, (error: string, data: any) => {
-      if (error) {
-        throw error;
-      }
+    svg.append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
+      .text(this._chartTitle)
+      .attr('class', 'md-title');
 
-      data.forEach((d: any) => {
-        d[this._columns] = +d[this._columns];
-      });
+    svg.append('text')
+    .attr('y', -15)
+    .classed('axisTitle', true)
+    .attr('dy', '0.71em')
+    .attr('fill', '#000')
+    .text(this._leftAxisTitle);
 
-      x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
-      y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
-
-      this._parentObj.drawGridsAndTicks(svg, x, y);
-
-      svg.append('g')
-        .classed('chart-bars', true)
-        .selectAll('.bar')
-        .data(data)
-        .enter().append('rect')
-        .attr('class', 'bar')
-        .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
-        .attr('width', x.bandwidth())
-        .attr('y', (d: any) => { return y(d[this._columns]); })
-        .attr('height', (d: number) => { return this._height - y(d[this._columns]); })
-        .attr('fill', (d: any, i: number) => {
-          if (this.transition === false) {
-            let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
-            let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
-          } else {
-            return '#fff';
-          }
-        })
-        .style('filter', 'url(#drop-shadow)');
-
-      if (this.transition === true) {
-        this.sortAndTransition(svg, data, x, y);
-      }
-
-      svg.append('text')
-        .attr('text-anchor', 'middle')
-        .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-        .text(this._chartTitle)
-        .attr('class', 'md-title');
-
-      svg.append('text')
-      .attr('y', -15)
-      .classed('axisTitle', true)
-      .attr('dy', '0.71em')
-      .attr('fill', '#000')
-      .text(this._leftAxisTitle);
-
-      svg.append('text')
-      .classed('axisTitle', true)
-      .attr('transform', 'translate(' + (this._width / 2 - 20) + ',' + (this._height + 40) + ')')
-      .text(this._bottomAxisTitle);
-
-    });
+    svg.append('text')
+    .classed('axisTitle', true)
+    .attr('transform', 'translate(' + (this._width / 2 - 20) + ',' + (this._height + 40) + ')')
+    .text(this._bottomAxisTitle);
   }
 
-  sortAndTransition(chartSvg: any, data: any, x: any, y: any): void {
+  private _sortAndTransition(chartSvg: any, data: any, x: any, y: any): void {
 
     let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
     let x0: any = x.domain(data.sort((a: any, b: any) => { return b[this._columns] - a[this._columns]; })
