@@ -19,7 +19,7 @@ export class DataTableDemoComponent {
   }, {
     description: `List of columns to be displayed`,
     name: 'columns?',
-    type: 'ITdDataTableColumn',
+    type: 'ITdDataTableColumn[]',
   }, {
     description: `If present will display a title before the table`,
     name: 'title?',
