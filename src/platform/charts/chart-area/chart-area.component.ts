@@ -46,12 +46,14 @@ export class TdChartAreaComponent extends ChartComponent {
   }
 
   renderChart(data: any): void {
-    let x: any = d3.scaleLinear().range([0, this._width]);
-    let y: any = d3.scaleLinear().range([this._height, 0]);
-
+    let offset: number = this._parent.width / data.length;
+    let x: any = d3.scaleLinear().range([offset / 2, this._parent.width - (offset / 2)]);
+    let y: any = d3.scaleLinear().range([this._parent.height, 0]);
+    super.setX(x);
+    super.setY(y);
     let area: any = d3.area()
       .x((d: any) => { return x(d[this.bottomAxis]); })
-      .y0(this._height)
+      .y0(this._parent.height)
       .y1((d: any) => { return y(d[this._columns]); })
       .curve(d3.curveCardinal);
 
@@ -59,16 +61,16 @@ export class TdChartAreaComponent extends ChartComponent {
         .x((d: any) => { return x(d[this.bottomAxis]); })
         .y((d: any) => { return y(d[this._columns]); });
 
-    let defsId: string = this._parentObj.drawContainer();
+    let defsId: string = this._parent.drawContainer();
 
-    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     if (d3.select('#rectClip rect').size() === 0) {
       svg.append('clipPath')
       .attr('id', 'rectClip')
       .append('rect')
         .attr('width', 0)
-        .attr('height', this._height);
+        .attr('height', this._parent.height);
     }
 
     data.forEach((d: any) => {
@@ -82,22 +84,20 @@ export class TdChartAreaComponent extends ChartComponent {
     ]);
     y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
 
-    this._parentObj.drawGridsAndTicks(svg, x, y);
-
     if (this.transition === true) {
       d3.select('#rectClip rect')
       .transition().duration(this.transitionDuration)
       .delay(this.transitionDelay)
-      .attr('width', this._width);
+      .attr('width', this._parent.width);
     } else {
       d3.select('#rectClip rect')
-      .attr('width', this._width);
+      .attr('width', this._parent.width);
     }
 
     svg.append('g')
       .classed('chart-area', true);
 
-    d3.select(this._parentObj.container).selectAll('.chart-area')
+    d3.select(this._parent.container).selectAll('.chart-area')
       .append('path')
       .data([data])
       .attr('class', 'area')
@@ -107,14 +107,12 @@ export class TdChartAreaComponent extends ChartComponent {
       .attr('clip-path', 'url(#rectClip)')
       .style('filter', 'url(#' + defsId + ')');
 
-    d3.select(this._parentObj.container).selectAll('.chart-area')
+    d3.select(this._parent.container).selectAll('.chart-area')
       .append('path')
       .data([data])
       .attr('class', 'line')
       .attr('d', valueline)
       .attr('clip-path', 'url(#rectClip)')
       .style('filter', 'url(#' + defsId + ')');
-
-    super.configureChart(svg);
   }
 }

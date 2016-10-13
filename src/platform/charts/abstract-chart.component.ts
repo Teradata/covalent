@@ -10,27 +10,16 @@ export interface IChartData {
 
 export abstract class ChartComponent implements OnInit {
 
-  protected _margin: any = {top: 50, right: 150, bottom: 50, left: 50};
-  protected _width: number;
-  protected _height: number;
-  protected _padding: number;
   protected _initialized: boolean = false;
 
-  protected _parentObj: TdChartsComponent;
-  protected _chartTitle: string;
-  protected _leftAxisTitle: string;
-  protected _bottomAxisTitle: string;
   protected _dataSrc: string = '';
   protected _data: IChartData[];
+  protected _x: any;
+  protected _y: any;
 
-  constructor(parent: TdChartsComponent) {
-    this._parentObj = parent;
-  }
+  constructor(protected _parent: TdChartsComponent) {}
 
   ngOnInit(): void {
-    this._chartTitle = this._parentObj.chartTitle;
-    this._leftAxisTitle = this._parentObj.leftAxisTitle;
-    this._bottomAxisTitle = this._parentObj.bottomAxisTitle;
     this._initialized = true;
     this.drawChart();
   }
@@ -49,16 +38,25 @@ export abstract class ChartComponent implements OnInit {
     }
   }
 
+  setX(x: any): void {
+    this._x = x;
+  }
+  getX(): any {
+    return this._x;
+  }
+
+  setY(y: any): void {
+    this._y = y;
+  }
+  getY(): any {
+    return this._y;
+  }
+
   refresh(): void {
     this.drawChart();
   }
 
   protected drawChart(): void {
-    this._margin.top = 50;
-    this._width = 960 - this._margin.left - this._margin.right;
-    this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
-    this._padding = 100;
-
     if (this._data) {
       this.renderChart(this._data);
     } else if (this._dataSrc) {
@@ -78,25 +76,5 @@ export abstract class ChartComponent implements OnInit {
   }
 
   protected abstract renderChart(data: any): void;
-
-  protected configureChart(svg: any): void {
-    svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-      .text(this._chartTitle)
-      .attr('class', 'md-title');
-
-    svg.append('text')
-      .attr('y', -15)
-      .classed('axisTitle', true)
-      .attr('dy', '0.71em')
-      .attr('fill', '#000')
-      .text(this._leftAxisTitle);
-
-    svg.append('text')
-      .classed('axisTitle', true)
-      .attr('transform', 'translate(' + (this._width / 2 - 20) + ',' + (this._height + 40) + ')')
-      .text(this._bottomAxisTitle);
-  }
 
 }

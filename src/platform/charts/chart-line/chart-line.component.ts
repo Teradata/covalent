@@ -45,19 +45,20 @@ export class TdChartLineComponent extends ChartComponent {
 
     let row: Function = this.timeSeries ? dateCol : stringCol;
     let xScale: Function = this.timeSeries ? d3.scaleTime : d3.scaleLinear;
-
-    let x: any = xScale().range([0, this._width]);
-    let y: any = d3.scaleLinear().range([this._height, 0]);
+    let offset: number = this._parent.width / data.length;
+    let x: any = xScale().range([offset / 2, this._parent.width - (offset / 2)]);
+    let y: any = d3.scaleLinear().range([this._parent.height, 0]);
+    super.setX(x);
+    super.setY(y);
     let color: any = d3.scaleOrdinal(this.colors);
 
     let drawLine: any = d3.line()
-      .curve(d3.curveBasis)
       .x((d: any) => { return x(d.xValue); })
       .y((d: any) => { return y(d.yValue); });
 
-    let defsId: string = this._parentObj.drawContainer();
+    let defsId: string = this._parent.drawContainer();
 
-    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     let lines: Object = this.columns.map((id: any) => {
       return {
@@ -74,8 +75,6 @@ export class TdChartLineComponent extends ChartComponent {
       d3.min(lines, (c: any) => { return d3.min(c.values, (d: any) => { return d.yValue; }); }),
       d3.max(lines, (c: any) => { return d3.max(c.values, (d: any) => { return d.yValue; }); }),
     ]);
-
-    this._parentObj.drawGridsAndTicks(svg, x, y);
 
     let line: any = svg.append('g')
       .classed('chart-lines', true)
@@ -114,7 +113,5 @@ export class TdChartLineComponent extends ChartComponent {
       .attr('dy', '0.35em')
       .style('font', '10px sans-serif')
       .text((d: any, i: number) => { return this.titles[i]; });
-
-    super.configureChart(svg);
   }
 }

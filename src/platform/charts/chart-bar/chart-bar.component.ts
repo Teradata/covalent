@@ -45,20 +45,17 @@ export class TdChartBarComponent extends ChartComponent {
   }
 
   renderChart(data: any): void {
-    let paletteObj: {} = this._parentObj.generatePalette(this.colors[0], this.colors[1]);
+    let palette: string[] = this._parent.generatePalette(this.colors[0], this.colors[1]);
+    this._colorPalette = palette ? palette : this._mdBarColorPalette;
 
-    for (let key in paletteObj) {
-      if (key === 'color') {
-        this._colorPalette = paletteObj[key];
-      }
-    }
+    let x: any = d3.scaleBand().range([0, this._parent.width]);
+    let y: any = d3.scaleLinear().range([this._parent.height, 0]);
+    super.setX(x);
+    super.setY(y);
 
-    let x: any = d3.scaleBand().range([0, this._width]);
-    let y: any = d3.scaleLinear().range([this._height, 0]);
+    let defsId: string = this._parent.drawContainer();
 
-    let defsId: string = this._parentObj.drawContainer();
-
-    let svg: any = d3.select(this._parentObj.container).selectAll('.chartG');
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     data.forEach((d: any) => {
       d[this._columns] = +d[this._columns];
@@ -66,8 +63,6 @@ export class TdChartBarComponent extends ChartComponent {
 
     x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
     y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
-
-    this._parentObj.drawGridsAndTicks(svg, x, y);
 
     svg.append('g')
       .classed('chart-bars', true)
@@ -78,11 +73,10 @@ export class TdChartBarComponent extends ChartComponent {
       .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
       .attr('width', x.bandwidth())
       .attr('y', (d: any) => { return y(d[this._columns]); })
-      .attr('height', (d: number) => { return this._height - y(d[this._columns]); })
+      .attr('height', (d: number) => { return this._parent.height - y(d[this._columns]); })
       .attr('fill', (d: any, i: number) => {
         if (this.transition === false) {
-          let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
-          let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i)); return color;
+          return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
         } else {
           return '#fff';
         }
@@ -90,25 +84,19 @@ export class TdChartBarComponent extends ChartComponent {
       .style('filter', 'url(#' + defsId + ')');
 
     if (this.transition === true) {
-      this._sortAndTransition(svg, data, x, y);
+      this._transtion(svg, data, x, y);
     }
-
-    super.configureChart(svg);
   }
 
-  private _sortAndTransition(chartSvg: any, data: any, x: any, y: any): void {
-
-    let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
-
+  private _transtion(chartSvg: any, data: any, x: any, y: any): void {
     let transition: any = chartSvg.transition().duration(this.transitionDuration);
     let delay: any = (d: number, i: number) => { return i * this.transitionDelay; };
 
     transition.selectAll('.bar')
-        .delay(delay)
-        .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
-        .attr('fill', (d: any, i: number) => {
-        let color: string = (typeof fillBarColors === 'object' ? fillBarColors[i] : fillBarColors(i));
-        return color;
+      .delay(delay)
+      .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
+      .attr('fill', (d: any, i: number) => {
+        return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
       });
 
     transition.select('.x.axis')

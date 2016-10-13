@@ -1,13 +1,147 @@
-import { Component, Input, OnInit, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, Inject, forwardRef, ContentChild } from '@angular/core';
+import { ChartComponent } from './abstract-chart.component';
 /* tslint:disable-next-line */
 let d3: any = require('d3');
+
+@Component({
+  selector: 'td-axis-y-left',
+  template: '',
+})
+export class TdYLeftAxisComponent {
+
+  private _display: string = 'block';
+
+  @Input() link: ChartComponent;
+  @Input()
+  set show(show: boolean) {
+    this._display = show === true ? 'block' : 'none';
+  }
+  @Input() ticks: boolean = false;
+  @Input() legend: string;
+
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
+  }
+
+  draw(svg: any): void {
+    let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
+    let y: any = this.link.getY();
+
+    svg.append('g')
+      .attr('class', this._parent.grid ? 'grid' : '')
+      .call(d3.axisLeft(y)
+              .tickSize(tickWidthSize)
+              .tickFormat(''));
+
+    svg.append('text')
+      .attr('y', -15)
+      .classed('axisTitle', true)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(this.legend);
+
+    svg.append('g')
+      .attr('class', 'ticks ticks-y')
+      .call(d3.axisLeft(y))
+      .attr('display', this._display);
+  }
+}
+
+@Component({
+  selector: 'td-axis-y-right',
+  template: '',
+})
+export class TdYRightAxisComponent {
+
+  private _display: string = 'block';
+
+  @Input() link: ChartComponent;
+  @Input()
+  set show(show: boolean) {
+    this._display = show === true ? 'block' : 'none';
+  }
+  @Input() ticks: boolean = false;
+  @Input() legend: string;
+
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
+  }
+
+  draw(svg: any): void {
+    let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
+    let y: any = this.link.getY();
+
+    svg.append('g')
+      .attr('class', this._parent.grid ? 'grid' : '')
+      .attr('transform', 'translate(' + this._parent.width + ', 0)')
+      .call(d3.axisRight(y)
+              .tickSize(tickWidthSize)
+              .tickFormat(''));
+
+    svg.append('text')
+      .attr('y', -15)
+      .attr('transform', 'translate(' + this._parent.width + ', 0)')
+      .classed('axisTitle', true)
+      .attr('dy', '0.71em')
+      .attr('fill', '#000')
+      .text(this.legend);
+
+    svg.append('g')
+      .attr('class', 'ticks ticks-y')
+      .attr('transform', 'translate(' + this._parent.width + ', 0)')
+      .call(d3.axisRight(y))
+      .attr('display', this._display);
+  }
+}
+
+@Component({
+  selector: 'td-axis-x',
+  template: '',
+})
+export class TdXAxisComponent {
+
+  private _display: string = 'block';
+
+  @Input() link: ChartComponent;
+  @Input()
+  set show(show: boolean) {
+    this._display = show === true ? 'block' : 'none';
+  }
+  @Input() ticks: boolean = false;
+  @Input() legend: string;
+
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) private _parent: TdChartsComponent) {
+  }
+
+  draw(svg: any): void {
+    let tickHeightSize: number = this.ticks ? -this._parent.height : 0;
+    let x: any = this.link.getX();
+
+    svg.append('g')
+      .attr('class', this._parent.grid ? 'grid' : '')
+      .attr('transform', 'translate(0,' + this._parent.height + ')')
+      .call(d3.axisBottom(x)
+            .tickSize(tickHeightSize)
+            .tickFormat('')
+      );
+    svg.append('text')
+      .classed('axisTitle', true)
+      .attr('transform', 'translate(' + (this._parent.width / 2 - 20) + ',' + (this._parent.height + 40) + ')')
+      .text(this.legend);
+
+    svg.append('g')
+      .attr('class', 'ticks ticks-x')
+      .attr('transform', 'translate(0,' + this._parent.height + ')')
+      .call(d3.axisBottom(x))
+      .attr('display', this._display);
+  }
+
+}
+
 
 @Component({
   selector: 'td-charts',
   styleUrls: ['charts.component.scss'],
   templateUrl: 'charts.component.html',
 })
-
 export class TdChartsComponent implements OnInit {
 
   private _paletteMap: Map<string, any[]> = new Map<string, any[]>();
@@ -74,44 +208,31 @@ export class TdChartsComponent implements OnInit {
   private _width: number;
   private _height: number;
   private _padding: number;
-  private _tickHeightSize: number = 0;
-  private _tickWidthSize: number = 0;
-  private _gridClass: string;
-  private _bottomAxisDisplay: string;
-  private _leftAxisDisplay: string;
 
-  @Input() chartTitle: string = '';
+  get margin(): any {
+    return this._margin;
+  }
+  get width(): number {
+    return this._width;
+  }
+  get height(): number {
+    return this._height;
+  }
+  get padding(): number {
+    return this._padding;
+  }
+
+  @ContentChild(TdXAxisComponent) xAxis: TdXAxisComponent;
+  @ContentChild(TdYLeftAxisComponent) leftYAxis: TdYLeftAxisComponent;
+  @ContentChild(TdYRightAxisComponent) rightYAxis: TdYRightAxisComponent;
+  @Input() title: string = '';
   @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
-  @Input() ticks: boolean;
-  @Input()
-  set grid(grid: boolean) {
-    this._gridClass = grid === true ? 'grid' : '';
-  }
-  get gridClass(): string {
-    return this._gridClass;
-  }
+  @Input() grid: boolean = false;
   @Input() shadowDepth: any[];
-
-  @Input()
-  set showBottomAxis(showBottomAxis: boolean) {
-    this._bottomAxisDisplay = showBottomAxis === true ? 'block' : 'none';
-  }
-  get xAxisDisplay(): string {
-    return this._bottomAxisDisplay;
-  }
-  @Input()
-  set showLeftAxis(showLeftAxis: boolean) {
-    this._leftAxisDisplay = showLeftAxis  === true ? 'block' : 'none';
-  }
-  get yAxisDisplay(): string {
-    return this._leftAxisDisplay;
-  }
-  @Input() leftAxisTitle: string;
-  @Input() bottomAxisTitle: string;
   @Input() chartHeight: number = 450;
+
   colorPalette: string[];
-  paletteErrorMsg: string;
   container: HTMLElement;
 
   constructor(elementRef: ElementRef) {
@@ -148,6 +269,7 @@ export class TdChartsComponent implements OnInit {
 
     d3.select(this.container)
       .classed('svg-container', true)
+      .attr('title', '')
       .append('svg')
       .attr('preserveAspectRatio', 'xMinYMin meet')
       .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + (viewBoxHeight))
@@ -155,12 +277,34 @@ export class TdChartsComponent implements OnInit {
       .append('g')
       .classed('chartG', true)
       .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+
+    setTimeout(() => {
+      let svg: any = d3.select(this.container)
+                     .selectAll('.chartG');
+      if (this.leftYAxis) {
+        this.leftYAxis.draw(svg);
+      }
+      if (this.rightYAxis) {
+        this.rightYAxis.draw(svg);
+      }
+      if (this.xAxis) {
+        this.xAxis.draw(svg);
+      }
+    });
   }
 
   drawContainer(): string {
     let defs: any = d3.select(this.container)
                       .select('svg')
                       .append('defs');
+    let svg: any = d3.select(this.container)
+                     .selectAll('.chartG');
+
+    svg.append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
+      .text(this.title)
+      .attr('class', 'md-title');
 
     let defsStr: string = Math.random().toString().slice(2);
 
@@ -202,52 +346,15 @@ export class TdChartsComponent implements OnInit {
     return defsClass;
   }
 
-  drawGridsAndTicks(svgElem: any, x: any, y: any): void {
-    this._tickHeightSize = this.ticks ? -this._height : 0;
-    this._tickWidthSize = this.ticks ? -this._width : 0;
-
-    svgElem.append('g')
-    .attr('class', this._gridClass)
-    .attr('transform', 'translate(0,' + this._height + ')')
-    .call(d3.axisBottom(x)
-          .tickSize(this._tickHeightSize)
-          .tickFormat('')
-    );
-
-    svgElem.append('g')
-      .attr('class', this._gridClass)
-      .call(d3.axisLeft(y)
-            .tickSize(this._tickWidthSize)
-            .tickFormat('')
-      );
-
-    svgElem.append('g')
-      .attr('class', 'ticks ticks-x')
-      .attr('transform', 'translate(0,' + this._height + ')')
-      .call(d3.axisBottom(x))
-      .attr('display', this._bottomAxisDisplay);
-
-    svgElem.append('g')
-      .attr('class', 'ticks ticks-y')
-      .call(d3.axisLeft(y))
-      .attr('display', this._leftAxisDisplay);
-  }
-
   /**
    * Method to generate color Palette.
    */
   generatePalette(firstColor: string, secondColor: string): any {
-    if (!this._paletteMap.get(firstColor) && !this._paletteMap.get(secondColor)) {
-      this.paletteErrorMsg = 'Palette colors not found, rendering the default palette!!';
-    } else if (!this._paletteMap.get(firstColor)) {
-      this.paletteErrorMsg = 'First palette color not found, rendering the default palette!!';
-    } else if (!this._paletteMap.get(secondColor)) {
-      this.paletteErrorMsg = 'Second palette color not found, rendering the default palette!!';
-    } else {
+    if (this._paletteMap.get(firstColor) && this._paletteMap.get(secondColor)) {
       this.colorPalette = this._paletteMap.get(firstColor).slice(0, 6)
       .concat(this._paletteMap.get(secondColor).slice(6, 14));
-      return {'color' : this.colorPalette};
+      return this.colorPalette;
     }
+    return undefined;
   }
-
 }
