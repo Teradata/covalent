@@ -23,4 +23,7 @@ $background: $md-light-theme-background;
       stroke: md-color($foreground, divider);
     }
   }
+  .domain {
+    stroke: md-color($foreground, divider);
+  }
 }
