@@ -1,8 +1,8 @@
-import { Directive } from '@angular/core';
+import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[td-row]',
-  host: { 'class': 'md-row' },
 })
 export class TdDataTableRowDirective {
+  @HostBinding('class') cssClass: string = 'md-row';
 }
