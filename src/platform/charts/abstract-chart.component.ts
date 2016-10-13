@@ -58,7 +58,7 @@ export abstract class ChartComponent implements OnInit {
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = this._parentObj.chartHeight - this._margin.top - this._margin.bottom;
     this._padding = 100;
-    console.log(this._data);
+
     if (this._data) {
       this.renderChart(this._data);
     } else if (this._dataSrc) {

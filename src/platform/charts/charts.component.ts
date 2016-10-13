@@ -84,10 +84,29 @@ export class TdChartsComponent implements OnInit {
   @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
   @Input() ticks: boolean;
-  @Input() grid: boolean;
+  @Input()
+  set grid(grid: boolean) {
+    this._gridClass = grid === true ? 'grid' : '';
+  }
+  get gridClass(): string {
+    return this._gridClass;
+  }
   @Input() shadowDepth: any[];
-  @Input() showBottomAxis: boolean = true;
-  @Input() showLeftAxis: boolean = true;
+
+  @Input()
+  set showBottomAxis(showBottomAxis: boolean) {
+    this._bottomAxisDisplay = showBottomAxis === true ? 'block' : 'none';
+  }
+  get xAxisDisplay(): string {
+    return this._bottomAxisDisplay;
+  }
+  @Input()
+  set showLeftAxis(showLeftAxis: boolean) {
+    this._leftAxisDisplay = showLeftAxis  === true ? 'block' : 'none';
+  }
+  get yAxisDisplay(): string {
+    return this._leftAxisDisplay;
+  }
   @Input() leftAxisTitle: string;
   @Input() bottomAxisTitle: string;
   @Input() chartHeight: number = 450;
@@ -187,29 +206,13 @@ export class TdChartsComponent implements OnInit {
     this._tickHeightSize = this.ticks ? -this._height : 0;
     this._tickWidthSize = this.ticks ? -this._width : 0;
 
-    if (this.grid === true) {
-      this._gridClass = 'grid';
-    }
-
-    if (this.showBottomAxis === true) {
-      this._bottomAxisDisplay = 'block';
-    } else {
-      this._bottomAxisDisplay = 'none';
-    }
-
-    if (this.showLeftAxis === true) {
-      this._leftAxisDisplay = 'block';
-    } else {
-      this._leftAxisDisplay = 'none';
-    }
-
     svgElem.append('g')
-        .attr('class', this._gridClass)
-        .attr('transform', 'translate(0,' + this._height + ')')
-        .call(d3.axisBottom(x)
-             .tickSize(this._tickHeightSize)
-             .tickFormat('')
-        );
+    .attr('class', this._gridClass)
+    .attr('transform', 'translate(0,' + this._height + ')')
+    .call(d3.axisBottom(x)
+          .tickSize(this._tickHeightSize)
+          .tickFormat('')
+    );
 
     svgElem.append('g')
       .attr('class', this._gridClass)
