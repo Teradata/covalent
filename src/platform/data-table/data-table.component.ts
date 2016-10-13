@@ -66,7 +66,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   @Input('title') _title: string;
 
   @Input('data')
-  set data(data: any[]) {
+  set data(data: Object[]) {
     this._data = data;
     this.resetPagination();
   }
@@ -156,7 +156,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   }
 
   @Input('sortOrder')
-  set sortOrder(order: string) {
+  set sortOrder(order: 'ASC' | 'DESC') {
     let sortOrder: string = order ? order.toUpperCase() : 'ASC';
     if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
       throw '[sortOrder] must be empty, ASC or DESC';
