@@ -1,13 +1,9 @@
-import {Component, Input, Inject, forwardRef, ElementRef} from '@angular/core';
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
 /* tslint:disable-next-line */
 let d3: any = require('d3');
-
-export interface IChartData {
-  [key: string]: any;
-}
 
 @Component({
   selector: 'td-chart-area',
@@ -15,9 +11,6 @@ export interface IChartData {
   templateUrl: 'chart-area.component.html',
 })
 export class TdChartAreaComponent extends ChartComponent {
-
-  private _columns: string;
-  private _colors: string[] = [];
 
   @Input()
   set dataSrc(dataSrc: string) {
@@ -29,37 +22,32 @@ export class TdChartAreaComponent extends ChartComponent {
   }
   @Input() bottomAxis: string = '';
   @Input() transition: boolean = true;
-  @Input() transitionDuration: number;
-  @Input() transitionDelay: number;
-  @Input('columns')
-  set columns(columns: string) {
-    this._columns = columns;
-  }
+  @Input() transitionDuration: number = 0;
+  @Input() transitionDelay: number = 0;
+  @Input() columns: string;
+  @Input() colors: string[] = ['#03a9f4', '#0277bd'];
 
-  @Input('colors')
-  set colors(colors: string[]) {
-    this._colors = colors;
-  }
-
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
-    super(_parent);
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+    super(parent);
   }
 
   renderChart(data: any): void {
     let offset: number = this._parent.width / data.length;
+
     let x: any = d3.scaleLinear().range([offset / 2, this._parent.width - (offset / 2)]);
     let y: any = d3.scaleLinear().range([this._parent.height, 0]);
-    super.setX(x);
-    super.setY(y);
+    this._x = x;
+    this._y = y;
+
     let area: any = d3.area()
       .x((d: any) => { return x(d[this.bottomAxis]); })
       .y0(this._parent.height)
-      .y1((d: any) => { return y(d[this._columns]); })
+      .y1((d: any) => { return y(d[this.columns]); })
       .curve(d3.curveCardinal);
 
     let valueline: any = d3.line()
         .x((d: any) => { return x(d[this.bottomAxis]); })
-        .y((d: any) => { return y(d[this._columns]); });
+        .y((d: any) => { return y(d[this.columns]); });
 
     let defsId: string = this._parent.drawContainer();
 
@@ -75,14 +63,14 @@ export class TdChartAreaComponent extends ChartComponent {
 
     data.forEach((d: any) => {
         d[this.bottomAxis] = d[this.bottomAxis];
-        d[this._columns] = +d[this._columns];
+        d[this.columns] = +d[this.columns];
     });
 
     x.domain([
       d3.min(data, (d: any) => { return d[this.bottomAxis]; }),
       d3.max(data, (d: any) => { return d[this.bottomAxis]; }),
     ]);
-    y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
+    y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
 
     if (this.transition === true) {
       d3.select('#rectClip rect')
@@ -101,8 +89,8 @@ export class TdChartAreaComponent extends ChartComponent {
       .append('path')
       .data([data])
       .attr('class', 'area')
-      .attr('fill', this._colors[0])
-      .attr('stroke', this._colors[1])
+      .attr('fill', this.colors[0])
+      .attr('stroke', this.colors[1])
       .attr('d', area)
       .attr('clip-path', 'url(#rectClip)')
       .style('filter', 'url(#' + defsId + ')');

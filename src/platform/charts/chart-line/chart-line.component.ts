@@ -1,4 +1,4 @@
-import {Component, Input, Inject, forwardRef} from '@angular/core';
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -22,15 +22,15 @@ export class TdChartLineComponent extends ChartComponent {
   }
   @Input() bottomAxis: string = '';
   @Input() transition: boolean = true;
-  @Input() transitionDuration: number;
-  @Input() transitionDelay: number;
-  @Input() timeSeries: boolean = false;
+  @Input() transitionDuration: number = 0;
+  @Input() transitionDelay: number = 0;
   @Input() columns: string[];
+  @Input() colors: string[] = ['#304FFE', '#00B8D4', '#FF3D00'];
   @Input() titles: string[];
-  @Input() colors: string[];
+  @Input() timeSeries: boolean = false;
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
-    super(_parent);
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+    super(parent);
   }
 
   renderChart(data: any): void {
@@ -46,10 +46,12 @@ export class TdChartLineComponent extends ChartComponent {
     let row: Function = this.timeSeries ? dateCol : stringCol;
     let xScale: Function = this.timeSeries ? d3.scaleTime : d3.scaleLinear;
     let offset: number = this._parent.width / data.length;
+
     let x: any = xScale().range([offset / 2, this._parent.width - (offset / 2)]);
     let y: any = d3.scaleLinear().range([this._parent.height, 0]);
-    super.setX(x);
-    super.setY(y);
+    this._x = x;
+    this._y = y;
+
     let color: any = d3.scaleOrdinal(this.colors);
 
     let drawLine: any = d3.line()

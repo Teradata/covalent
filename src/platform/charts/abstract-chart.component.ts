@@ -17,6 +17,14 @@ export abstract class ChartComponent implements OnInit {
   protected _x: any;
   protected _y: any;
 
+  get x(): any {
+    return this._x;
+  }
+
+  get y(): any {
+    return this._y;
+  }
+
   constructor(protected _parent: TdChartsComponent) {}
 
   ngOnInit(): void {
@@ -24,36 +32,21 @@ export abstract class ChartComponent implements OnInit {
     this.drawChart();
   }
 
-  setData(data: IChartData[]): void {
+  refresh(): void {
+    this.drawChart();
+  }
+
+  protected setData(data: IChartData[]): void {
     this._data = data;
     if (this._initialized) {
       this.drawChart();
     }
   }
-
-  setDataSrc(dataSrc: string): void {
+  protected setDataSrc(dataSrc: string): void {
     this._dataSrc = dataSrc;
     if (this._initialized) {
       this.drawChart();
     }
-  }
-
-  setX(x: any): void {
-    this._x = x;
-  }
-  getX(): any {
-    return this._x;
-  }
-
-  setY(y: any): void {
-    this._y = y;
-  }
-  getY(): any {
-    return this._y;
-  }
-
-  refresh(): void {
-    this.drawChart();
   }
 
   protected drawChart(): void {

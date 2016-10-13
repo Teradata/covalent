@@ -24,7 +24,7 @@ export class TdYLeftAxisComponent {
 
   draw(svg: any): void {
     let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
-    let y: any = this.link.getY();
+    let y: any = this.link.y;
 
     svg.append('g')
       .attr('class', this._parent.grid ? 'grid' : '')
@@ -67,7 +67,7 @@ export class TdYRightAxisComponent {
 
   draw(svg: any): void {
     let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
-    let y: any = this.link.getY();
+    let y: any = this.link.y;
 
     svg.append('g')
       .attr('class', this._parent.grid ? 'grid' : '')
@@ -113,7 +113,7 @@ export class TdXAxisComponent {
 
   draw(svg: any): void {
     let tickHeightSize: number = this.ticks ? -this._parent.height : 0;
-    let x: any = this.link.getX();
+    let x: any = this.link.x;
 
     svg.append('g')
       .attr('class', this._parent.grid ? 'grid' : '')
@@ -135,7 +135,6 @@ export class TdXAxisComponent {
   }
 
 }
-
 
 @Component({
   selector: 'td-charts',
@@ -222,18 +221,18 @@ export class TdChartsComponent implements OnInit {
     return this._padding;
   }
 
+  container: HTMLElement;
+
   @ContentChild(TdXAxisComponent) xAxis: TdXAxisComponent;
   @ContentChild(TdYLeftAxisComponent) leftYAxis: TdYLeftAxisComponent;
   @ContentChild(TdYRightAxisComponent) rightYAxis: TdYRightAxisComponent;
+
   @Input() title: string = '';
   @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
   @Input() grid: boolean = false;
   @Input() shadowDepth: any[];
   @Input() chartHeight: number = 450;
-
-  colorPalette: string[];
-  container: HTMLElement;
 
   constructor(elementRef: ElementRef) {
     this.container = elementRef.nativeElement;
@@ -351,9 +350,8 @@ export class TdChartsComponent implements OnInit {
    */
   generatePalette(firstColor: string, secondColor: string): any {
     if (this._paletteMap.get(firstColor) && this._paletteMap.get(secondColor)) {
-      this.colorPalette = this._paletteMap.get(firstColor).slice(0, 6)
+      return this._paletteMap.get(firstColor).slice(0, 6)
       .concat(this._paletteMap.get(secondColor).slice(6, 14));
-      return this.colorPalette;
     }
     return undefined;
   }

@@ -1,13 +1,9 @@
-import {Component, Input, Inject, forwardRef} from '@angular/core';
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
 /* tslint:disable-next-line */
 let d3: any = require('d3');
-
-export interface IChartData {
-  [key: string]: any;
-}
 
 @Component({
   selector: 'td-chart-bar',
@@ -16,7 +12,6 @@ export interface IChartData {
 })
 export class TdChartBarComponent extends ChartComponent {
 
-  private _columns: string;
   private _colorPalette: string[] = [];
 
   private _mdBarColorPalette: any[] = ['#F8BBD0', '#f48fb1', '#ec407a', '#e91e63', '#d81b60',
@@ -31,17 +26,14 @@ export class TdChartBarComponent extends ChartComponent {
     super.setData(data);
   }
   @Input() bottomAxis: string = '';
-  @Input() colors: string[];
   @Input() transition: boolean = true;
-  @Input() transitionDuration: number;
-  @Input() transitionDelay: number;
-  @Input('columns')
-  set columns(columns: string) {
-    this._columns = columns;
-  }
+  @Input() transitionDuration: number = 0;
+  @Input() transitionDelay: number = 0;
+  @Input() columns: string;
+  @Input() colors: string[];
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) _parent: TdChartsComponent) {
-    super(_parent);
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+    super(parent);
   }
 
   renderChart(data: any): void {
@@ -50,19 +42,19 @@ export class TdChartBarComponent extends ChartComponent {
 
     let x: any = d3.scaleBand().range([0, this._parent.width]);
     let y: any = d3.scaleLinear().range([this._parent.height, 0]);
-    super.setX(x);
-    super.setY(y);
+    this._x = x;
+    this._y = y;
 
     let defsId: string = this._parent.drawContainer();
 
     let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     data.forEach((d: any) => {
-      d[this._columns] = +d[this._columns];
+      d[this.columns] = +d[this.columns];
     });
 
     x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
-    y.domain([0, d3.max(data, (d: any) => { return d[this._columns]; })]);
+    y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
 
     svg.append('g')
       .classed('chart-bars', true)
@@ -72,8 +64,8 @@ export class TdChartBarComponent extends ChartComponent {
       .attr('class', 'bar')
       .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
       .attr('width', x.bandwidth())
-      .attr('y', (d: any) => { return y(d[this._columns]); })
-      .attr('height', (d: number) => { return this._parent.height - y(d[this._columns]); })
+      .attr('y', (d: any) => { return y(d[this.columns]); })
+      .attr('height', (d: number) => { return this._parent.height - y(d[this.columns]); })
       .attr('fill', (d: any, i: number) => {
         if (this.transition === false) {
           return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
