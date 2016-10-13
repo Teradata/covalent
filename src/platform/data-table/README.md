@@ -8,17 +8,17 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` | Enables Autocompletion with the provided list of search strings.
-| `columns` | `ITdDataTableColumn[]` | Disables the chip input and removal.
-| `title?` | `string` | Validates input against the provided search list before adding it to the model. If it doesnt exist, it cancels the event.
-| `pagination?` | `boolean` | Placeholder for the autocomplete input.
-| `pageSize?` | `number` | Method to be executed when string is added as chip through the autocomplete. Sends chip value as event.
-| `sorting?` | `boolean` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
-| `sortBy?` | `string` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
-| `sortOrder?` | `'ASC' | 'DESC'` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
-| `search?` | `boolean` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
-| `rowSelection?` | `boolean` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
-| `multiple?` | `boolean` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
+| `data` | `any[]` | Rows of data to be displayed
+| `columns` | `ITdDataTableColumn[]` | List of columns to be displayed
+| `title?` | `string` | If present will display a title before the table
+| `pagination?` | `boolean` | Enables pagination
+| `pageSize?` | `number` | Number of rows per page, when omitted defaults to 10
+| `sorting?` | `boolean` | Enables sorting by column
+| `sortBy?` | `string` | Name of the column to use for sorting
+| `sortOrder?` | `'ASC' | 'DESC'` | Sorting order - ascending or descending
+| `search?` | `boolean` | Enables search
+| `rowSelection?` | `boolean` | Adds a checkbox column to allow user to select rows
+| `multiple?` | `boolean` | Toggles between multiple or single row selection
 
 ## Setup
 
