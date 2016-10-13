@@ -19,8 +19,7 @@
 
 <div class="md-table-container" *ngIf="_visibleData.length > 0" title>
   <table td-table
-         [class.md-row-select]="_rowSelection"
-         [attr.md-ripple]="_rowSelection === true">
+         [class.md-row-select]="_rowSelection">
     <thead td-head>
       <tr td-row>
         <th td-column class="md-checkbox-column" *ngIf="_rowSelection">

@@ -18,7 +18,7 @@ export interface ITdDataTableColumn {
   format?: { (value: any): any };
 };
 
-export interface ITdDataTableSortChanged {
+export interface ITdDataTableSortEvent {
   column: ITdDataTableColumn;
   order: TdDataTableSortingOrder;
 };
@@ -60,7 +60,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
 
   /** events */
-  @Output() sortChanged: EventEmitter<ITdDataTableSortChanged> = new EventEmitter<ITdDataTableSortChanged>();
+  @Output() sortChanged: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
   /** td-data-table element attributes */
   @Input('title') _title: string;
