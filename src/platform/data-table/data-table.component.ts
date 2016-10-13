@@ -42,7 +42,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   private _initialized: boolean = false;
 
   /** pagination */
-  private _pageSize: number = 0;
+  private _pageSize: number = 10;
   private _currentPage: number = 0;
   private _totalPages: number = 0;
   private _pagination: boolean = false;
