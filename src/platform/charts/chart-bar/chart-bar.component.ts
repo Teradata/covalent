@@ -99,12 +99,6 @@ export class TdChartBarComponent extends ChartComponent {
   private _sortAndTransition(chartSvg: any, data: any, x: any, y: any): void {
 
     let fillBarColors: any = this._colorPalette.length === 0 ? this._mdBarColorPalette : this._colorPalette;
-    let x0: any = x.domain(data.sort((a: any, b: any) => { return b[this._columns] - a[this._columns]; })
-    .map((d: number) => { return d[this.bottomAxis]; }))
-    .copy();
-
-    chartSvg.selectAll('.bar')
-        .sort((a: any, b: any) => { return x0(a[this.bottomAxis]) - x0(b[this.bottomAxis]); });
 
     let transition: any = chartSvg.transition().duration(this.transitionDuration);
     let delay: any = (d: number, i: number) => { return i * this.transitionDelay; };
