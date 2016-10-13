@@ -11,6 +11,53 @@ const DECIMAL_FORMAT = (v: {value: number}) => v.value.toFixed(2);
   templateUrl: 'data-table.component.html',
 })
 export class DataTableDemoComponent {
+
+  private dataTableAttrs: Object[] = [{
+    description: `Rows of data to be displayed`,
+    name: 'data',
+    type: 'any[]',
+  }, {
+    description: `List of columns to be displayed`,
+    name: 'columns?',
+    type: 'TdDataTableColumn',
+  }, {
+    description: `If present will display a title before the table`,
+    name: 'title?',
+    type: 'string',
+  }, {
+    description: `Enables pagination`,
+    name: 'pagination?',
+    type: 'boolean',
+  }, {
+    description: `Number of rows per page, when omitted defaults to 10`,
+    name: 'pageSize?',
+    type: 'numeric',
+  }, {
+    description: `Enables sorting by column`,
+    name: 'sorting?',
+    type: 'boolean',
+  }, {
+    description: `Name of the column to use for sorting`,
+    name: 'sortBy?',
+    type: 'string',
+  }, {
+    description: `Sorting order - ascending or descending`,
+    name: 'sortOrder?',
+    type: `'ASC' | 'DESC'`,
+  }, {
+    description: `Enables search`,
+    name: 'search?',
+    type: `boolean`,
+  }, {
+    description: `Adds a checkbox column to allow user to select rows`,
+    name: 'rowSelection?',
+    type: 'boolean',
+  }, {
+    description: `Toggles between multiple or single row selection`,
+    name: 'multiple?',
+    type: 'boolean',
+  }];
+
   private columns: any[] = [
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },
