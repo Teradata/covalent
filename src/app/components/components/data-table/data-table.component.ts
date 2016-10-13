@@ -1,9 +1,9 @@
-import { Component, ViewChildren, QueryList } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../../../../platform/data-table';
 
-const NUMBER_FORMAT = (v: {value: number}) => v.value; 
-const DECIMAL_FORMAT = (v: {value: number}) => v.value.toFixed(2); 
+const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
+const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
 
 @Component({
   selector: 'data-table-demo',
@@ -12,14 +12,14 @@ const DECIMAL_FORMAT = (v: {value: number}) => v.value.toFixed(2);
 })
 export class DataTableDemoComponent {
 
-  private dataTableAttrs: Object[] = [{
+  dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,
     name: 'data',
     type: 'any[]',
   }, {
     description: `List of columns to be displayed`,
     name: 'columns?',
-    type: 'TdDataTableColumn',
+    type: 'ITdDataTableColumn',
   }, {
     description: `If present will display a title before the table`,
     name: 'title?',
@@ -31,7 +31,7 @@ export class DataTableDemoComponent {
   }, {
     description: `Number of rows per page, when omitted defaults to 10`,
     name: 'pageSize?',
-    type: 'numeric',
+    type: 'number',
   }, {
     description: `Enables sorting by column`,
     name: 'sorting?',
@@ -58,7 +58,7 @@ export class DataTableDemoComponent {
     type: 'boolean',
   }];
 
-  private columns: any[] = [
+  columns: any[] = [
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
@@ -70,109 +70,109 @@ export class DataTableDemoComponent {
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
   ];
 
-  private sorting = true;
-  private pagination = true;
-  private pageSize = 5;
+  sorting: boolean = true;
+  pagination: boolean = true;
+  pageSize: number = 5;
 
-  private data: any[] = [
+  data: any[] = [
       {
-        "name": "Frozen yogurt",
-        "type": "Ice cream",
-        "calories": { "value": 159.0 },
-        "fat": { "value": 6.0 },
-        "carbs": { "value": 24.0 },
-        "protein": { "value": 4.0 },
-        "sodium": { "value": 87.0 },
-        "calcium": { "value": 14.0 },
-        "iron": { "value": 1.0 }
+        'name': 'Frozen yogurt',
+        'type': 'Ice cream',
+        'calories': { 'value': 159.0 },
+        'fat': { 'value': 6.0 },
+        'carbs': { 'value': 24.0 },
+        'protein': { 'value': 4.0 },
+        'sodium': { 'value': 87.0 },
+        'calcium': { 'value': 14.0 },
+        'iron': { 'value': 1.0 },
       }, {
-        "name": "Ice cream sandwich",
-        "type": "Ice cream",
-        "calories": { "value": 237.0 },
-        "fat": { "value": 9.0 },
-        "carbs": { "value": 37.0 },
-        "protein": { "value": 4.3 },
-        "sodium": { "value": 129.0 },
-        "calcium": { "value": 8.0 },
-        "iron": { "value": 1.0 }
+        'name': 'Ice cream sandwich',
+        'type': 'Ice cream',
+        'calories': { 'value': 237.0 },
+        'fat': { 'value': 9.0 },
+        'carbs': { 'value': 37.0 },
+        'protein': { 'value': 4.3 },
+        'sodium': { 'value': 129.0 },
+        'calcium': { 'value': 8.0 },
+        'iron': { 'value': 1.0 },
       }, {
-        "name": "Eclair",
-        "type": "Pastry",
-        "calories": { "value":  262.0 },
-        "fat": { "value": 16.0 },
-        "carbs": { "value": 24.0 },
-        "protein": { "value":  6.0 },
-        "sodium": { "value": 337.0 },
-        "calcium": { "value":  6.0 },
-        "iron": { "value": 7.0 }
+        'name': 'Eclair',
+        'type': 'Pastry',
+        'calories': { 'value':  262.0 },
+        'fat': { 'value': 16.0 },
+        'carbs': { 'value': 24.0 },
+        'protein': { 'value':  6.0 },
+        'sodium': { 'value': 337.0 },
+        'calcium': { 'value':  6.0 },
+        'iron': { 'value': 7.0 },
       }, {
-        "name": "Cupcake",
-        "type": "Pastry",
-        "calories": { "value":  305.0 },
-        "fat": { "value": 3.7 },
-        "carbs": { "value": 67.0 },
-        "protein": { "value": 4.3 },
-        "sodium": { "value": 413.0 },
-        "calcium": { "value": 3.0 },
-        "iron": { "value": 8.0 }
+        'name': 'Cupcake',
+        'type': 'Pastry',
+        'calories': { 'value':  305.0 },
+        'fat': { 'value': 3.7 },
+        'carbs': { 'value': 67.0 },
+        'protein': { 'value': 4.3 },
+        'sodium': { 'value': 413.0 },
+        'calcium': { 'value': 3.0 },
+        'iron': { 'value': 8.0 },
       }, {
-        "name": "Jelly bean",
-        "type": "Candy",
-        "calories": { "value":  375.0 },
-        "fat": { "value": 0.0 },
-        "carbs": { "value": 94.0 },
-        "protein": { "value": 0.0 },
-        "sodium": { "value": 50.0 },
-        "calcium": { "value": 0.0 },
-        "iron": { "value": 0.0 }
+        'name': 'Jelly bean',
+        'type': 'Candy',
+        'calories': { 'value':  375.0 },
+        'fat': { 'value': 0.0 },
+        'carbs': { 'value': 94.0 },
+        'protein': { 'value': 0.0 },
+        'sodium': { 'value': 50.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 0.0 },
       }, {
-        "name": "Lollipop",
-        "type": "Candy",
-        "calories": { "value": 392.0 },
-        "fat": { "value": 0.2 },
-        "carbs": { "value": 98.0 },
-        "protein": { "value": 0.0 },
-        "sodium": { "value": 38.0 },
-        "calcium": { "value": 0.0 },
-        "iron": { "value": 2.0 }
+        'name': 'Lollipop',
+        'type': 'Candy',
+        'calories': { 'value': 392.0 },
+        'fat': { 'value': 0.2 },
+        'carbs': { 'value': 98.0 },
+        'protein': { 'value': 0.0 },
+        'sodium': { 'value': 38.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 2.0 },
       }, {
-        "name": "Honeycomb",
-        "type": "Other",
-        "calories": { "value": 408.0 },
-        "fat": { "value": 3.2 },
-        "carbs": { "value": 87.0 },
-        "protein": { "value": 6.5 },
-        "sodium": { "value": 562.0 },
-        "calcium": { "value": 0.0 },
-        "iron": { "value": 45.0 }
+        'name': 'Honeycomb',
+        'type': 'Other',
+        'calories': { 'value': 408.0 },
+        'fat': { 'value': 3.2 },
+        'carbs': { 'value': 87.0 },
+        'protein': { 'value': 6.5 },
+        'sodium': { 'value': 562.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 45.0 },
       }, {
-        "name": "Donut",
-        "type": "Pastry",
-        "calories": { "value": 452.0 },
-        "fat": { "value": 25.0 },
-        "carbs": { "value": 51.0 },
-        "protein": { "value": 4.9 },
-        "sodium": { "value": 326.0 },
-        "calcium": { "value": 2.0 },
-        "iron": { "value": 22.0 }
+        'name': 'Donut',
+        'type': 'Pastry',
+        'calories': { 'value': 452.0 },
+        'fat': { 'value': 25.0 },
+        'carbs': { 'value': 51.0 },
+        'protein': { 'value': 4.9 },
+        'sodium': { 'value': 326.0 },
+        'calcium': { 'value': 2.0 },
+        'iron': { 'value': 22.0 },
       }, {
-        "name": "KitKat",
-        "type": "Candy",
-        "calories": { "value": 518.0 },
-        "fat": { "value": 26.0 },
-        "carbs": { "value": 65.0 },
-        "protein": { "value": 7.0 },
-        "sodium": { "value": 54.0 },
-        "calcium": { "value": 12.0 },
-        "iron": { "value": 6.0 }
-      }
+        'name': 'KitKat',
+        'type': 'Candy',
+        'calories': { 'value': 518.0 },
+        'fat': { 'value': 26.0 },
+        'carbs': { 'value': 65.0 },
+        'protein': { 'value': 7.0 },
+        'sodium': { 'value': 54.0 },
+        'calcium': { 'value': 12.0 },
+        'iron': { 'value': 6.0 },
+      },
     ];
 
-  private sortBy: string = 'name';
-  private sortOrder: string = 'ASC';
+  sortBy: string = 'name';
+  sortOrder: string = 'ASC';
 
-  private rowSelection: boolean = false;
-  private multiple: boolean = true;
+  rowSelection: boolean = false;
+  multiple: boolean = true;
 
   toggleRowSelection(): void {
     this.rowSelection = !this.rowSelection;
@@ -187,8 +187,8 @@ export class DataTableDemoComponent {
   }
 
   toggleSortBy(): void {
-    const columns = this.columns.map((c: any) => c.name);
-    const idx = columns.indexOf(this.sortBy);
+    const columns: any[] = this.columns.map((c: any) => c.name);
+    const idx: number = columns.indexOf(this.sortBy);
     if (idx < columns.length - 1) {
       this.sortBy = columns[idx + 1];
     } else {
@@ -223,10 +223,10 @@ export class DataTableDemoComponent {
     }
   }
 
-  sortChanged(changes): void {
-    const { column, order } = changes; 
+  sortChanged(changes: any): void {
+    const { column, order }: any = changes;
 
     this.sortBy = column.name;
-    this.sortOrder = order == TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
+    this.sortOrder = order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
   }
 }

@@ -10,17 +10,17 @@ export enum TdDataTableSortingOrder {
   Ascending, Descending
 };
 
-export interface TdDataTableColumn { 
-  name: string, 
-  label: string,
+export interface ITdDataTableColumn {
+  name: string;
+  label: string;
   tooltip?: string;
-  numeric?: boolean,
+  numeric?: boolean;
   format?: { (value: any): any };
 };
 
-export interface TdDataTableSortChanged {
-  column: TdDataTableColumn,
-  order: TdDataTableSortingOrder
+export interface ITdDataTableSortChanged {
+  column: ITdDataTableColumn;
+  order: TdDataTableSortingOrder;
 };
 
 @Component({
@@ -33,7 +33,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   /** internal attributes */
   private _data: any[];
   private _visibleData: any[];
-  private _columns: TdDataTableColumn[];
+  private _columns: ITdDataTableColumn[];
   private _rowSelection: boolean;
   private _rowSelectionField: string = 'selected';
   private _multiple: boolean = true;
@@ -49,7 +49,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
 
   /** sorting */
   private _sorting: boolean = false;
-  private _sortBy: TdDataTableColumn;
+  private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
   /** search by term */
@@ -60,7 +60,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
 
   /** events */
-  @Output() sortChanged: EventEmitter<TdDataTableSortChanged> = new EventEmitter<TdDataTableSortChanged>();
+  @Output() sortChanged: EventEmitter<ITdDataTableSortChanged> = new EventEmitter<ITdDataTableSortChanged>();
 
   /** td-data-table element attributes */
   @Input('title') _title: string;
@@ -111,10 +111,10 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   }
 
   @Input('columns')
-  set columns(cols: TdDataTableColumn[]) {
+  set columns(cols: ITdDataTableColumn[]) {
     this._columns = cols;
   }
-  get columns(): TdDataTableColumn[] {
+  get columns(): ITdDataTableColumn[] {
     if (this._columns) {
       return this._columns;
     }
@@ -140,12 +140,12 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
     this._sorting = sorting !== '' ? (sorting === 'true' || sorting === true) : true;
   }
 
-  @Input('sortBy') 
+  @Input('sortBy')
   set sortBy(columnName: string) {
     if (!columnName) {
       return;
     }
-    const column = this.columns.find((c: any) => c.name === columnName);
+    const column: ITdDataTableColumn = this.columns.find((c: any) => c.name === columnName);
     if (!column) {
       throw '[sortBy] must be a valid column name';
     }
@@ -230,7 +230,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
     this._searchTermControl.setValue('');
   }
 
-  setSorting(column: TdDataTableColumn): void {
+  setSorting(column: ITdDataTableColumn): void {
     if (this._sortBy === column) {
       this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
         TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
