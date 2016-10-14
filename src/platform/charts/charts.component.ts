@@ -27,14 +27,13 @@ export class TdYLeftAxisComponent {
   }
 
   draw(svg: any): void {
-    let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
     let y: any = this.link.y;
 
     svg.append('g')
       .attr('display', this.show && this.grid ? 'display' : 'none')
       .attr('class', 'grid')
       .call(d3.axisLeft(y)
-              .tickSize(tickWidthSize)
+              .tickSize(-this._parent.width)
               .tickFormat(''));
 
     svg.append('text')
@@ -75,7 +74,6 @@ export class TdYRightAxisComponent {
   }
 
   draw(svg: any): void {
-    let tickWidthSize: number = this.ticks ? -this._parent.width : 0;
     let y: any = this.link.y;
 
     svg.append('g')
@@ -83,7 +81,7 @@ export class TdYRightAxisComponent {
       .attr('transform', 'translate(' + this._parent.width + ', 0)')
       .attr('class', 'grid')
       .call(d3.axisRight(y)
-              .tickSize(tickWidthSize)
+              .tickSize(-this._parent.width)
               .tickFormat(''));
 
     svg.append('text')
@@ -126,7 +124,6 @@ export class TdXAxisComponent {
   }
 
   draw(svg: any): void {
-    let tickHeightSize: number = this.ticks ? -this._parent.height : 0;
     let x: any = this.link.x;
 
     svg.append('g')
@@ -134,7 +131,7 @@ export class TdXAxisComponent {
       .attr('class', 'grid')
       .attr('transform', 'translate(0,' + this._parent.height + ')')
       .call(d3.axisBottom(x)
-            .tickSize(tickHeightSize)
+            .tickSize(-this._parent.height)
             .tickFormat('')
       );
     svg.append('text')
