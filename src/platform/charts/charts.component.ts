@@ -9,13 +9,9 @@ let d3: any = require('d3');
 })
 export class TdYLeftAxisComponent {
 
-  private _display: string = 'block';
-
   @Input() link: ChartComponent;
-  @Input()
-  set show(show: boolean) {
-    this._display = show === true ? 'block' : 'none';
-  }
+  @Input() show: boolean = true;
+  @Input() grid: boolean = false;
   @Input() ticks: boolean = false;
   @Input() legend: string;
 
@@ -27,22 +23,31 @@ export class TdYLeftAxisComponent {
     let y: any = this.link.y;
 
     svg.append('g')
-      .attr('class', this._parent.grid ? 'grid' : '')
+      .attr('display', this.show && this.grid ? 'display' : 'none')
+      .attr('class', 'grid')
       .call(d3.axisLeft(y)
               .tickSize(tickWidthSize)
               .tickFormat(''));
 
     svg.append('text')
+      .attr('display', this.show ? 'display' : 'none')
       .attr('y', -15)
       .classed('axisTitle', true)
       .attr('dy', '0.71em')
       .attr('fill', '#000')
       .text(this.legend);
 
-    svg.append('g')
+    let ticks: any = svg.append('g')
       .attr('class', 'ticks ticks-y')
-      .call(d3.axisLeft(y))
-      .attr('display', this._display);
+      .attr('display', this.show ? 'display' : 'none')
+      .call(d3.axisLeft(y));
+
+    ticks
+      .selectAll('.tick line')
+      .attr('display',  this.show && this.ticks ? 'display' : 'none');
+    ticks
+      .selectAll('.tick text')
+      .attr('display', this.show && this.ticks ? 'display' : 'none');
   }
 }
 
@@ -52,13 +57,9 @@ export class TdYLeftAxisComponent {
 })
 export class TdYRightAxisComponent {
 
-  private _display: string = 'block';
-
   @Input() link: ChartComponent;
-  @Input()
-  set show(show: boolean) {
-    this._display = show === true ? 'block' : 'none';
-  }
+  @Input() show: boolean = true;
+  @Input() grid: boolean = false;
   @Input() ticks: boolean = false;
   @Input() legend: string;
 
@@ -70,13 +71,15 @@ export class TdYRightAxisComponent {
     let y: any = this.link.y;
 
     svg.append('g')
-      .attr('class', this._parent.grid ? 'grid' : '')
+      .attr('display', this.show && this.grid ? 'display' : 'none')
       .attr('transform', 'translate(' + this._parent.width + ', 0)')
+      .attr('class', 'grid')
       .call(d3.axisRight(y)
               .tickSize(tickWidthSize)
               .tickFormat(''));
 
     svg.append('text')
+      .attr('display', this.show ? 'display' : 'none')
       .attr('y', -15)
       .attr('transform', 'translate(' + this._parent.width + ', 0)')
       .classed('axisTitle', true)
@@ -84,11 +87,18 @@ export class TdYRightAxisComponent {
       .attr('fill', '#000')
       .text(this.legend);
 
-    svg.append('g')
+    let ticks: any = svg.append('g')
       .attr('class', 'ticks ticks-y')
       .attr('transform', 'translate(' + this._parent.width + ', 0)')
-      .call(d3.axisRight(y))
-      .attr('display', this._display);
+      .attr('display', this.show ? 'display' : 'none')
+      .call(d3.axisRight(y));
+
+    ticks
+      .selectAll('.tick line')
+      .attr('display',  this.show && this.ticks ? 'display' : 'none');
+    ticks
+      .selectAll('.tick text')
+      .attr('display', this.show && this.ticks ? 'display' : 'none');
   }
 }
 
@@ -98,13 +108,9 @@ export class TdYRightAxisComponent {
 })
 export class TdXAxisComponent {
 
-  private _display: string = 'block';
-
   @Input() link: ChartComponent;
-  @Input()
-  set show(show: boolean) {
-    this._display = show === true ? 'block' : 'none';
-  }
+  @Input() show: boolean = true;
+  @Input() grid: boolean = false;
   @Input() ticks: boolean = false;
   @Input() legend: string;
 
@@ -116,22 +122,31 @@ export class TdXAxisComponent {
     let x: any = this.link.x;
 
     svg.append('g')
-      .attr('class', this._parent.grid ? 'grid' : '')
+      .attr('display', this.show && this.grid ? 'display' : 'none')
+      .attr('class', 'grid')
       .attr('transform', 'translate(0,' + this._parent.height + ')')
       .call(d3.axisBottom(x)
             .tickSize(tickHeightSize)
             .tickFormat('')
       );
     svg.append('text')
+      .attr('display', this.show ? 'display' : 'none')
       .classed('axisTitle', true)
       .attr('transform', 'translate(' + (this._parent.width / 2 - 20) + ',' + (this._parent.height + 40) + ')')
       .text(this.legend);
 
-    svg.append('g')
+    let ticks: any = svg.append('g')
       .attr('class', 'ticks ticks-x')
       .attr('transform', 'translate(0,' + this._parent.height + ')')
-      .call(d3.axisBottom(x))
-      .attr('display', this._display);
+      .attr('display', this.show ? 'display' : 'none')
+      .call(d3.axisBottom(x));
+
+    ticks
+      .selectAll('.tick line')
+      .attr('display',  this.show && this.ticks ? 'display' : 'none');
+    ticks
+      .selectAll('.tick text')
+      .attr('display', this.show && this.ticks ? 'display' : 'none');
   }
 
 }
@@ -230,7 +245,6 @@ export class TdChartsComponent implements OnInit {
   @Input() title: string = '';
   @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
-  @Input() grid: boolean = false;
   @Input() shadowDepth: any[];
   @Input() chartHeight: number = 450;
 

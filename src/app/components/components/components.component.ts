@@ -73,7 +73,7 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }, {
-    description: 'Core directives &amp; utilities',
+    description: 'Core directives & utilities',
     icon: 'wb_iridescent',
     route: 'directives',
     title: 'Directives',
