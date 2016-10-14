@@ -48,6 +48,7 @@
       <td-axis-y-left [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true" legend="Sales"></td-axis-y-left>
       <td-chart-bar #chartBar1 [colors]="['pink', 'deepPurple']"
                     [data]="jsonData"
+                    [padding]="0.1"
                     bottomAxis="x"
                     columns="y"
                     [transition]="true"

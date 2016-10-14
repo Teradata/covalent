@@ -31,6 +31,7 @@ export class TdChartBarComponent extends ChartComponent {
   @Input() transitionDelay: number = 0;
   @Input() columns: string;
   @Input() colors: string[];
+  @Input() padding: number = 0;
 
   constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
     super(parent);
@@ -40,7 +41,7 @@ export class TdChartBarComponent extends ChartComponent {
     let palette: string[] = this._parent.generatePalette(this.colors[0], this.colors[1]);
     this._colorPalette = palette ? palette : this._mdBarColorPalette;
 
-    let x: any = d3.scaleBand().range([0, this._parent.width]);
+    let x: any = d3.scaleBand().range([0, this._parent.width]).padding(this.padding);
     let y: any = d3.scaleLinear().range([this._parent.height, 0]);
     this._x = x;
     this._y = y;
