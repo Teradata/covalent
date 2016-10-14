@@ -65,7 +65,8 @@
     "lodash": "^4.16.3",
     "rxjs": "5.0.0-beta.12",
     "showdown": "1.4.2",
-    "zone.js": "0.6.21"
+    "zone.js": "0.6.21",
+    "d3": "^4.2.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",

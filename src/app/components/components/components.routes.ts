@@ -15,6 +15,7 @@ import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 
 const routes: Routes = [{
@@ -60,6 +61,9 @@ const routes: Routes = [{
     }, {
       component: PipesComponent,
       path: 'pipes',
+    }, {
+      component: ChartsDemoComponent,
+      path: 'charts',
     }, {
       component: DataTableDemoComponent,
       path: 'data-table',

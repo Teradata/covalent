@@ -16,6 +16,7 @@ import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentJsonFormatterModule } from '../platform/json-formatter';
 import { CovalentChipsModule } from '../platform/chips';
+import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDataTableModule } from '../platform/data-table';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { CovalentDataTableModule } from '../platform/data-table';
     CovalentMarkdownModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
+    CovalentChartsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module

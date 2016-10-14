@@ -43,7 +43,7 @@ export class ComponentsComponent {
     route: 'dialogs',
     title: 'Simple Dialogs',
   }, {
-    description: 'Data Table',
+    description: 'Display sets of raw data',
     icon: 'grid_on',
     route: 'data-table',
     title: 'Data Table',
@@ -63,6 +63,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown',
   }, {
+    description: 'Responsive Charts',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'Charts',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
@@ -73,7 +78,7 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }, {
-    description: 'Core directives &amp; utilities',
+    description: 'Core directives & utilities',
     icon: 'wb_iridescent',
     route: 'directives',
     title: 'Directives',
