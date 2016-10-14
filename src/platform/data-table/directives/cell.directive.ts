@@ -11,4 +11,3 @@ export class TdDataTableCellDirective {
     this._renderer.setElementClass(this._elementRef.nativeElement, this._class, true);
   }
 }
-

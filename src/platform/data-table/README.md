@@ -48,6 +48,6 @@ Example for HTML usage:
   sortOrder="DESC"
   pagination="true"
   pageSize="5"
-  search="true"
-></td-data-table>
+  search="true">
+</td-data-table>
  ```
