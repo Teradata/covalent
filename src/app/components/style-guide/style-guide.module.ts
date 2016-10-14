@@ -8,7 +8,6 @@ import { ProductIconsComponent } from './product-icons/product-icons.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { ColorsComponent } from './colors/colors.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { CardsComponent } from './cards/cards.component';
 import { DialogsToastsComponent } from './dialogs/dialogs.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
@@ -25,7 +24,6 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     TypographyComponent,
     IconographyComponent,
     ColorsComponent,
-    MaterialComponentsComponent,
     CardsComponent,
     DialogsToastsComponent,
     UtilityStylesComponent,

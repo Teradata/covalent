@@ -26,7 +26,7 @@ export class DocsAppComponent {
     }, {
       icon: 'picture_in_picture',
       route: 'components',
-      title: 'Teradata Components',
+      title: 'Components & Addons',
     },
   ];
 }
