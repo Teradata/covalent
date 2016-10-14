@@ -73,6 +73,11 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }, {
+    description: 'Core directives &amp; utilities',
+    icon: 'wb_iridescent',
+    route: 'directives',
+    title: 'Directives',
+  }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',
     route: 'pipes',

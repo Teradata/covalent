@@ -67,6 +67,11 @@ export class ComponentsOverviewComponent {
       route: 'http',
       title: 'Http',
     }, {
+      color: 'light-blue-700',
+      icon: 'wb_iridescent',
+      route: 'directives',
+      title: 'Directives',
+    }, {
       color: 'deep-orange-700',
       icon: 'filter_list',
       route: 'pipes',

@@ -10,6 +10,7 @@ import { IconographyComponent } from './iconography/iconography.component';
 import { ColorsComponent } from './colors/colors.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { CardsComponent } from './cards/cards.component';
+import { DialogsToastsComponent } from './dialogs/dialogs.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
 
@@ -26,6 +27,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     ColorsComponent,
     MaterialComponentsComponent,
     CardsComponent,
+    DialogsToastsComponent,
     UtilityStylesComponent,
     ResourcesComponent,
   ],

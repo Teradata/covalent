@@ -13,6 +13,7 @@ import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
+import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 
@@ -53,6 +54,9 @@ const routes: Routes = [{
     }, {
       component: DialogsDemoComponent,
       path: 'dialogs',
+    }, {
+      component: DirectivesComponent,
+      path: 'directives',
     }, {
       component: PipesComponent,
       path: 'pipes',

@@ -38,11 +38,6 @@ export class StyleGuideComponent {
     route: 'material-components',
     title: 'Material Components',
   }, {
-    description: 'Material Design card patterns',
-    icon: 'view_agenda',
-    route: 'cards',
-    title: 'Cards',
-  }, {
     description: 'Utility CSS classes',
     icon: 'build',
     route: 'utility-styles',
@@ -53,5 +48,15 @@ export class StyleGuideComponent {
     route: 'resources',
     title: 'Resources',
   }];
-
+  patterns: Object[] = [{
+    description: 'Material Design card patterns',
+    icon: 'view_agenda',
+    route: 'cards',
+    title: 'Card Patterns',
+  }, {
+    description: 'Dialog, toast & inline error patterns',
+    icon: 'filter_none',
+    route: 'dialogs',
+    title: 'Dialog Patterns',
+  }];
 }
