@@ -30,7 +30,7 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.7.0",
+    "@covalent/core": "0.8.0",
     "showdown": "1.4.2"
   }
 }
