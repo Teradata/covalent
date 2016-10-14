@@ -1,6 +1,6 @@
 {
   "name": "@covalent/data-table",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Teradata UI Platform Data Table Module",
   "keywords": [
     "angular",
@@ -31,7 +31,7 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.7.0",
+    "@covalent/core": "0.8.0",
     "@types/lodash": "^4.14.36",
     "lodash": "^4.16.2"
   }
