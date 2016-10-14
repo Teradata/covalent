@@ -20,11 +20,11 @@ export class ChartsDemoComponent {
     name: 'leftAxisTitle?',
     type: 'string',
   }, {
-    description: 'Set the parameters for shadowDepth',
+    description: 'Set the parameters for shadowDepth (size, y offset, x offset, blur)',
     name: 'shadowDepth?',
     type: 'array[]',
   }, {
-    description: 'Sets shadow color for the bars.',
+    description: 'Sets shadow color for the bars (rgba preferred)',
     name: 'shadowColor?',
     type: 'string',
   }, {
@@ -32,13 +32,9 @@ export class ChartsDemoComponent {
     name: 'fillOpacity?',
     type: 'number',
   }, {
-    description: 'Sets value as true/false for redering ticks',
-    name: 'ticks?',
-    type: 'boolean',
-  }, {
-    description: 'Sets value as true/false for redering grid',
-    name: 'grid?',
-    type: 'boolean',
+    description: 'Sets SVG margin (top, right, bottom, left)',
+    name: 'margin?',
+    type: 'array[]',
   }];
 
   barChartAttrs: Object[] = [{
@@ -55,10 +51,10 @@ export class ChartsDemoComponent {
     type: 'string',
   }, {
     description: 'Sets the name for left axis; should match with the bar column name defined in data source',
-    name: 'barColumns?',
+    name: 'columns?',
     type: 'string',
   }, {
-    description: 'Gets value based on colorPalette from td-charts',
+    description: 'Select two material design color palettes (red, pink, blue, etc) and will blend between for you',
     name: 'colors?',
     type: 'any[]',
   }, {
@@ -73,12 +69,20 @@ export class ChartsDemoComponent {
     description: 'Sets the delay time before transition starts;',
     name: 'transitionDelay?',
     type: 'number',
+  }, {
+    description: 'Sets spacing between bars',
+    name: 'padding?',
+    type: 'number',
   }];
 
   lineChartAttrs: Object[] = [{
     description: 'Sets data source for the Bar Chart',
     name: 'dataSrc?',
     type: 'string',
+  }, {
+    description: 'Sets flag as true or false for time series data',
+    name: 'timeSeries?',
+    type: 'boolean',
   }, {
     description: 'Sets content type of the data source',
     name: 'contentType?',
@@ -89,14 +93,14 @@ export class ChartsDemoComponent {
     type: 'string',
   }, {
     description: 'Sets the name for single/multi lines; should match with the columns names defined in data source',
-    name: 'lineColumns?',
+    name: 'columns?',
     type: 'array[]',
   }, {
     description: 'Sets the title for single/multi lines;',
-    name: 'lineTitles?',
+    name: 'titles?',
     type: 'array[]',
   }, {
-    description: 'Sets the color for single/multi lines;',
+    description: 'Sets the rgba or hex color for single/multi lines;',
     name: 'colors?',
     type: 'string',
   }, {
@@ -127,24 +131,38 @@ export class ChartsDemoComponent {
     type: 'string',
   }, {
     description: 'Sets the name for single/multi lines; should match with the columns names defined in data source',
-    name: 'areaColumns?',
+    name: 'columns?',
     type: 'array[]',
   }, {
-    description: 'Sets the color for area chart and sroke;',
+    description: 'Sets the rgba or hex color for area chart and stroke',
     name: 'colors?',
     type: 'string',
   }, {
-    description: 'Sets the flag as true or false for transitions;',
+    description: 'Sets the flag as true or false for transitions',
     name: 'transition?',
     type: 'boolean',
   }, {
-    description: 'Sets the duration for transition;',
+    description: 'Sets the duration for transition',
     name: 'transitionDuration?',
     type: 'number',
   }, {
-    description: 'Sets the delay time before transition starts;',
+    description: 'Sets the delay time before transition starts',
     name: 'transitionDelay?',
     type: 'number',
+  }];
+
+  axisAttrs: Object[] = [{
+    description: 'Sets display as true/false for rendering ticks',
+    name: 'ticks?',
+    type: 'boolean',
+  }, {
+    description: 'Sets display as true/false for rendering grid lines',
+    name: 'grid?',
+    type: 'boolean',
+  }, {
+    description: 'Sets display as true/false for rendering entire axis',
+    name: 'show?',
+    type: 'boolean',
   }];
 
   jsonData: any = [

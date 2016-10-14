@@ -4,6 +4,7 @@
   <md-divider></md-divider>
   <md-card-content>
   <md-card-title>Time Series Line Chart</md-card-title>
+  <md-card-subtitle>x-axis grid hidden</md-card-subtitle>
   <td-charts title="Prices Trend"
               [margin]="{top: 60, bottom: 100}"
               [shadowDepth]="['125%', 2, 0, 2]"
@@ -23,11 +24,12 @@
   </td-charts>
   <md-divider></md-divider>
   <md-card-title>Sparkline Chart</md-card-title>
+  <md-card-subtitle>x-axis hidden completely</md-card-subtitle>
   <td-charts title="Prices Trend"
               [shadowDepth]="['125%', 2, 0, 2]"
               shadowColor="rgba(0, 0, 0, 0.54)"
               chartHeight="150">
-    <td-axis-x [link]="chartLine2" [ticks]="false" [show]="true"></td-axis-x>
+    <td-axis-x [link]="chartLine2" [show]="false"></td-axis-x>
     <td-chart-line #chartLine2 dataSrc="platform/charts/chart-line/datatime.csv"
                   timeSeries="true"
                   bottomAxis="date"
@@ -41,12 +43,13 @@
   </td-charts>
   <md-divider></md-divider>
   <md-card-title>Bar Chart</md-card-title>
-    <td-charts title="Sales Bar Chart"
-                [shadowDepth]="['125%', 2, 0, 2]"
-                shadowColor="rgba(0, 0, 0, 0.54)"
-                fillOpacity="0.95">
-      <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="false"  legend="Day Offset"></td-axis-x>
-      <td-axis-y-left [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true" legend="Sales"></td-axis-y-left>
+  <md-card-subtitle>y-axis grid  &amp; ticks hidden</md-card-subtitle>
+  <td-charts title="Sales Bar Chart"
+              [shadowDepth]="['125%', 2, 0, 2]"
+              shadowColor="rgba(0, 0, 0, 0.54)"
+              fillOpacity="0.95">
+      <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true"  legend="Day Offset"></td-axis-x>
+      <td-axis-y-left [link]="chartBar1" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
       <td-chart-bar #chartBar1 [colors]="['pink', 'deepPurple']"
                     [data]="jsonData"
                     [padding]="0.1"
@@ -59,11 +62,12 @@
     </td-charts>
     <md-divider></md-divider>
     <md-card-title>Single/Multi Line Chart</md-card-title>
+    <md-card-subtitle>x-axis ticks &amp; grid hidden, y-axis grid hidden</md-card-subtitle>
     <td-charts title="Temperature Trend"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)">
-      <td-axis-x [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
-      <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true" legend="Temperature"></td-axis-y-left>
+      <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="true" legend="Day Offset"></td-axis-x>
+      <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Temperature"></td-axis-y-left>
       <td-chart-line #chartLine3 dataSrc="platform/charts/chart-line/data.tsv"
                    bottomAxis="col1"
                    [columns]="['col2', 'col3','col4']"
@@ -76,6 +80,7 @@
     </td-charts>
     <md-divider></md-divider>
     <md-card-title>Area Chart</md-card-title>
+    <md-card-subtitle>right y-axis used, x-axis grid hidden</md-card-subtitle>
     <td-charts title="Area Chart"
                 [shadowDepth]="['125%', 2, 0, 2]"
                 shadowColor="rgba(0, 0, 0, 0.54)"
@@ -87,12 +92,13 @@
                      bottomAxis="x"
                      columns="y"
                      [transition]="true"
-                     transitionDuration="1000"
-                     transitionDelay="2000">
+                     transitionDuration="1500"
+                     transitionDelay="4000">
       </td-chart-area>
     </td-charts>
     <md-divider></md-divider>
   <md-card-title>Combo Chart</md-card-title>
+  <md-card-subtitle>dual y-axis, x-axis grid hidden</md-card-subtitle>
   <td-charts title="Sales Bar/Line Chart"
               [shadowDepth]="['125%', 2, 0, 2]"
               shadowColor="rgba(0, 0, 0, 0.54)"
@@ -164,21 +170,32 @@
 
     <td-highlight lang="html">
       <![CDATA[
-        <td-charts bottomAxisTitle="Day Offset"
-                     leftAxisTitle="Sales"
-                     [shadowDepth]="['125%', 2, 0, 2]"
-                     shadowColor="rgba(0, 0, 0, 0.54)"
-                     fillOpacity="1"
-                     chartTitle="Sales Bar Chart"
-                     ticks='true'
-                     grid='true'>
-          <td-chart-bar>
-            ...
+        <td-charts title="Sales Bar/Line Combo Chart"
+                  [shadowDepth]="['125%', 2, 0, 2]"
+                  shadowColor="rgba(0, 0, 0, 0.54)"
+                  fillOpacity="0.95">
+          <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
+          <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
+          <td-axis-y-right [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true" legend="Sales 2"></td-axis-y-right>
+          <td-chart-bar #chartBar1 [colors]="['amber', 'orange']"
+                        dataSrc="platform/charts/chart-line/datatime.csv"
+                        [padding]="0.1"
+                        bottomAxis="date"
+                        columns="close"
+                        titles="close"
+                        [transition]="true"
+                        transitionDuration="2050"
+                        transitionDelay="5000">
           </td-chart-bar>
-        </td-charts>
-        <td-charts>
-          <td-chart-line>
-            ...
+          <td-chart-line #chartLine1 dataSrc="platform/charts/chart-line/datatime.csv"
+                        timeSeries="true"
+                        bottomAxis="date"
+                        [columns]="['close']"
+                        [titles]="['close']"
+                        [colors]="['#03a9f4']"
+                        [transition]="true"
+                        transitionDuration="2000"
+                        transitionDelay="5000">
           </td-chart-line>
         </td-charts>
       ]]>
@@ -205,7 +222,38 @@
       ]]>
     </td-highlight>
   </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdAxisComponent</md-card-title>
+  <md-card-subtitle>How to use the individual axes components</md-card-subtitle>
   <md-divider></md-divider>
+  <md-card-content>
+     <h2><code><![CDATA[<td-axis-x>]]></code></h2>
+     <p>Use <code><![CDATA[<td-axis-x>]]></code> element to control the x-axis</p>
+     <p>Use <code><![CDATA[<td-axis-y-left>]]></code> element to control the left y-axis</p>
+     <p>Use <code><![CDATA[<td-axis-y-right>]]></code> element to control the right y-axis</p>
+     <h3>Properties:</h3>
+      <p>This component has {{axisAttrs.length}} properties:</p>
+      <md-list>
+        <template let-attr let-last="attr" ngFor [ngForOf]="axisAttrs">
+          <a md-list-item layout-align="row">
+            <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+            <p md-line> {{attr.description}} </p>
+          </a>
+          <md-divider *ngIf="!last"></md-divider>
+        </template>
+      </md-list>
+    <p>Use above propeties as attributes with <code><![CDATA[<td-axis-x>]]></code>, <code><![CDATA[<td-axis-y-left>]]></code>, or <code><![CDATA[<td-axis-y-right>]]></code> elements</p>
+    <h3>Example:</h3>
+    <p>HTML</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
+        <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Sales Line"></td-axis-y-left>
+        <td-axis-y-right [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true" legend="Sales Bar"></td-axis-y-right>
+      ]]>
+    </td-highlight>
+  </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>TdChartBarComponent</md-card-title>
@@ -230,31 +278,38 @@
     <p>HTML</p>
     <td-highlight lang="html">
       <![CDATA[
-      <td-chart-bar dataSrc="platform/charts/chart-bar/data.csv"
-                     bottomAxis="salesperson"
-                     columns="sales"
-                     [colors]="['cyan', 'indigo']"
-                     [transition]="true"
-                     transitionDuration="3000"
-                     transitionDelay="2000">
+      <td-chart-bar #chartBar1 
+                    [colors]="['pink', 'deepPurple']"
+                    [data]="jsonData"
+                    [padding]="0.1"
+                    bottomAxis="x"
+                    columns="y"
+                    [transition]="true"
+                    transitionDuration="1000"
+                    transitionDelay="3000">
       </td-chart-bar>
-         ]]>
+      ]]>
     </td-highlight>
-    <p>Data Sample of dataSrc</p>
+    <p>Data Sample of jsonData</p>
 
-    <td-highlight lang="html">
+    <td-highlight lang="typescript">
       <![CDATA[
-      salesperson,sales
-      Bob,33
-      Robin,12
-      Anne,41
-      Mark,16
-      Joe,59
-      Eve,38
+      jsonData: any = [
+      {'x': 'Jan', 'y': 70},
+      {'x': 'Feb', 'y': 190},
+      {'x': 'Mar', 'y': 220},
+      {'x': 'Apr', 'y': 160},
+      {'x': 'May', 'y': 240},
+      {'x': 'Jun', 'y': 70},
+      {'x': 'Jul', 'y': 190},
+      {'x': 'Aug', 'y': 210},
+      {'x': 'Sep', 'y': 150},
+      {'x': 'Oct', 'y': 170},
+      {'x': 'Nov', 'y': 150},
+      {'x': 'Dec', 'y': 260}];
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
 </md-card>
 <md-card>
   <md-card-title>TdChartLineComponent</md-card-title>
@@ -280,11 +335,15 @@
 
     <td-highlight lang="html">
       <![CDATA[
-      <td-chart-line dataSrc="platform/charts/chart-line/data.tsv"
-                     bottomAxis="col1"
-                     [transition]="true"
-                     transitionDuration="3000"
-                     transitionDelay="2000">
+      <td-chart-line #chartLine1 dataSrc="platform/charts/chart-line/datatime.csv"
+                    timeSeries="true"
+                    bottomAxis="date"
+                    [columns]="['close']"
+                    [titles]="['close']"
+                    [colors]="['#E91E63']"
+                    [transition]="true"
+                    transitionDuration="500"
+                    transitionDelay="1000">
       </td-chart-line>
          ]]>
     </td-highlight>
@@ -293,14 +352,52 @@
 
     <td-highlight lang="html">
       <![CDATA[
-      col1,col2,col3,col4
-      1,63.4,62.7,72.2
-      2,58.0,59.9,67.7
-      3,53.3,59.1,69.4
+      date,close
+      22-Apr-07,63.4
+      24-Apr-07,93.24
+      25-Apr-07,95.35
+      26-Apr-07,98.84
+      27-Apr-07,99.92
+      30-Apr-07,99.80
       ]]>
     </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
+  <md-card-content>
+    <h2>Sparkline example:</h2>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-axis-x [link]="sparkLine" [show]="false"></td-axis-x>
+      <td-chart-line #sparkLine dataSrc="platform/charts/chart-line/datatime.csv"
+                    timeSeries="true"
+                    bottomAxis="date"
+                    [columns]="['close']"
+                    [titles]="['close']"
+                    [colors]="['#00E676']"
+                    [transition]="true"
+                    transitionDuration="500"
+                    transitionDelay="1000">
+      </td-chart-line>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2>Multi Line example:</h2>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-chart-line #chartLine3 dataSrc="platform/charts/chart-line/data.tsv"
+                   bottomAxis="col1"
+                   [columns]="['col2', 'col3','col4']"
+                   [titles]="['New York','San Francisco', 'Austin']"
+                   [colors]="['#304FFE', '#00B8D4', '#FF3D00']"
+                   [transition]="true"
+                   transitionDuration="1000"
+                   transitionDelay="2000">
+      </td-chart-line>
+      ]]>
+    </td-highlight>
+  </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>TdChartAreaComponent</md-card-title>
@@ -326,15 +423,15 @@
 
     <td-highlight lang="html">
       <![CDATA[
-        <td-chart-area [colors]="['#03a9f4', '#0277bd']"
-                      dataSrc="platform/charts/chart-area/data.json"
-                      bottomAxis="x"
-                      columns="y"
-                      [transition]="true"
-                      transitionDuration="3000"
-                      transitionDelay="2000">
+        <td-chart-area #chartArea1 [colors]="['#03a9f4', '#0277bd']"
+                     dataSrc="platform/charts/chart-area/data.json"
+                     bottomAxis="x"
+                     columns="y"
+                     [transition]="true"
+                     transitionDuration="1500"
+                     transitionDelay="4000">
         </td-chart-area>
-         ]]>
+        ]]>
     </td-highlight>
 
     <p>Data Sample</p>
@@ -357,5 +454,46 @@
       ]]>
     </td-highlight>
   </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Combo Charts Example</md-card-title>
+  <md-card-subtitle>Use multiple chart and axes components</md-card-subtitle>
   <md-divider></md-divider>
+  <md-card-content>
+    <h3>Example:</h3>
+    <p>HTML</p>
+
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-charts title="Sales Bar/Line Chart"
+                  [shadowDepth]="['125%', 2, 0, 2]"
+                  shadowColor="rgba(0, 0, 0, 0.54)"
+                  fillOpacity="0.95">
+          <td-axis-x [link]="chartLine4" [ticks]="true" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
+          <td-axis-y-left [link]="chartLine4" [ticks]="true" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
+          <td-axis-y-right [link]="chartBar2" [ticks]="true" [show]="true" [grid]="true" legend="Sales 2"></td-axis-y-right>
+          <td-chart-bar #chartBar2 [colors]="['amber', 'orange']"
+                        dataSrc="platform/charts/chart-line/datatime.csv"
+                        [padding]="0.1"
+                        bottomAxis="date"
+                        columns="close"
+                        titles="close"
+                        [transition]="true"
+                        transitionDuration="2050"
+                        transitionDelay="5000">
+          </td-chart-bar>
+          <td-chart-line #chartLine4 dataSrc="platform/charts/chart-line/datatime.csv"
+                          timeSeries="true"
+                          bottomAxis="date"
+                          [columns]="['close']"
+                          [titles]="['close']"
+                          [colors]="['#03a9f4']"
+                          [transition]="true"
+                          transitionDuration="2000"
+                          transitionDelay="5000">
+          </td-chart-line>
+    </td-charts>
+      ]]>
+    </td-highlight>
+  </md-card-content>
 </md-card>
