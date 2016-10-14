@@ -149,7 +149,6 @@
     </md-list>
     <h3>Example:</h3>
     <p>HTML</p>
-
     <td-highlight lang="html">
       <![CDATA[
         <td-charts title="Sales Bar/Line Combo Chart"
@@ -182,6 +181,21 @@
                         transitionDelay="5000">
           </td-chart-line>
         </td-charts>
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentChartsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentChartsModule } from '@covalent/charts';
+        @NgModule({
+          imports: [
+            CovalentChartsModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
       ]]>
     </td-highlight>
   </md-card-content>
