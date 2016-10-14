@@ -37,6 +37,11 @@ export class ComponentsOverviewComponent {
       route: 'dialogs',
       title: 'Simple Dialogs',
     }, {
+      color: 'green-700',
+      icon: 'grid_on',
+      route: 'data-table',
+      title: 'Data Table',
+    }, {
       color: 'pink-700',
       icon: 'code',
       route: 'syntax-highlighting',

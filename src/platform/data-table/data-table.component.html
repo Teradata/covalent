@@ -1,0 +1,100 @@
+<div layout="row" layout-align="start center" *ngIf="_title && !_searchVisible">
+  <span class="md-subhead">{{_title}}</span>
+  <span flex></span>
+  <button md-icon-button (click)="toggleSearch()">
+    <md-icon *ngIf="_search">filter_list</md-icon>
+  </button>
+</div>
+
+<div layout="row" layout-align="start center" *ngIf="_searchVisible">
+  <md-icon>search</md-icon>
+  <form flex layout="row" name="filter.form">
+    <md-input flex #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
+    </md-input>
+  </form>
+  <button md-icon-button (click)="toggleSearch()">
+    <md-icon>close</md-icon>
+  </button>
+</div>
+
+<div class="md-table-container" *ngIf="_visibleData.length > 0" title>
+  <table td-table
+         [class.md-row-select]="_rowSelection">
+    <thead td-head>
+      <tr td-row>
+        <th td-column class="md-checkbox-column" *ngIf="_rowSelection">
+          <md-checkbox
+            *ngIf="_multiple"
+            [checked]="areAllSelected()"
+            (change)="selectAll($event.checked)">
+          </md-checkbox>
+        </th>
+        <th td-column 
+            *ngFor="let column of columns" 
+            [class.md-clickable]="_sorting"
+            [class.md-active]="_sorting && column === _sortBy"
+            [class.md-numeric]="column.numeric"
+            [class.md-asc]="(column === _sortBy && isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())">
+          <md-icon 
+            class="md-sort-icon" 
+            *ngIf="_sorting && column.numeric"
+            [class.md-asc]="(!(column === _sortBy) || isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())"
+            (click)="_sorting && setSorting(column)">
+            arrow_upward
+          </md-icon>
+          <span class="md-caption" (click)="_sorting && setSorting(column)">
+            <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
+            <span *ngIf="!column.tooltip">{{column.label}}</span>
+          </span>
+          <md-icon 
+            class="md-sort-icon" 
+            *ngIf="_sorting && !column.numeric"
+            [class.md-asc]="(!(column === _sortBy) || isAscending())"
+            [class.md-desc]="(column === _sortBy && isDescending())"
+            (click)="_sorting && setSorting(column)">
+            arrow_upward
+          </md-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody td-body>
+      <tr td-row
+          [class.md-selected]="row[_rowSelectionField]"
+          *ngFor="let row of _visibleData"
+          (click)="_rowSelection && select(row, !row[_rowSelectionField], $event)">
+        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
+          <md-checkbox
+            [checked]="row[_rowSelectionField]">
+          </md-checkbox>
+        </td>
+        <td td-cell
+            [class.md-numeric]="column.numeric"
+            *ngFor="let column of columns">
+          <span class="md-body-1">{{ row[column.name] }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="md-body-1" *ngIf="_visibleData.length < 1">
+  No results
+</div>
+
+<div layout="row" layout-align="end center" class="md-caption md-table-pagination" *ngIf="_pagination && hasData">
+  <span>
+    {{ _currentPage }} of {{ _totalPages }}
+  </span>
+  <button md-icon-button (click)="prevPage()">
+    <md-icon *ngIf="_search">keyboard_arrow_left</md-icon>
+  </button>
+  <button md-icon-button (click)="nextPage()">
+    <md-icon *ngIf="_search">keyboard_arrow_right</md-icon>
+  </button>
+</div>
+
+<div class="md-body-1" *ngIf="_pagination && !hasData">
+  No pages
+</div>
