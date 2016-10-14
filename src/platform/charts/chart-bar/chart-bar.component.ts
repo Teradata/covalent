@@ -57,45 +57,38 @@ export class TdChartBarComponent extends ChartComponent {
     x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
     y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
 
-    svg.append('g')
+    let bar: any = svg.append('g')
       .classed('chart-bars', true)
       .selectAll('.bar')
-      .data(data)
+      .data(data);
+
+    bar
       .enter().append('rect')
       .attr('class', 'bar')
-      .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
+      .merge(bar)
       .attr('width', x.bandwidth())
-      .attr('y', (d: any) => { return y(d[this.columns]); })
-      .attr('height', (d: number) => { return this._parent.height - y(d[this.columns]); })
+      .attr('height', 0)
       .attr('fill', (d: any, i: number) => {
-        if (this.transition === false) {
-          return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
-        } else {
-          return '#fff';
-        }
+        return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
       })
+      .attr("transform", (d: any) => { return 'translate('+[x(d[this.bottomAxis]), this._parent.height]+')'})
       .style('filter', 'url(#' + defsId + ')');
 
     if (this.transition === true) {
-      this._transtion(svg, data, x, y);
+      this._transtion(svg, x, y);
     }
   }
 
-  private _transtion(chartSvg: any, data: any, x: any, y: any): void {
-    let transition: any = chartSvg.transition().duration(this.transitionDuration);
-    let delay: any = (d: number, i: number) => { return i * this.transitionDelay; };
+  private _transtion(chartSvg: any, x: any, y: any): void {
 
-    transition.selectAll('.bar')
-      .delay(delay)
-      .attr('x', (d: any) => { return x(d[this.bottomAxis]); })
-      .attr('fill', (d: any, i: number) => {
-        return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
-      });
+    let t: any = d3.transition()
+      .delay(this.transitionDelay)
+      .duration(this.transitionDuration)
+      .ease(d3.easeLinear);
 
-    transition.select('.x.axis')
-        .call(d3.axisBottom(x))
-      .selectAll('g')
-        .delay(delay);
+    chartSvg.selectAll('.bar').transition(t)
+      .attr('height', (d: any) => { return this._parent.height - y(d[this.columns]) })
+      .attr('transform', (d: any) => { return 'translate('+[x(d[this.bottomAxis]), y(d[this.columns])]+')'});
   }
 
 }
