@@ -27,7 +27,7 @@ After:
   // actions here
 </template >
 ```
-- `td-step` content is defined differently now:
+* **steps:** `td-step` content is defined differently now ([023d3f3c02444bf4db3a6b712a07548fdb622325](https://github.com/Teradata/covalent/commit/023d3f3c02444bf4db3a6b712a07548fdb622325)):
 
 Before:
 ```
