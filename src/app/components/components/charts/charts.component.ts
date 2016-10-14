@@ -8,7 +8,7 @@ import { Component} from '@angular/core';
 export class ChartsDemoComponent {
 
   chartsAttr: Object[] = [{
-    description: 'Sets the Chart Title.',
+    description: 'Sets the Chart Title',
     name: 'title?',
     type: 'string',
   }, {
@@ -24,7 +24,7 @@ export class ChartsDemoComponent {
     name: 'shadowColor?',
     type: 'string',
   }, {
-    description: 'Sets opacity for the charts.',
+    description: 'Sets opacity for the charts',
     name: 'fillOpacity?',
     type: 'number',
   }, {
@@ -38,9 +38,9 @@ export class ChartsDemoComponent {
     name: 'dataSrc?',
     type: 'string',
   }, {
-    description: 'Sets content type of the data source',
-    name: 'contentType?',
-    type: 'string',
+    description: 'Sets data for the Bar Chart. Overrides [dataSrc]',
+    name: 'data?',
+    type: 'any',
   }, {
     description: 'Sets the name for bottom axis; should match with the column name defined in data source',
     name: 'bottomAxis?',
@@ -54,15 +54,15 @@ export class ChartsDemoComponent {
     name: 'colors?',
     type: 'any[]',
   }, {
-    description: 'Sets the flag as true or false for transitions;',
+    description: 'Sets the flag as true or false for transitions',
     name: 'transition?',
     type: 'boolean',
   }, {
-    description: 'Sets the duration for transition;',
+    description: 'Sets the duration for transition',
     name: 'transitionDuration?',
     type: 'number',
   }, {
-    description: 'Sets the delay time before transition starts;',
+    description: 'Sets the delay time before transition starts',
     name: 'transitionDelay?',
     type: 'number',
   }, {
@@ -72,17 +72,17 @@ export class ChartsDemoComponent {
   }];
 
   lineChartAttrs: Object[] = [{
-    description: 'Sets data source for the Bar Chart',
+    description: 'Sets data source for the Line Chart',
     name: 'dataSrc?',
     type: 'string',
+  }, {
+    description: 'Sets data for the Line Chart. Overrides [dataSrc]',
+    name: 'data?',
+    type: 'any',
   }, {
     description: 'Sets flag as true or false for time series data',
     name: 'timeSeries?',
     type: 'boolean',
-  }, {
-    description: 'Sets content type of the data source',
-    name: 'contentType?',
-    type: 'string',
   }, {
     description: 'Sets the name for bottom axis; should match with the column name defined in data source',
     name: 'bottomAxis?',
@@ -92,23 +92,23 @@ export class ChartsDemoComponent {
     name: 'columns?',
     type: 'array[]',
   }, {
-    description: 'Sets the title for single/multi lines;',
+    description: 'Sets the title for single/multi lines',
     name: 'titles?',
     type: 'array[]',
   }, {
-    description: 'Sets the rgba or hex color for single/multi lines;',
+    description: 'Sets the rgba or hex color for single/multi lines',
     name: 'colors?',
     type: 'string',
   }, {
-    description: 'Sets the flag as true or false for transitions;',
+    description: 'Sets the flag as true or false for transitions',
     name: 'transition?',
     type: 'boolean',
   }, {
-    description: 'Sets the duration for transition;',
+    description: 'Sets the duration for transition',
     name: 'transitionDuration?',
     type: 'number',
   }, {
-    description: 'Sets the delay time before transition starts;',
+    description: 'Sets the delay time before transition starts',
     name: 'transitionDelay?',
     type: 'number',
   }];
@@ -118,9 +118,9 @@ export class ChartsDemoComponent {
     name: 'dataSrc?',
     type: 'string',
   }, {
-    description: 'Sets content type of the data source',
-    name: 'contentType?',
-    type: 'string',
+    description: 'Sets data for the Line Chart. Overrides [dataSrc]',
+    name: 'data?',
+    type: 'any',
   }, {
     description: 'Sets the name for bottom axis; should match with the column name defined in data source',
     name: 'bottomAxis?',
