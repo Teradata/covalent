@@ -3,6 +3,13 @@ import { ChartComponent } from './abstract-chart.component';
 /* tslint:disable-next-line */
 let d3: any = require('d3');
 
+export interface IChartMargin {
+  top?: number;
+  right?: number;
+  bottom?: number;
+  left?: number;
+}
+
 @Component({
   selector: 'td-axis-y-left',
   template: '',
@@ -218,12 +225,26 @@ export class TdChartsComponent implements OnInit {
   private _mdBlueGrey: any[] = ['#eceff1', '#cfd8dc', '#b0bec5', '#90a4ae', '#78909c', '#607d8b', '#546e7a',
   '#455a64', '#37474f', '#263238', '#cfd8dc', '#b0bec5', '#78909c', '#455a64'];
 
-  private _margin: any = {top: 50, right: 80, bottom: 50, left: 30};
+  private _margin: IChartMargin = {top: 50, right: 80, bottom: 50, left: 50};
   private _width: number;
   private _height: number;
-  private _padding: number;
 
-  get margin(): any {
+  @Input()
+  set margin(margin: IChartMargin) {
+    if (margin.bottom) {
+      this._margin.bottom = margin.bottom;
+    }
+    if (margin.left) {
+      this._margin.left = margin.left;
+    }
+    if (margin.right) {
+      this._margin.right = margin.right;
+    }
+    if (margin.top) {
+      this._margin.top = margin.top;
+    }
+  }
+  get margin(): IChartMargin {
     return this._margin;
   }
   get width(): number {
@@ -231,9 +252,6 @@ export class TdChartsComponent implements OnInit {
   }
   get height(): number {
     return this._height;
-  }
-  get padding(): number {
-    return this._padding;
   }
 
   container: HTMLElement;
@@ -272,10 +290,8 @@ export class TdChartsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._margin.top = 50;
     this._width = 960 - this._margin.left - this._margin.right;
     this._height = this.chartHeight - this._margin.top - this._margin.bottom;
-    this._padding = 50;
 
     let viewBoxWidth: number = this._width + this._margin.left + this._margin.right;
     let viewBoxHeight: number = this._height + this._margin.top + this._margin.bottom;
@@ -289,7 +305,7 @@ export class TdChartsComponent implements OnInit {
       .classed('svg-content-responsive', true)
       .append('g')
       .classed('chartG', true)
-      .attr('transform', 'translate(' + this._padding + ',' + this._margin.top + ')');
+      .attr('transform', 'translate(' + this._margin.left + ',' + this._margin.top + ')');
 
     setTimeout(() => {
       let svg: any = d3.select(this.container)

@@ -5,6 +5,7 @@
   <md-card-content>
   <md-card-title>Time Series Line Chart</md-card-title>
   <td-charts title="Prices Trend"
+              [margin]="{top: 60, bottom: 100}"
               [shadowDepth]="['125%', 2, 0, 2]"
               shadowColor="rgba(0, 0, 0, 0.54)">
     <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
