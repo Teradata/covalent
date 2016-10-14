@@ -43,7 +43,7 @@ export class ComponentsComponent {
     route: 'dialogs',
     title: 'Simple Dialogs',
   }, {
-    description: 'Data Table',
+    description: 'Data driven table layout with search, sorting and pagination',
     icon: 'grid_on',
     route: 'data-table',
     title: 'Data Table',
