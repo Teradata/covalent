@@ -45,7 +45,7 @@ export class TdChartLineComponent extends ChartComponent {
 
     let row: Function = this.timeSeries ? dateCol : stringCol;
     let xScale: Function = this.timeSeries ? d3.scaleTime : d3.scaleLinear;
-    let offset: number = this._parent.width / data.length;
+    let offset: number = this._parent.offset(data);
 
     let x: any = xScale().range([offset / 2, this._parent.width - (offset / 2)]);
     let y: any = d3.scaleLinear().range([this._parent.height, 0]);

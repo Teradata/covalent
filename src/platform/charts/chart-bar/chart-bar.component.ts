@@ -71,7 +71,7 @@ export class TdChartBarComponent extends ChartComponent {
       .attr('fill', (d: any, i: number) => {
         return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
       })
-      .attr("transform", (d: any) => { return 'translate('+[x(d[this.bottomAxis]), this._parent.height]+')'})
+      .attr('transform', (d: any) => { return 'translate(' + [x(d[this.bottomAxis]), this._parent.height] + ')'; })
       .style('filter', 'url(#' + defsId + ')');
 
     if (this.transition === true) {
@@ -87,8 +87,8 @@ export class TdChartBarComponent extends ChartComponent {
       .ease(d3.easeLinear);
 
     chartSvg.selectAll('.bar').transition(t)
-      .attr('height', (d: any) => { return this._parent.height - y(d[this.columns]) })
-      .attr('transform', (d: any) => { return 'translate('+[x(d[this.bottomAxis]), y(d[this.columns])]+')'});
+      .attr('height', (d: any) => { return this._parent.height - y(d[this.columns]); })
+      .attr('transform', (d: any) => { return 'translate(' + [x(d[this.bottomAxis]), y(d[this.columns])] + ')'; });
   }
 
 }

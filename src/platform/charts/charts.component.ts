@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ElementRef, Inject, forwardRef, ContentChild } from '@angular/core';
 import { ChartComponent } from './abstract-chart.component';
+import { TdChartBarComponent } from './chart-bar/chart-bar.component';
 /* tslint:disable-next-line */
 let d3: any = require('d3');
 
@@ -259,6 +260,14 @@ export class TdChartsComponent implements OnInit {
   @ContentChild(TdXAxisComponent) xAxis: TdXAxisComponent;
   @ContentChild(TdYLeftAxisComponent) leftYAxis: TdYLeftAxisComponent;
   @ContentChild(TdYRightAxisComponent) rightYAxis: TdYRightAxisComponent;
+  @ContentChild(TdChartBarComponent)
+  set chartBar(chartBar: TdChartBarComponent) {
+    if (chartBar) {
+      this.offset = (data: any) => {
+        return this.width / data.length;
+      };
+    }
+  }
 
   @Input() title: string = '';
   @Input() shadowColor: string = '';
@@ -288,6 +297,8 @@ export class TdChartsComponent implements OnInit {
     this._paletteMap.set('grey', this._mdGrey);
     this._paletteMap.set('blueGrey', this._mdBlueGrey);
   }
+
+  offset: (data: any) => number = (data: any) => { return 0; };
 
   ngOnInit(): void {
     this._width = 960 - this._margin.left - this._margin.right;
