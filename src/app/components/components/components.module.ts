@@ -18,6 +18,7 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
+import { DataTableDemoComponent } from './data-table/data-table.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentFileModule } from '../../../platform/file-upload';
@@ -26,6 +27,7 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
 import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
+import { CovalentDataTableModule } from '../../../platform/data-table';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     DirectivesComponent,
     PipesComponent,
     ChartsDemoComponent,
+    DataTableDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
@@ -54,6 +57,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
+    CovalentDataTableModule.forRoot(),
     componentsRoutes,
   ],
 })
