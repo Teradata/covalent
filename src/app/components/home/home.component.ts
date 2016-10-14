@@ -27,10 +27,10 @@ export class HomeComponent {
       title: 'Layouts',
     }, {
       color: 'green-700',
-      description: 'Using our custom Angular 2.0 components',
+      description: 'Covalent Components, Directives, Pipes & Services',
       icon: 'picture_in_picture',
       route: 'components',
-      title: 'Teradata Components',
+      title: 'Components & Addons',
     },
   ];
 

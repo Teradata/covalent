@@ -19,6 +19,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
+import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentFileModule } from '../../../platform/file-upload';
@@ -48,6 +49,7 @@ import { CovalentDataTableModule } from '../../../platform/data-table';
     PipesComponent,
     ChartsDemoComponent,
     DataTableDemoComponent,
+    MaterialComponentsComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),

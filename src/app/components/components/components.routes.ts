@@ -17,11 +17,15 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
+import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 const routes: Routes = [{
   children: [{
       component: ComponentsOverviewComponent,
       path: '',
+    }, {
+      component: MaterialComponentsComponent,
+      path: 'material-components',
     }, {
       component: HighlightDemoComponent,
       path: 'syntax-highlighting',
