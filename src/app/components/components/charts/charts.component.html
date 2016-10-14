@@ -102,6 +102,7 @@
       <td-axis-y-right [link]="chartBar2" [ticks]="true" [show]="true" [grid]="true" legend="Sales 2"></td-axis-y-right>
       <td-chart-bar #chartBar2 [colors]="['amber', 'orange']"
                     dataSrc="platform/charts/chart-line/datatime.csv"
+                    [padding]="0.1"
                     bottomAxis="date"
                     columns="close"
                     titles="close"
