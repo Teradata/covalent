@@ -8,10 +8,15 @@ import { Component } from '@angular/core';
 export class ComponentsComponent {
 
   items: Object[] = [{
-    description: 'Custom Angular 2.0 components',
+    description: 'Components, Directives, Pipes & more',
     icon: 'picture_in_picture',
     route: '.',
-    title: 'Teradata Components',
+    title: 'Components & Addons',
+  }, {
+    description: 'ng2 Material Design core components',
+    icon: 'change_history',
+    route: 'material-components',
+    title: 'Angular-Material Components',
   }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',

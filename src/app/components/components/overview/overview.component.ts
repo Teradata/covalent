@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ComponentsOverviewComponent {
   items: Object[] = [{
+      color: 'red-700',
+      icon: 'change_history',
+      route: 'material-components',
+      title: 'Angular-Material',
+    }, {
       color: 'deep-purple-700',
       icon: 'view_list',
       route: 'steps',

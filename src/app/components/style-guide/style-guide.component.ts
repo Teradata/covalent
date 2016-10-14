@@ -33,11 +33,6 @@ export class StyleGuideComponent {
     route: 'product-icons',
     title: 'Product Icons',
   }, {
-    description: 'Angular-Material core components',
-    icon: 'change_history',
-    route: 'material-components',
-    title: 'Material Components',
-  }, {
     description: 'Utility CSS classes',
     icon: 'build',
     route: 'utility-styles',
