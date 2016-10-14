@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'components-overview',
-  styleUrls: ['overview.component.css'],
+  styleUrls: ['overview.component.scss'],
   templateUrl: 'overview.component.html',
 })
 export class ComponentsOverviewComponent {
   items: Object[] = [{
+      color: 'red-700',
+      icon: 'change_history',
+      route: 'material-components',
+      title: 'Angular-Material',
+    }, {
       color: 'deep-purple-700',
       icon: 'view_list',
       route: 'steps',
@@ -33,6 +37,16 @@ export class ComponentsOverviewComponent {
       route: 'loading',
       title: 'Loading',
     }, {
+      color: 'amber-700',
+      icon: 'open_in_browser',
+      route: 'dialogs',
+      title: 'Simple Dialogs',
+    }, {
+      color: 'green-700',
+      icon: 'grid_on',
+      route: 'data-table',
+      title: 'Data Table',
+    }, {
       color: 'pink-700',
       icon: 'code',
       route: 'syntax-highlighting',
@@ -48,6 +62,11 @@ export class ComponentsOverviewComponent {
       route: 'markdown',
       title: 'Markdown',
     }, {
+      color: 'light-blue-700',
+      icon: 'show_chart',
+      route: 'charts',
+      title: 'Charts',
+    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',
@@ -57,6 +76,11 @@ export class ComponentsOverviewComponent {
       icon: 'http',
       route: 'http',
       title: 'Http',
+    }, {
+      color: 'light-blue-700',
+      icon: 'wb_iridescent',
+      route: 'directives',
+      title: 'Directives',
     }, {
       color: 'deep-orange-700',
       icon: 'filter_list',

@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
-import { StepState, IStepChangeEvent } from '../../../../platform/core';
+import { StepState, IStepChangeEvent, TdMediaService } from '../../../../platform/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'steps-demo',
-  styleUrls: [ 'steps.component.css' ],
+  styleUrls: [ 'steps.component.scss' ],
   templateUrl: 'steps.component.html',
 })
-export class StepsDemoComponent {
+export class StepsDemoComponent implements OnInit, OnDestroy {
 
   stepsAttrs: Object[] = [{
     description: `Method to be executed when [onStepChange] event is emitted.
@@ -16,9 +16,9 @@ export class StepsDemoComponent {
     name: 'stepChange?',
     type: 'function($event)',
   }, {
-    description: 'Defines if there can be one or multiple [TdStepComponent] elements active at the same time.',
-    name: 'multiple?',
-    type: 'boolean',
+    description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
+    name: 'mode?',
+    type: 'StepMode or ["vertical" | "horizontal"]',
   }];
 
   stepAttrs: Object[] = [{
@@ -66,11 +66,47 @@ export class StepsDemoComponent {
     type: 'function()',
   }];
 
+  querySubscription: Subscription;
+  mode: number = 0;
+  horizontal: boolean = true;
+  isScreenGtSm: boolean = false;
   stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
+
+  constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {
+  }
+
+  ngOnInit(): void {
+    this.watchScreen();
+  }
+  ngOnDestroy(): void {
+    this.querySubscription.unsubscribe();
+  }
+
+  watchScreen(): void {
+    this._ngZone.run(() => {
+      this.isScreenGtSm = this._mediaService.query('gt-sm');
+    });
+    this.querySubscription = this._mediaService.registerQuery('gt-sm').subscribe((matches: boolean) => {
+      this._ngZone.run(() => {
+        this.isScreenGtSm = matches;
+        if (this.mode === 2) {
+          this.horizontal = matches;
+        }
+      });
+    });
+  }
+
+  modeChange(): void {
+    if (this.mode === 2) {
+      this.horizontal = this.isScreenGtSm;
+    } else {
+      this.horizontal = this.mode === 1;
+    }
+  }
 
   toggleRequiredStep2(): void {
     this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);

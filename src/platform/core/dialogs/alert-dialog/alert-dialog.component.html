@@ -1,0 +1,11 @@
+<td-dialog>
+  <td-dialog-title *ngIf="title">
+    {{title}}
+  </td-dialog-title>
+  <td-dialog-content class="md-subhead tc-grey-700">
+    {{message}}
+  </td-dialog-content>
+  <td-dialog-actions>
+    <button md-button color="accent" (click)="close()">{{closeButton}}</button>
+  </td-dialog-actions>
+</td-dialog>

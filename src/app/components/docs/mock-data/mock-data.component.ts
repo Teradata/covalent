@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'docs-mock-data',
-  styleUrls: ['mock-data.component.css'],
+  styleUrls: ['mock-data.component.scss'],
   templateUrl: 'mock-data.component.html',
 })
 export class MockDataComponent {

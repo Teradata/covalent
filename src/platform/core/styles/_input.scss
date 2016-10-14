@@ -1,0 +1,18 @@
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+$background: $md-light-theme-background;
+$warn: md-palette($md-red);
+
+md-input {
+    &.ng-invalid:not(.ng-pristine) {
+        label {
+            color: md-color($warn);
+        }
+        .md-input-underline {
+            border-top-color: md-color($warn);
+        }
+    }
+}

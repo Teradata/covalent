@@ -186,7 +186,7 @@
     ],
     // ANGULAR 2 Rules
     "directive-selector-name": [
-      true,
+      false, // Checked in PR's (kebab-case usage when used as component placeholder)
       "camelCase"
     ],
     "component-selector-name": [
@@ -194,7 +194,7 @@
       "kebab-case"
     ],
     "directive-selector-type": [
-      true,
+      false, // Checked in PR's (usage as element when used as placeholder for `ng-content`)
       "attribute"
     ],
     "component-selector-type": [
@@ -202,7 +202,7 @@
       "element"
     ],
     "directive-selector-prefix": [
-      true,
+      false,
       "td"
     ],
     "component-selector-prefix": [ // This will be checked in PR's since we only want `td-` prefix for platform components, not docs not product components.
@@ -210,7 +210,7 @@
       "td"
     ],
     "component-class-suffix": true,
-    "directive-class-suffix": true,
+    "directive-class-suffix": false, // Checked in PR's (different suffix for validators and so)
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

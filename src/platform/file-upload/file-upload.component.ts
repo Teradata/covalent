@@ -2,9 +2,9 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  moduleId: module.id,
+
   selector: 'td-file-upload',
-  styleUrls: ['file-upload.component.css'],
+  styleUrls: ['file-upload.component.scss'],
   templateUrl: 'file-upload.component.html',
 })
 export class TdFileUploadComponent {
@@ -83,7 +83,7 @@ export class TdFileUploadComponent {
   }
 
   /**
-   * Methods executed when cancel button is clicked. 
+   * Methods executed when cancel button is clicked.
    * Clears files.
    */
   cancel(): void {

@@ -1,0 +1,128 @@
+<md-card>
+  <md-card-title>Directives</md-card-title>
+  <md-card-subtitle>Core Covalent directives &amp; utilities</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>A directive is essentially like a component functionally without a template. There are structural and attribute directives.</p>
+    <p>Structural directives can change the DOM layout by adding and removing DOM elements. NgFor and NgIf are two familiar examples.</p>
+    <p>An Attribute directive can change the appearance or behavior of an element. The built-in NgStyle directive, for example, can change several element styles at the same time.</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank">
+    More on Angular 2 directives
+    </a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Autotrim directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>tdAutoTrim</code> on an input to automatically trim the characters.</p>
+    <p>Try entering white spaces before or after a word this input:</p>
+    <div layout="row">
+      <md-input flex tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"></md-input>
+    </div>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-input tdAutoTrim [(ngModel)]="yourmodel" placeholder="This will be autotrimmed"></md-input>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Toggle directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>[tdToggle]="variable"</code> on an element to toggle it open or closed (used in Stepper &amp; Expansion Panels).</p>
+    <p>Click on this to open a div:</p>
+    <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
+    <div [tdToggle]="toggleDiv" [hidden]>
+      <md-card>
+        <md-card-title>Toggle Card</md-card-title>
+        <md-card-content>Reveal or hide with a toggle click!</md-card-content>
+        <md-card-actions><button md-raised-button color="primary" (click)="toggle()">Toggle Out</button></md-card-actions>
+      </md-card>
+    </div>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
+          <div [tdToggle]="toggleDiv" [hidden]>
+            Reveal or hide with a toggle click!
+          </div>
+        ]]>
+    </td-highlight>
+    <p>TypeScript:</p>
+    <td-highlight lang="typescript">
+        toggleDiv: boolean = true;
+
+        toggle(): void {{ '{' }}
+          this.toggleDiv = !this.toggleDiv;
+        {{ '}' }}
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Fade directive</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>[tdFade]="variable"</code> on an element to fade it in and out.</p>
+    <p>Click on this to open a div:</p>
+    <button md-raised-button color="accent" (click)="fade()">Fade</button>
+    <div [tdFade]="fadeDiv" [hidden]>
+      <md-card>
+        <md-card-title>Fade Card</md-card-title>
+        <md-card-content>Fade in or out with a click!</md-card-content>
+        <md-card-actions><button md-raised-button color="primary" (click)="fade()">Fade Out</button></md-card-actions>
+      </md-card>
+    </div>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button color="accent" (click)="fade()">Toggle</button>
+          <div [tdFade]="fadeDiv" [hidden]>
+            This one fades in and out!
+          </div>
+        ]]>
+    </td-highlight>
+    <p>TypeScript:</p>
+    <td-highlight lang="typescript">
+        fadeDiv: boolean = true;
+
+        fade(): void {{ '{' }}
+          this.fadeDiv = !this.fadeDiv;
+        {{ '}' }}
+    </td-highlight>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Min/Max/Number Validators</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">We've added min/max/number-required validations since ng2 doesnt support them at the moment.</p>
+    <p>Supported:</p>
+    <ul>
+      <li><code>TdMinValidator</code> for selector: <code>[min][formControlName]</code>,<code>[min][formControl]</code>,<code>[min][ngModel]</code></li>
+      <li><code>TdMaxValidator</code> for selector: <code>[max][formControlName]</code>,<code>[max][formControl]</code>,<code>[max][ngModel]</code></li>
+      <li><code>TdNumberRequiredValidator</code> for selector: <code>[type=number][required][formControlName]</code>,<code>[type=number][required][formControl]</code>,<code>[type=number][required][ngModel]</code></li>
+    </ul>
+    <p>Example enter lower than 5 or higher than 10:</p>
+    <div layout="row">
+      <md-input flex="20" placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required></md-input>
+    </div>
+    <p>Errors:</p>
+    <code>{{el?.errors | json}}</code>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <md-input placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required></md-input>
+        ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

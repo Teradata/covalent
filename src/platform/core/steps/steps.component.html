@@ -1,3 +1,36 @@
-<div class="td-steps">
-  <ng-content></ng-content>
+<div *ngIf="isHorizontal()" class="td-steps-header" layout="row" title>
+  <template let-step let-last="last" ngFor [ngForOf]="steps">
+    <td-step-header (keydown.enter)="step.toggle()"
+                    [number]="step.number"
+                    [label]="step.label"
+                    [sublabel]="step.sublabel | truncate:30"
+                    [active]="step.active" 
+                    [disabled]="step.disabled" 
+                    [state]="step.state"
+                    (click)="step.toggle()">
+    </td-step-header>
+    <span *ngIf="!last" class="td-horizontal-line" flex></span>
+  </template>
+</div>
+<div *ngFor="let step of steps; let last = last" class="td-step" layout="column">
+  <td-step-header (keydown.enter)="step.toggle()"
+                  [number]="step.number"
+                  [label]="step.label"
+                  [sublabel]="step.sublabel"
+                  [active]="step.active" 
+                  [disabled]="step.disabled" 
+                  [state]="step.state"
+                  (click)="step.toggle()"
+                  *ngIf="isVertical()">
+  </td-step-header>
+  <template [ngIf]="isVertical() || step.active || (!areStepsActive() && _prevStep === step.number)">
+    <td-step-body [active]="step.active" [state]="step.state">
+      <div *ngIf="isVertical()" class="td-line-wrapper">
+        <div *ngIf="!last" class="td-vertical-line"></div>
+      </div>
+      <template td-step-body-content [portalHost]="step.stepContent"></template>
+      <template td-step-body-actions [portalHost]="step.stepActions"></template>
+      <template td-step-body-summary [portalHost]="step.stepSummary"></template>
+    </td-step-body>
+  </template>
 </div>

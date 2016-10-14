@@ -5,98 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-/**
- * ANGULAR2 MATERIAL MODULES
- */
-
-import { MdCoreModule, MdRippleModule, PortalModule,
-         OverlayModule, RtlModule, MdLiveAnnouncer } from '@angular2-material/core';
-import { MdButtonToggleModule } from '@angular2-material/button-toggle';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdCheckboxModule } from '@angular2-material/checkbox';
-import { MdRadioModule } from '@angular2-material/radio';
-import { MdSlideToggleModule } from '@angular2-material/slide-toggle';
-import { MdSliderModule } from '@angular2-material/slider';
-import { MdSidenavModule } from '@angular2-material/sidenav';
-import { MdListModule } from '@angular2-material/list';
-import { MdGridListModule } from '@angular2-material/grid-list';
-import { MdCardModule } from '@angular2-material/card';
-import { MdIconModule } from '@angular2-material/icon';
-import { MdMenuModule } from '@angular2-material/menu';
-import { MdProgressCircleModule } from '@angular2-material/progress-circle';
-import { MdProgressBarModule } from '@angular2-material/progress-bar';
-import { MdInputModule } from '@angular2-material/input';
-import { MdTabsModule } from '@angular2-material/tabs';
-import { MdToolbarModule } from '@angular2-material/toolbar';
-import { MdTooltipModule } from '@angular2-material/tooltip';
-
-const MATERIAL_MODULES: Type<any>[] = [
-  MdCoreModule,
-  MdButtonModule,
-  MdButtonToggleModule,
-  MdCardModule,
-  MdCheckboxModule,
-  MdGridListModule,
-  MdIconModule,
-  MdInputModule,
-  MdListModule,
-  MdMenuModule,
-  MdProgressBarModule,
-  MdProgressCircleModule,
-  MdRadioModule,
-  MdRippleModule,
-  MdSidenavModule,
-  MdSliderModule,
-  MdSlideToggleModule,
-  MdTabsModule,
-  MdToolbarModule,
-  MdTooltipModule,
-  OverlayModule,
-  PortalModule,
-  RtlModule,
-];
-
-@NgModule({
-  imports: [
-    MdButtonModule.forRoot(),
-    MdCardModule.forRoot(),
-    MdCheckboxModule.forRoot(),
-    MdGridListModule.forRoot(),
-    MdInputModule.forRoot(),
-    MdListModule.forRoot(),
-    MdProgressBarModule.forRoot(),
-    MdProgressCircleModule.forRoot(),
-    MdRippleModule.forRoot(),
-    MdSidenavModule.forRoot(),
-    MdTabsModule.forRoot(),
-    MdToolbarModule.forRoot(),
-    PortalModule.forRoot(),
-    RtlModule.forRoot(),
-
-    // These modules include providers.
-    MdButtonToggleModule.forRoot(),
-    MdIconModule.forRoot(),
-    MdMenuModule.forRoot(),
-    MdRadioModule.forRoot(),
-    MdSliderModule.forRoot(),
-    MdSlideToggleModule.forRoot(),
-    MdTooltipModule.forRoot(),
-    OverlayModule.forRoot(),
-  ],
-  exports: MATERIAL_MODULES,
-  providers: [MdLiveAnnouncer],
-})
-export class MaterialRootModule { }
-
-@NgModule({
-  imports: MATERIAL_MODULES,
-  exports: MATERIAL_MODULES,
-})
-export class MaterialModule {
-  static forRoot(): ModuleWithProviders {
-    return {ngModule: MaterialRootModule};
-  }
-}
+import { MaterialModule } from '@angular/material';
 
 /**
  * COMPONENTS
@@ -130,17 +39,23 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
-import { TdStepComponent, TdStepActionsComponent, TdStepSummaryComponent } from './steps/step.component';
+import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
+import { TdStepBodyComponent } from './steps/step-body/step-body.component';
+import { TdStepComponent, TdStepActionsDirective, TdStepSummaryDirective,
+         TdStepContentDirective } from './steps/step.component';
 
-export const TD_STEPS_DIRECTIVES: Type<any>[] = [
+export const TD_STEP_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
-  TdStepActionsComponent,
-  TdStepSummaryComponent,
+  TdStepHeaderComponent,
+  TdStepBodyComponent,
+  TdStepActionsDirective,
+  TdStepSummaryDirective,
+  TdStepContentDirective,
 ];
 
-export { TdStepComponent, StepState } from './steps/step.component';
-export { TdStepsComponent, IStepChangeEvent } from './steps/steps.component';
+export { TdStepComponent, StepState  } from './steps/step.component';
+export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.component';
 
 // Loading
 import { TdLoadingService } from './loading/services/loading.service';
@@ -151,7 +66,7 @@ export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
 
-export { LoadingType } from './loading/loading.component';
+export { LoadingType, LoadingMode } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 
 // Expansion
@@ -165,15 +80,71 @@ export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
   TdExpansionPanelSummaryComponent,
 ];
 
+// Dialogs
+
+import { TdDialogComponent, TdDialogTitleDirective,
+         TdDialogActionsDirective, TdDialogContentDirective } from './dialogs/dialog.component';
+import { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
+import { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+import { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
+import { TdDialogService } from './dialogs/services/dialog.service';
+
+const TD_DIALOG_DIRECTIVES: Type<any>[] = [
+  TdAlertDialogComponent,
+  TdConfirmDialogComponent,
+  TdPromptDialogComponent,
+  TdDialogComponent,
+  TdDialogTitleDirective,
+  TdDialogActionsDirective,
+  TdDialogContentDirective,
+];
+
+export const TD_DIALOG_ENTRY_COMPONENTS: Type<any>[] = [
+  TdAlertDialogComponent,
+  TdConfirmDialogComponent,
+  TdPromptDialogComponent,
+];
+
+export { TdDialogService } from './dialogs/services/dialog.service';
+export { TdDialogComponent, TdDialogTitleDirective } from './dialogs/dialog.component';
+export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
+export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+export { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
+
 /**
  * DIRECTIVES
  */
 
 import { TdToggleDirective } from './directives/toggle/toggle.directive';
 import { TdFadeDirective } from './directives/fade/fade.directive';
+import { TdAutoTrimDirective } from './directives/auto-trim/auto-trim.directive';
+
+export const TD_PLATFORM_DIRECTIVES: Type<any>[] = [
+  TdToggleDirective,
+  TdFadeDirective,
+  TdAutoTrimDirective,
+];
 
 export { TdToggleDirective } from './directives/toggle/toggle.directive';
 export { TdFadeDirective } from './directives/fade/fade.directive';
+export { TdAutoTrimDirective } from './directives/auto-trim/auto-trim.directive';
+
+/**
+ * VALIDATORS
+ */
+import { TdMinValidator } from './validators/min.validator';
+import { TdMaxValidator } from './validators/max.validator';
+import { TdNumberRequiredValidator } from './validators/number-required.validator';
+
+export const TD_VALIDATORS: Type<any>[] = [
+  TdMinValidator,
+  TdMaxValidator,
+  TdNumberRequiredValidator,
+];
+
+export { TdMinValidator } from './validators/min.validator';
+export { TdMaxValidator } from './validators/max.validator';
+export { TdNumberRequiredValidator } from './validators/number-required.validator';
 
 /**
  * PIPES
@@ -224,10 +195,11 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
-    TD_STEPS_DIRECTIVES,
+    TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
-    TdFadeDirective,
-    TdToggleDirective,
+    TD_DIALOG_DIRECTIVES,
+    TD_PLATFORM_DIRECTIVES,
+    TD_VALIDATORS,
   ],
   exports: [
     HttpModule,
@@ -241,17 +213,19 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
-    TD_STEPS_DIRECTIVES,
+    TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
-    TdFadeDirective,
-    TdToggleDirective,
+    TD_DIALOG_DIRECTIVES,
+    TD_PLATFORM_DIRECTIVES,
+    TD_VALIDATORS,
   ],
+  entryComponents: [ TD_DIALOG_ENTRY_COMPONENTS ],
 })
 export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService, TdLayoutService, TdLoadingService ],
+      providers: [ TdMediaService, TdLayoutService, TdLoadingService, TdDialogService ],
     };
   }
 }

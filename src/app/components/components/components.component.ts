@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-components',
-  styleUrls: ['components.component.css'],
+  styleUrls: ['components.component.scss'],
   templateUrl: 'components.component.html',
 })
 export class ComponentsComponent {
 
   items: Object[] = [{
-    description: 'Custom Angular 2.0 components',
+    description: 'Components, Directives, Pipes & more',
     icon: 'picture_in_picture',
     route: '.',
-    title: 'Teradata Components',
+    title: 'Components & Addons',
+  }, {
+    description: 'ng2 Material Design core components',
+    icon: 'change_history',
+    route: 'material-components',
+    title: 'Angular-Material Components',
   }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
@@ -39,6 +43,16 @@ export class ComponentsComponent {
     route: 'loading',
     title: 'Loading',
   }, {
+    description: 'Quick way to use alert, confirm and prompt dialogs',
+    icon: 'open_in_browser',
+    route: 'dialogs',
+    title: 'Simple Dialogs',
+  }, {
+    description: 'Display sets of raw data',
+    icon: 'grid_on',
+    route: 'data-table',
+    title: 'Data Table',
+  }, {
     description: 'Highlighting your code snippets',
     icon: 'code',
     route: 'syntax-highlighting',
@@ -54,6 +68,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown',
   }, {
+    description: 'Responsive Charts',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'Charts',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
@@ -63,6 +82,11 @@ export class ComponentsComponent {
     icon: 'http',
     route: 'http',
     title: 'Http',
+  }, {
+    description: 'Core directives & utilities',
+    icon: 'wb_iridescent',
+    route: 'directives',
+    title: 'Directives',
   }, {
     description: 'Custom Angular pipes (filters)',
     icon: 'filter_list',

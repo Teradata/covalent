@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'highlight-demo',
-  styleUrls: ['highlight.component.css'],
+  styleUrls: ['highlight.component.scss'],
   templateUrl: 'highlight.component.html',
 })
 export class HighlightDemoComponent {

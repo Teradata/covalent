@@ -1,0 +1,19 @@
+@import 'charts-theme';
+:host {
+  display: block;
+}
+:host /deep/ {
+  .grid {
+    path {
+      stroke-width: 0;
+    }
+  }
+  .axisTitle {
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .line {
+    fill: none;
+    stroke-width: 2px;
+  }
+}

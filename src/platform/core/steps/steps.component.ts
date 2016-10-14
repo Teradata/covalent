@@ -10,26 +10,43 @@ export interface IStepChangeEvent {
   prevStep: number;
 }
 
+export enum StepMode {
+  Vertical = <any>'vertical',
+  Horizontal = <any>'horizontal'
+}
+
 @Component({
-  moduleId: module.id,
   selector: 'td-steps',
-  styleUrls: [ 'steps.component.css' ],
+  styleUrls: [ 'steps.component.scss' ],
   templateUrl: 'steps.component.html',
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
   private _prevStep: number = 0;
   private _subcriptions: Subscription[] = [];
-  private _multiple: boolean = false;
+  private _mode: StepMode = StepMode.Vertical;
   @ContentChildren(TdStepComponent) private _steps: QueryList<TdStepComponent>;
 
+  get steps(): TdStepComponent[] {
+    return this._steps.toArray();
+  }
+
   /**
-   * multiple?: boolean
-   * Defines if there can be one or multiple [TdStepComponent] elements active at the same time.
+   * mode?: StepMode or ["vertical" | "horizontal"]
+   * Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]
    */
-  @Input('multiple')
-  set multiple(multiple: any) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  @Input('mode')
+  set mode(mode: StepMode) {
+    switch (mode) {
+      case StepMode.Horizontal:
+        this._mode = StepMode.Horizontal;
+        break;
+      default:
+        this._mode = StepMode.Vertical;
+    }
+  }
+  get mode(): StepMode {
+    return this._mode;
   }
 
   /**
@@ -40,11 +57,14 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   @Output('stepChange') onStepChange: EventEmitter<IStepChangeEvent> = new EventEmitter<IStepChangeEvent>();
 
   /**
-   * Executed after content is initialized, loops through any [TdStepComponent] children elements, 
+   * Executed after content is initialized, loops through any [TdStepComponent] children elements,
    * assigns them a number and subscribes as an observer to their [onActivated] event.
    */
   ngAfterContentInit(): void {
     let stepCount: number = 0;
+    if (this._steps.toArray().length < 1) {
+      throw `No [td-step]'s were defined in the [td-steps] component. At least one [td-step] is required.`;
+    }
     this._steps.toArray().forEach((step: TdStepComponent) => {
       step.number = ++stepCount;
       let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
@@ -64,6 +84,26 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   }
 
   /**
+   * Returns 'true' if [mode] equals to [StepMode.Horizontal | 'horizontal'], else 'false'.
+   */
+  isHorizontal(): boolean {
+    return this._mode === StepMode.Horizontal;
+  }
+
+  /**
+   * Returns 'true' if [mode] equals to [StepMode.Vertical | 'vertical'], else 'false'.
+   */
+  isVertical(): boolean {
+    return this._mode === StepMode.Vertical;
+  }
+
+  areStepsActive(): boolean {
+    return this._steps.filter((step: TdStepComponent) => {
+      return step.active;
+    }).length > 0;
+  }
+
+  /**
    * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent] 
    * and emits [onStepChange] event.
    */
@@ -75,9 +115,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
         newStep: stepNumber,
         prevStep: prevStep,
       };
-      if (!this._multiple) {
-        this._deactivateAllBut(stepNumber);
-      }
+      this._deactivateAllBut(stepNumber);
       this.onStepChange.emit(event);
     }
   }

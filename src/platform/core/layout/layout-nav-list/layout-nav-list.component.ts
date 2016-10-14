@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular2-material/sidenav';
+import { MdSidenav } from '@angular/material';
 
 import { TdLayoutService } from '../services/layout.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-layout-nav-list',
-  styleUrls: [ 'layout-nav-list.component.css' ],
+  styleUrls: [ 'layout-nav-list.component.scss' ],
   templateUrl: 'layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent {

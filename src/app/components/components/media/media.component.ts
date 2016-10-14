@@ -4,9 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { TdMediaService } from '../../../../platform/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'media-demo',
-  styleUrls: [ 'media.component.css' ],
+  styleUrls: [ 'media.component.scss' ],
   templateUrl: 'media.component.html',
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
@@ -29,7 +28,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
     query: 'md',
     value: false,
   }, {
-    query: 'gt-gm',
+    query: 'gt-md',
     value: false,
   }, {
     query: 'lg',
@@ -58,12 +57,12 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
   }];
 
   mediaServiceMethods: Object[] = [{
-    description: `Used to evaluate whether a given media query is true or false given the 
+    description: `Used to evaluate whether a given media query is true or false given the
                   current device's screen / window size.`,
     name: 'query',
     type: 'function(query: string)',
   }, {
-    description: `Registers a media query and returns an [Observable] that will re-evaluate and 
+    description: `Registers a media query and returns an [Observable] that will re-evaluate and
                   return if the given media query matches on window resize.`,
     name: 'registerQuery',
     type: 'function(query: string)',

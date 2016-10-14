@@ -1,0 +1,113 @@
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+$background: $md-light-theme-background;
+$accent: md-palette($md-blue);
+$warn: md-palette($md-red);
+
+$step-circle: 24px;
+
+:host /deep/ {
+  md-nav-list {
+    padding-top: 0px;
+    [md-list-item]:active,
+    [md-list-item]:focus {
+      outline: none;
+    }
+    [md-list-item].md-interaction-disabled .md-list-item {
+      background: none !important;
+    }
+    .md-list-item {
+      flex: 1;
+      height: 72px !important;
+      padding: 0px !important;
+    }
+  }
+}
+.md-ripple-boundary {
+  position: relative;
+  height: 72px;
+}
+.td-step-header {
+  md-icon.td-edit-icon {
+    margin-right: 8px;
+  }
+}
+.md-caption {
+  color: md-color($foreground, secondary-text);
+}
+.md-disabled {
+  &, & * {
+    color: md-color($foreground, disabled);
+  }
+}
+.md-warn {
+  &, & * {
+    color: md-color($warn);
+  }
+}
+.md-complete {
+  color: md-color($accent);
+}
+md-icon {
+  &.md-warn {
+    font-size: $step-circle;
+    height: $step-circle;
+    width: $step-circle;
+  }
+  &.md-complete {
+    position: relative;
+    left: -2px;
+    top: 2px;
+    font-size: $step-circle + 4;
+    height: $step-circle;
+    width: $step-circle;
+  }
+}
+.td-circle {
+  height: $step-circle;
+  width: $step-circle;
+  line-height: $step-circle;
+  border-radius: 99%;
+  color: #ffffff;
+  text-align: center;
+  flex: none;
+  &.md-active {
+    background-color: md-color($accent);
+  }
+  &.md-inactive {
+    background-color: md-color($foreground, disabled);
+  }
+  & md-icon {
+    fill: #ffffff;
+    margin-top: 2px;
+    font-weight: bold;
+  }
+}
+.td-triangle {
+  color: md-color($warn);
+  & > md-icon {
+    font-size: 27px;
+  }
+}
+.td-complete {
+  font-size: 0;
+}
+.td-circle,
+.td-complete {
+  margin-left: 8px;
+  font-size: 14px;
+}
+.td-triangle {
+  margin-left: 7px;
+}
+.td-step-label {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.td-step-sublabel {
+  line-height: 14px;
+  font-weight: normal;
+}

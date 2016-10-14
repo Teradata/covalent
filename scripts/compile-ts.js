@@ -10,19 +10,27 @@ var tsProject = ts.createProject({
       declaration: true,
       emitDecoratorMetadata: true,
       experimentalDecorators: true,
-      module: "commonjs",
+      mapRoot: "./",
+      lib: ["es6", "dom"],
+      module: "es6",
       moduleResolution: "node",
       noEmitOnError: true,
       noImplicitAny: false,
       target: "ES5",
-      typescript: require('typescript')
+      typescript: require('typescript'),
+      typeRoots: [
+        "../node_modules/@types"
+      ],
+      types: [
+        "hammerjs"
+      ]
     });
 
 gulp.task('compile-ts', 'Build the UDA scripts', function() {
   var tsResult = gulp
     .src(config.paths.tsfiles)
     .pipe(sourcemaps.init())
-    .pipe(ts(tsProject));
+    .pipe(tsProject());
 
   return merge(tsResult.dts
     .pipe(gulp.dest('deploy/')),

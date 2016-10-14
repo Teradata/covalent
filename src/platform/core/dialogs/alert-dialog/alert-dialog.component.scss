@@ -1,0 +1,10 @@
+@media (min-width: 600px) {
+  td-dialog {
+    width: 400px;
+  }
+}
+@media (max-width: 599px) {
+  td-dialog {
+    width: 250px;
+  }
+}

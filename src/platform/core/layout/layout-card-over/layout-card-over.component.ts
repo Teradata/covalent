@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'td-layout-card-over',
-  styleUrls: [ 'layout-card-over.component.css' ],
+  styleUrls: [ 'layout-card-over.component.scss' ],
   templateUrl: 'layout-card-over.component.html',
 })
 export class TdLayoutCardOverComponent {

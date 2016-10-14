@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-docs',
-  styleUrls: ['docs.component.css'],
+  styleUrls: ['docs.component.scss'],
   templateUrl: 'docs.component.html',
 })
 export class DocsComponent {

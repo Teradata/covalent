@@ -6,92 +6,100 @@
     <md-card-content>
       <div layout-gt-md="row">
         <div flex-gt-md="45">
-          <td-steps multiple>
+          <td-steps>
             <td-step [active]="true" label="Step 1: td-layout" sublabel="td-layout is the wrapper component">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
-                  <p md-line>The wrapper of your entire layout</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>#layout</code></h3>
-                  <p md-line>The ID and local reference of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>title?: string</code></h3>
-                  <p md-line>The title of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>logo?: string</code></h3>
-                  <p md-line>The path to your sidenav logo</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
+              <template td-step-content>
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
+                    <p md-line>The wrapper of your entire layout</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>#layout</code></h3>
+                    <p md-line>The ID and local reference of your sidenav</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>title?: string</code></h3>
+                    <p md-line>The title of your sidenav</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>logo?: string</code></h3>
+                    <p md-line>The path to your sidenav logo</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </template>
             </td-step>
-            <td-step [active]="true" label="Step 2: menu-items" sublabel="the sidenav menu items">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
-                  <p md-line>The menu items wrapper</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
-                  <p md-line>Loops over the routes from your Class</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
-                  <p md-line>The SVG or font icon</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
+            <td-step label="Step 2: menu-items" sublabel="the sidenav menu items">
+              <template td-step-content>
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
+                    <p md-line>The menu items wrapper</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
+                    <p md-line>Loops over the routes from your Class</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
+                    <p md-line>The SVG or font icon</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </template>
             </td-step>
-            <td-step [active]="true" label="Step 3: td-layout-nav" sublabel="the content wrapper of the layout">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
-                  <p md-line>Builds the top toolbar and content area</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>title?: string</code></h3>
-                  <p md-line>The title of your toolbar</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>logo?: string</code></h3>
-                  <p md-line>The path to your toolbar logo</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
+            <td-step label="Step 3: td-layout-nav" sublabel="the content wrapper of the layout">
+              <template td-step-content>
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
+                    <p md-line>Builds the top toolbar and content area</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>title?: string</code></h3>
+                    <p md-line>The title of your toolbar</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>logo?: string</code></h3>
+                    <p md-line>The path to your toolbar logo</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </template>
             </td-step>
-            <td-step [active]="true" label="Step 4: td-layout-card-over" sublabel="the main card content area">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout-card-over>]]></code></h3>
-                  <p md-line>Builds the card and content area</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>title?: string</code></h3>
-                  <p md-line>The card title</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>subtitle?: string</code></h3>
-                  <p md-line>The card subtitle</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
-                  <p md-line>Loads html for each route (view)</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
+            <td-step label="Step 4: td-layout-card-over" sublabel="the main card content area">
+              <template td-step-content>
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-card-over>]]></code></h3>
+                    <p md-line>Builds the card and content area</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>title?: string</code></h3>
+                    <p md-line>The card title</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>subtitle?: string</code></h3>
+                    <p md-line>The card subtitle</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
+                    <p md-line>Loads html for each route (view)</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </template>
             </td-step>
           </td-steps>
         </div>

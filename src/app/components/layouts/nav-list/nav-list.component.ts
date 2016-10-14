@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'layouts-nav-list',
-  styleUrls: ['nav-list.component.css'],
+  styleUrls: ['nav-list.component.scss'],
   templateUrl: 'nav-list.component.html',
 })
 export class NavListComponent {
