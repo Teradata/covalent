@@ -1,2 +1,3 @@
-export { TdChartsComponent, TdXAxisComponent, TdYLeftAxisComponent, TdYRightAxisComponent } from './charts.component';
+export { TdChartsComponent, TdXAxisComponent, TdYLeftAxisComponent,
+         TdYRightAxisComponent, IChartMargin } from './charts.component';
 export { CovalentChartsModule } from './charts.module';

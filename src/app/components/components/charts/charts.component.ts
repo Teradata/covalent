@@ -9,32 +9,28 @@ export class ChartsDemoComponent {
 
   chartsAttr: Object[] = [{
     description: 'Sets the Chart Title.',
-    name: 'chartTitle?',
+    name: 'title?',
     type: 'string',
   }, {
-    description: 'Sets the title for bottom axis',
-    name: 'bottomAxisTitle?',
-    type: 'string',
-  }, {
-    description: 'Sets the title for left axis',
-    name: 'leftAxisTitle?',
+    description: 'Sets the height of the chart',
+    name: 'chartHeight?',
     type: 'string',
   }, {
     description: 'Set the parameters for shadowDepth (size, y offset, x offset, blur)',
     name: 'shadowDepth?',
     type: 'array[]',
   }, {
-    description: 'Sets shadow color for the bars (rgba preferred)',
+    description: 'Sets shadow color for the charts (rgba preferred)',
     name: 'shadowColor?',
     type: 'string',
   }, {
-    description: 'Sets opacity for the bars.',
+    description: 'Sets opacity for the charts.',
     name: 'fillOpacity?',
     type: 'number',
   }, {
     description: 'Sets SVG margin (top, right, bottom, left)',
     name: 'margin?',
-    type: 'array[]',
+    type: 'IChartMargin',
   }];
 
   barChartAttrs: Object[] = [{
@@ -152,6 +148,10 @@ export class ChartsDemoComponent {
   }];
 
   axisAttrs: Object[] = [{
+    description: 'Reference to the chart',
+    name: 'link',
+    type: 'Any [td-chart-xxx] element',
+  }, {
     description: 'Sets display as true/false for rendering ticks',
     name: 'ticks?',
     type: 'boolean',
