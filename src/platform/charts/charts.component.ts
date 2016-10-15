@@ -253,6 +253,8 @@ export class TdChartsComponent implements OnInit {
   }
 
   container: HTMLElement;
+  chartCount: number = 0;
+  chartTotal: number = 0;
 
   @ContentChild(TdXAxisComponent) xAxis: TdXAxisComponent;
   @ContentChild(TdYLeftAxisComponent) leftYAxis: TdYLeftAxisComponent;
@@ -314,23 +316,28 @@ export class TdChartsComponent implements OnInit {
       .append('g')
       .classed('chartG', true)
       .attr('transform', 'translate(' + this._margin.left + ',' + this._margin.top + ')');
+  }
 
-    setTimeout(() => {
-      let svg: any = d3.select(this.container)
+  drawAxis(): void {
+    let svg: any = d3.select(this.container)
                      .selectAll('.chartG');
-      if (this.leftYAxis) {
-        this.leftYAxis.draw(svg);
-      }
-      if (this.rightYAxis) {
-        this.rightYAxis.draw(svg);
-      }
-      if (this.xAxis) {
-        this.xAxis.draw(svg);
-      }
-    });
+    if (this.leftYAxis) {
+      this.leftYAxis.draw(svg);
+    }
+    if (this.rightYAxis) {
+      this.rightYAxis.draw(svg);
+    }
+    if (this.xAxis) {
+      this.xAxis.draw(svg);
+    }
   }
 
   drawContainer(): string {
+    this.chartCount++;
+    if (this.chartCount === this.chartTotal) {
+      this.drawAxis();
+    }
+
     let defs: any = d3.select(this.container)
                       .select('svg')
                       .append('defs');
