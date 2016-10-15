@@ -105,7 +105,7 @@ export const TD_DIALOG_ENTRY_COMPONENTS: Type<any>[] = [
   TdPromptDialogComponent,
 ];
 
-export { TdDialogService } from './dialogs/services/dialog.service';
+export { TdDialogService, IAlertConfig, IConfirmConfig, IPromptConfig } from './dialogs/services/dialog.service';
 export { TdDialogComponent, TdDialogTitleDirective } from './dialogs/dialog.component';
 export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';

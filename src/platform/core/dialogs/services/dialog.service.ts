@@ -5,22 +5,22 @@ import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 
-interface IDialogConfig {
+export interface IDialogConfig {
   title?: string;
   message: string;
   viewContainerRef?: ViewContainerRef;
 }
 
-interface IAlertConfig extends IDialogConfig {
+export interface IAlertConfig extends IDialogConfig {
   closeButton?: string;
 }
 
-interface IConfirmConfig extends IDialogConfig {
+export interface IConfirmConfig extends IDialogConfig {
   acceptButton?: string;
   cancelButton?: string;
 }
 
-interface IPromptConfig extends IConfirmConfig {
+export interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
 
