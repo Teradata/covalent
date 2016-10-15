@@ -270,6 +270,7 @@ export class TdChartsComponent implements OnInit {
 
   @Input() title: string = '';
   @Input() fillOpacity: number = 1;
+  @Input() shadow: boolean = false;
   @Input() shadowColor: string = 'rgba(0, 0, 0, 0.54)';
   @Input() shadowDepth: any[] = ['125%', 2, 0, 2];
   @Input() chartHeight: number = 450;
@@ -339,38 +340,42 @@ export class TdChartsComponent implements OnInit {
     }
 
     let defs: any = d3.select(this.container)
-                      .select('svg')
-                      .append('defs');
+                        .select('svg')
+                        .append('defs');
     let svg: any = d3.select(this.container)
-                     .selectAll('.chartG');
+                      .selectAll('.chartG');
 
     svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-      .text(this.title)
-      .attr('class', 'md-title');
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
+        .text(this.title)
+        .attr('class', 'md-title');
 
     let defsStr: string = Math.random().toString().slice(2);
 
     let defsClass: string = 'drop-shadow' + defsStr;
 
     let filter: any = defs.append('filter')
-      .attr('id', defsClass)
-      .attr('height', this.shadowDepth[0]);
+                          .attr('id', defsClass);
 
-    filter.append('feGaussianBlur')
-      .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', this.shadowDepth[1])
-      .attr('result', 'blur');
+    if (this.shadow) {
+      filter
+        .attr('height', this.shadowDepth[0]);
 
-    filter.append('feOffset')
-      .attr('in', 'blur')
-      .attr('dx', this.shadowDepth[2])
-      .attr('dy', this.shadowDepth[3])
-      .attr('result', 'offsetBlur');
+      filter.append('feGaussianBlur')
+        .attr('in', 'SourceAlpha')
+        .attr('stdDeviation', this.shadowDepth[1])
+        .attr('result', 'blur');
 
-    filter.append('feFlood')
-      .attr('flood-color', this.shadowColor);
+      filter.append('feOffset')
+        .attr('in', 'blur')
+        .attr('dx', this.shadowDepth[2])
+        .attr('dy', this.shadowDepth[3])
+        .attr('result', 'offsetBlur');
+
+      filter.append('feFlood')
+        .attr('flood-color', this.shadowColor);
+    }
 
     filter.append('feComposite')
       .attr('in2', 'offsetBlur')

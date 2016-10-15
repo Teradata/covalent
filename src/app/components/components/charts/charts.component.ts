@@ -16,6 +16,10 @@ export class ChartsDemoComponent {
     name: 'chartHeight?',
     type: 'string',
   }, {
+    description: 'Flag to enable shadows in chart',
+    name: 'shadow?',
+    type: 'boolean',
+  }, {
     description: 'Set the parameters for shadowDepth (size, y offset, x offset, blur)',
     name: 'shadowDepth?',
     type: 'array[]',

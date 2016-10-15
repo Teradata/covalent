@@ -10,6 +10,7 @@ Properties:
 | --- | --- | --- |
 | `title?` | `string` | Sets the Chart Title
 | `chartHeight?` | `string` | Sets the height of the chart
+| `shadow?` | `boolean` | Flag to enable shadows in chart
 | `shadowDepth?` | `array[]` | Set the parameters for shadowDepth (size, y offset, x offset, blur)
 | `shadowColor?` | `string` | Sets shadow color for the charts (rgba preferred)
 | `fillOpacity?` | `number` | Sets opacity for the charts
@@ -39,6 +40,7 @@ Example for HTML usage:
 <td-charts title="Sales Bar/Line Combo Chart"
           [margin]="{top: 50, bottom: 50}"
           chartHeight="450"
+          [shadow]="true"
           [shadowDepth]="['125%', 2, 0, 2]"
           shadowColor="rgba(0, 0, 0, 0.54)"
           fillOpacity="0.95">
