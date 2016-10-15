@@ -269,9 +269,9 @@ export class TdChartsComponent implements OnInit {
   }
 
   @Input() title: string = '';
-  @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
-  @Input() shadowDepth: any[];
+  @Input() shadowColor: string = 'rgba(0, 0, 0, 0.54)';
+  @Input() shadowDepth: any[] = ['125%', 2, 0, 2];
   @Input() chartHeight: number = 450;
 
   constructor(elementRef: ElementRef) {
