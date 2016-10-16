@@ -1,4 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -29,7 +30,8 @@ export class TdChartLineComponent extends ChartComponent {
   @Input() titles: string[];
   @Input() timeSeries: boolean = false;
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent,
+              private _platformLocation: PlatformLocation) {
     super(parent);
   }
 
@@ -101,7 +103,7 @@ export class TdChartLineComponent extends ChartComponent {
           return this.getTotalLength();
         }
       })
-      .style('filter', 'url(#' + defsId + ')');
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
 
     if (this.transition === true) {
       svg.selectAll('.line').transition(t)

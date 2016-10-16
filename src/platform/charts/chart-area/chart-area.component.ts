@@ -1,4 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -27,7 +28,8 @@ export class TdChartAreaComponent extends ChartComponent {
   @Input() columns: string;
   @Input() colors: string[] = ['#03a9f4', '#0277bd'];
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent,
+              private _platformLocation: PlatformLocation) {
     super(parent);
   }
 
@@ -92,15 +94,15 @@ export class TdChartAreaComponent extends ChartComponent {
       .attr('fill', this.colors[0])
       .attr('stroke', this.colors[1])
       .attr('d', area)
-      .attr('clip-path', 'url(#rectClip)')
-      .style('filter', 'url(#' + defsId + ')');
+      .attr('clip-path', 'url(' + this._platformLocation.pathname + '#rectClip)')
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
 
     d3.select(this._parent.container).selectAll('.chart-area')
       .append('path')
       .data([data])
       .attr('class', 'line')
       .attr('d', valueline)
-      .attr('clip-path', 'url(#rectClip)')
-      .style('filter', 'url(#' + defsId + ')');
+      .attr('clip-path', 'url(' + this._platformLocation.pathname + '#rectClip)')
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
   }
 }

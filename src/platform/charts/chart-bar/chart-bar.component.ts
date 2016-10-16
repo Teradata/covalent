@@ -1,4 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -33,7 +34,8 @@ export class TdChartBarComponent extends ChartComponent {
   @Input() colors: string[];
   @Input() padding: number = 0;
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent,
+              private _platformLocation: PlatformLocation) {
     super(parent);
   }
 
@@ -72,7 +74,7 @@ export class TdChartBarComponent extends ChartComponent {
         return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
       })
       .attr('transform', (d: any) => { return 'translate(' + [x(d[this.bottomAxis]), this._parent.height] + ')'; })
-      .style('filter', 'url(#' + defsId + ')');
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
 
     if (this.transition === true) {
       this._transtion(svg, x, y);
