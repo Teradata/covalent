@@ -18,7 +18,7 @@ module.exports = {
     ],
     styles: [
       '!src/theme.scss',
-      '!src/styles.css',
+      '!src/styles.scss',
       'src/**/**.scss',
       '!src/app/**/**.scss',
       'src/**/**.css',
@@ -32,6 +32,7 @@ module.exports = {
       'src/**/MaterialIcons-Regular.woff',
       'src/**/MaterialIcons-Regular.woff2',
       '!src/theme.scss',
+      '!src/styles.scss',
       'src/**/**.scss',
       '!src/app/**/**.scss',
       'src/**/**.html',

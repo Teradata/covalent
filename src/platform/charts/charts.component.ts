@@ -253,6 +253,8 @@ export class TdChartsComponent implements OnInit {
   }
 
   container: HTMLElement;
+  chartCount: number = 0;
+  chartTotal: number = 0;
 
   @ContentChild(TdXAxisComponent) xAxis: TdXAxisComponent;
   @ContentChild(TdYLeftAxisComponent) leftYAxis: TdYLeftAxisComponent;
@@ -267,9 +269,10 @@ export class TdChartsComponent implements OnInit {
   }
 
   @Input() title: string = '';
-  @Input() shadowColor: string = '';
   @Input() fillOpacity: number = 1;
-  @Input() shadowDepth: any[];
+  @Input() shadow: boolean = false;
+  @Input() shadowColor: string = 'rgba(0, 0, 0, 0.54)';
+  @Input() shadowDepth: any[] = ['125%', 2, 0, 2];
   @Input() chartHeight: number = 450;
 
   constructor(elementRef: ElementRef) {
@@ -314,52 +317,59 @@ export class TdChartsComponent implements OnInit {
       .append('g')
       .classed('chartG', true)
       .attr('transform', 'translate(' + this._margin.left + ',' + this._margin.top + ')');
+  }
 
-    setTimeout(() => {
-      let svg: any = d3.select(this.container)
+  drawAxis(): void {
+    let svg: any = d3.select(this.container)
                      .selectAll('.chartG');
-      if (this.leftYAxis) {
-        this.leftYAxis.draw(svg);
-      }
-      if (this.rightYAxis) {
-        this.rightYAxis.draw(svg);
-      }
-      if (this.xAxis) {
-        this.xAxis.draw(svg);
-      }
-    });
+    if (this.leftYAxis) {
+      this.leftYAxis.draw(svg);
+    }
+    if (this.rightYAxis) {
+      this.rightYAxis.draw(svg);
+    }
+    if (this.xAxis) {
+      this.xAxis.draw(svg);
+    }
   }
 
   drawContainer(): string {
+    this.chartCount++;
+    if (this.chartCount === this.chartTotal) {
+      this.drawAxis();
+    }
+
     let defs: any = d3.select(this.container)
-                      .select('svg')
-                      .append('defs');
+                        .select('svg')
+                        .append('defs');
     let svg: any = d3.select(this.container)
-                     .selectAll('.chartG');
+                      .selectAll('.chartG');
 
     svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
-      .text(this.title)
-      .attr('class', 'md-title');
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(' + (this._width / 2) + ',' + (0 - (this._margin.top / 2)) + ')')
+        .text(this.title)
+        .attr('class', 'md-title');
 
     let defsStr: string = Math.random().toString().slice(2);
 
     let defsClass: string = 'drop-shadow' + defsStr;
 
     let filter: any = defs.append('filter')
-      .attr('id', defsClass)
-      .attr('height', this.shadowDepth[0]);
+                          .attr('id', defsClass);
+
+    filter
+      .attr('height', this.shadow ? this.shadowDepth[0] : '125%');
 
     filter.append('feGaussianBlur')
       .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', this.shadowDepth[1])
+      .attr('stdDeviation', this.shadow ? this.shadowDepth[1] : 0)
       .attr('result', 'blur');
 
     filter.append('feOffset')
       .attr('in', 'blur')
-      .attr('dx', this.shadowDepth[2])
-      .attr('dy', this.shadowDepth[3])
+      .attr('dx', this.shadow ? this.shadowDepth[2] : 0)
+      .attr('dy', this.shadow ? this.shadowDepth[3] : 0)
       .attr('result', 'offsetBlur');
 
     filter.append('feFlood')

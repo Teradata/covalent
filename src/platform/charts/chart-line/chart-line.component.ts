@@ -1,4 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -29,7 +30,8 @@ export class TdChartLineComponent extends ChartComponent {
   @Input() titles: string[];
   @Input() timeSeries: boolean = false;
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent,
+              private _platformLocation: PlatformLocation) {
     super(parent);
   }
 
@@ -58,11 +60,7 @@ export class TdChartLineComponent extends ChartComponent {
       .x((d: any) => { return x(d.xValue); })
       .y((d: any) => { return y(d.yValue); });
 
-    let defsId: string = this._parent.drawContainer();
-
-    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
-
-    let lines: Object = this.columns.map((id: any) => {
+    let lines: any[] = this.columns.map((id: any) => {
       return {
         id: id,
         values: data.map((d: any) => {
@@ -77,6 +75,10 @@ export class TdChartLineComponent extends ChartComponent {
       d3.min(lines, (c: any) => { return d3.min(c.values, (d: any) => { return d.yValue; }); }),
       d3.max(lines, (c: any) => { return d3.max(c.values, (d: any) => { return d.yValue; }); }),
     ]);
+
+    let defsId: string = this._parent.drawContainer();
+
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     let line: any = svg.append('g')
       .classed('chart-lines', true)
@@ -101,7 +103,7 @@ export class TdChartLineComponent extends ChartComponent {
           return this.getTotalLength();
         }
       })
-      .style('filter', 'url(#' + defsId + ')');
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
 
     if (this.transition === true) {
       svg.selectAll('.line').transition(t)
