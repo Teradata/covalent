@@ -51,6 +51,17 @@ export class TdChartAreaComponent extends ChartComponent {
         .x((d: any) => { return x(d[this.bottomAxis]); })
         .y((d: any) => { return y(d[this.columns]); });
 
+    data.forEach((d: any) => {
+        d[this.bottomAxis] = d[this.bottomAxis];
+        d[this.columns] = +d[this.columns];
+    });
+
+    x.domain([
+      d3.min(data, (d: any) => { return d[this.bottomAxis]; }),
+      d3.max(data, (d: any) => { return d[this.bottomAxis]; }),
+    ]);
+    y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
+
     let defsId: string = this._parent.drawContainer();
 
     let svg: any = d3.select(this._parent.container).selectAll('.chartG');
@@ -62,17 +73,6 @@ export class TdChartAreaComponent extends ChartComponent {
         .attr('width', 0)
         .attr('height', this._parent.height);
     }
-
-    data.forEach((d: any) => {
-        d[this.bottomAxis] = d[this.bottomAxis];
-        d[this.columns] = +d[this.columns];
-    });
-
-    x.domain([
-      d3.min(data, (d: any) => { return d[this.bottomAxis]; }),
-      d3.max(data, (d: any) => { return d[this.bottomAxis]; }),
-    ]);
-    y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
 
     if (this.transition === true) {
       d3.select('#rectClip rect')

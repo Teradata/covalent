@@ -48,16 +48,16 @@ export class TdChartBarComponent extends ChartComponent {
     this._x = x;
     this._y = y;
 
-    let defsId: string = this._parent.drawContainer();
-
-    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
-
     data.forEach((d: any) => {
       d[this.columns] = +d[this.columns];
     });
 
     x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
     y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
+
+    let defsId: string = this._parent.drawContainer();
+
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     let bar: any = svg.append('g')
       .classed('chart-bars', true)
