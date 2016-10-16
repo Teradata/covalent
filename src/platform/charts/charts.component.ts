@@ -359,7 +359,7 @@ export class TdChartsComponent implements OnInit {
                           .attr('id', defsClass);
 
     filter
-      .attr('height', this.shadow ? this.shadowDepth[0] : '100%');
+      .attr('height', this.shadow ? this.shadowDepth[0] : '125%');
 
     filter.append('feGaussianBlur')
       .attr('in', 'SourceAlpha')
