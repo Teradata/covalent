@@ -358,24 +358,22 @@ export class TdChartsComponent implements OnInit {
     let filter: any = defs.append('filter')
                           .attr('id', defsClass);
 
-    if (this.shadow) {
-      filter
-        .attr('height', this.shadowDepth[0]);
+    filter
+      .attr('height', this.shadow ? this.shadowDepth[0] : '100%');
 
-      filter.append('feGaussianBlur')
-        .attr('in', 'SourceAlpha')
-        .attr('stdDeviation', this.shadowDepth[1])
-        .attr('result', 'blur');
+    filter.append('feGaussianBlur')
+      .attr('in', 'SourceAlpha')
+      .attr('stdDeviation', this.shadow ? this.shadowDepth[1] : 0)
+      .attr('result', 'blur');
 
-      filter.append('feOffset')
-        .attr('in', 'blur')
-        .attr('dx', this.shadowDepth[2])
-        .attr('dy', this.shadowDepth[3])
-        .attr('result', 'offsetBlur');
+    filter.append('feOffset')
+      .attr('in', 'blur')
+      .attr('dx', this.shadow ? this.shadowDepth[2] : 0)
+      .attr('dy', this.shadow ? this.shadowDepth[3] : 0)
+      .attr('result', 'offsetBlur');
 
-      filter.append('feFlood')
-        .attr('flood-color', this.shadowColor);
-    }
+    filter.append('feFlood')
+      .attr('flood-color', this.shadowColor);
 
     filter.append('feComposite')
       .attr('in2', 'offsetBlur')
