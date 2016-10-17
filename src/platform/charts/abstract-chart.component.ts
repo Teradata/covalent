@@ -25,7 +25,9 @@ export abstract class ChartComponent implements OnInit {
     return this._y;
   }
 
-  constructor(protected _parent: TdChartsComponent) {}
+  constructor(protected _parent: TdChartsComponent) {
+    this._parent.chartTotal++;
+  }
 
   ngOnInit(): void {
     this._initialized = true;

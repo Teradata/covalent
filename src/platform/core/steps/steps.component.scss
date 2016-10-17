@@ -1,6 +1,6 @@
-@import '~@angular/material/core/theming/palette';
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/elevation';
+@import '../../../../node_modules/@angular/material/core/theming/palette';
+@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '../../../../node_modules/@angular/material/core/style/elevation';
 
 // TODO properly wrap in mixin to apply theme like material2 components
 $foreground: $md-light-theme-foreground;

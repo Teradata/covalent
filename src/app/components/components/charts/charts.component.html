@@ -4,11 +4,9 @@
   <md-divider></md-divider>
   <md-card-content>
   <md-card-title>Time Series Line Chart</md-card-title>
-  <md-card-subtitle>x-axis grid hidden</md-card-subtitle>
+  <md-card-subtitle>x-axis grid hidden, shadow disabled</md-card-subtitle>
   <td-charts title="Prices Trend"
-              [margin]="{top: 60, bottom: 100}"
-              [shadowDepth]="['125%', 2, 0, 2]"
-              shadowColor="rgba(0, 0, 0, 0.54)">
+              [margin]="{top: 60, bottom: 100}">
     <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
     <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="true" legend="Prices($)"></td-axis-y-left>
     <td-chart-line #chartLine1 dataSrc="platform/charts/chart-line/datatime.csv"
@@ -24,10 +22,9 @@
   </td-charts>
   <md-divider></md-divider>
   <md-card-title>Sparkline Chart</md-card-title>
-  <md-card-subtitle>x-axis hidden completely</md-card-subtitle>
+  <md-card-subtitle>x-axis hidden completely, shadow enabled</md-card-subtitle>
   <td-charts title="Prices Trend"
-              [shadowDepth]="['125%', 2, 0, 2]"
-              shadowColor="rgba(0, 0, 0, 0.54)"
+              [shadow]="true"
               chartHeight="150">
     <td-axis-x [link]="chartLine2" [show]="false"></td-axis-x>
     <td-chart-line #chartLine2 dataSrc="platform/charts/chart-line/datatime.csv"
@@ -45,8 +42,7 @@
   <md-card-title>Bar Chart</md-card-title>
   <md-card-subtitle>y-axis grid  &amp; ticks hidden</md-card-subtitle>
   <td-charts title="Sales Bar Chart"
-              [shadowDepth]="['125%', 2, 0, 2]"
-              shadowColor="rgba(0, 0, 0, 0.54)"
+              [shadow]="true"
               fillOpacity="0.95">
       <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true"  legend="Day Offset"></td-axis-x>
       <td-axis-y-left [link]="chartBar1" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
@@ -64,8 +60,7 @@
     <md-card-title>Single/Multi Line Chart</md-card-title>
     <md-card-subtitle>x-axis ticks &amp; grid hidden, y-axis grid hidden</md-card-subtitle>
     <td-charts title="Temperature Trend"
-                [shadowDepth]="['125%', 2, 0, 2]"
-                shadowColor="rgba(0, 0, 0, 0.54)">
+                [shadow]="true">
       <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
       <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Temperature"></td-axis-y-left>
       <td-chart-line #chartLine3 dataSrc="platform/charts/chart-line/data.tsv"
@@ -82,8 +77,7 @@
     <md-card-title>Area Chart</md-card-title>
     <md-card-subtitle>right y-axis used, x-axis grid hidden</md-card-subtitle>
     <td-charts title="Area Chart"
-                [shadowDepth]="['125%', 2, 0, 2]"
-                shadowColor="rgba(0, 0, 0, 0.54)"
+                [shadow]="true"
                 fillOpacity="0.75">
       <td-axis-x [link]="chartArea1" [ticks]="true" [show]="true" [grid]="false" legend="X Axis"></td-axis-x>
       <td-axis-y-right [link]="chartArea1" [ticks]="true" [show]="true" [grid]="true" legend="Numbers"></td-axis-y-right>
@@ -100,8 +94,7 @@
   <md-card-title>Combo Chart</md-card-title>
   <md-card-subtitle>dual y-axis, x-axis grid hidden</md-card-subtitle>
   <td-charts title="Sales Bar/Line Chart"
-              [shadowDepth]="['125%', 2, 0, 2]"
-              shadowColor="rgba(0, 0, 0, 0.54)"
+              [shadow]="true"
               fillOpacity="0.95">
       <td-axis-x [link]="chartLine4" [ticks]="true" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
       <td-axis-y-left [link]="chartLine4" [ticks]="true" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
@@ -154,6 +147,7 @@
         <td-charts title="Sales Bar/Line Combo Chart"
                   [margin]="{top: 50, bottom: 50}"
                   chartHeight="450"
+                  [shadow]="true"
                   [shadowDepth]="['125%', 2, 0, 2]"
                   shadowColor="rgba(0, 0, 0, 0.54)"
                   fillOpacity="0.95">
