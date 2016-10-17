@@ -1,12 +1,11 @@
-<div layout="row" layout-align="start center" *ngIf="_title && !_searchVisible">
-  <span class="md-subhead">{{_title}}</span>
+<div class="td-data-table-header" layout="row" layout-align="start center" *ngIf="(title || _search) && !_searchVisible">
+  <span class="md-title">{{title}}</span>
   <span flex></span>
-  <button md-icon-button (click)="toggleSearch()">
-    <md-icon *ngIf="_search">filter_list</md-icon>
+  <button md-icon-button *ngIf="_search" (click)="toggleSearch()">
+    <md-icon>filter_list</md-icon>
   </button>
 </div>
-
-<div layout="row" layout-align="start center" *ngIf="_searchVisible">
+<div class="td-data-table-header" layout="row" layout-align="start center" *ngIf="_searchVisible">
   <md-icon>search</md-icon>
   <form flex layout="row" name="filter.form">
     <md-input flex #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
@@ -79,22 +78,18 @@
   </table>
 </div>
 
-<div class="md-body-1" *ngIf="_visibleData.length < 1">
-  No results
+<div class="md-padding" *ngIf="!hasData && _search" layout="row" layout-align="center center">
+  <h3>No results.</h3>
 </div>
 
-<div layout="row" layout-align="end center" class="md-caption md-table-pagination" *ngIf="_pagination && hasData">
-  <span>
+<div layout="row" layout-align="end center" class="md-caption md-table-pagination td-data-table-footer" *ngIf="_pagination && hasData">
+  <span class="td-data-table-pages">
     {{ _currentPage }} of {{ _totalPages }}
   </span>
   <button md-icon-button (click)="prevPage()">
-    <md-icon *ngIf="_search">keyboard_arrow_left</md-icon>
+    <md-icon>keyboard_arrow_left</md-icon>
   </button>
   <button md-icon-button (click)="nextPage()">
-    <md-icon *ngIf="_search">keyboard_arrow_right</md-icon>
+    <md-icon>keyboard_arrow_right</md-icon>
   </button>
-</div>
-
-<div class="md-body-1" *ngIf="_pagination && !hasData">
-  No pages
 </div>

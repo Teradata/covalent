@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, Output,
+import { Component, OnInit, Input, Output,
          EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
@@ -28,7 +28,7 @@ export interface ITdDataTableSortEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit, AfterViewInit {
+export class TdDataTableComponent implements OnInit {
 
   /** internal attributes */
   private _data: any[];
@@ -38,7 +38,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   private _rowSelectionField: string = 'selected';
   private _multiple: boolean = true;
   private _search: boolean = false;
-  private _hasData: boolean = false;
   private _initialized: boolean = false;
 
   /** pagination */
@@ -63,7 +62,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   @Output() sortChanged: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
   /** td-data-table element attributes */
-  @Input('title') _title: string;
+  @Input('title') title: string;
 
   @Input('data')
   set data(data: Object[]) {
@@ -174,7 +173,7 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
   }
 
   get hasData(): boolean {
-    return this._hasData;
+    return this._visibleData.length > 0;
   }
 
   constructor(private renderer: Renderer) {}
@@ -183,9 +182,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
     this._searchTermControl.valueChanges
       .debounceTime(250)
       .subscribe(this.searchTermChanged.bind(this));
-  }
-
-  ngAfterViewInit(): void {
     this.preprocessData();
     this._initialized = true;
     this.filterData();
@@ -323,8 +319,6 @@ export class TdDataTableComponent implements OnInit, AfterViewInit {
       this._totalPages = Math.ceil(this._visibleData.length / this._pageSize);
       this._visibleData = this._visibleData.slice(pageStart, pageEnd);
     }
-
-    this._hasData = this._visibleData.length > 0;
   }
 
 }
