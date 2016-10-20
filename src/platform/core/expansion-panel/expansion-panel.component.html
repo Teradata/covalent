@@ -3,7 +3,8 @@
   <md-nav-list>
     <a [tabIndex]="disabled? -1 : 0"
        (keydown.enter)="clickEvent()"
-       (click)="clickEvent()"       
+       (click)="clickEvent()"
+       [class.md-interaction-disabled]="disabled"
        md-list-item>
       <div [class.md-disabled]="disabled"
            layout="row" 

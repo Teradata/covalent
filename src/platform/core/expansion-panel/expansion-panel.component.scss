@@ -2,6 +2,18 @@
 @import '../styles/default-theme';
 @import '../styles/shadows';
 
+:host /deep/ {
+  md-nav-list {
+    [md-list-item]:active,
+    [md-list-item]:focus {
+      outline: none;
+    }
+    [md-list-item].md-interaction-disabled .md-list-item {
+      background: none !important;
+      cursor: auto;
+    }
+  }
+}
 :host {
   background-color: #fff;
   display: block;
