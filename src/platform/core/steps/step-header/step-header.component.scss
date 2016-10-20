@@ -18,6 +18,7 @@ $step-circle: 24px;
     }
     [md-list-item].md-interaction-disabled .md-list-item {
       background: none !important;
+      cursor: auto;
     }
     .md-list-item {
       flex: 1;
