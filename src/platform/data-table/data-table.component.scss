@@ -10,6 +10,27 @@ $checkbox-size: 18px;
   -webkit-overflow-scrolling: touch;
 }
 
+.td-data-table-header {
+  height: 64px;
+  padding-left: 24px;
+}
+.td-data-table-footer {
+  height: 48px;
+  span.td-data-table-pages {
+    margin-left: 32px;
+    margin-right: 8px;
+  }
+}
+.td-data-table-header,
+.td-data-table-footer {
+  button[md-icon-button] {
+    margin-left: 16px;
+    &:last-child {
+      margin-right: 6px;
+    }
+  }
+}
+
 table.md-table {
   width: 100%;
   border-spacing: 0;

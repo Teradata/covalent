@@ -10,6 +10,12 @@ $accent: md-palette($md-light-blue, 50);
 .md-row {
   border-bottom-color: md-color($foreground, divider);
 }
+.td-data-table-header,
+.td-data-table-footer {
+  button[md-icon-button] {
+    color: md-color($foreground, secondary-text);
+  }
+}
 .md-checkbox-cell,
 .md-checkbox-column {
   color: md-color($foreground, secondary-text);

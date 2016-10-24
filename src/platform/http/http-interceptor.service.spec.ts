@@ -5,6 +5,7 @@ import {
 } from '@angular/core/testing';
 import { Injector } from '@angular/core';
 import { XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import { MockBackend } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { HttpInterceptorService } from './http-interceptor.service';
@@ -31,6 +32,35 @@ describe('Service: HttpInterceptor', () => {
       ],
     });
   }));
+
+  it('expect to do a forkJoin get succesfully with observables',
+    async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: any) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+
+      Observable.forkJoin(
+        service.get('testurl'),
+        service.get('testurl'))
+      .subscribe((response: Response[]) => {
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
 
   it('expect to do a post succesfully with observables',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
