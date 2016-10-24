@@ -18,6 +18,7 @@ import { CovalentJsonFormatterModule } from '../platform/json-formatter';
 import { CovalentChipsModule } from '../platform/chips';
 import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDataTableModule } from '../platform/data-table';
+import { CovalentPagingBarModule } from '../platform/paging';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CovalentDataTableModule } from '../platform/data-table';
     CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
+    CovalentPagingBarModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [

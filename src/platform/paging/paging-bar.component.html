@@ -1,0 +1,25 @@
+<div layout="row" layout-align="end center" class="md-caption md-table-pagination">
+  <span class="td-data-table-per-page">
+    Rows per page:
+  </span>
+  <span class="td-page-size">
+    <span>{{pageSize}}</span>
+  </span>
+  <button md-icon-button [md-menu-trigger-for]="pageSizeMenu">
+    <md-icon>arrow_drop_down</md-icon>
+  </button>
+  <span class="td-data-table-ranges">
+    {{range}} <span>of</span> {{total}}
+  </span>
+  <button md-icon-button class="td-page-prev" [disabled]="isMinPage()" (click)="prevPage()">
+    <md-icon>keyboard_arrow_left</md-icon>
+  </button>
+  <button md-icon-button class="td-page-next" [disabled]="isMaxPage()" (click)="nextPage()">
+    <md-icon>keyboard_arrow_right</md-icon>
+  </button>
+</div>
+<md-menu x-position="before" #pageSizeMenu="mdMenu">
+  <template let-size ngFor [ngForOf]="pageSizes">
+    <button md-menu-item (click)="pageSize = size">{{size}}</button>
+  </template>
+</md-menu>

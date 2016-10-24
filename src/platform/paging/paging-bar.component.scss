@@ -1,0 +1,35 @@
+@import '../../../node_modules/@angular/material/core/theming/palette';
+@import '../../../node_modules/@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+
+.md-table-pagination {
+  height: 48px;
+  color: md-color($foreground, secondary-text);
+  span.td-data-table-per-page {
+    margin-right: 40px;
+  }
+  span.td-page-size {
+    position: relative;
+    span {
+      position: absolute;
+      right: 0px;
+      top: -7px;
+    }
+  }
+  span.td-data-table-ranges {
+    margin-left: 32px;
+  }
+  button[md-icon-button] {
+    width: 24px;
+    height: 24px;
+    &.td-page-prev {
+      margin-left: 32px;
+    }
+    &.td-page-next {
+      margin-left: 24px;
+      margin-right: 14px;
+    }        
+  }
+}
