@@ -12,7 +12,8 @@ $background: $md-light-theme-background;
 }
 
 .td-line-wrapper {
-  width: 24px;  
+  width: 24px;
+  min-height: 1px;
 }
 
 .td-horizontal-line {

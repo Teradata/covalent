@@ -61,12 +61,15 @@ export class TdFileDropDirective {
    */
   @HostListener('drop', ['$event'])
   onDrop(event: Event): void {
-    let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
-    let files: FileList = transfer.files;
-    if (files.length) {
-      let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
-      this.onFileDrop.emit(value);
+    if (!this._disabled) {
+      let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+      let files: FileList = transfer.files;
+      if (files.length) {
+        let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];
+        this.onFileDrop.emit(value);
+      }
     }
+    this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', false);
     this._stopEvent(event);
   }
 
@@ -94,7 +97,7 @@ export class TdFileDropDirective {
    */
   @HostListener('dragenter', ['$event'])
   onDragEnter(event: Event): void {
-    if (event.target === this._element.nativeElement && !this._disabled) {
+    if (!this._disabled) {
       this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', true);
     }
     this._stopEvent(event);
@@ -106,9 +109,7 @@ export class TdFileDropDirective {
    */
   @HostListener('dragleave', ['$event'])
   onDragLeave(event: Event): void {
-    if (event.target === this._element.nativeElement && !this._disabled) {
-      this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', false);
-    }
+    this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', false);
     this._stopEvent(event);
   }
 
