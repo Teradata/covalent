@@ -1,8 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 export interface IPageChangeEvent {
   page: number;
   pageSize: number;
+  total: number;
+  fromRow: number;
+  toRow: number;
 }
 
 @Component({
@@ -10,12 +13,14 @@ export interface IPageChangeEvent {
   templateUrl: 'paging-bar.component.html',
   styleUrls: [ 'paging-bar.component.scss' ],
 })
-export class TdPagingBarComponent {
+export class TdPagingBarComponent implements OnInit {
 
   private _pageSizes: number[] = [50, 100, 200, 500, 1000];
   private _pageSize: number = 100;
   private _total: number = 0;
   private _page: number = 1;
+  private _fromRow: number = 1;
+  private _toRow: number = 1;
 
   @Input('pageSizes')
   set pageSizes(pageSizes: number[]) {
@@ -48,13 +53,18 @@ export class TdPagingBarComponent {
   }
 
   get range(): string {
-    let top: number = (this._pageSize * this._page);
-    let min: number = (this._pageSize * (this._page - 1)) + 1;
-    let max: number = this._total > top ? top : this._total;
-    return `${min}-${max}`;
+    return `${this._fromRow}-${this._toRow}`;
+  }
+
+  get page(): number {
+    return this._page;
   }
 
   @Output('change') change: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
+
+  ngOnInit(): void {
+    this._calculateRows();
+  }
 
   reset(): void {
     this._page = 1;
@@ -85,10 +95,20 @@ export class TdPagingBarComponent {
     return this._page >= Math.ceil(this._total / this._pageSize);
   }
 
+  private _calculateRows(): void {
+    let top: number = (this._pageSize * this._page);
+    this._fromRow = (this._pageSize * (this._page - 1)) + 1;
+    this._toRow = this._total > top ? top : this._total;
+  }
+
   private _pageChanged(): void {
+    this._calculateRows();
     let event: IPageChangeEvent = {
       page: this._page,
       pageSize: this._pageSize,
+      total: this._total,
+      fromRow: this._fromRow,
+      toRow: this._toRow,
     };
     this.change.emit(event);
   }
