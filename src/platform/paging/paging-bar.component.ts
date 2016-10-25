@@ -75,6 +75,14 @@ export class TdPagingBarComponent implements OnInit {
     this._pageChanged();
   }
 
+  firstPage(): void {
+    if (this.isMinPage()) {
+      return;
+    }
+    this._page = 1;
+    this._pageChanged();
+  }
+
   prevPage(): void {
     if (this.isMinPage()) {
       return;
@@ -88,6 +96,14 @@ export class TdPagingBarComponent implements OnInit {
       return;
     }
     this._page++;
+    this._pageChanged();
+  }
+
+  lastPage(): void {
+    if (this.isMaxPage()) {
+      return;
+    }
+    this._page = Math.ceil(this._total / this._pageSize);
     this._pageChanged();
   }
 

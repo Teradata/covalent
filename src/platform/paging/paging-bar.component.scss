@@ -7,10 +7,10 @@ $foreground: $md-light-theme-foreground;
 .td-paging-bar {
   height: 48px;
   color: md-color($foreground, secondary-text);
-  span.td-data-table-per-page {
+  span.td-paging-bar-per-page {
     margin-right: 40px;
   }
-  span.td-page-size {
+  span.td-paging-bar-page-size {
     position: relative;
     span {
       position: absolute;
@@ -18,18 +18,21 @@ $foreground: $md-light-theme-foreground;
       top: -7px;
     }
   }
-  span.td-data-table-ranges {
+  span.td-paging-bar-ranges {
     margin-left: 32px;
+  }
+  div.td-paging-bar-navigation {
+    margin-left: 32px;
+    margin-right: 14px;
+    button[md-icon-button] {
+      margin-right: 24px;
+      &:last-of-type {
+        margin-right: 0px;
+      }   
+    }
   }
   button[md-icon-button] {
     width: 24px;
     height: 24px;
-    &.td-page-prev {
-      margin-left: 32px;
-    }
-    &.td-page-next {
-      margin-left: 24px;
-      margin-right: 14px;
-    }        
   }
 }
