@@ -21,6 +21,7 @@ export class TdPagingBarComponent implements OnInit {
   private _page: number = 1;
   private _fromRow: number = 1;
   private _toRow: number = 1;
+  private _initialized: boolean = false;
 
   @Input('pageSizes')
   set pageSizes(pageSizes: number[]) {
@@ -37,7 +38,9 @@ export class TdPagingBarComponent implements OnInit {
     if (this._pageSizes.indexOf(pageSize) > -1 && this._pageSize !== pageSize) {
       this._pageSize = pageSize;
       this._page = 1;
-      this._pageChanged();
+      if (this._initialized) {
+        this._pageChanged();
+      }
     }
   }
   get pageSize(): number {
@@ -64,6 +67,7 @@ export class TdPagingBarComponent implements OnInit {
 
   ngOnInit(): void {
     this._calculateRows();
+    this._initialized = true;
   }
 
   reset(): void {
