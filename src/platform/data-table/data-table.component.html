@@ -30,29 +30,31 @@
         </th>
         <th td-column 
             *ngFor="let column of columns" 
-            [class.md-clickable]="_sorting"
-            [class.md-active]="_sorting && column === _sortBy"
+            [class.md-clickable]="isSortColumn(column)"
+            [class.md-active]="isSortColumn(column)"
             [class.md-numeric]="column.numeric"
-            [class.md-asc]="(column === _sortBy && isAscending())"
-            [class.md-desc]="(column === _sortBy && isDescending())">
+            [class.md-asc]="(isCurrentSortColumn(column) && isAscending())"
+            [class.md-desc]="(isCurrentSortColumn(column) && isDescending())">
           <md-icon 
             class="md-sort-icon" 
-            *ngIf="_sorting && column.numeric"
-            [class.md-asc]="(!(column === _sortBy) || isAscending())"
-            [class.md-desc]="(column === _sortBy && isDescending())"
-            (click)="_sorting && setSorting(column)">
+            *ngIf="(isSortColumn(column) && column.numeric)"
+            [class.md-active]="(isCurrentSortColumn(column))"
+            [class.md-asc]="(isCurrentSortColumn(column) && isAscending())"
+            [class.md-desc]="(isCurrentSortColumn(column) && isDescending())"
+            (click)="setCurrentSortColumn(column)">
             arrow_upward
           </md-icon>
-          <span class="md-caption" (click)="_sorting && setSorting(column)">
+          <span class="md-caption" (click)="(isSortColumn(column) && setCurrentSortColumn(column))">
             <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
             <span *ngIf="!column.tooltip">{{column.label}}</span>
           </span>
           <md-icon 
             class="md-sort-icon" 
-            *ngIf="_sorting && !column.numeric"
-            [class.md-asc]="(!(column === _sortBy) || isAscending())"
-            [class.md-desc]="(column === _sortBy && isDescending())"
-            (click)="_sorting && setSorting(column)">
+            *ngIf="(isSortColumn(column) && !column.numeric)"
+            [class.md-active]="(isCurrentSortColumn(column))"
+            [class.md-asc]="(isCurrentSortColumn(column) && isAscending())"
+            [class.md-desc]="(isCurrentSortColumn(column) && isDescending())"
+            (click)="setCurrentSortColumn(column)">
             arrow_upward
           </md-icon>
         </th>

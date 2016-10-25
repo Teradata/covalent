@@ -6,53 +6,22 @@
     <p>Basic Demo</p>
 
     <td-data-table
+      title="Search and pagination enabled"
       [data]="data"
       [columns]="columns"
       [pagination]="pagination"
       [pageSize]="pageSize"
       [rowSelection]="rowSelection"
-      [multiple]="multiple"
-      [sorting]="sorting"
-      [sortBy]="sortBy"
+      [multiSelect]="multiSelect"
+      [search]="search"
+      [initialSortColumn]="initialSortColumn"
       [sortOrder]="sortOrder"
-      search="true"
-      title="Search and pagination enabled"
       (sortChanged)="sortChanged($event)">
     </td-data-table>
 
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleSorting()">
-      Toggle Sorting
-      ({{sorting ? 'ON' : 'OFF'}})
-    </button>
-
-    <button md-button color="primary" (click)="toggleSortBy()" [disabled]="!sorting">
-      Toggle SortBy
-      ({{sortBy}})
-    </button>
-
-    <button md-button color="primary" (click)="toggleSortOrder()" [disabled]="!sorting">
-      Toggle SortOrder
-      ({{sortOrder}})
-    </button>
-
-    <button md-button color="primary" (click)="toggleRowSelection()">
-      Toggle RowSelection
-      ({{rowSelection ? 'ON' : 'OFF'}})
-    </button>
-
-    <button md-button color="primary" (click)="toggleRowSelectionMultiple()" [disabled]="!rowSelection">
-      Toggle RowSelectionMultiple
-      ({{multiple ? 'ON' : 'OFF'}})
-    </button>
-
-    <button md-button color="primary" (click)="toggleTooltips()">
-      Toggle Tooltip
-      ({{areTooltipsOn() ? 'ON' : 'OFF'}})
-    </button>
-
     <button md-button color="primary" (click)="togglePagination()">
       Toggle Pagination
       ({{pagination ? 'ON' : 'OFF'}})
@@ -61,6 +30,26 @@
     <button md-button color="primary" (click)="togglePageSize()" [disabled]="!pagination">
       Change Page Size
       ({{pageSize}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleRowSelection()">
+      Toggle RowSelection
+      ({{rowSelection ? 'ON' : 'OFF'}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleRowMultiSelect()" [disabled]="!rowSelection">
+      Toggle RowMultiSelect
+      ({{multiSelect ? 'ON' : 'OFF'}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleSortOrder()">
+      Toggle SortOrder
+      ({{sortOrder}})
+    </button>
+
+    <button md-button color="primary" (click)="toggleTooltips()">
+      Toggle Tooltip
+      ({{areTooltipsOn() ? 'ON' : 'OFF'}})
     </button>
   </md-card-actions>
 </md-card>
@@ -90,11 +79,13 @@
         <td-data-table
           [data]="data"
           [columns]="columns"
-          sortBy="age"
-          sortOrder="DESC"
           pagination="true"
           pageSize="5"
-          search="true">
+          rowSelection="true"          
+          multiSelect="false"          
+          search="true"
+          initialSortColumn="calories"
+          sortOrder="ASC">
         </td-data-table>
       ]]>
     </td-highlight>
@@ -104,15 +95,50 @@
         ...
         })
         export class Demo {
-          private data: any[] = [
-            { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
-            { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+          columns: any[] = [
+            { name: 'name',  label: 'Dessert (100g serving)', tooltip: 'Common food name', sortable: true },
+            { name: 'type', label: 'Type', sortable: true },
+            { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true },
+            { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+            { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
+            { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
+            { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
+            { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
+            { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
           ];
-          private columns: any[] = [
-            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-            { name: 'item', label: 'Item name' },
-            { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
-          ];
+
+          data: any[] = [
+              {
+                'name': 'Frozen yogurt',
+                'type': 'Ice cream',
+                'calories': { 'value': 159.0 },
+                'fat': { 'value': 6.0 },
+                'carbs': { 'value': 24.0 },
+                'protein': { 'value': 4.0 },
+                'sodium': { 'value': 87.0 },
+                'calcium': { 'value': 14.0 },
+                'iron': { 'value': 1.0 },
+              }, {
+                'name': 'Ice cream sandwich',
+                'type': 'Ice cream',
+                'calories': { 'value': 237.0 },
+                'fat': { 'value': 9.0 },
+                'carbs': { 'value': 37.0 },
+                'protein': { 'value': 4.3 },
+                'sodium': { 'value': 129.0 },
+                'calcium': { 'value': 8.0 },
+                'iron': { 'value': 1.0 },
+              }, {
+                'name': 'Eclair',
+                'type': 'Pastry',
+                'calories': { 'value':  262.0 },
+                'fat': { 'value': 16.0 },
+                'carbs': { 'value': 24.0 },
+                'protein': { 'value':  6.0 },
+                'sodium': { 'value': 337.0 },
+                'calcium': { 'value':  6.0 },
+                'iron': { 'value': 7.0 },
+              }];
         }
       ]]>
     </td-highlight>

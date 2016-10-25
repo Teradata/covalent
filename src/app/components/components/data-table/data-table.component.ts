@@ -13,6 +13,10 @@ const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
 export class DataTableDemoComponent {
 
   dataTableAttrs: Object[] = [{
+    description: `If present will display a title before the table`,
+    name: 'title?',
+    type: 'string',
+  }, {
     description: `Rows of data to be displayed`,
     name: 'data',
     type: 'any[]',
@@ -20,10 +24,6 @@ export class DataTableDemoComponent {
     description: `List of columns to be displayed`,
     name: 'columns?',
     type: 'ITdDataTableColumn[]',
-  }, {
-    description: `If present will display a title before the table`,
-    name: 'title?',
-    type: 'string',
   }, {
     description: `Enables pagination`,
     name: 'pagination?',
@@ -33,35 +33,31 @@ export class DataTableDemoComponent {
     name: 'pageSize?',
     type: 'number',
   }, {
-    description: `Enables sorting by column`,
-    name: 'sorting?',
-    type: 'boolean',
-  }, {
-    description: `Name of the column to use for sorting`,
-    name: 'sortBy?',
-    type: 'string',
-  }, {
-    description: `Sorting order - ascending or descending`,
-    name: 'sortOrder?',
-    type: `'ASC' | 'DESC'`,
-  }, {
-    description: `Enables search`,
-    name: 'search?',
-    type: `boolean`,
-  }, {
     description: `Adds a checkbox column to allow user to select rows`,
     name: 'rowSelection?',
     type: 'boolean',
   }, {
     description: `Toggles between multiple or single row selection`,
-    name: 'multiple?',
+    name: 'multiSelect?',
     type: 'boolean',
+  }, {
+    description: `Enables search`,
+    name: 'search?',
+    type: 'boolean',
+  }, {
+    description: `Name of the column to use for initial sort`,
+    name: 'initialSortColumn?',
+    type: 'string',
+  }, {
+    description: `Sorting order - ascending or descending`,
+    name: 'sortOrder?',
+    type: `'ASC' | 'DESC'`,
   }];
 
   columns: any[] = [
-    { name: 'name',  label: 'Dessert (100g serving)' },
-    { name: 'type', label: 'Type' },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
+    { name: 'name',  label: 'Dessert (100g serving)', tooltip: 'Common food name', sortable: true },
+    { name: 'type', label: 'Type', sortable: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -69,10 +65,6 @@ export class DataTableDemoComponent {
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
   ];
-
-  sorting: boolean = true;
-  pagination: boolean = true;
-  pageSize: number = 5;
 
   data: any[] = [
       {
@@ -168,32 +160,22 @@ export class DataTableDemoComponent {
       },
     ];
 
-  sortBy: string = 'name';
+  pagination: boolean = true;
+  pageSize: number = 5;
+  rowSelection: boolean = true;
+  multiSelect: boolean = false;
+  search: boolean = true;
+  initialSortColumn: string = 'calories';
   sortOrder: string = 'ASC';
 
-  rowSelection: boolean = false;
-  multiple: boolean = true;
+  currentSortColumn: string;
 
   toggleRowSelection(): void {
     this.rowSelection = !this.rowSelection;
   }
 
-  toggleRowSelectionMultiple(): void {
-    this.multiple = !this.multiple;
-  }
-
-  toggleSorting(): void {
-    this.sorting = !this.sorting;
-  }
-
-  toggleSortBy(): void {
-    const columns: any[] = this.columns.map((c: any) => c.name);
-    const idx: number = columns.indexOf(this.sortBy);
-    if (idx < columns.length - 1) {
-      this.sortBy = columns[idx + 1];
-    } else {
-      this.sortBy = columns[0];
-    }
+  toggleRowMultiSelect(): void {
+    this.multiSelect = !this.multiSelect;
   }
 
   toggleSortOrder(): void {
@@ -226,7 +208,7 @@ export class DataTableDemoComponent {
   sortChanged(changes: any): void {
     const { column, order }: any = changes;
 
-    this.sortBy = column.name;
+    this.currentSortColumn = column.name;
     this.sortOrder = order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
   }
 }
