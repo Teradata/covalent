@@ -4,7 +4,7 @@
 // TODO properly wrap in mixin to apply theme like material2 components
 $foreground: $md-light-theme-foreground;
 
-.md-table-pagination {
+.td-paging-bar {
   height: 48px;
   color: md-color($foreground, secondary-text);
   span.td-data-table-per-page {
