@@ -20,6 +20,18 @@
   <md-card-content>
     <h2><code><![CDATA[<td-paging-bar>]]></code></h2>
     <p>Use <code><![CDATA[<td-paging-bar>]]></code> element to generate a paging bar.</p>
+    <p>The <code>(change)</code> event throws an event with the following interface:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        export interface IPageChangeEvent {
+          page: number;
+          pageSize: number;
+          total: number;
+          fromRow: number;
+          toRow: number;
+        }
+      ]]>
+    </td-highlight>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{pagingBarAttrs.length}} properties:</p>
     <md-list>

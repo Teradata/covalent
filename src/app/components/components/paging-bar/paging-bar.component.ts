@@ -11,12 +11,23 @@ import { IPageChangeEvent } from '../../../../platform/paging';
 export class PagingBarDemoComponent {
 
   pagingBarAttrs: Object[] = [{
-    description: `Rows of data to be displayed`,
-    name: 'data',
-    type: 'any[]',
+    description: `Array that populates page size menu.`,
+    name: 'pageSizes',
+    type: 'number[]',
+  }, {
+    description: `Selected page size for the pagination.`,
+    name: 'pageSize',
+    type: 'number',
+  }, {
+    description: `Total rows to be paginated.`,
+    name: 'total',
+    type: 'number',
+  }, {
+    description: `Event emmited when page size changes or any button is clicked in the paging bar.`,
+    name: 'change',
+    type: 'function($event: IPageChangeEvent)',
   }];
 
-  pageSize: number = 5;
   event: IPageChangeEvent;
 
   change(event: IPageChangeEvent): void {
