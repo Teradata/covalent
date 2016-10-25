@@ -10,8 +10,14 @@
       <p *ngIf="event">Rows: {{event?.fromRow}} to {{event?.toRow}}</p>
     </div>
     <p>Total: {{event?.total || '1345'}}</p>
-    <td-paging-bar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>
+    <td-paging-bar #pagingBar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="pagingBar.navigateToPage(5)">
+      Navigate to 5th page
+    </button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>TdPagingBarComponent</md-card-title>

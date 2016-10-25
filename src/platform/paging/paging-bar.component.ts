@@ -74,8 +74,8 @@ export class TdPagingBarComponent implements OnInit {
     this._initialized = true;
   }
 
-  goTo(page: number): boolean {
-    if (page >= 1 && page <= this.maxPage) {
+  navigateToPage(page: number): boolean {
+    if (page >= 1 && page <= this.maxPage && page !== this._page) {
       this._page = page;
       this._pageChanged();
       return true;
@@ -84,19 +84,19 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   firstPage(): boolean {
-    return this.goTo(1);
+    return this.navigateToPage(1);
   }
 
   prevPage(): boolean {
-    return this.goTo(this._page - 1);
+    return this.navigateToPage(this._page - 1);
   }
 
   nextPage(): boolean {
-    return this.goTo(this._page + 1);
+    return this.navigateToPage(this._page + 1);
   }
 
   lastPage(): boolean {
-    return this.goTo(this.maxPage);
+    return this.navigateToPage(this.maxPage);
   }
 
   isMinPage(): boolean {
