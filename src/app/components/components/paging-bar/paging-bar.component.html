@@ -7,7 +7,7 @@
     <div>
       <p>Page Size: {{event?.pageSize || '100'}}</p>
       <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
-      <p *ngIf="event">Rows: {{event?.fromRow}} to {{event?.toRow}}</p>
+      <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
     </div>
     <p>Total: {{event?.total || '1345'}}</p>
     <td-paging-bar #pagingBar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>

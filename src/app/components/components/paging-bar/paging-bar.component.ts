@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { IPageChangeEvent } from '../../../../platform/paging';
 
-
 @Component({
   selector: 'paging-bar-demo',
   styleUrls: ['paging-bar.component.scss'],
@@ -19,13 +18,18 @@ export class PagingBarDemoComponent {
     name: 'pageSize',
     type: 'number',
   }, {
-    description: `Total rows to be paginated.`,
+    description: `Total rows for the pagination.`,
     name: 'total',
     type: 'number',
   }, {
     description: `Event emmited when page size changes or any button is clicked in the paging bar.`,
     name: 'change',
     type: 'function($event: IPageChangeEvent)',
+  }, {
+    description: `Navigates to a specific valid page.
+                  Returns 'true' if page is valid, else 'false'.`,
+    name: 'navigateToPage',
+    type: 'function(page: number): boolean',
   }];
 
   event: IPageChangeEvent;
