@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 export interface IPageChangeEvent {
   page: number;
+  maxPage: number;
   pageSize: number;
   total: number;
   fromRow: number;
@@ -117,6 +118,7 @@ export class TdPagingBarComponent implements OnInit {
     this._calculateRows();
     let event: IPageChangeEvent = {
       page: this._page,
+      maxPage: this.maxPage,
       pageSize: this._pageSize,
       total: this._total,
       fromRow: this._fromRow,

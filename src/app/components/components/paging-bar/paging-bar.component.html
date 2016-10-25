@@ -6,7 +6,7 @@
     <p>Change Event: </p>
     <div>
       <p>Page Size: {{event?.pageSize || '100'}}</p>
-      <p>Page: {{event?.page || '1'}}</p>
+      <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
       <p *ngIf="event">Rows: {{event?.fromRow}} to {{event?.toRow}}</p>
     </div>
     <p>Total: {{event?.total || '1345'}}</p>
@@ -31,6 +31,7 @@
       <![CDATA[
         export interface IPageChangeEvent {
           page: number;
+          maxPage: number;
           pageSize: number;
           total: number;
           fromRow: number;
