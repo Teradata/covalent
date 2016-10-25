@@ -10,19 +10,19 @@ import { IPageChangeEvent } from '../../../../platform/paging';
 export class PagingBarDemoComponent {
 
   pagingBarAttrs: Object[] = [{
-    description: `Array that populates page size menu.`,
-    name: 'pageSizes',
+    description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,
+    name: 'pageSizes?',
     type: 'number[]',
   }, {
-    description: `Selected page size for the pagination.`,
-    name: 'pageSize',
+    description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
+    name: 'pageSize?',
     type: 'number',
   }, {
     description: `Total rows for the pagination.`,
     name: 'total',
     type: 'number',
   }, {
-    description: `Event emmited when page size changes or any button is clicked in the paging bar.`,
+    description: `Method to be executed when page size changes or any button is clicked in the paging bar.`,
     name: 'change',
     type: 'function($event: IPageChangeEvent)',
   }, {

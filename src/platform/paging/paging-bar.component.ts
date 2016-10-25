@@ -17,23 +17,32 @@ export interface IPageChangeEvent {
 export class TdPagingBarComponent implements OnInit {
 
   private _pageSizes: number[] = [50, 100, 200, 500, 1000];
-  private _pageSize: number = 100;
+  private _pageSize: number = 50;
   private _total: number = 0;
   private _page: number = 1;
   private _fromRow: number = 1;
   private _toRow: number = 1;
   private _initialized: boolean = false;
 
+  /**
+   * pageSizes?: number[]
+   * Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]
+   */
   @Input('pageSizes')
   set pageSizes(pageSizes: number[]) {
     if (pageSizes instanceof Array) {
       this._pageSizes = pageSizes;
+      this._pageSize = this._pageSizes[0];
     }
   }
   get pageSizes(): number[] {
     return this._pageSizes;
   }
 
+  /**
+   * pageSize?: number
+   * Selected page size for the pagination. Defaults to first element of the [pageSizes] array.
+   */
   @Input('pageSize')
   set pageSize(pageSize: number) {
     if (this._pageSizes.indexOf(pageSize) > -1 && this._pageSize !== pageSize) {
@@ -48,6 +57,10 @@ export class TdPagingBarComponent implements OnInit {
     return this._pageSize;
   }
 
+  /**
+   * total: number
+   * Total rows for the pagination.
+   */
   @Input('total')
   set total(total: number) {
     this._total = total;
@@ -56,18 +69,35 @@ export class TdPagingBarComponent implements OnInit {
     return this._total;
   }
 
+  /**
+   * range: string
+   * Returns the range of the rows.
+   */
   get range(): string {
     return `${this._fromRow}-${this._toRow}`;
   }
 
+  /**
+   * page: number
+   * Returns the current page.
+   */
   get page(): number {
     return this._page;
   }
 
+  /**
+   * page: number
+   * Returns the max page for the current pageSize and total.
+   */
   get maxPage(): number {
     return Math.ceil(this._total / this._pageSize);
   }
 
+  /**
+   * change?: function
+   * Method to be executed when page size changes or any button is clicked in the paging bar.
+   * Emits an [IPageChangeEvent] implemented object.
+   */
   @Output('change') change: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   ngOnInit(): void {
@@ -75,6 +105,10 @@ export class TdPagingBarComponent implements OnInit {
     this._initialized = true;
   }
 
+  /**
+   * navigateToPage?: function
+   * Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
+   */
   navigateToPage(page: number): boolean {
     if (page >= 1 && page <= this.maxPage && page !== this._page) {
       this._page = page;
@@ -84,18 +118,34 @@ export class TdPagingBarComponent implements OnInit {
     return false;
   }
 
+  /**
+   * firstPage?: function
+   * Navigates to the first page. Returns 'true' if page is valid, else 'false'.
+   */
   firstPage(): boolean {
     return this.navigateToPage(1);
   }
 
+  /**
+   * prevPage?: function
+   * Navigates to the previous page. Returns 'true' if page is valid, else 'false'.
+   */
   prevPage(): boolean {
     return this.navigateToPage(this._page - 1);
   }
 
+  /**
+   * nextPage?: function
+   * Navigates to the next page. Returns 'true' if page is valid, else 'false'.
+   */
   nextPage(): boolean {
     return this.navigateToPage(this._page + 1);
   }
 
+  /**
+   * lastPage?: function
+   * Navigates to the last page. Returns 'true' if page is valid, else 'false'.
+   */
   lastPage(): boolean {
     return this.navigateToPage(this.maxPage);
   }
