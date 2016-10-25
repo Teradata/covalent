@@ -63,6 +63,10 @@ export class TdPagingBarComponent implements OnInit {
     return this._page;
   }
 
+  get maxPage(): number {
+    return Math.ceil(this._total / this._pageSize);
+  }
+
   @Output('change') change: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   ngOnInit(): void {
@@ -70,41 +74,29 @@ export class TdPagingBarComponent implements OnInit {
     this._initialized = true;
   }
 
-  reset(): void {
-    this._page = 1;
-    this._pageChanged();
+  goTo(page: number): boolean {
+    if (page >= 1 && page <= this.maxPage) {
+      this._page = page;
+      this._pageChanged();
+      return true;
+    }
+    return false;
   }
 
-  firstPage(): void {
-    if (this.isMinPage()) {
-      return;
-    }
-    this._page = 1;
-    this._pageChanged();
+  firstPage(): boolean {
+    return this.goTo(1);
   }
 
-  prevPage(): void {
-    if (this.isMinPage()) {
-      return;
-    }
-    this._page--;
-    this._pageChanged();
+  prevPage(): boolean {
+    return this.goTo(this._page - 1);
   }
 
-  nextPage(): void {
-    if (this.isMaxPage()) {
-      return;
-    }
-    this._page++;
-    this._pageChanged();
+  nextPage(): boolean {
+    return this.goTo(this._page + 1);
   }
 
-  lastPage(): void {
-    if (this.isMaxPage()) {
-      return;
-    }
-    this._page = Math.ceil(this._total / this._pageSize);
-    this._pageChanged();
+  lastPage(): boolean {
+    return this.goTo(this.maxPage);
   }
 
   isMinPage(): boolean {
@@ -112,7 +104,7 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   isMaxPage(): boolean {
-    return this._page >= Math.ceil(this._total / this._pageSize);
+    return this._page >= this.maxPage;
   }
 
   private _calculateRows(): void {
