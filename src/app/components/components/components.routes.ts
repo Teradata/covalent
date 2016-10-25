@@ -17,6 +17,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
+import { PagingBarDemoComponent } from './paging-bar/paging-bar.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 const routes: Routes = [{
@@ -71,6 +72,9 @@ const routes: Routes = [{
     }, {
       component: DataTableDemoComponent,
       path: 'data-table',
+    }, {
+      component: PagingBarDemoComponent,
+      path: 'paging-bar',
     },
   ],
   component: ComponentsComponent,

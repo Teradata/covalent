@@ -73,6 +73,11 @@ export class ComponentsComponent {
     route: 'charts',
     title: 'Charts',
   }, {
+    description: 'Paging bar for lists and tables',
+    icon: 'swap_horiz',
+    route: 'paging-bar',
+    title: 'Paging Bar',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',

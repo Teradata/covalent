@@ -1,0 +1,72 @@
+<md-card>
+  <md-card-title>Paging Bar</md-card-title>
+  <md-card-subtitle>Paging bar for lists and tables</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Change Event: </p>
+    <div>
+      <p>Page Size: {{event?.pageSize || '100'}}</p>
+      <p>Page: {{event?.page || '1'}}</p>
+      <p *ngIf="event">Rows: {{event?.fromRow}} to {{event?.toRow}}</p>
+    </div>
+    <p>Total: {{event?.total || '1345'}}</p>
+    <td-paging-bar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdPagingBarComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-paging-bar>]]></code></h2>
+    <p>Use <code><![CDATA[<td-paging-bar>]]></code> element to generate a paging bar.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{pagingBarAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="pagingBarAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-paging-bar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { IPageChangeEvent } from '@covalent/paging-bar';
+        ...
+        })
+        export class Demo {
+
+          change(event: IPageChangeEvent): void {
+            ...
+          }
+          
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentPagingBarModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentPagingBarModule } from '@covalent/paging-bar';
+        @NgModule({
+          imports: [
+            CovalentPagingBarModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

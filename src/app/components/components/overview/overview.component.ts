@@ -67,6 +67,11 @@ export class ComponentsOverviewComponent {
       route: 'charts',
       title: 'Charts',
     }, {
+      color: 'blue-grey-700',
+      icon: 'swap_horiz',
+      route: 'paging-bar',
+      title: 'Paging Bar',
+    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',
