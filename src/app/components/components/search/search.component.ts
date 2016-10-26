@@ -53,4 +53,18 @@ export class SearchDemoComponent {
     type: 'function(page: number): boolean',
   }];
 
+  searchInputTerm: string = '';
+  searchBoxTerm: string = '';
+  debounce: number = 0;
+  alwaysVisible: boolean = false;
+
+  modeChange(): void {
+    this.searchInputTerm = '';
+    this.searchBoxTerm = '';
+  }
+
+  toggleAlwaysVisible(): void {
+    this.alwaysVisible = !this.alwaysVisible;
+  }
+
 }

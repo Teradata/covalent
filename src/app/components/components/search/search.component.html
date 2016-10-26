@@ -1,18 +1,35 @@
 <md-card>
-  <md-card-title>Paging Bar</md-card-title>
-  <md-card-subtitle>Paging bar for lists and tables</md-card-subtitle>
+  <md-card-title>Search</md-card-title>
+  <md-card-subtitle>Search and filter items</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Change Event: </p>
-    <div>
-      <p>Page Size: {{event?.pageSize || '100'}}</p>
-      <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
-      <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
+    <div layout="row" layout-align="start center">
+      <md-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
+        <md-button-toggle md-tooltip="Enter/Clear Events" [value]="0"><md-icon>search</md-icon> Enter/Clear</md-button-toggle>
+        <md-button-toggle md-tooltip="Debounce Events" [value]="1"><md-icon>keyboard</md-icon> Debounce</md-button-toggle>
+      </md-button-toggle-group>
     </div>
-    <p>Total: {{event?.total || '1345'}}</p>
-    <td-search-input></td-search-input>
-    <td-search-box></td-search-box>
-  </md-card-content>  
+    <h3>Search Input</h3>
+    <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
+    <div layout="row" layout-align="start center">
+      <td-search-input *ngIf="debounce" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+      <td-search-input *ngIf="!debounce" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+    </div>
+    <h3>Search Box</h3>
+    <p>Search Value: {{searchBoxTerm || 'Empty'}}</p>
+    <div layout="row" layout-align="start center">
+      <td-search-box *ngIf="debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (searchDebounce)="searchBoxTerm = $event"></td-search-box>
+      <td-search-box *ngIf="!debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (search)="searchBoxTerm = $event" (clear)="searchBoxTerm = ''"></td-search-box>
+    </div>
+    <h3>Search Box in Toolbar</h3>
+    <md-toolbar color="primary">
+      <td-search-box placeholder="Search here" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+    </md-toolbar>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleAlwaysVisible()">Toggle Search Box Always Visible</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>TdPagingBarComponent</md-card-title>
@@ -35,7 +52,7 @@
       ]]>
     </td-highlight>
     <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{pagingBarAttrs.length}} properties:</p>
+    <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{searchInputAttrs.length}} properties:</p>
     <md-list>
       <template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
         <a md-list-item layout-align="row">
