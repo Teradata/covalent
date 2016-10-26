@@ -23,6 +23,7 @@ Properties:
 | --- | --- | --- |
 | `pageSizes?` | `number[]` | Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000].
 | `pageSize?` | `number` | Selected page size for the pagination. Defaults to first element of the [pageSizes] array.
+| `firstLast?` | `boolean` | Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
 | `total` | `number` | Total rows for the pagination.
 | `change` | `function($event: IPageChangeEvent)` | Method to be executed when page size changes or any button is clicked in the paging bar.
 | `navigateToPage` | `function(page: number): boolean` | Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.

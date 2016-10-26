@@ -9,7 +9,7 @@
     {{range}} <span>of</span> {{total}}
   </span>
   <div class="td-paging-bar-navigation">
-    <button md-icon-button [disabled]="isMinPage()" (click)="firstPage()">
+    <button md-icon-button *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
       <md-icon>skip_previous</md-icon>
     </button>
     <button md-icon-button [disabled]="isMinPage()" (click)="prevPage()">
@@ -18,7 +18,7 @@
     <button md-icon-button [disabled]="isMaxPage()" (click)="nextPage()">
       <md-icon>navigate_next</md-icon>
     </button>
-    <button md-icon-button [disabled]="isMaxPage()" (click)="lastPage()">
+    <button md-icon-button *ngIf="firstLast" [disabled]="isMaxPage()" (click)="lastPage()">
       <md-icon>skip_next</md-icon>
     </button>
   </div>

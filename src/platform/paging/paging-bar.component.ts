@@ -25,6 +25,12 @@ export class TdPagingBarComponent implements OnInit {
   private _initialized: boolean = false;
 
   /**
+   * firstLast?: boolean
+   * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
+   */
+  @Input('firstLast') firstLast: boolean = true;
+
+  /**
    * pageSizes?: number[]
    * Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]
    */

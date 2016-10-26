@@ -14,6 +14,10 @@ export class PagingDemoComponent {
     name: 'pageSizes?',
     type: 'number[]',
   }, {
+    description: `Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'`,
+    name: 'firstLast?',
+    type: 'boolean',
+  }, {
     description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
     name: 'pageSize?',
     type: 'number',
@@ -33,9 +37,14 @@ export class PagingDemoComponent {
   }];
 
   event: IPageChangeEvent;
+  firstLast: boolean = true;
 
   change(event: IPageChangeEvent): void {
     this.event = event;
+  }
+
+  toggleFirstLast(): void {
+    this.firstLast = !this.firstLast;
   }
 
 }
