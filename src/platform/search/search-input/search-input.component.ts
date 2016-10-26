@@ -28,12 +28,40 @@ export class TdSearchInputComponent implements OnInit {
 
   searchTermControl: FormControl = new FormControl();
 
+  /**
+   * debounce?: number
+   * Debounce timeout between keypresses. Defaults to 400.
+   */
   @Input('debounce') debounce: number = 400;
+
+  /**
+   * placeholder?: string
+   * Placeholder for the underlying input component.
+   */
   @Input('placeholder') placeholder: string;
 
+  /**
+   * searchDebounce: function($event)
+   * Event emitted after the [debounce] timeout.
+   */
   @Output('searchDebounce') onSearchDebounce: EventEmitter<string> = new EventEmitter<string>();
+
+  /**
+   * search: function($event)
+   * Event emitted after the key enter has been pressed.
+   */
   @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
+
+  /**
+   * clear: function()
+   * Event emitted after the clear icon has been clicked.
+   */
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
+
+  /**
+   * blur: function()
+   * Event emitted after the blur event has been called in underlying input.
+   */
   @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit(): void {
@@ -44,6 +72,9 @@ export class TdSearchInputComponent implements OnInit {
       });
   }
 
+  /**
+   * Method to focus to underlying input.
+   */
   focus(): void {
     this._input.focus();
   }

@@ -31,14 +31,45 @@ export class TdSearchBoxComponent {
     return this._searchVisible;
   }
 
+  /**
+   * debounce?: number
+   * Debounce timeout between keypresses. Defaults to 400.
+   */
   @Input('debounce') debounce: number = 400;
+
+  /**
+   * alwaysVisible?: boolean
+   * Sets if the input should always be visible. Defaults to 'false'.
+   */
   @Input('alwaysVisible') alwaysVisible: boolean = false;
+
+  /**
+   * placeholder?: string
+   * Placeholder for the underlying input component.
+   */
   @Input('placeholder') placeholder: string;
 
+  /**
+   * searchDebounce: function($event)
+   * Event emitted after the [debounce] timeout.
+   */
   @Output('searchDebounce') onSearchDebounce: EventEmitter<string> = new EventEmitter<string>();
+
+  /**
+   * search: function($event)
+   * Event emitted after the key enter has been pressed.
+   */
   @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
+
+  /**
+   * clear: function()
+   * Event emitted after the clear icon has been clicked.
+   */
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
 
+  /**
+   * Method executed when the search icon is clicked.
+   */
   searchClicked(): void {
     if (this.alwaysVisible || !this._searchVisible) {
       this._searchInput.focus();
