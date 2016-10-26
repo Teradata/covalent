@@ -20,10 +20,10 @@ import { TdPagingBarComponent } from './paging-bar.component';
     TdPagingBarComponent,
   ],
 })
-export class CovalentPagingBarModule {
+export class CovalentPagingModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: CovalentPagingBarModule,
+      ngModule: CovalentPagingModule,
       providers: [ ],
     };
   }
