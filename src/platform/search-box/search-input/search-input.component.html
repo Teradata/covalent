@@ -1,0 +1,14 @@
+<div class="td-search-input" layout="row" layout-align="end center">
+  <md-input #searchElement
+            type="text"
+            [placeholder]="placeholder"
+            [formControl]="searchTermControl"
+            flex>
+  </md-input>
+  <button md-icon-button 
+          [@searchState]="searchElement.value ? true : false"
+          (click)="clearSearch()"
+          flex="none">
+    <md-icon>cancel</md-icon>
+  </button>
+</div>
