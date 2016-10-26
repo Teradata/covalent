@@ -5,6 +5,7 @@
   <td-search-input #searchInput
                    [@inputState]="alwaysVisible || searchVisible"
                    [debounce]="debounce"
+                   [showUnderline]="showUnderline"
                    [placeholder]="placeholder"
                    (searchDebounce)="handleSearchDebounce($event)"
                    (search)="handleSearch($event)"

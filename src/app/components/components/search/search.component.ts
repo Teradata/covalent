@@ -16,6 +16,10 @@ export class SearchDemoComponent {
     name: 'placeholder?',
     type: 'string',
   }, {
+    description: `Sets if the input underline should be visible. Defaults to 'false'.`,
+    name: 'showUnderline?',
+    type: 'boolean',
+  }, {
     description: `Event emitted after the [debounce] timeout.`,
     name: 'searchDebounce',
     type: 'function($event)',
@@ -37,6 +41,10 @@ export class SearchDemoComponent {
     description: `Placeholder for the underlying input component.`,
     name: 'placeholder?',
     type: 'string',
+  }, {
+    description: `Sets if the input underline should be visible. Defaults to 'false'.`,
+    name: 'showUnderline?',
+    type: 'boolean',
   }, {
     description: `Sets if the input should always be visible. Defaults to 'false'.`,
     name: 'alwaysVisible?',

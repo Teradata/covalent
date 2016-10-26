@@ -10,6 +10,7 @@ Properties:
 | --- | --- | --- |
 | `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
 | `placeholder?` | `string` | Placeholder for the underlying input component.
+| `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
 | `searchDebounce` | `function($event)` | Event emitted after the [debounce] timeout.
 | `search` | `function($event)` | Event emitted after the key enter has been pressed.
 | `clear?` | `function` | Event emitted after the clear icon has been clicked.
@@ -19,7 +20,7 @@ Properties:
 Example for HTML usage:
 
  ```html
-<td-search-input placeholder="Search here" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+<td-search-input placeholder="Search here" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
 </td-search-input>
  ```
 
@@ -35,6 +36,7 @@ Properties:
 | --- | --- | --- |
 | `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
 | `placeholder?` | `string` | Placeholder for the underlying input component.
+| `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
 | `alwaysVisible?` | `boolean` | Sets if the input should always be visible. Defaults to 'false'.
 | `searchDebounce` | `function($event)` | Event emitted after the [debounce] timeout.
 | `search` | `function($event)` | Event emitted after the key enter has been pressed.
@@ -45,7 +47,7 @@ Properties:
 Example for HTML usage:
 
  ```html
-<td-search-box placeholder="Search here" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+<td-search-box placeholder="Search here" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
 </td-search-box>
  ```
 

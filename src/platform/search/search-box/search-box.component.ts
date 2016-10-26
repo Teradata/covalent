@@ -32,6 +32,12 @@ export class TdSearchBoxComponent {
   }
 
   /**
+   * showUnderline?: boolean
+   * Sets if the input underline should be visible. Defaults to 'false'.
+   */
+  @Input('showUnderline') showUnderline: boolean = false;
+
+  /**
    * debounce?: number
    * Debounce timeout between keypresses. Defaults to 400.
    */

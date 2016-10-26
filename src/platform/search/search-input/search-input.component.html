@@ -1,5 +1,6 @@
 <div class="td-search-input" layout="row" layout-align="end center">
   <md-input #searchElement
+            [class.md-hide-underline]="!showUnderline"
             type="search"
             [placeholder]="placeholder"
             [formControl]="searchTermControl"

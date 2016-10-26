@@ -12,8 +12,8 @@
     <h3>Search Input</h3>
     <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
     <div layout="row" layout-align="start center">
-      <td-search-input *ngIf="debounce" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
-      <td-search-input *ngIf="!debounce" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+      <td-search-input *ngIf="debounce" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+      <td-search-input *ngIf="!debounce" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
     </div>
     <h3>Search Box</h3>
     <p>Search Value: {{searchBoxTerm || 'Empty'}}</p>
@@ -53,7 +53,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-search-input placeholder="Search here" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+        <td-search-input placeholder="Search here" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
         </td-search-input>
       ]]>
     </td-highlight>
@@ -96,7 +96,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-search-box placeholder="Search here" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+        <td-search-box placeholder="Search here" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
         </td-search-box>
       ]]>
     </td-highlight>
