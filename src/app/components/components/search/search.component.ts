@@ -8,49 +8,51 @@ import { Component } from '@angular/core';
 export class SearchDemoComponent {
 
   searchInputAttrs: Object[] = [{
-    description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,
-    name: 'pageSizes?',
-    type: 'number[]',
-  }, {
-    description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
-    name: 'pageSize?',
+    description: `Debounce timeout between keypresses. Defaults to 400.`,
+    name: 'debounce?',
     type: 'number',
   }, {
-    description: `Total rows for the pagination.`,
-    name: 'total',
-    type: 'number',
+    description: `Placeholder for the underlying input component.`,
+    name: 'placeholder?',
+    type: 'string',
   }, {
-    description: `Method to be executed when page size changes or any button is clicked in the paging bar.`,
-    name: 'change',
-    type: 'function($event: IPageChangeEvent)',
+    description: `Event emitted after the [debounce] timeout.`,
+    name: 'searchDebounce',
+    type: 'function($event)',
   }, {
-    description: `Navigates to a specific valid page.
-                  Returns 'true' if page is valid, else 'false'.`,
-    name: 'navigateToPage',
-    type: 'function(page: number): boolean',
+    description: `Event emitted after the key enter has been pressed.`,
+    name: 'search',
+    type: 'function($event)',
+  }, {
+    description: `Event emitted after the clear icon has been clicked.`,
+    name: 'clear',
+    type: 'function($event)',
   }];
 
   searchBoxAttrs: Object[] = [{
-    description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,
-    name: 'pageSizes?',
-    type: 'number[]',
-  }, {
-    description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
-    name: 'pageSize?',
+    description: `Debounce timeout between keypresses. Defaults to 400.`,
+    name: 'debounce?',
     type: 'number',
   }, {
-    description: `Total rows for the pagination.`,
-    name: 'total',
-    type: 'number',
+    description: `Placeholder for the underlying input component.`,
+    name: 'placeholder?',
+    type: 'string',
   }, {
-    description: `Method to be executed when page size changes or any button is clicked in the paging bar.`,
-    name: 'change',
-    type: 'function($event: IPageChangeEvent)',
+    description: `Sets if the input should always be visible. Defaults to 'false'.`,
+    name: 'alwaysVisible?',
+    type: 'boolean',
   }, {
-    description: `Navigates to a specific valid page.
-                  Returns 'true' if page is valid, else 'false'.`,
-    name: 'navigateToPage',
-    type: 'function(page: number): boolean',
+    description: `Event emitted after the [debounce] timeout.`,
+    name: 'searchDebounce',
+    type: 'function($event)',
+  }, {
+    description: `Event emitted after the key enter has been pressed.`,
+    name: 'search',
+    type: 'function($event)',
+  }, {
+    description: `Event emitted after the clear icon has been clicked.`,
+    name: 'clear',
+    type: 'function($event)',
   }];
 
   searchInputTerm: string = '';

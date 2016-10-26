@@ -32,27 +32,14 @@
   </md-card-actions>
 </md-card>
 <md-card>
-  <md-card-title>TdPagingBarComponent</md-card-title>
+  <md-card-title>TdSearchInputComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <h2><code><![CDATA[<td-paging-bar>]]></code></h2>
-    <p>Use <code><![CDATA[<td-paging-bar>]]></code> element to generate a paging bar.</p>
-    <p>The <code>(change)</code> event throws an event with the following interface:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        export interface IPageChangeEvent {
-          page: number;
-          maxPage: number;
-          pageSize: number;
-          total: number;
-          fromRow: number;
-          toRow: number;
-        }
-      ]]>
-    </td-highlight>
+    <h2><code><![CDATA[<td-search-input>]]></code></h2>
+    <p>Use <code><![CDATA[<td-search-input>]]></code> element to generate a search input with its animated cancel button.</p>
     <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{searchInputAttrs.length}} properties:</p>
+    <p>The <code><![CDATA[<td-search-input>]]></code> component has {{searchInputAttrs.length}} properties:</p>
     <md-list>
       <template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
         <a md-list-item layout-align="row">
@@ -66,36 +53,51 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-paging-bar [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)"></td-paging-bar>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { IPageChangeEvent } from '@covalent/paging-bar';
-        ...
-        })
-        export class Demo {
-          change(event: IPageChangeEvent): void {
-            ...
-          }
-          
-        }
+        <td-search-input placeholder="Search here" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+        </td-search-input>
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentPagingBarModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentSearchModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentPagingBarModule } from '@covalent/paging-bar';
+        import { CovalentSearchModule } from '@covalent/search';
         @NgModule({
           imports: [
-            CovalentPagingBarModule.forRoot(),
+            CovalentSearchModule.forRoot(),
             ...
           ],
           ...
         })
         export class MyModule {}
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdSearchBoxComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-search-box>]]></code></h2>
+    <p>Use <code><![CDATA[<td-search-box>]]></code> element to generate a search box with animations.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-search-box>]]></code> component has {{searchBoxAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-search-box placeholder="Search here" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+        </td-search-box>
       ]]>
     </td-highlight>
   </md-card-content>
