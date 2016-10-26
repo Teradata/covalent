@@ -67,6 +67,11 @@ export class ComponentsOverviewComponent {
       route: 'charts',
       title: 'Charts',
     }, {
+      color: 'lime-700',
+      icon: 'search',
+      route: 'search',
+      title: 'Search',
+    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',
