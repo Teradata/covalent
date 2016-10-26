@@ -32,6 +32,7 @@ export class TdSearchInputComponent implements OnInit {
   @Input('placeholder') placeholder: string;
 
   @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
+  @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit(): void {
     this.searchTermControl.valueChanges
@@ -47,6 +48,7 @@ export class TdSearchInputComponent implements OnInit {
 
   clearSearch(): void {
     this.searchTermControl.setValue('');
+    this.onClear.emit(undefined);
   }
 
   private _searchTermChanged(value: string): void {
