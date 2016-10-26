@@ -2,11 +2,8 @@
   <span class="td-paging-bar-per-page">
     Rows per page:
   </span>
-  <span class="td-paging-bar-page-size">
-    <span>{{pageSize}}</span>
-  </span>
   <button md-icon-button [md-menu-trigger-for]="pageSizeMenu">
-    <md-icon>arrow_drop_down</md-icon>
+    <span class="td-paging-size">{{pageSize}}</span> <md-icon>arrow_drop_down</md-icon>
   </button>
   <span class="td-paging-bar-ranges">
     {{range}} <span>of</span> {{total}}

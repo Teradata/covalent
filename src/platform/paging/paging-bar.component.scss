@@ -1,38 +1,15 @@
-@import '../../../node_modules/@angular/material/core/theming/palette';
-@import '../../../node_modules/@angular/material/core/theming/theming';
+@import 'paging-bar-theme';
 
-// TODO properly wrap in mixin to apply theme like material2 components
-$foreground: $md-light-theme-foreground;
-
-.td-paging-bar {
-  height: 48px;
-  color: md-color($foreground, secondary-text);
-  span.td-paging-bar-per-page {
-    margin-right: 40px;
+:host {
+  display: block;
+  [layout="row"] > * {
+    margin: 0 10px;
   }
-  span.td-paging-bar-page-size {
-    position: relative;
-    span {
-      position: absolute;
-      right: 0px;
-      top: -7px;
-    }
+  [md-icon-button] {
+    font-size: 12px;
+    font-weight: normal;
   }
-  span.td-paging-bar-ranges {
-    margin-left: 32px;
-  }
-  div.td-paging-bar-navigation {
-    margin-left: 32px;
-    margin-right: 14px;
-    button[md-icon-button] {
-      margin-right: 24px;
-      &:last-of-type {
-        margin-right: 0px;
-      }   
-    }
-  }
-  button[md-icon-button] {
-    width: 24px;
-    height: 24px;
+  .td-paging-size {
+    margin-right: -5px;
   }
 }
