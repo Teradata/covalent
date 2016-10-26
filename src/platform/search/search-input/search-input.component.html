@@ -3,6 +3,7 @@
             type="text"
             [placeholder]="placeholder"
             [formControl]="searchTermControl"
+            (blur)="handleBlur()"
             flex>
   </md-input>
   <button md-icon-button 

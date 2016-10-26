@@ -33,6 +33,7 @@ export class TdSearchInputComponent implements OnInit {
 
   @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
+  @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit(): void {
     this.searchTermControl.valueChanges
@@ -44,6 +45,10 @@ export class TdSearchInputComponent implements OnInit {
 
   focus(): void {
     this._input.focus();
+  }
+
+  handleBlur(): void {
+    this.onBlur.emit(undefined);
   }
 
   clearSearch(): void {
