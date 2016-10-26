@@ -19,7 +19,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
-import { PagingBarDemoComponent } from './paging-bar/paging-bar.component';
+import { PagingDemoComponent } from './paging/paging.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
@@ -51,7 +51,7 @@ import { CovalentPagingModule } from '../../../platform/paging';
     PipesComponent,
     ChartsDemoComponent,
     DataTableDemoComponent,
-    PagingBarDemoComponent,
+    PagingDemoComponent,
     MaterialComponentsComponent,
   ],
   imports: [

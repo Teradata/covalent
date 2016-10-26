@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { IPageChangeEvent } from '../../../../platform/paging';
 
 @Component({
-  selector: 'paging-bar-demo',
-  styleUrls: ['paging-bar.component.scss'],
-  templateUrl: 'paging-bar.component.html',
+  selector: 'paging-demo',
+  styleUrls: ['paging.component.scss'],
+  templateUrl: 'paging.component.html',
 })
-export class PagingBarDemoComponent {
+export class PagingDemoComponent {
 
   pagingBarAttrs: Object[] = [{
     description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,

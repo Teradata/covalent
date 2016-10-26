@@ -32,7 +32,7 @@ Properties:
 Import the [CovalentPagingModule] using the forRoot() method in your NgModule:
 
 ```typescript
-import { CovalentPagingModule } from '@covalent/paging-bar';
+import { CovalentPagingModule } from '@covalent/paging';
 @NgModule({
   imports: [
     CovalentPagingModule.forRoot(),

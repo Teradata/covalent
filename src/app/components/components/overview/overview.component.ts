@@ -69,8 +69,8 @@ export class ComponentsOverviewComponent {
     }, {
       color: 'blue-grey-700',
       icon: 'swap_horiz',
-      route: 'paging-bar',
-      title: 'Paging Bar',
+      route: 'paging',
+      title: 'Paging',
     }, {
       color: 'red-700',
       icon: 'devices',
