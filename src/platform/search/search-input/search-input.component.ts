@@ -31,6 +31,7 @@ export class TdSearchInputComponent implements OnInit {
   @Input('debounce') debounce: number = 400;
   @Input('placeholder') placeholder: string;
 
+  @Output('searchDebounce') onSearchDebounce: EventEmitter<string> = new EventEmitter<string>();
   @Output('search') onSearch: EventEmitter<string> = new EventEmitter<string>();
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
   @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
@@ -51,13 +52,18 @@ export class TdSearchInputComponent implements OnInit {
     this.onBlur.emit(undefined);
   }
 
+  handleSearch(event: Event): void {
+    event.stopPropagation();
+    this.onSearch.emit(this.searchTermControl.value);
+  }
+
   clearSearch(): void {
     this.searchTermControl.setValue('');
     this.onClear.emit(undefined);
   }
 
   private _searchTermChanged(value: string): void {
-    this.onSearch.emit(value);
+    this.onSearchDebounce.emit(value);
   }
 
 }

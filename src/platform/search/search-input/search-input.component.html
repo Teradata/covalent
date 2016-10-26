@@ -1,9 +1,10 @@
 <div class="td-search-input" layout="row" layout-align="end center">
   <md-input #searchElement
-            type="text"
+            type="search"
             [placeholder]="placeholder"
             [formControl]="searchTermControl"
             (blur)="handleBlur()"
+            (search)="handleSearch($event)"
             flex>
   </md-input>
   <button md-icon-button 
