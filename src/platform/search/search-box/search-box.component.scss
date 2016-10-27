@@ -5,5 +5,10 @@
   height: 64px;
   td-search-input {
     margin-left: 12px;
+    /deep/ {
+      .md-input-placeholder.md-float {
+        visibility: hidden;
+      }
+    }
   }
 }
