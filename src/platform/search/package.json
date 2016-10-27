@@ -1,0 +1,37 @@
+{
+  "name": "@covalent/search",
+  "version": "0.8.1",
+  "description": "Teradata UI Platform Search Box Module",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "search",
+    "box"
+  ],
+  "scripts": {
+  },
+  "engines": {
+    "node": ">4.4 < 5",
+    "npm": ">= 3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>"
+  ],
+  "dependencies": {
+    "@covalent/core": "0.8.1"
+  }
+}

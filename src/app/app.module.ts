@@ -19,6 +19,7 @@ import { CovalentChipsModule } from '../platform/chips';
 import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDataTableModule } from '../platform/data-table';
 import { CovalentPagingModule } from '../platform/paging';
+import { CovalentSearchModule } from '../platform/search';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CovalentPagingModule } from '../platform/paging';
     CovalentChartsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     CovalentPagingModule.forRoot(),
+    CovalentSearchModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [

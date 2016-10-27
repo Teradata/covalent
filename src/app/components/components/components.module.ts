@@ -20,6 +20,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
+import { SearchDemoComponent } from './search/search.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
@@ -31,6 +32,7 @@ import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
 import { CovalentDataTableModule } from '../../../platform/data-table';
 import { CovalentPagingModule } from '../../../platform/paging';
+import { CovalentSearchModule } from '../../../platform/search';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { CovalentPagingModule } from '../../../platform/paging';
     ChartsDemoComponent,
     DataTableDemoComponent,
     PagingDemoComponent,
+    SearchDemoComponent,
     MaterialComponentsComponent,
   ],
   imports: [
@@ -64,6 +67,7 @@ import { CovalentPagingModule } from '../../../platform/paging';
     CovalentChartsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     CovalentPagingModule.forRoot(),
+    CovalentSearchModule.forRoot(),
     componentsRoutes,
   ],
 })

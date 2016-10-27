@@ -78,6 +78,11 @@ export class ComponentsComponent {
     route: 'paging',
     title: 'Paging',
   }, {
+    description: 'Search and filter items',
+    icon: 'search',
+    route: 'search',
+    title: 'Search',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
