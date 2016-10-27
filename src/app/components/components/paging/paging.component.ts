@@ -18,6 +18,10 @@ export class PagingDemoComponent {
     name: 'firstLast?',
     type: 'boolean',
   }, {
+    description: `Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'`,
+    name: 'pageSizeAll?',
+    type: 'boolean',
+  }, {
     description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
     name: 'pageSize?',
     type: 'number',
@@ -37,7 +41,8 @@ export class PagingDemoComponent {
   }];
 
   event: IPageChangeEvent;
-  firstLast: boolean = true;
+  firstLast: boolean = false;
+  pageSizeAll: boolean = false;
 
   change(event: IPageChangeEvent): void {
     this.event = event;
@@ -45,6 +50,10 @@ export class PagingDemoComponent {
 
   toggleFirstLast(): void {
     this.firstLast = !this.firstLast;
+  }
+
+  togglePageSizeAll(): void {
+    this.pageSizeAll = !this.pageSizeAll;
   }
 
 }

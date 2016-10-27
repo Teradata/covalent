@@ -27,4 +27,5 @@
   <template let-size ngFor [ngForOf]="pageSizes">
     <button md-menu-item (click)="pageSize = size">{{size}}</button>
   </template>
+  <button md-menu-item *ngIf="pageSizeAll" (click)="pageSize = total">all</button>
 </md-menu>

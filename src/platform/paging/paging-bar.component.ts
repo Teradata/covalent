@@ -25,6 +25,12 @@ export class TdPagingBarComponent implements OnInit {
   private _initialized: boolean = false;
 
   /**
+   * pageSizeAll?: boolean
+   * Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
+   */
+  @Input('pageSizeAll') pageSizeAll: boolean = false;
+
+  /**
    * firstLast?: boolean
    * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
    */
@@ -52,7 +58,7 @@ export class TdPagingBarComponent implements OnInit {
    */
   @Input('pageSize')
   set pageSize(pageSize: number) {
-    if (this._pageSizes.indexOf(pageSize) > -1 && this._pageSize !== pageSize) {
+    if ((this._pageSizes.indexOf(pageSize) > -1 || this.total === pageSize) && this._pageSize !== pageSize) {
       this._pageSize = pageSize;
       this._page = 1;
       if (this._initialized) {
