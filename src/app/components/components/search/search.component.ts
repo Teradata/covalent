@@ -42,7 +42,8 @@ export class SearchDemoComponent {
     name: 'placeholder?',
     type: 'string',
   }, {
-    description: `The icon used to close the search toggle (default search icon).`,
+    description: `The icon used to close the search toggle, only shown when [alwaysVisible] is false.
+                  Defaults to 'search' icon.`,
     name: 'backIcon?',
     type: 'string',
   }, {
