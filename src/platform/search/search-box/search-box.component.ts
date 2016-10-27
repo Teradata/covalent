@@ -33,7 +33,7 @@ export class TdSearchBoxComponent {
 
   /**
    * backIcon?: string
-   * The icon used to close the search toggle.
+   * The icon used to close the search toggle, only shown when [alwaysVisible] is false.
    */
   @Input('backIcon') backIcon: string = 'search';
 

@@ -36,6 +36,7 @@ Properties:
 | --- | --- | --- |
 | `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
 | `placeholder?` | `string` | Placeholder for the underlying input component.
+| `backIcon?` | `string` | The icon used to close the search toggle, only shown when [alwaysVisible] is false.
 | `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
 | `alwaysVisible?` | `boolean` | Sets if the input should always be visible. Defaults to 'false'.
 | `searchDebounce` | `function($event)` | Event emitted after the [debounce] timeout.
