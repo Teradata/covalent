@@ -42,6 +42,10 @@ export class SearchDemoComponent {
     name: 'placeholder?',
     type: 'string',
   }, {
+    description: `The icon used to close the search toggle (default search icon).`,
+    name: 'backIcon?',
+    type: 'string',
+  }, {
     description: `Sets if the input underline should be visible. Defaults to 'false'.`,
     name: 'showUnderline?',
     type: 'boolean',

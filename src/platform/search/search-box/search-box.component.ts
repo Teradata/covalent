@@ -32,6 +32,12 @@ export class TdSearchBoxComponent {
   }
 
   /**
+   * backIcon?: string
+   * The icon used to close the search toggle.
+   */
+  @Input('backIcon') backIcon: string = 'search';
+
+  /**
    * showUnderline?: boolean
    * Sets if the input underline should be visible. Defaults to 'false'.
    */
