@@ -1,0 +1,9 @@
+@import '../../../node_modules/@angular/material/core/theming/palette';
+@import '../../../node_modules/@angular/material/core/theming/theming';
+
+// TODO properly wrap in mixin to apply theme like material2 components
+$foreground: $md-light-theme-foreground;
+
+:host {
+  color: md-color($foreground, secondary-text);
+}

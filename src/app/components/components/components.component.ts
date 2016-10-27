@@ -73,6 +73,11 @@ export class ComponentsComponent {
     route: 'charts',
     title: 'Charts',
   }, {
+    description: 'Paging for lists and tables',
+    icon: 'swap_horiz',
+    route: 'paging',
+    title: 'Paging',
+  }, {
     description: 'Search and filter items',
     icon: 'search',
     route: 'search',
