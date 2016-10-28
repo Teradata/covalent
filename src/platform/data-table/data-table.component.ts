@@ -1,8 +1,5 @@
 import { Component, OnInit, Input, Output,
-         EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MdInput } from '@angular/material';
-import 'rxjs/add/operator/debounceTime';
+         EventEmitter, OnChanges, SimpleChange, Renderer } from '@angular/core';
 
 import * as _ from 'lodash';
 
@@ -28,7 +25,7 @@ export interface ITdDataTableSortEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit {
+export class TdDataTableComponent implements OnInit, OnChanges {
 
   /** internal attributes */
   private _data: any[];
@@ -37,7 +34,6 @@ export class TdDataTableComponent implements OnInit {
   private _rowSelection: boolean;
   private _rowSelectionField: string = 'selected';
   private _multiple: boolean = true;
-  private _search: boolean = false;
   private _initialized: boolean = false;
 
   /** pagination */
@@ -52,14 +48,7 @@ export class TdDataTableComponent implements OnInit {
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
   /** search by term */
-  private _searchVisible: boolean = false;
-  private _searchTerm: string = '';
-  private _searchTermControl: FormControl = new FormControl();
-
-  @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
-
-  /** events */
-  @Output() sortChanged: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
+  @Input('searchTerm') searchTerm: string;
 
   /** td-data-table element attributes */
   @Input('title') title: string;
@@ -102,11 +91,6 @@ export class TdDataTableComponent implements OnInit {
   @Input('multiple')
   set multiple(multiple: string | boolean) {
     this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
-  }
-
-  @Input('search')
-  set search(search: string | boolean) {
-    this._search = search !== '' ? (search === 'true' || search === true) : true;
   }
 
   @Input('columns')
@@ -176,15 +160,25 @@ export class TdDataTableComponent implements OnInit {
     return this._visibleData.length > 0;
   }
 
+  /** events */
+  @Output() sortChanged: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
+
   constructor(private renderer: Renderer) {}
 
   ngOnInit(): void {
-    this._searchTermControl.valueChanges
-      .debounceTime(250)
-      .subscribe(this.searchTermChanged.bind(this));
     this.preprocessData();
     this._initialized = true;
     this.filterData();
+  }
+
+  refresh(): void {
+    this.filterData();
+  }
+
+  ngOnChanges(changes: {searchTerm: SimpleChange}): void {
+    if (changes.searchTerm) {
+      this.refresh();
+    }
   }
 
   areAllSelected(): boolean {
@@ -206,24 +200,6 @@ export class TdDataTableComponent implements OnInit {
 
     // toggles the selection field
     row[this._rowSelectionField] = checked;
-  }
-
-  toggleSearch(): void {
-    this._searchVisible = !this._searchVisible;
-
-    if (this._searchVisible) {
-      setTimeout(this.focusOnSearch.bind(this));
-    } else {
-      setTimeout(this.clearSearch.bind(this));
-    }
-  }
-
-  focusOnSearch(): void {
-    this._searchTermInput.first.focus();
-  }
-
-  clearSearch(): void {
-    this._searchTermControl.setValue('');
   }
 
   setSorting(column: ITdDataTableColumn): void {
@@ -275,11 +251,6 @@ export class TdDataTableComponent implements OnInit {
     });
   }
 
-  private searchTermChanged(value: string): void {
-    this._searchTerm = value;
-    this.resetPagination();
-  }
-
   private resetPagination(): void {
     this._currentPage = 1;
     this._totalPages = 0;
@@ -294,7 +265,7 @@ export class TdDataTableComponent implements OnInit {
       return;
     }
 
-    let filter: string = this._searchTerm.toLowerCase();
+    let filter: string = this.searchTerm ? this.searchTerm.toLowerCase() : '';
     if (filter) {
       this._visibleData = this._visibleData.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {

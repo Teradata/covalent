@@ -1,21 +1,3 @@
-<div class="td-data-table-header" layout="row" layout-align="start center" *ngIf="(title || _search) && !_searchVisible">
-  <span class="md-title">{{title}}</span>
-  <span flex></span>
-  <button md-icon-button *ngIf="_search" (click)="toggleSearch()">
-    <md-icon>filter_list</md-icon>
-  </button>
-</div>
-<div class="td-data-table-header" layout="row" layout-align="start center" *ngIf="_searchVisible">
-  <md-icon>search</md-icon>
-  <form flex layout="row" name="filter.form">
-    <md-input flex #searchTerm id="search" name="search" type="text" [formControl]="_searchTermControl">
-    </md-input>
-  </form>
-  <button md-icon-button (click)="toggleSearch()">
-    <md-icon>close</md-icon>
-  </button>
-</div>
-
 <div class="md-table-container" *ngIf="_visibleData.length > 0" title>
   <table td-table
          [class.md-row-select]="_rowSelection">

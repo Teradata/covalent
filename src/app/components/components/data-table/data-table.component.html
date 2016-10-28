@@ -5,6 +5,14 @@
   <md-card-content>
     <p>Basic Demo</p>
 
+    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+      <span *ngIf="!searchBox.searchVisible" class="md-title push-left-sm">Title here</span>
+      <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="searchTerm = $event" flex>
+      </td-search-box>
+      <button md-icon-button>
+        <md-icon>more_vert</md-icon>
+      </button>
+    </div>
     <td-data-table
       [data]="data"
       [columns]="columns"
@@ -15,10 +23,10 @@
       [sorting]="sorting"
       [sortBy]="sortBy"
       [sortOrder]="sortOrder"
-      search="true"
-      title="Search and pagination enabled"
+      [searchTerm]="searchTerm"
       (sortChanged)="sortChanged($event)">
     </td-data-table>
+    <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="9" (change)="pagingParams = $event"></td-paging-bar>
 
   </md-card-content>
   <md-divider></md-divider>
