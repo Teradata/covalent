@@ -36,16 +36,14 @@ export class TdDataTableComponent implements OnInit, OnChanges {
   private _multiple: boolean = true;
   private _initialized: boolean = false;
 
-  /** pagination */
-  private _pageSize: number = 10;
-  private _currentPage: number = 0;
-  private _totalPages: number = 0;
-  private _pagination: boolean = false;
-
   /** sorting */
   private _sorting: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
+
+  /** pagination */
+  @Input('fromRow') fromRow: number;
+  @Input('toRow') toRow: number;
 
   /** search by term */
   @Input('searchTerm') searchTerm: string;
@@ -56,18 +54,7 @@ export class TdDataTableComponent implements OnInit, OnChanges {
   @Input('data')
   set data(data: Object[]) {
     this._data = data;
-    this.resetPagination();
-  }
-
-  @Input('pageSize')
-  set pageSize(size: string | number) {
-    if (typeof size === 'string') {
-      this._pageSize = parseInt(size, 10);
-    } else {
-      this._pageSize = size;
-    }
-    this._pagination = true;
-    this.resetPagination();
+    this.refresh();
   }
 
   @Input('rowSelectionField')
@@ -150,12 +137,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
     this.filterData();
   }
 
-  @Input('pagination')
-  set pagination(pagination: string | boolean) {
-    this._pagination = pagination !== '' ? (pagination === 'true' || pagination === true) : true;
-    this.resetPagination();
-  }
-
   get hasData(): boolean {
     return this._visibleData.length > 0;
   }
@@ -175,8 +156,8 @@ export class TdDataTableComponent implements OnInit, OnChanges {
     this.filterData();
   }
 
-  ngOnChanges(changes: {searchTerm: SimpleChange}): void {
-    if (changes.searchTerm) {
+  ngOnChanges(changes: {searchTerm: SimpleChange, fromRow: SimpleChange, toRow: SimpleChange}): void {
+    if (changes.searchTerm || changes.fromRow || changes.toRow) {
       this.refresh();
     }
   }
@@ -221,18 +202,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
     this.sortChanged.next({ column: this._sortBy, order: this._sortOrder });
   }
 
-  nextPage(): void {
-    if (this._currentPage < this._totalPages) {
-      this._currentPage = this._currentPage + 1;
-      this.filterData();
-    }
-  }
-
-  prevPage(): void {
-    this._currentPage = Math.max(this._currentPage - 1, 1);
-    this.filterData();
-  }
-
   isAscending(): boolean {
     return this._sortOrder === TdDataTableSortingOrder.Ascending;
   }
@@ -249,13 +218,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
       });
       return row;
     });
-  }
-
-  private resetPagination(): void {
-    this._currentPage = 1;
-    this._totalPages = 0;
-
-    this.filterData();
   }
 
   private filterData(): void {
@@ -283,12 +245,8 @@ export class TdDataTableComponent implements OnInit, OnChanges {
       }
     }
 
-    if (this._pagination) {
-      const pageStart: number = (this._currentPage - 1) * this._pageSize;
-      const pageEnd: number = Math.min(pageStart + this._pageSize, this._visibleData.length);
-
-      this._totalPages = Math.ceil(this._visibleData.length / this._pageSize);
-      this._visibleData = this._visibleData.slice(pageStart, pageEnd);
+    if (this.fromRow >= 1 && this.toRow <= this._visibleData.length) {
+      this._visibleData = this._visibleData.slice(this.fromRow - 1, this.toRow);
     }
   }
 

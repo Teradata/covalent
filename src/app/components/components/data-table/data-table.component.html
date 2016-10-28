@@ -16,17 +16,17 @@
     <td-data-table
       [data]="data"
       [columns]="columns"
-      [pagination]="pagination"
-      [pageSize]="pageSize"
       [rowSelection]="rowSelection"
       [multiple]="multiple"
       [sorting]="sorting"
       [sortBy]="sortBy"
       [sortOrder]="sortOrder"
       [searchTerm]="searchTerm"
+      [fromRow]="pagingParams?.fromRow ? pagingParams.fromRow : 1"
+      [toRow]="pagingParams?.toRow ? pagingParams.toRow : 5"
       (sortChanged)="sortChanged($event)">
     </td-data-table>
-    <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="9" (change)="pagingParams = $event"></td-paging-bar>
+    <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="data?.length" (change)="pagingParams = $event"></td-paging-bar>
 
   </md-card-content>
   <md-divider></md-divider>
