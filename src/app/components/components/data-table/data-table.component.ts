@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 import { TdDialogService } from '../../../../platform/core';
 import { TdDataTableSortingOrder } from '../../../../platform/data-table';
@@ -11,7 +11,7 @@ const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
   styleUrls: ['data-table.component.scss'],
   templateUrl: 'data-table.component.html',
 })
-export class DataTableDemoComponent {
+export class DataTableDemoComponent implements OnInit {
 
   dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,
@@ -59,19 +59,7 @@ export class DataTableDemoComponent {
     type: 'boolean',
   }];
 
-  columns: any[] = [
-    { name: 'name',  label: 'Dessert (100g serving)' },
-    { name: 'type', label: 'Type' },
-    { name: 'icons', label: 'Icon'},
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
-    { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
-    { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'comment', label: 'Comment'},
-  ];
+  columns: any[] = [];
 
   sorting: boolean = true;
   pagination: boolean = true;
@@ -199,6 +187,22 @@ export class DataTableDemoComponent {
         row[column] = value;
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.columns = [
+      { name: 'name',  label: 'Dessert (100g serving)' },
+      { name: 'type', label: 'Type' },
+      { name: 'icons', label: 'Icon'},
+      { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
+      { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+      { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
+      { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
+      { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
+      { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
+      { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
+      { name: 'comment', label: 'Comment'},
+    ];
   }
 
   toggleRowSelection(): void {
