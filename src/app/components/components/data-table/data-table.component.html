@@ -18,6 +18,12 @@
       search="true"
       title="Search and pagination enabled"
       (sortChanged)="sortChanged($event)">
+      <template tdTemplate="icons" let-value="value">
+        <md-icon>{{value}}</md-icon>
+      </template>
+      <template tdTemplate="actions" let-row="row">
+        <button md-raised-button>Edit {{row['name']}}</button>
+      </template>
     </td-data-table>
 
   </md-card-content>

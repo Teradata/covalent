@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output,
-         EventEmitter, ViewChildren, QueryList, Renderer } from '@angular/core';
+import { Component, OnInit, Input, Output, ContentChildren, TemplateRef,
+         EventEmitter, ViewChildren, QueryList, Renderer, AfterContentInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 
 import * as _ from 'lodash';
+
+import { TdTemplateDirective } from './directives/template.directive';
 
 export enum TdDataTableSortingOrder {
   Ascending, Descending
@@ -28,7 +30,7 @@ export interface ITdDataTableSortEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit {
+export class TdDataTableComponent implements OnInit, AfterContentInit {
 
   /** internal attributes */
   private _data: any[];
@@ -56,6 +58,8 @@ export class TdDataTableComponent implements OnInit {
   private _searchTerm: string = '';
   private _searchTermControl: FormControl = new FormControl();
 
+  private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
+  @ContentChildren(TdTemplateDirective) private _templates: QueryList<TdTemplateDirective>;
   @ViewChildren(MdInput) _searchTermInput: QueryList<MdInput>;
 
   /** events */
@@ -185,6 +189,18 @@ export class TdDataTableComponent implements OnInit {
     this.preprocessData();
     this._initialized = true;
     this.filterData();
+  }
+
+  ngAfterContentInit(): void {
+    for (let i: number = 0; i < this._templates.toArray().length; i++) {
+      this._templateMap.set(
+        this._templates.toArray()[i].tdTemplate,
+        this._templates.toArray()[i].templateRef);
+    }
+  }
+
+  getTemplateRef(name: string): TemplateRef<any> {
+    return this._templateMap.get(name);
   }
 
   areAllSelected(): boolean {
