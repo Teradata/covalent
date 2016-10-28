@@ -44,7 +44,7 @@ describe('Component: App', () => {
     let testComponent: DocsAppComponent = fixture.debugElement.componentInstance;
     let element: HTMLElement = fixture.nativeElement;
 
-    expect(element.querySelector('[title="Covalent"]')).toBeTruthy();
+    expect(element.querySelector('[displayTitle="Covalent"]')).toBeTruthy();
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(element.querySelectorAll('md-nav-list[menu-items] a[md-list-item]').length)

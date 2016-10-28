@@ -18,7 +18,7 @@ export class TdLayoutNavListComponent {
   /**
    * title in toolbar
    */
-  @Input('title') title: string;
+  @Input('displayTitle') displayTitle: string;
 
   /**
    * icon for toolbar

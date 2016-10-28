@@ -5,7 +5,7 @@
         <span layout="row" layout-align="start center">
           <md-icon *ngIf="icon">{{icon}}</md-icon>
           <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
-          <span class="md-subhead">{{title}}</span>
+          <span class="md-subhead">{{displayTitle}}</span>
         </span>
         <a *ngIf="displayName" (click)="toggleUserMenu()" class="md-body-1 md-toolbar-link" layout="row" layout-align="space-around center">
           <span>{{displayName}}</span>
