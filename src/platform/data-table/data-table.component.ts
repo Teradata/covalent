@@ -48,9 +48,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
   /** search by term */
   @Input('searchTerm') searchTerm: string;
 
-  /** td-data-table element attributes */
-  @Input('title') title: string;
-
   @Input('data')
   set data(data: Object[]) {
     this._data = data;
