@@ -3,8 +3,8 @@
 <div layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill class="margin">
   <div flex-gt-xs="65">
     <md-card>
-      <md-card-title *ngIf="title">{{title}}</md-card-title>
-      <md-card-subtitle *ngIf="subtitle">{{subtitle}}</md-card-subtitle>
+      <md-card-title *ngIf="cardTitle">{{cardTitle}}</md-card-title>
+      <md-card-subtitle *ngIf="cardSubTitle">{{cardSubTitle}}</md-card-subtitle>
       <md-divider *ngIf="title || subtitle"></md-divider>
       <ng-content></ng-content>
     </md-card>

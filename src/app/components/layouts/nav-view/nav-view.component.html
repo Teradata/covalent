@@ -1,4 +1,4 @@
-<td-layout-nav logo="app/assets/icons/teradata.svg" displayTitle="Covalent">
+<td-layout-nav logo="app/assets/icons/teradata.svg" toolbarTitle="Covalent">
   <div class="md-padding">
     <md-card>
       <md-card-title>Nav View</md-card-title>
@@ -22,7 +22,7 @@
                     </md-list-item>
                     <md-divider></md-divider>
                     <md-list-item>
-                      <h3 md-line><code>title?: string</code></h3>
+                      <h3 md-line><code>sidenavTitle?: string</code></h3>
                       <p md-line>The title of your sidenav</p>
                     </md-list-item>
                     <md-divider></md-divider>
@@ -64,7 +64,7 @@
                     </md-list-item>
                     <md-divider></md-divider>
                     <md-list-item>
-                      <h3 md-line><code>title?: string</code></h3>
+                      <h3 md-line><code>toolbarTitle?: string</code></h3>
                       <p md-line>The title of your toolbar</p>
                     </md-list-item>
                     <md-divider></md-divider>
@@ -87,14 +87,14 @@
             <h3 class="md-title">HTML</h3>
             <td-highlight lang="html">
                 <![CDATA[
-                <td-layout #layout title="Sidenav Title" logo="path/to/sidenav-logo.svg">
+                <td-layout #layout sidenavTitle="Sidenav Title" logo="path/to/sidenav-logo.svg">
                   <md-nav-list menu-items>
                     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
                       <md-icon>{ {item.icon} }</md-icon>
                       { {item.title} }
                     </a>
                   </md-nav-list>
-                  <td-layout-nav title="Toolbar Title" logo="path/to/toolbar-logo.svg">
+                  <td-layout-nav toolbarTitle="Toolbar Title" logo="path/to/toolbar-logo.svg">
                     <router-outlet></router-outlet>
                   </td-layout-nav>
                 </td-layout>

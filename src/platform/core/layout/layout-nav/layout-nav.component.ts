@@ -13,7 +13,7 @@ export class TdLayoutNavComponent {
   /**
    * title in toolbar
    */
-  @Input('title') title: string;
+  @Input('toolbarTitle') toolbarTitle: string;
 
   /**
    * icon for toolbar

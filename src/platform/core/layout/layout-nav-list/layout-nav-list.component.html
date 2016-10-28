@@ -6,7 +6,7 @@
           <button md-button (click)="menuClick()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
           <md-icon *ngIf="icon">{{icon}}</md-icon>
           <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
-          <span>{{displayTitle}}</span>
+          <span>{{toolbarTitle}}</span>
           <ng-content select="[list-toolbar-content]"></ng-content>
         </md-toolbar>
         <div flex class="list md-content">

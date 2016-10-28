@@ -11,11 +11,11 @@ export class TdLayoutCardOverComponent {
   /**
    * title in card
    */
-  @Input('title') title: string;
+  @Input('cardTitle') cardTitle: string;
 
   /**
    * subtitle in card
    */
-  @Input('subtitle') subtitle: string;
+  @Input('cardSubTitle') cardSubTitle: string;
 
 }
