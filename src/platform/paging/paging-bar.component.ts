@@ -62,7 +62,7 @@ export class TdPagingBarComponent implements OnInit {
       this._pageSize = pageSize;
       this._page = 1;
       if (this._initialized) {
-        this._pageChanged();
+        this._handleOnChange();
       }
     }
   }
@@ -77,6 +77,8 @@ export class TdPagingBarComponent implements OnInit {
   @Input('total')
   set total(total: number) {
     this._total = total;
+    this._page = 1;
+    this._handleOnChange();
   }
   get total(): number {
     return this._total;
@@ -125,7 +127,7 @@ export class TdPagingBarComponent implements OnInit {
   navigateToPage(page: number): boolean {
     if (page >= 1 && page <= this.maxPage && page !== this._page) {
       this._page = page;
-      this._pageChanged();
+      this._handleOnChange();
       return true;
     }
     return false;
@@ -177,7 +179,7 @@ export class TdPagingBarComponent implements OnInit {
     this._toRow = this._total > top ? top : this._total;
   }
 
-  private _pageChanged(): void {
+  private _handleOnChange(): void {
     this._calculateRows();
     let event: IPageChangeEvent = {
       page: this._page,
