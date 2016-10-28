@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 
+import { TdDialogService } from '../../../../platform/core';
 import { TdDataTableSortingOrder } from '../../../../platform/data-table';
 
 const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
@@ -69,7 +70,7 @@ export class DataTableDemoComponent {
     { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'actions', label: 'Actions'},
+    { name: 'comment', label: 'Comment'},
   ];
 
   sorting: boolean = true;
@@ -184,6 +185,21 @@ export class DataTableDemoComponent {
 
   rowSelection: boolean = false;
   multiple: boolean = true;
+
+  constructor(private _dialogService: TdDialogService,
+              private _viewContainerRef: ViewContainerRef) {}
+
+  editCell(row: any, column: string): void {
+    this._dialogService.openPrompt({
+      message: 'Edit this field?',
+      value: row[column],
+      viewContainerRef: this._viewContainerRef,
+    }).afterClosed().subscribe((value: string) => {
+      if (value) {
+        row[column] = value;
+      }
+    });
+  }
 
   toggleRowSelection(): void {
     this.rowSelection = !this.rowSelection;

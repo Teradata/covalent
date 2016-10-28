@@ -21,8 +21,11 @@
       <template tdTemplate="icons" let-value="value">
         <md-icon>{{value}}</md-icon>
       </template>
-      <template tdTemplate="actions" let-row="row">
-        <button md-raised-button>Edit {{row['name']}}</button>
+      <template tdTemplate="comment" let-row="row" let-column="column">
+        <div layout="row" layout-align="start center" (click)="editCell(row, column)" flex>
+          <span flex>{{row[column]}}</span>
+          <md-icon>edit</md-icon>
+        </div>
       </template>
     </td-data-table>
 
