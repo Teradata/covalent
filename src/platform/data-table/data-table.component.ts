@@ -16,6 +16,7 @@ export interface ITdDataTableColumn {
   tooltip?: string;
   numeric?: boolean;
   format?: { (value: any): any };
+  template?: any;
 };
 
 export interface ITdDataTableSortEvent {

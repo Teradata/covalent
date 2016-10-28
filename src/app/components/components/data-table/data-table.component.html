@@ -20,6 +20,14 @@
       (sortChanged)="sortChanged($event)">
     </td-data-table>
 
+    <template #nameTmpl let-value="value">
+      <a href="#">{{value}}</a>
+    </template>
+
+    <template #actionsTmpl let-row="row">
+      <button md-raised-button>Edit {{row['name']}}</button>
+    </template>
+    
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>

@@ -71,7 +71,12 @@
         <td td-cell
             [class.md-numeric]="column.numeric"
             *ngFor="let column of columns">
-          <span class="md-body-1">{{ row[column.name] }}</span>
+          <span class="md-body-1" *ngIf="!column.template">{{ row[column.name] }}</span>
+          <template
+            *ngIf="column.template"
+            [ngTemplateOutlet]="column.template"
+            [ngOutletContext]="{ value: row[column.name], row: row, column: column }">
+          </template>
         </td>
       </tr>
     </tbody>
