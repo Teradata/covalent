@@ -1,4 +1,5 @@
 @import '~@angular/material/core/theming/all-theme';
+@import './platform/core/styles/theming/all-theme';
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -21,23 +22,4 @@ $theme: md-light-theme($primary, $accent, $warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($theme);
-
-.light-blue-orange {
-    $primary2: md-palette($md-light-blue);
-    $accent2:  md-palette($md-orange, 800);
-    $warn2:    md-palette($md-red, 600);
-
-    $light-blue-orange: md-light-theme($primary2, $accent2, $warn2);
-
-    @include angular-material-theme($light-blue-orange);   
-}
-
-.blue-grey-deep-orange {
-    $primary3: md-palette($md-blue-grey);
-    $accent3:  md-palette($md-deep-orange);
-    $warn3:    md-palette($md-red, 600);
-
-    $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
-
-    @include angular-material-theme($blue-grey-deep-orange);   
-}
+@include covalent-theme($theme);
