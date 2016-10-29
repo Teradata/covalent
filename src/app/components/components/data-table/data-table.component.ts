@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortEvent } from '../../../../platform/data-table';
 import { IPageChangeEvent } from '../../../../platform/paging';
 
-const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
-const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
+const NUMBER_FORMAT: any = (v: number) => v;
+const DECIMAL_FORMAT: any = (v: number) => v.toFixed(2);
 
 @Component({
   selector: 'data-table-demo',
@@ -64,96 +64,99 @@ export class DataTableDemoComponent implements OnInit {
       {
         'name': 'Frozen yogurt',
         'type': 'Ice cream',
-        'calories': { 'value': 159.0 },
-        'fat': { 'value': 6.0 },
-        'carbs': { 'value': 24.0 },
-        'protein': { 'value': 4.0 },
-        'sodium': { 'value': 87.0 },
-        'calcium': { 'value': 14.0 },
-        'iron': { 'value': 1.0 },
+        'calories': 159.0,
+        'fat': 6.0,
+        'carbs': 24.0,
+        'protein': 4.0,
+        'sodium': 87.0,
+        'calcium': 14.0,
+        'iron': 1.0,
       }, {
         'name': 'Ice cream sandwich',
         'type': 'Ice cream',
-        'calories': { 'value': 237.0 },
-        'fat': { 'value': 9.0 },
-        'carbs': { 'value': 37.0 },
-        'protein': { 'value': 4.3 },
-        'sodium': { 'value': 129.0 },
-        'calcium': { 'value': 8.0 },
-        'iron': { 'value': 1.0 },
+        'calories': 237.0,
+        'fat': 9.0,
+        'carbs': 37.0,
+        'protein': 4.3,
+        'sodium': 129.0,
+        'calcium': 8.0,
+        'iron': 1.0,
       }, {
         'name': 'Eclair',
         'type': 'Pastry',
-        'calories': { 'value':  262.0 },
-        'fat': { 'value': 16.0 },
-        'carbs': { 'value': 24.0 },
-        'protein': { 'value':  6.0 },
-        'sodium': { 'value': 337.0 },
-        'calcium': { 'value':  6.0 },
-        'iron': { 'value': 7.0 },
+        'calories':  262.0,
+        'fat': 16.0,
+        'carbs': 24.0,
+        'protein':  6.0,
+        'sodium': 337.0,
+        'calcium':  6.0,
+        'iron': 7.0,
       }, {
         'name': 'Cupcake',
         'type': 'Pastry',
-        'calories': { 'value':  305.0 },
-        'fat': { 'value': 3.7 },
-        'carbs': { 'value': 67.0 },
-        'protein': { 'value': 4.3 },
-        'sodium': { 'value': 413.0 },
-        'calcium': { 'value': 3.0 },
-        'iron': { 'value': 8.0 },
+        'calories':  305.0,
+        'fat': 3.7,
+        'carbs': 67.0,
+        'protein': 4.3,
+        'sodium': 413.0,
+        'calcium': 3.0,
+        'iron': 8.0,
       }, {
         'name': 'Jelly bean',
         'type': 'Candy',
-        'calories': { 'value':  375.0 },
-        'fat': { 'value': 0.0 },
-        'carbs': { 'value': 94.0 },
-        'protein': { 'value': 0.0 },
-        'sodium': { 'value': 50.0 },
-        'calcium': { 'value': 0.0 },
-        'iron': { 'value': 0.0 },
+        'calories':  375.0,
+        'fat': 0.0,
+        'carbs': 94.0,
+        'protein': 0.0,
+        'sodium': 50.0,
+        'calcium': 0.0,
+        'iron': 0.0,
       }, {
         'name': 'Lollipop',
         'type': 'Candy',
-        'calories': { 'value': 392.0 },
-        'fat': { 'value': 0.2 },
-        'carbs': { 'value': 98.0 },
-        'protein': { 'value': 0.0 },
-        'sodium': { 'value': 38.0 },
-        'calcium': { 'value': 0.0 },
-        'iron': { 'value': 2.0 },
+        'calories': 392.0,
+        'fat': 0.2,
+        'carbs': 98.0,
+        'protein': 0.0,
+        'sodium': 38.0,
+        'calcium': 0.0,
+        'iron': 2.0,
       }, {
         'name': 'Honeycomb',
         'type': 'Other',
-        'calories': { 'value': 408.0 },
-        'fat': { 'value': 3.2 },
-        'carbs': { 'value': 87.0 },
-        'protein': { 'value': 6.5 },
-        'sodium': { 'value': 562.0 },
-        'calcium': { 'value': 0.0 },
-        'iron': { 'value': 45.0 },
+        'calories': 408.0,
+        'fat': 3.2,
+        'carbs': 87.0,
+        'protein': 6.5,
+        'sodium': 562.0,
+        'calcium': 0.0,
+        'iron': 45.0,
       }, {
         'name': 'Donut',
         'type': 'Pastry',
-        'calories': { 'value': 452.0 },
-        'fat': { 'value': 25.0 },
-        'carbs': { 'value': 51.0 },
-        'protein': { 'value': 4.9 },
-        'sodium': { 'value': 326.0 },
-        'calcium': { 'value': 2.0 },
-        'iron': { 'value': 22.0 },
+        'calories': 452.0,
+        'fat': 25.0,
+        'carbs': 51.0,
+        'protein': 4.9,
+        'sodium': 326.0,
+        'calcium': 2.0,
+        'iron': 22.0,
       }, {
         'name': 'KitKat',
         'type': 'Candy',
-        'calories': { 'value': 518.0 },
-        'fat': { 'value': 26.0 },
-        'carbs': { 'value': 65.0 },
-        'protein': { 'value': 7.0 },
-        'sodium': { 'value': 54.0 },
-        'calcium': { 'value': 12.0 },
-        'iron': { 'value': 6.0 },
+        'calories': 518.0,
+        'fat': 26.0,
+        'carbs': 65.0,
+        'protein': 7.0,
+        'sodium': 54.0,
+        'calcium': 12.0,
+        'iron': 6.0,
       },
     ];
   sortable: boolean = true;
+  rowSelection: boolean = false;
+  multiple: boolean = true;
+
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
 
@@ -162,9 +165,6 @@ export class DataTableDemoComponent implements OnInit {
   toRow: number = 5;
   sortBy: string = 'name';
   sortOrder: string = 'DESC';
-
-  rowSelection: boolean = false;
-  multiple: boolean = true;
 
   constructor(private _dataTableService: TdDataTableService) {}
 
