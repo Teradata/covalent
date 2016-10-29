@@ -12,7 +12,6 @@ import { TdDataTableTableDirective } from './directives/table.directive';
 import { TdDataTableHeadDirective } from './directives/head.directive';
 import { TdDataTableBodyDirective } from './directives/body.directive';
 import { TdDataTableRowDirective } from './directives/row.directive';
-import { TdDataTableColumnDirective } from './directives/column.directive';
 import { TdDataTableCellDirective } from './directives/cell.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
@@ -23,7 +22,6 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableHeadDirective,
   TdDataTableBodyDirective,
   TdDataTableRowDirective,
-  TdDataTableColumnDirective,
   TdDataTableCellDirective,
 ];
 
