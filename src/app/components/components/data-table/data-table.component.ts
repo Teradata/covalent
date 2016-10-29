@@ -185,8 +185,8 @@ export class DataTableDemoComponent implements OnInit {
       },
     ];
   basicData: any[] = this.data.slice(0, 6);
-  selectable: boolean = true;
-  multiple: boolean = true;
+  selectable: boolean = false;
+  multiple: boolean = false;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
