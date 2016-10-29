@@ -71,6 +71,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
   }
   get value(): any { return this._value; };
 
+  @Input('uniqueId') uniqueId: string;
+
   @Input('data')
   set data(data: Object[]) {
     this._data = data;
@@ -176,8 +178,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
   selectAll(checked: boolean): void {
     if (checked) {
       this._data.forEach((row: any) => {
-        let index: number = this._value.indexOf(row);
-        if (index < 0) {
+        if (!this.isRowSelected(row)) {
           this._value.push(row);
         }
       });
@@ -187,6 +188,11 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
   }
 
   isRowSelected(row: any): boolean {
+    if (this.uniqueId) {
+      return this._value ? this._value.filter((val: any) => {
+        return val[this.uniqueId] === row[this.uniqueId];
+      }).length > 0 : false;
+    }
     return this._value ? this._value.indexOf(row) > -1 : false;
   }
 
@@ -200,6 +206,11 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
     if (checked) {
       this._value.push(row);
     } else {
+      if (this.uniqueId) {
+        row = this._value.filter((val: any) => {
+          return val[this.uniqueId] === row[this.uniqueId];
+        })[0];
+      }
       let index: number = this._value.indexOf(row);
       if (index > -1) {
         this._value.splice(index, 1);
