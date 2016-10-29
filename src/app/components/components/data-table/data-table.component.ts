@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { TdDataTableSortingOrder } from '../../../../platform/data-table';
+import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortEvent } from '../../../../platform/data-table';
+import { IPageChangeEvent } from '../../../../platform/paging';
 
 const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
 const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
@@ -10,7 +11,7 @@ const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
   styleUrls: ['data-table.component.scss'],
   templateUrl: 'data-table.component.html',
 })
-export class DataTableDemoComponent {
+export class DataTableDemoComponent implements OnInit {
 
   dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,
@@ -21,41 +22,30 @@ export class DataTableDemoComponent {
     name: 'columns?',
     type: 'ITdDataTableColumn[]',
   }, {
-    description: `If present will display a title before the table`,
-    name: 'title?',
-    type: 'string',
-  }, {
-    description: `Enables pagination`,
-    name: 'pagination?',
-    type: 'boolean',
-  }, {
-    description: `Number of rows per page, when omitted defaults to 10`,
-    name: 'pageSize?',
-    type: 'number',
-  }, {
-    description: `Enables sorting by column`,
-    name: 'sorting?',
-    type: 'boolean',
-  }, {
-    description: `Name of the column to use for sorting`,
-    name: 'sortBy?',
-    type: 'string',
-  }, {
-    description: `Sorting order - ascending or descending`,
-    name: 'sortOrder?',
-    type: `'ASC' | 'DESC'`,
-  }, {
-    description: `Enables search`,
-    name: 'search?',
-    type: `boolean`,
-  }, {
-    description: `Adds a checkbox column to allow user to select rows`,
+    description: `Adds a checkbox column and allows the user to select rows.`,
     name: 'rowSelection?',
     type: 'boolean',
   }, {
     description: `Toggles between multiple or single row selection`,
     name: 'multiple?',
     type: 'boolean',
+  }, {
+    description: `Enables sort by column and (sortChange) events.`,
+    name: 'sortable?',
+    type: 'boolean',
+  }, {
+    description: `Name of the column to be shown as active sort column.`,
+    name: 'sortBy?',
+    type: 'string',
+  }, {
+    description: `Sorting order for active [sortBy] column. Defaults to 'ASC'`,
+    name: 'sortOrder?',
+    type: `'ASC' | 'DESC'`,
+  }, {
+    description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+                  Emits an [ITdDataTableSortEvent] implemented object.`,
+    name: 'sortChange',
+    type: `function()`,
   }];
 
   columns: any[] = [
@@ -69,10 +59,6 @@ export class DataTableDemoComponent {
     { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
     { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
   ];
-
-  sorting: boolean = true;
-  pagination: boolean = true;
-  pageSize: number = 5;
 
   data: any[] = [
       {
@@ -167,12 +153,50 @@ export class DataTableDemoComponent {
         'iron': { 'value': 6.0 },
       },
     ];
+  sortable: boolean = true;
+  filteredData: any[] = this.data;
+  filteredTotal: number = this.data.length;
 
+  searchTerm: string = '';
+  fromRow: number = 1;
+  toRow: number = 5;
   sortBy: string = 'name';
-  sortOrder: string = 'ASC';
+  sortOrder: string = 'DESC';
 
   rowSelection: boolean = false;
   multiple: boolean = true;
+
+  constructor(private _dataTableService: TdDataTableService) {}
+
+  ngOnInit(): void {
+    this.filter();
+  }
+
+  sort(sortEvent: ITdDataTableSortEvent): void {
+    this.sortBy = sortEvent.column.name;
+    this.sortOrder = sortEvent.order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
+    this.filter();
+  }
+
+  search(searchTerm: string): void {
+    this.searchTerm = searchTerm;
+    this.filter();
+  }
+
+  page(pagingEvent: IPageChangeEvent): void {
+    this.fromRow = pagingEvent.fromRow;
+    this.toRow = pagingEvent.toRow;
+    this.filter();
+  }
+
+  filter(): void {
+    let newData: any[] = this.data;
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+    this.filteredTotal = newData.length;
+    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder === 'ASC' ? 'ASC' : 'DESC');
+    newData = this._dataTableService.pageData(newData, this.fromRow, this.toRow);
+    this.filteredData = newData;
+  }
 
   toggleRowSelection(): void {
     this.rowSelection = !this.rowSelection;
@@ -180,24 +204,6 @@ export class DataTableDemoComponent {
 
   toggleRowSelectionMultiple(): void {
     this.multiple = !this.multiple;
-  }
-
-  toggleSorting(): void {
-    this.sorting = !this.sorting;
-  }
-
-  toggleSortBy(): void {
-    const columns: any[] = this.columns.map((c: any) => c.name);
-    const idx: number = columns.indexOf(this.sortBy);
-    if (idx < columns.length - 1) {
-      this.sortBy = columns[idx + 1];
-    } else {
-      this.sortBy = columns[0];
-    }
-  }
-
-  toggleSortOrder(): void {
-    this.sortOrder = this.sortOrder === 'ASC' ? 'DESC' : 'ASC';
   }
 
   areTooltipsOn(): boolean {
@@ -210,23 +216,5 @@ export class DataTableDemoComponent {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
-  }
-
-  togglePagination(): void {
-    this.pagination = !this.pagination;
-  }
-
-  togglePageSize(): void {
-    this.pageSize += 5;
-    if (this.pageSize > 15) {
-      this.pageSize = 5;
-    }
-  }
-
-  sortChanged(changes: any): void {
-    const { column, order }: any = changes;
-
-    this.sortBy = column.name;
-    this.sortOrder = order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
   }
 }
