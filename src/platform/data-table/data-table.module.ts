@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from '@angular/material';
@@ -28,8 +27,6 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   imports: [
     MaterialModule.forRoot(),
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
   declarations: [
     TD_DATA_TABLE_DIRECTIVES,
