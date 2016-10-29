@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
+import { TdDataTableService } from './services/data-table.service';
 
 import { TdDataTableTableDirective } from './directives/table.directive';
 import { TdDataTableHeadDirective } from './directives/head.directive';
@@ -42,7 +43,7 @@ export class CovalentDataTableModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDataTableModule,
-      providers: [],
+      providers: [ TdDataTableService ],
     };
   }
 }
