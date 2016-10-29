@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, forwardRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 const noop: any = () => {
@@ -39,7 +39,7 @@ export interface IDataTableSelectEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements ControlValueAccessor, OnInit {
+export class TdDataTableComponent implements ControlValueAccessor {
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -53,7 +53,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
   private _columns: ITdDataTableColumn[];
   private _rowSelection: boolean;
   private _multiple: boolean = true;
-  private _initialized: boolean = false;
 
   /** sorting */
   private _sortable: boolean = false;
@@ -156,10 +155,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
 
   @Output('rowSelect') onRowSelect: EventEmitter<IDataTableSelectEvent> = new EventEmitter<IDataTableSelectEvent>();
 
-  ngOnInit(): void {
-    this._initialized = true;
-  }
-
   clearModel(): void {
     this._value.splice(0, this._value.length);
   }
@@ -227,9 +222,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
     } else {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
-    }
-    if (!this._initialized) {
-      return;
     }
     this.onSortChange.next({ column: this._sortBy, order: this._sortOrder });
   }
