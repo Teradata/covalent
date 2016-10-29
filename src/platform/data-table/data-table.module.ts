@@ -9,20 +9,19 @@ import { TdDataTableColumnComponent } from './data-table-column/data-table-colum
 import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableHeadComponent } from './data-table-head/data-table-head.component';
+import { TdDataTableBodyComponent } from './data-table-body/data-table-body.component';
+import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 import { TdDataTableService } from './services/data-table.service';
-
-import { TdDataTableTableDirective } from './directives/table.directive';
-import { TdDataTableBodyDirective } from './directives/body.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
+
   TdDataTableColumnComponent,
   TdDataTableCellComponent,
   TdDataTableRowComponent,
   TdDataTableHeadComponent,
-
-  TdDataTableTableDirective,
-  TdDataTableBodyDirective,
+  TdDataTableBodyComponent,
+  TdDataTableTableComponent,
 ];
 
 @NgModule({

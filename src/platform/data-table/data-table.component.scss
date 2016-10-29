@@ -11,11 +11,6 @@ $checkbox-size: 18px;
 }
 
 table.md-table {
-  width: 100%;
-  border-spacing: 0;
-  overflow: hidden;
-  border-collapse: collapse;
-
   &.md-row-select tbody.md-body > tr.md-row {
     transition: background-color 0.2s;
   }
