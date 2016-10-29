@@ -3,6 +3,27 @@
   <md-card-subtitle>Display sets of raw data</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    <h3>Custom Data Table</h3>
+    <div class="md-table-container">
+      <table td-data-table>
+        <thead td-data-table-head>
+          <tr td-data-table-row>
+            <th td-data-table-column 
+                *ngFor="let column of columns"
+                [numeric]="column.numeric">
+                <span>{{column.label}}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody td-data-table-body>
+          <tr td-data-table-row *ngFor="let row of filteredData">
+            <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric" >
+              <span class="md-body-1">{{ row[column.name] }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <h3>Basic Demo</h3>
     <td-data-table
       [data]="basicData"
