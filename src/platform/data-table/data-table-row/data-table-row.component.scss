@@ -1,0 +1,14 @@
+@import '../data-table.component';
+
+:host {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.md-body > :host {
+  height: 48px;
+}
+
+.md-head > :host {
+  height: 56px;
+}

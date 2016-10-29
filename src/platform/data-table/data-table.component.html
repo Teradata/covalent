@@ -2,7 +2,7 @@
   <table td-table
          [class.md-row-select]="_selectable">
     <thead td-head>
-      <tr td-row>
+      <tr td-data-table-row>
         <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
           <md-checkbox
             *ngIf="_multiple"
@@ -24,7 +24,7 @@
       </tr>
     </thead>
     <tbody td-body>
-      <tr td-row
+      <tr td-data-table-row
           [class.md-selected]="_selectable && isRowSelected(row)"
           *ngFor="let row of _data"
           (click)="_selectable && select(row, !isRowSelected(row), $event)">

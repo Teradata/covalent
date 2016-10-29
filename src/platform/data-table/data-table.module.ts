@@ -7,22 +7,22 @@ import { MaterialModule } from '@angular/material';
 import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableService } from './services/data-table.service';
 
 import { TdDataTableTableDirective } from './directives/table.directive';
 import { TdDataTableHeadDirective } from './directives/head.directive';
 import { TdDataTableBodyDirective } from './directives/body.directive';
-import { TdDataTableRowDirective } from './directives/row.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableColumnComponent,
   TdDataTableCellComponent,
+  TdDataTableRowComponent,
 
   TdDataTableTableDirective,
   TdDataTableHeadDirective,
   TdDataTableBodyDirective,
-  TdDataTableRowDirective,
 ];
 
 @NgModule({
