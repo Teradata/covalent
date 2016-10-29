@@ -62,6 +62,7 @@ export class DataTableDemoComponent implements OnInit {
 
   data: any[] = [
       {
+        'id': 1,
         'name': 'Frozen yogurt',
         'type': 'Ice cream',
         'calories': 159.0,
@@ -72,6 +73,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 14.0,
         'iron': 1.0,
       }, {
+        'id': 2,
         'name': 'Ice cream sandwich',
         'type': 'Ice cream',
         'calories': 237.0,
@@ -82,6 +84,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 8.0,
         'iron': 1.0,
       }, {
+        'id': 3,
         'name': 'Eclair',
         'type': 'Pastry',
         'calories':  262.0,
@@ -92,6 +95,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium':  6.0,
         'iron': 7.0,
       }, {
+        'id': 4,
         'name': 'Cupcake',
         'type': 'Pastry',
         'calories':  305.0,
@@ -102,6 +106,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 3.0,
         'iron': 8.0,
       }, {
+        'id': 5,
         'name': 'Jelly bean',
         'type': 'Candy',
         'calories':  375.0,
@@ -112,6 +117,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 0.0,
         'iron': 0.0,
       }, {
+        'id': 6,
         'name': 'Lollipop',
         'type': 'Candy',
         'calories': 392.0,
@@ -122,6 +128,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 0.0,
         'iron': 2.0,
       }, {
+        'id': 7,
         'name': 'Honeycomb',
         'type': 'Other',
         'calories': 408.0,
@@ -132,6 +139,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 0.0,
         'iron': 45.0,
       }, {
+        'id': 8,
         'name': 'Donut',
         'type': 'Pastry',
         'calories': 452.0,
@@ -142,6 +150,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 2.0,
         'iron': 22.0,
       }, {
+        'id': 9,
         'name': 'KitKat',
         'type': 'Candy',
         'calories': 518.0,
@@ -152,6 +161,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 12.0,
         'iron': 6.0,
       }, {
+        'id': 10,
         'name': 'Chocolate',
         'type': 'Candy',
         'calories': 518.0,
@@ -162,6 +172,7 @@ export class DataTableDemoComponent implements OnInit {
         'calcium': 12.0,
         'iron': 6.0,
       }, {
+        'id': 11,
         'name': 'Chamoy',
         'type': 'Candy',
         'calories': 518.0,
