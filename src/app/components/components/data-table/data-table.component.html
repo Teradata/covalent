@@ -7,14 +7,14 @@
     <td-data-table
       [data]="basicData"
       [columns]="columns"
-      [rowSelection]="rowSelection"
+      [selectable]="selectable"
       [multiple]="multiple">
     </td-data-table>
     <h3>Paging Bar / Search Box / Sortable Demo</h3>
     <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
       <span *ngIf="!searchBox.searchVisible" class="md-title push-left-sm">
-        <span *ngIf="(rowSelection && !selectedRows.length) || !rowSelection">Title here</span>
-        <span *ngIf="selectedRows.length && rowSelection">Selected {{selectedRows.length}} row(s)</span>
+        <span *ngIf="(selectable && !selectedRows.length) || !selectable">Title here</span>
+        <span *ngIf="selectedRows.length && selectable">Selected {{selectedRows.length}} row(s)</span>
       </span>
       <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
       </td-search-box>
@@ -25,7 +25,7 @@
     <td-data-table
       [data]="filteredData"
       [columns]="columns"
-      [rowSelection]="rowSelection"
+      [selectable]="selectable"
       [multiple]="multiple"
       [sortable]="true"
       [sortBy]="sortBy"
@@ -38,13 +38,13 @@
   <md-divider></md-divider>
   <md-card-actions>
 
-    <button md-button color="primary" (click)="toggleRowSelection()">
-      Toggle RowSelection
-      ({{rowSelection ? 'ON' : 'OFF'}})
+    <button md-button color="primary" (click)="toggleSelectable()">
+      Toggle Selectable
+      ({{selectable ? 'ON' : 'OFF'}})
     </button>
 
-    <button md-button color="primary" (click)="toggleRowSelectionMultiple()" [disabled]="!rowSelection">
-      Toggle RowSelectionMultiple
+    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable">
+      Toggle Multiple Selection
       ({{multiple ? 'ON' : 'OFF'}})
     </button>
 
@@ -80,7 +80,7 @@
         <td-data-table
           [data]="data"
           [columns]="columns"
-          [rowSelection]="true|false"
+          [selectable]="true|false"
           [multiple]="true|false"
           [sortable]="true|false"
           [sortBy]="sortBy"

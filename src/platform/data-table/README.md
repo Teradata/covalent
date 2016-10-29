@@ -10,7 +10,7 @@ Properties:
 | --- | --- | --- |
 | `data` | `any[]` | Rows of data to be displayed.
 | `columns` | `ITdDataTableColumn[]` | List of columns to be displayed.
-| `rowSelection?` | `boolean` | Adds a checkbox column and allows the user to select rows.
+| `selectable?` | `boolean` | Adds a checkbox column and allows the user to select rows.
 | `multiple?` | `boolean` | Toggles between multiple or single row selection.
 | `sortable?` | `boolean` | Enables sort by column and (sortChange) events.
 | `sortBy?` | `string` | Name of the column to be shown as active sort column.
@@ -41,7 +41,7 @@ Example for HTML usage:
 <td-data-table
   [data]="data"
   [columns]="columns"
-  [rowSelection]="true|false"
+  [selectable]="true|false"
   [multiple]="true|false"
   [sortable]="true|false"
   [sortBy]="sortBy"

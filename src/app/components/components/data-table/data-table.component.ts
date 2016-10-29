@@ -23,7 +23,7 @@ export class DataTableDemoComponent implements OnInit {
     type: 'ITdDataTableColumn[]',
   }, {
     description: `Adds a checkbox column and allows the user to select rows.`,
-    name: 'rowSelection?',
+    name: 'selectable?',
     type: 'boolean',
   }, {
     description: `Toggles between multiple or single row selection`,
@@ -185,7 +185,7 @@ export class DataTableDemoComponent implements OnInit {
       },
     ];
   basicData: any[] = this.data.slice(0, 6);
-  rowSelection: boolean = true;
+  selectable: boolean = true;
   multiple: boolean = true;
 
   filteredData: any[] = this.data;
@@ -232,11 +232,11 @@ export class DataTableDemoComponent implements OnInit {
     this.filteredData = newData;
   }
 
-  toggleRowSelection(): void {
-    this.rowSelection = !this.rowSelection;
+  toggleSelectable(): void {
+    this.selectable = !this.selectable;
   }
 
-  toggleRowSelectionMultiple(): void {
+  toggleMultiple(): void {
     this.multiple = !this.multiple;
   }
 

@@ -1,9 +1,9 @@
 <div class="md-table-container" *ngIf="hasData" title>
   <table td-table
-         [class.md-row-select]="_rowSelection">
+         [class.md-row-select]="_selectable">
     <thead td-head>
       <tr td-row>
-        <th td-column class="md-checkbox-column" *ngIf="_rowSelection">
+        <th td-column class="md-checkbox-column" *ngIf="_selectable">
           <md-checkbox
             *ngIf="_multiple"
             [checked]="areAllSelected()"
@@ -42,10 +42,10 @@
     </thead>
     <tbody td-body>
       <tr td-row
-          [class.md-selected]="_rowSelection && isRowSelected(row)"
+          [class.md-selected]="_selectable && isRowSelected(row)"
           *ngFor="let row of _data"
-          (click)="_rowSelection && select(row, !isRowSelected(row), $event)">
-        <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
+          (click)="_selectable && select(row, !isRowSelected(row), $event)">
+        <td td-cell class="md-checkbox-cell" *ngIf="_selectable">
           <md-checkbox
             [checked]="isRowSelected(row)">
           </md-checkbox>

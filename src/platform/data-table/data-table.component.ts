@@ -52,7 +52,7 @@ export class TdDataTableComponent implements ControlValueAccessor {
   /** internal attributes */
   private _data: any[];
   private _columns: ITdDataTableColumn[];
-  private _rowSelection: boolean;
+  private _selectable: boolean = false;
   private _multiple: boolean = true;
 
   /** sorting */
@@ -104,9 +104,9 @@ export class TdDataTableComponent implements ControlValueAccessor {
     return this._columns;
   }
 
-  @Input('rowSelection')
-  set rowSelection(selection: string | boolean) {
-    this._rowSelection = selection !== '' ? (selection === 'true' || selection === true) : true;
+  @Input('selectable')
+  set selectable(_selectable: string | boolean) {
+    this._selectable = _selectable !== '' ? (_selectable === 'true' || _selectable === true) : true;
   }
 
   @Input('multiple')
