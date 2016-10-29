@@ -8,10 +8,10 @@ import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+import { TdDataTableHeadComponent } from './data-table-head/data-table-head.component';
 import { TdDataTableService } from './services/data-table.service';
 
 import { TdDataTableTableDirective } from './directives/table.directive';
-import { TdDataTableHeadDirective } from './directives/head.directive';
 import { TdDataTableBodyDirective } from './directives/body.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
@@ -19,9 +19,9 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableColumnComponent,
   TdDataTableCellComponent,
   TdDataTableRowComponent,
+  TdDataTableHeadComponent,
 
   TdDataTableTableDirective,
-  TdDataTableHeadDirective,
   TdDataTableBodyDirective,
 ];
 
