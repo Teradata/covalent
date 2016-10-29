@@ -17,8 +17,7 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "platform/core/styles/platform.scss",
-        "../node_modules/@angular/material/core/overlay/overlay.css"
+        "platform/core/styles/platform.scss"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
