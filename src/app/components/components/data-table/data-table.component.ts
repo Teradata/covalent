@@ -162,7 +162,8 @@ export class DataTableDemoComponent implements OnInit {
 
   searchTerm: string = '';
   fromRow: number = 1;
-  toRow: number = 5;
+  currentPage: number = 1;
+  pageSize: number = 5;
   sortBy: string = 'name';
   sortOrder: string = 'DESC';
 
@@ -185,7 +186,8 @@ export class DataTableDemoComponent implements OnInit {
 
   page(pagingEvent: IPageChangeEvent): void {
     this.fromRow = pagingEvent.fromRow;
-    this.toRow = pagingEvent.toRow;
+    this.currentPage = pagingEvent.page;
+    this.pageSize = pagingEvent.pageSize;
     this.filter();
   }
 
@@ -194,7 +196,7 @@ export class DataTableDemoComponent implements OnInit {
     newData = this._dataTableService.filterData(newData, this.searchTerm, true);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder === 'ASC' ? 'ASC' : 'DESC');
-    newData = this._dataTableService.pageData(newData, this.fromRow, this.toRow);
+    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
   }
 
