@@ -1,0 +1,68 @@
+@import '../data-table.component';
+
+:host {
+  //color: $md-dark-secondary;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  &.md-sort {
+    cursor: pointer;
+  }
+
+  md-icon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px !important;
+    line-height: 16px !important;
+
+    &.md-sort-icon {
+      opacity: 0;
+      transition: transform 0.25s, opacity 0.25s;
+
+      &.md-asc {
+        transform: rotate(0deg);
+      }
+
+      &.md-desc {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 8px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  &:hover.md-sortable md-icon.md-sort-icon,
+  &.md-active.md-sortable md-icon.md-sort-icon {
+    opacity: 1;
+  }
+
+  vertical-align: middle;
+  text-align: left;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &:last-child {
+    padding: 0 24px 0 0;
+  }
+
+  &.md-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.md-numeric {
+    text-align: right;
+  }
+}

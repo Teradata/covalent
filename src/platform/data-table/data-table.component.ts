@@ -227,14 +227,6 @@ export class TdDataTableComponent implements ControlValueAccessor {
     this.onSortChange.next({ column: this._sortBy, order: this._sortOrder });
   }
 
-  isAscending(): boolean {
-    return this._sortOrder === TdDataTableSortingOrder.Ascending;
-  }
-
-  isDescending(): boolean {
-    return this._sortOrder === TdDataTableSortingOrder.Descending;
-  }
-
   /**
    * Implemented as part of ControlValueAccessor.
    */

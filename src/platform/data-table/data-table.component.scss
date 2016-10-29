@@ -25,53 +25,8 @@ table.md-table {
     height: 56px;
   }
 
-  tbody.md-body > tr.md-row,
-  tfoot.md-foot > tr.md-row {
+  tbody.md-body > tr.md-row {
     height: 48px;
-  }
-
-  th.md-column {
-    //color: $md-dark-secondary;
-    font-size: 12px;
-    font-weight: bold;
-    white-space: nowrap;
-
-    &.md-sort {
-      cursor: pointer;
-    }
-
-    md-icon {
-      height: 16px;
-      width: 16px;
-      font-size: 16px !important;
-      line-height: 16px !important;
-
-      &.md-sort-icon {
-        opacity: 0;
-        transition: transform 0.25s, opacity 0.25s;
-
-        &.md-asc {
-          transform: rotate(0deg);
-        }
-
-        &.md-desc {
-          transform: rotate(180deg);
-        }
-      }
-
-      &:not(:first-child) {
-        margin-left: 8px;
-      }
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-    }
-
-    &:hover md-icon.md-sort-icon,
-    &.md-active md-icon.md-sort-icon {
-      opacity: 1;
-    }
   }
 
   tr.md-row {
@@ -114,8 +69,7 @@ table.md-table {
     }
   }
 
-  td.md-cell,
-  th.md-column {
+  td.md-cell {
     vertical-align: middle;
     text-align: left;
 
