@@ -28,6 +28,11 @@ export interface ITdDataTableSortEvent {
   order: TdDataTableSortingOrder;
 };
 
+export interface IDataTableSelectEvent {
+  row: any;
+  selected: boolean;
+};
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
@@ -147,6 +152,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
    */
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
+  @Output('rowSelect') onRowSelect: EventEmitter<IDataTableSelectEvent> = new EventEmitter<IDataTableSelectEvent>();
+
   ngOnInit(): void {
     this._initialized = true;
   }
@@ -187,7 +194,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
     event.preventDefault();
     // clears all the fields for the dataset
     if (!this._multiple) {
-      this.selectAll(false);
+      this.clearModel();
     }
 
     if (checked) {
@@ -198,6 +205,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
         this._value.splice(index, 1);
       }
     }
+    this.onRowSelect.emit({row: row, selected: checked});
     this.onChange(this._value);
   }
 
