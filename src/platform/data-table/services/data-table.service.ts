@@ -31,7 +31,7 @@ export class TdDataTableService {
   }
 
   pageData(data: any[], fromRow: number, toRow: number): any[] {
-    if (fromRow >= 1 && toRow <= data.length) {
+    if (fromRow >= 1) {
       data = data.slice(fromRow - 1, toRow);
     }
     return data;
