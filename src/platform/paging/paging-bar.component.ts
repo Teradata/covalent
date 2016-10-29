@@ -78,7 +78,7 @@ export class TdPagingBarComponent implements OnInit {
   set total(total: number) {
     this._total = total;
     this._page = 1;
-    this._handleOnChange();
+    this._calculateRows();
   }
   get total(): number {
     return this._total;
