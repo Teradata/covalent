@@ -10,12 +10,6 @@ $accent: md-palette($md-light-blue, 50);
 .md-row {
   border-bottom-color: md-color($foreground, divider);
 }
-.td-data-table-header,
-.td-data-table-footer {
-  button[md-icon-button] {
-    color: md-color($foreground, secondary-text);
-  }
-}
 .md-checkbox-cell,
 .md-checkbox-column {
   color: md-color($foreground, secondary-text);
@@ -38,31 +32,5 @@ $accent: md-palette($md-light-blue, 50);
   }
   &.md-selected {
     background-color: md-color($accent, 0.12);
-  }
-}
-
-// Pagination
-.md-table-pagination {
-  color: md-color($foreground, secondary-text);
-
-  md-select {
-    &:not([disabled]):focus .md-select-value {
-      color: md-color($foreground, secondary-text);
-    }
-  }
-}
-
-// Dialog
-md-edit-dialog {
-  background-color: md-color($background, dialog);
-  > .md-content {
-    .md-title {
-      color: md-color($foreground, text);
-    }
-    md-input-container {
-      .md-errors-spacer {
-        color: md-color($foreground, secondary-text);
-      }
-    }
   }
 }
