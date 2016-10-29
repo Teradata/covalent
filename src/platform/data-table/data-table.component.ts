@@ -209,10 +209,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.notifySortChanged();
-  }
-
-  notifySortChanged(): void {
     if (!this._initialized) {
       return;
     }
