@@ -1,4 +1,15 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+
+const noop: any = () => {
+  // empty method
+};
+
+export const TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => TdDataTableComponent),
+  multi: true,
+};
 
 export enum TdDataTableSortingOrder {
   Ascending, Descending
@@ -18,17 +29,24 @@ export interface ITdDataTableSortEvent {
 };
 
 @Component({
+  providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit {
+export class TdDataTableComponent implements ControlValueAccessor, OnInit {
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  private _value: any[] = [];
+  /** Callback registered via registerOnChange (ControlValueAccessor) */
+  private _onChangeCallback: (_: any) => void = noop;
 
   /** internal attributes */
   private _data: any[];
   private _columns: ITdDataTableColumn[];
   private _rowSelection: boolean;
-  private _rowSelectionField: string = 'selected';
   private _multiple: boolean = true;
   private _initialized: boolean = false;
 
@@ -36,6 +54,17 @@ export class TdDataTableComponent implements OnInit {
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  @Input() set value(v: any) {
+    if (v !== this._value) {
+      this._value = v;
+      this._onChangeCallback(v);
+    }
+  }
+  get value(): any { return this._value; };
 
   @Input('data')
   set data(data: Object[]) {
@@ -68,22 +97,9 @@ export class TdDataTableComponent implements OnInit {
     return this._columns;
   }
 
-  @Input('rowSelectionField')
-  set rowSelectionField(field: string) {
-    this._rowSelectionField = field;
-  }
-
   @Input('rowSelection')
   set rowSelection(selection: string | boolean) {
-    const settingAsString: boolean = typeof selection === 'string'
-      && selection !== 'true' && selection !== 'false';
-
-    if (settingAsString) {
-      this._rowSelection = true;
-      this._rowSelectionField = '' + selection;
-    } else {
-      this._rowSelection = selection !== '' ? (selection === 'true' || selection === true) : true;
-    }
+    this._rowSelection = selection !== '' ? (selection === 'true' || selection === true) : true;
   }
 
   @Input('multiple')
@@ -132,22 +148,39 @@ export class TdDataTableComponent implements OnInit {
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
   ngOnInit(): void {
-    this.refresh();
     this._initialized = true;
   }
 
+  clearModel(): void {
+    this._value.splice(0, this._value.length);
+  }
+
   refresh(): void {
+    this.clearModel();
     this._preprocessData();
   }
 
   areAllSelected(): boolean {
     const match: string =
-      this._data.find((d: any) => !d[this._rowSelectionField]);
+      this._data.find((d: any) => !this.isRowSelected(d));
     return typeof match === 'undefined';
   }
 
   selectAll(checked: boolean): void {
-    this._data.forEach((d: any) => d[this._rowSelectionField] = checked);
+    if (checked) {
+      this._data.forEach((row: any) => {
+        let index: number = this._value.indexOf(row);
+        if (index < 0) {
+          this._value.push(row);
+        }
+      });
+    } else {
+      this.clearModel();
+    }
+  }
+
+  isRowSelected(row: any): boolean {
+    return this._value ? this._value.indexOf(row) > -1 : false;
   }
 
   select(row: any, checked: boolean, event: Event): void {
@@ -157,8 +190,15 @@ export class TdDataTableComponent implements OnInit {
       this.selectAll(false);
     }
 
-    // toggles the selection field
-    row[this._rowSelectionField] = checked;
+    if (checked) {
+      this._value.push(row);
+    } else {
+      let index: number = this._value.indexOf(row);
+      if (index > -1) {
+        this._value.splice(index, 1);
+      }
+    }
+    this.onChange(this._value);
   }
 
   setSorting(column: ITdDataTableColumn): void {
@@ -187,9 +227,27 @@ export class TdDataTableComponent implements OnInit {
     return this._sortOrder === TdDataTableSortingOrder.Descending;
   }
 
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  writeValue(value: any): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  onChange = (_: any) => noop;
+  onTouched = () => noop;
+
   private _preprocessData(): void {
-    this._data = JSON.parse(JSON.stringify(this._data));
-    this._data = this._data.map((row: any) => {
+    let data: Object[] = JSON.parse(JSON.stringify(this._data));
+    this._data = data.map((row: any) => {
       this.columns.filter((c: any) => c.format).forEach((c: any) => {
         row[c.name] = c.format(row[c.name]);
       });

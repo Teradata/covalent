@@ -174,11 +174,12 @@ export class DataTableDemoComponent implements OnInit {
       },
     ];
   basicData: any[] = this.data.slice(0, 6);
-  rowSelection: boolean = false;
+  rowSelection: boolean = true;
   multiple: boolean = true;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
+  selectedRows: any[] = [];
 
   searchTerm: string = '';
   fromRow: number = 1;

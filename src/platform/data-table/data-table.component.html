@@ -42,12 +42,12 @@
     </thead>
     <tbody td-body>
       <tr td-row
-          [class.md-selected]="row[_rowSelectionField]"
+          [class.md-selected]="_rowSelection && isRowSelected(row)"
           *ngFor="let row of _data"
-          (click)="_rowSelection && select(row, !row[_rowSelectionField], $event)">
+          (click)="_rowSelection && select(row, !isRowSelected(row), $event)">
         <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
           <md-checkbox
-            [checked]="row[_rowSelectionField]">
+            [checked]="isRowSelected(row)">
           </md-checkbox>
         </td>
         <td td-cell

@@ -12,7 +12,10 @@
     </td-data-table>
     <h3>Paging Bar / Search Box / Sortable Demo</h3>
     <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
-      <span *ngIf="!searchBox.searchVisible" class="md-title push-left-sm">Title here</span>
+      <span *ngIf="!searchBox.searchVisible" class="md-title push-left-sm">
+        <span *ngIf="!selectedRows.length && !rowSelection">Title here</span>
+        <span *ngIf="selectedRows.length && rowSelection">Selected {{selectedRows.length}} row(s)</span>
+      </span>
       <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
       </td-search-box>
       <button md-icon-button>
@@ -26,6 +29,7 @@
       [multiple]="multiple"
       [sortable]="true"
       [sortBy]="sortBy"
+      [(ngModel)]="selectedRows"
       [sortOrder]="sortOrder"
       (sortChange)="sort($event)">
     </td-data-table>
