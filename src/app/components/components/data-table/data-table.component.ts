@@ -153,7 +153,7 @@ export class DataTableDemoComponent implements OnInit {
         'iron': 6.0,
       },
     ];
-  sortable: boolean = true;
+
   rowSelection: boolean = false;
   multiple: boolean = true;
 
