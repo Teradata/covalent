@@ -1,4 +1,4 @@
-<div class="md-table-container" *ngIf="_visibleData.length > 0" title>
+<div class="md-table-container" *ngIf="hasData" title>
   <table td-table
          [class.md-row-select]="_rowSelection">
     <thead td-head>
@@ -43,7 +43,7 @@
     <tbody td-body>
       <tr td-row
           [class.md-selected]="row[_rowSelectionField]"
-          *ngFor="let row of _visibleData"
+          *ngFor="let row of _data"
           (click)="_rowSelection && select(row, !row[_rowSelectionField], $event)">
         <td td-cell class="md-checkbox-cell" *ngIf="_rowSelection">
           <md-checkbox

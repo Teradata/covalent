@@ -1,7 +1,4 @@
-import { Component, OnInit, Input, Output,
-         EventEmitter, OnChanges, SimpleChange, Renderer } from '@angular/core';
-
-import * as _ from 'lodash';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 export enum TdDataTableSortingOrder {
   Ascending, Descending
@@ -25,11 +22,10 @@ export interface ITdDataTableSortEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements OnInit, OnChanges {
+export class TdDataTableComponent implements OnInit {
 
   /** internal attributes */
   private _data: any[];
-  private _visibleData: any[];
   private _columns: ITdDataTableColumn[];
   private _rowSelection: boolean;
   private _rowSelectionField: string = 'selected';
@@ -40,13 +36,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
   private _sorting: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-
-  /** pagination */
-  @Input('fromRow') fromRow: number;
-  @Input('toRow') toRow: number;
-
-  /** search by term */
-  @Input('searchTerm') searchTerm: string;
 
   @Input('data')
   set data(data: Object[]) {
@@ -119,7 +108,6 @@ export class TdDataTableComponent implements OnInit, OnChanges {
 
     this._sortBy = column;
     this._sorting = true;
-    this.filterData();
   }
 
   @Input('sortOrder')
@@ -131,32 +119,22 @@ export class TdDataTableComponent implements OnInit, OnChanges {
 
     this._sortOrder = sortOrder === 'ASC' ?
       TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
-    this.filterData();
   }
 
   get hasData(): boolean {
-    return this._visibleData.length > 0;
+    return this._data.length > 0;
   }
 
   /** events */
-  @Output() sortChanged: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
-
-  constructor(private renderer: Renderer) {}
+  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
   ngOnInit(): void {
-    this.preprocessData();
+    this.refresh();
     this._initialized = true;
-    this.filterData();
   }
 
   refresh(): void {
-    this.filterData();
-  }
-
-  ngOnChanges(changes: {searchTerm: SimpleChange, fromRow: SimpleChange, toRow: SimpleChange}): void {
-    if (changes.searchTerm || changes.fromRow || changes.toRow) {
-      this.refresh();
-    }
+    this._preprocessData();
   }
 
   areAllSelected(): boolean {
@@ -189,14 +167,13 @@ export class TdDataTableComponent implements OnInit, OnChanges {
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
     this.notifySortChanged();
-    this.filterData();
   }
 
   notifySortChanged(): void {
     if (!this._initialized) {
       return;
     }
-    this.sortChanged.next({ column: this._sortBy, order: this._sortOrder });
+    this.onSortChange.next({ column: this._sortBy, order: this._sortOrder });
   }
 
   isAscending(): boolean {
@@ -207,44 +184,14 @@ export class TdDataTableComponent implements OnInit, OnChanges {
     return this._sortOrder === TdDataTableSortingOrder.Descending;
   }
 
-  private preprocessData(): void {
-    this._data = _.cloneDeep(this._data);
+  private _preprocessData(): void {
+    this._data = JSON.parse(JSON.stringify(this._data));
     this._data = this._data.map((row: any) => {
       this.columns.filter((c: any) => c.format).forEach((c: any) => {
         row[c.name] = c.format(row[c.name]);
       });
       return row;
     });
-  }
-
-  private filterData(): void {
-    this._visibleData = this._data;
-
-    if (!this._initialized) {
-      return;
-    }
-
-    let filter: string = this.searchTerm ? this.searchTerm.toLowerCase() : '';
-    if (filter) {
-      this._visibleData = this._visibleData.filter((item: any) => {
-        const res: any = Object.keys(item).find((key: string) => {
-          const itemValue: string = ('' + item[key]).toLowerCase();
-          return itemValue.indexOf(filter) > -1;
-        });
-        return !(typeof res === 'undefined');
-      });
-    }
-
-    if (this._sorting && this._sortBy) {
-      this._visibleData = _.sortBy(this._visibleData, this._sortBy.name);
-      if (this._sortOrder === TdDataTableSortingOrder.Descending) {
-        this._visibleData = _.reverse(this._visibleData);
-      }
-    }
-
-    if (this.fromRow >= 1 && this.toRow <= this._visibleData.length) {
-      this._visibleData = this._visibleData.slice(this.fromRow - 1, this.toRow);
-    }
   }
 
 }
