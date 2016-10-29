@@ -3,7 +3,7 @@
          [class.md-row-select]="_selectable">
     <thead td-head>
       <tr td-row>
-        <th td-column class="md-checkbox-column" *ngIf="_selectable">
+        <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
           <md-checkbox
             *ngIf="_multiple"
             [checked]="areAllSelected()"
