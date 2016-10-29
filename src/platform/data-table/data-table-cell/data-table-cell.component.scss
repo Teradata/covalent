@@ -1,0 +1,27 @@
+@import '../data-table.component';
+
+:host {
+  font-size: 13px;
+  vertical-align: middle;
+  text-align: left;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &:last-child {
+    padding: 0 24px 0 0;
+  }
+
+  &.md-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.md-numeric {
+    text-align: right;
+  }
+}

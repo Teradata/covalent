@@ -69,31 +69,6 @@ table.md-table {
     }
   }
 
-  td.md-cell {
-    vertical-align: middle;
-    text-align: left;
-
-    > * {
-      vertical-align: middle;
-    }
-
-    &:last-child {
-      padding: 0 24px 0 0;
-    }
-
-    &.md-clickable {
-      cursor: pointer;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    &.md-numeric {
-      text-align: right;
-    }
-  }
-
   td.md-checkbox-cell,
   th.md-checkbox-column {
     width: $checkbox-size;
@@ -103,19 +78,6 @@ table.md-table {
         width: $checkbox-size;
         height: $checkbox-size;
         margin: 0;
-      }
-    }
-  }
-
-  td.md-cell {
-    font-size: 13px;
-    //border-top: 1px $md-dark-divider solid;
-
-    &.md-numeric md-select {
-      justify-content: flex-end;
-
-      .md-select-value {
-        flex: 0 0 auto;
       }
     }
   }

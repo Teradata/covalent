@@ -6,23 +6,23 @@ import { MaterialModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
+import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
 import { TdDataTableService } from './services/data-table.service';
 
 import { TdDataTableTableDirective } from './directives/table.directive';
 import { TdDataTableHeadDirective } from './directives/head.directive';
 import { TdDataTableBodyDirective } from './directives/body.directive';
 import { TdDataTableRowDirective } from './directives/row.directive';
-import { TdDataTableCellDirective } from './directives/cell.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableColumnComponent,
+  TdDataTableCellComponent,
 
   TdDataTableTableDirective,
   TdDataTableHeadDirective,
   TdDataTableBodyDirective,
   TdDataTableRowDirective,
-  TdDataTableCellDirective,
 ];
 
 @NgModule({
