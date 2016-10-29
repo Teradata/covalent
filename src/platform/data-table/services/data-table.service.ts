@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import * as _ from 'lodash';
-
 @Injectable()
 export class TdDataTableService {
 
@@ -22,10 +20,21 @@ export class TdDataTableService {
 
   sortData(data: any[], sortBy: string, sortOrder: 'ASC' | 'DESC' = 'ASC'): any[] {
     if (sortBy) {
-      data = _.sortBy(data, sortBy);
-      if (sortOrder === 'ASC') {
-        data = _.reverse(data);
-      }
+      data.sort((a: any, b: any) => {
+        let compA: any = a[sortBy];
+        let compB: any = b[sortBy];
+        let direction: number = 0;
+        if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
+          direction = Number.parseFloat(compA) - Number.parseFloat(compB);
+        } else {
+          if (compA < compB) {
+            direction = -1;
+          } else if (compA > compB) {
+            direction = 1;
+          }
+        }
+        return direction * (sortOrder === 'DESC' ? -1 : 1);
+      });
     }
     return data;
   }
