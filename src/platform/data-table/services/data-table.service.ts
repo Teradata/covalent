@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { TdDataTableSortingOrder } from '../data-table.component';
+
 @Injectable()
 export class TdDataTableService {
 
@@ -18,7 +20,7 @@ export class TdDataTableService {
     return data;
   }
 
-  sortData(data: any[], sortBy: string, sortOrder: 'ASC' | 'DESC' = 'ASC'): any[] {
+  sortData(data: any[], sortBy: string, sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending): any[] {
     if (sortBy) {
       data.sort((a: any, b: any) => {
         let compA: any = a[sortBy];
@@ -33,7 +35,7 @@ export class TdDataTableService {
             direction = 1;
           }
         }
-        return direction * (sortOrder === 'DESC' ? -1 : 1);
+        return direction * (sortOrder === TdDataTableSortingOrder.Descending ? -1 : 1);
       });
     }
     return data;

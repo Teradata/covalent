@@ -12,7 +12,8 @@ export const TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 export enum TdDataTableSortingOrder {
-  Ascending, Descending
+  Ascending = <any>'ASC',
+  Descending = <any>'DESC'
 };
 
 export interface ITdDataTableColumn {

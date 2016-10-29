@@ -197,7 +197,7 @@ export class DataTableDemoComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
   sortBy: string = 'name';
-  sortOrder: string = 'DESC';
+  sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService) {}
 
@@ -207,7 +207,7 @@ export class DataTableDemoComponent implements OnInit {
 
   sort(sortEvent: ITdDataTableSortEvent): void {
     this.sortBy = sortEvent.column.name;
-    this.sortOrder = sortEvent.order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
+    this.sortOrder = sortEvent.order;
     this.filter();
   }
 
@@ -227,7 +227,7 @@ export class DataTableDemoComponent implements OnInit {
     let newData: any[] = this.data;
     newData = this._dataTableService.filterData(newData, this.searchTerm, true);
     this.filteredTotal = newData.length;
-    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder === 'ASC' ? 'ASC' : 'DESC');
+    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
   }
