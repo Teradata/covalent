@@ -151,9 +151,29 @@ export class DataTableDemoComponent implements OnInit {
         'sodium': 54.0,
         'calcium': 12.0,
         'iron': 6.0,
+      }, {
+        'name': 'Chocolate',
+        'type': 'Candy',
+        'calories': 518.0,
+        'fat': 26.0,
+        'carbs': 65.0,
+        'protein': 7.0,
+        'sodium': 54.0,
+        'calcium': 12.0,
+        'iron': 6.0,
+      }, {
+        'name': 'Chamoy',
+        'type': 'Candy',
+        'calories': 518.0,
+        'fat': 26.0,
+        'carbs': 65.0,
+        'protein': 7.0,
+        'sodium': 54.0,
+        'calcium': 12.0,
+        'iron': 6.0,
       },
     ];
-
+  basicData: any[] = this.data.slice(0, 6);
   rowSelection: boolean = false;
   multiple: boolean = true;
 
