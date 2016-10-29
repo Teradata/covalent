@@ -19,26 +19,7 @@ table.md-table {
   &.md-row-select th.md-column {
     &:first-child {
       width: 20px;
-      padding: 0 0 0 24px;
-    }
-
-    &:nth-child(2) {
       padding: 0 24px;
-    }
-
-    &:nth-child(n+3):nth-last-child(n+2) {
-      padding: 0 56px 0 0;
-    }
-  }
-
-  &:not(.md-row-select) td.md-cell,
-  &:not(.md-row-select) th.md-column {
-    &:first-child {
-      padding: 0 24px;
-    }
-
-    &:nth-child(n+2):nth-last-child(n+2) {
-      padding: 0 56px 0 0;
     }
   }
 

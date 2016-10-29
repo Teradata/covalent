@@ -5,6 +5,12 @@
   vertical-align: middle;
   text-align: left;
   padding: 0 56px 0 0;
+  &:first-child {
+    padding-left: 24px;
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
 
   > * {
     vertical-align: middle;

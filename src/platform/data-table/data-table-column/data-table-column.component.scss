@@ -1,11 +1,16 @@
 @import '../data-table.component';
 
 :host {
-  //color: $md-dark-secondary;
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
   padding: 0 56px 0 0;
+  &:first-child {
+    padding-left: 24px;
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
 
   &.md-sort {
     cursor: pointer;
