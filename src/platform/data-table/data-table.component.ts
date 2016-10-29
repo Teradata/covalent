@@ -33,7 +33,7 @@ export class TdDataTableComponent implements OnInit {
   private _initialized: boolean = false;
 
   /** sorting */
-  private _sorting: boolean = false;
+  private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
@@ -41,29 +41,6 @@ export class TdDataTableComponent implements OnInit {
   set data(data: Object[]) {
     this._data = data;
     this.refresh();
-  }
-
-  @Input('rowSelectionField')
-  set rowSelectionField(field: string) {
-    this._rowSelectionField = field;
-  }
-
-  @Input('rowSelection')
-  set rowSelection(selection: string | boolean) {
-    const settingAsString: boolean = typeof selection === 'string'
-      && selection !== 'true' && selection !== 'false';
-
-    if (settingAsString) {
-      this._rowSelection = true;
-      this._rowSelectionField = '' + selection;
-    } else {
-      this._rowSelection = selection !== '' ? (selection === 'true' || selection === true) : true;
-    }
-  }
-
-  @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
   }
 
   @Input('columns')
@@ -91,9 +68,32 @@ export class TdDataTableComponent implements OnInit {
     return this._columns;
   }
 
-  @Input('sorting')
-  set sorting(sorting: string | boolean) {
-    this._sorting = sorting !== '' ? (sorting === 'true' || sorting === true) : true;
+  @Input('rowSelectionField')
+  set rowSelectionField(field: string) {
+    this._rowSelectionField = field;
+  }
+
+  @Input('rowSelection')
+  set rowSelection(selection: string | boolean) {
+    const settingAsString: boolean = typeof selection === 'string'
+      && selection !== 'true' && selection !== 'false';
+
+    if (settingAsString) {
+      this._rowSelection = true;
+      this._rowSelectionField = '' + selection;
+    } else {
+      this._rowSelection = selection !== '' ? (selection === 'true' || selection === true) : true;
+    }
+  }
+
+  @Input('multiple')
+  set multiple(multiple: string | boolean) {
+    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  }
+
+  @Input('sortable')
+  set sortable(sortable: string | boolean) {
+    this._sortable = sortable !== '' ? (sortable === 'true' || sortable === true) : true;
   }
 
   @Input('sortBy')
@@ -107,7 +107,6 @@ export class TdDataTableComponent implements OnInit {
     }
 
     this._sortBy = column;
-    this._sorting = true;
   }
 
   @Input('sortOrder')
@@ -125,7 +124,11 @@ export class TdDataTableComponent implements OnInit {
     return this._data.length > 0;
   }
 
-  /** events */
+  /**
+   * sortChange?: function
+   * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+   * Emits an [ITdDataTableSortEvent] implemented object.
+   */
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
   ngOnInit(): void {
