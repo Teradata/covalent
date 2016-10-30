@@ -13,8 +13,8 @@ table.md-table {
     transition: background-color 0.2s;
   }
 
-  &.md-row-select td.md-cell,
-  &.md-row-select th.md-column {
+  &.md-row-select td.td-data-table-cell,
+  &.md-row-select th.td-data-table-column {
     &:first-child {
       width: 20px;
       padding: 0 24px;

@@ -15,7 +15,7 @@ export class TdDataTableCellComponent {
   }
 
   constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'md-cell', true);
+    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-cell', true);
   }
 
 }

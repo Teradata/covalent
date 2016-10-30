@@ -55,7 +55,7 @@ export class TdDataTableColumnComponent {
   }
 
   constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'md-column', true);
+    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-column', true);
   }
 
   handleSortBy(): void {
