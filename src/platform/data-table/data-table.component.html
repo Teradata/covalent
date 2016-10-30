@@ -5,9 +5,10 @@
       <tr td-data-table-row>
         <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
           <md-checkbox
+            #checkBoxAll
             *ngIf="_multiple"
             [checked]="areAllSelected()"
-            (change)="selectAll($event.checked)">
+            (click)="selectAll(!checkBoxAll.checked)">
           </md-checkbox>
         </th>
         <th td-data-table-column 
