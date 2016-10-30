@@ -19,6 +19,9 @@ table.td-data-table {
       width: 20px;
       padding: 0 24px;
     }
+    &:nth-child(2) {
+      padding-left: 0px;
+    }
   }
 
   td.md-checkbox-cell,
