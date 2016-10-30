@@ -8,13 +8,13 @@ $checkbox-size: 18px;
   -webkit-overflow-scrolling: touch;
 }
 
-table.md-table {
-  &.md-row-select tbody.td-data-table-body > tr.td-data-table-row {
+table.td-data-table {
+  &.md-selectable tbody.td-data-table-body > tr.td-data-table-row {
     transition: background-color 0.2s;
   }
 
-  &.md-row-select td.td-data-table-cell,
-  &.md-row-select th.td-data-table-column {
+  &.md-selectable td.td-data-table-cell,
+  &.md-selectable th.td-data-table-column {
     &:first-child {
       width: 20px;
       padding: 0 24px;

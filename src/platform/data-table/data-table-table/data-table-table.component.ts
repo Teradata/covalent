@@ -8,7 +8,7 @@ import { Component, Renderer, ElementRef } from '@angular/core';
 export class TdDataTableTableComponent {
 
   constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'md-table', true);
+    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table', true);
   }
 
 }
