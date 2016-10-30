@@ -9,7 +9,7 @@ $checkbox-size: 18px;
 }
 
 table.md-table {
-  &.md-row-select tbody.md-body > tr.md-row {
+  &.md-row-select tbody.md-body > tr.td-data-table-row {
     transition: background-color 0.2s;
   }
 
