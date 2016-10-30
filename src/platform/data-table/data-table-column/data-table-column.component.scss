@@ -2,16 +2,14 @@
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
-  padding: 0 56px 0 0;
+  padding: 0 28px 0 28px;
+  position: relative;
+
   &:first-child {
     padding-left: 24px;
   }
   &:last-child {
     padding-right: 24px;
-  }
-
-  &.md-sort {
-    cursor: pointer;
   }
 
   md-icon {
@@ -32,14 +30,6 @@
         transform: rotate(180deg);
       }
     }
-
-    &:not(:first-child) {
-      margin-left: 8px;
-    }
-
-    &:not(:last-child) {
-      margin-right: 8px;
-    }
   }
 
   &:hover.md-sortable md-icon.td-data-table-sort-icon,
@@ -54,10 +44,6 @@
     vertical-align: middle;
   }
 
-  &:last-child {
-    padding: 0 24px 0 0;
-  }
-
   &.md-clickable {
     cursor: pointer;
 
@@ -66,7 +52,18 @@
     }
   }
 
+  md-icon.td-data-table-sort-icon {
+    position: absolute;
+  }
   &.md-numeric {
     text-align: right;
+    md-icon.td-data-table-sort-icon {
+      left: 6px;
+    }
+  }
+  &:not(.md-numeric) {
+    md-icon.td-data-table-sort-icon {
+      right: 6px;
+    }
   }
 }
