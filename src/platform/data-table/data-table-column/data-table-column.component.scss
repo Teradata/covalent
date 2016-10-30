@@ -20,7 +20,7 @@
     font-size: 16px !important;
     line-height: 16px !important;
 
-    &.md-sort-icon {
+    &.td-data-table-sort-icon {
       opacity: 0;
       transition: transform 0.25s, opacity 0.25s;
 
@@ -42,8 +42,8 @@
     }
   }
 
-  &:hover.md-sortable md-icon.md-sort-icon,
-  &.md-active.md-sortable md-icon.md-sort-icon {
+  &:hover.md-sortable md-icon.td-data-table-sort-icon,
+  &.md-active.md-sortable md-icon.td-data-table-sort-icon {
     opacity: 1;
   }
 

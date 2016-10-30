@@ -1,5 +1,5 @@
 <md-icon 
-  class="md-sort-icon" 
+  class="td-data-table-sort-icon" 
   *ngIf="sortable && numeric"
   [class.md-asc]="(!(active) || isAscending())"
   [class.md-desc]="(active && isDescending())"
@@ -10,7 +10,7 @@
   <ng-content></ng-content>
 </span>
 <md-icon 
-  class="md-sort-icon" 
+  class="td-data-table-sort-icon" 
   *ngIf="sortable && !numeric"
   [class.md-asc]="(!(active) || isAscending())"
   [class.md-desc]="(active && isDescending())"

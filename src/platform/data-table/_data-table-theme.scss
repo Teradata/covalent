@@ -18,7 +18,7 @@
     .td-data-table-column {
       color: md-color($foreground, secondary-text);
       md-icon {
-        &.md-sort-icon {
+        &.td-data-table-sort-icon {
           color: md-color($foreground, disabled);
         }
       }
