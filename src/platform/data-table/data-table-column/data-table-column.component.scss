@@ -58,12 +58,12 @@
   &.md-numeric {
     text-align: right;
     md-icon.td-data-table-sort-icon {
-      left: 6px;
+      margin-left: -22px;
     }
   }
   &:not(.md-numeric) {
     md-icon.td-data-table-sort-icon {
-      right: 6px;
+      margin-left: 6px;
     }
   }
 }
