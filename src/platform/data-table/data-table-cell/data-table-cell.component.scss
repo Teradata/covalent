@@ -2,7 +2,8 @@
   font-size: 13px;
   vertical-align: middle;
   text-align: left;
-  padding: 0 56px 0 0;
+  padding: 0 28px 0 28px;
+
   &:first-child {
     padding-left: 24px;
   }
@@ -12,10 +13,6 @@
 
   > * {
     vertical-align: middle;
-  }
-
-  &:last-child {
-    padding: 0 24px 0 0;
   }
 
   &.md-clickable {
