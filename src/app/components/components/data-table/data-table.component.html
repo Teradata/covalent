@@ -9,11 +9,11 @@
         <th td-data-table-column 
             *ngFor="let column of columns"
             [numeric]="column.numeric">
-            <span>{{column.label}}</span>
+          {{column.label}}
         </th>
         <tr td-data-table-row *ngFor="let row of filteredData">
           <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-              <span class="md-body-1">{{row[column.name]}}</span>
+             <span class="md-body-1">{{row[column.name]}}</span>
           </td>
         </tr>
       </table>
