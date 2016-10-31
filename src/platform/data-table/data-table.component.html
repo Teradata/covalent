@@ -20,23 +20,21 @@
         <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
         <span *ngIf="!column.tooltip">{{column.label}}</span>
     </th>
-    <tbody>
-      <tr td-data-table-row
-          [class.md-selected]="_selectable && isRowSelected(row)"
-          *ngFor="let row of _data"
-          (click)="_selectable && select(row, !isRowSelected(row), $event)">
-        <td td-data-table-cell class="md-checkbox-cell" *ngIf="_selectable">
-          <md-checkbox
-            [checked]="isRowSelected(row)">
-          </md-checkbox>
-        </td>
-        <td td-data-table-cell
-            [numeric]="column.numeric"
-            *ngFor="let column of columns">
-          <span class="md-body-1">{{ row[column.name] }}</span>
-        </td>
-      </tr>
-    </tbody>
+    <tr td-data-table-row
+        [class.md-selected]="_selectable && isRowSelected(row)"
+        *ngFor="let row of _data"
+        (click)="_selectable && select(row, !isRowSelected(row), $event)">
+      <td td-data-table-cell class="md-checkbox-cell" *ngIf="_selectable">
+        <md-checkbox
+          [checked]="isRowSelected(row)">
+        </md-checkbox>
+      </td>
+      <td td-data-table-cell
+          [numeric]="column.numeric"
+          *ngFor="let column of columns">
+        <span class="md-body-1">{{row[column.name]}}</span>
+      </td>
+    </tr>
   </table>
 </div>
 
