@@ -3,10 +3,10 @@
   border-bottom-width: 1px;
 }
 
-.td-data-table-body > :host {
+tbody > :host {
   height: 48px;
 }
 
-.td-data-table-head > :host {
+thead > :host {
   height: 56px;
 }

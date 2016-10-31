@@ -1,30 +1,26 @@
 <div class="md-table-container" *ngIf="hasData" title>
   <table td-data-table
          [class.md-selectable]="_selectable">
-    <thead td-data-table-head>
-      <tr td-data-table-row>
-        <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
-          <md-checkbox
-            #checkBoxAll
-            *ngIf="_multiple"
-            [checked]="areAllSelected()"
-            (click)="selectAll(!checkBoxAll.checked)">
-          </md-checkbox>
-        </th>
-        <th td-data-table-column 
-            *ngFor="let column of columns"
-            [name]="column.name"
-            [numeric]="column.numeric"
-            [active]="_sortable && column === _sortBy"
-            [sortable]="_sortable"
-            [sortOrder]="_sortOrder"
-            (sortChange)="setSorting(column)">
-            <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
-            <span *ngIf="!column.tooltip">{{column.label}}</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody td-data-table-body>
+    <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
+      <md-checkbox
+        #checkBoxAll
+        *ngIf="_multiple"
+        [checked]="areAllSelected()"
+        (click)="selectAll(!checkBoxAll.checked)">
+      </md-checkbox>
+    </th>
+    <th td-data-table-column 
+        *ngFor="let column of columns"
+        [name]="column.name"
+        [numeric]="column.numeric"
+        [active]="_sortable && column === _sortBy"
+        [sortable]="_sortable"
+        [sortOrder]="_sortOrder"
+        (sortChange)="setSorting(column)">
+        <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
+        <span *ngIf="!column.tooltip">{{column.label}}</span>
+    </th>
+    <tbody>
       <tr td-data-table-row
           [class.md-selected]="_selectable && isRowSelected(row)"
           *ngFor="let row of _data"
