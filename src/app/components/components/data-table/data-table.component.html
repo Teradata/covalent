@@ -12,8 +12,8 @@
             <span>{{column.label}}</span>
         </th>
         <tr td-data-table-row *ngFor="let row of filteredData">
-          <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric" >
-              <span class="md-body-1">{{ row[column.name] }}</span>
+          <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
+              <span class="md-body-1">{{row[column.name]}}</span>
           </td>
         </tr>
       </table>
