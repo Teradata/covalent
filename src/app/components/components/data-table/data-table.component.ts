@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 import { TdDataTableSortingOrder, TdDataTableService,
          ITdDataTableSortChangeEvent } from '../../../../platform/data-table';
 import { IPageChangeEvent } from '../../../../platform/paging';
+import { TdDialogService } from '../../../../platform/core';
 
 const NUMBER_FORMAT: any = (v: number) => v;
 const DECIMAL_FORMAT: any = (v: number) => v.toFixed(2);
@@ -73,6 +74,7 @@ export class DataTableDemoComponent implements OnInit {
         'sodium': 87.0,
         'calcium': 14.0,
         'iron': 1.0,
+        'comments': 'I love froyo!',
       }, {
         'id': 2,
         'name': 'Ice cream sandwich',
@@ -200,7 +202,21 @@ export class DataTableDemoComponent implements OnInit {
   sortBy: string = 'name';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
-  constructor(private _dataTableService: TdDataTableService) {}
+  constructor(private _dataTableService: TdDataTableService,
+              private _dialogService: TdDialogService,
+              private _viewContainerRef: ViewContainerRef) {}
+
+  openPrompt(row: any, name: string): void {
+    this._dialogService.openPrompt({
+      message: 'Enter comment?',
+      value: row[name],
+      viewContainerRef: this._viewContainerRef,
+    }).afterClosed().subscribe((value: any) => {
+      if (value !== undefined) {
+        row[name] = value;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.filter();
