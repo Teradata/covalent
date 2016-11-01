@@ -27,7 +27,8 @@
     "Richa Vyas <richa.vyas@teradata.com>",
     "Ed Morales <eduardo.morales@teradata.com>",
     "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Wilken <jeremy.wilken@teradata.com>"
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
     "@covalent/core": "0.8.1",
