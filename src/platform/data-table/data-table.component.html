@@ -16,7 +16,7 @@
         [active]="_sortable && column === _sortBy"
         [sortable]="_sortable"
         [sortOrder]="_sortOrder"
-        (sortChange)="setSorting(column)">
+        (sortChange)="handleSort(column)">
         <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
         <span *ngIf="!column.tooltip">{{column.label}}</span>
     </th>

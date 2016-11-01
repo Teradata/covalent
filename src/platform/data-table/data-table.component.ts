@@ -29,7 +29,7 @@ export interface ITdDataTableSortEvent {
   order: TdDataTableSortingOrder;
 };
 
-export interface IDataTableSelectEvent {
+export interface ITdDataTableSelectEvent {
   row: any;
   selected: boolean;
 };
@@ -71,14 +71,27 @@ export class TdDataTableComponent implements ControlValueAccessor {
   }
   get value(): any { return this._value; };
 
+  /**
+   * uniqueId?: string
+   * Allows selection by [uniqueId] property.
+   */
   @Input('uniqueId') uniqueId: string;
 
+  /**
+   * data?: {[key: string]: any}[]
+   * Sets the data to be rendered as rows.
+   */
   @Input('data')
   set data(data: Object[]) {
     this._data = data;
     this.refresh();
   }
 
+  /**
+   * columns?: ITdDataTableColumn[]
+   * Sets additional column configuration. [ITdDataTableColumn.name] has to exist in [data] as key.
+   * Defaults to [data] keys.
+   */
   @Input('columns')
   set columns(cols: ITdDataTableColumn[]) {
     this._columns = cols;
@@ -104,21 +117,40 @@ export class TdDataTableComponent implements ControlValueAccessor {
     return this._columns;
   }
 
+  /**
+   * multiple?: boolean
+   * Enables row selection events, hover and selected row states.
+   * Defaults to 'false'
+   */
   @Input('selectable')
   set selectable(_selectable: string | boolean) {
     this._selectable = _selectable !== '' ? (_selectable === 'true' || _selectable === true) : true;
   }
 
+  /**
+   * multiple?: boolean
+   * Enables multiple row selection. [selectable] needs to be enabled.
+   * Defaults to 'false'
+   */
   @Input('multiple')
   set multiple(multiple: string | boolean) {
     this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
   }
 
+  /**
+   * sortable?: boolean
+   * Enables sorting events, sort icons and active column states.
+   * Defaults to 'false'
+   */
   @Input('sortable')
   set sortable(sortable: string | boolean) {
     this._sortable = sortable !== '' ? (sortable === 'true' || sortable === true) : true;
   }
 
+  /**
+   * sortBy?: string
+   * Sets the active sort column. [sortable] needs to be enabled.
+   */
   @Input('sortBy')
   set sortBy(columnName: string) {
     if (!columnName) {
@@ -132,6 +164,11 @@ export class TdDataTableComponent implements ControlValueAccessor {
     this._sortBy = column;
   }
 
+  /**
+   * sortOrder?: ['ASC' | 'DESC'] or TdDataTableSortingOrder
+   * Sets the sort order of the [sortBy] column. [sortable] needs to be enabled.
+   * Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
+   */
   @Input('sortOrder')
   set sortOrder(order: 'ASC' | 'DESC') {
     let sortOrder: string = order ? order.toUpperCase() : 'ASC';
@@ -154,7 +191,12 @@ export class TdDataTableComponent implements ControlValueAccessor {
    */
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
 
-  @Output('rowSelect') onRowSelect: EventEmitter<IDataTableSelectEvent> = new EventEmitter<IDataTableSelectEvent>();
+  /**
+   * rowSelect?: function
+   * Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
+   * Emits an [ITdDataTableSelectEvent] implemented object.
+   */
+  @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   clearModel(): void {
     this._value.splice(0, this._value.length);
@@ -216,7 +258,7 @@ export class TdDataTableComponent implements ControlValueAccessor {
     this.onChange(this._value);
   }
 
-  setSorting(column: ITdDataTableColumn): void {
+  handleSort(column: ITdDataTableColumn): void {
     if (this._sortBy === column) {
       this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
         TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
