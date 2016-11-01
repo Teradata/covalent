@@ -15,7 +15,19 @@
     .md-checkbox-column {
       color: md-color($foreground, secondary-text);
     }
+    .td-data-table-cell {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.010em;
+      line-height: 20px;
+      md-input {
+        .md-input-underline {
+          display: none;
+        }
+      }
+    }
     .td-data-table-column {
+      font-size: 12px;
       color: md-color($foreground, secondary-text);
       * {
         vertical-align: middle;
