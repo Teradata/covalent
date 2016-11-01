@@ -17,6 +17,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
+import { PagingDemoComponent } from './paging/paging.component';
+import { SearchDemoComponent } from './search/search.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 const routes: Routes = [{
@@ -60,6 +62,9 @@ const routes: Routes = [{
       component: DialogsDemoComponent,
       path: 'dialogs',
     }, {
+      component: SearchDemoComponent,
+      path: 'search',
+    }, {
       component: DirectivesComponent,
       path: 'directives',
     }, {
@@ -71,6 +76,9 @@ const routes: Routes = [{
     }, {
       component: DataTableDemoComponent,
       path: 'data-table',
+    }, {
+      component: PagingDemoComponent,
+      path: 'paging',
     },
   ],
   component: ComponentsComponent,

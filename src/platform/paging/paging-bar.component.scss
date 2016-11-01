@@ -1,0 +1,15 @@
+@import 'paging-bar-theme';
+
+:host {
+  display: block;
+  [layout="row"] > * {
+    margin: 0 10px;
+  }
+  [md-icon-button] {
+    font-size: 12px;
+    font-weight: normal;
+  }
+  .td-paging-size {
+    margin-right: -5px;
+  }
+}
