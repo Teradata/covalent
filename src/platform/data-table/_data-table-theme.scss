@@ -17,6 +17,9 @@
     }
     .td-data-table-column {
       color: md-color($foreground, secondary-text);
+      * {
+        vertical-align: middle;
+      }
       md-icon {
         &.td-data-table-sort-icon {
           color: md-color($foreground, disabled);
