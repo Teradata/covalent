@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
+import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
+
 const noop: any = () => {
   // empty method
 };
@@ -22,11 +24,6 @@ export interface ITdDataTableColumn {
   tooltip?: string;
   numeric?: boolean;
   format?: { (value: any): any };
-};
-
-export interface ITdDataTableSortEvent {
-  column: ITdDataTableColumn;
-  order: TdDataTableSortingOrder;
 };
 
 export interface ITdDataTableSelectEvent {
@@ -187,9 +184,10 @@ export class TdDataTableComponent implements ControlValueAccessor {
   /**
    * sortChange?: function
    * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
-   * Emits an [ITdDataTableSortEvent] implemented object.
+   * Emits an [ITdDataTableSortChangeEvent] implemented object.
    */
-  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortEvent> = new EventEmitter<ITdDataTableSortEvent>();
+  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
+                                      new EventEmitter<ITdDataTableSortChangeEvent>();
 
   /**
    * rowSelect?: function
@@ -266,7 +264,7 @@ export class TdDataTableComponent implements ControlValueAccessor {
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.onSortChange.next({ column: this._sortBy, order: this._sortOrder });
+    this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
   }
 
   /**

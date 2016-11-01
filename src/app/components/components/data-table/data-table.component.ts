@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortEvent } from '../../../../platform/data-table';
+import { TdDataTableSortingOrder, TdDataTableService,
+         ITdDataTableSortChangeEvent } from '../../../../platform/data-table';
 import { IPageChangeEvent } from '../../../../platform/paging';
 
 const NUMBER_FORMAT: any = (v: number) => v;
@@ -205,8 +206,8 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
-  sort(sortEvent: ITdDataTableSortEvent): void {
-    this.sortBy = sortEvent.column.name;
+  sort(sortEvent: ITdDataTableSortChangeEvent): void {
+    this.sortBy = sortEvent.name;
     this.sortOrder = sortEvent.order;
     this.filter();
   }
