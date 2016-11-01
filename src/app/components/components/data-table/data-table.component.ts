@@ -184,7 +184,7 @@ export class DataTableDemoComponent implements OnInit {
         'iron': 6.0,
       },
     ];
-  basicData: any[] = this.data.slice(0, 6);
+  basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = false;
   multiple: boolean = false;
 
