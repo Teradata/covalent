@@ -118,7 +118,7 @@ export class TdDataTableComponent implements ControlValueAccessor {
   }
 
   /**
-   * multiple?: boolean
+   * selectable?: boolean
    * Enables row selection events, hover and selected row states.
    * Defaults to 'false'
    */

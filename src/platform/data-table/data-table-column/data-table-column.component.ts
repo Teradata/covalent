@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, Renderer, ElementRef, HostBindi
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
-export interface IDataTableSortChangeEvent {
+export interface ITdDataTableSortChangeEvent {
   order: TdDataTableSortingOrder;
   name: string;
 }
@@ -16,10 +16,38 @@ export class TdDataTableColumnComponent {
 
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
+  /**
+   * name?: string
+   * Sets unique column [name] for [sortable] events.
+   */
   @Input('name') name: string = '';
+
+  /**
+   * sortable?: boolean
+   * Enables sorting events, sort icons and active column states.
+   * Defaults to 'false'
+   */
   @Input('sortable') sortable: boolean = false;
+
+  /**
+   * active?: boolean
+   * Sets column to active state when 'true'.
+   * Defaults to 'false'
+   */
   @Input('active') active: boolean = false;
+
+  /**
+   * numeric?: boolean
+   * Makes column follow the numeric data-table specs and sort icon.
+   * Defaults to 'false'
+   */
   @Input('numeric') numeric: boolean = false;
+
+  /**
+   * sortOrder?: ['ASC' | 'DESC'] or TdDataTableSortingOrder
+   * Sets the sort order of column.
+   * Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
+   */
   @Input('sortOrder')
   set sortOrder(order: 'ASC' | 'DESC') {
     let sortOrder: string = order ? order.toUpperCase() : 'ASC';
@@ -31,8 +59,13 @@ export class TdDataTableColumnComponent {
       TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
   }
 
-  @Output('sortChange') onSortChange: EventEmitter<IDataTableSortChangeEvent> =
-                        new EventEmitter<IDataTableSortChangeEvent>();
+  /**
+   * sortChange?: function
+   * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+   * Emits an [ITdDataTableSortChangeEvent] implemented object.
+   */
+  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
+                        new EventEmitter<ITdDataTableSortChangeEvent>();
 
   @HostBinding('class.md-clickable')
   get bindClickable(): boolean {

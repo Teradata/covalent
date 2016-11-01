@@ -7,6 +7,11 @@ import { Component, Input, Renderer, ElementRef, HostBinding } from '@angular/co
 })
 export class TdDataTableCellComponent {
 
+  /**
+   * numeric?: boolean
+   * Makes cell follow the numeric data-table specs.
+   * Defaults to 'false'
+   */
   @Input('numeric') numeric: boolean = false;
 
   @HostBinding('class.md-numeric')
