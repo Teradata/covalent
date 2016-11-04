@@ -7,13 +7,13 @@
   color: md-color($palette, default-contrast);
 }
 :host /deep/ {
-  md-sidenav-layout.nav-list {
+  md-sidenav-layout.td-layout-nav-list {
     & > .md-sidenav-content {
       margin-left: 0 !important;
     }
   }
   @media (min-width: 600px) {
-    md-sidenav-layout.nav-list {
+    md-sidenav-layout.td-layout-nav-list {
       height: 100%;
       display: flex;
       & > md-sidenav {
@@ -37,7 +37,7 @@
     }
   }
   @media (max-width: 599px) {
-    md-sidenav-layout.nav-list {
+    md-sidenav-layout.td-layout-nav-list {
 
       & > md-sidenav {
         &.md-sidenav-opened,
