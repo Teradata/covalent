@@ -16,7 +16,7 @@ export class TdLayoutCardOverComponent {
   /**
    * subtitle in card
    */
-  @Input('cardSubTitle') cardSubTitle: string;
+  @Input('cardSubtitle') cardSubtitle: string;
 
   /**
    * card flex width %
@@ -44,20 +44,20 @@ export class TdLayoutCardOverComponent {
 
   /**
    * subtitle in card
-   * @deprecated since 0.9, use cardSubTitle instead
+   * @deprecated since 0.9, use cardSubtitle instead
    */
   @Input()
-  set subtitle(subTitle: string) {
+  set subtitle(subtitle: string) {
     /* tslint:disable-next-line */
-    console.warn("subtitle is deprecated.  Please use cardSubTitle instead");
-    this.cardSubTitle = subTitle;
+    console.warn("subtitle is deprecated.  Please use cardSubtitle instead");
+    this.cardSubtitle = subtitle;
   }
 
   /**
    * subtitle in card
-   * @deprecated since 0.9, use cardSubTitle instead
+   * @deprecated since 0.9, use cardSubtitle instead
    */
   get subtitle(): string {
-    return this.cardSubTitle;
+    return this.cardSubtitle;
   }
 }

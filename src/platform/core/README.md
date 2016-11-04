@@ -57,7 +57,7 @@ Properties:
 | Name | Type | Description |
 | --- | --- | --- |
 | `cardTitle` | `string` | Title in card to be displayed.
-| `cardSubTitle` | `string` | Subtitle in card to be displayed.
+| `cardSubtitle` | `string` | Subtitle in card to be displayed.
 
 #### td-layout-manage-items
 
@@ -132,7 +132,7 @@ Example for Card Over Layout / Nav Layout / Main Layout combo:
     ...
   </menu-items>
   <td-layout-nav toolbarTitle="Toolbar Title">
-    <td-layout-card-over cardTitle="Card Title" cardSubTitle="Card subtitle">
+    <td-layout-card-over cardTitle="Card Title" cardSubtitle="Card subtitle">
       <md-card-content>
         ...
       </md-card-content>
