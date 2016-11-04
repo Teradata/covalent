@@ -51,4 +51,8 @@
       }
     }
   }
+  .md-selected-title {
+    background-color: md-color($accent, 0.12);
+    color: md-color($accent);
+  }
 }
