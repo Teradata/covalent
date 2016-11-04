@@ -1,4 +1,4 @@
-<td-layout #layout title="Covalent" logo="app/assets/icons/teradata.svg" displayName="">
+<td-layout #layout sidenavTitle="Covalent" logo="app/assets/icons/teradata.svg" displayName="">
   <md-nav-list menu-items>
     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
   </md-nav-list>
