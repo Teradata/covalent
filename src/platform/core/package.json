@@ -10,7 +10,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 5",
+    "node": ">4.4 < 7",
     "npm": ">= 3"
   },
   "repository": {
@@ -27,7 +27,8 @@
     "Richa Vyas <richa.vyas@teradata.com>",
     "Ed Morales <eduardo.morales@teradata.com>",
     "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Wilken <jeremy.wilken@teradata.com>"
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
    "@angular/common": "^2.0.0",

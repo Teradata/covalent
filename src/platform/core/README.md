@@ -35,7 +35,7 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `title` | `string` | Title to be displayed.
+| `sidenavTitle` | `string` | SideNav Title to be displayed.
 | `icon` | `string` | Uses material icon names.
 | `displayName` | `string` | Username to be displayed.
 | `logout` | `function()` | Function executed when logout it pressed.
@@ -56,8 +56,8 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `title` | `string` | Title in card to be displayed.
-| `subtitle` | `string` | Subtitle in card to be displayed.
+| `cardTitle` | `string` | Title in card to be displayed.
+| `cardSubtitle` | `string` | Subtitle in card to be displayed.
 
 #### td-layout-manage-items
 
@@ -73,7 +73,7 @@ Example Nav Layout / Main Layout combo:
   <menu-items>
     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
   </menu-items>
-  <td-layout-nav title="Toolbar Title">
+  <td-layout-nav toolbarTitle="Toolbar Title">
     <div toolbar-content layout="row" layout-align="center center" flex>
       <span>Title</span>
       <span flex></span>
@@ -127,12 +127,12 @@ Example for Manage List Layout / Nav Layout combo:
 Example for Card Over Layout / Nav Layout / Main Layout combo:
 
 ```html
-<td-layout #layout title="App Title" displayName="username">
+<td-layout #layout sidenavTitle="App Title" displayName="username">
   <menu-items>
     ...
   </menu-items>
-  <td-layout-nav title="Toolbar Title">
-    <td-layout-card-over title="Card Title" subtitle="Card subtitle">
+  <td-layout-nav toolbarTitle="Toolbar Title">
+    <td-layout-card-over cardTitle="Card Title" cardSubtitle="Card subtitle">
       <md-card-content>
         ...
       </md-card-content>
