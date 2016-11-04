@@ -3,9 +3,9 @@
 <div layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill class="margin">
   <div [attr.flex-gt-xs]="cardWidth">
     <md-card>
-      <md-card-title *ngIf="cardTitle || title">{{cardTitle || title}}</md-card-title>
-      <md-card-subtitle *ngIf="cardSubTitle || subtitle">{{cardSubTitle || subtitle}}</md-card-subtitle>
-      <md-divider *ngIf="cardTitle || cardSubTitle || title || title"></md-divider>
+      <md-card-title *ngIf="cardTitle">{{cardTitle}}</md-card-title>
+      <md-card-subtitle *ngIf="cardSubTitle">{{cardSubTitle}}</md-card-subtitle>
+      <md-divider *ngIf="cardTitle || cardSubTitle"></md-divider>
       <ng-content></ng-content>
     </md-card>
     <ng-content select="[after-card]"></ng-content>

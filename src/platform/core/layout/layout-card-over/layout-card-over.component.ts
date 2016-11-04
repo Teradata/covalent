@@ -11,17 +11,53 @@ export class TdLayoutCardOverComponent {
   /**
    * title in card
    */
-  @Input('title') title: string; // deprecated
   @Input('cardTitle') cardTitle: string;
 
   /**
    * subtitle in card
    */
-  @Input('subtitle') subtitle: string; // deprecated
   @Input('cardSubTitle') cardSubTitle: string;
 
   /**
    * card flex width %
    */
   @Input('cardWidth') cardWidth: number = 70;
+
+  /**
+   * title in card
+   * @deprecated since 0.9, use cardTitle instead
+   */
+  @Input()
+  set title(title: string) {
+    /* tslint:disable-next-line */
+    console.warn("title is deprecated.  Please use cardTitle instead");
+    this.cardTitle = title;
+  }
+
+  /**
+   * title in card
+   * @deprecated since 0.9, use cardTitle instead
+   */
+  get title(): string {
+    return this.cardTitle;
+  }
+
+  /**
+   * subtitle in card
+   * @deprecated since 0.9, use cardSubTitle instead
+   */
+  @Input()
+  set subtitle(subTitle: string) {
+    /* tslint:disable-next-line */
+    console.warn("subtitle is deprecated.  Please use cardSubTitle instead");
+    this.cardSubTitle = subTitle;
+  }
+
+  /**
+   * subtitle in card
+   * @deprecated since 0.9, use cardSubTitle instead
+   */
+  get subtitle(): string {
+    return this.cardSubTitle;
+  }
 }

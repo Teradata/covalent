@@ -23,7 +23,6 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
   /**
    * title in sideNav menu
    */
-  @Input('title') title: string; // deprecated
   @Input('sidenavTitle') sidenavTitle: string;
 
   /**
@@ -45,6 +44,25 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    * method thats called when logout is clicked
    */
   @Output('logout') onLogoutEvent: EventEmitter<void> = new EventEmitter<void>();
+
+  /**
+   * title in sideNav menu
+   * @deprecated since 0.9, use sidenavTitle instead
+   */
+  @Input()
+  set title(title: string) {
+    /* tslint:disable-next-line */
+    console.warn("title is deprecated.  Please use sidenavTitle instead");
+    this.sidenavTitle = title;
+  }
+
+  /**
+   * title in sideNav menu
+   * @deprecated since 0.9, use sidenavTitle instead
+   */
+  get title(): string {
+    return this.sidenavTitle;
+  }
 
   constructor(private layoutService: TdLayoutService) {
     this._subcriptions.push(this.layoutService.registerSidenav('menu').subscribe(() => {

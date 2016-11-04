@@ -13,7 +13,6 @@ export class TdLayoutNavComponent {
   /**
    * title in toolbar
    */
-  @Input('title') title: string; // deprecated
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
@@ -30,6 +29,25 @@ export class TdLayoutNavComponent {
    * method thats called when menu is clicked
    */
   @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
+
+  /**
+   * title in toolbar
+   * @deprecated since 0.9, use toolbarTitle instead
+   */
+  @Input()
+  set title(title: string) {
+    /* tslint:disable-next-line */
+    console.warn("title is deprecated.  Please use toolbarTitle instead");
+    this.toolbarTitle = title;
+  }
+
+  /**
+   * title in toolbar
+   * @deprecated since 0.9, use toolbarTitle instead
+   */
+  get title(): string {
+    return this.toolbarTitle;
+  }
 
   constructor(private layoutService: TdLayoutService) {
 
