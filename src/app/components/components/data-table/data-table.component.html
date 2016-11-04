@@ -3,40 +3,49 @@
   <md-card-subtitle>Display sets of raw data</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <h3>Custom Data Table</h3>
+    <h3 class="md-title">Custom Data Table</h3>
+    <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
+    <md-divider></md-divider>
     <div class="md-table-container">
       <table td-data-table>
+        <th td-data-table-column>
+          <md-icon>comment</md-icon>
+          <span>Comments</span>
+        </th>
         <th td-data-table-column 
             *ngFor="let column of columns"
             [numeric]="column.numeric">
           {{column.label}}
         </th>
-        <th td-data-table-column>
-          <md-icon>input</md-icon>
-          <span>Comments</span>
-        </th>
         <tr td-data-table-row *ngFor="let row of basicData">
+          <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+            <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+          </td>
           <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
             {{row[column.name]}}
-          </td>
-          <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-            <span [class.tc-grey-400]="!row['comments']">{{row['comments'] || 'Click me'}}</span>
           </td>
         </tr>
       </table>
     </div>
-    <h3>Basic Demo</h3>
+  </md-card-content>
+  <md-card-content>
+    <h3 class="md-title">Basic Demo</h3>
+    <md-divider></md-divider>
     <td-data-table
       [data]="basicData"
       [columns]="columns"
       [selectable]="selectable"
       [multiple]="multiple">
     </td-data-table>
-    <h3>Paging Bar / Search Box / Sortable Demo</h3>
-    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
-      <span *ngIf="!searchBox.searchVisible" class="md-title push-left-sm">
-        <span *ngIf="(selectable && !selectedRows.length) || !selectable">Title here</span>
-        <span *ngIf="selectedRows.length && selectable">Selected {{selectedRows.length}} row(s)</span>
+  </md-card-content>
+  <md-card-content>
+    <h3 class="md-title">Table with components</h3>
+    <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
+    <md-divider></md-divider>
+    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.md-selected-title]="selectedRows.length && selectable">
+      <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+        <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
+        <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
       </span>
       <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
       </td-search-box>
@@ -44,6 +53,7 @@
         <md-icon>more_vert</md-icon>
       </button>
     </div>
+    <md-divider></md-divider>
     <td-data-table
       [data]="filteredData"
       [columns]="columns"
