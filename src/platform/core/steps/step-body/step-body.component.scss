@@ -1,15 +1,7 @@
 @import '../../styles/variables';
-@import '../../styles/default-theme';
 
 .td-step-content,
 .td-step-summary,
 .td-step-actions {
-  padding-top: $padding;
-  padding-left: $padding;
-  display: block;
-}
-
-.td-step-summary,
-.td-step-content-wrapper {
-  margin-bottom: $margin;
+  margin: $margin;
 }
