@@ -11,11 +11,17 @@ export class TdLayoutCardOverComponent {
   /**
    * title in card
    */
+  @Input('title') title: string; // deprecated
   @Input('cardTitle') cardTitle: string;
 
   /**
    * subtitle in card
    */
+  @Input('subtitle') subtitle: string; // deprecated
   @Input('cardSubTitle') cardSubTitle: string;
 
+  /**
+   * card flex width %
+   */
+  @Input('cardWidth') cardWidth: number = 70;
 }

@@ -23,6 +23,7 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
   /**
    * title in sideNav menu
    */
+  @Input('title') title: string; // deprecated
   @Input('sidenavTitle') sidenavTitle: string;
 
   /**

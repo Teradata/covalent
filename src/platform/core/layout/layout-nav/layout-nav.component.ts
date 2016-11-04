@@ -13,6 +13,7 @@ export class TdLayoutNavComponent {
   /**
    * title in toolbar
    */
+  @Input('title') title: string; // deprecated
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
