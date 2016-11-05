@@ -1,6 +1,6 @@
-//@import '../../../data-table/data-table-theme';
+@import '../../../paging/paging-bar-theme';
 
 // Create a theme.
 @mixin covalent-theme($theme) {
-  //@include td-data-table-theme($theme);
+  @include td-paging-bar-theme($theme);
 }
