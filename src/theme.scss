@@ -16,7 +16,7 @@ $accent:  md-palette($md-light-blue, 600, A100, A400);
 $warn:    md-palette($md-red, 600);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$theme: md-dark-theme($primary, $accent, $warn);
+$theme: md-light-theme($primary, $accent, $warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
