@@ -23,3 +23,24 @@ $theme: md-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+
+// Custom theme examples
+.blue-orange {
+    $primary2: md-palette($md-blue, 700);
+    $accent2:  md-palette($md-orange, 800);
+    $warn2:    md-palette($md-red, 600);
+
+    $blue-orange: md-light-theme($primary2, $accent2, $warn2);
+
+    @include angular-material-theme($blue-orange);   
+}
+
+.blue-grey-deep-orange {
+    $primary3: md-palette($md-blue-grey, 700);
+    $accent3:  md-palette($md-deep-orange);
+    $warn3:    md-palette($md-red, 600);
+
+    $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
+
+    @include angular-material-theme($blue-grey-deep-orange);   
+}
