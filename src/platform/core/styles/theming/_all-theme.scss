@@ -4,6 +4,7 @@
 @import '../../loading/loading-theme';
 @import '../../../chips/chips-theme';
 @import '../../../file-upload/file-upload-theme';
+@import '../../../json-formatter/json-formatter-theme';
 @import '../../../paging/paging-bar-theme';
 
 // Create a covalent theme
@@ -12,6 +13,7 @@
   @include td-expansion-panel-theme($theme);
   @include td-chips-theme($theme);
   @include td-file-upload-theme($theme);
+  @include td-json-formatter-theme($theme);
   @include td-paging-bar-theme($theme);
   @include td-loading-theme($theme);
 }
