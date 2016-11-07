@@ -1,11 +1,13 @@
 // Import all covalent components
 @import '../../steps/steps-theme';
+@import '../../expansion-panel/expansion-panel-theme';
 @import '../../../file-upload/file-upload-theme';
 @import '../../../paging/paging-bar-theme';
 
 // Create a covalent theme
 @mixin covalent-theme($theme) {
   @include td-steps-theme($theme);
+  @include td-expansion-panel-theme($theme);
   @include td-file-upload-theme($theme);
   @include td-paging-bar-theme($theme);
 }
