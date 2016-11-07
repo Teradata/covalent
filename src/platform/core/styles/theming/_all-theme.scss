@@ -1,6 +1,9 @@
+// Import all covalent components
+@import '../../../file-upload/file-upload-theme';
 @import '../../../paging/paging-bar-theme';
 
-// Create a theme.
+// Create a covalent theme
 @mixin covalent-theme($theme) {
+  @include td-file-upload-theme($theme);
   @include td-paging-bar-theme($theme);
 }

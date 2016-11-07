@@ -1,5 +1,5 @@
-@import "../core/styles/variables";
-@import "../core/styles/elevation";
+@import '../../../node_modules/@angular/material/core/style/variables';
+@import '../../../node_modules/@angular/material/core/style/elevation';
 
 button {
   padding-left: 0;
@@ -27,7 +27,6 @@ input.md-file-upload-input {
   top: 24px;
   left: -12px;
   md-icon {
-    background-color: white;
     border-radius: 12px;
   }
 }
