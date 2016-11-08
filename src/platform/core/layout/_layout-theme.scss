@@ -1,0 +1,8 @@
+@import '../../../../node_modules/@angular/material/core/theming/theming';
+
+@mixin td-layout-theme($theme) {
+  $background: map-get($theme, background);
+  md-sidenav-layout {
+    background-color: md-color($background, status-bar);
+  }
+}

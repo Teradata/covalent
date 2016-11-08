@@ -1,6 +1,3 @@
-@import 'variables';
-@import 'default-theme';
-
 // Overall app layout height
 md-sidenav-layout {
   & > md-content,
@@ -28,19 +25,11 @@ md-content,
     overflow-x: auto;
     overflow-y: hidden;
   }
-  &[md-scroll-xy] {
-  }
-
   // For iOS allow disabling of momentum scrolling
   // @see issue #2640.
-
   &.autoScroll {
     -webkit-overflow-scrolling: auto;
   }
-
-  // Theme
-  color: md-color($md-foreground, text);
-  background-color: md-color($md-background, 200);
 }
 
 
