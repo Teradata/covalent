@@ -89,6 +89,20 @@ export class DataTableDemoComponent implements OnInit {
     type: `function`,
   }];
 
+  serviceAttrs: Object[] = [{
+    description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.`,
+    name: 'filterData',
+    type: `function(data: any[], searchTerm: string, ignoreCase: boolean)`,
+  }, {
+    description: `Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.`,
+    name: 'sortData',
+    type: `function(data: any[], sortBy: string, sortOrder: TdDataTableSortingOrder): any[]`,
+  }, {
+    description: `Returns a section of the [data] parameter starting from [fromRow] and ending in [toRow].`,
+    name: 'pageData',
+    type: `function(data: any[], fromRow: number, toRow: number): any[]`,
+  }];
+
   columns: any[] = [
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },

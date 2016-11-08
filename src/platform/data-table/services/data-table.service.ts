@@ -32,7 +32,7 @@ export class TdDataTableService {
    * params:
    * - data: any[]
    * - sortBy: string
-   * - sortOrder: : TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending
+   * - sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending
    * 
    * Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.
    */

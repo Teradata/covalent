@@ -155,6 +155,25 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-title>TdDataTableService</md-card-title>
+  <md-card-subtitle>How to use this service</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <p>Service provided with methods for sorting/paging/searching the data table.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>Data Table (Atomic) Components</md-card-title>
   <md-card-subtitle>How to use these components</md-card-subtitle>
   <md-divider></md-divider>
