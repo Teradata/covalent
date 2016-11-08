@@ -24,29 +24,35 @@ export class DataTableDemoComponent implements OnInit {
     name: 'columns?',
     type: 'ITdDataTableColumn[]',
   }, {
-    description: `Adds a checkbox column and allows the user to select rows.`,
+    description: `Enables row selection events, hover and selected row states.`,
     name: 'selectable?',
     type: 'boolean',
   }, {
-    description: `Toggles between multiple or single row selection`,
+    description: `Enables multiple row selection. [selectable] needs to be enabled.`,
     name: 'multiple?',
     type: 'boolean',
   }, {
-    description: `Enables sort by column and (sortChange) events.`,
+    description: `Enables sorting events, sort icons and active column states.`,
     name: 'sortable?',
     type: 'boolean',
   }, {
-    description: `Name of the column to be shown as active sort column.`,
+    description: `Sets the active sort column. [sortable] needs to be enabled.`,
     name: 'sortBy?',
     type: 'string',
   }, {
-    description: `Sorting order for active [sortBy] column. Defaults to 'ASC'`,
+    description: `Sets the sort order of the [sortBy] column. [sortable] needs to be enabled.
+                  Defaults to 'ASC' or TdDataTableSortingOrder.Ascending`,
     name: 'sortOrder?',
-    type: `'ASC' | 'DESC'`,
+    type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
   }, {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
                   Emits an [ITdDataTableSortEvent] implemented object.`,
     name: 'sortChange',
+    type: `function()`,
+  }, {
+    description: `Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
+                  Emits an [ITdDataTableSelectEvent] implemented object.`,
+    name: 'rowSelect',
     type: `function()`,
   }];
 

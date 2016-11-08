@@ -114,7 +114,8 @@
           [sortable]="true|false"
           [sortBy]="sortBy"
           [sortOrder]="'ASC'|'DESC'"
-          (sortChange)="sortEvent($event)">
+          (sortChange)="sortEvent($event)"
+          (rowSelect)="selectEvent($event)">
         </td-data-table>
       ]]>
     </td-highlight>

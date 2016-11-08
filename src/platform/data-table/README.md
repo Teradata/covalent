@@ -10,12 +10,13 @@ Properties:
 | --- | --- | --- |
 | `data` | `any[]` | Rows of data to be displayed.
 | `columns` | `ITdDataTableColumn[]` | List of columns to be displayed.
-| `selectable?` | `boolean` | Adds a checkbox column and allows the user to select rows.
-| `multiple?` | `boolean` | Toggles between multiple or single row selection.
-| `sortable?` | `boolean` | Enables sort by column and (sortChange) events.
-| `sortBy?` | `string` | Name of the column to be shown as active sort column.
-| `sortOrder?` | `'ASC' | 'DESC'` | Sorting order for active [sortBy] column. Defaults to 'ASC'
+| `selectable?` | `boolean` | Enables row selection events, hover and selected row states.
+| `multiple?` | `boolean` | Enables multiple row selection. [selectable] needs to be enabled.
+| `sortable?` | `boolean` | Enables sorting events, sort icons and active column states.
+| `sortBy?` | `string` | Sets the active sort column. [sortable] needs to be enabled.
+| `sortOrder?` | TdDataTableSortingOrder | Sets the sort order of the [sortBy] column. [sortable] needs to be enabled. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
 | `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
+| `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
 
 ## Setup
 
@@ -46,6 +47,7 @@ Example for HTML usage:
   [sortable]="true|false"
   [sortBy]="sortBy"
   [sortOrder]="'ASC'|'DESC'"
-  (sortChange)="sortEvent($event)">
+  (sortChange)="sortEvent($event)"
+  (rowSelect)="selectEvent($event)">
 </td-data-table>
  ```
