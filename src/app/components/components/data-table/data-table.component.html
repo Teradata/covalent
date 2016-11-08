@@ -154,3 +154,58 @@
     </td-highlight>
   </md-card-content>
 </md-card>
+<md-card>
+  <md-card-title>Data Table (Atomic) Components</md-card-title>
+  <md-card-subtitle>How to use these components</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
+    <p>Use <code><![CDATA[<tr td-data-table-row>]]></code> element to generate wrapper atomic row.</p>
+    <p>Use <code><![CDATA[<td td-data-table-cell>]]></code> element to generate wrapper atomic cell.</p>
+    <p>Use <code><![CDATA[<th td-data-table-column>]]></code> element to generate wrapper atomic column.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <table td-data-table>
+          <th td-data-table-column
+              [name]="unique"
+              [sortable]="true|false"
+              [sortOrder]="'ASC'|'DESC'"
+              [active]="true|false"
+              [numeric]="true|false"
+              (sortChange)="function($event)">
+            ...
+          </th>
+          <tr td-data-table-row>
+            <td td-data-table-cell
+                [numeric]="true|false">
+              ...
+            </td>
+          </tr>
+        </table>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

@@ -56,6 +56,39 @@ export class DataTableDemoComponent implements OnInit {
     type: `function()`,
   }];
 
+  cellAttrs: Object[] = [{
+    description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
+    name: 'numeric',
+    type: `boolean`,
+  }];
+
+  columnAttrs: Object[] = [{
+    description: `Sets unique column [name] for [sortable] events.`,
+    name: 'name',
+    type: `string`,
+  }, {
+    description: `Enables sorting events, sort icons and active column states. Defaults to 'false'`,
+    name: 'sortable',
+    type: `boolean`,
+  }, {
+    description: `Sets the sort order of column. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending`,
+    name: 'sortOrder',
+    type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
+  }, {
+    description: `Sets column to active state when 'true'. Defaults to 'false'`,
+    name: 'active',
+    type: `boolean`,
+  }, {
+    description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
+    name: 'numeric',
+    type: `boolean`,
+  }, {
+    description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+                  Emits an [ITdDataTableSortChangeEvent] implemented object.`,
+    name: 'sortChange',
+    type: `function`,
+  }];
+
   columns: any[] = [
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },
