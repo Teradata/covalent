@@ -1,6 +1,3 @@
-@import '../core/styles/variables';
-@import '../core/styles/default-theme';
-
 :host {
   display: block;
 }
@@ -9,10 +6,6 @@
   padding-bottom: 2px;
   .td-key {
     &.td-key-node {
-      &:focus,
-      &:hover {
-        background-color: rgba(158,158,158,0.1);
-      }
       &:hover {
         cursor: pointer;
       }
@@ -27,9 +20,6 @@
       }
     }
   }
-  .key {
-    color: md-color($md-primary);
-  }
   .value {
     margin-left: 5px;
     .td-empty {
@@ -37,26 +27,9 @@
       text-decoration: line-through;
     }
     .string {
-      color: md-color($md-warn);
       word-break: break-word;
     }
-    .number { 
-      color: md-color($md-accent);
-    }
-    .boolean { 
-      color: md-color($md-accent);
-    }
-    .null { 
-      color: gray; 
-    }
-    .undefined { 
-      color: gray; 
-    }
-    .function { 
-      color: md-color($md-primary);
-    }
     .date { 
-      color: black;
       word-break: break-word;
     }
   }

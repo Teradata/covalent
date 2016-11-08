@@ -1,0 +1,25 @@
+// Import all covalent components
+@import '../../layout/layout-theme';
+@import '../../steps/steps-theme';
+@import '../../expansion-panel/expansion-panel-theme';
+@import '../../loading/loading-theme';
+@import '../../../chips/chips-theme';
+@import '../../../file-upload/file-upload-theme';
+@import '../../../json-formatter/json-formatter-theme';
+@import '../../../paging/paging-bar-theme';
+@import '../../../markdown/markdown-theme';
+@import '../../../charts/charts-theme';
+
+// Create a covalent theme
+@mixin covalent-theme($theme) {
+  @include td-layout-theme($theme);
+  @include td-steps-theme($theme);
+  @include td-expansion-panel-theme($theme);
+  @include td-chips-theme($theme);
+  @include td-file-upload-theme($theme);
+  @include td-json-formatter-theme($theme);
+  @include td-paging-bar-theme($theme);
+  @include td-loading-theme($theme);
+  @include td-markdown-theme($theme);
+  @include td-charts-theme($theme);
+}

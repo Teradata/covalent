@@ -54,23 +54,23 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-content>
-    <h3 class="md-title"><span class="tc-light-blue-700">Light Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
+    <h3 class="md-title"><span class="tc-blue-700">Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
     <div layout-gt-xs="row" layout-margin>
       <div flex-gt-xs="50" class="pad-top-sm">
         <td-highlight lang="scss">
-          .light-blue-orange {{ '{' }}
-              $primary2: md-palette($md-light-blue);
+          .blue-orange {{ '{' }}
+              $primary2: md-palette($md-blue, 700);
               $accent2:  md-palette($md-orange, 800);
               $warn2:    md-palette($md-red, 600);
 
-              $light-blue-orange: md-light-theme($primary2, $accent2, $warn2);
+              $blue-orange: md-light-theme($primary2, $accent2, $warn2);
 
-              @include angular-material-theme($light-blue-orange);   
+              @include angular-material-theme($blue-orange);   
           {{ '}' }}
         </td-highlight>
       </div>
       <div flex-gt-xs="50">
-        <md-card class="top-toolbar light-blue-orange">
+        <md-card class="top-toolbar blue-orange">
           <md-toolbar color="primary">
             <md-toolbar-row>
               <span></span>
