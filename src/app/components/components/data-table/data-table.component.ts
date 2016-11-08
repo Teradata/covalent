@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 import { TdDataTableSortingOrder, TdDataTableService,
-         ITdDataTableSortChangeEvent } from '../../../../platform/data-table';
+         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/data-table';
 import { IPageChangeEvent } from '../../../../platform/paging';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -103,7 +103,7 @@ export class DataTableDemoComponent implements OnInit {
     type: `function(data: any[], fromRow: number, toRow: number): any[]`,
   }];
 
-  columns: any[] = [
+  columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)' },
     { name: 'type', label: 'Type' },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
