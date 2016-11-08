@@ -5,6 +5,8 @@
   height: 100%;
   position: relative;
   display: flex;
+  flex: 1;
+  flex-direction: column;
   z-index: 0;
   overflow: hidden;
 }
@@ -13,6 +15,7 @@
     font-size: 14px;
   }
   md-sidenav-layout.td-layout-manage-list {
+    top: 64px;
     & > .md-sidenav-content {
       margin-left: 0 !important;
     }
@@ -50,7 +53,6 @@
   }
 }
 .list {
-    background-color: #fff;
     text-align: start;
 }
 .content {

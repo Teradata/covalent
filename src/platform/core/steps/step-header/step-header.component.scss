@@ -1,12 +1,3 @@
-@import '../../../../../node_modules/@angular/material/core/theming/palette';
-@import '../../../../../node_modules/@angular/material/core/theming/theming';
-
-// TODO properly wrap in mixin to apply theme like material2 components
-$foreground: $md-light-theme-foreground;
-$background: $md-light-theme-background;
-$accent: md-palette($md-blue);
-$warn: md-palette($md-red);
-
 $step-circle: 24px;
 
 :host /deep/ {
@@ -36,22 +27,6 @@ $step-circle: 24px;
     margin-right: 8px;
   }
 }
-.md-caption {
-  color: md-color($foreground, secondary-text);
-}
-.md-disabled {
-  &, & * {
-    color: md-color($foreground, disabled);
-  }
-}
-.md-warn {
-  &, & * {
-    color: md-color($warn);
-  }
-}
-.md-complete {
-  color: md-color($accent);
-}
 md-icon {
   &.md-warn {
     font-size: $step-circle;
@@ -72,23 +47,14 @@ md-icon {
   width: $step-circle;
   line-height: $step-circle;
   border-radius: 99%;
-  color: #ffffff;
   text-align: center;
   flex: none;
-  &.md-active {
-    background-color: md-color($accent);
-  }
-  &.md-inactive {
-    background-color: md-color($foreground, disabled);
-  }
   & md-icon {
-    fill: #ffffff;
     margin-top: 2px;
     font-weight: bold;
   }
 }
 .td-triangle {
-  color: md-color($warn);
   & > md-icon {
     font-size: 27px;
   }
