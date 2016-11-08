@@ -112,7 +112,13 @@ export class TdChartLineComponent extends ChartComponent {
 
     line.append('text')
       .datum((d: any) => { return {id: d.id, value: d.values[d.values.length - 1]}; })
-      .attr('transform', (d: any) => { return 'translate(' + x(d.value.xValue) + ',' + y(d.value.yValue) + ')'; })
+      .attr('transform', (d: any) => {
+        if (!d.value) {
+          return undefined;
+        } else {
+          return 'translate(' + x(d.value.xValue) + ',' + y(d.value.yValue) + ')';
+        }
+      })
       .attr('x', 3)
       .attr('dy', '0.35em')
       .style('font', '10px sans-serif')
