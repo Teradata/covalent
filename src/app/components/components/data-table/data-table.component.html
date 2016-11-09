@@ -122,6 +122,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
+        import { ITdDataTableColumn } from '@covalent/data-table';
         ...
         })
         export class Demo {
@@ -129,7 +130,7 @@
             { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
             { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
           ];
-          private columns: any[] = [
+          private columns: ITdDataTableColumn[] = [
             { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
             { name: 'item', label: 'Item name' },
             { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
@@ -224,6 +225,167 @@
             </td>
           </tr>
         </table>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Data Table Example 1</md-card-title>
+  <md-card-subtitle>Paging Bar / Search Box / Sortable components</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+          <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+            <span class="md-title">Title here</span>
+          </span>
+          <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+          </td-search-box>
+        </div>
+        <md-divider></md-divider>
+        <td-data-table
+          [data]="filteredData"
+          [columns]="columns"
+          [sortable]="true"
+          [sortBy]="sortBy"
+          [sortOrder]="sortOrder"
+          (sortChange)="sort($event)">
+        </td-data-table>
+        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/data-table';
+        import { IPageChangeEvent } from '@covalent/paging';
+        ...
+        })
+        export class Demo {
+          data: any[] = [
+            { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+            { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+          ];
+          columns: ITdDataTableColumn[] = [
+            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
+            { name: 'item', label: 'Item name' },
+            { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+          ];
+
+          filteredData: any[] = this.data;
+          filteredTotal: number = this.data.length;
+
+          searchTerm: string = '';
+          fromRow: number = 1;
+          currentPage: number = 1;
+          pageSize: number = 5;
+          sortBy: string = 'sku';
+          sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+
+          constructor(private _dataTableService: TdDataTableService) {}
+
+          ngOnInit(): void {
+            this.filter();
+          }
+
+          sort(sortEvent: ITdDataTableSortChangeEvent): void {
+            this.sortBy = sortEvent.name;
+            this.sortOrder = sortEvent.order;
+            this.filter();
+          }
+
+          search(searchTerm: string): void {
+            this.searchTerm = searchTerm;
+            this.filter();
+          }
+
+          page(pagingEvent: IPageChangeEvent): void {
+            this.fromRow = pagingEvent.fromRow;
+            this.currentPage = pagingEvent.page;
+            this.pageSize = pagingEvent.pageSize;
+            this.filter();
+          }
+
+          filter(): void {
+            let newData: any[] = this.data;
+            newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+            this.filteredTotal = newData.length;
+            newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
+            newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
+            this.filteredData = newData;
+          }
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Data Table Example 2</md-card-title>
+  <md-card-subtitle>with custom headings, columns, and inline editing</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <table td-data-table>
+          <th td-data-table-column>
+            <md-icon>comment</md-icon>
+            <span>Comments</span>
+          </th>
+          <th td-data-table-column 
+              *ngFor="let column of columns"
+              [numeric]="column.numeric">
+            { {column.label}}
+          </th>
+          <tr td-data-table-row *ngFor="let row of basicData">
+            <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+              <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+            </td>
+            <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
+              { {row[column.name]}}
+            </td>
+          </tr>
+        </table>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { ITdDataTableColumn } from '@covalent/data-table';
+        import { ViewContainerRef } from '@angular/core';
+        import { TdDialogService } from '@covalent/core';
+        ...
+        })
+        export class Demo {
+          data: any[] = [
+            { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+            { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+          ];
+          columns: ITdDataTableColumn[] = [
+            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
+            { name: 'item', label: 'Item name' },
+            { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+          ];
+
+          constructor(private _dialogService: TdDialogService,
+                      private _viewContainerRef: ViewContainerRef) {}
+
+          openPrompt(row: any, name: string): void {
+            this._dialogService.openPrompt({
+              message: 'Enter comment?',
+              value: row[name],
+              viewContainerRef: this._viewContainerRef,
+            }).afterClosed().subscribe((value: any) => {
+              if (value !== undefined) {
+                row[name] = value;
+              }
+            });
+          }
+        }
       ]]>
     </td-highlight>
   </md-card-content>
