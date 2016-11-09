@@ -103,13 +103,15 @@ export class TdDataTableComponent implements ControlValueAccessor {
     }
 
     this._columns = [];
-    this._data.forEach((row: any) => {
+    // if columns is undefined, use key in [data] rows as name and label for column headers.
+    if (this._data.length > 0) {
+      let row: any = this._data[0];
       Object.keys(row).forEach((k: string) => {
         if (!this._columns.find((c: any) => c.name === k)) {
           this._columns.push({ name: k, label: k });
         }
       });
-    });
+    }
 
     return this._columns;
   }
@@ -196,24 +198,38 @@ export class TdDataTableComponent implements ControlValueAccessor {
    */
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
+  /**
+   * Clears model (ngModel) of component by removing all values in array.
+   */
   clearModel(): void {
     this._value.splice(0, this._value.length);
   }
 
+
+  /**
+   * Refreshes data table and rerenders [data] and [columns]
+   */
   refresh(): void {
     this.clearModel();
     this._preprocessData();
   }
 
+  /**
+   * Checks if all visible rows are selected.
+   */
   areAllSelected(): boolean {
     const match: string =
       this._data.find((d: any) => !this.isRowSelected(d));
     return typeof match === 'undefined';
   }
 
+  /**
+   * Selects or clears all rows depending on 'checked' value.
+   */
   selectAll(checked: boolean): void {
     if (checked) {
       this._data.forEach((row: any) => {
+        // skiping already selected rows
         if (!this.isRowSelected(row)) {
           this._value.push(row);
         }
@@ -223,7 +239,11 @@ export class TdDataTableComponent implements ControlValueAccessor {
     }
   }
 
+  /**
+   * Checks if row is selected
+   */
   isRowSelected(row: any): boolean {
+    // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
     if (this.uniqueId) {
       return this._value ? this._value.filter((val: any) => {
         return val[this.uniqueId] === row[this.uniqueId];
@@ -232,6 +252,9 @@ export class TdDataTableComponent implements ControlValueAccessor {
     return this._value ? this._value.indexOf(row) > -1 : false;
   }
 
+  /**
+   * Selects or clears a row depending on 'checked' value
+   */
   select(row: any, checked: boolean, event: Event): void {
     event.preventDefault();
     // clears all the fields for the dataset
@@ -242,6 +265,7 @@ export class TdDataTableComponent implements ControlValueAccessor {
     if (checked) {
       this._value.push(row);
     } else {
+      // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
       if (this.uniqueId) {
         row = this._value.filter((val: any) => {
           return val[this.uniqueId] === row[this.uniqueId];
@@ -256,6 +280,9 @@ export class TdDataTableComponent implements ControlValueAccessor {
     this.onChange(this._value);
   }
 
+  /**
+   * Method handle for sort click event in column headers.
+   */
   handleSort(column: ITdDataTableColumn): void {
     if (this._sortBy === column) {
       this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
