@@ -205,7 +205,6 @@ export class TdDataTableComponent implements ControlValueAccessor {
     this._value.splice(0, this._value.length);
   }
 
-
   /**
    * Refreshes data table and rerenders [data] and [columns]
    */
