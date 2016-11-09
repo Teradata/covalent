@@ -1,0 +1,69 @@
+:host {
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 0 28px 0 28px;
+  position: relative;
+
+  &:first-child {
+    padding-left: 24px;
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
+
+  md-icon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px !important;
+    line-height: 16px !important;
+
+    &.td-data-table-sort-icon {
+      opacity: 0;
+      transition: transform 0.25s, opacity 0.25s;
+
+      &.md-asc {
+        transform: rotate(0deg);
+      }
+
+      &.md-desc {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover.md-sortable md-icon.td-data-table-sort-icon,
+  &.md-active.md-sortable md-icon.td-data-table-sort-icon {
+    opacity: 1;
+  }
+
+  vertical-align: middle;
+  text-align: left;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &.md-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  md-icon.td-data-table-sort-icon {
+    position: absolute;
+  }
+  &.md-numeric {
+    text-align: right;
+    md-icon.td-data-table-sort-icon {
+      margin-left: -22px;
+    }
+  }
+  &:not(.md-numeric) {
+    md-icon.td-data-table-sort-icon {
+      margin-left: 6px;
+    }
+  }
+}

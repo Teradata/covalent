@@ -1,35 +1,28 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
-
-import { TdDataTableTableDirective } from './directives/table.directive';
-import { TdDataTableHeadDirective } from './directives/head.directive';
-import { TdDataTableBodyDirective } from './directives/body.directive';
-import { TdDataTableRowDirective } from './directives/row.directive';
-import { TdDataTableColumnDirective } from './directives/column.directive';
-import { TdDataTableCellDirective } from './directives/cell.directive';
+import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
+import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
+import { TdDataTableService } from './services/data-table.service';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
 
-  TdDataTableTableDirective,
-  TdDataTableHeadDirective,
-  TdDataTableBodyDirective,
-  TdDataTableRowDirective,
-  TdDataTableColumnDirective,
-  TdDataTableCellDirective,
+  TdDataTableColumnComponent,
+  TdDataTableCellComponent,
+  TdDataTableRowComponent,
+  TdDataTableTableComponent,
 ];
 
 @NgModule({
   imports: [
     MaterialModule.forRoot(),
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
   declarations: [
     TD_DATA_TABLE_DIRECTIVES,
@@ -42,7 +35,7 @@ export class CovalentDataTableModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDataTableModule,
-      providers: [],
+      providers: [ TdDataTableService ],
     };
   }
 }

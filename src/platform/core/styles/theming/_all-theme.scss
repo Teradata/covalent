@@ -1,4 +1,3 @@
-// Import all covalent components
 @import '../../layout/layout-theme';
 @import '../../steps/steps-theme';
 @import '../../expansion-panel/expansion-panel-theme';
@@ -9,8 +8,9 @@
 @import '../../../paging/paging-bar-theme';
 @import '../../../markdown/markdown-theme';
 @import '../../../charts/charts-theme';
+@import '../../../data-table/data-table-theme';
 
-// Create a covalent theme
+// Create a theme.
 @mixin covalent-theme($theme) {
   @include td-layout-theme($theme);
   @include td-steps-theme($theme);
@@ -22,4 +22,5 @@
   @include td-loading-theme($theme);
   @include td-markdown-theme($theme);
   @include td-charts-theme($theme);
+  @include td-data-table-theme($theme);
 }

@@ -32,8 +32,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.8.1",
-    "@types/lodash": "^4.14.36",
-    "lodash": "^4.16.2"
+    "@covalent/core": "0.8.1"
   }
 }

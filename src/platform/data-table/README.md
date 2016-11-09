@@ -1,6 +1,6 @@
 # td-data-table
 
-`td-data-table` element generates a data driven table layout with search, sorting and pagination.
+`td-data-table` element generates a data driven table layout sorting events.
 
 ## API Summary
 
@@ -8,24 +8,22 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` | Rows of data to be displayed
-| `columns` | `ITdDataTableColumn[]` | List of columns to be displayed
-| `title?` | `string` | If present will display a title before the table
-| `pagination?` | `boolean` | Enables pagination
-| `pageSize?` | `number` | Number of rows per page, when omitted defaults to 10
-| `sorting?` | `boolean` | Enables sorting by column
-| `sortBy?` | `string` | Name of the column to use for sorting
-| `sortOrder?` | `'ASC' | 'DESC'` | Sorting order - ascending or descending
-| `search?` | `boolean` | Enables search
-| `rowSelection?` | `boolean` | Adds a checkbox column to allow user to select rows
-| `multiple?` | `boolean` | Toggles between multiple or single row selection
+| `data` | `any[]` | Rows of data to be displayed.
+| `columns` | `ITdDataTableColumn[]` | List of columns to be displayed.
+| `selectable?` | `boolean` | Enables row selection events, hover and selected row states.
+| `multiple?` | `boolean` | Enables multiple row selection. [selectable] needs to be enabled.
+| `sortable?` | `boolean` | Enables sorting events, sort icons and active column states.
+| `sortBy?` | `string` | Sets the active sort column. [sortable] needs to be enabled.
+| `sortOrder?` | TdDataTableSortingOrder | Sets the sort order of the [sortBy] column. [sortable] needs to be enabled. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
+| `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
+| `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
 
 ## Setup
 
 Import the [CovalentDataTableModule] using the forRoot() method in your NgModule:
 
 ```typescript
-import { CovalentDataTableModule } from '@covalent/chips';
+import { CovalentDataTableModule } from '@covalent/data-table';
 @NgModule({
   imports: [
     CovalentDataTableModule.forRoot(),
@@ -44,10 +42,12 @@ Example for HTML usage:
 <td-data-table
   [data]="data"
   [columns]="columns"
-  sortBy="age"
-  sortOrder="DESC"
-  pagination="true"
-  pageSize="5"
-  search="true">
+  [selectable]="true|false"
+  [multiple]="true|false"
+  [sortable]="true|false"
+  [sortBy]="sortBy"
+  [sortOrder]="'ASC'|'DESC'"
+  (sortChange)="sortEvent($event)"
+  (rowSelect)="selectEvent($event)">
 </td-data-table>
  ```
