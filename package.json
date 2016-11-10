@@ -73,7 +73,7 @@
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.34",
     "@types/selenium-webdriver": "^2.52.0",
-    "angular-cli": "1.0.0-beta.15",
+    "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "~0.0.26",
     "awesome-typescript-loader": "^2.2.4",
     "ember-cli-inject-live-reload": "1.4.0",
