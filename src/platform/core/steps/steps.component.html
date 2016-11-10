@@ -2,13 +2,13 @@
   <template let-step let-last="last" ngFor [ngForOf]="steps">
     <td-step-header (keydown.enter)="step.toggle()"
                     [number]="step.number"
-                    [sublabel]="step.sublabel | truncate:30"
                     [active]="step.active" 
                     [disabled]="step.disabled" 
                     [state]="step.state"
                     (click)="step.toggle()">
       <template td-step-header-label [portalHost]="step.stepLabel"></template>
       <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
+      <template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</template>
     </td-step-header>
     <span *ngIf="!last" class="td-horizontal-line" flex></span>
   </template>
@@ -16,7 +16,6 @@
 <div *ngFor="let step of steps; let last = last" class="td-step" layout="column">
   <td-step-header (keydown.enter)="step.toggle()"
                   [number]="step.number"
-                  [sublabel]="step.sublabel"
                   [active]="step.active" 
                   [disabled]="step.disabled" 
                   [state]="step.state"
@@ -24,6 +23,7 @@
                   *ngIf="isVertical()">
     <template td-step-header-label [portalHost]="step.stepLabel"></template>
     <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
+    <template td-step-header-sublabel [ngIf]="true">{{step.sublabel}}</template>
   </td-step-header>
   <template [ngIf]="isVertical() || step.active || (!areStepsActive() && _prevStep === step.number)">
     <td-step-body [active]="step.active" [state]="step.state">
