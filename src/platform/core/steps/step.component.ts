@@ -1,21 +1,12 @@
-import { Component, Directive, Input, Output, TemplateRef,
-         ViewContainerRef, ContentChild, AfterViewInit } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewChild,
+         ViewContainerRef, ContentChild, AfterViewInit, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { TemplatePortalDirective, TemplatePortal } from '@angular/material';
 
 export enum StepState {
   None = <any>'none',
   Required = <any>'required',
   Complete = <any>'complete'
-}
-
-@Directive({
-  selector: '[td-step-content]template',
-})
-export class TdStepContentDirective extends TemplatePortalDirective {
-  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
-    super(templateRef, viewContainerRef);
-  }
 }
 
 @Directive({
@@ -38,16 +29,21 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
 
 @Component({
   selector: 'td-step',
-  template: '<ng-content></ng-content>',
+  templateUrl: 'step.component.html',
 })
-export class TdStepComponent implements AfterViewInit {
+export class TdStepComponent implements OnInit, AfterViewInit {
 
   private _number: number;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
 
-  @ContentChild(TdStepContentDirective) stepContent: TdStepContentDirective;
+  private _contentPortal: TemplatePortal;
+  get stepContent(): TemplatePortal {
+    return this._contentPortal;
+  }
+
+  @ViewChild(TemplateRef) private _content: TemplateRef<any>;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
 
@@ -139,6 +135,12 @@ export class TdStepComponent implements AfterViewInit {
    * Event emitted when [TdStepComponent] is deactivated.
    */
   @Output('deactivated') onDeactivated: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private _viewContainerRef: ViewContainerRef) {}
+
+  ngOnInit(): void {
+    this._contentPortal = new TemplatePortal(this._content, this._viewContainerRef);
+  }
 
   ngAfterViewInit(): void {
     if (this.number === undefined) {
