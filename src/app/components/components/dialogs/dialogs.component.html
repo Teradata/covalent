@@ -44,6 +44,7 @@
           openAlert(): void {
             this._dialogService.openAlert({
               message: 'This is how simple it is to create an alert with this wrapper service.',
+              disableClose: true | false, // defaults to false
               viewContainerRef: this._viewContainerRef, //OPTIONAL
               title: 'Alert', //OPTIONAL, hides if not provided
               closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
@@ -53,6 +54,7 @@
           openConfirm(): void {
             this._dialogService.openConfirm({
               message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
+              disableClose: true | false, // defaults to false
               viewContainerRef: this._viewContainerRef, //OPTIONAL
               title: 'Confirm', //OPTIONAL, hides if not provided
               cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
@@ -69,6 +71,7 @@
           openPrompt(): void {
             this._dialogService.openPrompt({
               message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
+              disableClose: true | false, // defaults to false
               viewContainerRef: this._viewContainerRef, //OPTIONAL
               title: 'Prompt', //OPTIONAL, hides if not provided
               value: 'Prepopulated value', //OPTIONAL
@@ -80,24 +83,6 @@
               } else {
                 // DO SOMETHING ELSE
               }
-            });
-          }
-        }
-      ]]>
-    </td-highlight>
-    <p>You can also set a default [ViewContainerRef] and avoid having to use it on each dialog open method call.</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdDialogService } from '@covalent/core';
-        ...
-        })
-        export class Demo {
-          constructor(private _dialogService: TdDialogService) {}
-
-          openAlert(): void {
-            this._dialogService.openAlert({
-              disableClose: true,
-              message: 'Alert using a default ViewContainerRef.',
             });
           }
         }
