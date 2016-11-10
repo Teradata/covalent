@@ -35,6 +35,7 @@ export class DialogsDemoComponent {
   openAlert(): void {
     this._dialogService.openAlert({
       title: 'Alert',
+      disableClose: true,
       message: 'This is how simple it is to create an alert with this wrapper service.',
     });
   }
