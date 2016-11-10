@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { TdDialogService } from '../../../../platform/core';
 
@@ -10,10 +10,6 @@ import { TdDialogService } from '../../../../platform/core';
 export class DialogsDemoComponent {
 
   dialogServiceMethods: Object[] = [{
-    description: `Sets a default ViewContainerRef object to which all dialogs will belong to.`,
-    name: 'setDefaultViewContainerRef',
-    type: 'function(ViewContainerRef)',
-  }, {
     description: `Opens an alert dialog with the provided config.`,
     name: 'openAlert',
     type: 'function(IAlertConfig): MdDialogRef<TdAlertDialogComponent>',
@@ -27,10 +23,7 @@ export class DialogsDemoComponent {
     type: 'function(IPromptConfig): MdDialogRef<TdPromptDialogComponent>',
   }];
 
-  constructor(private _dialogService: TdDialogService,
-              private _viewContainerRef: ViewContainerRef) {
-    this._dialogService.setDefaultViewContainerRef(_viewContainerRef);
-  }
+  constructor(private _dialogService: TdDialogService) {}
 
   openAlert(): void {
     this._dialogService.openAlert({
