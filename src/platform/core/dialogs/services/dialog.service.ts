@@ -131,9 +131,6 @@ export class TdDialogService {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
     dialogConfig.viewContainerRef = config.viewContainerRef ? config.viewContainerRef : this._viewContainerRef;
     dialogConfig.disableClose = config.disableClose;
-    if (!dialogConfig.viewContainerRef) {
-      throw 'ViewContainerRef was not provided for dialog.';
-    }
     return dialogConfig;
   }
 
