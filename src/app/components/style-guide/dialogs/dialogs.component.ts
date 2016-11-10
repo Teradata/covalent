@@ -14,7 +14,8 @@ export class DialogsToastsComponent {
   constructor(private _dialogService: TdDialogService,
               private _viewContainerRef: ViewContainerRef,
               private _snackBarService: MdSnackBar) {
-    this._snackBarConfig = new MdSnackBarConfig(_viewContainerRef);
+    this._snackBarConfig = new MdSnackBarConfig();
+    this._snackBarConfig.viewContainerRef = _viewContainerRef;
   }
   showSnackBar(): void {
     let snackBarRef: MdSnackBarRef<any> = this._snackBarService
