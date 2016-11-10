@@ -10,6 +10,15 @@ export enum StepState {
 }
 
 @Directive({
+  selector: '[td-step-label]template',
+})
+export class TdStepLabelDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
   selector: '[td-step-actions]template',
 })
 export class TdStepActionsDirective extends TemplatePortalDirective {
@@ -44,6 +53,7 @@ export class TdStepComponent implements OnInit, AfterViewInit {
   }
 
   @ViewChild(TemplateRef) private _content: TemplateRef<any>;
+  @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
 

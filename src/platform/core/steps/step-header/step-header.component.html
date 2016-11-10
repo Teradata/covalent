@@ -26,7 +26,9 @@
         <div class="td-step-label"
               [class.md-disabled]="(!active && !isComplete()) || disabled"
               [class.md-warn]="isRequired() && !disabled">
-          <div class="md-body-2">{{label}}</div>
+          <div class="md-body-2">
+            <ng-content select="[td-step-header-label]"></ng-content>
+          </div>
           <div class="md-caption td-step-sublabel">{{sublabel}}</div>
         </div>
         <span flex></span>

@@ -15,6 +15,7 @@
     <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
     <td-steps (stepChange)="stepChange($event)" [mode]="horizontal ? 'horizontal' : 'vertical'">
       <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+        <template td-step-label><span>Basic Usage (template)</span></template>
         Include any content you like for an active stepper 
       </td-step>
       <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
@@ -129,6 +130,9 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()">
+          <template td-step-label>
+            ... add label content (if not used, falls back to [label] input)
+          </template>
           ... add content that will be shown when the step is "active"
           <template td-step-actions>
             <button (click)="step.close()">Close</button>

@@ -41,13 +41,15 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 import { TdStepsComponent } from './steps/steps.component';
 import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
 import { TdStepBodyComponent } from './steps/step-body/step-body.component';
-import { TdStepComponent, TdStepActionsDirective, TdStepSummaryDirective } from './steps/step.component';
+import { TdStepComponent, TdStepLabelDirective, TdStepActionsDirective,
+         TdStepSummaryDirective } from './steps/step.component';
 
 export const TD_STEP_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
   TdStepHeaderComponent,
   TdStepBodyComponent,
+  TdStepLabelDirective,
   TdStepActionsDirective,
   TdStepSummaryDirective,
 ];
