@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { TdDialogService } from '../../../../platform/core';
 
-import { MdSnackBar, MdSnackBarRef} from '@angular/material';
+import { MdSnackBar, MdSnackBarRef } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-dialogs',
