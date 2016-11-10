@@ -28,18 +28,17 @@ export interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
 
-  private _viewContainerRef: ViewContainerRef;
-
   constructor(private _dialogService: MdDialog) {}
 
   /**
    * params:
    * - viewContainerRef: ViewContainerRef
-   * 
    * Sets a detaulf ViewContainerRef object to which all dialogs will belong to.
+   * @deprecated since 0.9
    */
   public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
-    this._viewContainerRef = viewContainerRef;
+    /* tslint:disable-next-line */ 
+    console.warn('setDefaultViewContainerRef is deprecated. ViewContainerRef is no longer required.');
   }
 
   /**
@@ -129,7 +128,7 @@ export class TdDialogService {
 
   private _createConfig(config: MdDialogConfig): MdDialogConfig {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
-    dialogConfig.viewContainerRef = config.viewContainerRef ? config.viewContainerRef : this._viewContainerRef;
+    dialogConfig.viewContainerRef = config.viewContainerRef;
     dialogConfig.disableClose = config.disableClose;
     return dialogConfig;
   }
