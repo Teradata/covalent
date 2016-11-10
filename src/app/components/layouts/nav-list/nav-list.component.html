@@ -22,87 +22,81 @@
         <div flex-gt-md="50">
           <td-steps>
             <td-step [active]="true" label="Step 1: td-layout" sublabel="td-layout is the wrapper component">
-              <template td-step-content>
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
-                    <p md-line>The wrapper of your entire layout</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>#layout</code></h3>
-                    <p md-line>The ID and local reference of your sidenav</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>sidenavTitle?: string</code></h3>
-                    <p md-line>The title of your sidenav</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>logo?: string</code></h3>
-                    <p md-line>The path to your sidenav logo</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </template>
+              <md-list>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
+                  <p md-line>The wrapper of your entire layout</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>#layout</code></h3>
+                  <p md-line>The ID and local reference of your sidenav</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>sidenavTitle?: string</code></h3>
+                  <p md-line>The title of your sidenav</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>logo?: string</code></h3>
+                  <p md-line>The path to your sidenav logo</p>
+                </md-list-item>
+                <md-divider></md-divider>
+              </md-list>
             </td-step>
             <td-step label="Step 2: menu-items" sublabel="the sidenav menu items">
-              <template td-step-content>
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
-                    <p md-line>The menu items wrapper</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
-                    <p md-line>Loops over the routes from your Class</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
-                    <p md-line>The SVG or font icon, depending on what you're using</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </template>
+              <md-list>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
+                  <p md-line>The menu items wrapper</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
+                  <p md-line>Loops over the routes from your Class</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
+                  <p md-line>The SVG or font icon, depending on what you're using</p>
+                </md-list-item>
+                <md-divider></md-divider>
+              </md-list>
             </td-step>
             <td-step label="Step 3: td-layout-nav-list" sublabel="the main content area of the layout">
-              <template td-step-content>
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-nav-list>]]></code></h3>
-                    <p md-line>Builds the top toolbar, left nav and content area</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>#list</code></h3>
-                    <p md-line>The ID and local reference of your list</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>toolbarTitle?: string</code></h3>
-                    <p md-line>The title of your toolbar</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>logo?: string</code></h3>
-                    <p md-line>The path to your toolbar logo</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<md-nav-list list-items>]]></code></h3>
-                    <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
-                    <p md-line>Loads html for each route (view)</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </template>
+              <md-list>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<td-layout-nav-list>]]></code></h3>
+                  <p md-line>Builds the top toolbar, left nav and content area</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>#list</code></h3>
+                  <p md-line>The ID and local reference of your list</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>toolbarTitle?: string</code></h3>
+                  <p md-line>The title of your toolbar</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code>logo?: string</code></h3>
+                  <p md-line>The path to your toolbar logo</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<md-nav-list list-items>]]></code></h3>
+                  <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
+                  <p md-line>Loads html for each route (view)</p>
+                </md-list-item>
+                <md-divider></md-divider>
+              </md-list>
             </td-step>
           </td-steps>
         </div>
