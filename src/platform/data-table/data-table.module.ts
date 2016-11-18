@@ -9,9 +9,11 @@ import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.comp
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 import { TdDataTableService } from './services/data-table.service';
+import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
 export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
+  TdDataTableTemplateDirective,
 
   TdDataTableColumnComponent,
   TdDataTableCellComponent,
