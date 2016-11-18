@@ -125,7 +125,7 @@
               [columns]="columns">
               <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
-                  <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
+                  <span flex>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
                   <md-icon>star</md-icon>
                 </div>
               </template>
