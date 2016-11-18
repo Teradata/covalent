@@ -5,8 +5,11 @@
        (keydown.enter)="clickEvent()"
        (click)="clickEvent()"
        [class.md-interaction-disabled]="disabled"
+       [class.md-tall]="expansionPanelHeader"
        md-list-item>
+      <template [portalHost]="expansionPanelHeader"></template>
       <div [class.md-disabled]="disabled"
+           *ngIf="!expansionPanelHeader"
            layout="row" 
            layout-align="start center" 
            flex>
@@ -16,7 +19,7 @@
         </div>
         <div class="md-body-1 td-expansion-secondary">
           <template [portalHost]="expansionPanelSublabel"></template>
-          <template [ngIf]="!expansionPanelSublabel">{{sublabel}}</template>
+          <template>{{sublabel}}</template>
         </div>
         <span flex></span>
         <md-icon class="td-expand-icon" *ngIf="!expand && !disabled">keyboard_arrow_down</md-icon>
