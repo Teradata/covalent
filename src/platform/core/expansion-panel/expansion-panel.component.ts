@@ -100,12 +100,37 @@ export class TdExpansionPanelComponent {
   };
 
   /**
+   * Toggle expand state of [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  toggle(): boolean {
+    return this._setExpand(!this._expand);
+  }
+
+  /**
+   * Opens [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  open(): boolean {
+    return this._setExpand(true);
+  }
+
+  /**
+   * Closes [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  close(): boolean {
+    return this._setExpand(false);
+  }
+
+
+  /**
    * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed]
    * event if 'false'. (Blocked if [disabled] is 'true')
    */
-  private _setExpand(newExpand: boolean): void {
+  private _setExpand(newExpand: boolean): boolean {
     if (this._disabled) {
-      return;
+      return false;
     }
     if (this._expand !== newExpand) {
       this._expand = newExpand;
@@ -114,7 +139,9 @@ export class TdExpansionPanelComponent {
       } else {
         this._onCollapsed();
       }
+      return true;
     }
+    return false;
   };
 
   private _onExpanded(): void {
