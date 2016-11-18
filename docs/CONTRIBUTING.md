@@ -4,7 +4,7 @@ Make sure you have setup your environment based on the [Developer Guide](DEVELOP
 
 ### Development Guidelines
 
-* **All code must be reviewd via a pull request.** Before anything can be merged, it must be reviewed by at least 2 others.
+* **All code must be reviewed via a pull request.** Before anything can be merged, it must be reviewed by at least 2 others.
 * ** Use git flow processes.** Start a feature, release, or hotfix branch, and you should never commit and push directly to `master` or `develop`.
 * **Squash commits into a single commit for your PR.** We want to keep a clean git history.
 * **Code should adhere to lint and codestyle tests.** While you can commit code that doesn't validate but still works, it is encouraged to validate your code. It saves other's headaches down the road.
