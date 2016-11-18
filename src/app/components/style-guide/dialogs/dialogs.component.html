@@ -132,11 +132,11 @@
         </md-input>
       </div>
       <div layout-gt-xs="row" layout-margin>
-        <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
+        <md-input #addressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim>
           <md-hint>
             <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
-          <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
+          <md-hint align="end">{{addressEl.characterCount}} / 50</md-hint>
         </md-input>
         <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
       </div>
@@ -184,11 +184,11 @@
             </md-input>
           </div>
           <div layout-gt-xs="row" layout-margin>
-            <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
+            <md-input #addressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim>
               <md-hint>
                 <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
               </md-hint>
-              <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
+              <md-hint align="end">{{addressEl.characterCount}} / 50</md-hint>
             </md-input>
             <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
           </div>
