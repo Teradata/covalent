@@ -1,7 +1,9 @@
-import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef,
+         ContentChildren, TemplateRef, AfterContentInit, QueryList } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
+import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
 const noop: any = () => {
   // empty method
@@ -37,7 +39,7 @@ export interface ITdDataTableSelectEvent {
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
 })
-export class TdDataTableComponent implements ControlValueAccessor {
+export class TdDataTableComponent implements ControlValueAccessor, AfterContentInit {
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -56,6 +58,10 @@ export class TdDataTableComponent implements ControlValueAccessor {
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
+
+  /** template fetching support */
+  private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
+  @ContentChildren(TdDataTableTemplateDirective) private _templates: QueryList<TdDataTableTemplateDirective>;
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -197,6 +203,24 @@ export class TdDataTableComponent implements ControlValueAccessor {
    * Emits an [ITdDataTableSelectEvent] implemented object.
    */
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
+
+  /**
+   * Loads templates and sets them in a map for faster access.
+   */
+  ngAfterContentInit(): void {
+    for (let i: number = 0; i < this._templates.toArray().length; i++) {
+      this._templateMap.set(
+        this._templates.toArray()[i].tdDataTableTemplate,
+        this._templates.toArray()[i].templateRef);
+    }
+   }
+
+  /**
+   * Getter method for template references
+   */
+   getTemplateRef(name: string): TemplateRef<any> {
+     return this._templateMap.get(name);
+   }
 
   /**
    * Clears model (ngModel) of component by removing all values in array.
