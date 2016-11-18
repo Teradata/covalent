@@ -40,7 +40,7 @@
     <p class="md-body-1">Use <code>[tdToggle]="variable"</code> on an element to toggle it open or closed (used in Stepper &amp; Expansion Panels).</p>
     <p>Click on this to open a div:</p>
     <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
-    <div [tdToggle]="toggleDiv" [hidden]>
+    <div [tdToggle]="toggleDiv">
       <md-card>
         <md-card-title>Toggle Card</md-card-title>
         <md-card-content>Reveal or hide with a toggle click!</md-card-content>
@@ -51,7 +51,7 @@
     <td-highlight lang="html">
         <![CDATA[
           <button md-raised-button color="accent" (click)="toggle()">Toggle</button>
-          <div [tdToggle]="toggleDiv" [hidden]>
+          <div [tdToggle]="toggleDiv">
             Reveal or hide with a toggle click!
           </div>
         ]]>
@@ -74,7 +74,7 @@
     <p class="md-body-1">Use <code>[tdFade]="variable"</code> on an element to fade it in and out.</p>
     <p>Click on this to open a div:</p>
     <button md-raised-button color="accent" (click)="fade()">Fade</button>
-    <div [tdFade]="fadeDiv" [hidden]>
+    <div [tdFade]="fadeDiv">
       <md-card>
         <md-card-title>Fade Card</md-card-title>
         <md-card-content>Fade in or out with a click!</md-card-content>
@@ -85,7 +85,7 @@
     <td-highlight lang="html">
         <![CDATA[
           <button md-raised-button color="accent" (click)="fade()">Toggle</button>
-          <div [tdFade]="fadeDiv" [hidden]>
+          <div [tdFade]="fadeDiv">
             This one fades in and out!
           </div>
         ]]>
