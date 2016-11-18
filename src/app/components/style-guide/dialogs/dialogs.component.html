@@ -145,7 +145,7 @@
           <md-hint>
             <span [hidden]="stateForm.pristine" class="tc-red-600">
               <span [hidden]="!stateForm.errors?.required">Required</span>
-              <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
+              <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
             </span>
           </md-hint>
           <md-hint align="end">e.g CA</md-hint>
@@ -164,7 +164,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <div class="inset">
-    <button md-raised-button [disabled]="!myForm.valid">Submit Form</button>
+    <button md-raised-button color="accent" [disabled]="!myForm.valid">Submit Form</button>
   </div>
   <md-divider></md-divider>
   <md-card-content>
