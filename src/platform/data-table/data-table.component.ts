@@ -211,7 +211,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     for (let i: number = 0; i < this._templates.toArray().length; i++) {
       this._templateMap.set(
         this._templates.toArray()[i].tdDataTableTemplate,
-        this._templates.toArray()[i].templateRef);
+        this._templates.toArray()[i].templateRef
+      );
     }
    }
 
