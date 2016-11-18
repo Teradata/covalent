@@ -7,24 +7,20 @@ import { Component } from '@angular/core';
 })
 export class NavListComponent {
   items: Object[] = [{
-    description: 'A simple layout with toolbar & sidenav',
+    description: 'item description',
     icon: 'view_compact',
-    route: '/nav-view',
-    title: 'Nav View',
+    title: 'Item Name',
   }, {
-    description: 'The Nav View with an embedded list',
+    description: 'item description',
     icon: 'view_quilt',
-    route: '/nav-list',
-    title: 'Nav List View',
+    title: 'Item Name',
   }, {
-    description: 'A card overlaying a toolbar',
+    description: 'item description',
     icon: 'view_day',
-    route: '/card-over',
-    title: 'Card Over View',
+    title: 'Item Name',
   }, {
-    description: 'Content/object management views',
+    description: 'item description',
     icon: 'view_list',
-    route: '/manage-list',
-    title: 'Management List View',
+    title: 'Item Name',
   }];
 }

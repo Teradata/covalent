@@ -9,7 +9,7 @@
         <md-divider *ngIf="!last" md-inset></md-divider>
       </template>
   </md-nav-list>
-  <div nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div nav-toolbar-content layout="row" flex>
     <span>Nav List Layout</span>
     <span flex></span>
   </div>
@@ -59,7 +59,7 @@
                 <md-divider></md-divider>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
-                  <p md-line>The SVG or font icon, depending on what you're using</p>
+                  <p md-line>The menu item icon</p>
                 </md-list-item>
                 <md-divider></md-divider>
               </md-list>
@@ -88,7 +88,12 @@
                 <md-divider></md-divider>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<md-nav-list list-items>]]></code></h3>
-                  <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
+                  <p md-line>The list items wrapper</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<div nav-toolbar-content>]]></code></h3>
+                  <p md-line>Right column page title (optional)</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>
@@ -122,6 +127,9 @@
                         <md-divider *ngIf="!last" md-inset></md-divider>
                       </template>
                   </md-nav-list>
+                  <div nav-toolbar-content layout="row" flex>
+                    <span>Page Title</span>
+                  </div>
                   <router-outlet></router-outlet>
                 </td-layout-nav-list>
               </td-layout>
