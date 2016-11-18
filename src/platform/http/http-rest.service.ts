@@ -8,6 +8,7 @@ export interface IRestTransform {
 
 export interface IRestConfig {
   baseHeaders?: Headers;
+  dynamicHeaders?: () => Headers;
   baseUrl: string;
   path?: string;
   transform?: IRestTransform;
@@ -32,6 +33,7 @@ export abstract class RESTService<T> {
   private _path: string;
   private _base: string;
   private _baseHeaders: Headers;
+  private _dynamicHeaders: () => Headers;
 
   protected transform: IRestTransform;
   protected http: IHttp;
@@ -41,6 +43,7 @@ export abstract class RESTService<T> {
     this._base = config.baseUrl.replace(/\/$/, '');
     this._path = config.path.replace(/^\//, '');
     this._baseHeaders = config.baseHeaders ? config.baseHeaders : new Headers();
+    this._dynamicHeaders = config.dynamicHeaders ? config.dynamicHeaders : () => new Headers();
     this.transform = config.transform ? config.transform : (response: Response): any => response.json();
   }
 
@@ -136,6 +139,9 @@ export abstract class RESTService<T> {
   protected buildRequestOptions(): RequestOptionsArgs {
     let requestHeaders: Headers = new Headers();
     this._baseHeaders.forEach((value: string[], key: string) => {
+      requestHeaders.set(key, value);
+    });
+    this._dynamicHeaders().forEach((value: string[], key: string) => {
       requestHeaders.set(key, value);
     });
     let requestOptions: RequestOptionsArgs = {
