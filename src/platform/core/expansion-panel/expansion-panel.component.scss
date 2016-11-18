@@ -3,13 +3,20 @@
 
 :host /deep/ {
   md-nav-list {
-    [md-list-item]:active,
-    [md-list-item]:focus {
-      outline: none;
-    }
-    [md-list-item].md-interaction-disabled .md-list-item {
-      background: none !important;
-      cursor: auto;
+    [md-list-item] {
+      &:active,
+      &:focus {
+        outline: none;
+      }
+      &.md-interaction-disabled .md-list-item {
+        background: none !important;
+        cursor: auto;
+      }
+      &.md-tall .md-list-item {
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }

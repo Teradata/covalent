@@ -3,6 +3,15 @@ import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
 @Directive({
+  selector: '[td-expansion-panel-header]template',
+})
+export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
   selector: '[td-expansion-panel-label]template',
 })
 export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
@@ -36,6 +45,7 @@ export class TdExpansionPanelComponent {
   private _expand: boolean = false;
   private _disabled: boolean = false;
 
+  @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
   @ContentChild(TdExpansionPanelLabelDirective) expansionPanelLabel: TdExpansionPanelLabelDirective;
   @ContentChild(TdExpansionPanelSublabelDirective) expansionPanelSublabel: TdExpansionPanelSublabelDirective;
 

@@ -62,15 +62,81 @@
       </td-expansion-panel>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
         <template td-expansion-panel-label>
-          Label (template)
+          <md-icon>star</md-icon> Custom Label (template)
         </template>
         <template td-expansion-panel-sublabel>
-          Sublabel (template)
+          <md-icon>list</md-icon> Custom Sublabel (template)
         </template>
-        <div>no md-padding class</div>
-        <div>Phase 2</div>
-        <div>Phase 3</div>
-        <div>Phase 4</div>
+        <div class="md-padding">
+          <h3 class="md-subhead">md-padding class</h3>
+          <div>Phase 1</div>
+          <div>Phase 2</div>
+          <div>Phase 3</div>
+        </div>
+      </td-expansion-panel>
+    </div>
+  </div>
+  <p>The entire panel header can be replaced as well:</p>
+  <div layout-gt-xs="row" layout-align-gt-xs="center start">
+    <div flex-gt-xs="90">
+      <td-expansion-panel [disabled]="disabled">
+        <template td-expansion-panel-header>
+          <md-toolbar color="accent">
+            <span>Custom td-expansion-panel-header</span>
+          </md-toolbar>
+        </template>
+        <td-expansion-summary>
+          <div class="md-padding">
+            <div flex layout-gt-xs="row" layout-align="start center">
+              <span flex="30" class="md-subhead">Owner</span>
+              <span flex="5" hide-xs><md-icon class="tc-grey-500">chevron_right</md-icon></span>
+              <span flex>John Jameson</span>
+            </div>
+            <div flex layout-gt-xs="row" layout-align="start center">
+              <span flex="30" class="md-subhead">API Key</span>
+              <span flex="5" hide-xs><md-icon class="tc-grey-500">chevron_right</md-icon></span>
+              <span flex>1141e8e8-8d24-4956-93c2</span>
+            </div>
+            <div flex layout-gt-xs="row" layout-align="start center">
+              <span flex="30" class="md-subhead">Last Updated</span>
+              <span flex="5" hide-xs><md-icon class="tc-grey-500">chevron_right</md-icon></span>
+              <span flex>Wed, July 6, 2016 11:13 AM</span>
+            </div>
+          </div>
+        </td-expansion-summary>
+        <md-list>
+          <h3 md-subheader>Metadata</h3>
+          <md-list-item>
+              <md-icon md-list-avatar>account_box</md-icon>
+              <h4 md-line>John Jameson</h4>
+              <p md-line>Owner</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>description</md-icon>
+              <h4 md-line>An item description</h4>
+              <p md-line>Description</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>vpn_key</md-icon>
+              <h4 md-line>1141e8e8-8d24-4956-93c2</h4>
+              <p md-line>API Key</p>
+          </md-list-item>
+          <md-divider></md-divider>
+          <h3 md-subheader>Dates</h3>
+          <md-list-item>
+              <md-icon md-list-avatar>access_time</md-icon>
+              <h4 md-line>Wed, July 6, 2016 11:13 AM</h4>
+              <p md-line>Last Updated</p>
+          </md-list-item>
+          <md-divider md-inset></md-divider>
+          <md-list-item>
+              <md-icon md-list-avatar>today</md-icon>
+              <h4 md-line>Wed, July 4, 2016 09:11 AM</h4>
+              <p md-line>Created</p>
+          </md-list-item>
+        </md-list>
       </td-expansion-panel>
     </div>
   </div>
