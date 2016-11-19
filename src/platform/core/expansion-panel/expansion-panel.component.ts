@@ -133,7 +133,6 @@ export class TdExpansionPanelComponent {
     return this._setExpand(false);
   }
 
-
   /**
    * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed]
    * event if 'false'. (Blocked if [disabled] is 'true')
