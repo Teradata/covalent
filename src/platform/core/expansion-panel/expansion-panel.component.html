@@ -19,7 +19,7 @@
         </div>
         <div class="md-body-1 td-expansion-secondary">
           <template [portalHost]="expansionPanelSublabel"></template>
-          <template>{{sublabel}}</template>
+          <template [ngIf]="!expansionPanelSublabel">{{sublabel}}</template>
         </div>
         <span flex></span>
         <md-icon class="td-expand-icon" *ngIf="!expand && !disabled">keyboard_arrow_down</md-icon>
