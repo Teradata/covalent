@@ -1,0 +1,386 @@
+@import 'theme-functions';
+@import 'palette-dark';
+
+// Text color
+
+// 500
+.tc-dark-red-500                  {   color: md-color($md-dark-red, 500) !important;                       }
+.tc-dark-pink-500                 {   color: md-color($md-dark-pink, 500) !important;                      }
+.tc-dark-purple-500               {   color: md-color($md-dark-purple, 500) !important;                    }
+.tc-dark-deep-purple-500          {   color: md-color($md-dark-deep-purple, 500) !important;               }
+.tc-dark-indigo-500               {   color: md-color($md-dark-indigo, 500) !important;                    }
+.tc-dark-blue-500                 {   color: md-color($md-dark-blue, 500) !important;                      }
+.tc-dark-light-blue-500           {   color: md-color($md-dark-light-blue, 500) !important;                }
+.tc-dark-cyan-500                 {   color: md-color($md-dark-cyan, 500) !important;                      }
+.tc-dark-teal-500                 {   color: md-color($md-dark-teal, 500) !important;                      }
+.tc-dark-green-500                {   color: md-color($md-dark-green, 500) !important;                     }
+.tc-dark-light-green-500          {   color: md-color($md-dark-light-green, 500) !important;               }
+.tc-dark-lime-500                 {   color: md-color($md-dark-lime, 500) !important;                      }
+.tc-dark-yellow-500               {   color: md-color($md-dark-yellow, 500) !important;                    }
+.tc-dark-amber-500                {   color: md-color($md-dark-amber, 500) !important;                     }
+.tc-dark-orange-500               {   color: md-color($md-dark-orange, 500) !important;                    }
+.tc-dark-deep-orange-500          {   color: md-color($md-dark-deep-orange, 500) !important;               }
+.tc-dark-brown-500                {   color: md-color($md-dark-brown, 500) !important;                     }
+.tc-dark-grey-500                 {   color: md-color($md-dark-grey, 500) !important;                      }
+.tc-dark-blue-grey-500            {   color: md-color($md-dark-blue-grey, 500) !important;                 }
+
+// B100
+.tc-dark-red-B100                 {   color: md-color($md-dark-red, B100) !important;                      }
+.tc-dark-pink-B100                {   color: md-color($md-dark-pink, B100) !important;                     }
+.tc-dark-purple-B100              {   color: md-color($md-dark-purple, B100) !important;                   }
+.tc-dark-deep-purple-B100         {   color: md-color($md-dark-deep-purple, B100) !important;              }
+.tc-dark-indigo-B100              {   color: md-color($md-dark-indigo, B100) !important;                   }
+.tc-dark-blue-B100                {   color: md-color($md-dark-blue, B100) !important;                     }
+.tc-dark-light-blue-B100          {   color: md-color($md-dark-light-blue, B100) !important;               }
+.tc-dark-cyan-B100                {   color: md-color($md-dark-cyan, B100) !important;                     }
+.tc-dark-teal-B100                {   color: md-color($md-dark-teal, B100) !important;                     }
+.tc-dark-green-B100               {   color: md-color($md-dark-green, B100) !important;                    }
+.tc-dark-light-green-B100         {   color: md-color($md-dark-light-green, B100) !important;              }
+.tc-dark-lime-B100                {   color: md-color($md-dark-lime, B100) !important;                     }
+.tc-dark-yellow-B100              {   color: md-color($md-dark-yellow, B100) !important;                   }
+.tc-dark-amber-B100               {   color: md-color($md-dark-amber, B100) !important;                    }
+.tc-dark-orange-B100              {   color: md-color($md-dark-orange, B100) !important;                   }
+.tc-dark-deep-orange-B100         {   color: md-color($md-dark-deep-orange, B100) !important;              }
+.tc-dark-brown-B100               {   color: md-color($md-dark-brown, B100) !important;                    }
+.tc-dark-grey-B100                {   color: md-color($md-dark-grey, B100) !important;                     }
+.tc-dark-blue-grey-B100           {   color: md-color($md-dark-blue-grey, B100) !important;                }
+
+// B65
+.tc-dark-red-B65                 {   color: md-color($md-dark-red, B65) !important;                      }
+.tc-dark-pink-B65                {   color: md-color($md-dark-pink, B65) !important;                     }
+.tc-dark-purple-B65              {   color: md-color($md-dark-purple, B65) !important;                   }
+.tc-dark-deep-purple-B65         {   color: md-color($md-dark-deep-purple, B65) !important;              }
+.tc-dark-indigo-B65              {   color: md-color($md-dark-indigo, B65) !important;                   }
+.tc-dark-blue-B65                {   color: md-color($md-dark-blue, B65) !important;                     }
+.tc-dark-light-blue-B65          {   color: md-color($md-dark-light-blue, B65) !important;               }
+.tc-dark-cyan-B65                {   color: md-color($md-dark-cyan, B65) !important;                     }
+.tc-dark-teal-B65                {   color: md-color($md-dark-teal, B65) !important;                     }
+.tc-dark-green-B65               {   color: md-color($md-dark-green, B65) !important;                    }
+.tc-dark-light-green-B65         {   color: md-color($md-dark-light-green, B65) !important;              }
+.tc-dark-lime-B65                {   color: md-color($md-dark-lime, B65) !important;                     }
+.tc-dark-yellow-B65              {   color: md-color($md-dark-yellow, B65) !important;                   }
+.tc-dark-amber-B65               {   color: md-color($md-dark-amber, B65) !important;                    }
+.tc-dark-orange-B65              {   color: md-color($md-dark-orange, B65) !important;                   }
+.tc-dark-deep-orange-B65         {   color: md-color($md-dark-deep-orange, B65) !important;              }
+.tc-dark-brown-B65               {   color: md-color($md-dark-brown, B65) !important;                    }
+.tc-dark-grey-B65                {   color: md-color($md-dark-grey, B65) !important;                     }
+.tc-dark-blue-grey-B65           {   color: md-color($md-dark-blue-grey, B65) !important;                }
+
+// B40
+.tc-dark-red-B40                 {   color: md-color($md-dark-red, B40) !important;                      }
+.tc-dark-pink-B40                {   color: md-color($md-dark-pink, B40) !important;                     }
+.tc-dark-purple-B40              {   color: md-color($md-dark-purple, B40) !important;                   }
+.tc-dark-deep-purple-B40         {   color: md-color($md-dark-deep-purple, B40) !important;              }
+.tc-dark-indigo-B40              {   color: md-color($md-dark-indigo, B40) !important;                   }
+.tc-dark-blue-B40                {   color: md-color($md-dark-blue, B40) !important;                     }
+.tc-dark-light-blue-B40          {   color: md-color($md-dark-light-blue, B40) !important;               }
+.tc-dark-cyan-B40                {   color: md-color($md-dark-cyan, B40) !important;                     }
+.tc-dark-teal-B40                {   color: md-color($md-dark-teal, B40) !important;                     }
+.tc-dark-green-B40               {   color: md-color($md-dark-green, B40) !important;                    }
+.tc-dark-light-green-B40         {   color: md-color($md-dark-light-green, B40) !important;              }
+.tc-dark-lime-B40                {   color: md-color($md-dark-lime, B40) !important;                     }
+.tc-dark-yellow-B40              {   color: md-color($md-dark-yellow, B40) !important;                   }
+.tc-dark-amber-B40               {   color: md-color($md-dark-amber, B40) !important;                    }
+.tc-dark-orange-B40              {   color: md-color($md-dark-orange, B40) !important;                   }
+.tc-dark-deep-orange-B40         {   color: md-color($md-dark-deep-orange, B40) !important;              }
+.tc-dark-brown-B40               {   color: md-color($md-dark-brown, B40) !important;                    }
+.tc-dark-grey-B40                {   color: md-color($md-dark-grey, B40) !important;                     }
+.tc-dark-blue-grey-B40           {   color: md-color($md-dark-blue-grey, B40) !important;                }
+
+// B30
+.tc-dark-red-B30                 {   color: md-color($md-dark-red, B30) !important;                      }
+.tc-dark-pink-B30                {   color: md-color($md-dark-pink, B30) !important;                     }
+.tc-dark-purple-B30              {   color: md-color($md-dark-purple, B30) !important;                   }
+.tc-dark-deep-purple-B30         {   color: md-color($md-dark-deep-purple, B30) !important;              }
+.tc-dark-indigo-B30              {   color: md-color($md-dark-indigo, B30) !important;                   }
+.tc-dark-blue-B30                {   color: md-color($md-dark-blue, B30) !important;                     }
+.tc-dark-light-blue-B30          {   color: md-color($md-dark-light-blue, B30) !important;               }
+.tc-dark-cyan-B30                {   color: md-color($md-dark-cyan, B30) !important;                     }
+.tc-dark-teal-B30                {   color: md-color($md-dark-teal, B30) !important;                     }
+.tc-dark-green-B30               {   color: md-color($md-dark-green, B30) !important;                    }
+.tc-dark-light-green-B30         {   color: md-color($md-dark-light-green, B30) !important;              }
+.tc-dark-lime-B30                {   color: md-color($md-dark-lime, B30) !important;                     }
+.tc-dark-yellow-B30              {   color: md-color($md-dark-yellow, B30) !important;                   }
+.tc-dark-amber-B30               {   color: md-color($md-dark-amber, B30) !important;                    }
+.tc-dark-orange-B30              {   color: md-color($md-dark-orange, B30) !important;                   }
+.tc-dark-deep-orange-B30         {   color: md-color($md-dark-deep-orange, B30) !important;              }
+.tc-dark-brown-B30               {   color: md-color($md-dark-brown, B30) !important;                    }
+.tc-dark-grey-B30                {   color: md-color($md-dark-grey, B30) !important;                     }
+.tc-dark-blue-grey-B30           {   color: md-color($md-dark-blue-grey, B30) !important;                }
+
+// B15
+.tc-dark-red-B15                 {   color: md-color($md-dark-red, B15) !important;                      }
+.tc-dark-pink-B15                {   color: md-color($md-dark-pink, B15) !important;                     }
+.tc-dark-purple-B15              {   color: md-color($md-dark-purple, B15) !important;                   }
+.tc-dark-deep-purple-B15         {   color: md-color($md-dark-deep-purple, B15) !important;              }
+.tc-dark-indigo-B15              {   color: md-color($md-dark-indigo, B15) !important;                   }
+.tc-dark-blue-B15                {   color: md-color($md-dark-blue, B15) !important;                     }
+.tc-dark-light-blue-B15          {   color: md-color($md-dark-light-blue, B15) !important;               }
+.tc-dark-cyan-B15                {   color: md-color($md-dark-cyan, B15) !important;                     }
+.tc-dark-teal-B15                {   color: md-color($md-dark-teal, B15) !important;                     }
+.tc-dark-green-B15               {   color: md-color($md-dark-green, B15) !important;                    }
+.tc-dark-light-green-B15         {   color: md-color($md-dark-light-green, B15) !important;              }
+.tc-dark-lime-B15                {   color: md-color($md-dark-lime, B15) !important;                     }
+.tc-dark-yellow-B15              {   color: md-color($md-dark-yellow, B15) !important;                   }
+.tc-dark-amber-B15               {   color: md-color($md-dark-amber, B15) !important;                    }
+.tc-dark-orange-B15              {   color: md-color($md-dark-orange, B15) !important;                   }
+.tc-dark-deep-orange-B15         {   color: md-color($md-dark-deep-orange, B15) !important;              }
+.tc-dark-brown-B15               {   color: md-color($md-dark-brown, B15) !important;                    }
+.tc-dark-grey-B15                {   color: md-color($md-dark-grey, B15) !important;                     }
+.tc-dark-blue-grey-B15           {   color: md-color($md-dark-blue-grey, B15) !important;                }
+
+// Background color
+
+// 500
+.bgc-dark-red-500                  {   background-color: md-color($md-dark-red, 500) !important;            }
+.bgc-dark-pink-500                 {   background-color: md-color($md-dark-pink, 500) !important;           }
+.bgc-dark-purple-500               {   background-color: md-color($md-dark-purple, 500) !important;         }
+.bgc-dark-deep-purple-500          {   background-color: md-color($md-dark-deep-purple, 500) !important;    }
+.bgc-dark-indigo-500               {   background-color: md-color($md-dark-indigo, 500) !important;         }
+.bgc-dark-blue-500                 {   background-color: md-color($md-dark-blue, 500) !important;           }
+.bgc-dark-light-blue-500           {   background-color: md-color($md-dark-light-blue, 500) !important;     }
+.bgc-dark-cyan-500                 {   background-color: md-color($md-dark-cyan, 500) !important;           }
+.bgc-dark-teal-500                 {   background-color: md-color($md-dark-teal, 500) !important;           }
+.bgc-dark-green-500                {   background-color: md-color($md-dark-green, 500) !important;          }
+.bgc-dark-light-green-500          {   background-color: md-color($md-dark-light-green, 500) !important;    }
+.bgc-dark-lime-500                 {   background-color: md-color($md-dark-lime, 500) !important;           }
+.bgc-dark-yellow-500               {   background-color: md-color($md-dark-yellow, 500) !important;         }
+.bgc-dark-amber-500                {   background-color: md-color($md-dark-amber, 500) !important;          }
+.bgc-dark-orange-500               {   background-color: md-color($md-dark-orange, 500) !important;         }
+.bgc-dark-deep-orange-500          {   background-color: md-color($md-dark-deep-orange, 500) !important;    }
+.bgc-dark-brown-500                {   background-color: md-color($md-dark-brown, 500) !important;          }
+.bgc-dark-grey-500                 {   background-color: md-color($md-dark-grey, 500) !important;           }
+.bgc-dark-blue-grey-500            {   background-color: md-color($md-dark-blue-grey, 500) !important;      }
+
+// B100
+.bgc-dark-red-B100                 {   background-color: md-color($md-dark-red, B100) !important;           }
+.bgc-dark-pink-B100                {   background-color: md-color($md-dark-pink, B100) !important;          }
+.bgc-dark-purple-B100              {   background-color: md-color($md-dark-purple, B100) !important;        }
+.bgc-dark-deep-purple-B100         {   background-color: md-color($md-dark-deep-purple, B100) !important;   }
+.bgc-dark-indigo-B100              {   background-color: md-color($md-dark-indigo, B100) !important;        }
+.bgc-dark-blue-B100                {   background-color: md-color($md-dark-blue, B100) !important;          }
+.bgc-dark-light-blue-B100          {   background-color: md-color($md-dark-light-blue, B100) !important;    }
+.bgc-dark-cyan-B100                {   background-color: md-color($md-dark-cyan, B100) !important;          }
+.bgc-dark-teal-B100                {   background-color: md-color($md-dark-teal, B100) !important;          }
+.bgc-dark-green-B100               {   background-color: md-color($md-dark-green, B100) !important;         }
+.bgc-dark-light-green-B100         {   background-color: md-color($md-dark-light-green, B100) !important;   }
+.bgc-dark-lime-B100                {   background-color: md-color($md-dark-lime, B100) !important;          }
+.bgc-dark-yellow-B100              {   background-color: md-color($md-dark-yellow, B100) !important;        }
+.bgc-dark-amber-B100               {   background-color: md-color($md-dark-amber, B100) !important;         }
+.bgc-dark-orange-B100              {   background-color: md-color($md-dark-orange, B100) !important;        }
+.bgc-dark-deep-orange-B100         {   background-color: md-color($md-dark-deep-orange, B100) !important;   }
+.bgc-dark-brown-B100               {   background-color: md-color($md-dark-brown, B100) !important;         }
+.bgc-dark-grey-B100                {   background-color: md-color($md-dark-grey, B100) !important;          }
+.bgc-dark-blue-grey-B100           {   background-color: md-color($md-dark-blue-grey, B100) !important;     }
+
+// B65
+.bgc-dark-red-B65                 {   background-color: md-color($md-dark-red, B65) !important;           }
+.bgc-dark-pink-B65                {   background-color: md-color($md-dark-pink, B65) !important;          }
+.bgc-dark-purple-B65              {   background-color: md-color($md-dark-purple, B65) !important;        }
+.bgc-dark-deep-purple-B65         {   background-color: md-color($md-dark-deep-purple, B65) !important;   }
+.bgc-dark-indigo-B65              {   background-color: md-color($md-dark-indigo, B65) !important;        }
+.bgc-dark-blue-B65                {   background-color: md-color($md-dark-blue, B65) !important;          }
+.bgc-dark-light-blue-B65          {   background-color: md-color($md-dark-light-blue, B65) !important;    }
+.bgc-dark-cyan-B65                {   background-color: md-color($md-dark-cyan, B65) !important;          }
+.bgc-dark-teal-B65                {   background-color: md-color($md-dark-teal, B65) !important;          }
+.bgc-dark-green-B65               {   background-color: md-color($md-dark-green, B65) !important;         }
+.bgc-dark-light-green-B65         {   background-color: md-color($md-dark-light-green, B65) !important;   }
+.bgc-dark-lime-B65                {   background-color: md-color($md-dark-lime, B65) !important;          }
+.bgc-dark-yellow-B65              {   background-color: md-color($md-dark-yellow, B65) !important;        }
+.bgc-dark-amber-B65               {   background-color: md-color($md-dark-amber, B65) !important;         }
+.bgc-dark-orange-B65              {   background-color: md-color($md-dark-orange, B65) !important;        }
+.bgc-dark-deep-orange-B65         {   background-color: md-color($md-dark-deep-orange, B65) !important;   }
+.bgc-dark-brown-B65               {   background-color: md-color($md-dark-brown, B65) !important;         }
+.bgc-dark-grey-B65                {   background-color: md-color($md-dark-grey, B65) !important;          }
+.bgc-dark-blue-grey-B65           {   background-color: md-color($md-dark-blue-grey, B65) !important;     }
+
+// B40
+.bgc-dark-red-B40                 {   background-color: md-color($md-dark-red, B40) !important;           }
+.bgc-dark-pink-B40                {   background-color: md-color($md-dark-pink, B40) !important;          }
+.bgc-dark-purple-B40              {   background-color: md-color($md-dark-purple, B40) !important;        }
+.bgc-dark-deep-purple-B40         {   background-color: md-color($md-dark-deep-purple, B40) !important;   }
+.bgc-dark-indigo-B40              {   background-color: md-color($md-dark-indigo, B40) !important;        }
+.bgc-dark-blue-B40                {   background-color: md-color($md-dark-blue, B40) !important;          }
+.bgc-dark-light-blue-B40          {   background-color: md-color($md-dark-light-blue, B40) !important;    }
+.bgc-dark-cyan-B40                {   background-color: md-color($md-dark-cyan, B40) !important;          }
+.bgc-dark-teal-B40                {   background-color: md-color($md-dark-teal, B40) !important;          }
+.bgc-dark-green-B40               {   background-color: md-color($md-dark-green, B40) !important;         }
+.bgc-dark-light-green-B40         {   background-color: md-color($md-dark-light-green, B40) !important;   }
+.bgc-dark-lime-B40                {   background-color: md-color($md-dark-lime, B40) !important;          }
+.bgc-dark-yellow-B40              {   background-color: md-color($md-dark-yellow, B40) !important;        }
+.bgc-dark-amber-B40               {   background-color: md-color($md-dark-amber, B40) !important;         }
+.bgc-dark-orange-B40              {   background-color: md-color($md-dark-orange, B40) !important;        }
+.bgc-dark-deep-orange-B40         {   background-color: md-color($md-dark-deep-orange, B40) !important;   }
+.bgc-dark-brown-B40               {   background-color: md-color($md-dark-brown, B40) !important;         }
+.bgc-dark-grey-B40                {   background-color: md-color($md-dark-grey, B40) !important;          }
+.bgc-dark-blue-grey-B40           {   background-color: md-color($md-dark-blue-grey, B40) !important;     }
+
+// B30
+.bgc-dark-red-B30                 {   background-color: md-color($md-dark-red, B30) !important;           }
+.bgc-dark-pink-B30                {   background-color: md-color($md-dark-pink, B30) !important;          }
+.bgc-dark-purple-B30              {   background-color: md-color($md-dark-purple, B30) !important;        }
+.bgc-dark-deep-purple-B30         {   background-color: md-color($md-dark-deep-purple, B30) !important;   }
+.bgc-dark-indigo-B30              {   background-color: md-color($md-dark-indigo, B30) !important;        }
+.bgc-dark-blue-B30                {   background-color: md-color($md-dark-blue, B30) !important;          }
+.bgc-dark-light-blue-B30          {   background-color: md-color($md-dark-light-blue, B30) !important;    }
+.bgc-dark-cyan-B30                {   background-color: md-color($md-dark-cyan, B30) !important;          }
+.bgc-dark-teal-B30                {   background-color: md-color($md-dark-teal, B30) !important;          }
+.bgc-dark-green-B30               {   background-color: md-color($md-dark-green, B30) !important;         }
+.bgc-dark-light-green-B30         {   background-color: md-color($md-dark-light-green, B30) !important;   }
+.bgc-dark-lime-B30                {   background-color: md-color($md-dark-lime, B30) !important;          }
+.bgc-dark-yellow-B30              {   background-color: md-color($md-dark-yellow, B30) !important;        }
+.bgc-dark-amber-B30               {   background-color: md-color($md-dark-amber, B30) !important;         }
+.bgc-dark-orange-B30              {   background-color: md-color($md-dark-orange, B30) !important;        }
+.bgc-dark-deep-orange-B30         {   background-color: md-color($md-dark-deep-orange, B30) !important;   }
+.bgc-dark-brown-B30               {   background-color: md-color($md-dark-brown, B30) !important;         }
+.bgc-dark-grey-B30                {   background-color: md-color($md-dark-grey, B30) !important;          }
+.bgc-dark-blue-grey-B30           {   background-color: md-color($md-dark-blue-grey, B30) !important;     }
+
+// B15
+.bgc-dark-red-B15                 {   background-color: md-color($md-dark-red, B15) !important;           }
+.bgc-dark-pink-B15                {   background-color: md-color($md-dark-pink, B15) !important;          }
+.bgc-dark-purple-B15              {   background-color: md-color($md-dark-purple, B15) !important;        }
+.bgc-dark-deep-purple-B15         {   background-color: md-color($md-dark-deep-purple, B15) !important;   }
+.bgc-dark-indigo-B15              {   background-color: md-color($md-dark-indigo, B15) !important;        }
+.bgc-dark-blue-B15                {   background-color: md-color($md-dark-blue, B15) !important;          }
+.bgc-dark-light-blue-B15          {   background-color: md-color($md-dark-light-blue, B15) !important;    }
+.bgc-dark-cyan-B15                {   background-color: md-color($md-dark-cyan, B15) !important;          }
+.bgc-dark-teal-B15                {   background-color: md-color($md-dark-teal, B15) !important;          }
+.bgc-dark-green-B15               {   background-color: md-color($md-dark-green, B15) !important;         }
+.bgc-dark-light-green-B15         {   background-color: md-color($md-dark-light-green, B15) !important;   }
+.bgc-dark-lime-B15                {   background-color: md-color($md-dark-lime, B15) !important;          }
+.bgc-dark-yellow-B15              {   background-color: md-color($md-dark-yellow, B15) !important;        }
+.bgc-dark-amber-B15               {   background-color: md-color($md-dark-amber, B15) !important;         }
+.bgc-dark-orange-B15              {   background-color: md-color($md-dark-orange, B15) !important;        }
+.bgc-dark-deep-orange-B15         {   background-color: md-color($md-dark-deep-orange, B15) !important;   }
+.bgc-dark-brown-B15               {   background-color: md-color($md-dark-brown, B15) !important;         }
+.bgc-dark-grey-B15                {   background-color: md-color($md-dark-grey, B15) !important;          }
+.bgc-dark-blue-grey-B15           {   background-color: md-color($md-dark-blue-grey, B15) !important;     }
+
+// Fill color
+
+// 500
+.fill-red-500                  {   fill: md-color($md-dark-red, 500) !important;                       }
+.fill-pink-500                 {   fill: md-color($md-dark-pink, 500) !important;                      }
+.fill-purple-500               {   fill: md-color($md-dark-purple, 500) !important;                    }
+.fill-deep-purple-500          {   fill: md-color($md-dark-deep-purple, 500) !important;               }
+.fill-indigo-500               {   fill: md-color($md-dark-indigo, 500) !important;                    }
+.fill-blue-500                 {   fill: md-color($md-dark-blue, 500) !important;                      }
+.fill-light-blue-500           {   fill: md-color($md-dark-light-blue, 500) !important;                }
+.fill-cyan-500                 {   fill: md-color($md-dark-cyan, 500) !important;                      }
+.fill-teal-500                 {   fill: md-color($md-dark-teal, 500) !important;                      }
+.fill-green-500                {   fill: md-color($md-dark-green, 500) !important;                     }
+.fill-light-green-500          {   fill: md-color($md-dark-light-green, 500) !important;               }
+.fill-lime-500                 {   fill: md-color($md-dark-lime, 500) !important;                      }
+.fill-yellow-500               {   fill: md-color($md-dark-yellow, 500) !important;                    }
+.fill-amber-500                {   fill: md-color($md-dark-amber, 500) !important;                     }
+.fill-orange-500               {   fill: md-color($md-dark-orange, 500) !important;                    }
+.fill-deep-orange-500          {   fill: md-color($md-dark-deep-orange, 500) !important;               }
+.fill-brown-500                {   fill: md-color($md-dark-brown, 500) !important;                     }
+.fill-grey-500                 {   fill: md-color($md-dark-grey, 500) !important;                      }
+.fill-blue-grey-500            {   fill: md-color($md-dark-blue-grey, 500) !important;                 }
+
+// B100
+.fill-red-B100                 {   fill: md-color($md-dark-red, B100) !important;                      }
+.fill-pink-B100                {   fill: md-color($md-dark-pink, B100) !important;                     }
+.fill-purple-B100              {   fill: md-color($md-dark-purple, B100) !important;                   }
+.fill-deep-purple-B100         {   fill: md-color($md-dark-deep-purple, B100) !important;              }
+.fill-indigo-B100              {   fill: md-color($md-dark-indigo, B100) !important;                   }
+.fill-blue-B100                {   fill: md-color($md-dark-blue, B100) !important;                     }
+.fill-light-blue-B100          {   fill: md-color($md-dark-light-blue, B100) !important;               }
+.fill-cyan-B100                {   fill: md-color($md-dark-cyan, B100) !important;                     }
+.fill-teal-B100                {   fill: md-color($md-dark-teal, B100) !important;                     }
+.fill-green-B100               {   fill: md-color($md-dark-green, B100) !important;                    }
+.fill-light-green-B100         {   fill: md-color($md-dark-light-green, B100) !important;              }
+.fill-lime-B100                {   fill: md-color($md-dark-lime, B100) !important;                     }
+.fill-yellow-B100              {   fill: md-color($md-dark-yellow, B100) !important;                   }
+.fill-amber-B100               {   fill: md-color($md-dark-amber, B100) !important;                    }
+.fill-orange-B100              {   fill: md-color($md-dark-orange, B100) !important;                   }
+.fill-deep-orange-B100         {   fill: md-color($md-dark-deep-orange, B100) !important;              }
+.fill-brown-B100               {   fill: md-color($md-dark-brown, B100) !important;                    }
+.fill-grey-B100                {   fill: md-color($md-dark-grey, B100) !important;                     }
+.fill-blue-grey-B100           {   fill: md-color($md-dark-blue-grey, B100) !important;                }
+
+// B65
+.fill-red-B65                 {   fill: md-color($md-dark-red, B65) !important;                      }
+.fill-pink-B65                {   fill: md-color($md-dark-pink, B65) !important;                     }
+.fill-purple-B65              {   fill: md-color($md-dark-purple, B65) !important;                   }
+.fill-deep-purple-B65         {   fill: md-color($md-dark-deep-purple, B65) !important;              }
+.fill-indigo-B65              {   fill: md-color($md-dark-indigo, B65) !important;                   }
+.fill-blue-B65                {   fill: md-color($md-dark-blue, B65) !important;                     }
+.fill-light-blue-B65          {   fill: md-color($md-dark-light-blue, B65) !important;               }
+.fill-cyan-B65                {   fill: md-color($md-dark-cyan, B65) !important;                     }
+.fill-teal-B65                {   fill: md-color($md-dark-teal, B65) !important;                     }
+.fill-green-B65               {   fill: md-color($md-dark-green, B65) !important;                    }
+.fill-light-green-B65         {   fill: md-color($md-dark-light-green, B65) !important;              }
+.fill-lime-B65                {   fill: md-color($md-dark-lime, B65) !important;                     }
+.fill-yellow-B65              {   fill: md-color($md-dark-yellow, B65) !important;                   }
+.fill-amber-B65               {   fill: md-color($md-dark-amber, B65) !important;                    }
+.fill-orange-B65              {   fill: md-color($md-dark-orange, B65) !important;                   }
+.fill-deep-orange-B65         {   fill: md-color($md-dark-deep-orange, B65) !important;              }
+.fill-brown-B65               {   fill: md-color($md-dark-brown, B65) !important;                    }
+.fill-grey-B65                {   fill: md-color($md-dark-grey, B65) !important;                     }
+.fill-blue-grey-B65           {   fill: md-color($md-dark-blue-grey, B65) !important;                }
+
+// B40
+.fill-red-B40                 {   fill: md-color($md-dark-red, B40) !important;                      }
+.fill-pink-B40                {   fill: md-color($md-dark-pink, B40) !important;                     }
+.fill-purple-B40              {   fill: md-color($md-dark-purple, B40) !important;                   }
+.fill-deep-purple-B40         {   fill: md-color($md-dark-deep-purple, B40) !important;              }
+.fill-indigo-B40              {   fill: md-color($md-dark-indigo, B40) !important;                   }
+.fill-blue-B40                {   fill: md-color($md-dark-blue, B40) !important;                     }
+.fill-light-blue-B40          {   fill: md-color($md-dark-light-blue, B40) !important;               }
+.fill-cyan-B40                {   fill: md-color($md-dark-cyan, B40) !important;                     }
+.fill-teal-B40                {   fill: md-color($md-dark-teal, B40) !important;                     }
+.fill-green-B40               {   fill: md-color($md-dark-green, B40) !important;                    }
+.fill-light-green-B40         {   fill: md-color($md-dark-light-green, B40) !important;              }
+.fill-lime-B40                {   fill: md-color($md-dark-lime, B40) !important;                     }
+.fill-yellow-B40              {   fill: md-color($md-dark-yellow, B40) !important;                   }
+.fill-amber-B40               {   fill: md-color($md-dark-amber, B40) !important;                    }
+.fill-orange-B40              {   fill: md-color($md-dark-orange, B40) !important;                   }
+.fill-deep-orange-B40         {   fill: md-color($md-dark-deep-orange, B40) !important;              }
+.fill-brown-B40               {   fill: md-color($md-dark-brown, B40) !important;                    }
+.fill-grey-B40                {   fill: md-color($md-dark-grey, B40) !important;                     }
+.fill-blue-grey-B40           {   fill: md-color($md-dark-blue-grey, B40) !important;                }
+
+// B30
+.fill-red-B30                 {   fill: md-color($md-dark-red, B30) !important;                      }
+.fill-pink-B30                {   fill: md-color($md-dark-pink, B30) !important;                     }
+.fill-purple-B30              {   fill: md-color($md-dark-purple, B30) !important;                   }
+.fill-deep-purple-B30         {   fill: md-color($md-dark-deep-purple, B30) !important;              }
+.fill-indigo-B30              {   fill: md-color($md-dark-indigo, B30) !important;                   }
+.fill-blue-B30                {   fill: md-color($md-dark-blue, B30) !important;                     }
+.fill-light-blue-B30          {   fill: md-color($md-dark-light-blue, B30) !important;               }
+.fill-cyan-B30                {   fill: md-color($md-dark-cyan, B30) !important;                     }
+.fill-teal-B30                {   fill: md-color($md-dark-teal, B30) !important;                     }
+.fill-green-B30               {   fill: md-color($md-dark-green, B30) !important;                    }
+.fill-light-green-B30         {   fill: md-color($md-dark-light-green, B30) !important;              }
+.fill-lime-B30                {   fill: md-color($md-dark-lime, B30) !important;                     }
+.fill-yellow-B30              {   fill: md-color($md-dark-yellow, B30) !important;                   }
+.fill-amber-B30               {   fill: md-color($md-dark-amber, B30) !important;                    }
+.fill-orange-B30              {   fill: md-color($md-dark-orange, B30) !important;                   }
+.fill-deep-orange-B30         {   fill: md-color($md-dark-deep-orange, B30) !important;              }
+.fill-brown-B30               {   fill: md-color($md-dark-brown, B30) !important;                    }
+.fill-grey-B30                {   fill: md-color($md-dark-grey, B30) !important;                     }
+.fill-blue-grey-B30           {   fill: md-color($md-dark-blue-grey, B30) !important;                }
+
+// B15
+.fill-red-B15                 {   fill: md-color($md-dark-red, B15) !important;                      }
+.fill-pink-B15                {   fill: md-color($md-dark-pink, B15) !important;                     }
+.fill-purple-B15              {   fill: md-color($md-dark-purple, B15) !important;                   }
+.fill-deep-purple-B15         {   fill: md-color($md-dark-deep-purple, B15) !important;              }
+.fill-indigo-B15              {   fill: md-color($md-dark-indigo, B15) !important;                   }
+.fill-blue-B15                {   fill: md-color($md-dark-blue, B15) !important;                     }
+.fill-light-blue-B15          {   fill: md-color($md-dark-light-blue, B15) !important;               }
+.fill-cyan-B15                {   fill: md-color($md-dark-cyan, B15) !important;                     }
+.fill-teal-B15                {   fill: md-color($md-dark-teal, B15) !important;                     }
+.fill-green-B15               {   fill: md-color($md-dark-green, B15) !important;                    }
+.fill-light-green-B15         {   fill: md-color($md-dark-light-green, B15) !important;              }
+.fill-lime-B15                {   fill: md-color($md-dark-lime, B15) !important;                     }
+.fill-yellow-B15              {   fill: md-color($md-dark-yellow, B15) !important;                   }
+.fill-amber-B15               {   fill: md-color($md-dark-amber, B15) !important;                    }
+.fill-orange-B15              {   fill: md-color($md-dark-orange, B15) !important;                   }
+.fill-deep-orange-B15         {   fill: md-color($md-dark-deep-orange, B15) !important;              }
+.fill-brown-B15               {   fill: md-color($md-dark-brown, B15) !important;                    }
+.fill-grey-B15                {   fill: md-color($md-dark-grey, B15) !important;                     }
+.fill-blue-grey-B15           {   fill: md-color($md-dark-blue-grey, B15) !important;                }
