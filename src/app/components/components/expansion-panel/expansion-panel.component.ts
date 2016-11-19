@@ -32,6 +32,21 @@ export class ExpansionPanelDemoComponent {
     description: 'Event emitted when [TdExpansionPanelComponent] is collapsed.',
     name: 'collapsed?',
     type: 'function()',
+  }, {
+    description: `Toggle active state of [TdExpansionPanelComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'toggle',
+    type: 'function()',
+  }, {
+    description: `Opens [TdExpansionPanelComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'open',
+    type: 'function()',
+  }, {
+    description: `Closes [TdExpansionPanelComponent]. Retuns "true" if successful, else "false".
+                  Can be accessed by referencing element in local variable.`,
+    name: 'close',
+    type: 'function()',
   }];
 
   expandCollapseExpansion1Msg: string = 'No expanded/collapsed detected yet';
