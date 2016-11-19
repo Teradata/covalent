@@ -198,6 +198,9 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-expansion-panel label="label" sublabel="sublabel" expand="true|false" disabled="true|false" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()">
+          <template td-expansion-panel-header>
+            ... add header content (overrides label and sublabel)
+          </template>
           <template td-expansion-panel-label>
             ... add label content (if not used, falls back to [label] input)
           </template>
