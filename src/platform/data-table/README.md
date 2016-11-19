@@ -2,6 +2,8 @@
 
 `td-data-table` element generates a data driven table layout sorting events.
 
+Use [tdDataTableTemplate] directive for template support which gives context access to [value], [row] and [column].
+
 ## API Summary
 
 Properties:
@@ -49,5 +51,11 @@ Example for HTML usage:
   [sortOrder]="'ASC'|'DESC'"
   (sortChange)="sortEvent($event)"
   (rowSelect)="selectEvent($event)">
+  <template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
+    <div layout="row">
+      <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
+      <md-icon>star</md-icon>
+    </div>
+  </template>
 </td-data-table>
  ```
