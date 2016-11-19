@@ -1,5 +1,33 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { TemplatePortalDirective } from '@angular/material';
+
+@Directive({
+  selector: '[td-expansion-panel-header]template',
+})
+export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
+  selector: '[td-expansion-panel-label]template',
+})
+export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
+  selector: '[td-expansion-panel-sublabel]template',
+})
+export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Component({
   selector: 'td-expansion-summary',
@@ -16,6 +44,10 @@ export class TdExpansionPanelComponent {
 
   private _expand: boolean = false;
   private _disabled: boolean = false;
+
+  @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
+  @ContentChild(TdExpansionPanelLabelDirective) expansionPanelLabel: TdExpansionPanelLabelDirective;
+  @ContentChild(TdExpansionPanelSublabelDirective) expansionPanelSublabel: TdExpansionPanelSublabelDirective;
 
   /**
    * label?: string
@@ -78,12 +110,36 @@ export class TdExpansionPanelComponent {
   };
 
   /**
+   * Toggle expand state of [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  toggle(): boolean {
+    return this._setExpand(!this._expand);
+  }
+
+  /**
+   * Opens [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  open(): boolean {
+    return this._setExpand(true);
+  }
+
+  /**
+   * Closes [TdExpansionPanelComponent]
+   * retuns 'true' if successful, else 'false'.
+   */
+  close(): boolean {
+    return this._setExpand(false);
+  }
+
+  /**
    * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed]
    * event if 'false'. (Blocked if [disabled] is 'true')
    */
-  private _setExpand(newExpand: boolean): void {
+  private _setExpand(newExpand: boolean): boolean {
     if (this._disabled) {
-      return;
+      return false;
     }
     if (this._expand !== newExpand) {
       this._expand = newExpand;
@@ -92,7 +148,9 @@ export class TdExpansionPanelComponent {
       } else {
         this._onCollapsed();
       }
+      return true;
     }
+    return false;
   };
 
   private _onExpanded(): void {

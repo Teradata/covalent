@@ -70,15 +70,19 @@ export { LoadingType, LoadingMode } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 
 // Expansion
-export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
-
-import { TdExpansionPanelComponent,
-         TdExpansionPanelSummaryComponent } from './expansion-panel/expansion-panel.component';
+import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
+         TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent }
+         from './expansion-panel/expansion-panel.component';
 
 export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
   TdExpansionPanelComponent,
+  TdExpansionPanelHeaderDirective,
+  TdExpansionPanelLabelDirective,
+  TdExpansionPanelSublabelDirective,
   TdExpansionPanelSummaryComponent,
 ];
+
+export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 // Dialogs
 

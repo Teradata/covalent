@@ -16,7 +16,7 @@
     md-nav-list {
       padding: 0;
     }
-    md-icon {
+    md-icon.td-expand-icon {
       color: md-color($foreground, icon);
     }
     .td-expansion-primary,
@@ -25,6 +25,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
       margin-right: 5px;
+      &, & * {
+        vertical-align: middle;
+      }
     }
     .td-expansion-secondary {
       color: md-color($foreground, secondary-text);
