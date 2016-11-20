@@ -40,6 +40,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/add/operator/share': 'Rx.Observable.prototype',
     'rxjs/add/operator/finally': 'Rx.Observable.prototype',
     'rxjs/add/operator/catch': 'Rx.Observable.prototype',
+    'rxjs/add/operator/debounceTime': 'Rx.Observable.prototype',
     'rxjs/Observable': 'Rx'
   };
   components.forEach(name => {
