@@ -1,29 +1,28 @@
-@import '~@angular/material/core/theming/palette';
-@import '~@angular/material/core/theming/theming';
+@import '../../../node_modules/@angular/material/core/theming/theming';
 
-// TODO properly wrap in mixin to apply theme like material2 components
-$foreground: $md-light-theme-foreground;
-$background: $md-light-theme-background;
-
-:host /deep/ {
-  text {
-    fill: md-color($foreground, secondary-text);
-  }
-  p {
-    color: md-color($foreground, secondary-text);
-  }
-  .grid {
-    line {
+@mixin td-charts-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  td-charts {
+    text {
+      fill: md-color($foreground, secondary-text);
+    }
+    p {
+      color: md-color($foreground, secondary-text);
+    }
+    .grid {
+      line {
+        stroke: md-color($foreground, divider);
+      }
+    }
+    .ticks {
+      line,
+      path {
+        stroke: md-color($foreground, divider);
+      }
+    }
+    .domain {
       stroke: md-color($foreground, divider);
     }
-  }
-  .ticks {
-    line,
-    path {
-      stroke: md-color($foreground, divider);
-    }
-  }
-  .domain {
-    stroke: md-color($foreground, divider);
   }
 }
+

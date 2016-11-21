@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Teradata UI Platform Markdown Module",
   "keywords": [
     "angular",
@@ -10,7 +10,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 5",
+    "node": ">4.4 < 7",
     "npm": ">= 3"
   },
   "repository": {
@@ -27,10 +27,11 @@
     "Richa Vyas <richa.vyas@teradata.com>",
     "Ed Morales <eduardo.morales@teradata.com>",
     "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Wilken <jeremy.wilken@teradata.com>"
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.8.0",
+    "@covalent/core": "0.9.0",
     "showdown": "1.4.2"
   }
 }

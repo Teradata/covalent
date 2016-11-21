@@ -1,0 +1,29 @@
+:host {
+  font-size: 13px;
+  vertical-align: middle;
+  text-align: left;
+  padding: 0 28px 0 28px;
+
+  &:first-child {
+    padding-left: 24px;
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &.md-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.md-numeric {
+    text-align: right;
+  }
+}

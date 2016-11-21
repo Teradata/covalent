@@ -1,0 +1,36 @@
+@import '../../../../node_modules/@angular/material/core/theming/theming';
+
+@mixin td-expansion-panel-theme($theme) {
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  // panel
+  td-expansion-panel {
+    background-color: md-color($background, card);
+    .md-disabled {
+      &, & * {
+        color: md-color($foreground, disabled);
+      }
+    }
+    md-nav-list {
+      padding: 0;
+    }
+    md-icon.td-expand-icon {
+      color: md-color($foreground, icon);
+    }
+    .td-expansion-primary,
+    .td-expansion-secondary {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 5px;
+      &, & * {
+        vertical-align: middle;
+      }
+    }
+    .td-expansion-secondary {
+      color: md-color($foreground, secondary-text);
+    }
+  }
+}

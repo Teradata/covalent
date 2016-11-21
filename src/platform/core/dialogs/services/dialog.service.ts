@@ -5,40 +5,40 @@ import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 
-interface IDialogConfig {
+export interface IDialogConfig {
   title?: string;
   message: string;
   viewContainerRef?: ViewContainerRef;
+  disableClose?: boolean;
 }
 
-interface IAlertConfig extends IDialogConfig {
+export interface IAlertConfig extends IDialogConfig {
   closeButton?: string;
 }
 
-interface IConfirmConfig extends IDialogConfig {
+export interface IConfirmConfig extends IDialogConfig {
   acceptButton?: string;
   cancelButton?: string;
 }
 
-interface IPromptConfig extends IConfirmConfig {
+export interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
 
 @Injectable()
 export class TdDialogService {
 
-  private _viewContainerRef: ViewContainerRef;
-
   constructor(private _dialogService: MdDialog) {}
 
   /**
    * params:
    * - viewContainerRef: ViewContainerRef
-   * 
    * Sets a detaulf ViewContainerRef object to which all dialogs will belong to.
+   * @deprecated since 0.9
    */
   public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
-    this._viewContainerRef = viewContainerRef;
+    /* tslint:disable-next-line */ 
+    console.warn('setDefaultViewContainerRef is deprecated. ViewContainerRef is no longer required.');
   }
 
   /**
@@ -54,7 +54,7 @@ export class TdDialogService {
    * Returns an MdDialogRef<TdAlertDialogComponent> object.
    */
   public openAlert(config: IAlertConfig): MdDialogRef<TdAlertDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
+    let dialogConfig: MdDialogConfig = this._createConfig(config);
     let dialogRef: MdDialogRef<TdAlertDialogComponent> =
       this._dialogService.open(TdAlertDialogComponent, dialogConfig);
     let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
@@ -80,7 +80,7 @@ export class TdDialogService {
    * Returns an MdDialogRef<TdConfirmDialogComponent> object.
    */
   public openConfirm(config: IConfirmConfig): MdDialogRef<TdConfirmDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
+    let dialogConfig: MdDialogConfig = this._createConfig(config);
     let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
       this._dialogService.open(TdConfirmDialogComponent, dialogConfig);
     let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
@@ -110,7 +110,7 @@ export class TdDialogService {
    * Returns an MdDialogRef<TdPromptDialogComponent> object.
    */
   public openPrompt(config: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config.viewContainerRef);
+    let dialogConfig: MdDialogConfig = this._createConfig(config);
     let dialogRef: MdDialogRef<TdPromptDialogComponent> =
       this._dialogService.open(TdPromptDialogComponent, dialogConfig);
     let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
@@ -126,12 +126,10 @@ export class TdDialogService {
     return dialogRef;
   }
 
-  private _createConfig(viewContainerRef: ViewContainerRef): MdDialogConfig {
+  private _createConfig(config: MdDialogConfig): MdDialogConfig {
     let dialogConfig: MdDialogConfig = new MdDialogConfig();
-    dialogConfig.viewContainerRef = viewContainerRef ? viewContainerRef : this._viewContainerRef;
-    if (!dialogConfig.viewContainerRef) {
-      throw 'ViewContainerRef was not provided for dialog.';
-    }
+    dialogConfig.viewContainerRef = config.viewContainerRef;
+    dialogConfig.disableClose = config.disableClose;
     return dialogConfig;
   }
 

@@ -1,15 +1,15 @@
 <div layout="row" flex>
   <ng-content></ng-content>
   <div flex>
-    <div [tdToggle]="!active">
-      <div class="td-step-content">
+    <div class="td-step-content-wrapper" [tdToggle]="!active">
+      <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
         <ng-content select="[td-step-body-content]"></ng-content>
       </div>
-      <div layout="row" class="td-step-actions">
+      <div #actionsRef layout="row" [class.td-step-actions]="actionsRef.children.length || actionsRef.textContent.trim()">
         <ng-content select="[td-step-body-actions]"></ng-content>
       </div>
     </div>
-    <div [tdToggle]="active || !isComplete()" class="td-step-summary">
+    <div #summaryRef [tdToggle]="active || !isComplete()" [class.td-step-summary]="summaryRef.children.length || summaryRef.textContent.trim()">
       <ng-content select="[td-step-body-summary]"></ng-content>
     </div>
   </div>

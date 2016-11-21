@@ -85,7 +85,6 @@
   }
 
   a {
-    color: #4078c0;
     text-decoration: none;
   }
 
@@ -274,7 +273,8 @@
     padding-bottom: 0.3em;
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 1px solid #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   h1 .anchor {
@@ -285,7 +285,8 @@
     padding-bottom: 0.3em;
     font-size: 1.75em;
     line-height: 1.225;
-    border-bottom: 1px solid #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   h2 .anchor {
@@ -319,7 +320,6 @@
 
   h6 {
     font-size: 1em;
-    color: #777;
   }
 
   h6 .anchor {
@@ -338,10 +338,9 @@
   }
 
   hr {
-    height: 4px;
+    height: 1px;
     padding: 0;
     margin: 16px 0;
-    background-color: #e7e7e7;
     border: 0 none;
   }
 
@@ -381,8 +380,8 @@
 
   blockquote {
     padding: 0 15px;
-    color: #777;
-    border-left: 4px solid #ddd;
+    border-left-width: 4px;
+    border-left-style: solid;
   }
 
   blockquote>:first-child {
@@ -408,22 +407,18 @@
   table th,
   table td {
     padding: 6px 13px;
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
   }
 
  table tr {
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-}
-
- table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  border-top-width: 1px;
+  border-top-style: solid;
 }
 
  img {
   max-width: 100%;
   box-sizing: content-box;
-  background-color: #fff;
 }
 
  code {
@@ -432,7 +427,6 @@
   padding-bottom: 0.2em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
   border-radius: 3px;
 }
 
@@ -456,13 +450,12 @@
 }
 
  .highlight pre,
- pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  border-radius: 3px;
+  pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    border-radius: 3px;
 }
 
  .highlight pre {
@@ -496,13 +489,10 @@
   padding: 3px 5px;
   font-size: 11px;
   line-height: 10px;
-  color: #555;
   vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
+  border-style: solid;
+  border-width: 1px;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
 }
 
  .pl-c {
@@ -609,7 +599,6 @@
   padding: 3px 5px;
   font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 10px;
-  color: #555;
   vertical-align: middle;
   background-color: #fcfcfc;
   border: solid 1px #ccc;

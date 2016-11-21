@@ -121,31 +121,41 @@
     <form #myForm="ngForm">
       <div layout-gt-xs="row" layout-margin>
         <md-input #firstNameForm="ngModel" flex placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim>
-          <md-hint [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+          <md-hint>
+            <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+          </md-hint>
         </md-input>
         <md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim>
-          <md-hint [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+          <md-hint>
+            <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+          </md-hint>
         </md-input>
       </div>
       <div layout-gt-xs="row" layout-margin>
-        <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
-          <md-hint [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</md-hint>
-          <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
+        <md-input #addressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim>
+          <md-hint>
+            <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+          </md-hint>
+          <md-hint align="end">{{addressEl.characterCount}} / 50</md-hint>
         </md-input>
         <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
       </div>
       <div layout-gt-xs="row" layout-margin>
         <md-input #stateForm="ngModel" flex="20" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim>
-          <md-hint [hidden]="stateForm.pristine" class="tc-red-600">
-            <span [hidden]="!stateForm.errors?.required">Required</span>
-            <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
+          <md-hint>
+            <span [hidden]="stateForm.pristine" class="tc-red-600">
+              <span [hidden]="!stateForm.errors?.required">Required</span>
+              <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+            </span>
           </md-hint>
           <md-hint align="end">e.g CA</md-hint>
         </md-input>
         <md-input #zipForm="ngModel" flex="25" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required>
-          <md-hint [hidden]="zipForm.pristine" class="tc-red-600">
-            <span [hidden]="!zipForm.errors?.required">Required</span>
-            <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+          <md-hint>
+            <span [hidden]="zipForm.pristine" class="tc-red-600">
+              <span [hidden]="!zipForm.errors?.required">Required</span>
+              <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+            </span>
           </md-hint>
           <md-hint align="end">e.g 92101</md-hint>
         </md-input>
@@ -154,7 +164,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <div class="inset">
-    <button md-raised-button [disabled]="!myForm.valid">Submit Form</button>
+    <button md-raised-button color="accent" [disabled]="!myForm.valid">Submit Form</button>
   </div>
   <md-divider></md-divider>
   <md-card-content>
@@ -163,31 +173,41 @@
         <form #myForm="ngForm">
           <div layout-gt-xs="row" layout-margin>
             <md-input #firstNameForm="ngModel" flex placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim>
-              <md-hint [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+              <md-hint>
+                <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+              </md-hint>
             </md-input>
             <md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim>
-              <md-hint [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</md-hint>
+              <md-hint>
+                <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+              </md-hint>
             </md-input>
           </div>
           <div layout-gt-xs="row" layout-margin>
-            <md-input #adressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="adress" name="adress" required maxlength="50" tdAutoTrim>
-              <md-hint [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</md-hint>
-              <md-hint align="end">{{adressEl.characterCount}} / 50</md-hint>
+            <md-input #addressEl #addressForm="ngModel" flex="40" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim>
+              <md-hint>
+                <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+              </md-hint>
+              <md-hint align="end">{{addressEl.characterCount}} / 50</md-hint>
             </md-input>
             <md-input flex="35" placeholder="City" tdAutoTrim></md-input>
           </div>
           <div layout-gt-xs="row" layout-margin>
             <md-input #stateForm="ngModel" flex="20" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim>
-              <md-hint [hidden]="stateForm.pristine" class="tc-red-600">
-                <span [hidden]="!stateForm.errors?.required">Required</span>
-                <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
+              <md-hint>
+                <span [hidden]="stateForm.pristine" class="tc-red-600">
+                  <span [hidden]="!stateForm.errors?.required">Required</span>
+                  <span [hidden]="!stateForm.errors?.pattern">2 letters</span>
+                </span>
               </md-hint>
               <md-hint align="end">e.g CA</md-hint>
             </md-input>
             <md-input #zipForm="ngModel" flex="25" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required>
-              <md-hint [hidden]="zipForm.pristine" class="tc-red-600">
-                <span [hidden]="!zipForm.errors?.required">Required</span>
-                <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+              <md-hint>
+                <span [hidden]="zipForm.pristine" class="tc-red-600">
+                  <span [hidden]="!zipForm.errors?.required">Required</span>
+                  <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+                </span>
               </md-hint>
               <md-hint align="end">e.g 92101</md-hint>
             </md-input>

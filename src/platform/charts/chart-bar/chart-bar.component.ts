@@ -1,4 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 import { TdChartsComponent } from '../charts.component';
 import { ChartComponent, IChartData } from '../abstract-chart.component';
 
@@ -33,7 +34,8 @@ export class TdChartBarComponent extends ChartComponent {
   @Input() colors: string[];
   @Input() padding: number = 0;
 
-  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent) {
+  constructor(@Inject(forwardRef(() => TdChartsComponent)) parent: TdChartsComponent,
+              private _platformLocation: PlatformLocation) {
     super(parent);
   }
 
@@ -46,16 +48,16 @@ export class TdChartBarComponent extends ChartComponent {
     this._x = x;
     this._y = y;
 
-    let defsId: string = this._parent.drawContainer();
-
-    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
-
     data.forEach((d: any) => {
       d[this.columns] = +d[this.columns];
     });
 
     x.domain(data.map((d: any) => { return d[this.bottomAxis]; }));
     y.domain([0, d3.max(data, (d: any) => { return d[this.columns]; })]);
+
+    let defsId: string = this._parent.drawContainer();
+
+    let svg: any = d3.select(this._parent.container).selectAll('.chartG');
 
     let bar: any = svg.append('g')
       .classed('chart-bars', true)
@@ -72,7 +74,7 @@ export class TdChartBarComponent extends ChartComponent {
         return this._colorPalette[Math.floor(i / (data.length / this._colorPalette.length))];
       })
       .attr('transform', (d: any) => { return 'translate(' + [x(d[this.bottomAxis]), this._parent.height] + ')'; })
-      .style('filter', 'url(#' + defsId + ')');
+      .style('filter', 'url(' + this._platformLocation.pathname + '#' + defsId + ')');
 
     if (this.transition === true) {
       this._transtion(svg, x, y);

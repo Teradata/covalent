@@ -7,7 +7,10 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": "assets",
+      "assets": [
+        "app/assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
@@ -17,8 +20,7 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "platform/core/styles/platform.scss",
-        "../node_modules/@angular/material/core/overlay/overlay.css"
+        "platform/core/styles/platform.scss"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",

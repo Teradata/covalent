@@ -1,11 +1,28 @@
 @import '../styles/variables';
-@import '../styles/default-theme';
-@import '../styles/shadows';
+@import '../../../../node_modules/@angular/material/core/style/elevation';
 
+:host /deep/ {
+  md-nav-list {
+    [md-list-item] {
+      &:active,
+      &:focus {
+        outline: none;
+      }
+      &.md-interaction-disabled .md-list-item {
+        background: none !important;
+        cursor: auto;
+      }
+      &.md-tall .md-list-item {
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
 :host {
-  background-color: #fff;
   display: block;
-  box-shadow: $whiteframe-shadow-1dp;
+  @include md-elevation(1);
   
   .panel {
     transition: 1s all ease;
@@ -33,16 +50,8 @@
     padding-top: 0;
   }
 }
-.md-disabled {
-  &, & * {
-    color: md-color($md-grey, 500);
-  }
-}
 md-nav-list {
   padding: 0;
-}
-md-icon {
-  color: md-color($md-grey, 500);
 }
 .td-expansion-primary,
 .td-expansion-secondary {
@@ -50,7 +59,4 @@ md-icon {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 5px;
-}
-.td-expansion-secondary {
-  color: md-color($md-grey, 700);
 }

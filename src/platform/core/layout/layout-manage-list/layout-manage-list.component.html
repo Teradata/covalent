@@ -1,18 +1,16 @@
-<div class="md-content" layout="column" layout-fill>
-  <md-sidenav-layout class="md-content" flex layout="row" layout-fill>
-    <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left app-list md-whiteframe-z1">
-      <div flex class="md-content list">
-        <ng-content select="[list-items]"></ng-content>
-      </div>
-    </md-sidenav>
-    <div layout="column" layout-fill class="md-content content">
-      <md-toolbar class="md-whiteframe-z1">
-        <button md-button (click)="toggle()" md-icon-button hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
-        <ng-content select="[toolbar-buttons]"></ng-content>
-      </md-toolbar>
-      <div class="md-content" flex>
-        <ng-content></ng-content>
-      </div>
+<md-sidenav-layout fullscreen class="td-layout-manage-list md-content" flex layout="row">
+  <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1">
+    <div flex class="md-content list">
+      <ng-content select="[list-items]"></ng-content>
     </div>
-  </md-sidenav-layout>
-</div>
+  </md-sidenav>
+  <div layout="column" layout-fill class="md-content content">
+    <md-toolbar class="md-whiteframe-z1">
+      <button md-button (click)="toggle()" md-icon-button hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
+      <ng-content select="[toolbar-buttons]"></ng-content>
+    </md-toolbar>
+    <div class="md-content" flex>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</md-sidenav-layout>

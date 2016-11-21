@@ -855,17 +855,13 @@
     <md-tab-group>
       <md-tab>
         <template md-tab-label>One</template>
-        <template md-tab-content>
-          <h3 class="md-title">First tab content</h3>
-          <p>Plaid echo park knausgaard normcore franzen cronut. Pickled humblebrag tofu hoodie, umami salvia farm-to-table schlitz try-hard food truck knausgaard pabst. Yuccie portland jean shorts, authentic mixtape waistcoat gentrify blue bottle. Fixie kickstarter church-key small batch seitan, shabby chic vegan listicle before they sold out. Hammock raw denim flannel tousled seitan you probably haven't heard of them. Trust fund man bun pug, kickstarter artisan selvage letterpress cornhole tote bag butcher locavore. Affogato try-hard kickstarter seitan, DIY pickled hella godard pork belly four loko ugh.</p>
-        </template>
+        <h3 class="md-title">First tab content</h3>
+        <p>Plaid echo park knausgaard normcore franzen cronut. Pickled humblebrag tofu hoodie, umami salvia farm-to-table schlitz try-hard food truck knausgaard pabst. Yuccie portland jean shorts, authentic mixtape waistcoat gentrify blue bottle. Fixie kickstarter church-key small batch seitan, shabby chic vegan listicle before they sold out. Hammock raw denim flannel tousled seitan you probably haven't heard of them. Trust fund man bun pug, kickstarter artisan selvage letterpress cornhole tote bag butcher locavore. Affogato try-hard kickstarter seitan, DIY pickled hella godard pork belly four loko ugh.</p>
       </md-tab>
       <md-tab>
         <template md-tab-label>Two</template>
-        <template md-tab-content>
-          <h3 class="md-title">Second tab content</h3>
-          <p>Hashtag distillery skateboard man bun gochujang, salvia man braid art party meggings heirloom kitsch farm-to-table. Franzen beard fingerstache gentrify, heirloom portland ennui XOXO microdosing kitsch plaid. Chicharrones bushwick chia, banh mi irony tattooed hammock butcher shabby chic taxidermy semiotics marfa post-ironic. Blue bottle keffiyeh farm-to-table ennui, chambray pitchfork art party pinterest artisan pop-up. Etsy banjo marfa, blue bottle kombucha crucifix XOXO tousled beard. Tilde disrupt kale chips bicycle rights skateboard master cleanse hella shoreditch, meditation retro shabby chic vice heirloom. Etsy listicle vice actually, iPhone chia hoodie four loko.</p>
-        </template>
+        <h3 class="md-title">Second tab content</h3>
+        <p>Hashtag distillery skateboard man bun gochujang, salvia man braid art party meggings heirloom kitsch farm-to-table. Franzen beard fingerstache gentrify, heirloom portland ennui XOXO microdosing kitsch plaid. Chicharrones bushwick chia, banh mi irony tattooed hammock butcher shabby chic taxidermy semiotics marfa post-ironic. Blue bottle keffiyeh farm-to-table ennui, chambray pitchfork art party pinterest artisan pop-up. Etsy banjo marfa, blue bottle kombucha crucifix XOXO tousled beard. Tilde disrupt kale chips bicycle rights skateboard master cleanse hella shoreditch, meditation retro shabby chic vice heirloom. Etsy listicle vice actually, iPhone chia hoodie four loko.</p>
       </md-tab>
     </md-tab-group>
     <md-divider></md-divider>
@@ -874,17 +870,13 @@
         <md-tab-group>
           <md-tab>
             <template md-tab-label>First tab content</template>
-            <template md-tab-content>
-              <h1>First content</h1>
-              <p>...</p>
-            </template>
+            <h1>First content</h1>
+            <p>...</p>
           </md-tab>
           <md-tab>
             <template md-tab-label>Second tab content</template>
-            <template md-tab-content>
-              <h1>Second tab content</h1>
-              <p>...</p>
-            </template>
+            <h1>Second tab content</h1>
+            <p>...</p>
           </md-tab>
         </md-tab-group>
         ]]>
@@ -993,65 +985,61 @@
   <md-tab-group>
     <md-tab>
       <template md-tab-label>Headers</template>
-      <template md-tab-content>
-        <md-grid-list cols="3" rowHeight="200px">
-          <md-grid-tile *ngFor="let dog of dogs" style="background:gray">
-            <md-grid-tile-header>
-              <md-icon md-grid-avatar>info_outline</md-icon>
-              {{dog.name}}
-            </md-grid-tile-header>
-            <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
-          </md-grid-tile>
-        </md-grid-list>
-        <md-divider></md-divider>
-        <md-card-content>
-          <td-highlight lang="html">
-            <![CDATA[
-              <md-grid-list cols="3" rowHeight="200px">
-                <md-grid-tile *ngFor="let dog of dogs">
-                  <md-grid-tile-header>
-                    <md-icon md-grid-avatar>info_outline</md-icon>
-                    { { dog.name } }
-                  </md-grid-tile-header>
-                  <img src="">
-                </md-grid-tile>
-              </md-grid-list>
-              ]]>
-          </td-highlight>
-        </md-card-content>
-      </template>
+      <md-grid-list cols="3" rowHeight="200px">
+        <md-grid-tile *ngFor="let dog of dogs" style="background:gray">
+          <md-grid-tile-header>
+            <md-icon md-grid-avatar>info_outline</md-icon>
+            {{dog.name}}
+          </md-grid-tile-header>
+          <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+        </md-grid-tile>
+      </md-grid-list>
+      <md-divider></md-divider>
+      <md-card-content>
+        <td-highlight lang="html">
+          <![CDATA[
+            <md-grid-list cols="3" rowHeight="200px">
+              <md-grid-tile *ngFor="let dog of dogs">
+                <md-grid-tile-header>
+                  <md-icon md-grid-avatar>info_outline</md-icon>
+                  { { dog.name } }
+                </md-grid-tile-header>
+                <img src="">
+              </md-grid-tile>
+            </md-grid-list>
+            ]]>
+        </td-highlight>
+      </md-card-content>
     </md-tab>
     <md-tab>
       <template md-tab-label>Footers</template>
-      <template md-tab-content>
-        <md-grid-list cols="3" rowHeight="200px">
-          <md-grid-tile *ngFor="let dog of dogs">
-            <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
-            <md-grid-tile-footer>
-              <h3 md-line>{{dog.name}}</h3>
-              <span md-line>Human: {{dog.human}}</span>
-              <md-icon>star_border</md-icon>
-            </md-grid-tile-footer>
-          </md-grid-tile>
-        </md-grid-list>
-        <md-divider></md-divider>
-        <md-card-content>
-          <td-highlight lang="html">
-            <![CDATA[
-              <md-grid-list cols="3" rowHeight="200px">
-                <md-grid-tile *ngFor="let dog of dogs">
-                  <img src="">
-                  <md-grid-tile-footer>
-                    <h3 md-line>{ { dog.name } }</h3>
-                    <span md-line>Human: { { dog.human } }</span>
-                    <md-icon>star_border</md-icon>
-                  </md-grid-tile-footer>
-                </md-grid-tile>
-              </md-grid-list>
-              ]]>
-          </td-highlight>
-        </md-card-content>
-      </template>
+      <md-grid-list cols="3" rowHeight="200px">
+        <md-grid-tile *ngFor="let dog of dogs">
+          <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+          <md-grid-tile-footer>
+            <h3 md-line>{{dog.name}}</h3>
+            <span md-line>Human: {{dog.human}}</span>
+            <md-icon>star_border</md-icon>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+      <md-divider></md-divider>
+      <md-card-content>
+        <td-highlight lang="html">
+          <![CDATA[
+            <md-grid-list cols="3" rowHeight="200px">
+              <md-grid-tile *ngFor="let dog of dogs">
+                <img src="">
+                <md-grid-tile-footer>
+                  <h3 md-line>{ { dog.name } }</h3>
+                  <span md-line>Human: { { dog.human } }</span>
+                  <md-icon>star_border</md-icon>
+                </md-grid-tile-footer>
+              </md-grid-tile>
+            </md-grid-list>
+            ]]>
+        </td-highlight>
+      </md-card-content>
     </md-tab>
   </md-tab-group>
   <md-card-content>

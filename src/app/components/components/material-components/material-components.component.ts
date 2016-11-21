@@ -112,7 +112,8 @@ export class MaterialComponentsComponent {
   constructor(private _snackBarService: MdSnackBar,
               private _dialogService: MdDialog,
               viewContainerRef: ViewContainerRef) {
-    this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+    this._snackBarConfig = new MdSnackBarConfig();
+    this._snackBarConfig.viewContainerRef = viewContainerRef;
     this._dialogConfig = new MdDialogConfig();
     this._dialogConfig.viewContainerRef = viewContainerRef;
   }

@@ -1,0 +1,103 @@
+<md-card>
+  <md-card-title>Paging</md-card-title>
+  <md-card-subtitle>Paging for lists and tables</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Change Event: </p>
+    <div>
+      <p>Page Size: {{event?.pageSize || '100'}}</p>
+      <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
+      <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
+    </div>
+    <p>Total: {{event?.total || '1345'}}</p>
+    <div layout="row" layout-align="start center">
+      <button md-raised-button color="primary" (click)="pagingBar.navigateToPage(5)">
+        Navigate to 5th page
+      </button>
+      <span class="push-right-sm"></span>
+      <button md-raised-button color="primary" (click)="toggleFirstLast()">
+        Toggle first and last buttons
+      </button>
+      <span class="push-right-sm"></span>
+      <button md-raised-button color="primary" (click)="togglePageSizeAll()">
+        Toggle page size all
+      </button>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <td-paging-bar #pagingBar [pageSizes]="[50,100,200,500,1000,2000]" [pageSizeAll]="pageSizeAll" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+    </td-paging-bar>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>TdPagingBarComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-paging-bar>]]></code></h2>
+    <p>Use <code><![CDATA[<td-paging-bar>]]></code> element to generate a paging bar.</p>
+    <p>The <code>(change)</code> event throws an event with the following interface:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        export interface IPageChangeEvent {
+          page: number;
+          maxPage: number;
+          pageSize: number;
+          total: number;
+          fromRow: number;
+          toRow: number;
+        }
+      ]]>
+    </td-highlight>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-paging-bar>]]></code> component has {{pagingBarAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="pagingBarAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-paging-bar [firstLast]="true|false" [pageSizeAll]="true|false" [pageSizes]="[100,200,500,1000,2000]" [pageSize]="100" [total]="1345" (change)="change($event)">
+        </td-paging-bar>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { IPageChangeEvent } from '@covalent/paging';
+        ...
+        })
+        export class Demo {
+
+          change(event: IPageChangeEvent): void {
+            ...
+          }
+          
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentPagingModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentPagingModule } from '@covalent/paging';
+        @NgModule({
+          imports: [
+            CovalentPagingModule.forRoot(),
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

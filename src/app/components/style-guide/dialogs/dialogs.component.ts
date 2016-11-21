@@ -1,8 +1,8 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { TdDialogService } from '../../../../platform/core';
 
-import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef} from '@angular/material';
+import { MdSnackBar, MdSnackBarRef } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-dialogs',
@@ -10,15 +10,13 @@ import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef} from '@angular/material';
   templateUrl: 'dialogs.component.html',
 })
 export class DialogsToastsComponent {
-  _snackBarConfig: MdSnackBarConfig;
+
   constructor(private _dialogService: TdDialogService,
-              private _viewContainerRef: ViewContainerRef,
-              private _snackBarService: MdSnackBar) {
-    this._snackBarConfig = new MdSnackBarConfig(_viewContainerRef);
-  }
+              private _snackBarService: MdSnackBar) {}
+
   showSnackBar(): void {
     let snackBarRef: MdSnackBarRef<any> = this._snackBarService
-      .open('Direct message sent!', 'Dismiss', this._snackBarConfig);
+      .open('Direct message sent!', 'Dismiss');
     setTimeout(() => {
       snackBarRef.dismiss();
     }, 3000);
@@ -26,7 +24,7 @@ export class DialogsToastsComponent {
   openAlert(): void {
     this._dialogService.openAlert({
       message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
-      viewContainerRef: this._viewContainerRef,
+      disableClose: true,
       title: '401 Permissions Error!',
       closeButton: 'Dismiss',
     });
@@ -34,7 +32,6 @@ export class DialogsToastsComponent {
   openConfirm(): void {
     this._dialogService.openConfirm({
       message: 'Are you sure you want to delete this item? It\'s used on other items.',
-      viewContainerRef: this._viewContainerRef,
       title: 'Confirm',
       cancelButton: 'No, Cancel',
       acceptButton: 'Yes, Delete',
@@ -47,7 +44,7 @@ export class DialogsToastsComponent {
     });
   }
   confirmDelete(): void {
-    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Item deleted!', 'Ok', this._snackBarConfig);
+    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Item deleted!', 'Ok');
     setTimeout(() => {
       snackBarRef.dismiss();
     }, 3000);
@@ -55,7 +52,6 @@ export class DialogsToastsComponent {
   openPrompt(): void {
     this._dialogService.openPrompt({
       message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
-      viewContainerRef: this._viewContainerRef,
       title: 'Prompt',
       value: 'Prepopulated value',
       cancelButton: 'Cancel',

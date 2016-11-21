@@ -1,19 +1,20 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
-@import '../../styles/shadows';
-@import '../../styles/default-theme';
-
-@mixin toolbar-theme($palette) {
-  color: md-color($palette, default-contrast);
+:host {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 :host /deep/ {
-  md-sidenav-layout {
+  md-sidenav-layout.td-layout-nav-list {
     & > .md-sidenav-content {
       margin-left: 0 !important;
+      flex-grow: 1;
     }
   }
   @media (min-width: 600px) {
-    md-sidenav-layout {
+    md-sidenav-layout.td-layout-nav-list {
       height: 100%;
       display: flex;
       & > md-sidenav {
@@ -32,12 +33,11 @@
       & > .md-sidenav-content {
         margin-left: 0 !important;
         display: flex;
-        flex-grow: 1;
       }
     }
   }
   @media (max-width: 599px) {
-    md-sidenav-layout {
+    md-sidenav-layout.td-layout-nav-list {
 
       & > md-sidenav {
         &.md-sidenav-opened,
@@ -52,22 +52,9 @@
     }
   }
 }
-md-toolbar {
-  box-shadow: $md-shadow-bottom-z-1;
-  z-index: 1;
-  &.md-primary {
-    @include toolbar-theme($md-primary);
-  }
-}
 .md-sidenav-left {
     z-index: 1;
 }
 .list {
-    background-color: #fff;
     text-align: start;
-    
-}
-.content {
-    // overflow: hidden;
-    // padding-bottom: 65px;
 }

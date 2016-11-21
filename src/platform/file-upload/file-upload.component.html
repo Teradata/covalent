@@ -16,7 +16,7 @@
            class="md-file-upload-input" 
            type="file"
            [attr.accept]="accept"                
-           [(ngModel)]="files"
+           (fileSelect)="files = $event"
            [multiple]="multiple" 
            [disabled]="disabled"
            tdFileSelect>

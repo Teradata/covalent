@@ -1,0 +1,19 @@
+<md-icon 
+  class="td-data-table-sort-icon" 
+  *ngIf="sortable && numeric"
+  [class.md-asc]="(!(active) || isAscending())"
+  [class.md-desc]="(active && isDescending())"
+  (click)="sortable && handleSortBy()">
+  arrow_upward
+</md-icon>
+<span class="md-caption" (click)="sortable && handleSortBy()">
+  <ng-content></ng-content>
+</span>
+<md-icon 
+  class="td-data-table-sort-icon" 
+  *ngIf="sortable && !numeric"
+  [class.md-asc]="(!(active) || isAscending())"
+  [class.md-desc]="(active && isDescending())"
+  (click)="sortable && handleSortBy()">
+  arrow_upward
+</md-icon>

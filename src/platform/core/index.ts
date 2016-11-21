@@ -41,17 +41,17 @@ export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout
 import { TdStepsComponent } from './steps/steps.component';
 import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
 import { TdStepBodyComponent } from './steps/step-body/step-body.component';
-import { TdStepComponent, TdStepActionsDirective, TdStepSummaryDirective,
-         TdStepContentDirective } from './steps/step.component';
+import { TdStepComponent, TdStepLabelDirective, TdStepActionsDirective,
+         TdStepSummaryDirective } from './steps/step.component';
 
 export const TD_STEP_DIRECTIVES: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
   TdStepHeaderComponent,
   TdStepBodyComponent,
+  TdStepLabelDirective,
   TdStepActionsDirective,
   TdStepSummaryDirective,
-  TdStepContentDirective,
 ];
 
 export { TdStepComponent, StepState  } from './steps/step.component';
@@ -70,15 +70,19 @@ export { LoadingType, LoadingMode } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 
 // Expansion
-export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
-
-import { TdExpansionPanelComponent,
-         TdExpansionPanelSummaryComponent } from './expansion-panel/expansion-panel.component';
+import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
+         TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent }
+         from './expansion-panel/expansion-panel.component';
 
 export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
   TdExpansionPanelComponent,
+  TdExpansionPanelHeaderDirective,
+  TdExpansionPanelLabelDirective,
+  TdExpansionPanelSublabelDirective,
   TdExpansionPanelSummaryComponent,
 ];
+
+export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 // Dialogs
 
@@ -105,7 +109,7 @@ export const TD_DIALOG_ENTRY_COMPONENTS: Type<any>[] = [
   TdPromptDialogComponent,
 ];
 
-export { TdDialogService } from './dialogs/services/dialog.service';
+export { TdDialogService, IAlertConfig, IConfirmConfig, IPromptConfig } from './dialogs/services/dialog.service';
 export { TdDialogComponent, TdDialogTitleDirective } from './dialogs/dialog.component';
 export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
