@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit, Input, Output, EventEmitter,
          trigger, state, style, transition, animate } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MdInput } from '@angular/material';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'td-search-input',
