@@ -1,6 +1,6 @@
 {
   "name": "@covalent/data-table",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Teradata UI Platform Data Table Module",
   "keywords": [
     "angular",
