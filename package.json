@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material 2",
   "keywords": [

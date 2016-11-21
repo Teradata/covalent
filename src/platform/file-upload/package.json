@@ -1,6 +1,6 @@
 {
   "name": "@covalent/file-upload",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Teradata UI Platform File Upload Module",
   "keywords": [
     "angular",
@@ -34,6 +34,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.8.1"
+    "@covalent/core": "0.9.0"
   }
 }
