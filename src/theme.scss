@@ -32,7 +32,8 @@ $theme: md-light-theme($primary, $accent, $warn);
 
     $blue-orange: md-light-theme($primary2, $accent2, $warn2);
 
-    @include angular-material-theme($blue-orange);   
+    @include angular-material-theme($blue-orange);
+    @include covalent-theme($blue-orange);
 }
 
 .blue-grey-deep-orange {
@@ -42,5 +43,6 @@ $theme: md-light-theme($primary, $accent, $warn);
 
     $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
 
-    @include angular-material-theme($blue-grey-deep-orange);   
+    @include angular-material-theme($blue-grey-deep-orange);
+    @include covalent-theme($blue-grey-deep-orange);
 }

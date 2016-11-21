@@ -12,6 +12,7 @@
     <p>Simply edit the /theme.scss file and update these SCSS variables:</p>
     <td-highlight lang="scss">
       @import '~@angular/material/core/theming/all-theme';
+      @import '~@covalent/core/styles/theming/all-theme';
       // Plus imports for other components in your app.
 
       // Include the base styles for Angular Material core. We include this here so that you only
@@ -34,6 +35,7 @@
       // Alternatively, you can import and @include the theme mixins for each component
       // that you are using.
       @include angular-material-theme($theme);
+      @include covalent-theme($theme);
     </td-highlight>
     <p>
       Color palettes and hues follow the official <a href="https://material.google.com/style/color.html" target="_blank">Material Design Spec</a>.
@@ -65,7 +67,8 @@
 
               $blue-orange: md-light-theme($primary2, $accent2, $warn2);
 
-              @include angular-material-theme($blue-orange);   
+              @include angular-material-theme($blue-orange);
+              @include covalent-theme($blue-orange);
           {{ '}' }}
         </td-highlight>
       </div>
@@ -106,7 +109,8 @@
 
               $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
 
-              @include angular-material-theme($blue-grey-deep-orange);   
+              @include angular-material-theme($blue-grey-deep-orange);
+              @include covalent-theme($blue-grey-deep-orange); 
           {{ '}' }}
         </td-highlight>
       </div>
