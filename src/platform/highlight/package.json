@@ -33,7 +33,7 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.8.1",
+    "@covalent/core": "0.9.0",
     "highlight.js": "9.6.0"
   }
 }
