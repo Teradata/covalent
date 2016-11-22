@@ -1,6 +1,6 @@
 {
   "name": "@covalent/search",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Teradata UI Platform Search Box Module",
   "keywords": [
     "angular",
@@ -33,6 +33,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.9.0"
+    "@covalent/core": "0.9.1"
   }
 }
