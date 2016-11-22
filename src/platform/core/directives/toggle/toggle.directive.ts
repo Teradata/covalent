@@ -95,6 +95,7 @@ export class TdToggleDirective {
     this._timeoutNumber = setTimeout(() => {
       this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
       this._hiddenState = this._state;
+      animation.destroy();
     }, this.duration);
   }
 
@@ -125,6 +126,7 @@ export class TdToggleDirective {
       ], 0, 0, 'ease-in');
     startingAnimation.play();
     startingAnimation.onDone(() => {
+      startingAnimation.destroy();
       let animation: AnimationPlayer = this._renderer
         .animate(this._element.nativeElement, undefined, [{
             styles: {
@@ -153,6 +155,7 @@ export class TdToggleDirective {
        */
       this._timeoutNumber = setTimeout(() => {
         this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+        animation.destroy();
       }, this.duration);
     });
   }

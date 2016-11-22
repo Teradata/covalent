@@ -107,6 +107,7 @@ export class TdFadeDirective {
       }, 0);
       this._hiddenState = this._state;
       this.fadeOut.emit(undefined);
+      animation.destroy();
     }, this.duration);
   }
 
@@ -140,6 +141,7 @@ export class TdFadeDirective {
     this._timeoutNumber = setTimeout(() => {
       this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
       this.fadeIn.emit(undefined);
+      animation.destroy();
     }, this.duration);
   }
 }
