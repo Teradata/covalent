@@ -25,6 +25,13 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class TdSearchInputComponent implements OnInit {
 
+  set value(value: any) {
+    this.searchTermControl.setValue(value);
+  }
+  get value(): any {
+    return this.searchTermControl.value;
+  }
+
   @ViewChild(MdInput) private _input: MdInput;
 
   searchTermControl: FormControl = new FormControl();
