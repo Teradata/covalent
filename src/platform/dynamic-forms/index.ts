@@ -1,0 +1,1 @@
+export { CovalentDynamicFormsModule } from './dynamic-forms.module';
