@@ -61,7 +61,6 @@
         <td-highlight lang="typescript">
           <![CDATA[
             import { ITdDataTableColumn } from '@covalent/data-table';
-            import { ViewContainerRef } from '@angular/core';
             import { TdDialogService } from '@covalent/core';
             ...
             })
@@ -76,14 +75,12 @@
                 { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
               ];
 
-              constructor(private _dialogService: TdDialogService,
-                          private _viewContainerRef: ViewContainerRef) {}
+              constructor(private _dialogService: TdDialogService) {}
 
               openPrompt(row: any, name: string): void {
                 this._dialogService.openPrompt({
                   message: 'Enter comment?',
                   value: row[name],
-                  viewContainerRef: this._viewContainerRef,
                 }).afterClosed().subscribe((value: any) => {
                   if (value !== undefined) {
                     row[name] = value;

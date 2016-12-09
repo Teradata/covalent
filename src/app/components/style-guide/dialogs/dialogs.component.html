@@ -44,13 +44,11 @@
       <![CDATA[
       import { TdDialogService } from '@covalent/core';
       ...
-      constructor(private _dialogService: TdDialogService,
-                  private _viewContainerRef: ViewContainerRef) {
+      constructor(private _dialogService: TdDialogService) {
       }
       openAlert(): void {
         this._dialogService.openAlert({
           message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
-          viewContainerRef: this._viewContainerRef,
           title: '401 Permissions Error!',
           closeButton: 'Dismiss',
         });
@@ -58,7 +56,6 @@
       openConfirm(): void {
         this._dialogService.openConfirm({
           message: 'Are you sure you want to delete this item? It\'s used on other items.',
-          viewContainerRef: this._viewContainerRef,
           title: 'Confirm',
           cancelButton: 'No, Cancel',
           acceptButton: 'Yes, Delete',
@@ -93,20 +90,13 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-      import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef } from '@angular/material';
+      import { MdSnackBar } from '@angular/material';
       ...
       export class ToastsComponent {
-        _snackBarConfig: MdSnackBarConfig;
-        constructor(private _viewContainerRef: ViewContainerRef,
-                    private _snackBarService: MdSnackBar) {
-          this._snackBarConfig = new MdSnackBarConfig(_viewContainerRef);
+        constructor(private _snackBarService: MdSnackBar) {
         }
         showSnackBar(): void {
-          let snackBarRef: MdSnackBarRef<any> = this._snackBarService
-            .open('Direct message sent!', 'Dismiss', this._snackBarConfig);
-          setTimeout(() => {
-            snackBarRef.dismiss();
-          }, 3000);
+          this._snackBarService.open('Direct message sent!', 'Dismiss', { duration: 3000 });
         }
       }
       ]]>

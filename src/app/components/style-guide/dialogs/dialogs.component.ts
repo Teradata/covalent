@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { TdDialogService } from '../../../../platform/core';
 
-import { MdSnackBar, MdSnackBarRef } from '@angular/material';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-dialogs',
@@ -15,11 +15,8 @@ export class DialogsToastsComponent {
               private _snackBarService: MdSnackBar) {}
 
   showSnackBar(): void {
-    let snackBarRef: MdSnackBarRef<any> = this._snackBarService
-      .open('Direct message sent!', 'Dismiss');
-    setTimeout(() => {
-      snackBarRef.dismiss();
-    }, 3000);
+    this._snackBarService
+      .open('Direct message sent!', 'Dismiss', { duration: 3000 });
   }
   openAlert(): void {
     this._dialogService.openAlert({
@@ -44,10 +41,7 @@ export class DialogsToastsComponent {
     });
   }
   confirmDelete(): void {
-    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Item deleted!', 'Ok');
-    setTimeout(() => {
-      snackBarRef.dismiss();
-    }, 3000);
+    this._snackBarService.open('Item deleted!', 'Ok', { duration: 3000 });
   }
   openPrompt(): void {
     this._dialogService.openPrompt({
