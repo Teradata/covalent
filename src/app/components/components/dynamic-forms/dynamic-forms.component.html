@@ -1,0 +1,17 @@
+<md-card>
+  <md-card-title>Dynamic Forms</md-card-title>
+  <md-card-subtitle>Build forms from a JS object</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-dynamic-forms #dynamicForm [elements]="elements">
+    </td-dynamic-forms>
+    <button md-raised-button color="primary" [disabled]="!dynamicForm.valid" (click)="value = dynamicForm.value">Push</button>
+    <p>Dynamic value</p>
+    <p>{{value | json}}</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary">Toggle Disable All Steps</button>
+    <button md-button color="primary">Toggle Active Step 1</button>
+  </md-card-actions>
+</md-card>

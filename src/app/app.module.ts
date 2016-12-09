@@ -20,6 +20,7 @@ import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDataTableModule } from '../platform/data-table';
 import { CovalentPagingModule } from '../platform/paging';
 import { CovalentSearchModule } from '../platform/search';
+import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CovalentSearchModule } from '../platform/search';
     CovalentDataTableModule.forRoot(),
     CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [
