@@ -8,17 +8,29 @@ import { TdNumberRequiredValidator } from '@covalent/core';
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 
-export enum DynamicElement {
+export enum DynamicType {
   Text = <any>'text',
   Boolean = <any>'boolean',
-  Date = <any>'date',
   Number = <any>'number',
+}
+
+export enum DynamicElement {
+  Input = <any>'input',
+  Slider = <any>'slider',
+  TextArea = <any>'text-area',
+  SlideToggle = <any>'slide-toggle',
+  Checkbox = <any>'checkbox',
+  ButtonToggleGroup = <any>'button-toggle-group',
+  ButtonToggle = <any>'button-toggle',
+  RadioGroup = <any>'radio-group',
+  Radio = <any>'radio-group',
+  Select = <any>'select',
 }
 
 export interface IDynamicElementConfig {
     label?: string;
     name: string;
-    type: DynamicElement;
+    type: DynamicType | DynamicElement;
     required?: boolean;
     min?: any;
     max?: any;
@@ -28,27 +40,33 @@ export interface IDynamicElementConfig {
 @Injectable()
 export class DynamicFormsService {
 
-  getElementType(element: DynamicElement): any {
+  getDynamicElement(element: DynamicElement | DynamicType): any {
     switch (element) {
-      case DynamicElement.Text:
-      case DynamicElement.Number:
-      case DynamicElement.Date:
+      case DynamicType.Text:
+      case DynamicType.Number:
+      case DynamicElement.Input:
         return TdDynamicInputComponent;
-      case DynamicElement.Boolean:
+      case DynamicType.Boolean:
+      case DynamicElement.SlideToggle:
         return TdDynamicSlideToggleComponent;
+      case DynamicElement.Checkbox:
+      case DynamicElement.ButtonToggle:
+      case DynamicElement.TextArea:
+      case DynamicElement.Slider:
+      case DynamicElement.Select:
       default:
         throw `Error: type ${element} does not exist.`;
     }
   }
 
-  getElementFlex(element: DynamicElement): any {
+  getDefaultElementFlex(element: DynamicElement | DynamicType): any {
     switch (element) {
-      case DynamicElement.Text:
-      case DynamicElement.Number:
+      case DynamicType.Text:
+      case DynamicType.Number:
+      case DynamicElement.Input:
         return 45;
-      case DynamicElement.Date:
-        return 20;
-      case DynamicElement.Boolean:
+      case DynamicType.Boolean:
+      case DynamicElement.SlideToggle:
         return 20;
       default:
         throw `Error: type ${element} does not exist.`;
@@ -63,7 +81,7 @@ export class DynamicFormsService {
   createValidators(config: IDynamicElementConfig): ValidatorFn {
     let validator: ValidatorFn;
     if (config.required) {
-      validator = config.type === DynamicElement.Number ? TdNumberRequiredValidator.validate : Validators.required;
+      validator = config.type === DynamicType.Number ? TdNumberRequiredValidator.validate : Validators.required;
     }
     if (config.max || config.max === 0) {
       validator = Validators.compose([validator, TdMaxValidator.validate(config.max)]);

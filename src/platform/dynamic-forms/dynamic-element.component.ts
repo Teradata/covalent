@@ -56,7 +56,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   @HostBinding('attr.flex')
   get flex(): any {
     if (this.type) {
-      return this._dynamicFormsService.getElementFlex(this.type);
+      return this._dynamicFormsService.getDefaultElementFlex(this.type);
     }
     return true;
   }
@@ -78,7 +78,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
 
   ngOnInit(): void {
     let ref: ComponentRef<any> = this._componentFactoryResolver.
-      resolveComponentFactory(this._dynamicFormsService.getElementType(this.type))
+      resolveComponentFactory(this._dynamicFormsService.getDynamicElement(this.type))
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     ref.instance.control = this.dynamicControl;
