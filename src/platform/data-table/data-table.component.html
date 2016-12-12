@@ -32,7 +32,7 @@
       <td td-data-table-cell
           [numeric]="column.numeric"
           *ngFor="let column of columns">
-        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{row[column.name]}}</span>
+        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(row[column.name]) : row[column.name]}}</span>
         <template
           *ngIf="getTemplateRef(column.name)"
           [ngTemplateOutlet]="getTemplateRef(column.name)"

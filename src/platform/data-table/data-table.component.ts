@@ -235,7 +235,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   refresh(): void {
     this.clearModel();
-    this._preprocessData();
   }
 
   /**
@@ -335,15 +334,5 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   onChange = (_: any) => noop;
   onTouched = () => noop;
-
-  private _preprocessData(): void {
-    let data: Object[] = JSON.parse(JSON.stringify(this._data));
-    this._data = data.map((row: any) => {
-      this.columns.filter((c: any) => c.format).forEach((c: any) => {
-        row[c.name] = c.format(row[c.name]);
-      });
-      return row;
-    });
-  }
 
 }
