@@ -5,7 +5,8 @@
             [placeholder]="placeholder"
             [formControl]="searchTermControl"
             (blur)="handleBlur()"
-            (search)="handleSearch($event)"
+            (search)="stopPropagation($event)"
+            (keyup.enter)="handleSearch($event)"
             flex>
   </md-input>
   <button md-icon-button 

@@ -1,6 +1,5 @@
-import { Component, ViewContainerRef } from '@angular/core';
-import { MdSnackBar, MdSnackBarConfig, MdDialog, MdSnackBarRef,
-        MdDialogConfig, MdDialogRef } from '@angular/material';
+import { Component } from '@angular/core';
+import { MdSnackBar, MdDialog, MdDialogRef } from '@angular/material';
 
 import { TdAlertDialogComponent } from '../../../../platform/core';
 import { TdConfirmDialogComponent } from '../../../../platform/core';
@@ -106,47 +105,32 @@ export class MaterialComponentsComponent {
     lockHouse: false,
   };
 
-  _snackBarConfig: MdSnackBarConfig;
-  _dialogConfig: MdDialogConfig;
-
   constructor(private _snackBarService: MdSnackBar,
-              private _dialogService: MdDialog,
-              viewContainerRef: ViewContainerRef) {
-    this._snackBarConfig = new MdSnackBarConfig();
-    this._snackBarConfig.viewContainerRef = viewContainerRef;
-    this._dialogConfig = new MdDialogConfig();
-    this._dialogConfig.viewContainerRef = viewContainerRef;
+              private _dialogService: MdDialog) {
   }
 
   showSnackBar(): void {
-    let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', this._snackBarConfig);
-    setTimeout(() => {
-      snackBarRef.dismiss();
-    }, 3000);
+    this._snackBarService.open('Message', 'Action', { duration: 3000 });
   }
 
   showAlertDialog(): void {
     let dialogRef: MdDialogRef<TdAlertDialogComponent> =
-    this._dialogService.open(TdAlertDialogComponent, this._dialogConfig);
+    this._dialogService.open(TdAlertDialogComponent);
     dialogRef.componentInstance.title = 'Alert Title';
     dialogRef.componentInstance.message = 'This is an alert dialog with a custom message.';
   }
 
   showConfirmDialog(): void {
     let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
-    this._dialogService.open(TdConfirmDialogComponent, this._dialogConfig);
+    this._dialogService.open(TdConfirmDialogComponent);
     dialogRef.componentInstance.title = 'Confirmation Title';
     dialogRef.componentInstance.message = 'This is a confirmation dialog. Like what you see in covalent?';
     dialogRef.afterClosed().subscribe((data: any) => {
-      let snackBarRef: MdSnackBarRef<any>;
       if (data) {
-        snackBarRef = this._snackBarService.open('You clicked Yes :D', 'Ok', this._snackBarConfig);
+        this._snackBarService.open('You clicked Yes :D', 'Ok', { duration: 3000 });
       } else {
-        snackBarRef = this._snackBarService.open('You clicked No :(', 'Ok', this._snackBarConfig);
+        this._snackBarService.open('You clicked No :(', 'Ok', { duration: 3000 });
       }
-      setTimeout(() => {
-        snackBarRef.dismiss();
-      }, 3000);
     });
   }
 }

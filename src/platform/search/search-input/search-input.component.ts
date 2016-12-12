@@ -97,8 +97,12 @@ export class TdSearchInputComponent implements OnInit {
     this.onBlur.emit(undefined);
   }
 
-  handleSearch(event: Event): void {
+  stopPropagation(event: Event): void {
     event.stopPropagation();
+  }
+
+  handleSearch(event: Event): void {
+    this.stopPropagation(event);
     this.onSearch.emit(this.searchTermControl.value);
   }
 
