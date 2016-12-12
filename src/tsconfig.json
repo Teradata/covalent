@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,6 +17,9 @@
     ],
     "types": [
       "jasmine", "hammerjs"
-    ]
+    ],
+    "paths": {
+      "@covalent/*": ["./platform/*"]
+    }
   }
 }
