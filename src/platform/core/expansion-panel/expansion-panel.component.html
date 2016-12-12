@@ -28,10 +28,10 @@
     </a>
   </md-nav-list>
   <div>
-    <div [tdToggle]="!expand">
+    <div class="td-expansion-content" [@tdCollapse]="!expand">
       <ng-content></ng-content>
     </div>
-    <div [tdToggle]="expand">
+    <div class="td-expansion-summary" [@tdCollapse]="expand">
       <ng-content select="td-expansion-summary"></ng-content>
     </div>
   </div>
