@@ -852,7 +852,7 @@
   <md-card-title>Tabs</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>One</template>
         <h3 class="md-title">First tab content</h3>
@@ -867,7 +867,7 @@
     <md-divider></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <md-tab-group>
+        <md-tab-group md-stretch-tabs>
           <md-tab>
             <template md-tab-label>First tab content</template>
             <h1>First content</h1>
@@ -982,7 +982,7 @@
 </md-card>
 <md-card>
   <md-card-title>Grid list with images and headers or footers</md-card-title>
-  <md-tab-group>
+  <md-tab-group md-stretch-tabs>
     <md-tab>
       <template md-tab-label>Headers</template>
       <md-grid-list cols="3" rowHeight="200px">
@@ -1213,21 +1213,15 @@
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { Component, ViewContainerRef } from '@angular/core';
-        import { MdSnackBar, MdSnackBarConfig, MdSnackBarRef } from '@angular/material';
+        import { Component } from '@angular/core';
+        import { MdSnackBar } from '@angular/material';
         ...
-        ...
-        private _snackBarConfig: MdSnackBarConfig;
-        
-        constructor(private _snackBarService: MdSnackBar, viewContainerRef: ViewContainerRef) {
-          this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+        ...        
+        constructor(private _snackBarService: MdSnackBar) {
         }
 
         showSnackBar(): void {
-          let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', this._snackBarConfig);
-          setTimeout(() => {
-            snackBarRef.dismiss();
-          }, 3000);
+          let snackBarRef: MdSnackBarRef<any> = this._snackBarService.open('Message', 'Action', { duration: 3000 });
         }
         ]]>
       </td-highlight>
@@ -1242,27 +1236,21 @@
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="typescript">
       <![CDATA[
-          import { Component, ViewContainerRef } from '@angular/core';
-          import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+          import { Component } from '@angular/core';
+          import { MdDialog, MdDialogRef } from '@angular/material';
           import { CustomAlertDialogComponent, CustomConfirmDialogComponent } from 'path/to/customdialogs'
           ...
-          ...
-          private _dialogConfig: MdDialogConfig;
-
-          constructor(private _dialogService: MdDialog,
-                      viewContainerRef: ViewContainerRef) {
-            this._dialogConfig = new MdDialogConfig();
-            this._dialogConfig.viewContainerRef = viewContainerRef;
+          constructor(private _dialogService: MdDialog) {
           }
 
           showAlertDialog(): void {
             let dialogRef: MdDialogRef<CustomAlertDialogComponent> =
-            this._dialogService.open(CustomAlertDialogComponent, this._dialogConfig);
+            this._dialogService.open(CustomAlertDialogComponent);
           }
 
           showConfirmDialog(): void {
             let dialogRef: MdDialogRef<CustomConfirmDialogComponent> =
-            this._dialogService.open(CustomConfirmDialogComponent, this._dialogConfig);
+            this._dialogService.open(CustomConfirmDialogComponent);
             dialogRef.afterClosed().subscribe((data: boolean) => {
               if (data) {
                 // clicked yes

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { TdDataTableSortingOrder, TdDataTableService,
          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/data-table';
@@ -256,14 +256,12 @@ export class DataTableDemoComponent implements OnInit {
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
-              private _dialogService: TdDialogService,
-              private _viewContainerRef: ViewContainerRef) {}
+              private _dialogService: TdDialogService) {}
 
   openPrompt(row: any, name: string): void {
     this._dialogService.openPrompt({
       message: 'Enter comment?',
       value: row[name],
-      viewContainerRef: this._viewContainerRef,
     }).afterClosed().subscribe((value: any) => {
       if (value !== undefined) {
         row[name] = value;
