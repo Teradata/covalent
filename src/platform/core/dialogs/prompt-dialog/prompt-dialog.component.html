@@ -5,7 +5,7 @@
   <td-dialog-content layout="column" class="md-subhead tc-grey-700">
     {{message}}
     <form #form="ngForm" layout="row" novalidate flex>
-      <md-input (keyup.enter)="form.valid && accept()"
+      <md-input (keydown.enter)="$event.preventDefault(); form.valid && accept()"
                 [(ngModel)]="value"
                 name="value"
                 required
