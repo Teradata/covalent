@@ -104,22 +104,19 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       return this._columns;
     }
 
-    if (!this._data) {
-      return [];
-    }
-
-    this._columns = [];
-    // if columns is undefined, use key in [data] rows as name and label for column headers.
-    if (this._data.length > 0) {
+    if (this.hasData) {
+      this._columns = [];
+      // if columns is undefined, use key in [data] rows as name and label for column headers.
       let row: any = this._data[0];
       Object.keys(row).forEach((k: string) => {
         if (!this._columns.find((c: any) => c.name === k)) {
           this._columns.push({ name: k, label: k });
         }
       });
+      return this._columns;
+    } else {
+      return [];
     }
-
-    return this._columns;
   }
 
   /**
@@ -186,7 +183,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   get hasData(): boolean {
-    return this._data.length > 0;
+    return this._data && this._data.length > 0;
   }
 
   /**
