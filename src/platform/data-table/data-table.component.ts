@@ -25,7 +25,7 @@ export interface ITdDataTableColumn {
   label: string;
   tooltip?: string;
   numeric?: boolean;
-  format?: { (value: any): any };
+  format?: (value: any) => any;
 };
 
 export interface ITdDataTableSelectEvent {
