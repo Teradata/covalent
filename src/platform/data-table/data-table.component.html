@@ -17,8 +17,7 @@
         [sortable]="_sortable"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
-        <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
-        <span *ngIf="!column.tooltip">{{column.label}}</span>
+        <span [md-tooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
         [class.md-selected]="_selectable && isRowSelected(row)"
