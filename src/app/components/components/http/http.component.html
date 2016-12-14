@@ -95,7 +95,7 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { Injectable } from '@angular/core';
-        import { Response, Http } from '@angular/http';
+        import { Response, Http, Headers } from '@angular/http';
         import { RESTService, HttpInterceptorService } from '@covalent/http';
 
         @Injectable()
@@ -105,6 +105,8 @@
             super(_http, {
               baseUrl: 'www.api.com',
               path: '/path/to/endpoint',
+              headers: new Headers(),
+              dynamicHeaders: () => new Headers(),
               transform: (res: Response): any => res.json(),
             });
           }
