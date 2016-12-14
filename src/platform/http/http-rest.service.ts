@@ -47,10 +47,13 @@ export abstract class RESTService<T> {
     this.transform = config.transform ? config.transform : (response: Response): any => response.json();
   }
 
-  public query(query?: IRestQuery): Observable<Array<T>> {
+  public query(query?: IRestQuery, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(undefined, query), this.buildRequestOptions());
     return request.map((res: Response) => {
-      return <Array<T>>this.transform(res);
+      if (transform) {
+        return transform(res);
+      }
+      return this.transform(res);
     }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
@@ -62,10 +65,13 @@ export abstract class RESTService<T> {
     });
   }
 
-  public get(id: string | number): Observable<T> {
+  public get(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(id), this.buildRequestOptions());
     return request.map((res: Response) => {
-      return <T>this.transform(res);
+      if (transform) {
+        return transform(res);
+      }
+      return this.transform(res);
     }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
@@ -77,12 +83,15 @@ export abstract class RESTService<T> {
     });
   }
 
-  public create(obj: T): Observable<T> {
+  public create(obj: T, transform?: IRestTransform): Observable<any> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.post(this.buildUrl(), obj, requestOptions);
     return request.map((res: Response) => {
       if (res.status === 201) {
-        return <T>this.transform(res);
+        if (transform) {
+          return transform(res);
+        }
+        return this.transform(res);
       } else {
         return res;
       }
@@ -97,12 +106,15 @@ export abstract class RESTService<T> {
     });
   }
 
-  public update(id: string | number, obj: T): Observable<T> {
+  public update(id: string | number, obj: T, transform?: IRestTransform): Observable<any> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
     return request.map((res: Response) => {
       if (res.status === 200) {
-        return <T>this.transform(res);
+        if (transform) {
+          return transform(res);
+        }
+        return this.transform(res);
       } else {
         return res;
       }
@@ -117,11 +129,14 @@ export abstract class RESTService<T> {
     });
   }
 
-  public delete(id: string | number): Observable<T> {
+  public delete(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.delete(this.buildUrl(id), this.buildRequestOptions());
     return request.map((res: Response) => {
       if (res.status === 200) {
-        return <T>this.transform(res);
+        if (transform) {
+          return transform(res);
+        }
+        return this.transform(res);
       } else {
         return res;
       }
