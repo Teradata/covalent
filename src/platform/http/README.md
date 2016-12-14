@@ -23,6 +23,7 @@ To add a desired interceptor, it needs to implement the [IHttpInterceptor] inter
 ```typescript
 export interface IHttpInterceptor {
   onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+  onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
   onResponse?: (response: Response) => Response;
   onResponseError?: (error: Response) => Response;
 }
@@ -40,8 +41,22 @@ import { IHttpInterceptor } from '@covalent/http';
 @Injectable()
 export class CustomInterceptor implements IHttpInterceptor {
 
-  onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-    ... // do something to requestOptions
+   onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+    ... // do something to requestOptions before a request
+    ... // if something is wrong, throw an error to execute onRequestError (if there is an onRequestError hook)
+    if (/*somethingWrong*/) {
+      throw 'error message for subscription error callback';
+    }
+    return requestOptions;
+  }
+
+  onRequestError(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+    ... // do something to try and recover from an error thrown `onRequest` 
+    ... // and return the requestOptions needed for the request
+    ... // else return 'undefined' or throw an error to execute the error callback of the subscription
+    if (cantRecover) {
+      throw 'error message for subscription error callback'; // or return undefined;
+    }
     return requestOptions;
   }
 
