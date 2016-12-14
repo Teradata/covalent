@@ -1,9 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { Headers, Response } from '@angular/http';
+
+import { RESTService, HttpInterceptorService } from '@covalent/http';
+
+@Injectable()
+export class DemoService extends RESTService<any> {
+
+  constructor(http: HttpInterceptorService) {
+    super(http, {
+      baseUrl: 'url',
+      path: 'path',
+      baseHeaders: new Headers({'authorization': 'token'}),
+      transform: (res: Response) => res.json(),
+    });
+  }
+
+}
 
 @Component({
   selector: 'http-demo',
   styleUrls: [ 'http.component.scss' ],
   templateUrl: 'http.component.html',
+  providers: [ DemoService ],
 })
 export class HttpDemoComponent {
 
@@ -69,5 +87,17 @@ export class HttpDemoComponent {
     name: 'buildUrl',
     type: 'function(id?: string | number, query?: IRestQuery)',
   }];
+
+  constructor(private demoService: DemoService) {
+    // Piece of code to test http requests using our internal products (need to put mock api in covalent soon)
+    /*
+    demoService.query(undefined, (res: Response) => {
+      let data: any[] = res.json();
+      return {total: apps.length, data: data};
+    }).subscribe((result: any) => {
+      console.log(result)
+    })
+    */
+  }
 
 }
