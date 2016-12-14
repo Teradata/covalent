@@ -6,6 +6,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 
 export interface IHttpInterceptor {
   onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+  onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
   onResponse?: (response: Response) => Response;
   onResponseError?: (error: Response) => Response;
 }
@@ -22,31 +23,87 @@ export class HttpInterceptorService {
   }
 
   request(url: string | Request, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.request(url, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.request(url, requestOptionsArgs));
   }
 
   delete(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.delete(url, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.delete(url, requestOptionsArgs));
   }
 
   get(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.get(url, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.get(url, requestOptionsArgs));
   }
 
   head(url: string, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.head(url, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.head(url, requestOptionsArgs));
   }
 
   patch(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.patch(url, data, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.patch(url, data, requestOptionsArgs));
   }
 
   post(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.post(url, data, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.post(url, data, requestOptionsArgs));
   }
 
   put(url: string, data: any, options: RequestOptionsArgs = {}): Observable<Response> {
-    return this._setupRequest(this._http.put(url, data, this._requestResolve(options)));
+    let requestOptionsArgs: RequestOptionsArgs;
+    try {
+      requestOptionsArgs = this._requestResolve(options);
+    } catch (e) {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        subscriber.error(e);
+      });
+    }
+    return this._setupRequest(this._http.put(url, data, requestOptionsArgs));
   }
 
   private _setupRequest(responseObservable: Observable<Response>): Observable<Response> {
@@ -65,7 +122,18 @@ export class HttpInterceptorService {
   private _requestResolve(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
     this._requestInterceptors.forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onRequest) {
-        requestOptions = interceptor.onRequest(requestOptions);
+        try {
+          requestOptions = interceptor.onRequest(requestOptions);
+        } catch (e) {
+          if (interceptor.onRequestError) {
+            requestOptions = interceptor.onRequestError(requestOptions);
+            if (!requestOptions) {
+              throw e;
+            }
+          } else {
+            throw e;
+          }
+        }
       }
     });
     return requestOptions;
