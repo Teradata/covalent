@@ -7,12 +7,14 @@
     <p>Service provided with methods that wrap the ng2 [Http] service and provide an easier experience for interceptor implementation.</p>
     <p>To add a desired interceptor, it needs to implement the [IHttpInterceptor] interface.</p>
     <td-highlight lang="typescript">
-      export interface IHttpInterceptor {
-        onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-        onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-        onResponse?: (response: Response) => Response;
-        onResponseError?: (error: Response) => Response;
-      }
+      <![CDATA[
+        export interface IHttpInterceptor {
+          onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onResponse?: (response: Response) => Response;
+          onResponseError?: (error: Response) => Response;
+        }
+      ]]>
     </td-highlight>
     <h3>Methods:</h3>
     <p>The [HttpInterceptorService] service has {{interceptorServiceMethods.length}} properties:</p>
