@@ -35,16 +35,19 @@ module.exports = function (config) {
       config: './angular-cli.json',
       environment: 'dev'
     },
+    mime: {
+      'text/x-typescript': ['ts','tsx']
+    },
     reporters: ['progress', 'karma-remap-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
     singleRun: false
   };
   if (process.env.TRAVIS) {
-    //configuration.browsers = ['Chrome_travis_ci'];
+    configuration.browsers = ['Chrome_travis_ci'];
   }
   config.set(configuration);
 };
