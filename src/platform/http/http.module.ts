@@ -1,7 +1,7 @@
-import { NgModule, ModuleWithProviders, Type, Injector } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 
-import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
 
 @NgModule({
   imports: [
@@ -12,15 +12,15 @@ import { HttpInterceptorService } from './http-interceptor.service';
   ],
 })
 export class CovalentHttpModule {
-  static forRoot(requestInterceptors: Type<any>[] = []): ModuleWithProviders {
+  static forRoot(config: {inteceptors: IHttpInterceptorConfig[]} = {inteceptors: []}): ModuleWithProviders {
     let providers: any[] = [];
-    requestInterceptors.forEach((interceptor: Type<any>) => {
-      providers.push(interceptor);
+    config.inteceptors.forEach((configInterceptor: IHttpInterceptorConfig) => {
+      providers.push(configInterceptor.interceptor);
     });
     providers.push({
       provide: HttpInterceptorService,
       useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-        return new HttpInterceptorService(http, injector, requestInterceptors);
+        return new HttpInterceptorService(http, injector, config.inteceptors);
       },
       deps: [Http, Injector],
     });
