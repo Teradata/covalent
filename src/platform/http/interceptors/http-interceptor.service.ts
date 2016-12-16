@@ -5,16 +5,12 @@ import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
 
 import { IHttpInterceptor } from './http-interceptor.interface';
-import { IURLCompare } from './url-compare.interface';
-import { URLRegExCompare } from './url-regexp-compare.class';
+import { IHttpInterceptorMatcher } from './http-interceptor-matcher.interface';
+import { IHttpInterceptorMapping } from './http-interceptor-mapping.interface';
+import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 
 export interface IHttpInterceptorConfig {
   interceptor: Type<any>;
-  paths: string[];
-}
-
-export interface IHttpInterceptorMapping {
-  interceptor: IHttpInterceptor;
   paths: string[];
 }
 
@@ -22,7 +18,7 @@ export interface IHttpInterceptorMapping {
 export class HttpInterceptorService {
 
   private _requestInterceptors: IHttpInterceptorMapping[] = [];
-  private _urlCompare: IURLCompare;
+  private _urlCompare: IHttpInterceptorMatcher;
 
   constructor(private _http: Http,
               private _injector: Injector,
@@ -33,7 +29,7 @@ export class HttpInterceptorService {
         paths: config.paths,
       });
     });
-    this._urlCompare = this._createURLCompareInstance();
+    this._urlCompare = this._createHttpInterceptorMatcherInstance();
   }
 
   public delete(url: string, requestOptions: RequestOptionsArgs = {}): Observable<Response> {
@@ -82,8 +78,11 @@ export class HttpInterceptorService {
     } else {
       requestUrl = url;
     }
+    if (!requestOptions.url) {
+      requestOptions.url = requestUrl;
+    }
     let interceptors: IHttpInterceptor[] = this._requestInterceptors.filter((mapping: IHttpInterceptorMapping) => {
-      return this._urlCompare.compare(requestUrl, mapping.paths);
+      return this._urlCompare.matches(requestOptions, mapping);
     }).map((mapping: IHttpInterceptorMapping) => {
       return mapping.interceptor;
     });
@@ -151,8 +150,8 @@ export class HttpInterceptorService {
     return error;
   }
 
-  private _createURLCompareInstance(): IURLCompare {
-    return new URLRegExCompare();
+  private _createHttpInterceptorMatcherInstance(): IHttpInterceptorMatcher {
+    return new URLRegExpInterceptorMatcher();
   }
 
 }
