@@ -397,4 +397,31 @@ describe('Service: RESTService', () => {
       expect(complete).toBe(true, 'on complete didnt execute with observables');
     })
   ));
+
+  it('expect to do a query succesfully with dynamicHeaders with observables',
+    async(inject([DynamicHeadersTestRESTService, MockBackend],
+                 (service: DynamicHeadersTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        expect(connection.request.headers.get('header')).toBe('value', 'request didnt have dynamicHeaders');
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.query().subscribe((data: string) => {
+        expect(data).toBe('success');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
 });
