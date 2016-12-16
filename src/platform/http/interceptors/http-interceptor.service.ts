@@ -7,7 +7,6 @@ import { Subscriber } from 'rxjs/Subscriber';
 import { IHttpInterceptor } from './http-interceptor.interface';
 import { IHttpInterceptorMatcher } from './http-interceptor-matcher.interface';
 import { IHttpInterceptorMapping } from './http-interceptor-mapping.interface';
-import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 
 export interface IHttpInterceptorConfig {
   interceptor: Type<any>;
@@ -18,10 +17,10 @@ export interface IHttpInterceptorConfig {
 export class HttpInterceptorService {
 
   private _requestInterceptors: IHttpInterceptorMapping[] = [];
-  private _urlCompare: IHttpInterceptorMatcher;
 
   constructor(private _http: Http,
               private _injector: Injector,
+              private _httpInterceptorMatcher: IHttpInterceptorMatcher,
               requestInterceptorConfigs: IHttpInterceptorConfig[]) {
     requestInterceptorConfigs.forEach((config: IHttpInterceptorConfig) => {
       this._requestInterceptors.push({
@@ -29,7 +28,6 @@ export class HttpInterceptorService {
         paths: config.paths,
       });
     });
-    this._urlCompare = this._createHttpInterceptorMatcherInstance();
   }
 
   public delete(url: string, requestOptions: RequestOptionsArgs = {}): Observable<Response> {
@@ -82,7 +80,7 @@ export class HttpInterceptorService {
       requestOptions.url = requestUrl;
     }
     let interceptors: IHttpInterceptor[] = this._requestInterceptors.filter((mapping: IHttpInterceptorMapping) => {
-      return this._urlCompare.matches(requestOptions, mapping);
+      return this._httpInterceptorMatcher.matches(requestOptions, mapping);
     }).map((mapping: IHttpInterceptorMapping) => {
       return mapping.interceptor;
     });
@@ -148,10 +146,6 @@ export class HttpInterceptorService {
       }
     });
     return error;
-  }
-
-  private _createHttpInterceptorMatcherInstance(): IHttpInterceptorMatcher {
-    return new URLRegExpInterceptorMatcher();
   }
 
 }

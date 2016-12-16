@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { MockBackend } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { HttpInterceptorService } from './http-interceptor.service';
+import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 import 'rxjs/Rx';
 
 describe('Service: HttpInterceptor', () => {
@@ -25,7 +26,7 @@ describe('Service: HttpInterceptor', () => {
         }, {
           provide: HttpInterceptorService,
           useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-            return new HttpInterceptorService(http, injector, []);
+            return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), []);
           },
           deps: [Http, Injector],
         },
