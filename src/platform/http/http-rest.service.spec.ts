@@ -370,4 +370,31 @@ describe('Service: RESTService', () => {
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
     })
   ));
+
+  it('expect to do a query succesfully with baseHeaders with observables',
+    async(inject([BaseHeadersTestRESTService, MockBackend],
+                 (service: BaseHeadersTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        expect(connection.request.headers.get('header')).toBe('value', 'request didnt have baseHeaders');
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.query().subscribe((data: string) => {
+        expect(data).toBe('success');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
 });
