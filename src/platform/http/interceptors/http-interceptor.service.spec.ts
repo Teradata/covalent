@@ -31,12 +31,42 @@ export class RequestAuthInterceptor {
   }
 }
 
+@Injectable()
+export class RequestFailureInterceptor {
+  onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
+    throw 'error';
+  }
+}
+
+@Injectable()
+export class RequestRecoveryInterceptor {
+  onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
+    throw 'error';
+  }
+
+  onRequestError(request: RequestOptionsArgs): RequestOptionsArgs {
+    if (!request.headers) {
+      request.headers = new Headers();
+    }
+    request.headers.set('recovered', 'yes');
+    return request;
+  }
+
+  onResponse(response: Response): Response {
+    return new Response(new ResponseOptions({body: JSON.stringify('recovered'), status: 200}));
+  }
+}
+
 describe('Service: HttpInterceptor', () => {
 
   let config: IHttpInterceptorConfig[] = [{
     interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
   }, {
     interceptor: RequestAuthInterceptor, paths: ['**'],
+  }, {
+    interceptor: RequestFailureInterceptor, paths: ['/error'],
+  }, {
+    interceptor: RequestRecoveryInterceptor, paths: ['/recovery/*/fromerror'],
   }];
 
   beforeEach(async(() => {
@@ -47,6 +77,8 @@ describe('Service: HttpInterceptor', () => {
       providers: [
         ResponseOverrideInterceptor,
         RequestAuthInterceptor,
+        RequestFailureInterceptor,
+        RequestRecoveryInterceptor,
         MockBackend, {
           provide: XHRBackend,
           useExisting: MockBackend,
@@ -60,6 +92,51 @@ describe('Service: HttpInterceptor', () => {
       ],
     });
   }));
+
+  it('expect to intercept only the route with `/recovery/*/fromerror` and recover from a failure',
+    async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        if (connection.request.url === 'http://www.test.com/recovery/id/fromerror') {
+          expect(connection.request.headers.get('recovered')).toBe('yes', 'did not execute onRequestError when failed');
+        } else {
+          expect(connection.request.headers.get('recovered'))
+          .toBeNull('did execute onRequestError when failed when it shouldnt');
+        }
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+
+      service.patch('http://www.test.com/recovery/id/id2/fromerror', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('success', '/error/*/fromerror was intercepted');
+      });
+
+      service.patch('http://www.test.com/recovery/id/fromerror', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('recovered', '/error/*/fromerror was not intercepted');
+      });
+    })
+  ));
+
+  it('expect to intercept only the route with `/error` and fail',
+    async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+
+      service.patch('http://www.test.com/error', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeUndefined('/error was not intercepted so request didnt fail');
+      }, (error: any) => {
+        expect(error).toBe('error');
+      });
+    })
+  ));
 
   it('expect to intercept all routes and add an `auth=test-auth` header',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
