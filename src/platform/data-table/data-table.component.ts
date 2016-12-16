@@ -25,7 +25,7 @@ export interface ITdDataTableColumn {
   label: string;
   tooltip?: string;
   numeric?: boolean;
-  format?: { (value: any): any };
+  format?: (value: any) => any;
 };
 
 export interface ITdDataTableSelectEvent {
@@ -104,22 +104,19 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       return this._columns;
     }
 
-    if (!this._data) {
-      return [];
-    }
-
-    this._columns = [];
-    // if columns is undefined, use key in [data] rows as name and label for column headers.
-    if (this._data.length > 0) {
+    if (this.hasData) {
+      this._columns = [];
+      // if columns is undefined, use key in [data] rows as name and label for column headers.
       let row: any = this._data[0];
       Object.keys(row).forEach((k: string) => {
         if (!this._columns.find((c: any) => c.name === k)) {
           this._columns.push({ name: k, label: k });
         }
       });
+      return this._columns;
+    } else {
+      return [];
     }
-
-    return this._columns;
   }
 
   /**
@@ -186,7 +183,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   get hasData(): boolean {
-    return this._data.length > 0;
+    return this._data && this._data.length > 0;
   }
 
   /**
@@ -235,7 +232,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   refresh(): void {
     this.clearModel();
-    this._preprocessData();
   }
 
   /**
@@ -335,15 +331,5 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   onChange = (_: any) => noop;
   onTouched = () => noop;
-
-  private _preprocessData(): void {
-    let data: Object[] = JSON.parse(JSON.stringify(this._data));
-    this._data = data.map((row: any) => {
-      this.columns.filter((c: any) => c.format).forEach((c: any) => {
-        row[c.name] = c.format(row[c.name]);
-      });
-      return row;
-    });
-  }
 
 }
