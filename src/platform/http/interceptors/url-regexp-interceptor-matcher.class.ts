@@ -10,7 +10,11 @@ export class URLRegExpInterceptorMatcher implements IHttpInterceptorMatcher {
       path = path.replace(/\*\*/gi, '<>')
                 .replace(/\*/gi, '[a-zA-Z0-9\\-_]+')
                 .replace(/<>/gi, '[a-zA-Z0-9\\-_\/]*');
-      return new RegExp(path + '(\\?{1}.*)?$').test(options.url);
+      if (path) {
+        path += '(\\?{1}.*)?$';
+        return new RegExp(path).test(options.url);
+      }
+      return false;
     }).length > 0;
   }
 
