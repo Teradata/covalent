@@ -3,14 +3,168 @@ import {
   inject,
   async,
 } from '@angular/core/testing';
-import { Injector } from '@angular/core';
-import { XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { Injector, Injectable } from '@angular/core';
+import { Headers, XHRBackend, Response, ResponseOptions, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { MockBackend } from '@angular/http/testing';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
-import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpInterceptorService, IHttpInterceptorConfig } from './http-interceptor.service';
 import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 import 'rxjs/Rx';
+
+@Injectable()
+export class ResponseOverrideInterceptor {
+
+  onResponse(response: Response): Response {
+    return new Response(new ResponseOptions({body: JSON.stringify('override'), status: 200}));
+  }
+}
+
+@Injectable()
+export class RequestAuthInterceptor {
+  onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
+    if (!request.headers) {
+      request.headers = new Headers();
+    }
+    request.headers.set('auth', 'test-auth');
+    return request;
+  }
+}
+
+describe('Service: HttpInterceptor', () => {
+
+  let config: IHttpInterceptorConfig[] = [{
+    interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
+  }, {
+    interceptor: RequestAuthInterceptor, paths: ['**'],
+  }];
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        HttpModule,
+      ],
+      providers: [
+        ResponseOverrideInterceptor,
+        RequestAuthInterceptor,
+        MockBackend, {
+          provide: XHRBackend,
+          useExisting: MockBackend,
+        }, {
+          provide: HttpInterceptorService,
+          useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
+            return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config);
+          },
+          deps: [Http, Injector],
+        },
+      ],
+    });
+  }));
+
+  it('expect to intercept all routes and add an `auth=test-auth` header',
+    async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        expect(connection.request.headers.get('auth')).toBe('test-auth', 'didnt add `auth` header on all routes');
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+
+      service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.post('http://www.test.com/any_path?query=1&query=2', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.get('http://www.test.com/url/any-path/111')
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.get('http://www.test.com/anypath/url')
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.delete('http://www.test.com/any_path?', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.delete('http://www.test.com', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.patch('http://www.test.com/any_path/111/url/another_path', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+
+      service.patch('http://www.test.com/any-path/111/another_path/', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBeTruthy();
+      });
+    })
+  ));
+
+  it('expect to intercept routes that contain `/url` in them and override responses body with `override`',
+    async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+
+      service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('override', 'didnt intercept url with `/url`');
+      });
+
+      service.post('http://www.test.com/any_path?query=1&query=2', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('success', 'intercepted url without `/url`');
+      });
+
+      service.get('http://www.test.com/url/any-path/111')
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('override', 'didnt intercept url with `/url`');
+      });
+
+      service.get('http://www.test.com/anypath/url')
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('override', 'didnt intercept url with `/url`');
+      });
+
+      service.delete('http://www.test.com/any_path?', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('success', 'intercepted url without `/url`');
+      });
+
+      service.delete('http://www.test.com', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('success', 'intercepted url without `/url`');
+      });
+
+      service.patch('http://www.test.com/any_path/111/url/another_path', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('override', 'didnt intercept url with `/url`');
+      });
+
+      service.patch('http://www.test.com/any-path/111/another_path/', {})
+      .map((res: Response) => res.json()).subscribe((data: string) => {
+        expect(data).toBe('success', 'intercepted url without `/url`');
+      });
+    })
+  ));
+
+});
 
 describe('Service: HttpInterceptor', () => {
 
@@ -36,7 +190,7 @@ describe('Service: HttpInterceptor', () => {
 
   it('expect to do a forkJoin get succesfully with observables',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
-      mockBackend.connections.subscribe((connection: any) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
             body: JSON.stringify('success')}
@@ -65,7 +219,7 @@ describe('Service: HttpInterceptor', () => {
 
   it('expect to do a post succesfully with observables',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
-      mockBackend.connections.subscribe((connection: any) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
             body: JSON.stringify('success')}
@@ -90,7 +244,7 @@ describe('Service: HttpInterceptor', () => {
 
   it('expect to do a post failure with observables',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
-      mockBackend.connections.subscribe((connection: any) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
       });
       let success: boolean = false;
@@ -112,7 +266,7 @@ describe('Service: HttpInterceptor', () => {
 
   it('expect to do a post succesfully with promises',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
-      mockBackend.connections.subscribe((connection: any) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
             body: JSON.stringify('success')}
@@ -135,7 +289,7 @@ describe('Service: HttpInterceptor', () => {
 
   it('expect to do a post failure with promises',
     async(inject([HttpInterceptorService, MockBackend], (service: HttpInterceptorService, mockBackend: MockBackend) => {
-      mockBackend.connections.subscribe((connection: any) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
       });
       let success: boolean = false;
