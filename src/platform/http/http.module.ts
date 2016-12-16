@@ -8,9 +8,6 @@ import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-intercept
   imports: [
     HttpModule,
   ],
-  providers: [
-    HttpInterceptorService,
-  ],
 })
 export class CovalentHttpModule {
   static forRoot(config: {inteceptors: IHttpInterceptorConfig[]} = {inteceptors: []}): ModuleWithProviders {
