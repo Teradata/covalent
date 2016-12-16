@@ -136,7 +136,7 @@ describe('Service: RESTService', () => {
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url)
-        .toBe('www.url.com/path/to/endpoint?firstParam=1&secondParam=value&thirdParam=false',
+        .toBe('www.url.com/path/to/endpoint?firstParam=1&second-Param=value&thirdParam=false',
               'url with query parameters didnt match the expected url');
         expect(connection.request.method).toBe(RequestMethod.Get, 'request didnt have GET method');
         connection.mockRespond(new Response(new ResponseOptions({
@@ -149,7 +149,7 @@ describe('Service: RESTService', () => {
       let complete: boolean = false;
       service.query({
         firstParam: 1,
-        secondParam: 'value',
+        'second-Param': 'value',
         thirdParam: false,
       }).subscribe((data: string) => {
         expect(data).toBe('success');
