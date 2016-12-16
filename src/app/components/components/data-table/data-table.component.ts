@@ -54,6 +54,12 @@ export class DataTableDemoComponent implements OnInit {
                   Emits an [ITdDataTableSelectEvent] implemented object.`,
     name: 'rowSelect',
     type: `function()`,
+  }, {
+    description: `Event emitted when all rows are selected/deselected by the all checkbox.
+                  [selectable] needs to be enabled.
+                  Emits an [ITdDataTableSelectAllEvent] implemented object.`,
+    name: 'selectAll',
+    type: `function()`,
   }];
 
   cellAttrs: Object[] = [{
