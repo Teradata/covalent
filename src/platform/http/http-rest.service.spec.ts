@@ -251,7 +251,7 @@ describe('Service: RESTService', () => {
       let success: boolean = false;
       let error: boolean = false;
       let complete: boolean = false;
-      service.get('id-for-something').subscribe((data: any) => {
+      service.get('id-of-something').subscribe((data: any) => {
         expect(data.data).toBe('success');
         expect(data.transformFrom).toBe('service');
         success = true;
@@ -267,7 +267,7 @@ describe('Service: RESTService', () => {
       success = false;
       error = false;
       complete = false;
-      service.get('id-for-something', (res: Response) => {
+      service.get('id-of-something', (res: Response) => {
         return { data: res.json(), transformFrom: 'method'};
       }).subscribe((data: any) => {
         expect(data.data).toBe('success');
@@ -447,7 +447,7 @@ describe('Service: RESTService', () => {
       let success: boolean = false;
       let error: boolean = false;
       let complete: boolean = false;
-      service.update('id-for-something', {}).subscribe((data: any) => {
+      service.update('id-of-something', {}).subscribe((data: any) => {
         expect(data.data).toBe('success');
         expect(data.transformFrom).toBe('service');
         success = true;
@@ -463,7 +463,7 @@ describe('Service: RESTService', () => {
       success = false;
       error = false;
       complete = false;
-      service.update('id-for-something', {}, (res: Response) => {
+      service.update('id-of-something', {}, (res: Response) => {
         return { data: res.json(), transformFrom: 'method'};
       }).subscribe((data: any) => {
         expect(data.data).toBe('success');
@@ -544,7 +544,7 @@ describe('Service: RESTService', () => {
       let success: boolean = false;
       let error: boolean = false;
       let complete: boolean = false;
-      service.delete('id-for-something').subscribe((data: any) => {
+      service.delete('id-of-something').subscribe((data: any) => {
         expect(data.data).toBe('success');
         expect(data.transformFrom).toBe('service');
         success = true;
@@ -560,7 +560,7 @@ describe('Service: RESTService', () => {
       success = false;
       error = false;
       complete = false;
-      service.delete('id-for-something', (res: Response) => {
+      service.delete('id-of-something', (res: Response) => {
         return { data: res.json(), transformFrom: 'method'};
       }).subscribe((data: any) => {
         expect(data.data).toBe('success');
