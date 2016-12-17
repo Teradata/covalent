@@ -3,9 +3,8 @@ import {
   inject,
   async,
 } from '@angular/core/testing';
-import { Injector, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { XHRBackend, Response, ResponseOptions, Headers, RequestMethod } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { RESTService } from './http-rest.service';
@@ -83,7 +82,7 @@ describe('Service: RESTService', () => {
     });
   }));
 
-  it('expect to do a query succesfully with observables',
+  it('expect to do a query succesfully',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url).toBe('www.url.com/path/to/endpoint',  'url doesnt match expected url');
@@ -156,7 +155,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a query failure with observables',
+  it('expect to do a query failure',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
@@ -178,7 +177,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a query with parameters succesfully with observables',
+  it('expect to do a query with parameters succesfully',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url)
@@ -211,7 +210,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a get succesfully with observables',
+  it('expect to do a get succesfully',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url)
@@ -286,7 +285,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a get failure with observables',
+  it('expect to do a get failure',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
@@ -308,7 +307,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a create succesfully with observables',
+  it('expect to do a create succesfully',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url)
@@ -384,7 +383,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a create failure with observables',
+  it('expect to do a create failure',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
@@ -406,7 +405,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do an update succesfully with observables',
+  it('expect to do an update succesfully',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         expect(connection.request.url)
@@ -482,7 +481,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a update failure with observables',
+  it('expect to do a update failure',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
@@ -579,7 +578,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a delete failure with observables',
+  it('expect to do a delete failure',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockError(new Error('error'));
@@ -601,7 +600,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a query succesfully with baseHeaders with observables',
+  it('expect to do a query succesfully with baseHeaders',
     async(inject([BaseHeadersTestRESTService, MockBackend],
                  (service: BaseHeadersTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
@@ -628,7 +627,7 @@ describe('Service: RESTService', () => {
     })
   ));
 
-  it('expect to do a query succesfully with dynamicHeaders with observables',
+  it('expect to do a query succesfully with dynamicHeaders',
     async(inject([DynamicHeadersTestRESTService, MockBackend],
                  (service: DynamicHeadersTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
