@@ -57,7 +57,7 @@ export class TransformTestRESTService extends RESTService<any> {
       baseUrl: 'www.url.com',
       path: 'path/to/endpoint',
       transform: (res: Response) => {
-        return { data: res.json(), message: 'service'};
+        return { data: res.json(), transformFrom: 'service'};
       },
     });
   }
@@ -107,6 +107,52 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
+
+  it('expect to do a query and use the service transform() and then override it with a method transform()',
+    async(inject([TransformTestRESTService, MockBackend],
+                 (service: TransformTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.query().subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('service');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+      success = false;
+      error = false;
+      complete = false;
+      service.query(undefined, (res: Response) => {
+        return { data: res.json(), transformFrom: 'method'};
+      }).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('method');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
     })
   ));
 
@@ -194,6 +240,52 @@ describe('Service: RESTService', () => {
     })
   ));
 
+  it('expect to do a get and use the service transform() and then override it with a method transform()',
+    async(inject([TransformTestRESTService, MockBackend],
+                 (service: TransformTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.get('id-for-something').subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('service');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+      success = false;
+      error = false;
+      complete = false;
+      service.get('id-for-something', (res: Response) => {
+        return { data: res.json(), transformFrom: 'method'};
+      }).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('method');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+    })
+  ));
+
   it('expect to do a get failure with observables',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
@@ -243,6 +335,52 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
+
+  it('expect to do a create and use the service transform() and then override it with a method transform()',
+    async(inject([TransformTestRESTService, MockBackend],
+                 (service: TransformTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 201,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.create({}).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('service');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+      success = false;
+      error = false;
+      complete = false;
+      service.create({}, (res: Response) => {
+        return { data: res.json(), transformFrom: 'method'};
+      }).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('method');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
     })
   ));
 
@@ -298,6 +436,52 @@ describe('Service: RESTService', () => {
     })
   ));
 
+  it('expect to do an update and use the service transform() and then override it with a method transform()',
+    async(inject([TransformTestRESTService, MockBackend],
+                 (service: TransformTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.update('id-for-something', {}).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('service');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+      success = false;
+      error = false;
+      complete = false;
+      service.update('id-for-something', {}, (res: Response) => {
+        return { data: res.json(), transformFrom: 'method'};
+      }).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('method');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+    })
+  ));
+
   it('expect to do a update failure with observables',
     async(inject([BasicTestRESTService, MockBackend], (service: BasicTestRESTService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
@@ -346,6 +530,52 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
+    })
+  ));
+
+  it('expect to do a delete and use the service transform() and then override it with a method transform()',
+    async(inject([TransformTestRESTService, MockBackend],
+                 (service: TransformTestRESTService, mockBackend: MockBackend) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+            status: 200,
+            body: JSON.stringify('success')}
+        )));
+      });
+      let success: boolean = false;
+      let error: boolean = false;
+      let complete: boolean = false;
+      service.delete('id-for-something').subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('service');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
+      success = false;
+      error = false;
+      complete = false;
+      service.delete('id-for-something', (res: Response) => {
+        return { data: res.json(), transformFrom: 'method'};
+      }).subscribe((data: any) => {
+        expect(data.data).toBe('success');
+        expect(data.transformFrom).toBe('method');
+        success = true;
+      }, () => {
+        error = true;
+      }, () => {
+        complete = true;
+      });
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+
     })
   ));
 
