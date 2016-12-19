@@ -28,31 +28,12 @@ export * from './dialogs/dialogs.module';
 import { CovalenExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 export * from './expansion-panel/expansion-panel.module';
 
-// Layouts
-import { TdLayoutComponent } from './layout/layout.component';
-import { TdLayoutNavComponent } from './layout/layout-nav/layout-nav.component';
-import { TdLayoutNavListComponent } from './layout/layout-nav-list/layout-nav-list.component';
-import { TdLayoutCardOverComponent } from './layout/layout-card-over/layout-card-over.component';
-import { TdLayoutManageListComponent } from './layout/layout-manage-list/layout-manage-list.component';
-import { TdLayoutService } from './layout/services/layout.service';
+/**
+ * LAYOUT
+ */
 
-export const TD_LAYOUT_DIRECTIVES: Type<any>[] = [
-  TdLayoutComponent,
-  TdLayoutNavComponent,
-  TdLayoutNavListComponent,
-  TdLayoutCardOverComponent,
-  TdLayoutManageListComponent,
-];
-
-export const TD_LAYOUT_PROVIDERS: Type<any>[] = [
-  TdLayoutService,
-];
-
-export { TdLayoutComponent } from './layout/layout.component';
-export { TdLayoutNavComponent } from './layout/layout-nav/layout-nav.component';
-export { TdLayoutNavListComponent } from './layout/layout-nav-list/layout-nav-list.component';
-export { TdLayoutCardOverComponent } from './layout/layout-card-over/layout-card-over.component';
-export { TdLayoutManageListComponent }  from './layout/layout-manage-list/layout-manage-list.component';
+import { CovalentLayoutModule } from './layout/layout.module';
+export * from './layout/layout.module';
 
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
@@ -105,10 +86,10 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalentNucleusModule.forRoot(),
     CovalentDialogsModule.forRoot(),
     CovalenExpansionPanelModule.forRoot(),
+    CovalentLayoutModule.forRoot(),
   ],
   declarations: [
     TdMediaToggleDirective,
-    TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
@@ -122,9 +103,9 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalentNucleusModule,
     CovalentDialogsModule,
     CovalenExpansionPanelModule,
+    CovalentLayoutModule,
 
     TdMediaToggleDirective,
-    TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
@@ -135,7 +116,7 @@ export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService, TdLayoutService, TdLoadingService ],
+      providers: [ TdMediaService, TdLoadingService ],
     };
   }
 }
