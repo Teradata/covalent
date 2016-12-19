@@ -20,7 +20,7 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "platform/core/styles/platform.scss"
+        "platform/core/nucleus/platform.scss"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
