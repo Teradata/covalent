@@ -1,5 +1,5 @@
 import { Injectable, ViewContainerRef } from '@angular/core';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogConfig, ComponentType } from '@angular/material';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -29,6 +29,25 @@ export interface IPromptConfig extends IConfirmConfig {
 export class TdDialogService {
 
   constructor(private _dialogService: MdDialog) {}
+
+  /**
+   * params:
+   * - component: ComponentType<T>
+   * - config: MdDialogConfig
+   * Wrapper function over the open() method in MdDialog.
+   * Opens a modal dialog containing the given component.
+   */
+  public open<T>(component: ComponentType<T>, config?: MdDialogConfig): MdDialogRef<T> {
+    return this._dialogService.open(component, config);
+  }
+
+  /**
+   * Wrapper function over the closeAll() method in MdDialog.
+   * Closes all of the currently-open dialogs.
+   */
+  public closeAll(): void {
+    this._dialogService.closeAll();
+  }
 
   /**
    * params:

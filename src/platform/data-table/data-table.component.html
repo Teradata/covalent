@@ -17,8 +17,7 @@
         [sortable]="_sortable"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
-        <span *ngIf="column.tooltip" [md-tooltip]="column.tooltip">{{column.label}}</span>
-        <span *ngIf="!column.tooltip">{{column.label}}</span>
+        <span [md-tooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
         [class.md-selected]="_selectable && isRowSelected(row)"
@@ -32,7 +31,7 @@
       <td td-data-table-cell
           [numeric]="column.numeric"
           *ngFor="let column of columns">
-        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{row[column.name]}}</span>
+        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(row[column.name]) : row[column.name]}}</span>
         <template
           *ngIf="getTemplateRef(column.name)"
           [ngTemplateOutlet]="getTemplateRef(column.name)"
