@@ -7,11 +7,14 @@
     <p>Service provided with methods that wrap the ng2 [Http] service and provide an easier experience for interceptor implementation.</p>
     <p>To add a desired interceptor, it needs to implement the [IHttpInterceptor] interface.</p>
     <td-highlight lang="typescript">
-      export interface IHttpInterceptor {{'{'}}
-        onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-        onResponse?: (response: Response) => Response;
-        onResponseError?: (error: Response) => Response;
-      }
+      <![CDATA[
+        export interface IHttpInterceptor {
+          onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onResponse?: (response: Response) => Response;
+          onResponseError?: (error: Response) => Response;
+        }
+      ]]>
     </td-highlight>
     <h3>Methods:</h3>
     <p>The [HttpInterceptorService] service has {{interceptorServiceMethods.length}} properties:</p>
@@ -35,7 +38,23 @@
         export class CustomInterceptor implements IHttpInterceptor {
 
           onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-            ... // do something to requestOptions
+            ... // do something to requestOptions before a request
+            ... // if something is wrong, throw an error to execute 
+            ... // onRequestError (if there is an onRequestError hook)
+            if (/*somethingWrong*/) {
+              throw 'error message for subscription error callback';
+            }
+            return requestOptions;
+          }
+
+          onRequestError(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+            ... // do something to try and recover from an error thrown `onRequest` 
+            ... // and return the requestOptions needed for the request
+            ... // else return 'undefined' or throw an error to execute the 
+            ... // error callback of the subscription
+            if (cantRecover) {
+              throw 'error message for subscription error callback'; // or return undefined;
+            }
             return requestOptions;
           }
 
@@ -95,7 +114,7 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { Injectable } from '@angular/core';
-        import { Response, Http } from '@angular/http';
+        import { Response, Http, Headers } from '@angular/http';
         import { RESTService, HttpInterceptorService } from '@covalent/http';
 
         @Injectable()
@@ -105,6 +124,8 @@
             super(_http, {
               baseUrl: 'www.api.com',
               path: '/path/to/endpoint',
+              headers: new Headers(),
+              dynamicHeaders: () => new Headers(),
               transform: (res: Response): any => res.json(),
             });
           }
