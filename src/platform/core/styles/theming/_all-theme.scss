@@ -7,7 +7,6 @@
 @import '../../loading/loading-theme';
 @import '../../json-formatter/json-formatter-theme';
 @import '../../paging/paging-bar-theme';
-@import '../../../markdown/markdown-theme';
 
 // Create a theme.
 @mixin covalent-theme($theme) {
@@ -19,6 +18,5 @@
   @include td-json-formatter-theme($theme);
   @include td-paging-bar-theme($theme);
   @include td-loading-theme($theme);
-  @include td-markdown-theme($theme);
   @include td-data-table-theme($theme);
 }

@@ -1,0 +1,6 @@
+@import '../markdown-theme';
+
+// Create a theme.
+@mixin covalent-markdown-theme($theme) {
+  @include td-markdown-theme($theme);
+}
