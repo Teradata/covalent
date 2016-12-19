@@ -32,10 +32,10 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
     TD_EXPANSION_PANEL,
   ],
 })
-export class CovalenExpansionPanelModule {
+export class CovalentExpansionPanelModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: CovalenExpansionPanelModule,
+      ngModule: CovalentExpansionPanelModule,
       providers: [ ],
     };
   }

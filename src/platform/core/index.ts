@@ -1,4 +1,3 @@
-import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -25,7 +24,7 @@ export * from './dialogs/dialogs.module';
  * EXPANSION PANEL
  */
 
-import { CovalenExpansionPanelModule } from './expansion-panel/expansion-panel.module';
+import { CovalentExpansionPanelModule } from './expansion-panel/expansion-panel.module';
 export * from './expansion-panel/expansion-panel.module';
 
 /**
@@ -49,25 +48,12 @@ export * from './loading/loading.module';
 import { CovalentMediaModule } from './media/media.module';
 export * from './media/media.module';
 
-// Steps
-import { TdStepsComponent } from './steps/steps.component';
-import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
-import { TdStepBodyComponent } from './steps/step-body/step-body.component';
-import { TdStepComponent, TdStepLabelDirective, TdStepActionsDirective,
-         TdStepSummaryDirective } from './steps/step.component';
+/**
+ * STEPS
+ */
 
-export const TD_STEP_DIRECTIVES: Type<any>[] = [
-  TdStepsComponent,
-  TdStepComponent,
-  TdStepHeaderComponent,
-  TdStepBodyComponent,
-  TdStepLabelDirective,
-  TdStepActionsDirective,
-  TdStepSummaryDirective,
-];
-
-export { TdStepComponent, StepState  } from './steps/step.component';
-export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.component';
+import { CovalentStepsModule } from './steps/steps.module';
+export * from './steps/steps.module';
 
 @NgModule({
   imports: [
@@ -78,13 +64,11 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.comp
     MaterialModule.forRoot(),
     CovalentNucleusModule.forRoot(),
     CovalentDialogsModule.forRoot(),
-    CovalenExpansionPanelModule.forRoot(),
+    CovalentExpansionPanelModule.forRoot(),
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
-  ],
-  declarations: [
-    TD_STEP_DIRECTIVES,
+    CovalentStepsModule.forRoot(),
   ],
   exports: [
     HttpModule,
@@ -94,14 +78,12 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.comp
     MaterialModule,
     CovalentNucleusModule,
     CovalentDialogsModule,
-    CovalenExpansionPanelModule,
+    CovalentExpansionPanelModule,
     CovalentLayoutModule,
     CovalentLoadingModule,
     CovalentMediaModule,
-
-    TD_STEP_DIRECTIVES,
+    CovalentStepsModule,
   ],
-  entryComponents: [ ],
 })
 export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {

@@ -12,7 +12,6 @@ const TD_MEDIA: Type<any>[] = [
 
 export { TdMediaService, TdMediaToggleDirective };
 
-
 @NgModule({
   imports: [
     CommonModule,
