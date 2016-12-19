@@ -9,6 +9,8 @@ import { TdChipsComponent } from './chips.component';
 import { TdChipComponent } from './chip.component';
 import { TdAutoCompleteComponent } from './autocomplete/autocomplete.component';
 
+export { TdChipsComponent } from './chips.component';
+
 @NgModule({
   imports: [
     FormsModule,
