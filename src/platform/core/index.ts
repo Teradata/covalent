@@ -8,13 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 /**
- * COMPONENTS
+ * NUCLEUS
  */
-
-// Nucleus
 
 import { CovalentNucleusModule } from './nucleus/nucleus.module';
 export * from './nucleus/nucleus.module';
+
+/**
+ * DIALOGS
+ */
+
+import { CovalentDialogsModule } from './dialogs/dialogs.module';
+export * from './dialogs/dialogs.module';
 
 // Layouts
 import { TdLayoutComponent } from './layout/layout.component';
@@ -89,37 +94,6 @@ export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
 
 export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
-// Dialogs
-
-import { TdDialogComponent, TdDialogTitleDirective,
-         TdDialogActionsDirective, TdDialogContentDirective } from './dialogs/dialog.component';
-import { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
-import { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
-import { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
-import { TdDialogService } from './dialogs/services/dialog.service';
-
-const TD_DIALOG_DIRECTIVES: Type<any>[] = [
-  TdAlertDialogComponent,
-  TdConfirmDialogComponent,
-  TdPromptDialogComponent,
-  TdDialogComponent,
-  TdDialogTitleDirective,
-  TdDialogActionsDirective,
-  TdDialogContentDirective,
-];
-
-export const TD_DIALOG_ENTRY_COMPONENTS: Type<any>[] = [
-  TdAlertDialogComponent,
-  TdConfirmDialogComponent,
-  TdPromptDialogComponent,
-];
-
-export { TdDialogService, IAlertConfig, IConfirmConfig, IPromptConfig } from './dialogs/services/dialog.service';
-export { TdDialogComponent, TdDialogTitleDirective } from './dialogs/dialog.component';
-export { TdAlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
-export { TdConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
-export { TdPromptDialogComponent } from './dialogs/prompt-dialog/prompt-dialog.component';
-
 /**
  * MEDIA
  */
@@ -137,6 +111,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CommonModule,
     MaterialModule.forRoot(),
     CovalentNucleusModule.forRoot(),
+    CovalentDialogsModule.forRoot(),
   ],
   declarations: [
     TdMediaToggleDirective,
@@ -145,7 +120,6 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
-    TD_DIALOG_DIRECTIVES,
   ],
   exports: [
     HttpModule,
@@ -154,6 +128,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CommonModule,
     MaterialModule,
     CovalentNucleusModule,
+    CovalentDialogsModule,
 
     TdMediaToggleDirective,
     TD_LAYOUT_DIRECTIVES,
@@ -161,15 +136,14 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
     TD_EXPANSION_DIRECTIVES,
-    TD_DIALOG_DIRECTIVES,
   ],
-  entryComponents: [ TD_DIALOG_ENTRY_COMPONENTS ],
+  entryComponents: [ ],
 })
 export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService, TdLayoutService, TdLoadingService, TdDialogService ],
+      providers: [ TdMediaService, TdLayoutService, TdLoadingService ],
     };
   }
 }
