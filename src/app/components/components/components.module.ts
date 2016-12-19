@@ -24,7 +24,6 @@ import { SearchDemoComponent } from './search/search.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
@@ -57,7 +56,6 @@ import { CovalentSearchModule } from '../../../platform/search';
   ],
   imports: [
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),

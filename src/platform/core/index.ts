@@ -42,6 +42,13 @@ import { CovalentExpansionPanelModule } from './expansion-panel/expansion-panel.
 export * from './expansion-panel/expansion-panel.module';
 
 /**
+ * FILE
+ */
+
+import { CovalentFileModule } from './file/file.module';
+export * from './file/file.module';
+
+/**
  * LAYOUT
  */
 
@@ -81,6 +88,7 @@ export * from './steps/steps.module';
     CovalentDataTableModule.forRoot(),
     CovalentDialogsModule.forRoot(),
     CovalentExpansionPanelModule.forRoot(),
+    CovalentFileModule.forRoot(),
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
@@ -97,6 +105,7 @@ export * from './steps/steps.module';
     CovalentDataTableModule,
     CovalentDialogsModule,
     CovalentExpansionPanelModule,
+    CovalentFileModule,
     CovalentLayoutModule,
     CovalentLoadingModule,
     CovalentMediaModule,

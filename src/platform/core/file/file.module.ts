@@ -12,11 +12,16 @@ import { TdFileDropDirective } from './directives/file-drop.directive';
 import { TdFileUploadComponent } from './file-upload.component';
 import { TdFileService } from './services/file.service';
 
-export const TD_FILE_DIRECTIVES: Type<any>[] = [
+const TD_FILE: Type<any>[] = [
   TdFileSelectDirective,
   TdFileDropDirective,
   TdFileUploadComponent,
 ];
+
+export { TdFileUploadComponent } from './file-upload.component';
+export { TdFileSelectDirective } from './directives/file-select.directive';
+export { TdFileDropDirective } from './directives/file-drop.directive';
+export { TdFileService, IUploadOptions } from './services/file.service';
 
 @NgModule({
   imports: [
@@ -27,10 +32,10 @@ export const TD_FILE_DIRECTIVES: Type<any>[] = [
     MaterialModule.forRoot(),
   ],
   declarations: [
-    TD_FILE_DIRECTIVES,
+    TD_FILE,
   ],
   exports: [
-    TD_FILE_DIRECTIVES,
+    TD_FILE,
   ],
 })
 export class CovalentFileModule {

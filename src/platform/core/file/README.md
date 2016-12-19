@@ -53,11 +53,11 @@ Import the [CovalentFileModule] using the forRoot() method in your NgModule:
 
 ```typescript
 import { HttpModule } from '@angular/http';
-import { CovalentFileModule } from '@covalent/file-upload';
+import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
-    HttpModule, /* or CovalentCoreModule.forRoot() */
-    CovalentFileModule.forRoot(),
+    HttpModule,
+    CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
     ...
   ],
   ...

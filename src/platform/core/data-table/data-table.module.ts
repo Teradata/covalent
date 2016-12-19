@@ -11,7 +11,7 @@ import { TdDataTableTableComponent } from './data-table-table/data-table-table.c
 import { TdDataTableService } from './services/data-table.service';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
+const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableTemplateDirective,
 
@@ -36,10 +36,10 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
     CommonModule,
   ],
   declarations: [
-    TD_DATA_TABLE_DIRECTIVES,
+    TD_DATA_TABLE,
   ],
   exports: [
-    TD_DATA_TABLE_DIRECTIVES,
+    TD_DATA_TABLE,
   ],
 })
 export class CovalentDataTableModule {

@@ -1,5 +1,5 @@
-@import '../../../node_modules/@angular/material/core/style/variables';
-@import '../../../node_modules/@angular/material/core/style/elevation';
+@import '../../../../node_modules/@angular/material/core/style/variables';
+@import '../../../../node_modules/@angular/material/core/style/elevation';
 
 button {
   padding-left: 0;
@@ -28,6 +28,7 @@ input.md-file-upload-input {
   left: -12px;
   md-icon {
     border-radius: 12px;
+    vertical-align: baseline;
   }
 }
 /**

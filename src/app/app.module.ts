@@ -10,7 +10,6 @@ import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { CovalentCoreModule } from '../platform/core';
-import { CovalentFileModule } from '../platform/file-upload';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -31,7 +30,6 @@ import { CovalentSearchModule } from '../platform/search';
     LayoutsModule,
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
