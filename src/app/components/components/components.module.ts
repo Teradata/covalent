@@ -30,7 +30,6 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
 import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentDataTableModule } from '../../../platform/data-table';
 import { CovalentPagingModule } from '../../../platform/paging';
 import { CovalentSearchModule } from '../../../platform/search';
 
@@ -65,7 +64,6 @@ import { CovalentSearchModule } from '../../../platform/search';
     CovalentJsonFormatterModule.forRoot(),
     CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
     CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
     componentsRoutes,

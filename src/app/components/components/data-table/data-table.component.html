@@ -395,10 +395,10 @@
     <p>Import the [CovalentDataTableModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentDataTableModule } from '@covalent/data-table';
+        import { CovalentDataTableModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentDataTableModule.forRoot(),
+            CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

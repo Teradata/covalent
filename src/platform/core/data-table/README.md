@@ -25,10 +25,10 @@ Properties:
 Import the [CovalentDataTableModule] using the forRoot() method in your NgModule:
 
 ```typescript
-import { CovalentDataTableModule } from '@covalent/data-table';
+import { CovalentDataTableModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentDataTableModule.forRoot(),
+    CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
     ...
   ],
   ...

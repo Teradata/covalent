@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TdDataTableSortingOrder, TdDataTableService,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/data-table';
+         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/paging';
 import { TdDialogService } from '../../../../platform/core';
 

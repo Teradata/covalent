@@ -14,6 +14,13 @@ import { CovalentNucleusModule } from './nucleus/nucleus.module';
 export * from './nucleus/nucleus.module';
 
 /**
+ * DATA TABLE
+ */
+
+import { CovalentDataTableModule } from './data-table/data-table.module';
+export * from './data-table/data-table.module';
+
+/**
  * DIALOGS
  */
 
@@ -63,6 +70,7 @@ export * from './steps/steps.module';
     CommonModule,
     MaterialModule.forRoot(),
     CovalentNucleusModule.forRoot(),
+    CovalentDataTableModule.forRoot(),
     CovalentDialogsModule.forRoot(),
     CovalentExpansionPanelModule.forRoot(),
     CovalentLayoutModule.forRoot(),
@@ -77,6 +85,7 @@ export * from './steps/steps.module';
     CommonModule,
     MaterialModule,
     CovalentNucleusModule,
+    CovalentDataTableModule,
     CovalentDialogsModule,
     CovalentExpansionPanelModule,
     CovalentLayoutModule,

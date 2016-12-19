@@ -11,7 +11,7 @@ import { TdDataTableTableComponent } from './data-table-table/data-table-table.c
 import { TdDataTableService } from './services/data-table.service';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
+const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableTemplateDirective,
 
@@ -20,6 +20,15 @@ export const TD_DATA_TABLE_DIRECTIVES: Type<any>[] = [
   TdDataTableRowComponent,
   TdDataTableTableComponent,
 ];
+
+export { TdDataTableComponent, TdDataTableSortingOrder,
+         ITdDataTableColumn } from './data-table.component';
+export { TdDataTableService } from './services/data-table.service';
+export { TdDataTableColumnComponent,
+         ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
+export { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
+export { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+export { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 
 @NgModule({
   imports: [
