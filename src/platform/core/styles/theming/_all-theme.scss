@@ -8,7 +8,6 @@
 @import '../../json-formatter/json-formatter-theme';
 @import '../../paging/paging-bar-theme';
 @import '../../../markdown/markdown-theme';
-@import '../../../charts/charts-theme';
 
 // Create a theme.
 @mixin covalent-theme($theme) {
@@ -21,6 +20,5 @@
   @include td-paging-bar-theme($theme);
   @include td-loading-theme($theme);
   @include td-markdown-theme($theme);
-  @include td-charts-theme($theme);
   @include td-data-table-theme($theme);
 }
