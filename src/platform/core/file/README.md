@@ -15,7 +15,7 @@ Example for usage:
 ```
  
 ```typescript
-import { TdFileUploadComponent } from '@covalent/file-upload';
+import { TdFileUploadComponent } from '@covalent/core';
 ...
   directives: [ TdFileUploadComponent ]
 })
@@ -135,7 +135,7 @@ interface IUploadOptions {
 Example for usage:
 
 ```html
-import { TdFileService, IUploadOptions } from '@covalent/file-upload';
+import { TdFileService, IUploadOptions } from '@covalent/core';
 ...
   providers: [ TdFileService ]
 })
