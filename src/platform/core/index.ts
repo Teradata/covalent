@@ -49,6 +49,13 @@ import { CovalentFileModule } from './file/file.module';
 export * from './file/file.module';
 
 /**
+ * JSON FORMATTER
+ */
+
+import { CovalentJsonFormatterModule } from './json-formatter/json-formatter.module';
+export * from './json-formatter/json-formatter.module';
+
+/**
  * LAYOUT
  */
 
@@ -89,6 +96,7 @@ export * from './steps/steps.module';
     CovalentDialogsModule.forRoot(),
     CovalentExpansionPanelModule.forRoot(),
     CovalentFileModule.forRoot(),
+    CovalentJsonFormatterModule.forRoot(),
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
@@ -106,6 +114,7 @@ export * from './steps/steps.module';
     CovalentDialogsModule,
     CovalentExpansionPanelModule,
     CovalentFileModule,
+    CovalentJsonFormatterModule,
     CovalentLayoutModule,
     CovalentLoadingModule,
     CovalentMediaModule,
