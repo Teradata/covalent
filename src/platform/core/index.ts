@@ -84,6 +84,13 @@ import { CovalentPagingModule } from './paging/paging.module';
 export * from './paging/paging.module';
 
 /**
+ * SEARCH
+ */
+
+import { CovalentSearchModule } from './search/search.module';
+export * from './search/search.module';
+
+/**
  * STEPS
  */
 
@@ -108,6 +115,7 @@ export * from './steps/steps.module';
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
     CovalentPagingModule.forRoot(),
+    CovalentSearchModule.forRoot(),
     CovalentStepsModule.forRoot(),
   ],
   exports: [
@@ -127,6 +135,7 @@ export * from './steps/steps.module';
     CovalentLoadingModule,
     CovalentMediaModule,
     CovalentPagingModule,
+    CovalentSearchModule,
     CovalentStepsModule,
   ],
 })

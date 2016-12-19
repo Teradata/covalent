@@ -57,10 +57,10 @@ Example for HTML usage:
 Import the [CovalentSearchModule] using the forRoot() method in your NgModule:
 
 ```typescript
-import { CovalentSearchModule } from '@covalent/chips';
+import { CovalentSearchModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentSearchModule.forRoot(),
+    CovalentSearchModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
     ...
   ],
   ...
