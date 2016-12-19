@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { TdToggleDirective } from './animations/toggle/toggle.directive';
 import { TdFadeDirective } from './animations/fade/fade.directive';
 
-export const TD_ANIMATIONS_DIRECTIVES: Type<any>[] = [
+const TD_ANIMATIONS: Type<any>[] = [
   TdToggleDirective,
   TdFadeDirective,
 ];
@@ -31,7 +31,7 @@ import { TdMinValidator } from './forms/validators/min/min.validator';
 import { TdMaxValidator } from './forms/validators/max/max.validator';
 import { TdNumberRequiredValidator } from './forms/validators/number-required/number-required.validator';
 
-export const TD_VALIDATORS: Type<any>[] = [
+const TD_VALIDATORS: Type<any>[] = [
   TdMinValidator,
   TdMaxValidator,
   TdNumberRequiredValidator,
@@ -50,7 +50,7 @@ import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
-export const TD_PIPES: Type<any>[] = [
+const TD_PIPES: Type<any>[] = [
   TdOrderByPipe,
   TdTimeAgoPipe,
   TdTimeDifferencePipe,
@@ -62,7 +62,6 @@ export const TD_PIPES: Type<any>[] = [
 export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
          TdBytesPipe, TdDigitsPipe, TdTruncatePipe };
 
-
 @NgModule({
   imports: [
     FormsModule,
@@ -70,14 +69,14 @@ export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
   ],
   declarations: [
     TD_PIPES,
-    TD_ANIMATIONS_DIRECTIVES,
+    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
   exports: [
     FormsModule,
     CommonModule,
     TD_PIPES,
-    TD_ANIMATIONS_DIRECTIVES,
+    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
 })
