@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { TdLayoutComponent } from './layout.component';
@@ -25,7 +24,6 @@ export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
 
 @NgModule({
   imports: [
-    FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
   ],
@@ -33,7 +31,6 @@ export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
     TD_LAYOUTS,
   ],
   exports: [
-    FormsModule,
     CommonModule,
     MaterialModule,
 

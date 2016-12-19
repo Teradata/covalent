@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
@@ -20,7 +19,6 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
 
 @NgModule({
   imports: [
-    FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
   ],
@@ -28,7 +26,6 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
     TD_EXPANSION_PANEL,
   ],
   exports: [
-    FormsModule,
     CommonModule,
     MaterialModule,
 

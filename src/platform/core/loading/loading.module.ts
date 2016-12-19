@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { CovalentNucleusModule } from '../nucleus/nucleus.module';
@@ -25,7 +24,6 @@ export { TdLoadingService, ILoadingOptions } from './services/loading.service';
 
 @NgModule({
   imports: [
-    FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
     CovalentNucleusModule.forRoot(),
@@ -34,7 +32,6 @@ export { TdLoadingService, ILoadingOptions } from './services/loading.service';
     TD_LOADING,
   ],
   exports: [
-    FormsModule,
     CommonModule,
     MaterialModule,
     CovalentNucleusModule,

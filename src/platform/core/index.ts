@@ -42,6 +42,13 @@ export * from './layout/layout.module';
 import { CovalentLoadingModule } from './loading/loading.module';
 export * from './loading/loading.module';
 
+/**
+ * MEDIA
+ */
+
+import { CovalentMediaModule } from './media/media.module';
+export * from './media/media.module';
+
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
 import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
@@ -62,15 +69,6 @@ export const TD_STEP_DIRECTIVES: Type<any>[] = [
 export { TdStepComponent, StepState  } from './steps/step.component';
 export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.component';
 
-/**
- * MEDIA
- */
-import { TdMediaService } from './media/services/media.service';
-import { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
-
-export { TdMediaService } from './media/services/media.service';
-export { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
-
 @NgModule({
   imports: [
     HttpModule,
@@ -83,9 +81,9 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalenExpansionPanelModule.forRoot(),
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
+    CovalentMediaModule.forRoot(),
   ],
   declarations: [
-    TdMediaToggleDirective,
     TD_STEP_DIRECTIVES,
   ],
   exports: [
@@ -99,8 +97,8 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalenExpansionPanelModule,
     CovalentLayoutModule,
     CovalentLoadingModule,
+    CovalentMediaModule,
 
-    TdMediaToggleDirective,
     TD_STEP_DIRECTIVES,
   ],
   entryComponents: [ ],
@@ -109,7 +107,7 @@ export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService ],
+      providers: [ ],
     };
   }
 }
