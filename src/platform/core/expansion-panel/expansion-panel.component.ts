@@ -2,7 +2,7 @@ import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, Con
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
-import { TdCollapseAnimation } from '@covalent/core/nucleus/animations/collapse/collapse.animation';
+import { TdCollapseAnimation } from '../nucleus/nucleus.module';
 
 @Directive({
   selector: '[td-expansion-panel-header]template',

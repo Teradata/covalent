@@ -13,8 +13,8 @@ import { MaterialModule } from '@angular/material';
 
 // Nucleus
 
-import { CovalentNucleusModule } from './nucleus';
-export * from './nucleus';
+import { CovalentNucleusModule } from './nucleus/nucleus.module';
+export * from './nucleus/nucleus.module';
 
 // Layouts
 import { TdLayoutComponent } from './layout/layout.component';
