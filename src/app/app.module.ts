@@ -14,7 +14,6 @@ import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentChartsModule } from '../platform/charts';
-import { CovalentPagingModule } from '../platform/paging';
 import { CovalentSearchModule } from '../platform/search';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { CovalentSearchModule } from '../platform/search';
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module

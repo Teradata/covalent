@@ -77,6 +77,13 @@ import { CovalentMediaModule } from './media/media.module';
 export * from './media/media.module';
 
 /**
+ * PAGING
+ */
+
+import { CovalentPagingModule } from './paging/paging.module';
+export * from './paging/paging.module';
+
+/**
  * STEPS
  */
 
@@ -100,6 +107,7 @@ export * from './steps/steps.module';
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
+    CovalentPagingModule.forRoot(),
     CovalentStepsModule.forRoot(),
   ],
   exports: [
@@ -118,6 +126,7 @@ export * from './steps/steps.module';
     CovalentLayoutModule,
     CovalentLoadingModule,
     CovalentMediaModule,
+    CovalentPagingModule,
     CovalentStepsModule,
   ],
 })

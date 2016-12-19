@@ -27,7 +27,6 @@ import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentPagingModule } from '../../../platform/paging';
 import { CovalentSearchModule } from '../../../platform/search';
 
 @NgModule({
@@ -58,7 +57,6 @@ import { CovalentSearchModule } from '../../../platform/search';
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
     componentsRoutes,
   ],
