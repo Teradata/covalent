@@ -35,6 +35,13 @@ export * from './expansion-panel/expansion-panel.module';
 import { CovalentLayoutModule } from './layout/layout.module';
 export * from './layout/layout.module';
 
+/**
+ * LOADING
+ */
+
+import { CovalentLoadingModule } from './loading/loading.module';
+export * from './loading/loading.module';
+
 // Steps
 import { TdStepsComponent } from './steps/steps.component';
 import { TdStepHeaderComponent } from './steps/step-header/step-header.component';
@@ -54,18 +61,6 @@ export const TD_STEP_DIRECTIVES: Type<any>[] = [
 
 export { TdStepComponent, StepState  } from './steps/step.component';
 export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps/steps.component';
-
-// Loading
-import { TdLoadingService } from './loading/services/loading.service';
-import { TdLoadingDirective } from './loading/directives/loading.directive';
-import { TdLoadingComponent } from './loading/loading.component';
-
-export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
-  TdLoadingComponent,
-];
-
-export { LoadingType, LoadingMode } from './loading/loading.component';
-export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 
 /**
  * MEDIA
@@ -87,11 +82,10 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalentDialogsModule.forRoot(),
     CovalenExpansionPanelModule.forRoot(),
     CovalentLayoutModule.forRoot(),
+    CovalentLoadingModule.forRoot(),
   ],
   declarations: [
     TdMediaToggleDirective,
-    TdLoadingDirective,
-    TdLoadingComponent,
     TD_STEP_DIRECTIVES,
   ],
   exports: [
@@ -104,10 +98,9 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     CovalentDialogsModule,
     CovalenExpansionPanelModule,
     CovalentLayoutModule,
+    CovalentLoadingModule,
 
     TdMediaToggleDirective,
-    TdLoadingDirective,
-    TdLoadingComponent,
     TD_STEP_DIRECTIVES,
   ],
   entryComponents: [ ],
@@ -116,7 +109,7 @@ export class CovalentCoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCoreModule,
-      providers: [ TdMediaService, TdLoadingService ],
+      providers: [ TdMediaService ],
     };
   }
 }

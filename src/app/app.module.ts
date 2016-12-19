@@ -9,7 +9,7 @@ import { LayoutsModule } from './components/layouts/';
 import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
+import { CovalentCoreModule } from '../platform/core';
 import { CovalentFileModule } from '../platform/file-upload';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
@@ -48,7 +48,7 @@ import { CovalentSearchModule } from '../platform/search';
   providers: [
     appRoutingProviders,
   ], // additional providers needed for this module
-  entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+  entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
 })
 export class AppModule {}

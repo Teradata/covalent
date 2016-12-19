@@ -12,7 +12,7 @@ import { TdLayoutCardOverComponent } from './layout-card-over/layout-card-over.c
 import { TdLayoutManageListComponent } from './layout-manage-list/layout-manage-list.component';
 import { TdLayoutService } from './services/layout.service';
 
-export const TD_LAYOUTS: Type<any>[] = [
+const TD_LAYOUTS: Type<any>[] = [
   TdLayoutComponent,
   TdLayoutNavComponent,
   TdLayoutNavListComponent,
