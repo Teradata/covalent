@@ -1,7 +1,7 @@
 import { Directive, Input, forwardRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 
-import { TdNumberRequiredValidator } from './number-required.validator';
+import { TdNumberRequiredValidator } from '../number-required/number-required.validator';
 
 export const MAX_VALIDATOR: any = {
   provide: NG_VALIDATORS,
