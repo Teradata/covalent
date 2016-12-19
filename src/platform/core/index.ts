@@ -21,6 +21,13 @@ export * from './nucleus/nucleus.module';
 import { CovalentDialogsModule } from './dialogs/dialogs.module';
 export * from './dialogs/dialogs.module';
 
+/**
+ * EXPANSION PANEL
+ */
+
+import { CovalenExpansionPanelModule } from './expansion-panel/expansion-panel.module';
+export * from './expansion-panel/expansion-panel.module';
+
 // Layouts
 import { TdLayoutComponent } from './layout/layout.component';
 import { TdLayoutNavComponent } from './layout/layout-nav/layout-nav.component';
@@ -79,21 +86,6 @@ export const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
 export { LoadingType, LoadingMode } from './loading/loading.component';
 export { TdLoadingService, ILoadingOptions } from './loading/services/loading.service';
 
-// Expansion
-import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
-         TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent }
-         from './expansion-panel/expansion-panel.component';
-
-export const TD_EXPANSION_DIRECTIVES: Type<any>[] = [
-  TdExpansionPanelComponent,
-  TdExpansionPanelHeaderDirective,
-  TdExpansionPanelLabelDirective,
-  TdExpansionPanelSublabelDirective,
-  TdExpansionPanelSummaryComponent,
-];
-
-export { TdExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
-
 /**
  * MEDIA
  */
@@ -112,6 +104,7 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     MaterialModule.forRoot(),
     CovalentNucleusModule.forRoot(),
     CovalentDialogsModule.forRoot(),
+    CovalenExpansionPanelModule.forRoot(),
   ],
   declarations: [
     TdMediaToggleDirective,
@@ -119,7 +112,6 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
-    TD_EXPANSION_DIRECTIVES,
   ],
   exports: [
     HttpModule,
@@ -129,13 +121,13 @@ export { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
     MaterialModule,
     CovalentNucleusModule,
     CovalentDialogsModule,
+    CovalenExpansionPanelModule,
 
     TdMediaToggleDirective,
     TD_LAYOUT_DIRECTIVES,
     TdLoadingDirective,
     TdLoadingComponent,
     TD_STEP_DIRECTIVES,
-    TD_EXPANSION_DIRECTIVES,
   ],
   entryComponents: [ ],
 })
