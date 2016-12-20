@@ -1,7 +1,7 @@
 import { NgModule, Type, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentCoreModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
