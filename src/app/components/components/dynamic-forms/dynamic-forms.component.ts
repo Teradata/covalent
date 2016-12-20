@@ -8,6 +8,33 @@ import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@coval
 })
 export class DynamicFormsDemoComponent {
 
+  dynamicFormsAttrs: any[] = [{
+    description: `JS Object that will render the elements depending on its config.
+                  [name] property is required.`,
+    name: 'elements',
+    type: 'ITdDynamicElementConfig[]',
+  }, {
+    description: `Getter property for dynamic [FormGroup].`,
+    name: 'form',
+    type: 'get(): FormGroup',
+  }, {
+    description: `Getter property for [valid] of dynamic [FormGroup].`,
+    name: 'valid',
+    type: 'get(): boolean',
+  }, {
+    description: `Getter property for [value] of dynamic [FormGroup].`,
+    name: 'value',
+    type: 'get(): any',
+  }, {
+    description: `Getter property for [errors] of dynamic [FormGroup].`,
+    name: 'errors',
+    type: 'get(): {[name: string]: any}',
+  }, {
+    description: `Getter property for [controls] of dynamic [FormGroup].`,
+    name: 'controls',
+    type: 'get(): {[key: string]: AbstractControl}',
+  }];
+
   textElements: ITdDynamicElementConfig[] = [{
     name: 'input-without-label',
     type: TdDynamicElement.Input,

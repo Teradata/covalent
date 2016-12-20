@@ -1,5 +1,6 @@
 export { CovalentDynamicFormsModule } from './dynamic-forms.module';
-export { ITdDynamicElementConfig, TdDynamicType, TdDynamicElement } from './services/dynamic-forms.service';
+export { ITdDynamicElementConfig, TdDynamicType,
+         TdDynamicElement, DYNAMIC_ELEMENT_NAME_REGEX } from './services/dynamic-forms.service';
 export { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 export {
   TdDynamicSlideToggleComponent,

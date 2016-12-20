@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
 
@@ -87,7 +87,7 @@ export class TdDynamicFormsComponent {
   /**
    * Getter property for [controls] of dynamic [FormGroup].
    */
-  get controls(): any {
+  get controls(): {[key: string]: AbstractControl} {
     if (this.dynamicForm) {
       return this.dynamicForm.controls;
     }
