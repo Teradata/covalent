@@ -60,3 +60,7 @@ md-nav-list {
   text-overflow: ellipsis;
   margin-right: 5px;
 }
+.td-expansion-content,
+.td-expansion-summary {
+  overflow: hidden; // FF50 bugfix since overflow style in animation doesnt work
+}

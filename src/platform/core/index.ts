@@ -185,6 +185,11 @@ import { TdMediaToggleDirective } from './media/directives/media-toggle.directiv
 export { TdMediaService } from './media/services/media.service';
 export { TdMediaToggleDirective } from './media/directives/media-toggle.directive';
 
+/**
+ * ANIMATIONS
+ */
+export { TdCollapseAnimation } from './animations/collapse.animation';
+
 @NgModule({
   imports: [
     HttpModule,
