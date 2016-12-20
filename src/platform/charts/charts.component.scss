@@ -1,10 +1,5 @@
 @import '../../../node_modules/@angular/material/core/theming/theming';
 
-$primary: md-palette($md-orange, 800);
-$accent:  md-palette($md-light-blue, 600, A100, A400);
-$theme: md-light-theme($primary, $accent);
-$foreground: map-get($theme, foreground);
-
 :host {
   display: block;
 }
@@ -21,28 +16,5 @@ $foreground: map-get($theme, foreground);
   .line {
     fill: none;
     stroke-width: 2px;
-  }
-
-  td-charts {
-    text {
-      fill: md-color($foreground, secondary-text);
-    }
-    p {
-      color: md-color($foreground, secondary-text);
-    }
-    .grid {
-      line {
-        stroke: md-color($foreground, divider);
-      }
-    }
-    .ticks {
-      line,
-      path {
-        stroke: md-color($foreground, divider);
-      }
-    }
-    .domain {
-      stroke: md-color($foreground, divider);
-    }
   }
 }
