@@ -72,7 +72,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { IPageChangeEvent } from '@covalent/paging';
+        import { IPageChangeEvent } from '@covalent/core';
         ...
         })
         export class Demo {
@@ -88,10 +88,10 @@
     <p>Import the [CovalentPagingModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentPagingModule } from '@covalent/paging';
+        import { CovalentPagingModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentPagingModule.forRoot(),
+            CovalentPagingModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

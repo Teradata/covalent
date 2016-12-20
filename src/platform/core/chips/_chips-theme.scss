@@ -1,0 +1,35 @@
+@import '../../../../node_modules/@angular/material/core/theming/theming';
+
+@mixin td-chips-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  // chip
+  .td-chip {
+    background: md-color($background, status-bar);
+    color: md-color($foreground, text);
+    md-icon {
+      color: md-color($foreground, hint-text);
+      &:hover {
+        color: md-color($foreground, icon);
+      }
+    }
+  }
+  // chips
+  td-chips {
+    .md-input-underline {
+      border-top: 1px solid md-color($foreground, hint-text);
+      .md-input-ripple {
+        background-color: md-color($primary);
+        &.md-accent {
+          background-color: md-color($accent);
+        }
+        &.md-warn {
+          background-color: md-color($warn);
+        }
+      }
+    }
+  }
+}
