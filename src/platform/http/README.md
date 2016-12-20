@@ -23,6 +23,7 @@ To add a desired interceptor, it needs to implement the [IHttpInterceptor] inter
 ```typescript
 export interface IHttpInterceptor {
   onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+  onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
   onResponse?: (response: Response) => Response;
   onResponseError?: (error: Response) => Response;
 }
@@ -40,8 +41,22 @@ import { IHttpInterceptor } from '@covalent/http';
 @Injectable()
 export class CustomInterceptor implements IHttpInterceptor {
 
-  onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-    ... // do something to requestOptions
+   onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+    ... // do something to requestOptions before a request
+    ... // if something is wrong, throw an error to execute onRequestError (if there is an onRequestError hook)
+    if (/*somethingWrong*/) {
+      throw 'error message for subscription error callback';
+    }
+    return requestOptions;
+  }
+
+  onRequestError(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+    ... // do something to try and recover from an error thrown `onRequest` 
+    ... // and return the requestOptions needed for the request
+    ... // else return 'undefined' or throw an error to execute the error callback of the subscription
+    if (cantRecover) {
+      throw 'error message for subscription error callback'; // or return undefined;
+    }
     return requestOptions;
   }
 
@@ -86,11 +101,11 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `query` | `function(query?: IRestQuery)` | Creates a GET request to the generated endpoint URL.
-| `get` | `function(id: string | number)` | Creates a GET request to the generated endpoint URL, adding the ID at the end.
-| `create` | `function(obj: T)` | Creates a POST request to the generated endpoint URL.
-| `update` | `function(id: string | number, obj: T)` | Creates a PATCH request to the generated endpoint URL, adding the ID at the end.
-| `delete` | `function(id: string | number)` | Creates a DELETE request to the generated endpoint URL, adding the ID at the end.
+| `query` | `function(query?: IRestQuery, transform?: IRestTransform)` | Creates a GET request to the generated endpoint URL.
+| `get` | `function(id: string | number, transform?: IRestTransform)` | Creates a GET request to the generated endpoint URL, adding the ID at the end.
+| `create` | `function(obj: T, transform?: IRestTransform)` | Creates a POST request to the generated endpoint URL.
+| `update` | `function(id: string | number, obj: T, transform?: IRestTransform)` | Creates a PATCH request to the generated endpoint URL, adding the ID at the end.
+| `delete` | `function(id: string | number, transform?: IRestTransform)` | Creates a DELETE request to the generated endpoint URL, adding the ID at the end.
 | `buildUrl` | `function(id?: string | number, query?: IRestQuery)` | Builds the endpoint URL with the configured properties and arguments passed in the method.
 
 ## Usage
@@ -101,7 +116,7 @@ Example:
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { Response, Http } from '@angular/http';
+import { Response, Http, Headers } from '@angular/http';
 import { RESTService, HttpInterceptorService } from '@covalent/http';
 
 @Injectable()
@@ -111,6 +126,8 @@ export class CustomRESTService extends RESTService<any> {
     super(_http, {
       baseUrl: 'www.api.com',
       path: '/path/to/endpoint',
+      headers: new Headers(),
+      dynamicHeaders: () => new Headers(),
       transform: (res: Response): any => res.json(),
     });
   }

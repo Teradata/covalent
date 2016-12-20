@@ -25,7 +25,7 @@
                 <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                {{row[column.name]}}
+                {{column.format ? column.format(row[column.name]) : row[column.name]}}
               </td>
             </tr>
           </table>
@@ -51,7 +51,7 @@
                   <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                  { {row[column.name]}}
+                  { {column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
               </tr>
             </table>
@@ -60,7 +60,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
+            import { ITdDataTableColumn } from '@covalent/core';
             import { TdDialogService } from '@covalent/core';
             ...
             })
@@ -132,7 +132,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
+            import { ITdDataTableColumn } from '@covalent/core';
             ...
             })
             export class Demo {
@@ -256,8 +256,8 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/data-table';
-            import { IPageChangeEvent } from '@covalent/paging';
+            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
+            import { IPageChangeEvent } from '@covalent/core';
             ...
             })
             export class Demo {
@@ -376,7 +376,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { ITdDataTableColumn } from '@covalent/data-table';
+        import { ITdDataTableColumn } from '@covalent/core';
         ...
         })
         export class Demo {
@@ -396,10 +396,10 @@
     <p>Import the [CovalentDataTableModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentDataTableModule } from '@covalent/data-table';
+        import { CovalentDataTableModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentDataTableModule.forRoot(),
+            CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

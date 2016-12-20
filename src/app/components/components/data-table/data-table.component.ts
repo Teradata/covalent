@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TdDataTableSortingOrder, TdDataTableService,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/data-table';
-import { IPageChangeEvent } from '../../../../platform/paging';
+         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
+import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
-const NUMBER_FORMAT: any = (v: number) => v;
-const DECIMAL_FORMAT: any = (v: number) => v.toFixed(2);
+const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
+const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
 @Component({
   selector: 'data-table-demo',

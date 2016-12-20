@@ -6,7 +6,14 @@
     {{message}}
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button (click)="cancel()">{{cancelButton}}</button>
-    <button md-button color="accent" (click)="accept()">{{acceptButton}}</button>
+    <button md-button
+            #closeBtn 
+            (keydown.arrowright)="acceptBtn.focus()"
+            (click)="cancel()">{{cancelButton}}</button>
+    <button md-button
+            color="accent"
+            #acceptBtn
+            (keydown.arrowleft)="closeBtn.focus()"
+            (click)="accept()">{{acceptButton}}</button>
   </td-dialog-actions>
 </td-dialog>

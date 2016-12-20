@@ -21,6 +21,16 @@ export class DialogsDemoComponent {
     description: `Opens a prompt dialog with the provided config.`,
     name: 'openPrompt',
     type: 'function(IPromptConfig): MdDialogRef<TdPromptDialogComponent>',
+  }, {
+    description: `Wrapper function over the open() method in MdDialog.
+                  Opens a modal dialog containing the given component.`,
+    name: 'open',
+    type: 'function<T>(component: ComponentType<T>, config: MdDialogConfig): MdDialogRef<T>',
+  }, {
+    description: `Wrapper function over the closeAll() method in MdDialog.
+                  Closes all of the currently-open dialogs.`,
+    name: 'closeAll',
+    type: 'function()',
   }];
 
   constructor(private _dialogService: TdDialogService) {}
