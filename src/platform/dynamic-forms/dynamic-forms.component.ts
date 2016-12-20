@@ -22,8 +22,13 @@ export class TdDynamicFormsComponent {
           this.dynamicForm.removeControl(elem.name);
         });
       }
+      let duplicates: string[] = [];
       elements.forEach((elem: ITdDynamicElementConfig) => {
         this._dynamicFormsService.validateDynamicElementName(elem.name);
+        if (duplicates.indexOf(elem.name) > -1) {
+          throw `Dynamic element name: "${elem.name}" is duplicated`;
+        }
+        duplicates.push(elem.name);
         this.dynamicForm.registerControl(elem.name, this._dynamicFormsService.createFormControl(elem));
       });
       this._elements = elements;
