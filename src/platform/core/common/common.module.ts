@@ -26,6 +26,12 @@ export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
 // Form Directives
 import { TdAutoTrimDirective } from './forms/auto-trim/auto-trim.directive';
 
+const TD_FORMS: Type<any>[] = [
+  TdAutoTrimDirective,
+];
+
+export { TdAutoTrimDirective };
+
 // Validators
 import { TdMinValidator } from './forms/validators/min/min.validator';
 import { TdMaxValidator } from './forms/validators/max/max.validator';
@@ -37,7 +43,6 @@ const TD_VALIDATORS: Type<any>[] = [
   TdNumberRequiredValidator,
 ];
 
-export { TdAutoTrimDirective };
 export { TdMinValidator, TdMaxValidator, TdNumberRequiredValidator };
 
 /**
@@ -68,6 +73,7 @@ export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
     CommonModule,
   ],
   declarations: [
+    TD_FORMS,
     TD_PIPES,
     TD_ANIMATIONS,
     TD_VALIDATORS,
@@ -75,6 +81,7 @@ export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
   exports: [
     FormsModule,
     CommonModule,
+    TD_FORMS,
     TD_PIPES,
     TD_ANIMATIONS,
     TD_VALIDATORS,
