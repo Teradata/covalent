@@ -84,7 +84,7 @@ import { CustomInterceptor } from 'dir/to/interceptor';
     HttpModule, /* or CovalentCoreModule.forRoot() */
     CovalentHttpModule.forRoot({
       interceptors: [{
-        interceptor: CustomInterceptor, path: '**',
+        interceptor: CustomInterceptor, paths: ['**'],
       }],
     }),
     ...
