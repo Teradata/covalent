@@ -11,16 +11,20 @@ import {
   TdDynamicSlideToggleComponent,
 } from './dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 
-export const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
+const TD_DYNAMIC_FORMS: Type<any>[] = [
+  TdDynamicFormsComponent,
+  TdDynamicElementComponent,
+  TdDynamicElementDirective,
+];
+
+const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   TdDynamicInputComponent,
   TdDynamicSlideToggleComponent,
 ];
 
 @NgModule({
   declarations: [
-    TdDynamicFormsComponent,
-    TdDynamicElementComponent,
-    TdDynamicElementDirective,
+    TD_DYNAMIC_FORMS,
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
   ],
   imports: [
@@ -28,9 +32,7 @@ export const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     CovalentCoreModule.forRoot(),
   ],
   exports: [
-    TdDynamicFormsComponent,
-    TdDynamicElementComponent,
-    TdDynamicElementDirective,
+    TD_DYNAMIC_FORMS,
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
   ],
   entryComponents: [ TD_DYNAMIC_FORMS_ENTRY_COMPONENTS ],
