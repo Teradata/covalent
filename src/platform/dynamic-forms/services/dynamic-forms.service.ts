@@ -24,13 +24,13 @@ export enum TdDynamicElement {
 }
 
 export interface ITdDynamicElementConfig {
-    label?: string;
-    name: string;
-    type: TdDynamicType | TdDynamicElement;
-    required?: boolean;
-    min?: any;
-    max?: any;
-    default?: any;
+  label?: string;
+  name: string;
+  type: TdDynamicType | TdDynamicElement;
+  required?: boolean;
+  min?: any;
+  max?: any;
+  default?: any;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;

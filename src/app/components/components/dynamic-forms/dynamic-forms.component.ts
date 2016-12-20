@@ -9,40 +9,36 @@ import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@coval
 export class DynamicFormsDemoComponent {
 
   elements: ITdDynamicElementConfig[] = [{
-    name: 'first_name',
-    label: 'First Name',
+    name: 'input',
     type: TdDynamicElement.Input,
     required: true,
   }, {
-    name: 'last_name',
+    name: 'text',
     type: TdDynamicType.Text,
     required: false,
-    default: 'Lucis',
+    default: 'Default',
   }, {
-    name: 'age',
+    name: 'number',
     type: TdDynamicType.Number,
-    required: false,
+    required: true,
     min: 18,
     max: 70,
   }, {
-    name: 'age_slider',
+    name: 'slider',
     type: TdDynamicElement.Slider,
-    required: false,
+    required: true,
     min: 18,
     max: 70,
   }, {
-    name: 'on_it',
-    label: 'On It Boolean?',
+    name: 'boolean',
     type: TdDynamicType.Boolean,
     default: true,
   }, {
-    name: 'on_it_slide_toggle',
-    label: 'On It Slide Toggle?',
+    name: 'slide-toggle',
     type: TdDynamicElement.SlideToggle,
     default: true,
   }, {
-    name: 'on_it_checkbox',
-    label: 'On It Check?',
+    name: 'checkbox',
     type: TdDynamicElement.Checkbox,
     default: true,
   }];
