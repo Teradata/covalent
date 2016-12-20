@@ -39,16 +39,35 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     }
   }
 
+  /**
+   * Sets form control of the element.
+   */
   @Input() dynamicControl: FormControl;
 
+  /**
+   * Sets label to be displayed.
+   */
   @Input() label: string = '';
 
+  /**
+   * Sets type or element of element to be rendered.
+   * Throws error if does not exist or no supported.
+   */
   @Input() type: TdDynamicElement | TdDynamicType = undefined;
 
+  /**
+   * Sets required validation checkup (if supported by element).
+   */
   @Input() required: boolean = undefined;
 
+  /**
+   * Sets min validation checkup (if supported by element).
+   */
   @Input() min: number = undefined;
 
+  /**
+   * Sets max validation checkup (if supported by element).
+   */
   @Input() max: number = undefined;
 
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;

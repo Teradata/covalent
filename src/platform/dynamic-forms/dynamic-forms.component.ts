@@ -6,7 +6,6 @@ import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynam
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: 'dynamic-forms.component.html',
-  providers: [ TdDynamicFormsService ],
 })
 export class TdDynamicFormsComponent {
 
@@ -14,6 +13,11 @@ export class TdDynamicFormsComponent {
 
   dynamicForm: FormGroup;
 
+  /**
+   * elements: ITdDynamicElementConfig[]
+   * JS Object that will render the elements depending on its config.
+   * [name] property is required.
+   */
   @Input('elements')
   set elements(elements: ITdDynamicElementConfig[]){
     if (elements) {
@@ -39,10 +43,16 @@ export class TdDynamicFormsComponent {
     return this._elements;
   }
 
+  /**
+   * Getter property for dynamic [FormGroup].
+   */
   get form(): FormGroup {
     return this.dynamicForm;
   }
 
+  /**
+   * Getter property for [valid] of dynamic [FormGroup].
+   */
   get valid(): boolean {
     if (this.dynamicForm) {
       return this.dynamicForm.valid;
@@ -50,6 +60,9 @@ export class TdDynamicFormsComponent {
     return false;
   }
 
+  /**
+   * Getter property for [value] of dynamic [FormGroup].
+   */
   get value(): any {
     if (this.dynamicForm) {
       return this.dynamicForm.value;
@@ -57,6 +70,9 @@ export class TdDynamicFormsComponent {
     return {};
   }
 
+  /**
+   * Getter property for [errors] of dynamic [FormGroup].
+   */
   get errors(): {[name: string]: any} {
     if (this.dynamicForm) {
       let errors: {[name: string]: any} = {};
@@ -68,6 +84,9 @@ export class TdDynamicFormsComponent {
     return {};
   }
 
+  /**
+   * Getter property for [controls] of dynamic [FormGroup].
+   */
   get controls(): any {
     if (this.dynamicForm) {
       return this.dynamicForm.controls;

@@ -36,12 +36,20 @@ export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
 @Injectable()
 export class TdDynamicFormsService {
 
+  /**
+   * Method to validate if the [name] is a proper element name.
+   * Throws error if name is not valid.
+   */
   validateDynamicElementName(name: string): void {
     if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
       throw `Dynamic element name: "${name}" is not valid.`;
     }
   }
 
+  /**
+   * Gets component to be rendered depending on [TdDynamicElement | TdDynamicType]
+   * Throws error if it does not exists or not supported.
+   */
   getDynamicElement(element: TdDynamicElement | TdDynamicType): any {
     switch (element) {
       case TdDynamicType.Text:
@@ -56,10 +64,14 @@ export class TdDynamicFormsService {
       case TdDynamicElement.Slider:
         return TdDynamicSliderComponent;
       default:
-        throw `Error: type ${element} does not exist.`;
+        throw `Error: type ${element} does not exist or not supported.`;
     }
   }
 
+  /**
+   * Gets default flex for element depending on [TdDynamicElement | TdDynamicType].
+   * Throws error if it does not exists or not supported.
+   */
   getDefaultElementFlex(element: TdDynamicElement | TdDynamicType): any {
     switch (element) {
       case TdDynamicType.Text:
@@ -72,15 +84,21 @@ export class TdDynamicFormsService {
       case TdDynamicElement.SlideToggle:
         return 20;
       default:
-        throw `Error: type ${element} does not exist.`;
+        throw `Error: type ${element} does not exist or not supported.`;
     }
   }
 
+  /**
+   * Creates form control for element depending [ITdDynamicElementConfig] properties.
+   */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
     let validator: ValidatorFn = this.createValidators(config);
     return new FormControl(config.default, validator);
   }
 
+  /**
+   * Creates form validationdepending [ITdDynamicElementConfig] properties.
+   */
   createValidators(config: ITdDynamicElementConfig): ValidatorFn {
     let validator: ValidatorFn;
     if (config.required) {

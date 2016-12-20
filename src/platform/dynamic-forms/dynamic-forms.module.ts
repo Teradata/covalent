@@ -5,6 +5,7 @@ import { CovalentCoreModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
+import { TdDynamicFormsService } from './services/dynamic-forms.service';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 import {
@@ -47,7 +48,7 @@ export class CovalentDynamicFormsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDynamicFormsModule,
-      providers: [ ],
+      providers: [ TdDynamicFormsService ],
     };
   }
 }
