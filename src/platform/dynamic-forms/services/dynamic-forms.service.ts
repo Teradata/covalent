@@ -33,8 +33,16 @@ export interface ITdDynamicElementConfig {
     default?: any;
 }
 
+export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
+
 @Injectable()
 export class TdDynamicFormsService {
+
+  validateDynamicElementName(name: string): void {
+    if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
+      throw `Dynamic element name: "${name}" is not valid.`;
+    }
+  }
 
   getDynamicElement(element: TdDynamicElement | TdDynamicType): any {
     switch (element) {

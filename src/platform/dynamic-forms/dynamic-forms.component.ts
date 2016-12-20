@@ -23,6 +23,7 @@ export class TdDynamicFormsComponent {
         });
       }
       elements.forEach((elem: ITdDynamicElementConfig) => {
+        this._dynamicFormsService.validateDynamicElementName(elem.name);
         this.dynamicForm.registerControl(elem.name, this._dynamicFormsService.createFormControl(elem));
       });
       this._elements = elements;
