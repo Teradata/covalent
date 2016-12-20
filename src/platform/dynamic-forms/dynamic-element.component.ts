@@ -3,7 +3,7 @@ import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 
-import { DynamicElement, DynamicFormsService } from './services/dynamic-forms.service';
+import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
 import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';
 
 const noop: any = () => {
@@ -24,7 +24,7 @@ export class TdDynamicElementDirective {
 }
 
 @Component({
-  providers: [ DynamicFormsService, ELEMENT_INPUT_CONTROL_VALUE_ACCESSOR ],
+  providers: [ TdDynamicFormsService, ELEMENT_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
 })
@@ -43,7 +43,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
 
   @Input() label: string = '';
 
-  @Input() type: DynamicElement = undefined;
+  @Input() type: TdDynamicElement | TdDynamicType = undefined;
 
   @Input() required: boolean = undefined;
 
@@ -72,7 +72,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   }
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _dynamicFormsService: DynamicFormsService) {
+              private _dynamicFormsService: TdDynamicFormsService) {
     super();
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DynamicElement, IDynamicElementConfig, DynamicType } from '@covalent/dynamic-forms';
+import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo',
@@ -8,26 +8,26 @@ import { DynamicElement, IDynamicElementConfig, DynamicType } from '@covalent/dy
 })
 export class DynamicFormsDemoComponent {
 
-  elements: IDynamicElementConfig[] = [{
+  elements: ITdDynamicElementConfig[] = [{
     name: 'first_name',
     label: 'First Name',
-    type: DynamicType.Text,
+    type: TdDynamicType.Text,
     required: true,
   }, {
     name: 'last_name',
-    type: DynamicType.Text,
+    type: TdDynamicType.Text,
     required: false,
     default: 'Lucis',
   }, {
     name: 'age',
-    type: DynamicType.Number,
+    type: TdDynamicType.Number,
     required: false,
     min: 18,
     max: 70,
   }, {
     name: 'on_it',
     label: 'On It?',
-    type: DynamicType.Boolean,
+    type: TdDynamicType.Boolean,
     default: true,
   }];
 }
