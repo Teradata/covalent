@@ -11,7 +11,7 @@ export class DynamicFormsDemoComponent {
   elements: ITdDynamicElementConfig[] = [{
     name: 'first_name',
     label: 'First Name',
-    type: TdDynamicType.Text,
+    type: TdDynamicElement.Input,
     required: true,
   }, {
     name: 'last_name',
