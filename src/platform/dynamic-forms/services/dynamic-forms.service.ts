@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Validators, ValidatorFn, FormControl } from '@angular/forms';
 
-import { TdMaxValidator } from '@covalent/core';
-import { TdMinValidator } from '@covalent/core';
-import { TdNumberRequiredValidator } from '@covalent/core';
+import { TdMaxValidator } from '@covalent/core/validators/max.validator';
+import { TdMinValidator } from '@covalent/core/validators/min.validator';
+import { TdNumberRequiredValidator } from '@covalent/core/validators/number-required.validator';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
