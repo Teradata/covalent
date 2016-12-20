@@ -26,8 +26,18 @@ export class DynamicFormsDemoComponent {
     max: 70,
   }, {
     name: 'on_it',
-    label: 'On It?',
+    label: 'On It Boolean?',
     type: TdDynamicType.Boolean,
+    default: true,
+  }, {
+    name: 'on_it_slide_toggle',
+    label: 'On It Slide Toggle?',
+    type: TdDynamicElement.SlideToggle,
+    default: true,
+  }, {
+    name: 'on_it_checkbox',
+    label: 'On It Check?',
+    type: TdDynamicElement.Checkbox,
     default: true,
   }];
 }

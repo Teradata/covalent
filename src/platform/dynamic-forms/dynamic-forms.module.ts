@@ -10,6 +10,9 @@ import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynami
 import {
   TdDynamicSlideToggleComponent,
 } from './dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
+import {
+  TdDynamicCheckboxComponent,
+} from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
@@ -20,6 +23,7 @@ const TD_DYNAMIC_FORMS: Type<any>[] = [
 const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   TdDynamicInputComponent,
   TdDynamicSlideToggleComponent,
+  TdDynamicCheckboxComponent,
 ];
 
 @NgModule({

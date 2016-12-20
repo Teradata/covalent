@@ -7,6 +7,7 @@ import { TdNumberRequiredValidator } from '@covalent/core';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
+import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 
 export enum TdDynamicType {
   Text = <any>'text',
@@ -17,14 +18,13 @@ export enum TdDynamicType {
 export enum TdDynamicElement {
   Input = <any>'input',
   Slider = <any>'slider',
-  TextArea = <any>'text-area',
+  //TextArea = <any>'text-area',
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
-  ButtonToggleGroup = <any>'button-toggle-group',
-  ButtonToggle = <any>'button-toggle',
-  RadioGroup = <any>'radio-group',
-  Radio = <any>'radio-group',
-  Select = <any>'select',
+  //ButtonToggleGroup = <any>'button-toggle-group',
+  //ButtonToggle = <any>'button-toggle',
+  //RadioGroup = <any>'radio-group',
+  //Select = <any>'select',
 }
 
 export interface ITdDynamicElementConfig {
@@ -50,10 +50,11 @@ export class TdDynamicFormsService {
       case TdDynamicElement.SlideToggle:
         return TdDynamicSlideToggleComponent;
       case TdDynamicElement.Checkbox:
-      case TdDynamicElement.ButtonToggle:
-      case TdDynamicElement.TextArea:
+        return TdDynamicCheckboxComponent;
+      //case TdDynamicElement.ButtonToggle:
+      //case TdDynamicElement.TextArea:
       case TdDynamicElement.Slider:
-      case TdDynamicElement.Select:
+      //case TdDynamicElement.Select:
       default:
         throw `Error: type ${element} does not exist.`;
     }
@@ -66,6 +67,7 @@ export class TdDynamicFormsService {
       case TdDynamicElement.Input:
         return 45;
       case TdDynamicType.Boolean:
+      case TdDynamicElement.Checkbox:
       case TdDynamicElement.SlideToggle:
         return 20;
       default:
