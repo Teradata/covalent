@@ -70,11 +70,11 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { HttpModule } from '@angular/http';
-        import { CovalentFileModule } from '@covalent/file-upload';
+        import { CovalentFileModule } from '@covalent/core';
         @NgModule({
           imports: [
-            HttpModule, /* or CovalentCoreModule.forRoot() */
-            CovalentFileModule.forRoot(),
+            HttpModule,
+            CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...
@@ -205,7 +205,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdFileService, IUploadOptions } from '@covalent/file-upload';
+        import { TdFileService, IUploadOptions } from '@covalent/core';
         ...
         })
         export class Demo {

@@ -147,5 +147,4 @@ Example for Card Over Layout / Nav Layout / Main Layout combo:
 
 ## Styles, Icons and Theming
 
-Core Teradata UI Platform comes with a base CSS file `styles/platform.css` (includes icons), just include that in your `index.html` to apply in your project. 
-NOTE: Must compile the package as vendor and pull everything from `node_module/@covalent/core` to be able to reference it.
+Core Teradata UI Platform comes with a base CSS file `@covalent/core/common/platform.css` (includes icons). 

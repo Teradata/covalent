@@ -25,15 +25,9 @@ import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.compone
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
-import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentDataTableModule } from '../../../platform/data-table';
-import { CovalentPagingModule } from '../../../platform/paging';
-import { CovalentSearchModule } from '../../../platform/search';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 @NgModule({
@@ -62,15 +56,9 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
   ],
   imports: [
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
     componentsRoutes,
   ],
