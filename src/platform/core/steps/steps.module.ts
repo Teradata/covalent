@@ -4,7 +4,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
-import { CovalentNucleusModule } from '../nucleus/nucleus.module';
+import { CovalentCommonModule } from '../common/common.module';
 
 // Steps
 import { TdStepsComponent } from './steps.component';
@@ -30,7 +30,7 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
   imports: [
     CommonModule,
     MaterialModule.forRoot(),
-    CovalentNucleusModule.forRoot(),
+    CovalentCommonModule.forRoot(),
   ],
   declarations: [
     TD_STEPS,
@@ -38,7 +38,7 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
   exports: [
     CommonModule,
     MaterialModule,
-    CovalentNucleusModule,
+    CovalentCommonModule,
 
     TD_STEPS,
   ],

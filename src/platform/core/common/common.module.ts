@@ -80,10 +80,10 @@ export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
     TD_VALIDATORS,
   ],
 })
-export class CovalentNucleusModule {
+export class CovalentCommonModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: CovalentNucleusModule,
+      ngModule: CovalentCommonModule,
       providers: [ ],
     };
   }

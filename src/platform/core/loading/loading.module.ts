@@ -4,7 +4,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
-import { CovalentNucleusModule } from '../nucleus/nucleus.module';
+import { CovalentCommonModule } from '../common/common.module';
 
 import { TdLoadingService } from './services/loading.service';
 import { TdLoadingDirective } from './directives/loading.directive';
@@ -26,7 +26,7 @@ export { TdLoadingService, ILoadingOptions } from './services/loading.service';
   imports: [
     CommonModule,
     MaterialModule.forRoot(),
-    CovalentNucleusModule.forRoot(),
+    CovalentCommonModule.forRoot(),
   ],
   declarations: [
     TD_LOADING,
@@ -34,7 +34,7 @@ export { TdLoadingService, ILoadingOptions } from './services/loading.service';
   exports: [
     CommonModule,
     MaterialModule,
-    CovalentNucleusModule,
+    CovalentCommonModule,
 
     TD_LOADING,
   ],

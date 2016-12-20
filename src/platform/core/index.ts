@@ -7,11 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 /**
- * NUCLEUS
+ * COMMON
  */
 
-import { CovalentNucleusModule } from './nucleus/nucleus.module';
-export * from './nucleus/nucleus.module';
+import { CovalentCommonModule } from './common/common.module';
+export * from './common/common.module';
 
 /**
  * CHIPS
@@ -104,7 +104,7 @@ export * from './steps/steps.module';
     FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
-    CovalentNucleusModule.forRoot(),
+    CovalentCommonModule.forRoot(),
     CovalentChipsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     CovalentDialogsModule.forRoot(),
@@ -124,7 +124,7 @@ export * from './steps/steps.module';
     FormsModule,
     CommonModule,
     MaterialModule,
-    CovalentNucleusModule,
+    CovalentCommonModule,
     CovalentChipsModule,
     CovalentDataTableModule,
     CovalentDialogsModule,
