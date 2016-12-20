@@ -8,17 +8,25 @@ import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@coval
 })
 export class DynamicFormsDemoComponent {
 
-  elements: ITdDynamicElementConfig[] = [{
-    name: 'input',
+  textElements: ITdDynamicElementConfig[] = [{
+    name: 'input-without-label',
+    type: TdDynamicElement.Input,
+    required: false,
+  }, {
+    name: 'input-with-label',
+    label: 'Input Label',
     type: TdDynamicElement.Input,
     required: true,
   }, {
-    name: 'text',
+    name: 'text-with-default',
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
-  }, {
+  }];
+
+  numberElements: ITdDynamicElementConfig[] = [{
     name: 'number',
+    label: 'Number Label',
     type: TdDynamicType.Number,
     required: true,
     min: 18,
@@ -26,13 +34,15 @@ export class DynamicFormsDemoComponent {
   }, {
     name: 'slider',
     type: TdDynamicElement.Slider,
-    required: true,
     min: 18,
     max: 70,
-  }, {
+  }];
+
+  booleanElements: ITdDynamicElementConfig[] = [{
     name: 'boolean',
+    label: 'Boolean Label',
     type: TdDynamicType.Boolean,
-    default: true,
+    default: false,
   }, {
     name: 'slide-toggle',
     type: TdDynamicElement.SlideToggle,
@@ -40,6 +50,5 @@ export class DynamicFormsDemoComponent {
   }, {
     name: 'checkbox',
     type: TdDynamicElement.Checkbox,
-    default: true,
   }];
 }

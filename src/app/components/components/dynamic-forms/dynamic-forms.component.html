@@ -3,15 +3,82 @@
   <md-card-subtitle>Build forms from a JS object</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <td-dynamic-forms #dynamicForm [elements]="elements">
-    </td-dynamic-forms>
-    <button md-raised-button color="primary" [disabled]="!dynamicForm.valid" (click)="value = dynamicForm.value">Push</button>
-    <p>Dynamic value</p>
-    <p>{{value | json}}</p>
+    <h3 class="md-title">Dynamic Text Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <td-dynamic-forms [elements]="textElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="textElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{textElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary">Toggle Disable All Steps</button>
-    <button md-button color="primary">Toggle Active Step 1</button>
-  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Number Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <td-dynamic-forms [elements]="numberElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="numberElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{numberElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Boolean Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <td-dynamic-forms [elements]="booleanElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="booleanElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{booleanElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
 </md-card>
