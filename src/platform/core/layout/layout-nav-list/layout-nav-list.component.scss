@@ -45,7 +45,10 @@
           visibility: visible;
           transform: translate3d(0, 0, 0);
         }
-        &.md-sidenav-opened {
+        &.md-sidenav-opened,
+        &.md-sidenav-opening,
+        &.md-sidenav-closed,
+        &.md-sidenav-closing {
           box-shadow: none;
         }
       }
