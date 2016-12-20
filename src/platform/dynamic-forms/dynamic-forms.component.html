@@ -6,6 +6,7 @@
     <template let-element ngFor [ngForOf]="elements">
       <td-dynamic-element [formControlName]="element.name"
                           [dynamicControl]="dynamicForm.controls[element.name]"
+                          [id]="element.name"
                           [label]="element.label || element.name" 
                           [type]="element.type"
                           [required]="element.required"
