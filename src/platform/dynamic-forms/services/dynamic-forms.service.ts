@@ -8,6 +8,7 @@ import { TdNumberRequiredValidator } from '@covalent/core';
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
+import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 
 export enum TdDynamicType {
   Text = <any>'text',
@@ -18,13 +19,8 @@ export enum TdDynamicType {
 export enum TdDynamicElement {
   Input = <any>'input',
   Slider = <any>'slider',
-  //TextArea = <any>'text-area',
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
-  //ButtonToggleGroup = <any>'button-toggle-group',
-  //ButtonToggle = <any>'button-toggle',
-  //RadioGroup = <any>'radio-group',
-  //Select = <any>'select',
 }
 
 export interface ITdDynamicElementConfig {
@@ -51,10 +47,8 @@ export class TdDynamicFormsService {
         return TdDynamicSlideToggleComponent;
       case TdDynamicElement.Checkbox:
         return TdDynamicCheckboxComponent;
-      //case TdDynamicElement.ButtonToggle:
-      //case TdDynamicElement.TextArea:
       case TdDynamicElement.Slider:
-      //case TdDynamicElement.Select:
+        return TdDynamicSliderComponent;
       default:
         throw `Error: type ${element} does not exist.`;
     }
@@ -64,6 +58,7 @@ export class TdDynamicFormsService {
     switch (element) {
       case TdDynamicType.Text:
       case TdDynamicType.Number:
+      case TdDynamicElement.Slider:
       case TdDynamicElement.Input:
         return 45;
       case TdDynamicType.Boolean:

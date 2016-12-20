@@ -25,6 +25,12 @@ export class DynamicFormsDemoComponent {
     min: 18,
     max: 70,
   }, {
+    name: 'age_slider',
+    type: TdDynamicElement.Slider,
+    required: false,
+    min: 18,
+    max: 70,
+  }, {
     name: 'on_it',
     label: 'On It Boolean?',
     type: TdDynamicType.Boolean,

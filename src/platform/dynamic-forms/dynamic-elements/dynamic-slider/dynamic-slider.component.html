@@ -1,0 +1,11 @@
+<div class="dynamic-slider-wrapper" layout="row" layout-align="start center">
+  <span>{{label}}</span>
+  <md-slider [(ngModel)]="value"
+              [min]="min"
+              [max]="max"
+              tickInterval="auto"
+              [required]="required"
+              flex>
+  </md-slider>
+  <span>{{value}}</span>
+</div>
