@@ -45,6 +45,7 @@ function inlineResources(globs) {
         .then(content => inlineTemplate(filePath, content))
         .then(content => inlineStyle(filePath, content))
         .then(content => removeModuleId(filePath, content))
+        .then(content => replaceRelativePath(filePath, content))
         .then(content => writeFile(filePath, content))
         .catch(err => {
           console.error('An error occured: ', err);
@@ -102,6 +103,9 @@ function inlineStyle(filePath, content) {
   });
 }
 
+function replaceRelativePath(_, content) {
+  return content.replace(/((\.\.\/)+core)/gm, '@covalent/core');
+}
 
 /**
  * Remove every mention of `moduleId: module.id`.
