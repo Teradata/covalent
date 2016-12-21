@@ -139,7 +139,7 @@ describe('Component: TdDynamicForms', () => {
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
       /* tslint:disable-next-line */ 
-      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: null, age: 20}));
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20}));
     });
   })));
 });
