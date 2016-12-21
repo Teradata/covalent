@@ -4,7 +4,7 @@ import {
   async,
 } from '@angular/core/testing';
 import { TdDynamicFormsService, TdDynamicType,
-         TdDynamicElement, ITdDynamicElementConfig } from './dynamic-forms.service';
+         TdDynamicElement } from './dynamic-forms.service';
 
 describe('Service: TdDynamicFormsService', () => {
 
