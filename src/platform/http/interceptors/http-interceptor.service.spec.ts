@@ -8,7 +8,7 @@ import { Headers, XHRBackend, Response, ResponseOptions, RequestOptionsArgs } fr
 import { Observable } from 'rxjs/Observable';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
-import { HttpInterceptorService, IHttpInterceptorConfig } from './http-interceptor.service';
+import { HttpInterceptorService, HttpConfig, CovalentHttpModule } from '../';
 import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 import 'rxjs/Rx';
 
@@ -59,36 +59,36 @@ export class RequestRecoveryInterceptor {
 
 describe('Service: HttpInterceptor', () => {
 
-  let config: IHttpInterceptorConfig[] = [{
-    interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
-  }, {
-    interceptor: RequestAuthInterceptor, paths: ['**'],
-  }, {
-    interceptor: RequestFailureInterceptor, paths: ['/error'],
-  }, {
-    interceptor: RequestRecoveryInterceptor, paths: ['/recovery/*/fromerror'],
-  }];
+  let config: HttpConfig = {
+    inteceptors: [{
+      interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
+    }, {
+      interceptor: RequestAuthInterceptor, paths: ['**'],
+    }, {
+      interceptor: RequestFailureInterceptor, paths: ['/error'],
+    }, {
+      interceptor: RequestRecoveryInterceptor, paths: ['/recovery/*/fromerror'],
+    }],
+  };
+
+  const httpInterceptorProviders: any[] = [
+    ResponseOverrideInterceptor,
+    RequestAuthInterceptor,
+    RequestFailureInterceptor,
+    RequestRecoveryInterceptor,
+  ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule,
+        CovalentHttpModule.forRoot(config),
       ],
       providers: [
-        ResponseOverrideInterceptor,
-        RequestAuthInterceptor,
-        RequestFailureInterceptor,
-        RequestRecoveryInterceptor,
         MockBackend, {
           provide: XHRBackend,
           useExisting: MockBackend,
-        }, {
-          provide: HttpInterceptorService,
-          useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-            return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config);
-          },
-          deps: [Http, Injector],
         },
+        httpInterceptorProviders,
       ],
     });
   }));
