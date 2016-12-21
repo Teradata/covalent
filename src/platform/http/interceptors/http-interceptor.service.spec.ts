@@ -3,12 +3,12 @@ import {
   inject,
   async,
 } from '@angular/core/testing';
-import { Injector, Injectable } from '@angular/core';
+import { Injector, Injectable, Type } from '@angular/core';
 import { Headers, XHRBackend, Response, ResponseOptions, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
-import { HttpInterceptorService, HttpConfig, CovalentHttpModule } from '../';
+import { HttpInterceptorService, HttpConfig, CovalentHttpModule, IHttpInterceptor } from '../';
 import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
 import 'rxjs/Rx';
 
@@ -71,7 +71,7 @@ describe('Service: HttpInterceptor', () => {
     }],
   };
 
-  const httpInterceptorProviders: any[] = [
+  const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     ResponseOverrideInterceptor,
     RequestAuthInterceptor,
     RequestFailureInterceptor,
