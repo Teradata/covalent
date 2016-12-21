@@ -76,9 +76,16 @@ export class CustomInterceptor implements IHttpInterceptor {
 Then, import the [CovalentHttpModule] using the forRoot() method with the desired interceptors and paths to intercept in your NgModule:
 
 ```typescript
+import { NgModule, Type } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 import { CustomInterceptor } from 'dir/to/interceptor';
+
+const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+  CustomInterceptor,
+  ...
+];
+
 @NgModule({
   imports: [
     HttpModule, /* or CovalentCoreModule.forRoot() */
@@ -87,6 +94,10 @@ import { CustomInterceptor } from 'dir/to/interceptor';
         interceptor: CustomInterceptor, paths: ['**'],
       }],
     }),
+    ...
+  ],
+  providers: [
+    httpInterceptorProviders,
     ...
   ],
   ...
