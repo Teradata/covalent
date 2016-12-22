@@ -1,6 +1,7 @@
 <div *ngIf="isHorizontal()" class="td-steps-header" layout="row" title>
   <template let-step let-index="index" let-last="last" ngFor [ngForOf]="steps">
-    <td-step-header (keydown.enter)="step.toggle()"
+    <td-step-header class="td-step-horizontal-header"
+                    (keydown.enter)="step.toggle()"
                     [number]="index + 1"
                     [active]="step.active" 
                     [disabled]="step.disabled" 
@@ -14,7 +15,8 @@
   </template>
 </div>
 <div *ngFor="let step of steps; let index = index; let last = last" class="td-step" layout="column">
-  <td-step-header (keydown.enter)="step.toggle()"
+  <td-step-header class="td-step-vertical-header"
+                  (keydown.enter)="step.toggle()"
                   [number]="index + 1"
                   [active]="step.active" 
                   [disabled]="step.disabled" 
