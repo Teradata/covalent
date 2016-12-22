@@ -10,10 +10,9 @@
         <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> Responsive (gt-sm)</md-button-toggle>
       </md-button-toggle-group>
     </div>
-    <p>Change Event: {{stepChangeMsg}}</p>
     <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
     <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
-    <td-steps (stepChange)="stepChange($event)" [mode]="horizontal ? 'horizontal' : 'vertical'">
+    <td-steps [mode]="horizontal ? 'horizontal' : 'vertical'">
       <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
         <template td-step-label><span>Basic Usage (template)</span></template>
         Include any content you like for an active stepper 
