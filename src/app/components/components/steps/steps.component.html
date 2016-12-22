@@ -5,9 +5,9 @@
   <md-card-content>
     <div layout="row" layout-align="start center">
       <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-        <md-button-toggle md-tooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> Vertical</md-button-toggle>
-        <md-button-toggle md-tooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> Horizontal</md-button-toggle>
-        <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> Responsive (gt-sm)</md-button-toggle>
+        <md-button-toggle md-tooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
+        <md-button-toggle md-tooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> <span hide-md hide-sm hide-xs>Horizontal</span></md-button-toggle>
+        <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></md-button-toggle>
       </md-button-toggle-group>
     </div>
     <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
