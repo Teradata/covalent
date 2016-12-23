@@ -8,7 +8,6 @@ import { Component, DebugElement } from '@angular/core';
 import { CovalentStepsModule, StepState, StepMode } from '@covalent/core';
 import { By } from '@angular/platform-browser';
 
-
 describe('Component: Steps', () => {
 
   beforeEach(async(() => {
@@ -63,7 +62,6 @@ describe('Component: Steps', () => {
         expect(fixture.debugElement.query(By.css('.td-step-actions'))).toBeNull();
       });
   })));
-
 
   it('should render vertical step with active content',
     async(inject([], () => {

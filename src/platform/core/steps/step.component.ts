@@ -42,7 +42,6 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
 })
 export class TdStepComponent implements OnInit {
 
-  private _number: number;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
