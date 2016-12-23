@@ -3,7 +3,8 @@
   <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <md-tab-group>
+    <h3 class="md-title">Basic Stepper</h3>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
         <div layout="row" layout-align="start center">
@@ -72,8 +73,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/core';
-            import { TdDialogService } from '@covalent/core';
+            import { StepState } from '@covalent/core';
             ...
             })
             export class Demo {
