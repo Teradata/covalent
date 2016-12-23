@@ -54,6 +54,10 @@ export class DataTableDemoComponent implements OnInit {
                   Emits an [ITdDataTableSelectEvent] implemented object.`,
     name: 'rowSelect',
     type: `function()`,
+  }, {
+    description: `Refreshes data table and updates [data] and [columns]`,
+    name: 'refresh',
+    type: `function()`,
   }];
 
   cellAttrs: Object[] = [{
@@ -116,7 +120,7 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   data: any[] = [
-      {
+    {
         'id': 1,
         'name': 'Frozen yogurt',
         'type': 'Ice cream',
