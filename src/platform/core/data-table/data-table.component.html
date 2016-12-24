@@ -17,7 +17,7 @@
         [sortable]="_sortable"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
-        <span [md-tooltip]="column.tooltip">{{column.label}}</span>
+        <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
         [class.md-selected]="_selectable && isRowSelected(row)"

@@ -5,8 +5,8 @@
   <md-card-content>
     <div layout="row" layout-align="start center" flex>
       <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
-        <md-button-toggle md-tooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
-        <md-button-toggle md-tooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
+        <md-button-toggle mdTooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
+        <md-button-toggle mdTooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
       </md-button-toggle-group>
     </div>
     <p>Loading Registered: {{replaceRegistered}} times</p>

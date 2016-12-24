@@ -1067,11 +1067,11 @@
   <md-card-title>Tooltips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button color="accent" md-tooltip="I show below" tooltip-position="below">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="accent" md-tooltip="I show below" tooltip-position="below">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1080,7 +1080,7 @@
   <md-card-title>Menus (dropdowns)</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-icon-button [md-menu-trigger-for]="menu">
+    <button md-icon-button [mdMenuTriggerFor]="menu">
       <md-icon>more_vert</md-icon>
     </button>
     <md-menu #menu="mdMenu">
@@ -1089,7 +1089,7 @@
         <button md-menu-item> Help </button>
         <button md-menu-item disabled> Sign Out </button>
     </md-menu>
-    <button md-button [md-menu-trigger-for]="posXMenu">
+    <button md-button [mdMenuTriggerFor]="posXMenu">
       Before
     </button>
     <md-menu x-position="before" #posXMenu="mdMenu" class="before">
@@ -1098,7 +1098,7 @@
         <button md-menu-item> Help </button>
         <button md-menu-item disabled> Sign Out </button>
     </md-menu>
-    <button md-button [md-menu-trigger-for]="aboveMenu">
+    <button md-button [mdMenuTriggerFor]="aboveMenu">
       Above
     </button>
     <md-menu y-position="above" #aboveMenu="mdMenu" class="above">
@@ -1111,7 +1111,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <!-- menu opens when trigger button is clicked -->
-        <button md-icon-button [md-menu-trigger-for]="menu">
+        <button md-icon-button [mdMenuTriggerFor]="menu">
           <md-icon>more_vert</md-icon>
         </button>
         <md-menu #menu="mdMenu">
@@ -1120,7 +1120,7 @@
             <button md-menu-item> Help </button>
             <button md-menu-item disabled> Sign Out </button>
         </md-menu>
-        <button md-button [md-menu-trigger-for]="posXMenu">
+        <button md-button [mdMenuTriggerFor]="posXMenu">
           Before
         </button>
         <md-menu x-position="before" #posXMenu="mdMenu" class="before">
@@ -1129,7 +1129,7 @@
             <button md-menu-item> Help </button>
             <button md-menu-item disabled> Sign Out </button>
         </md-menu>
-        <button md-button [md-menu-trigger-for]="aboveMenu">
+        <button md-button [mdMenuTriggerFor]="aboveMenu">
           Above
         </button>
         <md-menu y-position="above" #aboveMenu="mdMenu" class="above">
@@ -1185,8 +1185,7 @@
   <md-card-content>
     <button md-raised-button
         md-ripple
-        [md-ripple-background-color]="'rgba(30, 136, 229, 0.2)'"
-        [md-ripple-speed-factor]="2">
+        [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
       Click me
     </button>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1194,8 +1193,7 @@
       <![CDATA[
         <button md-raised-button
             md-ripple
-            [md-ripple-background-color]="'rgba(30, 136, 229, 0.2)'"
-            [md-ripple-speed-factor]="2">
+            [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
           Click me
         </button>
         ]]>
