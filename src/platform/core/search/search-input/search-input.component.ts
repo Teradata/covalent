@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, Input, Output, EventEmitter,
          trigger, state, style, transition, animate } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MdInput } from '@angular/material';
+import { MdInputDirective } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
@@ -32,7 +32,7 @@ export class TdSearchInputComponent implements OnInit {
     return this.searchTermControl.value;
   }
 
-  @ViewChild(MdInput) private _input: MdInput;
+  @ViewChild(MdInputDirective) private _input: MdInputDirective;
 
   searchTermControl: FormControl = new FormControl();
 

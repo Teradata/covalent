@@ -298,30 +298,38 @@
   <md-divider></md-divider>
   <md-card-content>
     <form>
-      <md-input style="margin-right: 20px;" placeholder="Company (disabled)" disabled value="Google">
-      </md-input>
-
-      <md-input placeholder="amount" align="end">
-        <span md-prefix>$&nbsp;</span>
-        <span md-suffix>.00</span>
-      </md-input>
-
-      <div layout="row" layout-align="start center">
-        <md-input placeholder="First name" style="margin-right: 20px; width: 100%;"></md-input>
-        <md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input>
+      <md-input-container style="width: 100%">
+        <input md-input placeholder="Company (disabled)" disabled value="Google">
+      </md-input-container>
+      <div layout="row">
+        <md-input-container flex>
+          <input md-input placeholder="First name">
+        </md-input-container>
+        <md-input-container flex>
+          <input md-input placeholder="Long Last Name That Will Be Truncated">
+        </md-input-container>
       </div>
-      <div layout="row" layout-align="start center">
-        <md-input style="margin-right: 20px; width: 100%;" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
-        <md-input style="width: 100%;" placeholder="Address 2"></md-input>
+
+      <div layout="column">
+        <md-input-container flex="100">
+          <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+        </md-input-container>
+        <md-input-container flex="100">
+          <textarea md-input placeholder="Address 2"></textarea>
+        </md-input-container>
       </div>
-      <div layout="row" layout-align="space-between center">
-        <md-input placeholder="City"></md-input>
-        <md-input placeholder="State"></md-input>
-        <md-input #postalCode class="demo-full-width" maxLength="5"
-                      placeholder="Postal Code"
-                      value="94043">
-          <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
-        </md-input>
+
+      <div layout="row">
+        <md-input-container flex>
+          <input md-input placeholder="City">
+        </md-input-container>
+        <md-input-container flex>
+          <input md-input placeholder="State">
+        </md-input-container>
+        <md-input-container flex>
+          <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+        </md-input-container>
       </div>
     </form>
   </md-card-content>
@@ -330,30 +338,38 @@
     <![CDATA[
       <!-- Inputs -->
       <form>
-        <md-input style="margin-right: 20px;" placeholder="Company (disabled)" disabled value="Google">
-        </md-input>
-
-        <md-input placeholder="amount" align="end">
-          <span md-prefix>$&nbsp;</span>
-          <span md-suffix>.00</span>
-        </md-input>
-
-        <div layout="row" layout-align="start center">
-          <md-input placeholder="First name" style="margin-right: 20px; width: 100%;"></md-input>
-          <md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input>
+        <md-input-container style="width: 100%">
+          <input md-input placeholder="Company (disabled)" disabled value="Google">
+        </md-input-container>
+        <div layout="row">
+          <md-input-container flex>
+            <input md-input placeholder="First name">
+          </md-input-container>
+          <md-input-container flex>
+            <input md-input placeholder="Long Last Name That Will Be Truncated">
+          </md-input-container>
         </div>
-        <div layout="row" layout-align="start center">
-          <md-input style="margin-right: 20px; width: 100%;" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
-          <md-input style="width: 100%;" placeholder="Address 2"></md-input>
+
+        <div layout="column">
+          <md-input-container flex="100">
+            <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+          </md-input-container>
+          <md-input-container flex="100">
+            <textarea md-input placeholder="Address 2"></textarea>
+          </md-input-container>
         </div>
-        <div layout="row" layout-align="space-between center">
-          <md-input placeholder="City"></md-input>
-          <md-input placeholder="State"></md-input>
-          <md-input #postalCode class="demo-full-width" maxLength="5"
-                        placeholder="Postal Code"
-                        value="94043">
-            <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
-          </md-input>
+
+        <div layout="row">
+          <md-input-container flex>
+            <input md-input placeholder="City">
+          </md-input-container>
+          <md-input-container flex>
+            <input md-input placeholder="State">
+          </md-input-container>
+          <md-input-container flex>
+            <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+          </md-input-container>
         </div>
       </form>
     ]]>

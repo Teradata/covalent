@@ -6,7 +6,7 @@ $foreground: $md-light-theme-foreground;
 $background: $md-light-theme-background;
 $warn: md-palette($md-red);
 
-md-input {
+md-input-container {
     &.ng-invalid:not(.ng-pristine) {
         label {
             color: md-color($warn);

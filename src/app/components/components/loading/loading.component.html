@@ -15,19 +15,23 @@
       <p>Circular Type</p>
       <template tdLoading="test.indeterminate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
       <p>Linear Type</p>
       <template tdLoading="test2.indeterminate" loadingType="linear">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
     </div>
@@ -36,19 +40,23 @@
       <p>Circular Type</p>
       <template tdLoading="test.determinate" loadingMode="determinate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
       <p>Linear Type</p>
       <template tdLoading="test2.determinate" loadingType="linear" loadingMode="determinate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
     </div>
