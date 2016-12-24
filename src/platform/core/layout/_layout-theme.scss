@@ -2,7 +2,7 @@
 
 @mixin td-layout-theme($theme) {
   $background: map-get($theme, background);
-  md-sidenav-layout {
+  md-sidenav-container {
     background-color: md-color($background, status-bar);
   }
 }
