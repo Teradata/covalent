@@ -1,11 +1,3 @@
-@import '../../common/styles/variables';
-
-.td-step-content,
-.td-step-summary,
-.td-step-actions {
-  margin: $margin;
-}
-
 .td-step-summary,
 .td-step-content-wrapper {
   overflow: hidden; // FF50 bugfix since overflow style in animation doesnt work
