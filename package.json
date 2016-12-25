@@ -14,7 +14,7 @@
     "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
-    "test": "ng test --code-coverage --lint --watch=false",
+    "test": "ng test --code-coverage --single-run",
     "show-coverage-win" : "start chrome ./coverage/index.html",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
