@@ -6,8 +6,8 @@ import { TdConfirmDialogComponent } from '../../../../platform/core';
 
 @Component({
   selector: 'design-patterns-material-components',
-  styleUrls: ['material-components.component.scss'],
-  templateUrl: 'material-components.component.html',
+  styleUrls: ['./material-components.component.scss'],
+  templateUrl: './material-components.component.html',
 })
 export class MaterialComponentsComponent {
 

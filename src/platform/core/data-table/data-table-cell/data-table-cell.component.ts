@@ -3,8 +3,8 @@ import { Component, Input, Renderer, ElementRef, HostBinding } from '@angular/co
 @Component({
   /* tslint:disable-next-line */ 
   selector: 'td[td-data-table-cell]',
-  styleUrls: [ 'data-table-cell.component.scss' ],
-  templateUrl: 'data-table-cell.component.html',
+  styleUrls: ['./data-table-cell.component.scss' ],
+  templateUrl: './data-table-cell.component.html',
 })
 export class TdDataTableCellComponent {
 

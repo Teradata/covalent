@@ -5,8 +5,8 @@ import { TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'media-demo',
-  styleUrls: [ 'media.component.scss' ],
-  templateUrl: 'media.component.html',
+  styleUrls: ['./media.component.scss' ],
+  templateUrl: './media.component.html',
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 

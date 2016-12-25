@@ -14,8 +14,8 @@ export enum LoadingMode {
 
 @Component({
   selector: 'td-loading',
-  styleUrls: [ 'loading.component.scss' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: ['./loading.component.scss' ],
+  templateUrl: './loading.component.html',
 })
 export class TdLoadingComponent {
 

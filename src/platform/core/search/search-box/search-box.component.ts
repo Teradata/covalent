@@ -5,8 +5,8 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
 
 @Component({
   selector: 'td-search-box',
-  templateUrl: 'search-box.component.html',
-  styleUrls: [ 'search-box.component.scss' ],
+  templateUrl: './search-box.component.html',
+  styleUrls: ['./search-box.component.scss' ],
   animations: [
     trigger('inputState', [
       state('false', style({

@@ -6,8 +6,8 @@ import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-dialogs',
-  styleUrls: ['dialogs.component.scss'],
-  templateUrl: 'dialogs.component.html',
+  styleUrls: ['./dialogs.component.scss'],
+  templateUrl: './dialogs.component.html',
 })
 export class DialogsToastsComponent {
 

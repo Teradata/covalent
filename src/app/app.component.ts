@@ -4,8 +4,8 @@ import { MdIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'docs-covalent',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class DocsAppComponent {
 

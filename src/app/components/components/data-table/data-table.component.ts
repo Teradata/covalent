@@ -10,8 +10,8 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
 @Component({
   selector: 'data-table-demo',
-  styleUrls: ['data-table.component.scss'],
-  templateUrl: 'data-table.component.html',
+  styleUrls: ['./data-table.component.scss'],
+  templateUrl: './data-table.component.html',
 })
 export class DataTableDemoComponent implements OnInit {
 

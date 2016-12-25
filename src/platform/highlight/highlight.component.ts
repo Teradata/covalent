@@ -4,8 +4,8 @@ let hljs: any = require('highlight.js/lib');
 
 @Component({
   selector: 'td-highlight',
-  styleUrls: ['highlight.component.scss'],
-  templateUrl: 'highlight.component.html',
+  styleUrls: ['./highlight.component.scss'],
+  templateUrl: './highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {
 

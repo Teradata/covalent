@@ -3,8 +3,8 @@ import { Component, Renderer, ElementRef } from '@angular/core';
 @Component({
   /* tslint:disable-next-line */ 
   selector: 'tr[td-data-table-row]',
-  styleUrls: [ 'data-table-row.component.scss' ],
-  templateUrl: 'data-table-row.component.html',
+  styleUrls: ['./data-table-row.component.scss' ],
+  templateUrl: './data-table-row.component.html',
 })
 export class TdDataTableRowComponent {
 

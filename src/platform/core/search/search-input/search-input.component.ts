@@ -6,8 +6,8 @@ import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'td-search-input',
-  templateUrl: 'search-input.component.html',
-  styleUrls: [ 'search-input.component.scss' ],
+  templateUrl: './search-input.component.html',
+  styleUrls: ['./search-input.component.scss' ],
   animations: [
     trigger('searchState', [
       state('false', style({
