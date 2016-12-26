@@ -6,8 +6,8 @@ import { Subscription } from 'rxjs';
 import { TdStepComponent } from './step.component';
 
 export interface IStepChangeEvent {
-  newStep: number;
-  prevStep: number;
+  newStep: TdStepComponent;
+  prevStep: TdStepComponent;
 }
 
 export enum StepMode {
@@ -22,14 +22,22 @@ export enum StepMode {
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
 
-  private _prevStep: number = 0;
-  private _subcriptions: Subscription[] = [];
+  private _subcriptions: Subscription[];
   private _mode: StepMode = StepMode.Vertical;
-  @ContentChildren(TdStepComponent) private _steps: QueryList<TdStepComponent>;
+  private _steps: QueryList<TdStepComponent>;
+
+  @ContentChildren(TdStepComponent)
+  set stepsContent(steps: QueryList<TdStepComponent>) {
+    if (steps) {
+      this._steps = steps;
+      this._registerSteps();
+    }
+  }
 
   get steps(): TdStepComponent[] {
     return this._steps.toArray();
   }
+  prevStep: TdStepComponent;
 
   /**
    * mode?: StepMode or ["vertical" | "horizontal"]
@@ -61,26 +69,14 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    * assigns them a number and subscribes as an observer to their [onActivated] event.
    */
   ngAfterContentInit(): void {
-    let stepCount: number = 0;
-    if (this._steps.toArray().length < 1) {
-      throw `No [td-step]'s were defined in the [td-steps] component. At least one [td-step] is required.`;
-    }
-    this._steps.toArray().forEach((step: TdStepComponent) => {
-      step.number = ++stepCount;
-      let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
-        this._onStepSelection(step.number);
-      });
-      this._subcriptions.push(subscription);
-    });
+    this._registerSteps();
   }
 
   /**
    * Unsubscribes from [TdStepComponent] children elements when component is destroyed.
    */
   ngOnDestroy(): void {
-    this._subcriptions.forEach((subs: Subscription) => {
-      subs.unsubscribe();
-    });
+    this._deregisterSteps();
   }
 
   /**
@@ -107,15 +103,15 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent] 
    * and emits [onStepChange] event.
    */
-  private _onStepSelection(stepNumber: number): void {
-    if (this._prevStep !== stepNumber) {
-      let prevStep: number = this._prevStep > 0 ? this._prevStep : undefined;
-      this._prevStep = stepNumber;
+  private _onStepSelection(step: TdStepComponent): void {
+    if (this.prevStep !== step) {
+      let prevStep: TdStepComponent = this.prevStep;
+      this.prevStep = step;
       let event: IStepChangeEvent = {
-        newStep: stepNumber,
+        newStep: step,
         prevStep: prevStep,
       };
-      this._deactivateAllBut(stepNumber);
+      this._deactivateAllBut(step);
       this.onStepChange.emit(event);
     }
   }
@@ -123,10 +119,29 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   /**
    * Loops through [TdStepComponent] children elements and deactivates them ignoring the one passed as an argument.
    */
-  private _deactivateAllBut(activeStep: number): void {
-    this._steps.filter((step: TdStepComponent) => step.number !== activeStep)
+  private _deactivateAllBut(activeStep: TdStepComponent): void {
+    this._steps.filter((step: TdStepComponent) => step !== activeStep)
     .forEach((step: TdStepComponent) => {
       step.active = false;
     });
+  }
+
+  private _registerSteps(): void {
+    this._subcriptions = [];
+    this._steps.toArray().forEach((step: TdStepComponent) => {
+      let subscription: Subscription = step.onActivated.asObservable().subscribe(() => {
+        this._onStepSelection(step);
+      });
+      this._subcriptions.push(subscription);
+    });
+  }
+
+  private _deregisterSteps(): void {
+    if (this._subcriptions) {
+      this._subcriptions.forEach((subs: Subscription) => {
+        subs.unsubscribe();
+      });
+      this._subcriptions = undefined;
+    }
   }
 }
