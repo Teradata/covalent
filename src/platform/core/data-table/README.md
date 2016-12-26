@@ -19,6 +19,7 @@ Properties:
 | `sortOrder?` | TdDataTableSortingOrder | Sets the sort order of the [sortBy] column. [sortable] needs to be enabled. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
 | `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
 | `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
+| `selectAll` | `function` | Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled. Emits an [ITdDataTableSelectAllEvent] implemented object.
 | `refresh` | `function` |  Refreshes data table and rerenders [data] and [columns]
 
 ## Setup
@@ -51,7 +52,8 @@ Example for HTML usage:
   [sortBy]="sortBy"
   [sortOrder]="'ASC'|'DESC'"
   (sortChange)="sortEvent($event)"
-  (rowSelect)="selectEvent($event)">
+  (rowSelect)="selectEvent($event)"
+  (selectAll)="selectAllEvent($event)">
   <template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
     <div layout="row">
       <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>

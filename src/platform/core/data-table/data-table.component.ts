@@ -34,6 +34,11 @@ export interface ITdDataTableSelectEvent {
   selected: boolean;
 };
 
+export interface ITdDataTableSelectAllEvent {
+  rows: any[];
+  selected: boolean;
+}
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
@@ -206,6 +211,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
+   * selectAll?: function
+   * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
+   * Emits an [ITdDataTableSelectAllEvent] implemented object.
+   */
+  @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> =
+                                    new EventEmitter<ITdDataTableSelectAllEvent>();
+
+  /**
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
@@ -277,6 +290,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     } else {
       this.clearModel();
     }
+    this.onSelectAll.emit({rows: this._value, selected: checked});
   }
 
   /**
