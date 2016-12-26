@@ -43,6 +43,9 @@
           visibility: visible;
           transform: translate3d(0, 0, 0);
         }
+        &.md-sidenav-opened {
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+        }
       }
       & > .md-sidenav-content {
         display: flex;
