@@ -20,6 +20,7 @@ Properties:
 | `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
 | `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
 | `selectAll` | `function` | Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled. Emits an [ITdDataTableSelectAllEvent] implemented object.
+| `refresh` | `function` |  Refreshes data table and rerenders [data] and [columns]
 
 ## Setup
 
