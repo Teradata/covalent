@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, forwardRef,
+import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
          ContentChildren, TemplateRef, AfterContentInit, QueryList } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -26,6 +26,7 @@ export interface ITdDataTableColumn {
   tooltip?: string;
   numeric?: boolean;
   format?: (value: any) => any;
+  nested?: boolean;
 };
 
 export interface ITdDataTableSelectEvent {
@@ -33,11 +34,17 @@ export interface ITdDataTableSelectEvent {
   selected: boolean;
 };
 
+export interface ITdDataTableSelectAllEvent {
+  rows: any[];
+  selected: boolean;
+}
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
   styleUrls: [ 'data-table.component.scss' ],
   templateUrl: 'data-table.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDataTableComponent implements ControlValueAccessor, AfterContentInit {
 
@@ -202,6 +209,16 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   /**
+   * selectAll?: function
+   * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
+   * Emits an [ITdDataTableSelectAllEvent] implemented object.
+   */
+  @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> =
+                                    new EventEmitter<ITdDataTableSelectAllEvent>();
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
+  /**
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
@@ -211,7 +228,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         this._templates.toArray()[i].templateRef
       );
     }
-   }
+  }
+
+  getCellValue(column: ITdDataTableColumn, value: any): string {
+    if (column.nested === undefined || column.nested) {
+      return this._getNestedValue(column.name, value);
+    }
+    return value[column.name];
+  }
 
   /**
    * Getter method for template references
@@ -231,7 +255,16 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Refreshes data table and rerenders [data] and [columns]
    */
   refresh(): void {
-    this.clearModel();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * Workaround for https://github.com/angular/material2/issues/1825
+   */
+  tooltipRefresh(): void {
+    setTimeout(() => {
+      this.refresh();
+    }, 100);
   }
 
   /**
@@ -257,6 +290,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     } else {
       this.clearModel();
     }
+    this.onSelectAll.emit({rows: this._value, selected: checked});
   }
 
   /**
@@ -331,5 +365,17 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   onChange = (_: any) => noop;
   onTouched = () => noop;
+
+  private _getNestedValue(name: string, value: any): string {
+    if (!(value instanceof Object) || !name) {
+      return value;
+    }
+    if (name.indexOf('.') > -1) {
+      let splitName: string[] = name.split(/\.(.+)/, 2);
+      return this._getNestedValue(splitName[1], value[splitName[0]]);
+    } else {
+      return value[name];
+    }
+  }
 
 }
