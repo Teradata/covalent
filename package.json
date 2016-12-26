@@ -20,6 +20,7 @@
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",
     "bump-major": "gulp bump-version --ver major",
+    "aot": "./node_modules/.bin/ngc -p src/platform/tsconfig-aot.json",
     "build": "bash scripts/build-release",
     "publish": "bash scripts/publish-release",
     "ghpages-deploy": "bash scripts/ghpages-deploy",
