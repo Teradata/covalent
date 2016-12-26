@@ -1,32 +1,35 @@
-import { NgModule, ModuleWithProviders, Type, Injector } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector, OpaqueToken } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 
-import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
+import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
+
+export const HTTP_CONFIG: OpaqueToken = new OpaqueToken('HTTP_CONFIG');
+
+export type HttpConfig = {inteceptors: IHttpInterceptorConfig[]};
+
+export function httpFactory(http: Http, injector: Injector, config: HttpConfig): HttpInterceptorService {
+  return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.inteceptors);
+}
 
 @NgModule({
   imports: [
     HttpModule,
   ],
-  providers: [
-    HttpInterceptorService,
-  ],
 })
 export class CovalentHttpModule {
-  static forRoot(requestInterceptors: Type<any>[] = []): ModuleWithProviders {
-    let providers: any[] = [];
-    requestInterceptors.forEach((interceptor: Type<any>) => {
-      providers.push(interceptor);
-    });
-    providers.push({
-      provide: HttpInterceptorService,
-      useFactory: (http: Http, injector: Injector): HttpInterceptorService => {
-        return new HttpInterceptorService(http, injector, requestInterceptors);
-      },
-      deps: [Http, Injector],
-    });
+  static forRoot(config: HttpConfig = {inteceptors: []}): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,
-      providers: providers,
+      providers: [{
+          provide: HTTP_CONFIG,
+          useValue: config,
+        }, {
+          provide: HttpInterceptorService,
+          useFactory: httpFactory,
+          deps: [Http, Injector, HTTP_CONFIG],
+        },
+      ],
     };
   }
 }
