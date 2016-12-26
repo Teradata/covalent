@@ -73,16 +73,31 @@ export class CustomInterceptor implements IHttpInterceptor {
 
 ```
 
-Then, import the [CovalentHttpModule] using the forRoot() method with the desired interceptors in your NgModule:
+Then, import the [CovalentHttpModule] using the forRoot() method with the desired interceptors and paths to intercept in your NgModule:
 
 ```typescript
+import { NgModule, Type } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 import { CustomInterceptor } from 'dir/to/interceptor';
+
+const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+  CustomInterceptor,
+  ...
+];
+
 @NgModule({
   imports: [
     HttpModule, /* or CovalentCoreModule.forRoot() */
-    CovalentHttpModule.forRoot([CustomInterceptor]),
+    CovalentHttpModule.forRoot({
+      interceptors: [{
+        interceptor: CustomInterceptor, paths: ['**'],
+      }],
+    }),
+    ...
+  ],
+  providers: [
+    httpInterceptorProviders,
     ...
   ],
   ...
@@ -91,6 +106,59 @@ export class MyModule {}
 ```
 
 After that, just inject [HttpInterceptorService] and use it for your requests.
+
+## Paths
+
+The following characters are accepted as a path to intercept
+- `**` is a wildcard for `[a-zA-Z0-9-_]` (including `/`)
+- `*` is a wildcard for `[a-zA-Z0-9-_]` (excluding `/`)
+- `[a-zA-Z0-9-_]`
+
+#### Examples
+
+Example 1
+
+`/users/*/groups` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+
+`/users/*/groups` DOES NOT intercept:
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/groups`
+
+Example 2
+
+`/users/**/groups` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+
+`/users/**/groups` DOES NOT intercept:
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+
+Example 3
+
+`/users/**` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+
+`/users/**` DOES NOT intercept:
+- `www.url.com/users`
+
+Example 4
+
+`/users**` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+- `www.url.com/users`
 
 
 # RESTService
