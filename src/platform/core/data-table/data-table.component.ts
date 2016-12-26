@@ -208,8 +208,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
-
   /**
    * selectAll?: function
    * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
@@ -217,6 +215,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> =
                                     new EventEmitter<ITdDataTableSelectAllEvent>();
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
    * Loads templates and sets them in a map for faster access.
