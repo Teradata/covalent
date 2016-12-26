@@ -77,7 +77,6 @@ export class TdPagingBarComponent implements OnInit {
   @Input('total')
   set total(total: number) {
     this._total = total;
-    this._page = 1;
     this._calculateRows();
   }
   get total(): number {
@@ -89,7 +88,7 @@ export class TdPagingBarComponent implements OnInit {
    * Returns the range of the rows.
    */
   get range(): string {
-    return `${this._fromRow}-${this._toRow}`;
+    return `${!this._toRow ? 0 : this._fromRow}-${this._toRow}`;
   }
 
   /**
@@ -125,7 +124,7 @@ export class TdPagingBarComponent implements OnInit {
    * Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
    */
   navigateToPage(page: number): boolean {
-    if (page >= 1 && page <= this.maxPage && page !== this._page) {
+    if (page === 1 || (page >= 1 && page <= this.maxPage)) {
       this._page = page;
       this._handleOnChange();
       return true;

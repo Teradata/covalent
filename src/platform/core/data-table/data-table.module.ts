@@ -22,7 +22,7 @@ const TD_DATA_TABLE: Type<any>[] = [
 ];
 
 export { TdDataTableComponent, TdDataTableSortingOrder,
-         ITdDataTableColumn } from './data-table.component';
+         ITdDataTableColumn, ITdDataTableSelectEvent } from './data-table.component';
 export { TdDataTableService } from './services/data-table.service';
 export { TdDataTableColumnComponent,
          ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';

@@ -97,6 +97,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Basic Data Table</h3>
+    <h4 class="md-subhead">with nested data, formatting, and templates</h4>
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
@@ -137,8 +138,8 @@
             })
             export class Demo {
               columns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)' },
-                { name: 'type', label: 'Type' },
+                { name: 'food.name',  label: 'Dessert (100g serving)' },
+                { name: 'food.type', label: 'Type' },
                 { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
                 { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
                 { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
@@ -151,8 +152,10 @@
               basicData: any[] = [
                   {
                     'id': 1,
-                    'name': 'Frozen yogurt',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Frozen yogurt',
+                      'type': 'Ice cream',
+                    },
                     'calories': 159.0,
                     'fat': 6.0,
                     'carbs': 24.0,
@@ -163,8 +166,10 @@
                     'comments': 'I love froyo!',
                   }, {
                     'id': 2,
-                    'name': 'Ice cream sandwich',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Ice cream sandwich',
+                      'type': 'Ice cream',
+                    },
                     'calories': 237.0,
                     'fat': 9.0,
                     'carbs': 37.0,
@@ -174,8 +179,10 @@
                     'iron': 1.0,
                   }, {
                     'id': 3,
-                    'name': 'Eclair',
-                    'type': 'Pastry',
+                    'food': {
+                      'name': 'Eclair',
+                      'type': 'Pastry',
+                    },
                     'calories':  262.0,
                     'fat': 16.0,
                     'carbs': 24.0,

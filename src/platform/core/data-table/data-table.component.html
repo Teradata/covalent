@@ -15,6 +15,8 @@
         [numeric]="column.numeric"
         [active]="_sortable && column === _sortBy"
         [sortable]="_sortable"
+        (mouseleave)="column.tooltip && tooltipRefresh()"
+        (mouseenter)="column.tooltip && tooltipRefresh()"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
@@ -31,11 +33,11 @@
       <td td-data-table-cell
           [numeric]="column.numeric"
           *ngFor="let column of columns">
-        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(row[column.name]) : row[column.name]}}</span>
+        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
         <template
           *ngIf="getTemplateRef(column.name)"
           [ngTemplateOutlet]="getTemplateRef(column.name)"
-          [ngOutletContext]="{ value: row[column.name], row: row, column: column.name }">
+          [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
         </template>
       </td>
     </tr>

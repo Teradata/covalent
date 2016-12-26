@@ -3,39 +3,105 @@
   <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div layout="row" layout-align="start center">
-      <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-        <md-button-toggle mdTooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> Vertical</md-button-toggle>
-        <md-button-toggle mdTooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> Horizontal</md-button-toggle>
-        <md-button-toggle mdTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> Responsive (gt-sm)</md-button-toggle>
-      </md-button-toggle-group>
-    </div>
-    <p>Change Event: {{stepChangeMsg}}</p>
-    <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
-    <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
-    <td-steps (stepChange)="stepChange($event)" [mode]="horizontal ? 'horizontal' : 'vertical'">
-      <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
-        <template td-step-label><span>Basic Usage (template)</span></template>
-        Include any content you like for an active stepper 
-      </td-step>
-      <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
-        This step is required!
-        <template td-step-actions>
-          <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
-          <button md-button (click)="step2.active = false">Cancel</button>
-        </template>
-      </td-step>
-      <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
-        Mark this step complete and get a summary
-        <template td-step-summary>
-          Use an optional step summary to summarize the info in this step
-        </template>
-        <template td-step-actions>
-          <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
-          <button md-button (click)="step3.active = false">Cancel</button>
-        </template>
-      </td-step>
-    </td-steps>
+    <h3 class="md-title">Basic Stepper</h3>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div layout="row" layout-align="start center">
+          <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
+            <md-button-toggle md-tooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
+            <md-button-toggle md-tooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> <span hide-md hide-sm hide-xs>Horizontal</span></md-button-toggle>
+            <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></md-button-toggle>
+          </md-button-toggle-group>
+        </div>
+        <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
+        <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
+        <td-steps [mode]="horizontal ? 'horizontal' : 'vertical'">
+          <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+            <template td-step-label><span>Basic Usage (template)</span></template>
+            Include any content you like for an active stepper 
+          </td-step>
+          <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
+            This step is required!
+            <template td-step-actions>
+              <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
+              <button md-button (click)="step2.active = false">Cancel</button>
+            </template>
+          </td-step>
+          <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+            Mark this step complete and get a summary
+            <template td-step-summary>
+              Use an optional step summary to summarize the info in this step
+            </template>
+            <template td-step-actions>
+              <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
+              <button md-button (click)="step3.active = false">Cancel</button>
+            </template>
+          </td-step>
+        </td-steps>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-steps>
+              <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+                <template td-step-label><span>Basic Usage (template)</span></template>
+                Include any content you like for an active stepper 
+              </td-step>
+              <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
+                This step is required!
+                <template td-step-actions>
+                  <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
+                  <button md-button (click)="step2.active = false">Cancel</button>
+                </template>
+              </td-step>
+              <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+                Mark this step complete and get a summary
+                <template td-step-summary>
+                  Use an optional step summary to summarize the info in this step
+                </template>
+                <template td-step-actions>
+                  <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
+                  <button md-button (click)="step3.active = false">Cancel</button>
+                </template>
+              </td-step>
+            </td-steps>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { StepState } from '@covalent/core';
+            ...
+            })
+            export class Demo {
+              activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
+              stateStep2: StepState = StepState.Required;
+              stateStep3: StepState = StepState.Complete;
+              disabled: boolean = false;
+
+              toggleRequiredStep2(): void {
+                this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
+              }
+
+              toggleCompleteStep3(): void {
+                this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
+              }
+
+              activeStep1Event(): void {
+                this.activeDeactiveStep1Msg = 'Active event emitted.';
+              }
+
+              deactiveStep1Event(): void {
+                this.activeDeactiveStep1Msg = 'Deactive event emitted.';
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
