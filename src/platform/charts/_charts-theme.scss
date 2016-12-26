@@ -1,6 +1,6 @@
 @import '../../../node_modules/@angular/material/core/theming/theming';
 
-@mixin td-charts-theme($theme) {
+@mixin covalent-charts-theme($theme) {
   $foreground: map-get($theme, foreground);
   td-charts {
     text {
@@ -25,4 +25,3 @@
     }
   }
 }
-

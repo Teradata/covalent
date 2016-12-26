@@ -70,10 +70,10 @@
     <p>Import the [CovalentSearchModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentSearchModule } from '@covalent/search';
+        import { CovalentSearchModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentSearchModule.forRoot(),
+            CovalentSearchModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

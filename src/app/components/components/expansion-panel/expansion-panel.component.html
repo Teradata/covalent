@@ -232,13 +232,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentExpansionPanelModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentCoreModule } from '@covalent/core';
+        import { CovalentExpansionPanelModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentCoreModule.forRoot(),
+            CovalentExpansionPanelModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IPageChangeEvent } from '../../../../platform/paging';
+import { IPageChangeEvent } from '../../../../platform/core';
 
 @Component({
   selector: 'paging-demo',
