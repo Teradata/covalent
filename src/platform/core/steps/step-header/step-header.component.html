@@ -23,10 +23,10 @@
             *ngIf="isRequired()">
           <md-icon class="md-warn">warning</md-icon>
         </div>
-        <div class="td-step-label"
+        <div class="td-step-label-wrapper"
               [class.md-disabled]="(!active && !isComplete()) || disabled"
               [class.md-warn]="isRequired() && !disabled">
-          <div class="md-body-2">
+          <div class="md-body-2 td-step-label">
             <ng-content select="[td-step-header-label]"></ng-content>
           </div>
           <div class="md-caption td-step-sublabel">

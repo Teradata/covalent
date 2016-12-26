@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { StepState, IStepChangeEvent, TdMediaService } from '../../../../platform/core';
+import { StepState, TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
@@ -70,7 +70,6 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   mode: number = 0;
   horizontal: boolean = true;
   isScreenGtSm: boolean = false;
-  stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
@@ -114,14 +113,6 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
 
   toggleCompleteStep3(): void {
     this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
-  }
-
-  stepChange(event: IStepChangeEvent): void {
-    if (event.prevStep === undefined) {
-      this.stepChangeMsg = `Started at step: ${event.newStep}`;
-    } else {
-      this.stepChangeMsg = `Changed from step: ${event.prevStep} to step: ${event.newStep}`;
-    }
   }
 
   toggleDisabled(): void {

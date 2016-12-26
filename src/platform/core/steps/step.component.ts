@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
-         ViewContainerRef, ContentChild, AfterViewInit, OnInit } from '@angular/core';
+         ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective, TemplatePortal } from '@angular/material';
 
@@ -40,9 +40,8 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
   selector: 'td-step',
   templateUrl: 'step.component.html',
 })
-export class TdStepComponent implements OnInit, AfterViewInit {
+export class TdStepComponent implements OnInit {
 
-  private _number: number;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
@@ -56,19 +55,6 @@ export class TdStepComponent implements OnInit, AfterViewInit {
   @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
-
-  /**
-   * Number assigned by [TdStepsComponent] parent element.
-   */
-  set number(num: number) {
-    if (this._number > 0) {
-      return;
-    }
-    this._number = num;
-  }
-  get number(): number {
-    return this._number;
-  }
 
   /**
    * label?: string
@@ -150,12 +136,6 @@ export class TdStepComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this._contentPortal = new TemplatePortal(this._content, this._viewContainerRef);
-  }
-
-  ngAfterViewInit(): void {
-    if (this.number === undefined) {
-      throw 'The [td-step] component needs to have a [td-steps] parent component to work.';
-    }
   }
 
   /**
