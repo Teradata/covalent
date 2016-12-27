@@ -66,14 +66,14 @@ export class TdLayoutNavListComponent {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): void {
-    this._sideNav.toggle()
+    this._sideNav.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
   public open(): void {
-    this._sideNav.open()
+    this._sideNav.open();
   }
 
   /**
