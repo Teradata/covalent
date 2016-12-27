@@ -37,7 +37,9 @@
         display: flex;
         position: relative;
         height: 100%;
-        width: 382px;
+        width: 33%;
+        min-width: 260px;
+        max-width: 382px;
         flex: 0 0 auto;
         transition: none;
         &.md-sidenav-closed,
