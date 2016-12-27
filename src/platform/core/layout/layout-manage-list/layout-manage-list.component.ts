@@ -13,8 +13,6 @@ import { TdLayoutService } from '../services/layout.service';
 })
 export class TdLayoutManageListComponent {
 
-  private _transitioning: boolean = false;
-
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
@@ -34,42 +32,21 @@ export class TdLayoutManageListComponent {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.toggle().then(() => {
-        this._transitioning = false;
-      }).catch(() => {
-        this._transitioning = false;
-      });
-    }
+    this._sideNav.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
   public open(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.open().then(() => {
-        this._transitioning = false;
-      }).catch(() => {
-        this._transitioning = false;
-      });
-    }
+    this._sideNav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
   public close(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.close().then(() => {
-        this._transitioning = false;
-      }).catch(() => {
-        this._transitioning = false;
-      });
-    }
+    this._sideNav.close();
   }
 
   /**
