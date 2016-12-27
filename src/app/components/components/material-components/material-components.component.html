@@ -20,10 +20,10 @@
       <button md-icon-button>
         <md-icon>favorite</md-icon>
       </button>
-      <button md-fab>
+      <button md-fab color="primary">
         <md-icon>add</md-icon>
       </button>
-      <button md-mini-fab>
+      <button md-mini-fab color="accent">
         <md-icon>add</md-icon>
       </button>
     </md-card-actions>
@@ -41,10 +41,10 @@
         <md-icon>favorite</md-icon>
       </button>
       <!-- FAB Buttons -->
-      <button md-fab>
+      <button md-fab color="primary">
         <md-icon>add</md-icon>
       </button>
-      <button md-mini-fab>
+      <button md-mini-fab color="accent">
         <md-icon>add</md-icon>
       </button>
     ]]>
@@ -58,7 +58,7 @@
       <button md-raised-button color="warn">WARN</button>
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
-      <button md-mini-fab disabled><md-icon>check circle</md-icon></button>
+      <button md-mini-fab disabled  color="primary"><md-icon>check circle</md-icon></button>
     </md-card-actions>
 
   </md-card-content>
@@ -73,7 +73,7 @@
       <!-- Disabled Buttons -->
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
-      <button md-mini-fab disabled><md-icon>check circle</md-icon></button>
+      <button md-mini-fab disabled  color="primary"><md-icon>check circle</md-icon></button>
     ]]>
     </td-highlight>
   </md-card-content>
@@ -260,29 +260,29 @@
       <md-card-actions>
         <h3>Icons with Buttons</h3>
         <button md-icon-button>
-            <md-icon class="md-24">favorite</md-icon>
+            <md-icon>favorite</md-icon>
         </button>
-        <button md-fab>
-            <md-icon class="md-24">shopping_cart</md-icon>
+        <button md-fab color="accent">
+            <md-icon>shopping_cart</md-icon>
         </button>
-        <button md-mini-fab>
-            <md-icon class="md-24">add</md-icon>
+        <button md-mini-fab color="accent">
+            <md-icon>add</md-icon>
         </button>
-        <button md-mini-fab disabled><md-icon>backup</md-icon></button>
+        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
       </md-card-actions>
       <td-highlight lang="html">
       <![CDATA[
         <!-- Icons and Buttons -->
         <button md-icon-button>
-            <md-icon class="md-24">favorite</md-icon>
+            <md-icon>favorite</md-icon>
         </button>
-        <button md-fab>
-            <md-icon class="md-24">shopping_cart</md-icon>
+        <button md-fab color="accent">
+            <md-icon>shopping_cart</md-icon>
         </button>
-        <button md-mini-fab>
-            <md-icon class="md-24">add</md-icon>
+        <button md-mini-fab color="accent">
+            <md-icon>add</md-icon>
         </button>
-        <button md-mini-fab disabled><md-icon>backup</md-icon></button>
+        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
       ]]>
       </td-highlight>
     </div>
@@ -298,10 +298,12 @@
   <md-divider></md-divider>
   <md-card-content>
     <form>
-      <md-input-container style="width: 100%">
-        <input md-input placeholder="Company (disabled)" disabled value="Google">
-      </md-input-container>
-      <div layout="row">
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input md-input placeholder="Company (disabled)" disabled value="Google">
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin>
         <md-input-container flex>
           <input md-input placeholder="First name">
         </md-input-container>
@@ -310,16 +312,18 @@
         </md-input-container>
       </div>
 
-      <div layout="column">
-        <md-input-container flex="100">
+      <div layout="row" layout-margin>
+        <md-input-container flex>
           <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
         </md-input-container>
-        <md-input-container flex="100">
+      </div>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
           <textarea md-input placeholder="Address 2"></textarea>
         </md-input-container>
       </div>
 
-      <div layout="row">
+      <div layout="row" layout-margin>
         <md-input-container flex>
           <input md-input placeholder="City">
         </md-input-container>
@@ -338,10 +342,12 @@
     <![CDATA[
       <!-- Inputs -->
       <form>
-        <md-input-container style="width: 100%">
-          <input md-input placeholder="Company (disabled)" disabled value="Google">
-        </md-input-container>
-        <div layout="row">
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input md-input placeholder="Company (disabled)" disabled value="Google">
+          </md-input-container>
+        </div>
+        <div layout="row" layout-margin>
           <md-input-container flex>
             <input md-input placeholder="First name">
           </md-input-container>
@@ -350,16 +356,18 @@
           </md-input-container>
         </div>
 
-        <div layout="column">
-          <md-input-container flex="100">
+        <div layout="row" layout-margin>
+          <md-input-container flex>
             <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
           </md-input-container>
-          <md-input-container flex="100">
+        </div>
+        <div layout="row" layout-margin>
+          <md-input-container flex>
             <textarea md-input placeholder="Address 2"></textarea>
           </md-input-container>
         </div>
 
-        <div layout="row">
+        <div layout="row" layout-margin>
           <md-input-container flex>
             <input md-input placeholder="City">
           </md-input-container>
@@ -908,7 +916,7 @@
         <h3>Basic Usage</h3>
         <md-list>
           <md-list-item *ngFor="let system of systems">
-            <md-slide-toggle [(ngModel)]="system.on">
+            <md-slide-toggle [color]="system.color" [(ngModel)]="system.on">
               {{system.name}}
             </md-slide-toggle>
           </md-list-item>
@@ -919,14 +927,32 @@
           <!-- Basic Usage -->
           <md-list>
             <md-list-item *ngFor="let system of systems">
-              <md-slide-toggle [(ngModel)]="system.on" (change)="doSomething($event)">
+              <md-slide-toggle [color]="system.color" [(ngModel)]="system.on" (change)="doSomething($event)">
                 { {system.name} }
               </md-slide-toggle>
             </md-list-item>
           </md-list>
         ]]>
         </td-highlight>
-
+        <md-divider class="push-top push-bottom"></md-divider>
+        <td-highlight lang="typescript">
+          <![CDATA[
+              systems: Object[] = [{
+                name: 'Lights',
+                on: false,
+                color: 'primary',
+              }, {
+                name: 'Surround Sound',
+                on: true,
+                color: 'accent',
+              }, {
+                name: 'T.V.',
+                on: true,
+                color: 'warn',
+              },
+            ];
+            ]]>
+          </td-highlight>
       </div>
       <div layout="column" flex="50">
         <h3>Usage within Forms</h3>
@@ -1067,11 +1093,17 @@
   <md-card-title>Tooltips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
+    <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
     <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
+        <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
         <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1107,6 +1139,23 @@
         <button md-menu-item> Help </button>
         <button md-menu-item disabled> Sign Out </button>
     </md-menu>
+    <button md-button [mdMenuTriggerFor]="iconsMenu">
+      Icons in Menu
+    </button>
+    <md-menu #iconsMenu="mdMenu">
+      <button md-menu-item>
+        <md-icon>dialpad</md-icon>
+        <span>Redial</span>
+      </button>
+      <button md-menu-item disabled>
+        <md-icon>voicemail</md-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Disable alerts</span>
+      </button>
+    </md-menu>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
@@ -1120,6 +1169,7 @@
             <button md-menu-item> Help </button>
             <button md-menu-item disabled> Sign Out </button>
         </md-menu>
+
         <button md-button [mdMenuTriggerFor]="posXMenu">
           Before
         </button>
@@ -1129,6 +1179,7 @@
             <button md-menu-item> Help </button>
             <button md-menu-item disabled> Sign Out </button>
         </md-menu>
+
         <button md-button [mdMenuTriggerFor]="aboveMenu">
           Above
         </button>
@@ -1138,6 +1189,23 @@
             <button md-menu-item> Help </button>
             <button md-menu-item disabled> Sign Out </button>
         </md-menu>
+
+        <button md-button [mdMenuTriggerFor]="iconsMenu">
+          Icons in Menu
+        </button>
+        <md-menu #iconsMenu="mdMenu">
+          <button md-menu-item>
+            <md-icon>dialpad</md-icon>
+            <span>Redial</span>
+          </button>
+          <button md-menu-item disabled>
+            <md-icon>voicemail</md-icon>
+            <span>Check voicemail</span>
+          </button>
+          <button md-menu-item>
+            <md-icon>notifications_off</md-icon>
+            <span>Disable alerts</span>
+          </button>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1204,17 +1272,27 @@
   <md-card-title>Slider</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <md-slider min="1" max="5"></md-slider>
-    <md-slider step="5"></md-slider>
-    <md-slider tick-interval="auto"></md-slider>
-    <md-slider tick-interval="3" step="4"></md-slider>
+    <md-slider min="1" max="5" thumbLabel tickInterval="1"></md-slider>
+    <md-slider step="5" thumbLabel tickInterval="5"></md-slider>
+    <md-slider thumbLabel tick-interval="auto"></md-slider>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <h3 class="md-title">Vertical Slider</h3>
+    <md-slider vertical min="1" max="100" thumbLabel tickInterval="10"></md-slider>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <h3 class="md-title">Inverted Slider</h3>
+    <md-slider invert min="1" max="100" thumbLabel tickInterval="10"></md-slider>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <md-slider min="1" max="5"></md-slider>
-        <md-slider step="5"></md-slider>
-        <md-slider tick-interval="auto"></md-slider>
-        <md-slider tick-interval="3" step="4"></md-slider>
+        <md-slider min="1" max="5" thumbLabel tickInterval="1"></md-slider>
+        <md-slider step="5" thumbLabel tickInterval="5"></md-slider>
+        <md-slider thumbLabel tick-interval="auto"></md-slider>
+        <md-divider class="push-top push-bottom"></md-divider>
+        <h3 class="md-title">Vertical Slider</h3>
+        <md-slider vertical min="1" max="100" thumbLabel tickInterval="10"></md-slider>
+        <md-divider class="push-top push-bottom"></md-divider>
+        <h3 class="md-title">Inverted Slider</h3>
+        <md-slider invert min="1" max="100" thumbLabel tickInterval="10"></md-slider>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1273,6 +1351,53 @@
               }
             });
           }
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Select</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <form>
+      <div layout="row" layout-margin>
+        <md-select flex="50" placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+          <md-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </md-option>
+        </md-select>
+      </div>
+      <div layout="row" layout-margin>
+        <div flex> Selected food value: {{selectedValue}} </div>
+      </div>
+    </form>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <form>
+          <div layout="row" layout-margin>
+            <md-select flex="50" placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+              <md-option *ngFor="let food of foods" [value]="food.value">
+                { {food.viewValue} }
+              </md-option>
+            </md-select>
+          </div>
+          <div layout="row" layout-margin>
+            <div flex> Selected food value: { {selectedValue} } </div>
+          </div>
+        </form>
+        ]]>
+      </td-highlight>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+          selectedValue: string;
+
+          foods: Object = [
+            {value: 'steak-0', viewValue: 'Steak'},
+            {value: 'pizza-1', viewValue: 'Pizza'},
+            {value: 'tacos-2', viewValue: 'Tacos'}
+          ];
         ]]>
       </td-highlight>
   </md-card-content>
