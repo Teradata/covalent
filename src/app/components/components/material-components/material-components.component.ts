@@ -14,6 +14,13 @@ export class MaterialComponentsComponent {
   isDisabled: boolean = false;
   isIndeterminate: boolean = false;
   favoriteSeason: string = 'Autumn';
+  selectedValue: string;
+
+  foods: Object = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   seasonOptions: string[] = [
     'Winter',
@@ -80,15 +87,15 @@ export class MaterialComponentsComponent {
   systems: Object[] = [{
       name: 'Lights',
       on: false,
+      color: 'primary',
     }, {
       name: 'Surround Sound',
       on: true,
+      color: 'accent',
     }, {
       name: 'T.V.',
       on: true,
-    }, {
-      name: 'Entertainment System',
-      on: true,
+      color: 'warn',
     },
   ];
 
