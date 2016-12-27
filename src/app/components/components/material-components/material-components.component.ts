@@ -15,6 +15,15 @@ export class MaterialComponentsComponent {
   isIndeterminate: boolean = false;
   favoriteSeason: string = 'Autumn';
   selectedValue: string;
+  color: string;
+
+  chips: Object = [
+    { name: 'Default', color: '', selected: false },
+    { name: 'Default (selected)', color: '', selected: true },
+    { name: 'Primary (selected)', color: 'primary', selected: true },
+    { name: 'Accent (selected)', color: 'accent', selected: true },
+    { name: 'Warn (selected)', color: 'warn', selected: true },
+  ];
 
   foods: Object = [
     {value: 'steak-0', viewValue: 'Steak'},

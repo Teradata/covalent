@@ -1402,3 +1402,66 @@
       </td-highlight>
   </md-card-content>
 </md-card>
+<md-card>
+  <md-card-title>Chips</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title">Chips (with colors)</h3>
+    <md-chip-list>
+      <md-chip *ngFor="let chip of chips"
+          [selected]="chip.selected"
+          color="{{chip.color}}">
+          {{chip.name}}
+      </md-chip>
+    </md-chip-list>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <h3 class="md-title">Chip Stacked (with colors)</h3>
+    <div layout-gt-xs="row">
+      <md-chip-list flex-gt-xs="50" class="md-chip-list-stacked">
+        <md-chip *ngFor="let chip of chips"
+            [selected]="chip.selected"
+            color="{{chip.color}}">
+            {{chip.name}}
+        </md-chip>
+      </md-chip-list>
+    </div>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <h3 class="md-title">Basic Chips (with colors)</h3>
+        <md-chip-list>
+          <md-chip *ngFor="let chip of chips"
+              [selected]="chip.selected"
+              color="{ {chip.color} }">
+              { {chip.name} }
+          </md-chip>
+        </md-chip-list>
+        <md-divider class="push-top push-bottom"></md-divider>
+        <h3 class="md-title">Chip List (with colors)</h3>
+        <div layout-gt-xs="row">
+          <md-chip-list flex-gt-xs="50" class="md-chip-list-stacked">
+            <md-chip *ngFor="let chip of chips"
+                [selected]="chip.selected"
+                color="{ {chip.color} }">
+                { {chip.name} }
+            </md-chip>
+          </md-chip-list>
+        </div>
+        ]]>
+      </td-highlight>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="typescript">
+      <![CDATA[
+         color: string;
+
+          chips: Object = [
+            { name: 'Default', color: '', selected: false },
+            { name: 'Default (selected)', color: '', selected: true },
+            { name: 'Primary (selected)', color: 'primary', selected: true },
+            { name: 'Accent (selected)', color: 'accent', selected: true },
+            { name: 'Warn (selected)', color: 'warn', selected: true },
+          ];
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
