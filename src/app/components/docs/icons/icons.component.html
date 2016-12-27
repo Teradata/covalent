@@ -12,10 +12,10 @@
       which renders <md-icon>home</md-icon>
     </p>
     <h3>SVG Icons (from Safe URLS)</h3>
-    <p>SVG icons have to be sanitized before you can use them with the [DomSanitizer] and then you need to register it in the [MdIconRegistry] so it can be refered later on:</p>
+    <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MdIconRegistry] so it can be referred later on:</p>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
-     <![CDATA[ 
+     <![CDATA[
        import { DomSanitizer } from '@angular/platform-browser';
        import { MdIconRegistry } from '@angular/material';
        ...
