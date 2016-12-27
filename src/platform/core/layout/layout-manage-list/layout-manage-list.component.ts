@@ -38,6 +38,8 @@ export class TdLayoutManageListComponent {
       this._transitioning = true;
       this._sideNav.toggle().then(() => {
         this._transitioning = false;
+      }).catch(() => {
+        this._transitioning = false;
       });
     }
   }
@@ -50,6 +52,8 @@ export class TdLayoutManageListComponent {
       this._transitioning = true;
       this._sideNav.open().then(() => {
         this._transitioning = false;
+      }).catch(() => {
+        this._transitioning = false;
       });
     }
   }
@@ -61,6 +65,8 @@ export class TdLayoutManageListComponent {
     if (!this._transitioning) {
       this._transitioning = true;
       this._sideNav.close().then(() => {
+        this._transitioning = false;
+      }).catch(() => {
         this._transitioning = false;
       });
     }
