@@ -3,8 +3,8 @@ import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@coval
 
 @Component({
   selector: 'dynamic-forms-demo',
-  styleUrls: [ 'dynamic-forms.component.scss' ],
-  templateUrl: 'dynamic-forms.component.html',
+  styleUrls: [ './dynamic-forms.component.scss' ],
+  templateUrl: './dynamic-forms.component.html',
 })
 export class DynamicFormsDemoComponent {
 

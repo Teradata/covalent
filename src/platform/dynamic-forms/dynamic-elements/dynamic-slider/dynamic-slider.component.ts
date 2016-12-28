@@ -12,8 +12,8 @@ export const SLIDER_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   providers: [ SLIDER_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-slider',
-  styleUrls: [ 'dynamic-slider.component.scss' ],
-  templateUrl: 'dynamic-slider.component.html',
+  styleUrls: [ './dynamic-slider.component.scss' ],
+  templateUrl: './dynamic-slider.component.html',
 })
 export class TdDynamicSliderComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
 

@@ -5,7 +5,7 @@ import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynam
 
 @Component({
   selector: 'td-dynamic-forms',
-  templateUrl: 'dynamic-forms.component.html',
+  templateUrl: './dynamic-forms.component.html',
 })
 export class TdDynamicFormsComponent {
 

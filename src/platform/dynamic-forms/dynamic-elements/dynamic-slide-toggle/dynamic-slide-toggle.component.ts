@@ -12,8 +12,8 @@ export const SLIDE_TOGGLE_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   providers: [ SLIDE_TOGGLE_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-slide-toggle',
-  styleUrls: [ 'dynamic-slide-toggle.component.scss' ],
-  templateUrl: 'dynamic-slide-toggle.component.html',
+  styleUrls: [ './dynamic-slide-toggle.component.scss' ],
+  templateUrl: './dynamic-slide-toggle.component.html',
 })
 export class TdDynamicSlideToggleComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
 

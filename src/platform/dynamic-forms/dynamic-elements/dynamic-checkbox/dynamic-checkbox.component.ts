@@ -12,8 +12,8 @@ export const CHECKBOX_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   providers: [ CHECKBOX_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-checkbox',
-  styleUrls: [ 'dynamic-checkbox.component.scss' ],
-  templateUrl: 'dynamic-checkbox.component.html',
+  styleUrls: [ './dynamic-checkbox.component.scss' ],
+  templateUrl: './dynamic-checkbox.component.html',
 })
 export class TdDynamicCheckboxComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
 

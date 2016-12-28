@@ -12,8 +12,8 @@ export const INPUT_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   providers: [ INPUT_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-input',
-  styleUrls: [ 'dynamic-input.component.scss' ],
-  templateUrl: 'dynamic-input.component.html',
+  styleUrls: [ './dynamic-input.component.scss' ],
+  templateUrl: './dynamic-input.component.html',
 })
 export class TdDynamicInputComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
 
