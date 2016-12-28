@@ -10,6 +10,14 @@
     font-size: 12px;
     font-weight: normal;
   }
+  md-select {
+    /deep/ .md-select-trigger {
+      border-bottom: none;
+      .md-select-value {
+        top: 9px;
+      }
+    }
+  }
   .td-paging-size {
     margin-right: -5px;
   }
