@@ -3,6 +3,8 @@
 
 @mixin td-layout-theme($theme) {
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
   .md-sidenav-container {
     background-color: md-color($background, status-bar);
   }
@@ -11,5 +13,10 @@
       @include md-elevation(1);
       z-index: 1;
     }
+  }
+  .td-layout-footer {
+    background: md-color($background, app-bar);
+    color: md-color($foreground, text);
+    @include md-elevation(2);
   }
 }
