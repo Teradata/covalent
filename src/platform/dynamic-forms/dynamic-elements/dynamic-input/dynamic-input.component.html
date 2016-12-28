@@ -1,5 +1,7 @@
 <div class="dynamic-input-wrapper" layout="column">
-  <md-input #elementInput
+  <md-input-container>
+    <input #elementInput
+            md-input
             [(ngModel)]="value"
             [placeholder]="label"
             [type]="type"
@@ -13,5 +15,5 @@
         <span *ngIf="control.errors?.min">Min: {{control.errors?.min.minValue}}</span>
       </span>
     </md-hint>
-  </md-input>
+  </md-input-container>
 </div>
