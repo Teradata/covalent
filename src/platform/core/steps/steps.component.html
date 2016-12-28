@@ -7,7 +7,7 @@
                     [disabled]="step.disabled" 
                     [state]="step.state"
                     (click)="step.toggle()">
-      <template td-step-header-label [portalHost]="step.stepLabel"></template>
+      <template td-step-header-label [cdkPortalHost]="step.stepLabel"></template>
       <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
       <template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</template>
     </td-step-header>
@@ -23,7 +23,7 @@
                   [state]="step.state"
                   (click)="step.toggle()"
                   *ngIf="isVertical()">
-    <template td-step-header-label [portalHost]="step.stepLabel"></template>
+    <template td-step-header-label [cdkPortalHost]="step.stepLabel"></template>
     <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
     <template td-step-header-sublabel [ngIf]="true">{{step.sublabel}}</template>
   </td-step-header>
@@ -32,9 +32,9 @@
       <div *ngIf="isVertical()" class="td-line-wrapper">
         <div *ngIf="!last" class="td-vertical-line"></div>
       </div>
-      <template td-step-body-content [portalHost]="step.stepContent"></template>
-      <template td-step-body-actions [portalHost]="step.stepActions"></template>
-      <template td-step-body-summary [portalHost]="step.stepSummary"></template>
+      <template td-step-body-content [cdkPortalHost]="step.stepContent"></template>
+      <template td-step-body-actions [cdkPortalHost]="step.stepActions"></template>
+      <template td-step-body-summary [cdkPortalHost]="step.stepSummary"></template>
     </td-step-body>
   </template>
 </div>

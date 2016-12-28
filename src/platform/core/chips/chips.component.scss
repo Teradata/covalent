@@ -1,9 +1,3 @@
-@import '../../../../node_modules/@angular/material/core/style/variables';
-
-// Gradient for showing the dashed line when the input is disabled.
-$md-input-underline-disabled-background-image: linear-gradient(to right,
-        rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
-
 :host {
   display: block;
   padding: 0px 5px 0px 5px;
@@ -39,7 +33,6 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
 
   &.md-disabled {
     border-top: 0;
-    background-image: $md-input-underline-disabled-background-image;
     background-position: 0;
     background-size: 4px 1px;
     background-repeat: repeat-x;
@@ -54,8 +47,6 @@ $md-input-underline-disabled-background-image: linear-gradient(to right,
     transform-origin: top;
     opacity: 0;
     transform: scaleY(0);
-    transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
-                opacity $swift-ease-out-duration $swift-ease-out-timing-function;
     &.md-warn {
       opacity: 1;
       transform: scaleY(1);

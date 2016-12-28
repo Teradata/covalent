@@ -5,8 +5,8 @@ import { TdLayoutService } from '../services/layout.service';
 
 @Component({
   selector: 'td-layout-nav',
-  styleUrls: [ 'layout-nav.component.scss' ],
-  templateUrl: 'layout-nav.component.html',
+  styleUrls: ['./layout-nav.component.scss' ],
+  templateUrl: './layout-nav.component.html',
 })
 export class TdLayoutNavComponent {
 

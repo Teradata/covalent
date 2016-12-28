@@ -13,7 +13,7 @@ import { DocsAppComponent } from './app.component';
 describe('Component: App', () => {
 
   let generalResponses: Map<string, Response> = new Map<string, Response>();
-  generalResponses.set('app/assets/icons/teradata.svg', new Response(new ResponseOptions({
+  generalResponses.set('/app/assets/icons/teradata.svg', new Response(new ResponseOptions({
     status: 200, body: '<svg></svg>',
   })));
 

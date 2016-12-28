@@ -6,8 +6,8 @@ import { TdCollapseAnimation } from '../../common/common.module';
 
 @Component({
   selector: 'td-step-body',
-  styleUrls: [ 'step-body.component.scss' ],
-  templateUrl: 'step-body.component.html',
+  styleUrls: ['./step-body.component.scss' ],
+  templateUrl: './step-body.component.html',
   animations: [
     TdCollapseAnimation(),
   ],

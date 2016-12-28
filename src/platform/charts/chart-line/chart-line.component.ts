@@ -8,8 +8,8 @@ let d3: any = require('d3');
 
 @Component({
   selector: 'td-chart-line',
-  styleUrls: ['chart-line.component.scss'],
-  templateUrl: 'chart-line.component.html',
+  styleUrls: ['./chart-line.component.scss'],
+  templateUrl: './chart-line.component.html',
 })
 export class TdChartLineComponent extends ChartComponent {
 

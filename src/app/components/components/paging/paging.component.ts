@@ -4,8 +4,8 @@ import { IPageChangeEvent } from '../../../../platform/core';
 
 @Component({
   selector: 'paging-demo',
-  styleUrls: ['paging.component.scss'],
-  templateUrl: 'paging.component.html',
+  styleUrls: ['./paging.component.scss'],
+  templateUrl: './paging.component.html',
 })
 export class PagingDemoComponent {
 

@@ -4,8 +4,8 @@ import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '../
 
 @Component({
   selector: 'loading-demo',
-  styleUrls: [ 'loading.component.scss' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: ['./loading.component.scss' ],
+  templateUrl: './loading.component.html',
 })
 export class LoadingDemoComponent implements AfterViewInit {
 

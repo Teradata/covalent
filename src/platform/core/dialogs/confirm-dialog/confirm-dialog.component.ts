@@ -3,8 +3,8 @@ import { MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-confirm-dialog',
-  templateUrl: 'confirm-dialog.component.html',
-  styleUrls: [ 'confirm-dialog.component.scss' ],
+  templateUrl: './confirm-dialog.component.html',
+  styleUrls: ['./confirm-dialog.component.scss' ],
 })
 export class TdConfirmDialogComponent {
   title: string;

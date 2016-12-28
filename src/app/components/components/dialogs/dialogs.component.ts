@@ -4,8 +4,8 @@ import { TdDialogService } from '../../../../platform/core';
 
 @Component({
   selector: 'dialogs-demo',
-  styleUrls: ['dialogs.component.scss'],
-  templateUrl: 'dialogs.component.html',
+  styleUrls: ['./dialogs.component.scss'],
+  templateUrl: './dialogs.component.html',
 })
 export class DialogsDemoComponent {
 

@@ -1,19 +1,32 @@
 import { Component } from '@angular/core';
-import { MdSnackBar, MdDialog, MdDialogRef } from '@angular/material';
-
-import { TdAlertDialogComponent } from '../../../../platform/core';
-import { TdConfirmDialogComponent } from '../../../../platform/core';
+import { MdSnackBar, MdDialog } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-material-components',
-  styleUrls: ['material-components.component.scss'],
-  templateUrl: 'material-components.component.html',
+  styleUrls: ['./material-components.component.scss'],
+  templateUrl: './material-components.component.html',
 })
 export class MaterialComponentsComponent {
 
   isDisabled: boolean = false;
   isIndeterminate: boolean = false;
   favoriteSeason: string = 'Autumn';
+  selectedValue: string;
+  color: string;
+
+  chips: Object = [
+    { name: 'Default', color: '', selected: false },
+    { name: 'Default (selected)', color: '', selected: true },
+    { name: 'Primary (selected)', color: 'primary', selected: true },
+    { name: 'Accent (selected)', color: 'accent', selected: true },
+    { name: 'Warn (selected)', color: 'warn', selected: true },
+  ];
+
+  foods: Object = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'},
+  ];
 
   seasonOptions: string[] = [
     'Winter',
@@ -80,15 +93,15 @@ export class MaterialComponentsComponent {
   systems: Object[] = [{
       name: 'Lights',
       on: false,
+      color: 'primary',
     }, {
       name: 'Surround Sound',
       on: true,
+      color: 'accent',
     }, {
       name: 'T.V.',
       on: true,
-    }, {
-      name: 'Entertainment System',
-      on: true,
+      color: 'warn',
     },
   ];
 
@@ -106,31 +119,31 @@ export class MaterialComponentsComponent {
   };
 
   constructor(private _snackBarService: MdSnackBar,
-              private _dialogService: MdDialog) {
-  }
+              public dialog: MdDialog) { }
 
   showSnackBar(): void {
     this._snackBarService.open('Message', 'Action', { duration: 3000 });
   }
 
-  showAlertDialog(): void {
-    let dialogRef: MdDialogRef<TdAlertDialogComponent> =
-    this._dialogService.open(TdAlertDialogComponent);
-    dialogRef.componentInstance.title = 'Alert Title';
-    dialogRef.componentInstance.message = 'This is an alert dialog with a custom message.';
-  }
-
-  showConfirmDialog(): void {
-    let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
-    this._dialogService.open(TdConfirmDialogComponent);
-    dialogRef.componentInstance.title = 'Confirmation Title';
-    dialogRef.componentInstance.message = 'This is a confirmation dialog. Like what you see in covalent?';
-    dialogRef.afterClosed().subscribe((data: any) => {
-      if (data) {
-        this._snackBarService.open('You clicked Yes :D', 'Ok', { duration: 3000 });
-      } else {
-        this._snackBarService.open('You clicked No :(', 'Ok', { duration: 3000 });
-      }
+  openDialog(): void {
+    this.dialog.open(DialogComponent, {
+      width: '60%',
     });
   }
 }
+
+@Component({
+  selector: 'dialog-example',
+  template: `
+    <h3 md-dialog-title>Simple Dialog</h3>
+    <md-dialog-content>
+      <p>Apply a <code>md-dialog-title</code> attribute on a heading.</p>
+      <p>Use a <code>md-dialog-content</code> element for content.</p>
+      <p>Place actions in an <code>md-dialog-actions</code> element.</p>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" layout-align="end center">
+      <button md-button md-dialog-close>Close</button>
+    </md-dialog-actions>
+  `,
+})
+export class DialogComponent {}

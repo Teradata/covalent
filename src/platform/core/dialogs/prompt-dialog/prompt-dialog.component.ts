@@ -3,8 +3,8 @@ import { MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-prompt-dialog',
-  templateUrl: 'prompt-dialog.component.html',
-  styleUrls: [ 'prompt-dialog.component.scss' ],
+  templateUrl: './prompt-dialog.component.html',
+  styleUrls: ['./prompt-dialog.component.scss' ],
 })
 export class TdPromptDialogComponent {
   title: string;

@@ -4,8 +4,8 @@ import { StepState } from '../step.component';
 
 @Component({
   selector: 'td-step-header',
-  styleUrls: [ 'step-header.component.scss' ],
-  templateUrl: 'step-header.component.html',
+  styleUrls: ['./step-header.component.scss' ],
+  templateUrl: './step-header.component.html',
 })
 export class TdStepHeaderComponent {
 

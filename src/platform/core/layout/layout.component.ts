@@ -10,8 +10,8 @@ import { TdLayoutService } from './services/layout.service';
 @Component({
   providers: [ TdLayoutService ],
   selector: 'td-layout',
-  styleUrls: [ 'layout.component.scss' ],
-  templateUrl: 'layout.component.html',
+  styleUrls: ['./layout.component.scss' ],
+  templateUrl: './layout.component.html',
 })
 export class TdLayoutComponent implements OnDestroy, AfterViewInit {
 

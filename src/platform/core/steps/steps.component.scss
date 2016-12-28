@@ -1,5 +1,3 @@
-@import '../../../../node_modules/@angular/material/core/style/elevation';
-
 .td-line-wrapper,
 .td-step {
   position: relative;
@@ -28,8 +26,4 @@
   top: -16px;
   border-left-width: 1px;
   border-left-style: solid;
-}
-
-.td-steps-header {
-  @include md-elevation(1);
 }

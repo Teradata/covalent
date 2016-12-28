@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentStepsModule, StepState, StepMode } from '@covalent/core';
+import { CovalentStepsModule, StepState, StepMode } from './steps.module';
 import { By } from '@angular/platform-browser';
 
 describe('Component: Steps', () => {

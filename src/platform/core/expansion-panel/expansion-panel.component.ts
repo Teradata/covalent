@@ -39,8 +39,8 @@ export class TdExpansionPanelSummaryComponent {}
 
 @Component({
   selector: 'td-expansion-panel',
-  styleUrls: [ 'expansion-panel.component.scss' ],
-  templateUrl: 'expansion-panel.component.html',
+  styleUrls: ['./expansion-panel.component.scss' ],
+  templateUrl: './expansion-panel.component.html',
   animations: [
     TdCollapseAnimation(),
   ],

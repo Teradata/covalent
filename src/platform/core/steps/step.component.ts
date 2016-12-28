@@ -38,7 +38,7 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
 
 @Component({
   selector: 'td-step',
-  templateUrl: 'step.component.html',
+  templateUrl: './step.component.html',
 })
 export class TdStepComponent implements OnInit {
 
