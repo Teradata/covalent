@@ -1,10 +1,10 @@
-<md-sidenav-layout fullscreen>
+<md-sidenav-container fullscreen>
   <md-sidenav #sideMenu>
     <md-toolbar>
       <div layout="column">
         <span layout="row" layout-align="start center">
           <md-icon *ngIf="icon">{{icon}}</md-icon>
-          <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
+          <md-icon *ngIf="logo" class="md-icon-logo" [svgIcon]="logo"></md-icon>
           <span class="md-subhead">{{sidenavTitle}}</span>
         </span>
         <a *ngIf="displayName" (click)="toggleUserMenu()" class="md-body-1 md-toolbar-link" layout="row" layout-align="space-around center">
@@ -26,4 +26,4 @@
     </div>
   </md-sidenav>
   <ng-content></ng-content>
-</md-sidenav-layout>
+</md-sidenav-container>

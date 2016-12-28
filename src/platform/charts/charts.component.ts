@@ -158,8 +158,8 @@ export class TdXAxisComponent {
 
 @Component({
   selector: 'td-charts',
-  styleUrls: ['charts.component.scss'],
-  templateUrl: 'charts.component.html',
+  styleUrls: ['./charts.component.scss'],
+  templateUrl: './charts.component.html',
 })
 export class TdChartsComponent implements OnInit {
 

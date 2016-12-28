@@ -5,8 +5,8 @@ import { StepState, TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
-  styleUrls: [ 'steps.component.scss' ],
-  templateUrl: 'steps.component.html',
+  styleUrls: ['./steps.component.scss' ],
+  templateUrl: './steps.component.html',
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
 

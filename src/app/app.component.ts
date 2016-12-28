@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MdIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'docs-covalent',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class DocsAppComponent {
 
@@ -29,4 +31,22 @@ export class DocsAppComponent {
       title: 'Components & Addons',
     },
   ];
+
+  constructor(private _iconRegistry: MdIconRegistry,
+              private _domSanitizer: DomSanitizer) {
+    this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/teradata.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'github',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/github.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'covalent',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/covalent.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-ux',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/teradata-ux.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'appcenter',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/appcenter.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'listener',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/listener.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('/app/assets/icons/querygrid.svg'));
+  }
 }

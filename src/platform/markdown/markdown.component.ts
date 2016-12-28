@@ -4,8 +4,8 @@ declare var showdown: any;
 
 @Component({
   selector: 'td-markdown',
-  styleUrls: ['markdown.component.scss'],
-  templateUrl: 'markdown.component.html',
+  styleUrls: ['./markdown.component.scss'],
+  templateUrl: './markdown.component.html',
 })
 export class TdMarkdownComponent implements AfterViewInit {
 

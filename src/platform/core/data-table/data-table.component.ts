@@ -42,8 +42,8 @@ export interface ITdDataTableSelectAllEvent {
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
-  styleUrls: [ 'data-table.component.scss' ],
-  templateUrl: 'data-table.component.html',
+  styleUrls: ['./data-table.component.scss' ],
+  templateUrl: './data-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDataTableComponent implements ControlValueAccessor, AfterContentInit {

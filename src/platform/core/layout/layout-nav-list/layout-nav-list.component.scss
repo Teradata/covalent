@@ -7,14 +7,14 @@
     overflow: hidden;
 }
 :host /deep/ {
-  md-sidenav-layout.td-layout-nav-list {
+  md-sidenav-container.td-layout-nav-list {
     & > .md-sidenav-content {
       margin-left: 0 !important;
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > md-sidenav {
-        & > focus-trap {
+        & > cdk-focus-trap {
         &, & > div {
           min-height: 100%;
           height: 100%;
@@ -30,14 +30,16 @@
     }
   }
   @media (min-width: 600px) {
-    md-sidenav-layout.td-layout-nav-list {
+    md-sidenav-container.td-layout-nav-list {
       height: 100%;
       display: flex;
       & > md-sidenav {
         display: flex;
         position: relative;
         height: 100%;
-        width: 382px;
+        width: 33%;
+        min-width: 260px;
+        max-width: 382px;
         flex: 0 0 auto;
         transition: none;
         &.md-sidenav-closed,
@@ -59,7 +61,7 @@
     }
   }
   @media (max-width: 599px) {
-    md-sidenav-layout.td-layout-nav-list {
+    md-sidenav-container.td-layout-nav-list {
 
       & > md-sidenav {
         &.md-sidenav-opened,

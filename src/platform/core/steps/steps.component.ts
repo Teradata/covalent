@@ -17,8 +17,8 @@ export enum StepMode {
 
 @Component({
   selector: 'td-steps',
-  styleUrls: [ 'steps.component.scss' ],
-  templateUrl: 'steps.component.html',
+  styleUrls: ['./steps.component.scss' ],
+  templateUrl: './steps.component.html',
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
 

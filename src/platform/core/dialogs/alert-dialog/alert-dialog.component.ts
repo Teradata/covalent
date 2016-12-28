@@ -3,8 +3,8 @@ import { MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-alert-dialog',
-  templateUrl: 'alert-dialog.component.html',
-  styleUrls: [ 'alert-dialog.component.scss' ],
+  templateUrl: './alert-dialog.component.html',
+  styleUrls: ['./alert-dialog.component.scss' ],
 })
 export class TdAlertDialogComponent {
   title: string;

@@ -1,9 +1,9 @@
-<md-sidenav-layout fullscreen class="td-layout-nav-list" layout="row" flex>
+<md-sidenav-container fullscreen class="td-layout-nav-list" layout="row" flex>
   <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1" flex-gt-xs="none">
     <md-toolbar color="primary" class="md-whiteframe-z1">
       <button md-button (click)="menuClick()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
       <md-icon *ngIf="icon">{{icon}}</md-icon>
-      <md-icon *ngIf="logo" class="md-icon-logo" svgSrc="{{logo}}"></md-icon>
+      <md-icon *ngIf="logo" class="md-icon-logo" [svgIcon]="logo"></md-icon>
       <span>{{toolbarTitle}}</span>
       <ng-content select="[list-toolbar-content]"></ng-content>
     </md-toolbar>
@@ -20,4 +20,4 @@
       <ng-content></ng-content>
     </div>
   </div>
-</md-sidenav-layout>
+</md-sidenav-container>

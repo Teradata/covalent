@@ -9,9 +9,9 @@
         <template md-tab-label>Demo</template>
         <div layout="row" layout-align="start center">
           <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-            <md-button-toggle md-tooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
-            <md-button-toggle md-tooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> <span hide-md hide-sm hide-xs>Horizontal</span></md-button-toggle>
-            <md-button-toggle md-tooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></md-button-toggle>
+            <md-button-toggle mdTooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
+            <md-button-toggle mdTooltip="Horizontal Stepper" [value]="1"><md-icon>swap_horiz</md-icon> <span hide-md hide-sm hide-xs>Horizontal</span></md-button-toggle>
+            <md-button-toggle mdTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><md-icon>devices</md-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></md-button-toggle>
           </md-button-toggle-group>
         </div>
         <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
@@ -19,7 +19,7 @@
         <td-steps [mode]="horizontal ? 'horizontal' : 'vertical'">
           <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
             <template td-step-label><span>Basic Usage (template)</span></template>
-            Include any content you like for an active stepper 
+            Include any content you like for an active stepper
           </td-step>
           <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
             This step is required!
@@ -48,7 +48,7 @@
             <td-steps>
               <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
                 <template td-step-label><span>Basic Usage (template)</span></template>
-                Include any content you like for an active stepper 
+                Include any content you like for an active stepper
               </td-step>
               <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
                 This step is required!
@@ -207,7 +207,7 @@
           <template td-step-summary>
             ... add summary that will be shown when step in is "complete" state (optional)
           </template>
-        </td-step>        
+        </td-step>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
@@ -217,15 +217,15 @@
         ...
         })
         export class Demo {
-        
+
           active: boolean = false;
           disabled: boolean = false;
           state: StepState = StepState.Required; // or state: string = "required";
-          
+
           activeEvent(): void {
             ...
           };
-          
+
           deactiveEvent(): void {
             ...
           };

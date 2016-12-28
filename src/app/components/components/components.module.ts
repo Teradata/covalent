@@ -22,7 +22,7 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -53,6 +53,7 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
     SearchDemoComponent,
     DynamicFormsDemoComponent,
     MaterialComponentsComponent,
+    DialogComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
@@ -62,5 +63,6 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
     CovalentDynamicFormsModule.forRoot(),
     componentsRoutes,
   ],
+  entryComponents: [ DialogComponent ],
 })
 export class ComponentsModule {}

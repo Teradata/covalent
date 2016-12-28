@@ -11,8 +11,8 @@ export interface IPageChangeEvent {
 
 @Component({
   selector: 'td-paging-bar',
-  templateUrl: 'paging-bar.component.html',
-  styleUrls: [ 'paging-bar.component.scss' ],
+  templateUrl: './paging-bar.component.html',
+  styleUrls: ['./paging-bar.component.scss' ],
 })
 export class TdPagingBarComponent implements OnInit {
 

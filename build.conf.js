@@ -38,9 +38,17 @@ module.exports = {
       'src/**/**.html',
       'src/**/**.md',
       'src/**/**.js',
+      'src/**/**.ts',
+      '!src/**/**.spec.ts',
       'src/**/**/package.json',
       '!src/app/**/**.html',
       '!src/app/**/**.js',
+      '!src/app/**/**.ts',
+      '!src/environments/**/**.ts',
+      '!src/polyfills.ts',
+      '!src/main.ts',
+      '!src/test.ts',
+      '!src/typings.d.ts',
       '!src/index.html'
     ]
   }
