@@ -77,6 +77,13 @@ import { CovalentMediaModule } from './media/media.module';
 export * from './media/media.module';
 
 /**
+ * NOTIFICATIONS
+ */
+
+import { CovalentNotificationsModule } from './notifications/notifications.module';
+export * from './notifications/notifications.module';
+
+/**
  * PAGING
  */
 
@@ -114,6 +121,7 @@ export * from './steps/steps.module';
     CovalentLayoutModule.forRoot(),
     CovalentLoadingModule.forRoot(),
     CovalentMediaModule.forRoot(),
+    CovalentNotificationsModule.forRoot(),
     CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
     CovalentStepsModule.forRoot(),
@@ -134,6 +142,7 @@ export * from './steps/steps.module';
     CovalentLayoutModule,
     CovalentLoadingModule,
     CovalentMediaModule,
+    CovalentNotificationsModule,
     CovalentPagingModule,
     CovalentSearchModule,
     CovalentStepsModule,

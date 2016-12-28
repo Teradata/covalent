@@ -1,0 +1,28 @@
+@import '~@angular/material/core/style/elevation';
+
+:host {
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 14px;
+  /deep/ > * {
+    vertical-align: middle;
+  }
+  .td-notification-tip {
+    @include md-elevation(1);
+    line-height: 16px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    padding: 0 4px;
+    color: white;
+    background-color: blue; //maybe accent? or having a [color] attribute people can change it easily. (color="primary")
+    border-radius: 10%;
+  }
+}
