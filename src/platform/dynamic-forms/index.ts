@@ -4,6 +4,7 @@ export { ITdDynamicElementConfig, TdDynamicType,
 export { TdDynamicElementComponent } from './dynamic-element.component';
 export { TdDynamicFormsComponent } from './dynamic-forms.component';
 export { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
+export { TdDynamicTextareaComponent } from './dynamic-elements/dynamic-textarea/dynamic-textarea.component';
 export {
   TdDynamicSlideToggleComponent,
 } from './dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';

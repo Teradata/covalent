@@ -36,16 +36,20 @@ export class DynamicFormsDemoComponent {
   }];
 
   textElements: ITdDynamicElementConfig[] = [{
-    name: 'input-without-label',
+    name: 'input',
     type: TdDynamicElement.Input,
     required: false,
   }, {
-    name: 'input-with-label',
+    name: 'required-input',
     label: 'Input Label',
     type: TdDynamicElement.Input,
     required: true,
   }, {
-    name: 'text-with-default',
+    name: 'textarea',
+    type: TdDynamicElement.Textarea,
+    required: false,
+  }, {
+    name: 'text',
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',

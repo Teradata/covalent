@@ -4,6 +4,7 @@ import { Validators, ValidatorFn, FormControl } from '@angular/forms';
 import { TdMaxValidator, TdMinValidator, TdNumberRequiredValidator } from '../../core';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
+import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
@@ -16,6 +17,7 @@ export enum TdDynamicType {
 
 export enum TdDynamicElement {
   Input = <any>'input',
+  Textarea = <any>'textarea',
   Slider = <any>'slider',
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
@@ -56,6 +58,8 @@ export class TdDynamicFormsService {
       case TdDynamicType.Number:
       case TdDynamicElement.Input:
         return TdDynamicInputComponent;
+      case TdDynamicElement.Textarea:
+        return TdDynamicTextareaComponent;
       case TdDynamicType.Boolean:
       case TdDynamicElement.SlideToggle:
         return TdDynamicSlideToggleComponent;
@@ -79,6 +83,8 @@ export class TdDynamicFormsService {
       case TdDynamicElement.Slider:
       case TdDynamicElement.Input:
         return 45;
+      case TdDynamicElement.Textarea:
+        return 95;
       case TdDynamicType.Boolean:
       case TdDynamicElement.Checkbox:
       case TdDynamicElement.SlideToggle:
