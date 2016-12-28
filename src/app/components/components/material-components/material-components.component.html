@@ -745,43 +745,49 @@
     <div class="demo-toolbar">
       <p>The default color toolbar:</p>
       <md-toolbar>
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>menu</md-icon>
         </button>
         <span>Default Toolbar</span>
         <span flex></span>
-        <button md-button href="#" md-icon-button>
-          <md-icon>search</md-icon>
-        </button>
-        <button md-button href="#" md-icon-button>
-          <md-icon>more_vert</md-icon>
-        </button>
+        <td-search-box placeholder="Search" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+        <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
+        <md-menu #toolbarMenu1="mdMenu">
+          <button md-menu-item>
+            <md-icon>settings</md-icon>
+            <span>Settings</span>
+          </button>
+          <button md-menu-item>
+            <md-icon>exit_to_app</md-icon>
+            <span>Sign out</span>
+          </button>
+        </md-menu>
       </md-toolbar>
       <p>The primary color toolbar:</p>
       <md-toolbar color="primary">
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>menu</md-icon>
         </button>
         <span>Primary Toolbar</span>
         <span flex></span>
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>search</md-icon>
         </button>
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>more_vert</md-icon>
         </button>
       </md-toolbar>
       <p>The accent color toolbar:</p>
       <md-toolbar color="accent">
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>menu</md-icon>
         </button>
         <span>Accent Toolbar</span>
         <span flex></span>
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>search</md-icon>
         </button>
-        <button md-button href="#" md-icon-button>
+        <button md-icon-button>
           <md-icon>more_vert</md-icon>
         </button>
       </md-toolbar>
@@ -796,8 +802,12 @@
         <md-toolbar-row></md-toolbar-row>
         <md-toolbar-row>
           <span flex>Third Line Toolbar</span>
-          <md-icon class="demo-toolbar-icon">favorite</md-icon>
-          <md-icon class="demo-toolbar-icon">delete</md-icon>
+          <button md-icon-button>
+            <md-icon>favorite</md-icon>
+          </button>
+          <button md-icon-button>
+            <md-icon>delete</md-icon>
+          </button>
         </md-toolbar-row>
       </md-toolbar>
 
@@ -807,45 +817,51 @@
       <![CDATA[
         <!-- toolbar start -->
         <md-toolbar>
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>menu</md-icon>
           </button>
           <span>Default Toolbar</span>
           <span flex></span>
-          <button md-button href="#" md-icon-button>
-            <md-icon>search</md-icon>
-          </button>
-          <button md-button href="#" md-icon-button>
-            <md-icon>more_vert</md-icon>
-          </button>
+          <td-search-box placeholder="Search" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+          <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
+          <md-menu #toolbarMenu1="mdMenu">
+            <button md-menu-item>
+              <md-icon>settings</md-icon>
+              <span>Settings</span>
+            </button>
+            <button md-menu-item>
+              <md-icon>exit_to_app</md-icon>
+              <span>Sign out</span>
+            </button>
+          </md-menu>
         </md-toolbar>
         <!-- toolbar end -->
         <!-- toolbar start -->
         <md-toolbar color="primary">
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>menu</md-icon>
           </button>
           <span>Primary Toolbar</span>
           <span flex></span>
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>search</md-icon>
           </button>
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>more_vert</md-icon>
           </button>
         </md-toolbar>
         <!-- toolbar end -->
         <!-- toolbar start -->
         <md-toolbar color="accent">
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>menu</md-icon>
           </button>
           <span>Accent Toolbar</span>
           <span flex></span>
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>search</md-icon>
           </button>
-          <button md-button href="#" md-icon-button>
+          <button md-icon-button>
             <md-icon>more_vert</md-icon>
           </button>
         </md-toolbar>
@@ -862,8 +878,12 @@
           <md-toolbar-row></md-toolbar-row>
           <md-toolbar-row>
             <span flex>Third Line Toolbar</span>
-            <md-icon class="demo-toolbar-icon">favorite</md-icon>
-            <md-icon class="demo-toolbar-icon">delete</md-icon>
+            <button md-icon-button>
+              <md-icon>favorite</md-icon>
+            </button>
+            <button md-icon-button>
+              <md-icon>delete</md-icon>
+            </button>
           </md-toolbar-row>
         </md-toolbar>
         <!-- toolbar end -->
@@ -1323,34 +1343,43 @@
   <md-card-title>Dialog</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button (click)="showAlertDialog()">Show Alert</button>
-    <button md-raised-button (click)="showConfirmDialog()">Show Confirmation</button>
+    <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+      ]]>
+    </td-highlight>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="typescript">
       <![CDATA[
           import { Component } from '@angular/core';
-          import { MdDialog, MdDialogRef } from '@angular/material';
-          import { CustomAlertDialogComponent, CustomConfirmDialogComponent } from 'path/to/customdialogs'
+          import { MdDialog } from '@angular/material';
           ...
-          constructor(private _dialogService: MdDialog) {
-          }
-
-          showAlertDialog(): void {
-            let dialogRef: MdDialogRef<CustomAlertDialogComponent> =
-            this._dialogService.open(CustomAlertDialogComponent);
-          }
-
-          showConfirmDialog(): void {
-            let dialogRef: MdDialogRef<CustomConfirmDialogComponent> =
-            this._dialogService.open(CustomConfirmDialogComponent);
-            dialogRef.afterClosed().subscribe((data: boolean) => {
-              if (data) {
-                // clicked yes
-              } else {
-                // clicked no
-              }
+          constructor(public dialog: MdDialog) { }
+          ...
+          openDialog(): void {
+            this.dialog.open(DialogComponent, {
+              height: '50%', // can be px or %
+              width: '60%', // can be px or %
             });
           }
+          ...
+          @Component({
+            selector: 'dialog-example',
+            template: `
+              <h3 md-dialog-title>Simple Dialog</h3>
+              <md-dialog-content>
+                <p>Apply a <code>md-dialog-title</code> attribute on a heading.</p>
+                <p>Use a <code>md-dialog-content</code> element for content.</p>
+                <p>Place actions in an <code>md-dialog-actions</code> element.</p>
+              </md-dialog-content>
+              <md-dialog-actions layout="row" layout-align="end center">
+                <button md-button md-dialog-close>Close</button>
+              </md-dialog-actions>
+            `,
+          })
+          export class DialogComponent {}
         ]]>
       </td-highlight>
   </md-card-content>
