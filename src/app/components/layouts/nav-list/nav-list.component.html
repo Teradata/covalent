@@ -144,13 +144,13 @@
                     <span>Page Title</span>
                   </div>
                   <router-outlet></router-outlet>
+                  <td-layout-footer-inner>
+                    Optional inner footer
+                  </td-layout-footer-inner>
+                  <td-layout-footer>
+                    Optional footer
+                  </td-layout-footer>
                 </td-layout-nav-list>
-                <td-layout-footer-inner>
-                  Optional inner footer
-                </td-layout-footer-inner>
-                <td-layout-footer>
-                  Optional footer
-                </td-layout-footer>
               </td-layout>
               ]]>
           </td-highlight>
@@ -192,6 +192,9 @@
         <a md-button color="accent" [routerLink]="'/layouts/card-over'">Card Over</a>
     </md-card-actions>
   </md-card>
+  <td-layout-footer-inner>
+    Optional inner footer
+  </td-layout-footer-inner>
   <td-layout-footer>
     Optional footer
   </td-layout-footer>
