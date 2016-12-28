@@ -54,10 +54,13 @@ describe('Component: TdDynamicForms', () => {
     }, {
       name: 'nodes',
       type: TdDynamicElement.Slider,
+    }, {
+      name: 'description',
+      type: TdDynamicElement.Textarea,
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(4);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(5);
     });
   })));
 
