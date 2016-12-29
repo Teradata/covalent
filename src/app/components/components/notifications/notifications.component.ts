@@ -12,9 +12,10 @@ export class NotificationsDemoComponent {
     name: 'notifications',
     type: 'number[]',
   }, {
-    description: `Notification object for each notification item.`,
-    name: 'data',
-    type: 'any[]',
+    description: `Sets the theme color of the notification count tip.
+                  Defaults to 'warn'`,
+    name: 'color',
+    type: '"primary" | "accent" | "warn"',
   }];
 
 }
