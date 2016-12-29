@@ -4,7 +4,7 @@ $td-menu-spacing: 8px !default;
   margin-top: -$td-menu-spacing;
   margin-bottom: -$td-menu-spacing;
 }
-/deep/ {
+:host /deep/ {
   [td-menu-header] {
     padding: $td-menu-spacing;
     text-align: center;
@@ -26,10 +26,6 @@ $td-menu-spacing: 8px !default;
     }
   }
 }
-
-  [td-menu-footer] {
-    
-  }
 .td-menu-content {
   max-height: calc(50vh);
   overflow-y: auto;
