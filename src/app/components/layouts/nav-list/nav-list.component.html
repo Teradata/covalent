@@ -103,6 +103,19 @@
                 <md-divider></md-divider>
               </md-list>
             </td-step>
+            <td-step label="Step 4: td-layout-footer" sublabel="optional sticky footer">
+              <md-list>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<td-layout-footer>]]></code></h3>
+                  <p md-line>Optional footer</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<td-layout-footer-inner>]]></code></h3>
+                  <p md-line>Optional inner footer</p>
+                </md-list-item>
+              </md-list>
+            </td-step>
           </td-steps>
         </div>
         <div flex-gt-md="50">
@@ -131,6 +144,12 @@
                     <span>Page Title</span>
                   </div>
                   <router-outlet></router-outlet>
+                  <td-layout-footer-inner>
+                    Optional inner footer
+                  </td-layout-footer-inner>
+                  <td-layout-footer>
+                    Optional footer
+                  </td-layout-footer>
                 </td-layout-nav-list>
               </td-layout>
               ]]>
@@ -173,4 +192,7 @@
         <a md-button color="accent" [routerLink]="'/layouts/card-over'">Card Over</a>
     </md-card-actions>
   </md-card>
+  <td-layout-footer>
+    Optional footer
+  </td-layout-footer>
 </td-layout-nav-list>
