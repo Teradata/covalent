@@ -8,11 +8,18 @@ import { Component, Input } from '@angular/core';
 export class TdNotificationCountComponent {
 
   private _notifications: number = 0;
+  private _noCount: boolean = false;
   private _showNoCount: boolean = false;
 
   @Input() color: string = 'warn';
 
-  @Input() noCount: boolean = false;
+  @Input('noCount')
+  set noCount(noCount: string | boolean) {
+    this._noCount = noCount !== '' ? (noCount === 'true' || noCount === true) : true;
+  }
+  get noCount(): string | boolean {
+    return this._noCount;
+  }
 
   @Input()
   set notifications(notifications: number) {
@@ -30,7 +37,7 @@ export class TdNotificationCountComponent {
     this._showNoCount = show;
   }
   get show(): boolean {
-    return (this._showNoCount && this.noCount) || !isNaN(this._notifications) && this._notifications > 0;
+    return (this._showNoCount && this._noCount) || !isNaN(this._notifications) && this._notifications > 0;
   }
 
 }
