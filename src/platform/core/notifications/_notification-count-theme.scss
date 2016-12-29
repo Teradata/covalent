@@ -3,6 +3,8 @@
 @import '~@angular/material/core/style/elevation';
 
 @mixin td-notification-count-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
@@ -11,5 +13,13 @@
     @include md-elevation(1);
     background-color: md-color($warn);
     color: md-color($warn, default-contrast);
+    &.md-primary {
+      background-color: md-color($primary);
+      color: md-color($primary, default-contrast);
+    }
+    &.md-accent {
+      background-color: md-color($accent);
+      color: md-color($accent, default-contrast);
+    }
   }
 }

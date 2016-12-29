@@ -9,6 +9,8 @@ export class TdNotificationCountComponent {
 
   private _notifications: number = 0;
 
+  @Input() color: string = 'warn';
+
   @Input()
   set notifications(notifications: number) {
     this._notifications = notifications;
