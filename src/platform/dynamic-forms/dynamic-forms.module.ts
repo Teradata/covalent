@@ -16,6 +16,7 @@ import {
   TdDynamicCheckboxComponent,
 } from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
+import { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
@@ -29,6 +30,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   TdDynamicSlideToggleComponent,
   TdDynamicCheckboxComponent,
   TdDynamicSliderComponent,
+  TdDynamicSelectComponent,
 ];
 
 @NgModule({

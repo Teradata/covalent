@@ -70,6 +70,11 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
    */
   @Input() max: number = undefined;
 
+  /**
+   * Sets selections for array elements (if supported by element).
+   */
+  @Input() selections: any[] = undefined;
+
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.flex')
@@ -107,6 +112,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     ref.instance.required = this.required;
     ref.instance.min = this.min;
     ref.instance.max = this.max;
+    ref.instance.selections = this.selections;
     ref.instance.registerOnChange((value: any) => {
       this.value = value;
     });

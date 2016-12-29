@@ -83,6 +83,33 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Array Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <td-dynamic-forms [elements]="arrayElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="arrayElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{arrayElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>TdDynamicFormsComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
   <md-divider></md-divider>

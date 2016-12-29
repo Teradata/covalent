@@ -12,3 +12,4 @@ export {
   TdDynamicCheckboxComponent,
 } from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 export { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
+export { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';

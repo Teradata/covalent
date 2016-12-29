@@ -8,11 +8,13 @@ import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
+import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
 
 export enum TdDynamicType {
   Text = <any>'text',
   Boolean = <any>'boolean',
   Number = <any>'number',
+  Array = <any>'array',
 }
 
 export enum TdDynamicElement {
@@ -21,6 +23,7 @@ export enum TdDynamicElement {
   Slider = <any>'slider',
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
+  Select = <any>'select',
 }
 
 export interface ITdDynamicElementConfig {
@@ -30,6 +33,7 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
+  selections?: any[];
   default?: any;
 }
 
@@ -67,6 +71,9 @@ export class TdDynamicFormsService {
         return TdDynamicCheckboxComponent;
       case TdDynamicElement.Slider:
         return TdDynamicSliderComponent;
+      case TdDynamicType.Array:
+      case TdDynamicElement.Select:
+        return TdDynamicSelectComponent;
       default:
         throw `Error: type ${element} does not exist or not supported.`;
     }
@@ -82,6 +89,8 @@ export class TdDynamicFormsService {
       case TdDynamicType.Number:
       case TdDynamicElement.Slider:
       case TdDynamicElement.Input:
+      case TdDynamicType.Array:
+      case TdDynamicElement.Select:
         return 45;
       case TdDynamicElement.Textarea:
         return 95;

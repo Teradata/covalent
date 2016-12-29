@@ -82,4 +82,16 @@ export class DynamicFormsDemoComponent {
     name: 'checkbox',
     type: TdDynamicElement.Checkbox,
   }];
+
+  arrayElements: ITdDynamicElementConfig[] = [{
+    name: 'array',
+    type: TdDynamicType.Array,
+    selections: ['Test1', 'Test2', 'Test3', 'Test4'],
+    default: 'Test1',
+  }, {
+    name: 'required-select',
+    type: TdDynamicElement.Select,
+    selections: ['Test1', 'Test2', 'Test3', 'Test4'],
+    required: true,
+  }];
 }
