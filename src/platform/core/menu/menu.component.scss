@@ -1,0 +1,12 @@
+/deep/ [td-menu-header] {
+  margin-top: -8px;
+}
+
+/deep/ [td-menu-footer] {
+  margin-bottom: -8px;
+}
+
+.td-menu-content {
+  max-height: 280px;
+  overflow-y: auto;
+}
