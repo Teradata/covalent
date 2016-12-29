@@ -44,6 +44,7 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
+  selections?: any[];
   default?: any;
 }
 ```
@@ -61,19 +62,24 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
 })
 export class Demo {
   elements: ITdDynamicElementConfig[] = [{
-    name: 'input-without-label',
-    type: TdDynamicElement.Input,
-    required: false,
-  }, {
-    name: 'input-with-label',
-    label: 'Input Label',
+    name: 'input',
     type: TdDynamicElement.Input,
     required: true,
   }, {
-    name: 'text-with-default',
-    type: TdDynamicType.Text,
-    required: false,
-    default: 'Default',
+    name: 'slider',
+    label: 'Label',
+    type: TdDynamicElement.Slider,
+    required: true,
+  }, {
+    name: 'boolean',
+    type: TdDynamicType.Boolean,
+    default: false,
+  }, {
+    name: 'select',
+    type: TdDynamicElement.Select,
+    required: true,
+    selections: ['A','B','C']
+    default: 'A',
   }];
 }
 ```
