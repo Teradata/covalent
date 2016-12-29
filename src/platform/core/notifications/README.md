@@ -9,8 +9,7 @@ Properties:
 | Name | Type | Description |
 | --- | --- | --- |
 | `color?` | `"primary" | "accent" | "warn"` | Sets the theme color of the notification tip. Defaults to 'warn'
-| `noCount?` | `boolean` | Sets the component in its 'noCount' state. Makes the notification tip show without a count. Defaults to 'false'
-| `notifications?` | `number | boolean` | Number for the notification count. Shows component only if the input is a positive number or 'true'
+| `notifications?` | `number | boolean` | Number for the notification count. Shows number if the input is a positive number or its no count state if boolean 'true'
 
 ## Setup
 
@@ -38,10 +37,10 @@ Example for HTML count usage:
 </td-notification-count>
  ```
 
- Example for HTML noCount usage:
+ Example for HTML no count usage:
 
  ```html
-<td-notification-count noCount [notifications]="true|false">
+<td-notification-count [notifications]="true|false">
   <md-icon>notifications<md-icon>
 </td-notification-count>
  ```

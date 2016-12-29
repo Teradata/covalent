@@ -9,7 +9,7 @@ export class NotificationsDemoComponent {
 
   notificationsAttrs: Object[] = [{
     description: `Number for the notification count.
-                  Shows component only if the input is a positive number or 'true'`,
+                  Shows number if the input is a positive number or its no count state if boolean 'true'`,
     name: 'notifications',
     type: 'number | boolean',
   }, {
@@ -17,11 +17,6 @@ export class NotificationsDemoComponent {
                   Defaults to 'warn'`,
     name: 'color',
     type: '"primary" | "accent" | "warn"',
-  }, {
-    description: `Sets the component in its 'noCount' state. Makes the notification tip show without a count.
-                  Defaults to 'false'`,
-    name: 'noCount',
-    type: 'boolean',
   }];
 
 }

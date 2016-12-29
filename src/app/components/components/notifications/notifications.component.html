@@ -11,7 +11,7 @@
       <span>Toolbar</span>
       <span flex></span>
       <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
-      <td-notification-count color="primary" noCount [notifications]="true">
+      <td-notification-count color="primary" [notifications]="true">
         <md-icon>person</md-icon>
       </td-notification-count>
       <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
@@ -56,7 +56,7 @@
             <md-icon>message</md-icon>
           </td-notification-count>
         </button>
-        <td-notification-count color="accent" noCount [notifications]="true">
+        <td-notification-count color="accent" [notifications]="true">
           <md-icon>people</md-icon>
         </td-notification-count>
         <button md-icon-button>
@@ -80,7 +80,7 @@
           <h3 md-line> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
           <p md-line> 2 days ago </p>
           <span></span>
-          <td-notification-count noCount [notifications]="true">
+          <td-notification-count [notifications]="true">
           </td-notification-count>
         </a>
       </md-nav-list>
@@ -109,7 +109,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count [notifications]="notificationCount">
+          <td-notification-count color="accent" [notifications]="notificationCount">
             <md-icon>notifications</md-icon>
           </td-notification-count>
         </button>
