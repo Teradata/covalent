@@ -4,7 +4,7 @@ import {
   async,
   ComponentFixture,
 } from '@angular/core/testing';
-import { Component, DebugElement } from '@angular/core';
+import { Component } from '@angular/core';
 import { CovalentNotificationsModule } from './notifications.module';
 import { By } from '@angular/platform-browser';
 
