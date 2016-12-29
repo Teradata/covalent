@@ -29,7 +29,7 @@ export class TdNotificationCountComponent {
   }
 
   /**
-   * notifications?: number
+   * notifications?: number | boolean
    * Number for the notification count. Shows component only if the input is a positive number or 'true'
    */
   @Input()

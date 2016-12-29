@@ -11,7 +11,7 @@ export class NotificationsDemoComponent {
     description: `Number for the notification count.
                   Shows component only if the input is a positive number or 'true'`,
     name: 'notifications',
-    type: 'number',
+    type: 'number | boolean',
   }, {
     description: `Sets the theme color of the notification tip.
                   Defaults to 'warn'`,
