@@ -13,7 +13,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 4.4 and NPM 3+ installed.
+* Ensure you have Node 5.5.0 and NPM 3+ installed.
 * Install Angular CLI `npm i -g angular-cli@latest`
 * Install Typescript 2.0 `npm i -g typescript@2.0.10`
 * Install TSLint `npm install -g tslint`
