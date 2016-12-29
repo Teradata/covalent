@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,6 +34,7 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
+    NgxChartsModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [
