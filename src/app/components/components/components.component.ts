@@ -83,6 +83,11 @@ export class ComponentsComponent {
     route: 'search',
     title: 'Search',
   }, {
+    description: 'Build forms from a JS object',
+    icon: 'format_align_center',
+    route: 'dynamic-forms',
+    title: 'Dynamic Forms',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',

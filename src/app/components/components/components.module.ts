@@ -21,12 +21,14 @@ import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
+import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentChartsModule } from '../../../platform/charts';
+import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
+    DynamicFormsDemoComponent,
     MaterialComponentsComponent,
     DialogComponent,
   ],
@@ -57,6 +60,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
     componentsRoutes,
   ],
   entryComponents: [ DialogComponent ],
