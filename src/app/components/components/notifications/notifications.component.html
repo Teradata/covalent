@@ -12,7 +12,7 @@
       <span flex></span>
       <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
       <td-notification-count color="primary" noCount [notifications]="true">
-        <md-icon>notifications</md-icon>
+        <md-icon>person</md-icon>
       </td-notification-count>
       <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
         <td-notification-count [notifications]="101">
@@ -109,7 +109,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count [notifications]="101">
+          <td-notification-count [notifications]="notificationCount">
             <md-icon>notifications</md-icon>
           </td-notification-count>
         </button>
