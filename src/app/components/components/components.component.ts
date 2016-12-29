@@ -73,6 +73,11 @@ export class ComponentsComponent {
     route: 'charts',
     title: 'Charts',
   }, {
+    description: 'NGX Charts',
+    icon: 'show_chart',
+    route: 'ngx-charts',
+    title: 'NGX Charts',
+  }, {
     description: 'Paging for lists and tables',
     icon: 'swap_horiz',
     route: 'paging',

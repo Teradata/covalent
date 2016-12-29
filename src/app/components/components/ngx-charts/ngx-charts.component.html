@@ -1,0 +1,23 @@
+<md-card style="height: 100%">
+  <md-card-title>NGX Charts</md-card-title>
+  <md-card-subtitle>NGX charts for Browsers</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-card-title>Bar Chart</md-card-title>
+    <md-card-subtitle>All Sources total size data</md-card-subtitle>
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="displayData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </md-card-content>
+</md-card>

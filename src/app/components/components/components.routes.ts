@@ -16,6 +16,7 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
@@ -74,6 +75,9 @@ const routes: Routes = [{
     }, {
       component: ChartsDemoComponent,
       path: 'charts',
+    }, {
+      component: NgxChartsDemoComponent,
+      path: 'ngx-charts',
     }, {
       component: DataTableDemoComponent,
       path: 'data-table',
