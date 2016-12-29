@@ -2,9 +2,14 @@
   <span class="td-paging-bar-per-page">
     Rows per page:
   </span>
-  <button md-icon-button type="button" [mdMenuTriggerFor]="pageSizeMenu">
-    <span class="td-paging-size">{{pageSize}}</span> <md-icon>arrow_drop_down</md-icon>
-  </button>
+  <md-select [(ngModel)]="pageSize">
+    <template let-size ngFor [ngForOf]="pageSizes">
+      <md-option [value]="size">
+        {{size}}
+      </md-option>
+    </template>
+    <md-option *ngIf="pageSizeAll" [value]="total">All</md-option>
+  </md-select>
   <span class="td-paging-bar-ranges">
     {{range}} <span>of</span> {{total}}
   </span>
@@ -23,9 +28,3 @@
     </button>
   </div>
 </div>
-<md-menu x-position="before" #pageSizeMenu="mdMenu">
-  <template let-size ngFor [ngForOf]="pageSizes">
-    <button md-menu-item (click)="pageSize = size">{{size}}</button>
-  </template>
-  <button md-menu-item *ngIf="pageSizeAll" (click)="pageSize = total">All</button>
-</md-menu>
