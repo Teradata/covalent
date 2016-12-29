@@ -10,7 +10,8 @@
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>
   </md-input-container>
-  <button md-icon-button 
+  <button md-icon-button
+          type="button"
           [@searchState]="searchElement.value ? true : false"
           (click)="clearSearch()"
           flex="none">
