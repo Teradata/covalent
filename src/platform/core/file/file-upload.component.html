@@ -1,6 +1,7 @@
 <div>
   <div *ngIf="!files">
     <button md-raised-button
+            type="button"
             [color]="defaultColor" 
             [multiple]="multiple" 
             [disabled]="disabled"
@@ -24,6 +25,7 @@
   <div *ngIf="files" layout="row">
     <button #fileUpload 
             md-raised-button
+            type="button"
             [color]="activeColor"
             (keyup.delete)="cancel()"
             (keyup.backspace)="cancel()"
@@ -34,7 +36,9 @@
         {{ files.name || files.length }} <span *ngIf="files.length">files selected</span> 
       </label>
     </button>
-    <button md-icon-button class="td-file-cancel"
+    <button md-icon-button
+            type="button"
+            class="td-file-cancel"
             [color]="cancelColor"            
             (click)="cancel()">
       <md-icon>cancel</md-icon>
