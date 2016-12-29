@@ -20,17 +20,23 @@
         </td-notification-count>
       </button>
       <md-menu #notificationsMenu="mdMenu">
-        <div md-menu-item class="md-title">Notifications</div>
-        <template ngFor [ngForOf]="[0,1,2,3,4]">
-          <button md-menu-item>
-            <md-icon>today</md-icon>
-            <span class="text-wrap">Example notification occurred here.</span>
+        <td-menu>
+          <div td-menu-header class="md-title pad-sm text-center">Notifications</div>
+          <md-nav-list dense>
+            <template let-last="last" ngFor [ngForOf]="[0,1,2,3,4]">
+              <a md-list-item>
+                <md-icon md-list-avatar>today</md-icon>
+                <h3 md-line>Example notification here.</h3>
+                <p md-line>Action</p>
+                <span>23m</span>
+              </a>
+              <md-divider md-inset *ngIf="!last"></md-divider>
+            </template>
+          </md-nav-list>
+          <button md-raised-button color="accent" td-menu-footer>
+            See All Notifications
           </button>
-          <md-divider></md-divider>
-        </template>
-        <button md-menu-item>
-          <div class="text-center">See All Notifications</div>
-        </button>
+        </td-menu>
       </md-menu>
       <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
       <md-menu #toolbarMenu1="mdMenu">
