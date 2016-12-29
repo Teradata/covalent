@@ -11,8 +11,10 @@
 
   .td-notification-count {
     @include md-elevation(1);
-    background-color: md-color($warn);
-    color: md-color($warn, default-contrast);
+    &.md-warn {
+      background-color: md-color($warn);
+      color: md-color($warn, default-contrast);
+    }
     &.md-primary {
       background-color: md-color($primary);
       color: md-color($primary, default-contrast);
