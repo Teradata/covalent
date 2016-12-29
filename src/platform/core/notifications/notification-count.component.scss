@@ -1,8 +1,12 @@
 $td-notification-size: 22px !default;
+$td-notification-content-size: 40px !default;
 
 :host {
   position: relative;
-  display: block;  
+  display: block;
+  text-align: center;
+  width: $td-notification-content-size;
+  height: $td-notification-content-size;
 }
 
 .td-notification-count {
@@ -20,6 +24,6 @@ $td-notification-size: 22px !default;
 
 .td-notification-content {
   &, /deep/ > * {
-    vertical-align: middle;
+    line-height: $td-notification-content-size;
   }
 }
