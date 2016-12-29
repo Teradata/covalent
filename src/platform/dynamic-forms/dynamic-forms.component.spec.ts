@@ -57,10 +57,14 @@ describe('Component: TdDynamicForms', () => {
     }, {
       name: 'description',
       type: TdDynamicElement.Textarea,
+    }, {
+      name: 'sex',
+      type: TdDynamicType.Array,
+      selections: ['M', 'F'],
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(5);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(6);
     });
   })));
 

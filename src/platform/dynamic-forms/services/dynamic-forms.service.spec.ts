@@ -55,12 +55,14 @@ describe('Service: TdDynamicFormsService', () => {
       expect(service.getDynamicElement(TdDynamicType.Text)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicType.Number)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicType.Boolean)).toBeTruthy();
+      expect(service.getDynamicElement(TdDynamicType.Array)).toBeTruthy();
 
       expect(service.getDynamicElement(TdDynamicElement.Input)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.Textarea)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.Checkbox)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.Slider)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.SlideToggle)).toBeTruthy();
+      expect(service.getDynamicElement(TdDynamicElement.Select)).toBeTruthy();
 
       try {
         expect(service.getDynamicElement(undefined)).toBeFalsy('expect not to return a component');
@@ -76,12 +78,14 @@ describe('Service: TdDynamicFormsService', () => {
       expect(service.getDefaultElementFlex(TdDynamicType.Text)).toBe(45);
       expect(service.getDefaultElementFlex(TdDynamicType.Number)).toBe(45);
       expect(service.getDefaultElementFlex(TdDynamicType.Boolean)).toBe(20);
+      expect(service.getDefaultElementFlex(TdDynamicType.Array)).toBe(45);
 
       expect(service.getDefaultElementFlex(TdDynamicElement.Input)).toBe(45);
       expect(service.getDefaultElementFlex(TdDynamicElement.Textarea)).toBe(95);
       expect(service.getDefaultElementFlex(TdDynamicElement.Checkbox)).toBe(20);
       expect(service.getDefaultElementFlex(TdDynamicElement.Slider)).toBe(45);
       expect(service.getDefaultElementFlex(TdDynamicElement.SlideToggle)).toBe(20);
+      expect(service.getDefaultElementFlex(TdDynamicElement.Select)).toBe(45);
 
       try {
         expect(service.getDefaultElementFlex(undefined)).toBeFalsy('expect not to return a component');
