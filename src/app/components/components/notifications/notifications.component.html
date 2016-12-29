@@ -10,7 +10,10 @@
       </button>
       <span>Toolbar</span>
       <span flex></span>
-      <td-search-box placeholder="Search" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+      <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
+      <td-notification-count [notifications]="99">
+        <md-icon>notifications</md-icon>
+      </td-notification-count>
       <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
         <td-notification-count [notifications]="999">
           <md-icon>notifications</md-icon>
@@ -41,6 +44,25 @@
         </button>
       </md-menu>
     </md-toolbar>
+    <md-nav-list list-items>
+      <a md-list-item>
+        <md-icon md-list-avatar>person</md-icon>
+        <h3 md-line> Ed Morales </h3>
+        <p md-line> 10 mins ago </p>
+        <span></span>
+        <td-notification-count [notifications]="1">
+        </td-notification-count>
+      </a>
+      <md-divider md-inset></md-divider>
+      <a md-list-item>
+        <md-icon md-list-avatar>person</md-icon>
+        <h3 md-line> Ignoring person </h3>
+        <p md-line> 2 days ago </p>
+        <span></span>
+        <td-notification-count [notifications]="999">
+        </td-notification-count>
+      </a>
+    </md-nav-list>
   </md-card-content>
 </md-card>
 <md-card>
@@ -65,7 +87,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count [notifications]="999">
+          <td-notification-count [notifications]="notificationCount">
             <md-icon>notifications</md-icon>
           </td-notification-count>
         </button>
@@ -88,7 +110,7 @@
     <td-highlight lang="typescript">
       <![CDATA[
         export class Demo {
-          count: number;
+          notificationCount: number = 100;
         }
       ]]>
     </td-highlight>
