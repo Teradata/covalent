@@ -78,6 +78,11 @@ export class ComponentsComponent {
     route: 'paging',
     title: 'Paging',
   }, {
+    description: 'Notification count & menu',
+    icon: 'notifications',
+    route: 'notifications',
+    title: 'Notifications',
+  }, {
     description: 'Search and filter items',
     icon: 'search',
     route: 'search',

@@ -1,28 +1,25 @@
-@import '~@angular/material/core/style/elevation';
+$td-notification-size: 22px !default;
 
 :host {
   position: relative;
-  display: block;
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  line-height: 36px;
-  font-size: 14px;
-  /deep/ > * {
+  display: block;  
+}
+
+.td-notification-count {
+  height: $td-notification-size;
+  line-height: $td-notification-size + 1;
+  width: $td-notification-size;
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.td-notification-content {
+  &, /deep/ > * {
     vertical-align: middle;
-  }
-  .td-notification-tip {
-    @include md-elevation(1);
-    line-height: 16px;
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
-    padding: 0 4px;
-    color: white;
-    background-color: blue; //maybe accent? or having a [color] attribute people can change it easily. (color="primary")
-    border-radius: 10%;
   }
 }

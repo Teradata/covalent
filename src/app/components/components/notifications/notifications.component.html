@@ -1,0 +1,111 @@
+<md-card>
+  <md-card-title>Notifications</md-card-title>
+  <md-card-subtitle>Notifications count &amp; menu for toolbar</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Typical usage in a toolbar:</p>
+    <md-toolbar color="accent">
+      <button md-icon-button>
+        <md-icon>menu</md-icon>
+      </button>
+      <span>Toolbar</span>
+      <span flex></span>
+      <td-search-box placeholder="Search" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+      <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+        <td-notification-count [notifications]="999">
+          <md-icon>notifications</md-icon>
+        </td-notification-count>
+      </button>
+      <md-menu #notificationsMenu="mdMenu">
+        <div md-menu-item class="md-title">Notifications</div>
+        <template ngFor [ngForOf]="[0,1,2,3,4]">
+          <button md-menu-item>
+            <md-icon>today</md-icon>
+            <span class="text-wrap">Example notification occurred here.</span>
+          </button>
+          <md-divider></md-divider>
+        </template>
+        <button md-menu-item>
+          <div class="text-center">See All Notifications</div>
+        </button>
+      </md-menu>
+      <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
+      <md-menu #toolbarMenu1="mdMenu">
+        <button md-menu-item>
+          <md-icon>settings</md-icon>
+          <span>Settings</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>exit_to_app</md-icon>
+          <span>Sign out</span>
+        </button>
+      </md-menu>
+    </md-toolbar>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdNotificationCountComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Use <code><![CDATA[<td-notification-count>]]></code> element to show number of notifications.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-notification-count>]]></code> component has {{notificationsAttrs.length}} properties:</p>
+    <md-list>
+      <template let-attr let-last="attr" ngFor [ngForOf]="notificationsAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+          <td-notification-count [notifications]="999">
+            <md-icon>notifications</md-icon>
+          </td-notification-count>
+        </button>
+        <md-menu #notificationsMenu="mdMenu">
+          <div md-menu-item class="md-title">Notifications</div>
+          <template ngFor [ngForOf]="data">
+            <button md-menu-item>
+              <md-icon>today</md-icon>
+              <span class="text-wrap">Example notification occurred here.</span>
+            </button>
+            <md-divider></md-divider>
+          </template>
+          <button md-menu-item>
+            <div class="text-center">See All Notifications</div>
+          </button>
+        </md-menu>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        export class Demo {
+          count: number;
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentNotificationsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentNotificationsModule } from '@covalent/core';
+        @NgModule({
+          imports: [
+            CovalentNotificationsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

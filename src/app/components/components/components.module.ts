@@ -22,6 +22,7 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -51,6 +52,7 @@ import { CovalentChartsModule } from '../../../platform/charts';
     SearchDemoComponent,
     MaterialComponentsComponent,
     DialogComponent,
+    NotificationsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
