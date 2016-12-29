@@ -13,13 +13,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentNotificationModule] using the forRoot() method in your NgModule:
+Import the [CovalentNotificationsModule] using the forRoot() method in your NgModule:
 
 ```typescript
-import { CovalentNotificationModule } from '@covalent/core';
+import { CovalentNotificationsModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentNotificationModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentNotificationsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
     ...
   ],
   ...
