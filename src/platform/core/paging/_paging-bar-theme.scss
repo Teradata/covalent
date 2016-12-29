@@ -7,7 +7,9 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  td-paging-bar, td-paging-bar * {
-    color: md-color($foreground, secondary-text) !important;
+  td-paging-bar {
+    &, & md-select .md-select-value { 
+      color: md-color($foreground, secondary-text);
+    }
   }
 }
