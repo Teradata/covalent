@@ -82,6 +82,11 @@ export class ComponentsOverviewComponent {
       route: 'search',
       title: 'Search',
     }, {
+      color: 'green-700',
+      icon: 'format_align_center',
+      route: 'dynamic-forms',
+      title: 'Dynamic Forms',
+    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',

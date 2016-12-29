@@ -14,6 +14,7 @@ import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentChartsModule } from '../platform/charts';
+import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CovalentChartsModule } from '../platform/charts';
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [
