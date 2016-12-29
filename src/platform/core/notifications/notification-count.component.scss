@@ -20,6 +20,12 @@ $td-notification-content-size: 40px !default;
   font-weight: 600;
   border-radius: 50%;
   z-index: 1;
+  &.td-notification-no-count {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+    right: 8px;
+  }
 }
 
 .td-notification-content {

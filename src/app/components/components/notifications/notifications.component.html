@@ -51,34 +51,14 @@
     </md-toolbar>
     <div layout="row">
       <div layout="column" class="bgc-grey-300">
-        <button md-icon-button [mdMenuTriggerFor]="notificationsMenu2">
+        <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
           <td-notification-count color="primary" [notifications]="12">
             <md-icon>message</md-icon>
           </td-notification-count>
         </button>
-        <md-menu #notificationsMenu2="mdMenu">
-          <td-menu>
-            <div td-menu-header class="md-subhead">Notifications</div>
-            <md-nav-list dense>
-              <template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                <a md-list-item>
-                  <md-icon md-list-avatar>today</md-icon>
-                  <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                  <p md-line>22 minutes ago</p>
-                </a>
-                <md-divider *ngIf="!last"></md-divider>
-              </template>
-            </md-nav-list>
-            <button md-button color="accent" td-menu-footer>
-              See All Notifications
-            </button>
-          </td-menu>
-        </md-menu>
-        
-        <td-notification-count color="accent" [notifications]="1">
+        <td-notification-count color="accent" [noCount]="true" [showNoCount]="true">
           <md-icon>people</md-icon>
         </td-notification-count>
-      
         <button md-icon-button>
           <td-notification-count [notifications]="0">
             <md-icon>notifications</md-icon>
@@ -100,7 +80,7 @@
           <h3 md-line> Ignoring person </h3>
           <p md-line> 2 days ago </p>
           <span></span>
-          <td-notification-count [notifications]="999">
+          <td-notification-count [noCount]="true" [showNoCount]="true">
           </td-notification-count>
         </a>
       </md-nav-list>
