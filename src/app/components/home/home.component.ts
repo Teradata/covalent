@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [fadeAnimation],
 })
+
 export class HomeComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   items: Object[] = [{
       color: 'purple-700',

@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-overview',
   styleUrls: ['./overview.component.scss'],
   templateUrl: './overview.component.html',
+  animations: [slideInDownAnimation],
 })
 export class LayoutsOverviewComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'A simple layout with toolbar & sidenav',

@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'pipes-demo',
   styleUrls: ['./pipes.component.scss' ],
   templateUrl: './pipes.component.html',
+  animations: [slideInDownAnimation],
 })
 export class PipesComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   public logs: Object[] = [
     {

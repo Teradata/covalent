@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
 
@@ -6,8 +8,10 @@ import { TdDialogService } from '../../../../platform/core';
   selector: 'dialogs-demo',
   styleUrls: ['./dialogs.component.scss'],
   templateUrl: './dialogs.component.html',
+  animations: [slideInDownAnimation],
 })
 export class DialogsDemoComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   dialogServiceMethods: Object[] = [{
     description: `Opens an alert dialog with the provided config.`,

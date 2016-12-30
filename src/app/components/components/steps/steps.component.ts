@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 import { Subscription } from 'rxjs/Subscription';
 
 import { StepState, TdMediaService } from '../../../../platform/core';
@@ -7,8 +8,10 @@ import { StepState, TdMediaService } from '../../../../platform/core';
   selector: 'steps-demo',
   styleUrls: ['./steps.component.scss' ],
   templateUrl: './steps.component.html',
+  animations: [slideInDownAnimation],
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   stepsAttrs: Object[] = [{
     description: `Method to be executed when [onStepChange] event is emitted.

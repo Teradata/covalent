@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 import { MdSnackBar, MdDialog } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-material-components',
   styleUrls: ['./material-components.component.scss'],
   templateUrl: './material-components.component.html',
+  animations: [slideInDownAnimation],
 })
 export class MaterialComponentsComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   isDisabled: boolean = false;
   isIndeterminate: boolean = false;

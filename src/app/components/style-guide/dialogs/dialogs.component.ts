@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
 
@@ -8,8 +10,10 @@ import { MdSnackBar } from '@angular/material';
   selector: 'design-patterns-dialogs',
   styleUrls: ['./dialogs.component.scss'],
   templateUrl: './dialogs.component.html',
+  animations: [slideInDownAnimation],
 })
 export class DialogsToastsComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   constructor(private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar) {}

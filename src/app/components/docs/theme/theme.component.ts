@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'docs-theme',
   templateUrl: './theme.component.html',
   styleUrls: ['./theme.component.scss'],
+  animations: [slideInDownAnimation],
 })
-export class ThemeComponent {}
+export class ThemeComponent {
+   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+}

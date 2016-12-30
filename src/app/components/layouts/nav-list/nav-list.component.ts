@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
   templateUrl: './nav-list.component.html',
+  animations: [slideInDownAnimation],
 })
 export class NavListComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+
   items: Object[] = [{
     description: 'item description',
     icon: 'view_compact',

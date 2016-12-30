@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'expansion-panel-demo',
   styleUrls: ['./expansion-panel.component.scss'],
   templateUrl: './expansion-panel.component.html',
+  animations: [slideInDownAnimation],
 })
 export class ExpansionPanelDemoComponent {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
 
   expansionAttrs: Object[] = [{
     description: 'Sets label of [TdExpansionPanelComponent] header. Defaults to "Click to expand"',

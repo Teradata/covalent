@@ -1,19 +1,12 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
-
-import { slideInDownAnimation } from './animations';
 
 @Component({
   selector: 'docs-covalent',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInDownAnimation],
 })
-
-@HostBinding('@routeAnimation') routeAnimation = true;
-@HostBinding('style.display')   display = 'block';
-@HostBinding('style.position')  position = 'absolute';
 
 export class DocsAppComponent {
 
