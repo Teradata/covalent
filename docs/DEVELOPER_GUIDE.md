@@ -13,7 +13,7 @@ The source has two parts, the platform and a documentation app.
 /src/platform - Contains the platform assets 
 ```
 
-## Adding a new platform component
+## Adding a new platform module
 
 Add a new directory based on the name to `src/platform/[name]` and it should contain a folder structure that has the following:
 
@@ -24,8 +24,6 @@ Add a new directory based on the name to `src/platform/[name]` and it should con
 * `[name].component.spec.ts` - component unit test
 * `package.json` - configurations used for npm to publish it (name[@covalent/name], version, dependencies, etc)
 * `README.md` - readme file with documentation for github and npm registry.
-
-Then you will need to add a path `src/system-config.ts` under the library barrels that points to your new component directory, such as `'platform/[name]',`.
 
 ## Adding a new documentation component
 
