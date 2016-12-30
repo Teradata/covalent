@@ -2,6 +2,56 @@
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Covalent</span>
     <span flex></span>
+    <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+      <td-notification-count color="accent" [notifications]="6">
+        <md-icon>notifications</md-icon>
+      </td-notification-count>
+    </button>
+    <md-menu #notificationsMenu="mdMenu">
+      <td-menu>
+        <div td-menu-header class="md-subhead">Updates</div>
+        <md-nav-list dense>
+          <a md-list-item [routerLink]="['/components/notifications']">
+            <md-icon md-list-avatar>notifications</md-icon>
+            <h4 md-line><span class="text-wrap">Notifications component added</span></h4>
+            <p md-line>New component</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/components/dynamic-forms']">
+            <md-icon md-list-avatar>format_align_center</md-icon>
+            <h4 md-line><span class="text-wrap">JSON driven dynamic forms</span></h4>
+            <p md-line>New component</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/layouts']">
+            <md-icon md-list-avatar>call_to_action</md-icon>
+            <h4 md-line><span class="text-wrap">Sticky footer added to layouts</span></h4>
+            <p md-line>Component updated</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/components/data-table']">
+            <md-icon md-list-avatar>grid_on</md-icon>
+            <h4 md-line><span class="text-wrap">Nested object support for data-table</span></h4>
+            <p md-line>Component updated</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/components/http']">
+            <md-icon md-list-avatar>http</md-icon>
+            <h4 md-line><span class="text-wrap">HTTP path interceptors &amp; transform support</span></h4>
+            <p md-line>Service updated</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L53-L58" target="_blank">
+            <md-icon md-list-avatar>notifications</md-icon>
+            <h4 md-line><span class="text-wrap">Angular 2.4.1 &amp; Material2 Beta1</span></h4>
+            <p md-line>Dependencies updated</p>
+          </a>
+        </md-nav-list>
+        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
+          View Full Changelog
+        </a>
+      </td-menu>
+    </md-menu>
     <a md-icon-button mdTooltip="Quickstart" href="https://github.com/Teradata/covalent-quickstart" target="_blank"><md-icon>flash_on</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
