@@ -1,4 +1,4 @@
-<md-card style="height: 100%">
+<md-card>
   <md-card-title>NGX Charts</md-card-title>
   <md-card-subtitle>NGX charts for Browsers</md-card-subtitle>
   <md-divider></md-divider>
@@ -8,16 +8,57 @@
     <ngx-charts-bar-vertical
       [view]="view"
       [scheme]="colorScheme"
-      [results]="displayData"
+      [results]="displaySizeData"
       [gradient]="gradient"
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
+      [xAxisLabel]="barXAxisLabel"
+      [yAxisLabel]="barYAxisLabel"
       (select)="onSelect($event)">
     </ngx-charts-bar-vertical>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content class="line">
+    <md-card-title>Line Chart</md-card-title>
+    <md-card-subtitle>All Sources total latency data</md-card-subtitle>
+    <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="lineColorScheme"
+      [results]="displayLatencyData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="lineXAxisLabel"
+      [yAxisLabel]="lineYAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-card-title>Area Chart</md-card-title>
+    <md-card-subtitle>All Sources total records data</md-card-subtitle>
+    <ngx-charts-area-chart
+      [view]="view"
+      [scheme]="lineColorScheme"
+      [results]="displayRecordsData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="areaXAxisLabel"
+      [yAxisLabel]="areaYAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect($event)">
+    </ngx-charts-area-chart>
+  </md-card-content>
 </md-card>
+

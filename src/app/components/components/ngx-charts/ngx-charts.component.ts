@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { sizeData } from './data';
+import { sourcesData, latencyData } from './data';
 
 @Component({
   selector: 'ngx-charts-demo',
@@ -8,7 +8,17 @@ import { sizeData } from './data';
 })
 export class NgxChartsDemoComponent implements OnInit {
 
-  displayData: any[] = [];
+  displaySizeData: any[] = [];
+  displayLatencyData: any = [{
+    'name': 'Latency',
+    'series': [],
+  }];
+  displayRecordsData: any = [{
+    'name': 'Records',
+    'series': [],
+  }];
+  formatLatencyData: any[] = [];
+  formatRecordsData: any[] = [];
 
   chartRange: any[] = [
     {
@@ -43,23 +53,16 @@ export class NgxChartsDemoComponent implements OnInit {
   ];
 
   range: any = this.chartRange[0];
-  volume: any = {
-    x: [],
-    records: [],
-    size: [],
-  };
 
   view: any[] = [700, 400];
 
-  // options
+  // Generic Chart options
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = false;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Time';
   showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Size';
 
   colorScheme: any = {
     domain: [
@@ -67,42 +70,66 @@ export class NgxChartsDemoComponent implements OnInit {
     ],
   };
 
+  // Bar Chart options
+  barXAxisLabel: string = 'Time';
+  barYAxisLabel: string = 'Size';
+
+  // Line Chart options
+  lineXAxisLabel: string = 'Time';
+  lineYAxisLabel: string = 'Latency';
+
+  // Area Chart options
+  areaXAxisLabel: string = 'Time';
+  areaYAxisLabel: string = 'Records';
+
+  lineColorScheme: any = {
+    domain: [
+      '#a27ea8',
+    ],
+  };
+
   ngOnInit(): void {
-    this.loadData();
+    this.loadSourcesData();
+    this.loadLatencyData();
   }
 
-  loadData(): void {
-    let volumes: any[] = sizeData;
+  loadSourcesData(): void {
+    let volumes: any[] = sourcesData;
     volumes.shift();
-    let point: any[];
     volumes.forEach((metric: any) => {
       let size: number = Math.round(metric.total_bytes.value);
       let records: number = Math.round(metric.total_docs.value);
 
       let x: any = new Date(metric.time).getHours() + ':' + new Date(metric.time).getMinutes();
-      let index: number = this.volume.x.indexOf(x);
-      if (index < 0) {
-        point = [
-          ['x', x],
-          ['Size', size],
-          ['Records', records],
-        ];
-        this.volume.x.push(x);
-        this.volume.size.push(size);
-        this.volume.records.push(records);
-        this.displayData.push({
-          'name': x,
-          'value': size,
-        });
-        if (this.volume.x.length > this.range.maxPoints) {
-          this.volume.x.shift();
-          this.volume.size.shift();
-          this.volume.records.shift();
-        }
-      } else {
-        this.volume.size[index] = size;
-      }
+      this.displaySizeData.push({
+        'name': x,
+        'value': size,
+      });
+      this.formatRecordsData.push({
+        'name': x,
+        'value': records,
+      });
     });
+    this.displayRecordsData[0]['series'] = this.formatRecordsData;
+  }
+
+  loadLatencyData(): void {
+    let latencies: any[] = latencyData;
+    latencies.forEach((metric: any) => {
+      let router: number = (metric.router_latency_stats.avg / 1000000);
+
+      let x: any = new Date(metric.time).getHours() + ':' + new Date(metric.time).getMinutes();
+
+      if (router < 0) {
+        router = 0.001;
+      }
+
+      this.formatLatencyData.push({
+        'name': x,
+        'value': router,
+      });
+    });
+    this.displayLatencyData[0]['series'] = this.formatLatencyData;
   }
 
   onSelect(event: any): void {
