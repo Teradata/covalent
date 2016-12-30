@@ -101,6 +101,29 @@
   ```
 
 * **layouts:** `logo` expects an `svgIcon` value now from an `MdIconRegistry` svg. (breaking change from `@angular/material`). ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+
+  Before:
+
+  ```html
+  <td-layout logo="/assets/route/to/icon1.svg">
+  ```
+
+  After (once at any toplevel component):
+  
+  ```typescript
+  import { DomSanitizer } from '@angular/platform-browser';
+  import { MdIconRegistry } from '@angular/material';
+  ...
+  ...
+  constructor(iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer) {
+    iconRegistry.addSvgIconInNamespace('assets', 'icon1', domSanitizer.bypassSecurityTrustResourceUrl('/assets/route/to/icon1.svg'));
+  }
+  ```
+
+  ```html
+  <td-layout logo="assets:icon1">
+  ```
+
 * **charts (deprecated):** `CovalentChartModule` is being deprecated in favor of [ngx-charts](https://github.com/swimlane/ngx-charts) `@swimlane/ngx-charts`.
 
 
