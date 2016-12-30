@@ -1,12 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../app.animations';
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
   templateUrl: './nav-list.component.html',
-  animations: [slideInDownAnimation],
+  animations: [fadeAnimation],
 })
 export class NavListComponent {
 

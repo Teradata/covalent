@@ -1,12 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../app.animations';
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-manage-list',
   styleUrls: ['./manage-list.component.scss'],
   templateUrl: './manage-list.component.html',
-  animations: [slideInDownAnimation],
+  animations: [fadeAnimation],
 })
 export class ManageListComponent {
 

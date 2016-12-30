@@ -1,12 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { slideInDownAnimation } from '../../../app.animations';
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-overview',
   styleUrls: ['./overview.component.scss'],
   templateUrl: './overview.component.html',
-  animations: [slideInDownAnimation],
+  animations: [fadeAnimation],
 })
 export class LayoutsOverviewComponent {
 
