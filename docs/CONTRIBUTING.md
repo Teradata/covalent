@@ -4,6 +4,7 @@ Make sure you have setup your environment based on the [Developer Guide](DEVELOP
 
 ### Development Guidelines
 
+* **Always ask before creating a PR.** To avoid duplication efforts, its better to discuss it with us first or create an issue.
 * **All code must be reviewed via a pull request.** Before anything can be merged, it must be reviewed by at least 2 others.
 * ** Use git flow processes.** Start a feature, release, or hotfix branch, and you should never commit and push directly to `master` or `develop`.
 * **Squash commits into a single commit for your PR.** We want to keep a clean git history.

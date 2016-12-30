@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'json-formatter-demo',
   styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',
+  animations: [slideInDownAnimation],
 })
 export class JsonFormatterDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   jsonFormatterAttrs: Object[] = [{
     description: `Tag to be displayed as root of formatted object.`,

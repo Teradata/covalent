@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService,
          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
@@ -12,8 +14,12 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   selector: 'data-table-demo',
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
+  animations: [slideInDownAnimation],
 })
 export class DataTableDemoComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,

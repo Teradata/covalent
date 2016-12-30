@@ -25,6 +25,7 @@ import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -57,6 +58,7 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
     DynamicFormsDemoComponent,
     MaterialComponentsComponent,
     DialogComponent,
+    NotificationsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),

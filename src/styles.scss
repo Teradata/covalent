@@ -18,3 +18,12 @@ md-nav-list {
 a[md-icon-button] {
     line-height: 36px;
 }
+
+// class for route component animations
+.td-route-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

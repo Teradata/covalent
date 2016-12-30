@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'chips-demo',
   styleUrls: ['./chips.component.scss'],
   templateUrl: './chips.component.html',
+  animations: [slideInDownAnimation],
 })
 export class ChipsDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   chipsAttrs: Object[] = [{
     description: `Enables Autocompletion with the provided list of strings.`,
