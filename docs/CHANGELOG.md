@@ -1,3 +1,193 @@
+<a name="0.10.0"></a>
+# [0.10.0 Nottinghill Blastoise](https://github.com/Teradata/covalent/tree/v0.10.0) (2016-12-30)
+
+
+## Breaking Changes
+* **deploy:** Single core package. ([81901b23eca8e02330260b5831c64da3005a39fd](https://github.com/Teradata/covalent/commit/81901b23eca8e02330260b5831c64da3005a39fd)), closes [#166](https://github.com/Teradata/covalent/issues/166) and [#93](https://github.com/Teradata/covalent/issues/93)
+
+  - Created submodules of all core modules which are wrapped by one parent module CovalentCoreModule (`@covalent/core`)
+    - CovalentCommonModule
+    - CovalentChipsModule
+    - CovalentDataTableModule
+    - CovalentDialogsModule
+    - CovalentExpansionPanelModule
+    - CovalentFileModule
+    - CovalentJsonFormatterModule
+    - CovalentLayoutModule
+    - CovalentLoadingModule
+    - CovalentMediaModule
+    - CovalentMenuModule
+    - CovalentNofiticationsModule
+    - CovalentPagingModule
+    - CovalentSearchModule
+    - CovalentStepsModule
+
+  - Stand alone modules:
+    - CovalentHttpModule (`@covalent/http`)
+    - CovalentDynamicFormsModule (`@covalent/dynamic-forms`)
+    - CovalentHighlightModule (`@covalent/highlight`)
+    - CovalentMarkdownModule (`@covalent/markdown`)
+  
+  - `markdown` is a separate module and its theme needs to be imported separatly `@import ~@covalent/markdown/markdown-theme'` and included `@include covalent-markdown-theme($theme);`
+  - `highlight` is a separate module and its theme needs to be imported separatly `@import ~@covalent/highlight/highlight-theme'` and included `@include covalent-highlight-theme();`
+
+  - `all-theme` and `platform.css` changed directories.
+
+    Before: 
+
+    ```scss
+    `~@covalent/core/styles/platform.css`
+    `~@covalent/core/styles/theming/all-theme';`
+    ```
+
+    After:
+
+    ```scss
+    `@covalent/core/common/platform.css`
+    `~@covalent/core/theming/all-theme';`
+    ```
+
+* **http:** Path interceptors configuration. ([7db377e62254f6add6995065f09f4b5528bd0c16](https://github.com/Teradata/covalent/commit/7db377e62254f6add6995065f09f4b5528bd0c16)), closes [#194](https://github.com/Teradata/covalent/issues/194)
+
+  Before:
+
+  ```typescript
+  CovalentHttpModule.forRoot([Interceptor1, Interceptor2]),
+  ```
+
+  After:
+
+  ```typescript
+  const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+    CustomInterceptor,
+    ...
+  ];
+  ...
+  imports: [
+    CovalentHttpModule.forRoot({
+      interceptors: [{
+        interceptor: CustomInterceptor, paths: ['**'],
+      }],
+    }),
+    ...
+  ],
+  providers: [
+    httpInterceptorProviders,
+    ...
+  ],
+  ```
+
+* **steps:** (stepChange) event now returns the step objects instead of the step number. ([6486eb527ae845224a170b8c7dda2dc92a089c3a](https://github.com/Teradata/covalent/commit/6486eb527ae845224a170b8c7dda2dc92a089c3a))
+
+  Before:
+
+  ```typescript
+  export interface IStepChangeEvent {
+    newStep: number;
+    prevStep: number;
+  }
+  ```
+
+  After:
+
+  ```typescript
+  export interface IStepChangeEvent {
+    newStep: TdStepComponent;
+    prevStep: TdStepComponent;
+  }
+  ```
+
+* **layouts:** `logo` expects an `svgIcon` value now from an `MdIconRegistry` svg. (breaking change from `@angular/material`). ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+
+
+## Bug Fixes
+* **search:** Use enter event instead of search event so it works in IE and firefox ([16b28a68fa0143f2e00e76199eb71c1ba949426d](https://github.com/Teradata/covalent/commit/16b28a68fa0143f2e00e76199eb71c1ba949426d))
+* **data-table:** Format columns correctly when displaying them. ([66ab3f6c02c6e70b404c3a6beb26d659390555be](https://github.com/Teradata/covalent/commit/66ab3f6c02c6e70b404c3a6beb26d659390555be)), closes [#187](https://github.com/Teradata/covalent/issues/187)
+* **data-table:** Handle undefined data array propertly. ([66ab3f6c02c6e70b404c3a6beb26d659390555be](https://github.com/Teradata/covalent/commit/66ab3f6c02c6e70b404c3a6beb26d659390555be))
+* **layouts:** Nav-list and manage-list removal of non-spec box-shadow. ([a61ff1d16aeec05cdd4737ef5f4d366f4fcd03ef](https://github.com/Teradata/covalent/commit/a61ff1d16aeec05cdd4737ef5f4d366f4fcd03ef))
+* **http:** Updated `module` to support AoT compilation. ([7db377e62254f6add6995065f09f4b5528bd0c16](https://github.com/Teradata/covalent/commit/7db377e62254f6add6995065f09f4b5528bd0c16)), closes [#195](https://github.com/Teradata/covalent/issues/195)
+* **paging:** Show proper range `0-0` when total is `0`. ([6403262e7e05cd54cf98928c165468f029976752](https://github.com/Teradata/covalent/commit/6403262e7e05cd54cf98928c165468f029976752))
+* **paging:** Able to re-navigate to page 1 when explicitly done with `navigateTo()`. ([6403262e7e05cd54cf98928c165468f029976752](https://github.com/Teradata/covalent/commit/6403262e7e05cd54cf98928c165468f029976752))
+* **file-upload:** Stop submit when enter is pressed for `file-upload`, `search` & `paging` inside a `form` element. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#210](https://github.com/Teradata/covalent/issues/210)
+
+
+## Features
+* **docs:** Added `GETTING_STARTED.md`. ([](https://github.com/Teradata/covalent/commit/)), closes [#178](https://github.com/Teradata/covalent/issues/178)
+* **dialogs:** Better a11y ([f6bc8292538bfe0468ee698f23f9911ff3a5ddaf](https://github.com/Teradata/covalent/commit/f6bc8292538bfe0468ee698f23f9911ff3a5ddaf)), closes [#170](https://github.com/Teradata/covalent/issues/170)
+* **dialogs:** Exposed open/closeAll methods from MdDialog. ([f6bc8292538bfe0468ee698f23f9911ff3a5ddaf](https://github.com/Teradata/covalent/commit/f6bc8292538bfe0468ee698f23f9911ff3a5ddaf)), closes [#171](https://github.com/Teradata/covalent/issues/171) 
+* **http:** Adding an extra parameter for a `transform` callback in the RESTService methods. ([d73badbe62e7ed5a81be9b3279325b5b46ffc266](https://github.com/Teradata/covalent/commit/d73badbe62e7ed5a81be9b3279325b5b46ffc266)), closes [#179](https://github.com/Teradata/covalent/issues/179)
+* **http:** Added onRequestError interceptor hook. ([d73badbe62e7ed5a81be9b3279325b5b46ffc266](https://github.com/Teradata/covalent/commit/d73badbe62e7ed5a81be9b3279325b5b46ffc266))
+* **http:** Request URL path interceptors. ([7db377e62254f6add6995065f09f4b5528bd0c16](https://github.com/Teradata/covalent/commit/7db377e62254f6add6995065f09f4b5528bd0c16)), closes [#194](https://github.com/Teradata/covalent/issues/194)
+* **data-table:** Added `selectAll` event when clicking select/deselect all checkbox. ([1d59af9a2def99eac1bf9dc8696efc00f974418c](https://github.com/Teradata/covalent/commit/1d59af9a2def99eac1bf9dc8696efc00f974418c)), closes [#172](https://github.com/Teradata/covalent/issues/172)
+* **data-table:** Support for nested object rendering. ([91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f](https://github.com/Teradata/covalent/commit/91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f)), closes [#189](https://github.com/Teradata/covalent/issues/189)
+* **data-table:** Improved efficiency by changing its change detection to `OnPush`. ([91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f](https://github.com/Teradata/covalent/commit/91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f))
+* **data-table:** Added `refresh()` method to explicitly throw a change detection check when the data or columns objects are updated internally. ([91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f](https://github.com/Teradata/covalent/commit/91ab4735df96d1cfa539c0ce8be8a25ff5cb3b4f))
+* **steps:** Support for ngFor and ngIf usage on td-step components and register/de-register steps automatically. ([6486eb527ae845224a170b8c7dda2dc92a089c3a](https://github.com/Teradata/covalent/commit/6486eb527ae845224a170b8c7dda2dc92a089c3a)), closes [#200](https://github.com/Teradata/covalent/issues/200)
+* **dependencies:** Upgrade to @angular@2.4.1 and @material@beta.1. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **deployment:** Initial AoT support. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15)), closes [#149](https://github.com/Teradata/covalent/issues/149)
+* **paging:** Usage of `md-select` as `perPage` selection insteaf of `md-icon-button` and `md-menu`. ([63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e](https://github.com/Teradata/covalent/commit/63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e))
+* **layouts:** Added optional sticky footer (and footer-inner). ([59253bef91c354cb85ddd9f1d9622ec76241d13e](https://github.com/Teradata/covalent/commit/59253bef91c354cb85ddd9f1d9622ec76241d13e))
+
+  Usage:
+
+  ```html
+   <td-layout-nav>
+     ...
+     <td-layout-footer></td-layout-footer>
+   </td-layout-nav>
+  ```
+
+* **dynamic-forms:** Introducing `dynamic-forms` module. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0)), closes [#8](https://github.com/Teradata/covalent/issues/8)
+  
+  - Supported TdDynamicType
+
+    - TdDynamicType.Text (renders md-input-container input type="text")
+    - TdDynamicType.Number (renders md-input-container input type="number")
+    - TdDynamicType.Boolean (renders md-slide-toggle)
+    - TdDynamicType.Array (renders md-select)
+
+  - Supported TdDynamicElement
+
+    - TdDynamicElement.Input (renders md-input-container input type="text")
+    - TdDynamicElement.Textarea (renders md-input-container textarea)
+    - TdDynamicElement.Slider (renders md-slider)
+    - TdDynamicElement.SlideToggle (renders md-slide-toggle)
+    - TdDynamicElement.Checkbox (renders md-checkbox)
+    - TdDynamicElement.Select (renders md-select)
+
+* **notifications:** Introducing `notifications` module. ([746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695](https://github.com/Teradata/covalent/commit/746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695)), closes [#148](https://github.com/Teradata/covalent/issues/148)
+  
+  Usage:
+
+  ```html
+   <td-notification-count color="primary | accent | warn" [notifications]="boolean | number">
+     ... // could be an icon <md-icon>notifications</md-icon> or empty
+   </td-notification-count>
+  ```
+
+* **notifications:** Added examples and demo for a `notifications` menu usage. ([746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695](https://github.com/Teradata/covalent/commit/746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695))
+
+
+## Internal
+* **dependencies:** Upgrade to `zone.js@^0.7.2` ([8d2d0845f47d5d8a67f78e81ac449c6013a7e4ab](https://github.com/Teradata/covalent/commit/8d2d0845f47d5d8a67f78e81ac449c6013a7e4ab))
+* **dependencies:** Upgrade to `rxjs@5.0.1`. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **dependencies:** Upgrade to `angular-cli@2.0.0-beta.24`. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **animations:** Added `collapse` animation and used in `steps` and `expansion-panel` ([fe0182285ffa505be42892c235eed295e2814e59](https://github.com/Teradata/covalent/commit/fe0182285ffa505be42892c235eed295e2814e59))
+* **security:** Sanitized and registered svg icons from assets into the `MdIconRegistry`. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **material:** Remove usage of depricated `@angular/material` directives. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **scripts:** Make `npm run test` do an `ng test` with generated code coverage. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+
+
+## Code Health
+
+* **travis:** Fix to run unit tests in chrome 55 and travis CI ([de393fd091b1c312df096c5d326bfbe0cd367274](https://github.com/Teradata/covalent/commit/de393fd091b1c312df096c5d326bfbe0cd367274))
+* **http:** Added `RESTService` unit tests. ([d73badbe62e7ed5a81be9b3279325b5b46ffc266](https://github.com/Teradata/covalent/commit/d73badbe62e7ed5a81be9b3279325b5b46ffc266))
+* **http:** Added `HttpInterceptorService` unit tests. ([7db377e62254f6add6995065f09f4b5528bd0c16](https://github.com/Teradata/covalent/commit/7db377e62254f6add6995065f09f4b5528bd0c16))
+* **steps:** Added `TdStepsComponent` unit tests. ([6486eb527ae845224a170b8c7dda2dc92a089c3a](https://github.com/Teradata/covalent/commit/6486eb527ae845224a170b8c7dda2dc92a089c3a))
+* **dynamic-forms:** Added `TdDynamicFormsComponent` and `TdDynamicFormsService` unit tests. ([3eb363873f11b5929655ec4c5ffa822a91fbc5e0](https://github.com/Teradata/covalent/commit/3eb363873f11b5929655ec4c5ffa822a91fbc5e0))
+* **notifications:** Added `TdNotificationCountComponent` unit tests. ([746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695](https://github.com/Teradata/covalent/commit/746fe3caec62a77bc69b50a2fc0bfcf9b0a9a695))
+
+
 <a name="0.9.0"></a>
 # [0.9.0 Pallettown Cummerbund](https://github.com/Teradata/covalent/tree/v0.9.0) (2016-11-21)
 
