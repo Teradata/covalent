@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'http-demo',
   styleUrls: ['./http.component.scss' ],
   templateUrl: './http.component.html',
+  animations: [slideInDownAnimation],
 })
 export class HttpDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   interceptorServiceMethods: Object[] = [{
     description: `Uses underlying ng2 [http] to request a DELETE method to a URL,

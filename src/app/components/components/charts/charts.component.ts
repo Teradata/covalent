@@ -1,11 +1,17 @@
-import { Component} from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'charts-demo',
   styleUrls: ['./charts.component.scss'],
   templateUrl: './charts.component.html',
+  animations: [slideInDownAnimation],
 })
 export class ChartsDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   chartsAttr: Object[] = [{
     description: 'Sets the Chart Title',

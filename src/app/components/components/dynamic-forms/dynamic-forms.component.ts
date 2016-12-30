@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo',
   styleUrls: [ './dynamic-forms.component.scss' ],
   templateUrl: './dynamic-forms.component.html',
+  animations: [slideInDownAnimation],
 })
 export class DynamicFormsDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dynamicFormsAttrs: any[] = [{
     description: `JS Object that will render the elements depending on its config.

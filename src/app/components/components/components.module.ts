@@ -24,6 +24,9 @@ import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
+
+// External Dependencies
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { CovalentCoreModule } from '../../../platform/core';
@@ -50,13 +53,15 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
     DirectivesComponent,
     PipesComponent,
     ChartsDemoComponent,
-    NgxChartsDemoComponent,
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
     DynamicFormsDemoComponent,
     MaterialComponentsComponent,
     DialogComponent,
+    NotificationsDemoComponent,
+    // External Dependencies
+    NgxChartsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),

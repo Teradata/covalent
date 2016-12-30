@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'components-overview',
   styleUrls: ['./overview.component.scss'],
   templateUrl: './overview.component.html',
+  animations: [slideInDownAnimation],
 })
 export class ComponentsOverviewComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
   items: Object[] = [{
       color: 'red-700',
       icon: 'change_history',
@@ -71,6 +78,11 @@ export class ComponentsOverviewComponent {
       icon: 'swap_horiz',
       route: 'paging',
       title: 'Paging',
+    }, {
+      color: 'purple-700',
+      icon: 'notifications',
+      route: 'notifications',
+      title: 'Notifications',
     }, {
       color: 'lime-700',
       icon: 'search',
