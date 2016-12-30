@@ -16,10 +16,12 @@ See the  [material2 getting started](https://github.com/angular/material2/blob/m
 
 The new command creates a project with a build system for your Angular app.
 
-## Install Covalent Core components 
+## Install Covalent Core module 
 
 ```bash
 npm install --save @covalent/core
+## (optional) Additional Covalent Modules installs
+npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms 
 ```
 
 ## Import the Covalent Core NgModule
@@ -27,9 +29,21 @@ npm install --save @covalent/core
 **src/app/app.module.ts**
 ```ts
 import { CovalentCoreModule } from '@covalent/core';
+// (optional) Additional Covalent Modules imports
+import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 // other imports 
 @NgModule({
-  imports: [CovalentCoreModule.forRoot()],
+  imports: [
+    CovalentCoreModule.forRoot(),
+    // (optional) Additional Covalent Modules imports
+    CovalentHttpModule.forRoot(),
+    CovalentHighlightModule.forRoot(),
+    CovalentMarkdownModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
+  ],
   ...
 })
 export class AppModule { }
@@ -46,6 +60,10 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 @import '~@angular/material/core/theming/all-theme';
 @import '~@covalent/core/theming/all-theme';
 
+// (optional) Additional themes
+@import '~@covalent/markdown/markdown-theme';
+@import '~@covalent/highlight/highlight-theme';\
+
 @include md-core();
 
 $primary: md-palette($md-orange, 800);
@@ -57,6 +75,10 @@ $theme: md-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+
+// (optional) Additional themes
+@include covalent-markdown-theme($theme);
+@include covalent-highlight-theme();
 ```
 
 You only need this single Sass file; you do not need to use Sass to style the rest of your app.
@@ -79,7 +101,12 @@ System.config({
   // existing configuration options
   map: {
     ...,
-    '@covalent/core': 'npm:@covalent/core/core.umd.js'
+    '@covalent/core': 'npm:@covalent/core/core.umd.js',
+    // (optional) Additional configuration options
+    '@covalent/http': 'npm:@covalent/http/http.umd.js',
+    '@covalent/highlight': 'npm:@covalent/highlight/highlight.umd.js',
+    '@covalent/markdown': 'npm:@covalent/markdown/markdown.umd.js',
+    '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/dynamic-forms.umd.js'
   }
 });
 ```
