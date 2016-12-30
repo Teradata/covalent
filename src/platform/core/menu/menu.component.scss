@@ -1,0 +1,32 @@
+$td-menu-spacing: 8px !default;
+:host {
+  display: block;
+  margin-top: -$td-menu-spacing;
+  margin-bottom: -$td-menu-spacing;
+}
+:host /deep/ {
+  [td-menu-header] {
+    padding: $td-menu-spacing;
+    text-align: center;
+  }
+  md-list,
+  md-list[dense],
+  md-nav-list,
+  md-nav-list[dense], {
+    a[md-list-item].md-2-line .md-list-item,
+    md-list-item.md-2-line .md-list-item {
+      height: auto;
+      padding: $td-menu-spacing;
+      .md-list-text {
+        padding-right: 0px;
+      }
+      [md-line] + [md-line] {
+        margin-top: $td-menu-spacing / 2;
+      }
+    }
+  }
+}
+.td-menu-content {
+  max-height: calc(50vh);
+  overflow-y: auto;
+}
