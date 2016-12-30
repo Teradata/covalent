@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
   templateUrl: './nav-list.component.html',
+  animations: [fadeAnimation],
 })
 export class NavListComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
   items: Object[] = [{
     description: 'item description',
     icon: 'view_compact',
