@@ -15,7 +15,7 @@
     "postinstall": "webdriver-manager update",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "ng test --code-coverage --single-run",
-    "show-coverage-win" : "start chrome ./coverage/index.html",
+    "coverage-win" : "start chrome ./coverage/index.html",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",

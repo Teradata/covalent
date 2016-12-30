@@ -79,6 +79,11 @@ export class ComponentsOverviewComponent {
       route: 'paging',
       title: 'Paging',
     }, {
+      color: 'purple-700',
+      icon: 'notifications',
+      route: 'notifications',
+      title: 'Notifications',
+    }, {
       color: 'lime-700',
       icon: 'search',
       route: 'search',
