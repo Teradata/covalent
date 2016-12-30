@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'search-demo',
   styleUrls: ['./search.component.scss'],
   templateUrl: './search.component.html',
+  animations: [slideInDownAnimation],
 })
 export class SearchDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   searchInputAttrs: Object[] = [{
     description: `Debounce timeout between keypresses. Defaults to 400.`,

@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-components',
   styleUrls: ['./components.component.scss'],
   templateUrl: './components.component.html',
+  animations: [fadeAnimation],
 })
 export class ComponentsComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Components, Directives, Pipes & more',
