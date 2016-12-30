@@ -11,5 +11,6 @@ import { fadeAnimation } from '../../app.animations';
 export class LayoutsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
 }

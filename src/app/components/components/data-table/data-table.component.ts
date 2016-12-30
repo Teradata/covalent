@@ -17,7 +17,9 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   animations: [slideInDownAnimation],
 })
 export class DataTableDemoComponent implements OnInit {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,

@@ -9,7 +9,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   animations: [slideInDownAnimation],
 })
 export class ExpansionPanelDemoComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   expansionAttrs: Object[] = [{
     description: 'Sets label of [TdExpansionPanelComponent] header. Defaults to "Click to expand"',

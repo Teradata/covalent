@@ -9,7 +9,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   animations: [slideInDownAnimation],
 })
 export class LayoutsOverviewComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'A simple layout with toolbar & sidenav',

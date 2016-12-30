@@ -11,7 +11,9 @@ import { StepState, TdMediaService } from '../../../../platform/core';
   animations: [slideInDownAnimation],
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   stepsAttrs: Object[] = [{
     description: `Method to be executed when [onStepChange] event is emitted.

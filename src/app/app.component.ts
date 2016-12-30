@@ -7,7 +7,6 @@ import { MdIconRegistry } from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-
 export class DocsAppComponent {
 
   routes: Object[] = [{

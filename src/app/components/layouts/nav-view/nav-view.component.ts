@@ -9,6 +9,8 @@ import { slideInDownAnimation } from '../../../app.animations';
   animations: [slideInDownAnimation],
 })
 export class NavViewComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
 }

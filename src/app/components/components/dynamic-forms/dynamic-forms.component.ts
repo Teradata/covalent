@@ -9,7 +9,9 @@ import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@coval
   animations: [slideInDownAnimation],
 })
 export class DynamicFormsDemoComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dynamicFormsAttrs: any[] = [{
     description: `JS Object that will render the elements depending on its config.

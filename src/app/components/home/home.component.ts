@@ -12,6 +12,7 @@ import { fadeAnimation } from '../../app.animations';
 export class HomeComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
       color: 'purple-700',

@@ -13,7 +13,9 @@ import { MdSnackBar } from '@angular/material';
   animations: [slideInDownAnimation],
 })
 export class DialogsToastsComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   constructor(private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar) {}

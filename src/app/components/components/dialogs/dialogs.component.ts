@@ -11,7 +11,9 @@ import { TdDialogService } from '../../../../platform/core';
   animations: [slideInDownAnimation],
 })
 export class DialogsDemoComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dialogServiceMethods: Object[] = [{
     description: `Opens an alert dialog with the provided config.`,

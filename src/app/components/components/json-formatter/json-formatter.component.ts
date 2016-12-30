@@ -9,7 +9,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   animations: [slideInDownAnimation],
 })
 export class JsonFormatterDemoComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   jsonFormatterAttrs: Object[] = [{
     description: `Tag to be displayed as root of formatted object.`,

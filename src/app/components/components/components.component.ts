@@ -11,6 +11,7 @@ import { fadeAnimation } from '../../app.animations';
 export class ComponentsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Components, Directives, Pipes & more',

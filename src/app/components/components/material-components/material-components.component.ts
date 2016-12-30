@@ -9,7 +9,9 @@ import { MdSnackBar, MdDialog } from '@angular/material';
   animations: [slideInDownAnimation],
 })
 export class MaterialComponentsComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   isDisabled: boolean = false;
   isIndeterminate: boolean = false;

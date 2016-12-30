@@ -11,7 +11,9 @@ import { IPageChangeEvent } from '../../../../platform/core';
   animations: [slideInDownAnimation],
 })
 export class PagingDemoComponent {
+
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   pagingBarAttrs: Object[] = [{
     description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,

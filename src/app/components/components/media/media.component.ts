@@ -15,6 +15,7 @@ export class MediaDemoComponent implements OnInit, OnDestroy {
   private _subcriptions: Subscription[] = [];
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   mediaDemo: any[] = [{
     query: 'xs',
