@@ -1,4 +1,6 @@
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '~@angular/material/core/theming/theming';
+@import '~@angular/material/core/style/elevation';
+@import '../common/styles/variables';
 
 @mixin td-expansion-panel-theme($theme) {
   $accent: map-get($theme, accent);
@@ -7,7 +9,18 @@
   $background: map-get($theme, background);
   // panel
   td-expansion-panel {
+    @include md-elevation(1);
     background-color: md-color($background, card);
+    &:not(:last-of-type) {
+      & .td-expanded {
+        margin-bottom: $margin;
+      }
+    }
+    &:not(:first-of-type) {
+      & .td-expanded {
+        margin-top: $margin;
+      }
+    }
     .md-disabled {
       &, & * {
         color: md-color($foreground, disabled);

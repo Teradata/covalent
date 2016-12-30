@@ -1,8 +1,22 @@
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '~@angular/material/core/theming/theming';
+@import '~@angular/material/core/style/elevation';
 
 @mixin td-layout-theme($theme) {
   $background: map-get($theme, background);
-  md-sidenav-layout {
+  $foreground: map-get($theme, foreground);
+
+  .md-sidenav-container {
     background-color: md-color($background, status-bar);
+  }
+  td-layout {
+    md-toolbar {
+      @include md-elevation(1);
+      z-index: 1;
+    }
+  }
+  .td-layout-footer {
+    background: md-color($background, app-bar);
+    color: md-color($foreground, text);
+    @include md-elevation(2);
   }
 }

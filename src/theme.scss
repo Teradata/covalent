@@ -1,5 +1,8 @@
 @import '~@angular/material/core/theming/all-theme';
-@import './platform/core/styles/theming/all-theme';
+@import './platform/core/theming/all-theme';
+@import './platform/markdown/markdown-theme';
+@import './platform/charts/charts-theme';
+@import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -23,6 +26,9 @@ $theme: md-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+@include covalent-markdown-theme($theme);
+@include covalent-charts-theme($theme);
+@include covalent-highlight-theme();
 
 // Custom theme examples
 .blue-orange {

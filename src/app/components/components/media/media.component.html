@@ -88,13 +88,13 @@
     <p>Note: Always unsubscribe from [Observable] objects when not using them anymore.</p>
     <p>A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy] interface.</p>
     <h3>Setup:</h3>
-    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentMediaModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentCoreModule } from '@covalent/core';
+        import { CovalentMediaModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentCoreModule.forRoot(),
+            CovalentMediaModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

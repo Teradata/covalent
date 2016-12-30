@@ -1,16 +1,22 @@
-import { Component, ViewContainerRef, AfterViewInit } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '../../../../platform/core';
 
 @Component({
   selector: 'loading-demo',
-  styleUrls: [ 'loading.component.scss' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: ['./loading.component.scss' ],
+  templateUrl: './loading.component.html',
+  animations: [slideInDownAnimation],
 })
 export class LoadingDemoComponent implements AfterViewInit {
 
   private _intervalForDirective: number;
   private _intervalForMain: number;
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   demo: {name?: string, description?: string} = {};
   demo2: {name?: string, description?: string} = {};

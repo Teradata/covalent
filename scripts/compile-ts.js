@@ -11,18 +11,20 @@ var tsProject = ts.createProject({
       emitDecoratorMetadata: true,
       experimentalDecorators: true,
       mapRoot: "./",
-      lib: ["es6", "dom"],
-      module: "es6",
+      lib: ["es6", "es2015", "dom"],
+      module: "es2015",
       moduleResolution: "node",
       noEmitOnError: true,
-      noImplicitAny: false,
+      noImplicitAny: true,
       target: "ES5",
+      inlineSources: true,
+      stripInternal: false,
       typescript: require('typescript'),
       typeRoots: [
         "../node_modules/@types"
       ],
       types: [
-        "hammerjs"
+        "jasmine", "hammerjs", "rxjs"
       ]
     });
 

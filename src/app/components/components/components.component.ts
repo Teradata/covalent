@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-components',
-  styleUrls: ['components.component.scss'],
-  templateUrl: 'components.component.html',
+  styleUrls: ['./components.component.scss'],
+  templateUrl: './components.component.html',
+  animations: [fadeAnimation],
 })
 export class ComponentsComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Components, Directives, Pipes & more',
@@ -78,10 +84,20 @@ export class ComponentsComponent {
     route: 'paging',
     title: 'Paging',
   }, {
+    description: 'Notification count & menu',
+    icon: 'notifications',
+    route: 'notifications',
+    title: 'Notifications',
+  }, {
     description: 'Search and filter items',
     icon: 'search',
     route: 'search',
     title: 'Search',
+  }, {
+    description: 'Build forms from a JS object',
+    icon: 'format_align_center',
+    route: 'dynamic-forms',
+    title: 'Dynamic Forms',
   }, {
     description: 'Responsive service & directive',
     icon: 'devices',

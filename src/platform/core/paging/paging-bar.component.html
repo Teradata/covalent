@@ -1,0 +1,30 @@
+<div layout="row" layout-align="end center" class="md-caption td-paging-bar">
+  <span class="td-paging-bar-per-page">
+    Rows per page:
+  </span>
+  <md-select [(ngModel)]="pageSize">
+    <template let-size ngFor [ngForOf]="pageSizes">
+      <md-option [value]="size">
+        {{size}}
+      </md-option>
+    </template>
+    <md-option *ngIf="pageSizeAll" [value]="total">All</md-option>
+  </md-select>
+  <span class="td-paging-bar-ranges">
+    {{range}} <span>of</span> {{total}}
+  </span>
+  <div class="td-paging-bar-navigation">
+    <button md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
+      <md-icon>skip_previous</md-icon>
+    </button>
+    <button md-icon-button type="button" [disabled]="isMinPage()" (click)="prevPage()">
+      <md-icon>navigate_before</md-icon>
+    </button>
+    <button md-icon-button type="button" [disabled]="isMaxPage()" (click)="nextPage()">
+      <md-icon>navigate_next</md-icon>
+    </button>
+    <button md-icon-button type="button" *ngIf="firstLast" [disabled]="isMaxPage()" (click)="lastPage()">
+      <md-icon>skip_next</md-icon>
+    </button>
+  </div>
+</div>

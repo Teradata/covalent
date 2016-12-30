@@ -24,32 +24,19 @@
             </md-list-item>
           </md-list>
         </td-expansion-summary>
-        <form class="md-padding">
-          <md-input class="demo-full-width" placeholder="Company (disabled)" disabled value="Google">
-          </md-input>
-          <table style="width: 100%" cellspacing="0"><tr>
-            <td><md-input placeholder="First name" style="width: 100%"></md-input></td>
-            <td><md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input></td>
-          </tr></table>
-          <p>
-            <md-input class="demo-full-width" placeholder="Address" value="1600 Amphitheatre Pkwy"></md-input>
-            <md-input class="demo-full-width" placeholder="Address 2"></md-input>
-          </p>
-          <table style="width: 100%" cellspacing="0"><tr>
-            <td><md-input class="demo-full-width" placeholder="City"></md-input></td>
-            <td><md-input class="demo-full-width" placeholder="State"></md-input></td>
-            <td><md-input #postalCode class="demo-full-width" maxLength="5"
-                          placeholder="Postal Code"
-                          value="94043">
-            </md-input></td>
-          </tr></table>
-          <md-divider></md-divider>
-          <div layout="row" layout-margin layout-align="end center">
-            
-            <button md-button>Cancel</button>
-            <button md-button color="accent">Save</button>
-          </div>
+        <form class="md-padding" layout="column">
+          <md-input-container flex>
+            <input md-input placeholder="Company (disabled)" disabled value="Google"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" rows="4"></textarea>
+          </md-input-container>
         </form>
+        <md-divider></md-divider>
+        <div layout="row" layout-margin layout-align="end center">
+          <button md-button>Cancel</button>
+          <button md-button color="accent">Save</button>
+        </div>
       </td-expansion-panel>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
         <div class="md-padding">
@@ -232,13 +219,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentExpansionPanelModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentCoreModule } from '@covalent/core';
+        import { CovalentExpansionPanelModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentCoreModule.forRoot(),
+            CovalentExpansionPanelModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

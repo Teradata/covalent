@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
-import { IPageChangeEvent } from '../../../../platform/paging';
+import { slideInDownAnimation } from '../../../app.animations';
+
+import { IPageChangeEvent } from '../../../../platform/core';
 
 @Component({
   selector: 'paging-demo',
-  styleUrls: ['paging.component.scss'],
-  templateUrl: 'paging.component.html',
+  styleUrls: ['./paging.component.scss'],
+  templateUrl: './paging.component.html',
+  animations: [slideInDownAnimation],
 })
 export class PagingDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   pagingBarAttrs: Object[] = [{
     description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,

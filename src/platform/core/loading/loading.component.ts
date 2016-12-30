@@ -14,8 +14,8 @@ export enum LoadingMode {
 
 @Component({
   selector: 'td-loading',
-  styleUrls: [ 'loading.component.scss' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: ['./loading.component.scss' ],
+  templateUrl: './loading.component.html',
 })
 export class TdLoadingComponent {
 
@@ -128,7 +128,7 @@ export class TdLoadingComponent {
   startOutAnimation(): Observable<any> {
     this.animation = true;
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
-    * inside md-progress-circle stops and protractor doesnt timeout waiting to sync.
+    * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */
     this._mode = LoadingMode.Determinate;
     return this._animationOut.asObservable();

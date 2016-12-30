@@ -1,5 +1,8 @@
-<td-layout-nav logo="app/assets/icons/teradata.svg" toolbarTitle="Covalent">
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
   <td-layout-manage-list #list>
+    <md-toolbar list-items>
+      <span>Section Title</span>
+    </md-toolbar>
     <md-nav-list list-items>
       <a md-list-item (click)="list.toggle()">
         <md-icon>folder</md-icon>
@@ -19,6 +22,7 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
+      <span>Page Title</span>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
@@ -103,6 +107,12 @@
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
+                    <h3 md-line><code><![CDATA[<md-toolbar list-items>]]></code></h3>
+                    <h3 md-line><code><![CDATA[<span>Optional Title</span>]]></code></h3>
+                    <p md-line>Optional list toolbar w/ title</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
                     <h3 md-line><code><![CDATA[<md-nav-list list-items>]]></code></h3>
                     <p md-line>The list items wrapper with optional <code>dense</code> attribute </p>
                   </md-list-item>
@@ -122,8 +132,8 @@
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
-                    <h3 md-line><code><![CDATA[<span>Title</span>]]></code></h3>
-                    <p md-line>Optional toolbar title</p>
+                    <h3 md-line><code><![CDATA[<span>Optional Subtitle</span>]]></code></h3>
+                    <p md-line>Optional subtitle</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -138,21 +148,37 @@
                   <md-divider></md-divider>
                 </md-list>
               </td-step>
+              <td-step label="Step 6: td-layout-footer" sublabel="optional sticky footer">
+                <md-list>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-footer>]]></code></h3>
+                    <p md-line>Optional footer before <code><![CDATA[</td-layout>]]></code></p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<td-layout-footer-inner>]]></code></h3>
+                    <p md-line>Optional inner footer before <code><![CDATA[</td-layout-manage-list>]]></code></p>
+                  </md-list-item>
+                </md-list>
+              </td-step>
             </td-steps>
           </div>
           <div flex-gt-md="50">
             <h3 class="md-title">HTML</h3>
             <td-highlight lang="html">
                 <![CDATA[
-                <td-layout #layout sidenavTitle="Sidenav Title" logo="path/to/sidenav-logo.svg">
+                <td-layout #layout sidenavTitle="Sidenav Title" logo="svgIconName">
                   <md-nav-list menu-items>
                     <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
                       <md-icon>{ {item.icon} }</md-icon>
                       { {item.title} }
                     </a>
                   </md-nav-list>
-                  <td-layout-nav toolbarTitle="Toolbar Title" logo="path/to/toolbar-logo.svg">
+                  <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
                     <td-layout-manage-list #list>
+                      <md-toolbar list-items>
+                        <span>Optional Title</span>
+                      </md-toolbar>
                       <md-nav-list list-items>
                         <template let-item let-last="last" ngFor [ngForOf]="items">
                             <a md-list-item [routerLink]="[item.route]">
@@ -162,12 +188,18 @@
                         </template>
                       </md-nav-list>
                       <div toolbar-buttons layout="row" layout-align="start center" flex>
-                        <span>Optional Toolbar Title</span>
+                        <span>Optional Subtitle</span>
                         <span flex></span>
                         <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
                       </div>
                       <router-outlet></router-outlet>
+                      <td-layout-footer-inner>
+                        Optional inner footer
+                      </td-layout-footer-inner>
                     </td-layout-manage-list>
+                    <td-layout-footer>
+                      Optional footer
+                    </td-layout-footer>
                   </td-layout-nav>
                 </td-layout>
                 ]]>
@@ -209,4 +241,7 @@
       </md-card-actions>
     </md-card>
   </td-layout-manage-list>
+  <td-layout-footer>
+      Optional footer
+  </td-layout-footer>
 </td-layout-nav>

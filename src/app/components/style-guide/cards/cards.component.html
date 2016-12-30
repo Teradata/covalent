@@ -63,12 +63,14 @@
         <md-divider></md-divider>
         <md-card-content>
           <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
-            <md-input flex placeholder="Username" type="text" ngControl="username" required>
+            <md-input-container flex>
+              <input md-input placeholder="Username" type="text" ngControl="username" required/>
               <span md-prefix><md-icon>person</md-icon></span>
-            </md-input>
-            <md-input flex placeholder="Password" type="password" ngControl="password" required>
+            </md-input-container>
+            <md-input-container flex>
+              <input md-input placeholder="Password" type="password" ngControl="password" required/>
               <span md-prefix><md-icon>lock</md-icon></span>
-            </md-input>
+            </md-input-container>
           </form>
         </md-card-content>
         <md-divider></md-divider>
@@ -85,12 +87,14 @@
             <md-divider></md-divider>
             <md-card-content>
               <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
-                <md-input flex placeholder="Username" type="text" ngControl="username" [(ngModel)]="user" required>
+                <md-input-container flex>
+                  <input md-input placeholder="Username" type="text" ngControl="username" required/>
                   <span md-prefix><md-icon>person</md-icon></span>
-                </md-input>
-                <md-input flex placeholder="Password" type="password" ngControl="password" [(ngModel)]="pass" required>
+                </md-input-container>
+                <md-input-container flex>
+                  <input md-input placeholder="Password" type="password" ngControl="password" required/>
                   <span md-prefix><md-icon>lock</md-icon></span>
-                </md-input>
+                </md-input-container>
               </form>
             </md-card-content>
             <md-divider></md-divider>
@@ -207,9 +211,10 @@
     <div class="md-padding bgc-grey-200">
       <md-card>
         <md-card-title layout>
-          <md-input class="text-sm" placeholder="search items" flex>
+          <md-input-container class="text-sm" flex>
+            <input md-input placeholder="search items"/>
             <span md-prefix><md-icon>search</md-icon></span>
-          </md-input>
+          </md-input-container>
         </md-card-title>
         <md-list class="pull-top">
           <md-list-item>
@@ -237,9 +242,10 @@
         <![CDATA[
           <md-card>
             <md-card-title layout>
-              <md-input class="text-sm" placeholder="search items" flex>
+              <md-input-container class="text-sm" flex>
+                <input md-input placeholder="search items"/>
                 <span md-prefix><md-icon>search</md-icon></span>
-              </md-input>
+              </md-input-container>
             </md-card-title>
             <md-list class="pull-top">
               <md-list-item>

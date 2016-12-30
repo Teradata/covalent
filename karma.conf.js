@@ -8,6 +8,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-firefox-launcher'),
       require('karma-remap-istanbul'),
       require('angular-cli/plugins/karma')
     ],
@@ -33,6 +34,9 @@ module.exports = function (config) {
     angularCli: {
       config: './angular-cli.json',
       environment: 'dev'
+    },
+    mime: {
+      'text/x-typescript': ['ts','tsx']
     },
     reporters: ['progress', 'karma-remap-istanbul'],
     port: 9876,

@@ -4,12 +4,26 @@
   </td-dialog-title>
   <td-dialog-content layout="column" class="md-subhead tc-grey-700">
     {{message}}
-    <form #form="ngForm" layout="row" flex>
-      <md-input [(ngModel)]="value" name="value" required flex></md-input>
+    <form #form="ngForm" layout="row" novalidate flex>
+      <md-input-container flex>
+        <input md-input
+               (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+               [(ngModel)]="value"
+               name="value"
+               required/>
+      </md-input-container>
     </form>
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button (click)="cancel()">{{cancelButton}}</button>
-    <button md-button color="accent" [disabled]="!form.valid" (click)="accept()">{{acceptButton}}</button>
+    <button md-button
+            #closeBtn 
+            (keydown.arrowright)="acceptBtn.focus()"
+            (click)="cancel()">{{cancelButton}}</button>
+    <button md-button
+            color="accent"
+            #acceptBtn
+            (keydown.arrowleft)="closeBtn.focus()"
+            [disabled]="!form.valid"
+            (click)="accept()">{{acceptButton}}</button>
   </td-dialog-actions>
 </td-dialog>

@@ -11,8 +11,8 @@ export class TdDialogActionsDirective {}
 
 @Component({
   selector: 'td-dialog',
-  templateUrl: 'dialog.component.html',
-  styleUrls: [ 'dialog.component.scss' ],
+  templateUrl: './dialog.component.html',
+  styleUrls: ['./dialog.component.scss' ],
 })
 export class TdDialogComponent implements AfterContentInit {
 

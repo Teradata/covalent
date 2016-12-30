@@ -6,7 +6,7 @@
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
           <div class="md-table-container">
@@ -25,7 +25,7 @@
                 <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                {{row[column.name]}}
+                {{column.format ? column.format(row[column.name]) : row[column.name]}}
               </td>
             </tr>
           </table>
@@ -51,7 +51,7 @@
                   <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                  { {row[column.name]}}
+                  { {column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
               </tr>
             </table>
@@ -60,8 +60,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
-            import { ViewContainerRef } from '@angular/core';
+            import { ITdDataTableColumn } from '@covalent/core';
             import { TdDialogService } from '@covalent/core';
             ...
             })
@@ -76,14 +75,12 @@
                 { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
               ];
 
-              constructor(private _dialogService: TdDialogService,
-                          private _viewContainerRef: ViewContainerRef) {}
+              constructor(private _dialogService: TdDialogService) {}
 
               openPrompt(row: any, name: string): void {
                 this._dialogService.openPrompt({
                   message: 'Enter comment?',
                   value: row[name],
-                  viewContainerRef: this._viewContainerRef,
                 }).afterClosed().subscribe((value: any) => {
                   if (value !== undefined) {
                     row[name] = value;
@@ -100,8 +97,9 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Basic Data Table</h3>
+    <h4 class="md-subhead">with nested data, formatting, and templates</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
         <td-data-table
@@ -135,13 +133,13 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
+            import { ITdDataTableColumn } from '@covalent/core';
             ...
             })
             export class Demo {
               columns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)' },
-                { name: 'type', label: 'Type' },
+                { name: 'food.name',  label: 'Dessert (100g serving)' },
+                { name: 'food.type', label: 'Type' },
                 { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
                 { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
                 { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
@@ -154,8 +152,10 @@
               basicData: any[] = [
                   {
                     'id': 1,
-                    'name': 'Frozen yogurt',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Frozen yogurt',
+                      'type': 'Ice cream',
+                    },
                     'calories': 159.0,
                     'fat': 6.0,
                     'carbs': 24.0,
@@ -166,8 +166,10 @@
                     'comments': 'I love froyo!',
                   }, {
                     'id': 2,
-                    'name': 'Ice cream sandwich',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Ice cream sandwich',
+                      'type': 'Ice cream',
+                    },
                     'calories': 237.0,
                     'fat': 9.0,
                     'carbs': 37.0,
@@ -177,8 +179,10 @@
                     'iron': 1.0,
                   }, {
                     'id': 3,
-                    'name': 'Eclair',
-                    'type': 'Pastry',
+                    'food': {
+                      'name': 'Eclair',
+                      'type': 'Pastry',
+                    },
                     'calories':  262.0,
                     'fat': 16.0,
                     'carbs': 24.0,
@@ -200,7 +204,7 @@
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.md-selected-title]="selectedRows.length && selectable">
@@ -259,8 +263,8 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/data-table';
-            import { IPageChangeEvent } from '@covalent/paging';
+            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
+            import { IPageChangeEvent } from '@covalent/core';
             ...
             })
             export class Demo {
@@ -371,14 +375,15 @@
           [sortBy]="sortBy"
           [sortOrder]="'ASC'|'DESC'"
           (sortChange)="sortEvent($event)"
-          (rowSelect)="selectEvent($event)">
+          (rowSelect)="selectEvent($event)"
+          (selectAll)="selectAllEvent($event)">
         </td-data-table>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { ITdDataTableColumn } from '@covalent/data-table';
+        import { ITdDataTableColumn } from '@covalent/core';
         ...
         })
         export class Demo {
@@ -398,10 +403,10 @@
     <p>Import the [CovalentDataTableModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentDataTableModule } from '@covalent/data-table';
+        import { CovalentDataTableModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentDataTableModule.forRoot(),
+            CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

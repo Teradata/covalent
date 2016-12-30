@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-overview',
-  styleUrls: ['overview.component.scss'],
-  templateUrl: 'overview.component.html',
+  styleUrls: ['./overview.component.scss'],
+  templateUrl: './overview.component.html',
+  animations: [fadeAnimation],
 })
 export class LayoutsOverviewComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'A simple layout with toolbar & sidenav',

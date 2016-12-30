@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  padding: 0px 5px 0px 5px;
+  /deep/ .td-chip {
+    display: inline-block;
+    cursor: default;
+    border-radius: 16px;
+    line-height: 32px;
+    margin: 8px 8px 0 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    md-icon {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      height: 18px;
+      width: 18px;
+      font-size: 19px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.md-input-underline {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin-top: 4px;
+
+  &.md-disabled {
+    border-top: 0;
+    background-position: 0;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .md-input-ripple {
+    position: absolute;
+    height: 2px;
+    z-index: 1;
+    top: -1px;
+    width: 100%;
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+    &.md-warn {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    &.md-focused {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+}
+
+:host {
+   /deep/ md-input {
+    input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
+      display: none;
+    }
+    .md-input-underline {
+      display: none;
+    }
+  }
+}

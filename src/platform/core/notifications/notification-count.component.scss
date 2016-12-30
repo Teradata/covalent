@@ -1,0 +1,35 @@
+$td-notification-size: 20px !default;
+$td-notification-content-size: 40px !default;
+
+:host {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: $td-notification-content-size;
+  height: $td-notification-content-size;
+}
+
+.td-notification-count {
+  height: $td-notification-size;
+  line-height: $td-notification-size + 1;
+  width: $td-notification-size;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  z-index: 1;
+  &.td-notification-no-count {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.td-notification-content {
+  &, /deep/ > * {
+    line-height: $td-notification-content-size;
+  }
+}

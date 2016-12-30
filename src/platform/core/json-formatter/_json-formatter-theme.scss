@@ -1,0 +1,43 @@
+@import '~@angular/material/core/theming/theming';
+
+@mixin td-json-formatter-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .td-json-formatter-wrapper {
+    .td-key {
+      &.td-key-node {
+        &:focus,
+        &:hover {
+          background-color: md-color($background, hover);
+        }
+      }
+    }
+    .key {
+      color: md-color($primary);
+    }
+    .value {
+      .string {
+        color: md-color($warn);
+      }
+      .number { 
+        color: md-color($accent);
+      }
+      .boolean { 
+        color: md-color($accent);
+      }
+      .null,
+      .undefined { 
+        color: md-color($foreground, disabled-text);
+      }
+      .function { 
+        color: md-color($primary);
+      }
+      .date { 
+        color: md-color($foreground, text);
+      }
+    }
+  }
+}

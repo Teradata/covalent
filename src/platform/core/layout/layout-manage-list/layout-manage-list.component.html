@@ -1,4 +1,4 @@
-<md-sidenav-layout fullscreen class="td-layout-manage-list md-content" flex layout="row">
+<md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
   <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1">
     <div flex class="md-content list">
       <ng-content select="[list-items]"></ng-content>
@@ -12,5 +12,6 @@
     <div class="md-content" flex>
       <ng-content></ng-content>
     </div>
+    <ng-content select="td-layout-footer-inner"></ng-content>
   </div>
-</md-sidenav-layout>
+</md-sidenav-container>

@@ -19,7 +19,9 @@ import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
+import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
 
 const routes: Routes = [{
   children: [{
@@ -79,6 +81,12 @@ const routes: Routes = [{
     }, {
       component: PagingDemoComponent,
       path: 'paging',
+    }, {
+      component: NotificationsDemoComponent,
+      path: 'notifications',
+    }, {
+      component: DynamicFormsDemoComponent,
+      path: 'dynamic-forms',
     },
   ],
   component: ComponentsComponent,

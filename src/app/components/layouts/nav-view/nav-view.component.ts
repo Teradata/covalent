@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { fadeAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'layouts-nav-view',
-  styleUrls: ['nav-view.component.scss'],
-  templateUrl: 'nav-view.component.html',
+  styleUrls: ['./nav-view.component.scss'],
+  templateUrl: './nav-view.component.html',
+  animations: [fadeAnimation],
 })
 export class NavViewComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
 }

@@ -47,11 +47,14 @@ export abstract class RESTService<T> {
     this.transform = config.transform ? config.transform : (response: Response): any => response.json();
   }
 
-  public query(query?: IRestQuery): Observable<Array<T>> {
+  public query(query?: IRestQuery, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(undefined, query), this.buildRequestOptions());
-    return request.map<Array<T>>((res: Response) => {
-      return <Array<T>>this.transform(res);
-    }).catch<any>((error: Response) => {
+    return request.map((res: Response) => {
+      if (transform) {
+        return transform(res);
+      }
+      return this.transform(res);
+    }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -62,11 +65,14 @@ export abstract class RESTService<T> {
     });
   }
 
-  public get(id: string | number): Observable<T> {
+  public get(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(id), this.buildRequestOptions());
-    return request.map<T>((res: Response) => {
-      return <T>this.transform(res);
-    }).catch<any>((error: Response) => {
+    return request.map((res: Response) => {
+      if (transform) {
+        return transform(res);
+      }
+      return this.transform(res);
+    }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -77,36 +83,19 @@ export abstract class RESTService<T> {
     });
   }
 
-  public create(obj: T): Observable<T> {
+  public create(obj: T, transform?: IRestTransform): Observable<any> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.post(this.buildUrl(), obj, requestOptions);
     return request.map((res: Response) => {
       if (res.status === 201) {
-        return <T>this.transform(res);
-      } else {
-        return res;
-      }
-    }).catch<any>((error: Response) => {
-      return new Observable<any>((subscriber: Subscriber<any>) => {
-        try {
-          subscriber.error(this.transform(error));
-        } catch (err) {
-          subscriber.error(error);
+        if (transform) {
+          return transform(res);
         }
-      });
-    });
-  }
-
-  public update(id: string | number, obj: T): Observable<T> {
-    let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
-    let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
-    return request.map<T>((res: Response) => {
-      if (res.status === 200) {
         return this.transform(res);
       } else {
         return res;
       }
-    }).catch<any>((error: Response) => {
+    }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -117,15 +106,41 @@ export abstract class RESTService<T> {
     });
   }
 
-  public delete(id: string | number): Observable<any> {
+  public update(id: string | number, obj: T, transform?: IRestTransform): Observable<any> {
+    let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
+    let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
+    return request.map((res: Response) => {
+      if (res.status === 200) {
+        if (transform) {
+          return transform(res);
+        }
+        return this.transform(res);
+      } else {
+        return res;
+      }
+    }).catch((error: Response) => {
+      return new Observable<any>((subscriber: Subscriber<any>) => {
+        try {
+          subscriber.error(this.transform(error));
+        } catch (err) {
+          subscriber.error(error);
+        }
+      });
+    });
+  }
+
+  public delete(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.delete(this.buildUrl(id), this.buildRequestOptions());
     return request.map((res: Response) => {
       if (res.status === 200) {
+        if (transform) {
+          return transform(res);
+        }
         return this.transform(res);
       } else {
         return res;
       }
-    }).catch<any>((error: Response) => {
+    }).catch((error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));

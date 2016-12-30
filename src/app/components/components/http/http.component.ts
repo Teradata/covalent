@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'http-demo',
-  styleUrls: [ 'http.component.scss' ],
-  templateUrl: 'http.component.html',
+  styleUrls: ['./http.component.scss' ],
+  templateUrl: './http.component.html',
+  animations: [slideInDownAnimation],
 })
 export class HttpDemoComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   interceptorServiceMethods: Object[] = [{
     description: `Uses underlying ng2 [http] to request a DELETE method to a URL,
@@ -47,23 +53,23 @@ export class HttpDemoComponent {
   restServiceMethods: Object[] = [{
     description: `Creates a GET request to the generated endpoint URL.`,
     name: 'query',
-    type: 'function(query?: IRestQuery)',
+    type: 'function(query?: IRestQuery, transform?: IRestTransform)',
   }, {
     description: `Creates a GET request to the generated endpoint URL, adding the ID at the end.`,
     name: 'get',
-    type: 'function(id: string | number)',
+    type: 'function(id: string | number, transform?: IRestTransform)',
   }, {
     description: `Creates a POST request to the generated endpoint URL.`,
     name: 'create',
-    type: 'function(obj: T)',
+    type: 'function(obj: T, transform?: IRestTransform)',
   }, {
     description: `Creates a PATCH request to the generated endpoint URL, adding the ID at the end.`,
     name: 'update',
-    type: 'function(id: string | number, obj: T)',
+    type: 'function(id: string | number, obj: T, transform?: IRestTransform)',
   }, {
     description: `Creates a DELETE request to the generated endpoint URL, adding the ID at the end.`,
     name: 'delete',
-    type: 'function(id: string | number)',
+    type: 'function(id: string | number, transform?: IRestTransform)',
   }, {
     description: `Builds the endpoint URL with the configured properties and arguments passed in the method.`,
     name: 'buildUrl',

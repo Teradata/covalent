@@ -21,18 +21,15 @@ import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
+import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
-import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentDataTableModule } from '../../../platform/data-table';
-import { CovalentPagingModule } from '../../../platform/paging';
-import { CovalentSearchModule } from '../../../platform/search';
+import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 @NgModule({
   declarations: [
@@ -55,20 +52,19 @@ import { CovalentSearchModule } from '../../../platform/search';
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
+    DynamicFormsDemoComponent,
     MaterialComponentsComponent,
+    DialogComponent,
+    NotificationsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
     componentsRoutes,
   ],
+  entryComponents: [ DialogComponent ],
 })
 export class ComponentsModule {}

@@ -5,8 +5,8 @@
   <md-card-content>
     <div layout="row" layout-align="start center" flex>
       <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
-        <md-button-toggle md-tooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
-        <md-button-toggle md-tooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
+        <md-button-toggle mdTooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
+        <md-button-toggle mdTooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
       </md-button-toggle-group>
     </div>
     <p>Loading Registered: {{replaceRegistered}} times</p>
@@ -15,19 +15,23 @@
       <p>Circular Type</p>
       <template tdLoading="test.indeterminate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
       <p>Linear Type</p>
       <template tdLoading="test2.indeterminate" loadingType="linear">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
     </div>
@@ -36,19 +40,23 @@
       <p>Circular Type</p>
       <template tdLoading="test.determinate" loadingMode="determinate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
       <p>Linear Type</p>
       <template tdLoading="test2.determinate" loadingType="linear" loadingMode="determinate">
         <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
+          <md-input-container flex>
+            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
+          </md-input-container>
+          <md-input-container flex>
+            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
+          </md-input-container>
         </div>
       </template>
     </div>
@@ -125,17 +133,16 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method and set [TD_LOADING_ENTRY_COMPONENTS] as 'entryComponents' in your NgModule:</p>
+    <p>Import the [CovalentLoadingModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+        import { CovalentLoadingModule } from '@covalent/core';
 
         @NgModule({
           imports: [
-            CovalentCoreModule.forRoot(),
+            CovalentLoadingModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
-          entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
           ...
         })
         export class MyModule {}

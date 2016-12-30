@@ -1,16 +1,21 @@
-import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 import { Subscription } from 'rxjs/Subscription';
 
 import { TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'media-demo',
-  styleUrls: [ 'media.component.scss' ],
-  templateUrl: 'media.component.html',
+  styleUrls: ['./media.component.scss' ],
+  templateUrl: './media.component.html',
+  animations: [slideInDownAnimation],
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 
   private _subcriptions: Subscription[] = [];
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   mediaDemo: any[] = [{
     query: 'xs',
