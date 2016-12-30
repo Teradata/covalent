@@ -1,6 +1,6 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Teradata UI Platform Dynamic Forms Module",
   "keywords": [
     "angular",
@@ -33,6 +33,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.9.1"
+    "@covalent/core": "0.10.0"
   }
 }
