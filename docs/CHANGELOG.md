@@ -59,14 +59,17 @@
 
   ```typescript
   const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
-    CustomInterceptor,
+    Interceptor1,
+    Interceptor2,
     ...
   ];
   ...
   imports: [
     CovalentHttpModule.forRoot({
       interceptors: [{
-        interceptor: CustomInterceptor, paths: ['**'],
+        interceptor: Interceptor1, paths: ['**'],
+      }, {
+        interceptor: Interceptor2, paths: ['**'],
       }],
     }),
     ...
@@ -176,6 +179,7 @@
 * **security:** Sanitized and registered svg icons from assets into the `MdIconRegistry`. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
 * **material:** Remove usage of depricated `@angular/material` directives. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
 * **scripts:** Make `npm run test` do an `ng test` with generated code coverage. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
+* **docs:** Added animation transitions in doc route components. ([334edbdaa518a7e171b0e749ea8fb8c85ab83b09](https://github.com/Teradata/covalent/commit/334edbdaa518a7e171b0e749ea8fb8c85ab83b09))
 
 
 ## Code Health
