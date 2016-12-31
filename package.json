@@ -23,7 +23,7 @@
     "aot": "./node_modules/.bin/ngc -p src/platform/tsconfig-aot.json",
     "build": "bash scripts/build-release",
     "publish": "bash scripts/publish-release",
-    "ghpages-deploy": "ng build --base-href /covalent/ --aot -prod && bash scripts/ghpages-deploy",
+    "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod && bash scripts/ghpages-deploy",
     "start-release": "bash scripts/start-release",
     "finish-release": "bash scripts/finish-release"
   },
