@@ -1,10 +1,4 @@
 #!/bin/bash
-echo 'Checking out develop branch to base deployment from it.'
-git checkout develop
-
-echo 'Started building process.'
-ng build -prod
-
 git branch -f gh-pages
 git checkout gh-pages
 echo 'Created and Checked out gh-pages branch'
@@ -12,7 +6,6 @@ echo 'Created and Checked out gh-pages branch'
 git reset --hard origin/develop
 
 cp -r dist/* .
-sed -i '' 's:<base href=\"/\">:<base href=\"/covalent/\">:' index.html
 echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/covalent/"> in index.html'
 
 echo 'Tracking files'
