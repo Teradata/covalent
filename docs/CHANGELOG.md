@@ -1,3 +1,11 @@
+<a name="0.10.1"></a>
+# [0.10.1](https://github.com/Teradata/covalent/tree/v0.10.0) (2017-1-2)
+
+## Bug Fixes
+* **animations:** Depending on the tsconfig.json, setTimeout could be either window.setTimeout or NodeJS.setTimeout. ([1cd3e49c62a3cc8b03f3f153fc3bb554061e495e](https://github.com/Teradata/covalent/commit/1cd3e49c62a3cc8b03f3f153fc3bb554061e495e)), closes [#225](https://github.com/Teradata/covalent/issues/225)
+* **http:** `rxjs` upgrade caused concurrent request failure. ([31a60cd0e322f2ab9190325381c08b4872414caa](https://github.com/Teradata/covalent/commit/31a60cd0e322f2ab9190325381c08b4872414caa))
+
+
 <a name="0.10.0"></a>
 # [0.10.0 Bedlington Cummerbund](https://github.com/Teradata/covalent/tree/v0.10.0) (2016-12-30)
 
