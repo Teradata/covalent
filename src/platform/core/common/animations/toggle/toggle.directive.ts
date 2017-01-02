@@ -92,7 +92,7 @@ export class TdToggleDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g. hide event started before show event is completed.
      */
-    this._timeoutNumber = setTimeout(() => {
+    this._timeoutNumber = window.setTimeout(() => {
       this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
       this._hiddenState = this._state;
       animation.destroy();
@@ -153,7 +153,7 @@ export class TdToggleDirective {
        * before the previous one ends. The onComplete event is not executed.
        * e.g. hide event started before show event is completed.
        */
-      this._timeoutNumber = setTimeout(() => {
+      this._timeoutNumber = window.setTimeout(() => {
         this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
         animation.destroy();
       }, this.duration);
