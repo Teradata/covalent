@@ -101,7 +101,7 @@ export class TdFadeDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g.hide event started before show event is completed.
      */
-    this._timeoutNumber = setTimeout(() => {
+    this._timeoutNumber = window.setTimeout(() => {
       setTimeout(() => {
         this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
       }, 0);
@@ -138,7 +138,7 @@ export class TdFadeDirective {
      * before the previous one ends. The onComplete event is not executed.
      * e.g. hide event started before show event is completed.
      */
-    this._timeoutNumber = setTimeout(() => {
+    this._timeoutNumber = window.setTimeout(() => {
       this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
       this.fadeIn.emit(undefined);
       animation.destroy();
