@@ -99,14 +99,12 @@ export class HttpInterceptorService {
     }
     return new Observable<any>((subscriber: Subscriber<any>) => {
       this._http.request(url, requestOptions)
-      .do((response: Response) => {
+      .subscribe((response: Response) => {
         subscriber.next(this._responseResolve(response, interceptors));
         subscriber.complete();
-      }).catch((error: Response) => {
-        return new Observable<any>(() => {
-          subscriber.error(this._responseErrorResolve(error, interceptors));
-        });
-      }).subscribe();
+      }, (error: Response) => {
+        subscriber.error(this._responseErrorResolve(error, interceptors));
+      });
     });
   }
 
