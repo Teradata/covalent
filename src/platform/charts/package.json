@@ -1,6 +1,6 @@
 {
   "name": "@covalent/charts",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Teradata UI Platform Charts Module",
   "keywords": [
     "angular",
@@ -33,7 +33,7 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.10.1",
+    "@covalent/core": "0.10.2",
     "d3": "^4.2.1"
   }
 }
