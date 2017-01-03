@@ -1,3 +1,10 @@
+<a name="0.10.2"></a>
+# [0.10.2](https://github.com/Teradata/covalent/tree/v0.10.0) (2017-1-3)
+
+## Bug Fixes
+* **http:** `interceptors` instead of `inteceptors` typo in `HttpConfig`. closes [#233](https://github.com/Teradata/covalent/issues/233)
+
+
 <a name="0.10.1"></a>
 # [0.10.1](https://github.com/Teradata/covalent/tree/v0.10.0) (2017-1-2)
 
