@@ -60,7 +60,7 @@ export class RequestRecoveryInterceptor {
 describe('Service: HttpInterceptor', () => {
 
   let config: HttpConfig = {
-    inteceptors: [{
+    interceptors: [{
       interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
     }, {
       interceptor: RequestAuthInterceptor, paths: ['**'],
