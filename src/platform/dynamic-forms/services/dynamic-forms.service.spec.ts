@@ -46,7 +46,7 @@ describe('Service: TdDynamicFormsService', () => {
         expect(false).toBeTruthy('normal@22-name_22 name should not be validated correctly');
       } catch (e) { /* */ }
 
-    })
+    }),
   ));
 
   it('expect to return components depending on type | element',
@@ -69,7 +69,7 @@ describe('Service: TdDynamicFormsService', () => {
       } catch (e) {
         expect(e).toBeTruthy();
       }
-    })
+    }),
   ));
 
   it('expect to return default flex depending on type | element',
@@ -92,7 +92,7 @@ describe('Service: TdDynamicFormsService', () => {
       } catch (e) {
         expect(e).toBeTruthy();
       }
-    })
+    }),
   ));
 
 });
