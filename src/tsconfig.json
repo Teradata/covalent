@@ -20,6 +20,10 @@
     ],
     "paths": {
       "@covalent/*": ["./platform/*"]
-    }
+    },
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true
   }
 }
