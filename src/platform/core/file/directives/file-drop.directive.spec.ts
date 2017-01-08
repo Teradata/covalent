@@ -229,5 +229,3 @@ class TdFileDropBasicTestComponent {
   disabled: boolean;
   files: FileList | File;
 }
-
-

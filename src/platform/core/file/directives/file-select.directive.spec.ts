@@ -64,5 +64,3 @@ class TdFileSelectBasicTestComponent {
   disabled: boolean;
   files: FileList | File;
 }
-
-
