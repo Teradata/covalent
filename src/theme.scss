@@ -52,3 +52,16 @@ $theme: md-light-theme($primary, $accent, $warn);
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
 }
+
+// Active icon color in list nav
+md-nav-list {
+    [md-list-item].active {
+        md-icon[md-list-avatar] {
+            background-color: md-color($accent);
+            color: md-color($accent, default-contrast)
+        }
+        md-icon[md-list-icon] {
+            color: md-color($accent);
+        }
+    }
+}
