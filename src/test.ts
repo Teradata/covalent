@@ -23,7 +23,7 @@ Promise.all([
   .then(([testing, testingBrowser]: any[]) => {
     testing.getTestBed().initTestEnvironment(
       testingBrowser.BrowserDynamicTestingModule,
-      testingBrowser.platformBrowserDynamicTesting()
+      testingBrowser.platformBrowserDynamicTesting(),
     );
   })
   // Then we find all the tests.
