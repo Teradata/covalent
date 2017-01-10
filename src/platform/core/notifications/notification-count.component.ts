@@ -1,4 +1,16 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, HostBinding, ChangeDetectionStrategy, ViewChild, ElementRef, AfterContentInit } from '@angular/core';
+
+export enum TdNotificationPositionY {
+  Top = <any>'top',
+  Bottom = <any>'bottom',
+  Center = <any>'center',
+}
+
+export enum TdNotificationPositionX {
+  Left = <any>'left',
+  Right = <any>'right',
+  Center = <any>'center',
+}
 
 @Component({
   selector: 'td-notification-count',
@@ -6,15 +18,35 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   templateUrl: './notification-count.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdNotificationCountComponent {
+export class TdNotificationCountComponent implements AfterContentInit {
 
   private _notifications: number | boolean = 0;
+  private _positionY: TdNotificationPositionY;
+  private _positionX: TdNotificationPositionX;
+
+  @ViewChild('content') content: ElementRef;
 
   /**
    * color?: "primary" | "accent" | "warn"
    * Sets the theme color of the notification tip. Defaults to 'warn'
    */
   @Input() color: 'primary' | 'accent' | 'warn' = 'warn';
+
+  @Input()
+  set positionY(positionY: TdNotificationPositionY) {
+    this._positionY = positionY;
+  }
+  get positionY(): TdNotificationPositionY {
+    return this._positionY;
+  }
+
+  @Input()
+  set positionX(positionX: TdNotificationPositionX) {
+    this._positionX = positionX;
+  }
+  get positionX(): TdNotificationPositionX {
+    return this._positionX;
+  }
 
   /**
    * notifications?: number | boolean
@@ -23,6 +55,11 @@ export class TdNotificationCountComponent {
   @Input()
   set notifications(notifications: number | boolean) {
     this._notifications = notifications;
+  }
+
+  @HostBinding('class.td-notification-hidden')
+  get hideHost(): boolean {
+    return !this.show && !this._hasContent();
   }
 
   /**
@@ -49,6 +86,23 @@ export class TdNotificationCountComponent {
    */
   get show(): boolean {
     return this._notifications === true || (!isNaN(<any>this._notifications) && this._notifications > 0);
+  }
+
+  ngAfterContentInit(): void {
+    if (!this._positionX) {
+      this.positionX = this._hasContent() ? TdNotificationPositionX.Right : TdNotificationPositionX.Center;
+    }
+    if (!this._positionY) {
+      this.positionY = this._hasContent() ? TdNotificationPositionY.Top : TdNotificationPositionY.Center;
+    }
+  }
+
+  private _hasContent(): boolean {
+    if (this.content) {
+      let contentElement: HTMLElement = this.content.nativeElement;
+      return contentElement && (contentElement.children.length > 0 || !!contentElement.textContent.trim());
+    }
+    return false;
   }
 
 }

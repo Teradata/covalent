@@ -6,13 +6,13 @@ import { MaterialModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../common/common.module';
 
-import { TdNotificationCountComponent } from './notification-count.component';
+import { TdNotificationCountComponent, TdNotificationPositionX,  TdNotificationPositionY } from './notification-count.component';
 
 const TD_NOTIFICATIONS: Type<any>[] = [
   TdNotificationCountComponent,
 ];
 
-export { TdNotificationCountComponent } from './notification-count.component';
+export { TdNotificationCountComponent, TdNotificationPositionX, TdNotificationPositionY } from './notification-count.component';
 
 @NgModule({
   imports: [

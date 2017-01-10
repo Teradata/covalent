@@ -1,8 +1,14 @@
-<div class="td-notification-content">
-    <ng-content></ng-content>
+<div #content class="td-notification-content">
+  <ng-content></ng-content>
 </div>
 <div *ngIf="show"
      class="td-notification-count md-{{color}}"
+     [class.td-notification-top]="positionY === 'top' || positionY === 'center'"
+     [class.td-notification-bottom]="positionY === 'bottom' || positionY === 'center'"
+     [class.td-notification-left]="positionX === 'left' || positionX === 'center'"
+     [class.td-notification-right]="positionX === 'right' || positionX === 'center'"
+     [class.td-notification-center-y]="positionY === 'center'"
+     [class.td-notification-center-x]="positionX === 'center'"
      [class.td-notification-no-count]="noCount">
-    {{noCount ? '' : notificationsDisplay}}
+  {{noCount ? '' : notificationsDisplay}}
 </div>
