@@ -1,12 +1,12 @@
 import { Component, Input, HostBinding, ChangeDetectionStrategy, ViewChild, ElementRef, AfterContentInit } from '@angular/core';
 
-export enum TdNotificationPositionY {
+export enum TdNotificationCountPositionY {
   Top = <any>'top',
   Bottom = <any>'bottom',
   Center = <any>'center',
 }
 
-export enum TdNotificationPositionX {
+export enum TdNotificationCountPositionX {
   Left = <any>'left',
   Right = <any>'right',
   Center = <any>'center',
@@ -21,31 +21,44 @@ export enum TdNotificationPositionX {
 export class TdNotificationCountComponent implements AfterContentInit {
 
   private _notifications: number | boolean = 0;
-  private _positionY: TdNotificationPositionY;
-  private _positionX: TdNotificationPositionX;
+  private _positionY: TdNotificationCountPositionY;
+  private _positionX: TdNotificationCountPositionX;
 
+  /**
+   * Div content wrapper of `ng-content`.
+   */
   @ViewChild('content') content: ElementRef;
 
   /**
    * color?: "primary" | "accent" | "warn"
-   * Sets the theme color of the notification tip. Defaults to 'warn'
+   * Sets the theme color of the notification tip. Defaults to "warn"
    */
   @Input() color: 'primary' | 'accent' | 'warn' = 'warn';
 
+  /**
+   * positionX?: TdNotificationCountPositionX or "left" | "right" | "center"
+   * Sets the X position of the notification tip.
+   * Defaults to "right" if it has content, else 'center'.
+   */
   @Input()
-  set positionY(positionY: TdNotificationPositionY) {
-    this._positionY = positionY;
-  }
-  get positionY(): TdNotificationPositionY {
-    return this._positionY;
-  }
-
-  @Input()
-  set positionX(positionX: TdNotificationPositionX) {
+  set positionX(positionX: TdNotificationCountPositionX) {
     this._positionX = positionX;
   }
-  get positionX(): TdNotificationPositionX {
+  get positionX(): TdNotificationCountPositionX {
     return this._positionX;
+  }
+
+  /**
+   * positionY?: TdNotificationCountPositionY or "top" | "bottom" | "center"
+   * Sets the Y position of the notification tip.
+   * Defaults to "top" if it has content, else 'center'.
+   */
+  @Input()
+  set positionY(positionY: TdNotificationCountPositionY) {
+    this._positionY = positionY;
+  }
+  get positionY(): TdNotificationCountPositionY {
+    return this._positionY;
   }
 
   /**
@@ -88,15 +101,21 @@ export class TdNotificationCountComponent implements AfterContentInit {
     return this._notifications === true || (!isNaN(<any>this._notifications) && this._notifications > 0);
   }
 
+  /**
+   * Check if [positionX] and [positionY] have been set as inputs, else use defaults depending on component content.
+   */
   ngAfterContentInit(): void {
     if (!this._positionX) {
-      this.positionX = this._hasContent() ? TdNotificationPositionX.Right : TdNotificationPositionX.Center;
+      this.positionX = this._hasContent() ? TdNotificationCountPositionX.Right : TdNotificationCountPositionX.Center;
     }
     if (!this._positionY) {
-      this.positionY = this._hasContent() ? TdNotificationPositionY.Top : TdNotificationPositionY.Center;
+      this.positionY = this._hasContent() ? TdNotificationCountPositionY.Top : TdNotificationCountPositionY.Center;
     }
   }
 
+  /**
+   * Method to check if element has any kind of content (elements or text)
+   */
   private _hasContent(): boolean {
     if (this.content) {
       let contentElement: HTMLElement = this.content.nativeElement;
