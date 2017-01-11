@@ -17,6 +17,16 @@ export class NotificationsDemoComponent {
                   Defaults to 'warn'`,
     name: 'color',
     type: '"primary" | "accent" | "warn"',
+  }, {
+    description: `Sets the X position of the notification tip.
+                  Defaults to "right" if it has content, else 'center'.`,
+    name: 'positionX',
+    type: 'TdNotificationCountPositionX or "left" | "right" | "center"',
+  }, {
+    description: `Sets the Y position of the notification tip.
+                  Defaults to "top" if it has content, else 'center'.`,
+    name: 'positionY',
+    type: 'TdNotificationCountPositionY or "top" | "bottom" | "center"',
   }];
 
 }

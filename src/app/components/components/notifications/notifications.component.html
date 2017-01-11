@@ -11,8 +11,11 @@
       <span>Toolbar</span>
       <span flex></span>
       <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
-      <td-notification-count color="primary" [notifications]="true">
+      <td-notification-count color="primary" positionX="left" [notifications]="true">
         <md-icon>person</md-icon>
+      </td-notification-count>
+      <td-notification-count color="primary" [notifications]="false">
+        <md-icon>people</md-icon>
       </td-notification-count>
       <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
         <td-notification-count [notifications]="101">
@@ -49,10 +52,39 @@
         </button>
       </md-menu>
     </md-toolbar>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>
+          <div layout="row" layout-align="center center">
+            Activities
+            <td-notification-count color="primary" [notifications]="true">
+            </td-notification-count>
+          </div>
+        </template>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>
+          <div layout="row" layout-align="center center">
+            Logs
+            <td-notification-count color="primary" [notifications]="0">
+            </td-notification-count>
+          </div>
+        </template>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>
+          <div layout="row" layout-align="center center">
+            Chats 
+            <td-notification-count color="accent" [notifications]="12">
+            </td-notification-count>
+          </div>
+        </template>
+      </md-tab>
+    </md-tab-group>
     <div layout="row">
       <div layout="column" class="bgc-grey-300">
         <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count color="primary" [notifications]="12">
+          <td-notification-count color="primary" positionY="bottom" [notifications]="12">
             <md-icon>message</md-icon>
           </td-notification-count>
         </button>
@@ -108,8 +140,8 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count color="accent" [notifications]="notificationCount">
+        <button md-icon-button (click)="notificationCount = 0" [mdMenuTriggerFor]="notificationsMenu">
+          <td-notification-count color="accent" positionY="top" positionX="right" [notifications]="notificationCount">
             <md-icon>notifications</md-icon>
           </td-notification-count>
         </button>
