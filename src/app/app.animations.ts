@@ -6,7 +6,7 @@ export const fadeAnimation: AnimationEntryMetadata =
     state('*',
       style({
         opacity: 1,
-      })
+      }),
     ),
     transition(':enter', [
       style({
@@ -26,7 +26,7 @@ export const slideInLeftAnimation: AnimationEntryMetadata =
       style({
         opacity: 1,
         transform: 'translateX(0)',
-      })
+      }),
     ),
     transition(':enter', [
       style({
@@ -48,7 +48,7 @@ export const slideInDownAnimation: AnimationEntryMetadata =
       style({
         opacity: 1,
         transform: 'translateY(0)',
-      })
+      }),
     ),
     transition(':enter', [
       style({

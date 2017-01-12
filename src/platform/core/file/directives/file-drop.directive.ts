@@ -116,10 +116,10 @@ export class TdFileDropDirective {
   /**
    * Validates if the transfer item types are 'Files'.
    */
-  private _typeCheck(types: DOMStringList): string {
+  private _typeCheck(types: string[] | DOMStringList): string {
     let dropEffect: string = 'none';
     if (types) {
-      if ((types.contains && types.contains('Files'))
+      if (((<any>types).contains && (<any>types).contains('Files'))
       || ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1)) {
         dropEffect = 'copy';
       }
