@@ -60,7 +60,7 @@ export class RequestRecoveryInterceptor {
 describe('Service: HttpInterceptor', () => {
 
   let config: HttpConfig = {
-    inteceptors: [{
+    interceptors: [{
       interceptor: ResponseOverrideInterceptor, paths: ['/url**'],
     }, {
       interceptor: RequestAuthInterceptor, paths: ['**'],
@@ -104,7 +104,7 @@ describe('Service: HttpInterceptor', () => {
         }
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
 
@@ -117,7 +117,7 @@ describe('Service: HttpInterceptor', () => {
       .map((res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('recovered', '/error/*/fromerror was not intercepted');
       });
-    })
+    }),
   ));
 
   it('expect to intercept only the route with `/error` and fail',
@@ -125,7 +125,7 @@ describe('Service: HttpInterceptor', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
 
@@ -135,7 +135,7 @@ describe('Service: HttpInterceptor', () => {
       }, (error: any) => {
         expect(error).toBe('error');
       });
-    })
+    }),
   ));
 
   it('expect to intercept all routes and add an `auth=test-auth` header',
@@ -144,7 +144,7 @@ describe('Service: HttpInterceptor', () => {
         expect(connection.request.headers.get('auth')).toBe('test-auth', 'didnt add `auth` header on all routes');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
 
@@ -187,7 +187,7 @@ describe('Service: HttpInterceptor', () => {
       .map((res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
-    })
+    }),
   ));
 
   it('expect to intercept routes that contain `/url` in them and override responses body with `override`',
@@ -195,7 +195,7 @@ describe('Service: HttpInterceptor', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
 
@@ -238,7 +238,7 @@ describe('Service: HttpInterceptor', () => {
       .map((res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success', 'intercepted url without `/url`');
       });
-    })
+    }),
   ));
 
 });
@@ -270,7 +270,7 @@ describe('Service: HttpInterceptor', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -291,7 +291,7 @@ describe('Service: HttpInterceptor', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a post succesfully with observables',
@@ -299,7 +299,7 @@ describe('Service: HttpInterceptor', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -316,7 +316,7 @@ describe('Service: HttpInterceptor', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a post failure with observables',
@@ -338,7 +338,7 @@ describe('Service: HttpInterceptor', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do a post succesfully with promises',
@@ -346,7 +346,7 @@ describe('Service: HttpInterceptor', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -361,7 +361,7 @@ describe('Service: HttpInterceptor', () => {
         expect(success).toBe(true, 'on success didnt execute with promises');
         expect(error).toBe(false, 'on error executed when it shouldnt have with promises');
       });
-    })
+    }),
   ));
 
   it('expect to do a post failure with promises',
@@ -381,6 +381,6 @@ describe('Service: HttpInterceptor', () => {
         expect(success).toBe(false, 'on success execute when it shouldnt have with promises');
         expect(error).toBe(true, 'on error didnt execute with promises');
       });
-    })
+    }),
   ));
 });

@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/%40covalent%2Fcore.svg)](https://badge.fury.io/js/%40covalent%2Fcore)
 [![Join the chat at https://gitter.im/Teradata/covalent](https://badges.gitter.im/Teradata/covalent.svg)](https://gitter.im/Teradata/covalent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Dependency Status](https://dependencyci.com/github/Teradata/covalent/badge)](https://dependencyci.com/github/Teradata/covalent)
+[![Coverage Status](https://coveralls.io/repos/github/Teradata/covalent/badge.svg?branch=feature%2Fcoverage-badge)](https://coveralls.io/github/Teradata/covalent?branch=feature%2Fcoverage-badge)
 
 <img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
 
@@ -27,6 +28,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * [Getting Started](docs/GETTING_STARTED.md)
 * [Contributing Guidelines](docs/CONTRIBUTING.md)
 * [Developer Guide](docs/DEVELOPER_GUIDE.md)
+* [Upgrading](docs/UPGRADE.md)
 * [Releasing](docs/RELEASE.md)
 * [Changelog](docs/CHANGELOG.md)
 * [Quickstart Repo](https://github.com/teradata/covalent-quickstart)

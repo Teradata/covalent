@@ -6,7 +6,7 @@ import { TemplatePortalDirective, TemplatePortal } from '@angular/material';
 export enum StepState {
   None = <any>'none',
   Required = <any>'required',
-  Complete = <any>'complete'
+  Complete = <any>'complete',
 }
 
 @Directive({

@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown",
-  "version": "0.10.0",
+  "version": "0.10.2",
   "description": "Teradata UI Platform Markdown Module",
   "keywords": [
     "angular",
@@ -31,7 +31,7 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.10.0",
+    "@covalent/core": "0.10.2",
     "showdown": "1.4.2"
   }
 }

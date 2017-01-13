@@ -132,7 +132,7 @@ export class TdXAxisComponent {
       .attr('transform', 'translate(0,' + this._parent.height + ')')
       .call(d3.axisBottom(x)
             .tickSize(-this._parent.height)
-            .tickFormat('')
+            .tickFormat(''),
       );
     svg.append('text')
       .attr('display', this.show ? 'display' : 'none')
