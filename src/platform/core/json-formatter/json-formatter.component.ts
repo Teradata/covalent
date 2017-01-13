@@ -18,6 +18,11 @@ export class TdJsonFormatterComponent {
   private static KEY_MAX_LENGTH: number = 30;
 
   /**
+   * Max length for preview string. Any names bigger than this get trunctated.
+   */
+  private static PREVIEW_STRING_MAX_LENGTH: number = 80;
+
+  /**
    * Max tooltip preview elements.
    */
   private static PREVIEW_LIMIT: number = 5;
@@ -178,8 +183,8 @@ export class TdJsonFormatterComponent {
    */
   getPreview(): string {
     let previewData: string[];
-    let startChar: string = '{';
-    let endChar: string = '}';
+    let startChar: string = '{ ';
+    let endChar: string = ' }';
     if (this.isArray()) {
       let previewArray: any[] = this._data.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
       previewData = previewArray.map((obj: any) => {
@@ -193,8 +198,11 @@ export class TdJsonFormatterComponent {
         return key + ': ' + this.getValue(this._data[key]);
       });
     }
-    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ? '…' : '';
-    return startChar + previewData.join(', ') + ellipsis + endChar;
+    let previewString: string =  previewData.join(', ');
+    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
+                           previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH ? '…' : '';
+    return startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) +
+           ellipsis + endChar;
   }
 
   private parseChildren(): void {
