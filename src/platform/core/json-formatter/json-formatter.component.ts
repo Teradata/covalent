@@ -24,7 +24,7 @@ export class TdJsonFormatterComponent {
 
   private _key: string;
   private _data: any;
-  private _children: string[] = [];
+  private _children: string[];
   private _open: boolean = false;
   private _levelsOpen: number = 0;
 
@@ -113,7 +113,7 @@ export class TdJsonFormatterComponent {
   }
 
   hasChildren(): boolean {
-    return this.children.length > 0;
+    return this._children && this._children.length > 0;
   }
 
   /**
@@ -199,6 +199,7 @@ export class TdJsonFormatterComponent {
 
   private parseChildren(): void {
     if (this.isObject()) {
+      this._children = [];
       for (let key in this._data) {
         this._children.push(key);
       }
