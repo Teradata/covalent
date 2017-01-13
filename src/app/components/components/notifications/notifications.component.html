@@ -13,7 +13,7 @@
           </button>
           <span>Toolbar</span>
           <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
-          <td-notification-count color="primary" positionX="left" [notifications]="true">
+          <td-notification-count color="primary" positionX="before" [notifications]="true">
             <md-icon>person</md-icon>
           </td-notification-count>
           <td-notification-count color="primary" [notifications]="false">
@@ -66,7 +66,7 @@
               </button>
               <span>Toolbar</span>
               <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
-              <td-notification-count color="primary" positionX="left" [notifications]="true">
+              <td-notification-count color="primary" positionX="before" [notifications]="true">
                 <md-icon>person</md-icon>
               </td-notification-count>
               <td-notification-count color="primary" [notifications]="false">
@@ -285,7 +285,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <button md-icon-button (click)="notificationCount = 0" [mdMenuTriggerFor]="notificationsMenu">
-          <td-notification-count color="accent" positionY="top" positionX="right" [notifications]="notificationCount">
+          <td-notification-count color="accent" positionY="top" positionX="after" [notifications]="notificationCount">
             <md-icon>notifications</md-icon>
           </td-notification-count>
         </button>

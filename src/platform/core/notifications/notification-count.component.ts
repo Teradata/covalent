@@ -1,4 +1,5 @@
-import { Component, Input, HostBinding, ChangeDetectionStrategy, ViewChild, ElementRef, AfterContentInit } from '@angular/core';
+import { Component, Input, HostBinding, ChangeDetectionStrategy,
+         ViewChild, ElementRef, AfterContentInit } from '@angular/core';
 
 export enum TdNotificationCountPositionY {
   Top = <any>'top',
@@ -7,8 +8,8 @@ export enum TdNotificationCountPositionY {
 }
 
 export enum TdNotificationCountPositionX {
-  Left = <any>'left',
-  Right = <any>'right',
+  Before = <any>'before',
+  After = <any>'after',
   Center = <any>'center',
 }
 
@@ -36,9 +37,9 @@ export class TdNotificationCountComponent implements AfterContentInit {
   @Input() color: 'primary' | 'accent' | 'warn' = 'warn';
 
   /**
-   * positionX?: TdNotificationCountPositionX or "left" | "right" | "center"
+   * positionX?: TdNotificationCountPositionX or "before" | "after" | "center"
    * Sets the X position of the notification tip.
-   * Defaults to "right" if it has content, else 'center'.
+   * Defaults to "after" if it has content, else 'center'.
    */
   @Input()
   set positionX(positionX: TdNotificationCountPositionX) {
@@ -106,7 +107,7 @@ export class TdNotificationCountComponent implements AfterContentInit {
    */
   ngAfterContentInit(): void {
     if (!this._positionX) {
-      this.positionX = this._hasContent() ? TdNotificationCountPositionX.Right : TdNotificationCountPositionX.Center;
+      this.positionX = this._hasContent() ? TdNotificationCountPositionX.After : TdNotificationCountPositionX.Center;
     }
     if (!this._positionY) {
       this.positionY = this._hasContent() ? TdNotificationCountPositionY.Top : TdNotificationCountPositionY.Center;
