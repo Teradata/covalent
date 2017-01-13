@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Component({
-
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-json-formatter',
   styleUrls: ['./json-formatter.component.scss' ],
   templateUrl: './json-formatter.component.html',
@@ -76,6 +76,25 @@ export class TdJsonFormatterComponent {
 
   get children(): string[] {
     return this._children;
+  }
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  /**
+   * Refreshes json-formatter and rerenders [data]
+   */
+  refresh(): void {
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * Workaround for https://github.com/angular/material2/issues/1825
+   */
+  tooltipRefresh(): void {
+    setTimeout(() => {
+      this.refresh();
+    }, 100);
   }
 
   /**
