@@ -28,7 +28,7 @@ describe('Component: JsonFormatter', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        
+
       });
   })));
 
