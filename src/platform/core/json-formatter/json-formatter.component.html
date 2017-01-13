@@ -17,7 +17,7 @@
       <span *ngIf="!isObject()" [class]="getType(data)">{{getValue(data)}}</span>
     </span>
   </a>
-  <div class="td-object-children" *ngIf="hasChildren() && open">
+  <div class="td-object-children" [@tdCollapse]="!(hasChildren() && open)">
     <template let-key ngFor [ngForOf]="children">
       <td-json-formatter [key]="key" [data]="data[key]" [levelsOpen]="levelsOpen - 1"></td-json-formatter>
     </template>

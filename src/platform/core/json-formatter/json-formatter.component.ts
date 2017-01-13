@@ -1,10 +1,14 @@
 import { Component, Input } from '@angular/core';
+import { TdCollapseAnimation } from '../common/common.module';
 
 @Component({
 
   selector: 'td-json-formatter',
   styleUrls: ['./json-formatter.component.scss' ],
   templateUrl: './json-formatter.component.html',
+  animations: [
+    TdCollapseAnimation(),
+  ],
 })
 export class TdJsonFormatterComponent {
 
