@@ -9,22 +9,22 @@ export class NotificationsDemoComponent {
 
   notificationsAttrs: Object[] = [{
     description: `Number for the notification count.
-                  Shows number if the input is a positive number or its no count state if boolean 'true'`,
+                  Shows number if the input is a positive number; shows no count state if boolean is "true"`,
     name: 'notifications',
     type: 'number | boolean',
   }, {
     description: `Sets the theme color of the notification tip.
-                  Defaults to 'warn'`,
+                  Defaults to "warn"`,
     name: 'color',
     type: '"primary" | "accent" | "warn"',
   }, {
     description: `Sets the X position of the notification tip.
-                  Defaults to "right" if it has content, else 'center'.`,
+                  Defaults to "after" if it has content, else "center"`,
     name: 'positionX',
-    type: 'TdNotificationCountPositionX or "left" | "right" | "center"',
+    type: 'TdNotificationCountPositionX or "before" | "after" | "center"',
   }, {
     description: `Sets the Y position of the notification tip.
-                  Defaults to "top" if it has content, else 'center'.`,
+                  Defaults to "top" if it has content, else "center"`,
     name: 'positionY',
     type: 'TdNotificationCountPositionY or "top" | "bottom" | "center"',
   }];
