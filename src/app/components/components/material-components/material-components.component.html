@@ -91,7 +91,7 @@
       <md-divider></md-divider>
       <md-card-content>
         <p>Standard card with content</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
       </md-card-content>
       <md-divider></md-divider>
@@ -109,7 +109,7 @@
         <md-divider></md-divider>
         <md-card-content>
           <p>Standard card with content</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
         </md-card-content>
         <md-divider></md-divider>
@@ -205,85 +205,121 @@
 <md-card>
   <md-card-title>Icons</md-card-title>
   <md-divider></md-divider>
-  <md-card-content layout="row">
-
-    <div flex="50" layout="column" style="padding-right: 10px;">
-      <h3>Basic Icons</h3>
-      <div>
-        <md-icon>account_circle</md-icon>
-        <md-icon>help</md-icon>
-        <md-icon>delete</md-icon>
-        <md-icon>favorite</md-icon>
-        <md-icon>star</md-icon>
-        <md-icon>done_all</md-icon>
-        <md-icon>description</md-icon>
-        <md-icon>open_in_new</md-icon>
-        <md-icon>question_answer</md-icon>
-        <md-icon>schedule</md-icon>
-      </div>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
-      <div>
-        <md-icon>thumb_up</md-icon>
-        <md-icon>today</md-icon>
-        <md-icon>warning</md-icon>
-        <md-icon>airplay</md-icon>
-        <md-icon>comment</md-icon>
-        <md-icon>settings</md-icon>
-        <md-icon>room</md-icon>
-        <md-icon>stars</md-icon>
-        <md-icon>touch_app</md-icon>
-        <md-icon>trending_up</md-icon>
-      </div>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
-      <div>
-        <md-icon>view_list</md-icon>
-        <md-icon>view_module</md-icon>
-        <md-icon>view_quilt</md-icon>
-        <md-icon>view_week</md-icon>
-        <md-icon>view_headline</md-icon>
-        <md-icon>dashboard</md-icon>
-        <md-icon>subject</md-icon>
-        <md-icon>view_carousel</md-icon>
-        <md-icon>playlist_add_check</md-icon>
-        <md-icon>playlist_add</md-icon>
+  <md-card-content>
+    <div layout="row">
+      <div flex="50" layout="column" style="padding-right: 10px;">
+        <h3>Basic Icons</h3>
+        <div layout="row">
+          <md-icon>account_circle</md-icon>
+          <md-icon>help</md-icon>
+          <md-icon>delete</md-icon>
+          <md-icon>favorite</md-icon>
+          <md-icon>star</md-icon>
+          <md-icon>done_all</md-icon>
+          <md-icon>description</md-icon>
+          <md-icon>open_in_new</md-icon>
+          <md-icon>question_answer</md-icon>
+          <md-icon>schedule</md-icon>
+        </div>
         <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <div layout="row">
+          <md-icon>thumb_up</md-icon>
+          <md-icon>today</md-icon>
+          <md-icon>warning</md-icon>
+          <md-icon>airplay</md-icon>
+          <md-icon>comment</md-icon>
+          <md-icon>settings</md-icon>
+          <md-icon>room</md-icon>
+          <md-icon>stars</md-icon>
+          <md-icon>touch_app</md-icon>
+          <md-icon>trending_up</md-icon>
+        </div>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <div layout="row">
+          <md-icon>view_list</md-icon>
+          <md-icon>view_module</md-icon>
+          <md-icon>view_quilt</md-icon>
+          <md-icon>view_week</md-icon>
+          <md-icon>view_headline</md-icon>
+          <md-icon>dashboard</md-icon>
+          <md-icon>subject</md-icon>
+          <md-icon>view_carousel</md-icon>
+          <md-icon>playlist_add_check</md-icon>
+          <md-icon>playlist_add</md-icon>
+        </div>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <td-highlight lang="html">
+          <![CDATA[
+            <!-- Basic -->
+            <md-icon>account_circle</md-icon>
+          ]]>
+        </td-highlight>
+      </div>
+
+      <div flex="50" layout="column">
+        <h3>Icons with Buttons</h3>
+        <div layout="row" layout-align="start center">
+          <button md-icon-button>
+            <md-icon>favorite</md-icon>
+          </button>
+          <button md-fab color="accent" style="margin-left: 10px;">
+            <md-icon>shopping_cart</md-icon>
+          </button>
+          <button md-mini-fab color="accent" style="margin-left: 10px;">
+            <md-icon>add</md-icon>
+          </button>
+          <button md-mini-fab color="accent" disabled style="margin-left: 10px;">
+            <md-icon>backup</md-icon>
+          </button>
+        </div>
+        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <td-highlight lang="html">
+          <![CDATA[
+            <!-- Icons and Buttons -->
+            <button md-icon-button>
+              <md-icon>favorite</md-icon>
+            </button>
+            <button md-fab color="accent">
+              <md-icon>shopping_cart</md-icon>
+            </button>
+            <button md-mini-fab color="accent">
+              <md-icon>add</md-icon>
+            </button>
+            <button md-mini-fab color="accent" disabled>
+              <md-icon>backup</md-icon>
+            </button>
+          ]]>
+        </td-highlight>
+      </div>
+    </div>
+
+    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+
+    <div layout="column">
+      <h3>Icon Sizes</h3>
+      <div layout="row" layout-align="start end" style="margin-bottom: 15px;">
+        <md-icon class="md-18">favorite</md-icon>
+        <md-icon class="md-24" style="margin-left: 10px;">favorite</md-icon>
+        <md-icon class="md-36" style="margin-left: 10px;">favorite</md-icon>
+        <md-icon class="md-48" style="margin-left: 10px;">favorite</md-icon>
+        <button md-fab color="accent" style="margin-left: 10px;">
+          <md-icon class="md-18">shopping_cart</md-icon>
+        </button>
+        <button md-fab color="accent" style="margin-left: 10px;">
+          <md-icon class="md-24">shopping_cart</md-icon>
+        </button>
+        <button md-fab color="accent" style="margin-left: 10px;">
+          <md-icon class="md-36">shopping_cart</md-icon>
+        </button>
       </div>
       <td-highlight lang="html">
         <![CDATA[
-          <!-- Basic -->
-          <md-icon>account_circle</md-icon>
+          <!-- Icon Sizes (Default: md-24) -->
+          <md-icon class="md-18">favorite</md-icon>
+          <md-icon class="md-24">favorite</md-icon>
+          <md-icon class="md-36">favorite</md-icon>
+          <md-icon class="md-48">favorite</md-icon>
         ]]>
-        </td-highlight>
-    </div>
-
-    <div flex="50">
-      <md-card-actions>
-        <h3>Icons with Buttons</h3>
-        <button md-icon-button>
-            <md-icon>favorite</md-icon>
-        </button>
-        <button md-fab color="accent">
-            <md-icon>shopping_cart</md-icon>
-        </button>
-        <button md-mini-fab color="accent">
-            <md-icon>add</md-icon>
-        </button>
-        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
-      </md-card-actions>
-      <td-highlight lang="html">
-      <![CDATA[
-        <!-- Icons and Buttons -->
-        <button md-icon-button>
-            <md-icon>favorite</md-icon>
-        </button>
-        <button md-fab color="accent">
-            <md-icon>shopping_cart</md-icon>
-        </button>
-        <button md-mini-fab color="accent">
-            <md-icon>add</md-icon>
-        </button>
-        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
-      ]]>
       </td-highlight>
     </div>
   </md-card-content>
@@ -1105,7 +1141,7 @@
     </md-tab>
   </md-tab-group>
   <md-card-content>
-    
+
   </md-card-content>
 </md-card>
 
@@ -1328,7 +1364,7 @@
         import { Component } from '@angular/core';
         import { MdSnackBar } from '@angular/material';
         ...
-        ...        
+        ...
         constructor(private _snackBarService: MdSnackBar) {
         }
 
