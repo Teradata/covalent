@@ -5,7 +5,8 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { CovalentNotificationsModule } from './notifications.module';
+import { CovalentNotificationsModule,
+         TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
 import { By } from '@angular/platform-browser';
 
 describe('Component: NotificationCount', () => {
@@ -15,6 +16,8 @@ describe('Component: NotificationCount', () => {
       declarations: [
         TdNotificationCountBasicTestComponent,
         TdNotificationCountContentTestComponent,
+        TdNotificationCountPositionTestComponent,
+        TdNotificationCountPositionContentTestComponent,
       ],
       imports: [
         CovalentNotificationsModule.forRoot(),
@@ -121,6 +124,47 @@ describe('Component: NotificationCount', () => {
       });
   })));
 
+  it('should render component with content and default positionY top and position X after',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionContentTestComponent);
+      let component: TdNotificationCountPositionContentTestComponent = fixture.debugElement.componentInstance;
+      component.notifications = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+
+        expect(fixture.debugElement.query(By.css('.td-notification-top'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-notification-after'))).toBeTruthy();
+      });
+  })));
+
+  it('should render component with no content and default positionY top and position X after',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
+      let component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
+      component.notifications = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+
+        expect(fixture.debugElement.query(By.css('.td-notification-center-x'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-notification-center-y'))).toBeTruthy();
+      });
+  })));
+
+  it('should render component with positionY bottom and position X before',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountPositionTestComponent);
+      let component: TdNotificationCountPositionTestComponent = fixture.debugElement.componentInstance;
+      component.notifications = true;
+      component.positionX = TdNotificationCountPositionX.Before;
+      component.positionY = TdNotificationCountPositionY.Bottom;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+
+        expect(fixture.debugElement.query(By.css('.td-notification-before'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-notification-bottom'))).toBeTruthy();
+      });
+  })));
+
 });
 
 @Component({
@@ -147,3 +191,35 @@ class TdNotificationCountBasicTestComponent {
   `,
 })
 class TdNotificationCountContentTestComponent {}
+
+@Component({
+  selector: 'td-notification-count-position-test',
+  template: `
+  <td-notification-count [positionX]="positionX" [positionY]="positionY" [notifications]="notifications">
+
+  </td-notification-count>
+  `,
+})
+class TdNotificationCountPositionTestComponent {
+
+  positionX: TdNotificationCountPositionX | string;
+  positionY: TdNotificationCountPositionY | string;
+  notifications: any;
+
+}
+
+@Component({
+  selector: 'td-notification-count-position-content-test',
+  template: `
+  <td-notification-count [positionX]="positionX" [positionY]="positionY" [notifications]="notifications">
+    <md-icon>notifications</md-icon>
+  </td-notification-count>
+  `,
+})
+class TdNotificationCountPositionContentTestComponent {
+
+  positionX: TdNotificationCountPositionX | string;
+  positionY: TdNotificationCountPositionY | string;
+  notifications: any;
+
+}
