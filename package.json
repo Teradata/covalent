@@ -11,7 +11,7 @@
   "scripts": {
     "e2e": "protractor",
     "e2e-test": "protractor ./protractor.conf.js",
-    "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
+    "lint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "ng test --code-coverage --single-run",
@@ -75,7 +75,7 @@
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.34",
     "@types/selenium-webdriver": "^2.52.0",
-    "angular-cli": "1.0.0-beta.24",
+    "angular-cli": "1.0.0-beta.25.5",
     "awesome-typescript-loader": "^2.2.4",
     "codelyzer": "2.0.0-beta.4",
     "coveralls": "^2.11.15",
