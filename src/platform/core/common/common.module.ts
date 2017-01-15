@@ -48,7 +48,6 @@ export { TdMinValidator, TdMaxValidator, TdNumberRequiredValidator };
 /**
  * PIPES
  */
-import { TdOrderByPipe } from './pipes/orderby/orderby.pipe';
 import { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
 import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
@@ -56,7 +55,6 @@ import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
 const TD_PIPES: Type<any>[] = [
-  TdOrderByPipe,
   TdTimeAgoPipe,
   TdTimeDifferencePipe,
   TdBytesPipe,
@@ -64,7 +62,7 @@ const TD_PIPES: Type<any>[] = [
   TdTruncatePipe,
 ];
 
-export { TdOrderByPipe, TdTimeAgoPipe, TdTimeDifferencePipe,
+export { TdTimeAgoPipe, TdTimeDifferencePipe,
          TdBytesPipe, TdDigitsPipe, TdTruncatePipe };
 
 @NgModule({
