@@ -28,12 +28,6 @@ export class TdLoadingComponent {
   private _animationOut: Subject<any> = new Subject<any>();
   private _mode: LoadingMode = LoadingMode.Indeterminate;
   private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
-  private _reset: boolean = true;
-
-  // Flag to reset the loader value and animation before removing it from DOM
-  get reset(): boolean {
-    return this._reset;
-  }
 
   /**
    * Flag for animation
@@ -112,14 +106,12 @@ export class TdLoadingComponent {
   }
 
   outAnimationCompleted(): void {
-    /* little hack to reset the loader value and animation before removing it from DOM
+   /* little hack to reset the loader value and animation before removing it from DOM
     * else, the loader will appear with prev value when its registered again
     * and will do an animation going prev value to 0.
     */
-    this._reset = false;
     this.value = 0;
     setTimeout(() => {
-      this._reset = true;
       this._animationOut.next(undefined);
     });
   }

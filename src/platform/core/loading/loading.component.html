@@ -7,14 +7,14 @@
      layout-align="center center"
      layout-padding
      flex>
-    <md-progress-spinner *ngIf="isCircular() && reset" 
+    <md-progress-spinner *ngIf="isCircular()" 
                         [mode]="mode"
                         [value]="value" 
                         color="primary" 
                         [style.height]="getCircleDiameter()"
                         [style.width]="getCircleDiameter()">
     </md-progress-spinner>
-    <md-progress-bar *ngIf="isLinear() && reset" 
+    <md-progress-bar *ngIf="isLinear()" 
                      [mode]="mode"
                      [value]="value"
                      color="primary">
