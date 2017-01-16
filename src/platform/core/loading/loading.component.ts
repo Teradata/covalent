@@ -49,6 +49,11 @@ export class TdLoadingComponent {
   animation: boolean = false;
 
   /**
+   * Content injected into loading component.
+   */
+  content: TemplatePortal;
+
+  /**
    * Sets mode of [TdLoadingComponent] to LoadingMode.Determinate or LoadingMode.Indeterminate
    */
   set mode(mode: LoadingMode) {
@@ -58,13 +63,12 @@ export class TdLoadingComponent {
     return this._mode;
   }
 
-  content: TemplatePortal;
-
   /**
    * Sets value of [TdLoadingComponent] if mode is 'LoadingMode.Determinate'
    */
   set value(value: number) {
     this._value = value;
+    // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
   }
   get value(): number {
@@ -85,6 +89,10 @@ export class TdLoadingComponent {
    */
   type: LoadingType = LoadingType.Circular;
 
+  /**
+   * color: primary' | 'accent' | 'warn'
+   * Sets theme color of [TdLoadingComponent] rendered.
+   */
   color: 'primary' | 'accent' | 'warn' = 'primary';
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
@@ -144,6 +152,7 @@ export class TdLoadingComponent {
     * and will do an animation going prev value to 0.
     */
     this.value = 0;
+    // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     setTimeout(() => {
       this._animationOut.next(undefined);
@@ -156,12 +165,14 @@ export class TdLoadingComponent {
   startInAnimation(): Observable<any> {
     setTimeout(() => {
       this.animation = true;
+      // Check for changes for `OnPush` change detection
       this._changeDetectorRef.markForCheck();
     });
     /* need to switch back to the selected mode, so we have saved it in another variable
     *  and then recover it. (issue with protractor)
     */
     this._mode = this._defaultMode;
+    // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     return this._animationIn.asObservable();
   }
@@ -175,6 +186,7 @@ export class TdLoadingComponent {
     * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */
     this._mode = LoadingMode.Determinate;
+    // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     return this._animationOut.asObservable();
   }

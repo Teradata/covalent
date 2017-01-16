@@ -79,6 +79,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * tdLoadingStrategy?: LoadingStrategy or ['replace' | 'overlay']
+   * Sets the strategy of loading mask depending on value.
+   * Defaults to [LoadingMode.Replace | 'replace'].
+   */
   @Input('tdLoadingStrategy')
   set strategy(stategy: LoadingStrategy) {
     switch (stategy) {
