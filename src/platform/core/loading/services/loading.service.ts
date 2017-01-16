@@ -39,6 +39,9 @@ export class TdLoadingService {
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _overlay: Overlay,
               private _injector: Injector) {
+    this.createFullScreenComponent({
+      name: 'td-loading-main',
+    });
   }
 
   createComponent(strategy: LoadingStrategy, options: ILoadingOptions, viewContainerRef: ViewContainerRef,
@@ -178,7 +181,7 @@ export class TdLoadingService {
    * Resolves a request for the loading mask referenced by the name parameter.
    * Can optionally pass registers argument to set a number of register calls.
    */
-  public register(name: string, registers: number = 1): boolean {
+  public register(name: string = 'td-loading-main', registers: number = 1): boolean {
     if (this._context[name]) {
       registers = registers < 1 ? 1 : registers;
       this._context[name].times += registers;
@@ -197,7 +200,7 @@ export class TdLoadingService {
    * Registers a request for the loading mask referenced by the name parameter.
    * Can optionally pass resolves argument to set a number of resolve calls.
    */
-  public resolve(name: string, resolves: number = 1): boolean {
+  public resolve(name: string = 'td-loading-main', resolves: number = 1): boolean {
     if (this._context[name]) {
       resolves = resolves < 1 ? 1 : resolves;
       if (this._context[name].times > 0) {
