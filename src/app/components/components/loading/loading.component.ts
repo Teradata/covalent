@@ -61,6 +61,8 @@ export class LoadingDemoComponent implements AfterViewInit {
     type: 'function(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef)',
   }];
 
+  demo1: boolean = false;
+
   constructor(private _loadingService: TdLoadingService) {
     this._loadingService.create({
       name: 'test.overlay.determinate',
@@ -69,31 +71,24 @@ export class LoadingDemoComponent implements AfterViewInit {
       color: 'warn',
     });
     this._loadingService.create({
-      name: 'test2.overlay.determinate',
-      type: LoadingType.Linear,
-      mode: LoadingMode.Determinate,
-    });
-    this._loadingService.create({
       name: 'test.overlay.indeterminate',
+      type: LoadingType.Linear,
       mode: LoadingMode.Indeterminate,
       color: 'accent',
-    });
-    this._loadingService.create({
-      name: 'test2.overlay.indeterminate',
-      type: LoadingType.Linear,
-      mode: LoadingMode.Indeterminate,
     });
   }
 
   ngAfterViewInit(): void {
-    this.registerLoadingDirective();
+    this.startDirectives();
   }
 
-  modeChange(): void {
-    while (this.replaceRegistered > 0) {
-      this.resolveLoadingDirective();
+  toggleDemo1(): void {
+    if (this.demo1) {
+      this._loadingService.register('overlay.accent.star');
+    } else {
+      this._loadingService.resolve('overlay.accent.star');
     }
-    clearInterval(this._intervalForDirective);
+    this.demo1 = !this.demo1;
   }
 
   registerCircleLoadingMain(): void {
@@ -126,32 +121,10 @@ export class LoadingDemoComponent implements AfterViewInit {
     }
   }
 
-  registerLoadingDirective(): void {
-    clearInterval(this._intervalForDirective);
-    if (this.determinate) {
-      this._loadingService.register('test.determinate');
-      this._loadingService.register('test2.determinate');
-      this.mockValuesForLoadingDirective();
-    } else {
-      this._loadingService.register('test.indeterminate');
-      this._loadingService.register('test2.indeterminate');
-    }
-    this.replaceRegistered++;
+  startDirectives(): void {
+    this._loadingService.register('overlay.accent.star');
   }
 
-  resolveLoadingDirective(): void {
-    clearInterval(this._intervalForDirective);
-    if (this.replaceRegistered > 0) {
-      this.replaceRegistered--;
-    }
-    if (this.determinate) {
-      this._loadingService.resolve('test.determinate');
-      this._loadingService.resolve('test2.determinate');
-    } else {
-      this._loadingService.resolve('test.indeterminate');
-      this._loadingService.resolve('test2.indeterminate');
-    }
-  }
 
   mockValuesForLoadingDirective(): void {
     let value: number = 0;

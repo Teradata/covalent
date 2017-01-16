@@ -3,71 +3,71 @@
   <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div layout="row" layout-align="start center" flex>
-      <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
-        <md-button-toggle mdTooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
-        <md-button-toggle mdTooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
-      </md-button-toggle-group>
-    </div>
-    <p>Loading Registered: {{replaceRegistered}} times</p>
-    <div *ngIf="!determinate">
-      <h3>Indeterminate Mode</h3>
-      <p>Circular Type</p>
-      <div *tdLoading="'test.indeterminate'; strategy:'overlay'; mode:'indeterminate'; type:'circular'; color:'accent'">
-        <div layout="column" flex>
-          <md-input-container flex>
-            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
-          </md-input-container>
-        </div>
-      </div>
-      <p>Linear Type</p>
-      <template tdLoading="test2.indeterminate" loadingType="linear" tdLoadingColor="warn">
-        <div layout="column" flex>
-          <md-input-container flex>
-            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
-          </md-input-container>
-        </div>
-      </template>
-    </div>
-    <div *ngIf="determinate">
-      <h3>Determinate Mode</h3>
-      <p>Circular Type</p>
-      <template tdLoading="test.determinate" loadingMode="determinate" loadingBehavior="overlay">
-        <div layout="column" flex>
-          <md-input-container flex>
-            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
-          </md-input-container>
-        </div>
-      </template>
-      <p>Linear Type</p>
-      <template tdLoading="test2.determinate" loadingType="linear" loadingMode="determinate">
-        <div layout="column" flex>
-          <md-input-container flex>
-            <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc" rows="4"></textarea>
-          </md-input-container>
-        </div>
-      </template>
-    </div>
+
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="registerCircleLoadingMain()">Circle Loading Main</button>
-    <button md-button color="primary" (click)="registerLinearLoadingMain()">Linear Loading Main</button>
-    <button md-button color="primary" (click)="registerLoadingDirective()">Register Loading Directive</button>
-    <button md-button color="primary" (click)="resolveLoadingDirective()">Resolve Loading Directive</button>
-  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Overlay strategy - accent color in `*` syntax</h3>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div *tdLoading="'overlay.accent.star'; strategy:'overlay'; color:'accent'">
+          <div layout="column" flex>
+            <md-input-container flex>
+              <input md-input placeholder="Name"/>
+            </md-input-container>
+            <md-input-container flex>
+              <textarea md-input placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
+        </div>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleDemo1()">Register/Resolve</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div *tdLoading="'overlay.accent.star'; strategy:'overlay'; color:'accent'">
+              <div layout="column" flex>
+                <md-input-container flex>
+                  <input md-input placeholder="Name"/>
+                </md-input-container>
+                <md-input-container flex>
+                  <textarea md-input placeholder="Description" rows="4"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleDemo1()">Register/Resolve</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+              demo1: boolean = false;
+
+              ngAfterViewInit(): void {
+                this._loadingService.register('overlay.accent.star');
+              }
+
+              toggleDemo1(): void {
+                if (this.demo1) {
+                  this._loadingService.register('overlay.accent.star');
+                } else {
+                  this._loadingService.resolve('overlay.accent.star');
+                }
+                this.demo1 = !this.demo1;
+              }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>TdLoadingDirective</md-card-title>
