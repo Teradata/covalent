@@ -11,12 +11,14 @@ export interface ITdLoadingConfig {
   name: string;
   type?: LoadingType;
   mode?: LoadingMode;
+  color?: 'primary' | 'accent' | 'warn';
 }
 
 export class TdLoadingConfig implements ITdLoadingConfig {
   name: string;
   type?: LoadingType;
   mode?: LoadingMode;
+  color?: 'primary' | 'accent' | 'warn';
 
   constructor(config: ITdLoadingConfig) {
     this.name = config.name;
@@ -25,6 +27,7 @@ export class TdLoadingConfig implements ITdLoadingConfig {
     }
     this.mode = config.mode ? config.mode : LoadingMode.Indeterminate;
     this.type = config.type ? config.type : LoadingType.Circular;
+    this.color = config.color ? config.color : 'primary';
   }
 }
 

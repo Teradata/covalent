@@ -143,5 +143,8 @@ export class TdLoadingFactory {
     if (options.mode !== undefined) {
       instance.mode = options.mode;
     }
+    if (options.color !== undefined) {
+      instance.color = options.color;
+    }
   }
 }

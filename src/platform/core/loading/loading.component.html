@@ -9,14 +9,14 @@
     <md-progress-spinner *ngIf="isCircular()" 
                         [mode]="mode"
                         [value]="value" 
-                        color="primary" 
+                        [color]="color" 
                         [style.height]="getCircleDiameter()"
                         [style.width]="getCircleDiameter()">
     </md-progress-spinner>
     <md-progress-bar *ngIf="isLinear()" 
                      [mode]="mode"
                      [value]="value"
-                     color="primary">
+                     [color]="color">
     </md-progress-bar>
   </div>
   <template [cdkPortalHost]="content"></template>

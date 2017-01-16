@@ -66,6 +66,7 @@ export class LoadingDemoComponent implements AfterViewInit {
       name: 'test.overlay.determinate',
       type: LoadingType.Circular,
       mode: LoadingMode.Determinate,
+      color: 'warn',
     });
     this._loadingService.create({
       name: 'test2.overlay.determinate',
@@ -75,6 +76,7 @@ export class LoadingDemoComponent implements AfterViewInit {
     this._loadingService.create({
       name: 'test.overlay.indeterminate',
       mode: LoadingMode.Indeterminate,
+      color: 'accent',
     });
     this._loadingService.create({
       name: 'test2.overlay.indeterminate',

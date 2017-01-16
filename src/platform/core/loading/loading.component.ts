@@ -85,6 +85,8 @@ export class TdLoadingComponent {
    */
   type: LoadingType = LoadingType.Circular;
 
+  color: 'primary' | 'accent' | 'warn' = 'primary';
+
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   getHeight(): string {
