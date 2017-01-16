@@ -1,6 +1,5 @@
-<div [tdFade]="animation"
-     (fadeOut)="outAnimationCompleted()"
-     (fadeIn)="inAnimationCompleted()"
+<div [@tdFadeInOut]="animation"
+     (@tdFadeInOut.done)="animationComplete($event)"
      [style.min-height]="getHeight()"
      class="td-loading"
      [class.td-overlay]="overlay"

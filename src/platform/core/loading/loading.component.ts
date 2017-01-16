@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AnimationTransitionEvent } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -12,10 +12,15 @@ export enum LoadingMode {
   Indeterminate = <any>'indeterminate',
 }
 
+import { TdFadeInOutAnimation } from '../common/common.module';
+
 @Component({
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
+  animations: [
+    TdFadeInOutAnimation(),
+  ],
 })
 export class TdLoadingComponent {
 
@@ -93,6 +98,15 @@ export class TdLoadingComponent {
     return this.type === LoadingType.Linear;
   }
 
+  animationComplete(event: AnimationTransitionEvent): void {
+    // Check to see if its "in" or "out" animation to execute the proper callback
+    if (!event.fromState) {
+      this.inAnimationCompleted();
+    } else {
+      this.outAnimationCompleted();
+    }
+  }
+
   inAnimationCompleted(): void {
     this._animationIn.next(undefined);
   }
@@ -114,7 +128,9 @@ export class TdLoadingComponent {
    * Starts in animation and returns an observable for completition event.
    */
   startInAnimation(): Observable<any> {
-    this.animation = false;
+    setTimeout(() => {
+      this.animation = true;
+    });
     /* need to switch back to the selected mode, so we have saved it in another variable
     *  and then recover it. (issue with protractor)
     */
@@ -126,7 +142,7 @@ export class TdLoadingComponent {
    * Starts out animation and returns an observable for completition event.
    */
   startOutAnimation(): Observable<any> {
-    this.animation = true;
+    this.animation = false;
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
     * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */

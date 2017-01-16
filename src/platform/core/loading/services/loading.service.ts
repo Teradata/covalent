@@ -178,7 +178,7 @@ export class TdLoadingService {
   public setValue(name: string, value: number): boolean {
     if (this._loadingSources[name]) {
       let instance: TdLoadingComponent = this._context[name].loadingRef.instance;
-      if (instance.mode === LoadingMode.Determinate && !instance.animation) {
+      if (instance.mode === LoadingMode.Determinate && instance.animation) {
         instance.value = value;
         return true;
       }
