@@ -23,7 +23,7 @@ export class TdLoadingConfig implements ITdLoadingConfig {
   constructor(config: ITdLoadingConfig) {
     this.name = config.name;
     if (!this.name) {
-      throw 'Name is required for Loading Component.';
+      throw 'Name is required for [TdLoading] configuration.';
     }
     this.mode = config.mode ? config.mode : LoadingMode.Indeterminate;
     this.type = config.type ? config.type : LoadingType.Circular;
@@ -73,7 +73,11 @@ export class TdLoadingService {
                   templateRef: TemplateRef<Object>): ILoadingRef {
     let directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
-      throw `Name duplication: Loading  Component name conflict with ${name}.`;
+      // need to set timeout since throwing an error onInit sometimes overrides other errors.
+      setTimeout(() => {
+        throw `Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`;
+      });
+      return;
     }
     if (directiveConfig.strategy === LoadingStrategy.Overlay) {
       this._context[directiveConfig.name] = this._loadingFactory.createOverlayComponent(directiveConfig, viewContainerRef, templateRef);
