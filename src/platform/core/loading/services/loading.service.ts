@@ -60,7 +60,7 @@ export class TdLoadingService {
 
   /**
    * params:
-   * - options: ILoadingDirectiveConfig
+   * - config: ILoadingDirectiveConfig
    * - viewContainerRef: ViewContainerRef
    * - templateRef: TemplateRef<Object>
    *
@@ -89,9 +89,9 @@ export class TdLoadingService {
 
   /**
    * params:
-   * - options: ITdLoadingConfig
+   * - config: ITdLoadingConfig
    *
-   * Creates a fullscreen loading mask and attaches it to the DOM.
+   * Creates a fullscreen loading mask and attaches it to the DOM with the given configuration.
    */
   public create(config: ITdLoadingConfig): void {
     let fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);
@@ -103,10 +103,10 @@ export class TdLoadingService {
    * 
    * Please use the `create()` method.
    */
-  public createOverlayComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef): void {
+  public createOverlayComponent(config: ITdLoadingConfig, viewContainerRef: ViewContainerRef): void {
     /* tslint:disable-next-line */
     console.warn("createOverlayComponent() is deprecated.  Please use create() instead");
-    this.create(options);
+    this.create(config);
   }
 
   /**

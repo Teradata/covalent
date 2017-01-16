@@ -20,6 +20,9 @@ export interface ILoadingRef {
   times?: number;
 }
 
+/**
+ * NOTE: @internal usage only.
+ */
 @Injectable()
 export class TdLoadingFactory {
 
@@ -28,10 +31,16 @@ export class TdLoadingFactory {
               private _injector: Injector) {
   }
 
+  /**
+   * Uses material `Overlay` services to create a DOM element and attach the loading component
+   * into it. Leveraging the state and configuration from it.
+   * 
+   * Saves a reference in context to be called when registering/resolving the loading element.
+   */
   public createFullScreenComponent(options: ITdLoadingConfig): ILoadingRef {
     (<IInternalLoadingOptions>options).height = undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.FullScreen;
-    let loadingRef: ILoadingRef = this._initializeContext(options);
+    let loadingRef: ILoadingRef = this._initializeContext();
     let loading: boolean = false;
     let overlayRef: OverlayRef;
     loadingRef.observable
@@ -55,6 +64,13 @@ export class TdLoadingFactory {
     return loadingRef;
   }
 
+  /**
+   * Creates a loading component dynamically and attaches it into the given viewContainerRef.
+   * Leverages TemplatePortals from material to inject the template inside of it so it fits 
+   * perfecly when overlaying it.
+   * 
+   * Saves a reference in context to be called when registering/resolving the loading element.
+   */
   public createOverlayComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
                                 templateRef: TemplateRef<Object>): ILoadingRef {
     (<IInternalLoadingOptions>options).height = undefined;
@@ -77,6 +93,13 @@ export class TdLoadingFactory {
     return loadingRef;
   }
 
+
+  /**
+   * Creates a loading component dynamically and attaches it into the given viewContainerRef.
+   * Replaces the template with the loading component depending if it was registered or resolved.
+   * 
+   * Saves a reference in context to be called when registering/resolving the loading element.
+   */
   public createReplaceComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
                                 templateRef: TemplateRef<Object>): ILoadingRef {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
@@ -107,6 +130,9 @@ export class TdLoadingFactory {
     return loadingRef;
   }
 
+  /**
+   * Creates a fullscreen overlay for the loading usage.
+   */
   private _createOverlay(): OverlayRef {
     let state: OverlayState = new OverlayState();
     state.hasBackdrop = false;
@@ -114,15 +140,21 @@ export class TdLoadingFactory {
     return this._overlay.create(state);
   }
 
+  /**
+   * Creates a generic component dynamically waiting to be attached to a viewContainerRef.
+   */
   private _createComponent(options: IInternalLoadingOptions): ILoadingRef {
-    let compRef: ILoadingRef = this._initializeContext(options);
+    let compRef: ILoadingRef = this._initializeContext();
     compRef.componentRef = this._componentFactoryResolver
     .resolveComponentFactory(TdLoadingComponent).create(this._injector);
     this._mapOptions(options, compRef.componentRef.instance);
     return compRef;
   }
 
-  private _initializeContext(options: IInternalLoadingOptions): ILoadingRef {
+  /**
+   * Initialize context for loading component.
+   */
+  private _initializeContext(): ILoadingRef {
     let subject: Subject<any> = new Subject<any>();
     return {
       observable: subject.asObservable(),
@@ -132,6 +164,9 @@ export class TdLoadingFactory {
     };
   }
 
+  /**
+   * Maps configuration to the loading component instance.
+   */
   private _mapOptions(options: IInternalLoadingOptions, instance: TdLoadingComponent): void {
     instance.style = options.style;
     if (options.type !== undefined) {
