@@ -13,7 +13,7 @@
     <div *ngIf="!determinate">
       <h3>Indeterminate Mode</h3>
       <p>Circular Type</p>
-      <template tdLoading="test.indeterminate">
+      <div *tdLoading="'test.indeterminate'; strategy:'overlay'; mode:'indeterminate'; type:'circular'">
         <div layout="column" flex>
           <md-input-container flex>
             <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
@@ -22,7 +22,7 @@
             <textarea md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc" rows="4"></textarea>
           </md-input-container>
         </div>
-      </template>
+      </div>
       <p>Linear Type</p>
       <template tdLoading="test2.indeterminate" loadingType="linear">
         <div layout="column" flex>
@@ -38,7 +38,7 @@
     <div *ngIf="determinate">
       <h3>Determinate Mode</h3>
       <p>Circular Type</p>
-      <template tdLoading="test.determinate" loadingMode="determinate">
+      <template tdLoading="test.determinate" loadingMode="determinate" loadingBehavior="overlay">
         <div layout="column" flex>
           <md-input-container flex>
             <input md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name"/>
@@ -63,8 +63,8 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="registerCircleLoadingMain()">3 Second Circle Loading Main</button>
-    <button md-button color="primary" (click)="registerLinearLoadingMain()">3 Second Linear Loading Main</button>
+    <button md-button color="primary" (click)="registerCircleLoadingMain()">Circle Loading Main</button>
+    <button md-button color="primary" (click)="registerLinearLoadingMain()">Linear Loading Main</button>
     <button md-button color="primary" (click)="registerLoadingDirective()">Register Loading Directive</button>
     <button md-button color="primary" (click)="resolveLoadingDirective()">Resolve Loading Directive</button>
   </md-card-actions>
@@ -158,9 +158,9 @@
     <h2><code>TdLoadingService</code></h2>
     <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
     <p>Simply add this service as a provider to be able to use it in a component.</p>
-    <p>TdLoadingService.createOverlayComponent() method recieves as parameter an object that implements the [ILoadingOptions] interface.</p>
+    <p>TdLoadingService.createOverlayComponent() method recieves as parameter an object that implements the [ITdLoadingConfig] interface.</p>
     <td-highlight lang="typescript">
-      interface ILoadingOptions {{'{'}}
+      interface ITdLoadingConfig {{'{'}}
         name: string;
         type?: LoadingType;
         mode?: LoadingMode;
@@ -182,11 +182,11 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '@covalent/core';
+        import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '@covalent/core';
         ...
         export class Demo {
           constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
-            let options: ILoadingOptions = {
+            let options: ITdLoadingConfig = {
               name: 'stringName',
               type: LoadingType.Circular,
               mode: LoadingMode.Indeterminate,

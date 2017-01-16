@@ -1,10 +1,11 @@
-import { Component, ViewContainerRef, AfterViewInit, HostBinding } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '../../../../platform/core';
+import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '../../../../platform/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'loading-demo',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
@@ -57,29 +58,29 @@ export class LoadingDemoComponent implements AfterViewInit {
     description: `Creates a fullscreen loading mask and attaches it to the viewContainerRef.
                   Only displayed when the mask has a request registered on it.`,
     name: 'createOverlayComponent',
-    type: 'function(options: ILoadingOptions, viewContainerRef: ViewContainerRef)',
+    type: 'function(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef)',
   }];
 
-  constructor(viewContainer: ViewContainerRef,
-              private _loadingService: TdLoadingService) {
-    let options: ILoadingOptions = {
+  constructor(private _loadingService: TdLoadingService) {
+    this._loadingService.create({
       name: 'test.overlay.determinate',
       type: LoadingType.Circular,
       mode: LoadingMode.Determinate,
-    };
-    this._loadingService.createOverlayComponent(options, viewContainer);
-    let options2: ILoadingOptions = {
+    });
+    this._loadingService.create({
       name: 'test2.overlay.determinate',
       type: LoadingType.Linear,
       mode: LoadingMode.Determinate,
-    };
-    this._loadingService.createOverlayComponent(options2, viewContainer);
-    options.name = 'test.overlay.indeterminate';
-    options.mode = LoadingMode.Indeterminate;
-    this._loadingService.createOverlayComponent(options, viewContainer);
-    options2.name = 'test2.overlay.indeterminate';
-    options2.mode = LoadingMode.Indeterminate;
-    this._loadingService.createOverlayComponent(options2, viewContainer);
+    });
+    this._loadingService.create({
+      name: 'test.overlay.indeterminate',
+      mode: LoadingMode.Indeterminate,
+    });
+    this._loadingService.create({
+      name: 'test2.overlay.indeterminate',
+      type: LoadingType.Linear,
+      mode: LoadingMode.Indeterminate,
+    });
   }
 
   ngAfterViewInit(): void {

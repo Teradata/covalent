@@ -3,8 +3,6 @@ import { TemplatePortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { LoadingStyle } from './services/loading.service';
-
 export enum LoadingType {
   Circular = <any>'circular',
   Linear = <any>'linear',
@@ -18,6 +16,12 @@ export enum LoadingMode {
 export enum LoadingStrategy {
   Overlay = <any>'overlay',
   Replace = <any>'replace',
+}
+
+export enum LoadingStyle {
+  FullScreen = <any>'fullscreen',
+  Overlay = <any>'overlay',
+  None = <any>'none',
 }
 
 import { TdFadeInOutAnimation } from '../common/common.module';

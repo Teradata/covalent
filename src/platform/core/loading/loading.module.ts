@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { CovalentCommonModule } from '../common/common.module';
 
 import { TdLoadingService } from './services/loading.service';
+import { TdLoadingFactory } from './services/loading.factory';
 import { TdLoadingDirective } from './directives/loading.directive';
 import { TdLoadingComponent } from './loading.component';
 
@@ -20,7 +21,7 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
 ];
 
 export { LoadingType, LoadingMode, LoadingStrategy } from './loading.component';
-export { TdLoadingService, ILoadingOptions } from './services/loading.service';
+export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
 
 @NgModule({
   imports: [
@@ -46,7 +47,7 @@ export class CovalentLoadingModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentLoadingModule,
-      providers: [ TdLoadingService ],
+      providers: [ TdLoadingService, TdLoadingFactory ],
     };
   }
 }
