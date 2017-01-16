@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
-import { LoadingType, LoadingMode } from '../loading.component';
+import { LoadingType, LoadingMode, LoadingStrategy } from '../loading.component';
 import { TdLoadingService, ILoadingOptions } from '../services/loading.service';
 
 @Directive({
@@ -11,6 +11,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
 
   private _type: LoadingType;
   private _mode: LoadingMode;
+  private _strategy: LoadingStrategy;
   private _name: string;
 
   /**
@@ -28,6 +29,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingType.Circular | 'circular'].
    */
   @Input('loadingType')
+  set typeDeprecated(type: LoadingType) {
+    this.type = type;
+  }
+  @Input('tdLoadingType')
   set type(type: LoadingType) {
     switch (type) {
       case LoadingType.Linear:
@@ -45,6 +50,10 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Defaults to [LoadingMode.Indeterminate | 'indeterminate'].
    */
   @Input('loadingMode')
+  set modeDeprecated(mode: LoadingMode) {
+    this.mode = mode;
+  }
+  @Input('tdLoadingMode')
   set mode(mode: LoadingMode) {
     switch (mode) {
       case LoadingMode.Determinate:
@@ -56,12 +65,24 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     }
   }
 
-  constructor(private _viewContainer: ViewContainerRef,
+  @Input('tdLoadingStrategy')
+  set strategy(stategy: LoadingStrategy) {
+    switch (stategy) {
+      case LoadingStrategy.Overlay:
+        this._strategy = LoadingStrategy.Overlay;
+        break;
+      default:
+        this._strategy = LoadingStrategy.Replace;
+        break;
+    }
+  }
+
+  constructor(private _viewContainerRef: ViewContainerRef,
               private _templateRef: TemplateRef<Object>,
               private _loadingService: TdLoadingService) {}
 
   ngOnInit(): void {
-    this._viewContainer.createEmbeddedView(this._templateRef);
+    this._viewContainerRef.createEmbeddedView(this._templateRef);
     this._registerComponent();
   }
 
@@ -82,6 +103,6 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
       type: this._type,
       mode: this._mode,
     };
-    this._loadingService.createReplaceComponent(options, this._viewContainer, this._templateRef);
+    this._loadingService.createComponent(this._strategy, options, this._viewContainerRef, this._templateRef);
   }
 }

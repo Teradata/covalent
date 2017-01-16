@@ -19,7 +19,7 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
 
-export { LoadingType, LoadingMode } from './loading.component';
+export { LoadingType, LoadingMode, LoadingStrategy } from './loading.component';
 export { TdLoadingService, ILoadingOptions } from './services/loading.service';
 
 @NgModule({

@@ -1,6 +1,9 @@
-import { Component, AnimationTransitionEvent } from '@angular/core';
+import { Component, AnimationTransitionEvent, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { TemplatePortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+
+import { LoadingStyle } from './services/loading.service';
 
 export enum LoadingType {
   Circular = <any>'circular',
@@ -12,9 +15,15 @@ export enum LoadingMode {
   Indeterminate = <any>'indeterminate',
 }
 
+export enum LoadingStrategy {
+  Overlay = <any>'overlay',
+  Replace = <any>'replace',
+}
+
 import { TdFadeInOutAnimation } from '../common/common.module';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
@@ -28,6 +37,7 @@ export class TdLoadingComponent {
   private _animationOut: Subject<any> = new Subject<any>();
   private _mode: LoadingMode = LoadingMode.Indeterminate;
   private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
+  private _value: number = 0;
 
   /**
    * Flag for animation
@@ -44,16 +54,20 @@ export class TdLoadingComponent {
     return this._mode;
   }
 
+  content: TemplatePortal;
+
   /**
    * Sets value of [TdLoadingComponent] if mode is 'LoadingMode.Determinate'
    */
-  value: number = 0;
+  set value(value: number) {
+    this._value = value;
+    this._changeDetectorRef.markForCheck();
+  }
+  get value(): number {
+    return this._value;
+  }
 
-  /**
-   * overlay: boolean
-   * Sets if [TdLoadingComponent] is fullscreen or not.
-   */
-  overlay: boolean = false;
+  style: LoadingStyle = LoadingStyle.None;
 
   /**
    * height: number
@@ -67,11 +81,16 @@ export class TdLoadingComponent {
    */
   type: LoadingType = LoadingType.Circular;
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   getHeight(): string {
-    if (this.height) {
-      return `${this.height}px`;
+    // Ignore height if style is `overlay` or `fullscreen`.
+    // Add height if child elements have a height and style is `none`, else return default height.
+    if (this.isOverlay() || this.isFullScreen()) {
+      return undefined;
+    } else {
+      return this.height ? `${this.height}px` : '150px';
     }
-    return '150px';
   }
 
   getCircleDiameter(): string {
@@ -90,6 +109,14 @@ export class TdLoadingComponent {
 
   isLinear(): boolean {
     return this.type === LoadingType.Linear;
+  }
+
+  isFullScreen(): boolean {
+    return this.style === LoadingStyle.FullScreen;
+  }
+
+  isOverlay(): boolean {
+    return this.style === LoadingStyle.Overlay;
   }
 
   animationComplete(event: AnimationTransitionEvent): void {
@@ -111,6 +138,7 @@ export class TdLoadingComponent {
     * and will do an animation going prev value to 0.
     */
     this.value = 0;
+    this._changeDetectorRef.markForCheck();
     setTimeout(() => {
       this._animationOut.next(undefined);
     });
@@ -122,11 +150,13 @@ export class TdLoadingComponent {
   startInAnimation(): Observable<any> {
     setTimeout(() => {
       this.animation = true;
+      this._changeDetectorRef.markForCheck();
     });
     /* need to switch back to the selected mode, so we have saved it in another variable
     *  and then recover it. (issue with protractor)
     */
     this._mode = this._defaultMode;
+    this._changeDetectorRef.markForCheck();
     return this._animationIn.asObservable();
   }
 
@@ -139,6 +169,7 @@ export class TdLoadingComponent {
     * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */
     this._mode = LoadingMode.Determinate;
+    this._changeDetectorRef.markForCheck();
     return this._animationOut.asObservable();
   }
 }

@@ -1,8 +1,7 @@
-<div [@tdFadeInOut]="animation"
+<div class="td-loading-wrapper" [style.min-height]="getHeight()" [class.td-overlay]="isOverlay() || isFullScreen()" [class.td-fullscreen]="isFullScreen()">
+  <div [@tdFadeInOut]="animation"
      (@tdFadeInOut.done)="animationComplete($event)"
-     [style.min-height]="getHeight()"
      class="td-loading"
-     [class.td-overlay]="overlay"
      layout="row"
      layout-align="center center"
      layout-padding
@@ -19,4 +18,6 @@
                      [value]="value"
                      color="primary">
     </md-progress-bar>
+  </div>
+  <template [cdkPortalHost]="content"></template>
 </div>
