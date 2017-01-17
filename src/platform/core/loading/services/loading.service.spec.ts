@@ -34,7 +34,6 @@ describe('Service: Loading', () => {
     overlayContainerElement.innerHTML = '';
   });
 
-
   it('should render default fullscreen loading component', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);

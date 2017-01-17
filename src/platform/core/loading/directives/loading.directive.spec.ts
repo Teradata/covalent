@@ -280,7 +280,6 @@ class TdLoadingBasicTestComponent {
 
 }
 
-
 @Component({
   selector: 'td-loading-duplication-test',
   template: `
