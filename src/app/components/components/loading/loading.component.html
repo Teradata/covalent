@@ -325,7 +325,7 @@
     <h2><code>TdLoadingService</code></h2>
     <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
     <p>Simply add this service as a provider to be able to use it in a component.</p>
-    <p>TdLoadingService.createOverlayComponent() method recieves as parameter an object that implements the [ITdLoadingConfig] interface.</p>
+    <p>TdLoadingService.create() method recieves as parameter an object that implements the [ITdLoadingConfig] interface.</p>
     <td-highlight lang="typescript">
       interface ITdLoadingConfig {{'{'}}
         name: string;
@@ -353,12 +353,12 @@
         ...
         export class Demo {
           constructor(private _loadingService: TdLoadingService) {
-            this._loadingService.createOverlayComponent({
+            this._loadingService.create({
               name: 'stringName',
               type: LoadingType.Circular,
               mode: LoadingMode.Indeterminate,
               color: 'accent',
-            }, viewContainerRef);
+            });
           }
 
           registerLoading(): void {
