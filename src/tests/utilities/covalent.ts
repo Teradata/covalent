@@ -1,50 +1,24 @@
-/*
- * Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
- * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
- */
-
 import { DebugElement } from '@angular/core';
 
-export class Covalent {
+export class CovalentTests {
 
   /*
   * Utility function that traverses down the DOM to find the dialog overlay and then 
-  * traverses down the DOM of that overlay to get the Update button.
+  * traverses down the DOM of that overlay to get the Update/Stop button.
   * This could be a brittle way of doing this so best to keep this in a utility
   * function that can be changed for all places needing this.
   */
-  public static clickDialogUpdateButton(component: any): void {
+  public static confirmDialog(component: any): void {
       let elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
       for (let index: number = 0; index < elements.length; index++) {
           let dialogOverlayId: string = elements.item(index).attributes.getNamedItem('id').value;
           // try to click update on any error dialogs found.  If there is an error trying to click one just 
           // hide the error as it may not be clickable yet in the DOM or something
           try {
-            let updateButton: Element = document.getElementById(dialogOverlayId).children.item(0)
+            let confirmButton: Element = document.getElementById(dialogOverlayId).children.item(0)
                                 .children.item(0).children.item(1).children.item(0).children.item(0)
                                 .children.item(0).children.item(1).children.item(1).children.item(1);
-            component.renderer.invokeElementMethod(updateButton, 'dispatchEvent', [new MouseEvent('click', { bubbles: true, cancelable: true })]);
-          } catch (e) {/*do nothing*/}
-      }
-  }
-
-  /*
-  * Utility function that traverses down the DOM to find the dialog overlay and then 
-  * traverses down the DOM of that overlay to get the Stop button.
-  * This could be a brittle way of doing this so best to keep this in a utility
-  * function that can be changed for all places needing this.
-  */
-  public static clickDialogStopButton(component: any): void {
-      let elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
-      for (let index: number = 0; index < elements.length; index++) {
-          let dialogOverlayId: string = elements.item(index).attributes.getNamedItem('id').value;
-          // try to click stop on any error dialogs found.  If there is an error trying to click one just 
-          // hide the error as it may not be clickable yet in the DOM or something
-          try {
-            let stopButton: Element = document.getElementById(dialogOverlayId).children.item(0)
-                                .children.item(0).children.item(1).children.item(0).children.item(0)
-                                .children.item(0).children.item(1).children.item(1).children.item(1);
-            component.renderer.invokeElementMethod(stopButton, 'dispatchEvent', [new MouseEvent('click', { bubbles: true, cancelable: true })]);
+            component.renderer.invokeElementMethod(confirmButton, 'dispatchEvent', [new MouseEvent('click', { bubbles: true, cancelable: true })]);
           } catch (e) {/*do nothing*/}
       }
   }
@@ -55,15 +29,15 @@ export class Covalent {
   * This could be a brittle way of doing this so best to keep this in a utility
   * function that can be changed for all places needing this.
   */
-  public static clickDialogShareButton(component: any): void {
+  public static clickDialogButton(component: any, buttonText: string): void {
       let elements: NodeList = document.querySelectorAll('[md-button]');
       for (let index: number = 0; index < elements.length; index++) {
           // try to click share on any buttons found with share as the text content.  If there is an error trying to click one just 
           // hide the error as it may not be clickable yet in the DOM or something
           try {
-            let shareButton: Node = elements.item(index);
-            if (shareButton.firstChild.textContent === 'Share') {
-                component.renderer.invokeElementMethod(shareButton, 'dispatchEvent', [new MouseEvent('click', { bubbles: true, cancelable: true })]);
+            let button: Node = elements.item(index);
+            if (button.firstChild.textContent === buttonText) {
+                component.renderer.invokeElementMethod(button, 'dispatchEvent', [new MouseEvent('click', { bubbles: true, cancelable: true })]);
             }
           } catch (e) {/*do nothing*/}
       }
