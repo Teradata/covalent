@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 export enum OrderBy {
   ASC = <any>'asc',
-  DESC = <any>'desc'
+  DESC = <any>'desc',
 }
 
 export interface IHeaders {
