@@ -1,0 +1,94 @@
+<md-card>
+  <md-card-header>
+    <md-icon md-card-avatar>view_list</md-icon>
+    <md-card-title class="md-display-1">Management List</md-card-title>
+  </md-card-header>  
+  <md-card-subtitle>An item list with a menu for sorting & filtering</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <md-card>
+        <md-list class="pull-top">
+          <md-list-item>
+            <md-icon md-list-avatar>apps</md-icon>
+            <h3 md-line>App Name</h3>
+            <span flex></span>
+            <span flex="35" class="pad-left md-body-1 tc-grey-500">Owner</span>
+            <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+              <a [md-menu-trigger-for]="menu" class="md-body-1" layout="row" layout-align="start end">
+                <span>{{dateFilter}}</span>
+                <md-icon>arrow_drop_down</md-icon>
+              </a>
+              <a class="md-sort-header" (click)="sortBy(sortKey)">
+                <span layout="row" layout-align="start center" flex>
+                  <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                </span>
+              </a>
+            </span>
+            <md-menu y-position="below" #menu="mdMenu">
+              <button *ngFor="let option of dateOptions" md-menu-item (click)="filterDateOption(option)"><md-icon *ngIf= "option === dateFilter">done</md-icon><span *ngIf= "option !== dateFilter" flex></span><span>{{option}}</span>
+              </button>
+            </md-menu>
+          </md-list-item>
+            <template let-attr let-last="attr" ngFor [ngForOf]="listAttrs">
+              <md-list-item>
+              <md-icon md-list-avatar>timelapse</md-icon>
+              <h3 md-line> {{attr.name}} </h3>
+              <span flex></span>
+              <span hide-xs flex="10">
+                {{attr.owner}}
+              </span>
+              <span hide-xs flex="60" class="text-right md-body-1 tc-grey-500 pad-right">
+                {{attr[sortKey] | date:'medium'}}
+              </span>
+            </md-list-item>
+            <md-divider *ngIf="!last" md-inset></md-divider>
+            </template>
+        </md-list>
+      </md-card>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+          <a [md-menu-trigger-for]="menu" class="md-body-1" layout="row" layout-align="start end">
+            <span>{{dateFilter}}</span>
+            <md-icon>arrow_drop_down</md-icon>
+          </a>
+          <a class="md-sort-header" (click)="sortBy(sortKey)">
+            <span layout="row" layout-align="start center" flex>
+              <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+            </span>
+          </a>
+        </span>
+        <md-menu y-position="below" #menu="mdMenu">
+          <button *ngFor="let option of dateOptions" md-menu-item (click)="filterDateOption(option)"><md-icon *ngIf= "option === dateFilter">done</md-icon><span *ngIf= "option !== dateFilter" flex></span><span>{{option}}</span>
+          </button>
+        </md-menu>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+      import { TdManagementListComponent, IHeaders, OrderBy } from '@covalent/core';
+      ...
+
+      dateOptions: Object[] = ['Updated', 'Created']; //filter options
+      dateFilter: string = 'Updated'; //default filter option
+      sortKey: string = 'updated_at'; //key for sorting
+      constructor(@Inject(forwardRef(() => TdManagementListComponent)) private _parent: TdManagementListComponent) {
+      }      
+      filterDateOption(dateStr?: string): void {
+        this.dateFilter = dateStr;
+        this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
+      }
+      sortBy(sortKey: string): void {
+        this.listAttrs = this._parent.sortBy(sortKey, this.listAttrs, this.headers);
+      }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

@@ -59,5 +59,10 @@ export class StyleGuideComponent {
     icon: 'filter_none',
     route: 'dialogs',
     title: 'Dialog Patterns',
+  }, {
+    description: 'List, filter & sorting patterns',
+    icon: 'view_list',
+    route: 'management-list',
+    title: 'Management List',
   }];
 }

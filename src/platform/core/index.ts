@@ -111,6 +111,13 @@ export * from './search/search.module';
 import { CovalentStepsModule } from './steps/steps.module';
 export * from './steps/steps.module';
 
+/**
+ * MANAGEMENT LIST
+ */
+
+import { CovalentManagementListModule } from './management-list/management-list.module';
+export * from './management-list/management-list.module';
+
 @NgModule({
   imports: [
     HttpModule,
@@ -133,6 +140,7 @@ export * from './steps/steps.module';
     CovalentPagingModule.forRoot(),
     CovalentSearchModule.forRoot(),
     CovalentStepsModule.forRoot(),
+    CovalentManagementListModule.forRoot(),
   ],
   exports: [
     HttpModule,
@@ -155,6 +163,7 @@ export * from './steps/steps.module';
     CovalentPagingModule,
     CovalentSearchModule,
     CovalentStepsModule,
+    CovalentManagementListModule,
   ],
 })
 export class CovalentCoreModule {
