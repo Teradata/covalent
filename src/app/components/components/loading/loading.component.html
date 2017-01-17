@@ -253,7 +253,7 @@
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <div *tdLoading="'stringName'">
+        <div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">
           ...
         </div>
       ]]>
@@ -261,7 +261,7 @@
     <p>HTML <![CDATA[<template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
-        <template tdLoading="stringName" loadingType="circular|linear" loadingMode="ciruclar|linear">
+        <template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
           ...
         </template>
       ]]>

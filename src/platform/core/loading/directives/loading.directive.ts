@@ -97,7 +97,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
   }
 
   /**
-   * color?: "primary" | "accent" | "warn"
+   * tdLoadingColor?: "primary" | "accent" | "warn"
    * Sets the theme color of the loading component. Defaults to "primary"
    */
   @Input('tdLoadingColor') color: 'primary' | 'accent' | 'warn' = 'primary';

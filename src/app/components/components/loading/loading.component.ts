@@ -22,13 +22,23 @@ export class LoadingDemoComponent implements AfterViewInit {
     type: 'string',
   }, {
     description: 'Sets the type of loading mask depending on value. Defaults to [LoadingType.Circular | "circular"]',
-    name: 'loadingType?',
+    name: 'tdLoadingType?',
     type: 'LoadingType or ["linear" | "circular"]',
   }, {
     description: `Sets the mode of loading mask depending on value.
                   Defaults to [LoadingMode.Indeterminate | "indeterminate"].`,
-    name: 'loadingMode?',
+    name: 'tdLoadingMode?',
     type: 'LoadingMode or ["determinate" | "indeterminate"]',
+  }, {
+    description: `Sets the strategy of loading mask depending on value.
+                  Defaults to [LoadingMode.Replace | "replace"]`,
+    name: 'tdLoadingStrategy?',
+    type: 'LoadingStrategy or ["replace" | "overlay"]',
+  }, {
+    description: `Sets the theme color of the loading component. 
+                  Defaults to "primary"`,
+    name: 'tdLoadingColor?',
+    type: '"primary" | "accent" | "warn"',
   }];
 
   loadingServiceMethods: Object[] = [{
@@ -49,7 +59,7 @@ export class LoadingDemoComponent implements AfterViewInit {
   }, {
     description: `Creates a fullscreen loading mask and attaches it to the viewContainerRef.
                   Only displayed when the mask has a request registered on it.`,
-    name: 'createOverlayComponent',
+    name: 'create',
     type: 'function(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef)',
   }];
 
