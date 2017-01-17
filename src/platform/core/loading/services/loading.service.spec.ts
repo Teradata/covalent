@@ -173,7 +173,7 @@ describe('Service: Loading', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
       expect(loadingService.register('unknown')).toBeFalsy();
       expect(loadingService.setValue('unknown', 50)).toBeFalsy();
-      expect(loadingService.register('unknown')).toBeFalsy();
+      expect(loadingService.resolve('unknown')).toBeFalsy();
       done();
     })();
   });

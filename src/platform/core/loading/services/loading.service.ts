@@ -73,11 +73,7 @@ export class TdLoadingService {
                   templateRef: TemplateRef<Object>): ILoadingRef {
     let directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
-      // need to set timeout since throwing an error onInit sometimes overrides other errors.
-      setTimeout(() => {
-        throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
-      });
-      return;
+      throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
     }
     if (directiveConfig.strategy === LoadingStrategy.Overlay) {
       this._context[directiveConfig.name] = this._loadingFactory.createOverlayComponent(directiveConfig, viewContainerRef, templateRef);

@@ -15,6 +15,7 @@ describe('Directive: Loading', () => {
       declarations: [
         TdLoadingDefaultTestComponent,
         TdLoadingBasicTestComponent,
+        TdLoadingDuplicationTestComponent,
       ],
       imports: [
         CovalentLoadingModule.forRoot(),
@@ -232,7 +233,16 @@ describe('Directive: Loading', () => {
   it('should render fail to create component without a name and throw error', (done: DoneFn) => {
     inject([TdLoadingService], (loadingService: TdLoadingService) => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBasicTestComponent);
-      let component: TdLoadingBasicTestComponent = fixture.debugElement.componentInstance;
+      expect(function(): void {
+        fixture.detectChanges();
+      }).toThrowError();
+      done();
+    })();
+  });
+
+  it('should render fail to create component because of duplicate name', (done: DoneFn) => {
+    inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDuplicationTestComponent);
       expect(function(): void {
         fixture.detectChanges();
       }).toThrowError();
@@ -267,5 +277,21 @@ class TdLoadingBasicTestComponent {
   mode: LoadingMode;
   strategy: LoadingStrategy;
   color: string;
+
+}
+
+
+@Component({
+  selector: 'td-loading-duplication-test',
+  template: `
+  <template tdLoading="name1">
+    <div class="content"></div>
+  </template>
+  <template tdLoading="name1">
+    <div class="content"></div>
+  </template>
+  `,
+})
+class TdLoadingDuplicationTestComponent {
 
 }
