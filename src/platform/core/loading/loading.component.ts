@@ -4,12 +4,12 @@ import { Observable } from 'rxjs/Observable';
 
 export enum LoadingType {
   Circular = <any>'circular',
-  Linear = <any>'linear'
+  Linear = <any>'linear',
 }
 
 export enum LoadingMode {
   Determinate = <any>'determinate',
-  Indeterminate = <any>'indeterminate'
+  Indeterminate = <any>'indeterminate',
 }
 
 @Component({
