@@ -92,6 +92,7 @@ export class TdLoadingService {
    * - config: ITdLoadingConfig
    *
    * Creates a fullscreen loading mask and attaches it to the DOM with the given configuration.
+   * Only displayed when the mask has a request registered on it.
    */
   public create(config: ITdLoadingConfig): void {
     let fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);

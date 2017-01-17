@@ -26,13 +26,15 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            constructor(private _loadingService: TdLoadingService) {}
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {}
 
-            toggleDefaultFullscreenDemo(): void {
-              this._loadingService.register();
-              setTimeout(() => {
-                this._loadingService.resolve();
-              }, 3000);
+              toggleDefaultFullscreenDemo(): void {
+                this._loadingService.register();
+                setTimeout(() => {
+                  this._loadingService.resolve();
+                }, 3000);
+              }
             }
           ]]>
         </td-highlight>
@@ -65,20 +67,22 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            constructor(private _loadingService: TdLoadingService) {
-              this._loadingService.create({
-                name: 'configFullscreenDemo',
-                type: LoadingType.Linear,
-                mode: LoadingMode.Indeterminate,
-                color: 'accent',
-              });
-            }
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {
+                this._loadingService.create({
+                  name: 'configFullscreenDemo',
+                  type: LoadingType.Linear,
+                  mode: LoadingMode.Indeterminate,
+                  color: 'accent',
+                });
+              }
 
-            toggleConfigFullscreenDemo(): void {
-              this._loadingService.register('configFullscreenDemo');
-              setTimeout(() => {
-                this._loadingService.resolve('configFullscreenDemo');
-              }, 3000);
+              toggleConfigFullscreenDemo(): void {
+                this._loadingService.register('configFullscreenDemo');
+                setTimeout(() => {
+                  this._loadingService.resolve('configFullscreenDemo');
+                }, 3000);
+              }
             }
           ]]>
         </td-highlight>
@@ -139,21 +143,23 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            constructor(private _loadingService: TdLoadingService) {}
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {}
 
-            toggleReplaceTemplateSyntax(): void {
-              this._loadingService.register('replaceTemplateSyntax');
-              let value: number = 0;
-              let interval: number = setInterval(() => {
-                this._loadingService.setValue('replaceTemplateSyntax', value);
-                value = value + 10;
-                if (value > 100) {
-                  clearInterval(interval);
-                }
-              }, 250);
-              setTimeout(() => {
-                this._loadingService.resolve('replaceTemplateSyntax');
-              }, 3000);
+              toggleReplaceTemplateSyntax(): void {
+                this._loadingService.register('replaceTemplateSyntax');
+                let value: number = 0;
+                let interval: number = setInterval(() => {
+                  this._loadingService.setValue('replaceTemplateSyntax', value);
+                  value = value + 10;
+                  if (value > 100) {
+                    clearInterval(interval);
+                  }
+                }, 250);
+                setTimeout(() => {
+                  this._loadingService.resolve('replaceTemplateSyntax');
+                }, 3000);
+              }
             }
           ]]>
         </td-highlight>
@@ -206,21 +212,23 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            overlayStarSyntax: boolean = false;
+            export class Demo {
+              overlayStarSyntax: boolean = false;
 
-            constructor(private _loadingService: TdLoadingService) {}
+              constructor(private _loadingService: TdLoadingService) {}
 
-            ngAfterViewInit(): void {
-              this._loadingService.register('overlayStarSyntax');
-            }
-
-            toggleOverlayStarSyntax(): void {
-              if (this.overlayStarSyntax) {
+              ngAfterViewInit(): void {
                 this._loadingService.register('overlayStarSyntax');
-              } else {
-                this._loadingService.resolve('overlayStarSyntax');
               }
-              this.overlayStarSyntax = !this.overlayStarSyntax;
+
+              toggleOverlayStarSyntax(): void {
+                if (this.overlayStarSyntax) {
+                  this._loadingService.register('overlayStarSyntax');
+                } else {
+                  this._loadingService.resolve('overlayStarSyntax');
+                }
+                this.overlayStarSyntax = !this.overlayStarSyntax;
+              }
             }
           ]]>
         </td-highlight>
@@ -323,6 +331,7 @@
         name: string;
         type?: LoadingType;
         mode?: LoadingMode;
+        color?: 'primary' | 'accent' | 'warn';
       }
     </td-highlight>
     <h3>Methods:</h3>
@@ -340,17 +349,16 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '@covalent/core';
+        import { TdLoadingService, LoadingType, LoadingMode } from '@covalent/core';
         ...
         export class Demo {
-          constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
-            let options: ITdLoadingConfig = {
+          constructor(private _loadingService: TdLoadingService) {
+            this._loadingService.createOverlayComponent({
               name: 'stringName',
               type: LoadingType.Circular,
               mode: LoadingMode.Indeterminate,
-            };
-            this._loadingService.createOverlayComponent(options, viewContainerRef);
+              color: 'accent',
+            }, viewContainerRef);
           }
 
           registerLoading(): void {

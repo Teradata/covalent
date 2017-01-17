@@ -45,22 +45,22 @@ export class LoadingDemoComponent implements AfterViewInit {
     description: `Registers a request for the loading mask referenced by the name parameter.
                   Can optionally pass registers argument to set a number of register calls.`,
     name: 'register',
-    type: 'function(name: string, registers: number = 1)',
+    type: 'function(name?: string, registers: number = 1)',
   }, {
     description: `Resolves a request for the loading mask referenced by the name parameter.
                   Can optionally pass resolves argument to set a number of resolve calls.`,
     name: 'resolve',
-    type: 'function(name: string, resolves: number = 1)',
+    type: 'function(name?: string, resolves: number = 1)',
   }, {
     description: `Set value on a loading mask referenced by the name parameter. 
                   Usage only available if its mode is 'determinate'.`,
     name: 'setValue',
     type: 'function(name: string, value: number)',
   }, {
-    description: `Creates a fullscreen loading mask and attaches it to the viewContainerRef.
+    description: `Creates a fullscreen loading mask and attaches it to the DOM with the given configuration.
                   Only displayed when the mask has a request registered on it.`,
     name: 'create',
-    type: 'function(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef)',
+    type: 'function(options: ITdLoadingConfig)',
   }];
 
   overlayStarSyntax: boolean = false;
