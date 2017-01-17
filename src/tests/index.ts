@@ -3,4 +3,4 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-export { CovalentTests } from './utilities/covalent';
+export { CovalentTests } from './utilities/covalent-tests';
