@@ -269,4 +269,3 @@ class TdLoadingBasicTestComponent {
   color: string;
 
 }
-

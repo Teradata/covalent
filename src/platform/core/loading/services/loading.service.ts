@@ -23,7 +23,7 @@ export class TdLoadingConfig implements ITdLoadingConfig {
   constructor(config: ITdLoadingConfig) {
     this.name = config.name;
     if (!this.name) {
-      throw 'Name is required for [TdLoading] configuration.';
+      throw Error('Name is required for [TdLoading] configuration.');
     }
     this.mode = config.mode ? config.mode : LoadingMode.Indeterminate;
     this.type = config.type ? config.type : LoadingType.Circular;
@@ -75,7 +75,7 @@ export class TdLoadingService {
     if (this._context[directiveConfig.name]) {
       // need to set timeout since throwing an error onInit sometimes overrides other errors.
       setTimeout(() => {
-        throw `Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`;
+        throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
       });
       return;
     }
@@ -120,7 +120,9 @@ export class TdLoadingService {
   public removeComponent(name: string): void {
     if (this._context[name]) {
       this._context[name].subject.unsubscribe();
-      this._context[name].componentRef.destroy();
+      if (this._context[name].componentRef) {
+        this._context[name].componentRef.destroy();
+      }
       this._context[name] = undefined;
       delete this._context[name];
     }
