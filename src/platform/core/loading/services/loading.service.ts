@@ -95,6 +95,7 @@ export class TdLoadingService {
    */
   public create(config: ITdLoadingConfig): void {
     let fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);
+    this.removeComponent(fullscreenConfig.name);
     this._context[fullscreenConfig.name] = this._loadingFactory.createFullScreenComponent(fullscreenConfig);
   }
 
