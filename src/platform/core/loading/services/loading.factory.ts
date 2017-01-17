@@ -93,7 +93,6 @@ export class TdLoadingFactory {
     return loadingRef;
   }
 
-
   /**
    * Creates a loading component dynamically and attaches it into the given viewContainerRef.
    * Replaces the template with the loading component depending if it was registered or resolved.
