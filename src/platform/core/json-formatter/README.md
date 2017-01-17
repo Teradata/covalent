@@ -1,6 +1,6 @@
 # td-json-formatter
 
-`td-json-formatter` renders a javascript object in Json format the same way the chrome/firefox console would render it using `console.log()`.
+`td-json-formatter` renders a javascript object in JSON format the same way the chrome/firefox console would render it using `console.log()`.
 
 Hovering on nodes will bring out a preview tooltip of the first 5 objects/properties of the node.
 
@@ -15,6 +15,7 @@ Properties:
 | `key?` | `string` | Tag to be displayed as root of formatted object.
 | `data` | `any` | JS object to be formatted.
 | `levelsOpen?` | `number` | Levels opened by default when JS object is formatted and rendered.
+| `refresh?` | `function()` | Refreshes json-formatter and rerenders [data]
 
 ## Setup
 
