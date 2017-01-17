@@ -13,16 +13,8 @@ import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '..
 })
 export class LoadingDemoComponent implements AfterViewInit {
 
-  private _intervalForDirective: number;
-  private _intervalForMain: number;
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
-  demo: {name?: string, description?: string} = {};
-  demo2: {name?: string, description?: string} = {};
-  replaceRegistered: number = 0;
-  determinate: boolean = false;
 
   loadingAttrs: Object[] = [{
     description: 'Name reference of the loading mask, used to register/resolve requests to the mask.',
@@ -61,17 +53,11 @@ export class LoadingDemoComponent implements AfterViewInit {
     type: 'function(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef)',
   }];
 
-  demo1: boolean = false;
+  overlayStarSyntax: boolean = false;
 
   constructor(private _loadingService: TdLoadingService) {
     this._loadingService.create({
-      name: 'test.overlay.determinate',
-      type: LoadingType.Circular,
-      mode: LoadingMode.Determinate,
-      color: 'warn',
-    });
-    this._loadingService.create({
-      name: 'test.overlay.indeterminate',
+      name: 'configFullscreenDemo',
       type: LoadingType.Linear,
       mode: LoadingMode.Indeterminate,
       color: 'accent',
@@ -82,74 +68,45 @@ export class LoadingDemoComponent implements AfterViewInit {
     this.startDirectives();
   }
 
-  toggleDemo1(): void {
-    if (this.demo1) {
-      this._loadingService.register('overlay.accent.star');
-    } else {
-      this._loadingService.resolve('overlay.accent.star');
-    }
-    this.demo1 = !this.demo1;
+  toggleDefaultFullscreenDemo(): void {
+    this._loadingService.register();
+    setTimeout(() => {
+      this._loadingService.resolve();
+    }, 3000);
   }
 
-  registerCircleLoadingMain(): void {
-    if (this.determinate) {
-      this._loadingService.register('test.overlay.determinate');
-      this.mockValuesForLoadingMain(LoadingType.Circular);
-      setTimeout(() => {
-        this._loadingService.resolve('test.overlay.determinate');
-      }, 3000);
-    } else {
-      this._loadingService.register('test.overlay.indeterminate');
-      setTimeout(() => {
-        this._loadingService.resolve('test.overlay.indeterminate');
-      }, 3000);
-    }
+  toggleConfigFullscreenDemo(): void {
+    this._loadingService.register('configFullscreenDemo');
+    setTimeout(() => {
+      this._loadingService.resolve('configFullscreenDemo');
+    }, 3000);
   }
 
-  registerLinearLoadingMain(): void {
-    if (this.determinate) {
-      this._loadingService.register('test2.overlay.determinate');
-      this.mockValuesForLoadingMain(LoadingType.Linear);
-      setTimeout(() => {
-        this._loadingService.resolve('test2.overlay.determinate');
-      }, 3000);
+  toggleOverlayStarSyntax(): void {
+    if (this.overlayStarSyntax) {
+      this._loadingService.register('overlayStarSyntax');
     } else {
-      this._loadingService.register('test2.overlay.indeterminate');
-      setTimeout(() => {
-        this._loadingService.resolve('test2.overlay.indeterminate');
-      }, 3000);
+      this._loadingService.resolve('overlayStarSyntax');
     }
+    this.overlayStarSyntax = !this.overlayStarSyntax;
+  }
+
+  toggleReplaceTemplateSyntax(): void {
+    this._loadingService.register('replaceTemplateSyntax');
+    let value: number = 0;
+    let interval: number = setInterval(() => {
+      this._loadingService.setValue('replaceTemplateSyntax', value);
+      value = value + 10;
+      if (value > 100) {
+        clearInterval(interval);
+      }
+    }, 250);
+    setTimeout(() => {
+      this._loadingService.resolve('replaceTemplateSyntax');
+    }, 3000);
   }
 
   startDirectives(): void {
-    this._loadingService.register('overlay.accent.star');
-  }
-
-
-  mockValuesForLoadingDirective(): void {
-    let value: number = 0;
-    this._intervalForDirective = setInterval(() => {
-      this._loadingService.setValue('test.determinate', value);
-      this._loadingService.setValue('test2.determinate', value);
-      value = value + 10;
-      if (value > 100) {
-        clearInterval(this._intervalForDirective);
-      }
-    }, 250);
-  }
-
-  mockValuesForLoadingMain(loadingType: LoadingType): void {
-    let value: number = 0;
-    this._intervalForMain = setInterval(() => {
-      if (loadingType === LoadingType.Circular) {
-        this._loadingService.setValue('test.overlay.determinate', value);
-      } else {
-        this._loadingService.setValue('test2.overlay.determinate', value);
-      }
-      value = value + 10;
-      if (value > 100) {
-        clearInterval(this._intervalForMain);
-      }
-    }, 250);
+    this._loadingService.register('overlayStarSyntax');
   }
 }
