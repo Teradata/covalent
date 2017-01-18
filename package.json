@@ -16,6 +16,7 @@
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "ng test --code-coverage --single-run",
     "coverage-win": "start chrome ./coverage/index.html",
+    "coverage-mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/coverage.lcov | node ./node_modules/coveralls/bin/coveralls.js",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
@@ -66,7 +67,7 @@
     "highlight.js": "9.6.0",
     "rxjs": "^5.0.1",
     "showdown": "1.4.2",
-    "zone.js": "^0.7.2",
+    "zone.js": "0.7.2",
     "d3": "^4.2.1"
   },
   "devDependencies": {
