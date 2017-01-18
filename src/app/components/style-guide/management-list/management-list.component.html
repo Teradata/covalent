@@ -13,22 +13,19 @@
             <md-icon md-list-avatar>apps</md-icon>
             <h3 md-line>App Name</h3>
             <span flex></span>
-            <span flex="35" class="pad-left md-body-1 tc-grey-500">Owner</span>
-            <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
-              <a [md-menu-trigger-for]="menu" class="md-body-1" layout="row" layout-align="start end">
-                <span>{{dateFilter}}</span>
-                <md-icon>arrow_drop_down</md-icon>
-              </a>
-              <a class="md-sort-header" (click)="sortBy(sortKey)">
-                <span layout="row" layout-align="start center" flex>
-                  <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
-                </span>
-              </a>
+            <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
+          <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+          <md-select flex="90" placeholder="{{placeholderText}}">
+            <md-option *ngFor="let option of dateOptions" [value]="option" (click)="filterDateOption(option)">
+              {{option}}
+            </md-option>
+          </md-select>
+          </span>
+          <a class="md-sort-header" (click)="sortBy(sortKey)">
+            <span layout="row" layout-align="start center" flex>
+              <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
             </span>
-            <md-menu y-position="below" #menu="mdMenu">
-              <button *ngFor="let option of dateOptions" md-menu-item (click)="filterDateOption(option)"><md-icon *ngIf= "option === dateFilter">done</md-icon><span *ngIf= "option !== dateFilter" flex></span><span>{{option}}</span>
-              </button>
-            </md-menu>
+          </a>
           </md-list-item>
             <template let-attr let-last="attr" ngFor [ngForOf]="listAttrs">
               <md-list-item>

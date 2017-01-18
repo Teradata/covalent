@@ -50,6 +50,7 @@ export class ManagementListComponent {
 
   dateOptions: Object[] = ['Updated', 'Created'];
   dateFilter: string = 'Updated';
+  placeholderText: string = 'Updated';
   sortKey: string = 'updated_at';
   headers: IHeaders = {
     updated_at: OrderBy.ASC,
@@ -59,8 +60,9 @@ export class ManagementListComponent {
   filterDateOption(dateStr?: string): void {
     this.dateFilter = dateStr;
     this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
+    this.placeholderText = '';
   }
-  
+
   sortBy(sortKey: string): void {
     let sortedData: Object[];
     if (this.headers[sortKey] === OrderBy.ASC) {
