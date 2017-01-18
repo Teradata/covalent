@@ -2,9 +2,9 @@
 
 @mixin td-loading-theme($theme) {
   $background: map-get($theme, background);
-  .td-loading {
-    &.td-overlay {
-      background: rgba(md-color($background, dialog), 0.9);
+  .td-loading-wrapper {
+    &.td-overlay .td-loading {
+      background: rgba(md-color($background, dialog), 0.8);
     }
   }
 }
