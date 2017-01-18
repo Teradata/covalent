@@ -3,12 +3,23 @@
   <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-   <h3 class="md-title">Default main loading mask</h3>
+    <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
+    <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
+        <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+          <div layout="column" flex>
+            <md-input-container flex>
+              <input md-input placeholder="Name"/>
+            </md-input-container>
+            <md-input-container flex>
+              <textarea md-input placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
+        </div>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
+          <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
@@ -16,8 +27,18 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
+            <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+              <div layout="column" flex>
+                <md-input-container flex>
+                  <input md-input placeholder="Name"/>
+                </md-input-container>
+                <md-input-container flex>
+                  <textarea md-input placeholder="Description" rows="4"></textarea>
+                </md-input-container>
+              </div>
+            </div>
             <div layout="row">
-              <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
+              <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -26,18 +47,22 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            export class Demo implements OnInit {
+            export class Demo implements AfterViewInit {
+              overlayStarSyntax: boolean = false;
+
               constructor(private _loadingService: TdLoadingService) {}
 
-              ngOnInit(): void {
-                this.toggleDefaultFullscreenDemo();
+              ngAfterViewInit(): void {
+                this._loadingService.register('overlayStarSyntax');
               }
 
-              toggleDefaultFullscreenDemo(): void {
-                this._loadingService.register();
-                setTimeout(() => {
-                  this._loadingService.resolve();
-                }, 1500);
+              toggleOverlayStarSyntax(): void {
+                if (this.overlayStarSyntax) {
+                  this._loadingService.register('overlayStarSyntax');
+                } else {
+                  this._loadingService.resolve('overlayStarSyntax');
+                }
+                this.overlayStarSyntax = !this.overlayStarSyntax;
               }
             }
           ]]>
@@ -48,55 +73,8 @@
 </md-card>
 <md-card>
   <md-card-content>
-   <h3 class="md-title">Configurable main loading mask</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <div layout="row">
-          <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
-        </div>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <div layout="row">
-              <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
-            </div>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            import { TdLoadingService } from '@covalent/core';
-            ...
-            export class Demo {
-              constructor(private _loadingService: TdLoadingService) {
-                this._loadingService.create({
-                  name: 'configFullscreenDemo',
-                  type: LoadingType.Linear,
-                  mode: LoadingMode.Indeterminate,
-                  color: 'accent',
-                });
-              }
-
-              toggleConfigFullscreenDemo(): void {
-                this._loadingService.register('configFullscreenDemo');
-                setTimeout(() => {
-                  this._loadingService.resolve('configFullscreenDemo');
-                }, 1500);
-              }
-            }
-          ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">Replace strategy - determinate mode in template syntax</h3>
+    <h3 class="md-title">[tdLoading] directive with template syntax</h3>
+    <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
@@ -173,22 +151,13 @@
 </md-card>
 <md-card>
   <md-card-content>
-    <h3 class="md-title">Overlay strategy - accent color in (*) syntax</h3>
+    <h3 class="md-title">Preloaded [TdLoading] fullscreen mask</h3>
+    <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-        <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-          <div layout="column" flex>
-            <md-input-container flex>
-              <input md-input placeholder="Name"/>
-            </md-input-container>
-            <md-input-container flex>
-              <textarea md-input placeholder="Description" rows="4"></textarea>
-            </md-input-container>
-          </div>
-        </div>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
+          <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
@@ -196,18 +165,8 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-              <div layout="column" flex>
-                <md-input-container flex>
-                  <input md-input placeholder="Name"/>
-                </md-input-container>
-                <md-input-container flex>
-                  <textarea md-input placeholder="Description" rows="4"></textarea>
-                </md-input-container>
-              </div>
-            </div>
             <div layout="row">
-              <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
+              <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -216,22 +175,67 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            export class Demo implements AfterViewInit {
-              overlayStarSyntax: boolean = false;
-
+            export class Demo implements OnInit {
               constructor(private _loadingService: TdLoadingService) {}
 
-              ngAfterViewInit(): void {
-                this._loadingService.register('overlayStarSyntax');
+              ngOnInit(): void {
+                this.toggleDefaultFullscreenDemo();
               }
 
-              toggleOverlayStarSyntax(): void {
-                if (this.overlayStarSyntax) {
-                  this._loadingService.register('overlayStarSyntax');
-                } else {
-                  this._loadingService.resolve('overlayStarSyntax');
-                }
-                this.overlayStarSyntax = !this.overlayStarSyntax;
+              toggleDefaultFullscreenDemo(): void {
+                this._loadingService.register();
+                setTimeout(() => {
+                  this._loadingService.resolve();
+                }, 1500);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+   <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
+    <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdLoadingService } from '@covalent/core';
+            ...
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {
+                this._loadingService.create({
+                  name: 'configFullscreenDemo',
+                  mode: LoadingMode.Indeterminate,
+                  type: LoadingType.Linear,
+                  color: 'accent',
+                });
+              }
+
+              toggleConfigFullscreenDemo(): void {
+                this._loadingService.register('configFullscreenDemo');
+                setTimeout(() => {
+                  this._loadingService.resolve('configFullscreenDemo');
+                }, 1500);
               }
             }
           ]]>
