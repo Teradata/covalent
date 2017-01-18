@@ -26,14 +26,18 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            export class Demo {
+            export class Demo implements OnInit {
               constructor(private _loadingService: TdLoadingService) {}
+
+              ngOnInit(): void {
+                this.toggleDefaultFullscreenDemo();
+              }
 
               toggleDefaultFullscreenDemo(): void {
                 this._loadingService.register();
                 setTimeout(() => {
                   this._loadingService.resolve();
-                }, 3000);
+                }, 1500);
               }
             }
           ]]>
@@ -81,7 +85,7 @@
                 this._loadingService.register('configFullscreenDemo');
                 setTimeout(() => {
                   this._loadingService.resolve('configFullscreenDemo');
-                }, 3000);
+                }, 1500);
               }
             }
           ]]>
@@ -212,7 +216,7 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            export class Demo {
+            export class Demo implements AfterViewInit {
               overlayStarSyntax: boolean = false;
 
               constructor(private _loadingService: TdLoadingService) {}

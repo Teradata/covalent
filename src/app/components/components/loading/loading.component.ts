@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, AfterViewInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, OnInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -11,7 +11,7 @@ import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '..
   templateUrl: './loading.component.html',
   animations: [slideInDownAnimation],
 })
-export class LoadingDemoComponent implements AfterViewInit {
+export class LoadingDemoComponent implements AfterViewInit, OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -74,6 +74,10 @@ export class LoadingDemoComponent implements AfterViewInit {
     });
   }
 
+  ngOnInit(): void {
+    this.toggleDefaultFullscreenDemo();
+  }
+
   ngAfterViewInit(): void {
     this.startDirectives();
   }
@@ -82,14 +86,14 @@ export class LoadingDemoComponent implements AfterViewInit {
     this._loadingService.register();
     setTimeout(() => {
       this._loadingService.resolve();
-    }, 3000);
+    }, 1500);
   }
 
   toggleConfigFullscreenDemo(): void {
     this._loadingService.register('configFullscreenDemo');
     setTimeout(() => {
       this._loadingService.resolve('configFullscreenDemo');
-    }, 3000);
+    }, 1500);
   }
 
   toggleOverlayStarSyntax(): void {
