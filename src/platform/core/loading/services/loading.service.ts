@@ -7,6 +7,15 @@ import { Subscription } from 'rxjs/Subscription';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';
 import { TdLoadingFactory, ILoadingRef } from './loading.factory';
 
+/**
+ * @deprecated in 1.0.0-beta.1
+ */
+export interface ILoadingOptions {
+  name: string;
+  type?: LoadingType;
+  mode?: LoadingMode;
+}
+
 export interface ITdLoadingConfig {
   name: string;
   type?: LoadingType;
