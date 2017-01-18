@@ -73,20 +73,20 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-      import { TdManagementListComponent, IHeaders, OrderBy } from '@covalent/core';
-      ...
+      export class ManagementListComponent {
 
-      dateOptions: Object[] = ['Updated', 'Created']; //filter options
-      dateFilter: string = 'Updated'; //default filter option
-      sortKey: string = 'updated_at'; //key for sorting
-      constructor(@Inject(forwardRef(() => TdManagementListComponent)) private _parent: TdManagementListComponent) {
-      }      
-      filterDateOption(dateStr?: string): void {
-        this.dateFilter = dateStr;
-        this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
-      }
-      sortBy(sortKey: string): void {
-        this.listAttrs = this._parent.sortBy(sortKey, this.listAttrs, this.headers);
+        dateOptions: Object[] = ['Updated', 'Created']; //filter options
+        dateFilter: string = 'Updated'; //default filter option
+        sortKey: string = 'updated_at'; //key for sorting
+        
+        filterDateOption(dateStr?: string): void {
+          this.dateFilter = dateStr;
+          this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
+        }
+        sortBy(sortKey: string): void {
+          let sortedData: Object[];
+          ...
+        }
       }
       ]]>
     </td-highlight>

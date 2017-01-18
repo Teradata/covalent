@@ -1,6 +1,13 @@
 import {Component, Inject, forwardRef} from '@angular/core';
 
-import { TdManagementListComponent, IHeaders, OrderBy } from '../../../../platform/core';
+export enum OrderBy {
+  ASC = <any>'asc',
+  DESC = <any>'desc',
+}
+
+export interface IHeaders {
+  [key: string]: OrderBy;
+}
 
 @Component({
   selector: 'design-patterns-management-list',
@@ -49,16 +56,30 @@ export class ManagementListComponent {
     created_at: OrderBy.ASC,
   };
 
-  constructor(@Inject(forwardRef(() => TdManagementListComponent)) private _parent: TdManagementListComponent) {
-  }
-
   filterDateOption(dateStr?: string): void {
     this.dateFilter = dateStr;
     this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
   }
-
+  
   sortBy(sortKey: string): void {
-    this.listAttrs = this._parent.sortBy(sortKey, this.listAttrs, this.headers);
+    let sortedData: Object[];
+    if (this.headers[sortKey] === OrderBy.ASC) {
+      this.headers[sortKey] = OrderBy.DESC;
+    } else {
+      this.headers[sortKey] = OrderBy.ASC;
+    }
+    sortedData = this.listAttrs.sort((rowA: Object, rowB: Object) => {
+      let cellA: string = rowA[sortKey];
+      let cellB: string = rowB[sortKey];
+      let sort: number = 0;
+      if (cellA < cellB) {
+        sort = -1;
+      } else if (cellA > cellB) {
+        sort = 1;
+      }
+      return sort * (this.headers[sortKey] === OrderBy.DESC ? -1 : 1);
+    });
+    this.listAttrs = sortedData;
   }
 
 }
