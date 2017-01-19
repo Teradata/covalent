@@ -18,6 +18,7 @@ const TD_ANIMATIONS: Type<any>[] = [
 
 export { TdToggleDirective, TdFadeDirective };
 export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
+export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 
 /**
  * FORMS
@@ -53,6 +54,7 @@ import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pi
 import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
+import { RouterPathService } from './services/router.path.service';
 
 const TD_PIPES: Type<any>[] = [
   TdTimeAgoPipe,
@@ -89,7 +91,7 @@ export class CovalentCommonModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentCommonModule,
-      providers: [ ],
+      providers: [ RouterPathService ],
     };
   }
 }
