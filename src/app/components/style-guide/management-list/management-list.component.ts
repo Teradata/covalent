@@ -84,4 +84,8 @@ export class ManagementListComponent {
     this.listAttrs = sortedData;
   }
 
+  search(): void {
+    // dummy func
+  }
+
 }
