@@ -83,4 +83,8 @@ export class ManagementListComponent implements OnInit {
     });
   }
 
+  search(): void {
+    // dummy func
+  }
+
 }
