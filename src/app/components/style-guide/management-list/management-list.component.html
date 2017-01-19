@@ -30,8 +30,8 @@
             <md-icon md-list-avatar>apps</md-icon>
             <h3 md-line>App Name</h3>
             <span flex></span>
-            <span hide-xs flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
-            <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+            <span hide-xs flex="40" class="pad-left md-body-1 tc-grey-500">Owner</span>
+            <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
               <md-select flex="90" [(ngModel)]="sortKey">
                 <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
                   {{option.name}}
