@@ -15,9 +15,9 @@
             <span flex></span>
             <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
           <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
-          <md-select flex="90" placeholder="{{placeholderText}}">
-            <md-option *ngFor="let option of dateOptions" [value]="option" (click)="filterDateOption(option)">
-              {{option}}
+          <md-select flex="90" [(ngModel)]="sortKey">
+            <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+              {{option.name}}
             </md-option>
           </md-select>
           </span>
@@ -50,41 +50,49 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <span class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
-          <a [md-menu-trigger-for]="menu" class="md-body-1" layout="row" layout-align="start end">
-            <span>{{dateFilter}}</span>
-            <md-icon>arrow_drop_down</md-icon>
-          </a>
-          <a class="md-sort-header" (click)="sortBy(sortKey)">
-            <span layout="row" layout-align="start center" flex>
-              <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
-            </span>
-          </a>
+        <md-select flex="90" [(ngModel)]="sortKey">
+          <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+            { {option.name}}
+          </md-option>
+        </md-select>
         </span>
-        <md-menu y-position="below" #menu="mdMenu">
-          <button *ngFor="let option of dateOptions" md-menu-item (click)="filterDateOption(option)"><md-icon *ngIf= "option === dateFilter">done</md-icon><span *ngIf= "option !== dateFilter" flex></span><span>{{option}}</span>
-          </button>
-        </md-menu>
+        <a class="md-sort-header" (click)="sortBy(sortKey)">
+          <span layout="row" layout-align="start center" flex>
+            <md-icon class="md-sort-icon">{ {headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+          </span>
+        </a>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-      export class ManagementListComponent {
+        ...
+        export class ManagementListComponent implements OnInit {
 
-        dateOptions: Object[] = ['Updated', 'Created']; //filter options
-        dateFilter: string = 'Updated'; //default filter option
-        sortKey: string = 'updated_at'; //key for sorting
-        
-        filterDateOption(dateStr?: string): void {
-          this.dateFilter = dateStr;
-          this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
+          columnOptions: any[] = [{
+            name: 'Updated',
+            value: 'updated_at',
+          }, {
+            name: 'Created',
+            value: 'created_at',
+          }];
+          sortKey: string = this.columnOptions[0].value;
+          headers: IHeaders = {};
+
+          ngOnInit(): void {
+            this.columnOptions.forEach((option: any) => {
+              this.headers[option.value] = OrderBy.ASC;
+            });
+          }
+          sortBy(sortKey: string): void {
+            if (this.headers[sortKey] === OrderBy.ASC) {
+              this.headers[sortKey] = OrderBy.DESC;
+            } else {
+              this.headers[sortKey] = OrderBy.ASC;
+            }
+            ... // Sorting algorithm goes here
+          }
         }
-        sortBy(sortKey: string): void {
-          let sortedData: Object[];
-          ...
-        }
-      }
       ]]>
     </td-highlight>
   </md-card-content>

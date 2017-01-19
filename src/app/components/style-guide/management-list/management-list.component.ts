@@ -1,4 +1,4 @@
-import {Component, Inject, forwardRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export enum OrderBy {
   ASC = <any>'asc',
@@ -14,7 +14,7 @@ export interface IHeaders {
   styleUrls: ['./management-list.component.scss'],
   templateUrl: './management-list.component.html',
 })
-export class ManagementListComponent {
+export class ManagementListComponent implements OnInit {
 
   listAttrs: Object[] = [{
       'created_at': '2015-12-15T19:00:31Z',
@@ -48,29 +48,29 @@ export class ManagementListComponent {
       'updated_at': '2016-12-08T19:00:31Z',
     }];
 
-  dateOptions: Object[] = ['Updated', 'Created'];
-  dateFilter: string = 'Updated';
-  placeholderText: string = 'Updated';
-  sortKey: string = 'updated_at';
-  headers: IHeaders = {
-    updated_at: OrderBy.ASC,
-    created_at: OrderBy.ASC,
-  };
+  columnOptions: any[] = [{
+    name: 'Updated',
+    value: 'updated_at',
+  }, {
+    name: 'Created',
+    value: 'created_at',
+  }];
+  sortKey: string = this.columnOptions[0].value;
+  headers: IHeaders = {};
 
-  filterDateOption(dateStr?: string): void {
-    this.dateFilter = dateStr;
-    this.sortKey = this.dateFilter === 'Updated' ? 'updated_at' : 'created_at';
-    this.placeholderText = '';
+  ngOnInit(): void {
+    this.columnOptions.forEach((option: any) => {
+      this.headers[option.value] = OrderBy.ASC;
+    });
   }
 
   sortBy(sortKey: string): void {
-    let sortedData: Object[];
     if (this.headers[sortKey] === OrderBy.ASC) {
       this.headers[sortKey] = OrderBy.DESC;
     } else {
       this.headers[sortKey] = OrderBy.ASC;
     }
-    sortedData = this.listAttrs.sort((rowA: Object, rowB: Object) => {
+    this.listAttrs = this.listAttrs.sort((rowA: Object, rowB: Object) => {
       let cellA: string = rowA[sortKey];
       let cellB: string = rowB[sortKey];
       let sort: number = 0;
@@ -81,7 +81,6 @@ export class ManagementListComponent {
       }
       return sort * (this.headers[sortKey] === OrderBy.DESC ? -1 : 1);
     });
-    this.listAttrs = sortedData;
   }
 
 }
