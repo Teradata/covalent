@@ -16,7 +16,7 @@ export interface IHeaders {
 })
 export class ManagementListComponent implements OnInit {
 
-  listAttrs: Object[] = [{
+  data: Object[] = [{
       'created_at': '2015-12-15T19:00:31Z',
       'name': 'On the fly analytics',
       'owner': 'Jason',
@@ -70,7 +70,7 @@ export class ManagementListComponent implements OnInit {
     } else {
       this.headers[sortKey] = OrderBy.ASC;
     }
-    this.listAttrs = this.listAttrs.sort((rowA: Object, rowB: Object) => {
+    this.data = this.data.sort((rowA: Object, rowB: Object) => {
       let cellA: string = rowA[sortKey];
       let cellB: string = rowB[sortKey];
       let sort: number = 0;
