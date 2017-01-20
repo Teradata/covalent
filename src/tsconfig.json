@@ -27,6 +27,6 @@
     "pretty": true
   },
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.*"
   ]
 }
