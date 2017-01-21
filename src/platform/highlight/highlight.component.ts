@@ -30,10 +30,11 @@ export class TdHighlightComponent implements AfterViewInit {
   render(contents: string, codeElement: HTMLElement): void {
     let lines: string[] = contents.split('\n');
 
-    // Remove empty lines
-    lines = lines.filter(function(line: string): boolean {
-      return line.trim().length > 0;
-    });
+    // Remove empty start lines only
+    this._removeEmptyElementAtStart(lines);
+    // Remove empty ending lines only
+    this._removeEmptyElementAtEnd(lines);
+
     // Make it so each line starts at 0 whitespace
     let firstLineWhitespace: string = lines[0].match(/^\s*/)[0];
     let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
@@ -59,6 +60,38 @@ export class TdHighlightComponent implements AfterViewInit {
         .replace('<head>', '')
         .replace('<head/>', '');
       codeElement.innerHTML = highlightedCode.value;
+    }
+  }
+
+  /**
+   * Method to remove empty lines at the beggining of the array
+   */
+  private _removeEmptyElementAtStart(elements: string[]): void {
+    let emptyLines: number = 0;
+    for (; emptyLines < elements.length; emptyLines++) {
+      if (elements[emptyLines].trim().length > 0) {
+        break;
+      }
+    }
+    while (emptyLines--) {
+      elements.shift();
+    }
+  }
+
+
+  /**
+   * Method to remove empty lines at the end of the array
+   */
+  private _removeEmptyElementAtEnd(elements: string[]): void {
+    let emptyLines: number = elements.length - 1;
+    for (; emptyLines >= 0; emptyLines--) {
+      if (elements[emptyLines].trim().length > 0) {
+        break;
+      }
+    }
+    emptyLines = (elements.length - 1) - emptyLines;
+    while (emptyLines--) {
+      elements.pop();
     }
   }
 }
