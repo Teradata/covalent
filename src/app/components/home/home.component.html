@@ -249,7 +249,10 @@
     <div layout="row" layout-align="start center">
       <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
       <span flex></span>
-      <a md-button mdTooltip="Stargazers" mdTooltipPosition="above" href="https://github.com/Teradata/covalent/stargazers" target="_blank"><md-icon class="pad-right-xs">star</md-icon>{{starCount}}</a>
+      <a md-button mdTooltip="Stargazers" mdTooltipPosition="above" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+        <md-icon class="pad-right-xs">star</md-icon>
+        <span *ngIf="starCount">{{starCount}}</span>
+      </a>
       <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
     </div>
   </td-layout-footer>
