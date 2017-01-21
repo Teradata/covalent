@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input, Renderer } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Renderer, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 /* tslint:disable-next-line */ 
 let hljs: any = require('highlight.js/lib');
 
@@ -11,21 +12,37 @@ export class TdHighlightComponent implements AfterViewInit {
 
   @Input('lang') language: string = 'javascript';
 
-  @ViewChild('highlight') content: ElementRef;
-
-  constructor(private renderer: Renderer) {
-
-  }
+  constructor(private _renderer: Renderer,
+              private _elementRef: ElementRef,
+              private _domSanitizer: DomSanitizer) {}
 
   ngAfterViewInit(): void {
     if (!this.language) {
       throw 'Error: language attribute must be defined in TdHighlightComponent.';
     }
-    let codeElement: HTMLElement = this.content.nativeElement;
-    let code: string = codeElement.innerHTML;
-    this.renderer.detachView([].slice.call(codeElement.childNodes));
-    this.renderer.setElementClass(codeElement, 'highlight', true);
-    codeElement.innerHTML = this._render(code);
+    this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+  }
+
+  private _loadContent(code: string): void {
+    if (code && code.trim().length > 0) {
+      // Parse html string into actual HTML elements.
+      let preElement: HTMLPreElement = this._elementFromString(this._render(code));
+      // Clean container
+      this._renderer.setElementProperty(this._elementRef.nativeElement, 'innerHTML', '');
+      // Project DIV element into container
+      this._renderer.projectNodes(this._elementRef.nativeElement, [preElement]);
+    }
+  }
+
+  private _elementFromString(codeStr: string): HTMLPreElement {
+    // Renderer doesnt have a parsing method, so we have to sanitize and use [innerHTML]
+    // to parse the string into DOM element for now.
+    const preElement: HTMLPreElement = this._renderer.createElement(this._elementRef.nativeElement, 'pre');
+    const codeElement: HTMLElement = this._renderer.createElement(preElement, 'code');
+    // Set .highlight class into <code> element
+    this._renderer.setElementClass(codeElement, 'highlight', true);
+    codeElement.innerHTML = this._domSanitizer.sanitize(SecurityContext.HTML, codeStr);
+    return preElement;
   }
 
   private _render(contents: string): string {
@@ -80,7 +97,6 @@ export class TdHighlightComponent implements AfterViewInit {
       elements.shift();
     }
   }
-
 
   /**
    * Method to remove empty lines at the end of the array
