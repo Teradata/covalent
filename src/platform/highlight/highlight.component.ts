@@ -35,8 +35,15 @@ export class TdHighlightComponent implements AfterViewInit {
     // Remove empty ending lines only
     this._removeEmptyElementAtEnd(lines);
 
-    // Make it so each line starts at 0 whitespace
-    let firstLineWhitespace: string = lines[0].match(/^\s*/)[0];
+    // check how much indentation is used by the first actual code line
+    let firstLineWhitespace: string = '';
+    for (let line of lines) {
+      if (line && line.trim().length > 0) {
+        firstLineWhitespace = line.match(/^\s*/)[0];
+        break;
+      }
+    }
+
     let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line
