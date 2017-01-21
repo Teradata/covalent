@@ -18,7 +18,7 @@ export class TdMarkdownComponent implements AfterViewInit {
    * Markdown format content to be parsed as html markup.
    * Used to load data dynamically.
    * 
-   * e.g. Resource file.
+   * e.g. README.md content.
    */
   @Input('content')
   set content(content: string) {
