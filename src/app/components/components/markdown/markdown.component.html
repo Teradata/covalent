@@ -8,92 +8,84 @@
     </md-card>
     <h3>Basic Markdown</h3>
     <td-markdown>
-      <pre><code>
-        # Heading (H1) 
+      # Heading (H1) 
 
-        ## Sub Heading (H2)
+      ## Sub Heading (H2)
 
-        ### Steps (H3)
+      ### Steps (H3)
 
-        ###List Items
+      ###List Items
 
-        * One
-        * Two
-        * Three
-            * A
-            * B
+      * One
+      * Two
+      * Three
+          * A
+          * B
 
-        Emphasis, aka italics, with *asterisks* or _underscores_.
+      Emphasis, aka italics, with *asterisks* or _underscores_.
 
-        Strong emphasis, aka bold, with **asterisks** or __underscores__.
+      Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
-        Combined emphasis with **asterisks and _underscores_**.
-      </code></pre>
+      Combined emphasis with **asterisks and _underscores_**.
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
-          <pre><code>
-            # Heading (H1) 
-                  
-            ## Sub Heading (H2)
-
-            ### Steps (H3)
+          # Heading (H1) 
                 
-            ###List Items
+          ## Sub Heading (H2)
 
-            * One
-            * Two
-            * Three
-                * A
-                * B
+          ### Steps (H3)
+              
+          ###List Items
 
-            Emphasis, aka italics, with *asterisks* or _underscores_.
+          * One
+          * Two
+          * Three
+              * A
+              * B
 
-            Strong emphasis, aka bold, with **asterisks** or __underscores__.
+          Emphasis, aka italics, with *asterisks* or _underscores_.
 
-            Combined emphasis with **asterisks and _underscores_**.
-          </code></pre>
+          Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+          Combined emphasis with **asterisks and _underscores_**.
         </td-markdown>
       ]]>
     </td-highlight>
     <h3>Links &amp; Images</h3>
     <p>There are two ways to create links. Inline & reference:</p>
     <td-markdown>
-      <pre><code>
-        [I'm an inline-style link](https://teradata.github.io/)
+      [I'm an inline-style link](https://teradata.github.io/)
 
-        [I'm a reference-style link case does not matter][Teradata Github Landing]
+      [I'm a reference-style link case does not matter][Teradata Github Landing]
 
-        [teradata github Landing]: https://teradata.github.io/
+      [teradata github Landing]: https://teradata.github.io/
 
-        Inline image
-        ![alt text here](app/assets/icons/teradata.svg)
+      Inline image
+      ![alt text here](app/assets/icons/teradata.svg)
 
-        Reference-style image:
-        ![alt text][logo]
+      Reference-style image:
+      ![alt text][logo]
 
-        [logo]: app/assets/icons/teradata.svg "Teradata Labs"
-      </code></pre>
+      [logo]: app/assets/icons/teradata.svg "Teradata Labs"
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
-          <pre><code>
-            [I'm an inline-style link](https://teradata.github.io/)
+          [I'm an inline-style link](https://teradata.github.io/)
 
-            [I'm a reference-style link case does not matter][Teradata Github Landing]
+          [I'm a reference-style link case does not matter][Teradata Github Landing]
 
-            [teradata github Landing]: https://teradata.github.io/
+          [teradata github Landing]: https://teradata.github.io/
 
-            Inline image
-            ![alt text here](app/assets/icons/teradata.svg)
+          Inline image
+          ![alt text here](app/assets/icons/teradata.svg)
 
-            Reference-style image:
-            ![alt text][logo]
+          Reference-style image:
+          ![alt text][logo]
 
-            [logo]: app/assets/icons/teradata.svg "Teradata Labs"
-          </code></pre>
+          [logo]: app/assets/icons/teradata.svg "Teradata Labs"
         </td-markdown>
       ]]>
     </td-highlight>
@@ -101,100 +93,88 @@
     <p>Inline has `back-ticks` around it.</p>
     <p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. </p>
     <td-markdown>
-      <pre><code>
-        `this is an inline code snippet`
+      `this is an inline code snippet`
 
-        ```javascript
-        var s = "JavaScript syntax highlighting";
-        alert(s);
-        ```
+      ```javascript
+      var s = "JavaScript syntax highlighting";
+      alert(s);
+      ```
 
-        ```python
-        s = "Python syntax highlighting"
-        print s
-        ```
-      </code></pre>
+      ```python
+      s = "Python syntax highlighting"
+      print s
+      ```
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
-          <pre><code>
-            `this is an inline code snippet`
+          `this is an inline code snippet`
 
-            ```javascript
-            var s = "JavaScript syntax highlighting";
-            alert(s);
-            ```
+          ```javascript
+          var s = "JavaScript syntax highlighting";
+          alert(s);
+          ```
 
-            ```python
-            s = "Python syntax highlighting"
-            print s
-            ```
-          </code></pre>
+          ```python
+          s = "Python syntax highlighting"
+          print s
+          ```
         </td-markdown>
       ]]>
     </td-highlight>
     <h3>Blockquotes</h3>
     <td-markdown>
-      <pre><code>
-        > Blockquotes are very handy in email to emulate reply text.
-        > This line is part of the same quote.
+      > Blockquotes are very handy in email to emulate reply text.
+      > This line is part of the same quote.
 
-        Quote break.
+      Quote break.
 
-        > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-      </code></pre>
+      > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
-          <pre><code>
-            > Blockquotes are very handy in email to emulate reply text.
-            > This line is part of the same quote.
+          > Blockquotes are very handy in email to emulate reply text.
+          > This line is part of the same quote.
 
-            Quote break.
+          Quote break.
 
-            > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-          </code></pre>
+          > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
         </td-markdown>
       ]]>
     </td-highlight>
     <h3>Dividers</h3>
     <td-markdown>
-      <pre><code>
-        Three or more...
+      Three or more...
 
-        ---
+      ---
 
-        Hyphens
+      Hyphens
 
-        ***
+      ***
 
-        Asterisks
+      Asterisks
 
-        ___
+      ___
 
-        Underscores
-      </code></pre>
+      Underscores
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
-          <pre><code>
-            Three or more...
+          Three or more...
 
-            ---
+          ---
 
-            Hyphens
+          Hyphens
 
-            ***
+          ***
 
-            Asterisks
+          Asterisks
 
-            ___
+          ___
 
-            Underscores
-          </code></pre>
+          Underscores
         </td-markdown>
       ]]>
     </td-highlight>
@@ -213,11 +193,9 @@
       <td-highlight lang="html">
         <![CDATA[
           <td-markdown>
-            <pre><code>
             # Heading 
             ## Sub Heading (H2)
             ### Steps (H2)
-            </code></pre>
           </td-markdown>
           ]]>
       </td-highlight>
