@@ -1,5 +1,10 @@
 $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+$padding: 16px;
+
 :host /deep/ {
+  display: block;
+  overflow-x: auto;
+  padding: $padding;
   pre,
   code,
   .highlight {
@@ -11,7 +16,6 @@ $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monos
     padding: 0;
     margin: 0;
     background: transparent;
-    color: white;
     font-family: $code-font;
     line-height: 1.45;
     tab-size: 2;
@@ -35,12 +39,4 @@ $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monos
     line-height: 1.5;
     margin: 0;
   }
-}
-
-/* Use host as a parent here since hljs renders after dom & doesn't get Angular shadowdom */
-:host {
-  display: block;
-  overflow-x: auto;
-  background: #292348;
-  color: white;
 }

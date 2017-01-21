@@ -1,14 +1,14 @@
-@import '../core/common/styles/variables';
 @import '~@angular/material/core/theming/theming';
 
 @mixin covalent-highlight-theme() {
   td-highlight {
+    pre {
+      color: white;
+    }
+    background: #292348;
+    color: white;
     .highlight {
       color: md-color($md-indigo, 50);
-    }
-    padding: $padding;
-    & + :host {
-      margin-top: $margin; /* 2nd neighbor & beyond will have margin */
     }
 
     .hljs-comment,
