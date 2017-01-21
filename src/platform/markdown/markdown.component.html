@@ -1,5 +1,6 @@
-<div #markdown>
+<div #markdown *ngIf="!markup">
   <pre><code>
     <ng-content></ng-content>
   </code></pre>
 </div>
+<div [innerHTML]="markup"></div>

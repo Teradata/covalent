@@ -10,6 +10,7 @@ declare var showdown: any;
 export class TdMarkdownComponent implements AfterViewInit {
 
   private _content: string;
+  markup: string;
 
   @ViewChild('markdown') container: ElementRef;
 
@@ -24,25 +25,18 @@ export class TdMarkdownComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    this._loadContent();
+    this._loadContent(this._content);
   }
 
   ngAfterViewInit(): void {
     if (!this._content) {
-      this._loadStaticTemplate();
+      this._loadContent(this.container.nativeElement.innerText);
     }
   }
 
-  private _loadContent(): void {
-    if (this._content) {
-      this.container.nativeElement.innerHTML = this._render(this._content);
-    }
-  }
-
-  private _loadStaticTemplate(): void {
-    let markup: string = this.container.nativeElement.innerText;
-    if (markup && markup.trim().length > 0) {
-      this.container.nativeElement.innerHTML = this._render(markup);
+  private _loadContent(markdown: string): void {
+    if (markdown && markdown.trim().length > 0) {
+      this.markup = this._render(markdown);
     }
   }
 
