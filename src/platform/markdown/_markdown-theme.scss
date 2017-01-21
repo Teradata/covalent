@@ -15,7 +15,7 @@
       color: md-color($foreground, secondary-text);
     }
     hr {
-      background-color: md-color($foreground, divider);
+      border-color: md-color($foreground, divider);
     }
     blockquote {
       color: md-color($foreground, secondary-text);
