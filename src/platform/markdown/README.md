@@ -1,34 +1,48 @@
-# Markdown : td-markdown
+## TdMarkdownComponent: td-markdown
 
-```<td-markdown>``` is a directive for Github flavored Javascript Markdown to HTML converter. It is based on Showdown Library (https://github.com/showdownjs/showdown/).
+`<td-markdown>` is a directive for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
 
-------
+## API Summary
+
+Methods:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. Resource file.
+
+**Note:** This module uses the **DomSanitizer** ng2 service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
+
+By default, `--dev` build will log the following message in the console to let you know:
+
+`WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).`
 
 ## Installation
 
-This component can be installed as npm package and can be included by importing from @covalent/markdown.
+This component can be installed as npm package.
+
+```npm
+npm i -save @covalent/markdown
+```
 
 ## Setup
 
-`showdown.js` needs to be added as vendor (installed as a `markdown` dependency).
+`showdown.js` needs to be added as script in the `angular-cli.json` OR referenced in `index.html` (installed as a `markdown` dependency).
 
-```typescript
-module.exports = function(defaults) {
-  return new Angular2App(defaults, {
-    vendorNpmFiles: [
-      ...
-      'showdown/dist/showdown.js'
-    ]
-  });
-};
+**angular-cli.json**:
+
+```json
+"scripts": [
+  "../node_modules/showdown/dist/showdown.js"
+]
 ```
-Reference the script in the `index.html` file.
+
+**index.html**:
 
 ```html
-<script src="vendor/showdown/dist/showdown.js"></script>
+<script src="../node_modules/showdown/dist/showdown.js"></script>
 ```
 
-Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:
+Then, import the **[CovalentMarkdownModule]** using the *forRoot()* method in your NgModule:
 
 ```typescript
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -42,39 +56,21 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 export class MyModule {}
 ```
 
-Markdown has been tested successfully with:
+## Example
 
-  * Chrome 
-  * Firefox
-  * Safari
-
-## Extended documentation
-Check our [demo](https://teradata.github.io/covalent/#/components/markdown) for examples and a more in-depth documentation on usage.
-
-
-## Quick Example
+**Html:**
 
 ```html
 <td-markdown>
-  <pre><code>
-# Heading 
-## Sub Heading (H2)
-### Steps (H2)
-  </code></pre>
+  # Heading 
+  ## Sub Heading (H2)
+  ### Steps (H2)
 </td-markdown>
 ```
 
-### Output 
+**Output:**
 
-Above examples should output...
+# Heading 
+## Sub Heading (H2)
+### Steps (H2)
 
-    <h1 id="headingh1">Heading (H1)</h1>
-    <h2 id="subheadingh2">Sub Heading (H2)</h2>
-    <h3 id="stepsh3">Steps (H3)</h3>
-
- * **It also has support for GFM code block style & GFM takslists. Example:
- 
-   ```md
-    - [x] This task is done
-    - [ ] This is still pending
-   ```
