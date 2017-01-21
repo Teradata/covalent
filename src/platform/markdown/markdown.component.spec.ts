@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CovalentMarkdownModule } from './';
 
-describe('Component: TdMarkdownComponent', () => {
+describe('Component: Markdown', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
