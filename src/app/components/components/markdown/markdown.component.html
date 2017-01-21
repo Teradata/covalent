@@ -9,46 +9,50 @@
     <h3>Basic Markdown</h3>
     <td-markdown>
       <pre><code>
-# Heading (H1) 
-      
-## Sub Heading (H2)
+        # Heading (H1) 
 
-### Steps (H3)
-    
-###List Items
+        ## Sub Heading (H2)
 
-* One
-* Two
-* Three
+        ### Steps (H3)
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+        ###List Items
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+        * One
+        * Two
+        * Three
+            * A
+            * B
 
-Combined emphasis with **asterisks and _underscores_**.
+        Emphasis, aka italics, with *asterisks* or _underscores_.
+
+        Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+        Combined emphasis with **asterisks and _underscores_**.
       </code></pre>
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
           <pre><code>
-    # Heading (H1) 
-          
-    ## Sub Heading (H2)
+            # Heading (H1) 
+                  
+            ## Sub Heading (H2)
 
-    ### Steps (H3)
-        
-    ###List Items
+            ### Steps (H3)
+                
+            ###List Items
 
-    * One
-    * Two
-    * Three
+            * One
+            * Two
+            * Three
+                * A
+                * B
 
-    Emphasis, aka italics, with *asterisks* or _underscores_.
+            Emphasis, aka italics, with *asterisks* or _underscores_.
 
-    Strong emphasis, aka bold, with **asterisks** or __underscores__.
+            Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
-    Combined emphasis with **asterisks and _underscores_**.
+            Combined emphasis with **asterisks and _underscores_**.
           </code></pre>
         </td-markdown>
       ]]>
@@ -57,38 +61,38 @@ Combined emphasis with **asterisks and _underscores_**.
     <p>There are two ways to create links. Inline & reference:</p>
     <td-markdown>
       <pre><code>
-[I'm an inline-style link](https://teradata.github.io/)
+        [I'm an inline-style link](https://teradata.github.io/)
 
-[I'm a reference-style link case does not matter][Teradata Github Landing]
+        [I'm a reference-style link case does not matter][Teradata Github Landing]
 
-[teradata github Landing]: https://teradata.github.io/
+        [teradata github Landing]: https://teradata.github.io/
 
-Inline image
-![alt text here](app/assets/icons/teradata.svg)
+        Inline image
+        ![alt text here](app/assets/icons/teradata.svg)
 
-Reference-style image:
-![alt text][logo]
+        Reference-style image:
+        ![alt text][logo]
 
-[logo]: app/assets/icons/teradata.svg "Teradata Labs"
+        [logo]: app/assets/icons/teradata.svg "Teradata Labs"
       </code></pre>
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
           <pre><code>
-    [I'm an inline-style link](https://teradata.github.io/)
+            [I'm an inline-style link](https://teradata.github.io/)
 
-    [I'm a reference-style link case does not matter][Teradata Github Landing]
+            [I'm a reference-style link case does not matter][Teradata Github Landing]
 
-    [teradata github Landing]: https://teradata.github.io/
+            [teradata github Landing]: https://teradata.github.io/
 
-    Inline image
-    ![alt text here](app/assets/icons/teradata.svg)
+            Inline image
+            ![alt text here](app/assets/icons/teradata.svg)
 
-    Reference-style image:
-    ![alt text][logo]
+            Reference-style image:
+            ![alt text][logo]
 
-    [logo]: app/assets/icons/teradata.svg "Teradata Labs"
+            [logo]: app/assets/icons/teradata.svg "Teradata Labs"
           </code></pre>
         </td-markdown>
       ]]>
@@ -98,34 +102,34 @@ Reference-style image:
     <p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. </p>
     <td-markdown>
       <pre><code>
-`this is an inline code snippet`
+        `this is an inline code snippet`
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
+        ```javascript
+        var s = "JavaScript syntax highlighting";
+        alert(s);
+        ```
 
-```python
-s = "Python syntax highlighting"
-print s
-```
+        ```python
+        s = "Python syntax highlighting"
+        print s
+        ```
       </code></pre>
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
           <pre><code>
-    `this is an inline code snippet`
+            `this is an inline code snippet`
 
-    ```javascript
-    var s = "JavaScript syntax highlighting";
-    alert(s);
-    ```
+            ```javascript
+            var s = "JavaScript syntax highlighting";
+            alert(s);
+            ```
 
-    ```python
-    s = "Python syntax highlighting"
-    print s
-    ```
+            ```python
+            s = "Python syntax highlighting"
+            print s
+            ```
           </code></pre>
         </td-markdown>
       ]]>
@@ -133,24 +137,24 @@ print s
     <h3>Blockquotes</h3>
     <td-markdown>
       <pre><code>
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+        > Blockquotes are very handy in email to emulate reply text.
+        > This line is part of the same quote.
 
-Quote break.
+        Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+        > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
       </code></pre>
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
           <pre><code>
-    > Blockquotes are very handy in email to emulate reply text.
-    > This line is part of the same quote.
+            > Blockquotes are very handy in email to emulate reply text.
+            > This line is part of the same quote.
 
-    Quote break.
+            Quote break.
 
-    > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+            > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
           </code></pre>
         </td-markdown>
       ]]>
@@ -158,38 +162,38 @@ Quote break.
     <h3>Dividers</h3>
     <td-markdown>
       <pre><code>
-Three or more...
+        Three or more...
 
----
+        ---
 
-Hyphens
+        Hyphens
 
-***
+        ***
 
-Asterisks
+        Asterisks
 
-___
+        ___
 
-Underscores
+        Underscores
       </code></pre>
     </td-markdown>
     <td-highlight lang="html">
       <![CDATA[
         <td-markdown>
           <pre><code>
-    Three or more...
+            Three or more...
 
-    ---
+            ---
 
-    Hyphens
+            Hyphens
 
-    ***
+            ***
 
-    Asterisks
+            Asterisks
 
-    ___
+            ___
 
-    Underscores
+            Underscores
           </code></pre>
         </td-markdown>
       ]]>
