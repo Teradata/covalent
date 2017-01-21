@@ -178,52 +178,8 @@
   </md-card-content>
 </md-card>
 <md-card>
-  <md-card-title>TdMarkdownComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
   <md-card-content>
-    <h2><code><![CDATA[<td-markdown>]]></code></h2>
-    <p>Use <code><![CDATA[<td-markdown>]]></code> element to parse the markdown files</p>
-    <p>Wrap your code snippets in <code><![CDATA[<td-markdown>]]></code></p>
-    <h3>Example:</h3>
-    <p>HTML</p>
-      <td-highlight lang="html">
-        <![CDATA[
-          <td-markdown>
-            # Heading 
-            ## Sub Heading (H2)
-            ### Steps (H2)
-          </td-markdown>
-          ]]>
-      </td-highlight>
-    <h3>Setup:</h3>
-    <p><code>showdown.js</code> needs to be added as script in the `angular-cli.json` OR referenced in `index.html`.</p>
-    <p>`angular-cli.json` example:</p>
-    <td-highlight lang="json">
-      "scripts": [
-        "../node_modules/showdown/dist/showdown.js"
-      ]
-    </td-highlight>
-    <p>`index.html` example:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <script src="../node_modules/showdown/dist/showdown.js"></script>
-      ]]>
-    </td-highlight>
-    <p>Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        import { CovalentMarkdownModule } from '@covalent/markdown';
-        @NgModule({
-          imports: [
-            CovalentMarkdownModule.forRoot(),
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-    <md-divider></md-divider>
+    <td-markdown [content]="content">
+    </td-markdown>
   </md-card-content>
 </md-card>
