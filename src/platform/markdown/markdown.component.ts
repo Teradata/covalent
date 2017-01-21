@@ -63,17 +63,16 @@ export class TdMarkdownComponent implements AfterViewInit {
     let lines: string[] = markup.split('\n');
 
     // check how much indentation is used by the first actual markup line
-    let whiteSpacesInfront: number = 0;
-    for (let i: number = 0; i < lines.length; i++) {
-      let line: string = lines[i];
-      if (line.trim().length > 0) {
-        whiteSpacesInfront = line.match(/^\s*/)[0].length;
+    let firstLineWhitespace: string = '';
+    for (let line of lines) {
+      if (line && line.trim().length > 0) {
+        firstLineWhitespace = line.match(/^\s*/)[0];
         break;
       }
     }
 
     // Remove all indentation spaces so markup can be parsed correctly
-    let startingWhitespaceRegex: RegExp = new RegExp('^\\s{' + whiteSpacesInfront + '}');
+    let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line.replace(startingWhitespaceRegex, '');
     });
