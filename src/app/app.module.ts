@@ -16,6 +16,8 @@ import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
+import { GitHubService } from './services';
+
 @NgModule({
   declarations: [
     DocsAppComponent,
@@ -37,6 +39,7 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
+    GitHubService,
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],

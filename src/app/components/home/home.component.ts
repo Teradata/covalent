@@ -1,4 +1,6 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+
+import { GitHubService } from '../../services';
 
 import { fadeAnimation } from '../../app.animations';
 
@@ -9,10 +11,12 @@ import { fadeAnimation } from '../../app.animations';
   animations: [fadeAnimation],
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
+  starCount: number = 0;
 
   items: Object[] = [{
       color: 'purple-700',
@@ -40,5 +44,14 @@ export class HomeComponent {
       title: 'Components & Addons',
     },
   ];
+
+  constructor(private _gitHubService: GitHubService) {
+  }
+
+  ngOnInit(): void {
+    this._gitHubService.queryStartCount().subscribe((starsCount: number) => {
+      this.starCount = starsCount;
+    });
+  }
 
 }
