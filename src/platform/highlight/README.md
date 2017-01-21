@@ -50,7 +50,7 @@ Also, to display model binding, add spaces between curly braces like: `{ { } }` 
 
 Example for HTML usage:
 
- ```html
+```html
 <td-highlight lang="html">
   <![CDATA[
     <td-highlight lang="html">
@@ -59,11 +59,11 @@ Example for HTML usage:
     </td-highlight>
   ]]>
 </td-highlight>
- ```
+```
 
 Example for CSS usage:
 
- ```html
+```html
 <td-highlight lang="css">    
   <![CDATA[   
     pre {
@@ -83,7 +83,7 @@ Example for CSS usage:
     }
   ]]>
 </td-highlight>
- ```
+```
  
 Example for Typescript:
 
