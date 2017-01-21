@@ -24,10 +24,11 @@ export class TdHighlightComponent implements AfterViewInit {
     let codeElement: HTMLElement = this.content.nativeElement;
     let code: string = codeElement.innerHTML;
     this.renderer.detachView([].slice.call(codeElement.childNodes));
-    this.render(code, codeElement);
+    this.renderer.setElementClass(codeElement, 'highlight', true);
+    codeElement.innerHTML = this._render(code);
   }
 
-  render(contents: string, codeElement: HTMLElement): void {
+  private _render(contents: string): string {
     let lines: string[] = contents.split('\n');
 
     // Remove empty start lines only
@@ -52,22 +53,17 @@ export class TdHighlightComponent implements AfterViewInit {
         .replace(/\s+$/, '');
     });
 
-    this.renderer.setElementClass(codeElement, 'highlight', true);
-
     let codeToParse: string =  lines.join('\n')
     .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
     .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular 2
-    if (this.language === 'html') { // need to use CDATA for HTML
-      this.renderer.createText(codeElement, codeToParse, undefined);
-      hljs.highlightBlock(codeElement);
-    } else {
-      let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
-      highlightedCode.value = highlightedCode.value
-        .replace(/=<span class="hljs-value">""<\/span>/gi, '')
-        .replace('<head>', '')
-        .replace('<head/>', '');
-      codeElement.innerHTML = highlightedCode.value;
-    }
+
+    // Parse code with highlight.js depending on language
+    let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
+    highlightedCode.value = highlightedCode.value
+      .replace(/=<span class="hljs-value">""<\/span>/gi, '')
+      .replace('<head>', '')
+      .replace('<head/>', '');
+    return highlightedCode.value;
   }
 
   /**
