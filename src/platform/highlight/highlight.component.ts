@@ -10,7 +10,31 @@ let hljs: any = require('highlight.js/lib');
 })
 export class TdHighlightComponent implements AfterViewInit {
 
-  @Input('lang') language: string = 'javascript';
+  private _content: string;
+
+  /**
+   * content?: string
+   * 
+   * Code content to be parsed as highlighted html.
+   * Used to load data dynamically.
+   * 
+   * e.g. `.html`, `.ts` , etc.
+   */
+  @Input('content')
+  set content(content: string) {
+    this._content = content;
+    this._loadContent(this._content);
+  }
+
+  /**
+   * lang?: string
+   * 
+   * Language of the code content to be parsed as highlighted html.
+   * Defaults to `typescript`
+   * 
+   * e.g. `typescript`, `html` , etc.
+   */
+  @Input('lang') language: string = 'typescript';
 
   constructor(private _renderer: Renderer,
               private _elementRef: ElementRef,
@@ -18,11 +42,15 @@ export class TdHighlightComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (!this.language) {
-      throw 'Error: language attribute must be defined in TdHighlightComponent.';
+      throw 'Error: [lang] input must be defined in TdHighlightComponent.';
     }
-    this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+    if (!this._content) {
+      this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+    }
   }
-
+  /**
+   * General method to parse a string of code into HTML Elements and load them into the container
+   */
   private _loadContent(code: string): void {
     if (code && code.trim().length > 0) {
       // Parse html string into actual HTML elements.
@@ -46,6 +74,7 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   private _render(contents: string): string {
+    // Split markup by line characters
     let lines: string[] = contents.split('\n');
 
     // Remove empty start lines only
@@ -62,6 +91,7 @@ export class TdHighlightComponent implements AfterViewInit {
       }
     }
 
+    // Remove all indentation spaces so code can be parsed correctly
     let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line
