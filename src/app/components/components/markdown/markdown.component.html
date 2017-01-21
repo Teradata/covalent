@@ -3,9 +3,6 @@
   <md-card-subtitle>Parse markdown code</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <md-card>
-      <md-card-content><h4>Imporant Note:</h4>You must wrap all markdown in <code>&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</code> and maintain whitespace.</md-card-content>
-    </md-card>
     <h3>Basic Markdown</h3>
     <td-markdown>
       # Heading (H1) 
@@ -200,21 +197,17 @@
           ]]>
       </td-highlight>
     <h3>Setup:</h3>
-    <p><code>showdown.js</code> needs to be added as vendor and referenced in `index.html`.</p>
-    <td-highlight lang="javascript">
-      module.exports = function(defaults) {{'{'}}
-        return new Angular2App(defaults, {{'{'}}
-          vendorNpmFiles: [
-            ...
-            'showdown/dist/showdown.js'
-          ]
-        });
-      };
+    <p><code>showdown.js</code> needs to be added as script in the `angular-cli.json` OR referenced in `index.html`.</p>
+    <p>`angular-cli.json` example:</p>
+    <td-highlight lang="json">
+      "scripts": [
+        "../node_modules/showdown/dist/showdown.js"
+      ]
     </td-highlight>
-    <p>Reference the script in the `index.html` file.</p>
+    <p>`index.html` example:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <script src="vendor/showdown/dist/showdown.js"></script>
+        <script src="../node_modules/showdown/dist/showdown.js"></script>
       ]]>
     </td-highlight>
     <p>Then, import the [CovalentMarkdownModule] using the forRoot() method in your NgModule:</p>
