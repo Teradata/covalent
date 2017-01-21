@@ -1,8 +1,14 @@
-## Markdown : `<td-markdown>`
+## TdMarkdownComponent: td-markdown
 
 `<td-markdown>` is a directive for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
 
-------
+## API Summary
+
+Methods:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. Resource file.
 
 ## Installation
 

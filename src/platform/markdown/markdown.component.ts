@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 declare var showdown: any;
 
@@ -9,14 +9,44 @@ declare var showdown: any;
 })
 export class TdMarkdownComponent implements AfterViewInit {
 
-  @ViewChild('markdown') content: ElementRef;
+  private _content: string;
 
-  ngAfterViewInit(): void {
-    let markup: string = this.content.nativeElement.innerText;
-    this.content.nativeElement.innerHTML = this.render(markup);
+  @ViewChild('markdown') container: ElementRef;
+
+  /**
+   * content?: string
+   * 
+   * Markdown format content to be parsed as html markup.
+   * Used to load data dynamically.
+   * 
+   * e.g. Resource file.
+   */
+  @Input('content')
+  set content(content: string) {
+    this._content = content;
+    this._loadContent();
   }
 
-  render(markup: string): string {
+  ngAfterViewInit(): void {
+    if (!this._content) {
+      this._loadStaticTemplate();
+    }
+  }
+
+  private _loadContent(): void {
+    if (this._content) {
+      this.container.nativeElement.innerHTML = this._render(this._content);
+    }
+  }
+
+  private _loadStaticTemplate(): void {
+    let markup: string = this.container.nativeElement.innerText;
+    if (markup && markup.trim().length > 0) {
+      this.container.nativeElement.innerHTML = this._render(markup);
+    }
+  }
+
+  private _render(markup: string): string {
     // Split markup by line characters
     let lines: string[] = markup.split('\n');
 
@@ -43,6 +73,7 @@ export class TdMarkdownComponent implements AfterViewInit {
     let converter: any = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
+    converter.setOption('tables', true);
     let html: string = converter.makeHtml(codeToParse);
     return html;
   }
