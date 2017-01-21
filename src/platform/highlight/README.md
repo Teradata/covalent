@@ -45,10 +45,11 @@ export class MyModule {}
 
 ## Usage
 
-Simply wrap your code snippets in `<td-highlight>`. To use HTML brackets `<` and `>` wrap the code with `<![CDATA[` and `]]>;` or replace with HTMLs character entities `&lt;` and `&gt;`. 
+Simply wrap your code snippets in `<td-highlight>`. To use HTML brackets `<` and `>` wrap the code with `<![CDATA[` and `]]>;` or replace with HTMLs character entities `&lt;` and `&gt;`.
+
 Also, to display model binding, add spaces between curly braces like: `{ { } }` and wrap them  with `<![CDATA[` and `]]>;`
 
-Example for HTML usage:
+Example for **HTML** usage:
 
 ```html
 <td-highlight lang="html">
@@ -61,7 +62,7 @@ Example for HTML usage:
 </td-highlight>
 ```
 
-Example for CSS usage:
+Example for **CSS** usage:
 
 ```html
 <td-highlight lang="css">    
@@ -85,7 +86,7 @@ Example for CSS usage:
 </td-highlight>
 ```
  
-Example for Typescript:
+Example for **Typescript**:
 
 ```html
 <td-highlight lang="typescript">
