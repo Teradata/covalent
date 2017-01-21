@@ -10,6 +10,12 @@ Methods:
 | --- | --- | --- |
 | `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. Resource file.
 
+**Note:** This module uses the **DomSanitizer** ng2 service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
+
+By default, `--dev` build will log the following message in the console to let you know:
+
+`WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).`
+
 ## Installation
 
 This component can be installed as npm package.
