@@ -1,6 +1,6 @@
 ## TdMarkdownComponent: td-markdown
 
-`<td-markdown>` is a directive for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
+`<td-markdown>` is an @angular component for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
 
 ## API Summary
 
@@ -8,9 +8,9 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. Resource file.
+| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. `README.md` content.
 
-**Note:** This module uses the **DomSanitizer** ng2 service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
+**Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
 
 By default, `--dev` build will log the following message in the console to let you know:
 
