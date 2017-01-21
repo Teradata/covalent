@@ -19,7 +19,7 @@ export class TdHighlightComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (!this.language) {
-      throw 'Error: language attribute must be defined in TdHighlightComponent.';
+      throw new Error('Error: language attribute must be defined in TdHighlightComponent.');
     }
     let codeElement: HTMLElement = this.content.nativeElement;
     let code: string = codeElement.innerHTML;

@@ -10,7 +10,7 @@ export class TdLayoutService {
 
   public registerSidenav(name: string): Observable<any> {
     if (this._openSidenavSources[name]) {
-      throw 'Sidenav already registered with that name';
+      throw new Error('Sidenav already registered with that name');
     }
     this._openSidenavSources[name] = new Subject<any>();
     this._openSidenavObservables[name] = this._openSidenavSources[name].asObservable();

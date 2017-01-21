@@ -34,14 +34,14 @@ export class RequestAuthInterceptor {
 @Injectable()
 export class RequestFailureInterceptor {
   onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
-    throw 'error';
+    throw new Error('error');
   }
 }
 
 @Injectable()
 export class RequestRecoveryInterceptor {
   onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
-    throw 'error';
+    throw new Error('error');
   }
 
   onRequestError(request: RequestOptionsArgs): RequestOptionsArgs {
