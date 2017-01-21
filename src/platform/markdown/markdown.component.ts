@@ -44,7 +44,7 @@ export class TdMarkdownComponent implements AfterViewInit {
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
       // Clean container
-      this._elementRef.nativeElement.innerHTML = '';
+      this._renderer.setElementProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Project DIV element into container
       this._renderer.projectNodes(this._elementRef.nativeElement, [divElement]);
     }
