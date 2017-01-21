@@ -59,25 +59,10 @@ export class ComponentsComponent {
     route: 'data-table',
     title: 'Data Table',
   }, {
-    description: 'Highlighting your code snippets',
-    icon: 'code',
-    route: 'syntax-highlighting',
-    title: 'Syntax Highlighting',
-  }, {
     description: 'JSON object tree with collapsible nodes',
     icon: 'format_indent_increase',
     route: 'json-formatter',
     title: 'JSON Formatter',
-  }, {
-    description: 'Parse markdown code',
-    icon: 'chrome_reader_mode',
-    route: 'markdown',
-    title: 'Markdown',
-  }, {
-    description: 'Responsive Charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'Charts',
   }, {
     description: 'Paging for lists and tables',
     icon: 'swap_horiz',
@@ -94,20 +79,10 @@ export class ComponentsComponent {
     route: 'search',
     title: 'Search',
   }, {
-    description: 'Build forms from a JS object',
-    icon: 'format_align_center',
-    route: 'dynamic-forms',
-    title: 'Dynamic Forms',
-  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
     title: 'Media Queries',
-  }, {
-    description: 'Http wrappers and helpers',
-    icon: 'http',
-    route: 'http',
-    title: 'Http',
   }, {
     description: 'Core directives & utilities',
     icon: 'wb_iridescent',
@@ -120,4 +95,30 @@ export class ComponentsComponent {
     title: 'Pipes',
   }];
 
+  optional: Object[] = [{
+    description: 'Highlighting your code snippets',
+    icon: 'code',
+    route: 'syntax-highlighting',
+    title: 'Syntax Highlighting',
+  }, {
+    description: 'Parse markdown code',
+    icon: 'chrome_reader_mode',
+    route: 'markdown',
+    title: 'Markdown',
+  }, {
+    description: 'Responsive Charts',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'Charts',
+  }, {
+    description: 'Build forms from a JS object',
+    icon: 'format_align_center',
+    route: 'dynamic-forms',
+    title: 'Dynamic Forms',
+  }, {
+    description: 'Http wrappers and helpers',
+    icon: 'http',
+    route: 'http',
+    title: 'Http',
+  }];
 }
