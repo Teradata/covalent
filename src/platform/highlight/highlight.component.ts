@@ -74,22 +74,14 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   private _render(contents: string): string {
+    // Trim leading and trailing newlines
+    contents = contents.replace(/^(\s|\t)*\n+/g, '')
+                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markup by line characters
     let lines: string[] = contents.split('\n');
 
-    // Remove empty start lines only
-    this._removeEmptyElementAtStart(lines);
-    // Remove empty ending lines only
-    this._removeEmptyElementAtEnd(lines);
-
     // check how much indentation is used by the first actual code line
-    let firstLineWhitespace: string = '';
-    for (let line of lines) {
-      if (line && line.trim().length > 0) {
-        firstLineWhitespace = line.match(/^\s*/)[0];
-        break;
-      }
-    }
+    let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
     // Remove all indentation spaces so code can be parsed correctly
     let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
@@ -97,7 +89,7 @@ export class TdHighlightComponent implements AfterViewInit {
       return line
         .replace('=""', '') // remove empty values
         .replace(startingWhitespaceRegex, '')
-        .replace(/\s+$/, '');
+        .replace(/\s+$/, ''); // remove trailing white spaces
     });
 
     let codeToParse: string =  lines.join('\n')
@@ -111,36 +103,5 @@ export class TdHighlightComponent implements AfterViewInit {
       .replace('<head>', '')
       .replace('<head/>', '');
     return highlightedCode.value;
-  }
-
-  /**
-   * Method to remove empty lines at the beggining of the array
-   */
-  private _removeEmptyElementAtStart(elements: string[]): void {
-    let emptyLines: number = 0;
-    for (; emptyLines < elements.length; emptyLines++) {
-      if (elements[emptyLines].trim().length > 0) {
-        break;
-      }
-    }
-    while (emptyLines--) {
-      elements.shift();
-    }
-  }
-
-  /**
-   * Method to remove empty lines at the end of the array
-   */
-  private _removeEmptyElementAtEnd(elements: string[]): void {
-    let emptyLines: number = elements.length - 1;
-    for (; emptyLines >= 0; emptyLines--) {
-      if (elements[emptyLines].trim().length > 0) {
-        break;
-      }
-    }
-    emptyLines = (elements.length - 1) - emptyLines;
-    while (emptyLines--) {
-      elements.pop();
-    }
   }
 }
