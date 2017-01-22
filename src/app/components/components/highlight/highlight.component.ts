@@ -9,7 +9,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './highlight.component.html',
   animations: [slideInDownAnimation],
 })
-export class HighlightDemoComponent {
+export class HighlightDemoComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
