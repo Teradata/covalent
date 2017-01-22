@@ -34,14 +34,14 @@ export class RequestAuthInterceptor {
 @Injectable()
 export class RequestFailureInterceptor {
   onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
-    throw 'error';
+    throw new Error('error');
   }
 }
 
 @Injectable()
 export class RequestRecoveryInterceptor {
   onRequest(request: RequestOptionsArgs): RequestOptionsArgs {
-    throw 'error';
+    throw new Error('error');
   }
 
   onRequestError(request: RequestOptionsArgs): RequestOptionsArgs {
@@ -132,8 +132,8 @@ describe('Service: HttpInterceptor', () => {
       service.patch('http://www.test.com/error', {})
       .map((res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeUndefined('/error was not intercepted so request didnt fail');
-      }, (error: any) => {
-        expect(error).toBe('error');
+      }, (error: Error) => {
+        expect(error.message).toBe('error');
       });
     }),
   ));

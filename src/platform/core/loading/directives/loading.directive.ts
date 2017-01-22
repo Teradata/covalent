@@ -127,7 +127,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   private _registerComponent(): void {
     if (!this._name) {
-      throw 'Name is needed to register loading directive';
+      throw new Error('Name is needed to register loading directive');
     }
     this._loadingService.createComponent({
       name: this._name,

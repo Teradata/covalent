@@ -25,7 +25,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   @Input('tdMediaToggle')
   set query(query: string) {
     if (!query) {
-      throw 'Query needed for [tdMediaToggle] directive.';
+      throw new Error('Query needed for [tdMediaToggle] directive.');
     }
     this._query = query;
   }

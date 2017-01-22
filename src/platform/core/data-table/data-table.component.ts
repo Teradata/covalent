@@ -167,7 +167,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     }
     const column: ITdDataTableColumn = this.columns.find((c: any) => c.name === columnName);
     if (!column) {
-      throw '[sortBy] must be a valid column name';
+      throw new Error('[sortBy] must be a valid column name');
     }
 
     this._sortBy = column;
@@ -182,7 +182,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   set sortOrder(order: 'ASC' | 'DESC') {
     let sortOrder: string = order ? order.toUpperCase() : 'ASC';
     if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
-      throw '[sortOrder] must be empty, ASC or DESC';
+      throw new Error('[sortOrder] must be empty, ASC or DESC');
     }
 
     this._sortOrder = sortOrder === 'ASC' ?

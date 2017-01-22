@@ -43,7 +43,7 @@ export class TdPagingBarComponent implements OnInit {
   @Input('pageSizes')
   set pageSizes(pageSizes: number[]) {
     if (!(pageSizes instanceof Array)) {
-      throw '[pageSizes] needs to be an number array.';
+      throw new Error('[pageSizes] needs to be an number array.');
     }
     this._pageSizes = pageSizes;
     this._pageSize = this._pageSizes[0];
