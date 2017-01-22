@@ -32,14 +32,14 @@ npm i -save @covalent/markdown
 
 ```json
 "scripts": [
-  "../node_modules/showdown/dist/showdown.js"
+  "path/to/node_modules/showdown/dist/showdown.js"
 ]
 ```
 
 **index.html**:
 
 ```html
-<script src="../node_modules/showdown/dist/showdown.js"></script>
+<script src="path/to/node_modules/showdown/dist/showdown.js"></script>
 ```
 
 Then, import the **[CovalentMarkdownModule]** using the *forRoot()* method in your NgModule:
@@ -54,6 +54,31 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
   ...
 })
 export class MyModule {}
+```
+
+### Theming
+
+The `markdown` module comes with its own `covalent` theme which uses the material *theme* which is used by importing our theme scss file.
+
+```css
+@import '~@angular/material/core/theming/all-theme';
+@import '~@covalent/markdown/markdown-theme';
+
+@include md-core();
+
+$primary: md-palette($md-orange, 800);
+$accent:  md-palette($md-light-blue, 600, A100, A400);
+$warn:    md-palette($md-red, 600);
+
+$theme: md-light-theme($primary, $accent, $warn);
+
+@include markdown-markdown-theme($theme);
+```
+
+Or by loading them in the `index.html` file:
+
+```html
+<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css">
 ```
 
 ## Example

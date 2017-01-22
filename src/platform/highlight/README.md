@@ -29,10 +29,11 @@ npm i -save @covalent/highlight
 
 ## Setup
 
-Then, import the **[CovalentHighlightModule]** using the *forRoot()* method in your NgModule:
+Import the **[CovalentHighlightModule]** using the *forRoot()* method in your NgModule:
 
 ```typescript
 import { CovalentHighlightModule } from '@covalent/highlight';
+
 @NgModule({
   imports: [
     CovalentHighlightModule.forRoot(),
@@ -41,6 +42,36 @@ import { CovalentHighlightModule } from '@covalent/highlight';
   ...
 })
 export class MyModule {}
+```
+
+### Theming
+
+The `highlight` module comes with its own default `covalent` theme which you can use by importing our theme scss file.
+
+```css
+@import '~@covalent/highlight/highlight-theme';
+
+@include covalent-highlight-theme();
+```
+
+Alternatively, you can use the *highlight.js* pre-built [themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) by loading them either by an import:
+
+```css
+@import '~highlight.js/styles/vs.css';
+```
+
+Loading them in the `angular-cli.json`:
+
+```json
+"styles": [
+  "/path/to/node_modules/highlight.js/styles/vs.css"
+]
+```
+
+Or by loading them in the `index.html` file:
+
+```html
+<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css">
 ```
 
 ## Usage
