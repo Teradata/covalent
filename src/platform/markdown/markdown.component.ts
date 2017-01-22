@@ -61,7 +61,7 @@ export class TdMarkdownComponent implements AfterViewInit {
   private _render(markdown: string): string {
     // Trim leading and trailing newlines
     markdown = markdown.replace(/^(\s|\t)*\n+/g, '')
-                    .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markdown by line characters
     let lines: string[] = markdown.split('\n');
 
