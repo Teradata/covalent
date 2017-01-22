@@ -30,7 +30,9 @@
     }
 
     .hljs-string,
-    .hljs-selector-attr {
+    .hljs-selector-attr,
+    .hljs-regexp,
+    .hljs-link  {
       color: #ce9178;
     }
     
@@ -61,11 +63,6 @@
     .hljs-variable,
     .hljs-template-variable {
       color: #660;
-    }
-
-    .hljs-regexp,
-    .hljs-link {
-      color: #646695;
     }
 
     .hljs-deletion {
