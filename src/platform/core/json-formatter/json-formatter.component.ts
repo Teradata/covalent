@@ -40,7 +40,7 @@ export class TdJsonFormatterComponent {
   @Input('levelsOpen')
   set levelsOpen(levelsOpen: number) {
     if (!Number.isInteger(levelsOpen)) {
-      throw '[levelsOpen] needs to be an integer.';
+      throw new Error('[levelsOpen] needs to be an integer.');
     }
     this._levelsOpen = levelsOpen;
     this._open = levelsOpen > 0;
