@@ -1,4 +1,4 @@
-## TdHighlightComponent: td-markdown
+## TdHighlightComponent: td-highlight
 
 `td-highlight` is an @angular component that uses native **@angular** to parse code to HTML elements. It is based on [highlight.js](https://highlightjs.org/) library.
 
