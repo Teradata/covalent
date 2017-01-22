@@ -58,34 +58,31 @@ export class TdMarkdownComponent implements AfterViewInit {
     return div;
   }
 
-  private _render(markup: string): string {
-    // Split markup by line characters
-    let lines: string[] = markup.split('\n');
+  private _render(markdown: string): string {
+    // Trim leading and trailing newlines
+    markdown = markdown.replace(/^(\s|\t)*\n+/g, '')
+                    .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+    // Split markdown by line characters
+    let lines: string[] = markdown.split('\n');
 
-    // check how much indentation is used by the first actual markup line
-    let firstLineWhitespace: string = '';
-    for (let line of lines) {
-      if (line && line.trim().length > 0) {
-        firstLineWhitespace = line.match(/^\s*/)[0];
-        break;
-      }
-    }
+    // check how much indentation is used by the first actual markdown line
+    let firstLineWhitespace: string = lines[0].match(/^(\s|\t)*/)[0];
 
-    // Remove all indentation spaces so markup can be parsed correctly
+    // Remove all indentation spaces so markdown can be parsed correctly
     let startingWhitespaceRegex: RegExp = new RegExp('^' + firstLineWhitespace);
     lines = lines.map(function(line: string): string {
       return line.replace(startingWhitespaceRegex, '');
     });
 
     // Join lines again with line characters
-    let codeToParse: string =  lines.join('\n');
+    let markdownToParse: string =  lines.join('\n');
 
-    // Convert markup into html
+    // Convert markdown into html
     let converter: any = new showdown.Converter();
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
-    let html: string = converter.makeHtml(codeToParse);
+    let html: string = converter.makeHtml(markdownToParse);
     return html;
   }
 
