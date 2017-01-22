@@ -23,7 +23,7 @@ By default, `--dev` build will log the following message in the console to let y
 
 This component can be installed as npm package.
 
-```npm
+```bash
 npm i -save @covalent/highlight
 ```
 
