@@ -61,7 +61,7 @@ describe('Component: Highlight', () => {
     });
   })));
 
-  it('should render cpde from dynamic content', async(inject([], () => {
+  it('should render code from dynamic content', async(inject([], () => {
 
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicCssTestComponent);
     let component: TdHighlightDynamicCssTestComponent = fixture.debugElement.componentInstance;
