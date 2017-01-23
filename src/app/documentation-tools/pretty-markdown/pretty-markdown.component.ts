@@ -125,8 +125,8 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       });
 
       let data: any[] = [];
-      for (let index: number = 2; index < dataTableLines.length; index++) {
-        let rowSplit: string[] = dataTableLines[index].split('|')
+      for (let i: number = 2; i < dataTableLines.length; i++) {
+        let rowSplit: string[] = dataTableLines[i].split('|')
                                                       .filter((cell: string) => { return cell; })
                                                       .map((s: string) => { return s.trim(); });
         let row: any = {};
