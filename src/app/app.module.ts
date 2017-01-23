@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DocsAppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
-import { ComponentsModule } from './views/components/';
-import { DocsModule } from './views/docs/';
-import { LayoutsModule } from './views/layouts/';
-import { StyleGuideModule } from './views/style-guide/';
+import { HomeComponent } from './components/home/home.component';
+import { ComponentsModule } from './components/components/';
+import { DocsModule } from './components/docs/';
+import { LayoutsModule } from './components/layouts/';
+import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { CovalentCoreModule } from '../platform/core';
