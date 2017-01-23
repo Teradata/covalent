@@ -10,4 +10,12 @@
   md-checkbox:last-of-type {
     margin-bottom: 16px;
   }
+
+  .md-checkbox-disabled {
+    &.md-checkbox-checked, &.md-checkbox-indeterminate {
+      .md-checkbox-background {
+        background-color: #03a9f4 !important;
+      }
+    }
+  }
 }
