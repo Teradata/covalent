@@ -2,6 +2,7 @@ import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer, Secur
          ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+import { MdCheckbox } from '@angular/material';
 import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent } from '@covalent/markdown';
 import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent } from '@covalent/core';
@@ -43,6 +44,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
   @ViewChild(TdPrettyMarkdownContainerDirective) container: TdPrettyMarkdownContainerDirective;
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
+              private _renderer: Renderer,
               private _injector: Injector) {}
 
   ngAfterViewInit(): void {
@@ -73,12 +75,13 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
 
       // Join lines again with line characters
       markdown = lines.join('\n');
+      markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceCodeBlocks(markdown);
       let keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
       keys = keys.sort((compA: string, compB: string) => {
-        return markdown.indexOf(compA) > markdown.indexOf(compA) ? 1 : -1;
+        return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
     }
@@ -93,6 +96,18 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       let key: string = '[' + componentFactory.selector + '-placeholder-' + componentIndex++ + ']';
       this._components[key] = componentRef;
       return key;
+    });
+  }
+
+  private _replaceCheckbox(markdown: string): string {
+    let checkboxRegExp: RegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
+    return this._replaceComponent(markdown, MdCheckbox, checkboxRegExp,
+                                  (componentRef: ComponentRef<MdCheckbox>, match: string, checked: string, label: string) => {
+      componentRef.instance.checked = !!checked.trim();
+      componentRef.instance.disabled = true;
+      componentRef.instance.labelPosition = 'after';
+      this._renderer.setElementProperty((<HTMLElement>componentRef.instance._getHostElement())
+                                        .getElementsByClassName('md-checkbox-label')[0], 'innerHTML', label);
     });
   }
 
@@ -167,7 +182,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
     if (markdown.indexOf(key) > -1) {
       let markdownParts: string[] = markdown.split(key);
       keys.shift();
-      this._render(markdownParts[0], keys[0], keys);
+      this._render(markdownParts[0], undefined, undefined);
       this.container.viewContainerRef.insert(this._components[key].hostView, this.container.viewContainerRef.length);
       this._components[key] = undefined;
       delete this._components[key];

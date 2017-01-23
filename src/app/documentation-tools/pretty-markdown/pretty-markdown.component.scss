@@ -1,5 +1,13 @@
-/deep/ td-data-table,
-/deep/ td-highlight {
-  margin-bottom: 16px;
-  display: block;
+:host /deep/ {
+  td-data-table,
+  td-highlight,
+  md-checkbox {
+    display: block;
+  }
+
+  td-data-table,
+  td-highlight,
+  md-checkbox:last-of-type {
+    margin-bottom: 16px;
+  }
 }
