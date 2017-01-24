@@ -8,7 +8,7 @@ import { CovalentHighlightModule, TdHighlightComponent } from '../../platform/hi
 import { CovalentMarkdownModule, TdMarkdownComponent } from '../../platform/markdown';
 
 import { TdPrettyMarkdownComponent, TdPrettyMarkdownContainerDirective } from './pretty-markdown/pretty-markdown.component';
-import { ReadmeLoaderComponent } from './readme-loader/readme-loader.component';
+import { TdReadmeLoaderComponent } from './readme-loader/readme-loader.component';
 
 @NgModule({
   imports: [
@@ -20,12 +20,12 @@ import { ReadmeLoaderComponent } from './readme-loader/readme-loader.component';
   declarations: [
     TdPrettyMarkdownComponent,
     TdPrettyMarkdownContainerDirective,
-    ReadmeLoaderComponent,
+    TdReadmeLoaderComponent,
   ],
   exports: [
     TdPrettyMarkdownComponent,
     TdPrettyMarkdownContainerDirective,
-    ReadmeLoaderComponent,
+    TdReadmeLoaderComponent,
   ],
   entryComponents: [ TdDataTableComponent, TdMarkdownComponent, TdHighlightComponent, MdCheckbox ],
 })

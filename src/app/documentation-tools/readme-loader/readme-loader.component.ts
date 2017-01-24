@@ -7,7 +7,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./readme-loader.component.scss'],
   templateUrl: './readme-loader.component.html',
 })
-export class ReadmeLoaderComponent {
+export class TdReadmeLoaderComponent {
 
   @Input()
   set resourceUrl(resourceUrl: string) {
