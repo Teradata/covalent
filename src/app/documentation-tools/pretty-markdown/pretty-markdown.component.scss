@@ -1,3 +1,6 @@
+@import '~@angular/material/core/theming/theming';
+$code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+
 :host /deep/ {
   td-data-table,
   td-highlight,
@@ -9,6 +12,14 @@
   td-highlight,
   md-checkbox:last-of-type {
     margin-bottom: 16px;
+  }
+
+  :not(pre) > code {
+    background: #1E1E21;
+    color: md-color($md-grey, 50);
+    font-family: $code-font;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   .md-checkbox-disabled {
