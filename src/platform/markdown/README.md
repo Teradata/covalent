@@ -1,6 +1,6 @@
 ## TdMarkdownComponent: td-markdown
 
-`<td-markdown>` is a directive for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
+`<td-markdown>` is an @angular component for Github flavored Javascript Markdown to HTML converter. It is based on [showdown](https://github.com/showdownjs/showdown/) library.
 
 ## API Summary
 
@@ -8,9 +8,9 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. Resource file.
+| `content` | `string` | Markdown format content to be parsed as html markup. Used to load data dynamically. e.g. `README.md` content.
 
-**Note:** This module uses the **DomSanitizer** ng2 service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
+**Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `showdown` lib to avoid **XSS** issues.
 
 By default, `--dev` build will log the following message in the console to let you know:
 
@@ -20,7 +20,7 @@ By default, `--dev` build will log the following message in the console to let y
 
 This component can be installed as npm package.
 
-```npm
+```bash
 npm i -save @covalent/markdown
 ```
 
@@ -32,14 +32,14 @@ npm i -save @covalent/markdown
 
 ```json
 "scripts": [
-  "../node_modules/showdown/dist/showdown.js"
+  "path/to/node_modules/showdown/dist/showdown.js"
 ]
 ```
 
 **index.html**:
 
 ```html
-<script src="../node_modules/showdown/dist/showdown.js"></script>
+<script src="path/to/node_modules/showdown/dist/showdown.js"></script>
 ```
 
 Then, import the **[CovalentMarkdownModule]** using the *forRoot()* method in your NgModule:
@@ -54,6 +54,31 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
   ...
 })
 export class MyModule {}
+```
+
+### Theming
+
+The `markdown` module comes with its own `covalent` theme which uses the material *theme* which is used by importing our theme scss file.
+
+```css
+@import '~@angular/material/core/theming/all-theme';
+@import '~@covalent/markdown/markdown-theme';
+
+@include md-core();
+
+$primary: md-palette($md-orange, 800);
+$accent:  md-palette($md-light-blue, 600, A100, A400);
+$warn:    md-palette($md-red, 600);
+
+$theme: md-light-theme($primary, $accent, $warn);
+
+@include markdown-markdown-theme($theme);
+```
+
+Or by loading them in the `index.html` file:
+
+```html
+<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css">
 ```
 
 ## Example
