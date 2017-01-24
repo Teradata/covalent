@@ -21,6 +21,10 @@ export class TdPrettyMarkdownContainerDirective {
   }
 }
 
+export interface IReplacerFunc<T> {
+    (componentRef: ComponentRef<T>, ...args: any[]): void;
+}
+
 @Component({
   selector: 'td-pretty-markdown',
   styleUrls: ['./pretty-markdown.component.scss'],
@@ -87,12 +91,12 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
     }
   }
 
-  private _replaceComponent<T>(markdown: string, type: Type<any>, regExp: RegExp, replacer: Function): string {
+  private _replaceComponent<T>(markdown: string, type: Type<T>, regExp: RegExp, replacerFunc: IReplacerFunc<T>): string {
     let componentIndex: number = 0;
     return markdown.replace(regExp, (...args: any[]) => {
       let componentFactory: ComponentFactory<T> = this._componentFactoryResolver.resolveComponentFactory(type);
-      let componentRef: ComponentRef<any> = componentFactory.create(this._injector);
-      replacer(componentRef, ...args);
+      let componentRef: ComponentRef<T> = componentFactory.create(this._injector);
+      replacerFunc(componentRef, ...args);
       let key: string = '[' + componentFactory.selector + '-placeholder-' + componentIndex++ + ']';
       this._components[key] = componentRef;
       return key;
