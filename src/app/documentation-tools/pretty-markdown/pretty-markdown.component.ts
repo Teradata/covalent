@@ -32,7 +32,6 @@ export interface IReplacerFunc<T> {
 })
 export class TdPrettyMarkdownComponent implements AfterViewInit {
 
-  private _initialized: boolean = false;
   private _content: string;
 
   private _components: {} = {};
@@ -40,9 +39,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    if (this._initialized) {
-      this._loadContent(this._content);
-    }
+    this._loadContent(this._content);
   }
 
   @ViewChild(TdPrettyMarkdownContainerDirective) container: TdPrettyMarkdownContainerDirective;
@@ -52,11 +49,8 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
               private _injector: Injector) {}
 
   ngAfterViewInit(): void {
-    this._initialized = true;
     if (!this._content) {
       this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
-    } else {
-      this._loadContent(this._content);
     }
   }
 
@@ -88,6 +82,26 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+    }
+  }
+
+  private _render(markdown: string, key: string, keys: string[]): void {
+    if (!markdown) {
+      return;
+    }
+    if (markdown.indexOf(key) > -1) {
+      let markdownParts: string[] = markdown.split(key);
+      keys.shift();
+      this._render(markdownParts[0], undefined, undefined);
+      this.container.viewContainerRef.insert(this._components[key].hostView, this.container.viewContainerRef.length);
+      this._components[key] = undefined;
+      delete this._components[key];
+      this._render(markdownParts[1], keys[0], keys);
+    } else {
+      let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
+        .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
+      contentRef.instance.content = markdown;
+      this.container.viewContainerRef.insert(contentRef.hostView, this.container.viewContainerRef.length);
     }
   }
 
@@ -177,25 +191,5 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
         componentRef.instance.refresh();
       });
     });
-  }
-
-  private _render(markdown: string, key: string, keys: string[]): void {
-    if (!markdown) {
-      return;
-    }
-    if (markdown.indexOf(key) > -1) {
-      let markdownParts: string[] = markdown.split(key);
-      keys.shift();
-      this._render(markdownParts[0], undefined, undefined);
-      this.container.viewContainerRef.insert(this._components[key].hostView, this.container.viewContainerRef.length);
-      this._components[key] = undefined;
-      delete this._components[key];
-      this._render(markdownParts[1], keys[0], keys);
-    } else {
-      let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
-        .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
-      contentRef.instance.content = markdown;
-      this.container.viewContainerRef.insert(contentRef.hostView, this.container.viewContainerRef.length);
-    }
   }
 }
