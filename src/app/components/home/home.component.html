@@ -1,5 +1,5 @@
 <td-layout-nav logo="assets:teradata">
-  <div toolbar-content layout="row" layout-align="center center" flex>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Covalent</span>
     <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
@@ -101,7 +101,7 @@
         <span *ngIf="starCount"><md-icon class="text-md tc-grey-600">star</md-icon> {{starCount}}</span>
       </a>
     </md-card-actions>
-    <div after-card>
+    <div td-after-card>
       <h3 class="md-title">FAQs</h3>
       <td-expansion-panel label="What is Covalent?" sublabel="what is this thing?">
         <div class="md-padding">
