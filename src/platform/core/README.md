@@ -90,7 +90,7 @@ Example Nav List Layout:
   <div td-sidenav-toolbar-content layout="row" layout-align="center center" flex>
     <span>App Name</span>
     <span flex></span>
-    <button md-button (click)="search()" class="md-icon-button"><md-icon class="md-24">search</md-icon></button>
+    <button md-icon-button (click)="search()"><md-icon class="md-24">search</md-icon></button>
   </div>
   <md-nav-list td-sidenav-content>
     <a md-list-item>
