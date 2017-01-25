@@ -2,8 +2,8 @@
   <md-toolbar color="primary">
     <button md-button *ngIf="isMainSidenavAvailable" (click)="menuClick()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
     <md-icon *ngIf="icon">{{icon}}</md-icon>
-    <md-icon *ngIf="logo" class="md-icon-logo" [svgIcon]="logo"></md-icon>
-    <span>{{toolbarTitle}}</span>
+    <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+    <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
     <ng-content select="[toolbar-content]"></ng-content>
   </md-toolbar>
   <div flex layout="column" class="content md-content">
