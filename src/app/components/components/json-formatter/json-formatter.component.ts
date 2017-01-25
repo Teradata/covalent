@@ -25,6 +25,10 @@ export class JsonFormatterDemoComponent {
     description: `Levels opened by default when JS object is formatted and rendered.`,
     name: 'levelsOpen?',
     type: 'number',
+  }, {
+    description: `Refreshes json-formatter and rerenders [data]`,
+    name: 'refresh',
+    type: `function()`,
   }];
 
   data: Object = {

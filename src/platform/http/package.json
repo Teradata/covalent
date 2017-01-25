@@ -1,6 +1,6 @@
 {
   "name": "@covalent/http",
-  "version": "0.10.0",
+  "version": "0.10.2",
   "description": "Teradata UI Platform Http Helper Module",
   "keywords": [
     "angular",
@@ -34,7 +34,7 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@angular/core": "^2.4.1",
-    "@angular/http": "^2.4.1"
+    "@angular/core": "^2.4.4",
+    "@angular/http": "^2.4.4"
   }
 }

@@ -66,7 +66,7 @@ export abstract class ChartComponent implements OnInit {
         this.renderChart(data);
       });
     } else {
-      throw '[data] or [dataSrc] must be defined in [TdChartLineComponent]';
+      throw new Error('[data] or [dataSrc] must be defined in [TdChartLineComponent]');
     }
   }
 

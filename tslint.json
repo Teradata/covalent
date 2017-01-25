@@ -5,6 +5,11 @@
       true,
       "statements"
     ],
+    "array-type": [
+      true,
+      "array" 
+    ],
+    "arrow-parens": true,
     "ban": [
       true,
       []
@@ -27,8 +32,7 @@
     ],
     "jsdoc-format": true,
     "label-position": true,
-    "label-undefined": true,
-    "max-line-length": [true, 120],
+    "max-line-length": [true, 150],
     "member-access": [
       false
     ],
@@ -58,7 +62,7 @@
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": true,
+    "no-consecutive-blank-lines": [true],
     "no-console": [
       true, 
       "assert", 
@@ -82,12 +86,11 @@
       "warn"
     ],
     "no-construct": true,
-    "no-constructor-vars": false,
     "no-debugger": true,
     "no-default-export": true,
-    "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-empty": true,
+    "no-empty-interface": false,
     "no-eval": true,
     "no-inferrable-types": [
       false,
@@ -95,17 +98,17 @@
     ],
     "no-internal-module": true,
     "no-invalid-this": true,
+    "no-magic-numbers": false, //TODO_LINT (we should lint for this)
     "no-namespace": true,
     "no-null-keyword": true,
     "no-reference": true,
     "no-require-imports": true,
     "no-shadowed-variable": true,
     "no-string-literal": true,
+    "no-string-throw": true,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
-    "no-unreachable": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-var-requires": true,
@@ -165,10 +168,6 @@
       }
     ],
     "use-isnan": true,
-    "use-strict": [
-      true,
-      "check-module"
-    ],
     "variable-name": [
       true,
       "ban-keywords",
@@ -185,30 +184,8 @@
       "check-type"
     ],
     // ANGULAR 2 Rules
-    "directive-selector-name": [
-      false, // Checked in PR's (kebab-case usage when used as component placeholder)
-      "camelCase"
-    ],
-    "component-selector-name": [
-      true,
-      "kebab-case"
-    ],
-    "directive-selector-type": [
-      false, // Checked in PR's (usage as element when used as placeholder for `ng-content`)
-      "attribute"
-    ],
-    "component-selector-type": [
-      true,
-      "element"
-    ],
-    "directive-selector-prefix": [
-      false,
-      "td"
-    ],
-    "component-selector-prefix": [ // This will be checked in PR's since we only want `td-` prefix for platform components, not docs not product components.
-      false,
-      "td"
-    ],
+    "directive-selector": [false, "attribute", "td", "camelCase"],
+    "component-selector": [false, "element", "td", "kebab-case"],
     "component-class-suffix": true,
     "directive-class-suffix": false, // Checked in PR's (different suffix for validators and so)
     "use-input-property-decorator": true,

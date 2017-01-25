@@ -22,13 +22,13 @@ export class TdDialogComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     if (this.dialogTitle.length > 1) {
-      throw 'Duplicate td-dialog-title component at in td-dialog.';
+      throw new Error('Duplicate td-dialog-title component at in td-dialog.');
     }
     if (this.dialogContent.length > 1) {
-      throw 'Duplicate td-dialog-content component at in td-dialog.';
+      throw new Error('Duplicate td-dialog-content component at in td-dialog.');
     }
     if (this.dialogActions.length > 1) {
-      throw 'Duplicate td-dialog-actions component at in td-dialog.';
+      throw new Error('Duplicate td-dialog-actions component at in td-dialog.');
     }
   }
 

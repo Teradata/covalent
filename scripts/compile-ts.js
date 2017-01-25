@@ -25,7 +25,11 @@ var tsProject = ts.createProject({
       ],
       types: [
         "jasmine", "hammerjs", "rxjs"
-      ]
+      ],
+      noUnusedParameters: false,
+      noUnusedLocals: false,
+      allowUnreachableCode: false,
+      pretty: true
     });
 
 gulp.task('compile-ts', 'Build the UDA scripts', function() {

@@ -48,7 +48,7 @@ export class TdDynamicFormsService {
    */
   validateDynamicElementName(name: string): void {
     if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
-      throw `Dynamic element name: "${name}" is not valid.`;
+      throw new Error(`Dynamic element name: "${name}" is not valid.`);
     }
   }
 
@@ -75,7 +75,7 @@ export class TdDynamicFormsService {
       case TdDynamicElement.Select:
         return TdDynamicSelectComponent;
       default:
-        throw `Error: type ${element} does not exist or not supported.`;
+        throw new Error(`Error: type ${element} does not exist or not supported.`);
     }
   }
 
@@ -99,7 +99,7 @@ export class TdDynamicFormsService {
       case TdDynamicElement.SlideToggle:
         return 20;
       default:
-        throw `Error: type ${element} does not exist or not supported.`;
+        throw new Error(`Error: type ${element} does not exist or not supported.`);
     }
   }
 

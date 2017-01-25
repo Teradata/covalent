@@ -98,8 +98,8 @@
     margin: 15px 0;
     overflow: hidden;
     background: transparent;
-    border: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   hr::before {
@@ -338,10 +338,7 @@
   }
 
   hr {
-    height: 1px;
-    padding: 0;
     margin: 16px 0;
-    border: 0 none;
   }
 
   ul,
