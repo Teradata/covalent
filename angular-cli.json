@@ -20,7 +20,6 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css",
         "platform/core/common/platform.scss"
       ],
       "scripts": [
