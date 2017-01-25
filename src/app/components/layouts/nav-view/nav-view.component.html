@@ -91,7 +91,7 @@
                 <![CDATA[
                 <td-layout #layout sidenavTitle="Sidenav Title" logo="svgIconName">
                   <md-nav-list menu-items>
-                    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
+                    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]">
                       <md-icon>{ {item.icon} }</md-icon>
                       { {item.title} }
                     </a>

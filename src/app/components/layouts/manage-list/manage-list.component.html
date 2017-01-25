@@ -4,19 +4,19 @@
       <span>Section Title</span>
     </md-toolbar>
     <md-nav-list td-sidenav-content>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>folder</md-icon>
         Item Name
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>people</md-icon>
         Item Name
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>star</md-icon>
         Item Name
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>delete</md-icon>
         Item Name
       </a>
@@ -169,7 +169,7 @@
                 <![CDATA[
                 <td-layout #layout sidenavTitle="Sidenav Title" logo="svgIconName">
                   <md-nav-list menu-items>
-                    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
+                    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]">
                       <md-icon>{ {item.icon} }</md-icon>
                       { {item.title} }
                     </a>
