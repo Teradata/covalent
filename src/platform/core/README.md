@@ -47,8 +47,8 @@ Properties:
 #### td-layout-nav-list
 
 `<md-nav-list td-sidenav-content>` is used to include items in the left side list.
-`<div td-left-toolbar-content>` is used to include items in the left side toolbar.
-`<div td-right-toolbar-content>` is used to include items in the right side toolbar.
+`<div td-sidenav-toolbar-content>` is used to include items in the left side toolbar.
+`<div td-toolbar-content>` is used to include items in the right side toolbar.
 
 #### td-layout-card-over
 
@@ -87,7 +87,7 @@ Example Nav List Layout:
 
 ```html
 <td-layout-nav-list #list>
-  <div td-left-toolbar-content layout="row" layout-align="center center" flex>
+  <div td-sidenav-toolbar-content layout="row" layout-align="center center" flex>
     <span>App Name</span>
     <span flex></span>
     <button md-button (click)="search()" class="md-icon-button"><md-icon class="md-24">search</md-icon></button>
@@ -100,7 +100,7 @@ Example Nav List Layout:
     </a>
     <md-divider *ngIf="!last" md-inset></md-divider>
   </md-nav-list>
-  <div td-right-toolbar-content layout="row" layout-align="center center" flex>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>View Name</span>
     <span flex></span>
   </div>

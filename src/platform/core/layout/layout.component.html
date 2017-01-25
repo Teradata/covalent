@@ -7,7 +7,7 @@
           <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
           <span class="md-subhead">{{sidenavTitle}}</span>
         </span>
-        <ng-content select="[td-toolbar-content]"></ng-content>
+        <ng-content select="[td-sidenav-toolbar-content]"></ng-content>
       </div>
     </md-toolbar>
     <div (click)="close()">
