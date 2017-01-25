@@ -15,7 +15,6 @@ import { TdLayoutService } from './services/layout.service';
 })
 export class TdLayoutComponent implements OnDestroy, AfterViewInit {
 
-  private _showUserMenu: boolean = false;
   private _subcriptions: Subscription[] = [];
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
@@ -35,11 +34,7 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    */
   @Input('logo') logo: string;
 
-  constructor(private layoutService: TdLayoutService) {
-    this._subcriptions.push(this.layoutService.registerSidenav('menu').subscribe(() => {
-      this.open();
-    }));
-  }
+  constructor(private _layoutService: TdLayoutService) {}
 
   /**
    * removes subscriptions when destroyed
@@ -54,8 +49,8 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    * subscribes as observable to the onClose() event from the sideNav to hide userMenu when closed.
    */
   ngAfterViewInit(): void {
-    this._subcriptions.push(this._sideNav.onClose.asObservable().subscribe(() => {
-      this._showUserMenu = false;
+    this._subcriptions.push(this._layoutService.registerSidenav('menu').subscribe(() => {
+      this.open();
     }));
   }
 
