@@ -35,15 +35,6 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    */
   @Input('logo') logo: string;
 
-  /**
-   * displayName in menu for users
-   */
-  @Input('displayName') displayName: string;
-
-  /**
-   * method thats called when logout is clicked
-   */
-  @Output('logout') onLogoutEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private layoutService: TdLayoutService) {
     this._subcriptions.push(this.layoutService.registerSidenav('menu').subscribe(() => {
@@ -69,21 +60,6 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
     }));
   }
 
-  logoutClick(): void {
-    this._onLogout();
-  }
-
-  /**
-   * toggle userMenu to hide/show
-   */
-  toggleUserMenu(): void {
-    this._showUserMenu = !this._showUserMenu;
-  }
-
-  isShowUserMenu(): boolean {
-    return this._showUserMenu;
-  }
-
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
@@ -103,12 +79,5 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    */
   public close(): void {
     this._sideNav.close();
-  }
-
-  /**
-   * emits logoutEvent
-   */
-  private _onLogout(): void {
-    this.onLogoutEvent.emit(undefined);
   }
 }
