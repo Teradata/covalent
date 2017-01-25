@@ -1,6 +1,4 @@
-import { Component, forwardRef, Inject, Optional } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, forwardRef, Inject, Optional } from '@angular/core';
 
 import { MdSidenav } from '@angular/material';
 
@@ -12,6 +10,8 @@ import { TdLayoutComponent } from '../layout.component';
   templateUrl: './layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent {
+
+  @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
    * title in toolbar
@@ -28,22 +28,11 @@ export class TdLayoutNavListComponent {
    */
   @Input('logo') logo: string;
 
-  @ViewChild(MdSidenav) _sideNav: MdSidenav;
-
-  /**
-   * method thats called when menu is clicked
-   */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
-
   get isMainSidenavAvailable(): boolean {
     return !!this._layout;
   }
 
   constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
-
-  public menuClick(): void {
-    this._onMenuClick();
-  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
@@ -66,12 +55,8 @@ export class TdLayoutNavListComponent {
     this._sideNav.close();
   }
 
-  /**
-   * emits menuEvent
-   */
-  private _onMenuClick(): void {
+  menuClick(): void {
     if (this.isMainSidenavAvailable) {
-      this.onOpenMenu.emit(undefined);
       this._layout.open();
     }
   }
