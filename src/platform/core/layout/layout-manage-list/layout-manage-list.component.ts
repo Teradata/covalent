@@ -4,8 +4,6 @@ import { ViewChild } from '@angular/core';
 
 import { MdSidenav } from '@angular/material';
 
-import { TdLayoutService } from '../services/layout.service';
-
 @Component({
   selector: 'td-layout-manage-list',
   styleUrls: ['./layout-manage-list.component.scss' ],
@@ -14,19 +12,6 @@ import { TdLayoutService } from '../services/layout.service';
 export class TdLayoutManageListComponent {
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
-
-  /**
-   * method thats called when menu is clicked
-   */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
-
-  constructor(private layoutService: TdLayoutService) {
-
-  }
-
-  public menuClick(): void {
-    this._onMenuClick();
-  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
@@ -47,13 +32,5 @@ export class TdLayoutManageListComponent {
    */
   public close(): void {
     this._sideNav.close();
-  }
-
-  /**
-   * emits menuEvent
-   */
-  private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
   }
 }
