@@ -10,7 +10,9 @@
         <ng-content select="[td-toolbar-content]"></ng-content>
       </div>
     </md-toolbar>
-    <ng-content select="[menu-items],[td-sidenav-content]"></ng-content>
+    <div (click)="close()">
+      <ng-content select="[menu-items],[td-sidenav-content]"></ng-content>
+    </div>
   </md-sidenav>
   <ng-content></ng-content>
 </md-sidenav-container>

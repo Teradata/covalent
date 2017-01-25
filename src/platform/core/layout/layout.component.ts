@@ -35,7 +35,6 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    */
   @Input('logo') logo: string;
 
-
   constructor(private layoutService: TdLayoutService) {
     this._subcriptions.push(this.layoutService.registerSidenav('menu').subscribe(() => {
       this.open();

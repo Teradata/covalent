@@ -1,10 +1,10 @@
 <td-layout #layout sidenavTitle="Covalent" logo="assets:teradata">
   <md-nav-list td-sidenav-content>
     <template let-item ngFor [ngForOf]="routes">
-      <a md-list-item [routerLink]="[item.route]" (click)="layout.close()"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+      <a md-list-item [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
     </template>
     <md-divider></md-divider>
-    <a md-list-item (click)="layout.close()"><md-icon>cancel</md-icon> Close</a>
+    <a md-list-item><md-icon>cancel</md-icon> Close</a>
   </md-nav-list>
   <router-outlet></router-outlet>
 </td-layout>
