@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { MdSidenav } from '@angular/material';
 

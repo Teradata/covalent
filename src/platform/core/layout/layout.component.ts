@@ -5,17 +5,12 @@ import { Subscription } from 'rxjs';
 
 import { MdSidenav } from '@angular/material';
 
-import { TdLayoutService } from './services/layout.service';
-
 @Component({
-  providers: [ TdLayoutService ],
   selector: 'td-layout',
   styleUrls: ['./layout.component.scss' ],
   templateUrl: './layout.component.html',
 })
-export class TdLayoutComponent implements OnDestroy, AfterViewInit {
-
-  private _subcriptions: Subscription[] = [];
+export class TdLayoutComponent {
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
@@ -33,26 +28,6 @@ export class TdLayoutComponent implements OnDestroy, AfterViewInit {
    * logo file for title in sideNav menu
    */
   @Input('logo') logo: string;
-
-  constructor(private _layoutService: TdLayoutService) {}
-
-  /**
-   * removes subscriptions when destroyed
-   */
-  ngOnDestroy(): void {
-    this._subcriptions.forEach((subs: Subscription) => {
-      subs.unsubscribe();
-    });
-  }
-
-  /**
-   * subscribes as observable to the onClose() event from the sideNav to hide userMenu when closed.
-   */
-  ngAfterViewInit(): void {
-    this._subcriptions.push(this._layoutService.registerSidenav('menu').subscribe(() => {
-      this.open();
-    }));
-  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).

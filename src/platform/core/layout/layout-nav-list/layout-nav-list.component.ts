@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, forwardRef, Inject, Optional } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
 import { MdSidenav } from '@angular/material';
 
-import { TdLayoutService } from '../services/layout.service';
+import { TdLayoutComponent } from '../layout.component';
 
 @Component({
   selector: 'td-layout-nav-list',
@@ -35,9 +35,11 @@ export class TdLayoutNavListComponent {
    */
   @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private layoutService: TdLayoutService) {
-
+  get isMainSidenavAvailable(): boolean {
+    return !!this._layout;
   }
+
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
   public menuClick(): void {
     this._onMenuClick();
@@ -68,7 +70,9 @@ export class TdLayoutNavListComponent {
    * emits menuEvent
    */
   private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
+    if (this.isMainSidenavAvailable) {
+      this.onOpenMenu.emit(undefined);
+      this._layout.open();
+    }
   }
 }
