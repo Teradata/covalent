@@ -55,7 +55,7 @@ export class TdLayoutNavListComponent {
     this._sideNav.close();
   }
 
-  menuClick(): void {
+  openMainSidenav(): void {
     if (this.isMainSidenavAvailable) {
       this._layout.open();
     }

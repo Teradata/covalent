@@ -30,7 +30,7 @@ export class TdLayoutNavComponent {
 
   constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
-  menuClick(): void {
+  openMainSidenav(): void {
     if (this.isMainSidenavAvailable) {
       this._layout.open();
     }
