@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -6,10 +6,10 @@ import { Observable } from 'rxjs/Observable';
 export class TdMediaService {
 
   private _queryMap: Map<string, string> = new Map<string, string>();
-  private _querySources: {[key: string]: Subject<any>} = {};
-  private _queryObservables: {[key: string]: Observable<any>} = {};
+  private _querySources: {[key: string]: Subject<boolean>} = {};
+  private _queryObservables: {[key: string]: Observable<boolean>} = {};
 
-  constructor() {
+  constructor(private _ngZone: NgZone) {
     this._queryMap.set('xs', '(max-width: 599px)');
     this._queryMap.set('gt-xs', '(min-width: 600px)');
     this._queryMap.set('sm', '(min-width: 600px) and (max-width: 959px)');
@@ -43,20 +43,25 @@ export class TdMediaService {
    * return if the given media query matches on window resize.
    * Note: don't forget to unsubscribe from [Observable] when finished watching.
    */
-  public registerQuery(query: string): Observable<any> {
+  public registerQuery(query: string): Observable<boolean> {
     if (this._queryMap.get(query.toLowerCase())) {
       query = this._queryMap.get(query.toLowerCase());
     }
     if (!this._querySources[query]) {
-      this._querySources[query] = new Subject<any>();
+      this._querySources[query] = new Subject<boolean>();
+      this._queryObservables[query] = this._querySources[query].asObservable();
+      setTimeout(() => {
+        this._onResize();
+      });
     }
-    this._queryObservables[query] = this._querySources[query].asObservable();
     return this._queryObservables[query];
   }
 
   private _onResize(): void {
     for (let key in this._querySources) {
-      this._querySources[key].next(window.matchMedia(key).matches);
+      this._ngZone.run(() => {
+        this._querySources[key].next(window.matchMedia(key).matches);
+      });
     }
   }
 }
