@@ -31,6 +31,8 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentChartsModule } from '../../../platform/charts';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
+import { DocumentationToolsModule } from '../../documentation-tools';
+
 @NgModule({
   declarations: [
     ComponentsComponent,
@@ -63,6 +65,7 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
+    DocumentationToolsModule.forRoot(),
     componentsRoutes,
   ],
   entryComponents: [ DialogComponent ],

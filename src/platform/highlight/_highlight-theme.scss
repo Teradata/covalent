@@ -18,9 +18,12 @@
     .hljs-tag,
     .hljs-name,
     .hljs-selector-tag,
-    .hljs-keyword,
     .hljs-literal{
       color: #569cd6;
+    }
+
+    .hljs-keyword {
+      color: #C288BF;
     }
 
     .hljs-attr,
@@ -62,7 +65,7 @@
 
     .hljs-variable,
     .hljs-template-variable {
-      color: #660;
+      color: #9FDDFC;
     }
 
     .hljs-deletion {
