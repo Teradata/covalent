@@ -72,7 +72,6 @@ export class TdLayoutNavListComponent {
    */
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
-
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
    */
