@@ -33,11 +33,11 @@ export class NavListComponent implements AfterViewInit {
     title: 'Item Name',
   }];
 
-  constructor(public mediaService: TdMediaService) {}
+  constructor(public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    this.mediaService.broadcast();
+    this.media.broadcast();
   }
 
 }

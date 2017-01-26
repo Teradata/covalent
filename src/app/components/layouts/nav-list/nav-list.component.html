@@ -1,9 +1,9 @@
 <td-layout-nav-list logo="assets:teradata"
                     toolbarTitle="Covalent"
-                    [opened]="mediaService.registerQuery('gt-sm') | async"
-                    [locked]="mediaService.registerQuery('gt-sm') | async"
-                    [mode]="(mediaService.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                    [sidenavWidth]="(mediaService.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [locked]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
   <md-nav-list td-sidenav-content>
     <template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item>
