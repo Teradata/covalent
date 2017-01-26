@@ -75,7 +75,7 @@ export class TdLayoutManageListComponent {
   /**
    * Returns the instance of the underlying [MdSidenav].
    */
-  public sidenav(): MdSidenav {
+  public getSidenav(): MdSidenav {
     return this._sideNav;
   }
 }
