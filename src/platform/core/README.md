@@ -117,7 +117,10 @@ Example for Manage List Layout / Nav Layout combo:
 
 ```html
 <td-layout-nav>
-  <td-layout-manage-list #list>
+  <td-layout-manage-list [opened]="true"
+                        [locked]="true"
+                        [mode]="side"
+                        sidenavWidth="257px">
     <md-nav-list td-sidenav-content>
       ...
     </md-nav-list>
