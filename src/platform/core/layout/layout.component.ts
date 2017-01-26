@@ -1,9 +1,6 @@
-import { Component, OnDestroy, AfterViewInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular/material';
+import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
 @Component({
   selector: 'td-layout',
@@ -15,38 +12,49 @@ export class TdLayoutComponent {
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
-   * title in sideNav menu
+   * title?: string 
+   * Title set in sideNav.
    */
   @Input('sidenavTitle') sidenavTitle: string;
 
   /**
-   * icon for title in sideNav menu
+   * icon?: string
+   * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
-   * logo file for title in sideNav menu
+   * logo?: string
+   * logo icon name to be displayed before the title.
+   * If [icon] is set, then this will not be shown.
    */
   @Input('logo') logo: string;
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): void {
-    this._sideNav.toggle();
+  public toggle(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): void {
-    this._sideNav.open();
+  public open(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): void {
-    this._sideNav.close();
+  public close(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.close();
+  }
+
+  /**
+   * Returns the instance of the underlying [MdSidenav].
+   */
+  public sidenav(): MdSidenav {
+    return this._sideNav;
   }
 }
