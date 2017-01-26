@@ -23,8 +23,23 @@ export class TdMediaService {
     this._queryMap.set('portrait', 'portrait');
     this._queryMap.set('print', 'print');
 
+    let running: boolean = false;
     window.onresize = () => {
-      this._onResize();
+      // way to prevent the resize event from triggering the match media if there is already one event running already.
+      if (!running) {
+          running = true;
+          if (window.requestAnimationFrame) {
+              window.requestAnimationFrame(() => {
+                this._onResize();
+                running = false;
+              });
+          } else {
+              setTimeout(() => {
+                this._onResize();
+                running = false;
+              }, 66);
+          }
+      }
     };
   }
 
@@ -56,6 +71,9 @@ export class TdMediaService {
     return this._queryObservables[query];
   }
 
+  /**
+   * Trigger a match media event on all subscribed observables.
+   */
   public broadcast(): void {
     this._onResize();
   }
