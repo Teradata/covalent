@@ -1,15 +1,22 @@
 <md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
-  <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1">
-    <div flex class="md-content list">
-      <ng-content select="md-toolbar[list-items], md-toolbar[td-sidenav-content]"></ng-content>
-      <div (click)="close()">
-        <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
-      </div>
+  <md-sidenav #sidenav
+              align="start"
+              [mode]="mode"
+              [opened]="opened"
+              [style.max-width]="sidenavWidth"
+              layout="column"
+              layout-fill
+              class="md-whiteframe-z1">
+    <ng-content select="md-toolbar[list-items], md-toolbar[td-sidenav-content]"></ng-content>
+    <div flex class="list md-content" (click)="!locked && close()">
+      <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
     </div>
   </md-sidenav>
-  <div layout="column" layout-fill class="md-content content">
+  <div layout="column" layout-fill class="md-content">
     <md-toolbar class="md-whiteframe-z1">
-      <button md-button (click)="toggle()" md-icon-button hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
+      <button md-icon-button class="td-menu-button" *ngIf="!sidenav.opened" (click)="open()">
+        <md-icon class="md-24">arrow_back</md-icon>
+      </button>
       <ng-content select="[toolbar-buttons], [td-toolbar-content]"></ng-content>
     </md-toolbar>
     <div class="md-content" flex>
