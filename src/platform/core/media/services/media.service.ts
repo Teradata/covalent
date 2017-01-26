@@ -27,18 +27,18 @@ export class TdMediaService {
     window.onresize = () => {
       // way to prevent the resize event from triggering the match media if there is already one event running already.
       if (!running) {
-          running = true;
-          if (window.requestAnimationFrame) {
-              window.requestAnimationFrame(() => {
-                this._onResize();
-                running = false;
-              });
-          } else {
-              setTimeout(() => {
-                this._onResize();
-                running = false;
-              }, 66);
-          }
+        running = true;
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(() => {
+            this._onResize();
+            running = false;
+          });
+        } else {
+          setTimeout(() => {
+            this._onResize();
+            running = false;
+          }, 66);
+        }
       }
     };
   }
