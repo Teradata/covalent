@@ -1,4 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
 
@@ -8,7 +9,7 @@ import { fadeAnimation } from '../../app.animations';
   templateUrl: './components.component.html',
   animations: [fadeAnimation],
 })
-export class ComponentsComponent {
+export class ComponentsComponent implements AfterViewInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -121,4 +122,11 @@ export class ComponentsComponent {
     route: 'http',
     title: 'Http',
   }];
+
+  constructor(public media: TdMediaService) {}
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+  }
 }

@@ -1,4 +1,9 @@
-<td-layout-nav-list #list logo="assets:teradata" toolbarTitle="Covalent">
+<td-layout-nav-list logo="assets:teradata"
+                    toolbarTitle="Covalent"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [locked]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
   <md-nav-list td-sidenav-content>
     <h3 md-subheader>Core Components</h3>
     <template let-item let-last="last" ngFor [ngForOf]="items">

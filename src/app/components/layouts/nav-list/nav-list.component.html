@@ -134,7 +134,8 @@
                     { {item.title} }
                   </a>
                 </md-nav-list>
-                <td-layout-nav-list #list toolbarTitle="Toolbar Title" logo="svgIconName">
+                <td-layout-nav-list logo="assets:teradata"
+                                    toolbarTitle="Covalent">
                   <md-nav-list td-sidenav-content>
                     <template let-item let-last="last" ngFor [ngForOf]="items">
                         <a md-list-item [routerLink]="[item.route]">

@@ -86,7 +86,12 @@ Example Nav Layout / Main Layout combo:
 Example Nav List Layout:
 
 ```html
-<td-layout-nav-list #list>
+<td-layout-nav-list logo="assets:teradata"
+                    toolbarTitle="Covalent"
+                    [opened]="true"
+                    [locked]="true"
+                    [mode]="side"
+                    sidenavWidth="350px">
   <div td-sidenav-toolbar-content layout="row" layout-align="center center" flex>
     <span>App Name</span>
     <span flex></span>
