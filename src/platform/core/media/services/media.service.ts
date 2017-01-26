@@ -35,7 +35,9 @@ export class TdMediaService {
     if (this._queryMap.get(query.toLowerCase())) {
       query = this._queryMap.get(query.toLowerCase());
     }
-    return window.matchMedia(query).matches;
+    return this._ngZone.run(() => {
+      return window.matchMedia(query).matches;
+    });
   }
 
   /**
@@ -50,18 +52,23 @@ export class TdMediaService {
     if (!this._querySources[query]) {
       this._querySources[query] = new Subject<boolean>();
       this._queryObservables[query] = this._querySources[query].asObservable();
-      setTimeout(() => {
-        this._onResize();
-      });
     }
     return this._queryObservables[query];
   }
 
+  public broadcast(): void {
+    this._onResize();
+  }
+
   private _onResize(): void {
-    for (let key in this._querySources) {
+    for (let query in this._querySources) {
       this._ngZone.run(() => {
-        this._querySources[key].next(window.matchMedia(key).matches);
+        this._matchMediaTrigger(query);
       });
     }
+  }
+
+  private _matchMediaTrigger(query: string): void {
+    this._querySources[query].next(window.matchMedia(query).matches);
   }
 }
