@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 
+import { TdDigitsPipe } from '@covalent/core';
+
 import { componentsRoutes } from './components.routes';
 
 import { ComponentsComponent } from './components.component';
@@ -76,5 +78,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     NgxChartsModule,
   ],
   entryComponents: [ DialogComponent ],
+  providers: [
+    TdDigitsPipe,
+  ],
 })
 export class ComponentsModule {}

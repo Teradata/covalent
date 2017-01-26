@@ -1,138 +1,65 @@
-import { Component, OnInit} from '@angular/core';
-import { sourcesData, latencyData } from './data';
+import { Component } from '@angular/core';
+import { single, multi } from './data';
+
+import { TdDigitsPipe } from '@covalent/core';
 
 @Component({
   selector: 'ngx-charts-demo',
   styleUrls: ['./ngx-charts.component.scss'],
   templateUrl: './ngx-charts.component.html',
 })
-export class NgxChartsDemoComponent implements OnInit {
+export class NgxChartsDemoComponent {
 
-  displaySizeData: any[] = [];
-  displayLatencyData: any = [{
-    'name': 'Latency',
-    'series': [],
-  }];
-  displayRecordsData: any = [{
-    'name': 'Records',
-    'series': [],
-  }];
-  formatLatencyData: any[] = [];
-  formatRecordsData: any[] = [];
+  // Use digits pipe
+  private _digits: TdDigitsPipe = new TdDigitsPipe();
 
-  chartRange: any[] = [
-    {
-      range: '1h',
-      interval: '1m',
-      rangeText: 'last hour',
-      reload: 15 * 1000,
-      reloadRange: '3m',
-      maxPoints: 60,
-    }, {
-      range: '1d',
-      interval: '24m',
-      rangeText: 'last day',
-      reload: 60 * 1000,
-      reloadRange: '72m',
-      maxPoints: 60,
-    }, {
-      range: '7d',
-      interval: '3h',
-      rangeText: 'last week',
-      reload: 60 * 1000,
-      reloadRange: '9h',
-      maxPoints: 56,
-    }, {
-      range: '1M',
-      interval: '12h',
-      rangeText: 'last month',
-      reload: 60 * 1000,
-      reloadRange: '36h',
-      maxPoints: 60,
-    },
-  ];
-
-  range: any = this.chartRange[0];
+  // Chart
+  single: any[];
+  multi: any[];
 
   view: any[] = [700, 400];
 
-  // Generic Chart options
+  // options
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = false;
-  showLegend: boolean = true;
+  showLegend: boolean = false;
   showXAxisLabel: boolean = true;
+  xAxisLabel: string = '';
   showYAxisLabel: boolean = true;
+  yAxisLabel: string = 'Products';
 
   colorScheme: any = {
-    domain: [
-      '#a8385d', '#7aa3e5', '#a27ea8', '#aae3f5', '#adcded', '#a95963', '#8796c0', '#7ed3ed', '#50abcc', '#ad6886',
-    ],
+    domain: ['#1565C0', '#03A9F4', '#FFA726', '#FFCC80'],
   };
 
-  // Bar Chart options
-  barXAxisLabel: string = 'Time';
-  barYAxisLabel: string = 'Size';
+  // line, area
+  autoScale: boolean = true;
 
-  // Line Chart options
-  lineXAxisLabel: string = 'Time';
-  lineYAxisLabel: string = 'Latency';
-
-  // Area Chart options
-  areaXAxisLabel: string = 'Time';
-  areaYAxisLabel: string = 'Records';
-
-  lineColorScheme: any = {
-    domain: [
-      '#a27ea8',
-    ],
-  };
-
-  ngOnInit(): void {
-    this.loadSourcesData();
-    this.loadLatencyData();
-  }
-
-  loadSourcesData(): void {
-    let volumes: any[] = sourcesData;
-    volumes.shift();
-    volumes.forEach((metric: any) => {
-      let size: number = Math.round(metric.total_bytes.value);
-      let records: number = Math.round(metric.total_docs.value);
-
-      let x: any = new Date(metric.time).getHours() + ':' + new Date(metric.time).getMinutes();
-      this.displaySizeData.push({
-        'name': x,
-        'value': size,
+  constructor( ) {
+    // Chart Single
+    Object.assign(this, {single});
+    // Chart Multi
+    this.multi = multi.map((group: any) => {
+      group.series = group.series.map((dataItem: any) => {
+        dataItem.name = new Date(dataItem.name);
+        return dataItem;
       });
-      this.formatRecordsData.push({
-        'name': x,
-        'value': records,
-      });
+      return group;
     });
-    this.displayRecordsData[0]['series'] = this.formatRecordsData;
   }
 
-  loadLatencyData(): void {
-    let latencies: any[] = latencyData;
-    latencies.forEach((metric: any) => {
-      let router: number = (metric.router_latency_stats.avg / 1000000);
-
-      let x: any = new Date(metric.time).getHours() + ':' + new Date(metric.time).getMinutes();
-
-      if (router < 0) {
-        router = 0.001;
-      }
-
-      this.formatLatencyData.push({
-        'name': x,
-        'value': router,
-      });
-    });
-    this.displayLatencyData[0]['series'] = this.formatLatencyData;
+  axisPercent(val: any): any {
+    return val.toLocaleString() + '%';
   }
-
-  onSelect(event: any): void {
-    // test func
+  axisDigits(val: any): any {
+    return new TdDigitsPipe().transform(val);
+  }
+  axisRounding(val: any): any {
+    if (val % 1 === 0) {
+      return val.toLocaleString();
+    } else {
+      return '';
+    }
   }
 }
