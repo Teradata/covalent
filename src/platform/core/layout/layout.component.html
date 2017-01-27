@@ -2,7 +2,7 @@
   <md-sidenav>
     <md-toolbar class="td-layout-toolbar">
       <div layout="column" flex>
-        <span class="td-layout-toolbar-header" *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start center">
+        <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
           <md-icon *ngIf="icon">{{icon}}</md-icon>
           <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
           <span class="md-subhead">{{sidenavTitle}}</span>
