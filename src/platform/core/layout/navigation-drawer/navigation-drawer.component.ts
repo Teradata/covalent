@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
+import { MdSidenavToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
 import { TdLayoutService } from '../services/layout.service';
@@ -17,8 +17,8 @@ import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.a
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
-  private _registerSubscription: Subscription;
   private _closeSubscription: Subscription;
+
   toggleMenu: boolean = false;
   @ViewChild(TdLayoutComponent) _layout: TdLayoutComponent;
 
@@ -55,22 +55,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    */
   @Input('email') email: string;
 
-  constructor(private _layoutService: TdLayoutService) {}
-
   ngOnInit(): void {
-    this._registerSubscription = this._layoutService.registerSidenav().subscribe(() => {
-      this.open();
-    });
-    this._closeSubscription = this._layout._sideNav.onClose.subscribe(() => {
+    this._closeSubscription = this._layout.sidenav.onClose.subscribe(() => {
       this.toggleMenu = false;
     });
   }
 
   ngOnDestroy(): void {
-    if (this._registerSubscription) {
-      this._registerSubscription.unsubscribe();
-      this._registerSubscription = undefined;
-    }
     if (this._closeSubscription) {
       this._closeSubscription.unsubscribe();
       this._closeSubscription = undefined;
