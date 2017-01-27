@@ -34,7 +34,7 @@ export class TdLoadingFactory {
   /**
    * Uses material `Overlay` services to create a DOM element and attach the loading component
    * into it. Leveraging the state and configuration from it.
-   * 
+   *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
   public createFullScreenComponent(options: ITdLoadingConfig): ILoadingRef {
@@ -66,9 +66,9 @@ export class TdLoadingFactory {
 
   /**
    * Creates a loading component dynamically and attaches it into the given viewContainerRef.
-   * Leverages TemplatePortals from material to inject the template inside of it so it fits 
+   * Leverages TemplatePortals from material to inject the template inside of it so it fits
    * perfecly when overlaying it.
-   * 
+   *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
   public createOverlayComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
@@ -96,7 +96,7 @@ export class TdLoadingFactory {
   /**
    * Creates a loading component dynamically and attaches it into the given viewContainerRef.
    * Replaces the template with the loading component depending if it was registered or resolved.
-   * 
+   *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
   public createReplaceComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,

@@ -2,12 +2,12 @@ import { trigger, state, style, transition, animate, AnimationEntryMetadata } fr
 
 /**
  * Function TdFadeInOutAnimation
- * 
+ *
  * params:
  * * duration: Duration of animation in miliseconds. Defaults to 150 ms.
- * 
+ *
  * Returns an [AnimationEntryMetadata] object with states for a fading animation.
- * 
+ *
  * usage: [@tdFadeInOut]="true|false"
  */
 export function TdFadeInOutAnimation(duration: number = 150): AnimationEntryMetadata {

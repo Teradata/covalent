@@ -41,7 +41,7 @@ describe('Service: RouterPath', () => {
     (router: Router, routerPathService: RouterPathService) => {
         const fixture: ComponentFixture<FakeComponent> = TestBed.createComponent(FakeComponent);
 
-        // navigate to /foo then navigate to / 
+        // navigate to /foo then navigate to /
         // which will set previous route to /foo
         router.navigate(['/foo']);
         fixture.detectChanges();
