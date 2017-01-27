@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
 
 import { TdLayoutComponent } from '../layout.component';
-import { TdLayoutService } from '../services/layout.service';
 
 @Component({
   selector: 'td-layout-nav',
@@ -33,15 +32,15 @@ export class TdLayoutNavComponent {
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {
-    return this._layoutService.isSidenavAvailable;
+    return !!this._layout;
   }
 
-  constructor(private _layoutService: TdLayoutService) {}
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
   /**
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
-    this._layoutService.openMainSidenav();
+    this._layout.open();
   }
 }

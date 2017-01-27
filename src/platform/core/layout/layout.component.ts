@@ -1,35 +1,15 @@
-import { Component, Input, ViewChild, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
-
-import { TdLayoutService } from './services/layout.service';
 
 @Component({
   selector: 'td-layout',
   styleUrls: ['./layout.component.scss' ],
   templateUrl: './layout.component.html',
-  providers: [ TdLayoutService ],
 })
-export class TdLayoutComponent implements OnInit, OnDestroy {
+export class TdLayoutComponent {
 
-  private _registerSubscription: Subscription;
   @ViewChild(MdSidenav) sidenav: MdSidenav;
-
-  constructor(private _layoutService: TdLayoutService) {}
-
-  ngOnInit(): void {
-    this._registerSubscription = this._layoutService.registerSidenav().subscribe(() => {
-      this.open();
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this._registerSubscription) {
-      this._registerSubscription.unsubscribe();
-      this._registerSubscription = undefined;
-    }
-  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
