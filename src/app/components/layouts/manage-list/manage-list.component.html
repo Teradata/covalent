@@ -6,7 +6,7 @@
     <md-toolbar td-sidenav-content>
       <span>Section Title</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content (click)="media.query('gt-sm') && manageList.close()">
+    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
       <a md-list-item>
         <md-icon>folder</md-icon>
         Item Name
