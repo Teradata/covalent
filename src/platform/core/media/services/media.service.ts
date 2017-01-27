@@ -39,7 +39,7 @@ export class TdMediaService {
   }
 
   /**
-   * Registers a media query and returns an [Observable] that will re-evaluate and 
+   * Registers a media query and returns an [Observable] that will re-evaluate and
    * return if the given media query matches on window resize.
    * Note: don't forget to unsubscribe from [Observable] when finished watching.
    */

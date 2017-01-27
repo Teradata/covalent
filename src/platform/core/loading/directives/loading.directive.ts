@@ -25,7 +25,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
 
   /**
    * @deprecated in 1.0.0-beta.1
-   * 
+   *
    * Please use the `tdLoadingType` method.
    */
   @Input('loadingType')
@@ -53,7 +53,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
 
   /**
    * @deprecated in 1.0.0-beta.1
-   * 
+   *
    * Please use the `tdLoadingMode` method.
    */
   @Input('loadingMode')

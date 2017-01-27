@@ -3,7 +3,7 @@ import { DebugElement } from '@angular/core';
 export class CovalentTests {
 
   /*
-  * Utility function that traverses down the DOM to find the dialog overlay and then 
+  * Utility function that traverses down the DOM to find the dialog overlay and then
   * traverses down the DOM of that overlay to get the Update/Stop button.
   * This could be a brittle way of doing this so best to keep this in a utility
   * function that can be changed for all places needing this.
@@ -12,7 +12,7 @@ export class CovalentTests {
       let elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
       for (let index: number = 0; index < elements.length; index++) {
           let dialogOverlayId: string = elements.item(index).attributes.getNamedItem('id').value;
-          // try to click update on any error dialogs found.  If there is an error trying to click one just 
+          // try to click update on any error dialogs found.  If there is an error trying to click one just
           // hide the error as it may not be clickable yet in the DOM or something
           try {
             let confirmButton: Element = document.getElementById(dialogOverlayId).children.item(0)
@@ -24,7 +24,7 @@ export class CovalentTests {
   }
 
   /*
-  * Utility function that traverses down the DOM to find the dialog overlay and then 
+  * Utility function that traverses down the DOM to find the dialog overlay and then
   * traverses down the DOM of that overlay to get the Share button.
   * This could be a brittle way of doing this so best to keep this in a utility
   * function that can be changed for all places needing this.
@@ -32,7 +32,7 @@ export class CovalentTests {
   public static clickDialogButton(component: any, buttonText: string): void {
       let elements: NodeList = document.querySelectorAll('[md-button]');
       for (let index: number = 0; index < elements.length; index++) {
-          // try to click share on any buttons found with share as the text content.  If there is an error trying to click one just 
+          // try to click share on any buttons found with share as the text content.  If there is an error trying to click one just
           // hide the error as it may not be clickable yet in the DOM or something
           try {
             let button: Node = elements.item(index);
@@ -90,7 +90,7 @@ export class CovalentTests {
       let elements: NodeList = document.querySelectorAll('[id^=cdk-overlay]');
       for (let index: number = 0; index < elements.length; index++) {
           let dialogOverlayId: string = elements.item(index).attributes.getNamedItem('id').value;
-          // try to close any error dialogs found.  If there is an error trying to close one just 
+          // try to close any error dialogs found.  If there is an error trying to close one just
           // hide the error as it may not be clickable yet in the DOM or something
           try {
             let closeButton: Element = document.getElementById(dialogOverlayId).children.item(0)
@@ -102,7 +102,7 @@ export class CovalentTests {
   }
 
   /*
-  * Utility function that queires the DOM for all cdk-overlay-* and returns true 
+  * Utility function that queires the DOM for all cdk-overlay-* and returns true
   * if it finds one that has "There was a problem" as the firstChild Text
   * This could be a brittle way of doing this so best to keep this in a utility
   * function that can be changed for all places needing this.

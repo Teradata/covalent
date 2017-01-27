@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ElementRef, Input, Renderer, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
 
 @Component({
@@ -14,10 +14,10 @@ export class TdHighlightComponent implements AfterViewInit {
 
   /**
    * content?: string
-   * 
+   *
    * Code content to be parsed as highlighted html.
    * Used to load data dynamically.
-   * 
+   *
    * e.g. `.html`, `.ts` , etc.
    */
   @Input('content')
@@ -28,10 +28,10 @@ export class TdHighlightComponent implements AfterViewInit {
 
   /**
    * lang?: string
-   * 
+   *
    * Language of the code content to be parsed as highlighted html.
    * Defaults to `typescript`
-   * 
+   *
    * e.g. `typescript`, `html` , etc.
    */
   @Input('lang') language: string = 'typescript';

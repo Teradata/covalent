@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { TdChartsComponent } from './charts.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 export interface IChartData {
