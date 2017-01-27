@@ -89,7 +89,6 @@ Example Nav List Layout:
 <td-layout-nav-list logo="assets:teradata"
                     toolbarTitle="Covalent"
                     [opened]="true"
-                    [locked]="true"
                     [mode]="side"
                     sidenavWidth="350px">
   <div td-sidenav-toolbar-content layout="row" layout-align="center center" flex>
@@ -118,7 +117,6 @@ Example for Manage List Layout / Nav Layout combo:
 ```html
 <td-layout-nav>
   <td-layout-manage-list [opened]="true"
-                        [locked]="true"
                         [mode]="side"
                         sidenavWidth="257px">
     <md-nav-list td-sidenav-content>

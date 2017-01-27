@@ -16,27 +16,18 @@ export class TdLayoutManageListComponent {
    * The mode or styling of the sidenav.
    * Defaults to "side".
    * See "MdSidenav" documentation for more info.
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
 
   /**
-   * locked?: boolean
-   * Whether or not the sidenav is closed when clicking on its [td-sidenav-content] elements.
-   * If "true", it will remain open. 
-   * 
-   * Defaults to "true".
-   */
-  @Input('locked') locked: boolean = true;
-
-  /**
    * opened?: boolean
    * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
    * Defaults to "true".
-   * 
+   *
    * See "MdSidenav" documentation for more info.
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('opened') opened: boolean = true;
@@ -46,7 +37,7 @@ export class TdLayoutManageListComponent {
    * sidenavWidth?: string
    * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
    * Defaults to "257px".
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('sidenavWidth') sidenavWidth: string = '257px';
@@ -70,12 +61,5 @@ export class TdLayoutManageListComponent {
    */
   public close(): Promise<MdSidenavToggleResult> {
     return this._sideNav.close();
-  }
-
-  /**
-   * Returns the instance of the underlying [MdSidenav].
-   */
-  public getSidenav(): MdSidenav {
-    return this._sideNav;
   }
 }

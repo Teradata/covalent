@@ -8,7 +8,7 @@
               layout-fill
               class="md-whiteframe-z1">
     <ng-content select="md-toolbar[list-items], md-toolbar[td-sidenav-content]"></ng-content>
-    <div flex class="list md-content" (click)="!locked && close()">
+    <div flex class="list md-content">
       <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
     </div>
   </md-sidenav>
