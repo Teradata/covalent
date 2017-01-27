@@ -1,7 +1,7 @@
 import { Component, Renderer, ElementRef } from '@angular/core';
 
 @Component({
-  /* tslint:disable-next-line */ 
+  /* tslint:disable-next-line */
   selector: 'table[td-data-table]',
   styleUrls: ['./data-table-table.component.scss' ],
   templateUrl: './data-table-table.component.html',

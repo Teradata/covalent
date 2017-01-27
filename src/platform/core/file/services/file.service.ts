@@ -30,13 +30,13 @@ export class TdFileService {
 
   /**
    * params:
-   * - options: IUploadOptions { 
-   *     url: string, 
+   * - options: IUploadOptions {
+   *     url: string,
    *     method: 'post' | 'put',
    *     file: File,
    *     headers?: {[key: string]: string}
    * }
-   * 
+   *
    * Uses underlying [XMLHttpRequest] to upload a file to a url.
    * Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
    */
