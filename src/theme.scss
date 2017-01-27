@@ -53,6 +53,12 @@ $theme: md-light-theme($primary, $accent, $warn);
     @include covalent-theme($blue-grey-deep-orange);
 }
 
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Apply theme for this app
+
 // Active icon color in list nav
 md-nav-list {
     [md-list-item].active {
@@ -64,4 +70,21 @@ md-nav-list {
             color: md-color($accent);
         }
     }
+}
+
+// NGX Charts
+[ngx-charts-axis-label] text {
+    fill: md-color($foreground, secondary-text);
+}
+.tick text {
+    fill: md-color($foreground, disabled);
+}
+.gridline-path {
+    &.gridline-path-horizontal,
+    &.gridline-path-vertical {
+        stroke: rgba(black, 0.06);
+    }
+}
+.legend-title-text {
+    color: md-color($foreground, secondary-text);
 }

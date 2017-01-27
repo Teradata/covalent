@@ -18,12 +18,16 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
+
+// External Dependencies
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -58,6 +62,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     MaterialComponentsComponent,
     DialogComponent,
     NotificationsDemoComponent,
+    // External Dependencies
+    NgxChartsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
@@ -67,6 +73,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentDynamicFormsModule.forRoot(),
     DocumentationToolsModule.forRoot(),
     componentsRoutes,
+    NgxChartsModule,
   ],
   entryComponents: [ DialogComponent ],
 })
