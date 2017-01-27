@@ -9,7 +9,6 @@ import { TdLayoutService } from './services/layout.service';
   selector: 'td-layout',
   styleUrls: ['./layout.component.scss' ],
   templateUrl: './layout.component.html',
-  providers: [ TdLayoutService ],
 })
 export class TdLayoutComponent implements OnInit, OnDestroy {
 
