@@ -75,7 +75,7 @@ export class TdLoadingService {
    *
    * Creates an replace loading mask and attaches it to the viewContainerRef.
    * Replaces the templateRef with the mask when a request is registered on it.
-   * 
+   *
    * NOTE: @internal usage only.
    */
   createComponent(config: ITdLoadingDirectiveConfig, viewContainerRef: ViewContainerRef,
@@ -107,7 +107,7 @@ export class TdLoadingService {
 
   /**
    * @deprecated in 1.0.0-beta.1
-   * 
+   *
    * Please use the `create()` method.
    */
   public createOverlayComponent(config: ITdLoadingConfig, viewContainerRef: ViewContainerRef): void {
@@ -119,7 +119,7 @@ export class TdLoadingService {
   /**
    * params:
    * - name: string
-   * 
+   *
    * Removes `loading` component from service context.
    */
   public removeComponent(name: string): void {
@@ -138,12 +138,12 @@ export class TdLoadingService {
    * - name: string
    * - registers?: number
    * returns: true if successful
-   * 
+   *
    * Resolves a request for the loading mask referenced by the name parameter.
    * Can optionally pass registers argument to set a number of register calls.
-   * 
+   *
    * If no paramemeters are used, then default main mask will be used.
-   * 
+   *
    * e.g. loadingService.register()
    */
   public register(name: string = 'td-loading-main', registers: number = 1): boolean {
@@ -161,12 +161,12 @@ export class TdLoadingService {
    * - name: string
    * - resolves?: number
    * returns: true if successful
-   * 
+   *
    * Registers a request for the loading mask referenced by the name parameter.
    * Can optionally pass resolves argument to set a number of resolve calls.
-   * 
+   *
    * If no paramemeters are used, then default main mask will be used.
-   * 
+   *
    * e.g. loadingService.register()
    */
   public resolve(name: string = 'td-loading-main', resolves: number = 1): boolean {
@@ -188,7 +188,7 @@ export class TdLoadingService {
    * - name: string
    * - value: number
    * returns: true if successful
-   * 
+   *
    * Set value on a loading mask referenced by the name parameter.
    * Usage only available if its mode is 'determinate' and if loading is showing.
    */

@@ -69,7 +69,7 @@ describe('Component: JsonFormatter', () => {
         dateProperty: new Date(),
         numberProperty: 1,
         functionProperty: function(): void {/* */},
-        /* tslint:disable-next-line */ 
+        /* tslint:disable-next-line */
         nullProperty: null,
         undefinedProperty: undefined,
         arrayProperty: [],
@@ -111,7 +111,7 @@ describe('Component: JsonFormatter', () => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-key-node'))).toBeTruthy();
         expect(fixture.debugElement.queryAll(By.css('.td-key-leaf')).length).toBe(6);
-        /* tslint:disable-next-line */ 
+        /* tslint:disable-next-line */
         expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBe('none');
       });
   })));
@@ -125,13 +125,13 @@ describe('Component: JsonFormatter', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-key-node'))).toBeTruthy();
-        /* tslint:disable-next-line */ 
+        /* tslint:disable-next-line */
         expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBe('none');
         fixture.debugElement.query(By.css('.td-key-node')).triggerEventHandler('click', new Event('click'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          /* tslint:disable-next-line */ 
+          /* tslint:disable-next-line */
           expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBeNull();
         });
       });
@@ -146,7 +146,7 @@ describe('Component: JsonFormatter', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        /* tslint:disable-next-line */ 
+        /* tslint:disable-next-line */
         expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBeNull();
       });
   })));
@@ -159,7 +159,7 @@ describe('Component: JsonFormatter', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        /* tslint:disable-next-line */ 
+        /* tslint:disable-next-line */
         expect(fixture.debugElement.query(By.css('.string')).nativeElement.textContent.trim()).toBe('"test"');
         component.data.property = 'test2';
         fixture.detectChanges();

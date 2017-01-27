@@ -100,7 +100,7 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   }
 
   /**
-   * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent] 
+   * Wraps previous and new [TdStepComponent] numbers in an object that implements [IStepChangeEvent]
    * and emits [onStepChange] event.
    */
   private _onStepSelection(step: TdStepComponent): void {
