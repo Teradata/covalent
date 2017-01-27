@@ -56,7 +56,7 @@ export class TdDialogService {
    * @deprecated since 0.9
    */
   public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
-    /* tslint:disable-next-line */ 
+    /* tslint:disable-next-line */
     console.warn('setDefaultViewContainerRef is deprecated. ViewContainerRef is no longer required.');
   }
 

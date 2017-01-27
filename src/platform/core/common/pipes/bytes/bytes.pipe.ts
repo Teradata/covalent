@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class TdBytesPipe implements PipeTransform {
-  /* `bytes` needs to be `any` or TypeScript complains 
+  /* `bytes` needs to be `any` or TypeScript complains
   Tried both `number` and `number | string` */
   transform(bytes: any, precision: number = 2): string {
     if (bytes === 0) {

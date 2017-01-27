@@ -89,7 +89,7 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */ 
+      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: null, on_it: true}));
     });
   })));
@@ -116,7 +116,7 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */ 
+      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: null, age: 17}));
     });
   })));
@@ -145,7 +145,7 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */ 
+      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20}));
     });
   })));
