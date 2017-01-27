@@ -8,7 +8,7 @@ export interface ITdDataTableSortChangeEvent {
 }
 
 @Component({
-  /* tslint:disable-next-line */ 
+  /* tslint:disable-next-line */
   selector: 'th[td-data-table-column]',
   styleUrls: ['./data-table-column.component.scss' ],
   templateUrl: './data-table-column.component.html',
