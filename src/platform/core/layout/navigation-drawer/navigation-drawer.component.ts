@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { MdSidenavToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
-import { TdLayoutService } from '../services/layout.service';
 
 import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.animation';
 
@@ -12,7 +11,6 @@ import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.a
   selector: 'td-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss' ],
   templateUrl: './navigation-drawer.component.html',
-  providers: [ TdLayoutService ],
   animations: [ TdCollapseAnimation() ],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
