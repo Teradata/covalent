@@ -12,7 +12,7 @@ export class TdLayoutComponent {
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
-   * title?: string 
+   * title?: string
    * Title set in sideNav.
    */
   @Input('sidenavTitle') sidenavTitle: string;
@@ -51,10 +51,4 @@ export class TdLayoutComponent {
     return this._sideNav.close();
   }
 
-  /**
-   * Returns the instance of the underlying [MdSidenav].
-   */
-  public getSidenav(): MdSidenav {
-    return this._sideNav;
-  }
 }
