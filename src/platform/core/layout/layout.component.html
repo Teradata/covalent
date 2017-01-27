@@ -1,15 +1,6 @@
 <md-sidenav-container fullscreen>
   <md-sidenav>
-    <md-toolbar class="td-layout-toolbar">
-      <div layout="column" flex>
-        <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
-          <md-icon *ngIf="icon">{{icon}}</md-icon>
-          <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
-          <span class="md-subhead" *ngIf="sidenavTitle">{{sidenavTitle}}</span>
-        </span>
-        <ng-content select="[td-sidenav-toolbar-content]"></ng-content>
-      </div>
-    </md-toolbar>
+    <ng-content select="td-navigation-drawer"></ng-content>
     <ng-content select="[menu-items], [td-sidenav-content]"></ng-content>
   </md-sidenav>
   <ng-content></ng-content>

@@ -9,30 +9,12 @@ import { TdLayoutService } from './services/layout.service';
   selector: 'td-layout',
   styleUrls: ['./layout.component.scss' ],
   templateUrl: './layout.component.html',
+  providers: [ TdLayoutService ],
 })
 export class TdLayoutComponent implements OnInit, OnDestroy {
 
   private _registerSubscription: Subscription;
   @ViewChild(MdSidenav) sidenav: MdSidenav;
-
-  /**
-   * title?: string
-   * Title set in sideNav.
-   */
-  @Input('sidenavTitle') sidenavTitle: string;
-
-  /**
-   * icon?: string
-   * icon name to be displayed before the title
-   */
-  @Input('icon') icon: string;
-
-  /**
-   * logo?: string
-   * logo icon name to be displayed before the title.
-   * If [icon] is set, then this will not be shown.
-   */
-  @Input('logo') logo: string;
 
   constructor(private _layoutService: TdLayoutService) {}
 

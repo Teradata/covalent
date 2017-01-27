@@ -1,17 +1,21 @@
-<td-layout #layout [sidenavTitle]="sidenavTitle" [icon]="icon" [logo]="logo">
-  <div td-sidenav-toolbar-content>
+<md-toolbar>
+  <div layout="column" flex>
+    <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
+      <md-icon *ngIf="icon">{{icon}}</md-icon>
+      <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+      <span class="md-subhead" *ngIf="sidenavTitle">{{sidenavTitle}}</span>
+    </span>
     <div class="md-body-2" *ngIf="email && username">{{username}}</div>
-    <div class="md-body-1" layout="row" href *ngIf="email || username" (click)="toggleMenu = !toggleMenu">
+    <div class="md-body-1" layout="row" href *ngIf="email || username" (click)="toggleMenu()">
       <span flex>{{email || username}}</span>
-      <md-icon class="tc-grey-500" *ngIf="!toggleMenu">arrow_drop_down</md-icon>
-      <md-icon class="tc-grey-500" *ngIf="toggleMenu">arrow_drop_up</md-icon>
+      <md-icon class="tc-grey-500" *ngIf="!menuToggled">arrow_drop_down</md-icon>
+      <md-icon class="tc-grey-500" *ngIf="menuToggled">arrow_drop_up</md-icon>
     </div>
   </div>
-  <md-nav-list td-sidenav-content [@tdCollapse]="toggleMenu">
-    <ng-content select="[td-sidenav-main-content]"></ng-content>
-  </md-nav-list>
-  <md-nav-list td-sidenav-content [@tdCollapse]="!toggleMenu">
-    <ng-content select="[td-sidenav-user-content]"></ng-content>
-  </md-nav-list>
+</md-toolbar>
+<div [@tdCollapse]="menuToggled">
   <ng-content></ng-content>
-</td-layout>
+</div>
+<div [@tdCollapse]="!menuToggled">
+  <ng-content select="[td-navigation-drawer-menu]"></ng-content>
+</div>

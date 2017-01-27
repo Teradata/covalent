@@ -5,10 +5,4 @@
   min-height: 100%;
   height: 100%;
   overflow: hidden;
-  md-toolbar.td-layout-toolbar {
-    padding: 16px;
-    /deep/ > .md-toolbar-layout > md-toolbar-row {
-      height: auto !important;
-    }
-  }
 }

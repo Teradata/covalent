@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, ViewChild, OnInit, OnDestroy, forwardRef, Inject } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { MdSidenavToggleResult } from '@angular/material';
@@ -16,9 +16,11 @@ import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.a
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   private _closeSubscription: Subscription;
+  private _menuToggled: boolean = false;
 
-  toggleMenu: boolean = false;
-  @ViewChild(TdLayoutComponent) _layout: TdLayoutComponent;
+  get menuToggled(): boolean {
+    return this._menuToggled;
+  }
 
   /**
    * title?: string
@@ -53,9 +55,11 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    */
   @Input('email') email: string;
 
+  constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
+
   ngOnInit(): void {
     this._closeSubscription = this._layout.sidenav.onClose.subscribe(() => {
-      this.toggleMenu = false;
+      this._menuToggled = false;
     });
   }
 
@@ -64,6 +68,10 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
       this._closeSubscription.unsubscribe();
       this._closeSubscription = undefined;
     }
+  }
+
+  toggleMenu(): void {
+    this._menuToggled = !this._menuToggled;
   }
 
   /**

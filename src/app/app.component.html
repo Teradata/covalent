@@ -1,11 +1,13 @@
-<td-navigation-drawer #layout sidenavTitle="Covalent" logo="assets:teradata" username="User Name" email="user@email.com">
-  <md-nav-list td-sidenav-main-content (click)="layout.close()">
-    <template let-item ngFor [ngForOf]="routes">
-      <a md-list-item [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
-    </template>
-  </md-nav-list>
-  <md-nav-list td-sidenav-user-content (click)="layout.close()">
-    <a md-list-item><md-icon>exit_to_app</md-icon>Sign out</a>
-  </md-nav-list>
+<td-layout #layout>
+  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" username="User Name" email="user@email.com">
+    <md-nav-list (click)="layout.close()">
+      <template let-item ngFor [ngForOf]="routes">
+        <a md-list-item [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+      </template>
+    </md-nav-list>
+    <md-nav-list td-navigation-drawer-menu (click)="layout.close()">
+      <a md-list-item><md-icon>exit_to_app</md-icon>Sign out</a>
+    </md-nav-list>
+  </td-navigation-drawer>
   <router-outlet></router-outlet>
-</td-navigation-drawer>
+</td-layout>

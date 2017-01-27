@@ -13,8 +13,6 @@ import { TdLayoutFooterComponent } from './layout-footer/layout-footer.component
 
 import { TdNavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { TdLayoutService } from './services/layout.service';
-
 const TD_LAYOUTS: Type<any>[] = [
   TdLayoutComponent,
   TdLayoutNavComponent,
@@ -28,7 +26,7 @@ const TD_LAYOUTS: Type<any>[] = [
 
 export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
           TdLayoutCardOverComponent, TdLayoutManageListComponent,
-          TdLayoutFooterComponent, TdNavigationDrawerComponent, TdLayoutService };
+          TdLayoutFooterComponent, TdNavigationDrawerComponent };
 
 @NgModule({
   imports: [
@@ -49,7 +47,7 @@ export class CovalentLayoutModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentLayoutModule,
-      providers: [ TdLayoutService ],
+      providers: [ ],
     };
   }
 }
