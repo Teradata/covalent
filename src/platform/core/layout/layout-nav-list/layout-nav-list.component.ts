@@ -3,6 +3,7 @@ import { Component, Input, ViewChild, forwardRef, Inject, Optional } from '@angu
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
+import { TdLayoutService } from '../services/layout.service';
 
 @Component({
   selector: 'td-layout-nav-list',
@@ -14,7 +15,7 @@ export class TdLayoutNavListComponent {
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
-   * title?: string 
+   * title?: string
    * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
@@ -37,37 +38,27 @@ export class TdLayoutNavListComponent {
    * The mode or styling of the sidenav.
    * Defaults to "side".
    * See "MdSidenav" documentation for more info.
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
 
   /**
-   * locked?: boolean
-   * Whether or not the sidenav is closed when clicking on its [td-sidenav-content] elements.
-   * If "true", it will remain open. 
-   * 
-   * Defaults to "true".
-   */
-  @Input('locked') locked: boolean = true;
-
-  /**
    * opened?: boolean
    * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
    * Defaults to "true".
-   * 
+   *
    * See "MdSidenav" documentation for more info.
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('opened') opened: boolean = true;
 
-  // Cant support % yet as stated in the layout docs
   /**
    * sidenavWidth?: string
    * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
    * Defaults to "350px".
-   * 
+   *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
   @Input('sidenavWidth') sidenavWidth: string = '350px';
@@ -76,10 +67,10 @@ export class TdLayoutNavListComponent {
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {
-    return !!this._layout;
+    return this._layoutService.isSidenavAvailable;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
+  constructor(private _layoutService: TdLayoutService) {}
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
@@ -103,18 +94,9 @@ export class TdLayoutNavListComponent {
   }
 
   /**
-   * Returns the instance of the underlying [MdSidenav].
-   */
-  public getSidenav(): MdSidenav {
-    return this._sideNav;
-  }
-
-  /**
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
-    if (this.isMainSidenavAvailable) {
-      this._layout.open();
-    }
+    this._layoutService.openMainSidenav();
   }
 }

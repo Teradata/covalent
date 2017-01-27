@@ -1,0 +1,17 @@
+<td-layout #layout [sidenavTitle]="sidenavTitle" [icon]="icon" [logo]="logo">
+  <div td-sidenav-toolbar-content>
+    <div class="md-body-2" *ngIf="email && username">{{username}}</div>
+    <div class="md-body-1" layout="row" href *ngIf="email || username" (click)="toggleMenu = !toggleMenu">
+      <span flex>{{email || username}}</span>
+      <md-icon class="tc-grey-500" *ngIf="!toggleMenu">arrow_drop_down</md-icon>
+      <md-icon class="tc-grey-500" *ngIf="toggleMenu">arrow_drop_up</md-icon>
+    </div>
+  </div>
+  <md-nav-list td-sidenav-content [@tdCollapse]="toggleMenu">
+    <ng-content select="[td-sidenav-main-content]"></ng-content>
+  </md-nav-list>
+  <md-nav-list td-sidenav-content [@tdCollapse]="!toggleMenu">
+    <ng-content select="[td-sidenav-user-content]"></ng-content>
+  </md-nav-list>
+  <ng-content></ng-content>
+</td-layout>
