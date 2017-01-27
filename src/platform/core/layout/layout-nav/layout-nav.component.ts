@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef, Inject, Optional } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { TdLayoutComponent } from '../layout.component';
 import { TdLayoutService } from '../services/layout.service';

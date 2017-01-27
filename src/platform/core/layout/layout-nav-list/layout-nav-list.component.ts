@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, forwardRef, Inject, Optional } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
