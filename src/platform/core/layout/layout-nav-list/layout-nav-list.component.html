@@ -18,7 +18,7 @@
           <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
           <ng-content select="[list-toolbar-content], [td-sidenav-toolbar-content]"></ng-content>
         </md-toolbar>
-        <div flex class="list md-content" (click)="!locked && close()">
+        <div flex class="list md-content">
           <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
         </div>
       </md-sidenav>
