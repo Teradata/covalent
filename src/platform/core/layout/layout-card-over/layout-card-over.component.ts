@@ -9,13 +9,13 @@ import { Input } from '@angular/core';
 export class TdLayoutCardOverComponent {
 
   /**
-   * title?: string 
+   * title?: string
    * Title set in card.
    */
   @Input('cardTitle') cardTitle: string;
 
   /**
-   * title?: string 
+   * title?: string
    * Title set in card.
    */
   @Input('cardSubtitle') cardSubtitle: string;
@@ -23,7 +23,7 @@ export class TdLayoutCardOverComponent {
   /**
    * cardWidth?: string
    * Card flex width in %.
-   * 
+   *
    * Defaults to 70%.
    */
   @Input('cardWidth') cardWidth: number = 70;
