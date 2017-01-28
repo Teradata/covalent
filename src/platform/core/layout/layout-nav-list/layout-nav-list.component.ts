@@ -14,7 +14,7 @@ export class TdLayoutNavListComponent {
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
-   * title?: string
+   * toolbarTitle?: string
    * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;

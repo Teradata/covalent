@@ -10,7 +10,7 @@ import { TdLayoutComponent } from '../layout.component';
 export class TdLayoutNavComponent {
 
   /**
-   * title?: string
+   * toolbarTitle?: string
    * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
