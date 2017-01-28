@@ -32,7 +32,6 @@ export class TdLayoutManageListComponent {
    */
   @Input('opened') opened: boolean = true;
 
-  // Cant support % yet as stated in the layout docs
   /**
    * sidenavWidth?: string
    * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)

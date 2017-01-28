@@ -11,35 +11,6 @@
 | opened | boolean | Whether or not the sidenav is opened. Use this binding to open/close the sidenav. Defaults to 'true'.
 | sidenavWidth | string | Sets the 'width' of the sidenav in either 'px' or '%' ('%' is not well supported yet as stated in the layout docs). Defaults to '257px'.
 
-
-## Installation
-
-This component can be installed as npm package.
-
-```bash
-npm i -save @covalent/core
-```
-
-## Setup
-
-Import the **[CovalentLayoutModule]** using the *forRoot()* method in your NgModule:
-
-```typescript
-import { CovalentLayoutModule } from '@covalent/core';
-@NgModule({
-  imports: [
-    CovalentLayoutModule.forRoot(), // or CovalentCoreModule.forRoot()
-    ...
-  ],
-  ...
-})
-export class MyModule {}
-```
-
-### Theming
-
-See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent docs for more info.
-
 ## Usage
 
 `[td-sidenav-content]` is used to include items in the left side list.
