@@ -1,7 +1,7 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
   <td-layout-manage-list #manageList 
                         [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('gt-xs') | async) ? 'push' : 'over')"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <md-toolbar td-sidenav-content>
       <span>Section Title</span>
