@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, OnInit, OnDestroy, forwardRef, Inject } from '@angular/core';
+import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwardRef, Inject, QueryList } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { MdSidenavToggleResult } from '@angular/material';
@@ -6,6 +6,13 @@ import { MdSidenavToggleResult } from '@angular/material';
 import { TdLayoutComponent } from '../layout.component';
 
 import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.animation';
+
+@Directive({
+  selector: '[td-navigation-drawer-menu]',
+})
+export class TdNavigationDrawerMenuDirective {
+
+}
 
 @Component({
   selector: 'td-navigation-drawer',
@@ -20,6 +27,15 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   get menuToggled(): boolean {
     return this._menuToggled;
+  }
+
+  @ContentChildren(TdNavigationDrawerMenuDirective) private _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
+
+  /**
+   * Checks if there is a [TdNavigationDrawerMenuDirective] as content.
+   */
+  get isMenuAvailable(): boolean {
+    return this._drawerMenu.length > 0;
   }
 
   /**
@@ -71,7 +87,9 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   }
 
   toggleMenu(): void {
-    this._menuToggled = !this._menuToggled;
+    if (this.isMenuAvailable) {
+      this._menuToggled = !this._menuToggled;
+    }
   }
 
   /**

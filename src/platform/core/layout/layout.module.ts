@@ -11,7 +11,7 @@ import { TdLayoutCardOverComponent } from './layout-card-over/layout-card-over.c
 import { TdLayoutManageListComponent } from './layout-manage-list/layout-manage-list.component';
 import { TdLayoutFooterComponent } from './layout-footer/layout-footer.component';
 
-import { TdNavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective } from './navigation-drawer/navigation-drawer.component';
 
 const TD_LAYOUTS: Type<any>[] = [
   TdLayoutComponent,
@@ -22,11 +22,12 @@ const TD_LAYOUTS: Type<any>[] = [
   TdLayoutFooterComponent,
 
   TdNavigationDrawerComponent,
+  TdNavigationDrawerMenuDirective,
 ];
 
 export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
           TdLayoutCardOverComponent, TdLayoutManageListComponent,
-          TdLayoutFooterComponent, TdNavigationDrawerComponent };
+          TdLayoutFooterComponent, TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective };
 
 @NgModule({
   imports: [
