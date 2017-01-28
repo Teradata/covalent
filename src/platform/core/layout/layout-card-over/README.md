@@ -7,10 +7,10 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| color | string | optional toolbar color. Defaults to primary.
 | cardTitle | string | Title set in card.
 | cardSubtitle | string | subtitle set in card.
 | cardWidth | string | Card flex width in %. Defaults to 70.
+| color | string | optional toolbar color. Defaults to primary.
 
 
 ## Usage

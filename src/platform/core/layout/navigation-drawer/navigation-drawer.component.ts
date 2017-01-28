@@ -58,6 +58,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   @Input('logo') logo: string;
 
   /**
+   * color?: string
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, default is used.
+   */
+  @Input('color') color: string;
+
+  /**
    * name?: string
    * string to be displayed as part of the navigation drawer sublabel.
    * if [email] is not set, then [name] will be the toggle menu text.
@@ -70,13 +77,6 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * if [email] and [name] are not set, then the toggle menu is not rendered.
    */
   @Input('email') email: string;
-
-  /**
-   * color?: string
-   * toolbar color option: primary | accent | warn.
-   * If [color] is not set, default is used.
-   */
-  @Input('color') color: string;
 
   constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
