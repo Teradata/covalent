@@ -25,9 +25,22 @@
     <md-card-title>Nav List Layout</md-card-title>
     <md-card-subtitle>The Nav View with an embedded list (this page is using nav list)</md-card-subtitle>
     <md-divider></md-divider>
+    <md-nav-list>
+      <h3 md-subheader>Recommended usage:</h3>
+      <a md-list-item href="https://teradata.github.io/covalent-quickstart/#/logs" target="_blank">
+        <p md-line>Category list view (docs, blog or logs)</p>
+        <md-icon>launch</md-icon>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://teradata.github.io/covalent-quickstart/#/templates/email" target="_blank">
+        <p md-line>List of content items (email app, chat app, etc.)</p>
+        <md-icon>launch</md-icon>
+      </a>
+      <md-divider></md-divider>
+    </md-nav-list>
     <md-card-content>
-      <div layout-gt-md="row">
-        <div flex-gt-md="50">
+      <div layout-gt-lg="row">
+        <div flex-gt-lg="50">
           <td-steps>
             <td-step label="td-layout-nav-list" sublabel="the main content area of the layout">
               <md-list>
@@ -91,7 +104,7 @@
             </td-step>
           </td-steps>
         </div>
-        <div flex-gt-md="50">
+        <div flex-gt-lg="50">
           <h3 class="md-title">HTML</h3>
           <td-highlight lang="html">
             <![CDATA[
