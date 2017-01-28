@@ -28,4 +28,11 @@ export class TdLayoutCardOverComponent {
    */
   @Input('cardWidth') cardWidth: number = 70;
 
+  /**
+   * color?: string
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, default is used.
+   */
+  @Input('color') color: string = 'primary';
+
 }

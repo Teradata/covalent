@@ -7,6 +7,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
+| color | string | optional toolbar color. Defaults to primary.
 | cardTitle | string | Title set in card.
 | cardSubtitle | string | subtitle set in card.
 | cardWidth | string | Card flex width in %. Defaults to 70.
@@ -21,8 +22,8 @@
 Example for Card Over Layout / Nav Layout combo:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon">
-  <td-layout-card-over cardTitle="title" cardSubtitle="subtitle" cardWidth="widthIn%">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color">
+  <td-layout-card-over cardTitle="title" cardSubtitle="subtitle" cardWidth="widthIn%" color="color">
     .. main content
     <div td-after-card>
       .. content after card

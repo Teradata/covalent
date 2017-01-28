@@ -63,6 +63,13 @@ export class TdLayoutNavListComponent {
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
+   * color?: string
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, default is used.
+   */
+  @Input('color') color: string = 'primary';
+
+  /**
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {

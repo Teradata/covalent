@@ -60,7 +60,7 @@ Example for Main Layout / Navigation Drawer Combo:
 
 ```html
 <td-layout>
-  <td-navigation-drawer sidenavTitle="title" logo="logo" icon="icon" name="name" password="password">
+  <td-navigation-drawer sidenavTitle="title" logo="logo" icon="icon" name="name" password="password" color="color">
     .. main drawer content
     <div td-navigation-drawer-menu>
       .. menu drawer content

@@ -7,6 +7,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
+| color | string | optional toolbar color. Defaults to primary.
 | toolbarTitle | string | Title set in toolbar.
 | icon | string | icon name to be displayed before the title
 | logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
@@ -30,7 +31,7 @@
 Example for Nav List Layout:
 
 ```html
-<td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px">
+<td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px" color="color">
   <div td-sidenav-toolbar-content>
     ... left toolbar content
   </div>

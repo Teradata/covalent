@@ -7,6 +7,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
+| color | string | optional toolbar color. Defaults to primary.
 | toolbarTitle | string | Title set in toolbar.
 | icon | string | icon name to be displayed before the title
 | logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
@@ -21,7 +22,7 @@
 Example for Nav Layout:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color">
   <div td-toolbar-content>
     .. main toolbar content
   </div>

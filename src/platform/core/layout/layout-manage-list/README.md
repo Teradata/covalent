@@ -23,7 +23,7 @@
 Example for Manage List Layout / Nav Layout combo:
 
 ```html
-<td-layout-nav sidenavTitle="title" logo="logo" icon="icon">
+<td-layout-nav sidenavTitle="title" logo="logo" icon="icon" color="color">
   <div td-toolbar-content>
     .. main toolbar content
   </div>

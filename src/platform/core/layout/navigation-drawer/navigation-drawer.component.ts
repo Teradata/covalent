@@ -71,6 +71,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    */
   @Input('email') email: string;
 
+  /**
+   * color?: string
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, default is used.
+   */
+  @Input('color') color: string;
+
   constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
   ngOnInit(): void {
