@@ -39,7 +39,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * title?: string
+   * sidenavTitle?: string
    * Title set in sideNav.
    */
   @Input('sidenavTitle') sidenavTitle: string;
