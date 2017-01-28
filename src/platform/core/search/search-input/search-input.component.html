@@ -4,8 +4,8 @@
             #searchElement
             [class.md-hide-underline]="!showUnderline"
             type="search"
+            [(ngModel)]="value"
             [placeholder]="placeholder"
-            [formControl]="searchTermControl"
             (blur)="handleBlur()"
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>
