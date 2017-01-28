@@ -1,8 +1,7 @@
 <div class="td-search-input" layout="row" layout-align="end center">
-  <md-input-container flex>
+  <md-input-container [class.md-hide-underline]="!showUnderline" flex>
     <input md-input
             #searchElement
-            [class.md-hide-underline]="!showUnderline"
             type="search"
             [(ngModel)]="value"
             [placeholder]="placeholder"
