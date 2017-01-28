@@ -9,14 +9,14 @@ import { Input } from '@angular/core';
 export class TdLayoutCardOverComponent {
 
   /**
-   * title?: string
+   * cardTitle?: string
    * Title set in card.
    */
   @Input('cardTitle') cardTitle: string;
 
   /**
-   * title?: string
-   * Title set in card.
+   * cardSubtitle?: string
+   * Subtitle set in card.
    */
   @Input('cardSubtitle') cardSubtitle: string;
 
