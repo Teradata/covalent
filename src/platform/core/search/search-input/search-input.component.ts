@@ -25,16 +25,9 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class TdSearchInputComponent implements OnInit {
 
-  set value(value: any) {
-    this.searchTermControl.setValue(value);
-  }
-  get value(): any {
-    return this.searchTermControl.value;
-  }
-
   @ViewChild(MdInputDirective) private _input: MdInputDirective;
 
-  searchTermControl: FormControl = new FormControl();
+  value: string;
 
   /**
    * showUnderline?: boolean
@@ -79,7 +72,7 @@ export class TdSearchInputComponent implements OnInit {
   @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit(): void {
-    this.searchTermControl.valueChanges
+    this._input._ngControl.valueChanges
       .debounceTime(this.debounce)
       .subscribe((value: string) => {
         this._searchTermChanged(value);
@@ -103,11 +96,11 @@ export class TdSearchInputComponent implements OnInit {
 
   handleSearch(event: Event): void {
     this.stopPropagation(event);
-    this.onSearch.emit(this.searchTermControl.value);
+    this.onSearch.emit(this.value);
   }
 
   clearSearch(): void {
-    this.searchTermControl.setValue('');
+    this.value = '';
     this.onClear.emit(undefined);
   }
 
