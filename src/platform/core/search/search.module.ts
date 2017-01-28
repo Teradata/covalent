@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
@@ -13,7 +13,7 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   imports: [
-    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
   ],
