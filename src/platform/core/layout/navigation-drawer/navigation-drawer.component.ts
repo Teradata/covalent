@@ -58,16 +58,16 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   @Input('logo') logo: string;
 
   /**
-   * username?: string
+   * name?: string
    * string to be displayed as part of the navigation drawer sublabel.
-   * if [email] is not set, then [username] will be the toggle menu text.
+   * if [email] is not set, then [name] will be the toggle menu text.
    */
-  @Input('username') username: string;
+  @Input('name') name: string;
 
   /**
    * email?: string
    * string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text.
-   * if [email] and [username] are not set, then the toggle menu is not rendered.
+   * if [email] and [name] are not set, then the toggle menu is not rendered.
    */
   @Input('email') email: string;
 

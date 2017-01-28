@@ -8,7 +8,7 @@
   <md-card-content>
     <div class="md-padding bgc-grey-200">
       <td-layout>
-        <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" username="Firstname Lastname" email="firstname.lastname@company.com">
+        <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
           <md-nav-list>
             <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
           </md-nav-list>
@@ -36,7 +36,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-layout #layout>
-          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" username="Firstname Lastname" email="firstname.lastname@company.com">
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
             <md-nav-list>
               <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
             </md-nav-list>
