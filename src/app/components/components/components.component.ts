@@ -107,11 +107,6 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'markdown',
     title: 'Markdown',
   }, {
-    description: 'Responsive Charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'Charts',
-  }, {
     description: 'Build forms from a JS object',
     icon: 'format_align_center',
     route: 'dynamic-forms',
@@ -120,7 +115,19 @@ export class ComponentsComponent implements AfterViewInit {
     description: 'Http wrappers and helpers',
     icon: 'http',
     route: 'http',
-    title: 'Http',
+    title: 'HTTP Service',
+  }, {
+    description: 'Simple responsive charts',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'TD Charts',
+  }];
+
+  external: Object[] = [{
+    description: 'Declarative D3 framework for ng2',
+    icon: 'insert_chart',
+    route: 'ngx-charts',
+    title: 'NGX-Charts',
   }];
 
   constructor(public media: TdMediaService) {}

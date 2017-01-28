@@ -2,9 +2,12 @@
 $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 
 :host /deep/ {
-  td-markdown:first-of-type > div:first-of-type > h2:first-of-type {
-    margin-top: 0;
-    font-weight: 400;
+  td-markdown:first-of-type > div:first-of-type {
+    &  > h1:first-of-type,
+    &  > h2:first-of-type {
+      margin-top: 0;
+      font-weight: 400;
+    }
   }
   td-data-table,
   td-highlight,
