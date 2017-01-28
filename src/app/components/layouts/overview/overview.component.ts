@@ -19,7 +19,7 @@ export class LayoutsOverviewComponent {
     route: 'nav-view',
     title: 'Nav View',
   }, {
-    description: 'Pesistent left nav for category views, documentation or browsing lists.',
+    description: 'Persistent left nav for category views, documentation or browsing lists.',
     icon: 'view_quilt',
     route: 'nav-list',
     title: 'Nav List',

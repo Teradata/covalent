@@ -10,11 +10,11 @@
       <td-layout>
         <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" username="Firstname Lastname" email="firstname.lastname@company.com">
           <md-nav-list>
-            <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+            <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
           </md-nav-list>
           <div td-navigation-drawer-menu>
             <md-nav-list>
-              <a *ngFor="let item of usermenu" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+              <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
             </md-nav-list>
           </div>
         </td-navigation-drawer>
@@ -35,7 +35,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-layout>
+        <td-layout #layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" username="Firstname Lastname" email="firstname.lastname@company.com">
             <md-nav-list>
               <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
@@ -58,7 +58,7 @@
       <![CDATA[
         ...
         export class MainComponent {
-            routes: Object[] = [{
+          routes: Object[] = [{
               icon: 'home',
               route: '.',
               title: 'Home',
@@ -80,6 +80,7 @@
               title: 'Components & Addons',
             },
           ];
+
           usermenu: Object[] = [{
               icon: 'swap_horiz',
               route: '.',
