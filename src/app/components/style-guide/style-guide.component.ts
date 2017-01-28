@@ -65,6 +65,11 @@ export class StyleGuideComponent implements AfterViewInit {
     icon: 'view_list',
     route: 'management-list',
     title: 'Management List',
+  }, {
+    description: 'Sidenav toolbar & list to spec',
+    icon: 'kitchen',
+    route: 'navigation-drawer',
+    title: 'Navigation Drawer',
   }];
 
   constructor(public media: TdMediaService) {}

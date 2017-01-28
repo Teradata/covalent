@@ -13,6 +13,7 @@ import { DialogsToastsComponent } from './dialogs/dialogs.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -30,6 +31,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     ManagementListComponent,
     UtilityStylesComponent,
     ResourcesComponent,
+    NavigationDrawerComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
