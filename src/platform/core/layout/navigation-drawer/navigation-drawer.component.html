@@ -1,4 +1,4 @@
-<md-toolbar>
+<md-toolbar color="{{color}}">
   <div layout="column" flex>
     <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
       <md-icon *ngIf="icon">{{icon}}</md-icon>
@@ -9,8 +9,8 @@
     <div class="md-body-1" layout="row" href *ngIf="email || name" (click)="toggleMenu()">
       <span flex>{{email || name}}</span>
       <button md-icon-button class="md-icon-button-mini" *ngIf="isMenuAvailable">
-        <md-icon class="tc-grey-500" *ngIf="!menuToggled">arrow_drop_down</md-icon>
-        <md-icon class="tc-grey-500" *ngIf="menuToggled">arrow_drop_up</md-icon>
+        <md-icon *ngIf="!menuToggled">arrow_drop_down</md-icon>
+        <md-icon *ngIf="menuToggled">arrow_drop_up</md-icon>
       </button>
     </div>
   </div>
