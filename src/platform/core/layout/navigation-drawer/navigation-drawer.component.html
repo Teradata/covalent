@@ -6,11 +6,11 @@
       <span class="md-subhead" *ngIf="sidenavTitle">{{sidenavTitle}}</span>
     </span>
     <div class="md-body-2" *ngIf="email && username">{{username}}</div>
-    <div class="md-body-1" layout="row" href *ngIf="email || username" (click)="toggleMenu()">
+    <div class="md-body-1" layout="row" href *ngIf="email || username">
       <span flex>{{email || username}}</span>
-      <button md-icon-button class="md-icon-button-mini">
-        <md-icon class="tc-grey-500" *ngIf="isMenuAvailable && !menuToggled">arrow_drop_down</md-icon>
-        <md-icon class="tc-grey-500" *ngIf="isMenuAvailable && menuToggled">arrow_drop_up</md-icon>
+      <button md-icon-button class="md-icon-button-mini" *ngIf="isMenuAvailable" (click)="toggleMenu()">
+        <md-icon class="tc-grey-500" *ngIf="!menuToggled">arrow_drop_down</md-icon>
+        <md-icon class="tc-grey-500" *ngIf="menuToggled">arrow_drop_up</md-icon>
       </button>
     </div>
   </div>
