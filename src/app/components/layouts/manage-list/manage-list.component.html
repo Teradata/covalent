@@ -132,7 +132,8 @@
                     <md-toolbar td-sidenav-content>
                       <span>Optional Title</span>
                     </md-toolbar>
-                    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+                    <md-nav-list td-sidenav-content
+                                 (click)="!media.query('gt-sm') && manageList.close()">
                       <a md-list-item><md-icon>folder</md-icon>Item Name</a>
                       <a md-list-item><md-icon>people</md-icon>Item Name</a>
                     </md-nav-list>

@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, Sanitizer, SecurityContext } from '@angular/core';
+import { Component, Input, HostBinding, Sanitizer, SecurityContext, ChangeDetectorRef } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -19,7 +19,8 @@ export class TdReadmeLoaderComponent {
   content: string;
 
   constructor(private _http: Http,
-              private _sanitizer: Sanitizer) {}
+              private _sanitizer: Sanitizer,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   loadResource(resourceUrl: string): void {
     let errorString: string = 'Warning: Resource could not be loaded.';
@@ -29,6 +30,7 @@ export class TdReadmeLoaderComponent {
       } catch (e) {
         this.content = errorString;
       }
+      this._changeDetectorRef.markForCheck();
     }, (error: Error) => {
       this.content = errorString;
     });

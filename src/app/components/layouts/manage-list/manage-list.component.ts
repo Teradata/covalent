@@ -4,6 +4,7 @@ import { TdMediaService } from '@covalent/core';
 import { fadeAnimation } from '../../../app.animations';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-manage-list',
   styleUrls: ['./manage-list.component.scss'],
   templateUrl: './manage-list.component.html',
