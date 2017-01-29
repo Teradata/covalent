@@ -5,15 +5,15 @@ rm -rf ./deploy
 
 # Perform a build.
 gulp build
-echo "Platform compiled..."
+echo "SASS compiled..."
 
 # Inline the css and html into the component files.
 gulp inline-resource-files
-echo "Files inlined..."
+echo "Resources inlined..."
 
 # AoT compilation
 npm run aot
-echo "Generated *.metadata.json files..."
+echo "Compiled TS and generated *.metadata.json files..."
 
 # Bundle
 gulp rollup-code
