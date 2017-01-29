@@ -37,7 +37,7 @@ function inlineResources(globs) {
     }
 
     const files = glob.sync(pattern, {})
-      .filter(name => /\.js$/.test(name));  // Matches only JavaScript files.
+      .filter(name => /\.ts$/.test(name));  // Matches only TypeScript files.
 
     // Generate all files content with inlined templates.
     files.forEach(filePath => {
