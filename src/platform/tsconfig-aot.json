@@ -40,6 +40,7 @@
   ],
   "angularCompilerOptions": {
     "genDir": "../../deploy/platform",
+    "skipTemplateCodegen": true,
     "debug": true
   }
 }
