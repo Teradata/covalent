@@ -19,7 +19,7 @@ export let single: any = [
 
 export let multi: any = [
   {
-    'name': 'Containers',
+    'name': 'Databases',
     'series': [
       {
         'value': 2469,
@@ -44,7 +44,7 @@ export let multi: any = [
     ],
   },
   {
-    'name': 'Alerts',
+    'name': 'Containers',
     'series': [
       {
         'value': 2452,
@@ -69,7 +69,7 @@ export let multi: any = [
     ],
   },
   {
-    'name': 'Streams',
+    'name': 'Queries',
     'series': [
       {
         'value': 4022,
@@ -114,31 +114,6 @@ export let multi: any = [
       },
       {
         'value': 5986,
-        'name': '2016-09-12T18:48:58.925Z',
-      },
-    ],
-  },
-  {
-    'name': 'NoSQL',
-    'series': [
-      {
-        'value': 4260,
-        'name': '2016-09-15T19:25:07.773Z',
-      },
-      {
-        'value': 4810,
-        'name': '2016-09-17T17:16:53.279Z',
-      },
-      {
-        'value': 5087,
-        'name': '2016-09-15T10:34:32.344Z',
-      },
-      {
-        'value': 5941,
-        'name': '2016-09-19T14:33:45.710Z',
-      },
-      {
-        'value': 6427,
         'name': '2016-09-12T18:48:58.925Z',
       },
     ],
