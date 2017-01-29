@@ -2,6 +2,9 @@
   "name": "@covalent/http",
   "version": "0.10.2",
   "description": "Teradata UI Platform Http Helper Module",
+  "main": "./http.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
   "keywords": [
     "angular",
     "components",
