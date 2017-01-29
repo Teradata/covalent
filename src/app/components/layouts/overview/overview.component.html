@@ -1,27 +1,18 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
-  <td-layout-card-over cardTitle="Layout Options" cardSubtitle="We offer 4 Material Design layouts for you">
-    <md-card-content hide-xs>
+  <td-layout-card-over cardWidth="80" cardTitle="Layout Options" cardSubtitle="We offer 4 Material Design layouts for you">
+    <md-card-content hide-xs hide-sm>
       <p>For your entire app or for different sections of your app, select one of these Material Design layout options:</p>
       <div layout="row" layout-padding>
-        <a md-button flex [routerLink]="'nav-view'">
-          <img src="app/assets/images/nav-view.png" alt="Navigation View">
-          <div class="md-subtitle">Nav View</div>
-        </a>
-        <a md-button flex [routerLink]="'nav-list'">
-          <img src="app/assets/images/nav-list.png" alt="Navigation and List">
-          <div class="md-subtitle">Nav List</div>
-        </a>
-        <a md-button flex [routerLink]="'card-over'">
-          <img src="app/assets/images/card-over.png" alt="Card Overlap View">
-          <div class="md-subtitle">Card Over</div>
-        </a>
-        <a md-button flex [routerLink]="'manage-list'">
-         <img src="app/assets/images/manage-list.png" alt="Management List">
-         <div class="md-subtitle">Manage List</div>
-        </a>
+        <template let-item let-last="last" ngFor [ngForOf]="items">
+          <a md-button flex [routerLink]="[item.route]">
+            <img src="app/assets/images/{{item.route}}.png" alt="{{item.title}}">
+            <div class="md-subtitle">{{item.title}}</div>
+            <div class="md-body-1 text-wrap text-left">{{item.description}}</div>
+          </a>
+        </template>
       </div>
     </md-card-content>
-    <md-nav-list hide-gt-xs>
+    <md-nav-list hide-gt-sm>
       <template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item [routerLink]="[item.route]">
           <md-icon md-list-avatar>{{item.icon}}</md-icon>
@@ -31,7 +22,8 @@
         <md-divider *ngIf="!last" md-inset></md-divider>
       </template>
     </md-nav-list>
-    <div after-card>
+    <td-readme-loader td-after-card resourceUrl="platform/core/layout/README.md"></td-readme-loader>
+    <div td-after-card>
       <h3 class="md-title">Flexbox Layout (&quot;grid&quot;)</h3>
       <td-expansion-panel expand="true" label="Flexbox Introduction" sublabel="what powers this layout?">
         <div class="md-padding">

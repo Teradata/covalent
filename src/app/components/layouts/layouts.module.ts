@@ -12,6 +12,8 @@ import { ManageListComponent } from './manage-list/manage-list.component';
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
+import { DocumentationToolsModule } from '../../documentation-tools';
+
 @NgModule({
   declarations: [
     LayoutsComponent,
@@ -24,6 +26,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
   imports: [
     CovalentCoreModule.forRoot(),
     CovalentHighlightModule.forRoot(),
+    DocumentationToolsModule.forRoot(),
     layoutsRoutes,
   ],
 })

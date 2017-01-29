@@ -14,25 +14,25 @@ export class LayoutsOverviewComponent {
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
-    description: 'A simple layout with toolbar & sidenav',
+    description: 'A top toolbar only. Best for dashboards with no in-page navigation. A blank canvas.',
     icon: 'view_compact',
     route: 'nav-view',
     title: 'Nav View',
   }, {
-    description: 'The Nav View with an embedded list',
+    description: 'Persistent left nav for category views, documentation or browsing lists.',
     icon: 'view_quilt',
     route: 'nav-list',
-    title: 'Nav List View',
+    title: 'Nav List',
   }, {
-    description: 'A card overlaying a toolbar',
+    description: 'Used on this page, recommended for detail views, forms and blog posts.',
     icon: 'view_day',
     route: 'card-over',
-    title: 'Card Over View',
+    title: 'Card Over',
   }, {
-    description: 'Content/object management views',
+    description: 'Best for admin & management list views or sub-dashboards with their own left nav.',
     icon: 'view_list',
     route: 'manage-list',
-    title: 'Management List View',
+    title: 'Management List',
   }];
 
 }
