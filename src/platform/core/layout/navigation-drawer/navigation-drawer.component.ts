@@ -1,4 +1,6 @@
-import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwardRef, Inject, QueryList } from '@angular/core';
+import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwardRef, Inject,
+         QueryList, SecurityContext } from '@angular/core';
+import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
 
 import { MdSidenavToggleResult } from '@angular/material';
@@ -24,6 +26,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   private _closeSubscription: Subscription;
   private _menuToggled: boolean = false;
+  private _backgroundImage: SafeStyle;
 
   get menuToggled(): boolean {
     return this._menuToggled;
@@ -36,6 +39,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    */
   get isMenuAvailable(): boolean {
     return this._drawerMenu.length > 0;
+  }
+
+  /**
+   * Checks if there is a background image for the toolbar.
+   */
+  get isBackgroundAvailable(): boolean {
+    return !!this._backgroundImage;
   }
 
   /**
@@ -65,6 +75,22 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   @Input('color') color: string;
 
   /**
+   * backgroundUrl?: SafeResourceUrl
+   * image to be displayed as the background of the toolbar.
+   * URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
+   */
+  @Input('backgroundUrl')
+  set backgroundUrl(backgroundUrl: SafeResourceUrl) {
+    if (backgroundUrl) {
+      let sanitizedUrl: SafeResourceUrl = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
+      this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
+    }
+  }
+  get backgroundImage(): SafeResourceUrl {
+    return this._backgroundImage;
+  }
+
+  /**
    * name?: string
    * string to be displayed as part of the navigation drawer sublabel.
    * if [email] is not set, then [name] will be the toggle menu text.
@@ -78,7 +104,8 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    */
   @Input('email') email: string;
 
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
+  constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+              private _sanitize: DomSanitizer) {}
 
   ngOnInit(): void {
     this._closeSubscription = this._layout.sidenav.onClose.subscribe(() => {

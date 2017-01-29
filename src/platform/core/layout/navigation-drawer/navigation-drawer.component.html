@@ -1,4 +1,4 @@
-<md-toolbar [color]="color">
+<md-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
   <div layout="column" flex>
     <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
       <md-icon *ngIf="icon">{{icon}}</md-icon>
