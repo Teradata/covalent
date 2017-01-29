@@ -1,6 +1,6 @@
-<md-toolbar color="primary">
+<md-toolbar [color]="color">
 </md-toolbar>
-<div layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill class="margin">
+<div class="margin" layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill>
   <div [attr.flex-gt-xs]="cardWidth">
     <md-card>
       <md-card-title *ngIf="cardTitle">{{cardTitle}}</md-card-title>
@@ -8,6 +8,6 @@
       <md-divider *ngIf="cardTitle || cardSubtitle"></md-divider>
       <ng-content></ng-content>
     </md-card>
-    <ng-content select="[after-card]"></ng-content>
+    <ng-content select="[after-card], [td-after-card]"></ng-content>
   </div>
 </div>
