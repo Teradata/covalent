@@ -45,6 +45,44 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  updates: Object[] = [{
+      description: 'Navigation Drawer sidenav component',
+      icon: 'kitchen',
+      route: 'style-guide/navigation-drawer',
+      title: 'New component & pattern',
+    }, {
+      description: 'Management list (data-list) pattern',
+      icon: 'view_list',
+      route: 'style-guide/management-list',
+      title: 'New pattern',
+    }, {
+      description: 'Responsive layout modes & toggles',
+      icon: 'dashboard',
+      route: 'layouts',
+      title: 'Component updated',
+    }, {
+      description: 'Highlight themes & hardening',
+      icon: 'code',
+      route: 'components/syntax-highlighting',
+      title: 'Component updated',
+    }, {
+      description: 'Markdown file support & hardening',
+      icon: 'chrome_reader_mode',
+      route: 'components/markdown',
+      title: 'Component updated',
+    }, {
+      description: 'Loading colors & enhancements',
+      icon: 'hourglass_empty',
+      route: 'components/loading',
+      title: 'Component updated',
+    }, {
+      description: 'Sketch template updated',
+      icon: 'cloud_download',
+      route: 'style-guide/resources',
+      title: 'Resource updated',
+    },
+  ];
+
   constructor(private _gitHubService: GitHubService) {
   }
 

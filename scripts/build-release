@@ -5,15 +5,20 @@ rm -rf ./deploy
 
 # Perform a build.
 gulp build
-echo "Platform compiled..."
+echo "SASS compiled..."
+
+# Prepare for aot
+gulp prepare-aot
+echo "Preparing files for AoT build"
+
 # AoT compilation
 npm run aot
-echo "Generated *.metadata.json files..."
-gulp clean-aot
-echo "Cleaned AoT excess"
+echo "Compiled TS and generated *.metadata.json files..."
+
 # Inline the css and html into the component files.
 gulp inline-resource-files
-echo "Files inlined..."
+echo "Resources inlined..."
+
 # Bundle
 gulp rollup-code
 echo "Bundled..."
