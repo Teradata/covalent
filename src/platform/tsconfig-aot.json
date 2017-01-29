@@ -5,7 +5,6 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "./",
     "lib": ["es6", "es2015", "dom"],
     "module": "es2015",
     "moduleResolution": "node",
@@ -41,6 +40,7 @@
   ],
   "angularCompilerOptions": {
     "genDir": "../../deploy/platform",
+    "skipTemplateCodegen": true,
     "debug": true
   }
 }

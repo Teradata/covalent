@@ -21,7 +21,8 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "platform/core/common/platform.scss"
+        "platform/core/common/platform.scss",
+        "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
