@@ -7,13 +7,17 @@ rm -rf ./deploy
 gulp build
 echo "SASS compiled..."
 
-# Inline the css and html into the component files.
-gulp inline-resource-files
-echo "Resources inlined..."
+# Prepare for aot
+gulp prepare-aot
+echo "Preparing files for AoT build"
 
 # AoT compilation
 npm run aot
 echo "Compiled TS and generated *.metadata.json files..."
+
+# Inline the css and html into the component files.
+gulp inline-resource-files
+echo "Resources inlined..."
 
 # Bundle
 gulp rollup-code

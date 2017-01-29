@@ -37,7 +37,7 @@ function inlineResources(globs) {
     }
 
     const files = glob.sync(pattern, {})
-      .filter(name => /\.ts$/.test(name));  // Matches only TypeScript files.
+      .filter(name => /\.js$/.test(name));  // Matches only JavaScript files.
 
     // Generate all files content with inlined templates.
     files.forEach(filePath => {
@@ -73,7 +73,7 @@ function inlineTemplate(filePath, content) {
     const shortenedTemplate = templateContent
       .replace(/([\n\r]\s*)+/gm, ' ')
       .replace(/"/g, '\\"');
-    return `template: "${shortenedTemplate}"`;
+    return `template: '${shortenedTemplate}'`;
   });
 }
 
@@ -96,7 +96,7 @@ function inlineStyle(filePath, content) {
           const shortenedStyle = styleContent
             .replace(/([\n\r]\s*)+/gm, ' ')
             .replace(/"/g, '\\"');
-          return `"${shortenedStyle}"`;
+          return `'${shortenedStyle}'`;
         })
         .join(',\n')
       + ']';
