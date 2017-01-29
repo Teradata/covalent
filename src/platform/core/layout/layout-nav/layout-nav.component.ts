@@ -11,18 +11,21 @@ export class TdLayoutNavComponent {
 
   /**
    * toolbarTitle?: string
+   *
    * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
    * icon?: string
+   *
    * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
    * logo?: string
+   *
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
@@ -30,6 +33,7 @@ export class TdLayoutNavComponent {
 
   /**
    * color?: string
+   *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */

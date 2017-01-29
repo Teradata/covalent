@@ -15,6 +15,7 @@ export class TdLayoutNavListComponent {
 
   /**
    * toolbarTitle?: string
+   *
    * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
@@ -27,6 +28,7 @@ export class TdLayoutNavListComponent {
 
   /**
    * logo?: string
+   *
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
@@ -34,6 +36,7 @@ export class TdLayoutNavListComponent {
 
   /**
    * color?: string
+   *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, primary is used.
    */
@@ -41,6 +44,7 @@ export class TdLayoutNavListComponent {
 
   /**
    * mode?: 'side', 'push' or 'over'
+   *
    * The mode or styling of the sidenav.
    * Defaults to "side".
    * See "MdSidenav" documentation for more info.
@@ -62,6 +66,7 @@ export class TdLayoutNavListComponent {
 
   /**
    * sidenavWidth?: string
+   *
    * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
    * Defaults to "350px".
    *

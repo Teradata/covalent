@@ -13,6 +13,7 @@ export class TdLayoutManageListComponent {
 
   /**
    * mode?: 'side', 'push' or 'over'
+   *
    * The mode or styling of the sidenav.
    * Defaults to "side".
    * See "MdSidenav" documentation for more info.
@@ -23,6 +24,7 @@ export class TdLayoutManageListComponent {
 
   /**
    * opened?: boolean
+   *
    * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
    * Defaults to "true".
    *
@@ -34,6 +36,7 @@ export class TdLayoutManageListComponent {
 
   /**
    * sidenavWidth?: string
+   *
    * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
    * Defaults to "257px".
    *
