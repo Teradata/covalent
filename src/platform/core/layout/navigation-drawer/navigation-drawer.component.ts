@@ -91,7 +91,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
       this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
     }
   }
-  get backgroundImage(): SafeResourceUrl {
+  get backgroundImage(): SafeStyle {
     return this._backgroundImage;
   }
 
