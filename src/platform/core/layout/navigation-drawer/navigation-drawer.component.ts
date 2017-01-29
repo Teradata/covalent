@@ -56,12 +56,14 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   /**
    * icon?: string
+   *
    * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
    * logo?: string
+   *
    * logo icon name to be displayed before the title.
    * If [icon] is set, then this will not be shown.
    */
@@ -69,6 +71,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   /**
    * color?: string
+   *
    * toolbar color option: primary | accent | warn.
    * If [color] is not set, default is used.
    */
@@ -76,11 +79,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   /**
    * backgroundUrl?: SafeResourceUrl
+   *
    * image to be displayed as the background of the toolbar.
    * URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
    */
   @Input('backgroundUrl')
-  set backgroundUrl(backgroundUrl: SafeResourceUrl) {
+  // TODO angular complains with warnings if this is type [SafeResourceUrl].. so we will make it <any> until its fixed.
+  set backgroundUrl(backgroundUrl: any) {
     if (backgroundUrl) {
       let sanitizedUrl: SafeResourceUrl = this._sanitize.sanitize(SecurityContext.RESOURCE_URL, backgroundUrl);
       this._backgroundImage = this._sanitize.sanitize(SecurityContext.STYLE, 'url(' + sanitizedUrl + ')');
@@ -92,6 +97,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   /**
    * name?: string
+   *
    * string to be displayed as part of the navigation drawer sublabel.
    * if [email] is not set, then [name] will be the toggle menu text.
    */
@@ -99,6 +105,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   /**
    * email?: string
+   *
    * string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text.
    * if [email] and [name] are not set, then the toggle menu is not rendered.
    */
