@@ -73,7 +73,7 @@ function inlineTemplate(filePath, content) {
     const shortenedTemplate = templateContent
       .replace(/([\n\r]\s*)+/gm, ' ')
       .replace(/"/g, '\\"');
-    return `template: '${shortenedTemplate}'`;
+    return `template: "${shortenedTemplate}"`;
   });
 }
 
@@ -96,7 +96,7 @@ function inlineStyle(filePath, content) {
           const shortenedStyle = styleContent
             .replace(/([\n\r]\s*)+/gm, ' ')
             .replace(/"/g, '\\"');
-          return `'${shortenedStyle}'`;
+          return `"${shortenedStyle}"`;
         })
         .join(',\n')
       + ']';
