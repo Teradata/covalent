@@ -64,8 +64,7 @@
                 [legend]="showLegend"
                 [showXAxisLabel]="showXAxisLabel"
                 [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel"
-                [xAxisTickFormatting]="axisDigits">
+                [xAxisLabel]="xAxisLabel">
               </ngx-charts-bar-horizontal-stacked>
             </div>
           </md-card>
@@ -85,10 +84,7 @@
                 [showXAxisLabel]="showXAxisLabel"
                 [showYAxisLabel]="showYAxisLabel"
                 [xAxisLabel]="xAxisLabel"
-                [yAxisLabel]="yAxisLabel"
-                [yAxisTickFormatting]="axisDigits"
-                [barPadding]="2"
-                [groupPadding]="8">
+                [yAxisLabel]="yAxisLabel">
               </ngx-charts-bar-vertical-2d>
             </div>
           </md-card>
@@ -109,8 +105,7 @@
                 [showYAxisLabel]="showYAxisLabel"
                 [xAxisLabel]="xAxisLabel"
                 [yAxisLabel]="yAxisLabel"
-                [autoScale]="autoScale"
-                [yAxisTickFormatting]="axisDigits">
+                [autoScale]="autoScale">
               </ngx-charts-line-chart>
             </div>
           </md-card>
@@ -149,8 +144,7 @@
                       [max]="100"
                       [units]="'usage'"
                       [bigSegments]="10"
-                      [smallSegments]="5"
-                      axisTickFormatting="axisDigits">
+                      [smallSegments]="5">
                     </ngx-charts-gauge>
                   </div>
                 </md-card>
@@ -169,8 +163,7 @@
                       [legend]="showLegend"
                       [showXAxisLabel]="showXAxisLabel"
                       [showYAxisLabel]="showYAxisLabel"
-                      [xAxisLabel]="xAxisLabel"
-                      [xAxisTickFormatting]="axisDigits">
+                      [xAxisLabel]="xAxisLabel">
                     </ngx-charts-bar-horizontal-stacked>
                   </div>
                 </md-card>
@@ -190,10 +183,7 @@
                       [showXAxisLabel]="showXAxisLabel"
                       [showYAxisLabel]="showYAxisLabel"
                       [xAxisLabel]="xAxisLabel"
-                      [yAxisLabel]="yAxisLabel"
-                      [yAxisTickFormatting]="axisDigits"
-                      [barPadding]="2"
-                      [groupPadding]="8">
+                      [yAxisLabel]="yAxisLabel">
                     </ngx-charts-bar-vertical-2d>
                   </div>
                 </md-card>
@@ -214,8 +204,7 @@
                       [showYAxisLabel]="showYAxisLabel"
                       [xAxisLabel]="xAxisLabel"
                       [yAxisLabel]="yAxisLabel"
-                      [autoScale]="autoScale"
-                      [yAxisTickFormatting]="axisDigits">
+                      [autoScale]="autoScale">
                     </ngx-charts-line-chart>
                   </div>
                 </md-card>
@@ -231,17 +220,12 @@
             import { Component } from '@angular/core';
             import { single, multi } from './data';
 
-            import { TdDigitsPipe } from '@covalent/core';
-
             @Component({
               selector: 'ngx-charts-demo',
               styleUrls: ['./ngx-charts.component.scss'],
               templateUrl: './ngx-charts.component.html',
             })
             export class NgxChartsDemoComponent {
-
-              // Use digits pipe
-              private _digits: TdDigitsPipe = new TdDigitsPipe();
 
               // Chart
               single: any[];
@@ -278,22 +262,7 @@
                   return group;
                 });
               }
-
-              axisPercent(val: any): any {
-                return val.toLocaleString() + '%';
-              }
-              axisDigits(val: any): any {
-                return new TdDigitsPipe().transform(val);
-              }
-              axisRounding(val: any): any {
-                if (val % 1 === 0) {
-                  return val.toLocaleString();
-                } else {
-                  return '';
-                }
-              }
             }
-
           ]]>
         </td-highlight>
       </md-tab>
@@ -322,7 +291,7 @@
 
             export let multi: any = [
               {
-                'name': 'Containers',
+                'name': 'Databases',
                 'series': [
                   {
                     'value': 2469,
@@ -347,7 +316,7 @@
                 ],
               },
               {
-                'name': 'Alerts',
+                'name': 'Containers',
                 'series': [
                   {
                     'value': 2452,
@@ -397,7 +366,7 @@
                 ],
               },
               {
-                'name': 'Databases',
+                'name': 'Queries',
                 'series': [
                   {
                     'value': 6194,
@@ -417,31 +386,6 @@
                   },
                   {
                     'value': 5986,
-                    'name': '2016-09-12T18:48:58.925Z',
-                  },
-                ],
-              },
-              {
-                'name': 'NoSQL',
-                'series': [
-                  {
-                    'value': 4260,
-                    'name': '2016-09-15T19:25:07.773Z',
-                  },
-                  {
-                    'value': 4810,
-                    'name': '2016-09-17T17:16:53.279Z',
-                  },
-                  {
-                    'value': 5087,
-                    'name': '2016-09-15T10:34:32.344Z',
-                  },
-                  {
-                    'value': 5941,
-                    'name': '2016-09-19T14:33:45.710Z',
-                  },
-                  {
-                    'value': 6427,
                     'name': '2016-09-12T18:48:58.925Z',
                   },
                 ],
