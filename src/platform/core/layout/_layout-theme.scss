@@ -8,6 +8,12 @@
   .md-sidenav-container {
     background-color: md-color($background, status-bar);
   }
+
+  td-layout-nav,
+  td-layout-nav-list,
+  td-layout-manage-list,
+  td-layout-card-over,
+  td-navigation-drawer,
   td-layout {
     md-toolbar {
       @include md-elevation(1);
