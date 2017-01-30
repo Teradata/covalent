@@ -1,6 +1,6 @@
 {
   "name": "@covalent/http",
-  "version": "0.10.2",
+  "version": "1.0.0-beta.1",
   "description": "Teradata UI Platform Http Helper Module",
   "main": "./http.umd.js",
   "module": "./index.js",
