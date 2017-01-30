@@ -1,3 +1,99 @@
+<a name="1.0.0-beta.1"></a>
+# [1.0.0-beta.1 ](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-30)
+
+## Breaking Changes
+* **layout:** td-layout removal of (logout) event and [displayName], [logo], [icon] and sidenavTitle inpust to make it more flexible. ([164950d288dd5fabb38b8e16ead4ce186e8e59a2](https://github.com/Teradata/covalent/pull/288/commits/164950d288dd5fabb38b8e16ead4ce186e8e59a2)), closes [#265] (https://github.com/Teradata/covalent/issues/265), [#180] (https://github.com/Teradata/covalent/issues/180) 
+
+Before (deprecated):
+```html
+<md-nav-list td-layout>
+<div after-card>
+```
+After:
+```html
+<md-nav-list td-sidenav-content>
+<div td-after-card>
+```
+
+`td-layout`
+
+Usage:
+```html
+<td-layout #layout>
+  <div>
+    Nothing to do here~
+  </div>
+  .. content
+</td-layout>
+```
+
+`td-layout-nav-list and td-layout-manage-list`
+
+Usage:
+```html
+<td-layout-manage-list #manageList
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+```
+
+```
+<td-layout-nav-list #navList
+                    logo="assets:teradata"
+                    toolbarTitle="Covalent"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+```
+
+```
+constructor(public media: TdMediaService) {}
+
+ngAfterViewInit(): void {
+  // broadcast to all listener observables when loading the page
+  this.media.broadcast();
+}
+```
+
+`td-navigation-drawer`
+Usage:
+```html
+<td-layout>
+  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" name="User Name" email="user@email.com">
+     Main Content
+    <div td-navigation-drawer-menu>
+      Menu Content
+    </div>
+  </td-navigation-drawer>
+  .. rest of the app
+</td-layout>
+```
+
+## Bug Fixes
+* **layout:** Apply elevation on toolbar on all layouts not just inside `td-layout`([52032ed108d2d5e2fbf2953682a75d88d17a2d4f](https://github.com/Teradata/covalent/pull/299/commits/52032ed108d2d5e2fbf2953682a75d88d17a2d4f))
+* **chips:** ReadOnly state wasnt being shown properly([474a81564c82085c0ce4d0f65e28ef22bb9dc5ed](https://github.com/Teradata/covalent/pull/293/commits/474a81564c82085c0ce4d0f65e28ef22bb9dc5ed))
+* **search:** Clear button wasnt working properly since `input` was considered not empty (floating label)([71a70e19e8bcda443217c466a6f541b41a2a6669](https://github.com/Teradata/covalent/pull/293/commits/71a70e19e8bcda443217c466a6f541b41a2a6669))
+* **search:** Scss for hide-underline was wrong (md-input is not used the same way)([4fabe7f770f2d7286a3164516df24c49c72f642c](https://github.com/Teradata/covalent/pull/293/commits/4fabe7f770f2d7286a3164516df24c49c72f642c))
+* **serve:** Adding exclusion of spec test files when running ng serve --aot([2b9172eb653920e8cd7114f6ee751b0e43e20dfc](https://github.com/Teradata/covalent/pull/269/commits/2b9172eb653920e8cd7114f6ee751b0e43e20dfc)), closes [#267] (https://github.com/Teradata/covalent/issues/267)
+* **md-icon:** Fixed alignment issues when using smaller icon size classes (e.g. .material-icons.md-18) than the default one (.material-icons.md-24)([8b1ddc4a37e6eb1f79108ce0a709e58fe479e62c](https://github.com/Teradata/covalent/pull/245/commits/8b1ddc4a37e6eb1f79108ce0a709e58fe479e62c))
+* **coverage-badge:** Make coverage badge point to the develop branch ([22a262e006f1d0584550dbbe8e943a00d96f8703](https://github.com/Teradata/covalent/pull/253/commits/22a262e006f1d0584550dbbe8e943a00d96f8703))
+* **ts:** Changed `file.types` type to work with both ts 2.0 and 2.1, upgraded tslint & codelyzer, unit tests for file upload component ([61d80efbdadb44960b6ea21a048cea4061a93d37](https://github.com/Teradata/covalent/pull/241/commits/61d80efbdadb44960b6ea21a048cea4061a93d37)), closes [#236] (https://github.com/Teradata/covalent/issues/236)
+* **docs:** Theme styles duplication ([3144299c98c048c909f4ae1a5853d718a16f1639](https://github.com/Teradata/covalent/pull/243/commits/3144299c98c048c909f4ae1a5853d718a16f1639))
+* **http:** Fix for rxjs dependency changes which caused concurrency request failure. (when multiple requests were thrown at the same time, sometimes one or more would fail) ([506615e6e180b236111f4d11525067335eda087a](https://github.com/Teradata/covalent/pull/228/commits/506615e6e180b236111f4d11525067335eda087a))
+* **animations:** Explicitly used window.setTimeout instead of eJS.setTimeout ([04b80d846a6c0236e24308cded09ed24508cd4e2](https://github.com/Teradata/covalent/pull/227/commits/04b80d846a6c0236e24308cded09ed24508cd4e2))
+
+## Features
+* **code-health:** Added `coveralls` and `coverage badge` in README.md ([32ae8c645810937129a9bf74008daf63d7a5c970](https://github.com/Teradata/covalent/pull/224/commits/32ae8c645810937129a9bf74008daf63d7a5c970))
+* **deployment:** `ghpages-deploy` npm command improvements ([c3ad8f8137282f62471175440b801d6d6b99f206](https://github.com/Teradata/covalent/pull/222/commits/c3ad8f8137282f62471175440b801d6d6b99f206))
+* **docs:** Show `beta.1` main features in homepage notifications + `sketch.beta.1` update ([df2c2ff70785841cc781f3333dbebf3976ab5cdc](https://github.com/Teradata/covalent/pull/297/commits/df2c2ff70785841cc781f3333dbebf3976ab5cdc))
+* **umd:** Added `umd` files as `main` entry in `package.json` modules ([4e575dce7ecce43744e3c5f86236aa564176562c](https://github.com/Teradata/covalent/pull/295/commits/4e575dce7ecce43744e3c5f86236aa564176562c))
+* **theme:** Added prebuilt themes `orange-light-blue`, upgraded gulp-sass and added custom `importer` into the `compile-sass` ([9dd0d96941a0a7fa1a530bc656e8ccbdfaa88341](https://github.com/Teradata/covalent/pull/294/commits/9dd0d96941a0a7fa1a530bc656e8ccbdfaa88341))
+
+
+## Internal
+
 <a name="0.10.2"></a>
 # [0.10.2](https://github.com/Teradata/covalent/tree/v0.10.0) (2017-1-3)
 
