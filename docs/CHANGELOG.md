@@ -194,6 +194,7 @@ ngAfterViewInit(): void {
 * **media:**  Optimize resize event handling on `TdMediaService`. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5))
 * **media:** Added `broadcast` method in `TdMediaService` to explicitly trigger the media query checkup on subscribers. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5))
 * **pattern:** Added `management data-list` design pattern. ([3a15e7ad8ed8f9a83b072524d4054569ead92de2](https://github.com/Teradata/covalent/commit/3a15e7ad8ed8f9a83b072524d4054569ead92de2))
+* **plnkr:** Covalent now has a `plnkr` (Plunker) template for easier `bug` replication, `demo` and `idea sharing`. Go to [plnkr](http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd). closes [#47](https://github.com/Teradata/covalent/issues/47)
 * **theming:** Added prebuilt themes `orange-light-blue`, `blue-grey-deep-orange`, `blue-orange`, `indigo-pink` and `teal-orange`. ([45d4c1b35c6e2a23d19ac73273cfbd817acb6686](https://github.com/Teradata/covalent/commit/45d4c1b35c6e2a23d19ac73273cfbd817acb6686))
 
 ## Internal
