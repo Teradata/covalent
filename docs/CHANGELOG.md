@@ -72,17 +72,16 @@ Usage:
 ```
 
 ## Bug Fixes
-* **layout:** Apply elevation on toolbar on all layouts not just inside `td-layout`([52032ed108d2d5e2fbf2953682a75d88d17a2d4f](https://github.com/Teradata/covalent/pull/299/commits/52032ed108d2d5e2fbf2953682a75d88d17a2d4f))
-* **chips:** ReadOnly state wasnt being shown properly([474a81564c82085c0ce4d0f65e28ef22bb9dc5ed](https://github.com/Teradata/covalent/pull/293/commits/474a81564c82085c0ce4d0f65e28ef22bb9dc5ed))
-* **search:** Clear button wasnt working properly since `input` was considered not empty (floating label)([71a70e19e8bcda443217c466a6f541b41a2a6669](https://github.com/Teradata/covalent/pull/293/commits/71a70e19e8bcda443217c466a6f541b41a2a6669))
-* **search:** Scss for hide-underline was wrong (md-input is not used the same way)([4fabe7f770f2d7286a3164516df24c49c72f642c](https://github.com/Teradata/covalent/pull/293/commits/4fabe7f770f2d7286a3164516df24c49c72f642c))
+* **layout:** Apply elevation on toolbar on all layouts not just inside `td-layout`([e0c8480c9ffa73d9d39466e31260b1e73895003b](https://github.com/Teradata/covalent/commit/e0c8480c9ffa73d9d39466e31260b1e73895003b))
+* **chips:** ReadOnly state wasnt being shown properly([64ff1100af2983709205833de5900fd3b33076ab](https://github.com/Teradata/covalent/commit/64ff1100af2983709205833de5900fd3b33076ab))
+* **search:** Clear button wasnt working properly since `input` was considered not empty (floating label) & Scss for hide-underline was wrong([64ff1100af2983709205833de5900fd3b33076ab](https://github.com/Teradata/covalent/commit/64ff1100af2983709205833de5900fd3b33076ab))
 * **serve:** Adding exclusion of spec test files when running ng serve --aot([2b9172eb653920e8cd7114f6ee751b0e43e20dfc](https://github.com/Teradata/covalent/pull/269/commits/2b9172eb653920e8cd7114f6ee751b0e43e20dfc)), closes [#267] (https://github.com/Teradata/covalent/issues/267)
-* **md-icon:** Fixed alignment issues when using smaller icon size classes (e.g. .material-icons.md-18) than the default one (.material-icons.md-24)([8b1ddc4a37e6eb1f79108ce0a709e58fe479e62c](https://github.com/Teradata/covalent/pull/245/commits/8b1ddc4a37e6eb1f79108ce0a709e58fe479e62c))
-* **coverage-badge:** Make coverage badge point to the develop branch ([22a262e006f1d0584550dbbe8e943a00d96f8703](https://github.com/Teradata/covalent/pull/253/commits/22a262e006f1d0584550dbbe8e943a00d96f8703))
-* **ts:** Changed `file.types` type to work with both ts 2.0 and 2.1, upgraded tslint & codelyzer, unit tests for file upload component ([61d80efbdadb44960b6ea21a048cea4061a93d37](https://github.com/Teradata/covalent/pull/241/commits/61d80efbdadb44960b6ea21a048cea4061a93d37)), closes [#236] (https://github.com/Teradata/covalent/issues/236)
-* **docs:** Theme styles duplication ([3144299c98c048c909f4ae1a5853d718a16f1639](https://github.com/Teradata/covalent/pull/243/commits/3144299c98c048c909f4ae1a5853d718a16f1639))
-* **http:** Fix for rxjs dependency changes which caused concurrency request failure. (when multiple requests were thrown at the same time, sometimes one or more would fail) ([506615e6e180b236111f4d11525067335eda087a](https://github.com/Teradata/covalent/pull/228/commits/506615e6e180b236111f4d11525067335eda087a))
-* **animations:** Explicitly used window.setTimeout instead of eJS.setTimeout ([04b80d846a6c0236e24308cded09ed24508cd4e2](https://github.com/Teradata/covalent/pull/227/commits/04b80d846a6c0236e24308cded09ed24508cd4e2))
+* **md-icon:** Fixed alignment issues when using smaller icon size classes (e.g. .material-icons.md-18) than the default one (.material-icons.md-24)([88be8c3be645a4747a4f06a0b5dbb6ed3afa7f1e](https://github.com/Teradata/covalent/commit/88be8c3be645a4747a4f06a0b5dbb6ed3afa7f1e))
+* **coverage-badge:** Make coverage badge point to the develop branch ([c50155a21a996f71eb1c7b117e162862adfa5b8c](https://github.com/Teradata/covalent/commit/c50155a21a996f71eb1c7b117e162862adfa5b8c))
+* **ts:** Changed `file.types` type to work with both ts 2.0 and 2.1, upgraded tslint & codelyzer, unit tests for file upload component ([48cdbcaa56ac8cc679e9d36b7f4e65fabad039c0](https://github.com/Teradata/covalent/commit/48cdbcaa56ac8cc679e9d36b7f4e65fabad039c0)), closes [#236] (https://github.com/Teradata/covalent/issues/236)
+* **docs:** Theme styles duplication ([b297746b0bb65fa7a434c4b31d789d5c8a95347d](https://github.com/Teradata/covalent/commit/b297746b0bb65fa7a434c4b31d789d5c8a95347d))
+* **http:** Fix for rxjs dependency changes which caused concurrency request failure. (when multiple requests were thrown at the same time, sometimes one or more would fail) ([31a60cd0e322f2ab9190325381c08b4872414caa](https://github.com/Teradata/covalent/commit/31a60cd0e322f2ab9190325381c08b4872414caa))
+* **animations:** Explicitly used window.setTimeout instead of eJS.setTimeout ([1cd3e49c62a3cc8b03f3f153fc3bb554061e495e](https://github.com/Teradata/covalent/commit/1cd3e49c62a3cc8b03f3f153fc3bb554061e495e))
 
 ## Features
 * **code-health:** Added `coveralls` and `coverage badge` in README.md ([56242b11046975aa2957c15caca15f8da7365f83](https://github.com/Teradata/covalent/commit/56242b11046975aa2957c15caca15f8da7365f83))
