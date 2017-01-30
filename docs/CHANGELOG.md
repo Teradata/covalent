@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.1"></a>
-# [1.0.0-beta.1 ](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-30)
+# [1.0.0-beta.1 Purple Rain](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-30)
 
 ## Breaking Changes
 * **layout:** `td-layout` removal of `(logout)` event and `[displayName]`, `[logo]`, `[icon]` and `[sidenavTitle]` inputs. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5))
