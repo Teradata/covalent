@@ -36,6 +36,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.10.2"
+    "@covalent/core": "1.0.0-beta.1"
   }
 }
