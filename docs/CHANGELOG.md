@@ -2,7 +2,7 @@
 # [1.0.0-beta.1 ](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-30)
 
 ## Breaking Changes
-* **layout:** td-layout removal of (logout) event and [displayName], [logo], [icon] and sidenavTitle inpust to make it more flexible. ([164950d288dd5fabb38b8e16ead4ce186e8e59a2](https://github.com/Teradata/covalent/pull/288/commits/164950d288dd5fabb38b8e16ead4ce186e8e59a2)), closes [#265] (https://github.com/Teradata/covalent/issues/265), [#180] (https://github.com/Teradata/covalent/issues/180) 
+* **layout:** td-layout removal of (logout) event and [displayName], [logo], [icon] and sidenavTitle inpust to make it more flexible. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5)), closes [#265] (https://github.com/Teradata/covalent/issues/265), [#180] (https://github.com/Teradata/covalent/issues/180) 
 
 Before (deprecated):
 ```html
@@ -85,14 +85,21 @@ Usage:
 * **animations:** Explicitly used window.setTimeout instead of eJS.setTimeout ([04b80d846a6c0236e24308cded09ed24508cd4e2](https://github.com/Teradata/covalent/pull/227/commits/04b80d846a6c0236e24308cded09ed24508cd4e2))
 
 ## Features
-* **code-health:** Added `coveralls` and `coverage badge` in README.md ([32ae8c645810937129a9bf74008daf63d7a5c970](https://github.com/Teradata/covalent/pull/224/commits/32ae8c645810937129a9bf74008daf63d7a5c970))
-* **deployment:** `ghpages-deploy` npm command improvements ([c3ad8f8137282f62471175440b801d6d6b99f206](https://github.com/Teradata/covalent/pull/222/commits/c3ad8f8137282f62471175440b801d6d6b99f206))
-* **docs:** Show `beta.1` main features in homepage notifications + `sketch.beta.1` update ([df2c2ff70785841cc781f3333dbebf3976ab5cdc](https://github.com/Teradata/covalent/pull/297/commits/df2c2ff70785841cc781f3333dbebf3976ab5cdc))
-* **umd:** Added `umd` files as `main` entry in `package.json` modules ([4e575dce7ecce43744e3c5f86236aa564176562c](https://github.com/Teradata/covalent/pull/295/commits/4e575dce7ecce43744e3c5f86236aa564176562c))
-* **theme:** Added prebuilt themes `orange-light-blue`, upgraded gulp-sass and added custom `importer` into the `compile-sass` ([9dd0d96941a0a7fa1a530bc656e8ccbdfaa88341](https://github.com/Teradata/covalent/pull/294/commits/9dd0d96941a0a7fa1a530bc656e8ccbdfaa88341))
+* **code-health:** Added `coveralls` and `coverage badge` in README.md ([56242b11046975aa2957c15caca15f8da7365f83](https://github.com/Teradata/covalent/commit/56242b11046975aa2957c15caca15f8da7365f83))
+* **deployment:** `ghpages-deploy` npm command improvements ([797e1fa7ab2bb26a745562320c8c1a3be88d1967](https://github.com/Teradata/covalent/commit/797e1fa7ab2bb26a745562320c8c1a3be88d1967))
+* **docs:** Show `beta.1` main features in homepage notifications + `sketch.beta.1` update ([681df135d07a5cd2fd9a277c42e71c0682336b52](https://github.com/Teradata/covalent/commit/681df135d07a5cd2fd9a277c42e71c0682336b52))
+* **umd:** Added `umd` files as `main` entry in `package.json` modules ([9152500c366b0e8e6dead2664e1f809cdafc5d29](https://github.com/Teradata/covalent/commit/9152500c366b0e8e6dead2664e1f809cdafc5d29))
+* **theme:** Added prebuilt themes `orange-light-blue`, upgraded gulp-sass and added custom `importer` into the `compile-sass` ([45d4c1b35c6e2a23d19ac73273cfbd817acb6686](https://github.com/Teradata/covalent/commit/45d4c1b35c6e2a23d19ac73273cfbd817acb6686))
+* **highlight:** enhancements and code-health ([3311d4a942849e72a2952200ac24043ab9849ecb](https://github.com/Teradata/covalent/commit/3311d4a942849e72a2952200ac24043ab9849ecb))
+* **markdown:** enhancements and code-health ([988940253db3df545f1e19ee119cc2c4dee19605](https://github.com/Teradata/covalent/commit/988940253db3df545f1e19ee119cc2c4dee19605))
+* **docs:** Added star count in docs to show stargazers ([5ea18ec1f3a986e4e8543478d8aad49abd5aaf44](https://github.com/Teradata/covalent/commit/5ea18ec1f3a986e4e8543478d8aad49abd5aaf44))
+* **loading:** Loading enhancements and re-haul to use material modules ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f)), closes [#255] (https://github.com/Teradata/covalent/issues/255) &  [#84] (https://github.com/Teradata/covalent/issues/84)
+* **json-formatter:** Enhancements and bugfixes ([da4db7fbc6efbe5e3379cd377b2826e25c2b2ea1](https://github.com/Teradata/covalent/commit/da4db7fbc6efbe5e3379cd377b2826e25c2b2ea1)), closes [#247] (https://github.com/Teradata/covalent/issues/247) [#250] (https://github.com/Teradata/covalent/issues/250)
+* **notifications:** Added `positionX` and `positionY` to `notification-count` and `rtl` support ([8015a6744d09a6980a250bf40e34af8a8b04b7b4](https://github.com/Teradata/covalent/commit/8015a6744d09a6980a250bf40e34af8a8b04b7b4))
 
 
 ## Internal
+* **documentation-tools:** Added  `documentation-tools` module for doc utilities ([2570fa4ecb6a6cc72e308993d9dd9747eb053897](https://github.com/Teradata/covalent/commit/2570fa4ecb6a6cc72e308993d9dd9747eb053897))
 
 <a name="0.10.2"></a>
 # [0.10.2](https://github.com/Teradata/covalent/tree/v0.10.0) (2017-1-3)
