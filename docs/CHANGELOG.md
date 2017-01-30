@@ -96,7 +96,7 @@ After:
 
 * **loading:** deprecate `ILoadingOptions` interface in favor of `ITdLoadingConfig` ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
 * **loading:** deprecate `createOverlayComponent` method from `TdDialogService` in favor of `create` method ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
-* **loading:** deprecate `[loadingType]` and `[loadingMode]` in favor of `[tdLoadingType]` and `[tdLoadingMode]` so the inputs can be used correctly in (*) syntax. e.g. `*tdLoading="'name'; type:'linear'"` ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
+* **loading:** deprecate `[loadingType]` and `[loadingMode]` in favor of `[tdLoadingType]` and `[tdLoadingMode]` so the inputs can be used correctly in `(*)` syntax. e.g. `*tdLoading="'name'; type:'linear'"` ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
 * **pipes:** Removed `orderBy` pipe since it wasnt documented and its not a best practice for `@angular`. ([e368057ff1983e6c3353210058c010f02830a30f](https://github.com/Teradata/covalent/commit/e368057ff1983e6c3353210058c010f02830a30f))
 
 ## Bug Fixes
