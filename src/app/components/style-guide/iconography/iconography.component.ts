@@ -1,11 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'style-guide-iconography',
-  styleUrls: ['iconography.component.scss'],
-  templateUrl: 'iconography.component.html',
+  styleUrls: ['./iconography.component.scss'],
+  templateUrl: './iconography.component.html',
+  animations: [slideInDownAnimation],
 })
 export class IconographyComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
   colors: string[] = [
     'red',
     'pink',

@@ -7,18 +7,18 @@
        [class.md-interaction-disabled]="disabled"
        [class.md-tall]="expansionPanelHeader"
        md-list-item>
-      <template [portalHost]="expansionPanelHeader"></template>
+      <template [cdkPortalHost]="expansionPanelHeader"></template>
       <div [class.md-disabled]="disabled"
            *ngIf="!expansionPanelHeader"
            layout="row" 
            layout-align="start center" 
            flex>
         <div class="md-subhead td-expansion-primary" flex-gt-xs="33">
-          <template [portalHost]="expansionPanelLabel"></template>
+          <template [cdkPortalHost]="expansionPanelLabel"></template>
           <template [ngIf]="!expansionPanelLabel">{{label || 'Click to expand '}}</template>
         </div>
         <div class="md-body-1 td-expansion-secondary">
-          <template [portalHost]="expansionPanelSublabel"></template>
+          <template [cdkPortalHost]="expansionPanelSublabel"></template>
           <template [ngIf]="!expansionPanelSublabel">{{sublabel}}</template>
         </div>
         <span flex></span>
@@ -28,10 +28,10 @@
     </a>
   </md-nav-list>
   <div>
-    <div [tdToggle]="!expand">
+    <div class="td-expansion-content" [@tdCollapse]="!expand">
       <ng-content></ng-content>
     </div>
-    <div [tdToggle]="expand">
+    <div class="td-expansion-summary" [@tdCollapse]="expand">
       <ng-content select="td-expansion-summary"></ng-content>
     </div>
   </div>

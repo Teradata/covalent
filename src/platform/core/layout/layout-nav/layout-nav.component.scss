@@ -1,8 +1,11 @@
 :host {
-    display: flex;
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
-    overflow: hidden;
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  .td-menu-button {
+    margin-left: 0px;
+  }
 }

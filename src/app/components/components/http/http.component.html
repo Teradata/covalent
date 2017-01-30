@@ -7,11 +7,14 @@
     <p>Service provided with methods that wrap the ng2 [Http] service and provide an easier experience for interceptor implementation.</p>
     <p>To add a desired interceptor, it needs to implement the [IHttpInterceptor] interface.</p>
     <td-highlight lang="typescript">
-      export interface IHttpInterceptor {{'{'}}
-        onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-        onResponse?: (response: Response) => Response;
-        onResponseError?: (error: Response) => Response;
-      }
+      <![CDATA[
+        export interface IHttpInterceptor {
+          onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
+          onResponse?: (response: Response) => Response;
+          onResponseError?: (error: Response) => Response;
+        }
+      ]]>
     </td-highlight>
     <h3>Methods:</h3>
     <p>The [HttpInterceptorService] service has {{interceptorServiceMethods.length}} properties:</p>
@@ -35,7 +38,23 @@
         export class CustomInterceptor implements IHttpInterceptor {
 
           onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-            ... // do something to requestOptions
+            ... // do something to requestOptions before a request
+            ... // if something is wrong, throw an error to execute 
+            ... // onRequestError (if there is an onRequestError hook)
+            if (/*somethingWrong*/) {
+              throw new Error('error message for subscription error callback');
+            }
+            return requestOptions;
+          }
+
+          onRequestError(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
+            ... // do something to try and recover from an error thrown `onRequest` 
+            ... // and return the requestOptions needed for the request
+            ... // else return 'undefined' or throw an error to execute the 
+            ... // error callback of the subscription
+            if (cantRecover) {
+              throw new Error('error message for subscription error callback'); // or return undefined;
+            }
             return requestOptions;
           }
 
@@ -51,17 +70,31 @@
         }
       ]]>
     </td-highlight>
-    <p>Then, import the [CovalentHttpModule] using the <code>forRoot()</code> method with the desired interceptors in your NgModule:</p>
+    <p>Then, import the [CovalentHttpModule] using the <code>forRoot()</code> method with the desired interceptors and paths to intercept in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
+        import { NgModule, Type } from '@angular/core';
         import { HttpModule } from '@angular/http';
-        import { CovalentHttpModule } from '@covalent/http';
+        import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
         import { CustomInterceptor } from 'dir/to/interceptor';
+
+        const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+          CustomInterceptor,
+          ...
+        ];
 
         @NgModule({
           imports: [
             HttpModule, /* or CovalentCoreModule.forRoot() */
-            CovalentHttpModule.forRoot([CustomInterceptor]),
+            CovalentHttpModule.forRoot({
+              interceptors: [{
+                interceptor: CustomInterceptor, paths: ['**'],
+              }],
+            }),
+            ...
+          ],
+          providers: [
+            httpInterceptorProviders,
             ...
           ],
           ...
@@ -70,6 +103,63 @@
       ]]>
     </td-highlight>
     <p>After that, just inject [HttpInterceptorService] and use it for your requests.</p>
+    <h3>Paths:</h3>
+    <p>The following characters are accepted as a path to intercept:</p>
+    <td-markdown>
+      <pre><code>
+- `**` is a wildcard for `[a-zA-Z0-9-_]` (including `/`)
+- `*` is a wildcard for `[a-zA-Z0-9-_]` (excluding `/`)
+- `[a-zA-Z0-9-_]`
+      </code></pre>
+    </td-markdown>
+    <h3>Examples:</h3>
+    <td-markdown>
+      <pre><code>
+Example 1
+
+`/users/*/groups` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+
+`/users/*/groups` DOES NOT intercept:
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/groups`
+
+Example 2
+
+`/users/**/groups` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+
+`/users/**/groups` DOES NOT intercept:
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+
+Example 3
+
+`/users/**` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+
+`/users/**` DOES NOT intercept:
+- `www.url.com/users`
+
+Example 4
+
+`/users**` intercepts:
+- `www.url.com/users/id-of-user/groups`
+- `www.url.com/users/id/groups`
+- `www.url.com/users/id-of-user/path/groups`
+- `www.url.com/users/id-of-user/groups/path`
+- `www.url.com/users/groups`
+- `www.url.com/users`
+      </code></pre>
+    </td-markdown>
   </md-card-content>
 </md-card>
 <md-card>
@@ -95,7 +185,7 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { Injectable } from '@angular/core';
-        import { Response, Http } from '@angular/http';
+        import { Response, Http, Headers } from '@angular/http';
         import { RESTService, HttpInterceptorService } from '@covalent/http';
 
         @Injectable()
@@ -105,6 +195,8 @@
             super(_http, {
               baseUrl: 'www.api.com',
               path: '/path/to/endpoint',
+              headers: new Headers(),
+              dynamicHeaders: () => new Headers(),
               transform: (res: Response): any => res.json(),
             });
           }

@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "app/assets",
+        "platform",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -20,7 +21,8 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "platform/core/styles/platform.scss"
+        "platform/core/common/platform.scss",
+        "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",

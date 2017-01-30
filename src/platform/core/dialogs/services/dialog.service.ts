@@ -1,5 +1,5 @@
 import { Injectable, ViewContainerRef } from '@angular/core';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogConfig, ComponentType } from '@angular/material';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -32,13 +32,21 @@ export class TdDialogService {
 
   /**
    * params:
-   * - viewContainerRef: ViewContainerRef
-   * Sets a detaulf ViewContainerRef object to which all dialogs will belong to.
-   * @deprecated since 0.9
+   * - component: ComponentType<T>
+   * - config: MdDialogConfig
+   * Wrapper function over the open() method in MdDialog.
+   * Opens a modal dialog containing the given component.
    */
-  public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
-    /* tslint:disable-next-line */ 
-    console.warn('setDefaultViewContainerRef is deprecated. ViewContainerRef is no longer required.');
+  public open<T>(component: ComponentType<T>, config?: MdDialogConfig): MdDialogRef<T> {
+    return this._dialogService.open(component, config);
+  }
+
+  /**
+   * Wrapper function over the closeAll() method in MdDialog.
+   * Closes all of the currently-open dialogs.
+   */
+  public closeAll(): void {
+    this._dialogService.closeAll();
   }
 
   /**

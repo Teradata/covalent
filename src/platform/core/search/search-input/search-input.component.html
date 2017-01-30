@@ -1,0 +1,19 @@
+<div class="td-search-input" layout="row" layout-align="end center">
+  <md-input-container [class.md-hide-underline]="!showUnderline" flex>
+    <input md-input
+            #searchElement
+            type="search"
+            [(ngModel)]="value"
+            [placeholder]="placeholder"
+            (blur)="handleBlur()"
+            (search)="stopPropagation($event)"
+            (keyup.enter)="handleSearch($event)"/>
+  </md-input-container>
+  <button md-icon-button
+          type="button"
+          [@searchState]="searchElement.value ? true : false"
+          (click)="clearSearch()"
+          flex="none">
+    <md-icon>cancel</md-icon>
+  </button>
+</div>

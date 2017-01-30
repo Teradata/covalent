@@ -1,0 +1,89 @@
+$td-notification-size: 20px !default;
+$td-notification-content-size: 40px !default;
+
+:host {
+  position: relative;
+  display: block;
+  text-align: center;
+  min-width: $td-notification-content-size;
+  height: $td-notification-content-size;
+  &.td-notification-hidden {
+    min-width: 0;
+  }
+}
+.td-notification-count {
+  line-height: $td-notification-size + 1;
+  width: $td-notification-size;
+  height: $td-notification-size;
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  z-index: 1;
+  &.td-notification-center-x {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0px
+  }
+  &.td-notification-center-y {
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0px;
+    bottom: 0px;
+  }
+  &.td-notification-top {
+    top: 0px;
+  }
+  &.td-notification-bottom {
+    bottom: 0px;
+  }
+  &.td-notification-before {
+    left: 0px;
+  }
+  &.td-notification-after {
+    right: 0px;
+  }
+  &.td-notification-no-count {
+    width: 8px;
+    height: 8px;
+    &.td-notification-top {
+      top: 8px;
+    }
+    &.td-notification-bottom {
+      bottom: 8px;
+    }
+    &.td-notification-before {
+      left: 8px;
+    }
+    &.td-notification-after {
+      right: 8px;
+    }
+  }
+  /deep/ [dir='rtl'] & {
+    &.td-notification-before {
+      right: 0px;
+      left: auto;
+    }
+    &.td-notification-after {
+      left: 0px;
+      right: auto;
+    }
+     &.td-notification-no-count {
+      &.td-notification-before {
+        right: 8px;
+        left: auto;
+      }
+      &.td-notification-after {
+        left: 8px;
+        right: auto;
+      }
+    }
+  }
+}
+
+.td-notification-content {
+  &, /deep/ > * {
+    line-height: $td-notification-content-size;
+  }
+}

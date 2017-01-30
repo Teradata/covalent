@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { TdMediaService } from '@covalent/core';
+
+import { fadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-docs',
-  styleUrls: ['docs.component.scss'],
-  templateUrl: 'docs.component.html',
+  styleUrls: ['./docs.component.scss'],
+  templateUrl: './docs.component.html',
+  animations: [fadeAnimation],
 })
-export class DocsComponent {
+export class DocsComponent implements AfterViewInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Forking & setup for dev',
@@ -58,5 +65,12 @@ export class DocsComponent {
     route: 'testing',
     title: 'Testing',
   }];
+
+  constructor(public media: TdMediaService) {}
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+  }
 
 }

@@ -1,19 +1,25 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/data-table';
-import { IPageChangeEvent } from '../../../../platform/paging';
+         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
+import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
-const NUMBER_FORMAT: any = (v: number) => v;
-const DECIMAL_FORMAT: any = (v: number) => v.toFixed(2);
+const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
+const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
 @Component({
   selector: 'data-table-demo',
-  styleUrls: ['data-table.component.scss'],
-  templateUrl: 'data-table.component.html',
+  styleUrls: ['./data-table.component.scss'],
+  templateUrl: './data-table.component.html',
+  animations: [slideInDownAnimation],
 })
 export class DataTableDemoComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   dataTableAttrs: Object[] = [{
     description: `Rows of data to be displayed`,
@@ -53,6 +59,16 @@ export class DataTableDemoComponent implements OnInit {
     description: `Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
                   Emits an [ITdDataTableSelectEvent] implemented object.`,
     name: 'rowSelect',
+    type: `function()`,
+  }, {
+    description: `Event emitted when all rows are selected/deselected by the all checkbox.
+                  [selectable] needs to be enabled.
+                  Emits an [ITdDataTableSelectAllEvent] implemented object.`,
+    name: 'selectAll',
+    type: `function()`,
+  }, {
+    description: `Refreshes data table and updates [data] and [columns]`,
+    name: 'refresh',
     type: `function()`,
   }];
 
@@ -116,7 +132,7 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   data: any[] = [
-      {
+    {
         'id': 1,
         'name': 'Frozen yogurt',
         'type': 'Ice cream',
@@ -256,14 +272,12 @@ export class DataTableDemoComponent implements OnInit {
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
-              private _dialogService: TdDialogService,
-              private _viewContainerRef: ViewContainerRef) {}
+              private _dialogService: TdDialogService) {}
 
   openPrompt(row: any, name: string): void {
     this._dialogService.openPrompt({
       message: 'Enter comment?',
       value: row[name],
-      viewContainerRef: this._viewContainerRef,
     }).afterClosed().subscribe((value: any) => {
       if (value !== undefined) {
         row[name] = value;

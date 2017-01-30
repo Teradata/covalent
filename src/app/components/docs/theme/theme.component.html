@@ -12,7 +12,10 @@
     <p>Simply edit the /theme.scss file and update these SCSS variables:</p>
     <td-highlight lang="scss">
       @import '~@angular/material/core/theming/all-theme';
-      @import '~@covalent/core/styles/theming/all-theme';
+      @import '~@covalent/core/theming/all-theme';
+      @import '~@covalent/markdown/markdown-theme';
+      @import '~@covalent/charts/charts-theme';
+      @import '~@covalent/highlight/highlight-theme';
       // Plus imports for other components in your app.
 
       // Include the base styles for Angular Material core. We include this here so that you only
@@ -22,11 +25,11 @@
       // Define the palettes for your theme using the Material Design palettes available in palette.scss
       // (imported above). For each palette, you can optionally specify a default, lighter, and darker
       // hue.
-      $primary: md-palette($md-orange, 800);
-      $accent:  md-palette($md-light-blue, 600, A100, A400);
+      $primary: md-palette($md-blue, 700);
+      $accent:  md-palette($md-orange, 800, A100, A400);
 
       // The warn palette is optional (defaults to red).
-      $warn:    md-palette($md-red);
+      $warn:    md-palette($md-red, 600);
 
       // Create the theme object (a Sass map containing all of the palettes).
       $theme: md-light-theme($primary, $accent, $warn);
@@ -36,6 +39,9 @@
       // that you are using.
       @include angular-material-theme($theme);
       @include covalent-theme($theme);
+      @include covalent-markdown-theme($theme);
+      @include covalent-charts-theme($theme);
+      @include covalent-highlight-theme();
     </td-highlight>
     <p>
       Color palettes and hues follow the official <a href="https://material.google.com/style/color.html" target="_blank">Material Design Spec</a>.

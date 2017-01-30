@@ -1,0 +1,15 @@
+@import '~@angular/material/core/theming/theming';
+
+@mixin td-paging-bar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  td-paging-bar {
+    &, & md-select .md-select-value { 
+      color: md-color($foreground, secondary-text);
+    }
+  }
+}

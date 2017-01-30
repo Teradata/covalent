@@ -132,7 +132,7 @@ export class TdXAxisComponent {
       .attr('transform', 'translate(0,' + this._parent.height + ')')
       .call(d3.axisBottom(x)
             .tickSize(-this._parent.height)
-            .tickFormat('')
+            .tickFormat(''),
       );
     svg.append('text')
       .attr('display', this.show ? 'display' : 'none')
@@ -158,8 +158,8 @@ export class TdXAxisComponent {
 
 @Component({
   selector: 'td-charts',
-  styleUrls: ['charts.component.scss'],
-  templateUrl: 'charts.component.html',
+  styleUrls: ['./charts.component.scss'],
+  templateUrl: './charts.component.html',
 })
 export class TdChartsComponent implements OnInit {
 

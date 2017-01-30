@@ -1,21 +1,20 @@
-import { Component, ViewContainerRef, AfterViewInit } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, OnInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
-import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '../../../../platform/core';
+import { slideInDownAnimation } from '../../../app.animations';
+
+import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '../../../../platform/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'loading-demo',
-  styleUrls: [ 'loading.component.scss' ],
-  templateUrl: 'loading.component.html',
+  styleUrls: ['./loading.component.scss' ],
+  templateUrl: './loading.component.html',
+  animations: [slideInDownAnimation],
 })
-export class LoadingDemoComponent implements AfterViewInit {
+export class LoadingDemoComponent implements AfterViewInit, OnInit {
 
-  private _intervalForDirective: number;
-  private _intervalForMain: number;
-
-  demo: {name?: string, description?: string} = {};
-  demo2: {name?: string, description?: string} = {};
-  replaceRegistered: number = 0;
-  determinate: boolean = false;
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   loadingAttrs: Object[] = [{
     description: 'Name reference of the loading mask, used to register/resolve requests to the mask.',
@@ -23,151 +22,105 @@ export class LoadingDemoComponent implements AfterViewInit {
     type: 'string',
   }, {
     description: 'Sets the type of loading mask depending on value. Defaults to [LoadingType.Circular | "circular"]',
-    name: 'loadingType?',
+    name: 'tdLoadingType?',
     type: 'LoadingType or ["linear" | "circular"]',
   }, {
     description: `Sets the mode of loading mask depending on value.
                   Defaults to [LoadingMode.Indeterminate | "indeterminate"].`,
-    name: 'loadingMode?',
+    name: 'tdLoadingMode?',
     type: 'LoadingMode or ["determinate" | "indeterminate"]',
+  }, {
+    description: `Sets the strategy of loading mask depending on value.
+                  Defaults to [LoadingMode.Replace | "replace"]`,
+    name: 'tdLoadingStrategy?',
+    type: 'LoadingStrategy or ["replace" | "overlay"]',
+  }, {
+    description: `Sets the theme color of the loading component. 
+                  Defaults to "primary"`,
+    name: 'tdLoadingColor?',
+    type: '"primary" | "accent" | "warn"',
   }];
 
   loadingServiceMethods: Object[] = [{
     description: `Registers a request for the loading mask referenced by the name parameter.
                   Can optionally pass registers argument to set a number of register calls.`,
     name: 'register',
-    type: 'function(name: string, registers: number = 1)',
+    type: 'function(name?: string, registers: number = 1)',
   }, {
     description: `Resolves a request for the loading mask referenced by the name parameter.
                   Can optionally pass resolves argument to set a number of resolve calls.`,
     name: 'resolve',
-    type: 'function(name: string, resolves: number = 1)',
+    type: 'function(name?: string, resolves: number = 1)',
   }, {
     description: `Set value on a loading mask referenced by the name parameter. 
                   Usage only available if its mode is 'determinate'.`,
     name: 'setValue',
     type: 'function(name: string, value: number)',
   }, {
-    description: `Creates a fullscreen loading mask and attaches it to the viewContainerRef.
+    description: `Creates a fullscreen loading mask and attaches it to the DOM with the given configuration.
                   Only displayed when the mask has a request registered on it.`,
-    name: 'createOverlayComponent',
-    type: 'function(options: ILoadingOptions, viewContainerRef: ViewContainerRef)',
+    name: 'create',
+    type: 'function(options: ITdLoadingConfig)',
   }];
 
-  constructor(viewContainer: ViewContainerRef,
-              private _loadingService: TdLoadingService) {
-    let options: ILoadingOptions = {
-      name: 'test.overlay.determinate',
-      type: LoadingType.Circular,
-      mode: LoadingMode.Determinate,
-    };
-    this._loadingService.createOverlayComponent(options, viewContainer);
-    let options2: ILoadingOptions = {
-      name: 'test2.overlay.determinate',
+  overlayStarSyntax: boolean = false;
+
+  constructor(private _loadingService: TdLoadingService) {
+    this._loadingService.create({
+      name: 'configFullscreenDemo',
       type: LoadingType.Linear,
-      mode: LoadingMode.Determinate,
-    };
-    this._loadingService.createOverlayComponent(options2, viewContainer);
-    options.name = 'test.overlay.indeterminate';
-    options.mode = LoadingMode.Indeterminate;
-    this._loadingService.createOverlayComponent(options, viewContainer);
-    options2.name = 'test2.overlay.indeterminate';
-    options2.mode = LoadingMode.Indeterminate;
-    this._loadingService.createOverlayComponent(options2, viewContainer);
+      mode: LoadingMode.Indeterminate,
+      color: 'accent',
+    });
+  }
+
+  ngOnInit(): void {
+    this.toggleDefaultFullscreenDemo();
   }
 
   ngAfterViewInit(): void {
-    this.registerLoadingDirective();
+    this.startDirectives();
   }
 
-  modeChange(): void {
-    while (this.replaceRegistered > 0) {
-      this.resolveLoadingDirective();
-    }
-    clearInterval(this._intervalForDirective);
+  toggleDefaultFullscreenDemo(): void {
+    this._loadingService.register();
+    setTimeout(() => {
+      this._loadingService.resolve();
+    }, 1500);
   }
 
-  registerCircleLoadingMain(): void {
-    if (this.determinate) {
-      this._loadingService.register('test.overlay.determinate');
-      this.mockValuesForLoadingMain(LoadingType.Circular);
-      setTimeout(() => {
-        this._loadingService.resolve('test.overlay.determinate');
-      }, 3000);
+  toggleConfigFullscreenDemo(): void {
+    this._loadingService.register('configFullscreenDemo');
+    setTimeout(() => {
+      this._loadingService.resolve('configFullscreenDemo');
+    }, 1500);
+  }
+
+  toggleOverlayStarSyntax(): void {
+    if (this.overlayStarSyntax) {
+      this._loadingService.register('overlayStarSyntax');
     } else {
-      this._loadingService.register('test.overlay.indeterminate');
-      setTimeout(() => {
-        this._loadingService.resolve('test.overlay.indeterminate');
-      }, 3000);
+      this._loadingService.resolve('overlayStarSyntax');
     }
+    this.overlayStarSyntax = !this.overlayStarSyntax;
   }
 
-  registerLinearLoadingMain(): void {
-    if (this.determinate) {
-      this._loadingService.register('test2.overlay.determinate');
-      this.mockValuesForLoadingMain(LoadingType.Linear);
-      setTimeout(() => {
-        this._loadingService.resolve('test2.overlay.determinate');
-      }, 3000);
-    } else {
-      this._loadingService.register('test2.overlay.indeterminate');
-      setTimeout(() => {
-        this._loadingService.resolve('test2.overlay.indeterminate');
-      }, 3000);
-    }
-  }
-
-  registerLoadingDirective(): void {
-    clearInterval(this._intervalForDirective);
-    if (this.determinate) {
-      this._loadingService.register('test.determinate');
-      this._loadingService.register('test2.determinate');
-      this.mockValuesForLoadingDirective();
-    } else {
-      this._loadingService.register('test.indeterminate');
-      this._loadingService.register('test2.indeterminate');
-    }
-    this.replaceRegistered++;
-  }
-
-  resolveLoadingDirective(): void {
-    clearInterval(this._intervalForDirective);
-    if (this.replaceRegistered > 0) {
-      this.replaceRegistered--;
-    }
-    if (this.determinate) {
-      this._loadingService.resolve('test.determinate');
-      this._loadingService.resolve('test2.determinate');
-    } else {
-      this._loadingService.resolve('test.indeterminate');
-      this._loadingService.resolve('test2.indeterminate');
-    }
-  }
-
-  mockValuesForLoadingDirective(): void {
+  toggleReplaceTemplateSyntax(): void {
+    this._loadingService.register('replaceTemplateSyntax');
     let value: number = 0;
-    this._intervalForDirective = setInterval(() => {
-      this._loadingService.setValue('test.determinate', value);
-      this._loadingService.setValue('test2.determinate', value);
+    let interval: number = setInterval(() => {
+      this._loadingService.setValue('replaceTemplateSyntax', value);
       value = value + 10;
       if (value > 100) {
-        clearInterval(this._intervalForDirective);
+        clearInterval(interval);
       }
     }, 250);
+    setTimeout(() => {
+      this._loadingService.resolve('replaceTemplateSyntax');
+    }, 3000);
   }
 
-  mockValuesForLoadingMain(loadingType: LoadingType): void {
-    let value: number = 0;
-    this._intervalForMain = setInterval(() => {
-      if (loadingType === LoadingType.Circular) {
-        this._loadingService.setValue('test.overlay.determinate', value);
-      } else {
-        this._loadingService.setValue('test2.overlay.determinate', value);
-      }
-      value = value + 10;
-      if (value > 100) {
-        clearInterval(this._intervalForMain);
-      }
-    }, 250);
+  startDirectives(): void {
+    this._loadingService.register('overlayStarSyntax');
   }
 }

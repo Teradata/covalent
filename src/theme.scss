@@ -1,5 +1,8 @@
 @import '~@angular/material/core/theming/all-theme';
-@import './platform/core/styles/theming/all-theme';
+@import './platform/core/theming/all-theme';
+@import './platform/markdown/markdown-theme';
+@import './platform/charts/charts-theme';
+@import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -23,6 +26,9 @@ $theme: md-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+@include covalent-markdown-theme($theme);
+@include covalent-charts-theme($theme);
+@include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 
 // Custom theme examples
 .blue-orange {
@@ -45,4 +51,40 @@ $theme: md-light-theme($primary, $accent, $warn);
 
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
+}
+
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Apply theme for this app
+
+// Active icon color in list nav
+md-nav-list {
+    [md-list-item].active {
+        md-icon[md-list-avatar] {
+            background-color: md-color($accent);
+            color: md-color($accent, default-contrast)
+        }
+        md-icon[md-list-icon] {
+            color: md-color($accent);
+        }
+    }
+}
+
+// NGX Charts
+[ngx-charts-axis-label] text {
+    fill: md-color($foreground, secondary-text);
+}
+.tick text {
+    fill: md-color($foreground, disabled);
+}
+.gridline-path {
+    &.gridline-path-horizontal,
+    &.gridline-path-vertical {
+        stroke: rgba(black, 0.06);
+    }
+}
+.legend-title-text {
+    color: md-color($foreground, secondary-text);
 }

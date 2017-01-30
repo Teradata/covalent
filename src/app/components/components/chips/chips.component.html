@@ -71,10 +71,10 @@
     <p>Import the [CovalentChipsModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentChipsModule } from '@covalent/chips';
+        import { CovalentChipsModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentChipsModule.forRoot(),
+            CovalentChipsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

@@ -18,21 +18,24 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
+import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
+
+// External Dependencies
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
-import { CovalentChipsModule } from '../../../platform/chips';
 import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentDataTableModule } from '../../../platform/data-table';
-import { CovalentPagingModule } from '../../../platform/paging';
-import { CovalentSearchModule } from '../../../platform/search';
+import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+
+import { DocumentationToolsModule } from '../../documentation-tools';
 
 @NgModule({
   declarations: [
@@ -55,20 +58,23 @@ import { CovalentSearchModule } from '../../../platform/search';
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
+    DynamicFormsDemoComponent,
     MaterialComponentsComponent,
+    DialogComponent,
+    NotificationsDemoComponent,
+    // External Dependencies
+    NgxChartsDemoComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
+    DocumentationToolsModule.forRoot(),
     componentsRoutes,
+    NgxChartsModule,
   ],
+  entryComponents: [ DialogComponent ],
 })
 export class ComponentsModule {}

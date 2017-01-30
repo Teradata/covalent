@@ -1,14 +1,19 @@
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 import { Subscription } from 'rxjs/Subscription';
 
-import { StepState, IStepChangeEvent, TdMediaService } from '../../../../platform/core';
+import { StepState, TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
-  styleUrls: [ 'steps.component.scss' ],
-  templateUrl: 'steps.component.html',
+  styleUrls: ['./steps.component.scss' ],
+  templateUrl: './steps.component.html',
+  animations: [slideInDownAnimation],
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   stepsAttrs: Object[] = [{
     description: `Method to be executed when [onStepChange] event is emitted.
@@ -70,7 +75,6 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   mode: number = 0;
   horizontal: boolean = true;
   isScreenGtSm: boolean = false;
-  stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
@@ -114,14 +118,6 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
 
   toggleCompleteStep3(): void {
     this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
-  }
-
-  stepChange(event: IStepChangeEvent): void {
-    if (event.prevStep === undefined) {
-      this.stepChangeMsg = `Started at step: ${event.newStep}`;
-    } else {
-      this.stepChangeMsg = `Changed from step: ${event.prevStep} to step: ${event.newStep}`;
-    }
   }
 
   toggleDisabled(): void {

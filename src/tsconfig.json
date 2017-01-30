@@ -1,10 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "./",
     "lib": ["es6", "dom"],
     "module": "es6",
     "moduleResolution": "node",
@@ -16,6 +16,16 @@
     ],
     "types": [
       "jasmine", "hammerjs"
-    ]
-  }
+    ],
+    "paths": {
+      "@covalent/*": ["./platform/*"]
+    },
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true
+  },
+  "exclude": [
+    "**/*.spec.*"
+  ]
 }

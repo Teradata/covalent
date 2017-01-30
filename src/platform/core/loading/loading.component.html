@@ -1,23 +1,22 @@
-<div [tdFade]="animation"
-     (fadeOut)="outAnimationCompleted()"
-     (fadeIn)="inAnimationCompleted()"
-     [style.min-height]="getHeight()"
+<div class="td-loading-wrapper" [style.min-height]="getHeight()" [class.td-overlay]="isOverlay() || isFullScreen()" [class.td-fullscreen]="isFullScreen()">
+  <div [@tdFadeInOut]="animation"
+     (@tdFadeInOut.done)="animationComplete($event)"
      class="td-loading"
-     [class.td-overlay]="overlay"
      layout="row"
      layout-align="center center"
-     layout-padding
      flex>
-    <md-progress-circle *ngIf="isCircular() && reset" 
+    <md-progress-spinner *ngIf="isCircular()" 
                         [mode]="mode"
                         [value]="value" 
-                        color="primary" 
+                        [color]="color" 
                         [style.height]="getCircleDiameter()"
                         [style.width]="getCircleDiameter()">
-    </md-progress-circle>
-    <md-progress-bar *ngIf="isLinear() && reset" 
+    </md-progress-spinner>
+    <md-progress-bar *ngIf="isLinear()" 
                      [mode]="mode"
                      [value]="value"
-                     color="primary">
+                     [color]="color">
     </md-progress-bar>
+  </div>
+  <template [cdkPortalHost]="content"></template>
 </div>

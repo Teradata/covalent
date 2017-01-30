@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { TdChartsComponent } from './charts.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 export interface IChartData {
@@ -55,18 +55,18 @@ export abstract class ChartComponent implements OnInit {
     if (this._data) {
       this.renderChart(this._data);
     } else if (this._dataSrc) {
-      enum ParseContent {
-        json = d3.json,
-        csv = d3.csv,
-        tsv = d3.tsv
-      }
+      let parseContent: any = {
+        json: d3.json,
+        csv: d3.csv,
+        tsv: d3.tsv,
+      };
       let contentType: string = this._dataSrc.substr(this._dataSrc.lastIndexOf('.') + 1);
-      ParseContent[contentType](this._dataSrc, (error: string, data: any) => {
+      parseContent[contentType](this._dataSrc, (error: string, data: any) => {
         if (error) { throw error; }
         this.renderChart(data);
       });
     } else {
-      throw '[data] or [dataSrc] must be defined in [TdChartLineComponent]';
+      throw new Error('[data] or [dataSrc] must be defined in [TdChartLineComponent]');
     }
   }
 

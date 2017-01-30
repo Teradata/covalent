@@ -11,11 +11,26 @@
     <p>
       which renders <md-icon>home</md-icon>
     </p>
-    <h3>SVG Icons (from URLS)</h3>
-    <p>SVG icons can be used either by directly specifying the icon's URL, or by associating an icon name with a URL and then referring to the name. To use a URL directly, set the svgSrc input:</p>
-   <td-highlight lang="html">
-     <![CDATA[ <md-icon svgSrc="/assets/sun.svg"></md-icon> ]]>
-   </td-highlight>
+    <h3>SVG Icons (from Safe URLS)</h3>
+    <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MdIconRegistry] so it can be referred later on:</p>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+     <![CDATA[
+       import { DomSanitizer } from '@angular/platform-browser';
+       import { MdIconRegistry } from '@angular/material';
+       ...
+       ...
+       constructor(private _iconRegistry: MdIconRegistry,
+                   private _domSanitizer: DomSanitizer) {
+         this._iconRegistry.addSvgIconInNamespace('assets', 'sun',
+           this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/sun.svg'));
+       }
+     ]]>
+    </td-highlight>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[ <md-icon svgIcon="assets:sun"></md-icon> ]]>
+    </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>

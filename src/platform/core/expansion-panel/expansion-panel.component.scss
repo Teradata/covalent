@@ -1,6 +1,3 @@
-@import '../styles/variables';
-@import '../../../../node_modules/@angular/material/core/style/elevation';
-
 :host /deep/ {
   md-nav-list {
     [md-list-item] {
@@ -22,29 +19,11 @@
 }
 :host {
   display: block;
-  @include md-elevation(1);
   
   .panel {
     transition: 1s all ease;
-    margin: 0;
   }
 
-  &:first-of-type {
-    & .td-expanded {
-      margin-bottom: $margin;
-    }
-  }
-  &:not(:first-of-type):not(:last-of-type) {
-    & .td-expanded {
-      margin-top: $margin;
-      margin-bottom: $margin;
-    }
-  }
-  &:last-of-type {
-    & .td-expanded {
-      margin-top: $margin;
-    }
-  }
   md-nav-list:first-of-type,
   md-list:first-of-type {
     padding-top: 0;
@@ -59,4 +38,8 @@ md-nav-list {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 5px;
+}
+.td-expansion-content,
+.td-expansion-summary {
+  overflow: hidden; // FF50 bugfix since overflow style in animation doesnt work
 }

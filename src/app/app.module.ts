@@ -9,17 +9,14 @@ import { LayoutsModule } from './components/layouts/';
 import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
-import { CovalentFileModule } from '../platform/file-upload';
+import { CovalentCoreModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentJsonFormatterModule } from '../platform/json-formatter';
-import { CovalentChipsModule } from '../platform/chips';
 import { CovalentChartsModule } from '../platform/charts';
-import { CovalentDataTableModule } from '../platform/data-table';
-import { CovalentPagingModule } from '../platform/paging';
-import { CovalentSearchModule } from '../platform/search';
+import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
+
+import { GitHubService } from './services';
 
 @NgModule({
   declarations: [
@@ -33,22 +30,18 @@ import { CovalentSearchModule } from '../platform/search';
     LayoutsModule,
     StyleGuideModule,
     CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
     CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
+    CovalentDynamicFormsModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
+    GitHubService,
   ], // additional providers needed for this module
-  entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+  entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
 })
 export class AppModule {}

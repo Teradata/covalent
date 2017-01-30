@@ -2,6 +2,8 @@ import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, Con
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
+import { TdCollapseAnimation } from '../common/common.module';
+
 @Directive({
   selector: '[td-expansion-panel-header]template',
 })
@@ -37,8 +39,11 @@ export class TdExpansionPanelSummaryComponent {}
 
 @Component({
   selector: 'td-expansion-panel',
-  styleUrls: [ 'expansion-panel.component.scss' ],
-  templateUrl: 'expansion-panel.component.html',
+  styleUrls: ['./expansion-panel.component.scss' ],
+  templateUrl: './expansion-panel.component.html',
+  animations: [
+    TdCollapseAnimation(),
+  ],
 })
 export class TdExpansionPanelComponent {
 

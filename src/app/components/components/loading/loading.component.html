@@ -3,63 +3,246 @@
   <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div layout="row" layout-align="start center" flex>
-      <md-button-toggle-group name="mode" [(ngModel)]="determinate" (click)="modeChange()">
-        <md-button-toggle md-tooltip="Indeterminate Loading" [value]="0"><md-icon>timer_off</md-icon> Indeterminate</md-button-toggle>
-        <md-button-toggle md-tooltip="Determinate Loading" [value]="1"><md-icon>timer</md-icon> Determinate</md-button-toggle>
-      </md-button-toggle-group>
-    </div>
-    <p>Loading Registered: {{replaceRegistered}} times</p>
-    <div *ngIf="!determinate">
-      <h3>Indeterminate Mode</h3>
-      <p>Circular Type</p>
-      <template tdLoading="test.indeterminate">
-        <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
+    <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
+    <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+          <div layout="column" flex>
+            <md-input-container flex>
+              <input md-input placeholder="Name"/>
+            </md-input-container>
+            <md-input-container flex>
+              <textarea md-input placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
         </div>
-      </template>
-      <p>Linear Type</p>
-      <template tdLoading="test2.indeterminate" loadingType="linear">
-        <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
         </div>
-      </template>
-    </div>
-    <div *ngIf="determinate">
-      <h3>Determinate Mode</h3>
-      <p>Circular Type</p>
-      <template tdLoading="test.determinate" loadingMode="determinate">
-        <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo.desc">
-          </md-input>
-        </div>
-      </template>
-      <p>Linear Type</p>
-      <template tdLoading="test2.determinate" loadingType="linear" loadingMode="determinate">
-        <div layout="column" flex>
-          <md-input placeholder="Name" maxLength="20" [(ngModel)]="demo2.name">
-          </md-input>
-          <md-input placeholder="Description" maxLength="100" [(ngModel)]="demo2.desc">
-          </md-input>
-        </div>
-      </template>
-    </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+              <div layout="column" flex>
+                <md-input-container flex>
+                  <input md-input placeholder="Name"/>
+                </md-input-container>
+                <md-input-container flex>
+                  <textarea md-input placeholder="Description" rows="4"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleOverlayStarSyntax()">Toggle Loader</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdLoadingService } from '@covalent/core';
+            ...
+            export class Demo implements AfterViewInit {
+              overlayStarSyntax: boolean = false;
+
+              constructor(private _loadingService: TdLoadingService) {}
+
+              ngAfterViewInit(): void {
+                this._loadingService.register('overlayStarSyntax');
+              }
+
+              toggleOverlayStarSyntax(): void {
+                if (this.overlayStarSyntax) {
+                  this._loadingService.register('overlayStarSyntax');
+                } else {
+                  this._loadingService.resolve('overlayStarSyntax');
+                }
+                this.overlayStarSyntax = !this.overlayStarSyntax;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="registerCircleLoadingMain()">3 Second Circle Loading Main</button>
-    <button md-button color="primary" (click)="registerLinearLoadingMain()">3 Second Linear Loading Main</button>
-    <button md-button color="primary" (click)="registerLoadingDirective()">Register Loading Directive</button>
-    <button md-button color="primary" (click)="resolveLoadingDirective()">Resolve Loading Directive</button>
-  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">[tdLoading] directive with template syntax</h3>
+    <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
+          <div layout="column" flex>
+            <md-input-container flex>
+              <input md-input placeholder="Name"/>
+            </md-input-container>
+            <md-select placeholder="Select">
+              <md-option>Demo 1</md-option>
+              <md-option>Demo 2</md-option>
+            </md-select>
+            <md-input-container flex>
+              <textarea md-input placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
+        </template>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()">Toggle Loader</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
+              <div layout="column" flex>
+                <md-input-container flex>
+                  <input md-input placeholder="Name"/>
+                </md-input-container>
+                <md-select placeholder="Select">
+                  <md-option>Demo 1</md-option>
+                  <md-option>Demo 2</md-option>
+                </md-select>
+                <md-input-container flex>
+                  <textarea md-input placeholder="Description" rows="4"></textarea>
+                </md-input-container>
+              </div>
+            </template>
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()">Toggle Loader</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdLoadingService } from '@covalent/core';
+            ...
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {}
+
+              toggleReplaceTemplateSyntax(): void {
+                this._loadingService.register('replaceTemplateSyntax');
+                let value: number = 0;
+                let interval: number = setInterval(() => {
+                  this._loadingService.setValue('replaceTemplateSyntax', value);
+                  value = value + 10;
+                  if (value > 100) {
+                    clearInterval(interval);
+                  }
+                }, 250);
+                setTimeout(() => {
+                  this._loadingService.resolve('replaceTemplateSyntax');
+                }, 3000);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Preloaded [TdLoading] fullscreen mask</h3>
+    <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()">Toggle Loader</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdLoadingService } from '@covalent/core';
+            ...
+            export class Demo implements OnInit {
+              constructor(private _loadingService: TdLoadingService) {}
+
+              ngOnInit(): void {
+                this.toggleDefaultFullscreenDemo();
+              }
+
+              toggleDefaultFullscreenDemo(): void {
+                this._loadingService.register();
+                setTimeout(() => {
+                  this._loadingService.resolve();
+                }, 1500);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+   <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
+    <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleConfigFullscreenDemo()">Toggle Loader</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdLoadingService } from '@covalent/core';
+            ...
+            export class Demo {
+              constructor(private _loadingService: TdLoadingService) {
+                this._loadingService.create({
+                  name: 'configFullscreenDemo',
+                  mode: LoadingMode.Indeterminate,
+                  type: LoadingType.Linear,
+                  color: 'accent',
+                });
+              }
+
+              toggleConfigFullscreenDemo(): void {
+                this._loadingService.register('configFullscreenDemo');
+                setTimeout(() => {
+                  this._loadingService.resolve('configFullscreenDemo');
+                }, 1500);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>TdLoadingDirective</md-card-title>
@@ -86,7 +269,7 @@
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <div *tdLoading="'stringName'">
+        <div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">
           ...
         </div>
       ]]>
@@ -94,7 +277,7 @@
     <p>HTML <![CDATA[<template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
-        <template tdLoading="stringName" loadingType="circular|linear" loadingMode="ciruclar|linear">
+        <template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
           ...
         </template>
       ]]>
@@ -125,17 +308,16 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentCoreModule] using the <code>forRoot()</code> method and set [TD_LOADING_ENTRY_COMPONENTS] as 'entryComponents' in your NgModule:</p>
+    <p>Import the [CovalentLoadingModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+        import { CovalentLoadingModule } from '@covalent/core';
 
         @NgModule({
           imports: [
-            CovalentCoreModule.forRoot(),
+            CovalentLoadingModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
-          entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
           ...
         })
         export class MyModule {}
@@ -151,12 +333,13 @@
     <h2><code>TdLoadingService</code></h2>
     <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
     <p>Simply add this service as a provider to be able to use it in a component.</p>
-    <p>TdLoadingService.createOverlayComponent() method recieves as parameter an object that implements the [ILoadingOptions] interface.</p>
+    <p>TdLoadingService.create() method recieves as parameter an object that implements the [ITdLoadingConfig] interface.</p>
     <td-highlight lang="typescript">
-      interface ILoadingOptions {{'{'}}
+      interface ITdLoadingConfig {{'{'}}
         name: string;
         type?: LoadingType;
         mode?: LoadingMode;
+        color?: 'primary' | 'accent' | 'warn';
       }
     </td-highlight>
     <h3>Methods:</h3>
@@ -174,17 +357,16 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { ViewContainerRef } from '@angular/core';
-        import { TdLoadingService, ILoadingOptions, LoadingType, LoadingMode } from '@covalent/core';
+        import { TdLoadingService, LoadingType, LoadingMode } from '@covalent/core';
         ...
         export class Demo {
-          constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
-            let options: ILoadingOptions = {
+          constructor(private _loadingService: TdLoadingService) {
+            this._loadingService.create({
               name: 'stringName',
               type: LoadingType.Circular,
               mode: LoadingMode.Indeterminate,
-            };
-            this._loadingService.createOverlayComponent(options, viewContainerRef);
+              color: 'accent',
+            });
           }
 
           registerLoading(): void {

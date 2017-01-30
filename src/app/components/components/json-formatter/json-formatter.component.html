@@ -58,10 +58,10 @@
     <p>Import the [CovalentJsonFormatterModule] using the <code>forRoot()</code> method in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
+        import { CovalentJsonFormatterModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentJsonFormatterModule.forRoot(),
+            CovalentJsonFormatterModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
             ...
           ],
           ...

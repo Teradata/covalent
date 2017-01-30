@@ -10,8 +10,10 @@ import { IconographyComponent } from './iconography/iconography.component';
 import { ColorsComponent } from './colors/colors.component';
 import { CardsComponent } from './cards/cards.component';
 import { DialogsToastsComponent } from './dialogs/dialogs.component';
+import { ManagementListComponent } from './management-list/management-list.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -26,8 +28,10 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     ColorsComponent,
     CardsComponent,
     DialogsToastsComponent,
+    ManagementListComponent,
     UtilityStylesComponent,
     ResourcesComponent,
+    NavigationDrawerComponent,
   ],
   imports: [
     CovalentCoreModule.forRoot(),
