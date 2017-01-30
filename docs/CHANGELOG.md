@@ -186,10 +186,10 @@ ngAfterViewInit(): void {
 }
 ```
 
-* **loading:**: Added `[tdLoadingStrategy]` input to change between overlay and replace strat. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f)), closes [#84](https://github.com/Teradata/covalent/issues/84)
+* **loading:** Added `[tdLoadingStrategy]` input to change between overlay and replace strat. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f)), closes [#84](https://github.com/Teradata/covalent/issues/84)
 * **loading:** Added `[tdLoadingColor]` input for `primary` , `accent` or `warn`. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f)), closes [#255] (https://github.com/Teradata/covalent/issues/255)
 * **loading:** Use `tdFadeInOut` animation instead of `tdFade` directive. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
-* **loading:** Easier fullscreen loading generation with `create()` method + default fullscreen mask. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
+* **loading:** Easier fullscreen `tdLoading` component instantiation with `create()` method + default fullscreen mask. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
 * **loading:** Better efficiency with `OnPush` strategy. ([d87aa65f18af6081ebcff7fe21cb44ac9a0be00f](https://github.com/Teradata/covalent/commit/d87aa65f18af6081ebcff7fe21cb44ac9a0be00f))
 * **media:**  Optimize resize event handling on `TdMediaService`. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5))
 * **media:** Added `broadcast` method in `TdMediaService` to explicitly trigger the media query checkup on subscribers. ([026520cc346721d72c815b0d09fbd469fd3f2ad5](https://github.com/Teradata/covalent/commit/026520cc346721d72c815b0d09fbd469fd3f2ad5))
