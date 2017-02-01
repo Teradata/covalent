@@ -27,8 +27,9 @@
     "build": "bash scripts/build-release",
     "publish": "bash scripts/publish-release",
     "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod && bash scripts/ghpages-deploy",
-    "start-release": "bash scripts/start-release",
-    "finish-release": "bash scripts/finish-release"
+    "start-release": "bash scripts/start-release", 
+    "finish-release": "bash scripts/finish-release",
+    "finish-publish": "bash scripts/finish-publish"
   },
   "engines": {
     "node": ">4.4 < 7",
