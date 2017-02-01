@@ -81,6 +81,14 @@ export class TdLayoutNavListComponent {
     return !!this._layout;
   }
 
+  /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
+  }
+
   constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
 
   /**
