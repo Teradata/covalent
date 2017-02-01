@@ -59,7 +59,7 @@
 }
 
 :host {
-   /deep/ [mdInput] {
+   /deep/ md-input-container {
     input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
       display: none;
     }
