@@ -1,17 +1,8 @@
 #!/bin/bash
-scope=@covalent
+set -e
 
-#login into private registry
-npm login --scope=$scope
+echo "Building develop branch"
+npm run build
 
-for package in ./deploy/platform/*
-do
-  if [ -d ${package} ]
-  then
-    npm publish ${package} --access=public
-  fi
-done
-
-#logout when finished
-npm logout 
-echo "Published successfully [scope: $scope]. Use 'npm install [package-name]' in the project you want to use it."
+echo "Publishing develop branch"
+npm run publish

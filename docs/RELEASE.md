@@ -4,7 +4,7 @@
 
 * [Start Release](#start-release)
 * [Finish Release](#finish-release) 
-* [Finish Publish](#finish-publish) 
+* [Publish Release](#publish-release) 
 
 #### Start Release
 
@@ -23,10 +23,10 @@ Execute `git flow release finish v[version]` and `npm run finish-release` to fin
   2. Pushes the new `[version]` tag into the repository.
   3. Merges release into `develop` and pushes changes to repository.
   4. Merges release into `master` and pushes changes to repository.
+  5. Returns to `develop` branch.
 
-#### Finish Publish
+#### Publish Release
 
-Execute `npm run finish-publish` from master branch to start the automatic publishing process. The steps executed are:
+Execute `npm run publish-release` from develop branch to start the automatic publishing process. The steps executed are:
   1. Executes `npm run build` process from master.
   2. Executes `npm run publish` process from master.
-  3. Returns to `develop` branch.
