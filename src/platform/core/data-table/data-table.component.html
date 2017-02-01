@@ -15,8 +15,6 @@
         [numeric]="column.numeric"
         [active]="_sortable && column === _sortBy"
         [sortable]="_sortable"
-        (mouseleave)="column.tooltip && tooltipRefresh()"
-        (mouseenter)="column.tooltip && tooltipRefresh()"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
