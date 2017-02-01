@@ -1,8 +1,0 @@
-#!/bin/bash
-set -e
-
-echo "Building develop branch"
-npm run build
-
-echo "Publishing develop branch"
-npm run publish
