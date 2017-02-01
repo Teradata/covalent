@@ -23,14 +23,14 @@
     <p>Try entering white spaces before or after a word this input:</p>
     <div layout="row">
       <md-input-container flex>
-        <input md-input tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+        <input mdInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
       </md-input-container>
     </div>
     <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
           <md-input-container>
-            <input md-input tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+            <input mdInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
           </md-input-container>
         ]]>
     </td-highlight>
@@ -119,7 +119,7 @@
     <p>Example enter lower than 5 or higher than 10:</p>
     <div layout="row">
       <md-input-container flex="20">
-        <input md-input placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
+        <input mdInput placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
       </md-input-container>
     </div>
     <p>Errors:</p>
@@ -128,7 +128,7 @@
     <td-highlight lang="html">
         <![CDATA[
           <md-input-container>
-            <input md-input placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
+            <input mdInput placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
           </md-input-container>
         ]]>
     </td-highlight>

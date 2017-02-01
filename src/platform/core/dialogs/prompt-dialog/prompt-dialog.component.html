@@ -6,7 +6,7 @@
     {{message}}
     <form #form="ngForm" layout="row" novalidate flex>
       <md-input-container flex>
-        <input md-input
+        <input mdInput
                (keydown.enter)="$event.preventDefault(); form.valid && accept()"
                [(ngModel)]="value"
                name="value"
