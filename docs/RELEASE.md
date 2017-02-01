@@ -27,6 +27,6 @@ Execute `git flow release finish v[version]` and `npm run finish-release` to fin
 
 #### Publish Release
 
-Execute `npm run publish-release` from develop branch to start the automatic publishing process. The steps executed are:
+Execute `npm run npm-publish` from develop branch to start the automatic publishing process. The steps executed are:
   1. Executes `npm run build` process.
-  2. Executes `npm run npm-publish` process.
+  2. Executes `bash scripts/npm-publish` process.
