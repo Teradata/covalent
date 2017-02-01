@@ -33,3 +33,17 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * [Changelog](docs/CHANGELOG.md)
 * [Quickstart Repo](https://github.com/teradata/covalent-quickstart)
 * [Plunker Template](http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd)
+
+---
+
+## Browser Support
+
+Covalent is built on a CSS Flexbox layout and all layouts and components heavily rely up that support, so the current browsers are supported in order or recommendation:
+
+#### Current version - 1 for the following:
+
+|   | Chrome | Firefox | Safari | Edge | Mobile Chrome* | Mobile Safari* |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| __Supported__ | ✓ | ✓ | ✓ | ~ | ~ | ~ |
+
+*Indicates limited testing & lower priority
