@@ -1,8 +1,9 @@
 import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 
-import { LoadingType, LoadingMode, LoadingStrategy } from '../loading.component';
+import { LoadingType, LoadingMode, LoadingStrategy, TdLoadingComponent } from '../loading.component';
 import { TdLoadingService } from '../services/loading.service';
+import { ILoadingRef } from '../services/loading.factory';
 
 @Directive({
   selector: '[tdLoading]',
@@ -13,6 +14,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
   private _mode: LoadingMode;
   private _strategy: LoadingStrategy;
   private _name: string;
+  private _loadingRef: ILoadingRef;
 
   /**
    * tdLoading?: string
@@ -110,7 +112,6 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * Registers component in the DOM, so it will be available when calling resolve/register.
    */
   ngOnInit(): void {
-    this._viewContainerRef.createEmbeddedView(this._templateRef);
     this._registerComponent();
   }
 
@@ -119,6 +120,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this._loadingService.removeComponent(this._name);
+    this._loadingRef = undefined;
   }
 
   /**
@@ -129,12 +131,17 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     if (!this._name) {
       throw new Error('Name is needed to register loading directive');
     }
-    this._loadingService.createComponent({
-      name: this._name,
-      type: this._type,
-      mode: this._mode,
-      color: this.color,
-      strategy: this._strategy,
-    }, this._viewContainerRef, this._templateRef);
+    // Check if `TdLoadingComponent` has been created before trying to add one again.
+    // There is a weird edge case when using `[routerLinkActive]` that calls the `ngOnInit` twice in a row
+    if (!this._loadingRef) {
+      this._viewContainerRef.createEmbeddedView(this._templateRef);
+      this._loadingRef = this._loadingService.createComponent({
+        name: this._name,
+        type: this._type,
+        mode: this._mode,
+        color: this.color,
+        strategy: this._strategy,
+      }, this._viewContainerRef, this._templateRef);
+    }
   }
 }

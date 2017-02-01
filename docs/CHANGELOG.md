@@ -1,3 +1,10 @@
+<a name="1.0.0-beta.1-1"></a>
+# [1.0.0-beta.1-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-31)
+
+## Bug Fixes
+* **loading**: Fixed edge case that tried to create the same `tdLoading` twice a component that uses `[routerLinkActive]` when navigating into it.
+
+
 <a name="1.0.0-beta.1"></a>
 # [1.0.0-beta.1 Purple Rain](https://github.com/Teradata/covalent/tree/v1.0.0-beta.1) (2017-01-30)
 
