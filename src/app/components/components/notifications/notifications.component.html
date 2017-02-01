@@ -24,7 +24,7 @@
               <md-icon>notifications</md-icon>
             </td-notification-count>
           </button>
-          <md-menu #notificationsMenu="mdMenu">
+          <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
             <td-menu>
               <div td-menu-header class="md-subhead">Notifications</div>
               <md-nav-list dense>
@@ -77,7 +77,7 @@
                   <md-icon>notifications</md-icon>
                 </td-notification-count>
               </button>
-              <md-menu #notificationsMenu="mdMenu">
+              <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
                 <td-menu>
                   <div td-menu-header class="md-subhead">Notifications</div>
                   <md-nav-list dense>
