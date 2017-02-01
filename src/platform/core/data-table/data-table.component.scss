@@ -28,6 +28,14 @@ table.td-data-table {
   th.md-checkbox-column {
     width: $checkbox-size;
     font-size: 0 !important;
+    md-pseudo-checkbox {
+      width: $checkbox-size;
+      height: $checkbox-size;
+      /deep/ &.md-pseudo-checkbox-checked::after {
+        width: 11px !important;
+        height: 4px !important;
+      }
+    }
     md-checkbox {
       /deep/ .md-checkbox-inner-container {
         width: $checkbox-size;
