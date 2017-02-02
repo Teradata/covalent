@@ -38,7 +38,9 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
-    reporters: ['progress', 'karma-remap-istanbul'],
+    reporters: config.angularCli && config.angularCli.codeCoverage
+              ? ['progress', 'karma-remap-istanbul']
+              : ['progress'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
