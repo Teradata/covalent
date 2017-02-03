@@ -13,10 +13,6 @@ repoName="covalent-nightly"
 repoUrl="https://github.com/Teradata/covalent-nightly.git"
 repoDir="deploy/$repoName"
 
-echo "Remove nightly folder"
-rm -rf $repoDir
-mkdir -p $repoDir
-
 echo "Cloning $repoUrl into $repoDir"
 git clone $repoUrl $repoDir
 
