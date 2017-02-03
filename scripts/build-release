@@ -18,6 +18,12 @@ echo "Preparing files for AoT build"
 npm run aot
 echo "Compiled TS and generated *.metadata.json files..."
 
+# Clean source .ts files
+cd deploy/
+find . -name "*.ts" ! -name "*.d.ts" -type f -delete
+cd ..
+echo "Remove source .ts files so they arent published"
+
 # Inline the css and html into the component files.
 gulp inline-resource-files
 echo "Resources inlined..."
