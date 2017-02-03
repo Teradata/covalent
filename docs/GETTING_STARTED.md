@@ -5,7 +5,7 @@ See the  [material2 getting started](https://github.com/angular/material2/blob/m
 ## Install the CLI
  
  ```bash
- npm install -g angular-cli
+ npm install -g @angular/cli@latest
  ```
  
 ## Create a new project
