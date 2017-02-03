@@ -31,7 +31,6 @@ echo "https://${COVALENT_NIGHTLY_TOKEN}:@github.com" > .git/credentials
 
 git add -A
 git commit -m "$commitMessage"
-git tag "$commitSha"
-git push origin master --tags
+git push origin master
 
 echo "Finished publishing nightly build"
