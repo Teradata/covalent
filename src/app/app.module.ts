@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DocsAppComponent } from './app.component';
@@ -24,17 +27,21 @@ import { GitHubService } from './services';
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    CommonModule,
+    FormsModule,
     BrowserModule,
-    ComponentsModule,
-    DocsModule,
-    LayoutsModule,
-    StyleGuideModule,
+    HttpModule,
+    JsonpModule,
     CovalentCoreModule.forRoot(),
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
+    ComponentsModule,
+    DocsModule,
+    LayoutsModule,
+    StyleGuideModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [
