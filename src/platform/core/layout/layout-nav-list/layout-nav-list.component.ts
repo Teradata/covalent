@@ -89,10 +89,8 @@ export class TdLayoutNavListComponent {
     return !!this._layout;
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    private _layout: TdLayoutComponent) { }
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
+              private _layout: TdLayoutComponent) { }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).

@@ -54,10 +54,8 @@ export class TdLayoutNavComponent {
     return !!this._layout;
   }
 
-  constructor(
-    @Optional()
-    @Inject(forwardRef(() => TdLayoutComponent))
-    private _layout: TdLayoutComponent) { }
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
+              private _layout: TdLayoutComponent) { }
 
   /**
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
