@@ -5,6 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { MdIconModule } from '@angular/material';
 import { CovalentNotificationsModule,
          TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
 import { By } from '@angular/platform-browser';
@@ -21,6 +22,7 @@ describe('Component: NotificationCount', () => {
       ],
       imports: [
         CovalentNotificationsModule.forRoot(),
+        MdIconModule.forRoot(),
       ],
     });
     TestBed.compileComponents();
