@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule, MdCardModule, MdListModule } from '@angular/material';
 
 import { TdLayoutComponent } from './layout.component';
 import { TdLayoutNavComponent } from './layout-nav/layout-nav.component';
@@ -32,15 +32,17 @@ export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+    MdSidenavModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    MdButtonModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdListModule.forRoot(),
   ],
   declarations: [
     TD_LAYOUTS,
   ],
   exports: [
-    CommonModule,
-    MaterialModule,
-
     TD_LAYOUTS,
   ],
 })
