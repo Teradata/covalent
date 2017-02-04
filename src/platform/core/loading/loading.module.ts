@@ -4,8 +4,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdProgressBarModule, MdProgressSpinnerModule, OverlayModule, PortalModule } from '@angular/material';
 
-import { CovalentCommonModule } from '../common/common.module';
-
 import { TdLoadingService } from './services/loading.service';
 import { TdLoadingFactory } from './services/loading.factory';
 import { TdLoadingDirective } from './directives/loading.directive';
