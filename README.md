@@ -14,8 +14,8 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 5.5.0 - 6.9.1 and NPM 3+ installed.
-* Install Angular CLI `npm i -g angular-cli@latest`
+* Ensure you have Node 6.9.1 or up and NPM 3+ installed.
+* Install Angular CLI `npm i -g @angular/cli@latest`
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm install -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
@@ -33,3 +33,20 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * [Changelog](docs/CHANGELOG.md)
 * [Quickstart Repo](https://github.com/teradata/covalent-quickstart)
 * [Plunker Template](http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd)
+
+---
+
+## Browser Support
+
+Covalent is built on a CSS Flexbox layout and all layouts and components heavily rely up that support, so the current browsers are supported in order or recommendation:
+
+#### Current version - 1 for the following:
+
+|   | Chrome | Firefox | Safari | Edge* | Mobile Chrome* | Mobile Safari* | IE11
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| __Supported__ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | x |
+
+
+*Indicates limited testing & lower priority
+
+[More on flexbox brower support](http://caniuse.com/#feat=flexbox)

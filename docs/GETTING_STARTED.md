@@ -5,7 +5,7 @@ See the  [material2 getting started](https://github.com/angular/material2/blob/m
 ## Install the CLI
  
  ```bash
- npm install -g angular-cli
+ npm install -g @angular/cli@latest
  ```
  
 ## Create a new project
@@ -22,6 +22,12 @@ The new command creates a project with a build system for your Angular app.
 npm install --save @covalent/core
 ## (optional) Additional Covalent Modules installs
 npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms 
+```
+
+Playing with the latest changes from develop is also possible (for now, only the `core` module has a nightly build)
+
+```bash
+npm install --save https://github.com/Teradata/covalent-nightly.git
 ```
 
 ## Import the Covalent Core NgModule
