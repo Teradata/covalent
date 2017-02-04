@@ -2,16 +2,12 @@ import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
 
 import { TdLayoutComponent } from '../layout.component';
 
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'td-layout-nav',
   styleUrls: ['./layout-nav.component.scss' ],
   templateUrl: './layout-nav.component.html',
 })
 export class TdLayoutNavComponent {
-
-  router: Router;
 
   /**
    * toolbarTitle?: string
@@ -44,6 +40,14 @@ export class TdLayoutNavComponent {
   @Input('color') color: string = 'primary';
 
   /**
+   * logoLink?: string
+   *
+   * option to set the logo route
+   * defaults to '/'
+   */
+  @Input('logoRoute') logoLink: string = '/';
+
+  /**
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {
@@ -51,22 +55,14 @@ export class TdLayoutNavComponent {
   }
 
   constructor(
-    router: Router,
     @Optional()
     @Inject(forwardRef(() => TdLayoutComponent))
-    private _layout: TdLayoutComponent) { this.router = router; }
+    private _layout: TdLayoutComponent) { }
 
   /**
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
     this._layout.open();
-  }
-
-  /**
-   * Go to the homepage.
-   */
-  goHome(): void {
-    this.router.navigate(['/']);
   }
 }

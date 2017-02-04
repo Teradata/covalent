@@ -4,16 +4,12 @@ import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
 
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'td-layout-nav-list',
   styleUrls: ['./layout-nav-list.component.scss' ],
   templateUrl: './layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent {
-
-  router: Router;
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
@@ -79,6 +75,14 @@ export class TdLayoutNavListComponent {
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
+   * logoLink?: string
+   *
+   * option to set the logo route
+   * defaults to '/'
+   */
+  @Input('logoRoute') logoLink: string = '/';
+
+  /**
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {
@@ -86,10 +90,9 @@ export class TdLayoutNavListComponent {
   }
 
   constructor(
-    router: Router,
     @Optional()
     @Inject(forwardRef(() => TdLayoutComponent))
-    private _layout: TdLayoutComponent) { this.router = router; }
+    private _layout: TdLayoutComponent) { }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
@@ -119,10 +122,4 @@ export class TdLayoutNavListComponent {
     this._layout.open();
   }
 
-  /**
-   * Go to the homepage.
-   */
-  goHome(): void {
-    this.router.navigate(['/']);
-  }
 }
