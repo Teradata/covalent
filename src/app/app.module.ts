@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DocsAppComponent } from './app.component';
@@ -17,6 +17,20 @@ import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
+
+export function getLanguage(): string {
+  if ((<any>navigator).languages) {
+    // chrome does not currently set navigator.language correctly https://code.google.com/p/chromium/issues/detail?id=101138
+    // but it does set the first element of navigator.languages correctly
+    return (<any>navigator).languages[0];
+  } else if ((<any>navigator).userLanguage) {
+    // IE only
+    return (<any>navigator).userLanguage;
+  } else {
+    // as of this writing the latest version of firefox + safari set this correctly
+    return navigator.language;
+  }
+}
 
 @NgModule({
   declarations: [
@@ -39,7 +53,9 @@ import { GitHubService } from './services';
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    GitHubService,
+    GitHubService, {
+    provide: LOCALE_ID, useFactory: getLanguage,
+  },
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
