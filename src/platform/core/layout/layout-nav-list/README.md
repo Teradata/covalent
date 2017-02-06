@@ -11,6 +11,7 @@
 | icon | string | icon name to be displayed before the title
 | logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
 | color | string | optional toolbar color. Defaults to primary.
+| navigationRoute | string | anchor wrap for icon, logo, and toolbarTitle with option to change route. Defaults to /.
 | mode | 'over', 'side' or 'push' | The mode or styling of the sidenav. Defaults to 'side'.
 | opened | boolean | Whether or not the sidenav is opened. Use this binding to open/close the sidenav. Defaults to 'true'.
 | sidenavWidth | string | Sets the 'width' of the sidenav in either 'px' or '%' ('%' is not well supported yet as stated in the layout docs). Defaults to '257px'.
