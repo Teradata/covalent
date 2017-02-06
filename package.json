@@ -76,11 +76,11 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.4.4",
+    "@angular/cli": "1.0.0-beta.30",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.34",
     "@types/selenium-webdriver": "^2.52.0",
-    "angular-cli": "1.0.0-beta.26",
     "codelyzer": "2.0.0-beta.4",
     "coveralls": "^2.11.15",
     "glob": "^6.0.4",
