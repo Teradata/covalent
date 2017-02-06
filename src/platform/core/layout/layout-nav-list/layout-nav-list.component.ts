@@ -75,12 +75,12 @@ export class TdLayoutNavListComponent {
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
-   * navigationLink?: string
+   * navigationRoute?: string
    *
    * option to set the combined logo, icon, toolbar title route
    * defaults to '/'
    */
-  @Input('navigationRoute') navigationLink: string = '/';
+  @Input('navigationRoute') navigationRoute: string = '/';
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
