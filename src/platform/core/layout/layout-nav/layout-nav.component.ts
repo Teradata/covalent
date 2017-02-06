@@ -40,12 +40,12 @@ export class TdLayoutNavComponent {
   @Input('color') color: string = 'primary';
 
   /**
-   * logoLink?: string
+   * navigationLink?: string
    *
-   * option to set the logo route
+   * option to set the combined logo, icon, toolbar title route
    * defaults to '/'
    */
-  @Input('logoRoute') logoLink: string = '/';
+  @Input('navigationRoute') navigationLink: string = '/';
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
