@@ -14,5 +14,15 @@
     "TITLE": "Ejemplo con ngx-translate y Angular l10n",
     "SUBTITLE": "aprovecha las pipas [date] y [number] nativas de Angular y su soporte con Locale",
     "BALANCE" : "estado de cuenta: {{value}}"
+  },
+  "DEMO_THREE": {
+    "TITLE": "Ejemplo con ngx-translate y dialogos",
+    "SUBTITLE": "traduce strings en los servicios",
+    "OPEN_ALERT": "Abrir alerta",
+    "ALERT": {
+      "TITLE" : "Alerta",
+      "MESSAGE" : "Este es un mensaje traducido.",
+      "CLOSE": "Cerrar"
+    }
   }
 }

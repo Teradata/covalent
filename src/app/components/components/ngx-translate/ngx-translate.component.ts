@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { TranslateService } from 'ng2-translate';
 
+import { TdDialogService } from '@covalent/core';
+
 import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
 
 @Component({
@@ -14,13 +16,24 @@ export class NgxTranslateDemoComponent {
   selectedLanguage: string;
   dateToFormat: Date = new Date();
 
-  constructor(private translate: TranslateService) {
-    this.selectedLanguage = translate.currentLang;
+  constructor(private _translateService: TranslateService,
+              private _dialogService: TdDialogService) {
+    this.selectedLanguage = this._translateService.currentLang;
   }
 
   languageChange(value: string): void {
     sessionStorage.setItem(TRANSLATE_STORAGE_KEY, value);
     location.reload();
+  }
+
+  openAlert(): void {
+    this._translateService.get('DEMO_THREE.ALERT').subscribe((messages: any) => {
+      this._dialogService.openAlert({
+        title: messages.TITLE,
+        message: messages.MESSAGE,
+        closeButton: messages.CLOSE,
+      });
+    });
   }
 
 }

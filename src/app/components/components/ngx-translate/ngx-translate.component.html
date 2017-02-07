@@ -63,15 +63,15 @@
             ...
             export class MyAppComponent {
 
-              constructor(translateService: TranslateService) {
+              constructor(private _translateService: TranslateService) {
                 // Set fallback language
-                translateService.setDefaultLang('en');
+                this._translateService.setDefaultLang('en');
 
                 // Supported languages
-                translateService.addLangs(['en', 'es']);
+                this._translateService.addLangs(['en', 'es']);
 
                 // Get selected language and load it
-                translateService.use(translateService.getBrowserLang());
+                this._translateService.use(translateService.getBrowserLang());
               }
             }
           ]]>
@@ -182,6 +182,84 @@
             {
               "DEMO_TWO": {
                 "BALANCE" : "estado de cuenta: {{value}}"
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_THREE.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_THREE.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <button md-button color="accent" (click)="openAlert()">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+           <button md-button color="accent" (click)="openAlert()">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TranslateService } from 'ng2-translate';
+            import { TdDialogService } from '@covalent/core';
+            ...
+            export class MyAppComponent {
+
+              constructor(private _translateService: TranslateService,
+                          private _dialogService: TdDialogService) {
+                // Set fallback language
+                this._translateService.setDefaultLang('en');
+
+                // Supported languages
+                this._translateService.addLangs(['en', 'es']);
+
+                // Get selected language and load it
+                this._translateService.use(translateService.getBrowserLang());
+              }
+
+              openAlert(): void {
+                this._translateService.get('DEMO_THREE.ALERT').subscribe((messages: any) => {
+                  this._dialogService.openAlert({
+                    title: messages.TITLE,
+                    message: messages.MESSAGE,
+                    closeButton: messages.CLOSE,
+                  });
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            "DEMO_THREE": {
+              "OPEN_ALERT": "Open alert",
+              "ALERT": {
+                "TITLE" : "Alert",
+                "MESSAGE" : "This is a translated message.",
+                "CLOSE": "Close"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            "DEMO_THREE": {
+              "OPEN_ALERT": "Abrir alerta",
+              "ALERT": {
+                "TITLE" : "Alerta",
+                "MESSAGE" : "Este es un mensaje traducido.",
+                "CLOSE": "Cerrar"
               }
             }
           ]]>
