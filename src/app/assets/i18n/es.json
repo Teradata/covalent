@@ -5,7 +5,6 @@
     "TITLE": "Ejemplos con ngx-translate",
     "SUBTITLE": "i18n con ngx-translate + [ngPlural] de Angular",
     "SELECT_TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto",
-    "COUNT_UNSELECTED": "El valor es indefinido",
     "COUNT_NONE": "No hay valores seleccionados",
     "COUNT_SINGLE": "Hay un valor seleccionado",
     "COUNT_PLURAL": "Hay {{value}} valores seleccionados"

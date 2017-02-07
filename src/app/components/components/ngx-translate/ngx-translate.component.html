@@ -28,8 +28,7 @@
           </md-select>
           <span flex="5"></span>
           <div [ngPlural]="valueCountForPlural">
-            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT_UNSELECTED' | translate }}</template>
-            <template ngPluralCase="=0">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
+            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
             <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT_SINGLE' | translate }}</template>
             <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} }}</template>
           </div>
@@ -48,8 +47,7 @@
               </md-select>
               <span flex="5"></span>
               <div [ngPlural]="valueCountForPlural">
-                <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT_UNSELECTED' | translate }}</template>
-                <template ngPluralCase="=0">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
+                <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
                 <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT_SINGLE' | translate }}</template>
                 <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} }}</template>
               </div>
@@ -82,7 +80,6 @@
             {
               "DEMO_ONE": {
                 "SELECT_TOOLTIP": "When this value changes, [ngPlural] kicks in to select the correct message",
-                "COUNT_UNSELECTED": "Select a value",
                 "COUNT_NONE": "There are no values",
                 "COUNT_SINGLE": "There is one value",
                 "COUNT_PLURAL": "There are {{value}} values"
@@ -96,7 +93,6 @@
             {
               "DEMO_ONE": {
                 "SELECT_TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto",
-                "COUNT_UNSELECTED": "Seleccione un valor",
                 "COUNT_NONE": "No hay valores seleccionados",
                 "COUNT_SINGLE": "Hay un valor seleccionado",
                 "COUNT_PLURAL": "Hay {{value}} valores seleccionados"
