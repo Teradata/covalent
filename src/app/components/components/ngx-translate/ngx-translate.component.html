@@ -13,6 +13,74 @@
   </md-card-actions>
 </md-card>
 <md-card>
+  <md-card-title>{{ 'DEMO_BASIC.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_BASIC.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <div layout="column" layout-padding>
+          <h3>{{ 'DEMO_BASIC.PIPE_MESSAGE' | translate }}</h3>
+          <h3 translate>DEMO_BASIC.DIRECTIVE_MESSAGE</h3>
+        </div>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="column" layout-padding>
+              <h3>{ { 'DEMO_BASIC.PIPE_MESSAGE' | translate } }</h3>
+              <h3 translate>DEMO_BASIC.DIRECTIVE_MESSAGE</h3>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TranslateService } from 'ng2-translate';
+            ...
+            export class MyAppComponent {
+
+              constructor(private _translateService: TranslateService) {
+                // Set fallback language
+                this._translateService.setDefaultLang('en');
+
+                // Supported languages
+                this._translateService.addLangs(['en', 'es']);
+
+                // Get selected language and load it
+                this._translateService.use(translateService.getBrowserLang());
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_BASIC": {
+                "PIPE_MESSAGE": "This is a translated message using the [translate] pipe.",
+                "DIRECTIVE_MESSAGE": "This is a translated message using the [translate] directive"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_BASIC": {
+                "PIPE_MESSAGE": "Este es un mensaje traducido usando la pipa [translate].",
+                "DIRECTIVE_MESSAGE": "Este es un mensaje traducido usando el directivo [translate]."
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
   <md-card-subtitle>{{ 'DEMO_ONE.SUBTITLE' | translate }}</md-card-subtitle>
   <md-divider></md-divider>

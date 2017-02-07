@@ -1,8 +1,14 @@
 {
   "DEMO_TAB": "Demo",
   "CODE_TAB": "Code",
+  "DEMO_BASIC": {
+    "TITLE": "Basic example with ngx-translate",
+    "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
+    "PIPE_MESSAGE": "This is a translated message using the [translate] pipe.",
+    "DIRECTIVE_MESSAGE": "This is a translated message using the [translate] directive"
+  },
   "DEMO_ONE": {
-    "TITLE": "Examples with ngx-translate",
+    "TITLE": "More examples with ngx-translate",
     "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
     "SELECT_TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message",
     "COUNT_NONE": "There are no selected values",
