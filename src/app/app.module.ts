@@ -20,12 +20,23 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
 
+/**
+ * Dynamically get language for LOCALE_ID and at the same time set it for `ngx-translate`
+ */
 export function getLanguage(translateService: TranslateService): string {
   translateService.setDefaultLang('en');
-  translateService.use(translateService.getBrowserLang());
-  return translateService.getBrowserLang();
+  // Supported languages
+  translateService.addLangs(['en', 'es']);
+  if (translateService.getLangs().indexOf(translateService.getBrowserLang()) > -1) {
+    translateService.use(translateService.getBrowserLang());
+    return translateService.getBrowserLang();
+  }
+  return translateService.getDefaultLang();
 }
 
+/**
+ * Crate custom TranslateLoader since we have a diff dir structure for our json files
+ */
 export function createTranslateLoader(http: Http): TranslateLoader {
     return new TranslateStaticLoader(http, 'app/assets/i18n', '.json');
 }
@@ -57,6 +68,7 @@ export function createTranslateLoader(http: Http): TranslateLoader {
   providers: [
     appRoutingProviders,
     GitHubService, {
+    // Configure LOCALE_ID depending on the language set in browser
     provide: LOCALE_ID, useFactory: getLanguage, deps: [TranslateService],
   },
   ], // additional providers needed for this module
