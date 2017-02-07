@@ -64,4 +64,5 @@ export class TdLayoutManageListComponent {
   public close(): Promise<MdSidenavToggleResult> {
     return this._sideNav.close();
   }
+
 }

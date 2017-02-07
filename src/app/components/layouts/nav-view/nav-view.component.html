@@ -44,6 +44,11 @@
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
+                    <h3 md-line><code>navigationRoute?: string</code></h3>
+                    <p md-line>Route on logo/icon/title (defaults to '/')</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
                     <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
                     <p md-line>Loads html for each route (view)</p>
                   </md-list-item>
@@ -64,7 +69,7 @@
             <h3 class="md-title">HTML</h3>
             <td-highlight lang="html">
               <![CDATA[
-                <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
+                <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName" navigationRoute="/">
                   <router-outlet></router-outlet>
                   <td-layout-footer>
                     Optional footer
