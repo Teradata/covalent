@@ -27,10 +27,20 @@ export function getLanguage(translateService: TranslateService): string {
   translateService.setDefaultLang('en');
   // Supported languages
   translateService.addLangs(['en', 'es']);
+  // Check if the lenguage has been stored to load it
+  let storedLanguage: string = sessionStorage.getItem('ngx-translate-lang');
+  if (storedLanguage) {
+    if (translateService.getLangs().indexOf(storedLanguage) > -1) {
+      translateService.use(storedLanguage);
+      return storedLanguage;
+    }
+  }
+  // If the language wasnt stored, then use browser default
   if (translateService.getLangs().indexOf(translateService.getBrowserLang()) > -1) {
     translateService.use(translateService.getBrowserLang());
     return translateService.getBrowserLang();
   }
+  // If everything fails, then use default lang
   return translateService.getDefaultLang();
 }
 
@@ -68,9 +78,9 @@ export function createTranslateLoader(http: Http): TranslateLoader {
   providers: [
     appRoutingProviders,
     GitHubService, {
-    // Configure LOCALE_ID depending on the language set in browser
-    provide: LOCALE_ID, useFactory: getLanguage, deps: [TranslateService],
-  },
+      // Configure LOCALE_ID depending on the language set in browser
+      provide: LOCALE_ID, useFactory: getLanguage, deps: [TranslateService],
+    },
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
