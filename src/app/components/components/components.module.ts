@@ -29,6 +29,7 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 
 // External Dependencies
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TranslateModule } from 'ng2-translate';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -68,14 +69,15 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     NgxTranslateDemoComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
-    DocumentationToolsModule.forRoot(),
-    componentsRoutes,
+    CovalentCoreModule,
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentChartsModule,
+    CovalentDynamicFormsModule,
+    DocumentationToolsModule,
     NgxChartsModule,
+    TranslateModule,
+    componentsRoutes,
   ],
   entryComponents: [ DialogComponent ],
 })
