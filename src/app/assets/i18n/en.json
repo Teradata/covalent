@@ -5,8 +5,13 @@
     "TITLE": "Examples with ngx-translate",
     "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
     "SELECT_TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message",
+    "COUNT_UNSELECTED": "Select a value",
     "COUNT_NONE": "There are no selected values",
     "COUNT_SINGLE": "There is one selected value",
     "COUNT_PLURAL": "There are {{value}} selected values"
+  },
+  "DEMO_TWO": {
+    "TITLE": "Examples with LOCALE_ID",
+    "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular"
   }
 }

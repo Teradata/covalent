@@ -1,10 +1,11 @@
 {
+  "DEMO_TAB": "Demo",
+  "CODE_TAB": "Codigo",
   "DEMO_ONE": {
     "TITLE": "Ejemplos con ngx-translate",
     "SUBTITLE": "i18n con ngx-translate + [ngPlural] de Angular",
-    "DEMO_TAB": "Demo",
-    "CODE_TAB": "Codigo",
     "SELECT_TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto",
+    "COUNT_UNSELECTED": "Selecccione un valor",
     "COUNT_NONE": "No hay valores seleccionados",
     "COUNT_SINGLE": "Hay un valor seleccionado",
     "COUNT_PLURAL": "Hay {{value}} valores seleccionados"
