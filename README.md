@@ -49,4 +49,4 @@ Covalent is built on a CSS Flexbox layout and all layouts and components heavily
 
 *Indicates limited testing & lower priority
 
-[More on flexbox brower support](http://caniuse.com/#feat=flexbox)
+[More on flexbox browser support](http://caniuse.com/#feat=flexbox)
