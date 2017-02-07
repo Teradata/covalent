@@ -32,9 +32,9 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
-  "dependencies": {
-    "@angular/common": "^2.4.4",
-    "@angular/core": "^2.4.4",
-    "d3": "^4.2.1"
+  "peerDependencies": {
+    "@angular/common": "^2.4.5",
+    "@angular/core": "^2.4.5",
+    "d3": "^4.4.0"
   }
 }
