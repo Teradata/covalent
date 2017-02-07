@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslateService } from 'ng2-translate';
 
@@ -7,6 +7,7 @@ import { TdDialogService } from '@covalent/core';
 import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'ngx-translate-demo',
   styleUrls: ['./ngx-translate.component.scss'],
   templateUrl: './ngx-translate.component.html',
