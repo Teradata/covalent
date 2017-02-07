@@ -75,13 +75,22 @@ export class TdLayoutNavListComponent {
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
+   * navigationRoute?: string
+   *
+   * option to set the combined logo, icon, toolbar title route
+   * defaults to '/'
+   */
+  @Input('navigationRoute') navigationRoute: string = '/';
+
+  /**
    * Checks if there is a [TdLayoutComponent] as parent.
    */
   get isMainSidenavAvailable(): boolean {
     return !!this._layout;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent) {}
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
+              private _layout: TdLayoutComponent) { }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
@@ -110,4 +119,5 @@ export class TdLayoutNavListComponent {
   openMainSidenav(): void {
     this._layout.open();
   }
+
 }
