@@ -1,5 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { TranslateModule, TranslateService, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,18 +20,14 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
 
-export function getLanguage(): string {
-  if ((<any>navigator).languages) {
-    // chrome does not currently set navigator.language correctly https://code.google.com/p/chromium/issues/detail?id=101138
-    // but it does set the first element of navigator.languages correctly
-    return (<any>navigator).languages[0];
-  } else if ((<any>navigator).userLanguage) {
-    // IE only
-    return (<any>navigator).userLanguage;
-  } else {
-    // as of this writing the latest version of firefox + safari set this correctly
-    return navigator.language;
-  }
+export function getLanguage(translateService: TranslateService): string {
+  translateService.setDefaultLang('en');
+  translateService.use(translateService.getBrowserLang());
+  return translateService.getBrowserLang();
+}
+
+export function createTranslateLoader(http: Http): TranslateLoader {
+    return new TranslateStaticLoader(http, 'app/assets/i18n', '.json');
 }
 
 @NgModule({
@@ -49,12 +47,17 @@ export function getLanguage(): string {
     CovalentMarkdownModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: createTranslateLoader,
+      deps: [Http],
+    }),
     appRoutes,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
     GitHubService, {
-    provide: LOCALE_ID, useFactory: getLanguage,
+    provide: LOCALE_ID, useFactory: getLanguage, deps: [TranslateService],
   },
   ], // additional providers needed for this module
   entryComponents: [ ],
