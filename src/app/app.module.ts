@@ -1,7 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule, TranslateService, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
+import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,37 +19,7 @@ import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
-
-/**
- * Dynamically get language for LOCALE_ID and at the same time set it for `ngx-translate`
- */
-export function getLanguage(translateService: TranslateService): string {
-  translateService.setDefaultLang('en');
-  // Supported languages
-  translateService.addLangs(['en', 'es']);
-  // Check if the lenguage has been stored to load it
-  let storedLanguage: string = sessionStorage.getItem('ngx-translate-lang');
-  if (storedLanguage) {
-    if (translateService.getLangs().indexOf(storedLanguage) > -1) {
-      translateService.use(storedLanguage);
-      return storedLanguage;
-    }
-  }
-  // If the language wasnt stored, then use browser default
-  if (translateService.getLangs().indexOf(translateService.getBrowserLang()) > -1) {
-    translateService.use(translateService.getBrowserLang());
-    return translateService.getBrowserLang();
-  }
-  // If everything fails, then use default lang
-  return translateService.getDefaultLang();
-}
-
-/**
- * Crate custom TranslateLoader since we have a diff dir structure for our json files
- */
-export function createTranslateLoader(http: Http): TranslateLoader {
-    return new TranslateStaticLoader(http, 'app/assets/i18n', '.json');
-}
+import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
   declarations: [
@@ -79,7 +49,7 @@ export function createTranslateLoader(http: Http): TranslateLoader {
     appRoutingProviders,
     GitHubService, {
       // Configure LOCALE_ID depending on the language set in browser
-      provide: LOCALE_ID, useFactory: getLanguage, deps: [TranslateService],
+      provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },
   ], // additional providers needed for this module
   entryComponents: [ ],
