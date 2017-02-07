@@ -21,17 +21,6 @@
   .list {
     text-align: start;
   }
-  // anchor link needs to take on theme relative colors
-  .td-navigation-link {
-    color: currentColor;
-    text-decoration: none;
-  }
-  // toolbar title text needs spacing tweaks due to wrapping anchor
-  .td-toolbar-title {
-    position: relative;
-    top: -2px;
-    left: -6px;
-  }
 }
 :host /deep/ {
   md-sidenav-container.td-layout-nav-list {
