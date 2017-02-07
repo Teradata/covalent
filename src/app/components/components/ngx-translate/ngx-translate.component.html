@@ -88,7 +88,9 @@
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
         <div layout="row" layout-align="start center" layout-padding>
-          <md-select [(ngModel)]="valueCountForPlural" [mdTooltip]="'DEMO_ONE.SELECT_TOOLTIP' | translate" flex="40">
+          <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+                      [mdTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
+                      [(ngModel)]="valueCountForPlural" flex="40">
             <md-option [value]="0">0</md-option>
             <md-option [value]="1">1</md-option>
             <md-option [value]="4">4</md-option>
@@ -96,9 +98,9 @@
           </md-select>
           <span flex="5"></span>
           <div [ngPlural]="valueCountForPlural">
-            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
-            <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT_SINGLE' | translate }}</template>
-            <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} }}</template>
+            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</template>
+            <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</template>
+            <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</template>
           </div>
         </div>
       </md-tab>
@@ -107,7 +109,9 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-align="start center" layout-padding>
-              <md-select [(ngModel)]="valueCountForPlural" [mdTooltip]="'DEMO_ONE.SELECT_TOOLTIP' | translate" flex="40">
+              <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+                          [mdTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
+                          [(ngModel)]="valueCountForPlural" flex="40">
                 <md-option [value]="0">0</md-option>
                 <md-option [value]="1">1</md-option>
                 <md-option [value]="4">4</md-option>
@@ -115,9 +119,9 @@
               </md-select>
               <span flex="5"></span>
               <div [ngPlural]="valueCountForPlural">
-                <template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT_NONE' | translate } }</template>
-                <template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT_SINGLE' | translate } }</template>
-                <template ngPluralCase="other">{ { 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} } }</template>
+                <template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</template>
+                <template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</template>
+                <template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</template>
               </div>
             </div>
           ]]>
@@ -147,10 +151,15 @@
           <![CDATA[
             {
               "DEMO_ONE": {
-                "SELECT_TOOLTIP": "When this value changes, [ngPlural] kicks in to select the correct message",
-                "COUNT_NONE": "There are no values",
-                "COUNT_SINGLE": "There is one value",
-                "COUNT_PLURAL": "There are { {value} } values"
+                "SELECT": {
+                  "PLACEHOLDER": "Select a value",
+                  "TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message"
+                },
+                "COUNT": {
+                  "NONE": "There are no selected values",
+                  "SINGLE": "There is one selected value",
+                  "PLURAL": "There are {{value}} selected values"
+                }
               }
             }
           ]]>
@@ -160,10 +169,15 @@
           <![CDATA[
             {
               "DEMO_ONE": {
-                "SELECT_TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto",
-                "COUNT_NONE": "No hay valores seleccionados",
-                "COUNT_SINGLE": "Hay un valor seleccionado",
-                "COUNT_PLURAL": "Hay { {value} } valores seleccionados"
+                "SELECT": {
+                  "PLACEHOLDER": "Seleccione un valor",
+                  "TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto"
+                },
+                "COUNT": {
+                  "NONE": "No hay valores seleccionados",
+                  "SINGLE": "Hay un valor seleccionado",
+                  "PLURAL": "Hay {{value}} valores seleccionados"
+                }
               }
             }
           ]]>

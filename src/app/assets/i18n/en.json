@@ -10,10 +10,15 @@
   "DEMO_ONE": {
     "TITLE": "More examples with ngx-translate",
     "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
-    "SELECT_TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message",
-    "COUNT_NONE": "There are no selected values",
-    "COUNT_SINGLE": "There is one selected value",
-    "COUNT_PLURAL": "There are {{value}} selected values"
+    "SELECT": {
+      "PLACEHOLDER": "Select a value",
+      "TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message"
+    },
+    "COUNT": {
+      "NONE": "There are no selected values",
+      "SINGLE": "There is one selected value",
+      "PLURAL": "There are {{value}} selected values"
+    }
   },
   "DEMO_TWO": {
     "TITLE": "Example with ngx-translate and Angular l10n",
