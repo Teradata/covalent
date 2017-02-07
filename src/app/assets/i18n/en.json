@@ -3,7 +3,7 @@
   "CODE_TAB": "Code",
   "DEMO_BASIC": {
     "TITLE": "Basic example with ngx-translate",
-    "SUBTITLE": "i18n with ngx-translate + [ngPlural] from Angular",
+    "SUBTITLE": "i18n with ngx-translate",
     "PIPE_MESSAGE": "This is a translated message using the [translate] pipe.",
     "DIRECTIVE_MESSAGE": "This is a translated message using the [translate] directive"
   },
