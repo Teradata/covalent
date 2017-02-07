@@ -3,9 +3,93 @@
   <md-card-subtitle>i18n library for Angular</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
+    TODO Information about ngx-translate
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
     <a md-button color="accent" href="https://github.com/ngx-translate/core" target="_blank">View NGX-Translate Docs</a>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
   </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_ONE.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <div layout="row" layout-align="start center" layout-padding>
+          <md-select [(ngModel)]="valueCountForPlural" [mdTooltip]="'DEMO_ONE.SELECT_TOOLTIP' | translate" flex="40">
+            <md-option [value]="0">0</md-option>
+            <md-option [value]="1">1</md-option>
+            <md-option [value]="4">4</md-option>
+            <md-option [value]="10">10</md-option>
+          </md-select>
+          <span flex="5"></span>
+          <div *ngIf="valueCountForPlural == 0 || valueCountForPlural > 0" [ngPlural]="valueCountForPlural">
+            <template ngPluralCase="=0">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
+            <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT_SINGLE' | translate }}</template>
+            <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} }}</template>
+          </div>
+        </div>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row" layout-align="start center" layout-padding>
+              <md-select [(ngModel)]="valueCountForPlural" [mdTooltip]="'DEMO_ONE.SELECT_TOOLTIP' | translate" flex="40">
+                <md-option [value]="0">0</md-option>
+                <md-option [value]="1">1</md-option>
+                <md-option [value]="4">4</md-option>
+                <md-option [value]="10">10</md-option>
+              </md-select>
+              <span flex="5"></span>
+              <div *ngIf="valueCountForPlural == 0 || valueCountForPlural > 0" [ngPlural]="valueCountForPlural">
+                <template ngPluralCase="=0">{{ 'DEMO_ONE.COUNT_NONE' | translate }}</template>
+                <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT_SINGLE' | translate }}</template>
+                <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT_PLURAL' | translate:{value: valueCountForPlural} }}</template>
+              </div>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_ONE": {
+                "SELECT_TOOLTIP": "When this value changes, [ngPlural] kicks in to select the correct message",
+                "COUNT_NONE": "There are no values",
+                "COUNT_SINGLE": "There is one value",
+                "COUNT_PLURAL": "There are {{value}} values"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_ONE": {
+                "SELECT_TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto",
+                "COUNT_NONE": "No hay valores seleccionados",
+                "COUNT_SINGLE": "Hay un valor seleccionado",
+                "COUNT_PLURAL": "Hay {{value}} valores seleccionados"
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_TWO.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_TWO.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div>{{numberToFormat | number:'1.2-2'}}</div>
+    <div>{{dateToFormat | date:'medium'}}</div>
+  </md-card-content>
 </md-card>
