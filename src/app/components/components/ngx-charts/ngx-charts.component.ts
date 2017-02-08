@@ -53,7 +53,7 @@ export class NgxChartsDemoComponent {
     return val.toLocaleString() + '%';
   }
   axisDigits(val: any): any {
-    return new TdDigitsPipe().transform(val);
+    return this._digits.transform(val);
   }
   axisRounding(val: any): any {
     if (val % 1 === 0) {

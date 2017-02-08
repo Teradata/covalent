@@ -69,7 +69,7 @@ export let multi: any = [
     ],
   },
   {
-    'name': 'Queries',
+    'name': 'Streams',
     'series': [
       {
         'value': 4022,
@@ -94,7 +94,7 @@ export let multi: any = [
     ],
   },
   {
-    'name': 'Databases',
+    'name': 'Queries',
     'series': [
       {
         'value': 6194,
