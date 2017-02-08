@@ -2,7 +2,7 @@
   <md-select [(ngModel)]="value"
              [placeholder]="label"
              [required]="required"
-             flex>
+             flex="100">
     <md-option *ngFor="let selection of selections" [value]="selection">{{selection}}</md-option>
   </md-select>
 </div>

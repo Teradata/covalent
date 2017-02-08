@@ -1,9 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdCheckbox } from '@angular/material';
+import { MdCheckbox, MdCardModule, MdCheckboxModule } from '@angular/material';
 
-import { CovalentCoreModule, TdDataTableComponent } from '../../platform/core';
+import { CovalentDataTableModule, TdDataTableComponent } from '../../platform/core';
 import { CovalentHighlightModule, TdHighlightComponent } from '../../platform/highlight';
 import { CovalentMarkdownModule, TdMarkdownComponent } from '../../platform/markdown';
 
@@ -13,7 +13,9 @@ import { TdReadmeLoaderComponent } from './readme-loader/readme-loader.component
 @NgModule({
   imports: [
     CommonModule,
-    CovalentCoreModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    CovalentDataTableModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
   ],

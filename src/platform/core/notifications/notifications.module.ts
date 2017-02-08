@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../common/common.module';
 
@@ -17,17 +16,11 @@ export { TdNotificationCountComponent, TdNotificationCountPositionX, TdNotificat
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
-    CovalentCommonModule.forRoot(),
   ],
   declarations: [
     TD_NOTIFICATIONS,
   ],
   exports: [
-    CommonModule,
-    MaterialModule,
-    CovalentCommonModule,
-
     TD_NOTIFICATIONS,
   ],
 })

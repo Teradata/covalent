@@ -20,8 +20,6 @@ export { TdMediaService, TdMediaToggleDirective };
     TD_MEDIA,
   ],
   exports: [
-    CommonModule,
-
     TD_MEDIA,
   ],
 })
