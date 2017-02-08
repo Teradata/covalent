@@ -1,7 +1,10 @@
 import { NgModule, Type, ModuleWithProviders } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CovalentCoreModule } from '../core';
+import { MdInputModule, MdSelectModule, MdCheckboxModule, MdSliderModule, MdSlideToggleModule } from '@angular/material';
+
+import { CovalentCommonModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
@@ -39,8 +42,14 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
-    CovalentCoreModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdSelectModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    MdSliderModule.forRoot(),
+    MdSlideToggleModule.forRoot(),
+    CovalentCommonModule.forRoot(),
   ],
   exports: [
     TD_DYNAMIC_FORMS,
