@@ -18,16 +18,18 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ChartsDemoComponent } from './charts/charts.component';
-import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
+import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 // External Dependencies
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TranslateModule } from 'ng2-translate';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -64,16 +66,18 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     NotificationsDemoComponent,
     // External Dependencies
     NgxChartsDemoComponent,
+    NgxTranslateDemoComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
-    DocumentationToolsModule.forRoot(),
-    componentsRoutes,
+    CovalentCoreModule,
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentChartsModule,
+    CovalentDynamicFormsModule,
+    DocumentationToolsModule,
     NgxChartsModule,
+    TranslateModule,
+    componentsRoutes,
   ],
   entryComponents: [ DialogComponent ],
 })

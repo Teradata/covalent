@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
 
+import { TranslateService } from 'ng2-translate';
+
+import { getSelectedLanguage } from './utilities/translate';
+
 @Component({
   selector: 'docs-covalent',
   templateUrl: './app.component.html',
@@ -33,7 +37,17 @@ export class DocsAppComponent {
   ];
 
   constructor(private _iconRegistry: MdIconRegistry,
-              private _domSanitizer: DomSanitizer) {
+              private _domSanitizer: DomSanitizer,
+              translateService: TranslateService) {
+    // Set fallback language
+    translateService.setDefaultLang('en');
+    // Supported languages
+    translateService.addLangs(['en', 'es']);
+
+    // Get selected language and load it
+    translateService.use(getSelectedLanguage(translateService));
+
+    // Register svgs
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/teradata.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'github',

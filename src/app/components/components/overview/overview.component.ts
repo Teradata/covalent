@@ -122,6 +122,11 @@ export class ComponentsOverviewComponent {
       icon: 'insert_chart',
       route: 'ngx-charts',
       title: 'NGX-Charts',
+    }, {
+      color: 'blue-600',
+      icon: 'language',
+      route: 'ngx-translate',
+      title: 'NGX-Translate',
     },
   ];
 }
