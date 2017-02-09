@@ -15,7 +15,7 @@ export class TdDataTableCellComponent {
    */
   @Input('numeric') numeric: boolean = false;
 
-  @HostBinding('class.md-numeric')
+  @HostBinding('class.mat-numeric')
   get bindNumeric(): boolean {
     return this.numeric;
   }
