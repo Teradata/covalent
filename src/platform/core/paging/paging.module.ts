@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
+import { MdIconModule, MdSelectModule, MdButtonModule } from '@angular/material';
 
 import { TdPagingBarComponent } from './paging-bar.component';
 
@@ -13,7 +13,9 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   imports: [
     FormsModule,
     CommonModule,
-    MaterialModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdSelectModule.forRoot(),
+    MdButtonModule.forRoot(),
   ],
   declarations: [
     TdPagingBarComponent,
