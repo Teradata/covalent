@@ -13,11 +13,11 @@
 }
 md-select { 
   & /deep/ {
-    .md-select-trigger {
+    .mat-select-trigger {
       min-width: 44px;
       border-bottom: 0 !important;
     }
-    .md-select-value {
+    .mat-select-value {
       top: auto;
       position: static;
     }
