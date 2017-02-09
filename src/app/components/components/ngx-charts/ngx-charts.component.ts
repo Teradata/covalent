@@ -10,9 +10,6 @@ import { TdDigitsPipe } from '@covalent/core';
 })
 export class NgxChartsDemoComponent {
 
-  // Use digits pipe
-  private _digits: TdDigitsPipe = new TdDigitsPipe();
-
   // Chart
   single: any[];
   multi: any[];
@@ -49,17 +46,8 @@ export class NgxChartsDemoComponent {
     });
   }
 
-  axisPercent(val: any): any {
-    return val.toLocaleString() + '%';
-  }
+  // ngx transform using covalent digits pipe
   axisDigits(val: any): any {
-    return this._digits.transform(val);
-  }
-  axisRounding(val: any): any {
-    if (val % 1 === 0) {
-      return val.toLocaleString();
-    } else {
-      return '';
-    }
+    return new TdDigitsPipe().transform(val);
   }
 }
