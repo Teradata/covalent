@@ -1,7 +1,7 @@
 @import 'default-theme';
 
 md-list-item,
-.md-list-item {
+.mat-list-item-content {
     md-icon {
         color: md-color($md-foreground, icon);
         &[md-list-avatar] {
