@@ -49,7 +49,7 @@ describe('Component: Steps', () => {
               .innerHTML.indexOf('Sublabel') > -1).toBeTruthy();
 
         // check if header is not active
-        expect(fixture.debugElement.query(By.css('.td-circle.md-active'))).toBeNull();
+        expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeNull();
 
         // check if content is hidden
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
@@ -80,7 +80,7 @@ describe('Component: Steps', () => {
         expect(fixture.debugElement.query(By.css('.td-triangle'))).toBeNull();
 
         // check if header is not active
-        expect(fixture.debugElement.query(By.css('.td-circle.md-active'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeTruthy();
 
         // check if content is hidden
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
@@ -114,7 +114,7 @@ describe('Component: Steps', () => {
               .innerHTML.indexOf('Sublabel') > -1).toBeTruthy();
 
         // check if header is not active
-        expect(fixture.debugElement.query(By.css('.td-circle.md-active'))).toBeNull();
+        expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeNull();
 
         // check if content is hidden
         expect((fixture.debugElement.query(By.css('.td-step-content-wrapper')))).toBeNull();
@@ -146,7 +146,7 @@ describe('Component: Steps', () => {
         expect(fixture.debugElement.query(By.css('.td-triangle'))).toBeNull();
 
         // check if header is not active
-        expect(fixture.debugElement.query(By.css('.td-circle.md-active'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeTruthy();
 
         // check if content is hidden
         expect(fixture.debugElement.query(By.css('.td-step-content-wrapper'))).toBeTruthy();
