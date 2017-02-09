@@ -17,7 +17,7 @@
     .drop-zone {
       transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
                   md-elevation-transition-property-value();
-      @include md-elevation(8);
+      @include mat-elevation(8);
     }
   }
 }
