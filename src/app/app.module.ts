@@ -1,5 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { Http } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate';
 
@@ -27,11 +29,11 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    CommonModule,
+    FormsModule,
     BrowserModule,
-    ComponentsModule,
-    DocsModule,
-    LayoutsModule,
-    StyleGuideModule,
+    HttpModule,
+    JsonpModule,
     CovalentCoreModule.forRoot(),
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule.forRoot(),
@@ -43,6 +45,10 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
       useFactory: createTranslateLoader,
       deps: [Http],
     }),
+    ComponentsModule,
+    DocsModule,
+    LayoutsModule,
+    StyleGuideModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [
