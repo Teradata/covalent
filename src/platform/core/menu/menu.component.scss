@@ -13,11 +13,11 @@ $td-menu-spacing: 8px !default;
   md-list[dense],
   md-nav-list,
   md-nav-list[dense], {
-    a[md-list-item].md-2-line .md-list-item,
-    md-list-item.md-2-line .md-list-item {
+    a[md-list-item].mat-2-line .mat-list-item-content,
+    md-list-item.mat-2-line .mat-list-item-content {
       height: auto;
       padding: $td-menu-spacing;
-      .md-list-text {
+      .mat-list-text {
         padding-right: 0px;
       }
       [md-line] + [md-line] {
