@@ -5,7 +5,7 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  .md-sidenav-container {
+  .mat-sidenav-container {
     background-color: md-color($background, status-bar);
   }
 
