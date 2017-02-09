@@ -25,19 +25,19 @@
   }
   // chips
   td-chips {
-    .md-input-underline {
+    .mat-input-underline {
       border-top: 1px solid md-color($foreground, hint-text);
-      &.md-disabled {
+      &.mat-disabled {
         background-image: $md-input-underline-disabled-background-image;
       }
-      .md-input-ripple {
+      .mat-input-ripple {
         background-color: md-color($primary);
         transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
                   opacity $swift-ease-out-duration $swift-ease-out-timing-function;
-        &.md-accent {
+        &.mat-accent {
           background-color: md-color($accent);
         }
-        &.md-warn {
+        &.mat-warn {
           background-color: md-color($warn);
         }
       }
