@@ -1307,7 +1307,7 @@
   <md-card-content>
     <button md-raised-button
         md-ripple
-        [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+        [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
       Click me
     </button>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1315,7 +1315,7 @@
       <![CDATA[
         <button md-raised-button
             md-ripple
-            [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+            [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
           Click me
         </button>
         ]]>
@@ -1461,6 +1461,59 @@
             {value: 'pizza-1', viewValue: 'Pizza'},
             {value: 'tacos-2', viewValue: 'Tacos'}
           ];
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Autocomplete</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row">
+      <md-input-container flex="50">
+        <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+          (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+      </md-input-container>
+    </div>
+    
+    <div class="push-top">
+      <button md-button (click)="modelDir.reset()">RESET</button>
+      <button md-button (click)="currentState='California'">SET VALUE</button>
+      <button md-button (click)="tdDisabled=!tdDisabled">
+        TOGGLE DISABLED
+      </button>
+    </div>
+
+    <md-autocomplete #tdAuto="mdAutocomplete">
+      <md-option *ngFor="let state of tdStates" [value]="state.name">
+        <span>{{ state.name }}</span>
+        <span class="demo-secondary-text"> ({{state.code}}) </span>
+      </md-option>
+    </md-autocomplete>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div layout="row">
+          <md-input-container flex="50">
+            <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+              (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+          </md-input-container>
+        </div>
+
+        <div class="push-top">
+          <button md-button (click)="modelDir.reset()">RESET</button>
+          <button md-button (click)="currentState='California'">SET VALUE</button>
+          <button md-button (click)="tdDisabled=!tdDisabled">
+            TOGGLE DISABLED
+          </button>
+        </div>
+
+        <md-autocomplete #tdAuto="mdAutocomplete">
+          <md-option *ngFor="let state of tdStates" [value]="state.name">
+            <span>{ { state.name } }</span>
+            <span class="demo-secondary-text"> ({ {state.code} }) </span>
+          </md-option>
+        </md-autocomplete>
         ]]>
       </td-highlight>
   </md-card-content>
