@@ -58,6 +58,7 @@
     "@angular/compiler": "^2.4.5",
     "@angular/core": "^2.4.5",
     "@angular/forms": "^2.4.5",
+    "@angular/flex-layout": "2.0.0-beta.5",
     "@angular/http": "^2.4.5",
     "@angular/material": "2.0.0-beta.1",
     "@angular/platform-browser": "^2.4.5",
