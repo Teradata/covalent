@@ -1,7 +1,7 @@
 @import 'variables';
 
 body {
-    md-card {
+    .mat-card {
         padding: 0;
         margin: 8px;
         md-card-header {
@@ -28,23 +28,10 @@ body {
         md-card-content {
             padding: $padding;
         }
-        &, & .md-card {
-            & md-card-actions:last-child {
+        &, & .mat-card {
+            & .mat-card-actions:last-child {
                 padding: $padding / 2;
                 margin: 0;
-            }
-        }
-        form {
-            &.md-card-search-box {
-                md-icon {
-                    width: 24px; 
-                    color: #999; 
-                    padding: 13px 0 0 12px;
-                }
-                input {
-                    border: none; 
-                    outline: 0;
-                }
             }
         }
     }
