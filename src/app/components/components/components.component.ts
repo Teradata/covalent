@@ -128,6 +128,11 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'insert_chart',
     route: 'ngx-charts',
     title: 'NGX-Charts',
+  }, {
+    description: 'i18n library for ng2',
+    icon: 'language',
+    route: 'ngx-translate',
+    title: 'NGX-Translate',
   }];
 
   constructor(public media: TdMediaService) {}
