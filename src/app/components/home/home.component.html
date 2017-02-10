@@ -69,14 +69,16 @@
       </template>
     </div>
     <md-divider></md-divider>
-    <md-card-actions layout="row">
-      <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button color="primary">Gitter Chat</a>
-      <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button>Bug or Feature Request</a>
-      <span flex></span>
-      <a md-raised-button mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
-        <md-icon svgIcon="assets:github" class="pad-right-xs"></md-icon>
-        <span *ngIf="starCount"><md-icon class="text-md tc-grey-600">star</md-icon> {{starCount}}</span>
-      </a>
+    <md-card-actions>
+      <div layout="row">
+        <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button color="primary">Gitter Chat</a>
+        <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button>Bug or Feature Request</a>
+        <span flex></span>
+        <a md-raised-button mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+          <md-icon svgIcon="assets:github" class="pad-right-xs"></md-icon>
+          <span *ngIf="starCount"><md-icon class="text-md tc-grey-600">star</md-icon> {{starCount}}</span>
+        </a>
+      </div>
     </md-card-actions>
     <div td-after-card>
       <h3 class="md-title">FAQs</h3>
