@@ -7,10 +7,24 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" href="https://github.com/ngx-translate/core" target="_blank">View NGX-Translate Docs</a>
     <button md-button color="primary" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
   </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Resources</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://github.com/ngx-translate/core" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/core</code> documentation</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="https://github.com/ngx-translate/http-loader" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/http-loader</code> documentation</span>
+    </a>
+  </md-nav-list>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_BASIC.TITLE' | translate }}</md-card-title>
