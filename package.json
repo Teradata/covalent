@@ -18,7 +18,7 @@
     "test": "ng test --code-coverage --single-run",
     "coverage-win": "start chrome ./coverage/index.html",
     "coverage-mac": "open -a \"Google Chrome\" coverage/index.html",
-    "coveralls": "cat ./coverage/coverage.lcov | node ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",
