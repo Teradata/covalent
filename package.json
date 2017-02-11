@@ -27,7 +27,7 @@
     "build": "bash scripts/build-release",
     "npm-publish": "npm run build && bash scripts/npm-publish",
     "nightly-publish": "npm run build && bash scripts/nightly-publish",
-    "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod && bash scripts/ghpages-deploy",
+    "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod --sourcemap=false && bash scripts/ghpages-deploy",
     "start-release": "bash scripts/start-release",
     "finish-release": "bash scripts/finish-release"
   },
