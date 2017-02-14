@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
 
-import { TdFileInputLabelDirective } from '../file-input/file-input.component';
+import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -70,6 +70,13 @@ export class TdFileUploadComponent {
   }
 
   /**
+   * select?: function
+   * Event emitted when a file is selecte.
+   * Emits a [File | FileList] object.
+   */
+  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+
+  /**
    * upload?: function
    * Event emitted when upload button is clicked.
    * Emits a [File | FileList] object.
@@ -83,6 +90,14 @@ export class TdFileUploadComponent {
     if (this.files) {
       this.onUpload.emit(this.files);
     }
+  }
+
+  /**
+   * Method executed when a file is selected.
+   */
+  handleSelect(files: File | FileList): void {
+    this.files = files;
+    this.onSelect.emit(files);
   }
 
   /**
