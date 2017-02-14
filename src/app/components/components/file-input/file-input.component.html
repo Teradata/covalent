@@ -4,15 +4,21 @@
   <md-divider></md-divider>
   <md-card-content>
     <h3 class="md-title">TdFileInput basic example</h3>
-    <h4 class="md-subhead">single selection/drop</h4>
+    <h4 class="md-subhead">single or multiple selection/drop</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-        <div class="md-padding">
-          <p>Select Event: {{fileSelectMsg}}</p>
-          <td-file-input (select)="selectEvent($event)" [disabled]="disabled">
-            <md-icon>attach_file</md-icon><span>Choose a file...</span>
+        <div class="md-padding" layout="row">
+          <td-file-input #fileInput multiple [disabled]="disabled">
+            <md-icon>attach_file</md-icon>
+            Select a file...
           </td-file-input>
+          <md-input-container class="push-left" flex>
+            <input md-input readonly [value]="fileInput?.files?.length ? (fileInput?.files?.length + ' files') : fileInput?.files?.name"/>
+          </md-input-container>
+          <button md-icon-button *ngIf="fileInput?.files" (click)="fileInput.clear()">
+            <md-icon>cancel</md-icon>
+          </button>
         </div>
         <div layout="row">
           <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
@@ -23,68 +29,31 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            
+            <div class="md-padding" layout="row">
+              <td-file-input #fileInput multiple [disabled]="disabled">
+                <md-icon>attach_file</md-icon>
+                Select a file...
+              </td-file-input>
+              <md-input-container class="push-left" flex>
+                <input md-input readonly [value]="fileInput?.files?.length ? (fileInput?.files?.length + ' files') : fileInput?.files?.name"/>
+              </md-input-container>
+              <button md-icon-button *ngIf="fileInput?.files" (click)="fileInput.clear()">
+                <md-icon>cancel</md-icon>
+              </button>
+            </div>
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+            </div>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
             export class Demo {
-              fileSelectMsg: string = 'No file selected yet.';
               disabled: boolean = false;
-
-              selectEvent(file: File): void {
-                this.fileSelectMsg = file.name;
-              };
 
               toggleDisabled(): void {
                 this.disabled = !this.disabled;
-              }
-            }
-          ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">TdFileInput multiple example</h3>
-    <h4 class="md-subhead">multiple selection/drop for only .sql files and custom color palette</h4>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <div class="md-padding">
-          <p>Select Event: {{fileSelectMultipleMsg}}</p>
-          <td-file-input (select)="selectMultipleEvent($event)" accept=".sql" color="accent" multiple>
-            <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
-          </td-file-input>
-        </div>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-           
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            export class Demo {
-              fileSelectMultipleMsg: string = 'No file(s) selected yet.';
-
-              selectMultipleEvent(files: FileList | File): void {
-                if (files instanceof FileList) {
-                  let names: string[] = [];
-                  for (let i: number = 0; i < files.length; i++) {
-                    names.push(files[i].name);
-                  }
-                  this.fileSelectMultipleMsg = names.join(',');
-                } else {
-                  this.fileSelectMultipleMsg = files.name;
-                }
               }
             }
           ]]>
