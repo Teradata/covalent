@@ -40,7 +40,7 @@ describe('Component: FileInput', () => {
       component.multiple = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.files = [{}];
+        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.handleSelect([{}]);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.clear();
@@ -61,7 +61,7 @@ describe('Component: FileInput', () => {
       component.disabled = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.files = [{}];
+        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.handleSelect([{}]);
         component.disabled = true;
         fixture.detectChanges();
         fixture.whenStable().then(() => {

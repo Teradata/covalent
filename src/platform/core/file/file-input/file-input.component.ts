@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
-         ElementRef, Renderer, TemplateRef, ViewContainerRef } from '@angular/core';
+         ElementRef, Renderer, TemplateRef, ViewContainerRef, ChangeDetectorRef } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
 @Directive({
@@ -72,7 +72,7 @@ export class TdFileInputComponent {
    */
   @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
-  constructor(private _renderer: Renderer) {
+  constructor(private _renderer: Renderer, private _changeDetectorRef: ChangeDetectorRef) {
 
   }
 
@@ -82,6 +82,7 @@ export class TdFileInputComponent {
   handleSelect(files: File | FileList): void {
     this.files = files;
     this.onSelect.emit(files);
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -90,6 +91,7 @@ export class TdFileInputComponent {
   clear(): void {
     this._renderer.setElementProperty(this.fileInput.nativeElement, 'value', '');
     this.files = undefined;
+    this._changeDetectorRef.markForCheck();
   }
 
 }
