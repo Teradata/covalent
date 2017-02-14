@@ -7,7 +7,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
   </md-card-actions>
 </md-card>
@@ -93,6 +93,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
@@ -199,6 +204,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_TWO.TITLE' | translate }}</md-card-title>
@@ -281,6 +291,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_THREE.TITLE' | translate }}</md-card-title>
@@ -359,4 +374,9 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
