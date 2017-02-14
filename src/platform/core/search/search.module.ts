@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
@@ -19,7 +18,6 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
     MdInputModule.forRoot(),
     MdIconModule.forRoot(),
     MdButtonModule.forRoot(),
-    FlexLayoutModule,
   ],
   declarations: [
     TdSearchInputComponent,
