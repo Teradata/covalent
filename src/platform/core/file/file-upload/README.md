@@ -2,7 +2,7 @@
 
 ## Usage
 
-Perfect component for file selection and upload in simple flows.
+Perfect component for file selection and upload in simple flows. Uses `TdFileInputComponent` internally.
 
 Example for usage:
 
