@@ -3,40 +3,148 @@
   <md-card-subtitle>Upload input button</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Upload Event (Single Selection/Drop): {{fileUpload1Msg}}</p>
-    <td-file-upload #fileUpload1 (upload)="uploadEvent1($event)" [disabled]="disabled">
-      <md-icon>file_upload</md-icon><span>{{ fileUpload1.files?.name }}</span>
-      <template td-file-input-label>
-        <md-icon>attach_file</md-icon><span>Choose a file...</span>
-      </template>
-    </td-file-upload>
-    <p>Select only '.sql' files on dialog:</p>
-    <td-file-upload #fileUpload2 accept=".sql" [disabled]="disabled">
-      <md-icon>file_upload</md-icon><span>{{ fileUpload2.files?.name }}</span>
-      <template td-file-input-label>
-        <md-icon>attach_file</md-icon><span>Choose a .sql file...</span>
-      </template>
-    </td-file-upload>
-    <p>Support multiple files on selection/drop:</p>
-    <p>Upload Event (Multiple Selecton/Drop): {{fileUpload3Msg}}</p>
-    <td-file-upload #fileUpload3 multiple (upload)="uploadEvent3($event)" [disabled]="disabled">
-      <md-icon>file_upload</md-icon><span>{{ fileUpload3.files?.name || fileUpload3.files?.length }} <span *ngIf="fileUpload3.files?.length">files selected</span></span>
-      <template td-file-input-label>
-        <md-icon>attach_file</md-icon><span>Choose multiple files...</span>
-      </template>
-    </td-file-upload>
-    <p>Custom color palette:</p>
-    <td-file-upload #fileUpload4 defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled">
-      <md-icon>file_upload</md-icon><span>{{ fileUpload4.files?.name }}</span>
-      <template td-file-input-label>
-        <md-icon>attach_file</md-icon><span>Choose a file...</span>
-      </template>
-    </td-file-upload>
+    <h3 class="md-title">TdFileUpload basic example</h3>
+    <h4 class="md-subhead">single selection/drop</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div class="md-padding">
+          <p>Select Event: {{fileSelectMsg}}</p>
+          <p>Upload Event: {{fileUploadMsg}}</p>
+          <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+            <md-icon>file_upload</md-icon><span>{{ singleFileUpload?.files?.name }}</span>
+            <template td-file-input-label>
+              <md-icon>attach_file</md-icon><span>Choose a file...</span>
+            </template>
+          </td-file-upload>
+        </div>
+        <div layout="row">
+          <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div class="md-padding">
+              <p>Select Event: { {fileSelectMsg} }</p>
+              <p>Upload Event: { {fileUploadMsg} }</p>
+              <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+                <md-icon>file_upload</md-icon><span>{ { singleFileUpload?.files?.name } }</span>
+                <template td-file-input-label>
+                  <md-icon>attach_file</md-icon><span>Choose a file...</span>
+                </template>
+              </td-file-upload>
+            </div>
+            <div layout="row">
+              <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              fileSelectMsg: string = 'No file selected yet.';
+              fileUploadMsg: string = 'No file uploaded yet.';
+              disabled: boolean = false;
+
+              selectEvent(file: File): void {
+                this.fileSelectMsg = file.name;
+              };
+
+              uploadEvent(file: File): void {
+                this.fileUploadMsg = file.name;
+              };
+
+              toggleDisabled(): void {
+                this.disabled = !this.disabled;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All File Uploads</button>
-  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">TdFileUpload multiple example</h3>
+    <h4 class="md-subhead">multiple selection/drop for only .sql files and custom color palette</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <div class="md-padding">
+          <p>Select Event: {{fileSelectMultipleMsg}}</p>
+          <p>Upload Event: {{fileUploadMultipleMsg}}</p>
+          <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+                          accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple>
+            <md-icon>file_upload</md-icon>
+            <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
+            <template td-file-input-label>
+              <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+            </template>
+          </td-file-upload>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div class="md-padding">
+              <p>Select Event: {{fileSelectMultipleMsg}}</p>
+              <p>Upload Event: {{fileUploadMultipleMsg}}</p>
+              <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+                              accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple>
+                <md-icon>file_upload</md-icon>
+                <span>
+                  {{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
+                </span>
+                <template td-file-input-label>
+                  <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+                </template>
+              </td-file-upload>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              fileSelectMultipleMsg: string = 'No file(s) selected yet.';
+              fileUploadMultipleMsg: string = 'No file(s) uploaded yet.';
+
+              selectMultipleEvent(files: FileList | File): void {
+                if (files instanceof FileList) {
+                  let names: string[] = [];
+                  for (let i: number = 0; i < files.length; i++) {
+                    names.push(files[i].name);
+                  }
+                  this.fileSelectMultipleMsg = names.join(',');
+                } else {
+                  this.fileSelectMultipleMsg = files.name;
+                }
+              }
+
+              uploadMultipleEvent(files: FileList | File): void {
+                if (files instanceof FileList) {
+                  let names: string[] = [];
+                  for (let i: number = 0; i < files.length; i++) {
+                    names.push(files[i].name);
+                  }
+                  this.fileUploadMultipleMsg = names.join(',');
+                } else {
+                  this.fileUploadMultipleMsg = files.name;
+                }
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
 </md-card>
 <md-card>
 
