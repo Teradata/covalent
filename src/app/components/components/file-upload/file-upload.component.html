@@ -12,7 +12,7 @@
           <p>Select Event: {{fileSelectMsg}}</p>
           <p>Upload Event: {{fileUploadMsg}}</p>
           <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
-            <md-icon>file_upload</md-icon><span>{{ singleFileUpload?.files?.name }}</span>
+            <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
             <template td-file-input-label>
               <md-icon>attach_file</md-icon><span>Choose a file...</span>
             </template>
@@ -31,7 +31,7 @@
               <p>Select Event: { {fileSelectMsg} }</p>
               <p>Upload Event: { {fileUploadMsg} }</p>
               <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
-                <md-icon>file_upload</md-icon><span>{ { singleFileUpload?.files?.name } }</span>
+                <md-icon>file_upload</md-icon><span>{ { singleFileUpload.files?.name } }</span>
                 <template td-file-input-label>
                   <md-icon>attach_file</md-icon><span>Choose a file...</span>
                 </template>
