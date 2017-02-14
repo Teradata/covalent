@@ -94,13 +94,13 @@
         <td-highlight lang="html">
           <![CDATA[
             <div class="md-padding">
-              <p>Select Event: {{fileSelectMultipleMsg}}</p>
-              <p>Upload Event: {{fileUploadMultipleMsg}}</p>
+              <p>Select Event: { {fileSelectMultipleMsg} }</p>
+              <p>Upload Event: { {fileUploadMultipleMsg} }</p>
               <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
                               accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple>
                 <md-icon>file_upload</md-icon>
                 <span>
-                  {{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
+                  { { fileMultipleUpload.files?.name || fileMultipleUpload.files?.length } } <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
                 </span>
                 <template td-file-input-label>
                   <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
