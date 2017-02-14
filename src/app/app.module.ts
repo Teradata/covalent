@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate';
+import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -41,9 +41,11 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: createTranslateLoader,
-      deps: [Http],
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [Http],
+      },
     }),
     ComponentsModule,
     DocsModule,
