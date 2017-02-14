@@ -20,4 +20,14 @@
       @include md-elevation(8);
     }
   }
+  td-file-input {
+    /**
+    * Class that is added ondragenter by the [TdFileDrop] directive.
+    */
+    .drop-zone {
+      transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
+                  md-elevation-transition-property-value();
+      @include md-elevation(8);
+    }
+  }
 }
