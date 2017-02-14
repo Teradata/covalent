@@ -86,7 +86,7 @@ export class TdFileInputComponent {
   }
 
   /**
-   * Clears files.
+   * Used to clear the selected files from the [TdFileInputComponent].
    */
   clear(): void {
     this._renderer.setElementProperty(this.fileInput.nativeElement, 'value', '');

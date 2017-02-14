@@ -41,6 +41,7 @@ Properties:
 | accept | string | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | disabled | boolean | Disables [TdFileUploadComponent] and clears selected/dropped files.
 | select | function($event) | Event emitted when a file is selected. Emits a [File or FileList] object.
+| clear | function() | Used to clear the selected files from the [TdFileInputComponent].
 
 ## Setup
 
