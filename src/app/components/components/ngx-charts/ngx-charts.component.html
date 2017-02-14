@@ -64,7 +64,8 @@
                 [legend]="showLegend"
                 [showXAxisLabel]="showXAxisLabel"
                 [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel">
+                [xAxisLabel]="xAxisLabel"
+                [xAxisTickFormatting]="axisDigits">
               </ngx-charts-bar-horizontal-stacked>
             </div>
           </md-card>
@@ -84,7 +85,10 @@
                 [showXAxisLabel]="showXAxisLabel"
                 [showYAxisLabel]="showYAxisLabel"
                 [xAxisLabel]="xAxisLabel"
-                [yAxisLabel]="yAxisLabel">
+                [yAxisLabel]="yAxisLabel"
+                [yAxisTickFormatting]="axisDigits"
+                [barPadding]="2"
+                [groupPadding]="8">
               </ngx-charts-bar-vertical-2d>
             </div>
           </md-card>
@@ -105,7 +109,8 @@
                 [showYAxisLabel]="showYAxisLabel"
                 [xAxisLabel]="xAxisLabel"
                 [yAxisLabel]="yAxisLabel"
-                [autoScale]="autoScale">
+                [autoScale]="autoScale"
+                [yAxisTickFormatting]="axisDigits">
               </ngx-charts-line-chart>
             </div>
           </md-card>
@@ -144,7 +149,8 @@
                       [max]="100"
                       [units]="'usage'"
                       [bigSegments]="10"
-                      [smallSegments]="5">
+                      [smallSegments]="5"
+                      [axisTickFormatting]="axisDigits">
                     </ngx-charts-gauge>
                   </div>
                 </md-card>
@@ -163,7 +169,8 @@
                       [legend]="showLegend"
                       [showXAxisLabel]="showXAxisLabel"
                       [showYAxisLabel]="showYAxisLabel"
-                      [xAxisLabel]="xAxisLabel">
+                      [xAxisLabel]="xAxisLabel"
+                      [xAxisTickFormatting]="axisDigits">
                     </ngx-charts-bar-horizontal-stacked>
                   </div>
                 </md-card>
@@ -183,7 +190,10 @@
                       [showXAxisLabel]="showXAxisLabel"
                       [showYAxisLabel]="showYAxisLabel"
                       [xAxisLabel]="xAxisLabel"
-                      [yAxisLabel]="yAxisLabel">
+                      [yAxisLabel]="yAxisLabel"
+                      [yAxisTickFormatting]="axisDigits"
+                      [barPadding]="2"
+                      [groupPadding]="8">
                     </ngx-charts-bar-vertical-2d>
                   </div>
                 </md-card>
@@ -204,7 +214,8 @@
                       [showYAxisLabel]="showYAxisLabel"
                       [xAxisLabel]="xAxisLabel"
                       [yAxisLabel]="yAxisLabel"
-                      [autoScale]="autoScale">
+                      [autoScale]="autoScale"
+                      [yAxisTickFormatting]="axisDigits">
                     </ngx-charts-line-chart>
                   </div>
                 </md-card>
@@ -219,6 +230,8 @@
           <![CDATA[
             import { Component } from '@angular/core';
             import { single, multi } from './data';
+
+            import { TdDigitsPipe } from '@covalent/core';
 
             @Component({
               selector: 'ngx-charts-demo',
@@ -250,7 +263,7 @@
               // line, area
               autoScale: boolean = true;
 
-              constructor( ) {
+              constructor() {
                 // Chart Single
                 Object.assign(this, {single});
                 // Chart Multi
@@ -261,6 +274,11 @@
                   });
                   return group;
                 });
+              }
+
+              // ngx transform using covalent digits pipe
+              axisDigits(val: any): any {
+                return new TdDigitsPipe().transform(val);
               }
             }
           ]]>
