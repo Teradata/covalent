@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { MdIconModule, MdSelectModule, MdButtonModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { TdPagingBarComponent } from './paging-bar.component';
 
@@ -17,7 +16,6 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
     MdIconModule.forRoot(),
     MdSelectModule.forRoot(),
     MdButtonModule.forRoot(),
-    FlexLayoutModule,
   ],
   declarations: [
     TdPagingBarComponent,
