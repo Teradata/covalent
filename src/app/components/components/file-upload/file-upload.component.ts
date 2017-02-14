@@ -1,8 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'file-upload-demo',
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',

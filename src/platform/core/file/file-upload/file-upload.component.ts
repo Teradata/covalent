@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
 
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 
@@ -83,6 +83,10 @@ export class TdFileUploadComponent {
    */
   @Output('upload') onUpload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+
+  }
+
   /**
    * Method executed when upload button is clicked.
    */
@@ -98,6 +102,7 @@ export class TdFileUploadComponent {
   handleSelect(files: File | FileList): void {
     this.files = files;
     this.onSelect.emit(files);
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -106,5 +111,6 @@ export class TdFileUploadComponent {
    */
   cancel(): void {
     this.files = undefined;
+    this._changeDetectorRef.markForCheck();
   }
 }
