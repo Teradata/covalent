@@ -29,7 +29,7 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 
 // External Dependencies
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
