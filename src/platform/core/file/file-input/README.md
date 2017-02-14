@@ -36,11 +36,11 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `color` | `string` | Sets button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
-| `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-| `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
-| `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
-| `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
+| color | string | Sets button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
+| multiple | boolean | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
+| accept | string | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
+| disabled | boolean | Disables [TdFileUploadComponent] and clears selected/dropped files.
+| select | function($event) | Event emitted when a file is selected. Emits a [File or FileList] object.
 
 ## Setup
 
@@ -60,6 +60,7 @@ import { CovalentFileModule } from '@covalent/core';
 export class MyModule {}
 ```
 
+---
 
 ## TdFileSelectDirective: tdFileSelect
 
@@ -72,7 +73,7 @@ Uses optional [(ngModel)] directive to bind file. (if [(ngModel]) exists, [fileS
 Example for usage:
 
 ```html
-<input type="file" tdFileSelect [(ngModel)]="files" multiple>
+<input type="file" tdFileSelect (fileSelect)="files = $event" multiple>
 ```
 
 ## API Summary
@@ -81,9 +82,10 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `multiple` | `boolean` | Sets whether multiple files can be selected at once in host element, or just a single file. Can also be "multiple" native attribute.
-| `fileSelect` | `function($event)` | Event emitted when a file or files are selected in host [HTMLInputElement]. Emits a [FileList or File] object. Alternative to not use [(ngModel)].
+| multiple | boolean | Sets whether multiple files can be selected at once in host element, or just a single file. Can also be "multiple" native attribute.
+| fileSelect | function($event) | Event emitted when a file or files are selected in host [HTMLInputElement]. Emits a [FileList or File] object. Alternative to not use [(ngModel)].
 
+---
 
 ## TdFileDropDirective: tdFileDrop
 
@@ -102,12 +104,16 @@ Example for usage:
 </div> 
 ```
 
+
 ## API Summary
 
 Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `multiple` | `boolean` | Sets whether multiple files can be dropped at once in host element, or just a single file. Can also be "multiple" native attribute.
-| `disabled` | `boolean` | Disabled drop events for host element.
-| `fileDrop` | `function($event)` | Event emitted when a file or files are dropped in host element after being validated. Emits a [FileList or File] object.
+| multiple | boolean | Sets whether multiple files can be dropped at once in host element, or just a single file. Can also be "multiple" native attribute.
+| disabled | boolean | Disabled drop events for host element.
+| fileDrop | function($event) | Event emitted when a file or files are dropped in host element after being validated. Emits a [FileList or File] object.
+
+
+---

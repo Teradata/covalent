@@ -80,7 +80,7 @@ Service provided with methods that wrap complexity for as easier file upload exp
 
 Recieves as parameter an object that implements the [IUploadOptions] interface.
 
-```
+```typescript
 interface IUploadOptions { 
   url: string; 
   method: 'post' | 'put'; 
@@ -91,7 +91,7 @@ interface IUploadOptions {
 
 Example for usage:
 
-```html
+```typescript
 import { TdFileService, IUploadOptions } from '@covalent/core';
 ...
   providers: [ TdFileService ]
@@ -123,4 +123,7 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `upload` | `function(IUploadState)` | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+
+
+---

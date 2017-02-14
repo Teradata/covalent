@@ -29,6 +29,11 @@ export class ComponentsOverviewComponent {
       route: 'expansion-panel',
       title: 'Expansion Panel',
     }, {
+      color: 'light-blue-700',
+      icon: 'attach_file',
+      route: 'file-input',
+      title: 'File Input',
+    }, {
       color: 'cyan-700',
       icon: 'file_upload',
       route: 'file-upload',
