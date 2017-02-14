@@ -1,27 +1,9 @@
 <div>
   <div *ngIf="!files">
-    <button md-raised-button
-            class="td-file-browse"
-            type="button"
-            [color]="defaultColor" 
-            [multiple]="multiple" 
-            [disabled]="disabled"
-            (keyup.enter)="fileBrowse.click()"
-            (click)="fileBrowse.click()"
-            (fileDrop)="files = $event"
-            tdFileDrop> 
-      <label>   
-        <md-icon>attachment</md-icon>Choose a File...
-      </label>
-    </button>
-    <input #fileBrowse 
-           class="md-file-upload-input" 
-           type="file"
-           [attr.accept]="accept"                
-           (fileSelect)="files = $event"
-           [multiple]="multiple" 
-           [disabled]="disabled"
-           tdFileSelect>
+    <td-file-input [multiple]="multiple" [disabled]="disabled" [accept]="accept" [color]="defaultColor" (select)="files = $event">
+      <md-icon>attach_file</md-icon>
+      Choose a file...
+    </td-file-input>
   </div>
   <div *ngIf="files" layout="row">
     <button #fileUpload

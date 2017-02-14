@@ -1,22 +1,7 @@
 :host {
   button {
-    padding-left: 0;
-    padding-right: 0;
-    label {
-      cursor: pointer;
-      display: block;
-      height: 100%;
-      padding-left: 8px;
-      padding-right: 8px;
-      md-icon {
-        position: relative;
-        top: 6px;
-        padding-right: 5px;
-      }
-    }
-  }
-  input.md-file-upload-input {
-    display: none;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .td-file-cancel {
     height: 24px;
