@@ -1,4 +1,15 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
+         ElementRef, Renderer, TemplateRef, ViewContainerRef } from '@angular/core';
+import { TemplatePortalDirective } from '@angular/material';
+
+@Directive({
+  selector: '[td-file-input-label]template',
+})
+export class TdFileInputLabelDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Component({
   selector: 'td-file-input',

@@ -6,7 +6,7 @@
   $background: map-get($theme, background);
 
   td-file-upload {
-    .td-file-cancel {
+    .td-file-upload-cancel {
       md-icon {
         background-color: md-color($background, background);
       }

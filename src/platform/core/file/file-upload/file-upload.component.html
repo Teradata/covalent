@@ -1,31 +1,23 @@
-<div>
-  <div *ngIf="!files">
-    <td-file-input [multiple]="multiple" [disabled]="disabled" [accept]="accept" [color]="defaultColor" (select)="files = $event">
-      <md-icon>attach_file</md-icon>
-      Choose a file...
-    </td-file-input>
-  </div>
-  <div *ngIf="files" layout="row">
-    <button #fileUpload
-            class="td-file-upload"
-            md-raised-button
-            type="button"
-            [color]="activeColor"
-            (keyup.delete)="cancel()"
-            (keyup.backspace)="cancel()"
-            (keyup.escape)="cancel()"
-            (click)="uploadPressed()">
-      <label>   
-        <md-icon>file_upload</md-icon>
-        {{ files.name || files.length }} <span *ngIf="files.length">files selected</span> 
-      </label>
-    </button>
-    <button md-icon-button
-            type="button"
-            class="td-file-cancel"
-            [color]="cancelColor"            
-            (click)="cancel()">
-      <md-icon>cancel</md-icon>
-    </button>
-  </div>
+<td-file-input *ngIf="!files" [multiple]="multiple" [disabled]="disabled" [accept]="accept" [color]="defaultColor" (select)="files = $event">
+  <template [cdkPortalHost]="inputLabel" [ngIf]="true"></template>
+</td-file-input>
+<div *ngIf="files" layout="row">
+  <button #fileUpload
+          class="td-file-upload"
+          md-raised-button
+          type="button"
+          [color]="activeColor"
+          (keyup.delete)="cancel()"
+          (keyup.backspace)="cancel()"
+          (keyup.escape)="cancel()"
+          (click)="uploadPressed()"> 
+    <ng-content></ng-content>
+  </button>
+  <button md-icon-button
+          type="button"
+          class="td-file-upload-cancel"
+          [color]="cancelColor"            
+          (click)="cancel()">
+    <md-icon>cancel</md-icon>
+  </button>
 </div>

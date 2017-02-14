@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
+
+import { TdFileInputLabelDirective } from '../file-input/file-input.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,6 +14,8 @@ export class TdFileUploadComponent {
   private _disabled: boolean = false;
 
   files: FileList | File;
+
+  @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
 
   /**
    * defaultColor?: string
