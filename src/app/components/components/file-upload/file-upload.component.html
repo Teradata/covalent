@@ -4,14 +4,34 @@
   <md-divider></md-divider>
   <md-card-content>
     <p>Upload Event (Single Selection/Drop): {{fileUpload1Msg}}</p>
-    <td-file-upload (upload)="uploadEvent1($event)" [disabled]="disabled"></td-file-upload>
+    <td-file-upload #fileUpload1 (upload)="uploadEvent1($event)" [disabled]="disabled">
+      <md-icon>file_upload</md-icon><span>{{ fileUpload1.files?.name }}</span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose a file...</span>
+      </template>
+    </td-file-upload>
     <p>Select only '.sql' files on dialog:</p>
-    <td-file-upload accept=".sql" [disabled]="disabled"></td-file-upload>
+    <td-file-upload #fileUpload2 accept=".sql" [disabled]="disabled">
+      <md-icon>file_upload</md-icon><span>{{ fileUpload2.files?.name }}</span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose a .sql file...</span>
+      </template>
+    </td-file-upload>
     <p>Support multiple files on selection/drop:</p>
     <p>Upload Event (Multiple Selecton/Drop): {{fileUpload3Msg}}</p>
-    <td-file-upload multiple (upload)="uploadEvent3($event)" [disabled]="disabled"></td-file-upload>
+    <td-file-upload #fileUpload3 multiple (upload)="uploadEvent3($event)" [disabled]="disabled">
+      <md-icon>file_upload</md-icon><span>{{ fileUpload3.files?.name || fileUpload3.files?.length }} <span *ngIf="fileUpload3.files?.length">files selected</span></span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose multiple files...</span>
+      </template>
+    </td-file-upload>
     <p>Custom color palette:</p>
-    <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
+    <td-file-upload #fileUpload4 defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled">
+      <md-icon>file_upload</md-icon><span>{{ fileUpload4.files?.name }}</span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose a file...</span>
+      </template>
+    </td-file-upload>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
