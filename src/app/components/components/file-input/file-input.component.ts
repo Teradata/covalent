@@ -1,4 +1,4 @@
-import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -16,7 +16,10 @@ export class FileInputDemoComponent {
 
   disabled: boolean = false;
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   toggleDisabled(): void {
     this.disabled = !this.disabled;
+    this._changeDetectorRef.detectChanges();
   }
 }

@@ -7,18 +7,29 @@
       <template md-tab-label>Demo</template>
       <md-card-content>
         <div layout="row">
-          <md-input-container flex>
-            <input md-input placeholder="select or drop files" readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
+          <md-input-container tdFileDrop
+                              [disabled]="disabled"
+                              (fileDrop)="files = $event"
+                              (click)="fileInput.inputElement.click()"
+                              (keyup.enter)="fileInput.inputElement.click()"
+                              (keyup.delete)="fileInput.clear()"
+                              (keyup.backspace)="fileInput.clear()"
+                              flex>
+            <input md-input
+                   placeholder="select or drop files"
+                   [value]="files?.length ? (files?.length + ' files') : files?.name"
+                   [disabled]="disabled"
+                   readonly/>
           </md-input-container>
-          <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
+          <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
             <md-icon>cancel</md-icon>
           </button>
-          <td-file-input color="none" class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+          <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
             <md-icon>folder</md-icon>
             Browse...
           </td-file-input>
           <span>
-            <button md-raised-button color="accent" disabled="true">Submit</button>
+            <button md-raised-button color="accent" [disabled]="!files">Submit</button>
           </span>
         </div>
       </md-card-content>
@@ -34,20 +45,42 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <md-input-container flex>
-                <input md-input placeholder="select or drop files" readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
+              <md-input-container tdFileDrop
+                                  [disabled]="disabled"
+                                  (fileDrop)="files = $event"
+                                  (click)="fileInput.inputElement.click()"
+                                  (keyup.enter)="fileInput.inputElement.click()"
+                                  (keyup.delete)="fileInput.clear()"
+                                  (keyup.backspace)="fileInput.clear()"
+                                  flex>
+                <input md-input
+                      placeholder="select or drop files"
+                      [value]="files?.length ? (files?.length + ' files') : files?.name"
+                      [disabled]="disabled"
+                      readonly/>
               </md-input-container>
-              <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
+              <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
                 <md-icon>cancel</md-icon>
               </button>
-              <td-file-input color="none" class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+              <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
                 <md-icon>folder</md-icon>
                 Browse...
               </td-file-input>
               <span>
-                <button md-raised-button color="accent" disabled="true">Submit</button>
+                <button md-raised-button color="accent" [disabled]="!files">Submit</button>
               </span>
             </div>
+          ]]>
+        </td-highlight>
+        <p>CSS:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            .drop-zone {
+              font-weight: 600;
+              /deep/ * {
+                pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+              }
+            }
           ]]>
         </td-highlight>
         <p>Typescript:</p>
