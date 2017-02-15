@@ -47,7 +47,11 @@ export class TdFileInputComponent implements ControlValueAccessor {
   private _multiple: boolean = false;
   private _disabled: boolean = false;
 
-  @ViewChild('fileInput') fileInput: ElementRef;
+  /** The native `<input type="file"> element */
+  @ViewChild('fileInput') private _inputElement: ElementRef;
+  get inputElement(): HTMLInputElement {
+    return this._inputElement.nativeElement;
+  }
 
   /**
    * color?: string
@@ -113,7 +117,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    * Used to clear the selected files from the [TdFileInputComponent].
    */
   clear(): void {
-    this._renderer.setElementProperty(this.fileInput.nativeElement, 'value', '');
+    this._renderer.setElementProperty(this.inputElement, 'value', '');
     this.value = undefined;
     this._changeDetectorRef.markForCheck();
   }
