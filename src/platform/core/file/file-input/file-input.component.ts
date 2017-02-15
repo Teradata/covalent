@@ -51,9 +51,9 @@ export class TdFileInputComponent implements ControlValueAccessor {
 
   /**
    * color?: string
-   * Sets button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
+   * Sets button color. Uses same color palette accepted as [mdButton].
    */
-  @Input('color') color: string = 'primary';
+  @Input('color') color: string;
 
   /**
    * multiple?: boolean
