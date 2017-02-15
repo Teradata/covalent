@@ -21,5 +21,6 @@ export class FileInputDemoComponent {
   toggleDisabled(): void {
     this.disabled = !this.disabled;
     this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 }
