@@ -9,7 +9,7 @@ Can also drop a file(s) into the component to bind the file(s) to it.
 Example for usage:
 
 ```html
-<td-file-input color="primary" (select)="selectEvent($event)"
+<td-file-input [(ngModel)]="files" color="primary" (select)="selectEvent($event)"
                accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <md-icon>attach_file</md-icon><span>Choose a file...</span>
 </td-file-input>

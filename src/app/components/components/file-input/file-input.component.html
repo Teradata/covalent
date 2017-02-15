@@ -9,14 +9,14 @@
       <md-tab>
         <template md-tab-label>Demo</template>
         <div class="md-padding" layout="row">
-          <td-file-input #fileInput multiple [disabled]="disabled">
+          <td-file-input #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
             <md-icon>attach_file</md-icon>
             Select a file...
           </td-file-input>
           <md-input-container class="push-left" flex>
-            <input md-input readonly [value]="fileInput?.files?.length ? (fileInput?.files?.length + ' files') : fileInput?.files?.name"/>
+            <input md-input readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
           </md-input-container>
-          <button md-icon-button *ngIf="fileInput?.files" (click)="fileInput.clear()">
+          <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
             <md-icon>cancel</md-icon>
           </button>
         </div>
@@ -30,14 +30,14 @@
         <td-highlight lang="html">
           <![CDATA[
             <div class="md-padding" layout="row">
-              <td-file-input #fileInput multiple [disabled]="disabled">
+              <td-file-input #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
                 <md-icon>attach_file</md-icon>
                 Select a file...
               </td-file-input>
               <md-input-container class="push-left" flex>
-                <input md-input readonly [value]="fileInput?.files?.length ? (fileInput?.files?.length + ' files') : fileInput?.files?.name"/>
+                <input md-input readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
               </md-input-container>
-              <button md-icon-button *ngIf="fileInput?.files" (click)="fileInput.clear()">
+              <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
                 <md-icon>cancel</md-icon>
               </button>
             </div>
@@ -50,6 +50,7 @@
         <td-highlight lang="typescript">
           <![CDATA[
             export class Demo {
+              files: File | FileList;
               disabled: boolean = false;
 
               toggleDisabled(): void {
