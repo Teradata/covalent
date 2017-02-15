@@ -18,6 +18,7 @@ Example for usage:
 ```typescript
 export class Demo {
 
+  files: File | FileList;
   disabled: boolean = false;
 
   selectEvent(files: FileList | File): void {
