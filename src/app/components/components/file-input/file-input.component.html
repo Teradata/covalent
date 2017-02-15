@@ -1,48 +1,52 @@
 <md-card>
   <md-card-title>File Input</md-card-title>
-  <md-card-subtitle>File input button</md-card-subtitle>
+  <md-card-subtitle>single or multiple selection/drop</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
-    <h3 class="md-title">TdFileInput basic example</h3>
-    <h4 class="md-subhead">single or multiple selection/drop</h4>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <div class="md-padding" layout="row">
-          <td-file-input #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
-            <md-icon>attach_file</md-icon>
-            Select a file...
-          </td-file-input>
-          <md-input-container class="push-left" flex>
-            <input md-input readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <template md-tab-label>Demo</template>
+      <md-card-content>
+        <div layout="row">
+          <md-input-container flex>
+            <input md-input placeholder="select or drop files" readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
           </md-input-container>
           <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
             <md-icon>cancel</md-icon>
           </button>
+          <td-file-input color="none" class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+            <md-icon>folder</md-icon>
+            Browse...
+          </td-file-input>
+          <span>
+            <button md-raised-button color="accent" disabled="true">Submit</button>
+          </span>
         </div>
-        <div layout="row">
-          <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
-        </div>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+      </md-card-actions>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Code</template>
+      <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <div class="md-padding" layout="row">
-              <td-file-input #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
-                <md-icon>attach_file</md-icon>
-                Select a file...
-              </td-file-input>
-              <md-input-container class="push-left" flex>
-                <input md-input readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
+            <div layout="row">
+              <md-input-container flex>
+                <input md-input placeholder="select or drop files" readonly [value]="files?.length ? (files?.length + ' files') : files?.name"/>
               </md-input-container>
               <button md-icon-button *ngIf="files" (click)="fileInput.clear()">
                 <md-icon>cancel</md-icon>
               </button>
-            </div>
-            <div layout="row">
-              <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+              <td-file-input color="none" class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+                <md-icon>folder</md-icon>
+                Browse...
+              </td-file-input>
+              <span>
+                <button md-raised-button color="accent" disabled="true">Submit</button>
+              </span>
             </div>
           ]]>
         </td-highlight>
@@ -59,9 +63,9 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
 </md-card>
 
 <td-readme-loader resourceUrl="platform/core/file/file-input/README.md"></td-readme-loader>
