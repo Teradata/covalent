@@ -23,6 +23,7 @@ export class TdFileInputLabelDirective extends TemplatePortalDirective {
 }
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ FILE_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-file-input',
   styleUrls: ['./file-input.component.scss'],
@@ -108,18 +109,16 @@ export class TdFileInputComponent implements ControlValueAccessor {
    * Method executed when a file is selected.
    */
   handleSelect(files: File | FileList): void {
-    this.value = files;
+    this.writeValue(files);
     this.onSelect.emit(files);
-    this._changeDetectorRef.markForCheck();
   }
 
   /**
    * Used to clear the selected files from the [TdFileInputComponent].
    */
   clear(): void {
+    this.writeValue(undefined);
     this._renderer.setElementProperty(this.inputElement, 'value', '');
-    this.value = undefined;
-    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -127,6 +126,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   writeValue(value: any): void {
     this.value = value;
+    this._changeDetectorRef.markForCheck();
   }
 
   registerOnChange(fn: any): void {
