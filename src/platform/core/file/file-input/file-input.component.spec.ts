@@ -5,6 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CovalentFileModule, TdFileInputComponent } from '../file.module';
 import { By } from '@angular/platform-browser';
 
@@ -14,8 +15,10 @@ describe('Component: FileInput', () => {
     TestBed.configureTestingModule({
       declarations: [
         TdFileInputBasicTestComponent,
+        TdFileInputModelTestComponent,
       ],
       imports: [
+        FormsModule,
         CovalentFileModule.forRoot(),
       ],
     });
@@ -46,7 +49,7 @@ describe('Component: FileInput', () => {
           fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.clear();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.files)
+            expect(fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.value)
             .toBeUndefined();
           });
         });
@@ -65,7 +68,7 @@ describe('Component: FileInput', () => {
         component.disabled = true;
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.files).toBeUndefined();
+          expect(fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.value).toBeUndefined();
         });
       });
   })));
@@ -86,6 +89,43 @@ describe('Component: FileInput', () => {
       });
   })));
 
+  it('should mimic file selection event and check model',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
+      let component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      expect(component.files).toBeUndefined();
+      fixture.whenStable().then(() => {
+        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.handleSelect([{}]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.files).toBeTruthy();
+        });
+      });
+  })));
+
+  it('should mimic file selection event and check model and then clear it by disabling it',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileInputModelTestComponent);
+      let component: TdFileInputModelTestComponent = fixture.debugElement.componentInstance;
+      component.multiple = false;
+      fixture.detectChanges();
+      expect(component.files).toBeUndefined();
+      fixture.whenStable().then(() => {
+        fixture.debugElement.query(By.directive(TdFileInputComponent)).componentInstance.handleSelect([{}]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.files).toBeTruthy();
+          component.disabled = true;
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(component.files).toBeUndefined();
+          });
+        });
+      });
+  })));
+
 });
 
 @Component({
@@ -98,6 +138,20 @@ describe('Component: FileInput', () => {
 })
 class TdFileInputBasicTestComponent {
   accept: string;
+  multiple: boolean;
+  disabled: boolean;
+  files: File | FileList;
+}
+
+@Component({
+  selector: 'td-file-input-model-test',
+  template: `
+  <td-file-input [(ngModel)]="files" [multiple]="multiple" [disabled]="disabled">
+    <span>test</span>
+  </td-file-input>
+  `,
+})
+class TdFileInputModelTestComponent {
   multiple: boolean;
   disabled: boolean;
   files: File | FileList;
