@@ -15,6 +15,7 @@ md-select {
   & /deep/ {
     .mat-select-trigger {
       min-width: 44px;
+      font-size: 12px;
     }
     .mat-select-value {
       top: auto;
