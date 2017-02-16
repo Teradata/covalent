@@ -146,11 +146,9 @@
   <md-card-title>Search Icons</md-card-title>
   <md-card-subtitle>Current icons bundled with platform</md-card-subtitle>
   <md-divider></md-divider>
-  <form layout="row" layout-aligh="center center" class="md-card-search-box">
-    <md-icon>search</md-icon>
-    <input flex class="md-padding block" [(ngModel)]="query" name="query" (keyup)="filter()" type="text"
-    placeholder="Filter icons by" autofocus>
-  </form>
+  <div layout="row" layout-align="center center" class="md-padding">
+    <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
+  </div>
   <md-divider></md-divider>
   <md-card-content>
     <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
