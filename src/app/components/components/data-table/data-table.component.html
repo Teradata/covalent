@@ -22,7 +22,7 @@
             </th>
             <tr td-data-table-row *ngFor="let row of basicData">
               <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                 {{column.format ? column.format(row[column.name]) : row[column.name]}}
@@ -48,7 +48,7 @@
               </th>
               <tr td-data-table-row *ngFor="let row of basicData">
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                  <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                   { {column.format ? column.format(row[column.name]) : row[column.name]}}
