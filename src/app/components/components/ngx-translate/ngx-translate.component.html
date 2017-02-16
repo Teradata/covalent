@@ -7,10 +7,24 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" href="https://github.com/ngx-translate/core" target="_blank">View NGX-Translate Docs</a>
-    <button md-button color="primary" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
   </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Resources</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://github.com/ngx-translate/core" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/core</code> documentation</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="https://github.com/ngx-translate/http-loader" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/http-loader</code> documentation</span>
+    </a>
+  </md-nav-list>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_BASIC.TITLE' | translate }}</md-card-title>
@@ -37,7 +51,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TranslateService } from 'ng2-translate';
+            import { TranslateService } from '@ngx-translate/core';
             ...
             export class MyAppComponent {
 
@@ -79,6 +93,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
@@ -129,7 +148,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TranslateService } from 'ng2-translate';
+            import { TranslateService } from '@ngx-translate/core';
             ...
             export class MyAppComponent {
 
@@ -185,6 +204,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_TWO.TITLE' | translate }}</md-card-title>
@@ -267,6 +291,11 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_THREE.TITLE' | translate }}</md-card-title>
@@ -287,7 +316,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TranslateService } from 'ng2-translate';
+            import { TranslateService } from '@ngx-translate/core';
             import { TdDialogService } from '@covalent/core';
             ...
             export class MyAppComponent {
@@ -345,4 +374,9 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
 </md-card>

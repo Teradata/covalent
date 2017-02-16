@@ -5,6 +5,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 /**
  * COMMON
@@ -118,6 +119,7 @@ export * from './steps/steps.module';
     FormsModule,
     CommonModule,
     MaterialModule.forRoot(),
+    FlexLayoutModule,
     CovalentCommonModule.forRoot(),
     CovalentChipsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
@@ -140,6 +142,7 @@ export * from './steps/steps.module';
     FormsModule,
     CommonModule,
     MaterialModule,
+    FlexLayoutModule,
     CovalentCommonModule,
     CovalentChipsModule,
     CovalentDataTableModule,

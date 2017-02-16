@@ -3,9 +3,9 @@
 }
 .td-paging-bar {
   height: 48px;
-}
-[layout="row"] > * {
-  margin: 0 10px;
+  > * {
+    margin: 0 10px;
+  }
 }
 [md-icon-button] {
   font-size: 12px;
