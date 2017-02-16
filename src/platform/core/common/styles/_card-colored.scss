@@ -41,6 +41,8 @@ $color: rgba(0, 0, 0, 0.01);
             opacity: 0.65;
             color: white;
             font-size: 8rem;
+            width: 1em;
+            height: 1em;
             @include longshadow(darken($color, 5% ));
         }
     }
