@@ -193,7 +193,7 @@ export class MaterialComponentsComponent {
     return value && typeof value === 'object' ? value.name : value;
   }
 
-  filterStates(val: string) {
+  filterStates(val: string): Object[] {
     return val ? this.states.filter((s: any) => s.name.match(new RegExp(val, 'gi'))) : this.states;
   }
 
