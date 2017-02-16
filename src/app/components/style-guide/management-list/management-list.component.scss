@@ -1,7 +1,7 @@
 md-select { 
   & /deep/ {
-    .md-select-trigger {
-      border-bottom: 0 !important;
+    .mat-select-underline {
+      display: none;
     }
   }
 }
