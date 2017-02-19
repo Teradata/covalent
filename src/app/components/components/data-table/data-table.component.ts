@@ -38,10 +38,6 @@ export class DataTableDemoComponent implements OnInit {
     name: 'multiple?',
     type: 'boolean',
   }, {
-    description: `Enables sorting events, sort icons and active column states.`,
-    name: 'sortable?',
-    type: 'boolean',
-  }, {
     description: `Sets the active sort column. [sortable] needs to be enabled.`,
     name: 'sortBy?',
     type: 'string',
@@ -120,10 +116,10 @@ export class DataTableDemoComponent implements OnInit {
   }];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)' },
+    { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
     { name: 'type', label: 'Type' },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true },
+    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
     { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
