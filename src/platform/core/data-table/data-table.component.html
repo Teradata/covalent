@@ -14,7 +14,7 @@
         [name]="column.name"
         [numeric]="column.numeric"
         [active]="_sortable && column === _sortBy"
-        [sortable]="column.sortable?column.sortable:false"
+        [sortable]="column.sortable ||  _sortable"
         (mouseleave)="column.tooltip && tooltipRefresh()"
         (mouseenter)="column.tooltip && tooltipRefresh()"
         [sortOrder]="_sortOrder"

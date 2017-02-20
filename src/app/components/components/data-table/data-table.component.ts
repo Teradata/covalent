@@ -38,6 +38,10 @@ export class DataTableDemoComponent implements OnInit {
     name: 'multiple?',
     type: 'boolean',
   }, {
+    description: `Enables sorting events, sort icons and active column states.`,
+    name: 'sortable?',
+    type: 'boolean',
+  }, {
     description: `Sets the active sort column. [sortable] needs to be enabled.`,
     name: 'sortBy?',
     type: 'string',

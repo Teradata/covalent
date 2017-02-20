@@ -224,6 +224,7 @@
           [columns]="columns"
           [selectable]="selectable"
           [multiple]="multiple"
+          [sortable]="true"
           [sortBy]="sortBy"
           [(ngModel)]="selectedRows"
           [sortOrder]="sortOrder"
@@ -251,6 +252,7 @@
             <td-data-table
               [data]="filteredData"
               [columns]="columns"
+              [sortable]="true"
               [sortBy]="sortBy"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
@@ -369,6 +371,7 @@
           [columns]="columns"
           [selectable]="true|false"
           [multiple]="true|false"
+          [sortable]="true|false"
           [sortBy]="sortBy"
           [sortOrder]="'ASC'|'DESC'"
           (sortChange)="sortEvent($event)"
