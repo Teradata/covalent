@@ -9,9 +9,13 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
+      require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
+    client:{
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
     customLaunchers: {
       // chrome setup for travis CI using chromium
       Chrome_travis_ci: {
@@ -30,7 +34,7 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
    },
     angularCli: {
-      config: './angular-cli.json',
+      config: './.angular-cli.json',
       environment: 'dev'
     },
     mime: {
@@ -38,7 +42,7 @@ module.exports = function (config) {
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
               ? ['progress', 'coverage-istanbul']
-              : ['progress'],
+              : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
