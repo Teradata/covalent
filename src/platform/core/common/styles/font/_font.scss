@@ -38,6 +38,14 @@ $md-font-url: './' !default;
   font-feature-settings: 'liga';
 }
 
+// Ensure our size prevails over material2
+md-icon.material-icons {
+    &,&.mat-icon {
+        width: 1em;
+        height: 1em;
+    }
+}
+
 // Rules for sizing the icon.
 .material-icons.md-18 { font-size: 18px; height:18px; width: 18px }
 .material-icons.md-24 { font-size: 24px; height:24px; width: 24px }
