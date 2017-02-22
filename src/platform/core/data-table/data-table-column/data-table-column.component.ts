@@ -93,7 +93,7 @@ export class TdDataTableColumnComponent {
   }
 
   handleSortBy(): void {
-    this.onSortChange.emit({name: name, order: this._sortOrder});
+    this.onSortChange.emit({name: this.name, order: this._sortOrder});
   }
 
   isAscending(): boolean {
