@@ -60,7 +60,7 @@ Alternatively, you can use the *highlight.js* pre-built [themes](https://github.
 @import '~highlight.js/styles/vs.css';
 ```
 
-Loading them in the `angular-cli.json`:
+Loading them in the `.angular-cli.json`:
 
 ```json
 "styles": [
