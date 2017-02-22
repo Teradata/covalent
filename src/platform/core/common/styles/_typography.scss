@@ -20,8 +20,22 @@ html, body {
   -webkit-font-smoothing: antialiased; // [4]
   -moz-osx-font-smoothing: grayscale; // [4]
 }
+/************
+* Defaults
+************/
+
+html  {
+  font-family: $font-family;
+}
 
 body {
+  select,
+  button,
+  textarea,
+  input {
+    font-family: $font-family;
+    font-size: 100%;
+  }
   /************
   * Headings
   ************/
@@ -83,24 +97,5 @@ body {
 
   .md-button {
     letter-spacing: 0.010em;
-  }
-
-  /************
-  * Defaults
-  ************/
-
-  button,
-  select,
-  html,
-  textarea,
-  input {
-    font-family: $font-family;
-  }
-
-  select,
-  button,
-  textarea,
-  input {
-    font-size: 100%;
   }
 }
