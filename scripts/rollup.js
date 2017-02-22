@@ -28,6 +28,7 @@ gulp.task('rollup-code', '', function() {
     '@angular/platform-browser': 'ng.platformBrowser',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
+    '@angular/flex-layout': 'ng.flexLayout',
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
