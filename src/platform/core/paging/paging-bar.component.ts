@@ -31,8 +31,8 @@ export class TdPagingBarComponent implements OnInit {
   @Input('pageSizeAll') pageSizeAll: boolean = false;
 
   /**
-   * pageSizeAllText?: boolean
-   * Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
+   * pageSizeAllText?: string
+   * Text for the 'all' menu item in the page size menu. Defaults to 'All'
    */
   @Input('pageSizeAllText') pageSizeAllText: string = 'All';
 
