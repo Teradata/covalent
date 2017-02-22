@@ -61,8 +61,17 @@ body {
   .text-wrap {
     white-space: normal;
   }
+  .text-break {
+    word-break: break-word;
+  }
   .text-upper {
     text-transform: uppercase;
+  }
+  .text-lower {
+    text-transform: lowercase;
+  }
+  .text-caps {
+    text-transform: capitalize;
   }
   .text-truncate {
     white-space: nowrap;
