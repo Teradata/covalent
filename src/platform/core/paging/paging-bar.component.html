@@ -1,18 +1,16 @@
 <div layout="row" layout-align="end center" class="md-caption td-paging-bar">
-  <span class="td-paging-bar-per-page">
-    Rows per page:
-  </span>
+  <ng-content select="[td-paging-bar-label]"></ng-content>
   <md-select [(ngModel)]="pageSize">
     <template let-size ngFor [ngForOf]="pageSizes">
       <md-option [value]="size">
         {{size}}
       </md-option>
     </template>
-    <md-option *ngIf="pageSizeAll" [value]="total">All</md-option>
+    <md-option *ngIf="pageSizeAll" [value]="total">{{pageSizeAllText}}</md-option>
   </md-select>
-  <span class="td-paging-bar-ranges">
-    {{range}} <span>of</span> {{total}}
-  </span>
+  <div>
+    <ng-content></ng-content>
+  </div>
   <div class="td-paging-bar-navigation">
     <button md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
       <md-icon>skip_previous</md-icon>

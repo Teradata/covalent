@@ -31,6 +31,12 @@ export class TdPagingBarComponent implements OnInit {
   @Input('pageSizeAll') pageSizeAll: boolean = false;
 
   /**
+   * pageSizeAllText?: boolean
+   * Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
+   */
+  @Input('pageSizeAllText') pageSizeAllText: string = 'All';
+
+  /**
    * firstLast?: boolean
    * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
    */
