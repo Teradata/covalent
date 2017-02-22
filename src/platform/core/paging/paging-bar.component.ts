@@ -37,6 +37,12 @@ export class TdPagingBarComponent implements OnInit {
   @Input('firstLast') firstLast: boolean = true;
 
   /**
+   * initialPage?: number
+   * Sets starting page for the paging bar. Defaults to '1'
+   */
+  @Input('initialPage') initialPage: number = 1;
+
+  /**
    * pageSizes?: number[]
    * Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]
    */
@@ -115,6 +121,7 @@ export class TdPagingBarComponent implements OnInit {
   @Output('change') onChange: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   ngOnInit(): void {
+    this._page = this.initialPage;
     this._calculateRows();
     this._initialized = true;
   }
