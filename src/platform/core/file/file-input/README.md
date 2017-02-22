@@ -95,7 +95,7 @@ Properties:
 
 Add the directive wherever you want to add drop support to an element to bind a [File | FileList] into a class model.
 
-To add effect when <code>ongragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.
+To add effect when <code>ondragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.
 
 Note: if element has child elements, add <code>* { pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.
 
