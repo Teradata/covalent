@@ -230,7 +230,10 @@
           [sortOrder]="sortOrder"
           (sortChange)="sort($event)">
         </td-data-table>
-        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+          <span td-paging-bar-label hide-xs>Row per page:</span>
+          {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+        </td-paging-bar>
       </md-tab>
       <md-tab>
         <template md-tab-label>Code</template>
@@ -257,7 +260,10 @@
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
-            <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+            <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+              <span td-paging-bar-label hide-xs>Row per page:</span>
+              { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+            </td-paging-bar>
           ]]>
         </td-highlight>
         <p>Typescript:</p>

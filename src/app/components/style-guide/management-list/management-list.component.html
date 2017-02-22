@@ -61,7 +61,10 @@
           </template>
         </md-list>
         <md-divider></md-divider>
-        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" total="20"></td-paging-bar>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
+          <span td-paging-bar-label hide-xs>Row per page:</span>
+          {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+        </td-paging-bar>
       </md-card>
     </div>
   </md-card-content>
@@ -124,7 +127,10 @@
             </template>
           </md-list>
           <md-divider></md-divider>
-          <td-paging-bar [pageSizes]="[5, 10, 15, 20]" total="20"></td-paging-bar>
+          <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
+            <span td-paging-bar-label hide-xs>Row per page:</span>
+            { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+          </td-paging-bar>
         </md-card>
       ]]>
     </td-highlight>
