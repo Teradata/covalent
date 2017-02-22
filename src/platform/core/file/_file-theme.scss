@@ -2,15 +2,17 @@
 @import '~@angular/material/core/style/variables';
 @import '~@angular/material/core/style/elevation';
 
-@mixin td-file-upload-theme($theme) {
+@mixin td-file-theme($theme) {
   $background: map-get($theme, background);
 
   td-file-upload {
-    .td-file-cancel {
+    .td-file-upload-cancel {
       md-icon {
         background-color: md-color($background, background);
       }
     }
+  }
+  td-file-input {
     /**
     * Class that is added ondragenter by the [TdFileDrop] directive.
     */

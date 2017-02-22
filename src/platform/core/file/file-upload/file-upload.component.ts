@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
+
+import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,6 +14,8 @@ export class TdFileUploadComponent {
   private _disabled: boolean = false;
 
   files: FileList | File;
+
+  @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
 
   /**
    * defaultColor?: string
@@ -66,11 +70,22 @@ export class TdFileUploadComponent {
   }
 
   /**
+   * select?: function
+   * Event emitted when a file is selecte.
+   * Emits a [File | FileList] object.
+   */
+  @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+
+  /**
    * upload?: function
    * Event emitted when upload button is clicked.
    * Emits a [File | FileList] object.
    */
   @Output('upload') onUpload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+
+  }
 
   /**
    * Method executed when upload button is clicked.
@@ -82,10 +97,20 @@ export class TdFileUploadComponent {
   }
 
   /**
+   * Method executed when a file is selected.
+   */
+  handleSelect(files: File | FileList): void {
+    this.files = files;
+    this.onSelect.emit(files);
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
    * Methods executed when cancel button is clicked.
    * Clears files.
    */
   cancel(): void {
     this.files = undefined;
+    this._changeDetectorRef.markForCheck();
   }
 }

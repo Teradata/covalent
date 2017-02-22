@@ -1,0 +1,23 @@
+<td-file-input *ngIf="!files" [multiple]="multiple" [disabled]="disabled" [accept]="accept" [color]="defaultColor" (select)="handleSelect($event)">
+  <template [cdkPortalHost]="inputLabel" [ngIf]="true"></template>
+</td-file-input>
+<div *ngIf="files" layout="row">
+  <button #fileUpload
+          class="td-file-upload"
+          md-raised-button
+          type="button"
+          [color]="activeColor"
+          (keyup.delete)="cancel()"
+          (keyup.backspace)="cancel()"
+          (keyup.escape)="cancel()"
+          (click)="uploadPressed()"> 
+    <ng-content></ng-content>
+  </button>
+  <button md-icon-button
+          type="button"
+          class="td-file-upload-cancel"
+          [color]="cancelColor"            
+          (click)="cancel()">
+    <md-icon>cancel</md-icon>
+  </button>
+</div>
