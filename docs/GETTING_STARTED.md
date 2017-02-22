@@ -89,7 +89,7 @@ $theme: md-light-theme($primary, $accent, $warn);
 
 You only need this single Sass file; you do not need to use Sass to style the rest of your app.
 
-If you are using the Angular CLI, support for compiling Sass to css is built-in; you only have to add a new entry to the "styles" list in angular-cli.json pointing to the theme file (e.g., themes.scss).
+If you are using the Angular CLI, support for compiling Sass to css is built-in; you only have to add a new entry to the "styles" list in .angular-cli.json pointing to the theme file (e.g., themes.scss).
 
 If you're not using the Angular CLI, you can use any existing Sass tooling to build the file (such as gulp-sass or grunt-sass). The simplest approach is to use the node-sass CLI; you simply run:
 
@@ -119,7 +119,7 @@ System.config({
 
 ### Using platform.scss:
 
-- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in angular-cli.json
+- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json
 load the Material Design font in your `index.html`.  
        
 **src/index.html**
@@ -129,7 +129,7 @@ load the Material Design font in your `index.html`.
 
 or
 
-**angular-cli.json**
+**.angular-cli.json**
 ```json
 "styles": [
   "../node_modules/@covalent/core/common/platform.scss"
