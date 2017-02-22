@@ -10,7 +10,10 @@ body {
         [md-card-avatar] {
             font-size: $md-card-header-size;
             line-height: $md-card-header-size;
+            height: $md-card-header-size;
+            width: $md-card-header-size;
             margin: 16px 0 0 15px;
+            border-radius: 50%;
         }
         [md-card-image] {
             width: 100%;
