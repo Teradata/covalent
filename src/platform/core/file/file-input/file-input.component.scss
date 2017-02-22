@@ -1,0 +1,19 @@
+:host {
+  .td-file-input {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  input.td-file-input-hidden {
+    display: none;
+  }
+  /**
+  * Class that is added ondragenter by the [TdFileDrop] directive.
+  */
+  .drop-zone {
+    // Animation.
+    border-radius: 3px;
+    * {
+      pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+    }
+  }
+}

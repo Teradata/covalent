@@ -7,6 +7,7 @@ import { ComponentsOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
+import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
@@ -46,6 +47,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     HighlightDemoComponent,
     StepsDemoComponent,
     ExpansionPanelDemoComponent,
+    FileInputDemoComponent,
     FileUploadDemoComponent,
     LoadingDemoComponent,
     MarkdownDemoComponent,

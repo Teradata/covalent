@@ -1,28 +1,34 @@
-# td-file-upload
+## TdFileUploadComponent: td-file-upload
 
 ## Usage
 
-Add the element wherever you want to bind a [File | FileList] into a class model without additional elements.
-
-Can also drop a file(s) into the 'Choose a File...' button to bind the file(s) to it.
+Perfect component for file selection and upload in simple flows. Uses `TdFileInputComponent` internally.
 
 Example for usage:
 
 ```html
-<td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary"
+<td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
+  <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
+  <template td-file-input-label>
+    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+  </template>
 </td-file-upload>
 ```
  
 ```typescript
-import { TdFileUploadComponent } from '@covalent/core';
-...
-  directives: [ TdFileUploadComponent ]
-})
 export class Demo {
 
   disabled: boolean = false;
-  
+
+  selectEvent(files: FileList | File): void {
+    if (files instanceof FileList) {
+      ...
+    } else {
+      ...
+    }
+  };
+
   uploadEvent(files: FileList | File): void {
     if (files instanceof FileList) {
       ...
@@ -46,6 +52,7 @@ Properties:
 | `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
 | `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
+| `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
 
 ## Setup
 
@@ -65,57 +72,7 @@ import { CovalentFileModule } from '@covalent/core';
 export class MyModule {}
 ```
 
-# tdFileSelect
-
-### Usage
-
-Add the directive wherever you want to bind a [File | FileList] into a class model to an existing <input type="file"/> element.
-
-Uses optional [(ngModel)] directive to bind file. (if [(ngModel]) exists, [fileSelect] is omitted)   
-
-Example for usage:
-
-```html
-<input type="file" tdFileSelect [(ngModel)]="files" multiple>
-```
-
-## API Summary
-
-Properties:
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `multiple` | `boolean` | Sets whether multiple files can be selected at once in host element, or just a single file. Can also be "multiple" native attribute.
-| `fileSelect` | `function($event)` | Event emitted when a file or files are selected in host [HTMLInputElement]. Emits a [FileList or File] object. Alternative to not use [(ngModel)].
-
-# tdFileDrop
-
-## Usage
-
-Add the directive wherever you want to add drop support to an element to bind a [File | FileList] into a class model.
-
-To add effect when <code>ongragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.
-
-Note: if element has child elements, add <code>* { pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.
-
-Example for usage:
-
-```html
-<div tdFileDrop (fileDrop)="files = $event" multiple [disabled]="disabled">
-</div> 
-```
-
-## API Summary
-
-Properties:
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `multiple` | `boolean` | Sets whether multiple files can be dropped at once in host element, or just a single file. Can also be "multiple" native attribute.
-| `disabled` | `boolean` | Disabled drop events for host element.
-| `fileDrop` | `function($event)` | Event emitted when a file or files are dropped in host element after being validated. Emits a [FileList or File] object.
-
-# tdFileService
+## tdFileService
 
 ## Usage
 
@@ -123,7 +80,7 @@ Service provided with methods that wrap complexity for as easier file upload exp
 
 Recieves as parameter an object that implements the [IUploadOptions] interface.
 
-```
+```typescript
 interface IUploadOptions { 
   url: string; 
   method: 'post' | 'put'; 
@@ -134,7 +91,7 @@ interface IUploadOptions {
 
 Example for usage:
 
-```html
+```typescript
 import { TdFileService, IUploadOptions } from '@covalent/core';
 ...
   providers: [ TdFileService ]
@@ -166,4 +123,7 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `upload` | `function(IUploadState)` | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+
+
+---

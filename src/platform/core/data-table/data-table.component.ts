@@ -27,6 +27,7 @@ export interface ITdDataTableColumn {
   numeric?: boolean;
   format?: (value: any) => any;
   nested?: boolean;
+  sortable?: boolean;
 };
 
 export interface ITdDataTableSelectEvent {
