@@ -9,12 +9,12 @@
         (click)="selectAll(!checkBoxAll.checked)">
       </md-checkbox>
     </th>
-    <th td-data-table-column 
+    <th td-data-table-column
         *ngFor="let column of columns"
         [name]="column.name"
         [numeric]="column.numeric"
-        [active]="_sortable && column === _sortBy"
-        [sortable]="_sortable"
+        [active]="(column.sortable || _sortable) && column === _sortBy"
+        [sortable]="column.sortable ||  _sortable"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
