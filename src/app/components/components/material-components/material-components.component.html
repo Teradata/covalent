@@ -1326,7 +1326,7 @@
   <md-card-title>Slider</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <md-slider min="1" max="5" thumbLabel tickInterval="1"></md-slider>
+    <md-slider color="accent" min="1" max="5" thumbLabel tickInterval="1"></md-slider>
     <md-slider step="5" thumbLabel tickInterval="5"></md-slider>
     <md-slider thumbLabel tick-interval="auto"></md-slider>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1533,7 +1533,7 @@
     <md-divider class="push-top push-bottom"></md-divider>
     <h3 class="md-title">Chip Stacked (with colors)</h3>
     <div layout-gt-xs="row">
-      <md-chip-list flex-gt-xs="50" class="md-chip-list-stacked">
+      <md-chip-list flex-gt-xs="50" class="mat-chip-list-stacked">
         <md-chip *ngFor="let chip of chips"
             [selected]="chip.selected"
             color="{{chip.color}}">
