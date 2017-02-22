@@ -26,9 +26,9 @@ npm i -save @covalent/markdown
 
 ## Setup
 
-`showdown.js` needs to be added as script in the `angular-cli.json` OR referenced in `index.html` (installed as a `markdown` dependency).
+`showdown.js` needs to be added as script in the `.angular-cli.json` OR referenced in `index.html` (installed as a `markdown` dependency).
 
-**angular-cli.json**:
+**.angular-cli.json**:
 
 ```json
 "scripts": [
