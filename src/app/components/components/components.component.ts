@@ -35,10 +35,15 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
-    description: 'Upload input button',
-    icon: 'file_upload',
+    description: 'Text input for files',
+    icon: 'space_bar',
+    route: 'file-input',
+    title: 'File Input',
+  }, {
+    description: 'All-in-one upload button',
+    icon: 'attach_file',
     route: 'file-upload',
-    title: 'File Upload',
+    title: 'File Upload Button',
   }, {
     description: 'Small blocks for multiple items',
     icon: 'label_outline',

@@ -3,7 +3,7 @@
 @import '../layout/layout-theme';
 @import '../steps/steps-theme';
 @import '../expansion-panel/expansion-panel-theme';
-@import '../file/file-upload-theme';
+@import '../file/file-theme';
 @import '../loading/loading-theme';
 @import '../json-formatter/json-formatter-theme';
 @import '../paging/paging-bar-theme';
@@ -15,7 +15,7 @@
   @include td-steps-theme($theme);
   @include td-expansion-panel-theme($theme);
   @include td-chips-theme($theme);
-  @include td-file-upload-theme($theme);
+  @include td-file-theme($theme);
   @include td-json-formatter-theme($theme);
   @include td-paging-bar-theme($theme);
   @include td-loading-theme($theme);
