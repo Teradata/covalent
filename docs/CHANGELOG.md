@@ -29,10 +29,10 @@
 
 ## Bug Fixes
 * **data-table:** make `td-data-table-column` return proper name in sort event. ([8a19aa0cc9b5bb8ec4ffda8d0f7ae6c1dd3cd0dc](https://github.com/Teradata/covalent/commit/8a19aa0cc9b5bb8ec4ffda8d0f7ae6c1dd3cd0dc))
-* **data-table:** no more need for refresh work around for tooltips used under `OnPush`. ([]())
-* **dynamic-forms:** `number` type input works again. ([]())
-* **json-formatter:** no more need for refresh work around for tooltips used under `OnPush`. ([]())
-* **layout:** leverage `[disableClose]` input from sidenav to prevent `ESC` closing the sidenav on `side` mode. ([]())
+* **data-table:** no more need for refresh work around for tooltips used under `OnPush`. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
+* **dynamic-forms:** `number` type input works again. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
+* **json-formatter:** no more need for refresh work around for tooltips used under `OnPush`. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
+* **layout:** leverage `[disableClose]` input from sidenav to prevent `ESC` closing the sidenav on `side` mode. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **publish:** stop publishing the `ts` source files. ([e5841d6fe62a0f36bf227d9d2b72a2b9f40db5b2](https://github.com/Teradata/covalent/commit/e5841d6fe62a0f36bf227d9d2b72a2b9f40db5b2)), closes [#319](https://github.com/Teradata/covalent/issues/319)
 
 ## Features
@@ -43,11 +43,12 @@
   ```
   npm install --save https://github.com/Teradata/covalent-nightly.git
   ```
+* **covalent-data:** new `0.7.0` [@covalent/data](https://github.com/Teradata/covalent-data) release. 
 * **data-table:** add a way to configure a specific column as `sortable`. ([3e24fcfd505395da2f18db2fe2dd96f5cc6e8b87](https://github.com/Teradata/covalent/commit/3e24fcfd505395da2f18db2fe2dd96f5cc6e8b87)), closes [#347](https://github.com/Teradata/covalent/issues/347)
-* **data-table:** leverage the `md-pseudo-checkbox` to render the selectable rows more efficiently. ([]())
+* **data-table:** leverage the `md-pseudo-checkbox` to render the selectable rows more efficiently. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **dependencies:** add documentation on how to use `ngx-translate` and `LOCALE_ID`. ([776331bb5bc4098a4264a36e1275b3c83727e61a](https://github.com/Teradata/covalent/commit/776331bb5bc4098a4264a36e1275b3c83727e61a))
 * **dependencies:** add `@angular/flex-layout` as a `@covalent/core` dependency. ([171a69dbc77e3cb02fee2cd38db314670015f3fe](https://github.com/Teradata/covalent/commit/171a69dbc77e3cb02fee2cd38db314670015f3fe)), closes [#239](https://github.com/Teradata/covalent/issues/239)
-* **dependencies:** support [@angular/material@1.0.0-beta.2](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta2-flannel-papaya-2017-02-15). ([]()), closes [#346](https://github.com/Teradata/covalent/issues/346)
+* **dependencies:** support [@angular/material@1.0.0-beta.2](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta2-flannel-papaya-2017-02-15). ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07)), closes [#346](https://github.com/Teradata/covalent/issues/346)
 * **deployment:** make every `@angular` dependency a `peerDependency` expect for `material` since its still beta. ([c05c45c2d83cc008233f81889ed5e873f9b98dde](https://github.com/Teradata/covalent/commit/c05c45c2d83cc008233f81889ed5e873f9b98dde))
 * **docs:** add browser support. ([0e2bb25ccc86388dbe4c4e42c68399f29c4ff05d](https://github.com/Teradata/covalent/commit/0e2bb25ccc86388dbe4c4e42c68399f29c4ff05d))
 * **file-input:** introducing `file-input` component as part of the `file` module with `ngModel` support. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7)), closes [#326](https://github.com/Teradata/covalent/issues/326)
@@ -66,7 +67,7 @@
 * **cli:** upgrade to latest `@angular/cli@1.0.0-beta.32.3` and its dependencies. ([3a082d7b645ded78544bb42efdf3fff52fe1d90d](https://github.com/Teradata/covalent/commit/3a082d7b645ded78544bb42efdf3fff52fe1d90d))
 * **dependencies:** bump to `@angular@2.4.5`. ([c05c45c2d83cc008233f81889ed5e873f9b98dde](https://github.com/Teradata/covalent/commit/c05c45c2d83cc008233f81889ed5e873f9b98dde))
 * **dependencies:** bump to `@swimlane/ngx-charts@4.1.1`. ([3f0ace5b4b3e599a99a4761891d897abaa05c938](https://github.com/Teradata/covalent/commit/3f0ace5b4b3e599a99a4761891d897abaa05c938))
-* **docs:** use `td-search-box` in the iconography docs. ([]())
+* **docs:** use `td-search-box` in the iconography docs. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **ghpages:** leverage `--sourcemap=false` for deployment. ([3a082d7b645ded78544bb42efdf3fff52fe1d90d](https://github.com/Teradata/covalent/commit/3a082d7b645ded78544bb42efdf3fff52fe1d90d))
 * **publish:** separate publish-release to run as individual script. ([d1e397a50ea7d02d70339567ecdf40258acac906](https://github.com/Teradata/covalent/commit/d1e397a50ea7d02d70339567ecdf40258acac906))
 * **code-health:** add initial unit tests. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7))
