@@ -8,7 +8,7 @@
 
   /deep/ {
     // Ensuring sidenav content has flex column properties
-    & > md-sidenav-container > md-sidenav > .md-sidenav-focus-trap >.cdk-focus-trap-content {
+    & > md-sidenav-container > md-sidenav > .mat-sidenav-focus-trap >.cdk-focus-trap-content {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;

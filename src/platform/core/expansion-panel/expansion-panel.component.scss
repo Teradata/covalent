@@ -5,11 +5,11 @@
       &:focus {
         outline: none;
       }
-      &.md-interaction-disabled .md-list-item {
+      &.mat-list-item.mat-interaction-disabled .mat-list-item-content {
         background: none !important;
         cursor: auto;
       }
-      &.md-tall .md-list-item {
+      &.mat-tall .mat-list-item-content {
         height: auto;
         padding-left: 0;
         padding-right: 0;

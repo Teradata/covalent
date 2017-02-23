@@ -334,38 +334,38 @@
     <form>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="Company (disabled)" disabled value="Google">
+          <input mdInput placeholder="Company (disabled)" disabled value="Google">
         </md-input-container>
       </div>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="First name">
+          <input mdInput placeholder="First name">
         </md-input-container>
         <md-input-container flex>
-          <input md-input placeholder="Long Last Name That Will Be Truncated">
-        </md-input-container>
-      </div>
-
-      <div layout="row" layout-margin>
-        <md-input-container flex>
-          <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
-        </md-input-container>
-      </div>
-      <div layout="row" layout-margin>
-        <md-input-container flex>
-          <textarea md-input placeholder="Address 2"></textarea>
+          <input mdInput placeholder="Long Last Name That Will Be Truncated">
         </md-input-container>
       </div>
 
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="City">
+          <textarea mdInput placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-input-container>
+      </div>
+
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input mdInput placeholder="City">
         </md-input-container>
         <md-input-container flex>
-          <input md-input placeholder="State">
+          <input mdInput placeholder="State">
         </md-input-container>
         <md-input-container flex>
-          <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
           <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
         </md-input-container>
       </div>
@@ -378,38 +378,38 @@
       <form>
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="Company (disabled)" disabled value="Google">
+            <input mdInput placeholder="Company (disabled)" disabled value="Google">
           </md-input-container>
         </div>
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="First name">
+            <input mdInput placeholder="First name">
           </md-input-container>
           <md-input-container flex>
-            <input md-input placeholder="Long Last Name That Will Be Truncated">
-          </md-input-container>
-        </div>
-
-        <div layout="row" layout-margin>
-          <md-input-container flex>
-            <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
-          </md-input-container>
-        </div>
-        <div layout="row" layout-margin>
-          <md-input-container flex>
-            <textarea md-input placeholder="Address 2"></textarea>
+            <input mdInput placeholder="Long Last Name That Will Be Truncated">
           </md-input-container>
         </div>
 
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="City">
+            <textarea mdInput placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+          </md-input-container>
+        </div>
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <textarea mdInput placeholder="Address 2"></textarea>
+          </md-input-container>
+        </div>
+
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input mdInput placeholder="City">
           </md-input-container>
           <md-input-container flex>
-            <input md-input placeholder="State">
+            <input mdInput placeholder="State">
           </md-input-container>
           <md-input-container flex>
-            <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
             <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
           </md-input-container>
         </div>
@@ -1307,7 +1307,7 @@
   <md-card-content>
     <button md-raised-button
         md-ripple
-        [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+        [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
       Click me
     </button>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1315,7 +1315,7 @@
       <![CDATA[
         <button md-raised-button
             md-ripple
-            [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+            [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
           Click me
         </button>
         ]]>
@@ -1326,7 +1326,7 @@
   <md-card-title>Slider</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <md-slider min="1" max="5" thumbLabel tickInterval="1"></md-slider>
+    <md-slider color="accent" min="1" max="5" thumbLabel tickInterval="1"></md-slider>
     <md-slider step="5" thumbLabel tickInterval="5"></md-slider>
     <md-slider thumbLabel tick-interval="auto"></md-slider>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1466,6 +1466,59 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-title>Autocomplete</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row">
+      <md-input-container flex="50">
+        <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+          (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+      </md-input-container>
+    </div>
+    
+    <div class="push-top">
+      <button md-button (click)="modelDir.reset()">RESET</button>
+      <button md-button (click)="currentState='California'">SET VALUE</button>
+      <button md-button (click)="tdDisabled=!tdDisabled">
+        TOGGLE DISABLED
+      </button>
+    </div>
+
+    <md-autocomplete #tdAuto="mdAutocomplete">
+      <md-option *ngFor="let state of tdStates" [value]="state.name">
+        <span>{{ state.name }}</span>
+        <span class="demo-secondary-text"> ({{state.code}}) </span>
+      </md-option>
+    </md-autocomplete>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div layout="row">
+          <md-input-container flex="50">
+            <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+              (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+          </md-input-container>
+        </div>
+
+        <div class="push-top">
+          <button md-button (click)="modelDir.reset()">RESET</button>
+          <button md-button (click)="currentState='California'">SET VALUE</button>
+          <button md-button (click)="tdDisabled=!tdDisabled">
+            TOGGLE DISABLED
+          </button>
+        </div>
+
+        <md-autocomplete #tdAuto="mdAutocomplete">
+          <md-option *ngFor="let state of tdStates" [value]="state.name">
+            <span>{ { state.name } }</span>
+            <span class="demo-secondary-text"> ({ {state.code} }) </span>
+          </md-option>
+        </md-autocomplete>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>Chips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
@@ -1480,7 +1533,7 @@
     <md-divider class="push-top push-bottom"></md-divider>
     <h3 class="md-title">Chip Stacked (with colors)</h3>
     <div layout-gt-xs="row">
-      <md-chip-list flex-gt-xs="50" class="md-chip-list-stacked">
+      <md-chip-list flex-gt-xs="50" class="mat-chip-list-stacked">
         <md-chip *ngFor="let chip of chips"
             [selected]="chip.selected"
             color="{{chip.color}}">

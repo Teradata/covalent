@@ -6,7 +6,7 @@
   td-search-input {
     margin-left: 12px;
     /deep/ {
-      .md-input-placeholder.md-focused {
+      .mat-input-placeholder.mat-focused {
         visibility: hidden;
       }
     }

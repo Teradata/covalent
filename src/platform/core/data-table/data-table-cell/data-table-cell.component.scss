@@ -15,7 +15,7 @@
     vertical-align: middle;
   }
 
-  &.md-clickable {
+  &.mat-clickable {
     cursor: pointer;
 
     &:focus {
@@ -23,7 +23,7 @@
     }
   }
 
-  &.md-numeric {
+  &.mat-numeric {
     text-align: right;
   }
 }

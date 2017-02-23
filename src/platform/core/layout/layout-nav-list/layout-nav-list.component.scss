@@ -7,10 +7,10 @@
   overflow: hidden;
   md-sidenav-container.td-layout-nav-list {
     & > md-sidenav {
-      &.md-sidenav-opened,
-      &.md-sidenav-opening,
-      &.md-sidenav-closed,
-      &.md-sidenav-closing {
+      &.mat-sidenav-opened,
+      &.mat-sidenav-opening,
+      &.mat-sidenav-closed,
+      &.mat-sidenav-closing {
         box-shadow: none;
       }
     }
@@ -24,7 +24,7 @@
 }
 :host /deep/ {
   md-sidenav-container.td-layout-nav-list {
-    & > .md-sidenav-content {
+    & > .mat-sidenav-content {
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */

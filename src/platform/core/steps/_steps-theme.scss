@@ -9,7 +9,7 @@
   $background: map-get($theme, background);
   td-steps {
     .td-steps-header {
-      @include md-elevation(1);
+      @include mat-elevation(1);
     }
     .td-step-content,
     .td-step-summary,
@@ -28,26 +28,26 @@
       .md-caption {
         color: md-color($foreground, secondary-text);
       }
-      .md-disabled {
+      .mat-disabled {
         &, & * {
           color: md-color($foreground, disabled);
         }
       }
-      .md-warn {
+      .mat-warn {
         &, & * {
           color: md-color($warn);
         }
       }
-      .md-complete {
+      .mat-complete {
         color: md-color($accent);
       }
     }
     .td-circle {
       color: md-color($background, card);
-      &.md-active {
+      &.mat-active {
         background-color: md-color($accent);
       }
-      &.md-inactive {
+      &.mat-inactive {
         background-color: md-color($foreground, disabled);
       }
       & md-icon {

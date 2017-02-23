@@ -36,7 +36,7 @@ describe('Directive: Loading', () => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('.md-primary'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
@@ -68,7 +68,7 @@ describe('Directive: Loading', () => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('.md-accent'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.mat-accent'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
@@ -112,7 +112,7 @@ describe('Directive: Loading', () => {
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.md-warn'))).toBeTruthy();
+          expect(fixture.debugElement.query(By.css('.mat-warn'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
@@ -179,7 +179,7 @@ describe('Directive: Loading', () => {
           fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.md-primary'))).toBeTruthy();
+          expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
