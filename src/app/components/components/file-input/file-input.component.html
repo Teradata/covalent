@@ -1,0 +1,104 @@
+<md-card>
+  <md-card-title>File Input</md-card-title>
+  <md-card-subtitle>single or multiple selection/drop</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <template md-tab-label>Demo</template>
+      <md-card-content>
+        <div layout="row">
+          <md-input-container tdFileDrop
+                              [disabled]="disabled"
+                              (fileDrop)="files = $event"
+                              (click)="fileInput.inputElement.click()"
+                              (keyup.enter)="fileInput.inputElement.click()"
+                              (keyup.delete)="fileInput.clear()"
+                              (keyup.backspace)="fileInput.clear()"
+                              flex>
+            <input mdInput
+                   placeholder="select or drop files"
+                   [value]="files?.length ? (files?.length + ' files') : files?.name"
+                   [disabled]="disabled"
+                   readonly/>
+          </md-input-container>
+          <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+            <md-icon>cancel</md-icon>
+          </button>
+          <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+            <md-icon>folder</md-icon>
+            <span class="text-upper">Browse...</span>
+          </td-file-input>
+          <span>
+            <button md-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
+          </span>
+        </div>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+      </md-card-actions>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Code</template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row">
+              <md-input-container tdFileDrop
+                                  [disabled]="disabled"
+                                  (fileDrop)="files = $event"
+                                  (click)="fileInput.inputElement.click()"
+                                  (keyup.enter)="fileInput.inputElement.click()"
+                                  (keyup.delete)="fileInput.clear()"
+                                  (keyup.backspace)="fileInput.clear()"
+                                  flex>
+                <input mdInput
+                      placeholder="select or drop files"
+                      [value]="files?.length ? (files?.length + ' files') : files?.name"
+                      [disabled]="disabled"
+                      readonly/>
+              </md-input-container>
+              <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+                <md-icon>cancel</md-icon>
+              </button>
+              <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+                <md-icon>folder</md-icon>
+                <span class="text-upper">Browse...</span>
+              </td-file-input>
+              <span>
+                <button md-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
+              </span>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>CSS:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            .drop-zone {
+              font-weight: 600;
+              /deep/ * {
+                pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              files: File | FileList;
+              disabled: boolean = false;
+
+              toggleDisabled(): void {
+                this.disabled = !this.disabled;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<td-readme-loader resourceUrl="platform/core/file/file-input/README.md"></td-readme-loader>

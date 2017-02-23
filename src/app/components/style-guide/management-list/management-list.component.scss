@@ -1,0 +1,7 @@
+md-select { 
+  & /deep/ {
+    .mat-select-underline {
+      display: none;
+    }
+  }
+}

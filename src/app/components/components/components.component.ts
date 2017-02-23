@@ -1,4 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
 
@@ -8,7 +9,7 @@ import { fadeAnimation } from '../../app.animations';
   templateUrl: './components.component.html',
   animations: [fadeAnimation],
 })
-export class ComponentsComponent {
+export class ComponentsComponent implements AfterViewInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -34,10 +35,15 @@ export class ComponentsComponent {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
-    description: 'Upload input button',
-    icon: 'file_upload',
+    description: 'Text input for files',
+    icon: 'space_bar',
+    route: 'file-input',
+    title: 'File Input',
+  }, {
+    description: 'All-in-one upload button',
+    icon: 'attach_file',
     route: 'file-upload',
-    title: 'File Upload',
+    title: 'File Upload Button',
   }, {
     description: 'Small blocks for multiple items',
     icon: 'label_outline',
@@ -59,25 +65,10 @@ export class ComponentsComponent {
     route: 'data-table',
     title: 'Data Table',
   }, {
-    description: 'Highlighting your code snippets',
-    icon: 'code',
-    route: 'syntax-highlighting',
-    title: 'Syntax Highlighting',
-  }, {
     description: 'JSON object tree with collapsible nodes',
     icon: 'format_indent_increase',
     route: 'json-formatter',
     title: 'JSON Formatter',
-  }, {
-    description: 'Parse markdown code',
-    icon: 'chrome_reader_mode',
-    route: 'markdown',
-    title: 'Markdown',
-  }, {
-    description: 'Responsive Charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'Charts',
   }, {
     description: 'Paging for lists and tables',
     icon: 'swap_horiz',
@@ -94,20 +85,10 @@ export class ComponentsComponent {
     route: 'search',
     title: 'Search',
   }, {
-    description: 'Build forms from a JS object',
-    icon: 'format_align_center',
-    route: 'dynamic-forms',
-    title: 'Dynamic Forms',
-  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
     title: 'Media Queries',
-  }, {
-    description: 'Http wrappers and helpers',
-    icon: 'http',
-    route: 'http',
-    title: 'Http',
   }, {
     description: 'Core directives & utilities',
     icon: 'wb_iridescent',
@@ -120,4 +101,49 @@ export class ComponentsComponent {
     title: 'Pipes',
   }];
 
+  optional: Object[] = [{
+    description: 'Highlighting your code snippets',
+    icon: 'code',
+    route: 'syntax-highlighting',
+    title: 'Syntax Highlighting',
+  }, {
+    description: 'Parse markdown code',
+    icon: 'chrome_reader_mode',
+    route: 'markdown',
+    title: 'Markdown',
+  }, {
+    description: 'Build forms from a JS object',
+    icon: 'format_align_center',
+    route: 'dynamic-forms',
+    title: 'Dynamic Forms',
+  }, {
+    description: 'Http wrappers and helpers',
+    icon: 'http',
+    route: 'http',
+    title: 'HTTP Service',
+  }, {
+    description: 'Deprecated (use ngx-charts) ',
+    icon: 'show_chart',
+    route: 'charts',
+    title: 'TD Charts',
+  }];
+
+  external: Object[] = [{
+    description: 'Declarative D3 framework for ng2',
+    icon: 'insert_chart',
+    route: 'ngx-charts',
+    title: 'NGX-Charts',
+  }, {
+    description: 'i18n library for ng2',
+    icon: 'language',
+    route: 'ngx-translate',
+    title: 'NGX-Translate',
+  }];
+
+  constructor(public media: TdMediaService) {}
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+  }
 }

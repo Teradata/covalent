@@ -4,53 +4,21 @@
     <md-card-subtitle>A card overlaying a toolbar (this page is using card over)</md-card-subtitle>
     <md-divider></md-divider>
     <md-card-content>
+      <md-list>
+        <h3 md-subheader>Recommended usage:</h3>
+        <md-list-item>
+          <p md-line>Multi-step form view</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <p md-line>Blog post or item detail</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
       <div layout-gt-md="row">
         <div flex-gt-md="45">
           <td-steps>
-            <td-step [active]="true" label="Step 1: td-layout" sublabel="td-layout is the wrapper component">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
-                  <p md-line>The wrapper of your entire layout</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>#layout</code></h3>
-                  <p md-line>The ID and local reference of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>sidenavTitle?: string</code></h3>
-                  <p md-line>The title of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>logo?: string</code></h3>
-                  <p md-line>The path to your sidenav logo</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-            <td-step label="Step 2: menu-items" sublabel="the sidenav menu items">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
-                  <p md-line>The menu items wrapper</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
-                  <p md-line>Loops over the routes from your Class</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
-                  <p md-line>The SVG or font icon</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-            <td-step label="Step 3: td-layout-nav" sublabel="the content wrapper of the layout">
+            <td-step label="td-layout-nav" sublabel="the content wrapper of the layout">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
@@ -69,7 +37,7 @@
                 <md-divider></md-divider>
               </md-list>
             </td-step>
-            <td-step label="Step 4: td-layout-card-over" sublabel="the main card content area">
+            <td-step label="td-layout-card-over" sublabel="the main card content area">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-card-over>]]></code></h3>
@@ -86,6 +54,11 @@
                   <p md-line>The card subtitle</p>
                 </md-list-item>
                 <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code>color?: string</code></h3>
+                    <p md-line>Toolbar color (primary | accent | warn | none)</p>
+                  </md-list-item>
+                <md-divider></md-divider>
                 <md-list-item>
                   <h3 md-line><code>cardWidth?: number</code></h3>
                   <p md-line>The card width percentage (default 70)</p>
@@ -98,7 +71,7 @@
                 <md-divider></md-divider>
               </md-list>
             </td-step>
-            <td-step label="Step 5: td-layout-footer" sublabel="optional sticky footer">
+            <td-step label="td-layout-footer" sublabel="optional sticky footer">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-footer>]]></code></h3>
@@ -112,13 +85,6 @@
           <h3 class="md-title">HTML</h3>
           <td-highlight lang="html">
             <![CDATA[
-            <td-layout #layout sidenavTitle="Sidenav Title" logo="svgIconName">
-              <md-nav-list menu-items>
-                <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
-                  <md-icon>{ {item.icon} }</md-icon>
-                  { {item.title} }
-                </a>
-              </md-nav-list>
               <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
                 <td-layout-card-over cardTitle="Card Title" cardSubtitle="Card subtitle" cardWidth="75">
                   <router-outlet></router-outlet>
@@ -127,29 +93,6 @@
                   Optional footer
                 </td-layout-footer>
               </td-layout-nav>
-            </td-layout>
-            ]]>
-          </td-highlight>
-          <h3 class="md-title">TypeScript routes for sidenav</h3>
-          <td-highlight lang="typescript">
-            <![CDATA[
-              export class YourComponent {
-
-                routes: Object[] = [
-                  {
-                    title: "Home", route: "/", icon: "home"
-                  }, {
-                    title: "Documentation", route: "/docs", icon: "library_books"
-                  }, {
-                    title: "Style Guide", route: "/style-guide", icon: "color_lens"
-                  }, {
-                    title: "Layouts", route: "/layouts", icon: "view_quilt"
-                  }, {
-                    title: "Teradata Components", route: "/components", icon: "picture_in_picture"
-                  }
-                ];
-
-              }
             ]]>
           </td-highlight>
         </div>
@@ -157,10 +100,11 @@
     </md-card-content>
     <md-divider></md-divider>
     <md-card-actions layout="row">
-        <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+        <a md-button [routerLink]="'/layouts'" class="text-upper">Go Back</a>
         <span flex></span>
-        <a md-button color="accent" [routerLink]="'/layouts/manage-list'">Manage List</a>
+        <a md-button color="accent" [routerLink]="'/layouts/manage-list'" class="text-upper">Manage List</a>
     </md-card-actions>
+    <td-readme-loader td-after-card resourceUrl="platform/core/layout/layout-card-over/README.md"></td-readme-loader>
   </td-layout-card-over>
   <td-layout-footer>
     Optional footer

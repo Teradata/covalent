@@ -11,7 +11,7 @@
         npm run start-api
       </td-highlight>
       <p>You should see the server running starting with:</p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         INFO[0000] ################################################################## 
         INFO[0000] ########                                                  ######## 
         INFO[0000] ######## Teradata Covalent Atomic Data mock API server    ######## 
@@ -28,7 +28,7 @@
       <h3>Customizing Mock Data Schema</h3>
       <p>You can easily modify or create new schemas for mock data in the <code>/mock-api/schemas/</code> directory.</p>
       <p>For example to modify the mock users , edit <code>mock-api/schemas/users.yaml</code></p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         # this is a sample schema file for a user object.
 
         ---
@@ -45,7 +45,7 @@
       <h3>Modifying Mock Data</h3>
       <p>Dynamic data is wrapped in _underscores_ that match up to text files in <code>/mock-api/datum/</code>.</p>
       <p>For example the <code>_firstname_</code> in the yaml above just looks for <code>/mock-api/datum/firstname.txt</code>, and each value is on a single line:</p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         Aaron
         Benjamin
         Carl
@@ -71,7 +71,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart">Covalent Quickstart Repo</a>
-    <a md-button color="primary" target="_blank" href="https://github.com/teradata/covalent-data">Covalent Data Repo</a>
+    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart" class="text-upper">Quickstart Repo</a>
+    <a md-button color="primary" target="_blank" href="https://github.com/teradata/covalent-data" class="text-upper">Data Repo</a>
   </md-card-actions>
 </md-card>

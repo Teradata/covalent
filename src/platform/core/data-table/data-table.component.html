@@ -1,7 +1,7 @@
-<div class="md-table-container" *ngIf="hasData" title>
+<div class="mat-table-container" *ngIf="hasData" title>
   <table td-data-table
-         [class.md-selectable]="_selectable">
-    <th td-data-table-column class="md-checkbox-column" *ngIf="_selectable">
+         [class.mat-selectable]="_selectable">
+    <th td-data-table-column class="mat-checkbox-column" *ngIf="_selectable">
       <md-checkbox
         #checkBoxAll
         *ngIf="_multiple"
@@ -9,26 +9,24 @@
         (click)="selectAll(!checkBoxAll.checked)">
       </md-checkbox>
     </th>
-    <th td-data-table-column 
+    <th td-data-table-column
         *ngFor="let column of columns"
         [name]="column.name"
         [numeric]="column.numeric"
-        [active]="_sortable && column === _sortBy"
-        [sortable]="_sortable"
-        (mouseleave)="column.tooltip && tooltipRefresh()"
-        (mouseenter)="column.tooltip && tooltipRefresh()"
+        [active]="(column.sortable || _sortable) && column === _sortBy"
+        [sortable]="column.sortable ||  _sortable"
         [sortOrder]="_sortOrder"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
-        [class.md-selected]="_selectable && isRowSelected(row)"
+        [class.mat-selected]="_selectable && isRowSelected(row)"
         *ngFor="let row of _data"
         (click)="_selectable && select(row, !isRowSelected(row), $event)">
-      <td td-data-table-cell class="md-checkbox-cell" *ngIf="_selectable">
-        <md-checkbox
-          [checked]="isRowSelected(row)">
-        </md-checkbox>
+      <td td-data-table-cell class="mat-checkbox-cell" *ngIf="_selectable">
+        <md-pseudo-checkbox
+          [state]="isRowSelected(row) ? 'checked' : 'unchecked'">
+        </md-pseudo-checkbox>
       </td>
       <td td-data-table-cell
           [numeric]="column.numeric"

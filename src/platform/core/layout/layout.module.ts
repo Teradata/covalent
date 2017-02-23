@@ -2,7 +2,8 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
+import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule, MdCardModule, MdListModule } from '@angular/material';
 
 import { TdLayoutComponent } from './layout.component';
 import { TdLayoutNavComponent } from './layout-nav/layout-nav.component';
@@ -10,7 +11,8 @@ import { TdLayoutNavListComponent } from './layout-nav-list/layout-nav-list.comp
 import { TdLayoutCardOverComponent } from './layout-card-over/layout-card-over.component';
 import { TdLayoutManageListComponent } from './layout-manage-list/layout-manage-list.component';
 import { TdLayoutFooterComponent } from './layout-footer/layout-footer.component';
-import { TdLayoutService } from './services/layout.service';
+
+import { TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective } from './navigation-drawer/navigation-drawer.component';
 
 const TD_LAYOUTS: Type<any>[] = [
   TdLayoutComponent,
@@ -19,24 +21,30 @@ const TD_LAYOUTS: Type<any>[] = [
   TdLayoutCardOverComponent,
   TdLayoutManageListComponent,
   TdLayoutFooterComponent,
+
+  TdNavigationDrawerComponent,
+  TdNavigationDrawerMenuDirective,
 ];
 
 export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
           TdLayoutCardOverComponent, TdLayoutManageListComponent,
-          TdLayoutFooterComponent };
+          TdLayoutFooterComponent, TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective };
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+    RouterModule,
+    MdSidenavModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    MdButtonModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdListModule.forRoot(),
   ],
   declarations: [
     TD_LAYOUTS,
   ],
   exports: [
-    CommonModule,
-    MaterialModule,
-
     TD_LAYOUTS,
   ],
 })
@@ -44,7 +52,7 @@ export class CovalentLayoutModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentLayoutModule,
-      providers: [ TdLayoutService ],
+      providers: [ ],
     };
   }
 }

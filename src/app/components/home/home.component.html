@@ -1,9 +1,8 @@
-<td-layout-nav logo="assets:teradata">
-  <div toolbar-content layout="row" layout-align="center center" flex>
-    <span>Covalent</span>
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="6">
+      <td-notification-count color="accent" [notifications]="updates.length + 1">
         <md-icon>notifications</md-icon>
       </td-notification-count>
     </button>
@@ -11,39 +10,17 @@
       <td-menu>
         <div td-menu-header class="md-subhead">Updates</div>
         <md-nav-list dense>
-          <a md-list-item [routerLink]="['/components/notifications']">
-            <md-icon md-list-avatar>notifications</md-icon>
-            <h4 md-line><span class="text-wrap">Notifications component added</span></h4>
-            <p md-line>New component</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/components/dynamic-forms']">
-            <md-icon md-list-avatar>format_align_center</md-icon>
-            <h4 md-line><span class="text-wrap">JSON driven dynamic forms</span></h4>
-            <p md-line>New component</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/layouts']">
-            <md-icon md-list-avatar>call_to_action</md-icon>
-            <h4 md-line><span class="text-wrap">Sticky footer added to layouts</span></h4>
-            <p md-line>Component updated</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/components/data-table']">
-            <md-icon md-list-avatar>grid_on</md-icon>
-            <h4 md-line><span class="text-wrap">Nested object support for data-table</span></h4>
-            <p md-line>Component updated</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/components/http']">
-            <md-icon md-list-avatar>http</md-icon>
-            <h4 md-line><span class="text-wrap">HTTP path interceptors &amp; transform support</span></h4>
-            <p md-line>Service updated</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L53-L58" target="_blank">
-            <md-icon md-list-avatar>notifications</md-icon>
-            <h4 md-line><span class="text-wrap">Angular 2.4.1 &amp; Material2 Beta1</span></h4>
+          <template let-item let-last="last" ngFor [ngForOf]="updates">
+            <a md-list-item [routerLink]="[item.route]">
+              <md-icon md-list-avatar>{{item.icon}}</md-icon>
+              <h4 md-line><span class="text-wrap">{{item.description}}</span></h4>
+              <p md-line>{{item.title}}</p>
+            </a>
+            <md-divider></md-divider>
+          </template>
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L57-L81" target="_blank">
+            <md-icon md-list-avatar>change_history</md-icon>
+            <h4 md-line><span class="text-wrap">Angular 2.4.5, Material beta2 &amp; CLI beta.32.3</span></h4>
             <p md-line>Dependencies updated</p>
           </a>
         </md-nav-list>
@@ -93,10 +70,17 @@
     </div>
     <md-divider></md-divider>
     <md-card-actions>
-      <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button color="primary">Gitter Chat</a>
-      <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button>Bug or Feature Request</a>
+      <div layout="row">
+        <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button color="primary" class="text-upper">Gitter Chat</a>
+        <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button class="text-upper">Feature Request</a>
+        <span flex></span>
+        <a md-raised-button mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+          <md-icon svgIcon="assets:github" class="pad-right-xs"></md-icon>
+          <span *ngIf="starCount"><md-icon class="text-md tc-grey-600">star</md-icon> {{starCount}}</span>
+        </a>
+      </div>
     </md-card-actions>
-    <div after-card>
+    <div td-after-card>
       <h3 class="md-title">FAQs</h3>
       <td-expansion-panel label="What is Covalent?" sublabel="what is this thing?">
         <div class="md-padding">
@@ -104,7 +88,7 @@
           Covalent gives you a quickstart to build a modern web application UI and ensure consistency across your enterprise products.
           Some of Covalent's most important features include:
           <ul>
-            <li>Angular-Material 2.</li>
+            <li>Angular-Material 2</li>
             <li>Angular 2 Command-line interface (CLI) for builds, deploys, testing & more.</li>
             <li>Drastically simplified interface layouts (for dashboards, lists, etc).</li>
             <li>Custom web components (stepper, file upload, expansion panels & more).</li>
@@ -132,7 +116,7 @@
             <li>Custom layouts & components in Covalent are developed specifically for enterprise solutions.</li>
             <li>Covalent provides a selection of UI layouts out of the box.</li>
             <li>Our team is continuously adding tools like Syntax Highlighting & Markdown.</li>
-            <li>Our team will always maintain native compatibility with Angular 2 & Material 2.</li>
+            <li>Our team will always maintain native compatibility with Angular 2 & Material  </li>
             <li>Our team will always follow the principles of the official Material Design spec.</li>
           </ul>
         </div>
@@ -174,7 +158,7 @@
           The longer answer:
           Before passing judgement if you have Angular 1.x experience, remember that Angular 2 is a complete rewrite from the ground up.
           Angular 2 moved from an opinionated framework to a sophistated platform.
-          Anguer 2 utilizes ES2015 (previously ES6) and the power of Typescript, which results in a much more native JavaScript platform with coding paradigms & power previously reserved for backend languages.
+          Angular 2 utilizes ES2015 (previously ES6) and the power of Typescript, which results in a much more native JavaScript platform with coding paradigms & power previously reserved for backend languages.
           This means many more back end engineers can jump into the front end and ramp up quickly to productivity.
           Also there are many other benefits, such as:
           <ul>
@@ -247,7 +231,7 @@
   </td-layout-card-over>
   <td-layout-footer>
     <div layout="row" layout-align="start center">
-      <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
+      <span class="md-caption">Copyright &copy; 2016 - 2017 Teradata. All rights reserved</span>
       <span flex></span>
       <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
     </div>

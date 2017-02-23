@@ -1,7 +1,10 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "0.10.0",
+  "version": "1.0.0-beta.2",
   "description": "Teradata UI Platform Dynamic Forms Module",
+  "main": "./dynamic-forms.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
   "keywords": [
     "angular",
     "components",
@@ -12,7 +15,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 7",
+    "node": ">=6.9",
     "npm": ">= 3"
   },
   "repository": {
@@ -33,6 +36,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.10.0"
+    "@covalent/core": "1.0.0-beta.2"
   }
 }

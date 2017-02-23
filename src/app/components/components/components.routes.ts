@@ -5,6 +5,7 @@ import { ComponentsOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
+import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
@@ -22,6 +23,8 @@ import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
+import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 const routes: Routes = [{
   children: [{
@@ -39,6 +42,9 @@ const routes: Routes = [{
     }, {
       component: ExpansionPanelDemoComponent,
       path: 'expansion-panel',
+    }, {
+      component: FileInputDemoComponent,
+      path: 'file-input',
     }, {
       component: FileUploadDemoComponent,
       path: 'file-upload',
@@ -87,6 +93,12 @@ const routes: Routes = [{
     }, {
       component: DynamicFormsDemoComponent,
       path: 'dynamic-forms',
+    }, {
+      component: NgxChartsDemoComponent,
+      path: 'ngx-charts',
+    }, {
+      component: NgxTranslateDemoComponent,
+      path: 'ngx-translate',
     },
   ],
   component: ComponentsComponent,

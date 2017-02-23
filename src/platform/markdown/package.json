@@ -1,7 +1,10 @@
 {
   "name": "@covalent/markdown",
-  "version": "0.10.0",
+  "version": "1.0.0-beta.2",
   "description": "Teradata UI Platform Markdown Module",
+  "main": "./markdown.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
   "keywords": [
     "angular",
     "components",
@@ -10,7 +13,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 7",
+    "node": ">=6.9",
     "npm": ">= 3"
   },
   "repository": {
@@ -31,7 +34,10 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "0.10.0",
-    "showdown": "1.4.2"
+    "showdown": "1.6.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^2.4.5",
+    "@angular/core": "^2.4.5"
   }
 }

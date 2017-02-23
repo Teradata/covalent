@@ -1,7 +1,10 @@
 {
   "name": "@covalent/http",
-  "version": "0.10.0",
+  "version": "1.0.0-beta.2",
   "description": "Teradata UI Platform Http Helper Module",
+  "main": "./http.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
   "keywords": [
     "angular",
     "components",
@@ -13,7 +16,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 7",
+    "node": ">=6.9",
     "npm": ">= 3"
   },
   "repository": {
@@ -33,8 +36,8 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
-  "dependencies": {
-    "@angular/core": "^2.4.1",
-    "@angular/http": "^2.4.1"
+  "peerDependencies": {
+    "@angular/core": "^2.4.5",
+    "@angular/http": "^2.4.5"
   }
 }

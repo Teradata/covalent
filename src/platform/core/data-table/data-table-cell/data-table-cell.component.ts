@@ -1,7 +1,7 @@
 import { Component, Input, Renderer, ElementRef, HostBinding } from '@angular/core';
 
 @Component({
-  /* tslint:disable-next-line */ 
+  /* tslint:disable-next-line */
   selector: 'td[td-data-table-cell]',
   styleUrls: ['./data-table-cell.component.scss' ],
   templateUrl: './data-table-cell.component.html',
@@ -15,7 +15,7 @@ export class TdDataTableCellComponent {
    */
   @Input('numeric') numeric: boolean = false;
 
-  @HostBinding('class.md-numeric')
+  @HostBinding('class.mat-numeric')
   get bindNumeric(): boolean {
     return this.numeric;
   }

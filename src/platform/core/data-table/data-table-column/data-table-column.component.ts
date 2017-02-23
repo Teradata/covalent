@@ -8,7 +8,7 @@ export interface ITdDataTableSortChangeEvent {
 }
 
 @Component({
-  /* tslint:disable-next-line */ 
+  /* tslint:disable-next-line */
   selector: 'th[td-data-table-column]',
   styleUrls: ['./data-table-column.component.scss' ],
   templateUrl: './data-table-column.component.html',
@@ -53,7 +53,7 @@ export class TdDataTableColumnComponent {
   set sortOrder(order: 'ASC' | 'DESC') {
     let sortOrder: string = order ? order.toUpperCase() : 'ASC';
     if (sortOrder !== 'DESC' && sortOrder !== 'ASC') {
-      throw '[sortOrder] must be empty, ASC or DESC';
+      throw new Error('[sortOrder] must be empty, ASC or DESC');
     }
 
     this._sortOrder = sortOrder === 'ASC' ?
@@ -68,22 +68,22 @@ export class TdDataTableColumnComponent {
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
                         new EventEmitter<ITdDataTableSortChangeEvent>();
 
-  @HostBinding('class.md-clickable')
+  @HostBinding('class.mat-clickable')
   get bindClickable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-sortable')
+  @HostBinding('class.mat-sortable')
   get bingSortable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-active')
+  @HostBinding('class.mat-active')
   get bindActive(): boolean {
     return this.active;
   }
 
-  @HostBinding('class.md-numeric')
+  @HostBinding('class.mat-numeric')
   get bindNumeric(): boolean {
     return this.numeric;
   }
@@ -93,7 +93,7 @@ export class TdDataTableColumnComponent {
   }
 
   handleSortBy(): void {
-    this.onSortChange.emit({name: name, order: this._sortOrder});
+    this.onSortChange.emit({name: this.name, order: this._sortOrder});
   }
 
   isAscending(): boolean {

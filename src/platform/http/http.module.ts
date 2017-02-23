@@ -6,10 +6,10 @@ import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-intercept
 
 export const HTTP_CONFIG: OpaqueToken = new OpaqueToken('HTTP_CONFIG');
 
-export type HttpConfig = {inteceptors: IHttpInterceptorConfig[]};
+export type HttpConfig = {interceptors: IHttpInterceptorConfig[]};
 
 export function httpFactory(http: Http, injector: Injector, config: HttpConfig): HttpInterceptorService {
-  return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.inteceptors);
+  return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.interceptors);
 }
 
 @NgModule({
@@ -18,7 +18,7 @@ export function httpFactory(http: Http, injector: Injector, config: HttpConfig):
   ],
 })
 export class CovalentHttpModule {
-  static forRoot(config: HttpConfig = {inteceptors: []}): ModuleWithProviders {
+  static forRoot(config: HttpConfig = {interceptors: []}): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,
       providers: [{

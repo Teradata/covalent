@@ -1,65 +1,48 @@
 :host {
+  display: flex;
   margin: 0;
   width: 100%;
   min-height: 100%;
   height: 100%;
-  position: relative;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  z-index: 0;
   overflow: hidden;
+  md-sidenav-container.td-layout-manage-list {
+    & > md-sidenav {
+      &.mat-sidenav-opened,
+      &.mat-sidenav-opening,
+      &.mat-sidenav-closed,
+      &.mat-sidenav-closing {
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .td-menu-button {
+    margin-left: 0px;
+  }
+  .list {
+    text-align: start;
+  }
 }
 :host /deep/ {
-  md-nav-list a[md-list-item] .md-list-item {
+  md-sidenav-container.td-layout-manage-list {
+    & > .mat-sidenav-content {
+      flex-grow: 1;
+    }
+    /* Ensure the left sidenav is a flex column & 100% height */
+    & > md-sidenav {
+      & > cdk-focus-trap {
+        &, & > div {
+          box-sizing: border-box;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  md-nav-list a[md-list-item] .mat-list-item-content {
     font-size: 14px;
   }
-  md-sidenav-container.td-layout-manage-list {
-    & > .md-sidenav-content {
-      margin-left: 0 !important;
-    }
-  }
-  @media (max-width: 599px) {
-    md-sidenav-container.td-layout-manage-list {
-      & > md-sidenav {
-        width: 100%;
-      }
-    }
-  }
-  @media (min-width: 600px) {
-    md-sidenav-container.td-layout-manage-list {
-      height: 100%;
-      display: flex;
-      & > md-sidenav {
-        width: 257px;
-        transition: none;
-        display: flex;
-        position: relative;
-        height: 100%;
-        min-height: 100%;
-        flex: 0 0 auto;
-        &.md-sidenav-closed,
-        &.md-sidenav-closing {
-          visibility: visible;
-          transform: translate3d(0, 0, 0);
-        }
-        &.md-sidenav-opened,
-        &.md-sidenav-opening,
-        &.md-sidenav-closed,
-        &.md-sidenav-closing {
-          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-        }
-      }
-      & > .md-sidenav-content {
-        display: flex;
-        flex-grow: 1;
-      }
-    }
-  }
-}
-.list {
-    text-align: start;
-}
-.content {
-     overflow: hidden;
 }

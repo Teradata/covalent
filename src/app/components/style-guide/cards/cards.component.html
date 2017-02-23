@@ -1,12 +1,13 @@
 <md-card>
-  <md-card-header>
-    <md-icon md-card-avatar>view_agenda</md-icon>
-    <md-card-title class="md-display-1">Cards</md-card-title>
-  </md-card-header>
+  <md-card-title>Cards Design Patterns</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
     <p>Several examples of Material Design card patterns, all from the official spec.</p>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" href="https://material.io/guidelines/components/cards.html" target="_blank" class="text-upper">Cards Spec</a>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>Standard Card</md-card-title>
@@ -25,8 +26,8 @@
         </md-card-content>
         <md-divider></md-divider>
         <md-card-actions>
-          <button md-button color="accent">Action</button>
-          <button md-button>Cancel</button>
+          <button md-button color="accent" class="text-upper">Action</button>
+          <button md-button class="text-upper">Cancel</button>
         </md-card-actions>
       </md-card>
     </div>
@@ -43,8 +44,8 @@
             </md-card-content>
             <md-divider></md-divider>
             <md-card-actions>
-              <button md-button color="accent">Action</button>
-              <button md-button>Cancel</button>
+              <button md-button color="accent" class="text-upper">Action</button>
+              <button md-button class="text-upper">Cancel</button>
             </md-card-actions>
           </md-card>
         ]]>
@@ -58,48 +59,74 @@
   <md-card-content>
     <div class="md-padding bgc-grey-200">
       <md-card>
-        <md-card-title>Corporate Login</md-card-title>
-        <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
+        <md-card-title layout="row" layout-align="start center"><md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon> <span class="md-title">Login</span></md-card-title>
+        <md-card-subtitle>sign in with your credentials</md-card-subtitle>
         <md-divider></md-divider>
-        <md-card-content>
-          <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
-            <md-input-container flex>
-              <input md-input placeholder="Username" type="text" ngControl="username" required/>
-              <span md-prefix><md-icon>person</md-icon></span>
-            </md-input-container>
-            <md-input-container flex>
-              <input md-input placeholder="Password" type="password" ngControl="password" required/>
-              <span md-prefix><md-icon>lock</md-icon></span>
-            </md-input-container>
+        <md-card-content class="push-bottom-none">
+          <form #loginForm="ngForm">
+            <div layout="row">
+              <md-input-container flex> 
+                <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
+                <md-hint align="start">
+                  <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                </md-hint>
+                <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
+              </md-input-container>
+            </div>
+            <div layout="row" class="push-top-sm">
+              <md-input-container flex> 
+                <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                <md-hint align="start">
+                  <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
+                </md-hint>
+                <md-hint align="end">Something hard to guess</md-hint>
+              </md-input-container>
+            </div>
           </form>
+          <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
         </md-card-content>
         <md-divider></md-divider>
         <md-card-actions>
-          <button [disabled]="!loginForm.form.valid" md-raised-button color="primary">Sign In</button>
+          <div layout="row">
+            <button flex md-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
+          </div>
         </md-card-actions>
       </md-card>
     </div>
     <td-highlight lang="html">
         <![CDATA[
           <md-card>
-            <md-card-title>Corporate Login</md-card-title>
-            <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
+            <md-card-title layout="row" layout-align="start center"><md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon> <span class="md-title">Login</span></md-card-title>
+            <md-card-subtitle>sign in with your credentials</md-card-subtitle>
             <md-divider></md-divider>
-            <md-card-content>
-              <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
-                <md-input-container flex>
-                  <input md-input placeholder="Username" type="text" ngControl="username" required/>
-                  <span md-prefix><md-icon>person</md-icon></span>
-                </md-input-container>
-                <md-input-container flex>
-                  <input md-input placeholder="Password" type="password" ngControl="password" required/>
-                  <span md-prefix><md-icon>lock</md-icon></span>
-                </md-input-container>
+            <md-card-content class="push-bottom-none">
+              <form #loginForm="ngForm">
+                <div layout="row">
+                  <md-input-container flex> 
+                    <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
+                    <md-hint align="start">
+                      <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                    </md-hint>
+                    <md-hint align="end">{ {userElement.value.length} } / 30</md-hint>
+                  </md-input-container>
+                </div>
+                <div layout="row" class="push-top-sm">
+                  <md-input-container flex> 
+                    <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                    <md-hint align="start">
+                      <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
+                    </md-hint>
+                    <md-hint align="end">Something hard to guess</md-hint>
+                  </md-input-container>
+                </div>
               </form>
+              <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
             </md-card-content>
             <md-divider></md-divider>
             <md-card-actions>
-              <button [disabled]="!loginForm.form.valid" md-raised-button color="primary" (click)="login()">Sign In</button>
+              <div layout="row">
+                <button flex md-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
+              </div>
             </md-card-actions>
           </md-card>
         ]]>
@@ -151,7 +178,7 @@
         </md-list>
         <md-divider></md-divider>
         <md-card-actions>
-          <button md-button color="accent">Edit</button>
+          <button md-button color="accent" class="text-upper">Edit</button>
         </md-card-actions>
       </md-card>
     </div>
@@ -196,7 +223,7 @@
             </md-list>
             <md-divider></md-divider>
             <md-card-actions>
-              <button md-button color="accent">Edit</button>
+              <button md-button color="accent" class="text-upper">Edit</button>
             </md-card-actions>
           </md-card>
         ]]>
@@ -212,8 +239,8 @@
       <md-card>
         <md-card-title layout>
           <md-input-container class="text-sm" flex>
-            <input md-input placeholder="search items"/>
-            <span md-prefix><md-icon>search</md-icon></span>
+            <input mdInput placeholder="search items"/>
+            <span mdPrefix><md-icon>search</md-icon></span>
           </md-input-container>
         </md-card-title>
         <md-list class="pull-top">
@@ -243,8 +270,8 @@
           <md-card>
             <md-card-title layout>
               <md-input-container class="text-sm" flex>
-                <input md-input placeholder="search items"/>
-                <span md-prefix><md-icon>search</md-icon></span>
+                <input mdInput placeholder="search items"/>
+                <span mdPrefix><md-icon>search</md-icon></span>
               </md-input-container>
             </md-card-title>
             <md-list class="pull-top">
@@ -284,7 +311,7 @@
             <md-card-title>Header title</md-card-title>
             <md-card-subtitle>Header subtitle</md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="https://placekitten.com/600/400">
+        <img md-card-image src="https://placekitten.com/g/600/400">
         <md-card-content>
           <h3 class="md-subhead">Content title</h3>
           <p class="md-body-1">Here is some more content</p>
@@ -299,7 +326,7 @@
                 <md-card-title>Header title</md-card-title>
                 <md-card-subtitle>Header subtitle</md-card-subtitle>
             </md-card-header>
-            <img md-card-image src="https://placekitten.com/600/400">
+            <img md-card-image src="https://placekitten.com/g/600/400">
             <md-card-content>
               <h3 class="md-subhead">Content title</h3>
               <p class="md-body-1">Here is some more content</p>

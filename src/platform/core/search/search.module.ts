@@ -1,9 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
+import { MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
 
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
@@ -13,9 +13,11 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   imports: [
-    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
-    MaterialModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdButtonModule.forRoot(),
   ],
   declarations: [
     TdSearchInputComponent,

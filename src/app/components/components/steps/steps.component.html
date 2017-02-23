@@ -24,8 +24,8 @@
           <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
             This step is required!
             <template td-step-actions>
-              <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
-              <button md-button (click)="step2.active = false">Cancel</button>
+              <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+              <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
             </template>
           </td-step>
           <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
@@ -34,8 +34,8 @@
               Use an optional step summary to summarize the info in this step
             </template>
             <template td-step-actions>
-              <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
-              <button md-button (click)="step3.active = false">Cancel</button>
+              <button md-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+              <button md-button (click)="step3.active = false" class="text-upper">Cancel</button>
             </template>
           </td-step>
         </td-steps>
@@ -53,8 +53,8 @@
               <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state." [state]="stateStep2" [disabled]="disabled">
                 This step is required!
                 <template td-step-actions>
-                  <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Toggle Require</button>
-                  <button md-button (click)="step2.active = false">Cancel</button>
+                  <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+                  <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
                 </template>
               </td-step>
               <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
@@ -63,8 +63,8 @@
                   Use an optional step summary to summarize the info in this step
                 </template>
                 <template td-step-actions>
-                  <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Toggle Complete</button>
-                  <button md-button (click)="step3.active = false">Cancel</button>
+                  <button md-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+                  <button md-button (click)="step3.active = false" class="text-upper">Cancel</button>
                 </template>
               </td-step>
             </td-steps>
@@ -105,8 +105,8 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All Steps</button>
-    <button md-button color="primary" (click)="step1.toggle()">Toggle Active Step 1</button>
+    <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+    <button md-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
   </md-card-actions>
 </md-card>
 <md-card>

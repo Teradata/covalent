@@ -26,16 +26,16 @@
         </td-expansion-summary>
         <form class="md-padding" layout="column">
           <md-input-container flex>
-            <input md-input placeholder="Company (disabled)" disabled value="Google"/>
+            <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
           </md-input-container>
           <md-input-container flex>
-            <textarea md-input placeholder="Description" rows="4"></textarea>
+            <textarea mdInput placeholder="Description" rows="4"></textarea>
           </md-input-container>
         </form>
         <md-divider></md-divider>
         <div layout="row" layout-margin layout-align="end center">
-          <button md-button>Cancel</button>
-          <button md-button color="accent">Save</button>
+          <button md-button class="text-upper">Cancel</button>
+          <button md-button color="accent" class="text-upper">Save</button>
         </div>
       </td-expansion-panel>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
@@ -132,8 +132,8 @@
  </md-card-content>
  <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All Expansion Panels</button>
-    <button md-button color="primary" (click)="toggleExpansion1()">Toggle Expansion 1</button>
+    <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle disable</button>
+    <button md-button color="primary" (click)="toggleExpansion1()" class="text-upper">Toggle first</button>
   </md-card-actions>
 </md-card>
 <md-card>

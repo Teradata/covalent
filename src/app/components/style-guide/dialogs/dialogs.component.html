@@ -1,8 +1,5 @@
 <md-card>
-  <md-card-header>
-    <md-icon md-card-avatar>filter_none</md-icon>
-    <md-card-title class="md-display-1">Dialogs, Toasts and Inline Errors</md-card-title>
-  </md-card-header>
+  <md-card-title>Dialogs, Toasts &amp; Form Error Design Patterns</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
     <p>In Material Design, it's recommended to reserve dialogs to  inform users about a specific task and may contain critical information, such as a verbose/critical error, and alert or a confirmation of an action.</p>
@@ -24,7 +21,7 @@
   <md-card-content>
     <p>Example dialog usage:</p>
     <p>Example for an API error or warning:</p>
-    <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+    <button md-raised-button color="warn" (click)="openAlert()">View sensitive document</button>
     <md-divider class="push-top"></md-divider>
     <p>Example for a confirmation on an action:</p>
     <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
@@ -34,7 +31,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+        <button md-raised-button color="warn" (click)="openAlert()">View sensitive document</button>
 
         <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
       ]]>
@@ -77,14 +74,14 @@
   <md-divider></md-divider>
   <md-card-content>
     <p>Example toast usage for a simple confirmation:</p>
-    <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+    <button md-raised-button color="primary" (click)="showSnackBar()">Send direct message</button>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-content>
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+        <button md-raised-button color="primary" (click)="showSnackBar()">Send direct message</button>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
@@ -111,13 +108,13 @@
     <form #myForm="ngForm">
       <div layout-gt-xs="row" layout-margin>
         <md-input-container flex>
-          <input md-input #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
           <md-hint>
             <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
         </md-input-container>
         <md-input-container flex>
-          <input md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
           <md-hint>
             <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
@@ -125,19 +122,19 @@
       </div>
       <div layout-gt-xs="row" layout-margin>
         <md-input-container flex="40">
-          <input md-input #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
+          <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
           <md-hint>
             <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
           <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
         </md-input-container>
         <md-input-container flex="35">
-          <input md-input placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+          <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
         </md-input-container>
       </div>
       <div layout-gt-xs="row" layout-margin>
         <md-input-container flex="20">
-          <input md-input #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
+          <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
           <md-hint>
             <span [hidden]="stateForm.pristine" class="tc-red-600">
               <span [hidden]="!stateForm.errors?.required">Required</span>
@@ -147,7 +144,7 @@
           <md-hint align="end">e.g CA</md-hint>
         </md-input-container>
         <md-input-container flex="25">
-          <input md-input #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+          <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
           <md-hint>
             <span [hidden]="zipForm.pristine" class="tc-red-600">
               <span [hidden]="!zipForm.errors?.required">Required</span>
@@ -161,7 +158,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <div class="inset">
-    <button md-raised-button color="accent" [disabled]="!myForm.valid">Submit Form</button>
+    <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
   </div>
   <md-divider></md-divider>
   <md-card-content>
@@ -170,13 +167,13 @@
         <form #myForm="ngForm">
           <div layout-gt-xs="row" layout-margin>
             <md-input-container flex>
-              <input md-input #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+              <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
               <md-hint>
                 <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
               </md-hint>
             </md-input-container>
             <md-input-container flex>
-              <input md-input #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+              <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
               <md-hint>
                 <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
               </md-hint>
@@ -184,19 +181,19 @@
           </div>
           <div layout-gt-xs="row" layout-margin>
             <md-input-container flex="40">
-              <input md-input #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
+              <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
               <md-hint>
                 <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
               </md-hint>
               <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
             </md-input-container>
             <md-input-container flex="35">
-              <input md-input placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+              <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
             </md-input-container>
           </div>
           <div layout-gt-xs="row" layout-margin>
             <md-input-container flex="20">
-              <input md-input #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
+              <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
               <md-hint>
                 <span [hidden]="stateForm.pristine" class="tc-red-600">
                   <span [hidden]="!stateForm.errors?.required">Required</span>
@@ -206,7 +203,7 @@
               <md-hint align="end">e.g CA</md-hint>
             </md-input-container>
             <md-input-container flex="25">
-              <input md-input #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+              <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
               <md-hint>
                 <span [hidden]="zipForm.pristine" class="tc-red-600">
                   <span [hidden]="!zipForm.errors?.required">Required</span>
@@ -215,6 +212,10 @@
               </md-hint>
               <md-hint align="end">e.g 92101</md-hint>
             </md-input-container>
+          </div>
+          <md-divider></md-divider>
+          <div class="inset">
+            <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
           </div>
         </form>
       ]]>

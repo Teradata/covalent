@@ -2,4 +2,7 @@ md-divider {
   &[md-inset] {
     margin-left: 72px;
   }
+  &[mat-inset] {
+    margin-left: 72px;
+  }
 }

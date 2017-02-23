@@ -14,9 +14,10 @@
   <md-card-title>Buttons</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
+    <p>Tip: Use UPPERCASE text for 1-2 words, and Titlecase text for 3+ words.</p>
     <md-card-actions>
-      <button md-button>FLAT</button>
-      <button md-raised-button>RAISED</button>
+      <button md-button class="text-upper">Flat</button>
+      <button md-raised-button class="text-upper">Raised</button>
       <button md-icon-button>
         <md-icon>favorite</md-icon>
       </button>
@@ -34,8 +35,8 @@
     <td-highlight lang="html">
     <![CDATA[
       <!-- Basic Buttons -->
-      <button md-button>FLAT</button>
-      <button md-raised-button>RAISED</button>
+      <button md-button class="text-upper">Flat</button>
+      <button md-raised-button class="text-upper">Raised</button>
       <!-- Button with icon -->
       <button md-icon-button>
         <md-icon>favorite</md-icon>
@@ -53,9 +54,9 @@
 
   <md-card-content>
     <md-card-actions>
-      <button md-raised-button color="primary">PRIMARY</button>
-      <button md-raised-button color="accent">ACCENT</button>
-      <button md-raised-button color="warn">WARN</button>
+      <button md-raised-button color="primary" class="text-upper">Primary</button>
+      <button md-raised-button color="accent" class="text-upper">Accent</button>
+      <button md-raised-button color="warn" class="text-upper">Warn</button>
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
       <button md-mini-fab disabled  color="primary"><md-icon>check circle</md-icon></button>
@@ -67,9 +68,9 @@
     <td-highlight lang="html">
     <![CDATA[
       <!-- Themed Buttons -->
-      <button md-raised-button color="primary">PRIMARY</button>
-      <button md-raised-button color="accent">ACCENT</button>
-      <button md-raised-button color="warn">WARN</button>
+      <button md-raised-button color="primary" class="text-upper">Primary</button>
+      <button md-raised-button color="accent" class="text-upper">Accent</button>
+      <button md-raised-button color="warn" class="text-upper">Warn</button>
       <!-- Disabled Buttons -->
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
@@ -91,13 +92,13 @@
       <md-divider></md-divider>
       <md-card-content>
         <p>Standard card with content</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
       </md-card-content>
       <md-divider></md-divider>
       <md-card-actions>
-        <button md-button color="accent">Action</button>
-        <button md-button>Cancel</button>
+        <button md-button color="accent" class="text-upper">Action</button>
+        <button md-button class="text-upper">Cancel</button>
       </md-card-actions>
     </md-card>
     <td-highlight lang="html">
@@ -109,13 +110,13 @@
         <md-divider></md-divider>
         <md-card-content>
           <p>Standard card with content</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
         </md-card-content>
         <md-divider></md-divider>
         <md-card-actions>
-          <button md-button color="accent">Action</button>
-          <button md-button>Cancel</button>
+          <button md-button color="accent" class="text-upper">Action</button>
+          <button md-button class="text-upper">Cancel</button>
         </md-card-actions>
       </md-card>
     ]]>
@@ -135,7 +136,7 @@
   <md-divider></md-divider>
   <md-card-content>
     <div layout="row" layout-align="start start">
-      <div layout="column" flex="50" style="padding-right: 10px;">
+      <div layout="column" flex="50" class="pad-right">
         <h3>Basic Usage</h3>
         <md-list>
           <md-list-item *ngFor="let grocery of groceries">
@@ -143,7 +144,7 @@
               {{grocery.name}}
             </md-checkbox>
           </md-list-item>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         </md-list>
         <td-highlight lang="html">
         <![CDATA[
@@ -166,15 +167,15 @@
             <md-checkbox flex="initial" [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
               I agree to the terms
             </md-checkbox>
-            <button md-raised-button [disabled]="!user.agreesToTOS" style="margin-left: 10px;">Sign Up</button>
+            <button md-raised-button [disabled]="!user.agreesToTOS" class="pad-right-sm" class="text-upper">Sign Up</button>
           </div>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
           <md-checkbox labelPosition="after">
             I come after my label.
           </md-checkbox>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
           <md-checkbox labelPosition="before">I come before my label</md-checkbox>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         </form>
 
         <td-highlight lang="html">
@@ -185,7 +186,7 @@
               <md-checkbox [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
                 I have read and agree to the terms of service.
               </md-checkbox>
-              <button type="submit" md-raised-button [disabled]="!user.agreesToTOS">Sign Up</button>
+              <button type="submit" md-raised-button [disabled]="!user.agreesToTOS" class="text-upper">Sign Up</button>
             </div>
 
             <md-checkbox labelPosition="after">
@@ -205,86 +206,120 @@
 <md-card>
   <md-card-title>Icons</md-card-title>
   <md-divider></md-divider>
-  <md-card-content layout="row">
-
-    <div flex="50" layout="column" style="padding-right: 10px;">
-      <h3>Basic Icons</h3>
-      <div>
-        <md-icon>account_circle</md-icon>
-        <md-icon>help</md-icon>
-        <md-icon>delete</md-icon>
-        <md-icon>favorite</md-icon>
-        <md-icon>star</md-icon>
-        <md-icon>done_all</md-icon>
-        <md-icon>description</md-icon>
-        <md-icon>open_in_new</md-icon>
-        <md-icon>question_answer</md-icon>
-        <md-icon>schedule</md-icon>
-      </div>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
-      <div>
-        <md-icon>thumb_up</md-icon>
-        <md-icon>today</md-icon>
-        <md-icon>warning</md-icon>
-        <md-icon>airplay</md-icon>
-        <md-icon>comment</md-icon>
-        <md-icon>settings</md-icon>
-        <md-icon>room</md-icon>
-        <md-icon>stars</md-icon>
-        <md-icon>touch_app</md-icon>
-        <md-icon>trending_up</md-icon>
-      </div>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
-      <div>
-        <md-icon>view_list</md-icon>
-        <md-icon>view_module</md-icon>
-        <md-icon>view_quilt</md-icon>
-        <md-icon>view_week</md-icon>
-        <md-icon>view_headline</md-icon>
-        <md-icon>dashboard</md-icon>
-        <md-icon>subject</md-icon>
-        <md-icon>view_carousel</md-icon>
-        <md-icon>playlist_add_check</md-icon>
-        <md-icon>playlist_add</md-icon>
-        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
-      </div>
-      <td-highlight lang="html">
-        <![CDATA[
-          <!-- Basic -->
+  <md-card-content>
+    <div layout="row">
+      <div flex="60" layout="column" class="pad-right-lg">
+        <h3>Basic Icons</h3>
+        <div layout="row" layout-align="space-between center">
           <md-icon>account_circle</md-icon>
-        ]]>
+          <md-icon>help</md-icon>
+          <md-icon>delete</md-icon>
+          <md-icon>favorite</md-icon>
+          <md-icon>star</md-icon>
+          <md-icon>done_all</md-icon>
+          <md-icon>description</md-icon>
+          <md-icon>open_in_new</md-icon>
+          <md-icon>question_answer</md-icon>
+          <md-icon>schedule</md-icon>
+        </div>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+        <div layout="row" layout-align="space-between center">
+          <md-icon>thumb_up</md-icon>
+          <md-icon>today</md-icon>
+          <md-icon>warning</md-icon>
+          <md-icon>airplay</md-icon>
+          <md-icon>comment</md-icon>
+          <md-icon>settings</md-icon>
+          <md-icon>room</md-icon>
+          <md-icon>stars</md-icon>
+          <md-icon>touch_app</md-icon>
+          <md-icon>trending_up</md-icon>
+        </div>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+        <div layout="row" layout-align="space-between center">
+          <md-icon>view_list</md-icon>
+          <md-icon>view_module</md-icon>
+          <md-icon>view_quilt</md-icon>
+          <md-icon>view_week</md-icon>
+          <md-icon>view_headline</md-icon>
+          <md-icon>dashboard</md-icon>
+          <md-icon>subject</md-icon>
+          <md-icon>view_carousel</md-icon>
+          <md-icon>playlist_add_check</md-icon>
+          <md-icon>playlist_add</md-icon>
+        </div>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+        <td-highlight lang="html">
+          <![CDATA[
+            <!-- Basic -->
+            <md-icon>account_circle</md-icon>
+          ]]>
         </td-highlight>
-    </div>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+        <div layout="column">
+          <h3>Icon Sizes</h3>
+          <div layout="row" layout-align="space-between center" class="push-bottom-sm">
+            <md-icon class="md-18">favorite</md-icon>
+            <md-icon class="md-24">favorite</md-icon>
+            <md-icon class="md-36">favorite</md-icon>
+            <md-icon class="md-48">favorite</md-icon>
+            <button md-fab color="accent">
+              <md-icon class="md-18">shopping_cart</md-icon>
+            </button>
+            <button md-fab color="accent">
+              <md-icon class="md-24">shopping_cart</md-icon>
+            </button>
+            <button md-fab color="accent">
+              <md-icon class="md-36">shopping_cart</md-icon>
+            </button>
+          </div>
+          <td-highlight lang="html">
+            <![CDATA[
+              <!-- Icon Sizes (Default: md-24) -->
+              <md-icon class="md-18">favorite</md-icon>
+              <md-icon class="md-24">favorite</md-icon>
+              <md-icon class="md-36">favorite</md-icon>
+              <md-icon class="md-48">favorite</md-icon>
+            ]]>
+          </td-highlight>
+        </div>
+      </div>
 
-    <div flex="50">
-      <md-card-actions>
+      <div flex="40" layout="column">
         <h3>Icons with Buttons</h3>
-        <button md-icon-button>
+        <div layout="row" layout-align="space-between center">
+          <button md-icon-button class="pad-right">
             <md-icon>favorite</md-icon>
-        </button>
-        <button md-fab color="accent">
+          </button>
+          <button md-fab color="accent">
             <md-icon>shopping_cart</md-icon>
-        </button>
-        <button md-mini-fab color="accent">
+          </button>
+          <button md-mini-fab color="accent">
             <md-icon>add</md-icon>
-        </button>
-        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
-      </md-card-actions>
-      <td-highlight lang="html">
-      <![CDATA[
-        <!-- Icons and Buttons -->
-        <button md-icon-button>
-            <md-icon>favorite</md-icon>
-        </button>
-        <button md-fab color="accent">
-            <md-icon>shopping_cart</md-icon>
-        </button>
-        <button md-mini-fab color="accent">
-            <md-icon>add</md-icon>
-        </button>
-        <button md-mini-fab color="accent" disabled><md-icon>backup</md-icon></button>
-      ]]>
-      </td-highlight>
+          </button>
+          <button md-mini-fab color="accent" disabled>
+            <md-icon>backup</md-icon>
+          </button>
+        </div>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+        <td-highlight lang="html">
+          <![CDATA[
+            <!-- Icons and Buttons -->
+            <button md-icon-button>
+              <md-icon>favorite</md-icon>
+            </button>
+            <button md-fab color="accent">
+              <md-icon>shopping_cart</md-icon>
+            </button>
+            <button md-mini-fab color="accent">
+              <md-icon>add</md-icon>
+            </button>
+            <button md-mini-fab color="accent" disabled>
+              <md-icon>backup</md-icon>
+            </button>
+          ]]>
+        </td-highlight>
+      </div>
     </div>
   </md-card-content>
   <md-divider></md-divider>
@@ -300,38 +335,38 @@
     <form>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="Company (disabled)" disabled value="Google">
+          <input mdInput placeholder="Company (disabled)" disabled value="Google">
         </md-input-container>
       </div>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="First name">
+          <input mdInput placeholder="First name">
         </md-input-container>
         <md-input-container flex>
-          <input md-input placeholder="Long Last Name That Will Be Truncated">
-        </md-input-container>
-      </div>
-
-      <div layout="row" layout-margin>
-        <md-input-container flex>
-          <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
-        </md-input-container>
-      </div>
-      <div layout="row" layout-margin>
-        <md-input-container flex>
-          <textarea md-input placeholder="Address 2"></textarea>
+          <input mdInput placeholder="Long Last Name That Will Be Truncated">
         </md-input-container>
       </div>
 
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input md-input placeholder="City">
+          <textarea mdInput placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-input-container>
+      </div>
+
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input mdInput placeholder="City">
         </md-input-container>
         <md-input-container flex>
-          <input md-input placeholder="State">
+          <input mdInput placeholder="State">
         </md-input-container>
         <md-input-container flex>
-          <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
           <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
         </md-input-container>
       </div>
@@ -344,38 +379,38 @@
       <form>
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="Company (disabled)" disabled value="Google">
+            <input mdInput placeholder="Company (disabled)" disabled value="Google">
           </md-input-container>
         </div>
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="First name">
+            <input mdInput placeholder="First name">
           </md-input-container>
           <md-input-container flex>
-            <input md-input placeholder="Long Last Name That Will Be Truncated">
-          </md-input-container>
-        </div>
-
-        <div layout="row" layout-margin>
-          <md-input-container flex>
-            <textarea md-input placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
-          </md-input-container>
-        </div>
-        <div layout="row" layout-margin>
-          <md-input-container flex>
-            <textarea md-input placeholder="Address 2"></textarea>
+            <input mdInput placeholder="Long Last Name That Will Be Truncated">
           </md-input-container>
         </div>
 
         <div layout="row" layout-margin>
           <md-input-container flex>
-            <input md-input placeholder="City">
+            <textarea mdInput placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+          </md-input-container>
+        </div>
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <textarea mdInput placeholder="Address 2"></textarea>
+          </md-input-container>
+        </div>
+
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input mdInput placeholder="City">
           </md-input-container>
           <md-input-container flex>
-            <input md-input placeholder="State">
+            <input mdInput placeholder="State">
           </md-input-container>
           <md-input-container flex>
-            <input md-input #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
             <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
           </md-input-container>
         </div>
@@ -407,7 +442,7 @@
     ]]>
     </td-highlight>
 
-    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
     <!-- Checkbox list -->
     <h3>Checkbox list</h3>
@@ -415,7 +450,7 @@
     <md-list>
       <template ngFor let-todo [ngForOf]="todos">
         <md-list-item>
-          <div layout="row" layout-align="start center" style="width: 100%;">
+          <div layout="row" layout-align="start center">
             <div flex>
               <md-checkbox [checked]="todo.finished">
                 {{todo.name}}
@@ -434,7 +469,7 @@
       <md-list>
         <template ngFor let-todo [ngForOf]="todos">
           <md-list-item>
-            <div layout="row" layout-align="start center" style="width: 100%;">
+            <div layout="row" layout-align="start center">
               <div flex>
                 <md-checkbox [checked]="todo.finished">
                   { { todo.name } }
@@ -449,7 +484,7 @@
     ]]>
     </td-highlight>
 
-    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
     <!-- list with links (nav list) -->
     <h3>Nav list (list with links)</h3>
@@ -473,7 +508,7 @@
     ]]>
     </td-highlight>
 
-    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
 
     <!-- list with Avatars-->
@@ -506,7 +541,7 @@
     ]]>
     </td-highlight>
 
-    <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
     <!-- list with Icons-->
     <h3>3 Line List Item with Icons and inset dividers</h3>
@@ -548,7 +583,7 @@
   <md-divider></md-divider>
   <md-card-content layout="row">
 
-    <div flex="48" style="padding-right: 20px;">
+    <div flex="48" class="pad-right">
       <h3>Progress Bars</h3>
       <h4>Determinate</h4>
       <md-progress-bar mode="determinate" value="40"></md-progress-bar>
@@ -566,11 +601,11 @@
       <h4>Colors</h4>
 
       <md-progress-bar mode="indeterminate" color="primary"></md-progress-bar>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-divider class="push-top-sm push-bottom-sm"></md-divider>
       <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-divider class="push-top-sm push-bottom-sm"></md-divider>
       <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
     <td-highlight lang="html">
       <![CDATA[
@@ -591,9 +626,9 @@
         <h4>Colors</h4>
 
         <md-progress-bar mode="indeterminate" color="primary"></md-progress-bar>
-        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
-        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
       ]]>
       </td-highlight>
@@ -636,7 +671,7 @@
           <md-progress-spinner mode="indeterminate" color="accent"></md-progress-spinner>
           <md-progress-spinner mode="indeterminate" color="warn"></md-progress-spinner>
         </div>
-        <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+        <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
       </div>
 
@@ -684,25 +719,25 @@
   <md-divider></md-divider>
   <md-card-content layout="row">
 
-    <div flex="48" style="padding-right: 20px;">
+    <div flex="48" class="pad-right">
       <!-- Basic Radios -->
       <h3>Basic Radios</h3>
 
       <md-radio-group name="group1">
-        <md-radio-button style="padding-right:10px;" name="group1">Option 1  </md-radio-button>
-        <md-radio-button style="padding-right:10px;" name="group1">Option 2  </md-radio-button>
-        <md-radio-button style="padding-right:10px;" name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
+        <md-radio-button class="pad-right-sm" name="group1">Option 1  </md-radio-button>
+        <md-radio-button class="pad-right-sm" name="group1">Option 2  </md-radio-button>
+        <md-radio-button class="pad-right-sm" name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
       </md-radio-group>
 
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
       <td-highlight lang="html">
       <![CDATA[
         <!-- Basic Radios -->
         <md-radio-group name="group1">
-          <md-radio-button style="padding-right:10px;" name="group1">Option 1  </md-radio-button>
-          <md-radio-button style="padding-right:10px;" name="group1">Option 2  </md-radio-button>
-          <md-radio-button style="padding-right:10px;" name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
+          <md-radio-button name="group1">Option 1  </md-radio-button>
+          <md-radio-button name="group1">Option 2  </md-radio-button>
+          <md-radio-button name="group1" disabled="true">Option 3 (disabled)  </md-radio-button>
         </md-radio-group>
       ]]>
       </td-highlight>
@@ -714,18 +749,18 @@
       <h3>Dynamic Radios</h3>
 
       <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
-        <md-radio-button style="padding-right:10px;" *ngFor="let season of seasonOptions" name="more_options" [value]="season">
+        <md-radio-button class="pad-right-sm" *ngFor="let season of seasonOptions" name="more_options" [value]="season">
           {{season}}
         </md-radio-button>
       </md-radio-group>
       <p>Your favorite season is: <strong>{{favoriteSeason}}</strong></p>
-      <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+      <md-divider class="push-top-sm push-bottom-sm"></md-divider>
 
       <td-highlight lang="html">
       <![CDATA[
         <!-- Dynamic Radios -->
         <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
-          <md-radio-button style="padding-right:10px;" *ngFor="let season of seasonOptions" name="more_options" [value]="season">
+          <md-radio-button *ngFor="let season of seasonOptions" name="more_options" [value]="season">
             {{season}}
           </md-radio-button>
         </md-radio-group>
@@ -932,7 +967,7 @@
   <md-divider></md-divider>
   <md-card-content>
     <div layout="row" layout-align="start start">
-      <div layout="column" flex="50" style="padding-right: 10px;">
+      <div layout="column" flex="50" class="pad-right">
         <h3>Basic Usage</h3>
         <md-list>
           <md-list-item *ngFor="let system of systems">
@@ -940,7 +975,7 @@
               {{system.name}}
             </md-slide-toggle>
           </md-list-item>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         </md-list>
         <td-highlight lang="html">
         <![CDATA[
@@ -981,13 +1016,13 @@
             <md-slide-toggle color="accent" [(ngModel)]="house.lockHouse" name="lockHouse">
               Lock?
             </md-slide-toggle>
-            <md-icon *ngIf="house.lockHouse" style="margin-left: 10px;">lock</md-icon>
+            <md-icon *ngIf="house.lockHouse" class="pad-right-sm">lock</md-icon>
           </div>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
           <md-slide-toggle disabled>
             I am disabled.
           </md-slide-toggle>
-          <md-divider style="margin-top: 15px; margin-bottom: 15px;"></md-divider>
+          <md-divider class="push-top-sm push-bottom-sm"></md-divider>
         </form>
 
         <td-highlight lang="html">
@@ -1105,7 +1140,7 @@
     </md-tab>
   </md-tab-group>
   <md-card-content>
-    
+
   </md-card-content>
 </md-card>
 
@@ -1113,17 +1148,17 @@
   <md-card-title>Tooltips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before" class="text-upper">Bottom Tooltip</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before" class="text-upper">Bottom Tooltip</button>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1273,7 +1308,8 @@
   <md-card-content>
     <button md-raised-button
         md-ripple
-        [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+        [mdRippleColor]="'rgba(30, 136, 229, 0.2)'"
+        class="text-upper">
       Click me
     </button>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1281,7 +1317,8 @@
       <![CDATA[
         <button md-raised-button
             md-ripple
-            [mdRippleBackgroundColor]="'rgba(30, 136, 229, 0.2)'">
+            [mdRippleColor]="'rgba(30, 136, 229, 0.2)'"
+            class="text-upper">
           Click me
         </button>
         ]]>
@@ -1292,7 +1329,7 @@
   <md-card-title>Slider</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <md-slider min="1" max="5" thumbLabel tickInterval="1"></md-slider>
+    <md-slider color="accent" min="1" max="5" thumbLabel tickInterval="1"></md-slider>
     <md-slider step="5" thumbLabel tickInterval="5"></md-slider>
     <md-slider thumbLabel tick-interval="auto"></md-slider>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1328,7 +1365,7 @@
         import { Component } from '@angular/core';
         import { MdSnackBar } from '@angular/material';
         ...
-        ...        
+        ...
         constructor(private _snackBarService: MdSnackBar) {
         }
 
@@ -1343,11 +1380,11 @@
   <md-card-title>Dialog</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+    <button md-raised-button color="accent" (click)="openDialog()">Show simple dialog</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+        <button md-raised-button color="accent" (click)="openDialog()">Show simple dialog</button>
       ]]>
     </td-highlight>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1432,6 +1469,55 @@
   </md-card-content>
 </md-card>
 <md-card>
+  <md-card-title>Autocomplete</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row">
+      <md-input-container flex="50">
+        <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+          (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+      </md-input-container>
+    </div>
+    
+    <div class="push-top">
+      <button md-button (click)="modelDir.reset()" class="text-upper">Reset</button>
+      <button md-button (click)="currentState='California'" class="text-upper">Set value</button>
+      <button md-button (click)="tdDisabled=!tdDisabled" class="text-upper">Toggle disabled</button>
+    </div>
+
+    <md-autocomplete #tdAuto="mdAutocomplete">
+      <md-option *ngFor="let state of tdStates" [value]="state.name">
+        <span>{{ state.name }}</span>
+        <span class="demo-secondary-text"> ({{state.code}}) </span>
+      </md-option>
+    </md-autocomplete>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div layout="row">
+          <md-input-container flex="50">
+            <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+              (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
+          </md-input-container>
+        </div>
+
+        <div class="push-top">
+          <button md-button (click)="modelDir.reset()" class="text-upper">Reset</button>
+          <button md-button (click)="currentState='California'" class="text-upper">Set value</button>
+          <button md-button (click)="tdDisabled=!tdDisabled" class="text-upper">Toggle disabled</button>
+        </div>
+
+        <md-autocomplete #tdAuto="mdAutocomplete">
+          <md-option *ngFor="let state of tdStates" [value]="state.name">
+            <span>{ { state.name } }</span>
+            <span class="demo-secondary-text"> ({ {state.code} }) </span>
+          </md-option>
+        </md-autocomplete>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
   <md-card-title>Chips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
@@ -1446,7 +1532,7 @@
     <md-divider class="push-top push-bottom"></md-divider>
     <h3 class="md-title">Chip Stacked (with colors)</h3>
     <div layout-gt-xs="row">
-      <md-chip-list flex-gt-xs="50" class="md-chip-list-stacked">
+      <md-chip-list flex-gt-xs="50" class="mat-chip-list-stacked">
         <md-chip *ngFor="let chip of chips"
             [selected]="chip.selected"
             color="{{chip.color}}">

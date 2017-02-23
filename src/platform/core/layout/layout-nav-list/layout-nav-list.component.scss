@@ -1,23 +1,36 @@
 :host {
-    display: flex;
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
-    overflow: hidden;
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  md-sidenav-container.td-layout-nav-list {
+    & > md-sidenav {
+      &.mat-sidenav-opened,
+      &.mat-sidenav-opening,
+      &.mat-sidenav-closed,
+      &.mat-sidenav-closing {
+        box-shadow: none;
+      }
+    }
+  }
+  .td-menu-button {
+    margin-left: 0px;
+  }
+  .list {
+    text-align: start;
+  }
 }
 :host /deep/ {
   md-sidenav-container.td-layout-nav-list {
-    & > .md-sidenav-content {
-      margin-left: 0 !important;
+    & > .mat-sidenav-content {
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > md-sidenav {
-        & > cdk-focus-trap {
+      & > cdk-focus-trap {
         &, & > div {
-          min-height: 100%;
-          height: 100%;
           box-sizing: border-box;
           display: -webkit-box;
           display: -webkit-flex;
@@ -29,56 +42,4 @@
       }
     }
   }
-  @media (min-width: 600px) {
-    md-sidenav-container.td-layout-nav-list {
-      height: 100%;
-      display: flex;
-      & > md-sidenav {
-        display: flex;
-        position: relative;
-        height: 100%;
-        width: 33%;
-        min-width: 260px;
-        max-width: 382px;
-        flex: 0 0 auto;
-        transition: none;
-        &.md-sidenav-closed,
-        &.md-sidenav-closing {
-          visibility: visible;
-          transform: translate3d(0, 0, 0);
-        }
-        &.md-sidenav-opened,
-        &.md-sidenav-opening,
-        &.md-sidenav-closed,
-        &.md-sidenav-closing {
-          box-shadow: none;
-        }
-      }
-      & > .md-sidenav-content {
-        margin-left: 0 !important;
-        display: flex;
-      }
-    }
-  }
-  @media (max-width: 599px) {
-    md-sidenav-container.td-layout-nav-list {
-
-      & > md-sidenav {
-        &.md-sidenav-opened,
-        &.md-sidenav-opening,
-        &.md-sidenav-closing {
-          z-index: 3;
-        }
-      }
-      & > .md-sidenav-content {
-        z-index: 2;
-      }
-    }
-  }
-}
-.md-sidenav-left {
-    z-index: 1;
-}
-.list {
-    text-align: start;
 }

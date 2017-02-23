@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { TdChartsComponent } from './charts.component';
 
-/* tslint:disable-next-line */ 
+/* tslint:disable-next-line */
 let d3: any = require('d3');
 
 export interface IChartData {
@@ -66,7 +66,7 @@ export abstract class ChartComponent implements OnInit {
         this.renderChart(data);
       });
     } else {
-      throw '[data] or [dataSrc] must be defined in [TdChartLineComponent]';
+      throw new Error('[data] or [dataSrc] must be defined in [TdChartLineComponent]');
     }
   }
 

@@ -1,0 +1,25 @@
+@import '~@angular/material/core/theming/theming';
+@import '~@angular/material/core/style/variables';
+@import '~@angular/material/core/style/elevation';
+
+@mixin td-file-theme($theme) {
+  $background: map-get($theme, background);
+
+  td-file-upload {
+    .td-file-upload-cancel {
+      md-icon {
+        background-color: md-color($background, background);
+      }
+    }
+  }
+  td-file-input {
+    /**
+    * Class that is added ondragenter by the [TdFileDrop] directive.
+    */
+    .drop-zone {
+      transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
+                  md-elevation-transition-property-value();
+      @include mat-elevation(8);
+    }
+  }
+}

@@ -6,16 +6,6 @@ module.exports = {
       'src/**/**/package.json'
     ],
     deployed: 'deploy/platform/',
-    tsfiles: [
-      'src/typings.d.ts',
-      '!src/main.ts',
-      '!src/polyfills.ts',
-      '!src/test.ts',
-      'src/**/**.ts',
-      '!src/**/**/**spec.ts',
-      '!src/app/**/**.ts',
-      '!src/environments/**/**.ts'
-    ],
     styles: [
       '!src/theme.scss',
       '!src/styles.scss',
@@ -41,6 +31,8 @@ module.exports = {
       'src/**/**.ts',
       '!src/**/**.spec.ts',
       'src/**/**/package.json',
+      'src/**/tsconfig-aot.json',
+      '!src/tests/**/**.ts',
       '!src/app/**/**.html',
       '!src/app/**/**.js',
       '!src/app/**/**.ts',
@@ -48,7 +40,7 @@ module.exports = {
       '!src/polyfills.ts',
       '!src/main.ts',
       '!src/test.ts',
-      '!src/typings.d.ts',
+      'src/typings.d.ts',
       '!src/index.html'
     ]
   }

@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+  md-toolbar {
+    padding: 16px;
+    &.td-toolbar-background {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /deep/ > .mat-toolbar-layout > md-toolbar-row {
+      height: auto !important;
+    }
+  }
+}

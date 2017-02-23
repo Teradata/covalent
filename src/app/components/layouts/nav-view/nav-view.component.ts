@@ -1,8 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 import { fadeAnimation } from '../../../app.animations';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-nav-view',
   styleUrls: ['./nav-view.component.scss'],
   templateUrl: './nav-view.component.html',

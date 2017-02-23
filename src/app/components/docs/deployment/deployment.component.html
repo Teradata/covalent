@@ -39,9 +39,22 @@
    <td-highlight lang="html">
      ng build
    </td-highlight>
+
+    <h3>Building for production</h3>
+    <p>Adding the <code>prod</code> flag to <code>ng build</code> will
+      set the build target and environment to production, which will optimize the build.</p>
+   <td-highlight lang="html">
+     ng build --prod
+   </td-highlight>
+
+    <h3>Ahead-of-time Compilation</h3>
+    <p>When building for production, add the <code>aot</code>
+      flag to enable the Ahead-Of-Time compiler. This will pre-compile Angular modules
+      into native Javascript the browser can easily interpret instead of bundling the Angular compiler within
+      the application and compiling everything in the browser. This will result in faster rendering,
+      fewer asynchronous requests, smaller Angular framework size, and better security for your application.</p>
+   <td-highlight lang="html">
+     ng build --prod --aot
+   </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli#deploying-the-app-via-github-pages">Angular CLI Docs</a>
-  </md-card-actions>
 </md-card>

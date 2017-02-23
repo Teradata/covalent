@@ -6,24 +6,24 @@
      <h3>Covalent Quickstart</h3>
      <h4>Create a new repo based on the covalent-quickstart</h4>
      <p>Clone the covalent-quickstart into a new project folder (e.g. my-product).</p>
-     <td-highlight lang="html">
+     <td-highlight lang="bash">
        git clone https://github.com/Teradata/covalent-quickstart.git my-product
        cd my-product
       </td-highlight>
       <p>Remove the git directory to start clean</p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         rm -rf .git
       </td-highlight>
       <h3>Create a new Git repository for your product</h3>
       <p>You could start writing code now and throw it all away when you're done. If you'd rather preserve your work under source control, consider taking the following steps.</p>
       <p>Initialize this project as a local git repo and make the first commit:</p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         git init
         git add .
         git commit -m "Initial commit"
       </td-highlight>
       <p>Create a remote repository for this project on the service of your choice.</p>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         git remote add origin
         git push -u origin master
       </td-highlight>
@@ -31,35 +31,35 @@
       <h3>Start Developing!</h3>
       <h4>Prerequisites</h4>
       <ul>
-        <li>Node 4.4.4+</li>
+        <li>Node 6.9+</li>
         <li>NPM 3+</li>
         <li>Angular CLI</li>
         <li>Protractor (for testing)</li>
         <li>TSLint (for code style)</li>
       </ul>
       <h4>If you don't have the Angular CLI, install:</h4>
-      <td-highlight lang="html">
-        npm i -g angular-cli@latest
+      <td-highlight lang="bash">
+        npm i -g @angular/cli@latest
       </td-highlight>
       <h4>Install Typescript 2.0:</h4>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         npm install -g typescript@2.0.2
       </td-highlight>
       <h4>To install Protractor & TSLint for testing:</h4>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         npm install -g protractor
         npm install -g tslint
       </td-highlight>
       <h4>Then update the webdriver manager:</h4>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         webdriver-manager update
       </td-highlight>
       <h4>Install Node packages</h4>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         npm i
       </td-highlight>
       <h4>Run the Angular-CLI local server</h4>
-      <td-highlight lang="html">
+      <td-highlight lang="bash">
         ng serve
       </td-highlight>
       <div layout="row" class="push-top">
@@ -72,6 +72,6 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart">Quickstart Repo</a>
+    <a md-button color="accent" target="_blank" href="https://github.com/teradata/covalent-quickstart" class="text-upper">Quickstart Repo</a>
   </md-card-actions>
 </md-card>

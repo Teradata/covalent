@@ -1,233 +1,149 @@
 <md-card>
-  <md-card-title>File Upload</md-card-title>
-  <md-card-subtitle>Upload input button</md-card-subtitle>
+  <md-card-title>File Upload Button</md-card-title>
+  <md-card-subtitle>Single upload input button</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
-    <p>Upload Event (Single Selection/Drop): {{fileUpload1Msg}}</p>
-    <td-file-upload (upload)="uploadEvent1($event)" [disabled]="disabled"></td-file-upload>
-    <p>Select only '.sql' files on dialog:</p>
-    <td-file-upload accept=".sql" [disabled]="disabled"></td-file-upload>
-    <p>Support multiple files on selection/drop:</p>
-    <p>Upload Event (Multiple Selecton/Drop): {{fileUpload3Msg}}</p>
-    <td-file-upload multiple (upload)="uploadEvent3($event)" [disabled]="disabled"></td-file-upload>
-    <p>Custom color palette:</p>
-    <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary" [disabled]="disabled"></td-file-upload>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable All File Uploads</button>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>TdFileUploadComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-file-upload>]]></code></h2>
-    <p>Add the element wherever you want to bind a [File | FileList] into a class model without additional elements.</p>
-    <p>Can also drop a file(s) into the 'Choose a File...' button to bind the file(s) to it.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-file-upload>]]></code> component has {{uploadComponentAttrs.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="uploadComponentAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-file-upload defaultColor="accent" activeColor="warn" cancelColor="primary"
-          (upload)="uploadEvent($event)" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <template md-tab-label>Demo</template>
+      <md-card-content>
+        <h3 class="md-title">Single file selection or drop:</h3>
+        <p>Select Event: {{fileSelectMsg}}</p>
+        <p>Upload Event: {{fileUploadMsg}}</p>
+        <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+          <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+          <template td-file-input-label>
+            <md-icon>attach_file</md-icon><span>Choose a file...</span>
+          </template>
         </td-file-upload>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-        
-          disabled: boolean = false;
-          
-          uploadEvent(files: FileList | File): void {
-            if (files instanceof FileList) {
-              ...
-            } else {
-              ...
-            }
-          };
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentFileModule] using the <code>forRoot()</code> method in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { HttpModule } from '@angular/http';
-        import { CovalentFileModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            HttpModule,
-            CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdFileSelectDirective</md-card-title>
-  <md-card-subtitle>How to use this directive</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code>[TdFileSelect]</code></h2>
-    <p>Add the directive wherever you want to bind a [File | FileList] into a class model to an existing <code><![CDATA[<input type="file"/>]]></code> element.</p>  
-    <h3>Properties:</h3>
-    <p>The <code>[tdFileSelect]</code> directive has {{selectDirectiveAttrs.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="selectDirectiveAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-         <input type="file" tdFileSelect [(ngModel)]="files" multiple>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-        
-          files: FileList | File;
-          
-        }
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdFileDropDirective</md-card-title>
-  <md-card-subtitle>How to use this directive</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code>[tdFileDrop]</code></h2>
-    <p>Add the directive wherever you want to add drop support to an element to bind a [File | FileList] into a class model.</p>
-    <p>To add effect when <code>ongragenter</code> event is executed, override <code>.drop-zone</code> class in the context you are using it.</p>
-    <p>Note: if element has child elements, add <code>* {{'{'}} pointer-events: none; }</code> to avoid event being thrown again while navigating in child elements.</p>
-    <h3>Properties:</h3>
-    <p>The <code>[tdFileDrop]</code> directive has {{dropDirectiveAttrs.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="dropDirectiveAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-         <div tdFileDrop (fileDrop)="files = $event" [disabled]="disabled" multiple>
-         </div> 
-      ]]>
-    </td-highlight>
-    <p>CSS:</p>
-    <td-highlight lang="css">
-      .drop-zone {{'{'}}
-        border: 2px dotted whitesmoke;
-        background-color: red;
-        opacity: 0.5;
-      }
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-        
-          files: FileList | File;
-          disabled: boolean = false;
-          
-        }
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdFileService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code>TdFileService</code></h2>
-    <p>Service provided with methods that wrap complexity for as easier file upload experience.</p>
-    <p>Service.upload() method recieves as parameter an object that implements the [IUploadOptions] interface.</p>
-    <td-highlight lang="typescript">
-      interface IUploadOptions {{'{'}} 
-        url: string;
-        method: 'post' | 'put';
-        file: File;
-        headers?: {{'{'}}[key: string]: string};
-      }
-    </td-highlight>
-    <h3>Methods:</h3>
-    <p>The [TdFileService] service has {{uploadServiceMethods.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="uploadServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdFileService, IUploadOptions } from '@covalent/core';
-        ...
-        })
-        export class Demo {
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+      </md-card-actions>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Code</template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p>Select Event: { {fileSelectMsg} }</p>
+            <p>Upload Event: { {fileUploadMsg} }</p>
+            <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+              <md-icon>file_upload</md-icon><span>{ { singleFileUpload.files?.name } }</span>
+              <template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose a file...</span>
+              </template>
+            </td-file-upload>
 
-          file: File;
-          
-          constructor(private fileUploadService: TdFileService){ 
-          };
-          
-          uploadEvent(file: File) {    
-            let options: IUploadOptions = {
-              url: 'https://url.to/API',
-              method: 'post',
-              file: file
-            };    
-            this.fileService.upload(options).subscribe((response) => {
-              ...
-            });
-          };
-          
-        }
-      ]]>
-    </td-highlight>
-  </md-card-content>
+            <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              fileSelectMsg: string = 'No file selected yet.';
+              fileUploadMsg: string = 'No file uploaded yet.';
+              disabled: boolean = false;
+
+              selectEvent(file: File): void {
+                this.fileSelectMsg = file.name;
+              };
+
+              uploadEvent(file: File): void {
+                this.fileUploadMsg = file.name;
+              };
+
+              toggleDisabled(): void {
+                this.disabled = !this.disabled;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
 </md-card>
+<md-card>
+  <md-card-title>Multiple File Upload Button</md-card-title>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <template md-tab-label>Demo</template>
+      <md-card-content>
+        <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
+        <p>Select Event: {{fileSelectMultipleMsg}}</p>
+        <p>Upload Event: {{fileUploadMultipleMsg}}</p>
+        <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+                        accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
+          <md-icon>file_upload</md-icon>
+          <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
+          <template td-file-input-label>
+            <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+          </template>
+        </td-file-upload>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+      </md-card-actions>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>Code</template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p>Select Event: { {fileSelectMultipleMsg} }</p>
+            <p>Upload Event: { {fileUploadMultipleMsg} }</p>
+            <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+                            accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
+              <md-icon>file_upload</md-icon>
+              <span>
+                { { fileMultipleUpload.files?.name || fileMultipleUpload.files?.length } } <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
+              </span>
+              <template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+              </template>
+            </td-file-upload>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              fileSelectMultipleMsg: string = 'No file(s) selected yet.';
+              fileUploadMultipleMsg: string = 'No file(s) uploaded yet.';
+
+              selectMultipleEvent(files: FileList | File): void {
+                if (files instanceof FileList) {
+                  let names: string[] = [];
+                  for (let i: number = 0; i < files.length; i++) {
+                    names.push(files[i].name);
+                  }
+                  this.fileSelectMultipleMsg = names.join(',');
+                } else {
+                  this.fileSelectMultipleMsg = files.name;
+                }
+              }
+
+              uploadMultipleEvent(files: FileList | File): void {
+                if (files instanceof FileList) {
+                  let names: string[] = [];
+                  for (let i: number = 0; i < files.length; i++) {
+                    names.push(files[i].name);
+                  }
+                  this.fileUploadMultipleMsg = names.join(',');
+                } else {
+                  this.fileUploadMultipleMsg = files.name;
+                }
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<td-readme-loader resourceUrl="platform/core/file/file-upload/README.md"></td-readme-loader>

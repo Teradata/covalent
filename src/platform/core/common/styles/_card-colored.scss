@@ -37,7 +37,8 @@ $color: rgba(0, 0, 0, 0.01);
         border-radius: 2px 2px 0 0;
         overflow: hidden;
         
-        md-icon {
+        md-icon,
+        .mat-icon {
             opacity: 0.65;
             color: white;
             font-size: 8rem;

@@ -11,17 +11,20 @@
     .td-data-table-row {
       border-bottom-color: md-color($foreground, divider);
     }
-    .md-checkbox-cell,
-    .md-checkbox-column {
+    .mat-checkbox-cell,
+    .mat-checkbox-column {
       color: md-color($foreground, secondary-text);
+      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        color: md-color($accent, 500);
+      }
     }
     .td-data-table-cell {
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.010em;
       line-height: 20px;
-      md-input {
-        .md-input-underline {
+      md-input-container {
+        .mat-input-underline {
           display: none;
         }
       }
@@ -37,21 +40,21 @@
           color: md-color($foreground, disabled);
         }
       }
-      &.md-active,
-      &.md-active md-icon {
+      &.mat-active,
+      &.mat-active md-icon {
         color: md-color($foreground, base);
       }
     }
-    &.md-selectable tbody > tr.td-data-table-row {
+    &.mat-selectable tbody > tr.td-data-table-row {
       &:not([disabled]):hover {
         background-color: md-color($background, 'hover');
       }
-      &.md-selected {
+      &.mat-selected {
         background-color: md-color($accent, 0.12);
       }
     }
   }
-  .md-selected-title {
+  .mat-selected-title {
     background-color: md-color($accent, 0.12);
     color: md-color($accent);
   }

@@ -9,20 +9,20 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-          <div class="md-table-container">
+          <div class="mat-table-container">
           <table td-data-table>
             <th td-data-table-column>
               <md-icon>comment</md-icon>
               <span>Comments</span>
             </th>
-            <th td-data-table-column 
+            <th td-data-table-column
                 *ngFor="let column of columns"
                 [numeric]="column.numeric">
               {{column.label}}
             </th>
             <tr td-data-table-row *ngFor="let row of basicData">
               <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                 {{column.format ? column.format(row[column.name]) : row[column.name]}}
@@ -41,14 +41,14 @@
                 <md-icon>comment</md-icon>
                 <span>Comments</span>
               </th>
-              <th td-data-table-column 
+              <th td-data-table-column
                   *ngFor="let column of columns"
                   [numeric]="column.numeric">
                 { {column.label}}
               </th>
               <tr td-data-table-row *ngFor="let row of basicData">
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                  <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                   { {column.format ? column.format(row[column.name]) : row[column.name]}}
@@ -138,10 +138,10 @@
             })
             export class Demo {
               columns: ITdDataTableColumn[] = [
-                { name: 'food.name',  label: 'Dessert (100g serving)' },
+                { name: 'food.name',  label: 'Dessert (100g serving)', sortable:true },
                 { name: 'food.type', label: 'Type' },
-                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable:true },
+                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable:true },
                 { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
                 { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
                 { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
@@ -207,7 +207,7 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.md-selected-title]="selectedRows.length && selectable">
+        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
             <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
@@ -230,7 +230,10 @@
           [sortOrder]="sortOrder"
           (sortChange)="sort($event)">
         </td-data-table>
-        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+          <span td-paging-bar-label hide-xs>Row per page:</span>
+          {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+        </td-paging-bar>
       </md-tab>
       <md-tab>
         <template md-tab-label>Code</template>
@@ -257,7 +260,10 @@
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
-            <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+            <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+              <span td-paging-bar-label hide-xs>Row per page:</span>
+              { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+            </td-paging-bar>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
@@ -275,7 +281,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
                 { name: 'item', label: 'Item name' },
-                { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
               ];
 
               filteredData: any[] = this.data;
@@ -328,15 +334,15 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleSelectable()">
+    <button md-button color="primary" (click)="toggleSelectable()" class="text-upper">
       Toggle Selectable
       ({{selectable ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable">
-      Toggle Multiple Selection
+    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable" class="text-upper">
+      Toggle Multiple
       ({{multiple ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleTooltips()">
+    <button md-button color="primary" (click)="toggleTooltips()" class="text-upper">
       Toggle Tooltip
       ({{areTooltipsOn() ? 'ON' : 'OFF'}})
     </button>
@@ -392,7 +398,7 @@
             { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
           ];
           private columns: ITdDataTableColumn[] = [
-            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
+            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit', sortable: true },
             { name: 'item', label: 'Item name' },
             { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
           ];

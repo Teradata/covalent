@@ -1,0 +1,27 @@
+:host {
+  .td-file-upload {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .td-file-upload-cancel {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    top: 24px;
+    left: -12px;
+    md-icon {
+      border-radius: 12px;
+      vertical-align: baseline;
+    }
+  }
+  /**
+  * Class that is added ondragenter by the [TdFileDrop] directive.
+  */
+  .drop-zone {
+    // Animation.
+    border-radius: 3px;
+    * {
+      pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+    }
+  }
+}

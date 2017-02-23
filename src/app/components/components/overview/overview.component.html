@@ -1,24 +1,69 @@
 <md-card>
-  <md-card-title>Covalent Components &amp; Addons</md-card-title>
-  <md-card-subtitle>Covalent Components, Directives, Pipes &amp; Services</md-card-subtitle>
+  <md-card-title>Core Components</md-card-title>
+  <md-card-subtitle>Core Covalent Components, Directives, Pipes &amp; Services</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-     <p>We've built a series of extensions for Angular-Material 2.0 that follow the Material Design spec:</p>
+     <div layout-gt-xs="row" layout-wrap>
+       <template let-item let-last="last" ngFor [ngForOf]="items">
+          <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
+            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
+              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
+              </md-toolbar>
+              <md-card-content>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">{{item.title}}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </template>
+     </div>
   </md-card-content>
-  <div layout="row" layout-wrap hide-xs hide-sm class="push-sm">
-    <template let-item let-last="last" ngFor [ngForOf]="items">
-      <div flex-md="50" flex-gt-md="25" layout="column">
-        <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
-          <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-            <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
-          </md-toolbar>
-          <md-card-content>
-            <div layout="column" layout-padding>
-              <div class="md-subhead">{{item.title}}</div>
-            </div>
-          </md-card-content>
-        </md-card>
-      </div>
-    </template>
-  </div>
+</md-card>
+<md-card>
+  <md-card-title>Optional Components</md-card-title>
+  <md-card-subtitle>Extra components &amp; services not required</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <div layout-gt-xs="row" layout-wrap>
+       <template let-item let-last="last" ngFor [ngForOf]="optional">
+          <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
+            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
+              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
+              </md-toolbar>
+              <md-card-content>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">{{item.title}}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </template>
+     </div>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>External Components</md-card-title>
+  <md-card-subtitle>Recommended but not maintained by Covalent</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+     <div layout-gt-xs="row" layout-wrap>
+       <template let-item let-last="last" ngFor [ngForOf]="external">
+          <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
+            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
+              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
+              </md-toolbar>
+              <md-card-content>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">{{item.title}}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </template>
+     </div>
+  </md-card-content>
 </md-card>

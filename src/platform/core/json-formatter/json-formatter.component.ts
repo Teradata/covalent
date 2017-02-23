@@ -1,10 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { TdCollapseAnimation } from '../common/common.module';
 
 @Component({
-
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-json-formatter',
   styleUrls: ['./json-formatter.component.scss' ],
   templateUrl: './json-formatter.component.html',
+  animations: [
+    TdCollapseAnimation(),
+  ],
 })
 export class TdJsonFormatterComponent {
 
@@ -14,13 +18,18 @@ export class TdJsonFormatterComponent {
   private static KEY_MAX_LENGTH: number = 30;
 
   /**
+   * Max length for preview string. Any names bigger than this get trunctated.
+   */
+  private static PREVIEW_STRING_MAX_LENGTH: number = 80;
+
+  /**
    * Max tooltip preview elements.
    */
   private static PREVIEW_LIMIT: number = 5;
 
   private _key: string;
   private _data: any;
-  private _children: string[] = [];
+  private _children: string[];
   private _open: boolean = false;
   private _levelsOpen: number = 0;
 
@@ -31,7 +40,7 @@ export class TdJsonFormatterComponent {
   @Input('levelsOpen')
   set levelsOpen(levelsOpen: number) {
     if (!Number.isInteger(levelsOpen)) {
-      throw '[levelsOpen] needs to be an integer.';
+      throw new Error('[levelsOpen] needs to be an integer.');
     }
     this._levelsOpen = levelsOpen;
     this._open = levelsOpen > 0;
@@ -74,6 +83,16 @@ export class TdJsonFormatterComponent {
     return this._children;
   }
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  /**
+   * Refreshes json-formatter and rerenders [data]
+   */
+  refresh(): void {
+    this._changeDetectorRef.markForCheck();
+  }
+
   /**
    * Toggles collapse/expanded state of component.
    */
@@ -90,7 +109,7 @@ export class TdJsonFormatterComponent {
   }
 
   hasChildren(): boolean {
-    return this.children.length > 0;
+    return this._children && this._children.length > 0;
   }
 
   /**
@@ -155,8 +174,8 @@ export class TdJsonFormatterComponent {
    */
   getPreview(): string {
     let previewData: string[];
-    let startChar: string = '{';
-    let endChar: string = '}';
+    let startChar: string = '{ ';
+    let endChar: string = ' }';
     if (this.isArray()) {
       let previewArray: any[] = this._data.slice(0, TdJsonFormatterComponent.PREVIEW_LIMIT);
       previewData = previewArray.map((obj: any) => {
@@ -170,12 +189,16 @@ export class TdJsonFormatterComponent {
         return key + ': ' + this.getValue(this._data[key]);
       });
     }
-    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ? '…' : '';
-    return startChar + previewData.join(', ') + ellipsis + endChar;
+    let previewString: string =  previewData.join(', ');
+    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
+                           previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH ? '…' : '';
+    return startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) +
+           ellipsis + endChar;
   }
 
   private parseChildren(): void {
     if (this.isObject()) {
+      this._children = [];
       for (let key in this._data) {
         this._children.push(key);
       }

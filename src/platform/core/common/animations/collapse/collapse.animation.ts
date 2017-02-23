@@ -2,12 +2,12 @@ import { trigger, state, style, transition, animate, AnimationEntryMetadata } fr
 
 /**
  * Function TdCollapseAnimation
- * 
+ *
  * params:
  * * duration: Duration of animation in miliseconds. Defaults to 150 ms.
- * 
+ *
  * Returns an [AnimationEntryMetadata] object with states for a collapse/expand animation.
- * 
+ *
  * usage: [@tdCollapse]="true|false"
  */
 export function TdCollapseAnimation(duration: number = 150): AnimationEntryMetadata {

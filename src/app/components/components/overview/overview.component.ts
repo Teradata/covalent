@@ -29,8 +29,13 @@ export class ComponentsOverviewComponent {
       route: 'expansion-panel',
       title: 'Expansion Panel',
     }, {
+      color: 'light-blue-700',
+      icon: 'space_bar',
+      route: 'file-input',
+      title: 'File Input',
+    }, {
       color: 'cyan-700',
-      icon: 'file_upload',
+      icon: 'attach_file',
       route: 'file-upload',
       title: 'File Upload',
     }, {
@@ -54,25 +59,10 @@ export class ComponentsOverviewComponent {
       route: 'data-table',
       title: 'Data Table',
     }, {
-      color: 'pink-700',
-      icon: 'code',
-      route: 'syntax-highlighting',
-      title: 'Highlighting',
-    }, {
       color: 'teal-700',
       icon: 'format_indent_increase',
       route: 'json-formatter',
       title: 'JSON Formatter',
-    }, {
-      color: 'orange-700',
-      icon: 'chrome_reader_mode',
-      route: 'markdown',
-      title: 'Markdown',
-    }, {
-      color: 'light-blue-700',
-      icon: 'show_chart',
-      route: 'charts',
-      title: 'Charts',
     }, {
       color: 'blue-grey-700',
       icon: 'swap_horiz',
@@ -89,20 +79,10 @@ export class ComponentsOverviewComponent {
       route: 'search',
       title: 'Search',
     }, {
-      color: 'green-700',
-      icon: 'format_align_center',
-      route: 'dynamic-forms',
-      title: 'Dynamic Forms',
-    }, {
       color: 'red-700',
       icon: 'devices',
       route: 'media',
-      title: 'Media',
-    }, {
-      color: 'indigo-700',
-      icon: 'http',
-      route: 'http',
-      title: 'Http',
+      title: 'Media Queries',
     }, {
       color: 'light-blue-700',
       icon: 'wb_iridescent',
@@ -113,6 +93,45 @@ export class ComponentsOverviewComponent {
       icon: 'filter_list',
       route: 'pipes',
       title: 'Pipes',
+    },
+  ];
+  optional: Object[] = [{
+      color: 'pink-700',
+      icon: 'code',
+      route: 'syntax-highlighting',
+      title: 'Highlighting',
+    }, {
+      color: 'orange-700',
+      icon: 'chrome_reader_mode',
+      route: 'markdown',
+      title: 'Markdown',
+    }, {
+      color: 'green-700',
+      icon: 'format_align_center',
+      route: 'dynamic-forms',
+      title: 'Dynamic Forms',
+    }, {
+      color: 'indigo-700',
+      icon: 'http',
+      route: 'http',
+      title: 'HTTP Service',
+    }, {
+      color: 'orange-700',
+      icon: 'show_chart',
+      route: 'charts',
+      title: 'TD Charts',
+    },
+  ];
+  external: Object[] = [{
+      color: 'purple-600',
+      icon: 'insert_chart',
+      route: 'ngx-charts',
+      title: 'NGX-Charts',
+    }, {
+      color: 'blue-600',
+      icon: 'language',
+      route: 'ngx-translate',
+      title: 'NGX-Translate',
     },
   ];
 }

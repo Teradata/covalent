@@ -1,6 +1,6 @@
 {
   "name": "@covalent/charts",
-  "version": "0.10.0",
+  "version": "1.0.0-beta.2",
   "description": "Teradata UI Platform Charts Module",
   "keywords": [
     "angular",
@@ -12,7 +12,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">4.4 < 7",
+    "node": ">=6.9",
     "npm": ">= 3"
   },
   "repository": {
@@ -32,8 +32,9 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
-  "dependencies": {
-    "@covalent/core": "0.10.0",
-    "d3": "^4.2.1"
+  "peerDependencies": {
+    "@angular/common": "^2.4.5",
+    "@angular/core": "^2.4.5",
+    "d3": "^4.4.0"
   }
 }

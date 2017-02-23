@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
 
-import { TdLayoutService } from '../services/layout.service';
+import { TdLayoutComponent } from '../layout.component';
 
 @Component({
   selector: 'td-layout-nav',
@@ -11,57 +10,57 @@ import { TdLayoutService } from '../services/layout.service';
 export class TdLayoutNavComponent {
 
   /**
-   * title in toolbar
+   * toolbarTitle?: string
+   *
+   * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
-   * icon for toolbar
+   * icon?: string
+   *
+   * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
-   * logo file for toolbar
+   * logo?: string
+   *
+   * logo icon name to be displayed before the title.
+   * If [icon] is set, then this will not be shown.
    */
   @Input('logo') logo: string;
 
   /**
-   * method thats called when menu is clicked
+   * color?: string
+   *
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, primary is used.
    */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
+  @Input('color') color: string = 'primary';
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * navigationRoute?: string
+   *
+   * option to set the combined logo, icon, toolbar title route
+   * defaults to '/'
    */
-  @Input()
-  set title(title: string) {
-    /* tslint:disable-next-line */
-    console.warn("title is deprecated.  Please use toolbarTitle instead");
-    this.toolbarTitle = title;
-  }
+  @Input('navigationRoute') navigationRoute: string = '/';
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * Checks if there is a [TdLayoutComponent] as parent.
    */
-  get title(): string {
-    return this.toolbarTitle;
+  get isMainSidenavAvailable(): boolean {
+    return !!this._layout;
   }
 
-  constructor(private layoutService: TdLayoutService) {
-
-  }
-
-  public menuClick(): void {
-    this._onMenuClick();
-  }
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
+              private _layout: TdLayoutComponent) { }
 
   /**
-   * emits menuEvent
+   * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
-  private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
+  openMainSidenav(): void {
+    this._layout.open();
   }
 }

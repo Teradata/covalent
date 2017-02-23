@@ -1,0 +1,17 @@
+#!/bin/bash
+scope=@covalent
+
+#login into private registry
+npm login --scope=$scope
+
+for package in ./deploy/platform/*
+do
+  if [ -d ${package} ]
+  then
+    npm publish ${package} --access=public
+  fi
+done
+
+#logout when finished
+npm logout 
+echo "Published successfully [scope: $scope]. Use 'npm install [package-name]' in the project you want to use it."

@@ -25,50 +25,34 @@ $md-icon-border-radius: $md-fab-border-radius;
 
 /** Mixin to create distinct classes for fab positions, e.g. ".md-fab-position-bottom-right". */
 @mixin md-fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
-  [md-fab].md-fab-position-#{$spot} {
+  [md-fab].md-fab-position-#{$spot},
+  .mat-fab.mat-fab-position-#{$spot},
+  [md-fab].md-fab-#{$spot},
+  .mat-fab.mat-fab-#{$spot} {
     top: $top;
     right: $right;
     bottom: $bottom;
     left: $left;
     position: absolute;
+    &.fixed {
+      position: fixed;
+    }
   }
 }
 
 
 $md-fab-pos-offset: ($md-fab-size - $md-fab-padding) / 2;
-@include md-fab-position(bottom-right, auto, $md-fab-pos-offset, -25px, auto);
-@include md-fab-position(bottom-left, auto, auto, -25px, $md-fab-pos-offset);
+@include md-fab-position(bottom-right, auto, $md-fab-pos-offset, $md-fab-pos-offset, auto);
+@include md-fab-position(bottom-left, auto, auto, $md-fab-pos-offset, $md-fab-pos-offset);
 @include md-fab-position(top-right, $md-fab-pos-offset, $md-fab-pos-offset, auto, auto);
 @include md-fab-position(top-left, $md-fab-pos-offset, auto, auto, $md-fab-pos-offset);
 
-[md-button] {
-  &.md-icon-button {
-    margin: 0 6px;
-    min-width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 99%;
-    &:not(.md-icon-button-mini) {
-      height: 48px;
-      line-height: 48px;
-      width: 48px;
-    }
+button {
+  &[md-icon-button] {
     &.md-icon-button-mini {
       height: 24px;
       line-height: 24px;
       width: 24px;
-    }
-    &, & > .md-button-wrapper {
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        display: flex;
     }
   }
 }

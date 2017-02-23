@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular/material';
-
-import { TdLayoutService } from '../services/layout.service';
+import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
 @Component({
   selector: 'td-layout-manage-list',
@@ -16,44 +12,65 @@ export class TdLayoutManageListComponent {
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
   /**
-   * method thats called when menu is clicked
+   * mode?: 'side', 'push' or 'over'
+   *
+   * The mode or styling of the sidenav.
+   * Defaults to "side".
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
+  @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
 
-  constructor(private layoutService: TdLayoutService) {
+  /**
+   * opened?: boolean
+   *
+   * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
+   * Defaults to "true".
+   *
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('opened') opened: boolean = true;
 
-  }
+  /**
+   * sidenavWidth?: string
+   *
+   * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
+   * Defaults to "257px".
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('sidenavWidth') sidenavWidth: string = '257px';
 
-  public menuClick(): void {
-    this._onMenuClick();
+  /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
   }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): void {
-    this._sideNav.toggle();
+  public toggle(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): void {
-    this._sideNav.open();
+  public open(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): void {
-    this._sideNav.close();
+  public close(): Promise<MdSidenavToggleResult> {
+    return this._sideNav.close();
   }
 
-  /**
-   * emits menuEvent
-   */
-  private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
-  }
 }

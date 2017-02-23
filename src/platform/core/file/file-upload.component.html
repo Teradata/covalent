@@ -1,6 +1,7 @@
 <div>
   <div *ngIf="!files">
     <button md-raised-button
+            class="td-file-browse"
             type="button"
             [color]="defaultColor" 
             [multiple]="multiple" 
@@ -14,7 +15,7 @@
       </label>
     </button>
     <input #fileBrowse 
-           class="md-file-upload-input" 
+           class="td-file-upload-input" 
            type="file"
            [attr.accept]="accept"                
            (fileSelect)="files = $event"
@@ -23,7 +24,8 @@
            tdFileSelect>
   </div>
   <div *ngIf="files" layout="row">
-    <button #fileUpload 
+    <button #fileUpload
+            class="td-file-upload"
             md-raised-button
             type="button"
             [color]="activeColor"

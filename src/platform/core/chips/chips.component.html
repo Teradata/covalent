@@ -16,10 +16,10 @@
                    (focus)="handleFocus()"
                    (blur)="handleBlur() && (matches = autocomplete.clear())"
                    (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
-  <div class="md-input-underline"
-       [class.md-disabled]="disabled">
-    <span class="md-input-ripple"
-          [class.md-focused]="focused"
-          [class.md-warn]="!matches"></span>
+  <div class="mat-input-underline"
+       [class.mat-disabled]="readOnly">
+    <span class="mat-input-ripple"
+          [class.mat-focused]="focused"
+          [class.mat-warn]="!matches"></span>
   </div>
 </div>

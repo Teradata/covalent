@@ -89,7 +89,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.method).toBe(RequestMethod.Get, 'request didnt have GET method');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -106,7 +106,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a query and use the service transform() and then override it with a method transform()',
@@ -115,7 +115,7 @@ describe('Service: RESTService', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -152,7 +152,7 @@ describe('Service: RESTService', () => {
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
 
-    })
+    }),
   ));
 
   it('expect to do a query failure',
@@ -174,7 +174,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do a query with parameters succesfully',
@@ -186,7 +186,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.method).toBe(RequestMethod.Get, 'request didnt have GET method');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -207,7 +207,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a get succesfully',
@@ -219,7 +219,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.method).toBe(RequestMethod.Get, 'request didnt have GET method');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -236,7 +236,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a get and use the service transform() and then override it with a method transform()',
@@ -245,7 +245,7 @@ describe('Service: RESTService', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -282,7 +282,7 @@ describe('Service: RESTService', () => {
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
 
-    })
+    }),
   ));
 
   it('expect to do a get failure',
@@ -304,7 +304,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do a create succesfully',
@@ -317,7 +317,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.getBody()).toBe('data', 'request didnt have the body');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 201,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -334,7 +334,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a create and use the service transform() and then override it with a method transform()',
@@ -343,7 +343,7 @@ describe('Service: RESTService', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 201,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -380,7 +380,7 @@ describe('Service: RESTService', () => {
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
 
-    })
+    }),
   ));
 
   it('expect to do a create failure',
@@ -402,7 +402,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do an update succesfully',
@@ -415,7 +415,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.getBody()).toBe('data', 'request didnt have the body');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -432,7 +432,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do an update and use the service transform() and then override it with a method transform()',
@@ -441,7 +441,7 @@ describe('Service: RESTService', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -478,7 +478,7 @@ describe('Service: RESTService', () => {
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
 
-    })
+    }),
   ));
 
   it('expect to do a update failure',
@@ -500,7 +500,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do a delete succesfully with observables',
@@ -512,7 +512,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.method).toBe(RequestMethod.Delete, 'request didnt have DELETE method');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -529,7 +529,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a delete and use the service transform() and then override it with a method transform()',
@@ -538,7 +538,7 @@ describe('Service: RESTService', () => {
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -575,7 +575,7 @@ describe('Service: RESTService', () => {
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
 
-    })
+    }),
   ));
 
   it('expect to do a delete failure',
@@ -597,7 +597,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(false, 'on success execute when it shouldnt have with observables');
       expect(error).toBe(true, 'on error didnt execute with observables');
       expect(complete).toBe(false, 'on complete execute when it shouldnt have with observables');
-    })
+    }),
   ));
 
   it('expect to do a query succesfully with baseHeaders',
@@ -607,7 +607,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.headers.get('header')).toBe('value', 'request didnt have baseHeaders');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -624,7 +624,7 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 
   it('expect to do a query succesfully with dynamicHeaders',
@@ -634,7 +634,7 @@ describe('Service: RESTService', () => {
         expect(connection.request.headers.get('header')).toBe('value', 'request didnt have dynamicHeaders');
         connection.mockRespond(new Response(new ResponseOptions({
             status: 200,
-            body: JSON.stringify('success')}
+            body: JSON.stringify('success')},
         )));
       });
       let success: boolean = false;
@@ -651,6 +651,6 @@ describe('Service: RESTService', () => {
       expect(success).toBe(true, 'on success didnt execute with observables');
       expect(error).toBe(false, 'on error executed when it shouldnt have with observables');
       expect(complete).toBe(true, 'on complete didnt execute with observables');
-    })
+    }),
   ));
 });

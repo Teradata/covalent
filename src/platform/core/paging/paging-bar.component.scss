@@ -3,9 +3,9 @@
 }
 .td-paging-bar {
   height: 48px;
-}
-[layout="row"] > * {
-  margin: 0 10px;
+  > * {
+    margin: 0 10px;
+  }
 }
 [md-icon-button] {
   font-size: 12px;
@@ -13,13 +13,16 @@
 }
 md-select { 
   & /deep/ {
-    .md-select-trigger {
+    .mat-select-trigger {
       min-width: 44px;
-      border-bottom: 0 !important;
+      font-size: 12px;
     }
-    .md-select-value {
+    .mat-select-value {
       top: auto;
       position: static;
+    }
+    .mat-select-underline {
+      display: none;
     }
   }
 }

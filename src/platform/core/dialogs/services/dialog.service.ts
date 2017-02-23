@@ -51,17 +51,6 @@ export class TdDialogService {
 
   /**
    * params:
-   * - viewContainerRef: ViewContainerRef
-   * Sets a detaulf ViewContainerRef object to which all dialogs will belong to.
-   * @deprecated since 0.9
-   */
-  public setDefaultViewContainerRef(viewContainerRef: ViewContainerRef): void {
-    /* tslint:disable-next-line */ 
-    console.warn('setDefaultViewContainerRef is deprecated. ViewContainerRef is no longer required.');
-  }
-
-  /**
-   * params:
    * - config: IAlertConfig {
    *     message: string;
    *     title?: string;

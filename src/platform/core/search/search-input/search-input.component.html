@@ -1,11 +1,10 @@
 <div class="td-search-input" layout="row" layout-align="end center">
-  <md-input-container flex>
-    <input md-input
+  <md-input-container [class.mat-hide-underline]="!showUnderline" flex>
+    <input mdInput
             #searchElement
-            [class.md-hide-underline]="!showUnderline"
             type="search"
+            [(ngModel)]="value"
             [placeholder]="placeholder"
-            [formControl]="searchTermControl"
             (blur)="handleBlur()"
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>

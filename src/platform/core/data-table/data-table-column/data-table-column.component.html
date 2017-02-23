@@ -1,8 +1,8 @@
 <md-icon 
   class="td-data-table-sort-icon" 
   *ngIf="sortable && numeric"
-  [class.md-asc]="(!(active) || isAscending())"
-  [class.md-desc]="(active && isDescending())"
+  [class.mat-asc]="(!(active) || isAscending())"
+  [class.mat-desc]="(active && isDescending())"
   (click)="sortable && handleSortBy()">
   arrow_upward
 </md-icon>
@@ -12,8 +12,8 @@
 <md-icon 
   class="td-data-table-sort-icon" 
   *ngIf="sortable && !numeric"
-  [class.md-asc]="(!(active) || isAscending())"
-  [class.md-desc]="(active && isDescending())"
+  [class.mat-asc]="(!(active) || isAscending())"
+  [class.mat-desc]="(active && isDescending())"
   (click)="sortable && handleSortBy()">
   arrow_upward
 </md-icon>

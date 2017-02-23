@@ -3,39 +3,40 @@
   <md-card-subtitle>SCSS variables to customize the color scheme</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <md-card>
-      <md-card-content>
-        IMPORTANT: As of Covalent 0.8 we now support the official <a href="https://github.com/angular/material2/blob/master/docs/theming.md" target="_blank">Angular-Material SCSS Theming</a> variables.
-      </md-card-content>
-    </md-card>
     <h3>SCSS Variables</h3>
     <p>Simply edit the /theme.scss file and update these SCSS variables:</p>
     <td-highlight lang="scss">
       @import '~@angular/material/core/theming/all-theme';
       @import '~@covalent/core/theming/all-theme';
+      @import '~@covalent/markdown/markdown-theme';
+      @import '~@covalent/charts/charts-theme';
+      @import '~@covalent/highlight/highlight-theme';
       // Plus imports for other components in your app.
 
       // Include the base styles for Angular Material core. We include this here so that you only
       // have to load a single css file for Angular Material in your app.
-      @include md-core();
+      @include mat-core();
 
       // Define the palettes for your theme using the Material Design palettes available in palette.scss
       // (imported above). For each palette, you can optionally specify a default, lighter, and darker
       // hue.
-      $primary: md-palette($md-orange, 800);
-      $accent:  md-palette($md-light-blue, 600, A100, A400);
+      $primary: mat-palette($mat-blue, 700);
+      $accent:  mat-palette($mat-orange, 800, A100, A400);
 
       // The warn palette is optional (defaults to red).
-      $warn:    md-palette($md-red);
+      $warn:    mat-palette($mat-red, 600);
 
       // Create the theme object (a Sass map containing all of the palettes).
-      $theme: md-light-theme($primary, $accent, $warn);
+      $theme: mat-light-theme($primary, $accent, $warn);
 
       // Include theme styles for core and each component used in your app.
       // Alternatively, you can import and @include the theme mixins for each component
       // that you are using.
       @include angular-material-theme($theme);
       @include covalent-theme($theme);
+      @include covalent-markdown-theme($theme);
+      @include covalent-charts-theme($theme);
+      @include covalent-highlight-theme();
     </td-highlight>
     <p>
       Color palettes and hues follow the official <a href="https://material.google.com/style/color.html" target="_blank">Material Design Spec</a>.
@@ -43,8 +44,8 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://material.google.com/style/color.html">Material Design Colors</a>
-    <a md-button [routerLink]="['../../style-guide','colors']">Teradata Color Style Guide</a>
+    <a md-button color="accent" target="_blank" href="https://material.angular.io/guide/theming" class="text-upper">Theming Docs</a>
+    <a md-button [routerLink]="['../../style-guide','colors']" class="text-upper">Color Guide</a>
   </md-card-actions>
 </md-card>
 <md-card>
@@ -61,11 +62,11 @@
       <div flex-gt-xs="50" class="pad-top-sm">
         <td-highlight lang="scss">
           .blue-orange {{ '{' }}
-              $primary2: md-palette($md-blue, 700);
-              $accent2:  md-palette($md-orange, 800);
-              $warn2:    md-palette($md-red, 600);
+              $primary2: mat-palette($mat-blue, 700);
+              $accent2:  mat-palette($mat-orange, 800);
+              $warn2:    mat-palette($mat-red, 600);
 
-              $blue-orange: md-light-theme($primary2, $accent2, $warn2);
+              $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
               @include angular-material-theme($blue-orange);
               @include covalent-theme($blue-orange);
@@ -103,11 +104,11 @@
       <div flex-gt-xs="50" class="pad-top-sm">
         <td-highlight lang="scss">
           .blue-grey-deep-orange {{ '{' }}
-              $primary3: md-palette($md-blue-grey);
-              $accent3:  md-palette($md-deep-orange);
-              $warn3:    md-palette($md-red, 600);
+              $primary3: mat-palette($mat-blue-grey);
+              $accent3:  mat-palette($mat-deep-orange);
+              $warn3:    mat-palette($mat-red, 600);
 
-              $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
+              $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
               @include angular-material-theme($blue-grey-deep-orange);
               @include covalent-theme($blue-grey-deep-orange); 

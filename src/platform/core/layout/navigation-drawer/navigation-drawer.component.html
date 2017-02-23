@@ -1,0 +1,23 @@
+<md-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
+  <div layout="column" flex>
+    <span *ngIf="icon || logo || sidenavTitle" layout="row" layout-align="start end">
+      <md-icon *ngIf="icon" (click)="close()" [routerLink]="navigationRoute" class="cursor-pointer">{{icon}}</md-icon>
+      <md-icon *ngIf="logo && !icon" class="md-icon-logo cursor-pointer" [svgIcon]="logo" (click)="close()" [routerLink]="navigationRoute"></md-icon>
+      <span class="md-subhead cursor-pointer" *ngIf="sidenavTitle" (click)="close()" [routerLink]="navigationRoute">{{sidenavTitle}}</span>
+    </span>
+    <div class="md-body-2" *ngIf="email && name">{{name}}</div>
+    <div class="md-body-1" layout="row" href *ngIf="email || name" (click)="toggleMenu()">
+      <span flex>{{email || name}}</span>
+      <button md-icon-button class="md-icon-button-mini" *ngIf="isMenuAvailable">
+        <md-icon *ngIf="!menuToggled">arrow_drop_down</md-icon>
+        <md-icon *ngIf="menuToggled">arrow_drop_up</md-icon>
+      </button>
+    </div>
+  </div>
+</md-toolbar>
+<div [@tdCollapse]="menuToggled">
+  <ng-content></ng-content>
+</div>
+<div [@tdCollapse]="!menuToggled">
+  <ng-content select="[td-navigation-drawer-menu]"></ng-content>
+</div>

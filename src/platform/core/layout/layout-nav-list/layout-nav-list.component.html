@@ -1,22 +1,34 @@
 <div layout="column" layout-fill>
   <div flex layout="column" class="content md-content">
     <md-sidenav-container fullscreen class="td-layout-nav-list" layout="row" flex>
-      <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1" flex-gt-xs="none">
-        <md-toolbar color="primary" class="md-whiteframe-z1">
-          <button md-button (click)="menuClick()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
-          <md-icon *ngIf="icon">{{icon}}</md-icon>
-          <md-icon *ngIf="logo" class="md-icon-logo" [svgIcon]="logo"></md-icon>
-          <span>{{toolbarTitle}}</span>
-          <ng-content select="[list-toolbar-content]"></ng-content>
+      <md-sidenav #sidenav
+                  align="start"
+                  [mode]="mode"
+                  [opened]="opened"
+                  [disableClose]="disableClose"
+                  [style.max-width]="sidenavWidth"
+                  layout="column" 
+                  layout-fill
+                  class="md-whiteframe-z1">
+        <md-toolbar [color]="color" class="md-whiteframe-z1">
+          <button md-icon-button class="td-menu-button" *ngIf="isMainSidenavAvailable" (click)="openMainSidenav()">
+            <md-icon class="md-24">menu</md-icon>
+          </button>
+          <md-icon *ngIf="icon" [routerLink]="navigationRoute" class="cursor-pointer">{{icon}}</md-icon>
+          <md-icon *ngIf="logo && !icon" class="md-icon-logo cursor-pointer" [svgIcon]="logo" [routerLink]="navigationRoute"></md-icon>
+          <span *ngIf="toolbarTitle" class="cursor-pointer" [routerLink]="navigationRoute">{{toolbarTitle}}</span>
+          <ng-content select="[list-toolbar-content], [td-sidenav-toolbar-content]"></ng-content>
         </md-toolbar>
         <div flex class="list md-content">
-          <ng-content select="[list-items]"></ng-content>
+          <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
         </div>
       </md-sidenav>
-      <div layout="column" layout-fill class="md-content content">
-        <md-toolbar color="primary" class="md-whiteframe-z1">
-          <button md-button (click)="toggle()" md-icon-button hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
-          <ng-content select="[nav-toolbar-content]"></ng-content>
+      <div layout="column" layout-fill class="md-content">
+        <md-toolbar [color]="color" class="md-whiteframe-z1">
+          <button md-icon-button class="td-menu-button" *ngIf="!sidenav.opened" (click)="open()">
+            <md-icon class="md-24">arrow_back</md-icon>
+          </button>
+          <ng-content select="[nav-toolbar-content], [td-toolbar-content]"></ng-content>
         </md-toolbar>
         <div class="md-content" flex>
           <ng-content></ng-content>

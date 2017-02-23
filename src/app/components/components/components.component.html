@@ -1,19 +1,51 @@
-<td-layout-nav-list #list logo="assets:teradata" toolbarTitle="Covalent">
-  <md-nav-list list-items>
+<td-layout-nav-list #navList
+                    logo="assets:teradata"
+                    toolbarTitle="Covalent"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <md-nav-list td-sidenav-content>
+    <h3 md-subheader>Core Components</h3>
     <template let-item let-last="last" ngFor [ngForOf]="items">
-        <a md-list-item 
-           [routerLink]="[item.route]" 
-           [routerLinkActive]="['active']" 
-           [routerLinkActiveOptions]="{exact:true}" 
-           (click)="list.toggle()">
-          <md-icon md-list-avatar>{{item.icon}}</md-icon>
-          <h3 md-line> {{item.title}} </h3>
-          <p md-line> {{item.description}} </p>
-        </a>
-        <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      <a md-list-item 
+          [routerLink]="[item.route]" 
+          [routerLinkActive]="['active']" 
+          [routerLinkActiveOptions]="{exact:true}"
+          (click)="!media.query('gt-sm') && navList.close()">
+        <md-icon md-list-avatar>{{item.icon}}</md-icon>
+        <h3 md-line> {{item.title}} </h3>
+        <p md-line> {{item.description}} </p>
+      </a>
+      <md-divider *ngIf="!last" md-inset></md-divider>
+    </template>
+    <h3 md-subheader>Optional Components</h3>
+    <template let-item let-last="last" ngFor [ngForOf]="optional">
+      <a md-list-item 
+          [routerLink]="[item.route]" 
+          [routerLinkActive]="['active']" 
+          [routerLinkActiveOptions]="{exact:true}"
+          (click)="!media.query('gt-sm') && navList.close()">
+        <md-icon md-list-avatar>{{item.icon}}</md-icon>
+        <h3 md-line> {{item.title}} </h3>
+        <p md-line> {{item.description}} </p>
+      </a>
+      <md-divider *ngIf="!last" md-inset></md-divider>
+    </template>
+    <h3 md-subheader>External Components</h3>
+    <template let-item let-last="last" ngFor [ngForOf]="external">
+      <a md-list-item 
+          [routerLink]="[item.route]" 
+          [routerLinkActive]="['active']" 
+          [routerLinkActiveOptions]="{exact:true}" 
+          (click)="!media.query('gt-sm') && navList.close()">
+        <md-icon md-list-avatar>{{item.icon}}</md-icon>
+        <h3 md-line> {{item.title}} </h3>
+        <p md-line> {{item.description}} </p>
+      </a>
+      <md-divider *ngIf="!last" md-inset></md-divider>
+    </template>
   </md-nav-list>
-  <div nav-toolbar-content layout="row" layout-align="center center" flex>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Covalent Components &amp; Addons</span>
     <span flex></span>
   </div>

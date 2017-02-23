@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { MdIconModule, MdListModule, MdRippleModule, PortalModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../common/common.module';
 
@@ -29,17 +29,16 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdListModule.forRoot(),
+    MdRippleModule.forRoot(),
+    PortalModule.forRoot(),
     CovalentCommonModule.forRoot(),
   ],
   declarations: [
     TD_STEPS,
   ],
   exports: [
-    CommonModule,
-    MaterialModule,
-    CovalentCommonModule,
-
     TD_STEPS,
   ],
 })
