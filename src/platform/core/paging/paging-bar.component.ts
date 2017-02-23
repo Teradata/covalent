@@ -31,10 +31,22 @@ export class TdPagingBarComponent implements OnInit {
   @Input('pageSizeAll') pageSizeAll: boolean = false;
 
   /**
+   * pageSizeAllText?: string
+   * Text for the 'all' menu item in the page size menu. Defaults to 'All'
+   */
+  @Input('pageSizeAllText') pageSizeAllText: string = 'All';
+
+  /**
    * firstLast?: boolean
    * Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
    */
   @Input('firstLast') firstLast: boolean = true;
+
+  /**
+   * initialPage?: number
+   * Sets starting page for the paging bar. Defaults to '1'
+   */
+  @Input('initialPage') initialPage: number = 1;
 
   /**
    * pageSizes?: number[]
@@ -115,6 +127,7 @@ export class TdPagingBarComponent implements OnInit {
   @Output('change') onChange: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
 
   ngOnInit(): void {
+    this._page = this.initialPage;
     this._calculateRows();
     this._initialized = true;
   }
