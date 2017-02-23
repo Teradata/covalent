@@ -7,18 +7,18 @@ $step-circle: 24px;
     [md-list-item]:focus {
       outline: none;
     }
-    [md-list-item].md-interaction-disabled .md-list-item {
+    [md-list-item].mat-interaction-disabled .mat-list-item-content {
       background: none !important;
       cursor: auto;
     }
-    .md-list-item {
+    .mat-list-item-content {
       flex: 1;
       height: 72px !important;
       padding: 0px !important;
     }
   }
 }
-.md-ripple-boundary {
+.mat-ripple-boundary {
   position: relative;
   height: 72px;
 }
@@ -28,12 +28,12 @@ $step-circle: 24px;
   }
 }
 md-icon {
-  &.md-warn {
+  &.mat-warn {
     font-size: $step-circle;
     height: $step-circle;
     width: $step-circle;
   }
-  &.md-complete {
+  &.mat-complete {
     position: relative;
     left: -2px;
     top: 2px;

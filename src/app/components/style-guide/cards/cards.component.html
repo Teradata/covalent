@@ -1,8 +1,5 @@
 <md-card>
-  <md-card-header>
-    <md-icon md-card-avatar>view_agenda</md-icon>
-    <md-card-title class="md-display-1">Cards</md-card-title>
-  </md-card-header>
+  <md-card-title>Cards Design Patterns</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
     <p>Several examples of Material Design card patterns, all from the official spec.</p>
@@ -64,12 +61,12 @@
         <md-card-content>
           <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
             <md-input-container flex>
-              <input md-input placeholder="Username" type="text" ngControl="username" required/>
-              <span md-prefix><md-icon>person</md-icon></span>
+              <input mdInput placeholder="Username" type="text" ngControl="username" required/>
+              <span mdPrefix><md-icon>person</md-icon></span>
             </md-input-container>
             <md-input-container flex>
-              <input md-input placeholder="Password" type="password" ngControl="password" required/>
-              <span md-prefix><md-icon>lock</md-icon></span>
+              <input mdInput placeholder="Password" type="password" ngControl="password" required/>
+              <span mdPrefix><md-icon>lock</md-icon></span>
             </md-input-container>
           </form>
         </md-card-content>
@@ -88,12 +85,12 @@
             <md-card-content>
               <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
                 <md-input-container flex>
-                  <input md-input placeholder="Username" type="text" ngControl="username" required/>
-                  <span md-prefix><md-icon>person</md-icon></span>
+                  <input mdInput placeholder="Username" type="text" ngControl="username" required/>
+                  <span mdPrefix><md-icon>person</md-icon></span>
                 </md-input-container>
                 <md-input-container flex>
-                  <input md-input placeholder="Password" type="password" ngControl="password" required/>
-                  <span md-prefix><md-icon>lock</md-icon></span>
+                  <input mdInput placeholder="Password" type="password" ngControl="password" required/>
+                  <span mdPrefix><md-icon>lock</md-icon></span>
                 </md-input-container>
               </form>
             </md-card-content>
@@ -212,8 +209,8 @@
       <md-card>
         <md-card-title layout>
           <md-input-container class="text-sm" flex>
-            <input md-input placeholder="search items"/>
-            <span md-prefix><md-icon>search</md-icon></span>
+            <input mdInput placeholder="search items"/>
+            <span mdPrefix><md-icon>search</md-icon></span>
           </md-input-container>
         </md-card-title>
         <md-list class="pull-top">
@@ -243,8 +240,8 @@
           <md-card>
             <md-card-title layout>
               <md-input-container class="text-sm" flex>
-                <input md-input placeholder="search items"/>
-                <span md-prefix><md-icon>search</md-icon></span>
+                <input mdInput placeholder="search items"/>
+                <span mdPrefix><md-icon>search</md-icon></span>
               </md-input-container>
             </md-card-title>
             <md-list class="pull-top">

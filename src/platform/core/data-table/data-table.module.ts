@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdCheckboxModule, MdTooltipModule, MdIconModule } from '@angular/material';
+import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectionModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
@@ -36,6 +36,7 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
     MdCheckboxModule.forRoot(),
     MdTooltipModule.forRoot(),
     MdIconModule.forRoot(),
+    MdSelectionModule,
   ],
   declarations: [
     TD_DATA_TABLE,

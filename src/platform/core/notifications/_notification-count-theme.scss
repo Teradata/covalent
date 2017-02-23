@@ -10,16 +10,16 @@
   $background: map-get($theme, background);
 
   .td-notification-count {
-    @include md-elevation(1);
-    &.md-warn {
+    @include mat-elevation(1);
+    &.mat-warn {
       background-color: md-color($warn);
       color: md-color($warn, default-contrast);
     }
-    &.md-primary {
+    &.mat-primary {
       background-color: md-color($primary);
       color: md-color($primary, default-contrast);
     }
-    &.md-accent {
+    &.mat-accent {
       background-color: md-color($accent);
       color: md-color($accent, default-contrast);
     }

@@ -25,20 +25,20 @@
   }
 }
 
-.md-input-underline {
+.mat-input-underline {
   position: relative;
   height: 1px;
   width: 100%;
   margin-top: 4px;
 
-  &.md-disabled {
+  &.mat-disabled {
     border-top: 0;
     background-position: 0;
     background-size: 4px 1px;
     background-repeat: repeat-x;
   }
 
-  .md-input-ripple {
+  .mat-input-ripple {
     position: absolute;
     height: 2px;
     z-index: 1;
@@ -47,11 +47,11 @@
     transform-origin: top;
     opacity: 0;
     transform: scaleY(0);
-    &.md-warn {
+    &.mat-warn {
       opacity: 1;
       transform: scaleY(1);
     }
-    &.md-focused {
+    &.mat-focused {
       opacity: 1;
       transform: scaleY(1);
     }
@@ -59,11 +59,11 @@
 }
 
 :host {
-   /deep/ md-input {
+   /deep/ md-input-container {
     input::-webkit-calendar-picker-indicator { // removes input arrow for datalist in chrome
       display: none;
     }
-    .md-input-underline {
+    .mat-input-underline {
       display: none;
     }
   }

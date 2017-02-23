@@ -10,7 +10,7 @@
     <md-icon class="tc-grey-600" *ngIf="hasChildren()">{{open? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</md-icon>
     <span *ngIf="key" class="key">{{key}}:</span>
     <span class="value">
-      <span [class.td-empty]="!hasChildren()" *ngIf="isObject()" [mdTooltip]="getPreview()" mdTooltipPosition="after" (mouseenter)="tooltipRefresh()" (mouseleave)="tooltipRefresh()" (click)="tooltipRefresh()">
+      <span [class.td-empty]="!hasChildren()" *ngIf="isObject()" [mdTooltip]="getPreview()" mdTooltipPosition="after">
         <span>{{getObjectName()}}</span>
         <span *ngIf="isArray()">[{{data.length}}]</span>
       </span>

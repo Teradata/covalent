@@ -9,7 +9,7 @@
   $background: map-get($theme, background);
   // panel
   td-expansion-panel {
-    @include md-elevation(1);
+    @include mat-elevation(1);
     background-color: md-color($background, card);
     &:not(:last-of-type) {
       & .td-expanded {
@@ -21,7 +21,7 @@
         margin-top: $margin;
       }
     }
-    .md-disabled {
+    .mat-disabled {
       &, & * {
         color: md-color($foreground, disabled);
       }

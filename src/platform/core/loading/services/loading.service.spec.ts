@@ -46,7 +46,7 @@ describe('Service: Loading', () => {
           fixture.detectChanges();
           expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
           expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.md-primary')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
           loadingService.resolve();
@@ -80,7 +80,7 @@ describe('Service: Loading', () => {
           fixture.detectChanges();
           expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
           expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.md-accent')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
           loadingService.resolve('name');
@@ -114,7 +114,7 @@ describe('Service: Loading', () => {
           fixture.detectChanges();
           expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
           expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.md-accent')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
           expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
           loadingService.resolve('name');

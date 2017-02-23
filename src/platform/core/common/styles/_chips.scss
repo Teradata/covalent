@@ -1,0 +1,49 @@
+$mat-chip-vertical-padding: 8px;
+$mat-chip-horizontal-padding: 12px;
+$mat-chips-chip-margin: $mat-chip-horizontal-padding / 4;
+
+// Fix from material2
+md-chip-list {
+    &:not(.mat-chip-list-stacked) {
+            .md-chip-list-wrapper {
+                .mat-chip:not(.mat-basic-chip) {
+                    margin: 0 $mat-chips-chip-margin 0 $mat-chips-chip-margin;
+
+                    // Remove the margin from the first element (in both LTR and RTL)
+                    &:first-child {
+                        margin: {
+                        left: 0;
+                        right: $mat-chips-chip-margin;
+                        }
+
+                        [dir='rtl'] & {
+                            margin: {
+                                left: $mat-chips-chip-margin;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    &.mat-chip-list-stacked {
+        .md-chip-list-wrapper {
+            display: block;
+
+            .mat-chip:not(.mat-basic-chip) {
+                display: block;
+                margin: 0;
+                margin-bottom: $mat-chip-vertical-padding;
+
+                [dir='rtl'] & {
+                margin: 0;
+                margin-bottom: $mat-chip-vertical-padding;
+                }
+
+                &:last-child, [dir='rtl'] &:last-child {
+                margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@
   $foreground: map-get($theme, foreground);
 
   td-paging-bar {
-    &, & md-select .md-select-value { 
+    &, & md-select .mat-select-value { 
       color: md-color($foreground, secondary-text);
     }
   }

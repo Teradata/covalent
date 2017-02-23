@@ -1,0 +1,49 @@
+<div>
+  <div *ngIf="!files">
+    <button md-raised-button
+            class="td-file-browse"
+            type="button"
+            [color]="defaultColor" 
+            [multiple]="multiple" 
+            [disabled]="disabled"
+            (keyup.enter)="fileBrowse.click()"
+            (click)="fileBrowse.click()"
+            (fileDrop)="files = $event"
+            tdFileDrop> 
+      <label>   
+        <md-icon>attachment</md-icon>Choose a File...
+      </label>
+    </button>
+    <input #fileBrowse 
+           class="td-file-upload-input" 
+           type="file"
+           [attr.accept]="accept"                
+           (fileSelect)="files = $event"
+           [multiple]="multiple" 
+           [disabled]="disabled"
+           tdFileSelect>
+  </div>
+  <div *ngIf="files" layout="row">
+    <button #fileUpload
+            class="td-file-upload"
+            md-raised-button
+            type="button"
+            [color]="activeColor"
+            (keyup.delete)="cancel()"
+            (keyup.backspace)="cancel()"
+            (keyup.escape)="cancel()"
+            (click)="uploadPressed()">
+      <label>   
+        <md-icon>file_upload</md-icon>
+        {{ files.name || files.length }} <span *ngIf="files.length">files selected</span> 
+      </label>
+    </button>
+    <button md-icon-button
+            type="button"
+            class="td-file-cancel"
+            [color]="cancelColor"            
+            (click)="cancel()">
+      <md-icon>cancel</md-icon>
+    </button>
+  </div>
+</div>

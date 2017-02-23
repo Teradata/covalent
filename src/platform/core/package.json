@@ -37,8 +37,8 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@angular/flex-layout": "2.0.0-beta.5",
-    "@angular/material": "2.0.0-beta.1"
+    "@angular/flex-layout": "^2.0.0-beta.5",
+    "@angular/material": "2.0.0-beta.2"
   },
   "peerDependencies": {
     "@angular/common": "^2.4.5",
