@@ -122,7 +122,7 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'http',
     title: 'HTTP Service',
   }, {
-    description: 'Simple responsive charts',
+    description: 'Deprecated (use ngx-charts) ',
     icon: 'show_chart',
     route: 'charts',
     title: 'TD Charts',

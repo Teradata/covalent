@@ -21,7 +21,7 @@
   <md-card-content>
     <p>Example dialog usage:</p>
     <p>Example for an API error or warning:</p>
-    <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+    <button md-raised-button color="warn" (click)="openAlert()">View sensitive document</button>
     <md-divider class="push-top"></md-divider>
     <p>Example for a confirmation on an action:</p>
     <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
@@ -31,7 +31,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="warn" (click)="openAlert()">View Sensitive Document</button>
+        <button md-raised-button color="warn" (click)="openAlert()">View sensitive document</button>
 
         <button md-raised-button color="accent" (click)="openConfirm()">Delete an item</button>
       ]]>
@@ -74,14 +74,14 @@
   <md-divider></md-divider>
   <md-card-content>
     <p>Example toast usage for a simple confirmation:</p>
-    <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+    <button md-raised-button color="primary" (click)="showSnackBar()">Send direct message</button>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-content>
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="primary" (click)="showSnackBar()">Send Direct Message</button>
+        <button md-raised-button color="primary" (click)="showSnackBar()">Send direct message</button>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
@@ -158,7 +158,7 @@
   </md-card-content>
   <md-divider></md-divider>
   <div class="inset">
-    <button md-raised-button color="accent" [disabled]="!myForm.valid">Submit Form</button>
+    <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
   </div>
   <md-divider></md-divider>
   <md-card-content>
@@ -212,6 +212,10 @@
               </md-hint>
               <md-hint align="end">e.g 92101</md-hint>
             </md-input-container>
+          </div>
+          <md-divider></md-divider>
+          <div class="inset">
+            <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
           </div>
         </form>
       ]]>

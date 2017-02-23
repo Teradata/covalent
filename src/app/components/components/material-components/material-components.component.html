@@ -14,9 +14,10 @@
   <md-card-title>Buttons</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
+    <p>Tip: Use UPPERCASE text for 1-2 words, and Titlecase text for 3+ words.</p>
     <md-card-actions>
-      <button md-button>FLAT</button>
-      <button md-raised-button>RAISED</button>
+      <button md-button class="text-upper">Flat</button>
+      <button md-raised-button class="text-upper">Raised</button>
       <button md-icon-button>
         <md-icon>favorite</md-icon>
       </button>
@@ -34,8 +35,8 @@
     <td-highlight lang="html">
     <![CDATA[
       <!-- Basic Buttons -->
-      <button md-button>FLAT</button>
-      <button md-raised-button>RAISED</button>
+      <button md-button class="text-upper">Flat</button>
+      <button md-raised-button class="text-upper">Raised</button>
       <!-- Button with icon -->
       <button md-icon-button>
         <md-icon>favorite</md-icon>
@@ -53,9 +54,9 @@
 
   <md-card-content>
     <md-card-actions>
-      <button md-raised-button color="primary">PRIMARY</button>
-      <button md-raised-button color="accent">ACCENT</button>
-      <button md-raised-button color="warn">WARN</button>
+      <button md-raised-button color="primary" class="text-upper">Primary</button>
+      <button md-raised-button color="accent" class="text-upper">Accent</button>
+      <button md-raised-button color="warn" class="text-upper">Warn</button>
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
       <button md-mini-fab disabled  color="primary"><md-icon>check circle</md-icon></button>
@@ -67,9 +68,9 @@
     <td-highlight lang="html">
     <![CDATA[
       <!-- Themed Buttons -->
-      <button md-raised-button color="primary">PRIMARY</button>
-      <button md-raised-button color="accent">ACCENT</button>
-      <button md-raised-button color="warn">WARN</button>
+      <button md-raised-button color="primary" class="text-upper">Primary</button>
+      <button md-raised-button color="accent" class="text-upper">Accent</button>
+      <button md-raised-button color="warn" class="text-upper">Warn</button>
       <!-- Disabled Buttons -->
       <button md-button disabled>off</button>
       <button md-raised-button disabled>off</button>
@@ -1147,17 +1148,17 @@
   <md-card-title>Tooltips</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
-    <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below" class="text-upper">Bottom Tooltip</button>
+    <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before" class="text-upper">Bottom Tooltip</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below">Bottom Tooltip</button>
-        <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show above" mdTooltipPosition="above" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show after" mdTooltipPosition="after" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show below" mdTooltipPosition="below" class="text-upper">Bottom Tooltip</button>
+        <button md-raised-button color="accent" mdTooltip="I show before" mdTooltipPosition="before" class="text-upper">Bottom Tooltip</button>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -1307,7 +1308,8 @@
   <md-card-content>
     <button md-raised-button
         md-ripple
-        [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
+        [mdRippleColor]="'rgba(30, 136, 229, 0.2)'"
+        class="text-upper">
       Click me
     </button>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1315,7 +1317,8 @@
       <![CDATA[
         <button md-raised-button
             md-ripple
-            [mdRippleColor]="'rgba(30, 136, 229, 0.2)'">
+            [mdRippleColor]="'rgba(30, 136, 229, 0.2)'"
+            class="text-upper">
           Click me
         </button>
         ]]>
@@ -1377,11 +1380,11 @@
   <md-card-title>Dialog</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+    <button md-raised-button color="accent" (click)="openDialog()">Show simple dialog</button>
     <md-divider class="push-top push-bottom"></md-divider>
     <td-highlight lang="html">
       <![CDATA[
-        <button md-raised-button color="accent" (click)="openDialog()">Show Simple Dialog</button>
+        <button md-raised-button color="accent" (click)="openDialog()">Show simple dialog</button>
       ]]>
     </td-highlight>
     <md-divider class="push-top push-bottom"></md-divider>
@@ -1477,11 +1480,9 @@
     </div>
     
     <div class="push-top">
-      <button md-button (click)="modelDir.reset()">RESET</button>
-      <button md-button (click)="currentState='California'">SET VALUE</button>
-      <button md-button (click)="tdDisabled=!tdDisabled">
-        TOGGLE DISABLED
-      </button>
+      <button md-button (click)="modelDir.reset()" class="text-upper">Reset</button>
+      <button md-button (click)="currentState='California'" class="text-upper">Set value</button>
+      <button md-button (click)="tdDisabled=!tdDisabled" class="text-upper">Toggle disabled</button>
     </div>
 
     <md-autocomplete #tdAuto="mdAutocomplete">
@@ -1501,11 +1502,9 @@
         </div>
 
         <div class="push-top">
-          <button md-button (click)="modelDir.reset()">RESET</button>
-          <button md-button (click)="currentState='California'">SET VALUE</button>
-          <button md-button (click)="tdDisabled=!tdDisabled">
-            TOGGLE DISABLED
-          </button>
+          <button md-button (click)="modelDir.reset()" class="text-upper">Reset</button>
+          <button md-button (click)="currentState='California'" class="text-upper">Set value</button>
+          <button md-button (click)="tdDisabled=!tdDisabled" class="text-upper">Toggle disabled</button>
         </div>
 
         <md-autocomplete #tdAuto="mdAutocomplete">
