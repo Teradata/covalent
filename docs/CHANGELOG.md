@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.2"></a>
-# [1.0.0-beta.2](https://github.com/Teradata/covalent/tree/v1.0.0-beta.2) (2017-02-23)
+# [1.0.0-beta.2 Hotel California](https://github.com/Teradata/covalent/tree/v1.0.0-beta.2) (2017-02-23)
 
 ## Breaking Change
 * **material:** [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes-from-beta1) from `@material`.
