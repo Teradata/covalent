@@ -26,10 +26,10 @@
           </button>
           <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
             <md-icon>folder</md-icon>
-            Browse...
+            <span class="text-upper">Browse...</span>
           </td-file-input>
           <span>
-            <button md-raised-button color="accent" [disabled]="!files">Submit</button>
+            <button md-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
           </span>
         </div>
       </md-card-content>
@@ -64,10 +64,10 @@
               </button>
               <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
                 <md-icon>folder</md-icon>
-                Browse...
+                <span class="text-upper">Browse...</span>
               </td-file-input>
               <span>
-                <button md-raised-button color="accent" [disabled]="!files">Submit</button>
+                <button md-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
               </span>
             </div>
           ]]>
