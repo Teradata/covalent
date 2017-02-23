@@ -69,8 +69,8 @@
 * **dependencies:** bump to `@swimlane/ngx-charts@4.1.1`. ([3f0ace5b4b3e599a99a4761891d897abaa05c938](https://github.com/Teradata/covalent/commit/3f0ace5b4b3e599a99a4761891d897abaa05c938))
 * **docs:** use `td-search-box` in the iconography docs. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **ghpages:** leverage `--sourcemap=false` for deployment. ([3a082d7b645ded78544bb42efdf3fff52fe1d90d](https://github.com/Teradata/covalent/commit/3a082d7b645ded78544bb42efdf3fff52fe1d90d))
-* **publish:** separate publish-release to run as individual script. ([d1e397a50ea7d02d70339567ecdf40258acac906](https://github.com/Teradata/covalent/commit/d1e397a50ea7d02d70339567ecdf40258acac906))
-* **code-health:** add initial unit tests. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7))
+* **publish:** separate `publish-release` to run as individual script. ([d1e397a50ea7d02d70339567ecdf40258acac906](https://github.com/Teradata/covalent/commit/d1e397a50ea7d02d70339567ecdf40258acac906))
+* **file-upload:** add initial unit tests for `file-upload`. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7))
 
 
 <a name="1.0.0-beta.1-1"></a>
