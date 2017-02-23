@@ -9,7 +9,7 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-          <div class="md-table-container">
+          <div class="mat-table-container">
           <table td-data-table>
             <th td-data-table-column>
               <md-icon>comment</md-icon>
@@ -22,7 +22,7 @@
             </th>
             <tr td-data-table-row *ngFor="let row of basicData">
               <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                 {{column.format ? column.format(row[column.name]) : row[column.name]}}
@@ -48,7 +48,7 @@
               </th>
               <tr td-data-table-row *ngFor="let row of basicData">
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                  <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                   { {column.format ? column.format(row[column.name]) : row[column.name]}}
@@ -207,7 +207,7 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.md-selected-title]="selectedRows.length && selectable">
+        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
             <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>

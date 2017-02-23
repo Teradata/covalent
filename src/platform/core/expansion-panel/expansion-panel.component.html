@@ -4,11 +4,11 @@
     <a [tabIndex]="disabled? -1 : 0"
        (keydown.enter)="clickEvent()"
        (click)="clickEvent()"
-       [class.md-interaction-disabled]="disabled"
-       [class.md-tall]="expansionPanelHeader"
+       [class.mat-interaction-disabled]="disabled"
+       [class.mat-tall]="expansionPanelHeader"
        md-list-item>
       <template [cdkPortalHost]="expansionPanelHeader"></template>
-      <div [class.md-disabled]="disabled"
+      <div [class.mat-disabled]="disabled"
            *ngIf="!expansionPanelHeader"
            layout="row" 
            layout-align="start center" 

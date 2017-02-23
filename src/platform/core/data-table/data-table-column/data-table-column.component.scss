@@ -22,18 +22,18 @@
       opacity: 0;
       transition: transform 0.25s, opacity 0.25s;
 
-      &.md-asc {
+      &.mat-asc {
         transform: rotate(0deg);
       }
 
-      &.md-desc {
+      &.mat-desc {
         transform: rotate(180deg);
       }
     }
   }
 
-  &:hover.md-sortable md-icon.td-data-table-sort-icon,
-  &.md-active.md-sortable md-icon.td-data-table-sort-icon {
+  &:hover.mat-sortable md-icon.td-data-table-sort-icon,
+  &.mat-active.mat-sortable md-icon.td-data-table-sort-icon {
     opacity: 1;
   }
 
@@ -44,7 +44,7 @@
     vertical-align: middle;
   }
 
-  &.md-clickable {
+  &.mat-clickable {
     cursor: pointer;
 
     &:focus {
@@ -55,13 +55,13 @@
   md-icon.td-data-table-sort-icon {
     position: absolute;
   }
-  &.md-numeric {
+  &.mat-numeric {
     text-align: right;
     md-icon.td-data-table-sort-icon {
       margin-left: -22px;
     }
   }
-  &:not(.md-numeric) {
+  &:not(.mat-numeric) {
     md-icon.td-data-table-sort-icon {
       margin-left: 6px;
     }

@@ -1,7 +1,7 @@
 $backdrop-index: 80;
 $checkbox-size: 18px;
 
-.md-table-container {
+.mat-table-container {
   display: block;
   max-width: 100%;
   overflow-x: auto;
@@ -9,12 +9,12 @@ $checkbox-size: 18px;
 }
 
 table.td-data-table {
-  &.md-selectable tbody > tr.td-data-table-row {
+  &.mat-selectable tbody > tr.td-data-table-row {
     transition: background-color 0.2s;
   }
 
-  &.md-selectable td.td-data-table-cell,
-  &.md-selectable th.td-data-table-column {
+  &.mat-selectable td.td-data-table-cell,
+  &.mat-selectable th.td-data-table-column {
     &:first-child {
       width: 20px;
       padding: 0 24px;
@@ -24,12 +24,22 @@ table.td-data-table {
     }
   }
 
-  td.md-checkbox-cell,
-  th.md-checkbox-column {
+  td.mat-checkbox-cell,
+  th.mat-checkbox-column {
     width: $checkbox-size;
     font-size: 0 !important;
+    md-pseudo-checkbox {
+      width: $checkbox-size;
+      height: $checkbox-size;
+      /deep/ &.mat-pseudo-checkbox-checked::after {
+        top: 3px !important;
+        left: 1px !important;
+        width: 11px !important;
+        height: 4px !important;
+      }
+    }
     md-checkbox {
-      /deep/ .md-checkbox-inner-container {
+      /deep/ .mat-checkbox-inner-container {
         width: $checkbox-size;
         height: $checkbox-size;
         margin: 0;

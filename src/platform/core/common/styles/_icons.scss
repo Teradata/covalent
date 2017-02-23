@@ -1,7 +1,7 @@
 @import 'default-theme';
 
 md-list-item,
-.md-list-item {
+.mat-list-item-content {
     md-icon {
         color: md-color($md-foreground, icon);
         &[md-list-avatar] {
@@ -19,7 +19,7 @@ md-list-item,
         }
     }
 }
-.md-icon-logo {
+.mat-icon.md-icon-logo {
     height: auto;
     width: 100px;
 }

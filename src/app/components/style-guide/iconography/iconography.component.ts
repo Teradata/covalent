@@ -824,7 +824,7 @@ export class IconographyComponent implements OnInit {
 
   filter(): void {
     this.filteredList = this.icons.filter(function(el: string): boolean {
-      return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+      return el.toLowerCase().indexOf(this.query ? this.query.toLowerCase() : '') > -1;
     }.bind(this));
   }
 }

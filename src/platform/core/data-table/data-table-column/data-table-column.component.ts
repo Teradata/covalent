@@ -68,22 +68,22 @@ export class TdDataTableColumnComponent {
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
                         new EventEmitter<ITdDataTableSortChangeEvent>();
 
-  @HostBinding('class.md-clickable')
+  @HostBinding('class.mat-clickable')
   get bindClickable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-sortable')
+  @HostBinding('class.mat-sortable')
   get bingSortable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-active')
+  @HostBinding('class.mat-active')
   get bindActive(): boolean {
     return this.active;
   }
 
-  @HostBinding('class.md-numeric')
+  @HostBinding('class.mat-numeric')
   get bindNumeric(): boolean {
     return this.numeric;
   }

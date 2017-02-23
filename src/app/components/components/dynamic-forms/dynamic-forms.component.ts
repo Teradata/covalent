@@ -62,7 +62,7 @@ export class DynamicFormsDemoComponent {
 
   numberElements: ITdDynamicElementConfig[] = [{
     name: 'number',
-    label: 'Number (coming soon)',
+    label: 'Number',
     type: TdDynamicType.Number,
     required: true,
     min: 18,
