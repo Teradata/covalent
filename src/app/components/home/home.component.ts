@@ -46,40 +46,35 @@ export class HomeComponent implements OnInit {
   ];
 
   updates: Object[] = [{
-      description: 'Navigation Drawer sidenav component',
-      icon: 'kitchen',
-      route: 'style-guide/navigation-drawer',
-      title: 'New component & pattern',
+      description: 'File Input component',
+      icon: 'space_bar',
+      route: 'components/file-input',
+      title: 'New component',
     }, {
-      description: 'Management list (data-list) pattern',
-      icon: 'view_list',
-      route: 'style-guide/management-list',
-      title: 'New pattern',
+      description: 'NGX Translate',
+      icon: 'language',
+      route: 'components/ngx-translate',
+      title: 'New supported feature',
     }, {
-      description: 'Responsive layout modes & toggles',
+      description: 'Route on toolbar logos',
       icon: 'dashboard',
       route: 'layouts',
       title: 'Component updated',
     }, {
-      description: 'Highlight themes & hardening',
-      icon: 'code',
-      route: 'components/syntax-highlighting',
+      description: 'Data Table additional features',
+      icon: 'grid_on',
+      route: 'components/data-table',
       title: 'Component updated',
     }, {
-      description: 'Markdown file support & hardening',
-      icon: 'chrome_reader_mode',
-      route: 'components/markdown',
+      description: 'File upload refactored',
+      icon: 'attach_file',
+      route: 'components/file-upload',
       title: 'Component updated',
     }, {
-      description: 'Loading colors & enhancements',
-      icon: 'hourglass_empty',
-      route: 'components/loading',
+      description: 'Paging Bar additional features',
+      icon: 'swap_horiz',
+      route: 'components/paging',
       title: 'Component updated',
-    }, {
-      description: 'Sketch template updated',
-      icon: 'cloud_download',
-      route: 'style-guide/resources',
-      title: 'Resource updated',
     },
   ];
 
