@@ -20,10 +20,10 @@ export class DocsComponent implements AfterViewInit {
     route: '.',
     title: 'Getting Started',
   }, {
-    description: 'Familiarize yourself with ng2',
+    description: 'Familiarize yourself with Angular',
     icon: 'change_history',
     route: 'angular-2',
-    title: 'Angular 2.0',
+    title: 'Angular 2',
   }, {
     description: 'Material Design components for Angular 2',
     icon: 'layers',

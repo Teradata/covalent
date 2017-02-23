@@ -334,15 +334,15 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleSelectable()">
+    <button md-button color="primary" (click)="toggleSelectable()" class="text-upper">
       Toggle Selectable
       ({{selectable ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable">
-      Toggle Multiple Selection
+    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable" class="text-upper">
+      Toggle Multiple
       ({{multiple ? 'ON' : 'OFF'}})
     </button>
-    <button md-button color="primary" (click)="toggleTooltips()">
+    <button md-button color="primary" (click)="toggleTooltips()" class="text-upper">
       Toggle Tooltip
       ({{areTooltipsOn() ? 'ON' : 'OFF'}})
     </button>
