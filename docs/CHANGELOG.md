@@ -16,7 +16,7 @@
   </td-file-upload>
   ```
 
-* **paging-bar:** add way to set its labels so its easier to for i18n usage. ([]()) closes [#356](https://github.com/Teradata/covalent/issues/356) and [214](https://github.com/Teradata/covalent/issues/214)
+* **paging-bar:** add way to set its labels so its easier to for i18n usage. ([e454b985fdbbaed6dce2040830177f47118a5be3](https://github.com/Teradata/covalent/commit/e454b985fdbbaed6dce2040830177f47118a5be3)) closes [#356](https://github.com/Teradata/covalent/issues/356) and [214](https://github.com/Teradata/covalent/issues/214)
 
   Usage:
 
@@ -57,8 +57,8 @@
 * **file-upload:** improve demos and docs. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7))
 * **modules:** only import modules that are required. ([1b1b49f6a3a2de08f35171119dbbd0ae6557fa0d](https://github.com/Teradata/covalent/commit/1b1b49f6a3a2de08f35171119dbbd0ae6557fa0d)), closes [#287](https://github.com/Teradata/covalent/issues/287)
 * **layout:** add `[navigationRoute]` input in `layouts`/`navigation-drawer` to be able to navigate to `/` or a user defined route when clicking on the icon, logo or title. ([46b6ff2e9e9575cdf6fb0674227dbcbf50719274](https://github.com/Teradata/covalent/commit/46b6ff2e9e9575cdf6fb0674227dbcbf50719274)), closes [#315](https://github.com/Teradata/covalent/issues/315)
-* **paging-bar:** add `[initialPage]` input. ([]())
-* **paging-bar:** improve demos and docs. ([]())
+* **paging-bar:** add `[initialPage]` input. ([e454b985fdbbaed6dce2040830177f47118a5be3](https://github.com/Teradata/covalent/commit/e454b985fdbbaed6dce2040830177f47118a5be3))
+* **paging-bar:** improve demos and docs. ([e454b985fdbbaed6dce2040830177f47118a5be3](https://github.com/Teradata/covalent/commit/e454b985fdbbaed6dce2040830177f47118a5be3))
 
 ## Refactor
 * **file-upload:** leverage file-input component internally. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7))
