@@ -2,17 +2,19 @@
   <md-card-title>Paging</md-card-title>
   <md-card-subtitle>Paging for lists and tables</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-          <p>Change Event: </p>
-          <div>
-            <p>Page Size: {{event?.pageSize || '100'}}</p>
-            <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
-            <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
-          </div>
-          <p>Total: {{event?.total || '1345'}}</p>
+          <md-card-content>
+            <p>Change Event: </p>
+            <div>
+              <p>Page Size: {{event?.pageSize || '100'}}</p>
+              <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
+              <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
+            </div>
+            <p>Total: {{event?.total || '1345'}}</p>
+          </md-card-content>
+          <md-divider></md-divider>
           <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
                           [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
             <span td-paging-bar-label hide-xs>Row per page:</span>
@@ -21,43 +23,45 @@
       </md-tab>
       <md-tab>
         <template md-tab-label>Code</template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
-                            [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
-              <span td-paging-bar-label hide-xs>Row per page:</span>
-              { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
-            </td-paging-bar>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            import { IPageChangeEvent } from '@covalent/core';
-            ...
-            export class Demo {
-              event: IPageChangeEvent;
-              firstLast: boolean = false;
-              pageSizeAll: boolean = false;
+        <md-card-content>
+          <p>HTML:</p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
+                              [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+                <span td-paging-bar-label hide-xs>Row per page:</span>
+                { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+              </td-paging-bar>
+            ]]>
+          </td-highlight>
+          <p>Typescript:</p>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              import { IPageChangeEvent } from '@covalent/core';
+              ...
+              export class Demo {
+                event: IPageChangeEvent;
+                firstLast: boolean = false;
+                pageSizeAll: boolean = false;
 
-              change(event: IPageChangeEvent): void {
-                this.event = event;
-              }
+                change(event: IPageChangeEvent): void {
+                  this.event = event;
+                }
 
-              toggleFirstLast(): void {
-                this.firstLast = !this.firstLast;
+                toggleFirstLast(): void {
+                  this.firstLast = !this.firstLast;
+                }
               }
-            }
-          ]]>
-        </td-highlight>
+            ]]>
+          </td-highlight>
+        </md-card-content>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
+  
   <md-divider></md-divider>
   <md-card-actions>
     <div layout="row" layout-align="start center">
-      <button md-raised-button color="primary" (click)="toggleFirstLast()">
+      <button md-button color="primary" (click)="toggleFirstLast()">
         Toggle first/last buttons
       </button>
     </div>
