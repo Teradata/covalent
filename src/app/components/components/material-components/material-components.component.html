@@ -97,8 +97,8 @@
       </md-card-content>
       <md-divider></md-divider>
       <md-card-actions>
-        <button md-button color="accent">Action</button>
-        <button md-button>Cancel</button>
+        <button md-button color="accent" class="text-upper">Action</button>
+        <button md-button class="text-upper">Cancel</button>
       </md-card-actions>
     </md-card>
     <td-highlight lang="html">
@@ -115,8 +115,8 @@
         </md-card-content>
         <md-divider></md-divider>
         <md-card-actions>
-          <button md-button color="accent">Action</button>
-          <button md-button>Cancel</button>
+          <button md-button color="accent" class="text-upper">Action</button>
+          <button md-button class="text-upper">Cancel</button>
         </md-card-actions>
       </md-card>
     ]]>
@@ -167,7 +167,7 @@
             <md-checkbox flex="initial" [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
               I agree to the terms
             </md-checkbox>
-            <button md-raised-button [disabled]="!user.agreesToTOS" class="pad-right-sm">Sign Up</button>
+            <button md-raised-button [disabled]="!user.agreesToTOS" class="pad-right-sm" class="text-upper">Sign Up</button>
           </div>
           <md-divider class="push-top-sm push-bottom-sm"></md-divider>
           <md-checkbox labelPosition="after">
@@ -186,7 +186,7 @@
               <md-checkbox [(ngModel)]="user.agreesToTOS" name="agreesToTOS">
                 I have read and agree to the terms of service.
               </md-checkbox>
-              <button type="submit" md-raised-button [disabled]="!user.agreesToTOS">Sign Up</button>
+              <button type="submit" md-raised-button [disabled]="!user.agreesToTOS" class="text-upper">Sign Up</button>
             </div>
 
             <md-checkbox labelPosition="after">
