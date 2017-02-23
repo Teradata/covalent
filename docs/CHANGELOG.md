@@ -30,6 +30,7 @@
 ## Bug Fixes
 * **data-table:** make `td-data-table-column` return proper name in sort event. ([8a19aa0cc9b5bb8ec4ffda8d0f7ae6c1dd3cd0dc](https://github.com/Teradata/covalent/commit/8a19aa0cc9b5bb8ec4ffda8d0f7ae6c1dd3cd0dc))
 * **data-table:** no more need for refresh work around for tooltips used under `OnPush`. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
+* **data-table:** force change detection when model array ref is changed ([65d1c3b14ef41992fe1847eecb8c833810775c2c](https://github.com/Teradata/covalent/commit/65d1c3b14ef41992fe1847eecb8c833810775c2c))
 * **dynamic-forms:** `number` type input works again. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **json-formatter:** no more need for refresh work around for tooltips used under `OnPush`. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **layout:** leverage `[disableClose]` input from sidenav to prevent `ESC` closing the sidenav on `side` mode. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
