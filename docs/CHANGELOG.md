@@ -3,7 +3,7 @@
 
 ## Breaking Change
 * **material:** [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes-from-beta1) from `@material`.
-* **file-upload:** add way to set its labels so its easier to for i18n usage ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7)), closes [#286](https://github.com/Teradata/covalent/issues/286) 
+* **file-upload:** add way to set its labels for easier i18n usage ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7)), closes [#286](https://github.com/Teradata/covalent/issues/286) 
 
   Usage:
 
@@ -16,7 +16,7 @@
   </td-file-upload>
   ```
 
-* **paging-bar:** add way to set its labels so its easier to for i18n usage. ([e454b985fdbbaed6dce2040830177f47118a5be3](https://github.com/Teradata/covalent/commit/e454b985fdbbaed6dce2040830177f47118a5be3)) closes [#356](https://github.com/Teradata/covalent/issues/356) and [214](https://github.com/Teradata/covalent/issues/214)
+* **paging-bar:** add way to set its labels for easier i18n usage. ([e454b985fdbbaed6dce2040830177f47118a5be3](https://github.com/Teradata/covalent/commit/e454b985fdbbaed6dce2040830177f47118a5be3)) closes [#356](https://github.com/Teradata/covalent/issues/356) and [214](https://github.com/Teradata/covalent/issues/214)
 
   Usage:
 
