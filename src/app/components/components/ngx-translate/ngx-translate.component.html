@@ -304,13 +304,15 @@
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
-        <button md-button color="accent" (click)="openAlert()">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+        <div class="pad">
+          <button md-raised-button color="accent" (click)="openAlert()" class="text-upper">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+        </div>
       </md-tab>
       <md-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-           <button md-button color="accent" (click)="openAlert()">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
+           <button md-button color="accent" (click)="openAlert()" class="text-upper">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
