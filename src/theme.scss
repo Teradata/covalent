@@ -1,7 +1,7 @@
 @import '~@angular/material/core/theming/all-theme';
 @import './platform/core/theming/all-theme';
 @import './platform/markdown/markdown-theme';
-@import './platform/charts/charts-theme';
+@import '~@covalent/charts/charts-theme';
 @import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
 

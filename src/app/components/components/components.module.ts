@@ -35,7 +35,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentChartsModule } from '../../../platform/charts';
+import { CovalentChartsModule } from '@covalent/charts';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
