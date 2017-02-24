@@ -192,6 +192,26 @@
         export class MyModule {}
       ]]>
     </td-highlight>
+    <p>apply the theme in the <code>theme.scss</code></p>
+    <td-highlight lang="css">
+      <![CDATA[
+        @import '~@angular/material/core/theming/all-theme';
+        @import '~@covalent/charts/charts-theme';
+
+        @include mat-core();
+
+        $primary: mat-palette($mat-blue, 700);
+        $accent:  mat-palette($mat-orange, 800, A100, A400);
+
+        // The warn palette is optional (defaults to red).
+        $warn:    mat-palette($mat-red, 600);
+
+        $theme: mat-light-theme($primary, $accent, $warn);
+
+        @include angular-material-theme($theme);
+        @include covalent-charts-theme($theme);
+      ]]>
+    </td-highlight>
   </md-card-content>
 </md-card>
 <md-card>
