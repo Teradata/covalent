@@ -31,15 +31,15 @@
     <div class="td-expansion-content"
          [@tdCollapse]="!expand"
          [style.overflow]="hideContentOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideContentOverflow = true"
-         (@tdCollapse.done)="hideContentOverflow = false">
+         (@tdCollapse.start)="hideContentOverflow = !hideContentOverflow"
+         (@tdCollapse.done)="hideContentOverflow = !hideContentOverflow">
       <ng-content></ng-content>
     </div>
     <div class="td-expansion-summary"
          [@tdCollapse]="expand"
          [style.overflow]="hideSummaryOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideSummaryOverflow = true"
-         (@tdCollapse.done)="hideSummaryOverflow = false">
+         (@tdCollapse.start)="hideSummaryOverflow = !hideSummaryOverflow"
+         (@tdCollapse.done)="hideSummaryOverflow = !hideSummaryOverflow">
       <ng-content select="td-expansion-summary"></ng-content>
     </div>
   </div>

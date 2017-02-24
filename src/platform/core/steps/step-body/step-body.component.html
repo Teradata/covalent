@@ -4,8 +4,8 @@
     <div class="td-step-content-wrapper"
          [@tdCollapse]="!active"
          [style.overflow]="hideContentOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideContentOverflow = true"
-         (@tdCollapse.done)="hideContentOverflow = false">
+         (@tdCollapse.start)="hideContentOverflow = !hideContentOverflow"
+         (@tdCollapse.done)="hideContentOverflow = !hideContentOverflow">
       <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
         <ng-content select="[td-step-body-content]"></ng-content>
       </div>
@@ -15,8 +15,8 @@
     </div>
     <div #summaryRef [@tdCollapse]="active || !isComplete()"
                      [style.overflow]="hideSummaryOverflow ? 'hidden' : null"
-                     (@tdCollapse.start)="hideSummaryOverflow = true"
-                     (@tdCollapse.done)="hideSummaryOverflow = false"
+                     (@tdCollapse.start)="hideSummaryOverflow = !hideSummaryOverflow"
+                     (@tdCollapse.done)="hideSummaryOverflow = !hideSummaryOverflow"
                      [class.td-step-summary]="summaryRef.children.length || summaryRef.textContent.trim()">
       <ng-content select="[td-step-body-summary]"></ng-content>
     </div>
