@@ -9,9 +9,9 @@ describe('TdDigitsPipe', () => {
   });
 
   it('should return with an empty or invalid input', () => {
-    expect(pipe.transform('notanumber', undefined)).toEqual('Invalid Number');
-    expect(pipe.transform(NaN, undefined)).toEqual('Invalid Number');
-    expect(pipe.transform(undefined, undefined)).toEqual('Invalid Number');
+    expect(pipe.transform('notanumber', undefined)).toEqual('notanumber');
+    expect(pipe.transform(NaN, undefined)).toEqual(NaN);
+    expect(pipe.transform(undefined, undefined)).toEqual(undefined);
   });
 
   it('should return formatted digits', () => {

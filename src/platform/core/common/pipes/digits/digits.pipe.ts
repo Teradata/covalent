@@ -19,7 +19,7 @@ export class TdDigitsPipe implements PipeTransform {
       return '0';
     } else if (isNaN(parseInt(digits, 10))) {
       /* If not a valid number, return 'Invalid Number' */
-      return 'Invalid Number';
+      return digits;
     } else if (digits < 1) {
       return this._decimalPipe.transform(digits.toFixed(precision));
     }
