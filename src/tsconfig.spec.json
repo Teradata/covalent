@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
@@ -15,7 +15,7 @@
       "../node_modules/@types"
     ],
     "types": [
-      "jasmine", "hammerjs"
+      "jasmine", "hammerjs", "node"
     ],
     "paths": {
       "@covalent/*": ["./platform/*"]
@@ -25,7 +25,7 @@
     "allowUnreachableCode": false,
     "pretty": true
   },
-  "exclude": [
+  "include": [
     "**/*.spec.*"
   ]
 }
