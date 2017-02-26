@@ -43,7 +43,7 @@
   "lint": [{
       "project": "src/tsconfig.app.json"
     }, {
-      "project": "e2e/tsconfig.spec.json"
+      "project": "src/tsconfig.spec.json"
     }
   ],
   "test": {
