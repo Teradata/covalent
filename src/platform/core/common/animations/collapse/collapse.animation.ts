@@ -14,12 +14,10 @@ export function TdCollapseAnimation(duration: number = 150): AnimationEntryMetad
   return trigger('tdCollapse', [
     state('true', style({
       height: '0',
-      overflow: 'hidden',
       display: 'none',
     })),
     state('false',  style({
       height: '*',
-      overflow: 'hidden',
       display: '*',
     })),
     transition('0 => 1', animate(duration + 'ms ease-in')),
