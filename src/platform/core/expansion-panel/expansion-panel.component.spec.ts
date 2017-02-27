@@ -81,7 +81,7 @@ describe('Component: ExpansionPanel', () => {
         expect(fixture.debugElement.query(By.css('.td-expansion-content'))).toBeTruthy();
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-        .style.overflow).toBe('hidden');
+        .style.display).toBe('none');
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-summary')).nativeElement)
         .style.display).toBe('');

@@ -1,3 +1,13 @@
+## Upgrade from 1.0.0-beta.1 to 1.0.0-beta.2
+
+Upgraded dependencies:
+ - angular-cli@1.0.0-beta.26 to 1.0.0-rc.0
+ - material@2.0.0-beta.1 to 2.0.0-beta.2
+ - flex-layout@2.0.0-rc.1 addition
+ - ngx-charts@3.1.2 to 4.1.3
+
+[1.0.0-beta.2 Upgrade Steps](https://github.com/Teradata/covalent-quickstart/pull/46/commits) and [Changelog](https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md#100-beta2-hotel-california-2017-02-23)
+
 ## Upgrade from 0.10 to 1.0.0-beta.1
 
 Upgraded dependencies:
