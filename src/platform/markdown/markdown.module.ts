@@ -22,7 +22,7 @@ export class CovalentMarkdownModule {
    */
   static forRoot(): ModuleWithProviders {
     /* tslint:disable-next-line */
-    console.warn('forRoot() has been deprecated in CovalentHighlightModule');
+    console.warn('forRoot() has been deprecated in CovalentMarkdownModule');
     return {
       ngModule: CovalentMarkdownModule,
       providers: [],
