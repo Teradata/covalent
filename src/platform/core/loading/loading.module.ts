@@ -35,15 +35,26 @@ export { TdLoadingService, ITdLoadingConfig, ILoadingOptions } from './services/
   exports: [
     TD_LOADING,
   ],
+  providers: [
+    TdLoadingService,
+    TdLoadingFactory,
+  ],
   entryComponents: [
     TD_LOADING_ENTRY_COMPONENTS,
   ],
 })
 export class CovalentLoadingModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
+    /* tslint:disable-next-line */
+    console.warn('forRoot() has been deprecated in CovalentLoadingModule');
     return {
       ngModule: CovalentLoadingModule,
-      providers: [ TdLoadingService, TdLoadingFactory ],
+      providers: [ ],
     };
   }
 }
