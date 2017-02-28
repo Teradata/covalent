@@ -13,7 +13,6 @@ export interface IHttpInterceptorConfig {
   paths: string[];
 }
 
-@Injectable()
 export class HttpInterceptorService {
 
   private _requestInterceptors: IHttpInterceptorMapping[] = [];
