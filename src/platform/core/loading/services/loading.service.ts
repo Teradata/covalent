@@ -7,15 +7,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';
 import { TdLoadingFactory, ILoadingRef } from './loading.factory';
 
-/**
- * @deprecated in 1.0.0-beta.1
- */
-export interface ILoadingOptions {
-  name: string;
-  type?: LoadingType;
-  mode?: LoadingMode;
-}
-
 export interface ITdLoadingConfig {
   name: string;
   type?: LoadingType;
@@ -103,17 +94,6 @@ export class TdLoadingService {
     let fullscreenConfig: TdLoadingConfig = new TdLoadingConfig(config);
     this.removeComponent(fullscreenConfig.name);
     this._context[fullscreenConfig.name] = this._loadingFactory.createFullScreenComponent(fullscreenConfig);
-  }
-
-  /**
-   * @deprecated in 1.0.0-beta.1
-   *
-   * Please use the `create()` method.
-   */
-  public createOverlayComponent(config: ITdLoadingConfig, viewContainerRef: ViewContainerRef): void {
-    /* tslint:disable-next-line */
-    console.warn("createOverlayComponent() is deprecated.  Please use create() instead");
-    this.create(config);
   }
 
   /**

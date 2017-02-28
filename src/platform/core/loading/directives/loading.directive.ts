@@ -26,17 +26,6 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
   }
 
   /**
-   * @deprecated in 1.0.0-beta.1
-   *
-   * Please use the `tdLoadingType` method.
-   */
-  @Input('loadingType')
-  set typeDeprecated(type: LoadingType) {
-    /* tslint:disable-next-line */
-    console.warn("loadingType is deprecated.  Please use tdLoadingType instead");
-    this.type = type;
-  }
-  /**
    * tdLoadingType?: LoadingType or ['linear' | 'circular']
    * Sets the type of loading mask depending on value.
    * Defaults to [LoadingType.Circular | 'circular'].
@@ -53,17 +42,6 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * @deprecated in 1.0.0-beta.1
-   *
-   * Please use the `tdLoadingMode` method.
-   */
-  @Input('loadingMode')
-  set modeDeprecated(mode: LoadingMode) {
-    /* tslint:disable-next-line */
-    console.warn("loadingMode is deprecated.  Please use tdLoadingMode instead");
-    this.mode = mode;
-  }
   /**
    * tdLoadingMode?: LoadingMode or ['determinate' | 'indeterminate']
    * Sets the mode of loading mask depending on value.
