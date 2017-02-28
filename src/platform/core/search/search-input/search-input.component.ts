@@ -73,6 +73,7 @@ export class TdSearchInputComponent implements OnInit {
 
   ngOnInit(): void {
     this._input._ngControl.valueChanges
+      .skip(1) // skip first change when value is set to undefined
       .debounceTime(this.debounce)
       .subscribe((value: string) => {
         this._searchTermChanged(value);
