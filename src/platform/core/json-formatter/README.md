@@ -19,13 +19,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentJsonFormatterModule] using the forRoot() method in your NgModule:
+Import the [CovalentJsonFormatterModule] in your NgModule:
 
 ```typescript
 import { CovalentJsonFormatterModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentJsonFormatterModule.forRoot(),  // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentJsonFormatterModule,  // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...

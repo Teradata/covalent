@@ -15,8 +15,8 @@ export { TdChipsComponent } from './chips.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdInputModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdInputModule,
+    MdIconModule,
   ],
   declarations: [
     TdChipsComponent,

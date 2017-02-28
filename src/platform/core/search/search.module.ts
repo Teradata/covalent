@@ -15,9 +15,9 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdInputModule.forRoot(),
-    MdIconModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdInputModule,
+    MdIconModule,
+    MdButtonModule,
   ],
   declarations: [
     TdSearchInputComponent,

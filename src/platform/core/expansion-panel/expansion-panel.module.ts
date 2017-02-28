@@ -20,9 +20,9 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdListModule.forRoot(),
-    MdIconModule.forRoot(),
-    PortalModule.forRoot(),
+    MdListModule,
+    MdIconModule,
+    PortalModule,
   ],
   declarations: [
     TD_EXPANSION_PANEL,

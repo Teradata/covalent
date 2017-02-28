@@ -17,7 +17,7 @@ describe('Component: ExpansionPanel', () => {
         TdExpansionPanelSummaryTestComponent,
       ],
       imports: [
-        CovalentExpansionPanelModule.forRoot(),
+        CovalentExpansionPanelModule,
       ],
     });
     TestBed.compileComponents();

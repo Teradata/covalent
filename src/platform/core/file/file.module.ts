@@ -33,9 +33,9 @@ export { TdFileService, IUploadOptions } from './services/file.service';
     JsonpModule,
     FormsModule,
     CommonModule,
-    MdIconModule.forRoot(),
-    MdButtonModule.forRoot(),
-    PortalModule.forRoot(),
+    MdIconModule,
+    MdButtonModule,
+    PortalModule,
   ],
   declarations: [
     TD_FILE,

@@ -44,12 +44,12 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MdInputModule.forRoot(),
-    MdSelectModule.forRoot(),
-    MdCheckboxModule.forRoot(),
-    MdSliderModule.forRoot(),
-    MdSlideToggleModule.forRoot(),
-    CovalentCommonModule.forRoot(),
+    MdInputModule,
+    MdSelectModule,
+    MdCheckboxModule,
+    MdSliderModule,
+    MdSlideToggleModule,
+    CovalentCommonModule,
   ],
   exports: [
     TD_DYNAMIC_FORMS,

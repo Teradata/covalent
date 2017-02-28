@@ -34,12 +34,12 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     BrowserModule,
     HttpModule,
     JsonpModule,
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentChartsModule,
+    CovalentDynamicFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

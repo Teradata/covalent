@@ -16,13 +16,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentDynamicFormsModule] using the forRoot() method in your NgModule:
+Import the [CovalentDynamicFormsModule] in your NgModule:
 
 ```typescript
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 @NgModule({
   imports: [
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentDynamicFormsModule,
     ...
   ],
   ...

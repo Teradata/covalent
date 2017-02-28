@@ -13,11 +13,11 @@ import { TdReadmeLoaderComponent } from './readme-loader/readme-loader.component
 @NgModule({
   imports: [
     CommonModule,
-    MdCardModule.forRoot(),
-    MdCheckboxModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
+    MdCardModule,
+    MdCheckboxModule,
+    CovalentDataTableModule,
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
   ],
   declarations: [
     TdPrettyMarkdownComponent,
@@ -32,10 +32,4 @@ import { TdReadmeLoaderComponent } from './readme-loader/readme-loader.component
   entryComponents: [ TdDataTableComponent, TdMarkdownComponent, TdHighlightComponent, MdCheckbox ],
 })
 export class DocumentationToolsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: DocumentationToolsModule,
-      providers: [],
-    };
-  }
 }

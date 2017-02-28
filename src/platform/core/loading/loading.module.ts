@@ -24,10 +24,10 @@ export { TdLoadingService, ITdLoadingConfig, ILoadingOptions } from './services/
 @NgModule({
   imports: [
     CommonModule,
-    MdProgressBarModule.forRoot(),
-    MdProgressSpinnerModule.forRoot(),
-    OverlayModule.forRoot(),
-    PortalModule.forRoot(),
+    MdProgressBarModule,
+    MdProgressSpinnerModule,
+    OverlayModule,
+    PortalModule,
   ],
   declarations: [
     TD_LOADING,

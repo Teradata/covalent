@@ -33,9 +33,9 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
 @NgModule({
   imports: [
     CommonModule,
-    MdCheckboxModule.forRoot(),
-    MdTooltipModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdCheckboxModule,
+    MdTooltipModule,
+    MdIconModule,
     MdSelectionModule,
   ],
   declarations: [

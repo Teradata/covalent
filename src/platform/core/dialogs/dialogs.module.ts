@@ -36,9 +36,9 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
   imports: [
     FormsModule,
     CommonModule,
-    MdDialogModule.forRoot(),
-    MdInputModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdDialogModule,
+    MdInputModule,
+    MdButtonModule,
   ],
   declarations: [
     TD_DIALOGS,

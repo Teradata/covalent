@@ -15,8 +15,8 @@ export { TdMenuComponent } from './menu.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdMenuModule.forRoot(),
-    MdListModule.forRoot(),
+    MdMenuModule,
+    MdListModule,
   ],
   declarations: [
     TD_MENU,
