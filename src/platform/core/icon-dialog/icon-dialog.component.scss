@@ -1,0 +1,83 @@
+/*
+ * Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
+ * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
+ */
+
+@import '../../theme';
+$background: map-get($theme, background);
+
+td-dialog {
+  display: block;
+  height: 90%;
+  overflow: auto;
+}
+@media (max-width: 480px) {
+  td-dialog {
+    width: 300px;
+  }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+  td-dialog {
+    width: 460px;
+  }
+}
+@media (min-width: 601px) and (max-width: 700px)  {
+  td-dialog {
+    width: 580px;
+  }
+}
+@media (min-width: 701px) and (max-width: 800px)  {
+  td-dialog {
+    width: 680px;
+  }
+}
+@media (min-width: 801px)  {
+  td-dialog {
+    width: 780px;
+  }
+}
+@media (max-height: 480px) {
+  td-dialog {
+    height: 300px;
+  }
+}
+@media (min-height: 481px) and (max-height: 600px) {
+  td-dialog {
+    height: 400px;
+  }
+}
+@media (min-height: 601px) and (max-height: 700px)  {
+  td-dialog {
+    height: 500px;
+  }
+}
+@media (min-height: 701px) and (max-height: 800px)  {
+  td-dialog {
+    height: 600px;
+  }
+}
+@media (min-height: 801px)  {
+  td-dialog {
+    height: 700px;
+  }
+}
+td-dialog-content {
+  height: 100%;
+}
+md-grid-tile {
+  transition: background-color 0.5s ease;
+  &:hover {
+    cursor: pointer;
+    background-color: md-color($background, status-bar);
+  }
+}
+
+.icon-select {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.25);
+  }
+  &.selected {
+    border: 1px solid rgba(0, 0, 0, 0.54);
+  }
+}
