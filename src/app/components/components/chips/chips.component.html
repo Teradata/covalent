@@ -3,14 +3,70 @@
   <md-card-subtitle>Small blocks for multiple items</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Basic Demo</p>
+    <h3 class="md-title">Basic Demo</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <template md-tab-label>Demo</template>
-        <td-chips placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-        <p>Autocomplete Demo</p>
-        <td-chips [items]="items" placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-        <p>Autocomplete and requireMatch Demo</p>
+        <td-chips placeholder="Enter any string"></td-chips>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips placeholder="Enter any string"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Autocomplete Demo</h3>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
+        <td-chips [items]="items" placeholder="Enter any string"></td-chips>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>Code</template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="items" placeholder="Enter any string"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+
+              items: string[] = [...];
+              
+              itemsReadOnly: string[] = this.items.slice(2, 8);
+
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Autocomplete and requireMatch Demo</h3>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <template md-tab-label>Demo</template>
         <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
       </md-tab>
       <md-tab>
@@ -18,10 +74,6 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chips placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-            <p>Autocomplete Demo</p>
-            <td-chips [items]="items" placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-            <p>Autocomplete and requireMatch Demo</p>
             <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
           ]]>
         </td-highlight>
@@ -32,10 +84,6 @@
               readOnly: boolean = false;
 
               itemsRequireMatch: string[] = this.items.slice(0, 6);
-
-              itemsReadOnly: string[] = this.items.slice(2, 8);
-
-              itemsForms: string[] = this.items.slice(6, 11);
 
               toggleReadOnly(): void {
                 this.readOnly = !this.readOnly;
