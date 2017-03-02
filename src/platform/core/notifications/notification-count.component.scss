@@ -1,3 +1,4 @@
+@import '../common/styles/mixins';
 $td-notification-size: 20px !default;
 $td-notification-content-size: 40px !default;
 
@@ -39,10 +40,21 @@ $td-notification-content-size: 40px !default;
     bottom: 0px;
   }
   &.td-notification-before {
-    left: 0px;
+    
+        [dir='ltr'] & { 
+          left: 0px;
+        }
+        [dir='rtl'] & { 
+          right: 0px;
+        }
   }
   &.td-notification-after {
-    right: 0px;
+        [dir='ltr'] & { 
+          right: 0px;
+        }
+        [dir='rtl'] & { 
+          left: 0px;
+        }
   }
   &.td-notification-no-count {
     width: 8px;
@@ -54,29 +66,40 @@ $td-notification-content-size: 40px !default;
       bottom: 8px;
     }
     &.td-notification-before {
-      left: 8px;
+        [dir='ltr'] & { 
+          left: 8px;
+        }
+        [dir='rtl'] & { 
+          right: 8px;
+        }
     }
     &.td-notification-after {
       right: 8px;
+        [dir='ltr'] & { 
+          right: 8px;
+        }
+        [dir='rtl'] & { 
+          left: 8px;
+        }
     }
   }
   /deep/ [dir='rtl'] & {
     &.td-notification-before {
-      right: 0px;
-      left: auto;
+      @include rtl(right, 0px,auto);
+      @include rtl(left, auto, 0px);
     }
     &.td-notification-after {
-      left: 0px;
-      right: auto;
+      @include rtl(left, 0px,auto);
+      @include rtl(right, auto, 0px);
     }
      &.td-notification-no-count {
       &.td-notification-before {
-        right: 8px;
-        left: auto;
+        @include rtl(right, 8px,auto);
+        @include rtl(left, auto, 8px);
       }
       &.td-notification-after {
-        left: 8px;
-        right: auto;
+        @include rtl(left, 8px,auto);
+        @include rtl(right, auto, 8px);
       }
     }
   }
