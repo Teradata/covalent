@@ -20,7 +20,7 @@ import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
-import { GitHubService } from './services';
+import { GitHubService, IconService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
@@ -55,7 +55,8 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    GitHubService, {
+    GitHubService,
+    IconService, {
       // Configure LOCALE_ID depending on the language set in browser
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },

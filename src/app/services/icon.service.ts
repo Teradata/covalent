@@ -786,7 +786,16 @@ export class IconService {
     'zoom_out',
   ];
 
+  filteredList: string[] = [];
+
   get icons(): string[] {
     return this._icons;
+  }
+
+  filter(query: string): string[] {
+    this.filteredList = this.icons.filter(function(el: string): boolean {
+      return el.toLowerCase().indexOf(query ? query.toLowerCase() : '') > -1;
+    }.bind(this));
+    return this.filteredList;
   }
 }
