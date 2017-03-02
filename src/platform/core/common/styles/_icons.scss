@@ -1,5 +1,4 @@
 @import 'default-theme';
-@import 'mixins';
 md-list-item,
 .mat-list-item-content {
     md-icon {
@@ -23,6 +22,4 @@ md-list-item,
     height: auto;
     width: 100px;
 }
-.material-icons {
-    @include rtl(direction, ltr, rtl);
-}
+
