@@ -1,3 +1,14 @@
+<a name="1.0.0-beta.2-1"></a>
+# [1.0.0-beta.2-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.2) (2017-02-27)
+
+## Bug Fixes
+* **animations:** remove overflow from styles in steps and expansion-panel. ([52e74da50e55ea6b6b7aaaaad4724ab610d6f468](https://github.com/Teradata/covalent/commit/52e74da50e55ea6b6b7aaaaad4724ab610d6f468))
+* **loading:**  center loading component on replace mode. ([3e40f4bc35dee88941ec398f7575d7b6fd201117](https://github.com/Teradata/covalent/commit/3e40f4bc35dee88941ec398f7575d7b6fd201117))
+
+## Internal
+* **docs:** upgrade guide for [beta.2](https://github.com/Teradata/covalent/blob/develop/docs/UPGRADE.md#upgrade-from-100-beta1-to-100-beta2) ([98a5a19650d2bdfd552456fe17cee76de4319d39](https://github.com/Teradata/covalent/commit/98a5a19650d2bdfd552456fe17cee76de4319d39))
+
+
 <a name="1.0.0-beta.2"></a>
 # [1.0.0-beta.2 Hotel California](https://github.com/Teradata/covalent/tree/v1.0.0-beta.2) (2017-02-23)
 
