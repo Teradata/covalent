@@ -1,3 +1,4 @@
+@import '../common/styles/mixins';
 .td-dialog-title {
   margin-top: 0;
   margin-bottom: 20px;
@@ -11,6 +12,12 @@
   position: relative;
   top: 16px;
   left: 16px;
+  [dir='ltr'] & { 
+      left: 16px;
+  }
+  [dir='rtl'] & { 
+      right: 16px;
+  }
 }
 
 :host {
@@ -18,7 +25,12 @@
   .td-dialog-actions {
     /deep/ button {
       text-transform: uppercase;
-      margin-left: 8px;
+      [dir='ltr'] & { 
+        margin-left: 8px;
+      }
+      [dir='rtl'] & { 
+        margin-right: 8px;
+      }
       padding-left: 8px;
       padding-right: 8px;
       min-width: 64px;
