@@ -95,7 +95,7 @@ export class LoadingDemoComponent implements OnInit {
 
   toggleOverlayStarSyntax(): void {
     if (this.overlayStarSyntax) {
-      this._loadingService.register('overlayStarSyntax');      
+      this._loadingService.register('overlayStarSyntax');
     } else {
       this._loadingService.resolve('overlayStarSyntax');
     }
