@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.2-1",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material 2",
   "keywords": [
@@ -75,7 +75,8 @@
     "rxjs": "^5.0.1",
     "showdown": "1.6.0",
     "zone.js": "^0.7.2",
-    "d3": "^4.4.0"
+    "d3": "^4.4.0",
+    "web-animations-js": "2.2.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.4.5",

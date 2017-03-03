@@ -1,14 +1,13 @@
 {
-  "name": "@covalent/markdown",
+  "name": "@covalent/charts",
   "version": "1.0.0-beta.2-1",
-  "description": "Teradata UI Platform Markdown Module",
-  "main": "./markdown.umd.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
+  "description": "Teradata UI Platform Charts Module",
   "keywords": [
     "angular",
     "components",
-    "reusable"
+    "reusable",
+    "charts",
+    "D3"
   ],
   "scripts": {
   },
@@ -33,11 +32,9 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
-  "dependencies": {
-    "showdown": "1.6.0"
-  },
   "peerDependencies": {
     "@angular/common": "^2.4.5",
-    "@angular/core": "^2.4.5"
+    "@angular/core": "^2.4.5",
+    "d3": "^4.4.0"
   }
 }
