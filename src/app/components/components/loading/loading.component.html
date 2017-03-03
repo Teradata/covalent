@@ -47,12 +47,12 @@
           <![CDATA[
             import { TdLoadingService } from '@covalent/core';
             ...
-            export class Demo implements AfterViewInit {
+            export class Demo implements OnInit {
               overlayStarSyntax: boolean = false;
 
               constructor(private _loadingService: TdLoadingService) {}
 
-              ngAfterViewInit(): void {
+              ngOnInit(): void {
                 this._loadingService.register('overlayStarSyntax');
               }
 
@@ -253,7 +253,6 @@
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
     <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<template>]]></code> element.</p>
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
-    <p>Note: when used on page load, <code>tdLoading</code> should be registered in [TdLoadingService] after 'AfterViewInit#ngAfterViewInit()' component hook cycle.</p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
     <md-list>
