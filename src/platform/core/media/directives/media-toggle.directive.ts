@@ -67,7 +67,9 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._subscription.unsubscribe();
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
   }
 
   private _mediaChange(matches: boolean): void {
