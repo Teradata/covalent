@@ -17,7 +17,6 @@ import { CovalentCoreModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentChartsModule } from '@covalent/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
@@ -38,7 +37,6 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
     CovalentDynamicFormsModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
