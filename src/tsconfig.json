@@ -18,11 +18,7 @@
       "jasmine", "hammerjs"
     ],
     "paths": {
-      "@covalent/core": ["./platform/core"],
-      "@covalent/highlight": ["./platform/highlight"],
-      "@covalent/markdown": ["./platform/markdown"],
-      "@covalent/http": ["./platform/http"],
-      "@covalent/dynamic-forms": ["./platform/dynamic-forms"]
+      "@covalent/*": ["./platform/*"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,

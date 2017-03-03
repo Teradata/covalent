@@ -121,11 +121,6 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'http',
     route: 'http',
     title: 'HTTP Service',
-  }, {
-    description: 'Deprecated (use ngx-charts) ',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'TD Charts',
   }];
 
   external: Object[] = [{

@@ -65,7 +65,6 @@
     "@angular/platform-browser-dynamic": "^2.4.5",
     "@angular/platform-server": "^2.4.5",
     "@angular/router": "^3.4.5",
-    "@covalent/charts": "1.0.0-beta.2",
     "@swimlane/ngx-charts": "4.1.1",
     "@ngx-translate/core": "6.0.0-beta.1",
     "@ngx-translate/http-loader": "0.0.2",
