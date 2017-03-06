@@ -1,4 +1,3 @@
-@import '../common/styles/mixins';
 .td-dialog-title {
   margin-top: 0;
   margin-bottom: 20px;
@@ -11,7 +10,6 @@
 .td-dialog-actions {
   position: relative;
   top: 16px;
-  left: 16px;
   [dir='ltr'] & { 
       left: 16px;
   }
