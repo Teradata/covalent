@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, Inject, Renderer } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 export interface IPageChangeEvent {
   page: number;
@@ -15,6 +16,9 @@ export interface IPageChangeEvent {
   styleUrls: ['./paging-bar.component.scss' ],
 })
 export class TdPagingBarComponent implements OnInit {
+  
+  constructor(private renderer: Renderer,
+              @Inject(DOCUMENT) private document) {}
 
   private _pageSizes: number[] = [50, 100, 200, 500, 1000];
   private _pageSize: number = 50;
@@ -23,6 +27,8 @@ export class TdPagingBarComponent implements OnInit {
   private _fromRow: number = 1;
   private _toRow: number = 1;
   private _initialized: boolean = false;
+  
+  isRtl : boolean = false;
 
   /**
    * pageSizeAll?: boolean
@@ -130,6 +136,7 @@ export class TdPagingBarComponent implements OnInit {
     this._page = this.initialPage;
     this._calculateRows();
     this._initialized = true;
+    this.isRtl = this.document.querySelector('html').getAttribute('dir') == 'rtl';
   }
 
   /**
@@ -189,6 +196,7 @@ export class TdPagingBarComponent implements OnInit {
     let top: number = (this._pageSize * this._page);
     this._fromRow = (this._pageSize * (this._page - 1)) + 1;
     this._toRow = this._total > top ? top : this._total;
+    this.isRtl = this.document.querySelector('html').getAttribute('dir') == 'rtl';
   }
 
   private _handleOnChange(): void {
