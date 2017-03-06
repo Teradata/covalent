@@ -1,6 +1,6 @@
 Get started with Covalent using the Angular CLI.
 
-See the  [material2 getting started](https://github.com/angular/material2/blob/master/guides/getting-started.md) for instructions.
+See the  [material getting started](https://github.com/angular/material2/blob/master/guides/getting-started.md) for instructions.
 
 ## Install the CLI
  
@@ -58,7 +58,7 @@ export class AppModule { }
 ## Include the core and theme styles:
 This is **required** to apply all of the core and theme styles to your application. 
 
-See the [material2 theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) for instructions.
+See the [material theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) for instructions.
 
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 
