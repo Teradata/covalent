@@ -23,7 +23,6 @@ export class TdPagingBarComponent implements OnInit {
   private _fromRow: number = 1;
   private _toRow: number = 1;
   private _initialized: boolean = false;
-  private _rtl = false;
 
   /**
    * pageSizeAll?: boolean
@@ -94,18 +93,6 @@ export class TdPagingBarComponent implements OnInit {
   }
   get total(): number {
     return this._total;
-  }
-
-  /**
-   * rtl: boolean
-   * direction for arrows.
-   */
-  @Input('rtl')
-  set rtl(rtl: boolean) {
-    this._rtl = rtl;
-  }
-  get rtl(): boolean {
-    return this._rtl;
   }
 
   /**
