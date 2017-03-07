@@ -60,10 +60,6 @@ export class ChipsDemoComponent {
 
   itemsRequireMatch: string[] = this.items.slice(0, 6);
 
-  itemsReadOnly: string[] = this.items.slice(2, 8);
-
-  itemsForms: string[] = this.items.slice(6, 11);
-
   toggleReadOnly(): void {
     this.readOnly = !this.readOnly;
   }
