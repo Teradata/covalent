@@ -42,7 +42,7 @@ export class DocsAppComponent {
               private _domSanitizer: DomSanitizer,
               translateService: TranslateService,
               private el: ElementRef, private renderer: Renderer,
-              @Inject(DOCUMENT) private document) {
+              @Inject(DOCUMENT) private document: any) {
     // Set fallback language
     translateService.setDefaultLang('en');
     // Supported languages
@@ -68,9 +68,8 @@ export class DocsAppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/querygrid.svg'));
   }
 
-  changeDir(root:Dir){
+  changeDir(root: Dir): void {
     this.direction = root._dir;
-    
     this.renderer.setElementAttribute(this.document.querySelector('html'), 'dir', this.direction);
   }
 }
