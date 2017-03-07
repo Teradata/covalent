@@ -4,16 +4,18 @@
 .td-search-box {
   height: 64px;
   td-search-input {
+    /deep/ {
+      .mat-input-placeholder.mat-focused {
+        visibility: hidden;
+      }
+    }
+
     [dir='ltr'] & { 
       margin-left: 12px;
     }
     [dir='rtl'] & { 
       margin-right: 12px;
     }
-    /deep/ {
-      .mat-input-placeholder.mat-focused {
-        visibility: hidden;
-      }
-    }
+
   }
 }
