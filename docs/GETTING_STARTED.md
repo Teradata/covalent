@@ -70,14 +70,14 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 @import '~@covalent/markdown/markdown-theme';
 @import '~@covalent/highlight/highlight-theme';\
 
-@include md-core();
+@include mat-core();
 
-$primary: md-palette($md-orange, 800);
-$accent:  md-palette($md-light-blue, 600, A100, A400);
+$primary: mat-palette($mat-orange, 800);
+$accent:  mat-palette($mat-light-blue, 600, A100, A400);
 
-$warn:    md-palette($md-red, 600);
+$warn:    mat-palette($mat-red, 600);
 
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
