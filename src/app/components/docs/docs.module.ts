@@ -32,8 +32,8 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MockDataComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
+    CovalentCoreModule,
+    CovalentHighlightModule,
     docsRoutes,
   ],
 })

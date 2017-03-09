@@ -16,7 +16,7 @@ describe('Component: JsonFormatter', () => {
         TdJsonFormatterBasicTestComponent,
       ],
       imports: [
-        CovalentJsonFormatterModule.forRoot(),
+        CovalentJsonFormatterModule,
       ],
     });
     TestBed.compileComponents();

@@ -14,7 +14,7 @@ describe('Component: Highlight', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentHighlightModule.forRoot(),
+        CovalentHighlightModule,
       ],
       declarations: [
         TdHighlightEmptyTestComponent,

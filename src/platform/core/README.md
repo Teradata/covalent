@@ -16,13 +16,13 @@ npm i -save @covalent/core
 
 ## Setup
 
-Import the **[CovalentCoreModule]** using the *forRoot()* method in your NgModule:
+Import the **[CovalentCoreModule]** in your NgModule:
 
 ```typescript
 import { CovalentCoreModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     ...
   ],
   ...

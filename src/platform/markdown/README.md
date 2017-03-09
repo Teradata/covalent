@@ -42,13 +42,13 @@ npm i -save @covalent/markdown
 <script src="path/to/node_modules/showdown/dist/showdown.js"></script>
 ```
 
-Then, import the **[CovalentMarkdownModule]** using the *forRoot()* method in your NgModule:
+Then, import the **[CovalentMarkdownModule]** in your NgModule:
 
 ```typescript
 import { CovalentMarkdownModule } from '@covalent/markdown';
 @NgModule({
   imports: [
-    CovalentMarkdownModule.forRoot(),
+    CovalentMarkdownModule,
     ...
   ],
   ...

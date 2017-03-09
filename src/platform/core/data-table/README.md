@@ -24,13 +24,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentDataTableModule] using the forRoot() method in your NgModule:
+Import the [CovalentDataTableModule] in your NgModule:
 
 ```typescript
 import { CovalentDataTableModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentDataTableModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...

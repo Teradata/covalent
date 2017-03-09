@@ -18,7 +18,7 @@ describe('Component: Steps', () => {
         TdStepsDynamicTestComponent,
       ],
       imports: [
-        CovalentStepsModule.forRoot(),
+        CovalentStepsModule,
       ],
     });
     TestBed.compileComponents();

@@ -46,7 +46,7 @@ Properties:
 
 ## Setup
 
-Import the [CovalentFileModule] using the forRoot() method in your NgModule:
+Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
 import { HttpModule } from '@angular/http';
@@ -54,7 +54,7 @@ import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
     HttpModule,
-    CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentFileModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...
