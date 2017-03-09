@@ -16,7 +16,12 @@
     }
   }
   .td-menu-button {
-    margin-left: 0px;
+    [dir='ltr'] & { 
+      margin-left: 0px;
+    }
+    [dir='rtl'] & { 
+      margin-right: 0px;
+    }
   }
   .list {
     text-align: start;

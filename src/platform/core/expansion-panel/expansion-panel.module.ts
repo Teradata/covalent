@@ -20,9 +20,9 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdListModule.forRoot(),
-    MdIconModule.forRoot(),
-    PortalModule.forRoot(),
+    MdListModule,
+    MdIconModule,
+    PortalModule,
   ],
   declarations: [
     TD_EXPANSION_PANEL,
@@ -32,7 +32,14 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
   ],
 })
 export class CovalentExpansionPanelModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
+    /* tslint:disable-next-line */
+    console.warn('forRoot() has been deprecated in CovalentExpansionPanelModule');
     return {
       ngModule: CovalentExpansionPanelModule,
       providers: [ ],

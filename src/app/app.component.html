@@ -1,8 +1,11 @@
-<td-layout #layout>
+<td-layout #layout #root="$implicit" [dir]="direction">
   <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata">
     <md-nav-list>
       <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
     </md-nav-list>
   </td-navigation-drawer>
+  <a md-fab color="accent" class="mat-fab-postion-bottom fixed" style="z-index: 999; bottom: 15px; margin: 20px; padding: 10px;" (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(root);" title="Toggle between RTL and LTR"> 
+     {{root.dir.toUpperCase()}}
+  </a>
   <router-outlet></router-outlet>
 </td-layout>

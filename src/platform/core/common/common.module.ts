@@ -86,12 +86,22 @@ export { TdTimeAgoPipe, TdTimeDifferencePipe,
     TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
+  providers: [
+    RouterPathService,
+  ],
 })
 export class CovalentCommonModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
+    /* tslint:disable-next-line */
+    console.warn('forRoot() has been deprecated in CovalentCommonModule');
     return {
       ngModule: CovalentCommonModule,
-      providers: [ RouterPathService ],
+      providers: [ ],
     };
   }
 }

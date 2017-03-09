@@ -54,13 +54,13 @@ Example for HTML usage:
 
 ## Setup
 
-Import the [CovalentSearchModule] using the forRoot() method in your NgModule:
+Import the [CovalentSearchModule] in your NgModule:
 
 ```typescript
 import { CovalentSearchModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentSearchModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentSearchModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...

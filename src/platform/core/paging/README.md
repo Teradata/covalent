@@ -33,13 +33,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentPagingModule] using the forRoot() method in your NgModule:
+Import the [CovalentPagingModule] in your NgModule:
 
 ```typescript
 import { CovalentPagingModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentPagingModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentPagingModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...

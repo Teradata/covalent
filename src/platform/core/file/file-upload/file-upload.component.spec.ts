@@ -16,7 +16,7 @@ describe('Component: FileUpload', () => {
         TdFileUploadBasicTestComponent,
       ],
       imports: [
-        CovalentFileModule.forRoot(),
+        CovalentFileModule,
       ],
     });
     TestBed.compileComponents();

@@ -21,8 +21,8 @@ describe('Component: NotificationCount', () => {
         TdNotificationCountPositionContentTestComponent,
       ],
       imports: [
-        MdIconModule.forRoot(),
-        CovalentNotificationsModule.forRoot(),
+        MdIconModule,
+        CovalentNotificationsModule,
       ],
     });
     TestBed.compileComponents();
