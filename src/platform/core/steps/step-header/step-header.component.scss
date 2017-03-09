@@ -24,7 +24,7 @@ $step-circle: 24px;
 }
 .td-step-header {
   md-icon.td-edit-icon {
-    margin-right: 8px;
+    margin-inline-end: 8px;
   }
 }
 md-icon {
@@ -56,7 +56,7 @@ md-icon {
 }
 .td-triangle {
   & > md-icon {
-    font-size: 27px;
+    font-size: 25px;
   }
 }
 .td-complete {
@@ -64,11 +64,11 @@ md-icon {
 }
 .td-circle,
 .td-complete {
-  margin-left: 8px;
+  margin-inline-start: 8px;
   font-size: 14px;
 }
 .td-triangle {
-  margin-left: 7px;
+  margin-inline-start: 8px;
 }
 .td-step-label-wrapper {
   padding-left: 8px;

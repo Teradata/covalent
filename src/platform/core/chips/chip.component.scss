@@ -1,4 +1,5 @@
+@import '../common/styles/mixins';
 :host {
   display: block;
-  float: left;
+  @include rtl(float, left, right);
 }
