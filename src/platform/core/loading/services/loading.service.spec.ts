@@ -18,7 +18,7 @@ describe('Service: Loading', () => {
         TdLoadingWrapperTestComponent,
       ],
       imports: [
-        CovalentLoadingModule.forRoot(),
+        CovalentLoadingModule,
       ],
       providers: [
         {provide: OverlayContainer, useFactory: () => {

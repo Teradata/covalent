@@ -16,7 +16,7 @@ describe('Directive: FileSelect', () => {
         TdFileSelectBasicTestComponent,
       ],
       imports: [
-        CovalentFileModule.forRoot(),
+        CovalentFileModule,
       ],
     });
     TestBed.compileComponents();

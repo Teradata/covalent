@@ -24,9 +24,9 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     ManageListComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    DocumentationToolsModule.forRoot(),
+    CovalentCoreModule,
+    CovalentHighlightModule,
+    DocumentationToolsModule,
     layoutsRoutes,
   ],
 })

@@ -14,7 +14,7 @@ describe('Component: Markdown', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentMarkdownModule.forRoot(),
+        CovalentMarkdownModule,
       ],
       declarations: [
         TdMarkdownEmptyTestComponent,

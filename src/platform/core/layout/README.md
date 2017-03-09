@@ -14,13 +14,13 @@ npm i -save @covalent/core
 
 ## Setup
 
-Import the **[CovalentLayoutModule]** using the *forRoot()* method in your NgModule:
+Import the **[CovalentLayoutModule]** in your NgModule:
 
 ```typescript
 import { CovalentLayoutModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentLayoutModule.forRoot(), // or CovalentCoreModule.forRoot()
+    CovalentLayoutModule, // or CovalentCoreModule
     ...
   ],
   ...

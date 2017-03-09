@@ -29,14 +29,14 @@ npm i -save @covalent/highlight
 
 ## Setup
 
-Import the **[CovalentHighlightModule]** using the *forRoot()* method in your NgModule:
+Import the **[CovalentHighlightModule]** in your NgModule:
 
 ```typescript
 import { CovalentHighlightModule } from '@covalent/highlight';
 
 @NgModule({
   imports: [
-    CovalentHighlightModule.forRoot(),
+    CovalentHighlightModule,
     ...
   ],
   ...

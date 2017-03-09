@@ -19,7 +19,7 @@ describe('Component: FileInput', () => {
       ],
       imports: [
         FormsModule,
-        CovalentFileModule.forRoot(),
+        CovalentFileModule,
       ],
     });
     TestBed.compileComponents();
