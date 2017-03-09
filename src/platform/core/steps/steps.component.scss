@@ -14,14 +14,14 @@
   height: 1px;
   position: relative;
   top: 36px;
-  margin-left: -6px;
-  margin-right: -3px;
+  margin-inline-start: -6px;
+  margin-inline-end: -3px;
   min-width: 15px;
 }
 
 .td-vertical-line {
   position: absolute;
-  left: 20px;
+  margin-inline-start: 20px;
   bottom: -16px;
   top: -16px;
   border-left-width: 1px;

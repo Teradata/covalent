@@ -1,21 +1,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "module": "es6",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
     "moduleResolution": "node",
-    "outDir": "../dist/out-tsc",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
     "typeRoots": [
       "../node_modules/@types"
-    ],
-    "types": [
-      "jasmine", "hammerjs"
     ],
     "paths": {
       "@covalent/*": ["./platform/*"]
@@ -24,8 +22,5 @@
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "pretty": true
-  },
-  "exclude": [
-    "**/*.spec.*"
-  ]
+  }
 }
