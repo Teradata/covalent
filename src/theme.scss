@@ -1,7 +1,6 @@
 @import '~@angular/material/core/theming/all-theme';
 @import './platform/core/theming/all-theme';
 @import './platform/markdown/markdown-theme';
-@import './platform/charts/charts-theme';
 @import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
 
@@ -27,7 +26,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
-@include covalent-charts-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 
 // Custom theme examples
