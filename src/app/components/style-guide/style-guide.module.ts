@@ -34,8 +34,8 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     NavigationDrawerComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
+    CovalentCoreModule,
+    CovalentHighlightModule,
     styleGuideRoutes,
   ],
 })

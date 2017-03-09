@@ -18,7 +18,7 @@ describe('Directive: Loading', () => {
         TdLoadingDuplicationTestComponent,
       ],
       imports: [
-        CovalentLoadingModule.forRoot(),
+        CovalentLoadingModule,
       ],
     });
     TestBed.compileComponents();

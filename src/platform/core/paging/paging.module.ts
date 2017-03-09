@@ -13,9 +13,9 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdIconModule.forRoot(),
-    MdSelectModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdIconModule,
+    MdSelectModule,
+    MdButtonModule,
   ],
   declarations: [
     TdPagingBarComponent,
@@ -25,7 +25,14 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   ],
 })
 export class CovalentPagingModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
+    /* tslint:disable-next-line */
+    console.warn('forRoot() has been deprecated in CovalentPagingModule');
     return {
       ngModule: CovalentPagingModule,
       providers: [ ],

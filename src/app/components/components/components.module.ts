@@ -18,7 +18,6 @@ import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
-import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
@@ -35,7 +34,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentChartsModule } from '../../../platform/charts';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
@@ -58,7 +56,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     DialogsDemoComponent,
     DirectivesComponent,
     PipesComponent,
-    ChartsDemoComponent,
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
@@ -74,7 +71,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentCoreModule,
     CovalentHighlightModule,
     CovalentMarkdownModule,
-    CovalentChartsModule,
     CovalentDynamicFormsModule,
     DocumentationToolsModule,
     NgxChartsModule,

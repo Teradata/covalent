@@ -33,9 +33,9 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
 @NgModule({
   imports: [
     CommonModule,
-    MdCheckboxModule.forRoot(),
-    MdTooltipModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdCheckboxModule,
+    MdTooltipModule,
+    MdIconModule,
     MdSelectionModule,
   ],
   declarations: [
@@ -44,12 +44,22 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
   exports: [
     TD_DATA_TABLE,
   ],
+  providers: [
+    TdDataTableService,
+  ],
 })
 export class CovalentDataTableModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
+    /* tslint:disable-next-line */
+    console.warn('forRoot() has been deprecated in CovalentDataTableModule');
     return {
       ngModule: CovalentDataTableModule,
-      providers: [ TdDataTableService ],
+      providers: [ ],
     };
   }
 }

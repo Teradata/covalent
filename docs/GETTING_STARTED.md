@@ -43,12 +43,12 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 // other imports 
 @NgModule({
   imports: [
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     // (optional) Additional Covalent Modules imports
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
   ],
   ...
 })

@@ -16,8 +16,8 @@ describe('Component: TdDynamicForms', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
-        CovalentDynamicFormsModule.forRoot(),
+        CovalentCoreModule,
+        CovalentDynamicFormsModule,
       ],
       declarations: [
         TdDynamicFormsTestComponent,
