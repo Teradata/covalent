@@ -20,7 +20,8 @@ table.td-data-table {
       padding: 0 24px;
     }
     &:nth-child(2) {
-      padding-left: 0px;
+      [dir='ltr'] & { padding-left: 0px;}
+      [dir='rtl'] & { padding-right: 0px;}
     }
   }
 
@@ -32,8 +33,9 @@ table.td-data-table {
       width: $checkbox-size;
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {
-        top: 3px !important;
-        left: 1px !important;
+        top: 3px !important;        
+        [dir='ltr'] & { left: 1px !important;}
+        [dir='rtl'] & { right: 1px !important;}
         width: 11px !important;
         height: 4px !important;
       }
