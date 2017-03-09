@@ -1,6 +1,6 @@
-import { Component, ElementRef, Inject, Renderer } from '@angular/core';
-import { DomSanitizer, DOCUMENT } from '@angular/platform-browser';
-import { MdIconRegistry, Dir } from '@angular/material';
+import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MdIconRegistry } from '@angular/material';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -36,13 +36,9 @@ export class DocsAppComponent {
     },
   ];
 
-  direction: string = 'ltr';
-
   constructor(private _iconRegistry: MdIconRegistry,
               private _domSanitizer: DomSanitizer,
-              translateService: TranslateService,
-              private el: ElementRef, private renderer: Renderer,
-              @Inject(DOCUMENT) private document: any) {
+              translateService: TranslateService) {
     // Set fallback language
     translateService.setDefaultLang('en');
     // Supported languages
@@ -66,10 +62,5 @@ export class DocsAppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/querygrid.svg'));
-  }
-
-  changeDir(root: Dir): void {
-    this.direction = root._dir;
-    this.renderer.setElementAttribute(this.document.querySelector('html'), 'dir', this.direction);
   }
 }

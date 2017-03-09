@@ -48,6 +48,17 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Covalent Components &amp; Addons</span>
     <span flex></span>
+    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #settingsMenu="mdMenu">
+      <button md-menu-item (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl');" title="Toggle between RTL and LTR">
+        <md-icon>swap_horiz</md-icon>
+        <span>{{root.dir.toUpperCase()}}</span>
+      </button>
+    </md-menu>
   </div>
-  <router-outlet></router-outlet>
+  <div #root="$implicit" dir="ltr">
+    <router-outlet></router-outlet>
+  </div>
 </td-layout-nav-list>
