@@ -1,7 +1,7 @@
 //
 // Pad (padding)
 // --------------------------------------------------
-body {
+
 	.pad {
 		padding: 20px;
 	}
@@ -53,28 +53,46 @@ body {
 	}
 
 	.pad-right {
-		padding-right: 20px;
+      	[dir='ltr'] & { padding-right: 20px;}
+      	[dir='rtl'] & { padding-left: 20px;}
 	}
+
+
+
+
 	.pad-right-xxl {
-		padding-right: 60px;
+      	[dir='ltr'] & { padding-right: 60px;}
+      	[dir='rtl'] & { padding-left: 60px;}
 	}
+
 	.pad-right-xl {
-		padding-right: 50px;
+      	[dir='ltr'] & { padding-right: 50px;}
+      	[dir='rtl'] & { padding-left: 50px;}
 	}
+
 	.pad-right-lg {
-		padding-right: 40px;
+      	[dir='ltr'] & { padding-right: 40px;}
+      	[dir='rtl'] & { padding-left: 40px;}
 	}
+
 	.pad-right-md {
-		padding-right: 30px;
+      	[dir='ltr'] & { padding-right: 30px;}
+      	[dir='rtl'] & { padding-left: 30px;}
 	}
+
 	.pad-right-sm {
-		padding-right: 10px;
+      	[dir='ltr'] & { padding-right: 10px;}
+      	[dir='rtl'] & { padding-left: 10px;}
 	}
+
 	.pad-right-xs {
-		padding-right: 5px;
+      	[dir='ltr'] & { padding-right: 5px;}
+      	[dir='rtl'] & { padding-left: 5px;}
 	}
+	
 	.pad-right-none {
-		padding-right: 0px;
+      	[dir='ltr'] & { padding-right: 0px;}
+      	[dir='rtl'] & { padding-left: 0px;}
 	}
 
 	.pad-bottom {
@@ -106,27 +124,42 @@ body {
 	}
 
 	.pad-left {
-		padding-left: 20px;
+      	[dir='ltr'] & { padding-left: 20px;}
+      	[dir='rtl'] & { padding-right: 20px;}
 	}
+
 	.pad-left-xxl {
-		padding-left: 60px;
+      	[dir='ltr'] & { padding-left: 60px;}
+      	[dir='rtl'] & { padding-right: 60px;}
 	}
+
 	.pad-left-xl {
-		padding-left: 50px;
+      	[dir='ltr'] & { padding-left: 50px;}
+      	[dir='rtl'] & { padding-right: 50px;}
 	}
+
 	.pad-left-lg {
-		padding-left: 40px;
+      	[dir='ltr'] & { padding-left: 40px;}
+      	[dir='rtl'] & { padding-right: 40px;}
 	}
+
 	.pad-left-md {
-		padding-left: 30px;
+      	[dir='ltr'] & { padding-left: 30px;}
+      	[dir='rtl'] & { padding-right: 30px;}
 	}
+
 	.pad-left-sm {
-		padding-left: 10px;
+      	[dir='ltr'] & { padding-left: 10px;}
+      	[dir='rtl'] & { padding-right: 10px;}
 	}
+
 	.pad-left-xs {
-		padding-left: 5px;
+      	[dir='ltr'] & { padding-left: 5px;}
+      	[dir='rtl'] & { padding-right: 5px;}
 	}
+
 	.pad-left-none {
-		padding-left: 0px;
+      	[dir='ltr'] & { padding-left: 0px;}
+      	[dir='rtl'] & { padding-right: 0px;}
 	}
-}
+

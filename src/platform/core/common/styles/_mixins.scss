@@ -125,6 +125,10 @@
     #{$prop}: $rtl-value;
     unicode-bidi: embed;
   }
+  [dir=rtl] & {
+    #{$prop}: $rtl-value;
+    unicode-bidi: embed;
+  }
 
   bdo[dir=rtl] {
     direction: rtl;

@@ -23,7 +23,7 @@ body {
 button.md-no-style {
   font-weight: normal;
   background-color: inherit;
-  text-align: left;
+  @include rtl(text-align, left,right);
   border: none;
   padding: 0;
   margin: 0;
@@ -108,8 +108,9 @@ input {
 .md-ripple-container {
   pointer-events: none;
   position: absolute;
-  overflow: hidden;
-  left: 0;
+  overflow: hidden;  
+  [dir='ltr'] & {left: 0;}
+  [dir='rtl'] & {right:0;}
   top: 0;
   width: 100%;
   height: 100%;
@@ -123,7 +124,8 @@ input {
   pointer-events: none;
   position: absolute;
   overflow: hidden;
-  left: 0;
+  [dir='ltr'] & {left: 0;}
+  [dir='rtl'] & {right:0;}
   top: 0;
   width: 100%;
   height: 100%;
@@ -171,8 +173,9 @@ input {
   > .md-scroll-mask-bar {
     display: block;
     position: absolute;
-    background-color: #fafafa;
-    right: 0;
+    background-color: #fafafa;    
+    [dir='ltr'] & {right: 0;}
+    [dir='rtl'] & {left:0;}
     top: 0;
     bottom: 0;
     z-index: $z-index-scroll-mask;

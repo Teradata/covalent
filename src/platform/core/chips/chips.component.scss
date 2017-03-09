@@ -5,8 +5,13 @@
     display: inline-block;
     cursor: default;
     border-radius: 16px;
-    line-height: 32px;
-    margin: 8px 8px 0 0;
+    line-height: 32px;    
+    [dir='ltr'] & { 
+      margin: 8px 8px 0 0;
+    }
+    [dir='rtl'] & { 
+      margin: 8px 0 0 8px;
+    }
     padding: 0 12px;
     box-sizing: border-box;
     max-width: 100%;
@@ -14,7 +19,12 @@
     md-icon {
       position: relative;
       top: 5px;
-      left: 5px;
+      [dir='ltr'] & { 
+        left: 5px;
+      }
+      [dir='rtl'] & { 
+        right: 5px;
+      }
       height: 18px;
       width: 18px;
       font-size: 19px;
