@@ -16,11 +16,8 @@
     md-icon {
       position: relative;
       top: 5px;
-      left: 5px;
-      [dir='rtl'] & { 
-        right: 5px;
-        left: auto;
-      }
+      @include rtl(left, 5px, auto);
+      @include rtl(right, auto, 5px);
       height: 18px;
       width: 18px;
       font-size: 19px;
