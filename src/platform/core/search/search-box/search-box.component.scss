@@ -3,11 +3,6 @@
 }
 .td-search-box {
   td-search-input {
-    /deep/ {
-      .mat-input-placeholder.mat-focused {
-        visibility: hidden;
-      }
-    }
 
     [dir='ltr'] & { 
       margin-left: 12px;
