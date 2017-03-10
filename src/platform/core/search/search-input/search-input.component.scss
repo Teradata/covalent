@@ -1,6 +1,5 @@
 .td-search-input {
-  height: 64px;
-  overflow: hidden;
+  overflow-x: hidden;
   /deep/ md-input-container.mat-hide-underline {
     .mat-input-underline {
       display: none;
