@@ -1,4 +1,3 @@
-@import '../common/styles/mixins';
 $td-notification-size: 20px !default;
 $td-notification-content-size: 40px !default;
 
@@ -72,7 +71,6 @@ $td-notification-content-size: 40px !default;
     }
      &.td-notification-no-count {
       &.td-notification-before {
-        @include rtl(right, 8px,auto);
         right: 8px;
         left: auto;
       }
