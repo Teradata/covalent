@@ -1,6 +1,13 @@
 :host {
   display: block;
 }
+.td-search-icon {
+  margin-right: 12px;
+  /deep/ [dir='rtl'] & { 
+    margin-left: 12px;
+    margin-right: 0px;
+  }
+}
 .td-search-box {
   height: 64px;
   td-search-input {
@@ -9,13 +16,5 @@
         visibility: hidden;
       }
     }
-
-    [dir='ltr'] & { 
-      margin-left: 12px;
-    }
-    [dir='rtl'] & { 
-      margin-right: 12px;
-    }
-
   }
 }
