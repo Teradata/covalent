@@ -1,4 +1,5 @@
 <td-layout-nav-list #navList
+                    #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
                     [opened]="media.registerQuery('gt-sm') | async"
@@ -58,7 +59,7 @@
       </button>
     </md-menu>
   </div>
-  <div #root="$implicit" dir="ltr">
+  <div>
     <router-outlet></router-outlet>
   </div>
 </td-layout-nav-list>
