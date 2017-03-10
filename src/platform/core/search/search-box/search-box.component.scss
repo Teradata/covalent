@@ -1,16 +1,14 @@
 :host {
   display: block;
 }
-.td-search-icon {
-  margin-right: 12px;
-  /deep/ [dir='rtl'] & { 
-    margin-left: 12px;
-    margin-right: 0px;
-  }
-}
 .td-search-box {
   height: 64px;
   td-search-input {
+    margin-left: 12px;
+    /deep/ [dir='rtl'] & { 
+      margin-right: 12px;
+      margin-left: 0px !important;
+    }
     /deep/ {
       .mat-input-placeholder.mat-focused {
         visibility: hidden;
