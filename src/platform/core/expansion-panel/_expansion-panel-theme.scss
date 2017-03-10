@@ -34,15 +34,6 @@
     }
     .td-expansion-primary,
     .td-expansion-secondary {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-     [dir='ltr'] & { 
-       margin-right: 5px;
-     }
-     [dir='rtl'] & { 
-       margin-left: 5px;
-     }
       &, & * {
         vertical-align: middle;
       }
