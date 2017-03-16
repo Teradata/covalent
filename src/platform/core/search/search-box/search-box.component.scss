@@ -3,13 +3,10 @@
 }
 .td-search-box {
   td-search-input {
-
-    [dir='ltr'] & { 
-      margin-left: 12px;
-    }
-    [dir='rtl'] & { 
+    margin-left: 12px;
+    /deep/ [dir='rtl'] & { 
       margin-right: 12px;
+      margin-left: 0px !important;
     }
-
   }
 }

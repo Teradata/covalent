@@ -6,12 +6,12 @@
   padding: 0 28px 0 28px;
 
   &:first-child {
-        [dir='ltr'] & { padding-left: 24px;}
-        [dir='rtl'] & { padding-right: 24px;}
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
   }
   &:last-child {
-        [dir='ltr'] & { padding-right: 24px;}
-        [dir='rtl'] & { padding-left: 24px;}
+    @include rtl(padding-left, initial, 24px);
+    @include rtl(padding-right, 24px, initial);
   }
 
   > * {

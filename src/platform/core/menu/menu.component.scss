@@ -18,11 +18,10 @@ $td-menu-spacing: 8px !default;
       height: auto;
       padding: $td-menu-spacing;
       .mat-list-text {
-        [dir='ltr'] & { 
-          padding-right: 0px;
-        }
+        padding-right: 0px;
         [dir='rtl'] & { 
           padding-left: 0px;
+          padding-right: 16px;
         }
       }
       [md-line] + [md-line] {

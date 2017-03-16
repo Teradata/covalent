@@ -109,8 +109,11 @@ input {
   pointer-events: none;
   position: absolute;
   overflow: hidden;  
-  [dir='ltr'] & {left: 0;}
-  [dir='rtl'] & {right:0;}
+  left: 0;
+  [dir='rtl'] & {
+    right:0;
+    left: auto;
+  }
   top: 0;
   width: 100%;
   height: 100%;
@@ -124,8 +127,11 @@ input {
   pointer-events: none;
   position: absolute;
   overflow: hidden;
-  [dir='ltr'] & {left: 0;}
-  [dir='rtl'] & {right:0;}
+  left: 0;
+  [dir='rtl'] & {
+    right:0;
+    left: auto;
+  }
   top: 0;
   width: 100%;
   height: 100%;
@@ -174,8 +180,11 @@ input {
     display: block;
     position: absolute;
     background-color: #fafafa;    
-    [dir='ltr'] & {right: 0;}
-    [dir='rtl'] & {left:0;}
+    right: 0;
+    [dir='rtl'] & {
+      left:0;
+      right: auto;
+    }
     top: 0;
     bottom: 0;
     z-index: $z-index-scroll-mask;
