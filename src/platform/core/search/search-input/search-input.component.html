@@ -11,7 +11,7 @@
   </md-input-container>
   <button md-icon-button
           type="button"
-          [@searchState]="searchElement.value ? true : false"
+          [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
           (click)="clearSearch()"
           flex="none">
     <md-icon>cancel</md-icon>

@@ -12,10 +12,12 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
       state('false', style({
         width: '0%',
         'margin-left': '0px',
+        'margin-right': '0px',
       })),
       state('true',  style({
         width: '100%',
         'margin-left': '*',
+        'margin-right': '*',
       })),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
