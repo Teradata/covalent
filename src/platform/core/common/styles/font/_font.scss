@@ -38,7 +38,7 @@ $md-font-url: './' !default;
   font-feature-settings: 'liga';
 }
 
-// Ensure our size prevails over material2
+// Ensure our size prevails over material
 md-icon.material-icons {
     &,&.mat-icon {
         width: 1em;

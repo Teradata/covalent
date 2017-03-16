@@ -1,4 +1,4 @@
-## Covalent: UI Platform based on Angular-Material 2
+## Covalent: UI Platform based on Angular-Material
 
 [![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent)
 [![npm version](https://badge.fury.io/js/%40covalent%2Fcore.svg)](https://badge.fury.io/js/%40covalent%2Fcore)
@@ -8,7 +8,7 @@
 
 <img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
 
-Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular 2 and Material Design.
+Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular and Material Design.
 
 **Vision: To build an atomic, reusable component platform for Teradata to consume, while collaborating in an open source model.**
 

@@ -10,11 +10,10 @@
 .td-dialog-actions {
   position: relative;
   top: 16px;
-  [dir='ltr'] & { 
-      left: 16px;
-  }
-  [dir='rtl'] & { 
-      right: 16px;
+  left: 16px;
+  /deep/ [dir='rtl'] & { 
+    right: 16px;
+    left: auto;
   }
 }
 
@@ -23,11 +22,10 @@
   .td-dialog-actions {
     /deep/ button {
       text-transform: uppercase;
-      [dir='ltr'] & { 
-        margin-left: 8px;
-      }
+      margin-left: 8px;
       [dir='rtl'] & { 
         margin-right: 8px;
+        margin-left: inherit;
       }
       padding-left: 8px;
       padding-right: 8px;

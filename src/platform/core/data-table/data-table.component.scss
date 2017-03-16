@@ -13,15 +13,21 @@ table.td-data-table {
     transition: background-color 0.2s;
   }
 
-  &.mat-selectable td.td-data-table-cell,
-  &.mat-selectable th.td-data-table-column {
+  &.mat-selectable .td-data-table-column,
+  &.mat-selectable th.td-data-table-column,
+  &.mat-selectable td.td-data-table-cell {
     &:first-child {
       width: 20px;
       padding: 0 24px;
     }
     &:nth-child(2) {
-      [dir='ltr'] & { padding-left: 0px;}
-      [dir='rtl'] & { padding-right: 0px;}
+      padding-left: 0px;
+    }
+    [dir='rtl'] & {
+      &:nth-child(2){
+        padding-right: 0px;
+        padding-left: 28px;
+      }
     }
   }
 
@@ -34,8 +40,7 @@ table.td-data-table {
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {
         top: 3px !important;        
-        [dir='ltr'] & { left: 1px !important;}
-        [dir='rtl'] & { right: 1px !important;}
+        left: 1px !important;
         width: 11px !important;
         height: 4px !important;
       }

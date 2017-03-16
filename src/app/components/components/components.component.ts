@@ -1,4 +1,5 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -135,10 +136,16 @@ export class ComponentsComponent implements AfterViewInit {
     title: 'NGX-Translate',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(public media: TdMediaService,
+              private _renderer: Renderer,
+              @Inject(DOCUMENT) private _document: HTMLElement) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+  }
+
+  changeDir(dir: string): void {
+    this._renderer.setElementAttribute(this._document.querySelector('html'), 'dir', dir);
   }
 }
