@@ -7,7 +7,7 @@
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
           <div layout="column" flex>
             <md-input-container flex>
@@ -23,7 +23,7 @@
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -77,8 +77,8 @@
     <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
-        <template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
+        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
           <div layout="column" flex>
             <md-input-container flex>
               <input mdInput placeholder="Name"/>
@@ -91,17 +91,17 @@
               <textarea mdInput placeholder="Description" rows="4"></textarea>
             </md-input-container>
           </div>
-        </template>
+        </ng-template>
         <div layout="row">
           <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
+            <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
               <div layout="column" flex>
                 <md-input-container flex>
                   <input mdInput placeholder="Name"/>
@@ -114,7 +114,7 @@
                   <textarea mdInput placeholder="Description" rows="4"></textarea>
                 </md-input-container>
               </div>
-            </template>
+            </ng-template>
             <div layout="row">
               <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
             </div>
@@ -155,13 +155,13 @@
     <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <div layout="row">
           <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -201,13 +201,13 @@
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <div layout="row">
           <button md-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -251,18 +251,18 @@
   <md-card-content>
     <h2><code>tdLoading</code></h2>
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
-    <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<template>]]></code> element.</p>
+    <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<ng-template>]]></code> element.</p>
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example(after setup):</h3>
     <p>HTML (*) syntax:</p>
@@ -273,12 +273,12 @@
         </div>
       ]]>
     </td-highlight>   
-    <p>HTML <![CDATA[<template>]]> syntax</p>
+    <p>HTML <![CDATA[<ng-template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
-        <template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
+        <ng-template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
           ...
-        </template>
+        </ng-template>
       ]]>
     </td-highlight>
     <p>Typescript:</p>
@@ -344,13 +344,13 @@
     <h3>Methods:</h3>
     <p>The <code>TdLoadingService</code> service has {{loadingServiceMethods.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example(after setup):</h3>
     <p>Typescript:</p>

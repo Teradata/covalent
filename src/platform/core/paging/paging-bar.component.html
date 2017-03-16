@@ -1,11 +1,11 @@
 <div layout="row" layout-align="end center" class="md-caption td-paging-bar">
   <ng-content select="[td-paging-bar-label]"></ng-content>
   <md-select [(ngModel)]="pageSize">
-    <template let-size ngFor [ngForOf]="pageSizes">
+    <ng-template let-size ngFor [ngForOf]="pageSizes">
       <md-option [value]="size">
         {{size}}
       </md-option>
-    </template>
+    </ng-template>
     <md-option *ngIf="pageSizeAll" [value]="total">{{pageSizeAllText}}</md-option>
   </md-select>
   <div>

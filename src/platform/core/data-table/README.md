@@ -54,11 +54,11 @@ Example for HTML usage:
   (sortChange)="sortEvent($event)"
   (rowSelect)="selectEvent($event)"
   (selectAll)="selectAllEvent($event)">
-  <template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
+  <ng-template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
     <div layout="row">
       <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
       <md-icon>star</md-icon>
     </div>
-  </template>
+  </ng-template>
 </td-data-table>
  ```

@@ -42,7 +42,7 @@
             </a>
           </md-list-item>
           <md-divider></md-divider>
-          <template let-item let-last="last" ngFor [ngForOf]="data">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="data">
             <md-list-item>
               <md-icon md-list-avatar>desktop_mac</md-icon>
               <h3 md-line> {{item.name}} </h3>
@@ -55,7 +55,7 @@
               </span>
             </md-list-item>
             <md-divider *ngIf="!last" md-inset></md-divider>
-          </template>
+          </ng-template>
         </md-list>
         <md-divider></md-divider>
         <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
@@ -108,7 +108,7 @@
               </a>
             </md-list-item>
             <md-divider></md-divider>
-            <template let-item let-last="last" ngFor [ngForOf]="data">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="data">
               <md-list-item>
                 <md-icon md-list-avatar>desktop_mac</md-icon>
                 <h3 md-line> { {item.name}} </h3>
@@ -121,7 +121,7 @@
                 </span>
               </md-list-item>
               <md-divider *ngIf="!last" md-inset></md-divider>
-            </template>
+            </ng-template>
           </md-list>
           <md-divider></md-divider>
           <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">

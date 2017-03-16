@@ -117,9 +117,9 @@
           </md-select>
           <span flex="5"></span>
           <div [ngPlural]="valueCountForPlural">
-            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</template>
-            <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</template>
-            <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</template>
+            <ng-template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</ng-template>
+            <ng-template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</ng-template>
+            <ng-template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</ng-template>
           </div>
         </div>
       </md-tab>
@@ -138,9 +138,9 @@
               </md-select>
               <span flex="5"></span>
               <div [ngPlural]="valueCountForPlural">
-                <template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</template>
-                <template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</template>
-                <template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</template>
+                <ng-template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</ng-template>
+                <ng-template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</ng-template>
+                <ng-template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</ng-template>
               </div>
             </div>
           ]]>

@@ -254,9 +254,9 @@ describe('Directive: Loading', () => {
 @Component({
   selector: 'td-loading-default-test',
   template: `
-  <template tdLoading="name">
+  <ng-template tdLoading="name">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingDefaultTestComponent {
@@ -266,9 +266,9 @@ class TdLoadingDefaultTestComponent {
 @Component({
   selector: 'td-loading-basic-test',
   template: `
-  <template [tdLoading]="name" [tdLoadingType]="type" [tdLoadingMode]="mode" [tdLoadingStrategy]="strategy" [tdLoadingColor]="color">
+  <ng-template [tdLoading]="name" [tdLoadingType]="type" [tdLoadingMode]="mode" [tdLoadingStrategy]="strategy" [tdLoadingColor]="color">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingBasicTestComponent {
@@ -283,12 +283,12 @@ class TdLoadingBasicTestComponent {
 @Component({
   selector: 'td-loading-duplication-test',
   template: `
-  <template tdLoading="name1">
+  <ng-template tdLoading="name1">
     <div class="content"></div>
-  </template>
-  <template tdLoading="name1">
+  </ng-template>
+  <ng-template tdLoading="name1">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingDuplicationTestComponent {

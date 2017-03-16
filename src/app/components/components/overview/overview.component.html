@@ -4,7 +4,7 @@
   <md-divider></md-divider>
   <md-card-content>
      <div layout-gt-xs="row" layout-wrap>
-       <template let-item let-last="last" ngFor [ngForOf]="items">
+       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
           <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
             <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
               <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
@@ -17,7 +17,7 @@
               </md-card-content>
             </md-card>
           </div>
-        </template>
+        </ng-template>
      </div>
   </md-card-content>
 </md-card>
@@ -27,7 +27,7 @@
   <md-divider></md-divider>
   <md-card-content>
      <div layout-gt-xs="row" layout-wrap>
-       <template let-item let-last="last" ngFor [ngForOf]="optional">
+       <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
           <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
             <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
               <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
@@ -40,7 +40,7 @@
               </md-card-content>
             </md-card>
           </div>
-        </template>
+        </ng-template>
      </div>
   </md-card-content>
 </md-card>
@@ -50,7 +50,7 @@
   <md-divider></md-divider>
   <md-card-content>
      <div layout-gt-xs="row" layout-wrap>
-       <template let-item let-last="last" ngFor [ngForOf]="external">
+       <ng-template let-item let-last="last" ngFor [ngForOf]="external">
           <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
             <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
               <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
@@ -63,7 +63,7 @@
               </md-card-content>
             </md-card>
           </div>
-        </template>
+        </ng-template>
      </div>
   </md-card-content>
 </md-card>

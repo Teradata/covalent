@@ -238,9 +238,9 @@ class TdStepsBasicTestComponent {
   <td-steps>
     <td-step [label]="label" [sublabel]="sublabel" [active]="active" [state]="state" [disabled]="disabled">
       Content
-      <template td-step-summary>
+      <ng-template td-step-summary>
         Summary
-      </template>
+      </ng-template>
     </td-step>
   </td-steps>
   `,
