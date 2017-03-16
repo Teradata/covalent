@@ -58,10 +58,10 @@ export class MaterialComponentsComponent {
 
   todos: Object[] = [{
       finished: true,
-      name: 'Learn Angular 2.0',
+      name: 'Learn Angular',
     }, {
       finished: true,
-      name: 'Learn Angular Material 2.0',
+      name: 'Learn Angular Material',
     }, {
       finished: false,
       name: 'Build examples',

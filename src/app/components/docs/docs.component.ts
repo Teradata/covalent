@@ -22,10 +22,10 @@ export class DocsComponent implements AfterViewInit {
   }, {
     description: 'Familiarize yourself with Angular',
     icon: 'change_history',
-    route: 'angular-2',
-    title: 'Angular 2',
+    route: 'angular',
+    title: 'Angular',
   }, {
-    description: 'Material Design components for Angular 2',
+    description: 'Material Design components for Angular',
     icon: 'layers',
     route: 'angular-material',
     title: 'Angular-Material',

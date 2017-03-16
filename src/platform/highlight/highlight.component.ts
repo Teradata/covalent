@@ -94,7 +94,7 @@ export class TdHighlightComponent implements AfterViewInit {
 
     let codeToParse: string =  lines.join('\n')
     .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
-    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular 2
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular
 
     // Parse code with highlight.js depending on language
     let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);
