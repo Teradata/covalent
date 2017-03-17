@@ -123,7 +123,8 @@ export class TdLoadingFactory {
           subs.unsubscribe();
           let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef);
           viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
-          /** Need to call "markForCheck" on attached template, so its detected by parent component when attached 
+          /**
+           * Need to call "markForCheck" on attached template, so its detected by parent component when attached
            * with "OnPush" change detection
            */
           cdr.markForCheck();
