@@ -1,5 +1,5 @@
-import { Component, ViewChild, Input, Output, EventEmitter,
-         trigger, state, style, transition, animate } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 

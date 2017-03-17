@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate, AnimationEntryMetadata } from '@angular/core';
+import { trigger, state, style, transition, animate, AnimationTriggerMetadata } from '@angular/animations';
 
 /**
  * Function TdCollapseAnimation
@@ -6,11 +6,11 @@ import { trigger, state, style, transition, animate, AnimationEntryMetadata } fr
  * params:
  * * duration: Duration of animation in miliseconds. Defaults to 150 ms.
  *
- * Returns an [AnimationEntryMetadata] object with states for a collapse/expand animation.
+ * Returns an [AnimationTriggerMetadata] object with states for a collapse/expand animation.
  *
  * usage: [@tdCollapse]="true|false"
  */
-export function TdCollapseAnimation(duration: number = 150): AnimationEntryMetadata {
+export function TdCollapseAnimation(duration: number = 150): AnimationTriggerMetadata {
   return trigger('tdCollapse', [
     state('true', style({
       height: '0',

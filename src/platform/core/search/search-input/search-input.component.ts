@@ -1,5 +1,5 @@
-import { Component, ViewChild, OnInit, Input, Output, EventEmitter,
-         trigger, state, style, transition, animate, Optional } from '@angular/core';
+import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { MdInputDirective, Dir } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
