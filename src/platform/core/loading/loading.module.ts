@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
 import { MdProgressBarModule, MdProgressSpinnerModule, OverlayModule, PortalModule } from '@angular/material';
@@ -23,6 +24,7 @@ export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     MdProgressBarModule,
     MdProgressSpinnerModule,

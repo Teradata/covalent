@@ -1,4 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +14,7 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     FormsModule,
     CommonModule,
     MdInputModule,
