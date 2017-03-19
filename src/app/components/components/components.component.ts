@@ -138,7 +138,7 @@ export class ComponentsComponent implements AfterViewInit {
 
   constructor(public media: TdMediaService,
               private _renderer: Renderer,
-              @Inject(DOCUMENT) private _document: HTMLElement) {}
+              @Inject(DOCUMENT) private _document: any) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
