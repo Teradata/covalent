@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 
@@ -137,7 +137,7 @@ export class ComponentsComponent implements AfterViewInit {
   }];
 
   constructor(public media: TdMediaService,
-              private _renderer: Renderer,
+              private _renderer: Renderer2,
               @Inject(DOCUMENT) private _document: HTMLElement) {}
 
   ngAfterViewInit(): void {
@@ -146,6 +146,6 @@ export class ComponentsComponent implements AfterViewInit {
   }
 
   changeDir(dir: string): void {
-    this._renderer.setElementAttribute(this._document.querySelector('html'), 'dir', dir);
+    this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
-         ElementRef, Renderer, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
+         ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -101,7 +101,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
-  constructor(private _renderer: Renderer, private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
 
   }
 
@@ -118,7 +118,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   clear(): void {
     this.writeValue(undefined);
-    this._renderer.setElementProperty(this.inputElement, 'value', '');
+    this._renderer.setProperty(this.inputElement, 'value', '');
   }
 
   /**
