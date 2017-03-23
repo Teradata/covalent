@@ -12,11 +12,11 @@ import { trigger, state, style, transition, animate, AnimationTriggerMetadata } 
  */
 export function TdFadeInOutAnimation(duration: number = 150): AnimationTriggerMetadata {
   return trigger('tdFadeInOut', [
-    state('false', style({
+    state('0', style({
       opacity: '0',
       display: 'none',
     })),
-    state('true',  style({
+    state('1',  style({
       opacity: '*',
       display: '*',
     })),

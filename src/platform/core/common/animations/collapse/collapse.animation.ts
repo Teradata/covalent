@@ -12,11 +12,11 @@ import { trigger, state, style, transition, animate, AnimationTriggerMetadata } 
  */
 export function TdCollapseAnimation(duration: number = 150): AnimationTriggerMetadata {
   return trigger('tdCollapse', [
-    state('true', style({
+    state('1', style({
       height: '0',
       display: 'none',
     })),
-    state('false',  style({
+    state('0',  style({
       height: '*',
       display: '*',
     })),

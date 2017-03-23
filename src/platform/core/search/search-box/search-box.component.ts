@@ -9,12 +9,12 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
   styleUrls: ['./search-box.component.scss' ],
   animations: [
     trigger('inputState', [
-      state('false', style({
+      state('0', style({
         width: '0%',
         'margin-left': '0px',
         'margin-right': '0px',
       })),
-      state('true',  style({
+      state('1',  style({
         width: '100%',
         'margin-left': '*',
         'margin-right': '*',
