@@ -1,6 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MdTooltipModule, MdIconModule } from '@angular/material';
 
@@ -10,7 +9,6 @@ export { TdJsonFormatterComponent } from './json-formatter.component';
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     CommonModule,
     MdTooltipModule,
     MdIconModule,

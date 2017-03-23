@@ -1,6 +1,5 @@
 import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
 import { MdIconModule, MdListModule, MdRippleModule, PortalModule } from '@angular/material';
@@ -29,7 +28,6 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     CommonModule,
     MdIconModule,
     MdListModule,
