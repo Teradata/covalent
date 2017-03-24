@@ -73,7 +73,7 @@ export class TdToggleDirective {
     this._animationPlayer = this._engine.animateTimeline(
         this._element.nativeElement,
         new Animation([animate(this.duration + 'ms ease-out')],
-      ).buildTimelines([{height: this._element.nativeElement.scrollHeight + 'px'}], [{height: 0, display: 'none'}]));
+      ).buildTimelines([{height: this._element.nativeElement.scrollHeight + 'px'}], [{height: 0}]));
     this._renderer.setStyle(this._element.nativeElement, 'overflow', 'hidden');
     this._changeDetectorRef.markForCheck();
     this._animationPlayer.play();
