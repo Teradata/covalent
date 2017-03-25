@@ -5,7 +5,7 @@ import { slideInDownAnimation } from '../../../app.animations';
 import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '../../../../platform/core';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'loading-demo',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
