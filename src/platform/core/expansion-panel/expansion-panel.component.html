@@ -15,7 +15,7 @@
            flex>
         <div class="md-subhead td-expansion-primary" flex-gt-xs="33">
           <template [cdkPortalHost]="expansionPanelLabel"></template>
-          <template [ngIf]="!expansionPanelLabel">{{label || 'Click to expand '}}</template>
+          <template [ngIf]="!expansionPanelLabel">{{label}}</template>
         </div>
         <div class="md-body-1 td-expansion-secondary">
           <template [cdkPortalHost]="expansionPanelSublabel"></template>
