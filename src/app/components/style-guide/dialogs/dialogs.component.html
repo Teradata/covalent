@@ -108,13 +108,13 @@
     <form #myForm="ngForm">
       <div layout-gt-xs="row" layout-margin>
         <md-input-container flex>
-          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
           <md-hint>
             <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
         </md-input-container>
         <md-input-container flex>
-          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
           <md-hint>
             <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
           </md-hint>

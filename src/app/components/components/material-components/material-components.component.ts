@@ -18,6 +18,7 @@ export class MaterialComponentsComponent {
   favoriteSeason: string = 'Autumn';
   selectedValue: string;
   color: string;
+  alwaysVisible: boolean = false;
 
   chips: Object = [
     { name: 'Default', color: '', selected: false },
@@ -40,7 +41,7 @@ export class MaterialComponentsComponent {
     'Autumn',
   ];
 
-  user: Object = {
+  user: any = {
     agreesToTOS: false,
   };
 
@@ -119,7 +120,7 @@ export class MaterialComponentsComponent {
     { name: 'Husi', human: 'Matias' },
   ];
 
-  house: Object = {
+  house: any = {
     lockHouse: false,
   };
 

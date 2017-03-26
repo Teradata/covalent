@@ -21,4 +21,6 @@ export class TdDynamicSlideToggleComponent extends AbstractControlValueAccessor 
 
   label: string = '';
 
+  required: boolean = false;
+
 }

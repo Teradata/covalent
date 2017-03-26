@@ -37,7 +37,7 @@
             </span>
             <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
               <span layout="row" layout-align="start center" flex>
-                <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                <md-icon class="md-sort-icon">{{headers[sortKey] == 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
               </span>
             </a>
           </md-list-item>
