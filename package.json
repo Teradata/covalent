@@ -23,7 +23,7 @@
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",
     "bump-major": "gulp bump-version --ver major",
-    "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json",
+    "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json && tsc -p src/platform/tsconfig-aot.json",
     "build": "bash scripts/build-release",
     "npm-publish": "npm run build && bash scripts/npm-publish",
     "nightly-publish": "npm run build && bash scripts/nightly-publish",
