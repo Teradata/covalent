@@ -1,4 +1,4 @@
-import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer, SecurityContext, Type, ComponentFactory,
+import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext, Type, ComponentFactory,
          ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -13,10 +13,10 @@ import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEv
 export class TdPrettyMarkdownContainerDirective {
 
   constructor(public viewContainerRef: ViewContainerRef,
-              private _renderer: Renderer) { }
+              private _renderer: Renderer2) { }
 
   clear(): void {
-    this._renderer.setElementProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');
+    this._renderer.setProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');
     this.viewContainerRef.clear();
   }
 }
@@ -45,7 +45,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
   @ViewChild(TdPrettyMarkdownContainerDirective) container: TdPrettyMarkdownContainerDirective;
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _renderer: Renderer,
+              private _renderer: Renderer2,
               private _injector: Injector) {}
 
   ngAfterViewInit(): void {
@@ -124,7 +124,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       componentRef.instance.checked = !!checked.trim();
       componentRef.instance.disabled = true;
       componentRef.instance.labelPosition = 'after';
-      this._renderer.setElementProperty((<HTMLElement>componentRef.instance._getHostElement())
+      this._renderer.setProperty((<HTMLElement>componentRef.instance._getHostElement())
                                         .getElementsByClassName('md-checkbox-label')[0], 'innerHTML', label);
     });
   }

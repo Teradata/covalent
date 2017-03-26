@@ -1,5 +1,5 @@
-import { Component, ViewChild, Input, Output, EventEmitter,
-         trigger, state, style, transition, animate } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 
@@ -9,12 +9,12 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
   styleUrls: ['./search-box.component.scss' ],
   animations: [
     trigger('inputState', [
-      state('false', style({
+      state('0', style({
         width: '0%',
         'margin-left': '0px',
         'margin-right': '0px',
       })),
-      state('true',  style({
+      state('1',  style({
         width: '100%',
         'margin-left': '*',
         'margin-right': '*',

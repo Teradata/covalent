@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, Renderer, ElementRef, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Renderer2, ElementRef, HostBinding } from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
@@ -88,8 +88,8 @@ export class TdDataTableColumnComponent {
     return this.numeric;
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-column', true);
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column');
   }
 
   handleSortBy(): void {

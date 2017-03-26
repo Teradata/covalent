@@ -1,5 +1,5 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { HostListener, HostBinding, ElementRef, Renderer } from '@angular/core';
+import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[tdFileDrop]',
@@ -51,7 +51,7 @@ export class TdFileDropDirective {
     return this._disabled ? '' : undefined;
   }
 
-  constructor(private _renderer: Renderer, private _element: ElementRef) {
+  constructor(private _renderer: Renderer2, private _element: ElementRef) {
   }
 
   /**
@@ -69,7 +69,7 @@ export class TdFileDropDirective {
         this.onFileDrop.emit(value);
       }
     }
-    this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', false);
+    this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
     this._stopEvent(event);
   }
 
@@ -98,7 +98,7 @@ export class TdFileDropDirective {
   @HostListener('dragenter', ['$event'])
   onDragEnter(event: Event): void {
     if (!this._disabled) {
-      this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', true);
+      this._renderer.addClass(this._element.nativeElement, 'drop-zone');
     }
     this._stopEvent(event);
   }
@@ -109,7 +109,7 @@ export class TdFileDropDirective {
    */
   @HostListener('dragleave', ['$event'])
   onDragLeave(event: Event): void {
-    this._renderer.setElementClass(this._element.nativeElement, 'drop-zone', false);
+    this._renderer.removeClass(this._element.nativeElement, 'drop-zone');
     this._stopEvent(event);
   }
 
