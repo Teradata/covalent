@@ -19,12 +19,8 @@ export class TdMaxValidator implements Validator {
 
   @Input('max')
   set max(max: number) {
-    this._validator = TdMaxValidator.validate(max);
+    this._validator = CovalentValidators.max(max);
   }
-
-  static validate(maxValue: any): ValidatorFn {
-    return CovalentValidators.max(maxValue);
-  };
 
   validate(c: AbstractControl): {[key: string]: any} {
     return this._validator(c);
