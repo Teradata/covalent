@@ -29,17 +29,11 @@
   </md-nav-list>
   <div>
     <div class="td-expansion-content"
-         [@tdCollapse]="!expand"
-         [style.overflow]="hideContentOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideContentOverflow = !hideContentOverflow"
-         (@tdCollapse.done)="hideContentOverflow = !hideContentOverflow">
+         [@tdCollapse]="!expand">
       <ng-content></ng-content>
     </div>
     <div class="td-expansion-summary"
-         [@tdCollapse]="expand"
-         [style.overflow]="hideSummaryOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideSummaryOverflow = !hideSummaryOverflow"
-         (@tdCollapse.done)="hideSummaryOverflow = !hideSummaryOverflow">
+         [@tdCollapse]="expand">
       <ng-content select="td-expansion-summary"></ng-content>
     </div>
   </div>
