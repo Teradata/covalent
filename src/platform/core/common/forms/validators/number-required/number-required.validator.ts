@@ -1,6 +1,8 @@
 import { Directive, forwardRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
 
+import { CovalentValidators } from '../validators';
+
 export const NUMBER_INPUT_REQUIRED_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => TdNumberRequiredValidator),
@@ -16,9 +18,7 @@ export const NUMBER_INPUT_REQUIRED_VALIDATOR: any = {
 export class TdNumberRequiredValidator implements Validator {
 
   static validate(c: AbstractControl): {[key: string]: any} {
-    return (Number.isNaN(c.value)) ?
-        { required: true } :
-        undefined;
+    return CovalentValidators.numberRequired(c);
   }
 
   validate(c: AbstractControl): {[key: string]: any} {

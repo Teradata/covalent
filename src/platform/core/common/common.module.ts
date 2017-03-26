@@ -45,6 +45,7 @@ const TD_VALIDATORS: Type<any>[] = [
 ];
 
 export { TdMinValidator, TdMaxValidator, TdNumberRequiredValidator };
+export { CovalentValidators } from './forms/validators/validators';
 
 /**
  * PIPES

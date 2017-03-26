@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Validators, ValidatorFn, FormControl } from '@angular/forms';
 
-import { TdMaxValidator, TdMinValidator, TdNumberRequiredValidator } from '../../core';
+import { CovalentValidators } from '../../core';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -117,13 +117,13 @@ export class TdDynamicFormsService {
   createValidators(config: ITdDynamicElementConfig): ValidatorFn {
     let validator: ValidatorFn;
     if (config.required) {
-      validator = config.type === TdDynamicType.Number ? TdNumberRequiredValidator.validate : Validators.required;
+      validator = Validators.required;
     }
     if (config.max || config.max === 0) {
-      validator = Validators.compose([validator, TdMaxValidator.validate(config.max)]);
+      validator = Validators.compose([validator, CovalentValidators.max(config.max)]);
     }
     if (config.min || config.min === 0) {
-      validator = Validators.compose([validator, TdMinValidator.validate(config.min)]);
+      validator = Validators.compose([validator, CovalentValidators.min(config.min)]);
     }
     return validator;
   }
