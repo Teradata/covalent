@@ -2,7 +2,6 @@ import { Directive, Input, forwardRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 
 import { CovalentValidators } from '../validators';
-import { TdNumberRequiredValidator } from '../number-required/number-required.validator';
 
 export const MIN_VALIDATOR: any = {
   provide: NG_VALIDATORS,
