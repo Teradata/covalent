@@ -14,7 +14,7 @@ export class FileInputDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  files: File | FileList;
+  files: any;
   disabled: boolean = false;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}

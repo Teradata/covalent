@@ -761,7 +761,7 @@
         <!-- Dynamic Radios -->
         <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
           <md-radio-button *ngFor="let season of seasonOptions" name="more_options" [value]="season">
-            {{season}}
+            { {season} }
           </md-radio-button>
         </md-radio-group>
         <p>Your favorite season is: <strong>{ { favoriteSeason } }</strong></p>

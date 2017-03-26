@@ -64,6 +64,10 @@ export class ManagementListComponent implements OnInit {
     });
   }
 
+  isASC(sortKey: string): boolean {
+    return this.headers[sortKey] === OrderBy.ASC;
+  }
+
   sortBy(sortKey: string): void {
     if (this.headers[sortKey] === OrderBy.ASC) {
       this.headers[sortKey] = OrderBy.DESC;
