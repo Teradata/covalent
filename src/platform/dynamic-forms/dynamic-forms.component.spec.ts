@@ -6,6 +6,7 @@ import {
 } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentCoreModule } from '../core';
 import { TdDynamicType, TdDynamicElement, ITdDynamicElementConfig,
@@ -16,6 +17,7 @@ describe('Component: TdDynamicForms', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        NoopAnimationsModule,
         CovalentCoreModule,
         CovalentDynamicFormsModule,
       ],
