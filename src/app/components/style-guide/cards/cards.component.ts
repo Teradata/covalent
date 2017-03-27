@@ -13,4 +13,15 @@ export class CardsComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  username: string;
+  password: string;
+  invalidError: boolean = false;
+
+  login(): void {
+    this.invalidError = true;
+    setTimeout(() => {
+      this.invalidError = false;
+    }, 500);
+  }
+
 }

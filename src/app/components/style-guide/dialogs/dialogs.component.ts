@@ -17,6 +17,13 @@ export class DialogsToastsComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+
   constructor(private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar) {}
 

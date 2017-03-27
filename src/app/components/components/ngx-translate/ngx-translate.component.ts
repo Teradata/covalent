@@ -15,6 +15,8 @@ import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
 export class NgxTranslateDemoComponent {
 
   selectedLanguage: string;
+  valueCountForPlural: string;
+  value: string;
   dateToFormat: Date = new Date();
 
   constructor(private _translateService: TranslateService,

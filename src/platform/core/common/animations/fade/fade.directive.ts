@@ -1,5 +1,5 @@
 import {
-  Directive, ElementRef, Input, Output, EventEmitter, HostBinding, Renderer2, OnInit, ChangeDetectorRef, AnimationPlayer
+  Directive, ElementRef, Input, Output, EventEmitter, HostBinding, Renderer2, OnInit, ChangeDetectorRef, AnimationPlayer,
 } from '@angular/core';
 import { ɵAnimation as Animation, AnimationDriver,
          ɵAnimationStyleNormalizer as AnimationStyleNormalizer, ɵDomAnimationEngine as DomAnimationEngine } from '@angular/animations/browser';

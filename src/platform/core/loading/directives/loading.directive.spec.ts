@@ -47,7 +47,7 @@ describe('Directive: Loading', () => {
         fixture.whenStable().then(() => {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-          fixture.detectChanges();
+            fixture.detectChanges();
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
             done();
