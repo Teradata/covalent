@@ -1,4 +1,5 @@
 <td-layout-nav-list #navList
+                    #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
                     [opened]="media.registerQuery('gt-sm') | async"
@@ -6,7 +7,7 @@
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
   <md-nav-list td-sidenav-content>
     <h3 md-subheader>Core Components</h3>
-    <template let-item let-last="last" ngFor [ngForOf]="items">
+    <ng-template let-item let-last="last" ngFor [ngForOf]="items">
       <a md-list-item 
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
@@ -17,9 +18,9 @@
         <p md-line> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
-    </template>
+    </ng-template>
     <h3 md-subheader>Optional Components</h3>
-    <template let-item let-last="last" ngFor [ngForOf]="optional">
+    <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
       <a md-list-item 
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
@@ -30,9 +31,9 @@
         <p md-line> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
-    </template>
+    </ng-template>
     <h3 md-subheader>External Components</h3>
-    <template let-item let-last="last" ngFor [ngForOf]="external">
+    <ng-template let-item let-last="last" ngFor [ngForOf]="external">
       <a md-list-item 
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
@@ -43,11 +44,22 @@
         <p md-line> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
-    </template>
+    </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Covalent Components &amp; Addons</span>
     <span flex></span>
+    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #settingsMenu="mdMenu">
+      <button md-menu-item (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(root.dir)" title="Toggle between RTL and LTR">
+        <md-icon>swap_horiz</md-icon>
+        <span>{{root.dir.toUpperCase()}}</span>
+      </button>
+    </md-menu>
   </div>
-  <router-outlet></router-outlet>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </td-layout-nav-list>

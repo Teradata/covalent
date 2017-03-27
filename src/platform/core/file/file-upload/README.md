@@ -10,9 +10,9 @@ Example for usage:
 <td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
-  <template td-file-input-label>
+  <ng-template td-file-input-label>
     <md-icon>attach_file</md-icon><span>Choose a file...</span>
-  </template>
+  </ng-template>
 </td-file-upload>
 ```
  
@@ -123,7 +123,7 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
 
 
 ---

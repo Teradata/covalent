@@ -10,9 +10,7 @@
 }
 
 .cdk-overlay-pane {
-  html[dir="ltr"] & {
-    direction: ltr;
-  }
+  direction: ltr;
   html[dir="rtl"] & {
     direction: rtl;
   }

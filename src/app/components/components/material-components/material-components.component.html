@@ -3,7 +3,7 @@
   <md-card-subtitle>ng2 Material Design core components</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>With Angular-Material 2.0, we get all these components.</p>
+    <p>With Angular-Material, we get all these components.</p>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
@@ -448,7 +448,7 @@
     <h3>Checkbox list</h3>
 
     <md-list>
-      <template ngFor let-todo [ngForOf]="todos">
+      <ng-template ngFor let-todo [ngForOf]="todos">
         <md-list-item>
           <div layout="row" layout-align="start center">
             <div flex>
@@ -460,14 +460,14 @@
           </div>
         </md-list-item>
         <md-divider></md-divider>
-      </template>
+      </ng-template>
     </md-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- Checkbox list -->
       <md-list>
-        <template ngFor let-todo [ngForOf]="todos">
+        <ng-template ngFor let-todo [ngForOf]="todos">
           <md-list-item>
             <div layout="row" layout-align="start center">
               <div flex>
@@ -479,7 +479,7 @@
             </div>
           </md-list-item>
           <md-divider></md-divider>
-        </template>
+        </ng-template>
       </md-list>
     ]]>
     </td-highlight>
@@ -490,20 +490,20 @@
     <h3>Nav list (list with links)</h3>
 
     <md-nav-list>
-      <template let-item let-last="last" ngFor [ngForOf]="messages">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
         <a md-list-item [routerLink]="['/style-guide/material-components']"> {{item.from}} </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-nav-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with links (nav list) -->
       <md-nav-list>
-        <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
           <a md-list-item [routerLink]="..."> { {item.from}}  </a>
           <md-divider *ngIf="!last"></md-divider>
-        </template>
+        </ng-template>
       </md-nav-list>
     ]]>
     </td-highlight>
@@ -515,28 +515,28 @@
     <h3>2 Line List Items with Avatars and inset dividers</h3>
 
     <md-list>
-      <template let-item let-last="last" ngFor [ngForOf]="messages">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
         <md-list-item>
           <img md-list-avatar src="{{item.photo}}" alt="">
           <h3 md-line> {{item.from}} </h3>
           <p md-line> {{item.subject}} - {{item.message}} </p>
         </md-list-item>
         <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      </ng-template>
     </md-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with Avatars-->
       <md-list>
-        <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
           <md-list-item>
             <img md-list-avatar src="{ {item.photo} }" alt="">
             <h3 md-line> { {item.from} } </h3>
             <p md-line> { {item.subject} } - { {item.message} } </p>
           </md-list-item>
           <md-divider *ngIf="!last" md-inset></md-divider>
-        </template>
+        </ng-template>
       </md-list>
     ]]>
     </td-highlight>
@@ -547,7 +547,7 @@
     <h3>3 Line List Item with Icons and inset dividers</h3>
 
     <md-list>
-      <template let-item let-last="last" ngFor [ngForOf]="messages">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
         <md-list-item>
           <md-icon md-list-avatar>person</md-icon>
           <h3 md-line> {{item.from}} </h3>
@@ -555,14 +555,14 @@
           <p md-line> {{item.message}} </p>
         </md-list-item>
         <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      </ng-template>
     </md-list>
 
     <td-highlight lang="html">
     <![CDATA[
       <!-- list with Icons-->
       <md-list>
-        <template let-item let-last="last" ngFor [ngForOf]="messages">
+        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
           <md-list-item>
             <md-icon md-list-avatar>person</md-icon>
             <h3 md-line> { {item.from} } </h3>
@@ -570,7 +570,7 @@
             <p md-line> { {item.message} } </p>
           </md-list-item>
           <md-divider *ngIf="!last" md-inset></md-divider>
-        </template>
+        </ng-template>
       </md-list>
     ]]>
     </td-highlight>
@@ -761,7 +761,7 @@
         <!-- Dynamic Radios -->
         <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
           <md-radio-button *ngFor="let season of seasonOptions" name="more_options" [value]="season">
-            {{season}}
+            { {season} }
           </md-radio-button>
         </md-radio-group>
         <p>Your favorite season is: <strong>{ { favoriteSeason } }</strong></p>
@@ -933,12 +933,12 @@
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>One</template>
+        <ng-template md-tab-label>One</ng-template>
         <h3 class="md-title">First tab content</h3>
         <p>Plaid echo park knausgaard normcore franzen cronut. Pickled humblebrag tofu hoodie, umami salvia farm-to-table schlitz try-hard food truck knausgaard pabst. Yuccie portland jean shorts, authentic mixtape waistcoat gentrify blue bottle. Fixie kickstarter church-key small batch seitan, shabby chic vegan listicle before they sold out. Hammock raw denim flannel tousled seitan you probably haven't heard of them. Trust fund man bun pug, kickstarter artisan selvage letterpress cornhole tote bag butcher locavore. Affogato try-hard kickstarter seitan, DIY pickled hella godard pork belly four loko ugh.</p>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Two</template>
+        <ng-template md-tab-label>Two</ng-template>
         <h3 class="md-title">Second tab content</h3>
         <p>Hashtag distillery skateboard man bun gochujang, salvia man braid art party meggings heirloom kitsch farm-to-table. Franzen beard fingerstache gentrify, heirloom portland ennui XOXO microdosing kitsch plaid. Chicharrones bushwick chia, banh mi irony tattooed hammock butcher shabby chic taxidermy semiotics marfa post-ironic. Blue bottle keffiyeh farm-to-table ennui, chambray pitchfork art party pinterest artisan pop-up. Etsy banjo marfa, blue bottle kombucha crucifix XOXO tousled beard. Tilde disrupt kale chips bicycle rights skateboard master cleanse hella shoreditch, meditation retro shabby chic vice heirloom. Etsy listicle vice actually, iPhone chia hoodie four loko.</p>
       </md-tab>
@@ -948,12 +948,12 @@
       <![CDATA[
         <md-tab-group md-stretch-tabs>
           <md-tab>
-            <template md-tab-label>First tab content</template>
+            <ng-template md-tab-label>First tab content</ng-template>
             <h1>First content</h1>
             <p>...</p>
           </md-tab>
           <md-tab>
-            <template md-tab-label>Second tab content</template>
+            <ng-template md-tab-label>Second tab content</ng-template>
             <h1>Second tab content</h1>
             <p>...</p>
           </md-tab>
@@ -1081,7 +1081,7 @@
   <md-card-title>Grid list with images and headers or footers</md-card-title>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <template md-tab-label>Headers</template>
+      <ng-template md-tab-label>Headers</ng-template>
       <md-grid-list cols="3" rowHeight="200px">
         <md-grid-tile *ngFor="let dog of dogs" style="background:gray">
           <md-grid-tile-header>
@@ -1109,7 +1109,7 @@
       </md-card-content>
     </md-tab>
     <md-tab>
-      <template md-tab-label>Footers</template>
+      <ng-template md-tab-label>Footers</ng-template>
       <md-grid-list cols="3" rowHeight="200px">
         <md-grid-tile *ngFor="let dog of dogs">
           <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">

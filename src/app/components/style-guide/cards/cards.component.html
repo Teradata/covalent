@@ -251,7 +251,7 @@
             <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
             <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
           </md-list-item>
-          <template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
+          <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
             <a md-list-item>
               <md-icon md-list-avatar>dns</md-icon>
               <h3 md-line> Item {{i}} </h3>
@@ -261,7 +261,7 @@
               <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
             </a>
             <md-divider *ngIf="!last" md-inset></md-divider>
-          </template>
+          </ng-template>
         </md-list>
       </md-card>
     </div>
@@ -282,17 +282,17 @@
                 <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
                 <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
               </md-list-item>
-              <template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
+              <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
                 <a md-list-item>
                   <md-icon md-list-avatar>dns</md-icon>
-                  <h3 md-line> Item {{i}} </h3>
+                  <h3 md-line> Item { {i} } </h3>
                   <p md-line> Item description </p>
                   <span flex></span>
                   <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
                   <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
                 </a>
                 <md-divider *ngIf="!last" md-inset></md-divider>
-              </template>
+              </ng-template>
             </md-list>
           </md-card>
         ]]>

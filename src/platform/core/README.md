@@ -1,6 +1,6 @@
 # core
 
-Core Teradata UI Platform for layouts, icons, custom components and themes. This should be added as a dependency for any project that wants to use layouts, icons and themes for Angular2-Material.
+Core Teradata UI Platform for layouts, icons, custom components and themes. This should be added as a dependency for any project that wants to use layouts, icons and themes for Angular Material.
 
 The core will have custom components that enforce standards and best practices through built-in design patterns.
 

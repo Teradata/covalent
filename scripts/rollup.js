@@ -20,12 +20,15 @@ gulp.task('rollup-code', '', function() {
 
   const globals = {
     // Angular dependencies
+    '@angular/animations': 'ng.animations',
+    '@angular/animations/browser': 'ng.animations.browser',
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
     '@angular/forms': 'ng.forms',
     '@angular/http': 'ng.http',
     '@angular/router': 'ng.router',
     '@angular/platform-browser': 'ng.platformBrowser',
+    '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
     '@angular/flex-layout': 'ng.flexLayout',

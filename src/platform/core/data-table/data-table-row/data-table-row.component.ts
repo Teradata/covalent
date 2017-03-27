@@ -1,4 +1,4 @@
-import { Component, Renderer, ElementRef } from '@angular/core';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   /* tslint:disable-next-line */
@@ -8,8 +8,8 @@ import { Component, Renderer, ElementRef } from '@angular/core';
 })
 export class TdDataTableRowComponent {
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-row', true);
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-row');
   }
 
 }

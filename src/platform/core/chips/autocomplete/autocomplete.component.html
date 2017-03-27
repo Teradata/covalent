@@ -19,8 +19,8 @@
             (blur)="handleBlur()">
   </md-input-container>
   <datalist [id]="listName">
-    <template let-item ngFor [ngForOf]="searchItems">
+    <ng-template let-item ngFor [ngForOf]="searchItems">
       <option [value]="item"></option>
-    </template>
+    </ng-template>
   </datalist>
 </div>

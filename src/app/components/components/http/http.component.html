@@ -19,13 +19,13 @@
     <h3>Methods:</h3>
     <p>The [HttpInterceptorService] service has {{interceptorServiceMethods.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="interceptorServiceMethods">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="interceptorServiceMethods">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Setup:</h3>
     <p>Create your custom interceptors by implementing [IHttpInterceptor]:</p>
@@ -172,13 +172,13 @@ Example 4
     <h3>Methods:</h3>
     <p>The <code>RESTService</code> class has {{restServiceMethods.length}} methods:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="restServiceMethods">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="restServiceMethods">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>Typescript:</p>
@@ -204,7 +204,7 @@ Example 4
       ]]>
     </td-highlight>
     <p>Note: the constructor takes any object that implements the methods in [IHttp] interface.</p>
-    <p>This can be the angular2 [Http] service, the covalent [HttpInterceptorService] or a custom service.</p>
+    <p>This can be the angular [Http] service, the covalent [HttpInterceptorService] or a custom service.</p>
     <td-highlight lang="typescript">
       <![CDATA[
         export interface IHttp {

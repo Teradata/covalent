@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Renderer, SecurityContext } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
@@ -36,7 +36,7 @@ export class TdHighlightComponent implements AfterViewInit {
    */
   @Input('lang') language: string = 'typescript';
 
-  constructor(private _renderer: Renderer,
+  constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
 
@@ -53,22 +53,22 @@ export class TdHighlightComponent implements AfterViewInit {
    */
   private _loadContent(code: string): void {
     if (code && code.trim().length > 0) {
+      // Clean container
+      this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
       let preElement: HTMLPreElement = this._elementFromString(this._render(code));
-      // Clean container
-      this._renderer.setElementProperty(this._elementRef.nativeElement, 'innerHTML', '');
-      // Project DIV element into container
-      this._renderer.projectNodes(this._elementRef.nativeElement, [preElement]);
     }
   }
 
   private _elementFromString(codeStr: string): HTMLPreElement {
-    // Renderer doesnt have a parsing method, so we have to sanitize and use [innerHTML]
+    // Renderer2 doesnt have a parsing method, so we have to sanitize and use [innerHTML]
     // to parse the string into DOM element for now.
-    const preElement: HTMLPreElement = this._renderer.createElement(this._elementRef.nativeElement, 'pre');
-    const codeElement: HTMLElement = this._renderer.createElement(preElement, 'code');
+    const preElement: HTMLPreElement = this._renderer.createElement('pre');
+    this._renderer.appendChild(this._elementRef.nativeElement, preElement);
+    const codeElement: HTMLElement = this._renderer.createElement('code');
+    this._renderer.appendChild(preElement, codeElement);
     // Set .highlight class into <code> element
-    this._renderer.setElementClass(codeElement, 'highlight', true);
+    this._renderer.addClass(codeElement, 'highlight');
     codeElement.innerHTML = this._domSanitizer.sanitize(SecurityContext.HTML, codeStr);
     return preElement;
   }
@@ -94,7 +94,7 @@ export class TdHighlightComponent implements AfterViewInit {
 
     let codeToParse: string =  lines.join('\n')
     .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
-    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular 2
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular
 
     // Parse code with highlight.js depending on language
     let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);

@@ -1,4 +1,4 @@
-import { Component, Input, Renderer, ElementRef, HostBinding } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef, HostBinding } from '@angular/core';
 
 @Component({
   /* tslint:disable-next-line */
@@ -20,8 +20,8 @@ export class TdDataTableCellComponent {
     return this.numeric;
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-cell', true);
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-cell');
   }
 
 }

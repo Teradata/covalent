@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 import { DocsAppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     BrowserModule,

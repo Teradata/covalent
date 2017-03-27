@@ -183,7 +183,7 @@
       "check-separator",
       "check-type"
     ],
-    // ANGULAR 2 Rules
+    // ANGULAR Rules
     "directive-selector": [false, "attribute", "td", "camelCase"],
     "component-selector": [false, "element", "td", "kebab-case"],
     "component-class-suffix": true,

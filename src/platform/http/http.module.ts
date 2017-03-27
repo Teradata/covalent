@@ -1,10 +1,10 @@
-import { NgModule, ModuleWithProviders, Injector, OpaqueToken } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector, InjectionToken } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 
 import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
 import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
-export const HTTP_CONFIG: OpaqueToken = new OpaqueToken('HTTP_CONFIG');
+export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
 
 export type HttpConfig = {interceptors: IHttpInterceptorConfig[]};
 

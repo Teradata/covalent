@@ -4,7 +4,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <template md-tab-label>Demo</template>
+      <ng-template md-tab-label>Demo</ng-template>
       <md-card-content>
         <div layout="row">
           <md-input-container tdFileDrop
@@ -39,7 +39,7 @@
       </md-card-actions>
     </md-tab>
     <md-tab>
-      <template md-tab-label>Code</template>
+      <ng-template md-tab-label>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -87,7 +87,7 @@
         <td-highlight lang="typescript">
           <![CDATA[
             export class Demo {
-              files: File | FileList;
+              files: any;
               disabled: boolean = false;
 
               toggleDisabled(): void {

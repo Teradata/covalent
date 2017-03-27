@@ -4,16 +4,16 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <template md-tab-label>Demo</template>
+      <ng-template md-tab-label>Demo</ng-template>
       <md-card-content>
         <h3 class="md-title">Single file selection or drop:</h3>
         <p>Select Event: {{fileSelectMsg}}</p>
         <p>Upload Event: {{fileUploadMsg}}</p>
         <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
           <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
-          <template td-file-input-label>
+          <ng-template td-file-input-label>
             <md-icon>attach_file</md-icon><span>Choose a file...</span>
-          </template>
+          </ng-template>
         </td-file-upload>
       </md-card-content>
       <md-divider></md-divider>
@@ -22,7 +22,7 @@
       </md-card-actions>
     </md-tab>
     <md-tab>
-      <template md-tab-label>Code</template>
+      <ng-template md-tab-label>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -31,9 +31,9 @@
             <p>Upload Event: { {fileUploadMsg} }</p>
             <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
               <md-icon>file_upload</md-icon><span>{ { singleFileUpload.files?.name } }</span>
-              <template td-file-input-label>
+              <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose a file...</span>
-              </template>
+              </ng-template>
             </td-file-upload>
 
             <button md-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
@@ -70,7 +70,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <template md-tab-label>Demo</template>
+      <ng-template md-tab-label>Demo</ng-template>
       <md-card-content>
         <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
         <p>Select Event: {{fileSelectMultipleMsg}}</p>
@@ -79,9 +79,9 @@
                         accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
           <md-icon>file_upload</md-icon>
           <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
-          <template td-file-input-label>
+          <ng-template td-file-input-label>
             <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
-          </template>
+          </ng-template>
         </td-file-upload>
       </md-card-content>
       <md-divider></md-divider>
@@ -90,7 +90,7 @@
       </md-card-actions>
     </md-tab>
     <md-tab>
-      <template md-tab-label>Code</template>
+      <ng-template md-tab-label>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -103,9 +103,9 @@
               <span>
                 { { fileMultipleUpload.files?.name || fileMultipleUpload.files?.length } } <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
               </span>
-              <template td-file-input-label>
+              <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
-              </template>
+              </ng-template>
             </td-file-upload>
           ]]>
         </td-highlight>

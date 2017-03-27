@@ -1,7 +1,7 @@
 import { Directive, Input, forwardRef } from '@angular/core';
 import { NG_VALIDATORS, Validator, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 
-import { TdNumberRequiredValidator } from '../number-required/number-required.validator';
+import { CovalentValidators } from '../validators';
 
 export const MAX_VALIDATOR: any = {
   provide: NG_VALIDATORS,
@@ -19,20 +19,8 @@ export class TdMaxValidator implements Validator {
 
   @Input('max')
   set max(max: number) {
-    this._validator = TdMaxValidator.validate(max);
+    this._validator = CovalentValidators.max(max);
   }
-
-  static validate(maxValue: any): ValidatorFn {
-    return (c: AbstractControl): {[key: string]: any} => {
-      if (!!Validators.required(c) || !!TdNumberRequiredValidator.validate(c) || (!maxValue && maxValue !== 0)) {
-        return undefined;
-      }
-      let v: number = c.value;
-      return v > maxValue ?
-        { max: {maxValue: maxValue, actualValue: v} } :
-        undefined;
-    };
-  };
 
   validate(c: AbstractControl): {[key: string]: any} {
     return this._validator(c);
