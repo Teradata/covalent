@@ -1,11 +1,12 @@
-<div class="mat-table-container" *ngIf="hasData" title>
+<div class="mat-table-container" title>
   <table td-data-table
          [class.mat-selectable]="_selectable">
     <th td-data-table-column class="mat-checkbox-column" *ngIf="_selectable">
       <md-checkbox
         #checkBoxAll
         *ngIf="_multiple"
-        [checked]="areAllSelected()"
+        [disabled]="!hasData"
+        [checked]="areAllSelected() && hasData"
         (click)="selectAll(!checkBoxAll.checked)">
       </md-checkbox>
     </th>
@@ -40,8 +41,4 @@
       </td>
     </tr>
   </table>
-</div>
-
-<div class="md-padding" *ngIf="!hasData" layout="row" layout-align="center center">
-  <h3>{{noResultsMsg}}</h3>
 </div>

@@ -70,7 +70,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDataTableTemplateDirective) private _templates: QueryList<TdDataTableTemplateDirective>;
-  noResultsMsg: string = '';
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -193,12 +192,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   get hasData(): boolean {
-    if (this._data.length) {
-      return this._data && this._data.length > 0;
-    } else {
-      // add no results display custom message here
-      this.noResultsMsg = 'No results to display';
-    }
+    return this._data && this._data.length > 0;
   }
 
   /**
