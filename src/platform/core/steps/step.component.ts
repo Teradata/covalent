@@ -51,7 +51,7 @@ export class TdStepComponent implements OnInit {
     return this._contentPortal;
   }
 
-  @ViewChild(TemplateRef) private _content: TemplateRef<any>;
+  @ViewChild(TemplateRef) _content: TemplateRef<any>;
   @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
