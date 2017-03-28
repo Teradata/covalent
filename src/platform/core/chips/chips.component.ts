@@ -107,7 +107,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       this._value = v;
       this._length = this._value ? this._value.length : 0;
       if (this._value) {
-        this._filter('');
+        this._filter(this.inputControl.value);
       }
     }
   }
@@ -115,6 +115,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   ngOnInit(): void {
     this.inputControl.valueChanges
+      .debounceTime(100)
       .subscribe((value: string) => {
         this._filter(value);
       });
@@ -125,7 +126,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     if (this._value && this._value.length !== this._length) {
       this._length = this._value.length;
       this.onChange(this._value);
-      this._filter('');
     }
   }
 
@@ -134,7 +134,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   filter(val: string): string[] {
     return this.items.filter((item: string) => {
-      return item.indexOf(val) > -1;
+      return val ? item.indexOf(val) > -1 : true;
     });
   }
 
@@ -154,6 +154,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this._value.push(value);
     this.add.emit(value);
     this.onChange(this._value);
+    this.inputControl.setValue('');
     return true;
   }
 
@@ -169,6 +170,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this._value.splice(index, 1);
     this.remove.emit(value);
     this.onChange(this._value);
+    this.inputControl.setValue('');
     return true;
   }
 
@@ -208,7 +210,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _filter(value: string): void {
     let items: string[] = this.filter(value);
     items = items.filter((filteredItem: string) => {
-      return this._value ? this._value.indexOf(filteredItem) < 0 : true;
+      return this._value && filteredItem ? this._value.indexOf(filteredItem) < 0 : true;
     });
     this.subject.next(items);
   }
