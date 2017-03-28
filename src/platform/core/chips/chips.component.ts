@@ -117,6 +117,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this.inputControl.valueChanges
       .debounceTime(100)
       .subscribe((value: string) => {
+        this.matches = true;
         this._filter(value);
       });
   }
@@ -181,6 +182,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   handleBlur(): boolean {
     this.focused = false;
+    this.matches = true;
     this.onTouched();
     return true;
   }

@@ -6,11 +6,12 @@
         <md-icon *ngIf="!readOnly"
                 [tabIndex]="0" 
                 (keydown.enter)="removeItem(chip)" 
-                (click)="removeItem(chip)"
-                title="Delete">cancel</md-icon>
+                (click)="removeItem(chip)">
+            cancel
+        </md-icon>
       </md-basic-chip>
     </ng-template>
-    <md-input-container>
+    <md-input-container [dividerColor]="matches ? 'primary' : 'warn'">
       <input mdInput
               flex="100" 
               #input
@@ -20,7 +21,7 @@
               [readonly]="readOnly"
               (keyup.enter)="(matches = addItem(input.value)) && input.value = ''"
               (focus)="handleFocus()"
-              (blur)="handleBlur(); matches = true;">
+              (blur)="handleBlur()">
     </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete">
       <ng-template let-item ngFor [ngForOf]="filteredItems | async">
