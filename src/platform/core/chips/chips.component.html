@@ -9,13 +9,24 @@
                title="Delete">cancel</md-icon>
     </td-chip>
   </ng-template>
-  <td-autocomplete #autocomplete 
-                   [disabled]="readOnly" 
-                   [searchItems]="filteredItems"
-                   [placeholder]="readOnly? '' : placeholder"
-                   (focus)="handleFocus()"
-                   (blur)="handleBlur() && (matches = autocomplete.clear())"
-                   (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
+  <div flex>
+    <md-input-container>
+      <input mdInput
+              flex="100" 
+              #input
+              [mdAutocomplete]="autocomplete"
+              [placeholder]="readOnly? '' : placeholder"
+              [readonly]="readOnly"
+              (keyup.enter)="matches = addItem(input.value); input.value = ''; input.blur()"
+              (focus)="handleFocus()"
+              (blur)="handleBlur(); matches = true; input.value = '';">
+    </md-input-container>
+    <md-autocomplete #autocomplete="mdAutocomplete">
+      <ng-template let-item ngFor [ngForOf]="filteredItems">
+        <md-option (click)="matches = addItem(input.value); input.value = ''" [value]="item">{{item}}</md-option>
+      </ng-template>
+    </md-autocomplete>
+  </div>
   <div class="mat-input-underline"
        [class.mat-disabled]="readOnly">
     <span class="mat-input-ripple"
