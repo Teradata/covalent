@@ -13,7 +13,7 @@
         rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
 
   // chip
-  .td-chip {
+  .mat-basic-chip {
     background: md-color($background, status-bar);
     color: md-color($foreground, text);
     md-icon {

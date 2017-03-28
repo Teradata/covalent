@@ -3,11 +3,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { MdInputModule, MdIconModule, MdAutocompleteModule } from '@angular/material';
+import { MdInputModule, MdIconModule, MdAutocompleteModule, MdChipsModule } from '@angular/material';
 
 import { TdChipsComponent } from './chips.component';
-import { TdChipComponent } from './chip.component';
-
 export { TdChipsComponent } from './chips.component';
 
 @NgModule({
@@ -16,15 +14,14 @@ export { TdChipsComponent } from './chips.component';
     CommonModule,
     MdInputModule,
     MdIconModule,
+    MdChipsModule,
     MdAutocompleteModule,
   ],
   declarations: [
     TdChipsComponent,
-    TdChipComponent,
   ],
   exports: [
     TdChipsComponent,
-    TdChipComponent,
   ],
 })
 export class CovalentChipsModule {
