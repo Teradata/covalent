@@ -1,6 +1,8 @@
-import { Component, Input, Output, forwardRef, DoCheck } from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck, ViewChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 const noop: any = () => {
   // empty method
@@ -18,7 +20,7 @@ export const TD_CHIPS_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ['./chips.component.scss' ],
   templateUrl: './chips.component.html',
 })
-export class TdChipsComponent implements ControlValueAccessor, DoCheck {
+export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -36,6 +38,21 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
    * Flag that is true when autocomplete is focused.
    */
   focused: boolean = false;
+
+  /**
+   * FormControl for the mdInput element.
+   */
+  inputControl: FormControl = new FormControl();
+
+  /**
+   * Subject to control what items to render in the autocomplete
+   */
+  subject: Subject<string[]> = new Subject<string[]>();
+
+  /**
+   * Observable of items to render in the autocomplete
+   */
+  filteredItems: Observable<string[]> = this.subject.asObservable();
 
   /**
    * items?: string[]
@@ -89,28 +106,35 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
     if (v !== this._value) {
       this._value = v;
       this._length = this._value ? this._value.length : 0;
+      if (this._value) {
+        this._filter('');
+      }
     }
   }
   get value(): any { return this._value; };
+
+  ngOnInit(): void {
+    this.inputControl.valueChanges
+      .subscribe((value: string) => {
+        this._filter(value);
+      });
+  }
 
   ngDoCheck(): void {
     // Throw onChange event only if array changes size.
     if (this._value && this._value.length !== this._length) {
       this._length = this._value.length;
       this.onChange(this._value);
+      this._filter('');
     }
   }
 
   /**
    * Returns a list of filtered items.
-   * Removes the ones that have been added as value.
    */
-  get filteredItems(): string[] {
-    if (!this._value) {
-      return [];
-    }
+  filter(val: string): string[] {
     return this.items.filter((item: string) => {
-      return this._value.indexOf(item) < 0;
+      return item.indexOf(val) > -1;
     });
   }
 
@@ -176,5 +200,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck {
 
   onChange = (_: any) => noop;
   onTouched = () => noop;
+
+  /**
+   *
+   * Method to filter the options for the autocomplete
+   */
+  private _filter(value: string): void {
+    let items: string[] = this.filter(value);
+    items = items.filter((filteredItem: string) => {
+      return this._value ? this._value.indexOf(filteredItem) < 0 : true;
+    });
+    this.subject.next(items);
+  }
 
 }

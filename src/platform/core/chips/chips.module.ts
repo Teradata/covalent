@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { MdInputModule, MdIconModule, MdAutocompleteModule, MdChipsModule } from '@angular/material';
@@ -10,7 +10,7 @@ export { TdChipsComponent } from './chips.component';
 
 @NgModule({
   imports: [
-    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MdInputModule,
     MdIconModule,

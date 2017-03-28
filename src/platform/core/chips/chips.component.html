@@ -15,14 +15,15 @@
               flex="100" 
               #input
               [mdAutocomplete]="autocomplete"
+              [formControl]="inputControl"
               [placeholder]="readOnly? '' : placeholder"
               [readonly]="readOnly"
-              (keyup.enter)="matches = addItem(input.value); input.value = ''; input.blur()"
+              (keyup.enter)="(matches = addItem(input.value)) && input.value = ''"
               (focus)="handleFocus()"
-              (blur)="handleBlur(); matches = true; input.value = '';">
+              (blur)="handleBlur(); matches = true;">
     </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete">
-      <ng-template let-item ngFor [ngForOf]="filteredItems">
+      <ng-template let-item ngFor [ngForOf]="filteredItems | async">
         <md-option (click)="matches = addItem(input.value); input.value = ''" [value]="item">{{item}}</md-option>
       </ng-template>
     </md-autocomplete>
