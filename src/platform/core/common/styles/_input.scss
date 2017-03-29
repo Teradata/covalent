@@ -1,5 +1,4 @@
-@import '../../../../node_modules/@angular/material/core/theming/palette';
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '~@angular/material/theming';
 
 // TODO properly wrap in mixin to apply theme like material components
 $foreground: $mat-light-theme-foreground;

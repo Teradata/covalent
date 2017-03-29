@@ -1,6 +1,4 @@
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/variables';
-@import '~@angular/material/core/style/elevation';
+@import '~@angular/material/theming';
 
 @mixin td-file-theme($theme) {
   $background: map-get($theme, background);

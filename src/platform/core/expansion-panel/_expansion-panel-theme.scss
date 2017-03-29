@@ -1,5 +1,4 @@
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/elevation';
+@import '~@angular/material/theming';
 @import '../common/styles/variables';
 
 @mixin td-expansion-panel-theme($theme) {
