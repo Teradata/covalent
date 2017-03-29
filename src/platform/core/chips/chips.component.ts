@@ -120,6 +120,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         this.matches = true;
         this._filter(value);
       });
+    // filter the autocomplete options after everything is rendered
+    Observable.timer().subscribe(() => {
+      this._filter(this.inputControl.value);
+    });
   }
 
   ngDoCheck(): void {
