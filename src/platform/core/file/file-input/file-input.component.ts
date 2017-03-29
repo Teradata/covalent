@@ -14,7 +14,7 @@ export const FILE_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 @Directive({
-  selector: '[td-file-input-label]template',
+  selector: '[td-file-input-label]ng-template',
 })
 export class TdFileInputLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
