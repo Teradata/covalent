@@ -69,7 +69,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-  @ContentChildren(TdDataTableTemplateDirective) private _templates: QueryList<TdDataTableTemplateDirective>;
+  @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
 
   /**
    * Implemented as part of ControlValueAccessor.

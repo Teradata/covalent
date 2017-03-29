@@ -29,7 +29,7 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class TdSearchInputComponent implements OnInit {
 
-  @ViewChild(MdInputDirective) private _input: MdInputDirective;
+  @ViewChild(MdInputDirective) _input: MdInputDirective;
 
   value: string;
 
