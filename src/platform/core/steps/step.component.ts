@@ -10,7 +10,7 @@ export enum StepState {
 }
 
 @Directive({
-  selector: '[td-step-label]template',
+  selector: '[td-step-label]ng-template',
 })
 export class TdStepLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -19,7 +19,7 @@ export class TdStepLabelDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-step-actions]template',
+  selector: '[td-step-actions]ng-template',
 })
 export class TdStepActionsDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -28,7 +28,7 @@ export class TdStepActionsDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-step-summary]template',
+  selector: '[td-step-summary]ng-template',
 })
 export class TdStepSummaryDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
