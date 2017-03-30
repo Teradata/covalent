@@ -32,7 +32,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     return this._menuToggled;
   }
 
-  @ContentChildren(TdNavigationDrawerMenuDirective) private _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
+  @ContentChildren(TdNavigationDrawerMenuDirective) _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
 
   /**
    * Checks if there is a [TdNavigationDrawerMenuDirective] as content.

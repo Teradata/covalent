@@ -27,7 +27,7 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
 export class TdSearchBoxComponent {
 
   private _searchVisible: boolean = false;
-  @ViewChild(TdSearchInputComponent) private _searchInput: TdSearchInputComponent;
+  @ViewChild(TdSearchInputComponent) _searchInput: TdSearchInputComponent;
 
   set value(value: any) {
     this._searchInput.value = value;

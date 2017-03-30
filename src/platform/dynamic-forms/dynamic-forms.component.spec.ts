@@ -48,6 +48,9 @@ describe('Component: TdDynamicForms', () => {
       name: 'first_name',
       type: TdDynamicType.Text,
     }, {
+      name: 'password',
+      type: TdDynamicElement.Password,
+    }, {
       name: 'on_it',
       type: TdDynamicType.Boolean,
     }, {
@@ -66,7 +69,7 @@ describe('Component: TdDynamicForms', () => {
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(6);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(7);
     });
   })));
 
