@@ -17,13 +17,13 @@
               [formControl]="inputControl"
               [placeholder]="readOnly? '' : placeholder"
               (keydown)="_inputKeydown($event)"
-              (keyup.enter)="(matches = addItem(input.value)) && input.value = ''"
+              (keyup.enter)="addChip(input.value)"
               (focus)="handleFocus()"
               (blur)="handleBlur()">
     </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete">
       <ng-template let-item ngFor [ngForOf]="filteredItems | async">
-        <md-option (click)="matches = addItem(input.value); input.value = ''" [value]="item">{{item}}</md-option>
+        <md-option (click)="addChip(input.value)" [value]="item">{{item}}</md-option>
       </ng-template>
     </md-autocomplete>
   </md-chip-list>
