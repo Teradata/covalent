@@ -186,7 +186,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method that is executed when trying to remove a chip.
    * returns 'true' if successful, 'false' if it fails.
    */
-  removeItem(value: string): boolean {
+  removeChip(value: string): boolean {
     let index: number = this._value.indexOf(value);
     if (index < 0) {
       return false;
@@ -261,7 +261,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
           }
-          this.removeItem(this.value[index]);
+          this.removeChip(this.value[index]);
         }
         break;
       case LEFT_ARROW:
