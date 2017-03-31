@@ -12,19 +12,25 @@
   $md-input-underline-disabled-background-image: linear-gradient(to right,
         rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
 
-  // chip
-  .mat-basic-chip {
-    background: md-color($background, status-bar);
-    color: md-color($foreground, text);
-    md-icon {
-      color: md-color($foreground, hint-text);
-      &:hover {
-        color: md-color($foreground, icon);
-      }
-    }
-  }
   // chips
   td-chips {
+    // chip
+    .mat-basic-chip {
+      background: md-color($background, status-bar);
+      color: md-color($foreground, text);
+      &:focus:not(.td-chip-disabled) {
+        background: md-color($primary);
+        &, md-icon {
+          color: mat-color($primary, default-contrast)
+        }
+      }
+      md-icon {
+        color: md-color($foreground, hint-text);
+        &:hover {
+          color: md-color($foreground, icon);
+        }
+      }
+    }
     .mat-input-underline {
       border-top: 1px solid md-color($foreground, hint-text);
       &.mat-disabled {

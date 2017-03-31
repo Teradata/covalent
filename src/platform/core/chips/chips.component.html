@@ -1,12 +1,10 @@
 <div flex>
-  <md-chip-list>
-    <ng-template let-chip ngFor [ngForOf]="value">
-      <md-basic-chip>
+  <md-chip-list [tabIndex]="-1" (focus)="focus()">
+    <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
+      <md-basic-chip [class.td-chip-disabled]="readOnly"
+                     (keydown)="_chipKeydown($event, index)">
         <span>{{chip}}</span>
-        <md-icon *ngIf="!readOnly"
-                [tabIndex]="0" 
-                (keydown.enter)="removeItem(chip)" 
-                (click)="removeItem(chip)">
+        <md-icon *ngIf="!readOnly" (click)="removeItem(chip)">
             cancel
         </md-icon>
       </md-basic-chip>
@@ -18,7 +16,7 @@
               [mdAutocomplete]="autocomplete"
               [formControl]="inputControl"
               [placeholder]="readOnly? '' : placeholder"
-              [readonly]="readOnly"
+              (keydown)="_inputKeydown($event)"
               (keyup.enter)="(matches = addItem(input.value)) && input.value = ''"
               (focus)="handleFocus()"
               (blur)="handleBlur()">
