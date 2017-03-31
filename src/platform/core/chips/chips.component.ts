@@ -163,15 +163,15 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method that is executed when trying to create a new chip from the autocomplete.
    * returns 'true' if successful, 'false' if it fails.
    */
-  addChip(value: string): void {
+  addChip(value: string): boolean {
     if (value.trim() === '' || this._value.indexOf(value) > -1) {
       this.matches = false;
-      return;
+      return false;
     }
     if (this.items && this.requireMatch) {
       if (this.items.indexOf(value) < 0) {
         this.matches = false;
-        return;
+        return false;
       }
     }
     this._value.push(value);
@@ -179,6 +179,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this.onChange(this._value);
     this.inputControl.setValue('');
     this.matches = true;
+    return true;
   }
 
   /**
