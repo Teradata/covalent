@@ -9,7 +9,9 @@
         </md-icon>
       </md-basic-chip>
     </ng-template>
-    <md-input-container [dividerColor]="matches ? 'primary' : 'warn'">
+    <md-input-container floatPlaceholder="never"
+                        [style.width.px]="readOnly ? 0 : null"
+                        [dividerColor]="matches ? 'primary' : 'warn'">
       <input mdInput
               flex="100" 
               #input
