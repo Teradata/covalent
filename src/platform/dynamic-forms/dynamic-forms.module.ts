@@ -67,8 +67,6 @@ export class CovalentDynamicFormsModule {
    * Please use without calling forRoot()
    */
   static forRoot(): ModuleWithProviders {
-    /* tslint:disable-next-line */
-    console.warn('forRoot() has been deprecated in CovalentDynamicFormsModule');
     return {
       ngModule: CovalentDynamicFormsModule,
       providers: [ ],

@@ -60,8 +60,6 @@ export class CovalentDialogsModule {
    * Please use without calling forRoot()
    */
   static forRoot(): ModuleWithProviders {
-    /* tslint:disable-next-line */
-    console.warn('forRoot() has been deprecated in CovalentDialogsModule');
     return {
       ngModule: CovalentDialogsModule,
       providers: [ ],

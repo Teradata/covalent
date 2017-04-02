@@ -55,8 +55,6 @@ export class CovalentLayoutModule {
    * Please use without calling forRoot()
    */
   static forRoot(): ModuleWithProviders {
-    /* tslint:disable-next-line */
-    console.warn('forRoot() has been deprecated in CovalentLayoutModule');
     return {
       ngModule: CovalentLayoutModule,
       providers: [ ],
