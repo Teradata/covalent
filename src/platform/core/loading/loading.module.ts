@@ -36,8 +36,8 @@ export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
     TD_LOADING,
   ],
   providers: [
-    TdLoadingService,
     TdLoadingFactory,
+    TdLoadingService,
   ],
   entryComponents: [
     TD_LOADING_ENTRY_COMPONENTS,
