@@ -7,7 +7,9 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
-        <td-chips class="push" placeholder="Enter any string"></td-chips>
+        <div class="push">
+          <td-chips placeholder="Enter any string"></td-chips>
+        </div>
       </md-tab>
       <md-tab>
         <ng-template md-tab-label>Code</ng-template>
@@ -35,7 +37,9 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
-        <td-chips class="push" [items]="items" placeholder="Enter any string"></td-chips>
+        <div class="push">
+          <td-chips [items]="items" placeholder="Enter any string"></td-chips>
+        </div>
       </md-tab>
       <md-tab>
         <ng-template md-tab-label>Code</ng-template>
@@ -77,7 +81,9 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
-        <td-chips class="push" [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+        <div class="push">
+          <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+        </div>
       </md-tab>
       <md-tab>
         <ng-template md-tab-label>Code</ng-template>
