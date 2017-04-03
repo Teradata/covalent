@@ -26,13 +26,13 @@
   <md-divider></md-divider>
   <md-card-content>
     <div class="pad-sm bgc-grey-200">
-      <div layout-gt-xs="row" layout-wrap>
-        <div flex-gt-xs="100">
-          <ngx-charts-number-card
+      <div layout="row" class="pull-bottom-md pull-right-md">
+        <ngx-charts-number-card
             [scheme]="colorScheme"
             [results]="single">
           </ngx-charts-number-card>
-        </div>
+      </div>
+      <div layout-gt-xs="row">
         <div flex-gt-xs="50">
           <md-card>
             <md-card-title>Gauge</md-card-title>
@@ -45,7 +45,8 @@
                 [max]="100"
                 [units]="'usage'"
                 [bigSegments]="10"
-                [smallSegments]="5">
+                [smallSegments]="5"
+                [valueFormatting]="axisDigits">
               </ngx-charts-gauge>
             </div>
           </md-card>
@@ -70,6 +71,8 @@
             </div>
           </md-card>
         </div>
+      </div>
+      <div layout-gt-xs="row">
         <div flex-gt-xs="50">
           <md-card>
             <md-card-title>Vertical Grouped Bars</md-card-title>
@@ -130,95 +133,99 @@
         <ng-template md-tab-label>HTML</ng-template>
         <td-highlight lang="html">
           <![CDATA[
-            <div layout-gt-xs="row" layout-wrap>
-              <div flex-gt-xs="100">
+            <div>
+              <div layout="row" class="pull-bottom-md pull-right-md">
                 <ngx-charts-number-card
-                  [scheme]="colorScheme"
-                  [results]="single">
-                </ngx-charts-number-card>
+                    [scheme]="colorScheme"
+                    [results]="single">
+                  </ngx-charts-number-card>
               </div>
-              <div flex-gt-xs="50">
-                <md-card>
-                  <md-card-title>Gauge</md-card-title>
-                  <md-divider></md-divider>
-                  <div style="height:250px;">
-                    <ngx-charts-gauge
-                      [scheme]="colorScheme"
-                      [results]="single"
-                      [min]="0"
-                      [max]="100"
-                      [units]="'usage'"
-                      [bigSegments]="10"
-                      [smallSegments]="5"
-                      [axisTickFormatting]="axisDigits">
-                    </ngx-charts-gauge>
-                  </div>
-                </md-card>
+              <div layout-gt-xs="row">
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Gauge</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-gauge
+                        [scheme]="colorScheme"
+                        [results]="single"
+                        [min]="0"
+                        [max]="100"
+                        [units]="'usage'"
+                        [bigSegments]="10"
+                        [smallSegments]="5"
+                        [valueFormatting]="axisDigits">
+                      </ngx-charts-gauge>
+                    </div>
+                  </md-card>
+                </div>
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Stacked Horizontal Bars</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-bar-horizontal-stacked
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [xAxisTickFormatting]="axisDigits">
+                      </ngx-charts-bar-horizontal-stacked>
+                    </div>
+                  </md-card>
+                </div>
               </div>
-              <div flex-gt-xs="50">
-                <md-card>
-                  <md-card-title>Stacked Horizontal Bars</md-card-title>
-                  <md-divider></md-divider>
-                  <div style="height:250px;">
-                    <ngx-charts-bar-horizontal-stacked
-                      [scheme]="colorScheme"
-                      [results]="multi"
-                      [gradient]="gradient"
-                      [xAxis]="showXAxis"
-                      [yAxis]="showYAxis"
-                      [legend]="showLegend"
-                      [showXAxisLabel]="showXAxisLabel"
-                      [showYAxisLabel]="showYAxisLabel"
-                      [xAxisLabel]="xAxisLabel"
-                      [xAxisTickFormatting]="axisDigits">
-                    </ngx-charts-bar-horizontal-stacked>
-                  </div>
-                </md-card>
-              </div>
-              <div flex-gt-xs="50">
-                <md-card>
-                  <md-card-title>Vertical Grouped Bars</md-card-title>
-                  <md-divider></md-divider>
-                  <div style="height:250px;">
-                    <ngx-charts-bar-vertical-2d
-                      [scheme]="colorScheme"
-                      [results]="multi"
-                      [gradient]="gradient"
-                      [xAxis]="showXAxis"
-                      [yAxis]="showYAxis"
-                      [legend]="showLegend"
-                      [showXAxisLabel]="showXAxisLabel"
-                      [showYAxisLabel]="showYAxisLabel"
-                      [xAxisLabel]="xAxisLabel"
-                      [yAxisLabel]="yAxisLabel"
-                      [yAxisTickFormatting]="axisDigits"
-                      [barPadding]="2"
-                      [groupPadding]="8">
-                    </ngx-charts-bar-vertical-2d>
-                  </div>
-                </md-card>
-              </div>
-              <div flex-gt-xs="50">
-                <md-card>
-                  <md-card-title>Lines</md-card-title>
-                  <md-divider></md-divider>
-                  <div style="height:250px;">
-                    <ngx-charts-line-chart
-                      [scheme]="colorScheme"
-                      [results]="multi"
-                      [gradient]="gradient"
-                      [xAxis]="showXAxis"
-                      [yAxis]="showYAxis"
-                      [legend]="showLegend"
-                      [showXAxisLabel]="showXAxisLabel"
-                      [showYAxisLabel]="showYAxisLabel"
-                      [xAxisLabel]="xAxisLabel"
-                      [yAxisLabel]="yAxisLabel"
-                      [autoScale]="autoScale"
-                      [yAxisTickFormatting]="axisDigits">
-                    </ngx-charts-line-chart>
-                  </div>
-                </md-card>
+              <div layout-gt-xs="row">
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Vertical Grouped Bars</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-bar-vertical-2d
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [yAxisTickFormatting]="axisDigits"
+                        [barPadding]="2"
+                        [groupPadding]="8">
+                      </ngx-charts-bar-vertical-2d>
+                    </div>
+                  </md-card>
+                </div>
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Lines</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-line-chart
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [autoScale]="autoScale"
+                        [yAxisTickFormatting]="axisDigits">
+                      </ngx-charts-line-chart>
+                    </div>
+                  </md-card>
+                </div>
               </div>
             </div>
           ]]>

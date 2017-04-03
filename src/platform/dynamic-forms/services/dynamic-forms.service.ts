@@ -19,6 +19,7 @@ export enum TdDynamicType {
 
 export enum TdDynamicElement {
   Input = <any>'input',
+  Password = <any>'password',
   Textarea = <any>'textarea',
   Slider = <any>'slider',
   SlideToggle = <any>'slide-toggle',
@@ -61,6 +62,7 @@ export class TdDynamicFormsService {
       case TdDynamicType.Text:
       case TdDynamicType.Number:
       case TdDynamicElement.Input:
+      case TdDynamicElement.Password:
         return TdDynamicInputComponent;
       case TdDynamicElement.Textarea:
         return TdDynamicTextareaComponent;
@@ -89,6 +91,7 @@ export class TdDynamicFormsService {
       case TdDynamicType.Number:
       case TdDynamicElement.Slider:
       case TdDynamicElement.Input:
+      case TdDynamicElement.Password:
       case TdDynamicType.Array:
       case TdDynamicElement.Select:
         return 45;

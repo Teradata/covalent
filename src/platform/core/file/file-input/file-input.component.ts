@@ -49,7 +49,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   private _disabled: boolean = false;
 
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput') private _inputElement: ElementRef;
+  @ViewChild('fileInput') _inputElement: ElementRef;
   get inputElement(): HTMLInputElement {
     return this._inputElement.nativeElement;
   }
