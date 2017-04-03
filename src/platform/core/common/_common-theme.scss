@@ -1,0 +1,13 @@
+@import '~@angular/material/core/theming/theming';
+
+@mixin td-common-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  md-list-item,
+  .mat-list-item-content {
+      md-icon[md-list-avatar] {
+          background-color: mat-color($background, hover);
+      }
+  }
+}
