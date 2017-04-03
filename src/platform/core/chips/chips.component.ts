@@ -4,6 +4,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/f
 import { MdChip, MdInputDirective, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/observable/timer';
 
 const noop: any = () => {
   // empty method
