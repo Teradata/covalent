@@ -10,4 +10,9 @@
           background-color: mat-color($background, hover);
       }
   }
+  .mat-list-text {
+      p {
+          color:  mat-color($foreground, disabled);
+      }
+  }
 }
