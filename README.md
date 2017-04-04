@@ -22,7 +22,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * Install Node packages `npm i`
 * Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
 * Run local build `ng serve` or `ng serve --aot`
-
+* If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 ---
 
 * [Getting Started](docs/GETTING_STARTED.md)
