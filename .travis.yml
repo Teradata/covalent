@@ -11,7 +11,7 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 install:
 - npm i process-nextick-args util-deprecate buffer-shims
-- yarn install
+- TMPDIR=/tmp yarn install # TMPDIR workaround for https://github.com/yarnpkg/yarn/issues/1538
 - npm rebuild node-sass
 script:
 - npm run lint
