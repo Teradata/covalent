@@ -6,7 +6,7 @@
   $foreground: map-get($theme, foreground);
 
   .mat-sidenav-container {
-    background-color: md-color($background, status-bar);
+    background-color: mat-color($background, status-bar);
   }
 
   td-layout-nav,

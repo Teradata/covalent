@@ -18,44 +18,44 @@
     }
     // steps
     .td-horizontal-line {
-      border-bottom-color: md-color($foreground, divider);
+      border-bottom-color: mat-color($foreground, divider);
     }
     .td-vertical-line {
-      border-left-color: md-color($foreground, divider);
+      border-left-color: mat-color($foreground, divider);
     }
     // header
     .td-step-header {
       .md-caption {
-        color: md-color($foreground, secondary-text);
+        color: mat-color($foreground, secondary-text);
       }
       .mat-disabled {
         &, & * {
-          color: md-color($foreground, disabled);
+          color: mat-color($foreground, disabled);
         }
       }
       .mat-warn {
         &, & * {
-          color: md-color($warn);
+          color: mat-color($warn);
         }
       }
       .mat-complete {
-        color: md-color($accent);
+        color: mat-color($accent);
       }
     }
     .td-circle {
-      color: md-color($background, card);
+      color: mat-color($background, card);
       &.mat-active {
-        background-color: md-color($accent);
+        background-color: mat-color($accent);
       }
       &.mat-inactive {
-        background-color: md-color($foreground, disabled);
+        background-color: mat-color($foreground, disabled);
       }
       & md-icon {
-        fill: md-color($foreground, text);
+        fill: mat-color($foreground, text);
       }
     }
     .td-triangle {
-      color: md-color($warn);
+      color: mat-color($warn);
     }
   }
 }

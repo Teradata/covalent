@@ -9,7 +9,7 @@
 
   td-paging-bar {
     &, & md-select .mat-select-value { 
-      color: md-color($foreground, secondary-text);
+      color: mat-color($foreground, secondary-text);
     }
   }
 }
