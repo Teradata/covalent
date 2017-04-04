@@ -37,6 +37,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/Subject': 'Rx',
     'rxjs/add/observable/forkJoin': 'Rx.Observable',
     'rxjs/add/observable/of': 'Rx.Observable',
+    'rxjs/add/observable/timer': 'Rx.Observable',
     'rxjs/add/operator/toPromise': 'Rx.Observable.prototype',
     'rxjs/add/operator/map': 'Rx.Observable.prototype',
     'rxjs/add/operator/filter': 'Rx.Observable.prototype',
@@ -45,6 +46,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/add/operator/finally': 'Rx.Observable.prototype',
     'rxjs/add/operator/catch': 'Rx.Observable.prototype',
     'rxjs/add/operator/debounceTime': 'Rx.Observable.prototype',
+    'rxjs/add/operator/skip': 'Rx.Observable.prototype',
     'rxjs/Observable': 'Rx'
   };
   components.forEach(name => {

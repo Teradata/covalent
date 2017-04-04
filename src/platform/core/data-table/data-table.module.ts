@@ -55,8 +55,6 @@ export class CovalentDataTableModule {
    * Please use without calling forRoot()
    */
   static forRoot(): ModuleWithProviders {
-    /* tslint:disable-next-line */
-    console.warn('forRoot() has been deprecated in CovalentDataTableModule');
     return {
       ngModule: CovalentDataTableModule,
       providers: [ ],
