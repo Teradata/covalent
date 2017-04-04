@@ -3,6 +3,10 @@ dist: trusty
 language: node_js
 node_js:
 - '6.9.4'
+branches:
+  only:
+    - master
+    - develop
 addons:
   firefox: latest
 before_script:
