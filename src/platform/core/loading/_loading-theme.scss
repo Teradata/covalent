@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-loading-theme($theme) {
   $background: map-get($theme, background);

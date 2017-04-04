@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-chips-theme($theme) {
   $primary: map-get($theme, primary);
