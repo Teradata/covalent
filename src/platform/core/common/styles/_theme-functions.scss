@@ -1,5 +1,9 @@
 @import 'palette';
 
+@function rem($multiplier) {
+  $font-size: 10px;
+  @return $multiplier * $font-size;
+}
 
 // For a given hue in a palette, return the contrast color from the map of contrast palettes.
 // @param $color-map

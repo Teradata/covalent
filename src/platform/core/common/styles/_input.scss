@@ -9,12 +9,12 @@ $warn: mat-palette($mat-red);
 md-input-container {
     &.ng-invalid:not(.ng-pristine) {
         label {
-            color: md-color($warn);
+            color: mat-color($warn);
         }
         .mat-input-underline {
-            border-top-color: md-color($warn);
+            border-top-color: mat-color($warn);
             .mat-input-ripple {
-                background-color: md-color($warn);
+                background-color: mat-color($warn);
             }
         }
     }
