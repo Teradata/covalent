@@ -1,3 +1,4 @@
+@import '../common/common-theme';
 @import '../chips/chips-theme';
 @import '../data-table/data-table-theme';
 @import '../layout/layout-theme';
@@ -11,6 +12,7 @@
 
 // Create a theme.
 @mixin covalent-theme($theme) {
+  @include td-common-theme($theme);
   @include td-layout-theme($theme);
   @include td-steps-theme($theme);
   @include td-expansion-panel-theme($theme);
