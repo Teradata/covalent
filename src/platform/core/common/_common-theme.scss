@@ -21,9 +21,12 @@
 
   md-list-item,
   .mat-list-item-content {
-      md-icon[md-list-avatar] {
-          background-color: mat-color($background, hover);
-      }
+        md-icon {
+        color: mat-color($foreground, icon);
+        &[md-list-avatar] {
+            background-color: mat-color($background, hover);
+        }
+    }
   }
   .mat-list-text {
       p {
