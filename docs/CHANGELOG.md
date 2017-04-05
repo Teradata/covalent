@@ -41,6 +41,7 @@
 * **docs:** rebrand angular 2 to just angular. ([5d6332370201e0a0381c6ead3e30cadf8414df38](https://github.com/Teradata/covalent/commit/5d6332370201e0a0381c6ead3e30cadf8414df38))
 
 ## Internal
+* **build:** enable yarn package management ([12ea9c4c7fd9127d94c99d636d2ad4f1a3a1be1a](https://github.com/Teradata/covalent/commit/12ea9c4c7fd9127d94c99d636d2ad4f1a3a1be1a)), closes [#313](https://github.com/Teradata/covalent/issues/313)
 * **dependencies:** bump `typescript` to `2.1.6` ([aef44f88e19173068a5cd4e13bb9bdd11028c9db](https://github.com/Teradata/covalent/commit/aef44f88e19173068a5cd4e13bb9bdd11028c9db))
 * **dependencies:** bump `@angular/cli` to `1.0.0` and general dependencies ([5166ecb019944beaa40d16f70037b68ac08cef3b](https://github.com/Teradata/covalent/commit/5166ecb019944beaa40d16f70037b68ac08cef3b))
 * **dependencies:** bump `@swimlane/ngx-charts` to `5.0.0` ([75166731fdaec52e7b320966dcf0a797126a0ab4](https://github.com/Teradata/covalent/commit/75166731fdaec52e7b320966dcf0a797126a0ab4))
@@ -49,7 +50,7 @@
 * **docs:** update docs to updated Material style prefixes ([9142f083e55b77c3f8e89dfde318d23842388f20](https://github.com/Teradata/covalent/commit/9142f083e55b77c3f8e89dfde318d23842388f20)), closes [#410](https://github.com/Teradata/covalent/issues/410)
 * **docs:** clarify instructions to include the `platform.css` ([5d6bfe5110c29df6986cb4dd15135f0aa784c0f4](https://github.com/Teradata/covalent/commit/5d6bfe5110c29df6986cb4dd15135f0aa784c0f4))
 * **docs:** add covalent-electron and covalent-data to README and docs ([878bacecde77f0e824669ed70ff62b89b7daff19](https://github.com/Teradata/covalent/commit/878bacecde77f0e824669ed70ff62b89b7daff19))
-
+* **theming:** use internal theme functions instead of materials. ([cc74bc154bd076eeaf965686127d9c5cf3c63969](https://github.com/Teradata/covalent/commit/cc74bc154bd076eeaf965686127d9c5cf3c63969))closes [#446](https://github.com/Teradata/covalent/issues/446), [#450](https://github.com/Teradata/covalent/issues/450), [#232](https://github.com/Teradata/covalent/issues/232), [#423](https://github.com/Teradata/covalent/issues/423) 
 
 <a name="1.0.0-beta.2-1"></a>
 # [1.0.0-beta.2-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.2) (2017-02-27)
