@@ -1,6 +1,6 @@
 
 <a name="1.0.0-beta.3"></a>
-# [1.0.0-beta.3 ](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3) (2017-04-04)
+# [1.0.0-beta.3 Electric Relaxation](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3) (2017-04-05)
 
 ## Breaking Change
 * **all:** deprecate `forRoot()` method. ([3cea292284d023c5ce8f80b7fe6055ee2e31bfda](https://github.com/Teradata/covalent/commit/3cea292284d023c5ce8f80b7fe6055ee2e31bfda)), closes [#306](https://github.com/Teradata/covalent/issues/306)
