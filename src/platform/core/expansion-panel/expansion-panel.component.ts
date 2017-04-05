@@ -5,7 +5,7 @@ import { TemplatePortalDirective } from '@angular/material';
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Directive({
-  selector: '[td-expansion-panel-header]template',
+  selector: '[td-expansion-panel-header]ng-template',
 })
 export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -14,7 +14,7 @@ export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-label]template',
+  selector: '[td-expansion-panel-label]ng-template',
 })
 export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -23,7 +23,7 @@ export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-sublabel]template',
+  selector: '[td-expansion-panel-sublabel]ng-template',
 })
 export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {

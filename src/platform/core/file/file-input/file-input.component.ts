@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
-         ElementRef, Renderer, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
+         ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -14,7 +14,7 @@ export const FILE_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 @Directive({
-  selector: '[td-file-input-label]template',
+  selector: '[td-file-input-label]ng-template',
 })
 export class TdFileInputLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -49,7 +49,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   private _disabled: boolean = false;
 
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput') private _inputElement: ElementRef;
+  @ViewChild('fileInput') _inputElement: ElementRef;
   get inputElement(): HTMLInputElement {
     return this._inputElement.nativeElement;
   }
@@ -101,7 +101,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
-  constructor(private _renderer: Renderer, private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
 
   }
 
@@ -118,7 +118,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
    */
   clear(): void {
     this.writeValue(undefined);
-    this._renderer.setElementProperty(this.inputElement, 'value', '');
+    this._renderer.setProperty(this.inputElement, 'value', '');
   }
 
   /**

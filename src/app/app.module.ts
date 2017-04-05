@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 import { DocsAppComponent } from './app.component';
@@ -17,7 +18,6 @@ import { CovalentCoreModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService } from './services';
@@ -29,17 +29,17 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     BrowserModule,
     HttpModule,
     JsonpModule,
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

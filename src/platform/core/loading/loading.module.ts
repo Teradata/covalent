@@ -19,15 +19,15 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
 ];
 
 export { LoadingType, LoadingMode, LoadingStrategy } from './loading.component';
-export { TdLoadingService, ITdLoadingConfig, ILoadingOptions } from './services/loading.service';
+export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdProgressBarModule.forRoot(),
-    MdProgressSpinnerModule.forRoot(),
-    OverlayModule.forRoot(),
-    PortalModule.forRoot(),
+    MdProgressBarModule,
+    MdProgressSpinnerModule,
+    OverlayModule,
+    PortalModule,
   ],
   declarations: [
     TD_LOADING,
@@ -35,15 +35,24 @@ export { TdLoadingService, ITdLoadingConfig, ILoadingOptions } from './services/
   exports: [
     TD_LOADING,
   ],
+  providers: [
+    TdLoadingFactory,
+    TdLoadingService,
+  ],
   entryComponents: [
     TD_LOADING_ENTRY_COMPONENTS,
   ],
 })
 export class CovalentLoadingModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentLoadingModule,
-      providers: [ TdLoadingService, TdLoadingFactory ],
+      providers: [ ],
     };
   }
 }

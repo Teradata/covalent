@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
-import { Renderer } from '@angular/core';
+import { Renderer2 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { TdMediaService } from '../services/media.service';
@@ -57,7 +57,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
     this._styles = styles;
   }
 
-  constructor(private _renderer: Renderer, private _elementRef: ElementRef, private _mediaService: TdMediaService) { }
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _mediaService: TdMediaService) { }
 
   ngOnInit(): void {
     this._mediaChange(this._mediaService.query(this._query));
@@ -67,7 +67,9 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._subscription.unsubscribe();
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
   }
 
   private _mediaChange(matches: boolean): void {
@@ -79,20 +81,24 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
 
   private _changeAttributes(): void {
     for (let attr in this._attributes) {
-      this._renderer.setElementAttribute(this._elementRef.nativeElement, attr,
+      this._renderer.setAttribute(this._elementRef.nativeElement, attr,
                                          this._matches ? this._attributes[attr] : undefined);
     }
   }
 
   private _changeClasses(): void {
     this._classes.forEach((className: string) => {
-      this._renderer.setElementClass(this._elementRef.nativeElement, className, this._matches);
+      if (this._matches) {
+        this._renderer.addClass(this._elementRef.nativeElement, className);
+      } else {
+        this._renderer.removeClass(this._elementRef.nativeElement, className);
+      }
     });
   }
 
   private _changeStyles(): void {
     for (let style in this._styles) {
-      this._renderer.setElementStyle(this._elementRef.nativeElement, style,
+      this._renderer.setStyle(this._elementRef.nativeElement, style,
                                          this._matches ? this._styles[style] : undefined);
     }
   }

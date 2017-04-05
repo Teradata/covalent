@@ -1,6 +1,6 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Teradata UI Platform Dynamic Forms Module",
   "main": "./dynamic-forms.umd.js",
   "module": "./index.js",
@@ -36,6 +36,6 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "1.0.0-beta.2"
+    "@covalent/core": "1.0.0-beta.3"
   }
 }

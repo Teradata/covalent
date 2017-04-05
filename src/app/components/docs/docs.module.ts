@@ -6,7 +6,7 @@ import { DocsComponent } from './docs.component';
 import { DocsOverviewComponent } from './overview/overview.component';
 import { CreatingComponent } from './creating/creating.component';
 import { AngularMaterialComponent } from './angular-material/angular-material.component';
-import { Angular2Component } from './angular-2/angular-2.component';
+import { AngularComponent } from './angular/angular.component';
 import { BuildTasksComponent } from './build-tasks/build-tasks.component';
 import { DeploymentComponent } from './deployment/deployment.component';
 import { IconsComponent } from './icons/icons.component';
@@ -23,7 +23,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     DocsOverviewComponent,
     CreatingComponent,
     AngularMaterialComponent,
-    Angular2Component,
+    AngularComponent,
     BuildTasksComponent,
     DeploymentComponent,
     IconsComponent,
@@ -32,8 +32,8 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MockDataComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
+    CovalentCoreModule,
+    CovalentHighlightModule,
     docsRoutes,
   ],
 })

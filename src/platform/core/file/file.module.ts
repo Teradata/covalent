@@ -33,9 +33,9 @@ export { TdFileService, IUploadOptions } from './services/file.service';
     JsonpModule,
     FormsModule,
     CommonModule,
-    MdIconModule.forRoot(),
-    MdButtonModule.forRoot(),
-    PortalModule.forRoot(),
+    MdIconModule,
+    MdButtonModule,
+    PortalModule,
   ],
   declarations: [
     TD_FILE,
@@ -43,12 +43,20 @@ export { TdFileService, IUploadOptions } from './services/file.service';
   exports: [
     TD_FILE,
   ],
+  providers: [
+    TdFileService,
+  ],
 })
 export class CovalentFileModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentFileModule,
-      providers: [ TdFileService ],
+      providers: [ ],
     };
   }
 }

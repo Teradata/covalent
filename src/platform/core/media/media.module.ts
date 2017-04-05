@@ -22,12 +22,20 @@ export { TdMediaService, TdMediaToggleDirective };
   exports: [
     TD_MEDIA,
   ],
+  providers: [
+    TdMediaService,
+  ],
 })
 export class CovalentMediaModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentMediaModule,
-      providers: [ TdMediaService ],
+      providers: [ ],
     };
   }
 }

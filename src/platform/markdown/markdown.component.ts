@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Renderer, SecurityContext } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare var showdown: any;
@@ -26,7 +26,7 @@ export class TdMarkdownComponent implements AfterViewInit {
     this._loadContent(this._content);
   }
 
-  constructor(private _renderer: Renderer,
+  constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
 
@@ -41,19 +41,18 @@ export class TdMarkdownComponent implements AfterViewInit {
    */
   private _loadContent(markdown: string): void {
     if (markdown && markdown.trim().length > 0) {
+      // Clean container
+      this._renderer.setProperty(this._elementRef.nativeElement, 'innerHTML', '');
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
-      // Clean container
-      this._renderer.setElementProperty(this._elementRef.nativeElement, 'innerHTML', '');
-      // Project DIV element into container
-      this._renderer.projectNodes(this._elementRef.nativeElement, [divElement]);
     }
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {
-    // Renderer doesnt have a parsing method, so we have to sanitize and use [innerHTML]
+    // Renderer2 doesnt have a parsing method, so we have to sanitize and use [innerHTML]
     // to parse the string into DOM element for now.
-    const div: HTMLDivElement = this._renderer.createElement(this._elementRef.nativeElement, 'div');
+    const div: HTMLDivElement = this._renderer.createElement('div');
+    this._renderer.appendChild(this._elementRef.nativeElement, div);
     div.innerHTML = this._domSanitizer.sanitize(SecurityContext.HTML, markupStr);
     return div;
   }

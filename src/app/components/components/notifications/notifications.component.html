@@ -4,9 +4,9 @@
   <md-divider></md-divider>
   <md-card-content>
     <h3 class="md-title">Toolbar notification &amp; menu</h3>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <md-toolbar color="accent">
           <button md-icon-button>
             <md-icon>menu</md-icon>
@@ -28,14 +28,14 @@
             <td-menu>
               <div td-menu-header class="md-subhead">Notifications</div>
               <md-nav-list dense>
-                <template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
+                <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                   <a md-list-item>
                     <md-icon md-list-avatar>today</md-icon>
                     <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
                     <p md-line>22 minutes ago</p>
                   </a>
                   <md-divider *ngIf="!last"></md-divider>
-                </template>
+                </ng-template>
               </md-nav-list>
               <button md-button color="accent" td-menu-footer>
                 See All Notifications
@@ -56,7 +56,7 @@
         </md-toolbar>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -81,14 +81,14 @@
                 <td-menu>
                   <div td-menu-header class="md-subhead">Notifications</div>
                   <md-nav-list dense>
-                    <template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
+                    <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                       <a md-list-item>
                         <md-icon md-list-avatar>today</md-icon>
                         <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
                         <p md-line>22 minutes ago</p>
                       </a>
                       <md-divider *ngIf="!last"></md-divider>
-                    </template>
+                    </ng-template>
                   </md-nav-list>
                   <button md-button color="accent" td-menu-footer>
                     See All Notifications
@@ -118,69 +118,69 @@
     <h3 class="md-title">Tabs notification</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <md-tab-group md-stretch-tabs>
           <md-tab>
-            <template md-tab-label>
+            <ng-template md-tab-label>
               <div layout="row" layout-align="center center">
                 Activities
                 <td-notification-count color="primary" [notifications]="true">
                 </td-notification-count>
               </div>
-            </template>
+            </ng-template>
           </md-tab>
           <md-tab>
-            <template md-tab-label>
+            <ng-template md-tab-label>
               <div layout="row" layout-align="center center">
                 Logs
                 <td-notification-count color="warn" [notifications]="0">
                 </td-notification-count>
               </div>
-            </template>
+            </ng-template>
           </md-tab>
           <md-tab>
-            <template md-tab-label>
+            <ng-template md-tab-label>
               <div layout="row" layout-align="center center">
                 Chats 
                 <td-notification-count color="accent" [notifications]="12">
                 </td-notification-count>
               </div>
-            </template>
+            </ng-template>
           </md-tab>
         </md-tab-group>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <md-tab-group md-stretch-tabs>
               <md-tab>
-                <template md-tab-label>
+                <ng-template md-tab-label>
                   <div layout="row" layout-align="center center">
                     Activities
                     <td-notification-count color="primary" [notifications]="true">
                     </td-notification-count>
                   </div>
-                </template>
+                </ng-template>
               </md-tab>
               <md-tab>
-                <template md-tab-label>
+                <ng-template md-tab-label>
                   <div layout="row" layout-align="center center">
                     Logs
                     <td-notification-count color="warn" [notifications]="0">
                     </td-notification-count>
                   </div>
-                </template>
+                </ng-template>
               </md-tab>
               <md-tab>
-                <template md-tab-label>
+                <ng-template md-tab-label>
                   <div layout="row" layout-align="center center">
                     Chats 
                     <td-notification-count color="accent" [notifications]="12">
                     </td-notification-count>
                   </div>
-                </template>
+                </ng-template>
               </md-tab>
             </md-tab-group>
           ]]>
@@ -194,7 +194,7 @@
     <h3 class="md-title">List item notification</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <md-nav-list dense flex>
           <a md-list-item>
             <md-icon md-list-avatar>person</md-icon>
@@ -225,7 +225,7 @@
         </md-nav-list>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -272,13 +272,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-notification-count>]]></code> component has {{notificationsAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="notificationsAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="notificationsAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
@@ -293,14 +293,14 @@
           <td-menu>
             <div td-menu-header class="md-subhead">Notifications</div>
             <md-nav-list dense>
-              <template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
+              <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                 <a md-list-item>
                   <md-icon md-list-avatar>today</md-icon>
                   <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
                   <p md-line>22 minutes ago</p>
                 </a>
                 <md-divider *ngIf="!last"></md-divider>
-              </template>
+              </ng-template>
             </md-nav-list>
             <button md-button color="accent" td-menu-footer>
               See All Notifications
@@ -318,13 +318,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentNotificationsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentNotificationsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentNotificationsModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentNotificationsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentNotificationsModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...

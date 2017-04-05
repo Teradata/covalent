@@ -1,7 +1,8 @@
 <div layout="row" flex>
   <ng-content></ng-content>
   <div flex>
-    <div class="td-step-content-wrapper" [@tdCollapse]="!active">
+    <div class="td-step-content-wrapper"
+         [@tdCollapse]="!active">
       <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
         <ng-content select="[td-step-body-content]"></ng-content>
       </div>
@@ -9,7 +10,8 @@
         <ng-content select="[td-step-body-actions]"></ng-content>
       </div>
     </div>
-    <div #summaryRef [@tdCollapse]="active || !isComplete()" [class.td-step-summary]="summaryRef.children.length || summaryRef.textContent.trim()">
+    <div #summaryRef [@tdCollapse]="active || !isComplete()"
+                     [class.td-step-summary]="summaryRef.children.length || summaryRef.textContent.trim()">
       <ng-content select="[td-step-body-summary]"></ng-content>
     </div>
   </div>

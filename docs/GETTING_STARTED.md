@@ -1,6 +1,6 @@
 Get started with Covalent using the Angular CLI.
 
-See the  [material2 getting started](https://github.com/angular/material2/blob/master/guides/getting-started.md) for instructions.
+See the  [material getting started](https://github.com/angular/material2/blob/master/guides/getting-started.md) for instructions.
 
 ## Install the CLI
  
@@ -43,12 +43,12 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 // other imports 
 @NgModule({
   imports: [
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     // (optional) Additional Covalent Modules imports
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
   ],
   ...
 })
@@ -58,7 +58,7 @@ export class AppModule { }
 ## Include the core and theme styles:
 This is **required** to apply all of the core and theme styles to your application. 
 
-See the [material2 theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) for instructions.
+See the [material theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) for instructions.
 
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 
@@ -70,14 +70,14 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 @import '~@covalent/markdown/markdown-theme';
 @import '~@covalent/highlight/highlight-theme';\
 
-@include md-core();
+@include mat-core();
 
-$primary: md-palette($md-orange, 800);
-$accent:  md-palette($md-light-blue, 600, A100, A400);
+$primary: mat-palette($mat-orange, 800);
+$accent:  mat-palette($mat-light-blue, 600, A100, A400);
 
-$warn:    md-palette($md-red, 600);
+$warn:    mat-palette($mat-red, 600);
 
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
@@ -89,7 +89,27 @@ $theme: md-light-theme($primary, $accent, $warn);
 
 You only need this single Sass file; you do not need to use Sass to style the rest of your app.
 
-If you are using the Angular CLI, support for compiling Sass to css is built-in; you only have to add a new entry to the "styles" list in .angular-cli.json pointing to the theme file (e.g., themes.scss).
+If you are using the Angular CLI, support for compiling Sass to css is built-in but you have to add a new entry to the "styles" list in .angular-cli.json pointing to the theme file and the platform.css as follows:
+
+### Using platform.css:
+
+- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json
+load the Material Design font in your `index.html`.  
+       
+**src/index.html**
+```html
+<link href="../node_modules/@covalent/core/common/platform.css" rel="stylesheet">
+```
+
+or
+
+**.angular-cli.json**
+```json
+"styles": [
+  "../node_modules/@covalent/core/common/platform.scss"
+],
+```
+### Other build tools
 
 If you're not using the Angular CLI, you can use any existing Sass tooling to build the file (such as gulp-sass or grunt-sass). The simplest approach is to use the node-sass CLI; you simply run:
 
@@ -115,25 +135,6 @@ System.config({
     '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/dynamic-forms.umd.js'
   }
 });
-```
-
-### Using platform.scss:
-
-- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json
-load the Material Design font in your `index.html`.  
-       
-**src/index.html**
-```html
-<link href="../node_modules/@covalent/core/common/platform.css" rel="stylesheet">
-```
-
-or
-
-**.angular-cli.json**
-```json
-"styles": [
-  "../node_modules/@covalent/core/common/platform.scss"
-],
 ```
 
 ## Sample Covalent projects

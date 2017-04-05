@@ -50,13 +50,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-search-input>]]></code> component has {{searchInputAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
@@ -67,13 +67,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentSearchModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentSearchModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentSearchModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentSearchModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentSearchModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...
@@ -93,13 +93,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-search-box>]]></code> component has {{searchBoxAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>

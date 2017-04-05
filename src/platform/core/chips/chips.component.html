@@ -1,21 +1,34 @@
 <div flex>
-  <template let-chip ngFor [ngForOf]="value">
-    <td-chip>
-      <span>{{chip}}</span>
-      <md-icon *ngIf="!readOnly"
-               [tabIndex]="0" 
-               (keydown.enter)="removeItem(chip)" 
-               (click)="removeItem(chip)"
-               title="Delete">cancel</md-icon>
-    </td-chip>
-  </template>
-  <td-autocomplete #autocomplete 
-                   [disabled]="readOnly" 
-                   [searchItems]="filteredItems"
-                   [placeholder]="readOnly? '' : placeholder"
-                   (focus)="handleFocus()"
-                   (blur)="handleBlur() && (matches = autocomplete.clear())"
-                   (itemSelect)="(matches = addItem($event)) && autocomplete.clear()"></td-autocomplete>
+  <md-chip-list [tabIndex]="-1" (focus)="focus()">
+    <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
+      <md-basic-chip [class.td-chip-disabled]="readOnly"
+                     (keydown)="_chipKeydown($event, index)">
+        <span>{{chip}}</span>
+        <md-icon *ngIf="!readOnly" (click)="removeChip(chip)">
+            cancel
+        </md-icon>
+      </md-basic-chip>
+    </ng-template>
+    <md-input-container floatPlaceholder="never"
+                        [style.width.px]="readOnly ? 0 : null"
+                        [dividerColor]="matches ? 'primary' : 'warn'">
+      <input mdInput
+              flex="100" 
+              #input
+              [mdAutocomplete]="autocomplete"
+              [formControl]="inputControl"
+              [placeholder]="readOnly? '' : placeholder"
+              (keydown)="_inputKeydown($event)"
+              (keyup.enter)="addChip(input.value)"
+              (focus)="handleFocus()"
+              (blur)="handleBlur()">
+    </md-input-container>
+    <md-autocomplete #autocomplete="mdAutocomplete">
+      <ng-template let-item ngFor [ngForOf]="filteredItems | async">
+        <md-option (click)="addChip(input.value)" [value]="item">{{item}}</md-option>
+      </ng-template>
+    </md-autocomplete>
+  </md-chip-list>
   <div class="mat-input-underline"
        [class.mat-disabled]="readOnly">
     <span class="mat-input-ripple"

@@ -1,5 +1,4 @@
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/variables';
+@import '../common/styles/theme-functions';
 
 @mixin td-chips-theme($theme) {
   $primary: map-get($theme, primary);
@@ -8,37 +7,25 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  // Gradient for showing the dashed line when the input is disabled.
-  $md-input-underline-disabled-background-image: linear-gradient(to right,
-        rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
-
-  // chip
-  .td-chip {
-    background: md-color($background, status-bar);
-    color: md-color($foreground, text);
-    md-icon {
-      color: md-color($foreground, hint-text);
-      &:hover {
-        color: md-color($foreground, icon);
-      }
-    }
-  }
   // chips
   td-chips {
-    .mat-input-underline {
-      border-top: 1px solid md-color($foreground, hint-text);
-      &.mat-disabled {
-        background-image: $md-input-underline-disabled-background-image;
-      }
-      .mat-input-ripple {
-        background-color: md-color($primary);
-        transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
-                  opacity $swift-ease-out-duration $swift-ease-out-timing-function;
-        &.mat-accent {
-          background-color: md-color($accent);
+    // chip
+    .mat-basic-chip {
+      background: mat-color($background, status-bar);
+      color: mat-color($foreground, text);
+      &:focus:not(.td-chip-disabled) {
+        background: mat-color($primary);
+        &, md-icon {
+          color: mat-color($primary, default-contrast);
+          md-icon:hover {
+            color: mat-color($foreground, icon);
+          }
         }
-        &.mat-warn {
-          background-color: md-color($warn);
+      }
+      md-icon {
+        color: mat-color($foreground, hint-text);
+        &:hover {
+          color: mat-color($foreground, icon);
         }
       }
     }

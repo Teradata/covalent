@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
+import { Dir } from '@angular/material';
 
 export interface IPageChangeEvent {
   page: number;
@@ -125,6 +126,15 @@ export class TdPagingBarComponent implements OnInit {
    * Emits an [IPageChangeEvent] implemented object.
    */
   @Output('change') onChange: EventEmitter<IPageChangeEvent> = new EventEmitter<IPageChangeEvent>();
+
+  get isRTL(): boolean {
+    if (this._dir) {
+      return this._dir.dir === 'rtl';
+    }
+    return false;
+  }
+
+  constructor(@Optional() private _dir: Dir) {}
 
   ngOnInit(): void {
     this._page = this.initialPage;

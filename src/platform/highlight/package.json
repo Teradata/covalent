@@ -1,6 +1,6 @@
 {
   "name": "@covalent/highlight",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Teradata UI Platform Highlight Module",
   "main": "./highlight.umd.js",
   "module": "./index.js",
@@ -36,10 +36,10 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "highlight.js": "9.9.0"
+    "highlight.js": "9.10.0"
   },
   "peerDependencies": {
-    "@angular/common": "^2.4.5",
-    "@angular/core": "^2.4.5"
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0"
   }
 }

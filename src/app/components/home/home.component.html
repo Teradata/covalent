@@ -2,7 +2,7 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="updates.length + 1">
+      <td-notification-count color="accent" [notifications]="updates.length + 2">
         <md-icon>notifications</md-icon>
       </td-notification-count>
     </button>
@@ -10,17 +10,23 @@
       <td-menu>
         <div td-menu-header class="md-subhead">Updates</div>
         <md-nav-list dense>
-          <template let-item let-last="last" ngFor [ngForOf]="updates">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a md-list-item [routerLink]="[item.route]">
               <md-icon md-list-avatar>{{item.icon}}</md-icon>
               <h4 md-line><span class="text-wrap">{{item.description}}</span></h4>
               <p md-line>{{item.title}}</p>
             </a>
             <md-divider></md-divider>
-          </template>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L57-L81" target="_blank">
+          </ng-template>
+          <a md-list-item href="https://github.com/Teradata/covalent/pulls?q=is%3Apr+is%3Aclosed+milestone%3A%22Beta+3%22+label%3Abug" target="_blank">
+            <md-icon md-list-avatar>bug_report</md-icon>
+            <h4 md-line><span class="text-wrap">Beta 3 bugfixes</span></h4>
+            <p md-line>Stabililty</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L57-L63" target="_blank">
             <md-icon md-list-avatar>change_history</md-icon>
-            <h4 md-line><span class="text-wrap">Angular 2.4.5, Material beta2 &amp; CLI beta.32.3</span></h4>
+            <h4 md-line><span class="text-wrap">Angular v4 support</span></h4>
             <p md-line>Dependencies updated</p>
           </a>
         </md-nav-list>
@@ -37,22 +43,22 @@
         <md-icon class="md-icon-svg-lg" svgIcon="assets:covalent"></md-icon>
         <div>
           <md-card-title>Teradata Covalent UI Platform</md-card-title>
-        <md-card-subtitle>a UI platform built on Angular 2 + Material Design</md-card-subtitle>
+        <md-card-subtitle>a UI platform built on Angular + Material Design</md-card-subtitle>
         </div>
       </div>
     <md-divider></md-divider>
     <md-nav-list hide-gt-sm>
-      <template let-item let-last="last" ngFor [ngForOf]="items">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item [routerLink]="[item.route]">
           <md-icon md-list-avatar>{{item.icon}}</md-icon>
           <h3 md-line> {{item.title}} </h3>
           <p md-line> {{item.description}} </p>
         </a>
         <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      </ng-template>
     </md-nav-list>
     <div layout="row" layout-wrap hide-xs hide-sm class="push-sm">
-      <template let-item let-last="last" ngFor [ngForOf]="items">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="items">
         <div flex-md="50" flex-gt-md="25" layout="column">
           <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
             <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
@@ -66,7 +72,7 @@
             </md-card-content>
           </md-card>
         </div>
-      </template>
+      </ng-template>
     </div>
     <md-divider></md-divider>
     <md-card-actions>
@@ -84,12 +90,12 @@
       <h3 class="md-title">FAQs</h3>
       <td-expansion-panel label="What is Covalent?" sublabel="what is this thing?">
         <div class="md-padding">
-          Covalent is a UI Platform that combines proven design language with a comprehensive web framework, built on Angular 2 & Angular-Material (Design).
+          Covalent is a UI Platform that combines proven design language with a comprehensive web framework, built on Angular & Angular-Material (Design).
           Covalent gives you a quickstart to build a modern web application UI and ensure consistency across your enterprise products.
           Some of Covalent's most important features include:
           <ul>
-            <li>Angular-Material 2</li>
-            <li>Angular 2 Command-line interface (CLI) for builds, deploys, testing & more.</li>
+            <li>Angular-Material</li>
+            <li>Angular Command-line interface (CLI) for builds, deploys, testing & more.</li>
             <li>Drastically simplified interface layouts (for dashboards, lists, etc).</li>
             <li>Custom web components (stepper, file upload, expansion panels & more).</li>
             <li>750+ Material Design icons.</li>
@@ -110,13 +116,13 @@
         <div class="md-padding">
           By using Covalent as a unified UI Platform there are a ton of benefits. Here are some highlights:
           <ul>
-            <li>Angular-Material v2 doesn't have a full app quickstart. <a href="https://teradata.github.io/covalent-quickstart/">Covalent does</a>.</li>
-            <li>Covalent provides the Angular-Material v1 flexbox layout that was removed in Angular-Material v2.</li>
+            <li>Angular-Material doesn't have a full app quickstart. <a href="https://teradata.github.io/covalent-quickstart/">Covalent does</a>.</li>
+            <li>Covalent provides the Angular-Material (AngularJS) flexbox layout that was removed in Angular-Material (angular).</li>
             <li>Covalent provides several custom components such as steppers & expansion panels.</li>
             <li>Custom layouts & components in Covalent are developed specifically for enterprise solutions.</li>
             <li>Covalent provides a selection of UI layouts out of the box.</li>
             <li>Our team is continuously adding tools like Syntax Highlighting & Markdown.</li>
-            <li>Our team will always maintain native compatibility with Angular 2 & Material  </li>
+            <li>Our team will always maintain native compatibility with Angular & Material  </li>
             <li>Our team will always follow the principles of the official Material Design spec.</li>
           </ul>
         </div>
@@ -152,13 +158,13 @@
           </ul>
         </div>
       </td-expansion-panel>
-      <td-expansion-panel label="Why Angular 2?" sublabel="why not React/Ember/Java/etc?">
+      <td-expansion-panel label="Why Angular?" sublabel="why not React/Ember/Java/etc?">
         <div class="md-padding">
           <p>The short answer: we had to pick something & we believe Angular has won the adoption war.</p>
           The longer answer:
-          Before passing judgement if you have Angular 1.x experience, remember that Angular 2 is a complete rewrite from the ground up.
-          Angular 2 moved from an opinionated framework to a sophistated platform.
-          Angular 2 utilizes ES2015 (previously ES6) and the power of Typescript, which results in a much more native JavaScript platform with coding paradigms & power previously reserved for backend languages.
+          Before passing judgement if you have Angular 1.x experience, remember that Angular is a complete rewrite from the ground up.
+          Angular moved from an opinionated framework to a sophistated platform.
+          Angular utilizes ES2015 (previously ES6) and the power of Typescript, which results in a much more native JavaScript platform with coding paradigms & power previously reserved for backend languages.
           This means many more back end engineers can jump into the front end and ramp up quickly to productivity.
           Also there are many other benefits, such as:
           <ul>
@@ -226,6 +232,22 @@
             <p md-line>Priotized by demand</p>
           </a>
         </md-nav-list>
+      </td-expansion-panel>
+      <td-expansion-panel label="Does Covalent support desktop apps?" sublabel="Build desktop apps with Covalent Electron">
+        <div class="md-padding">
+          Covalent is a UI Platform that combines proven design language with a comprehensive web framework, built on Angular & Angular-Material (Design).
+          Electron is a framework for creating native desktop applications with web technologies like JavaScript, HTML, and CSS.
+          Covalent Electron is the Electron Platform to build desktop apps using Covalent and Electron
+          <a md-button color="primary" href="https://github.com/Teradata/covalent-electron" target="_blank">View Repo</a>
+        </div>
+      </td-expansion-panel>
+      <td-expansion-panel label="Is a backend API required?" sublabel="Mock API endpoints with Covalent Data">
+        <div class="md-padding">
+          Covalent Data is a Mock API server for rapid prototyping and API standards
+          Built on Golang
+          Allows for quick prototyping for your Covalent Applications with an easy to mock http backend server
+          <a md-button color="primary" href="https://github.com/Teradata/covalent-data" target="_blank">View Repo</a>
+        </div>
       </td-expansion-panel>
     </div>
   </td-layout-card-over>

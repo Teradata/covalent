@@ -15,6 +15,11 @@ import { TdMarkdownComponent } from './markdown.component';
   ],
 })
 export class CovalentMarkdownModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentMarkdownModule,

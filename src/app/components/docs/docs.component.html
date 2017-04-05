@@ -5,7 +5,7 @@
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
   <md-nav-list td-sidenav-content>
-    <template let-item let-last="last" ngFor [ngForOf]="items">
+    <ng-template let-item let-last="last" ngFor [ngForOf]="items">
         <a md-list-item 
            [routerLink]="[item.route]" 
            [routerLinkActive]="['active']" 
@@ -16,7 +16,7 @@
           <p md-line> {{item.description}} </p>
         </a>
         <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Documentation</span>

@@ -3,6 +3,10 @@
 // --------------------------------------------------
 
 body {
+  // Angular 4 added tabindex to everything, this style removes the outline:
+  [tabindex]:focus {
+    outline: none;
+  }
   .radius-none {
     border-radius: 0;
   }

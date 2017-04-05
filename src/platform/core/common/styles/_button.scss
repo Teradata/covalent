@@ -1,6 +1,5 @@
-@import 'variables';
-@import 'shadows';
-@import 'default-theme';
+@import 'theme-functions';
+@import 'mixins';
 
 // Standard button sizing.
 $md-button-padding: 0 rem(0.600) !default;
@@ -30,9 +29,9 @@ $md-icon-border-radius: $md-fab-border-radius;
   [md-fab].md-fab-#{$spot},
   .mat-fab.mat-fab-#{$spot} {
     top: $top;
-    right: $right;
+    @include rtl(right, $right,$left);
+    @include rtl(left, $left,$right);
     bottom: $bottom;
-    left: $left;
     position: absolute;
     &.fixed {
       position: fixed;

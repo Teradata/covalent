@@ -5,13 +5,13 @@
   <md-card-content>
     <p>Media Queries:</p>
     <md-list>
-      <template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
+      <ng-template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
         <a md-list-item layout-align="row">
           <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" md-line> {{demo.query}}</h3>
           <p md-line> matches: {{demo.value}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>    
   </md-card-content>
 </md-card>
@@ -26,24 +26,24 @@
       <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
     </p>
     <md-list>
-      <template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
+      <ng-template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
         <a md-list-item layout-align="row">
           <h3 md-line> {{bpoint.breakpoint}}</h3>
           <p md-line> {{bpoint.query}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Methods:</h3>
     <p>The <code>TdMediaService</code> service has {{mediaServiceMethods.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>Typescript:</p>
@@ -88,13 +88,13 @@
     <p>Note: Always unsubscribe from [Observable] objects when not using them anymore.</p>
     <p>A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy] interface.</p>
     <h3>Setup:</h3>
-    <p>Import the [CovalentMediaModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentMediaModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentMediaModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentMediaModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentMediaModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...
@@ -114,13 +114,13 @@
     <h3>Properties:</h3>
     <p>The <code>tdMediaToggle</code> directive has {{mediaAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>

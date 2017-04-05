@@ -16,7 +16,7 @@ describe('Component: FileUpload', () => {
         TdFileUploadBasicTestComponent,
       ],
       imports: [
-        CovalentFileModule.forRoot(),
+        CovalentFileModule,
       ],
     });
     TestBed.compileComponents();
@@ -137,9 +137,9 @@ describe('Component: FileUpload', () => {
   template: `
   <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectFiles = $event" (upload)="files = $event">
     <span>{{ fileUpload.files?.name }}</span>
-    <template td-file-input-label>
+    <ng-template td-file-input-label>
       <span>Choose a file...</span>
-    </template>
+    </ng-template>
   </td-file-upload>
   `,
 })

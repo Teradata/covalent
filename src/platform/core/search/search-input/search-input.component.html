@@ -1,5 +1,5 @@
 <div class="td-search-input" layout="row" layout-align="end center">
-  <md-input-container [class.mat-hide-underline]="!showUnderline" flex>
+  <md-input-container [class.mat-hide-underline]="!showUnderline" floatPlaceholder="never" flex>
     <input mdInput
             #searchElement
             type="search"
@@ -11,7 +11,7 @@
   </md-input-container>
   <button md-icon-button
           type="button"
-          [@searchState]="searchElement.value ? true : false"
+          [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
           (click)="clearSearch()"
           flex="none">
     <md-icon>cancel</md-icon>

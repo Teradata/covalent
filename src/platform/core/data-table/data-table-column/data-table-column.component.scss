@@ -1,3 +1,5 @@
+@import '../../common/styles/mixins';
+
 :host {
   font-size: 12px;
   font-weight: bold;
@@ -6,10 +8,12 @@
   position: relative;
 
   &:first-child {
-    padding-left: 24px;
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
   }
   &:last-child {
-    padding-right: 24px;
+    @include rtl(padding-left, initial, 24px);
+    @include rtl(padding-right, 24px, initial);
   }
 
   md-icon {
@@ -38,7 +42,7 @@
   }
 
   vertical-align: middle;
-  text-align: left;
+  @include rtl(text-align, left, right);
 
   > * {
     vertical-align: middle;
@@ -56,14 +60,16 @@
     position: absolute;
   }
   &.mat-numeric {
-    text-align: right;
+  @include rtl(text-align, right, left);
     md-icon.td-data-table-sort-icon {
-      margin-left: -22px;
+        @include rtl(margin-left, -22px, initial);
+        @include rtl(margin-right, initial, -22px);
     }
   }
   &:not(.mat-numeric) {
     md-icon.td-data-table-sort-icon {
-      margin-left: 6px;
+        @include rtl(margin-left, 6px, initial);
+        @include rtl(margin-right, initial, 6px);
     }
   }
 }

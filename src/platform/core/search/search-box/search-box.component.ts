@@ -1,5 +1,5 @@
-import { Component, ViewChild, Input, Output, EventEmitter,
-         trigger, state, style, transition, animate } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 
@@ -9,13 +9,15 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
   styleUrls: ['./search-box.component.scss' ],
   animations: [
     trigger('inputState', [
-      state('false', style({
+      state('0', style({
         width: '0%',
         'margin-left': '0px',
+        'margin-right': '0px',
       })),
-      state('true',  style({
+      state('1',  style({
         width: '100%',
         'margin-left': '*',
+        'margin-right': '*',
       })),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
@@ -25,7 +27,7 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
 export class TdSearchBoxComponent {
 
   private _searchVisible: boolean = false;
-  @ViewChild(TdSearchInputComponent) private _searchInput: TdSearchInputComponent;
+  @ViewChild(TdSearchInputComponent) _searchInput: TdSearchInputComponent;
 
   set value(value: any) {
     this._searchInput.value = value;

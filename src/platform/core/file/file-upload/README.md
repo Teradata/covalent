@@ -10,9 +10,9 @@ Example for usage:
 <td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
-  <template td-file-input-label>
+  <ng-template td-file-input-label>
     <md-icon>attach_file</md-icon><span>Choose a file...</span>
-  </template>
+  </ng-template>
 </td-file-upload>
 ```
  
@@ -56,7 +56,7 @@ Properties:
 
 ## Setup
 
-Import the [CovalentFileModule] using the forRoot() method in your NgModule:
+Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
 import { HttpModule } from '@angular/http';
@@ -64,7 +64,7 @@ import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
     HttpModule,
-    CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentFileModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...
@@ -123,7 +123,7 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
 
 
 ---

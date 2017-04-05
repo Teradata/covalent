@@ -44,24 +44,32 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MdInputModule.forRoot(),
-    MdSelectModule.forRoot(),
-    MdCheckboxModule.forRoot(),
-    MdSliderModule.forRoot(),
-    MdSlideToggleModule.forRoot(),
-    CovalentCommonModule.forRoot(),
+    MdInputModule,
+    MdSelectModule,
+    MdCheckboxModule,
+    MdSliderModule,
+    MdSlideToggleModule,
+    CovalentCommonModule,
   ],
   exports: [
     TD_DYNAMIC_FORMS,
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
   ],
+  providers: [
+    TdDynamicFormsService,
+  ],
   entryComponents: [ TD_DYNAMIC_FORMS_ENTRY_COMPONENTS ],
 })
 export class CovalentDynamicFormsModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDynamicFormsModule,
-      providers: [ TdDynamicFormsService ],
+      providers: [ ],
     };
   }
 }

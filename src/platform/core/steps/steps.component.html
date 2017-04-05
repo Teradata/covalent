@@ -1,5 +1,5 @@
 <div *ngIf="isHorizontal()" class="td-steps-header" layout="row" title>
-  <template let-step let-index="index" let-last="last" ngFor [ngForOf]="steps">
+  <ng-template let-step let-index="index" let-last="last" ngFor [ngForOf]="steps">
     <td-step-header class="td-step-horizontal-header"
                     (keydown.enter)="step.toggle()"
                     [number]="index + 1"
@@ -7,12 +7,12 @@
                     [disabled]="step.disabled" 
                     [state]="step.state"
                     (click)="step.toggle()">
-      <template td-step-header-label [cdkPortalHost]="step.stepLabel"></template>
-      <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
-      <template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</template>
+      <ng-template td-step-header-label [cdkPortalHost]="step.stepLabel"></ng-template>
+      <ng-template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</ng-template>
+      <ng-template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</ng-template>
     </td-step-header>
     <span *ngIf="!last" class="td-horizontal-line" flex></span>
-  </template>
+  </ng-template>
 </div>
 <div *ngFor="let step of steps; let index = index; let last = last" class="td-step" layout="column">
   <td-step-header class="td-step-vertical-header"
@@ -23,18 +23,18 @@
                   [state]="step.state"
                   (click)="step.toggle()"
                   *ngIf="isVertical()">
-    <template td-step-header-label [cdkPortalHost]="step.stepLabel"></template>
-    <template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</template>
-    <template td-step-header-sublabel [ngIf]="true">{{step.sublabel}}</template>
+    <ng-template td-step-header-label [cdkPortalHost]="step.stepLabel"></ng-template>
+    <ng-template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</ng-template>
+    <ng-template td-step-header-sublabel [ngIf]="true">{{step.sublabel}}</ng-template>
   </td-step-header>
-  <template [ngIf]="isVertical() || step.active || (!areStepsActive() && prevStep === step)">
+  <ng-template [ngIf]="isVertical() || step.active || (!areStepsActive() && prevStep === step)">
     <td-step-body [active]="step.active" [state]="step.state">
       <div *ngIf="isVertical()" class="td-line-wrapper">
         <div *ngIf="!last" class="td-vertical-line"></div>
       </div>
-      <template td-step-body-content [cdkPortalHost]="step.stepContent"></template>
-      <template td-step-body-actions [cdkPortalHost]="step.stepActions"></template>
-      <template td-step-body-summary [cdkPortalHost]="step.stepSummary"></template>
+      <ng-template td-step-body-content [cdkPortalHost]="step.stepContent"></ng-template>
+      <ng-template td-step-body-actions [cdkPortalHost]="step.stepActions"></ng-template>
+      <ng-template td-step-body-summary [cdkPortalHost]="step.stepSummary"></ng-template>
     </td-step-body>
-  </template>
+  </ng-template>
 </div>

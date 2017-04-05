@@ -36,9 +36,9 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
   imports: [
     FormsModule,
     CommonModule,
-    MdDialogModule.forRoot(),
-    MdInputModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdDialogModule,
+    MdInputModule,
+    MdButtonModule,
   ],
   declarations: [
     TD_DIALOGS,
@@ -46,15 +46,23 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
   exports: [
     TD_DIALOGS,
   ],
+  providers: [
+    TdDialogService,
+  ],
   entryComponents: [
     TD_DIALOGS_ENTRY_COMPONENTS,
   ],
 })
 export class CovalentDialogsModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDialogsModule,
-      providers: [ TdDialogService ],
+      providers: [ ],
     };
   }
 }

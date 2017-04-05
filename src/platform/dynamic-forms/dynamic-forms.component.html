@@ -3,7 +3,7 @@
          layout-wrap 
          layout-margin 
          layout-align="start center">
-    <template let-element ngFor [ngForOf]="elements">
+    <ng-template let-element ngFor [ngForOf]="elements">
       <td-dynamic-element [formControlName]="element.name"
                           [dynamicControl]="dynamicForm.controls[element.name]"
                           [id]="element.name"
@@ -14,7 +14,7 @@
                           [max]="element.max"
                           [selections]="element.selections">
       </td-dynamic-element>
-    </template>
+    </ng-template>
   </div>
   <ng-content></ng-content>
 </form>

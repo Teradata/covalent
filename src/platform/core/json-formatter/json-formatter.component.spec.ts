@@ -5,6 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentJsonFormatterModule, TdJsonFormatterComponent } from './json-formatter.module';
 import { By } from '@angular/platform-browser';
 
@@ -16,7 +17,8 @@ describe('Component: JsonFormatter', () => {
         TdJsonFormatterBasicTestComponent,
       ],
       imports: [
-        CovalentJsonFormatterModule.forRoot(),
+        BrowserAnimationsModule,
+        CovalentJsonFormatterModule,
       ],
     });
     TestBed.compileComponents();
@@ -111,8 +113,10 @@ describe('Component: JsonFormatter', () => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-key-node'))).toBeTruthy();
         expect(fixture.debugElement.queryAll(By.css('.td-key-leaf')).length).toBe(6);
-        /* tslint:disable-next-line */
-        expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBe('none');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('none');
+        });
       });
   })));
 
@@ -126,13 +130,20 @@ describe('Component: JsonFormatter', () => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-key-node'))).toBeTruthy();
         /* tslint:disable-next-line */
-        expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBe('none');
-        fixture.debugElement.query(By.css('.td-key-node')).triggerEventHandler('click', new Event('click'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('none');
+          fixture.debugElement.query(By.css('.td-key-node')).triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
-          /* tslint:disable-next-line */
-          expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBeNull();
+          fixture.whenStable().then(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('');
+              });
+            });
+          });
         });
       });
   })));
@@ -146,8 +157,9 @@ describe('Component: JsonFormatter', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        /* tslint:disable-next-line */
-        expect(fixture.debugElement.query(By.css('.td-object-children')).styles['display']).toBeNull();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('');
+        });
       });
   })));
 

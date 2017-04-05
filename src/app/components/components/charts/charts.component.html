@@ -132,13 +132,13 @@
     <h3>Properties:</h3>
     <p>This component has {{chartsAttr.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="chartsAttr">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="chartsAttr">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML</p>
@@ -178,13 +178,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentChartsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentChartsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentChartsModule } from '@covalent/charts';
         @NgModule({
           imports: [
-            CovalentChartsModule.forRoot(),
+            CovalentChartsModule,
             ...
           ],
           ...
@@ -206,13 +206,13 @@
      <h3>Properties:</h3>
       <p>This component has {{axisAttrs.length}} properties:</p>
       <md-list>
-        <template let-attr let-last="attr" ngFor [ngForOf]="axisAttrs">
+        <ng-template let-attr let-last="attr" ngFor [ngForOf]="axisAttrs">
           <a md-list-item layout-align="row">
             <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
             <p md-line> {{attr.description}} </p>
           </a>
           <md-divider *ngIf="!last"></md-divider>
-        </template>
+        </ng-template>
       </md-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-axis-x>]]></code>, <code><![CDATA[<td-axis-y-left>]]></code>, or <code><![CDATA[<td-axis-y-right>]]></code> elements</p>
     <h3>Example:</h3>
@@ -236,13 +236,13 @@
     <h3>Properties:</h3>
     <p>This component has {{barChartAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="barChartAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="barChartAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-bar>]]></code> element</p>
     <h3>Example:</h3>
@@ -292,13 +292,13 @@
     <h3>Properties:</h3>
     <p>This component has {{lineChartAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="lineChartAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="lineChartAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
     <h3>Example:</h3>
@@ -380,13 +380,13 @@
     <h3>Properties:</h3>
     <p>This component has {{areaChartAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="areaChartAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="areaChartAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
     <h3>Example:</h3>

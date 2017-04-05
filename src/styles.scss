@@ -8,3 +8,11 @@
   bottom: 0;
   left: 0;
 }
+
+.cdk-overlay-pane {
+  direction: ltr;
+  html[dir="rtl"] & {
+    direction: rtl;
+  }
+  
+}

@@ -2,13 +2,11 @@
   display: block;
 }
 .td-search-box {
-  height: 64px;
   td-search-input {
     margin-left: 12px;
-    /deep/ {
-      .mat-input-placeholder.mat-focused {
-        visibility: hidden;
-      }
+    /deep/ [dir='rtl'] & { 
+      margin-right: 12px;
+      margin-left: 0px !important;
     }
   }
 }

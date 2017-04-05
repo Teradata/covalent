@@ -1,3 +1,5 @@
+@import 'theme-functions';
+
 /**
  * Mixin that creates a new stacking context.
  * see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
@@ -122,6 +124,10 @@
     unicode-bidi: embed;
   }
   body[dir=rtl] & {
+    #{$prop}: $rtl-value;
+    unicode-bidi: embed;
+  }
+  [dir=rtl] & {
     #{$prop}: $rtl-value;
     unicode-bidi: embed;
   }

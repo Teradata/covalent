@@ -22,7 +22,7 @@ const TD_DATA_TABLE: Type<any>[] = [
 ];
 
 export { TdDataTableComponent, TdDataTableSortingOrder,
-         ITdDataTableColumn, ITdDataTableSelectEvent } from './data-table.component';
+         ITdDataTableColumn, ITdDataTableSelectEvent, ITdDataTableSelectAllEvent } from './data-table.component';
 export { TdDataTableService } from './services/data-table.service';
 export { TdDataTableColumnComponent,
          ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
@@ -33,9 +33,9 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
 @NgModule({
   imports: [
     CommonModule,
-    MdCheckboxModule.forRoot(),
-    MdTooltipModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdCheckboxModule,
+    MdTooltipModule,
+    MdIconModule,
     MdSelectionModule,
   ],
   declarations: [
@@ -44,12 +44,20 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
   exports: [
     TD_DATA_TABLE,
   ],
+  providers: [
+    TdDataTableService,
+  ],
 })
 export class CovalentDataTableModule {
+  /**
+   * @deprecated in 1.0.0-beta.3
+   *
+   * Please use without calling forRoot()
+   */
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CovalentDataTableModule,
-      providers: [ TdDataTableService ],
+      providers: [ ],
     };
   }
 }

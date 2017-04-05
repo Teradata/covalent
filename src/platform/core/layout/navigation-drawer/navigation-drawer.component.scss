@@ -10,4 +10,7 @@
       height: auto !important;
     }
   }
+  > div {
+    overflow: hidden;
+  }
 }

@@ -38,7 +38,7 @@ export class TdFileService {
    * }
    *
    * Uses underlying [XMLHttpRequest] to upload a file to a url.
-   * Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+   * Will be depricated when angular fixes [Http] to allow [FormData] as body.
    */
   upload(options: IUploadOptions): Observable<any> {
     return new Observable<any>((subscriber: Subscriber<any>) => {

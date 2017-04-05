@@ -42,13 +42,13 @@ npm i -save @covalent/markdown
 <script src="path/to/node_modules/showdown/dist/showdown.js"></script>
 ```
 
-Then, import the **[CovalentMarkdownModule]** using the *forRoot()* method in your NgModule:
+Then, import the **[CovalentMarkdownModule]** in your NgModule:
 
 ```typescript
 import { CovalentMarkdownModule } from '@covalent/markdown';
 @NgModule({
   imports: [
-    CovalentMarkdownModule.forRoot(),
+    CovalentMarkdownModule,
     ...
   ],
   ...
@@ -64,13 +64,13 @@ The `markdown` module comes with its own `covalent` theme which uses the materia
 @import '~@angular/material/core/theming/all-theme';
 @import '~@covalent/markdown/markdown-theme';
 
-@include md-core();
+@include mat-core();
 
-$primary: md-palette($md-orange, 800);
-$accent:  md-palette($md-light-blue, 600, A100, A400);
-$warn:    md-palette($md-red, 600);
+$primary: mat-palette($mat-orange, 800);
+$accent:  mat-palette($mat-light-blue, 600, A100, A400);
+$warn:    mat-palette($mat-red, 600);
 
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include markdown-markdown-theme($theme);
 ```

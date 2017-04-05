@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-json-formatter-theme($theme) {
   $primary: map-get($theme, primary);
@@ -11,32 +11,32 @@
       &.td-key-node {
         &:focus,
         &:hover {
-          background-color: md-color($background, hover);
+          background-color: mat-color($background, hover);
         }
       }
     }
     .key {
-      color: md-color($primary);
+      color: mat-color($primary);
     }
     .value {
       .string {
-        color: md-color($warn);
+        color: mat-color($warn);
       }
       .number { 
-        color: md-color($accent);
+        color: mat-color($accent);
       }
       .boolean { 
-        color: md-color($accent);
+        color: mat-color($accent);
       }
       .null,
       .undefined { 
-        color: md-color($foreground, disabled-text);
+        color: mat-color($foreground, disabled-text);
       }
       .function { 
-        color: md-color($primary);
+        color: mat-color($primary);
       }
       .date { 
-        color: md-color($foreground, text);
+        color: mat-color($foreground, text);
       }
     }
   }

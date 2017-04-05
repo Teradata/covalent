@@ -1,6 +1,6 @@
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/variables';
-@import '~@angular/material/core/style/elevation';
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
 
 @mixin td-file-theme($theme) {
   $background: map-get($theme, background);
@@ -8,7 +8,7 @@
   td-file-upload {
     .td-file-upload-cancel {
       md-icon {
-        background-color: md-color($background, background);
+        background-color: mat-color($background, background);
       }
     }
   }
@@ -18,7 +18,7 @@
     */
     .drop-zone {
       transition: background $swift-ease-out-duration $swift-ease-out-timing-function,
-                  md-elevation-transition-property-value();
+                mat-elevation-transition-property-value();
       @include mat-elevation(8);
     }
   }

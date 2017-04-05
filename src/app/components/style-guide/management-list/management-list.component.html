@@ -9,7 +9,7 @@
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span class="md-title">Title here</span>
           </span>
-          <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+          <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()" flex>
           </td-search-box>
           <span>
             <button md-icon-button [mdMenuTriggerFor]="toolbarMenu"><md-icon>more_vert</md-icon></button>
@@ -37,12 +37,12 @@
             </span>
             <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
               <span layout="row" layout-align="start center" flex>
-                <md-icon class="md-sort-icon">{{headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                <md-icon class="md-sort-icon">{{isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</md-icon>
               </span>
             </a>
           </md-list-item>
           <md-divider></md-divider>
-          <template let-item let-last="last" ngFor [ngForOf]="data">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="data">
             <md-list-item>
               <md-icon md-list-avatar>desktop_mac</md-icon>
               <h3 md-line> {{item.name}} </h3>
@@ -55,7 +55,7 @@
               </span>
             </md-list-item>
             <md-divider *ngIf="!last" md-inset></md-divider>
-          </template>
+          </ng-template>
         </md-list>
         <md-divider></md-divider>
         <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
@@ -103,12 +103,12 @@
               </span>
               <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
                 <span layout="row" layout-align="start center" flex>
-                  <md-icon class="md-sort-icon">{ {headers[sortKey] === 'asc'? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                  <md-icon class="md-sort-icon">{ {isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</md-icon>
                 </span>
               </a>
             </md-list-item>
             <md-divider></md-divider>
-            <template let-item let-last="last" ngFor [ngForOf]="data">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="data">
               <md-list-item>
                 <md-icon md-list-avatar>desktop_mac</md-icon>
                 <h3 md-line> { {item.name}} </h3>
@@ -121,7 +121,7 @@
                 </span>
               </md-list-item>
               <md-divider *ngIf="!last" md-inset></md-divider>
-            </template>
+            </ng-template>
           </md-list>
           <md-divider></md-divider>
           <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
@@ -151,6 +151,9 @@
             this.columnOptions.forEach((option: any) => {
               this.headers[option.value] = OrderBy.ASC;
             });
+          }
+          isASC(sortKey: string): boolean {
+            return this.headers[sortKey] === OrderBy.ASC;
           }
           sortBy(sortKey: string): void {
             let sortedData: any[];

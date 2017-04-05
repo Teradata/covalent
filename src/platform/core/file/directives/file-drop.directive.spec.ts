@@ -16,7 +16,7 @@ describe('Directive: FileDrop', () => {
         TdFileDropBasicTestComponent,
       ],
       imports: [
-        CovalentFileModule.forRoot(),
+        CovalentFileModule,
       ],
     });
     TestBed.compileComponents();

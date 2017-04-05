@@ -19,13 +19,13 @@ Properties:
 
 ## Setup
 
-Import the [CovalentChipsModule] using the forRoot() method in your NgModule:
+Import the [CovalentChipsModule] in your NgModule:
 
 ```typescript
 import { CovalentChipsModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentChipsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentChipsModule, // or CovalentCoreModule (included inside of it)
     ...
   ],
   ...

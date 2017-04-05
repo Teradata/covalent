@@ -1,3 +1,11 @@
+.td-menu-button {
+  margin-left: 0px;
+  /deep/ [dir='rtl'] & { 
+    margin-right: 0px;
+    margin-left: 6px;
+  }
+}
+
 :host {
   display: flex;
   margin: 0;
@@ -14,9 +22,6 @@
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
       }
     }
-  }
-  .td-menu-button {
-    margin-left: 0px;
   }
   .list {
     text-align: start;
@@ -44,5 +49,8 @@
   }
   md-nav-list a[md-list-item] .mat-list-item-content {
     font-size: 14px;
+  }
+  .mat-toolbar {
+    font-weight: 400;
   }
 }

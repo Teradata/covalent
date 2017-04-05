@@ -8,7 +8,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
             <th td-data-table-column>
@@ -32,7 +32,7 @@
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -101,32 +101,32 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="columns">
-          <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
+          <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
             <div layout="row">
               <span flex>{{value}}</span>
               <md-icon>star</md-icon>
             </div>
-          </template>
+          </ng-template>
         </td-data-table>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-data-table
               [data]="basicData"
               [columns]="columns">
-              <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
+              <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
                   <span flex>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
                   <md-icon>star</md-icon>
                 </div>
-              </template>
+              </ng-template>
             </td-data-table>
           ]]>
         </td-highlight>
@@ -206,7 +206,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
@@ -220,6 +220,7 @@
         </div>
         <md-divider></md-divider>
         <td-data-table
+          #dataTable
           [data]="filteredData"
           [columns]="columns"
           [selectable]="selectable"
@@ -230,13 +231,16 @@
           [sortOrder]="sortOrder"
           (sortChange)="sort($event)">
         </td-data-table>
+        <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+          <h3>No results to display.</h3>
+        </div>
         <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
           <span td-paging-bar-label hide-xs>Row per page:</span>
           {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
         </td-paging-bar>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -253,6 +257,7 @@
             </div>
             <md-divider></md-divider>
             <td-data-table
+              #dataTable
               [data]="filteredData"
               [columns]="columns"
               [sortable]="true"
@@ -260,6 +265,9 @@
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
+            <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+              <h3>No results to display.</h3>
+            </div>
             <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
               <span td-paging-bar-label hide-xs>Row per page:</span>
               { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
@@ -360,13 +368,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-data-table>]]></code> component has {{dataTableAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="dataTableAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dataTableAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
@@ -406,13 +414,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentDataTableModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentDataTableModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentDataTableModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentDataTableModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentDataTableModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...
@@ -431,13 +439,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
   </md-card-content>
 </md-card>
@@ -453,23 +461,23 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>

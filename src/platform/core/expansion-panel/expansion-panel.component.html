@@ -7,19 +7,19 @@
        [class.mat-interaction-disabled]="disabled"
        [class.mat-tall]="expansionPanelHeader"
        md-list-item>
-      <template [cdkPortalHost]="expansionPanelHeader"></template>
+      <ng-template [cdkPortalHost]="expansionPanelHeader"></ng-template>
       <div [class.mat-disabled]="disabled"
            *ngIf="!expansionPanelHeader"
            layout="row" 
            layout-align="start center" 
            flex>
         <div class="md-subhead td-expansion-primary" flex-gt-xs="33">
-          <template [cdkPortalHost]="expansionPanelLabel"></template>
-          <template [ngIf]="!expansionPanelLabel">{{label || 'Click to expand '}}</template>
+          <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
+          <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
         </div>
         <div class="md-body-1 td-expansion-secondary">
-          <template [cdkPortalHost]="expansionPanelSublabel"></template>
-          <template [ngIf]="!expansionPanelSublabel">{{sublabel}}</template>
+          <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
+          <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
         </div>
         <span flex></span>
         <md-icon class="td-expand-icon" *ngIf="!expand && !disabled">keyboard_arrow_down</md-icon>
@@ -28,10 +28,12 @@
     </a>
   </md-nav-list>
   <div>
-    <div class="td-expansion-content" [@tdCollapse]="!expand">
+    <div class="td-expansion-content"
+         [@tdCollapse]="!expand">
       <ng-content></ng-content>
     </div>
-    <div class="td-expansion-summary" [@tdCollapse]="expand">
+    <div class="td-expansion-summary"
+         [@tdCollapse]="expand">
       <ng-content select="td-expansion-summary"></ng-content>
     </div>
   </div>

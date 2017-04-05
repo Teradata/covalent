@@ -1,7 +1,7 @@
 {
   "name": "@covalent/core",
-  "version": "1.0.0-beta.2",
-  "description": "Teradata UI Platform built on Angular Material 2",
+  "version": "1.0.0-beta.3",
+  "description": "Teradata UI Platform built on Angular Material",
   "main": "./core.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
@@ -37,14 +37,14 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "dependencies": {
-    "@angular/flex-layout": "^2.0.0-beta.5",
+    "@angular/flex-layout": "^2.0.0-beta.7",
     "@angular/material": "2.0.0-beta.2"
   },
   "peerDependencies": {
-    "@angular/common": "^2.4.5",
-    "@angular/core": "^2.4.5",
-    "@angular/forms": "^2.4.5",
-    "@angular/http": "^2.4.5",
-    "@angular/router": "^3.4.5"
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/router": "^4.0.0"
   }
 }

@@ -5,6 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './expansion-panel.module';
 import { By } from '@angular/platform-browser';
 
@@ -17,7 +18,8 @@ describe('Component: ExpansionPanel', () => {
         TdExpansionPanelSummaryTestComponent,
       ],
       imports: [
-        CovalentExpansionPanelModule.forRoot(),
+        BrowserAnimationsModule,
+        CovalentExpansionPanelModule,
       ],
     });
     TestBed.compileComponents();
@@ -43,8 +45,11 @@ describe('Component: ExpansionPanel', () => {
               .innerHTML.indexOf('Sublabel') > -1).toBeTruthy();
 
         // check if content is hidden
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-        .style.display).toBe('none');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
+          .style.display).toBe('none');
+        });
 
       });
   })));
@@ -58,13 +63,14 @@ describe('Component: ExpansionPanel', () => {
 
         expect(fixture.debugElement.query(By.css('.td-expanded'))).toBeFalsy();
 
-        // check if content is hidden
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-        .style.display).toBe('none');
-
-       // check if summary was rendered
-        expect(fixture.debugElement.query(By.css('.td-expansion-summary'))).toBeTruthy();
-
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // check if content is hidden
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
+          .style.display).toBe('none');
+          // check if summary was rendered
+          expect(fixture.debugElement.query(By.css('.td-expansion-summary'))).toBeTruthy();
+        });
       });
   })));
 
@@ -81,7 +87,7 @@ describe('Component: ExpansionPanel', () => {
         expect(fixture.debugElement.query(By.css('.td-expansion-content'))).toBeTruthy();
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-        .style.overflow).toBe('hidden');
+        .style.display).toBe('none');
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-summary')).nativeElement)
         .style.display).toBe('');

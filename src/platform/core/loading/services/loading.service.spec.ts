@@ -6,8 +6,9 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/material';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
 
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;
@@ -18,7 +19,8 @@ describe('Service: Loading', () => {
         TdLoadingWrapperTestComponent,
       ],
       imports: [
-        CovalentLoadingModule.forRoot(),
+        NoopAnimationsModule,
+        CovalentLoadingModule,
       ],
       providers: [
         {provide: OverlayContainer, useFactory: () => {

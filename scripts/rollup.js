@@ -20,12 +20,15 @@ gulp.task('rollup-code', '', function() {
 
   const globals = {
     // Angular dependencies
+    '@angular/animations': 'ng.animations',
+    '@angular/animations/browser': 'ng.animations.browser',
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
     '@angular/forms': 'ng.forms',
     '@angular/http': 'ng.http',
     '@angular/router': 'ng.router',
     '@angular/platform-browser': 'ng.platformBrowser',
+    '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
     '@angular/flex-layout': 'ng.flexLayout',
@@ -34,6 +37,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/Subject': 'Rx',
     'rxjs/add/observable/forkJoin': 'Rx.Observable',
     'rxjs/add/observable/of': 'Rx.Observable',
+    'rxjs/add/observable/timer': 'Rx.Observable',
     'rxjs/add/operator/toPromise': 'Rx.Observable.prototype',
     'rxjs/add/operator/map': 'Rx.Observable.prototype',
     'rxjs/add/operator/filter': 'Rx.Observable.prototype',
@@ -42,6 +46,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/add/operator/finally': 'Rx.Observable.prototype',
     'rxjs/add/operator/catch': 'Rx.Observable.prototype',
     'rxjs/add/operator/debounceTime': 'Rx.Observable.prototype',
+    'rxjs/add/operator/skip': 'Rx.Observable.prototype',
     'rxjs/Observable': 'Rx'
   };
   components.forEach(name => {

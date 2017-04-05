@@ -1,25 +1,36 @@
+@import '../common/styles/mixins';
+
 :host {
   display: block;
   padding: 0px 5px 0px 5px;
-  /deep/ .td-chip {
-    display: inline-block;
-    cursor: default;
-    border-radius: 16px;
-    line-height: 32px;
-    margin: 8px 8px 0 0;
-    padding: 0 12px;
-    box-sizing: border-box;
-    max-width: 100%;
-    position: relative;
-    md-icon {
+  /deep/ {
+    .mat-input-wrapper {
+      margin-bottom: 2px;
+    }
+    .mat-input-container {
+      margin-top: 8px;
+    }
+    .mat-basic-chip {
+      display: inline-block;
+      cursor: default;
+      border-radius: 16px;
+      line-height: 32px;    
+      @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
+      padding: 0 12px;
+      box-sizing: border-box;
+      max-width: 100%;
       position: relative;
-      top: 5px;
-      left: 5px;
-      height: 18px;
-      width: 18px;
-      font-size: 19px;
-      &:hover {
-        cursor: pointer;
+      md-icon {
+        position: relative;
+        top: 5px;
+        @include rtl(left, 5px, auto);
+        @include rtl(right, auto, 5px);
+        height: 18px;
+        width: 18px;
+        font-size: 19px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -29,7 +40,6 @@
   position: relative;
   height: 1px;
   width: 100%;
-  margin-top: 4px;
 
   &.mat-disabled {
     border-top: 0;

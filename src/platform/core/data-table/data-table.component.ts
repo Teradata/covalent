@@ -69,7 +69,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-  @ContentChildren(TdDataTableTemplateDirective) private _templates: QueryList<TdDataTableTemplateDirective>;
+  @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -94,9 +94,12 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Sets the data to be rendered as rows.
    */
   @Input('data')
-  set data(data: Object[]) {
+  set data(data: any[]) {
     this._data = data;
     this.refresh();
+  }
+  get data(): any[] {
+    return this._data;
   }
 
   /**
@@ -134,8 +137,11 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('selectable')
-  set selectable(_selectable: string | boolean) {
-    this._selectable = _selectable !== '' ? (_selectable === 'true' || _selectable === true) : true;
+  set selectable(selectable: string | boolean) {
+    this._selectable = selectable !== '' ? (selectable === 'true' || selectable === true) : true;
+  }
+  get isSelectable(): boolean {
+    return this._selectable;
   }
 
   /**
@@ -147,6 +153,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   set multiple(multiple: string | boolean) {
     this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
   }
+  get isMultiple(): boolean {
+    return this._multiple;
+  }
 
   /**
    * sortable?: boolean
@@ -156,6 +165,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Input('sortable')
   set sortable(sortable: string | boolean) {
     this._sortable = sortable !== '' ? (sortable === 'true' || sortable === true) : true;
+  }
+  get isSortable(): boolean {
+    return this._sortable;
   }
 
   /**
@@ -174,6 +186,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
     this._sortBy = column;
   }
+  get sortByColumn(): ITdDataTableColumn {
+    return this._sortBy;
+  }
 
   /**
    * sortOrder?: ['ASC' | 'DESC'] or TdDataTableSortingOrder
@@ -189,6 +204,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
     this._sortOrder = sortOrder === 'ASC' ?
       TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
+  }
+  get sortOrderEnum(): TdDataTableSortingOrder {
+    return this._sortOrder;
   }
 
   get hasData(): boolean {

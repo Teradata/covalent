@@ -14,18 +14,18 @@
   <md-divider></md-divider>
   <md-card-content>
     <h2><code>TdDialogService</code></h2>
-    <p>Service provided with methods that wrap the material2 [MdDialog] service and provide an easier experience for simple dialogs.</p>
+    <p>Service provided with methods that wrap the @angular/material [MdDialog] service and provide an easier experience for simple dialogs.</p>
     <p>Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an error.</p>
     <h3>Methods:</h3>
     <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example(after setup):</h3>
     <p>Typescript:</p>
@@ -89,14 +89,14 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentDialogsModule] using the <code>forRoot()</code> method:</p>
+    <p>Import the [CovalentDialogsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentDialogsModule } from '@covalent/core';
 
         @NgModule({
           imports: [
-            CovalentDialogsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentDialogsModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...

@@ -5,8 +5,9 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
 
 describe('Directive: Loading', () => {
 
@@ -18,7 +19,8 @@ describe('Directive: Loading', () => {
         TdLoadingDuplicationTestComponent,
       ],
       imports: [
-        CovalentLoadingModule.forRoot(),
+        BrowserAnimationsModule,
+        CovalentLoadingModule,
       ],
     });
     TestBed.compileComponents();
@@ -44,9 +46,12 @@ describe('Directive: Loading', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-          done();
+          fixture.whenStable().then(() => {
+            fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+            done();
+          });
         });
       });
     })();
@@ -76,9 +81,12 @@ describe('Directive: Loading', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-          done();
+          fixture.whenStable().then(() => {
+            fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+            done();
+          });
         });
       });
     })();
@@ -102,48 +110,54 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.opacity).toBe('0');
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-        .style.display).toBe('none');
-        loadingService.register('name');
-        fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.mat-warn'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
-          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+            .style.opacity).toBe('0');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+          .style.display).toBe('none');
+          loadingService.register('name');
+          fixture.detectChanges();
           fixture.whenStable().then(() => {
             fixture.detectChanges();
-            setTimeout(() => {
-              fixture.whenStable().then(() => {
-                fixture.detectChanges();
-                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                .style.opacity).toBe('');
-                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                .style.display).toBe('');
-                loadingService.resolve('name');
-                fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.mat-warn'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
+            expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+            fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              setTimeout(() => {
                 fixture.whenStable().then(() => {
                   fixture.detectChanges();
-                  setTimeout(() => {
-                    fixture.whenStable().then(() => {
-                      fixture.detectChanges();
-                      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                      .style.opacity).toBe('0');
-                      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                      .style.display).toBe('none');
-                      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
-                      expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-                      done();
-                    });
-                  }, 200);
+                  expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                  .style.opacity).toBe('');
+                  expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                  .style.display).toBe('');
+                  loadingService.resolve('name');
+                  fixture.detectChanges();
+                  fixture.whenStable().then(() => {
+                    fixture.detectChanges();
+                    setTimeout(() => {
+                      fixture.whenStable().then(() => {
+                        fixture.detectChanges();
+                        fixture.whenStable().then(() => {
+                          fixture.detectChanges();
+                          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                          .style.opacity).toBe('0');
+                          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                          .style.display).toBe('none');
+                          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+                          expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+                          done();
+                        });
+                      });
+                    }, 200);
+                  });
                 });
-              });
-            }, 200);
+              }, 200);
+            });
           });
         });
       });
@@ -169,61 +183,65 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.opacity).toBe('0');
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-        .style.display).toBe('none');
-        loadingService.register('name');
-        fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
-          expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
-          expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+            .style.opacity).toBe('0');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+          .style.display).toBe('none');
+          loadingService.register('name');
+          fixture.detectChanges();
           fixture.whenStable().then(() => {
             fixture.detectChanges();
-            setTimeout(() => {
-              fixture.whenStable().then(() => {
-                fixture.detectChanges();
-                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                .style.opacity).toBe('');
-                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                .style.display).toBe('');
-                loadingService.setValue('name', 20);
-                fixture.detectChanges();
-                expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
-                .toEqual({transform: 'scaleX(0.2)'});
-
-                loadingService.setValue('name', 50);
-                fixture.detectChanges();
-                expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
-                .toEqual({transform: 'scaleX(0.5)'});
-
-                loadingService.setValue('name', 100);
-                fixture.detectChanges();
-                expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform()).toEqual({transform: 'scaleX(1)'});
-                loadingService.resolve('name');
-                fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
+            expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
+            expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+            fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              setTimeout(() => {
                 fixture.whenStable().then(() => {
                   fixture.detectChanges();
-                  setTimeout(() => {
-                    fixture.whenStable().then(() => {
-                      fixture.detectChanges();
-                      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                      .style.opacity).toBe('0');
-                      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-                      .style.display).toBe('none');
-                      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
-                      expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-                      done();
-                    });
-                  }, 200);
+                  expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                  .style.opacity).toBe('');
+                  expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                  .style.display).toBe('');
+                  loadingService.setValue('name', 20);
+                  fixture.detectChanges();
+                  expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+                  .toEqual({transform: 'scaleX(0.2)'});
+
+                  loadingService.setValue('name', 50);
+                  fixture.detectChanges();
+                  expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+                  .toEqual({transform: 'scaleX(0.5)'});
+
+                  loadingService.setValue('name', 100);
+                  fixture.detectChanges();
+                  expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+                  .toEqual({transform: 'scaleX(1)'});
+                  loadingService.resolve('name');
+                  fixture.detectChanges();
+                  fixture.whenStable().then(() => {
+                    fixture.detectChanges();
+                    setTimeout(() => {
+                      fixture.whenStable().then(() => {
+                        fixture.detectChanges();
+                        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                        .style.opacity).toBe('0');
+                        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
+                        .style.display).toBe('none');
+                        expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+                        expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+                        done();
+                      });
+                    }, 200);
+                  });
                 });
-              });
-            }, 200);
+              }, 200);
+            });
           });
         });
       });
@@ -254,9 +272,9 @@ describe('Directive: Loading', () => {
 @Component({
   selector: 'td-loading-default-test',
   template: `
-  <template tdLoading="name">
+  <ng-template tdLoading="name">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingDefaultTestComponent {
@@ -266,9 +284,9 @@ class TdLoadingDefaultTestComponent {
 @Component({
   selector: 'td-loading-basic-test',
   template: `
-  <template [tdLoading]="name" [tdLoadingType]="type" [tdLoadingMode]="mode" [tdLoadingStrategy]="strategy" [tdLoadingColor]="color">
+  <ng-template [tdLoading]="name" [tdLoadingType]="type" [tdLoadingMode]="mode" [tdLoadingStrategy]="strategy" [tdLoadingColor]="color">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingBasicTestComponent {
@@ -283,12 +301,12 @@ class TdLoadingBasicTestComponent {
 @Component({
   selector: 'td-loading-duplication-test',
   template: `
-  <template tdLoading="name1">
+  <ng-template tdLoading="name1">
     <div class="content"></div>
-  </template>
-  <template tdLoading="name1">
+  </ng-template>
+  <ng-template tdLoading="name1">
     <div class="content"></div>
-  </template>
+  </ng-template>
   `,
 })
 class TdLoadingDuplicationTestComponent {

@@ -7,15 +7,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';
 import { TdLoadingFactory, ILoadingRef } from './loading.factory';
 
-/**
- * @deprecated in 1.0.0-beta.1
- */
-export interface ILoadingOptions {
-  name: string;
-  type?: LoadingType;
-  mode?: LoadingMode;
-}
-
 export interface ITdLoadingConfig {
   name: string;
   type?: LoadingType;
@@ -60,6 +51,7 @@ export class TdLoadingDirectiveConfig extends TdLoadingConfig implements ITdLoad
 export class TdLoadingService {
 
   private _context: {[key: string]: ILoadingRef} = {};
+  private _timeouts: {[key: string]: any} = {};
 
   constructor(private _loadingFactory: TdLoadingFactory) {
     this.create({
@@ -106,17 +98,6 @@ export class TdLoadingService {
   }
 
   /**
-   * @deprecated in 1.0.0-beta.1
-   *
-   * Please use the `create()` method.
-   */
-  public createOverlayComponent(config: ITdLoadingConfig, viewContainerRef: ViewContainerRef): void {
-    /* tslint:disable-next-line */
-    console.warn("createOverlayComponent() is deprecated.  Please use create() instead");
-    this.create(config);
-  }
-
-  /**
    * params:
    * - name: string
    *
@@ -147,11 +128,23 @@ export class TdLoadingService {
    * e.g. loadingService.register()
    */
   public register(name: string = 'td-loading-main', registers: number = 1): boolean {
+    // try registering into the service if the loading component has been instanciated or if it exists.
     if (this._context[name]) {
       registers = registers < 1 ? 1 : registers;
       this._context[name].times += registers;
       this._context[name].subject.next(this._context[name].times);
       return true;
+    } else {
+      // if it doesnt exist, set a timeout so its registered after change detection happens
+      // this in case "register" occured on the `ngOnInit` lifehook cycle.
+      if (!this._timeouts[name]) {
+        this._timeouts[name] = setTimeout(() => {
+          this.register(name, registers);
+        });
+      } else {
+        // if it timeout occured and still doesnt exist, it means the tiemout wasnt needed so we clear it.
+        this._clearTimeout(name);
+      }
     }
     return false;
   }
@@ -170,6 +163,8 @@ export class TdLoadingService {
    * e.g. loadingService.register()
    */
   public resolve(name: string = 'td-loading-main', resolves: number = 1): boolean {
+    // clear timeout if the loading component is "resolved" before its "registered"
+    this._clearTimeout(name);
     if (this._context[name]) {
       resolves = resolves < 1 ? 1 : resolves;
       if (this._context[name].times > 0) {
@@ -201,5 +196,14 @@ export class TdLoadingService {
       }
     }
     return false;
+  }
+
+  /**
+   * Clears timeout linked to the name.
+   * @param name Name of the loading component to be cleared
+   */
+  private _clearTimeout(name: string): void {
+    clearTimeout(this._timeouts[name]);
+    delete this._timeouts[name];
   }
 }

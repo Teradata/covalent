@@ -6,6 +6,7 @@ import {
 } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentCoreModule } from '../core';
 import { TdDynamicType, TdDynamicElement, ITdDynamicElementConfig,
@@ -16,8 +17,9 @@ describe('Component: TdDynamicForms', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
-        CovalentDynamicFormsModule.forRoot(),
+        NoopAnimationsModule,
+        CovalentCoreModule,
+        CovalentDynamicFormsModule,
       ],
       declarations: [
         TdDynamicFormsTestComponent,
@@ -46,6 +48,9 @@ describe('Component: TdDynamicForms', () => {
       name: 'first_name',
       type: TdDynamicType.Text,
     }, {
+      name: 'password',
+      type: TdDynamicElement.Password,
+    }, {
       name: 'on_it',
       type: TdDynamicType.Boolean,
     }, {
@@ -64,7 +69,7 @@ describe('Component: TdDynamicForms', () => {
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(6);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(7);
     });
   })));
 

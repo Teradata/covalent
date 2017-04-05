@@ -1,19 +1,139 @@
 <md-card>
   <md-card-title>Chips &amp; Autocomplete</md-card-title>
-  <md-card-subtitle>Small blocks for multiple items</md-card-subtitle>
+  <md-card-subtitle>Autocomplete with chips and no custom inputs</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
-    <p>Basic Demo</p>
-    <td-chips placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-    <p>Autocomplete Demo</p>
-    <td-chips [items]="items" placeholder="Enter any string" [readOnly]="readOnly"></td-chips>
-    <p>Autocomplete and requireMatch Demo</p>
-    <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>      
-  </md-card-content>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select a preset option:</div>
+        <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              readOnly: boolean = false;
+
+              items: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+              itemsRequireMatch: string[] = this.items.slice(0, 6);
+
+              toggleReadOnly(): void {
+                this.readOnly = !this.readOnly;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
   <md-divider></md-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="toggleReadOnly()" class="text-upper">Toggle ReadOnly</button>
   </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Autocomplete with custom inputs</md-card-title>
+  <md-card-subtitle>Autocomplete demo allowing custom inputs</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select option or enter custom text and press enter:</div>
+        <td-chips [items]="items" placeholder="Enter any string"></td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="items" placeholder="Enter any string"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+
+              items: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<md-card>
+  <md-card-title>Custom chips</md-card-title>
+  <md-card-subtitle>Demo allowing custom inputs for tags</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type any test and press enter:</div>
+        <td-chips placeholder="Enter any string"></td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips placeholder="Enter any string"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
 </md-card>
 <md-card>
   <md-card-title>TdChipsComponent</md-card-title>
@@ -28,13 +148,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-chips>]]></code> component has {{chipsAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="chipsAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="chipsAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
@@ -68,13 +188,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentChipsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentChipsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentChipsModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentChipsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentChipsModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...

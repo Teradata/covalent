@@ -21,4 +21,6 @@ export class TdDynamicCheckboxComponent extends AbstractControlValueAccessor imp
 
   label: string = '';
 
+  required: boolean = false;
+
 }

@@ -1,4 +1,4 @@
-import { Injectable, ComponentFactoryResolver } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, Overlay, OverlayState, OverlayRef, OverlayOrigin, ComponentPortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
@@ -121,8 +121,13 @@ export class TdLoadingFactory {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
           subs.unsubscribe();
-          viewContainerRef.createEmbeddedView(templateRef);
+          let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef);
           viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
+          /**
+           * Need to call "markForCheck" on attached template, so its detected by parent component when attached
+           * with "OnPush" change detection
+           */
+          cdr.markForCheck();
         });
       }
     });

@@ -48,14 +48,14 @@
         </div>
       </td-expansion-panel>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
-        <template td-expansion-panel-label>
+        <ng-template td-expansion-panel-label>
           <md-icon>star</md-icon>
           <span>Custom Label (template)</span>
-        </template>
-        <template td-expansion-panel-sublabel>
+        </ng-template>
+        <ng-template td-expansion-panel-sublabel>
           <md-icon>list</md-icon>
           <span>Custom Sublabel (template)</span>
-        </template>
+        </ng-template>
         <div class="md-padding">
           <h3 class="md-subhead">md-padding class</h3>
           <div>Phase 1</div>
@@ -69,11 +69,11 @@
   <div layout-gt-xs="row" layout-align-gt-xs="center start">
     <div flex-gt-xs="90">
       <td-expansion-panel [disabled]="disabled">
-        <template td-expansion-panel-header>
+        <ng-template td-expansion-panel-header>
           <md-toolbar color="accent">
             <span>Custom td-expansion-panel-header</span>
           </md-toolbar>
-        </template>
+        </ng-template>
         <td-expansion-summary>
           <div class="md-padding">
             <div flex layout-gt-xs="row" layout-align="start center">
@@ -172,28 +172,28 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-expansion-panel>]]></code> component has {{expansionAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="last" ngFor [ngForOf]="expansionAttrs">
+      <ng-template let-attr let-last="last" ngFor [ngForOf]="expansionAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
         <td-expansion-panel label="label" sublabel="sublabel" expand="true|false" disabled="true|false" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()">
-          <template td-expansion-panel-header>
+          <ng-template td-expansion-panel-header>
             ... add header content (overrides label and sublabel)
-          </template>
-          <template td-expansion-panel-label>
+          </ng-template>
+          <ng-template td-expansion-panel-label>
             ... add label content (if not used, falls back to [label] input)
-          </template>
-          <template td-expansion-panel-sublabel>
+          </ng-template>
+          <ng-template td-expansion-panel-sublabel>
             ... add sublabel content (if not used, falls back to [sublabel] input)
-          </template>
+          </ng-template>
           <td-expansion-summary>
             ... add summary that will be shown when expansion-panel is "collapsed".
           </td-expansion-summary>
@@ -219,13 +219,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentExpansionPanelModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentExpansionPanelModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentExpansionPanelModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentExpansionPanelModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+            CovalentExpansionPanelModule, // or CovalentCoreModule (included inside of it)
             ...
           ],
           ...

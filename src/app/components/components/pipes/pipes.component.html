@@ -84,7 +84,7 @@
   <md-card-title>Time Ago</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29 17:59:59</code>) and tranforms it to the amount of time that has gone by. </p>
+    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29T17:59:59.000Z</code>) and tranforms it to the amount of time that has gone by. </p>
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <h3 md-line>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
@@ -111,7 +111,7 @@
   <md-card-title>Time Difference</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29 17:59:59</code>).</p>
+    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29T17:59:59.000Z</code>).</p>
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- Start and end time output -->
