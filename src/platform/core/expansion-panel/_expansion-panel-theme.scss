@@ -1,5 +1,6 @@
-@import '~@angular/material/theming';
 @import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
 
 @mixin td-expansion-panel-theme($theme) {
   $accent: map-get($theme, accent);
@@ -9,7 +10,7 @@
   // panel
   td-expansion-panel {
     @include mat-elevation(1);
-    background-color: md-color($background, card);
+    background-color: mat-color($background, card);
     &:not(:last-of-type) {
       & .td-expanded {
         margin-bottom: $margin;
@@ -22,14 +23,14 @@
     }
     .mat-disabled {
       &, & * {
-        color: md-color($foreground, disabled);
+        color: mat-color($foreground, disabled);
       }
     }
     md-nav-list {
       padding: 0;
     }
     md-icon.td-expand-icon {
-      color: md-color($foreground, icon);
+      color: mat-color($foreground, icon);
     }
     .td-expansion-primary,
     .td-expansion-secondary {
@@ -38,7 +39,7 @@
       }
     }
     .td-expansion-secondary {
-      color: md-color($foreground, secondary-text);
+      color: mat-color($foreground, secondary-text);
     }
   }
 }

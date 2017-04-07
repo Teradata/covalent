@@ -1,0 +1,36 @@
+@import './styles/theme-functions';
+
+@mixin td-common-theme($theme) {
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  md-input-container {
+    &.ng-invalid:not(.ng-pristine) {
+        label {
+            color: mat-color($warn);
+        }
+        .mat-input-underline {
+            border-top-color: mat-color($warn);
+            .mat-input-ripple {
+                background-color: mat-color($warn);
+            }
+        }
+    }
+  }
+
+  md-list-item,
+  .mat-list-item-content {
+        md-icon {
+        color: mat-color($foreground, icon);
+        &[md-list-avatar] {
+            background-color: mat-color($background, hover);
+        }
+    }
+  }
+  .mat-list-text {
+      p {
+          color:  mat-color($foreground, disabled);
+      }
+  }
+}

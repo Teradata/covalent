@@ -46,35 +46,15 @@ export class HomeComponent implements OnInit {
   ];
 
   updates: Object[] = [{
-      description: 'File Input component',
-      icon: 'space_bar',
-      route: 'components/file-input',
-      title: 'New component',
-    }, {
-      description: 'NGX Translate',
-      icon: 'language',
-      route: 'components/ngx-translate',
-      title: 'New supported feature',
-    }, {
-      description: 'Route on toolbar logos',
-      icon: 'dashboard',
-      route: 'layouts',
+      description: 'Refactored Autocomplete Chips',
+      icon: 'label_outline',
+      route: 'components/chips',
       title: 'Component updated',
     }, {
-      description: 'Data Table additional features',
-      icon: 'grid_on',
-      route: 'components/data-table',
-      title: 'Component updated',
-    }, {
-      description: 'File upload refactored',
-      icon: 'attach_file',
-      route: 'components/file-upload',
-      title: 'Component updated',
-    }, {
-      description: 'Paging Bar additional features',
-      icon: 'swap_horiz',
-      route: 'components/paging',
-      title: 'Component updated',
+      description: 'Refactored Toggle Directives',
+      icon: 'wb_iridescent',
+      route: 'components/directives',
+      title: 'Directives updated',
     },
   ];
 

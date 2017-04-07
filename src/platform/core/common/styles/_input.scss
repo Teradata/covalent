@@ -1,24 +1,3 @@
-@import '~@angular/material/theming';
-
-// TODO properly wrap in mixin to apply theme like material components
-$foreground: $mat-light-theme-foreground;
-$background: $mat-light-theme-background;
-$warn: mat-palette($mat-red);
-
-md-input-container {
-    &.ng-invalid:not(.ng-pristine) {
-        label {
-            color: md-color($warn);
-        }
-        .mat-input-underline {
-            border-top-color: md-color($warn);
-            .mat-input-ripple {
-                background-color: md-color($warn);
-            }
-        }
-    }
-}
-
 // Proper placeholder font size
 .mat-input-placeholder-wrapper {
   font-size: 16px;

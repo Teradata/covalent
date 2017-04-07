@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "1.0.0-beta.2-1",
+  "version": "1.0.0-beta.3",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -107,7 +107,7 @@
     "karma-coverage-istanbul-reporter": "^0.3.0",
     "merge2": "1.0.2",
     "node-sass": "3.8.0",
-    "phantomjs-prebuilt": "2.1.7",
+    "phantomjs-prebuilt": "2.1.14",
     "protractor": "~5.1.0",
     "require-dir": "0.3.0",
     "rollup": "^0.35.9",

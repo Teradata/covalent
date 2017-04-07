@@ -1,5 +1,11 @@
-// Core color palettes.
-$md-red: (
+$black-87-opacity: rgba(black, 0.87);
+$white-87-opacity: rgba(white, 0.87);
+$black-12-opacity: rgba(black, 0.12);
+$white-12-opacity: rgba(white, 0.12);
+$black-6-opacity: rgba(black, 0.06);
+$white-6-opacity: rgba(white, 0.06);
+
+$mat-red: (
   50: #ffebee,
   100: #ffcdd2,
   200: #ef9a9a,
@@ -14,9 +20,25 @@ $md-red: (
   A200: #ff5252,
   A400: #ff1744,
   A700: #d50000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
 );
 
-$md-pink: (
+$mat-pink: (
   50: #fce4ec,
   100: #f8bbd0,
   200: #f48fb1,
@@ -31,9 +53,25 @@ $md-pink: (
   A200: #ff4081,
   A400: #f50057,
   A700: #c51162,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
 );
 
-$md-purple: (
+$mat-purple: (
   50: #f3e5f5,
   100: #e1bee7,
   200: #ce93d8,
@@ -48,9 +86,25 @@ $md-purple: (
   A200: #e040fb,
   A400: #d500f9,
   A700: #aa00ff,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
 );
 
-$md-deep-purple: (
+$mat-deep-purple: (
   50: #ede7f6,
   100: #d1c4e9,
   200: #b39ddb,
@@ -65,9 +119,25 @@ $md-deep-purple: (
   A200: #7c4dff,
   A400: #651fff,
   A700: #6200ea,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: $white-87-opacity,
+    A700: $white-87-opacity,
+  )
 );
 
-$md-indigo: (
+$mat-indigo: (
   50: #e8eaf6,
   100: #c5cae9,
   200: #9fa8da,
@@ -82,9 +152,25 @@ $md-indigo: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: $white-87-opacity,
+  )
 );
 
-$md-blue: (
+$mat-blue: (
   50: #e3f2fd,
   100: #bbdefb,
   200: #90caf9,
@@ -99,9 +185,25 @@ $md-blue: (
   A200: #448aff,
   A400: #2979ff,
   A700: #2962ff,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
 );
 
-$md-light-blue: (
+$mat-light-blue: (
   50: #e1f5fe,
   100: #b3e5fc,
   200: #81d4fa,
@@ -116,9 +218,25 @@ $md-light-blue: (
   A200: #40c4ff,
   A400: #00b0ff,
   A700: #0091ea,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: white,
+  )
 );
 
-$md-cyan: (
+$mat-cyan: (
   50: #e0f7fa,
   100: #b2ebf2,
   200: #80deea,
@@ -133,9 +251,25 @@ $md-cyan: (
   A200: #18ffff,
   A400: #00e5ff,
   A700: #00b8d4,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-teal: (
+$mat-teal: (
   50: #e0f2f1,
   100: #b2dfdb,
   200: #80cbc4,
@@ -150,9 +284,25 @@ $md-teal: (
   A200: #64ffda,
   A400: #1de9b6,
   A700: #00bfa5,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-green: (
+$mat-green: (
   50: #e8f5e9,
   100: #c8e6c9,
   200: #a5d6a7,
@@ -167,9 +317,25 @@ $md-green: (
   A200: #69f0ae,
   A400: #00e676,
   A700: #00c853,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-light-green: (
+$mat-light-green: (
   50: #f1f8e9,
   100: #dcedc8,
   200: #c5e1a5,
@@ -184,9 +350,25 @@ $md-light-green: (
   A200: #b2ff59,
   A400: #76ff03,
   A700: #64dd17,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-lime: (
+$mat-lime: (
   50: #f9fbe7,
   100: #f0f4c3,
   200: #e6ee9c,
@@ -201,9 +383,25 @@ $md-lime: (
   A200: #eeff41,
   A400: #c6ff00,
   A700: #aeea00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-yellow: (
+$mat-yellow: (
   50: #fffde7,
   100: #fff9c4,
   200: #fff59d,
@@ -218,9 +416,25 @@ $md-yellow: (
   A200: #ffff00,
   A400: #ffea00,
   A700: #ffd600,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-amber: (
+$mat-amber: (
   50: #fff8e1,
   100: #ffecb3,
   200: #ffe082,
@@ -235,9 +449,25 @@ $md-amber: (
   A200: #ffd740,
   A400: #ffc400,
   A700: #ffab00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
 );
 
-$md-orange: (
+$mat-orange: (
   50: #fff3e0,
   100: #ffe0b2,
   200: #ffcc80,
@@ -252,9 +482,25 @@ $md-orange: (
   A200: #ffab40,
   A400: #ff9100,
   A700: #ff6d00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: black,
+  )
 );
 
-$md-deep-orange: (
+$mat-deep-orange: (
   50: #fbe9e7,
   100: #ffccbc,
   200: #ffab91,
@@ -269,9 +515,25 @@ $md-deep-orange: (
   A200: #ff6e40,
   A400: #ff3d00,
   A700: #dd2c00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: white,
+    A700: white,
+  )
 );
 
-$md-brown: (
+$mat-brown: (
   50: #efebe9,
   100: #d7ccc8,
   200: #bcaaa4,
@@ -286,9 +548,25 @@ $md-brown: (
   A200: #bcaaa4,
   A400: #8d6e63,
   A700: #5d4037,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: white,
+    A700: $white-87-opacity,
+  )
 );
 
-$md-grey: (
+$mat-grey: (
   0: #ffffff,
   50: #fafafa,
   100: #f5f5f5,
@@ -305,329 +583,7 @@ $md-grey: (
   A200: #eeeeee,
   A400: #bdbdbd,
   A700: #616161,
-);
-
-$md-blue-grey: (
-  50: #eceff1,
-  100: #cfd8dc,
-  200: #b0bec5,
-  300: #90a4ae,
-  400: #78909c,
-  500: #607d8b,
-  600: #546e7a,
-  700: #455a64,
-  800: #37474f,
-  900: #263238,
-  A100: #cfd8dc,
-  A200: #b0bec5,
-  A400: #78909c,
-  A700: #455a64,
-);
-
-$md-light-theme-foreground: (
-  divider: rgba(black, 0.12),
-  dividers: rgba(black, 0.12),
-  disabled: rgba(black, 0.26),
-  disabled-text: rgba(black, 0.26),
-  hint-text: rgba(black, 0.26),
-  secondary-text: rgba(black, 0.54),
-  icon: rgba(black, 0.54),
-  icons: rgba(black, 0.54),
-  text: rgba(black, 0.87)
-);
-
-$md-dark-theme-foreground: (
-  divider: rgba(white, 0.12),
-  dividers: rgba(white, 0.12),
-  disabled: rgba(white, 0.30),
-  disabled-text: rgba(white, 0.30),
-  hint-text: rgba(white, 0.30),
-  secondary-text: rgba(white, 0.70),
-  icon: white,
-  icons: white,
-  text: white
-);
-
-// Contrast colors. These are hard-coded because it is too difficult to calculate them.
-// These contrast colors are pulled from the public Material Design spec swatches. While the
-// contrast colors in the spec are not perscriptive, we will use them for convenience.
-$black-87-opacity: rgba(black, 0.870588);
-$white-87-opacity: rgba(white, 0.870588);
-
-$md-contrast-palettes: (
-  $md-red: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  ),
-  $md-pink: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  ),
-  $md-purple: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  ),
-  $md-deep-purple: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: $white-87-opacity,
-    A700: $white-87-opacity,
-  ),
-  $md-indigo: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: $white-87-opacity,
-  ),
-  $md-blue: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  ),
-  $md-light-blue: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: white,
-  ),
-  $md-cyan: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-teal: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-green: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-light-green: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: $black-87-opacity,
-    700: $black-87-opacity,
-    800: white,
-    900: white,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-lime: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: $black-87-opacity,
-    700: $black-87-opacity,
-    800: $black-87-opacity,
-    900: white,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-yellow: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: $black-87-opacity,
-    700: $black-87-opacity,
-    800: $black-87-opacity,
-    900: $black-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-amber: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: $black-87-opacity,
-    700: $black-87-opacity,
-    800: $black-87-opacity,
-    900: $black-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $black-87-opacity,
-  ),
-  $md-orange: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: $black-87-opacity,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: black,
-  ),
-  $md-deep-orange: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: white,
-    A700: white,
-  ),
-  $md-brown: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: white,
-    A700: $white-87-opacity,
-  ),
-  $md-grey: (
+  contrast: (
     0: $black-87-opacity,
     50: $black-87-opacity,
     100: $black-87-opacity,
@@ -644,8 +600,25 @@ $md-contrast-palettes: (
     A200: $black-87-opacity,
     A400: $black-87-opacity,
     A700: $white-87-opacity,
-  ),
-  $md-blue-grey: (
+  )
+);
+
+$mat-blue-grey: (
+  50: #eceff1,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78909c,
+  500: #607d8b,
+  600: #546e7a,
+  700: #455a64,
+  800: #37474f,
+  900: #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
     50: $black-87-opacity,
     100: $black-87-opacity,
     200: $black-87-opacity,
@@ -660,5 +633,68 @@ $md-contrast-palettes: (
     A200: $black-87-opacity,
     A400: white,
     A700: $white-87-opacity,
-  ),
+  )
+);
+
+
+// Background palette for light themes.
+$mat-light-theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar:    map_get($mat-grey, 100),
+  background: map_get($mat-grey, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: $black-12-opacity,
+  raised-button: white,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  status-bar: black,
+  app-bar:    map_get($mat-grey, 900),
+  background: #303030,
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-grey, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: map_get($mat-grey, 1000),
+);
+
+// Foreground palette for light themes.
+$mat-light-theme-foreground: (
+  base:            black,
+  divider:         $black-12-opacity,
+  dividers:        $black-12-opacity,
+  disabled:        rgba(black, 0.38),
+  disabled-button: rgba(black, 0.38),
+  disabled-text:   rgba(black, 0.38),
+  hint-text:       rgba(black, 0.38),
+  secondary-text:  rgba(black, 0.54),
+  icon:            rgba(black, 0.54),
+  icons:           rgba(black, 0.54),
+  text:            rgba(black, 0.87)
+);
+
+// Foreground palette for dark themes.
+$mat-dark-theme-foreground: (
+  base:            white,
+  divider:         $white-12-opacity,
+  dividers:        $white-12-opacity,
+  disabled:        rgba(white, 0.3),
+  disabled-button: rgba(white, 0.3),
+  disabled-text:   rgba(white, 0.3),
+  hint-text:       rgba(white, 0.3),
+  secondary-text:  rgba(white, 0.7),
+  icon:            white,
+  icons:           white,
+  text:            white
 );
