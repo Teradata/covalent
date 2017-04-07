@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "@angular/flex-layout": "^2.0.0-beta.7",
-    "@angular/material": "2.0.0-beta.2"
+    "@angular/material": "2.0.0-beta.3"
   },
   "peerDependencies": {
     "@angular/common": "^4.0.0",
