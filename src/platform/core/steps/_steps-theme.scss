@@ -25,6 +25,10 @@
     }
     // header
     .td-step-header {
+      &:focus,
+      &:hover {
+        background: mat-color($background, 'hover');
+      }
       .md-caption {
         color: mat-color($foreground, secondary-text);
       }
