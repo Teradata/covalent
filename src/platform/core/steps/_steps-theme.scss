@@ -32,7 +32,7 @@
       .md-caption {
         color: mat-color($foreground, secondary-text);
       }
-      .mat-disabled {
+      .td-step-label-wrapper.mat-disabled {
         &, & * {
           color: mat-color($foreground, disabled);
         }

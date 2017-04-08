@@ -7,7 +7,7 @@ $step-circle: 24px;
   &:hover {
     cursor: pointer;
   }
-  &.mat-interaction-disabled {
+  &.mat-disabled {
     background: none;
     cursor: auto;
   }
