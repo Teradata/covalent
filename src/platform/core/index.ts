@@ -112,6 +112,9 @@ export * from './search/search.module';
 import { CovalentStepsModule } from './steps/steps.module';
 export * from './steps/steps.module';
 
+/**
+ * @deprecated in 1.0.0-beta.3-1
+ */
 @NgModule({
   imports: [
     HttpModule,
