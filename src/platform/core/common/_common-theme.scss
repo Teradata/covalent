@@ -5,20 +5,6 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  md-input-container {
-    &.ng-invalid:not(.ng-pristine) {
-        label {
-            color: mat-color($warn);
-        }
-        .mat-input-underline {
-            border-top-color: mat-color($warn);
-            .mat-input-ripple {
-                background-color: mat-color($warn);
-            }
-        }
-    }
-  }
-
   md-list-item,
   .mat-list-item-content {
         md-icon {
