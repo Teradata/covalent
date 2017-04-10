@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-paging-bar-theme($theme) {
   $primary: map-get($theme, primary);
@@ -9,7 +9,7 @@
 
   td-paging-bar {
     &, & md-select .mat-select-value { 
-      color: md-color($foreground, secondary-text);
+      color: mat-color($foreground, secondary-text);
     }
   }
 }
