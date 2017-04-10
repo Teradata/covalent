@@ -1,7 +1,7 @@
 :host {
   display: block;
   .td-expansion-panel {
-    transition: 1s all ease;
+    transition: 400ms all ease;
     .td-expansion-panel-header {
       position: relative;
       outline: none;
@@ -15,7 +15,7 @@
       }
       .td-expansion-panel-header-content {
         height: 48px;
-        padding: 0 8px;
+        padding: 0 16px;
       }
     }
   }

@@ -26,9 +26,14 @@
       &:hover {
         background: mat-color($background, 'hover');
       }
-      .td-expansion-panel-header-content.mat-disabled {
-        &, & * {
-          color: mat-color($foreground, disabled);
+      .td-expansion-panel-header-content {
+        md-icon.td-expand-icon {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-disabled {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
         }
       }
     }
