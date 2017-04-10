@@ -63,7 +63,7 @@ See the [material theming guide](https://github.com/angular/material2/blob/maste
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 
 ```css
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
 
 // (optional) Additional themes

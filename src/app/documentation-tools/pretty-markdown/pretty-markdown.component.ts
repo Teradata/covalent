@@ -124,7 +124,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       componentRef.instance.checked = !!checked.trim();
       componentRef.instance.disabled = true;
       componentRef.instance.labelPosition = 'after';
-      this._renderer.setProperty((<HTMLElement>componentRef.instance._getHostElement())
+      this._renderer.setProperty((<HTMLElement>componentRef.instance._inputElement.nativeElement)
                                         .getElementsByClassName('md-checkbox-label')[0], 'innerHTML', label);
     });
   }

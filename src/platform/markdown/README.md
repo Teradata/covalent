@@ -61,7 +61,7 @@ export class MyModule {}
 The `markdown` module comes with its own `covalent` theme which uses the material *theme* which is used by importing our theme scss file.
 
 ```css
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/theming';
 @import '~@covalent/markdown/markdown-theme';
 
 @include mat-core();
