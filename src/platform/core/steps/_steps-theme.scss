@@ -29,17 +29,19 @@
       &:hover {
         background: mat-color($background, 'hover');
       }
-      .md-caption {
-        color: mat-color($foreground, secondary-text);
-      }
-      .td-step-label-wrapper.mat-disabled {
-        &, & * {
-          color: mat-color($foreground, disabled);
+      .td-step-label-wrapper {
+        .md-caption {
+          color: mat-color($foreground, secondary-text);
         }
-      }
-      .mat-warn {
-        &, & * {
-          color: mat-color($warn);
+        &.mat-disabled {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+        &.mat-warn {
+          &, & * {
+            color: mat-color($warn);
+          }
         }
       }
       .mat-complete {
@@ -60,6 +62,9 @@
     }
     .td-triangle {
       color: mat-color($warn);
+    }
+    .td-edit-icon {
+      color: mat-color($foreground, icon);
     }
   }
 }
