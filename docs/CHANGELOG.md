@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.3-1"></a>
-# [1.0.0-beta.3-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3-1) (2017-04-10)
+# [1.0.0-beta.3-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3) (2017-04-10)
 
 ## External Breaking Changes
 * **theming:** update theming to point to the correct path
