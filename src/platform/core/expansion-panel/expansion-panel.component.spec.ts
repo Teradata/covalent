@@ -37,11 +37,11 @@ describe('Component: ExpansionPanel', () => {
         expect(fixture.debugElement.query(By.css('.td-expanded'))).toBeFalsy();
 
         // check if label was rendered
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-primary')).nativeElement)
+        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-label')).nativeElement)
               .innerHTML.indexOf('Label') > -1).toBeTruthy();
 
         // check if sublabel was rendered
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-secondary')).nativeElement)
+        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-sublabel')).nativeElement)
               .innerHTML.indexOf('Sublabel') > -1).toBeTruthy();
 
         // check if content is hidden
