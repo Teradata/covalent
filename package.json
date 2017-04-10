@@ -13,7 +13,7 @@
     "e2e-test": "protractor ./protractor.conf.js",
     "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
-    "reinstall": "rm -rf node_modules tmp deploy dist && yarn install",
+    "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "ng test --code-coverage --single-run",
     "coverage-win": "start chrome ./coverage/index.html",
