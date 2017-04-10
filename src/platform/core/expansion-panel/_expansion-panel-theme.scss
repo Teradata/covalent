@@ -21,24 +21,32 @@
         margin-top: $margin;
       }
     }
-    .mat-disabled {
-      &, & * {
-        color: mat-color($foreground, disabled);
+    .td-expansion-panel-header {
+      &:focus,
+      &:hover {
+        background: mat-color($background, 'hover');
       }
-    }
-    md-nav-list {
-      padding: 0;
+      .td-expansion-panel-header-content {
+        md-icon.td-expand-icon {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-disabled {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+      }
     }
     md-icon.td-expand-icon {
       color: mat-color($foreground, icon);
     }
-    .td-expansion-primary,
-    .td-expansion-secondary {
+    .td-expansion-label,
+    .td-expansion-sublabel {
       &, & * {
         vertical-align: middle;
       }
     }
-    .td-expansion-secondary {
+    .td-expansion-sublabel {
       color: mat-color($foreground, secondary-text);
     }
   }

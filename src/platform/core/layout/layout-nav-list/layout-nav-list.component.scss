@@ -34,17 +34,13 @@
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > md-sidenav {
-      & > cdk-focus-trap {
-        &, & > div {
-          box-sizing: border-box;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -moz-box;
-          display: -ms-flexbox;
-          display: flex;
-          flex-direction: column;
-        }
-      }
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

@@ -1,39 +1,28 @@
-:host /deep/ {
-  md-nav-list {
-    [md-list-item] {
-      &:active,
-      &:focus {
-        outline: none;
+:host {
+  display: block;
+  .td-expansion-panel {
+    transition: 400ms all ease;
+    .td-expansion-panel-header {
+      position: relative;
+      outline: none;
+      &:focus,
+      &:hover {
+        cursor: pointer;
       }
-      &.mat-list-item.mat-interaction-disabled .mat-list-item-content {
-        background: none !important;
+      &.mat-disabled {
+        background: none;
         cursor: auto;
       }
-      &.mat-tall .mat-list-item-content {
-        height: auto;
-        padding-left: 0;
-        padding-right: 0;
+      .td-expansion-panel-header-content {
+        height: 48px;
+        padding: 0 16px;
       }
     }
   }
 }
-:host {
-  display: block;
-  
-  .panel {
-    transition: 1s all ease;
-  }
 
-  md-nav-list:first-of-type,
-  md-list:first-of-type {
-    padding-top: 0;
-  }
-}
-md-nav-list {
-  padding: 0;
-}
-.td-expansion-primary,
-.td-expansion-secondary {
+.td-expansion-label,
+.td-expansion-sublabel {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
