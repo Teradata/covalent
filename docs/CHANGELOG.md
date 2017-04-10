@@ -1,3 +1,34 @@
+<a name="1.0.0-beta.3-1"></a>
+# [1.0.0-beta.3-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3) (2017-04-10)
+
+## External Breaking Changes
+* **theming:** update theming to point to the correct path
+
+  Before:
+  ```scss
+    @import '~@angular/material/core/theming/all-theme';
+  ```
+
+  After:
+  ```scss
+    @import '~@angular/material/theming';
+  ```
+
+## Breaking Changes
+
+* **modules:** deprecate `CovalentCoreModule` since tree shaking is not working, we need to push people to import modules on a "need" basis to reduce bundle size ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+
+## Bug Fixes
+* **validations:** remove input invalid style and use `material`s ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+
+## Features
+* **dependencies:** upgrade `@angular/material` to `beta.3`. ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+* **expansion-panel:** add `MdRippleModule` to header and improve internal logic ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+
+## Performance
+* **steps:** remove `MdListModule` dependency from `CovalentStepsModule` and use `MdRippleModule` to reduce DOM and bundle size ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+* **expansion-panel:** remove `MdListModule` dependency from `CovalentExpansionPanelModule` to reduce DOM and bundle size ([1994564738b31bd98152c984eda33a10c2f0a993](https://github.com/Teradata/covalent/commit/1994564738b31bd98152c984eda33a10c2f0a993))
+
 
 <a name="1.0.0-beta.3"></a>
 # [1.0.0-beta.3 Electric Relaxation](https://github.com/Teradata/covalent/tree/v1.0.0-beta.3) (2017-04-05)
