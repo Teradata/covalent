@@ -55,6 +55,16 @@ export class HomeComponent implements OnInit {
       icon: 'wb_iridescent',
       route: 'components/directives',
       title: 'Directives updated',
+    }, {
+      description: 'Refactored Stepper',
+      icon: 'view_list',
+      route: 'components/steps',
+      title: 'Stepper updated',
+    }, {
+      description: 'Refactored/Improved Expansion Panel',
+      icon: 'open_with',
+      route: 'components/expansion-panel',
+      title: 'Directives updated',
     },
   ];
 
