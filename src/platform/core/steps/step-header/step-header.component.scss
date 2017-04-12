@@ -55,10 +55,17 @@ $step-circle: 24px;
   .td-circle,
   .td-triangle,
   .td-complete {
-    margin-left: 8px;
+    /deep/ :not([dir='rtl']) & {
+      margin: {
+        left: 8px;
+        right: 0px;
+      }
+    }
     /deep/ [dir='rtl'] & {
-      margin-left: 0px !important;
-      margin-right: 8px;
+      margin: {
+        left: 0px;
+        right: 8px;
+      }
     }
   }
   .td-circle,

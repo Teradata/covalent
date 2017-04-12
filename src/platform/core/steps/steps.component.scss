@@ -14,8 +14,10 @@
   height: 1px;
   position: relative;
   top: 36px;
-  left: -6px;
-  right: -3px;
+  /deep/ :not([dir='rtl']) & {
+    left: -6px;
+    right: -3px;
+  }
   /deep/ [dir='rtl'] & {
     left: -3px;
     right: -6px;
@@ -25,9 +27,10 @@
 
 .td-vertical-line {
   position: absolute;
-  left: 20px;
+  /deep/ :not([dir='rtl']) & {
+    left: 20px;
+  }
   /deep/ [dir='rtl'] & {
-    left: auto;
     right: 20px;
   }
   bottom: -16px;
