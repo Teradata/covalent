@@ -14,14 +14,27 @@
   height: 1px;
   position: relative;
   top: 36px;
-  margin-inline-start: -6px;
-  margin-inline-end: -3px;
+  /deep/ :not([dir='rtl']) & {
+    left: -6px;
+    right: -3px;
+  }
+  /deep/ [dir='rtl'] & {
+    left: -3px;
+    right: -6px;
+  }
   min-width: 15px;
 }
 
 .td-vertical-line {
   position: absolute;
-  margin-inline-start: 20px;
+  /deep/ :not([dir='rtl']) & {
+    left: 20px;
+    right: auto;
+  }
+  /deep/ [dir='rtl'] & {
+    left: auto;
+    right: 20px;
+  }
   bottom: -16px;
   top: -16px;
   border-left-width: 1px;
