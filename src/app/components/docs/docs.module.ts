@@ -14,6 +14,8 @@ import { TestingComponent } from './testing/testing.component';
 import { ThemeComponent } from './theme/theme.component';
 import { MockDataComponent } from './mock-data/mock-data.component';
 
+import { DocumentationToolsModule } from '../../documentation-tools';
+
 import { CovalentCoreModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
@@ -34,6 +36,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
   imports: [
     CovalentCoreModule,
     CovalentHighlightModule,
+    DocumentationToolsModule,
     docsRoutes,
   ],
 })
