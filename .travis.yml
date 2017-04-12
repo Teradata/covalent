@@ -15,7 +15,7 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 install:
 - npm i process-nextick-args util-deprecate buffer-shims
-- yarn install
+- npm install
 - npm rebuild node-sass # Workaround for https://github.com/yarnpkg/yarn/issues/1981
 script:
 - npm run lint
