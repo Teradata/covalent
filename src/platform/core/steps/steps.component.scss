@@ -29,8 +29,10 @@
   position: absolute;
   /deep/ :not([dir='rtl']) & {
     left: 20px;
+    right: auto;
   }
   /deep/ [dir='rtl'] & {
+    left: auto;
     right: 20px;
   }
   bottom: -16px;
