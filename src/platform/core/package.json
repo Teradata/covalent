@@ -41,10 +41,10 @@
     "@angular/material": "2.0.0-beta.3"
   },
   "peerDependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/router": "^4.0.0"
+    "@angular/common": "^4.1.0",
+    "@angular/core": "^4.1.0",
+    "@angular/forms": "^4.1.0",
+    "@angular/http": "^4.1.0",
+    "@angular/router": "^4.1.0"
   }
 }

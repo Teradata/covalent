@@ -37,7 +37,7 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>"
   ],
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "@angular/http": "^4.0.0"
+    "@angular/core": "^4.1.0",
+    "@angular/http": "^4.1.0"
   }
 }
