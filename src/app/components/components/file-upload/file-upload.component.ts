@@ -22,11 +22,11 @@ export class FileUploadDemoComponent {
 
   selectEvent(file: File): void {
     this.fileSelectMsg = file.name;
-  };
+  }
 
   uploadEvent(file: File): void {
     this.fileUploadMsg = file.name;
-  };
+  }
 
   selectMultipleEvent(files: FileList | File): void {
     if (files instanceof FileList) {
