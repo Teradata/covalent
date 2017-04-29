@@ -130,12 +130,36 @@ describe('Component: FileUpload', () => {
       });
   })));
 
+  it('should mimic file selection, cancel click and throw (cancel) event',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+      component.multiple = false;
+      component.disabled = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
+        fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.handleSelect([{}]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.selectFiles).toBeTruthy();
+          fixture.debugElement.query(By.css('.td-file-upload-cancel')).triggerEventHandler('click', new Event('click'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(component.selectFiles).toBeFalsy();
+          });
+        });
+      });
+  })));
+
 });
 
 @Component({
   selector: 'td-file-upload-basic-test',
   template: `
-  <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectFiles = $event" (upload)="files = $event">
+  <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectFiles = $event"
+                  (upload)="files = $event" (cancel)="selectFiles = files = undefined">
     <span>{{ fileUpload.files?.name }}</span>
     <ng-template td-file-input-label>
       <span>Choose a file...</span>
