@@ -36,7 +36,7 @@ npm install --save https://github.com/Teradata/covalent-nightly.git
   
 **src/app/app.module.ts**
 ```ts
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, CovalentStepsModule /*, any other modules */ } from '@covalent/core';
 // (optional) Additional Covalent Modules imports
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
@@ -45,7 +45,8 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 // other imports 
 @NgModule({
   imports: [
-    CovalentCoreModule,
+    CovalentLayoutModule,
+    CovalentStepsModule,
     // (optional) Additional Covalent Modules imports
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,

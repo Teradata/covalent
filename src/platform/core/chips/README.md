@@ -25,7 +25,7 @@ Import the [CovalentChipsModule] in your NgModule:
 import { CovalentChipsModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentChipsModule, // or CovalentCoreModule (included inside of it)
+    CovalentChipsModule,
     ...
   ],
   ...

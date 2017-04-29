@@ -25,7 +25,7 @@ Import the [CovalentJsonFormatterModule] in your NgModule:
 import { CovalentJsonFormatterModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentJsonFormatterModule,  // or CovalentCoreModule (included inside of it)
+    CovalentJsonFormatterModule,
     ...
   ],
   ...

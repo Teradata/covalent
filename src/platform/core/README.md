@@ -16,13 +16,14 @@ npm i -save @covalent/core
 
 ## Setup
 
-Import the **[CovalentCoreModule]** in your NgModule:
+Import the modules from `@covalent/core` as needed in your NgModule:
 
 ```typescript
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, CovalentStepsModule /* and many more */ } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentCoreModule,
+    CovalentLayoutModule,
+    CovalentStepsModule,
     ...
   ],
   ...
