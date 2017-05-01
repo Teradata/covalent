@@ -25,15 +25,5 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   ],
 })
 export class CovalentPagingModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentPagingModule,
-      providers: [ ],
-    };
-  }
+
 }
