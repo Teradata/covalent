@@ -29,15 +29,5 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
   ],
 })
 export class CovalentSearchModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentSearchModule,
-      providers: [ ],
-    };
-  }
+
 }
