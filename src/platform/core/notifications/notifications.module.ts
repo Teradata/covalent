@@ -25,15 +25,5 @@ export { TdNotificationCountComponent, TdNotificationCountPositionX, TdNotificat
   ],
 })
 export class CovalentNotificationsModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentNotificationsModule,
-      providers: [ ],
-    };
-  }
+
 }
