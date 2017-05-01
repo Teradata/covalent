@@ -6,7 +6,7 @@
     <md-icon *ngIf="icon" [routerLink]="navigationRoute" class="cursor-pointer">{{icon}}</md-icon>
     <md-icon *ngIf="logo && !icon" class="md-icon-logo cursor-pointer" [svgIcon]="logo" [routerLink]="navigationRoute"></md-icon>
     <span *ngIf="toolbarTitle" class="cursor-pointer" [routerLink]="navigationRoute">{{toolbarTitle}}</span>
-    <ng-content select="[toolbar-content], [td-toolbar-content]"></ng-content>
+    <ng-content select="[td-toolbar-content]"></ng-content>
   </md-toolbar>
   <div flex layout="column" class="content md-content">
     <ng-content></ng-content>
