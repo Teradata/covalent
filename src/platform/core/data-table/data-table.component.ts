@@ -28,6 +28,7 @@ export interface ITdDataTableColumn {
   format?: (value: any) => any;
   nested?: boolean;
   sortable?: boolean;
+  sortOrder?: TdDataTableSortingOrder;
 };
 
 export interface ITdDataTableSelectEvent {
