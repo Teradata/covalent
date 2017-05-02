@@ -24,6 +24,7 @@ export class TdPagingBarComponent implements OnInit {
   private _fromRow: number = 1;
   private _toRow: number = 1;
   private _initialized: boolean = false;
+  private _pageLinks: number[] = [];
 
   /**
    * pageSizeAll?: boolean
@@ -48,6 +49,12 @@ export class TdPagingBarComponent implements OnInit {
    * Sets starting page for the paging bar. Defaults to '1'
    */
   @Input('initialPage') initialPage: number = 1;
+
+  /**
+   * pageLinkCount?: number
+   * Amount of page jump to links for the paging bar. Defaults to '0'
+   */
+  @Input('pageLinkCount') pageLinkCount: number = 0;
 
   /**
    * pageSizes?: number[]
@@ -97,6 +104,14 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   /**
+   * pageLinks: number[]
+   * Returns the pageLinks in an array
+   */
+  get pageLinks(): number[] {
+    return this._pageLinks;
+  }
+
+  /**
    * range: string
    * Returns the range of the rows.
    */
@@ -139,6 +154,7 @@ export class TdPagingBarComponent implements OnInit {
   ngOnInit(): void {
     this._page = this.initialPage;
     this._calculateRows();
+    this._calculatePageLinks();
     this._initialized = true;
   }
 
@@ -201,8 +217,35 @@ export class TdPagingBarComponent implements OnInit {
     this._toRow = this._total > top ? top : this._total;
   }
 
+  /**
+   * _calculatePageLinks?: function
+   * Calculates the page links that should be shown to the user based on the current state of the paginator
+   */
+  private _calculatePageLinks(): void {
+    // reset the pageLinks array
+    this._pageLinks = [];
+    // fill in the array with the pageLinks based on the current selected page
+    let middlePageLinks: number = Math.floor(this.pageLinkCount / 2);
+    for (let x: number = 0; x < this.pageLinkCount; x++) {
+      // don't go past the maxPage in the pageLinks
+      if ((this.page + middlePageLinks) >= this.maxPage) {
+        this._pageLinks[x] = this.maxPage - (this.pageLinkCount - (x + 1));
+      // if the selected page is after the middle then set that page as middle and get the correct balance on left and right
+      } else if ((this.page - middlePageLinks) > 0) {
+        this._pageLinks[x] = (this.page - middlePageLinks) + x;
+      // if the selected page is before the middle then set the pages based on the x index leading up to and after selected page
+      } else if ((this.page - middlePageLinks) <= 0) {
+        this._pageLinks[x] = x + 1;
+      // other wise just set the array in order starting from the selected page
+      } else {
+        this._pageLinks[x] = this.page + x;
+      }
+    }
+  }
+
   private _handleOnChange(): void {
     this._calculateRows();
+    this._calculatePageLinks();
     let event: IPageChangeEvent = {
       page: this._page,
       maxPage: this.maxPage,
