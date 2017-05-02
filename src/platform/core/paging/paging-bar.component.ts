@@ -228,10 +228,11 @@ export class TdPagingBarComponent implements OnInit {
     let middlePageLinks: number = Math.floor(this.pageLinkCount / 2);
     for (let x: number = 0; x < this.pageLinkCount; x++) {
       // don't go past the maxPage in the pageLinks
-      if ((this.page + middlePageLinks) >= this.maxPage) {
+      if ((this.pageLinkCount % 2 === 0 && (this.page + middlePageLinks > this.maxPage)) ||
+          (this.pageLinkCount % 2 !== 0 && (this.page + middlePageLinks >= this.maxPage))) {
         this._pageLinks[x] = this.maxPage - (this.pageLinkCount - (x + 1));
       // if the selected page is after the middle then set that page as middle and get the correct balance on left and right
-      } else if ((this.page - middlePageLinks) > 0) {
+      } else if (this.pageLinkCount > 2 && (this.page - middlePageLinks) > 0) {
         this._pageLinks[x] = (this.page - middlePageLinks) + x;
       // if the selected page is before the middle then set the pages based on the x index leading up to and after selected page
       } else if ((this.page - middlePageLinks) <= 0) {
