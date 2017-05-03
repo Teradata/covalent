@@ -66,7 +66,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   @Input('items') items: string[] = [];
   
-
   /**
    * requireMatch?: boolean
    * Validates input against the provided list before adding it to the model.
