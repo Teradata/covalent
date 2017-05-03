@@ -98,8 +98,9 @@ describe('Component: TdPagingBarComponent', () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        expect(fixture.debugElement.query(By.css('#firstPageButton'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#lastPageButton'))).toBeTruthy();
+        let id: string = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-first-page'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-last-page'))).toBeTruthy();
         done();
       });
     });
@@ -113,13 +114,14 @@ describe('Component: TdPagingBarComponent', () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        expect(fixture.debugElement.query(By.css('#pageLinkCount0'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount1'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount2'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount3'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount4'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount5'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#pageLinkCount6'))).toBeTruthy();
+        let id: string = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-0'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-1'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-2'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-3'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-4'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-5'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-6'))).toBeTruthy();
         done();
       });
     });

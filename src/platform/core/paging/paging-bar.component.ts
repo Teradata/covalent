@@ -25,6 +25,7 @@ export class TdPagingBarComponent implements OnInit {
   private _toRow: number = 1;
   private _initialized: boolean = false;
   private _pageLinks: number[] = [];
+  private _id: string;
 
   /**
    * pageSizeAll?: boolean
@@ -136,6 +137,14 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   /**
+   * id: string
+   * Returns the guid id for this paginator
+   */
+  get id(): string {
+    return this._id;
+  }
+
+  /**
    * change?: function
    * Method to be executed when page size changes or any button is clicked in the paging bar.
    * Emits an [IPageChangeEvent] implemented object.
@@ -149,7 +158,9 @@ export class TdPagingBarComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {}
+  constructor(@Optional() private _dir: Dir) {
+    this._id = this.guid();
+  }
 
   ngOnInit(): void {
     this._page = this.initialPage;
@@ -228,10 +239,12 @@ export class TdPagingBarComponent implements OnInit {
     let middlePageLinks: number = Math.floor(this.pageLinkCount / 2);
     for (let x: number = 0; x < this.pageLinkCount; x++) {
       // don't go past the maxPage in the pageLinks
+      // have to handle even and odd pageLinkCounts differently so can still lead to the next numbers
       if ((this.pageLinkCount % 2 === 0 && (this.page + middlePageLinks > this.maxPage)) ||
           (this.pageLinkCount % 2 !== 0 && (this.page + middlePageLinks >= this.maxPage))) {
         this._pageLinks[x] = this.maxPage - (this.pageLinkCount - (x + 1));
       // if the selected page is after the middle then set that page as middle and get the correct balance on left and right
+      // special handling when there are only 2 pageLinks to just drop to next if block so can lead to next numbers
       } else if (this.pageLinkCount > 2 && (this.page - middlePageLinks) > 0) {
         this._pageLinks[x] = (this.page - middlePageLinks) + x;
       // if the selected page is before the middle then set the pages based on the x index leading up to and after selected page
@@ -256,6 +269,18 @@ export class TdPagingBarComponent implements OnInit {
       toRow: this._toRow,
     };
     this.onChange.emit(event);
+  }
+
+  /**
+   * guid?: function
+   * Returns RFC4122 random ("version 4") GUIDs
+   */
+  private guid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  private s4(): string {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
 
 }
