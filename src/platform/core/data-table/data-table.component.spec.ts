@@ -107,4 +107,3 @@ class TestNotSearchableColumnComponent {
 
   filteredData: any[] = this.data;
 }
-
