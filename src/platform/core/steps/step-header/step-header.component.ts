@@ -38,12 +38,12 @@ export class TdStepHeaderComponent {
    */
   isComplete(): boolean {
     return this.state === StepState.Complete;
-  };
+  }
 
   /**
    * Returns 'true' if [state] equals to [StepState.Required | 'required'], else 'false'.
    */
   isRequired(): boolean {
     return this.state === StepState.Required;
-  };
+  }
 }
