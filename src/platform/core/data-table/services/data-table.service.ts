@@ -20,7 +20,7 @@ export class TdDataTableService {
         const res: any = Object.keys(item).find((key: string) => {
           let isSearchAble: boolean = true;
           if (columns) {
-            for (let x: number = 0; x<columns.length; x++) {
+            for (let x: number = 0; x < columns.length; x++) {
               if (columns[x].name === key && columns[x].hidden) {
                 isSearchAble = false;
               }
