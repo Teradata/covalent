@@ -47,7 +47,7 @@ export class ChipsDemoComponent {
   }];
 
   readOnly: boolean = false;
-  autoComplete: boolean = false;
+  autoComplete: boolean = true;
 
   items: string[] = [
     'stepper',
@@ -67,6 +67,9 @@ export class ChipsDemoComponent {
 
   toggleReadOnly(): void {
     this.readOnly = !this.readOnly;
+  }
+  toggleAutocomplete(): void {
+    this.autoComplete = !this.autoComplete;
   }
 
 }

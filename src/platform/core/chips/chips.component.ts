@@ -101,7 +101,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
     /**
    * autoComplete?: boolean
-   * Disables autocomplete.
+   * Disables autocomplete. If it doesn't exist autocomplete defaults to true.
    */
   @Input('autoComplete') autoComplete: boolean = true;
 
