@@ -18,7 +18,7 @@ export const TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR: any = {
 export enum TdDataTableSortingOrder {
   Ascending = <any>'ASC',
   Descending = <any>'DESC',
-};
+}
 
 export interface ITdDataTableColumn {
   name: string;
@@ -29,12 +29,12 @@ export interface ITdDataTableColumn {
   nested?: boolean;
   sortable?: boolean;
   notsearchable?: boolean;
-};
+}
 
 export interface ITdDataTableSelectEvent {
   row: any;
   selected: boolean;
-};
+}
 
 export interface ITdDataTableSelectAllEvent {
   rows: any[];
@@ -82,7 +82,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this.refresh();
     }
   }
-  get value(): any { return this._value; };
+  get value(): any { return this._value; }
 
   /**
    * uniqueId?: string
