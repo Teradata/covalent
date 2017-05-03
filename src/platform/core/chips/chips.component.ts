@@ -98,7 +98,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
   /**
-   * autoComplete?: boolean
+   * allowAdd?: boolean
    * Disables the ability to add chips. If it doesn't exist allowAdd defaults to true.
    */
   @Input('allowAdd') allowAdd: boolean = true;
