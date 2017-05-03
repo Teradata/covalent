@@ -91,6 +91,10 @@ export class DataTableDemoComponent implements OnInit {
     name: 'sortOrder',
     type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
   }, {
+    description: `Whether the column should be hidden or not. Defaults to 'false'`,
+    name: 'hidden',
+    type: `boolean`,
+  }, {
     description: `Sets column to active state when 'true'. Defaults to 'false'`,
     name: 'active',
     type: `boolean`,
@@ -259,6 +263,7 @@ export class DataTableDemoComponent implements OnInit {
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = false;
   multiple: boolean = false;
+  showCalories: boolean = true;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -309,7 +314,7 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, this.columns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
@@ -334,5 +339,14 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
+  }
+
+  toggleShowHideCalories(): void {
+    // doing this to force change detection
+    let tempColumns: ITdDataTableColumn[] = this.columns.concat([]);
+    tempColumns[2].hidden = !tempColumns[2].hidden;
+    this.columns = tempColumns;
+
+    this.showCalories = !this.showCalories;
   }
 }
