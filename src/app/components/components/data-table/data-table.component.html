@@ -289,7 +289,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
                 { name: 'item', label: 'Item name' },
-                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), notsearchable: true },
+                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), filter: true },
               ];
 
               filteredData: any[] = this.data;

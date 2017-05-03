@@ -91,8 +91,8 @@ export class DataTableDemoComponent implements OnInit {
     name: 'sortOrder',
     type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
   }, {
-    description: `When set to true this column will be excluded from searches using the filterData method.`,
-    name: 'notsearchable?',
+    description: `When set to false this column will be excluded from searches using the filterData method.`,
+    name: 'filter?',
     type: 'boolean',
   }, {
     description: `Sets column to active state when 'true'. Defaults to 'false'`,
@@ -111,7 +111,7 @@ export class DataTableDemoComponent implements OnInit {
 
   serviceAttrs: Object[] = [{
     description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
-                  If notsearchable is set on any column it will be excluded.`,
+                  If filter to false is set on any column it will be excluded.`,
     name: 'filterData',
     type: `function(data: any[], searchTerm: string, ignoreCase: boolean, columns?: ITdDataTableColumn[])`,
   }, {
@@ -127,7 +127,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
     { name: 'type', label: 'Type' },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, notsearchable: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, filter: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -343,7 +343,7 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   toggleNoSearchCalories(): void {
-    this.columns[2].notsearchable = !this.columns[2].notsearchable;
+    this.columns[2].filter = !this.columns[2].filter;
     this.searchCalories = !this.searchCalories;
   }
 }

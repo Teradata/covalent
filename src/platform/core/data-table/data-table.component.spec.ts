@@ -22,7 +22,7 @@ describe('Component: TdPagingBarComponent', () => {
         CovalentDataTableModule,
       ],
       declarations: [
-        TestNotSearchableColumnComponent,
+        TestFilterColumnComponent,
       ],
       providers: [
         TdDataTableService,
@@ -32,8 +32,8 @@ describe('Component: TdPagingBarComponent', () => {
   }));
 
   it('should create the component', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestNotSearchableColumnComponent);
-    let component: TestNotSearchableColumnComponent = fixture.debugElement.componentInstance;
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
+    let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -42,15 +42,15 @@ describe('Component: TdPagingBarComponent', () => {
     });
   });
 
-  it('should set notsearchable and not get search hits and set it to false and get search results', (done: DoneFn) => {
+  it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
       inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TestNotSearchableColumnComponent);
-        let component: TestNotSearchableColumnComponent = fixture.debugElement.componentInstance;
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
+        let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
             let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
-            expect(columns[1].notsearchable).toBe(true);
+            expect(columns[1].filter).toBe(false);
 
             let newData: any[] = component.data;
             newData = tdDataTableService.filterData(newData, '1452-2', true, component.columns);
@@ -66,7 +66,7 @@ describe('Component: TdPagingBarComponent', () => {
 
                    component.columns = [
                        { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-                       { name: 'item', label: 'Item name', notsearchable: false },
+                       { name: 'item', label: 'Item name', filter: true },
                        { name: 'price', label: 'Price (US$)', numeric: true },
                    ];
                    fixture.detectChanges();
@@ -94,14 +94,14 @@ describe('Component: TdPagingBarComponent', () => {
         [columns]="columns">
     </td-data-table>`,
 })
-class TestNotSearchableColumnComponent {
+class TestFilterColumnComponent {
   data: any[] = [
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
     { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
   ];
   columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-    { name: 'item', label: 'Item name', notsearchable: true },
+    { name: 'item', label: 'Item name', filter: false },
     { name: 'price', label: 'Price (US$)', numeric: true },
   ];
 

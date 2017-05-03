@@ -21,7 +21,7 @@ export class TdDataTableService {
           let isSearchAble: boolean = true;
           if (columns) {
             for (let x: number = 0; x < columns.length; x++) {
-              if (columns[x].name === key && columns[x].notsearchable) {
+              if (columns[x].name === key && typeof columns[x].filter !== undefined && columns[x].filter === false) {
                 isSearchAble = false;
               }
             }
