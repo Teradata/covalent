@@ -37,7 +37,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   private _value: FileList | File = undefined;
 
   // get/set accessor (needed for ControlValueAccessor)
-  get value(): FileList | File { return this._value; };
+  get value(): FileList | File { return this._value; }
   set value(v: FileList | File) {
     if (v !== this._value) {
       this._value = v;

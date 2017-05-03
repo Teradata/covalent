@@ -8,6 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        { "glob": "**/*", "input": "../docs", "output": "./docs/" },
         "app/assets",
         "platform",
         "favicon.ico"
