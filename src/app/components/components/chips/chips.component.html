@@ -7,7 +7,7 @@
       <ng-template md-tab-label>Demo</ng-template>
       <div class="push">
         <div class="md-body-1">Type and select a preset option:</div>
-        <td-chips [autoComplete]="autoComplete" [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+        <td-chips [allowAdd]="allowAdd" [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
       </div>
     </md-tab>
     <md-tab>
@@ -16,7 +16,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chips [items]="items" [autoComplete]="autoComplete" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+            <td-chips [items]="items" [allowAdd]="allowAdd" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
@@ -53,7 +53,7 @@
   <md-divider></md-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="toggleReadOnly()" class="text-upper">Toggle ReadOnly</button>
-    <button md-button color="primary" (click)="toggleAutocomplete()" class="text-upper">Toggle Autocomplete</button>
+    <button md-button color="primary" (click)="toggleAllowAdd()" class="text-upper">Toggle AllowAdd</button>
   </md-card-actions>
 </md-card>
 <md-card>
@@ -161,7 +161,7 @@
     <p>HTML:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
+        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" [allowAdd]="allowAdd" (add)="add($event)" (remove)="remove($event)" requireMatch>
         </td-chips>        
       ]]>
     </td-highlight>

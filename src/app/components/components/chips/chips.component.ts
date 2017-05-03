@@ -41,13 +41,13 @@ export class ChipsDemoComponent {
     name: 'remove?',
     type: 'function',
   },  {
-    description: `Disables autocomplete. If it doesn't exist autocomplete defaults to true.`,
-    name: 'autocomplete?',
+    description: `Disables the ability to add chips. If it doesn't exist allowAdd defaults to true.`,
+    name: 'allowAdd?',
     type: 'boolean',
   }];
 
   readOnly: boolean = false;
-  autoComplete: boolean = true;
+  allowAdd: boolean = true;
 
   items: string[] = [
     'stepper',
@@ -68,8 +68,8 @@ export class ChipsDemoComponent {
   toggleReadOnly(): void {
     this.readOnly = !this.readOnly;
   }
-  toggleAutocomplete(): void {
-    this.autoComplete = !this.autoComplete;
+  toggleAllowAdd(): void {
+    this.allowAdd = !this.allowAdd;
   }
 
 }

@@ -9,7 +9,7 @@
         </md-icon>
       </md-basic-chip>
     </ng-template>
-    <div *ngIf="autoComplete">
+    <div *ngIf="allowAdd">
     <md-input-container floatPlaceholder="never"
                         [style.width.px]="readOnly ? 0 : null"
                         [color]="matches ? 'primary' : 'warn'">
