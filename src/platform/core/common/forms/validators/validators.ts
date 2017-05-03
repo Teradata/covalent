@@ -12,7 +12,7 @@ export class CovalentValidators {
         undefined;
     };
     return func;
-  };
+  }
 
   static max(maxValue: any): ValidatorFn {
     let func: ValidatorFn = (c: AbstractControl): {[key: string]: any} => {
@@ -25,7 +25,7 @@ export class CovalentValidators {
         undefined;
     };
     return func;
-  };
+  }
 
   static numberRequired(c: AbstractControl): {[key: string]: any} {
     return (Number.isNaN(c.value)) ?

@@ -24,5 +24,5 @@ export class TdMinValidator implements Validator {
 
   validate(c: AbstractControl): {[key: string]: any} {
     return this._validator(c);
-  };
+  }
 }
