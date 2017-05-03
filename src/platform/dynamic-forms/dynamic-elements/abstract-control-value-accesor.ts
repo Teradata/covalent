@@ -12,7 +12,7 @@ export abstract class AbstractControlValueAccessor implements ControlValueAccess
   protected _value: any = undefined;
 
   // get/set accessor (needed for ControlValueAccessor)
-  get value(): any { return this._value; };
+  get value(): any { return this._value; }
   set value(v: any) {
     if (v !== this._value) {
       this._value = v;
