@@ -80,8 +80,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     return this._requireMatch;
   }
 
-
-
   /**
    * readOnly?: boolean
    * Disables the chips input and chip removal icon.
@@ -99,7 +97,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     return this._readOnly;
   }
 
-    /**
+  /**
     * autoComplete?: boolean
     * Disables autocomplete. If it doesn't exist autocomplete defaults to true.
    */
