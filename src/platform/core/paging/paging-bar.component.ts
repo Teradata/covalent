@@ -26,6 +26,10 @@ export class TdPagingBarComponent implements OnInit {
   private _initialized: boolean = false;
   private _pageLinks: number[] = [];
   private _id: string;
+  // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
+  private _hitEnd: boolean = false;
+    // special case when 2 pageLinks, detect when hit start of pages so can lead in correct direction
+  private _hitStart: boolean = false;
 
   /**
    * pageSizeAll?: boolean
@@ -233,6 +237,16 @@ export class TdPagingBarComponent implements OnInit {
    * Calculates the page links that should be shown to the user based on the current state of the paginator
    */
   private _calculatePageLinks(): void {
+    // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
+    if (this.isMaxPage()) {
+      this._hitEnd = true;
+      this._hitStart = false;
+    }
+    // special case when 2 pageLinks, detect when hit start of pages so can lead in correct direction
+    if (this.isMinPage()) {
+      this._hitEnd = false;
+      this._hitStart = true;
+    }
     // reset the pageLinks array
     this._pageLinks = [];
     // fill in the array with the pageLinks based on the current selected page
@@ -244,8 +258,9 @@ export class TdPagingBarComponent implements OnInit {
           (this.pageLinkCount % 2 !== 0 && (this.page + middlePageLinks >= this.maxPage))) {
         this._pageLinks[x] = this.maxPage - (this.pageLinkCount - (x + 1));
       // if the selected page is after the middle then set that page as middle and get the correct balance on left and right
-      // special handling when there are only 2 pageLinks to just drop to next if block so can lead to next numbers
-      } else if (this.pageLinkCount > 2 && (this.page - middlePageLinks) > 0) {
+      // special handling when there are only 2 pageLinks to just drop to next if block so can lead to next numbers when moving to right
+      // when moving to the left then go into this block
+      } else if ((this.pageLinkCount > 2 || this.pageLinkCount <= 2 && this._hitEnd) && (this.page - middlePageLinks) > 0) {
         this._pageLinks[x] = (this.page - middlePageLinks) + x;
       // if the selected page is before the middle then set the pages based on the x index leading up to and after selected page
       } else if ((this.page - middlePageLinks) <= 0) {
