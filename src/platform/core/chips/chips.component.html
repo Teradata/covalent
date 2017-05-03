@@ -9,6 +9,7 @@
         </md-icon>
       </md-basic-chip>
     </ng-template>
+    <div *ngIf="autoComplete">
     <md-input-container floatPlaceholder="never"
                         [style.width.px]="readOnly ? 0 : null"
                         [color]="matches ? 'primary' : 'warn'">
@@ -23,11 +24,13 @@
               (focus)="handleFocus()"
               (blur)="handleBlur()">
     </md-input-container>
+
     <md-autocomplete #autocomplete="mdAutocomplete">
       <ng-template let-item ngFor [ngForOf]="filteredItems | async">
         <md-option (click)="addChip(input.value)" [value]="item">{{item}}</md-option>
       </ng-template>
     </md-autocomplete>
+    </div>
   </md-chip-list>
   <div class="mat-input-underline"
        [class.mat-disabled]="readOnly">

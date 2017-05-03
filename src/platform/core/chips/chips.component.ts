@@ -65,6 +65,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Enables Autocompletion with the provided list of strings.
    */
   @Input('items') items: string[] = [];
+  
 
   /**
    * requireMatch?: boolean
@@ -78,6 +79,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   get requireMatch(): any {
     return this._requireMatch;
   }
+
+
 
   /**
    * readOnly?: boolean
@@ -95,6 +98,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   get readOnly(): boolean {
     return this._readOnly;
   }
+
+    /**
+   * readOnly?: boolean
+   * Disables the chips input and chip removal icon.
+   */
+  @Input('autoComplete') autoComplete: boolean = true;
 
   /**
    * placeholder?: string
@@ -257,7 +266,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
            * Checks if deleting last single chip, to focus input afterwards
            * Else check if its not the last chip of the list to focus the next one.
            */
-          if (index === (this._totalChips - 1) && index === 0) {
+          if (index === (this._totalChips - 1) && index === 0 && this.autoComplete) {
             this.focus();
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
@@ -267,20 +276,22 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         break;
       case LEFT_ARROW:
         /** Check to see if left arrow was pressed while focusing the first chip to focus input next */
-        if (index === 0) {
+        if (index === 0 && this.autoComplete) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case RIGHT_ARROW:
         /** Check to see if right arrow was pressed while focusing the last chip to focus input next */
-        if (index === (this._totalChips - 1)) {
+        if (index === (this._totalChips - 1) && this.autoComplete) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case ESCAPE:
+        if (this.autoComplete) {
         this.focus();
+        }
         break;
       default:
         // default

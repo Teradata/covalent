@@ -7,7 +7,7 @@
       <ng-template md-tab-label>Demo</ng-template>
       <div class="push">
         <div class="md-body-1">Type and select a preset option:</div>
-        <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
+        <td-chips [autoComplete]="autoComplete" [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
       </div>
     </md-tab>
     <md-tab>

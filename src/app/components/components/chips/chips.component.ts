@@ -43,6 +43,7 @@ export class ChipsDemoComponent {
   }];
 
   readOnly: boolean = false;
+  autoComplete: boolean = false;
 
   items: string[] = [
     'stepper',
