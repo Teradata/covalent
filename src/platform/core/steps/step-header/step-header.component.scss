@@ -53,12 +53,24 @@ $step-circle: 24px;
     font-size: 0;
   }
   .td-circle,
+  .td-triangle,
   .td-complete {
-    margin-inline-start: 8px;
-    font-size: 14px;
+    /deep/ :not([dir='rtl']) & {
+      margin: {
+        left: 8px;
+        right: 0px;
+      }
+    }
+    /deep/ [dir='rtl'] & {
+      margin: {
+        left: 0px;
+        right: 8px;
+      }
+    }
   }
-  .td-triangle {
-    margin-inline-start: 8px;
+  .td-circle,
+  .td-complete {
+    font-size: 14px;
   }
   .td-step-label-wrapper {
     padding-left: 8px;

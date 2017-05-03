@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "1.0.0-beta.3-1",
+  "version": "1.0.0-beta.3-2",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -51,21 +51,22 @@
     "Jason Weaver <jason.weaver@teradata.com>",
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>",
-    "Ilsun Park <ilsun.park@teradata.com>"
+    "Ilsun Park <ilsun.park@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "@angular/animations": "^4.0.0",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
+    "@angular/animations": "^4.1.0",
+    "@angular/common": "^4.1.0",
+    "@angular/compiler": "^4.1.0",
+    "@angular/core": "^4.1.0",
     "@angular/flex-layout": "2.0.0-beta.7",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
+    "@angular/forms": "^4.1.0",
+    "@angular/http": "^4.1.0",
     "@angular/material": "2.0.0-beta.3",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/platform-server": "^4.0.0",
-    "@angular/router": "^4.0.0",
+    "@angular/platform-browser": "^4.1.0",
+    "@angular/platform-browser-dynamic": "^4.1.0",
+    "@angular/platform-server": "^4.1.0",
+    "@angular/router": "^4.1.0",
     "@ngx-translate/core": "6.0.0",
     "@ngx-translate/http-loader": "0.0.3",
     "@swimlane/ngx-charts": "5.0.0",
@@ -76,16 +77,17 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.2",
-    "zone.js": "^0.8.5"
+    "zone.js": "^0.8.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
-    "@angular/compiler-cli": "^4.0.0",
+    "@angular/cli": "1.0.1",
+    "@angular/compiler-cli": "^4.1.0",
+    "@angular/language-service": "^4.1.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "@types/selenium-webdriver": "^2.52.0",
-    "codelyzer": "~2.0.0",
+    "codelyzer": "~3.0.0",
     "coveralls": "^2.12.0",
     "glob": "^6.0.4",
     "gulp": "3.9.1",
@@ -115,7 +117,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
-    "tslint": "^4.5.1",
-    "typescript": "^2.1.6"
+    "tslint": "^5.1.0",
+    "typescript": "^2.3.1"
   }
 }

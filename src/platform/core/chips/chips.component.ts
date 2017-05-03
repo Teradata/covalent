@@ -137,7 +137,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       }
     }
   }
-  get value(): any { return this._value; };
+  get value(): any { return this._value; }
 
   ngOnInit(): void {
     this.inputControl.valueChanges
