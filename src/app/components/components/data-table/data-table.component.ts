@@ -91,6 +91,10 @@ export class DataTableDemoComponent implements OnInit {
     name: 'sortOrder',
     type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
   }, {
+    description: `When set to true this column will be excluded from searches using the filterData method.`,
+    name: 'notsearchable?',
+    type: 'boolean',
+  }, {
     description: `Sets column to active state when 'true'. Defaults to 'false'`,
     name: 'active',
     type: `boolean`,
@@ -106,9 +110,10 @@ export class DataTableDemoComponent implements OnInit {
   }];
 
   serviceAttrs: Object[] = [{
-    description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.`,
+    description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+                  If notsearchable is set on any column it will be excluded.`,
     name: 'filterData',
-    type: `function(data: any[], searchTerm: string, ignoreCase: boolean)`,
+    type: `function(data: any[], searchTerm: string, ignoreCase: boolean, columns?: ITdDataTableColumn[])`,
   }, {
     description: `Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.`,
     name: 'sortData',
@@ -122,7 +127,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
     { name: 'type', label: 'Type' },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, notsearchable: true },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -259,6 +264,7 @@ export class DataTableDemoComponent implements OnInit {
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = false;
   multiple: boolean = false;
+  searchCalories: boolean = false;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -309,7 +315,7 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, this.columns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
@@ -334,5 +340,10 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
+  }
+
+  toggleNoSearchCalories(): void {
+    this.columns[2].notsearchable = !this.columns[2].notsearchable;
+    this.searchCalories = !this.searchCalories;
   }
 }

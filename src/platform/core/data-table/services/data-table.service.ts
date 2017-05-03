@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { TdDataTableSortingOrder } from '../data-table.component';
+import { TdDataTableSortingOrder, ITdDataTableColumn } from '../data-table.component';
 
 @Injectable()
 export class TdDataTableService {
@@ -13,14 +13,24 @@ export class TdDataTableService {
    *
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
-  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false): any[] {
+  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, columns?: ITdDataTableColumn[]): any[] {
     let filter: string = searchTerm ? (ignoreCase ? searchTerm.toLowerCase() : searchTerm) : '';
     if (filter) {
       data = data.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {
-          const preItemValue: string = ('' + item[key]);
-          const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
-          return itemValue.indexOf(filter) > -1;
+          let isSearchAble: boolean = true;
+          if (columns) {
+            for (let x: number = 0; x<columns.length; x++) {
+              if (columns[x].name === key && columns[x].notsearchable) {
+                isSearchAble = false;
+              }
+            }
+          }
+          if (isSearchAble) {
+            const preItemValue: string = ('' + item[key]);
+            const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
+            return itemValue.indexOf(filter) > -1;
+          }
         });
         return !(typeof res === 'undefined');
       });
