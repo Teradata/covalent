@@ -100,8 +100,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
     /**
-   * readOnly?: boolean
-   * Disables the chips input and chip removal icon.
+   * autoComplete?: boolean
+   * Disables autocomplete.
    */
   @Input('autoComplete') autoComplete: boolean = true;
 
