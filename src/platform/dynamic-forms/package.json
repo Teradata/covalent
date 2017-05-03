@@ -33,7 +33,8 @@
     "Ed Morales <eduardo.morales@teradata.com>",
     "Jason Weaver <jason.weaver@teradata.com>",
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
-    "Jeremy Smartt <jeremy.smartt@teradata.com>"
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
     "@covalent/core": "1.0.0-beta.3-2"

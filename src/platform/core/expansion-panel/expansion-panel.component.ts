@@ -74,10 +74,10 @@ export class TdExpansionPanelComponent {
   @Input('expand')
   set expand(expand: boolean) {
     this._setExpand(expand);
-  };
+  }
   get expand(): boolean {
     return this._expand;
-  };
+  }
 
   /**
    * disabled?: boolean
@@ -90,10 +90,10 @@ export class TdExpansionPanelComponent {
       this._onCollapsed();
     }
     this._disabled = disabled;
-  };
+  }
   get disabled(): boolean {
     return this._disabled;
-  };
+  }
 
   /**
    * expanded?: function
@@ -112,7 +112,7 @@ export class TdExpansionPanelComponent {
    */
   clickEvent(): void {
     this._setExpand(!this._expand);
-  };
+  }
 
   /**
    * Toggle expand state of [TdExpansionPanelComponent]
@@ -156,13 +156,13 @@ export class TdExpansionPanelComponent {
       return true;
     }
     return false;
-  };
+  }
 
   private _onExpanded(): void {
     this.expanded.emit(undefined);
-  };
+  }
 
   private _onCollapsed(): void {
     this.collapsed.emit(undefined);
-  };
+  }
 }

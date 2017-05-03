@@ -8,9 +8,9 @@
               layout="column"
               layout-fill
               class="md-whiteframe-z1">
-    <ng-content select="md-toolbar[list-items], md-toolbar[td-sidenav-content]"></ng-content>
+    <ng-content select="md-toolbar[td-sidenav-content]"></ng-content>
     <div flex class="list md-content">
-      <ng-content select="[list-items], [td-sidenav-content]"></ng-content>
+      <ng-content select="[td-sidenav-content]"></ng-content>
     </div>
   </md-sidenav>
   <div layout="column" layout-fill class="md-content">
@@ -18,7 +18,7 @@
       <button md-icon-button class="td-menu-button" *ngIf="!sidenav.opened" (click)="open()">
         <md-icon class="md-24">arrow_back</md-icon>
       </button>
-      <ng-content select="[toolbar-buttons], [td-toolbar-content]"></ng-content>
+      <ng-content select="[td-toolbar-content]"></ng-content>
     </md-toolbar>
     <div class="md-content" flex>
       <ng-content></ng-content>
