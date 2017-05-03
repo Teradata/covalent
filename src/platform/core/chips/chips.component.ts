@@ -236,6 +236,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case DELETE:
       case BACKSPACE:
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
+        
         if (!this._inputChild.value) {
           this._focusLastChip();
           event.preventDefault();

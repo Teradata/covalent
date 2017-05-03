@@ -40,6 +40,10 @@ export class ChipsDemoComponent {
                   Sends chip value as event.`,
     name: 'remove?',
     type: 'function',
+  },  {
+    description: `Disables autocomplete. If it doesn't exist autocomplete defaults to true.`,
+    name: 'autocomplete?',
+    type: 'boolean',
   }];
 
   readOnly: boolean = false;
