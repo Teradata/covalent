@@ -11,8 +11,8 @@
             flex>
     <md-hint align="start">
       <span class="tc-red-600">
-        <span *ngIf="control.errors?.max">Max: {{control.errors?.max.maxValue}}</span>
-        <span *ngIf="control.errors?.min">Min: {{control.errors?.min.minValue}}</span>
+        <span *ngIf="control.hasError('max')">Max: {{control.get('max')?.maxValue}}</span>
+        <span *ngIf="control.hasError('min')">Min: {{control.get('min')?.minValue}}</span>
       </span>
     </md-hint>
   </md-input-container>
