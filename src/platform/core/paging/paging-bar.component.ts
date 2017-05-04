@@ -25,6 +25,7 @@ export class TdPagingBarComponent implements OnInit {
   private _toRow: number = 1;
   private _initialized: boolean = false;
   private _pageLinks: number[] = [];
+  private _pageLinkCount: number = 0;
   private _id: string;
   // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
   private _hitEnd: boolean = false;
@@ -59,7 +60,14 @@ export class TdPagingBarComponent implements OnInit {
    * pageLinkCount?: number
    * Amount of page jump to links for the paging bar. Defaults to '0'
    */
-  @Input('pageLinkCount') pageLinkCount: number = 0;
+  @Input('pageLinkCount')
+  set pageLinkCount(pageLinkCount: number) {
+    this._pageLinkCount = pageLinkCount;
+    this._calculatePageLinks();
+  }
+  get pageLinkCount(): number {
+    return this._pageLinkCount;
+  }
 
   /**
    * pageSizes?: number[]
@@ -103,6 +111,7 @@ export class TdPagingBarComponent implements OnInit {
   set total(total: number) {
     this._total = total;
     this._calculateRows();
+    this._calculatePageLinks();
   }
   get total(): number {
     return this._total;
