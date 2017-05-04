@@ -221,7 +221,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Programmatically focus the input. Since its the component entry point
    */
   focus(): void {
-    this._inputChild.focus();
+    if (this.allowAdd) {
+      this._inputChild.focus();
+    }
   }
 
   /**
