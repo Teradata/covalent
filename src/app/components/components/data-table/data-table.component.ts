@@ -126,7 +126,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
     { name: 'type', label: 'Type' },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -263,7 +263,6 @@ export class DataTableDemoComponent implements OnInit {
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = false;
   multiple: boolean = false;
-  showCalories: boolean = true;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -314,7 +313,13 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, this.columns);
+    let nonSearchAbleColumns: string[] = this.columns
+    .filter((column: ITdDataTableColumn) => {
+      return (typeof column.hidden !== undefined && column.hidden === true);
+    }).map((column: ITdDataTableColumn) => {
+      return column.name;
+    });
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, nonSearchAbleColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
@@ -339,12 +344,5 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
-  }
-
-  toggleShowHideCalories(tdDataTableComponent: TdDataTableComponent): void {
-    this.columns[2].hidden = !this.columns[2].hidden;
-    tdDataTableComponent.refresh();
-
-    this.showCalories = !this.showCalories;
   }
 }

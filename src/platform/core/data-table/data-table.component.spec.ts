@@ -53,13 +53,20 @@ describe('Component: TdPagingBarComponent', () => {
             expect(columns[1].hidden).toBe(false);
 
             let newData: any[] = component.data;
-            newData = tdDataTableService.filterData(newData, '1452-2', true, component.columns);
+            // backwards compatability test
+            newData = tdDataTableService.filterData(newData, '1452-2', true);
             fixture.detectChanges();
             fixture.whenStable().then(() => {
                 expect(newData.length).toBe(1);
 
+                let nonSearchAbleColumns: string[] = component.columns
+                .filter((column: ITdDataTableColumn) => {
+                  return (typeof column.hidden !== undefined && column.hidden === true);
+                }).map((column: ITdDataTableColumn) => {
+                  return column.name;
+                });
                 newData = component.data;
-                newData = tdDataTableService.filterData(newData, 'Pork', true, component.columns);
+                newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
                    expect(newData.length).toBe(1);
@@ -69,12 +76,19 @@ describe('Component: TdPagingBarComponent', () => {
                        { name: 'item', label: 'Item name', hidden: true },
                        { name: 'price', label: 'Price (US$)', numeric: true },
                    ];
+                   fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.refresh();
                    fixture.detectChanges();
                    fixture.whenStable().then(() => {
                        expect(columns[1].hidden).toBe(false);
 
+                       nonSearchAbleColumns = component.columns
+                       .filter((column: ITdDataTableColumn) => {
+                        return (typeof column.hidden !== undefined && column.hidden === true);
+                       }).map((column: ITdDataTableColumn) => {
+                         return column.name;
+                       });
                        newData = component.data;
-                       newData = tdDataTableService.filterData(newData, 'Pork', true, component.columns);
+                       newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
                        fixture.detectChanges();
                        fixture.whenStable().then(() => {
                             expect(newData.length).toBe(0);
