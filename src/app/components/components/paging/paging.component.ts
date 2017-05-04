@@ -36,6 +36,10 @@ export class PagingDemoComponent {
     name: 'pageSize?',
     type: 'number',
   }, {
+    description: `Defines the number of PageLinks to display. PageLinks are used to jump to a specific page, default is 0.`,
+    name: 'pageLinkCount?',
+    type: 'number',
+  }, {
     description: `ets starting page for the paging bar. Defaults to '1'`,
     name: 'initialPage?',
     type: 'number',
