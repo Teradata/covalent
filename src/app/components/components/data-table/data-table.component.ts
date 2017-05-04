@@ -262,9 +262,9 @@ export class DataTableDemoComponent implements OnInit {
       },
     ];
   basicData: any[] = this.data.slice(0, 4);
-  selectable: boolean = false;
-  multiple: boolean = false;
-  searchCalories: boolean = true;
+  selectable: boolean = true;
+  multiple: boolean = true;
+  filterColumn: boolean = true;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -322,28 +322,11 @@ export class DataTableDemoComponent implements OnInit {
     this.filteredData = newData;
   }
 
-  toggleSelectable(): void {
-    this.selectable = !this.selectable;
-  }
-
-  toggleMultiple(): void {
-    this.multiple = !this.multiple;
-  }
-
-  areTooltipsOn(): boolean {
-    return this.columns[0].hasOwnProperty('tooltip');
-  }
-
   toggleTooltips(): void {
     if (this.columns[0].tooltip) {
       this.columns.forEach((c: any) => delete c.tooltip);
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
-  }
-
-  toggleNoSearchCalories(): void {
-    this.columns[2].filter = !this.columns[2].filter;
-    this.searchCalories = !this.searchCalories;
   }
 }
