@@ -53,26 +53,28 @@ describe('Component: TdPagingBarComponent', () => {
             expect(columns[1].filter).toBe(false);
 
             let newData: any[] = component.data;
-            newData = tdDataTableService.filterData(newData, '1452-2', true, component.columns);
+            // backwards compatability test
+            newData = tdDataTableService.filterData(newData, '1452-2', true);
             fixture.detectChanges();
             fixture.whenStable().then(() => {
                 expect(newData.length).toBe(1);
 
+                let nonSearchAbleColumns: string[] = component.columns
+                .filter((column: ITdDataTableColumn) => {
+                  return (typeof column.filter !== undefined && column.filter === false);
+                }).map((column: ITdDataTableColumn) => {
+                  return column.name;
+                });
                 newData = component.data;
-                newData = tdDataTableService.filterData(newData, 'Pork', true, component.columns);
+                newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
                    expect(newData.length).toBe(0);
 
-                   component.columns = [
-                       { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-                       { name: 'item', label: 'Item name', filter: true },
-                       { name: 'price', label: 'Price (US$)', numeric: true },
-                   ];
                    fixture.detectChanges();
                    fixture.whenStable().then(() => {
                        newData = component.data;
-                       newData = tdDataTableService.filterData(newData, 'Pork', true, component.columns);
+                       newData = tdDataTableService.filterData(newData, 'Pork', true, []);
                        fixture.detectChanges();
                        fixture.whenStable().then(() => {
                             expect(newData.length).toBe(1);

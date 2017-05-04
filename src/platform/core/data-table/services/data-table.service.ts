@@ -13,7 +13,7 @@ export class TdDataTableService {
    *
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
-  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, nonSearchAbleColumns: string[]): any[] {
+  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, nonSearchAbleColumns?: string[]): any[] {
     let filter: string = searchTerm ? (ignoreCase ? searchTerm.toLowerCase() : searchTerm) : '';
     if (filter) {
       data = data.filter((item: any) => {
