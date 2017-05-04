@@ -111,9 +111,9 @@ export class DataTableDemoComponent implements OnInit {
 
   serviceAttrs: Object[] = [{
     description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
-                  If filter to false is set on any column it will be excluded.`,
+                  Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
     name: 'filterData',
-    type: `function(data: any[], searchTerm: string, ignoreCase: boolean, columns?: ITdDataTableColumn[])`,
+    type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
   }, {
     description: `Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.`,
     name: 'sortData',
@@ -315,7 +315,13 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, this.columns);
+    let nonSearchAbleColumns: string[] = this.columns
+    .filter((column: ITdDataTableColumn) => {
+      return (typeof column.filter !== undefined && column.filter === false);
+    }).map((column: ITdDataTableColumn) => {
+      return column.name;
+    });
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, nonSearchAbleColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
