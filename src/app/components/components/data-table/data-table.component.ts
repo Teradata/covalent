@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdDataTableSortingOrder, TdDataTableService,
+import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
@@ -341,11 +341,9 @@ export class DataTableDemoComponent implements OnInit {
     }
   }
 
-  toggleShowHideCalories(): void {
-    // doing this to force change detection
-    let tempColumns: ITdDataTableColumn[] = this.columns.concat([]);
-    tempColumns[2].hidden = !tempColumns[2].hidden;
-    this.columns = tempColumns;
+  toggleShowHideCalories(tdDataTableComponent: TdDataTableComponent): void {
+    this.columns[2].hidden = !this.columns[2].hidden;
+    tdDataTableComponent.refresh();
 
     this.showCalories = !this.showCalories;
   }
