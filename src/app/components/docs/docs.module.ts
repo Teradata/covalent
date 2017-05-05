@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import { docsRoutes } from './docs.routes';
 
@@ -16,7 +19,9 @@ import { MockDataComponent } from './mock-data/mock-data.component';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
-import { CovalentCoreModule } from '../../../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 @NgModule({
@@ -34,7 +39,20 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MockDataComponent,
   ],
   imports: [
-    CovalentCoreModule,
+    /** Angular Modules */
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdToolbarModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentMediaModule,
     CovalentHighlightModule,
     DocumentationToolsModule,
     docsRoutes,

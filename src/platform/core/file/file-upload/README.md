@@ -69,7 +69,7 @@ import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
     HttpModule,
-    CovalentFileModule, // or CovalentCoreModule (included inside of it)
+    CovalentFileModule,
     ...
   ],
   ...

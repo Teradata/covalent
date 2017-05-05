@@ -1,4 +1,8 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { styleGuideRoutes } from './style-guide.routes';
 
@@ -15,7 +19,11 @@ import { UtilityStylesComponent } from './utility-styles/utility-styles.componen
 import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { CovalentCoreModule } from '../../../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule,
+         MdInputModule, MdMenuModule, MdSelectModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
+         CovalentExpansionPanelModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 @NgModule({
@@ -34,7 +42,27 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     NavigationDrawerComponent,
   ],
   imports: [
-    CovalentCoreModule,
+    /** Angular Modules */
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdInputModule,
+    MdMenuModule,
+    MdSelectModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentMediaModule,
+    CovalentSearchModule,
+    CovalentPagingModule,
+    CovalentExpansionPanelModule,
     CovalentHighlightModule,
     styleGuideRoutes,
   ],

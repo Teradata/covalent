@@ -30,7 +30,7 @@ Import the [CovalentDataTableModule] in your NgModule:
 import { CovalentDataTableModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentDataTableModule, // or CovalentCoreModule (included inside of it)
+    CovalentDataTableModule,
     ...
   ],
   ...

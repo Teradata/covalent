@@ -15,7 +15,7 @@
             <p>Total: {{event?.total || '1345'}}</p>
           </md-card-content>
           <md-divider></md-divider>
-          <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
+          <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5"
                           [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
             <span td-paging-bar-label hide-xs>Row per page:</span>
             {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
@@ -27,7 +27,7 @@
           <p>HTML:</p>
           <td-highlight lang="html">
             <![CDATA[
-              <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
+              <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5"
                               [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
                 <span td-paging-bar-label hide-xs>Row per page:</span>
                 { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
@@ -101,7 +101,7 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-paging-bar #pagingBar pageSizeAllText="allText" [firstLast]="true|false" [pageSizeAll]="true|false" [pageSizes]="[100,200,500,1000,2000]"
-                       [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
+                       pageLinkCount="5" [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
           <span td-paging-bar-label hide-xs>Row per page:</span>
           { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
         </td-paging-bar>
@@ -129,7 +129,7 @@
         import { CovalentPagingModule } from '@covalent/core';
         @NgModule({
           imports: [
-            CovalentPagingModule, // or CovalentCoreModule (included inside of it)
+            CovalentPagingModule,
             ...
           ],
           ...
