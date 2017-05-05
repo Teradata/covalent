@@ -8,7 +8,6 @@ import 'hammerjs';
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentCoreModule } from '../core';
 import { TdDynamicType, TdDynamicElement, ITdDynamicElementConfig,
          TdDynamicElementComponent, TdDynamicFormsComponent, CovalentDynamicFormsModule } from './';
 
@@ -18,7 +17,6 @@ describe('Component: TdDynamicForms', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
-        CovalentCoreModule,
         CovalentDynamicFormsModule,
       ],
       declarations: [

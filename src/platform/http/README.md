@@ -88,7 +88,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
 
 @NgModule({
   imports: [
-    HttpModule, /* or CovalentCoreModule */
+    HttpModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: CustomInterceptor, paths: ['**'],

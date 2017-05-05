@@ -21,7 +21,7 @@ Import the [CovalentNotificationsModule] in your NgModule:
 import { CovalentNotificationsModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentNotificationsModule, // or CovalentCoreModule (included inside of it)
+    CovalentNotificationsModule,
     ...
   ],
   ...
