@@ -5,6 +5,7 @@ import { MdChip, MdInputDirective, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACK
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/debounceTime';
 
 const noop: any = () => {
   // empty method
