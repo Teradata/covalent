@@ -14,12 +14,12 @@ export class TdDataTableService {
    *
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
-  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, nonSearchAbleColumns?: string[]): any[] {
+  filterData(data: any[], searchTerm: string, ignoreCase: boolean = false, excludedColumns?: string[]): any[] {
     let filter: string = searchTerm ? (ignoreCase ? searchTerm.toLowerCase() : searchTerm) : '';
     if (filter) {
       data = data.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {
-          if (!nonSearchAbleColumns || nonSearchAbleColumns.indexOf(key) === -1) {
+          if (!excludedColumns || excludedColumns.indexOf(key) === -1) {
             const preItemValue: string = ('' + item[key]);
             const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
             return itemValue.indexOf(filter) > -1;
