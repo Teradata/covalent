@@ -22,7 +22,8 @@ describe('Component: TdDataTableComponent', () => {
         CovalentDataTableModule,
       ],
       declarations: [
-        TestNotSearchableColumnComponent,
+        TestHiddenColumnComponent,
+        TestFilterColumnComponent,
       ],
       providers: [
         TdDataTableService,
@@ -32,8 +33,8 @@ describe('Component: TdDataTableComponent', () => {
   }));
 
   it('should create the component', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestNotSearchableColumnComponent);
-    let component: TestNotSearchableColumnComponent = fixture.debugElement.componentInstance;
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestHiddenColumnComponent);
+    let component: TestHiddenColumnComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -42,10 +43,10 @@ describe('Component: TdDataTableComponent', () => {
     });
   });
 
-  it('should set notsearchable and not get search hits and set it to false and get search results', (done: DoneFn) => {
+  it('should set hidden and not get search hits and set it to false and get search results', (done: DoneFn) => {
       inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TestNotSearchableColumnComponent);
-        let component: TestNotSearchableColumnComponent = fixture.debugElement.componentInstance;
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TestHiddenColumnComponent);
+        let component: TestHiddenColumnComponent = fixture.debugElement.componentInstance;
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -100,6 +101,51 @@ describe('Component: TdDataTableComponent', () => {
         });
     })();
   });
+
+  it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
+      inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
+        let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+            let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
+            expect(columns[1].filter).toBe(false);
+
+            let newData: any[] = component.data;
+            // backwards compatability test
+            newData = tdDataTableService.filterData(newData, '1452-2', true);
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+                expect(newData.length).toBe(1);
+
+                let nonSearchAbleColumns: string[] = component.columns
+                .filter((column: ITdDataTableColumn) => {
+                  return (typeof column.filter !== undefined && column.filter === false);
+                }).map((column: ITdDataTableColumn) => {
+                  return column.name;
+                });
+                newData = component.data;
+                newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                   expect(newData.length).toBe(0);
+
+                   fixture.detectChanges();
+                   fixture.whenStable().then(() => {
+                       newData = component.data;
+                       newData = tdDataTableService.filterData(newData, 'Pork', true, []);
+                       fixture.detectChanges();
+                       fixture.whenStable().then(() => {
+                            expect(newData.length).toBe(1);
+                            done();
+                        });
+                    });
+                });
+            });
+        });
+    })();
+  });
 });
 
 @Component({
@@ -110,7 +156,7 @@ describe('Component: TdDataTableComponent', () => {
         [columns]="columns">
     </td-data-table>`,
 })
-class TestNotSearchableColumnComponent {
+class TestHiddenColumnComponent {
   data: any[] = [
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
     { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
@@ -118,6 +164,28 @@ class TestNotSearchableColumnComponent {
   columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
     { name: 'item', label: 'Item name', hidden: false },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+
+  filteredData: any[] = this.data;
+}
+
+@Component({
+  template: `
+    <td-data-table
+        #dataTable
+        [data]="filteredData"
+        [columns]="columns">
+    </td-data-table>`,
+})
+class TestFilterColumnComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
+    { name: 'item', label: 'Item name', filter: false },
     { name: 'price', label: 'Price (US$)', numeric: true },
   ];
 

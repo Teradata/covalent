@@ -95,6 +95,10 @@ export class DataTableDemoComponent implements OnInit {
     name: 'hidden',
     type: `boolean`,
   }, {
+    description: `When set to false this column will be excluded from searches using the filterData method.`,
+    name: 'filter?',
+    type: 'boolean',
+  }, {
     description: `Sets column to active state when 'true'. Defaults to 'false'`,
     name: 'active',
     type: `boolean`,
@@ -110,9 +114,10 @@ export class DataTableDemoComponent implements OnInit {
   }];
 
   serviceAttrs: Object[] = [{
-    description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.`,
+    description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+                  Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
     name: 'filterData',
-    type: `function(data: any[], searchTerm: string, ignoreCase: boolean)`,
+    type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
   }, {
     description: `Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.`,
     name: 'sortData',
@@ -125,7 +130,7 @@ export class DataTableDemoComponent implements OnInit {
 
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
-    { name: 'type', label: 'Type' },
+    { name: 'type', label: 'Type', filter: true },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
@@ -261,8 +266,9 @@ export class DataTableDemoComponent implements OnInit {
       },
     ];
   basicData: any[] = this.data.slice(0, 4);
-  selectable: boolean = false;
-  multiple: boolean = false;
+  selectable: boolean = true;
+  multiple: boolean = true;
+  filterColumn: boolean = true;
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -313,29 +319,18 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    let nonSearchAbleColumns: string[] = this.columns
+    let excludedColumns: string[] = this.columns
     .filter((column: ITdDataTableColumn) => {
-      return (typeof column.hidden !== undefined && column.hidden === true);
+      return ((column.filter === undefined && column.hidden !== undefined && column.hidden === true) || 
+              (column.filter !== undefined && column.filter === false));
     }).map((column: ITdDataTableColumn) => {
       return column.name;
     });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, nonSearchAbleColumns);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
-  }
-
-  toggleSelectable(): void {
-    this.selectable = !this.selectable;
-  }
-
-  toggleMultiple(): void {
-    this.multiple = !this.multiple;
-  }
-
-  areTooltipsOn(): boolean {
-    return this.columns[0].hasOwnProperty('tooltip');
   }
 
   toggleTooltips(): void {

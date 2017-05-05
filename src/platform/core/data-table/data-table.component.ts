@@ -29,6 +29,7 @@ export interface ITdDataTableColumn {
   nested?: boolean;
   sortable?: boolean;
   hidden?: boolean;
+  filter?: boolean;
 }
 
 export interface ITdDataTableSelectEvent {
