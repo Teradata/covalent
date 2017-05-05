@@ -31,7 +31,7 @@
       </ng-template>
     </md-autocomplete>
   </md-chip-list>
-  <div class="mat-input-underline"
+  <div *ngIf="allowAdd" class="mat-input-underline"
        [class.mat-disabled]="readOnly">
     <span class="mat-input-ripple"
           [class.mat-focused]="focused"
