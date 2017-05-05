@@ -65,7 +65,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Enables Autocompletion with the provided list of strings.
    */
   @Input('items') items: string[] = [];
-
+  
   /**
    * requireMatch?: boolean
    * Validates input against the provided list before adding it to the model.
@@ -95,6 +95,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   get readOnly(): boolean {
     return this._readOnly;
   }
+
+  /**
+   * chipAddition?: boolean
+   * Disables the ability to add chips. If it doesn't exist chip addition defaults to true.
+   */
+  @Input('chipAddition') chipAddition: boolean = true;
 
   /**
    * placeholder?: string
@@ -215,7 +221,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Programmatically focus the input. Since its the component entry point
    */
   focus(): void {
-    this._inputChild.focus();
+    if (this.chipAddition) {
+      this._inputChild.focus();
+    }
   }
 
   /**
@@ -227,6 +235,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case DELETE:
       case BACKSPACE:
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
+        
         if (!this._inputChild.value) {
           this._focusLastChip();
           event.preventDefault();
@@ -257,7 +266,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
            * Checks if deleting last single chip, to focus input afterwards
            * Else check if its not the last chip of the list to focus the next one.
            */
-          if (index === (this._totalChips - 1) && index === 0) {
+          if (index === (this._totalChips - 1) && index === 0 && this.chipAddition) {
             this.focus();
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
@@ -267,20 +276,22 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         break;
       case LEFT_ARROW:
         /** Check to see if left arrow was pressed while focusing the first chip to focus input next */
-        if (index === 0) {
+        if (index === 0 && this.chipAddition) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case RIGHT_ARROW:
         /** Check to see if right arrow was pressed while focusing the last chip to focus input next */
-        if (index === (this._totalChips - 1)) {
+        if (index === (this._totalChips - 1) && this.chipAddition) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case ESCAPE:
+        if (this.chipAddition) {
         this.focus();
+        }
         break;
       default:
         // default
