@@ -20,7 +20,7 @@ Import the **[CovalentLayoutModule]** in your NgModule:
 import { CovalentLayoutModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentLayoutModule, // or CovalentCoreModule
+    CovalentLayoutModule,
     ...
   ],
   ...

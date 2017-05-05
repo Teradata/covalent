@@ -14,7 +14,9 @@ import { LayoutsModule } from './components/layouts/';
 import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { CovalentCoreModule } from '../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -35,7 +37,18 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     BrowserModule,
     HttpModule,
     JsonpModule,
-    CovalentCoreModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdMenuModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentExpansionPanelModule,
+    CovalentNotificationsModule,
+    CovalentMenuModule,
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,

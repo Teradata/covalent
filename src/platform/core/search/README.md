@@ -60,7 +60,7 @@ Import the [CovalentSearchModule] in your NgModule:
 import { CovalentSearchModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentSearchModule, // or CovalentCoreModule (included inside of it)
+    CovalentSearchModule,
     ...
   ],
   ...
