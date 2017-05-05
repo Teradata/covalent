@@ -26,7 +26,11 @@ export class TdMarkdownComponent implements AfterViewInit {
     this._loadContent(this._content);
   }
 
-  @Output() contentReady: EventEmitter<{}> = new EventEmitter();
+  /**
+   * contentReady?: function
+   * Event emitted after the markdown content rendering is finished.
+   */
+  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
@@ -48,7 +52,7 @@ export class TdMarkdownComponent implements AfterViewInit {
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
-    this.contentReady.emit();
+    this.onContentReady.emit();
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {
