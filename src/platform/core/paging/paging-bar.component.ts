@@ -24,6 +24,13 @@ export class TdPagingBarComponent implements OnInit {
   private _fromRow: number = 1;
   private _toRow: number = 1;
   private _initialized: boolean = false;
+  private _pageLinks: number[] = [];
+  private _pageLinkCount: number = 0;
+  private _id: string;
+  // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
+  private _hitEnd: boolean = false;
+    // special case when 2 pageLinks, detect when hit start of pages so can lead in correct direction
+  private _hitStart: boolean = false;
 
   /**
    * pageSizeAll?: boolean
@@ -48,6 +55,19 @@ export class TdPagingBarComponent implements OnInit {
    * Sets starting page for the paging bar. Defaults to '1'
    */
   @Input('initialPage') initialPage: number = 1;
+
+  /**
+   * pageLinkCount?: number
+   * Amount of page jump to links for the paging bar. Defaults to '0'
+   */
+  @Input('pageLinkCount')
+  set pageLinkCount(pageLinkCount: number) {
+    this._pageLinkCount = pageLinkCount;
+    this._calculatePageLinks();
+  }
+  get pageLinkCount(): number {
+    return this._pageLinkCount;
+  }
 
   /**
    * pageSizes?: number[]
@@ -91,9 +111,18 @@ export class TdPagingBarComponent implements OnInit {
   set total(total: number) {
     this._total = total;
     this._calculateRows();
+    this._calculatePageLinks();
   }
   get total(): number {
     return this._total;
+  }
+
+  /**
+   * pageLinks: number[]
+   * Returns the pageLinks in an array
+   */
+  get pageLinks(): number[] {
+    return this._pageLinks;
   }
 
   /**
@@ -121,6 +150,14 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   /**
+   * id: string
+   * Returns the guid id for this paginator
+   */
+  get id(): string {
+    return this._id;
+  }
+
+  /**
    * change?: function
    * Method to be executed when page size changes or any button is clicked in the paging bar.
    * Emits an [IPageChangeEvent] implemented object.
@@ -134,11 +171,14 @@ export class TdPagingBarComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {}
+  constructor(@Optional() private _dir: Dir) {
+    this._id = this.guid();
+  }
 
   ngOnInit(): void {
     this._page = this.initialPage;
     this._calculateRows();
+    this._calculatePageLinks();
     this._initialized = true;
   }
 
@@ -201,8 +241,54 @@ export class TdPagingBarComponent implements OnInit {
     this._toRow = this._total > top ? top : this._total;
   }
 
+  /**
+   * _calculatePageLinks?: function
+   * Calculates the page links that should be shown to the user based on the current state of the paginator
+   */
+  private _calculatePageLinks(): void {
+    // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
+    if (this.isMaxPage()) {
+      this._hitEnd = true;
+      this._hitStart = false;
+    }
+    // special case when 2 pageLinks, detect when hit start of pages so can lead in correct direction
+    if (this.isMinPage()) {
+      this._hitEnd = false;
+      this._hitStart = true;
+    }
+    // If the pageLinkCount goes above max possible pages based on perpage setting then reset it to maxPage
+    let actualPageLinkCount: number = this.pageLinkCount;
+    if (this.pageLinkCount > this.maxPage) {
+      actualPageLinkCount = this.maxPage;
+    }
+    // reset the pageLinks array
+    this._pageLinks = [];
+    // fill in the array with the pageLinks based on the current selected page
+    let middlePageLinks: number = Math.floor(actualPageLinkCount / 2);
+    for (let x: number = 0; x < actualPageLinkCount; x++) {
+      // don't go past the maxPage in the pageLinks
+      // have to handle even and odd pageLinkCounts differently so can still lead to the next numbers
+      if ((actualPageLinkCount % 2 === 0 && (this.page + middlePageLinks > this.maxPage)) ||
+          (actualPageLinkCount % 2 !== 0 && (this.page + middlePageLinks >= this.maxPage))) {
+        this._pageLinks[x] = this.maxPage - (actualPageLinkCount - (x + 1));
+      // if the selected page is after the middle then set that page as middle and get the correct balance on left and right
+      // special handling when there are only 2 pageLinks to just drop to next if block so can lead to next numbers when moving to right
+      // when moving to the left then go into this block
+      } else if ((actualPageLinkCount > 2 || actualPageLinkCount <= 2 && this._hitEnd) && (this.page - middlePageLinks) > 0) {
+        this._pageLinks[x] = (this.page - middlePageLinks) + x;
+      // if the selected page is before the middle then set the pages based on the x index leading up to and after selected page
+      } else if ((this.page - middlePageLinks) <= 0) {
+        this._pageLinks[x] = x + 1;
+      // other wise just set the array in order starting from the selected page
+      } else {
+        this._pageLinks[x] = this.page + x;
+      }
+    }
+  }
+
   private _handleOnChange(): void {
     this._calculateRows();
+    this._calculatePageLinks();
     let event: IPageChangeEvent = {
       page: this._page,
       maxPage: this.maxPage,
@@ -212,6 +298,18 @@ export class TdPagingBarComponent implements OnInit {
       toRow: this._toRow,
     };
     this.onChange.emit(event);
+  }
+
+  /**
+   * guid?: function
+   * Returns RFC4122 random ("version 4") GUIDs
+   */
+  private guid(): string {
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
+  }
+
+  private s4(): string {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
 
 }
