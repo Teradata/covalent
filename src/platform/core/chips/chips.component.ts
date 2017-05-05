@@ -32,6 +32,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _length: number = 0;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
+  private _chipAddition: boolean = true;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -86,11 +87,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   @Input('readOnly')
   set readOnly(readOnly: boolean) {
     this._readOnly = readOnly;
-    if (readOnly) {
-      this.inputControl.disable();
-    } else {
-      this.inputControl.enable();
-    }
+    this._toggleInput();
   }
   get readOnly(): boolean {
     return this._readOnly;
@@ -99,8 +96,16 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   /**
    * chipAddition?: boolean
    * Disables the ability to add chips. If it doesn't exist chip addition defaults to true.
+   * When setting readOnly as true, this will be overriden.
    */
-  @Input('chipAddition') chipAddition: boolean = true;
+  @Input('chipAddition')
+  set chipAddition(chipAddition: boolean) {
+    this._chipAddition = chipAddition;
+    this._toggleInput();
+  }
+  get chipAddition(): boolean {
+    return this._chipAddition && !this.readOnly;
+  }
 
   /**
    * placeholder?: string
@@ -235,7 +240,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case DELETE:
       case BACKSPACE:
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
-        
         if (!this._inputChild.value) {
           this._focusLastChip();
           event.preventDefault();
@@ -351,9 +355,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this._focusChip(0);
   }
 
-  /** MEthod to focus last chip */
+  /** Method to focus last chip */
   private _focusLastChip(): void {
     this._focusChip(this._totalChips - 1);
   }
 
+  /**
+   * Method to toggle the disable state of input
+   * Checks if not in readOnly state and if chipAddition is set to 'true'
+   */
+  private _toggleInput(): void {
+    if (this.chipAddition) {
+      this.inputControl.enable();
+    } else {
+      this.inputControl.disable();
+    }
+  }
 }
