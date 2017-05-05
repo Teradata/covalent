@@ -97,10 +97,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
   /**
-   * allowAdd?: boolean
-   * Disables the ability to add chips. If it doesn't exist allowAdd defaults to true.
+   * chipAddition?: boolean
+   * Disables the ability to add chips. If it doesn't exist chip addition defaults to true.
    */
-  @Input('allowAdd') allowAdd: boolean = true;
+  @Input('chipAddition') chipAddition: boolean = true;
 
   /**
    * placeholder?: string
@@ -221,7 +221,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Programmatically focus the input. Since its the component entry point
    */
   focus(): void {
-    if (this.allowAdd) {
+    if (this.chipAddition) {
       this._inputChild.focus();
     }
   }
@@ -266,7 +266,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
            * Checks if deleting last single chip, to focus input afterwards
            * Else check if its not the last chip of the list to focus the next one.
            */
-          if (index === (this._totalChips - 1) && index === 0 && this.allowAdd) {
+          if (index === (this._totalChips - 1) && index === 0 && this.chipAddition) {
             this.focus();
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
@@ -276,20 +276,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         break;
       case LEFT_ARROW:
         /** Check to see if left arrow was pressed while focusing the first chip to focus input next */
-        if (index === 0 && this.allowAdd) {
+        if (index === 0 && this.chipAddition) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case RIGHT_ARROW:
         /** Check to see if right arrow was pressed while focusing the last chip to focus input next */
-        if (index === (this._totalChips - 1) && this.allowAdd) {
+        if (index === (this._totalChips - 1) && this.chipAddition) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case ESCAPE:
-        if (this.allowAdd) {
+        if (this.chipAddition) {
         this.focus();
         }
         break;
