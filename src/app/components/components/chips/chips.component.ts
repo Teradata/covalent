@@ -65,11 +65,4 @@ export class ChipsDemoComponent {
 
   itemsRequireMatch: string[] = this.items.slice(0, 6);
 
-  toggleReadOnly(): void {
-    this.readOnly = !this.readOnly;
-  }
-  toggleChipAddition(): void {
-    this.chipAddition = !this.chipAddition;
-  }
-
 }

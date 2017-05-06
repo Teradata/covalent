@@ -9,22 +9,20 @@
         </md-icon>
       </md-basic-chip>
     </ng-template>
-    <div *ngIf="chipAddition">
-      <md-input-container floatPlaceholder="never"
-                          [style.width.px]="readOnly ? 0 : null"
-                          [color]="matches ? 'primary' : 'warn'">
-        <input mdInput
-                flex="100" 
-                #input
-                [mdAutocomplete]="autocomplete"
-                [formControl]="inputControl"
-                [placeholder]="readOnly? '' : placeholder"
-                (keydown)="_inputKeydown($event)"
-                (keyup.enter)="addChip(input.value)"
-                (focus)="handleFocus()"
-                (blur)="handleBlur()">
-      </md-input-container>
-    </div>
+    <md-input-container floatPlaceholder="never"
+                        [style.width.px]="chipAddition ? null : 0"
+                        [color]="matches ? 'primary' : 'warn'">
+      <input mdInput
+              flex="100" 
+              #input
+              [mdAutocomplete]="autocomplete"
+              [formControl]="inputControl"
+              [placeholder]="chipAddition? placeholder : ''"
+              (keydown)="_inputKeydown($event)"
+              (keyup.enter)="addChip(input.value)"
+              (focus)="handleFocus()"
+              (blur)="handleBlur()">
+    </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete">
       <ng-template let-item ngFor [ngForOf]="filteredItems | async">
         <md-option (click)="addChip(item)" [value]="item">{{item}}</md-option>
