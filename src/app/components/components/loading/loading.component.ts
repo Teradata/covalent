@@ -65,6 +65,17 @@ export class LoadingDemoComponent implements OnInit {
 
   overlayStarSyntax: boolean = false;
 
+  overlayDemo: any = {
+    name: '',
+    description: '',
+  };
+
+  replaceDemo: any = {
+    name: '',
+    select: '',
+    description: '',
+  };
+
   constructor(private _loadingService: TdLoadingService) {
     this._loadingService.create({
       name: 'configFullscreenDemo',
