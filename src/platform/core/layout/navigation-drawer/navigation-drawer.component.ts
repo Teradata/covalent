@@ -83,7 +83,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * option to set the combined logo, icon, toolbar title route
    * defaults to '/'
    */
-  @Input('navigationRoute') navigationRoute: string = '/';
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * backgroundUrl?: SafeResourceUrl
