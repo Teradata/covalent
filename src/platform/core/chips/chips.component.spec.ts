@@ -3,7 +3,7 @@ import {
   async,
   ComponentFixture,
 } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, DebugElement } from '@angular/core';
 import {
   FormControl, FormsModule, ReactiveFormsModule,
@@ -21,7 +21,7 @@ describe('Component: Chips', () => {
         CovalentChipsModule,
         FormsModule,
         ReactiveFormsModule,
-        NoopAnimationsModule,
+        BrowserAnimationsModule,
       ],
       declarations: [
         TdChipsBasicTestComponent,
