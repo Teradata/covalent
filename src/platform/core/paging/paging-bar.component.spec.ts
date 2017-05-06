@@ -12,7 +12,7 @@ import { CovalentPagingModule } from './paging.module';
 import { NgModule, DebugElement } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('Component: TdPagingBarComponent', () => {
+describe('Component: PagingBar', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
