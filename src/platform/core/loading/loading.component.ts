@@ -28,7 +28,6 @@ export enum LoadingStyle {
 import { TdFadeInOutAnimation } from '../common/common.module';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
