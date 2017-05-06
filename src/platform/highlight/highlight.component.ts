@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
@@ -36,6 +36,12 @@ export class TdHighlightComponent implements AfterViewInit {
    */
   @Input('lang') language: string = 'typescript';
 
+  /**
+   * contentReady?: function
+   * Event emitted after the highlight content rendering is finished.
+   */
+  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
@@ -58,6 +64,7 @@ export class TdHighlightComponent implements AfterViewInit {
       // Parse html string into actual HTML elements.
       let preElement: HTMLPreElement = this._elementFromString(this._render(code));
     }
+    this.onContentReady.emit();
   }
 
   private _elementFromString(codeStr: string): HTMLPreElement {
