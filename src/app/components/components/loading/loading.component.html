@@ -11,10 +11,10 @@
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
           <div layout="column" flex>
             <md-input-container flex>
-              <input mdInput placeholder="Name"/>
+              <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
             </md-input-container>
             <md-input-container flex>
-              <textarea mdInput placeholder="Description" rows="4"></textarea>
+              <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
           </div>
         </div>
@@ -30,10 +30,10 @@
             <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
               <div layout="column" flex>
                 <md-input-container flex>
-                  <input mdInput placeholder="Name"/>
+                  <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
                 </md-input-container>
                 <md-input-container flex>
-                  <textarea mdInput placeholder="Description" rows="4"></textarea>
+                  <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -49,6 +49,11 @@
             ...
             export class Demo implements OnInit {
               overlayStarSyntax: boolean = false;
+
+              overlayDemo: any = {
+                name: '',
+                description: '',
+              };
 
               constructor(private _loadingService: TdLoadingService) {}
 
@@ -81,14 +86,14 @@
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
           <div layout="column" flex>
             <md-input-container flex>
-              <input mdInput placeholder="Name"/>
+              <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
             </md-input-container>
-            <md-select placeholder="Select">
-              <md-option>Demo 1</md-option>
-              <md-option>Demo 2</md-option>
+            <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
+              <md-option [value]="1">Some type</md-option>
+              <md-option [value]="2">Another type</md-option>
             </md-select>
             <md-input-container flex>
-              <textarea mdInput placeholder="Description" rows="4"></textarea>
+              <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
           </div>
         </ng-template>
@@ -104,14 +109,14 @@
             <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
               <div layout="column" flex>
                 <md-input-container flex>
-                  <input mdInput placeholder="Name"/>
+                  <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
                 </md-input-container>
-                <md-select placeholder="Select">
-                  <md-option>Demo 1</md-option>
-                  <md-option>Demo 2</md-option>
+                <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
+                  <md-option [value]="1">Some type</md-option>
+                  <md-option [value]="2">Another type</md-option>
                 </md-select>
                 <md-input-container flex>
-                  <textarea mdInput placeholder="Description" rows="4"></textarea>
+                  <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>
               </div>
             </ng-template>
@@ -126,6 +131,12 @@
             import { TdLoadingService } from '@covalent/core';
             ...
             export class Demo {
+              replaceDemo: any = {
+                name: '',
+                select: '',
+                description: '',
+              };
+
               constructor(private _loadingService: TdLoadingService) {}
 
               toggleReplaceTemplateSyntax(): void {
