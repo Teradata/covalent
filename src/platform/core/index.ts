@@ -4,9 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 /**
  * COMMON
  */
