@@ -13,7 +13,7 @@ import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('Component: TdDataTableComponent', () => {
+describe('Component: DataTable', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,6 +23,7 @@ describe('Component: TdDataTableComponent', () => {
       ],
       declarations: [
         TestFilterColumnComponent,
+        TdDataTableSelectableTestComponent,
       ],
       providers: [
         TdDataTableService,
@@ -43,47 +44,64 @@ describe('Component: TdDataTableComponent', () => {
   });
 
   it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
-      inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
-        let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
+    inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
+      let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
 
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
+        expect(columns[1].filter).toBe(false);
+
+        let newData: any[] = component.data;
+        // backwards compatability test
+        newData = tdDataTableService.filterData(newData, '1452-2', true);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-            let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
-            expect(columns[1].filter).toBe(false);
+          expect(newData.length).toBe(1);
 
-            let newData: any[] = component.data;
-            // backwards compatability test
-            newData = tdDataTableService.filterData(newData, '1452-2', true);
+          let nonSearchAbleColumns: string[] = component.columns
+          .filter((column: ITdDataTableColumn) => {
+            return (typeof column.filter !== undefined && column.filter === false);
+          }).map((column: ITdDataTableColumn) => {
+            return column.name;
+          });
+          newData = component.data;
+          newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(newData.length).toBe(0);
+
             fixture.detectChanges();
             fixture.whenStable().then(() => {
+              newData = component.data;
+              newData = tdDataTableService.filterData(newData, 'Pork', true, []);
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
                 expect(newData.length).toBe(1);
-
-                let nonSearchAbleColumns: string[] = component.columns
-                .filter((column: ITdDataTableColumn) => {
-                  return (typeof column.filter !== undefined && column.filter === false);
-                }).map((column: ITdDataTableColumn) => {
-                  return column.name;
-                });
-                newData = component.data;
-                newData = tdDataTableService.filterData(newData, 'Pork', true, nonSearchAbleColumns);
-                fixture.detectChanges();
-                fixture.whenStable().then(() => {
-                   expect(newData.length).toBe(0);
-
-                   fixture.detectChanges();
-                   fixture.whenStable().then(() => {
-                       newData = component.data;
-                       newData = tdDataTableService.filterData(newData, 'Pork', true, []);
-                       fixture.detectChanges();
-                       fixture.whenStable().then(() => {
-                            expect(newData.length).toBe(1);
-                            done();
-                        });
-                    });
-                });
+                done();
+              });
             });
+          });
         });
+      });
+    })();
+  });
+
+  it('should not set the data input and not fail when selectable and multiple', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+      let element: DebugElement = fixture.debugElement;
+      let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+      
+      component.selectable = true;
+      component.multiple = true;
+
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        // if it finishes in means it didnt fail
+        done();
+      });
     })();
   });
 });
@@ -108,4 +126,20 @@ class TestFilterColumnComponent {
   ];
 
   filteredData: any[] = this.data;
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        [selectable]="selectable"
+        [multiple]="multiple">
+    </td-data-table>`,
+})
+class TdDataTableSelectableTestComponent {
+  data: any;
+  columns: any;
+  selectable: boolean = false;
+  multiple: boolean = false;
 }
