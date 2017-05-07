@@ -1,5 +1,5 @@
 <td-layout #layout>
-  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata">
+  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/">
     <md-nav-list>
       <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
     </md-nav-list>
