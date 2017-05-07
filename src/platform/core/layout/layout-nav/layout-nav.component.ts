@@ -1,5 +1,5 @@
 import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { TdLayoutComponent } from '../layout.component';
 
 @Component({
@@ -45,7 +45,7 @@ export class TdLayoutNavComponent {
    * option to set the combined logo, icon, toolbar title route
    * defaults to '/'
    */
-  @Input('navigationRoute') navigationRoute: string;
+  @Input('navigationRoute') navigationRoute: string = '/';
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
@@ -54,8 +54,21 @@ export class TdLayoutNavComponent {
     return !!this._layout;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
-              private _layout: TdLayoutComponent) { }
+  /**
+   * Checks if router was injected.
+   */
+  get routerEnabled(): boolean {
+    return !!this._router;
+  }
+
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+              @Optional() private _router: Router) {}
+
+  handleNavigationClick(): void {
+    if (this.routerEnabled) {
+      this._router.navigateByUrl(this.navigationRoute);
+    }
+  }
 
   /**
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].

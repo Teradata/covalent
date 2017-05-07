@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild, forwardRef, Optional, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
@@ -80,7 +81,7 @@ export class TdLayoutNavListComponent {
    * option to set the combined logo, icon, toolbar title route
    * defaults to '/'
    */
-  @Input('navigationRoute') navigationRoute: string;
+  @Input('navigationRoute') navigationRoute: string = '/';
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
@@ -97,8 +98,21 @@ export class TdLayoutNavListComponent {
     return this.mode === 'side';
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
-              private _layout: TdLayoutComponent) { }
+  /**
+   * Checks if router was injected.
+   */
+  get routerEnabled(): boolean {
+    return !!this._router;
+  }
+
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+              @Optional() private _router: Router) {}
+
+  handleNavigationClick(): void {
+    if (this.routerEnabled) {
+      this._router.navigateByUrl(this.navigationRoute);
+    }
+  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
