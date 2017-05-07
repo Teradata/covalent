@@ -9,7 +9,7 @@
         <h3 class="md-title">Single file selection or drop:</h3>
         <p>Select Event: {{fileSelectMsg}}</p>
         <p>Upload Event: {{fileUploadMsg}}</p>
-        <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+        <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" [disabled]="disabled">
           <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
           <ng-template td-file-input-label>
             <md-icon>attach_file</md-icon><span>Choose a file...</span>
@@ -29,7 +29,7 @@
           <![CDATA[
             <p>Select Event: { {fileSelectMsg} }</p>
             <p>Upload Event: { {fileUploadMsg} }</p>
-            <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+            <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" [disabled]="disabled">
               <md-icon>file_upload</md-icon><span>{ { singleFileUpload.files?.name } }</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose a file...</span>
@@ -49,11 +49,16 @@
 
               selectEvent(file: File): void {
                 this.fileSelectMsg = file.name;
-              };
+              }
 
               uploadEvent(file: File): void {
                 this.fileUploadMsg = file.name;
-              };
+              }
+
+              cancelEvent(): void {
+                this.fileSelectMsg = 'No file selected yet.';
+                this.fileUploadMsg = 'No file uploaded yet.';
+              }
 
               toggleDisabled(): void {
                 this.disabled = !this.disabled;
@@ -75,7 +80,7 @@
         <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
         <p>Select Event: {{fileSelectMultipleMsg}}</p>
         <p>Upload Event: {{fileUploadMultipleMsg}}</p>
-        <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+        <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                         accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
           <md-icon>file_upload</md-icon>
           <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
@@ -97,7 +102,7 @@
           <![CDATA[
             <p>Select Event: { {fileSelectMultipleMsg} }</p>
             <p>Upload Event: { {fileUploadMultipleMsg} }</p>
-            <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+            <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                             accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
               <md-icon>file_upload</md-icon>
               <span>
@@ -138,6 +143,11 @@
                 } else {
                   this.fileUploadMultipleMsg = files.name;
                 }
+              }
+
+              cancelMultipleEvent(): void {
+                this.fileSelectMultipleMsg = 'No file(s) selected yet.';
+                this.fileUploadMultipleMsg = 'No file(s) uploaded yet.';
               }
             }
           ]]>

@@ -83,6 +83,12 @@ export class TdFileUploadComponent {
    */
   @Output('upload') onUpload: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
+  /**
+   * cancel?: function
+   * Event emitted when cancel button is clicked.
+   */
+  @Output('cancel') onCancel: EventEmitter<void> = new EventEmitter<void>();
+
   constructor(private _changeDetectorRef: ChangeDetectorRef) {
 
   }
@@ -111,6 +117,7 @@ export class TdFileUploadComponent {
    */
   cancel(): void {
     this.files = undefined;
+    this.onCancel.emit(undefined);
     this._changeDetectorRef.markForCheck();
   }
 }
