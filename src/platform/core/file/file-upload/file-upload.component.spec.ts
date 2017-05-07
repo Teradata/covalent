@@ -116,16 +116,48 @@ describe('Component: FileUpload', () => {
     async(inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+
+      let eventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
+
       component.multiple = false;
       component.disabled = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
+        expect(eventSpy.calls.count()).toBe(0);
+        fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.handleSelect([{}]);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(eventSpy.calls.count()).toBe(1);
+        });
+      });
+  })));
+
+  it('should mimic file selection, upload click and throw (upload) event',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
+      let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+
+      let eventSpy: jasmine.Spy = spyOn(component, 'uploadEvent');
+
+      component.multiple = false;
+      component.disabled = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
+        expect(eventSpy.calls.count()).toBe(0);
         fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.handleSelect([{}]);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect(component.selectFiles).toBeTruthy();
+          expect(eventSpy.calls.count()).toBe(0);
+          fixture.debugElement.query(By.css('.td-file-upload')).triggerEventHandler('click', new Event('click'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(eventSpy.calls.count()).toBe(1);
+          });
         });
       });
   })));
@@ -134,6 +166,9 @@ describe('Component: FileUpload', () => {
     async(inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
+
+      let eventSpy: jasmine.Spy = spyOn(component, 'cancelEvent');
+
       component.multiple = false;
       component.disabled = false;
       fixture.detectChanges();
@@ -144,10 +179,11 @@ describe('Component: FileUpload', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect(component.selectFiles).toBeTruthy();
+          expect(eventSpy.calls.count()).toBe(0);
           fixture.debugElement.query(By.css('.td-file-upload-cancel')).triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(component.selectFiles).toBeFalsy();
+            expect(eventSpy.calls.count()).toBe(1);
           });
         });
       });
@@ -158,8 +194,8 @@ describe('Component: FileUpload', () => {
 @Component({
   selector: 'td-file-upload-basic-test',
   template: `
-  <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectFiles = $event"
-                  (upload)="files = $event" (cancel)="selectFiles = files = undefined">
+  <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectEvent($event)"
+                  (upload)="uploadEvent($event)" (cancel)="cancelEvent()">
     <span>{{ fileUpload.files?.name }}</span>
     <ng-template td-file-input-label>
       <span>Choose a file...</span>
@@ -173,4 +209,17 @@ class TdFileUploadBasicTestComponent {
   disabled: boolean;
   files: File | FileList;
   selectFiles: File | FileList;
+
+  selectEvent(files: File | FileList): void {
+    this.selectFiles = files;
+  }
+
+  uploadEvent(files: File | FileList): void {
+    this.files = files;
+  }
+
+  cancelEvent(): void {
+    this.selectFiles = undefined;
+    this.files = undefined;
+  }
 }
