@@ -81,10 +81,9 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   /**
    * navigationRoute?: string
    *
-   * option to set the combined logo, icon, toolbar title route
-   * defaults to '/'
+   * option to set the combined route for the icon, logo, and sidenavTitle.
    */
-  @Input('navigationRoute') navigationRoute: string = '/';
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * backgroundUrl?: SafeResourceUrl
@@ -125,7 +124,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * Checks if router was injected.
    */
   get routerEnabled(): boolean {
-    return !!this._router;
+    return !!this._router && !!this.navigationRoute;
   }
 
   constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,

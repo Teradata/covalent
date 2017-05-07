@@ -42,10 +42,9 @@ export class TdLayoutNavComponent {
   /**
    * navigationRoute?: string
    *
-   * option to set the combined logo, icon, toolbar title route
-   * defaults to '/'
+   * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input('navigationRoute') navigationRoute: string = '/';
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
@@ -58,7 +57,7 @@ export class TdLayoutNavComponent {
    * Checks if router was injected.
    */
   get routerEnabled(): boolean {
-    return !!this._router;
+    return !!this._router && !!this.navigationRoute;
   }
 
   constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
