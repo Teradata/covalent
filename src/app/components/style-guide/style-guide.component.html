@@ -1,6 +1,7 @@
 <td-layout-nav-list #navList
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
+                    navigationRoute="/"
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">

@@ -20,6 +20,11 @@ export class FileUploadDemoComponent {
   fileUploadMultipleMsg: string = 'No file(s) uploaded yet.';
   disabled: boolean = false;
 
+  cancelEvent(): void {
+    this.fileSelectMsg = 'No file selected yet.';
+    this.fileUploadMsg = 'No file uploaded yet.';
+  }
+
   selectEvent(file: File): void {
     this.fileSelectMsg = file.name;
   }
@@ -50,6 +55,11 @@ export class FileUploadDemoComponent {
     } else {
       this.fileUploadMultipleMsg = files.name;
     }
+  }
+
+  cancelMultipleEvent(): void {
+    this.fileSelectMultipleMsg = 'No file(s) selected yet.';
+    this.fileUploadMultipleMsg = 'No file(s) uploaded yet.';
   }
 
   toggleDisabled(): void {

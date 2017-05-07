@@ -1,4 +1,4 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
   <div class="md-padding">
     <md-card>
       <md-card-title>Nav View</md-card-title>
@@ -21,7 +21,7 @@
         <div layout-gt-md="row">
           <div flex-gt-md="50">
             <td-steps>
-              <td-step label="td-layout-nav" sublabel="the main content area of the layout">
+              <td-step label="td-layout-nav" sublabel="the main content area of the layout" active="true">
                 <md-list>
                   <md-list-item>
                     <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
@@ -45,7 +45,7 @@
                   <md-divider></md-divider>
                   <md-list-item>
                     <h3 md-line><code>navigationRoute?: string</code></h3>
-                    <p md-line>Route on logo/icon/title (defaults to '/')</p>
+                    <p md-line>Optional route navigation on logo/icon/title</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
