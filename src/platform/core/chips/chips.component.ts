@@ -5,6 +5,7 @@ import { MdChip, MdInputDirective, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACK
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/debounceTime';
 
 const noop: any = () => {
   // empty method
@@ -32,6 +33,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _length: number = 0;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
+  private _chipAddition: boolean = true;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -86,11 +88,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   @Input('readOnly')
   set readOnly(readOnly: boolean) {
     this._readOnly = readOnly;
-    if (readOnly) {
-      this.inputControl.disable();
-    } else {
-      this.inputControl.enable();
-    }
+    this._toggleInput();
   }
   get readOnly(): boolean {
     return this._readOnly;
@@ -99,8 +97,24 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   /**
    * chipAddition?: boolean
    * Disables the ability to add chips. If it doesn't exist chip addition defaults to true.
+   * When setting readOnly as true, this will be overriden.
    */
-  @Input('chipAddition') chipAddition: boolean = true;
+  @Input('chipAddition')
+  set chipAddition(chipAddition: boolean) {
+    this._chipAddition = chipAddition;
+    this._toggleInput();
+  }
+  get chipAddition(): boolean {
+    return this._chipAddition;
+  }
+
+  /**
+   * Checks if not in readOnly state and if chipAddition is set to 'true'
+   * States if a chip can be added and if the input is available
+   */
+  get canAddChip(): boolean {
+    return this.chipAddition && !this.readOnly;
+  }
 
   /**
    * placeholder?: string
@@ -221,7 +235,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Programmatically focus the input. Since its the component entry point
    */
   focus(): void {
-    if (this.chipAddition) {
+    if (this.canAddChip) {
       this._inputChild.focus();
     }
   }
@@ -235,7 +249,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case DELETE:
       case BACKSPACE:
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
-        
         if (!this._inputChild.value) {
           this._focusLastChip();
           event.preventDefault();
@@ -266,7 +279,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
            * Checks if deleting last single chip, to focus input afterwards
            * Else check if its not the last chip of the list to focus the next one.
            */
-          if (index === (this._totalChips - 1) && index === 0 && this.chipAddition) {
+          if (index === (this._totalChips - 1) && index === 0) {
             this.focus();
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
@@ -275,23 +288,27 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         }
         break;
       case LEFT_ARROW:
-        /** Check to see if left arrow was pressed while focusing the first chip to focus input next */
-        if (index === 0 && this.chipAddition) {
+        /**
+         * Check to see if left arrow was pressed while focusing the first chip to focus input next
+         * Also check if input should be focused
+         */
+        if (index === 0 && this.canAddChip) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case RIGHT_ARROW:
-        /** Check to see if right arrow was pressed while focusing the last chip to focus input next */
-        if (index === (this._totalChips - 1) && this.chipAddition) {
+        /**
+         * Check to see if right arrow was pressed while focusing the last chip to focus input next
+         * Also check if input should be focused
+         */
+        if (index === (this._totalChips - 1) && this.canAddChip) {
           this.focus();
           event.stopPropagation();
         }
         break;
       case ESCAPE:
-        if (this.chipAddition) {
         this.focus();
-        }
         break;
       default:
         // default
@@ -351,9 +368,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this._focusChip(0);
   }
 
-  /** MEthod to focus last chip */
+  /** Method to focus last chip */
   private _focusLastChip(): void {
     this._focusChip(this._totalChips - 1);
   }
 
+  /**
+   * Method to toggle the disable state of input
+   * Checks if not in readOnly state and if chipAddition is set to 'true'
+   */
+  private _toggleInput(): void {
+    if (this.canAddChip) {
+      this.inputControl.enable();
+    } else {
+      this.inputControl.disable();
+    }
+  }
 }
