@@ -17,6 +17,7 @@
         [active]="(column.sortable || isSortable) && column === sortByColumn"
         [sortable]="column.sortable ||  isSortable"
         [sortOrder]="sortOrderEnum"
+        [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
@@ -31,6 +32,7 @@
       </td>
       <td td-data-table-cell
           [numeric]="column.numeric"
+          [hidden]="column.hidden"
           *ngFor="let column of columns">
         <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
         <ng-template
