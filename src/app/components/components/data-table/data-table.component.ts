@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdDataTableSortingOrder, TdDataTableService,
+import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
@@ -91,6 +91,10 @@ export class DataTableDemoComponent implements OnInit {
     name: 'sortOrder',
     type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
   }, {
+    description: `Whether the column should be hidden or not. Defaults to 'false'`,
+    name: 'hidden',
+    type: `boolean`,
+  }, {
     description: `When set to false this column will be excluded from searches using the filterData method.`,
     name: 'filter?',
     type: 'boolean',
@@ -126,8 +130,8 @@ export class DataTableDemoComponent implements OnInit {
 
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
-    { name: 'type', label: 'Type', filter: true  },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true},
+    { name: 'type', label: 'Type', filter: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -315,13 +319,14 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    let nonSearchAbleColumns: string[] = this.columns
+    let excludedColumns: string[] = this.columns
     .filter((column: ITdDataTableColumn) => {
-      return (typeof column.filter !== undefined && column.filter === false);
+      return ((column.filter === undefined && column.hidden === true) || 
+              (column.filter !== undefined && column.filter === false));
     }).map((column: ITdDataTableColumn) => {
       return column.name;
     });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, nonSearchAbleColumns);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
