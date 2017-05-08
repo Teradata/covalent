@@ -62,7 +62,7 @@ describe('Component: TdDataTableComponent', () => {
 
                 let nonSearchAbleColumns: string[] = component.columns
                 .filter((column: ITdDataTableColumn) => {
-                  return (typeof column.hidden !== undefined && column.hidden === true);
+                  return column.hidden === true;
                 }).map((column: ITdDataTableColumn) => {
                   return column.name;
                 });
@@ -84,7 +84,7 @@ describe('Component: TdDataTableComponent', () => {
 
                        nonSearchAbleColumns = component.columns
                        .filter((column: ITdDataTableColumn) => {
-                        return (typeof column.hidden !== undefined && column.hidden === true);
+                        return column.hidden === true;
                        }).map((column: ITdDataTableColumn) => {
                          return column.name;
                        });
