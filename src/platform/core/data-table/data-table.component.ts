@@ -309,10 +309,13 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           this._value.push(row);
         }
       });
+      this._allSelected = true;
+      this._indeterminate = true;
     } else {
       this.clearModel();
+      this._allSelected = false;
+      this._indeterminate = false;
     }
-    this._calculateCheckboxState();
     this.onSelectAll.emit({rows: this._value, selected: checked});
   }
 
