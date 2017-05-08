@@ -8,6 +8,7 @@ import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component';
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
@@ -104,6 +105,23 @@ describe('Component: DataTable', () => {
       });
     })();
   });
+
+  it('should click on a row and see the rowClick Event',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
+      let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
+
+      let eventSpy: jasmine.Spy = spyOn(fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance, 'clickRow');
+
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(eventSpy).toHaveBeenCalled();
+        });
+      });
+  })));
 });
 
 @Component({

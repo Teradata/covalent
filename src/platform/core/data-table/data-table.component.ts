@@ -41,6 +41,10 @@ export interface ITdDataTableSelectAllEvent {
   selected: boolean;
 }
 
+export interface ITdDataTableClickEvent {
+  row: any;
+}
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
@@ -230,6 +234,13 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   /**
+   * onRowClick?: function
+   * Event emitted when a row is clicked.
+   * Emits an [ITdDataTableClickEvent] implemented object.
+   */
+  @Output('rowClick') onRowClick: EventEmitter<ITdDataTableClickEvent> = new EventEmitter<ITdDataTableClickEvent>();
+
+  /**
    * selectAll?: function
    * Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
    * Emits an [ITdDataTableSelectAllEvent] implemented object.
@@ -319,31 +330,40 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
-   * Selects or clears a row depending on 'checked' value
+   * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
    */
   select(row: any, checked: boolean, event: Event): void {
-    event.preventDefault();
-    // clears all the fields for the dataset
-    if (!this._multiple) {
-      this.clearModel();
-    }
+    if (this.isSelectable) {
+      event.preventDefault();
+      // clears all the fields for the dataset
+      if (!this._multiple) {
+        this.clearModel();
+      }
 
-    if (checked) {
-      this._value.push(row);
-    } else {
-      // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-      if (this.uniqueId) {
-        row = this._value.filter((val: any) => {
-          return val[this.uniqueId] === row[this.uniqueId];
-        })[0];
+      if (checked) {
+        this._value.push(row);
+      } else {
+        // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
+        if (this.uniqueId) {
+          row = this._value.filter((val: any) => {
+            return val[this.uniqueId] === row[this.uniqueId];
+          })[0];
+        }
+        let index: number = this._value.indexOf(row);
+        if (index > -1) {
+          this._value.splice(index, 1);
+        }
       }
-      let index: number = this._value.indexOf(row);
-      if (index > -1) {
-        this._value.splice(index, 1);
-      }
+      this.onRowSelect.emit({row: row, selected: checked});
+      this.onChange(this._value);
     }
-    this.onRowSelect.emit({row: row, selected: checked});
-    this.onChange(this._value);
+  }
+
+  /**
+   * emits the onRowClickEvent when a row is clicked
+   */
+  clickRow(row: any): void {
+    this.onRowClick.emit({row: row});
   }
 
   /**
