@@ -285,7 +285,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   areAllSelected(): boolean {
     const match: string =
-      this._data.find((d: any) => !this.isRowSelected(d));
+      this._data ? this._data.find((d: any) => !this.isRowSelected(d)) : true;
     return typeof match === 'undefined';
   }
 

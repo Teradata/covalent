@@ -39,8 +39,6 @@ table.td-data-table {
       width: $checkbox-size;
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {
-        top: 3px !important;        
-        left: 1px !important;
         width: 11px !important;
         height: 4px !important;
       }
