@@ -140,8 +140,8 @@ describe('Component: DataTable', () => {
 
   it('should click on a row and see the rowClick Event',
     async(inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TestFilterColumnComponent);
-      let component: TestFilterColumnComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
+      let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
 
       let eventSpy: jasmine.Spy = spyOn(fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance, 'clickRow');
 
