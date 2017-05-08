@@ -38,64 +38,44 @@ describe('Component: DataTable', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
       let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
       
-      component.columns = [
-        { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-        { name: 'item', label: 'Item name', hidden: false },
-        { name: 'price', label: 'Price (US$)', numeric: true },
-      ];
+      component.columns[1].hidden = false;
+      // backwards compatability test
+      expect(tdDataTableService.filterData(component.data, '1452-2', true).length).toBe(1);
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
-        expect(columns[1].hidden).toBe(false);
-
-        let newData: any[];
-        // backwards compatability test
-        newData = tdDataTableService.filterData(component.data, '1452-2', true);
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(newData.length).toBe(1);
-
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableColumnComponent)).length).toBe(3);
-          // check if there are no hidden columns
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableColumnComponent))
+        // check if there are no hidden columns
+        expect(fixture.debugElement.queryAll(By.directive(TdDataTableColumnComponent))
           .filter((col: DebugElement) => {
             return (<any>(<HTMLElement>col.nativeElement).attributes).hidden;
           }).length).toBe(0);
-
-          newData = tdDataTableService.filterData(component.data, 'Pork', true, component.columns
+        
+        // check how many rows would return that contain Pork if no hidden columns
+        expect(tdDataTableService.filterData(component.data, 'Pork', true, component.columns
           .filter((column: ITdDataTableColumn) => {
             return column.hidden === true;
           }).map((column: ITdDataTableColumn) => {
             return column.name;
-          }));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(newData.length).toBe(1);
+          })).length).toBe(1);
 
-            component.columns[1].hidden = true;
-            fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.refresh();
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              // check if there are hidden columns
-              expect(fixture.debugElement.queryAll(By.directive(TdDataTableColumnComponent))
-              .filter((col: DebugElement) => {
-                return (<any>(<HTMLElement>col.nativeElement).attributes).hidden;
-              }).length).toBe(1);
+        component.columns[1].hidden = true;
+        fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.refresh();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // check if there are hidden columns
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableColumnComponent))
+            .filter((col: DebugElement) => {
+              return (<any>(<HTMLElement>col.nativeElement).attributes).hidden;
+            }).length).toBe(1);
 
-              newData = tdDataTableService.filterData(component.data, 'Pork', true, component.columns
-              .filter((column: ITdDataTableColumn) => {
-                return column.hidden === true;
-              }).map((column: ITdDataTableColumn) => {
-                return column.name;
-              }));
-              fixture.detectChanges();
-              fixture.whenStable().then(() => {
-                expect(newData.length).toBe(0);
-                done();
-              });
-            });
-          });
+          // check how many rows would return that contain Pork if the column is hidden
+          expect(tdDataTableService.filterData(component.data, 'Pork', true, component.columns
+            .filter((column: ITdDataTableColumn) => {
+              return column.hidden === true;
+            }).map((column: ITdDataTableColumn) => {
+              return column.name;
+            })).length).toBe(0);
+          done();
         });
       });
     })();
@@ -106,50 +86,35 @@ describe('Component: DataTable', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
       let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
 
-      component.columns = [
-        { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-        { name: 'item', label: 'Item name', filter: false },
-        { name: 'price', label: 'Price (US$)', numeric: true },
-      ];
+      component.columns[1].filter = false;
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let columns: ITdDataTableColumn[] = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance.columns;
-        expect(columns[1].filter).toBe(false);
+        expect(component.columns[1].filter).toBe(false);
 
-        let newData: any[];
         // backwards compatability test
-        newData = tdDataTableService.filterData(component.data, '1452-2', true);
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          expect(newData.length).toBe(1);
+        expect(tdDataTableService.filterData(component.data, '1452-2', true).length).toBe(1);
 
-          newData = tdDataTableService.filterData(component.data, 'Pork', true, component.columns
+        // check how many rows would return that contain Pork if the second column has filter = false
+        expect(tdDataTableService.filterData(component.data, 'Pork', true, component.columns
           .filter((column: ITdDataTableColumn) => {
             return (typeof column.filter !== undefined && column.filter === false);
           }).map((column: ITdDataTableColumn) => {
             return column.name;
-          }));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(newData.length).toBe(0);
+          })).length).toBe(0);
 
-            columns[1].filter = true;
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              newData = tdDataTableService.filterData(component.data, 'Pork', true, component.columns
-              .filter((column: ITdDataTableColumn) => {
-                return (typeof column.filter !== undefined && column.filter === false);
-              }).map((column: ITdDataTableColumn) => {
-                return column.name;
-              }));
-              fixture.detectChanges();
-              fixture.whenStable().then(() => {
-                expect(newData.length).toBe(1);
-                done();
-              });
-            });
-          });
+        // set the second column as filtered
+        component.columns[1].filter = true;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // check how many rows would return that contain Pork if the seconds column has filter = true
+          expect(tdDataTableService.filterData(component.data, 'Pork', true, component.columns
+            .filter((column: ITdDataTableColumn) => {
+              return (typeof column.filter !== undefined && column.filter === false);
+            }).map((column: ITdDataTableColumn) => {
+              return column.name;
+            })).length).toBe(1);
+          done();
         });
       });
     })();
@@ -185,7 +150,11 @@ class TdDataTableBasicComponent {
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
     { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
   ];
-  columns: ITdDataTableColumn[];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
 }
 
 @Component({
