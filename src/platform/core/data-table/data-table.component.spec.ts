@@ -8,10 +8,12 @@ import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component';
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
+import { MdCheckbox } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {
@@ -120,22 +122,141 @@ describe('Component: DataTable', () => {
     })();
   });
 
-  it('should not set the data input and not fail when selectable and multiple', (done: DoneFn) => {
-    inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
-      let element: DebugElement = fixture.debugElement;
-      let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
-      
-      component.selectable = true;
-      component.multiple = true;
+  describe('selectable and multiple', () => {
+ 
+    it('should not set the data input and not fail', (done: DoneFn) => {
+      inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        let element: DebugElement = fixture.debugElement;
+        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        
+        component.selectable = true;
+        component.multiple = true;
 
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        // if it finishes in means it didnt fail
-        done();
-      });
-    })();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // if it finishes in means it didnt fail
+          done();
+        });
+      })();
+    });
+
+    it('should select one and be in indeterminate state, select all and then unselect all',
+      (done: DoneFn) => { inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        let element: DebugElement = fixture.debugElement;
+        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        
+        component.selectable = true;
+        component.multiple = true;
+        component.columns = [
+          { name: 'sku', label: 'SKU #' },
+          { name: 'item', label: 'Item name' },
+          { name: 'price', label: 'Price (US$)', numeric: true },
+        ];
+
+        component.data = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+                          { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+                          { sku: '1452-1', item: 'Sirlone', price: 22.11 },
+                          { sku: '1421-3', item: 'T-Bone', price: 51.15 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+          // check how many rows (without counting the columns) were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check to see checkboxes states
+          expect(dataTableComponent.indeterminate).toBeFalsy();
+          expect(dataTableComponent.allSelected).toBeFalsy();
+          // select a row with a click event
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // check to see if its in indeterminate state
+            expect(dataTableComponent.indeterminate).toBeTruthy();
+            expect(dataTableComponent.allSelected).toBeFalsy();
+            // select the rest of the rows by clicking in selectAll
+            fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              // check to see if its in indeterminate state and allSelected
+              expect(dataTableComponent.indeterminate).toBeTruthy();
+              expect(dataTableComponent.allSelected).toBeTruthy();
+              // unselect all rows by clicking in unselect all
+              fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                // check to see if its not in indeterminate state and not allSelected
+                expect(dataTableComponent.indeterminate).toBeFalsy();
+                expect(dataTableComponent.allSelected).toBeFalsy();
+                done();
+              });
+            });
+          });
+        });
+      })();
+    });
+
+    it('should be interminate when atleast one row is selected and allSelected when all rows are selected',
+      (done: DoneFn) => { inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        let element: DebugElement = fixture.debugElement;
+        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        
+        component.selectable = true;
+        component.multiple = true;
+        component.columns = [
+          { name: 'sku', label: 'SKU #' },
+          { name: 'item', label: 'Item name' },
+          { name: 'price', label: 'Price (US$)', numeric: true },
+        ];
+
+        component.data = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+                          { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+                          { sku: '1452-1', item: 'Sirlone', price: 22.11 },
+                          { sku: '1421-3', item: 'T-Bone', price: 51.15 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+          // check how many rows (without counting the columns) were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check to see checkboxes states
+          expect(dataTableComponent.indeterminate).toBeFalsy();
+          expect(dataTableComponent.allSelected).toBeFalsy();
+          // select a row with a click event
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // check to see if its in indeterminate state
+            expect(dataTableComponent.indeterminate).toBeTruthy();
+            expect(dataTableComponent.allSelected).toBeFalsy();
+            // select the rest of the rows
+            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[3].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[4].triggerEventHandler('click', new Event('click'));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              // check to see if its in indeterminate state and allSelected
+              expect(dataTableComponent.indeterminate).toBeTruthy();
+              expect(dataTableComponent.allSelected).toBeTruthy();
+              // unselect one of the rows
+              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                // check to see if its in indeterminate state and not allSelected
+                expect(dataTableComponent.indeterminate).toBeTruthy();
+                expect(dataTableComponent.allSelected).toBeFalsy();
+                done();
+              });
+            });
+          });
+        });
+      })();
+    });
+
   });
+
 });
 
 @Component({
