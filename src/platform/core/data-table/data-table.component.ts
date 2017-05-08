@@ -41,7 +41,7 @@ export interface ITdDataTableSelectAllEvent {
   selected: boolean;
 }
 
-export interface ITdDataTableClickEvent {
+export interface ITdDataTableRowClickEvent {
   row: any;
 }
 
@@ -236,9 +236,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /**
    * onRowClick?: function
    * Event emitted when a row is clicked.
-   * Emits an [ITdDataTableClickEvent] implemented object.
+   * Emits an [ITdDataTableRowClickEvent] implemented object.
    */
-  @Output('rowClick') onRowClick: EventEmitter<ITdDataTableClickEvent> = new EventEmitter<ITdDataTableClickEvent>();
+  @Output('rowClick') onRowClick: EventEmitter<ITdDataTableRowClickEvent> = new EventEmitter<ITdDataTableRowClickEvent>();
 
   /**
    * selectAll?: function
