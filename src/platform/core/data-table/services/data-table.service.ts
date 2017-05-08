@@ -10,7 +10,7 @@ export class TdDataTableService {
    * - data: any[]
    * - searchTerm: string
    * - ignoreCase: boolean = false
-   * - nonSearchAbleColumns: string[] = []
+   * - excludedColumns: string[] = []
    *
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
