@@ -8,6 +8,7 @@ export interface IUploadOptions {
   method: 'post' | 'put';
   file: File;
   headers?: {[key: string]: string};
+  additionalFormData?: {[key: string]: string};
 }
 
 @Injectable()
@@ -34,7 +35,8 @@ export class TdFileService {
    *     url: string,
    *     method: 'post' | 'put',
    *     file: File,
-   *     headers?: {[key: string]: string}
+   *     headers?: {[key: string]: string},
+   *     additionalFormData?: {[key: string]: string}
    * }
    *
    * Uses underlying [XMLHttpRequest] to upload a file to a url.
@@ -44,6 +46,11 @@ export class TdFileService {
     return new Observable<any>((subscriber: Subscriber<any>) => {
       let xhr: XMLHttpRequest = new XMLHttpRequest();
       let formData: FormData = new FormData();
+      for (let data in options.additionalFormData) {
+        if (data !== 'file') {
+          formData.append(data, options.additionalFormData[data]);
+        }
+      }
       formData.append('file', options.file);
 
       xhr.onprogress = (event: ProgressEvent) => {
