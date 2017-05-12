@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
-         ContentChildren, TemplateRef, AfterContentInit, QueryList } from '@angular/core';
+         ContentChildren, TemplateRef, AfterContentInit, QueryList, HostListener } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
@@ -74,6 +74,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
+
+  /** shift select */
+  private _lastSelectedIndex: number = -1;
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
@@ -345,6 +348,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   /**
    * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
+   * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, checked: boolean, event: Event): void {
     if (this.isSelectable) {
@@ -353,24 +357,48 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       if (!this._multiple) {
         this.clearModel();
       }
+      let currentSelected: number = this._data.findIndex((d: any) => d === row);
+      this._doSelection(row);
 
-      if (checked) {
-        this._value.push(row);
-      } else {
-        // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-        if (this.uniqueId) {
-          row = this._value.filter((val: any) => {
-            return val[this.uniqueId] === row[this.uniqueId];
-          })[0];
-        }
-        let index: number = this._value.indexOf(row);
-        if (index > -1) {
-          this._value.splice(index, 1);
+      // Check to see if Shift key is selected and need to select everything in between
+      let mouseEvent: MouseEvent = event as MouseEvent;
+      if (this.isMultiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
+        let firstSelected: number = this._data.findIndex((d: any) => this.isRowSelected(d));
+        let lastSelected: number = this._data.concat([]).reverse().findIndex((d: any) => this.isRowSelected(d));
+        // find the index when not reversed
+        lastSelected = (this._data.length - 1) - lastSelected;
+        if (firstSelected > -1 && lastSelected > -1) {
+          for (let i: number = firstSelected; i < lastSelected; i++) {
+            if (this._data[i] !== row && i !== this._lastSelectedIndex) {
+              this._doSelection(this._data[i]);
+            }
+          }
         }
       }
-      this._calculateCheckboxState();
-      this.onRowSelect.emit({row: row, selected: checked});
-      this.onChange(this._value);
+      this._lastSelectedIndex = currentSelected;
+    }
+  }
+
+  /**
+   * Overrides the onselectstart method of the document so other text on the page
+   * doesn't get selected when doing shift selections.
+   */
+  @HostListener('window:mousedown', ['$event'])
+  disableOnSelectStart(): void {
+    if (event.srcElement.tagName === 'MD-PSEUDO-CHECKBOX') {
+      document.onselectstart = function(): boolean {
+          return false;
+      };
+    }
+  }
+
+  /**
+   * Resets the original onselectstart method.
+   */
+  @HostListener('window:mouseup', ['$event'])
+  reEnableOnSelectStart(): void {
+   if (event.srcElement.tagName === 'MD-PSEUDO-CHECKBOX') {
+      document.onselectstart = undefined;
     }
   }
 
@@ -426,6 +454,29 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
+   * Does the actual Row Selection
+   */
+  private _doSelection(row: any): void {
+    if (!this.isRowSelected(row)) {
+      this._value.push(row);
+    } else {
+      // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
+      if (this.uniqueId) {
+        row = this._value.filter((val: any) => {
+          return val[this.uniqueId] === row[this.uniqueId];
+        })[0];
+      }
+      let index: number = this._value.indexOf(row);
+      if (index > -1) {
+        this._value.splice(index, 1);
+      }
+    }
+    this._calculateCheckboxState();
+    this.onRowSelect.emit({row: row, selected: this.isRowSelected(row)});
+    this.onChange(this._value);
+  }
+
+  /**
    * Calculate all the state of all checkboxes
    */
   private _calculateCheckboxState(): void {
@@ -456,5 +507,4 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       }
     }
   }
-
 }

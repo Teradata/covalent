@@ -7,10 +7,10 @@ import {
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { MdPseudoCheckbox } from '@angular/material';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component';
-import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
@@ -170,7 +170,7 @@ describe('Component: DataTable', () => {
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
           // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             // check to see if its in indeterminate state
@@ -226,23 +226,23 @@ describe('Component: DataTable', () => {
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
           // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             // check to see if its in indeterminate state
             expect(dataTableComponent.indeterminate).toBeTruthy();
             expect(dataTableComponent.allSelected).toBeFalsy();
             // select the rest of the rows
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[3].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[4].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               // check to see if its in indeterminate state and allSelected
               expect(dataTableComponent.indeterminate).toBeTruthy();
               expect(dataTableComponent.allSelected).toBeTruthy();
               // unselect one of the rows
-              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+              fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
                 // check to see if its in indeterminate state and not allSelected
