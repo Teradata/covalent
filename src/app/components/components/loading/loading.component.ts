@@ -44,8 +44,8 @@ export class LoadingDemoComponent implements OnInit {
     type: '"primary" | "accent" | "warn"',
   }, {
     description: `If its null, undefined or false it will be used to register requests to the mask.
-                  Else if its any value that can be resolved as true, it will resolve the mask.
-                  [name] is optional when using [until], but can still be used to register/resolve it manually.`,
+                  Else if its any value that can be resolved as true, it will resolve the mask.`,
+    additionalDescription: `[name] is optional when using [until], but can still be used to register/resolve it manually.`,
     name: 'tdLoadingUtil?',
     type: 'any',
   }];
