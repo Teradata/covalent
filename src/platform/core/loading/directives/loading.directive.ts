@@ -45,6 +45,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    * tdLoadingUntil?: any
    * If its null, undefined or false it will be used to register requests to the mask.
    * Else if its any value that can be resolved as true, it will resolve the mask.
+   * [name] is optional when using [until], but can still be used to register/resolve it manually.
    */
   @Input('tdLoadingUntil')
   set until(until: any) {
