@@ -67,6 +67,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _columns: ITdDataTableColumn[];
   private _selectable: boolean = false;
   private _multiple: boolean = true;
+  private _allSelected: boolean = false;
+  private _indeterminate: boolean = false;
 
   /** sorting */
   private _sortable: boolean = false;
@@ -76,6 +78,21 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
+
+  /**
+   * Returns true if all values are selected.
+   */
+  get allSelected(): boolean {
+    return this._allSelected;
+  }
+
+  /**
+   * Returns true if all values are not deselected
+   * and atleast one is.
+   */
+  get indeterminate(): boolean {
+    return this._indeterminate;
+  }
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -288,16 +305,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Refreshes data table and rerenders [data] and [columns]
    */
   refresh(): void {
+    this._calculateCheckboxState();
     this._changeDetectorRef.markForCheck();
-  }
-
-  /**
-   * Checks if all visible rows are selected.
-   */
-  areAllSelected(): boolean {
-    const match: string =
-      this._data ? this._data.find((d: any) => !this.isRowSelected(d)) : true;
-    return typeof match === 'undefined';
   }
 
   /**
@@ -311,8 +320,12 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           this._value.push(row);
         }
       });
+      this._allSelected = true;
+      this._indeterminate = true;
     } else {
       this.clearModel();
+      this._allSelected = false;
+      this._indeterminate = false;
     }
     this.onSelectAll.emit({rows: this._value, selected: checked});
   }
@@ -355,6 +368,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           this._value.splice(index, 1);
         }
       }
+      this._calculateCheckboxState();
       this.onRowSelect.emit({row: row, selected: checked});
       this.onChange(this._value);
     }
@@ -408,6 +422,38 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       return this._getNestedValue(splitName[1], value[splitName[0]]);
     } else {
       return value[name];
+    }
+  }
+
+  /**
+   * Calculate all the state of all checkboxes
+   */
+  private _calculateCheckboxState(): void {
+    this._calculateAllSelected();
+    this._calculateIndeterminate();
+  }
+
+  /**
+   * Checks if all visible rows are selected.
+   */
+  private _calculateAllSelected(): void {
+    const match: string =
+      this._data ? this._data.find((d: any) => !this.isRowSelected(d)) : true;
+    this._allSelected = typeof match === 'undefined';
+  }
+
+  /**
+   * Checks if all visible rows are selected.
+   */
+  private _calculateIndeterminate(): void {
+    this._indeterminate = false;
+    if (this._data) {
+      for (let row of this._data) {
+        if (!this.isRowSelected(row)) {
+          continue;
+        }
+        this._indeterminate = true;
+      }
     }
   }
 

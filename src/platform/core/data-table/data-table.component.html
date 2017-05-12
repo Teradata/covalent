@@ -6,7 +6,8 @@
         #checkBoxAll
         *ngIf="isMultiple"
         [disabled]="!hasData"
-        [checked]="areAllSelected() && hasData"
+        [indeterminate]="indeterminate && !allSelected && hasData"
+        [checked]="allSelected && hasData"
         (click)="selectAll(!checkBoxAll.checked)">
       </md-checkbox>
     </th>
