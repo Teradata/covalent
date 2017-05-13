@@ -256,6 +256,53 @@ describe('Component: DataTable', () => {
       })();
     });
 
+    it('should shift click and select a range of rows',
+      (done: DoneFn) => { inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        let element: DebugElement = fixture.debugElement;
+        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        
+        component.selectable = true;
+        component.multiple = true;
+        component.columns = [
+          { name: 'sku', label: 'SKU #' },
+          { name: 'item', label: 'Item name' },
+          { name: 'price', label: 'Price (US$)', numeric: true },
+        ];
+
+        component.data = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+                          { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+                          { sku: '1452-1', item: 'Sirlone', price: 22.11 },
+                          { sku: '1421-3', item: 'T-Bone', price: 51.15 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+          // check how many rows (without counting the columns) were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check to see checkboxes states
+          expect(dataTableComponent.indeterminate).toBeFalsy();
+          expect(dataTableComponent.allSelected).toBeFalsy();
+
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // select the first and last row with shift key also selected and should then select all checkboxes
+            let clickEvent: MouseEvent = document.createEvent('MouseEvents');          
+            // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
+            clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true/*shiftkey*/, false, 0, document.body.parentNode);
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].nativeElement.dispatchEvent(clickEvent);
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              // check to see if allSelected is true
+              expect(dataTableComponent.allSelected).toBeTruthy();
+              done();
+            });
+          });
+        });
+      })();
+    });
+
     it('should click on a row and see the rowClick Event',
       async(inject([], () => {
         let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
