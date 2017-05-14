@@ -21,11 +21,6 @@ export class ComponentsComponent implements AfterViewInit {
     route: '.',
     title: 'Components & Addons',
   }, {
-    description: 'ng2 Material Design core components',
-    icon: 'change_history',
-    route: 'material-components',
-    title: 'Angular-Material Components',
-  }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
     route: 'steps',
