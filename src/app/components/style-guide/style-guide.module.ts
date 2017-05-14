@@ -20,7 +20,7 @@ import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule,
-         MdInputModule, MdMenuModule, MdSelectModule } from '@angular/material';
+         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule } from '../../../platform/core';
@@ -57,6 +57,8 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MdInputModule,
     MdMenuModule,
     MdSelectModule,
+    MdGridListModule,
+    MdTabsModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,
