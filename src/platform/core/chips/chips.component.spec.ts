@@ -58,6 +58,13 @@ describe('Component: Chips', () => {
     });
 
     it('should open the panel chips are focused', (done: DoneFn) => {
+      expect(overlayContainerElement.textContent).not.toContain('steak');
+      expect(overlayContainerElement.textContent).not.toContain('pizza');
+      expect(overlayContainerElement.textContent).not.toContain('tacos');
+      expect(overlayContainerElement.textContent).not.toContain('sandwich');
+      expect(overlayContainerElement.textContent).not.toContain('chips');
+      expect(overlayContainerElement.textContent).not.toContain('pasta');
+      expect(overlayContainerElement.textContent).not.toContain('sushi');
       input.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -70,23 +77,19 @@ describe('Component: Chips', () => {
           expect(overlayContainerElement.textContent).toContain('chips');
           expect(overlayContainerElement.textContent).toContain('pasta');
           expect(overlayContainerElement.textContent).toContain('sushi');
-          input.triggerEventHandler('blur', new Event('blur'));
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(overlayContainerElement.textContent).not.toContain('steak');
-            expect(overlayContainerElement.textContent).not.toContain('pizza');
-            expect(overlayContainerElement.textContent).not.toContain('tacos');
-            expect(overlayContainerElement.textContent).not.toContain('sandwich');
-            expect(overlayContainerElement.textContent).not.toContain('chips');
-            expect(overlayContainerElement.textContent).not.toContain('pasta');
-            expect(overlayContainerElement.textContent).not.toContain('sushi');
-            done();
-          });
+          done();
         });
       });
     });
 
     it('should open the panel and filter the list', (done: DoneFn) => {
+      expect(overlayContainerElement.textContent).not.toContain('steak');
+      expect(overlayContainerElement.textContent).not.toContain('pizza');
+      expect(overlayContainerElement.textContent).not.toContain('tacos');
+      expect(overlayContainerElement.textContent).not.toContain('sandwich');
+      expect(overlayContainerElement.textContent).not.toContain('chips');
+      expect(overlayContainerElement.textContent).not.toContain('pasta');
+      expect(overlayContainerElement.textContent).not.toContain('sushi');
       input.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -112,18 +115,7 @@ describe('Component: Chips', () => {
                 expect(overlayContainerElement.textContent).not.toContain('chips');
                 expect(overlayContainerElement.textContent).toContain('pasta');
                 expect(overlayContainerElement.textContent).not.toContain('sushi');
-                input.triggerEventHandler('blur', new Event('blur'));
-                fixture.detectChanges();
-                fixture.whenStable().then(() => {
-                  expect(overlayContainerElement.textContent).not.toContain('steak');
-                  expect(overlayContainerElement.textContent).not.toContain('pizza');
-                  expect(overlayContainerElement.textContent).not.toContain('tacos');
-                  expect(overlayContainerElement.textContent).not.toContain('sandwich');
-                  expect(overlayContainerElement.textContent).not.toContain('chips');
-                  expect(overlayContainerElement.textContent).not.toContain('pasta');
-                  expect(overlayContainerElement.textContent).not.toContain('sushi');
-                  done();
-                });
+                done();
               });
             }, 100);
           });
@@ -132,6 +124,13 @@ describe('Component: Chips', () => {
     });
 
     it('should open the panel, filter selectedItems and filter the list', (done: DoneFn) => {
+      expect(overlayContainerElement.textContent).not.toContain('steak');
+      expect(overlayContainerElement.textContent).not.toContain('pizza');
+      expect(overlayContainerElement.textContent).not.toContain('tacos');
+      expect(overlayContainerElement.textContent).not.toContain('sandwich');
+      expect(overlayContainerElement.textContent).not.toContain('chips');
+      expect(overlayContainerElement.textContent).not.toContain('pasta');
+      expect(overlayContainerElement.textContent).not.toContain('sushi');
       fixture.componentInstance.selectedItems.push('steak');
       fixture.componentInstance.selectedItems.push('sandwich');
       input.triggerEventHandler('focus', new Event('focus'));
@@ -159,18 +158,7 @@ describe('Component: Chips', () => {
                 expect(overlayContainerElement.textContent).not.toContain('chips');
                 expect(overlayContainerElement.textContent).toContain('pasta');
                 expect(overlayContainerElement.textContent).not.toContain('sushi');
-                input.triggerEventHandler('blur', new Event('blur'));
-                fixture.detectChanges();
-                fixture.whenStable().then(() => {
-                  expect(overlayContainerElement.textContent).not.toContain('steak');
-                  expect(overlayContainerElement.textContent).not.toContain('pizza');
-                  expect(overlayContainerElement.textContent).not.toContain('tacos');
-                  expect(overlayContainerElement.textContent).not.toContain('sandwich');
-                  expect(overlayContainerElement.textContent).not.toContain('chips');
-                  expect(overlayContainerElement.textContent).not.toContain('pasta');
-                  expect(overlayContainerElement.textContent).not.toContain('sushi');
-                  done();
-                });
+                done();
               });
             }, 100);
           });
