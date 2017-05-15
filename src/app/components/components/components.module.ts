@@ -24,7 +24,6 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
-import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -33,10 +32,8 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule,
-         MdProgressSpinnerModule, MdSelectModule, MdSlideToggleModule, MdDialogModule, MdSnackBarModule, MdToolbarModule,
-         MdTabsModule, MdSidenavModule, MdTooltipModule, MdCheckboxModule, MdRadioModule, MdCoreModule, MdAutocompleteModule,
-         MdProgressBarModule, MdSliderModule, MdChipsModule, MdGridListModule, MdRippleModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
+         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -70,8 +67,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     PagingDemoComponent,
     SearchDemoComponent,
     DynamicFormsDemoComponent,
-    MaterialComponentsComponent,
-    DialogComponent,
     NotificationsDemoComponent,
     // External Dependencies
     NgxChartsDemoComponent,
@@ -92,21 +87,9 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     MdSelectModule,
     MdButtonToggleModule,
     MdSlideToggleModule,
-    MdProgressSpinnerModule,
-    MdDialogModule,
-    MdSnackBarModule,
     MdToolbarModule,
     MdTabsModule,
-    MdSidenavModule,
     MdTooltipModule,
-    MdCheckboxModule,
-    MdRadioModule,
-    MdAutocompleteModule,
-    MdSliderModule,
-    MdProgressBarModule,
-    MdChipsModule,
-    MdGridListModule,
-    MdRippleModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -131,6 +114,5 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     TranslateModule,
     componentsRoutes,
   ],
-  entryComponents: [ DialogComponent ],
 })
 export class ComponentsModule {}
