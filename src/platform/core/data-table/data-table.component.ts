@@ -1,8 +1,11 @@
 import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
-         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject, Optional } from '@angular/core';
+         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject, Optional, ViewChildren } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
+import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/material';
+
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
@@ -82,6 +85,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
+
+  @ViewChildren(TdDataTableRowComponent) _rows: QueryList<TdDataTableRowComponent>;
 
   /**
    * Returns true if all values are selected.
@@ -352,14 +357,13 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
    * handles cntrl clicks and shift clicks for multi-select
    */
-  select(row: any, event: Event): void {
+  select(row: any, event: Event, currentSelected: number): void {
     if (this.isSelectable) {
-      event.preventDefault();
+      this.blockEvent(event);
       // clears all the fields for the dataset
       if (!this._multiple) {
         this.clearModel();
       }
-      let currentSelected: number = this._data.findIndex((d: any) => d === row);
       this._doSelection(row);
 
       // Check to see if Shift key is selected and need to select everything in between
@@ -421,6 +425,58 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
     this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
+  }
+
+  /**
+   * Handle all keyup events when focusing a data table row
+   */
+  _rowKeyup(event: KeyboardEvent, row: any, index: number): void {
+    let length: number;
+    let rows: TdDataTableRowComponent[];
+    switch (event.keyCode) {
+      case ENTER:
+      case SPACE:
+        /** if user presses enter or space, the row should be selected */
+        this.select(row, event, index);
+        break;
+      case UP_ARROW:
+        rows = this._rows.toArray();
+        length = rows.length;
+        /** 
+         * if users presses the up arrow, we focus the prev row 
+         * unless its the first row, then we move to the last row
+         */
+        if (index === 0) {
+          rows[length - 1].focus();
+        } else {
+          rows[index - 1].focus();
+        }
+        this.blockEvent(event);
+        break;
+      case DOWN_ARROW:
+        rows = this._rows.toArray();
+        length = rows.length;
+        /** 
+         * if users presses the down arrow, we focus the next row 
+         * unless its the last row, then we move to the first row
+         */
+        if (index === (length - 1)) {
+          rows[0].focus();
+        } else {
+          rows[index + 1].focus();
+        }
+        this.blockEvent(event);
+        break;
+      default:
+        // default
+    }
+  }
+
+  /**
+   * Method to prevent the default events
+   */
+  blockEvent(event: Event): void {
+    event.preventDefault();
   }
 
   /**
