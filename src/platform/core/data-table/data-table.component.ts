@@ -81,6 +81,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   /** shift select */
   private _lastSelectedIndex: number = -1;
+  private _selectedBeforeLastIndex: number = -1;
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
@@ -379,7 +380,17 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           this._doSelection(this._data[i]);
         }
       }
-      this._lastSelectedIndex = currentSelected;
+      // set the last selected attribute unless the last selected unchecked a row
+      if (this.isRowSelected(this._data[currentSelected])) {
+        this._selectedBeforeLastIndex = this._lastSelectedIndex;
+        this._lastSelectedIndex = currentSelected;
+      } else {
+        this._lastSelectedIndex = this._selectedBeforeLastIndex;
+      }
+      // everything is unselected so start over
+      if (!this._indeterminate && !this._allSelected) {
+        this._lastSelectedIndex = -1;
+      }
     }
   }
 
