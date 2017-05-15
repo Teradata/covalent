@@ -69,6 +69,11 @@ export class ComponentsOverviewComponent {
       route: 'notifications',
       title: 'Notifications',
     }, {
+      color: 'blue-700',
+      icon: 'message',
+      route: 'message',
+      title: 'Message',
+    }, {
       color: 'lime-700',
       icon: 'search',
       route: 'search',

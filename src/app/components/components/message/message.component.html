@@ -1,0 +1,18 @@
+<md-card>
+  <md-card-title>Message</md-card-title>
+  <md-card-subtitle>Set inline messages</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-message label="test" sublabel="test 2" color="warn" icon="warning"></td-message>
+    <td-message label="test" color="purple" icon="error"></td-message>
+    <td-message label="test" color="yellow">
+      <button td-message-actions md-button>VIEW MORE</button>
+    </td-message>
+    <td-message #messageDemo label="test" color="blue" [opened]="true">
+      <button td-message-actions md-button (click)="messageDemo.close()">CLOSE</button>
+    </td-message>
+    <button td-message-actions md-button (click)="messageDemo.open()">OPEN</button>
+  </md-card-content>
+</md-card>
+
+<td-readme-loader resourceUrl="platform/core/message/README.md"></td-readme-loader>

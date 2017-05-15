@@ -14,6 +14,7 @@ import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { MessageDemoComponent } from './message/message.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
@@ -38,7 +39,7 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule,
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         } from '../../../platform/core';
+         CovalentMessageModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -57,6 +58,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     LoadingDemoComponent,
     MarkdownDemoComponent,
     MediaDemoComponent,
+    MessageDemoComponent,
     HttpDemoComponent,
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
@@ -109,6 +111,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentMessageModule,
     DocumentationToolsModule,
     NgxChartsModule,
     TranslateModule,
