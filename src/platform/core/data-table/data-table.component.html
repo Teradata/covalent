@@ -31,7 +31,8 @@
         *ngFor="let row of data; let rowIndex = index"
         (click)="handleRowClick(row)"
         (keyup)="_rowKeyup($event, row, rowIndex)"
-        (keydown.space)="blockEvent($event)">
+        (keydown.space)="blockEvent($event)"
+        (keydown.shift.space)="blockEvent($event)">
       <td td-data-table-cell class="mat-checkbox-cell" *ngIf="isSelectable">
         <md-pseudo-checkbox
           [state]="isRowSelected(row) ? 'checked' : 'unchecked'"

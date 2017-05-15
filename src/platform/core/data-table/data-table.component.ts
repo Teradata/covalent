@@ -50,6 +50,11 @@ export interface ITdDataTableRowClickEvent {
   row: any;
 }
 
+export enum TdDataTableArrowKeyDirection {
+  Ascending = <any>'ASC',
+  Descending = <any>'DESC',
+}
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
@@ -82,6 +87,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /** shift select */
   private _lastSelectedIndex: number = -1;
   private _selectedBeforeLastIndex: number = -1;
+  private _lastArrowKeyDirection: TdDataTableArrowKeyDirection;
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
@@ -451,30 +457,54 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       case UP_ARROW:
         rows = this._rows.toArray();
         length = rows.length;
+
+        // check to see if changing direction and need to toggle the current row
+        if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Descending) {
+          index++;
+        }
         /** 
          * if users presses the up arrow, we focus the prev row 
          * unless its the first row, then we move to the last row
          */
         if (index === 0) {
-          rows[length - 1].focus();
+          if (!event.shiftKey) {
+            rows[length - 1].focus();
+          }
         } else {
           rows[index - 1].focus();
         }
         this.blockEvent(event);
+        if (event.shiftKey) {
+          this._doSelection(this._data[index - 1]);
+          // if the checkboxes are all unselected then start over otherwise handle changing direction
+          this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Ascending;
+        }
         break;
       case DOWN_ARROW:
         rows = this._rows.toArray();
         length = rows.length;
+
+        // check to see if changing direction and need to toggle the current row
+        if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Ascending) {
+          index--;
+        }
         /** 
          * if users presses the down arrow, we focus the next row 
          * unless its the last row, then we move to the first row
          */
         if (index === (length - 1)) {
-          rows[0].focus();
+          if (!event.shiftKey) {
+           rows[0].focus();
+          }
         } else {
           rows[index + 1].focus();
         }
         this.blockEvent(event);
+        if (event.shiftKey) {
+          this._doSelection(this._data[index + 1]);
+          // if the checkboxes are all unselected then start over otherwise handle changing direction
+          this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Descending;
+        }
         break;
       default:
         // default
