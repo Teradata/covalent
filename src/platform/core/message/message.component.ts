@@ -1,5 +1,5 @@
 import { Component, Directive, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef, ViewChild,
-         HostBinding } from '@angular/core';
+         HostBinding, ChangeDetectorRef } from '@angular/core';
 
 @Directive({
   selector: '[tdMessageContainer]',
@@ -57,9 +57,9 @@ export class TdMessageComponent implements AfterViewInit {
    */
   @Input('color')
   set color(color: string) {
-    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + color);
-    this._renderer.removeClass(this._elementRef.nativeElement, 'bgc-' + color + '-100');
-    this._renderer.removeClass(this._elementRef.nativeElement, 'tc-' + color + '-700');
+    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    this._renderer.removeClass(this._elementRef.nativeElement, 'bgc-' + this._color + '-100');
+    this._renderer.removeClass(this._elementRef.nativeElement, 'tc-' + this._color + '-700');
     if (color === 'primary' || color === 'accent' || color === 'warn') {
       this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + color);
     } else {
@@ -67,11 +67,11 @@ export class TdMessageComponent implements AfterViewInit {
       this._renderer.addClass(this._elementRef.nativeElement, 'tc-' + color + '-700');
     }
     this._color = color;
+    this._changeDetectorRef.markForCheck();
   }
   get color(): string {
     return this._color;
   }
-
 
   /**
    * opened?: boolean
@@ -96,6 +96,7 @@ export class TdMessageComponent implements AfterViewInit {
   }
 
   constructor(private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-message');
   }
@@ -105,9 +106,12 @@ export class TdMessageComponent implements AfterViewInit {
    */
   ngAfterViewInit(): void {
     if (this._opened) {
-      this._childElement.viewContainer.createEmbeddedView(this._template);
+      Promise.resolve(undefined).then(() => {
+        this._childElement.viewContainer.createEmbeddedView(this._template);
+        this._initialized = true;
+        this._changeDetectorRef.markForCheck();
+      });
     }
-    this._initialized = true;
   }
 
   /**
@@ -117,6 +121,7 @@ export class TdMessageComponent implements AfterViewInit {
     if (!this._opened) {
       this._opened = true;
       this._childElement.viewContainer.createEmbeddedView(this._template);
+      this._changeDetectorRef.markForCheck();
     }
   }
 
@@ -127,6 +132,7 @@ export class TdMessageComponent implements AfterViewInit {
     if (this._opened) {
       this._opened = false;
       this._childElement.viewContainer.clear();
+      this._changeDetectorRef.markForCheck();
     }
   }
 
