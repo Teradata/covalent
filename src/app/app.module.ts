@@ -8,10 +8,6 @@ import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-transla
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ComponentsModule } from './components/components/';
-import { DocsModule } from './components/docs/';
-import { LayoutsModule } from './components/layouts/';
-import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
@@ -60,10 +56,6 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
         deps: [Http],
       },
     }),
-    ComponentsModule,
-    DocsModule,
-    LayoutsModule,
-    StyleGuideModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

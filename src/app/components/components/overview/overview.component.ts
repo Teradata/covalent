@@ -14,11 +14,6 @@ export class ComponentsOverviewComponent {
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
-      color: 'red-700',
-      icon: 'change_history',
-      route: 'material-components',
-      title: 'Angular-Material',
-    }, {
       color: 'deep-purple-700',
       icon: 'view_list',
       route: 'steps',
@@ -115,11 +110,6 @@ export class ComponentsOverviewComponent {
       icon: 'http',
       route: 'http',
       title: 'HTTP Service',
-    }, {
-      color: 'orange-700',
-      icon: 'show_chart',
-      route: 'charts',
-      title: 'TD Charts',
     },
   ];
   external: Object[] = [{
