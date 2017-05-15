@@ -174,26 +174,32 @@ $layout-breakpoint-lg: 1920px !default;
     }
   }
 
+  [#{$flexName}="grow"],
   [#{$flexName}-grow] {
     flex: 1 1 100%;
     box-sizing: border-box;
   }
+  [#{$flexName}="initial"],
   [#{$flexName}-initial] {
     flex: 0 1 auto;
     box-sizing: border-box;
   }
+  [#{$flexName}="auto"],
   [#{$flexName}-auto] {
     flex: 1 1 auto;
     box-sizing: border-box;
   }
+  [#{$flexName}="none"],
   [#{$flexName}-none] {
     flex: 0 0 auto;
     box-sizing: border-box;
   }
+  [#{$flexName}="noshrink"],
   [#{$flexName}-noshrink] {
     flex: 1 0 auto;
     box-sizing: border-box;
   }
+  [#{$flexName}="nogrow"],
   [#{$flexName}-nogrow] {
     flex: 0 1 auto;
     box-sizing: border-box;
@@ -567,8 +573,3 @@ $layout-breakpoint-lg: 1920px !default;
     display: none;
   }
 }
-
-[flex="none"] {
-  flex: none;
-}
-
