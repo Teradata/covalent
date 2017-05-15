@@ -4,6 +4,7 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
+import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';
 import { TdLoadingFactory, ILoadingRef } from './loading.factory';
 
@@ -71,7 +72,7 @@ export class TdLoadingService {
    * NOTE: @internal usage only.
    */
   createComponent(config: ITdLoadingDirectiveConfig, viewContainerRef: ViewContainerRef,
-                  templateRef: TemplateRef<Object>): ILoadingRef {
+                  templateRef: TemplateRef<Object>, context: TdLoadingContext): ILoadingRef {
     let directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
       throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
@@ -79,7 +80,7 @@ export class TdLoadingService {
     if (directiveConfig.strategy === LoadingStrategy.Overlay) {
       this._context[directiveConfig.name] = this._loadingFactory.createOverlayComponent(directiveConfig, viewContainerRef, templateRef);
     } else {
-      this._context[directiveConfig.name] = this._loadingFactory.createReplaceComponent(directiveConfig, viewContainerRef, templateRef);
+      this._context[directiveConfig.name] = this._loadingFactory.createReplaceComponent(directiveConfig, viewContainerRef, templateRef, context);
     }
     return this._context[directiveConfig.name];
   }
@@ -155,12 +156,12 @@ export class TdLoadingService {
    * - resolves?: number
    * returns: true if successful
    *
-   * Registers a request for the loading mask referenced by the name parameter.
+   * Resolves a request for the loading mask referenced by the name parameter.
    * Can optionally pass resolves argument to set a number of resolve calls.
    *
    * If no paramemeters are used, then default main mask will be used.
    *
-   * e.g. loadingService.register()
+   * e.g. loadingService.resolve()
    */
   public resolve(name: string = 'td-loading-main', resolves: number = 1): boolean {
     // clear timeout if the loading component is "resolved" before its "registered"
@@ -172,6 +173,28 @@ export class TdLoadingService {
         times -= resolves;
         this._context[name].times = times < 0 ? 0 : times;
       }
+      this._context[name].subject.next(this._context[name].times);
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * params:
+   * - name: string
+   * returns: true if successful
+   *
+   * Resolves all request for the loading mask referenced by the name parameter.
+   *
+   * If no paramemeters are used, then default main mask will be used.
+   *
+   * e.g. loadingService.resolveAll()
+   */
+  public resolveAll(name: string = 'td-loading-main'): boolean {
+    // clear timeout if the loading component is "resolved" before its "registered"
+    this._clearTimeout(name);
+    if (this._context[name]) {
+      this._context[name].times = 0;
       this._context[name].subject.next(this._context[name].times);
       return true;
     }
