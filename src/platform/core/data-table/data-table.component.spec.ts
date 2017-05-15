@@ -26,8 +26,9 @@ describe('Component: DataTable', () => {
         CovalentDataTableModule,
       ],
       declarations: [
-        TdDataTableBasicComponent,
+        TdDataTableBasicTestComponent,
         TdDataTableSelectableTestComponent,
+        TdDataTableRowClickTestComponent,
       ],
       providers: [
         TdDataTableService,
@@ -38,8 +39,8 @@ describe('Component: DataTable', () => {
 
   it('should set hidden and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
-      let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
       
       component.columns[1].hidden = false;
       // backwards compatability test
@@ -86,8 +87,8 @@ describe('Component: DataTable', () => {
 
   it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
-      let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
 
       component.columns[1].filter = false;
 
@@ -305,17 +306,17 @@ describe('Component: DataTable', () => {
 
     it('should click on a row and see the rowClick Event',
       async(inject([], () => {
-        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
-        let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
+        let component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
 
-        let eventSpy: jasmine.Spy = spyOn(fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance, 'clickRow');
+        let eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(eventSpy).toHaveBeenCalled();
+            expect(eventSpy.calls.count()).toBe(1);
           });
         });
     })));
@@ -329,7 +330,7 @@ describe('Component: DataTable', () => {
         [columns]="columns">
     </td-data-table>`,
 })
-class TdDataTableBasicComponent {
+class TdDataTableBasicTestComponent {
   data: any[] = [
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
     { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
@@ -355,4 +356,27 @@ class TdDataTableSelectableTestComponent {
   columns: any;
   selectable: boolean = false;
   multiple: boolean = false;
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        (rowClick)="clickEvent()">
+    </td-data-table>`,
+})
+class TdDataTableRowClickTestComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+  clickEvent(): void {
+    /* noop */
+  }
 }
