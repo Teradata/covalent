@@ -256,7 +256,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Output('rowSelect') onRowSelect: EventEmitter<ITdDataTableSelectEvent> = new EventEmitter<ITdDataTableSelectEvent>();
 
   /**
-   * onRowClick?: function
+   * rowClick?: function
    * Event emitted when a row is clicked.
    * Emits an [ITdDataTableRowClickEvent] implemented object.
    */

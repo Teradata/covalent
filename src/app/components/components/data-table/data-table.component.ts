@@ -67,6 +67,11 @@ export class DataTableDemoComponent implements OnInit {
     name: 'selectAll',
     type: `function()`,
   }, {
+    description: `Event emitted when a row is clicked.
+                  Emits an [ITdDataTableRowClickEvent] implemented object.`,
+    name: 'rowClick',
+    type: `function()`,
+  }, {
     description: `Refreshes data table and updates [data] and [columns]`,
     name: 'refresh',
     type: `function()`,
