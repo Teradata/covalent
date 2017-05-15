@@ -20,7 +20,6 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -29,9 +28,6 @@ const routes: Routes = [{
   children: [{
       component: ComponentsOverviewComponent,
       path: '',
-    }, {
-      component: MaterialComponentsComponent,
-      path: 'material-components',
     }, {
       component: HighlightDemoComponent,
       path: 'syntax-highlighting',
