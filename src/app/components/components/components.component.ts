@@ -120,12 +120,12 @@ export class ComponentsComponent implements AfterViewInit {
   }];
 
   external: Object[] = [{
-    description: 'Declarative D3 framework for ng2',
+    description: 'Declarative D3 framework',
     icon: 'insert_chart',
     route: 'ngx-charts',
     title: 'NGX-Charts',
   }, {
-    description: 'i18n library for ng2',
+    description: 'i18n library',
     icon: 'language',
     route: 'ngx-translate',
     title: 'NGX-Translate',
