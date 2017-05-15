@@ -31,7 +31,7 @@
           [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
           (mousedown)="disableTextSelection()"
           (mouseup)="enableTextSelection()"
-          (click)="select(row, !isRowSelected(row), $event)">
+          (click)="select(row, $event)">
         </md-pseudo-checkbox>
       </td>
       <td td-data-table-cell

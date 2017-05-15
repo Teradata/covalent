@@ -352,7 +352,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
    * handles cntrl clicks and shift clicks for multi-select
    */
-  select(row: any, checked: boolean, event: Event): void {
+  select(row: any, event: Event): void {
     if (this.isSelectable) {
       event.preventDefault();
       // clears all the fields for the dataset
