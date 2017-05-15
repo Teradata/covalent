@@ -17,11 +17,11 @@ import { UtilityStylesComponent } from './utility-styles/utility-styles.componen
 import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule,
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
          MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentExpansionPanelModule } from '../../../platform/core';
+         CovalentExpansionPanelModule, CovalentDialogsModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 @NgModule({
@@ -56,6 +56,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MdGridListModule,
     MdTabsModule,
     MdSidenavModule,
+    MdSnackBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,
@@ -63,6 +64,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     CovalentPagingModule,
     CovalentExpansionPanelModule,
     CovalentHighlightModule,
+    CovalentDialogsModule,
     styleGuideRoutes,
   ],
 })
