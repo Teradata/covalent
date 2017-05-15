@@ -14,37 +14,37 @@ export class HttpDemoComponent {
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   interceptorServiceMethods: Object[] = [{
-    description: `Uses underlying ng2 [http] to request a DELETE method to a URL,
+    description: `Uses underlying @angular [http] to request a DELETE method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'delete',
     type: 'function(url: string, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a GET method to a URL,
+    description: `Uses underlying @angular [http] to request a GET method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'get',
     type: 'function(url: string, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a HEAD method to a URL,
+    description: `Uses underlying @angular [http] to request a HEAD method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'head',
     type: 'function(url: string, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a PATCH method to a URL,
+    description: `Uses underlying @angular [http] to request a PATCH method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'patch',
     type: 'function(url: string, data: any, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a POST method to a URL,
+    description: `Uses underlying @angular [http] to request a POST method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'post',
     type: 'function(url: string, data: any, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a PUT method to a URL,
+    description: `Uses underlying @angular [http] to request a PUT method to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'put',
     type: 'function(url: string, data: any, options: RequestOptionsArgs)',
   }, {
-    description: `Uses underlying ng2 [http] to request a generic request to a URL,
+    description: `Uses underlying @angular [http] to request a generic request to a URL,
                   executing the interceptors as part of the request pipeline.`,
     name: 'request',
     type: 'function(url: string | Request, options: RequestOptionsArgs)',
