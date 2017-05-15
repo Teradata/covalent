@@ -57,9 +57,10 @@
         <md-divider *ngIf="!last" md-inset></md-divider>
       </ng-template>
     </md-nav-list>
-    <div layout="row" layout-wrap hide-xs hide-sm class="push-sm">
+    <div>
+    <div layout="row" hide-xs hide-sm class="push-sm">
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-        <div flex-md="50" flex-gt-md="25" layout="column">
+        <div flex-md="50" flex-gt-md="25" layout="row">
           <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
             <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
               <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
@@ -74,7 +75,7 @@
         </div>
       </ng-template>
     </div>
-    <md-divider></md-divider>
+    </div>
     <md-card-actions>
       <div layout="row">
         <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button color="primary" class="text-upper">Gitter Chat</a>
