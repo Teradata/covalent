@@ -21,7 +21,7 @@ const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableTableComponent,
 ];
 
-export { TdDataTableComponent, TdDataTableSortingOrder,
+export { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableRowClickEvent,
          ITdDataTableColumn, ITdDataTableSelectEvent, ITdDataTableSelectAllEvent } from './data-table.component';
 export { TdDataTableService } from './services/data-table.service';
 export { TdDataTableColumnComponent,
