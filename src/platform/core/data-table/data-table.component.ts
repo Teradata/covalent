@@ -369,16 +369,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       // Check to see if Shift key is selected and need to select everything in between
       let mouseEvent: MouseEvent = event as MouseEvent;
       if (this.isMultiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
-        let firstSelected: number = this._data.findIndex((d: any) => this.isRowSelected(d));
-        let lastSelected: number = this._data.concat([]).reverse().findIndex((d: any) => this.isRowSelected(d));
-        // find the index when not reversed
-        lastSelected = (this._data.length - 1) - lastSelected;
-        if (firstSelected > -1 && lastSelected > -1) {
-          for (let i: number = firstSelected; i < lastSelected; i++) {
-            if (this._data[i] !== row && i !== this._lastSelectedIndex) {
-              this._doSelection(this._data[i]);
-            }
-          }
+        let firstIndex: number = currentSelected;
+        let lastIndex: number = this._lastSelectedIndex;
+        if (currentSelected > this._lastSelectedIndex) {
+          firstIndex = this._lastSelectedIndex;
+          lastIndex = currentSelected;
+        }
+        for (let i: number = firstIndex + 1; i < lastIndex; i++) {
+          this._doSelection(this._data[i]);
         }
       }
       this._lastSelectedIndex = currentSelected;
