@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
-         ContentChildren, TemplateRef, AfterContentInit, QueryList, HostListener } from '@angular/core';
+         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject, Optional } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
@@ -269,7 +270,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Output('selectAll') onSelectAll: EventEmitter<ITdDataTableSelectAllEvent> =
                                     new EventEmitter<ITdDataTableSelectAllEvent>();
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(@Optional() @Inject(DOCUMENT) private _document: any,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
    * Loads templates and sets them in a map for faster access.
@@ -383,11 +385,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Overrides the onselectstart method of the document so other text on the page
    * doesn't get selected when doing shift selections.
    */
-  @HostListener('window:mousedown', ['$event'])
-  disableOnSelectStart(): void {
-    if (event.srcElement.tagName === 'MD-PSEUDO-CHECKBOX') {
-      document.onselectstart = function(): boolean {
-          return false;
+  disableTextSelection(): void {
+    if (this._document) {
+      this._document.onselectstart = function(): boolean {
+        return false;
       };
     }
   }
@@ -395,17 +396,16 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /**
    * Resets the original onselectstart method.
    */
-  @HostListener('window:mouseup', ['$event'])
-  reEnableOnSelectStart(): void {
-   if (event.srcElement.tagName === 'MD-PSEUDO-CHECKBOX') {
-      document.onselectstart = undefined;
+  enableTextSelection(): void {
+    if (this._document) {
+      this._document.onselectstart = undefined;
     }
   }
 
   /**
    * emits the onRowClickEvent when a row is clicked
    */
-  clickRow(row: any): void {
+  handleRowClick(row: any): void {
     this.onRowClick.emit({row: row});
   }
 
