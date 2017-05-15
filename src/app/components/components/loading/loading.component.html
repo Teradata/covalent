@@ -98,7 +98,7 @@
           </div>
         </ng-template>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+          <button md-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
@@ -180,7 +180,7 @@
           </md-list>
         </div>
         <div layout="row">
-          <button md-button color="primary" (click)="createObservableList()" class="text-upper">Create observable</button>
+          <button md-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
         </div>
       </md-tab>
       <md-tab>

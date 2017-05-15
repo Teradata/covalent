@@ -82,6 +82,9 @@ export class LoadingDemoComponent implements OnInit {
   loading: boolean = false;
   listObservable: Observable<any[]>;
 
+  replaceTemplateSyntaxDisabled: boolean = false;
+  listObservableDisabled: boolean = false;
+
   overlayStarSyntax: boolean = false;
 
   overlayDemo: any = {
@@ -138,6 +141,7 @@ export class LoadingDemoComponent implements OnInit {
   }
 
   toggleReplaceTemplateSyntax(): void {
+    this.replaceTemplateSyntaxDisabled = true;
     this._loadingService.register('replaceTemplateSyntax');
     let value: number = 0;
     let interval: number = setInterval(() => {
@@ -149,6 +153,7 @@ export class LoadingDemoComponent implements OnInit {
     }, 250);
     setTimeout(() => {
       this._loadingService.resolve('replaceTemplateSyntax');
+      this.replaceTemplateSyntaxDisabled = false;
     }, 3000);
   }
 
@@ -158,9 +163,11 @@ export class LoadingDemoComponent implements OnInit {
   }
 
   createObservableList(): void {
+    this.listObservableDisabled = true;
     this.listObservable = new Observable<any[]>((subscriber: Subscriber<any[]>) => {
       setTimeout(() => {
         subscriber.next([{label: 'Light', value: true}, {label: 'Console', value: false}, {label: 'T.V.', value: true}]);
+        this.listObservableDisabled = false;
       }, 3000);
     });
   }
