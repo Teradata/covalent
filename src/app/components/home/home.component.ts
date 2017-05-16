@@ -91,6 +91,11 @@ export class HomeComponent implements OnInit {
       route: 'components/markdown',
       title: 'Markdown feature',
     }, {
+      description: 'New contentReady event binding',
+      icon: 'code',
+      route: 'components/highlight',
+      title: 'Highlight feature',
+    }, {
       description: 'Make navigationRoute optional',
       icon: 'view_quilt',
       route: 'components/layouts',
