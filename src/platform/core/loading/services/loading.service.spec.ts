@@ -178,6 +178,37 @@ describe('Service: Loading', () => {
       done();
     })();
   });
+
+  it('should render default fullscreen by registering 3 times and then resolve by calling resolveAll', (done: DoneFn) => {
+    inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingWrapperTestComponent);
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      loadingService.register();
+      loadingService.register();
+      loadingService.register();
+      fixture.detectChanges();
+      setTimeout(() => {
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
+          expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
+          loadingService.resolveAll();
+          fixture.detectChanges();
+          setTimeout(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
+              done();
+            });
+          }, 200);
+        });
+      }, 200);
+    })();
+  });
 });
 
 @Component({

@@ -25,10 +25,10 @@ export class DocsComponent implements AfterViewInit {
     route: 'angular',
     title: 'Angular',
   }, {
-    description: 'Material Design components for Angular',
+    description: 'Material Design components',
     icon: 'layers',
     route: 'angular-material',
-    title: 'Angular-Material',
+    title: 'Angular Material',
   }, {
     description: 'Angular CLI build tasks',
     icon: 'build',

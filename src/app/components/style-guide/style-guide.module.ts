@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -19,11 +17,11 @@ import { UtilityStylesComponent } from './utility-styles/utility-styles.componen
 import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule,
-         MdInputModule, MdMenuModule, MdSelectModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
+         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentExpansionPanelModule } from '../../../platform/core';
+         CovalentExpansionPanelModule, CovalentDialogsModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 @NgModule({
@@ -43,8 +41,6 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
   ],
   imports: [
     /** Angular Modules */
-    BrowserModule,
-    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     /** Material Modules */
@@ -57,6 +53,10 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     MdInputModule,
     MdMenuModule,
     MdSelectModule,
+    MdGridListModule,
+    MdTabsModule,
+    MdSidenavModule,
+    MdSnackBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,
@@ -64,6 +64,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     CovalentPagingModule,
     CovalentExpansionPanelModule,
     CovalentHighlightModule,
+    CovalentDialogsModule,
     styleGuideRoutes,
   ],
 })

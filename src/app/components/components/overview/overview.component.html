@@ -50,6 +50,20 @@
   <md-divider></md-divider>
   <md-card-content>
      <div layout-gt-xs="row" layout-wrap>
+        <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
+          <a href="https://material.angular.io/components" target="_blank" class="text-nodecoration tc-inherit">
+            <md-card href class="md-card-colored" flex>
+              <md-toolbar class="bgc-cyan-500" layout="column" layout-align="center center" layout-padding>
+                <md-icon class="md-icon-font-xl tc-white">layers</md-icon>
+              </md-toolbar>
+              <md-card-content>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">Angular Material <md-icon class="text-md tc-grey-600" title="External docs">launch</md-icon></div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </a>
+        </div>
        <ng-template let-item let-last="last" ngFor [ngForOf]="external">
           <div flex-sm="50" flex-md="50" flex-gt-md="25" layout="column">
             <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>

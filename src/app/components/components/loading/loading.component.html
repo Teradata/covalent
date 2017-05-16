@@ -5,7 +5,7 @@
   <md-card-content>
     <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
@@ -80,7 +80,7 @@
   <md-card-content>
     <h3 class="md-title">[tdLoading] directive with template syntax</h3>
     <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
@@ -98,7 +98,7 @@
           </div>
         </ng-template>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+          <button md-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
@@ -162,9 +162,136 @@
 </md-card>
 <md-card>
   <md-card-content>
+    <h3 class="md-title">[tdLoading] until star syntax with variable reference and observables</h3>
+    <h4 class="md-subhead">with accent [tdLoadingColor]</h4>
+    <md-tab-group md-stretch-tabs dynamicHeight>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <div *tdLoading="let items until listObservable | async; color: 'accent'">
+          <md-list>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+              <md-list-item>
+                <md-slide-toggle md-line [checked]="item.value">
+                  {{item.label}}
+                </md-slide-toggle>
+              </md-list-item>
+              <md-divider *ngIf="!last"></md-divider>
+            </ng-template>
+          </md-list>
+        </div>
+        <div layout="row">
+          <button md-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
+        </div>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div *tdLoading="let items until listObservable | async; type: circle; color: accent">
+              <md-list>
+                <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+                  <md-list-item>
+                    <md-slide-toggle md-line [checked]="item.value">
+                      { {item.label} }
+                    </md-slide-toggle>
+                  </md-list-item>
+                  <md-divider *ngIf="!last"></md-divider>
+                </ng-template>
+              </md-list>
+            </div>
+            <div layout="row">
+              <button md-button color="primary" (click)="createObservableList()" class="text-upper">Create observable</button>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Observable } from 'rxjs/Observable';
+            import { Subscriber } from 'rxjs/Subscriber';
+            ...
+            export class Demo {
+              listObservable: Observable<any[]>;
+
+              createObservableList(): void {
+                this.listObservable = new Observable<any[]>((subscriber: Subscriber<any[]>) => {
+                  setTimeout(() => {
+                    subscriber.next([{label: 'Light', value: true}, {label: 'Console', value: false}, {label: 'T.V.', value: true}]);
+                  }, 3000);
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">[tdLoading] until template syntax with booleans</h3>
+    <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
+    <md-tab-group md-stretch-tabs dynamicHeight>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+          <div layout="column" flex>
+            <md-input-container flex>
+              <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
+            </md-input-container>
+            <md-input-container flex>
+              <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
+        </ng-template>
+        <div class="pad-sm">
+          <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+        </div>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+              <div layout="column" flex>
+                <md-input-container flex>
+                  <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
+                </md-input-container>
+                <md-input-container flex>
+                  <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
+                </md-input-container>
+              </div>
+            </ng-template>
+            <div class="pad-sm">
+              <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            ...
+            export class Demo {
+              loading: boolean = false;
+
+              untilOverlayDemo: any = {
+                name: '',
+                description: '',
+              };
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
     <h3 class="md-title">Preloaded [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <div layout="row">
@@ -210,7 +337,7 @@
   <md-card-content>
    <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <div layout="row">
@@ -271,6 +398,7 @@
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
+          <p md-line *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -283,11 +411,27 @@
           ...
         </div>
       ]]>
-    </td-highlight>   
+    </td-highlight>
+    <p>HTML (*) until async syntax:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <div *tdLoading="let item until observable | async; type:'circular'; color:'primary'">
+          { {item} }
+        </div>
+      ]]>
+    </td-highlight>  
     <p>HTML <![CDATA[<ng-template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
         <ng-template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
+          ...
+        </ng-template>
+      ]]>
+    </td-highlight>
+    <p>HTML <![CDATA[<ng-template>]]> until syntax</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <ng-template tdLoading [tdLoadingUntil]="boolean">
           ...
         </ng-template>
       ]]>
@@ -384,7 +528,7 @@
           }
 
           resolveLoading(): void {
-            this._loadingService.resolve('stringName');
+            this._loadingService.resolve('stringName'); // or this._loadingService.resolveAll('stringName');
           }
         }
       ]]>

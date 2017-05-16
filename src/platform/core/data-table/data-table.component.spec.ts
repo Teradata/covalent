@@ -7,6 +7,7 @@ import {
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { MdPseudoCheckbox } from '@angular/material';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component';
@@ -25,8 +26,9 @@ describe('Component: DataTable', () => {
         CovalentDataTableModule,
       ],
       declarations: [
-        TdDataTableBasicComponent,
+        TdDataTableBasicTestComponent,
         TdDataTableSelectableTestComponent,
+        TdDataTableRowClickTestComponent,
       ],
       providers: [
         TdDataTableService,
@@ -37,8 +39,8 @@ describe('Component: DataTable', () => {
 
   it('should set hidden and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
-      let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
       
       component.columns[1].hidden = false;
       // backwards compatability test
@@ -85,8 +87,8 @@ describe('Component: DataTable', () => {
 
   it('should set filter and not get search hits and set it to false and get search results', (done: DoneFn) => {
     inject([TdDataTableService], (tdDataTableService: TdDataTableService) => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicComponent);
-      let component: TdDataTableBasicComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableBasicTestComponent);
+      let component: TdDataTableBasicTestComponent = fixture.debugElement.componentInstance;
 
       component.columns[1].filter = false;
 
@@ -169,7 +171,7 @@ describe('Component: DataTable', () => {
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
           // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             // check to see if its in indeterminate state
@@ -225,23 +227,23 @@ describe('Component: DataTable', () => {
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
           // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             // check to see if its in indeterminate state
             expect(dataTableComponent.indeterminate).toBeTruthy();
             expect(dataTableComponent.allSelected).toBeFalsy();
             // select the rest of the rows
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[3].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[4].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               // check to see if its in indeterminate state and allSelected
               expect(dataTableComponent.indeterminate).toBeTruthy();
               expect(dataTableComponent.allSelected).toBeTruthy();
               // unselect one of the rows
-              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[2].triggerEventHandler('click', new Event('click'));
+              fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
                 // check to see if its in indeterminate state and not allSelected
@@ -255,8 +257,80 @@ describe('Component: DataTable', () => {
       })();
     });
 
-  });
+    it('should shift click and select a range of rows',
+      (done: DoneFn) => { inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableTestComponent);
+        let element: DebugElement = fixture.debugElement;
+        let component: TdDataTableSelectableTestComponent = fixture.debugElement.componentInstance;
+        
+        component.selectable = true;
+        component.multiple = true;
+        component.columns = [
+          { name: 'sku', label: 'SKU #' },
+          { name: 'item', label: 'Item name' },
+          { name: 'price', label: 'Price (US$)', numeric: true },
+        ];
 
+        component.data = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+                          { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+                          { sku: '1452-1', item: 'Sirlone', price: 22.11 },
+                          { sku: '1421-3', item: 'T-Bone', price: 51.15 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+          // check how many rows (without counting the columns) were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check to see checkboxes states
+          expect(dataTableComponent.indeterminate).toBeFalsy();
+          expect(dataTableComponent.allSelected).toBeFalsy();
+
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // select the first and last row with shift key also selected and should then select all checkboxes
+            let clickEvent: MouseEvent = document.createEvent('MouseEvents');          
+            // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
+            clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true/*shiftkey*/, false, 0, document.body.parentNode);
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].nativeElement.dispatchEvent(clickEvent);
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              // check to see if allSelected is true
+              expect(dataTableComponent.allSelected).toBeTruthy();
+              done();
+            });
+          });
+        });
+      })();
+    });
+
+    it('should click on a row and see the rowClick Event',
+      async(inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableRowClickTestComponent);
+        let component: TdDataTableRowClickTestComponent = fixture.debugElement.componentInstance;
+
+        let eventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(eventSpy.calls.count()).toBe(0);
+
+            component.clickable = true;
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(eventSpy.calls.count()).toBe(1);
+              });
+            });
+          });
+        });
+    })));
+  });
 });
 
 @Component({
@@ -266,7 +340,7 @@ describe('Component: DataTable', () => {
         [columns]="columns">
     </td-data-table>`,
 })
-class TdDataTableBasicComponent {
+class TdDataTableBasicTestComponent {
   data: any[] = [
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
     { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
@@ -292,4 +366,29 @@ class TdDataTableSelectableTestComponent {
   columns: any;
   selectable: boolean = false;
   multiple: boolean = false;
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        [clickable]="clickable"
+        (rowClick)="clickEvent()">
+    </td-data-table>`,
+})
+class TdDataTableRowClickTestComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+  clickable: boolean = false;
+  clickEvent(): void {
+    /* noop */
+  }
 }

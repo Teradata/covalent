@@ -10,6 +10,7 @@ import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { MessageDemoComponent } from './message/message.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
@@ -20,7 +21,6 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -29,9 +29,6 @@ const routes: Routes = [{
   children: [{
       component: ComponentsOverviewComponent,
       path: '',
-    }, {
-      component: MaterialComponentsComponent,
-      path: 'material-components',
     }, {
       component: HighlightDemoComponent,
       path: 'syntax-highlighting',
@@ -56,6 +53,9 @@ const routes: Routes = [{
     }, {
       component: MediaDemoComponent,
       path: 'media',
+    }, {
+      component: MessageDemoComponent,
+      path: 'message',
     }, {
       component: HttpDemoComponent,
       path: 'http',

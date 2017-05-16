@@ -5,6 +5,8 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
@@ -17,6 +19,9 @@ describe('Directive: Loading', () => {
         TdLoadingDefaultTestComponent,
         TdLoadingBasicTestComponent,
         TdLoadingDuplicationTestComponent,
+        TdLoadingStarUntilAsyncTestComponent,
+        TdLoadingNamedErrorStarUntilAsyncTestComponent,
+        TdLoadingBooleanTemplateUntilTestComponent,
       ],
       imports: [
         BrowserAnimationsModule,
@@ -267,6 +272,109 @@ describe('Directive: Loading', () => {
       done();
     })();
   });
+
+  it('should render a circle loading while the observable returns a value using until syntax and async pipe and display it', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingStarUntilAsyncTestComponent);
+      let component: TdLoadingStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
+      component.createObservable();
+      component.color = 'accent';
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+      expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).not.toContain('success');
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.mat-accent'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
+        component.sendResult('success');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          setTimeout(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+              expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+              expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).toContain('success');
+              fixture.detectChanges();
+              done();
+            });
+          }, 200);
+        });
+      });
+    })();
+  });
+
+  it('should render a circle loading while the observable and resolve it in the catch by calling the service', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingNamedErrorStarUntilAsyncTestComponent);
+      let component: TdLoadingNamedErrorStarUntilAsyncTestComponent = fixture.debugElement.componentInstance;
+      component.createObservable();
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
+        component.sendError('error');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          setTimeout(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+              expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+              expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent.trim()).toBeFalsy();
+              fixture.detectChanges();
+              done();
+            });
+          }, 200);
+        });
+      });
+    })();
+  });
+
+  it('should render a circle loading when false and remove it when true with boolean until syntax', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingBooleanTemplateUntilTestComponent);
+      let component: TdLoadingBooleanTemplateUntilTestComponent = fixture.debugElement.componentInstance;
+      component.loading = true;
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
+        component.loading = false;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          setTimeout(() => {
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+              expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+              fixture.detectChanges();
+              done();
+            });
+          }, 200);
+        });
+      });
+    })();
+  });
 });
 
 @Component({
@@ -311,4 +419,64 @@ class TdLoadingBasicTestComponent {
 })
 class TdLoadingDuplicationTestComponent {
 
+}
+
+@Component({
+  selector: 'td-loading-star-until-async-test',
+  template: `
+  <div *tdLoading="let item until observable | async; color: color">
+    <div class="content">{{item}}</div>
+  </div>
+  `,
+})
+class TdLoadingStarUntilAsyncTestComponent {
+  private _subject: Subject<any> = new Subject<any>();
+  observable: Observable<any>;
+  color: string;
+
+  createObservable(): void {
+    this.observable = this._subject.asObservable();
+  }
+
+  sendResult(result: any): void {
+    this._subject.next(result);
+  }
+}
+
+@Component({
+  selector: 'td-loading-named-error-star-until-async-test',
+  template: `
+  <div *tdLoading="'name1'; let item until observable | async; color: color">
+    <div class="content">{{item}}</div>
+  </div>
+  `,
+})
+class TdLoadingNamedErrorStarUntilAsyncTestComponent {
+  private _subject: Subject<any> = new Subject<any>();
+  observable: Observable<any>;
+  
+  constructor(private _loadingService: TdLoadingService) {}
+
+  createObservable(): void {
+    this.observable = this._subject.asObservable().catch(() => {
+      this._loadingService.resolveAll('name1');
+      return Observable.of(undefined);
+    });
+  }
+
+  sendError(error: any): void {
+    this._subject.error(error);
+  }
+}
+
+@Component({
+  selector: 'td-loading-boolean-template-until-test',
+  template: `
+  <ng-template tdLoading [tdLoadingUntil]="!loading">
+    <div class="content"></div>
+  </ng-template>
+  `,
+})
+class TdLoadingBooleanTemplateUntilTestComponent {
+  loading: boolean = false;
 }
