@@ -48,6 +48,7 @@ These selectors were deprecated a few releases back so it should be ok to remove
 * **layout:** if [navigationRoute] is not set, then the icon/logo/title will not be navigatable. ([dda9b4b5fa6f2b44ce558665c49f1f06b0390237](https://github.com/Teradata/covalent/commit/dda9b4b5fa6f2b44ce558665c49f1f06b0390237))
 * **loading:** support for async and boolean with [until] input ([d57bf6757eb3426bd7404edb4b0d1d51c46f6478](https://github.com/Teradata/covalent/commit/d57bf6757eb3426bd7404edb4b0d1d51c46f6478)), closes [#528](https://github.com/Teradata/covalent/issues/528) 
 * **markdown:** added `(contentReady)` event binding. ([cdf6cad19b3972259e78809aaff5aca6ba408bb1](https://github.com/Teradata/covalent/commit/cdf6cad19b3972259e78809aaff5aca6ba408bb1)), closes [#536](https://github.com/Teradata/covalent/issues/536)
+* **message:** introducing `message` module for easy display of inline messages or info boxes ([8a517fb516ea2344a6471d22ec6b23b8fca8fc60](https://github.com/Teradata/covalent/commit/8a517fb516ea2344a6471d22ec6b23b8fca8fc60)), closes [#316](https://github.com/Teradata/covalent/issues/316) 
 * **paging:** ability to jump to page `n` with page links in `TdPagingBarComponent` ([459dcb3186a72d4e3f5d51108b7723698a13fffa](https://github.com/Teradata/covalent/commit/459dcb3186a72d4e3f5d51108b7723698a13fffa)), closes [#496](https://github.com/Teradata/covalent/issues/496) 
 
 ## Internal
