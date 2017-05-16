@@ -105,13 +105,13 @@ export class TdMessageComponent implements AfterViewInit {
    * Initializes the component and attaches the content if [opened] was true.
    */
   ngAfterViewInit(): void {
-    if (this._opened) {
-      Promise.resolve(undefined).then(() => {
+    Promise.resolve(undefined).then(() => {
+      if (this._opened) {
         this._childElement.viewContainer.createEmbeddedView(this._template);
-        this._initialized = true;
         this._changeDetectorRef.markForCheck();
-      });
-    }
+      }
+      this._initialized = true;
+    });
   }
 
   /**
