@@ -352,6 +352,8 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   showAlert(event: any): void {
-    alert('You clicked on row: ' + event.row.name);
+    this._dialogService.openAlert({
+      message: 'You clicked on row: ' + event.row.name,
+    });
   }
 }
