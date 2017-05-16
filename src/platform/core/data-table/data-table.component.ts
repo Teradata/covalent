@@ -379,12 +379,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, event: Event, currentSelected: number): void {
-    if (this.isSelectable || this.isClickable) {
+    if (this.isSelectable) {
       this.blockEvent(event);
-      // clears all the fields for the dataset
-      if (!this._multiple) {
-        this.clearModel();
-      }
       this._doSelection(row);
 
       // Check to see if Shift key is selected and need to select everything in between
@@ -491,7 +487,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index - 1].focus();
         }
         this.blockEvent(event);
-        if (event.shiftKey) {
+        if (this.isMultiple && event.shiftKey) {
           this._doSelection(this._data[index - 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Ascending;
@@ -517,7 +513,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index + 1].focus();
         }
         this.blockEvent(event);
-        if (event.shiftKey) {
+        if (this.isMultiple && event.shiftKey) {
           this._doSelection(this._data[index + 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Descending;
@@ -569,6 +565,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Does the actual Row Selection
    */
   private _doSelection(row: any): void {
+    console.log(this.isRowSelected(row));
     if (!this.isRowSelected(row)) {
       this._value.push(row);
     } else {
