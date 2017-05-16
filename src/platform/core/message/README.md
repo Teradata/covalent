@@ -3,7 +3,7 @@
 `td-message` element generates an inline message with an icon, color, label and sublabel.
 
 `color` can be either with any theme color (`primary`, `accent` or `warn`)
-But you can also set a `color` from our lib can be applied in the component to get any material color not in the theme. (`blue`, `red`, etc)
+But you can also set a `color` from our lib and it can be applied in the component to get any material color not in the theme. (`blue`, `red`, etc)
 
 ## API Summary
 
