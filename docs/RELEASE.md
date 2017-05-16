@@ -8,7 +8,7 @@
 * [Publish Release](#publish-release)
 * [Post Release Checklist](#post-release-checklist)
 
-### Pre Release Checklist
+#### Pre Release Checklist
 
 1. Changelog needs to be updated with all release features/fixes/enhancements.
 2. Notifications need to be updated in the covalent `home` screen.
