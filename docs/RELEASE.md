@@ -4,7 +4,8 @@
 
 * [Start Release](#start-release)
 * [Finish Release](#finish-release) 
-* [Publish Release](#publish-release) 
+* [Publish Release](#publish-release)
+* [Post Release Checklist](#post-release-checklist)
 
 #### Start Release
 
@@ -30,3 +31,10 @@ Execute `git flow release finish v[version]` and `npm run finish-release` to fin
 Execute `npm run npm-publish` from develop branch to start the automatic publishing process. The steps executed are:
   1. Executes `npm run build` process.
   2. Executes `bash scripts/npm-publish` process.
+
+#### Post Release Checklist
+
+1. Deploy to ghpages using `npm run ghpages-deploy`
+2. Update release `plnkr` (and nightly release `plnkr` if needed)
+3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
+4. Throw party~
