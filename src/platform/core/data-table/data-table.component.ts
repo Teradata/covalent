@@ -565,8 +565,11 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Does the actual Row Selection
    */
   private _doSelection(row: any): void {
-    console.log(this.isRowSelected(row));
-    if (!this.isRowSelected(row)) {
+    let wasSelected: boolean = this.isRowSelected(row);
+    if (!this._multiple) {
+      this.clearModel();
+    }
+    if (!wasSelected) {
       this._value.push(row);
     } else {
       // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
