@@ -160,7 +160,6 @@ describe('Component: Message', () => {
     });
   });
 
-
   it('should not render the component, set [opened] to true and then [opened] to false', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
     let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
