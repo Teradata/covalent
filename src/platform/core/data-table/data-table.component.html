@@ -27,11 +27,11 @@
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
-        [tabIndex]="isClickable ? 0 : -1"
+        [tabIndex]="isSelectable ? 0 : -1"
         [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
         *ngFor="let row of data; let rowIndex = index"
         (click)="handleRowClick(row, $event, rowIndex)"
-        (keyup)="_rowKeyup($event, row, rowIndex)"
+        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
         (keydown.space)="blockEvent($event)"
         (keydown.shift.space)="blockEvent($event)"
         (keydown.shift)="disableTextSelection()"
