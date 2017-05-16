@@ -2,7 +2,7 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="updates.length + 2">
+      <td-notification-count color="accent" [notifications]="updates.length + 1">
         <md-icon>notifications</md-icon>
       </td-notification-count>
     </button>
@@ -18,19 +18,13 @@
             </a>
             <md-divider></md-divider>
           </ng-template>
-          <a md-list-item href="https://github.com/Teradata/covalent/pulls?q=is%3Apr+is%3Aclosed+milestone%3A%22Beta+3%22+label%3Abug" target="_blank">
-            <md-icon md-list-avatar>bug_report</md-icon>
-            <h4 md-line><span class="text-wrap">Beta 3 bugfixes</span></h4>
-            <p md-line>Stabililty</p>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L57-L68" target="_blank">
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L58-L79" target="_blank">
             <md-icon md-list-avatar>change_history</md-icon>
-            <h4 md-line><span class="text-wrap">Angular v4 and material@beta.3 support</span></h4>
+            <h4 md-line><span class="text-wrap">Angular v4.1 and material@beta.5 support</span></h4>
             <p md-line>Dependencies updated</p>
           </a>
         </md-nav-list>
-        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
+        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md#100-beta4-johnny-b-goode-2017-05-16" target="_blank">
           View Full Changelog
         </a>
       </td-menu>
