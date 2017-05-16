@@ -82,6 +82,13 @@ import { CovalentMenuModule } from './menu/menu.module';
 export * from './menu/menu.module';
 
 /**
+ * MESSAGE
+ */
+
+import { CovalentMessageModule } from './message/message.module';
+export * from './message/message.module';
+
+/**
  * NOTIFICATIONS
  */
 
