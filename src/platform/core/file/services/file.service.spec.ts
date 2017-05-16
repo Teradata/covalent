@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
-import {  TdFileService, IUploadOptions } from '../file.module';
+import { TdFileService, IUploadOptions } from '../file.module';
 
-describe('FileService', () => {
+describe('Service: File', () => {
     let service: TdFileService;
 
     beforeEach(() => {
