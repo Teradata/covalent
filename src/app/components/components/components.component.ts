@@ -76,10 +76,10 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'notifications',
     title: 'Notifications',
   }, {
-    description: 'Set inline messages',
-    icon: 'message',
+    description: 'Info, warning & alert messages',
+    icon: 'info_outline',
     route: 'message',
-    title: 'Message',
+    title: 'Messages & Alerts',
   }, {
     description: 'Search and filter items',
     icon: 'search',
