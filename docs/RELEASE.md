@@ -2,7 +2,7 @@
 
 ## Release
 
-* [Pres Release Checklist](#pre-release-checklist)
+* [Pre Release Checklist](#pre-release-checklist)
 * [Start Release](#start-release)
 * [Finish Release](#finish-release) 
 * [Publish Release](#publish-release)
