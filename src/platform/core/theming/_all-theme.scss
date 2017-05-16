@@ -9,6 +9,7 @@
 @import '../json-formatter/json-formatter-theme';
 @import '../paging/paging-bar-theme';
 @import '../notifications/notification-count-theme';
+@import '../message/message-theme';
 
 // Create a theme.
 @mixin covalent-theme($theme) {
@@ -23,4 +24,5 @@
   @include td-loading-theme($theme);
   @include td-data-table-theme($theme);
   @include td-notification-count-theme($theme);
+  @include td-message-theme($theme);
 }

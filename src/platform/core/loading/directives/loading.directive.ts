@@ -5,11 +5,23 @@ import { LoadingType, LoadingMode, LoadingStrategy, TdLoadingComponent } from '.
 import { TdLoadingService } from '../services/loading.service';
 import { ILoadingRef } from '../services/loading.factory';
 
+/**
+ * Context class for variable reference
+ */
+export class TdLoadingContext {
+  public $implicit: any = undefined;
+  public tdLoading: any = undefined;
+}
+
+// Constant for generation of the id for the next component
+let TD_LOADING_NEXT_ID: number = 0;
+
 @Directive({
   selector: '[tdLoading]',
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
 
+  private _context: TdLoadingContext = new TdLoadingContext();
   private _type: LoadingType;
   private _mode: LoadingMode;
   private _strategy: LoadingStrategy;
@@ -17,12 +29,35 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
   private _loadingRef: ILoadingRef;
 
   /**
-   * tdLoading?: string
+   * tdLoading: string
    * Name reference of the loading mask, used to register/resolve requests to the mask.
    */
   @Input('tdLoading')
   set name(name: string) {
-    this._name = name;
+    if (!this._name) {
+      if (name) {
+        this._name = name;
+      }
+    }
+  }
+
+  /**
+   * tdLoadingUntil?: any
+   * If its null, undefined or false it will be used to register requests to the mask.
+   * Else if its any value that can be resolved as true, it will resolve the mask.
+   * [name] is optional when using [until], but can still be used to register/resolve it manually.
+   */
+  @Input('tdLoadingUntil')
+  set until(until: any) {
+    if (!this._name) {
+      this._name = 'td-loading-until-' + TD_LOADING_NEXT_ID++;
+    }
+    this._context.$implicit = this._context.tdLoading = until;
+    if (!until) {
+      this._loadingService.register(this._name);
+    } else {
+      this._loadingService.resolveAll(this._name);
+    }
   }
 
   /**
@@ -112,14 +147,13 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     // Check if `TdLoadingComponent` has been created before trying to add one again.
     // There is a weird edge case when using `[routerLinkActive]` that calls the `ngOnInit` twice in a row
     if (!this._loadingRef) {
-      this._viewContainerRef.createEmbeddedView(this._templateRef);
       this._loadingRef = this._loadingService.createComponent({
         name: this._name,
         type: this._type,
         mode: this._mode,
         color: this.color,
         strategy: this._strategy,
-      }, this._viewContainerRef, this._templateRef);
+      }, this._viewContainerRef, this._templateRef, this._context);
     }
   }
 }

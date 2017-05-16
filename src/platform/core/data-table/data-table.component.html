@@ -1,13 +1,18 @@
 <div class="mat-table-container" title>
   <table td-data-table
-         [class.mat-selectable]="isSelectable">
+         [class.mat-selectable]="isSelectable"
+         [class.mat-clickable]="isClickable">
     <th td-data-table-column class="mat-checkbox-column" *ngIf="isSelectable">
       <md-checkbox
         #checkBoxAll
         *ngIf="isMultiple"
         [disabled]="!hasData"
-        [checked]="areAllSelected() && hasData"
-        (click)="selectAll(!checkBoxAll.checked)">
+        [indeterminate]="indeterminate && !allSelected && hasData"
+        [checked]="allSelected && hasData"
+        (click)="selectAll(!checkBoxAll.checked)"
+        (keyup.enter)="selectAll(!checkBoxAll.checked)"
+        (keyup.space)="selectAll(!checkBoxAll.checked)"
+        (keydown.space)="blockEvent($event)">
       </md-checkbox>
     </th>
     <th td-data-table-column
@@ -17,20 +22,31 @@
         [active]="(column.sortable || isSortable) && column === sortByColumn"
         [sortable]="column.sortable ||  isSortable"
         [sortOrder]="sortOrderEnum"
+        [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
-        [class.mat-selected]="isSelectable && isRowSelected(row)"
-        *ngFor="let row of data"
-        (click)="isSelectable && select(row, !isRowSelected(row), $event)">
+        [tabIndex]="isSelectable ? 0 : -1"
+        [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
+        *ngFor="let row of data; let rowIndex = index"
+        (click)="handleRowClick(row, $event, rowIndex)"
+        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
+        (keydown.space)="blockEvent($event)"
+        (keydown.shift.space)="blockEvent($event)"
+        (keydown.shift)="disableTextSelection()"
+        (keyup.shift)="enableTextSelection()">
       <td td-data-table-cell class="mat-checkbox-cell" *ngIf="isSelectable">
         <md-pseudo-checkbox
-          [state]="isRowSelected(row) ? 'checked' : 'unchecked'">
+          [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
+          (mousedown)="disableTextSelection()"
+          (mouseup)="enableTextSelection()"
+          (click)="select(row, $event, rowIndex)">
         </md-pseudo-checkbox>
       </td>
       <td td-data-table-cell
           [numeric]="column.numeric"
+          [hidden]="column.hidden"
           *ngFor="let column of columns">
         <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
         <ng-template

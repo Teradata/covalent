@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { layoutsRoutes } from './layouts.routes';
 
@@ -9,7 +10,9 @@ import { NavListComponent } from './nav-list/nav-list.component';
 import { CardOverComponent } from './card-over/card-over.component';
 import { ManageListComponent } from './manage-list/manage-list.component';
 
-import { CovalentCoreModule } from '../../../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
@@ -24,7 +27,20 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     ManageListComponent,
   ],
   imports: [
-    CovalentCoreModule,
+    /** Angular Modules */
+    CommonModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdToolbarModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentExpansionPanelModule,
+    CovalentStepsModule,
+    CovalentMediaModule,
     CovalentHighlightModule,
     DocumentationToolsModule,
     layoutsRoutes,

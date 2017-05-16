@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule, MdCardModule, MdListModule } from '@angular/material';
 
 import { TdLayoutComponent } from './layout.component';
@@ -33,7 +32,6 @@ export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
     MdSidenavModule,
     MdToolbarModule,
     MdButtonModule,
@@ -49,15 +47,5 @@ export { TdLayoutComponent, TdLayoutNavComponent, TdLayoutNavListComponent,
   ],
 })
 export class CovalentLayoutModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentLayoutModule,
-      providers: [ ],
-    };
-  }
+
 }

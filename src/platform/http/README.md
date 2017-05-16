@@ -6,17 +6,17 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `delete` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a DELETE method to a URL, executing the interceptors as part of the request pipeline.
-| `get` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a GET method to a URL, executing the interceptors as part of the request pipeline.
-| `head` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a HEAD method to a URL, executing the interceptors as part of the request pipeline.
-| `patch` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a PATCH method to a URL, executing the interceptors as part of the request pipeline.
-| `post` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a POST method to a URL, executing the interceptors as part of the request pipeline.
-| `put` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a PUT method to a URL, executing the interceptors as part of the request pipeline.
-| `request` | `function(url: string | Request, options: RequestOptionsArgs)` | Uses underlying ng2 [http] to request a generic request to a URL, executing the interceptors as part of the request pipeline.
+| `delete` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a DELETE method to a URL, executing the interceptors as part of the request pipeline.
+| `get` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a GET method to a URL, executing the interceptors as part of the request pipeline.
+| `head` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a HEAD method to a URL, executing the interceptors as part of the request pipeline.
+| `patch` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a PATCH method to a URL, executing the interceptors as part of the request pipeline.
+| `post` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a POST method to a URL, executing the interceptors as part of the request pipeline.
+| `put` | `function(url: string, data: any, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a PUT method to a URL, executing the interceptors as part of the request pipeline.
+| `request` | `function(url: string | Request, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a generic request to a URL, executing the interceptors as part of the request pipeline.
 
 ## Usage
 
-Service provided with methods that wrap the ng2 [Http] service and provide an easier experience for interceptor implementation.
+Service provided with methods that wrap the @angular [Http] service and provide an easier experience for interceptor implementation.
 
 To add a desired interceptor, it needs to implement the [IHttpInterceptor] interface.
 
@@ -88,7 +88,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
 
 @NgModule({
   imports: [
-    HttpModule, /* or CovalentCoreModule */
+    HttpModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: CustomInterceptor, paths: ['**'],
@@ -202,7 +202,7 @@ export class CustomRESTService extends RESTService<any> {
 }
 
 ```
-Note: the constructor takes any object that implements the methods in [IHttp] interface. This can be the ng2 [Http] service, the covalent [HttpInterceptorService] or a custom service.</p>
+Note: the constructor takes any object that implements the methods in [IHttp] interface. This can be the @angular [Http] service, the covalent [HttpInterceptorService] or a custom service.</p>
 
 ```typescript
 export interface IHttp {

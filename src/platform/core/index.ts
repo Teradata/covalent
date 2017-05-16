@@ -4,9 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 /**
  * COMMON
  */
@@ -85,6 +82,13 @@ import { CovalentMenuModule } from './menu/menu.module';
 export * from './menu/menu.module';
 
 /**
+ * MESSAGE
+ */
+
+import { CovalentMessageModule } from './message/message.module';
+export * from './message/message.module';
+
+/**
  * NOTIFICATIONS
  */
 
@@ -111,68 +115,3 @@ export * from './search/search.module';
 
 import { CovalentStepsModule } from './steps/steps.module';
 export * from './steps/steps.module';
-
-/**
- * @deprecated in 1.0.0-beta.3-1
- */
-@NgModule({
-  imports: [
-    HttpModule,
-    JsonpModule,
-    FormsModule,
-    CommonModule,
-    MaterialModule,
-    FlexLayoutModule,
-    CovalentCommonModule,
-    CovalentChipsModule,
-    CovalentDataTableModule,
-    CovalentDialogsModule,
-    CovalentExpansionPanelModule,
-    CovalentFileModule,
-    CovalentJsonFormatterModule,
-    CovalentLayoutModule,
-    CovalentLoadingModule,
-    CovalentMediaModule,
-    CovalentMenuModule,
-    CovalentNotificationsModule,
-    CovalentPagingModule,
-    CovalentSearchModule,
-    CovalentStepsModule,
-  ],
-  exports: [
-    HttpModule,
-    JsonpModule,
-    FormsModule,
-    CommonModule,
-    MaterialModule,
-    FlexLayoutModule,
-    CovalentCommonModule,
-    CovalentChipsModule,
-    CovalentDataTableModule,
-    CovalentDialogsModule,
-    CovalentExpansionPanelModule,
-    CovalentFileModule,
-    CovalentJsonFormatterModule,
-    CovalentLayoutModule,
-    CovalentLoadingModule,
-    CovalentMediaModule,
-    CovalentMenuModule,
-    CovalentNotificationsModule,
-    CovalentPagingModule,
-    CovalentSearchModule,
-    CovalentStepsModule,
-  ],
-})
-export class CovalentCoreModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentCoreModule,
-      providers: [ ],
-    };
-  }
-}

@@ -39,7 +39,7 @@ Import the [CovalentPagingModule] in your NgModule:
 import { CovalentPagingModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentPagingModule, // or CovalentCoreModule (included inside of it)
+    CovalentPagingModule,
     ...
   ],
   ...

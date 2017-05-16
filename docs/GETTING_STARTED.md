@@ -1,3 +1,5 @@
+# Getting Started
+
 Get started with Covalent using the Angular CLI.
 
 See the  [material getting started](https://github.com/angular/material2/blob/master/guides/getting-started.md) for instructions.
@@ -34,7 +36,7 @@ npm install --save https://github.com/Teradata/covalent-nightly.git
   
 **src/app/app.module.ts**
 ```ts
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, CovalentStepsModule /*, any other modules */ } from '@covalent/core';
 // (optional) Additional Covalent Modules imports
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
@@ -43,7 +45,8 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 // other imports 
 @NgModule({
   imports: [
-    CovalentCoreModule,
+    CovalentLayoutModule,
+    CovalentStepsModule,
     // (optional) Additional Covalent Modules imports
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
@@ -113,7 +116,8 @@ or
 
 If you're not using the Angular CLI, you can use any existing Sass tooling to build the file (such as gulp-sass or grunt-sass). The simplest approach is to use the node-sass CLI; you simply run:
 
-node-sass src/themes.scss dist/themes.css
+`node-sass src/themes.scss dist/themes.css`
+
 and then include the output file in your application.
 
 The theme file can be concatenated and minified with the rest of the application's css.

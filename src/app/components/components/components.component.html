@@ -2,6 +2,7 @@
                     #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
+                    navigationRoute="/"
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
@@ -33,6 +34,15 @@
       <md-divider *ngIf="!last" md-inset></md-divider>
     </ng-template>
     <h3 md-subheader>External Components</h3>
+    <a md-list-item 
+        href="https://material.angular.io/components"
+        target="_blank">
+      <md-icon md-list-avatar>layers</md-icon>
+      <h3 md-line> Angular Material </h3>
+      <p md-line> Material Design components </p>
+      <md-icon mdTooltip="External docs" class="text-md tc-grey-600">launch</md-icon>
+    </a>
+    <md-divider md-inset></md-divider>
     <ng-template let-item let-last="last" ngFor [ngForOf]="external">
       <a md-list-item 
           [routerLink]="[item.route]" 

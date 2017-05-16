@@ -1,6 +1,7 @@
 <td-layout-nav-list #navList
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
+                    navigationRoute="/"
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
@@ -42,7 +43,7 @@
       <div layout-gt-lg="row">
         <div flex-gt-lg="50">
           <td-steps>
-            <td-step label="td-layout-nav-list" sublabel="the main content area of the layout">
+            <td-step label="td-layout-nav-list" sublabel="the main content area of the layout" active="true">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-nav-list>]]></code></h3>
@@ -61,7 +62,7 @@
                 <md-divider></md-divider>
                 <md-list-item>
                   <h3 md-line><code>navigationRoute?: string</code></h3>
-                  <p md-line>Route on logo/icon/title (defaults to '/')</p>
+                  <p md-line>Optional route navigation on logo/icon/title</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>

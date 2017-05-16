@@ -21,7 +21,7 @@ const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableTableComponent,
 ];
 
-export { TdDataTableComponent, TdDataTableSortingOrder,
+export { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableRowClickEvent,
          ITdDataTableColumn, ITdDataTableSelectEvent, ITdDataTableSelectAllEvent } from './data-table.component';
 export { TdDataTableService } from './services/data-table.service';
 export { TdDataTableColumnComponent,
@@ -49,15 +49,5 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
   ],
 })
 export class CovalentDataTableModule {
-  /**
-   * @deprecated in 1.0.0-beta.3
-   *
-   * Please use without calling forRoot()
-   */
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentDataTableModule,
-      providers: [ ],
-    };
-  }
+
 }

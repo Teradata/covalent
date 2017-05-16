@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare var showdown: any;
@@ -26,6 +26,12 @@ export class TdMarkdownComponent implements AfterViewInit {
     this._loadContent(this._content);
   }
 
+  /**
+   * contentReady?: function
+   * Event emitted after the markdown content rendering is finished.
+   */
+  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
@@ -46,6 +52,7 @@ export class TdMarkdownComponent implements AfterViewInit {
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
+    this.onContentReady.emit();
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {

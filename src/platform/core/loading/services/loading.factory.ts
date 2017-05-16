@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
+import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';
 import { ITdLoadingConfig} from './loading.service';
 
@@ -100,13 +101,14 @@ export class TdLoadingFactory {
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
   public createReplaceComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
-                                templateRef: TemplateRef<Object>): ILoadingRef {
+                                templateRef: TemplateRef<Object>, context: TdLoadingContext): ILoadingRef {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
     (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling ?
       nativeElement.nextElementSibling.scrollHeight : undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.None;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
+    viewContainerRef.createEmbeddedView(templateRef, context);
     loadingRef.observable
     .subscribe((registered: number) => {
       if (registered > 0 && !loading) {
@@ -121,12 +123,14 @@ export class TdLoadingFactory {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
           subs.unsubscribe();
-          let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef);
+          // passing context so when the template is re-attached, we can keep the reference of the variables
+          let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef, context);
           viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
           /**
-           * Need to call "markForCheck" on attached template, so its detected by parent component when attached
+           * Need to call "markForCheck" and "detectChanges" on attached template, so its detected by parent component when attached
            * with "OnPush" change detection
            */
+          cdr.detectChanges();
           cdr.markForCheck();
         });
       }

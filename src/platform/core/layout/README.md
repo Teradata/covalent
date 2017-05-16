@@ -20,7 +20,7 @@ Import the **[CovalentLayoutModule]** in your NgModule:
 import { CovalentLayoutModule } from '@covalent/core';
 @NgModule({
   imports: [
-    CovalentLayoutModule, // or CovalentCoreModule
+    CovalentLayoutModule,
     ...
   ],
   ...
@@ -47,7 +47,7 @@ See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent 
 | icon | string | icon name to be displayed before the title
 | logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
 | color | string | optional sidenav toolbar color.
-| navigationRoute | string | route for the icon, logo, and sidenavTitle. Defaults to '/'.
+| navigationRoute | string | option to set the combined route for the icon, logo, and sidenavTitle.
 | backgroundUrl | SafeResourceUrl | image to be displayed as the background of the toolbar. URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
 | name | string | string to be displayed as part of the navigation drawer sublabel. if [email] is not set, then [name] will be the toggle menu text.
 | email | string | string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text. if [email] and [name] are not set, then the toggle menu is not rendered.
@@ -63,7 +63,7 @@ Example for Main Layout / Navigation Drawer Combo:
 
 ```html
 <td-layout>
-  <td-navigation-drawer sidenavTitle="title" logo="logo" icon="icon" name="name" password="password" color="color"  navigationRoute="/">
+  <td-navigation-drawer sidenavTitle="title" logo="logo" icon="icon" name="name" password="password" color="color" navigationRoute="/">
     .. main drawer content
     <div td-navigation-drawer-menu>
       .. menu drawer content
