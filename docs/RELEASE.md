@@ -37,4 +37,5 @@ Execute `npm run npm-publish` from develop branch to start the automatic publish
 1. Deploy to ghpages using `npm run ghpages-deploy`
 2. Update release `plnkr` (and nightly release `plnkr` if needed)
 3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
-4. Throw party~
+4. Update UPGRADE.md as necessary.
+5. Throw party~
