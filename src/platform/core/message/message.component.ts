@@ -22,9 +22,9 @@ export class TdMessageComponent implements AfterViewInit {
   @ViewChild(TdMessageContainerDirective) _childElement: TdMessageContainerDirective;
   @ViewChild(TemplateRef) _template: TemplateRef<any>;
 
-  @HostBinding('style.height.px')
+  @HostBinding('style.display')
   get hidden(): string {
-    return !this._opened ? '0' : undefined;
+    return !this._opened ? 'none' : undefined;
   }
 
   /**
