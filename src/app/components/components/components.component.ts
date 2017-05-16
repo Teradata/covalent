@@ -76,6 +76,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'notifications',
     title: 'Notifications',
   }, {
+    description: 'Info, warning & alert messages',
+    icon: 'info_outline',
+    route: 'message',
+    title: 'Messages & Alerts',
+  }, {
     description: 'Search and filter items',
     icon: 'search',
     route: 'search',
