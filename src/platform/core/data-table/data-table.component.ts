@@ -75,6 +75,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _data: any[];
   private _columns: ITdDataTableColumn[];
   private _selectable: boolean = false;
+  private _clickable: boolean = false;
   private _multiple: boolean = true;
   private _allSelected: boolean = false;
   private _indeterminate: boolean = false;
@@ -181,6 +182,19 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
   get isSelectable(): boolean {
     return this._selectable;
+  }
+
+  /**
+   * clickable?: boolean
+   * Enables row click events, hover.
+   * Defaults to 'false'
+   */
+  @Input('clickable')
+  set clickable(clickable: string | boolean) {
+    this._clickable = clickable !== '' ? (clickable === 'true' || clickable === true) : true;
+  }
+  get isClickable(): boolean {
+    return this._clickable;
   }
 
   /**
@@ -365,7 +379,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, event: Event, currentSelected: number): void {
-    if (this.isSelectable) {
+    if (this.isSelectable || this.isClickable) {
       this.blockEvent(event);
       // clears all the fields for the dataset
       if (!this._multiple) {
@@ -423,9 +437,12 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
 
   /**
    * emits the onRowClickEvent when a row is clicked
+   * if clickable is true and selectable is false then select the row
    */
-  handleRowClick(row: any): void {
-    this.onRowClick.emit({row: row});
+  handleRowClick(row: any, event: Event, currentSelected: number): void {
+    if (this.isClickable) {
+      this.onRowClick.emit({row: row});
+    }
   }
 
   /**

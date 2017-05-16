@@ -30,8 +30,12 @@ export class DataTableDemoComponent implements OnInit {
     name: 'columns?',
     type: 'ITdDataTableColumn[]',
   }, {
-    description: `Enables row selection events, hover and selected row states.`,
+    description: `Enables row selection, click events and selected row state.`,
     name: 'selectable?',
+    type: 'boolean',
+  }, {
+    description: `Enables row click events and hover row state.`,
+    name: 'clickable?',
     type: 'boolean',
   }, {
     description: `Enables multiple row selection. [selectable] needs to be enabled.`,
@@ -272,6 +276,7 @@ export class DataTableDemoComponent implements OnInit {
     ];
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = true;
+  clickable: boolean = false;
   multiple: boolean = true;
   filterColumn: boolean = true;
 
@@ -344,5 +349,9 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
+  }
+
+  showAlert(event: any): void {
+    alert('You clicked on row: ' + event.row.name);
   }
 }
