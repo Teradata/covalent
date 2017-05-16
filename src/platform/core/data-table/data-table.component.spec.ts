@@ -316,7 +316,17 @@ describe('Component: DataTable', () => {
           fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(eventSpy.calls.count()).toBe(1);
+            expect(eventSpy.calls.count()).toBe(0);
+
+            component.clickable = true;
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(eventSpy.calls.count()).toBe(1);
+              });
+            });
           });
         });
     })));
@@ -363,6 +373,7 @@ class TdDataTableSelectableTestComponent {
     <td-data-table
         [data]="data"
         [columns]="columns"
+        [clickable]="clickable"
         (rowClick)="clickEvent()">
     </td-data-table>`,
 })
@@ -376,6 +387,7 @@ class TdDataTableRowClickTestComponent {
     { name: 'item', label: 'Item name' },
     { name: 'price', label: 'Price (US$)', numeric: true },
   ];
+  clickable: boolean = false;
   clickEvent(): void {
     /* noop */
   }
