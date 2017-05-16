@@ -83,15 +83,15 @@ export class MyModule {}
 
 Service provided with methods that wrap complexity for as easier file upload experience.
 
-Recieves as parameter an object that implements the [IUploadOptions] interface. *Note: since the file is sent by the name 'file' you can't use the string 'file' as a key in [additionalFormData]*
+Recieves as parameter an object that implements the [IUploadOptions] interface. You have to assigne a value either to [file] or to [formData]. If [file] is assigned [formData] will be ignored; when only [formData] is assigned then it will be sent as form data.
 
 ```typescript
 interface IUploadOptions { 
   url: string; 
   method: 'post' | 'put'; 
-  file: File;
+  file?: File;
   headers?: {[key: string]: string};
-  additionalFormData?: {[key: string]: string}; 
+  formData?: FormData; 
 }
 ```
 
