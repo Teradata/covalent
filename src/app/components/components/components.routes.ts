@@ -10,6 +10,7 @@ import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { MessageDemoComponent } from './message/message.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
@@ -52,6 +53,9 @@ const routes: Routes = [{
     }, {
       component: MediaDemoComponent,
       path: 'media',
+    }, {
+      component: MessageDemoComponent,
+      path: 'message',
     }, {
       component: HttpDemoComponent,
       path: 'http',
