@@ -1,0 +1,1 @@
+## TdMonacoEditorComponent: td-monaco-editor
