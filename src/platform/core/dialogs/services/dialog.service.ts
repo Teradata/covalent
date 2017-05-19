@@ -3,6 +3,7 @@ import { MdDialog, MdDialogRef, MdDialogConfig, ComponentType } from '@angular/m
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { TdConfirmAgainstValueDialogComponent } from '../confirm-against-value-dialog/confirm-against-value-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 
 export interface IDialogConfig {
@@ -21,6 +22,10 @@ export interface IConfirmConfig extends IDialogConfig {
   cancelButton?: string;
 }
 
+export interface IConfirmAgainstValueConfig extends IConfirmConfig {
+  value: string;
+}
+
 export interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
@@ -28,7 +33,7 @@ export interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
 
-  constructor(private _dialogService: MdDialog) {}
+  constructor(private _dialogService: MdDialog) { }
 
   /**
    * params:
@@ -99,6 +104,40 @@ export class TdDialogService {
     }
     if (config.cancelButton) {
       confirmDialogComponent.cancelButton = config.cancelButton;
+    }
+    return dialogRef;
+  }
+
+  /**
+   * params:
+   * - config: IConfirmAgainstValueConfig {
+   *     message: string;
+   *     title?: string;
+   *     viewContainerRef?: ViewContainerRef;
+   *     acceptButton?: string;
+   *     cancelButton?: string;
+   *     value: string;
+   * }
+   * 
+   * Opens a confirm against value dialog with the provided config.
+   * Returns an MdDialogRef<TdConfirmAgainstValueDialogComponent> object.
+   */
+  public openConfirmAgainstValue(config: IConfirmAgainstValueConfig): MdDialogRef<TdConfirmAgainstValueDialogComponent> {
+    let dialogConfig: MdDialogConfig = this._createConfig(config);
+    let dialogRef: MdDialogRef<TdConfirmAgainstValueDialogComponent> =
+      this._dialogService.open(TdConfirmAgainstValueDialogComponent, dialogConfig);
+    let confirmAgainstValueDialogComponent: TdConfirmAgainstValueDialogComponent = dialogRef.componentInstance;
+    confirmAgainstValueDialogComponent.title = config.title;
+    confirmAgainstValueDialogComponent.message = config.message;
+    if (config.value === undefined) {
+      throw new Error('[value] cant be null/undefined');
+    }
+    confirmAgainstValueDialogComponent.value = config.value;
+    if (config.acceptButton) {
+      confirmAgainstValueDialogComponent.acceptButton = config.acceptButton;
+    }
+    if (config.cancelButton) {
+      confirmAgainstValueDialogComponent.cancelButton = config.cancelButton;
     }
     return dialogRef;
   }

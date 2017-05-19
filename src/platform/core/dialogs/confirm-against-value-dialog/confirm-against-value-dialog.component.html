@@ -1,0 +1,29 @@
+<td-dialog>
+  <td-dialog-title *ngIf="title">
+    {{title}}
+  </td-dialog-title>
+  <td-dialog-content class="md-subhead tc-grey-700">
+    {{message}}
+    <form #form="ngForm" layout="row" novalidate flex>
+      <md-input-container flex>
+        <input mdInput
+               (keydown.enter)="$event.preventDefault(); form.valid && match && accept()"
+               [(ngModel)]="input"
+               name="input"
+               required/>
+      </md-input-container>
+    </form>
+  </td-dialog-content>
+  <td-dialog-actions>
+    <button md-button
+            #closeBtn
+            (keydown.arrowright)="acceptBtn.focus()"
+            (click)="cancel()">{{cancelButton}}</button>
+    <button md-button
+            color="accent"
+            #acceptBtn
+            [disabled]="!form.valid || !match" 
+            (keydown.arrowleft)="closeBtn.focus()"
+            (click)="accept()">{{acceptButton}}</button>
+  </td-dialog-actions>
+</td-dialog>
