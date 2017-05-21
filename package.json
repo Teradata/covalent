@@ -55,17 +55,17 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "@angular/animations": "^4.1.0",
-    "@angular/common": "^4.1.0",
-    "@angular/compiler": "^4.1.0",
-    "@angular/core": "^4.1.0",
-    "@angular/forms": "^4.1.0",
-    "@angular/http": "^4.1.0",
+    "@angular/animations": "^4.2.0-rc.0",
+    "@angular/common": "^4.2.0-rc.0",
+    "@angular/compiler": "^4.2.0-rc.0",
+    "@angular/core": "^4.2.0-rc.0",
+    "@angular/forms": "^4.2.0-rc.0",
+    "@angular/http": "^4.2.0-rc.0",
     "@angular/material": "2.0.0-beta.5",
-    "@angular/platform-browser": "^4.1.0",
-    "@angular/platform-browser-dynamic": "^4.1.0",
-    "@angular/platform-server": "^4.1.0",
-    "@angular/router": "^4.1.0",
+    "@angular/platform-browser": "^4.2.0-rc.0",
+    "@angular/platform-browser-dynamic": "^4.2.0-rc.0",
+    "@angular/platform-server": "^4.2.0-rc.0",
+    "@angular/router": "^4.2.0-rc.0",
     "@ngx-translate/core": "6.0.0",
     "@ngx-translate/http-loader": "0.0.3",
     "@swimlane/ngx-charts": "5.0.0",
@@ -75,13 +75,13 @@
     "highlight.js": "9.11.0",
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
-    "web-animations-js": "2.2.2",
-    "zone.js": "^0.8.6"
+    "web-animations-js": "2.2.5",
+    "zone.js": "^0.8.9"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.3",
-    "@angular/compiler-cli": "^4.1.0",
-    "@angular/language-service": "^4.1.0",
+    "@angular/cli": "1.0.4",
+    "@angular/compiler-cli": "^4.2.0-rc.0",
+    "@angular/language-service": "^4.2.0-rc.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -117,6 +117,6 @@
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
     "tslint": "^5.2.0",
-    "typescript": "^2.3.1"
+    "typescript": "^2.3.2"
   }
 }
