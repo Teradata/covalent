@@ -3,6 +3,29 @@
 `<td-layout>` is a blank main sidenav component that gets hooked as parent of all the other layouts. (triggered by their menu buttons)
 
 
+## API Summary
+
+| Name | Type | Description |
+| --- | --- | --- |
+| mode | 'over', 'side' or 'push' | The mode or styling of the sidenav. Defaults to 'over'.
+| opened | boolean | Whether or not the sidenav is opened. Use this binding to open/close the sidenav. Defaults to 'false'.
+
+
+## Usage
+
+`[td-sidenav-content]` is used to include content in the main sidenav.
+
+Example for Main Layout:
+
+```html
+<td-layout [mode]="mode" [opened]="opened">
+  <div td-sidenav-content>
+   .. more sidenav content
+  </div>
+  .. main content
+</td-layout>
+```
+
 ## Installation
 
 This component can be installed as npm package.

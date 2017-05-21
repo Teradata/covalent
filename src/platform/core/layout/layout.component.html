@@ -1,5 +1,8 @@
 <md-sidenav-container fullscreen>
-  <md-sidenav>
+  <md-sidenav #sidenav
+              [mode]="mode"
+              [opened]="opened"
+              [disableClose]="disableClose">
     <ng-content select="td-navigation-drawer"></ng-content>
     <ng-content select="[td-sidenav-content]"></ng-content>
   </md-sidenav>

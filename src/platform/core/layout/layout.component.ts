@@ -12,10 +12,41 @@ export class TdLayoutComponent {
   @ViewChild(MdSidenav) sidenav: MdSidenav;
 
   /**
+   * mode?: 'side', 'push' or 'over'
+   *
+   * The mode or styling of the sidenav.
+   * Defaults to "over".
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('mode') mode: 'side' | 'push' | 'over' = 'over';
+
+  /**
+   * opened?: boolean
+   *
+   * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
+   * Defaults to "false".
+   *
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('opened') opened: boolean = false;
+
+  /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
+  }
+
+  /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this.sidenav.toggle();
+    return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
