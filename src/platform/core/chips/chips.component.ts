@@ -293,8 +293,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
              * Checks [chipRemoval] state to delete a chips
              * To enable [chipRemoval] the [readOnly] state must be true.
              */
-            if(this.chipRemoval) {
-
+            if (this.chipRemoval) {
               /**
                * Checks if deleting last single chip, to focus input afterwards
                * Else check if its not the last chip of the list to focus the next one.
