@@ -44,11 +44,16 @@ export class ChipsDemoComponent {
     description: `Disables the ability to add chips. If it doesn't exist chipAddition defaults to true.`,
     name: 'chipAddition?',
     type: 'boolean',
+  },  {
+    description: `Disables the ability to remove chips. If it doesn't exist chipRemoval defaults to true. readyOnly must be false for this option to work.`,
+    name: 'chipRemoval?',
+    type: 'boolean',
   }];
 
   readOnly: boolean = false;
   chipAddition: boolean = true;
-
+  chipRemoval: boolean = true;
+  
   items: string[] = [
     'stepper',
     'expansion-panel',

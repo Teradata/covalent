@@ -8,6 +8,7 @@
       <div class="push">
         <div class="md-body-1">Type and select a preset option:</div>
         <td-chips [chipAddition]="chipAddition"
+                  [chipRemoval]="chipRemoval"
                   [items]="items"
                   [(ngModel)]="itemsRequireMatch"
                   placeholder="Enter autocomplete strings"
@@ -71,6 +72,12 @@
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="chipAddition">
         Chip addition
+      </md-slide-toggle>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="chipRemoval">
+        Chip Removal
       </md-slide-toggle>
     </div>
   </md-card-actions>

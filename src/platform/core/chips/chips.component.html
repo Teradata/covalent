@@ -4,7 +4,7 @@
       <md-basic-chip [class.td-chip-disabled]="readOnly"
                      (keydown)="_chipKeydown($event, index)">
         <span>{{chip}}</span>
-        <md-icon *ngIf="!readOnly" (click)="removeChip(chip)">
+        <md-icon *ngIf="!readOnly && chipRemoval" (click)="removeChip(chip)">
           cancel
         </md-icon>
       </md-basic-chip>

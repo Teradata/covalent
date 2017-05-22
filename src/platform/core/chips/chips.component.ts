@@ -34,6 +34,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
   private _chipAddition: boolean = true;
+  private _chipRemoval: boolean = true;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -114,6 +115,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   get canAddChip(): boolean {
     return this.chipAddition && !this.readOnly;
+  }
+
+
+  /**
+   * chipRemoval?: boolean
+   * Disables the ability to remove chips. If it doesn't exist chip remmoval defaults to true.
+   * When setting readOnly as true, this will be overriden to false.
+   */
+  @Input('chipRemoval')
+  set chipRemoval(chipRemoval: boolean) {
+    this._chipRemoval = chipRemoval;
+  }
+  get chipRemoval(): boolean {
+    return this._chipRemoval;
   }
 
   /**
@@ -275,16 +290,22 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case BACKSPACE:
         /** Check to see if not in [readOnly] state to delete a chip */
         if (!this.readOnly) {
-          /**
-           * Checks if deleting last single chip, to focus input afterwards
-           * Else check if its not the last chip of the list to focus the next one.
-           */
-          if (index === (this._totalChips - 1) && index === 0) {
-            this.focus();
-          } else if (index < (this._totalChips - 1)) {
-            this._focusChip(index + 1);
+            /** 
+             * Checks [chipRemoval] state to delete a chips
+             * To enable [chipRemoval] the [readOnly] state must be true.
+             */
+            if(this.chipRemoval) {
+              /**
+               * Checks if deleting last single chip, to focus input afterwards
+               * Else check if its not the last chip of the list to focus the next one.
+               */
+              if (index === (this._totalChips - 1) && index === 0) {
+                this.focus();
+              } else if (index < (this._totalChips - 1)) {
+                this._focusChip(index + 1);
+              }
+            this.removeChip(this.value[index]);
           }
-          this.removeChip(this.value[index]);
         }
         break;
       case LEFT_ARROW:
