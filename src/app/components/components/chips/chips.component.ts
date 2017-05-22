@@ -45,7 +45,8 @@ export class ChipsDemoComponent {
     name: 'chipAddition?',
     type: 'boolean',
   },  {
-    description: `Disables the ability to remove chips. If it doesn't exist chipRemoval defaults to true. readyOnly must be false for this option to work.`,
+    description: `Disables the ability to remove chips. If it doesn't exist chipRemoval defaults to true. 
+    readyOnly must be false for this option to work.`,
     name: 'chipRemoval?',
     type: 'boolean',
   }];

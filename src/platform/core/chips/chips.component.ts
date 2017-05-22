@@ -117,7 +117,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     return this.chipAddition && !this.readOnly;
   }
 
-
   /**
    * chipRemoval?: boolean
    * Disables the ability to remove chips. If it doesn't exist chip remmoval defaults to true.
@@ -295,6 +294,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
              * To enable [chipRemoval] the [readOnly] state must be true.
              */
             if(this.chipRemoval) {
+
               /**
                * Checks if deleting last single chip, to focus input afterwards
                * Else check if its not the last chip of the list to focus the next one.
@@ -304,7 +304,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
               } else if (index < (this._totalChips - 1)) {
                 this._focusChip(index + 1);
               }
-            this.removeChip(this.value[index]);
+              this.removeChip(this.value[index]);
           }
         }
         break;
