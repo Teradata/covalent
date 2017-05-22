@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './expansion-panel.module';
 import { By } from '@angular/platform-browser';
 
@@ -18,7 +18,7 @@ describe('Component: ExpansionPanel', () => {
         TdExpansionPanelSummaryTestComponent,
       ],
       imports: [
-        BrowserAnimationsModule,
+        NoopAnimationsModule,
         CovalentExpansionPanelModule,
       ],
     });
