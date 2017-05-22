@@ -24,6 +24,7 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-chips [chipAddition]="chipAddition"
+                      [chipRemoval]="chipRemoval"
                       [items]="items"
                       [(ngModel)]="itemsRequireMatch"
                       placeholder="Enter autocomplete strings"
@@ -38,7 +39,8 @@
             export class ChipsDemoComponent {
               readOnly: boolean = false;
               chipAddition: boolean = true;
-
+              chipAddition: boolean = true;
+              
               items: string[] = [
                 'stepper',
                 'expansion-panel',
