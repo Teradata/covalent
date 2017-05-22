@@ -10,7 +10,7 @@ import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -18,6 +18,8 @@ import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
+
+import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 import { GitHubService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
@@ -41,16 +43,18 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MdIconModule,
     MdCardModule,
     MdMenuModule,
+    MdTabsModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
     CovalentNotificationsModule,
     CovalentMenuModule,
+    CovalentMediaModule,
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
-    CovalentMediaModule,
+    ToolbarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

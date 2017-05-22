@@ -17,6 +17,8 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+
 @NgModule({
   declarations: [
     LayoutsComponent,
@@ -44,6 +46,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentHighlightModule,
     DocumentationToolsModule,
     layoutsRoutes,
+    ToolbarModule,
   ],
 })
 export class LayoutsModule {}

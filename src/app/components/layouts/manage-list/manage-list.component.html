@@ -1,4 +1,5 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
   <td-layout-manage-list #manageList 
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"

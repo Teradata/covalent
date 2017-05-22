@@ -22,6 +22,8 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModu
 import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+
 @NgModule({
   declarations: [
     DocsComponent,
@@ -52,6 +54,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     CovalentHighlightModule,
     DocumentationToolsModule,
     docsRoutes,
+    ToolbarModule,
   ],
 })
 export class DocsModule {}

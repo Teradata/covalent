@@ -1,0 +1,42 @@
+<!--
+  Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
+  TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
+-->
+<div layout="row" layout-align="end center" flex>
+    <span flex></span>
+    <nav hide-xs class="text-upper text-sm" layout="row">
+      <a class="push-right tc-white text-nodecoration" [routerLink]="['/docs']">Docs</a>
+      <a class="push-right tc-white text-nodecoration" [routerLink]="['/components']">Components</a>
+      <a class="push-right tc-white text-nodecoration" [routerLink]="['/layouts']">Layouts</a>
+      <a class="push-right tc-white text-nodecoration" [routerLink]="['/style-guide']">Style Guide</a>
+      <a class="push-right tc-white text-nodecoration">Templates</a>
+    </nav>
+    <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+      <td-notification-count color="accent" [notifications]="updates.length + 1">
+        <md-icon>notifications</md-icon>
+      </td-notification-count>
+    </button>
+    <md-menu #notificationsMenu="mdMenu">
+      <td-menu>
+        <div td-menu-header class="md-subhead">Updates</div>
+        <md-nav-list dense>
+          <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
+            <a md-list-item [routerLink]="[item.route]">
+              <md-icon md-list-avatar>{{item.icon}}</md-icon>
+              <h4 md-line><span class="text-wrap">{{item.description}}</span></h4>
+              <p md-line>{{item.title}}</p>
+            </a>
+            <md-divider></md-divider>
+          </ng-template>
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L58-L79" target="_blank">
+            <md-icon md-list-avatar>change_history</md-icon>
+            <h4 md-line><span class="text-wrap">Angular v4.1 and material@beta.5 support</span></h4>
+            <p md-line>Dependencies updated</p>
+          </a>
+        </md-nav-list>
+        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md#100-beta4-johnny-b-goode-2017-05-16" target="_blank">
+          View Full Changelog
+        </a>
+      </td-menu>
+    </md-menu>
+  </div>

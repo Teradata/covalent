@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-orange, 800);
-$accent:  mat-palette($mat-light-blue, 600, A100, A400);
+$primary: mat-palette($mat-blue-grey, 900);
+$accent:  mat-palette($mat-deep-orange, A400, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $warn:    mat-palette($mat-red, 600);
@@ -27,6 +27,26 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+
+// Dark theme
+.theme-dark {
+    $primary-dark: mat-palette($mat-blue-grey, 900);
+    $accent-dark:  mat-palette($mat-deep-orange, A400);
+    $warn-dark:    mat-palette($mat-red, 600);
+    $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+    @include angular-material-theme($theme-dark);
+    @include covalent-theme($theme-dark);
+}
+
+// Subpage themes
+.theme-docs {
+    $primary-docs: mat-palette($mat-deep-purple, 700);
+    $accent-docs:  mat-palette($mat-cyan, A400);
+    $warn-docs:    mat-palette($mat-red, 600);
+    $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
+    @include angular-material-theme($theme-docs);
+    @include covalent-theme($theme-docs);
+}
 
 // Custom theme examples
 .blue-orange {

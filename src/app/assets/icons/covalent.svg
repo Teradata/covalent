@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-    <title>covalent</title>
-    <desc>Created with Sketch.</desc>
+    <title>Covalent</title>
+    <desc>Copyright 2016-2017 Teradata.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="covalent">
             <polygon id="Polygon-1" fill="#FB8C00" points="256.080725 1.7143935 476.29852 128.857197 461.260124 383.142803 256.080725 510.285606 49.5341992 383.142803 35.8629301 128.857197"></polygon>
             <path d="M256,510.235915 L256.080725,510.285606 L461.260124,383.142803 L476.29852,128.857197 L256.080725,1.7143935 L255.58604,2 L256,2 L256,510.235915 Z" id="Combined-Shape" fill="#EF6C00"></path>
