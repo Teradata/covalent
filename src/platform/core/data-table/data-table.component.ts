@@ -437,7 +437,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   handleRowClick(row: any, event: Event): void {
     if (this.isClickable) {
-      if (event.srcElement.getAttribute('stopEventPropogation') !== 'true') {
+      // ignoring linting rules here because attribute it actually null or not there
+      // can't check for undefined
+      /* tslint:disable-next-line */
+      if (event.srcElement.getAttribute('stopRowClick') === null) {
         this.onRowClick.emit({row: row});
       }
     }
