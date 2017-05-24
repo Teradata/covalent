@@ -29,6 +29,7 @@ describe('Component: DataTable', () => {
         TdDataTableBasicTestComponent,
         TdDataTableSelectableTestComponent,
         TdDataTableRowClickTestComponent,
+        TdDataTableSelectableRowClickTestComponent,
       ],
       providers: [
         TdDataTableService,
@@ -330,6 +331,38 @@ describe('Component: DataTable', () => {
           });
         });
     })));
+
+    it('should click on a row and see the rowClick event only when clicking on row',
+      async(inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableSelectableRowClickTestComponent);
+        let component: TdDataTableSelectableRowClickTestComponent = fixture.debugElement.componentInstance;
+
+        component.clickable = true;
+        component.selectable = true;
+
+        let clickEventSpy: jasmine.Spy = spyOn(component, 'clickEvent');
+        let selectEventSpy: jasmine.Spy = spyOn(component, 'selectEvent');
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(clickEventSpy.calls.count()).toBe(1);
+            expect(selectEventSpy.calls.count()).toBe(0);
+
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.click();
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(clickEventSpy.calls.count()).toBe(1);
+                expect(selectEventSpy.calls.count()).toBe(1);
+              });
+            });
+          });
+        });
+    })));
   });
 });
 
@@ -389,6 +422,37 @@ class TdDataTableRowClickTestComponent {
   ];
   clickable: boolean = false;
   clickEvent(): void {
+    /* noop */
+  }
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        [selectable]="selectable"
+        [clickable]="clickable"
+        (rowClick)="clickEvent()"
+        (rowSelect)="selectEvent()">
+    </td-data-table>`,
+})
+class TdDataTableSelectableRowClickTestComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+  selectable: boolean = false;
+  clickable: boolean = false;
+  clickEvent(): void {
+    /* noop */
+  }
+  selectEvent(): void {
     /* noop */
   }
 }
