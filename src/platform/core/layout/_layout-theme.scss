@@ -20,6 +20,9 @@
       z-index: 1;
     }
   }
+  .mat-sidenav-side.td-layout-sidenav {
+    @include mat-elevation(2);
+  }
   .td-layout-footer {
     background: mat-color($background, app-bar);
     color: mat-color($foreground, text);

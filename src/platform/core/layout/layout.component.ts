@@ -35,6 +35,16 @@ export class TdLayoutComponent {
   @Input('opened') opened: boolean = false;
 
   /**
+   * sidenavWidth?: string
+   *
+   * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
+   * Defaults to "320px".
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('sidenavWidth') sidenavWidth: string = '320px';
+
+  /**
    * Checks if `ESC` should close the sidenav
    * Should only close it for `push` and `over` modes
    */
