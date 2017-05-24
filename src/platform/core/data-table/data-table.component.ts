@@ -437,7 +437,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    */
   handleRowClick(row: any, event: Event): void {
     if (this.isClickable) {
-      if (event.srcElement.tagName !== 'MD-PSEUDO-CHECKBOX') {
+      if (event.srcElement.getAttribute('stopEventPropogation') !== 'true') {
         this.onRowClick.emit({row: row});
       }
     }
