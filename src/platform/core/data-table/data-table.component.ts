@@ -435,9 +435,11 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * emits the onRowClickEvent when a row is clicked
    * if clickable is true and selectable is false then select the row
    */
-  handleRowClick(row: any, event: Event, currentSelected: number): void {
+  handleRowClick(row: any, event: Event): void {
     if (this.isClickable) {
-      this.onRowClick.emit({row: row});
+      if (event.srcElement.tagName !== 'MD-PSEUDO-CHECKBOX') {
+        this.onRowClick.emit({row: row});
+      }
     }
   }
 

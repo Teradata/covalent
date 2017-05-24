@@ -30,7 +30,7 @@
         [tabIndex]="isSelectable ? 0 : -1"
         [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
         *ngFor="let row of data; let rowIndex = index"
-        (click)="handleRowClick(row, $event, rowIndex)"
+        (click)="handleRowClick(row, $event)"
         (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
         (keydown.space)="blockEvent($event)"
         (keydown.shift.space)="blockEvent($event)"
