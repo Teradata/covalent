@@ -8,11 +8,44 @@
 // have to load a single css file for Angular Material in your app.
 @include mat-core();
 
+// Custom orange contrast
+$mat-orange-custom: ( 50: #FFF3E0,
+                    100: #FFE0B2,
+                    200: #FFCC80,
+                    300: #FFB74D,
+                    400: #FFA726,
+                    500: #FF9800,
+                    600: #FB8C00,
+                    700: #F57C00,
+                    800: #EF6C00,
+                    900: #E65100,
+                    A100: #FFD180,
+                    A200: #FFAB40,
+                    A400: #FF9100,
+                    A700: #FF6D00,
+                    contrast: (
+                        50: $black-87-opacity,
+                        100: $black-87-opacity,
+                        200: $black-87-opacity,
+                        300: $black-87-opacity,
+                        400: $black-87-opacity,
+                        500: white,
+                        600: white,
+                        700: white,
+                        800: $white-87-opacity,
+                        900: $white-87-opacity,
+                        A100: $black-87-opacity,
+                        A200: $black-87-opacity,
+                        A400: $black-87-opacity,
+                        A700: $white-87-opacity,
+                        )
+                    );
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $primary: mat-palette($mat-blue-grey, 900);
-$accent:  mat-palette($mat-deep-orange, A400, A100, A400);
+$accent:  mat-palette($mat-orange-custom, A700, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $warn:    mat-palette($mat-red, 600);
@@ -105,4 +138,9 @@ md-nav-list {
 }
 .legend-title-text {
     color: mat-color($foreground, secondary-text);
+}
+
+// Expansion panels
+.theme-dark td-expansion-panel {
+    background-color: mat-color($mat-blue-grey, 800);
 }
