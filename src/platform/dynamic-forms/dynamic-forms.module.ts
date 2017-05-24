@@ -8,7 +8,7 @@ import { CovalentCommonModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
-import { TdDynamicFormsService } from './services/dynamic-forms.service';
+import { TdDynamicFormsService, DYNAMIC_FORMS_PROVIDER } from './services/dynamic-forms.service';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from './dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -56,7 +56,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
   ],
   providers: [
-    TdDynamicFormsService,
+    DYNAMIC_FORMS_PROVIDER,
   ],
   entryComponents: [ TD_DYNAMIC_FORMS_ENTRY_COMPONENTS ],
 })
