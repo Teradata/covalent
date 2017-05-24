@@ -56,9 +56,9 @@
       <md-divider *ngIf="!last" md-inset></md-divider>
     </ng-template>
   </md-nav-list>
-  <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span>Components &amp; Addons</span>
-    <td-toolbar hide-xs hide-sm flex layout="row"></td-toolbar>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <span hide-xs hide-lg flex>Components &amp; Addons</span>
+    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
     <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
       <md-icon>more_vert</md-icon>
     </button>

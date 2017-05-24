@@ -1,25 +1,25 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
   <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
   <section class="bgc-blue-grey-800">
-    <div layout-gt-xs="row">
-      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xs', 'pad-left-xl']">
+    <div layout="row">
+      <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xs', 'pad-left-xl']">
         <div class="push-top-xl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <div layout="row" layout-align="start center">
-            <h1 class="md-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm">Covalent UI Platform for building enterprise desktop web apps</h1>
+            <h1 class="md-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['md-headline']">Covalent UI Platform for building enterprise desktop web apps</h1>
           </div>
-          <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">An open-source UI Platform from Teradata that combines proven design language with a comprehensive web framework, built on Angular &amp; Angular-Material (Design).</h2>
+          <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines proven design language with a comprehensive web framework, built on Angular &amp; Angular-Material (Design).</h2>
           <div class="push-top-xl" hide-xs></div>
-          <button md-raised-button color="accent" class="text-xxl text-upper" [routerLink]="['/docs']">View Docs</button>
-          <a md-raised-button color="primary" class="text-xxl push-left" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+          <button md-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
+          <a md-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
             <md-icon svgIcon="assets:github" class="pad-right-xs"></md-icon>
-            <span *ngIf="starCount"><md-icon class="text-md tc-deep-orange-A400">star</md-icon> {{starCount}}</span>
+            <span *ngIf="starCount"><md-icon class="text-md tc-orange-A700">star</md-icon> {{starCount}}</span>
           </a>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
-      <div flex="40" layout-gt-xs="column" layout-align="center center" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-        <md-icon class="mat-icon-svg-xxl fill-deep-orange-A400" svgIcon="assets:covalent-stroke"></md-icon>
+      <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
+        <md-icon class="mat-icon-svg-xxl fill-deep-orange-A400" svgIcon="assets:covalent-stroke" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
       </div>
     </div>
   </section>
@@ -61,13 +61,13 @@
       <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
         <div class="push-top-xxl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
-          <h2 class="md-display-1 tc-red-A400 push-top-xs push-bottom-sm">Built with <md-icon>favorite</md-icon> on Angular</h2>
+          <h2 class="md-display-1 tc-red-500 push-top-xs push-bottom-sm">Built with <md-icon>favorite</md-icon> on Angular</h2>
           <h3 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">Teradata is one of the largest enterprise consumers and products of Angular. Currently the entire product suite is being built or revamped on Angular v4.</h3>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
       <div flex="50" layout="column" layout-align="center center" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-        <md-icon class="mat-icon-svg-xxl fill-red-A400" svgIcon="assets:angular-outline"></md-icon>
+        <md-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline"></md-icon>
       </div>
     </div>
   </section>

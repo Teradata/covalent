@@ -19,9 +19,9 @@
         <md-divider *ngIf="!last" md-inset></md-divider>
       </ng-template>
   </md-nav-list>
-  <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span>Documentation</span>
-    <td-toolbar hide-xs hide-sm flex layout="row"></td-toolbar>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <span hide-xs hide-lg flex>Documentation</span>
+    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <router-outlet></router-outlet>
 </td-layout-nav-list>
