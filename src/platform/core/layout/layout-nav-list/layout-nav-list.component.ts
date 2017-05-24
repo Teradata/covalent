@@ -117,7 +117,7 @@ export class TdLayoutNavListComponent {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.toggle();
+    return this._sideNav.toggle(!this._sideNav.opened);
   }
 
   /**
@@ -138,7 +138,7 @@ export class TdLayoutNavListComponent {
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
-    this._layout.open();
+    this._layout.toggle();
   }
 
 }
