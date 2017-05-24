@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider, SkipSelf, Optional } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 
 import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
