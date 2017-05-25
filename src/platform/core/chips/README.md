@@ -55,8 +55,6 @@ Example for HTML usage:
   <ng-template td-autocomplete-option let-option="option">
     {{option}}
   </ng-template>
-  <div td-autocomplete-header>
-    .. maybe a loader here
-  </div>
+  // anything below it
 </td-chips>  
  ```
