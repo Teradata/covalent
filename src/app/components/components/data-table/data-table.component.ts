@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdDataTableSortingOrder, TdDataTableService,
+import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
@@ -30,8 +30,12 @@ export class DataTableDemoComponent implements OnInit {
     name: 'columns?',
     type: 'ITdDataTableColumn[]',
   }, {
-    description: `Enables row selection events, hover and selected row states.`,
+    description: `Enables row selection, click events and selected row state.`,
     name: 'selectable?',
+    type: 'boolean',
+  }, {
+    description: `Enables row click events and hover row state.`,
+    name: 'clickable?',
     type: 'boolean',
   }, {
     description: `Enables multiple row selection. [selectable] needs to be enabled.`,
@@ -67,6 +71,11 @@ export class DataTableDemoComponent implements OnInit {
     name: 'selectAll',
     type: `function()`,
   }, {
+    description: `Event emitted when a row is clicked.
+                  Emits an [ITdDataTableRowClickEvent] implemented object.`,
+    name: 'rowClick',
+    type: `function()`,
+  }, {
     description: `Refreshes data table and updates [data] and [columns]`,
     name: 'refresh',
     type: `function()`,
@@ -90,6 +99,10 @@ export class DataTableDemoComponent implements OnInit {
     description: `Sets the sort order of column. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending`,
     name: 'sortOrder',
     type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
+  }, {
+    description: `Whether the column should be hidden or not. Defaults to 'false'`,
+    name: 'hidden',
+    type: `boolean`,
   }, {
     description: `When set to false this column will be excluded from searches using the filterData method.`,
     name: 'filter?',
@@ -126,8 +139,8 @@ export class DataTableDemoComponent implements OnInit {
 
   columns: ITdDataTableColumn[] = [
     { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
-    { name: 'type', label: 'Type', filter: true  },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true},
+    { name: 'type', label: 'Type', filter: true },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
     { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
     { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
@@ -263,6 +276,7 @@ export class DataTableDemoComponent implements OnInit {
     ];
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = true;
+  clickable: boolean = false;
   multiple: boolean = true;
   filterColumn: boolean = true;
 
@@ -315,13 +329,14 @@ export class DataTableDemoComponent implements OnInit {
 
   filter(): void {
     let newData: any[] = this.data;
-    let nonSearchAbleColumns: string[] = this.columns
+    let excludedColumns: string[] = this.columns
     .filter((column: ITdDataTableColumn) => {
-      return (typeof column.filter !== undefined && column.filter === false);
+      return ((column.filter === undefined && column.hidden === true) || 
+              (column.filter !== undefined && column.filter === false));
     }).map((column: ITdDataTableColumn) => {
       return column.name;
     });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, nonSearchAbleColumns);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
@@ -334,5 +349,11 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
     }
+  }
+
+  showAlert(event: any): void {
+    this._dialogService.openAlert({
+      message: 'You clicked on row: ' + event.row.name,
+    });
   }
 }

@@ -3,9 +3,15 @@
     <button md-icon-button class="td-menu-button" *ngIf="isMainSidenavAvailable" (click)="openMainSidenav()">
       <md-icon class="md-24">menu</md-icon>
     </button>
-    <md-icon *ngIf="icon" [routerLink]="navigationRoute" class="cursor-pointer">{{icon}}</md-icon>
-    <md-icon *ngIf="logo && !icon" class="md-icon-logo cursor-pointer" [svgIcon]="logo" [routerLink]="navigationRoute"></md-icon>
-    <span *ngIf="toolbarTitle" class="cursor-pointer" [routerLink]="navigationRoute">{{toolbarTitle}}</span>
+    <span *ngIf="icon || logo || toolbarTitle"
+          [class.cursor-pointer]="routerEnabled"
+          (click)="handleNavigationClick()"
+          layout="row"
+          layout-align="start center">
+      <md-icon *ngIf="icon">{{icon}}</md-icon>
+      <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+      <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
+    </span>
     <ng-content select="[td-toolbar-content]"></ng-content>
   </md-toolbar>
   <div flex layout="column" class="content md-content">

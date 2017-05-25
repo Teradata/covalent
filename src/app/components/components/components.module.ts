@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,6 +14,7 @@ import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { MessageDemoComponent } from './message/message.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
@@ -26,7 +25,6 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
-import { MaterialComponentsComponent, DialogComponent } from './material-components/material-components.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -35,15 +33,13 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule,
-         MdProgressSpinnerModule, MdSelectModule, MdSlideToggleModule, MdDialogModule, MdSnackBarModule, MdToolbarModule,
-         MdTabsModule, MdSidenavModule, MdTooltipModule, MdCheckboxModule, MdRadioModule, MdCoreModule, MdAutocompleteModule,
-         MdProgressBarModule, MdSliderModule, MdChipsModule, MdGridListModule, MdRippleModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
+         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         } from '../../../platform/core';
+         CovalentMessageModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -62,6 +58,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     LoadingDemoComponent,
     MarkdownDemoComponent,
     MediaDemoComponent,
+    MessageDemoComponent,
     HttpDemoComponent,
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
@@ -72,8 +69,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     PagingDemoComponent,
     SearchDemoComponent,
     DynamicFormsDemoComponent,
-    MaterialComponentsComponent,
-    DialogComponent,
     NotificationsDemoComponent,
     // External Dependencies
     NgxChartsDemoComponent,
@@ -81,8 +76,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
   ],
   imports: [
     /** Angular Modules */
-    BrowserModule,
-    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     /** Material Modules */
@@ -96,21 +89,9 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     MdSelectModule,
     MdButtonToggleModule,
     MdSlideToggleModule,
-    MdProgressSpinnerModule,
-    MdDialogModule,
-    MdSnackBarModule,
     MdToolbarModule,
     MdTabsModule,
-    MdSidenavModule,
     MdTooltipModule,
-    MdCheckboxModule,
-    MdRadioModule,
-    MdAutocompleteModule,
-    MdSliderModule,
-    MdProgressBarModule,
-    MdChipsModule,
-    MdGridListModule,
-    MdRippleModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -130,11 +111,11 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentMessageModule,
     DocumentationToolsModule,
     NgxChartsModule,
     TranslateModule,
     componentsRoutes,
   ],
-  entryComponents: [ DialogComponent ],
 })
 export class ComponentsModule {}

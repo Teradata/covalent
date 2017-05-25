@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "1.0.0-beta.3-2",
+  "version": "1.0.0-beta.4",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -59,10 +59,9 @@
     "@angular/common": "^4.1.0",
     "@angular/compiler": "^4.1.0",
     "@angular/core": "^4.1.0",
-    "@angular/flex-layout": "2.0.0-beta.7",
     "@angular/forms": "^4.1.0",
     "@angular/http": "^4.1.0",
-    "@angular/material": "2.0.0-beta.3",
+    "@angular/material": "2.0.0-beta.5",
     "@angular/platform-browser": "^4.1.0",
     "@angular/platform-browser-dynamic": "^4.1.0",
     "@angular/platform-server": "^4.1.0",
@@ -73,14 +72,14 @@
     "core-js": "^2.4.1",
     "d3": "^4.4.0",
     "hammerjs": "^2.0.8",
-    "highlight.js": "9.10.0",
+    "highlight.js": "9.11.0",
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.2",
     "zone.js": "^0.8.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.1",
+    "@angular/cli": "1.0.3",
     "@angular/compiler-cli": "^4.1.0",
     "@angular/language-service": "^4.1.0",
     "@types/hammerjs": "^2.0.30",
@@ -117,7 +116,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
-    "tslint": "^5.1.0",
+    "tslint": "^5.2.0",
     "typescript": "^2.3.1"
   }
 }

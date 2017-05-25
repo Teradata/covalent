@@ -2,6 +2,8 @@
 @import 'palette';
 
 // Text color
+// Inherit
+.tc-inherit                 {   color: inherit !important;                       }
 
 // 50
 .tc-red-50                  {   color: mat-color($mat-red, 50) !important;                       }

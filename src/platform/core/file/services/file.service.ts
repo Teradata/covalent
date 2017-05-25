@@ -6,8 +6,9 @@ import { Subscriber } from 'rxjs/Subscriber';
 export interface IUploadOptions {
   url: string;
   method: 'post' | 'put';
-  file: File;
+  file?: File;
   headers?: {[key: string]: string};
+  formData?: FormData;
 }
 
 @Injectable()
@@ -33,8 +34,9 @@ export class TdFileService {
    * - options: IUploadOptions {
    *     url: string,
    *     method: 'post' | 'put',
-   *     file: File,
-   *     headers?: {[key: string]: string}
+   *     file?: File,
+   *     headers?: {[key: string]: string},
+   *     formData?: FormData
    * }
    *
    * Uses underlying [XMLHttpRequest] to upload a file to a url.
@@ -42,9 +44,16 @@ export class TdFileService {
    */
   upload(options: IUploadOptions): Observable<any> {
     return new Observable<any>((subscriber: Subscriber<any>) => {
-      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      let xhr: XMLHttpRequest = new XMLHttpRequest();      
       let formData: FormData = new FormData();
-      formData.append('file', options.file);
+
+      if (options.file !== undefined) {
+        formData.append('file', options.file);
+      } else if (options.formData !== undefined) {
+        formData = options.formData;
+      } else {
+        return subscriber.error('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
+      }      
 
       xhr.onprogress = (event: ProgressEvent) => {
         let progress: number = 0;

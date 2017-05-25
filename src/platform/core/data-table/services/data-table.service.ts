@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 
 import { TdDataTableSortingOrder, ITdDataTableColumn } from '../data-table.component';
 
@@ -10,6 +10,7 @@ export class TdDataTableService {
    * - data: any[]
    * - searchTerm: string
    * - ignoreCase: boolean = false
+   * - excludedColumns: string[] = []
    *
    * Searches [data] parameter for [searchTerm] matches and returns a new array with them.
    */
@@ -74,3 +75,15 @@ export class TdDataTableService {
     return data;
   }
 }
+
+export function DATA_TABLE_PROVIDER_FACTORY(
+    parent: TdDataTableService): TdDataTableService {
+  return parent || new TdDataTableService();
+}
+
+export const DATA_TABLE_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdDataTableService,
+  deps: [[new Optional(), new SkipSelf(), TdDataTableService]],
+  useFactory: DATA_TABLE_PROVIDER_FACTORY,
+};

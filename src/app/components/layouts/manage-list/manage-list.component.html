@@ -1,4 +1,4 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
   <td-layout-manage-list #manageList 
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
@@ -37,7 +37,7 @@
         <div layout-gt-md="row">
           <div flex-gt-md="50">
             <td-steps>
-              <td-step label="td-layout-nav" sublabel="the main content wrapper">
+              <td-step label="td-layout-nav" sublabel="the main content wrapper" active="true">
                 <md-list>
                   <md-list-item>
                     <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>

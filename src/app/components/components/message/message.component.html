@@ -1,0 +1,118 @@
+<md-card>
+  <md-card-title>Messages &amp; Alerts</md-card-title>
+  <md-card-subtitle>Info, warning &amp; alert messages</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <md-card-content>
+        <p class="md-body-1">Standalone message:</p>
+        <td-message label="Error!" sublabel="You did something wrong!" color="warn" icon="error"></td-message>
+        <p class="md-body-1">Message in a card with action</p>
+        <md-card>
+          <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
+            <button td-message-actions md-button>VIEW MORE</button>
+          </td-message>
+        </md-card>
+        <p class="md-body-1">Message in a card content:</p>
+        <md-card>
+          <md-card-title>Card title</md-card-title>
+          <md-divider></md-divider>
+          <td-message label="Info" sublabel="Maybe you want to know this" color="accent" icon="info"></td-message>
+          <md-card-content>
+            content
+          </md-card-content>
+        </md-card>
+        <p class="md-body-1">Toggle visibility:</p>
+        <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+          <button td-message-actions md-icon-button (click)="messageDemo.close()"><md-icon>cancel</md-icon></button>
+        </td-message>
+      </md-card-content>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p class="md-body-1">Standalone message:</p>
+            <td-message label="Error!" sublabel="You did something wrong!" color="warn" icon="error"></td-message>
+            <p class="md-body-1">Message in a card with action</p>
+            <md-card>
+              <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
+                <button td-message-actions md-button>VIEW MORE</button>
+              </td-message>
+            </md-card>
+            <p class="md-body-1">Message in a card content:</p>
+            <md-card>
+              <md-card-title>Card title</md-card-title>
+              <md-divider></md-divider>
+              <td-message label="Info" sublabel="Maybe you want to know this" color="accent" icon="info"></td-message>
+              <md-card-content>
+                content
+              </md-card-content>
+            </md-card>
+            <p class="md-body-1">Toggle visibility:</p>
+            <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+              <button td-message-actions md-icon-button (click)="messageDemo.close()"><md-icon>cancel</md-icon></button>
+            </td-message>
+            <button md-button color="accent" (click)="messageDemo.toggle()">
+              Toggle Visibility
+            </button>
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" class="text-upper" (click)="messageDemo.toggle()">
+      Toggle Visibility
+    </button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Material Colored Messages</md-card-title>
+  <md-card-subtitle>Use the full Material Design color palette</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <md-card-content>
+        <p class="md-body-1">Using <code>color</code>:</p>
+        <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
+          <button td-message-actions md-button>VIEW MORE</button>
+        </td-message>
+        <p class="md-body-1">Using <code>class</code>:</p>
+        <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
+          <button td-message-actions md-button>VIEW MORE</button>
+        </td-message>
+      </md-card-content>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p class="md-body-1">Using <code>color</code>:</p>
+            <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
+              <button td-message-actions md-button>VIEW MORE</button>
+            </td-message>
+            <p class="md-body-1">Using <code>class</code>:</p>
+            <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
+              <button td-message-actions md-button>VIEW MORE</button>
+            </td-message>
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" class="text-upper" [routerLink]="['/style-guide/colors']">
+      Color Guide
+    </a>
+  </md-card-actions>
+</md-card>
+<td-readme-loader resourceUrl="platform/core/message/README.md"></td-readme-loader>
