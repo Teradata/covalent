@@ -33,12 +33,13 @@
               (blur)="handleBlur()">
     </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
+      <ng-content select="[td-autocomplete-header]"></ng-content>
       <ng-template let-item let-first="first" ngFor [ngForOf]="filteredItems | async">
         <md-option (click)="addChip(item)" [value]="item">
-          <span *ngIf="!_autocompleteTemplate?.templateRef">{{item}}</span>
+          <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
           <ng-template
-            *ngIf="_autocompleteTemplate?.templateRef"
-            [ngTemplateOutlet]="_autocompleteTemplate?.templateRef"
+            *ngIf="_autocompleteOptionTemplate?.templateRef"
+            [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
             [ngOutletContext]="{ option: item }">
           </ng-template>
         </md-option>

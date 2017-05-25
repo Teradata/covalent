@@ -52,8 +52,11 @@ Example for HTML usage:
   <ng-template td-basic-chip let-chip="chip">
     {{chip}}
   </ng-template>
-  <ng-template td-autocomplete let-option="option">
+  <ng-template td-autocomplete-option let-option="option">
     {{option}}
   </ng-template>
+  <div td-autocomplete-header>
+    .. maybe a loader here
+  </div>
 </td-chips>  
  ```

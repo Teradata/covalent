@@ -24,9 +24,9 @@ export class TdBasicChipDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-autocomplete]ng-template',
+  selector: '[td-autocomplete-option]ng-template',
 })
-export class TdAutocompleteDirective extends TemplatePortalDirective {
+export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
   }
@@ -60,7 +60,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
   @ContentChild(TdBasicChipDirective) _basicChipTemplate: TdBasicChipDirective;
-  @ContentChild(TdAutocompleteDirective) _autocompleteTemplate: TdAutocompleteDirective;
+  @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
   @ViewChildren(MdOption) _options: QueryList<MdOption>;
 
