@@ -49,6 +49,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   private _value: any[] = [];
 
+  private _items: any[] = [];
   private _length: number = 0;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
@@ -83,13 +84,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   filteredItems: Observable<any[]> = this.subject.asObservable();
 
-  // TODO check if we need to have items here or if we can remove them
-
   /**
    * items?: any[]
    * Enables Autocompletion with the provided list of objects or strings.
    */
-  @Input('items') items: any[] = [];
+  @Input('items')
+  set items(items: any[]) {
+    this._items = items;
+    if (this.subject) {
+      this.subject.next(items);
+    }
+  }
   
   /**
    * requireMatch?: boolean
@@ -145,7 +150,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   @Input('placeholder') placeholder: string;
 
-  @Input('compareWith') compareWith: (item: any, value: string) => boolean;
+  /**
+   * debounce?: number
+   * Debounce timeout between keypresses. Defaults to 200.
+   */
+  @Input('debounce') debounce: number = 200;
 
   /**
    * add?: function
@@ -175,27 +184,23 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     if (v !== this._value) {
       this._value = v;
       this._length = this._value ? this._value.length : 0;
-      if (this._value) {
-        this._filter(this.inputControl.value);
-      }
     }
   }
   get value(): any { return this._value; }
 
   ngOnInit(): void {
     this.inputControl.valueChanges
-      .debounceTime(200)
+      .debounceTime(this.debounce)
       .subscribe((value: string) => {
         this.onInputChange.emit(value);
-        this._filter(value);
       });
-    // filter the autocomplete options after everything is rendered
-    Observable.timer().subscribe(() => {
-      this._filter(this.inputControl.value);
-    });
-    // check when options change and set first one as active everytime the filter changes
+    // check when options change and set first one as active everytime items change
     this.subject.subscribe(() => {
       this._setFirstOptionActive();
+    });
+    // render the items that are available if available
+    Observable.timer().subscribe(() => {
+      this.subject.next(this._items);
     });
   }
 
@@ -205,20 +210,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       this._length = this._value.length;
       this.onChange(this._value);
     }
-  }
-
-  /**
-   * Returns a list of filtered items.
-   */
-  filter(val: string): any[] {
-    // TODO see if we can do something about this
-    return this.items.filter((item: any) => {
-      if (typeof item === 'string') {
-        return val ? item.indexOf(val) > -1 : true;
-      } else {
-        return this.compareWith(item, val);
-      }
-    });
   }
 
   /**
@@ -413,19 +404,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   onTouched = () => noop;
 
   /**
-   *
-   * Method to filter the options for the autocomplete
-   */
-  private _filter(value: string): void {
-    // TODO check filtering
-    let items: any[] = this.filter(value);
-    items = items.filter((filteredItem: any) => {
-      return this._value && filteredItem ? this._value.indexOf(filteredItem) < 0 : true;
-    });
-    this.subject.next(items);
-  }
-
-  /**
    * Get total of chips
    */
   private get _totalChips(): number {
@@ -469,12 +447,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method to open the autocomplete manually if its not already opened
    */
   private _openAutocomplete(): void {
-    // TODO Check if we need to use timer.
-    Observable.timer().toPromise().then(() => {
-      if (!this._autocompleteTrigger.panelOpen) {
-        this._autocompleteTrigger.openPanel();
-      }
-    });
+    if (!this._autocompleteTrigger.panelOpen) {
+      this._autocompleteTrigger.openPanel();
+    }
   }
 
   /**
