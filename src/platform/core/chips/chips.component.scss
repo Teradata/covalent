@@ -7,24 +7,27 @@
     .mat-input-wrapper {
       margin-bottom: 2px;
     }
+    /* TODO see if we can make styles more abstract to future proof for contact lists */
     .mat-basic-chip {
       display: inline-block;
       cursor: default;
       border-radius: 16px;
-      line-height: 32px;    
+      line-height: 31px;
       @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
-      padding: 0 12px;
+      span.td-basic-chip {
+        font-size: 14px;
+        @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
+      }
       box-sizing: border-box;
       max-width: 100%;
       position: relative;
+      &.td-chip-disabled {
+        @include rtl(padding, 0 12px 0 0, 0 0 0 12px);
+      }
       md-icon {
-        position: relative;
-        top: 5px;
-        @include rtl(left, 5px, auto);
-        @include rtl(right, auto, 5px);
-        height: 18px;
-        width: 18px;
-        font-size: 19px;
+        margin: 0 4px;
+        vertical-align: middle;
+        font-size: 21px;
         &:hover {
           cursor: pointer;
         }
@@ -37,6 +40,7 @@
   position: relative;
   height: 1px;
   width: 100%;
+  margin-top: 2px;
 
   &.mat-disabled {
     border-top: 0;
@@ -54,10 +58,6 @@
     transform-origin: top;
     opacity: 0;
     transform: scaleY(0);
-    &.mat-warn {
-      opacity: 1;
-      transform: scaleY(1);
-    }
     &.mat-focused {
       opacity: 1;
       transform: scaleY(1);

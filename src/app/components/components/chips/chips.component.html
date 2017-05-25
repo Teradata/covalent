@@ -1,12 +1,12 @@
 <md-card>
-  <md-card-title>Chips &amp; Autocomplete</md-card-title>
+  <md-card-title>Chips &amp; Autocomplete with strings</md-card-title>
   <md-card-subtitle>Autocomplete with chips and no custom inputs</md-card-subtitle>
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
       <ng-template md-tab-label>Demo</ng-template>
       <div class="push">
-        <div class="md-body-1">Type and select a preset option:</div>
+        <div class="md-body-1">Type and select a preset option or press enter:</div>
         <td-chips [chipAddition]="chipAddition"
                   [items]="items"
                   [(ngModel)]="itemsRequireMatch"
@@ -74,6 +74,50 @@
       </md-slide-toggle>
     </div>
   </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Chips &amp; Autocomplete with objects</md-card-title>
+  <md-card-subtitle>Autocomplete with chips and templates</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select a preset option or press enter:</div>
+        <td-chips [items]="objects"
+                  [compareWith]="compareWith"
+                  [(ngModel)]="objectsRequireMatch"
+                  placeholder="Enter autocomplete strings"
+                  requireMatch>
+          <ng-template td-basic-chip let-chip="chip">
+            {{chip.city}}, <em>(Pop: {{chip.population}})</em>
+          </ng-template>
+          <ng-template td-autocomplete let-option="option">
+            {{option.city}}
+          </ng-template>
+        </td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
 </md-card>
 <md-card>
   <md-card-title>Autocomplete with custom inputs</md-card-title>

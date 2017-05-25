@@ -1,24 +1,43 @@
-import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener } from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
+        Directive, TemplateRef, ViewContainerRef, ContentChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
-import { MdChip, MdInputDirective, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE } from '@angular/material';
+import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
+         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/debounceTime';
 
 const noop: any = () => {
   // empty method
 };
 
-export const TD_CHIPS_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdChipsComponent),
-  multi: true,
-};
+@Directive({
+  selector: '[td-basic-chip]ng-template',
+})
+export class TdBasicChipDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
+
+@Directive({
+  selector: '[td-autocomplete]ng-template',
+})
+export class TdAutocompleteDirective extends TemplatePortalDirective {
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Component({
-  providers: [ TD_CHIPS_CONTROL_VALUE_ACCESSOR ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdChipsComponent),
+    multi: true,
+  }],
   selector: 'td-chips',
   styleUrls: ['./chips.component.scss' ],
   templateUrl: './chips.component.html',
@@ -28,7 +47,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   /**
    * Implemented as part of ControlValueAccessor.
    */
-  private _value: any = [];
+  private _value: any[] = [];
 
   private _length: number = 0;
   private _requireMatch: boolean = false;
@@ -36,12 +55,14 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _chipAddition: boolean = true;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
+  @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
-  /**
-   * Boolean value that specifies if the input is valid against the provieded list.
-   */
-  matches: boolean = true;
+  @ContentChild(TdBasicChipDirective) _basicChipTemplate: TdBasicChipDirective;
+  @ContentChild(TdAutocompleteDirective) _autocompleteTemplate: TdAutocompleteDirective;
+
+  @ViewChildren(MdOption) _options: QueryList<MdOption>;
+
   /**
    * Flag that is true when autocomplete is focused.
    */
@@ -55,18 +76,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   /**
    * Subject to control what items to render in the autocomplete
    */
-  subject: Subject<string[]> = new Subject<string[]>();
+  subject: Subject<any[]> = new Subject<any[]>();
 
   /**
    * Observable of items to render in the autocomplete
    */
-  filteredItems: Observable<string[]> = this.subject.asObservable();
+  filteredItems: Observable<any[]> = this.subject.asObservable();
+
+  // TODO check if we need to have items here or if we can remove them
 
   /**
-   * items?: string[]
-   * Enables Autocompletion with the provided list of strings.
+   * items?: any[]
+   * Enables Autocompletion with the provided list of objects or strings.
    */
-  @Input('items') items: string[] = [];
+  @Input('items') items: any[] = [];
   
   /**
    * requireMatch?: boolean
@@ -122,19 +145,28 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   @Input('placeholder') placeholder: string;
 
+  @Input('compareWith') compareWith: (item: any, value: string) => boolean;
+
   /**
    * add?: function
-   * Method to be executed when string is added as chip through the autocomplete.
+   * Method to be executed when string or object is added as chip through the autocomplete.
    * Sends chip value as event.
    */
-  @Output('add') add: EventEmitter<string> = new EventEmitter<string>();
+  @Output('add') onAdd: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * remove?: function
-   * Method to be executed when string is removed as chip with the "remove" button.
+   * Method to be executed when string or object is removed as chip with the "remove" button.
    * Sends chip value as event.
    */
-  @Output('remove') remove: EventEmitter<string> = new EventEmitter<string>();
+  @Output('remove') onRemove: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
+   * inputChange?: function
+   * Method to be executed when the value in the autocomplete input changes.
+   * Sends string value as event.
+   */
+  @Output('inputChange') onInputChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -152,14 +184,18 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   ngOnInit(): void {
     this.inputControl.valueChanges
-      .debounceTime(100)
+      .debounceTime(200)
       .subscribe((value: string) => {
-        this.matches = true;
+        this.onInputChange.emit(value);
         this._filter(value);
       });
     // filter the autocomplete options after everything is rendered
     Observable.timer().subscribe(() => {
       this._filter(this.inputControl.value);
+    });
+    // check when options change and set first one as active everytime the filter changes
+    this.subject.subscribe(() => {
+      this._setFirstOptionActive();
     });
   }
 
@@ -174,32 +210,60 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   /**
    * Returns a list of filtered items.
    */
-  filter(val: string): string[] {
-    return this.items.filter((item: string) => {
-      return val ? item.indexOf(val) > -1 : true;
+  filter(val: string): any[] {
+    // TODO see if we can do something about this
+    return this.items.filter((item: any) => {
+      if (typeof item === 'string') {
+        return val ? item.indexOf(val) > -1 : true;
+      } else {
+        return this.compareWith(item, val);
+      }
     });
   }
 
   /**
    * Method that is executed when trying to create a new chip from the autocomplete.
+   * It check if [requireMatch] is enabled, and tries to add the first active option
+   * else if just adds the value thats on the input
    * returns 'true' if successful, 'false' if it fails.
    */
-  addChip(value: string): boolean {
-    if (value.trim() === '' || this._value.indexOf(value) > -1) {
-      this.matches = false;
-      return false;
-    }
-    if (this.items && this.requireMatch) {
-      if (this.items.indexOf(value) < 0) {
-        this.matches = false;
+  handleAddChip(): boolean {
+    if (this.requireMatch) {
+      let selectedOptions: MdOption[] = this._options.toArray().filter((option: MdOption) => {
+        return option.active;
+      });
+      let selectedValue: any;
+      if (selectedOptions.length > 0) {
+        selectedValue = selectedOptions[0].value;
+      }
+      if (!selectedValue) {
         return false;
       }
+      this._openAutocomplete();
+      return this.addChip(selectedValue);
+    } else {
+      let value: string = this._inputChild.value;
+      if (value.trim() === '') {
+        return false;
+      }
+      this._openAutocomplete();
+      return this.addChip(value);
     }
-    this._value.push(value);
-    this.add.emit(value);
-    this.onChange(this._value);
+  }
+
+  /**
+   * Method thats exectuted when trying to add a value as chip
+   * returns 'true' if successful, 'false' if it fails.
+   */
+  addChip(value: any): boolean {
+    let index: number = this._value.indexOf(value);
+    if (index > -1) {
+      return false;
+    }
     this.inputControl.setValue('');
-    this.matches = true;
+    this._value.push(value);
+    this.onAdd.emit(value);
+    this.onChange(this._value);
     return true;
   }
 
@@ -207,26 +271,26 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method that is executed when trying to remove a chip.
    * returns 'true' if successful, 'false' if it fails.
    */
-  removeChip(value: string): boolean {
+  removeChip(value: any): boolean {
     let index: number = this._value.indexOf(value);
     if (index < 0) {
       return false;
     }
     this._value.splice(index, 1);
-    this.remove.emit(value);
+    this.onRemove.emit(value);
     this.onChange(this._value);
     this.inputControl.setValue('');
     return true;
   }
 
   handleFocus(): boolean {
+    this._setFirstOptionActive();
     this.focused = true;
     return true;
   }
 
   handleBlur(): boolean {
     this.focused = false;
-    this.matches = true;
     this.onTouched();
     return true;
   }
@@ -245,6 +309,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    */
   _inputKeydown(event: KeyboardEvent): void {
     switch (event.keyCode) {
+      case UP_ARROW:
+        /** 
+         * Since the first item is highlighted on [requireMatch], we need to inactivate it
+         * when pressing the up key
+         */
+        if (this.requireMatch) {
+          let length: number = this._options.length;
+          if (length > 0 && this._options.toArray()[0].active) {
+            this._options.toArray()[0].setInactiveStyles();
+            event.preventDefault();
+          }
+        }
+        break;
       case LEFT_ARROW:
       case DELETE:
       case BACKSPACE:
@@ -338,8 +415,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method to filter the options for the autocomplete
    */
   private _filter(value: string): void {
-    let items: string[] = this.filter(value);
-    items = items.filter((filteredItem: string) => {
+    // TODO check filtering
+    let items: any[] = this.filter(value);
+    items = items.filter((filteredItem: any) => {
       return this._value && filteredItem ? this._value.indexOf(filteredItem) < 0 : true;
     });
     this.subject.next(items);
@@ -382,6 +460,38 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       this.inputControl.enable();
     } else {
       this.inputControl.disable();
+    }
+  }
+
+  /**
+   * Method to open the autocomplete manually if its not already opened
+   */
+  private _openAutocomplete(): void {
+    // TODO Check if we need to use timer.
+    Observable.timer().toPromise().then(() => {
+      if (!this._autocompleteTrigger.panelOpen) {
+        this._autocompleteTrigger.openPanel();
+      }
+    });
+  }
+
+  /**
+   * Sets first option as active to let the user know which one will be added when pressing enter
+   * Only if [requireMatch] has been set
+   */
+  private _setFirstOptionActive(): void {
+    if (this.requireMatch) {
+      // need to use a timer here to wait until the autocomplete has been opened (end of queue)
+      Observable.timer().toPromise().then(() => {
+        if (this.focused && this._options && this._options.length > 0) {
+          // clean up of previously active options
+          this._options.toArray().forEach((option: MdOption) => {
+            option.setInactiveStyles();
+          });
+          // set the first one as active
+          this._options.toArray()[0].setActiveStyles();
+        }
+      });
     }
   }
 }

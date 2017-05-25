@@ -65,4 +65,19 @@ export class ChipsDemoComponent {
 
   itemsRequireMatch: string[] = this.items.slice(0, 6);
 
+  objects: any[] = [
+    {id: 1, city: 'San Diego', population: '4'},
+    {id: 2, city: 'San Franscisco', population: '3'},
+    {id: 3, city: 'Los Angeles', population: '6'},
+    {id: 4, city: 'Austin', population: '2'},
+    {id: 5, city: 'New York City', population: '1'},
+    {id: 6, city: 'Tijuana', population: '0'},
+  ];
+
+  objectsRequireMatch: string[] = this.objects.slice(0, 2);
+
+  compareWith(item: any, val: string): boolean {
+    return val ? item.city.toLowerCase().indexOf(val) > -1 : true;
+  }
+
 }
