@@ -9,12 +9,11 @@
     }
     /* TODO see if we can make styles more abstract to future proof for contact lists */
     .mat-basic-chip {
-      display: inline-block;
       cursor: default;
       border-radius: 16px;
-      line-height: 31px;
       @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
-      span.td-basic-chip {
+      .td-basic-chip {
+        min-height: 30px;
         font-size: 14px;
         @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
       }
@@ -24,9 +23,8 @@
       &.td-chip-disabled {
         @include rtl(padding, 0 12px 0 0, 0 0 0 12px);
       }
-      md-icon {
+      md-icon.td-chip-removal {
         margin: 0 4px;
-        vertical-align: middle;
         font-size: 21px;
         &:hover {
           cursor: pointer;

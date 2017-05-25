@@ -2,16 +2,18 @@
   <md-chip-list [tabIndex]="-1" (focus)="focus()">
     <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
       <md-basic-chip [class.td-chip-disabled]="readOnly"
-                     (keydown)="_chipKeydown($event, index)">
-        <span class="td-basic-chip">
+                     (keydown)="_chipKeydown($event, index)"
+                     layout="row"
+                     layout-align="start center">
+        <div class="td-basic-chip" layout="row" layout-align="start center">
           <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
           <ng-template
             *ngIf="_basicChipTemplate?.templateRef"
             [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
             [ngOutletContext]="{ chip: chip }">
           </ng-template>
-        </span>
-        <md-icon *ngIf="!readOnly" (click)="removeChip(chip)">
+        </div>
+        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="removeChip(chip)">
           cancel
         </md-icon>
       </md-basic-chip>
