@@ -2,6 +2,7 @@
   <md-chip-list [tabIndex]="-1" (focus)="focus()">
     <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
       <md-basic-chip [class.td-chip-disabled]="readOnly"
+                     [color]="color"
                      (keydown)="_chipKeydown($event, index)">
         <span>{{chip}}</span>
         <md-icon *ngIf="!readOnly" (click)="removeChip(chip)">
@@ -11,7 +12,7 @@
     </ng-template>
     <md-input-container floatPlaceholder="never"
                         [style.width.px]="canAddChip ? null : 0"
-                        [color]="matches ? 'primary' : 'warn'">
+                        [color]="color">
       <input mdInput
               flex="100" 
               #input
@@ -32,7 +33,6 @@
   <div *ngIf="chipAddition" class="mat-input-underline"
        [class.mat-disabled]="readOnly">
     <span class="mat-input-ripple"
-          [class.mat-focused]="focused"
-          [class.mat-warn]="!matches"></span>
+          [class.mat-focused]="focused"></span>
   </div>
 </div>

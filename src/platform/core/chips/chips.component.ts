@@ -1,4 +1,5 @@
-import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener } from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit,
+         HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MdChip, MdInputDirective, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE } from '@angular/material';
@@ -34,6 +35,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
   private _chipAddition: boolean = true;
+
+  private _color: 'primary' | 'accent' | 'warn' = 'primary';
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -123,6 +126,21 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   @Input('placeholder') placeholder: string;
 
   /**
+   * color?: 'primary' | 'accent' | 'warn'
+   * color for the input and focus state of the chips.
+   * defaults to 'primary'
+   */
+  @Input('color') 
+  set color(color: 'primary' | 'accent' | 'warn') {
+    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    this._color = color;
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+  }
+  get color(): 'primary' | 'accent' | 'warn' {
+    return this._color;
+  }
+
+  /**
    * add?: function
    * Method to be executed when string is added as chip through the autocomplete.
    * Sends chip value as event.
@@ -149,6 +167,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     }
   }
   get value(): any { return this._value; }
+
+  constructor(private _elementRef: ElementRef,
+              private _renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.inputControl.valueChanges

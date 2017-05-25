@@ -54,10 +54,6 @@
     transform-origin: top;
     opacity: 0;
     transform: scaleY(0);
-    &.mat-warn {
-      opacity: 1;
-      transform: scaleY(1);
-    }
     &.mat-focused {
       opacity: 1;
       transform: scaleY(1);
