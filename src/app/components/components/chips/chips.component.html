@@ -90,10 +90,10 @@
                   placeholder="Enter autocomplete strings"
                   requireMatch>
           <ng-template td-basic-chip let-chip="chip">
-            {{chip.city}}, <em>(Pop: {{chip.population}})</em>
+            {{chip.city}}, (Pop: {{chip.population}})
           </ng-template>
           <ng-template td-autocomplete let-option="option">
-            {{option.city}}
+           <md-icon>location_city</md-icon> {{option.city}}
           </ng-template>
         </td-chips>
       </div>
