@@ -225,6 +225,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       let selectedValue: any;
       if (selectedOptions.length > 0) {
         selectedValue = selectedOptions[0].value;
+        selectedOptions[0].setInactiveStyles();
       }
       if (!selectedValue) {
         return false;
