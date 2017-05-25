@@ -256,10 +256,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * returns 'true' if successful, 'false' if it fails.
    */
   addChip(value: any): boolean {
-    let index: number = this._value.indexOf(value);
-    if (index > -1) {
-      return false;
-    }
     this.inputControl.setValue('');
     this._value.push(value);
     this.onAdd.emit(value);
@@ -271,13 +267,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * Method that is executed when trying to remove a chip.
    * returns 'true' if successful, 'false' if it fails.
    */
-  removeChip(value: any): boolean {
-    let index: number = this._value.indexOf(value);
-    if (index < 0) {
+  removeChip(index: number): boolean {
+    let removedValues: any[] = this._value.splice(index, 1);
+    if (removedValues.length === 0) {
       return false;
     }
-    this._value.splice(index, 1);
-    this.onRemove.emit(value);
+    this.onRemove.emit(removedValues[0]);
     this.onChange(this._value);
     this.inputControl.setValue('');
     return true;
@@ -361,7 +356,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
           } else if (index < (this._totalChips - 1)) {
             this._focusChip(index + 1);
           }
-          this.removeChip(this.value[index]);
+          this.removeChip(index);
         }
         break;
       case LEFT_ARROW:

@@ -13,7 +13,7 @@
             [ngOutletContext]="{ chip: chip }">
           </ng-template>
         </div>
-        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="removeChip(chip)">
+        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="removeChip(index)">
           cancel
         </md-icon>
       </md-basic-chip>
