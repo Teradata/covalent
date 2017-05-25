@@ -393,6 +393,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
   /**
+   * Method to remove from display the value added from the autocomplete since it goes directly as chip.
+   */
+  _removeInputDisplay(): string {
+    return '';
+  }
+
+  /**
    * Implemented as part of ControlValueAccessor.
    */
   writeValue(value: any): void {
