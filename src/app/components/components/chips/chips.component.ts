@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -8,7 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './chips.component.html',
   animations: [slideInDownAnimation],
 })
-export class ChipsDemoComponent {
+export class ChipsDemoComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -49,7 +49,9 @@ export class ChipsDemoComponent {
   readOnly: boolean = false;
   chipAddition: boolean = true;
 
-  items: string[] = [
+  filteringAsync: boolean = false;
+
+  strings: string[] = [
     'stepper',
     'expansion-panel',
     'markdown',
@@ -63,7 +65,9 @@ export class ChipsDemoComponent {
     'need more?',
   ];
 
-  itemsRequireMatch: string[] = this.items.slice(0, 6);
+  filteredStrings: string[];
+
+  stringsModel: string[] = this.strings.slice(0, 6);
 
   objects: any[] = [
     {id: 1, city: 'San Diego', population: '4M'},
@@ -73,10 +77,47 @@ export class ChipsDemoComponent {
     {id: 5, city: 'New York City', population: '10M'},
   ];
 
-  objectsRequireMatch: string[] = this.objects.slice(0, 2);
+  filteredObjects: string[];
 
-  compareWith(item: any, val: string): boolean {
-    return val ? item.city.toLowerCase().indexOf(val) > -1 : true;
+  objectsModel: string[] = this.objects.slice(0, 2);
+
+  filteredAsync: string[];
+
+  asyncModel: string[] = this.strings.slice(0, 2);
+
+  ngOnInit(): void {
+    this.filterStrings('');
+    this.filterObjects('');
   }
 
+  filterStrings(value: string): void {
+    this.filteredStrings = this.strings.filter((item: any) => {
+      return item.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+    }).filter((filteredItem: any) => {
+      return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+    });
+  }
+
+  filterObjects(value: string): void {
+    this.filteredObjects = this.objects.filter((obj: any) => {
+      return obj.city.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+    }).filter((filteredObj: any) => {
+      return this.objectsModel ? this.objectsModel.indexOf(filteredObj) < 0 : true;
+    });
+  }
+
+  filterAsync(value: string): void {
+    this.filteredAsync = undefined;
+    if (value !== '') {
+      this.filteringAsync = true;
+      setTimeout(() => {
+        this.filteredAsync = this.strings.filter((item: any) => {
+          return item.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+        }).filter((filteredItem: any) => {
+          return this.asyncModel ? this.asyncModel.indexOf(filteredItem) < 0 : true;
+        });
+        this.filteringAsync = false;
+      }, 2000);
+    }
+  }
 }

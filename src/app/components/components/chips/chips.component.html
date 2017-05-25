@@ -8,10 +8,11 @@
       <div class="push">
         <div class="md-body-1">Type and select a preset option or press enter:</div>
         <td-chips [chipAddition]="chipAddition"
-                  [items]="items"
-                  [(ngModel)]="itemsRequireMatch"
+                  [items]="filteredStrings"
+                  [(ngModel)]="stringsModel"
                   placeholder="Enter autocomplete strings"
                   [readOnly]="readOnly"
+                  (inputChange)="filterStrings($event)"
                   requireMatch>
         </td-chips>
       </div>
@@ -23,10 +24,11 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-chips [chipAddition]="chipAddition"
-                      [items]="items"
-                      [(ngModel)]="itemsRequireMatch"
+                      [items]="filteredStrings"
+                      [(ngModel)]="stringsModel"
                       placeholder="Enter autocomplete strings"
                       [readOnly]="readOnly"
+                      (inputChange)="filterStrings($event)"
                       requireMatch>
             </td-chips>
           ]]>
@@ -38,7 +40,7 @@
               readOnly: boolean = false;
               chipAddition: boolean = true;
 
-              items: string[] = [
+              strings: string[] = [
                 'stepper',
                 'expansion-panel',
                 'markdown',
@@ -52,8 +54,21 @@
                 'need more?',
               ];
 
-              itemsRequireMatch: string[] = this.items.slice(0, 6);
+              filteredStrings: string[];
 
+              stringsModel: string[] = this.strings.slice(0, 6);
+
+              ngOnInit(): void {
+                this.filterStrings('');
+              }
+
+              filterStrings(value: string): void {
+                this.filteredStrings = this.strings.filter((item: any) => {
+                  return item.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+                }).filter((filteredItem: any) => {
+                  return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+                });
+              }
             }
           ]]>
         </td-highlight>
@@ -84,16 +99,16 @@
       <ng-template md-tab-label>Demo</ng-template>
       <div class="push">
         <div class="md-body-1">Type and select a preset option or press enter:</div>
-        <td-chips [items]="objects"
-                  [compareWith]="compareWith"
-                  [(ngModel)]="objectsRequireMatch"
+        <td-chips [items]="filteredObjects"
+                  [(ngModel)]="objectsModel"
                   placeholder="Enter autocomplete strings"
+                  (inputChange)="filterObjects($event)"
                   requireMatch>
           <ng-template td-basic-chip let-chip="chip">
             {{chip.city}}, (Pop: {{chip.population}})
           </ng-template>
-          <ng-template td-autocomplete let-option="option">
-           <md-icon>location_city</md-icon> {{option.city}}
+          <ng-template td-autocomplete-option let-option="option">
+            <md-icon>location_city</md-icon> {{option.city}}
           </ng-template>
         </td-chips>
       </div>
@@ -104,14 +119,127 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-
+            <td-chips [items]="filteredObjects"
+                      [(ngModel)]="objectsModel"
+                      placeholder="Enter autocomplete strings"
+                      (inputChange)="filterObjects($event)"
+                      requireMatch>
+              <ng-template td-basic-chip let-chip="chip">
+                { {chip.city} }, (Pop: { {chip.population} })
+              </ng-template>
+              <ng-template td-autocomplete-option let-option="option">
+                <md-icon>location_city</md-icon> { {option.city} }
+              </ng-template>
+            </td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
+              objects: any[] = [
+                {id: 1, city: 'San Diego', population: '4M'},
+                {id: 2, city: 'San Franscisco', population: '6M'},
+                {id: 3, city: 'Los Angeles', population: '5M'},
+                {id: 4, city: 'Austin', population: '3M'},
+                {id: 5, city: 'New York City', population: '10M'},
+              ];
 
+              filteredObjects: string[];
+
+              objectsModel: string[] = this.objects.slice(0, 2);
+
+              ngOnInit(): void {
+                this.filterObjects('');
+              }
+
+              filterObjects(value: string): void {
+                this.filteredObjects = this.objects.filter((obj: any) => {
+                  return obj.city.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+                }).filter((filteredObj: any) => {
+                  return this.objectsModel ? this.objectsModel.indexOf(filteredObj) < 0 : true;
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<md-card>
+  <md-card-title>Chips &amp; async Autocomplete</md-card-title>
+  <md-card-subtitle>Load autocomplete items asynchronous when typing in the input</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and see how it will load items async:</div>
+        <td-chips [items]="filteredAsync"
+                  [(ngModel)]="asyncModel"
+                  placeholder="Enter autocomplete strings"
+                  (inputChange)="filterAsync($event)"
+                  (debounce)="1000"
+                  requireMatch>
+          <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+        </td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="filteredAsync"
+                      [(ngModel)]="asyncModel"
+                      placeholder="Enter autocomplete strings"
+                      (inputChange)="filterAsync($event)"
+                      (debounce)="1000"
+                      requireMatch>
+              <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+            </td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              filteringAsync: boolean = false;
+
+              strings: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+              filteredAsync: string[];
+
+              asyncModel: string[] = this.strings.slice(0, 2);
+
+              filterAsync(value: string): void {
+                this.filteredAsync = undefined;
+                if (value !== '') {
+                  this.filteringAsync = true;
+                  setTimeout(() => {
+                    this.filteredAsync = this.strings.filter((item: any) => {
+                      return item.toLowerCase().indexOf(value ? value.toLowerCase() : '') > -1;
+                    }).filter((filteredItem: any) => {
+                      return this.asyncModel ? this.asyncModel.indexOf(filteredItem) < 0 : true;
+                    });
+                    this.filteringAsync = false;
+                  }, 2000);
+                }
+              }
             }
           ]]>
         </td-highlight>
@@ -199,72 +327,5 @@
     </md-tab>
   </md-tab-group>
 </md-card>
-<md-card>
-  <md-card-title>TdChipsComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-chips>]]></code></h2>
-    <p>Use <code><![CDATA[<td-chips>]]></code> element to generate a list of strings as chips.</p>
-    <p>Add the [items] attribute to enable the autocomplete with a search list, and [requireMatch] to validate the input against the provided search list.</p>
-    <p>When used with <a target="_blank" href="https://angular.io/docs/ts/latest/guide/forms.html">forms</a>, you can track change-states [dirty/pristine] and [touched/untouched].</p>
-    <p>Since <code>[(ngModel)]</code> would be an array, you need to implement a custom validator for [valid/invalid] when its empty.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-chips>]]></code> component has {{chipsAttrs.length}} properties:</p>
-    <md-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="chipsAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </ng-template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" [chipAddition]="chipAddition" (add)="add($event)" (remove)="remove($event)" requireMatch>
-        </td-chips>        
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-          readOnly: boolean: false;
-          items: string[] = [
-            'string1',
-            'string2',
-            'string3'
-          ];
-          model: string[] = [];
-
-          add(value: string): void {
-            ...
-          }
-          remove(value: string): void {
-            ...
-          }
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentChipsModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentChipsModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            CovalentChipsModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
+   
+<td-readme-loader resourceUrl="platform/core/chips/README.md"></td-readme-loader>
