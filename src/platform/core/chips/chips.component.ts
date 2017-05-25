@@ -86,7 +86,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   /**
    * items?: any[]
-   * Enables Autocompletion with the provided list of objects or strings.
+   * Renders the `md-autocomplete` with the provided list to display as options.
    */
   @Input('items')
   set items(items: any[]) {
@@ -98,8 +98,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   
   /**
    * requireMatch?: boolean
-   * Validates input against the provided list before adding it to the model.
-   * If it doesnt exist, it cancels the event.
+   * Blocks custom inputs and only allows selections from the autocomplete list.
    */
   @Input('requireMatch')
   set requireMatch(requireMatch: any) {
@@ -124,8 +123,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   /**
    * chipAddition?: boolean
-   * Disables the ability to add chips. If it doesn't exist chip addition defaults to true.
-   * When setting readOnly as true, this will be overriden.
+   * Disables the ability to add chips. When setting readOnly as true, this will be overriden.
+   * Defaults to true.
    */
   @Input('chipAddition')
   set chipAddition(chipAddition: boolean) {
@@ -158,14 +157,14 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
   /**
    * add?: function
-   * Method to be executed when string or object is added as chip through the autocomplete.
+   * Method to be executed when a chip is added.
    * Sends chip value as event.
    */
   @Output('add') onAdd: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * remove?: function
-   * Method to be executed when string or object is removed as chip with the "remove" button.
+   * Method to be executed when a chip is removed.
    * Sends chip value as event.
    */
   @Output('remove') onRemove: EventEmitter<any> = new EventEmitter<any>();
