@@ -39,7 +39,7 @@ export class MyModule {}
 
 Example for HTML usage:
 
- ```html
+```html
 <td-chips placeholder="placeholder"
           [items]="items"
           [(ngModel)]="model"
@@ -57,4 +57,4 @@ Example for HTML usage:
   </ng-template>
   // anything below it
 </td-chips>  
- ```
+```
