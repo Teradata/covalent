@@ -233,28 +233,6 @@ describe('Component: Chips', () => {
       });
     });
 
-    it('should open the panel, press enter and add first selection', (done: DoneFn) => {
-      fixture.componentInstance.objects = [{
-        name: 'San Diego',
-      }, {
-        name: 'Los Angeles',
-      }];
-      input.triggerEventHandler('focus', new Event('focus'));
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          input.triggerEventHandler('keyup.enter', { keyCode: ENTER });
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            expect(chips.componentInstance.value.length).toBe(1);
-            expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
-            done();
-          });
-        });
-      });
-    });
-
   });
 
   // TODO
