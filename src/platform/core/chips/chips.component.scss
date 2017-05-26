@@ -55,13 +55,13 @@
     z-index: 1;
     top: -1px;
     width: 100%;
-    transform-origin: top;
-    transform: scaleY(0); // can be scaleX(.5) to mimic material
+    transform-origin: 50%;
+    transform: scaleX(0.5);
     visibility: hidden;
     transition: background-color .3s cubic-bezier(.55,0,.55,.2);
     &.mat-focused {
       visibility: visible;
-      transform: scaleY(1); // can be scaleX(1) to mimic material
+      transform: scaleX(1);
       transition: transform 150ms linear,
                   background-color .3s cubic-bezier(.55,0,.55,.2);
     }
