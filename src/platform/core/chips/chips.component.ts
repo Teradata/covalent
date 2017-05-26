@@ -1,11 +1,13 @@
-import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
-        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener, ElementRef, Optional, Inject,
+        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit, OnDestroy,
+} from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
-         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE } from '@angular/material';
+         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/debounceTime';
@@ -43,7 +45,9 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, AfterViewInit {
+export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy {
+
+  private _outsideClickSubs: Subscription;
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -55,6 +59,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
   private _chipAddition: boolean = true;
+  private _focused: boolean = false;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
@@ -68,7 +73,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   /**
    * Flag that is true when autocomplete is focused.
    */
-  focused: boolean = false;
+  get focused(): boolean {
+    return this._focused;
+  }
 
   /**
    * FormControl for the mdInput element.
@@ -180,7 +187,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
   get value(): any { return this._value; }
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _elementRef: ElementRef, 
+              private _changeDetectorRef: ChangeDetectorRef,
+              @Optional() @Inject(DOCUMENT) private _document: any) {}
 
   ngOnInit(): void {
     this.inputControl.valueChanges
@@ -189,6 +198,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         this.onInputChange.emit(value ? value : '');
       });
     this._changeDetectorRef.markForCheck();
+    this._watchOutsideClick();
   }
 
   ngAfterViewInit(): void {
@@ -200,6 +210,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     if (this._value && this._value.length !== this._length) {
       this._length = this._value.length;
       this.onChange(this._value);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this._outsideClickSubs) {
+      this._outsideClickSubs.unsubscribe();
+      this._outsideClickSubs = undefined;
     }
   }
 
@@ -276,15 +293,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   handleFocus(): boolean {
-    this.focused = true;
+    this.setFocusedState();
     this._setFirstOptionActive();
     return true;
   }
 
-  handleBlur(): boolean {
-    this.focused = false;
-    this.onTouched();
-    return true;
+  setFocusedState(): void {
+    this._focused = true;
   }
 
   /**
@@ -301,6 +316,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   _inputKeydown(event: KeyboardEvent): void {
     switch (event.keyCode) {
+      case TAB:
+        this._focused = false;
+        break;
       case UP_ARROW:
         /** 
          * Since the first item is highlighted on [requireMatch], we need to inactivate it
@@ -491,5 +509,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         }
       });
     }
+  }
+
+  private _watchOutsideClick(): void {
+    if (this._document) {
+      this._outsideClickSubs = Observable.fromEvent(this._document, 'click').filter((event: MouseEvent) => {
+        const clickTarget: HTMLElement = <HTMLElement>event.target;
+        return this._focused && (clickTarget !== this._elementRef.nativeElement) && !this._elementRef.nativeElement.contains(clickTarget);
+      }).subscribe(() => {
+        this._focused = false;
+        this.onTouched();
+        this._changeDetectorRef.markForCheck();
+      });
+    }
+    return undefined;
   }
 }
