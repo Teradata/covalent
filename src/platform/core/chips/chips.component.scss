@@ -38,7 +38,9 @@
   position: relative;
   height: 1px;
   width: 100%;
-  margin-top: 2px;
+  margin-top: 4px;
+  border-top-width: 1px;
+  border-top-style: solid;
 
   &.mat-disabled {
     border-top: 0;
@@ -54,11 +56,14 @@
     top: -1px;
     width: 100%;
     transform-origin: top;
-    opacity: 0;
-    transform: scaleY(0);
+    transform: scaleY(0); // can be scaleX(.5) to mimic material
+    visibility: hidden;
+    transition: background-color .3s cubic-bezier(.55,0,.55,.2);
     &.mat-focused {
-      opacity: 1;
-      transform: scaleY(1);
+      visibility: visible;
+      transform: scaleY(1); // can be scaleX(1) to mimic material
+      transition: transform 150ms linear,
+                  background-color .3s cubic-bezier(.55,0,.55,.2);
     }
   }
 }
