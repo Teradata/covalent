@@ -234,16 +234,23 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         return false;
       }
     } else {
-      value = this._inputChild.value;
-      if (value.trim() === '') {
-        return false;
+      // if there is a selection, then use that
+      // else use the input value as chip
+      if (this._autocompleteTrigger.activeOption) {
+        value = this._autocompleteTrigger.activeOption.value;
+        this._autocompleteTrigger.activeOption.setInactiveStyles();
+      } else {
+        value = this._inputChild.value;
+        if (value.trim() === '') {
+          return false;
+        }
       }
     }
-
     /**
      * add a 200 ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
+    this._closeAutocomplete();
     Observable.timer(200).toPromise().then(() => {
       this._openAutocomplete();
     });
@@ -401,6 +408,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   _openAutocomplete(): void {
     if (!this._autocompleteTrigger.panelOpen) {
       this._autocompleteTrigger.openPanel();
+      this._changeDetectorRef.markForCheck();
     }
   }
 
@@ -410,6 +418,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   _closeAutocomplete(): void {
     if (this._autocompleteTrigger.panelOpen) {
       this._autocompleteTrigger.closePanel();
+      this._changeDetectorRef.markForCheck();
     }
   }
 
