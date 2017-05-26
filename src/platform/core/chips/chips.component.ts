@@ -191,7 +191,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this.inputControl.valueChanges
       .debounceTime(this.debounce)
       .subscribe((value: string) => {
-        this.onInputChange.emit(value);
+        this.onInputChange.emit(value ? value : '');
       });
     // check when options change and set first one as active everytime items change
     this.subject.subscribe(() => {
