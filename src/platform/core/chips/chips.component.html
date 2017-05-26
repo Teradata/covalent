@@ -33,7 +33,7 @@
               (blur)="handleBlur()">
     </md-input-container>
     <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
-      <ng-template let-item let-first="first" ngFor [ngForOf]="filteredItems | async">
+      <ng-template let-item let-first="first" ngFor [ngForOf]="items">
         <md-option (click)="addChip(item)" [value]="item">
           <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
           <ng-template

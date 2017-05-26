@@ -1,5 +1,5 @@
 import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
-        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
@@ -43,14 +43,14 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
+export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, AfterViewInit {
 
   /**
    * Implemented as part of ControlValueAccessor.
    */
   private _value: any[] = [];
 
-  private _items: any[] = [];
+  private _items: any[];
   private _length: number = 0;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
@@ -76,25 +76,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   inputControl: FormControl = new FormControl();
 
   /**
-   * Subject to control what items to render in the autocomplete
-   */
-  subject: Subject<any[]> = new Subject<any[]>();
-
-  /**
-   * Observable of items to render in the autocomplete
-   */
-  filteredItems: Observable<any[]> = this.subject.asObservable();
-
-  /**
    * items?: any[]
    * Renders the `md-autocomplete` with the provided list to display as options.
    */
   @Input('items')
   set items(items: any[]) {
     this._items = items;
-    if (this.subject) {
-      this.subject.next(items);
-    }
+    this._setFirstOptionActive();
+    this._changeDetectorRef.markForCheck();
+  }
+  get items(): any[] {
+    return this._items;
   }
   
   /**
@@ -196,14 +188,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       .subscribe((value: string) => {
         this.onInputChange.emit(value ? value : '');
       });
-    // check when options change and set first one as active everytime items change
-    this.subject.subscribe(() => {
-      this._setFirstOptionActive();
-    });
-    // render the items that are available if available
-    Observable.timer().subscribe(() => {
-      this.subject.next(this._items);
-    });
+    this._changeDetectorRef.markForCheck();
+  }
+
+  ngAfterViewInit(): void {
+    this._changeDetectorRef.markForCheck();
   }
 
   ngDoCheck(): void {
@@ -246,14 +235,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         }
       }
     }
-    /**
-     * add a 200 ms delay when reopening the autocomplete to give it time
-     * to rerender the next list and at the correct spot
-     */
-    this._closeAutocomplete();
-    Observable.timer(200).toPromise().then(() => {
-      this._openAutocomplete();
-    });
     return this.addChip(value);
   }
 
@@ -267,6 +248,14 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this.onAdd.emit(value);
     this.onChange(this._value);
     this._changeDetectorRef.markForCheck();
+    /**
+     * add a 200 ms delay when reopening the autocomplete to give it time
+     * to rerender the next list and at the correct spot
+     */
+    this._closeAutocomplete();
+    Observable.timer(200).toPromise().then(() => {
+      this._openAutocomplete();
+    });
     return true;
   }
 
@@ -287,8 +276,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
   handleFocus(): boolean {
-    this._setFirstOptionActive();
     this.focused = true;
+    this._setFirstOptionActive();
     return true;
   }
 
@@ -328,6 +317,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
       case LEFT_ARROW:
       case DELETE:
       case BACKSPACE:
+        this._closeAutocomplete();
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
         if (!this._inputChild.value) {
           this._focusLastChip();
@@ -335,6 +325,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
         }
         break;
       case RIGHT_ARROW:
+        this._closeAutocomplete();
         /** Check to see if input is empty when pressing right arrow to move to the first chip */
         if (!this._inputChild.value) {
           this._focusFirstChip();
