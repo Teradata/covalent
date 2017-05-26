@@ -1,5 +1,5 @@
 import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
-        Directive, TemplateRef, ViewContainerRef, ContentChild } from '@angular/core';
+        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
@@ -41,6 +41,7 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   selector: 'td-chips',
   styleUrls: ['./chips.component.scss' ],
   templateUrl: './chips.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
 
@@ -187,6 +188,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
   get value(): any { return this._value; }
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   ngOnInit(): void {
     this.inputControl.valueChanges
       .debounceTime(this.debounce)
@@ -218,28 +221,33 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
    * returns 'true' if successful, 'false' if it fails.
    */
   handleAddChip(): boolean {
+    let value: any;
     if (this.requireMatch) {
       let selectedOptions: MdOption[] = this._options.toArray().filter((option: MdOption) => {
         return option.active;
       });
-      let selectedValue: any;
       if (selectedOptions.length > 0) {
-        selectedValue = selectedOptions[0].value;
+        value = selectedOptions[0].value;
         selectedOptions[0].setInactiveStyles();
       }
-      if (!selectedValue) {
+      if (!value) {
         return false;
       }
-      this._openAutocomplete();
-      return this.addChip(selectedValue);
     } else {
-      let value: string = this._inputChild.value;
+      value = this._inputChild.value;
       if (value.trim() === '') {
         return false;
       }
-      this._openAutocomplete();
-      return this.addChip(value);
     }
+
+    /**
+     * add a 200 ms delay when reopening the autocomplete to give it time
+     * to rerender the next list and at the correct spot
+     */
+    Observable.timer(200).toPromise().then(() => {
+      this._openAutocomplete();
+    });
+    return this.addChip(value);
   }
 
   /**
@@ -251,6 +259,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this._value.push(value);
     this.onAdd.emit(value);
     this.onChange(this._value);
+    this._changeDetectorRef.markForCheck();
     return true;
   }
 
@@ -266,6 +275,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     this.onRemove.emit(removedValues[0]);
     this.onChange(this._value);
     this.inputControl.setValue('');
+    this._changeDetectorRef.markForCheck();
     return true;
   }
 
@@ -386,6 +396,24 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
   }
 
   /**
+   * Method to open the autocomplete manually if its not already opened
+   */
+  _openAutocomplete(): void {
+    if (!this._autocompleteTrigger.panelOpen) {
+      this._autocompleteTrigger.openPanel();
+    }
+  }
+
+  /**
+   * Method to close the autocomplete manually if its not already closed
+   */
+  _closeAutocomplete(): void {
+    if (this._autocompleteTrigger.panelOpen) {
+      this._autocompleteTrigger.closePanel();
+    }
+  }
+
+  /**
    * Implemented as part of ControlValueAccessor.
    */
   writeValue(value: any): void {
@@ -441,15 +469,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
     } else {
       this.inputControl.disable();
     }
-  }
-
-  /**
-   * Method to open the autocomplete manually if its not already opened
-   */
-  private _openAutocomplete(): void {
-    if (!this._autocompleteTrigger.panelOpen) {
-      this._autocompleteTrigger.openPanel();
-    }
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -467,6 +487,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit {
           });
           // set the first one as active
           this._options.toArray()[0].setActiveStyles();
+          this._changeDetectorRef.markForCheck();
         }
       });
     }

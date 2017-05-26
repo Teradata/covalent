@@ -28,7 +28,7 @@
               [formControl]="inputControl"
               [placeholder]="canAddChip? placeholder : ''"
               (keydown)="_inputKeydown($event)"
-              (keyup.enter)="handleAddChip()"
+              (keyup.enter)="_closeAutocomplete(); handleAddChip()"
               (focus)="handleFocus()"
               (blur)="handleBlur()">
     </md-input-container>
