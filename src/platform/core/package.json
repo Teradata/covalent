@@ -43,6 +43,6 @@
     "@angular/forms": "^4.1.0",
     "@angular/http": "^4.1.0",
     "@angular/router": "^4.1.0",
-    "@angular/material": "2.0.0-beta.5"
+    "@angular/material": "2.0.0-beta.6"
   }
 }
