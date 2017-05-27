@@ -25,7 +25,7 @@
           </span>
           <ng-content select="[td-sidenav-toolbar-content]"></ng-content>
         </md-toolbar>
-        <div flex class="list md-content">
+        <div flex class="list md-content" cdkScrollable>
           <ng-content select="[td-sidenav-content]"></ng-content>
         </div>
       </md-sidenav>
@@ -36,7 +36,7 @@
           </button>
           <ng-content select="[td-toolbar-content]"></ng-content>
         </md-toolbar>
-        <div class="md-content" flex>
+        <div class="md-content" flex cdkScrollable>
           <ng-content></ng-content>
         </div>
         <ng-content select="td-layout-footer-inner"></ng-content>
