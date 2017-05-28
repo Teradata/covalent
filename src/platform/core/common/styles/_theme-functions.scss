@@ -1,43 +1,7 @@
-@import 'palette';
-
 @function rem($multiplier) {
   $font-size: 10px;
   @return $multiplier * $font-size;
 }
-
-// For a given hue in a palette, return the contrast color from the map of contrast palettes.
-// @param $color-map
-// @param $hue
-@function mat-contrast($palette, $hue) {
-  @return map-get(map-get($palette, contrast), $hue);
-}
-
-
-// Creates a map of hues to colors for a theme. This is used to define a theme palette in terms
-// of the Material Design hues.
-// @param $color-map
-// @param $primary
-// @param $lighter
-@function mat-palette($base-palette, $default: 500, $lighter: 100, $darker: 700) {
-  $result: map_merge($base-palette, (
-    default: map-get($base-palette, $default),
-    lighter: map-get($base-palette, $lighter),
-    darker: map-get($base-palette, $darker),
-    default-contrast: mat-contrast($base-palette, $default),
-    lighter-contrast: mat-contrast($base-palette, $lighter),
-    darker-contrast: mat-contrast($base-palette, $darker)
-  ));
-
-  // For each hue in the palette, add a "-contrast" color to the map.
-  @each $hue, $color in $base-palette {
-    $result: map_merge($result, (
-      '#{$hue}-contrast': mat-contrast($base-palette, $hue)
-    ));
-  }
-
-  @return $result;
-}
-
 
 // Gets a color from a theme palette (the output of mat-palette).
 // The hue can be one of the standard values (500, A400, etc.), one of the three preconfigured
@@ -58,30 +22,4 @@
   $opacity: if($opacity == null, opacity($color), $opacity);
 
   @return rgba($color, $opacity);
-}
-
-
-// Creates a container object for a light theme to be given to individual component theme mixins.
-@function mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    is-dark: false,
-    foreground: $mat-light-theme-foreground,
-    background: $mat-light-theme-background,
-  );
-}
-
-
-// Creates a container object for a dark theme to be given to individual component theme mixins.
-@function mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    is-dark: true,
-    foreground: $mat-dark-theme-foreground,
-    background: $mat-dark-theme-background,
-  );
 }
