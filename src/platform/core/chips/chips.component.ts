@@ -62,7 +62,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _focused: boolean = false;
   private _tabIndex: number = 0;
 
-  _autocompleteClick: boolean = false;
+  _internalClick: boolean = false;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
@@ -212,6 +212,20 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   /**
+   * If clicking on :host or `td-chips-wrapper`, then we stop the click propagation so the autocomplete
+   * doesnt close automatically.
+   */
+  @HostListener('click', ['$event'])
+  clickListener(event: Event): void {
+    const clickTarget: HTMLElement = <HTMLElement>event.target;
+    if (clickTarget === this._elementRef.nativeElement || 
+        clickTarget.className.indexOf('td-chips-wrapper') > -1) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
+  /**
    * Listens to host keydown event to act on it depending on the keypress
    */
   @HostListener('keydown', ['$event'])
@@ -316,16 +330,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       this._openAutocomplete();
     });
     return true;
-  }
-
-  /**
-   * Method executed when trying to remove a chip from the remove button.
-   */
-  _handleRemoveChip(index: number): void {
-    // needs a timer so we execute this after the outside click has been verified
-    Observable.timer().toPromise().then(() => {
-      this.removeChip(index);
-    });
   }
 
   /**
@@ -594,11 +598,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       this._outsideClickSubs = Observable.fromEvent(this._document, 'click').filter((event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
-          this._autocompleteClick = false;
+          this._internalClick = false;
         });
         return this.focused &&
                (clickTarget !== this._elementRef.nativeElement) &&
-               !this._elementRef.nativeElement.contains(clickTarget) && !this._autocompleteClick;
+               !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
       }).subscribe(() => { 
         if (this.focused) {
           this.removeFocusedState();

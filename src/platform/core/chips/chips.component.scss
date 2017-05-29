@@ -39,38 +39,37 @@
       }
     }
   }
-}
-
-.mat-input-underline {
-  position: relative;
-  height: 1px;
-  width: 100%;
-  margin-top: 4px;
-  border-top-width: 1px;
-  border-top-style: solid;
-
-  &.mat-disabled {
-    border-top: 0;
-    background-position: 0;
-    background-size: 4px 1px;
-    background-repeat: repeat-x;
-  }
-
-  .mat-input-ripple {
-    position: absolute;
-    height: 2px;
-    z-index: 1;
-    top: -1px;
+  .mat-input-underline {
+    position: relative;
+    height: 1px;
     width: 100%;
-    transform-origin: 50%;
-    transform: scaleX(0.5);
-    visibility: hidden;
-    transition: background-color .3s cubic-bezier(.55,0,.55,.2);
-    &.mat-focused {
-      visibility: visible;
-      transform: scaleX(1);
-      transition: transform 150ms linear,
-                  background-color .3s cubic-bezier(.55,0,.55,.2);
+    margin-top: 4px;
+    border-top-width: 1px;
+    border-top-style: solid;
+
+    &.mat-disabled {
+      border-top: 0;
+      background-position: 0;
+      background-size: 4px 1px;
+      background-repeat: repeat-x;
+    }
+
+    .mat-input-ripple {
+      position: absolute;
+      height: 2px;
+      z-index: 1;
+      top: -1px;
+      width: 100%;
+      transform-origin: 50%;
+      transform: scaleX(0.5);
+      visibility: hidden;
+      transition: background-color .3s cubic-bezier(.55,0,.55,.2);
+      &.mat-focused {
+        visibility: visible;
+        transform: scaleX(1);
+        transition: transform 150ms linear,
+                    background-color .3s cubic-bezier(.55,0,.55,.2);
+      }
     }
   }
 }

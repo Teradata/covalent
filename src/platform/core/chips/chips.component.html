@@ -12,7 +12,7 @@
             [ngOutletContext]="{ chip: chip }">
           </ng-template>
         </div>
-        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="_handleRemoveChip(index)">
+        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
           cancel
         </md-icon>
       </div>
@@ -34,7 +34,7 @@
   </md-input-container>
   <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
-      <md-option (click)="_autocompleteClick = addChip(item)" [value]="item">
+      <md-option (click)="_internalClick = addChip(item)" [value]="item">
         <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"
