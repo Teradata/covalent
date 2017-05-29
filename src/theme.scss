@@ -144,3 +144,18 @@ md-nav-list {
 .theme-dark td-expansion-panel {
     background-color: mat-color($mat-blue-grey, 800);
 }
+
+// Active top nav
+nav {
+    a {
+        line-height: 4;
+        display: block;
+        &:not(.active) {
+            color: rgba(255, 255, 255, 0.56);
+        }
+        &.active {
+            color: mat-color($accent);
+            border-bottom: 1px solid mat-color($accent);
+        }
+    }
+}
