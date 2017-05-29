@@ -5,11 +5,11 @@
 <div layout="row" layout-align="end center" flex>
     <span flex></span>
     <nav hide-xs class="text-upper text-sm" layout="row">
-      <a class="push-right tc-white text-nodecoration" [routerLink]="['/docs']">Docs</a>
-      <a class="push-right tc-white text-nodecoration" [routerLink]="['/components']">Components</a>
-      <a class="push-right tc-white text-nodecoration" [routerLink]="['/layouts']">Layouts</a>
-      <a class="push-right tc-white text-nodecoration" [routerLink]="['/style-guide']">Style Guide</a>
-      <a class="push-right tc-white text-nodecoration">Templates</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style Guide</a>
+      <a class="push-right text-nodecoration" [routerLinkActive]="['active']">Templates</a>
     </nav>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 1">
