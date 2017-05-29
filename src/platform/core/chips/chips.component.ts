@@ -457,8 +457,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
          * Check to see if left arrow was pressed while focusing the first chip to focus input next
          * Also check if input should be focused
          */
-        if (index === 0 && this.canAddChip) {
-          this._inputChild.focus();
+        if (index === 0) {
+          if (this.canAddChip) {
+            this._inputChild.focus();
+          } else {
+            this._focusLastChip();
+          }
         } else if (index > 0) {
           this._focusChip(index - 1);
         }
@@ -469,8 +473,12 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
          * Check to see if right arrow was pressed while focusing the last chip to focus input next
          * Also check if input should be focused
          */
-        if (index === (this._totalChips - 1) && this.canAddChip) {
-          this._inputChild.focus();
+        if (index === (this._totalChips - 1)) {
+          if (this.canAddChip) {
+            this._inputChild.focus();
+          } else {
+            this._focusFirstChip();
+          }
         } else if (index < (this._totalChips - 1)) {
           this._focusChip(index + 1);
         }
