@@ -18,12 +18,24 @@ export class HomeComponent implements AfterViewInit {
 
   starCount: number = 0;
 
-  items: Object[] = [{
+  sections: Object[] = [{
       color: 'deep-purple-A400',
       description: 'Your guide to start using the UI platform in your app!',
       icon: 'library_books',
       route: 'docs',
       title: 'Documentation',
+    }, {
+      color: 'teal-A700',
+      description: 'Covalent Components, Directives, Pipes & Services',
+      icon: 'picture_in_picture',
+      route: 'components',
+      title: 'Components',
+    }, {
+      color: 'cyan-A700',
+      description: 'Several different material design layout options for your apps',
+      icon: 'view_quilt',
+      route: 'layouts',
+      title: 'Layouts',
     }, {
       color: 'indigo-A400',
       description: 'Teradata brand logo usage, color palettes and more',
@@ -31,17 +43,32 @@ export class HomeComponent implements AfterViewInit {
       route: 'style-guide',
       title: 'Style Guide',
     }, {
-      color: 'cyan-A400',
-      description: 'Several different material design layout options for your apps',
-      icon: 'view_quilt',
-      route: 'layouts',
-      title: 'Layouts',
-    }, {
-      color: 'teal-A400',
-      description: 'Covalent Components, Directives, Pipes & Services',
-      icon: 'picture_in_picture',
+      color: 'green-A700',
+      description: 'Gallery of example applications and usages',
+      icon: 'view_carousel',
       route: 'components',
-      title: 'Components & Addons',
+      title: 'Templates',
+    },
+  ];
+
+  repos: Object[] = [{
+      color: 'amber-A400',
+      description: 'A pre-built Angular 4 app using Covalent ready to go!',
+      icon: 'flash_on',
+      link: 'https://github.com/Teradata/covalent-quickstart',
+      title: 'Covalent Quickstart',
+    }, {
+      color: 'orange-A400',
+      description: 'A native desktop hybrid starter app built on Electron.',
+      icon: 'laptop_mac',
+      link: 'https://github.com/Teradata/covalent-electron',
+      title: 'Covalent Electron',
+    }, {
+      color: 'deep-orange-A400',
+      description: 'Mock API server for rapid prototyping and API standards.',
+      icon: 'aspect_ratio',
+      link: 'https://github.com/Teradata/covalent-data',
+      title: 'Covalent Data',
     },
   ];
 

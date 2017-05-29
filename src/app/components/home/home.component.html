@@ -8,7 +8,7 @@
           <div layout="row" layout-align="start center">
             <h1 class="md-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['md-headline']">Covalent UI Platform for building enterprise desktop web apps</h1>
           </div>
-          <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines proven design language with a comprehensive web framework, built on Angular &amp; Angular-Material (Design).</h2>
+          <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
           <div class="push-top-xl" hide-xs></div>
           <button md-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
           <a md-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
@@ -19,40 +19,44 @@
         <div class="push-bottom-xl" hide-xs></div>
       </div>
       <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-        <md-icon class="mat-icon-svg-xxl fill-deep-orange-A400" svgIcon="assets:covalent-stroke" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
+        <md-icon class="mat-icon-svg-xxl" svgIcon="assets:covalent" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
       </div>
     </div>
   </section>
-  <section class="bgc-blue-grey-900">
+  <md-toolbar color="primary">
+  </md-toolbar>
+  <section class="bgc-blue-grey-100">
     <div layout-gt-xs="row">
-      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
-        <div class="push-top-xl" hide-xs></div>
-        <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
-          <md-nav-list hide-gt-sm class="theme-dark">
-            <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-md']">
+        <div class="push-top-md" hide-xs></div>
+        <div tdMediaToggle="gt-sm" [mediaClasses]="['push']">
+          <md-nav-list hide-gt-md>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
               <a md-list-item [routerLink]="[item.route]">
                 <md-icon md-list-avatar>{{item.icon}}</md-icon>
-                <h3 class="tc-white" md-line> {{item.title}} </h3>
-                <p class="tc-white" md-line> {{item.description}} </p>
+                <h3 class="tc-blue-grey-900" md-line> {{item.title}} </h3>
+                <p class="tc-blue-grey-700" md-line> {{item.description}} </p>
               </a>
               <md-divider *ngIf="!last" md-inset></md-divider>
             </ng-template>
           </md-nav-list>
-          <div layout="row" layout-wrap hide-xs hide-sm>
-            <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-              <div flex-md="50" flex-gt-md="25" layout="column" class="pad-sm">
-                <md-icon class="mat-icon-xl">
-                  <span class="tc-{{item.color}}">{{item.icon}}</span>
-                </md-icon>
-                <div layout="column" class="tc-white">
-                  <h3 class="md-title push-bottom-xs">{{item.title}}</h3>
-                  <div class="md-subhead"> {{item.description}} </div>   
-                </div>
+          <div layout="row" layout-wrap hide-xs hide-sm hide-md>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
+              <div flex-gt-sm="20" class="pad-sm">
+                <a [routerLink]="[item.route]" md-button class="pad">
+                  <div layout="row" layout-align="start center" class="push-bottom-xs">
+                    <md-icon class="push-right-sm">
+                      <span class="tc-{{item.color}}">{{item.icon}}</span>
+                    </md-icon>
+                    <div class="md-title text-xl tc-blue-grey-900">{{item.title}}</div>
+                  </div>
+                  <div class="md-subhead tc-blue-grey-700 text-wrap text-left" hide-sm hide-md> {{item.description}} </div>   
+                </a>
               </div>
             </ng-template>
           </div>
         </div>
-        <div class="push-bottom-xl" hide-xs></div>
+        <div class="push-bottom-md" hide-xs></div>
       </div>
     </div>
   </section>
@@ -62,12 +66,50 @@
         <div class="push-top-xxl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <h2 class="md-display-1 tc-red-500 push-top-xs push-bottom-sm">Built with <md-icon>favorite</md-icon> on Angular</h2>
-          <h3 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">Teradata is one of the largest enterprise consumers and products of Angular. Currently the entire product suite is being built or revamped on Angular v4.</h3>
+          <h3 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">Teradata is one of the largest enterprise consumers of Angular. Currently the entire product suite is being built or revamped on Angular v4.</h3>
+          <h4 class="md-headline tc-blue-grey-200 push-top-xs push-bottom-sm">As Angular unites Teradata developers across the organization, they are able to contribute back to the open-source community with the powerful new tools being developed internally.</h4>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
       <div flex="50" layout="column" layout-align="center center" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
         <md-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline"></md-icon>
+      </div>
+    </div>
+  </section>
+  <section class="bgc-blue-grey-900">
+    <div layout-gt-xs="row">
+      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
+        <div class="push-top-xl" hide-xs></div>
+        <div tdMediaToggle="gt-sm" [mediaClasses]="['push-md']">
+          <md-nav-list hide-gt-sm class="theme-dark">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
+              <a md-list-item href="{{item.link}}" target="_blank">
+                <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                <h3 class="tc-white" md-line> {{item.title}} </h3>
+                <p class="tc-white" md-line> {{item.description}} </p>
+              </a>
+              <md-divider *ngIf="!last" md-inset></md-divider>
+            </ng-template>
+          </md-nav-list>
+          <div layout="row" layout-wrap hide-xs hide-sm>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
+              <div flex-gt-sm="33" class="pad-sm">
+                <a href="{{item.link}}" target="_blank" md-button class="pad">
+                  <div layout="row">
+                    <md-icon class="mat-icon-md" tdMediaToggle="gt-sm" [mediaClasses]="['push-right-sm']">
+                      <span class="tc-{{item.color}}">{{item.icon}}</span>
+                    </md-icon>
+                    <div class="tc-white text-left text-wrap">
+                      <div class="md-title push-bottom-xs">{{item.title}}</div>
+                      <div class="md-subhead" hide-sm hide-md> {{item.description}} </div>   
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="push-bottom-xl" hide-xs></div>
       </div>
     </div>
   </section>
@@ -78,6 +120,7 @@
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <h2 class="md-display-1 tc-green-A700 push-top-xs push-bottom-sm">Following the Material Design spec</h2>
           <h3 class="md-headline tc-blue-grey-700 push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
+          <h4 class="md-headline tc-blue-grey-600 push-top-xs push-bottom-sm">Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
