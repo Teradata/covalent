@@ -8,9 +8,21 @@ import { Component, DebugElement } from '@angular/core';
 import {
   FormControl, FormsModule, ReactiveFormsModule,
 } from '@angular/forms';
-import { OverlayContainer, MdInputDirective, MdChip, BACKSPACE, ENTER } from '@angular/material';
+import { OverlayContainer, MdInputDirective, MdChip, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
+
+function createFakeKeyboardEvent(keyCode: number): any {
+  return {
+    keyCode: keyCode,
+    preventDefault: function(): void {
+      /* noop */
+    },
+    stopPropagation: function(): void {
+      /* noop */
+    },
+  };
+}
 
 describe('Component: Chips', () => {
   let overlayContainerElement: HTMLElement;
@@ -24,6 +36,7 @@ describe('Component: Chips', () => {
         NoopAnimationsModule,
       ],
       declarations: [
+        TdChipsA11yTestComponent,
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
       ],
@@ -45,6 +58,131 @@ describe('Component: Chips', () => {
     TestBed.compileComponents();
   }));
 
+  describe('a11y keyboard in chips and input: ', () => {
+    let fixture: ComponentFixture<TdChipsA11yTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsA11yTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+      input = chips.query(By.css('input'));
+    });
+
+    it('should focus input', (done: DoneFn) => {
+      fixture.componentInstance.chipAddition = true;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        chips.nativeElement.focus();
+        chips.triggerEventHandler('focus', new Event('focus'));
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<TdChipsComponent>chips.componentInstance)._inputChild.focused).toBeTruthy();
+          done();
+        });
+      });
+    });
+
+    it('should focus first chip', (done: DoneFn) => {
+      fixture.componentInstance.chipAddition = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        chips.nativeElement.focus();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          chips.triggerEventHandler('focus', new Event('focus'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+              .toBe(document.activeElement);
+            done();
+          });
+        });
+      });
+    });
+
+    it('should focus around the chips going left', (done: DoneFn) => {
+      fixture.componentInstance.chipAddition = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        chips.nativeElement.focus();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          chips.triggerEventHandler('focus', new Event('focus'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+              .toBe(document.activeElement);
+            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+              .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+                .toBe(document.activeElement);
+              fixture.debugElement.queryAll(By.directive(MdChip))[2]
+                .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+                  .toBe(document.activeElement);
+                fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                  .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                    .toBe(document.activeElement);
+                  done();
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+
+    it('should focus around the chips going right', (done: DoneFn) => {
+      fixture.componentInstance.chipAddition = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        chips.nativeElement.focus();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          chips.triggerEventHandler('focus', new Event('focus'));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+              .toBe(document.activeElement);
+            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+              .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+                .toBe(document.activeElement);
+              fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+                  .toBe(document.activeElement);
+                fixture.debugElement.queryAll(By.directive(MdChip))[2]
+                  .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                    .toBe(document.activeElement);
+                  done();
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+
+  });
+
   describe('panel usage and add/removal: ', () => {
     let fixture: ComponentFixture<TdChipsBasicTestComponent>;
     let input: DebugElement;
@@ -54,13 +192,35 @@ describe('Component: Chips', () => {
       fixture = TestBed.createComponent(TdChipsBasicTestComponent);
       fixture.detectChanges();
 
-      input = fixture.debugElement.query(By.directive(MdInputDirective));
       chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+      input = chips.query(By.css('input'));
+    });
+
+    it('should set a value in the input and enter it as chip', (done: DoneFn) => {
+      chips.triggerEventHandler('focus', new Event('focus'));
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        (<TdChipsComponent>chips.componentInstance)._inputChild.value = 'test';
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          input.triggerEventHandler('keyup.enter', createFakeKeyboardEvent(ENTER));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // set tiemout
+            setTimeout(() => {
+              expect(chips.componentInstance.value.length).toBe(1);
+              expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
+              expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement.textContent).toContain('test');
+              done();
+            }, 200);
+          });
+        });
+      });
     });
 
     it('should open the panel, click on an option and add it as chip', (done: DoneFn) => {
       fixture.componentInstance.filter('');
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
@@ -76,7 +236,7 @@ describe('Component: Chips', () => {
 
     it('should open the panel, click on an option to add it as chip and remove it with backspace', (done: DoneFn) => {
       fixture.componentInstance.filter('');
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
@@ -85,7 +245,7 @@ describe('Component: Chips', () => {
         fixture.whenStable().then(() => {
           expect(chips.componentInstance.value.length).toBe(1);
           expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
-          fixture.debugElement.queryAll(By.directive(MdChip))[0].triggerEventHandler('keydown', { keyCode: BACKSPACE });
+          fixture.debugElement.queryAll(By.directive(MdChip))[0].triggerEventHandler('keydown', createFakeKeyboardEvent(BACKSPACE));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(chips.componentInstance.value.length).toBe(0);
@@ -98,7 +258,7 @@ describe('Component: Chips', () => {
 
     it('should open the panel, click on an option to add it as chip and remove it by clicking on the remove button', (done: DoneFn) => {
       fixture.componentInstance.filter('');
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
@@ -129,7 +289,6 @@ describe('Component: Chips', () => {
       fixture = TestBed.createComponent(TdChipsBasicTestComponent);
       fixture.detectChanges();
 
-      input = fixture.debugElement.query(By.directive(MdInputDirective));
       chips = fixture.debugElement.query(By.directive(TdChipsComponent));
     });
 
@@ -142,7 +301,7 @@ describe('Component: Chips', () => {
       expect(overlayContainerElement.textContent).not.toContain('pasta');
       expect(overlayContainerElement.textContent).not.toContain('sushi');
       fixture.componentInstance.filter('');
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.textContent).toContain('steak');
@@ -165,7 +324,7 @@ describe('Component: Chips', () => {
       expect(overlayContainerElement.textContent).not.toContain('pasta');
       expect(overlayContainerElement.textContent).not.toContain('sushi');
       fixture.componentInstance.filter('');
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.textContent).toContain('steak');
@@ -206,7 +365,6 @@ describe('Component: Chips', () => {
       fixture = TestBed.createComponent(TdChipsObjectsRequireMatchTestComponent);
       fixture.detectChanges();
 
-      input = fixture.debugElement.query(By.directive(MdInputDirective));
       chips = fixture.debugElement.query(By.directive(TdChipsComponent));
     });
 
@@ -216,7 +374,7 @@ describe('Component: Chips', () => {
       }, {
         name: 'Los Angeles',
       }];
-      input.triggerEventHandler('focus', new Event('focus'));
+      chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -252,6 +410,25 @@ describe('Component: Chips', () => {
   // required reactive forms (dirty, pristine, valid)
 
 });
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition">
+      </td-chips>`,
+})
+class TdChipsA11yTestComponent {
+  chipAddition: boolean = true;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+    'sandwich',
+    'chips',
+    'pasta',
+    'sushi',
+  ];
+  selectedItems: string[] = this.items.slice(0, 3);
+}
 
 @Component({
   template: `
