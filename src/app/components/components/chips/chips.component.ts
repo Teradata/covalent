@@ -92,7 +92,11 @@ export class ChipsDemoComponent implements OnInit {
 
   filterStrings(value: string): void {
     this.filteredStrings = this.strings.filter((item: any) => {
-      return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      if (value) {
+        return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
     }).filter((filteredItem: any) => {
       return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
     });
@@ -100,7 +104,11 @@ export class ChipsDemoComponent implements OnInit {
 
   filterObjects(value: string): void {
     this.filteredObjects = this.objects.filter((obj: any) => {
-      return obj.city.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      if (value) {
+        return obj.city.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
     }).filter((filteredObj: any) => {
       return this.objectsModel ? this.objectsModel.indexOf(filteredObj) < 0 : true;
     });
@@ -108,7 +116,7 @@ export class ChipsDemoComponent implements OnInit {
 
   filterAsync(value: string): void {
     this.filteredAsync = undefined;
-    if (value !== '') {
+    if (value) {
       this.filteringAsync = true;
       setTimeout(() => {
         this.filteredAsync = this.strings.filter((item: any) => {

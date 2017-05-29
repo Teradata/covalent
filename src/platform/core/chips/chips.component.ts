@@ -327,6 +327,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     this._closeAutocomplete();
     Observable.timer(200).toPromise().then(() => {
       this.setFocusedState();
+      this._setFirstOptionActive();
       this._openAutocomplete();
     });
     return true;
