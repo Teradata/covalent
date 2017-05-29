@@ -316,6 +316,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   addChip(value: any): boolean {
     this.inputControl.setValue('');
+    // check if value is already part of the model
+    if (this._value.indexOf(value) > -1) {
+      return false;
+    }
     this._value.push(value);
     this.onAdd.emit(value);
     this.onChange(this._value);
