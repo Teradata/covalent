@@ -6,6 +6,17 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <div td-sidenav-toolbar-content flex layout="row" layout-align="end center">
+    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #settingsMenu="mdMenu">
+      <button md-menu-item (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(root.dir)" title="Toggle between RTL and LTR">
+        <md-icon>swap_horiz</md-icon>
+        <span>{{root.dir.toUpperCase()}}</span>
+      </button>
+    </md-menu>
+  </div>
   <md-nav-list td-sidenav-content>
     <h3 md-subheader>Core Components</h3>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
@@ -44,10 +55,10 @@
     </a>
     <md-divider md-inset></md-divider>
     <ng-template let-item let-last="last" ngFor [ngForOf]="external">
-      <a md-list-item 
-          [routerLink]="[item.route]" 
-          [routerLinkActive]="['active']" 
-          [routerLinkActiveOptions]="{exact:true}" 
+      <a md-list-item
+          [routerLink]="[item.route]"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}"
           (click)="!media.query('gt-sm') && navList.close()">
         <md-icon md-list-avatar>{{item.icon}}</md-icon>
         <h3 md-line> {{item.title}} </h3>
@@ -57,17 +68,8 @@
     </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <span hide-xs hide-lg flex>Components &amp; Addons</span>
+    <span hide-xs hide-gt-md flex>Components &amp; Addons</span>
     <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
-    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
-      <md-icon>more_vert</md-icon>
-    </button>
-    <md-menu #settingsMenu="mdMenu">
-      <button md-menu-item (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(root.dir)" title="Toggle between RTL and LTR">
-        <md-icon>swap_horiz</md-icon>
-        <span>{{root.dir.toUpperCase()}}</span>
-      </button>
-    </md-menu>
   </div>
   <div>
     <router-outlet></router-outlet>
