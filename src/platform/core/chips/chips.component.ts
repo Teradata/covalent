@@ -1,11 +1,11 @@
-import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener, ElementRef, Optional, Inject,
-        Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit, OnDestroy,
-} from '@angular/core';
+import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
+  ElementRef, Optional, Inject, Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy,
+  ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
-         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB } from '@angular/material';
+         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
@@ -60,6 +60,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _readOnly: boolean = false;
   private _chipAddition: boolean = true;
   private _focused: boolean = false;
+  private _tabIndex: number = 0;
+
+  internalContentClick: boolean = false;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
@@ -187,9 +190,47 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
   get value(): any { return this._value; }
 
+  /**
+   * Hostbinding to set the a11y of the TdChipsComponent depending on its state
+   */
+  @HostBinding('attr.tabindex')
+  get tabIndex(): number {
+    return this.readOnly ? -1 : this._tabIndex;
+  }
+
   constructor(private _elementRef: ElementRef, 
               private _changeDetectorRef: ChangeDetectorRef,
               @Optional() @Inject(DOCUMENT) private _document: any) {}
+
+  /**
+   * Listens to host focus event to act on it
+   */
+  @HostListener('focus', ['$event'])
+  focusListener(event: FocusEvent): void {
+    this.focus();
+    event.preventDefault();
+  }
+
+  /**
+   * Listens to host keydown event to act on it depending on the keypress
+   */
+  @HostListener('keydown', ['$event'])
+  keydownListener(event: KeyboardEvent): void {
+    switch (event.keyCode) {
+      case TAB:
+        // if tabing out, then unfocus the component
+        Observable.timer().toPromise().then(() => {
+          this.setUnfocusedState();
+        });
+        break;
+      case ESCAPE:
+      case HOME:
+        this.focus();
+        break;
+      default:
+        // default
+    }
+  }
 
   ngOnInit(): void {
     this.inputControl.valueChanges
@@ -198,10 +239,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         this.onInputChange.emit(value ? value : '');
       });
     this._changeDetectorRef.markForCheck();
-    this._watchOutsideClick();
   }
 
   ngAfterViewInit(): void {
+    this._watchOutsideClick();
     this._changeDetectorRef.markForCheck();
   }
 
@@ -271,6 +312,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
      */
     this._closeAutocomplete();
     Observable.timer(200).toPromise().then(() => {
+      this.setFocusedState();
       this._openAutocomplete();
     });
     return true;
@@ -285,6 +327,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     if (removedValues.length === 0) {
       return false;
     }
+
+    /**
+     * Checks if deleting last single chip, to focus input afterwards
+     * Else check if its not the last chip of the list to focus the next one.
+     */
+    if (index === (this._totalChips - 1) && index === 0) {
+      this._inputChild.focus();
+    } else if (index < (this._totalChips - 1)) {
+      this._focusChip(index + 1);
+    } else if (index > 0) {
+      this._focusChip(index - 1);
+    }
+
     this.onRemove.emit(removedValues[0]);
     this.onChange(this._value);
     this.inputControl.setValue('');
@@ -299,15 +354,28 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   setFocusedState(): void {
-    this._focused = true;
+    if (!this.readOnly) {
+      this._focused = true;
+      this._tabIndex = -1;
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  setUnfocusedState(): void {
+    this._focused = false;
+    this._tabIndex = 0;
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
-   * Programmatically focus the input. Since its the component entry point
+   * Programmatically focus the input or first chip. Since its the component entry point
+   * depending if a user can add or remove chips
    */
   focus(): void {
     if (this.canAddChip) {
       this._inputChild.focus();
+    } else if (!this.readOnly) {
+      this._focusFirstChip();
     }
   }
 
@@ -316,9 +384,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   _inputKeydown(event: KeyboardEvent): void {
     switch (event.keyCode) {
-      case TAB:
-        this._focused = false;
-        break;
       case UP_ARROW:
         /** 
          * Since the first item is highlighted on [requireMatch], we need to inactivate it
@@ -364,15 +429,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       case BACKSPACE:
         /** Check to see if not in [readOnly] state to delete a chip */
         if (!this.readOnly) {
-          /**
-           * Checks if deleting last single chip, to focus input afterwards
-           * Else check if its not the last chip of the list to focus the next one.
-           */
-          if (index === (this._totalChips - 1) && index === 0) {
-            this.focus();
-          } else if (index < (this._totalChips - 1)) {
-            this._focusChip(index + 1);
-          }
           this.removeChip(index);
         }
         break;
@@ -382,9 +438,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
          * Also check if input should be focused
          */
         if (index === 0 && this.canAddChip) {
-          this.focus();
-          event.stopPropagation();
+          this._inputChild.focus();
+        } else if (index > 0) {
+          this._focusChip(index - 1);
         }
+        event.stopPropagation();
         break;
       case RIGHT_ARROW:
         /**
@@ -392,12 +450,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
          * Also check if input should be focused
          */
         if (index === (this._totalChips - 1) && this.canAddChip) {
-          this.focus();
-          event.stopPropagation();
+          this._inputChild.focus();
+        } else if (index < (this._totalChips - 1)) {
+          this._focusChip(index + 1);
         }
-        break;
-      case ESCAPE:
-        this.focus();
+        event.stopPropagation();
         break;
       default:
         // default
@@ -515,11 +572,18 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     if (this._document) {
       this._outsideClickSubs = Observable.fromEvent(this._document, 'click').filter((event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
-        return this._focused && (clickTarget !== this._elementRef.nativeElement) && !this._elementRef.nativeElement.contains(clickTarget);
-      }).subscribe(() => {
-        this._focused = false;
-        this.onTouched();
-        this._changeDetectorRef.markForCheck();
+        setTimeout(() => {
+          this.internalContentClick = false;
+        });
+        return this.focused &&
+               (clickTarget !== this._elementRef.nativeElement) &&
+               !this._elementRef.nativeElement.contains(clickTarget) && !this.internalContentClick;
+      }).subscribe(() => { 
+        if (this.focused) {
+          this.setUnfocusedState();
+          this.onTouched();
+          this._changeDetectorRef.markForCheck();
+        }
       });
     }
     return undefined;

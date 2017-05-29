@@ -1,29 +1,30 @@
-<md-chip-list [tabIndex]="-1" (focus)="focus()">
-  <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
+<div class="td-chips-wrapper">
+  <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
     <md-basic-chip [class.td-chip-disabled]="readOnly"
-                    (keydown)="_chipKeydown($event, index)"
-                    (focus)="setFocusedState()"
-                    layout="row"
-                    layout-align="start center">
-      <div class="td-basic-chip" layout="row" layout-align="start center">
-        <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
-        <ng-template
-          *ngIf="_basicChipTemplate?.templateRef"
-          [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
-          [ngOutletContext]="{ chip: chip }">
-        </ng-template>
+                   (keydown)="_chipKeydown($event, index)"
+                   (focus)="setFocusedState()">
+      <div layout="row" layout-align="start center" flex>
+        <div class="td-basic-chip" layout="row" layout-align="start center">
+          <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
+          <ng-template
+            *ngIf="_basicChipTemplate?.templateRef"
+            [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
+            [ngOutletContext]="{ chip: chip }">
+          </ng-template>
+        </div>
+        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="internalContentClick = removeChip(index)">
+          cancel
+        </md-icon>
       </div>
-      <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="removeChip(index)">
-        cancel
-      </md-icon>
     </md-basic-chip>
   </ng-template>
   <md-input-container floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
                       [color]="'primary'">
     <input mdInput
-            flex="100" 
+            flex="100"
             #input
+            [tabIndex]="-1"
             [mdAutocomplete]="autocomplete"
             [formControl]="inputControl"
             [placeholder]="canAddChip? placeholder : ''"
@@ -33,7 +34,7 @@
   </md-input-container>
   <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
-      <md-option (click)="addChip(item)" [value]="item">
+      <md-option (click)="internalContentClick = addChip(item)" [value]="item">
         <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"
@@ -43,7 +44,7 @@
       </md-option>
     </ng-template>
   </md-autocomplete>
-</md-chip-list>
+</div>
 <div *ngIf="chipAddition" class="mat-input-underline"
       [class.mat-disabled]="readOnly">
   <span class="mat-input-ripple"
