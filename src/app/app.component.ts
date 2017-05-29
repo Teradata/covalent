@@ -22,17 +22,17 @@ export class DocsAppComponent implements AfterViewInit {
       route: 'docs',
       title: 'Documentation',
     }, {
-      icon: 'color_lens',
-      route: 'style-guide',
-      title: 'Style Guide',
+      icon: 'picture_in_picture',
+      route: 'components',
+      title: 'Components & Addons',
     }, {
       icon: 'view_quilt',
       route: 'layouts',
       title: 'Layouts',
     }, {
-      icon: 'picture_in_picture',
-      route: 'components',
-      title: 'Components & Addons',
+      icon: 'color_lens',
+      route: 'style-guide',
+      title: 'Style Guide',
     },
   ];
 
