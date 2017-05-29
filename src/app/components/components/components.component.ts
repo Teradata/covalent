@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer2 } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 
@@ -136,13 +136,15 @@ export class ComponentsComponent implements AfterViewInit {
     title: 'NGX-Translate',
   }];
 
-  constructor(public media: TdMediaService,
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService,
               private _renderer: Renderer2,
               @Inject(DOCUMENT) private _document: any) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 
   changeDir(dir: string): void {
