@@ -62,7 +62,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _focused: boolean = false;
   private _tabIndex: number = 0;
 
-  internalContentClick: boolean = false;
+  _autocompleteClick: boolean = false;
 
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
@@ -220,7 +220,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       case TAB:
         // if tabing out, then unfocus the component
         Observable.timer().toPromise().then(() => {
-          this.setUnfocusedState();
+          this.removeFocusedState();
         });
         break;
       case ESCAPE:
@@ -267,7 +267,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    * else if just adds the value thats on the input
    * returns 'true' if successful, 'false' if it fails.
    */
-  handleAddChip(): boolean {
+  _handleAddChip(): boolean {
     let value: any;
     if (this.requireMatch) {
       let selectedOptions: MdOption[] = this._options.toArray().filter((option: MdOption) => {
@@ -319,6 +319,16 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   /**
+   * Method executed when trying to remove a chip from the remove button.
+   */
+  _handleRemoveChip(index: number): void {
+    // needs a timer so we execute this after the outside click has been verified
+    Observable.timer().toPromise().then(() => {
+      this.removeChip(index);
+    });
+  }
+
+  /**
    * Method that is executed when trying to remove a chip.
    * returns 'true' if successful, 'false' if it fails.
    */
@@ -347,12 +357,15 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     return true;
   }
 
-  handleFocus(): boolean {
+  _handleFocus(): boolean {
     this.setFocusedState();
     this._setFirstOptionActive();
     return true;
   }
 
+  /**
+   * Sets focus state of the component
+   */
   setFocusedState(): void {
     if (!this.readOnly) {
       this._focused = true;
@@ -361,7 +374,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     }
   }
 
-  setUnfocusedState(): void {
+  /**
+   * Removes focus state of the component
+   */
+  removeFocusedState(): void {
     this._focused = false;
     this._tabIndex = 0;
     this._changeDetectorRef.markForCheck();
@@ -568,19 +584,24 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     }
   }
 
+  /**
+   * Watches clicks outside of the component to remove the focus
+   * The autocomplete panel is considered inside the component so we
+   * need to use a flag to find out when its clicked.
+   */
   private _watchOutsideClick(): void {
     if (this._document) {
       this._outsideClickSubs = Observable.fromEvent(this._document, 'click').filter((event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
-          this.internalContentClick = false;
+          this._autocompleteClick = false;
         });
         return this.focused &&
                (clickTarget !== this._elementRef.nativeElement) &&
-               !this._elementRef.nativeElement.contains(clickTarget) && !this.internalContentClick;
+               !this._elementRef.nativeElement.contains(clickTarget) && !this._autocompleteClick;
       }).subscribe(() => { 
         if (this.focused) {
-          this.setUnfocusedState();
+          this.removeFocusedState();
           this.onTouched();
           this._changeDetectorRef.markForCheck();
         }
