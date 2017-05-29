@@ -1,4 +1,4 @@
-import { Injectable, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional } from '@angular/core';
 import { MdDialog, MdDialogRef, MdDialogConfig, ComponentType } from '@angular/material';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
@@ -142,3 +142,15 @@ export class TdDialogService {
   }
 
 }
+
+export function DIALOG_PROVIDER_FACTORY(
+    parent: TdDialogService, dialog: MdDialog): TdDialogService {
+  return parent || new TdDialogService(dialog);
+}
+
+export const DIALOG_PROVIDER: Provider = {
+  // If there is already service available, use that. Otherwise, provide a new one.
+  provide: TdDialogService,
+  deps: [[new Optional(), new SkipSelf(), TdDialogService], MdDialog],
+  useFactory: DIALOG_PROVIDER_FACTORY,
+};

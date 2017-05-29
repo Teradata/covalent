@@ -73,6 +73,6 @@ export class TdLayoutNavComponent {
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
-    this._layout.open();
+    this._layout.toggle();
   }
 }

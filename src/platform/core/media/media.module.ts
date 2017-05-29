@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
-import { TdMediaService } from './services/media.service';
+import { TdMediaService, MEDIA_PROVIDER } from './services/media.service';
 import { TdMediaToggleDirective } from './directives/media-toggle.directive';
 
 const TD_MEDIA: Type<any>[] = [
@@ -23,7 +23,7 @@ export { TdMediaService, TdMediaToggleDirective };
     TD_MEDIA,
   ],
   providers: [
-    TdMediaService,
+    MEDIA_PROVIDER,
   ],
 })
 export class CovalentMediaModule {
