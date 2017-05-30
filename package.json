@@ -42,6 +42,7 @@
   "bugs": {
     "url": "https://github.com/teradata/covalent/issues"
   },
+  "main": "core.umd.js",
   "license": "MIT",
   "author": "Teradata UX",
   "contributors": [
