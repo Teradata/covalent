@@ -221,7 +221,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   constructor(private _elementRef: ElementRef, 
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() @Inject(DOCUMENT) private _document: any) {}
+              @Optional() @Inject(DOCUMENT) private _document: any) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+  }
 
   /**
    * Listens to host focus event to act on it
