@@ -1,8 +1,8 @@
 # td-chips
 
-`td-chips` element generates a list of strings as chips.
+`td-chips` element generates a list of strings or objects as chips.
 
-Add the [items] attribute to enable the autocomplete with a search list, and [requireMatch] to validated the input against the provided search list.
+Add the [items] attribute to enable the autocomplete with a list, and [requireMatch] to not allow custom values.
 
 ## API Summary
 
@@ -10,12 +10,14 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `items?` | `string[]` | Enables Autocompletion with the provided list of search strings.
-| `readOnly` | `boolean` | Disables the chip input and removal.
-| `requireMatch?` | `boolean` | Validates input against the provided search list before adding it to the model. If it doesnt exist, it cancels the event.
+| `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
+| `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
-| `add?` | `function` | Method to be executed when string is added as chip through the autocomplete. Sends chip value as event.
-| `remove?` | `function` | Method to be executed when string is removed as chip with the "remove" button. Sends chip value as event.
+| `chipAddition` | `boolean` | Disables the ability to add chips. When setting readOnly as true, this will be overriden. Defaults to true.
+| `debounce` | `string` | Debounce timeout between keypresses. Defaults to 200.
+| `add?` | `function` | Method to be executed when a chip is added. Sends chip value as event.
+| `remove?` | `function` | Method to be executed when a chip is removed. Sends chip value as event.
+| `inputChange?` | `function` | Method to be executed when the value in the autocomplete input changes. Sends string value as event.
 
 ## Setup
 
@@ -37,7 +39,22 @@ export class MyModule {}
 
 Example for HTML usage:
 
- ```html
-<td-chips placeholder="placeholder" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" (add)="addEvent($event)" (remove)="removeEvent($event)" requireMatch>
+```html
+<td-chips placeholder="placeholder"
+          [items]="items"
+          [(ngModel)]="model"
+          [readOnly]="readOnly" 
+          [chipAddition]="chipAddition"
+          (add)="addEvent($event)"
+          (remove)="removeEvent($event)"
+          (inputChange)="inputChange($event)"
+          requireMatch>
+  <ng-template td-basic-chip let-chip="chip">
+    {{chip}}
+  </ng-template>
+  <ng-template td-autocomplete-option let-option="option">
+    {{option}}
+  </ng-template>
+  // anything below it
 </td-chips>  
- ```
+```
