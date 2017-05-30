@@ -3,21 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ComponentsModule } from './components/components/';
-import { DocsModule } from './components/docs/';
-import { LayoutsModule } from './components/layouts/';
-import { StyleGuideModule } from './components/style-guide/';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { CovalentCoreModule } from '../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
+         CovalentMediaModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentChartsModule } from '../platform/charts';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { GitHubService, IconService } from './services';
@@ -29,17 +28,29 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     HomeComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     BrowserModule,
     HttpModule,
     JsonpModule,
-    CovalentCoreModule.forRoot(),
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdMenuModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentExpansionPanelModule,
+    CovalentNotificationsModule,
+    CovalentMenuModule,
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDynamicFormsModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
+    CovalentMediaModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -47,10 +58,6 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
         deps: [Http],
       },
     }),
-    ComponentsModule,
-    DocsModule,
-    LayoutsModule,
-    StyleGuideModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

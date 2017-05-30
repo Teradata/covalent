@@ -10,7 +10,7 @@ export enum StepState {
 }
 
 @Directive({
-  selector: '[td-step-label]template',
+  selector: '[td-step-label]ng-template',
 })
 export class TdStepLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -19,7 +19,7 @@ export class TdStepLabelDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-step-actions]template',
+  selector: '[td-step-actions]ng-template',
 })
 export class TdStepActionsDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -28,7 +28,7 @@ export class TdStepActionsDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-step-summary]template',
+  selector: '[td-step-summary]ng-template',
 })
 export class TdStepSummaryDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -51,7 +51,7 @@ export class TdStepComponent implements OnInit {
     return this._contentPortal;
   }
 
-  @ViewChild(TemplateRef) private _content: TemplateRef<any>;
+  @ViewChild(TemplateRef) _content: TemplateRef<any>;
   @ContentChild(TdStepLabelDirective) stepLabel: TdStepLabelDirective;
   @ContentChild(TdStepActionsDirective) stepActions: TdStepActionsDirective;
   @ContentChild(TdStepSummaryDirective) stepSummary: TdStepSummaryDirective;
@@ -76,10 +76,10 @@ export class TdStepComponent implements OnInit {
   @Input('active')
   set active(active: boolean) {
     this._setActive(active);
-  };
+  }
   get active(): boolean {
     return this._active;
-  };
+  }
 
   /**
    * disabled?: boolean
@@ -92,10 +92,10 @@ export class TdStepComponent implements OnInit {
       this._onDeactivated();
     }
     this._disabled = disabled;
-  };
+  }
   get disabled(): boolean {
     return this._disabled;
-  };
+  }
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']
@@ -115,7 +115,7 @@ export class TdStepComponent implements OnInit {
         this._state = StepState.None;
         break;
     }
-  };
+  }
   get state(): StepState {
     return this._state;
   }
@@ -167,7 +167,7 @@ export class TdStepComponent implements OnInit {
    */
   isComplete(): boolean {
     return this._state === StepState.Complete;
-  };
+  }
 
   /**
    * Method to change active state internally and emit the [onActivated] event if 'true' or [onDeactivated]
@@ -188,13 +188,13 @@ export class TdStepComponent implements OnInit {
       return true;
     }
     return false;
-  };
+  }
 
   private _onActivated(): void {
     this.onActivated.emit(undefined);
-  };
+  }
 
   private _onDeactivated(): void {
     this.onDeactivated.emit(undefined);
-  };
+  }
 }

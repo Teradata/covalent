@@ -2,10 +2,7 @@
   <ng-content></ng-content>
   <div flex>
     <div class="td-step-content-wrapper"
-         [@tdCollapse]="!active"
-         [style.overflow]="hideContentOverflow ? 'hidden' : null"
-         (@tdCollapse.start)="hideContentOverflow = !hideContentOverflow"
-         (@tdCollapse.done)="hideContentOverflow = !hideContentOverflow">
+         [@tdCollapse]="!active">
       <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
         <ng-content select="[td-step-body-content]"></ng-content>
       </div>
@@ -14,9 +11,6 @@
       </div>
     </div>
     <div #summaryRef [@tdCollapse]="active || !isComplete()"
-                     [style.overflow]="hideSummaryOverflow ? 'hidden' : null"
-                     (@tdCollapse.start)="hideSummaryOverflow = !hideSummaryOverflow"
-                     (@tdCollapse.done)="hideSummaryOverflow = !hideSummaryOverflow"
                      [class.td-step-summary]="summaryRef.children.length || summaryRef.textContent.trim()">
       <ng-content select="[td-step-body-summary]"></ng-content>
     </div>

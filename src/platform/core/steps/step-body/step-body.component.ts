@@ -32,5 +32,5 @@ export class TdStepBodyComponent {
    */
   isComplete(): boolean {
     return this.state === StepState.Complete;
-  };
+  }
 }

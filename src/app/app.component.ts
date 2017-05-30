@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
-
+import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { getSelectedLanguage } from './utilities/translate';
@@ -11,7 +11,7 @@ import { getSelectedLanguage } from './utilities/translate';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class DocsAppComponent {
+export class DocsAppComponent implements AfterViewInit {
 
   routes: Object[] = [{
       icon: 'home',
@@ -38,6 +38,8 @@ export class DocsAppComponent {
 
   constructor(private _iconRegistry: MdIconRegistry,
               private _domSanitizer: DomSanitizer,
+              private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService,
               translateService: TranslateService) {
     // Set fallback language
     translateService.setDefaultLang('en');
@@ -62,5 +64,10 @@ export class DocsAppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/querygrid.svg'));
+  }
+
+  ngAfterViewInit(): void {
+    this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 }

@@ -24,7 +24,9 @@ module.exports = function (config) {
       }
     },
     files: [
-      { pattern: './src/test.ts', watched: false }
+      {pattern: './src/test.ts', watched: false},
+      // Include a Material theme in the test suite.
+      {pattern: 'node_modules/@angular/material/prebuilt-themes/indigo-pink.css', included: true, watched: true},
     ],
     preprocessors: {
       './src/test.ts': ['@angular/cli']
@@ -34,7 +36,6 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
    },
     angularCli: {
-      config: './.angular-cli.json',
       environment: 'dev'
     },
     mime: {

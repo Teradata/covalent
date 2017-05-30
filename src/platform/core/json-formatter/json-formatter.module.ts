@@ -10,8 +10,8 @@ export { TdJsonFormatterComponent } from './json-formatter.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdTooltipModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdTooltipModule,
+    MdIconModule,
   ],
   declarations: [
     TdJsonFormatterComponent,
@@ -21,10 +21,5 @@ export { TdJsonFormatterComponent } from './json-formatter.component';
   ],
 })
 export class CovalentJsonFormatterModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentJsonFormatterModule,
-      providers: [],
-    };
-  }
+
 }

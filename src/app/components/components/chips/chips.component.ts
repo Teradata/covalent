@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -8,7 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './chips.component.html',
   animations: [slideInDownAnimation],
 })
-export class ChipsDemoComponent {
+export class ChipsDemoComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -40,11 +40,18 @@ export class ChipsDemoComponent {
                   Sends chip value as event.`,
     name: 'remove?',
     type: 'function',
+  },  {
+    description: `Disables the ability to add chips. If it doesn't exist chipAddition defaults to true.`,
+    name: 'chipAddition?',
+    type: 'boolean',
   }];
 
   readOnly: boolean = false;
+  chipAddition: boolean = true;
 
-  items: string[] = [
+  filteringAsync: boolean = false;
+
+  strings: string[] = [
     'stepper',
     'expansion-panel',
     'markdown',
@@ -58,10 +65,67 @@ export class ChipsDemoComponent {
     'need more?',
   ];
 
-  itemsRequireMatch: string[] = this.items.slice(0, 6);
+  filteredStrings: string[];
 
-  toggleReadOnly(): void {
-    this.readOnly = !this.readOnly;
+  stringsModel: string[] = this.strings.slice(0, 6);
+
+  objects: any[] = [
+    {id: 1, city: 'San Diego', population: '4M'},
+    {id: 2, city: 'San Franscisco', population: '6M'},
+    {id: 3, city: 'Los Angeles', population: '5M'},
+    {id: 4, city: 'Austin', population: '3M'},
+    {id: 5, city: 'New York City', population: '10M'},
+  ];
+
+  filteredObjects: string[];
+
+  objectsModel: string[] = this.objects.slice(0, 2);
+
+  filteredAsync: string[];
+
+  asyncModel: string[] = this.strings.slice(0, 2);
+
+  ngOnInit(): void {
+    this.filterStrings('');
+    this.filterObjects('');
   }
 
+  filterStrings(value: string): void {
+    this.filteredStrings = this.strings.filter((item: any) => {
+      if (value) {
+        return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
+    }).filter((filteredItem: any) => {
+      return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+    });
+  }
+
+  filterObjects(value: string): void {
+    this.filteredObjects = this.objects.filter((obj: any) => {
+      if (value) {
+        return obj.city.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
+    }).filter((filteredObj: any) => {
+      return this.objectsModel ? this.objectsModel.indexOf(filteredObj) < 0 : true;
+    });
+  }
+
+  filterAsync(value: string): void {
+    this.filteredAsync = undefined;
+    if (value) {
+      this.filteringAsync = true;
+      setTimeout(() => {
+        this.filteredAsync = this.strings.filter((item: any) => {
+          return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+        }).filter((filteredItem: any) => {
+          return this.asyncModel ? this.asyncModel.indexOf(filteredItem) < 0 : true;
+        });
+        this.filteringAsync = false;
+      }, 2000);
+    }
+  }
 }

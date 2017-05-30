@@ -4,7 +4,7 @@ import { DocsComponent } from './docs.component';
 import { DocsOverviewComponent } from './overview/overview.component';
 import { CreatingComponent } from './creating/creating.component';
 import { AngularMaterialComponent } from './angular-material/angular-material.component';
-import { Angular2Component } from './angular-2/angular-2.component';
+import { AngularComponent } from './angular/angular.component';
 import { BuildTasksComponent } from './build-tasks/build-tasks.component';
 import { DeploymentComponent } from './deployment/deployment.component';
 import { IconsComponent } from './icons/icons.component';
@@ -17,8 +17,8 @@ const routes: Routes = [{
       component: DocsOverviewComponent,
       path: '',
     }, {
-      component: Angular2Component,
-      path: 'angular-2',
+      component: AngularComponent,
+      path: 'angular',
     }, {
       component: CreatingComponent,
       path: 'creating',

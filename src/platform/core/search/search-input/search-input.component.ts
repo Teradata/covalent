@@ -1,8 +1,9 @@
-import { Component, ViewChild, OnInit, Input, Output, EventEmitter,
-         trigger, state, style, transition, animate } from '@angular/core';
+import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
-import { MdInputDirective } from '@angular/material';
+import { MdInputDirective, Dir } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/skip';
 
 @Component({
   selector: 'td-search-input',
@@ -10,22 +11,26 @@ import 'rxjs/add/operator/debounceTime';
   styleUrls: ['./search-input.component.scss' ],
   animations: [
     trigger('searchState', [
-      state('false', style({
+      state('hide-left', style({
+        transform: 'translateX(-150%)',
+        display: 'none',
+      })),
+      state('hide-right', style({
         transform: 'translateX(150%)',
         display: 'none',
       })),
-      state('true',  style({
+      state('show',  style({
         transform: 'translateX(0%)',
         display: 'block',
       })),
-      transition('0 => 1', animate('200ms ease-in')),
-      transition('1 => 0', animate('200ms ease-out')),
+      transition('* => show', animate('200ms ease-in')),
+      transition('show => *', animate('200ms ease-out')),
     ]),
   ],
 })
 export class TdSearchInputComponent implements OnInit {
 
-  @ViewChild(MdInputDirective) private _input: MdInputDirective;
+  @ViewChild(MdInputDirective) _input: MdInputDirective;
 
   value: string;
 
@@ -71,8 +76,19 @@ export class TdSearchInputComponent implements OnInit {
    */
   @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
 
+  get isRTL(): boolean {
+    if (this._dir) {
+      return this._dir.dir === 'rtl';
+    }
+    return false;
+  }
+
+  constructor(@Optional() private _dir: Dir) {
+  }
+
   ngOnInit(): void {
     this._input._ngControl.valueChanges
+      .skip(1) // skip first change when value is set to undefined
       .debounceTime(this.debounce)
       .subscribe((value: string) => {
         this._searchTermChanged(value);

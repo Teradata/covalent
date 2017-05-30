@@ -1,4 +1,5 @@
-import { Component, AnimationTransitionEvent, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -27,7 +28,6 @@ export enum LoadingStyle {
 import { TdFadeInOutAnimation } from '../common/common.module';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
@@ -133,7 +133,7 @@ export class TdLoadingComponent {
     return this.style === LoadingStyle.Overlay;
   }
 
-  animationComplete(event: AnimationTransitionEvent): void {
+  animationComplete(event: AnimationEvent): void {
     // Check to see if its "in" or "out" animation to execute the proper callback
     if (!event.fromState) {
       this.inAnimationCompleted();

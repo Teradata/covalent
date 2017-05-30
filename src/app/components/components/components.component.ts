@@ -1,4 +1,5 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -19,11 +20,6 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'picture_in_picture',
     route: '.',
     title: 'Components & Addons',
-  }, {
-    description: 'ng2 Material Design core components',
-    icon: 'change_history',
-    route: 'material-components',
-    title: 'Angular-Material Components',
   }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
@@ -80,6 +76,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'notifications',
     title: 'Notifications',
   }, {
+    description: 'Info, warning & alert messages',
+    icon: 'info_outline',
+    route: 'message',
+    title: 'Messages & Alerts',
+  }, {
     description: 'Search and filter items',
     icon: 'search',
     route: 'search',
@@ -121,29 +122,30 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'http',
     route: 'http',
     title: 'HTTP Service',
-  }, {
-    description: 'Deprecated (use ngx-charts) ',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'TD Charts',
   }];
 
   external: Object[] = [{
-    description: 'Declarative D3 framework for ng2',
+    description: 'Declarative D3 framework',
     icon: 'insert_chart',
     route: 'ngx-charts',
     title: 'NGX-Charts',
   }, {
-    description: 'i18n library for ng2',
+    description: 'i18n library',
     icon: 'language',
     route: 'ngx-translate',
     title: 'NGX-Translate',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(public media: TdMediaService,
+              private _renderer: Renderer2,
+              @Inject(DOCUMENT) private _document: any) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+  }
+
+  changeDir(dir: string): void {
+    this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
   }
 }

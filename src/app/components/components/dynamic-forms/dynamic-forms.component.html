@@ -7,12 +7,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="textElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -34,12 +34,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="numberElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -61,12 +61,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="booleanElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -88,12 +88,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="arrayElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -133,13 +133,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-dynamic-forms>]]></code> component has {{dynamicFormsAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="dynamicFormsAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dynamicFormsAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>
@@ -175,13 +175,13 @@
       ]]>
     </td-highlight>
     <h3>Setup:</h3>
-    <p>Import the [CovalentDynamicFormsModule] using the <code>forRoot()</code> method in your NgModule:</p>
+    <p>Import the [CovalentDynamicFormsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
         @NgModule({
           imports: [
-            CovalentDynamicFormsModule.forRoot(),
+            CovalentDynamicFormsModule,
             ...
           ],
           ...

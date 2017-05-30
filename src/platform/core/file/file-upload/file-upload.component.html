@@ -1,5 +1,5 @@
 <td-file-input *ngIf="!files" [multiple]="multiple" [disabled]="disabled" [accept]="accept" [color]="defaultColor" (select)="handleSelect($event)">
-  <template [cdkPortalHost]="inputLabel" [ngIf]="true"></template>
+  <ng-template [cdkPortalHost]="inputLabel" [ngIf]="true"></ng-template>
 </td-file-input>
 <div *ngIf="files" layout="row">
   <button #fileUpload

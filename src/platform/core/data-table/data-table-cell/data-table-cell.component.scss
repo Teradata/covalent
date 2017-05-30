@@ -1,14 +1,17 @@
+@import '../../common/styles/mixins';
 :host {
   font-size: 13px;
   vertical-align: middle;
-  text-align: left;
+  @include rtl(text-align, left, right);
   padding: 0 28px 0 28px;
 
   &:first-child {
-    padding-left: 24px;
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
   }
   &:last-child {
-    padding-right: 24px;
+    @include rtl(padding-left, initial, 24px);
+    @include rtl(padding-right, 24px, initial);
   }
 
   > * {
@@ -24,6 +27,6 @@
   }
 
   &.mat-numeric {
-    text-align: right;
+    @include rtl(text-align, right, left);
   }
 }

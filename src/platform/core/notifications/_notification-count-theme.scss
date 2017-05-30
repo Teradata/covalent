@@ -1,6 +1,6 @@
-@import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/style/variables';
-@import '~@angular/material/core/style/elevation';
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
 
 @mixin td-notification-count-theme($theme) {
   $primary: map-get($theme, primary);
@@ -12,16 +12,16 @@
   .td-notification-count {
     @include mat-elevation(1);
     &.mat-warn {
-      background-color: md-color($warn);
-      color: md-color($warn, default-contrast);
+      background-color: mat-color($warn);
+      color: mat-color($warn, default-contrast);
     }
     &.mat-primary {
-      background-color: md-color($primary);
-      color: md-color($primary, default-contrast);
+      background-color: mat-color($primary);
+      color: mat-color($primary, default-contrast);
     }
     &.mat-accent {
-      background-color: md-color($accent);
-      color: md-color($accent, default-contrast);
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
     }
   }
 }

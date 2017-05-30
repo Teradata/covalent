@@ -1,80 +1,83 @@
 $step-circle: 24px;
 
-:host /deep/ {
-  md-nav-list {
-    padding-top: 0px;
-    [md-list-item]:active,
-    [md-list-item]:focus {
-      outline: none;
-    }
-    [md-list-item].mat-interaction-disabled .mat-list-item-content {
-      background: none !important;
-      cursor: auto;
-    }
-    .mat-list-item-content {
-      flex: 1;
-      height: 72px !important;
-      padding: 0px !important;
-    }
-  }
-}
-.mat-ripple-boundary {
-  position: relative;
-  height: 72px;
-}
 .td-step-header {
+  position: relative;
+  outline: none;
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+  &.mat-disabled {
+    background: none;
+    cursor: auto;
+  }
+  .td-step-header-content {
+    height: 72px;
+  }
   md-icon.td-edit-icon {
-    margin-right: 8px;
+    margin: 0 8px;
   }
-}
-md-icon {
-  &.mat-warn {
-    font-size: $step-circle;
+  md-icon {
+    &.mat-warn {
+      font-size: $step-circle;
+      height: $step-circle;
+      width: $step-circle;
+    }
+    &.mat-complete {
+      position: relative;
+      left: -2px;
+      top: 2px;
+      font-size: $step-circle + 4;
+      height: $step-circle;
+      width: $step-circle;
+    }
+  }
+  .td-circle {
     height: $step-circle;
     width: $step-circle;
+    line-height: $step-circle;
+    border-radius: 99%;
+    text-align: center;
+    flex: none;
+    & md-icon {
+      margin-top: 2px;
+      font-weight: bold;
+    }
   }
-  &.mat-complete {
-    position: relative;
-    left: -2px;
-    top: 2px;
-    font-size: $step-circle + 4;
-    height: $step-circle;
-    width: $step-circle;
+  .td-triangle {
+    & > md-icon {
+      font-size: 25px;
+    }
   }
-}
-.td-circle {
-  height: $step-circle;
-  width: $step-circle;
-  line-height: $step-circle;
-  border-radius: 99%;
-  text-align: center;
-  flex: none;
-  & md-icon {
-    margin-top: 2px;
-    font-weight: bold;
+  .td-complete {
+    font-size: 0;
   }
-}
-.td-triangle {
-  & > md-icon {
-    font-size: 27px;
+  .td-circle,
+  .td-triangle,
+  .td-complete {
+    /deep/ :not([dir='rtl']) & {
+      margin: {
+        left: 8px;
+        right: 0px;
+      }
+    }
+    /deep/ [dir='rtl'] & {
+      margin: {
+        left: 0px;
+        right: 8px;
+      }
+    }
   }
-}
-.td-complete {
-  font-size: 0;
-}
-.td-circle,
-.td-complete {
-  margin-left: 8px;
-  font-size: 14px;
-}
-.td-triangle {
-  margin-left: 7px;
-}
-.td-step-label-wrapper {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.td-step-sublabel {
-  line-height: 14px;
-  font-weight: normal;
+  .td-circle,
+  .td-complete {
+    font-size: 14px;
+  }
+  .td-step-label-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .td-step-sublabel {
+    line-height: 14px;
+    font-weight: normal;
+  }
 }

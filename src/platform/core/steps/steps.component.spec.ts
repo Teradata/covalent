@@ -5,8 +5,9 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentStepsModule, StepState, StepMode } from './steps.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
+import { CovalentStepsModule, StepState, StepMode } from './steps.module';
 
 describe('Component: Steps', () => {
 
@@ -18,7 +19,8 @@ describe('Component: Steps', () => {
         TdStepsDynamicTestComponent,
       ],
       imports: [
-        CovalentStepsModule.forRoot(),
+        BrowserAnimationsModule,
+        CovalentStepsModule,
       ],
     });
     TestBed.compileComponents();
@@ -51,15 +53,18 @@ describe('Component: Steps', () => {
         // check if header is not active
         expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeNull();
 
-        // check if content is hidden
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
-        .style.display).toBe('none');
-
         // check if summary was rendered
         expect(fixture.debugElement.query(By.css('.td-step-summary'))).toBeNull();
 
         // check if actions were rendered
         expect(fixture.debugElement.query(By.css('.td-step-actions'))).toBeNull();
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // check if content is hidden
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
+          .style.display).toBe('none');
+        });
       });
   })));
 
@@ -184,15 +189,20 @@ describe('Component: Steps', () => {
         expect(fixture.debugElement.query(By.css('.td-complete'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-triangle'))).toBeNull();
 
-        // check if content is hidden
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
-               .style.display).toBe('none');
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          // check if content is hidden
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
+                .style.display).toBe('none');
 
-        // check if summary was rendered
-        expect(fixture.debugElement.query(By.css('.td-step-summary'))).toBeTruthy();
-        expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-summary')).nativeElement)
-               .innerHTML.indexOf('Summary') > -1).toBeTruthy();
-
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            // check if summary was rendered
+            expect(fixture.debugElement.query(By.css('.td-step-summary'))).toBeTruthy();
+            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-summary')).nativeElement)
+                  .innerHTML.indexOf('Summary') > -1).toBeTruthy();
+          });
+        });
       });
   })));
 
@@ -238,9 +248,9 @@ class TdStepsBasicTestComponent {
   <td-steps>
     <td-step [label]="label" [sublabel]="sublabel" [active]="active" [state]="state" [disabled]="disabled">
       Content
-      <template td-step-summary>
+      <ng-template td-step-summary>
         Summary
-      </template>
+      </ng-template>
     </td-step>
   </td-steps>
   `,

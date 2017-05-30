@@ -1,20 +1,332 @@
 <md-card>
-  <md-card-title>Chips &amp; Autocomplete</md-card-title>
-  <md-card-subtitle>Small blocks for multiple items</md-card-subtitle>
+  <md-card-title>Chips &amp; Autocomplete with strings</md-card-title>
+  <md-card-subtitle>Autocomplete with chips and no custom inputs</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
-    <h3 class="md-title">Basic Demo</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <td-chips placeholder="Enter any string"></td-chips>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select a preset option or press enter:</div>
+        <td-chips [chipAddition]="chipAddition"
+                  [items]="filteredStrings"
+                  [(ngModel)]="stringsModel"
+                  placeholder="Enter autocomplete strings"
+                  [readOnly]="readOnly"
+                  (inputChange)="filterStrings($event)"
+                  requireMatch>
+        </td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chips placeholder="Enter any string"></td-chips>
+            <td-chips [chipAddition]="chipAddition"
+                      [items]="filteredStrings"
+                      [(ngModel)]="stringsModel"
+                      placeholder="Enter autocomplete strings"
+                      [readOnly]="readOnly"
+                      (inputChange)="filterStrings($event)"
+                      requireMatch>
+            </td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              readOnly: boolean = false;
+              chipAddition: boolean = true;
+
+              strings: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+              filteredStrings: string[];
+
+              stringsModel: string[] = this.strings.slice(0, 6);
+
+              ngOnInit(): void {
+                this.filterStrings('');
+              }
+
+              filterStrings(value: string): void {
+                this.filteredStrings = this.strings.filter((item: any) => {
+                  if (value) {
+                    return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+                  } else {
+                    return false;
+                  }
+                }).filter((filteredItem: any) => {
+                  return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="readOnly">
+        Read only
+      </md-slide-toggle>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="chipAddition">
+        Chip addition
+      </md-slide-toggle>
+    </div>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Chips &amp; Autocomplete with objects</md-card-title>
+  <md-card-subtitle>Autocomplete with chips and templates and accent color</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select a preset option or press enter:</div>
+        <td-chips color="accent"
+                  [items]="filteredObjects"
+                  [(ngModel)]="objectsModel"
+                  placeholder="Enter autocomplete strings"
+                  (inputChange)="filterObjects($event)"
+                  requireMatch>
+          <ng-template td-basic-chip let-chip="chip">
+            <md-icon>location_city</md-icon> {{chip.city}}, (Pop: {{chip.population}})
+          </ng-template>
+          <ng-template td-autocomplete-option let-option="option">
+            <div layout="row" layout-align="start center">
+              <md-icon>location_city</md-icon> {{option.city}}
+            </div>
+          </ng-template>
+        </td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips color="accent"
+                      [items]="filteredObjects"
+                      [(ngModel)]="objectsModel"
+                      placeholder="Enter autocomplete strings"
+                      (inputChange)="filterObjects($event)"
+                      requireMatch>
+              <ng-template td-basic-chip let-chip="chip">
+                <md-icon>location_city</md-icon> { {chip.city} }, (Pop: { {chip.population} })
+              </ng-template>
+              <ng-template td-autocomplete-option let-option="option">
+                <div layout="row" layout-align="start center">
+                  <md-icon>location_city</md-icon> { {option.city} }
+                </div>
+              </ng-template>
+            </td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              objects: any[] = [
+                {id: 1, city: 'San Diego', population: '4M'},
+                {id: 2, city: 'San Franscisco', population: '6M'},
+                {id: 3, city: 'Los Angeles', population: '5M'},
+                {id: 4, city: 'Austin', population: '3M'},
+                {id: 5, city: 'New York City', population: '10M'},
+              ];
+
+              filteredObjects: string[];
+
+              objectsModel: string[] = this.objects.slice(0, 2);
+
+              ngOnInit(): void {
+                this.filterObjects('');
+              }
+
+              filterObjects(value: string): void {
+                this.filteredObjects = this.objects.filter((obj: any) => {
+                  if (value) {
+                    return obj.city.toLowerCase().indexOf(value.toLowerCase()) > -1;
+                  } else {
+                    return false;
+                  }
+                }).filter((filteredObj: any) => {
+                  return this.objectsModel ? this.objectsModel.indexOf(filteredObj) < 0 : true;
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<md-card>
+  <md-card-title>Chips &amp; async Autocomplete</md-card-title>
+  <md-card-subtitle>Load autocomplete items asynchronous when typing in the input</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and see how it will load items async:</div>
+        <td-chips [items]="filteredAsync"
+                  [(ngModel)]="asyncModel"
+                  placeholder="Enter autocomplete strings"
+                  (inputChange)="filterAsync($event)"
+                  (debounce)="1000"
+                  requireMatch>
+          <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+        </td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="filteredAsync"
+                      [(ngModel)]="asyncModel"
+                      placeholder="Enter autocomplete strings"
+                      (inputChange)="filterAsync($event)"
+                      (debounce)="1000"
+                      requireMatch>
+              <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+            </td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              filteringAsync: boolean = false;
+
+              strings: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+              filteredAsync: string[];
+
+              asyncModel: string[] = this.strings.slice(0, 2);
+
+              filterAsync(value: string): void {
+                this.filteredAsync = undefined;
+                if (value) {
+                  this.filteringAsync = true;
+                  setTimeout(() => {
+                    this.filteredAsync = this.strings.filter((item: any) => {
+                      return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+                    }).filter((filteredItem: any) => {
+                      return this.asyncModel ? this.asyncModel.indexOf(filteredItem) < 0 : true;
+                    });
+                    this.filteringAsync = false;
+                  }, 2000);
+                }
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<md-card>
+  <md-card-title>Autocomplete with custom inputs</md-card-title>
+  <md-card-subtitle>Autocomplete demo allowing custom inputs</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select option or enter custom text and press enter:</div>
+        <td-chips [items]="strings" placeholder="Enter any string"></td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="strings" placeholder="Enter any string"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+
+              strings: string[] = [
+                'stepper',
+                'expansion-panel',
+                'markdown',
+                'highlight',
+                'loading',
+                'media',
+                'chips',
+                'http',
+                'json-formatter',
+                'pipes',
+                'need more?',
+              ];
+
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+<md-card>
+  <md-card-title>Custom chips</md-card-title>
+  <md-card-subtitle>Demo allowing custom inputs for tags and warn color</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type any test and press enter:</div>
+        <td-chips color="warn" placeholder="Enter any string"></td-chips>
+      </div>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips color="warn" placeholder="Enter any string"></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
@@ -25,170 +337,9 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
 </md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">Autocomplete Demo</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <td-chips [items]="items" placeholder="Enter any string"></td-chips>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-chips [items]="items" placeholder="Enter any string"></td-chips>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            export class ChipsDemoComponent {
-
-              items: string[] = [
-                'stepper',
-                'expansion-panel',
-                'markdown',
-                'highlight',
-                'loading',
-                'media',
-                'chips',
-                'http',
-                'json-formatter',
-                'pipes',
-                'need more?',
-              ];
-
-            }
-          ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">Autocomplete and requireMatch Demo</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <template md-tab-label>Demo</template>
-        <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>Code</template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-chips [items]="items" [(ngModel)]="itemsRequireMatch" placeholder="Enter autocomplete strings" [readOnly]="readOnly" requireMatch></td-chips>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            export class ChipsDemoComponent {
-              readOnly: boolean = false;
-
-              items: string[] = [
-                'stepper',
-                'expansion-panel',
-                'markdown',
-                'highlight',
-                'loading',
-                'media',
-                'chips',
-                'http',
-                'json-formatter',
-                'pipes',
-                'need more?',
-              ];
-
-              itemsRequireMatch: string[] = this.items.slice(0, 6);
-
-              toggleReadOnly(): void {
-                this.readOnly = !this.readOnly;
-              }
-            }
-          ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="toggleReadOnly()" class="text-upper">Toggle ReadOnly</button>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>TdChipsComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-chips>]]></code></h2>
-    <p>Use <code><![CDATA[<td-chips>]]></code> element to generate a list of strings as chips.</p>
-    <p>Add the [items] attribute to enable the autocomplete with a search list, and [requireMatch] to validate the input against the provided search list.</p>
-    <p>When used with <a target="_blank" href="https://angular.io/docs/ts/latest/guide/forms.html">forms</a>, you can track change-states [dirty/pristine] and [touched/untouched].</p>
-    <p>Since <code>[(ngModel)]</code> would be an array, you need to implement a custom validator for [valid/invalid] when its empty.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-chips>]]></code> component has {{chipsAttrs.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="chipsAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-chips placeholder="Enter string" [items]="items" [(ngModel)]="model" [readOnly]="readOnly" (add)="add($event)" (remove)="remove($event)" requireMatch>
-        </td-chips>        
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-          readOnly: boolean: false;
-          items: string[] = [
-            'string1',
-            'string2',
-            'string3'
-          ];
-          model: string[] = [];
-
-          add(value: string): void {
-            ...
-          }
-          remove(value: string): void {
-            ...
-          }
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentChipsModule] using the <code>forRoot()</code> method in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentChipsModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            CovalentChipsModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
+   
+<td-readme-loader resourceUrl="platform/core/chips/README.md"></td-readme-loader>

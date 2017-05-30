@@ -1,5 +1,9 @@
-import { Directive, ElementRef, Input, Output, EventEmitter, HostBinding } from '@angular/core';
-import { Renderer, AnimationPlayer } from '@angular/core';
+import {
+  Directive, ElementRef, Input, Output, EventEmitter, HostBinding, Renderer2, OnInit, ChangeDetectorRef, AnimationPlayer,
+} from '@angular/core';
+import { ɵAnimation as Animation, AnimationDriver,
+         ɵAnimationStyleNormalizer as AnimationStyleNormalizer, ɵDomAnimationEngine as DomAnimationEngine } from '@angular/animations/browser';
+import { animate } from '@angular/animations';
 
 @Directive({
   selector: '[tdFade]',
@@ -7,10 +11,10 @@ import { Renderer, AnimationPlayer } from '@angular/core';
 export class TdFadeDirective {
 
   private _state: boolean;
-  private _hiddenState: boolean;
   private _defaultOpacity: string;
   private _defaultDisplay: string;
-  private _timeoutNumber: number;
+  private _engine: DomAnimationEngine;
+  private _animationPlayer: AnimationPlayer;
 
   /**
    * duration?: number
@@ -26,7 +30,10 @@ export class TdFadeDirective {
   @Input('tdFade')
   set state(state: boolean) {
     this._state = state;
-    clearTimeout(this._timeoutNumber);
+    if (this._animationPlayer) {
+      this._animationPlayer.destroy();
+      this._animationPlayer = undefined;
+    }
     if (state) {
       this.hide();
     } else {
@@ -62,86 +69,47 @@ export class TdFadeDirective {
     return this._state;
   }
 
-  /**
-   * Binds 'hidden' attribute.
-   */
-  @HostBinding('hidden')
-  get hiddenBinding(): boolean {
-    return this._hiddenState ? true : undefined;
-  }
-
-  constructor(private _renderer: Renderer, private _element: ElementRef) {
-    this._defaultDisplay = this._element.nativeElement.style.display;
-    this._defaultOpacity = !this._element.nativeElement.style.opacity ? 1 : this._element.nativeElement.style.opacity;
+  constructor(private _renderer: Renderer2,
+              private _element: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef,
+              animationDriver: AnimationDriver,
+              animationStyleNormalizer: AnimationStyleNormalizer) {
+    this._engine = new DomAnimationEngine(animationDriver, animationStyleNormalizer);
   }
 
   /**
-   * Hides element: sets "display:[default]" so animation is shown,
-   * starts animation and adds "display:'none'" style at the end.
+   * Hides element: starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [{'opacity': 1}],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [{'opacity': 0}],
-          },
-          offset: 1,
-        },
-      ], this.duration, 0, 'ease-in');
-    animation.play();
-
-    /**
-     * Using timeout instead of onComplete since there is a bug if you start another animation
-     * before the previous one ends. The onComplete event is not executed.
-     * e.g.hide event started before show event is completed.
-     */
-    this._timeoutNumber = window.setTimeout(() => {
-      setTimeout(() => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
-      }, 0);
-      this._hiddenState = this._state;
-      this.fadeOut.emit(undefined);
-      animation.destroy();
-    }, this.duration);
+    this._defaultDisplay = this._element.nativeElement.style.display;
+    this._defaultOpacity = !this._element.nativeElement.style.opacity ? 1 : this._element.nativeElement.style.opacity;
+    this._animationPlayer = this._engine.animateTimeline(
+        this._element.nativeElement,
+        new Animation([animate(this.duration + 'ms ease-out')],
+      ).buildTimelines([{opacity: this._defaultOpacity}], [{opacity: 0}]));
+    this._changeDetectorRef.markForCheck();
+    this._animationPlayer.play();
+    this._animationPlayer.onDone(() => {
+      this._animationPlayer.destroy();
+      this._renderer.setStyle(this._element.nativeElement, 'display', 'none');
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   /**
-   * Shows element: sets "display:[default]" so animation is shown,
-   * starts animation and adds "display:[default]" style again at the end.
+   * Shows element: sets "display:[default]" so animation is shown.
    */
   show(): void {
-    this._hiddenState = this._state;
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [{'opacity': 0}],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [{'opacity': 1}],
-          },
-          offset: 1,
-        },
-      ], this.duration, 0, 'ease-in');
-    animation.play();
-
-    /**
-     * Using timeout instead of onComplete since there is a bug if you start another animation
-     * before the previous one ends. The onComplete event is not executed.
-     * e.g. hide event started before show event is completed.
-     */
-    this._timeoutNumber = window.setTimeout(() => {
-      this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-      this.fadeIn.emit(undefined);
-      animation.destroy();
-    }, this.duration);
+    this._renderer.setStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+    this._changeDetectorRef.markForCheck();
+    this._animationPlayer = this._engine.animateTimeline(
+        this._element.nativeElement,
+        new Animation([animate(this.duration + 'ms ease-in')],
+      ).buildTimelines([{opacity: 0}], [{opacity: this._defaultOpacity}]));
+    this._animationPlayer.play();
+    this._animationPlayer.onDone(() => {
+      this._animationPlayer.destroy();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 }

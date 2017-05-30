@@ -58,6 +58,11 @@ export class DynamicFormsDemoComponent {
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
+  }, {
+    name: 'required-password',
+    label: 'Password Label',
+    type: TdDynamicElement.Password,
+    required: true,
   }];
 
   numberElements: ITdDynamicElementConfig[] = [{

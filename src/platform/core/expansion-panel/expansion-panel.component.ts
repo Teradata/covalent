@@ -5,7 +5,7 @@ import { TemplatePortalDirective } from '@angular/material';
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Directive({
-  selector: '[td-expansion-panel-header]template',
+  selector: '[td-expansion-panel-header]ng-template',
 })
 export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -14,7 +14,7 @@ export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-label]template',
+  selector: '[td-expansion-panel-label]ng-template',
 })
 export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -23,7 +23,7 @@ export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-sublabel]template',
+  selector: '[td-expansion-panel-sublabel]ng-template',
 })
 export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -74,10 +74,10 @@ export class TdExpansionPanelComponent {
   @Input('expand')
   set expand(expand: boolean) {
     this._setExpand(expand);
-  };
+  }
   get expand(): boolean {
     return this._expand;
-  };
+  }
 
   /**
    * disabled?: boolean
@@ -90,10 +90,10 @@ export class TdExpansionPanelComponent {
       this._onCollapsed();
     }
     this._disabled = disabled;
-  };
+  }
   get disabled(): boolean {
     return this._disabled;
-  };
+  }
 
   /**
    * expanded?: function
@@ -112,7 +112,7 @@ export class TdExpansionPanelComponent {
    */
   clickEvent(): void {
     this._setExpand(!this._expand);
-  };
+  }
 
   /**
    * Toggle expand state of [TdExpansionPanelComponent]
@@ -156,13 +156,13 @@ export class TdExpansionPanelComponent {
       return true;
     }
     return false;
-  };
+  }
 
   private _onExpanded(): void {
     this.expanded.emit(undefined);
-  };
+  }
 
   private _onCollapsed(): void {
     this.collapsed.emit(undefined);
-  };
+  }
 }

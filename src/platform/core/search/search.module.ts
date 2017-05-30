@@ -15,9 +15,9 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdInputModule.forRoot(),
-    MdIconModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdInputModule,
+    MdIconModule,
+    MdButtonModule,
   ],
   declarations: [
     TdSearchInputComponent,
@@ -29,10 +29,5 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
   ],
 })
 export class CovalentSearchModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentSearchModule,
-      providers: [ ],
-    };
-  }
+
 }

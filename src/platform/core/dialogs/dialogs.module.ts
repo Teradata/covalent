@@ -10,7 +10,7 @@ import { TdDialogComponent, TdDialogTitleDirective,
 import { TdAlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
-import { TdDialogService } from './services/dialog.service';
+import { TdDialogService, DIALOG_PROVIDER } from './services/dialog.service';
 
 const TD_DIALOGS: Type<any>[] = [
   TdAlertDialogComponent,
@@ -36,9 +36,9 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
   imports: [
     FormsModule,
     CommonModule,
-    MdDialogModule.forRoot(),
-    MdInputModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdDialogModule,
+    MdInputModule,
+    MdButtonModule,
   ],
   declarations: [
     TD_DIALOGS,
@@ -46,15 +46,13 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
   exports: [
     TD_DIALOGS,
   ],
+  providers: [
+    DIALOG_PROVIDER,
+  ],
   entryComponents: [
     TD_DIALOGS_ENTRY_COMPONENTS,
   ],
 })
 export class CovalentDialogsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentDialogsModule,
-      providers: [ TdDialogService ],
-    };
-  }
+
 }

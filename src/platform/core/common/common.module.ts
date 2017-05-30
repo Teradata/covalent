@@ -36,15 +36,14 @@ export { TdAutoTrimDirective };
 // Validators
 import { TdMinValidator } from './forms/validators/min/min.validator';
 import { TdMaxValidator } from './forms/validators/max/max.validator';
-import { TdNumberRequiredValidator } from './forms/validators/number-required/number-required.validator';
 
 const TD_VALIDATORS: Type<any>[] = [
   TdMinValidator,
   TdMaxValidator,
-  TdNumberRequiredValidator,
 ];
 
-export { TdMinValidator, TdMaxValidator, TdNumberRequiredValidator };
+export { TdMinValidator, TdMaxValidator };
+export { CovalentValidators } from './forms/validators/validators';
 
 /**
  * PIPES
@@ -86,12 +85,10 @@ export { TdTimeAgoPipe, TdTimeDifferencePipe,
     TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
+  providers: [
+    RouterPathService,
+  ],
 })
 export class CovalentCommonModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentCommonModule,
-      providers: [ RouterPathService ],
-    };
-  }
+
 }

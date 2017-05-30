@@ -8,11 +8,11 @@ Example for usage:
 
 ```html
 <td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
-  (upload)="uploadEvent($event)" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
+  (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
-  <template td-file-input-label>
+  <ng-template td-file-input-label>
     <md-icon>attach_file</md-icon><span>Choose a file...</span>
-  </template>
+  </ng-template>
 </td-file-upload>
 ```
  
@@ -27,7 +27,7 @@ export class Demo {
     } else {
       ...
     }
-  };
+  }
 
   uploadEvent(files: FileList | File): void {
     if (files instanceof FileList) {
@@ -35,7 +35,11 @@ export class Demo {
     } else {
       ...
     }
-  };
+  }
+
+  cancelEvent(): void {
+    ...
+  }
 } 
 ```
 
@@ -53,10 +57,11 @@ Properties:
 | `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
 | `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
 | `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
+| `cancel` | `function()` | Event emitted when cancel button is clicked.
 
 ## Setup
 
-Import the [CovalentFileModule] using the forRoot() method in your NgModule:
+Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
 import { HttpModule } from '@angular/http';
@@ -64,7 +69,7 @@ import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
     HttpModule,
-    CovalentFileModule.forRoot(), // or CovalentCoreModule.forRoot() (included inside of it)
+    CovalentFileModule,
     ...
   ],
   ...
@@ -78,14 +83,15 @@ export class MyModule {}
 
 Service provided with methods that wrap complexity for as easier file upload experience.
 
-Recieves as parameter an object that implements the [IUploadOptions] interface.
+Recieves as parameter an object that implements the [IUploadOptions] interface. You have to assign a value either to `[file]` or to `[formData]`. If `[file]` is assigned then `[formData]` will be ignored; when only `[formData]` is assigned then it will be sent as form data.
 
 ```typescript
 interface IUploadOptions { 
   url: string; 
   method: 'post' | 'put'; 
-  file: File;
-  headers?: {[key: string]: string} 
+  file?: File;
+  headers?: {[key: string]: string};
+  formData?: FormData; 
 }
 ```
 
@@ -123,7 +129,7 @@ Methods:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular2 fixes [Http] to allow [FormData] as body.
+| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
 
 
 ---

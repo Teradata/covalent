@@ -13,9 +13,9 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdIconModule.forRoot(),
-    MdSelectModule.forRoot(),
-    MdButtonModule.forRoot(),
+    MdIconModule,
+    MdSelectModule,
+    MdButtonModule,
   ],
   declarations: [
     TdPagingBarComponent,
@@ -25,10 +25,5 @@ export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
   ],
 })
 export class CovalentPagingModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentPagingModule,
-      providers: [ ],
-    };
-  }
+
 }
