@@ -3,11 +3,13 @@
 :host {
   display: block;
   padding: 0px 5px 0px 5px;
+  min-height: 48px;
   .td-chips-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    min-height: 42px;
     &.td-chips-stacked {
       flex-direction: column;
       align-items: stretch;
