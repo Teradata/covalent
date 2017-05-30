@@ -7,6 +7,21 @@
 
     <blockquote class="md-subhead pull-left-none">A pipe takes in data as input and transforms it to a desired output.</blockquote>
 
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCommonModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentCommonModule } from '@covalent/core';
+        @NgModule({
+          imports: [
+            CovalentCommonModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
@@ -178,3 +193,14 @@
     </td-highlight>
   </md-card-content>
  </md-card>
+
+ <md-card>
+  <md-card-title>Angular Pipes</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://angular.io/docs/ts/latest/api/#!?query=pipe" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>Angular comes with a stock of pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe</span>
+    </a>
+  </md-nav-list>
+</md-card>
