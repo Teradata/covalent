@@ -163,14 +163,16 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   /**
    * color?: 'primary' | 'accent' | 'warn'
-   * color for the input and focus state of the chips.
-   * defaults to 'primary'
+   * Sets the color for the input and focus/selected state of the chips.
+   * Defaults to 'primary'
    */
   @Input('color') 
   set color(color: 'primary' | 'accent' | 'warn') {
-    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
-    this._color = color;
-    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    if (color) {
+      this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+      this._color = color;
+      this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    }
   }
   get color(): 'primary' | 'accent' | 'warn' {
     return this._color;
