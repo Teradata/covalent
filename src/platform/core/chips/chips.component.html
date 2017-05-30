@@ -1,11 +1,11 @@
-<div class="td-chips-wrapper">
+<div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
     <md-basic-chip [class.td-chip-disabled]="readOnly"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
       <div layout="row" layout-align="start center" flex>
-        <div class="td-basic-chip" layout="row" layout-align="start center">
+        <div class="td-basic-chip" layout="row" layout-align="start center" flex>
           <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
           <ng-template
             *ngIf="_basicChipTemplate?.templateRef"
@@ -21,9 +21,9 @@
   </ng-template>
   <md-input-container floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
+                      [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
     <input mdInput
-            flex="100"
             #input
             [tabIndex]="-1"
             [mdAutocomplete]="autocomplete"

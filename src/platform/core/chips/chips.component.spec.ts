@@ -40,6 +40,7 @@ describe('Component: Chips', () => {
         TdChipsA11yTestComponent,
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
+        TdChipsStackedTestComponent,
       ],
       providers: [
         {provide: OverlayContainer, useFactory: () => {
@@ -440,6 +441,35 @@ describe('Component: Chips', () => {
 
   });
 
+  describe('stacked usage: ', () => {
+    let fixture: ComponentFixture<TdChipsStackedTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsStackedTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+    });
+
+    it('should rendered chips stacked', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-stacked'))
+          .toBeFalsy();
+        fixture.componentInstance.stacked = true;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-stacked'))
+            .toBeTruthy();
+          done();
+        });
+      });
+    });
+
+  });
+
   // TODO
 
   // more requireMatch usage
@@ -533,4 +563,23 @@ class TdChipsBasicTestComponent {
 class TdChipsObjectsRequireMatchTestComponent {
   selectedObjects: any[] = [];
   objects: any[];
+}
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked">
+      </td-chips>`,
+})
+class TdChipsStackedTestComponent {
+  stacked: boolean = false;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+    'sandwich',
+    'chips',
+    'pasta',
+    'sushi',
+  ];
+  selectedItems: string[] = this.items.slice(0, 3);
 }
