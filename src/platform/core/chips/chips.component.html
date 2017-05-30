@@ -1,38 +1,54 @@
-<div flex>
-  <md-chip-list [tabIndex]="-1" (focus)="focus()">
-    <ng-template let-chip let-index="index" ngFor [ngForOf]="value">
-      <md-basic-chip [class.td-chip-disabled]="readOnly"
-                     (keydown)="_chipKeydown($event, index)">
-        <span>{{chip}}</span>
-        <md-icon *ngIf="!readOnly" (click)="removeChip(chip)">
+<div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
+  <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
+    <md-basic-chip [class.td-chip-disabled]="readOnly"
+                   [color]="color"
+                   (keydown)="_chipKeydown($event, index)"
+                   (focus)="setFocusedState()">
+      <div layout="row" layout-align="start center" flex>
+        <div class="td-basic-chip" layout="row" layout-align="start center" flex>
+          <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
+          <ng-template
+            *ngIf="_basicChipTemplate?.templateRef"
+            [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
+            [ngOutletContext]="{ chip: chip }">
+          </ng-template>
+        </div>
+        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
           cancel
         </md-icon>
-      </md-basic-chip>
+      </div>
+    </md-basic-chip>
+  </ng-template>
+  <md-input-container floatPlaceholder="never"
+                      [style.width.px]="canAddChip ? null : 0"
+                      [style.height.px]="canAddChip ? null : 0"
+                      [color]="color">
+    <input mdInput
+            #input
+            [tabIndex]="-1"
+            [mdAutocomplete]="autocomplete"
+            [formControl]="inputControl"
+            [placeholder]="canAddChip? placeholder : ''"
+            (keydown)="_inputKeydown($event)"
+            (keyup.enter)="_handleAddChip()"
+            (focus)="_handleFocus()">
+  </md-input-container>
+  <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
+    <ng-template let-item let-first="first" ngFor [ngForOf]="items">
+      <md-option (click)="_internalClick = addChip(item)" [value]="item">
+        <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
+        <ng-template
+          *ngIf="_autocompleteOptionTemplate?.templateRef"
+          [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
+          [ngOutletContext]="{ option: item }">
+        </ng-template>
+      </md-option>
     </ng-template>
-    <md-input-container floatPlaceholder="never"
-                        [style.width.px]="canAddChip ? null : 0"
-                        [color]="matches ? 'primary' : 'warn'">
-      <input mdInput
-              flex="100" 
-              #input
-              [mdAutocomplete]="autocomplete"
-              [formControl]="inputControl"
-              [placeholder]="canAddChip? placeholder : ''"
-              (keydown)="_inputKeydown($event)"
-              (keyup.enter)="addChip(input.value)"
-              (focus)="handleFocus()"
-              (blur)="handleBlur()">
-    </md-input-container>
-    <md-autocomplete #autocomplete="mdAutocomplete">
-      <ng-template let-item ngFor [ngForOf]="filteredItems | async">
-        <md-option (click)="addChip(item)" [value]="item">{{item}}</md-option>
-      </ng-template>
-    </md-autocomplete>
-  </md-chip-list>
-  <div *ngIf="chipAddition" class="mat-input-underline"
-       [class.mat-disabled]="readOnly">
-    <span class="mat-input-ripple"
-          [class.mat-focused]="focused"
-          [class.mat-warn]="!matches"></span>
-  </div>
+  </md-autocomplete>
 </div>
+<div *ngIf="chipAddition" class="mat-input-underline"
+      [class.mat-disabled]="readOnly">
+  <span class="mat-input-ripple"
+        [class.mat-focused]="focused"></span>
+</div>
+<ng-content></ng-content>

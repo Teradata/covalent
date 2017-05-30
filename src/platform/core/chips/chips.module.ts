@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 
 import { MdInputModule, MdIconModule, MdAutocompleteModule, MdChipsModule } from '@angular/material';
 
-import { TdChipsComponent } from './chips.component';
-export { TdChipsComponent } from './chips.component';
+import { TdChipsComponent, TdBasicChipDirective, TdAutocompleteOptionDirective } from './chips.component';
+export { TdChipsComponent, TdBasicChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 
 @NgModule({
   imports: [
@@ -19,9 +19,13 @@ export { TdChipsComponent } from './chips.component';
   ],
   declarations: [
     TdChipsComponent,
+    TdBasicChipDirective,
+    TdAutocompleteOptionDirective,
   ],
   exports: [
     TdChipsComponent,
+    TdBasicChipDirective,
+    TdAutocompleteOptionDirective,
   ],
 })
 export class CovalentChipsModule {
