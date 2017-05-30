@@ -24,6 +24,7 @@
                       [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
     <input mdInput
+            #input
             [tabIndex]="-1"
             [mdAutocomplete]="autocomplete"
             [formControl]="inputControl"

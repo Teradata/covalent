@@ -70,6 +70,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   _internalClick: boolean = false;
 
+  @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -293,8 +294,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         });
         break;
       case ESCAPE:
-      case HOME:
-        this.focus();
+        if (this._inputChild.focused) {
+          this._nativeInput.nativeElement.blur();
+          this.removeFocusedState();
+          this._closeAutocomplete();
+        } else {
+          this.focus();
+        }
         break;
       default:
         // default
@@ -370,15 +376,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    * returns 'true' if successful, 'false' if it fails.
    */
   addChip(value: any): boolean {
-    this.inputControl.setValue('');
-    // check if value is already part of the model
-    if (this._value.indexOf(value) > -1) {
-      return false;
-    }
-    this._value.push(value);
-    this.onAdd.emit(value);
-    this.onChange(this._value);
-    this._changeDetectorRef.markForCheck();
     /**
      * add a 200 ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
@@ -389,6 +386,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       this._setFirstOptionActive();
       this._openAutocomplete();
     });
+
+    this.inputControl.setValue('');
+    // check if value is already part of the model
+    if (this._value.indexOf(value) > -1) {
+      return false;
+    }
+
+    this._value.push(value);
+    this.onAdd.emit(value);
+    this.onChange(this._value);
+    this._changeDetectorRef.markForCheck();
     return true;
   }
 
