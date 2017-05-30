@@ -94,6 +94,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     MdTabsModule,
     MdTooltipModule,
     MdProgressBarModule,
+    MdAutocompleteModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
