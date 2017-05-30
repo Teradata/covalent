@@ -1,11 +1,13 @@
 import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
   ElementRef, Optional, Inject, Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy,
-  ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding } from '@angular/core';
+  ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
+
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
          ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/material';
+
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
@@ -60,6 +62,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _length: number = 0;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
+  private _color: 'primary' | 'accent' | 'warn' = 'primary';
   private _chipAddition: boolean = true;
   private _focused: boolean = false;
   private _tabIndex: number = 0;
@@ -161,6 +164,23 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   @Input('debounce') debounce: number = 200;
 
   /**
+   * color?: 'primary' | 'accent' | 'warn'
+   * Sets the color for the input and focus/selected state of the chips.
+   * Defaults to 'primary'
+   */
+  @Input('color') 
+  set color(color: 'primary' | 'accent' | 'warn') {
+    if (color) {
+      this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+      this._color = color;
+      this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    }
+  }
+  get color(): 'primary' | 'accent' | 'warn' {
+    return this._color;
+  }
+
+  /**
    * add?: function
    * Method to be executed when a chip is added.
    * Sends chip value as event.
@@ -201,8 +221,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   constructor(private _elementRef: ElementRef, 
+              private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() @Inject(DOCUMENT) private _document: any) {}
+              @Optional() @Inject(DOCUMENT) private _document: any) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+  }
 
   /**
    * Listens to host focus event to act on it
