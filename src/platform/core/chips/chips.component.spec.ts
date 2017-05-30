@@ -36,6 +36,7 @@ describe('Component: Chips', () => {
         NoopAnimationsModule,
       ],
       declarations: [
+        TdChipsTestComponent,
         TdChipsA11yTestComponent,
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
@@ -57,6 +58,52 @@ describe('Component: Chips', () => {
     });
     TestBed.compileComponents();
   }));
+
+  describe('should test general features: ', () => {
+    let fixture: ComponentFixture<TdChipsTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+      input = chips.query(By.css('input'));
+    });
+
+    it('should have primary color', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-primary')).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should set to accent color', (done: DoneFn) => {
+      fixture.componentInstance.color = 'accent';
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-accent')).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should set to warn color and then to accent', (done: DoneFn) => {
+      fixture.componentInstance.color = 'warn';
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-warn')).toBeTruthy();
+        fixture.componentInstance.color = 'accent';
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>chips.nativeElement).classList.contains('mat-accent')).toBeTruthy();
+          done();
+        });
+      });
+    });
+
+  });
 
   describe('a11y keyboard in chips and input: ', () => {
     let fixture: ComponentFixture<TdChipsA11yTestComponent>;
@@ -410,6 +457,21 @@ describe('Component: Chips', () => {
   // required reactive forms (dirty, pristine, valid)
 
 });
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color">
+      </td-chips>`,
+})
+class TdChipsTestComponent {
+  color: string;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+  ];
+  selectedItems: string[] = this.items.slice(0, 2);
+}
 
 @Component({
   template: `
