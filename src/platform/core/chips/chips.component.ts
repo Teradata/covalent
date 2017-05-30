@@ -56,6 +56,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   private _items: any[];
   private _length: number = 0;
+  private _stacked: boolean = false;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
   private _chipAddition: boolean = true;
@@ -97,6 +98,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
   get items(): any[] {
     return this._items;
+  }
+
+  /**
+   * stacked?: boolean
+   * Set stacked or horizontal chips depending on value.
+   * Defaults to false.
+   */
+  @Input('stacked')
+  set stacked(stacked: any) {
+    this._stacked = stacked !== '' ? (stacked === 'true' || stacked === true) : true;
+  }
+  get stacked(): any {
+    return this._stacked;
   }
   
   /**
@@ -418,6 +432,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
           let length: number = this._options.length;
           if (length > 0 && this._options.toArray()[0].active) {
             this._options.toArray()[0].setInactiveStyles();
+            // prevent default window scrolling
             event.preventDefault();
           }
         }
@@ -429,6 +444,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
         if (!this._inputChild.value) {
           this._focusLastChip();
+          // prevent default window scrolling
           event.preventDefault();
         }
         break;
@@ -437,6 +453,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         /** Check to see if input is empty when pressing right arrow to move to the first chip */
         if (!this._inputChild.value) {
           this._focusFirstChip();
+          // prevent default window scrolling
           event.preventDefault();
         }
         break;
@@ -457,13 +474,15 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
           this.removeChip(index);
         }
         break;
+      case UP_ARROW:
       case LEFT_ARROW:
         /**
-         * Check to see if left arrow was pressed while focusing the first chip to focus input next
+         * Check to see if left/down arrow was pressed while focusing the first chip to focus input next
          * Also check if input should be focused
          */
         if (index === 0) {
-          if (this.canAddChip) {
+          // only try to target input if pressing left
+          if (this.canAddChip && event.keyCode === LEFT_ARROW) {
             this._inputChild.focus();
           } else {
             this._focusLastChip();
@@ -471,15 +490,18 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         } else if (index > 0) {
           this._focusChip(index - 1);
         }
-        event.stopPropagation();
+        // prevent default window scrolling
+        event.preventDefault();
         break;
+      case DOWN_ARROW:
       case RIGHT_ARROW:
         /**
-         * Check to see if right arrow was pressed while focusing the last chip to focus input next
+         * Check to see if right/up arrow was pressed while focusing the last chip to focus input next
          * Also check if input should be focused
          */
         if (index === (this._totalChips - 1)) {
-          if (this.canAddChip) {
+          // only try to target input if pressing right
+          if (this.canAddChip && event.keyCode === RIGHT_ARROW) {
             this._inputChild.focus();
           } else {
             this._focusFirstChip();
@@ -487,7 +509,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         } else if (index < (this._totalChips - 1)) {
           this._focusChip(index + 1);
         }
-        event.stopPropagation();
+        // prevent default window scrolling
+        event.preventDefault();
         break;
       default:
         // default
@@ -542,7 +565,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   /**
    * Get total of chips
    */
-  private get _totalChips(): number {
+  get _totalChips(): number {
     let chips: MdChip[] = this._chipsChildren.toArray();
     return chips.length;
   }

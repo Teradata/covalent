@@ -12,6 +12,7 @@ Properties:
 | --- | --- | --- |
 | `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
+| `stacked?` | `boolean` | Set stacked or horizontal chips depending on value. Defaults to false.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
 | `chipAddition` | `boolean` | Disables the ability to add chips. When setting readOnly as true, this will be overriden. Defaults to true.
 | `debounce` | `string` | Debounce timeout between keypresses. Defaults to 200.
@@ -48,7 +49,8 @@ Example for HTML usage:
           (add)="addEvent($event)"
           (remove)="removeEvent($event)"
           (inputChange)="inputChange($event)"
-          requireMatch>
+          requireMatch
+          stacked>
   <ng-template td-basic-chip let-chip="chip">
     {{chip}}
   </ng-template>

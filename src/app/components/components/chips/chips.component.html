@@ -256,15 +256,15 @@
   </md-tab-group>
 </md-card>
 <md-card>
-  <md-card-title>Autocomplete with custom inputs</md-card-title>
-  <md-card-subtitle>Autocomplete demo allowing custom inputs</md-card-subtitle>
+  <md-card-title>Stacked chips and Autocomplete with custom inputs</md-card-title>
+  <md-card-subtitle>Autocomplete demo allowing custom inputs and stacked chips</md-card-subtitle>
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
       <ng-template md-tab-label>Demo</ng-template>
       <div class="push">
         <div class="md-body-1">Type and select option or enter custom text and press enter:</div>
-        <td-chips [items]="strings" placeholder="Enter any string"></td-chips>
+        <td-chips [items]="strings" placeholder="Enter any string" stacked></td-chips>
       </div>
     </md-tab>
     <md-tab>
@@ -273,7 +273,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chips [items]="strings" placeholder="Enter any string"></td-chips>
+            <td-chips [items]="strings" placeholder="Enter any string" stacked></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
