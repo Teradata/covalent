@@ -8,6 +8,7 @@ import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-transla
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule,
@@ -29,6 +30,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
   declarations: [
     DocsAppComponent,
     HomeComponent,
+    TemplatesComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserAnimationsModule,

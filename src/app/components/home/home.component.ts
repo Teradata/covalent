@@ -46,7 +46,7 @@ export class HomeComponent implements AfterViewInit {
       color: 'green-A700',
       description: 'Gallery of example applications and usages',
       icon: 'view_carousel',
-      route: 'components',
+      route: 'templates',
       title: 'Templates',
     },
   ];
