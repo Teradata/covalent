@@ -1,6 +1,7 @@
 <div class="td-chips-wrapper">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
     <md-basic-chip [class.td-chip-disabled]="readOnly"
+                   [color]="color"
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
       <div layout="row" layout-align="start center" flex>
@@ -20,7 +21,7 @@
   </ng-template>
   <md-input-container floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
-                      [color]="'primary'">
+                      [color]="color">
     <input mdInput
             flex="100"
             #input

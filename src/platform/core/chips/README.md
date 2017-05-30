@@ -10,6 +10,7 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
+| `color?` | `'primary' | 'accent' | 'warn'` | color for the input and focus state of the chips. Defaults to 'primary'
 | `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
@@ -41,6 +42,7 @@ Example for HTML usage:
 
 ```html
 <td-chips placeholder="placeholder"
+          color="primary"
           [items]="items"
           [(ngModel)]="model"
           [readOnly]="readOnly" 

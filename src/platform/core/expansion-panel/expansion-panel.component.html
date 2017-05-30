@@ -14,11 +14,11 @@
           layout="row" 
           layout-align="start center" 
           flex>
-      <div class="md-subhead td-expansion-label" flex-gt-xs="33">
+      <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label" [attr.flex-gt-xs]="(sublabel || expansionPanelSublabel) ? 40 : null">
         <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
         <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
       </div>
-      <div class="md-body-1 td-expansion-sublabel">
+      <div *ngIf="sublabel || expansionPanelSublabel" class="md-body-1 td-expansion-sublabel">
         <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
         <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
       </div>
