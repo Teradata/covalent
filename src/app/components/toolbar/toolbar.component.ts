@@ -3,7 +3,8 @@
  * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
  */
 
-import { Component } from '@angular/core';
+import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'td-toolbar',
@@ -68,4 +69,12 @@ export class ToolbarComponent {
       title: 'Layouts feature',
     },
   ];
+  dir: string = 'ltr';
+  @Output('changeDir') onChangeDir: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private _renderer: Renderer2,
+              @Inject(DOCUMENT) private _document: any) {}
+  changeDir(dir: string): void {
+    this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
+    this.onChangeDir.emit(this.dir);
+  }
 }

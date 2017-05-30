@@ -1,5 +1,5 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-    <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
+<td-layout-nav #root="$implicit" dir="ltr" logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+    <td-toolbar (changeDir)="root.dir = $event" td-toolbar-content flex layout="row"></td-toolbar>
     <section class="bgc-blue-grey-100 pad">
         <md-card>
             <md-card-header>

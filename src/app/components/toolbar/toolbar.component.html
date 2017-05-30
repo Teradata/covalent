@@ -39,4 +39,13 @@
         </a>
       </td-menu>
     </md-menu>
+    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #settingsMenu="mdMenu">
+      <button md-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
+        <md-icon>swap_horiz</md-icon>
+        <span>{{dir.toUpperCase()}}</span>
+      </button>
+    </md-menu>
   </div>

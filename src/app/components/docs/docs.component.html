@@ -1,4 +1,5 @@
 <td-layout-nav-list #navList
+                    #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
                     navigationRoute="/"
@@ -21,7 +22,7 @@
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <span hide-xs hide-lg flex>Documentation</span>
-    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+    <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <router-outlet></router-outlet>
 </td-layout-nav-list>
