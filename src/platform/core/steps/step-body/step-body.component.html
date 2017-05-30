@@ -1,6 +1,6 @@
 <div layout="row" flex>
   <ng-content></ng-content>
-  <div flex>
+  <div class="td-step-body" flex>
     <div class="td-step-content-wrapper"
          [@tdCollapse]="!active">
       <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
