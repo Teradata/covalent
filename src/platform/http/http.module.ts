@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Injector, InjectionToken } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 
 import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
@@ -12,6 +12,12 @@ export function httpFactory(http: Http, injector: Injector, config: HttpConfig):
   return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.interceptors);
 }
 
+export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
+  provide: HttpInterceptorService,
+  useFactory: httpFactory,
+  deps: [Http, Injector, HTTP_CONFIG],
+};
+
 @NgModule({
   imports: [
     HttpModule,
@@ -24,11 +30,8 @@ export class CovalentHttpModule {
       providers: [{
           provide: HTTP_CONFIG,
           useValue: config,
-        }, {
-          provide: HttpInterceptorService,
-          useFactory: httpFactory,
-          deps: [Http, Injector, HTTP_CONFIG],
         },
+        HTTP_INTERCEPTOR_PROVIDER,
       ],
     };
   }

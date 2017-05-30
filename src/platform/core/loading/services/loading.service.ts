@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -230,3 +230,15 @@ export class TdLoadingService {
     delete this._timeouts[name];
   }
 }
+
+export function LOADING_PROVIDER_FACTORY(
+    parent: TdLoadingService, loadingFactory: TdLoadingFactory): TdLoadingService {
+  return parent || new TdLoadingService(loadingFactory);
+}
+
+export const LOADING_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdLoadingService,
+  deps: [[new Optional(), new SkipSelf(), TdLoadingService], TdLoadingFactory],
+  useFactory: LOADING_PROVIDER_FACTORY,
+};

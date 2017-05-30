@@ -12,7 +12,8 @@ import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
 
-import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule } from '../platform/core';
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
+         CovalentMediaModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -49,6 +50,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentMediaModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
