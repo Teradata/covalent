@@ -6,6 +6,22 @@
     <p>A directive is essentially like a component functionally without a template. There are structural and attribute directives.</p>
     <p>Structural directives can change the DOM layout by adding and removing DOM elements. NgFor and NgIf are two familiar examples.</p>
     <p>An Attribute directive can change the appearance or behavior of an element. The built-in NgStyle directive, for example, can change several element styles at the same time.</p>
+
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCommonModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentCommonModule } from '@covalent/core';
+        @NgModule({
+          imports: [
+            CovalentCommonModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
@@ -99,35 +115,6 @@
         fade(): void {{ '{' }}
           this.fadeDiv = !this.fadeDiv;
         {{ '}' }}
-    </td-highlight>
-  </md-card-content>
-</md-card>
-
-<md-card>
-  <md-card-title>Min/Max Validators</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
-    <p class="md-body-1">We've added min/max validations since @angular doesnt support them at the moment.</p>
-    <p>Supported:</p>
-    <ul>
-      <li><code>TdMinValidator</code> for selector: <code>[min][formControlName]</code>,<code>[min][formControl]</code>,<code>[min][ngModel]</code></li>
-      <li><code>TdMaxValidator</code> for selector: <code>[max][formControlName]</code>,<code>[max][formControl]</code>,<code>[max][ngModel]</code></li>
-    </ul>
-    <p>Example enter lower than 5 or higher than 10:</p>
-    <div layout="row">
-      <md-input-container flex="20">
-        <input mdInput placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
-      </md-input-container>
-    </div>
-    <p>Errors:</p>
-    <code>{{el?.errors | json}}</code>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-        <![CDATA[
-          <md-input-container>
-            <input mdInput placeholder="CPUs" #el="ngModel" type="number" [(ngModel)]="val" min="5" max="10" required/>
-          </md-input-container>
-        ]]>
     </td-highlight>
   </md-card-content>
 </md-card>
