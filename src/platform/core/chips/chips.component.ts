@@ -49,6 +49,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   private _outsideClickSubs: Subscription;
 
+  private _isMousedown: boolean = false;
+
   /**
    * Implemented as part of ControlValueAccessor.
    */
@@ -207,8 +209,23 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   @HostListener('focus', ['$event'])
   focusListener(event: FocusEvent): void {
-    this.focus();
+    // should only focus if its not via mousedown to prevent clashing with autocomplete
+    if (!this._isMousedown) {
+      this.focus();
+    }
     event.preventDefault();
+  }
+
+  /**
+   * Listens to host mousedown event to act on it
+   */
+  @HostListener('mousedown', ['$event'])
+  mousedownListener(event: FocusEvent): void {
+     // sets a flag to know if there was a mousedown and then it returns it back to false
+    this._isMousedown = true;
+    Observable.timer().toPromise().then(() => {
+      this._isMousedown = false;
+    });
   }
 
   /**
@@ -220,6 +237,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     const clickTarget: HTMLElement = <HTMLElement>event.target;
     if (clickTarget === this._elementRef.nativeElement || 
         clickTarget.className.indexOf('td-chips-wrapper') > -1) {
+      this.focus();
       event.preventDefault();
       event.stopPropagation();
     }
