@@ -3,6 +3,14 @@
             [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
   <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/" flex color="primary">
     <md-nav-list flex>
+      <a md-list-item
+          (click)="!media.query('gt-md') && layout.close()"
+          [routerLink]="['/']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}">
+          <md-icon md-list-icon>home</md-icon>
+          Home
+      </a>
       <a *ngFor="let item of routes" 
           md-list-item
           (click)="!media.query('gt-md') && layout.close()"

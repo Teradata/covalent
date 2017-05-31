@@ -14,10 +14,6 @@ import { getSelectedLanguage } from './utilities/translate';
 export class DocsAppComponent implements AfterViewInit {
 
   routes: Object[] = [{
-      icon: 'home',
-      route: '.',
-      title: 'Home',
-    }, {
       icon: 'library_books',
       route: 'docs',
       title: 'Documentation',
