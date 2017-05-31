@@ -16,6 +16,7 @@ Properties:
 | `stacked?` | `boolean` | Set stacked or horizontal chips depending on value. Defaults to false.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
 | `chipAddition` | `boolean` | Disables the ability to add chips. When setting readOnly as true, this will be overriden. Defaults to true.
+| `chipRemoval` | `boolean` | Disables the ability to remove chips. If it doesn't exist chipRemoval defaults to true. readyOnly must be false for this option to work.
 | `debounce` | `string` | Debounce timeout between keypresses. Defaults to 200.
 | `add?` | `function` | Method to be executed when a chip is added. Sends chip value as event.
 | `remove?` | `function` | Method to be executed when a chip is removed. Sends chip value as event.
@@ -48,6 +49,7 @@ Example for HTML usage:
           [(ngModel)]="model"
           [readOnly]="readOnly" 
           [chipAddition]="chipAddition"
+          [chipRemoval]="chipRemoval"
           (add)="addEvent($event)"
           (remove)="removeEvent($event)"
           (inputChange)="inputChange($event)"

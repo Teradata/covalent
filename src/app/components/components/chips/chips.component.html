@@ -8,6 +8,7 @@
       <div class="push">
         <div class="md-body-1">Type and select a preset option or press enter:</div>
         <td-chips [chipAddition]="chipAddition"
+                  [chipRemoval]="chipRemoval"
                   [items]="filteredStrings"
                   [(ngModel)]="stringsModel"
                   placeholder="Enter autocomplete strings"
@@ -24,6 +25,7 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-chips [chipAddition]="chipAddition"
+                      [chipRemoval]="chipRemoval"
                       [items]="filteredStrings"
                       [(ngModel)]="stringsModel"
                       placeholder="Enter autocomplete strings"
@@ -39,6 +41,7 @@
             export class ChipsDemoComponent {
               readOnly: boolean = false;
               chipAddition: boolean = true;
+              chipRemoval: boolean = true;
 
               strings: string[] = [
                 'stepper',
@@ -90,6 +93,12 @@
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="chipAddition">
         Chip addition
+      </md-slide-toggle>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="chipRemoval">
+        Chip removal
       </md-slide-toggle>
     </div>
   </md-card-actions>
