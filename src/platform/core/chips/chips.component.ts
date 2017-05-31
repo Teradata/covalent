@@ -377,11 +377,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   addChip(value: any): boolean {
     /**
-     * add a 200 ms delay when reopening the autocomplete to give it time
+     * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
     this._closeAutocomplete();
-    Observable.timer(200).toPromise().then(() => {
+    Observable.timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
       this._setFirstOptionActive();
       this._openAutocomplete();
