@@ -10,8 +10,10 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
+| `color?` | `'primary' | 'accent' | 'warn'` | color for the input and focus state of the chips. Defaults to 'primary'
 | `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
+| `stacked?` | `boolean` | Set stacked or horizontal chips depending on value. Defaults to false.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
 | `chipAddition` | `boolean` | Disables the ability to add chips. When setting readOnly as true, this will be overriden. Defaults to true.
 | `chipRemoval` | `boolean` | Disables the ability to remove chips. If it doesn't exist chipRemoval defaults to true. readyOnly must be false for this option to work.
@@ -42,6 +44,7 @@ Example for HTML usage:
 
 ```html
 <td-chips placeholder="placeholder"
+          color="primary"
           [items]="items"
           [(ngModel)]="model"
           [readOnly]="readOnly" 
@@ -50,7 +53,8 @@ Example for HTML usage:
           (add)="addEvent($event)"
           (remove)="removeEvent($event)"
           (inputChange)="inputChange($event)"
-          requireMatch>
+          requireMatch
+          stacked>
   <ng-template td-basic-chip let-chip="chip">
     {{chip}}
   </ng-template>

@@ -53,6 +53,10 @@ export class ChipsDemoComponent implements OnInit {
 
   asyncModel: string[] = this.strings.slice(0, 2);
 
+  filteredStackedStrings: string[];
+
+  stackedStringsModel: string[] = this.strings.slice(0, 2);
+
   ngOnInit(): void {
     this.filterStrings('');
     this.filterObjects('');
@@ -95,5 +99,15 @@ export class ChipsDemoComponent implements OnInit {
         this.filteringAsync = false;
       }, 2000);
     }
+  }
+
+  filterStackedStrings(value: string): void {
+    this.filteredStackedStrings = this.strings.filter((item: any) => {
+      if (value) {
+        return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
+    });
   }
 }

@@ -36,9 +36,11 @@ describe('Component: Chips', () => {
         NoopAnimationsModule,
       ],
       declarations: [
+        TdChipsTestComponent,
         TdChipsA11yTestComponent,
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
+        TdChipsStackedTestComponent,
         TdChipRemovalTestComponent,
       ],
       providers: [
@@ -58,6 +60,52 @@ describe('Component: Chips', () => {
     });
     TestBed.compileComponents();
   }));
+
+  describe('should test general features: ', () => {
+    let fixture: ComponentFixture<TdChipsTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+      input = chips.query(By.css('input'));
+    });
+
+    it('should have primary color', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-primary')).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should set to accent color', (done: DoneFn) => {
+      fixture.componentInstance.color = 'accent';
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-accent')).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should set to warn color and then to accent', (done: DoneFn) => {
+      fixture.componentInstance.color = 'warn';
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-warn')).toBeTruthy();
+        fixture.componentInstance.color = 'accent';
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>chips.nativeElement).classList.contains('mat-accent')).toBeTruthy();
+          done();
+        });
+      });
+    });
+
+  });
 
   describe('a11y keyboard in chips and input: ', () => {
     let fixture: ComponentFixture<TdChipsA11yTestComponent>;
@@ -394,6 +442,35 @@ describe('Component: Chips', () => {
 
   });
 
+  describe('stacked usage: ', () => {
+    let fixture: ComponentFixture<TdChipsStackedTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsStackedTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+    });
+
+    it('should rendered chips stacked', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-stacked'))
+          .toBeFalsy();
+        fixture.componentInstance.stacked = true;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-stacked'))
+            .toBeTruthy();
+          done();
+        });
+      });
+    });
+
+  });
+
   describe('chip removal usage, requires readOnly to be false: ', () => {
     let fixture: ComponentFixture<TdChipRemovalTestComponent>;
     let input: DebugElement;
@@ -605,6 +682,21 @@ describe('Component: Chips', () => {
 
 @Component({
   template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [color]="color">
+      </td-chips>`,
+})
+class TdChipsTestComponent {
+  color: string;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+  ];
+  selectedItems: string[] = this.items.slice(0, 2);
+}
+
+@Component({
+  template: `
       <td-chips [items]="items" [(ngModel)]="selectedItems" [chipAddition]="chipAddition">
       </td-chips>`,
 })
@@ -621,29 +713,6 @@ class TdChipsA11yTestComponent {
   ];
   selectedItems: string[] = this.items.slice(0, 3);
 }
-
-
-@Component({
-  template: `
-      <td-chips [items]="items" [(ngModel)]="selectedItems" [chipRemoval]="chipRemoval"
-      [chipAddition]="chipAddition">
-      </td-chips>`,
-})
-class TdChipRemovalTestComponent {
-  chipRemoval: boolean = true;
-  chipAddition: boolean = true;
-  items: string[] = [
-    'steak',
-    'pizza',
-    'tacos',
-    'sandwich',
-    'chips',
-    'pasta',
-    'sushi',
-  ];
-  selectedItems: string[] = this.items.slice(0, 3);
-}
-
 
 @Component({
   template: `
@@ -686,4 +755,44 @@ class TdChipsBasicTestComponent {
 class TdChipsObjectsRequireMatchTestComponent {
   selectedObjects: any[] = [];
   objects: any[];
+}
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked">
+      </td-chips>`,
+})
+class TdChipsStackedTestComponent {
+  stacked: boolean = false;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+    'sandwich',
+    'chips',
+    'pasta',
+    'sushi',
+  ];
+  selectedItems: string[] = this.items.slice(0, 3);
+}
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [chipRemoval]="chipRemoval"
+      [chipAddition]="chipAddition">
+      </td-chips>`,
+})
+class TdChipRemovalTestComponent {
+  chipRemoval: boolean = true;
+  chipAddition: boolean = true;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+    'sandwich',
+    'chips',
+    'pasta',
+    'sushi',
+  ];
+  selectedItems: string[] = this.items.slice(0, 3);
 }

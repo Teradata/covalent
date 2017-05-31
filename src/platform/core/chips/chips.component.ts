@@ -1,11 +1,13 @@
 import { Component, Input, Output, forwardRef, DoCheck, ViewChild, ViewChildren, QueryList, OnInit, HostListener,
   ElementRef, Optional, Inject, Directive, TemplateRef, ViewContainerRef, ContentChild, ChangeDetectionStrategy,
-  ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding } from '@angular/core';
+  ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
+
 import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
          ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/material';
+
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
@@ -49,6 +51,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   private _outsideClickSubs: Subscription;
 
+  private _isMousedown: boolean = false;
+
   /**
    * Implemented as part of ControlValueAccessor.
    */
@@ -56,8 +60,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   private _items: any[];
   private _length: number = 0;
+  private _stacked: boolean = false;
   private _requireMatch: boolean = false;
   private _readOnly: boolean = false;
+  private _color: 'primary' | 'accent' | 'warn' = 'primary';
   private _chipAddition: boolean = true;
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
@@ -65,6 +71,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
 
   _internalClick: boolean = false;
 
+  @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
@@ -98,6 +105,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
   get items(): any[] {
     return this._items;
+  }
+
+  /**
+   * stacked?: boolean
+   * Set stacked or horizontal chips depending on value.
+   * Defaults to false.
+   */
+  @Input('stacked')
+  set stacked(stacked: any) {
+    this._stacked = stacked !== '' ? (stacked === 'true' || stacked === true) : true;
+  }
+  get stacked(): any {
+    return this._stacked;
   }
   
   /**
@@ -173,6 +193,23 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   @Input('debounce') debounce: number = 200;
 
   /**
+   * color?: 'primary' | 'accent' | 'warn'
+   * Sets the color for the input and focus/selected state of the chips.
+   * Defaults to 'primary'
+   */
+  @Input('color') 
+  set color(color: 'primary' | 'accent' | 'warn') {
+    if (color) {
+      this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
+      this._color = color;
+      this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+    }
+  }
+  get color(): 'primary' | 'accent' | 'warn' {
+    return this._color;
+  }
+
+  /**
    * add?: function
    * Method to be executed when a chip is added.
    * Sends chip value as event.
@@ -213,16 +250,34 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   }
 
   constructor(private _elementRef: ElementRef, 
+              private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() @Inject(DOCUMENT) private _document: any) {}
+              @Optional() @Inject(DOCUMENT) private _document: any) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
+  }
 
   /**
    * Listens to host focus event to act on it
    */
   @HostListener('focus', ['$event'])
   focusListener(event: FocusEvent): void {
-    this.focus();
+    // should only focus if its not via mousedown to prevent clashing with autocomplete
+    if (!this._isMousedown) {
+      this.focus();
+    }
     event.preventDefault();
+  }
+
+  /**
+   * Listens to host mousedown event to act on it
+   */
+  @HostListener('mousedown', ['$event'])
+  mousedownListener(event: FocusEvent): void {
+     // sets a flag to know if there was a mousedown and then it returns it back to false
+    this._isMousedown = true;
+    Observable.timer().toPromise().then(() => {
+      this._isMousedown = false;
+    });
   }
 
   /**
@@ -234,6 +289,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     const clickTarget: HTMLElement = <HTMLElement>event.target;
     if (clickTarget === this._elementRef.nativeElement || 
         clickTarget.className.indexOf('td-chips-wrapper') > -1) {
+      this.focus();
       event.preventDefault();
       event.stopPropagation();
     }
@@ -252,8 +308,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         });
         break;
       case ESCAPE:
-      case HOME:
-        this.focus();
+        if (this._inputChild.focused) {
+          this._nativeInput.nativeElement.blur();
+          this.removeFocusedState();
+          this._closeAutocomplete();
+        } else {
+          this.focus();
+        }
         break;
       default:
         // default
@@ -329,15 +390,6 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    * returns 'true' if successful, 'false' if it fails.
    */
   addChip(value: any): boolean {
-    this.inputControl.setValue('');
-    // check if value is already part of the model
-    if (this._value.indexOf(value) > -1) {
-      return false;
-    }
-    this._value.push(value);
-    this.onAdd.emit(value);
-    this.onChange(this._value);
-    this._changeDetectorRef.markForCheck();
     /**
      * add a 200 ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
@@ -348,6 +400,17 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       this._setFirstOptionActive();
       this._openAutocomplete();
     });
+
+    this.inputControl.setValue('');
+    // check if value is already part of the model
+    if (this._value.indexOf(value) > -1) {
+      return false;
+    }
+
+    this._value.push(value);
+    this.onAdd.emit(value);
+    this.onChange(this._value);
+    this._changeDetectorRef.markForCheck();
     return true;
   }
 
@@ -432,6 +495,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
           let length: number = this._options.length;
           if (length > 0 && this._options.toArray()[0].active) {
             this._options.toArray()[0].setInactiveStyles();
+            // prevent default window scrolling
             event.preventDefault();
           }
         }
@@ -443,6 +507,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         /** Check to see if input is empty when pressing left arrow to move to the last chip */
         if (!this._inputChild.value) {
           this._focusLastChip();
+          // prevent default window scrolling
           event.preventDefault();
         }
         break;
@@ -451,6 +516,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         /** Check to see if input is empty when pressing right arrow to move to the first chip */
         if (!this._inputChild.value) {
           this._focusFirstChip();
+          // prevent default window scrolling
           event.preventDefault();
         }
         break;
@@ -477,13 +543,15 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
           }
         }
         break;
+      case UP_ARROW:
       case LEFT_ARROW:
         /**
-         * Check to see if left arrow was pressed while focusing the first chip to focus input next
+         * Check to see if left/down arrow was pressed while focusing the first chip to focus input next
          * Also check if input should be focused
          */
         if (index === 0) {
-          if (this.canAddChip) {
+          // only try to target input if pressing left
+          if (this.canAddChip && event.keyCode === LEFT_ARROW) {
             this._inputChild.focus();
           } else {
             this._focusLastChip();
@@ -491,15 +559,18 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         } else if (index > 0) {
           this._focusChip(index - 1);
         }
-        event.stopPropagation();
+        // prevent default window scrolling
+        event.preventDefault();
         break;
+      case DOWN_ARROW:
       case RIGHT_ARROW:
         /**
-         * Check to see if right arrow was pressed while focusing the last chip to focus input next
+         * Check to see if right/up arrow was pressed while focusing the last chip to focus input next
          * Also check if input should be focused
          */
         if (index === (this._totalChips - 1)) {
-          if (this.canAddChip) {
+          // only try to target input if pressing right
+          if (this.canAddChip && event.keyCode === RIGHT_ARROW) {
             this._inputChild.focus();
           } else {
             this._focusFirstChip();
@@ -507,7 +578,8 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
         } else if (index < (this._totalChips - 1)) {
           this._focusChip(index + 1);
         }
-        event.stopPropagation();
+        // prevent default window scrolling
+        event.preventDefault();
         break;
       default:
         // default
@@ -562,7 +634,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   /**
    * Get total of chips
    */
-  private get _totalChips(): number {
+  get _totalChips(): number {
     let chips: MdChip[] = this._chipsChildren.toArray();
     return chips.length;
   }
