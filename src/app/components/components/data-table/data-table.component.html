@@ -267,6 +267,7 @@
               [multiple]="multiple"
               [sortable]="true"
               [sortBy]="sortBy"
+              [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
@@ -305,6 +306,7 @@
               currentPage: number = 1;
               pageSize: number = 5;
               sortBy: string = 'sku';
+              selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
               constructor(private _dataTableService: TdDataTableService) {}
