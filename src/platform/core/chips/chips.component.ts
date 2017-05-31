@@ -65,6 +65,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _readOnly: boolean = false;
   private _color: 'primary' | 'accent' | 'warn' = 'primary';
   private _chipAddition: boolean = true;
+  private _chipRemoval: boolean = true;
   private _focused: boolean = false;
   private _tabIndex: number = 0;
 
@@ -164,6 +165,19 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   get canAddChip(): boolean {
     return this.chipAddition && !this.readOnly;
+  }
+
+  /**
+   * chipRemoval?: boolean
+   * Disables the ability to remove chips. If it doesn't exist chip remmoval defaults to true.
+   * When setting readOnly as true, this will be overriden to false.
+   */
+  @Input('chipRemoval')
+  set chipRemoval(chipRemoval: boolean) {
+    this._chipRemoval = chipRemoval;
+  }
+  get chipRemoval(): boolean {
+    return this._chipRemoval;
   }
 
   /**
@@ -520,7 +534,13 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
       case BACKSPACE:
         /** Check to see if not in [readOnly] state to delete a chip */
         if (!this.readOnly) {
-          this.removeChip(index);
+          /** 
+           * Checks [chipRemoval] state to delete a chips
+           * To enable [chipRemoval] the [readOnly] state must be true.
+           */
+          if (this.chipRemoval) {
+            this.removeChip(index);
+          }
         }
         break;
       case UP_ARROW:
