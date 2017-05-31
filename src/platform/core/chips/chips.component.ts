@@ -180,6 +180,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     return this._chipRemoval;
   }
 
+  get canRemoveChip(): boolean {
+    return this.chipRemoval && !this.readOnly;
+  }
+
   /**
    * placeholder?: string
    * Placeholder for the autocomplete input.
@@ -532,15 +536,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     switch (event.keyCode) {
       case DELETE:
       case BACKSPACE:
-        /** Check to see if not in [readOnly] state to delete a chip */
-        if (!this.readOnly) {
-          /** 
-           * Checks [chipRemoval] state to delete a chips
-           * To enable [chipRemoval] the [readOnly] state must be true.
-           */
-          if (this.chipRemoval) {
-            this.removeChip(index);
-          }
+        /** Check to see if we can delete a chip */
+        if (this.canRemoveChip) {
+         this.removeChip(index);
         }
         break;
       case UP_ARROW:
