@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 import { fadeAnimation } from '../../app.animations';
 
@@ -20,11 +20,13 @@ export class TemplatesComponent implements AfterViewInit {
   templatesObs: Observable<ITemplate[]>;
 
   constructor(public media: TdMediaService,
+              private _changeDetectorRef: ChangeDetectorRef,
               private _internalDocsService: InternalDocsService) {
     this.templatesObs = this._internalDocsService.queryTemplates();
   }
 
   ngAfterViewInit(): void {
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 }

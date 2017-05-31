@@ -11,7 +11,7 @@
     <section>
         <div layout-gt-xs="row" layout-align="center center">
             <div flex-gt-xs="80" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-lg']">
-                <md-grid-list cols="2" gutterSize="20" rowHeight="300px">
+                <md-grid-list [cols]="(media.registerQuery('gt-xs') | async) ? 2 : 1" gutterSize="20" rowHeight="300px">
                     <md-grid-tile *ngFor="let template of templatesObs | async" class="bgc-{{template.color}} md-whiteframe-z1">
                         <a [href]="template.plnkr" target="_blank">
                             <img [src]="template.img">
