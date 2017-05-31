@@ -1,6 +1,6 @@
 <div class="td-chips-wrapper">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
-    <md-basic-chip [class.td-chip-disabled]="readOnly"
+    <md-basic-chip [class.td-chip-disabled]="readOnly || !chipRemoval"
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
       <div layout="row" layout-align="start center" flex>
