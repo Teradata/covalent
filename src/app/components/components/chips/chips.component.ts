@@ -122,6 +122,7 @@ export class ChipsDemoComponent implements OnInit {
     this.filteredAsync = undefined;
     if (value) {
       this.filteringAsync = true;
+      // Timeout isn't actually needed here, only added for demo to simulate async behavior
       setTimeout(() => {
         this.filteredAsync = this.strings.filter((item: any) => {
           return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
