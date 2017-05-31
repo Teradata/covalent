@@ -23,7 +23,7 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 
-import { GitHubService } from './services';
+import { GitHubService, InternalDocsService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
@@ -71,7 +71,8 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    GitHubService, {
+    GitHubService,
+    InternalDocsService, {
       // Configure LOCALE_ID depending on the language set in browser
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },

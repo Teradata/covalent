@@ -12,9 +12,9 @@
         <div layout-gt-xs="row" layout-align="center center">
             <div flex-gt-xs="80" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-lg']">
                 <md-grid-list cols="2" gutterSize="20" rowHeight="300px">
-                    <md-grid-tile *ngFor="let template of templates" class="bgc-{{template.color}} md-whiteframe-z1">
-                        <a href="{{template.link}}" target="_blank">
-                            <img src="app/assets/images/templates/{{template.image}}.png">
+                    <md-grid-tile *ngFor="let template of templatesObs | async" class="bgc-{{template.color}} md-whiteframe-z1">
+                        <a [href]="template.plnkr" target="_blank">
+                            <img [src]="template.img">
                             <md-grid-tile-footer>
                                 <h3 md-line>{{template.title}}</h3>
                                 <span md-line>{{template.description}}</span>
