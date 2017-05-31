@@ -180,6 +180,10 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     return this._chipRemoval;
   }
 
+  /**
+   * Checks if not in readOnly state and if chipRemoval is set to 'true'
+   * States if a chip can be removed
+   */
   get canRemoveChip(): boolean {
     return this.chipRemoval && !this.readOnly;
   }
