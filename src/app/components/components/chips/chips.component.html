@@ -200,10 +200,10 @@
       <div class="push">
         <div class="md-body-1">Type and see how it will load items async:</div>
         <td-chips [items]="filteredAsync"
+                  [debounce]="500"
                   [(ngModel)]="asyncModel"
                   placeholder="Enter autocomplete strings"
                   (inputChange)="filterAsync($event)"
-                  (debounce)="1000"
                   requireMatch>
           <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
         </td-chips>
@@ -216,10 +216,10 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-chips [items]="filteredAsync"
+                      [debounce]="500"
                       [(ngModel)]="asyncModel"
                       placeholder="Enter autocomplete strings"
                       (inputChange)="filterAsync($event)"
-                      (debounce)="1000"
                       requireMatch>
               <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
             </td-chips>
@@ -253,6 +253,7 @@
                 this.filteredAsync = undefined;
                 if (value) {
                   this.filteringAsync = true;
+                  // Timeout isn't actually needed here, only added for demo to simulate async behavior
                   setTimeout(() => {
                     this.filteredAsync = this.strings.filter((item: any) => {
                       return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
