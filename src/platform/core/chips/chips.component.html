@@ -1,6 +1,7 @@
 <div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
-    <md-basic-chip [class.td-chip-disabled]="!canRemoveChip"
+    <md-basic-chip [class.td-chip-disabled]="readOnly"
+                   [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
