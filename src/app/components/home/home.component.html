@@ -6,7 +6,7 @@
         <div class="push-top-xl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <div layout="row" layout-align="start center">
-            <h1 class="md-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['md-headline']">Covalent UI Platform for building enterprise desktop web apps</h1>
+            <h1 class="md-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['md-headline']">Covalent UI Platform for <span hide-xs>building</span> enterprise <span hide-xs>desktop</span> web apps</h1>
           </div>
           <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
           <div class="push-top-xl" hide-xs></div>
@@ -27,13 +27,13 @@
   </md-toolbar>
   <section class="bgc-blue-grey-100">
     <div layout-gt-xs="row">
-      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-md']">
+      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
         <div class="push-top-md" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push']">
           <md-nav-list hide-gt-md>
             <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
               <a md-list-item [routerLink]="[item.route]">
-                <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
                 <h3 class="tc-blue-grey-900" md-line> {{item.title}} </h3>
                 <p class="tc-blue-grey-700" md-line> {{item.description}} </p>
               </a>
@@ -61,18 +61,18 @@
     </div>
   </section>
   <section class="bgc-blue-grey-800 tc-white">
-    <div layout-gt-xs="row">
-      <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
+    <div layout="row">
+      <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
         <div class="push-top-xxl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <h2 class="md-display-1 tc-red-500 push-top-xs push-bottom-sm">Built with <md-icon>favorite</md-icon> on Angular</h2>
           <h3 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">Teradata is one of the largest enterprise consumers of Angular. Currently the entire product suite is being built or revamped on Angular v4.</h3>
-          <h4 class="md-headline tc-blue-grey-200 push-top-xs push-bottom-sm">As Angular unites Teradata developers across the organization, they are able to contribute back to the open-source community with the powerful new tools being developed internally.</h4>
+          <h4 class="md-headline tc-blue-grey-200 push-top-xs push-bottom-sm" hide-xs>As Angular unites Teradata developers across the organization, they are able to contribute back to the open-source community with the powerful new tools being developed internally.</h4>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
-      <div flex="50" layout="column" layout-align="center center" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-        <md-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline"></md-icon>
+      <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
+        <md-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
       </div>
     </div>
   </section>
@@ -84,7 +84,7 @@
           <md-nav-list hide-gt-sm class="theme-dark">
             <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
               <a md-list-item href="{{item.link}}" target="_blank">
-                <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
                 <h3 class="tc-white" md-line> {{item.title}} </h3>
                 <p class="tc-white" md-line> {{item.description}} </p>
               </a>
@@ -114,18 +114,18 @@
     </div>
   </section>
   <section class="bgc-blue-grey-100">
-    <div layout-gt-xs="row">
+    <div layout="row">
       <div flex flex-order="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
         <div class="push-top-xxl" hide-xs></div>
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <h2 class="md-display-1 tc-green-A700 push-top-xs push-bottom-sm">Following the Material Design spec</h2>
           <h3 class="md-headline tc-blue-grey-700 push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
-          <h4 class="md-headline tc-blue-grey-600 push-top-xs push-bottom-sm">Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
+          <h4 class="md-headline tc-blue-grey-600 push-top-xs push-bottom-sm" hide-xs>Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
-      <div flex="50" flex-order="1" layout="column" layout-align="center center" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-left-xl']">
-        <md-icon class="mat-icon-svg-xxl fill-green-A700" svgIcon="assets:material-outline"></md-icon>
+      <div flex="40" flex-xs="20" flex-order="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-left-xl']">
+        <md-icon class="mat-icon-svg-xxl fill-green-A700" svgIcon="assets:material-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
       </div>
     </div>
   </section>
@@ -299,11 +299,11 @@
       </div>
     </div>
   </section>
-  <td-layout-footer class="theme-dark">
-    <div layout="row" layout-align="start center">
-      <span class="md-caption">Copyright &copy; 2016 - 2017 Teradata. All rights reserved</span>
+  <td-layout-footer class="theme-dark" tdMediaToggle="xs" [mediaClasses]="['text-center']">
+    <div layout-gt-xs="row" layout-align="start center">
+      <div class="md-caption">Copyright &copy; 2016 - 2017 Teradata. All rights reserved</div>
       <span flex></span>
-      <div layout="row">
+      <div layout-gt-xs="row">
         <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button class="text-upper">Gitter Chat</a>
         <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button class="text-upper">Feature Request</a>
       </div>

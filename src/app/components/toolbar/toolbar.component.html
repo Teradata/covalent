@@ -4,7 +4,7 @@
 -->
 <div layout="row" layout-align="end center" flex>
     <span flex></span>
-    <nav hide-xs class="text-upper text-sm" layout="row">
+    <nav hide show-gt-md class="text-upper text-sm" layout="row">
       <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
       <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
       <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
@@ -39,7 +39,7 @@
         </a>
       </td-menu>
     </md-menu>
-    <button md-icon-button [mdMenuTriggerFor]="settingsMenu">
+    <button hide-xs md-icon-button [mdMenuTriggerFor]="settingsMenu">
       <md-icon>more_vert</md-icon>
     </button>
     <md-menu #settingsMenu="mdMenu">
