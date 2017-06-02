@@ -65,6 +65,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   private _readOnly: boolean = false;
   private _color: 'primary' | 'accent' | 'warn' = 'primary';
   private _chipAddition: boolean = true;
+  private _chipRemoval: boolean = true;
   private _focused: boolean = false;
   private _tabIndex: number = 0;
 
@@ -164,6 +165,27 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   get canAddChip(): boolean {
     return this.chipAddition && !this.readOnly;
+  }
+
+  /**
+   * chipRemoval?: boolean
+   * Disables the ability to remove chips. If it doesn't exist chip remmoval defaults to true.
+   * When setting readOnly as true, this will be overriden to false.
+   */
+  @Input('chipRemoval')
+  set chipRemoval(chipRemoval: boolean) {
+    this._chipRemoval = chipRemoval;
+  }
+  get chipRemoval(): boolean {
+    return this._chipRemoval;
+  }
+
+  /**
+   * Checks if not in readOnly state and if chipRemoval is set to 'true'
+   * States if a chip can be removed
+   */
+  get canRemoveChip(): boolean {
+    return this.chipRemoval && !this.readOnly;
   }
 
   /**
@@ -377,11 +399,11 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
    */
   addChip(value: any): boolean {
     /**
-     * add a 200 ms delay when reopening the autocomplete to give it time
+     * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
     this._closeAutocomplete();
-    Observable.timer(200).toPromise().then(() => {
+    Observable.timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
       this._setFirstOptionActive();
       this._openAutocomplete();
@@ -518,9 +540,9 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     switch (event.keyCode) {
       case DELETE:
       case BACKSPACE:
-        /** Check to see if not in [readOnly] state to delete a chip */
-        if (!this.readOnly) {
-          this.removeChip(index);
+        /** Check to see if we can delete a chip */
+        if (this.canRemoveChip) {
+         this.removeChip(index);
         }
         break;
       case UP_ARROW:
