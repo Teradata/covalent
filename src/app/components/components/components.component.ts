@@ -1,5 +1,5 @@
-import { Component, HostBinding, AfterViewInit, ElementRef, Inject, Renderer2, ChangeDetectorRef } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Component, HostBinding, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -137,17 +137,11 @@ export class ComponentsComponent implements AfterViewInit {
   }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService,
-              private _renderer: Renderer2,
-              @Inject(DOCUMENT) private _document: any) {}
+              public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
     this._changeDetectorRef.detectChanges();
-  }
-
-  changeDir(dir: string): void {
-    this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
   }
 }

@@ -1,9 +1,9 @@
 <div layout="row" flex>
   <ng-content></ng-content>
-  <div flex>
+  <div class="td-step-body" flex>
     <div class="td-step-content-wrapper"
          [@tdCollapse]="!active">
-      <div #contentRef [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
+      <div #contentRef cdkScrollable [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
         <ng-content select="[td-step-body-content]"></ng-content>
       </div>
       <div #actionsRef layout="row" [class.td-step-actions]="actionsRef.children.length || actionsRef.textContent.trim()">

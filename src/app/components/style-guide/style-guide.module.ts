@@ -24,6 +24,8 @@ import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, Covale
          CovalentExpansionPanelModule, CovalentDialogsModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+
 @NgModule({
   declarations: [
     StyleGuideComponent,
@@ -66,6 +68,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     CovalentHighlightModule,
     CovalentDialogsModule,
     styleGuideRoutes,
+    ToolbarModule,
   ],
 })
 export class StyleGuideModule {}

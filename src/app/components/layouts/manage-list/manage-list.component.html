@@ -1,5 +1,6 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-  <td-layout-manage-list #manageList 
+<td-layout-nav #root="$implicit" dir="ltr" logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <td-toolbar (changeDir)="root.dir = $event"  td-toolbar-content  hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+  <td-layout-manage-list #manageList
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
