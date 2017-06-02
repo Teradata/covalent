@@ -61,6 +61,16 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 
+// Alt theme
+.theme-alt {
+    $primary-alt: mat-palette($mat-orange, 800);
+    $accent-alt:  mat-palette($mat-light-blue, 700);
+    $warn-alt:    mat-palette($mat-red, 600);
+    $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
+    @include angular-material-theme($theme-alt);
+    @include covalent-theme($theme-alt);
+}
+
 // Dark theme
 .theme-dark {
     $primary-dark: mat-palette($mat-blue-grey, 900);

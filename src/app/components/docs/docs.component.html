@@ -24,5 +24,7 @@
     <span hide-xs hide-lg flex>Documentation</span>
     <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
-  <router-outlet></router-outlet>
+  <div class="theme-alt">
+    <router-outlet></router-outlet>
+  </div>
 </td-layout-nav-list>
