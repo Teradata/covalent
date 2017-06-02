@@ -47,6 +47,8 @@ import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+
 @NgModule({
   declarations: [
     ComponentsComponent,
@@ -119,6 +121,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     NgxChartsModule,
     TranslateModule,
     componentsRoutes,
+    ToolbarModule,
   ],
 })
 export class ComponentsModule {}

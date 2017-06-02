@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
+import { TemplatesComponent } from './components/templates/templates.component';
 
 const routes: Routes = [{
     component: HomeComponent,
@@ -13,6 +14,9 @@ const routes: Routes = [{
     path: '', loadChildren: './components/layouts/layouts.module#LayoutsModule',
   }, {
     path: '', loadChildren: './components/components/components.module#ComponentsModule',
+  }, {
+    component: TemplatesComponent,
+    path: 'templates',
   },
 ];
 
