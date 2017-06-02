@@ -1,4 +1,5 @@
 <td-layout-nav-list #navList
+                    #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
                     navigationRoute="/"
@@ -34,8 +35,10 @@
     </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span>Teradata Style Guide</span>
-    <span flex></span>
+    <span>Style Guide</span>
+    <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm flex layout="row"></td-toolbar>
   </div>
-  <router-outlet></router-outlet>
+  <div class="theme-alt">
+    <router-outlet></router-outlet>
+  </div>
 </td-layout-nav-list>

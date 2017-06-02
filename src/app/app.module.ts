@@ -8,9 +8,11 @@ import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-transla
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule,
+         MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -19,13 +21,16 @@ import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
 import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
-import { GitHubService } from './services';
+import { ToolbarModule } from './components/toolbar/toolbar.module';
+
+import { GitHubService, InternalDocsService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
   declarations: [
     DocsAppComponent,
     HomeComponent,
+    TemplatesComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserAnimationsModule,
@@ -41,16 +46,21 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MdIconModule,
     MdCardModule,
     MdMenuModule,
+    MdTabsModule,
+    MdToolbarModule,
+    MdGridListModule,
+    MdTooltipModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
     CovalentNotificationsModule,
     CovalentMenuModule,
+    CovalentMediaModule,
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
-    CovalentMediaModule,
+    ToolbarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -62,7 +72,8 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    GitHubService, {
+    GitHubService,
+    InternalDocsService, {
       // Configure LOCALE_ID depending on the language set in browser
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },

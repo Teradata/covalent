@@ -14,25 +14,25 @@ import { getSelectedLanguage } from './utilities/translate';
 export class DocsAppComponent implements AfterViewInit {
 
   routes: Object[] = [{
-      icon: 'home',
-      route: '.',
-      title: 'Home',
-    }, {
       icon: 'library_books',
       route: 'docs',
       title: 'Documentation',
     }, {
-      icon: 'color_lens',
-      route: 'style-guide',
-      title: 'Style Guide',
+      icon: 'picture_in_picture',
+      route: 'components',
+      title: 'Components & Addons',
     }, {
       icon: 'view_quilt',
       route: 'layouts',
       title: 'Layouts',
     }, {
-      icon: 'picture_in_picture',
-      route: 'components',
-      title: 'Components & Addons',
+      icon: 'color_lens',
+      route: 'style-guide',
+      title: 'Style Guide',
+    }, {
+      icon: 'view_carousel',
+      route: 'templates',
+      title: 'Templates',
     },
   ];
 
@@ -56,6 +56,16 @@ export class DocsAppComponent implements AfterViewInit {
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/github.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'covalent',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'covalent-stroke',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent-stroke.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'covalent-outline',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent-outline.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'angular',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/angular.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'angular-outline',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/angular-outline.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'material-outline',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/material-outline.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-ux',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/teradata-ux.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'appcenter',
