@@ -12,7 +12,7 @@ import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule,
-         MdToolbarModule, MdGridListModule } from '@angular/material';
+         MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -49,6 +49,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MdTabsModule,
     MdToolbarModule,
     MdGridListModule,
+    MdTooltipModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
