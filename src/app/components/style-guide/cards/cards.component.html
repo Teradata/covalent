@@ -300,8 +300,8 @@
   </md-card-content>
 </md-card>
 <md-card>
-  <md-card-title>Card with header & images</md-card-title>
-  <md-card-subtitle>A card with header, avatar & image</md-card-subtitle>
+  <md-card-title>Card with various components</md-card-title>
+  <md-card-subtitle>A card with header, images, action icons &amp; progress bar</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
     <div class="md-padding bgc-grey-200">
@@ -311,11 +311,23 @@
             <md-card-title>Header title</md-card-title>
             <md-card-subtitle>Header subtitle</md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="https://placekitten.com/g/600/400">
+        <img md-card-image src="https://placekitten.com/g/600/200">
         <md-card-content>
           <h3 class="md-subhead">Content title</h3>
           <p class="md-body-1">Here is some more content</p>
         </md-card-content>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <div layout="row" class="tc-grey-600">
+            <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
+            <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
+            <span flex></span>
+            <button md-icon-button mdTooltip="Share"><md-icon>share</md-icon></button>
+          </div>
+        </md-card-actions>
+        <md-card-footer>
+          <md-progress-bar mode="indeterminate"></md-progress-bar>
+        </md-card-footer>
       </md-card>
     </div>
     <td-highlight lang="html">
@@ -326,12 +338,112 @@
                 <md-card-title>Header title</md-card-title>
                 <md-card-subtitle>Header subtitle</md-card-subtitle>
             </md-card-header>
-            <img md-card-image src="https://placekitten.com/g/600/400">
+            <img md-card-image src="https://placekitten.com/g/600/200">
             <md-card-content>
               <h3 class="md-subhead">Content title</h3>
               <p class="md-body-1">Here is some more content</p>
             </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+              <div layout="row" class="tc-grey-600">
+                <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
+                <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
+                <span flex></span>
+                <button md-icon-button mdTooltip="Share"><md-icon>share</md-icon></button>
+              </div>
+            </md-card-actions>
+            <md-card-footer>
+              <md-progress-bar mode="indeterminate"></md-progress-bar>
+            </md-card-footer>
           </md-card>
+        ]]>
+      </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Card with image variations</md-card-title>
+  <md-card-subtitle>md-card-sm-image, md-card-md-image, md-card-lg-image &amp; md-card-title-group</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="md-padding bgc-grey-200">
+      <div layout-gt-xs="row">
+        <md-card>
+          <img md-card-image src="https://placekitten.com/g/600/200">
+          <md-card-title>Card with image first</md-card-title>
+          <md-card-subtitle>100% width image</md-card-subtitle>
+          <md-card-content>
+            Notice if the image is first it has proper rounded corners.
+          </md-card-content>
+        </md-card>
+      </div>
+      <div layout-gt-xs="row">
+        <md-card>
+          <md-card-title-group>
+            <md-card-title class="text-xl">Card with small image</md-card-title>
+            <md-card-subtitle>80px x 80px image</md-card-subtitle>
+            <img md-card-sm-image src="https://placekitten.com/g/200/200">
+          </md-card-title-group>
+        </md-card>
+      </div>
+      <div layout-gt-xs="row">
+        <md-card>
+          <md-card-title-group>
+            <md-card-title class="text-xxl">Card with medium image</md-card-title>
+            <md-card-subtitle>112px x 112px image</md-card-subtitle>
+            <img md-card-md-image src="https://placekitten.com/g/300/300">
+          </md-card-title-group>
+        </md-card>
+      </div>
+      <div layout-gt-xs="row">
+        <md-card>
+          <md-card-title-group>
+            <md-card-title>Card with large image</md-card-title>
+            <md-card-subtitle>152px x 152px image</md-card-subtitle>
+            <img md-card-lg-image class="mat-card-lg-image" src="https://placekitten.com/g/400/200">
+          </md-card-title-group>
+        </md-card>
+      </div>
+    </div>
+    <td-highlight lang="html">
+        <![CDATA[
+          <div layout-gt-xs="row">
+            <md-card>
+              <img md-card-image src="https://placekitten.com/g/600/200">
+              <md-card-title>Card with image first</md-card-title>
+              <md-card-subtitle>100% width image</md-card-subtitle>
+              <md-card-content>
+                Notice if the image is first it has proper rounded corners.
+              </md-card-content>
+            </md-card>
+          </div>
+          <div layout-gt-xs="row">
+            <md-card>
+              <md-card-title-group>
+                <md-card-title class="text-xl">Card with small image</md-card-title>
+                <md-card-subtitle>80px x 80px image</md-card-subtitle>
+                <img md-card-sm-image src="https://placekitten.com/g/200/200">
+              </md-card-title-group>
+            </md-card>
+          </div>
+          <div layout-gt-xs="row">
+            <md-card>
+              <md-card-title-group>
+                <md-card-title class="text-xxl">Card with medium image</md-card-title>
+                <md-card-subtitle>112px x 112px image</md-card-subtitle>
+                <img md-card-md-image src="https://placekitten.com/g/300/300">
+              </md-card-title-group>
+            </md-card>
+          </div>
+          <div layout-gt-xs="row">
+            <md-card>
+              <md-card-title-group>
+                <md-card-title>Card with large image</md-card-title>
+                <md-card-subtitle>152px x 152px image</md-card-subtitle>
+                <img md-card-lg-image src="https://placekitten.com/g/400/200">
+              </md-card-title-group>
+            </md-card>
+          </div>
+        </div>
         ]]>
       </td-highlight>
   </md-card-content>
@@ -343,6 +455,11 @@
     <a md-list-item href="https://material.google.com/components/cards.html" target="_blank">
       <md-icon>launch</md-icon>
       <span md-line>Card Specs</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="https://material.angular.io/components/component/card" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>Angular Material Card Docs</span>
     </a>
     <md-divider></md-divider>
     <a md-list-item href="https://www.google.com/search/about/learn-more/now/" target="_blank">
