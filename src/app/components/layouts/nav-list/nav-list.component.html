@@ -20,7 +20,10 @@
     </a>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <span hide-xs hide-lg flex>Nav List</span>
+    <button md-icon-button tdLayoutNavListToggle>
+      <md-icon>arrow_back</md-icon>
+    </button>
+    <span hide-lg flex>Nav List</span>
     <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <md-card>
@@ -79,6 +82,11 @@
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<div td-toolbar-content>]]></code></h3>
                   <p md-line>Right column page title (optional)</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                  <h3 md-line><code><![CDATA[<button md-icon-button tdLayoutNavListToggle>]]></code></h3>
+                  <p md-line>The button to toggle the nav list sidenav</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>
@@ -142,6 +150,9 @@
                   </a>
                 </md-nav-list>
                 <div td-toolbar-content layout="row" flex>
+                  <button md-icon-button tdLayoutNavListToggle>
+                    <md-icon>arrow_back</md-icon>
+                  </button>
                   <span>Page Title</span>
                   <span flex></span>
                 </div>

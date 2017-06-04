@@ -11,12 +11,15 @@
       <a md-list-item><md-icon>folder</md-icon>Item Name</a>
       <a md-list-item><md-icon>people</md-icon>Item Name</a>
     </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span>Optional Title</span>
+    <md-toolbar>
+      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+        <md-icon>arrow_back</md-icon>
+      </button>
+      <span>Optional Subtitle</span>
       <span flex></span>
       <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
       <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-    </div>
+    </md-toolbar>
     <md-card>
       <md-card-title> Manage List Layout</md-card-title>
       <md-card-subtitle>Content/object management views (this page is using manage list)</md-card-subtitle>
@@ -82,11 +85,16 @@
                   <md-divider></md-divider>
                 </md-list>
               </td-step>
-              <td-step label="div[td-toolbar-content]" sublabel="the management toolbar above content">
+              <td-step label="md-toolbar" sublabel="the management toolbar above content">
                 <md-list>
                   <md-list-item>
-                    <h3 md-line><code><![CDATA[<div td-toolbar-content>]]></code></h3>
-                    <p md-line>The toolbar wrapper</p>
+                    <h3 md-line><code><![CDATA[<md-toolbar>]]></code></h3>
+                    <p md-line>The toolbar for the content</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
+                    <h3 md-line><code><![CDATA[<button md-icon-button tdLayoutManageListToggle>]]></code></h3>
+                    <p md-line>The button to toggle the manage list sidenav</p>
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
@@ -151,12 +159,15 @@
                       <a md-list-item><md-icon>folder</md-icon>Item Name</a>
                       <a md-list-item><md-icon>people</md-icon>Item Name</a>
                     </md-nav-list>
-                    <div td-toolbar-content layout="row" layout-align="start center" flex>
+                    <md-toolbar>
+                      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+                        <md-icon>arrow_back</md-icon>
+                      </button>
                       <span>Optional Subtitle</span>
                       <span flex></span>
                       <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
                       <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-                    </div>
+                    </md-toolbar>
                     <router-outlet></router-outlet>
                     <td-layout-footer-inner>
                       Optional inner footer

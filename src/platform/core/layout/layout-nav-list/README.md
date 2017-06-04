@@ -29,6 +29,8 @@
 
 `td-layout-footer` is used to include items in the main footer.
 
+`[tdLayoutNavListToggle]` is used to add the toggle behavior to its sidenav.
+
 Example for Nav List Layout:
 
 ```html
@@ -37,6 +39,9 @@ Example for Nav List Layout:
     ... left toolbar content
   </div>
   <md-nav-list td-sidenav-content>
+    <button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
     ... sidenav content
   </md-nav-list>
   <div td-toolbar-content>

@@ -20,6 +20,8 @@
 
 `td-layout-footer-inner` is used to include items in the inner footer.
 
+`[tdLayoutManageListToggle]` is used to add the toggle behavior to its sidenav.
+
 Example for Manage List Layout / Nav Layout combo:
 
 ```html
@@ -34,9 +36,12 @@ Example for Manage List Layout / Nav Layout combo:
     <md-nav-list td-sidenav-content>
       ... sidenav content
     </md-nav-list>
-    <div td-toolbar-content>
+    <md-toolbar>
+      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+        <md-icon>arrow_back</md-icon>
+      </button>
       ... sub toolbar content
-    </div>
+    </md-toolbar>
     ... main content
     <td-layout-footer-inner>
       ... sub footer content

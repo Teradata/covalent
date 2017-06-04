@@ -1,13 +1,26 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Directive, Input, ViewChild, Inject, forwardRef, Renderer2, ElementRef } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
+
+import { LayoutToggle, ILayoutTogglable } from '../layout-toggle.class';
+
+@Directive({
+  selector: '[tdLayoutManageListToggle]',
+})
+export class TdLayoutManageListToggleDirective extends LayoutToggle {
+  constructor(@Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
+    super(layout, renderer, elementRef);
+  }
+}
 
 @Component({
   selector: 'td-layout-manage-list',
   styleUrls: ['./layout-manage-list.component.scss' ],
   templateUrl: './layout-manage-list.component.html',
 })
-export class TdLayoutManageListComponent {
+export class TdLayoutManageListComponent implements ILayoutTogglable {
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 

@@ -57,7 +57,10 @@
     </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <span hide-xs hide-gt-md flex>Components &amp; Addons</span>
+    <button md-icon-button tdLayoutNavListToggle>
+      <md-icon>arrow_back</md-icon>
+    </button>
+    <span hide-gt-md flex>Components &amp; Addons</span>
     <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <div class="theme-alt">
