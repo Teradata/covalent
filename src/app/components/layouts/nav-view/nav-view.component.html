@@ -1,4 +1,7 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <td-toolbar td-toolbar-content hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   <div class="md-padding">
     <md-card>
@@ -50,6 +53,11 @@
                   </md-list-item>
                   <md-divider></md-divider>
                   <md-list-item>
+                    <h3 md-line><code><![CDATA[<button md-icon-button td-menu-button>]]></code></h3>
+                    <p md-line>menu button always at the left (can be used to toggle main sidenav with <code>[tdLayoutToggle]</code>)</p>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item>
                     <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
                     <p md-line>Loads html for each route (view)</p>
                   </md-list-item>
@@ -71,6 +79,9 @@
             <td-highlight lang="html">
               <![CDATA[
                 <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName" navigationRoute="/">
+                  <button md-icon-button td-menu-button>
+                    <md-icon>menu</md-icon>
+                  </button>
                   <router-outlet></router-outlet>
                   <td-layout-footer>
                     Optional footer
