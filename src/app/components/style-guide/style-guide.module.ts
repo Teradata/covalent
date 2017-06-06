@@ -18,7 +18,8 @@ import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
-         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule } from '@angular/material';
+         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule,
+         MdTooltipModule, MdProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule } from '../../../platform/core';
@@ -59,6 +60,8 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdTabsModule,
     MdSidenavModule,
     MdSnackBarModule,
+    MdTooltipModule,
+    MdProgressBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,
