@@ -33,7 +33,7 @@
         .md-caption {
           color: mat-color($foreground, secondary-text);
         }
-        &.mat-disabled {
+        &.mat-inactive {
           &, & * {
             color: mat-color($foreground, disabled);
           }
