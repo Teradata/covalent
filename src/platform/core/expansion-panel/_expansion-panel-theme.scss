@@ -10,6 +10,7 @@
 
   .td-expansion-panel-group {
     .td-expansion-panel {
+      transition: 120ms ease-in;
       &:not(:last-of-type) {
         &.td-expanded {
           margin-bottom: $margin;
