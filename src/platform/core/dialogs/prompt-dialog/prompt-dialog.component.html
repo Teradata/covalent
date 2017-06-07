@@ -7,6 +7,8 @@
     <form #form="ngForm" layout="row" novalidate flex>
       <md-input-container flex>
         <input mdInput
+               #input
+               (focus)="handleInputFocus()"
                (keydown.enter)="$event.preventDefault(); form.valid && accept()"
                [(ngModel)]="value"
                name="value"
