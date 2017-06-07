@@ -5,6 +5,7 @@ import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { getSelectedLanguage } from './utilities/translate';
+import { getDirection } from './utilities/direction';
 
 @Component({
   selector: 'docs-covalent',
@@ -80,4 +81,11 @@ export class DocsAppComponent implements AfterViewInit {
     this.media.broadcast();
     this._changeDetectorRef.detectChanges();
   }
+
+  getDirection(dir: any): string {
+    let direction: string = getDirection();
+    dir.dir = direction;
+    return direction;
+  }
+
 }
