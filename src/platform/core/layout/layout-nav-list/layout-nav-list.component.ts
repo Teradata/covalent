@@ -96,13 +96,6 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   @Input('navigationRoute') navigationRoute: string;
 
   /**
-   * Checks if there is a [TdLayoutComponent] as parent.
-   */
-  get isMainSidenavAvailable(): boolean {
-    return !!this._layout;
-  }
-
-  /**
    * Checks if `ESC` should close the sidenav
    * Should only close it for `push` and `over` modes
    */
@@ -117,8 +110,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-              @Optional() private _router: Router) {}
+  constructor(@Optional() private _router: Router) {}
 
   handleNavigationClick(): void {
     if (this.routerEnabled) {
@@ -145,13 +137,6 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    */
   public close(): Promise<MdSidenavToggleResult> {
     return this._sideNav.close();
-  }
-
-  /**
-   * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
-   */
-  openMainSidenav(): void {
-    this._layout.toggle();
   }
 
 }

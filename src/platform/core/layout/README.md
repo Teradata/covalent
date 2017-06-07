@@ -27,7 +27,7 @@ Example for Main Layout:
 </td-layout>
 ```
 
-To toggle the main sidenav from child layouts/components, you can use the `tdLayoutToggle` directive on any element and its click event will trigger the toggle.
+To toggle the main sidenav from child layouts/components, you can use the `[tdLayoutToggle]` directive on any element and its click event will trigger the toggle.
 
 Example:
 

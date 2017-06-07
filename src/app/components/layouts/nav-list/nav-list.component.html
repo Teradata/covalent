@@ -6,6 +6,9 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
     <a md-list-item>
       <md-icon md-list-avatar>view_compact</md-icon>
@@ -75,6 +78,12 @@
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>
+                  <h3 md-line><code><![CDATA[<button md-icon-button td-menu-button>]]></code></h3>
+                  <p md-line>menu button always at the left </p>
+                  <p md-line>(can be used to toggle main sidenav with <code>[tdLayoutToggle]</code>)</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
                   <h3 md-line><code><![CDATA[<md-nav-list td-sidenav-content>]]></code></h3>
                   <p md-line>The list items wrapper</p>
                 </md-list-item>
@@ -135,6 +144,9 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+                <button md-icon-button td-menu-button>
+                  <md-icon>menu</md-icon>
+                </button>
                 <md-nav-list td-sidenav-content
                              (click)="!media.query('gt-sm') && navList.close()">
                   <a md-list-item>
