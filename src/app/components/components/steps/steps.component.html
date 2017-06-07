@@ -50,14 +50,14 @@
                 <ng-template td-step-label><span>Basic Usage (template)</span></ng-template>
                 Include any content you like for an active stepper
               </td-step>
-              <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled">
+              <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
                 This step is required!
                 <ng-template td-step-actions>
                   <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
                   <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
                 </ng-template>
               </td-step>
-              <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled" disableRipple>
+              <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
                 Mark this step complete and get a summary
                 <ng-template td-step-summary>
                   Use an optional step summary to summarize the info in this step
