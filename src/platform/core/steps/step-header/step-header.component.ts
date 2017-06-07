@@ -15,6 +15,12 @@ export class TdStepHeaderComponent {
   @Input('number') number: number;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect on header is disabled.
+   */
+  @Input('disableRipple') disableRipple: boolean;
+
+  /**
    * active?: boolean
    * Sets for active/inactive states on header.
    */

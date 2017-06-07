@@ -217,12 +217,12 @@
 
 <md-card>
   <md-card-title>Expansion panel with header template</md-card-title>
-  <md-card-subtitle>replace the entire header as needed</md-card-subtitle>
+  <md-card-subtitle>replace the entire header as needed and disable ripple</md-card-subtitle>
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
       <ng-template md-tab-label>Demo</ng-template>
-        <td-expansion-panel>
+        <td-expansion-panel disableRipple>
           <ng-template td-expansion-panel-header>
             <md-toolbar color="accent">
               <span>Custom td-expansion-panel-header</span>
@@ -270,7 +270,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-expansion-panel>
+            <td-expansion-panel disableRipple>
               <ng-template td-expansion-panel-header>
                 <md-toolbar color="accent">
                   <span>Custom td-expansion-panel-header</span>

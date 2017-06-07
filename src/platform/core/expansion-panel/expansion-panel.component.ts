@@ -48,6 +48,7 @@ export class TdExpansionPanelSummaryComponent {}
 })
 export class TdExpansionPanelComponent {
 
+  private _disableRipple: boolean = false;
   private _expand: boolean = false;
   private _disabled: boolean = false;
 
@@ -69,12 +70,24 @@ export class TdExpansionPanelComponent {
   @Input() sublabel: string;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect for this component is disabled.
+   */
+  @Input('disableRipple')
+  set disableRipple(disableRipple: boolean) {
+    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+  }
+  get disableRipple(): boolean {
+    return this._disableRipple;
+  }
+
+  /**
    * expand?: boolean
    * Toggles [TdExpansionPanelComponent] between expand/collapse.
    */
   @Input('expand')
   set expand(expand: boolean) {
-    this._setExpand(expand);
+    this._setExpand(<any>expand === 'true' || expand === true);
   }
   get expand(): boolean {
     return this._expand;

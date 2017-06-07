@@ -3,13 +3,8 @@ $step-circle: 24px;
 .td-step-header {
   position: relative;
   outline: none;
-  &:focus,
-  &:hover {
+  &:hover:not(.mat-disabled) {
     cursor: pointer;
-  }
-  &.mat-disabled {
-    background: none;
-    cursor: auto;
   }
   .td-step-header-content {
     height: 72px;
