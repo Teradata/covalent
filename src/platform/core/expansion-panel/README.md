@@ -56,3 +56,24 @@ Example for HTML usage:
   ... add content that
 </td-expansion-panel>
 ```
+
+# td-expansion-panel-group
+
+`td-expansion-panel-group` is used to group expansion panel components.
+
+It adds margin between them when expanded following the material spec.
+
+## Usage
+
+Example for HTML usage:
+
+```html
+<td-expansion-panel-group>
+  <td-expansion-panel>
+    ..content
+  </td-expansion-panel>
+  <td-expansion-panel>
+    ..content
+  </td-expansion-panel>
+</td-expansion-panel-group>
+```
