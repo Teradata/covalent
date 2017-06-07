@@ -76,7 +76,6 @@ export class TdStepComponent implements OnInit {
    */
   @Input('disableRipple')
   set disableRipple(disableRipple: boolean) {
-    console.log(disableRipple);
     this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
   }
   get disableRipple(): boolean {
