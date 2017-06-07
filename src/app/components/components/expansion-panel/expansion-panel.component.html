@@ -72,6 +72,61 @@
 </md-card>
 
 <md-card>
+  <md-card-title>Grouped Expansion panels</md-card-title>
+  <md-card-subtitle>Add margin animation between grouped expansion panels</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <td-expansion-panel-group>
+        <td-expansion-panel label="Label goes here">
+          <div class="md-padding">
+            <h3 class="md-subhead">md-padding class</h3>
+          </div>
+        </td-expansion-panel>
+        <td-expansion-panel label="Another label goes here">
+          <div class="md-padding">
+            <h3 class="md-subhead">md-padding class</h3>
+          </div>
+        </td-expansion-panel>
+        <td-expansion-panel label="Yet another label goes here">
+          <div class="md-padding">
+            <h3 class="md-subhead">md-padding class</h3>
+          </div>
+        </td-expansion-panel>
+      </td-expansion-panel-group>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-expansion-panel-group>
+              <td-expansion-panel label="Label goes here">
+                <div class="md-padding">
+                  <h3 class="md-subhead">md-padding class</h3>
+                </div>
+              </td-expansion-panel>
+              <td-expansion-panel label="Another label goes here">
+                <div class="md-padding">
+                  <h3 class="md-subhead">md-padding class</h3>
+                </div>
+              </td-expansion-panel>
+              <td-expansion-panel label="Yet another label goes here">
+                <div class="md-padding">
+                  <h3 class="md-subhead">md-padding class</h3>
+                </div>
+              </td-expansion-panel>
+            </td-expansion-panel-group>
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<md-card>
   <md-card-title>Expansion panel with summary and templates</md-card-title>
   <md-card-subtitle>Expand to view form, collapse to view summary</md-card-subtitle>
   <md-divider></md-divider>
