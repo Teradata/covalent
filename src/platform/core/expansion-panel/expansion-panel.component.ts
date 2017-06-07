@@ -73,11 +73,11 @@ export class TdExpansionPanelComponent {
    * Whether the ripple effect for this component is disabled.
    */
   @Input('disableRipple')
-  get disableRipple(): boolean {
-    return this._disableRipple;
-  }
   set disableRipple(disableRipple: boolean) {
     this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+  }
+  get disableRipple(): boolean {
+    return this._disableRipple;
   }
 
   /**

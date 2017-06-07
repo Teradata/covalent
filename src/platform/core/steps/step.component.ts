@@ -42,6 +42,7 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
 })
 export class TdStepComponent implements OnInit {
 
+  private _disableRipple: boolean = false;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
   private _disabled: boolean = false;
@@ -70,12 +71,25 @@ export class TdStepComponent implements OnInit {
   @Input('sublabel') sublabel: string;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect for this component is disabled.
+   */
+  @Input('disableRipple')
+  set disableRipple(disableRipple: boolean) {
+    console.log(disableRipple);
+    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+  }
+  get disableRipple(): boolean {
+    return this._disableRipple;
+  }
+
+  /**
    * active?: boolean
    * Toggles [TdStepComponent] between active/deactive.
    */
   @Input('active')
   set active(active: boolean) {
-    this._setActive(active);
+    this._setActive(<any>active === 'true' || active === true);
   }
   get active(): boolean {
     return this._active;

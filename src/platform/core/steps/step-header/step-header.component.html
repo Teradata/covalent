@@ -1,7 +1,7 @@
 <div class="td-step-header"
       [class.mat-disabled]="disabled"
       md-ripple
-      [mdRippleDisabled]="disabled"
+      [mdRippleDisabled]="disabled || disableRipple"
       [tabIndex]="disabled ? -1 : 0"
       flex>
   <div class="td-step-header-content"
