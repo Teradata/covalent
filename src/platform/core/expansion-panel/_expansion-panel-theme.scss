@@ -22,8 +22,8 @@
       }
     }
     .td-expansion-panel-header {
-      &:focus,
-      &:hover {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
         background: mat-color($background, 'hover');
       }
       .td-expansion-panel-header-content {
