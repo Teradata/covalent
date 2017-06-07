@@ -1,6 +1,6 @@
 @import 'variables';
 
-body {
+html {
     .mat-card {
         padding: 0;
         margin: 8px;
@@ -15,8 +15,14 @@ body {
             margin: 16px 0 0 15px;
             border-radius: 50%;
         }
-        [md-card-image] {
+        .mat-card-image {
             width: 100%;
+        }
+        .mat-card-image,
+        .mat-card-lg-image,
+        .mat-card-md-image,
+        .mat-card-sm-image,
+        .mat-card-title-group {
             margin: 0;
         }
         md-card-title {
@@ -32,9 +38,69 @@ body {
             padding: $padding;
         }
         &, & .mat-card {
-            & .mat-card-actions:last-child {
+            & .mat-card-actions {
                 padding: $padding / 2;
                 margin: 0;
+            }
+        }
+        .mat-card-actions:last-child {
+            margin-bottom: 0px;
+            padding-bottom: 8px;
+        }
+    }
+    &:not([dir='rtl']) {
+        .mat-card-title-group {
+            .mat-card-image,
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:last-child {
+                    border-top-right-radius: $md-card-radius;
+                    border-bottom-right-radius: $md-card-radius;
+                }
+            }
+        }
+        .mat-card {
+            .mat-card-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-top-right-radius: $md-card-radius;
+                }
+            }
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                }
+            }
+        }
+    }
+    &[dir='rtl'] {
+        .mat-card-title-group {
+            .mat-card-image,
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:last-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-bottom-left-radius: $md-card-radius;
+                }
+            }
+        }
+        .mat-card {
+            .mat-card-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-top-right-radius: $md-card-radius;
+                }
+            }
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:first-child {
+                    border-top-right-radius: $md-card-radius;
+                }
             }
         }
     }
