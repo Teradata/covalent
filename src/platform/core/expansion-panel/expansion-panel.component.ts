@@ -1,4 +1,5 @@
-import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
+         ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
@@ -120,6 +121,11 @@ export class TdExpansionPanelComponent {
    */
   @Output() collapsed: EventEmitter<void> = new EventEmitter<void>();
 
+  constructor(private _renderer: Renderer2,
+              private _elementRef: ElementRef) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel');
+  }
+
   /**
    * Method executed when [TdExpansionPanelComponent] is clicked.
    */
@@ -162,8 +168,10 @@ export class TdExpansionPanelComponent {
     if (this._expand !== newExpand) {
       this._expand = newExpand;
       if (newExpand) {
+        this._renderer.addClass(this._elementRef.nativeElement, 'td-expanded');
         this._onExpanded();
       } else {
+        this._renderer.removeClass(this._elementRef.nativeElement, 'td-expanded');
         this._onCollapsed();
       }
       return true;
