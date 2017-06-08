@@ -744,7 +744,7 @@ class TdChipsBasicTestComponent {
 @Component({
   template: `
       <td-chips [items]="objects" [(ngModel)]="selectedObjects" requireMatch>
-        <ng-template td-basic-chip let-chip="chip">
+        <ng-template td-chip let-chip="chip">
           {{chip.name}}
         </ng-template>
         <ng-template td-autocomplete-option let-option="option">
