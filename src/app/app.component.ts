@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
+import { MdIconRegistry, Dir } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -36,6 +36,8 @@ export class DocsAppComponent implements AfterViewInit {
       title: 'Templates',
     },
   ];
+
+  dir: string;
 
   constructor(private _iconRegistry: MdIconRegistry,
               private _domSanitizer: DomSanitizer,
@@ -75,17 +77,14 @@ export class DocsAppComponent implements AfterViewInit {
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/querygrid.svg'));
+
+    // set direction
+    this.dir = getDirection();
   }
 
   ngAfterViewInit(): void {
     this.media.broadcast();
     this._changeDetectorRef.detectChanges();
-  }
-
-  getDirection(dir: any): string {
-    let direction: string = getDirection();
-    dir.dir = direction;
-    return direction;
   }
 
 }

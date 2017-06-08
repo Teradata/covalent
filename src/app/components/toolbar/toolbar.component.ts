@@ -6,6 +6,8 @@
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
+import { Dir } from '@angular/material';
+
 import { getDirection, setDirection } from '../../utilities/direction';
 
 @Component({
@@ -72,13 +74,17 @@ export class ToolbarComponent {
     },
   ];
 
-  dir: string = getDirection();
+  dir: 'ltr' | 'rtl' = getDirection();
 
   constructor(private _renderer: Renderer2,
-              @Inject(DOCUMENT) private _document: any) {}
+              private _dir: Dir,
+              @Inject(DOCUMENT) private _document: any) {
+    this._dir.dir = this.dir;
+  }
 
   changeDir(dir: 'ltr' | 'rtl'): void {
     this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
+    this._dir.dir = dir;
     setDirection(dir);
   }
 }
