@@ -35,7 +35,7 @@ export class TdMessageComponent implements AfterViewInit {
    * Binding host to tdFadeInOut animation
    */
   @HostBinding('@tdFadeInOut')
-  get fateAnimation(): boolean {
+  get fadeAnimation(): boolean {
     return this._opened;
   }
 
