@@ -63,12 +63,12 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   /**
    * Sets min validation checkup (if supported by element).
    */
-  @Input() minValue: number = undefined;
+  @Input() min: number = undefined;
 
   /**
    * Sets max validation checkup (if supported by element).
    */
-  @Input() maxValue: number = undefined;
+  @Input() max: number = undefined;
 
   /**
    * Sets selections for array elements (if supported by element).
@@ -87,12 +87,12 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
 
   @HostBinding('attr.max')
   get maxAttr(): any {
-    return this.maxValue;
+    return this.max;
   }
 
   @HostBinding('attr.min')
   get minAttr(): any {
-    return this.minValue;
+    return this.min;
   }
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
@@ -110,8 +110,8 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     ref.instance.type = this.type;
     ref.instance._value = this._value;
     ref.instance.required = this.required;
-    ref.instance.min = this.minValue;
-    ref.instance.max = this.maxValue;
+    ref.instance.min = this.min;
+    ref.instance.max = this.max;
     ref.instance.selections = this.selections;
     ref.instance.registerOnChange((value: any) => {
       this.value = value;
