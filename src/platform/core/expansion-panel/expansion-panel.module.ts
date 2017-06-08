@@ -6,8 +6,10 @@ import { MdRippleModule, MdIconModule, PortalModule } from '@angular/material';
 
 import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
          TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent } from './expansion-panel.component';
+import { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 const TD_EXPANSION_PANEL: Type<any>[] = [
+  TdExpansionPanelGroupComponent,
   TdExpansionPanelComponent,
   TdExpansionPanelHeaderDirective,
   TdExpansionPanelLabelDirective,
@@ -16,6 +18,7 @@ const TD_EXPANSION_PANEL: Type<any>[] = [
 ];
 
 export { TdExpansionPanelComponent } from './expansion-panel.component';
+export { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 @NgModule({
   imports: [

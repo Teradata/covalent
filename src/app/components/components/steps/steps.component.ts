@@ -47,6 +47,10 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
     name: 'state?',
     type: 'StepState or ["none" | "required" | "complete"]',
   }, {
+    description: ' Whether the ripple effect for this component is disabled',
+    name: 'disableRipple?',
+    type: 'boolean',
+  }, {
     description: 'Event emitted when [TdStepComponent] is activated.',
     name: 'activated?',
     type: 'function()',

@@ -13,6 +13,7 @@ Properties:
 | `label?` | `string` | Sets label of component header.
 | `sublabel?` | `string` | Sets sublabel of component header.
 | `expand?` | `boolean` | Toggles component between expand/collapse state.
+| `disableRipple?` | `boolean` | Whether the ripple effect for this component is disabled.
 | `expanded?` | `function` | Event emitted when component is expanded.
 | `collapsed?` | `function` | Event emitted when component is collapsed.
 | `toggle?` | `function` | Toggle state of component. Returns "true" if successful, else "false".
@@ -40,7 +41,7 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-expansion-panel label="label" sublabel="sublabel" expand="true|false" disabled="true|false" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()">
+<td-expansion-panel label="label" sublabel="sublabel" expand="true" disabled="false" (expanded)="expandedEvent()" (collapsed)="collapsedEvent()" [disableRipple]="false">
   <ng-template td-expansion-panel-header>
     ... add header content (overrides label and sublabel)
   </ng-template>
@@ -55,4 +56,25 @@ Example for HTML usage:
   </td-expansion-summary>
   ... add content that
 </td-expansion-panel>
+```
+
+# td-expansion-panel-group
+
+`td-expansion-panel-group` is used to group expansion panel components.
+
+It adds margin between them when expanded following the material spec.
+
+## Usage
+
+Example for HTML usage:
+
+```html
+<td-expansion-panel-group>
+  <td-expansion-panel>
+    ..content
+  </td-expansion-panel>
+  <td-expansion-panel>
+    ..content
+  </td-expansion-panel>
+</td-expansion-panel-group>
 ```

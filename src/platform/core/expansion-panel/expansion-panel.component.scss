@@ -1,22 +1,15 @@
 :host {
   display: block;
-  .td-expansion-panel {
-    transition: 400ms all ease;
-    .td-expansion-panel-header {
-      position: relative;
-      outline: none;
-      &:focus,
-      &:hover {
-        cursor: pointer;
-      }
-      &.mat-disabled {
-        background: none;
-        cursor: auto;
-      }
-      .td-expansion-panel-header-content {
-        height: 48px;
-        padding: 0 16px;
-      }
+  .td-expansion-panel-header {
+    position: relative;
+    outline: none;
+    &:focus:not(.mat-disabled),
+    &:hover:not(.mat-disabled) {
+      cursor: pointer;
+    }
+    .td-expansion-panel-header-content {
+      height: 48px;
+      padding: 0 16px;
     }
   }
 }

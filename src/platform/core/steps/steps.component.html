@@ -3,7 +3,8 @@
     <td-step-header class="td-step-horizontal-header"
                     (keydown.enter)="step.toggle()"
                     [number]="index + 1"
-                    [active]="step.active" 
+                    [active]="step.active"
+                    [disableRipple]="step.disableRipple"
                     [disabled]="step.disabled" 
                     [state]="step.state"
                     (click)="step.toggle()">
@@ -19,7 +20,8 @@
                   (keydown.enter)="step.toggle()"
                   [number]="index + 1"
                   [active]="step.active" 
-                  [disabled]="step.disabled" 
+                  [disabled]="step.disabled"
+                  [disableRipple]="step.disableRipple"
                   [state]="step.state"
                   (click)="step.toggle()"
                   *ngIf="isVertical()">
