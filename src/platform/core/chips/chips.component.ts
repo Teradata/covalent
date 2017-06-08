@@ -245,6 +245,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     if (v !== this._value) {
       this._value = v;
       this._length = this._value ? this._value.length : 0;
+      this._changeDetectorRef.markForCheck();
     }
   }
   get value(): any { return this._value; }
