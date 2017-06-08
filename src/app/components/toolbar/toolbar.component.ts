@@ -6,6 +6,10 @@
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
+import { Dir } from '@angular/material';
+
+import { getDirection, setDirection } from '../../utilities/direction';
+
 @Component({
   selector: 'td-toolbar',
   templateUrl: '././toolbar.component.html',
@@ -69,12 +73,18 @@ export class ToolbarComponent {
       title: 'Layouts feature',
     },
   ];
-  dir: string = 'ltr';
-  @Output('changeDir') onChangeDir: EventEmitter<string> = new EventEmitter<string>();
+
+  dir: 'ltr' | 'rtl' = getDirection();
+
   constructor(private _renderer: Renderer2,
-              @Inject(DOCUMENT) private _document: any) {}
-  changeDir(dir: string): void {
+              private _dir: Dir,
+              @Inject(DOCUMENT) private _document: any) {
+    this._dir.dir = this.dir;
+  }
+
+  changeDir(dir: 'ltr' | 'rtl'): void {
     this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
-    this.onChangeDir.emit(this.dir);
+    this._dir.dir = dir;
+    setDirection(dir);
   }
 }

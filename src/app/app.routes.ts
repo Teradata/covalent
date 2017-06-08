@@ -7,6 +7,9 @@ const routes: Routes = [{
     component: HomeComponent,
     path: '',
   }, {
+    component: TemplatesComponent,
+    path: 'templates',
+  }, {
     path: '', loadChildren: './components/docs/docs.module#DocsModule',
   }, {
     path: '', loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
@@ -15,8 +18,7 @@ const routes: Routes = [{
   }, {
     path: '', loadChildren: './components/components/components.module#ComponentsModule',
   }, {
-    component: TemplatesComponent,
-    path: 'templates',
+    path: '**', redirectTo: '/',
   },
 ];
 
