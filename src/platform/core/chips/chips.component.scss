@@ -25,10 +25,20 @@
       cursor: default;
       border-radius: 16px;
       @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
-      .td-basic-chip {
-        min-height: 30px;
+      .td-chip {
+        min-height: 32px;
         font-size: 14px;
         @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
+        [td-chip-avatar] {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 32px;
+          width: 32px;
+          flex-shrink: 0;
+          @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
+          border-radius: 50%;
+        }
       }
       box-sizing: border-box;
       max-width: 100%;

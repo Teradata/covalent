@@ -118,7 +118,7 @@
                   placeholder="Enter autocomplete strings"
                   (inputChange)="filterObjects($event)"
                   requireMatch>
-          <ng-template td-basic-chip let-chip="chip">
+          <ng-template td-chip let-chip="chip">
             <md-icon>location_city</md-icon> {{chip.city}}, (Pop: {{chip.population}})
           </ng-template>
           <ng-template td-autocomplete-option let-option="option">
@@ -141,7 +141,7 @@
                       placeholder="Enter autocomplete strings"
                       (inputChange)="filterObjects($event)"
                       requireMatch>
-              <ng-template td-basic-chip let-chip="chip">
+              <ng-template td-chip let-chip="chip">
                 <md-icon>location_city</md-icon> { {chip.city} }, (Pop: { {chip.population} })
               </ng-template>
               <ng-template td-autocomplete-option let-option="option">
@@ -191,7 +191,7 @@
   </md-tab-group>
 </md-card>
 <md-card>
-  <md-card-title>Chips &amp; async Autocomplete</md-card-title>
+  <md-card-title>Chips &amp; async Autocomplete with template chip avatar</md-card-title>
   <md-card-subtitle>Load autocomplete items asynchronous when typing in the input</md-card-subtitle>
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
@@ -205,6 +205,9 @@
                   placeholder="Enter autocomplete strings"
                   (inputChange)="filterAsync($event)"
                   requireMatch>
+          <ng-template td-chip let-chip="chip">
+            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div> {{chip}}
+          </ng-template>
           <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
         </td-chips>
       </div>
@@ -221,6 +224,9 @@
                       placeholder="Enter autocomplete strings"
                       (inputChange)="filterAsync($event)"
                       requireMatch>
+              <ng-template td-chip let-chip="chip">
+                <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{ {chip.substring(0, 1).toUpperCase()} }</div> {{chip}}
+              </ng-template>
               <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
             </td-chips>
           ]]>
