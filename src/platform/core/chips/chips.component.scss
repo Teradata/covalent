@@ -31,6 +31,7 @@
         @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
         [td-chip-avatar] {
           display: flex;
+          order: -20;
           justify-content: center;
           align-items: center;
           height: 32px;
