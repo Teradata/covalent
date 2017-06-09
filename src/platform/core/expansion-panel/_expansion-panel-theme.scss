@@ -7,23 +7,29 @@
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  // panel
-  td-expansion-panel {
+
+  .td-expansion-panel-group {
+    .td-expansion-panel {
+      transition: 120ms ease-in;
+      &:not(:last-of-type) {
+        &.td-expanded {
+          margin-bottom: $margin;
+        }
+      }
+      &:not(:first-of-type) {
+        &.td-expanded {
+          margin-top: $margin;
+        }
+      }
+    }
+  }
+
+  .td-expansion-panel {
     @include mat-elevation(1);
     background-color: mat-color($background, card);
-    &:not(:last-of-type) {
-      & .td-expanded {
-        margin-bottom: $margin;
-      }
-    }
-    &:not(:first-of-type) {
-      & .td-expanded {
-        margin-top: $margin;
-      }
-    }
     .td-expansion-panel-header {
-      &:focus,
-      &:hover {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
         background: mat-color($background, 'hover');
       }
       .td-expansion-panel-header-content {

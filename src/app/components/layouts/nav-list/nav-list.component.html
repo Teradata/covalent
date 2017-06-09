@@ -1,5 +1,4 @@
 <td-layout-nav-list #navList
-                    #root="$implicit" dir="ltr"
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
                     navigationRoute="/"
@@ -26,8 +25,8 @@
     <button md-icon-button tdLayoutNavListToggle>
       <md-icon>arrow_back</md-icon>
     </button>
-    <span hide-lg flex>Nav List</span>
-    <td-toolbar (changeDir)="root.dir = $event" hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+    <span hide-xs hide-lg flex>Nav List</span>
+    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <md-card>
     <md-card-title>Nav List Layout</md-card-title>

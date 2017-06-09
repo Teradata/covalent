@@ -1,7 +1,7 @@
 <div class="td-step-header"
       [class.mat-disabled]="disabled"
       md-ripple
-      [mdRippleDisabled]="disabled"
+      [mdRippleDisabled]="disabled || disableRipple"
       [tabIndex]="disabled ? -1 : 0"
       flex>
   <div class="td-step-header-content"
@@ -23,7 +23,7 @@
       <md-icon class="mat-warn">warning</md-icon>
     </div>
     <div class="td-step-label-wrapper"
-          [class.mat-disabled]="(!active && !isComplete()) || disabled"
+          [class.mat-inactive]="(!active && !isComplete()) || disabled"
           [class.mat-warn]="isRequired() && !disabled">
       <div class="md-body-2 td-step-label">
         <ng-content select="[td-step-header-label]"></ng-content>

@@ -46,7 +46,7 @@ Example:
 Example for Nav List Layout:
 
 ```html
-<td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px" color="color" navigationRoute="/">
+<td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px" color="primary" navigationRoute="/">
   <button md-icon-button td-menu-button> // can use `[tdLayoutToggle]` to toggle main sidenav
     <md-icon>menu</md-icon>
   </button>
@@ -66,7 +66,7 @@ Example for Nav List Layout:
   <td-layout-footer-inner>
     ... sub footer content
   </td-layout-footer-inner>
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav-list>

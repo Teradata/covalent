@@ -22,14 +22,14 @@
 Example for Card Over Layout / Nav Layout combo:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color">
-  <td-layout-card-over cardTitle="title" cardSubtitle="subtitle" cardWidth="widthIn%" color="color">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="primary">
+  <td-layout-card-over cardTitle="title" cardSubtitle="subtitle" cardWidth="widthIn%" color="primary">
     .. main content
     <div td-after-card>
       .. content after card
     </div>
   </td-layout-card-over>
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav>

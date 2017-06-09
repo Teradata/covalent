@@ -35,7 +35,7 @@ Example:
 Example for Manage List Layout / Nav Layout combo:
 
 ```html
-<td-layout-nav sidenavTitle="title" logo="logo" icon="icon" color="color">
+<td-layout-nav sidenavTitle="title" logo="logo" icon="icon" color="primary">
   <div td-toolbar-content>
     .. main toolbar content
   </div>
@@ -57,7 +57,7 @@ Example for Manage List Layout / Nav Layout combo:
       ... sub footer content
     </td-layout-footer-inner>
   </td-layout-manage-list>
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav>

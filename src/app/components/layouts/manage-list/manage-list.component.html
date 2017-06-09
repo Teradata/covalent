@@ -1,8 +1,8 @@
-<td-layout-nav #root="$implicit" dir="ltr" logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
   <button md-icon-button td-menu-button tdLayoutToggle>
     <md-icon>menu</md-icon>
   </button>
-  <td-toolbar (changeDir)="root.dir = $event"  td-toolbar-content  hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+  <td-toolbar td-toolbar-content  hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   <td-layout-manage-list #manageList
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
