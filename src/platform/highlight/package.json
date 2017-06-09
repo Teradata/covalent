@@ -40,7 +40,7 @@
     "highlight.js": "9.11.0"
   },
   "peerDependencies": {
-    "@angular/common": "^4.1.0",
-    "@angular/core": "^4.1.0"
+    "@angular/common": "^4.2.0",
+    "@angular/core": "^4.2.0"
   }
 }
