@@ -113,6 +113,7 @@ export class LoadingDemoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.toggleDefaultFullscreenDemo();
     this.startDirectives();
   }
 
