@@ -23,7 +23,7 @@ import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
 
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 
-import { GitHubService, InternalDocsService } from './services';
+import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
@@ -77,6 +77,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
       // Configure LOCALE_ID depending on the language set in browser
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },
+    SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
