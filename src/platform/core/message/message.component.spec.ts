@@ -10,14 +10,14 @@ import { By } from '@angular/platform-browser';
 import { TdMessageComponent } from './message.component';
 import { CovalentMessageModule } from './message.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        BrowserAnimationsModule,
+        NoopAnimationsModule,
         CovalentMessageModule,
       ],
       declarations: [
