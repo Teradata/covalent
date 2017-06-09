@@ -1,3 +1,123 @@
+<a name="1.0.0-beta.5"></a>
+# [1.0.0-beta.5 No Name](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-09)
+
+## Breaking Change
+
+#### td-chips
+
+Now that chips have async support and we abstracted the internal filtering mechanism, the developer need to provide their own filter method.
+
+This will help filter anyway you want locally or server side.
+
+e.g.
+
+```html
+<td-chips [items]="filteredStrings"
+          [(ngModel)]="stringsModel"
+          placeholder="Enter autocomplete strings"
+          (inputChange)="filterStrings($event)"
+          requireMatch>
+</td-chips>
+```
+
+
+```typescript
+
+strings: string[] = [
+  'stepper',
+  'expansion-panel',
+  'markdown',
+  'highlight',
+  'loading',
+  'media',
+  'chips',
+  'http',
+  'json-formatter',
+  'pipes',
+  'need more?',
+];
+
+filteredStrings: string[];
+
+stringsModel: string[] = this.strings.slice(0, 6);
+
+ngOnInit(): void {
+  this.filterStrings('');
+}
+
+filterStrings(value: string): void {
+  if (value) {
+    this.filteredStrings = this.strings.filter((item: any) => {
+      return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+    }).filter((filteredItem: any) => {
+      return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+    });
+  }
+}
+```
+
+#### td-expansion-panel
+
+With the introduction of `td-expansion-panel-group`, the margin animation will not be applied unless you group expansion panels with it
+
+e.g.
+
+```html
+<!-- not applied -->
+<td-expansion-panel></td-expansion-panel>
+
+<!-- applied -->
+<td-expansion-panel-group>
+  <td-expansion-panel></td-expansion-panel>
+  <td-expansion-panel></td-expansion-panel>
+  <td-expansion-panel></td-expansion-panel>
+</td-expansion-panel-group>
+```
+
+## Bug Fixes
+
+* **chips:** keep focused state as long as you keep clicking inside the chips context ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184))
+* **data-table:** not throw `(rowClick)` event when clicking on checkbox ([ec1cbd8c962d0e5610b075b6f3655afa589ba121](https://github.com/Teradata/covalent/commit/ec1cbd8c962d0e5610b075b6f3655afa589ba121)), closes [#611](https://github.com/Teradata/covalent/issues/611)
+* **expansion-panel:** only render label and sublabel when its needed ([e62d3bd68553be7cee188c0b761c68d11247f902](https://github.com/Teradata/covalent/commit/e62d3bd68553be7cee188c0b761c68d11247f902))
+* **layout:** use `ScrollDispatcherModule` and leverage `cdkScrollable` in layouts so material components readjust when scrolling ([629d06f161c00f99218708570d6085acbf58ee4f](https://github.com/Teradata/covalent/commit/629d06f161c00f99218708570d6085acbf58ee4f)), closes [#620](https://github.com/Teradata/covalent/issues/620) 
+* **stepper:** horizontal scroll was not appearing when needed in certain cases ([9542139ba7b8e84435b1cda47f875b927787a64a](https://github.com/Teradata/covalent/commit/9542139ba7b8e84435b1cda47f875b927787a64a)), closes [#282](https://github.com/Teradata/covalent/issues/282) 
+* **stepper:** add `cdkScrollable` so material component can hook into it ([9542139ba7b8e84435b1cda47f875b927787a64a](https://github.com/Teradata/covalent/commit/9542139ba7b8e84435b1cda47f875b927787a64a))
+* **styles:** fix sm/md/lg card images in title-group ([dda5d9cc3c5fe5728b9b9b27f8a6afa95f969861](https://github.com/Teradata/covalent/commit/dda5d9cc3c5fe5728b9b9b27f8a6afa95f969861))
+* **theme:** remove duplicate functions that are already part of material ([98eaf28287db5ebe0597804818a99a11fe82b00a](https://github.com/Teradata/covalent/commit/98eaf28287db5ebe0597804818a99a11fe82b00a)), closes [#632](https://github.com/Teradata/covalent/issues/632) 
+
+## Features
+
+* **chips:** new `[chipRemoval]` input to block chips from being removed ([51ba94db1b7adef51a67407fc9db8504678a9af8](https://github.com/Teradata/covalent/commit/51ba94db1b7adef51a67407fc9db8504678a9af8))
+* **chips:**  add `[color]` input to change the color of focused chips, input and underline ([5c2635c6548741442100b98724adcf607c6fb770](https://github.com/Teradata/covalent/commit/5c2635c6548741442100b98724adcf607c6fb770)), closes [#605](https://github.com/Teradata/covalent/issues/605)
+* **chips:** new `[stacked]` input to make chips stack vertically. ([9a18a6314853f35991868cd0260884fa4cc5b3a4](https://github.com/Teradata/covalent/commit/9a18a6314853f35991868cd0260884fa4cc5b3a4))
+* **chips:** ability to use object lists and set templates for both autocomplete and chips ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184))
+* **chips:** abstract the autocomplete filtering and add debounce input (local vs server) ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184)), closes [#252](https://github.com/Teradata/covalent/issues/252), [#359](https://github.com/Teradata/covalent/issues/252), [#359](https://github.com/Teradata/covalent/issues/601)
+* **chips:** add `td-chip-avatar` when using template `td-chip` to mimic a contact chip ([fe9daccb5fd436a3ca527d4e694cc2e02e26f79d](https://github.com/Teradata/covalent/commit/fe9daccb5fd436a3ca527d4e694cc2e02e26f79d))
+* **dependencies:** upgrade to `@angular/material@1.0.0-beta.6` ([629d06f161c00f99218708570d6085acbf58ee4f](https://github.com/Teradata/covalent/commit/629d06f161c00f99218708570d6085acbf58ee4f))
+* **dialog:**  improve `prompt-dialog` a11y by selection text in input when focused ([e9427aaee1520a83326cd242850b525915b7c5fe](https://github.com/Teradata/covalent/commit/e9427aaee1520a83326cd242850b525915b7c5fe)), closes [#616](https://github.com/Teradata/covalent/issues/616) 
+* **expansion-panel:** introducing `td-expansion-panel-group` to only give margin to expansion panels when grouped ([9ae0ba532bbabde6eca8d1b4315667333e83ae35](https://github.com/Teradata/covalent/commit/9ae0ba532bbabde6eca8d1b4315667333e83ae35))
+* **expansion-panel:** add `[disableRipple]` input to disable ripple effect on demand ([33810ce86915c6d1e948e426a6056500d88e6827](https://github.com/Teradata/covalent/commit/33810ce86915c6d1e948e426a6056500d88e6827))
+* **layout:** add `[mode]`, `[opened]` and `[sidenavWidth]` to `td-layout` ([e2172fafdd7ea03f7db1df8d21abea4238e14d65](https://github.com/Teradata/covalent/commit/e2172fafdd7ea03f7db1df8d21abea4238e14d65))
+* **layout:** add `[color]` input to `td-layout-footer` ([e912ef4bed205d7da4743d83c45bce3edf150084](https://github.com/Teradata/covalent/commit/e912ef4bed205d7da4743d83c45bce3edf150084)), closes [#489](https://github.com/Teradata/covalent/issues/489) 
+* **stepper:** add `[disableRipple]` input to disable ripple effect on demand ([33810ce86915c6d1e948e426a6056500d88e6827](https://github.com/Teradata/covalent/commit/33810ce86915c6d1e948e426a6056500d88e6827))
+
+## Performance
+* **all:** make sure all services are singleton when provided ([4544c1a5bcabb1fa3e60b6fe6c2f6e1a5215ab5c](https://github.com/Teradata/covalent/commit/4544c1a5bcabb1fa3e60b6fe6c2f6e1a5215ab5c))
+* **chips:** support `OnPush` change detection ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184))
+* **expansion-panel:** improved animation performance when toggling in group ([9ae0ba532bbabde6eca8d1b4315667333e83ae35](https://github.com/Teradata/covalent/commit/9ae0ba532bbabde6eca8d1b4315667333e83ae35))
+
+
+## Internal
+* **docs:** new landing page and theme ([615a4ee02976f4d0ffa0f0394c562cbdcdce5a25](https://github.com/Teradata/covalent/commit/615a4ee02976f4d0ffa0f0394c562cbdcdce5a25))
+* **docs:** fix rtl/lrt demo in docs ([7874b5b7a371aeffe9d9d239e910ab31c3a79399](https://github.com/Teradata/covalent/commit/7874b5b7a371aeffe9d9d239e910ab31c3a79399))
+* **docs:** add selective preload strategy for lazy loading ([3b4da1cd72b64d20b6f0deb8c7668d785cbd272a](https://github.com/Teradata/covalent/commit/3b4da1cd72b64d20b6f0deb8c7668d785cbd272a))
+* **docs:** improved demos/examples
+* **docs:** make docs render properly in E11 ([a118fb9e9f5b83c830f7be9bc7ea19586e1067f6](https://github.com/Teradata/covalent/commit/a118fb9e9f5b83c830f7be9bc7ea19586e1067f6))
+* **chips:** add more unit tests
+* **validators:** remove max/min validators since angular already has them ([8e9ab29d170f91bc61a54cb07581e0631a576410](https://github.com/Teradata/covalent/commit/8e9ab29d170f91bc61a54cb07581e0631a576410))
+* **stepper:** change internal label class to `mat-inactive` ([bb9331b3dffb93c4e96281c8d9469fa8f12e52e3](https://github.com/Teradata/covalent/commit/bb9331b3dffb93c4e96281c8d9469fa8f12e52e3))
+
+
 <a name="1.0.0-beta.4"></a>
 # [1.0.0-beta.4 Johnny B Goode](https://github.com/Teradata/covalent/tree/v1.0.0-beta.4) (2017-05-16)
 
