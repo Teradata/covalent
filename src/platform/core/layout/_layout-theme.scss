@@ -2,6 +2,9 @@
 @import '../common/styles/theme-functions';
 
 @mixin td-layout-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
@@ -27,5 +30,23 @@
     background: mat-color($background, app-bar);
     color: mat-color($foreground, text);
     @include mat-elevation(2);
+    &.mat-primary {
+      background: mat-color($primary);
+      &, md-icon {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+    &.mat-accent {
+      background: mat-color($accent);
+      &, md-icon {
+        color: mat-color($accent, default-contrast);
+      }
+    }
+    &.mat-warn {
+      background: mat-color($warn);
+      &, md-icon {
+        color: mat-color($warn, default-contrast);
+      }
+    }
   }
 }

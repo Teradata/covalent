@@ -4,6 +4,8 @@
 
 Add the [items] attribute to enable the autocomplete with a list, and [requireMatch] to not allow custom values.
 
+Leverage the templates to create your own chip or contact chip.
+
 ## API Summary
 
 Properties:
@@ -55,8 +57,8 @@ Example for HTML usage:
           (inputChange)="inputChange($event)"
           requireMatch
           stacked>
-  <ng-template td-basic-chip let-chip="chip">
-    {{chip}}
+  <ng-template td-chip let-chip="chip">
+    <div td-chip-avatar>A</div> {{chip}}
   </ng-template>
   <ng-template td-autocomplete-option let-option="option">
     {{option}}

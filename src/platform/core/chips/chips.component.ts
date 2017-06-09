@@ -19,9 +19,9 @@ const noop: any = () => {
 };
 
 @Directive({
-  selector: '[td-basic-chip]ng-template',
+  selector: '[td-chip]ng-template',
 })
-export class TdBasicChipDirective extends TemplatePortalDirective {
+export class TdChipDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
   }
@@ -76,7 +76,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
-  @ContentChild(TdBasicChipDirective) _basicChipTemplate: TdBasicChipDirective;
+  @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
   @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
   @ViewChildren(MdOption) _options: QueryList<MdOption>;
@@ -245,6 +245,7 @@ export class TdChipsComponent implements ControlValueAccessor, DoCheck, OnInit, 
     if (v !== this._value) {
       this._value = v;
       this._length = this._value ? this._value.length : 0;
+      this._changeDetectorRef.markForCheck();
     }
   }
   get value(): any { return this._value; }
