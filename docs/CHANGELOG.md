@@ -80,6 +80,7 @@ e.g.
 * **data-table:** not throw `(rowClick)` event when clicking on checkbox ([ec1cbd8c962d0e5610b075b6f3655afa589ba121](https://github.com/Teradata/covalent/commit/ec1cbd8c962d0e5610b075b6f3655afa589ba121)), closes [#611](https://github.com/Teradata/covalent/issues/611)
 * **expansion-panel:** only render label and sublabel when its needed ([e62d3bd68553be7cee188c0b761c68d11247f902](https://github.com/Teradata/covalent/commit/e62d3bd68553be7cee188c0b761c68d11247f902))
 * **layout:** use `ScrollDispatcherModule` and leverage `cdkScrollable` in layouts so material components readjust when scrolling ([629d06f161c00f99218708570d6085acbf58ee4f](https://github.com/Teradata/covalent/commit/629d06f161c00f99218708570d6085acbf58ee4f)), closes [#620](https://github.com/Teradata/covalent/issues/620) 
+* **media:** make media service not use window directly ([90e16f5d7be080aee1601a2d86e72c47536c3e40](https://github.com/Teradata/covalent/commit/90e16f5d7be080aee1601a2d86e72c47536c3e40))
 * **stepper:** horizontal scroll was not appearing when needed in certain cases ([9542139ba7b8e84435b1cda47f875b927787a64a](https://github.com/Teradata/covalent/commit/9542139ba7b8e84435b1cda47f875b927787a64a)), closes [#282](https://github.com/Teradata/covalent/issues/282) 
 * **stepper:** add `cdkScrollable` so material component can hook into it ([9542139ba7b8e84435b1cda47f875b927787a64a](https://github.com/Teradata/covalent/commit/9542139ba7b8e84435b1cda47f875b927787a64a))
 * **styles:** fix sm/md/lg card images in title-group ([dda5d9cc3c5fe5728b9b9b27f8a6afa95f969861](https://github.com/Teradata/covalent/commit/dda5d9cc3c5fe5728b9b9b27f8a6afa95f969861))
@@ -108,6 +109,10 @@ e.g.
 
 
 ## Internal
+* **animations:** make toggle directive use new animations API ([90e16f5d7be080aee1601a2d86e72c47536c3e40](https://github.com/Teradata/covalent/commit/90e16f5d7be080aee1601a2d86e72c47536c3e40))
+* **animations:** make fade directive use new animations API ([90e16f5d7be080aee1601a2d86e72c47536c3e40](https://github.com/Teradata/covalent/commit/90e16f5d7be080aee1601a2d86e72c47536c3e40))
+* **dependencies:** upgrade to @angular@4.2.0 ([90e16f5d7be080aee1601a2d86e72c47536c3e40](https://github.com/Teradata/covalent/commit/90e16f5d7be080aee1601a2d86e72c47536c3e40))
+* **dependencies:** upgrade to @angular/cli@1.1.0 ([90e16f5d7be080aee1601a2d86e72c47536c3e40](https://github.com/Teradata/covalent/commit/90e16f5d7be080aee1601a2d86e72c47536c3e40))
 * **docs:** new landing page and theme ([615a4ee02976f4d0ffa0f0394c562cbdcdce5a25](https://github.com/Teradata/covalent/commit/615a4ee02976f4d0ffa0f0394c562cbdcdce5a25))
 * **docs:** fix rtl/lrt demo in docs ([7874b5b7a371aeffe9d9d239e910ab31c3a79399](https://github.com/Teradata/covalent/commit/7874b5b7a371aeffe9d9d239e910ab31c3a79399))
 * **docs:** add selective preload strategy for lazy loading ([3b4da1cd72b64d20b6f0deb8c7668d785cbd272a](https://github.com/Teradata/covalent/commit/3b4da1cd72b64d20b6f0deb8c7668d785cbd272a))
