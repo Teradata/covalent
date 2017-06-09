@@ -81,7 +81,6 @@ describe('Component: Message', () => {
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       fixture.detectChanges();
-
       expect(fixture.debugElement.query(By.css('.td-message-label'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('.td-message-sublabel'))).toBeFalsy();
       done();
@@ -95,8 +94,6 @@ describe('Component: Message', () => {
     component.color = 'primary';
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
-
       expect(fixture.debugElement.query(By.css('.td-message-wrapper')).query(By.css('button'))).toBeTruthy();
       done();
     });
@@ -111,20 +108,43 @@ describe('Component: Message', () => {
     component.color = 'primary';
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
 
       message.close();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
 
         message.open();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
+          done();
+        });
+      });
+    });
+  });
+
+  it('should not render the component, open it and then close it', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
+    let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
+    let message: TdMessageComponent = fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance;
+
+    component.label = 'Label';
+    component.color = 'primary';
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
+
+      message.open();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
+
+        message.close();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
           done();
         });
       });
@@ -140,22 +160,38 @@ describe('Component: Message', () => {
     component.color = 'primary';
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
 
       message.toggle();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
 
         message.toggle();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
           done();
         });
+      });
+    });
+  });
+
+  it('should render the component, then [opened] to false', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
+    let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
+    
+    component.opened = true;
+    component.label = 'Label';
+    component.color = 'primary';
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
+      component.opened = false;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
+        done();
       });
     });
   });
@@ -168,19 +204,16 @@ describe('Component: Message', () => {
     component.color = 'primary';
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
 
       component.opened = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeTruthy();
 
         component.opened = false;
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
           expect(fixture.debugElement.query(By.css('.td-message-wrapper'))).toBeFalsy();
           done();
         });
