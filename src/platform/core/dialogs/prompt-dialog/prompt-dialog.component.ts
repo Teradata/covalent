@@ -28,7 +28,7 @@ export class TdPromptDialogComponent implements AfterViewInit {
    * Method executed when input is focused
    * Selects all text
    */
-  handleInputFocus(event: FocusEvent): void {
+  handleInputFocus(): void {
     (<HTMLInputElement>this._input.nativeElement).select();
   }
 

@@ -6,11 +6,11 @@
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
       <div layout="row" layout-align="start center" flex>
-        <div class="td-basic-chip" layout="row" layout-align="start center" flex>
-          <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
+        <div class="td-chip" layout="row" layout-align="start center" flex>
+          <span *ngIf="!_chipTemplate?.templateRef">{{chip}}</span>
           <ng-template
-            *ngIf="_basicChipTemplate?.templateRef"
-            [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
+            *ngIf="_chipTemplate?.templateRef"
+            [ngTemplateOutlet]="_chipTemplate?.templateRef"
             [ngOutletContext]="{ chip: chip }">
           </ng-template>
         </div>
