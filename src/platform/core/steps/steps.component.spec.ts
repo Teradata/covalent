@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentStepsModule, StepState, StepMode } from './steps.module';
 
@@ -19,7 +19,7 @@ describe('Component: Steps', () => {
         TdStepsDynamicTestComponent,
       ],
       imports: [
-        BrowserAnimationsModule,
+        NoopAnimationsModule,
         CovalentStepsModule,
       ],
     });

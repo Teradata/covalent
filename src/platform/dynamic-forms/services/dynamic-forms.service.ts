@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 import { Validators, ValidatorFn, FormControl } from '@angular/forms';
-
-import { CovalentValidators } from '../../core';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -123,11 +121,23 @@ export class TdDynamicFormsService {
       validator = Validators.required;
     }
     if (config.max || config.max === 0) {
-      validator = Validators.compose([validator, CovalentValidators.max(config.max)]);
+      validator = Validators.compose([validator, Validators.max(parseFloat(config.max))]);
     }
     if (config.min || config.min === 0) {
-      validator = Validators.compose([validator, CovalentValidators.min(config.min)]);
+      validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
     return validator;
   }
 }
+
+export function DYNAMIC_FORMS_PROVIDER_FACTORY(
+    parent: TdDynamicFormsService): TdDynamicFormsService {
+  return parent || new TdDynamicFormsService();
+}
+
+export const DYNAMIC_FORMS_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdDynamicFormsService,
+  deps: [[new Optional(), new SkipSelf(), TdDynamicFormsService]],
+  useFactory: DYNAMIC_FORMS_PROVIDER_FACTORY,
+};

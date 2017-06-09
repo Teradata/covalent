@@ -72,7 +72,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
                 { name: 'item', label: 'Item name' },
-                { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
               ];
 
               constructor(private _dialogService: TdDialogService) {}
@@ -267,6 +267,7 @@
               [multiple]="multiple"
               [sortable]="true"
               [sortBy]="sortBy"
+              [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
@@ -305,6 +306,7 @@
               currentPage: number = 1;
               pageSize: number = 5;
               sortBy: string = 'sku';
+              selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
               constructor(private _dataTableService: TdDataTableService) {}

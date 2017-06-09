@@ -34,15 +34,9 @@ const TD_FORMS: Type<any>[] = [
 export { TdAutoTrimDirective };
 
 // Validators
-import { TdMinValidator } from './forms/validators/min/min.validator';
-import { TdMaxValidator } from './forms/validators/max/max.validator';
-
 const TD_VALIDATORS: Type<any>[] = [
-  TdMinValidator,
-  TdMaxValidator,
 ];
 
-export { TdMinValidator, TdMaxValidator };
 export { CovalentValidators } from './forms/validators/validators';
 
 /**

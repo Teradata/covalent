@@ -435,9 +435,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * emits the onRowClickEvent when a row is clicked
    * if clickable is true and selectable is false then select the row
    */
-  handleRowClick(row: any, event: Event, currentSelected: number): void {
+  handleRowClick(row: any, event: Event): void {
     if (this.isClickable) {
-      this.onRowClick.emit({row: row});
+      // ignoring linting rules here because attribute it actually null or not there
+      // can't check for undefined
+      /* tslint:disable-next-line */
+      if (event.srcElement.getAttribute('stopRowClick') === null) {
+        this.onRowClick.emit({row: row});
+      }
     }
   }
 

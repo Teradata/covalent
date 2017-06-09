@@ -34,7 +34,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
-         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule } from '@angular/material';
+         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule,
+         MdProgressBarModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -45,6 +46,8 @@ import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
@@ -92,6 +95,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     MdToolbarModule,
     MdTabsModule,
     MdTooltipModule,
+    MdProgressBarModule,
+    MdAutocompleteModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -116,6 +121,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     NgxChartsModule,
     TranslateModule,
     componentsRoutes,
+    ToolbarModule,
   ],
 })
 export class ComponentsModule {}

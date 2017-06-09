@@ -23,12 +23,12 @@
 Example for Nav Layout:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color" navigationRoute="/">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="primary" navigationRoute="/">
   <div td-toolbar-content>
     .. main toolbar content
   </div>
   ... main content
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav>

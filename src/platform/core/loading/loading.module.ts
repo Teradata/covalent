@@ -4,8 +4,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdProgressBarModule, MdProgressSpinnerModule, OverlayModule, PortalModule } from '@angular/material';
 
-import { TdLoadingService } from './services/loading.service';
-import { TdLoadingFactory } from './services/loading.factory';
+import { TdLoadingService, LOADING_PROVIDER } from './services/loading.service';
+import { TdLoadingFactory, LOADING_FACTORY_PROVIDER } from './services/loading.factory';
 import { TdLoadingDirective } from './directives/loading.directive';
 import { TdLoadingComponent } from './loading.component';
 
@@ -36,8 +36,8 @@ export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
     TD_LOADING,
   ],
   providers: [
-    TdLoadingFactory,
-    TdLoadingService,
+    LOADING_FACTORY_PROVIDER,
+    LOADING_PROVIDER,
   ],
   entryComponents: [
     TD_LOADING_ENTRY_COMPONENTS,

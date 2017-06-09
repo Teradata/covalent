@@ -1,5 +1,8 @@
 import { Component, Directive, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef, ViewChild,
-         HostBinding, ChangeDetectorRef } from '@angular/core';
+         HostBinding, HostListener, ChangeDetectorRef } from '@angular/core';
+
+import { TdCollapseAnimation } from '../common/animations/collapse/collapse.animation';
+import { TdFadeInOutAnimation } from '../common/animations/fade/fadeInOut.animation';
 
 @Directive({
   selector: '[tdMessageContainer]',
@@ -12,19 +15,44 @@ export class TdMessageContainerDirective {
   selector: 'td-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
+  animations: [
+    TdCollapseAnimation(100),
+    TdFadeInOutAnimation(100),
+  ],
 })
 export class TdMessageComponent implements AfterViewInit {
 
   private _color: string;
   private _opened: boolean = true;
+  private _hidden: boolean = false;
+  private _animating: boolean = false;
   private _initialized: boolean = false;
 
   @ViewChild(TdMessageContainerDirective) _childElement: TdMessageContainerDirective;
   @ViewChild(TemplateRef) _template: TemplateRef<any>;
 
+  /**
+   * Binding host to tdFadeInOut animation
+   */
+  @HostBinding('@tdFadeInOut')
+  get fadeAnimation(): boolean {
+    return this._opened;
+  }
+
+  /**
+   * Binding host to tdCollapse animation
+   */
+  @HostBinding('@tdCollapse')
+  get collapsedAnimation(): boolean {
+    return !this._opened;
+  }
+
+  /**
+   * Binding host to display style when hidden
+   */
   @HostBinding('style.display')
   get hidden(): string {
-    return !this._opened ? 'none' : undefined;
+    return this._hidden ? 'none' : undefined;
   }
 
   /**
@@ -102,37 +130,51 @@ export class TdMessageComponent implements AfterViewInit {
   }
 
   /**
-   * Initializes the component and attaches the content if [opened] was true.
+   * Detach element when close animation is finished to set animating state to false
+   * hidden state to true and detach element from DOM
+   */
+  @HostListener('@tdCollapse.done')
+  animationDoneListener(): void {
+    if (!this._opened) {
+      this._hidden = true;
+      this._detach();
+    }
+    this._animating = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * Initializes the component and attaches the content.
    */
   ngAfterViewInit(): void {
     Promise.resolve(undefined).then(() => {
       if (this._opened) {
-        this._childElement.viewContainer.createEmbeddedView(this._template);
-        this._changeDetectorRef.markForCheck();
+        this._attach();
       }
       this._initialized = true;
     });
   }
 
   /**
-   * Renders the message on screen.
+   * Renders the message on screen
+   * Validates if there is an animation currently and if its already opened
    */
   open(): void {
-    if (!this._opened) {
+    if (!this._opened && !this._animating) {
       this._opened = true;
-      this._childElement.viewContainer.createEmbeddedView(this._template);
-      this._changeDetectorRef.markForCheck();
+      this._attach();
+      this._startAnimationState();
     }
   }
 
   /**
    * Removes the message content from screen.
+   * Validates if there is an animation currently and if its already closed
    */
   close(): void {
-    if (this._opened) {
+    if (this._opened && !this._animating) {
       this._opened = false;
-      this._childElement.viewContainer.clear();
-      this._changeDetectorRef.markForCheck();
+      this._startAnimationState();
     }
   }
 
@@ -145,5 +187,30 @@ export class TdMessageComponent implements AfterViewInit {
     } else {
       this.open();
     }
+  }
+
+  /**
+   * Method to set the state before starting an animation
+   */
+  private _startAnimationState(): void {
+    this._animating = true;
+    this._hidden = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * Method to attach template to DOM
+   */
+  private _attach(): void {
+    this._childElement.viewContainer.createEmbeddedView(this._template);
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * Method to detach template from DOM
+   */
+  private _detach(): void {
+    this._childElement.viewContainer.clear();
+    this._changeDetectorRef.markForCheck();
   }
 }

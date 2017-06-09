@@ -43,25 +43,19 @@ describe('Service: Loading', () => {
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register();
       fixture.detectChanges();
-      setTimeout(() => {
+      fixture.whenStable().then(() => {
+        expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
+        loadingService.resolve();
+        fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
-          expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
-          loadingService.resolve();
-          fixture.detectChanges();
-          setTimeout(() => {
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
-              done();
-            });
-          }, 200);
+          expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
+          done();
         });
-      }, 200);
+      });
     })();
   });
 
@@ -77,25 +71,19 @@ describe('Service: Loading', () => {
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register('name');
       fixture.detectChanges();
-      setTimeout(() => {
+      fixture.whenStable().then(() => {
+        expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
+        loadingService.resolve('name');
+        fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
-          expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
-          loadingService.resolve('name');
-          fixture.detectChanges();
-          setTimeout(() => {
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
-              done();
-            });
-          }, 200);
+          expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
+          done();
         });
-      }, 200);
+      });
     })();
   });
 
@@ -111,25 +99,19 @@ describe('Service: Loading', () => {
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       loadingService.register('name');
       fixture.detectChanges();
-      setTimeout(() => {
+      fixture.whenStable().then(() => {
+        expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
+        loadingService.resolve('name');
+        fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
-          expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
-          loadingService.resolve('name');
-          fixture.detectChanges();
-          setTimeout(() => {
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
-              done();
-            });
-          }, 200);
+          expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
+          done();
         });
-      }, 200);
+      });
     })();
   });
 
@@ -188,25 +170,19 @@ describe('Service: Loading', () => {
       loadingService.register();
       loadingService.register();
       fixture.detectChanges();
-      setTimeout(() => {
+      fixture.whenStable().then(() => {
+        expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
+        loadingService.resolveAll();
+        fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
-          expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
-          expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
-          loadingService.resolveAll();
-          fixture.detectChanges();
-          setTimeout(() => {
-            fixture.detectChanges();
-            fixture.whenStable().then(() => {
-              expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
-              done();
-            });
-          }, 200);
+          expect(overlayContainerElement.querySelector('td-loading')).toBeFalsy();
+          done();
         });
-      }, 200);
+      });
     })();
   });
 });
