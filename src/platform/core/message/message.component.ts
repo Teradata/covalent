@@ -158,7 +158,9 @@ export class TdMessageComponent implements AfterViewInit {
    */
   ngAfterViewInit(): void {
     Promise.resolve(undefined).then(() => {
-      this._attach();
+      if (this._opened) {
+        this._attach();
+      }
       this._initialized = true;
     });
   }
