@@ -29,145 +29,147 @@
     <td-readme-loader td-after-card resourceUrl="platform/core/layout/README.md"></td-readme-loader>
     <div td-after-card>
       <h3 class="md-title">Flexbox Layout (&quot;grid&quot;)</h3>
-      <td-expansion-panel expand="true" label="Flexbox Introduction" sublabel="what powers this layout?">
-        <div class="md-padding">
-          <p>We've ported the CSS3 Flexbox layout system from <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank">Angular-Material v1</a>, so those <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank">docs</a> shoud be your starting point. </p>
-          <p>In a nutshell, the Flexbox layout gives you:</p>
-          <ul>
-            <li>Horizontal row layout for child elements</li>
-            <li>Vertical column layout for child elements</li>
-            <li>Alignment &amp; ordering for child elements</li>
-            <li>Any &quot;flex&quot; elastic width for child elements</li>
-            <li>Conditionally responsive versions for xs,sm,md,lg,xl breakpoints</li>
-          </ul>
-        </div>
-      </td-expansion-panel>
-      <td-expansion-panel label="Rows &amp; Columns" sublabel="directional parent containers">
-        <div class="md-padding">
-          <p>Horizontal row container:</p>
-          <div layout="row">
-            <div flex class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex class="bgc-purple-600 tc-purple-50">child</div>
+      <td-expansion-panel-group>
+        <td-expansion-panel expand="true" label="Flexbox Introduction" sublabel="what powers this layout?">
+          <div class="md-padding">
+            <p>We've ported the CSS3 Flexbox layout system from <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank">Angular-Material v1</a>, so those <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank">docs</a> shoud be your starting point. </p>
+            <p>In a nutshell, the Flexbox layout gives you:</p>
+            <ul>
+              <li>Horizontal row layout for child elements</li>
+              <li>Vertical column layout for child elements</li>
+              <li>Alignment &amp; ordering for child elements</li>
+              <li>Any &quot;flex&quot; elastic width for child elements</li>
+              <li>Conditionally responsive versions for xs,sm,md,lg,xl breakpoints</li>
+            </ul>
           </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="row">
-                <div flex>child</div>
-                <div flex>child</div>
-                <div flex>child</div>
-              </div>
-            ]]>
-          </td-highlight>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <p>Vertical column container:</p>
-          <div layout="column">
-            <div flex class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex class="bgc-purple-600 tc-purple-50">child</div>
+        </td-expansion-panel>
+        <td-expansion-panel label="Rows &amp; Columns" sublabel="directional parent containers">
+          <div class="md-padding">
+            <p>Horizontal row container:</p>
+            <div layout="row">
+              <div flex class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="row">
+                  <div flex>child</div>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                </div>
+              ]]>
+            </td-highlight>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <p>Vertical column container:</p>
+            <div layout="column">
+              <div flex class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="column">
+                  <div flex>child</div>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                </div>
+              ]]>
+            </td-highlight>
           </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="column">
-                <div flex>child</div>
-                <div flex>child</div>
-                <div flex>child</div>
-              </div>
-            ]]>
-          </td-highlight>
-        </div>
-      </td-expansion-panel>
-      <td-expansion-panel label="Layout margin &amp; padding" sublabel="for child elements">
-        <div class="md-padding">
-          <p>Layout margin</p>
-          <div layout="row" layout-margin>
-            <div flex class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex class="bgc-purple-600 tc-purple-50">child</div>
+        </td-expansion-panel>
+        <td-expansion-panel label="Layout margin &amp; padding" sublabel="for child elements">
+          <div class="md-padding">
+            <p>Layout margin</p>
+            <div layout="row" layout-margin>
+              <div flex class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="row" layout-margin>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                </div>
+              ]]>
+            </td-highlight>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <p>Layout padding</p>
+            <div layout="row" layout-padding>
+              <div flex class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="row" layout-padding>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                  <div flex>child</div>
+                </div>
+              ]]>
+            </td-highlight>
           </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="row" layout-margin>
-                <div flex>child</div>
-                <div flex>child</div>
-                <div flex>child</div>
-              </div>
-            ]]>
-          </td-highlight>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <p>Layout padding</p>
-          <div layout="row" layout-padding>
-            <div flex class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex class="bgc-purple-600 tc-purple-50">child</div>
+        </td-expansion-panel>
+        <td-expansion-panel label="Responsive widths" sublabel="for child elements">
+          <div class="md-padding">
+            <p>40/flex/30 (notice how <code>flex</code> fills remaining space):</p>
+            <div layout="row" layout-padding>
+              <div flex="40" class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex="30" class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="row" layout-padding>
+                  <div flex="40">child</div>
+                  <div flex>child</div>
+                  <div flex="30">child</div>
+                </div>
+              ]]>
+            </td-highlight>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <p>Responsive widths (will change as you resize browser):</p>
+            <div layout="row" layout-padding>
+              <div flex-gt-xs="40" flex-md="50" class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
+              <div flex-gt-xs="30" flex-md="20" flex-lg="10" class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout="row" layout-padding>
+                  <div flex-gt-xs="40" flex-md="50">child</div>
+                  <div flex>child</div>
+                  <div flex-gt-xs="30" flex-md="20" flex-lg="10">child</div>
+                </div>
+              ]]>
+            </td-highlight>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <p>Typical responsive layout (just collapse on xs which is mobile)</p>
+            <div layout-gt-xs="row">
+              <div flex-gt-xs="60" class="bgc-teal-600 tc-teal-50">child</div>
+              <div flex-gt-xs="40" class="bgc-purple-600 tc-purple-50">child</div>
+            </div>
+            <md-divider class="push-top push-bottom"></md-divider>
+            <td-highlight lang="html">
+              <![CDATA[
+                <div layout-gt-xs="row">
+                  <div flex-gt-xs="60">child</div>
+                  <div flex-gt-xs="40">child</div>
+                </div>
+              ]]>
+            </td-highlight>
           </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="row" layout-padding>
-                <div flex>child</div>
-                <div flex>child</div>
-                <div flex>child</div>
-              </div>
-            ]]>
-          </td-highlight>
-        </div>
-      </td-expansion-panel>
-      <td-expansion-panel label="Responsive widths" sublabel="for child elements">
-        <div class="md-padding">
-          <p>40/flex/30 (notice how <code>flex</code> fills remaining space):</p>
-          <div layout="row" layout-padding>
-            <div flex="40" class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex="30" class="bgc-purple-600 tc-purple-50">child</div>
-          </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="row" layout-padding>
-                <div flex="40">child</div>
-                <div flex>child</div>
-                <div flex="30">child</div>
-              </div>
-            ]]>
-          </td-highlight>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <p>Responsive widths (will change as you resize browser):</p>
-          <div layout="row" layout-padding>
-            <div flex-gt-xs="40" flex-md="50" class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
-            <div flex-gt-xs="30" flex-md="20" flex-lg="10" class="bgc-purple-600 tc-purple-50">child</div>
-          </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout="row" layout-padding>
-                <div flex-gt-xs="40" flex-md="50">child</div>
-                <div flex>child</div>
-                <div flex-gt-xs="30" flex-md="20" flex-lg="10">child</div>
-              </div>
-            ]]>
-          </td-highlight>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <p>Typical responsive layout (just collapse on xs which is mobile)</p>
-          <div layout-gt-xs="row">
-            <div flex-gt-xs="60" class="bgc-teal-600 tc-teal-50">child</div>
-            <div flex-gt-xs="40" class="bgc-purple-600 tc-purple-50">child</div>
-          </div>
-          <md-divider class="push-top push-bottom"></md-divider>
-          <td-highlight lang="html">
-            <![CDATA[
-              <div layout-gt-xs="row">
-                <div flex-gt-xs="60">child</div>
-                <div flex-gt-xs="40">child</div>
-              </div>
-            ]]>
-          </td-highlight>
-        </div>
-      </td-expansion-panel>
+        </td-expansion-panel>
+      </td-expansion-panel-group>
     </div>
   </td-layout-card-over>
 </td-layout-nav>

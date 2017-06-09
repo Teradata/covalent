@@ -10,14 +10,14 @@ import { By } from '@angular/platform-browser';
 import { TdPagingBarComponent } from './paging-bar.component';
 import { CovalentPagingModule } from './paging.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: PagingBar', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        BrowserAnimationsModule,
+        NoopAnimationsModule,
         CovalentPagingModule,
       ],
       declarations: [

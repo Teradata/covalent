@@ -17,60 +17,60 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Keyboard support for selection',
-      icon: 'grid_on',
-      route: 'components/data-table',
-      title: 'Data Table feature',
-    }, {
-      description: 'Row click events',
-      icon: 'grid_on',
-      route: 'components/data-table',
-      title: 'Data Table feature',
-    }, {
-      description: 'Hide columns & exclude from filtering',
-      icon: 'grid_on',
-      route: 'components/data-table',
-      title: 'Data Table feature',
-    }, {
-      description: 'Async & boolean loading',
-      icon: 'hourglass_empty',
-      route: 'components/loading',
-      title: 'Loading features',
-    }, {
-      description: 'Component for alerts/info/warning/error/success',
-      icon: 'info_outline',
-      route: 'components/message',
-      title: 'New Messages component',
-    }, {
-      description: 'Numbered page links to jump ahead',
-      icon: 'swap_horiz',
-      route: 'components/paging',
-      title: 'Pagination feature',
-    }, {
-      description: 'Disable adding of chips',
+      description: 'Agnostic filtering with (inputChange) and [debounce] (local vs server side)',
       icon: 'label',
-      route: 'components/chips',
+      route: '/components/chips',
       title: 'Chips feature',
     }, {
-      description: 'New formData property',
-      icon: 'attach_file',
-      route: 'components/file-upload',
-      title: 'File service feature',
+      description: 'object list and template support and new [td-chip-avatar] attribute',
+      icon: 'label',
+      route: '/components/chips',
+      title: 'Chips feature',
     }, {
-      description: 'New contentReady event binding',
-      icon: 'chrome_reader_mode',
-      route: 'components/markdown',
-      title: 'Markdown feature',
+      description: 'new [chipRemoval] input',
+      icon: 'label',
+      route: '/components/chips',
+      title: 'Chips feature',
     }, {
-      description: 'New contentReady event binding',
-      icon: 'code',
-      route: 'components/highlight',
-      title: 'Highlight feature',
+      description: 'new [color] input',
+      icon: 'label',
+      route: '/components/chips',
+      title: 'Chips feature',
     }, {
-      description: 'Make navigationRoute optional',
+      description: 'new [stacked] input',
+      icon: 'label',
+      route: '/components/chips',
+      title: 'Chips feature',
+    }, {
+      description: 'new td-expansion-panel-group component',
+      icon: 'open_with',
+      route: '/components/expansion-panel',
+      title: 'Expansion panel feature',
+    }, {
+      description: 'new [disableRipple] input',
+      icon: 'open_with',
+      route: '/components/expansion-panel',
+      title: 'Expansion panel feature',
+    }, {
+      description: 'new [mode], [opened], [sidenavWidth] inputs for td-layout',
       icon: 'view_quilt',
-      route: 'components/layouts',
+      route: '/layouts',
       title: 'Layouts feature',
+    }, {
+      description: 'new [color] input for td-layout-footer',
+      icon: 'view_quilt',
+      route: '/layouts',
+      title: 'Layouts feature',
+    }, {
+      description: 'animation when opening/closing',
+      icon: 'info_outline',
+      route: '/components/message',
+      title: 'Message feature',
+    }, {
+      description: 'new [disableRipple] input',
+      icon: 'view_list',
+      route: '/components/steps',
+      title: 'Stepper feature',
     },
   ];
 

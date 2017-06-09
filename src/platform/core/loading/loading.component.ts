@@ -154,25 +154,19 @@ export class TdLoadingComponent {
     this.value = 0;
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
-    setTimeout(() => {
-      this._animationOut.next(undefined);
-    });
+    this._animationOut.next(undefined);
   }
 
   /**
    * Starts in animation and returns an observable for completition event.
    */
   startInAnimation(): Observable<any> {
-    setTimeout(() => {
-      this.animation = true;
-      // Check for changes for `OnPush` change detection
-      this._changeDetectorRef.markForCheck();
-    });
     /* need to switch back to the selected mode, so we have saved it in another variable
     *  and then recover it. (issue with protractor)
     */
     this._mode = this._defaultMode;
     // Check for changes for `OnPush` change detection
+    this.animation = true;
     this._changeDetectorRef.markForCheck();
     return this._animationIn.asObservable();
   }
