@@ -55,9 +55,9 @@ export class TdFileService {
         return subscriber.error('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
       }      
 
-      xhr.upload.onprogress = (event: ProgressEvent) => {
+      xhr.onprogress = (event: ProgressEvent) => {
         let progress: number = 0;
-        if (event.lengthComputable) {
+        if (event.total > 0) {
           progress = Math.round(event.loaded / event.total * 100);
         }
         this._progressSubject.next(progress);
