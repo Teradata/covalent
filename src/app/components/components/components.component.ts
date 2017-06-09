@@ -1,4 +1,5 @@
-import { Component, HostBinding, AfterViewInit} from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -135,10 +136,12 @@ export class ComponentsComponent implements AfterViewInit {
     title: 'NGX-Translate',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 }
