@@ -130,16 +130,6 @@ export class TdMessageComponent implements AfterViewInit {
   }
 
   /**
-   * Listening to animation start to set animating state and not hidden
-   */
-  @HostListener('@tdCollapse.start')
-  animationStartListener(): void {
-    this._animating = true;
-    this._hidden = false;
-    this._changeDetectorRef.markForCheck();
-  }
-
-  /**
    * Detach element when close animation is finished to set animating state to false
    * hidden state to true and detach element from DOM
    */
@@ -173,6 +163,7 @@ export class TdMessageComponent implements AfterViewInit {
     if (!this._opened && !this._animating) {
       this._opened = true;
       this._attach();
+      this._startAnimationState();
     }
   }
 
@@ -183,6 +174,7 @@ export class TdMessageComponent implements AfterViewInit {
   close(): void {
     if (this._opened && !this._animating) {
       this._opened = false;
+      this._startAnimationState();
     }
   }
 
@@ -195,6 +187,15 @@ export class TdMessageComponent implements AfterViewInit {
     } else {
       this.open();
     }
+  }
+
+  /**
+   * Method to set the state before starting an animation
+   */
+  private _startAnimationState(): void {
+    this._animating = true;
+    this._hidden = false;
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
