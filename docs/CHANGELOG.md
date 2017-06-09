@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.5"></a>
-# [1.0.0-beta.5 No Name](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-09)
+# [1.0.0-beta.5 Blackhole Sun](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-09)
 
 ## Breaking Change
 
