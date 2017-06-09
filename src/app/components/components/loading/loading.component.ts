@@ -113,7 +113,6 @@ export class LoadingDemoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.toggleDefaultFullscreenDemo();
     this.startDirectives();
   }
 
@@ -144,7 +143,7 @@ export class LoadingDemoComponent implements OnInit {
     this.replaceTemplateSyntaxDisabled = true;
     this._loadingService.register('replaceTemplateSyntax');
     let value: number = 0;
-    let interval: number = setInterval(() => {
+    let interval: any = setInterval(() => {
       this._loadingService.setValue('replaceTemplateSyntax', value);
       value = value + 10;
       if (value > 100) {
