@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { TemplatesComponent } from './components/templates/templates.component';
-import {SelectivePreloadingStrategyService} from './services';
+import { SelectivePreloadingStrategyService } from './services';
 
 const routes: Routes = [{
     component: HomeComponent,
@@ -11,28 +11,16 @@ const routes: Routes = [{
     component: TemplatesComponent,
     path: 'templates',
   }, {
-
-    /**
-     * preload: true loads the module immediately
-     */
-    path: '', data: { preload: true, }, loadChildren: './components/docs/docs.module#DocsModule',
+    // preload: true loads the module immediately
+    path: '', data: { preload: false, }, loadChildren: './components/docs/docs.module#DocsModule',
   }, {
-
-    /**
-     * preload: true loads the module immediately
-     */
-    path: '', data: { preload: true, }, loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
+    // preload: true loads the module immediately
+    path: '', data: { preload: false, }, loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
   }, {
-
-    /**
-     * preload: true loads the module immediately
-     */
-    path: '', data: { preload: true, }, loadChildren: './components/layouts/layouts.module#LayoutsModule',
+    // preload: true loads the module immediately
+    path: '', data: { preload: false, }, loadChildren: './components/layouts/layouts.module#LayoutsModule',
   }, {
-
-    /**
-     * preload: true loads the module immediately
-     */
+    // preload: true loads the module immediately
     path: '', data: { preload: true, }, loadChildren: './components/components/components.module#ComponentsModule',
   }, {
     path: '**', redirectTo: '/',
