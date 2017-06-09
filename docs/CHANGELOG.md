@@ -100,6 +100,7 @@ e.g.
 * **expansion-panel:** add `[disableRipple]` input to disable ripple effect on demand ([33810ce86915c6d1e948e426a6056500d88e6827](https://github.com/Teradata/covalent/commit/33810ce86915c6d1e948e426a6056500d88e6827))
 * **layout:** add `[mode]`, `[opened]` and `[sidenavWidth]` to `td-layout` ([e2172fafdd7ea03f7db1df8d21abea4238e14d65](https://github.com/Teradata/covalent/commit/e2172fafdd7ea03f7db1df8d21abea4238e14d65))
 * **layout:** add `[color]` input to `td-layout-footer` ([e912ef4bed205d7da4743d83c45bce3edf150084](https://github.com/Teradata/covalent/commit/e912ef4bed205d7da4743d83c45bce3edf150084)), closes [#489](https://github.com/Teradata/covalent/issues/489)
+* **message:** add animation when opening/closing ([5a858c7a94bd3247487684a7473a2657105dbe2a](https://github.com/Teradata/covalent/commit/5a858c7a94bd3247487684a7473a2657105dbe2a))
 * **stepper:** add `[disableRipple]` input to disable ripple effect on demand ([33810ce86915c6d1e948e426a6056500d88e6827](https://github.com/Teradata/covalent/commit/33810ce86915c6d1e948e426a6056500d88e6827))
 
 ## Performance

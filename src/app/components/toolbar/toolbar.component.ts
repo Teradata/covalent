@@ -62,6 +62,11 @@ export class ToolbarComponent {
       route: '/layouts',
       title: 'Layouts feature',
     }, {
+      description: 'animation when opening/closing',
+      icon: 'info_outline',
+      route: '/components/message',
+      title: 'Message feature',
+    }, {
       description: 'new [disableRipple] input',
       icon: 'view_list',
       route: '/components/steps',
