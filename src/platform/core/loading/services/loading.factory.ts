@@ -87,6 +87,7 @@ export class TdLoadingFactory {
       if (registered > 0 && !loading) {
         loading = true;
         loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
         loadingRef.componentRef.instance.startOutAnimation();
@@ -120,6 +121,7 @@ export class TdLoadingFactory {
           viewContainerRef.insert(loadingRef.componentRef.hostView, 0);
         }
         loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
