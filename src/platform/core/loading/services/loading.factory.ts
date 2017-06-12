@@ -52,6 +52,7 @@ export class TdLoadingFactory {
         loadingRef.componentRef = overlayRef.attach(new ComponentPortal(TdLoadingComponent));
         this._mapOptions(options, loadingRef.componentRef.instance);
         loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {

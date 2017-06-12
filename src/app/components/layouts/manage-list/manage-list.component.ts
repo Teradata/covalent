@@ -20,10 +20,8 @@ export class ManageListComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    Promise.resolve(undefined).then(() => {
-      this.media.broadcast();
-      this._changeDetectorRef.markForCheck();
-    });
+    this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 
 }
