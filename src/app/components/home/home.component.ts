@@ -1,5 +1,4 @@
 import { Component, HostBinding, AfterViewInit } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
 import { GitHubService } from '../../services';
 
 import { fadeAnimation } from '../../app.animations';
@@ -72,12 +71,10 @@ export class HomeComponent implements AfterViewInit {
     },
   ];
 
-  constructor(private _gitHubService: GitHubService,
-              public media: TdMediaService) {
+  constructor(private _gitHubService: GitHubService) {
   }
 
   ngAfterViewInit(): void {
-    this.media.broadcast();
     this._gitHubService.queryStartCount().subscribe((starsCount: number) => {
       this.starCount = starsCount;
     });

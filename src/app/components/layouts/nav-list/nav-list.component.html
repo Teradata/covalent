@@ -157,15 +157,20 @@
           <h3 class="md-title">Typescript</h3>
           <td-highlight lang="typescript">
             <![CDATA[
+              import { ChangeDetectorRef } from '@angular/core';
               import { TdMediaService } from '@covalent/core';
               ...
               export class MyComponent {
 
-                constructor(public media: TdMediaService) {}
+                constructor(private _changeDetectorRef: ChangeDetectorRef,
+                            public media: TdMediaService) {}
 
                 ngAfterViewInit(): void {
                   // broadcast to all listener observables when loading the page
                   this.media.broadcast();
+                  // force a new change detection cycle since change detections
+                  // have finished when `ngAfterViewInit` is executed
+                  this._changeDetectorRef.detectChanges();
                 }
               }
             ]]>
