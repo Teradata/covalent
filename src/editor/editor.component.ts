@@ -74,8 +74,11 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
    * Set if using Electron mode when object is created
    */
   constructor() {
-    /* tslint:disable-next-line */
-    this._isElectronApp = (window['process']) ? true : false;
+    // since accessing the window object need this check so serverside rendering doesn't fail
+    if (typeof document === 'object' && !!document) {
+        /* tslint:disable-next-line */
+        this._isElectronApp = (window['process']) ? true : false;
+    }
   }
 
   // no getter for editor Value because need to use async call
@@ -441,7 +444,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
    * initMonaco method creates the monaco editor into the @ViewChild('editorContainer')
    * and emit the onEditorInitialized event.  This is only used in the browser version.
    */
-  initMonaco(): void {
+  private initMonaco(): void {
     let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
     this._editor = monaco.editor.create(containerDiv, {
