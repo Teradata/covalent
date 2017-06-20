@@ -17,7 +17,7 @@ declare const process: any;
 })
 export class TdEditorComponent implements OnInit, AfterViewInit {
 
-  private _editorStyle: string = 'border:1px solid grey;';
+  private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
   private _appPath: string = '';
   private _isElectronApp: boolean = false;
   private _webview: any;
@@ -181,6 +181,21 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   @Input('editorStyle')
   set editorStyle(editorStyle: string) {
     this._editorStyle = editorStyle;
+    if (this._webview) {
+        this._webview.send('setEditorStyle', {language: this._language, theme: this._theme, style: editorStyle});
+    } else {
+        let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+        containerDiv.setAttribute('style', editorStyle);
+        let currentValue: string = this._editor.getValue();
+        this._editor.dispose();
+        let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
+        this._editor = monaco.editor.create(myDiv, {
+            value: currentValue,
+            language: this._language,
+            theme: this._theme,
+        });
+    }
+    
   }
   get editorStyle(): string {
     return this._editorStyle;
@@ -273,6 +288,19 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
                 // set the value of the editor from what was sent from the mainview
                 ipcRenderer.on('setEditorContent', function(event, data){
                     editor.setValue(data);
+                });
+
+                // set the style of the editor container div
+                ipcRenderer.on('setEditorStyle', function(event, data){
+                    var editorDiv = document.getElementById('${this._editorInnerContainer}');
+                    editorDiv.style = data.style;
+                    var currentValue = editor.getValue();
+                    editor.dispose();
+                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), {
+                        value: currentValue,
+                        language: data.language,
+                        theme: data.theme,
+                    });
                 });
 
                 // set the options of the editor from what was sent from the mainview
@@ -414,8 +442,9 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
    * and emit the onEditorInitialized event.  This is only used in the browser version.
    */
   initMonaco(): void {
-    let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
-    this._editor = monaco.editor.create(myDiv, {
+    let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+    containerDiv.id = this._editorInnerContainer;
+    this._editor = monaco.editor.create(containerDiv, {
         value: this._value,
         language: this.language,
         theme: this._theme,

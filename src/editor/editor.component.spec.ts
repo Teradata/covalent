@@ -139,4 +139,33 @@ describe('Component: App', () => {
     })();
   });
 
+  it('should set the editor style', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdEditorComponent);
+      let component: TdEditorComponent = fixture.debugElement.componentInstance;
+      if (component.isElectronApp) {
+        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.onEditorInitialized.subscribe(() => {
+          component.editorStyle = 'width:100%;height:500px;border:10px solid green;';
+          fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              fixture.changeDetectorRef.detectChanges();
+              if (component.isElectronApp) {
+                expect(component.editorStyle).toBe('width:100%;height:500px;border:10px solid green;');
+              } else {
+                let containerDiv: HTMLDivElement = component._editorContainer.nativeElement;
+                expect(containerDiv.getAttribute('style')).toBe('width:100%;height:500px;border:10px solid green;');
+              }
+              done();
+          });
+        });
+        component.ngAfterViewInit();
+        });
+    })();
+  });
+
 });
