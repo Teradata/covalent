@@ -175,8 +175,8 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
     return this._state === StepState.Complete;
   }
 
-  onDisabledSet(): void {
-    if (this.disabled && this._active) {
+  onDisabledChange(v: boolean): void {
+    if (v && this._active) {
       this._active = false;
       this._onDeactivated();
     }

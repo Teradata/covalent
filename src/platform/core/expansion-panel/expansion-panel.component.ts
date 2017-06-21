@@ -148,8 +148,8 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
   }
 
   /** Method executed when the disabled value changes */
-  onDisabledSet(): void {
-    if (this.disabled && this._expand) {
+  onDisabledChange(v: boolean): void {
+    if (v && this._expand) {
       this._expand = false;
       this._onCollapsed();
     }

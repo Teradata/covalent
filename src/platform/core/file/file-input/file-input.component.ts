@@ -113,8 +113,8 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements Contr
     this._renderer.setProperty(this.inputElement, 'value', '');
   }
 
-  onDisabledSet(): void {
-    if (this.disabled) {
+  onDisabledChange(v: boolean): void {
+    if (v) {
       this.clear();
     }
   }

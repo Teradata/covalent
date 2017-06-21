@@ -1,11 +1,15 @@
 import { Constructor } from './constructor';
 
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
 /** Interface to implement when applying the disabled mixin */
 export interface ICanDisable {
   disabled: boolean;
+  onDisabledChange(v: boolean): void;
 }
 
-/** Mixin to augment a directive with a `disabled` property. */
+/** Mixin to augment a component or directive with a `disabled` property. */
 export function mixinDisabled<T extends Constructor<{}>>(base: T): Constructor<ICanDisable> & T {
   return class extends base {
     private _disabled: boolean = false;
@@ -14,15 +18,18 @@ export function mixinDisabled<T extends Constructor<{}>>(base: T): Constructor<I
       super(...args);
     }
 
-    public get disabled(): boolean {
+    get disabled(): boolean {
       return this._disabled;
     }
-    public set disabled(value: boolean) {
-      this._disabled = <any>value !== '' ? (<any>value === 'true' || value === true) : true;
-      this.onDisabledSet();
+    set disabled(value: boolean) {
+      let newValue: boolean = <any>value !== '' ? (<any>value === 'true' || value === true) : true;
+      if (this._disabled !== newValue) {
+        this._disabled = newValue;
+        this.onDisabledChange(this._disabled);
+      }
     }
 
-    onDisabledSet(): void {
+    onDisabledChange(v: boolean): void {
       /** NOT IMPLEMENTED, this needs to be overriden by subclasses if needed */
     }
   };

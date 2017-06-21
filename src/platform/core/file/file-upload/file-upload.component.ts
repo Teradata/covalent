@@ -113,8 +113,8 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
     this._changeDetectorRef.markForCheck();
   }
 
-  onDisabledSet(): void {
-    if (this.disabled) {
+  onDisabledChange(v: boolean): void {
+    if (v) {
       this.cancel();
     }
   }
