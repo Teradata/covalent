@@ -16,7 +16,7 @@
     "postinstall": "webdriver-manager update",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
-    "test": "ng test --code-coverage --single-run",
+    "test": "rm -rf ./dist && ng build && ng test --code-coverage",
     "coverage-win": "start chrome ./coverage/index.html",
     "coverage-mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",

@@ -28,6 +28,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
   private _editorNodeModuleDirOverride: string = '';
   private _editor: any;
+  private _componentInitialized: boolean = false;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -78,6 +79,9 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
     if (typeof document === 'object' && !!document) {
         /* tslint:disable-next-line */
         this._isElectronApp = (window['process']) ? true : false;
+        if (this._isElectronApp) {
+            this._appPath = electron.remote.app.getAppPath().split('\\').join('/');
+        }
     }
   }
 
@@ -89,18 +93,20 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
    * Returns the content within the editor
    */
   getValue(): Observable<string> {
-      if (this._webview) {
-        this._webview.send('getEditorContent');
-        return this._subject.asObservable();
-      } else {
-        this._value = this._editor.getValue();
-        setTimeout(() => {
-            this._subject.next(this._value);
-            this._subject.complete();
-            this._subject = new Subject();
-            this.onEditorValueChange.emit(undefined);
-        });
-        return this._subject.asObservable();
+      if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('getEditorContent');
+            return this._subject.asObservable();
+        } else {
+            this._value = this._editor.getValue();
+            setTimeout(() => {
+                this._subject.next(this._value);
+                this._subject.complete();
+                this._subject = new Subject();
+                this.onEditorValueChange.emit(undefined);
+            });
+            return this._subject.asObservable();
+        }
       }
   }
 
@@ -111,19 +117,21 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   @Input('language')
   set language(language: string) {
     this._language = language;
-    if (this._webview) {
-        this._webview.send('setLanguage', language);
-    } else {
-        let currentValue: string = this._editor.getValue();
-        this._editor.dispose();
-        let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
-        this._editor = monaco.editor.create(myDiv, {
-            value: currentValue,
-            language: language,
-            theme: this._theme,
-        });
-        this.onEditorConfigurationChanged.emit(undefined);
-        this.onEditorLanguageChanged.emit(undefined);
+    if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('setLanguage', language);
+        } else {
+            let currentValue: string = this._editor.getValue();
+            this._editor.dispose();
+            let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
+            this._editor = monaco.editor.create(myDiv, {
+                value: currentValue,
+                language: language,
+                theme: this._theme,
+            });
+            this.onEditorConfigurationChanged.emit(undefined);
+            this.onEditorLanguageChanged.emit(undefined);
+        }
     }
   }
   get language(): string {
@@ -135,45 +143,47 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
    * Registers a custom Language within the editor
    */
   registerLanguage(language: any): void {
-      if (this._webview) {
-        this._webview.send('registerLanguage', language);
-      } else {
-        let currentValue: string = this._editor.getValue();
-        this._editor.dispose();
+      if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('registerLanguage', language);
+        } else {
+            let currentValue: string = this._editor.getValue();
+            this._editor.dispose();
 
-        for (let i: number = 0; i < language.completionItemProvider.length; i++) {
-            let provider: any = language.completionItemProvider[i];
-            /* tslint:disable-next-line */
-            provider.kind = eval(provider.kind);
+            for (let i: number = 0; i < language.completionItemProvider.length; i++) {
+                let provider: any = language.completionItemProvider[i];
+                /* tslint:disable-next-line */
+                provider.kind = eval(provider.kind);
+            }
+            for (let i: number = 0; i < language.monarchTokensProvider.length; i++) {
+                let monarchTokens: any = language.monarchTokensProvider[i];
+                /* tslint:disable-next-line */
+                monarchTokens[0] = eval(monarchTokens[0]);
+            }
+            monaco.languages.register({ id: language.id });
+
+            monaco.languages.setMonarchTokensProvider(language.id, {
+                tokenizer: {
+                    root: language.monarchTokensProvider
+                },
+            });
+
+            // Define a new theme that constains only rules that match this language
+            monaco.editor.defineTheme(language.customTheme.id, language.customTheme.theme);
+            this._theme = language.customTheme.id;
+
+            monaco.languages.registerCompletionItemProvider(language.id, {
+                provideCompletionItems: () => {
+                    return language.completionItemProvider;
+                },
+            });
+
+            let css: HTMLStyleElement = document.createElement('style');
+            css.type = 'text/css';
+            css.innerHTML = language.monarchTokensProviderCSS;
+            document.body.appendChild(css);
+            this.onEditorConfigurationChanged.emit(undefined);
         }
-        for (let i: number = 0; i < language.monarchTokensProvider.length; i++) {
-            let monarchTokens: any = language.monarchTokensProvider[i];
-            /* tslint:disable-next-line */
-            monarchTokens[0] = eval(monarchTokens[0]);
-        }
-        monaco.languages.register({ id: language.id });
-
-        monaco.languages.setMonarchTokensProvider(language.id, {
-            tokenizer: {
-                root: language.monarchTokensProvider
-            },
-        });
-
-        // Define a new theme that constains only rules that match this language
-        monaco.editor.defineTheme(language.customTheme.id, language.customTheme.theme);
-        this._theme = language.customTheme.id;
-
-        monaco.languages.registerCompletionItemProvider(language.id, {
-            provideCompletionItems: () => {
-                return language.completionItemProvider;
-            },
-        });
-
-        let css: HTMLStyleElement = document.createElement('style');
-        css.type = 'text/css';
-        css.innerHTML = language.monarchTokensProviderCSS;
-        document.body.appendChild(css);
-        this.onEditorConfigurationChanged.emit(undefined);
       }
   }
 
@@ -184,21 +194,22 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   @Input('editorStyle')
   set editorStyle(editorStyle: string) {
     this._editorStyle = editorStyle;
-    if (this._webview) {
-        this._webview.send('setEditorStyle', {language: this._language, theme: this._theme, style: editorStyle});
-    } else {
-        let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
-        containerDiv.setAttribute('style', editorStyle);
-        let currentValue: string = this._editor.getValue();
-        this._editor.dispose();
-        let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
-        this._editor = monaco.editor.create(myDiv, {
-            value: currentValue,
-            language: this._language,
-            theme: this._theme,
-        });
+    if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('setEditorStyle', {language: this._language, theme: this._theme, style: editorStyle});
+        } else {
+            let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
+            containerDiv.setAttribute('style', editorStyle);
+            let currentValue: string = this._editor.getValue();
+            this._editor.dispose();
+            let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
+            this._editor = monaco.editor.create(myDiv, {
+                value: currentValue,
+                language: this._language,
+                theme: this._theme,
+            });
+        }
     }
-    
   }
   get editorStyle(): string {
     return this._editorStyle;
@@ -211,11 +222,13 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   @Input('theme')
   set theme(theme: string) {
     this._theme = theme;
-    if (this._webview) {
-        this._webview.send('setEditorOptions', {'theme': theme});
-    } else {
-        this._editor.updateOptions(theme);
-        this.onEditorConfigurationChanged.emit(undefined);
+    if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('setEditorOptions', {'theme': theme});
+        } else {
+            this._editor.updateOptions(theme);
+            this.onEditorConfigurationChanged.emit(undefined);
+        }
     }
   }
   get theme(): string {
@@ -231,7 +244,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
 
 /**
  * setEditorNodeModuleDirOverride function that overrides where to look
- * for the editor node_module. Used in tests or anywhere that the
+ * for the editor node_module. Used in tests for Electron or anywhere that the
  * node_modules are not in the expected location.
  */
   setEditorNodeModuleDirOverride(dirOverride: string): void {
@@ -252,7 +265,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
                 <link rel="stylesheet" data-name="vs/editor/editor.main" 
-                    href="file://${this._editorNodeModuleDirOverride}/node_modules/monaco-editor/min/vs/editor/editor.main.css">
+                    href="file://${this._editorNodeModuleDirOverride}/assets/monaco/vs/editor/editor.main.css">
             </head>
             <body style="height:100%;width: 100%;margin: 0;padding: 0;overflow: hidden;">
             <div id="${this._editorInnerContainer}" style="width:100%;height:100%;${this._editorStyle}"></div>
@@ -260,13 +273,13 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
                 // Get the ipcRenderer of electron for communication
                 const {ipcRenderer} = require('electron');
             </script>
-            <script src="file://${this._editorNodeModuleDirOverride}/node_modules/monaco-editor/min/vs/loader.js"></script>
+            <script src="file://${this._editorNodeModuleDirOverride}/assets/monaco/vs/loader.js"></script>
             <script>
                 var editor;
                 var theme = '${this._theme}';
 
                 require.config({
-                    baseUrl: 'file://${this._editorNodeModuleDirOverride}/node_modules/monaco-editor/min'
+                    baseUrl: 'file://${this._appPath}/assets/monaco'
                 });
                 self.module = undefined;
                 self.process.browser = true;
@@ -384,9 +397,9 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
         // take the html content for the webview and base64 encode it and use as the src tag
         this._webview.setAttribute('src', 'data:text/html;base64,' + window.btoa(editorHTML));
         this._webview.setAttribute('style', 'display:inline-flex; width:100%; height:100%');
-         // this._webview.addEventListener('dom-ready', () => {
-         //    this._webview.openDevTools();
-         // });
+        //  this._webview.addEventListener('dom-ready', () => {
+        //     this._webview.openDevTools();
+        //  });
 
         // Process the data from the webview
         this._webview.addEventListener('ipc-message', (event: any) => {
@@ -411,6 +424,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
         // append the webview to the DOM
         this._editorContainer.nativeElement.appendChild(this._webview);
     }
+    this._componentInitialized = true;
   }
 
   /**

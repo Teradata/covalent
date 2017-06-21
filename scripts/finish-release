@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+echo "Pushed tag to main repo"
+git push --tags
+
+echo "Pushing changes into develop"
+git checkout develop
+git push origin develop
+
+echo "Pushing changes into master"
+git checkout master
+git push origin master
+
+echo "Return to develop branch"
+git checkout develop

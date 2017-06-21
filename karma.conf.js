@@ -3,7 +3,7 @@
 
 // set the current location so can use external node_modules in tests
 var path = require('path');
-process.env['NODE_MODULE_DIR'] = __dirname.replace(new RegExp('\\' + path.sep, 'g'), '/');
+process.env['NODE_MODULE_DIR'] = __dirname.replace(new RegExp('\\' + path.sep, 'g'), '/') + "/dist";
 
 module.exports = function (config) {
   var configuration = {
