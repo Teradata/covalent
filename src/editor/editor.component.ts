@@ -226,7 +226,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
         if (this._webview) {
             this._webview.send('setEditorOptions', {'theme': theme});
         } else {
-            this._editor.updateOptions(theme);
+            this._editor.updateOptions({'theme': theme});
             this.onEditorConfigurationChanged.emit(undefined);
         }
     }
