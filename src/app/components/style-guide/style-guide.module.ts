@@ -22,7 +22,7 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModu
          MdTooltipModule, MdProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentExpansionPanelModule, CovalentDialogsModule } from '../../../platform/core';
+         CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
@@ -70,6 +70,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CovalentExpansionPanelModule,
     CovalentHighlightModule,
     CovalentDialogsModule,
+    CovalentMessageModule,
     styleGuideRoutes,
     ToolbarModule,
   ],

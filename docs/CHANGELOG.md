@@ -1,3 +1,16 @@
+<a name="1.0.0-beta.5-1"></a>
+# [1.0.0-beta.5-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-12)
+
+Small patch release to address a loading component issue and documentation updates with `angular@4.2.0` change detection since creating components or changing inputs on component life hooks cycles need to explicitly call a change detection cycle by developers.
+
+## Bug Fixes
+* **loading:** when using the full screen loader in `ngOnInit` it fails ([349d108033f13e1bce5491cc0185b69c596b17f7](https://github.com/Teradata/covalent/commit/349d108033f13e1bce5491cc0185b69c596b17f7))
+
+## Internal
+* **docs:** footer & expansion theme, update logo docs ([574e6d184864dbcc46206210ec7c9699807f9c90](https://github.com/Teradata/covalent/commit/574e6d184864dbcc46206210ec7c9699807f9c90)), closes [#578](https://github.com/Teradata/covalent/issues/578)
+* **docs:** update documentation with the way to use `media.broadcast` with layouts in `ngAfterViewInit` ([2606b754a303271c41b1d4dd7c37bf24b5b2d4c6](https://github.com/Teradata/covalent/commit/2606b754a303271c41b1d4dd7c37bf24b5b2d4c6)), closes [#684](https://github.com/Teradata/covalent/issues/684)
+
+
 <a name="1.0.0-beta.5"></a>
 # [1.0.0-beta.5 Blackhole Sun](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-09)
 
