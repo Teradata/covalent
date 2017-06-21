@@ -32,6 +32,32 @@ Covalent-Editor is an Angular Component for text and code editing based on Coval
 ```
 <td-editor theme="vs" flex language="sql"></td-editor>
 ```
+* Import the covalent-editor component into app.module.ts
+```
+import { CovalentEditorModule } from '@covalent/editor';
+...
+
+imports: [
+    CovalentEditorModule.forRoot(),
+
+...
+```
+
+## API
+
+### Events
+* onEditorInitialized
+* onEditorConfigurationChanged
+* onEditorLanguageChanged
+* onEditorValueChange
+
+### Getters and Setters
+* value
+* language
+* registerLanguage
+* editorStyle
+* theme
+* isElectronApp
 
 ---
 
