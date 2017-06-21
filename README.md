@@ -13,15 +13,25 @@ Covalent-Editor is an Angular Component for text and code editing based on Coval
 
 ## Setup
 
-* Ensure you have Node 6.9.1 or up and NPM 3+ installed.
-* Install Angular CLI `npm i -g @angular/cli@latest`
-* Install Typescript `npm i -g typescript`
-* Install TSLint `npm install -g tslint`
-* Install Protractor for e2e testing `npm install -g protractor`
-* Install Node packages `npm i`
-* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
-* Run local build `ng serve` or `ng serve --aot`
-* If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
+* Add the following dependency to package.json
+```
+"dependencies": {
+    "@covalent/editor": "^1.0.0-alpha.1"
+  },
+```
+* **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
+```
+{
+  "apps": [
+    {
+      "assets": [
+        { "glob": "**/*", "input": "../node_modules/monaco-editor/min", "output": "./assets/monaco/" }
+      ],
+```
+* Add the following tag to html file
+```
+<td-editor theme="vs" flex language="sql"></td-editor>
+```
 
 ---
 
