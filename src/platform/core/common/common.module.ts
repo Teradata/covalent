@@ -21,6 +21,12 @@ export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
 export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 
 /**
+ * BEHAVIORS
+ */
+
+export { ICanDisable, mixinDisabled } from './behaviors/disabled.mixin';
+
+/**
  * FORMS
  */
 

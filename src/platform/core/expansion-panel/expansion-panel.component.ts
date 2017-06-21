@@ -3,7 +3,7 @@ import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, Con
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
-import { TdCollapseAnimation } from '../common/common.module';
+import { TdCollapseAnimation, ICanDisable, mixinDisabled } from '../common/common.module';
 
 @Directive({
   selector: '[td-expansion-panel-header]ng-template',
@@ -38,19 +38,24 @@ export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
 })
 export class TdExpansionPanelSummaryComponent {}
 
+class TdExpansionPanelBase {}
+
+/* tslint:disable-next-line */
+const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
+
 @Component({
   selector: 'td-expansion-panel',
   styleUrls: ['./expansion-panel.component.scss' ],
   templateUrl: './expansion-panel.component.html',
+  inputs: ['disabled'],
   animations: [
     TdCollapseAnimation(),
   ],
 })
-export class TdExpansionPanelComponent {
+export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable  {
 
   private _disableRipple: boolean = false;
   private _expand: boolean = false;
-  private _disabled: boolean = false;
 
   @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
   @ContentChild(TdExpansionPanelLabelDirective) expansionPanelLabel: TdExpansionPanelLabelDirective;
@@ -94,22 +99,6 @@ export class TdExpansionPanelComponent {
   }
 
   /**
-   * disabled?: boolean
-   * Disables icon and header, blocks click event and sets [TdStepComponent] to deactive if 'true'.
-   */
-  @Input('disabled')
-  set disabled(disabled: boolean) {
-    if (disabled && this._expand) {
-      this._expand = false;
-      this._onCollapsed();
-    }
-    this._disabled = disabled;
-  }
-  get disabled(): boolean {
-    return this._disabled;
-  }
-
-  /**
    * expanded?: function
    * Event emitted when [TdExpansionPanelComponent] is expanded.
    */
@@ -123,6 +112,7 @@ export class TdExpansionPanelComponent {
 
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef) {
+    super();
     this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel');
   }
 
@@ -157,12 +147,20 @@ export class TdExpansionPanelComponent {
     return this._setExpand(false);
   }
 
+  /** Method executed when the disabled value changes */
+  onDisabledSet(): void {
+    if (this.disabled && this._expand) {
+      this._expand = false;
+      this._onCollapsed();
+    }
+  }
+
   /**
    * Method to change expand state internally and emit the [onExpanded] event if 'true' or [onCollapsed]
    * event if 'false'. (Blocked if [disabled] is 'true')
    */
   private _setExpand(newExpand: boolean): boolean {
-    if (this._disabled) {
+    if (this.disabled) {
       return false;
     }
     if (this._expand !== newExpand) {
