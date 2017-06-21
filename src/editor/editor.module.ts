@@ -6,7 +6,7 @@ import { TdEditorComponent } from './editor.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     TdEditorComponent,

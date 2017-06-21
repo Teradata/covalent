@@ -164,7 +164,7 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
 
             monaco.languages.setMonarchTokensProvider(language.id, {
                 tokenizer: {
-                    root: language.monarchTokensProvider
+                    root: language.monarchTokensProvider,
                 },
             });
 
