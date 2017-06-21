@@ -8,6 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        { "glob": "**/*", "input": "../node_modules/monaco-editor/min", "output": "./assets/monaco/" }
       ],
       "index": "index.html",
       "main": "main.ts",
