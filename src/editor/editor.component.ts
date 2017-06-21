@@ -466,6 +466,8 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
         language: this.language,
         theme: this._theme,
     });
-    this.onEditorInitialized.emit(undefined);
+    setTimeout(() => {
+        this.onEditorInitialized.emit(undefined);
+    });
   }
 }
