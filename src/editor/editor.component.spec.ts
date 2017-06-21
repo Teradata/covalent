@@ -45,8 +45,7 @@ describe('Component: App', () => {
             });
           });
         });
-        component.ngAfterViewInit();
-        });
+      });
     })();
   });
 
@@ -134,7 +133,6 @@ describe('Component: App', () => {
           component.theme = 'myCustomTheme';
           component.language = 'mySpecialLanguage';
         });
-        component.ngAfterViewInit();
       });
     })();
   });
@@ -163,8 +161,7 @@ describe('Component: App', () => {
               done();
           });
         });
-        component.ngAfterViewInit();
-        });
+      });
     })();
   });
 
