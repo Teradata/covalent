@@ -1,6 +1,6 @@
 {
   "name": "@covalent/editor",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "private": true,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "keywords": [

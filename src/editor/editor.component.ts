@@ -57,21 +57,6 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
   @Output('editorValueChange') onEditorValueChange: EventEmitter<void> = new EventEmitter<void>();
 
   /**
-   * value?: string
-   * Value in the Editor after async getEditorContent was called
-   */
-  @Input('value')
-  set value(value: string) {
-    this._value = value;
-    if (this._webview) {
-        this._webview.send('setEditorContent', value);
-    } else {
-        this._editor.setValue(value);
-    }
-    this.onEditorValueChange.emit(undefined);
-  }
-
-  /**
    * Set if using Electron mode when object is created
    */
   constructor() {
@@ -85,9 +70,24 @@ export class TdEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * value?: string
+   * Value in the Editor after async getEditorContent was called
+   */
+  @Input('value')
+  set value(value: string) {
+    this._value = value;
+    if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('setEditorContent', value);
+        } else {
+            this._editor.setValue(value);
+        }
+        this.onEditorValueChange.emit(undefined);
+    }
+  }
   // no getter for editor Value because need to use async call
   // instead using getEditorContent function below
-
   /**
    * getEditorContent?: function
    * Returns the content within the editor
