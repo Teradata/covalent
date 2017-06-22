@@ -23,6 +23,9 @@ cp -rf dist/ deploy/editor/
 # copy package.json into deploy
 cp -rf package.json deploy/editor/
 
+# copy README.md into deploy
+cp -rf README.md deploy/editor/
+
 # AoT compilation
 npm run aot
 echo "Compiled TS and generated *.metadata.json files..."
