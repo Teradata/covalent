@@ -1,5 +1,5 @@
 #!/bin/bash
-scope=@covalent/editor
+scope=@covalent
 
 #login into private registry
 npm login --scope=$scope
