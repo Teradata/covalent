@@ -18,13 +18,13 @@ echo "Preparing files for AoT build"
 ng build
 
 # copy dist into deploy
-cp -rf dist/ deploy/editor/
+cp -rf dist/ deploy/code-editor/
 
 # copy package.json into deploy
-cp -rf package.json deploy/editor/
+cp -rf package.json deploy/code-editor/
 
 # copy README.md into deploy
-cp -rf README.md deploy/editor/
+cp -rf README.md deploy/code-editor/
 
 # AoT compilation
 npm run aot

@@ -2,25 +2,25 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
-import { TdEditorComponent } from './editor.component';
+import { TdCodeEditorComponent } from './code-editor.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    TdEditorComponent,
+    TdCodeEditorComponent,
   ],
   exports: [
-    TdEditorComponent,
+    TdCodeEditorComponent,
   ],
   entryComponents: [ ],
-  bootstrap: [ TdEditorComponent ],
+  bootstrap: [ TdCodeEditorComponent ],
 })
-export class CovalentEditorModule {
+export class CovalentCodeEditorModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: CovalentEditorModule,
+      ngModule: CovalentCodeEditorModule,
       providers: [ ],
     };
   }

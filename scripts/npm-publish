@@ -4,7 +4,7 @@ scope=@covalent
 #login into private registry
 npm login --scope=$scope
 
-npm publish ./deploy/editor/ --access=public
+npm publish ./deploy/code-editor/ --access=public
 
 #logout when finished
 npm logout 

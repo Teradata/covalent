@@ -1,11 +1,12 @@
 {
-  "name": "@covalent/editor",
-  "version": "1.0.0-alpha.2",
+  "name": "@covalent/code-editor",
+  "version": "1.0.0-alpha.1",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "keywords": [
     "angular",
     "covalent",
+    "code",
     "editor",
     "reusable"
   ],
@@ -38,10 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/teradata/covalent-editor.git"
+    "url": "https://github.com/teradata/covalent-code-editor.git"
   },
   "bugs": {
-    "url": "https://github.com/Teradata/covalent-editor/issues"
+    "url": "https://github.com/Teradata/covalent-code-editor/issues"
   },
   "license": "MIT",
   "author": "Teradata UX",

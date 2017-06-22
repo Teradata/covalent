@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { TdEditorComponent } from './';
+import { TdCodeEditorComponent } from './';
 import { By } from '@angular/platform-browser';
 
 declare var electron: any;
@@ -16,7 +16,7 @@ describe('Component: App', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        TdEditorComponent,
+        TdCodeEditorComponent,
       ],
       imports: [
       ],
@@ -26,8 +26,8 @@ describe('Component: App', () => {
 
   it('should set the editor value and retrieve that same value from editor', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdEditorComponent);
-      let component: TdEditorComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -51,8 +51,8 @@ describe('Component: App', () => {
 
   it('should register a custom language and custom theme and set to custom language', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdEditorComponent);
-      let component: TdEditorComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }
@@ -139,8 +139,8 @@ describe('Component: App', () => {
 
   it('should set the editor style', (done: DoneFn) => {
     inject([], () => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdEditorComponent);
-      let component: TdEditorComponent = fixture.debugElement.componentInstance;
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
       if (component.isElectronApp) {
         component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
       }

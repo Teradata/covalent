@@ -11,11 +11,11 @@ declare const require: any;
 declare const process: any;
 
 @Component({
-  selector: 'td-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: [ './editor.component.scss' ],
+  selector: 'td-code-editor',
+  templateUrl: './code-editor.component.html',
+  styleUrls: [ './code-editor.component.scss' ],
 })
-export class TdEditorComponent implements OnInit, AfterViewInit {
+export class TdCodeEditorComponent implements OnInit, AfterViewInit {
 
   private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
   private _appPath: string = '';
