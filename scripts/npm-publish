@@ -4,13 +4,7 @@ scope=@covalent/editor
 #login into private registry
 npm login --scope=$scope
 
-for package in ./deploy/platform/*
-do
-  if [ -d ${package} ]
-  then
-    npm publish ${package} --access=public
-  fi
-done
+npm publish ./deploy/editor/ --access=public
 
 #logout when finished
 npm logout 
