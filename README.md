@@ -16,7 +16,7 @@ Covalent-Code-Editor is an Angular Component for text and code editing based on 
 * Add the following dependency to package.json
 ```
 "dependencies": {
-    "@covalent/code-editor": "^1.0.0-alpha.1"
+    "@covalent/code-editor": "^1.0.0-alpha.2"
   },
 ```
 * **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
@@ -25,7 +25,7 @@ Covalent-Code-Editor is an Angular Component for text and code editing based on 
   "apps": [
     {
       "assets": [
-        { "glob": "**/*", "input": "../node_modules/monaco-editor/min", "output": "./assets/monaco/" }
+        { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" }
       ],
 ```
 * Add the following tag to html file
