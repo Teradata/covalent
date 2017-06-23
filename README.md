@@ -5,6 +5,8 @@
 [![Join the chat at https://gitter.im/Teradata/covalent](https://badges.gitter.im/Teradata/covalent.svg)](https://gitter.im/Teradata/covalent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Dependency Status](https://dependencyci.com/github/Teradata/covalent/badge)](https://dependencyci.com/github/Teradata/covalent-code-editor)
 
+<img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
+
 Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular 2 and Material Design.
 
 Covalent-Code-Editor is an Angular Component for text and code editing based on Covalent and Monaco Editor.  Covalent-Code-Editor can run in both Electron and Web Browsers.
@@ -64,6 +66,9 @@ imports: [
 * isElectronApp
 
 ### Electron
+
+<img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent-electron/develop/src/app/assets/icons/covalent-and-electron.svg" width="150">
+
 *  Covalent-Code-Editor can run in Electron as well as Web Browsers.  When running in Electron the component automatically runs itself inside a "webview" to sandbox away the AMDRequires used in Monaco Editor so it doesn't cause issues with the Requires in Electron.
    * See:
      * https://github.com/Microsoft/monaco-editor/issues/90
