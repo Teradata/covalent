@@ -10,9 +10,8 @@
             [attr.max]="max"
             flex>
     <md-hint align="start">
-      <span class="tc-red-600">
-        <span *ngIf="control.hasError('max')">Max: {{max}}</span>
-        <span *ngIf="control.hasError('min')">Min: {{min}}</span>
+      <span class="tc-red-600"  *ngIf="control.errors && control.dirty">
+        <span *ngFor="let error of errorMessages; last as isLast">{{error}} <span *ngIf="!isLast">, </span></span>
       </span>
     </md-hint>
   </md-input-container>

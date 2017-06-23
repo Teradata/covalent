@@ -1,5 +1,5 @@
 export { CovalentDynamicFormsModule } from './dynamic-forms.module';
-export { ITdDynamicElementConfig, TdDynamicType,
+export { ITdDynamicElementConfig, ITdCustomValidate, ITdCustomError, TdDynamicType,
          TdDynamicElement, DYNAMIC_ELEMENT_NAME_REGEX } from './services/dynamic-forms.service';
 export { TdDynamicElementComponent } from './dynamic-element.component';
 export { TdDynamicFormsComponent } from './dynamic-forms.component';

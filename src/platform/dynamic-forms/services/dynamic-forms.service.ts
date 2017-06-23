@@ -1,5 +1,5 @@
 import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
-import { Validators, ValidatorFn, FormControl } from '@angular/forms';
+import { Validators, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -7,6 +7,8 @@ import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
+
+import { tdValidators } from '../validators/dynamic-forms.validators';
 
 export enum TdDynamicType {
   Text = <any>'text',
@@ -25,6 +27,18 @@ export enum TdDynamicElement {
   Select = <any>'select',
 }
 
+export interface ITdCustomValidate {
+  name: string;
+  message: string;
+
+  // return boolean on a value
+  predicateFn(value: any): boolean ;
+}
+
+export interface ITdCustomError {
+  [validationKey: string]: { message: string };
+}
+
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
@@ -34,6 +48,10 @@ export interface ITdDynamicElementConfig {
   max?: any;
   selections?: any[];
   default?: any;
+  customValidators?: (ITdCustomValidate | ValidatorFn)[];
+
+  // Covalent Validators
+  tdContainsUppercaseCharacter?: boolean;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
@@ -126,6 +144,42 @@ export class TdDynamicFormsService {
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
+
+    // Find and add covalent custom validators
+    let configKeys: string[] = Object.keys(config);
+    configKeys.forEach((key: string) => {
+      if (tdValidators.hasOwnProperty(key)) {
+        validator = Validators.compose([validator, <ValidatorFn>tdValidators[key]]);
+      }
+    });
+
+    // Add provided custom validators from config
+    if (config.customValidators) {
+      config.customValidators.forEach((customValidator: ITdCustomValidate | ValidatorFn) => {
+
+        // Custom validator is a function of type ValidatorFn
+        if (typeof customValidator === 'function') {
+          validator = Validators.compose([validator, <ValidatorFn>customValidator]);
+        } else if (customValidator.hasOwnProperty('name')) {
+          
+          // Custom Validator is a config object of interface ITdCustomValidate
+          // Create a ValidatorFn based on config.
+          let customValidatorFn: ValidatorFn = (control: AbstractControl): { [key: string]: any } => {
+              let isValid: boolean = (<ITdCustomValidate>customValidator).predicateFn(control.value);
+              
+              let error: any = {};
+              error[customValidator.name] = {
+                message: (<ITdCustomValidate>customValidator).message,
+              };
+
+              return !isValid ? error : undefined;
+          };
+
+          validator = Validators.compose([validator, customValidatorFn]);
+        }
+      });
+    }
+
     return validator;
   }
 }

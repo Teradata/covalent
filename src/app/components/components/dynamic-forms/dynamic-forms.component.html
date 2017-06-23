@@ -109,6 +109,190 @@
     </md-tab-group>
   </md-card-content>
 </md-card>
+
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Custom Validation</h3>
+    <h4>Using Config with ITdCustomValidate</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="customValidationITdCustomValidate">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="customValidationITdCustomValidate">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+              // Custom Validator using ITdCustomValidate object
+              customValidationITdCustomValidate: ITdDynamicElementConfig[] = [{
+                name: 'numberIsEven',
+                label: 'Even Number In Rage',
+                type: TdDynamicType.Number,
+                customValidators: [
+
+                  // Simple Validation using ITdCustomValidate interface
+                  <ITdCustomValidate>{
+
+                    // Must be unique
+                    name: 'isEven',
+
+                    // Static error message presented in UI
+                    message: 'Must be even',
+
+                    // Return true if valid
+                    predicateFn: (value: any): boolean => {
+                      return ( value % 2 ) === 0;
+                    },
+                  },
+                ],
+              }];
+            ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+
+    <h4>Using ValidatorFn</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="customValidationValidatorFn">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="customValidationValidatorFn">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+              // Custom Validator using ValidatorFn function
+              customValidationValidatorFn: ITdDynamicElementConfig[] = [{
+                name: 'numberIsOddInRange',
+                label: 'Odd Number In Range',
+                type: TdDynamicType.Number,
+                min: 8,
+                max: 20,
+                customValidators: [
+
+                  // Function using ValidatorFn signature
+                  <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
+
+                    // Validate Logic
+                    let isOdd: boolean = ( control.value % 2 ) !== 0;
+
+                    // ITdCustomError Object
+                    let error: ITdCustomError = {
+
+                      // Must be unique
+                      'isOdd': {
+
+                        // Dynamic error message presented to UI
+                        message: 'Not Odd: ' + control.value, 
+                      },
+                    };
+
+                    return !isOdd ? error : undefined;
+                  },
+                ],
+              }];
+            ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+
+    <h4>Multiple Validators</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="multipleValidatorTypes">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+              // Custom validator with different methods
+              multipleValidatorTypes: ITdDynamicElementConfig[] = [{
+                name: 'containValidCharacters',
+                label: 'Password',
+                type: TdDynamicElement.Password,
+                required: true,
+
+                // Covalent validator migrated from other project
+                tdContainsUppercaseCharacter: true,
+                
+                customValidators: [
+
+                  // Contain at lease one number
+                  <ITdCustomValidate>{
+                    name: 'containsNumber',
+                    message: 'Need a number',
+                    predicateFn: (value: any): boolean => {
+                      return /\d/i.test(value); // Return true if valid
+                    },
+                  },
+
+                  // Length between 8 - 20 characters
+                  <ITdCustomValidate>{
+                    name: 'length',
+                    message: 'Password needs from 8 - 20 characters',
+                    predicateFn: (value: any): boolean => {
+                      return value && ( value.length >= 8 ) && ( value.length <= 20 ); // Return true if valid
+                    },
+                  },
+
+                  // Contain at least one special character
+                  <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
+
+                    let validCharacters: string[] = ['!', '@', '#', '$', '%'];
+                    let regex: RegExp = new RegExp('[' + validCharacters.join('').toString() + ']', 'g');
+                    
+                    let isValid: boolean = regex.test(control.value);
+
+                    let error: ITdCustomError = {
+                      'containSpecialCharacters': {
+
+                        // TODO: parenthesis may be mistaken for valid special character. refine error message.
+                        message: 'Need at least one special character (' + validCharacters.join(', ').toString() + ')',
+                      },
+                    };
+
+                    return !isValid ? error : undefined;
+                  },
+                ],
+              }];
+            ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+
 <md-card>
   <md-card-title>TdDynamicFormsComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
