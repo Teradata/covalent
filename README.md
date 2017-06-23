@@ -22,7 +22,7 @@ Monaco Editor Repo: https://github.com/Microsoft/monaco-editor
 * Add the following dependency to package.json
 ```
 "dependencies": {
-    "@covalent/code-editor": "^1.0.0-alpha.4"
+    "@covalent/code-editor": "^1.0.0-alpha.5"
   },
 ```
 * **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
