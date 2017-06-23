@@ -1,4 +1,4 @@
-## Covalent-Code-Editor is a Text and Code Editor built on Covalent and Angular Material
+## Covalent-Code-Editor is a Text and Code Editor built on Covalent, Monaco Editor and Angular Material
 
 [![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent-code-editor)
 [![npm version](https://badge.fury.io/js/%40covalent%2Fcore.svg)](https://badge.fury.io/js/%40covalent%2Fcode-editor)
@@ -7,16 +7,20 @@
 
 Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular 2 and Material Design.
 
+Covalent-Code-Editor is an Angular Component for text and code editing based on Covalent and Monaco Editor.  Covalent-Code-Editor can run in both Electron and Web Browsers.
+
 Covalent Github Repo: https://github.com/Teradata/covalent
 
-Covalent-Code-Editor is an Angular Component for text and code editing based on Covalent
+Covalent Electron Github Repo: https://github.com/Teradata/covalent-electron
+
+Monaco Editor Repo: https://github.com/Microsoft/monaco-editor
 
 ## Setup
 
 * Add the following dependency to package.json
 ```
 "dependencies": {
-    "@covalent/code-editor": "^1.0.0-alpha.2"
+    "@covalent/code-editor": "^1.0.0-alpha.4"
   },
 ```
 * **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
@@ -58,6 +62,12 @@ imports: [
 * editorStyle
 * theme
 * isElectronApp
+
+### Electron
+*  Covalent-Code-Editor can run in Electron as well as Web Browsers.  When running in Electron the component automatically runs itself inside a "webview" to sandbox away the AMDRequires used in Monaco Editor so it doesn't cause issues with the Requires in Electron.
+   * See:
+     * https://github.com/Microsoft/monaco-editor/issues/90
+     * https://electron.atom.io/docs/api/webview-tag/
 
 ---
 
