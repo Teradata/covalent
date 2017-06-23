@@ -5,8 +5,8 @@ import { ValidateFn } from 'codelyzer/walkerFactory/walkerFn';
 import { tdContainsUppercaseCharacter } from './dynamic-forms.validators.tdContainsUppercaseCharacter';
 
 // Add validator as optional interface
-interface ITdCustomValidators {
-  tdContainsUppercaseCharacter?: ValidateFn;
+export interface ITdCustomValidators {
+  tdContainsUppercaseCharacter?: ValidateFn<boolean>;
 }
 
 // Add validtor to tdValidators
