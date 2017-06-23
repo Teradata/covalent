@@ -8,7 +8,7 @@ import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
 
-import { tdValidators } from '../validators/dynamic-forms.validators';
+import { tdValidators, ITdCustomValidators } from '../validators/dynamic-forms.validators';
 
 export enum TdDynamicType {
   Text = <any>'text',
@@ -39,7 +39,7 @@ export interface ITdCustomError {
   [validationKey: string]: { message: string };
 }
 
-export interface ITdDynamicElementConfig {
+export interface ITdDynamicElementConfig extends ITdCustomValidators {
   label?: string;
   name: string;
   type: TdDynamicType | TdDynamicElement;
@@ -49,9 +49,6 @@ export interface ITdDynamicElementConfig {
   selections?: any[];
   default?: any;
   customValidators?: (ITdCustomValidate | ValidatorFn)[];
-
-  // Covalent Validators
-  tdContainsUppercaseCharacter?: boolean;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
