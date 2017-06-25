@@ -6,7 +6,7 @@ import { tdContainsUppercaseCharacter } from './dynamic-forms.validators.tdConta
 
 // Add validator as optional interface
 export interface ITdCustomValidators {
-  tdContainsUppercaseCharacter?: ValidateFn<boolean>;
+  tdContainsUppercaseCharacter?: boolean;
 }
 
 // Add validtor to tdValidators
