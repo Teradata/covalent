@@ -18,7 +18,7 @@
 #### The <td-code-editor> component has 6 properties:
 
 * value?: string
-  * Value of Code in Editor
+   * Value of Code in Editor
 * language: string
   * Code Language used in Editor
 * registerLanguage: function()
