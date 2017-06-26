@@ -23,7 +23,7 @@ Monaco Editor Repo: https://github.com/Microsoft/monaco-editor
 
 * [Setup](docs/SETUP.md)
 * [API](docs/API.md)
-* [Electron](docs/Electron.md)
+* [Electron](docs/ELECTRON.md)
 
 ---
 
