@@ -1,5 +1,4 @@
 import { ValidatorFn } from '@angular/forms';
-import { ValidateFn } from 'codelyzer/walkerFactory/walkerFn';
 
 // import TD custom validators migrated from products
 import { tdContainsUppercaseCharacter } from './dynamic-forms.validators.tdContainsUppercaseCharacter';
