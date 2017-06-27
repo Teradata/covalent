@@ -76,7 +76,8 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.12"
+    "zone.js": "^0.8.12",
+    "@covalent/code-editor": "^1.0.0-alpha.5"
   },
   "devDependencies": {
     "@angular/cli": "1.1.1",

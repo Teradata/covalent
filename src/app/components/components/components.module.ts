@@ -25,6 +25,7 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
+import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -44,6 +45,7 @@ import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, Covale
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
@@ -72,6 +74,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     PagingDemoComponent,
     SearchDemoComponent,
     DynamicFormsDemoComponent,
+    CodeEditorDemoComponent,
     NotificationsDemoComponent,
     // External Dependencies
     NgxChartsDemoComponent,
@@ -117,6 +120,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentMessageModule,
+    CovalentCodeEditorModule,
     DocumentationToolsModule,
     NgxChartsModule,
     TranslateModule,

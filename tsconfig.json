@@ -16,7 +16,11 @@
       "./node_modules/@types"
     ],
     "paths": {
-      "@covalent/*": ["./platform/*"]
+      "@covalent/core": ["./platform/core"],
+      "@covalent/dynamic-forms": ["./platform/dynamic-forms"],
+      "@covalent/highlight": ["./platform/highlight"],
+      "@covalent/http": ["./platform/http"],
+      "@covalent/markdown": ["./platform/markdown"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,

@@ -118,6 +118,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'dynamic-forms',
     title: 'Dynamic Forms',
   }, {
+    description: 'Multi-languge code editor for Browser and Electron',
+    icon: 'library_books',
+    route: 'code-editor',
+    title: 'Code Editor',
+  }, {
     description: 'Http wrappers and helpers',
     icon: 'http',
     route: 'http',
