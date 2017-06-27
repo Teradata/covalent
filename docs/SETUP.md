@@ -17,7 +17,7 @@
 ```
 * Add the following tag to html file
 ```
-<td-code-editor theme="vs" flex language="sql"></td-code-editor>
+<td-code-editor style="height: 200px" theme="vs" flex language="sql"></td-code-editor>
 ```
 * Import the covalent-editor component into app.module.ts
 ```
