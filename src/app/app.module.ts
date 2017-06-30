@@ -25,7 +25,6 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
 
 @NgModule({
   declarations: [
@@ -58,7 +57,6 @@ import { CovalentCodeEditorModule } from '@covalent/code-editor';
     CovalentMenuModule,
     CovalentMediaModule,
     CovalentHttpModule.forRoot(),
-    CovalentCodeEditorModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
