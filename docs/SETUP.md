@@ -25,7 +25,7 @@ import { CovalentCodeEditorModule } from '@covalent/code-editor';
 ...
 
 imports: [
-    CovalentCodeEditorModule.forRoot(),
+    CovalentCodeEditorModule,
 
 ...
 ```
