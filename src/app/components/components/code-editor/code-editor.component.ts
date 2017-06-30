@@ -1,6 +1,5 @@
 import { Component, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-forms';
 import { TdCodeEditorComponent } from '@covalent/code-editor';
 
 @Component({
@@ -15,9 +14,6 @@ export class CodeEditorDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  debounce: number = 0;
-  alwaysVisible: boolean = false;
-
   editorTheme: string = 'hc-black';
   editorLanguage: string = 'sql';
   editorVal: string = `SELECT department_number, sampleid 
@@ -30,14 +26,6 @@ FROM department
 SAMPLE  3, 5, 8
 ORDER BY sampleid;
 `;
-
-  modeChange(): void {
-    // do something?
-  }
-
-  toggleAlwaysVisible(): void {
-    this.alwaysVisible = !this.alwaysVisible;
-  }
 
   // Theme
   changeTheme(): void {

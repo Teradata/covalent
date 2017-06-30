@@ -1,12 +1,15 @@
 <md-card>
   <md-card-title>Code Editor</md-card-title>
-  <md-card-subtitle>Multi-languge code editor for Browser and Electron</md-card-subtitle>
+  <md-card-subtitle>Multi-language code editor for Browser and Electron</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
     <p>With this component you can utilize the Monaco Editor as an Angular Component in a Browser or Electron.</p>
-    <p><b>Note:</b> The source code for this component is located here: <a href="https://github.com/Teradata/covalent-code-editor">https://github.com/Teradata/covalent-code-editor</a></p>
-    <p><b>Note:</b> The npm module for component is located here: <a href="https://www.npmjs.com/package/@covalent/code-editor">https://www.npmjs.com/package/@covalent/code-editor</a></p>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" href="https://github.com/Teradata/covalent-code-editor" target="_blank" class="text-upper">Github Repo</a>
+    <a md-button color="accent" href="https://www.npmjs.com/package/@covalent/code-editor" target="_blank" class="text-upper">npm Module</a>
+  </md-card-actions>
 </md-card>
 <md-card>
   <md-card-title>Basic example</md-card-title>
@@ -39,15 +42,12 @@
     <md-divider></md-divider>
   </md-card-actions>
 </md-card>
-<md-card>
-  <md-card-title>TdCodeEditorComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-code-editor>]]></code></h2>
-    <p>Use <code><![CDATA[<td-code-editor>]]></code> element to generate a monaco editor for inline code editing</p>
-    <td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md"></td-readme-loader>
-    <td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/SETUP.md"></td-readme-loader>
-    <td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/ELECTRON.md"></td-readme-loader>
-  </md-card-content>
-</md-card>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md">
+</td-readme-loader>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/SETUP.md">
+</td-readme-loader>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/ELECTRON.md">
+</td-readme-loader>
