@@ -112,7 +112,7 @@ export class ComponentsOverviewComponent {
       title: 'Dynamic Forms',
     }, {
       color: 'purple-A700',
-      icon: 'library_books',
+      icon: 'featured_play_list',
       route: 'code-editor',
       title: 'Code Editor',
     }, {

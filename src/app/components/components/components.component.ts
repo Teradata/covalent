@@ -119,7 +119,7 @@ export class ComponentsComponent implements AfterViewInit {
     title: 'Dynamic Forms',
   }, {
     description: 'Multi-languge code editor for Browser and Electron',
-    icon: 'library_books',
+    icon: 'featured_play_list',
     route: 'code-editor',
     title: 'Code Editor',
   }, {
