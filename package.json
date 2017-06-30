@@ -66,6 +66,7 @@
     "@angular/platform-browser-dynamic": "^4.2.0",
     "@angular/platform-server": "^4.2.0",
     "@angular/router": "^4.2.0",
+    "@covalent/code-editor": "^1.0.0-alpha.5",
     "@ngx-translate/core": "7.0.0",
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "5.3.1",
@@ -76,8 +77,7 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.12",
-    "@covalent/code-editor": "^1.0.0-alpha.5"
+    "zone.js": "^0.8.12"
   },
   "devDependencies": {
     "@angular/cli": "1.1.1",
