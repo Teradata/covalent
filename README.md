@@ -11,6 +11,8 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 Covalent-Code-Editor is an Angular Component for text and code editing based on Covalent and Monaco Editor. The component can run in both Electron and Web Browsers.
 
+Demo: https://teradata.github.io/covalent/#/components/code-editor
+
 Covalent Github Repo: https://github.com/Teradata/covalent
 
 Covalent Electron Github Repo: https://github.com/Teradata/covalent-electron
