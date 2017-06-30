@@ -27,3 +27,4 @@
 | `editorStyle` | `string` | Additional Styling applied to Editor Container
 | `theme` | `string` | Theme used to style the Editor
 | `isElectronApp` | `function()` | Returns true or false based on if running in Electron.
+
