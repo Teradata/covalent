@@ -6,8 +6,11 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
-    /deep/ > .md-toolbar-layout > md-toolbar-row {
+    /deep/ > .mat-toolbar-layout > md-toolbar-row {
       height: auto !important;
     }
+  }
+  > div {
+    overflow: hidden;
   }
 }

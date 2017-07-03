@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MdIconModule, MdListModule, MdRippleModule, PortalModule } from '@angular/material';
+import { MdIconModule, MdRippleModule, PortalModule, ScrollDispatchModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../common/common.module';
 
@@ -29,11 +29,11 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
 @NgModule({
   imports: [
     CommonModule,
-    MdIconModule.forRoot(),
-    MdListModule.forRoot(),
-    MdRippleModule.forRoot(),
-    PortalModule.forRoot(),
-    CovalentCommonModule.forRoot(),
+    MdIconModule,
+    MdRippleModule,
+    PortalModule,
+    ScrollDispatchModule,
+    CovalentCommonModule,
   ],
   declarations: [
     TD_STEPS,
@@ -43,10 +43,5 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
   ],
 })
 export class CovalentStepsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentStepsModule,
-      providers: [ ],
-    };
-  }
+
 }

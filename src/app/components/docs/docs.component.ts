@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -20,15 +20,15 @@ export class DocsComponent implements AfterViewInit {
     route: '.',
     title: 'Getting Started',
   }, {
-    description: 'Familiarize yourself with ng2',
+    description: 'Familiarize yourself with Angular',
     icon: 'change_history',
-    route: 'angular-2',
-    title: 'Angular 2.0',
+    route: 'angular',
+    title: 'Angular',
   }, {
-    description: 'Material Design components for Angular 2',
+    description: 'Material Design components',
     icon: 'layers',
     route: 'angular-material',
-    title: 'Angular-Material',
+    title: 'Angular Material',
   }, {
     description: 'Angular CLI build tasks',
     icon: 'build',
@@ -66,11 +66,13 @@ export class DocsComponent implements AfterViewInit {
     title: 'Testing',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -20,11 +21,6 @@ export class ComponentsComponent implements AfterViewInit {
     route: '.',
     title: 'Components & Addons',
   }, {
-    description: 'ng2 Material Design core components',
-    icon: 'change_history',
-    route: 'material-components',
-    title: 'Angular-Material Components',
-  }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
     route: 'steps',
@@ -35,10 +31,15 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
-    description: 'Upload input button',
-    icon: 'file_upload',
+    description: 'Text input for files',
+    icon: 'space_bar',
+    route: 'file-input',
+    title: 'File Input',
+  }, {
+    description: 'All-in-one upload button',
+    icon: 'attach_file',
     route: 'file-upload',
-    title: 'File Upload',
+    title: 'File Upload Button',
   }, {
     description: 'Small blocks for multiple items',
     icon: 'label_outline',
@@ -74,6 +75,11 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'notifications',
     route: 'notifications',
     title: 'Notifications',
+  }, {
+    description: 'Info, warning & alert messages',
+    icon: 'info_outline',
+    route: 'message',
+    title: 'Messages & Alerts',
   }, {
     description: 'Search and filter items',
     icon: 'search',
@@ -112,33 +118,35 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'dynamic-forms',
     title: 'Dynamic Forms',
   }, {
+    description: 'Multi-languge code editor for Browser and Electron',
+    icon: 'featured_play_list',
+    route: 'code-editor',
+    title: 'Code Editor',
+  }, {
     description: 'Http wrappers and helpers',
     icon: 'http',
     route: 'http',
     title: 'HTTP Service',
-  }, {
-    description: 'Simple responsive charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'TD Charts',
   }];
 
   external: Object[] = [{
-    description: 'Declarative D3 framework for ng2',
+    description: 'Declarative D3 framework',
     icon: 'insert_chart',
     route: 'ngx-charts',
     title: 'NGX-Charts',
   }, {
-    description: 'i18n library for ng2',
+    description: 'i18n library',
     icon: 'language',
     route: 'ngx-translate',
     title: 'NGX-Translate',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 }

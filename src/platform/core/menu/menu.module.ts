@@ -15,8 +15,8 @@ export { TdMenuComponent } from './menu.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdMenuModule.forRoot(),
-    MdListModule.forRoot(),
+    MdMenuModule,
+    MdListModule,
   ],
   declarations: [
     TD_MENU,
@@ -26,10 +26,5 @@ export { TdMenuComponent } from './menu.component';
   ],
 })
 export class CovalentMenuModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentMenuModule,
-      providers: [ ],
-    };
-  }
+
 }

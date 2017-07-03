@@ -12,13 +12,12 @@ import 'core-js/es6/date';
 import 'core-js/es6/array';
 import 'core-js/es6/regexp';
 import 'core-js/es6/map';
+import 'core-js/es6/weak-map';
 import 'core-js/es6/set';
 import 'core-js/es6/reflect';
 
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
-
-import 'rxjs/Rx';
 
 // If you need to support the browsers/features below, uncomment the import
 // and run `npm install import-name-here';
@@ -29,7 +28,7 @@ import 'rxjs/Rx';
 
 // Animations
 // Needed for: All but Chrome and Firefox, Not supported in IE9
-// import 'web-animations-js';
+import 'web-animations-js';
 
 // Date, currency, decimal and percent pipes
 // Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10

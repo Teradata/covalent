@@ -13,16 +13,16 @@
 }
 md-select { 
   & /deep/ {
-    .md-select-trigger {
+    .mat-select-trigger {
       min-width: 44px;
-      border-bottom: 0 !important;
+      font-size: 12px;
     }
-    .md-select-value {
+    .mat-select-value {
       top: auto;
       position: static;
     }
+    .mat-select-underline {
+      display: none;
+    }
   }
-}
-.td-paging-size {
-  margin-right: -5px;
 }

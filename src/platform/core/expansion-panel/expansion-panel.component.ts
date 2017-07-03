@@ -1,11 +1,12 @@
-import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild } from '@angular/core';
+import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
+         ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective } from '@angular/material';
 
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Directive({
-  selector: '[td-expansion-panel-header]template',
+  selector: '[td-expansion-panel-header]ng-template',
 })
 export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -14,7 +15,7 @@ export class TdExpansionPanelHeaderDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-label]template',
+  selector: '[td-expansion-panel-label]ng-template',
 })
 export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -23,7 +24,7 @@ export class TdExpansionPanelLabelDirective extends TemplatePortalDirective {
 }
 
 @Directive({
-  selector: '[td-expansion-panel-sublabel]template',
+  selector: '[td-expansion-panel-sublabel]ng-template',
 })
 export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
@@ -47,6 +48,7 @@ export class TdExpansionPanelSummaryComponent {}
 })
 export class TdExpansionPanelComponent {
 
+  private _disableRipple: boolean = false;
   private _expand: boolean = false;
   private _disabled: boolean = false;
 
@@ -68,16 +70,28 @@ export class TdExpansionPanelComponent {
   @Input() sublabel: string;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect for this component is disabled.
+   */
+  @Input('disableRipple')
+  set disableRipple(disableRipple: boolean) {
+    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+  }
+  get disableRipple(): boolean {
+    return this._disableRipple;
+  }
+
+  /**
    * expand?: boolean
    * Toggles [TdExpansionPanelComponent] between expand/collapse.
    */
   @Input('expand')
   set expand(expand: boolean) {
-    this._setExpand(expand);
-  };
+    this._setExpand(<any>expand === 'true' || expand === true);
+  }
   get expand(): boolean {
     return this._expand;
-  };
+  }
 
   /**
    * disabled?: boolean
@@ -90,10 +104,10 @@ export class TdExpansionPanelComponent {
       this._onCollapsed();
     }
     this._disabled = disabled;
-  };
+  }
   get disabled(): boolean {
     return this._disabled;
-  };
+  }
 
   /**
    * expanded?: function
@@ -107,12 +121,17 @@ export class TdExpansionPanelComponent {
    */
   @Output() collapsed: EventEmitter<void> = new EventEmitter<void>();
 
+  constructor(private _renderer: Renderer2,
+              private _elementRef: ElementRef) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-expansion-panel');
+  }
+
   /**
    * Method executed when [TdExpansionPanelComponent] is clicked.
    */
   clickEvent(): void {
     this._setExpand(!this._expand);
-  };
+  }
 
   /**
    * Toggle expand state of [TdExpansionPanelComponent]
@@ -149,20 +168,22 @@ export class TdExpansionPanelComponent {
     if (this._expand !== newExpand) {
       this._expand = newExpand;
       if (newExpand) {
+        this._renderer.addClass(this._elementRef.nativeElement, 'td-expanded');
         this._onExpanded();
       } else {
+        this._renderer.removeClass(this._elementRef.nativeElement, 'td-expanded');
         this._onCollapsed();
       }
       return true;
     }
     return false;
-  };
+  }
 
   private _onExpanded(): void {
     this.expanded.emit(undefined);
-  };
+  }
 
   private _onCollapsed(): void {
     this.collapsed.emit(undefined);
-  };
+  }
 }

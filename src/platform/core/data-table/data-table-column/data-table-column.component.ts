@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, Renderer, ElementRef, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Renderer2, ElementRef, HostBinding } from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
@@ -68,32 +68,32 @@ export class TdDataTableColumnComponent {
   @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
                         new EventEmitter<ITdDataTableSortChangeEvent>();
 
-  @HostBinding('class.md-clickable')
+  @HostBinding('class.mat-clickable')
   get bindClickable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-sortable')
+  @HostBinding('class.mat-sortable')
   get bingSortable(): boolean {
     return this.sortable;
   }
 
-  @HostBinding('class.md-active')
+  @HostBinding('class.mat-active')
   get bindActive(): boolean {
     return this.active;
   }
 
-  @HostBinding('class.md-numeric')
+  @HostBinding('class.mat-numeric')
   get bindNumeric(): boolean {
     return this.numeric;
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer) {
-    this._renderer.setElementClass(this._elementRef.nativeElement, 'td-data-table-column', true);
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column');
   }
 
   handleSortBy(): void {
-    this.onSortChange.emit({name: name, order: this._sortOrder});
+    this.onSortChange.emit({name: this.name, order: this._sortOrder});
   }
 
   isAscending(): boolean {

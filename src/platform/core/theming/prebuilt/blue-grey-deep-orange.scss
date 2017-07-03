@@ -1,13 +1,13 @@
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/theming';
 @import '../all-theme';
 
-@include md-core();
+@include mat-core();
 
-$primary: md-palette($md-blue-grey, 700);
-$accent:  md-palette($md-deep-orange, 500, A100, A400);
-$warn:    md-palette($md-red, 600);
+$primary: mat-palette($mat-blue-grey, 700);
+$accent:  mat-palette($mat-deep-orange, 500, A100, A400);
+$warn:    mat-palette($mat-red, 600);
 
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 @include covalent-theme($theme);

@@ -1,4 +1,5 @@
-import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, Optional } from '@angular/core';
+import { Dir } from '@angular/material';
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Component({
@@ -83,7 +84,15 @@ export class TdJsonFormatterComponent {
     return this._children;
   }
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  get isRTL(): boolean {
+    if (this._dir) {
+      return this._dir.dir === 'rtl';
+    }
+    return false;
+  }
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              @Optional() private _dir: Dir) {
   }
 
   /**
@@ -91,15 +100,6 @@ export class TdJsonFormatterComponent {
    */
   refresh(): void {
     this._changeDetectorRef.markForCheck();
-  }
-
-  /**
-   * Workaround for https://github.com/angular/material2/issues/1825
-   */
-  tooltipRefresh(): void {
-    setTimeout(() => {
-      this.refresh();
-    }, 100);
   }
 
   /**

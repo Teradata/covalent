@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild, forwardRef, Optional, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
@@ -77,10 +78,9 @@ export class TdLayoutNavListComponent {
   /**
    * navigationRoute?: string
    *
-   * option to set the combined logo, icon, toolbar title route
-   * defaults to '/'
+   * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input('navigationRoute') navigationRoute: string = '/';
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
    * Checks if there is a [TdLayoutComponent] as parent.
@@ -89,14 +89,35 @@ export class TdLayoutNavListComponent {
     return !!this._layout;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent))
-              private _layout: TdLayoutComponent) { }
+  /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
+  }
+
+  /**
+   * Checks if router was injected.
+   */
+  get routerEnabled(): boolean {
+    return !!this._router && !!this.navigationRoute;
+  }
+
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+              @Optional() private _router: Router) {}
+
+  handleNavigationClick(): void {
+    if (this.routerEnabled) {
+      this._router.navigateByUrl(this.navigationRoute);
+    }
+  }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.toggle();
+    return this._sideNav.toggle(!this._sideNav.opened);
   }
 
   /**
@@ -117,7 +138,7 @@ export class TdLayoutNavListComponent {
    * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
    */
   openMainSidenav(): void {
-    this._layout.open();
+    this._layout.toggle();
   }
 
 }

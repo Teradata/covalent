@@ -1,4 +1,5 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <td-toolbar td-toolbar-content hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   <td-layout-card-over cardWidth="75">
     <md-card-title>Card Over Layout</md-card-title>
     <md-card-subtitle>A card overlaying a toolbar (this page is using card over)</md-card-subtitle>
@@ -18,7 +19,7 @@
       <div layout-gt-md="row">
         <div flex-gt-md="45">
           <td-steps>
-            <td-step label="td-layout-nav" sublabel="the content wrapper of the layout">
+            <td-step label="td-layout-nav" sublabel="the content wrapper of the layout" active="true">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
@@ -100,9 +101,9 @@
     </md-card-content>
     <md-divider></md-divider>
     <md-card-actions layout="row">
-        <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+        <a md-button [routerLink]="'/layouts'" class="text-upper">Go Back</a>
         <span flex></span>
-        <a md-button color="accent" [routerLink]="'/layouts/manage-list'">Manage List</a>
+        <a md-button color="accent" [routerLink]="'/layouts/manage-list'" class="text-upper">Manage List</a>
     </md-card-actions>
     <td-readme-loader td-after-card resourceUrl="platform/core/layout/layout-card-over/README.md"></td-readme-loader>
   </td-layout-card-over>

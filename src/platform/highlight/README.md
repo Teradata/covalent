@@ -12,6 +12,7 @@ Properties:
 | --- | --- | --- |
 | `lang` | `[any common language supported in highlight.js]` | Language of the code content to be parsed as highlighted html.
 | `content` | `string` | Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
+| `contentReady` | `function` |  Event emitted after the highlight content rendering is finished.
 
 **Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `highlight.js` lib to avoid **XSS** issues.
 
@@ -29,14 +30,14 @@ npm i -save @covalent/highlight
 
 ## Setup
 
-Import the **[CovalentHighlightModule]** using the *forRoot()* method in your NgModule:
+Import the **[CovalentHighlightModule]** in your NgModule:
 
 ```typescript
 import { CovalentHighlightModule } from '@covalent/highlight';
 
 @NgModule({
   imports: [
-    CovalentHighlightModule.forRoot(),
+    CovalentHighlightModule,
     ...
   ],
   ...
@@ -60,7 +61,7 @@ Alternatively, you can use the *highlight.js* pre-built [themes](https://github.
 @import '~highlight.js/styles/vs.css';
 ```
 
-Loading them in the `angular-cli.json`:
+Loading them in the `.angular-cli.json`:
 
 ```json
 "styles": [

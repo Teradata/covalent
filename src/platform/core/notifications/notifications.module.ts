@@ -25,10 +25,5 @@ export { TdNotificationCountComponent, TdNotificationCountPositionX, TdNotificat
   ],
 })
 export class CovalentNotificationsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentNotificationsModule,
-      providers: [ ],
-    };
-  }
+
 }

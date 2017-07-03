@@ -2,12 +2,14 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MdListModule, MdIconModule, PortalModule } from '@angular/material';
+import { MdRippleModule, MdIconModule, PortalModule } from '@angular/material';
 
 import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
          TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent } from './expansion-panel.component';
+import { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 const TD_EXPANSION_PANEL: Type<any>[] = [
+  TdExpansionPanelGroupComponent,
   TdExpansionPanelComponent,
   TdExpansionPanelHeaderDirective,
   TdExpansionPanelLabelDirective,
@@ -16,13 +18,14 @@ const TD_EXPANSION_PANEL: Type<any>[] = [
 ];
 
 export { TdExpansionPanelComponent } from './expansion-panel.component';
+export { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdListModule.forRoot(),
-    MdIconModule.forRoot(),
-    PortalModule.forRoot(),
+    MdRippleModule,
+    MdIconModule,
+    PortalModule,
   ],
   declarations: [
     TD_EXPANSION_PANEL,
@@ -32,10 +35,5 @@ export { TdExpansionPanelComponent } from './expansion-panel.component';
   ],
 })
 export class CovalentExpansionPanelModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentExpansionPanelModule,
-      providers: [ ],
-    };
-  }
+
 }

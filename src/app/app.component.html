@@ -1,7 +1,25 @@
-<td-layout #layout>
-  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata">
-    <md-nav-list>
-      <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+<td-layout #layout
+            [dir]="dir"
+            [mode]="(media.registerQuery('gt-md') | async) ? 'side' : 'over'"
+            [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
+  <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/" flex color="primary">
+    <md-nav-list flex>
+      <a md-list-item
+          (click)="!media.query('gt-md') && layout.close()"
+          [routerLink]="['/']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}">
+          <md-icon md-list-icon>home</md-icon>
+          Home
+      </a>
+      <a *ngFor="let item of routes" 
+          md-list-item
+          (click)="!media.query('gt-md') && layout.close()"
+          [routerLink]="[item.route]"
+          [routerLinkActive]="['active']">
+          <md-icon md-list-icon>{{item.icon}}</md-icon>
+          {{item.title}}
+      </a>
     </md-nav-list>
   </td-navigation-drawer>
   <router-outlet></router-outlet>

@@ -11,6 +11,10 @@
   position: relative;
   top: 16px;
   left: 16px;
+  /deep/ [dir='rtl'] & { 
+    right: 16px;
+    left: auto;
+  }
 }
 
 :host {
@@ -19,6 +23,10 @@
     /deep/ button {
       text-transform: uppercase;
       margin-left: 8px;
+      [dir='rtl'] & { 
+        margin-right: 8px;
+        margin-left: inherit;
+      }
       padding-left: 8px;
       padding-right: 8px;
       min-width: 64px;

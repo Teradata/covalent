@@ -1,10 +1,13 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Injectable()
 export class TdMediaService {
 
+  private _resizing: boolean = false;
+  private _globalSubscription: Subscription;
   private _queryMap: Map<string, string> = new Map<string, string>();
   private _querySources: {[key: string]: Subject<boolean>} = {};
   private _queryObservables: {[key: string]: Observable<boolean>} = {};
@@ -23,24 +26,32 @@ export class TdMediaService {
     this._queryMap.set('portrait', 'portrait');
     this._queryMap.set('print', 'print');
 
-    let running: boolean = false;
-    window.onresize = () => {
-      // way to prevent the resize event from triggering the match media if there is already one event running already.
-      if (!running) {
-        running = true;
-        if (window.requestAnimationFrame) {
-          window.requestAnimationFrame(() => {
-            this._onResize();
-            running = false;
-          });
-        } else {
+    this._resizing = false;
+    // we make sure that the resize checking happend outside of angular since it happens often
+    this._globalSubscription = this._ngZone.runOutsideAngular(() => {
+      return Observable.fromEvent(window, 'resize').subscribe(() => {
+        // way to prevent the resize event from triggering the match media if there is already one event running already.
+        if (!this._resizing) {
+          this._resizing = true;
           setTimeout(() => {
             this._onResize();
-            running = false;
-          }, 66);
+            this._resizing = false;
+          }, 100);
         }
-      }
-    };
+      });
+    });
+  }
+
+  /**
+   * Deregisters a query so its stops being notified or used.
+   */
+  deregisterQuery(query: string): void {
+    if (this._queryMap.get(query.toLowerCase())) {
+      query = this._queryMap.get(query.toLowerCase());
+    }
+    this._querySources[query].unsubscribe();
+    delete this._querySources[query];
+    delete this._queryObservables[query];
   }
 
   /**
@@ -51,7 +62,7 @@ export class TdMediaService {
       query = this._queryMap.get(query.toLowerCase());
     }
     return this._ngZone.run(() => {
-      return window.matchMedia(query).matches;
+      return matchMedia(query).matches;
     });
   }
 
@@ -87,6 +98,18 @@ export class TdMediaService {
   }
 
   private _matchMediaTrigger(query: string): void {
-    this._querySources[query].next(window.matchMedia(query).matches);
+    this._querySources[query].next(matchMedia(query).matches);
   }
 }
+
+export function MEDIA_PROVIDER_FACTORY(
+    parent: TdMediaService, ngZone: NgZone): TdMediaService {
+  return parent || new TdMediaService(ngZone);
+}
+
+export const MEDIA_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdMediaService,
+  deps: [[new Optional(), new SkipSelf(), TdMediaService], NgZone],
+  useFactory: MEDIA_PROVIDER_FACTORY,
+};

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { styleGuideRoutes } from './style-guide.routes';
 
@@ -15,8 +17,15 @@ import { UtilityStylesComponent } from './utility-styles/utility-styles.componen
 import { ResourcesComponent } from './resources/resources.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { CovalentCoreModule } from '../../../platform/core';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
+         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule,
+         MdTooltipModule, MdProgressBarModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
+         CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
@@ -34,9 +43,36 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
     NavigationDrawerComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
+    /** Angular Modules */
+    CommonModule,
+    FormsModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdInputModule,
+    MdMenuModule,
+    MdSelectModule,
+    MdGridListModule,
+    MdTabsModule,
+    MdSidenavModule,
+    MdSnackBarModule,
+    MdTooltipModule,
+    MdProgressBarModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentMediaModule,
+    CovalentSearchModule,
+    CovalentPagingModule,
+    CovalentExpansionPanelModule,
+    CovalentHighlightModule,
+    CovalentDialogsModule,
+    CovalentMessageModule,
     styleGuideRoutes,
+    ToolbarModule,
   ],
 })
 export class StyleGuideModule {}

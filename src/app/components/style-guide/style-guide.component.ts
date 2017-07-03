@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -72,10 +72,12 @@ export class StyleGuideComponent implements AfterViewInit {
     title: 'Navigation Drawer',
   }];
 
-  constructor(public media: TdMediaService) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
   }
 }

@@ -58,11 +58,16 @@ export class DynamicFormsDemoComponent {
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
+  }, {
+    name: 'required-password',
+    label: 'Password Label',
+    type: TdDynamicElement.Password,
+    required: true,
   }];
 
   numberElements: ITdDynamicElementConfig[] = [{
     name: 'number',
-    label: 'Number (coming soon)',
+    label: 'Number',
     type: TdDynamicType.Number,
     required: true,
     min: 18,

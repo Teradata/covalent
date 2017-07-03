@@ -1,6 +1,7 @@
 <div class="td-loading-wrapper" [style.min-height]="getHeight()" [class.td-overlay]="isOverlay() || isFullScreen()" [class.td-fullscreen]="isFullScreen()">
   <div [@tdFadeInOut]="animation"
      (@tdFadeInOut.done)="animationComplete($event)"
+     [style.min-height]="getHeight()"
      class="td-loading"
      layout="row"
      layout-align="center center"
@@ -18,5 +19,5 @@
                      [color]="color">
     </md-progress-bar>
   </div>
-  <template [cdkPortalHost]="content"></template>
+  <ng-template [cdkPortalHost]="content"></ng-template>
 </div>

@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-data-table-theme($theme) {
   $primary: map-get($theme, primary);
@@ -9,11 +9,14 @@
 
   table[td-data-table] {
     .td-data-table-row {
-      border-bottom-color: md-color($foreground, divider);
+      border-bottom-color: mat-color($foreground, divider);
     }
-    .md-checkbox-cell,
-    .md-checkbox-column {
-      color: md-color($foreground, secondary-text);
+    .mat-checkbox-cell,
+    .mat-checkbox-column {
+      color: mat-color($foreground, secondary-text);
+      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        color: mat-color($accent, 500);
+      }
     }
     .td-data-table-cell {
       font-size: 14px;
@@ -21,38 +24,48 @@
       letter-spacing: 0.010em;
       line-height: 20px;
       md-input-container {
-        .md-input-underline {
+        .mat-input-underline {
           display: none;
         }
       }
     }
     .td-data-table-column {
       font-size: 12px;
-      color: md-color($foreground, secondary-text);
+      color: mat-color($foreground, secondary-text);
       * {
         vertical-align: middle;
       }
       md-icon {
         &.td-data-table-sort-icon {
-          color: md-color($foreground, disabled);
+          color: mat-color($foreground, disabled);
         }
       }
-      &.md-active,
-      &.md-active md-icon {
-        color: md-color($foreground, base);
+      &.mat-active,
+      &.mat-active md-icon {
+        color: mat-color($foreground, base);
       }
     }
-    &.md-selectable tbody > tr.td-data-table-row {
-      &:not([disabled]):hover {
-        background-color: md-color($background, 'hover');
+    &.mat-selectable tbody > tr.td-data-table-row {
+      &:not([disabled]):not(.mat-selected):focus {
+        background-color: mat-color($background, 'hover');
       }
-      &.md-selected {
-        background-color: md-color($accent, 0.12);
+      &.mat-selected {
+        background-color: mat-color($accent, 0.12);
+      }
+    }
+    &.mat-clickable tbody > tr.td-data-table-row {
+      &:not([disabled]){
+        &:hover {
+          background-color: mat-color($background, 'hover');
+        }
+        &:active {
+          background-color: mat-color($accent, 0.12);
+        }
       }
     }
   }
-  .md-selected-title {
-    background-color: md-color($accent, 0.12);
-    color: md-color($accent);
+  .mat-selected-title {
+    background-color: mat-color($accent, 0.12);
+    color: mat-color($accent);
   }
 }

@@ -1,11 +1,7 @@
-@import 'default-theme';
-
 md-list-item,
-.md-list-item {
+.mat-list-item-content {
     md-icon {
-        color: md-color($md-foreground, icon);
         &[md-list-avatar] {
-            background-color: md-color($md-background, 100);
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
@@ -19,7 +15,8 @@ md-list-item,
         }
     }
 }
-.md-icon-logo {
+.mat-icon.md-icon-logo {
     height: auto;
     width: 100px;
 }
+

@@ -1,10 +1,11 @@
-import { Injectable, ComponentFactoryResolver } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, Overlay, OverlayState, OverlayRef, OverlayOrigin, ComponentPortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
+import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';
 import { ITdLoadingConfig} from './loading.service';
 
@@ -51,6 +52,7 @@ export class TdLoadingFactory {
         loadingRef.componentRef = overlayRef.attach(new ComponentPortal(TdLoadingComponent));
         this._mapOptions(options, loadingRef.componentRef.instance);
         loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
@@ -100,13 +102,14 @@ export class TdLoadingFactory {
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
   public createReplaceComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
-                                templateRef: TemplateRef<Object>): ILoadingRef {
+                                templateRef: TemplateRef<Object>, context: TdLoadingContext): ILoadingRef {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
     (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling ?
       nativeElement.nextElementSibling.scrollHeight : undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.None;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
+    viewContainerRef.createEmbeddedView(templateRef, context);
     loadingRef.observable
     .subscribe((registered: number) => {
       if (registered > 0 && !loading) {
@@ -121,8 +124,15 @@ export class TdLoadingFactory {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
           subs.unsubscribe();
-          viewContainerRef.createEmbeddedView(templateRef);
+          // passing context so when the template is re-attached, we can keep the reference of the variables
+          let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef, context);
           viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
+          /**
+           * Need to call "markForCheck" and "detectChanges" on attached template, so its detected by parent component when attached
+           * with "OnPush" change detection
+           */
+          cdr.detectChanges();
+          cdr.markForCheck();
         });
       }
     });
@@ -182,3 +192,15 @@ export class TdLoadingFactory {
     }
   }
 }
+
+export function LOADING_FACTORY_PROVIDER_FACTORY(
+    parent: TdLoadingFactory, componentFactoryResolver: ComponentFactoryResolver, overlay: Overlay, injector: Injector): TdLoadingFactory {
+  return parent || new TdLoadingFactory(componentFactoryResolver, overlay, injector);
+}
+
+export const LOADING_FACTORY_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdLoadingFactory,
+  deps: [[new Optional(), new SkipSelf(), TdLoadingFactory], ComponentFactoryResolver, Overlay, Injector],
+  useFactory: LOADING_FACTORY_PROVIDER_FACTORY,
+};

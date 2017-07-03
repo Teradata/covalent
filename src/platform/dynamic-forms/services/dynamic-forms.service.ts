@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 import { Validators, ValidatorFn, FormControl } from '@angular/forms';
-
-import { TdMaxValidator, TdMinValidator, TdNumberRequiredValidator } from '../../core';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -19,6 +17,7 @@ export enum TdDynamicType {
 
 export enum TdDynamicElement {
   Input = <any>'input',
+  Password = <any>'password',
   Textarea = <any>'textarea',
   Slider = <any>'slider',
   SlideToggle = <any>'slide-toggle',
@@ -61,6 +60,7 @@ export class TdDynamicFormsService {
       case TdDynamicType.Text:
       case TdDynamicType.Number:
       case TdDynamicElement.Input:
+      case TdDynamicElement.Password:
         return TdDynamicInputComponent;
       case TdDynamicElement.Textarea:
         return TdDynamicTextareaComponent;
@@ -89,6 +89,7 @@ export class TdDynamicFormsService {
       case TdDynamicType.Number:
       case TdDynamicElement.Slider:
       case TdDynamicElement.Input:
+      case TdDynamicElement.Password:
       case TdDynamicType.Array:
       case TdDynamicElement.Select:
         return 45;
@@ -117,14 +118,26 @@ export class TdDynamicFormsService {
   createValidators(config: ITdDynamicElementConfig): ValidatorFn {
     let validator: ValidatorFn;
     if (config.required) {
-      validator = config.type === TdDynamicType.Number ? TdNumberRequiredValidator.validate : Validators.required;
+      validator = Validators.required;
     }
     if (config.max || config.max === 0) {
-      validator = Validators.compose([validator, TdMaxValidator.validate(config.max)]);
+      validator = Validators.compose([validator, Validators.max(parseFloat(config.max))]);
     }
     if (config.min || config.min === 0) {
-      validator = Validators.compose([validator, TdMinValidator.validate(config.min)]);
+      validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
     return validator;
   }
 }
+
+export function DYNAMIC_FORMS_PROVIDER_FACTORY(
+    parent: TdDynamicFormsService): TdDynamicFormsService {
+  return parent || new TdDynamicFormsService();
+}
+
+export const DYNAMIC_FORMS_PROVIDER: Provider = {
+  // If there is already a service available, use that. Otherwise, provide a new one.
+  provide: TdDynamicFormsService,
+  deps: [[new Optional(), new SkipSelf(), TdDynamicFormsService]],
+  useFactory: DYNAMIC_FORMS_PROVIDER_FACTORY,
+};

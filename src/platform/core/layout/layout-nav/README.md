@@ -11,7 +11,7 @@
 | icon | string | icon name to be displayed before the title
 | logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
 | color | string | optional toolbar color. Defaults to primary.
-| navigationRoute | string | route for the icon, logo, and toolbarTitle. Defaults to '/'.
+| navigationRoute | string | option to set the combined route for the icon, logo, and toolbarTitle.
 
 
 ## Usage
@@ -23,12 +23,12 @@
 Example for Nav Layout:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color" navigationRoute="/">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="primary" navigationRoute="/">
   <div td-toolbar-content>
     .. main toolbar content
   </div>
   ... main content
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav>

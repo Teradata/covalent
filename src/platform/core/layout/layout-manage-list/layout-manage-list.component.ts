@@ -45,10 +45,18 @@ export class TdLayoutManageListComponent {
   @Input('sidenavWidth') sidenavWidth: string = '257px';
 
   /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
+  }
+
+  /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.toggle();
+    return this._sideNav.toggle(!this._sideNav.opened);
   }
 
   /**

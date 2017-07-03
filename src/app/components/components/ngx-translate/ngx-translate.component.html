@@ -117,9 +117,9 @@
           </md-select>
           <span flex="5"></span>
           <div [ngPlural]="valueCountForPlural">
-            <template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</template>
-            <template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</template>
-            <template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</template>
+            <ng-template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</ng-template>
+            <ng-template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</ng-template>
+            <ng-template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</ng-template>
           </div>
         </div>
       </md-tab>
@@ -138,9 +138,9 @@
               </md-select>
               <span flex="5"></span>
               <div [ngPlural]="valueCountForPlural">
-                <template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</template>
-                <template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</template>
-                <template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</template>
+                <ng-template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</ng-template>
+                <ng-template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</ng-template>
+                <ng-template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</ng-template>
               </div>
             </div>
           ]]>
@@ -304,13 +304,15 @@
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
-        <button md-button color="accent" (click)="openAlert()">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+        <div class="pad">
+          <button md-raised-button color="accent" (click)="openAlert()" class="text-upper">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+        </div>
       </md-tab>
       <md-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-           <button md-button color="accent" (click)="openAlert()">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
+           <button md-button color="accent" (click)="openAlert()" class="text-upper">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
           ]]>
         </td-highlight>
         <p>Typescript:</p>

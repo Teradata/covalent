@@ -1,39 +1,33 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { MdInputModule, MdIconModule } from '@angular/material';
+import { MdInputModule, MdIconModule, MdAutocompleteModule, MdChipsModule } from '@angular/material';
 
-import { TdChipsComponent } from './chips.component';
-import { TdChipComponent } from './chip.component';
-import { TdAutoCompleteComponent } from './autocomplete/autocomplete.component';
-
-export { TdChipsComponent } from './chips.component';
+import { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
+export { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 
 @NgModule({
   imports: [
-    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
-    MdInputModule.forRoot(),
-    MdIconModule.forRoot(),
+    MdInputModule,
+    MdIconModule,
+    MdChipsModule,
+    MdAutocompleteModule,
   ],
   declarations: [
     TdChipsComponent,
-    TdChipComponent,
-    TdAutoCompleteComponent,
+    TdChipDirective,
+    TdAutocompleteOptionDirective,
   ],
   exports: [
     TdChipsComponent,
-    TdChipComponent,
-    TdAutoCompleteComponent,
+    TdChipDirective,
+    TdAutocompleteOptionDirective,
   ],
 })
 export class CovalentChipsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentChipsModule,
-      providers: [],
-    };
-  }
+
 }

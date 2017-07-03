@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, HostBinding, Renderer, AnimationPlayer } from '@angular/core';
+import { Directive, ElementRef, Input, HostBinding, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { animate, AnimationBuilder, AnimationPlayer, AUTO_STYLE, style, animation } from '@angular/animations';
 
 @Directive({
   selector: '[tdToggle]',
@@ -6,9 +7,10 @@ import { Directive, ElementRef, Input, HostBinding, Renderer, AnimationPlayer } 
 export class TdToggleDirective {
 
   private _state: boolean;
-  private _hiddenState: boolean;
+  private _defaultOverflow: string;
   private _defaultDisplay: string;
-  private _timeoutNumber: number;
+  private _animationShowPlayer: AnimationPlayer;
+  private _animationHidePlayer: AnimationPlayer;
 
   /**
    * duration?: number
@@ -24,10 +26,17 @@ export class TdToggleDirective {
   @Input('tdToggle')
   set state(state: boolean) {
     this._state = state;
-    clearTimeout(this._timeoutNumber);
     if (state) {
+      if (this._animationShowPlayer) {
+        this._animationShowPlayer.destroy();
+        this._animationShowPlayer = undefined;
+      }
       this.hide();
     } else {
+      if (this._animationHidePlayer) {
+        this._animationHidePlayer.destroy();
+        this._animationHidePlayer = undefined;
+      }
       this.show();
     }
   }
@@ -48,16 +57,12 @@ export class TdToggleDirective {
     return this._state;
   }
 
-  /**
-   * Binds 'hidden' attribute.
-   */
-  @HostBinding('hidden')
-  get hiddenBinding(): boolean {
-    return this._hiddenState ? true : undefined;
-  }
-
-  constructor(private _renderer: Renderer, private _element: ElementRef) {
+  constructor(private _renderer: Renderer2,
+              private _element: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef,
+              private _animationBuilder: AnimationBuilder) {
     this._defaultDisplay = this._element.nativeElement.style.display;
+    this._defaultOverflow = this._element.nativeElement.style.overflow;
   }
 
   /**
@@ -65,98 +70,58 @@ export class TdToggleDirective {
    * starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [
-              {'height': this._element.nativeElement.scrollHeight + 'px'},
-              {'overflow': 'hidden'},
-            ],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [
-              {'height': 0},
-              {'overflow': 'hidden'},
-            ],
-          },
-          offset: 1,
-        },
-      ], this.duration, 0, 'ease-in');
-    animation.play();
-
-    /**
-     * Using timeout instead of onComplete since there is a bug if you start another animation
-     * before the previous one ends. The onComplete event is not executed.
-     * e.g. hide event started before show event is completed.
-     */
-    this._timeoutNumber = window.setTimeout(() => {
-      this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
-      this._hiddenState = this._state;
-      animation.destroy();
-    }, this.duration);
+    this._animationHidePlayer = this._animationBuilder.build(animation([
+      style({
+        height: AUTO_STYLE,
+        display: AUTO_STYLE,
+      }),
+      animate(this.duration + 'ms ease-in', style({height: '0'})),
+    ])).create(this._element.nativeElement);
+    this._renderer.setStyle(this._element.nativeElement, 'overflow', 'hidden');
+    this._changeDetectorRef.markForCheck();
+    this._animationHidePlayer.onDone(() => {
+      this._onHideDone();
+    });
+    this._animationHidePlayer.play();
   }
 
   /**
    * Shows element: sets "display:[default]" so animation is shown,
-   * starts animation and adds "display:[default]" style again at the end.
+   * starts animation and adds "overflow:[default]" style again at the end.
    */
   show(): void {
-    this._hiddenState = this._state;
-
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let startingAnimation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [
-              {'overflow': 'hidden'},
-            ],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [
-              {'overflow': 'hidden'},
-            ],
-          },
-          offset: 1,
-        },
-      ], 0, 0, 'ease-in');
-    startingAnimation.play();
-    startingAnimation.onDone(() => {
-      startingAnimation.destroy();
-      let animation: AnimationPlayer = this._renderer
-        .animate(this._element.nativeElement, undefined, [{
-            styles: {
-              styles: [
-                {'height': 0},
-                {'overflow': 'hidden'},
-              ],
-            },
-            offset: 0,
-          }, {
-            styles: {
-              styles: [
-                {'height': this._element.nativeElement.scrollHeight + 'px'},
-                {'overflow': 'hidden'},
-              ],
-            },
-            offset: 1,
-          },
-        ], this.duration, 0, 'ease-in');
-      animation.play();
-
-      /**
-       * Using timeout instead of onComplete since there is a bug if you start another animation
-       * before the previous one ends. The onComplete event is not executed.
-       * e.g. hide event started before show event is completed.
-       */
-      this._timeoutNumber = window.setTimeout(() => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-        animation.destroy();
-      }, this.duration);
+    this._renderer.setStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+    this._changeDetectorRef.markForCheck();
+    this._animationShowPlayer = this._animationBuilder.build(animation([
+      style({
+        height: '0',
+        display: 'none',
+      }),
+      animate(this.duration + 'ms ease-out', style({height: AUTO_STYLE})),
+    ])).create(this._element.nativeElement);
+    this._renderer.setStyle(this._element.nativeElement, 'overflow', 'hidden');
+    this._animationShowPlayer.onDone(() => {
+      this._onShowDone();
     });
+    this._animationShowPlayer.play();
+  }
+
+  private _onHideDone(): void {
+    if (this._animationHidePlayer) {
+      this._animationHidePlayer.destroy();
+      this._animationHidePlayer = undefined;
+      this._renderer.setStyle(this._element.nativeElement, 'overflow', this._defaultOverflow);
+      this._renderer.setStyle(this._element.nativeElement, 'display', 'none');
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  private _onShowDone(): void {
+    if (this._animationShowPlayer) {
+      this._animationShowPlayer.destroy();
+      this._animationShowPlayer = undefined;
+      this._renderer.setStyle(this._element.nativeElement, 'overflow', this._defaultOverflow);
+      this._changeDetectorRef.markForCheck();
+    }
   }
 }

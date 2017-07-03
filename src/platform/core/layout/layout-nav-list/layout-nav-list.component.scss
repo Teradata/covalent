@@ -1,3 +1,11 @@
+.td-menu-button {
+  margin-left: 0px;
+  /deep/ [dir='rtl'] & { 
+    margin-right: 0px;
+    margin-left: 6px;
+  }
+}
+
 :host {
   display: flex;
   margin: 0;
@@ -7,16 +15,13 @@
   overflow: hidden;
   md-sidenav-container.td-layout-nav-list {
     & > md-sidenav {
-      &.md-sidenav-opened,
-      &.md-sidenav-opening,
-      &.md-sidenav-closed,
-      &.md-sidenav-closing {
+      &.mat-sidenav-opened,
+      &.mat-sidenav-opening,
+      &.mat-sidenav-closed,
+      &.mat-sidenav-closing {
         box-shadow: none;
       }
     }
-  }
-  .td-menu-button {
-    margin-left: 0px;
   }
   .list {
     text-align: start;
@@ -24,22 +29,18 @@
 }
 :host /deep/ {
   md-sidenav-container.td-layout-nav-list {
-    & > .md-sidenav-content {
+    & > .mat-sidenav-content {
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > md-sidenav {
-      & > cdk-focus-trap {
-        &, & > div {
-          box-sizing: border-box;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -moz-box;
-          display: -ms-flexbox;
-          display: flex;
-          flex-direction: column;
-        }
-      }
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

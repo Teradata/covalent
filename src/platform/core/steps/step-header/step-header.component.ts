@@ -15,6 +15,12 @@ export class TdStepHeaderComponent {
   @Input('number') number: number;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect on header is disabled.
+   */
+  @Input('disableRipple') disableRipple: boolean;
+
+  /**
    * active?: boolean
    * Sets for active/inactive states on header.
    */
@@ -38,12 +44,12 @@ export class TdStepHeaderComponent {
    */
   isComplete(): boolean {
     return this.state === StepState.Complete;
-  };
+  }
 
   /**
    * Returns 'true' if [state] equals to [StepState.Required | 'required'], else 'false'.
    */
   isRequired(): boolean {
     return this.state === StepState.Required;
-  };
+  }
 }

@@ -13,6 +13,8 @@ export class DirectivesComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  trim: string = '';
+  val: string = '';
   toggleDiv: boolean = true;
   fadeDiv: boolean = true;
 

@@ -1,4 +1,5 @@
-import { Component, AnimationTransitionEvent, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -27,7 +28,6 @@ export enum LoadingStyle {
 import { TdFadeInOutAnimation } from '../common/common.module';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
@@ -133,7 +133,7 @@ export class TdLoadingComponent {
     return this.style === LoadingStyle.Overlay;
   }
 
-  animationComplete(event: AnimationTransitionEvent): void {
+  animationComplete(event: AnimationEvent): void {
     // Check to see if its "in" or "out" animation to execute the proper callback
     if (!event.fromState) {
       this.inAnimationCompleted();
@@ -154,25 +154,19 @@ export class TdLoadingComponent {
     this.value = 0;
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
-    setTimeout(() => {
-      this._animationOut.next(undefined);
-    });
+    this._animationOut.next(undefined);
   }
 
   /**
    * Starts in animation and returns an observable for completition event.
    */
   startInAnimation(): Observable<any> {
-    setTimeout(() => {
-      this.animation = true;
-      // Check for changes for `OnPush` change detection
-      this._changeDetectorRef.markForCheck();
-    });
     /* need to switch back to the selected mode, so we have saved it in another variable
     *  and then recover it. (issue with protractor)
     */
     this._mode = this._defaultMode;
     // Check for changes for `OnPush` change detection
+    this.animation = true;
     this._changeDetectorRef.markForCheck();
     return this._animationIn.asObservable();
   }

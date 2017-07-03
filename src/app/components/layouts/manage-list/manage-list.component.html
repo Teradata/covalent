@@ -1,5 +1,6 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
-  <td-layout-manage-list #manageList 
+<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <td-toolbar td-toolbar-content  hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+  <td-layout-manage-list #manageList
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
@@ -37,7 +38,7 @@
         <div layout-gt-md="row">
           <div flex-gt-md="50">
             <td-steps>
-              <td-step label="td-layout-nav" sublabel="the main content wrapper">
+              <td-step label="td-layout-nav" sublabel="the main content wrapper" active="true">
                 <md-list>
                   <md-list-item>
                     <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
@@ -170,15 +171,20 @@
             <h3 class="md-title">Typescript</h3>
             <td-highlight lang="typescript">
               <![CDATA[
+                import { ChangeDetectorRef } from '@angular/core';
                 import { TdMediaService } from '@covalent/core';
                 ...
                 export class MyComponent {
 
-                  constructor(public media: TdMediaService) {}
+                  constructor(private _changeDetectorRef: ChangeDetectorRef,
+                              public media: TdMediaService) {}
 
                   ngAfterViewInit(): void {
                     // broadcast to all listener observables when loading the page
                     this.media.broadcast();
+                    // force a new change detection cycle since change detections
+                    // have finished when `ngAfterViewInit` is executed
+                    this._changeDetectorRef.detectChanges();
                   }
                 }
               ]]>
@@ -188,7 +194,7 @@
       </md-card-content>
       <md-divider></md-divider>
       <md-card-actions layout="row">
-          <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+          <a md-button [routerLink]="'/layouts'" class="text-upper">Go Back</a>
       </md-card-actions>
     </md-card>
     <td-readme-loader resourceUrl="platform/core/layout/layout-manage-list/README.md"></td-readme-loader>

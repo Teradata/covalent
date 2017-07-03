@@ -1,6 +1,7 @@
 <td-layout-nav-list #navList
                     logo="assets:teradata"
                     toolbarTitle="Covalent"
+                    navigationRoute="/"
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
@@ -17,9 +18,9 @@
       <p md-line> item description </p>
     </a>
   </md-nav-list>
-  <div td-toolbar-content layout="row" flex>
-    <span>Page Title</span>
-    <span flex></span>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <span hide-xs hide-lg flex>Nav List</span>
+    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   </div>
   <md-card>
     <md-card-title>Nav List Layout</md-card-title>
@@ -42,7 +43,7 @@
       <div layout-gt-lg="row">
         <div flex-gt-lg="50">
           <td-steps>
-            <td-step label="td-layout-nav-list" sublabel="the main content area of the layout">
+            <td-step label="td-layout-nav-list" sublabel="the main content area of the layout" active="true">
               <md-list>
                 <md-list-item>
                   <h3 md-line><code><![CDATA[<td-layout-nav-list>]]></code></h3>
@@ -61,7 +62,7 @@
                 <md-divider></md-divider>
                 <md-list-item>
                   <h3 md-line><code>navigationRoute?: string</code></h3>
-                  <p md-line>Route on logo/icon/title (defaults to '/')</p>
+                  <p md-line>Optional route navigation on logo/icon/title</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item>
@@ -156,15 +157,20 @@
           <h3 class="md-title">Typescript</h3>
           <td-highlight lang="typescript">
             <![CDATA[
+              import { ChangeDetectorRef } from '@angular/core';
               import { TdMediaService } from '@covalent/core';
               ...
               export class MyComponent {
 
-                constructor(public media: TdMediaService) {}
+                constructor(private _changeDetectorRef: ChangeDetectorRef,
+                            public media: TdMediaService) {}
 
                 ngAfterViewInit(): void {
                   // broadcast to all listener observables when loading the page
                   this.media.broadcast();
+                  // force a new change detection cycle since change detections
+                  // have finished when `ngAfterViewInit` is executed
+                  this._changeDetectorRef.detectChanges();
                 }
               }
             ]]>
@@ -174,9 +180,9 @@
     </md-card-content>
     <md-divider></md-divider>
     <md-card-actions layout="row">
-        <a md-button [routerLink]="'/layouts'">Back to Overview</a>
+        <a md-button [routerLink]="'/layouts'" class="text-upper">Go back</a>
         <span flex></span>
-        <a md-button color="accent" [routerLink]="'/layouts/card-over'">Card Over</a>
+        <a md-button color="accent" [routerLink]="'/layouts/card-over'" class="text-upper">Card Over</a>
     </md-card-actions>
   </md-card>
   <td-readme-loader resourceUrl="platform/core/layout/layout-nav-list/README.md"></td-readme-loader>

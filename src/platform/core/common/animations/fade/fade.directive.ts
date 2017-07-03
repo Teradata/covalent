@@ -1,5 +1,5 @@
-import { Directive, ElementRef, Input, Output, EventEmitter, HostBinding } from '@angular/core';
-import { Renderer, AnimationPlayer } from '@angular/core';
+import { Directive, ElementRef, Input, Output, EventEmitter, HostBinding, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { animate, AnimationBuilder, AnimationPlayer, AUTO_STYLE, style, animation } from '@angular/animations';
 
 @Directive({
   selector: '[tdFade]',
@@ -7,10 +7,9 @@ import { Renderer, AnimationPlayer } from '@angular/core';
 export class TdFadeDirective {
 
   private _state: boolean;
-  private _hiddenState: boolean;
-  private _defaultOpacity: string;
   private _defaultDisplay: string;
-  private _timeoutNumber: number;
+  private _animationFadeInPlayer: AnimationPlayer;
+  private _animationFadeOutPlayer: AnimationPlayer;
 
   /**
    * duration?: number
@@ -26,10 +25,17 @@ export class TdFadeDirective {
   @Input('tdFade')
   set state(state: boolean) {
     this._state = state;
-    clearTimeout(this._timeoutNumber);
     if (state) {
+      if (this._animationFadeOutPlayer) {
+        this._animationFadeOutPlayer.destroy();
+        this._animationFadeOutPlayer = undefined;
+      }
       this.hide();
     } else {
+      if (this._animationFadeInPlayer) {
+        this._animationFadeInPlayer.destroy();
+        this._animationFadeInPlayer = undefined;
+      }
       this.show();
     }
   }
@@ -38,13 +44,13 @@ export class TdFadeDirective {
    * fadeIn?: function
    * Method to be executed when fadeIn animation ends.
    */
-  @Output('fadeIn') fadeIn: EventEmitter<void> = new EventEmitter<void>();
+  @Output('fadeIn') onFadeIn: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * fadeOut?: function
    * Method to be executed when fadeOut animation ends.
    */
-  @Output('fadeOut') fadeOut: EventEmitter<void> = new EventEmitter<void>();
+  @Output('fadeOut') onFadeOut: EventEmitter<void> = new EventEmitter<void>();
 
   /**
    * Binds native 'aria-expanded' attribute.
@@ -62,86 +68,65 @@ export class TdFadeDirective {
     return this._state;
   }
 
-  /**
-   * Binds 'hidden' attribute.
-   */
-  @HostBinding('hidden')
-  get hiddenBinding(): boolean {
-    return this._hiddenState ? true : undefined;
-  }
-
-  constructor(private _renderer: Renderer, private _element: ElementRef) {
+  constructor(private _renderer: Renderer2,
+              private _element: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef,
+              private _animationBuilder: AnimationBuilder) {
     this._defaultDisplay = this._element.nativeElement.style.display;
-    this._defaultOpacity = !this._element.nativeElement.style.opacity ? 1 : this._element.nativeElement.style.opacity;
   }
 
   /**
-   * Hides element: sets "display:[default]" so animation is shown,
-   * starts animation and adds "display:'none'" style at the end.
+   * Hides element: starts animation and adds "display:'none'" style at the end.
    */
   hide(): void {
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [{'opacity': 1}],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [{'opacity': 0}],
-          },
-          offset: 1,
-        },
-      ], this.duration, 0, 'ease-in');
-    animation.play();
-
-    /**
-     * Using timeout instead of onComplete since there is a bug if you start another animation
-     * before the previous one ends. The onComplete event is not executed.
-     * e.g.hide event started before show event is completed.
-     */
-    this._timeoutNumber = window.setTimeout(() => {
-      setTimeout(() => {
-        this._renderer.setElementStyle(this._element.nativeElement, 'display', 'none');
-      }, 0);
-      this._hiddenState = this._state;
-      this.fadeOut.emit(undefined);
-      animation.destroy();
-    }, this.duration);
+    this._animationFadeInPlayer = this._animationBuilder.build(animation([
+      style({
+        opacity: AUTO_STYLE,
+        display: AUTO_STYLE,
+      }),
+      animate(this.duration + 'ms ease-out', style({opacity: '0'})),
+    ])).create(this._element.nativeElement);
+    this._animationFadeInPlayer.onDone(() => {
+      this._onFadeInDone();
+    });
+    this._animationFadeInPlayer.play();
   }
 
   /**
-   * Shows element: sets "display:[default]" so animation is shown,
-   * starts animation and adds "display:[default]" style again at the end.
+   * Shows element: sets "display:[default]" so animation is shown.
    */
   show(): void {
-    this._hiddenState = this._state;
-    this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-    let animation: AnimationPlayer = this._renderer
-      .animate(this._element.nativeElement, undefined, [{
-          styles: {
-            styles: [{'opacity': 0}],
-          },
-          offset: 0,
-        }, {
-          styles: {
-            styles: [{'opacity': 1}],
-          },
-          offset: 1,
-        },
-      ], this.duration, 0, 'ease-in');
-    animation.play();
+    this._renderer.setStyle(this._element.nativeElement, 'display', this._defaultDisplay);
+    this._changeDetectorRef.markForCheck();
+    this._animationFadeOutPlayer = this._animationBuilder.build(animation([
+      style({
+        opacity: '0',
+        display: 'none',
+      }),
+      animate(this.duration + 'ms ease-in', style({opacity: AUTO_STYLE})),
+    ])).create(this._element.nativeElement);
+    this._animationFadeOutPlayer.onDone(() => {
+      this._onFadeOutDone();
+    });
+    this._animationFadeOutPlayer.play();
+  }
 
-    /**
-     * Using timeout instead of onComplete since there is a bug if you start another animation
-     * before the previous one ends. The onComplete event is not executed.
-     * e.g. hide event started before show event is completed.
-     */
-    this._timeoutNumber = window.setTimeout(() => {
-      this._renderer.setElementStyle(this._element.nativeElement, 'display', this._defaultDisplay);
-      this.fadeIn.emit(undefined);
-      animation.destroy();
-    }, this.duration);
+  private _onFadeInDone(): void {
+    if (this._animationFadeInPlayer) {
+      this._animationFadeInPlayer.destroy();
+      this._animationFadeInPlayer = undefined;
+      this._renderer.setStyle(this._element.nativeElement, 'display', 'none');
+      this._changeDetectorRef.markForCheck();
+      this.onFadeIn.emit();
+    }
+  }
+
+  private _onFadeOutDone(): void {
+    if (this._animationFadeOutPlayer) {
+      this._animationFadeOutPlayer.destroy();
+      this._animationFadeOutPlayer = undefined;
+      this._changeDetectorRef.markForCheck();
+      this.onFadeOut.emit();
+    }
   }
 }
