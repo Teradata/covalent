@@ -19,6 +19,18 @@
 
 ## Usage
 
+To toggle the nav list sidenav from child layouts/components, you can use the `[tdLayoutNavListToggle]` directive on any element and its click event will trigger the toggle.
+
+Example:
+
+```html
+<button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+  <md-icon>menu</md-icon>
+</button>
+```
+
+`[td-menu-button]` is used to include a menu button before the logo and title.
+
 `[td-sidenav-content]` is used to include items in the left side list.
 
 `[td-sidenav-toolbar-content]` is used to include items in the left toolbar.
@@ -29,14 +41,22 @@
 
 `td-layout-footer` is used to include items in the main footer.
 
+`[tdLayoutNavListToggle]` is used to add the sidenav toggle behavior to any clickable element.
+
 Example for Nav List Layout:
 
 ```html
 <td-layout-nav-list sidenavTitle="title" logo="logo" icon="icon" opened="true" mode="side" sidenavWidth="350px" color="primary" navigationRoute="/">
+  <button md-icon-button td-menu-button> // can use `[tdLayoutToggle]` to toggle main sidenav
+    <md-icon>menu</md-icon>
+  </button>
   <div td-sidenav-toolbar-content>
     ... left toolbar content
   </div>
   <md-nav-list td-sidenav-content>
+    <button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
     ... sidenav content
   </md-nav-list>
   <div td-toolbar-content>
