@@ -7,6 +7,7 @@ import {
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { MdPseudoCheckbox } from '@angular/material';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
@@ -23,6 +24,7 @@ describe('Component: DataTable', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
+        FormsModule,
         CovalentDataTableModule,
       ],
       declarations: [
@@ -30,6 +32,8 @@ describe('Component: DataTable', () => {
         TdDataTableSelectableTestComponent,
         TdDataTableRowClickTestComponent,
         TdDataTableSelectableRowClickTestComponent,
+        TdDataTableModelTestComponent,
+        TdDataTableCompareWithTestComponent,
       ],
       providers: [
         TdDataTableService,
@@ -363,6 +367,51 @@ describe('Component: DataTable', () => {
           });
         });
     })));
+
+    it('should load table and have first row checked by reference',
+      async(inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        let component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+
+        component.selectedRows = [component.data[0]];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('checked');
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+        });
+    })));
+
+    it('should load table and have no rows checked by reference',
+      async(inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableModelTestComponent);
+        let component: TdDataTableModelTestComponent = fixture.debugElement.componentInstance;
+
+        component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('unchecked');
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+        });
+    })));
+
+    it('should load table and have first row checked using [compareWith]',
+      async(inject([], () => {
+        let fixture: ComponentFixture<any> = TestBed.createComponent(TdDataTableCompareWithTestComponent);
+        let component: TdDataTableCompareWithTestComponent = fixture.debugElement.componentInstance;
+
+        component.selectedRows = [{ sku: '1452-2', item: 'Pork Chops', price: 32.11 }];
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('checked');
+          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+        });
+    })));
   });
 });
 
@@ -454,5 +503,53 @@ class TdDataTableSelectableRowClickTestComponent {
   }
   selectEvent(): void {
     /* noop */
+  }
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        [selectable]="true"
+        [(ngModel)]="selectedRows">
+    </td-data-table>`,
+})
+class TdDataTableModelTestComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+  selectedRows: any[];
+}
+
+@Component({
+  template: `
+    <td-data-table
+        [data]="data"
+        [columns]="columns"
+        [selectable]="true"
+        [(ngModel)]="selectedRows"
+        [compareWith]="compareWith">
+    </td-data-table>`,
+})
+class TdDataTableCompareWithTestComponent {
+  data: any[] = [
+    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
+    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
+  ];
+  columns: ITdDataTableColumn[] = [
+    { name: 'sku', label: 'SKU #' },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true },
+  ];
+  selectedRows: any[];
+  compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
+    return row.sku === model.sku;
   }
 }
