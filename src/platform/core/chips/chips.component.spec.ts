@@ -471,7 +471,7 @@ describe('Component: Chips', () => {
 
   });
 
-  describe('chip removal usage, requires readOnly to be false: ', () => {
+  describe('chip removal usage, requires disabled to be false: ', () => {
     let fixture: ComponentFixture<TdChipRemovalTestComponent>;
     let input: DebugElement;
     let chips: DebugElement;
@@ -668,7 +668,7 @@ describe('Component: Chips', () => {
 
   // more a11y unit tests
 
-  // readOnly usage
+  // disabled usage
 
   // chipAddition usage
 

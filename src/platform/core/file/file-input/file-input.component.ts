@@ -113,6 +113,7 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements Contr
     this._renderer.setProperty(this.inputElement, 'value', '');
   }
 
+  /** Method executed when the disabled value changes */
   onDisabledChange(v: boolean): void {
     if (v) {
       this.clear();
