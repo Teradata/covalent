@@ -150,6 +150,9 @@
             <td-highlight lang="html">
               <![CDATA[
                 <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
+                  <button md-icon-button td-menu-button>
+                    <md-icon>menu</md-icon>
+                  </button>
                   <td-layout-manage-list #manageList 
                           [opened]="media.registerQuery('gt-sm') | async"
                           [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
