@@ -66,6 +66,7 @@
     "@angular/platform-browser-dynamic": "^4.2.0",
     "@angular/platform-server": "^4.2.0",
     "@angular/router": "^4.2.0",
+    "@covalent/code-editor": "^1.0.0-alpha.5",
     "@ngx-translate/core": "7.0.0",
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "5.3.1",
@@ -117,6 +118,6 @@
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
     "tslint": "^5.2.0",
-    "typescript": "^2.3.2"
+    "typescript": "2.3.2"
   }
 }
