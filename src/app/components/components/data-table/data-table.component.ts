@@ -21,66 +21,6 @@ export class DataTableDemoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  dataTableAttrs: Object[] = [{
-    description: `Rows of data to be displayed`,
-    name: 'data',
-    type: 'any[]',
-  }, {
-    description: `List of columns to be displayed`,
-    name: 'columns?',
-    type: 'ITdDataTableColumn[]',
-  }, {
-    description: `Enables row selection, click events and selected row state.`,
-    name: 'selectable?',
-    type: 'boolean',
-  }, {
-    description: `Enables row click events and hover row state.`,
-    name: 'clickable?',
-    type: 'boolean',
-  }, {
-    description: `Enables multiple row selection. [selectable] needs to be enabled.`,
-    name: 'multiple?',
-    type: 'boolean',
-  }, {
-    description: `Enables sorting events, sort icons and active column states.`,
-    name: 'sortable?',
-    type: 'boolean',
-  }, {
-    description: `Sets the active sort column. [sortable] needs to be enabled.`,
-    name: 'sortBy?',
-    type: 'string',
-  }, {
-    description: `Sets the sort order of the [sortBy] column. [sortable] needs to be enabled.
-                  Defaults to 'ASC' or TdDataTableSortingOrder.Ascending`,
-    name: 'sortOrder?',
-    type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
-  }, {
-    description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
-                  Emits an [ITdDataTableSortEvent] implemented object.`,
-    name: 'sortChange',
-    type: `function()`,
-  }, {
-    description: `Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
-                  Emits an [ITdDataTableSelectEvent] implemented object.`,
-    name: 'rowSelect',
-    type: `function()`,
-  }, {
-    description: `Event emitted when all rows are selected/deselected by the all checkbox.
-                  [selectable] needs to be enabled.
-                  Emits an [ITdDataTableSelectAllEvent] implemented object.`,
-    name: 'selectAll',
-    type: `function()`,
-  }, {
-    description: `Event emitted when a row is clicked.
-                  Emits an [ITdDataTableRowClickEvent] implemented object.`,
-    name: 'rowClick',
-    type: `function()`,
-  }, {
-    description: `Refreshes data table and updates [data] and [columns]`,
-    name: 'refresh',
-    type: `function()`,
-  }];
-
   cellAttrs: Object[] = [{
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
     name: 'numeric',

@@ -384,80 +384,9 @@
     </div>
   </md-card-actions>
 </md-card>
-<md-card>
-  <md-card-title>TdDataTableComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-data-table>]]></code></h2>
-    <p>Use <code><![CDATA[<td-data-table>]]></code> element to generate a table.</p>
-    <p>Pass an array of javascript objects with the information to be displayed on the table to the [data] attribute.</p>
-    <p>Use [tdDataTableTemplate] directive for template support which gives context access to [value], [row] and [column].</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-data-table>]]></code> component has {{dataTableAttrs.length}} properties:</p>
-    <md-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dataTableAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </ng-template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-data-table
-          [data]="data"
-          [columns]="columns"
-          [selectable]="true|false"
-          [multiple]="true|false"
-          [sortable]="true|false"
-          [sortBy]="sortBy"
-          [sortOrder]="'ASC'|'DESC'"
-          (sortChange)="sortEvent($event)"
-          (rowSelect)="selectEvent($event)"
-          (selectAll)="selectAllEvent($event)">
-        </td-data-table>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { ITdDataTableColumn } from '@covalent/core';
-        ...
-        })
-        export class Demo {
-          private data: any[] = [
-            { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
-            { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
-          ];
-          private columns: ITdDataTableColumn[] = [
-            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit', sortable: true },
-            { name: 'item', label: 'Item name' },
-            { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
-          ];
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentDataTableModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentDataTableModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            CovalentDataTableModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
+
+<td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
+
 <md-card>
   <md-card-title>TdDataTableService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
