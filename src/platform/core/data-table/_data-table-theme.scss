@@ -46,10 +46,10 @@
       }
     }
     &.mat-selectable tbody > tr.td-data-table-row {
-      &:not([disabled]):not(.mat-selected):focus {
+      &:not([disabled]):not(.td-selected):focus {
         background-color: mat-color($background, 'hover');
       }
-      &.mat-selected {
+      &.td-selected {
         background-color: mat-color($accent, 0.12);
       }
     }
