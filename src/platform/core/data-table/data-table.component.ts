@@ -344,21 +344,30 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Selects or clears all rows depending on 'checked' value.
    */
   selectAll(checked: boolean): void {
+    let toggledRows: any[] = [];
     if (checked) {
       this._data.forEach((row: any) => {
         // skiping already selected rows
         if (!this.isRowSelected(row)) {
           this._value.push(row);
+          // checking which ones are being toggled
+          toggledRows.push(row);
         }
       });
       this._allSelected = true;
       this._indeterminate = true;
     } else {
+      this._data.forEach((row: any) => {
+        // checking which ones are being toggled
+        if (this.isRowSelected(row)) {
+          toggledRows.push(row);
+        }
+      });
       this.clearModel();
       this._allSelected = false;
       this._indeterminate = false;
     }
-    this.onSelectAll.emit({rows: this._value, selected: checked});
+    this.onSelectAll.emit({rows: toggledRows, selected: checked});
   }
 
   /**
