@@ -42,8 +42,8 @@ Example for HTML usage:
 
 ```html
 <td-message #message label="Label" sublabel="Sublabel goes here" icon="warning" color="primary | blue | red" [opened]="true">
-  <button td-message-actions md-button>View More<button>
-  <button td-message-actions md-button (click)="message.close()">Close<button>
+  <button td-message-actions md-button>View More</button>
+  <button td-message-actions md-button (click)="message.close()">Close</button>
   // .. body goes here
 </td-message>  
 ```

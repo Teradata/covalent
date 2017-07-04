@@ -44,7 +44,7 @@ export class TdFileService {
    */
   upload(options: IUploadOptions): Observable<any> {
     return new Observable<any>((subscriber: Subscriber<any>) => {
-      let xhr: XMLHttpRequest = new XMLHttpRequest();      
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
       let formData: FormData = new FormData();
 
       if (options.file !== undefined) {
@@ -53,11 +53,11 @@ export class TdFileService {
         formData = options.formData;
       } else {
         return subscriber.error('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
-      }      
+      }
 
-      xhr.onprogress = (event: ProgressEvent) => {
+      xhr.upload.onprogress = (event: ProgressEvent) => {
         let progress: number = 0;
-        if (event.total > 0) {
+        if (event.lengthComputable) {
           progress = Math.round(event.loaded / event.total * 100);
         }
         this._progressSubject.next(progress);
@@ -65,8 +65,8 @@ export class TdFileService {
 
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
-          if (xhr.status === 200 || xhr.status === 201) {
-            subscriber.next(JSON.parse(xhr.response));
+          if (xhr.status >= 200 && xhr.status < 300) {
+            subscriber.next(xhr.response);
             subscriber.complete();
           } else {
             subscriber.error(xhr.response);
