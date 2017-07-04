@@ -1,16 +1,29 @@
-import { Component, Input, ViewChild, forwardRef, Optional, Inject } from '@angular/core';
+import { Component, Directive, Input, ViewChild, forwardRef, Optional, Inject, Renderer2,
+         ElementRef, HostBinding, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
+import { LayoutToggle, ILayoutTogglable } from '../layout-toggle.class';
+
+@Directive({
+  selector: '[tdLayoutNavListToggle]',
+})
+export class TdLayoutNavListToggleDirective extends LayoutToggle {
+  constructor(@Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+              renderer: Renderer2,
+              elementRef: ElementRef) {
+    super(layout, renderer, elementRef);
+  }
+}
 
 @Component({
   selector: 'td-layout-nav-list',
   styleUrls: ['./layout-nav-list.component.scss' ],
   templateUrl: './layout-nav-list.component.html',
 })
-export class TdLayoutNavListComponent {
+export class TdLayoutNavListComponent implements ILayoutTogglable {
 
   @ViewChild(MdSidenav) _sideNav: MdSidenav;
 
@@ -83,13 +96,6 @@ export class TdLayoutNavListComponent {
   @Input('navigationRoute') navigationRoute: string;
 
   /**
-   * Checks if there is a [TdLayoutComponent] as parent.
-   */
-  get isMainSidenavAvailable(): boolean {
-    return !!this._layout;
-  }
-
-  /**
    * Checks if `ESC` should close the sidenav
    * Should only close it for `push` and `over` modes
    */
@@ -104,8 +110,7 @@ export class TdLayoutNavListComponent {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-              @Optional() private _router: Router) {}
+  constructor(@Optional() private _router: Router) {}
 
   handleNavigationClick(): void {
     if (this.routerEnabled) {
@@ -132,13 +137,6 @@ export class TdLayoutNavListComponent {
    */
   public close(): Promise<MdSidenavToggleResult> {
     return this._sideNav.close();
-  }
-
-  /**
-   * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
-   */
-  openMainSidenav(): void {
-    this._layout.toggle();
   }
 
 }

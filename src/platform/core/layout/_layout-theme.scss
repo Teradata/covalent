@@ -12,6 +12,14 @@
     background-color: mat-color($background, status-bar);
   }
 
+  [md-icon-button].td-layout-menu-button {
+    margin-left: 0px;
+    /deep/ [dir='rtl'] & { 
+      margin-right: 0px;
+      margin-left: 6px;
+    }
+  }
+
   td-layout-nav,
   td-layout-nav-list,
   td-layout-manage-list,

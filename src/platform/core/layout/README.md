@@ -27,6 +27,16 @@ Example for Main Layout:
 </td-layout>
 ```
 
+To toggle the main sidenav from child layouts/components, you can use the `[tdLayoutToggle]` directive on any element and its click event will trigger the toggle.
+
+Example:
+
+```html
+<button md-icon-button tdLayoutToggle>
+  <md-icon>menu</md-icon>
+</button>
+```
+
 ## Installation
 
 This component can be installed as npm package.

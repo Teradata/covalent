@@ -1,4 +1,7 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <td-toolbar td-toolbar-content hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
   <td-layout-card-over cardWidth="75">
     <md-card-title>Card Over Layout</md-card-title>
@@ -87,6 +90,9 @@
           <td-highlight lang="html">
             <![CDATA[
               <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
+                <button md-icon-button td-menu-button>
+                  <md-icon>menu</md-icon>
+                </button>
                 <td-layout-card-over cardTitle="Card Title" cardSubtitle="Card subtitle" cardWidth="75">
                   <router-outlet></router-outlet>
                 </td-layout-card-over>

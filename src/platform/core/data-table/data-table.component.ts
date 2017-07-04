@@ -439,8 +439,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (this.isClickable) {
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
+      const srcElement: any = event.srcElement || event.currentTarget;
       /* tslint:disable-next-line */
-      if (event.srcElement.getAttribute('stopRowClick') === null) {
+      if (srcElement.getAttribute('stopRowClick') === null) {
         this.onRowClick.emit({row: row});
       }
     }
@@ -480,8 +481,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Descending) {
           index++;
         }
-        /** 
-         * if users presses the up arrow, we focus the prev row 
+        /**
+         * if users presses the up arrow, we focus the prev row
          * unless its the first row, then we move to the last row
          */
         if (index === 0) {
@@ -506,8 +507,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Ascending) {
           index--;
         }
-        /** 
-         * if users presses the down arrow, we focus the next row 
+        /**
+         * if users presses the down arrow, we focus the next row
          * unless its the last row, then we move to the first row
          */
         if (index === (length - 1)) {

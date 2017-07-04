@@ -14,11 +14,23 @@
 
 ## Usage
 
+To toggle the manage list sidenav from child layouts/components, you can use the `[tdLayoutManageListToggle]` directive on any element and its click event will trigger the toggle.
+
+Example:
+
+```html
+<button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+  <md-icon>menu</md-icon>
+</button>
+```
+
 `[td-sidenav-content]` is used to include items in the left side list.
 
 `[td-toolbar-content]` is used to include items in the toolbar.
 
 `td-layout-footer-inner` is used to include items in the inner footer.
+
+`[tdLayoutManageListToggle]` is used to add the sidenav toggle behavior to any clickable element.
 
 Example for Manage List Layout / Nav Layout combo:
 
@@ -34,9 +46,12 @@ Example for Manage List Layout / Nav Layout combo:
     <md-nav-list td-sidenav-content>
       ... sidenav content
     </md-nav-list>
-    <div td-toolbar-content>
+    <md-toolbar>
+      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+        <md-icon>arrow_back</md-icon>
+      </button>
       ... sub toolbar content
-    </div>
+    </md-toolbar>
     ... main content
     <td-layout-footer-inner>
       ... sub footer content
