@@ -9,7 +9,7 @@
 | --- | --- | --- |
 | mode | 'over', 'side' or 'push' | The mode or styling of the sidenav. Defaults to 'over'.
 | opened | boolean | Whether or not the sidenav is opened. Use this binding to open/close the sidenav. Defaults to 'false'.
-| sidenavWidth | string | Sets the 'width' of the sidenav in either 'px' or '%' ('%' is not well supported yet as stated in the layout docs). Defaults to '320px'.
+| sidenavWidth | string | Sets the 'width' of the sidenav in either 'px' or '%'. Defaults to '320px'.
 
 
 ## Usage
