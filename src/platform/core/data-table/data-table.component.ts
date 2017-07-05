@@ -124,12 +124,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   get value(): any { return this._value; }
 
   /**
-   * uniqueId?: string
-   * Allows selection by [uniqueId] property.
-   */
-  @Input('uniqueId') uniqueId: string;
-
-  /**
    * data?: {[key: string]: any}[]
    * Sets the data to be rendered as rows.
    */
@@ -300,6 +294,15 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
               private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
+   * compareWith?: function(row, model): boolean
+   * Allows custom comparison between row and model to see if row is selected or not
+   * Default comparation is by object reference
+   */
+  @Input('compareWith') compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
+    return row === model;
+  }
+
+  /**
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
@@ -344,34 +347,40 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Selects or clears all rows depending on 'checked' value.
    */
   selectAll(checked: boolean): void {
+    let toggledRows: any[] = [];
     if (checked) {
       this._data.forEach((row: any) => {
         // skiping already selected rows
         if (!this.isRowSelected(row)) {
           this._value.push(row);
+          // checking which ones are being toggled
+          toggledRows.push(row);
         }
       });
       this._allSelected = true;
       this._indeterminate = true;
     } else {
+      this._data.forEach((row: any) => {
+        // checking which ones are being toggled
+        if (this.isRowSelected(row)) {
+          toggledRows.push(row);
+        }
+      });
       this.clearModel();
       this._allSelected = false;
       this._indeterminate = false;
     }
-    this.onSelectAll.emit({rows: this._value, selected: checked});
+    this.onSelectAll.emit({rows: toggledRows, selected: checked});
   }
 
   /**
    * Checks if row is selected
    */
   isRowSelected(row: any): boolean {
-    // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-    if (this.uniqueId) {
-      return this._value ? this._value.filter((val: any) => {
-        return val[this.uniqueId] === row[this.uniqueId];
-      }).length > 0 : false;
-    }
-    return this._value ? this._value.indexOf(row) > -1 : false;
+    // compare items by [compareWith] function
+    return this._value ? this._value.filter((val: any) => {
+      return this.compareWith(row, val);
+    }).length > 0 : false;
   }
 
   /**
@@ -578,12 +587,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!wasSelected) {
       this._value.push(row);
     } else {
-      // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-      if (this.uniqueId) {
-        row = this._value.filter((val: any) => {
-          return val[this.uniqueId] === row[this.uniqueId];
-        })[0];
-      }
+      // compare items by [compareWith] function
+      row = this._value.filter((val: any) => {
+        return this.compareWith(row, val);
+      })[0];
       let index: number = this._value.indexOf(row);
       if (index > -1) {
         this._value.splice(index, 1);

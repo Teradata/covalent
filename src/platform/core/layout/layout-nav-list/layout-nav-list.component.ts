@@ -81,7 +81,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   /**
    * sidenavWidth?: string
    *
-   * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
+   * Sets the "width" of the sidenav in either "px" or "%"
    * Defaults to "350px".
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
