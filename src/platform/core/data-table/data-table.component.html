@@ -27,8 +27,9 @@
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
     <tr td-data-table-row
+        #dtRow
         [tabIndex]="isSelectable ? 0 : -1"
-        [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
+        [selected]="(isClickable || isSelectable) && isRowSelected(row)"
         *ngFor="let row of data; let rowIndex = index"
         (click)="handleRowClick(row, $event)"
         (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
@@ -38,7 +39,7 @@
         (keyup.shift)="enableTextSelection()">
       <td td-data-table-cell class="mat-checkbox-cell" *ngIf="isSelectable">
         <md-pseudo-checkbox
-          [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
+          [state]="dtRow.selected ? 'checked' : 'unchecked'"
           (mousedown)="disableTextSelection()"
           (mouseup)="enableTextSelection()"
           stopRowClick
