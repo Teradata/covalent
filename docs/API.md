@@ -14,7 +14,6 @@
 | `onEditorConfigurationChanged` | Emitted when configuration of the Editor changes
 | `onEditorLanguageChanged` | Emitted when the language of the Editor changes
 | `onEditorValueChange` | Emitted when value of the Editor changes
-| `(change)` | Calls the provided callback function when value of the Editor changes
 
 ### Properties
 
@@ -28,6 +27,22 @@
 | `editorStyle` | `string` | Additional Styling applied to Editor Container
 | `theme` | `string` | Theme used to style the Editor
 | `isElectronApp` | `function()` | Returns true or false based on if running in Electron
-| `[(ngModel)]` | `directive` | One-way or two-way binding of the variable value provided
+
+
+### Usage
+
+Example for HTML usage:
+
+```html
+<td-code-editor 
+        style="height: 200px" 
+        editorStyle="border:0;"
+        flex 
+        theme="vs" 
+        language="sql"
+        [(ngModel)]="model"
+        (change)="callBackFunc()">
+</td-code-editor>
+```
 
 ---
