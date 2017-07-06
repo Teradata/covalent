@@ -1,6 +1,6 @@
 <div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
-    <md-basic-chip [class.td-chip-disabled]="readOnly"
+    <md-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
@@ -48,7 +48,7 @@
   </md-autocomplete>
 </div>
 <div *ngIf="chipAddition" class="mat-input-underline"
-      [class.mat-disabled]="readOnly">
+      [class.mat-disabled]="disabled">
   <span class="mat-input-ripple"
         [class.mat-focused]="focused"></span>
 </div>

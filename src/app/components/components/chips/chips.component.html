@@ -12,7 +12,7 @@
                   [items]="filteredStrings"
                   [(ngModel)]="stringsModel"
                   placeholder="Enter autocomplete strings"
-                  [readOnly]="readOnly"
+                  [disabled]="disabled"
                   (inputChange)="filterStrings($event)"
                   requireMatch>
         </td-chips>
@@ -29,7 +29,7 @@
                       [items]="filteredStrings"
                       [(ngModel)]="stringsModel"
                       placeholder="Enter autocomplete strings"
-                      [readOnly]="readOnly"
+                      [disabled]="disabled"
                       (inputChange)="filterStrings($event)"
                       requireMatch>
             </td-chips>
@@ -39,7 +39,7 @@
         <td-highlight lang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
-              readOnly: boolean = false;
+              disabled: boolean = false;
               chipAddition: boolean = true;
               chipRemoval: boolean = true;
 
@@ -85,8 +85,8 @@
   <md-divider></md-divider>
   <md-card-actions>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="readOnly">
-        Read only
+      <md-slide-toggle color="accent" [(ngModel)]="disabled">
+        Disabled
       </md-slide-toggle>
     </div>
     <md-divider></md-divider>
