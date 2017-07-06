@@ -13,6 +13,8 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/filter';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 

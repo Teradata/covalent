@@ -2,6 +2,7 @@ import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core'
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/observable/fromEvent';
 
 @Injectable()
 export class TdMediaService {
