@@ -6,7 +6,7 @@
 
 ### Events
 
-#### The <td-code-editor> component has 5 events:
+#### The <td-code-editor> component has 4 events:
 
 | Name | Description |
 | --- | --- |
@@ -17,7 +17,7 @@
 
 ### Properties
 
-#### The <td-code-editor> component has 7 properties:
+#### The <td-code-editor> component has 6 properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
