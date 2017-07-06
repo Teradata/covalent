@@ -10,12 +10,12 @@
     <md-toolbar td-sidenav-content>
       <span>Optional Title</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a md-list-item><md-icon>folder</md-icon>Item Name</a>
       <a md-list-item><md-icon>people</md-icon>Item Name</a>
     </md-nav-list>
     <md-toolbar>
-      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>
       </button>
       <span>Optional Subtitle</span>
@@ -161,12 +161,12 @@
                       <span>Optional Title</span>
                     </md-toolbar>
                     <md-nav-list td-sidenav-content
-                                 (click)="!media.query('gt-sm') && manageList.close()">
+                                 [tdLayoutManageListClose]="media.query('gt-sm')">
                       <a md-list-item><md-icon>folder</md-icon>Item Name</a>
                       <a md-list-item><md-icon>people</md-icon>Item Name</a>
                     </md-nav-list>
                     <md-toolbar>
-                      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+                      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
                         <md-icon>arrow_back</md-icon>
                       </button>
                       <span>Optional Subtitle</span>

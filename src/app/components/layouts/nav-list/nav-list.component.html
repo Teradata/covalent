@@ -8,7 +8,7 @@
   <button md-icon-button td-menu-button tdLayoutToggle>
     <md-icon>menu</md-icon>
   </button>
-  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+  <md-nav-list td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
     <a md-list-item>
       <md-icon md-list-avatar>view_compact</md-icon>
       <h3 md-line> Item Name </h3>
@@ -22,7 +22,7 @@
     </a>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <button md-icon-button tdLayoutNavListToggle>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
     <span hide-xs hide-lg flex>Nav List</span>
@@ -147,7 +147,7 @@
                   <md-icon>menu</md-icon>
                 </button>
                 <md-nav-list td-sidenav-content
-                             (click)="!media.query('gt-sm') && navList.close()">
+                             [tdLayoutNavListClose]="!media.query('gt-sm')">
                   <a md-list-item>
                     <md-icon md-list-avatar>view_compact</md-icon>
                     <h3 md-line> Item Name </h3>
@@ -161,7 +161,7 @@
                   </a>
                 </md-nav-list>
                 <div td-toolbar-content layout="row" flex>
-                  <button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+                  <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
                     <md-icon>arrow_back</md-icon>
                   </button>
                   <span>Page Title</span>
