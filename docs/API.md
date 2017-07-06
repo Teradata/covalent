@@ -6,7 +6,7 @@
 
 ### Events
 
-#### The <td-code-editor> component has 4 events:
+#### The <td-code-editor> component has 5 events:
 
 | Name | Description |
 | --- | --- |
@@ -14,10 +14,11 @@
 | `onEditorConfigurationChanged` | Emitted when configuration of the Editor changes
 | `onEditorLanguageChanged` | Emitted when the language of the Editor changes
 | `onEditorValueChange` | Emitted when value of the Editor changes
+| `(change)` | Calls the provided callback function when value of the Editor changes
 
 ### Properties
 
-#### The <td-code-editor> component has 6 properties:
+#### The <td-code-editor> component has 7 properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -26,6 +27,7 @@
 | `registerLanguage` | `function()` | Registers a custom Language within the editor
 | `editorStyle` | `string` | Additional Styling applied to Editor Container
 | `theme` | `string` | Theme used to style the Editor
-| `isElectronApp` | `function()` | Returns true or false based on if running in Electron.
+| `isElectronApp` | `function()` | Returns true or false based on if running in Electron
+| `[(ngModel)]` | `directive` | One-way or two-way binding of the variable value provided
 
 ---
