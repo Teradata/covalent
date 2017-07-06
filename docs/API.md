@@ -6,14 +6,13 @@
 
 ### Events
 
-#### The <td-code-editor> component has 4 events:
+#### The <td-code-editor> component has 3 events:
 
 | Name | Description |
 | --- | --- |
 | `onEditorInitialized` | Emitted when Editor is finished initializing
 | `onEditorConfigurationChanged` | Emitted when configuration of the Editor changes
 | `onEditorLanguageChanged` | Emitted when the language of the Editor changes
-| `onEditorValueChange` | Emitted when value of the Editor changes
 
 ### Properties
 
