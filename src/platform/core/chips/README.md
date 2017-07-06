@@ -17,8 +17,9 @@ Properties:
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
 | `stacked?` | `boolean` | Set stacked or horizontal chips depending on value. Defaults to false.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
-| `chipAddition` | `boolean` | Disables the ability to add chips. When setting readOnly as true, this will be overriden. Defaults to true.
-| `chipRemoval` | `boolean` | Disables the ability to remove chips. When setting readOnly as true, this will be overriden. Defaults to true.
+| `disabled?` | `boolean` | Sets disabled state and disabled addition/removal of chips.
+| `chipAddition` | `boolean` | Disables the ability to add chips. When setting disabled as true, this will be overriden. Defaults to true.
+| `chipRemoval` | `boolean` | Disables the ability to remove chips. When setting disabled as true, this will be overriden. Defaults to true.
 | `debounce` | `string` | Debounce timeout between keypresses. Defaults to 200.
 | `add?` | `function` | Method to be executed when a chip is added. Sends chip value as event.
 | `remove?` | `function` | Method to be executed when a chip is removed. Sends chip value as event.
@@ -49,7 +50,7 @@ Example for HTML usage:
           color="primary"
           [items]="items"
           [(ngModel)]="model"
-          [readOnly]="readOnly" 
+          [disabled]="disabled" 
           [chipAddition]="chipAddition"
           [chipRemoval]="chipRemoval"
           (add)="addEvent($event)"
