@@ -1,95 +1,309 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-  <div class="md-padding">
-    <md-card>
-      <md-card-title>Nav View</md-card-title>
-      <md-card-subtitle>A simple layout with toolbar &amp; sidenav (this page is using nav view)</md-card-subtitle>
-      <md-divider></md-divider>
-      <md-nav-list>
-        <h3 md-subheader>Recommended usage:</h3>
-        <a md-list-item href="https://teradata.github.io/covalent-quickstart/" target="_blank">
-          <p md-line>Oveview dashboard with cards</p>
-          <md-icon>launch</md-icon>
-        </a>
-        <md-divider></md-divider>
-        <a md-list-item href="https://teradata.github.io/covalent-quickstart/#/templates/dashboard" target="_blank">
-          <p md-line>Dashboard with charts</p>
-          <md-icon>launch</md-icon>
-        </a>
-        <md-divider></md-divider>
-      </md-nav-list>
-      <md-card-content>
-        <div layout-gt-md="row">
-          <div flex-gt-md="50">
-            <td-steps>
-              <td-step label="td-layout-nav" sublabel="the main content area of the layout" active="true">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
-                    <p md-line>Builds the top toolbar and content area</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>toolbarTitle?: string</code></h3>
-                    <p md-line>The title of your toolbar</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>logo?: string</code></h3>
-                    <p md-line>The path to your toolbar logo</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>color?: string</code></h3>
-                    <p md-line>Toolbar color (primary | accent | warn | none)</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>navigationRoute?: string</code></h3>
-                    <p md-line>Optional route navigation on logo/icon/title</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
-                    <p md-line>Loads html for each route (view)</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </td-step>
-              <td-step label="td-layout-footer" sublabel="optional sticky footer">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-footer>]]></code></h3>
-                    <p md-line>Optional footer</p>
-                  </md-list-item>
-                </md-list>
-              </td-step>
-            </td-steps>
+<md-card>
+  <md-card-title>Minimum Demo</md-card-title>
+  <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+        Content goes here
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+          Content goes here
+        </td-layout-nav>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Basic Demo</md-card-title>
+  <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <md-nav-list>
+          <a md-list-item><md-icon>home</md-icon>Home</a>
+        </md-nav-list>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+          </md-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+        <button md-icon-button td-menu-button tdLayoutToggle>
+          <md-icon>menu</md-icon>
+        </button>
+        Content goes here
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+            <md-nav-list>
+              <a md-list-item><md-icon>home</md-icon>Home</a>
+            </md-nav-list>
+            <div td-navigation-drawer-menu>
+              <md-nav-list>
+                <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+              </md-nav-list>
+            </div>
+          </td-navigation-drawer>
+          <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+            <button md-icon-button td-menu-button tdLayoutToggle>
+              <md-icon>menu</md-icon>
+            </button>
+            Content goes here
+          </td-layout-nav>
+        </td-layout>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Full Demo</md-card-title>
+  <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <md-nav-list>
+          <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+        </md-nav-list>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+          </md-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav color="accent">
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <button md-icon-button td-menu-button tdLayoutToggle>
+            <md-icon>menu</md-icon>
+          </button>
+          <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+          <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+          <span flex></span>
+          <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+          <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+        </div>
+        <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+          <div flex-gt-sm="60">
+            <md-card>
+              <md-card-title>Products Sales</md-card-title>
+              <md-card-subtitle>usage stats for our products</md-card-subtitle>
+              <md-divider></md-divider>
+              <md-card-content>
+                card content
+              </md-card-content>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                  <span>View More</span>
+                </a>
+              </md-card-actions>
+            </md-card>
+            <md-card>
+              <md-card-title>Customer Activity</md-card-title>
+              <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+              <md-divider></md-divider>
+              <md-card-content>
+                card content
+              </md-card-content>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                  <span>View More</span>
+                </a>
+              </md-card-actions>
+            </md-card>
           </div>
-          <div flex-gt-md="50">
-            <h3 class="md-title">HTML</h3>
-            <td-highlight lang="html">
-              <![CDATA[
-                <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName" navigationRoute="/">
-                  <router-outlet></router-outlet>
-                  <td-layout-footer>
-                    Optional footer
-                  </td-layout-footer>
-                </td-layout-nav>
-              ]]>
-            </td-highlight>
+          <div flex-gt-sm="40">
+            <md-card>
+              <md-card-title>Alerts</md-card-title>
+              <md-card-subtitle>Items requiring attention</md-card-subtitle>
+              <md-divider></md-divider>
+              <md-card-content>
+                card content
+              </md-card-content>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                  <span>View More</span>
+                </a>
+              </md-card-actions>
+            </md-card>
+            <md-card>
+              <md-card-title>Favorites</md-card-title>
+              <md-card-subtitle>Your favorite products</md-card-subtitle>
+              <md-divider></md-divider>
+              <md-card-content>
+                card content
+              </md-card-content>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                  <span>View More</span>
+                </a>
+              </md-card-actions>
+            </md-card>
           </div>
         </div>
-      </md-card-content>
-      <md-divider></md-divider>
-      <md-card-actions layout="row">
-        <a md-button [routerLink]="'/layouts'" class="text-upper">Go back</a>
-        <span flex></span>
-        <a md-button color="accent" [routerLink]="'/layouts/nav-list'" class="text-upper">Nav List</a>
-      </md-card-actions>
-    </md-card>
-    <td-readme-loader resourceUrl="platform/core/layout/layout-nav/README.md"></td-readme-loader>
-  </div>
-  <td-layout-footer>
-    Optional footer
-  </td-layout-footer>
-</td-layout-nav>
+        <td-layout-footer>
+          <div layout="row" layout-align="start center">
+            <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+          </div>
+        </td-layout-footer>
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-layout>
+        <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+          <md-nav-list>
+            <a *ngFor="let item of routes" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+          </md-nav-list>
+          <div td-navigation-drawer-menu>
+            <md-nav-list>
+              <a *ngFor="let item of usermenu" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+            </md-nav-list>
+          </div>
+        </td-navigation-drawer>
+        <td-layout-nav color="accent">
+          <div td-toolbar-content layout="row" layout-align="start center" flex>
+            <button md-icon-button td-menu-button tdLayoutToggle>
+              <md-icon>menu</md-icon>
+            </button>
+            <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+            <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+            <span flex></span>
+            <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+            <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+          </div>
+          <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+            <div flex-gt-sm="60">
+              <md-card>
+                <md-card-title>Products Sales</md-card-title>
+                <md-card-subtitle>usage stats for our products</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+              </md-card>
+              <md-card>
+                <md-card-title>Customer Activity</md-card-title>
+                <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+              </md-card>
+            </div>
+            <div flex-gt-sm="40">
+              <md-card>
+                <md-card-title>Alerts</md-card-title>
+                <md-card-subtitle>Items requiring attention</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+              <md-card>
+                <md-card-title>Favorites</md-card-title>
+                <md-card-subtitle>Your favorite products</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+            </div>
+          </div>
+          <td-layout-footer>
+            <div layout="row" layout-align="start center">
+              <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+            </div>
+          </td-layout-footer>
+        </td-layout-nav>
+      </td-layout>
+      ]]>
+    </td-highlight>
+    <h3 class="md-title">TypeScript:</h3>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+        @Component({
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          selector: 'layouts-nav-view',
+          styleUrls: ['./nav-view.component.scss'],
+          templateUrl: './nav-view.component.html',
+        })
+        export class NavViewComponent {
+
+          routes: Object[] = [{
+              icon: 'home',
+              route: '.',
+              title: 'Home',
+            }, {
+              icon: 'library_books',
+              route: '.',
+              title: 'Documentation',
+            }, {
+              icon: 'color_lens',
+              route: '.',
+              title: 'Style Guide',
+            }, {
+              icon: 'view_quilt',
+              route: '.',
+              title: 'Layouts',
+            }, {
+              icon: 'picture_in_picture',
+              route: '.',
+              title: 'Components & Addons',
+            },
+          ];
+          usermenu: Object[] = [{
+              icon: 'swap_horiz',
+              route: '.',
+              title: 'Switch account',
+            }, {
+              icon: 'tune',
+              route: '.',
+              title: 'Account settings',
+            }, {
+              icon: 'exit_to_app',
+              route: '.',
+              title: 'Sign out',
+            },
+          ];
+
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<td-readme-loader resourceUrl="platform/core/layout/layout-nav/README.md"></td-readme-loader>

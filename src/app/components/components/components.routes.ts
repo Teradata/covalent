@@ -21,6 +21,7 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
+import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -89,6 +90,9 @@ const routes: Routes = [{
     }, {
       component: DynamicFormsDemoComponent,
       path: 'dynamic-forms',
+    }, {
+      component: CodeEditorDemoComponent,
+      path: 'code-editor',
     }, {
       component: NgxChartsDemoComponent,
       path: 'ngx-charts',

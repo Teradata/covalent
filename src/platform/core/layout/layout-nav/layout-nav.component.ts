@@ -47,32 +47,17 @@ export class TdLayoutNavComponent {
   @Input('navigationRoute') navigationRoute: string;
 
   /**
-   * Checks if there is a [TdLayoutComponent] as parent.
-   */
-  get isMainSidenavAvailable(): boolean {
-    return !!this._layout;
-  }
-
-  /**
    * Checks if router was injected.
    */
   get routerEnabled(): boolean {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-              @Optional() private _router: Router) {}
+  constructor(@Optional() private _router: Router) {}
 
   handleNavigationClick(): void {
     if (this.routerEnabled) {
       this._router.navigateByUrl(this.navigationRoute);
     }
-  }
-
-  /**
-   * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
-   */
-  openMainSidenav(): void {
-    this._layout.toggle();
   }
 }

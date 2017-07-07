@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';
-import { ITdLoadingConfig} from './loading.service';
+import { ITdLoadingConfig } from './loading.service';
 
 export interface IInternalLoadingOptions extends ITdLoadingConfig {
   height?: number;
@@ -52,6 +52,7 @@ export class TdLoadingFactory {
         loadingRef.componentRef = overlayRef.attach(new ComponentPortal(TdLoadingComponent));
         this._mapOptions(options, loadingRef.componentRef.instance);
         loadingRef.componentRef.instance.startInAnimation();
+        loadingRef.componentRef.changeDetectorRef.detectChanges();
       } else if (registered <= 0 && loading) {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {

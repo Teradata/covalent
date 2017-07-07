@@ -25,15 +25,15 @@
     }
     // header
     .td-step-header {
-      &:focus,
-      &:hover {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
         background: mat-color($background, 'hover');
       }
       .td-step-label-wrapper {
         .md-caption {
           color: mat-color($foreground, secondary-text);
         }
-        &.mat-disabled {
+        &.mat-inactive {
           &, & * {
             color: mat-color($foreground, disabled);
           }

@@ -1,5 +1,5 @@
 <md-card>
-  <md-card-title>Logo Placement</md-card-title>
+  <md-card-title>Including Your Logo</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
     <p class="md-body-1">Your company logo can be implemented with <code>md-icon</code>.</p>
@@ -10,47 +10,73 @@
         <md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon>
       ]]>
     </td-highlight>
-    <p class="md-body-1">The code above will output a 100x26px inline SVG:</p>
+    <p class="md-body-1">The code above will output an inline SVG with 100px width and auto height:</p>
     <md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-message class="push-bottom" sublabel="Tip: if you need a custom logo size use this snippet with your logo size in /src/styles.scss" color="light-blue" icon="info"></td-message>
+    <td-highlight lang="css">
+      <![CDATA[
+        md-toolbar .mat-icon.md-icon-logo { width: 100px; height: 100px; }
+      ]]>
+    </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="primary" [routerLink]="['iconography']" class="text-upper">Iconography</a>
+    <a md-button color="primary" [routerLink]="['/docs/icons']" class="text-upper">Icon Docs</a>
   </md-card-actions>
 </md-card>
 
 <md-card>
-  <md-card-title>Toolbar Placement</md-card-title>
+  <md-card-title>Toolbar Logo Placement</md-card-title>
+  <md-card-subtitle>place the logo in the top toolbar next to the title</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
     <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
     </td-layout-nav>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
+      ]]>
+    </td-highlight>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" [routerLink]="['/layouts']" class="text-upper">Layout Docs</a>
+  </md-card-actions>
 </md-card>
 
 <md-card>
-  <md-card-title>Sidenav Placement</md-card-title>
+  <md-card-title>Navigation Drawer (Sidenav) Logo Placement</md-card-title>
+  <md-card-subtitle>place the logo in the sidenav toolbar next to the title, above the user info</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <md-sidenav-container>
-      <md-sidenav opened="true" mode="side">
-        <md-toolbar layout="row">
-          <md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon>
-          <span flex>App Title</span>
-        </md-toolbar>
-        <div class="md-padding">
-        <p>Sidenav content</p>
+    <div class="md-padding bgc-grey-200">
+      <td-layout mode="side" opened="true">
+        <td-navigation-drawer flex logo="assets:teradata" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
+          <div class="pad">
+            sidenav content
+          </div>
+        </td-navigation-drawer>
+        <div class="pad">
+          main content
         </div>
-
-      </md-sidenav>
-
-      <div>
-        <md-card class="md-padding">
-          <p>Main Content</p>
-          <p>Main Content</p>
-          <button md-raised-button>Example Button</button>
-        </md-card>
-      </div>
-    </md-sidenav-container>
+      </td-layout>
+    </div>
+    <md-divider class="push-top push-bottom"></md-divider>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex logo="assets:teradata" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
+            sidenav content
+          </td-navigation-drawer>
+          main content
+        </td-layout>
+      ]]>
+    </td-highlight>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" [routerLink]="['navigation-drawer']" class="text-upper">Navigation Drawer</a>
+  </md-card-actions>
 </md-card>

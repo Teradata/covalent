@@ -1,19 +1,20 @@
-<div class="td-chips-wrapper">
+<div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
-    <md-basic-chip [class.td-chip-disabled]="readOnly"
+    <md-basic-chip [class.td-chip-disabled]="disabled"
+                   [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
                    (focus)="setFocusedState()">
       <div layout="row" layout-align="start center" flex>
-        <div class="td-basic-chip" layout="row" layout-align="start center">
-          <span *ngIf="!_basicChipTemplate?.templateRef">{{chip}}</span>
+        <div class="td-chip" layout="row" layout-align="start center" flex>
+          <span *ngIf="!_chipTemplate?.templateRef">{{chip}}</span>
           <ng-template
-            *ngIf="_basicChipTemplate?.templateRef"
-            [ngTemplateOutlet]="_basicChipTemplate?.templateRef"
+            *ngIf="_chipTemplate?.templateRef"
+            [ngTemplateOutlet]="_chipTemplate?.templateRef"
             [ngOutletContext]="{ chip: chip }">
           </ng-template>
         </div>
-        <md-icon *ngIf="!readOnly" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
+        <md-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
           cancel
         </md-icon>
       </div>
@@ -21,9 +22,9 @@
   </ng-template>
   <md-input-container floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
+                      [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
     <input mdInput
-            flex="100"
             #input
             [tabIndex]="-1"
             [mdAutocomplete]="autocomplete"
@@ -47,7 +48,7 @@
   </md-autocomplete>
 </div>
 <div *ngIf="chipAddition" class="mat-input-underline"
-      [class.mat-disabled]="readOnly">
+      [class.mat-disabled]="disabled">
   <span class="mat-input-ripple"
         [class.mat-focused]="focused"></span>
 </div>

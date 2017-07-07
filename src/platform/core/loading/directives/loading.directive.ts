@@ -118,7 +118,7 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
   @Input('tdLoadingColor') color: 'primary' | 'accent' | 'warn' = 'primary';
 
   constructor(private _viewContainerRef: ViewContainerRef,
-              private _templateRef: TemplateRef<Object>,
+              private _templateRef: TemplateRef<TdLoadingContext>,
               private _loadingService: TdLoadingService) {}
 
   /**

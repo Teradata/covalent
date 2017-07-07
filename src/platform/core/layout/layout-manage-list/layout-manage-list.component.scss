@@ -1,11 +1,3 @@
-.td-menu-button {
-  margin-left: 0px;
-  /deep/ [dir='rtl'] & { 
-    margin-right: 0px;
-    margin-left: 6px;
-  }
-}
-
 :host {
   display: flex;
   margin: 0;

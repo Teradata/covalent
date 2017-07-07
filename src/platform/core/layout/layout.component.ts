@@ -2,12 +2,14 @@ import { Component, Input, ViewChild } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
+import { ILayoutTogglable } from './layout-toggle.class';
+
 @Component({
   selector: 'td-layout',
   styleUrls: ['./layout.component.scss' ],
   templateUrl: './layout.component.html',
 })
-export class TdLayoutComponent {
+export class TdLayoutComponent implements ILayoutTogglable {
 
   @ViewChild(MdSidenav) sidenav: MdSidenav;
 
@@ -37,7 +39,7 @@ export class TdLayoutComponent {
   /**
    * sidenavWidth?: string
    *
-   * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
+   * Sets the "width" of the sidenav in either "px" or "%"
    * Defaults to "320px".
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav

@@ -1,13 +1,21 @@
 import { Component, Input } from '@angular/core';
 
+import { ICanDisable, mixinDisabled } from '../../common/common.module';
+
 import { StepState } from '../step.component';
+
+class TdStepHeaderBase {}
+
+/* tslint:disable-next-line */
+const _TdStepHeaderMixinBase = mixinDisabled(TdStepHeaderBase);
 
 @Component({
   selector: 'td-step-header',
+  inputs: ['disabled'],
   styleUrls: ['./step-header.component.scss' ],
   templateUrl: './step-header.component.html',
 })
-export class TdStepHeaderComponent {
+export class TdStepHeaderComponent extends _TdStepHeaderMixinBase implements ICanDisable {
 
   /**
    * Number assigned to [TdStepHeaderComponent].
@@ -15,16 +23,16 @@ export class TdStepHeaderComponent {
   @Input('number') number: number;
 
   /**
+   * disableRipple?: string
+   * Whether the ripple effect on header is disabled.
+   */
+  @Input('disableRipple') disableRipple: boolean;
+
+  /**
    * active?: boolean
    * Sets for active/inactive states on header.
    */
   @Input('active') active: boolean;
-
-  /**
-   * disabled?: boolean
-   * Sets styles for disabled state on icon and header.
-   */
-  @Input('disabled') disabled: boolean;
 
   /**
    * state?: StepState or ['none' | 'required' | 'complete']

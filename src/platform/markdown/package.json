@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5-1",
   "description": "Teradata UI Platform Markdown Module",
   "main": "./markdown.umd.js",
   "module": "./index.js",
@@ -38,7 +38,7 @@
     "showdown": "1.6.4"
   },
   "peerDependencies": {
-    "@angular/common": "^4.1.0",
-    "@angular/core": "^4.1.0"
+    "@angular/common": "^4.2.0",
+    "@angular/core": "^4.2.0"
   }
 }

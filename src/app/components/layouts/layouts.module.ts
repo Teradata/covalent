@@ -12,10 +12,13 @@ import { ManageListComponent } from './manage-list/manage-list.component';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule } from '@angular/material';
 
-import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule } from '../../../platform/core';
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule,
+         CovalentCommonModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
@@ -42,8 +45,10 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentStepsModule,
     CovalentMediaModule,
     CovalentHighlightModule,
+    CovalentCommonModule,
     DocumentationToolsModule,
     layoutsRoutes,
+    ToolbarModule,
   ],
 })
 export class LayoutsModule {}

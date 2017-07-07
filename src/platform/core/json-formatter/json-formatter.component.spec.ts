@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentJsonFormatterModule, TdJsonFormatterComponent } from './json-formatter.module';
 import { By } from '@angular/platform-browser';
 
@@ -17,7 +17,7 @@ describe('Component: JsonFormatter', () => {
         TdJsonFormatterBasicTestComponent,
       ],
       imports: [
-        BrowserAnimationsModule,
+        NoopAnimationsModule,
         CovalentJsonFormatterModule,
       ],
     });

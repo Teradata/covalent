@@ -5,6 +5,9 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <md-nav-list td-sidenav-content>
     <h3 md-subheader>Style Guide</h3>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
@@ -12,7 +15,7 @@
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
           [routerLinkActiveOptions]="{exact:true}"
-          (click)="!media.query('gt-sm') && navList.close()">
+          [tdLayoutNavListClose]="!media.query('gt-sm')">
         <md-icon md-list-avatar>{{item.icon}}</md-icon>
         <h3 md-line> {{item.title}} </h3>
         <p md-line> {{item.description}} </p>
@@ -25,7 +28,7 @@
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
           [routerLinkActiveOptions]="{exact:true}"
-          (click)="!media.query('gt-sm') && navList.close()">
+          [tdLayoutNavListClose]="!media.query('gt-sm')">
         <md-icon md-list-avatar>{{item.icon}}</md-icon>
         <h3 md-line> {{item.title}} </h3>
         <p md-line> {{item.description}} </p>
@@ -34,8 +37,13 @@
     </ng-template>
   </md-nav-list>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span>Teradata Style Guide</span>
-    <span flex></span>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
+    <span hide-gt-md>Style Guide</span>
+    <td-toolbar hide-xs hide-sm flex layout="row"></td-toolbar>
   </div>
-  <router-outlet></router-outlet>
+  <div class="theme-alt">
+    <router-outlet></router-outlet>
+  </div>
 </td-layout-nav-list>

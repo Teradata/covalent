@@ -16,6 +16,8 @@
 
 ## Usage
 
+`[td-menu-button]` is used to include a menu button before the logo and title.
+
 `[td-toolbar-content]` is used to include items in the toolbar.
 
 `td-layout-footer` is used to include items in the footer.
@@ -23,12 +25,15 @@
 Example for Nav Layout:
 
 ```html
-<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="color" navigationRoute="/">
+<td-layout-nav toolbarTitle="title" logo="logo" icon="icon" color="primary" navigationRoute="/">
+  <button md-icon-button td-menu-button> // can use `[tdLayoutToggle]` to toggle main sidenav
+    <md-icon>menu</md-icon>
+  </button>
   <div td-toolbar-content>
     .. main toolbar content
   </div>
   ... main content
-  <td-layout-footer>
+  <td-layout-footer color="primary"> // color is optional
     ... main footer content
   </td-layout-footer>
 </td-layout-nav>
