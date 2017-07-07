@@ -1,19 +1,8 @@
-import { Component, Directive, Input, ViewChild, Inject, forwardRef, Renderer2, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
-import { LayoutToggle, ILayoutTogglable } from './layout-toggle.class';
-
-@Directive({
-  selector: '[tdLayoutToggle]',
-})
-export class TdLayoutToggleDirective extends LayoutToggle {
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
-              renderer: Renderer2,
-              elementRef: ElementRef) {
-    super(layout, renderer, elementRef);
-  }
-}
+import { ILayoutTogglable } from './layout-toggle.class';
 
 @Component({
   selector: 'td-layout',
