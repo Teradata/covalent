@@ -1,8 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-
-import { IconService } from '../../../services';
+import { IconService } from '../../../../platform/core/common/services/icon.service';
 
 @Component({
   selector: 'style-guide-iconography',

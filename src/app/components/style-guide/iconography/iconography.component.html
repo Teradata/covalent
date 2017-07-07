@@ -145,7 +145,7 @@
     <h4 class="md-subhead">Current icons bundled with Icon Service</h4>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <div layout="row" layout-align="center center" class="md-padding">
           <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
         </div>
@@ -160,7 +160,7 @@
         </md-card-content>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -181,7 +181,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { IconService } from '../../../services';
+            import { IconService } from '../../../../platform/core/common/services/icon.service';
 
             export class IconographyComponent implements OnInit {
 
@@ -215,13 +215,13 @@
     <h3>Methods:</h3>
     <p>The <code><![CDATA[IconService]]></code> service comes with {{serviceAttrs.length}} methods:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
   </md-card-content>
 </md-card>

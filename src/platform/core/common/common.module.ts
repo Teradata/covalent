@@ -54,6 +54,7 @@ import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 import { RouterPathService } from './services/router.path.service';
+import { IconService } from './services/icon.service';
 
 const TD_PIPES: Type<any>[] = [
   TdTimeAgoPipe,
@@ -87,6 +88,7 @@ export { TdTimeAgoPipe, TdTimeDifferencePipe,
   ],
   providers: [
     RouterPathService,
+    IconService,
   ],
 })
 export class CovalentCommonModule {
