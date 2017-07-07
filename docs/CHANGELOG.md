@@ -1,3 +1,237 @@
+<a name="1.0.0-beta.6"></a>
+# [1.0.0-beta.6 TODO NAME](https://github.com/Teradata/covalent/tree/v1.0.0-beta.6) (2017-07-07)
+
+This release will make sure we work properly with `@angular/material@1.0.0-beta.8` + usage of the `cdk` module + some layout structure changes to add more flexibility and better  examples for each layout.
+
+Please check the angular material `beta.7` and `beta.8` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta8-plasma-abacus-2017-07-06)
+
+We are also pleased to announce the release of the [`covalent/code-editor`](https://github.com/Teradata/covalent-code-editor) module which makes the monaco editor (used by vscode) simple to use in the browser or electron.
+
+## Breaking Changes
+
+#### @angular/cdk
+
+Material introduced the `component toolkit` module and covalent has been using it for quite a while (directly from `@angular/material`).
+
+So this dependency is needed to be able to use `covalent` and soon `material` since they are deprecating the `cdk` imports from the `@angular/material` package.
+
+So just `npm install @angular/cdk` and you will be good to go!
+
+#### td-chips
+
+We will deprecate the `readOnly` input infavor of a `disabled` input to keep consistency across components and reuse the new disabled mixin.
+
+#### CovalentLayoutModule
+
+We abstracted the `menu` button from `td-layout-nav` and `td-layout-nav-list`, the `arrow_back` button from `td-layout-nav-list` and `td-layout-manage-list` and the `md-toolbar` from `td-layout-manage-list` and introduced layout directives that toggle/close/open their immediate parent.
+
+The following directives are:
+
+- `[tdLayoutToggle]`, `[tdLayoutOpen]`, `[tdLayoutClose]` for the `td-layout` sidenav.
+- `[tdLayoutNavListToggle]`, `[tdLayoutNavListOpen]`, `[tdLayoutNavListClose]` for the `td-layout-nav-list` sidenav.
+- `[tdLayoutManageListToggle]`, `[tdLayoutManageListOpen]`, `[tdLayoutManageListClose]` for the `td-layout-manage-list` sidenav.
+
+Every directive has a `[hideWhenOpened]` input that hides the host element when the binded sidenav is opened if set to `true`, also every directive can take a boolean to allow or block the click action.
+
+e.g. `td-layout-nav`
+
+Before:
+
+```html
+<td-layout>
+  <div td-sidenav-content>
+    Sidenav content
+  </div>
+  <td-layout-nav toolbarTitle="Title">
+    Content
+  <td-layout-nav>
+</td-layout>
+```
+
+After:
+
+```html
+<td-layout>
+  <div td-sidenav-content>
+    Sidenav content
+  </div>
+  <td-layout-nav toolbarTitle="Title">
+    <button md-icon-button td-menu-button tdLayoutToggle>
+      <md-icon>menu</md-icon>
+    </button>
+    Content
+  <td-layout-nav>
+</div>
+```
+
+OR
+
+```html
+<td-layout-nav toolbarTitle="Title">
+  <button md-icon-button td-menu-button (click)="somethingElse()">
+    <md-icon>menu</md-icon>
+  </button>
+  Content
+<td-layout-nav>
+```
+
+e.g. `td-layout-nav-list`
+
+Before:
+
+```html
+<td-layout-nav-list #navList toolbarTitle="Title">
+  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+    Sidenav Content
+  </div>
+  <div td-toolbar-content>
+    Toolbar content
+  </div>
+  Content
+ <td-layout-nav-list> 
+```
+
+After:
+
+```html
+<td-layout-nav-list toolbarTitle="Title">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
+  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+    Sidenav Content
+  </div>
+  <div td-toolbar-content>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
+  </div>
+  Content
+ <td-layout-nav-list> 
+```
+
+e.g. `td-layout-manage-list`
+
+Before:
+
+```html
+<td-layout-manage-list #manageList>
+  <md-toolbar td-sidenav-content></md-toolbar>
+  <div td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+    Sidenav Content
+  </div>
+  <div td-toolbar-content>
+    Toolbar content
+  </div>
+  Content
+ <td-layout-manage-list> 
+```
+
+After:
+
+```html
+<td-layout-manage-list>
+  <md-toolbar td-sidenav-content></md-toolbar>
+  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+    Sidenav Content
+  </div>
+  <md-toolbar>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
+  </md-toolbar>
+  Content
+ <td-layout-manage-list> 
+```  
+
+All these changes will allow the developers to toggle parent sidenavs with any clickable element + able to toggle/open/close parent sidenavs from child routes + allow mixing and matching different layouts.
+
+e.g.
+
+```html
+<td-layout>
+  <div td-sidenav-content>
+    Main Sidenav content
+  </div>
+  <td-layout-nav toolbarTitle="Title">
+    <!-- [tdLayoutToggle] makes this button's click toggle the td-layout sidenav -->
+    <!-- [td-menu-button] is used to position this button before the logo and title -->
+    <button md-icon-button td-menu-button tdLayoutToggle>
+      <md-icon>menu</md-icon>
+    </button>
+    <td-layout-manage-list>
+      <md-toolbar td-sidenav-content>
+        Section Title
+      </md-toolbar>
+      <!-- [tdLayoutManageListClose] makes this button's click close the td-layout-manage-list sidenav -->
+      <div td-sidenav-content tdLayoutManageListClose>
+        Manage List Sidenav Content
+      </div>
+      <td-layout-nav toolbarTitle="Page Title">
+        <!-- [tdLayoutManageListOpen] makes this button's click close the td-layout-manage-list sidenav -->
+        <!-- [hideWhenOpened] is used to hide the button when the sidenav is opened -->
+        <button md-icon-button td-menu-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <md-icon>arrow_back</md-icon>
+        </button>
+        Content
+      </td-layout-nav>
+    </td-layout-manage-list>
+  </td-layout-nav>
+</td-layout>
+```
+
+OR
+
+```html
+<td-layout-nav toolbarTitle="Title">
+  <!-- [td-menu-button] is used to position this button before the logo and title -->
+  <!-- now we use it to toggle the manage-list sidenav for small/mid apps -->
+  <button md-icon-button td-menu-button (click)="manageList.toggle()">
+    <md-icon>menu</md-icon>
+  </button>
+  <td-layout-manage-list #manageList>
+    <div td-sidenav-content>
+      Manage List Sidenav Content
+    </div>
+    Content
+  </td-layout-manage-list>
+</td-layout-nav>
+```
+
+## Bug Fixes
+
+* **chips:** underline wasnt showing properly when disabled in material `beta.7` and `beta.8` ([045b8688759d8895978d1680de4bcea472ada6f4](https://github.com/Teradata/covalent/commit/045b8688759d8895978d1680de4bcea472ada6f4))
+* **data-table:** selectAll event will send toggled rows only ([0c3b31c0c97fadbcaa1eea1cedee7fd4a256e7bc](https://github.com/Teradata/covalent/commit/0c3b31c0c97fadbcaa1eea1cedee7fd4a256e7bc))
+* **data-table:** fixes click row error in firefox ([c0da66182ca383aed0dafc05e6288dbea3d3f1b6](https://github.com/Teradata/covalent/commit/c0da66182ca383aed0dafc05e6288dbea3d3f1b6)), closes [#692](https://github.com/Teradata/covalent/issues/692)
+* **file:** make progress based on upload API ([9180f9964c90416dca342111eaea8f1804f3f182](https://github.com/Teradata/covalent/commit/9180f9964c90416dca342111eaea8f1804f3f182))
+* **file:** file upload xhr request status and response fix ([34ed963173cecf4fc20dd68650e56f0f5aee7d97](https://github.com/Teradata/covalent/commit/34ed963173cecf4fc20dd68650e56f0f5aee7d97))
+* **layouts:** remove % note from `sidenavWidth` ([ec31c38ec7d55ee402c196c296fc12f3635fad28](https://github.com/Teradata/covalent/commit/ec31c38ec7d55ee402c196c296fc12f3635fad28))
+* **layouts:** fix issue with where the width would act weird in certain occations when the min-width was greater than the max-width ([ec31c38ec7d55ee402c196c296fc12f3635fad28](https://github.com/Teradata/covalent/commit/ec31c38ec7d55ee402c196c296fc12f3635fad28))
+* **loading:** `language-service` complain with loading directive (template with no implicit value) ([b84c6c7e90ba0ce8c2271d150dff63d2b70ee004](https://github.com/Teradata/covalent/commit/b84c6c7e90ba0ce8c2271d150dff63d2b70ee004))
+* **message:** fixed closing html tags in `message` README.md ([4d15d69f3507861516e3a40054b7c234d17f5421](https://github.com/Teradata/covalent/commit/4d15d69f3507861516e3a40054b7c234d17f5421))
+
+## Features
+* **code-editor:** introducing [`covalent-code-editor`](https://github.com/Teradata/covalent-code-editor) in our docs. ([5a20fa9ae943a82186cd0e6504bfa7ce5187ba41](https://github.com/Teradata/covalent/commit/5a20fa9ae943a82186cd0e6504bfa7ce5187ba41))
+* **data-table:** add `[compareWith]` input to allow row comparison ([b948746b7fe1f497b224af090549c32bfdb688d1](https://github.com/Teradata/covalent/commit/b948746b7fe1f497b224af090549c32bfdb688d1))
+* **layout:** introducing layout directives ([8881dc8e2b5e283e52d8a80598ab648b9b326f59](https://github.com/Teradata/covalent/commit/8881dc8e2b5e283e52d8a80598ab648b9b326f59)) and ([346a4bf8e0de59e3c70ba12cd3b49c32c216d757](https://github.com/Teradata/covalent/commit/346a4bf8e0de59e3c70ba12cd3b49c32c216d757))
+* **layout:** add better examples/demos for layout usages ([346a4bf8e0de59e3c70ba12cd3b49c32c216d757](https://github.com/Teradata/covalent/commit/346a4bf8e0de59e3c70ba12cd3b49c32c216d757))
+
+## Refactor
+* **disabled:** create a disabled mixin to reuse common disabled behavior ([e07e8e8048c74525f40e2e5a84973520de8a2b54](https://github.com/Teradata/covalent/commit/e07e8e8048c74525f40e2e5a84973520de8a2b54))
+* **chips:**  rename `readOnly` to `disabled` and reuse disabled mixin ([e07e8e8048c74525f40e2e5a84973520de8a2b54](https://github.com/Teradata/covalent/commit/e07e8e8048c74525f40e2e5a84973520de8a2b54))
+
+## Performance
+* **data-table:** add selected input in row to preserve value ([53592fa24eafd42deafb469212405b8bf8c65025](https://github.com/Teradata/covalent/commit/53592fa24eafd42deafb469212405b8bf8c65025))
+
+## Internal
+* **dependencies:** upgrade `@angular/material` to `1.0.0-beta.8` ([045b8688759d8895978d1680de4bcea472ada6f4](https://github.com/Teradata/covalent/commit/045b8688759d8895978d1680de4bcea472ada6f4))
+* **dependencies:** add `@angular/cdk` as dependency and import where needed ([045b8688759d8895978d1680de4bcea472ada6f4](https://github.com/Teradata/covalent/commit/045b8688759d8895978d1680de4bcea472ada6f4))
+* **dependencies:** hard set typescript dependency to `2.3.2` to avoid error with `rxjs@5.4.1` ([f5d9f3373a5772ba0e3206f813f2983fc2c59f9b](https://github.com/Teradata/covalent/commit/f5d9f3373a5772ba0e3206f813f2983fc2c59f9b))
+* **dependencies:** upgrade `@angular/cli` to `1.2.0` ([5f493f6a862105f94cb711edd73a73d4f9059884](https://github.com/Teradata/covalent/commit/5f493f6a862105f94cb711edd73a73d4f9059884))
+* **docs:** load notification README instead of duplicated docs ([91fb8528fded955da75c7be4e302d1bc23b4f69c](https://github.com/Teradata/covalent/commit/91fb8528fded955da75c7be4e302d1bc23b4f69c))
+* **docs:** fix chips README table structure ([91fb8528fded955da75c7be4e302d1bc23b4f69c](https://github.com/Teradata/covalent/commit/91fb8528fded955da75c7be4e302d1bc23b4f69c))
+
+
 <a name="1.0.0-beta.5-1"></a>
 # [1.0.0-beta.5-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.5) (2017-06-12)
 
