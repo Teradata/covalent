@@ -1,6 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+
+const noop: any = () => {
+  // empty method
+};
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter: number = 0;
@@ -14,8 +19,13 @@ declare const process: any;
   selector: 'td-code-editor',
   templateUrl: './code-editor.component.html',
   styleUrls: [ './code-editor.component.scss' ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdCodeEditorComponent),
+    multi: true,
+  }],
 })
-export class TdCodeEditorComponent implements OnInit, AfterViewInit {
+export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValueAccessor {
 
   private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
   private _appPath: string = '';
@@ -57,6 +67,13 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit {
   @Output('editorValueChange') onEditorValueChange: EventEmitter<void> = new EventEmitter<void>();
 
   /**
+   * The change event notifies you about a change happening in an input field.
+   * Since the component is not a native Angular component have to specifiy the event emitter ourself
+   */
+  @Output('change') onChange: EventEmitter<void> = new EventEmitter<void>();
+  onTouched = () => noop;
+
+  /**
    * Set if using Electron mode when object is created
    */
   constructor() {
@@ -79,15 +96,43 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit {
     this._value = value;
     if (this._componentInitialized) {
         if (this._webview) {
-            this._webview.send('setEditorContent', value);
+            if (this._webview.send !== undefined) {
+                this._webview.send('setEditorContent', value);
+                this.onEditorValueChange.emit(undefined);
+                this.onChange.emit(undefined);
+            } else {
+                // Editor is not loaded yet, try again in half a second
+                setTimeout(() => {
+                    this.value = value;
+                }, 500);
+            }
         } else {
-            this._editor.setValue(value);
+            if (this._editor) {
+                this._editor.setValue(value);
+                this.onEditorValueChange.emit(undefined);
+                this.onChange.emit(undefined);
+            }
         }
-        this.onEditorValueChange.emit(undefined);
     }
   }
-  // no getter for editor Value because need to use async call
-  // instead using getEditorContent function below
+
+  get value(): string {
+      return this._value;
+  }
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  writeValue(value: any): void {
+    this.value = value;
+  }
+  registerOnChange(fn: any): void {
+    // this.onChange = fn;
+  }
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
   /**
    * getEditorContent?: function
    * Returns the content within the editor
@@ -277,6 +322,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit {
             <script>
                 var editor;
                 var theme = '${this._theme}';
+                var value = '${this._value}';
 
                 require.config({
                     baseUrl: 'file://${this._appPath}/assets/monaco'
@@ -286,7 +332,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit {
 
                 require(['vs/editor/editor.main'], function() {
                     editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), {
-                        value: '${this._value}',
+                        value: value,
                         language: '${this.language}',
                         theme: '${this._theme}',
                     });
@@ -303,6 +349,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit {
 
                 // set the value of the editor from what was sent from the mainview
                 ipcRenderer.on('setEditorContent', function(event, data){
+                    value = data;
                     editor.setValue(data);
                 });
 
