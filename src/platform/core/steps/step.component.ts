@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
          ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective, TemplatePortal } from '@angular/material';
+import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 

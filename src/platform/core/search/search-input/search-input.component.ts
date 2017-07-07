@@ -1,7 +1,8 @@
 import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
-import { MdInputDirective, Dir } from '@angular/material';
+import { Dir } from '@angular/cdk';
+import { MdInputDirective } from '@angular/material';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/skip';
 

@@ -31,6 +31,7 @@ gulp.task('rollup-code', '', function() {
     '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
+    '@angular/cdk': 'ng.cdk',
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
