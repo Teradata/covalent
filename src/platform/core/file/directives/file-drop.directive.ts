@@ -3,10 +3,10 @@ import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core'
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
-class TdFileDropBase {}
+export class TdFileDropBase {}
 
 /* tslint:disable-next-line */
-const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
+export const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
 
 @Directive({
   selector: '[tdFileDrop]',

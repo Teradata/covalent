@@ -41,10 +41,10 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   }
 }
 
-class TdChipsBase {}
+export class TdChipsBase {}
 
 /* tslint:disable-next-line */
-const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
+export const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
 
 @Component({
   providers: [{

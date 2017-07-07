@@ -38,10 +38,10 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
   }
 }
 
-class TdStepBase {}
+export class TdStepBase {}
 
 /* tslint:disable-next-line */
-const _TdStepMixinBase = mixinDisabled(TdStepBase);
+export const _TdStepMixinBase = mixinDisabled(TdStepBase);
 
 @Component({
   selector: 'td-step',

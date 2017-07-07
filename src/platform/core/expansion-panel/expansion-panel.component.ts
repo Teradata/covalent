@@ -38,10 +38,10 @@ export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
 })
 export class TdExpansionPanelSummaryComponent {}
 
-class TdExpansionPanelBase {}
+export class TdExpansionPanelBase {}
 
 /* tslint:disable-next-line */
-const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
+export const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
 
 @Component({
   selector: 'td-expansion-panel',

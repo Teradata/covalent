@@ -24,10 +24,10 @@ export class TdFileInputLabelDirective extends TemplatePortalDirective {
   }
 }
 
-class TdFileInputBase {}
+export class TdFileInputBase {}
 
 /* tslint:disable-next-line */
-const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
+export const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
