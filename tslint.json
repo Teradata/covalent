@@ -188,7 +188,7 @@
     "component-selector": [false, "element", "td", "kebab-case"],
     "component-class-suffix": true,
     "directive-class-suffix": false, // Checked in PR's (different suffix for validators and so)
-    "use-input-property-decorator": true,
+    "use-input-property-decorator": false, // Checked in PR's (mixins need a diff approach)
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
     "no-attribute-parameter-decorator": true,

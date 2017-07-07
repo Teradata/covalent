@@ -13,7 +13,7 @@ export class ChipsDemoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  readOnly: boolean = false;
+  disabled: boolean = false;
   chipAddition: boolean = true;
   chipRemoval: boolean = true;
 
