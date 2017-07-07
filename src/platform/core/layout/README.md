@@ -27,12 +27,20 @@ Example for Main Layout:
 </td-layout>
 ```
 
-To toggle the main sidenav from child layouts/components, you can use the `[tdLayoutToggle]` directive on any element and its click event will trigger the toggle.
+To toggle/close/open the main sidenav from child layouts/components, you can use the `[tdLayoutToggle]`, `[tdLayoutClose]` or `[tdLayoutOpen]` directives on any element and its click event will trigger the sidenav action.
 
 Example:
 
 ```html
-<button md-icon-button tdLayoutToggle>
+<button md-icon-button [tdLayoutToggle]="true"> // or tdLayoutOpen / tdLayoutClose
+  <md-icon>menu</md-icon>
+</button>
+```
+
+To disable the sidenav action, just set the input to false.
+
+```html
+<button md-icon-button [tdLayoutToggle]="false">
   <md-icon>menu</md-icon>
 </button>
 ```

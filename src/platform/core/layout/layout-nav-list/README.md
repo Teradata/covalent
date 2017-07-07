@@ -19,12 +19,20 @@
 
 ## Usage
 
-To toggle the nav list sidenav from child layouts/components, you can use the `[tdLayoutNavListToggle]` directive on any element and its click event will trigger the toggle.
+To toggle/close/open the nav list sidenav from child layouts/components, you can use the `[tdLayoutNavListToggle]`, `[tdLayoutNavListClose]` or `[tdLayoutNavListOpen]` directives on any element and its click event will trigger the sidenav action.
 
 Example:
 
 ```html
-<button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+<button md-icon-button [tdLayoutNavListToggle]="true" [hideWhenOpened]="true"> // or tdLayoutNavListOpen / tdLayoutNavListClose
+  <md-icon>menu</md-icon>
+</button>
+```
+
+To disable the sidenav action, just set the input to false.
+
+```html
+<button md-icon-button [tdLayoutNavListToggle]="false">
   <md-icon>menu</md-icon>
 </button>
 ```
@@ -43,6 +51,10 @@ Example:
 
 `[tdLayoutNavListToggle]` is used to add the sidenav toggle behavior to any clickable element.
 
+`[tdLayoutNavListClose]` is used to add the sidenav close behavior to any clickable element.
+
+`[tdLayoutNavListOpen]` is used to add the sidenav open behavior to any clickable element.
+
 Example for Nav List Layout:
 
 ```html
@@ -54,7 +66,7 @@ Example for Nav List Layout:
     ... left toolbar content
   </div>
   <md-nav-list td-sidenav-content>
-    <button md-icon-button tdLayoutNavListToggle [hideWhenOpened]="true">
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
     ... sidenav content

@@ -1,19 +1,8 @@
-import { Component, Directive, Input, ViewChild, Inject, forwardRef, Renderer2, ElementRef } from '@angular/core';
+import { Component, Directive, Input, ViewChild } from '@angular/core';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
-import { LayoutToggle, ILayoutTogglable } from '../layout-toggle.class';
-
-@Directive({
-  selector: '[tdLayoutManageListToggle]',
-})
-export class TdLayoutManageListToggleDirective extends LayoutToggle {
-  constructor(@Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
-              renderer: Renderer2,
-              elementRef: ElementRef) {
-    super(layout, renderer, elementRef);
-  }
-}
+import { ILayoutTogglable } from '../layout-toggle.class';
 
 @Component({
   selector: 'td-layout-manage-list',
@@ -22,7 +11,7 @@ export class TdLayoutManageListToggleDirective extends LayoutToggle {
 })
 export class TdLayoutManageListComponent implements ILayoutTogglable {
 
-  @ViewChild(MdSidenav) _sideNav: MdSidenav;
+  @ViewChild(MdSidenav) sidenav: MdSidenav;
 
   /**
    * mode?: 'side', 'push' or 'over'
@@ -69,21 +58,21 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.toggle(!this._sideNav.opened);
+    return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
   public open(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.open();
+    return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
   public close(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.close();
+    return this.sidenav.close();
   }
 
 }

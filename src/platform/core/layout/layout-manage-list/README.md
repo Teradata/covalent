@@ -14,12 +14,20 @@
 
 ## Usage
 
-To toggle the manage list sidenav from child layouts/components, you can use the `[tdLayoutManageListToggle]` directive on any element and its click event will trigger the toggle.
+To toggle/close/open the manage list sidenav from child layouts/components, you can use the `[tdLayoutManageListToggle]`, `[tdLayoutManageListClose]` or `[tdLayoutManageListOpen]` directives on any element and its click event will trigger the sidenav action.
 
 Example:
 
 ```html
-<button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+<button md-icon-button [tdLayoutManageListToggle]="true" [hideWhenOpened]="true"> // or tdLayoutManageListOpen / tdLayoutManageListClose
+  <md-icon>menu</md-icon>
+</button>
+```
+
+To disable the sidenav action, just set the input to false.
+
+```html
+<button md-icon-button [tdLayoutManageListToggle]="false">
   <md-icon>menu</md-icon>
 </button>
 ```
@@ -31,6 +39,10 @@ Example:
 `td-layout-footer-inner` is used to include items in the inner footer.
 
 `[tdLayoutManageListToggle]` is used to add the sidenav toggle behavior to any clickable element.
+
+`[tdLayoutManageListClose]` is used to add the sidenav close behavior to any clickable element.
+
+`[tdLayoutManageListOpen]` is used to add the sidenav open behavior to any clickable element.
 
 Example for Manage List Layout / Nav Layout combo:
 
@@ -47,7 +59,7 @@ Example for Manage List Layout / Nav Layout combo:
       ... sidenav content
     </md-nav-list>
     <md-toolbar>
-      <button md-icon-button tdLayoutManageListToggle [hideWhenOpened]="true">
+      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>
       </button>
       ... sub toolbar content
