@@ -4,10 +4,10 @@ import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
 import { StepState } from '../step.component';
 
-class TdStepHeaderBase {}
+export class TdStepHeaderBase {}
 
 /* tslint:disable-next-line */
-const _TdStepHeaderMixinBase = mixinDisabled(TdStepHeaderBase);
+export const _TdStepHeaderMixinBase = mixinDisabled(TdStepHeaderBase);
 
 @Component({
   selector: 'td-step-header',

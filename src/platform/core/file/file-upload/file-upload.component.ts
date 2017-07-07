@@ -4,10 +4,10 @@ import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 
-class TdFileUploadBase {}
+export class TdFileUploadBase {}
 
 /* tslint:disable-next-line */
-const _TdFileUploadMixinBase = mixinDisabled(TdFileUploadBase);
+export const _TdFileUploadMixinBase = mixinDisabled(TdFileUploadBase);
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,6 +1,6 @@
 import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
-import { TemplatePortal } from '@angular/material';
+import { TemplatePortal } from '@angular/cdk';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 

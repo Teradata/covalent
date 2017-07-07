@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { TemplatePortalDirective } from '@angular/cdk';
 
 @Directive({selector: '[tdDataTableTemplate]ng-template'})
 export class TdDataTableTemplateDirective extends TemplatePortalDirective {

@@ -4,7 +4,7 @@
           [class.cursor-pointer]="routerEnabled"
           (click)="handleNavigationClick()"
           layout="row"
-          layout-align="start end">
+          layout-align="start center">
       <md-icon *ngIf="icon">{{icon}}</md-icon>
       <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
       <span *ngIf="sidenavTitle" class="md-subhead">{{sidenavTitle}}</span>

@@ -6,7 +6,7 @@
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { Dir } from '@angular/material';
+import { Dir } from '@angular/cdk';
 
 import { getDirection, setDirection } from '../../utilities/direction';
 

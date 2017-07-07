@@ -1,6 +1,6 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
          ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { TemplatePortalDirective } from '@angular/cdk';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
@@ -24,10 +24,10 @@ export class TdFileInputLabelDirective extends TemplatePortalDirective {
   }
 }
 
-class TdFileInputBase {}
+export class TdFileInputBase {}
 
 /* tslint:disable-next-line */
-const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
+export const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
