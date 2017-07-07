@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';
-import { ITdLoadingConfig} from './loading.service';
+import { ITdLoadingConfig } from './loading.service';
 
 export interface IInternalLoadingOptions extends ITdLoadingConfig {
   height?: number;
