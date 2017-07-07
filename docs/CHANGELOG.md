@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.6"></a>
-# [1.0.0-beta.6 TODO NAME](https://github.com/Teradata/covalent/tree/v1.0.0-beta.6) (2017-07-07)
+# [1.0.0-beta.6 Midnight Rider](https://github.com/Teradata/covalent/tree/v1.0.0-beta.6) (2017-07-07)
 
 This release will make sure we work properly with `@angular/material@1.0.0-beta.8` + usage of the `cdk` module + some layout structure changes to add more flexibility and better  examples for each layout.
 
