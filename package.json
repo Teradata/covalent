@@ -1,6 +1,6 @@
 {
   "name": "@covalent/code-editor",
-  "version": "1.0.0-alpha.6-3",
+  "version": "1.0.0-alpha.6-4",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "keywords": [
@@ -35,7 +35,7 @@
     "finish-release": "bash scripts/finish-release"
   },
   "engines": {
-    "node": ">6.9",
+    "node": ">=6.9",
     "npm": ">3"
   },
   "repository": {

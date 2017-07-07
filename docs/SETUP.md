@@ -1,10 +1,8 @@
 ## Setup
 
-* Add the following dependency to package.json
-```json
-"dependencies": {
-    "@covalent/code-editor": "^1.0.0-alpha.6-3"
-  },
+* Install Module
+```
+npm install @covalent/code-editor
 ```
 * **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
 ```json
