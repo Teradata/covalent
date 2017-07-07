@@ -17,7 +17,7 @@
   <md-divider></md-divider>
   <md-card-content>
     <div layout="row" layout-align="start center">
-      <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [value]="editorVal"></td-code-editor>
+      <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
     </div>
   </md-card-content>
   <md-divider></md-divider>
