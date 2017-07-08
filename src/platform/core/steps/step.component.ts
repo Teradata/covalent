@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
          ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective, TemplatePortal } from '@angular/material';
+import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -38,10 +38,10 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
   }
 }
 
-class TdStepBase {}
+export class TdStepBase {}
 
 /* tslint:disable-next-line */
-const _TdStepMixinBase = mixinDisabled(TdStepBase);
+export const _TdStepMixinBase = mixinDisabled(TdStepBase);
 
 @Component({
   selector: 'td-step',

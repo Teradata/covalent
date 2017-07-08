@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
          ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { TemplatePortalDirective } from '@angular/cdk';
 
 import { TdCollapseAnimation, ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -38,10 +38,10 @@ export class TdExpansionPanelSublabelDirective extends TemplatePortalDirective {
 })
 export class TdExpansionPanelSummaryComponent {}
 
-class TdExpansionPanelBase {}
+export class TdExpansionPanelBase {}
 
 /* tslint:disable-next-line */
-const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
+export const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
 
 @Component({
   selector: 'td-expansion-panel',
