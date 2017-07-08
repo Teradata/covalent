@@ -19,6 +19,10 @@
     <div layout="row" layout-align="start center">
       <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
     </div>
+    <p>Editor Output:</p>
+    <div layout="row" layout-align="start center">
+      <td-highlight flex [content]="editorVal" [lang]="editorLanguage"></td-highlight>
+    </div>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
