@@ -5,7 +5,7 @@ This release will make sure we work properly with `@angular/material@1.0.0-beta.
 
 Please check the angular material `beta.7` and `beta.8` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta8-plasma-abacus-2017-07-06)
 
-We are also pleased to announce the release of the [`covalent/code-editor`](https://github.com/Teradata/covalent-code-editor) module which makes the monaco editor (used by vscode) simple to use in the browser or electron.
+We are also pleased to announce the release of the [`covalent/code-editor`](https://github.com/Teradata/covalent-code-editor) module which makes the `Monaco` editor (used by `vscode`) simple to use in the browser or electron.
 
 ## Breaking Changes
 
@@ -19,7 +19,7 @@ So just `npm install @angular/cdk` and you will be good to go!
 
 #### td-chips
 
-We will deprecate the `readOnly` input infavor of a `disabled` input to keep consistency across components and reuse the new disabled mixin.
+We will deprecate the `readOnly` input in favor of a `disabled` input to keep consistency across components and reuse the newly disabled mixin.
 
 #### CovalentLayoutModule
 
@@ -31,7 +31,7 @@ The following directives are:
 - `[tdLayoutNavListToggle]`, `[tdLayoutNavListOpen]`, `[tdLayoutNavListClose]` for the `td-layout-nav-list` sidenav.
 - `[tdLayoutManageListToggle]`, `[tdLayoutManageListOpen]`, `[tdLayoutManageListClose]` for the `td-layout-manage-list` sidenav.
 
-Every directive has a `[hideWhenOpened]` input that hides the host element when the binded sidenav is opened if set to `true`, also every directive can take a boolean to allow or block the click action.
+Every directive has a `[hideWhenOpened]` input that hides the host element when the bound sidenav is opened if set to `true`, also every directive can take a boolean to allow or block the click action.
 
 e.g. `td-layout-nav`
 
