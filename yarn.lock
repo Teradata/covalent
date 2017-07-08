@@ -156,9 +156,9 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@covalent/code-editor@^1.0.0-alpha.6-4":
-  version "1.0.0-alpha.6-4"
-  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-1.0.0-alpha.6-4.tgz#2a510904f10c7c945a03f294d1394214279c452b"
+"@covalent/code-editor@^1.0.0-alpha.6-5":
+  version "1.0.0-alpha.6-5"
+  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-1.0.0-alpha.6-5.tgz#ff5e2e25bbc4b99baff93910a5c7d47f5d319535"
   dependencies:
     "@angular/common" "^4.0.0"
     "@angular/compiler" "^4.0.0"
@@ -919,10 +919,11 @@ chokidar@^1.4.1, chokidar@^1.4.3, chokidar@^1.6.0:
     fsevents "^1.0.0"
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.3.tgz#eeabf194419ce900da3018c207d212f2a6df0a07"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.4.tgz#8760e4ecc272f4c363532f926d874aae2c1397de"
   dependencies:
     inherits "^2.0.1"
+    safe-buffer "^5.0.1"
 
 clap@^1.0.9:
   version "1.2.0"
@@ -992,8 +993,8 @@ co@^4.6.0:
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
 
 coa@~1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/coa/-/coa-1.0.3.tgz#1b54a5e1dcf77c990455d4deea98c564416dc893"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/coa/-/coa-1.0.4.tgz#a9ef153660d6a86a8bdec0289a5c684d217432fd"
   dependencies:
     q "^1.1.2"
 
