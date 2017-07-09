@@ -37,6 +37,6 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "1.0.0-beta.5-1"
+    "@covalent/core": "1.0.0-beta.6"
   }
 }
