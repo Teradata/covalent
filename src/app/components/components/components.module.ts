@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { componentsRoutes } from './components.routes';
 
@@ -7,32 +9,47 @@ import { ComponentsOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
+import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
 import { LoadingDemoComponent } from './loading/loading.component';
 import { MarkdownDemoComponent } from './markdown/markdown.component';
 import { MediaDemoComponent } from './media/media.component';
+import { MessageDemoComponent } from './message/message.component';
 import { HttpDemoComponent } from './http/http.component';
 import { JsonFormatterDemoComponent } from './json-formatter/json-formatter.component';
 import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
-import { ChartsDemoComponent } from './charts/charts.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
-import { MaterialComponentsComponent } from './material-components/material-components.component';
+import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
+import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
+import { NotificationsDemoComponent } from './notifications/notifications.component';
+import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
+import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
-import { CovalentCoreModule } from '../../../platform/core';
-import { CovalentFileModule } from '../../../platform/file-upload';
+// External Dependencies
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
+         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule,
+         MdProgressBarModule } from '@angular/material';
+
+import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+         CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+         CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+         CovalentMessageModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentJsonFormatterModule } from '../../../platform/json-formatter';
-import { CovalentChipsModule } from '../../../platform/chips';
-import { CovalentChartsModule } from '../../../platform/charts';
-import { CovalentDataTableModule } from '../../../platform/data-table';
-import { CovalentPagingModule } from '../../../platform/paging';
-import { CovalentSearchModule } from '../../../platform/search';
+import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
+
+import { DocumentationToolsModule } from '../../documentation-tools';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
@@ -41,34 +58,74 @@ import { CovalentSearchModule } from '../../../platform/search';
     HighlightDemoComponent,
     StepsDemoComponent,
     ExpansionPanelDemoComponent,
+    FileInputDemoComponent,
     FileUploadDemoComponent,
     LoadingDemoComponent,
     MarkdownDemoComponent,
     MediaDemoComponent,
+    MessageDemoComponent,
     HttpDemoComponent,
     JsonFormatterDemoComponent,
     ChipsDemoComponent,
     DialogsDemoComponent,
     DirectivesComponent,
     PipesComponent,
-    ChartsDemoComponent,
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,
-    MaterialComponentsComponent,
+    DynamicFormsDemoComponent,
+    CodeEditorDemoComponent,
+    NotificationsDemoComponent,
+    // External Dependencies
+    NgxChartsDemoComponent,
+    NgxTranslateDemoComponent,
   ],
   imports: [
-    CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
+    /** Angular Modules */
+    CommonModule,
+    FormsModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdMenuModule,
+    MdInputModule,
+    MdSelectModule,
+    MdButtonToggleModule,
+    MdSlideToggleModule,
+    MdToolbarModule,
+    MdTabsModule,
+    MdTooltipModule,
+    MdProgressBarModule,
+    MdAutocompleteModule,
+    /** Covalent Modules */
+    CovalentCommonModule,
+    CovalentLayoutModule,
+    CovalentMediaModule,
+    CovalentExpansionPanelModule,
+    CovalentStepsModule,
+    CovalentDialogsModule,
+    CovalentLoadingModule,
+    CovalentSearchModule,
+    CovalentPagingModule,
+    CovalentFileModule,
+    CovalentNotificationsModule,
+    CovalentMenuModule,
+    CovalentChipsModule,
+    CovalentJsonFormatterModule,
+    CovalentDataTableModule,
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
+    CovalentMessageModule,
+    CovalentCodeEditorModule,
+    DocumentationToolsModule,
+    NgxChartsModule,
+    TranslateModule,
     componentsRoutes,
+    ToolbarModule,
   ],
 })
 export class ComponentsModule {}

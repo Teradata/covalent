@@ -1,36 +1,59 @@
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
 
 @mixin td-expansion-panel-theme($theme) {
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  // panel
-  td-expansion-panel {
-    background-color: md-color($background, card);
-    .md-disabled {
-      &, & * {
-        color: md-color($foreground, disabled);
+
+  .td-expansion-panel-group {
+    .td-expansion-panel {
+      transition: 120ms ease-in;
+      &:not(:last-of-type) {
+        &.td-expanded {
+          margin-bottom: $margin;
+        }
+      }
+      &:not(:first-of-type) {
+        &.td-expanded {
+          margin-top: $margin;
+        }
       }
     }
-    md-nav-list {
-      padding: 0;
+  }
+
+  .td-expansion-panel {
+    @include mat-elevation(1);
+    background-color: mat-color($background, card);
+    .td-expansion-panel-header {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        background: mat-color($background, 'hover');
+      }
+      .td-expansion-panel-header-content {
+        md-icon.td-expand-icon {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-disabled {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+      }
     }
     md-icon.td-expand-icon {
-      color: md-color($foreground, icon);
+      color: mat-color($foreground, icon);
     }
-    .td-expansion-primary,
-    .td-expansion-secondary {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-right: 5px;
+    .td-expansion-label,
+    .td-expansion-sublabel {
       &, & * {
         vertical-align: middle;
       }
     }
-    .td-expansion-secondary {
-      color: md-color($foreground, secondary-text);
+    .td-expansion-sublabel {
+      color: mat-color($foreground, secondary-text);
     }
   }
 }

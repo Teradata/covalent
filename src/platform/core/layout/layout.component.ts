@@ -1,133 +1,78 @@
-import { Component, OnDestroy, AfterViewInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav } from '@angular/material';
+import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
-import { TdLayoutService } from './services/layout.service';
+import { ILayoutTogglable } from './layout-toggle.class';
 
 @Component({
-  providers: [ TdLayoutService ],
   selector: 'td-layout',
-  styleUrls: [ 'layout.component.scss' ],
-  templateUrl: 'layout.component.html',
+  styleUrls: ['./layout.component.scss' ],
+  templateUrl: './layout.component.html',
 })
-export class TdLayoutComponent implements OnDestroy, AfterViewInit {
+export class TdLayoutComponent implements ILayoutTogglable {
 
-  private _showUserMenu: boolean = false;
-  private _subcriptions: Subscription[] = [];
-
-  @ViewChild(MdSidenav) _sideNav: MdSidenav;
+  @ViewChild(MdSidenav) sidenav: MdSidenav;
 
   /**
-   * title in sideNav menu
+   * mode?: 'side', 'push' or 'over'
+   *
+   * The mode or styling of the sidenav.
+   * Defaults to "over".
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('sidenavTitle') sidenavTitle: string;
+  @Input('mode') mode: 'side' | 'push' | 'over' = 'over';
 
   /**
-   * icon for title in sideNav menu
+   * opened?: boolean
+   *
+   * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
+   * Defaults to "false".
+   *
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('icon') icon: string;
+  @Input('opened') opened: boolean = false;
 
   /**
-   * logo file for title in sideNav menu
+   * sidenavWidth?: string
+   *
+   * Sets the "width" of the sidenav in either "px" or "%"
+   * Defaults to "320px".
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input('logo') logo: string;
+  @Input('sidenavWidth') sidenavWidth: string = '320px';
 
   /**
-   * displayName in menu for users
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
    */
-  @Input('displayName') displayName: string;
-
-  /**
-   * method thats called when logout is clicked
-   */
-  @Output('logout') onLogoutEvent: EventEmitter<void> = new EventEmitter<void>();
-
-  /**
-   * title in sideNav menu
-   * @deprecated since 0.9, use sidenavTitle instead
-   */
-  @Input()
-  set title(title: string) {
-    /* tslint:disable-next-line */
-    console.warn("title is deprecated.  Please use sidenavTitle instead");
-    this.sidenavTitle = title;
-  }
-
-  /**
-   * title in sideNav menu
-   * @deprecated since 0.9, use sidenavTitle instead
-   */
-  get title(): string {
-    return this.sidenavTitle;
-  }
-
-  constructor(private layoutService: TdLayoutService) {
-    this._subcriptions.push(this.layoutService.registerSidenav('menu').subscribe(() => {
-      this.open();
-    }));
-  }
-
-  /**
-   * removes subscriptions when destroyed
-   */
-  ngOnDestroy(): void {
-    this._subcriptions.forEach((subs: Subscription) => {
-      subs.unsubscribe();
-    });
-  }
-
-  /**
-   * subscribes as observable to the onClose() event from the sideNav to hide userMenu when closed.
-   */
-  ngAfterViewInit(): void {
-    this._subcriptions.push(this._sideNav.onClose.asObservable().subscribe(() => {
-      this._showUserMenu = false;
-    }));
-  }
-
-  logoutClick(): void {
-    this._onLogout();
-  }
-
-  /**
-   * toggle userMenu to hide/show
-   */
-  toggleUserMenu(): void {
-    this._showUserMenu = !this._showUserMenu;
-  }
-
-  isShowUserMenu(): boolean {
-    return this._showUserMenu;
+  get disableClose(): boolean {
+    return this.mode === 'side';
   }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): void {
-    this._sideNav.toggle();
+  public toggle(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): void {
-    this._sideNav.open();
+  public open(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): void {
-    this._sideNav.close();
+  public close(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.close();
   }
 
-  /**
-   * emits logoutEvent
-   */
-  private _onLogout(): void {
-    this.onLogoutEvent.emit(undefined);
-  }
 }

@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+
+import { TdMediaService } from '@covalent/core';
+
+import { fadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-components',
-  styleUrls: ['components.component.scss'],
-  templateUrl: 'components.component.html',
+  styleUrls: ['./components.component.scss'],
+  templateUrl: './components.component.html',
+  animations: [fadeAnimation],
 })
-export class ComponentsComponent {
+export class ComponentsComponent implements AfterViewInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Components, Directives, Pipes & more',
     icon: 'picture_in_picture',
     route: '.',
     title: 'Components & Addons',
-  }, {
-    description: 'ng2 Material Design core components',
-    icon: 'change_history',
-    route: 'material-components',
-    title: 'Angular-Material Components',
   }, {
     description: 'A sequence of logical & numbered steps',
     icon: 'view_list',
@@ -28,10 +31,15 @@ export class ComponentsComponent {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
-    description: 'Upload input button',
-    icon: 'file_upload',
+    description: 'Text input for files',
+    icon: 'space_bar',
+    route: 'file-input',
+    title: 'File Input',
+  }, {
+    description: 'All-in-one upload button',
+    icon: 'attach_file',
     route: 'file-upload',
-    title: 'File Upload',
+    title: 'File Upload Button',
   }, {
     description: 'Small blocks for multiple items',
     icon: 'label_outline',
@@ -53,30 +61,25 @@ export class ComponentsComponent {
     route: 'data-table',
     title: 'Data Table',
   }, {
-    description: 'Highlighting your code snippets',
-    icon: 'code',
-    route: 'syntax-highlighting',
-    title: 'Syntax Highlighting',
-  }, {
     description: 'JSON object tree with collapsible nodes',
     icon: 'format_indent_increase',
     route: 'json-formatter',
     title: 'JSON Formatter',
   }, {
-    description: 'Parse markdown code',
-    icon: 'chrome_reader_mode',
-    route: 'markdown',
-    title: 'Markdown',
-  }, {
-    description: 'Responsive Charts',
-    icon: 'show_chart',
-    route: 'charts',
-    title: 'Charts',
-  }, {
     description: 'Paging for lists and tables',
     icon: 'swap_horiz',
     route: 'paging',
     title: 'Paging',
+  }, {
+    description: 'Notification count & menu',
+    icon: 'notifications',
+    route: 'notifications',
+    title: 'Notifications',
+  }, {
+    description: 'Info, warning & alert messages',
+    icon: 'info_outline',
+    route: 'message',
+    title: 'Messages & Alerts',
   }, {
     description: 'Search and filter items',
     icon: 'search',
@@ -87,11 +90,6 @@ export class ComponentsComponent {
     icon: 'devices',
     route: 'media',
     title: 'Media Queries',
-  }, {
-    description: 'Http wrappers and helpers',
-    icon: 'http',
-    route: 'http',
-    title: 'Http',
   }, {
     description: 'Core directives & utilities',
     icon: 'wb_iridescent',
@@ -104,4 +102,51 @@ export class ComponentsComponent {
     title: 'Pipes',
   }];
 
+  optional: Object[] = [{
+    description: 'Highlighting your code snippets',
+    icon: 'code',
+    route: 'syntax-highlighting',
+    title: 'Syntax Highlighting',
+  }, {
+    description: 'Parse markdown code',
+    icon: 'chrome_reader_mode',
+    route: 'markdown',
+    title: 'Markdown',
+  }, {
+    description: 'Build forms from a JS object',
+    icon: 'format_align_center',
+    route: 'dynamic-forms',
+    title: 'Dynamic Forms',
+  }, {
+    description: 'Multi-languge code editor for Browser and Electron',
+    icon: 'featured_play_list',
+    route: 'code-editor',
+    title: 'Code Editor',
+  }, {
+    description: 'Http wrappers and helpers',
+    icon: 'http',
+    route: 'http',
+    title: 'HTTP Service',
+  }];
+
+  external: Object[] = [{
+    description: 'Declarative D3 framework',
+    icon: 'insert_chart',
+    route: 'ngx-charts',
+    title: 'NGX-Charts',
+  }, {
+    description: 'i18n library',
+    icon: 'language',
+    route: 'ngx-translate',
+    title: 'NGX-Translate',
+  }];
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+    this._changeDetectorRef.detectChanges();
+  }
 }

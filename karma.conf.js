@@ -4,13 +4,18 @@
 module.exports = function (config) {
   var configuration = {
     basePath: '.',
-    frameworks: ['jasmine', 'angular-cli'],
+    frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-remap-istanbul'),
-      require('angular-cli/plugins/karma')
+      require('karma-firefox-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular/cli/plugins/karma')
     ],
+    client:{
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
     customLaunchers: {
       // chrome setup for travis CI using chromium
       Chrome_travis_ci: {
@@ -19,22 +24,26 @@ module.exports = function (config) {
       }
     },
     files: [
-      { pattern: './src/test.ts', watched: false }
+      {pattern: './src/test.ts', watched: false},
+      // Include a Material theme in the test suite.
+      {pattern: 'node_modules/@angular/material/prebuilt-themes/indigo-pink.css', included: true, watched: true},
     ],
     preprocessors: {
-      './src/test.ts': ['angular-cli']
+      './src/test.ts': ['@angular/cli']
     },
-    remapIstanbulReporter: {
-      reports: {
-        html: 'coverage',
-        lcovonly: './coverage/coverage.lcov'
-      }
-    },
+     coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true
+   },
     angularCli: {
-      config: './angular-cli.json',
       environment: 'dev'
     },
-    reporters: ['progress', 'karma-remap-istanbul'],
+    mime: {
+      'text/x-typescript': ['ts','tsx']
+    },
+    reporters: config.angularCli && config.angularCli.codeCoverage
+              ? ['progress', 'coverage-istanbul']
+              : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

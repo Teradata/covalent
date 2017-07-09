@@ -1,25 +1,17 @@
-@import "theme";
 // You can add global styles to this file that will cascade like normal CSS
 
-// Active icon color in list nav
-md-nav-list {
-    [md-list-item].active {
-        md-icon[md-list-avatar] {
-            background-color: md-color($accent);
-            color: md-color($accent, default-contrast)
-        }
-        md-icon[md-list-icon] {
-            color: md-color($accent);
-        }
-    }
+// class for route component animations
+.td-route-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-// Href line height wasn't right for md-icon-button
-a[md-icon-button] {
-    line-height: 36px;
-}
-
-// Stretch tab labels until there is an attribute for it
-.md-tab-label {
-    flex-grow: 1;
+.cdk-overlay-pane {
+  direction: ltr;
+  html[dir="rtl"] & {
+    direction: rtl;
+  }
 }

@@ -6,33 +6,33 @@
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
-          <div class="md-table-container">
+        <ng-template md-tab-label>Demo</ng-template>
+          <div class="mat-table-container">
           <table td-data-table>
             <th td-data-table-column>
               <md-icon>comment</md-icon>
               <span>Comments</span>
             </th>
-            <th td-data-table-column 
+            <th td-data-table-column
                 *ngFor="let column of columns"
                 [numeric]="column.numeric">
               {{column.label}}
             </th>
             <tr td-data-table-row *ngFor="let row of basicData">
               <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                <button md-button [class.md-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
               </td>
               <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                {{row[column.name]}}
+                {{column.format ? column.format(row[column.name]) : row[column.name]}}
               </td>
             </tr>
           </table>
         </div>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -41,17 +41,17 @@
                 <md-icon>comment</md-icon>
                 <span>Comments</span>
               </th>
-              <th td-data-table-column 
+              <th td-data-table-column
                   *ngFor="let column of columns"
                   [numeric]="column.numeric">
                 { {column.label}}
               </th>
               <tr td-data-table-row *ngFor="let row of basicData">
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.md-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                  <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                 </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                  { {row[column.name]}}
+                  { {column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
               </tr>
             </table>
@@ -60,8 +60,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
-            import { ViewContainerRef } from '@angular/core';
+            import { ITdDataTableColumn } from '@covalent/core';
             import { TdDialogService } from '@covalent/core';
             ...
             })
@@ -73,17 +72,15 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
                 { name: 'item', label: 'Item name' },
-                { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
               ];
 
-              constructor(private _dialogService: TdDialogService,
-                          private _viewContainerRef: ViewContainerRef) {}
+              constructor(private _dialogService: TdDialogService) {}
 
               openPrompt(row: any, name: string): void {
                 this._dialogService.openPrompt({
                   message: 'Enter comment?',
                   value: row[name],
-                  viewContainerRef: this._viewContainerRef,
                 }).afterClosed().subscribe((value: any) => {
                   if (value !== undefined) {
                     row[name] = value;
@@ -100,50 +97,51 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Basic Data Table</h3>
+    <h4 class="md-subhead">with nested data, formatting, and templates</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
+        <ng-template md-tab-label>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="columns">
-          <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
+          <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
             <div layout="row">
               <span flex>{{value}}</span>
               <md-icon>star</md-icon>
             </div>
-          </template>
+          </ng-template>
         </td-data-table>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-data-table
               [data]="basicData"
               [columns]="columns">
-              <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
+              <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
                   <span flex>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
                   <md-icon>star</md-icon>
                 </div>
-              </template>
+              </ng-template>
             </td-data-table>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { ITdDataTableColumn } from '@covalent/data-table';
+            import { ITdDataTableColumn } from '@covalent/core';
             ...
             })
             export class Demo {
               columns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)' },
-                { name: 'type', label: 'Type' },
-                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+                { name: 'food.name',  label: 'Dessert (100g serving)', sortable:true },
+                { name: 'food.type', label: 'Type' },
+                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable:true },
+                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable:true },
                 { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
                 { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
                 { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
@@ -154,8 +152,10 @@
               basicData: any[] = [
                   {
                     'id': 1,
-                    'name': 'Frozen yogurt',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Frozen yogurt',
+                      'type': 'Ice cream',
+                    },
                     'calories': 159.0,
                     'fat': 6.0,
                     'carbs': 24.0,
@@ -166,8 +166,10 @@
                     'comments': 'I love froyo!',
                   }, {
                     'id': 2,
-                    'name': 'Ice cream sandwich',
-                    'type': 'Ice cream',
+                    'food': {
+                      'name': 'Ice cream sandwich',
+                      'type': 'Ice cream',
+                    },
                     'calories': 237.0,
                     'fat': 9.0,
                     'carbs': 37.0,
@@ -177,8 +179,10 @@
                     'iron': 1.0,
                   }, {
                     'id': 3,
-                    'name': 'Eclair',
-                    'type': 'Pastry',
+                    'food': {
+                      'name': 'Eclair',
+                      'type': 'Pastry',
+                    },
                     'calories':  262.0,
                     'fat': 16.0,
                     'carbs': 24.0,
@@ -200,10 +204,10 @@
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
     <md-divider></md-divider>
-    <md-tab-group>
+    <md-tab-group md-stretch-tabs>
       <md-tab>
-        <template md-tab-label>Demo</template>
-        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.md-selected-title]="selectedRows.length && selectable">
+        <ng-template md-tab-label>Demo</ng-template>
+        <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
             <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
@@ -216,20 +220,29 @@
         </div>
         <md-divider></md-divider>
         <td-data-table
+          #dataTable
           [data]="filteredData"
           [columns]="columns"
           [selectable]="selectable"
+          [clickable]="clickable"
           [multiple]="multiple"
           [sortable]="true"
           [sortBy]="sortBy"
           [(ngModel)]="selectedRows"
           [sortOrder]="sortOrder"
-          (sortChange)="sort($event)">
+          (sortChange)="sort($event)"
+          (rowClick)="showAlert($event)">
         </td-data-table>
-        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+        <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+          <h3>No results to display.</h3>
+        </div>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+          <span td-paging-bar-label hide-xs>Row per page:</span>
+          {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+        </td-paging-bar>
       </md-tab>
       <md-tab>
-        <template md-tab-label>Code</template>
+        <ng-template md-tab-label>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -246,21 +259,32 @@
             </div>
             <md-divider></md-divider>
             <td-data-table
+              #dataTable
               [data]="filteredData"
               [columns]="columns"
+              [selectable]="selectable"
+              [clickable]="clickable"
+              [multiple]="multiple"
               [sortable]="true"
               [sortBy]="sortBy"
+              [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)">
             </td-data-table>
-            <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+            <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+              <h3>No results to display.</h3>
+            </div>
+            <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+              <span td-paging-bar-label hide-xs>Row per page:</span>
+              { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+            </td-paging-bar>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/data-table';
-            import { IPageChangeEvent } from '@covalent/paging';
+            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
+            import { IPageChangeEvent } from '@covalent/core';
             ...
             })
             export class Demo {
@@ -271,7 +295,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
                 { name: 'item', label: 'Item name' },
-                { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+                { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), filter: true },
               ];
 
               filteredData: any[] = this.data;
@@ -282,6 +306,7 @@
               currentPage: number = 1;
               pageSize: number = 5;
               sortBy: string = 'sku';
+              selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
               constructor(private _dataTableService: TdDataTableService) {}
@@ -310,7 +335,14 @@
 
               filter(): void {
                 let newData: any[] = this.data;
-                newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+                let excludedColumns: string[] = this.columns
+                .filter((column: ITdDataTableColumn) => {
+                  return ((column.filter === undefined && column.hidden === true) || 
+                          (column.filter !== undefined && column.filter === false));
+                }).map((column: ITdDataTableColumn) => {
+                  return column.name;
+                });
+                newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
                 this.filteredTotal = newData.length;
                 newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
                 newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
@@ -324,93 +356,37 @@
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleSelectable()">
-      Toggle Selectable
-      ({{selectable ? 'ON' : 'OFF'}})
-    </button>
-    <button md-button color="primary" (click)="toggleMultiple()" [disabled]="!selectable">
-      Toggle Multiple Selection
-      ({{multiple ? 'ON' : 'OFF'}})
-    </button>
-    <button md-button color="primary" (click)="toggleTooltips()">
-      Toggle Tooltip
-      ({{areTooltipsOn() ? 'ON' : 'OFF'}})
-    </button>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="selectable">
+        Selectable rows
+      </md-slide-toggle>
+      <md-slide-toggle color="accent" [(ngModel)]="clickable">
+        Clickable rows
+      </md-slide-toggle>
+      <md-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
+        Multiple rows (shift + click for range selection)
+      </md-slide-toggle>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" (change)="toggleTooltips()">
+        Tooltips on column headers
+      </md-slide-toggle>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (change)="dataTable.refresh()">
+        Hide calories
+      </md-slide-toggle>
+      <md-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
+        Type column is searchable (search for <code>candy</code>)
+      </md-slide-toggle>
+    </div>
   </md-card-actions>
 </md-card>
-<md-card>
-  <md-card-title>TdDataTableComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-data-table>]]></code></h2>
-    <p>Use <code><![CDATA[<td-data-table>]]></code> element to generate a table.</p>
-    <p>Pass an array of javascript objects with the information to be displayed on the table to the [data] attribute.</p>
-    <p>Use [tdDataTableTemplate] directive for template support which gives context access to [value], [row] and [column].</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-data-table>]]></code> component has {{dataTableAttrs.length}} properties:</p>
-    <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="dataTableAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-data-table
-          [data]="data"
-          [columns]="columns"
-          [selectable]="true|false"
-          [multiple]="true|false"
-          [sortable]="true|false"
-          [sortBy]="sortBy"
-          [sortOrder]="'ASC'|'DESC'"
-          (sortChange)="sortEvent($event)"
-          (rowSelect)="selectEvent($event)">
-        </td-data-table>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { ITdDataTableColumn } from '@covalent/data-table';
-        ...
-        })
-        export class Demo {
-          private data: any[] = [
-            { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
-            { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
-          ];
-          private columns: ITdDataTableColumn[] = [
-            { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-            { name: 'item', label: 'Item name' },
-            { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
-          ];
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentDataTableModule] using the <code>forRoot()</code> method in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentDataTableModule } from '@covalent/data-table';
-        @NgModule({
-          imports: [
-            CovalentDataTableModule.forRoot(),
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
+
+<td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
+
 <md-card>
   <md-card-title>TdDataTableService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
@@ -420,13 +396,13 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
   </md-card-content>
 </md-card>
@@ -442,23 +418,23 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
     <md-list>
-      <template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
         <a md-list-item layout-align="row">
           <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p md-line> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
-      </template>
+      </ng-template>
     </md-list>
     <h3>Example:</h3>
     <p>HTML:</p>

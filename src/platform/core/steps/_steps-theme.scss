@@ -1,49 +1,70 @@
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
 
 @mixin td-steps-theme($theme) {
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  // steps
-  .td-horizontal-line {
-    border-bottom-color: md-color($foreground, divider);
-  }
-  .td-vertical-line {
-    border-left-color: md-color($foreground, divider);
-  }
-  // header
-  .td-step-header {
-    .md-caption {
-      color: md-color($foreground, secondary-text);
+  td-steps {
+    .td-steps-header {
+      @include mat-elevation(1);
     }
-    .md-disabled {
-      &, & * {
-        color: md-color($foreground, disabled);
+    .td-step-content,
+    .td-step-summary,
+    .td-step-actions {
+      margin: $margin;
+    }
+    // steps
+    .td-horizontal-line {
+      border-bottom-color: mat-color($foreground, divider);
+    }
+    .td-vertical-line {
+      border-left-color: mat-color($foreground, divider);
+    }
+    // header
+    .td-step-header {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        background: mat-color($background, 'hover');
+      }
+      .td-step-label-wrapper {
+        .md-caption {
+          color: mat-color($foreground, secondary-text);
+        }
+        &.mat-inactive {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+        &.mat-warn {
+          &, & * {
+            color: mat-color($warn);
+          }
+        }
+      }
+      .mat-complete {
+        color: mat-color($accent);
       }
     }
-    .md-warn {
-      &, & * {
-        color: md-color($warn);
+    .td-circle {
+      color: mat-color($background, card);
+      &.mat-active {
+        background-color: mat-color($accent);
+      }
+      &.mat-inactive {
+        background-color: mat-color($foreground, disabled);
+      }
+      & md-icon {
+        fill: mat-color($foreground, text);
       }
     }
-    .md-complete {
-      color: md-color($accent);
+    .td-triangle {
+      color: mat-color($warn);
     }
-  }
-  .td-circle {
-    color: md-color($background, card);
-    &.md-active {
-      background-color: md-color($accent);
+    .td-edit-icon {
+      color: mat-color($foreground, icon);
     }
-    &.md-inactive {
-      background-color: md-color($foreground, disabled);
-    }
-    & md-icon {
-      fill: md-color($foreground, text);
-    }
-  }
-  .td-triangle {
-    color: md-color($warn);
   }
 }

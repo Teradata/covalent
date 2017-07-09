@@ -1,0 +1,518 @@
+<md-card>
+  <md-card-title>NGX-Charts (External library)</md-card-title>
+  <md-card-subtitle>Declarative Charting Framework for Angular</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Rather than building &amp; maintaining our own td-charts D3 component, we've opted instead to partner with an external open-source library. 
+    Charts components are a massive undertaking and would have detracted from the features &amp; support of Covalent.</p>
+    <p>The NGX-Charts team took the exact approach we would have and did a fantastic job building a framework that can be extended. We therefor are an official partner and will be contributing massive additions.</p>
+    <p>These are the key decision points in selecting NGX-Charts:</p>
+    <ul>
+      <li>Native Angular component instead of a simple wrapper</li>
+      <li>Angular click events on every chart element possible</li>
+      <li>Separation of shared &amp; common chart elements</li>
+      <li>Easily add new chart components in a modular fashion</li>
+      <li>Everything is styled via SCSS</li>
+    </ul>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" href="https://swimlane.gitbooks.io/ngx-charts/content/" target="_blank" class="text-upper">NGX-Charts Docs</a>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Example Charts</md-card-title>
+  <md-card-subtitle>Samples of various available charts</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div class="pad-sm bgc-grey-200">
+      <div layout="row" class="pull-bottom-md pull-right-md">
+        <ngx-charts-number-card
+            [scheme]="colorScheme"
+            [results]="single">
+          </ngx-charts-number-card>
+      </div>
+      <div layout-gt-xs="row">
+        <div flex-gt-xs="50">
+          <md-card>
+            <md-card-title>Gauge</md-card-title>
+            <md-divider></md-divider>
+            <div style="height:250px;">
+              <ngx-charts-gauge
+                [scheme]="colorScheme"
+                [results]="single"
+                [min]="0"
+                [max]="100"
+                [units]="'usage'"
+                [bigSegments]="10"
+                [smallSegments]="5"
+                [valueFormatting]="axisDigits">
+              </ngx-charts-gauge>
+            </div>
+          </md-card>
+        </div>
+        <div flex-gt-xs="50">
+          <md-card>
+            <md-card-title>Stacked Horizontal Bars</md-card-title>
+            <md-divider></md-divider>
+            <div style="height:250px;">
+              <ngx-charts-bar-horizontal-stacked
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [xAxisTickFormatting]="axisDigits">
+              </ngx-charts-bar-horizontal-stacked>
+            </div>
+          </md-card>
+        </div>
+      </div>
+      <div layout-gt-xs="row">
+        <div flex-gt-xs="50">
+          <md-card>
+            <md-card-title>Vertical Grouped Bars</md-card-title>
+            <md-divider></md-divider>
+            <div style="height:250px;">
+              <ngx-charts-bar-vertical-2d
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [yAxisTickFormatting]="axisDigits"
+                [barPadding]="2"
+                [groupPadding]="8">
+              </ngx-charts-bar-vertical-2d>
+            </div>
+          </md-card>
+        </div>
+        <div flex-gt-xs="50">
+          <md-card>
+            <md-card-title>Lines</md-card-title>
+            <md-divider></md-divider>
+            <div style="height:250px;">
+              <ngx-charts-line-chart
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                [yAxisTickFormatting]="axisDigits">
+              </ngx-charts-line-chart>
+            </div>
+          </md-card>
+        </div>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Code</md-card-title>
+  <md-card-subtitle>Demo html, typescript, data  &amp; theme</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>HTML</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div>
+              <div layout="row" class="pull-bottom-md pull-right-md">
+                <ngx-charts-number-card
+                    [scheme]="colorScheme"
+                    [results]="single">
+                  </ngx-charts-number-card>
+              </div>
+              <div layout-gt-xs="row">
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Gauge</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-gauge
+                        [scheme]="colorScheme"
+                        [results]="single"
+                        [min]="0"
+                        [max]="100"
+                        [units]="'usage'"
+                        [bigSegments]="10"
+                        [smallSegments]="5"
+                        [valueFormatting]="axisDigits">
+                      </ngx-charts-gauge>
+                    </div>
+                  </md-card>
+                </div>
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Stacked Horizontal Bars</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-bar-horizontal-stacked
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [xAxisTickFormatting]="axisDigits">
+                      </ngx-charts-bar-horizontal-stacked>
+                    </div>
+                  </md-card>
+                </div>
+              </div>
+              <div layout-gt-xs="row">
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Vertical Grouped Bars</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-bar-vertical-2d
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [yAxisTickFormatting]="axisDigits"
+                        [barPadding]="2"
+                        [groupPadding]="8">
+                      </ngx-charts-bar-vertical-2d>
+                    </div>
+                  </md-card>
+                </div>
+                <div flex-gt-xs="50">
+                  <md-card>
+                    <md-card-title>Lines</md-card-title>
+                    <md-divider></md-divider>
+                    <div style="height:250px;">
+                      <ngx-charts-line-chart
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [autoScale]="autoScale"
+                        [yAxisTickFormatting]="axisDigits">
+                      </ngx-charts-line-chart>
+                    </div>
+                  </md-card>
+                </div>
+              </div>
+            </div>
+          ]]>
+        </td-highlight>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>TypeScript</ng-template>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component } from '@angular/core';
+            import { single, multi } from './data';
+
+            import { TdDigitsPipe } from '@covalent/core';
+
+            @Component({
+              selector: 'ngx-charts-demo',
+              styleUrls: ['./ngx-charts.component.scss'],
+              templateUrl: './ngx-charts.component.html',
+            })
+            export class NgxChartsDemoComponent {
+
+              // Chart
+              single: any[];
+              multi: any[];
+
+              view: any[] = [700, 400];
+
+              // options
+              showXAxis: boolean = true;
+              showYAxis: boolean = true;
+              gradient: boolean = true;
+              showLegend: boolean = false;
+              showXAxisLabel: boolean = true;
+              xAxisLabel: string = '';
+              showYAxisLabel: boolean = true;
+              yAxisLabel: string = 'Sales';
+
+              colorScheme: any = {
+                domain: ['#1565C0', '#03A9F4', '#FFA726', '#FFCC80'],
+              };
+
+              // line, area
+              autoScale: boolean = true;
+
+              constructor() {
+                // Chart Single
+                Object.assign(this, {single});
+                // Chart Multi
+                this.multi = multi.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
+                    dataItem.name = new Date(dataItem.name);
+                    return dataItem;
+                  });
+                  return group;
+                });
+              }
+
+              // ngx transform using covalent digits pipe
+              axisDigits(val: any): any {
+                return new TdDigitsPipe().transform(val);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Data</ng-template>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export let single: any = [
+              {
+                'name': 'Databases',
+                'value': 382941,
+              },
+              {
+                'name': 'Containers',
+                'value': 152294,
+              },
+              {
+                'name': 'Streams',
+                'value': 283000,
+              },
+              {
+                'name': 'Queries',
+                'value': 828921,
+              },
+            ];
+
+            export let multi: any = [
+              {
+                'name': 'Databases',
+                'series': [
+                  {
+                    'value': 2469,
+                    'name': '2016-09-15T19:25:07.773Z',
+                  },
+                  {
+                    'value': 3619,
+                    'name': '2016-09-17T17:16:53.279Z',
+                  },
+                  {
+                    'value': 3885,
+                    'name': '2016-09-15T10:34:32.344Z',
+                  },
+                  {
+                    'value': 4289,
+                    'name': '2016-09-19T14:33:45.710Z',
+                  },
+                  {
+                    'value': 3309,
+                    'name': '2016-09-12T18:48:58.925Z',
+                  },
+                ],
+              },
+              {
+                'name': 'Containers',
+                'series': [
+                  {
+                    'value': 2452,
+                    'name': '2016-09-15T19:25:07.773Z',
+                  },
+                  {
+                    'value': 4938,
+                    'name': '2016-09-17T17:16:53.279Z',
+                  },
+                  {
+                    'value': 4110,
+                    'name': '2016-09-15T10:34:32.344Z',
+                  },
+                  {
+                    'value': 3828,
+                    'name': '2016-09-19T14:33:45.710Z',
+                  },
+                  {
+                    'value': 5772,
+                    'name': '2016-09-12T18:48:58.925Z',
+                  },
+                ],
+              },
+              {
+                'name': 'Streams',
+                'series': [
+                  {
+                    'value': 4022,
+                    'name': '2016-09-15T19:25:07.773Z',
+                  },
+                  {
+                    'value': 2345,
+                    'name': '2016-09-17T17:16:53.279Z',
+                  },
+                  {
+                    'value': 5148,
+                    'name': '2016-09-15T10:34:32.344Z',
+                  },
+                  {
+                    'value': 6868,
+                    'name': '2016-09-19T14:33:45.710Z',
+                  },
+                  {
+                    'value': 5415,
+                    'name': '2016-09-12T18:48:58.925Z',
+                  },
+                ],
+              },
+              {
+                'name': 'Queries',
+                'series': [
+                  {
+                    'value': 6194,
+                    'name': '2016-09-15T19:25:07.773Z',
+                  },
+                  {
+                    'value': 6585,
+                    'name': '2016-09-17T17:16:53.279Z',
+                  },
+                  {
+                    'value': 6857,
+                    'name': '2016-09-15T10:34:32.344Z',
+                  },
+                  {
+                    'value': 2545,
+                    'name': '2016-09-19T14:33:45.710Z',
+                  },
+                  {
+                    'value': 5986,
+                    'name': '2016-09-12T18:48:58.925Z',
+                  },
+                ],
+              },
+            ];
+
+          ]]>
+        </td-highlight>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>theme.scss</ng-template>
+        <td-highlight lang="scss">
+          <![CDATA[
+          /* ------------------------------------------------------------------------------- */
+          $foreground: map-get($theme, foreground);
+          $background: map-get($theme, background);
+
+          // Apply theme for this app
+
+          // NGX Charts
+          [ngx-charts-axis-label] text {
+              fill: mat-color($foreground, secondary-text);
+          }
+          .tick text {
+              fill: mat-color($foreground, disabled);
+          }
+          .gridline-path {
+              &.gridline-path-horizontal,
+              &.gridline-path-vertical {
+                  stroke: rgba(black, 0.06);
+              }
+          }
+          .legend-title-text {
+              color: mat-color($foreground, secondary-text);
+          }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Recommended Color Palettes</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Since our apps largely span from Orange / Blue / Grey families, here's some recommended palettes:</p>
+    <h3 class="md-title">Blues</h3>
+    <div layout="row" class="push-bottom-sm">
+      <span class="bgc-blue-900 pad"></span>
+      <span class="bgc-blue-700 pad"></span>
+      <span class="bgc-light-blue-600 pad"></span>
+      <span class="bgc-light-blue-400 pad"></span>
+      <span class="bgc-light-blue-200 pad"></span>
+      <span class="bgc-cyan-100 pad"></span>
+    </div>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        blueScheme: any = {
+          domain: ['#0D47A1', '#1976D2', '#039BE5', '#29B6F6', '#81D4FA', '#B2EBF2'],
+        };
+      ]]>
+    </td-highlight>
+    <md-divider></md-divider>
+    <h3 class="md-title">Oranges</h3>
+    <div layout="row" class="push-bottom-sm">
+      <span class="bgc-deep-orange-900 pad"></span>
+      <span class="bgc-orange-800 pad"></span>
+      <span class="bgc-orange-600 pad"></span>
+      <span class="bgc-amber-600 pad"></span>
+      <span class="bgc-amber-400 pad"></span>
+      <span class="bgc-yellow-300 pad"></span>
+    </div>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        orangeScheme: any = {
+          domain: ['#BF360C', '#EF6C00', '#FB8C00', '#FFB300', '#FFCA28', '#FFF176'],
+        };
+      ]]>
+    </td-highlight>
+    <md-divider></md-divider>
+    <h3 class="md-title">Blue to Orange</h3>
+    <div layout="row" class="push-bottom-sm">
+      <span class="bgc-blue-900 pad"></span>
+      <span class="bgc-light-blue-900 pad"></span>
+      <span class="bgc-blue-700 pad"></span>
+      <span class="bgc-light-blue-600 pad"></span>
+      <span class="bgc-cyan-400 pad"></span>
+      <span class="bgc-orange-600 pad"></span>
+      <span class="bgc-orange-400 pad"></span>
+      <span class="bgc-orange-200 pad"></span>
+      <span class="bgc-amber-100 pad"></span>
+    </div>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        blueOrangeScheme: any = {
+          domain: ['#0D47A1', '#01579B', '#1976D2', '#039BE5', '#00BCD4', '#FB8C00', '#FFA726', '#FFCC80', '#FFECB3'],
+        };
+      ]]>
+    </td-highlight>
+    <md-divider></md-divider>
+  </md-card-content>
+</md-card>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/swimlane/ngx-charts/master/docs/intro/installing.md"></td-readme-loader>

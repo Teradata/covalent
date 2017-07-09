@@ -1,0 +1,15 @@
+<div class="td-search-box" layout="row" layout-align="end center">
+  <button md-icon-button type="button" class="td-search-icon" flex="none" (click)="searchClicked()">
+    <md-icon *ngIf="searchVisible && !alwaysVisible">{{backIcon}}</md-icon>
+    <md-icon *ngIf="!searchVisible || alwaysVisible">search</md-icon>
+  </button>
+  <td-search-input #searchInput
+                   [@inputState]="alwaysVisible || searchVisible"
+                   [debounce]="debounce"
+                   [showUnderline]="showUnderline"
+                   [placeholder]="placeholder"
+                   (searchDebounce)="handleSearchDebounce($event)"
+                   (search)="handleSearch($event)"
+                   (clear)="handleClear(); toggleVisibility()">
+  </td-search-input>
+</div>

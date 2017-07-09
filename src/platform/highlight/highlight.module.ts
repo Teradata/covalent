@@ -15,10 +15,5 @@ import { TdHighlightComponent } from './highlight.component';
   ],
 })
 export class CovalentHighlightModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentHighlightModule,
-      providers: [],
-    };
-  }
+
 }

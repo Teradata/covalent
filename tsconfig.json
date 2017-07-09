@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "@covalent/core": ["./platform/core"],
+      "@covalent/dynamic-forms": ["./platform/dynamic-forms"],
+      "@covalent/highlight": ["./platform/highlight"],
+      "@covalent/http": ["./platform/http"],
+      "@covalent/markdown": ["./platform/markdown"]
+    },
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true
+  }
+}

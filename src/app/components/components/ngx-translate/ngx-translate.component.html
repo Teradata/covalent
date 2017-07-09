@@ -1,0 +1,384 @@
+<md-card>
+  <md-card-title>NGX-Translate (External library)</md-card-title>
+  <md-card-subtitle>i18n library for Angular</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    An implementation of angular translate for Angular.
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Resources</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://github.com/ngx-translate/core" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/core</code> documentation</span>
+    </a>
+    <md-divider></md-divider>
+    <a md-list-item href="https://github.com/ngx-translate/http-loader" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>View <code>@ngx-translate/http-loader</code> documentation</span>
+    </a>
+  </md-nav-list>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_BASIC.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_BASIC.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <div layout="column" layout-padding>
+          <h3>{{ 'DEMO_BASIC.PIPE_MESSAGE' | translate }}</h3>
+          <h3 translate>DEMO_BASIC.DIRECTIVE_MESSAGE</h3>
+        </div>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="column" layout-padding>
+              <h3>{ { 'DEMO_BASIC.PIPE_MESSAGE' | translate } }</h3>
+              <h3 translate>DEMO_BASIC.DIRECTIVE_MESSAGE</h3>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TranslateService } from '@ngx-translate/core';
+            ...
+            export class MyAppComponent {
+
+              constructor(private _translateService: TranslateService) {
+                // Set fallback language
+                this._translateService.setDefaultLang('en');
+
+                // Supported languages
+                this._translateService.addLangs(['en', 'es']);
+
+                // Get selected language and load it
+                this._translateService.use(translateService.getBrowserLang());
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_BASIC": {
+                "PIPE_MESSAGE": "This is a translated message using the [translate] pipe.",
+                "DIRECTIVE_MESSAGE": "This is a translated message using the [translate] directive"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_BASIC": {
+                "PIPE_MESSAGE": "Este es un mensaje traducido usando la pipa [translate].",
+                "DIRECTIVE_MESSAGE": "Este es un mensaje traducido usando el directivo [translate]."
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_ONE.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <div layout="row" layout-align="start center" layout-padding>
+          <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+                      [mdTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
+                      [(ngModel)]="valueCountForPlural" flex="40">
+            <md-option [value]="0">0</md-option>
+            <md-option [value]="1">1</md-option>
+            <md-option [value]="4">4</md-option>
+            <md-option [value]="10">10</md-option>
+          </md-select>
+          <span flex="5"></span>
+          <div [ngPlural]="valueCountForPlural">
+            <ng-template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</ng-template>
+            <ng-template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</ng-template>
+            <ng-template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</ng-template>
+          </div>
+        </div>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row" layout-align="start center" layout-padding>
+              <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+                          [mdTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
+                          [(ngModel)]="valueCountForPlural" flex="40">
+                <md-option [value]="0">0</md-option>
+                <md-option [value]="1">1</md-option>
+                <md-option [value]="4">4</md-option>
+                <md-option [value]="10">10</md-option>
+              </md-select>
+              <span flex="5"></span>
+              <div [ngPlural]="valueCountForPlural">
+                <ng-template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</ng-template>
+                <ng-template ngPluralCase="=1">{ { 'DEMO_ONE.COUNT.SINGLE' | translate } }</ng-template>
+                <ng-template ngPluralCase="other">{ { 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} } }</ng-template>
+              </div>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TranslateService } from '@ngx-translate/core';
+            ...
+            export class MyAppComponent {
+
+              constructor(private _translateService: TranslateService) {
+                // Set fallback language
+                this._translateService.setDefaultLang('en');
+
+                // Supported languages
+                this._translateService.addLangs(['en', 'es']);
+
+                // Get selected language and load it
+                this._translateService.use(translateService.getBrowserLang());
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_ONE": {
+                "SELECT": {
+                  "PLACEHOLDER": "Select a value",
+                  "TOOLTIP": "When this value changes, [ngPlural] reads it to select the correct message"
+                },
+                "COUNT": {
+                  "NONE": "There are no selected values",
+                  "SINGLE": "There is one selected value",
+                  "PLURAL": "There are {{value}} selected values"
+                }
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_ONE": {
+                "SELECT": {
+                  "PLACEHOLDER": "Seleccione un valor",
+                  "TOOLTIP": "Cuando este valor cambia, [ngPlural] lo lee para seleccionar el mensaje correcto"
+                },
+                "COUNT": {
+                  "NONE": "No hay valores seleccionados",
+                  "SINGLE": "Hay un valor seleccionado",
+                  "PLURAL": "Hay {{value}} valores seleccionados"
+                }
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_TWO.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_TWO.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <md-list>
+          <md-list-item>
+            <md-icon md-list-avatar>person</md-icon>
+            <h4 md-line>Any person</h4>
+            <p translate [translateParams]="{value: (123000020 | number)}" md-line>DEMO_TWO.BALANCE</p>
+            <span flex="50">{{dateToFormat | date:'medium'}}</span>
+          </md-list-item>
+          <md-list-item>
+            <md-icon md-list-avatar>person</md-icon>
+            <h4 md-line>Another person</h4>
+            <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" md-line>DEMO_TWO.BALANCE</p>
+            <span flex="50">{{dateToFormat | date:'medium'}}</span>
+          </md-list-item>
+        </md-list>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <md-list>
+              <md-list-item>
+                <md-icon md-list-avatar>person</md-icon>
+                <h4 md-line>Any person</h4>
+                <p translate [translateParams]="{value: (123000020 | number)}" md-line>DEMO_TWO.BALANCE</p>
+                <span flex="50">{ {dateToFormat | date:'medium'} }</span>
+              </md-list-item>
+              <md-list-item>
+                <md-icon md-list-avatar>person</md-icon>
+                <h4 md-line>Another person</h4>
+                <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" md-line>DEMO_TWO.BALANCE</p>
+                <span flex="50">{ {dateToFormat | date:'medium'} }</span>
+              </md-list-item>
+            </md-list>
+          ]]>
+        </td-highlight>
+        <p>Typescript (NgModule):</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { LOCALE_ID } from '@angular/core';
+            ...
+            export function getSelectedLanguage(translateService: TranslateService): string {
+              return translateService.getBrowserLang();
+            }
+            ...
+            providers: [{
+                // Configure LOCALE_ID depending on the language set in browser
+                provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
+              },
+            ], 
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_TWO": {
+                "BALANCE" : "account balance: { {value} }"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            {
+              "DEMO_TWO": {
+                "BALANCE" : "estado de cuenta: { {value} }"
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>{{ 'DEMO_THREE.TITLE' | translate }}</md-card-title>
+  <md-card-subtitle>{{ 'DEMO_THREE.SUBTITLE' | translate }}</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <md-tab-group md-stretch-tabs>
+      <md-tab [label]="'DEMO_TAB' | translate">
+        <div class="pad">
+          <button md-raised-button color="accent" (click)="openAlert()" class="text-upper">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+        </div>
+      </md-tab>
+      <md-tab [label]="'CODE_TAB' | translate">
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+           <button md-button color="accent" (click)="openAlert()" class="text-upper">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TranslateService } from '@ngx-translate/core';
+            import { TdDialogService } from '@covalent/core';
+            ...
+            export class MyAppComponent {
+
+              constructor(private _translateService: TranslateService,
+                          private _dialogService: TdDialogService) {
+                // Set fallback language
+                this._translateService.setDefaultLang('en');
+
+                // Supported languages
+                this._translateService.addLangs(['en', 'es']);
+
+                // Get selected language and load it
+                this._translateService.use(translateService.getBrowserLang());
+              }
+
+              openAlert(): void {
+                this._translateService.get('DEMO_THREE.ALERT').subscribe((messages: any) => {
+                  this._dialogService.openAlert({
+                    title: messages.TITLE,
+                    message: messages.MESSAGE,
+                    closeButton: messages.CLOSE,
+                  });
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (en):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            "DEMO_THREE": {
+              "OPEN_ALERT": "Open alert",
+              "ALERT": {
+                "TITLE" : "Alert",
+                "MESSAGE" : "This is a translated message.",
+                "CLOSE": "Close"
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>JSON (es):</p>
+        <td-highlight lang="json">
+          <![CDATA[
+            "DEMO_THREE": {
+              "OPEN_ALERT": "Abrir alerta",
+              "ALERT": {
+                "TITLE" : "Alerta",
+                "MESSAGE" : "Este es un mensaje traducido.",
+                "CLOSE": "Cerrar"
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
+    <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
+  </md-card-actions>
+</md-card>

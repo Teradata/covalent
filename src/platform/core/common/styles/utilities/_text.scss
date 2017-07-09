@@ -1,0 +1,84 @@
+//
+// Text
+// --------------------------------------------------
+
+body {
+  h1,h2,h3,h4,h5,h6 {
+    & > small {
+      font-size: 60%;
+    }
+  }
+  .text-normal {
+    font-style: normal;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-normal {
+    font-style: normal;
+  }
+  .text-xs,
+  .text-sm,
+  .text-md,
+  .text-lg {
+    text-rendering: optimizeLegibility;
+  }
+  .text-micro {
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+  .text-xs {
+    font-size: 50%;
+  }
+  .text-sm {
+    font-size: 70%;
+  }
+  .text-md {
+    font-size: 80%;
+  }
+  .text-lg {
+    font-size: 110%;
+  }
+  .text-xl {
+    font-size: 120%;
+  }
+  .text-xxl {
+    font-size: 130%;
+  }
+  .text-30 {
+    font-size: 30px;
+  }
+  .text-super {
+    font-size: 60px;
+  }
+  .text-wrap {
+    white-space: normal;
+  }
+  .text-break {
+    word-break: break-word;
+  }
+  .text-upper {
+    text-transform: uppercase;
+  }
+  .text-lower {
+    text-transform: lowercase;
+  }
+  .text-caps {
+    text-transform: capitalize;
+  }
+  .text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text-nodecoration {
+    text-decoration: none;
+  }
+}

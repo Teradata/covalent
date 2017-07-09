@@ -1,0 +1,193 @@
+<md-card>
+  <md-card-title>Dynamic Forms</md-card-title>
+  <md-card-subtitle>Build forms from a JS object</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Text Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="textElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="textElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{textElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Number Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="numberElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="numberElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{numberElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Boolean Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="booleanElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="booleanElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{booleanElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Dynamic Array Elements</h3>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="arrayElements">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="arrayElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{arrayElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>TdDynamicFormsComponent</md-card-title>
+  <md-card-subtitle>How to use this component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h2><code><![CDATA[<td-dynamic-forms>]]></code></h2>
+    <p>Use <code><![CDATA[<td-dynamic-forms>]]></code> element to generate a form dynamically.</p>
+    <p>Pass an array of javascript objects that implement [ITdDynamicElementConfig] with the information to be rendered to the [elements] attribute.</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        export interface ITdDynamicElementConfig {
+          label?: string;
+          name: string;
+          type: TdDynamicType | TdDynamicElement;
+          required?: boolean;
+          min?: any;
+          max?: any;
+          default?: any;
+        }
+      ]]>
+    </td-highlight>    
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-dynamic-forms>]]></code> component has {{dynamicFormsAttrs.length}} properties:</p>
+    <md-list>
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dynamicFormsAttrs">
+        <a md-list-item layout-align="row">
+          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p md-line> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </ng-template>
+    </md-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-dynamic-forms [elements]="elements">
+        </td-dynamic-forms>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
+        ...
+        })
+        export class Demo {
+          elements: ITdDynamicElementConfig[] = [{
+            name: 'input-without-label',
+            type: TdDynamicElement.Input,
+            required: false,
+          }, {
+            name: 'input-with-label',
+            label: 'Input Label',
+            type: TdDynamicElement.Input,
+            required: true,
+          }, {
+            name: 'text-with-default',
+            type: TdDynamicType.Text,
+            required: false,
+            default: 'Default',
+          }];
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentDynamicFormsModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+        @NgModule({
+          imports: [
+            CovalentDynamicFormsModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>

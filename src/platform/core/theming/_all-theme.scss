@@ -1,0 +1,28 @@
+@import '../common/common-theme';
+@import '../chips/chips-theme';
+@import '../data-table/data-table-theme';
+@import '../layout/layout-theme';
+@import '../steps/steps-theme';
+@import '../expansion-panel/expansion-panel-theme';
+@import '../file/file-theme';
+@import '../loading/loading-theme';
+@import '../json-formatter/json-formatter-theme';
+@import '../paging/paging-bar-theme';
+@import '../notifications/notification-count-theme';
+@import '../message/message-theme';
+
+// Create a theme.
+@mixin covalent-theme($theme) {
+  @include td-common-theme($theme);
+  @include td-layout-theme($theme);
+  @include td-steps-theme($theme);
+  @include td-expansion-panel-theme($theme);
+  @include td-chips-theme($theme);
+  @include td-file-theme($theme);
+  @include td-json-formatter-theme($theme);
+  @include td-paging-bar-theme($theme);
+  @include td-loading-theme($theme);
+  @include td-data-table-theme($theme);
+  @include td-notification-count-theme($theme);
+  @include td-message-theme($theme);
+}

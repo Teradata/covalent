@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+.td-paging-bar {
+  height: 48px;
+  > * {
+    margin: 0 10px;
+  }
+}
+[md-icon-button] {
+  font-size: 12px;
+  font-weight: normal;
+}
+md-select { 
+  & /deep/ {
+    .mat-select-trigger {
+      min-width: 44px;
+      font-size: 12px;
+    }
+    .mat-select-value {
+      top: auto;
+      position: static;
+    }
+    .mat-select-underline {
+      display: none;
+    }
+  }
+}

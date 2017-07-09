@@ -1,0 +1,8 @@
+<div class="dynamic-select-wrapper" layout="row">
+  <md-select [(ngModel)]="value"
+             [placeholder]="label"
+             [required]="required"
+             flex="100">
+    <md-option *ngFor="let selection of selections" [value]="selection">{{selection}}</md-option>
+  </md-select>
+</div>

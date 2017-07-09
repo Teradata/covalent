@@ -1,0 +1,48 @@
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color) {
+  text-shadow: makelongshadow($color);
+}
+
+$color: rgba(0, 0, 0, 0.01);
+
+.md-card-colored {
+    &[href],
+    &[ng-reflect-href] {
+        &:hover {
+        cursor: pointer;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+        }
+        &:active{
+            box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
+            & md-toolbar {
+                background-color:rgba(255, 255, 255, 0.2);
+                background-position: -100% 100%;
+            }
+        }
+        & md-toolbar {
+            background-size: 200% 100%;	
+            background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.2) 50%);
+            transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+        }
+    }
+    & md-toolbar {
+        height: 148px;
+        border-radius: 2px 2px 0 0;
+        overflow: hidden;
+        
+        md-icon,
+        .mat-icon {
+            opacity: 0.65;
+            color: white;
+            font-size: 8rem;
+            @include longshadow(darken($color, 5% ));
+        }
+    }
+}

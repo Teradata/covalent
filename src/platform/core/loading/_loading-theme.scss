@@ -1,10 +1,10 @@
-@import '../../../../node_modules/@angular/material/core/theming/theming';
+@import '../common/styles/theme-functions';
 
 @mixin td-loading-theme($theme) {
   $background: map-get($theme, background);
-  .td-loading {
-    &.td-overlay {
-      background: rgba(md-color($background, dialog), 0.9);
+  .td-loading-wrapper {
+    &.td-overlay .td-loading {
+      background: rgba(mat-color($background, dialog), 0.8);
     }
   }
 }

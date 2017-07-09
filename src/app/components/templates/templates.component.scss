@@ -1,0 +1,13 @@
+:host /deep/ {
+    md-grid-tile img {
+        width: 100%;
+        height: auto;
+    }
+    a {
+        height: 100%;
+    }
+    .mat-grid-tile .mat-figure {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}

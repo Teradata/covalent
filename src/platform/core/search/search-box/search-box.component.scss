@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+.td-search-box {
+  td-search-input {
+    margin-left: 12px;
+    /deep/ [dir='rtl'] & { 
+      margin-right: 12px;
+      margin-left: 0px !important;
+    }
+  }
+}

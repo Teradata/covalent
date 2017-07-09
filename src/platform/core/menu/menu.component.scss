@@ -1,0 +1,36 @@
+$td-menu-spacing: 8px !default;
+:host {
+  display: block;
+  margin-top: -$td-menu-spacing;
+  margin-bottom: -$td-menu-spacing;
+}
+:host /deep/ {
+  [td-menu-header] {
+    padding: $td-menu-spacing;
+    text-align: center;
+  }
+  md-list,
+  md-list[dense],
+  md-nav-list,
+  md-nav-list[dense], {
+    a[md-list-item].mat-2-line .mat-list-item-content,
+    md-list-item.mat-2-line .mat-list-item-content {
+      height: auto;
+      padding: $td-menu-spacing;
+      .mat-list-text {
+        padding-right: 0px;
+        [dir='rtl'] & { 
+          padding-left: 0px;
+          padding-right: 16px;
+        }
+      }
+      [md-line] + [md-line] {
+        margin-top: $td-menu-spacing / 2;
+      }
+    }
+  }
+}
+.td-menu-content {
+  max-height: calc(50vh);
+  overflow-y: auto;
+}

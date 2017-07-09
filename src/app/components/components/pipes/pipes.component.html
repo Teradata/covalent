@@ -7,12 +7,25 @@
 
     <blockquote class="md-subhead pull-left-none">A pipe takes in data as input and transforms it to a desired output.</blockquote>
 
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCommonModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentCommonModule } from '@covalent/core';
+        @NgModule({
+          imports: [
+            CovalentCommonModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <cite class="text-normal"><a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank">
-    More on Angular 2 pipes
-    </a></cite>
+    <a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank" class="text-upper">Pipes Docs</a>
   </md-card-actions>
 </md-card>
 
@@ -86,7 +99,7 @@
   <md-card-title>Time Ago</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29 17:59:59</code>) and tranforms it to the amount of time that has gone by. </p>
+    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29T17:59:59.000Z</code>) and tranforms it to the amount of time that has gone by. </p>
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <h3 md-line>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
@@ -113,7 +126,7 @@
   <md-card-title>Time Difference</md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29 17:59:59</code>).</p>
+    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29T17:59:59.000Z</code>).</p>
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- Start and end time output -->
@@ -180,3 +193,14 @@
     </td-highlight>
   </md-card-content>
  </md-card>
+
+ <md-card>
+  <md-card-title>Angular Pipes</md-card-title>
+  <md-divider></md-divider>
+  <md-nav-list>
+    <a md-list-item href="https://angular.io/docs/ts/latest/api/#!?query=pipe" target="_blank">
+      <md-icon>launch</md-icon>
+      <span md-line>Angular comes with a stock of pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe</span>
+    </a>
+  </md-nav-list>
+</md-card>

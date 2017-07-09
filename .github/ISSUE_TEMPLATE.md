@@ -8,8 +8,9 @@ please first make sure your request falls under the official Material Design spe
 
 #### Bug Report
 
-please provide steps to reproduce and if possible screenhots or animated Gifs.
-you can easily create animated Gif with this free PC/OSX App: http://www.cockos.com/licecap/
+please provide steps to reproduce and if possible screenhots, animated Gifs and/or a Plunker (or similar).
+you can easily create animated Gif with this free PC/OSX App: http://www.cockos.com/licecap/ and a Plunker to help us reproduce it
+Plunker template: http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd
 
 ##### Screenshots or link to CodePen/Plunker/JSfiddle
 

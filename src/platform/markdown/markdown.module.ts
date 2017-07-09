@@ -15,10 +15,5 @@ import { TdMarkdownComponent } from './markdown.component';
   ],
 })
 export class CovalentMarkdownModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CovalentMarkdownModule,
-      providers: [],
-    };
-  }
+
 }

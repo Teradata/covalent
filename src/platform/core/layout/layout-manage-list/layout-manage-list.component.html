@@ -1,16 +1,24 @@
-<md-sidenav-layout fullscreen class="td-layout-manage-list md-content" flex layout="row">
-  <md-sidenav opened align="start" mode="side" layout="column" layout-fill class="md-sidenav-left md-whiteframe-z1">
-    <div flex class="md-content list">
-      <ng-content select="[list-items]"></ng-content>
+<md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
+  <md-sidenav #sidenav
+              align="start"
+              [mode]="mode"
+              [opened]="opened"
+              [disableClose]="disableClose"
+              [style.max-width]="sidenavWidth"
+              [style.min-width]="sidenavWidth"
+              layout="column"
+              layout-fill
+              class="md-whiteframe-z1">
+    <ng-content select="md-toolbar[td-sidenav-content]"></ng-content>
+    <div flex class="list md-content" cdkScrollable>
+      <ng-content select="[td-sidenav-content]"></ng-content>
     </div>
   </md-sidenav>
-  <div layout="column" layout-fill class="md-content content">
-    <md-toolbar class="md-whiteframe-z1">
-      <button md-button (click)="toggle()" md-icon-button hide-gt-xs><md-icon class="md-24">arrow_back</md-icon></button>
-      <ng-content select="[toolbar-buttons]"></ng-content>
-    </md-toolbar>
-    <div class="md-content" flex>
+  <div layout="column" layout-fill class="md-content">
+    <ng-content select="md-toolbar"></ng-content>
+    <div class="md-content" flex cdkScrollable>
       <ng-content></ng-content>
     </div>
+    <ng-content select="td-layout-footer-inner"></ng-content>
   </div>
-</md-sidenav-layout>
+</md-sidenav-container>

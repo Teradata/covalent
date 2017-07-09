@@ -2,10 +2,15 @@ import { Component, Input } from '@angular/core';
 
 import { StepState } from '../step.component';
 
+import { TdCollapseAnimation } from '../../common/common.module';
+
 @Component({
   selector: 'td-step-body',
-  styleUrls: [ 'step-body.component.scss' ],
-  templateUrl: 'step-body.component.html',
+  styleUrls: ['./step-body.component.scss' ],
+  templateUrl: './step-body.component.html',
+  animations: [
+    TdCollapseAnimation(),
+  ],
 })
 export class TdStepBodyComponent {
 
@@ -27,5 +32,5 @@ export class TdStepBodyComponent {
    */
   isComplete(): boolean {
     return this.state === StepState.Complete;
-  };
+  }
 }

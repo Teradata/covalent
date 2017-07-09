@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+.td-json-formatter-wrapper {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  .td-key {
+    &.td-key-node {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .td-object-children {
+    & .td-key,
+    & .td-object-children {
+      padding-left: 24px;
+      /deep/ [dir='rtl'] & {
+        padding-right: 24px;
+        padding-left: 0;
+      }
+      &.td-key-leaf {
+        padding-left: 48px;
+        /deep/ [dir='rtl'] & {
+          padding-right: 48px;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .value {
+    margin-left: 5px;
+    /deep/ [dir='rtl'] & {
+      padding-right: 5px;
+      padding-left: 0;
+    }
+    .td-empty {
+      opacity: .5;
+      text-decoration: line-through;
+    }
+    .string {
+      word-break: break-word;
+    }
+    .date { 
+      word-break: break-word;
+    }
+  }
+}

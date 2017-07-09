@@ -3,37 +3,50 @@
   <md-card-subtitle>Harness the power of the new Angular CLI</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-     <h3>Generate Route</h3>
-     <p>Using the CLI, nagivate into the directory you want the new route, then simply:</p>
+     <h3>Generate Component</h3>
+     <p>Using the CLI, nagivate into the directory you want the new component, then simply:</p>
      <td-highlight lang="html">
-       ng generate route my-route
+       ng generate component new-view
       </td-highlight>
-      <p>The CLI will do the heavy lifting and:</p>
+      <p>The CLI will do the heavy lifting and create the following with corresponding names:</p>
       <ul>
-        <li>Generate the directory, css, html, spec.ts, component.ts &amp; index.ts</li>
-        <li>Add an @import and new route in the parent directory</li>
-        <li>Update system-config.ts for you!</li>
+        <li>directory (/new-view)</li>
+        <li>html template (/new-view/new-view.component.html)</li>
+        <li>scss file (/new-view/new-view.component.scss)</li>
+        <li>typescript file (/new-view/new-view.component.ts)</li>
+        <li>uint test (/new-view/new-view.component.spec.ts)</li>
       </ul>
       <p>
-        Basically it does all the irritating little things for you.
+        It will also attempt to update yoru app module file. Double check and make sure your new component is imported into app.module.ts:
       </p>
-      <p>
-        Now you simply creating your route html and logic for this new "view"!
-      </p>
-      <h3>Make sure you import any additional modules you want to use and declare any components you create in your main module.</h3>
-      <h3>for example in app.module.ts:</h3>
+      <p>for example in app.module.ts:</p>
       <td-highlight lang="typescript">
-        import {{'{'}} CovalentCoreModule } from '@covalent/core';
-        import {{'{'}} CustomComponent } from 'dir/to/component';
+        <![CDATA[
+          import { NewViewComponent } from './new-view/new-view.component';
+        ]]>
        </td-highlight>
-       <h3>And define those declarations/imports in @NgModule:</h3>
+       <p>And define those declarations/imports in @NgModule:</p>
        <td-highlight lang="typescript">
-         declarations: [ CustomComponent ],
-         imports: [ CovalentCoreModule.forRoot() ]
+         <![CDATA[
+          imports: [ NewViewComponent ]
+          ]]>
         </td-highlight>
+        <p>next we'll need to create a route for this component, edit app.routes.ts:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+          import { NewViewComponent } from './new-view/new-view.component';
+          ]]>
+       </td-highlight>
+       <p>and add a new path with the url you desire for this route:</p>
+       <td-highlight lang="typescript">
+         <![CDATA[
+          { path: 'new-view', component: NewViewComponent },
+        ]]>
+       </td-highlight>
+       <p>Now you can use this new route in your main nav or wherever you like!</p>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli#generating-a-route">Angular CLI Docs</a>
+    <a md-button color="accent" target="_blank" href="https://github.com/angular/angular-cli/wiki/generate" class="text-upper">Generate Docs</a>
   </md-card-actions>
 </md-card>

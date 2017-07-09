@@ -1,0 +1,14 @@
+<div class="dynamic-slider-wrapper relative push-top" flex layout="column">
+  <label class="mat-input-placeholder mat-float td-slider-label" [class.mat-focused]="slider._isActive"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
+  <div layout="row" layout-align="start center" flex>
+    <md-slider #slider
+               [(ngModel)]="value"
+                [min]="min"
+                [max]="max"
+                thumbLabel
+                tickInterval="auto"
+                [required]="required"
+                flex>
+    </md-slider>
+  </div>  
+</div>

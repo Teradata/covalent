@@ -1,0 +1,75 @@
+@import '../../common/styles/mixins';
+
+:host {
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 0 28px 0 28px;
+  position: relative;
+
+  &:first-child {
+    @include rtl(padding-left, 24px, initial);
+    @include rtl(padding-right, initial, 24px);
+  }
+  &:last-child {
+    @include rtl(padding-left, initial, 24px);
+    @include rtl(padding-right, 24px, initial);
+  }
+
+  md-icon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px !important;
+    line-height: 16px !important;
+
+    &.td-data-table-sort-icon {
+      opacity: 0;
+      transition: transform 0.25s, opacity 0.25s;
+
+      &.mat-asc {
+        transform: rotate(0deg);
+      }
+
+      &.mat-desc {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover.mat-sortable md-icon.td-data-table-sort-icon,
+  &.mat-active.mat-sortable md-icon.td-data-table-sort-icon {
+    opacity: 1;
+  }
+
+  vertical-align: middle;
+  @include rtl(text-align, left, right);
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &.mat-clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  md-icon.td-data-table-sort-icon {
+    position: absolute;
+  }
+  &.mat-numeric {
+  @include rtl(text-align, right, left);
+    md-icon.td-data-table-sort-icon {
+        @include rtl(margin-left, -22px, initial);
+        @include rtl(margin-right, initial, -22px);
+    }
+  }
+  &:not(.mat-numeric) {
+    md-icon.td-data-table-sort-icon {
+        @include rtl(margin-left, 6px, initial);
+        @include rtl(margin-right, initial, 6px);
+    }
+  }
+}

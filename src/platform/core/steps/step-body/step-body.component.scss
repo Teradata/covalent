@@ -1,7 +1,6 @@
-@import '../../styles/variables';
-
-.td-step-content,
-.td-step-summary,
-.td-step-actions {
-  margin: $margin;
+.td-step-body {
+  overflow-x: hidden;
+  .td-step-content {
+    overflow-x: auto; 
+  }
 }

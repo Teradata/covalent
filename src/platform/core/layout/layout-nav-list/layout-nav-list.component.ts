@@ -1,110 +1,129 @@
-import { Component } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, Optional } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { MdSidenav } from '@angular/material';
+import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
-import { TdLayoutService } from '../services/layout.service';
+import { ILayoutTogglable } from '../layout-toggle.class';
 
 @Component({
   selector: 'td-layout-nav-list',
-  styleUrls: [ 'layout-nav-list.component.scss' ],
-  templateUrl: 'layout-nav-list.component.html',
+  styleUrls: ['./layout-nav-list.component.scss' ],
+  templateUrl: './layout-nav-list.component.html',
 })
-export class TdLayoutNavListComponent {
+export class TdLayoutNavListComponent implements ILayoutTogglable {
 
-  private _transitioning: boolean = false;
+  @ViewChild(MdSidenav) sidenav: MdSidenav;
 
   /**
-   * title in toolbar
+   * toolbarTitle?: string
+   *
+   * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
-   * icon for toolbar
+   * icon?: string
+   * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
-   * logo file for toolbar
+   * logo?: string
+   *
+   * logo icon name to be displayed before the title.
+   * If [icon] is set, then this will not be shown.
    */
   @Input('logo') logo: string;
 
-  @ViewChild(MdSidenav) _sideNav: MdSidenav;
+  /**
+   * color?: string
+   *
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, primary is used.
+   */
+  @Input('color') color: string = 'primary';
 
   /**
-   * method thats called when menu is clicked
+   * mode?: 'side', 'push' or 'over'
+   *
+   * The mode or styling of the sidenav.
+   * Defaults to "side".
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
+  @Input('mode') mode: 'side' | 'push' | 'over' = 'side';
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * opened?: boolean
+   * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
+   * Defaults to "true".
+   *
+   * See "MdSidenav" documentation for more info.
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
-  @Input()
-  set title(title: string) {
-    /* tslint:disable-next-line */
-    console.warn("title is deprecated.  Please use toolbarTitle instead");
-    this.toolbarTitle = title;
+  @Input('opened') opened: boolean = true;
+
+  /**
+   * sidenavWidth?: string
+   *
+   * Sets the "width" of the sidenav in either "px" or "%"
+   * Defaults to "350px".
+   *
+   * https://github.com/angular/material2/tree/master/src/lib/sidenav
+   */
+  @Input('sidenavWidth') sidenavWidth: string = '350px';
+
+  /**
+   * navigationRoute?: string
+   *
+   * option to set the combined route for the icon, logo, and toolbarTitle.
+   */
+  @Input('navigationRoute') navigationRoute: string;
+
+  /**
+   * Checks if `ESC` should close the sidenav
+   * Should only close it for `push` and `over` modes
+   */
+  get disableClose(): boolean {
+    return this.mode === 'side';
   }
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * Checks if router was injected.
    */
-  get title(): string {
-    return this.toolbarTitle;
+  get routerEnabled(): boolean {
+    return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(private layoutService: TdLayoutService) {
+  constructor(@Optional() private _router: Router) {}
 
-  }
-
-  public menuClick(): void {
-    this._onMenuClick();
+  handleNavigationClick(): void {
+    if (this.routerEnabled) {
+      this._router.navigateByUrl(this.navigationRoute);
+    }
   }
 
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.toggle().then(() => {
-        this._transitioning = false;
-      });
-    }
+  public toggle(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.open().then(() => {
-        this._transitioning = false;
-      });
-    }
+  public open(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): void {
-    if (!this._transitioning) {
-      this._transitioning = true;
-      this._sideNav.close().then(() => {
-        this._transitioning = false;
-      });
-    }
+  public close(): Promise<MdSidenavToggleResult> {
+    return this.sidenav.close();
   }
 
-  /**
-   * emits menuEvent
-   */
-  private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
-  }
 }

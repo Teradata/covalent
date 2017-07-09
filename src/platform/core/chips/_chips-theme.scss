@@ -1,0 +1,62 @@
+@import '../common/styles/theme-functions';
+
+@mixin td-chips-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  // chips
+  td-chips {
+    // chip
+    .mat-basic-chip {
+      background: mat-color($background, status-bar);
+      color: mat-color($foreground, text);
+      &:focus:not(.td-chip-disabled) {
+        md-icon:hover {
+          color: mat-color($foreground, icon);
+        }
+        &.mat-primary {
+          background: mat-color($primary);
+          &, md-icon {
+            color: mat-color($primary, default-contrast);
+          }
+        }
+        &.mat-accent {
+          background: mat-color($accent);
+          &, md-icon {
+            color: mat-color($accent, default-contrast);
+          }
+        }
+        &.mat-warn {
+          background: mat-color($warn);
+          &, md-icon {
+            color: mat-color($warn, default-contrast);
+          }
+        }
+      }
+      md-icon.td-chip-removal {
+        color: mat-color($foreground, hint-text);
+        &:hover {
+          color: mat-color($foreground, icon);
+        }
+      }
+    }
+    &.mat-primary {
+      .mat-input-underline .mat-input-ripple {
+        background-color: mat-color($primary);
+      }
+    }
+    &.mat-accent {
+      .mat-input-underline .mat-input-ripple {
+        background-color: mat-color($accent);
+      }
+    }
+    &.mat-warn {
+      .mat-input-underline .mat-input-ripple {
+        background-color: mat-color($warn);
+      }
+    }
+  }
+}

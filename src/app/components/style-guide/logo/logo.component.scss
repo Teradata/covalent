@@ -1,0 +1,7 @@
+:host /deep/ {
+  .mat-sidenav-container[fullscreen] {
+    position: static;
+    width: 100%;
+    height: 300px;
+  }
+}

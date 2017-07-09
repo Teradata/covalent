@@ -1,0 +1,107 @@
+@import 'variables';
+
+html {
+    .mat-card {
+        padding: 0;
+        margin: 8px;
+        md-card-header {
+            height: auto;
+        }
+        [md-card-avatar] {
+            font-size: $md-card-header-size;
+            line-height: $md-card-header-size;
+            height: $md-card-header-size;
+            width: $md-card-header-size;
+            margin: 16px 0 0 15px;
+            border-radius: 50%;
+        }
+        .mat-card-image {
+            width: 100%;
+        }
+        .mat-card-image,
+        .mat-card-lg-image,
+        .mat-card-md-image,
+        .mat-card-sm-image,
+        .mat-card-title-group {
+            margin: 0;
+        }
+        md-card-title {
+            padding-top: $padding;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+        md-card-subtitle {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+        md-card-content {
+            padding: $padding;
+        }
+        &, & .mat-card {
+            & .mat-card-actions {
+                padding: $padding / 2;
+                margin: 0;
+            }
+        }
+        .mat-card-actions:last-child {
+            margin-bottom: 0px;
+            padding-bottom: 8px;
+        }
+    }
+    &:not([dir='rtl']) {
+        .mat-card-title-group {
+            .mat-card-image,
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:last-child {
+                    border-top-right-radius: $md-card-radius;
+                    border-bottom-right-radius: $md-card-radius;
+                }
+            }
+        }
+        .mat-card {
+            .mat-card-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-top-right-radius: $md-card-radius;
+                }
+            }
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                }
+            }
+        }
+    }
+    &[dir='rtl'] {
+        .mat-card-title-group {
+            .mat-card-image,
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:last-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-bottom-left-radius: $md-card-radius;
+                }
+            }
+        }
+        .mat-card {
+            .mat-card-image {
+                &:first-child {
+                    border-top-left-radius: $md-card-radius;
+                    border-top-right-radius: $md-card-radius;
+                }
+            }
+            .mat-card-lg-image,
+            .mat-card-md-image,
+            .mat-card-sm-image {
+                &:first-child {
+                    border-top-right-radius: $md-card-radius;
+                }
+            }
+        }
+    }
+}

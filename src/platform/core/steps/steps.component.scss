@@ -1,5 +1,3 @@
-@import '../../../../node_modules/@angular/material/core/style/elevation';
-
 .td-line-wrapper,
 .td-step {
   position: relative;
@@ -16,20 +14,29 @@
   height: 1px;
   position: relative;
   top: 36px;
-  margin-left: -6px;
-  margin-right: -3px;
+  /deep/ :not([dir='rtl']) & {
+    left: -6px;
+    right: -3px;
+  }
+  /deep/ [dir='rtl'] & {
+    left: -3px;
+    right: -6px;
+  }
   min-width: 15px;
 }
 
 .td-vertical-line {
   position: absolute;
-  left: 20px;
+  /deep/ :not([dir='rtl']) & {
+    left: 20px;
+    right: auto;
+  }
+  /deep/ [dir='rtl'] & {
+    left: auto;
+    right: 20px;
+  }
   bottom: -16px;
   top: -16px;
   border-left-width: 1px;
   border-left-style: solid;
-}
-
-.td-steps-header {
-  @include md-elevation(1);
 }

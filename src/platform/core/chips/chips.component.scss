@@ -1,0 +1,96 @@
+@import '../common/styles/mixins';
+
+:host {
+  display: block;
+  padding: 0px 5px 0px 5px;
+  min-height: 48px;
+  .td-chips-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    min-height: 42px;
+    &.td-chips-stacked {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  /deep/ {
+    .mat-input-wrapper {
+      padding-bottom: 2px;
+    }
+    /* TODO see if we can make styles more abstract to future proof for contact chips */
+    .mat-basic-chip {
+      display: inline-block;
+      cursor: default;
+      border-radius: 16px;
+      @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
+      .td-chip {
+        min-height: 32px;
+        font-size: 14px;
+        @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
+        [td-chip-avatar] {
+          display: flex;
+          order: -20;
+          justify-content: center;
+          align-items: center;
+          height: 32px;
+          width: 32px;
+          flex-shrink: 0;
+          @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
+          border-radius: 50%;
+        }
+      }
+      box-sizing: border-box;
+      max-width: 100%;
+      position: relative;
+      &.td-chip-after-pad {
+        @include rtl(padding, 0 12px 0 0, 0 0 0 12px);
+      }
+      md-icon.td-chip-removal {
+        margin: 0 4px;
+        font-size: 21px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .mat-input-underline {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+
+    &.mat-disabled {
+      background-position: 0;
+      bottom: -4px;
+      background-color: transparent;
+    }
+
+    .mat-input-ripple {
+      position: absolute;
+      height: 2px;
+      top: 0;
+      width: 100%;
+      transform-origin: 50%;
+      transform: scaleX(0.5);
+      visibility: hidden;
+      transition: background-color .3s cubic-bezier(.55,0,.55,.2);
+      &.mat-focused {
+        visibility: visible;
+        transform: scaleX(1);
+        transition: transform 150ms linear,
+                    background-color .3s cubic-bezier(.55,0,.55,.2);
+      }
+    }
+  }
+}
+
+:host {
+   /deep/ md-input-container {
+    .mat-input-underline {
+      display: none;
+    }
+  }
+}

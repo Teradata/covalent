@@ -1,0 +1,901 @@
+@import 'theme-functions';
+@import 'palette';
+
+// Text color
+// Inherit
+.tc-inherit                 {   color: inherit !important;                       }
+
+// 50
+.tc-red-50                  {   color: mat-color($mat-red, 50) !important;                       }
+.tc-pink-50                 {   color: mat-color($mat-pink, 50) !important;                      }
+.tc-purple-50               {   color: mat-color($mat-purple, 50) !important;                    }
+.tc-deep-purple-50          {   color: mat-color($mat-deep-purple, 50) !important;               }
+.tc-indigo-50               {   color: mat-color($mat-indigo, 50) !important;                    }
+.tc-blue-50                 {   color: mat-color($mat-blue, 50) !important;                      }
+.tc-light-blue-50           {   color: mat-color($mat-light-blue, 50) !important;                }
+.tc-cyan-50                 {   color: mat-color($mat-cyan, 50) !important;                      }
+.tc-teal-50                 {   color: mat-color($mat-teal, 50) !important;                      }
+.tc-green-50                {   color: mat-color($mat-green, 50) !important;                     }
+.tc-light-green-50          {   color: mat-color($mat-light-green, 50) !important;               }
+.tc-lime-50                 {   color: mat-color($mat-lime, 50) !important;                      }
+.tc-yellow-50               {   color: mat-color($mat-yellow, 50) !important;                    }
+.tc-amber-50                {   color: mat-color($mat-amber, 50) !important;                     }
+.tc-orange-50               {   color: mat-color($mat-orange, 50) !important;                    }
+.tc-deep-orange-50          {   color: mat-color($mat-deep-orange, 50) !important;               }
+.tc-brown-50                {   color: mat-color($mat-brown, 50) !important;                     }
+.tc-grey-50                 {   color: mat-color($mat-grey, 50) !important;                      }
+.tc-blue-grey-50            {   color: mat-color($mat-blue-grey, 50) !important;                 }
+
+// 100
+.tc-red-100                 {   color: mat-color($mat-red, 100) !important;                      }
+.tc-pink-100                {   color: mat-color($mat-pink, 100) !important;                     }
+.tc-purple-100              {   color: mat-color($mat-purple, 100) !important;                   }
+.tc-deep-purple-100         {   color: mat-color($mat-deep-purple, 100) !important;              }
+.tc-indigo-100              {   color: mat-color($mat-indigo, 100) !important;                   }
+.tc-blue-100                {   color: mat-color($mat-blue, 100) !important;                     }
+.tc-light-blue-100          {   color: mat-color($mat-light-blue, 100) !important;               }
+.tc-cyan-100                {   color: mat-color($mat-cyan, 100) !important;                     }
+.tc-teal-100                {   color: mat-color($mat-teal, 100) !important;                     }
+.tc-green-100               {   color: mat-color($mat-green, 100) !important;                    }
+.tc-light-green-100         {   color: mat-color($mat-light-green, 100) !important;              }
+.tc-lime-100                {   color: mat-color($mat-lime, 100) !important;                     }
+.tc-yellow-100              {   color: mat-color($mat-yellow, 100) !important;                   }
+.tc-amber-100               {   color: mat-color($mat-amber, 100) !important;                    }
+.tc-orange-100              {   color: mat-color($mat-orange, 100) !important;                   }
+.tc-deep-orange-100         {   color: mat-color($mat-deep-orange, 100) !important;              }
+.tc-brown-100               {   color: mat-color($mat-brown, 100) !important;                    }
+.tc-grey-100                {   color: mat-color($mat-grey, 100) !important;                     }
+.tc-blue-grey-100           {   color: mat-color($mat-blue-grey, 100) !important;                }
+
+// 200
+.tc-red-200                 {   color: mat-color($mat-red, 200) !important;                      }
+.tc-pink-200                {   color: mat-color($mat-pink, 200) !important;                     }
+.tc-purple-200              {   color: mat-color($mat-purple, 200) !important;                   }
+.tc-deep-purple-200         {   color: mat-color($mat-deep-purple, 200) !important;              }
+.tc-indigo-200              {   color: mat-color($mat-indigo, 200) !important;                   }
+.tc-blue-200                {   color: mat-color($mat-blue, 200) !important;                     }
+.tc-light-blue-200          {   color: mat-color($mat-light-blue, 200) !important;               }
+.tc-cyan-200                {   color: mat-color($mat-cyan, 200) !important;                     }
+.tc-teal-200                {   color: mat-color($mat-teal, 200) !important;                     }
+.tc-green-200               {   color: mat-color($mat-green, 200) !important;                    }
+.tc-light-green-200         {   color: mat-color($mat-light-green, 200) !important;              }
+.tc-lime-200                {   color: mat-color($mat-lime, 200) !important;                     }
+.tc-yellow-200              {   color: mat-color($mat-yellow, 200) !important;                   }
+.tc-amber-200               {   color: mat-color($mat-amber, 200) !important;                    }
+.tc-orange-200              {   color: mat-color($mat-orange, 200) !important;                   }
+.tc-deep-orange-200         {   color: mat-color($mat-deep-orange, 200) !important;              }
+.tc-brown-200               {   color: mat-color($mat-brown, 200) !important;                    }
+.tc-grey-200                {   color: mat-color($mat-grey, 200) !important;                     }
+.tc-blue-grey-200           {   color: mat-color($mat-blue-grey, 200) !important;                }
+
+// 300
+.tc-red-300                 {   color: mat-color($mat-red, 300) !important;                      }
+.tc-pink-300                {   color: mat-color($mat-pink, 300) !important;                     }
+.tc-purple-300              {   color: mat-color($mat-purple, 300) !important;                   }
+.tc-deep-purple-300         {   color: mat-color($mat-deep-purple, 300) !important;              }
+.tc-indigo-300              {   color: mat-color($mat-indigo, 300) !important;                   }
+.tc-blue-300                {   color: mat-color($mat-blue, 300) !important;                     }
+.tc-light-blue-300          {   color: mat-color($mat-light-blue, 300) !important;               }
+.tc-cyan-300                {   color: mat-color($mat-cyan, 300) !important;                     }
+.tc-teal-300                {   color: mat-color($mat-teal, 300) !important;                     }
+.tc-green-300               {   color: mat-color($mat-green, 300) !important;                    }
+.tc-light-green-300         {   color: mat-color($mat-light-green, 300) !important;              }
+.tc-lime-300                {   color: mat-color($mat-lime, 300) !important;                     }
+.tc-yellow-300              {   color: mat-color($mat-yellow, 300) !important;                   }
+.tc-amber-300               {   color: mat-color($mat-amber, 300) !important;                    }
+.tc-orange-300              {   color: mat-color($mat-orange, 300) !important;                   }
+.tc-deep-orange-300         {   color: mat-color($mat-deep-orange, 300) !important;              }
+.tc-brown-300               {   color: mat-color($mat-brown, 300) !important;                    }
+.tc-grey-300                {   color: mat-color($mat-grey, 300) !important;                     }
+.tc-blue-grey-300           {   color: mat-color($mat-blue-grey, 300) !important;                }
+
+// 400
+.tc-red-400                 {   color: mat-color($mat-red, 400) !important;                      }
+.tc-pink-400                {   color: mat-color($mat-pink, 400) !important;                     }
+.tc-purple-400              {   color: mat-color($mat-purple, 400) !important;                   }
+.tc-deep-purple-400         {   color: mat-color($mat-deep-purple, 400) !important;              }
+.tc-indigo-400              {   color: mat-color($mat-indigo, 400) !important;                   }
+.tc-blue-400                {   color: mat-color($mat-blue, 400) !important;                     }
+.tc-light-blue-400          {   color: mat-color($mat-light-blue, 400) !important;               }
+.tc-cyan-400                {   color: mat-color($mat-cyan, 400) !important;                     }
+.tc-teal-400                {   color: mat-color($mat-teal, 400) !important;                     }
+.tc-green-400               {   color: mat-color($mat-green, 400) !important;                    }
+.tc-light-green-400         {   color: mat-color($mat-light-green, 400) !important;              }
+.tc-lime-400                {   color: mat-color($mat-lime, 400) !important;                     }
+.tc-yellow-400              {   color: mat-color($mat-yellow, 400) !important;                   }
+.tc-amber-400               {   color: mat-color($mat-amber, 400) !important;                    }
+.tc-orange-400              {   color: mat-color($mat-orange, 400) !important;                   }
+.tc-deep-orange-400         {   color: mat-color($mat-deep-orange, 400) !important;              }
+.tc-brown-400               {   color: mat-color($mat-brown, 400) !important;                    }
+.tc-grey-400                {   color: mat-color($mat-grey, 400) !important;                     }
+.tc-blue-grey-400           {   color: mat-color($mat-blue-grey, 400) !important;                }
+
+// 500
+.tc-red-500                 {   color: mat-color($mat-red, 500) !important;                      }
+.tc-pink-500                {   color: mat-color($mat-pink, 500) !important;                     }
+.tc-purple-500              {   color: mat-color($mat-purple, 500) !important;                   }
+.tc-deep-purple-500         {   color: mat-color($mat-deep-purple, 500) !important;              }
+.tc-indigo-500              {   color: mat-color($mat-indigo, 500) !important;                   }
+.tc-blue-500                {   color: mat-color($mat-blue, 500) !important;                     }
+.tc-light-blue-500          {   color: mat-color($mat-light-blue, 500) !important;               }
+.tc-cyan-500                {   color: mat-color($mat-cyan, 500) !important;                     }
+.tc-teal-500                {   color: mat-color($mat-teal, 500) !important;                     }
+.tc-green-500               {   color: mat-color($mat-green, 500) !important;                    }
+.tc-light-green-500         {   color: mat-color($mat-light-green, 500) !important;              }
+.tc-lime-500                {   color: mat-color($mat-lime, 500) !important;                     }
+.tc-yellow-500              {   color: mat-color($mat-yellow, 500) !important;                   }
+.tc-amber-500               {   color: mat-color($mat-amber, 500) !important;                    }
+.tc-orange-500              {   color: mat-color($mat-orange, 500) !important;                   }
+.tc-deep-orange-500         {   color: mat-color($mat-deep-orange, 500) !important;              }
+.tc-brown-500               {   color: mat-color($mat-brown, 500) !important;                    }
+.tc-grey-500                {   color: mat-color($mat-grey, 500) !important;                     }
+.tc-blue-grey-500           {   color: mat-color($mat-blue-grey, 500) !important;                }
+
+// 600
+.tc-red-600                 {   color: mat-color($mat-red, 600) !important;                      }
+.tc-pink-600                {   color: mat-color($mat-pink, 600) !important;                     }
+.tc-purple-600              {   color: mat-color($mat-purple, 600) !important;                   }
+.tc-deep-purple-600         {   color: mat-color($mat-deep-purple, 600) !important;              }
+.tc-indigo-600              {   color: mat-color($mat-indigo, 600) !important;                   }
+.tc-blue-600                {   color: mat-color($mat-blue, 600) !important;                     }
+.tc-light-blue-600          {   color: mat-color($mat-light-blue, 600) !important;               }
+.tc-cyan-600                {   color: mat-color($mat-cyan, 600) !important;                     }
+.tc-teal-600                {   color: mat-color($mat-teal, 600) !important;                     }
+.tc-green-600               {   color: mat-color($mat-green, 600) !important;                    }
+.tc-light-green-600         {   color: mat-color($mat-light-green, 600) !important;              }
+.tc-lime-600                {   color: mat-color($mat-lime, 600) !important;                     }
+.tc-yellow-600              {   color: mat-color($mat-yellow, 600) !important;                   }
+.tc-amber-600               {   color: mat-color($mat-amber, 600) !important;                    }
+.tc-orange-600              {   color: mat-color($mat-orange, 600) !important;                   }
+.tc-deep-orange-600         {   color: mat-color($mat-deep-orange, 600) !important;              }
+.tc-brown-600               {   color: mat-color($mat-brown, 600) !important;                    }
+.tc-grey-600                {   color: mat-color($mat-grey, 600) !important;                     }
+.tc-blue-grey-600           {   color: mat-color($mat-blue-grey, 600) !important;                }
+
+// 700
+.tc-red-700                 {   color: mat-color($mat-red, 700) !important;                      }
+.tc-pink-700                {   color: mat-color($mat-pink, 700) !important;                     }
+.tc-purple-700              {   color: mat-color($mat-purple, 700) !important;                   }
+.tc-deep-purple-700         {   color: mat-color($mat-deep-purple, 700) !important;              }
+.tc-indigo-700              {   color: mat-color($mat-indigo, 700) !important;                   }
+.tc-blue-700                {   color: mat-color($mat-blue, 700) !important;                     }
+.tc-light-blue-700          {   color: mat-color($mat-light-blue, 700) !important;               }
+.tc-cyan-700                {   color: mat-color($mat-cyan, 700) !important;                     }
+.tc-teal-700                {   color: mat-color($mat-teal, 700) !important;                     }
+.tc-green-700               {   color: mat-color($mat-green, 700) !important;                    }
+.tc-light-green-700         {   color: mat-color($mat-light-green, 700) !important;              }
+.tc-lime-700                {   color: mat-color($mat-lime, 700) !important;                     }
+.tc-yellow-700              {   color: mat-color($mat-yellow, 700) !important;                   }
+.tc-amber-700               {   color: mat-color($mat-amber, 700) !important;                    }
+.tc-orange-700              {   color: mat-color($mat-orange, 700) !important;                   }
+.tc-deep-orange-700         {   color: mat-color($mat-deep-orange, 700) !important;              }
+.tc-brown-700               {   color: mat-color($mat-brown, 700) !important;                    }
+.tc-grey-700                {   color: mat-color($mat-grey, 700) !important;                     }
+.tc-blue-grey-700           {   color: mat-color($mat-blue-grey, 700) !important;                }
+
+// 800
+.tc-red-800                 {   color: mat-color($mat-red, 800) !important;                      }
+.tc-pink-800                {   color: mat-color($mat-pink, 800) !important;                     }
+.tc-purple-800              {   color: mat-color($mat-purple, 800) !important;                   }
+.tc-deep-purple-800         {   color: mat-color($mat-deep-purple, 800) !important;              }
+.tc-indigo-800              {   color: mat-color($mat-indigo, 800) !important;                   }
+.tc-blue-800                {   color: mat-color($mat-blue, 800) !important;                     }
+.tc-light-blue-800          {   color: mat-color($mat-light-blue, 800) !important;               }
+.tc-cyan-800                {   color: mat-color($mat-cyan, 800) !important;                     }
+.tc-teal-800                {   color: mat-color($mat-teal, 800) !important;                     }
+.tc-green-800               {   color: mat-color($mat-green, 800) !important;                    }
+.tc-light-green-800         {   color: mat-color($mat-light-green, 800) !important;              }
+.tc-lime-800                {   color: mat-color($mat-lime, 800) !important;                     }
+.tc-yellow-800              {   color: mat-color($mat-yellow, 800) !important;                   }
+.tc-amber-800               {   color: mat-color($mat-amber, 800) !important;                    }
+.tc-orange-800              {   color: mat-color($mat-orange, 800) !important;                   }
+.tc-deep-orange-800         {   color: mat-color($mat-deep-orange, 800) !important;              }
+.tc-brown-800               {   color: mat-color($mat-brown, 800) !important;                    }
+.tc-grey-800                {   color: mat-color($mat-grey, 800) !important;                     }
+.tc-blue-grey-800           {   color: mat-color($mat-blue-grey, 800) !important;                }
+
+// 900
+.tc-red-900                 {   color: mat-color($mat-red, 900) !important;                      }
+.tc-pink-900                {   color: mat-color($mat-pink, 900) !important;                     }
+.tc-purple-900              {   color: mat-color($mat-purple, 900) !important;                   }
+.tc-deep-purple-900         {   color: mat-color($mat-deep-purple, 900) !important;              }
+.tc-indigo-900              {   color: mat-color($mat-indigo, 900) !important;                   }
+.tc-blue-900                {   color: mat-color($mat-blue, 900) !important;                     }
+.tc-light-blue-900          {   color: mat-color($mat-light-blue, 900) !important;               }
+.tc-cyan-900                {   color: mat-color($mat-cyan, 900) !important;                     }
+.tc-teal-900                {   color: mat-color($mat-teal, 900) !important;                     }
+.tc-green-900               {   color: mat-color($mat-green, 900) !important;                    }
+.tc-light-green-900         {   color: mat-color($mat-light-green, 900) !important;              }
+.tc-lime-900                {   color: mat-color($mat-lime, 900) !important;                     }
+.tc-yellow-900              {   color: mat-color($mat-yellow, 900) !important;                   }
+.tc-amber-900               {   color: mat-color($mat-amber, 900) !important;                    }
+.tc-orange-900              {   color: mat-color($mat-orange, 900) !important;                   }
+.tc-deep-orange-900         {   color: mat-color($mat-deep-orange, 900) !important;              }
+.tc-brown-900               {   color: mat-color($mat-brown, 900) !important;                    }
+.tc-grey-900                {   color: mat-color($mat-grey, 900) !important;                     }
+.tc-blue-grey-900           {   color: mat-color($mat-blue-grey, 900) !important;                }
+
+// A100
+.tc-red-A100                {   color: mat-color($mat-red, A100) !important;                     }
+.tc-pink-A100               {   color: mat-color($mat-pink, A100) !important;                    }
+.tc-purple-A100             {   color: mat-color($mat-purple, A100) !important;                  }
+.tc-deep-purple-A100        {   color: mat-color($mat-deep-purple, A100) !important;             }
+.tc-indigo-A100             {   color: mat-color($mat-indigo, A100) !important;                  }
+.tc-blue-A100               {   color: mat-color($mat-blue, A100) !important;                    }
+.tc-light-blue-A100         {   color: mat-color($mat-light-blue, A100) !important;              }
+.tc-cyan-A100               {   color: mat-color($mat-cyan, A100) !important;                    }
+.tc-teal-A100               {   color: mat-color($mat-teal, A100) !important;                    }
+.tc-green-A100              {   color: mat-color($mat-green, A100) !important;                   }
+.tc-light-green-A100        {   color: mat-color($mat-light-green, A100) !important;             }
+.tc-lime-A100               {   color: mat-color($mat-lime, A100) !important;                    }
+.tc-yellow-A100             {   color: mat-color($mat-yellow, A100) !important;                  }
+.tc-amber-A100              {   color: mat-color($mat-amber, A100) !important;                   }
+.tc-orange-A100             {   color: mat-color($mat-orange, A100) !important;                  }
+.tc-deep-orange-A100        {   color: mat-color($mat-deep-orange, A100) !important;             }
+
+// A200
+.tc-red-A200                {   color: mat-color($mat-red, A200) !important;                     }
+.tc-pink-A200               {   color: mat-color($mat-pink, A200) !important;                    }
+.tc-purple-A200             {   color: mat-color($mat-purple, A200) !important;                  }
+.tc-deep-purple-A200        {   color: mat-color($mat-deep-purple, A200) !important;             }
+.tc-indigo-A200             {   color: mat-color($mat-indigo, A200) !important;                  }
+.tc-blue-A200               {   color: mat-color($mat-blue, A200) !important;                    }
+.tc-light-blue-A200         {   color: mat-color($mat-light-blue, A200) !important;              }
+.tc-cyan-A200               {   color: mat-color($mat-cyan, A200) !important;                    }
+.tc-teal-A200               {   color: mat-color($mat-teal, A200) !important;                    }
+.tc-green-A200              {   color: mat-color($mat-green, A200) !important;                   }
+.tc-light-green-A200        {   color: mat-color($mat-light-green, A200) !important;             }
+.tc-lime-A200               {   color: mat-color($mat-lime, A200) !important;                    }
+.tc-yellow-A200             {   color: mat-color($mat-yellow, A200) !important;                  }
+.tc-amber-A200              {   color: mat-color($mat-amber, A200) !important;                   }
+.tc-orange-A200             {   color: mat-color($mat-orange, A200) !important;                  }
+.tc-deep-orange-A200        {   color: mat-color($mat-deep-orange, A200) !important;             }
+
+// A400
+.tc-red-A400                {   color: mat-color($mat-red, A400) !important;                     }
+.tc-pink-A400               {   color: mat-color($mat-pink, A400) !important;                    }
+.tc-purple-A400             {   color: mat-color($mat-purple, A400) !important;                  }
+.tc-deep-purple-A400        {   color: mat-color($mat-deep-purple, A400) !important;             }
+.tc-indigo-A400             {   color: mat-color($mat-indigo, A400) !important;                  }
+.tc-blue-A400               {   color: mat-color($mat-blue, A400) !important;                    }
+.tc-light-blue-A400         {   color: mat-color($mat-light-blue, A400) !important;              }
+.tc-cyan-A400               {   color: mat-color($mat-cyan, A400) !important;                    }
+.tc-teal-A400               {   color: mat-color($mat-teal, A400) !important;                    }
+.tc-green-A400              {   color: mat-color($mat-green, A400) !important;                   }
+.tc-light-green-A400        {   color: mat-color($mat-light-green, A400) !important;             }
+.tc-lime-A400               {   color: mat-color($mat-lime, A400) !important;                    }
+.tc-yellow-A400             {   color: mat-color($mat-yellow, A400) !important;                  }
+.tc-amber-A400              {   color: mat-color($mat-amber, A400) !important;                   }
+.tc-orange-A400             {   color: mat-color($mat-orange, A400) !important;                  }
+.tc-deep-orange-A400        {   color: mat-color($mat-deep-orange, A400) !important;             }
+
+// A700
+.tc-red-A700                {   color: mat-color($mat-red, A700) !important;                     }
+.tc-pink-A700               {   color: mat-color($mat-pink, A700) !important;                    }
+.tc-purple-A700             {   color: mat-color($mat-purple, A700) !important;                  }
+.tc-deep-purple-A700        {   color: mat-color($mat-deep-purple, A700) !important;             }
+.tc-indigo-A700             {   color: mat-color($mat-indigo, A700) !important;                  }
+.tc-blue-A700               {   color: mat-color($mat-blue, A700) !important;                    }
+.tc-light-blue-A700         {   color: mat-color($mat-light-blue, A700) !important;              }
+.tc-cyan-A700               {   color: mat-color($mat-cyan, A700) !important;                    }
+.tc-teal-A700               {   color: mat-color($mat-teal, A700) !important;                    }
+.tc-green-A700              {   color: mat-color($mat-green, A700) !important;                   }
+.tc-light-green-A700        {   color: mat-color($mat-light-green, A700) !important;             }
+.tc-lime-A700               {   color: mat-color($mat-lime, A700) !important;                    }
+.tc-yellow-A700             {   color: mat-color($mat-yellow, A700) !important;                  }
+.tc-amber-A700              {   color: mat-color($mat-amber, A700) !important;                   }
+.tc-orange-A700             {   color: mat-color($mat-orange, A700) !important;                  }
+.tc-deep-orange-A700        {   color: mat-color($mat-deep-orange, A700) !important;             }
+
+// Black
+.tc-black                   {   color: rgba(black, 87) !important;                        }
+.tc-black-1                 {   color: rgba(black, 54) !important;                      }
+.tc-black-2                 {   color: rgba(black, 38) !important;                      }
+.tc-black-3                 {   color: rgba(black, 0.12) !important;                      }
+.tc-black-4                 {   color: black !important;                      }
+
+// White
+.tc-white                   {   color: rgba(white, 0.7) !important;                        }
+.tc-white-1                 {   color: rgba(white, 0.3) !important;                      }
+.tc-white-2                 {   color: rgba(white, 0.3) !important;                      }
+.tc-white-3                 {   color: rgba(white, 0.12) !important;                      }
+.tc-white-4                 {   color: white !important;                      }
+
+
+// Background color
+
+// 50
+.bgc-red-50                  {   background-color: mat-color($mat-red, 50) !important;            }
+.bgc-pink-50                 {   background-color: mat-color($mat-pink, 50) !important;           }
+.bgc-purple-50               {   background-color: mat-color($mat-purple, 50) !important;         }
+.bgc-deep-purple-50          {   background-color: mat-color($mat-deep-purple, 50) !important;    }
+.bgc-indigo-50               {   background-color: mat-color($mat-indigo, 50) !important;         }
+.bgc-blue-50                 {   background-color: mat-color($mat-blue, 50) !important;           }
+.bgc-light-blue-50           {   background-color: mat-color($mat-light-blue, 50) !important;     }
+.bgc-cyan-50                 {   background-color: mat-color($mat-cyan, 50) !important;           }
+.bgc-teal-50                 {   background-color: mat-color($mat-teal, 50) !important;           }
+.bgc-green-50                {   background-color: mat-color($mat-green, 50) !important;          }
+.bgc-light-green-50          {   background-color: mat-color($mat-light-green, 50) !important;    }
+.bgc-lime-50                 {   background-color: mat-color($mat-lime, 50) !important;           }
+.bgc-yellow-50               {   background-color: mat-color($mat-yellow, 50) !important;         }
+.bgc-amber-50                {   background-color: mat-color($mat-amber, 50) !important;          }
+.bgc-orange-50               {   background-color: mat-color($mat-orange, 50) !important;         }
+.bgc-deep-orange-50          {   background-color: mat-color($mat-deep-orange, 50) !important;    }
+.bgc-brown-50                {   background-color: mat-color($mat-brown, 50) !important;          }
+.bgc-grey-50                 {   background-color: mat-color($mat-grey, 50) !important;           }
+.bgc-blue-grey-50            {   background-color: mat-color($mat-blue-grey, 50) !important;      }
+
+// 100
+.bgc-red-100                 {   background-color: mat-color($mat-red, 100) !important;           }
+.bgc-pink-100                {   background-color: mat-color($mat-pink, 100) !important;          }
+.bgc-purple-100              {   background-color: mat-color($mat-purple, 100) !important;        }
+.bgc-deep-purple-100         {   background-color: mat-color($mat-deep-purple, 100) !important;   }
+.bgc-indigo-100              {   background-color: mat-color($mat-indigo, 100) !important;        }
+.bgc-blue-100                {   background-color: mat-color($mat-blue, 100) !important;          }
+.bgc-light-blue-100          {   background-color: mat-color($mat-light-blue, 100) !important;    }
+.bgc-cyan-100                {   background-color: mat-color($mat-cyan, 100) !important;          }
+.bgc-teal-100                {   background-color: mat-color($mat-teal, 100) !important;          }
+.bgc-green-100               {   background-color: mat-color($mat-green, 100) !important;         }
+.bgc-light-green-100         {   background-color: mat-color($mat-light-green, 100) !important;   }
+.bgc-lime-100                {   background-color: mat-color($mat-lime, 100) !important;          }
+.bgc-yellow-100              {   background-color: mat-color($mat-yellow, 100) !important;        }
+.bgc-amber-100               {   background-color: mat-color($mat-amber, 100) !important;         }
+.bgc-orange-100              {   background-color: mat-color($mat-orange, 100) !important;        }
+.bgc-deep-orange-100         {   background-color: mat-color($mat-deep-orange, 100) !important;   }
+.bgc-brown-100               {   background-color: mat-color($mat-brown, 100) !important;         }
+.bgc-grey-100                {   background-color: mat-color($mat-grey, 100) !important;          }
+.bgc-blue-grey-100           {   background-color: mat-color($mat-blue-grey, 100) !important;     }
+
+// 200
+.bgc-red-200                 {   background-color: mat-color($mat-red, 200) !important;           }
+.bgc-pink-200                {   background-color: mat-color($mat-pink, 200) !important;          }
+.bgc-purple-200              {   background-color: mat-color($mat-purple, 200) !important;        }
+.bgc-deep-purple-200         {   background-color: mat-color($mat-deep-purple, 200) !important;   }
+.bgc-indigo-200              {   background-color: mat-color($mat-indigo, 200) !important;        }
+.bgc-blue-200                {   background-color: mat-color($mat-blue, 200) !important;          }
+.bgc-light-blue-200          {   background-color: mat-color($mat-light-blue, 200) !important;    }
+.bgc-cyan-200                {   background-color: mat-color($mat-cyan, 200) !important;          }
+.bgc-teal-200                {   background-color: mat-color($mat-teal, 200) !important;          }
+.bgc-green-200               {   background-color: mat-color($mat-green, 200) !important;         }
+.bgc-light-green-200         {   background-color: mat-color($mat-light-green, 200) !important;   }
+.bgc-lime-200                {   background-color: mat-color($mat-lime, 200) !important;          }
+.bgc-yellow-200              {   background-color: mat-color($mat-yellow, 200) !important;        }
+.bgc-amber-200               {   background-color: mat-color($mat-amber, 200) !important;         }
+.bgc-orange-200              {   background-color: mat-color($mat-orange, 200) !important;        }
+.bgc-deep-orange-200         {   background-color: mat-color($mat-deep-orange, 200) !important;   }
+.bgc-brown-200               {   background-color: mat-color($mat-brown, 200) !important;         }
+.bgc-grey-200                {   background-color: mat-color($mat-grey, 200) !important;          }
+.bgc-blue-grey-200           {   background-color: mat-color($mat-blue-grey, 200) !important;     }
+
+// 300
+.bgc-red-300                 {   background-color: mat-color($mat-red, 300) !important;           }
+.bgc-pink-300                {   background-color: mat-color($mat-pink, 300) !important;          }
+.bgc-purple-300              {   background-color: mat-color($mat-purple, 300) !important;        }
+.bgc-deep-purple-300         {   background-color: mat-color($mat-deep-purple, 300) !important;   }
+.bgc-indigo-300              {   background-color: mat-color($mat-indigo, 300) !important;        }
+.bgc-blue-300                {   background-color: mat-color($mat-blue, 300) !important;          }
+.bgc-light-blue-300          {   background-color: mat-color($mat-light-blue, 300) !important;    }
+.bgc-cyan-300                {   background-color: mat-color($mat-cyan, 300) !important;          }
+.bgc-teal-300                {   background-color: mat-color($mat-teal, 300) !important;          }
+.bgc-green-300               {   background-color: mat-color($mat-green, 300) !important;         }
+.bgc-light-green-300         {   background-color: mat-color($mat-light-green, 300) !important;   }
+.bgc-lime-300                {   background-color: mat-color($mat-lime, 300) !important;          }
+.bgc-yellow-300              {   background-color: mat-color($mat-yellow, 300) !important;        }
+.bgc-amber-300               {   background-color: mat-color($mat-amber, 300) !important;         }
+.bgc-orange-300              {   background-color: mat-color($mat-orange, 300) !important;        }
+.bgc-deep-orange-300         {   background-color: mat-color($mat-deep-orange, 300) !important;   }
+.bgc-brown-300               {   background-color: mat-color($mat-brown, 300) !important;         }
+.bgc-grey-300                {   background-color: mat-color($mat-grey, 300) !important;          }
+.bgc-blue-grey-300           {   background-color: mat-color($mat-blue-grey, 300) !important;     }
+
+// 400
+.bgc-red-400                 {   background-color: mat-color($mat-red, 400) !important;           }
+.bgc-pink-400                {   background-color: mat-color($mat-pink, 400) !important;          }
+.bgc-purple-400              {   background-color: mat-color($mat-purple, 400) !important;        }
+.bgc-deep-purple-400         {   background-color: mat-color($mat-deep-purple, 400) !important;   }
+.bgc-indigo-400              {   background-color: mat-color($mat-indigo, 400) !important;        }
+.bgc-blue-400                {   background-color: mat-color($mat-blue, 400) !important;          }
+.bgc-light-blue-400          {   background-color: mat-color($mat-light-blue, 400) !important;    }
+.bgc-cyan-400                {   background-color: mat-color($mat-cyan, 400) !important;          }
+.bgc-teal-400                {   background-color: mat-color($mat-teal, 400) !important;          }
+.bgc-green-400               {   background-color: mat-color($mat-green, 400) !important;         }
+.bgc-light-green-400         {   background-color: mat-color($mat-light-green, 400) !important;   }
+.bgc-lime-400                {   background-color: mat-color($mat-lime, 400) !important;          }
+.bgc-yellow-400              {   background-color: mat-color($mat-yellow, 400) !important;        }
+.bgc-amber-400               {   background-color: mat-color($mat-amber, 400) !important;         }
+.bgc-orange-400              {   background-color: mat-color($mat-orange, 400) !important;        }
+.bgc-deep-orange-400         {   background-color: mat-color($mat-deep-orange, 400) !important;   }
+.bgc-brown-400               {   background-color: mat-color($mat-brown, 400) !important;         }
+.bgc-grey-400                {   background-color: mat-color($mat-grey, 400) !important;          }
+.bgc-blue-grey-400           {   background-color: mat-color($mat-blue-grey, 400) !important;     }
+
+// 500
+.bgc-red-500                 {   background-color: mat-color($mat-red, 500) !important;           }
+.bgc-pink-500                {   background-color: mat-color($mat-pink, 500) !important;          }
+.bgc-purple-500              {   background-color: mat-color($mat-purple, 500) !important;        }
+.bgc-deep-purple-500         {   background-color: mat-color($mat-deep-purple, 500) !important;   }
+.bgc-indigo-500              {   background-color: mat-color($mat-indigo, 500) !important;        }
+.bgc-blue-500                {   background-color: mat-color($mat-blue, 500) !important;          }
+.bgc-light-blue-500          {   background-color: mat-color($mat-light-blue, 500) !important;    }
+.bgc-cyan-500                {   background-color: mat-color($mat-cyan, 500) !important;          }
+.bgc-teal-500                {   background-color: mat-color($mat-teal, 500) !important;          }
+.bgc-green-500               {   background-color: mat-color($mat-green, 500) !important;         }
+.bgc-light-green-500         {   background-color: mat-color($mat-light-green, 500) !important;   }
+.bgc-lime-500                {   background-color: mat-color($mat-lime, 500) !important;          }
+.bgc-yellow-500              {   background-color: mat-color($mat-yellow, 500) !important;        }
+.bgc-amber-500               {   background-color: mat-color($mat-amber, 500) !important;         }
+.bgc-orange-500              {   background-color: mat-color($mat-orange, 500) !important;        }
+.bgc-deep-orange-500         {   background-color: mat-color($mat-deep-orange, 500) !important;   }
+.bgc-brown-500               {   background-color: mat-color($mat-brown, 500) !important;         }
+.bgc-grey-500                {   background-color: mat-color($mat-grey, 500) !important;          }
+.bgc-blue-grey-500           {   background-color: mat-color($mat-blue-grey, 500) !important;     }
+
+// 600
+.bgc-red-600                 {   background-color: mat-color($mat-red, 600) !important;           }
+.bgc-pink-600                {   background-color: mat-color($mat-pink, 600) !important;          }
+.bgc-purple-600              {   background-color: mat-color($mat-purple, 600) !important;        }
+.bgc-deep-purple-600         {   background-color: mat-color($mat-deep-purple, 600) !important;   }
+.bgc-indigo-600              {   background-color: mat-color($mat-indigo, 600) !important;        }
+.bgc-blue-600                {   background-color: mat-color($mat-blue, 600) !important;          }
+.bgc-light-blue-600          {   background-color: mat-color($mat-light-blue, 600) !important;    }
+.bgc-cyan-600                {   background-color: mat-color($mat-cyan, 600) !important;          }
+.bgc-teal-600                {   background-color: mat-color($mat-teal, 600) !important;          }
+.bgc-green-600               {   background-color: mat-color($mat-green, 600) !important;         }
+.bgc-light-green-600         {   background-color: mat-color($mat-light-green, 600) !important;   }
+.bgc-lime-600                {   background-color: mat-color($mat-lime, 600) !important;          }
+.bgc-yellow-600              {   background-color: mat-color($mat-yellow, 600) !important;        }
+.bgc-amber-600               {   background-color: mat-color($mat-amber, 600) !important;         }
+.bgc-orange-600              {   background-color: mat-color($mat-orange, 600) !important;        }
+.bgc-deep-orange-600         {   background-color: mat-color($mat-deep-orange, 600) !important;   }
+.bgc-brown-600               {   background-color: mat-color($mat-brown, 600) !important;         }
+.bgc-grey-600                {   background-color: mat-color($mat-grey, 600) !important;          }
+.bgc-blue-grey-600           {   background-color: mat-color($mat-blue-grey, 600) !important;     }
+
+// 700
+.bgc-red-700                 {   background-color: mat-color($mat-red, 700) !important;           }
+.bgc-pink-700                {   background-color: mat-color($mat-pink, 700) !important;          }
+.bgc-purple-700              {   background-color: mat-color($mat-purple, 700) !important;        }
+.bgc-deep-purple-700         {   background-color: mat-color($mat-deep-purple, 700) !important;   }
+.bgc-indigo-700              {   background-color: mat-color($mat-indigo, 700) !important;        }
+.bgc-blue-700                {   background-color: mat-color($mat-blue, 700) !important;          }
+.bgc-light-blue-700          {   background-color: mat-color($mat-light-blue, 700) !important;    }
+.bgc-cyan-700                {   background-color: mat-color($mat-cyan, 700) !important;          }
+.bgc-teal-700                {   background-color: mat-color($mat-teal, 700) !important;          }
+.bgc-green-700               {   background-color: mat-color($mat-green, 700) !important;         }
+.bgc-light-green-700         {   background-color: mat-color($mat-light-green, 700) !important;   }
+.bgc-lime-700                {   background-color: mat-color($mat-lime, 700) !important;          }
+.bgc-yellow-700              {   background-color: mat-color($mat-yellow, 700) !important;        }
+.bgc-amber-700               {   background-color: mat-color($mat-amber, 700) !important;         }
+.bgc-orange-700              {   background-color: mat-color($mat-orange, 700) !important;        }
+.bgc-deep-orange-700         {   background-color: mat-color($mat-deep-orange, 700) !important;   }
+.bgc-brown-700               {   background-color: mat-color($mat-brown, 700) !important;         }
+.bgc-grey-700                {   background-color: mat-color($mat-grey, 700) !important;          }
+.bgc-blue-grey-700           {   background-color: mat-color($mat-blue-grey, 700) !important;     }
+
+// 800
+.bgc-red-800                 {   background-color: mat-color($mat-red, 800) !important;           }
+.bgc-pink-800                {   background-color: mat-color($mat-pink, 800) !important;          }
+.bgc-purple-800              {   background-color: mat-color($mat-purple, 800) !important;        }
+.bgc-deep-purple-800         {   background-color: mat-color($mat-deep-purple, 800) !important;   }
+.bgc-indigo-800              {   background-color: mat-color($mat-indigo, 800) !important;        }
+.bgc-blue-800                {   background-color: mat-color($mat-blue, 800) !important;          }
+.bgc-light-blue-800          {   background-color: mat-color($mat-light-blue, 800) !important;    }
+.bgc-cyan-800                {   background-color: mat-color($mat-cyan, 800) !important;          }
+.bgc-teal-800                {   background-color: mat-color($mat-teal, 800) !important;          }
+.bgc-green-800               {   background-color: mat-color($mat-green, 800) !important;         }
+.bgc-light-green-800         {   background-color: mat-color($mat-light-green, 800) !important;   }
+.bgc-lime-800                {   background-color: mat-color($mat-lime, 800) !important;          }
+.bgc-yellow-800              {   background-color: mat-color($mat-yellow, 800) !important;        }
+.bgc-amber-800               {   background-color: mat-color($mat-amber, 800) !important;         }
+.bgc-orange-800              {   background-color: mat-color($mat-orange, 800) !important;        }
+.bgc-deep-orange-800         {   background-color: mat-color($mat-deep-orange, 800) !important;   }
+.bgc-brown-800               {   background-color: mat-color($mat-brown, 800) !important;         }
+.bgc-grey-800                {   background-color: mat-color($mat-grey, 800) !important;          }
+.bgc-blue-grey-800           {   background-color: mat-color($mat-blue-grey, 800) !important;     }
+
+// 900
+.bgc-red-900                 {   background-color: mat-color($mat-red, 900) !important;           }
+.bgc-pink-900                {   background-color: mat-color($mat-pink, 900) !important;          }
+.bgc-purple-900              {   background-color: mat-color($mat-purple, 900) !important;        }
+.bgc-deep-purple-900         {   background-color: mat-color($mat-deep-purple, 900) !important;   }
+.bgc-indigo-900              {   background-color: mat-color($mat-indigo, 900) !important;        }
+.bgc-blue-900                {   background-color: mat-color($mat-blue, 900) !important;          }
+.bgc-light-blue-900          {   background-color: mat-color($mat-light-blue, 900) !important;    }
+.bgc-cyan-900                {   background-color: mat-color($mat-cyan, 900) !important;          }
+.bgc-teal-900                {   background-color: mat-color($mat-teal, 900) !important;          }
+.bgc-green-900               {   background-color: mat-color($mat-green, 900) !important;         }
+.bgc-light-green-900         {   background-color: mat-color($mat-light-green, 900) !important;   }
+.bgc-lime-900                {   background-color: mat-color($mat-lime, 900) !important;          }
+.bgc-yellow-900              {   background-color: mat-color($mat-yellow, 900) !important;        }
+.bgc-amber-900               {   background-color: mat-color($mat-amber, 900) !important;         }
+.bgc-orange-900              {   background-color: mat-color($mat-orange, 900) !important;        }
+.bgc-deep-orange-900         {   background-color: mat-color($mat-deep-orange, 900) !important;   }
+.bgc-brown-900               {   background-color: mat-color($mat-brown, 900) !important;         }
+.bgc-grey-900                {   background-color: mat-color($mat-grey, 900) !important;          }
+.bgc-blue-grey-900           {   background-color: mat-color($mat-blue-grey, 900) !important;     }
+
+// A100
+.bgc-red-A100                {   background-color: mat-color($mat-red, A100) !important;          }
+.bgc-pink-A100               {   background-color: mat-color($mat-pink, A100) !important;         }
+.bgc-purple-A100             {   background-color: mat-color($mat-purple, A100) !important;       }
+.bgc-deep-purple-A100        {   background-color: mat-color($mat-deep-purple, A100) !important;  }
+.bgc-indigo-A100             {   background-color: mat-color($mat-indigo, A100) !important;       }
+.bgc-blue-A100               {   background-color: mat-color($mat-blue, A100) !important;         }
+.bgc-light-blue-A100         {   background-color: mat-color($mat-light-blue, A100) !important;   }
+.bgc-cyan-A100               {   background-color: mat-color($mat-cyan, A100) !important;         }
+.bgc-teal-A100               {   background-color: mat-color($mat-teal, A100) !important;         }
+.bgc-green-A100              {   background-color: mat-color($mat-green, A100) !important;        }
+.bgc-light-green-A100        {   background-color: mat-color($mat-light-green, A100) !important;  }
+.bgc-lime-A100               {   background-color: mat-color($mat-lime, A100) !important;         }
+.bgc-yellow-A100             {   background-color: mat-color($mat-yellow, A100) !important;       }
+.bgc-amber-A100              {   background-color: mat-color($mat-amber, A100) !important;        }
+.bgc-orange-A100             {   background-color: mat-color($mat-orange, A100) !important;       }
+.bgc-deep-orange-A100        {   background-color: mat-color($mat-deep-orange, A100) !important;  }
+
+// A200
+.bgc-red-A200                {   background-color: mat-color($mat-red, A200) !important;          }
+.bgc-pink-A200               {   background-color: mat-color($mat-pink, A200) !important;         }
+.bgc-purple-A200             {   background-color: mat-color($mat-purple, A200) !important;       }
+.bgc-deep-purple-A200        {   background-color: mat-color($mat-deep-purple, A200) !important;  }
+.bgc-indigo-A200             {   background-color: mat-color($mat-indigo, A200) !important;       }
+.bgc-blue-A200               {   background-color: mat-color($mat-blue, A200) !important;         }
+.bgc-light-blue-A200         {   background-color: mat-color($mat-light-blue, A200) !important;   }
+.bgc-cyan-A200               {   background-color: mat-color($mat-cyan, A200) !important;         }
+.bgc-teal-A200               {   background-color: mat-color($mat-teal, A200) !important;         }
+.bgc-green-A200              {   background-color: mat-color($mat-green, A200) !important;        }
+.bgc-light-green-A200        {   background-color: mat-color($mat-light-green, A200) !important;  }
+.bgc-lime-A200               {   background-color: mat-color($mat-lime, A200) !important;         }
+.bgc-yellow-A200             {   background-color: mat-color($mat-yellow, A200) !important;       }
+.bgc-amber-A200              {   background-color: mat-color($mat-amber, A200) !important;        }
+.bgc-orange-A200             {   background-color: mat-color($mat-orange, A200) !important;       }
+.bgc-deep-orange-A200        {   background-color: mat-color($mat-deep-orange, A200) !important;  }
+
+// A400
+.bgc-red-A400                {   background-color: mat-color($mat-red, A400) !important;          }
+.bgc-pink-A400               {   background-color: mat-color($mat-pink, A400) !important;         }
+.bgc-purple-A400             {   background-color: mat-color($mat-purple, A400) !important;       }
+.bgc-deep-purple-A400        {   background-color: mat-color($mat-deep-purple, A400) !important;  }
+.bgc-indigo-A400             {   background-color: mat-color($mat-indigo, A400) !important;       }
+.bgc-blue-A400               {   background-color: mat-color($mat-blue, A400) !important;         }
+.bgc-light-blue-A400         {   background-color: mat-color($mat-light-blue, A400) !important;   }
+.bgc-cyan-A400               {   background-color: mat-color($mat-cyan, A400) !important;         }
+.bgc-teal-A400               {   background-color: mat-color($mat-teal, A400) !important;         }
+.bgc-green-A400              {   background-color: mat-color($mat-green, A400) !important;        }
+.bgc-light-green-A400        {   background-color: mat-color($mat-light-green, A400) !important;  }
+.bgc-lime-A400               {   background-color: mat-color($mat-lime, A400) !important;         }
+.bgc-yellow-A400             {   background-color: mat-color($mat-yellow, A400) !important;       }
+.bgc-amber-A400              {   background-color: mat-color($mat-amber, A400) !important;        }
+.bgc-orange-A400             {   background-color: mat-color($mat-orange, A400) !important;       }
+.bgc-deep-orange-A400        {   background-color: mat-color($mat-deep-orange, A400) !important;  }
+
+// A700
+.bgc-red-A700                {   background-color: mat-color($mat-red, A700) !important;          }
+.bgc-pink-A700               {   background-color: mat-color($mat-pink, A700) !important;         }
+.bgc-purple-A700             {   background-color: mat-color($mat-purple, A700) !important;       }
+.bgc-deep-purple-A700        {   background-color: mat-color($mat-deep-purple, A700) !important;  }
+.bgc-indigo-A700             {   background-color: mat-color($mat-indigo, A700) !important;       }
+.bgc-blue-A700               {   background-color: mat-color($mat-blue, A700) !important;         }
+.bgc-light-blue-A700         {   background-color: mat-color($mat-light-blue, A700) !important;   }
+.bgc-cyan-A700               {   background-color: mat-color($mat-cyan, A700) !important;         }
+.bgc-teal-A700               {   background-color: mat-color($mat-teal, A700) !important;         }
+.bgc-green-A700              {   background-color: mat-color($mat-green, A700) !important;        }
+.bgc-light-green-A700        {   background-color: mat-color($mat-light-green, A700) !important;  }
+.bgc-lime-A700               {   background-color: mat-color($mat-lime, A700) !important;         }
+.bgc-yellow-A700             {   background-color: mat-color($mat-yellow, A700) !important;       }
+.bgc-amber-A700              {   background-color: mat-color($mat-amber, A700) !important;        }
+.bgc-orange-A700             {   background-color: mat-color($mat-orange, A700) !important;       }
+.bgc-deep-orange-A700        {   background-color: mat-color($mat-deep-orange, A700) !important;  }
+
+// Black
+.bgc-black                   {   background-color: rgba(black, 87) !important;             }
+.bgc-black-1                 {   background-color: rgba(black, 54) !important;           }
+.bgc-black-2                 {   background-color: rgba(black, 38) !important;           }
+.bgc-black-3                 {   background-color: rgba(black, 0.12) !important;           }
+.bgc-black-4                 {   background-color: black !important;           }
+
+// White
+.bgc-white                   {   background-color: rgba(white, 0.7) !important;             }
+.bgc-white-1                 {   background-color: rgba(white, 0.3) !important;           }
+.bgc-white-2                 {   background-color: rgba(white, 0.3) !important;           }
+.bgc-white-3                 {   background-color: rgba(white, 0.12) !important;           }
+.bgc-white-4                 {   background-color: white !important;           }
+
+
+// Fill color
+
+// 50
+.fill-red-50                  {   fill: mat-color($mat-red, 50) !important;                       }
+.fill-pink-50                 {   fill: mat-color($mat-pink, 50) !important;                      }
+.fill-purple-50               {   fill: mat-color($mat-purple, 50) !important;                    }
+.fill-deep-purple-50          {   fill: mat-color($mat-deep-purple, 50) !important;               }
+.fill-indigo-50               {   fill: mat-color($mat-indigo, 50) !important;                    }
+.fill-blue-50                 {   fill: mat-color($mat-blue, 50) !important;                      }
+.fill-light-blue-50           {   fill: mat-color($mat-light-blue, 50) !important;                }
+.fill-cyan-50                 {   fill: mat-color($mat-cyan, 50) !important;                      }
+.fill-teal-50                 {   fill: mat-color($mat-teal, 50) !important;                      }
+.fill-green-50                {   fill: mat-color($mat-green, 50) !important;                     }
+.fill-light-green-50          {   fill: mat-color($mat-light-green, 50) !important;               }
+.fill-lime-50                 {   fill: mat-color($mat-lime, 50) !important;                      }
+.fill-yellow-50               {   fill: mat-color($mat-yellow, 50) !important;                    }
+.fill-amber-50                {   fill: mat-color($mat-amber, 50) !important;                     }
+.fill-orange-50               {   fill: mat-color($mat-orange, 50) !important;                    }
+.fill-deep-orange-50          {   fill: mat-color($mat-deep-orange, 50) !important;               }
+.fill-brown-50                {   fill: mat-color($mat-brown, 50) !important;                     }
+.fill-grey-50                 {   fill: mat-color($mat-grey, 50) !important;                      }
+.fill-blue-grey-50            {   fill: mat-color($mat-blue-grey, 50) !important;                 }
+
+// 100
+.fill-red-100                 {   fill: mat-color($mat-red, 100) !important;                      }
+.fill-pink-100                {   fill: mat-color($mat-pink, 100) !important;                     }
+.fill-purple-100              {   fill: mat-color($mat-purple, 100) !important;                   }
+.fill-deep-purple-100         {   fill: mat-color($mat-deep-purple, 100) !important;              }
+.fill-indigo-100              {   fill: mat-color($mat-indigo, 100) !important;                   }
+.fill-blue-100                {   fill: mat-color($mat-blue, 100) !important;                     }
+.fill-light-blue-100          {   fill: mat-color($mat-light-blue, 100) !important;               }
+.fill-cyan-100                {   fill: mat-color($mat-cyan, 100) !important;                     }
+.fill-teal-100                {   fill: mat-color($mat-teal, 100) !important;                     }
+.fill-green-100               {   fill: mat-color($mat-green, 100) !important;                    }
+.fill-light-green-100         {   fill: mat-color($mat-light-green, 100) !important;              }
+.fill-lime-100                {   fill: mat-color($mat-lime, 100) !important;                     }
+.fill-yellow-100              {   fill: mat-color($mat-yellow, 100) !important;                   }
+.fill-amber-100               {   fill: mat-color($mat-amber, 100) !important;                    }
+.fill-orange-100              {   fill: mat-color($mat-orange, 100) !important;                   }
+.fill-deep-orange-100         {   fill: mat-color($mat-deep-orange, 100) !important;              }
+.fill-brown-100               {   fill: mat-color($mat-brown, 100) !important;                    }
+.fill-grey-100                {   fill: mat-color($mat-grey, 100) !important;                     }
+.fill-blue-grey-100           {   fill: mat-color($mat-blue-grey, 100) !important;                }
+
+// 200
+.fill-red-200                 {   fill: mat-color($mat-red, 200) !important;                      }
+.fill-pink-200                {   fill: mat-color($mat-pink, 200) !important;                     }
+.fill-purple-200              {   fill: mat-color($mat-purple, 200) !important;                   }
+.fill-deep-purple-200         {   fill: mat-color($mat-deep-purple, 200) !important;              }
+.fill-indigo-200              {   fill: mat-color($mat-indigo, 200) !important;                   }
+.fill-blue-200                {   fill: mat-color($mat-blue, 200) !important;                     }
+.fill-light-blue-200          {   fill: mat-color($mat-light-blue, 200) !important;               }
+.fill-cyan-200                {   fill: mat-color($mat-cyan, 200) !important;                     }
+.fill-teal-200                {   fill: mat-color($mat-teal, 200) !important;                     }
+.fill-green-200               {   fill: mat-color($mat-green, 200) !important;                    }
+.fill-light-green-200         {   fill: mat-color($mat-light-green, 200) !important;              }
+.fill-lime-200                {   fill: mat-color($mat-lime, 200) !important;                     }
+.fill-yellow-200              {   fill: mat-color($mat-yellow, 200) !important;                   }
+.fill-amber-200               {   fill: mat-color($mat-amber, 200) !important;                    }
+.fill-orange-200              {   fill: mat-color($mat-orange, 200) !important;                   }
+.fill-deep-orange-200         {   fill: mat-color($mat-deep-orange, 200) !important;              }
+.fill-brown-200               {   fill: mat-color($mat-brown, 200) !important;                    }
+.fill-grey-200                {   fill: mat-color($mat-grey, 200) !important;                     }
+.fill-blue-grey-200           {   fill: mat-color($mat-blue-grey, 200) !important;                }
+
+// 300
+.fill-red-300                 {   fill: mat-color($mat-red, 300) !important;                      }
+.fill-pink-300                {   fill: mat-color($mat-pink, 300) !important;                     }
+.fill-purple-300              {   fill: mat-color($mat-purple, 300) !important;                   }
+.fill-deep-purple-300         {   fill: mat-color($mat-deep-purple, 300) !important;              }
+.fill-indigo-300              {   fill: mat-color($mat-indigo, 300) !important;                   }
+.fill-blue-300                {   fill: mat-color($mat-blue, 300) !important;                     }
+.fill-light-blue-300          {   fill: mat-color($mat-light-blue, 300) !important;               }
+.fill-cyan-300                {   fill: mat-color($mat-cyan, 300) !important;                     }
+.fill-teal-300                {   fill: mat-color($mat-teal, 300) !important;                     }
+.fill-green-300               {   fill: mat-color($mat-green, 300) !important;                    }
+.fill-light-green-300         {   fill: mat-color($mat-light-green, 300) !important;              }
+.fill-lime-300                {   fill: mat-color($mat-lime, 300) !important;                     }
+.fill-yellow-300              {   fill: mat-color($mat-yellow, 300) !important;                   }
+.fill-amber-300               {   fill: mat-color($mat-amber, 300) !important;                    }
+.fill-orange-300              {   fill: mat-color($mat-orange, 300) !important;                   }
+.fill-deep-orange-300         {   fill: mat-color($mat-deep-orange, 300) !important;              }
+.fill-brown-300               {   fill: mat-color($mat-brown, 300) !important;                    }
+.fill-grey-300                {   fill: mat-color($mat-grey, 300) !important;                     }
+.fill-blue-grey-300           {   fill: mat-color($mat-blue-grey, 300) !important;                }
+
+// 400
+.fill-red-400                 {   fill: mat-color($mat-red, 400) !important;                      }
+.fill-pink-400                {   fill: mat-color($mat-pink, 400) !important;                     }
+.fill-purple-400              {   fill: mat-color($mat-purple, 400) !important;                   }
+.fill-deep-purple-400         {   fill: mat-color($mat-deep-purple, 400) !important;              }
+.fill-indigo-400              {   fill: mat-color($mat-indigo, 400) !important;                   }
+.fill-blue-400                {   fill: mat-color($mat-blue, 400) !important;                     }
+.fill-light-blue-400          {   fill: mat-color($mat-light-blue, 400) !important;               }
+.fill-cyan-400                {   fill: mat-color($mat-cyan, 400) !important;                     }
+.fill-teal-400                {   fill: mat-color($mat-teal, 400) !important;                     }
+.fill-green-400               {   fill: mat-color($mat-green, 400) !important;                    }
+.fill-light-green-400         {   fill: mat-color($mat-light-green, 400) !important;              }
+.fill-lime-400                {   fill: mat-color($mat-lime, 400) !important;                     }
+.fill-yellow-400              {   fill: mat-color($mat-yellow, 400) !important;                   }
+.fill-amber-400               {   fill: mat-color($mat-amber, 400) !important;                    }
+.fill-orange-400              {   fill: mat-color($mat-orange, 400) !important;                   }
+.fill-deep-orange-400         {   fill: mat-color($mat-deep-orange, 400) !important;              }
+.fill-brown-400               {   fill: mat-color($mat-brown, 400) !important;                    }
+.fill-grey-400                {   fill: mat-color($mat-grey, 400) !important;                     }
+.fill-blue-grey-400           {   fill: mat-color($mat-blue-grey, 400) !important;                }
+
+// 500
+.fill-red-500                 {   fill: mat-color($mat-red, 500) !important;                      }
+.fill-pink-500                {   fill: mat-color($mat-pink, 500) !important;                     }
+.fill-purple-500              {   fill: mat-color($mat-purple, 500) !important;                   }
+.fill-deep-purple-500         {   fill: mat-color($mat-deep-purple, 500) !important;              }
+.fill-indigo-500              {   fill: mat-color($mat-indigo, 500) !important;                   }
+.fill-blue-500                {   fill: mat-color($mat-blue, 500) !important;                     }
+.fill-light-blue-500          {   fill: mat-color($mat-light-blue, 500) !important;               }
+.fill-cyan-500                {   fill: mat-color($mat-cyan, 500) !important;                     }
+.fill-teal-500                {   fill: mat-color($mat-teal, 500) !important;                     }
+.fill-green-500               {   fill: mat-color($mat-green, 500) !important;                    }
+.fill-light-green-500         {   fill: mat-color($mat-light-green, 500) !important;              }
+.fill-lime-500                {   fill: mat-color($mat-lime, 500) !important;                     }
+.fill-yellow-500              {   fill: mat-color($mat-yellow, 500) !important;                   }
+.fill-amber-500               {   fill: mat-color($mat-amber, 500) !important;                    }
+.fill-orange-500              {   fill: mat-color($mat-orange, 500) !important;                   }
+.fill-deep-orange-500         {   fill: mat-color($mat-deep-orange, 500) !important;              }
+.fill-brown-500               {   fill: mat-color($mat-brown, 500) !important;                    }
+.fill-grey-500                {   fill: mat-color($mat-grey, 500) !important;                     }
+.fill-blue-grey-500           {   fill: mat-color($mat-blue-grey, 500) !important;                }
+
+// 600
+.fill-red-600                 {   fill: mat-color($mat-red, 600) !important;                      }
+.fill-pink-600                {   fill: mat-color($mat-pink, 600) !important;                     }
+.fill-purple-600              {   fill: mat-color($mat-purple, 600) !important;                   }
+.fill-deep-purple-600         {   fill: mat-color($mat-deep-purple, 600) !important;              }
+.fill-indigo-600              {   fill: mat-color($mat-indigo, 600) !important;                   }
+.fill-blue-600                {   fill: mat-color($mat-blue, 600) !important;                     }
+.fill-light-blue-600          {   fill: mat-color($mat-light-blue, 600) !important;               }
+.fill-cyan-600                {   fill: mat-color($mat-cyan, 600) !important;                     }
+.fill-teal-600                {   fill: mat-color($mat-teal, 600) !important;                     }
+.fill-green-600               {   fill: mat-color($mat-green, 600) !important;                    }
+.fill-light-green-600         {   fill: mat-color($mat-light-green, 600) !important;              }
+.fill-lime-600                {   fill: mat-color($mat-lime, 600) !important;                     }
+.fill-yellow-600              {   fill: mat-color($mat-yellow, 600) !important;                   }
+.fill-amber-600               {   fill: mat-color($mat-amber, 600) !important;                    }
+.fill-orange-600              {   fill: mat-color($mat-orange, 600) !important;                   }
+.fill-deep-orange-600         {   fill: mat-color($mat-deep-orange, 600) !important;              }
+.fill-brown-600               {   fill: mat-color($mat-brown, 600) !important;                    }
+.fill-grey-600                {   fill: mat-color($mat-grey, 600) !important;                     }
+.fill-blue-grey-600           {   fill: mat-color($mat-blue-grey, 600) !important;                }
+
+// 700
+.fill-red-700                 {   fill: mat-color($mat-red, 700) !important;                      }
+.fill-pink-700                {   fill: mat-color($mat-pink, 700) !important;                     }
+.fill-purple-700              {   fill: mat-color($mat-purple, 700) !important;                   }
+.fill-deep-purple-700         {   fill: mat-color($mat-deep-purple, 700) !important;              }
+.fill-indigo-700              {   fill: mat-color($mat-indigo, 700) !important;                   }
+.fill-blue-700                {   fill: mat-color($mat-blue, 700) !important;                     }
+.fill-light-blue-700          {   fill: mat-color($mat-light-blue, 700) !important;               }
+.fill-cyan-700                {   fill: mat-color($mat-cyan, 700) !important;                     }
+.fill-teal-700                {   fill: mat-color($mat-teal, 700) !important;                     }
+.fill-green-700               {   fill: mat-color($mat-green, 700) !important;                    }
+.fill-light-green-700         {   fill: mat-color($mat-light-green, 700) !important;              }
+.fill-lime-700                {   fill: mat-color($mat-lime, 700) !important;                     }
+.fill-yellow-700              {   fill: mat-color($mat-yellow, 700) !important;                   }
+.fill-amber-700               {   fill: mat-color($mat-amber, 700) !important;                    }
+.fill-orange-700              {   fill: mat-color($mat-orange, 700) !important;                   }
+.fill-deep-orange-700         {   fill: mat-color($mat-deep-orange, 700) !important;              }
+.fill-brown-700               {   fill: mat-color($mat-brown, 700) !important;                    }
+.fill-grey-700                {   fill: mat-color($mat-grey, 700) !important;                     }
+.fill-blue-grey-700           {   fill: mat-color($mat-blue-grey, 700) !important;                }
+
+// 800
+.fill-red-800                 {   fill: mat-color($mat-red, 800) !important;                      }
+.fill-pink-800                {   fill: mat-color($mat-pink, 800) !important;                     }
+.fill-purple-800              {   fill: mat-color($mat-purple, 800) !important;                   }
+.fill-deep-purple-800         {   fill: mat-color($mat-deep-purple, 800) !important;              }
+.fill-indigo-800              {   fill: mat-color($mat-indigo, 800) !important;                   }
+.fill-blue-800                {   fill: mat-color($mat-blue, 800) !important;                     }
+.fill-light-blue-800          {   fill: mat-color($mat-light-blue, 800) !important;               }
+.fill-cyan-800                {   fill: mat-color($mat-cyan, 800) !important;                     }
+.fill-teal-800                {   fill: mat-color($mat-teal, 800) !important;                     }
+.fill-green-800               {   fill: mat-color($mat-green, 800) !important;                    }
+.fill-light-green-800         {   fill: mat-color($mat-light-green, 800) !important;              }
+.fill-lime-800                {   fill: mat-color($mat-lime, 800) !important;                     }
+.fill-yellow-800              {   fill: mat-color($mat-yellow, 800) !important;                   }
+.fill-amber-800               {   fill: mat-color($mat-amber, 800) !important;                    }
+.fill-orange-800              {   fill: mat-color($mat-orange, 800) !important;                   }
+.fill-deep-orange-800         {   fill: mat-color($mat-deep-orange, 800) !important;              }
+.fill-brown-800               {   fill: mat-color($mat-brown, 800) !important;                    }
+.fill-grey-800                {   fill: mat-color($mat-grey, 800) !important;                     }
+.fill-blue-grey-800           {   fill: mat-color($mat-blue-grey, 800) !important;                }
+
+// 900
+.fill-red-900                 {   fill: mat-color($mat-red, 900) !important;                      }
+.fill-pink-900                {   fill: mat-color($mat-pink, 900) !important;                     }
+.fill-purple-900              {   fill: mat-color($mat-purple, 900) !important;                   }
+.fill-deep-purple-900         {   fill: mat-color($mat-deep-purple, 900) !important;              }
+.fill-indigo-900              {   fill: mat-color($mat-indigo, 900) !important;                   }
+.fill-blue-900                {   fill: mat-color($mat-blue, 900) !important;                     }
+.fill-light-blue-900          {   fill: mat-color($mat-light-blue, 900) !important;               }
+.fill-cyan-900                {   fill: mat-color($mat-cyan, 900) !important;                     }
+.fill-teal-900                {   fill: mat-color($mat-teal, 900) !important;                     }
+.fill-green-900               {   fill: mat-color($mat-green, 900) !important;                    }
+.fill-light-green-900         {   fill: mat-color($mat-light-green, 900) !important;              }
+.fill-lime-900                {   fill: mat-color($mat-lime, 900) !important;                     }
+.fill-yellow-900              {   fill: mat-color($mat-yellow, 900) !important;                   }
+.fill-amber-900               {   fill: mat-color($mat-amber, 900) !important;                    }
+.fill-orange-900              {   fill: mat-color($mat-orange, 900) !important;                   }
+.fill-deep-orange-900         {   fill: mat-color($mat-deep-orange, 900) !important;              }
+.fill-brown-900               {   fill: mat-color($mat-brown, 900) !important;                    }
+.fill-grey-900                {   fill: mat-color($mat-grey, 900) !important;                     }
+.fill-blue-grey-900           {   fill: mat-color($mat-blue-grey, 900) !important;                }
+
+// A100
+.fill-red-A100                {   fill: mat-color($mat-red, A100) !important;                     }
+.fill-pink-A100               {   fill: mat-color($mat-pink, A100) !important;                    }
+.fill-purple-A100             {   fill: mat-color($mat-purple, A100) !important;                  }
+.fill-deep-purple-A100        {   fill: mat-color($mat-deep-purple, A100) !important;             }
+.fill-indigo-A100             {   fill: mat-color($mat-indigo, A100) !important;                  }
+.fill-blue-A100               {   fill: mat-color($mat-blue, A100) !important;                    }
+.fill-light-blue-A100         {   fill: mat-color($mat-light-blue, A100) !important;              }
+.fill-cyan-A100               {   fill: mat-color($mat-cyan, A100) !important;                    }
+.fill-teal-A100               {   fill: mat-color($mat-teal, A100) !important;                    }
+.fill-green-A100              {   fill: mat-color($mat-green, A100) !important;                   }
+.fill-light-green-A100        {   fill: mat-color($mat-light-green, A100) !important;             }
+.fill-lime-A100               {   fill: mat-color($mat-lime, A100) !important;                    }
+.fill-yellow-A100             {   fill: mat-color($mat-yellow, A100) !important;                  }
+.fill-amber-A100              {   fill: mat-color($mat-amber, A100) !important;                   }
+.fill-orange-A100             {   fill: mat-color($mat-orange, A100) !important;                  }
+.fill-deep-orange-A100        {   fill: mat-color($mat-deep-orange, A100) !important;             }
+
+// A200
+.fill-red-A200                {   fill: mat-color($mat-red, A200) !important;                     }
+.fill-pink-A200               {   fill: mat-color($mat-pink, A200) !important;                    }
+.fill-purple-A200             {   fill: mat-color($mat-purple, A200) !important;                  }
+.fill-deep-purple-A200        {   fill: mat-color($mat-deep-purple, A200) !important;             }
+.fill-indigo-A200             {   fill: mat-color($mat-indigo, A200) !important;                  }
+.fill-blue-A200               {   fill: mat-color($mat-blue, A200) !important;                    }
+.fill-light-blue-A200         {   fill: mat-color($mat-light-blue, A200) !important;              }
+.fill-cyan-A200               {   fill: mat-color($mat-cyan, A200) !important;                    }
+.fill-teal-A200               {   fill: mat-color($mat-teal, A200) !important;                    }
+.fill-green-A200              {   fill: mat-color($mat-green, A200) !important;                   }
+.fill-light-green-A200        {   fill: mat-color($mat-light-green, A200) !important;             }
+.fill-lime-A200               {   fill: mat-color($mat-lime, A200) !important;                    }
+.fill-yellow-A200             {   fill: mat-color($mat-yellow, A200) !important;                  }
+.fill-amber-A200              {   fill: mat-color($mat-amber, A200) !important;                   }
+.fill-orange-A200             {   fill: mat-color($mat-orange, A200) !important;                  }
+.fill-deep-orange-A200        {   fill: mat-color($mat-deep-orange, A200) !important;             }
+
+// A400
+.fill-red-A400                {   fill: mat-color($mat-red, A400) !important;                     }
+.fill-pink-A400               {   fill: mat-color($mat-pink, A400) !important;                    }
+.fill-purple-A400             {   fill: mat-color($mat-purple, A400) !important;                  }
+.fill-deep-purple-A400        {   fill: mat-color($mat-deep-purple, A400) !important;             }
+.fill-indigo-A400             {   fill: mat-color($mat-indigo, A400) !important;                  }
+.fill-blue-A400               {   fill: mat-color($mat-blue, A400) !important;                    }
+.fill-light-blue-A400         {   fill: mat-color($mat-light-blue, A400) !important;              }
+.fill-cyan-A400               {   fill: mat-color($mat-cyan, A400) !important;                    }
+.fill-teal-A400               {   fill: mat-color($mat-teal, A400) !important;                    }
+.fill-green-A400              {   fill: mat-color($mat-green, A400) !important;                   }
+.fill-light-green-A400        {   fill: mat-color($mat-light-green, A400) !important;             }
+.fill-lime-A400               {   fill: mat-color($mat-lime, A400) !important;                    }
+.fill-yellow-A400             {   fill: mat-color($mat-yellow, A400) !important;                  }
+.fill-amber-A400              {   fill: mat-color($mat-amber, A400) !important;                   }
+.fill-orange-A400             {   fill: mat-color($mat-orange, A400) !important;                  }
+.fill-deep-orange-A400        {   fill: mat-color($mat-deep-orange, A400) !important;             }
+
+// A700
+.fill-red-A700                {   fill: mat-color($mat-red, A700) !important;                     }
+.fill-pink-A700               {   fill: mat-color($mat-pink, A700) !important;                    }
+.fill-purple-A700             {   fill: mat-color($mat-purple, A700) !important;                  }
+.fill-deep-purple-A700        {   fill: mat-color($mat-deep-purple, A700) !important;             }
+.fill-indigo-A700             {   fill: mat-color($mat-indigo, A700) !important;                  }
+.fill-blue-A700               {   fill: mat-color($mat-blue, A700) !important;                    }
+.fill-light-blue-A700         {   fill: mat-color($mat-light-blue, A700) !important;              }
+.fill-cyan-A700               {   fill: mat-color($mat-cyan, A700) !important;                    }
+.fill-teal-A700               {   fill: mat-color($mat-teal, A700) !important;                    }
+.fill-green-A700              {   fill: mat-color($mat-green, A700) !important;                   }
+.fill-light-green-A700        {   fill: mat-color($mat-light-green, A700) !important;             }
+.fill-lime-A700               {   fill: mat-color($mat-lime, A700) !important;                    }
+.fill-yellow-A700             {   fill: mat-color($mat-yellow, A700) !important;                  }
+.fill-amber-A700              {   fill: mat-color($mat-amber, A700) !important;                   }
+.fill-orange-A700             {   fill: mat-color($mat-orange, A700) !important;                  }
+.fill-deep-orange-A700        {   fill: mat-color($mat-deep-orange, A700) !important;             }
+
+// Black
+.fill-black                   {   fill: rgba(black, 87) !important;                        }
+.fill-black-1                 {   fill: rgba(black, 54) !important;                      }
+.fill-black-2                 {   fill: rgba(black, 38) !important;                      }
+.fill-black-3                 {   fill: rgba(black, 0.12) !important;                      }
+.fill-black-4                 {   fill: black !important;                      }
+
+// White
+.fill-white                   {   fill: rgba(white, 0.7) !important;                        }
+.fill-white-1                 {   fill: rgba(white, 0.3) !important;                      }
+.fill-white-2                 {   fill: rgba(white, 0.3) !important;                      }
+.fill-white-3                 {   fill: rgba(white, 0.12) !important;                      }
+.fill-white-4                 {   fill: white !important;                      }
+

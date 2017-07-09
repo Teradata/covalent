@@ -1,0 +1,10 @@
+md-divider {
+  &[md-inset] {
+    @include rtl(margin-left, 72px,0);
+    @include rtl(margin-right, 0,72px);
+  }
+  &[mat-inset] {
+    @include rtl(margin-left, 72px,0);
+    @include rtl(margin-right, 0,72px);
+  }
+}

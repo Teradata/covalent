@@ -1,0 +1,57 @@
+<md-card>
+  <md-card-title>Code Editor</md-card-title>
+  <md-card-subtitle>Multi-language code editor for Browser and Electron</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>With this component you can utilize the Monaco Editor as an Angular Component in a Browser or Electron.</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" href="https://github.com/Teradata/covalent-code-editor" target="_blank" class="text-upper">Github Repo</a>
+    <a md-button color="accent" href="https://www.npmjs.com/package/@covalent/code-editor" target="_blank" class="text-upper">npm Module</a>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Basic example</md-card-title>
+  <md-card-subtitle>Editor running in browser <br>(change language, theme, right click context menu, syntax highlighting, and more)</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row" layout-align="start center">
+      <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
+    </div>
+    <p>Editor Output:</p>
+    <div layout="row" layout-align="start center">
+      <td-highlight flex [content]="editorVal" [lang]="editorLanguage"></td-highlight>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <div class="pad-sm">
+      <span hide-xs class="md-body-1">Editor Language</span>
+      <md-select floatPlaceholder="never" [(ngModel)]="editorLanguage" (change)="changeLanguage()" placeholder="Editor Language">
+        <md-option value="sql">SQL</md-option>
+        <md-option value="javascript">JavaScript</md-option>
+        <md-option value="html">HTML</md-option>
+      </md-select>
+    </div>
+    <md-divider></md-divider>
+    <div class="pad-sm">
+      <span hide-xs class="md-body-1">Editor Theme</span>
+      <md-select floatPlaceholder="never" [(ngModel)]="editorTheme" (change)="changeTheme()" placeholder="Editor Theme">
+        <md-option value="vs">Light</md-option>
+        <md-option value="vs-dark">Dark</md-option>
+        <md-option value="hc-black">High Contrast</md-option>
+      </md-select>
+    </div>
+    <md-divider></md-divider>
+  </md-card-actions>
+</md-card>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md">
+</td-readme-loader>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/SETUP.md">
+</td-readme-loader>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/ELECTRON.md">
+</td-readme-loader>

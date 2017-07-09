@@ -1,67 +1,63 @@
-import { Component } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-
-import { TdLayoutService } from '../services/layout.service';
+import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { TdLayoutComponent } from '../layout.component';
 
 @Component({
   selector: 'td-layout-nav',
-  styleUrls: [ 'layout-nav.component.scss' ],
-  templateUrl: 'layout-nav.component.html',
+  styleUrls: ['./layout-nav.component.scss' ],
+  templateUrl: './layout-nav.component.html',
 })
 export class TdLayoutNavComponent {
 
   /**
-   * title in toolbar
+   * toolbarTitle?: string
+   *
+   * Title set in toolbar.
    */
   @Input('toolbarTitle') toolbarTitle: string;
 
   /**
-   * icon for toolbar
+   * icon?: string
+   *
+   * icon name to be displayed before the title
    */
   @Input('icon') icon: string;
 
   /**
-   * logo file for toolbar
+   * logo?: string
+   *
+   * logo icon name to be displayed before the title.
+   * If [icon] is set, then this will not be shown.
    */
   @Input('logo') logo: string;
 
   /**
-   * method thats called when menu is clicked
+   * color?: string
+   *
+   * toolbar color option: primary | accent | warn.
+   * If [color] is not set, primary is used.
    */
-  @Output('openMenu') onOpenMenu: EventEmitter<void> = new EventEmitter<void>();
+  @Input('color') color: string = 'primary';
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * navigationRoute?: string
+   *
+   * option to set the combined route for the icon, logo, and toolbarTitle.
    */
-  @Input()
-  set title(title: string) {
-    /* tslint:disable-next-line */
-    console.warn("title is deprecated.  Please use toolbarTitle instead");
-    this.toolbarTitle = title;
-  }
+  @Input('navigationRoute') navigationRoute: string;
 
   /**
-   * title in toolbar
-   * @deprecated since 0.9, use toolbarTitle instead
+   * Checks if router was injected.
    */
-  get title(): string {
-    return this.toolbarTitle;
+  get routerEnabled(): boolean {
+    return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(private layoutService: TdLayoutService) {
+  constructor(@Optional() private _router: Router) {}
 
-  }
-
-  public menuClick(): void {
-    this._onMenuClick();
-  }
-
-  /**
-   * emits menuEvent
-   */
-  private _onMenuClick(): void {
-    this.onOpenMenu.emit(undefined);
-    this.layoutService.openSideNav('menu');
+  handleNavigationClick(): void {
+    if (this.routerEnabled) {
+      this._router.navigateByUrl(this.navigationRoute);
+    }
   }
 }

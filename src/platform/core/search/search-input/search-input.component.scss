@@ -1,0 +1,8 @@
+.td-search-input {
+  overflow-x: hidden;
+  /deep/ md-input-container.mat-hide-underline {
+    .mat-input-underline {
+      display: none;
+    }
+  }
+}

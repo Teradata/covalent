@@ -1,0 +1,71 @@
+@import '../common/styles/theme-functions';
+
+@mixin td-data-table-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  table[td-data-table] {
+    .td-data-table-row {
+      border-bottom-color: mat-color($foreground, divider);
+    }
+    .mat-checkbox-cell,
+    .mat-checkbox-column {
+      color: mat-color($foreground, secondary-text);
+      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        color: mat-color($accent, 500);
+      }
+    }
+    .td-data-table-cell {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.010em;
+      line-height: 20px;
+      md-input-container {
+        .mat-input-underline {
+          display: none;
+        }
+      }
+    }
+    .td-data-table-column {
+      font-size: 12px;
+      color: mat-color($foreground, secondary-text);
+      * {
+        vertical-align: middle;
+      }
+      md-icon {
+        &.td-data-table-sort-icon {
+          color: mat-color($foreground, disabled);
+        }
+      }
+      &.mat-active,
+      &.mat-active md-icon {
+        color: mat-color($foreground, base);
+      }
+    }
+    &.mat-selectable tbody > tr.td-data-table-row {
+      &:not([disabled]):not(.td-selected):focus {
+        background-color: mat-color($background, 'hover');
+      }
+      &.td-selected {
+        background-color: mat-color($accent, 0.12);
+      }
+    }
+    &.mat-clickable tbody > tr.td-data-table-row {
+      &:not([disabled]){
+        &:hover {
+          background-color: mat-color($background, 'hover');
+        }
+        &:active {
+          background-color: mat-color($accent, 0.12);
+        }
+      }
+    }
+  }
+  .mat-selected-title {
+    background-color: mat-color($accent, 0.12);
+    color: mat-color($accent);
+  }
+}

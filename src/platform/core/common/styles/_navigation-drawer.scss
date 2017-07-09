@@ -1,0 +1,13 @@
+@import 'variables';
+
+md-sidenav {
+    width: $navigation-drawer-width;
+    .mat-list-item-content {
+        md-icon {            
+            @include rtl(margin-left, 0px,$margin);
+            @include rtl(margin-right, $margin, 0px);
+            color: #737373;
+            fill: #737373;
+        }
+    }
+}

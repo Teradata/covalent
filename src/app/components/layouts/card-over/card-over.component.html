@@ -1,154 +1,282 @@
-<td-layout-nav logo="app/assets/icons/teradata.svg" toolbarTitle="Covalent">
-  <td-layout-card-over cardWidth="75">
-    <md-card-title>Card Over Layout</md-card-title>
-    <md-card-subtitle>A card overlaying a toolbar (this page is using card over)</md-card-subtitle>
-    <md-divider></md-divider>
-    <md-card-content>
-      <div layout-gt-md="row">
-        <div flex-gt-md="45">
-          <td-steps>
-            <td-step [active]="true" label="Step 1: td-layout" sublabel="td-layout is the wrapper component">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout>]]></code></h3>
-                  <p md-line>The wrapper of your entire layout</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>#layout</code></h3>
-                  <p md-line>The ID and local reference of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>sidenavTitle?: string</code></h3>
-                  <p md-line>The title of your sidenav</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>logo?: string</code></h3>
-                  <p md-line>The path to your sidenav logo</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-            <td-step label="Step 2: menu-items" sublabel="the sidenav menu items">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-nav-list menu-items>]]></code></h3>
-                  <p md-line>The menu items wrapper</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<a md-list-item>]]></code></h3>
-                  <p md-line>Loops over the routes from your Class</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<md-icon>]]></code></h3>
-                  <p md-line>The SVG or font icon</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-            <td-step label="Step 3: td-layout-nav" sublabel="the content wrapper of the layout">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
-                  <p md-line>Builds the top toolbar and content area</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>toolbarTitle?: string</code></h3>
-                  <p md-line>The title of your toolbar</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>logo?: string</code></h3>
-                  <p md-line>The path to your toolbar logo</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-            <td-step label="Step 4: td-layout-card-over" sublabel="the main card content area">
-              <md-list>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<td-layout-card-over>]]></code></h3>
-                  <p md-line>Builds the card and content area</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>cardTitle?: string</code></h3>
-                  <p md-line>The card title</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>cardSubtitle?: string</code></h3>
-                  <p md-line>The card subtitle</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code>cardWidth?: number</code></h3>
-                  <p md-line>The card width percentage (default 70)</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                  <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
-                  <p md-line>Loads html for each route (view)</p>
-                </md-list-item>
-                <md-divider></md-divider>
-              </md-list>
-            </td-step>
-          </td-steps>
+<md-card>
+  <md-card-title>Minimum Demo</md-card-title>
+  <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
+      Content goes here
+    </td-layout-card-over>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
+          Content goes here
+        </td-layout-card-over>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Basic Demo</md-card-title>
+  <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <md-nav-list>
+          <a md-list-item><md-icon>home</md-icon>Home</a>
+        </md-nav-list>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+          </md-nav-list>
         </div>
-        <div flex-gt-md="55">
-          <h3 class="md-title">HTML</h3>
-          <td-highlight lang="html">
-            <![CDATA[
-            <td-layout #layout sidenavTitle="Sidenav Title" logo="path/to/sidenav-logo.svg">
-              <md-nav-list menu-items>
-                <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
-                  <md-icon>{ {item.icon} }</md-icon>
-                  { {item.title} }
-                </a>
+      </td-navigation-drawer>
+      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+        <button md-icon-button td-menu-button tdLayoutToggle>
+          <md-icon>menu</md-icon>
+        </button>
+        <td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
+          Content goes here
+        </td-layout-card-over>
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+            <md-nav-list>
+              <a md-list-item><md-icon>home</md-icon>Home</a>
+            </md-nav-list>
+            <div td-navigation-drawer-menu>
+              <md-nav-list>
+                <a md-list-item><md-icon>account_box</md-icon>Profile</a>
               </md-nav-list>
-              <td-layout-nav toolbarTitle="Toolbar Title" logo="path/to/toolbar-logo.svg">
-                <td-layout-card-over cardTitle="Card Title" cardSubtitle="Card subtitle" cardWidth="75">
-                  <router-outlet></router-outlet>
-                </td-layout-card-over>
-              </td-layout-nav>
-            </td-layout>
-            ]]>
-          </td-highlight>
-          <h3 class="md-title">TypeScript routes for sidenav</h3>
-          <td-highlight lang="typescript">
-            <![CDATA[
-              export class YourComponent {
-
-                routes: Object[] = [
-                  {
-                    title: "Home", route: "/", icon: "home"
-                  }, {
-                    title: "Documentation", route: "/docs", icon: "library_books"
-                  }, {
-                    title: "Style Guide", route: "/style-guide", icon: "color_lens"
-                  }, {
-                    title: "Layouts", route: "/layouts", icon: "view_quilt"
-                  }, {
-                    title: "Teradata Components", route: "/components", icon: "picture_in_picture"
-                  }
-                ];
-
-              }
-            ]]>
-          </td-highlight>
+            </div>
+          </td-navigation-drawer>
+          <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+            <button md-icon-button td-menu-button tdLayoutToggle>
+              <md-icon>menu</md-icon>
+            </button>
+            <td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
+              Content goes here
+            </td-layout-card-over>
+          </td-layout-nav>
+        </td-layout>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Full Demo</md-card-title>
+  <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <md-nav-list>
+          <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+        </md-nav-list>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+          </md-nav-list>
         </div>
-      </div>
-    </md-card-content>
-    <md-divider></md-divider>
-    <md-card-actions layout="row">
-        <a md-button [routerLink]="'/layouts'">Back to Overview</a>
-        <span flex></span>
-        <a md-button color="accent" [routerLink]="'/layouts/manage-list'">Manage List</a>
-    </md-card-actions>
-  </td-layout-card-over>
-</td-layout-nav>
+      </td-navigation-drawer>
+      <td-layout-nav color="accent">
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <button md-icon-button td-menu-button tdLayoutToggle>
+            <md-icon>menu</md-icon>
+          </button>
+          <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+          <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+          <span flex></span>
+          <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+          <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+        </div>
+        <td-layout-card-over color="accent" cardWidth="75">
+          <md-card-title>Card Over Layout</md-card-title>
+          <md-card-subtitle>A card over layout with all available options</md-card-subtitle>
+          <md-divider></md-divider>
+          <md-card-content>
+            <md-list>
+              <h3 md-subheader>Metadata</h3>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
+                <md-list-item>
+                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                  <h3 md-line> {{item.title}} </h3>
+                  <p md-line> {{item.description}} </p>
+                </md-list-item>
+                <md-divider md-inset *ngIf="!last"></md-divider>
+              </ng-template>
+              <md-divider></md-divider>
+              <h3 md-subheader>Dates</h3>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
+                <md-list-item>
+                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                  <h3 md-line> {{item.date | timeAgo}} </h3>
+                  <p md-line> {{item.description}} </p>
+                </md-list-item>
+                <md-divider md-inset *ngIf="!last"></md-divider>
+              </ng-template>
+            </md-list>
+          </md-card-content>
+          <md-divider></md-divider>
+          <md-card-actions>
+            <button md-button color="accent" class="text-upper">Edit</button>
+          </md-card-actions>
+        </td-layout-card-over>
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+            <md-nav-list>
+              <a *ngFor="let item of routes" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+            </md-nav-list>
+            <div td-navigation-drawer-menu>
+              <md-nav-list>
+                <a *ngFor="let item of usermenu" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+              </md-nav-list>
+            </div>
+          </td-navigation-drawer>
+          <td-layout-nav color="accent">
+            <div td-toolbar-content layout="row" layout-align="start center" flex>
+              <button md-icon-button td-menu-button tdLayoutToggle>
+                <md-icon>menu</md-icon>
+              </button>
+              <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+              <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+              <span flex></span>
+              <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+              <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+            </div>
+            <td-layout-card-over color="accent" cardWidth="75">
+              <md-card-title>Card Over Layout</md-card-title>
+              <md-card-subtitle>A card over layout with all available options</md-card-subtitle>
+              <md-divider></md-divider>
+              <md-card-content>
+                <md-list>
+                  <h3 md-subheader>Metadata</h3>
+                  <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
+                    <md-list-item>
+                      <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                      <h3 md-line> { {item.title} } </h3>
+                      <p md-line> { {item.description} } </p>
+                    </md-list-item>
+                    <md-divider md-inset *ngIf="!last"></md-divider>
+                  </ng-template>
+                  <md-divider></md-divider>
+                  <h3 md-subheader>Dates</h3>
+                  <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
+                    <md-list-item>
+                      <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                      <h3 md-line> { {item.date | timeAgo} } </h3>
+                      <p md-line> { {item.description} } </p>
+                    </md-list-item>
+                    <md-divider md-inset *ngIf="!last"></md-divider>
+                  </ng-template>
+                </md-list>
+              </md-card-content>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <button md-button color="accent" class="text-upper">Edit</button>
+              </md-card-actions>
+            </td-layout-card-over>
+          </td-layout-nav>
+        </td-layout>
+      ]]>
+    </td-highlight>
+    <h3 class="md-title">TypeScript:</h3>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+        @Component({
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          selector: 'layouts-card-over',
+          styleUrls: ['./card-over.component.scss'],
+          templateUrl: './card-over.component.html',
+        })
+        export class CardOverComponent {
+
+          routes: Object[] = [{
+              icon: 'home',
+              route: '.',
+              title: 'Home',
+            }, {
+              icon: 'library_books',
+              route: '.',
+              title: 'Documentation',
+            }, {
+              icon: 'color_lens',
+              route: '.',
+              title: 'Style Guide',
+            }, {
+              icon: 'view_quilt',
+              route: '.',
+              title: 'Layouts',
+            }, {
+              icon: 'picture_in_picture',
+              route: '.',
+              title: 'Components & Addons',
+            },
+          ];
+          usermenu: Object[] = [{
+              icon: 'swap_horiz',
+              route: '.',
+              title: 'Switch account',
+            }, {
+              icon: 'tune',
+              route: '.',
+              title: 'Account settings',
+            }, {
+              icon: 'exit_to_app',
+              route: '.',
+              title: 'Sign out',
+            },
+          ];
+          cardlist: Object[] = [{
+              icon: 'account_box',
+              route: '.',
+              title: 'John Jameson',
+              description: 'Owner',
+            }, {
+              icon: 'description',
+              route: '.',
+              title: 'An item description',
+              description: 'Description',
+            }, {
+              icon: 'vpn_key',
+              route: '.',
+              title: '1141e8e8-8d24-4956-93c2',
+              description: 'API Key',
+            },
+          ];
+          carddates: Object[] = [{
+              icon: 'access_time',
+              route: '.',
+              date: '2017-07-07T00:25:49+00:00',
+              description: 'Last Updated',
+            }, {
+              icon: 'today',
+              route: '.',
+              date: '2017-07-04T00:25:49+00:00',
+              description: 'Created',
+            },
+          ];
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<td-readme-loader td-after-card resourceUrl="platform/core/layout/layout-card-over/README.md"></td-readme-loader>

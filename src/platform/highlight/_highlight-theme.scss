@@ -1,0 +1,93 @@
+@import '../../../node_modules/@angular/material/theming';
+
+/**
+* Mimicking VS Dark+ theme as closely as possible
+*/
+@mixin covalent-highlight-theme() {
+  td-highlight {
+    background: #1E1E21;
+    .highlight {
+      color: mat-color($mat-grey, 50);
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #608b4e;
+    }
+
+    .hljs-tag,
+    .hljs-name,
+    .hljs-selector-tag,
+    .hljs-literal{
+      color: #569cd6;
+    }
+
+    .hljs-keyword {
+      color: #C288BF;
+    }
+
+    .hljs-attr,
+    //.hljs-params, // Remove param color for now
+    .hljs-attribute {
+      color: #9cdcfe;
+    }
+
+    .hljs-string,
+    .hljs-selector-attr,
+    .hljs-regexp,
+    .hljs-link  {
+      color: #ce9178;
+    }
+    
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-selector-pseudo {
+      color: #d7ba7d;
+    }
+
+    .hljs-meta {
+      color: #DCDCAA;
+    }
+
+    .hljs-built_in,
+    .hljs-builtin-name,
+    .hljs-type,
+    .hljs-section,
+    .hljs-class .hljs-title,
+    .hljs-symbol,
+    .hljs-bullet {
+      color: #4EC9B0
+    }
+
+    .hljs-number {
+      color: #b5cea8;
+    }
+
+    .hljs-variable,
+    .hljs-template-variable {
+      color: #9FDDFC;
+    }
+
+    .hljs-deletion {
+      color: #ffc8bd;
+    }
+
+    .hljs-addition {
+      background-color: #baeeba;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-doctag,
+    .hljs-strong {
+      font-weight: bold;
+    }
+
+    .hljs-formula {
+      background-color: #eee;
+      font-style: italic;
+    }
+  }
+}

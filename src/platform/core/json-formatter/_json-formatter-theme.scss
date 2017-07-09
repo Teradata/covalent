@@ -1,0 +1,43 @@
+@import '../common/styles/theme-functions';
+
+@mixin td-json-formatter-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .td-json-formatter-wrapper {
+    .td-key {
+      &.td-key-node {
+        &:focus,
+        &:hover {
+          background-color: mat-color($background, hover);
+        }
+      }
+    }
+    .key {
+      color: mat-color($primary);
+    }
+    .value {
+      .string {
+        color: mat-color($warn);
+      }
+      .number { 
+        color: mat-color($accent);
+      }
+      .boolean { 
+        color: mat-color($accent);
+      }
+      .null,
+      .undefined { 
+        color: mat-color($foreground, disabled-text);
+      }
+      .function { 
+        color: mat-color($primary);
+      }
+      .date { 
+        color: mat-color($foreground, text);
+      }
+    }
+  }
+}

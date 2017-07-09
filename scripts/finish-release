@@ -12,11 +12,5 @@ echo "Pushing changes into master"
 git checkout master
 git push origin master
 
-echo "Building master branch"
-npm run build
-
-echo "Publishing master branch"
-npm run publish
-
 echo "Return to develop branch"
 git checkout develop

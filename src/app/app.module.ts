@@ -1,54 +1,85 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ComponentsModule } from './components/components/';
-import { DocsModule } from './components/docs/';
-import { LayoutsModule } from './components/layouts/';
-import { StyleGuideModule } from './components/style-guide/';
+import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '../platform/core';
-import { CovalentFileModule } from '../platform/file-upload';
+import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule,
+         MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
+
+import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
+         CovalentMediaModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentJsonFormatterModule } from '../platform/json-formatter';
-import { CovalentChipsModule } from '../platform/chips';
-import { CovalentChartsModule } from '../platform/charts';
-import { CovalentDataTableModule } from '../platform/data-table';
-import { CovalentPagingModule } from '../platform/paging';
-import { CovalentSearchModule } from '../platform/search';
+import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
+
+import { ToolbarModule } from './components/toolbar/toolbar.module';
+
+import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
+import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
 
 @NgModule({
   declarations: [
     DocsAppComponent,
     HomeComponent,
+    TemplatesComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
+    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
     BrowserModule,
-    ComponentsModule,
-    DocsModule,
-    LayoutsModule,
-    StyleGuideModule,
-    CovalentCoreModule.forRoot(),
-    CovalentFileModule.forRoot(),
+    HttpModule,
+    JsonpModule,
+    /** Material Modules */
+    MdCoreModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdCardModule,
+    MdMenuModule,
+    MdTabsModule,
+    MdToolbarModule,
+    MdGridListModule,
+    MdTooltipModule,
+    /** Covalent Modules */
+    CovalentLayoutModule,
+    CovalentExpansionPanelModule,
+    CovalentNotificationsModule,
+    CovalentMenuModule,
+    CovalentMediaModule,
     CovalentHttpModule.forRoot(),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentChipsModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentPagingModule.forRoot(),
-    CovalentSearchModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
+    CovalentDynamicFormsModule,
+    ToolbarModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [Http],
+      },
+    }),
     appRoutes,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
+    GitHubService,
+    InternalDocsService, {
+      // Configure LOCALE_ID depending on the language set in browser
+      provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
+    },
+    SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
-  entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
+  entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
 })
 export class AppModule {}

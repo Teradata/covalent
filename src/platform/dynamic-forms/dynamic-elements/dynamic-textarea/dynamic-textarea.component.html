@@ -1,0 +1,12 @@
+<div class="dynamic-textarea-wrapper" layout="column">
+  <md-input-container>
+    <textarea #elementInput
+            mdInput
+            [(ngModel)]="value"
+            [placeholder]="label"
+            [required]="required"
+            rows="4"
+            flex>
+    </textarea>
+  </md-input-container>
+</div>
