@@ -17,60 +17,25 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Agnostic filtering with (inputChange) and [debounce] (local vs server side)',
+      description: '[readOnly] deprecation in favor of [disabled] input',
       icon: 'label',
       route: '/components/chips',
       title: 'Chips feature',
     }, {
-      description: 'object list and template support and new [td-chip-avatar] attribute',
-      icon: 'label',
-      route: '/components/chips',
-      title: 'Chips feature',
-    }, {
-      description: 'new [chipRemoval] input',
-      icon: 'label',
-      route: '/components/chips',
-      title: 'Chips feature',
-    }, {
-      description: 'new [color] input',
-      icon: 'label',
-      route: '/components/chips',
-      title: 'Chips feature',
-    }, {
-      description: 'new [stacked] input',
-      icon: 'label',
-      route: '/components/chips',
-      title: 'Chips feature',
-    }, {
-      description: 'new td-expansion-panel-group component',
-      icon: 'open_with',
-      route: '/components/expansion-panel',
-      title: 'Expansion panel feature',
-    }, {
-      description: 'new [disableRipple] input',
-      icon: 'open_with',
-      route: '/components/expansion-panel',
-      title: 'Expansion panel feature',
-    }, {
-      description: 'new [mode], [opened], [sidenavWidth] inputs for td-layout',
+      description: 'Layout directives and new demos',
       icon: 'view_quilt',
       route: '/layouts',
       title: 'Layouts feature',
     }, {
-      description: 'new [color] input for td-layout-footer',
-      icon: 'view_quilt',
-      route: '/layouts',
-      title: 'Layouts feature',
+      description: '[compareWith] input',
+      icon: 'grid_on',
+      route: '/components/data-table',
+      title: 'Data table feature',
     }, {
-      description: 'animation when opening/closing',
-      icon: 'info_outline',
-      route: '/components/message',
-      title: 'Message feature',
-    }, {
-      description: 'new [disableRipple] input',
-      icon: 'view_list',
-      route: '/components/steps',
-      title: 'Stepper feature',
+      description: 'introducing covalent/code-editor',
+      icon: 'featured_play_list',
+      route: '/components/code-editor',
+      title: 'New component',
     },
   ];
 
