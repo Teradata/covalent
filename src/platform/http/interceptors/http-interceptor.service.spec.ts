@@ -10,7 +10,9 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { HttpInterceptorService, HttpConfig, CovalentHttpModule, IHttpInterceptor } from '../';
 import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
-import 'rxjs/Rx';
+import { map } from 'rxjs/operator/map';
+import { toPromise } from 'rxjs/operator/toPromise';
+import { forkJoin } from 'rxjs/observable/forkJoin';
 
 @Injectable()
 export class ResponseOverrideInterceptor {
@@ -108,13 +110,13 @@ describe('Service: HttpInterceptor', () => {
         )));
       });
 
-      service.patch('http://www.test.com/recovery/id/id2/fromerror', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
-        expect(data).toBe('success', '/error/*/fromerror was intercepted');
-      });
+      map.call(service.patch('http://www.test.com/recovery/id/id2/fromerror', {}),
+        (res: Response) => res.json()).subscribe((data: string) => {
+          expect(data).toBe('success', '/error/*/fromerror was intercepted');
+        });
 
-      service.patch('http://www.test.com/recovery/id/fromerror', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.patch('http://www.test.com/recovery/id/fromerror', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('recovered', '/error/*/fromerror was not intercepted');
       });
     }),
@@ -129,12 +131,12 @@ describe('Service: HttpInterceptor', () => {
         )));
       });
 
-      service.patch('http://www.test.com/error', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
-        expect(data).toBeUndefined('/error was not intercepted so request didnt fail');
-      }, (error: Error) => {
-        expect(error.message).toBe('error');
-      });
+      map.call(service.patch('http://www.test.com/error', {}),
+        (res: Response) => res.json()).subscribe((data: string) => {
+          expect(data).toBeUndefined('/error was not intercepted so request didnt fail');
+        }, (error: Error) => {
+          expect(error.message).toBe('error');
+        });
     }),
   ));
 
@@ -148,43 +150,43 @@ describe('Service: HttpInterceptor', () => {
         )));
       });
 
-      service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.post('http://www.test.com/any_path?query=1&query=2', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.post('http://www.test.com/any_path?query=1&query=2', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.get('http://www.test.com/url/any-path/111')
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.get('http://www.test.com/url/any-path/111'),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.get('http://www.test.com/anypath/url')
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.get('http://www.test.com/anypath/url'),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.delete('http://www.test.com/any_path?', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.delete('http://www.test.com/any_path?', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.delete('http://www.test.com', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.delete('http://www.test.com', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.patch('http://www.test.com/any_path/111/url/another_path', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.patch('http://www.test.com/any_path/111/url/another_path', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
 
-      service.patch('http://www.test.com/any-path/111/another_path/', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.patch('http://www.test.com/any-path/111/another_path/', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBeTruthy();
       });
     }),
@@ -199,43 +201,43 @@ describe('Service: HttpInterceptor', () => {
         )));
       });
 
-      service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.post('http://www.test.com/url/with/any-path/another-path?query=1&query=2', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('override', 'didnt intercept url with `/url`');
       });
 
-      service.post('http://www.test.com/any_path?query=1&query=2', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.post('http://www.test.com/any_path?query=1&query=2', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success', 'intercepted url without `/url`');
       });
 
-      service.get('http://www.test.com/url/any-path/111')
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.get('http://www.test.com/url/any-path/111'),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('override', 'didnt intercept url with `/url`');
       });
 
-      service.get('http://www.test.com/anypath/url')
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.get('http://www.test.com/anypath/url'),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('override', 'didnt intercept url with `/url`');
       });
 
-      service.delete('http://www.test.com/any_path?', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.delete('http://www.test.com/any_path?', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success', 'intercepted url without `/url`');
       });
 
-      service.delete('http://www.test.com', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.delete('http://www.test.com', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success', 'intercepted url without `/url`');
       });
 
-      service.patch('http://www.test.com/any_path/111/url/another_path', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.patch('http://www.test.com/any_path/111/url/another_path', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('override', 'didnt intercept url with `/url`');
       });
 
-      service.patch('http://www.test.com/any-path/111/another_path/', {})
-      .map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.patch('http://www.test.com/any-path/111/another_path/', {}),
+      (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success', 'intercepted url without `/url`');
       });
     }),
@@ -277,7 +279,7 @@ describe('Service: HttpInterceptor', () => {
       let error: boolean = false;
       let complete: boolean = false;
 
-      Observable.forkJoin(
+      forkJoin(
         service.get('testurl'),
         service.get('testurl'))
       .subscribe((response: Response[]) => {
@@ -305,7 +307,7 @@ describe('Service: HttpInterceptor', () => {
       let success: boolean = false;
       let error: boolean = false;
       let complete: boolean = false;
-      service.post('testurl', {}).map((res: Response) => res.json()).subscribe((data: string) => {
+      map.call(service.post('testurl', {}), (res: Response) => res.json()).subscribe((data: string) => {
         expect(data).toBe('success');
         success = true;
       }, () => {
@@ -327,7 +329,7 @@ describe('Service: HttpInterceptor', () => {
       let success: boolean = false;
       let error: boolean = false;
       let complete: boolean = false;
-      service.post('testurl', {}).map((res: Response) => res.json()).subscribe(() => {
+      map.call(service.post('testurl', {}), (res: Response) => res.json()).subscribe(() => {
         success = true;
       }, (err: Error) => {
         expect(err.message).toBe('error');
@@ -351,7 +353,7 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      service.post('testurl', {}).map((res: Response) => res.json()).toPromise().then((data: string) => {
+      toPromise.call(map.call(service.post('testurl', {}), (res: Response) => res.json())).then((data: string) => {
         expect(data).toBe('success');
         success = true;
       }, () => {
@@ -371,7 +373,7 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      service.post('testurl', {}).map((res: Response) => res.json()).toPromise().then(() => {
+      toPromise.call(map.call(service.post('testurl', {}), (res: Response) => res.json())).then(() => {
         success = true;
       }, (err: Error) => {
         expect(err.message).toBe('error');
