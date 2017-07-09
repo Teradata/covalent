@@ -132,11 +132,11 @@ After:
 ```html
 <td-layout-manage-list>
   <md-toolbar td-sidenav-content></md-toolbar>
-  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+  <div td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
     Sidenav Content
   </div>
   <md-toolbar>
-    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+    <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
   </md-toolbar>
