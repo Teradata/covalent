@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
          ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/cdk';
+import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
 
 import { TdCollapseAnimation, ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -80,7 +80,7 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
    */
   @Input('disableRipple')
   set disableRipple(disableRipple: boolean) {
-    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+    this._disableRipple = coerceBooleanProperty(disableRipple);
   }
   get disableRipple(): boolean {
     return this._disableRipple;
@@ -92,7 +92,7 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
    */
   @Input('expand')
   set expand(expand: boolean) {
-    this._setExpand(<any>expand === 'true' || expand === true);
+    this._setExpand(coerceBooleanProperty(expand));
   }
   get expand(): boolean {
     return this._expand;

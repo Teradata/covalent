@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
-import { TemplatePortalDirective, UP_ARROW, DOWN_ARROW,
+import { coerceBooleanProperty, TemplatePortalDirective, UP_ARROW, DOWN_ARROW,
          ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk';
 import { MdChip, MdInputDirective, MdOption, MdAutocompleteTrigger } from '@angular/material';
 
@@ -123,10 +123,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Defaults to false.
    */
   @Input('stacked')
-  set stacked(stacked: any) {
-    this._stacked = stacked !== '' ? (stacked === 'true' || stacked === true) : true;
+  set stacked(stacked: boolean) {
+    this._stacked = coerceBooleanProperty(stacked);
   }
-  get stacked(): any {
+  get stacked(): boolean {
     return this._stacked;
   }
   
@@ -135,10 +135,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Blocks custom inputs and only allows selections from the autocomplete list.
    */
   @Input('requireMatch')
-  set requireMatch(requireMatch: any) {
-    this._requireMatch = requireMatch !== '' ? (requireMatch === 'true' || requireMatch === true) : true;
+  set requireMatch(requireMatch: boolean) {
+    this._requireMatch = coerceBooleanProperty(requireMatch);
   }
-  get requireMatch(): any {
+  get requireMatch(): boolean {
     return this._requireMatch;
   }
 
