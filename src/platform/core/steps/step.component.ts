@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
          ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
+import { coerceBooleanProperty, TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -83,7 +83,7 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    */
   @Input('disableRipple')
   set disableRipple(disableRipple: boolean) {
-    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
+    this._disableRipple = coerceBooleanProperty(disableRipple);
   }
   get disableRipple(): boolean {
     return this._disableRipple;
@@ -95,7 +95,7 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    */
   @Input('active')
   set active(active: boolean) {
-    this._setActive(<any>active === 'true' || active === true);
+    this._setActive(coerceBooleanProperty(active));
   }
   get active(): boolean {
     return this._active;
