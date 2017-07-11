@@ -1,11 +1,11 @@
 <div class="mat-table-container" title>
   <table td-data-table
-         [class.mat-selectable]="isSelectable"
-         [class.mat-clickable]="isClickable">
-    <th td-data-table-column class="mat-checkbox-column" *ngIf="isSelectable">
+         [class.mat-selectable]="selectable"
+         [class.mat-clickable]="clickable">
+    <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
       <md-checkbox
         #checkBoxAll
-        *ngIf="isMultiple"
+        *ngIf="multiple"
         [disabled]="!hasData"
         [indeterminate]="indeterminate && !allSelected && hasData"
         [checked]="allSelected && hasData"
@@ -19,8 +19,8 @@
         *ngFor="let column of columns"
         [name]="column.name"
         [numeric]="column.numeric"
-        [active]="(column.sortable || isSortable) && column === sortByColumn"
-        [sortable]="column.sortable ||  isSortable"
+        [active]="(column.sortable || sortable) && column === sortByColumn"
+        [sortable]="column.sortable ||  sortable"
         [sortOrder]="sortOrderEnum"
         [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
@@ -28,16 +28,16 @@
     </th>
     <tr td-data-table-row
         #dtRow
-        [tabIndex]="isSelectable ? 0 : -1"
-        [selected]="(isClickable || isSelectable) && isRowSelected(row)"
+        [tabIndex]="selectable ? 0 : -1"
+        [selected]="(clickable || selectable) && isRowSelected(row)"
         *ngFor="let row of data; let rowIndex = index"
         (click)="handleRowClick(row, $event)"
-        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
+        (keyup)="selectable && _rowKeyup($event, row, rowIndex)"
         (keydown.space)="blockEvent($event)"
         (keydown.shift.space)="blockEvent($event)"
         (keydown.shift)="disableTextSelection()"
         (keyup.shift)="enableTextSelection()">
-      <td td-data-table-cell class="mat-checkbox-cell" *ngIf="isSelectable">
+      <td td-data-table-cell class="mat-checkbox-cell" *ngIf="selectable">
         <md-pseudo-checkbox
           [state]="dtRow.selected ? 'checked' : 'unchecked'"
           (mousedown)="disableTextSelection()"
