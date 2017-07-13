@@ -347,7 +347,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 var value = '${this._value}';
 
                 require.config({
-                    baseUrl: 'file://${this._appPath}/assets/monaco'
+                    baseUrl: '${this._appPath}/assets/monaco'
                 });
                 self.module = undefined;
                 self.process.browser = true;
