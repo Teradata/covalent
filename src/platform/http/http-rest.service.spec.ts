@@ -8,7 +8,6 @@ import { XHRBackend, Response, ResponseOptions, Headers, RequestMethod } from '@
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { RESTService } from './http-rest.service';
-import 'rxjs/Rx';
 
 @Injectable()
 export class BasicTestRESTService extends RESTService<any> {

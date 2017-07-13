@@ -10,6 +10,8 @@ import { Subject } from 'rxjs/Subject';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
+import { of } from 'rxjs/observable/of';
+import { _catch } from 'rxjs/operator/catch';
 
 describe('Directive: Loading', () => {
 
@@ -380,9 +382,9 @@ class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   constructor(private _loadingService: TdLoadingService) {}
 
   createObservable(): void {
-    this.observable = this._subject.asObservable().catch(() => {
+    this.observable = _catch.call(this._subject.asObservable(), () => {
       this._loadingService.resolveAll('name1');
-      return Observable.of(undefined);
+      return of(undefined);
     });
   }
 
