@@ -78,7 +78,7 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.12"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@angular/cli": "1.2.0",
@@ -117,7 +117,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
-    "tslint": "^5.2.0",
+    "tslint": "5.2.0",
     "typescript": "2.3.2"
   }
 }
