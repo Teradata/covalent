@@ -49,6 +49,8 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
     this._toggleSubs = merge(this._layout.sidenav.onOpenStart, this._layout.sidenav.onCloseStart).subscribe(() => {
       this._toggleVisibility();
     });
+    // execute toggleVisibility since the onOpenStart and onCloseStart
+    // methods might not be executed always when the element is rendered
     this._toggleVisibility();
   }
 
