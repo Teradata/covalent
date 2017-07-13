@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -39,6 +39,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _editorNodeModuleDirOverride: string = '';
   private _editor: any;
   private _componentInitialized: boolean = false;
+  private _fromEditor: boolean = false;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -71,12 +72,14 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    * Since the component is not a native Angular component have to specifiy the event emitter ourself
    */
   @Output('change') onChange: EventEmitter<void> = new EventEmitter<void>();
+  /* tslint:disable-next-line */
+  propagateChange = (_: any) => {};
   onTouched = () => noop;
 
   /**
    * Set if using Electron mode when object is created
    */
-  constructor() {
+  constructor(private zone: NgZone) {
     // since accessing the window object need this check so serverside rendering doesn't fail
     if (typeof document === 'object' && !!document) {
         /* tslint:disable-next-line */
@@ -97,9 +100,14 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     if (this._componentInitialized) {
         if (this._webview) {
             if (this._webview.send !== undefined) {
-                this._webview.send('setEditorContent', value);
+                // don't want to keep sending content if event came from IPC, infinite loop
+                if (!this._fromEditor) {
+                    this._webview.send('setEditorContent', value);
+                }
                 this.onEditorValueChange.emit(undefined);
                 this.onChange.emit(undefined);
+                this.propagateChange(this._value);
+                this._fromEditor = false;
             } else {
                 // Editor is not loaded yet, try again in half a second
                 setTimeout(() => {
@@ -108,9 +116,15 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             }
         } else {
             if (this._editor) {
-                this._editor.setValue(value);
+                // don't want to keep sending content if event came from the editor, infinite loop
+                if (!this._fromEditor) {
+                    this._editor.setValue(value);
+                }
                 this.onEditorValueChange.emit(undefined);
                 this.onChange.emit(undefined);
+                this.propagateChange(this._value);
+                this._fromEditor = false;
+                this.zone.run(() => this._value = value);
             }
         }
     }
@@ -127,7 +141,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     this.value = value;
   }
   registerOnChange(fn: any): void {
-    // this.onChange = fn;
+    this.propagateChange = fn;
   }
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
@@ -173,6 +187,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 value: currentValue,
                 language: language,
                 theme: this._theme,
+            });
+            this._editor.getModel().onDidChangeContent( (e: any) => {
+                this._fromEditor = true;
+                this.writeValue(this._editor.getValue());
             });
             this.onEditorConfigurationChanged.emit(undefined);
             this.onEditorLanguageChanged.emit(undefined);
@@ -252,6 +270,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 value: currentValue,
                 language: this._language,
                 theme: this._theme,
+            });
+            this._editor.getModel().onDidChangeContent( (e: any) => {
+                this._fromEditor = true;
+                this.writeValue(this._editor.getValue());
             });
         }
     }
@@ -451,14 +473,14 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         // Process the data from the webview
         this._webview.addEventListener('ipc-message', (event: any) => {
             if (event.channel === 'editorContent') {
-                this._value = event.args[0];
+                this._fromEditor = true;
+                this.writeValue(event.args[0]);
                 this._subject.next(this._value);
                 this._subject.complete();
                 this._subject = new Subject();
-                this.onEditorValueChange.emit(undefined);
             } else if (event.channel === 'onEditorContentChange') {
-                this._value = event.args[0];
-                this.onEditorValueChange.emit(undefined);
+                this._fromEditor = true;
+                this.writeValue(event.args[0]);
             } else if (event.channel === 'onEditorInitialized') {
                 this.onEditorInitialized.emit(undefined);
             } else if (event.channel === 'onEditorConfigurationChanged') {
@@ -515,6 +537,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     });
     setTimeout(() => {
         this.onEditorInitialized.emit(undefined);
+    });
+    this._editor.getModel().onDidChangeContent( (e: any) => {
+        this._fromEditor = true;
+        this.writeValue(this._editor.getValue());
     });
   }
 }
