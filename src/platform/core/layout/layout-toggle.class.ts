@@ -1,4 +1,4 @@
-import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 import { MdSidenavToggleResult, MdSidenav } from '@angular/material';
 
@@ -13,7 +13,9 @@ export interface ILayoutTogglable {
   close(): Promise<MdSidenavToggleResult>;
 }
 
-export abstract class LayoutToggle implements AfterViewInit {
+export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
+
+  private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;
   private _disabled: boolean = false;
@@ -44,9 +46,17 @@ export abstract class LayoutToggle implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this._initialized = true;
-    merge(this._layout.sidenav.onOpenStart, this._layout.sidenav.onCloseStart).subscribe(() => {
+    this._toggleSubs = merge(this._layout.sidenav.onOpenStart, this._layout.sidenav.onCloseStart).subscribe(() => {
       this._toggleVisibility();
     });
+    this._toggleVisibility();
+  }
+
+  ngOnDestroy(): void {
+    if (this._toggleSubs) {
+      this._toggleSubs.unsubscribe();
+      this._toggleSubs = undefined;
+    }
   }
 
   /**
