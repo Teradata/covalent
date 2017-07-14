@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import 'hammerjs';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdPagingBarComponent } from './paging-bar.component';
 import { CovalentPagingModule } from './paging.module';
@@ -26,6 +26,7 @@ describe('Component: PagingBar', () => {
         TestPageSizesComponent,
         TestFirstLastComponent,
         TestPageLinkCountComponent,
+        TestGoToComponent,
       ],
     });
     TestBed.compileComponents();
@@ -172,6 +173,61 @@ describe('Component: PagingBar', () => {
       });
     });
   });
+
+  it('should set goTo and goToText and jump to a page', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestGoToComponent);
+    let component: TestGoToComponent = fixture.debugElement.componentInstance;
+
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.query(By.css('#td-paging-bar-go-to-text'))).toBeTruthy();
+        let element: HTMLElement = fixture.debugElement.query(By.css('#td-paging-bar-go-to-text')).nativeElement;
+        expect(element.innerHTML).toBe('Do it');
+
+        component.goToText = 'Really Do it';
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            element = fixture.debugElement.query(By.css('#td-paging-bar-go-to-text')).nativeElement;
+            expect(element.innerHTML).toBe('Really Do it');
+
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                let inputElement: HTMLInputElement = fixture.debugElement.query(By.css('#goToInput')).nativeNode;
+                inputElement.value = '6';
+                const event: KeyboardEvent = new KeyboardEvent('keyup', {
+                    'key': 'Enter',
+                });
+                inputElement.dispatchEvent(event);
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  fixture.detectChanges();
+                  fixture.whenStable().then(() => {
+                    expect(component.getPage()).toBe(6);
+
+                    component.goToBool = false;
+                    fixture.detectChanges();
+                    fixture.whenStable().then(() => {
+                      fixture.detectChanges();
+                      fixture.whenStable().then(() => {
+                        expect(fixture.debugElement.query(By.css('#td-paging-bar-go-to-text'))).toBeFalsy();
+                        done();
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 });
 
 @Component({
@@ -219,4 +275,19 @@ class TestFirstLastComponent {
 class TestPageLinkCountComponent {
   pageLinkCount: number = 7;
   pageSize: number = 100;
+}
+
+@Component({
+  template: `
+    <td-paging-bar #myPager pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" [pageLinkCount]="pageLinkCount"
+      [goTo]="goToBool" [goToText]="goToText" [initialPage]="1" [firstLast]="true" [pageSize]="pageSize" [total]="1345"></td-paging-bar>`,
+})
+class TestGoToComponent {
+  @ViewChild('myPager') pagingBar: TdPagingBarComponent;
+  goToBool: boolean = true;
+  goToText: string = 'Do it';
+
+  getPage(): number {
+    return this.pagingBar.page;
+  }
 }

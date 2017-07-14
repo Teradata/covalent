@@ -11,9 +11,9 @@
   <div>
     <ng-content></ng-content>
   </div>
-  <p *ngIf="goTo">{{goToText}}</p>
+  <p id="td-paging-bar-go-to-text" *ngIf="goTo">{{goToText}}</p>
   <md-input-container *ngIf="goTo">
-    <input size="8" #goToInput mdInput [value]="page" (keyup.enter)="navigateToPage(goToInput.value)"/>
+    <input size="8" #goToInput id="goToInput" mdInput [value]="page" (keyup.enter)="navigateToPage(goToInput.value)"/>
   </md-input-container>
   <div class="td-paging-bar-navigation">
     <button [id]="'td-paging-bar-' + id + '-first-page'" md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
