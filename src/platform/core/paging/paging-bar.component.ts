@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
-import { Dir } from '@angular/cdk';
+import { Dir, coerceNumberProperty } from '@angular/cdk';
 
 export interface IPageChangeEvent {
   page: number;
@@ -43,6 +43,18 @@ export class TdPagingBarComponent implements OnInit {
    * Text for the 'all' menu item in the page size menu. Defaults to 'All'
    */
   @Input('pageSizeAllText') pageSizeAllText: string = 'All';
+
+  /**
+   * goTo?: boolean
+   * Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
+   */
+  @Input('goTo') goTo: boolean = false;
+
+  /**
+   * goToText?: string
+   * Text for the label next to the Go To input. Defaults to 'Go to:'
+   */
+  @Input('goToText') goToText: string = 'Go to:';
 
   /**
    * firstLast?: boolean
@@ -176,7 +188,7 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._page = this.initialPage;
+    this._page = coerceNumberProperty(this.initialPage);
     this._calculateRows();
     this._calculatePageLinks();
     this._initialized = true;
@@ -188,7 +200,7 @@ export class TdPagingBarComponent implements OnInit {
    */
   navigateToPage(page: number): boolean {
     if (page === 1 || (page >= 1 && page <= this.maxPage)) {
-      this._page = page;
+      this._page = coerceNumberProperty(page);
       this._handleOnChange();
       return true;
     }

@@ -30,7 +30,15 @@ export class PagingDemoComponent {
   }, {
     description: `Text for the 'all' menu item in the page size menu. Defaults to 'All'`,
     name: 'pageSizeAllText?',
+    type: 'string',
+  }, {
+    description: `Shows or hides the Go to input box that allows to jump to a specified page. Defaults to 'false'`,
+    name: 'goTo?',
     type: 'boolean',
+  }, {
+    description: `Text for the label on the Go to input. Defaults to 'Go to:'`,
+    name: 'goToText?',
+    type: 'string',
   }, {
     description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
     name: 'pageSize?',
