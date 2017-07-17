@@ -16,7 +16,7 @@
   "scripts": {
   },
   "engines": {
-    "node": ">=6.11.1",
+    "node": ">=6.11.1 < 7",
     "npm": ">= 3"
   },
   "repository": {
