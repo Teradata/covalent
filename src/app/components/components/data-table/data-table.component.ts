@@ -2,8 +2,10 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
+import {
+  TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
+  ITdDataTableSortChangeEvent, ITdDataTableColumn
+} from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -78,7 +80,7 @@ export class DataTableDemoComponent implements OnInit {
   }];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
+    { name: 'name', label: 'Dessert (100g serving)', sortable: true },
     { name: 'type', label: 'Type', filter: true },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
@@ -91,135 +93,233 @@ export class DataTableDemoComponent implements OnInit {
 
   data: any[] = [
     {
-        'id': 1,
-        'name': 'Frozen yogurt',
-        'type': 'Ice cream',
-        'calories': 159.0,
-        'fat': 6.0,
-        'carbs': 24.0,
-        'protein': 4.0,
-        'sodium': 87.0,
-        'calcium': 14.0,
-        'iron': 1.0,
-        'comments': 'I love froyo!',
-      }, {
-        'id': 2,
-        'name': 'Ice cream sandwich',
-        'type': 'Ice cream',
-        'calories': 237.0,
-        'fat': 9.0,
-        'carbs': 37.0,
-        'protein': 4.3,
-        'sodium': 129.0,
-        'calcium': 8.0,
-        'iron': 1.0,
-      }, {
-        'id': 3,
-        'name': 'Eclair',
-        'type': 'Pastry',
-        'calories':  262.0,
-        'fat': 16.0,
-        'carbs': 24.0,
-        'protein':  6.0,
-        'sodium': 337.0,
-        'calcium':  6.0,
-        'iron': 7.0,
-      }, {
-        'id': 4,
-        'name': 'Cupcake',
-        'type': 'Pastry',
-        'calories':  305.0,
-        'fat': 3.7,
-        'carbs': 67.0,
-        'protein': 4.3,
-        'sodium': 413.0,
-        'calcium': 3.0,
-        'iron': 8.0,
-      }, {
-        'id': 5,
-        'name': 'Jelly bean',
-        'type': 'Candy',
-        'calories':  375.0,
-        'fat': 0.0,
-        'carbs': 94.0,
-        'protein': 0.0,
-        'sodium': 50.0,
-        'calcium': 0.0,
-        'iron': 0.0,
-      }, {
-        'id': 6,
-        'name': 'Lollipop',
-        'type': 'Candy',
-        'calories': 392.0,
-        'fat': 0.2,
-        'carbs': 98.0,
-        'protein': 0.0,
-        'sodium': 38.0,
-        'calcium': 0.0,
-        'iron': 2.0,
-      }, {
-        'id': 7,
-        'name': 'Honeycomb',
-        'type': 'Other',
-        'calories': 408.0,
-        'fat': 3.2,
-        'carbs': 87.0,
-        'protein': 6.5,
-        'sodium': 562.0,
-        'calcium': 0.0,
-        'iron': 45.0,
-      }, {
-        'id': 8,
-        'name': 'Donut',
-        'type': 'Pastry',
-        'calories': 452.0,
-        'fat': 25.0,
-        'carbs': 51.0,
-        'protein': 4.9,
-        'sodium': 326.0,
-        'calcium': 2.0,
-        'iron': 22.0,
-      }, {
-        'id': 9,
-        'name': 'KitKat',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
-      }, {
-        'id': 10,
-        'name': 'Chocolate',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
-      }, {
-        'id': 11,
-        'name': 'Chamoy',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
+      'id': 1,
+      'name': 'Frozen yogurt',
+      'type': 'Ice cream',
+      'calories': 159.0,
+      'fat': 6.0,
+      'carbs': 24.0,
+      'protein': 4.0,
+      'sodium': 87.0,
+      'calcium': 14.0,
+      'iron': 1.0,
+      'comments': 'I love froyo!',
+    }, {
+      'id': 2,
+      'name': 'Ice cream sandwich',
+      'type': 'Ice cream',
+      'calories': 237.0,
+      'fat': 9.0,
+      'carbs': 37.0,
+      'protein': 4.3,
+      'sodium': 129.0,
+      'calcium': 8.0,
+      'iron': 1.0,
+    }, {
+      'id': 3,
+      'name': 'Eclair',
+      'type': 'Pastry',
+      'calories': 262.0,
+      'fat': 16.0,
+      'carbs': 24.0,
+      'protein': 6.0,
+      'sodium': 337.0,
+      'calcium': 6.0,
+      'iron': 7.0,
+    }, {
+      'id': 4,
+      'name': 'Cupcake',
+      'type': 'Pastry',
+      'calories': 305.0,
+      'fat': 3.7,
+      'carbs': 67.0,
+      'protein': 4.3,
+      'sodium': 413.0,
+      'calcium': 3.0,
+      'iron': 8.0,
+    }, {
+      'id': 5,
+      'name': 'Jelly bean',
+      'type': 'Candy',
+      'calories': 375.0,
+      'fat': 0.0,
+      'carbs': 94.0,
+      'protein': 0.0,
+      'sodium': 50.0,
+      'calcium': 0.0,
+      'iron': 0.0,
+    }, {
+      'id': 6,
+      'name': 'Lollipop',
+      'type': 'Candy',
+      'calories': 392.0,
+      'fat': 0.2,
+      'carbs': 98.0,
+      'protein': 0.0,
+      'sodium': 38.0,
+      'calcium': 0.0,
+      'iron': 2.0,
+    }, {
+      'id': 7,
+      'name': 'Honeycomb',
+      'type': 'Other',
+      'calories': 408.0,
+      'fat': 3.2,
+      'carbs': 87.0,
+      'protein': 6.5,
+      'sodium': 562.0,
+      'calcium': 0.0,
+      'iron': 45.0,
+    }, {
+      'id': 8,
+      'name': 'Donut',
+      'type': 'Pastry',
+      'calories': 452.0,
+      'fat': 25.0,
+      'carbs': 51.0,
+      'protein': 4.9,
+      'sodium': 326.0,
+      'calcium': 2.0,
+      'iron': 22.0,
+    }, {
+      'id': 9,
+      'name': 'KitKat',
+      'type': 'Candy',
+      'calories': 518.0,
+      'fat': 26.0,
+      'carbs': 65.0,
+      'protein': 7.0,
+      'sodium': 54.0,
+      'calcium': 12.0,
+      'iron': 6.0,
+    }, {
+      'id': 10,
+      'name': 'Chocolate',
+      'type': 'Candy',
+      'calories': 518.0,
+      'fat': 26.0,
+      'carbs': 65.0,
+      'protein': 7.0,
+      'sodium': 54.0,
+      'calcium': 12.0,
+      'iron': 6.0,
+    }, {
+      'id': 11,
+      'name': 'Chamoy',
+      'type': 'Candy',
+      'calories': 518.0,
+      'fat': 26.0,
+      'carbs': 65.0,
+      'protein': 7.0,
+      'sodium': 54.0,
+      'calcium': 12.0,
+      'iron': 6.0,
+    },
+  ];
+
+  nestedColumnsExample: ITdDataTableColumn[] = [
+    { name: 'score', label: 'Score', sortable: true, nestedSortBy: 'score.value' },
+    { name: 'predicted', label: 'Predicted', sortable: true, nestedSortBy: 'predicted.nested.n.t' },
+  ];
+
+  nestedDataExample = [
+    {
+      'score': {
+        'value': 3,
+        'trend': 'down',
+        'nested': {
+          'value': 2,
+          'name': 'nested score 1',
+          'n': {
+            't' : 88
+          }
+        }
       },
-    ];
+      'predicted': {
+        'value': 10,
+        'trend': 'up',
+        'nested': {
+          'value': 10,
+          'name': 'nested predicted 1',
+          'n': {
+            't' : 2
+          }
+        }
+      }
+    },
+    {
+      'score': {
+        'value': 2,
+        'trend': 'down',
+        'nested': {
+          'value': 1,
+          'name': 'nested score 2',
+          'n': {
+            't' : 3
+          }
+        }
+      },
+      'predicted': {
+        'value': 45,
+        'trend': 'up',
+        'nested': {
+          'value': 4,
+          'name': 'nested prediscted 2',
+          'n': {
+            't' : 35
+          }
+        }
+      }
+    },
+        {
+      'score': {
+        'value': 10,
+        'trend': 'down',
+        'nested': {
+          'value': 4,
+          'name': 'nested score 1',
+        }
+      },
+      'predicted': {
+        'value': 8,
+        'trend': 'up',
+        'nested': {
+          'value': 2,
+          'name': 'nested predicted 1',
+            'n': {
+            't' : 4
+          }
+        }
+      }
+    },
+    {
+      'score': {
+        'value': 28,
+        'trend': 'down',
+        'nested': {
+          'value': 10,
+          'name': 'nested score 2'
+        }
+      },
+      'predicted': {
+        'value': 15,
+        'trend': 'up',
+        'nested': {
+          'value': 34,
+          'name': 'nested prediscted 2',
+          'n': {
+            't' : 10
+          }
+        }
+      }
+    }
+  ];
+
   basicData: any[] = this.data.slice(0, 4);
   selectable: boolean = true;
   clickable: boolean = false;
   multiple: boolean = true;
   filterColumn: boolean = true;
-
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
   selectedRows: any[] = [];
@@ -229,10 +329,11 @@ export class DataTableDemoComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
   sortBy: string = 'name';
+  nestedSortBy: string = "value"
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
-              private _dialogService: TdDialogService) {}
+    private _dialogService: TdDialogService) { }
 
   openPrompt(row: any, name: string): void {
     this._dialogService.openPrompt({
@@ -249,9 +350,18 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
+  nestedSort(sortEvent: ITdDataTableSortChangeEvent): void {
+    console.log(sortEvent);
+    this.sortBy = sortEvent.sortBy;
+    this.sortOrder = sortEvent.order;
+    console.log(this.sortBy);
+    this.nestedFilter();
+  }
+
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sortBy = sortEvent.name;
     this.sortOrder = sortEvent.order;
+    console.log(sortEvent);
     this.filter();
   }
 
@@ -267,15 +377,32 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
+  nestedFilter(): void {
+    let newData: any[] = this.nestedDataExample;
+    // let excludedColumns: string[] = this.columns
+    //   .filter((column: ITdDataTableColumn) => {
+    //     return ((column.filter === undefined && column.hidden === true) ||
+    //       (column.filter !== undefined && column.filter === false));
+    //   }).map((column: ITdDataTableColumn) => {
+    //     return column.name;
+    //   });
+    // newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    // this.filteredTotal = newData.length;
+    newData = this._dataTableService.sortNestedData(newData, this.sortBy, this.sortOrder);
+    // newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
+    console.log(newData);
+    this.nestedDataExample = newData;
+  }
+
   filter(): void {
     let newData: any[] = this.data;
     let excludedColumns: string[] = this.columns
-    .filter((column: ITdDataTableColumn) => {
-      return ((column.filter === undefined && column.hidden === true) || 
-              (column.filter !== undefined && column.filter === false));
-    }).map((column: ITdDataTableColumn) => {
-      return column.name;
-    });
+      .filter((column: ITdDataTableColumn) => {
+        return ((column.filter === undefined && column.hidden === true) ||
+          (column.filter !== undefined && column.filter === false));
+      }).map((column: ITdDataTableColumn) => {
+        return column.name;
+      });
     newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);

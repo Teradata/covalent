@@ -5,6 +5,7 @@ import { TdDataTableSortingOrder } from '../data-table.component';
 export interface ITdDataTableSortChangeEvent {
   order: TdDataTableSortingOrder;
   name: string;
+  sortBy?: string;
 }
 
 @Component({
@@ -22,6 +23,12 @@ export class TdDataTableColumnComponent {
    * Sets unique column [name] for [sortable] events.
    */
   @Input('name') name: string = '';
+
+  /**
+   * sortBy?: string
+   * Sets nested sort values per column.
+   */
+  @Input('sortBy') sortBy: string = '';
 
   /**
    * sortable?: boolean
@@ -93,7 +100,7 @@ export class TdDataTableColumnComponent {
   }
 
   handleSortBy(): void {
-    this.onSortChange.emit({name: this.name, order: this._sortOrder});
+    this.onSortChange.emit({name: this.name, order: this._sortOrder, sortBy: this.sortBy});
   }
 
   isAscending(): boolean {

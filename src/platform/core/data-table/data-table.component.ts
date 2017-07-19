@@ -34,6 +34,7 @@ export interface ITdDataTableColumn {
   sortable?: boolean;
   hidden?: boolean;
   filter?: boolean;
+  nestedSortBy?: string;
 }
 
 export interface ITdDataTableSelectEvent {
@@ -467,7 +468,11 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
+    if(this._sortBy.nestedSortBy) {
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.nestedSortBy });
+    } else {
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder});
+    }
   }
 
   /**
