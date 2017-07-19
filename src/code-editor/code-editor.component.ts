@@ -9,6 +9,8 @@ const noop: any = () => {
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter: number = 0;
+let loadedMonaco: boolean = false;
+let loadPromise: Promise<void>;
 // declare all the built in electron objects
 declare const electron: any;
 declare const monaco: any;
@@ -502,25 +504,47 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   ngAfterViewInit(): void {
     if (!this._isElectronApp) {
-        let onGotAmdLoader: any = () => {
-            // Load monaco
-            (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
-            (<any>window).require(['vs/editor/editor.main'], () => {
+        if (loadedMonaco) {
+            // Wait until monaco editor is available
+            this.waitForMonaco().then(() => {
                 this.initMonaco();
             });
-        };
-
-        // Load AMD loader if necessary
-        if (!(<any>window).require) {
-            let loaderScript: HTMLScriptElement = document.createElement('script');
-            loaderScript.type = 'text/javascript';
-            loaderScript.src = 'assets/monaco/vs/loader.js';
-            loaderScript.addEventListener('load', onGotAmdLoader);
-            document.body.appendChild(loaderScript);
         } else {
-            onGotAmdLoader();
+            loadedMonaco = true;
+            loadPromise = new Promise<void>((resolve: any) => {
+                if (typeof((<any>window).monaco) === 'object') {
+                    resolve();
+                    return;
+                }
+                let onGotAmdLoader: any = () => {
+                    // Load monaco
+                    (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
+                    (<any>window).require(['vs/editor/editor.main'], () => {
+                        this.initMonaco();
+                        resolve();
+                    });
+                };
+
+                // Load AMD loader if necessary
+                if (!(<any>window).require) {
+                    let loaderScript: HTMLScriptElement = document.createElement('script');
+                    loaderScript.type = 'text/javascript';
+                    loaderScript.src = 'assets/monaco/vs/loader.js';
+                    loaderScript.addEventListener('load', onGotAmdLoader);
+                    document.body.appendChild(loaderScript);
+                } else {
+                    onGotAmdLoader();
+                }
+            });
         }
     }
+  }
+
+  /**
+   * waitForMonaco method Returns promise that will be fulfilled when monaco is available
+   */
+  waitForMonaco(): Promise<void> {
+    return loadPromise;
   }
 
   /**
