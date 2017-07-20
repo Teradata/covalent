@@ -12,10 +12,6 @@
   ],
   "scripts": {
   },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/teradata/covalent.git"
