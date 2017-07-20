@@ -67,7 +67,7 @@ Example with material select for dynamic page sizes:
                 [total]="1345"
                 (change)="change($event)">
   <span hide-xs>Rows per page:</span>
-  <md-select [(ngModel)]="pageSize">
+  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
     <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
       {{size}}
     </md-option>
@@ -109,7 +109,7 @@ Example with dynamic page sizes, input and page links for navigation:
                 [total]="1345"
                 (change)="change($event)">
   <span hide-xs>Rows per page:</span>
-  <md-select [(ngModel)]="pageSize">
+  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
     <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
       {{size}}
     </md-option>

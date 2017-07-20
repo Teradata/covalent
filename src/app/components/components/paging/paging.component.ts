@@ -22,6 +22,7 @@ export class PagingDemoComponent implements AfterViewInit {
   eventInput: IPageChangeEvent;
   eventResponsive: IPageChangeEvent;
   pageSize: number = 100;
+  pageSizeResponsive: number = 100;
   firstLast: boolean = true;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,

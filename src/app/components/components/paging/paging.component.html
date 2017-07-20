@@ -79,7 +79,7 @@
       <md-divider></md-divider>
       <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
         <span hide-xs>Rows per page:</span>
-        <md-select [(ngModel)]="pageSize">
+        <md-select [style.width.px]="50" [(ngModel)]="pageSize">
           <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
             {{size}}
           </md-option>
@@ -95,7 +95,7 @@
           <![CDATA[
             <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select [(ngModel)]="pageSize">
+              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
                 <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
                   { {size} }
                 </md-option>
@@ -268,11 +268,11 @@
         <td-paging-bar #pagingBarResponsive
                        [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
                        [firstLast]="media.registerQuery('gt-xs') | async"
-                       [pageSize]="pageSize"
+                       [pageSize]="pageSizeResponsive"
                        [total]="1345"
                        (change)="changeResponsive($event)">
           <span hide-xs>Rows per page:</span>
-          <md-select *ngIf="media.registerQuery('gt-xs') | async" [(ngModel)]="pageSize">
+          <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
             <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
               {{size}}
             </md-option>
@@ -300,11 +300,11 @@
             <td-paging-bar #pagingBarResponsive
                           [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
                           [firstLast]="media.registerQuery('gt-xs') | async"
-                          [pageSize]="pageSize"
+                          [pageSize]="pageSizeResponsive"
                           [total]="1345"
                           (change)="changeResponsive($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select *ngIf="media.registerQuery('gt-xs') | async" [(ngModel)]="pageSize">
+              <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
                 <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
                   { {size} }
                 </md-option>
@@ -331,6 +331,7 @@
             ...
             export class Demo {
               eventResponsive: IPageChangeEvent;
+              pageSizeResponsive: number = 100;
 
               constructor(private _changeDetectorRef: ChangeDetectorRef,
                           public media: TdMediaService) {}

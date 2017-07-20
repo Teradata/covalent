@@ -60,7 +60,7 @@
         <md-divider></md-divider>
         <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
           <span hide-xs>Rows per page:</span>
-          <md-select [(ngModel)]="pageSize">
+          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
             <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
               {{size}}
             </md-option>
@@ -131,7 +131,7 @@
           <md-divider></md-divider>
           <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
             <span hide-xs>Rows per page:</span>
-            <md-select [(ngModel)]="pageSize">
+            <md-select [style.width.px]="50" [(ngModel)]="pageSize">
               <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
                 { {size} }
               </md-option>

@@ -238,7 +238,7 @@
         </div>
         <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
           <span hide-xs>Rows per page:</span>
-          <md-select [(ngModel)]="pageSize">
+          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
             <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
               {{size}}
             </md-option>
@@ -281,7 +281,7 @@
             </div>
             <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select [(ngModel)]="pageSize">
+              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
                 <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
                   { {size} }
                 </md-option>
