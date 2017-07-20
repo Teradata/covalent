@@ -15,12 +15,17 @@ export class PagingDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
     
-  event: IPageChangeEvent;
+  event1: IPageChangeEvent;
+  event2: IPageChangeEvent;
   firstLast: boolean = false;
   pageSizeAll: boolean = false;
 
-  change(event: IPageChangeEvent): void {
-    this.event = event;
+  change1(event: IPageChangeEvent): void {
+    this.event1 = event;
+  }
+
+  change2(event: IPageChangeEvent): void {
+    this.event2 = event;
   }
 
   toggleFirstLast(): void {
