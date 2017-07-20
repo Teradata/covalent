@@ -1,7 +1,9 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
          ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+
+import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
 const noop: any = () => {
   // empty method
@@ -22,14 +24,20 @@ export class TdFileInputLabelDirective extends TemplatePortalDirective {
   }
 }
 
+export class TdFileInputBase {}
+
+/* tslint:disable-next-line */
+export const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ FILE_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-file-input',
+  inputs: ['disabled'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
 })
-export class TdFileInputComponent implements ControlValueAccessor {
+export class TdFileInputComponent extends _TdFileInputMixinBase implements ControlValueAccessor, ICanDisable {
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -46,7 +54,6 @@ export class TdFileInputComponent implements ControlValueAccessor {
   }
 
   private _multiple: boolean = false;
-  private _disabled: boolean = false;
 
   /** The native `<input type="file"> element */
   @ViewChild('fileInput') _inputElement: ElementRef;
@@ -65,10 +72,10 @@ export class TdFileInputComponent implements ControlValueAccessor {
    * Sets if multiple files can be dropped/selected at once in [TdFileInputComponent].
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): string | boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 
@@ -80,21 +87,6 @@ export class TdFileInputComponent implements ControlValueAccessor {
   @Input('accept') accept: string;
 
   /**
-   * disabled?: boolean
-   * Disables [TdFileInputComponent] and clears selected/dropped files.
-   */
-  @Input('disabled')
-  set disabled(disabled: boolean) {
-    if (disabled) {
-      this.clear();
-    }
-    this._disabled = disabled;
-  }
-  get disabled(): boolean {
-    return this._disabled;
-  }
-
-  /**
    * select?: function
    * Event emitted a file is selected
    * Emits a [File | FileList] object.
@@ -102,7 +94,7 @@ export class TdFileInputComponent implements ControlValueAccessor {
   @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
 
   constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
-
+    super();
   }
 
   /**
@@ -119,6 +111,13 @@ export class TdFileInputComponent implements ControlValueAccessor {
   clear(): void {
     this.writeValue(undefined);
     this._renderer.setProperty(this.inputElement, 'value', '');
+  }
+
+  /** Method executed when the disabled value changes */
+  onDisabledChange(v: boolean): void {
+    if (v) {
+      this.clear();
+    }
   }
 
   /**

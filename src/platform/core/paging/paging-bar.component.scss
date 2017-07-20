@@ -3,7 +3,7 @@
 }
 .td-paging-bar {
   height: 48px;
-  > * {
+  /deep/ > * {
     margin: 0 10px;
   }
 }

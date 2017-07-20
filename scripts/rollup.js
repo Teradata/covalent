@@ -31,15 +31,18 @@ gulp.task('rollup-code', '', function() {
     '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
+    '@angular/cdk': 'ng.cdk',
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
+    'rxjs/observable/merge': 'Rx.Observable',
     'rxjs/add/observable/forkJoin': 'Rx.Observable',
     'rxjs/add/observable/of': 'Rx.Observable',
     'rxjs/add/observable/timer': 'Rx.Observable',
     'rxjs/add/operator/toPromise': 'Rx.Observable.prototype',
     'rxjs/add/operator/map': 'Rx.Observable.prototype',
     'rxjs/add/operator/filter': 'Rx.Observable.prototype',
+    'rxjs/add/observable/fromEvent': 'Rx.Observable.prototype',
     'rxjs/add/operator/do': 'Rx.Observable.prototype',
     'rxjs/add/operator/share': 'Rx.Observable.prototype',
     'rxjs/add/operator/finally': 'Rx.Observable.prototype',

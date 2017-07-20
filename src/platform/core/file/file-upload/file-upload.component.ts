@@ -1,17 +1,25 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk';
+
+import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
+
+export class TdFileUploadBase {}
+
+/* tslint:disable-next-line */
+export const _TdFileUploadMixinBase = mixinDisabled(TdFileUploadBase);
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-file-upload',
+  inputs: ['disabled'],
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
 })
-export class TdFileUploadComponent {
+export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICanDisable {
 
   private _multiple: boolean = false;
-  private _disabled: boolean = false;
 
   files: FileList | File;
 
@@ -40,10 +48,10 @@ export class TdFileUploadComponent {
    * Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): string | boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 
@@ -53,21 +61,6 @@ export class TdFileUploadComponent {
    * Same as 'accept' attribute in <input/> element.
    */
   @Input('accept') accept: string;
-
-  /**
-   * disabled?: boolean
-   * Disables [TdFileUploadComponent] and clears selected/dropped files.
-   */
-  @Input('disabled')
-  set disabled(disabled: boolean) {
-    if (disabled) {
-      this.cancel();
-    }
-    this._disabled = disabled;
-  }
-  get disabled(): boolean {
-    return this._disabled;
-  }
 
   /**
    * select?: function
@@ -90,7 +83,7 @@ export class TdFileUploadComponent {
   @Output('cancel') onCancel: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {
-
+    super();
   }
 
   /**
@@ -119,5 +112,12 @@ export class TdFileUploadComponent {
     this.files = undefined;
     this.onCancel.emit(undefined);
     this._changeDetectorRef.markForCheck();
+  }
+
+  /** Method executed when the disabled value changes */
+  onDisabledChange(v: boolean): void {
+    if (v) {
+      this.cancel();
+    }
   }
 }

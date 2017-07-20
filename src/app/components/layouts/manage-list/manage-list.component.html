@@ -1,205 +1,449 @@
-<td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-  <td-toolbar td-toolbar-content  hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
-  <td-layout-manage-list #manageList
-                        [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
-                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
-      <span>Optional Title</span>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
-      <a md-list-item><md-icon>folder</md-icon>Item Name</a>
-      <a md-list-item><md-icon>people</md-icon>Item Name</a>
-    </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span>Optional Title</span>
-      <span flex></span>
-      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-    </div>
-    <md-card>
-      <md-card-title> Manage List Layout</md-card-title>
-      <md-card-subtitle>Content/object management views (this page is using manage list)</md-card-subtitle>
-      <md-divider></md-divider>
-      <md-card-content>
+<md-card>
+  <md-card-title>Minimum Demo</md-card-title>
+  <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout-manage-list opened="true" mode="side">
+      <md-toolbar td-sidenav-content></md-toolbar>
+      <div td-sidenav-content>
+        Sidenav content here
+      </div>
+      <md-toolbar></md-toolbar>
+      Content goes here
+    </td-layout-manage-list>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout-manage-list opened="true" mode="side">
+          <md-toolbar td-sidenav-content></md-toolbar>
+          <div td-sidenav-content>
+            Sidenav content here
+          </div>
+          <md-toolbar></md-toolbar>
+          Content goes here
+        </td-layout-manage-list>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Basic Demo</md-card-title>
+  <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <md-nav-list>
-          <h3 md-subheader>Recommended usage:</h3>
-          <a md-list-item href="https://teradata.github.io/covalent-quickstart/#/product" target="_blank">
-            <p md-line>Product landing page with subnavigation</p>
-            <md-icon>launch</md-icon>
-          </a>
-          <md-divider></md-divider>
-          <a md-list-item href="https://teradata.github.io/covalent-quickstart/#/users" target="_blank">
-            <p md-line>Manage list view (users, systems, settings, etc.)</p>
-            <md-icon>launch</md-icon>
-          </a>
-          <md-divider></md-divider>
+          <a md-list-item><md-icon>home</md-icon>Home</a>
         </md-nav-list>
-        <div layout-gt-md="row">
-          <div flex-gt-md="50">
-            <td-steps>
-              <td-step label="td-layout-nav" sublabel="the main content wrapper" active="true">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-nav>]]></code></h3>
-                    <p md-line>Builds the top toolbar</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>toolbarTitle?: string</code></h3>
-                    <p md-line>The title of your toolbar</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>logo?: string</code></h3>
-                    <p md-line>The path to your toolbar logo</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </td-step>
-              <td-step label="td-layout-manage-list" sublabel="the inner content area">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-manage-list>]]></code></h3>
-                    <p md-line>Builds the left nav and content area</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<md-toolbar td-sidenav-content>]]></code></h3>
-                    <h3 md-line><code><![CDATA[<span>Optional Title</span>]]></code></h3>
-                    <p md-line>Optional list toolbar w/ title</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<md-nav-list td-sidenav-content>]]></code></h3>
-                    <p md-line>The list items wrapper</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<router-outlet>]]></code></h3>
-                    <p md-line>Loads html for each route (view)</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </td-step>
-              <td-step label="div[td-toolbar-content]" sublabel="the management toolbar above content">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<div td-toolbar-content>]]></code></h3>
-                    <p md-line>The toolbar wrapper</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<span>Optional Subtitle</span>]]></code></h3>
-                    <p md-line>Optional subtitle</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<span flex>]]></code></h3>
-                    <p md-line>Used as a spacer between buttons</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code class="text-sm"><![CDATA[<button md-icon-button>]]></code></h3>
-                    <p md-line>Toolbar icon buttons</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                </md-list>
-              </td-step>
-              <td-step label="td-layout-footer" sublabel="optional sticky footer">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-footer>]]></code></h3>
-                    <p md-line>Optional footer before <code><![CDATA[</td-layout-nav>]]></code></p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code><![CDATA[<td-layout-footer-inner>]]></code></h3>
-                    <p md-line>Optional inner footer before <code><![CDATA[</td-layout-manage-list>]]></code></p>
-                  </md-list-item>
-                </md-list>
-              </td-step>
-              <td-step label="responsive layout" sublabel="(Extra) leverage of media service and inputs">
-                <md-list>
-                  <md-list-item>
-                    <h3 md-line><code>[opened]</code>, <code>[mode]</code>, <code>[sidenavWidth]</code></h3>
-                    <p md-line>Set media breakpoints to change the value of the inputs</p>
-                  </md-list-item>
-                  <md-divider></md-divider>
-                  <md-list-item>
-                    <h3 md-line><code>(click)</code> media prevention</h3>
-                    <p md-line>Close sidenav only on certain media breakpoints</p>
-                  </md-list-item>
-                </md-list>
-              </td-step>
-            </td-steps>
-          </div>
-          <div flex-gt-md="50">
-            <h3 class="md-title">HTML</h3>
-            <td-highlight lang="html">
-              <![CDATA[
-                <td-layout-nav toolbarTitle="Toolbar Title" logo="svgIconName">
-                  <td-layout-manage-list #manageList 
-                          [opened]="media.registerQuery('gt-sm') | async"
-                          [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
-                          [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-                    <md-toolbar td-sidenav-content>
-                      <span>Optional Title</span>
-                    </md-toolbar>
-                    <md-nav-list td-sidenav-content
-                                 (click)="!media.query('gt-sm') && manageList.close()">
-                      <a md-list-item><md-icon>folder</md-icon>Item Name</a>
-                      <a md-list-item><md-icon>people</md-icon>Item Name</a>
-                    </md-nav-list>
-                    <div td-toolbar-content layout="row" layout-align="start center" flex>
-                      <span>Optional Subtitle</span>
-                      <span flex></span>
-                      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-                      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-                    </div>
-                    <router-outlet></router-outlet>
-                    <td-layout-footer-inner>
-                      Optional inner footer
-                    </td-layout-footer-inner>
-                  </td-layout-manage-list>
-                  <td-layout-footer>
-                    Optional footer
-                  </td-layout-footer>
-                </td-layout-nav>
-              ]]>
-            </td-highlight>
-            <h3 class="md-title">Typescript</h3>
-            <td-highlight lang="typescript">
-              <![CDATA[
-                import { ChangeDetectorRef } from '@angular/core';
-                import { TdMediaService } from '@covalent/core';
-                ...
-                export class MyComponent {
-
-                  constructor(private _changeDetectorRef: ChangeDetectorRef,
-                              public media: TdMediaService) {}
-
-                  ngAfterViewInit(): void {
-                    // broadcast to all listener observables when loading the page
-                    this.media.broadcast();
-                    // force a new change detection cycle since change detections
-                    // have finished when `ngAfterViewInit` is executed
-                    this._changeDetectorRef.detectChanges();
-                  }
-                }
-              ]]>
-            </td-highlight>
-          </div>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+          </md-nav-list>
         </div>
-      </md-card-content>
-      <md-divider></md-divider>
-      <md-card-actions layout="row">
-          <a md-button [routerLink]="'/layouts'" class="text-upper">Go Back</a>
-      </md-card-actions>
-    </md-card>
-    <td-readme-loader resourceUrl="platform/core/layout/layout-manage-list/README.md"></td-readme-loader>
-  </td-layout-manage-list>
-  <td-layout-footer>
-      Optional footer
-  </td-layout-footer>
-</td-layout-nav>
+      </td-navigation-drawer>
+      <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+        <button md-icon-button td-menu-button tdLayoutToggle>
+          <md-icon>menu</md-icon>
+        </button>
+        <td-layout-manage-list opened="true" mode="side">
+          <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
+          <div td-sidenav-content>
+            Sidenav content here
+          </div>
+          <md-toolbar>
+            <button md-button tdLayoutManageListToggle>
+              Toggle
+            </button>
+            Content Title
+          </md-toolbar>
+          Content goes here
+        </td-layout-manage-list>
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+            <md-nav-list>
+              <a md-list-item><md-icon>home</md-icon>Home</a>
+            </md-nav-list>
+            <div td-navigation-drawer-menu>
+              <md-nav-list>
+                <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+              </md-nav-list>
+            </div>
+          </td-navigation-drawer>
+          <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
+            <button md-icon-button td-menu-button tdLayoutToggle>
+              <md-icon>menu</md-icon>
+            </button>
+            <td-layout-manage-list opened="true" mode="side">
+              <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
+              <div td-sidenav-content>
+                Sidenav content here
+              </div>
+              <md-toolbar>
+                <button md-button tdLayoutManageListToggle>
+                  Toggle
+                </button>
+                Content Title
+              </md-toolbar>
+              Content goes here
+            </td-layout-manage-list>
+          </td-layout-nav>
+        </td-layout>
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>Full Demo</md-card-title>
+  <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-layout>
+      <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <md-nav-list>
+          <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+        </md-nav-list>
+        <div td-navigation-drawer-menu>
+          <md-nav-list>
+            <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+          </md-nav-list>
+        </div>
+      </td-navigation-drawer>
+      <td-layout-nav color="accent">
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <button md-icon-button td-menu-button tdLayoutToggle>
+            <md-icon>menu</md-icon>
+          </button>
+          <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+          <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+          <span flex></span>
+          <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+          <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+        </div>
+        <td-layout-manage-list #manageList 
+                [opened]="media.registerQuery('gt-sm') | async"
+                [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
+                [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+          <md-toolbar td-sidenav-content>
+            <span>Optional Title</span>
+          </md-toolbar>
+          <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
+              <a md-list-item>
+                <md-icon md-list-icon>{{item.icon}}</md-icon> {{item.title}}
+              </a>
+            </ng-template>
+          </md-nav-list>
+          <md-toolbar>
+            <div layout="row" layout-align="start center" flex>
+              <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+                <md-icon>arrow_back</md-icon>
+              </button>
+              <span>Content Title</span>
+              <span flex></span>
+              <button md-icon-button><md-icon>settings</md-icon></button>
+            </div>
+          </md-toolbar>
+          <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+            <div flex-gt-sm="60">
+              <md-card>
+                <md-card-title>Products Sales</md-card-title>
+                <md-card-subtitle>usage stats for our products</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+              <md-card>
+                <md-card-title>Customer Activity</md-card-title>
+                <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+            </div>
+            <div flex-gt-sm="40">
+              <md-card>
+                <md-card-title>Alerts</md-card-title>
+                <md-card-subtitle>Items requiring attention</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+              <md-card>
+                <md-card-title>Favorites</md-card-title>
+                <md-card-subtitle>Your favorite products</md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content>
+                  card content
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                  <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                    <span>View More</span>
+                  </a>
+                </md-card-actions>
+              </md-card>
+            </div>
+          </div>
+          <td-layout-footer-inner>
+            Optional inner footer
+          </td-layout-footer-inner>
+        </td-layout-manage-list>
+        <td-layout-footer>
+          <div layout="row" layout-align="start center">
+            <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+          </div>
+        </td-layout-footer>
+      </td-layout-nav>
+    </td-layout>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-content>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-layout>
+          <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+            <md-nav-list>
+              <a *ngFor="let item of routes" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+            </md-nav-list>
+            <div td-navigation-drawer-menu>
+              <md-nav-list>
+                <a *ngFor="let item of usermenu" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+              </md-nav-list>
+            </div>
+          </td-navigation-drawer>
+          <td-layout-nav color="accent">
+            <div td-toolbar-content layout="row" layout-align="start center" flex>
+              <button md-icon-button td-menu-button tdLayoutToggle>
+                <md-icon>menu</md-icon>
+              </button>
+              <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+              <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
+              <span flex></span>
+              <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+              <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+            </div>
+            <td-layout-manage-list #manageList 
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+              <md-toolbar td-sidenav-content>
+                <span>Optional Title</span>
+              </md-toolbar>
+              <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+                <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
+                  <a md-list-item>
+                    <md-icon md-list-icon>{ {item.icon} }</md-icon> { {item.title} }
+                  </a>
+                </ng-template>
+              </md-nav-list>
+              <md-toolbar>
+                <div layout="row" layout-align="start center" flex>
+                  <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+                    <md-icon>arrow_back</md-icon>
+                  </button>
+                  <span>Content Title</span>
+                  <span flex></span>
+                  <button md-icon-button><md-icon>settings</md-icon></button>
+                </div>
+              </md-toolbar>
+              <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+                <div flex-gt-sm="60">
+                  <md-card>
+                    <md-card-title>Products Sales</md-card-title>
+                    <md-card-subtitle>usage stats for our products</md-card-subtitle>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                      card content
+                    </md-card-content>
+                    <md-divider></md-divider>
+                    <md-card-actions>
+                      <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                        <span>View More</span>
+                      </a>
+                    </md-card-actions>
+                  </md-card>
+                  <md-card>
+                    <md-card-title>Customer Activity</md-card-title>
+                    <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                      card content
+                    </md-card-content>
+                    <md-divider></md-divider>
+                    <md-card-actions>
+                      <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                        <span>View More</span>
+                      </a>
+                    </md-card-actions>
+                  </md-card>
+                </div>
+                <div flex-gt-sm="40">
+                  <md-card>
+                    <md-card-title>Alerts</md-card-title>
+                    <md-card-subtitle>Items requiring attention</md-card-subtitle>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                      card content
+                    </md-card-content>
+                    <md-divider></md-divider>
+                    <md-card-actions>
+                      <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                        <span>View More</span>
+                      </a>
+                    </md-card-actions>
+                  </md-card>
+                  <md-card>
+                    <md-card-title>Favorites</md-card-title>
+                    <md-card-subtitle>Your favorite products</md-card-subtitle>
+                    <md-divider></md-divider>
+                    <md-card-content>
+                      card content
+                    </md-card-content>
+                    <md-divider></md-divider>
+                    <md-card-actions>
+                      <a md-button color="accent" class="text-upper" [routerLink]="['/']">
+                        <span>View More</span>
+                      </a>
+                    </md-card-actions>
+                  </md-card>
+                </div>
+              </div>
+              <td-layout-footer-inner>
+                Optional inner footer
+              </td-layout-footer-inner>
+            </td-layout-manage-list>
+            <td-layout-footer>
+              <div layout="row" layout-align="start center">
+                <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+              </div>
+            </td-layout-footer>
+          </td-layout-nav>
+        </td-layout>
+      ]]>
+    </td-highlight>
+    <h3 class="md-title">TypeScript:</h3>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { Component, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+        import { TdMediaService } from '@covalent/core';
+
+        @Component({
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          selector: 'layouts-manage-list',
+          styleUrls: ['./manage-list.component.scss'],
+          templateUrl: './manage-list.component.html',
+          animations: [fadeAnimation],
+        })
+        export class ManageListComponent implements AfterViewInit {
+
+          routes: Object[] = [{
+              icon: 'home',
+              route: '.',
+              title: 'Home',
+            }, {
+              icon: 'library_books',
+              route: '.',
+              title: 'Documentation',
+            }, {
+              icon: 'color_lens',
+              route: '.',
+              title: 'Style Guide',
+            }, {
+              icon: 'view_quilt',
+              route: '.',
+              title: 'Layouts',
+            }, {
+              icon: 'picture_in_picture',
+              route: '.',
+              title: 'Components & Addons',
+            },
+          ];
+          usermenu: Object[] = [{
+              icon: 'swap_horiz',
+              route: '.',
+              title: 'Switch account',
+            }, {
+              icon: 'tune',
+              route: '.',
+              title: 'Account settings',
+            }, {
+              icon: 'exit_to_app',
+              route: '.',
+              title: 'Sign out',
+            },
+          ];
+          navmenu: Object[] = [{
+              icon: 'looks_one',
+              route: '.',
+              title: 'First item',
+              description: 'Item description',
+            }, {
+              icon: 'looks_two',
+              route: '.',
+              title: 'Second item',
+              description: 'Item description',
+            }, {
+              icon: 'looks_3',
+              route: '.',
+              title: 'Third item',
+              description: 'Item description',
+            }, {
+              icon: 'looks_4',
+              route: '.',
+              title: 'Fourth item',
+              description: 'Item description',
+            }, {
+              icon: 'looks_5',
+              route: '.',
+              title: 'Fifth item',
+              description: 'Item description',
+            },
+          ];
+
+          constructor(private _changeDetectorRef: ChangeDetectorRef,
+                      public media: TdMediaService) {}
+
+          ngAfterViewInit(): void {
+            // broadcast to all listener observables when loading the page
+            this.media.broadcast();
+            this._changeDetectorRef.detectChanges();
+          }
+
+        }
+
+      ]]>
+    </td-highlight>
+  </md-card-content>
+</md-card>
+<td-readme-loader resourceUrl="platform/core/layout/layout-manage-list/README.md"></td-readme-loader>

@@ -1,13 +1,21 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk';
+
+import { ICanDisable, mixinDisabled } from '../../common/common.module';
+
+export class TdFileDropBase {}
+
+/* tslint:disable-next-line */
+export const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
 
 @Directive({
   selector: '[tdFileDrop]',
+  inputs: ['disabled'],
 })
-export class TdFileDropDirective {
+export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDisable {
 
   private _multiple: boolean = false;
-  private _disabled: boolean = false;
 
   /**
    * multiple?: boolean
@@ -15,17 +23,8 @@ export class TdFileDropDirective {
    * Can also be 'multiple' native attribute.
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
-  }
-
-  /**
-   * disabled?: boolean
-   * Disabled drop events for host element.
-   */
-  @Input('disabled')
-  set disabled(disabled: boolean) {
-    this._disabled = disabled;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
 
   /**
@@ -48,10 +47,11 @@ export class TdFileDropDirective {
    */
   @HostBinding('attr.disabled')
   get disabledBinding(): string {
-    return this._disabled ? '' : undefined;
+    return this.disabled ? '' : undefined;
   }
 
   constructor(private _renderer: Renderer2, private _element: ElementRef) {
+    super();
   }
 
   /**
@@ -61,7 +61,7 @@ export class TdFileDropDirective {
    */
   @HostListener('drop', ['$event'])
   onDrop(event: Event): void {
-    if (!this._disabled) {
+    if (!this.disabled) {
       let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
       let files: FileList = transfer.files;
       if (files.length) {
@@ -82,7 +82,7 @@ export class TdFileDropDirective {
   onDragOver(event: Event): void {
     let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
-    if (this._disabled || (!this._multiple &&
+    if (this.disabled || (!this._multiple &&
       ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
       transfer.dropEffect = 'none';
     } else {
@@ -97,7 +97,7 @@ export class TdFileDropDirective {
    */
   @HostListener('dragenter', ['$event'])
   onDragEnter(event: Event): void {
-    if (!this._disabled) {
+    if (!this.disabled) {
       this._renderer.addClass(this._element.nativeElement, 'drop-zone');
     }
     this._stopEvent(event);

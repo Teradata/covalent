@@ -7,7 +7,7 @@ import {
 import { Component } from '@angular/core';
 import { Router, Routes, RoutesRecognized } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { RouterPathService } from './router.path.service';
+import { RouterPathService } from './router-path.service';
 
 @Component({
   selector: 'fake',

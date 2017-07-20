@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
 import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/material';
+import { coerceBooleanProperty, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
@@ -124,12 +124,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   get value(): any { return this._value; }
 
   /**
-   * uniqueId?: string
-   * Allows selection by [uniqueId] property.
-   */
-  @Input('uniqueId') uniqueId: string;
-
-  /**
    * data?: {[key: string]: any}[]
    * Sets the data to be rendered as rows.
    */
@@ -177,10 +171,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('selectable')
-  set selectable(selectable: string | boolean) {
-    this._selectable = selectable !== '' ? (selectable === 'true' || selectable === true) : true;
+  set selectable(selectable: boolean) {
+    this._selectable = coerceBooleanProperty(selectable);
   }
-  get isSelectable(): boolean {
+  get selectable(): boolean {
     return this._selectable;
   }
 
@@ -190,10 +184,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('clickable')
-  set clickable(clickable: string | boolean) {
-    this._clickable = clickable !== '' ? (clickable === 'true' || clickable === true) : true;
+  set clickable(clickable: boolean) {
+    this._clickable = coerceBooleanProperty(clickable);
   }
-  get isClickable(): boolean {
+  get clickable(): boolean {
     return this._clickable;
   }
 
@@ -203,10 +197,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get isMultiple(): boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 
@@ -216,10 +210,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('sortable')
-  set sortable(sortable: string | boolean) {
-    this._sortable = sortable !== '' ? (sortable === 'true' || sortable === true) : true;
+  set sortable(sortable: boolean) {
+    this._sortable = coerceBooleanProperty(sortable);
   }
-  get isSortable(): boolean {
+  get sortable(): boolean {
     return this._sortable;
   }
 
@@ -300,6 +294,15 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
               private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
+   * compareWith?: function(row, model): boolean
+   * Allows custom comparison between row and model to see if row is selected or not
+   * Default comparation is by object reference
+   */
+  @Input('compareWith') compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
+    return row === model;
+  }
+
+  /**
    * Loads templates and sets them in a map for faster access.
    */
   ngAfterContentInit(): void {
@@ -344,48 +347,54 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Selects or clears all rows depending on 'checked' value.
    */
   selectAll(checked: boolean): void {
+    let toggledRows: any[] = [];
     if (checked) {
       this._data.forEach((row: any) => {
         // skiping already selected rows
         if (!this.isRowSelected(row)) {
           this._value.push(row);
+          // checking which ones are being toggled
+          toggledRows.push(row);
         }
       });
       this._allSelected = true;
       this._indeterminate = true;
     } else {
+      this._data.forEach((row: any) => {
+        // checking which ones are being toggled
+        if (this.isRowSelected(row)) {
+          toggledRows.push(row);
+        }
+      });
       this.clearModel();
       this._allSelected = false;
       this._indeterminate = false;
     }
-    this.onSelectAll.emit({rows: this._value, selected: checked});
+    this.onSelectAll.emit({rows: toggledRows, selected: checked});
   }
 
   /**
    * Checks if row is selected
    */
   isRowSelected(row: any): boolean {
-    // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-    if (this.uniqueId) {
-      return this._value ? this._value.filter((val: any) => {
-        return val[this.uniqueId] === row[this.uniqueId];
-      }).length > 0 : false;
-    }
-    return this._value ? this._value.indexOf(row) > -1 : false;
+    // compare items by [compareWith] function
+    return this._value ? this._value.filter((val: any) => {
+      return this.compareWith(row, val);
+    }).length > 0 : false;
   }
 
   /**
-   * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
+   * Selects or clears a row depending on 'checked' value if the row is 'selected'
    * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, event: Event, currentSelected: number): void {
-    if (this.isSelectable) {
+    if (this.selectable) {
       this.blockEvent(event);
       this._doSelection(row);
 
       // Check to see if Shift key is selected and need to select everything in between
       let mouseEvent: MouseEvent = event as MouseEvent;
-      if (this.isMultiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
+      if (this.multiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
         let firstIndex: number = currentSelected;
         let lastIndex: number = this._lastSelectedIndex;
         if (currentSelected > this._lastSelectedIndex) {
@@ -436,11 +445,12 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * if clickable is true and selectable is false then select the row
    */
   handleRowClick(row: any, event: Event): void {
-    if (this.isClickable) {
+    if (this.clickable) {
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
+      const srcElement: any = event.srcElement || event.currentTarget;
       /* tslint:disable-next-line */
-      if (event.srcElement.getAttribute('stopRowClick') === null) {
+      if (srcElement.getAttribute('stopRowClick') === null) {
         this.onRowClick.emit({row: row});
       }
     }
@@ -480,8 +490,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Descending) {
           index++;
         }
-        /** 
-         * if users presses the up arrow, we focus the prev row 
+        /**
+         * if users presses the up arrow, we focus the prev row
          * unless its the first row, then we move to the last row
          */
         if (index === 0) {
@@ -492,7 +502,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index - 1].focus();
         }
         this.blockEvent(event);
-        if (this.isMultiple && event.shiftKey) {
+        if (this.multiple && event.shiftKey) {
           this._doSelection(this._data[index - 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Ascending;
@@ -506,8 +516,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Ascending) {
           index--;
         }
-        /** 
-         * if users presses the down arrow, we focus the next row 
+        /**
+         * if users presses the down arrow, we focus the next row
          * unless its the last row, then we move to the first row
          */
         if (index === (length - 1)) {
@@ -518,7 +528,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index + 1].focus();
         }
         this.blockEvent(event);
-        if (this.isMultiple && event.shiftKey) {
+        if (this.multiple && event.shiftKey) {
           this._doSelection(this._data[index + 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Descending;
@@ -577,12 +587,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!wasSelected) {
       this._value.push(row);
     } else {
-      // if selection is done by a [uniqueId] it uses it to compare, else it compares by reference.
-      if (this.uniqueId) {
-        row = this._value.filter((val: any) => {
-          return val[this.uniqueId] === row[this.uniqueId];
-        })[0];
-      }
+      // compare items by [compareWith] function
+      row = this._value.filter((val: any) => {
+        return this.compareWith(row, val);
+      })[0];
       let index: number = this._value.indexOf(row);
       if (index > -1) {
         this._value.splice(index, 1);

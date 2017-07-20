@@ -8,7 +8,9 @@ import { Component, DebugElement } from '@angular/core';
 import {
   FormControl, FormsModule, ReactiveFormsModule,
 } from '@angular/forms';
-import { OverlayContainer, MdInputDirective, MdChip, DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/material';
+
+import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk';
+import { OverlayContainer, MdInputDirective, MdChip } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
 
@@ -471,7 +473,7 @@ describe('Component: Chips', () => {
 
   });
 
-  describe('chip removal usage, requires readOnly to be false: ', () => {
+  describe('chip removal usage, requires disabled to be false: ', () => {
     let fixture: ComponentFixture<TdChipRemovalTestComponent>;
     let input: DebugElement;
     let chips: DebugElement;
@@ -668,7 +670,7 @@ describe('Component: Chips', () => {
 
   // more a11y unit tests
 
-  // readOnly usage
+  // disabled usage
 
   // chipAddition usage
 

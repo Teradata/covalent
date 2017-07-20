@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         { "glob": "**/*", "input": "../docs", "output": "./docs/" },
+        { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" },
         "app/assets",
         "platform",
         "favicon.ico"

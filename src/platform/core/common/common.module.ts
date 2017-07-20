@@ -21,6 +21,13 @@ export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
 export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 
 /**
+ * BEHAVIORS
+ */
+
+export { ICanDisable, mixinDisabled } from './behaviors/disabled.mixin';
+export { ICanDisableRipple, mixinDisableRipple } from './behaviors/disable-ripple.mixin';
+
+/**
  * FORMS
  */
 
@@ -47,7 +54,6 @@ import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pi
 import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
-import { RouterPathService } from './services/router.path.service';
 
 const TD_PIPES: Type<any>[] = [
   TdTimeAgoPipe,
@@ -59,6 +65,12 @@ const TD_PIPES: Type<any>[] = [
 
 export { TdTimeAgoPipe, TdTimeDifferencePipe,
          TdBytesPipe, TdDigitsPipe, TdTruncatePipe };
+
+/**
+ * Services
+ */
+
+import { RouterPathService } from './services/router-path.service';
 
 @NgModule({
   imports: [

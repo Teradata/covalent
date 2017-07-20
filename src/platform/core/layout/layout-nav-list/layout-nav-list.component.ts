@@ -1,18 +1,18 @@
-import { Component, Input, ViewChild, forwardRef, Optional, Inject } from '@angular/core';
+import { Component, Input, ViewChild, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
 
-import { TdLayoutComponent } from '../layout.component';
+import { ILayoutTogglable } from '../layout-toggle.class';
 
 @Component({
   selector: 'td-layout-nav-list',
   styleUrls: ['./layout-nav-list.component.scss' ],
   templateUrl: './layout-nav-list.component.html',
 })
-export class TdLayoutNavListComponent {
+export class TdLayoutNavListComponent implements ILayoutTogglable {
 
-  @ViewChild(MdSidenav) _sideNav: MdSidenav;
+  @ViewChild(MdSidenav) sidenav: MdSidenav;
 
   /**
    * toolbarTitle?: string
@@ -68,7 +68,7 @@ export class TdLayoutNavListComponent {
   /**
    * sidenavWidth?: string
    *
-   * Sets the "width" of the sidenav in either "px" or "%" ("%" is not well supported yet as stated in the layout docs)
+   * Sets the "width" of the sidenav in either "px" or "%"
    * Defaults to "350px".
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
@@ -81,13 +81,6 @@ export class TdLayoutNavListComponent {
    * option to set the combined route for the icon, logo, and toolbarTitle.
    */
   @Input('navigationRoute') navigationRoute: string;
-
-  /**
-   * Checks if there is a [TdLayoutComponent] as parent.
-   */
-  get isMainSidenavAvailable(): boolean {
-    return !!this._layout;
-  }
 
   /**
    * Checks if `ESC` should close the sidenav
@@ -104,8 +97,7 @@ export class TdLayoutNavListComponent {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-              @Optional() private _router: Router) {}
+  constructor(@Optional() private _router: Router) {}
 
   handleNavigationClick(): void {
     if (this.routerEnabled) {
@@ -117,28 +109,21 @@ export class TdLayoutNavListComponent {
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
   public toggle(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.toggle(!this._sideNav.opened);
+    return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
   public open(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.open();
+    return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
   public close(): Promise<MdSidenavToggleResult> {
-    return this._sideNav.close();
-  }
-
-  /**
-   * If main sidenav is available, it will open the sidenav of the parent [TdLayoutComponent].
-   */
-  openMainSidenav(): void {
-    this._layout.toggle();
+    return this.sidenav.close();
   }
 
 }
