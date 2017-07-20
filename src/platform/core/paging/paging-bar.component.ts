@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
-import { Dir } from '@angular/cdk';
+import { Dir, coerceNumberProperty } from '@angular/cdk';
 
 export interface IPageChangeEvent {
   page: number;
@@ -176,7 +176,7 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._page = this.initialPage;
+    this._page = coerceNumberProperty(this.initialPage);
     this._calculateRows();
     this._calculatePageLinks();
     this._initialized = true;
@@ -188,7 +188,7 @@ export class TdPagingBarComponent implements OnInit {
    */
   navigateToPage(page: number): boolean {
     if (page === 1 || (page >= 1 && page <= this.maxPage)) {
-      this._page = page;
+      this._page = coerceNumberProperty(Math.floor(page));
       this._handleOnChange();
       return true;
     }
