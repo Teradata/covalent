@@ -42,6 +42,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _editor: any;
   private _componentInitialized: boolean = false;
   private _fromEditor: boolean = false;
+  private _automaticLayout: boolean = false;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -305,6 +306,31 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
 
   /**
+   * automaticLayout?: boolean
+   * Implemented via setInterval that constantly probes for the container's size
+   */
+  @Input('automaticLayout')
+  set automaticLayout(automaticLayout: boolean) {
+    this._automaticLayout = automaticLayout;
+  }
+  get automaticLayout(): boolean {
+    return this._automaticLayout;
+  }
+
+  /**
+   * layout method that calls layout method of editor and instructs the editor to remeasure its container
+   */
+   layout(): void {
+    if (this._componentInitialized) {
+        if (this._webview) {
+            this._webview.send('layout');
+        } else {
+            this._editor.layout();
+        }
+    }
+  }
+
+  /**
    * Returns if in Electron mode or not
    */
   get isElectronApp(): boolean {
@@ -448,6 +474,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     ipcRenderer.sendToHost("onEditorConfigurationChanged", '');
                 });
 
+                // Instruct the editor to remeasure its container
+                ipcRenderer.on('layout', function(){
+                    editor.layout();
+                });
+
                 // need to manually resize the editor any time the window size
                 // changes. See: https://github.com/Microsoft/monaco-editor/issues/28
                 window.addEventListener("resize", function resizeEditor() {
@@ -558,6 +589,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         value: this._value,
         language: this.language,
         theme: this._theme,
+        automaticLayout: this._automaticLayout,
     });
     setTimeout(() => {
         this.onEditorInitialized.emit(undefined);
@@ -565,6 +597,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     this._editor.getModel().onDidChangeContent( (e: any) => {
         this._fromEditor = true;
         this.writeValue(this._editor.getValue());
+    });
+    // need to manually resize the editor any time the window size
+    // changes. See: https://github.com/Microsoft/monaco-editor/issues/28
+    window.addEventListener('resize', () => {
+        this._editor.layout();
     });
   }
 }
