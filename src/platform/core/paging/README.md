@@ -4,7 +4,7 @@
 
 The `(change)` event throws an event with the following interface:
 
-```typscript
+```typescript
 export interface IPageChangeEvent {
   page: number;
   maxPage: number;
@@ -53,10 +53,10 @@ export class MyModule {}
 
 Example for HTML usage:
 
- ```html
+```html
 <td-paging-bar #pagingBar pageSizeAllText="allText" [firstLast]="true|false" [pageSizeAll]="true|false" [pageSizes]="[100,200,500,1000,2000]" [goTo]="true" goToText="Go to:"
-                       [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
+                      [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
   <span td-paging-bar-label hide-xs>Row per page:</span>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
- ```
+```
