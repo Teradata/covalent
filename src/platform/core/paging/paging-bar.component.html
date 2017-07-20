@@ -1,4 +1,4 @@
-<div layout="row" layout-align="end center" class="md-caption td-paging-bar">
+<div layout="row" layout-align="end center" class="md-caption td-paging-bar" (change)="$event.stopPropagation()" >
   <ng-content select="[td-paging-bar-label]"></ng-content>
   <md-select [(ngModel)]="pageSize">
     <ng-template let-size ngFor [ngForOf]="pageSizes">
@@ -8,13 +8,7 @@
     </ng-template>
     <md-option *ngIf="pageSizeAll" [value]="total">{{pageSizeAllText}}</md-option>
   </md-select>
-  <div>
-    <ng-content></ng-content>
-  </div>
-  <p id="td-paging-bar-go-to-text" *ngIf="goTo">{{goToText}}</p>
-  <md-input-container *ngIf="goTo">
-    <input size="8" #goToInput id="goToInput" mdInput [value]="page" (keyup.enter)="navigateToPage(goToInput.value)"/>
-  </md-input-container>
+  <ng-content></ng-content>
   <div class="td-paging-bar-navigation">
     <button [id]="'td-paging-bar-' + id + '-first-page'" md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
       <md-icon>{{ isRTL ? 'skip_next' : 'skip_previous' }}</md-icon>

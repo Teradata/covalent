@@ -27,8 +27,6 @@ Properties:
 | `firstLast?` | `boolean` | Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
 | `pageSizeAll?` | `boolean` | Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
 | `pageSizeAllText?` | `string` | Text for the 'all' menu item in the page size menu. Defaults to 'All'
-| `goTo?` | `boolean` | Shows or hides the Go to input box that allows to jump to a specified page. Defaults to 'false'
-| `goToText?` | `string` | Text for the label on the Go to input. Defaults to 'Go to:'
 | `total` | `number` | Total rows for the pagination.
 | `change` | `function($event: IPageChangeEvent)` | Method to be executed when page size changes or any button is clicked in the paging bar.
 | `navigateToPage` | `function(page: number): boolean` | Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
@@ -54,9 +52,42 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-paging-bar #pagingBar pageSizeAllText="allText" [firstLast]="true|false" [pageSizeAll]="true|false" [pageSizes]="[100,200,500,1000,2000]" [goTo]="true" goToText="Go to:"
-                      [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
+<td-paging-bar #pagingBar
+                pageSizeAllText="allText"
+                [firstLast]="true"
+                [pageSizeAll]="true"
+                [pageSizes]="[100,200,500,1000,2000]"
+                [initialPage]="1"
+                [pageSize]="100"
+                [total]="1345"
+                (change)="change($event)">
   <span td-paging-bar-label hide-xs>Row per page:</span>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>
+```
+
+Example with material input for `Go to` usage: 
+
+```html
+<td-paging-bar #pagingBar
+                [pageSizes]="[50,100,200,500]"
+                pageLinkCount="5"
+                [initialPage]="1"
+                [pageSize]="100"
+                [total]="1345"
+                (change)="change($event)">
+  <span td-paging-bar-label hide-xs>Row per page:</span>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+  <p hide-xs>Go to:</p>
+  <md-input-container>
+    <input #goToInput
+            mdInput
+            type="number"
+            [min]="1"
+            [max]="pagingBar.maxPage"
+            [value]="pagingBar.page"
+            (blur)="goToInput.value = pagingBar.page"
+            (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
+  </md-input-container>
 </td-paging-bar>
 ```
