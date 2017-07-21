@@ -41,7 +41,7 @@ Example for HTML usage:
         flex 
         theme="vs" 
         language="sql"
-        automaticLayout="true"
+        automaticLayout
         [(ngModel)]="model"
         (change)="callBackFunc()">
 </td-code-editor>

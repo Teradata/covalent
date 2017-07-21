@@ -310,10 +310,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    * Implemented via setInterval that constantly probes for the container's size
    */
   @Input('automaticLayout')
-  set automaticLayout(automaticLayout: boolean) {
-    this._automaticLayout = automaticLayout;
+  set automaticLayout(automaticLayout: any) {
+    this._automaticLayout = automaticLayout !== '' ? (automaticLayout === 'true' || automaticLayout === true) : true;
   }
-  get automaticLayout(): boolean {
+  get automaticLayout(): any {
     return this._automaticLayout;
   }
 
