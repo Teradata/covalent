@@ -1,28 +1,4 @@
 <md-card>
-    <md-card-title>Nested Data Table</md-card-title>
-<td-data-table
-  [data]="nestedDataExample"
-  [columns]="nestedColumnsExample"
-  [sortable]="true"
-  sortBy="score"
-  [sortOrder]="sortOrder"
-  (sortChange)="nestedSort($event)">
-  <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
-    <div layout="row">
-      <span flex>{{value.value}} {{value.nested.value}}</span> // or <span flex>{{row[column]}}</span>
-      <md-icon>star</md-icon>
-    </div>
-  </ng-template>
-    <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
-    <div layout="row">
-      <span flex>{{value.value}} {{value.nested.value}} {{value.nested.n.t}}</span> // or <span flex>{{row[column]}}</span>
-      <md-icon>star</md-icon>
-    </div>
-  </ng-template>
-</td-data-table>
-</md-card>
-
-<!--<md-card>
   <md-card-title>Data Table</md-card-title>
   <md-card-subtitle>Display sets of raw data</md-card-subtitle>
   <md-divider></md-divider>
@@ -484,4 +460,31 @@
       ]]>
     </td-highlight>
   </md-card-content>
-</md-card>-->
+</md-card>
+<md-card>
+    <md-card-title>Nested Data Table</md-card-title>
+<td-data-table
+  [data]="nestedFilteredData"
+  [columns]="nestedColumnsExample"
+  [sortable]="true"
+  [sortOrder]="sortOrder"
+  (sortChange)="nestedSort($event)">
+  <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
+    <div layout="column">
+      <div> {{value.level}} {{value.value}}</div>
+      <div><strong>{{value.nested.level}} {{value.nested.value}}</strong></div>
+    </div>
+  </ng-template>
+    <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
+    <div layout="row">
+      <span flex><strong>{{ value.level }} {{ value.value }}</strong></span>
+    </div>
+  </ng-template>
+      <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
+    <div layout="row">
+     <span><strong>{{ value.level }} {{ value.value }}</strong></span>
+    </div>
+  </ng-template>
+</td-data-table>
+<pre>{{ nestedDataExample | json }}</pre>
+</md-card>

@@ -227,6 +227,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!columnName) {
       return;
     }
+    console.log(this.columns, columnName);
     const column: ITdDataTableColumn = this.columns.find((c: any) => c.name === columnName);
     if (!column) {
       throw new Error('[sortBy] must be a valid column name');
@@ -471,7 +472,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if(this._sortBy.nestedSortBy) {
       this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.nestedSortBy });
     } else {
-      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder});
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.name });
     }
   }
 

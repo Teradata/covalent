@@ -218,99 +218,133 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   nestedColumnsExample: ITdDataTableColumn[] = [
-    { name: 'score', label: 'Score', sortable: true, nestedSortBy: 'score.value' },
-    { name: 'predicted', label: 'Predicted', sortable: true, nestedSortBy: 'predicted.nested.n.t' },
+    { name: 'value', label: 'Single Value', sortable: true },
+    { name: 'score', label: 'Sort on second Level', sortable: true, nestedSortBy: 'score.nested.value' },
+    { name: 'predicted', label: 'One Level with multiple properies/keys', sortable: true, nestedSortBy: 'predicted.value' },
+    { name: 'predicted.nested.nested', label: 'Three Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.value' },
   ];
 
   nestedDataExample = [
-    {
+    { "value": 78,
       'score': {
-        'value': 3,
-        'trend': 'down',
+        'value': 8,
+        'level': 'One level',
         'nested': {
           'value': 2,
-          'name': 'nested score 1',
-          'n': {
-            't' : 88
+          'level': 'Two levels',
+          'nested': {
+            'value' : 88,
+            'level' : 'Three levels'
           }
         }
       },
       'predicted': {
         'value': 10,
-        'trend': 'up',
+        'level': 'One Level',
         'nested': {
+          'value': 8,
+          'level': 'Two Levels',
+        'nested':
+        {
           'value': 10,
-          'name': 'nested predicted 1',
-          'n': {
-            't' : 2
+          'level': 'Three levels',
+          'nested': {
+            'value' : 2,
+            'level' : 'Four levels'
           }
-        }
+        }}
       }
     },
-    {
+    { "value": 34,
       'score': {
-        'value': 2,
-        'trend': 'down',
+        'value': 23,
+        'level': 'One level',
         'nested': {
           'value': 1,
-          'name': 'nested score 2',
-          'n': {
-            't' : 3
+          'level': 'Two levels',
+          'nested': {
+            'value' : 3,
+            'level': 'Three levels'
           }
         }
       },
       'predicted': {
         'value': 45,
-        'trend': 'up',
+        'level': 'One Level',
         'nested': {
           'value': 4,
-          'name': 'nested prediscted 2',
-          'n': {
-            't' : 35
+          'level': 'Two levels',
+        'nested':
+        {
+          'value': 6,
+          'level': 'Three levels',
+          'nested': {
+            'value' : 75,
+            'level' : 'Four levels'
           }
-        }
+        }}
       }
     },
         {
+      "value": 55,
       'score': {
         'value': 10,
-        'trend': 'down',
+        'level': 'One level',
         'nested': {
           'value': 4,
-          'name': 'nested score 1',
+          'level': 'Two levels',
+            'nested': {
+            'value' : 20,
+            'level': 'Three levels'
+          }
         }
       },
       'predicted': {
-        'value': 8,
-        'trend': 'up',
+        'value': 22,
+        'level': 'One Level',
         'nested': {
-          'value': 2,
-          'name': 'nested predicted 1',
-            'n': {
-            't' : 4
+          'value': 13,
+          'level': 'Two Levels',
+        'nested':
+        {
+          'value': 96,
+          'level': 'Three levels',
+          'nested': {
+            'value' : 14,
+            'level' : 'Four levels'
           }
-        }
+        }}
       }
     },
     {
+      "value": 34,
       'score': {
-        'value': 28,
-        'trend': 'down',
+        'value': 6,
+        'level': 'One level',
         'nested': {
-          'value': 10,
-          'name': 'nested score 2'
+          'value': 89,
+          'level': 'Two levels',
+            'nested': {
+            'value' : 44,
+            'level': 'Three levels'
+          }
         }
       },
       'predicted': {
-        'value': 15,
-        'trend': 'up',
+        'value': 12,
+        'level': 'One Level',
         'nested': {
-          'value': 34,
-          'name': 'nested prediscted 2',
-          'n': {
-            't' : 10
+          'value': 3,
+          'level': 'Two Levels',
+          'nested':
+        {
+          'value': 26,
+          'level': 'Three levels',
+          'nested': {
+            'value' : 1,
+            'level' : 'Four levels'
           }
-        }
+        }}
       }
     }
   ];
@@ -321,6 +355,7 @@ export class DataTableDemoComponent implements OnInit {
   multiple: boolean = true;
   filterColumn: boolean = true;
   filteredData: any[] = this.data;
+  nestedFilteredData: any[] = this.nestedDataExample;
   filteredTotal: number = this.data.length;
   selectedRows: any[] = [];
 
@@ -329,7 +364,7 @@ export class DataTableDemoComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
   sortBy: string = 'name';
-  nestedSortBy: string = "value"
+  nestedSortBy: string = 'value';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
@@ -348,20 +383,19 @@ export class DataTableDemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.filter();
+    let sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'value', order: this.sortOrder, sortBy: 'value' }
+    this.nestedSort(sortNestedEvent);
   }
 
   nestedSort(sortEvent: ITdDataTableSortChangeEvent): void {
-    console.log(sortEvent);
-    this.sortBy = sortEvent.sortBy;
+    this.nestedSortBy = sortEvent.sortBy;
     this.sortOrder = sortEvent.order;
-    console.log(this.sortBy);
     this.nestedFilter();
   }
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sortBy = sortEvent.name;
     this.sortOrder = sortEvent.order;
-    console.log(sortEvent);
     this.filter();
   }
 
@@ -379,19 +413,18 @@ export class DataTableDemoComponent implements OnInit {
 
   nestedFilter(): void {
     let newData: any[] = this.nestedDataExample;
-    // let excludedColumns: string[] = this.columns
-    //   .filter((column: ITdDataTableColumn) => {
-    //     return ((column.filter === undefined && column.hidden === true) ||
-    //       (column.filter !== undefined && column.filter === false));
-    //   }).map((column: ITdDataTableColumn) => {
-    //     return column.name;
-    //   });
-    // newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
-    // this.filteredTotal = newData.length;
-    newData = this._dataTableService.sortNestedData(newData, this.sortBy, this.sortOrder);
-    // newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
-    console.log(newData);
+    let excludedColumns: string[] = this.nestedColumnsExample
+      .filter((column: ITdDataTableColumn) => {
+        return ((column.filter === undefined && column.hidden === true) ||
+          (column.filter !== undefined && column.filter === false));
+      }).map((column: ITdDataTableColumn) => {
+        return column.nestedSortBy;
+      });
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    newData = this._dataTableService.sortData(newData, this.nestedSortBy, this.sortOrder);
+    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.nestedDataExample = newData;
+    this.nestedFilteredData = newData;
   }
 
   filter(): void {
@@ -401,7 +434,7 @@ export class DataTableDemoComponent implements OnInit {
         return ((column.filter === undefined && column.hidden === true) ||
           (column.filter !== undefined && column.filter === false));
       }).map((column: ITdDataTableColumn) => {
-        return column.name;
+        return column.nestedSortBy;
       });
     newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
