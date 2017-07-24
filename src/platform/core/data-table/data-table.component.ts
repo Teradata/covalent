@@ -870,17 +870,17 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       if (this.columns[index].hidden) {
         return false;
       }
-      if (width.limit || width.max) {
+      if (width.limit || width.max || width.min) {
         fixedTotalWidth += width.value;
       }
-      return !width.limit && !width.max;
+      return !width.limit && !width.max && !width.min;
     }).length;
     let recalculateHostWidth: number = 0;
     if (fixedTotalWidth < this.hostWidth) {
       recalculateHostWidth = this.hostWidth - fixedTotalWidth;
     }
     if (flexibleWidths && recalculateHostWidth) {
-      let newValue: number = recalculateHostWidth / flexibleWidths;
+      let newValue: number = Math.floor(recalculateHostWidth / flexibleWidths);
       let adjustedNumber: number = 0;
       this._widths.forEach((colWidth: IInternalColumnWidth) => {
         if (this._widths[colWidth.index].max && this._widths[colWidth.index].value > newValue ||
@@ -927,6 +927,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     }
     if (this._widths[index].value < this._fakeCols[index].nativeElement.getBoundingClientRect().width) {
       this._widths[index].value = this._fakeCols[index].nativeElement.getBoundingClientRect().width;
+      this._widths[index].min = true;
       this._widths[index].limit = false;
     }
   }
