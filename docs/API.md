@@ -25,6 +25,8 @@
 | `registerLanguage` | `function()` | Registers a custom Language within the editor
 | `editorStyle` | `string` | Additional Styling applied to Editor Container
 | `theme` | `string` | Theme used to style the Editor
+| `automaticLayout` | `boolean` | Implemented via setInterval that constantly probes for the container's size. Defaults to false.
+| `layout` | `function()` | Instructs the editor to remeasure its container
 | `isElectronApp` | `function()` | Returns true or false based on if running in Electron
 
 
@@ -39,6 +41,7 @@ Example for HTML usage:
         flex 
         theme="vs" 
         language="sql"
+        automaticLayout
         [(ngModel)]="model"
         (change)="callBackFunc()">
 </td-code-editor>

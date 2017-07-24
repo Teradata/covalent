@@ -4,7 +4,7 @@ import {
   async,
   ComponentFixture,
 } from '@angular/core/testing';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
 import { By } from '@angular/platform-browser';
 
@@ -17,6 +17,7 @@ describe('Component: App', () => {
     TestBed.configureTestingModule({
       declarations: [
         TdCodeEditorComponent,
+        TestMultipleEditorsComponent,
       ],
       imports: [
       ],
@@ -165,4 +166,67 @@ describe('Component: App', () => {
     })();
   });
 
+  it('should show multiple editors and set the editors values and retrieve that same values from editors', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
+      let component: TestMultipleEditorsComponent = fixture.debugElement.componentInstance;
+      if (component.editor1.isElectronApp) {
+        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+        component.editor2.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+        component.editor3.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.editor1.onEditorInitialized.subscribe(() => {
+          component.editor1.value = 'SELECT * FROM foo;';
+          component.editor1.getValue().subscribe((value: string) => {
+            fixture.whenStable().then(() => {
+              fixture.detectChanges();
+              fixture.changeDetectorRef.detectChanges();
+              expect(value).toBe('SELECT * FROM foo;');
+
+              component.editor2.value = 'SELECT * FROM foo2;';
+              component.editor2.getValue().subscribe((value2: string) => {
+                fixture.whenStable().then(() => {
+                  fixture.detectChanges();
+                  fixture.changeDetectorRef.detectChanges();
+                  expect(value2).toBe('SELECT * FROM foo2;');
+
+                  component.editor3.value = 'SELECT * FROM foo3;';
+                  component.editor3.getValue().subscribe((value3: string) => {
+                    fixture.whenStable().then(() => {
+                      fixture.detectChanges();
+                      fixture.changeDetectorRef.detectChanges();
+                      expect(value3).toBe('SELECT * FROM foo3;');
+                      done();
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    })();
+  });
+
 });
+
+@Component({
+  template: `
+    <div>
+      <td-code-editor #editor1 automaticLayout style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>  
+    </div>
+    <div>
+      <td-code-editor #editor2 automaticLayout style="height: 200px" theme="vs" flex language="HTML"></td-code-editor>  
+    </div>
+    <div>
+      <td-code-editor #editor3 automaticLayout style="height: 200px" theme="vs" flex language="css"></td-code-editor>  
+    </div>`,
+})
+class TestMultipleEditorsComponent {
+  @ViewChild('editor1') editor1: TdCodeEditorComponent;
+  @ViewChild('editor2') editor2: TdCodeEditorComponent;
+  @ViewChild('editor3') editor3: TdCodeEditorComponent;
+}
