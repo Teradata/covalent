@@ -376,8 +376,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
         }
+        row = this._value.filter((val: any) => {
+            return this.compareWith(row, val);
+          })[0];
+        let index: number = this._value.indexOf(row);
+        if (index > -1) {
+          this._value.splice(index, 1);
+        }
       });
-      this.clearModel();
       this._allSelected = false;
       this._indeterminate = false;
     }
@@ -612,7 +618,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       }
     }
     this._calculateCheckboxState();
-    this.onRowSelect.emit({row: row, selected: this.isRowSelected(row)});
+    this.onRowSelect.emit({row: row, selected: !wasSelected});
     this.onChange(this._value);
   }
 
@@ -620,30 +626,15 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Calculate all the state of all checkboxes
    */
   private _calculateCheckboxState(): void {
-    this._calculateAllSelected();
-    this._calculateIndeterminate();
-  }
-
-  /**
-   * Checks if all visible rows are selected.
-   */
-  private _calculateAllSelected(): void {
-    const match: string =
-      this._data ? this._data.find((d: any) => !this.isRowSelected(d)) : true;
-    this._allSelected = typeof match === 'undefined';
-  }
-
-  /**
-   * Checks if all visible rows are selected.
-   */
-  private _calculateIndeterminate(): void {
-    this._indeterminate = false;
     if (this._data) {
+      this._allSelected = typeof this._data.find((d: any) => !this.isRowSelected(d)) === 'undefined';
+      this._indeterminate = false;
       for (let row of this._data) {
         if (!this.isRowSelected(row)) {
           continue;
         }
         this._indeterminate = true;
+        break;
       }
     }
   }
