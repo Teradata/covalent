@@ -358,7 +358,6 @@ export class DataTableDemoComponent implements OnInit {
   nestedFilteredData: any[] = this.nestedDataExample;
   filteredTotal: number = this.data.length;
   selectedRows: any[] = [];
-
   searchTerm: string = '';
   fromRow: number = 1;
   currentPage: number = 1;
@@ -369,7 +368,7 @@ export class DataTableDemoComponent implements OnInit {
   sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'score', order: this.sortOrder, sortBy: 'score.nested.value' };
 
   constructor(private _dataTableService: TdDataTableService,
-    private _dialogService: TdDialogService) { }
+              private _dialogService: TdDialogService) {}
 
   openPrompt(row: any, name: string): void {
     this._dialogService.openPrompt({
@@ -421,7 +420,6 @@ export class DataTableDemoComponent implements OnInit {
         return column.nestedSortBy;
       });
     newData = this._dataTableService.sortData(newData, this.nestedSortBy, this.sortOrder);
-    this.nestedDataExample = newData;
     this.nestedFilteredData = newData;
   }
 
