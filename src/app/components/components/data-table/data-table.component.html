@@ -11,15 +11,17 @@
         <ng-template md-tab-label>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
-            <th td-data-table-column>
-              <md-icon>comment</md-icon>
-              <span>Comments</span>
-            </th>
-            <th td-data-table-column
-                *ngFor="let column of columns"
-                [numeric]="column.numeric">
-              {{column.label}}
-            </th>
+            <tr td-data-table-column-row>
+              <th td-data-table-column>
+                <md-icon>comment</md-icon>
+                <span>Comments</span>
+              </th>
+              <th td-data-table-column
+                  *ngFor="let column of columns"
+                  [numeric]="column.numeric">
+                {{column.label}}
+              </th>
+            </tr>
             <tr td-data-table-row *ngFor="let row of basicData">
               <td td-data-table-cell (click)="openPrompt(row, 'comments')">
                 <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
@@ -37,15 +39,17 @@
         <td-highlight lang="html">
           <![CDATA[
             <table td-data-table>
-              <th td-data-table-column>
-                <md-icon>comment</md-icon>
-                <span>Comments</span>
-              </th>
-              <th td-data-table-column
-                  *ngFor="let column of columns"
-                  [numeric]="column.numeric">
-                { {column.label}}
-              </th>
+              <tr td-data-table-column-row>
+                <th td-data-table-column>
+                  <md-icon>comment</md-icon>
+                  <span>Comments</span>
+                </th>
+                <th td-data-table-column
+                    *ngFor="let column of columns"
+                    [numeric]="column.numeric">
+                  { {column.label}}
+                </th>
+              </tr>
               <tr td-data-table-row *ngFor="let row of basicData">
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
                   <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
@@ -412,6 +416,7 @@
   <md-divider></md-divider>
   <md-card-content>
     <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
+    <p>Use <code><![CDATA[<tr td-data-table-column-row>]]></code> element to generate wrapper atomic column row.</p>
     <p>Use <code><![CDATA[<tr td-data-table-row>]]></code> element to generate wrapper atomic row.</p>
     <p>Use <code><![CDATA[<td td-data-table-cell>]]></code> element to generate wrapper atomic cell.</p>
     <p>Use <code><![CDATA[<th td-data-table-column>]]></code> element to generate wrapper atomic column.</p>

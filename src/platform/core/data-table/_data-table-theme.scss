@@ -1,4 +1,3 @@
-@import '../common/styles/theme-functions';
 
 @mixin td-data-table-theme($theme) {
   $primary: map-get($theme, primary);
@@ -6,17 +5,15 @@
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-
+  
   table[td-data-table] {
+    .td-data-table-column-row,
     .td-data-table-row {
       border-bottom-color: mat-color($foreground, divider);
     }
     .mat-checkbox-cell,
     .mat-checkbox-column {
       color: mat-color($foreground, secondary-text);
-      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
-        color: mat-color($accent, 500);
-      }
     }
     .td-data-table-cell {
       font-size: 14px;
@@ -46,21 +43,16 @@
       }
     }
     &.mat-selectable tbody > tr.td-data-table-row {
-      &:not([disabled]):not(.td-selected):focus {
-        background-color: mat-color($background, 'hover');
-      }
       &.td-selected {
-        background-color: mat-color($accent, 0.12);
+        background-color: mat-color($background, 'app-bar');
+      }
+      &:focus {
+        background-color: mat-color($background, 'hover');
       }
     }
     &.mat-clickable tbody > tr.td-data-table-row {
-      &:not([disabled]){
-        &:hover {
-          background-color: mat-color($background, 'hover');
-        }
-        &:active {
-          background-color: mat-color($accent, 0.12);
-        }
+      &:hover {
+        background-color: mat-color($background, 'hover');
       }
     }
   }

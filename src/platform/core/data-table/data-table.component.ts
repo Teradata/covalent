@@ -1,11 +1,17 @@
-import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
-         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject, Optional, ViewChildren } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy,
+         ChangeDetectorRef, ViewChild, OnDestroy, AfterViewInit,
+         ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject,
+         Optional, ViewChildren, ElementRef, OnInit, AfterContentChecked } from '@angular/core';
+import { DOCUMENT, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { coerceBooleanProperty, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk';
 
-import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
+
+import { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
@@ -24,6 +30,11 @@ export enum TdDataTableSortingOrder {
   Descending = <any>'DESC',
 }
 
+export interface ITdDataTableColumnWidth {
+  min?: number;
+  max?: number;
+}
+
 export interface ITdDataTableColumn {
   name: string;
   label: string;
@@ -34,6 +45,7 @@ export interface ITdDataTableColumn {
   sortable?: boolean;
   hidden?: boolean;
   filter?: boolean;
+  width?: ITdDataTableColumnWidth | number;
 }
 
 export interface ITdDataTableSelectEvent {
@@ -50,9 +62,12 @@ export interface ITdDataTableRowClickEvent {
   row: any;
 }
 
-export enum TdDataTableArrowKeyDirection {
-  Ascending = <any>'ASC',
-  Descending = <any>'DESC',
+export interface IInternalColumnWidth {
+  value: number;
+  limit: boolean;
+  index: number;
+  min?: boolean;
+  max?: boolean;
 }
 
 @Component({
@@ -62,7 +77,77 @@ export enum TdDataTableArrowKeyDirection {
   templateUrl: './data-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent implements ControlValueAccessor, AfterContentInit {
+export class TdDataTableComponent implements ControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+
+  /** reponsive width calculations */
+  private _resizeSubs: Subscription;
+  private _rowsChangedSubs: Subscription;
+  private _hostWidth: number = 0;
+
+  get hostWidth(): number {
+    if (this.selectable) {
+      return this._hostWidth - 42;
+    }
+    return this._hostWidth;
+  }
+
+  private _widths: IInternalColumnWidth[] = [];
+  private _onResize: Subject<void> = new Subject<void>();
+
+  /** column header reposition and viewpoort */
+  private _verticalScrollSubs: Subscription;
+  private _horizontalScrollSubs: Subscription;
+  private _scrollHorizontalOffset: number = 0;
+  private _scrollVerticalOffset: number = 0;
+  private _hostHeight: number = 0;
+
+  private _onHorizontalScroll: Subject<number> = new Subject<number>();
+  private _onVerticalScroll: Subject<number> = new Subject<number>();
+
+  get rowHeight(): number {
+    if (this._rows && this._rows.toArray()[0]) {
+      return this._rows.toArray()[0].height;
+    }
+    return 0;
+  }
+
+  get offsetRows(): number {
+    return 2;
+  }
+
+  get offsetTransform(): SafeStyle {
+    let offset: number = 0;
+    if (this._scrollVerticalOffset > (this.offsetRows * this.rowHeight)) {
+      offset = this.fromRow * this.rowHeight;
+    }
+    return this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
+  }
+
+  get totalHeight(): number {
+    if (this._data) {
+      return this._data.length * this.rowHeight;
+    }
+    return 0;
+  }
+
+  get fromRow(): number {
+    if (this._data) {
+      let fromRow: number = Math.floor((this._scrollVerticalOffset / this.rowHeight)) - this.offsetRows;
+      return fromRow > 0 ? fromRow : 0;
+    }
+    return 0;
+  }
+
+  get toRow(): number {
+    if (this._data) {
+      let toRow: number = Math.floor((this._hostHeight / this.rowHeight)) + this.fromRow + (this.offsetRows * 2);
+      if (toRow > this._data.length) {
+        toRow = this._data.length;
+      }
+      return toRow;
+    }
+    return 0;
+  }
 
   /**
    * Implemented as part of ControlValueAccessor.
@@ -86,15 +171,36 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
   /** shift select */
+  private _shiftPreviouslyPressed: boolean = false;
   private _lastSelectedIndex: number = -1;
-  private _selectedBeforeLastIndex: number = -1;
-  private _lastArrowKeyDirection: TdDataTableArrowKeyDirection;
+  private _firstSelectedIndex: number = -1;
+  private _firstCheckboxValue: boolean = false;
 
   /** template fetching support */
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
 
+  @ViewChild('scrollableDiv') _scrollableDiv: ElementRef;
+
+  @ViewChild('fakeColumns') _colRow: TdDataTableColumnRowComponent;
+  get _fakeCols(): ElementRef[] {
+    if (this._colRow && this._colRow._cols) {
+      let cols: ElementRef[] = this._colRow._cols.toArray();
+      if (this.selectable) {
+        cols.splice(0, 1);
+      }
+      return cols;
+    }
+    return [];
+  }
   @ViewChildren(TdDataTableRowComponent) _rows: QueryList<TdDataTableRowComponent>;
+
+  /**
+   * Returns scroll position to reposition column headers
+   */
+  get columnsLeftScroll(): number {
+    return this._scrollHorizontalOffset * -1;
+  }
 
   /**
    * Returns true if all values are selected.
@@ -130,7 +236,9 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   @Input('data')
   set data(data: any[]) {
     this._data = data;
-    this.refresh();
+    Promise.resolve().then(() => {
+      this.refresh();
+    });
   }
   get data(): any[] {
     return this._data;
@@ -291,15 +399,40 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
                                     new EventEmitter<ITdDataTableSelectAllEvent>();
 
   constructor(@Optional() @Inject(DOCUMENT) private _document: any,
+              private _elementRef: ElementRef,
+              private _domSanitizer: DomSanitizer,
               private _changeDetectorRef: ChangeDetectorRef) {}
 
   /**
    * compareWith?: function(row, model): boolean
    * Allows custom comparison between row and model to see if row is selected or not
-   * Default comparation is by object reference
+   * Default comparation is by reference
    */
   @Input('compareWith') compareWith: (row: any, model: any) => boolean = (row: any, model: any) => {
     return row === model;
+  }
+
+  /**
+   * Initialize observable for resize and scroll events
+   */
+  ngOnInit(): void {
+    // initialize observable for resize calculations
+    this._resizeSubs = this._onResize.asObservable()
+      .debounceTime(10).subscribe(() => {
+      this._calculateWidths();
+    });
+    // initialize observable for scroll reposition
+    this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
+      .subscribe((horizontalScroll: number) => {
+      this._scrollHorizontalOffset = horizontalScroll;
+      this._changeDetectorRef.markForCheck();
+    });
+    this._verticalScrollSubs = this._onVerticalScroll.asObservable()
+      .subscribe((verticalScroll: number) => {
+      this._scrollVerticalOffset = verticalScroll;
+      this._changeDetectorRef.markForCheck();
+    });
+    this._changeDetectorRef.detectChanges();
   }
 
   /**
@@ -312,6 +445,80 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         this._templates.toArray()[i].templateRef,
       );
     }
+  }
+
+  /**
+   * Checks hosts native elements widths to see if it has changed (resize check)
+   */
+  ngAfterContentChecked(): void {
+    if (this._elementRef.nativeElement) {
+      let newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
+      if (this._hostWidth !== newHostWidth) {
+        this._hostWidth = newHostWidth;
+        this._onResize.next();
+      }
+      let newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height - 56;
+      if (this._hostHeight !== newHostHeight) {
+        this._hostHeight = newHostHeight;
+        this._changeDetectorRef.markForCheck();
+      }
+    }
+  }
+
+  /**
+   * Registers to an observable that checks if all rows have been rendered
+   * so we can start calculating the widths
+   */
+  ngAfterViewInit(): void {
+    this._rowsChangedSubs = this._rows.changes.debounceTime(0).subscribe(() => {
+      this._onResize.next();
+    });
+  }
+
+  /**
+   * Unsubscribes observables when data table is destroyed
+   */
+  ngOnDestroy(): void {
+    if (this._resizeSubs) {
+      this._resizeSubs.unsubscribe();
+    }
+    if (this._horizontalScrollSubs) {
+      this._horizontalScrollSubs.unsubscribe();
+    }
+    if (this._verticalScrollSubs) {
+      this._verticalScrollSubs.unsubscribe();
+    }
+    if (this._rowsChangedSubs) {
+      this._rowsChangedSubs.unsubscribe();
+    }
+  }
+
+  /**
+   * Method that gets executed every time there is a scroll event
+   * Calls the scroll observable
+   */
+  handleScroll(event: Event): void {
+    let element: HTMLElement = (<HTMLElement>event.target);
+    if (element) {
+      let horizontalScroll: number = element.scrollLeft;
+      if (this._scrollHorizontalOffset !== horizontalScroll) {
+        this._onHorizontalScroll.next(horizontalScroll);
+      }
+      let verticalScroll: number = element.scrollTop;
+      if (this._scrollVerticalOffset !== verticalScroll) {
+        this._onVerticalScroll.next(verticalScroll);
+      }
+    }
+  }
+
+  /**
+   * Returns the width needed for the columns and cells via index
+   */
+  getWidth(index: number): number {
+    if (this._widths[index]) {
+      return this._widths[index].value;
+    }
+    return undefined;
   }
 
   getCellValue(column: ITdDataTableColumn, value: any): string {
@@ -339,6 +546,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Refreshes data table and rerenders [data] and [columns]
    */
   refresh(): void {
+    this._calculateWidths();
     this._calculateCheckboxState();
     this._changeDetectorRef.markForCheck();
   }
@@ -364,13 +572,13 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         // checking which ones are being toggled
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
-        }
-        row = this._value.filter((val: any) => {
+          let modelRow: any = this._value.filter((val: any) => {
             return this.compareWith(row, val);
           })[0];
-        let index: number = this._value.indexOf(row);
-        if (index > -1) {
-          this._value.splice(index, 1);
+          let index: number = this._value.indexOf(modelRow);
+          if (index > -1) {
+            this._value.splice(index, 1);
+          }
         }
       });
       this._allSelected = false;
@@ -390,14 +598,12 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
-   * Selects or clears a row depending on 'checked' value if the row is 'selected'
+   * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
    * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, event: Event, currentSelected: number): void {
     if (this.selectable) {
       this.blockEvent(event);
-      this._doSelection(row);
-
       // Check to see if Shift key is selected and need to select everything in between
       let mouseEvent: MouseEvent = event as MouseEvent;
       if (this.multiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
@@ -407,21 +613,47 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           firstIndex = this._lastSelectedIndex;
           lastIndex = currentSelected;
         }
-        for (let i: number = firstIndex + 1; i < lastIndex; i++) {
-          this._doSelection(this._data[i]);
+        // if clicking a checkbox behind the initial check, then toggle all selections expect the initial checkbox
+        // else the checkboxes clicked are all after the initial one
+        if ((this._firstSelectedIndex >= currentSelected && this._lastSelectedIndex > this._firstSelectedIndex) ||
+           (this._firstSelectedIndex <= currentSelected && this._lastSelectedIndex < this._firstSelectedIndex)) {
+          for (let i: number = firstIndex; i <= lastIndex; i++) {
+            if (this._firstSelectedIndex !== i) {
+              this._doSelection(this._data[i]);
+            }
+          }
+        } else if ((this._firstSelectedIndex > currentSelected) || (this._firstSelectedIndex < currentSelected)) {
+          // change indexes depending on where the next checkbox is selected (before or after)
+          if (this._firstSelectedIndex > currentSelected) {
+            lastIndex--;
+          } else if (this._firstSelectedIndex < currentSelected) {
+            firstIndex++;
+          }
+          for (let i: number = firstIndex; i <= lastIndex; i++) {
+            let rowSelected: boolean = this.isRowSelected(this._data[i]);
+            // if row is selected and first checkbox was selected
+            // or if row was unselected and first checkbox was unselected
+            // we ignore the toggle
+            if ((this._firstCheckboxValue && !rowSelected) ||
+                (!this._firstCheckboxValue && rowSelected)) {
+              this._doSelection(this._data[i]);
+            } else if (this._shiftPreviouslyPressed) {
+              // else if the checkbox selected was in the middle of the last selection and the first selection
+              // then we undo the selections
+              if ((currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
+                  (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex)) {
+                this._doSelection(this._data[i]);
+              }
+            }
+          }
         }
+        this._shiftPreviouslyPressed = true;
+      } else if (mouseEvent && !mouseEvent.shiftKey) {
+        this._firstCheckboxValue = this._doSelection(row);
+        this._shiftPreviouslyPressed = false;
+        this._firstSelectedIndex = currentSelected;
       }
-      // set the last selected attribute unless the last selected unchecked a row
-      if (this.isRowSelected(this._data[currentSelected])) {
-        this._selectedBeforeLastIndex = this._lastSelectedIndex;
-        this._lastSelectedIndex = currentSelected;
-      } else {
-        this._lastSelectedIndex = this._selectedBeforeLastIndex;
-      }
-      // everything is unselected so start over
-      if (!this._indeterminate && !this._allSelected) {
-        this._lastSelectedIndex = -1;
-      }
+      this._lastSelectedIndex = currentSelected;
     }
   }
 
@@ -480,64 +712,54 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Handle all keyup events when focusing a data table row
    */
   _rowKeyup(event: KeyboardEvent, row: any, index: number): void {
-    let length: number;
-    let rows: TdDataTableRowComponent[];
     switch (event.keyCode) {
       case ENTER:
       case SPACE:
         /** if user presses enter or space, the row should be selected */
-        this.select(row, event, index);
+        if (this.selectable) {
+          this._doSelection(this._data[this.fromRow + index]);
+        }
         break;
       case UP_ARROW:
-        rows = this._rows.toArray();
-        length = rows.length;
-
-        // check to see if changing direction and need to toggle the current row
-        if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Descending) {
-          index++;
-        }
         /**
          * if users presses the up arrow, we focus the prev row
          * unless its the first row, then we move to the last row
          */
         if (index === 0) {
           if (!event.shiftKey) {
-            rows[length - 1].focus();
+            this._scrollableDiv.nativeElement.scrollTop = this.totalHeight;
+            let subs: Subscription = this._rows.changes.subscribe(() => {
+              subs.unsubscribe();
+              this._rows.toArray()[this._rows.toArray().length - 1].focus();
+            });
           }
         } else {
-          rows[index - 1].focus();
+          this._rows.toArray()[index - 1].focus();
         }
         this.blockEvent(event);
-        if (this.multiple && event.shiftKey) {
-          this._doSelection(this._data[index - 1]);
-          // if the checkboxes are all unselected then start over otherwise handle changing direction
-          this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Ascending;
+        if (this.selectable && this.multiple && event.shiftKey && this.fromRow + index >= 0) {
+          this._doSelection(this._data[this.fromRow + index]);
         }
         break;
       case DOWN_ARROW:
-        rows = this._rows.toArray();
-        length = rows.length;
-
-        // check to see if changing direction and need to toggle the current row
-        if (this._lastArrowKeyDirection === TdDataTableArrowKeyDirection.Ascending) {
-          index--;
-        }
         /**
          * if users presses the down arrow, we focus the next row
          * unless its the last row, then we move to the first row
          */
-        if (index === (length - 1)) {
+        if (index === (this._rows.toArray().length - 1)) {
           if (!event.shiftKey) {
-           rows[0].focus();
+            this._scrollableDiv.nativeElement.scrollTop = 0;
+            let subs: Subscription = this._rows.changes.subscribe(() => {
+              subs.unsubscribe();
+              this._rows.toArray()[0].focus();
+            });
           }
         } else {
-          rows[index + 1].focus();
+          this._rows.toArray()[index + 1].focus();
         }
         this.blockEvent(event);
-        if (this.multiple && event.shiftKey) {
-          this._doSelection(this._data[index + 1]);
-          // if the checkboxes are all unselected then start over otherwise handle changing direction
-          this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Descending;
+        if (this.selectable && this.multiple && event.shiftKey && this.fromRow + index < this._data.length) {
+          this._doSelection(this._data[this.fromRow + index]);
         }
         break;
       default:
@@ -585,7 +807,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   /**
    * Does the actual Row Selection
    */
-  private _doSelection(row: any): void {
+  private _doSelection(row: any): boolean {
     let wasSelected: boolean = this.isRowSelected(row);
     if (!this._multiple) {
       this.clearModel();
@@ -605,6 +827,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     this._calculateCheckboxState();
     this.onRowSelect.emit({row: row, selected: !wasSelected});
     this.onChange(this._value);
+    return !wasSelected;
   }
 
   /**
@@ -622,5 +845,97 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         break;
       }
     }
+  }
+
+  /**
+   * Calculates the widths for columns and cells depending on content
+   */
+  private _calculateWidths(): void {
+    if (this._fakeCols.length) {
+      this._widths = [];
+      this._fakeCols.forEach((cell: ElementRef, index: number) => {
+        this._adjustColumnWidth(index, this._calculateWidth(this._fakeCols, index));
+      });
+      this._adjustColumnWidhts();
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  /**
+   * Adjusts columns after calculation to see if they need to be recalculated.
+   */
+  private _adjustColumnWidhts(): void {
+    let fixedTotalWidth: number = 0;
+    let flexibleWidths: number = this._widths.filter((width: IInternalColumnWidth, index: number) => {
+      if (this.columns[index].hidden) {
+        return false;
+      }
+      if (width.limit || width.max) {
+        fixedTotalWidth += width.value;
+      }
+      return !width.limit && !width.max;
+    }).length;
+    let recalculateHostWidth: number = 0;
+    if (fixedTotalWidth < this.hostWidth) {
+      recalculateHostWidth = this.hostWidth - fixedTotalWidth;
+    }
+    if (flexibleWidths && recalculateHostWidth) {
+      let newValue: number = recalculateHostWidth / flexibleWidths;
+      let adjustedNumber: number = 0;
+      this._widths.forEach((colWidth: IInternalColumnWidth) => {
+        if (this._widths[colWidth.index].max && this._widths[colWidth.index].value > newValue ||
+            this._widths[colWidth.index].min && this._widths[colWidth.index].value < newValue ||
+            !this._widths[colWidth.index].limit) {
+          this._adjustColumnWidth(colWidth.index, newValue);
+          adjustedNumber++;
+        }
+      });
+      let newFlexibleWidths: number = this._widths.filter((width: IInternalColumnWidth) => {
+        return !width.limit && !width.max;
+      }).length;
+      if (newFlexibleWidths !== adjustedNumber && newFlexibleWidths !== flexibleWidths) {
+        this._adjustColumnWidhts();
+      }
+    }
+  }
+
+  /**
+   * Adjusts a single column to see if it can be recalculated
+   */
+  private _adjustColumnWidth(index: number, value: number): void {
+    this._widths[index] = {
+      value: value,
+      index: index,
+      limit: false,
+      min: false,
+      max: false,
+    };
+    if (this.columns[index]) {
+      if (typeof this.columns[index].width === 'object') {
+        let widthOpts: ITdDataTableColumnWidth = <ITdDataTableColumnWidth>this.columns[index].width;
+        if (widthOpts && widthOpts.min >= this._widths[index].value) {
+          this._widths[index].value = widthOpts.min;
+          this._widths[index].min = true;
+        } else if (widthOpts && widthOpts.max <= this._widths[index].value) {
+          this._widths[index].value = widthOpts.max;
+          this._widths[index].max = true;
+        }
+      } else if (typeof this.columns[index].width === 'number') {
+        this._widths[index].value = <number>this.columns[index].width;
+        this._widths[index].limit = true;
+      }
+    }
+    if (this._widths[index].value < this._fakeCols[index].nativeElement.getBoundingClientRect().width) {
+      this._widths[index].value = this._fakeCols[index].nativeElement.getBoundingClientRect().width;
+      this._widths[index].limit = false;
+    }
+  }
+
+  /**
+   * Generic method to calculate column width
+   */
+  private _calculateWidth(elements: ElementRef[], index: number): number {
+    let renderedColumns: ITdDataTableColumn[] = this.columns.filter((col: ITdDataTableColumn) => !col.hidden);
+    return Math.floor(this.hostWidth / renderedColumns.length);
   }
 }
