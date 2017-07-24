@@ -85,7 +85,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-
+  private _tableList: QueryList<TdDataTableComponent>
   /** shift select */
   private _lastSelectedIndex: number = -1;
   private _selectedBeforeLastIndex: number = -1;
@@ -219,6 +219,16 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
+   * tableList?: QueryList[]
+   * Set a QueryList array with all tables within the view.
+   * Used for sorting to check columns for each table.
+   * _results[i]._columns 
+   */
+   @Input('tableList')
+   set tableList(tb: QueryList<TdDataTableComponent> ) {
+     this._tableList = tb;
+   }
+  /**
    * sortBy?: string
    * Sets the active sort column. [sortable] needs to be enabled.
    */
@@ -227,8 +237,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!columnName) {
       return;
     }
-    console.log(this.columns, columnName);
-    const column: ITdDataTableColumn = this.columns.find((c: any) => c.name === columnName);
+    const column: ITdDataTableColumn = this.columns.find((c: any) => c.nestedSortBy === columnName || c.name === columnName);
     if (!column) {
       throw new Error('[sortBy] must be a valid column name');
     }

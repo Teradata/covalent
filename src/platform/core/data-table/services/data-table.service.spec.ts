@@ -28,33 +28,33 @@ describe('Service: TdDataTableService', () => {
   });
 });
 
-let nestedDataExample = [
+ let nestedDataExample = [
     { "value": 78,
       'score': {
         'value': 8,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 2,
-          'level': 'Two levels',
+          'level': 'Second level',
           'nested': {
             'value' : 88,
-            'level' : 'Three levels'
+            'level' : 'Third level'
           }
         }
       },
       'predicted': {
         'value': 10,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 8,
-          'level': 'Two Levels',
+          'level': 'Second Level',
         'nested':
         {
           'value': 10,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 2,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -62,29 +62,29 @@ let nestedDataExample = [
     { "value": 34,
       'score': {
         'value': 23,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 1,
-          'level': 'Two levels',
+          'level': 'Second level',
           'nested': {
             'value' : 3,
-            'level': 'Three levels'
+            'level': 'Third level'
           }
         }
       },
       'predicted': {
         'value': 45,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 4,
-          'level': 'Two levels',
+          'level': 'Second level',
         'nested':
         {
           'value': 6,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 75,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -93,29 +93,29 @@ let nestedDataExample = [
       "value": 55,
       'score': {
         'value': 10,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 4,
-          'level': 'Two levels',
+          'level': 'Second level',
             'nested': {
             'value' : 20,
-            'level': 'Three levels'
+            'level': 'Third level'
           }
         }
       },
       'predicted': {
         'value': 22,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 13,
-          'level': 'Two Levels',
+          'level': 'Second Level',
         'nested':
         {
           'value': 96,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 14,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -124,29 +124,29 @@ let nestedDataExample = [
       "value": 34,
       'score': {
         'value': 6,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 89,
-          'level': 'Two levels',
+          'level': 'Second levels',
             'nested': {
             'value' : 44,
-            'level': 'Three levels'
+            'level': 'Third levels'
           }
         }
       },
       'predicted': {
         'value': 12,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 3,
-          'level': 'Two Levels',
+          'level': 'Second Level',
           'nested':
         {
           'value': 26,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 1,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }

@@ -384,7 +384,259 @@
     </div>
   </md-card-actions>
 </md-card>
+<md-card>
+    <md-card-content>
+    <h3 class="md-title">Data Table sorting using nested objects</h3>
+    <h4 class="md-subhead">using ng-template to show additional related data.</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <div layout="row" layout-align="start center" class="pad">
+          <span class="md-title">Title here</span>
+        </div>
+        <md-divider></md-divider>
+          <div layout="row" layout-align="start center" class="pad">
+            <span class="md-title">Title here</span>
+          </div>
+          <md-divider></md-divider>
+          <td-data-table
+            [data]="nestedFilteredData"
+            [columns]="nestedColumnsExample"
+            [sortable]="true"
+            [sortOrder]="sortOrder"
+            [sortBy]="nestedSortBy"
+            (sortChange)="nestedSort($event)">
+            <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
+              <div layout="column">
+                <div> {{ value.level }} {{ value.value }}</div>
+                <div><strong>{{ value.nested.level }} {{ value.nested.value }}</strong></div>
+              </div>
+            </ng-template>
+              <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
+                <div layout="row">
+                  <span flex><strong>{{ value.level }} {{ value.value }}</strong></span>
+                </div>
+            </ng-template>
+                <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
+                  <div layout="row">
+                    <span><strong>{{ value.level}} {{ value.value }}</strong></span>
+                  </div>
+            </ng-template>
+          </td-data-table>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <div layout="row" layout-align="start center" class="pad">
+            <span class="md-title">Title here</span>
+          </div>
+          <md-divider></md-divider>
+          <td-data-table
+            [data]="nestedFilteredData"
+            [columns]="nestedColumnsExample"
+            [sortable]="true"
+            [sortOrder]="sortOrder"
+            [sortBy]="nestedSortBy"
+            (sortChange)="nestedSort($event)">
+            <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
+              <div layout="column">
+                <div> { {value.level} } { {value.value} }</div>
+                <div><strong>{ {value.nested.level} } { {value.nested.value} }</strong></div>
+              </div>
+            </ng-template>
+              <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
+                <div layout="row">
+                  <span flex><strong>{ {value.level} } { {value.value} }</strong></span>
+                </div>
+            </ng-template>
+                <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
+                  <div layout="row">
+                    <span><strong>{ {value.level} } { {value.value} }</strong></span>
+                  </div>
+            </ng-template>
+          </td-data-table>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
+            import { IPageChangeEvent } from '@covalent/core';
+            ...
+            })
+            export class Demo {
 
+              nestedColumnsExample: ITdDataTableColumn[] = [
+                { name: 'value', label: 'Single Value', sortable: true },
+                { name: 'score', label: 'Sort on second Level', sortable: true, nestedSortBy: 'score.nested.value' },
+                { name: 'predicted', label: 'One Level with multiple properies/keys', sortable: true, nestedSortBy: 'predicted.value' },
+                { name: 'predicted.nested.nested', label: 'Three Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.value' },
+              ];
+
+              nestedDataExample = [
+                { "value": 78,
+                  'score': {
+                    'value': 8,
+                    'level': 'First level',
+                    'nested': {
+                      'value': 2,
+                      'level': 'Second level',
+                      'nested': {
+                        'value' : 88,
+                        'level' : 'Third level'
+                      }
+                    }
+                  },
+                  'predicted': {
+                    'value': 10,
+                    'level': 'First Level',
+                    'nested': {
+                      'value': 8,
+                      'level': 'Second Level',
+                    'nested':
+                    {
+                      'value': 10,
+                      'level': 'Third level',
+                      'nested': {
+                        'value' : 2,
+                        'level' : 'Fourth level'
+                      }
+                    }}
+                  }
+                },
+                { "value": 34,
+                  'score': {
+                    'value': 23,
+                    'level': 'First level',
+                    'nested': {
+                      'value': 1,
+                      'level': 'Second level',
+                      'nested': {
+                        'value' : 3,
+                        'level': 'Third level'
+                      }
+                    }
+                  },
+                  'predicted': {
+                    'value': 45,
+                    'level': 'First Level',
+                    'nested': {
+                      'value': 4,
+                      'level': 'Second level',
+                    'nested':
+                    {
+                      'value': 6,
+                      'level': 'Third level',
+                      'nested': {
+                        'value' : 75,
+                        'level' : 'Fourth level'
+                      }
+                    }}
+                  }
+                },
+                    {
+                  "value": 55,
+                  'score': {
+                    'value': 10,
+                    'level': 'First level',
+                    'nested': {
+                      'value': 4,
+                      'level': 'Second level',
+                        'nested': {
+                        'value' : 20,
+                        'level': 'Third level'
+                      }
+                    }
+                  },
+                  'predicted': {
+                    'value': 22,
+                    'level': 'First Level',
+                    'nested': {
+                      'value': 13,
+                      'level': 'Second Level',
+                    'nested':
+                    {
+                      'value': 96,
+                      'level': 'Third level',
+                      'nested': {
+                        'value' : 14,
+                        'level' : 'Fourth level'
+                      }
+                    }}
+                  }
+                },
+                {
+                  "value": 34,
+                  'score': {
+                    'value': 6,
+                    'level': 'First level',
+                    'nested': {
+                      'value': 89,
+                      'level': 'Second levels',
+                        'nested': {
+                        'value' : 44,
+                        'level': 'Third levels'
+                      }
+                    }
+                  },
+                  'predicted': {
+                    'value': 12,
+                    'level': 'First Level',
+                    'nested': {
+                      'value': 3,
+                      'level': 'Second Level',
+                      'nested':
+                    {
+                      'value': 26,
+                      'level': 'Third level',
+                      'nested': {
+                        'value' : 1,
+                        'level' : 'Fourth level'
+                      }
+                    }}
+                  }
+                }
+              ];
+
+              nestedSortBy: string;
+              sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+              sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'score', order: this.sortOrder, sortBy: 'score.nested.value' };
+
+              constructor(private _dataTableService: TdDataTableService) {}
+
+              ngOnInit(): void {
+                this.nestedSort(sortNestedEvent);
+              }
+
+              nestedSort(sortEvent: ITdDataTableSortChangeEvent): void {
+                this.nestedSortBy = sortEvent.sortBy;
+                this.sortOrder = sortEvent.order;
+                this.nestedFilter();
+              }
+
+              nestedFilter(): void {
+                let newData: any[] = this.nestedDataExample;
+                let excludedColumns: string[] = this.nestedColumnsExample
+                  .filter((column: ITdDataTableColumn) => {
+                    return ((column.filter === undefined && column.hidden === true) ||
+                      (column.filter !== undefined && column.filter === false));
+                  }).map((column: ITdDataTableColumn) => {
+                    return column.nestedSortBy;
+                  });
+                newData = this._dataTableService.sortData(newData, this.nestedSortBy, this.sortOrder);
+                this.nestedDataExample = newData;
+                this.nestedFilteredData = newData;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+</md-card-content>
+</md-card>
 <td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
 
 <md-card>
@@ -460,31 +712,4 @@
       ]]>
     </td-highlight>
   </md-card-content>
-</md-card>
-<md-card>
-    <md-card-title>Nested Data Table</md-card-title>
-<td-data-table
-  [data]="nestedFilteredData"
-  [columns]="nestedColumnsExample"
-  [sortable]="true"
-  [sortOrder]="sortOrder"
-  (sortChange)="nestedSort($event)">
-  <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
-    <div layout="column">
-      <div> {{value.level}} {{value.value}}</div>
-      <div><strong>{{value.nested.level}} {{value.nested.value}}</strong></div>
-    </div>
-  </ng-template>
-    <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
-    <div layout="row">
-      <span flex><strong>{{ value.level }} {{ value.value }}</strong></span>
-    </div>
-  </ng-template>
-      <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
-    <div layout="row">
-     <span><strong>{{ value.level }} {{ value.value }}</strong></span>
-    </div>
-  </ng-template>
-</td-data-table>
-<pre>{{ nestedDataExample | json }}</pre>
 </md-card>

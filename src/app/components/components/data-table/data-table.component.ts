@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -228,29 +228,29 @@ export class DataTableDemoComponent implements OnInit {
     { "value": 78,
       'score': {
         'value': 8,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 2,
-          'level': 'Two levels',
+          'level': 'Second level',
           'nested': {
             'value' : 88,
-            'level' : 'Three levels'
+            'level' : 'Third level'
           }
         }
       },
       'predicted': {
         'value': 10,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 8,
-          'level': 'Two Levels',
+          'level': 'Second Level',
         'nested':
         {
           'value': 10,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 2,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -258,29 +258,29 @@ export class DataTableDemoComponent implements OnInit {
     { "value": 34,
       'score': {
         'value': 23,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 1,
-          'level': 'Two levels',
+          'level': 'Second level',
           'nested': {
             'value' : 3,
-            'level': 'Three levels'
+            'level': 'Third level'
           }
         }
       },
       'predicted': {
         'value': 45,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 4,
-          'level': 'Two levels',
+          'level': 'Second level',
         'nested':
         {
           'value': 6,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 75,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -289,29 +289,29 @@ export class DataTableDemoComponent implements OnInit {
       "value": 55,
       'score': {
         'value': 10,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 4,
-          'level': 'Two levels',
+          'level': 'Second level',
             'nested': {
             'value' : 20,
-            'level': 'Three levels'
+            'level': 'Third level'
           }
         }
       },
       'predicted': {
         'value': 22,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 13,
-          'level': 'Two Levels',
+          'level': 'Second Level',
         'nested':
         {
           'value': 96,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 14,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -320,29 +320,29 @@ export class DataTableDemoComponent implements OnInit {
       "value": 34,
       'score': {
         'value': 6,
-        'level': 'One level',
+        'level': 'First level',
         'nested': {
           'value': 89,
-          'level': 'Two levels',
+          'level': 'Second levels',
             'nested': {
             'value' : 44,
-            'level': 'Three levels'
+            'level': 'Third levels'
           }
         }
       },
       'predicted': {
         'value': 12,
-        'level': 'One Level',
+        'level': 'First Level',
         'nested': {
           'value': 3,
-          'level': 'Two Levels',
+          'level': 'Second Level',
           'nested':
         {
           'value': 26,
-          'level': 'Three levels',
+          'level': 'Third level',
           'nested': {
             'value' : 1,
-            'level' : 'Four levels'
+            'level' : 'Fourth level'
           }
         }}
       }
@@ -364,8 +364,9 @@ export class DataTableDemoComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
   sortBy: string = 'name';
-  nestedSortBy: string = 'value';
+  nestedSortBy: string = 'score.nested.value';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+  sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'score', order: this.sortOrder, sortBy: 'score.nested.value' };
 
   constructor(private _dataTableService: TdDataTableService,
     private _dialogService: TdDialogService) { }
@@ -383,8 +384,7 @@ export class DataTableDemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.filter();
-    let sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'value', order: this.sortOrder, sortBy: 'value' }
-    this.nestedSort(sortNestedEvent);
+    this.nestedSort(this.sortNestedEvent);
   }
 
   nestedSort(sortEvent: ITdDataTableSortChangeEvent): void {
@@ -420,9 +420,7 @@ export class DataTableDemoComponent implements OnInit {
       }).map((column: ITdDataTableColumn) => {
         return column.nestedSortBy;
       });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     newData = this._dataTableService.sortData(newData, this.nestedSortBy, this.sortOrder);
-    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.nestedDataExample = newData;
     this.nestedFilteredData = newData;
   }
@@ -434,7 +432,7 @@ export class DataTableDemoComponent implements OnInit {
         return ((column.filter === undefined && column.hidden === true) ||
           (column.filter !== undefined && column.filter === false));
       }).map((column: ITdDataTableColumn) => {
-        return column.nestedSortBy;
+        return column.name;
       });
     newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
