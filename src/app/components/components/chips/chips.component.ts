@@ -2,6 +2,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
+import { MdChip} from '@angular/material';
+
 @Component({
   selector: 'chips-demo',
   styleUrls: ['./chips.component.scss'],
@@ -16,6 +18,7 @@ export class ChipsDemoComponent implements OnInit {
   disabled: boolean = false;
   chipAddition: boolean = true;
   chipRemoval: boolean = true;
+  events: string[] = [];
 
   filteringAsync: boolean = false;
 
@@ -60,6 +63,22 @@ export class ChipsDemoComponent implements OnInit {
   ngOnInit(): void {
     this.filterStrings('');
     this.filterObjects('');
+  }
+
+  handleChipBlur(event: MdChip): void {
+    this.events.push('Blur Event received from chip');
+  }
+
+  handleChipFocus(event: MdChip): void {
+    this.events.push('Focus Event received from chip');
+  }
+
+  handleAdd(event: any): void {
+    this.events.push('Add chip event received');
+  }
+
+  handleRemove(event: any): void {
+    this.events.push('Remove chip event received');
   }
 
   filterStrings(value: string): void {

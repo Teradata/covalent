@@ -23,6 +23,18 @@
     <div layout="row" layout-align="start center">
       <td-highlight flex [content]="editorVal" [lang]="editorLanguage"></td-highlight>
     </div>
+    <md-tab-group>
+      <md-tab label="app code">
+        <td-code-editor automaticLayout="true" style="height: 200px" theme="vs" flex language="javascript" [(ngModel)]='frontEndJSCode' id="js"></td-code-editor>  
+      </md-tab>
+      <md-tab label="HTML">
+        <td-code-editor automaticLayout="true" style="height: 200px" theme="vs" flex language="HTML" [(ngModel)]='frontEndHTMLCode' id="html"></td-code-editor>  
+      </md-tab>
+      <md-tab label="CSS">
+        <td-code-editor #editor style="height: 200px" theme="vs" flex language="css" [(ngModel)]='frontEndCSSCode' id="css"></td-code-editor>  
+      </md-tab>
+    </md-tab-group>
+    <button md-raised-button color="accent" (click)="editor.layout()" class="text-upper">SetLayout</button>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
