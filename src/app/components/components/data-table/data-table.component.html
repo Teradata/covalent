@@ -396,34 +396,30 @@
           <span class="md-title">Title here</span>
         </div>
         <md-divider></md-divider>
-          <div layout="row" layout-align="start center" class="pad">
-            <span class="md-title">Title here</span>
-          </div>
-          <md-divider></md-divider>
-          <td-data-table
-            [data]="nestedFilteredData"
-            [columns]="nestedColumnsExample"
-            [sortable]="true"
-            [sortOrder]="sortOrder"
-            [sortBy]="nestedSortBy"
-            (sortChange)="nestedSort($event)">
-            <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
-              <div layout="column">
-                <div> {{ value.level }} {{ value.value }}</div>
-                <div><strong>{{ value.nested.level }} {{ value.nested.value }}</strong></div>
+        <td-data-table
+          [data]="nestedFilteredData"
+          [columns]="nestedColumnsExample"
+          [sortable]="true"
+          [sortOrder]="sortOrder"
+          [sortBy]="nestedSortBy"
+          (sortChange)="nestedSort($event)">
+          <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
+            <div layout="column">
+              <div> {{ value.level }} {{ value.value }}</div>
+              <div><strong>{{ value.nested.level }} {{ value.nested.value }}</strong></div>
+            </div>
+          </ng-template>
+            <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
+              <div layout="row">
+                <span flex><strong>{{ value.level }} {{ value.value }}</strong></span>
               </div>
-            </ng-template>
-              <ng-template tdDataTableTemplate="predicted" let-value="value" let-row="row" let-column="column">
+          </ng-template>
+              <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
-                  <span flex><strong>{{ value.level }} {{ value.value }}</strong></span>
+                  <span><strong>{{ value.level}} {{ value.value }}</strong></span>
                 </div>
-            </ng-template>
-                <ng-template tdDataTableTemplate="predicted.nested.nested" let-value="value" let-row="row" let-column="column">
-                  <div layout="row">
-                    <span><strong>{{ value.level}} {{ value.value }}</strong></span>
-                  </div>
-            </ng-template>
-          </td-data-table>
+          </ng-template>
+        </td-data-table>
       </md-tab>
       <md-tab>
         <ng-template md-tab-label>Code</ng-template>
