@@ -85,7 +85,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-  private _tableList: QueryList<TdDataTableComponent>
+  private _tableList: QueryList<TdDataTableComponent>;
   /** shift select */
   private _lastSelectedIndex: number = -1;
   private _selectedBeforeLastIndex: number = -1;
@@ -484,7 +484,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    if(this._sortBy.nestedSortBy) {
+    if (this._sortBy.nestedSortBy) {
       this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.nestedSortBy });
     } else {
       this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.name });

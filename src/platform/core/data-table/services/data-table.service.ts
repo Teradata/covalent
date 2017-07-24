@@ -40,20 +40,20 @@ export class TdDataTableService {
    * Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.
    */
   sortData(data: any[], sortBy: string, sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending): any[] {
-    let sort = sortBy;
+    let sort: string = sortBy;
     if (sortBy) {
       data.sort((a: any, b: any) => {
         let direction: number = 0;
         let compA: any = a;
         let compB: any = b;
 
-      if (sort.indexOf('.') > -1) {
-          let keySplit = sort.split(".");
-          keySplit.map((key, i, arr) => {
+        if (sort.indexOf('.') > -1) {
+          let keySplit: string[] = sort.split('.');
+          keySplit.map((key: string, i: number) => {
             compA = compA[keySplit[i]];
             compB = compB[keySplit[i]];
-        });
-      } else {
+          });
+        } else {
           compA = compA[sort];
           compB = compB[sort];
         }

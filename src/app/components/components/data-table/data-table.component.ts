@@ -2,10 +2,8 @@ import { Component, OnInit, HostBinding, ViewChildren, QueryList, AfterViewInit 
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import {
-  TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-  ITdDataTableSortChangeEvent, ITdDataTableColumn
-} from '../../../../platform/core';
+import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent, 
+          ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -219,13 +217,14 @@ export class DataTableDemoComponent implements OnInit {
 
   nestedColumnsExample: ITdDataTableColumn[] = [
     { name: 'value', label: 'Single Value', sortable: true },
-    { name: 'score', label: 'Sort on second Level', sortable: true, nestedSortBy: 'score.nested.value' },
-    { name: 'predicted', label: 'One Level with multiple properies/keys', sortable: true, nestedSortBy: 'predicted.value' },
+    { name: 'predicted', label: 'One Level with multi  nested values', sortable: true, nestedSortBy: 'predicted.value' },
+    { name: 'score', label: 'Two Levels, sorts on second level value', sortable: true, nestedSortBy: 'score.nested.value' },
     { name: 'predicted.nested.nested', label: 'Three Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.value' },
+    { name: 'predicted.nested.nested.nested', label: 'Four Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.nested.value' },  
   ];
 
-  nestedDataExample = [
-    { "value": 78,
+  nestedDataExample: any[] = [
+    { 'value': 78,
       'score': {
         'value': 8,
         'level': 'First level',
@@ -234,9 +233,9 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Second level',
           'nested': {
             'value' : 88,
-            'level' : 'Third level'
-          }
-        }
+            'level' : 'Third level',
+          },
+        },
       },
       'predicted': {
         'value': 10,
@@ -250,12 +249,12 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Third level',
           'nested': {
             'value' : 2,
-            'level' : 'Fourth level'
-          }
-        }}
-      }
+            'level' : 'Fourth level',
+          },
+        }},
+      },
     },
-    { "value": 34,
+    { 'value': 34,
       'score': {
         'value': 23,
         'level': 'First level',
@@ -264,9 +263,9 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Second level',
           'nested': {
             'value' : 3,
-            'level': 'Third level'
-          }
-        }
+            'level': 'Third level',
+          },
+        },
       },
       'predicted': {
         'value': 45,
@@ -280,13 +279,13 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Third level',
           'nested': {
             'value' : 75,
-            'level' : 'Fourth level'
-          }
-        }}
-      }
+            'level' : 'Fourth level',
+          },
+        }},
+      },
     },
         {
-      "value": 55,
+      'value': 55,
       'score': {
         'value': 10,
         'level': 'First level',
@@ -295,9 +294,9 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Second level',
             'nested': {
             'value' : 20,
-            'level': 'Third level'
-          }
-        }
+            'level': 'Third level',
+          },
+        },
       },
       'predicted': {
         'value': 22,
@@ -311,24 +310,24 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Third level',
           'nested': {
             'value' : 14,
-            'level' : 'Fourth level'
-          }
-        }}
-      }
+            'level' : 'Fourth level',
+          },
+        }},
+      },
     },
     {
-      "value": 34,
+      'value': 34,
       'score': {
         'value': 6,
         'level': 'First level',
         'nested': {
           'value': 89,
-          'level': 'Second levels',
+          'level': 'Second level',
             'nested': {
             'value' : 44,
-            'level': 'Third levels'
-          }
-        }
+            'level': 'Third level',
+          },
+        },
       },
       'predicted': {
         'value': 12,
@@ -342,11 +341,11 @@ export class DataTableDemoComponent implements OnInit {
           'level': 'Third level',
           'nested': {
             'value' : 1,
-            'level' : 'Fourth level'
-          }
-        }}
-      }
-    }
+            'level' : 'Fourth level',
+          },
+        }},
+      },
+    },
   ];
 
   basicData: any[] = this.data.slice(0, 4);
@@ -365,7 +364,6 @@ export class DataTableDemoComponent implements OnInit {
   sortBy: string = 'name';
   nestedSortBy: string = 'score.nested.value';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
-  sortNestedEvent: ITdDataTableSortChangeEvent = {name: 'score', order: this.sortOrder, sortBy: 'score.nested.value' };
 
   constructor(private _dataTableService: TdDataTableService,
               private _dialogService: TdDialogService) {}
@@ -383,7 +381,7 @@ export class DataTableDemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.filter();
-    this.nestedSort(this.sortNestedEvent);
+    this.nestedFilter();
   }
 
   nestedSort(sortEvent: ITdDataTableSortChangeEvent): void {
