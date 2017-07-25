@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
