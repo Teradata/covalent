@@ -1,8 +1,4 @@
-import {
-  TestBed,
-  ComponentFixture,
-} from '@angular/core/testing';
-import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 import { TdDataTableSortingOrder, ITdDataTableColumn } from '../data-table.component';
 import { TdDataTableService } from './data-table.service';
 
