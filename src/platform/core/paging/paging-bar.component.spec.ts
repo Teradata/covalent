@@ -23,9 +23,8 @@ describe('Component: PagingBar', () => {
         CovalentPagingModule,
       ],
       declarations: [
-        TestpageSizeAllTextComponent,
         TestInitialPageComponent,
-        TestPageSizesComponent,
+        TestPageSizeComponent,
         TestFirstLastComponent,
         TestPageLinkCountComponent,
         TestGoToComponent,
@@ -34,143 +33,95 @@ describe('Component: PagingBar', () => {
     TestBed.compileComponents();
   }));
 
-  it('should create the component', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestpageSizeAllTextComponent);
-    let component: TestpageSizeAllTextComponent = fixture.debugElement.componentInstance;
-
+  it('should set [pageSize] dynamically', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
+    let component: TestPageSizeComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    
+    component.pageSize = 100;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(component).toBeTruthy();
-      done();
-    });
-  });
-
-  it('should set pageSizeAllText, pageSizeAll and see it in markup', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestpageSizeAllTextComponent);
-    let component: TestpageSizeAllTextComponent = fixture.debugElement.componentInstance;
-
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
+      expect(pagingComponent.componentInstance.pageSize).toBe(100);
+      component.pageSize = 40;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let pageSizeAllText: string = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSizeAllText;
-        expect(pageSizeAllText).toBe('SomeOtherText');
-
-        component.pageSizeAllText = 'aDifferentText';
+        expect(pagingComponent.componentInstance.pageSize).toBe(40);
+        component.pageSize = 56;
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          pageSizeAllText = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSizeAllText;
-          expect(pageSizeAllText).toBe('aDifferentText');
-
-          let pageSizeAll: boolean = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSizeAll;
-          expect(pageSizeAll).toBe(true);
-
-          component.pageSizeAll = false;
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            pageSizeAll = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSizeAll;
-            expect(pageSizeAll).toBe(false);
-            done();
-          });
-        });
-      });
-    });
-  });
-
-  it('should set pageSizes and then component instantiate with that pageSize', (done: DoneFn) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizesComponent);
-    let component: TestPageSizesComponent = fixture.debugElement.componentInstance;
-
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        let pageSize: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSize;
-        expect(pageSize).toBe(37);
-
-        component.pageSizes = [55, 77];
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          pageSize = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.pageSize;
-          expect(pageSize).toBe(55);
+          expect(pagingComponent.componentInstance.pageSize).toBe(56);
           done();
         });
       });
     });
   });
 
-  it('should set intialPage and then component instantiate with that page', (done: DoneFn) => {
+  it('should set [initialPage] and instanciate the paging bar at that page', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TestInitialPageComponent);
     let component: TestInitialPageComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        let page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
-        expect(page).toBe(3);
-        done();
-      });
+      let page: number = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.page;
+      expect(page).toBe(3);
+      done();
     });
   });
 
-  it('should set firstLast and then see buttons in markup', (done: DoneFn) => {
+  it('should render first/last buttons and then remove them when setting [firstLast] to false', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TestFirstLastComponent);
     let component: TestFirstLastComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
     fixture.whenStable().then(() => {
+      expect(fixture.debugElement.query(By.css('.td-paging-bar-first-page'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('.td-paging-bar-last-page'))).toBeTruthy();
+
+      component.firstLast = false;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let id: string = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-first-page'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-last-page'))).toBeTruthy();
-
-        component.firstLast = false;
-        fixture.detectChanges();
-        fixture.whenStable().then(() => {
-          id = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
-          expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-first-page'))).toBeFalsy();
-          expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-last-page'))).toBeFalsy();
-          done();
-        });
+        expect(fixture.debugElement.query(By.css('.td-paging-bar-first-page'))).toBeFalsy();
+        expect(fixture.debugElement.query(By.css('.td-paging-bar-last-page'))).toBeFalsy();
+        done();
       });
     });
   });
 
-  it('should set pageLinkCount and then see buttons in markup', (done: DoneFn) => {
+  it('should set [pageLinkCount] and then see buttons in markup and then change count', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
     let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
-
+    component.pageLinkCount = 6;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
+      expect(fixture.debugElement.queryAll(By.css('.td-paging-bar-link-page')).length).toBe(6);
+
+      component.pageLinkCount = 4;
+      component.pageSize = 50;
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let id: string = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-0'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-1'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-2'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-3'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-4'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-5'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-6'))).toBeTruthy();
+        expect(fixture.debugElement.queryAll(By.css('.td-paging-bar-link-page')).length).toBe(4);
+        done();
+      });
+    });
+  });
 
-        component.pageLinkCount = 4;
-        component.pageSize = 50;
+  it('should navigate to page link 5 and then 3', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageLinkCountComponent);
+    let component: TestPageLinkCountComponent = fixture.debugElement.componentInstance;
+    let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
+    component.pageLinkCount = 5;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(pagingComponent.componentInstance.page).toBe(1);
+      fixture.debugElement.queryAll(By.css('.td-paging-bar-link-page'))[4].nativeElement.click();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(pagingComponent.componentInstance.page).toBe(5);
+        fixture.debugElement.queryAll(By.css('.td-paging-bar-link-page'))[0].nativeElement.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          fixture.detectChanges();
-          fixture.whenStable().then(() => {
-            id = fixture.debugElement.query(By.directive(TdPagingBarComponent)).componentInstance.id;
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-0'))).toBeTruthy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-1'))).toBeTruthy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-2'))).toBeTruthy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-3'))).toBeTruthy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-4'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-5'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.css('#td-paging-bar-' + id + '-page-link-6'))).toBeFalsy();
-            done();
-          });
+          expect(pagingComponent.componentInstance.page).toBe(3);
+          done();
         });
       });
     });
@@ -255,27 +206,16 @@ describe('Component: PagingBar', () => {
 
 @Component({
   template: `
-    <td-paging-bar [pageSizeAllText]="pageSizeAllText" [pageSizeAll]="pageSizeAll" 
-      [pageSizes]="[50,100,200,500,1000,2000]" [total]="9215"></td-paging-bar>`,
+    <td-paging-bar [pageSize]="pageSize" [total]="9215">
+    </td-paging-bar>`,
 })
-class TestpageSizeAllTextComponent {
-  pageSizeAllText: string = 'SomeOtherText';
-  pageSizeAll: boolean = true;
+class TestPageSizeComponent {
+  pageSize: number = 37;
 }
 
 @Component({
   template: `
-    <td-paging-bar pageSizeAllText="SomeOtherText" [pageSizeAll]="true" 
-      [pageSizes]="pageSizes" [total]="9215"></td-paging-bar>`,
-})
-class TestPageSizesComponent {
-  pageSizes: number[] = [37, 48];
-}
-
-@Component({
-  template: `
-    <td-paging-bar pageSizeAllText="SomeOtherText" [pageSizeAll]="true" 
-      [initialPage]="initialPage" [pageSizes]="[50,100,200,500,1000,2000]" [total]="9215"></td-paging-bar>`,
+    <td-paging-bar [initialPage]="initialPage" [total]="9215"></td-paging-bar>`,
 })
 class TestInitialPageComponent {
   initialPage: number = 3;
@@ -283,8 +223,7 @@ class TestInitialPageComponent {
 
 @Component({
   template: `
-    <td-paging-bar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]"
-      [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="9333"></td-paging-bar>`,
+    <td-paging-bar [firstLast]="firstLast" [total]="9333"></td-paging-bar>`,
 })
 class TestFirstLastComponent {
   firstLast: boolean = true;
@@ -292,8 +231,7 @@ class TestFirstLastComponent {
 
 @Component({
   template: `
-    <td-paging-bar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" [pageLinkCount]="pageLinkCount"
-      [initialPage]="1" [firstLast]="true" [pageSize]="pageSize" [total]="1345"></td-paging-bar>`,
+    <td-paging-bar [pageLinkCount]="pageLinkCount" [pageSize]="pageSize" [total]="1345"></td-paging-bar>`,
 })
 class TestPageLinkCountComponent {
   pageLinkCount: number = 7;
@@ -302,7 +240,7 @@ class TestPageLinkCountComponent {
 
 @Component({
   template: `
-    <td-paging-bar #pagingBar [pageSizes]="[50,100,200,500,1000,2000]" [pageSize]="100" [total]="650">
+    <td-paging-bar #pagingBar [pageSize]="100" [total]="650">
       <p>Go to:</p>
       <md-input-container>
         <input #goToInput

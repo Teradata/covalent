@@ -11,8 +11,8 @@
   font-size: 12px;
   font-weight: normal;
 }
-md-select { 
-  & /deep/ {
+/deep/ md-select { 
+  & {
     .mat-select-trigger {
       min-width: 44px;
       font-size: 12px;
