@@ -116,7 +116,7 @@ export class TdDynamicFormsComponent implements DoCheck {
 
     let duplicates: string[] = [];
     this.elements.forEach((elem: ITdDynamicElementConfig) => {
-
+      this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
