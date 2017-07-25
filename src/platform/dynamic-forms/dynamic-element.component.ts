@@ -1,7 +1,7 @@
 import { Component, Directive, Input, HostBinding, OnInit } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup } from '@angular/forms';
 
 import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
 import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';
@@ -42,7 +42,12 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   /**
    * Sets form control of the element.
    */
-  @Input() dynamicControl: FormControl;
+  @Input() dynamicControl: FormGroup;
+
+  /**
+   * Maps control object in FormGroup.
+   */
+  @Input() elementName: string;
 
   /**
    * Sets label to be displayed.
@@ -106,6 +111,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     ref.instance.control = this.dynamicControl;
+    ref.instance.elementName = this.elementName;
     ref.instance.label = this.label;
     ref.instance.type = this.type;
     ref.instance._value = this._value;
@@ -115,12 +121,18 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     ref.instance.selections = this.selections;
     ref.instance.registerOnChange((value: any) => {
       this.value = value;
+
+      let valueObect: any = {};
+      valueObect[ this.elementName ] = value;
+
+      this.dynamicControl.setValue(valueObect);
     });
     this.registerOnModelChange((value: any) => {
       // fix to check if value is NaN (type=number)
       if (!Number.isNaN(value)) {
         ref.instance.value = value;
       }
+
     });
   }
 

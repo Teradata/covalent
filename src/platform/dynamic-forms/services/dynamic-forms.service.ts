@@ -1,5 +1,5 @@
 import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
-import { Validators, ValidatorFn, FormControl } from '@angular/forms';
+import { Validators, ValidatorFn, FormControl, FormGroup } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
@@ -34,6 +34,10 @@ export interface ITdDynamicElementConfig {
   max?: any;
   selections?: any[];
   default?: any;
+}
+
+export interface ITdFormGroup extends FormGroup {
+  tdElementConfig: ITdDynamicElementConfig;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
