@@ -217,10 +217,10 @@ export class DataTableDemoComponent implements OnInit {
 
   nestedColumnsExample: ITdDataTableColumn[] = [
     { name: 'value', label: 'Single Value', sortable: true },
-    { name: 'predicted', label: 'One Level with multi  nested values', sortable: true, nestedSortBy: 'predicted.value' },
-    { name: 'score', label: 'Two Levels, sorts on second level value', sortable: true, nestedSortBy: 'score.nested.value' },
-    { name: 'predicted.nested.nested', label: 'Three Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.value' },
-    { name: 'predicted.nested.nested.nested', label: 'Four Levels', sortable: true, nestedSortBy: 'predicted.nested.nested.nested.value' },  
+    { name: 'predicted', label: 'One Level with multi  nested values', sortable: true, sortBy: 'predicted.value' },
+    { name: 'score', label: 'Two Levels, sorts on second level value', sortable: true, sortBy: 'score.nested.value' },
+    { name: 'predicted.nested.nested', label: 'Three Levels', sortable: true, sortBy: 'predicted.nested.nested.value' },
+    { name: 'predicted.nested.nested.nested', label: 'Four Levels', sortable: true, sortBy: 'predicted.nested.nested.nested.value' },  
   ];
 
   nestedDataExample: any[] = [
@@ -415,7 +415,7 @@ export class DataTableDemoComponent implements OnInit {
         return ((column.filter === undefined && column.hidden === true) ||
           (column.filter !== undefined && column.filter === false));
       }).map((column: ITdDataTableColumn) => {
-        return column.nestedSortBy;
+        return column.sortBy;
       });
     newData = this._dataTableService.sortData(newData, this.nestedSortBy, this.sortOrder);
     this.nestedFilteredData = newData;

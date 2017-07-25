@@ -34,7 +34,7 @@ export interface ITdDataTableColumn {
   sortable?: boolean;
   hidden?: boolean;
   filter?: boolean;
-  nestedSortBy?: string;
+  sortBy?: string;
 }
 
 export interface ITdDataTableSelectEvent {
@@ -219,16 +219,6 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
-   * tableList?: QueryList[]
-   * Set a QueryList array with all tables within the view.
-   * Used for sorting to check columns for each table.
-   * _results[i]._columns 
-   */
-   @Input('tableList')
-   set tableList(tb: QueryList<TdDataTableComponent> ) {
-     this._tableList = tb;
-   }
-  /**
    * sortBy?: string
    * Sets the active sort column. [sortable] needs to be enabled.
    */
@@ -237,7 +227,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!columnName) {
       return;
     }
-    const column: ITdDataTableColumn = this.columns.find((c: any) => c.nestedSortBy === columnName || c.name === columnName);
+    const column: ITdDataTableColumn = this.columns.find((c: any) => c.sortBy === columnName || c.name === columnName);
     if (!column) {
       throw new Error('[sortBy] must be a valid column name');
     }
@@ -484,8 +474,8 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    if (this._sortBy.nestedSortBy) {
-      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.nestedSortBy });
+    if (this._sortBy.sortBy) {
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.sortBy });
     } else {
       this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.name });
     }
