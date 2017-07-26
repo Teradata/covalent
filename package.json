@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "1.0.0-beta.5-1",
+  "version": "1.0.0-beta.6",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -32,7 +32,7 @@
     "finish-release": "bash scripts/finish-release"
   },
   "engines": {
-    "node": ">6.9",
+    "node": ">=6.11.1 < 7",
     "npm": ">3"
   },
   "repository": {
@@ -56,17 +56,18 @@
   ],
   "dependencies": {
     "@angular/animations": "^4.2.0",
+    "@angular/cdk": "2.0.0-beta.8",
     "@angular/common": "^4.2.0",
     "@angular/compiler": "^4.2.0",
     "@angular/core": "^4.2.0",
     "@angular/forms": "^4.2.0",
     "@angular/http": "^4.2.0",
-    "@angular/material": "2.0.0-beta.6",
+    "@angular/material": "2.0.0-beta.8",
     "@angular/platform-browser": "^4.2.0",
     "@angular/platform-browser-dynamic": "^4.2.0",
     "@angular/platform-server": "^4.2.0",
     "@angular/router": "^4.2.0",
-    "@covalent/code-editor": "^1.0.0-alpha.6-4",
+    "@covalent/code-editor": "^1.0.0-alpha.6-7",
     "@ngx-translate/core": "7.0.0",
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "5.3.1",
@@ -77,7 +78,7 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.12"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@angular/cli": "1.2.0",
@@ -116,7 +117,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "semver": "5.2.0",
     "ts-node": "~2.0.0",
-    "tslint": "^5.2.0",
+    "tslint": "5.2.0",
     "typescript": "2.3.2"
   }
 }

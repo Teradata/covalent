@@ -1,6 +1,8 @@
 import { Headers, RequestOptionsArgs, Response, Request } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
+import { map } from 'rxjs/operator/map';
+import { _catch } from 'rxjs/operator/catch';
 
 export interface IRestTransform {
   (response: Response): any;
@@ -49,12 +51,12 @@ export abstract class RESTService<T> {
 
   public query(query?: IRestQuery, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(undefined, query), this.buildRequestOptions());
-    return request.map((res: Response) => {
+    return _catch.call(map.call(request, (res: Response) => {
       if (transform) {
         return transform(res);
       }
       return this.transform(res);
-    }).catch((error: Response) => {
+    }), (error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -67,12 +69,12 @@ export abstract class RESTService<T> {
 
   public get(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.get(this.buildUrl(id), this.buildRequestOptions());
-    return request.map((res: Response) => {
+    return _catch.call(map.call(request, (res: Response) => {
       if (transform) {
         return transform(res);
       }
       return this.transform(res);
-    }).catch((error: Response) => {
+    }), (error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -86,7 +88,7 @@ export abstract class RESTService<T> {
   public create(obj: T, transform?: IRestTransform): Observable<any> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.post(this.buildUrl(), obj, requestOptions);
-    return request.map((res: Response) => {
+    return _catch.call(map.call(request, (res: Response) => {
       if (res.status === 201) {
         if (transform) {
           return transform(res);
@@ -95,7 +97,7 @@ export abstract class RESTService<T> {
       } else {
         return res;
       }
-    }).catch((error: Response) => {
+    }), (error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -109,7 +111,7 @@ export abstract class RESTService<T> {
   public update(id: string | number, obj: T, transform?: IRestTransform): Observable<any> {
     let requestOptions: RequestOptionsArgs = this.buildRequestOptions();
     let request: Observable<Response> = this.http.patch(this.buildUrl(id), obj, requestOptions);
-    return request.map((res: Response) => {
+    return _catch.call(map.call(request, (res: Response) => {
       if (res.status === 200) {
         if (transform) {
           return transform(res);
@@ -118,7 +120,7 @@ export abstract class RESTService<T> {
       } else {
         return res;
       }
-    }).catch((error: Response) => {
+    }), (error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));
@@ -131,7 +133,7 @@ export abstract class RESTService<T> {
 
   public delete(id: string | number, transform?: IRestTransform): Observable<any> {
     let request: Observable<Response> = this.http.delete(this.buildUrl(id), this.buildRequestOptions());
-    return request.map((res: Response) => {
+    return _catch.call(map.call(request, (res: Response) => {
       if (res.status === 200) {
         if (transform) {
           return transform(res);
@@ -140,7 +142,7 @@ export abstract class RESTService<T> {
       } else {
         return res;
       }
-    }).catch((error: Response) => {
+    }), (error: Response) => {
       return new Observable<any>((subscriber: Subscriber<any>) => {
         try {
           subscriber.error(this.transform(error));

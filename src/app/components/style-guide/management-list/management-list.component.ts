@@ -57,6 +57,7 @@ export class ManagementListComponent implements OnInit {
   }];
   sortKey: string = this.columnOptions[0].value;
   headers: IHeaders = {};
+  pageSize: number = 5;
 
   ngOnInit(): void {
     this.columnOptions.forEach((option: any) => {

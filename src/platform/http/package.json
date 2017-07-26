@@ -1,6 +1,6 @@
 {
   "name": "@covalent/http",
-  "version": "1.0.0-beta.5-1",
+  "version": "1.0.0-beta.6",
   "description": "Teradata UI Platform Http Helper Module",
   "main": "./http.umd.js",
   "module": "./index.js",
@@ -14,10 +14,6 @@
     "interceptor"
   ],
   "scripts": {
-  },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
   },
   "repository": {
     "type": "git",

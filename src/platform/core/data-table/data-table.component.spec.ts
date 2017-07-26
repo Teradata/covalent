@@ -8,14 +8,13 @@ import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { MdPseudoCheckbox } from '@angular/material';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component';
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { MdCheckbox } from '@angular/material';
+import { MdCheckbox, MdPseudoCheckbox } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {

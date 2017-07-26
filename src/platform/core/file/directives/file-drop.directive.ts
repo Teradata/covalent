@@ -1,12 +1,13 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
-class TdFileDropBase {}
+export class TdFileDropBase {}
 
 /* tslint:disable-next-line */
-const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
+export const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
 
 @Directive({
   selector: '[tdFileDrop]',
@@ -22,8 +23,8 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    * Can also be 'multiple' native attribute.
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
 
   /**

@@ -1,6 +1,6 @@
 {
   "name": "@covalent/highlight",
-  "version": "1.0.0-beta.5-1",
+  "version": "1.0.0-beta.6",
   "description": "Teradata UI Platform Highlight Module",
   "main": "./highlight.umd.js",
   "module": "./index.js",
@@ -13,10 +13,6 @@
     "highlightjs"
   ],
   "scripts": {
-  },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
   },
   "repository": {
     "type": "git",

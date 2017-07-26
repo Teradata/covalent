@@ -1,6 +1,6 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
          ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
@@ -24,10 +24,10 @@ export class TdFileInputLabelDirective extends TemplatePortalDirective {
   }
 }
 
-class TdFileInputBase {}
+export class TdFileInputBase {}
 
 /* tslint:disable-next-line */
-const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
+export const _TdFileInputMixinBase = mixinDisabled(TdFileInputBase);
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -72,10 +72,10 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements Contr
    * Sets if multiple files can be dropped/selected at once in [TdFileInputComponent].
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): string | boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 

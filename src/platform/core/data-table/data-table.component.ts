@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
 import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/material';
+import { coerceBooleanProperty, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
@@ -171,10 +171,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('selectable')
-  set selectable(selectable: string | boolean) {
-    this._selectable = selectable !== '' ? (selectable === 'true' || selectable === true) : true;
+  set selectable(selectable: boolean) {
+    this._selectable = coerceBooleanProperty(selectable);
   }
-  get isSelectable(): boolean {
+  get selectable(): boolean {
     return this._selectable;
   }
 
@@ -184,10 +184,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('clickable')
-  set clickable(clickable: string | boolean) {
-    this._clickable = clickable !== '' ? (clickable === 'true' || clickable === true) : true;
+  set clickable(clickable: boolean) {
+    this._clickable = coerceBooleanProperty(clickable);
   }
-  get isClickable(): boolean {
+  get clickable(): boolean {
     return this._clickable;
   }
 
@@ -197,10 +197,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get isMultiple(): boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 
@@ -210,10 +210,10 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Defaults to 'false'
    */
   @Input('sortable')
-  set sortable(sortable: string | boolean) {
-    this._sortable = sortable !== '' ? (sortable === 'true' || sortable === true) : true;
+  set sortable(sortable: boolean) {
+    this._sortable = coerceBooleanProperty(sortable);
   }
-  get isSortable(): boolean {
+  get sortable(): boolean {
     return this._sortable;
   }
 
@@ -365,8 +365,14 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
         }
+        row = this._value.filter((val: any) => {
+            return this.compareWith(row, val);
+          })[0];
+        let index: number = this._value.indexOf(row);
+        if (index > -1) {
+          this._value.splice(index, 1);
+        }
       });
-      this.clearModel();
       this._allSelected = false;
       this._indeterminate = false;
     }
@@ -384,17 +390,17 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   }
 
   /**
-   * Selects or clears a row depending on 'checked' value if the row 'isSelectable'
+   * Selects or clears a row depending on 'checked' value if the row is 'selected'
    * handles cntrl clicks and shift clicks for multi-select
    */
   select(row: any, event: Event, currentSelected: number): void {
-    if (this.isSelectable) {
+    if (this.selectable) {
       this.blockEvent(event);
       this._doSelection(row);
 
       // Check to see if Shift key is selected and need to select everything in between
       let mouseEvent: MouseEvent = event as MouseEvent;
-      if (this.isMultiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
+      if (this.multiple && mouseEvent && mouseEvent.shiftKey && this._lastSelectedIndex > -1) {
         let firstIndex: number = currentSelected;
         let lastIndex: number = this._lastSelectedIndex;
         if (currentSelected > this._lastSelectedIndex) {
@@ -445,7 +451,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * if clickable is true and selectable is false then select the row
    */
   handleRowClick(row: any, event: Event): void {
-    if (this.isClickable) {
+    if (this.clickable) {
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
       const srcElement: any = event.srcElement || event.currentTarget;
@@ -502,7 +508,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index - 1].focus();
         }
         this.blockEvent(event);
-        if (this.isMultiple && event.shiftKey) {
+        if (this.multiple && event.shiftKey) {
           this._doSelection(this._data[index - 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Ascending;
@@ -528,7 +534,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
           rows[index + 1].focus();
         }
         this.blockEvent(event);
-        if (this.isMultiple && event.shiftKey) {
+        if (this.multiple && event.shiftKey) {
           this._doSelection(this._data[index + 1]);
           // if the checkboxes are all unselected then start over otherwise handle changing direction
           this._lastArrowKeyDirection = (!this._allSelected && !this._indeterminate) ? undefined : TdDataTableArrowKeyDirection.Descending;
@@ -597,7 +603,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       }
     }
     this._calculateCheckboxState();
-    this.onRowSelect.emit({row: row, selected: this.isRowSelected(row)});
+    this.onRowSelect.emit({row: row, selected: !wasSelected});
     this.onChange(this._value);
   }
 
@@ -605,30 +611,15 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
    * Calculate all the state of all checkboxes
    */
   private _calculateCheckboxState(): void {
-    this._calculateAllSelected();
-    this._calculateIndeterminate();
-  }
-
-  /**
-   * Checks if all visible rows are selected.
-   */
-  private _calculateAllSelected(): void {
-    const match: string =
-      this._data ? this._data.find((d: any) => !this.isRowSelected(d)) : true;
-    this._allSelected = typeof match === 'undefined';
-  }
-
-  /**
-   * Checks if all visible rows are selected.
-   */
-  private _calculateIndeterminate(): void {
-    this._indeterminate = false;
     if (this._data) {
+      this._allSelected = typeof this._data.find((d: any) => !this.isRowSelected(d)) === 'undefined';
+      this._indeterminate = false;
       for (let row of this._data) {
         if (!this.isRowSelected(row)) {
           continue;
         }
         this._indeterminate = true;
+        break;
       }
     }
   }

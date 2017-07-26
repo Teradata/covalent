@@ -5,14 +5,16 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
-import { MdChip, MdInputDirective, TemplatePortalDirective, MdOption, MdAutocompleteTrigger, UP_ARROW, DOWN_ARROW,
-         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/material';
+import { coerceBooleanProperty, TemplatePortalDirective, UP_ARROW, DOWN_ARROW,
+         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk';
+import { RxChain, debounceTime, filter } from '@angular/cdk';
+import { MdChip, MdInputDirective, MdOption, MdAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/observable/timer';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/debounceTime';
+import { timer } from 'rxjs/observable/timer';
+import { toPromise } from 'rxjs/operator/toPromise';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -38,10 +40,10 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   }
 }
 
-class TdChipsBase {}
+export class TdChipsBase {}
 
 /* tslint:disable-next-line */
-const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
+export const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
 
 @Component({
   providers: [{
@@ -120,10 +122,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Defaults to false.
    */
   @Input('stacked')
-  set stacked(stacked: any) {
-    this._stacked = stacked !== '' ? (stacked === 'true' || stacked === true) : true;
+  set stacked(stacked: boolean) {
+    this._stacked = coerceBooleanProperty(stacked);
   }
-  get stacked(): any {
+  get stacked(): boolean {
     return this._stacked;
   }
   
@@ -132,10 +134,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Blocks custom inputs and only allows selections from the autocomplete list.
    */
   @Input('requireMatch')
-  set requireMatch(requireMatch: any) {
-    this._requireMatch = requireMatch !== '' ? (requireMatch === 'true' || requireMatch === true) : true;
+  set requireMatch(requireMatch: boolean) {
+    this._requireMatch = coerceBooleanProperty(requireMatch);
   }
-  get requireMatch(): any {
+  get requireMatch(): boolean {
     return this._requireMatch;
   }
 
@@ -289,7 +291,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   mousedownListener(event: FocusEvent): void {
      // sets a flag to know if there was a mousedown and then it returns it back to false
     this._isMousedown = true;
-    Observable.timer().toPromise().then(() => {
+    toPromise.call(timer()).then(() => {
       this._isMousedown = false;
     });
   }
@@ -317,7 +319,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     switch (event.keyCode) {
       case TAB:
         // if tabing out, then unfocus the component
-        Observable.timer().toPromise().then(() => {
+        toPromise.call(timer()).then(() => {
           this.removeFocusedState();
         });
         break;
@@ -336,8 +338,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   ngOnInit(): void {
-    this.inputControl.valueChanges
-      .debounceTime(this.debounce)
+    RxChain.from(this.inputControl.valueChanges).call(debounceTime, this.debounce)
       .subscribe((value: string) => {
         this.onInputChange.emit(value ? value : '');
       });
@@ -414,7 +415,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
      * to rerender the next list and at the correct spot
      */
     this._closeAutocomplete();
-    Observable.timer(this.debounce).toPromise().then(() => {
+    toPromise.call(timer(this.debounce)).then(() => {
       this.setFocusedState();
       this._setFirstOptionActive();
       this._openAutocomplete();
@@ -692,7 +693,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   private _setFirstOptionActive(): void {
     if (this.requireMatch) {
       // need to use a timer here to wait until the autocomplete has been opened (end of queue)
-      Observable.timer().toPromise().then(() => {
+      toPromise.call(timer()).then(() => {
         if (this.focused && this._options && this._options.length > 0) {
           // clean up of previously active options
           this._options.toArray().forEach((option: MdOption) => {
@@ -713,7 +714,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = Observable.fromEvent(this._document, 'click').filter((event: MouseEvent) => {
+      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'mousedown')).call(filter, (event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
@@ -723,6 +724,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
       }).subscribe(() => { 
         if (this.focused) {
+          this._autocompleteTrigger.closePanel();
           this.removeFocusedState();
           this.onTouched();
           this._changeDetectorRef.markForCheck();
