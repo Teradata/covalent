@@ -743,7 +743,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'click')).call(filter, (event: MouseEvent) => {
+      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'mousedown')).call(filter, (event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
@@ -753,6 +753,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
       }).subscribe(() => { 
         if (this.focused) {
+          this._autocompleteTrigger.closePanel();
           this.removeFocusedState();
           this.onTouched();
           this._changeDetectorRef.markForCheck();
