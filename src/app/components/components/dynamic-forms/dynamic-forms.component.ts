@@ -104,4 +104,9 @@ export class DynamicFormsDemoComponent {
     selections: ['Test1', 'Test2', 'Test3', 'Test4'],
     required: true,
   }];
+
+  fileElements: ITdDynamicElementConfig[] = [{
+    name: 'file-input',
+    type: TdDynamicElement.FileInput,
+  }];
 }
