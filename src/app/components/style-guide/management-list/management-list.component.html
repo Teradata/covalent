@@ -58,8 +58,13 @@
           </ng-template>
         </md-list>
         <md-divider></md-divider>
-        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
-          <span td-paging-bar-label hide-xs>Row per page:</span>
+        <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
+          <span hide-xs>Rows per page:</span>
+          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+            <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+              {{size}}
+            </md-option>
+          </md-select>
           {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
         </td-paging-bar>
       </md-card>
@@ -124,8 +129,13 @@
             </ng-template>
           </md-list>
           <md-divider></md-divider>
-          <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" total="20">
-            <span td-paging-bar-label hide-xs>Row per page:</span>
+          <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
+            <span hide-xs>Rows per page:</span>
+            <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+              <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                { {size} }
+              </md-option>
+            </md-select>
             { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
           </td-paging-bar>
         </md-card>
@@ -146,6 +156,7 @@
           }];
           sortKey: string = this.columnOptions[0].value;
           headers: IHeaders = {};
+          pageSize: number = 5;
 
           ngOnInit(): void {
             this.columnOptions.forEach((option: any) => {

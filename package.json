@@ -33,7 +33,7 @@
     "combat-training": "bash scripts/combat-training"
   },
   "engines": {
-    "node": ">6.9",
+    "node": ">=6.11.1 < 7",
     "npm": ">3"
   },
   "repository": {
@@ -68,7 +68,7 @@
     "@angular/platform-browser-dynamic": "^4.2.0",
     "@angular/platform-server": "^4.2.0",
     "@angular/router": "^4.2.0",
-    "@covalent/code-editor": "^1.0.0-alpha.6-5",
+    "@covalent/code-editor": "^1.0.0-alpha.6-7",
     "@ngx-translate/core": "7.0.0",
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "5.3.1",
