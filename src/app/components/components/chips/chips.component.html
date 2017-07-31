@@ -381,5 +381,82 @@
     </md-tab>
   </md-tab-group>
 </md-card>
+<md-card>
+  <md-card-title>Chip Events</md-card-title>
+  <md-card-subtitle>Demo showing chip events</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs dynamicHeight>
+    <md-tab>
+      <ng-template md-tab-label>Demo</ng-template>
+      <div class="push">
+        <div class="md-body-1">Type and select a preset option or press enter:</div>
+        <td-chips [items]="filteredStrings"
+                  [(ngModel)]="stringsModel"
+                  placeholder="Enter autocomplete strings"
+                  (add)="handleAdd($event)"
+                  (remove)="handleRemove($event)"
+                  (inputChange)="filterStrings($event)"
+                  (chipBlur)="handleChipBlur($event)"
+                  (chipFocus)="handleChipFocus($event)"
+                  requireMatch>
+        </td-chips>
+      </div>
+      <md-card-content>
+        <p>Event Log: </p>
+        <td-highlight language="bash" [style.height.px]="200" [style.overflow]="'auto'" [content]="events.reverse().join('\n')">
+          {{ 'No Event Logs' }}
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chips [items]="filteredStrings"
+                  [(ngModel)]="stringsModel"
+                  placeholder="Enter autocomplete strings"
+                  (add)="handleAdd($event)"
+                  (remove)="handleRemove($event)"
+                  (inputChange)="filterStrings($event)"
+                  (chipBlur)="handleChipBlur($event)"
+                  (chipFocus)="handleChipFocus($event)"
+                  requireMatch>
+            </td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              events: string[] = [];
+
+              get logTime(): string {
+                return new Date().toISOString().split('T')[1].split('.')[0];
+              }
+
+              handleChipBlur(value: any): void {
+                this.events.push(this.logTime + ': Blur Event received from ' + value);
+              }
+
+              handleChipFocus(value: any): void {
+                this.events.push(this.logTime + ': Focus Event received from ' + value);
+              }
+
+              handleAdd(value: any): void {
+                this.events.push(this.logTime + ': Add Event received from ' + value);
+              }
+
+              handleRemove(value: any): void {
+                this.events.push(this.logTime + ': Remove Event received from ' + value);
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
    
 <td-readme-loader resourceUrl="platform/core/chips/README.md"></td-readme-loader>
