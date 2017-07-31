@@ -4,8 +4,8 @@
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
-                   (blur)="setBlur($event)"
-                   (focus)="setFocus($event)">
+                   (blur)="_handleChipBlur($event, chip)"
+                   (focus)="_handleChipFocus($event, chip)">
       <div layout="row" layout-align="start center" flex>
         <div class="td-chip" layout="row" layout-align="start center" flex>
           <span *ngIf="!_chipTemplate?.templateRef">{{chip}}</span>

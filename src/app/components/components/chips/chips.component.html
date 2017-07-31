@@ -388,16 +388,6 @@
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
       <ng-template md-tab-label>Demo</ng-template>
-      <md-card-content>
-        <p>Event: </p>
-        <md-list>
-          <ng-template let-event ngFor [ngForOf]="events">
-            <a md-list-item layout-align="row">
-              <p md-line> {{event}} </p>
-            </a>
-          </ng-template>
-        </md-list>
-      </md-card-content>
       <div class="push">
         <div class="md-body-1">Type and select a preset option or press enter:</div>
         <td-chips [items]="filteredStrings"
@@ -411,6 +401,12 @@
                   requireMatch>
         </td-chips>
       </div>
+      <md-card-content>
+        <p>Event Log: </p>
+        <td-highlight language="bash" [style.height.px]="200" [style.overflow]="'auto'" [content]="events.reverse().join('\n')">
+          {{ 'No Event Logs' }}
+        </td-highlight>
+      </md-card-content>
     </md-tab>
     <md-tab>
       <ng-template md-tab-label>Code</ng-template>
@@ -436,20 +432,24 @@
             export class ChipsDemoComponent {
               events: string[] = [];
 
-              handleChipBlur(event: MdChip): void {
-                this.events.push('Blur Event received from chip');
+              get logTime(): string {
+                return new Date().toISOString().split('T')[1].split('.')[0];
               }
 
-              handleChipFocus(event: MdChip): void {
-                this.events.push('Focus Event received from chip');
+              handleChipBlur(value: any): void {
+                this.events.push(this.logTime + ': Blur Event received from ' + value);
               }
 
-              handleAdd(event: any): void {
-                this.events.push('Add chip event received');
+              handleChipFocus(value: any): void {
+                this.events.push(this.logTime + ': Focus Event received from ' + value);
               }
 
-              handleRemove(event: any): void {
-                this.events.push('Remove chip event received');
+              handleAdd(value: any): void {
+                this.events.push(this.logTime + ': Add Event received from ' + value);
+              }
+
+              handleRemove(value: any): void {
+                this.events.push(this.logTime + ': Remove Event received from ' + value);
               }
             }
           ]]>

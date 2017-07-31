@@ -60,25 +60,29 @@ export class ChipsDemoComponent implements OnInit {
 
   stackedStringsModel: string[] = this.strings.slice(0, 2);
 
+  get logTime(): string {
+    return new Date().toISOString().split('T')[1].split('.')[0];
+  }
+
   ngOnInit(): void {
     this.filterStrings('');
     this.filterObjects('');
   }
 
-  handleChipBlur(event: MdChip): void {
-    this.events.push('Blur Event received from chip');
+  handleChipBlur(value: any): void {
+    this.events.push(this.logTime + ': Blur Event received from ' + value);
   }
 
-  handleChipFocus(event: MdChip): void {
-    this.events.push('Focus Event received from chip');
+  handleChipFocus(value: any): void {
+    this.events.push(this.logTime + ': Focus Event received from ' + value);
   }
 
-  handleAdd(event: any): void {
-    this.events.push('Add chip event received');
+  handleAdd(value: any): void {
+    this.events.push(this.logTime + ': Add Event received from ' + value);
   }
 
-  handleRemove(event: any): void {
-    this.events.push('Remove chip event received');
+  handleRemove(value: any): void {
+    this.events.push(this.logTime + ': Remove Event received from ' + value);
   }
 
   filterStrings(value: string): void {
