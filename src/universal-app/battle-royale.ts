@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-require('zone.js/dist/zone-node.js');
+import 'zone.js/dist/zone-node.js';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
 
@@ -12,4 +12,4 @@ const result: Promise<any> = renderModuleFactory(CombatTrainingServerModuleNgFac
   document: readFileSync('src/universal-app/index.html', 'utf-8'),
 });
 
-result.then((html: string) => console.log(html));
+result.then((html: string) => process.stdout.write(html));
