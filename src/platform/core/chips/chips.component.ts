@@ -245,6 +245,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @Output('inputChange') onInputChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
+   * chipFocus?: function
+   * Method to be executed when a chip is focused.
+   * Sends chip value as event.
+   */
+  @Output('chipFocus') onChipFocus: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
+   * blur?: function
+   * Method to be executed when a chip is blurred.
+   * Sends chip value as event.
+   */
+  @Output('chipBlur') onChipBlur: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
    * Implemented as part of ControlValueAccessor.
    */
   @Input() set value(v: any) {
@@ -461,6 +475,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     this.inputControl.setValue('');
     this._changeDetectorRef.markForCheck();
     return true;
+  }
+
+  /**
+   * Sets blur of chip and sends out event
+   */
+  _handleChipBlur(event: FocusEvent, value: any): void {
+    this.onChipBlur.emit(value);
+  }
+
+  /**
+   * Sets focus of chip and sends out event
+   */
+  _handleChipFocus(event: FocusEvent, value: any): void {
+    this.onChipFocus.emit(value);
   }
 
   _handleFocus(): boolean {
