@@ -7,18 +7,15 @@
                       (keyup.backspace)="fileInput.clear()"
                       flex>
     <input mdInput
-          [value]="value?.length ? (value?.length + ' files') : value?.name"
+          [value]="value?.name"
           [placeholder]="label"
           readonly/>
   </md-input-container>
   <button md-icon-button *ngIf="value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
     <md-icon>cancel</md-icon>
   </button>
-  <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="value" multiple>
+  <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="value">
     <md-icon>folder</md-icon>
-    <span class="text-upper">Browse</span>
+    <span>{{ label }}</span>
   </td-file-input>
-  <span>
-    <button md-raised-button color="accent" [disabled]="!value" class="text-upper">Submit</button>
-  </span>
 </div>

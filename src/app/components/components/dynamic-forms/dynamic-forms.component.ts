@@ -107,6 +107,7 @@ export class DynamicFormsDemoComponent {
 
   fileElements: ITdDynamicElementConfig[] = [{
     name: 'file-input',
+    label: 'Browse a file',
     type: TdDynamicElement.FileInput,
   }];
 }
