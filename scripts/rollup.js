@@ -48,6 +48,7 @@ gulp.task('rollup-code', '', function() {
     'rxjs/add/operator/skip': 'Rx.Observable.prototype',
     'rxjs/Observable': 'Rx',
 
+    'simplemde/dist/simplemde.min.css': 'simplemde/dist/simplemde.min.css',
     'simplemde': 'simplemde',
   };
   components.forEach(name => {

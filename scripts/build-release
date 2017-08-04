@@ -18,6 +18,12 @@ echo "Preparing files for AoT build"
 npm run aot
 echo "Compiled TS and generated *.metadata.json files..."
 
+# copy package.json into deploy
+cp -rf package.json deploy/platform/text-editor/
+
+# copy README.md into deploy
+cp -rf README.md deploy/platform/text-editor/
+
 # Clean source .ts files
 cd deploy/
 find . -name "*.ts" ! -name "*.d.ts" -type f -delete

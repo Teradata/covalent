@@ -5,7 +5,5 @@
 declare var System: any;
 declare var require: any;
 
-declare module 'simplemde' {
-    const value: any;
-    export default value;
-}
+declare module '*.css';
+declare module 'simplemde';

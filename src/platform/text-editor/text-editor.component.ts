@@ -3,10 +3,12 @@ import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChil
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import * as SimpleMDECss from 'simplemde/dist/simplemde.min.css';
+import * as SimpleMDE from 'simplemde';
 // Have to use require here as ng test won't work with import and external modules
 // see https://github.com/angular/angular-cli/issues/5651
 /* tslint:disable-next-line */
-let SimpleMDE: any = require('simplemde');
+// let SimpleMDE: any = require('simplemde');
 
 const noop: any = () => {
   // empty method
@@ -16,7 +18,7 @@ const noop: any = () => {
   selector: 'td-text-editor',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './text-editor.component.html',
-  styleUrls: [ './text-editor.component.scss' ],
+  styles: [ SimpleMDECss ],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TdTextEditorComponent),

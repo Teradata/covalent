@@ -35,8 +35,7 @@ module.exports = function (config) {
     },
     files: [
       { pattern: "./karma.shim.js", watched: true, included: true, served: true},
-      { pattern: './src/test.ts', watched: false },
-      { pattern: './node_modules/simplemde/dist/simplemde.min.css' }
+      { pattern: './src/test.ts', watched: false }
     ],
     preprocessors: {
       './src/test.ts': ['@angular/cli']
