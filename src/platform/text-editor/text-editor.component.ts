@@ -43,11 +43,14 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
    */
   @Input('value')
   set value(value: string) {
-    this._simpleMDE.value(value);
+    this._value = value;
+    if (this._simpleMDE) {
+      this._simpleMDE.value(value);
+    }
   }
 
   get value(): string {
-      return this._simpleMDE.value();
+      return this._value;
   }
 
   /**
@@ -65,5 +68,9 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
 
   ngAfterViewInit(): void {
     this._simpleMDE = new SimpleMDE({ element: this.elementRef.nativeElement.value });
+    this._simpleMDE.value(this.value);
+    this._simpleMDE.codemirror.on('change', () => {
+      this._value = this._simpleMDE.value();
+    });
   }
 }
