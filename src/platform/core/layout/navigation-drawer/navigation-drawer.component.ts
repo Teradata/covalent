@@ -17,6 +17,13 @@ export class TdNavigationDrawerMenuDirective {
 
 }
 
+@Directive({
+  selector: '[td-navigation-drawer-toolbar]',
+})
+export class TdNavigationDrawerToolbarDirective {
+
+}
+
 @Component({
   selector: 'td-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss' ],
@@ -35,11 +42,20 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   @ContentChildren(TdNavigationDrawerMenuDirective) _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
 
+  @ContentChildren(TdNavigationDrawerToolbarDirective) _toolbar: QueryList<TdNavigationDrawerToolbarDirective>;
+
   /**
-   * Checks if there is a [TdNavigationDrawerMenuDirective] as content.
+   * Checks if there is a [TdNavigationDrawerMenuDirective] has content.
    */
   get isMenuAvailable(): boolean {
-    return this._drawerMenu.length > 0;
+    return this._drawerMenu ? this._drawerMenu.length > 0 : false;
+  }
+
+  /**
+   * Checks if there is a [TdNavigationDrawerToolbarDirective] has content.
+   */
+  get isCustomToolbar(): boolean {
+    return this._toolbar ? this._toolbar.length > 0 : false;
   }
 
   /**
