@@ -19,8 +19,6 @@ export class TdDynamicFileInputComponent extends AbstractControlValueAccessor im
 
   control: FormControl;
 
-  type: string = undefined;
-
   required: boolean = undefined;
 
   label: string = '';

@@ -1,5 +1,6 @@
 <div class="dynamic-file-input-wrapper" layout="row">
   <md-input-container tdFileDrop
+                      floatPlaceholder="never"
                       (fileDrop)="value = $event"
                       (click)="fileInput.inputElement.click()"
                       (keyup.enter)="fileInput.inputElement.click()"
@@ -14,7 +15,7 @@
   <button md-icon-button *ngIf="value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
     <md-icon>cancel</md-icon>
   </button>
-  <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="value">
+  <td-file-input class="td-file-input" #fileInput [(ngModel)]="value">
     <md-icon>folder</md-icon>
     <span>{{ label }}</span>
   </td-file-input>
