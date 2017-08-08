@@ -123,6 +123,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'code-editor',
     title: 'Code Editor',
   }, {
+    description: 'Text and Markdown editor component',
+    icon: 'vertical_align_bottom',
+    route: 'text-editor',
+    title: 'Text Editor',
+  }, {
     description: 'Http wrappers and helpers',
     icon: 'http',
     route: 'http',

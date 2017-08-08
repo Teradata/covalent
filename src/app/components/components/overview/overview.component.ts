@@ -116,6 +116,11 @@ export class ComponentsOverviewComponent {
       route: 'code-editor',
       title: 'Code Editor',
     }, {
+      color: 'purple-A700',
+      icon: 'vertical_align_bottom',
+      route: 'text-editor',
+      title: 'Text/Markdown Editor',
+    }, {
       color: 'indigo-A700',
       icon: 'http',
       route: 'http',

@@ -1,0 +1,34 @@
+<md-card>
+  <md-card-title>Text Editor</md-card-title>
+  <md-card-subtitle>Text and Markdown editor component</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>With this component you can utilize SimpleMDE as an Angular Component.</p>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="accent" href="https://github.com/Teradata/covalent-text-editor" target="_blank" class="text-upper">Github Repo</a>
+    <a md-button color="accent" href="https://www.npmjs.com/package/@covalent/text-editor" target="_blank" class="text-upper">npm Module</a>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Basic example</md-card-title>
+  <md-card-subtitle>Markdown editor running in browser</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row" layout-align="start center">
+      <td-text-editor [(ngModel)]="editorVal"></td-text-editor>
+    </div>
+    <h3 class="md-title">Editor Output:</h3>
+    <div layout="row" layout-align="start center">
+      <td-markdown [content]="editorVal"></td-markdown>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+</md-card>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-text-editor/master/docs/API.md">
+</td-readme-loader>
+
+<td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-text-editor/master/docs/SETUP.md">
+</td-readme-loader>
