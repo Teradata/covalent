@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild,
-         ElementRef, forwardRef, ViewEncapsulation } from '@angular/core';
+         ElementRef, forwardRef, ViewEncapsulation, NgZone } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -25,13 +25,15 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
 
   private _value: string = '';
   private _simpleMDE: any;
+  private _fromEditor: boolean = false;
 
   @ViewChild('simplemde') textarea: ElementRef;
 
   /**
    * Set if using Electron mode when object is created
    */
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef,
+              private zone: NgZone) {}
 
   /* tslint:disable-next-line */
   propagateChange = (_: any) => {};
@@ -45,7 +47,12 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   set value(value: string) {
     this._value = value;
     if (this._simpleMDE) {
-      this._simpleMDE.value(value);
+      if (!this._fromEditor) {
+        this._simpleMDE.value(value);
+      }
+      this.propagateChange(this._value);
+      this._fromEditor = false;
+      this.zone.run(() => this._value = value);
     }
   }
 
@@ -70,7 +77,8 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
     this._simpleMDE = new SimpleMDE({ element: this.elementRef.nativeElement.value });
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
-      this._value = this._simpleMDE.value();
+      this._fromEditor = true;
+      this.writeValue(this._value);
     });
   }
 }
