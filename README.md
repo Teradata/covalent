@@ -18,6 +18,7 @@ Covalent Github Repo: https://github.com/Teradata/covalent
 Covalent Electron Github Repo: https://github.com/Teradata/covalent-electron
 
 SimpleMDE Repo: https://github.com/sparksuite/simplemde-markdown-editor
+
 ---
 
 ## Information
