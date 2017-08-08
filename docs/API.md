@@ -23,12 +23,12 @@
 Example for HTML usage:
 
 ```html
-<td-text-editor [value]="Some Text" options="opts"></td-text-editor>
+<td-text-editor [value]="Some Text" options="options"></td-text-editor>
 ```
 
 ```typescript
 class MyComponent {
-  opts: any = {
+  options: any = {
     lineWrapping: true,
     toolbar: false,
     ...
