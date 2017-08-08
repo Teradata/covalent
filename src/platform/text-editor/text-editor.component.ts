@@ -64,7 +64,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
    * Implemented as part of ControlValueAccessor.
    */
   writeValue(value: any): void {
-    this.value = value;
+    this.value = (!value) ? '' : value;
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
@@ -78,7 +78,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
       this._fromEditor = true;
-      this.writeValue(this._value);
+      this.writeValue(this._simpleMDE.value());
     });
   }
 }
