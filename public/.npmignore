@@ -1,0 +1,4 @@
+# compiled aot output
+*.ngsummary.json
+*.ngfactory.ts
+*.shim.ngstyle.ts
