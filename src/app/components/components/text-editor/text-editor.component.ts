@@ -19,7 +19,6 @@ Go ahead, play around with the editor! Be sure to check out **bold** and *italic
 You can type the Markdown syntax, use the toolbar, or use shortcuts like 'cmd-b' or 'ctrl-b'.
 
 ## Lists
-## Lists
 Unordered lists can be started using the toolbar or by typing '* ', '- ', or '+ '. Ordered lists can be started by typing '1. '.
 
 #### Unordered
