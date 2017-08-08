@@ -23,7 +23,7 @@
 Example for HTML usage:
 
 ```html
-<td-text-editor [value]="Some Text" options="options"></td-text-editor>
+<td-text-editor [value]="Some Text" [options]="options"></td-text-editor>
 ```
 
 ```typescript
