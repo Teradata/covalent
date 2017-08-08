@@ -1,33 +1,35 @@
-import { Component, Input, ChangeDetectorRef, DoCheck } from '@angular/core';
-import { FormGroup, FormBuilder, AbstractControl, FormArray } from '@angular/forms';
+import { Component, Input, ChangeDetectorRef } from '@angular/core';
+import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
-import { TdDynamicFormsService, ITdDynamicElementConfig, ITdFormGroup } from './services/dynamic-forms.service';
-import { FormArrayUtils } from './services/form-array-utils';
-import has = Reflect.has;
-
-export enum constant {
-  FORM_ARRAY = <any>'formArray',
-}
+import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
 
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
 })
-export class TdDynamicFormsComponent implements DoCheck {
+export class TdDynamicFormsComponent {
 
-  // dirty check
-  private _elementsLength: number = 0;
-  private _formArrayUtils: FormArrayUtils;
-
+  private _prevElements: ITdDynamicElementConfig[] = [];
+  private _elements: ITdDynamicElementConfig[];
   dynamicForm: FormGroup;
-  elementConfigs: { [key: string ]: ITdDynamicElementConfig } = {};
 
   /**
    * elements: ITdDynamicElementConfig[]
    * JS Object that will render the elements depending on its config.
    * [name] property is required.
    */
-  @Input('elements') elements: ITdDynamicElementConfig[] = [];
+  @Input('elements')
+  set elements(elements: ITdDynamicElementConfig[]){
+    if (elements) {
+      this._elements = elements;
+    } else {
+      this._elements = [];
+    }
+    this._rerenderElements();
+  }
+  get elements(): ITdDynamicElementConfig[] {
+    return this._elements;
+  }
 
   /**
    * Getter property for dynamic [FormGroup].
@@ -51,7 +53,7 @@ export class TdDynamicFormsComponent implements DoCheck {
    */
   get value(): any {
     if (this.dynamicForm) {
-      return this._formArrayUtils.getValue();
+      return this.dynamicForm.value;
     }
     return {};
   }
@@ -61,7 +63,11 @@ export class TdDynamicFormsComponent implements DoCheck {
    */
   get errors(): { [name: string]: any } {
     if (this.dynamicForm) {
-      return this._formArrayUtils.getErrors();
+      let errors: {[name: string]: any} = {};
+      for (let name in this.dynamicForm.controls) {
+        errors[name] = this.dynamicForm.controls[name].errors;
+      }
+      return errors;
     }
     return {};
   }
@@ -69,9 +75,9 @@ export class TdDynamicFormsComponent implements DoCheck {
   /**
    * Getter property for [controls] of dynamic [FormGroup].
    */
-  get controls(): { [key: string]: AbstractControl } {
+  get controls(): {[key: string]: AbstractControl} {
     if (this.dynamicForm) {
-      return this._formArrayUtils.getControls();
+      return this.dynamicForm.controls;
     }
     return {};
   }
@@ -79,125 +85,43 @@ export class TdDynamicFormsComponent implements DoCheck {
   constructor(private _formBuilder: FormBuilder,
               private _dynamicFormsService: TdDynamicFormsService,
               private _changeDetectorRef: ChangeDetectorRef) {
-    this.dynamicForm = this._formBuilder.group({
-      formArray: this._formBuilder.array([]),
-    });
-
-    // Not use constructor because FormArray should not be an instance variable.
-    this._formArrayUtils = new FormArrayUtils();
-    this._formArrayUtils.formArray = <FormArray>this.dynamicForm.controls[ constant.FORM_ARRAY ];
+    this.dynamicForm = this._formBuilder.group({});
   }
 
-  ngDoCheck(): void {
-
-    if (!this.elements) {
-      return;
-    }
-
-    // manual dirty check
-    if (this.elements.length === this._elementsLength) {
-      this.compareControls();
-    } else {
-      let doAdd: boolean = this.elements.length > this._elementsLength;
-
-      // set pristine
-      this._elementsLength = this.elements.length;
-
-      if (doAdd) {
-        this.pushControls();
-      } else {
-        this.removeControls();
-      }
-    }
-
+  update(): void {
+    this._rerenderElements();
   }
 
-  pushControls(): void {
-
+  private _rerenderElements(): void {
+    this._clearRemovedElements();
     let duplicates: string[] = [];
-    this.elements.forEach((elem: ITdDynamicElementConfig) => {
+    this._elements.forEach((elem: ITdDynamicElementConfig) => {
       this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
       duplicates.push(elem.name);
-
-      if (!this._formArrayUtils.contains(elem.name)) {
-
-        // tslint:disable-next-line
-        this.elementConfigs[ elem.name ] = elem;
-
-        // Let FormGroup API create the control
-        // tslint:disable-next-line
-        (<FormArray>this.dynamicForm.controls[ constant.FORM_ARRAY ]).push(this.createFormGroup(elem));
+      if (!this.dynamicForm.get(elem.name)) {
+        this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
+      } else {
+        this.dynamicForm.get(elem.name).setValidators(this._dynamicFormsService.createValidators(elem));
       }
     });
-
-    this._changeDetectorRef.detectChanges();
-
-  }
-
-  createFormGroup(elem: ITdDynamicElementConfig): FormGroup {
-    let group: any = {};
-    elem.default = elem.default || '';
-
-    // group[ elem.name ] = [ defaultValue, validators ];
-    group[ elem.name ] = this._dynamicFormsService.createFormControl(elem);
-
-    let newGroup: FormGroup = this._formBuilder.group(group);
-    (<ITdFormGroup>newGroup).tdElementConfig = elem;
-
-    return newGroup;
-  }
-
-  removeControls(): void {
-    // tslint:disable-next-line
-    let arrayControl: FormArray = <FormArray>this.dynamicForm.controls[ constant.FORM_ARRAY ];
-
-    let removeControlsByName: string[] = this._formArrayUtils.getControlNamesToRemoveByElements(this.elements);
-
-    removeControlsByName.forEach((name: string) => {
-
-      // remove ITdDynamicElementConfig reference
-      delete this.elementConfigs[ name ];
-
-      // Need to get index every iteration
-      // since remove control re-indexes array.
-      let indexInFormArray: number = this._formArrayUtils.indexOf(name);
-      arrayControl.removeAt(indexInFormArray);
-    });
-
+    this._prevElements = Object.assign([], this.elements);
     this._changeDetectorRef.detectChanges();
   }
 
-  compareControls(): void {
-
-    let hasChanged: any = [];
-
-    this.elements.forEach((elem: ITdDynamicElementConfig, index: number) => {
-      if (elem !== this.elementConfigs[ elem.name ]) {
-        hasChanged.push({
-          index: index,
-          elem: elem,
-        });
-
-        this.elementConfigs[ elem.name ] = elem;
-      }
-    });
-
-    if (hasChanged.length) {
-      while (hasChanged.length) {
-        let changedElem: any = hasChanged.shift();
-
-        // remove old FormGroup
-        (<FormArray>this.dynamicForm.controls[ constant.FORM_ARRAY ]).removeAt(changedElem.index);
-
-        // create new FormGroup
-        let newGroup: FormGroup = this.createFormGroup(changedElem.elem);
-
-        // insert new FormGroup
-        (<FormArray>this.dynamicForm.controls[ constant.FORM_ARRAY ]).insert(changedElem.index, newGroup);
+  private _clearRemovedElements(): void {
+    for (let i: number = 0; i < this._prevElements.length; i++) {
+      for (let j: number = 0; j < this._elements.length; j++) {
+        if (this._prevElements[i] === this._elements[j]) {
+          delete this._prevElements[i];
+          break;
+        }
       }
     }
+    this._prevElements.forEach((elem: ITdDynamicElementConfig) => {
+      this.dynamicForm.removeControl(elem.name);
+    });
   }
 }

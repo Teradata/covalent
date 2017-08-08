@@ -1,7 +1,7 @@
-import { Component, Directive, Input, HostBinding, OnInit } from '@angular/core';
+import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 
 import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
 import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';
@@ -29,7 +29,9 @@ export class TdDynamicElementDirective {
   template: '<div tdDynamicContainer></div>',
 })
 export class TdDynamicElementComponent extends AbstractControlValueAccessor
-                                       implements ControlValueAccessor, OnInit {
+                                       implements ControlValueAccessor, OnInit, OnChanges {
+
+  private _instance: any;
 
   set value(v: any) {
     if (v !== this._value) {
@@ -38,16 +40,14 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
       this.onModelChange(v);
     }
   }
+  get value(): any {
+    return this._value;
+  }
 
   /**
    * Sets form control of the element.
    */
-  @Input() dynamicControl: FormGroup;
-
-  /**
-   * Maps control object in FormGroup.
-   */
-  @Input() elementName: string;
+  @Input() dynamicControl: FormControl;
 
   /**
    * Sets label to be displayed.
@@ -110,30 +110,36 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
       resolveComponentFactory(this._dynamicFormsService.getDynamicElement(this.type))
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
-    ref.instance.control = this.dynamicControl;
-    ref.instance.elementName = this.elementName;
-    ref.instance.label = this.label;
-    ref.instance.type = this.type;
-    ref.instance._value = this._value;
-    ref.instance.required = this.required;
-    ref.instance.min = this.min;
-    ref.instance.max = this.max;
-    ref.instance.selections = this.selections;
-    ref.instance.registerOnChange((value: any) => {
+    this._instance = ref.instance;
+    this._instance.control = this.dynamicControl;
+    this._instance.label = this.label;
+    this._instance.type = this.type;
+    this._instance.value = this.value;
+    this._instance.required = this.required;
+    this._instance.min = this.min;
+    this._instance.max = this.max;
+    this._instance.selections = this.selections;
+    this._instance.registerOnChange((value: any) => {
       this.value = value;
-
-      let valueObect: any = {};
-      valueObect[ this.elementName ] = value;
-
-      this.dynamicControl.setValue(valueObect);
     });
     this.registerOnModelChange((value: any) => {
       // fix to check if value is NaN (type=number)
       if (!Number.isNaN(value)) {
-        ref.instance.value = value;
+        this._instance.value = value;
       }
 
     });
+  }
+
+  /**
+   * Reassign any inputs that have changed
+   */
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this._instance) {
+      for (let prop in changes) {
+        this._instance[prop] = changes[prop].currentValue;
+      }
+    }
   }
 
   /**

@@ -2,19 +2,18 @@
   <div layout="row"
        layout-wrap
        layout-margin
-       layout-align="start center"
-       formArrayName="formArray">
-    <ng-template let-control ngFor [ngForOf]="dynamicForm.controls['formArray'].controls" let-i="index">
+       layout-align="start center">
+    <ng-template let-element ngFor [ngForOf]="elements">
       <td-dynamic-element
-        [dynamicControl]="control"
-        [elementName]="control.tdElementConfig.name"
-        [id]="control.tdElementConfig.name"
-        [label]="control.tdElementConfig.label || control.tdElementConfig.name"
-        [type]="control.tdElementConfig.type"
-        [required]="control.tdElementConfig.required"
-        [min]="control.tdElementConfig.min"
-        [max]="control.tdElementConfig.max"
-        [selections]="control.tdElementConfig.selections">
+        [formControlName]="element.name"
+        [dynamicControl]="dynamicForm.controls[element.name]"
+        [id]="element.name"
+        [label]="element.label || element.name"
+        [type]="element.type"
+        [required]="element.required"
+        [min]="element.min"
+        [max]="element.max"
+        [selections]="element.selections">
       </td-dynamic-element>
     </ng-template>
   </div>

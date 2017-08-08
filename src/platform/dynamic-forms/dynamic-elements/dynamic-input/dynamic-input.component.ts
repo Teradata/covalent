@@ -21,8 +21,6 @@ export class TdDynamicInputComponent extends AbstractControlValueAccessor implem
 
   label: string = '';
 
-  elementName: string = '';
-
   type: string = undefined;
 
   required: boolean = undefined;
