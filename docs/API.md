@@ -16,7 +16,7 @@
 | `isSideBySideActive` | `function()` | Is the Side By Side Active. Returns boolean
 | `isFullscreenActive` | `function()` | Is Full Screen Active. Returns boolean
 | `clearAutosavedValue` | `function()` | Clears Auto Saved Value. Returns void
-| `toTextArea` | `function()` | Reverts to the initial textarea. Returns void
+| `toTextArea` | `function()` | Reverts to the Initial textarea. Returns void
 
 ### Usage
 
