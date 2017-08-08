@@ -1,12 +1,12 @@
 # td-text-editor
 
-`td-code-editor` element generates a simplemde markdown editor
+`td-text-editor` element generates a simplemde markdown editor
 
 ## API Summary
 
 ### Properties
 
-#### The <td-code-editor> component has 0 properties:
+#### The <td-text-editor> component has 0 properties:
 
 | Name | Type | Description |
 | --- | --- | --- |
