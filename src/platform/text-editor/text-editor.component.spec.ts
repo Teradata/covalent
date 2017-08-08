@@ -15,6 +15,8 @@ describe('Component: TextEditor', () => {
       declarations: [
         TdTextEditorComponent,
         TestTextEditorComponent,
+        TestTextEditorResetComponent,
+        TestTextEditorOptionsComponent,
       ],
       imports: [
       ],
@@ -38,6 +40,67 @@ describe('Component: TextEditor', () => {
     })();
   });
 
+  it('should initialize the markdown editor with no toolbar options', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let element: HTMLElement = fixture.nativeElement;
+          expect(element.querySelectorAll('.editor-toolbar')).toBeTruthy();
+          done();
+        });
+      });
+    })();
+  });
+
+  it('should test isPreviewActive', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.editor1.isFullscreenActive()).toBe(false);
+          done();
+        });
+      });
+    })();
+  });
+
+  it('should test isSideBySideActive', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.editor1.isSideBySideActive()).toBe(false);
+          done();
+        });
+      });
+    })();
+  });
+
+  it('should test isFullscreenActive', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTextEditorOptionsComponent);
+      let component: TestTextEditorOptionsComponent = fixture.debugElement.componentInstance;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(component.editor1.isFullscreenActive()).toBe(false);
+          done();
+        });
+      });
+    })();
+  });
+
 });
 
 @Component({
@@ -47,5 +110,28 @@ describe('Component: TextEditor', () => {
     </div>`,
 })
 class TestTextEditorComponent {
+  @ViewChild('editor1') editor1: TdTextEditorComponent;
+}
+
+@Component({
+  template: `
+    <div>
+      <td-text-editor #editor1 [value]="Something"></td-text-editor>  
+    </div>`,
+})
+class TestTextEditorResetComponent {
+  @ViewChild('editor1') editor1: TdTextEditorComponent;
+}
+
+@Component({
+  template: `
+    <div>
+      <td-text-editor #editor1 [options]="opts"></td-text-editor>  
+    </div>`,
+})
+class TestTextEditorOptionsComponent {
+  opts: any = {
+    toolbar: false,
+  };
   @ViewChild('editor1') editor1: TdTextEditorComponent;
 }
