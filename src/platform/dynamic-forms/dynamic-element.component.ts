@@ -82,14 +82,6 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
 
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
 
-  @HostBinding('attr.flex')
-  get flex(): any {
-    if (this.type) {
-      return this._dynamicFormsService.getDefaultElementFlex(this.type);
-    }
-    return true;
-  }
-
   @HostBinding('attr.max')
   get maxAttr(): any {
     return this.max;

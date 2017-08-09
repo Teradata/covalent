@@ -36,6 +36,7 @@ export interface ITdDynamicElementConfig {
   max?: any;
   selections?: any[];
   default?: any;
+  flex?: number;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
