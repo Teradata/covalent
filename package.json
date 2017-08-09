@@ -69,6 +69,7 @@
     "@angular/platform-server": "^4.2.0",
     "@angular/router": "^4.2.0",
     "@covalent/code-editor": "^1.0.0-alpha.6-7",
+    "@covalent/text-editor": "^1.0.0-alpha.1",
     "@ngx-translate/core": "7.0.0",
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "5.3.1",
