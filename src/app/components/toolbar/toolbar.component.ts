@@ -36,6 +36,11 @@ export class ToolbarComponent {
       icon: 'featured_play_list',
       route: '/components/code-editor',
       title: 'New component',
+    }, {
+      description: 'introducing covalent/text-editor',
+      icon: 'vertical_align_bottom',
+      route: '/components/text-editor',
+      title: 'New component',
     },
   ];
 
