@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.2",
   "private": false,
   "description": "Covalent text and markdown editor component for Angular based on SimpleMDE",
-  "main": "./highlight.umd.js",
+  "main": "./text-editor.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "keywords": [
