@@ -5,6 +5,7 @@
     <ng-template let-element ngFor [ngForOf]="elements">
       <td-dynamic-element
         class="pad-xs"
+        *ngIf="dynamicForm.controls[element.name]"
         [formControlName]="element.name"
         [dynamicControl]="dynamicForm.controls[element.name]"
         [id]="element.name"
