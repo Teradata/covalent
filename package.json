@@ -29,7 +29,8 @@
     "nightly-publish": "npm run build && bash scripts/nightly-publish",
     "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod --sourcemap=false && bash scripts/ghpages-deploy",
     "start-release": "bash scripts/start-release",
-    "finish-release": "bash scripts/finish-release"
+    "finish-release": "bash scripts/finish-release",
+    "combat-training": "bash scripts/combat-training"
   },
   "engines": {
     "node": ">=6.11.1 < 7",
@@ -84,12 +85,14 @@
   "devDependencies": {
     "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.2.0",
+    "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "@types/selenium-webdriver": "^2.52.0",
     "codelyzer": "~3.0.0",
     "coveralls": "^2.12.0",
+    "fs-extra": "^4.0.0",
     "glob": "^6.0.4",
     "gulp": "3.9.1",
     "gulp-bump": "2.1.0",
