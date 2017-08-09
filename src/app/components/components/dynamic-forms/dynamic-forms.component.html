@@ -26,6 +26,11 @@
             <td-dynamic-forms #dynamicForm [elements]="dynamicElements">
             </td-dynamic-forms>
           </div>
+          <md-card-actions>
+            <button md-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">
+              Submit
+            </button>
+          </md-card-actions>
         </md-card>
       </div>
       <div class="pad" flex-gt-md="50">
