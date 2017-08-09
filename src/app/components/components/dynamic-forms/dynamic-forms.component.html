@@ -2,10 +2,119 @@
   <md-card-title>Dynamic Forms</md-card-title>
   <md-card-subtitle>Build forms from a JS object</md-card-subtitle>
   <md-divider></md-divider>
+  <md-toolbar hide show-gt-md>
+    <div layout="row" flex>
+      <span flex="50">Generated Form</span>
+      <span flex="50">Form Builder</span>
+    </div>
+  </md-toolbar>
+  <md-divider hide show-gt-md></md-divider>
+  <div layout-gt-md="row">
+    <div layout="column" class="bgc-grey-100 pad-sm" flex-gt-md="50">
+      <md-card flex>
+        <md-card-title>
+          <div layout="row" layout-align="start center" flex>
+            <div flex class="text-md">Toggle to reveal form JSON object</div>
+            <button md-icon-button mdTooltip="See JSON elements code" (click)="showDynamicCode = !showDynamicCode">
+              <md-icon>code</md-icon>
+            </button>
+          </div>
+        </md-card-title>
+        <md-divider></md-divider>
+        <div [tdToggle]="!showDynamicCode">
+          <td-highlight language="json" [content]="dynamicElements | json"></td-highlight>
+        </div>
+        <div class="pad">
+          <td-dynamic-forms #dynamicForm [elements]="dynamicElements">
+          </td-dynamic-forms>
+        </div>
+        <md-card-actions>
+          <button md-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">
+            Submit
+          </button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <div class="pad" flex-gt-md="50">
+      <md-card-title class="push-top-sm push-bottom-sm">
+        <div layout="row" layout-align="start center" flex>
+          <div flex class="text-md">Select a type, add element then update</div>
+        </div>
+      </md-card-title>
+      <md-divider></md-divider>
+      <form #addForm="ngForm">
+        <div layout="row" layout-align="start center" class="pad-sm">
+          <md-select class="pad-right" placeholder="Select element type" floatPlaceholder="never" [(ngModel)]="type" name="type" required>
+            <md-option *ngFor="let option of elementOptions" [value]="option">
+              {{ option }}
+            </md-option>
+          </md-select>
+          <button mdTooltip="Add this element" md-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
+            <md-icon>add</md-icon>
+          </button>
+        </div>
+      </form>
+      <h4>Form elements</h4>
+      <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
+        <td-expansion-panel [label]="model.name">
+          <md-divider></md-divider>
+          <div class="pad" layout="column">
+            <div layout="row">
+              <md-input-container class="pad-right-xs" flex>
+                <input mdInput
+                      placeholder="Label"
+                      [(ngModel)]="model.label"
+                      name="label">
+              </md-input-container>
+              <md-input-container flex="30">
+                <input mdInput
+                      type="number"
+                      min="0"
+                      max="100"
+                      placeholder="Flex (width in %)"
+                      [(ngModel)]="model.flex"
+                      name="flex">
+              </md-input-container>
+            </div>
+            <div *ngIf="isMinMaxSupported(model.type)" layout="row">
+              <md-input-container class="pad-right-xs" flex>
+                <input mdInput
+                      type="number"
+                      placeholder="Min"
+                      [(ngModel)]="model.min"
+                      name="min">
+              </md-input-container>
+              <md-input-container flex="50">
+                <input mdInput
+                      type="number"
+                      placeholder="Max"
+                      [(ngModel)]="model.max"
+                      name="max">
+              </md-input-container>
+            </div>
+            <div layout="row">
+              <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>
+              <span flex></span>
+              <button md-icon-button mdTooltip="Delete element" (click)="deleteElement(index)">
+                <md-icon>delete</md-icon>
+              </button>
+            </div>
+          </div>
+        </td-expansion-panel>
+      </ng-template>
+      <div class="push-top" layout="row">
+        <button md-raised-button color="primary" class="text-upper" (click)="dynamicForm.refresh()">
+          Update Form
+        </button>
+      </div>
+    </div>
+  </div>
+</md-card>
+<md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic Text Elements</h3>
     <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="textElements">
@@ -32,7 +141,7 @@
   <md-card-content>
     <h3 class="md-title">Dynamic Number Elements</h3>
     <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="numberElements">
@@ -59,7 +168,7 @@
   <md-card-content>
     <h3 class="md-title">Dynamic Boolean Elements</h3>
     <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="booleanElements">
@@ -86,7 +195,7 @@
   <md-card-content>
     <h3 class="md-title">Dynamic Array Elements</h3>
     <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="arrayElements">
@@ -113,7 +222,7 @@
   <md-card-content>
     <h3 class="md-title">Dynamic File Input Element</h3>
     <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
+    <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="fileElements">
@@ -136,85 +245,5 @@
     </md-tab-group>
   </md-card-content>
 </md-card>
-<md-card>
-  <md-card-title>TdDynamicFormsComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h2><code><![CDATA[<td-dynamic-forms>]]></code></h2>
-    <p>Use <code><![CDATA[<td-dynamic-forms>]]></code> element to generate a form dynamically.</p>
-    <p>Pass an array of javascript objects that implement [ITdDynamicElementConfig] with the information to be rendered to the [elements] attribute.</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        export interface ITdDynamicElementConfig {
-          label?: string;
-          name: string;
-          type: TdDynamicType | TdDynamicElement;
-          required?: boolean;
-          min?: any;
-          max?: any;
-          default?: any;
-        }
-      ]]>
-    </td-highlight>    
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-dynamic-forms>]]></code> component has {{dynamicFormsAttrs.length}} properties:</p>
-    <md-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dynamicFormsAttrs">
-        <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-        </a>
-        <md-divider *ngIf="!last"></md-divider>
-      </ng-template>
-    </md-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-dynamic-forms [elements]="elements">
-        </td-dynamic-forms>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
-        ...
-        })
-        export class Demo {
-          elements: ITdDynamicElementConfig[] = [{
-            name: 'input-without-label',
-            type: TdDynamicElement.Input,
-            required: false,
-          }, {
-            name: 'input-with-label',
-            label: 'Input Label',
-            type: TdDynamicElement.Input,
-            required: true,
-          }, {
-            name: 'text-with-default',
-            type: TdDynamicType.Text,
-            required: false,
-            default: 'Default',
-          }];
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentDynamicFormsModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-        @NgModule({
-          imports: [
-            CovalentDynamicFormsModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </md-card-content>
-</md-card>
+
+<td-readme-loader resourceUrl="platform/dynamic-forms/README.md"></td-readme-loader>
