@@ -28,6 +28,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   private _fromEditor: boolean = false;
 
   @ViewChild('simplemde') textarea: ElementRef;
+  @Input() options: any = {};
 
   /**
    * Set if using Electron mode when object is created
@@ -74,11 +75,34 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   }
 
   ngAfterViewInit(): void {
-    this._simpleMDE = new SimpleMDE({ element: this.elementRef.nativeElement.value });
+    this.options.element = this.elementRef.nativeElement.value;
+    this._simpleMDE = new SimpleMDE(this.options);
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
       this._fromEditor = true;
       this.writeValue(this._simpleMDE.value());
     });
+  }
+
+  /* Wrapped function provided by SimpleMDE */
+
+  isPreviewActive(): boolean {
+    return this._simpleMDE.isPreviewActive();
+  }
+
+  isSideBySideActive(): boolean {
+    return this._simpleMDE.isSideBySideActive();
+  }
+
+  isFullscreenActive(): boolean {
+    return this._simpleMDE.isFullscreenActive();
+  }
+
+  clearAutosavedValue(): void {
+    this._simpleMDE.clearAutosavedValue();
+  }
+
+  toTextArea(): void {
+    this._simpleMDE.toTextArea();
   }
 }
