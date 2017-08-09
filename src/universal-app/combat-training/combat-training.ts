@@ -24,7 +24,7 @@ export class CombatTrainingComponent { }
   imports: [
     BrowserModule.withServerTransition({ appId: 'combat-training' }),
     CovalentMessageModule,
-    // Add additional Covlent components here and within the template
+    // Add additional Covalent components here and within the template
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],
