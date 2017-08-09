@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
 
+import { timer } from 'rxjs/observable/timer';
+import { toPromise } from 'rxjs/operator/toPromise';
+
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
@@ -114,18 +117,25 @@ export class TdDynamicFormsComponent {
       // copy objects so they are only changes when calling this method
       this._renderedElements.push(Object.assign({}, elem));
     });
-    this._changeDetectorRef.markForCheck();
+    // call a change detection since the whole form might change
+    this._changeDetectorRef.detectChanges();
+    toPromise.call(timer()).then(() => {
+      // call a markForCheck so elements are rendered correctly in OnPush
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   private _clearRemovedElements(): void {
     for (let i: number = 0; i < this._renderedElements.length; i++) {
       for (let j: number = 0; j < this._elements.length; j++) {
-        if (this._renderedElements[i] === this._elements[j]) {
+        // check if the name of the element is still there removed
+        if (this._renderedElements[i].name === this._elements[j].name) {
           delete this._renderedElements[i];
           break;
         }
       }
     }
+    // remove elements that were removed from the array
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
       this.dynamicForm.removeControl(elem.name);
     });
