@@ -1,0 +1,46 @@
+{
+  "name": "@covalent/text-editor",
+  "version": "1.0.0-alpha.2",
+  "private": false,
+  "description": "Covalent text and markdown editor component for Angular based on SimpleMDE",
+  "main": "./highlight.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "keywords": [
+    "angular",
+    "covalent",
+    "simplemde",
+    "markdown",
+    "text",
+    "editor",
+    "electron",
+    "reusable"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent-text-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Teradata/covalent-text-editor/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "dependencies": {
+    "simplemde": "^1.11.2"
+  },
+  "peerDependencies": {
+    "@angular/common": "^4.2.0",
+    "@angular/core": "^4.2.0"
+  }
+}
