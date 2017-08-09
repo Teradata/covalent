@@ -1,0 +1,23 @@
+#!/bin/bash
+version=$1
+
+set -e
+
+echo "Started release $version"
+
+git flow release start v$version develop
+
+gulp bump-version --ver $version
+
+git add -A .
+
+git commit -a -m "Version bump"
+
+echo "Publishing release v$version"
+git flow release publish v$version
+
+echo "Executed lint test"
+npm run lint
+
+echo "Executed unit tests"
+npm run test
