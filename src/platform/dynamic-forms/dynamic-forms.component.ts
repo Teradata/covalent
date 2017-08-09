@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
@@ -6,10 +6,11 @@ import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynam
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDynamicFormsComponent {
 
-  private _prevElements: ITdDynamicElementConfig[] = [];
+  private _renderedElements: ITdDynamicElementConfig[] = [];
   private _elements: ITdDynamicElementConfig[];
   dynamicForm: FormGroup;
 
@@ -28,7 +29,7 @@ export class TdDynamicFormsComponent {
     this._rerenderElements();
   }
   get elements(): ITdDynamicElementConfig[] {
-    return this._elements;
+    return this._renderedElements;
   }
 
   /**
@@ -88,12 +89,16 @@ export class TdDynamicFormsComponent {
     this.dynamicForm = this._formBuilder.group({});
   }
 
-  update(): void {
+  /**
+   * Refreshes the form and rerenders all validator/element modifications.
+   */
+  refresh(): void {
     this._rerenderElements();
   }
 
   private _rerenderElements(): void {
     this._clearRemovedElements();
+    this._renderedElements = [];
     let duplicates: string[] = [];
     this._elements.forEach((elem: ITdDynamicElementConfig) => {
       this._dynamicFormsService.validateDynamicElementName(elem.name);
@@ -106,21 +111,22 @@ export class TdDynamicFormsComponent {
       } else {
         this.dynamicForm.get(elem.name).setValidators(this._dynamicFormsService.createValidators(elem));
       }
+      // copy objects so they are only changes when calling this method
+      this._renderedElements.push(Object.assign({}, elem));
     });
-    this._prevElements = Object.assign([], this.elements);
-    this._changeDetectorRef.detectChanges();
+    this._changeDetectorRef.markForCheck();
   }
 
   private _clearRemovedElements(): void {
-    for (let i: number = 0; i < this._prevElements.length; i++) {
+    for (let i: number = 0; i < this._renderedElements.length; i++) {
       for (let j: number = 0; j < this._elements.length; j++) {
-        if (this._prevElements[i] === this._elements[j]) {
-          delete this._prevElements[i];
+        if (this._renderedElements[i] === this._elements[j]) {
+          delete this._renderedElements[i];
           break;
         }
       }
     }
-    this._prevElements.forEach((elem: ITdDynamicElementConfig) => {
+    this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
       this.dynamicForm.removeControl(elem.name);
     });
   }
