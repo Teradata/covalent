@@ -111,7 +111,7 @@ export class ComponentsComponent implements AfterViewInit {
     description: 'Parse markdown code',
     icon: 'chrome_reader_mode',
     route: 'markdown',
-    title: 'Markdown',
+    title: 'Markdown Parser',
   }, {
     description: 'Build forms from a JS object',
     icon: 'format_align_center',
@@ -124,9 +124,9 @@ export class ComponentsComponent implements AfterViewInit {
     title: 'Code Editor',
   }, {
     description: 'Text and Markdown editor component',
-    icon: 'vertical_align_bottom',
+    icon: 'keyboard',
     route: 'text-editor',
-    title: 'Text Editor',
+    title: 'Markdown Text Editor',
   }, {
     description: 'Http wrappers and helpers',
     icon: 'http',

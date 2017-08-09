@@ -104,7 +104,7 @@ export class ComponentsOverviewComponent {
       color: 'orange-A700',
       icon: 'chrome_reader_mode',
       route: 'markdown',
-      title: 'Markdown',
+      title: 'Markdown Parser',
     }, {
       color: 'green-A700',
       icon: 'format_align_center',
@@ -116,10 +116,10 @@ export class ComponentsOverviewComponent {
       route: 'code-editor',
       title: 'Code Editor',
     }, {
-      color: 'purple-A700',
-      icon: 'vertical_align_bottom',
+      color: 'cyan-A700',
+      icon: 'keyboard',
       route: 'text-editor',
-      title: 'Text/Markdown Editor',
+      title: 'Markdown Text Editor',
     }, {
       color: 'indigo-A700',
       icon: 'http',
