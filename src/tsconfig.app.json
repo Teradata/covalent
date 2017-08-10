@@ -8,6 +8,10 @@
       "hammerjs"
     ]
   },
+  "include": [
+    "main.ts",
+    "typings.d.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.*"
