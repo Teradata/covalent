@@ -14,21 +14,18 @@ echo "SASS compiled..."
 gulp prepare-aot
 echo "Preparing files for AoT build"
 
-# Run build
-ng build
-
-# copy dist into deploy
-cp -rf dist/ deploy/code-editor/
-
-# copy package.json into deploy
-cp -rf package.json deploy/code-editor/
-
-# copy README.md into deploy
-cp -rf README.md deploy/code-editor/
-
 # AoT compilation
 npm run aot
 echo "Compiled TS and generated *.metadata.json files..."
+
+# copy README.md into deploy
+cp -rf README.md deploy/platform/code-editor/
+
+# Clean source .ts files
+cd deploy/
+find . -name "*.ts" ! -name "*.d.ts" -type f -delete
+cd ..
+echo "Remove source .ts files so they arent published"
 
 # Inline the css and html into the component files.
 gulp inline-resource-files
