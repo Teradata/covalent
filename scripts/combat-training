@@ -8,9 +8,9 @@ cd $(git rev-parse --show-toplevel)
 # Build the @covalent/core package and copy it into node_modules like how any consumer would see and use them.
 # This is so we can interact with the latest changes we made locally to any Covalent components and see if any
 # new changes made are not compatiable with server side rendering.
-rm -rf ./node_modules/@covalent
+rm -rf ./node_modules/@covalent/core
 npm run build
-cp -r ./deploy/platform ./node_modules/@covalent/
+cp -r ./deploy/platform/core ./node_modules/@covalent/core
 
 # Compile the combat-training app to generate the ngfactories which are used for rendering our components on the
 # server side. We call it the battle zone because we are testing to see if the Covalent component can successfuly
@@ -26,3 +26,6 @@ $(npm bin)/ngc -p src/universal-app/tsconfig-battle-zone.json
 # If we lose the battle changes must be made as reported by the battle results, errors.
 $(npm bin)/tsc -p src/universal-app/tsconfig-battle-royale.json
 node ./src/universal-app/dist/battle-royale.js
+
+# clear core pseudo installation
+rm -rf ./node_modules/@covalent/core
