@@ -21,6 +21,11 @@ echo "Compiled TS and generated *.metadata.json files..."
 # copy README.md into deploy
 cp -rf README.md deploy/platform/code-editor/
 
+# copy Monaco
+mkdir deploy/platform/code-editor/assets
+mkdir deploy/platform/code-editor/assets/monaco
+cp -rf node_modules/monaco-editor/min/* deploy/platform/code-editor/assets/monaco/
+
 # Clean source .ts files
 cd deploy/
 find . -name "*.ts" ! -name "*.d.ts" -type f -delete
