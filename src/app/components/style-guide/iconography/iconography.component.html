@@ -171,8 +171,8 @@
             <md-card-content>
               <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
                 <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
-                    <md-icon>{{icon}}</md-icon>
-                    <p class="md-caption">{{icon}}</p>
+                    <md-icon>{ {icon} }</md-icon>
+                    <p class="md-caption">{ {icon} }</p>
                 </div>
               </div>
             </md-card-content>

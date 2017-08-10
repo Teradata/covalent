@@ -9,6 +9,7 @@
     ]
   },
   "exclude": [
+    "universal-app/**",
     "test.ts",
     "**/*.spec.*"
   ]
