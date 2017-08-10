@@ -1,0 +1,46 @@
+{
+  "name": "@covalent/code-editor",
+  "version": "1.0.0-alpha.6-9",
+  "private": false,
+  "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
+  "main": "./code-editor.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "keywords": [
+    "angular",
+    "covalent",
+    "monaco",
+    "monaco-editor",
+    "code",
+    "editor",
+    "electron",
+    "reusable"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent-code-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Teradata/covalent-code-editor/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "dependencies": {
+    "monaco-editor": "^0.8.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^4.2.0",
+    "@angular/core": "^4.2.0"
+  }
+}
