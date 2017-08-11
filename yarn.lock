@@ -158,15 +158,15 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@covalent/code-editor@^1.0.0-alpha.6-7":
+"@covalent/code-editor@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-1.0.0-beta.1.tgz#73ba4fb7d9bdb10708db4d32e21d8a670edc7d60"
   dependencies:
     monaco-editor "^0.8.0"
 
-"@covalent/text-editor@^1.0.0-alpha.1":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-1.0.0-alpha.3.tgz#40afc08d451820e5dc7c94a8ab65adbeb1e34c89"
+"@covalent/text-editor@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-1.0.0-alpha.4.tgz#578ff44fd227594924a250cce8bdcff0502af9e2"
   dependencies:
     simplemde "^1.11.2"
 
@@ -5531,8 +5531,8 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
 rxjs@^5.0.1, rxjs@^5.2.0:
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.2.tgz#2a3236fcbf03df57bae06fd6972fd99e5c08fcf7"
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
     symbol-observable "^1.0.1"
 
