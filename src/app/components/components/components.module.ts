@@ -21,6 +21,7 @@ import { ChipsDemoComponent } from './chips/chips.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { AnimationsComponent } from './animations/animations.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
@@ -72,6 +73,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     DialogsDemoComponent,
     DirectivesComponent,
     PipesComponent,
+    AnimationsComponent,
     DataTableDemoComponent,
     PagingDemoComponent,
     SearchDemoComponent,

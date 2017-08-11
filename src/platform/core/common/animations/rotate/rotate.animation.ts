@@ -21,7 +21,7 @@ export function TdRotateAnimation(anchor: string, duration: number = 250, degree
       transform: 'rotate(' + degrees + 'deg)',
     })),
     transition('0 <=> 1', [
-      animate(duration + 'ms ease-in'),
+      animate(duration + 'ms ease-out'),
     ]),
   ]);
 }

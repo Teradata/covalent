@@ -3,7 +3,8 @@ import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, Con
 import { EventEmitter } from '@angular/core';
 import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
 
-import { TdCollapseAnimation, TdRotateAnimation, ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { TdCollapseAnimation, ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { TdRotateAnimation } from '../common/animations';
 
 @Directive({
   selector: '[td-expansion-panel-header]ng-template',
