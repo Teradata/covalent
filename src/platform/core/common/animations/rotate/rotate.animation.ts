@@ -6,7 +6,8 @@ import { trigger, state, style, transition, animate, AnimationTriggerMetadata, A
  * params:
  * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation.
  * * duration: Duration the animation will run in miliseconds. Defaults to 250 ms.
- * * degrees: Degrees of rotation that the dom object will animation. Defaults to 180 degrees.
+ * * degrees: Degrees of rotation that the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise.
+ * Defaults to 180 degrees.
  *
  * Returns an [AnimationTriggerMetadata] object with states for a boolean trigger based rotation animation.
  *
