@@ -1,4 +1,4 @@
-## Covalent-Text-Editor is a Text and Code Editor built on Covalent, Monaco Editor and Angular Material
+## Covalent-Text-Editor is a Text and Markdown Editor built on Covalent, SimpleMDE and Angular Material
 
 [![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent-text-editor)
 [![npm version](https://badge.fury.io/js/%40covalent%2Ftext-editor.svg)](https://badge.fury.io/js/%40covalent%2Ftext-editor)
