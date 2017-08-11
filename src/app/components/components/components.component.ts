@@ -100,6 +100,11 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
+  }, {
+    description: 'Custom Angular animation utilities',
+    icon: 'theaters',
+    route: 'animations',
+    title: 'Animations',
   }];
 
   optional: Object[] = [{
