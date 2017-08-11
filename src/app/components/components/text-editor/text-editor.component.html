@@ -11,9 +11,18 @@
     <a md-button color="accent" href="https://www.npmjs.com/package/@covalent/text-editor" target="_blank" class="text-upper">npm Module</a>
   </md-card-actions>
 </md-card>
-<md-card>
+<md-card class="pad-bottom-lg">
   <md-card-title>Demo</md-card-title>
-  <md-card-subtitle>Edit the markdown in the left editor for a real-time preview</md-card-subtitle>
+    <md-card-subtitle class="bgc-grey-100 push-none">
+        <div layout="row">
+          <p>Edit the markdown in the left editor for a real-time preview</p>
+                <span flex></span>
+                <a class="bgc-grey-100 push-none" md-icon-button mdTooltip="View in Editor" target="_blank" href="https://stackblitz.com/edit/angular-rzw7vp">
+              <md-icon class="tc-grey-700">open_in_new</md-icon>
+          </a>
+        </div>
+    </md-card-subtitle>
+  <md-divider></md-divider>
   <md-divider></md-divider>
   <md-toolbar hide show-gt-md>
     <div layout="row" flex>
