@@ -19,6 +19,7 @@ export interface IAlertConfig extends IDialogConfig {
 export interface IConfirmConfig extends IDialogConfig {
   acceptButton?: string;
   cancelButton?: string;
+  validatorFn?: (input: string) => boolean;
 }
 
 export interface IPromptConfig extends IConfirmConfig {
@@ -28,7 +29,7 @@ export interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
 
-  constructor(private _dialogService: MdDialog) {}
+  constructor(private _dialogService: MdDialog) { }
 
   /**
    * params:
@@ -82,6 +83,7 @@ export class TdDialogService {
    *     viewContainerRef?: ViewContainerRef;
    *     acceptButton?: string;
    *     cancelButton?: string;
+   *     validatorFn?: (input:string) => boolean;
    * }
    *
    * Opens a confirm dialog with the provided config.
@@ -100,6 +102,9 @@ export class TdDialogService {
     if (config.cancelButton) {
       confirmDialogComponent.cancelButton = config.cancelButton;
     }
+    if (config.validatorFn) {
+      confirmDialogComponent.validatorFn = config.validatorFn;
+    }
     return dialogRef;
   }
 
@@ -112,6 +117,7 @@ export class TdDialogService {
    *     viewContainerRef?: ViewContainerRef;
    *     acceptButton?: string;
    *     cancelButton?: string;
+   *     validatorFn?: (input:string) => boolean;
    * }
    *
    * Opens a prompt dialog with the provided config.
@@ -131,6 +137,9 @@ export class TdDialogService {
     if (config.cancelButton) {
       promptDialogComponent.cancelButton = config.cancelButton;
     }
+    if (config.validatorFn) {
+      promptDialogComponent.validatorFn = config.validatorFn;
+    }
     return dialogRef;
   }
 
@@ -144,7 +153,7 @@ export class TdDialogService {
 }
 
 export function DIALOG_PROVIDER_FACTORY(
-    parent: TdDialogService, dialog: MdDialog): TdDialogService {
+  parent: TdDialogService, dialog: MdDialog): TdDialogService {
   return parent || new TdDialogService(dialog);
 }
 
