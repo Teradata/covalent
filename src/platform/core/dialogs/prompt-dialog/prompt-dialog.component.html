@@ -9,7 +9,7 @@
         <input mdInput
                #input
                (focus)="handleInputFocus()"
-               (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+               (keydown.enter)="$event.preventDefault(); form.valid && valid && accept()"
                [(ngModel)]="value"
                name="value"
                required/>
@@ -25,7 +25,7 @@
             color="accent"
             #acceptBtn
             (keydown.arrowleft)="closeBtn.focus()"
-            [disabled]="!form.valid"
+            [disabled]="!form.valid || !valid"
             (click)="accept()">{{acceptButton}}</button>
   </td-dialog-actions>
 </td-dialog>

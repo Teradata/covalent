@@ -24,6 +24,10 @@ export class TdPromptDialogComponent implements AfterViewInit {
     });
   }
 
+  validatorFn = (input: string): boolean => {
+    return true;
+  }
+
   /**
    * Method executed when input is focused
    * Selects all text
@@ -38,5 +42,9 @@ export class TdPromptDialogComponent implements AfterViewInit {
 
   accept(): void {
     this._dialogRef.close(this.value);
+  }
+
+  get valid(): boolean {
+    return this.validatorFn(this.value);
   }
 }
