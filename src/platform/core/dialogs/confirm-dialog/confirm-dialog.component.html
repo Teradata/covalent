@@ -4,6 +4,12 @@
   </td-dialog-title>
   <td-dialog-content class="md-subhead tc-grey-700">
     {{message}}
+    <form *ngIf="validatorIsSet" #form="ngForm" layout="row" novalidate flex>
+      <md-input-container flex>
+        <input mdInput (keydown.enter)="$event.preventDefault(); form.valid && valid && accept()"
+          [(ngModel)]="input" name="input" required/>
+      </md-input-container>
+    </form>
   </td-dialog-content>
   <td-dialog-actions>
     <button md-button
@@ -12,6 +18,7 @@
             (click)="cancel()">{{cancelButton}}</button>
     <button md-button
             color="accent"
+            [disabled]="validatorIsSet && !valid"
             #acceptBtn
             (keydown.arrowleft)="closeBtn.focus()"
             (click)="accept()">{{acceptButton}}</button>
