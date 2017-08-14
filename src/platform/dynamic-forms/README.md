@@ -12,6 +12,7 @@ Properties:
 | `value` | `get(): any` | Getter property for [value] of dynamic [FormGroup].
 | `errors` | `get(): {[name: string]: any}` | Getter property for [errors] of dynamic [FormGroup].
 | `controls` | `get(): {[key: string]: AbstractControl}` | Getter property for [controls] of dynamic [FormGroup].
+| `refresh` | `function` |  Refreshes the form and rerenders all validator/element modifications.
 
 
 ## Setup
@@ -54,7 +55,7 @@ Example for HTML usage:
 ```html
 <td-dynamic-forms [elements]="elements">
 </td-dynamic-forms>
- ```
+```
 
 ```typescript
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
@@ -80,6 +81,10 @@ export class Demo {
     required: true,
     selections: ['A','B','C']
     default: 'A',
+  }, {
+    name: 'file-input',
+    label: 'Label',
+    type: TdDynamicElement.FileInput,
   }];
 }
 ```
