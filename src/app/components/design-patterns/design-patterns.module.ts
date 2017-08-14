@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-import { styleGuideRoutes } from './style-guide.routes';
-
-import { StyleGuideComponent } from './style-guide.component';
-import { LogoComponent } from './logo/logo.component';
-import { ProductIconsComponent } from './product-icons/product-icons.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconographyComponent } from './iconography/iconography.component';
-import { ColorsComponent } from './colors/colors.component';
-import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
-import { ResourcesComponent } from './resources/resources.component';
+import { CovalentCommonModule } from '@covalent/core';
+ 
+import { designPatternsRoutes } from './design-patterns.routes';
+import { DesignPatternsComponent } from './design-patterns.component';
+import { CardsComponent } from './cards/cards.component';
+import { DialogsToastsComponent } from './notices/notices.component';
+import { ManagementListComponent } from './management-list/management-list.component';
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
          MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule,
-         MdTooltipModule, MdProgressBarModule } from '@angular/material';
+         MdTooltipModule, MdProgressBarModule, MdButtonToggleModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
@@ -25,14 +22,11 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
-    StyleGuideComponent,
-    LogoComponent,
-    ProductIconsComponent,
-    TypographyComponent,
-    IconographyComponent,
-    ColorsComponent,
-    UtilityStylesComponent,
-    ResourcesComponent,
+    DesignPatternsComponent,
+    CardsComponent,
+    DialogsToastsComponent,
+    ManagementListComponent,
+    NavigationDrawerComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -44,7 +38,6 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdListModule,
     MdIconModule,
     MdCardModule,
-    MdToolbarModule,
     MdInputModule,
     MdMenuModule,
     MdSelectModule,
@@ -54,7 +47,9 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdSnackBarModule,
     MdTooltipModule,
     MdProgressBarModule,
+    MdButtonToggleModule,
     /** Covalent Modules */
+    CovalentCommonModule,
     CovalentLayoutModule,
     CovalentMediaModule,
     CovalentSearchModule,
@@ -63,8 +58,8 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CovalentHighlightModule,
     CovalentDialogsModule,
     CovalentMessageModule,
-    styleGuideRoutes,
+    designPatternsRoutes,
     ToolbarModule,
   ],
 })
-export class StyleGuideModule {}
+export class DesignPatternsModule {}

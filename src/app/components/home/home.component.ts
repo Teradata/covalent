@@ -42,6 +42,12 @@ export class HomeComponent implements AfterViewInit {
       route: 'style-guide',
       title: 'Style Guide',
     }, {
+      color: 'indigo-A400',
+      description: '',
+      icon: 'color_lens',
+      route: 'design-patterns',
+      title: 'Design Patterns',
+    }, {
       color: 'green-A700',
       description: 'Gallery of example applications and usages',
       icon: 'view_carousel',

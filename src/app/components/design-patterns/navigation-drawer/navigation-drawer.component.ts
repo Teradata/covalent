@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './navigation-drawer.component.html',
 })
 export class NavigationDrawerComponent {
+  example1: boolean = true;
 
   routes: Object[] = [{
       icon: 'home',
@@ -43,4 +44,8 @@ export class NavigationDrawerComponent {
       title: 'Sign out',
     },
   ];
+
+  toggle(div): void {
+    this[div] = !this[div]
+  }
 }

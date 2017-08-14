@@ -58,6 +58,7 @@ export class ManagementListComponent implements OnInit {
   sortKey: string = this.columnOptions[0].value;
   headers: IHeaders = {};
   pageSize: number = 5;
+  example1: boolean = true;
 
   ngOnInit(): void {
     this.columnOptions.forEach((option: any) => {
@@ -92,4 +93,7 @@ export class ManagementListComponent implements OnInit {
     // dummy func
   }
 
+  toggle(div): void {
+    this[div] = !this[div]
+  }
 }
