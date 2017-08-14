@@ -9,8 +9,6 @@ import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
 
-import { tdValidators, ITdCustomValidators } from '../validators/dynamic-forms.validators';
-
 export enum TdDynamicType {
   Text = <any>'text',
   Boolean = <any>'boolean',
@@ -41,7 +39,7 @@ export interface ITdCustomError {
   [validationKey: string]: { message: string };
 }
 
-export interface ITdDynamicElementConfig extends ITdCustomValidators {
+export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
   type: TdDynamicType | TdDynamicElement;
@@ -147,14 +145,6 @@ export class TdDynamicFormsService {
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
-
-    // Find and add covalent custom validators
-    let configKeys: string[] = Object.keys(config);
-    configKeys.forEach((key: string) => {
-      if (tdValidators.hasOwnProperty(key)) {
-        validator = Validators.compose([validator, <ValidatorFn>tdValidators[key]]);
-      }
-    });
 
     // Add provided custom validators from config
     if (config.customValidators) {

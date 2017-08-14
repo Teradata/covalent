@@ -312,7 +312,7 @@
                       'isOdd': {
 
                         // Dynamic error message presented to UI
-                        message: 'Not Odd: ' + control.value, 
+                        message: 'Not Odd: ' + control.value,
                       },
                     };
 
@@ -351,10 +351,6 @@
                 label: 'Password',
                 type: TdDynamicElement.Password,
                 required: true,
-
-                // Covalent validator migrated from other project
-                tdContainsUppercaseCharacter: true,
-                
                 customValidators: [
 
                   // Contain at lease one number
@@ -380,7 +376,7 @@
 
                     let validCharacters: string[] = ['!', '@', '#', '$', '%'];
                     let regex: RegExp = new RegExp('[' + validCharacters.join('').toString() + ']', 'g');
-                    
+
                     let isValid: boolean = regex.test(control.value);
 
                     let error: ITdCustomError = {

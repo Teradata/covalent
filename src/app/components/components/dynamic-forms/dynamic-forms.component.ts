@@ -234,10 +234,6 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
     label: 'Password',
     type: TdDynamicElement.Password,
     required: true,
-
-    // Covalent validator migrated from other project
-    tdContainsUppercaseCharacter: true,
-
     customValidators: [
 
       // Contain at lease one number
