@@ -71,6 +71,7 @@ export { TdTimeAgoPipe, TdTimeDifferencePipe,
  */
 
 import { RouterPathService } from './services/router-path.service';
+import { IconService } from './services/icon.service';
 
 @NgModule({
   imports: [
@@ -93,6 +94,7 @@ import { RouterPathService } from './services/router-path.service';
   ],
   providers: [
     RouterPathService,
+    IconService,
   ],
 })
 export class CovalentCommonModule {

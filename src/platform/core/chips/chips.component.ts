@@ -245,6 +245,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @Output('inputChange') onInputChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
+   * chipFocus?: function
+   * Method to be executed when a chip is focused.
+   * Sends chip value as event.
+   */
+  @Output('chipFocus') onChipFocus: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
+   * blur?: function
+   * Method to be executed when a chip is blurred.
+   * Sends chip value as event.
+   */
+  @Output('chipBlur') onChipBlur: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
    * Implemented as part of ControlValueAccessor.
    */
   @Input() set value(v: any) {
@@ -461,6 +475,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     this.inputControl.setValue('');
     this._changeDetectorRef.markForCheck();
     return true;
+  }
+
+  /**
+   * Sets blur of chip and sends out event
+   */
+  _handleChipBlur(event: FocusEvent, value: any): void {
+    this.onChipBlur.emit(value);
+  }
+
+  /**
+   * Sets focus of chip and sends out event
+   */
+  _handleChipFocus(event: FocusEvent, value: any): void {
+    this.onChipFocus.emit(value);
   }
 
   _handleFocus(): boolean {
@@ -714,7 +742,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'click')).call(filter, (event: MouseEvent) => {
+      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'mousedown')).call(filter, (event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
@@ -724,6 +752,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
       }).subscribe(() => { 
         if (this.focused) {
+          this._autocompleteTrigger.closePanel();
           this.removeFocusedState();
           this.onTouched();
           this._changeDetectorRef.markForCheck();

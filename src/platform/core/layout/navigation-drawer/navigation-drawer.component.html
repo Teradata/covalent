@@ -1,22 +1,25 @@
 <md-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
   <div layout="column" flex>
-    <span *ngIf="icon || logo || sidenavTitle"
-          [class.cursor-pointer]="routerEnabled"
-          (click)="handleNavigationClick()"
-          layout="row"
-          layout-align="start center">
-      <md-icon *ngIf="icon">{{icon}}</md-icon>
-      <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
-      <span *ngIf="sidenavTitle" class="md-subhead">{{sidenavTitle}}</span>
-    </span>
-    <div class="md-body-2" *ngIf="email && name">{{name}}</div>
-    <div class="md-body-1" layout="row" href *ngIf="email || name" (click)="toggleMenu()">
-      <span flex>{{email || name}}</span>
-      <button md-icon-button class="md-icon-button-mini" *ngIf="isMenuAvailable">
-        <md-icon *ngIf="!menuToggled">arrow_drop_down</md-icon>
-        <md-icon *ngIf="menuToggled">arrow_drop_up</md-icon>
-      </button>
-    </div>
+    <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
+    <ng-container *ngIf="!isCustomToolbar">
+      <span *ngIf="icon || logo || sidenavTitle"
+            [class.cursor-pointer]="routerEnabled"
+            (click)="handleNavigationClick()"
+            layout="row"
+            layout-align="start center">
+        <md-icon *ngIf="icon">{{icon}}</md-icon>
+        <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+        <span *ngIf="sidenavTitle" class="md-subhead">{{sidenavTitle}}</span>
+      </span>
+      <div class="md-body-2" *ngIf="email && name">{{name}}</div>
+      <div class="md-body-1" layout="row" href *ngIf="email || name" (click)="toggleMenu()">
+        <span flex>{{email || name}}</span>
+        <button md-icon-button class="md-icon-button-mini" *ngIf="isMenuAvailable">
+          <md-icon *ngIf="!menuToggled">arrow_drop_down</md-icon>
+          <md-icon *ngIf="menuToggled">arrow_drop_up</md-icon>
+        </button>
+      </div>
+    </ng-container>
   </div>
 </md-toolbar>
 <div [@tdCollapse]="menuToggled">

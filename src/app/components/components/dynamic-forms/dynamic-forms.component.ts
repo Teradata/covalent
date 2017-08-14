@@ -54,11 +54,13 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
     name: 'input',
     type: TdDynamicElement.Input,
     required: false,
+    flex: 50,
   }, {
     name: 'required-input',
     label: 'Input Label',
     type: TdDynamicElement.Input,
     required: true,
+    flex: 50,
   }, {
     name: 'textarea',
     type: TdDynamicElement.Textarea,
@@ -68,6 +70,7 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
+    flex: 100,
   }, {
     name: 'required-password',
     label: 'Password Label',
@@ -115,6 +118,61 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
     required: true,
   }];
 
+  fileElements: ITdDynamicElementConfig[] = [{
+    name: 'file-input',
+    label: 'Browse a file',
+    type: TdDynamicElement.FileInput,
+  }];
+
+  dynamicElements: ITdDynamicElementConfig[] = [{
+    name: 'element-0',
+    type: TdDynamicType.Text,
+    required: true,
+    flex: 80,
+  }, {
+    name: 'element-1',
+    type: TdDynamicType.Number,
+    required: false,
+    max: 30,
+    flex: 20,
+  }];
+
+  elementOptions: any[] = [
+    TdDynamicElement.Input,
+    TdDynamicType.Number,
+    TdDynamicElement.Password,
+    TdDynamicElement.Textarea,
+    TdDynamicElement.Slider,
+    TdDynamicElement.Checkbox,
+    TdDynamicElement.SlideToggle,
+    TdDynamicElement.FileInput,
+  ];
+
+  showDynamicCode: boolean = false;
+
+  type: any;
+
+  count: number = 2;
+
+  isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
+    return type === TdDynamicElement.Slider || type === TdDynamicType.Number;
+  }
+
+  addElement(): void {
+    if (this.type) {
+      this.dynamicElements.push({
+        name: 'element-' + this.count++,
+        type: this.type,
+        required: false,
+      });
+      this.type = undefined;
+    }
+  }
+
+  deleteElement(index: number): void {
+    this.dynamicElements.splice(index, 1);
+  }
+
   // Custom Validator using ITdCustomValidate object
   customValidationITdCustomValidate: ITdDynamicElementConfig[] = [{
     name: 'numberIsEven',
@@ -161,7 +219,7 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
           'isOdd': {
 
             // Dynamic error message presented to UI
-            message: 'Not Odd: ' + control.value, 
+            message: 'Not Odd: ' + control.value,
           },
         };
 
@@ -179,7 +237,7 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
 
     // Covalent validator migrated from other project
     tdContainsUppercaseCharacter: true,
-    
+
     customValidators: [
 
       // Contain at lease one number
@@ -205,7 +263,7 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
 
         let validCharacters: string[] = ['!', '@', '#', '$', '%'];
         let regex: RegExp = new RegExp('[' + validCharacters.join('').toString() + ']', 'g');
-        
+
         let isValid: boolean = regex.test(control.value);
 
         let error: ITdCustomError = {
