@@ -154,25 +154,6 @@ export class DynamicFormsDemoComponent {
 
   count: number = 2;
 
-  isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
-    return type === TdDynamicElement.Slider || type === TdDynamicType.Number;
-  }
-
-  addElement(): void {
-    if (this.type) {
-      this.dynamicElements.push({
-        name: 'element-' + this.count++,
-        type: this.type,
-        required: false,
-      });
-      this.type = undefined;
-    }
-  }
-
-  deleteElement(index: number): void {
-    this.dynamicElements.splice(index, 1);
-  }
-
   // Custom Validator using ITdCustomValidate object
   customValidationITdCustomValidate: ITdDynamicElementConfig[] = [{
     name: 'numberIsEven',
@@ -279,9 +260,27 @@ export class DynamicFormsDemoComponent {
     label: 'Hexidecimal Color',
     type: TdDynamicType.Text,
     customValidators: [
-
       Validators.minLength(7),
       Validators.pattern(/^#[A-Fa-f0-9]{6}/),
     ],
   }];
+
+  isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
+    return type === TdDynamicElement.Slider || type === TdDynamicType.Number;
+  }
+
+  addElement(): void {
+    if (this.type) {
+      this.dynamicElements.push({
+        name: 'element-' + this.count++,
+        type: this.type,
+        required: false,
+      });
+      this.type = undefined;
+    }
+  }
+
+  deleteElement(index: number): void {
+    this.dynamicElements.splice(index, 1);
+  }
 }

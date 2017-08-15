@@ -13,8 +13,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ShowOneErrorPipe implements PipeTransform {
   transform(errors: any): string {
 
-
-
     let message: string = undefined;
 
     if (errors) {
@@ -62,9 +60,6 @@ export class ShowOneErrorPipe implements PipeTransform {
             }
           }
       }
-
-      console.log(message);
-
     }
     return message;
   }
