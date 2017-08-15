@@ -6,7 +6,7 @@ import { CovalentCommonModule } from '@covalent/core';
 import { designPatternsRoutes } from './design-patterns.routes';
 import { DesignPatternsComponent } from './design-patterns.component';
 import { CardsComponent } from './cards/cards.component';
-import { DialogsToastsComponent } from './notices/notices.component';
+import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
@@ -24,7 +24,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
   declarations: [
     DesignPatternsComponent,
     CardsComponent,
-    DialogsToastsComponent,
+    AlertsComponent,
     ManagementListComponent,
     NavigationDrawerComponent,
   ],

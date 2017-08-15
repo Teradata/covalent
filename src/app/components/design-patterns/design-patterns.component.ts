@@ -22,8 +22,8 @@ export class DesignPatternsComponent implements AfterViewInit {
   }, {
     description: 'Dialog, toast & inline error patterns',
     icon: 'filter_none',
-    route: 'notices',
-    title: 'Notification Patterns',
+    route: 'alerts',
+    title: 'Alert Patterns',
   }, {
     description: 'List, filter & sorting patterns',
     icon: 'view_list',

@@ -30,10 +30,19 @@
         <md-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</md-card-subtitle>
         <md-card-content>
           <p>In addition to the Material Deisgn Navigation Drawer component, this example leverages the following components:</p>
-          <ul>
-            <li><a href="https://material.io/guidelines/components/lists.html" target="_blank">md-list</a></li>
-            <li><a href="https://material.io/guidelines/style/icons.html" target="_blank">md-icons</a></li>
-          </ul>
+          <md-nav-list>
+            <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design List</span>
+              <p md-line>md-list</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design Icon</span>
+              <p md-line>md-icons</p>
+            </a>
+          </md-nav-list>
         </md-card-content>
       </div>
       <div flex>

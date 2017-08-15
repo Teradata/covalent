@@ -6,7 +6,8 @@
       <h3>Problem</h3>
       <p>Need to display collection of data with a similar data type and a minimal amount of metadata.</p>
       <h3>Solution</h3>
-      <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with faux-columns and sorting instead.</p>
+      <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with
+        faux-columns and sorting instead.</p>
     </md-card-content>
   </md-card>
   <md-card flex-sm flex-gt-md>
@@ -40,26 +41,43 @@
         <md-card-subtitle>Supports sorting & filtering</md-card-subtitle>
         <md-card-content>
           <p>This example contains a variety of components including:</p>
-          <ul>
-            <li>Covalent
-              <ul class="pad-bottom">
-                <li><a target="_blank" href="/#/components/search">td-search</a></li>
-                <li><a target="_blank" href="/#/components/paging">td-paging</a></li>
-              </ul>
-            </li>
-            <li>Material Design
-              <ul class="pad-bottom">
-                <li><a target="_blank" href="https://material.io/guidelines/components/lists.html">md-list</a></li>
-                <li><a target="_blank" href="https://material.io/guidelines/components/menus.html">md-menu</a></li>
-                <li><a target="_blank" href="https://material.io/guidelines/style/icons.html">md-icons</a></li>
-              </ul>
-            </li>
-            <li>Angular Material
-              <ul>
-                <li><a target="_blank" href="https://material.angular.io/components/select/overview">md-select</a></li>
-              </ul>
-            </li>
-          </ul>
+          <md-nav-list>
+            <a md-list-item href="/#/components/search" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Covalent Search</span>
+              <p md-line>td-search</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="/#/components/paging" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Covalent Paging</span>
+              <p md-line>td-paging-bar</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design List</span>
+              <p md-line>md-list</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/components/menus.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design Menu</span>
+              <p md-line>md-menu</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design Icons</span>
+              <p md-line>md-icon</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.angular.io/components/select/overview" target="_blank">
+              <md-icon>launch</md-icon>
+              <span md-line>Material Design Select</span>
+              <p md-line>md-select</p>
+            </a>
+          </md-nav-list>
         </md-card-content>
       </div>
       <div flex>
@@ -75,10 +93,10 @@
           <div [tdToggle]="example1">
             <div>
               <md-tab-group md-stretch-tabs dynamicHeight>
-                  <md-tab>
-                    <ng-template md-tab-label>HTML</ng-template>
-                      <td-highlight lang="html">
-                          <![CDATA[
+                <md-tab>
+                  <ng-template md-tab-label>HTML</ng-template>
+                  <td-highlight lang="html">
+                    <![CDATA[
                             <md-card>
                               <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                                 <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
@@ -144,12 +162,12 @@
                               </td-paging-bar>
                             </md-card>
                           ]]>
-                      </td-highlight>
-                  </md-tab>
-                  <md-tab>
-                    <ng-template md-tab-label>Typescript</ng-template>
-                      <td-highlight lang="typescript">
-                          <![CDATA[
+                  </td-highlight>
+                </md-tab>
+                <md-tab>
+                  <ng-template md-tab-label>Typescript</ng-template>
+                  <td-highlight lang="typescript">
+                    <![CDATA[
                             ...
                             export class ManagementListComponent implements OnInit {
                               data: any[];
@@ -184,8 +202,8 @@
                               }
                             }
                           ]]>
-                      </td-highlight>
-                  </md-tab>
+                  </td-highlight>
+                </md-tab>
               </md-tab-group>
             </div>
             <md-divider></md-divider>
@@ -195,7 +213,8 @@
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
                 <span class="md-title">Title here</span>
               </span>
-              <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()" flex>
+              <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()"
+                flex>
               </td-search-box>
               <span>
                 <button md-icon-button [mdMenuTriggerFor]="toolbarMenu"><md-icon>more_vert</md-icon></button>
@@ -203,8 +222,8 @@
                   <button md-menu-item>
                     <md-icon>settings</md-icon>
                     <span>Settings</span>
-                  </button>
-                </md-menu>
+              </button>
+              </md-menu>
               </span>
             </div>
             <md-divider></md-divider>

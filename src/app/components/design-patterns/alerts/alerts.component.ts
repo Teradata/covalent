@@ -7,12 +7,12 @@ import { TdDialogService } from '../../../../platform/core';
 import { MdSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'design-patterns-notices',
-  styleUrls: ['./notices.component.scss'],
-  templateUrl: './notices.component.html',
+  selector: 'design-patterns-alerts',
+  styleUrls: ['./alerts.component.scss'],
+  templateUrl: './alerts.component.html',
   animations: [slideInDownAnimation],
 })
-export class DialogsToastsComponent {
+export class AlertsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
