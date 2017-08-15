@@ -41,13 +41,27 @@
         <md-card-subtitle>Card with standard card elements</md-card-subtitle>
         <md-card-content>
           <p>A card can be used with any of the optional card sub-elements including:</p>
-          <ul>
-            <li>md-title</li>
-            <li>md-subtitle</li>
-            <li>md-divider</li>
-            <li>md-card-content</li>
-            <li>md-card-actions</li>
-          </ul>
+          <md-list>
+            <a md-list-item>
+              <span md-line>md-title</span>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item>
+              <span md-line>md-subtitle</span>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item>
+              <span md-line>md-divider</span>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item>
+              <span md-line>md-card-content</span>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item>
+              <span md-line>md-card-actions</span>
+            </a>
+          </md-list>
           <p>Additionally, a card may contain other components such as search, lists, icons, and images.</p>
         </md-card-content>
       </div>
@@ -427,13 +441,17 @@
         <md-card-content>
           <p>Images displayed within cards inherit styling which removes margin and padding, depending on where the imgae is positioned within the card. Notice if the image is first it has proper rounded corners.</p>
           <p>Examples are leveraging the following special image elements:</p>
-          <ul>
-            <li>md-card-sm-image</li>
-            <li>md-card-md-image</li>
-            <li>md-card-lg-image</li>
-            <li>md-card-title-group</li>
-          </ul>
-          
+          <md-list>
+            <a md-list-item>
+              <span md-line>Card Small Image</span>
+              <p md-line>md-card-sm-image</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item>
+              <span md-line>Card Medium Image</span>
+              <p md-line>md-card-md-image</p>
+            </a>
+          </md-list>
         </md-card-content>
       </div>
       <div flex>
