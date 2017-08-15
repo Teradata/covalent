@@ -1,5 +1,5 @@
 import { Component, HostBinding, ViewChild, ViewRef, AfterViewInit } from '@angular/core';
-import { AbstractControl, ValidatorFn, FormGroup } from '@angular/forms';
+import { AbstractControl, ValidatorFn, FormGroup, Validators } from '@angular/forms';
 import { slideInDownAnimation } from '../../../app.animations';
 
 // TODO: uncomment before publishing
@@ -16,7 +16,7 @@ import { TdDynamicType, ITdDynamicElementConfig,
   templateUrl: './dynamic-forms.component.html',
   animations: [slideInDownAnimation],
 })
-export class DynamicFormsDemoComponent implements AfterViewInit {
+export class DynamicFormsDemoComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -200,7 +200,7 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
   // Custom Validator using ValidatorFn function
   customValidationValidatorFn: ITdDynamicElementConfig[] = [{
     name: 'numberIsOddInRange',
-    label: 'Odd Number In Range',
+    label: 'Odd Number Between 8 and 20',
     type: TdDynamicType.Number,
     min: 8,
     max: 20,
@@ -265,7 +265,6 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
         let error: ITdCustomError = {
           'containSpecialCharacters': {
 
-            // TODO: parenthesis may be mistaken for valid special character. refine error message.
             message: 'Need at least one special character (' + validCharacters.join(', ').toString() + ')',
           },
         };
@@ -275,10 +274,14 @@ export class DynamicFormsDemoComponent implements AfterViewInit {
     ],
   }];
 
-  // TODO: remove before publish - for dev only
-  ngAfterViewInit(): void {
-  //   (<FormGroup>this.customValidateForm.dynamicForm).valueChanges.subscribe(() => {
-  //     console.log(this.customValidateForm.errors);
-  //   });
-  }
+  angularValidators: ITdDynamicElementConfig[] = [{
+    name: 'angularValidators',
+    label: 'Hexidecimal Color',
+    type: TdDynamicType.Text,
+    customValidators: [
+
+      Validators.minLength(7),
+      Validators.pattern(/^#[A-Fa-f0-9]{6}/),
+    ],
+  }];
 }

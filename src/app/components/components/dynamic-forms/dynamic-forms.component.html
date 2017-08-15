@@ -293,7 +293,7 @@
               // Custom Validator using ValidatorFn function
               customValidationValidatorFn: ITdDynamicElementConfig[] = [{
                 name: 'numberIsOddInRange',
-                label: 'Odd Number In Range',
+                label: 'Odd Number Between 8 and 20',
                 type: TdDynamicType.Number,
                 min: 8,
                 max: 20,
@@ -392,6 +392,41 @@
                 ],
               }];
             ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+
+    <h4>Angular Validators</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms #customValidateForm [elements]="angularValidators">
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-dynamic-forms [elements]="angularValidators">
+          </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+          angularValidators: ITdDynamicElementConfig[] = [{
+          name: 'angularValidators',
+          label: 'Hexidecimal Color',
+          type: TdDynamicType.Text,
+          customValidators: [
+
+          Validators.minLength(7),
+          Validators.pattern(/^#[A-Fa-f0-9]{6}/),
+          ],
+          }];
+         ]]>
         </td-highlight>
       </md-tab>
     </md-tab-group>
