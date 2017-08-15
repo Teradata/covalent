@@ -23,7 +23,6 @@ export class CardsComponent {
   example5: boolean = true;
   
   invalidError: boolean = false;
-  private hideElement: boolean = true;
 
   login(): void {
     this.invalidError = true;
@@ -32,7 +31,7 @@ export class CardsComponent {
     }, 500);
   }
   
-  toggle(div): void {
-    this[div] = !this[div]
+  toggle(div: string): void {
+    this[div] = !this[div];
   }
 }

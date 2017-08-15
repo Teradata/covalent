@@ -93,7 +93,7 @@ export class ManagementListComponent implements OnInit {
     // dummy func
   }
 
-  toggle(div): void {
-    this[div] = !this[div]
+  toggle(div: string ): void {
+    this[div] = !this[div];
   }
 }
