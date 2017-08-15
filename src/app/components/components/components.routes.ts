@@ -22,6 +22,7 @@ import { PagingDemoComponent } from './paging/paging.component';
 import { SearchDemoComponent } from './search/search.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
+import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
@@ -93,6 +94,9 @@ const routes: Routes = [{
     }, {
       component: CodeEditorDemoComponent,
       path: 'code-editor',
+    }, {
+      component: TextEditorDemoComponent,
+      path: 'text-editor',
     }, {
       component: NgxChartsDemoComponent,
       path: 'ngx-charts',

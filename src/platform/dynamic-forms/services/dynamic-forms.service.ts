@@ -2,6 +2,7 @@ import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 import { Validators, ValidatorFn, FormControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
+import { TdDynamicFileInputComponent } from '../dynamic-elements/dynamic-file-input/dynamic-file-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
@@ -23,6 +24,7 @@ export enum TdDynamicElement {
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
   Select = <any>'select',
+  FileInput = <any>'file-input',
 }
 
 export interface ITdDynamicElementConfig {
@@ -34,6 +36,7 @@ export interface ITdDynamicElementConfig {
   max?: any;
   selections?: any[];
   default?: any;
+  flex?: number;
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
@@ -74,6 +77,8 @@ export class TdDynamicFormsService {
       case TdDynamicType.Array:
       case TdDynamicElement.Select:
         return TdDynamicSelectComponent;
+      case TdDynamicElement.FileInput:
+        return TdDynamicFileInputComponent;
       default:
         throw new Error(`Error: type ${element} does not exist or not supported.`);
     }
@@ -91,6 +96,7 @@ export class TdDynamicFormsService {
       case TdDynamicElement.Input:
       case TdDynamicElement.Password:
       case TdDynamicType.Array:
+      case TdDynamicElement.FileInput:
       case TdDynamicElement.Select:
         return 45;
       case TdDynamicElement.Textarea:
