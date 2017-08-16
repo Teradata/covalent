@@ -9,9 +9,9 @@ import { TdRotateAnimation } from '../../../../platform/core/common/animations/r
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
-    TdRotateAnimation('rotateExample180'),
-    TdRotateAnimation('rotateExample360', 500, 360),
-    TdRotateAnimation('rotateExample540', 1000, 540),
+    TdRotateAnimation('rotate1Example180'),
+    TdRotateAnimation('rotate2Example180', 1000, -180),
+    TdRotateAnimation('rotate2Example360', 500, 360),
   ],
 })
 export class AnimationsComponent {
