@@ -17,9 +17,9 @@
                 <md-grid-list [cols]="(media.registerQuery('gt-xs') | async) ? 2 : 1" [gutterSize]="(media.registerQuery('gt-sm') | async) ? 25 : 10" [rowHeight]="(media.registerQuery('gt-sm') | async) ? '335px' : '240px'">
                     <md-grid-tile *ngFor="let template of templatesObs | async" mdTooltip="View Plunker" mdTooltipPosition="above" md-ripple class="md-whiteframe-z3">
                         <a [href]="template.plnkr" target="_blank" [class]="'bgc-' + template.color">
-                            <img [src]="template.img">
+                            <img alt="{{template.title}}" [src]="template.img">
                             <md-grid-tile-footer>
-                                <h3 md-line>{{template.name}}</h3>
+                                <h3 md-line>{{template.title}}</h3>
                                 <span md-line>{{template.description}}</span>
                                 <md-icon>launch</md-icon>
                             </md-grid-tile-footer>
