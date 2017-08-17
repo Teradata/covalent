@@ -1,0 +1,126 @@
+<md-card>
+  <md-card-title>Animations</md-card-title>
+  <md-card-subtitle>Core Covalent animation utilities</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Utilities to help add simple animations. For custom and complex animations look into the Angular animations doc.</p>
+
+    <h3>Setup:</h3>
+    <p>Import individual animation utilities as needed into the component that will contain the elements you want to animate.</p>
+    <p>Replace the "TdAnimationUtility" stub variable in code setup below with the respective animation utilities you decide to equip.</p>
+    <p>Invoke the utility functions with a required anchor name and optional configs in the component's metadata. The anchor name is used to attach the animation to an arbitrary element in the template.</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdAnimationUtility } from '@covalent/core';
+
+        @Component({
+          ...
+          animations: [
+            TdAnimationUtility('myAnchor'),
+          ],
+        })
+        export class MyComponent {
+          triggerState: boolean = false;
+          ...
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" href="https://angular.io/guide/animations" target="_blank" class="text-upper">Animations Docs</a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Rotate Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button [@tdRotate]="rotateState1" (click)="rotateState1 = !rotateState1" color="accent">
+        Rotate 180&deg;<md-icon>mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdRotateAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdRotateAnimation('tdRotate'),
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdRotate]="triggerState" (click)="triggerState = !triggerState" color="accent">
+            Rotate 180&deg;<md-icon>mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div>
+      <h3>Demo 2:</h3>
+      <button md-raised-button [@tdRotateNeg180]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
+        Rotate -180&deg;<md-icon [@tdRotate180]="rotateState2">mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdRotateAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdRotateAnimation('tdRotate180', 500, 180),
+            TdRotateAnimation('tdRotateNeg180', 500, -180)
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdRotateNeg180]="triggerState" (click)="triggerState = !triggerState" color="accent">
+            Rotate -180&deg;<md-icon [@tdRotate180]="triggerState">mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in miliseconds. Defaults to 250 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>degrees?: number</h3>
+          <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+
+  </md-card-content>
+</md-card>

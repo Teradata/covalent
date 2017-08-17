@@ -94,6 +94,12 @@ export class ComponentsOverviewComponent {
       route: 'pipes',
       title: 'Pipes',
     },
+    {
+      color: 'amber-A700',
+      icon: 'theaters',
+      route: 'animations',
+      title: 'Animations',
+    },
   ];
   optional: Object[] = [{
       color: 'pink-A700',
