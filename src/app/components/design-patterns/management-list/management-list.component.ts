@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 export enum OrderBy {
   ASC = <any>'asc',
@@ -13,8 +15,12 @@ export interface IHeaders {
   selector: 'design-patterns-management-list',
   styleUrls: ['./management-list.component.scss'],
   templateUrl: './management-list.component.html',
+  animations: [slideInDownAnimation],
 })
 export class ManagementListComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   data: Object[] = [{
       'created_at': '2015-12-15T19:00:31Z',
