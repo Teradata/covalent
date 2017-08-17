@@ -206,69 +206,64 @@
           <div [tdToggle]="example3">
             <!-- View Source -->
             <div>
-              <md-tab-group md-stretch-tabs dynamicHeight>
-                <md-tab>
-                  <ng-template md-tab-label>HTML</ng-template>
-                    <td-highlight lang="html">
-                      <![CDATA[
-                        <form #myForm="ngForm">
-                            <div layout-gt-xs="row" layout-margin>
-                              <md-input-container flex>
-                                <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
-                                <md-hint>
-                                  <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
-                                </md-hint>
-                              </md-input-container>
-                              <md-input-container flex>
-                                <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
-                                <md-hint>
-                                  <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
-                                </md-hint>
-                              </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row" layout-margin>
-                              <md-input-container flex="40">
-                                <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
-                                <md-hint>
-                                  <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
-                                </md-hint>
-                                <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
-                              </md-input-container>
-                              <md-input-container flex="35">
-                                <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-                              </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row" layout-margin>
-                              <md-input-container flex="20">
-                                <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
-                                <md-hint>
-                                  <span [hidden]="stateForm.pristine" class="tc-red-600">
-                                    <span [hidden]="!stateForm.errors?.required">Required</span>
-                                    <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
-                                  </span>
-                                </md-hint>
-                                <md-hint align="end">e.g CA</md-hint>
-                              </md-input-container>
-                              <md-input-container flex="25">
-                                <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
-                                <md-hint>
-                                  <span [hidden]="zipForm.pristine" class="tc-red-600">
-                                    <span [hidden]="!zipForm.errors?.required">Required</span>
-                                    <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
-                                  </span>
-                                </md-hint>
-                                <md-hint align="end">e.g 92101</md-hint>
-                              </md-input-container>
-                            </div>
-                            <md-divider></md-divider>
-                            <div class="inset">
-                              <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
-                            </div>
-                          </form>
-                        ]]>
-                    </td-highlight>
-                </md-tab>
-              </md-tab-group>
+              <td-highlight lang="html">
+                <![CDATA[
+                  <form #myForm="ngForm">
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-input-container flex>
+                          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                        </md-input-container>
+                        <md-input-container flex>
+                          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                        </md-input-container>
+                      </div>
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-input-container flex="40">
+                          <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                          <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
+                        </md-input-container>
+                        <md-input-container flex="35">
+                          <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+                        </md-input-container>
+                      </div>
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-input-container flex="20">
+                          <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="stateForm.pristine" class="tc-red-600">
+                              <span [hidden]="!stateForm.errors?.required">Required</span>
+                              <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+                            </span>
+                          </md-hint>
+                          <md-hint align="end">e.g CA</md-hint>
+                        </md-input-container>
+                        <md-input-container flex="25">
+                          <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+                          <md-hint>
+                            <span [hidden]="zipForm.pristine" class="tc-red-600">
+                              <span [hidden]="!zipForm.errors?.required">Required</span>
+                              <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+                            </span>
+                          </md-hint>
+                          <md-hint align="end">e.g 92101</md-hint>
+                        </md-input-container>
+                      </div>
+                      <md-divider></md-divider>
+                      <div class="inset">
+                        <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
+                      </div>
+                    </form>
+                  ]]>
+              </td-highlight>
             </div>
             <md-divider></md-divider>
           </div>
