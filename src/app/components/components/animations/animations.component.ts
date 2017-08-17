@@ -9,9 +9,9 @@ import { TdRotateAnimation } from '../../../../platform/core/common/animations/r
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
-    TdRotateAnimation('rotate1Example180'),
-    TdRotateAnimation('rotate2Example180', 1000, -180),
-    TdRotateAnimation('rotate2Example360', 500, 360),
+    TdRotateAnimation('tdRotate'),
+    TdRotateAnimation('tdRotate180', 500, 180),
+    TdRotateAnimation('tdRotateNeg180', 500, -180),
   ],
 })
 export class AnimationsComponent {
@@ -21,6 +21,5 @@ export class AnimationsComponent {
 
   rotateState1: boolean = false;
   rotateState2: boolean = false;
-  rotateState3: boolean = false;
 
 }
