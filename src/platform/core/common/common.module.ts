@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
  * ANIMATIONS
  */
 
+// Directives
 import { TdToggleDirective } from './animations/toggle/toggle.directive';
 import { TdFadeDirective } from './animations/fade/fade.directive';
 
@@ -15,10 +16,10 @@ const TD_ANIMATIONS: Type<any>[] = [
   TdToggleDirective,
   TdFadeDirective,
 ];
-
 export { TdToggleDirective, TdFadeDirective };
-export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
-export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
+
+// Utility functions
+export * from './animations';
 
 /**
  * BEHAVIORS

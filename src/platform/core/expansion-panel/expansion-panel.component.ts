@@ -4,6 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
 
 import { TdCollapseAnimation, ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { TdRotateAnimation } from '../common/animations';
 
 @Directive({
   selector: '[td-expansion-panel-header]ng-template',
@@ -50,6 +51,7 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
   inputs: ['disabled', 'disableRipple'],
   animations: [
     TdCollapseAnimation(),
+    TdRotateAnimation('tdRotate'),
   ],
 })
 export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {
