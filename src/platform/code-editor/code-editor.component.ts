@@ -399,7 +399,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                         value: value,
                         language: '${this.language}',
                         theme: '${this._theme}',
-                    }, '${this.editorOptions}'));
+                    }, ${JSON.stringify(this.editorOptions)}));
                     editor.getModel().onDidChangeContent( (e)=> {
                         ipcRenderer.sendToHost("onEditorContentChange", editor.getValue());
                     });
@@ -427,7 +427,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                         value: currentValue,
                         language: data.language,
                         theme: data.theme,
-                    }, '${this.editorOptions}'));
+                    }, ${JSON.stringify(this.editorOptions)}));
                 });
 
                 // set the options of the editor from what was sent from the mainview
@@ -444,7 +444,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                         value: currentValue,
                         language: data,
                         theme: theme,
-                    }, '${this.editorOptions}'));
+                    }, ${JSON.stringify(this.editorOptions)}));
                     ipcRenderer.sendToHost("onEditorConfigurationChanged", '');
                     ipcRenderer.sendToHost("onEditorLanguageChanged", '');
                 });
