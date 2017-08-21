@@ -7,12 +7,12 @@ import { TdDialogService } from '../../../../platform/core';
 import { MdSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'design-patterns-dialogs',
-  styleUrls: ['./dialogs.component.scss'],
-  templateUrl: './dialogs.component.html',
+  selector: 'design-patterns-alerts',
+  styleUrls: ['./alerts.component.scss'],
+  templateUrl: './alerts.component.html',
   animations: [slideInDownAnimation],
 })
-export class DialogsToastsComponent {
+export class AlertsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -23,13 +23,16 @@ export class DialogsToastsComponent {
   city: string;
   state: string;
   zip: string;
+  example1: boolean = true;
+  example2: boolean = true;
+  example3: boolean = true;
 
   constructor(private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar) {}
 
   showSnackBar(): void {
     this._snackBarService
-      .open('Direct message sent!', 'Dismiss', { duration: 3000 });
+      .open('Toast here', 'Dismiss', { duration: 3000 });
   }
   openAlert(): void {
     this._dialogService.openAlert({
@@ -70,5 +73,9 @@ export class DialogsToastsComponent {
         // DO SOMETHING ELSE
       }
     });
+  }
+  
+  toggle(div: string ): void {
+    this[div] = !this[div];
   }
 }

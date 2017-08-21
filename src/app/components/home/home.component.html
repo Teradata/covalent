@@ -45,13 +45,13 @@
           </md-nav-list>
           <div layout="row" layout-wrap hide-xs hide-sm hide-md>
             <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
-              <div flex-gt-sm="20" class="pad-sm">
+              <div flex-gt-sm="33" class="pad-sm">
                 <a [routerLink]="[item.route]" md-button class="pad">
                   <div layout="row" layout-align="start center" class="push-bottom-xs">
                     <md-icon class="push-right-sm">
                       <span class="tc-{{item.color}}">{{item.icon}}</span>
                     </md-icon>
-                    <div class="md-title text-xl tc-blue-grey-900">{{item.title}}</div>
+                    <div class="md-title text-xxl tc-blue-grey-900">{{item.title}}</div>
                   </div>
                   <div class="md-subhead tc-blue-grey-700 text-wrap text-left" hide-sm hide-md> {{item.description}} </div>   
                 </a>

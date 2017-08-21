@@ -32,6 +32,10 @@ export class DocsAppComponent implements AfterViewInit {
       route: 'style-guide',
       title: 'Style Guide',
     }, {
+      icon: 'extension',
+      route: 'design-patterns',
+      title: 'Design Patterns',
+    }, {
       icon: 'view_carousel',
       route: 'templates',
       title: 'Templates',
