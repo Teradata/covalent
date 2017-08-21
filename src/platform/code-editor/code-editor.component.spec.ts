@@ -167,7 +167,7 @@ describe('Component: App', () => {
     })();
   });
 
-  it('should set the editor options', (done: DoneFn) => {
+  it('should set the editor options and retrieve them', (done: DoneFn) => {
     inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
       let component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
