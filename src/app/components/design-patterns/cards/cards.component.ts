@@ -15,6 +15,13 @@ export class CardsComponent {
 
   username: string;
   password: string;
+  fadeDiv: boolean = true;
+  example1: boolean = true;
+  example2: boolean = true;
+  example3: boolean = true;
+  example4: boolean = true;
+  example5: boolean = true;
+  
   invalidError: boolean = false;
 
   login(): void {
@@ -23,5 +30,8 @@ export class CardsComponent {
       this.invalidError = false;
     }, 500);
   }
-
+  
+  toggle(div: string): void {
+    this[div] = !this[div];
+  }
 }
