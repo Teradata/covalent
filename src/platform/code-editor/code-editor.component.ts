@@ -43,6 +43,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _componentInitialized: boolean = false;
   private _fromEditor: boolean = false;
   private _automaticLayout: boolean = false;
+  private _editorOptions: any = {};
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -186,11 +187,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             let currentValue: string = this._editor.getValue();
             this._editor.dispose();
             let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
-            this._editor = monaco.editor.create(myDiv, {
+            this._editor = monaco.editor.create(myDiv, Object.assign({
                 value: currentValue,
                 language: language,
                 theme: this._theme,
-            });
+            }, this.editorOptions));
             this._editor.getModel().onDidChangeContent( (e: any) => {
                 this._fromEditor = true;
                 this.writeValue(this._editor.getValue());
@@ -269,11 +270,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             let currentValue: string = this._editor.getValue();
             this._editor.dispose();
             let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
-            this._editor = monaco.editor.create(myDiv, {
+            this._editor = monaco.editor.create(myDiv, Object.assign({
                 value: currentValue,
                 language: this._language,
                 theme: this._theme,
-            });
+            }, this.editorOptions));
             this._editor.getModel().onDidChangeContent( (e: any) => {
                 this._fromEditor = true;
                 this.writeValue(this._editor.getValue());
@@ -315,6 +316,19 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
   get automaticLayout(): any {
     return this._automaticLayout;
+  }
+
+  /**
+   * editorOptions?: Object
+   * Options used on editor instantiation. Available options listed here:
+   * https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
+   */
+  @Input('editorOptions')
+  set editorOptions(editorOptions: any) {
+      this._editorOptions = editorOptions;
+  }
+  get editorOptions(): any {
+    return this._editorOptions;
   }
 
   /**
@@ -381,11 +395,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 self.process.browser = true;
 
                 require(['vs/editor/editor.main'], function() {
-                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), {
+                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), Object.assign({
                         value: value,
                         language: '${this.language}',
                         theme: '${this._theme}',
-                    });
+                    }, '${this.editorOptions}'));
                     editor.getModel().onDidChangeContent( (e)=> {
                         ipcRenderer.sendToHost("onEditorContentChange", editor.getValue());
                     });
@@ -409,11 +423,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     editorDiv.style = data.style;
                     var currentValue = editor.getValue();
                     editor.dispose();
-                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), {
+                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), Object.assign({
                         value: currentValue,
                         language: data.language,
                         theme: data.theme,
-                    });
+                    }, '${this.editorOptions}'));
                 });
 
                 // set the options of the editor from what was sent from the mainview
@@ -426,11 +440,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 ipcRenderer.on('setLanguage', function(event, data){
                     var currentValue = editor.getValue();
                     editor.dispose();
-                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), {
+                    editor = monaco.editor.create(document.getElementById('${this._editorInnerContainer}'), Object.assign({
                         value: currentValue,
                         language: data,
                         theme: theme,
-                    });
+                    }, '${this.editorOptions}'));
                     ipcRenderer.sendToHost("onEditorConfigurationChanged", '');
                     ipcRenderer.sendToHost("onEditorLanguageChanged", '');
                 });
@@ -585,12 +599,12 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private initMonaco(): void {
     let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
     containerDiv.id = this._editorInnerContainer;
-    this._editor = monaco.editor.create(containerDiv, {
+    this._editor = monaco.editor.create(containerDiv, Object.assign({
         value: this._value,
         language: this.language,
         theme: this._theme,
         automaticLayout: this._automaticLayout,
-    });
+    }, this.editorOptions));
     setTimeout(() => {
         this.onEditorInitialized.emit(undefined);
     });

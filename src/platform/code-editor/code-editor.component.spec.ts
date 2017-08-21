@@ -18,6 +18,7 @@ describe('Component: App', () => {
       declarations: [
         TdCodeEditorComponent,
         TestMultipleEditorsComponent,
+        TestEditorOptionsComponent,
       ],
       imports: [
       ],
@@ -166,6 +167,24 @@ describe('Component: App', () => {
     })();
   });
 
+  it('should set the editor options', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestEditorOptionsComponent);
+      let component: TestEditorOptionsComponent = fixture.debugElement.componentInstance;
+      if (component.editor1.isElectronApp) {
+        component.editor1.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.editor1.onEditorInitialized.subscribe(() => {
+          expect(component.editor1.editorOptions.readOnly).toBe(true);
+          done();
+        });
+      });
+    })();
+  });
+
   it('should show multiple editors and set the editors values and retrieve that same values from editors', (done: DoneFn) => {
     inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TestMultipleEditorsComponent);
@@ -229,4 +248,15 @@ class TestMultipleEditorsComponent {
   @ViewChild('editor1') editor1: TdCodeEditorComponent;
   @ViewChild('editor2') editor2: TdCodeEditorComponent;
   @ViewChild('editor3') editor3: TdCodeEditorComponent;
+}
+
+@Component({
+  template: `
+    <div>
+      <td-code-editor #editor1 [editorOptions]="{readOnly:true}" style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>  
+    </div>
+`,
+})
+class TestEditorOptionsComponent {
+  @ViewChild('editor1') editor1: TdCodeEditorComponent;
 }
