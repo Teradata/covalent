@@ -12,7 +12,7 @@
       <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']">Design Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
-    <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+    <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 1">
         <md-icon>notifications</md-icon>
       </td-notification-count>
