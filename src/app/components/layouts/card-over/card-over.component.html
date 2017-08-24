@@ -2,7 +2,7 @@
   <md-card-title>Minimum Demo</md-card-title>
   <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'150px'">
     <td-layout-card-over cardTitle="Covalent" cardSubtitle="Card Over Layout Demo">
       Content goes here
     </td-layout-card-over>
@@ -22,7 +22,7 @@
   <md-card-title>Basic Demo</md-card-title>
   <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <md-nav-list>
@@ -76,7 +76,7 @@
   <md-card-title>Full Demo</md-card-title>
   <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <md-nav-list>
