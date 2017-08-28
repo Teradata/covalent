@@ -71,28 +71,4 @@ describe('Service: TdDynamicFormsService', () => {
       }
     }),
   ));
-
-  it('expect to return default flex depending on type | element',
-    async(inject([TdDynamicFormsService], (service: TdDynamicFormsService) => {
-
-      expect(service.getDefaultElementFlex(TdDynamicType.Text)).toBe(45);
-      expect(service.getDefaultElementFlex(TdDynamicType.Number)).toBe(45);
-      expect(service.getDefaultElementFlex(TdDynamicType.Boolean)).toBe(20);
-      expect(service.getDefaultElementFlex(TdDynamicType.Array)).toBe(45);
-
-      expect(service.getDefaultElementFlex(TdDynamicElement.Input)).toBe(45);
-      expect(service.getDefaultElementFlex(TdDynamicElement.Textarea)).toBe(95);
-      expect(service.getDefaultElementFlex(TdDynamicElement.Checkbox)).toBe(20);
-      expect(service.getDefaultElementFlex(TdDynamicElement.Slider)).toBe(45);
-      expect(service.getDefaultElementFlex(TdDynamicElement.SlideToggle)).toBe(20);
-      expect(service.getDefaultElementFlex(TdDynamicElement.Select)).toBe(45);
-
-      try {
-        expect(service.getDefaultElementFlex(undefined)).toBeFalsy('expect not to return a component');
-      } catch (e) {
-        expect(e).toBeTruthy();
-      }
-    }),
-  ));
-
 });

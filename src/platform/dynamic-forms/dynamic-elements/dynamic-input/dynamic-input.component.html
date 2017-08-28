@@ -3,17 +3,12 @@
     <input #elementInput
             mdInput
             [(ngModel)]="value"
+            [formControl]="control"
             [placeholder]="label"
             [type]="type"
             [required]="required"
             [attr.min]="min"
             [attr.max]="max"
-            flex>
-    <md-hint align="start">
-      <span class="tc-red-600">
-        <span *ngIf="control.hasError('max')">Max: {{max}}</span>
-        <span *ngIf="control.hasError('min')">Min: {{min}}</span>
-      </span>
-    </md-hint>
+            flex/>
   </md-input-container>
 </div>
