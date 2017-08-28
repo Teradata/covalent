@@ -19,8 +19,7 @@ gulp.task('compile-sass', 'Build the module styles', function() {
     .pipe(postcss([autoprefixer({
         browsers: [
           'last 2 versions',
-          'not ie <= 10',
-          'not ie_mob <= 10'
+          'ie 11'
         ]
       })]))
     .pipe(sourcemaps.write('.'))

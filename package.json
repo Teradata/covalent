@@ -57,8 +57,7 @@
   ],
   "browserslist": [
     "last 2 versions",
-    "not ie <= 10",
-    "not ie_mob <= 10"
+    "ie 11"
   ],
   "dependencies": {
     "@angular/animations": "^4.2.0",
