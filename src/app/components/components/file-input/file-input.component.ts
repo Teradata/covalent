@@ -16,6 +16,7 @@ export class FileInputDemoComponent {
 
   files: any;
   disabled: boolean = false;
+  customFiles: any;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
