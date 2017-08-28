@@ -96,16 +96,8 @@ export class TdDynamicFormsComponent implements AfterContentInit {
     this.dynamicForm = this._formBuilder.group({});
   }
 
-  /**
-   * Loads error templates and sets them in a map for faster access.
-   */
   ngAfterContentInit(): void {
-    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
-      this._templateMap.set(
-        this._errorTemplates.toArray()[i].tdDynamicFormsError,
-        this._errorTemplates.toArray()[i].templateRef,
-      );
-    }
+    this._updateErrorTemplates();
   }
 
   /**
@@ -113,6 +105,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
    */
   refresh(): void {
     this._rerenderElements();
+    this._updateErrorTemplates();
   }
 
   /**
@@ -120,6 +113,19 @@ export class TdDynamicFormsComponent implements AfterContentInit {
    */
   getErrorTemplateRef(name: string): TemplateRef<any> {
     return this._templateMap.get(name);
+  }
+
+  /**
+   * Loads error templates and sets them in a map for faster access.
+   */
+  private _updateErrorTemplates(): void {
+    this._templateMap = new Map<string, TemplateRef<any>>();
+    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
+      this._templateMap.set(
+        this._errorTemplates.toArray()[i].tdDynamicFormsError,
+        this._errorTemplates.toArray()[i].templateRef,
+      );
+    }
   }
 
   private _rerenderElements(): void {
