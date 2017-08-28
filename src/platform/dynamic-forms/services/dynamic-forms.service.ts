@@ -27,16 +27,8 @@ export enum TdDynamicElement {
   FileInput = <any>'file-input',
 }
 
-export interface ITdCustomValidate {
-  name: string;
-  message: string;
-
-  // return boolean on a value
-  predicateFn(value: any): boolean ;
-}
-
-export interface ITdCustomError {
-  [validationKey: string]: { message: string };
+export interface ITdDynamicElementValidator {
+  validator: ValidatorFn;
 }
 
 export interface ITdDynamicElementConfig {
@@ -49,7 +41,7 @@ export interface ITdDynamicElementConfig {
   selections?: any[];
   default?: any;
   flex?: number;
-  customValidators?: (ITdCustomValidate | ValidatorFn)[];
+  validators?: ITdDynamicElementValidator[];
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
@@ -145,34 +137,12 @@ export class TdDynamicFormsService {
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
-
-    // Add provided custom validators from config
-    if (config.customValidators) {
-      config.customValidators.forEach((customValidator: ITdCustomValidate | ValidatorFn) => {
-
-        // Custom validator is a function of type ValidatorFn
-        if (typeof customValidator === 'function') {
-          validator = Validators.compose([validator, <ValidatorFn>customValidator]);
-        } else if (customValidator.hasOwnProperty('name')) {
-
-          // Custom Validator is a config object of interface ITdCustomValidate
-          // Create a ValidatorFn based on config.
-          let customValidatorFn: ValidatorFn = (control: AbstractControl): { [key: string]: any } => {
-              let isValid: boolean = (<ITdCustomValidate>customValidator).predicateFn(control.value);
-
-              let error: any = {};
-              error[customValidator.name] = {
-                message: (<ITdCustomValidate>customValidator).message,
-              };
-
-              return !isValid ? error : undefined;
-          };
-
-          validator = Validators.compose([validator, customValidatorFn]);
-        }
+    // Add provided custom validators to the validator function
+    if (config.validators) {
+      config.validators.forEach((validatorConfig: ITdDynamicElementValidator) => {
+        validator = Validators.compose([validator, validatorConfig.validator]);
       });
     }
-
     return validator;
   }
 }

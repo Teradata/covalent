@@ -1,7 +1,9 @@
-import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, ContentChildren,
+         TemplateRef, QueryList, AfterContentInit } from '@angular/core';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
+import { TdDynamicFormsErrorTemplate } from './dynamic-element.component';
 
 import { timer } from 'rxjs/observable/timer';
 import { toPromise } from 'rxjs/operator/toPromise';
@@ -11,12 +13,14 @@ import { toPromise } from 'rxjs/operator/toPromise';
   templateUrl: './dynamic-forms.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDynamicFormsComponent {
+export class TdDynamicFormsComponent implements AfterContentInit {
 
   private _renderedElements: ITdDynamicElementConfig[] = [];
   private _elements: ITdDynamicElementConfig[];
+  private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
+  @ContentChildren(TdDynamicFormsErrorTemplate) _errorTemplates: QueryList<TdDynamicFormsErrorTemplate>;
   dynamicForm: FormGroup;
-
+ 
   /**
    * elements: ITdDynamicElementConfig[]
    * JS Object that will render the elements depending on its config.
@@ -93,10 +97,29 @@ export class TdDynamicFormsComponent {
   }
 
   /**
+   * Loads error templates and sets them in a map for faster access.
+   */
+  ngAfterContentInit(): void {
+    for (let i: number = 0; i < this._errorTemplates.toArray().length; i++) {
+      this._templateMap.set(
+        this._errorTemplates.toArray()[i].tdDynamicFormsError,
+        this._errorTemplates.toArray()[i].templateRef,
+      );
+    }
+  }
+
+  /**
    * Refreshes the form and rerenders all validator/element modifications.
    */
   refresh(): void {
     this._rerenderElements();
+  }
+
+  /**
+   * Getter method for error template references
+   */
+  getErrorTemplateRef(name: string): TemplateRef<any> {
+    return this._templateMap.get(name);
   }
 
   private _rerenderElements(): void {

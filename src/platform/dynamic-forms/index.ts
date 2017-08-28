@@ -1,7 +1,7 @@
 export { CovalentDynamicFormsModule } from './dynamic-forms.module';
-export { ITdDynamicElementConfig, ITdCustomValidate, ITdCustomError, TdDynamicType,
+export { ITdDynamicElementConfig, TdDynamicType, ITdDynamicElementValidator,
          TdDynamicElement, DYNAMIC_ELEMENT_NAME_REGEX } from './services/dynamic-forms.service';
-export { TdDynamicElementComponent } from './dynamic-element.component';
+export { TdDynamicElementComponent, TdDynamicFormsErrorTemplate } from './dynamic-element.component';
 export { TdDynamicFormsComponent } from './dynamic-forms.component';
 export { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 export { TdDynamicFileInputComponent } from './dynamic-elements/dynamic-file-input/dynamic-file-input.component';

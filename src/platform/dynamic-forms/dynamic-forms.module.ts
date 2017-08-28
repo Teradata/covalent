@@ -9,7 +9,7 @@ import { CovalentCommonModule } from '../core';
 import { CovalentFileModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
-import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
+import { TdDynamicElementComponent, TdDynamicElementDirective, TdDynamicFormsErrorTemplate } from './dynamic-element.component';
 import {  DYNAMIC_FORMS_PROVIDER } from './services/dynamic-forms.service';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
@@ -23,12 +23,12 @@ import {
 } from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';
-import { ShowOneErrorPipe } from './dynamic-elements/dynamic-input/show-one-error.pipe';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
   TdDynamicElementComponent,
   TdDynamicElementDirective,
+  TdDynamicFormsErrorTemplate,
 ];
 
 const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
@@ -45,7 +45,6 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   declarations: [
     TD_DYNAMIC_FORMS,
     TD_DYNAMIC_FORMS_ENTRY_COMPONENTS,
-    ShowOneErrorPipe,
   ],
   imports: [
     CommonModule,
