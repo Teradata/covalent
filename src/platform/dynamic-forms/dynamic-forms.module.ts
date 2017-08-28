@@ -1,4 +1,4 @@
-import { NgModule, Type, ModuleWithProviders } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -9,8 +9,8 @@ import { CovalentCommonModule } from '../core';
 import { CovalentFileModule } from '../core';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
-import { TdDynamicElementComponent, TdDynamicElementDirective } from './dynamic-element.component';
-import { TdDynamicFormsService, DYNAMIC_FORMS_PROVIDER } from './services/dynamic-forms.service';
+import { TdDynamicElementComponent, TdDynamicElementDirective, TdDynamicFormsErrorTemplate } from './dynamic-element.component';
+import {  DYNAMIC_FORMS_PROVIDER } from './services/dynamic-forms.service';
 
 import { TdDynamicInputComponent } from './dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicFileInputComponent } from './dynamic-elements/dynamic-file-input/dynamic-file-input.component';
@@ -28,6 +28,7 @@ const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
   TdDynamicElementComponent,
   TdDynamicElementDirective,
+  TdDynamicFormsErrorTemplate,
 ];
 
 const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
