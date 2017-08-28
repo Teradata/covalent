@@ -173,7 +173,7 @@ describe('Component: TdDynamicForms', () => {
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
