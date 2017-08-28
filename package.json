@@ -125,6 +125,6 @@
     "ts-node": "^3.0.4",
     "tslint": "5.2.0",
     "typescript": "2.4.2",
-    "uglify-js": "^2.8.14"  
+    "uglify-js": "^2.8.14"
   }
 }
