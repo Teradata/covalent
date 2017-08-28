@@ -30,13 +30,13 @@
         font-size: 13px;
         @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
         [td-chip-avatar] {
-          display: flex;
+          display: inline-block;
           order: -20;
           justify-content: center;
           align-items: center;
+          text-align: center;
           height: 32px;
           width: 32px;
-          flex-shrink: 0;
           @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
           border-radius: 50%;
         }
