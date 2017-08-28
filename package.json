@@ -55,6 +55,11 @@
     "Ilsun Park <ilsun.park@teradata.com>",
     "Steven Ov <steven.ov@teradata.com>"
   ],
+  "browserslist": [
+    "last 2 versions",
+    "not ie <= 10",
+    "not ie_mob <= 10"
+  ],
   "dependencies": {
     "@angular/animations": "^4.2.0",
     "@angular/cdk": "2.0.0-beta.8",
@@ -92,6 +97,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "@types/selenium-webdriver": "^2.52.0",
+    "autoprefixer": "7.1.2",
     "codelyzer": "~3.0.0",
     "coveralls": "^2.12.0",
     "fs-extra": "^4.0.0",
@@ -100,6 +106,7 @@
     "gulp-bump": "2.1.0",
     "gulp-help": "1.6.1",
     "gulp-if": "2.0.1",
+    "gulp-postcss": "7.0.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "3.1.4",
