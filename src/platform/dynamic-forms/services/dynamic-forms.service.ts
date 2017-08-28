@@ -90,32 +90,6 @@ export class TdDynamicFormsService {
   }
 
   /**
-   * Gets default flex for element depending on [TdDynamicElement | TdDynamicType].
-   * Throws error if it does not exists or not supported.
-   */
-  getDefaultElementFlex(element: TdDynamicElement | TdDynamicType): any {
-    switch (element) {
-      case TdDynamicType.Text:
-      case TdDynamicType.Number:
-      case TdDynamicElement.Slider:
-      case TdDynamicElement.Input:
-      case TdDynamicElement.Password:
-      case TdDynamicType.Array:
-      case TdDynamicElement.FileInput:
-      case TdDynamicElement.Select:
-        return 45;
-      case TdDynamicElement.Textarea:
-        return 95;
-      case TdDynamicType.Boolean:
-      case TdDynamicElement.Checkbox:
-      case TdDynamicElement.SlideToggle:
-        return 20;
-      default:
-        throw new Error(`Error: type ${element} does not exist or not supported.`);
-    }
-  }
-
-  /**
    * Creates form control for element depending [ITdDynamicElementConfig] properties.
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
