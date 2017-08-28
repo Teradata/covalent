@@ -2,7 +2,7 @@
   "name": "@covalent/core",
   "version": "1.0.0-beta.6",
   "description": "Teradata UI Platform built on Angular Material",
-  "main": "./core.umd.js",
+  "main": "./bundles/core.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "keywords": [
@@ -33,6 +33,9 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>",
     "Steven Ov <steven.ov@teradata.com>"
   ],
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
   "peerDependencies": {
     "@angular/common": "^4.2.0",
     "@angular/core": "^4.2.0",
