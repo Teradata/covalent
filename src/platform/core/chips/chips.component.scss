@@ -6,11 +6,12 @@
   min-height: 48px;
   .td-chips-wrapper {
     min-height: 42px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     &.td-chips-stacked .mat-basic-chip  {
       width: 100%;
-      md-icon.td-chip-removal {
-        @include rtl(float, right, left);
-      }
     }
   }
   /deep/ {
@@ -61,7 +62,6 @@
     height: 1px;
     width: 100%;
     bottom: 0;
-    margin-top: 4px;
 
     &.mat-disabled {
       background-position: 0;
