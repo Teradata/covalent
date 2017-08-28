@@ -13,6 +13,7 @@ import { MdChip, MdInputDirective, MdOption, MdAutocompleteTrigger } from '@angu
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { timer } from 'rxjs/observable/timer';
+import { merge } from 'rxjs/observable/merge';
 import { toPromise } from 'rxjs/operator/toPromise';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 
@@ -742,7 +743,12 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'mousedown')).call(filter, (event: MouseEvent) => {
+      this._outsideClickSubs = RxChain.from(
+        merge(
+          fromEvent(this._document, 'click'),
+          fromEvent(this._document, 'touchend'),
+        ),
+      ).call(filter, (event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
