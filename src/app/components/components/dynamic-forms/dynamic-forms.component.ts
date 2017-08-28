@@ -2,13 +2,8 @@ import { Component, HostBinding, ViewChild, ViewRef, AfterViewInit } from '@angu
 import { AbstractControl, ValidatorFn, FormGroup, Validators } from '@angular/forms';
 import { slideInDownAnimation } from '../../../app.animations';
 
-// TODO: uncomment before publishing
-// import { TdDynamicType, ITdDynamicElementConfig, TdDynamicElement } from '@covalent/dynamic-forms';
-
-// TODO: remove before publishing
-// fun `yarn build` to build covalent in `deploy` directory
 import { TdDynamicType, ITdDynamicElementConfig,
-  TdDynamicElement, ITdCustomValidate, ITdCustomError, TdDynamicFormsComponent } from '../../../../platform/dynamic-forms';
+  TdDynamicElement, ITdDynamicElementValidator, TdDynamicFormsComponent } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo',
@@ -20,35 +15,6 @@ export class DynamicFormsDemoComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
-  @ViewChild('customValidateForm') customValidateForm: TdDynamicFormsComponent;
-
-  dynamicFormsAttrs: any[] = [{
-    description: `JS Object that will render the elements depending on its config.
-                  [name] property is required.`,
-    name: 'elements',
-    type: 'ITdDynamicElementConfig[]',
-  }, {
-    description: `Getter property for dynamic [FormGroup].`,
-    name: 'form',
-    type: 'get(): FormGroup',
-  }, {
-    description: `Getter property for [valid] of dynamic [FormGroup].`,
-    name: 'valid',
-    type: 'get(): boolean',
-  }, {
-    description: `Getter property for [value] of dynamic [FormGroup].`,
-    name: 'value',
-    type: 'get(): any',
-  }, {
-    description: `Getter property for [errors] of dynamic [FormGroup].`,
-    name: 'errors',
-    type: 'get(): {[name: string]: any}',
-  }, {
-    description: `Getter property for [controls] of dynamic [FormGroup].`,
-    name: 'controls',
-    type: 'get(): {[key: string]: AbstractControl}',
-  }];
 
   textElements: ITdDynamicElementConfig[] = [{
     name: 'input',
@@ -154,115 +120,61 @@ export class DynamicFormsDemoComponent {
 
   count: number = 2;
 
-  // Custom Validator using ITdCustomValidate object
-  customValidationITdCustomValidate: ITdDynamicElementConfig[] = [{
-    name: 'numberIsEven',
-    label: 'Even Number In Rage',
+  customValidationElements: ITdDynamicElementConfig[] = [{
+    name: 'evenElement',
+    label: 'Even Number',
     type: TdDynamicType.Number,
-    customValidators: [
-
-      // Simple Validation using ITdCustomValidate interface
-      <ITdCustomValidate>{
-
-        // Must be unique
-        name: 'isEven',
-
-        // Static error message presented in UI
-        message: 'Must be even',
-
-        // Return true if valid
-        predicateFn: (value: any): boolean => {
-          return ( value % 2 ) === 0;
-        },
+    validators: [{
+      validator: (control: AbstractControl) => {
+        let isValid: boolean = (!control.value && control.value !== 0) || ((control.value % 2 ) === 0);
+        return !isValid ? {even: true} : undefined;
       },
-    ],
-  }];
-
-  // Custom Validator using ValidatorFn function
-  customValidationValidatorFn: ITdDynamicElementConfig[] = [{
-    name: 'numberIsOddInRange',
+    }],
+  }, {
+    name: 'oddInRangeElement',
     label: 'Odd Number Between 8 and 20',
     type: TdDynamicType.Number,
     min: 8,
     max: 20,
-    customValidators: [
-
-      // Function using ValidatorFn signature
-      <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
-
-        // Validate Logic
-        let isOdd: boolean = ( control.value % 2 ) !== 0;
-
-        // ITdCustomError Object
-        let error: ITdCustomError = {
-
-          // Must be unique
-          'isOdd': {
-
-            // Dynamic error message presented to UI
-            message: 'Not Odd: ' + control.value,
-          },
-        };
-
-        return !isOdd ? error : undefined;
+    validators: [{
+      validator: (control: AbstractControl) => {
+        let isValid: boolean = (!control.value && control.value !== 0) || ((control.value % 2) !== 0);
+        return !isValid ? {odd: true} : undefined;
       },
-    ],
+    }],
   }];
 
-  // Custom validator with different methods
   multipleValidatorTypes: ITdDynamicElementConfig[] = [{
-    name: 'containValidCharacters',
+    name: 'passwordElement',
     label: 'Password',
     type: TdDynamicElement.Password,
     required: true,
-    customValidators: [
-
-      // Contain at lease one number
-      <ITdCustomValidate>{
-        name: 'containsNumber',
-        message: 'Need a number',
-        predicateFn: (value: any): boolean => {
-          return /\d/i.test(value); // Return true if valid
-        },
+    validators: [{
+      validator: (control: AbstractControl) => {
+        let isValid: boolean = (/\d/i.test(control.value));
+        return !isValid ? {oneNumber: true} : undefined;
       },
-
-      // Length between 8 - 20 characters
-      <ITdCustomValidate>{
-        name: 'length',
-        message: 'Password needs from 8 - 20 characters',
-        predicateFn: (value: any): boolean => {
-          return value && ( value.length >= 8 ) && ( value.length <= 20 ); // Return true if valid
-        },
+    }, {
+      validator: (control: AbstractControl) => {
+        let isValid: boolean = control.value && (control.value.length >= 8) && (control.value.length <= 20);
+        return !isValid ? {length: true} : undefined;
       },
-
-      // Contain at least one special character
-      <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
-
+    }, {
+      validator: (control: AbstractControl) => {
         let validCharacters: string[] = ['!', '@', '#', '$', '%'];
-        let regex: RegExp = new RegExp('[' + validCharacters.join('').toString() + ']', 'g');
-
-        let isValid: boolean = regex.test(control.value);
-
-        let error: ITdCustomError = {
-          'containSpecialCharacters': {
-
-            message: 'Need at least one special character (' + validCharacters.join(', ').toString() + ')',
-          },
-        };
-
-        return !isValid ? error : undefined;
+        let isValid: boolean = new RegExp('[' + validCharacters.join('').toString() + ']', 'g').test(control.value);
+        return !isValid ? {oneSpecialChar: true} : undefined;
       },
-    ],
+    }],
   }];
 
   angularValidators: ITdDynamicElementConfig[] = [{
-    name: 'angularValidators',
+    name: 'hexColorElement',
     label: 'Hexidecimal Color',
     type: TdDynamicType.Text,
-    customValidators: [
-      Validators.minLength(7),
-      Validators.pattern(/^#[A-Fa-f0-9]{6}/),
-    ],
+    validators: [{
+      validator: Validators.pattern(/^#[A-Fa-f0-9]{6}$/),
+    }],
   }];
 
   isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {

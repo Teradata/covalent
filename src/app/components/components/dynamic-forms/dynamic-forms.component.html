@@ -26,6 +26,15 @@
         </div>
         <div class="pad">
           <td-dynamic-forms #dynamicForm [elements]="dynamicElements">
+            <ng-template let-element ngFor [ngForOf]="dynamicElements">
+              <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                <span *ngIf="control.touched || !control.pristine">
+                  <span *ngIf="control.hasError('required')">Required</span>
+                  <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
+                  <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+                </span>
+              </ng-template>
+            </ng-template>
           </td-dynamic-forms>
         </div>
         <md-card-actions>
@@ -145,6 +154,14 @@
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <td-dynamic-forms [elements]="numberElements">
+          <ng-template let-element ngFor [ngForOf]="numberElements">
+            <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+              <span *ngIf="control.touched || !control.pristine">
+                <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
+                <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+              </span>
+            </ng-template>
+          </ng-template>
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
@@ -153,6 +170,14 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="numberElements">
+              <ng-template let-element ngFor [ngForOf]="numberElements">
+                <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                  <span *ngIf="control.touched || !control.pristine">
+                    <span *ngIf="control.hasError('min')">Min value: { {element.min} }</span>
+                    <span *ngIf="control.hasError('max')">Max value: { {element.max} }</span>
+                  </span>
+                </ng-template>
+              </ng-template>
             </td-dynamic-forms>
           ]]>
         </td-highlight>
@@ -221,220 +246,6 @@
 
 <md-card>
   <md-card-content>
-    <h3 class="md-title">Custom Validation</h3>
-    <h4>Using Config with ITdCustomValidate</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
-        <td-dynamic-forms [elements]="customValidationITdCustomValidate">
-        </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-dynamic-forms [elements]="customValidationITdCustomValidate">
-            </td-dynamic-forms>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-              // Custom Validator using ITdCustomValidate object
-              customValidationITdCustomValidate: ITdDynamicElementConfig[] = [{
-                name: 'numberIsEven',
-                label: 'Even Number In Rage',
-                type: TdDynamicType.Number,
-                customValidators: [
-
-                  // Simple Validation using ITdCustomValidate interface
-                  <ITdCustomValidate>{
-
-                    // Must be unique
-                    name: 'isEven',
-
-                    // Static error message presented in UI
-                    message: 'Must be even',
-
-                    // Return true if valid
-                    predicateFn: (value: any): boolean => {
-                      return ( value % 2 ) === 0;
-                    },
-                  },
-                ],
-              }];
-            ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-
-    <h4>Using ValidatorFn</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
-        <td-dynamic-forms [elements]="customValidationValidatorFn">
-        </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-dynamic-forms [elements]="customValidationValidatorFn">
-            </td-dynamic-forms>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-              // Custom Validator using ValidatorFn function
-              customValidationValidatorFn: ITdDynamicElementConfig[] = [{
-                name: 'numberIsOddInRange',
-                label: 'Odd Number Between 8 and 20',
-                type: TdDynamicType.Number,
-                min: 8,
-                max: 20,
-                customValidators: [
-
-                  // Function using ValidatorFn signature
-                  <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
-
-                    // Validate Logic
-                    let isOdd: boolean = ( control.value % 2 ) !== 0;
-
-                    // ITdCustomError Object
-                    let error: ITdCustomError = {
-
-                      // Must be unique
-                      'isOdd': {
-
-                        // Dynamic error message presented to UI
-                        message: 'Not Odd: ' + control.value,
-                      },
-                    };
-
-                    return !isOdd ? error : undefined;
-                  },
-                ],
-              }];
-            ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-
-    <h4>Multiple Validators</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
-        <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
-        </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-dynamic-forms [elements]="multipleValidatorTypes">
-            </td-dynamic-forms>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-              // Custom validator with different methods
-              multipleValidatorTypes: ITdDynamicElementConfig[] = [{
-                name: 'containValidCharacters',
-                label: 'Password',
-                type: TdDynamicElement.Password,
-                required: true,
-                customValidators: [
-
-                  // Contain at lease one number
-                  <ITdCustomValidate>{
-                    name: 'containsNumber',
-                    message: 'Need a number',
-                    predicateFn: (value: any): boolean => {
-                      return /\d/i.test(value); // Return true if valid
-                    },
-                  },
-
-                  // Length between 8 - 20 characters
-                  <ITdCustomValidate>{
-                    name: 'length',
-                    message: 'Password needs from 8 - 20 characters',
-                    predicateFn: (value: any): boolean => {
-                      return value && ( value.length >= 8 ) && ( value.length <= 20 ); // Return true if valid
-                    },
-                  },
-
-                  // Contain at least one special character
-                  <ValidatorFn>(control: AbstractControl): { [key: string]: any } => {
-
-                    let validCharacters: string[] = ['!', '@', '#', '$', '%'];
-                    let regex: RegExp = new RegExp('[' + validCharacters.join('').toString() + ']', 'g');
-
-                    let isValid: boolean = regex.test(control.value);
-
-                    let error: ITdCustomError = {
-                      'containSpecialCharacters': {
-
-                        // TODO: parenthesis may be mistaken for valid special character. refine error message.
-                        message: 'Need at least one special character (' + validCharacters.join(', ').toString() + ')',
-                      },
-                    };
-
-                    return !isValid ? error : undefined;
-                  },
-                ],
-              }];
-            ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-
-    <h4>Angular Validators</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
-        <td-dynamic-forms #customValidateForm [elements]="angularValidators">
-        </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-          <td-dynamic-forms [elements]="angularValidators">
-          </td-dynamic-forms>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-          angularValidators: ITdDynamicElementConfig[] = [{
-          name: 'angularValidators',
-          label: 'Hexidecimal Color',
-          type: TdDynamicType.Text,
-          customValidators: [
-
-          Validators.minLength(7),
-          Validators.pattern(/^#[A-Fa-f0-9]{6}/),
-          ],
-          }];
-         ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-
-<md-card>
-  <md-card-content>
     <h3 class="md-title">Dynamic File Input Element</h3>
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
@@ -455,6 +266,184 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           {{fileElements | json}}
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-content>
+    <h3 class="md-title">Custom Validation</h3>
+    <h4>Using custom validator functions to create your own</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms [elements]="customValidationElements">
+          <ng-template let-element ngFor [ngForOf]="customValidationElements">
+            <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+              <span *ngIf="control.touched || !control.pristine">
+                <span *ngIf="control.hasError('even')">Must be even.</span>
+                <span *ngIf="control.hasError('odd')">Must be odd.</span>
+                <span *ngIf="control.hasError('min')">Must be greater than {{element.min}}.</span>
+                <span *ngIf="control.hasError('max')">Must be less than {{element.max}}.</span>
+              </span>
+            </ng-template>
+          </ng-template>
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="customValidationElements">
+              <ng-template let-element ngFor [ngForOf]="customValidationElements">
+                <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                  <span *ngIf="control.touched || !control.pristine">
+                    <span *ngIf="control.hasError('even')">Must be even.</span>
+                    <span *ngIf="control.hasError('odd')">Must be odd.</span>
+                    <span *ngIf="control.hasError('min')">Must be greater than { {element.min} }.</span>
+                    <span *ngIf="control.hasError('max')">Must be less than { {element.max} }.</span>
+                  </span>
+                </ng-template>
+              </ng-template>
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            customValidationElements: ITdDynamicElementConfig[] = [{
+              name: 'evenElement',
+              label: 'Even Number',
+              type: TdDynamicType.Number,
+              validators: [{
+                validator: (control: AbstractControl) => {
+                  let isValid: boolean = (!control.value && control.value !== 0) || ((control.value % 2 ) === 0);
+                  return !isValid ? {even: true} : undefined;
+                },
+              }],
+            }, {
+              name: 'oddInRangeElement',
+              label: 'Odd Number Between 8 and 20',
+              type: TdDynamicType.Number,
+              min: 8,
+              max: 20,
+              validators: [{
+                validator: (control: AbstractControl) => {
+                  let isValid: boolean = (!control.value && control.value !== 0) || ((control.value % 2) !== 0);
+                  return !isValid ? {odd: true} : undefined;
+                },
+              }],
+            }];
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+
+    <h4>Multiple Validators</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
+          <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
+            <span *ngIf="control.touched || !control.pristine">
+              <span *ngIf="control.hasError('oneNumber')">Must contain at least 1 number.</span>
+              <span *ngIf="control.hasError('length')">Password needs from 8 - 20 characters.</span>
+              <span *ngIf="control.hasError('oneSpecialChar')">Need at least one special character (!, @, #, $, %).</span>
+            </span>
+          </ng-template>
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
+              <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
+                <span *ngIf="control.touched || !control.pristine">
+                  <span *ngIf="control.hasError('oneNumber')">Must contain at least 1 number.</span>
+                  <span *ngIf="control.hasError('length')">Password needs from 8 - 20 characters.</span>
+                  <span *ngIf="control.hasError('oneSpecialChar')">Need at least one special character (!, @, #, $, %).</span>
+                </span>
+              </ng-template>
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            multipleValidatorTypes: ITdDynamicElementConfig[] = [{
+              name: 'passwordElement',
+              label: 'Password',
+              type: TdDynamicElement.Password,
+              required: true,
+              validators: [{
+                validator: (control: AbstractControl) => {
+                  let isValid: boolean = (/\d/i.test(control.value));
+                  return !isValid ? {oneNumber: true} : undefined;
+                },
+              }, {
+                validator: (control: AbstractControl) => {
+                  let isValid: boolean = control.value && (control.value.length >= 8) && (control.value.length <= 20);
+                  return !isValid ? {length: true} : undefined;
+                },
+              }, {
+                validator: (control: AbstractControl) => {
+                  let validCharacters: string[] = ['!', '@', '#', '$', '%'];
+                  let isValid: boolean = new RegExp('[' + validCharacters.join('').toString() + ']', 'g').test(control.value);
+                  return !isValid ? {oneSpecialChar: true} : undefined;
+                },
+              }],
+            }];
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+
+    <h4>Angular Validators</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template md-tab-label>Demo</ng-template>
+        <td-dynamic-forms #customValidateForm [elements]="angularValidators">
+          <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
+            <span *ngIf="control.touched || !control.pristine">
+              <span *ngIf="control.hasError('pattern')">Only hex color characters.</span>
+            </span>
+          </ng-template>
+        </td-dynamic-forms>
+      </md-tab>
+      <md-tab>
+        <ng-template md-tab-label>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms #customValidateForm [elements]="angularValidators">
+              <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
+                <span *ngIf="control.touched || !control.pristine">
+                  <span *ngIf="control.hasError('pattern')">Only hex color characters</span>
+                </span>
+              </ng-template>
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            angularValidators: ITdDynamicElementConfig[] = [{
+              name: 'hexColorElement',
+              label: 'Hexidecimal Color',
+              type: TdDynamicType.Text,
+              validators: [{
+                validator: Validators.pattern(/^#[A-Fa-f0-9]{6}$/),
+              }],
+            }];
+          ]]>
         </td-highlight>
       </md-tab>
     </md-tab-group>
