@@ -236,10 +236,12 @@
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-          <div layout="column" flex>
+          <div layout="row">
             <md-input-container flex>
               <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
             </md-input-container>
+          </div>
+          <div layout="row">
             <md-input-container flex>
               <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
@@ -255,10 +257,12 @@
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-              <div layout="column" flex>
+              <div layout="row">
                 <md-input-container flex>
                   <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
                 </md-input-container>
+              </div>
+              <div layout="row">
                 <md-input-container flex>
                   <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>
