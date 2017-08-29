@@ -1,5 +1,5 @@
 export interface IAnimationOptions {
-  anchor: string;
+  anchor?: string;
   duration?: number;
   ease?: string;
 }

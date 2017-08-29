@@ -5,13 +5,6 @@ export interface IRotateAnimation extends IAnimationOptions {
   degrees?: number;
 }
 
-export class AnimationOptions {
-  anchor: string;
-  duration?: number;
-  degrees?: number;
-  ease?: string;
-}
-
 /**
  * Function TdRotateAnimation
  *
@@ -26,21 +19,16 @@ export class AnimationOptions {
  *
  * usage: [@myAnchorName]="true|false"
  */
-export function TdRotateAnimation({
-    anchor,
-    duration = 250,
-    degrees = 180,
-    ease = 'ease-out',
-  }: AnimationOptions): AnimationTriggerMetadata {
-  return trigger(anchor, [
+export function TdRotateAnimation(rotateOptions: IRotateAnimation = {}): AnimationTriggerMetadata {
+  return trigger(rotateOptions.anchor || 'tdRotate', [
     state('0', style({
       transform: 'rotate(0deg)',
     })),
     state('1',  style({
-      transform: 'rotate(' + degrees + 'deg)',
+      transform: 'rotate(' + (rotateOptions.degrees || 180) + 'deg)',
     })),
     transition('0 <=> 1', [
-      animate(duration + 'ms ' + ease),
+      animate((rotateOptions.duration || 250) + 'ms ' + (rotateOptions.ease || 'ease-in')),
     ]),
   ]);
 }
