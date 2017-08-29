@@ -61,6 +61,10 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       return this._value;
   }
 
+  get simpleMDE(): any {
+    return this._simpleMDE;
+  }
+
   /**
    * Implemented as part of ControlValueAccessor.
    */
@@ -80,7 +84,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       styleElement.innerHTML = <string>this._domSanitizer.bypassSecurityTrustHtml(String(SimpleMDECss));
       this._document.head.appendChild(styleElement);
     }
-    this.options.element = this._elementRef.nativeElement.value;
+    this.options.element = this.textarea.nativeElement;
     this._simpleMDE = new SimpleMDE(this.options);
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
@@ -109,5 +113,85 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
 
   toTextArea(): void {
     this._simpleMDE.toTextArea();
+  }
+
+  toggleBold(): void {
+    this._simpleMDE.toggleBold();
+  }
+
+  toggleItalic(): void {
+    this._simpleMDE.toggleItalic();
+  }
+
+  toggleStrikethrough(): void {
+    this._simpleMDE.toggleStrikethrough();
+  }
+
+  toggleHeadingSmaller(): void {
+    this._simpleMDE.toggleHeadingSmaller();
+  }
+
+  toggleHeadingBigger(): void {
+    this._simpleMDE.toggleHeadingBigger();
+  }
+
+  toggleHeading1(): void {
+    this._simpleMDE.toggleHeading1();
+  }
+
+  toggleHeading2(): void {
+    this._simpleMDE.toggleHeading2();
+  }
+
+  toggleHeading3(): void {
+    this._simpleMDE.toggleHeading3();
+  }
+
+  toggleCodeBlock(): void {
+    this._simpleMDE.toggleCodeBlock();
+  }
+
+  toggleBlockquote(): void {
+    this._simpleMDE.toggleBlockquote();
+  }
+
+  toggleUnorderedList(): void {
+    this._simpleMDE.toggleUnorderedList();
+  }
+
+  toggleOrderedList(): void {
+    this._simpleMDE.toggleOrderedList();
+  }
+
+  cleanBlock(): void {
+    this._simpleMDE.cleanBlock();
+  }
+
+  drawLink(): void {
+    this._simpleMDE.drawLink();
+  }
+
+  drawImage(): void {
+    this._simpleMDE.drawImage();
+  }
+
+  drawTable(): void {
+    this._simpleMDE.drawTable();
+  }
+
+  drawHorizontalRule(): void {
+    this._simpleMDE.drawHorizontalRule();
+  }
+
+  togglePreview(): void {
+    this._simpleMDE.togglePreview();
+  }
+
+  toggleSideBySide(): void {
+    this._simpleMDE.toggleSideBySide();
+  }
+
+  toggleFullScreen(): void {
+    this._simpleMDE.toggleFullScreen();
   }
 }
