@@ -16,7 +16,7 @@
         @Component({
           ...
           animations: [
-            TdAnimationUtility('myAnchor'),
+            TdAnimationUtility({ anchor: 'myAnchor' }),
           ],
         })
         export class MyComponent {
@@ -50,7 +50,7 @@
           import { TdRotateAnimation } from '@covalent/core';
           ...
           animations: [
-            TdRotateAnimation('tdRotate'),
+            TdRotateAnimation({ anchor: 'tdRotate' }),
           ],
           ...
           class MyDemo {
@@ -72,8 +72,8 @@
 
     <div>
       <h3>Demo 2:</h3>
-      <button md-raised-button [@tdRotateNeg180]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
-        Rotate -180&deg;<md-icon [@tdRotate180]="rotateState2">mood</md-icon>
+      <button md-raised-button [@tdRotateNeg45]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
+        Rotate -45&deg;<md-icon [@tdRotate545]="rotateState2">mood</md-icon>
       </button>
 
       <p>Typescript:</p>
@@ -82,8 +82,8 @@
           import { TdRotateAnimation } from '@covalent/core';
           ...
           animations: [
-            TdRotateAnimation('tdRotate180', 500, 180),
-            TdRotateAnimation('tdRotateNeg180', 500, -180)
+            TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
+            TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
           ],
           ...
           class MyDemo {
@@ -94,8 +94,8 @@
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button [@tdRotateNeg180]="triggerState" (click)="triggerState = !triggerState" color="accent">
-            Rotate -180&deg;<md-icon [@tdRotate180]="triggerState">mood</md-icon>
+          <button md-raised-button [@tdRotateNeg45]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
+            Rotate -45&deg;<md-icon [@tdRotate545]="rotateState2">mood</md-icon>
           </button>
         ]]>
       </td-highlight>
@@ -117,6 +117,11 @@
         <md-list-item>
           <h3 md-line>degrees?: number</h3>
           <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>ease?: string</h3>
+          <p md-line>String representing timing of animation 'duration delay easing' EX: '2s 300ms ease-in', duration=2000, delay=300, easing=ease-in. Defaults to ease-out.
+          </p>
         </md-list-item>
         <md-divider></md-divider>
       </md-list>

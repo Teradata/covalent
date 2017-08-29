@@ -9,9 +9,9 @@ import { TdRotateAnimation } from '../../../../platform/core/common/animations/r
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
-    TdRotateAnimation('tdRotate'),
-    TdRotateAnimation('tdRotate180', 500, 180),
-    TdRotateAnimation('tdRotateNeg180', 500, -180),
+    TdRotateAnimation({ anchor: 'tdRotate' }),
+    TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
+    TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
   ],
 })
 export class AnimationsComponent {
