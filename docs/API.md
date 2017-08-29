@@ -17,6 +17,7 @@
 | `isFullscreenActive` | `function()` | Is Full Screen Active. Returns boolean
 | `clearAutosavedValue` | `function()` | Clears Auto Saved Value. Returns void
 | `toTextArea` | `function()` | Reverts to the Initial textarea. Returns void
+| `simpleMDE` | `function()` | Getter function for the underlying simpleMDE Object. Returns SimpleMDE
 
 ### Usage
 
