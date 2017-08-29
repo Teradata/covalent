@@ -61,6 +61,10 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       return this._value;
   }
 
+  get simpleMDE(): any {
+    return this._simpleMDE;
+  }
+
   /**
    * Implemented as part of ControlValueAccessor.
    */
