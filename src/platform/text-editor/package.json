@@ -1,6 +1,6 @@
 {
   "name": "@covalent/text-editor",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-beta.1",
   "private": false,
   "description": "Covalent text and markdown editor component for Angular based on SimpleMDE",
   "main": "./text-editor.umd.js",
