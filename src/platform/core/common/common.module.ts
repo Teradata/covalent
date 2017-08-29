@@ -19,7 +19,9 @@ const TD_ANIMATIONS: Type<any>[] = [
 export { TdToggleDirective, TdFadeDirective };
 
 // Utility functions
-export * from './animations';
+export { TdRotateAnimation } from './animations/rotate/rotate.animation';
+export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
+export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 
 /**
  * BEHAVIORS

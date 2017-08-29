@@ -1,5 +1,5 @@
 import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
-import { Validators, ValidatorFn, FormControl } from '@angular/forms';
+import { Validators, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
 import { TdDynamicFileInputComponent } from '../dynamic-elements/dynamic-file-input/dynamic-file-input.component';
@@ -27,6 +27,10 @@ export enum TdDynamicElement {
   FileInput = <any>'file-input',
 }
 
+export interface ITdDynamicElementValidator {
+  validator: ValidatorFn;
+}
+
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
@@ -37,6 +41,7 @@ export interface ITdDynamicElementConfig {
   selections?: any[];
   default?: any;
   flex?: number;
+  validators?: ITdDynamicElementValidator[];
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
@@ -85,32 +90,6 @@ export class TdDynamicFormsService {
   }
 
   /**
-   * Gets default flex for element depending on [TdDynamicElement | TdDynamicType].
-   * Throws error if it does not exists or not supported.
-   */
-  getDefaultElementFlex(element: TdDynamicElement | TdDynamicType): any {
-    switch (element) {
-      case TdDynamicType.Text:
-      case TdDynamicType.Number:
-      case TdDynamicElement.Slider:
-      case TdDynamicElement.Input:
-      case TdDynamicElement.Password:
-      case TdDynamicType.Array:
-      case TdDynamicElement.FileInput:
-      case TdDynamicElement.Select:
-        return 45;
-      case TdDynamicElement.Textarea:
-        return 95;
-      case TdDynamicType.Boolean:
-      case TdDynamicElement.Checkbox:
-      case TdDynamicElement.SlideToggle:
-        return 20;
-      default:
-        throw new Error(`Error: type ${element} does not exist or not supported.`);
-    }
-  }
-
-  /**
    * Creates form control for element depending [ITdDynamicElementConfig] properties.
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
@@ -131,6 +110,12 @@ export class TdDynamicFormsService {
     }
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
+    }
+    // Add provided custom validators to the validator function
+    if (config.validators) {
+      config.validators.forEach((validatorConfig: ITdDynamicElementValidator) => {
+        validator = Validators.compose([validator, validatorConfig.validator]);
+      });
     }
     return validator;
   }

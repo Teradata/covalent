@@ -1,7 +1,8 @@
-import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { TemplatePortalDirective } from '@angular/cdk';
 
 import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
 import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';
@@ -15,6 +16,15 @@ export const ELEMENT_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   useExisting: forwardRef(() => TdDynamicElementComponent),
   multi: true,
 };
+
+@Directive({selector: '[tdDynamicFormsError]ng-template'})
+export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
+
+  @Input() tdDynamicFormsError: string;
+  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+}
 
 @Directive({
   selector: '[tdDynamicContainer]',
