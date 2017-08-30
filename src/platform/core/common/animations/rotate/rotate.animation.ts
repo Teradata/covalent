@@ -3,17 +3,18 @@ import { IAnimationOptions } from '../common/interfaces';
 
 export interface IRotateAnimation extends IAnimationOptions {
   degrees?: number;
+  ease?: string;
 }
 
 /**
  * Function TdRotateAnimation
  *
  * params:
- * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation.
+ * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation. Defaults to tdRotate.
  * * duration: Duration the animation will run in miliseconds. Defaults to 250 ms.
+ * * delay: Delay before the animation will run in miliseconds. Defaults to 0 ms.
  * * degrees: Degrees of rotation that the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise.
- * * ease: String representing timing of animation 'duration delay easing' EX: '2s 300ms ease-in', duration=2000, delay=300, easing=ease-in.
- * Defaults to ease-out.
+ * * ease: Animation accelerates and decelerates when rotation. Defaults to ease-in.
  *
  * Returns an [AnimationTriggerMetadata] object with states for a boolean trigger based rotation animation.
  *
@@ -28,7 +29,9 @@ export function TdRotateAnimation(rotateOptions: IRotateAnimation = {}): Animati
       transform: 'rotate(' + (rotateOptions.degrees || 180) + 'deg)',
     })),
     transition('0 <=> 1', [
-      animate((rotateOptions.duration || 250) + 'ms ' + (rotateOptions.ease || 'ease-in')),
+      animate((rotateOptions.duration || 250) + 'ms ' +
+              (rotateOptions.delay || 0) + 'ms ' +
+              (rotateOptions.ease || 'ease-in')),
     ]),
   ]);
 }

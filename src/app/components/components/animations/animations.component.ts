@@ -2,6 +2,8 @@ import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 import { TdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
+import { TdCollapseAnimation } from '../../../../platform/core/common/animations/collapse/collapse.animation';
+import { TdFadeInOutAnimation } from '../../../../platform/core/common/animations/fade/fadeInOut.animation';
 
 @Component({
   selector: 'animations-demo',
@@ -12,6 +14,8 @@ import { TdRotateAnimation } from '../../../../platform/core/common/animations/r
     TdRotateAnimation(),
     TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
     TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
+    TdCollapseAnimation(),
+    TdFadeInOutAnimation(),
   ],
 })
 export class AnimationsComponent {
@@ -21,5 +25,9 @@ export class AnimationsComponent {
 
   rotateState1: boolean = false;
   rotateState2: boolean = false;
+
+  collapseState1: boolean = false;
+
+  fadeInOutState1: boolean = true;
 
 }

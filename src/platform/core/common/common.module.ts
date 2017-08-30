@@ -20,8 +20,8 @@ export { TdToggleDirective, TdFadeDirective };
 
 // Utility functions
 export { TdRotateAnimation, IRotateAnimation } from './animations/rotate/rotate.animation';
-export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
-export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
+export { TdCollapseAnimation, ICollapseAnimation } from './animations/collapse/collapse.animation';
+export { TdFadeInOutAnimation, IFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 
 /**
  * BEHAVIORS

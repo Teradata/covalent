@@ -121,17 +121,169 @@
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in miliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
           <h3 md-line>degrees?: number</h3>
           <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
         </md-list-item>
+        <md-divider></md-divider>
         <md-list-item>
           <h3 md-line>ease?: string</h3>
-          <p md-line>String representing timing of animation 'duration delay easing' EX: '2s 300ms ease-in', duration=2000, delay=300, easing=ease-in. Defaults to ease-out.
-          </p>
+          <p md-line>Animation accelerates and decelerates when rotation. Defaults to ease-in.</p>
         </md-list-item>
         <md-divider></md-divider>
       </md-list>
     </div>
 
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Collapse Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button (click)="collapseState1 = !collapseState1" color="accent" class="size-width-128">
+        Collapse
+        <hr>
+          <md-icon [@tdCollapse]="collapseState1">mood</md-icon>
+        <hr>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdCollapseAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdCollapseAnimation(), // using implicit anchor name 'tdCollapse' in template
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button (click)="triggerState = !triggerState" color="accent">
+            Collapse
+            <hr>
+              <md-icon [@tdCollapse]="triggerState">mood</md-icon>
+            <hr>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdCollapse'.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in miliseconds. Defaults to 150 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+         <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in miliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnClose?: string</h3>
+          <p md-line>Animation accelerates and decelerates when closing. Defaults to ease-in.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnOpen?: string</h3>
+          <p md-line>Animation accelerates and decelerates when opening. Defaults to ease-out.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Fade in/out Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button (click)="fadeInOutState1 = !fadeInOutState1" color="accent">
+        Fade in/out
+        <md-icon [@tdFadeInOut]="fadeInOutState1">mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdFadeInOutAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = true;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button (click)="triggerState = !triggerState" color="accent">
+            Fade in/out
+            <md-icon [@tdFadeInOut]="triggerState">mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdFadeInOut'.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in miliseconds. Defaults to 150 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+         <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in miliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnIn?: string</h3>
+          <p md-line>Animation accelerates and decelerates when fading in. Defaults to ease-in.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnOut?: string</h3>
+          <p md-line>Animation accelerates and decelerates when fading out. Defaults to ease-out.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
   </md-card-content>
 </md-card>
