@@ -156,6 +156,10 @@
         @tdHeadshake <md-icon>mood</md-icon>
       </button>
 
+      <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+        @tdJello <md-icon>mood</md-icon>
+      </button>
+
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
@@ -163,18 +167,21 @@
             TdBounceAnimation,
             TdFlashAnimation,
             TdHeadshakeAnimation,
+            TdJelloAnimation,
           } from '@covalent/core';
           ...
           animations: [
             TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
             TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
             TdHeadshakeAnimation(), // using implicit anchor name 'tdheadshake' in template
+            TdJelloAnimation(), // using implicit anchor name 'tdjello' in template
           ],
           ...
           class MyDemo {
             bounceState: boolean = false;
             flashState: boolean = false;
             headshakeState: boolean = false;
+            jelloState: boolean = false;
           }
         ]]>
       </td-highlight>
@@ -189,6 +196,9 @@
           </button>
           <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
             @tdHeadshake <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+            @tdJello <md-icon>mood</md-icon>
           </button>
         ]]>
       </td-highlight>
