@@ -38,6 +38,8 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
+  minLength?: any;
+  maxLength?: any;
   selections?: any[];
   default?: any;
   flex?: number;
@@ -110,6 +112,12 @@ export class TdDynamicFormsService {
     }
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
+    }
+    if (config.maxLength || config.maxLength === 0) {
+      validator = Validators.compose([validator, Validators.maxLength(parseFloat(config.maxLength))]);
+    }
+    if (config.minLength || config.minLength === 0) {
+      validator = Validators.compose([validator, Validators.minLength(parseFloat(config.minLength))]);
     }
     // Add provided custom validators to the validator function
     if (config.validators) {

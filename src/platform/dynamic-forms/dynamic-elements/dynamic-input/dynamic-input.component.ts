@@ -29,4 +29,8 @@ export class TdDynamicInputComponent extends AbstractControlValueAccessor implem
 
   max: number = undefined;
 
+  minLength: number = undefined;
+
+  maxLength: number = undefined;
+
 }

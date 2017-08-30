@@ -28,6 +28,13 @@ export class DynamicFormsDemoComponent {
     required: true,
     flex: 50,
   }, {
+    name: 'text-length',
+    label: 'Text Length',
+    type: TdDynamicElement.Input,
+    minLength: 4,
+    maxLength: 12,
+    flex: 50,
+  }, {
     name: 'textarea',
     type: TdDynamicElement.Textarea,
     required: false,
