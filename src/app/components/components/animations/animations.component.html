@@ -148,6 +148,10 @@
         @tdBounce <md-icon>mood</md-icon>
       </button>
 
+      <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
+        @tdFlash <md-icon>mood</md-icon>
+      </button>
+
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
@@ -155,6 +159,7 @@
           ...
           animations: [
             TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
+            TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
           ],
           ...
           class MyDemo {
@@ -167,6 +172,9 @@
         <![CDATA[
           <button md-raised-button [@tdBounce]="triggerState" (click)="triggerState = !triggerState" color="accent">
             @tdBounce <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdFlash]="flashState" (click)="triggerState = !triggerState" color="accent">
+            @tdFlash <md-icon>mood</md-icon>
           </button>
         ]]>
       </td-highlight>

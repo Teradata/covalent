@@ -23,6 +23,7 @@ export { TdRotateAnimation, IRotateAnimation } from './animations/rotate/rotate.
 export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
 export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
 export { TdBounceAnimation } from './animations/bounce/bounce.animation';
+export { TdFlashAnimation } from './animations/flash/flash.animation';
 
 /**
  * BEHAVIORS
