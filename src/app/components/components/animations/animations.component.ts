@@ -2,6 +2,7 @@ import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 import { TdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
+import { TdBounceAnimation } from '../../../../platform/core/common/animations/bounce/bounce.animation';
 
 @Component({
   selector: 'animations-demo',
@@ -12,6 +13,7 @@ import { TdRotateAnimation } from '../../../../platform/core/common/animations/r
     TdRotateAnimation(),
     TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
     TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
+    TdBounceAnimation({ anchor: 'tdBounce', duration: 500 }),
   ],
 })
 export class AnimationsComponent {
@@ -21,5 +23,6 @@ export class AnimationsComponent {
 
   rotateState1: boolean = false;
   rotateState2: boolean = false;
+  bounceState: boolean = false;
 
 }
