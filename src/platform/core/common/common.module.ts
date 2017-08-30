@@ -26,6 +26,7 @@ export { TdBounceAnimation } from './animations/bounce/bounce.animation';
 export { TdFlashAnimation } from './animations/flash/flash.animation';
 export { TdHeadshakeAnimation } from './animations/headshake/headshake.animation';
 export { TdJelloAnimation } from './animations/jello/jello.animation';
+export { TdPulseAnimation } from './animations/pulse/pulse.animation';
 
 /**
  * BEHAVIORS

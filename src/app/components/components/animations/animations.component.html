@@ -160,6 +160,10 @@
         @tdJello <md-icon>mood</md-icon>
       </button>
 
+      <button md-raised-button [@tdPulse]="pulseState" (click)="pulseState = !pulseState" color="accent">
+        @tdPulse <md-icon>mood</md-icon>
+      </button>
+
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
@@ -168,6 +172,7 @@
             TdFlashAnimation,
             TdHeadshakeAnimation,
             TdJelloAnimation,
+            TdPulseAnimation,
           } from '@covalent/core';
           ...
           animations: [
@@ -175,6 +180,7 @@
             TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
             TdHeadshakeAnimation(), // using implicit anchor name 'tdheadshake' in template
             TdJelloAnimation(), // using implicit anchor name 'tdjello' in template
+            TdPulseAnimation(), // using implicit anchor name 'tdpulse' in template
           ],
           ...
           class MyDemo {
@@ -182,6 +188,7 @@
             flashState: boolean = false;
             headshakeState: boolean = false;
             jelloState: boolean = false;
+            pulseState: boolean = false;
           }
         ]]>
       </td-highlight>
@@ -199,6 +206,9 @@
           </button>
           <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
             @tdJello <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdJello]="pulseState" (click)="pulseState = !pulseState" color="accent">
+            @tdPulse <md-icon>mood</md-icon>
           </button>
         ]]>
       </td-highlight>

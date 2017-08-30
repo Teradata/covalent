@@ -6,6 +6,7 @@ import { TdBounceAnimation } from '../../../../platform/core/common/animations/b
 import { TdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
 import { TdHeadshakeAnimation } from '../../../../platform/core/common/animations/headshake/headshake.animation';
 import { TdJelloAnimation } from '../../../../platform/core/common/animations/jello/jello.animation';
+import { TdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
 
 @Component({
   selector: 'animations-demo',
@@ -19,7 +20,8 @@ import { TdJelloAnimation } from '../../../../platform/core/common/animations/je
     TdBounceAnimation({ anchor: 'tdBounce', duration: 750 }),
     TdFlashAnimation({ anchor: 'tdFlash', duration: 750 }),
     TdHeadshakeAnimation({ anchor: 'tdHeadshake', duration: 1500 }),
-    TdJelloAnimation({ anchor: 'tdJello', duration: 1500 }),
+    TdJelloAnimation({ anchor: 'tdJello', duration: 1000 }),
+    TdPulseAnimation({ anchor: 'tdPulse', duration: 750 }),
   ],
 })
 export class AnimationsComponent {
@@ -33,5 +35,6 @@ export class AnimationsComponent {
   flashState: boolean = false;
   headshakeState: boolean = false;
   jelloState: boolean = false;
+  pulseState: boolean = false;
 
 }
