@@ -5,14 +5,13 @@
   padding: 0px 5px 0px 5px;
   min-height: 48px;
   .td-chips-wrapper {
+    min-height: 42px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    min-height: 42px;
-    &.td-chips-stacked {
-      flex-direction: column;
-      align-items: stretch;
+    &.td-chips-stacked .mat-basic-chip  {
+      width: 100%;
     }
   }
   /deep/ {
@@ -27,16 +26,17 @@
       @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
       .td-chip {
         min-height: 32px;
-        font-size: 14px;
+        line-height: 32px;
+        font-size: 13px;
         @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
         [td-chip-avatar] {
-          display: flex;
+          display: inline-block;
           order: -20;
           justify-content: center;
           align-items: center;
+          text-align: center;
           height: 32px;
           width: 32px;
-          flex-shrink: 0;
           @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
           border-radius: 50%;
         }
@@ -50,6 +50,7 @@
       md-icon.td-chip-removal {
         margin: 0 4px;
         font-size: 21px;
+        line-height: 22px;
         &:hover {
           cursor: pointer;
         }

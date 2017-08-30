@@ -107,7 +107,8 @@
           [columns]="columns">
           <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
             <div layout="row">
-              <span flex>{{value}}</span>
+              <span>{{value}}</span>
+              <span flex></span>
               <md-icon>star</md-icon>
             </div>
           </ng-template>
@@ -123,7 +124,8 @@
               [columns]="columns">
               <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
-                  <span flex>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
+                  <span>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
+                  <span flex></span>
                   <md-icon>star</md-icon>
                 </div>
               </ng-template>

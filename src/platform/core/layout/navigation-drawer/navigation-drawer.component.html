@@ -1,5 +1,5 @@
 <md-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
-  <div layout="column" flex>
+  <div flex>
     <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
     <ng-container *ngIf="!isCustomToolbar">
       <span *ngIf="icon || logo || sidenavTitle"

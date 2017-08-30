@@ -291,6 +291,9 @@
                   placeholder="Enter any string"
                   (inputChange)="filterStackedStrings($event)"
                   stacked>
+          <ng-template td-chip let-chip="chip">
+            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div> {{chip}}
+          </ng-template>
         </td-chips>
       </div>
     </md-tab>

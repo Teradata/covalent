@@ -183,29 +183,29 @@
     <md-tab>
       <ng-template md-tab-label>Demo</ng-template>
       <md-card-content>
-          <p>Change Event: </p>
-          <div>
-            <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
-            <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
-            <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
-          </div>
-          <p>Total: {{eventInput?.total || '1345'}}</p>
-        </md-card-content>
-        <md-divider></md-divider>
-        <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
-          <p hide-xs>Go to:</p>
-          <md-input-container>
-            <input #goToInput
-                    mdInput
-                    type="number"
-                    [min]="1"
-                    [max]="pagingBarInput.maxPage"
-                    [value]="pagingBarInput.page"
-                    (blur)="goToInput.value = pagingBarInput.page"
-                    (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-          </md-input-container>
-          <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
-        </td-paging-bar>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
+          <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
+          <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventInput?.total || '1345'}}</p>
+      </md-card-content>
+      <md-divider></md-divider>
+      <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+        <p hide-xs>Go to:</p>
+        <md-input-container>
+          <input #goToInput
+                  mdInput
+                  type="number"
+                  [min]="1"
+                  [max]="pagingBarInput.maxPage"
+                  [value]="pagingBarInput.page"
+                  (blur)="goToInput.value = pagingBarInput.page"
+                  (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+        </md-input-container>
+        <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
+      </td-paging-bar>
     </md-tab>
     <md-tab>
       <ng-template md-tab-label>Code</ng-template>

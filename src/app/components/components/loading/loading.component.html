@@ -9,10 +9,12 @@
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-          <div layout="column" flex>
+          <div layout="row">
             <md-input-container flex>
               <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
             </md-input-container>
+          </div>
+          <div layout="row">
             <md-input-container flex>
               <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
@@ -28,10 +30,12 @@
         <td-highlight lang="html">
           <![CDATA[
             <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-              <div layout="column" flex>
+              <div layout="row">
                 <md-input-container flex>
                   <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
                 </md-input-container>
+              </div>
+              <div layout="row">
                 <md-input-container flex>
                   <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>
@@ -84,14 +88,12 @@
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
-          <div layout="column" flex>
+          <div layout="row">
             <md-input-container flex>
               <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
             </md-input-container>
-            <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
-              <md-option [value]="1">Some type</md-option>
-              <md-option [value]="2">Another type</md-option>
-            </md-select>
+          </div>
+          <div layout="row">
             <md-input-container flex>
               <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
@@ -107,14 +109,12 @@
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
-              <div layout="column" flex>
+              <div layout="row">
                 <md-input-container flex>
                   <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
                 </md-input-container>
-                <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
-                  <md-option [value]="1">Some type</md-option>
-                  <md-option [value]="2">Another type</md-option>
-                </md-select>
+              </div>
+              <div layout="row">
                 <md-input-container flex>
                   <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>
@@ -236,10 +236,12 @@
       <md-tab>
         <ng-template md-tab-label>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-          <div layout="column" flex>
+          <div layout="row">
             <md-input-container flex>
               <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
             </md-input-container>
+          </div>
+          <div layout="row">
             <md-input-container flex>
               <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
             </md-input-container>
@@ -255,10 +257,12 @@
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-              <div layout="column" flex>
+              <div layout="row">
                 <md-input-container flex>
                   <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
                 </md-input-container>
+              </div>
+              <div layout="row">
                 <md-input-container flex>
                   <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
                 </md-input-container>

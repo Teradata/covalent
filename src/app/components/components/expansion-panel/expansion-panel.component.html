@@ -153,18 +153,22 @@
             </md-list-item>
           </md-list>
         </td-expansion-summary>
-        <form class="md-padding" layout="column">
-          <md-input-container flex>
-            <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea mdInput placeholder="Description" rows="4"></textarea>
-          </md-input-container>
+        <form class="md-padding">
+          <div layout="row">
+            <md-input-container flex>
+              <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-input-container flex>
+              <textarea mdInput placeholder="Description" rows="4"></textarea>
+            </md-input-container>
+          </div>
         </form>
         <md-divider></md-divider>
-        <div layout="row" layout-margin layout-align="end center">
-          <button md-button class="text-upper">Cancel</button>
+        <div layout="row" class="pad-sm">
           <button md-button color="accent" class="text-upper">Save</button>
+          <button md-button class="text-upper">Cancel</button>
         </div>
       </td-expansion-panel>
     </md-tab>
@@ -194,18 +198,22 @@
                   </md-list-item>
                 </md-list>
               </td-expansion-summary>
-              <form class="md-padding" layout="column">
-                <md-input-container flex>
-                  <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
-                </md-input-container>
-                <md-input-container flex>
-                  <textarea mdInput placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+              <form class="md-padding">
+                <div layout="row">
+                  <md-input-container flex>
+                    <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
+                  </md-input-container>
+                </div>
+                <div layout="row">
+                  <md-input-container flex>
+                    <textarea mdInput placeholder="Description" rows="4"></textarea>
+                  </md-input-container>
+                </div>
               </form>
               <md-divider></md-divider>
-              <div layout="row" layout-margin layout-align="end center">
-                <button md-button class="text-upper">Cancel</button>
+              <div layout="row" class="pad-sm">
                 <button md-button color="accent" class="text-upper">Save</button>
+                <button md-button class="text-upper">Cancel</button>
               </div>
             </td-expansion-panel>
           ]]>
