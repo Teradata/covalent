@@ -152,29 +152,43 @@
         @tdFlash <md-icon>mood</md-icon>
       </button>
 
+      <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+        @tdHeadshake <md-icon>mood</md-icon>
+      </button>
+
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdBounceAnimation } from '@covalent/core';
+          import { 
+            TdBounceAnimation,
+            TdFlashAnimation,
+            TdHeadshakeAnimation,
+          } from '@covalent/core';
           ...
           animations: [
             TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
             TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
+            TdHeadshakeAnimation(), // using implicit anchor name 'tdheadshake' in template
           ],
           ...
           class MyDemo {
-            triggerState: boolean = false;
+            bounceState: boolean = false;
+            flashState: boolean = false;
+            headshakeState: boolean = false;
           }
         ]]>
       </td-highlight>
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button [@tdBounce]="triggerState" (click)="triggerState = !triggerState" color="accent">
+          <button md-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
             @tdBounce <md-icon>mood</md-icon>
           </button>
-          <button md-raised-button [@tdFlash]="flashState" (click)="triggerState = !triggerState" color="accent">
+          <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
             @tdFlash <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+            @tdHeadshake <md-icon>mood</md-icon>
           </button>
         ]]>
       </td-highlight>
@@ -191,7 +205,7 @@
         <md-divider></md-divider>
         <md-list-item>
           <h3 md-line>duration?: number</h3>
-          <p md-line> Duration the animation will run in miliseconds. Defaults to 250 ms. </p>
+          <p md-line> Duration the animation will run in miliseconds. Defaults to 500 ms. </p>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item>
