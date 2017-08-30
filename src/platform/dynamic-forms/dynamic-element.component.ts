@@ -86,6 +86,16 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   @Input() max: number = undefined;
 
   /**
+   * Sets minLength validation checkup (if supported by element).
+   */
+  @Input() minLength: number = undefined;
+
+  /**
+   * Sets maxLength validation checkup (if supported by element).
+   */
+  @Input() maxLength: number = undefined;
+
+  /**
    * Sets selections for array elements (if supported by element).
    */
   @Input() selections: any[] = undefined;
@@ -120,6 +130,8 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     this._instance.required = this.required;
     this._instance.min = this.min;
     this._instance.max = this.max;
+    this._instance.minLength = this.minLength;
+    this._instance.maxLength = this.maxLength;
     this._instance.selections = this.selections;
     this._instance.registerOnChange((value: any) => {
       this.value = value;
