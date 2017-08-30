@@ -51,7 +51,7 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
   inputs: ['disabled', 'disableRipple'],
   animations: [
     TdCollapseAnimation(),
-    TdRotateAnimation('tdRotate'),
+    TdRotateAnimation({ anchor: 'tdRotate' }),
   ],
 })
 export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {

@@ -3,24 +3,30 @@
   <md-card-subtitle>Core Covalent animation utilities</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Utilities to help add simple animations. For custom and complex animations look into the Angular animations doc.</p>
+    <p>Utilities to help add simple reusable animations and reduce boilerplate code. For custom and complex animations look into the Angular animations doc.</p>
 
     <h3>Setup:</h3>
     <p>Import individual animation utilities as needed into the component that will contain the elements you want to animate.</p>
     <p>Replace the "TdAnimationUtility" stub variable in code setup below with the respective animation utilities you decide to equip.</p>
-    <p>Invoke the utility functions with a required anchor name and optional configs in the component's metadata. The anchor name is used to attach the animation to an arbitrary element in the template.</p>
+    <p>
+      Every utility function has default animation properties that can be modified. One of which is a default anchor name that
+      can be used implicitly or overridden with your own custom name. The anchor name is used to attach the animation to an arbitrary
+      element in the template.
+    </p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdAnimationUtility } from '@covalent/core';
+        import { TdAnimationUtility_A, TdAnimationUtility_B } from '@covalent/core';
 
         @Component({
           ...
           animations: [
-            TdAnimationUtility('myAnchor'),
+            TdAnimationUtility_A(), // using implicit anchor name in template
+            TdAnimationUtility_B({ anchor: 'myAnchor' }), // using custom anchor name in template
           ],
         })
         export class MyComponent {
-          triggerState: boolean = false;
+          triggerState_A: boolean = false;
+          triggerState_B: boolean = false;
           ...
         }
       ]]>
@@ -50,7 +56,7 @@
           import { TdRotateAnimation } from '@covalent/core';
           ...
           animations: [
-            TdRotateAnimation('tdRotate'),
+            TdRotateAnimation(), // using implicit anchor name 'tdRotate' in template
           ],
           ...
           class MyDemo {
@@ -72,8 +78,8 @@
 
     <div>
       <h3>Demo 2:</h3>
-      <button md-raised-button [@tdRotateNeg180]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
-        Rotate -180&deg;<md-icon [@tdRotate180]="rotateState2">mood</md-icon>
+      <button md-raised-button [@tdRotateNeg45]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
+        Rotate -45&deg;<md-icon [@tdRotate545]="rotateState2">mood</md-icon>
       </button>
 
       <p>Typescript:</p>
@@ -82,8 +88,8 @@
           import { TdRotateAnimation } from '@covalent/core';
           ...
           animations: [
-            TdRotateAnimation('tdRotate180', 500, 180),
-            TdRotateAnimation('tdRotateNeg180', 500, -180)
+            TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
+            TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
           ],
           ...
           class MyDemo {
@@ -94,8 +100,8 @@
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button [@tdRotateNeg180]="triggerState" (click)="triggerState = !triggerState" color="accent">
-            Rotate -180&deg;<md-icon [@tdRotate180]="triggerState">mood</md-icon>
+          <button md-raised-button [@tdRotateNeg45]="triggerState" (click)="triggerState = !triggerState" color="accent">
+            Rotate -45&deg;<md-icon [@tdRotate545]="triggerState">mood</md-icon>
           </button>
         ]]>
       </td-highlight>
@@ -105,8 +111,8 @@
       <h2>API:</h2>
       <md-list>
         <md-list-item>
-          <h3 md-line>anchor: string</h3>
-          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. </p>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdRotate'.</p>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item>
@@ -117,6 +123,11 @@
         <md-list-item>
           <h3 md-line>degrees?: number</h3>
           <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>ease?: string</h3>
+          <p md-line>String representing timing of animation 'duration delay easing' EX: '2s 300ms ease-in', duration=2000, delay=300, easing=ease-in. Defaults to ease-out.
+          </p>
         </md-list-item>
         <md-divider></md-divider>
       </md-list>
