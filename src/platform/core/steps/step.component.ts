@@ -1,7 +1,8 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
          ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { coerceBooleanProperty, TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
+import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
 
@@ -53,8 +54,8 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
   private _active: boolean = false;
   private _state: StepState = StepState.None;
 
-  private _contentPortal: TemplatePortal;
-  get stepContent(): TemplatePortal {
+  private _contentPortal: TemplatePortal<any>;
+  get stepContent(): TemplatePortal<any> {
     return this._contentPortal;
   }
 

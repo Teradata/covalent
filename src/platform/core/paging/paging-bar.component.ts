@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
-import { Dir, coerceNumberProperty } from '@angular/cdk';
+import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { Dir } from '@angular/cdk/bidi';
 
 export interface IPageChangeEvent {
   page: number;

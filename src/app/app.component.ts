@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Dir } from '@angular/cdk';
+import { Dir } from '@angular/cdk/bidi';
 import { MdIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
