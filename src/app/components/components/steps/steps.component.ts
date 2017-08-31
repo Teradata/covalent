@@ -77,7 +77,7 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
 
   querySubscription: Subscription;
   mode: number = 0;
-  horizontal: boolean = true;
+  horizontal: boolean = false;
   isScreenGtSm: boolean = false;
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
