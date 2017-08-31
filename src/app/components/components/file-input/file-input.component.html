@@ -7,7 +7,7 @@
       <ng-template mdTabLabel>Demo</ng-template>
       <md-card-content>
         <div layout="row">
-          <md-input-container tdFileDrop
+          <md-form-field tdFileDrop
                               [disabled]="disabled"
                               (fileDrop)="files = $event"
                               (click)="fileInput.inputElement.click()"
@@ -20,7 +20,7 @@
                    [value]="files?.length ? (files?.length + ' files') : files?.name"
                    [disabled]="disabled"
                    readonly/>
-          </md-input-container>
+          </md-form-field>
           <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
             <md-icon>cancel</md-icon>
           </button>
@@ -45,7 +45,7 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <md-input-container tdFileDrop
+              <md-form-field tdFileDrop
                                   [disabled]="disabled"
                                   (fileDrop)="files = $event"
                                   (click)="fileInput.inputElement.click()"
@@ -58,7 +58,7 @@
                       [value]="files?.length ? (files?.length + ' files') : files?.name"
                       [disabled]="disabled"
                       readonly/>
-              </md-input-container>
+              </md-form-field>
               <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
                 <md-icon>cancel</md-icon>
               </button>

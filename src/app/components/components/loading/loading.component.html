@@ -10,14 +10,14 @@
         <ng-template mdTabLabel>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-            </md-input-container>
+            </md-form-field>
           </div>
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </div>
         <div layout="row">
@@ -31,14 +31,14 @@
           <![CDATA[
             <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-                </md-input-container>
+                </md-form-field>
               </div>
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </div>
             <div layout="row">
@@ -89,14 +89,14 @@
         <ng-template mdTabLabel>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-            </md-input-container>
+            </md-form-field>
           </div>
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </ng-template>
         <div layout="row">
@@ -110,14 +110,14 @@
           <![CDATA[
             <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-                </md-input-container>
+                </md-form-field>
               </div>
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </ng-template>
             <div layout="row">
@@ -237,14 +237,14 @@
         <ng-template mdTabLabel>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-            </md-input-container>
+            </md-form-field>
           </div>
           <div layout="row">
-            <md-input-container flex>
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </ng-template>
         <div class="pad-sm">
@@ -258,14 +258,14 @@
           <![CDATA[
             <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-                </md-input-container>
+                </md-form-field>
               </div>
               <div layout="row">
-                <md-input-container flex>
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </ng-template>
             <div class="pad-sm">

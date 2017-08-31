@@ -21,7 +21,7 @@
       </div>
     </md-basic-chip>
   </ng-template>
-  <md-input-container floatPlaceholder="never"
+  <md-form-field floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
                       [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
@@ -34,7 +34,7 @@
             (keydown)="_inputKeydown($event)"
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">
-  </md-input-container>
+  </md-form-field>
   <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
       <md-option (click)="_internalClick = addChip(item)" [value]="item">
@@ -48,9 +48,9 @@
     </ng-template>
   </md-autocomplete>
 </div>
-<div *ngIf="chipAddition" class="mat-input-underline"
+<div *ngIf="chipAddition" class="mat-form-field-underline"
       [class.mat-disabled]="disabled">
-  <span class="mat-input-ripple"
+  <span class="mat-form-field-ripple"
         [class.mat-focused]="focused"></span>
 </div>
 <ng-content></ng-content>

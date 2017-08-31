@@ -69,13 +69,13 @@
           <md-divider></md-divider>
           <div class="pad" layout="column">
             <div layout="row">
-              <md-input-container class="pad-right-xs" flex>
+              <md-form-field class="pad-right-xs" flex>
                 <input mdInput
                       placeholder="Label"
                       [(ngModel)]="model.label"
                       name="label">
-              </md-input-container>
-              <md-input-container flex="30">
+              </md-form-field>
+              <md-form-field flex="30">
                 <input mdInput
                       type="number"
                       min="0"
@@ -83,23 +83,23 @@
                       placeholder="Flex (width in %)"
                       [(ngModel)]="model.flex"
                       name="flex">
-              </md-input-container>
+              </md-form-field>
             </div>
             <div *ngIf="isMinMaxSupported(model.type)" layout="row">
-              <md-input-container class="pad-right-xs" flex>
+              <md-form-field class="pad-right-xs" flex>
                 <input mdInput
                       type="number"
                       placeholder="Min"
                       [(ngModel)]="model.min"
                       name="min">
-              </md-input-container>
-              <md-input-container flex="50">
+              </md-form-field>
+              <md-form-field flex="50">
                 <input mdInput
                       type="number"
                       placeholder="Max"
                       [(ngModel)]="model.max"
                       name="max">
-              </md-input-container>
+              </md-form-field>
             </div>
             <div layout="row">
               <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>

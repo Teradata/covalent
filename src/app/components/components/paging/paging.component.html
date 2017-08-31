@@ -194,7 +194,7 @@
       <md-divider></md-divider>
       <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
         <p hide-xs>Go to:</p>
-        <md-input-container>
+        <md-form-field>
           <input #goToInput
                   mdInput
                   type="number"
@@ -203,7 +203,7 @@
                   [value]="pagingBarInput.page"
                   (blur)="goToInput.value = pagingBarInput.page"
                   (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-        </md-input-container>
+        </md-form-field>
         <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
       </td-paging-bar>
     </md-tab>
@@ -215,7 +215,7 @@
           <![CDATA[
             <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
               <p hide-xs>Go to:</p>
-              <md-input-container>
+              <md-form-field>
                 <input #goToInput
                         mdInput
                         type="number"
@@ -224,7 +224,7 @@
                         [value]="pagingBarInput.page"
                         (blur)="goToInput.value = pagingBarInput.page"
                         (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-              </md-input-container>
+              </md-form-field>
               <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
             </td-paging-bar>
           ]]>
@@ -278,7 +278,7 @@
             </md-option>
           </md-select>
           <p hide-xs hide-sm hide-md>Go to:</p>
-          <md-input-container *ngIf="media.registerQuery('gt-sm') | async">
+          <md-form-field *ngIf="media.registerQuery('gt-sm') | async">
             <input #goToResponsive
                     mdInput
                     type="number"
@@ -287,7 +287,7 @@
                     [value]="pagingBarResponsive.page"
                     (blur)="goToResponsive.value = pagingBarResponsive.page"
                     (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-          </md-input-container>
+          </md-form-field>
           <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
         </td-paging-bar>
     </md-tab>
@@ -310,7 +310,7 @@
                 </md-option>
               </md-select>
               <p hide-xs hide-sm hide-md>Go to:</p>
-              <md-input-container *ngIf="media.registerQuery('gt-sm') | async">
+              <md-form-field *ngIf="media.registerQuery('gt-sm') | async">
                 <input #goToResponsive
                         mdInput
                         type="number"
@@ -319,7 +319,7 @@
                         [value]="pagingBarResponsive.page"
                         (blur)="goToResponsive.value = pagingBarResponsive.page"
                         (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-              </md-input-container>
+              </md-form-field>
               <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
             </td-paging-bar>
           ]]>

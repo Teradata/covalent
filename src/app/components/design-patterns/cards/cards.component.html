@@ -141,22 +141,22 @@
                       <md-card-content class="push-bottom-none">
                         <form #loginForm="ngForm">
                           <div layout="row">
-                            <md-input-container flex> 
+                            <md-form-field flex> 
                               <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
                               <md-hint align="start">
                                 <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
                               </md-hint>
                               <md-hint align="end">{ {userElement.value.length} } / 30</md-hint>
-                            </md-input-container>
+                            </md-form-field>
                           </div>
                           <div layout="row" class="push-top-sm">
-                            <md-input-container flex> 
+                            <md-form-field flex> 
                               <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
                               <md-hint align="start">
                                 <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
                               </md-hint>
                               <md-hint align="end">Something hard to guess</md-hint>
-                            </md-input-container>
+                            </md-form-field>
                           </div>
                         </form>
                         <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
@@ -182,24 +182,24 @@
             <md-card-content class="push-bottom-none">
               <form #loginForm="ngForm">
                 <div layout="row">
-                  <md-input-container flex>
+                  <md-form-field flex>
                     <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
                       required>
                     <md-hint align="start">
                       <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
                     </md-hint>
                     <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
-                  </md-input-container>
+                  </md-form-field>
                 </div>
                 <div layout="row" class="push-top-sm">
-                  <md-input-container flex>
+                  <md-form-field flex>
                     <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
                       required>
                     <md-hint align="start">
                       <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
                     </md-hint>
                     <md-hint align="end">Something hard to guess</md-hint>
-                  </md-input-container>
+                  </md-form-field>
                 </div>
               </form>
               <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
@@ -352,10 +352,10 @@
                   <![CDATA[
                     <md-card>
                       <md-card-title layout>
-                        <md-input-container class="text-sm" flex>
+                        <md-form-field class="text-sm" flex>
                           <input mdInput placeholder="Search Items"/>
                           <span mdPrefix><md-icon>search</md-icon></span>
-                        </md-input-container>
+                        </md-form-field>
                       </md-card-title>
                       <md-list class="pull-top">
                         <md-list-item>
@@ -385,10 +385,10 @@
           </div>
           <md-card class="push-md">
               <md-card-title layout>
-                <md-input-container class="text-sm" flex>
+                <md-form-field class="text-sm" flex>
                   <input mdInput placeholder="Search Items"/>
                   <span mdPrefix><md-icon>search</md-icon></span>
-                </md-input-container>
+                </md-form-field>
               </md-card-title>
               <md-list class="pull-top">
                 <md-list-item>
