@@ -6,7 +6,7 @@
     <h3 class="md-title">Basic Stepper</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
           <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
             <md-button-toggle mdTooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
@@ -41,7 +41,7 @@
         </td-steps>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
