@@ -35,6 +35,13 @@ gulp.task('rollup-code', '', function() {
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/material': 'ng.material',
     '@angular/cdk': 'ng.cdk',
+    '@angular/cdk/overlay': 'ng.cdk.overlay',
+    '@angular/cdk/portal': 'ng.cdk.portal',
+    '@angular/cdk/keycodes': 'ng.cdk.keycodes',
+    '@angular/cdk/bidi': 'ng.cdk.bidi',
+    '@angular/cdk/coercion': 'ng.cdk.coercion',
+    '@angular/cdk/rxjs': 'ng.cdk.rxjs',
+    '@angular/cdk/scrolling': 'ng.cdk.scrolling',
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
