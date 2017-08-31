@@ -15,7 +15,7 @@
     .mat-checkbox-column {
       color: mat-color($foreground, secondary-text);
       md-pseudo-checkbox.mat-pseudo-checkbox-checked {
-        color: mat-color($accent, 500);
+        background-color: mat-color($accent);
       }
     }
     .td-data-table-cell {
