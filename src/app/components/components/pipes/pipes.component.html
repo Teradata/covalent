@@ -37,11 +37,11 @@
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- original output -->
-        <h3 md-line>Digits: {{ log.digits }}</h3>
+        <h3 mdLine>Digits: {{ log.digits }}</h3>
         <!-- output with bytes pipe -->
-        <p md-line>Converted: {{ log.digits | digits }}</p>
+        <p mdLine>Converted: {{ log.digits | digits }}</p>
         <!-- output with precision aurgument -->
-        <p *ngIf="log.precision" md-line>With precision argument: {{ log.digits | digits:log.precision }} </p>
+        <p *ngIf="log.precision" mdLine>With precision argument: {{ log.digits | digits:log.precision }} </p>
       </md-list-item>
     </md-list>
   <p>Usage:</p>
@@ -50,11 +50,11 @@
           <md-list>
             <md-list-item *ngFor="let log of logs">
               <!-- original output -->
-              <h3 md-line>Digits: { { log.digits } }</h3>
+              <h3 mdLine>Digits: { { log.digits } }</h3>
               <!-- output with digits pipe -->
-              <p md-line>Converted: { { log.digits | digits } }</p>
+              <p mdLine>Converted: { { log.digits | digits } }</p>
               <!-- output with precision aurgument -->
-              <p md-line>With precision argument: { { log.digits | digits:log.precision } } </p>
+              <p mdLine>With precision argument: { { log.digits | digits:log.precision } } </p>
             </md-list-item>
           </md-list>
         ]]>
@@ -70,11 +70,11 @@
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- original output -->
-        <h3 md-line>Bytes: {{ log.bytes }}</h3>
+        <h3 mdLine>Bytes: {{ log.bytes }}</h3>
         <!-- output with bytes pipe -->
-        <p md-line>Converted: {{ log.bytes | bytes }}</p>
+        <p mdLine>Converted: {{ log.bytes | bytes }}</p>
         <!-- output with precision aurgument -->
-        <p *ngIf="log.precision" md-line>With precision argument: {{ log.bytes | bytes:log.precision }} </p>
+        <p *ngIf="log.precision" mdLine>With precision argument: {{ log.bytes | bytes:log.precision }} </p>
       </md-list-item>
     </md-list>
   <p>Usage:</p>
@@ -83,11 +83,11 @@
           <md-list>
             <md-list-item *ngFor="let log of logs">
               <!-- original output -->
-              <h3 md-line>Bytes: { { log.bytes } }</h3>
+              <h3 mdLine>Bytes: { { log.bytes } }</h3>
               <!-- output with bytes pipe -->
-              <p md-line>Converted: { { log.bytes | bytes } }</p>
+              <p mdLine>Converted: { { log.bytes | bytes } }</p>
               <!-- output with precision aurgument -->
-              <p md-line>With precision argument: { { log.bytes | bytes:log.precision } } </p>
+              <p mdLine>With precision argument: { { log.bytes | bytes:log.precision } } </p>
             </md-list-item>
           </md-list>
         ]]>
@@ -102,8 +102,8 @@
     <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29T17:59:59.000Z</code>) and tranforms it to the amount of time that has gone by. </p>
     <md-list>
       <md-list-item *ngFor="let log of logs">
-        <h3 md-line>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
-        <p *ngIf="log.reference" md-line>Reference: {{ log.reference }} </p>
+        <h3 mdLine>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
+        <p *ngIf="log.reference" mdLine>Reference: {{ log.reference }} </p>
       </md-list-item>
     </md-list>
   <p>Usage:</p>
@@ -130,11 +130,11 @@
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- Start and end time output -->
-        <h3 md-line>Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}</h3>
+        <h3 mdLine>Start Time: {{ log.timestamp }} | End Time: {{ log.timestampend }}</h3>
         <!-- output with timeDifference pipe -->
-        <p md-line>Difference: {{ log.timestamp | timeDifference:log.timestampend }}</p>
+        <p mdLine>Difference: {{ log.timestamp | timeDifference:log.timestampend }}</p>
         <!-- outputs the time difference relative to the current time -->
-        <p md-line>Difference relative to current time: {{ log.timestamp | timeDifference }}</p>
+        <p mdLine>Difference relative to current time: {{ log.timestamp | timeDifference }}</p>
       </md-list-item>
     </md-list>
     <p class="md-body-1"><strong>Note: </strong> Using this pipe without arguments outputs the time difference relative to the current time. </p>
@@ -144,11 +144,11 @@
           <md-list>
             <md-list-item *ngFor="let log of logs">
               <!-- Start and end time output -->
-              <h3 md-line>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
+              <h3 mdLine>{ { log.timestamp } } | End Time: { { log.timestampend } }</h3>
               <!-- output with timeDifference pipe -->
-              <p md-line>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
+              <p mdLine>Difference: { { log.timestamp | timeDifference:log.timestampend } }</p>
               <!-- outputs the time difference relative to the current time -->
-              <p md-line>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
+              <p mdLine>Difference relative to current time: { { log.timestamp | timeDifference } }</p>
             </md-list-item>
           </md-list>
         ]]>
@@ -164,9 +164,9 @@
     <md-list>
       <md-list-item *ngFor="let log of logs">
         <!-- original value output -->
-        <h3 md-line>Original value: <code>{{ log.text_value }}</code></h3>
+        <h3 mdLine>Original value: <code>{{ log.text_value }}</code></h3>
         <!-- truncated value output -->
-        <p md-line>Truncate with a length value of <code>{{ log.truncate_length }}</code>: {{ log.text_value | truncate:log.truncate_length }}</p>
+        <p mdLine>Truncate with a length value of <code>{{ log.truncate_length }}</code>: {{ log.text_value | truncate:log.truncate_length }}</p>
       </md-list-item>
     </md-list>
     <p>Usage:</p>
@@ -175,9 +175,9 @@
           <md-list>
             <md-list-item *ngFor="let log of logs">
               <!-- original value output -->
-              <h3 md-line>Original value: <code>{ { log.text_value } }</code></h3>
+              <h3 mdLine>Original value: <code>{ { log.text_value } }</code></h3>
               <!-- truncated value output -->
-              <p md-line>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
+              <p mdLine>Truncate with a length value of <code>{ { log.truncate_length } }</code>: { { log.text_value | truncate:log.truncate_length } }</p>
             </md-list-item>
           </md-list>
         ]]>
@@ -200,7 +200,7 @@
   <md-nav-list>
     <a md-list-item href="https://angular.io/docs/ts/latest/api/#!?query=pipe" target="_blank">
       <md-icon>launch</md-icon>
-      <span md-line>Angular comes with a stock of pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe</span>
+      <span mdLine>Angular comes with a stock of pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe</span>
     </a>
   </md-nav-list>
 </md-card>
