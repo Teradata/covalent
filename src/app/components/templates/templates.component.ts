@@ -26,7 +26,10 @@ export class TemplatesComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.media.broadcast();
-    this._changeDetectorRef.detectChanges();
+    // broadcast to all listener observables when loading the page
+    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+      this.media.broadcast();
+      this._changeDetectorRef.detectChanges();
+    });
   }
 }
