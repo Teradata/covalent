@@ -3,6 +3,7 @@
     <md-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
+                   [disabled]="true"
                    (keydown)="_chipKeydown($event, index)"
                    (blur)="_handleChipBlur($event, chip)"
                    (focus)="_handleChipFocus($event, chip)">
@@ -35,9 +36,11 @@
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">
   </md-form-field>
-  <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
+  <md-autocomplete #autocomplete="mdAutocomplete"
+                   [displayWith]="_removeInputDisplay"
+                   (optionSelected)="addChip($event.option.value)">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
-      <md-option (click)="_internalClick = addChip(item)" [value]="item">
+      <md-option (click)="_setInternalClick()" [value]="item">
         <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"

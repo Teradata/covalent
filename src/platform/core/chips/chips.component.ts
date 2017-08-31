@@ -381,6 +381,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     }
   }
 
+  _setInternalClick(): void {
+    this._internalClick = true;
+  }
+
   /** Method executed when the disabled value changes */
   onDisabledChange(v: boolean): void {
     this._toggleInput();
@@ -490,6 +494,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Sets focus of chip and sends out event
    */
   _handleChipFocus(event: FocusEvent, value: any): void {
+    this.setFocusedState();
     this.onChipFocus.emit(value);
   }
 
