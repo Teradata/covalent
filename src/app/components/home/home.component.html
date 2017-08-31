@@ -37,7 +37,7 @@
             <md-nav-list hide-gt-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a md-list-item [routerLink]="[item.route]">
-                  <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
                   <h3 class="tc-blue-grey-900" mdLine> {{item.title}} </h3>
                   <p class="tc-blue-grey-700" mdLine> {{item.description}} </p>
                 </a>
@@ -88,7 +88,7 @@
             <md-nav-list hide-gt-sm class="theme-dark">
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
                 <a md-list-item href="{{item.link}}" target="_blank">
-                  <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
                   <h3 class="tc-white" mdLine> {{item.title}} </h3>
                   <p class="tc-white" mdLine> {{item.description}} </p>
                 </a>

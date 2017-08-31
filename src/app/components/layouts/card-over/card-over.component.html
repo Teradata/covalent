@@ -108,7 +108,7 @@
               <h3 md-subheader>Metadata</h3>
               <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
                 <md-list-item>
-                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                  <md-icon mdListAvatar>{{item.icon}}</md-icon>
                   <h3 mdLine> {{item.title}} </h3>
                   <p mdLine> {{item.description}} </p>
                 </md-list-item>
@@ -118,7 +118,7 @@
               <h3 md-subheader>Dates</h3>
               <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
                 <md-list-item>
-                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                  <md-icon mdListAvatar>{{item.icon}}</md-icon>
                   <h3 mdLine> {{item.date | timeAgo}} </h3>
                   <p mdLine> {{item.description}} </p>
                 </md-list-item>
@@ -169,7 +169,7 @@
                   <h3 md-subheader>Metadata</h3>
                   <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
                     <md-list-item>
-                      <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                      <md-icon mdListAvatar>{ {item.icon} }</md-icon>
                       <h3 mdLine> { {item.title} } </h3>
                       <p mdLine> { {item.description} } </p>
                     </md-list-item>
@@ -179,7 +179,7 @@
                   <h3 md-subheader>Dates</h3>
                   <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
                     <md-list-item>
-                      <md-icon md-list-avatar>{ {item.icon} }</md-icon>
+                      <md-icon mdListAvatar>{ {item.icon} }</md-icon>
                       <h3 mdLine> { {item.date | timeAgo} } </h3>
                       <p mdLine> { {item.description} } </p>
                     </md-list-item>
