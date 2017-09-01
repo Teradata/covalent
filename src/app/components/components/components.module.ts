@@ -43,7 +43,7 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule,
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentMessageModule } from '../../../platform/core';
+         CovalentMessageModule, CovalentAnimationsModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -107,6 +107,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdAutocompleteModule,
     /** Covalent Modules */
     CovalentCommonModule,
+    CovalentAnimationsModule,
     CovalentLayoutModule,
     CovalentMediaModule,
     CovalentExpansionPanelModule,

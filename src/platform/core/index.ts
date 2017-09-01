@@ -5,6 +5,13 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 /**
+ * ANIMATIONS
+ */
+
+import { CovalentAnimationsModule } from './animations/animations.module';
+export * from './animations/animations.module';
+
+/**
  * COMMON
  */
 
