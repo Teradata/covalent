@@ -15,7 +15,7 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule,
          MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
-         CovalentMediaModule } from '../platform/core';
+         CovalentMediaModule, CovalentAnimationsModule } from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -51,6 +51,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MdGridListModule,
     MdTooltipModule,
     /** Covalent Modules */
+    CovalentAnimationsModule,
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
     CovalentNotificationsModule,
