@@ -4,10 +4,10 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <md-card-content>
         <div layout="row">
-          <md-input-container tdFileDrop
+          <md-form-field tdFileDrop
                               [disabled]="disabled"
                               (fileDrop)="files = $event"
                               (click)="fileInput.inputElement.click()"
@@ -20,7 +20,7 @@
                    [value]="files?.length ? (files?.length + ' files') : files?.name"
                    [disabled]="disabled"
                    readonly/>
-          </md-input-container>
+          </md-form-field>
           <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
             <md-icon>cancel</md-icon>
           </button>
@@ -39,13 +39,13 @@
       </md-card-actions>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <md-input-container tdFileDrop
+              <md-form-field tdFileDrop
                                   [disabled]="disabled"
                                   (fileDrop)="files = $event"
                                   (click)="fileInput.inputElement.click()"
@@ -58,7 +58,7 @@
                       [value]="files?.length ? (files?.length + ' files') : files?.name"
                       [disabled]="disabled"
                       readonly/>
-              </md-input-container>
+              </md-form-field>
               <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
                 <md-icon>cancel</md-icon>
               </button>

@@ -69,13 +69,13 @@
           <md-divider></md-divider>
           <div class="pad" layout="column">
             <div layout="row">
-              <md-input-container class="pad-right-xs" flex>
+              <md-form-field class="pad-right-xs" flex>
                 <input mdInput
                       placeholder="Label"
                       [(ngModel)]="model.label"
                       name="label">
-              </md-input-container>
-              <md-input-container flex="30">
+              </md-form-field>
+              <md-form-field flex="30">
                 <input mdInput
                       type="number"
                       min="0"
@@ -83,23 +83,23 @@
                       placeholder="Flex (width in %)"
                       [(ngModel)]="model.flex"
                       name="flex">
-              </md-input-container>
+              </md-form-field>
             </div>
             <div *ngIf="isMinMaxSupported(model.type)" layout="row">
-              <md-input-container class="pad-right-xs" flex>
+              <md-form-field class="pad-right-xs" flex>
                 <input mdInput
                       type="number"
                       placeholder="Min"
                       [(ngModel)]="model.min"
                       name="min">
-              </md-input-container>
-              <md-input-container flex="50">
+              </md-form-field>
+              <md-form-field flex="50">
                 <input mdInput
                       type="number"
                       placeholder="Max"
                       [(ngModel)]="model.max"
                       name="max">
-              </md-input-container>
+              </md-form-field>
             </div>
             <div layout="row">
               <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>
@@ -125,12 +125,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="textElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -152,7 +152,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="numberElements">
           <ng-template let-element ngFor [ngForOf]="numberElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -165,7 +165,7 @@
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -195,12 +195,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="booleanElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -222,12 +222,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="arrayElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -250,12 +250,12 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="fileElements">
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -279,7 +279,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="customValidationElements">
           <ng-template let-element ngFor [ngForOf]="customValidationElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -294,7 +294,7 @@
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -347,7 +347,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
           <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
             <span *ngIf="control.touched || !control.pristine">
@@ -359,7 +359,7 @@
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -409,7 +409,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms #customValidateForm [elements]="angularValidators">
           <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
             <span *ngIf="control.touched || !control.pristine">
@@ -419,7 +419,7 @@
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[

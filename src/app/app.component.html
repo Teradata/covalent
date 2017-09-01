@@ -9,7 +9,7 @@
           [routerLink]="['/']"
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{exact:true}">
-          <md-icon md-list-icon>home</md-icon>
+          <md-icon mdListIcon>home</md-icon>
           Home
       </a>
       <a *ngFor="let item of routes" 
@@ -17,7 +17,7 @@
           (click)="!media.query('gt-md') && layout.close()"
           [routerLink]="[item.route]"
           [routerLinkActive]="['active']">
-          <md-icon md-list-icon>{{item.icon}}</md-icon>
+          <md-icon mdListIcon>{{item.icon}}</md-icon>
           {{item.title}}
       </a>
     </md-nav-list>

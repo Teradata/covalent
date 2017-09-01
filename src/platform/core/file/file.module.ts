@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { PortalModule } from '@angular/cdk';
+import { PortalModule } from '@angular/cdk/portal';
 import { MdIconModule, MdButtonModule } from '@angular/material';
 
 import { TdFileSelectDirective } from './directives/file-select.directive';

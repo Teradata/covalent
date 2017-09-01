@@ -24,7 +24,7 @@ $td-menu-spacing: 8px !default;
           padding-right: 16px;
         }
       }
-      [md-line] + [md-line] {
+      [mdLine] + [mdLine] {
         margin-top: $td-menu-spacing / 2;
       }
     }

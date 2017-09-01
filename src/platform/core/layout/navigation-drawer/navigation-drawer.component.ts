@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MdSidenavToggleResult } from '@angular/material';
+import { MdDrawerToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
 
@@ -176,21 +176,21 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdSidenavToggleResult> {
+  public toggle(): Promise<MdDrawerToggleResult> {
     return this._layout.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdSidenavToggleResult> {
+  public open(): Promise<MdDrawerToggleResult> {
     return this._layout.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdSidenavToggleResult> {
+  public close(): Promise<MdDrawerToggleResult> {
     return this._layout.close();
   }
 }

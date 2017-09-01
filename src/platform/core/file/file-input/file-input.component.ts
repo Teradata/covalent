@@ -1,6 +1,7 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
          ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
-import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';

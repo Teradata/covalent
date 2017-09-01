@@ -2,8 +2,9 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { PortalModule } from '@angular/cdk';
-import { MdProgressBarModule, MdProgressSpinnerModule, OverlayModule } from '@angular/material';
+import { PortalModule } from '@angular/cdk/portal';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MdProgressBarModule, MdProgressSpinnerModule } from '@angular/material';
 
 import { TdLoadingService, LOADING_PROVIDER } from './services/loading.service';
 import { TdLoadingFactory, LOADING_FACTORY_PROVIDER } from './services/loading.factory';
