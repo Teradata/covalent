@@ -15,7 +15,7 @@ Properties:
 | `refresh` | `function()` | Method to refresh and recalculate the virtual rows
 | `scrollTo` | `function(row)` | Method to scroll to a specific row of the list.
 | `scrollToStart` | `function()` | Method to scroll to the start of the list.
-| `scrollToEnd?` | `function()` | Method to scroll to the end of the list.
+| `scrollToEnd` | `function()` | Method to scroll to the end of the list.
 
 ## Setup
 
