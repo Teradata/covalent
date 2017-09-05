@@ -254,6 +254,7 @@
         ]]>
       </td-highlight>
     </div>
+
     <md-divider></md-divider>
     <div>
       <h2>API:</h2>
@@ -281,6 +282,101 @@
         <md-list-item>
           <h3 md-line>easeOnOut?: string</h3>
           <p md-line>Animation accelerates and decelerates when fading out. Defaults to ease-out.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Attention Seekers Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div>
+      <h3>Demos:</h3>
+
+      <button md-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
+        @tdBounce <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
+        @tdFlash <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+        @tdHeadshake <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+        @tdJello <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdPulse]="pulseState" (click)="pulseState = !pulseState" color="accent">
+        @tdPulse <md-icon>mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+                  import {
+            TdBounceAnimation,
+            TdFlashAnimation,
+            TdHeadshakeAnimation,
+            TdJelloAnimation,
+            TdPulseAnimation,
+          } from '@covalent/core';
+          ...
+          animations: [
+            TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
+            TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
+            TdHeadshakeAnimation(), // using implicit anchor name 'tdheadshake' in template
+            TdJelloAnimation(), // using implicit anchor name 'tdjello' in template
+            TdPulseAnimation(), // using implicit anchor name 'tdpulse' in template
+          ],
+          ...
+          class MyDemo {
+            bounceState: boolean = false;
+            flashState: boolean = false;
+            headshakeState: boolean = false;
+            jelloState: boolean = false;
+            pulseState: boolean = false;
+            }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
+            @tdBounce <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
+            @tdFlash <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+            @tdHeadshake <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+            @tdJello <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdPulse]="pulseState" (click)="pulseState = !pulseState" color="accent">
+            @tdPulse <md-icon>mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in miliseconds. Defaults to 500 ms. </p>
         </md-list-item>
         <md-divider></md-divider>
       </md-list>
