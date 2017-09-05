@@ -115,3 +115,10 @@ export * from './search/search.module';
 
 import { CovalentStepsModule } from './steps/steps.module';
 export * from './steps/steps.module';
+
+/**
+ * VIRTUAL SCROLL
+ */
+
+import { CovalentVirtualScrollModule } from './virtual-scroll/virtual-scroll.module';
+export * from './virtual-scroll/virtual-scroll.module';
