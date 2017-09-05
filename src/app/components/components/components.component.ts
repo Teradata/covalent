@@ -61,6 +61,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'data-table',
     title: 'Data Table',
   }, {
+    description: 'Scroll virtually on a set of items',
+    icon: 'format_line_spacing',
+    route: 'virtual-scroll',
+    title: 'Virtual Scroll',
+  }, {
     description: 'JSON object tree with collapsible nodes',
     icon: 'format_indent_increase',
     route: 'json-formatter',

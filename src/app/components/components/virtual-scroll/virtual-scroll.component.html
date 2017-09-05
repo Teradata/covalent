@@ -1,0 +1,44 @@
+<md-card>
+  <md-card-title>Virtual Scroll</md-card-title>
+  <md-card-subtitle>Scroll virtually on a set of items</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <h3 class="md-title">Virtual List</h3>
+    <h4 class="md-subhead">iterate over 10000 md-list item's</h4>
+    <md-divider></md-divider>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template mdTabLabel>Demo</ng-template>
+        <md-list>
+          <td-virtual-scroll-container [style.height.px]="400" [data]="randomData">
+            <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+              <md-list-item>
+                <md-icon mdListAvatar>person</md-icon>
+                <h4 md-line>{{row.name}}</h4>
+                <p md-line>Row: {{row.index}}</p>
+              </md-list-item>
+              <md-divider *ngIf="!last"></md-divider>
+            </ng-template>
+          </td-virtual-scroll-container>
+        </md-list>
+      </md-tab>
+      <md-tab>
+        <ng-template mdTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            
+          ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+
+<td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>

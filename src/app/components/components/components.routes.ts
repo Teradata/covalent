@@ -25,6 +25,7 @@ import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.compone
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
+import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
@@ -92,6 +93,9 @@ const routes: Routes = [{
     }, {
       component: NotificationsDemoComponent,
       path: 'notifications',
+    }, {
+      component: VirtualScrollDemoComponent,
+      path: 'virtual-scroll',
     }, {
       component: DynamicFormsDemoComponent,
       path: 'dynamic-forms',
