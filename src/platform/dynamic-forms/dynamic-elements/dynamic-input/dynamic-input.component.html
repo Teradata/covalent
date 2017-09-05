@@ -1,5 +1,5 @@
-<div class="dynamic-input-wrapper" layout="column">
-  <md-input-container>
+<div class="dynamic-input-wrapper" layout="row">
+  <md-form-field flex>
     <input #elementInput
             mdInput
             [(ngModel)]="value"
@@ -10,5 +10,5 @@
             [attr.min]="min"
             [attr.max]="max"
             flex/>
-  </md-input-container>
+  </md-form-field>
 </div>

@@ -8,7 +8,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
             <th td-data-table-column>
@@ -32,7 +32,7 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -101,7 +101,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="columns">
@@ -115,7 +115,7 @@
         </td-data-table>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -208,7 +208,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
@@ -249,7 +249,7 @@
         </td-paging-bar>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -410,8 +410,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -432,8 +432,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -442,8 +442,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

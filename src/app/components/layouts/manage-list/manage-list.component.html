@@ -139,7 +139,7 @@
           <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
             <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
               <a md-list-item>
-                <md-icon md-list-icon>{{item.icon}}</md-icon> {{item.title}}
+                <md-icon mdListIcon>{{item.icon}}</md-icon> {{item.title}}
               </a>
             </ng-template>
           </md-nav-list>
@@ -263,7 +263,7 @@
               <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
                   <a md-list-item>
-                    <md-icon md-list-icon>{ {item.icon} }</md-icon> { {item.title} }
+                    <md-icon mdListIcon>{ {item.icon} }</md-icon> { {item.title} }
                   </a>
                 </ng-template>
               </md-nav-list>
@@ -436,8 +436,10 @@
 
           ngAfterViewInit(): void {
             // broadcast to all listener observables when loading the page
-            this.media.broadcast();
-            this._changeDetectorRef.detectChanges();
+            setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+              this.media.broadcast();
+              this._changeDetectorRef.detectChanges();
+            });
           }
 
         }

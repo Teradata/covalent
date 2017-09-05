@@ -37,7 +37,7 @@
     "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": "^4.2.0",
-    "@angular/http": "^4.2.0"
+    "@angular/core": "^4.3.0",
+    "@angular/http": "^4.3.0"
   }
 }

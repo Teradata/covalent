@@ -6,7 +6,7 @@
     <h3 class="md-title">Basic Stepper</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
           <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
             <md-button-toggle mdTooltip="Vertical Stepper" [value]="0"><md-icon>swap_vert</md-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
@@ -41,7 +41,7 @@
         </td-steps>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -121,8 +121,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepsAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -185,8 +185,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

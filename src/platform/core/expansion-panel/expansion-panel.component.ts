@@ -1,7 +1,8 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
          ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { coerceBooleanProperty, TemplatePortalDirective } from '@angular/cdk';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { TdCollapseAnimation, ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
 import { TdRotateAnimation } from '../common/common.module';

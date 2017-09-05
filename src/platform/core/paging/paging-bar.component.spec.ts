@@ -242,7 +242,7 @@ class TestPageLinkCountComponent {
   template: `
     <td-paging-bar #pagingBar [pageSize]="100" [total]="650">
       <p>Go to:</p>
-      <md-input-container>
+      <md-form-field>
         <input #goToInput
                 mdInput
                 type="number"
@@ -251,7 +251,7 @@ class TestPageLinkCountComponent {
                 [value]="pagingBar.page"
                 (blur)="goToInput.value = pagingBar.page"
                 (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-      </md-input-container>
+      </md-form-field>
       
     </td-paging-bar>`,
 })

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
 

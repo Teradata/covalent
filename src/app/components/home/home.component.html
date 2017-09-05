@@ -37,9 +37,9 @@
             <md-nav-list hide-gt-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a md-list-item [routerLink]="[item.route]">
-                  <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
-                  <h3 class="tc-blue-grey-900" md-line> {{item.title}} </h3>
-                  <p class="tc-blue-grey-700" md-line> {{item.description}} </p>
+                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <h3 class="tc-blue-grey-900" mdLine> {{item.title}} </h3>
+                  <p class="tc-blue-grey-700" mdLine> {{item.description}} </p>
                 </a>
                 <md-divider *ngIf="!last" md-inset></md-divider>
               </ng-template>
@@ -88,9 +88,9 @@
             <md-nav-list hide-gt-sm class="theme-dark">
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
                 <a md-list-item href="{{item.link}}" target="_blank">
-                  <md-icon md-list-avatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
-                  <h3 class="tc-white" md-line> {{item.title}} </h3>
-                  <p class="tc-white" md-line> {{item.description}} </p>
+                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <h3 class="tc-white" mdLine> {{item.title}} </h3>
+                  <p class="tc-white" mdLine> {{item.description}} </p>
                 </a>
                 <md-divider *ngIf="!last" md-inset></md-divider>
               </ng-template>
@@ -267,20 +267,20 @@
               <md-nav-list>
                 <a md-list-item href="https://github.com/teradata/covalent/releases" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 md-line>Releases</h3>
-                  <p md-line>Our latest version you can use today!</p>
+                  <h3 mdLine>Releases</h3>
+                  <p mdLine>Our latest version you can use today!</p>
                 </a>
                 <md-divider></md-divider>
                 <a md-list-item href="https://github.com/teradata/covalent/milestones" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 md-line>Milestones</h3>
-                  <p md-line>Rough time estimates</p>
+                  <h3 mdLine>Milestones</h3>
+                  <p mdLine>Rough time estimates</p>
                 </a>
                 <md-divider></md-divider>
                 <a md-list-item href="https://github.com/teradata/covalent/issues" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 md-line>Feature Requests & Bugs</h3>
-                  <p md-line>Priotized by demand</p>
+                  <h3 mdLine>Feature Requests & Bugs</h3>
+                  <p mdLine>Priotized by demand</p>
                 </a>
               </md-nav-list>
             </td-expansion-panel>

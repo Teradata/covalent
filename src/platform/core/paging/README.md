@@ -84,7 +84,7 @@ Example with material input for navigation:
                 [total]="1345"
                 (change)="change($event)">
   <p hide-xs>Go to:</p>
-  <md-input-container>
+  <md-form-field>
     <input #goToInput
             mdInput
             type="number"
@@ -93,7 +93,7 @@ Example with material input for navigation:
             [value]="pagingBar.page"
             (blur)="goToInput.value = pagingBar.page"
             (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-  </md-input-container>
+  </md-form-field>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
   
 </td-paging-bar>
@@ -115,7 +115,7 @@ Example with dynamic page sizes, input and page links for navigation:
     </md-option>
   </md-select>
   <p hide-xs>Go to:</p>
-  <md-input-container>
+  <md-form-field>
     <input #goToInput
             mdInput
             type="number"
@@ -124,7 +124,7 @@ Example with dynamic page sizes, input and page links for navigation:
             [value]="pagingBar.page"
             (blur)="goToInput.value = pagingBar.page"
             (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-  </md-input-container>
+  </md-form-field>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
 ```
