@@ -14,7 +14,7 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@myAnchorName]="true|false"
  */
 export function TdBounceAnimation(bounceOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(bounceOptions.anchor || 'tdbounce', [
+  return trigger(bounceOptions.anchor || 'tdBounce', [
     state('0', style({
       transform: 'translate3d(0, 0, 0)',
     })),

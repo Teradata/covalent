@@ -14,7 +14,7 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@myAnchorName]="true|false"
  */
 export function TdHeadshakeAnimation(headshakeOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(headshakeOptions.anchor || 'tdheadshake', [
+  return trigger(headshakeOptions.anchor || 'tdHeadshake', [
     state('0', style({
       transform: 'translateX(0)',
     })),

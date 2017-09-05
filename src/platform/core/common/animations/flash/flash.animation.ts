@@ -14,7 +14,7 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@myAnchorName]="true|false"
  */
 export function TdFlashAnimation(flashOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(flashOptions.anchor || 'tdflash', [
+  return trigger(flashOptions.anchor || 'tdFlash', [
     state('0', style({
       opacity: 1,
     })),

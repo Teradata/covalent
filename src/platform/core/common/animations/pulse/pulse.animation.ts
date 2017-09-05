@@ -14,7 +14,7 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@myAnchorName]="true|false"
  */
 export function TdPulseAnimation(pulseOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(pulseOptions.anchor || 'tdpulse', [
+  return trigger(pulseOptions.anchor || 'tdPulse', [
     state('0', style({
       transform: 'scale3d(1, 1, 1)',
     })),

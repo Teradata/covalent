@@ -21,11 +21,11 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
     TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
     TdCollapseAnimation(),
     TdFadeInOutAnimation(),
-    TdBounceAnimation({ anchor: 'tdBounce', duration: 750 }),
-    TdFlashAnimation({ anchor: 'tdFlash', duration: 750 }),
-    TdHeadshakeAnimation({ anchor: 'tdHeadshake', duration: 1500 }),
-    TdJelloAnimation({ anchor: 'tdJello', duration: 1000 }),
-    TdPulseAnimation({ anchor: 'tdPulse', duration: 750 }),
+    TdBounceAnimation(),
+    TdFlashAnimation(),
+    TdHeadshakeAnimation(),
+    TdJelloAnimation(),
+    TdPulseAnimation(),
   ],
 })
 export class AnimationsComponent {
@@ -35,14 +35,15 @@ export class AnimationsComponent {
 
   rotateState1: boolean = false;
   rotateState2: boolean = false;
+
+  collapseState1: boolean = false;
+
+  fadeInOutState1: boolean = true;
+
   bounceState: boolean = false;
   flashState: boolean = false;
   headshakeState: boolean = false;
   jelloState: boolean = false;
   pulseState: boolean = false;
-
-  collapseState1: boolean = false;
-
-  fadeInOutState1: boolean = true;
 
 }

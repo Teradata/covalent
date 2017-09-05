@@ -14,7 +14,7 @@ import { IAnimationOptions } from '../common/interfaces';
  * usage: [@myAnchorName]="true|false"
  */
 export function TdJelloAnimation(jelloOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(jelloOptions.anchor || 'tdjello', [
+  return trigger(jelloOptions.anchor || 'tdJello', [
     state('0', style({
       transform: 'none',
     })),
