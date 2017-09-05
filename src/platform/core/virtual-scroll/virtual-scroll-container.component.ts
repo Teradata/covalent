@@ -1,11 +1,9 @@
-import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterContentInit, ViewChild,
+import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
-         Renderer2, AfterContentChecked } from '@angular/core';
+         Renderer2, AfterViewChecked } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
 
 import { TdVirtualScrollRowDirective } from './virtual-scroll-row.directive';
 
@@ -17,7 +15,7 @@ const TD_VIRTUAL_OFFSET: number = 2;
   templateUrl: './virtual-scroll-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdVirtualScrollContainerComponent implements AfterContentInit, AfterContentChecked {
+export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked {
 
   private _initialized: boolean = false;
 
@@ -84,14 +82,16 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef) {}
 
-  ngAfterContentInit(): void {
-    setTimeout(() => {
-      this._initialized = true;
+  ngAfterViewInit(): void {
+    let subs: Subscription = this._rows.changes.subscribe(() => {
+      subs.unsubscribe();
       this._calculateVirtualRows();
     });
+    this._initialized = true;
+    this._calculateVirtualRows();
   }
 
-  ngAfterContentChecked(): void {
+  ngAfterViewChecked(): void {
     let newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height;
     if (this._hostHeight !== newHostHeight) {
       this._hostHeight = newHostHeight;
@@ -117,7 +117,9 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
       let verticalScroll: number = element.scrollTop;
       if (this._scrollVerticalOffset !== verticalScroll) {
         this._scrollVerticalOffset = verticalScroll;
-        this._calculateVirtualRows();
+        if (this._initialized) {
+          this._calculateVirtualRows();
+        }
       }
     }
   }
@@ -161,8 +163,10 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
       this._fromRow = fromRow > 0 ? fromRow : 0;
       let range: number = Math.floor((this._hostHeight / this.rowHeight)) + (TD_VIRTUAL_OFFSET * 2);
       let toRow: number = range + this.fromRow;
-      if (toRow > this._data.length) {
+      if (isFinite(toRow) && toRow > this._data.length) {
         toRow = this._data.length;
+      } else if (!isFinite(toRow)) {
+        toRow = TD_VIRTUAL_OFFSET;
       }
       this._toRow = toRow;
     } else {
@@ -180,7 +184,11 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
     if (this._data) {
       this._virtualData = this.data.slice(this.fromRow, this.toRow);
     }
-    this._changeDetectorRef.markForCheck();
+    // mark for check at the end of the queue so we are sure
+    // that the changes will be marked
+    Promise.resolve().then(() => {
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
 }
