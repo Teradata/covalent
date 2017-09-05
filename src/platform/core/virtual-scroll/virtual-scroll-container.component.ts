@@ -34,7 +34,7 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
 
   /**
    * data: any[]
-   * List of items to iterate on.
+   * List of items to virtually iterate on.
    */
   @Input('data')
   set data(data: any[]) {
@@ -102,11 +102,12 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
   }
 
   /**
-   * trackBy?: Function
+   * trackBy?: TrackByFunction
    * This accepts the same trackBy function [ngFor] does.
+   * https://angular.io/api/core/TrackByFunction
    */
-  @Input('trackBy') trackBy: Function = (row: any) => {
-    return row;
+  @Input('trackBy') trackBy: any =  (index: number, item: any) => {
+    return item;
   }
 
   @HostListener('scroll', ['$event'])
