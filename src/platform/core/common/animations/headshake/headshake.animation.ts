@@ -21,7 +21,7 @@ export function TdHeadshakeAnimation(headshakeOptions: IAnimationOptions = {}): 
     state('1',  style({
       transform: 'translateX(0)',
     })),
-    transition('0 <=> 1', animate((headshakeOptions.duration || 500) + 'ms', keyframes([
+    transition('0 <=> 1', animate((headshakeOptions.duration || 500) + 'ms ' + (headshakeOptions.delay || 0) + 'ms', keyframes([
         style({transform: 'translateX(0)', offset: 0}),
         style({transform: 'translateX(-6px) rotateY(-9deg)', offset: 0.065}),
         style({transform: 'translateX(5px) rotateY(7deg)', offset: 0.185}),

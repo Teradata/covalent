@@ -21,7 +21,7 @@ export function TdJelloAnimation(jelloOptions: IAnimationOptions = {}): Animatio
     state('1',  style({
       transform: 'none',
     })),
-    transition('0 <=> 1', animate((jelloOptions.duration || 500) + 'ms', keyframes([
+    transition('0 <=> 1', animate((jelloOptions.duration || 500) + 'ms ' + (jelloOptions.delay || 0) + 'ms', keyframes([
         style({transform: 'none', offset: 0}),
         style({transform: 'none', offset: 0.011}),
         style({transform: 'skewX(-12.5deg) skewY(-12.5deg)', offset: 0.222}),

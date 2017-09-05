@@ -21,7 +21,7 @@ export function TdFlashAnimation(flashOptions: IAnimationOptions = {}): Animatio
     state('1',  style({
       opacity: 1,
     })),
-    transition('0 <=> 1', animate((flashOptions.duration || 500) + 'ms', keyframes([
+    transition('0 <=> 1', animate((flashOptions.duration || 500) + 'ms ' + (flashOptions.delay || 0) + 'ms', keyframes([
         style({opacity: 1, offset: 0}),
         style({opacity: 0, offset: 0.25}),
         style({opacity: 1, offset: 0.5}),
