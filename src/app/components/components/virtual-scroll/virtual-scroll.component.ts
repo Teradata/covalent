@@ -2,8 +2,6 @@ import { Component, OnInit, HostBinding, ChangeDetectionStrategy } from '@angula
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { } from '../../../../platform/core';
-
 @Component({
   selector: 'virtual-scroll-demo',
   styleUrls: ['./virtual-scroll.component.scss'],
@@ -16,11 +14,12 @@ export class VirtualScrollDemoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  randomData: any[] = [];
+  toggleDemoCode1: boolean = false;
+  data: any[] = [];
 
   ngOnInit(): void {
-    for (let index: number = 1; index <= 10000; index++) {
-      this.randomData.push({index: index, name: 'element-' + index});
+    for (let index: number = 1; index <= 1200; index++) {
+      this.data.push({index: index, name: 'element-' + index});
     }
   }
 

@@ -86,6 +86,7 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
 
   ngAfterContentInit(): void {
     setTimeout(() => {
+      this._initialized = true;
       this._calculateVirtualRows();
     });
   }

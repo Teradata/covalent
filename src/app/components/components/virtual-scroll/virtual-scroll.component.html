@@ -1,44 +1,92 @@
 <md-card>
   <md-card-title>Virtual Scroll</md-card-title>
-  <md-card-subtitle>Scroll virtually on a set of items</md-card-subtitle>
-  <md-divider></md-divider>
+  <md-card-subtitle class="bgc-grey-100">
+    <div layout="row" layout-align="start center">
+      <span>Scroll virtually on a set of items</span>
+      <span flex></span>
+      <button md-icon-button
+              mdTooltip="View Source"
+              (click)="toggleDemoCode1 = !toggleDemoCode1">
+        <md-icon class="tc-grey-700">code</md-icon>
+      </button>
+    </div>
+  </md-card-subtitle>
   <md-card-content>
-    <h3 class="md-title">Virtual List</h3>
-    <h4 class="md-subhead">iterate over 10000 md-list item's</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
-        <md-list>
-          <td-virtual-scroll-container [style.height.px]="400" [data]="randomData">
-            <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-              <md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h4 md-line>{{row.name}}</h4>
-                <p md-line>Row: {{row.index}}</p>
-              </md-list-item>
-              <md-divider *ngIf="!last"></md-divider>
-            </ng-template>
-          </td-virtual-scroll-container>
-        </md-list>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            
-          ]]>
-        </td-highlight>
-      </md-tab>
-    </md-tab-group>
+    <div [tdToggle]="!toggleDemoCode1">
+      <md-tab-group md-stretch-tabs dynamicHeight>
+        <md-tab>
+          <ng-template mdTabLabel>HTML</ng-template>
+          <td-highlight lang="html">
+            <![CDATA[
+              <md-list>
+                <md-list-item>
+                  Column Header
+                </md-list-item>
+                <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+                  <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+                    <md-list-item>
+                      <md-icon mdListAvatar>person</md-icon>
+                      <h4 md-line>{ {row.name} }</h4>
+                      <p md-line>Row: { {row.index} }</p>
+                    </md-list-item>
+                    <md-divider *ngIf="!last"></md-divider>
+                  </ng-template>
+                </td-virtual-scroll-container>
+              </md-list>
+            ]]>
+          </td-highlight>
+        </md-tab>
+        <md-tab>
+          <ng-template mdTabLabel>TS</ng-template>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              import { Component, OnInit } from '@angular/core';
+              ...
+              export class Demo implements OnInit {
+              
+                toggleDemoCode1: boolean = false;
+                data: any[] = [];
+              
+                ngOnInit(): void {
+                  for (let index: number = 1; index <= 1500; index++) {
+                    this.data.push({index: index, name: 'element-' + index});
+                  }
+                }
+              }
+            ]]>
+          </td-highlight>
+        </md-tab>
+      </md-tab-group>
+      <md-divider></md-divider>
+    </div>
+    <md-list>
+      <md-list-item>
+        Column Header
+      </md-list-item>
+      <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+        <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+          <md-list-item>
+            <md-icon mdListAvatar>person</md-icon>
+            <h4 md-line>{{row.name}}</h4>
+            <p md-line>Row: {{row.index}}</p>
+          </md-list-item>
+          <md-divider *ngIf="!last"></md-divider>
+        </ng-template>
+      </td-virtual-scroll-container>
+    </md-list>
   </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollToStart()">
+      Scroll to first
+    </button>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollToEnd()">
+      Scroll to last
+    </button>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
+      Scroll to 400th row
+    </button>
+  </md-card-actions>
 </md-card>
 
 <td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>
