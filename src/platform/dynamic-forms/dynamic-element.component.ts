@@ -2,7 +2,7 @@ import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChan
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
-import { TemplatePortalDirective } from '@angular/cdk';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
 
 import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
 import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';

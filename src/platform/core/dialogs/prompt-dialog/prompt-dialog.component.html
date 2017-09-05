@@ -6,7 +6,7 @@
     {{message}}
     <form #form="ngForm" novalidate>
       <div layout="row">
-        <md-input-container flex>
+        <md-form-field flex>
           <input mdInput
                 #input
                 (focus)="handleInputFocus()"
@@ -14,7 +14,7 @@
                 [(ngModel)]="value"
                 name="value"
                 required/>
-        </md-input-container>
+        </md-form-field>
       </div>
     </form>
   </td-dialog-content>

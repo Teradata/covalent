@@ -3,6 +3,7 @@
     <md-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
+                   [disabled]="true"
                    (keydown)="_chipKeydown($event, index)"
                    (blur)="_handleChipBlur($event, chip)"
                    (focus)="_handleChipFocus($event, chip)">
@@ -21,7 +22,7 @@
       </div>
     </md-basic-chip>
   </ng-template>
-  <md-input-container floatPlaceholder="never"
+  <md-form-field floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
                       [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
@@ -34,10 +35,12 @@
             (keydown)="_inputKeydown($event)"
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">
-  </md-input-container>
-  <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="_removeInputDisplay">
+  </md-form-field>
+  <md-autocomplete #autocomplete="mdAutocomplete"
+                   [displayWith]="_removeInputDisplay"
+                   (optionSelected)="addChip($event.option.value)">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
-      <md-option (click)="_internalClick = addChip(item)" [value]="item">
+      <md-option (click)="_setInternalClick()" [value]="item">
         <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"
@@ -48,9 +51,9 @@
     </ng-template>
   </md-autocomplete>
 </div>
-<div *ngIf="chipAddition" class="mat-input-underline"
+<div *ngIf="chipAddition" class="mat-form-field-underline"
       [class.mat-disabled]="disabled">
-  <span class="mat-input-ripple"
+  <span class="mat-form-field-ripple"
         [class.mat-focused]="focused"></span>
 </div>
 <ng-content></ng-content>

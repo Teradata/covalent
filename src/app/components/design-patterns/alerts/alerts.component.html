@@ -16,32 +16,32 @@
     <md-nav-list>
       <a md-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Material Design Dialogs</span>
+        <span mdLine>Material Design Dialogs</span>
       </a>
       <md-divider></md-divider>
       <a md-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Material Design Toasts & Snackbars</span>
+        <span mdLine>Material Design Toasts & Snackbars</span>
       </a>
       <md-divider></md-divider>
       <a md-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Material Design Errors</span>
+        <span mdLine>Material Design Errors</span>
       </a>
       <md-divider></md-divider>
       <a md-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Angular Material Dialogs</span>
+        <span mdLine>Angular Material Dialogs</span>
       </a>
       <md-divider></md-divider>
       <a md-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Angular Material Snackbars</span>
+        <span mdLine>Angular Material Snackbars</span>
       </a>
       <md-divider></md-divider>
       <a md-list-item href="/#/components/dialogs" target="_blank">
         <md-icon>launch</md-icon>
-        <span md-line>Covalent Dialogs</span>
+        <span mdLine>Covalent Dialogs</span>
       </a>
     </md-nav-list>
   </md-card>
@@ -76,7 +76,7 @@
             <div>
               <md-tab-group md-stretch-tabs dynamicHeight>
                 <md-tab>
-                  <ng-template md-tab-label>HTML</ng-template>
+                  <ng-template mdTabLabel>HTML</ng-template>
                     <td-highlight lang="html">
                       <![CDATA[
                           <button md-raised-button color="warn" (click)="openAlert()">View Error</button>
@@ -85,7 +85,7 @@
                     </td-highlight>
                 </md-tab>
                   <md-tab>
-                  <ng-template md-tab-label>Typescript</ng-template>
+                  <ng-template mdTabLabel>Typescript</ng-template>
                     <td-highlight lang="typescript">
                       <![CDATA[
                           import { TdDialogService } from '@covalent/core';
@@ -151,7 +151,7 @@
             <div>
               <md-tab-group md-stretch-tabs dynamicHeight>
                 <md-tab>
-                  <ng-template md-tab-label>HTML</ng-template>
+                  <ng-template mdTabLabel>HTML</ng-template>
                     <td-highlight lang="html">
                       <![CDATA[
                         <button md-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
@@ -159,7 +159,7 @@
                     </td-highlight>
                 </md-tab>
                   <md-tab>
-                  <ng-template md-tab-label>Typescript</ng-template>
+                  <ng-template mdTabLabel>Typescript</ng-template>
                     <td-highlight lang="typescript">
                       <![CDATA[
                         import { MdSnackBar } from '@angular/material';
@@ -210,33 +210,33 @@
                 <![CDATA[
                   <form #myForm="ngForm">
                       <div layout-gt-xs="row" layout-margin>
-                        <md-input-container flex>
+                        <md-form-field flex>
                           <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
                           <md-hint>
                             <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
                           </md-hint>
-                        </md-input-container>
-                        <md-input-container flex>
+                        </md-form-field>
+                        <md-form-field flex>
                           <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
                           <md-hint>
                             <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
                           </md-hint>
-                        </md-input-container>
+                        </md-form-field>
                       </div>
                       <div layout-gt-xs="row" layout-margin>
-                        <md-input-container flex="40">
+                        <md-form-field flex="40">
                           <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
                           <md-hint>
                             <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
                           </md-hint>
                           <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
-                        </md-input-container>
-                        <md-input-container flex="35">
+                        </md-form-field>
+                        <md-form-field flex="35">
                           <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-                        </md-input-container>
+                        </md-form-field>
                       </div>
                       <div layout-gt-xs="row" layout-margin>
-                        <md-input-container flex="20">
+                        <md-form-field flex="20">
                           <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
                           <md-hint>
                             <span [hidden]="stateForm.pristine" class="tc-red-600">
@@ -245,8 +245,8 @@
                             </span>
                           </md-hint>
                           <md-hint align="end">e.g CA</md-hint>
-                        </md-input-container>
-                        <md-input-container flex="25">
+                        </md-form-field>
+                        <md-form-field flex="25">
                           <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
                           <md-hint>
                             <span [hidden]="zipForm.pristine" class="tc-red-600">
@@ -255,7 +255,7 @@
                             </span>
                           </md-hint>
                           <md-hint align="end">e.g 92101</md-hint>
-                        </md-input-container>
+                        </md-form-field>
                       </div>
                       <md-divider></md-divider>
                       <div class="inset">
@@ -270,34 +270,34 @@
           <!-- example -->
           <form #myForm="ngForm">
             <div layout-gt-xs="row" layout-margin>
-              <md-input-container flex>
+              <md-form-field flex>
                 <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
                 <md-hint>
                   <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
                 </md-hint>
-              </md-input-container>
-              <md-input-container flex>
+              </md-form-field>
+              <md-form-field flex>
                 <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
                 <md-hint>
                   <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
                 </md-hint>
-              </md-input-container>
+              </md-form-field>
             </div>
             <div layout-gt-xs="row" layout-margin>
-              <md-input-container flex="40">
+              <md-form-field flex="40">
                 <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50"
                   tdAutoTrim/>
                 <md-hint>
                   <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
                 </md-hint>
                 <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
-              </md-input-container>
-              <md-input-container flex="35">
+              </md-form-field>
+              <md-form-field flex="35">
                 <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-              </md-input-container>
+              </md-form-field>
             </div>
             <div layout-gt-xs="row" layout-margin>
-              <md-input-container flex="20">
+              <md-form-field flex="20">
                 <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2"
                   required tdAutoTrim/>
                 <md-hint>
@@ -307,8 +307,8 @@
                   </span>
                 </md-hint>
                 <md-hint align="end">e.g CA</md-hint>
-              </md-input-container>
-              <md-input-container flex="25">
+              </md-form-field>
+              <md-form-field flex="25">
                 <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
                 <md-hint>
                   <span [hidden]="zipForm.pristine" class="tc-red-600">
@@ -317,7 +317,7 @@
                   </span>
                 </md-hint>
                 <md-hint align="end">e.g 92101</md-hint>
-              </md-input-container>
+              </md-form-field>
             </div>
           </form>
         </md-card>

@@ -9,8 +9,9 @@ import {
   FormControl, FormsModule, ReactiveFormsModule,
 } from '@angular/forms';
 
-import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk';
-import { OverlayContainer, MdInputDirective, MdChip } from '@angular/material';
+import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { MdChip } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
 
