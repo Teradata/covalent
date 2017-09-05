@@ -32,6 +32,10 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
   private _data: any[];
   private _virtualData: any[];
 
+  /**
+   * data: any[]
+   * List of items to iterate on.
+   */
   @Input('data')
   set data(data: any[]) {
     this._data = data;
@@ -96,6 +100,10 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
     }
   }
 
+  /**
+   * trackBy?: Function
+   * This accepts the same trackBy function [ngFor] does.
+   */
   @Input('trackBy') trackBy: Function = (row: any) => {
     return row;
   }
@@ -111,17 +119,34 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
       }
     }
   }
+  
+  /**
+   * Method to refresh and recalculate the virtual rows
+   * e.g. after changing the [data] content
+   */
+  refresh(): void {
+    this._calculateVirtualRows();
+  }
 
+  /**
+   * Method to scroll to a specific row of the list.
+   */
   scrollTo(row: number): void {
     this._elementRef.nativeElement.scrollTop = row * this.rowHeight;
     this._changeDetectorRef.markForCheck();
   }
 
+  /**
+   * Method to scroll to the start of the list.
+   */
   scrollToStart(): void {
     this.scrollTo(0);
     this._changeDetectorRef.markForCheck();
   }
 
+  /**
+   * Method to scroll to the end of the list.
+   */
   scrollToEnd(): void {
     this.scrollTo(this.totalHeight / this.rowHeight);
     this._changeDetectorRef.markForCheck();
@@ -148,10 +173,11 @@ export class TdVirtualScrollContainerComponent implements AfterContentInit, Afte
     if (this._scrollVerticalOffset > (TD_VIRTUAL_OFFSET * this.rowHeight)) {
       offset = this.fromRow * this.rowHeight;
     }
-    
-    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
 
-    this._virtualData = this.data.slice(this.fromRow, this.toRow);
+    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
+    if (this._data) {
+      this._virtualData = this.data.slice(this.fromRow, this.toRow);
+    }
     this._changeDetectorRef.markForCheck();
   }
 
