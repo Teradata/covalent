@@ -1,16 +1,17 @@
 <md-card>
+  <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
+    <span flex></span>
+    <button md-icon-button
+            mdTooltip="View Source"
+            (click)="toggleDemoCode1 = !toggleDemoCode1">
+      <md-icon class="tc-grey-700">code</md-icon>
+    </button>
+  </div>
   <md-card-title>Virtual Scroll</md-card-title>
-  <md-card-subtitle class="bgc-grey-100">
-    <div layout="row" layout-align="start center">
-      <span>Scroll virtually on a set of items</span>
-      <span flex></span>
-      <button md-icon-button
-              mdTooltip="View Source"
-              (click)="toggleDemoCode1 = !toggleDemoCode1">
-        <md-icon class="tc-grey-700">code</md-icon>
-      </button>
-    </div>
+  <md-card-subtitle>
+    Scroll virtually on a set of items
   </md-card-subtitle>
+  <md-divider></md-divider>
   <md-card-content>
     <div [tdToggle]="!toggleDemoCode1">
       <md-tab-group md-stretch-tabs dynamicHeight>
@@ -22,6 +23,7 @@
                 <md-list-item>
                   Column Header
                 </md-list-item>
+                <md-divider></md-divider>
                 <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
                   <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
                     <md-list-item>
@@ -29,7 +31,7 @@
                       <h4 md-line>{ {row.name} }</h4>
                       <p md-line>Row: { {row.index} }</p>
                     </md-list-item>
-                    <md-divider *ngIf="!last"></md-divider>
+                    <md-divider *ngIf="!last" md-inset></md-divider>
                   </ng-template>
                 </td-virtual-scroll-container>
               </md-list>
@@ -63,6 +65,7 @@
       <md-list-item>
         Column Header
       </md-list-item>
+      <md-divider></md-divider>
       <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
           <md-list-item>
@@ -70,7 +73,7 @@
             <h4 md-line>{{row.name}}</h4>
             <p md-line>Row: {{row.index}}</p>
           </md-list-item>
-          <md-divider *ngIf="!last"></md-divider>
+          <md-divider *ngIf="!last" md-inset></md-divider>
         </ng-template>
       </td-virtual-scroll-container>
     </md-list>
