@@ -6,15 +6,15 @@
   white-space: nowrap;
   position: relative;
   padding: 0;
-  > .td-data-table-column-content-wrapper {
+  > .td-data-table-heading {
     padding: 0 28px 0 28px;
   }
 
-  &:first-child > .td-data-table-column-content-wrapper {
+  &:first-child > .td-data-table-heading {
     @include rtl(padding-left, 24px, initial);
     @include rtl(padding-right, initial, 24px);
   }
-  &:last-child > .td-data-table-column-content-wrapper {
+  &:last-child > .td-data-table-heading {
     @include rtl(padding-left, 28px, 24px);
     @include rtl(padding-right, 24px, 28px);
   }
@@ -67,16 +67,16 @@
     top: 0px;
   }
   &.mat-numeric {
-    @include rtl(text-align, right, left);
+  @include rtl(text-align, right, left);
     md-icon.td-data-table-sort-icon {
-        @include rtl(left, -4px, initial);
-        @include rtl(right, initial, -4px);
+      @include rtl(margin-left, -22px, initial);
+      @include rtl(margin-right, initial, -22px);
     }
   }
   &:not(.mat-numeric) {
     md-icon.td-data-table-sort-icon {
-        @include rtl(left, 4px, initial);
-        @include rtl(right, initial, 4px);
+      @include rtl(margin-left, 6px, initial);
+      @include rtl(margin-right, initial, 6px);
     }
   }
 }
