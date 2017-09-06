@@ -14,7 +14,7 @@ export class VirtualScrollDemoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  toggleDemoCode1: boolean = false;
+  toggleDemoCode: boolean = false;
   data: any[] = [];
 
   ngOnInit(): void {

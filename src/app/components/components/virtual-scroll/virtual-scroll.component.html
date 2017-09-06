@@ -3,7 +3,7 @@
     <span flex></span>
     <button md-icon-button
             mdTooltip="View Source"
-            (click)="toggleDemoCode1 = !toggleDemoCode1">
+            (click)="toggleDemoCode = !toggleDemoCode">
       <md-icon class="tc-grey-700">code</md-icon>
     </button>
   </div>
@@ -13,7 +13,7 @@
   </md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div [tdToggle]="!toggleDemoCode1">
+    <div [tdToggle]="!toggleDemoCode">
       <md-tab-group md-stretch-tabs dynamicHeight>
         <md-tab>
           <ng-template mdTabLabel>HTML</ng-template>
@@ -46,7 +46,6 @@
               ...
               export class Demo implements OnInit {
               
-                toggleDemoCode1: boolean = false;
                 data: any[] = [];
               
                 ngOnInit(): void {

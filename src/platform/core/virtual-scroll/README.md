@@ -1,6 +1,6 @@
 # td-virtual-scroll-container
 
-`td-virtual-scroll-container` element calcules the items that fit in the viewport and only renders those, improving resource efficiency in long lists.
+`td-virtual-scroll-container` element calculates the items that fit in the viewport and only renders those, improving resource efficiency in long lists.
 
 **NOTE:** every row has to have the same height, since there are some calculations assumed for the total scroll height.
 
