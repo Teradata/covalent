@@ -33,13 +33,11 @@ export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): A
       overflow: 'hidden',
     })),
     transition('0 => 1', [
-      style({overflow: 'hidden'}),
       animate((collapseOptions.duration || 150) + 'ms ' +
               (collapseOptions.delay || 0) + 'ms ' +
               (collapseOptions.easeOnClose || 'ease-in')),
     ]),
     transition('1 => 0', [
-      style({overflow: 'hidden'}),
       animate((collapseOptions.duration || 150) + 'ms ' +
               (collapseOptions.delay || 0) + 'ms ' +
               (collapseOptions.easeOnOpen || 'ease-out')),
