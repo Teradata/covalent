@@ -8,7 +8,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
             <tr td-data-table-column-row>
@@ -34,7 +34,7 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -105,20 +105,21 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="columns">
           <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
             <div layout="row">
-              <span flex>{{value}}</span>
+              <span>{{value}}</span>
+              <span flex></span>
               <md-icon>star</md-icon>
             </div>
           </ng-template>
         </td-data-table>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -127,7 +128,8 @@
               [columns]="columns">
               <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
                 <div layout="row">
-                  <span flex>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
+                  <span>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
+                  <span flex></span>
                   <md-icon>star</md-icon>
                 </div>
               </ng-template>
@@ -210,7 +212,7 @@
     <md-divider></md-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
@@ -240,13 +242,18 @@
         <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
           <h3>No results to display.</h3>
         </div>
-        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
-          <span td-paging-bar-label hide-xs>Row per page:</span>
+        <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
+          <span hide-xs>Rows per page:</span>
+          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+            <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+              {{size}}
+            </md-option>
+          </md-select>
           {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
         </td-paging-bar>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -278,8 +285,13 @@
             <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
               <h3>No results to display.</h3>
             </div>
-            <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
-              <span td-paging-bar-label hide-xs>Row per page:</span>
+            <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
+              <span hide-xs>Rows per page:</span>
+              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                  { {size} }
+                </md-option>
+              </md-select>
               { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
             </td-paging-bar>
           ]]>
@@ -402,8 +414,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -425,8 +437,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -435,8 +447,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

@@ -14,14 +14,17 @@
     .mat-checkbox-cell,
     .mat-checkbox-column {
       color: mat-color($foreground, secondary-text);
+      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        background-color: mat-color($accent);
+      }
     }
     .td-data-table-cell {
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.010em;
       line-height: 20px;
-      md-input-container {
-        .mat-input-underline {
+      md-form-field {
+        .mat-form-field-underline {
           display: none;
         }
       }

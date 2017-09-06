@@ -1,0 +1,94 @@
+<md-card>
+  <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
+    <span flex></span>
+    <button md-icon-button
+            mdTooltip="View Source"
+            (click)="toggleDemoCode = !toggleDemoCode">
+      <md-icon class="tc-grey-700">code</md-icon>
+    </button>
+  </div>
+  <md-card-title>Virtual Scroll</md-card-title>
+  <md-card-subtitle>
+    Scroll virtually on a set of items
+  </md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div [tdToggle]="!toggleDemoCode">
+      <md-tab-group md-stretch-tabs dynamicHeight>
+        <md-tab>
+          <ng-template mdTabLabel>HTML</ng-template>
+          <td-highlight lang="html">
+            <![CDATA[
+              <md-list>
+                <md-list-item>
+                  Column Header
+                </md-list-item>
+                <md-divider></md-divider>
+                <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+                  <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+                    <md-list-item>
+                      <md-icon mdListAvatar>person</md-icon>
+                      <h4 md-line>{ {row.name} }</h4>
+                      <p md-line>Row: { {row.index} }</p>
+                    </md-list-item>
+                    <md-divider *ngIf="!last" md-inset></md-divider>
+                  </ng-template>
+                </td-virtual-scroll-container>
+              </md-list>
+            ]]>
+          </td-highlight>
+        </md-tab>
+        <md-tab>
+          <ng-template mdTabLabel>TS</ng-template>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              import { Component, OnInit } from '@angular/core';
+              ...
+              export class Demo implements OnInit {
+              
+                data: any[] = [];
+              
+                ngOnInit(): void {
+                  for (let index: number = 1; index <= 1500; index++) {
+                    this.data.push({index: index, name: 'element-' + index});
+                  }
+                }
+              }
+            ]]>
+          </td-highlight>
+        </md-tab>
+      </md-tab-group>
+      <md-divider></md-divider>
+    </div>
+    <md-list>
+      <md-list-item>
+        Column Header
+      </md-list-item>
+      <md-divider></md-divider>
+      <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+        <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+          <md-list-item>
+            <md-icon mdListAvatar>person</md-icon>
+            <h4 md-line>{{row.name}}</h4>
+            <p md-line>Row: {{row.index}}</p>
+          </md-list-item>
+          <md-divider *ngIf="!last" md-inset></md-divider>
+        </ng-template>
+      </td-virtual-scroll-container>
+    </md-list>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollToStart()">
+      Scroll to first
+    </button>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollToEnd()">
+      Scroll to last
+    </button>
+    <button md-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
+      Scroll to 400th row
+    </button>
+  </md-card-actions>
+</md-card>
+
+<td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>

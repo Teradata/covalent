@@ -5,7 +5,8 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
 import { DOCUMENT, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { coerceBooleanProperty, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk';
+import { coerceBooleanProperty} from '@angular/cdk/coercion';
+import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';

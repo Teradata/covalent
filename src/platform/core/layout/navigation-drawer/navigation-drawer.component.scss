@@ -8,6 +8,7 @@
     }
     /deep/ > .mat-toolbar-layout > md-toolbar-row {
       height: auto !important;
+      display: block !important;
     }
   }
   > div {

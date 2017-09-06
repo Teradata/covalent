@@ -6,7 +6,7 @@
     <h3 class="md-title">Toolbar notification &amp; menu</h3>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <md-toolbar color="accent">
           <button md-icon-button>
             <md-icon>menu</md-icon>
@@ -19,7 +19,7 @@
           <td-notification-count color="primary" [notifications]="false">
             <md-icon>messages</md-icon>
           </td-notification-count>
-          <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+          <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
             <td-notification-count [notifications]="101">
               <md-icon>notifications</md-icon>
             </td-notification-count>
@@ -30,9 +30,9 @@
               <md-nav-list dense>
                 <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                   <a md-list-item>
-                    <md-icon md-list-avatar>today</md-icon>
-                    <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                    <p md-line>22 minutes ago</p>
+                    <md-icon mdListAvatar>today</md-icon>
+                    <h4 mdLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                    <p mdLine>22 minutes ago</p>
                   </a>
                   <md-divider *ngIf="!last"></md-divider>
                 </ng-template>
@@ -56,7 +56,7 @@
         </md-toolbar>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -72,7 +72,7 @@
               <td-notification-count color="primary" [notifications]="false">
                 <md-icon>messages</md-icon>
               </td-notification-count>
-              <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+              <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
                 <td-notification-count [notifications]="101">
                   <md-icon>notifications</md-icon>
                 </td-notification-count>
@@ -83,9 +83,9 @@
                   <md-nav-list dense>
                     <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                       <a md-list-item>
-                        <md-icon md-list-avatar>today</md-icon>
-                        <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                        <p md-line>22 minutes ago</p>
+                        <md-icon mdListAvatar>today</md-icon>
+                        <h4 mdLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                        <p mdLine>22 minutes ago</p>
                       </a>
                       <md-divider *ngIf="!last"></md-divider>
                     </ng-template>
@@ -118,10 +118,10 @@
     <h3 class="md-title">Tabs notification</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <md-tab-group md-stretch-tabs>
           <md-tab>
-            <ng-template md-tab-label>
+            <ng-template mdTabLabel>
               <div layout="row" layout-align="center center">
                 Activities
                 <td-notification-count color="primary" [notifications]="true">
@@ -130,7 +130,7 @@
             </ng-template>
           </md-tab>
           <md-tab>
-            <ng-template md-tab-label>
+            <ng-template mdTabLabel>
               <div layout="row" layout-align="center center">
                 Logs
                 <td-notification-count color="warn" [notifications]="0">
@@ -139,7 +139,7 @@
             </ng-template>
           </md-tab>
           <md-tab>
-            <ng-template md-tab-label>
+            <ng-template mdTabLabel>
               <div layout="row" layout-align="center center">
                 Chats 
                 <td-notification-count color="accent" [notifications]="12">
@@ -150,13 +150,13 @@
         </md-tab-group>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <md-tab-group md-stretch-tabs>
               <md-tab>
-                <ng-template md-tab-label>
+                <ng-template mdTabLabel>
                   <div layout="row" layout-align="center center">
                     Activities
                     <td-notification-count color="primary" [notifications]="true">
@@ -165,7 +165,7 @@
                 </ng-template>
               </md-tab>
               <md-tab>
-                <ng-template md-tab-label>
+                <ng-template mdTabLabel>
                   <div layout="row" layout-align="center center">
                     Logs
                     <td-notification-count color="warn" [notifications]="0">
@@ -174,7 +174,7 @@
                 </ng-template>
               </md-tab>
               <md-tab>
-                <ng-template md-tab-label>
+                <ng-template mdTabLabel>
                   <div layout="row" layout-align="center center">
                     Chats 
                     <td-notification-count color="accent" [notifications]="12">
@@ -194,30 +194,30 @@
     <h3 class="md-title">List item notification</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <md-nav-list dense flex>
           <a md-list-item>
-            <md-icon md-list-avatar>person</md-icon>
-            <h3 md-line> Jyn Erso stole the plans to the Death Star </h3>
-            <p md-line> 10 mins ago </p>
+            <md-icon mdListAvatar>person</md-icon>
+            <h3 mdLine> Jyn Erso stole the plans to the Death Star </h3>
+            <p mdLine> 10 mins ago </p>
             <span></span>
             <td-notification-count color="accent" [notifications]="1">
             </td-notification-count>
           </a>
           <md-divider md-inset></md-divider>
           <a md-list-item>
-            <md-icon md-list-avatar>person</md-icon>
-            <h3 md-line> Something something something.. dark side. </h3>
-            <p md-line> 9 hours ago </p>
+            <md-icon mdListAvatar>person</md-icon>
+            <h3 mdLine> Something something something.. dark side. </h3>
+            <p mdLine> 9 hours ago </p>
             <span></span>
             <td-notification-count color="primary" [notifications]="0">
             </td-notification-count>
           </a>
           <md-divider md-inset></md-divider>
           <a md-list-item>
-            <md-icon md-list-avatar>person</md-icon>
-            <h3 md-line> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-            <p md-line> 2 days ago </p>
+            <md-icon mdListAvatar>person</md-icon>
+            <h3 mdLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
+            <p mdLine> 2 days ago </p>
             <span></span>
             <td-notification-count [notifications]="true">
             </td-notification-count>
@@ -225,33 +225,33 @@
         </md-nav-list>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <md-nav-list dense flex>
               <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Jyn Erso stole the plans to the Death Star </h3>
-                <p md-line> 10 mins ago </p>
+                <md-icon mdListAvatar>person</md-icon>
+                <h3 mdLine> Jyn Erso stole the plans to the Death Star </h3>
+                <p mdLine> 10 mins ago </p>
                 <span></span>
                 <td-notification-count color="accent" [notifications]="1">
                 </td-notification-count>
               </a>
               <md-divider md-inset></md-divider>
               <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Something something something.. dark side. </h3>
-                <p md-line> 9 hours ago </p>
+                <md-icon mdListAvatar>person</md-icon>
+                <h3 mdLine> Something something something.. dark side. </h3>
+                <p mdLine> 9 hours ago </p>
                 <span></span>
                 <td-notification-count color="primary" [notifications]="0">
                 </td-notification-count>
               </a>
               <md-divider md-inset></md-divider>
               <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-                <p md-line> 2 days ago </p>
+                <md-icon mdListAvatar>person</md-icon>
+                <h3 mdLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
+                <p mdLine> 2 days ago </p>
                 <span></span>
                 <td-notification-count [notifications]="true">
                 </td-notification-count>

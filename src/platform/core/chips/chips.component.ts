@@ -5,14 +5,16 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
-import { coerceBooleanProperty, TemplatePortalDirective, UP_ARROW, DOWN_ARROW,
-         ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk';
-import { RxChain, debounceTime, filter } from '@angular/cdk';
-import { MdChip, MdInputDirective, MdOption, MdAutocompleteTrigger } from '@angular/material';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
+import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
+import { MdChip, MdInput, MdOption, MdAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { timer } from 'rxjs/observable/timer';
+import { merge } from 'rxjs/observable/merge';
 import { toPromise } from 'rxjs/operator/toPromise';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 
@@ -81,7 +83,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _internalClick: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
-  @ViewChild(MdInputDirective) _inputChild: MdInputDirective;
+  @ViewChild(MdInput) _inputChild: MdInput;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
@@ -245,6 +247,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @Output('inputChange') onInputChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
+   * chipFocus?: function
+   * Method to be executed when a chip is focused.
+   * Sends chip value as event.
+   */
+  @Output('chipFocus') onChipFocus: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
+   * blur?: function
+   * Method to be executed when a chip is blurred.
+   * Sends chip value as event.
+   */
+  @Output('chipBlur') onChipBlur: EventEmitter<any> = new EventEmitter<any>();
+
+  /**
    * Implemented as part of ControlValueAccessor.
    */
   @Input() set value(v: any) {
@@ -365,6 +381,10 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     }
   }
 
+  _setInternalClick(): void {
+    this._internalClick = true;
+  }
+
   /** Method executed when the disabled value changes */
   onDisabledChange(v: boolean): void {
     this._toggleInput();
@@ -461,6 +481,21 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     this.inputControl.setValue('');
     this._changeDetectorRef.markForCheck();
     return true;
+  }
+
+  /**
+   * Sets blur of chip and sends out event
+   */
+  _handleChipBlur(event: FocusEvent, value: any): void {
+    this.onChipBlur.emit(value);
+  }
+
+  /**
+   * Sets focus of chip and sends out event
+   */
+  _handleChipFocus(event: FocusEvent, value: any): void {
+    this.setFocusedState();
+    this.onChipFocus.emit(value);
   }
 
   _handleFocus(): boolean {
@@ -714,7 +749,12 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(fromEvent(this._document, 'click')).call(filter, (event: MouseEvent) => {
+      this._outsideClickSubs = RxChain.from(
+        merge(
+          fromEvent(this._document, 'click'),
+          fromEvent(this._document, 'touchend'),
+        ),
+      ).call(filter, (event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
@@ -724,6 +764,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
       }).subscribe(() => { 
         if (this.focused) {
+          this._autocompleteTrigger.closePanel();
           this.removeFocusedState();
           this.onTouched();
           this._changeDetectorRef.markForCheck();

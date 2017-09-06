@@ -1,6 +1,6 @@
 import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
-import { MdSidenavToggleResult, MdSidenav } from '@angular/material';
+import { MdDrawerToggleResult, MdSidenav } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -8,9 +8,9 @@ import { merge } from 'rxjs/observable/merge';
 
 export interface ILayoutTogglable {
   sidenav: MdSidenav;
-  toggle(): Promise<MdSidenavToggleResult>;
-  open(): Promise<MdSidenavToggleResult>;
-  close(): Promise<MdSidenavToggleResult>;
+  toggle(): Promise<MdDrawerToggleResult>;
+  open(): Promise<MdDrawerToggleResult>;
+  close(): Promise<MdDrawerToggleResult>;
 }
 
 export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
@@ -46,7 +46,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this._initialized = true;
-    this._toggleSubs = merge(this._layout.sidenav.onOpenStart, this._layout.sidenav.onCloseStart).subscribe(() => {
+    this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(() => {
       this._toggleVisibility();
     });
     // execute toggleVisibility since the onOpenStart and onCloseStart
@@ -75,7 +75,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
   abstract onClick(): void;
 
   private _toggleVisibility(): void {
-    if (this._layout.sidenav._opened && this._hideWhenOpened) {
+    if (this._layout.sidenav.opened && this._hideWhenOpened) {
       this._renderer.setStyle(this._elementRef.nativeElement, 'display', 'none');
     } else {
       this._renderer.setStyle(this._elementRef.nativeElement, 'display', '');

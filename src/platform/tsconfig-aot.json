@@ -29,7 +29,8 @@
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
-    "pretty": true
+    "pretty": true,
+    "importHelpers": true
   },
   "include": [
     "../typings.d.ts",
@@ -40,6 +41,7 @@
     "**/*.spec.*"
   ],
   "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
     "genDir": "../../deploy/platform",
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true

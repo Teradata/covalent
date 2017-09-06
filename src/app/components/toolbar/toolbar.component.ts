@@ -6,7 +6,7 @@
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { Dir } from '@angular/cdk';
+import { Dir } from '@angular/cdk/bidi';
 
 import { getDirection, setDirection } from '../../utilities/direction';
 
@@ -35,6 +35,11 @@ export class ToolbarComponent {
       description: 'introducing covalent/code-editor',
       icon: 'featured_play_list',
       route: '/components/code-editor',
+      title: 'New component',
+    }, {
+      description: 'introducing covalent/text-editor',
+      icon: 'vertical_align_bottom',
+      route: '/components/text-editor',
       title: 'New component',
     },
   ];

@@ -1,6 +1,4 @@
-<div class="td-data-table-column-content-wrapper md-caption"
-     layout="row"
-     [attr.layout-align]="numeric ? 'end center' : 'start center'">
+<span class="td-data-table-heading">
   <md-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && numeric"
@@ -8,7 +6,9 @@
     [class.mat-desc]="(active && isDescending())">
     arrow_upward
   </md-icon>
-  <ng-content></ng-content>
+  <span>
+    <ng-content></ng-content>
+  </span>
   <md-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && !numeric"
@@ -16,4 +16,4 @@
     [class.mat-desc]="(active && isDescending())">
     arrow_upward
   </md-icon>
-</div>
+</span>

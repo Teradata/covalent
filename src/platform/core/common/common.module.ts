@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
  * ANIMATIONS
  */
 
+// Directives
 import { TdToggleDirective } from './animations/toggle/toggle.directive';
 import { TdFadeDirective } from './animations/fade/fade.directive';
 
@@ -15,10 +16,17 @@ const TD_ANIMATIONS: Type<any>[] = [
   TdToggleDirective,
   TdFadeDirective,
 ];
-
 export { TdToggleDirective, TdFadeDirective };
+
+// Utility functions
+export { TdRotateAnimation, IRotateAnimation } from './animations/rotate/rotate.animation';
 export { TdCollapseAnimation } from './animations/collapse/collapse.animation';
 export { TdFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
+export { TdBounceAnimation } from './animations/bounce/bounce.animation';
+export { TdFlashAnimation } from './animations/flash/flash.animation';
+export { TdHeadshakeAnimation } from './animations/headshake/headshake.animation';
+export { TdJelloAnimation } from './animations/jello/jello.animation';
+export { TdPulseAnimation } from './animations/pulse/pulse.animation';
 
 /**
  * BEHAVIORS
@@ -71,6 +79,7 @@ export { TdTimeAgoPipe, TdTimeDifferencePipe,
  */
 
 import { RouterPathService } from './services/router-path.service';
+import { IconService } from './services/icon.service';
 
 @NgModule({
   imports: [
@@ -93,6 +102,7 @@ import { RouterPathService } from './services/router-path.service';
   ],
   providers: [
     RouterPathService,
+    IconService,
   ],
 })
 export class CovalentCommonModule {

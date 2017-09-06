@@ -1,123 +1,32 @@
 <md-card>
   <md-card-title>Paging</md-card-title>
-  <md-card-subtitle>Paging for lists and tables</md-card-subtitle>
-  <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
-          <md-card-content>
-            <p>Change Event: </p>
-            <div>
-              <p>Page Size: {{event1?.pageSize || '100'}}</p>
-              <p>Page: {{event1?.page || '1'}} of {{event1?.maxPage || '14'}}</p>
-              <p>Rows: {{event1?.fromRow || '1'}} to {{event1?.toRow || '100'}}</p>
-            </div>
-            <p>Total: {{event1?.total || '1345'}}</p>
-          </md-card-content>
-          <md-divider></md-divider>
-          <td-paging-bar #pagingBar1 pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5" [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change1($event)">
-            <span td-paging-bar-label hide-xs>Row per page:</span>
-            {{pagingBar1.range}} <span hide-xs>of {{pagingBar1.total}}</span>
-          </td-paging-bar>
-      </md-tab>
-      <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
-        <md-card-content>
-          <p>HTML:</p>
-          <td-highlight lang="html">
-            <![CDATA[
-              <td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5" [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
-                <span td-paging-bar-label hide-xs>Row per page:</span>
-                { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
-              </td-paging-bar>
-            ]]>
-          </td-highlight>
-          <p>Typescript:</p>
-          <td-highlight lang="typescript">
-            <![CDATA[
-              import { IPageChangeEvent } from '@covalent/core';
-              ...
-              export class Demo {
-                event: IPageChangeEvent;
-                firstLast: boolean = false;
-                pageSizeAll: boolean = false;
-
-                change(event: IPageChangeEvent): void {
-                  this.event = event;
-                }
-
-                toggleFirstLast(): void {
-                  this.firstLast = !this.firstLast;
-                }
-              }
-            ]]>
-          </td-highlight>
-        </md-card-content>
-      </md-tab>
-    </md-tab-group>
-  
-  <md-divider></md-divider>
-  <md-card-actions>
-    <div layout="row" layout-align="start center">
-      <button md-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
-    </div>
-  </md-card-actions>
-</md-card>
-
-
-<md-card>
-  <md-card-title>Paging using input</md-card-title>
-  <md-card-subtitle>Navigate to a specific page</md-card-subtitle>
+  <md-card-subtitle>Paging bar for lists and tables</md-card-subtitle>
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
         <md-card-content>
           <p>Change Event: </p>
           <div>
-            <p>Page Size: {{event2?.pageSize || '100'}}</p>
-            <p>Page: {{event2?.page || '1'}} of {{event2?.maxPage || '14'}}</p>
-            <p>Rows: {{event2?.fromRow || '1'}} to {{event2?.toRow || '100'}}</p>
+            <p>Page Size: {{event?.pageSize || '100'}}</p>
+            <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
+            <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
           </div>
-          <p>Total: {{event2?.total || '1345'}}</p>
+          <p>Total: {{event?.total || '1345'}}</p>
         </md-card-content>
         <md-divider></md-divider>
-        <td-paging-bar #pagingBar2 [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5" [firstLast]="false" [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change2($event)">
-          <span td-paging-bar-label hide-xs>Row per page:</span>
-          {{pagingBar2.range}} <span hide-xs>of {{pagingBar2.total}}</span>
-          <p hide-xs>Go to:</p>
-          <md-input-container>
-            <input #goToInput
-                    mdInput
-                    type="number"
-                    [min]="1"
-                    [max]="pagingBar2.maxPage"
-                    [value]="pagingBar2.page"
-                    (blur)="goToInput.value = pagingBar2.page"
-                    (keyup.enter)="pagingBar2.navigateToPage(goToInput.value); goToInput.value = pagingBar2.page"/>
-          </md-input-container>
+        <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+          {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-paging-bar #pagingBar [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5" [firstLast]="false" [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
-              <span td-paging-bar-label hide-xs>Row per page:</span>
-              { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
-              <p hide-xs>Go to:</p>
-              <md-input-container>
-                <input #goToInput
-                      mdInput
-                      type="number"
-                      [min]="1"
-                      [max]="pagingBar.maxPage"
-                      [value]="pagingBar.page"
-                      (blur)="goToInput.value = pagingBar.page"
-                      (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-              </md-input-container>
+            <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+              { {pagingBar.range} } of { {pagingBar.total} }
             </td-paging-bar>
           ]]>
         </td-highlight>
@@ -128,9 +37,315 @@
             ...
             export class Demo {
               event: IPageChangeEvent;
+              firstLast: boolean = true;
 
               change(event: IPageChangeEvent): void {
                 this.event = event;
+              }
+
+              toggleFirstLast(): void {
+                this.firstLast = !this.firstLast;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <div layout="row" layout-align="start center">
+      <button md-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
+    </div>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Paging with dynamic page size</md-card-title>
+  <md-card-subtitle>Set a select to change the page size on the fly</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template mdTabLabel>Demo</ng-template>
+      <md-card-content>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventPageSize?.pageSize || '100'}}</p>
+          <p>Page: {{eventPageSize?.page || '1'}} of {{eventPageSize?.maxPage || '14'}}</p>
+          <p>Rows: {{eventPageSize?.fromRow || '1'}} to {{eventPageSize?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventPageSize?.total || '1345'}}</p>
+      </md-card-content>
+      <md-divider></md-divider>
+      <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
+        <span hide-xs>Rows per page:</span>
+        <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+          <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+            {{size}}
+          </md-option>
+        </md-select>
+        <span>{{pagingBarPageSize.range}} <span hide-xs>of {{pagingBarPageSize.total}}</span></span>
+      </td-paging-bar>
+    </md-tab>
+    <md-tab>
+      <ng-template mdTabLabel>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
+              <span hide-xs>Rows per page:</span>
+              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+                  { {size} }
+                </md-option>
+              </md-select>
+              <span>{ {pagingBarPageSize.range} } <span hide-xs>of { {pagingBarPageSize.total} }</span></span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core';
+            ...
+            export class Demo {
+              eventPageSize: IPageChangeEvent;
+              pageSize: number = 100;
+
+              changePageSize(event: IPageChangeEvent): void {
+                this.eventPageSize = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<md-card>
+  <md-card-title>Paging using page links</md-card-title>
+  <md-card-subtitle>Navigate to pages with button links</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template mdTabLabel>Demo</ng-template>
+        <md-card-content>
+          <p>Change Event: </p>
+          <div>
+            <p>Page Size: {{eventLinks?.pageSize || '100'}}</p>
+            <p>Page: {{eventLinks?.page || '1'}} of {{eventLinks?.maxPage || '14'}}</p>
+            <p>Rows: {{eventLinks?.fromRow || '1'}} to {{eventLinks?.toRow || '100'}}</p>
+          </div>
+          <p>Total: {{eventLinks?.total || '1345'}}</p>
+        </md-card-content>
+        <md-divider></md-divider>
+        <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
+          <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
+        </td-paging-bar>
+    </md-tab>
+    <md-tab>
+      <ng-template mdTabLabel>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
+              <span hide-xs>{ {pagingBarLinks.range} } of { {pagingBarLinks.total} }</span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core';
+            ...
+            export class Demo {
+              eventLinks: IPageChangeEvent;
+
+              changeLinks(event: IPageChangeEvent): void {
+                this.eventLinks = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<md-card>
+  <md-card-title>Paging using input</md-card-title>
+  <md-card-subtitle>Navigate to a specific page</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template mdTabLabel>Demo</ng-template>
+      <md-card-content>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
+          <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
+          <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventInput?.total || '1345'}}</p>
+      </md-card-content>
+      <md-divider></md-divider>
+      <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+        <p hide-xs>Go to:</p>
+        <md-form-field [style.width.px]="30">
+          <input #goToInput
+                  mdInput
+                  type="number"
+                  [min]="1"
+                  [max]="pagingBarInput.maxPage"
+                  [value]="pagingBarInput.page"
+                  (blur)="goToInput.value = pagingBarInput.page"
+                  (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+        </md-form-field>
+        <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
+      </td-paging-bar>
+    </md-tab>
+    <md-tab>
+      <ng-template mdTabLabel>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+              <p hide-xs>Go to:</p>
+              <md-form-field [style.width.px]="30">
+                <input #goToInput
+                        mdInput
+                        type="number"
+                        [min]="1"
+                        [max]="pagingBarInput.maxPage"
+                        [value]="pagingBarInput.page"
+                        (blur)="goToInput.value = pagingBarInput.page"
+                        (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+              </md-form-field>
+              <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core';
+            ...
+            export class Demo {
+              eventInput: IPageChangeEvent;
+
+              changeInput(event: IPageChangeEvent): void {
+                this.eventInput = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<md-card>
+  <md-card-title>Paging with everything</md-card-title>
+  <md-card-subtitle>All the previous things + reponsiveness leveraging the `CovalentMediaModule`</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-tab-group md-stretch-tabs>
+    <md-tab>
+      <ng-template mdTabLabel>Demo</ng-template>
+      <md-card-content>
+          <p>Change Event: </p>
+          <div>
+            <p>Page Size: {{eventResponsive?.pageSize || '100'}}</p>
+            <p>Page: {{eventResponsive?.page || '1'}} of {{eventResponsive?.maxPage || '14'}}</p>
+            <p>Rows: {{eventResponsive?.fromRow || '1'}} to {{eventResponsive?.toRow || '100'}}</p>
+          </div>
+          <p>Total: {{eventResponsive?.total || '1345'}}</p>
+        </md-card-content>
+        <md-divider></md-divider>
+        <td-paging-bar #pagingBarResponsive
+                       [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
+                       [firstLast]="media.registerQuery('gt-xs') | async"
+                       [pageSize]="pageSizeResponsive"
+                       [total]="1345"
+                       (change)="changeResponsive($event)">
+          <span hide-xs>Rows per page:</span>
+          <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+            <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+              {{size}}
+            </md-option>
+          </md-select>
+          <p hide-xs hide-sm hide-md>Go to:</p>
+          <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
+            <input #goToResponsive
+                    mdInput
+                    type="number"
+                    [min]="1"
+                    [max]="pagingBarResponsive.maxPage"
+                    [value]="pagingBarResponsive.page"
+                    (blur)="goToResponsive.value = pagingBarResponsive.page"
+                    (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
+          </md-form-field>
+          <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
+        </td-paging-bar>
+    </md-tab>
+    <md-tab>
+      <ng-template mdTabLabel>Code</ng-template>
+      <md-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarResponsive
+                          [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
+                          [firstLast]="media.registerQuery('gt-xs') | async"
+                          [pageSize]="pageSizeResponsive"
+                          [total]="1345"
+                          (change)="changeResponsive($event)">
+              <span hide-xs>Rows per page:</span>
+              <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+                <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+                  { {size} }
+                </md-option>
+              </md-select>
+              <p hide-xs hide-sm hide-md>Go to:</p>
+              <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
+                <input #goToResponsive
+                        mdInput
+                        type="number"
+                        [min]="1"
+                        [max]="pagingBarResponsive.maxPage"
+                        [value]="pagingBarResponsive.page"
+                        (blur)="goToResponsive.value = pagingBarResponsive.page"
+                        (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
+              </md-form-field>
+              <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core';
+            ...
+            export class Demo {
+              eventResponsive: IPageChangeEvent;
+              pageSizeResponsive: number = 100;
+
+              constructor(private _changeDetectorRef: ChangeDetectorRef,
+                          public media: TdMediaService) {}
+
+              ngAfterViewInit(): void {
+                // broadcast to all listener observables when loading the page
+                setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+                  this.media.broadcast();
+                  this._changeDetectorRef.detectChanges();
+                });
+              }
+
+              changeResponsive(event: IPageChangeEvent): void {
+                this.eventResponsive = event;
               }
             }
           ]]>

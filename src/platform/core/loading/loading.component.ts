@@ -1,6 +1,6 @@
 import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
-import { TemplatePortal } from '@angular/cdk';
+import { TemplatePortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -51,7 +51,7 @@ export class TdLoadingComponent {
   /**
    * Content injected into loading component.
    */
-  content: TemplatePortal;
+  content: TemplatePortal<any>;
 
   /**
    * Sets mode of [TdLoadingComponent] to LoadingMode.Determinate or LoadingMode.Indeterminate

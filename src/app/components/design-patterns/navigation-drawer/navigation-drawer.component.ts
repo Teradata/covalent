@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'design-patterns-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
+  animations: [slideInDownAnimation],
 })
 export class NavigationDrawerComponent {
+
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
+  example1: boolean = true;
 
   routes: Object[] = [{
       icon: 'home',
@@ -43,4 +51,8 @@ export class NavigationDrawerComponent {
       title: 'Sign out',
     },
   ];
+
+  toggle(div: string ): void {
+    this[div] = !this[div];
+  }
 }

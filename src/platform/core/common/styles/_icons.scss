@@ -1,7 +1,7 @@
 md-list-item,
 .mat-list-item-content {
     md-icon {
-        &[md-list-avatar] {
+        &[mdListAvatar] {
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
@@ -16,7 +16,9 @@ md-list-item,
     }
 }
 .mat-icon.md-icon-logo {
-    height: auto;
+    height: 24px;
     width: 100px;
 }
-
+.mat-icon {
+    flex-shrink: 0;
+}

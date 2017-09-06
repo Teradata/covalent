@@ -77,7 +77,9 @@ export class StyleGuideComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    this._changeDetectorRef.detectChanges();
+    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+      this.media.broadcast();
+      this._changeDetectorRef.detectChanges();
+    });
   }
 }
