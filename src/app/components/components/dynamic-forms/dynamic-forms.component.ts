@@ -82,6 +82,15 @@ export class DynamicFormsDemoComponent {
     type: TdDynamicElement.Select,
     selections: ['Test1', 'Test2', 'Test3', 'Test4'],
     required: true,
+  }, {
+    name: 'value-label-select',
+    type: TdDynamicElement.Select,
+    selections: [
+      {label: 'Test1', value: 1},
+      {label: 'Test2', value: 2},
+      {label: 'Test3', value: 3},
+      {label: 'Test4', value: 4}],
+    required: true,
   }];
 
   fileElements: ITdDynamicElementConfig[] = [{
