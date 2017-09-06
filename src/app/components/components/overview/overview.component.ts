@@ -54,6 +54,11 @@ export class ComponentsOverviewComponent {
       route: 'data-table',
       title: 'Data Table',
     }, {
+      color: 'orange-A700',
+      icon: 'format_line_spacing',
+      route: 'virtual-scroll',
+      title: 'Virtual Scroll',
+    }, {
       color: 'teal-A700',
       icon: 'format_indent_increase',
       route: 'json-formatter',

@@ -29,6 +29,7 @@ import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.compone
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
+import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
@@ -43,7 +44,7 @@ import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule,
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentMessageModule } from '../../../platform/core';
+         CovalentMessageModule, CovalentVirtualScrollModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -81,6 +82,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
     NotificationsDemoComponent,
+    VirtualScrollDemoComponent,
     // External Dependencies
     NgxChartsDemoComponent,
     NgxTranslateDemoComponent,
@@ -125,6 +127,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentMessageModule,
+    CovalentVirtualScrollModule,
     CovalentCodeEditorModule,
     CovalentTextEditorModule,
     DocumentationToolsModule,
