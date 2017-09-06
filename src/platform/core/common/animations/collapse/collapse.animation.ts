@@ -25,10 +25,12 @@ export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): A
     state('1', style({
       height: '0',
       display: 'none',
+      overflow: 'hidden',
     })),
     state('0',  style({
       height: AUTO_STYLE,
       display: AUTO_STYLE,
+      overflow: 'hidden',
     })),
     transition('0 => 1', [
       style({overflow: 'hidden'}),
