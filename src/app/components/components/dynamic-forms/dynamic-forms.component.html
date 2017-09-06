@@ -32,6 +32,8 @@
                   <span *ngIf="control.hasError('required')">Required</span>
                   <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
                   <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+                  <span *ngIf="control.hasError('minlength')">MinLength value: {{element.minLength}}</span>
+                  <span *ngIf="control.hasError('maxlength')">MaxLength value: {{element.maxLength}}</span>
                 </span>
               </ng-template>
             </ng-template>
@@ -98,6 +100,22 @@
                       type="number"
                       placeholder="Max"
                       [(ngModel)]="model.max"
+                      name="max">
+              </md-form-field>
+            </div>
+            <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
+              <md-form-field class="pad-right-xs" flex>
+                <input mdInput
+                      type="text"
+                      placeholder="MinLength"
+                      [(ngModel)]="model.minLength"
+                      name="min">
+              </md-form-field>
+              <md-form-field flex="50">
+                <input mdInput
+                      type="text"
+                      placeholder="MaxLength"
+                      [(ngModel)]="model.maxLength"
                       name="max">
               </md-form-field>
             </div>
