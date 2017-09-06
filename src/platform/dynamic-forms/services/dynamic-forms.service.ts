@@ -38,7 +38,7 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
-  selections?: any[];
+  selections?: string[] | { value: any, label: string }[];
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
@@ -122,7 +122,7 @@ export class TdDynamicFormsService {
 }
 
 export function DYNAMIC_FORMS_PROVIDER_FACTORY(
-    parent: TdDynamicFormsService): TdDynamicFormsService {
+  parent: TdDynamicFormsService): TdDynamicFormsService {
   return parent || new TdDynamicFormsService();
 }
 
