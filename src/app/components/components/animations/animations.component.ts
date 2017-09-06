@@ -36,9 +36,9 @@ export class AnimationsComponent {
   rotateState1: boolean = false;
   rotateState2: boolean = false;
 
-  collapseState1: boolean = false;
+  collapseState1: boolean = true;
 
-  fadeInOutState1: boolean = true;
+  fadeInOutState1: boolean = false;
 
   bounceState: boolean = false;
   flashState: boolean = false;

@@ -149,12 +149,14 @@
     <div>
       <h3>Demo 1:</h3>
 
-      <button md-raised-button (click)="collapseState1 = !collapseState1" color="accent" class="size-width-128">
-        Collapse
-        <hr>
-          <md-icon [@tdCollapse]="collapseState1">mood</md-icon>
-        <hr>
-      </button>
+      <button md-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
+      <div [@tdCollapse]="collapseState1">
+        <md-card>
+          <md-card-title>Collapse card</md-card-title>
+          <md-card-content>Collapse card with a click!</md-card-content>
+          <md-card-actions><button md-raised-button color="primary" (click)="collapseState1 = !collapseState1">Collapse</button></md-card-actions>
+        </md-card>
+      </div>
 
       <p>Typescript:</p>
       <td-highlight lang="typescript">
@@ -166,19 +168,21 @@
           ],
           ...
           class MyDemo {
-            triggerState: boolean = false;
+            triggerState: boolean = true;
           }
         ]]>
       </td-highlight>
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button (click)="triggerState = !triggerState" color="accent">
-            Collapse
-            <hr>
-              <md-icon [@tdCollapse]="triggerState">mood</md-icon>
-            <hr>
-          </button>
+          <button md-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
+          <div [@tdCollapse]="triggerState">
+            <md-card>
+              <md-card-title>Collapse card</md-card-title>
+              <md-card-content>Collapse card with a click!</md-card-content>
+              <md-card-actions><button md-raised-button color="primary" (click)="triggerState = !triggerState">Collapse</button></md-card-actions>
+            </md-card>
+          </div>
         ]]>
       </td-highlight>
     </div>
@@ -225,10 +229,14 @@
     <div>
       <h3>Demo 1:</h3>
 
-      <button md-raised-button (click)="fadeInOutState1 = !fadeInOutState1" color="accent">
-        Fade in/out
-        <md-icon [@tdFadeInOut]="fadeInOutState1">mood</md-icon>
-      </button>
+      <button md-raised-button color="accent" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button>
+      <div [@tdFadeInOut]="fadeInOutState1">
+        <md-card>
+          <md-card-title>Fade Card</md-card-title>
+          <md-card-content>Fade in or out with a click!</md-card-content>
+          <md-card-actions><button md-raised-button color="primary" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button></md-card-actions>
+        </md-card>
+      </div>
 
       <p>Typescript:</p>
       <td-highlight lang="typescript">
@@ -240,17 +248,21 @@
           ],
           ...
           class MyDemo {
-            triggerState: boolean = true;
+            triggerState: boolean = false;
           }
         ]]>
       </td-highlight>
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button (click)="triggerState = !triggerState" color="accent">
-            Fade in/out
-            <md-icon [@tdFadeInOut]="triggerState">mood</md-icon>
-          </button>
+           <button md-raised-button color="accent" (click)="triggerState = !triggerState">Fade In</button>
+            <div [@tdFadeInOut]="triggerState">
+              <md-card>
+                <md-card-title>Fade Card</md-card-title>
+                <md-card-content>Fade in or out with a click!</md-card-content>
+                <md-card-actions><button md-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></md-card-actions>
+              </md-card>
+            </div>
         ]]>
       </td-highlight>
     </div>
