@@ -109,7 +109,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     if (this._rows && this._rows.toArray()[0]) {
       return this._rows.toArray()[0].height;
     }
-    return 0;
+    return 48;
   }
 
   get offsetRows(): number {
@@ -854,8 +854,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _calculateWidths(): void {
     if (this._fakeCols.length) {
       this._widths = [];
-      this._fakeCols.forEach((cell: ElementRef, index: number) => {
-        this._adjustColumnWidth(index, this._calculateWidth(this._fakeCols, index));
+      this._fakeCols.forEach((col: ElementRef, index: number) => {
+        this._adjustColumnWidth(index, this._calculateWidth());
       });
       this._adjustColumnWidhts();
       this._changeDetectorRef.markForCheck();
@@ -936,7 +936,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   /**
    * Generic method to calculate column width
    */
-  private _calculateWidth(elements: ElementRef[], index: number): number {
+  private _calculateWidth(): number {
     let renderedColumns: ITdDataTableColumn[] = this.columns.filter((col: ITdDataTableColumn) => !col.hidden);
     return Math.floor(this.hostWidth / renderedColumns.length);
   }
