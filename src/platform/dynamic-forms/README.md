@@ -45,6 +45,8 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
+  minLength?: string;
+  maxLength?: string;
   selections?: any[];
   default?: any;
   validators?: ITdDynamicElementValidator[];
@@ -61,6 +63,8 @@ Example for HTML usage:
         <span *ngIf="control.hasError('required')">Required</span>
         <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
         <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+        <span *ngIf="control.hasError('minlength')">Min length value: {{element.minLength}}</span>
+        <span *ngIf="control.hasError('maxlength')">Max length value: {{element.minLength}}</span>
       </span>
     </ng-template>
   </ng-template>
@@ -76,6 +80,12 @@ export class Demo {
     name: 'input',
     type: TdDynamicElement.Input,
     required: true,
+  }, {
+    name: 'textLength',
+    label: 'Text Length',
+    type: TdDynamicElement.Input,
+    minLength: 4,
+    maxLength: 12,
   }, {
     name: 'number',
     type: TdDynamicType.Number,
