@@ -40,15 +40,15 @@ export class DynamicFormsDemoComponent {
     maxLength: 12,
     flex: 50,
   }, {
-    name: 'textarea',
-    type: TdDynamicElement.Textarea,
-    required: false,
-  }, {
     name: 'text',
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
-    flex: 100,
+    flex: 50,
+  }, {
+    name: 'textarea',
+    type: TdDynamicElement.Textarea,
+    required: false,
   }, {
     name: 'required-password',
     label: 'Password Label',
