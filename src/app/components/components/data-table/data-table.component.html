@@ -11,25 +11,29 @@
         <ng-template mdTabLabel>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
-            <tr td-data-table-column-row>
-              <th td-data-table-column>
-                <md-icon>comment</md-icon>
-                <span>Comments</span>
-              </th>
-              <th td-data-table-column
-                  *ngFor="let column of columns"
-                  [numeric]="column.numeric">
-                {{column.label}}
-              </th>
-            </tr>
-            <tr td-data-table-row *ngFor="let row of basicData">
-              <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
-              </td>
-              <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                {{column.format ? column.format(row[column.name]) : row[column.name]}}
-              </td>
-            </tr>
+            <thead>
+              <tr td-data-table-column-row>
+                <th td-data-table-column>
+                  <md-icon>comment</md-icon>
+                  <span>Comments</span>
+                </th>
+                <th td-data-table-column
+                    *ngFor="let column of columns"
+                    [numeric]="column.numeric">
+                  {{column.label}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr td-data-table-row *ngFor="let row of basicData">
+                <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                  <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                </td>
+                <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
+                  {{column.format ? column.format(row[column.name]) : row[column.name]}}
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </md-tab>
@@ -39,25 +43,29 @@
         <td-highlight lang="html">
           <![CDATA[
             <table td-data-table>
-              <tr td-data-table-column-row>
-                <th td-data-table-column>
-                  <md-icon>comment</md-icon>
-                  <span>Comments</span>
-                </th>
-                <th td-data-table-column
-                    *ngFor="let column of columns"
-                    [numeric]="column.numeric">
-                  { {column.label}}
-                </th>
-              </tr>
-              <tr td-data-table-row *ngFor="let row of basicData">
-                <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
-                </td>
-                <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
-                  { {column.format ? column.format(row[column.name]) : row[column.name]}}
-                </td>
-              </tr>
+              <thead>
+                <tr td-data-table-column-row>
+                  <th td-data-table-column>
+                    <md-icon>comment</md-icon>
+                    <span>Comments</span>
+                  </th>
+                  <th td-data-table-column
+                      *ngFor="let column of columns"
+                      [numeric]="column.numeric">
+                    { {column.label}}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr td-data-table-row *ngFor="let row of basicData">
+                  <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                    <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                  </td>
+                  <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
+                    { {column.format ? column.format(row[column.name]) : row[column.name]}}
+                  </td>
+                </tr>
+              </tbody>
             </table>
           ]]>
         </td-highlight>
