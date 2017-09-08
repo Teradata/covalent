@@ -574,7 +574,7 @@
     </div>
     <md-divider></md-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (change)="dataTable.refresh()">
+      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
         Hide calories
       </md-slide-toggle>
       <md-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
