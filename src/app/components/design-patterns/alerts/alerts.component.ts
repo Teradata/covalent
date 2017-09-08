@@ -32,22 +32,22 @@ export class AlertsComponent {
 
   showSnackBar(): void {
     this._snackBarService
-      .open('Toast here', 'Dismiss', { duration: 3000 });
+      .open('Connection timed out.  Showing limited messages.', 'Retry',{ duration: 3000 });
   }
   openAlert(): void {
     this._dialogService.openAlert({
       message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
       disableClose: true,
       title: '401 Permissions Error!',
-      closeButton: 'Dismiss',
+      closeButton: 'Ok',
     });
   }
   openConfirm(): void {
     this._dialogService.openConfirm({
       message: 'Are you sure you want to delete this item? It\'s used on other items.',
       title: 'Confirm',
-      cancelButton: 'No, Cancel',
-      acceptButton: 'Yes, Delete',
+      cancelButton: 'Cancel',
+      acceptButton: 'Delete',
     }).afterClosed().subscribe((accept: boolean) => {
       if (accept) {
         this.confirmDelete();
@@ -57,7 +57,7 @@ export class AlertsComponent {
     });
   }
   confirmDelete(): void {
-    this._snackBarService.open('Item deleted!', 'Ok', { duration: 3000 });
+    this._snackBarService.open('Item deleted', '', { duration: 3000 });
   }
   openPrompt(): void {
     this._dialogService.openPrompt({
