@@ -169,8 +169,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows (without counting the columns) were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check how many rows were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
           // check to see checkboxes states
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
@@ -225,8 +225,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows (without counting the columns) were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check how many rows were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
           // check to see checkboxes states
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
@@ -283,8 +283,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows (without counting the columns) were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length - 1).toBe(4);
+          // check how many rows were rendered
+          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
           // check to see checkboxes states
           expect(dataTableComponent.indeterminate).toBeFalsy();
           expect(dataTableComponent.allSelected).toBeFalsy();
