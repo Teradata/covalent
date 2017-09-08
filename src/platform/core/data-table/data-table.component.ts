@@ -851,7 +851,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * Calculates the widths for columns and cells depending on content
    */
   private _calculateWidths(): void {
-    if (this._colElements.length) {
+    if (this._colElements && this._colElements.length) {
       this._widths = [];
       this._colElements.forEach((col: ElementRef, index: number) => {
         this._adjustColumnWidth(index, this._calculateWidth());
