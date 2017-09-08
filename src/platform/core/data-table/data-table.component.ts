@@ -12,6 +12,8 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 
+import { debounceTime } from 'rxjs/operator/debounceTime';
+
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
@@ -407,9 +409,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   ngOnInit(): void {
     // initialize observable for resize calculations
-    this._resizeSubs = this._onResize.asObservable()
-    .debounceTime(10).subscribe(() => {
-        this._calculateWidths();
+    this._resizeSubs = debounceTime.call(this._onResize.asObservable(), 10).subscribe(() => {
+      this._calculateWidths();
     });
     // initialize observable for scroll reposition
     this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
@@ -422,7 +423,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._scrollVerticalOffset = verticalScroll;
       this._changeDetectorRef.markForCheck();
     });
-    this._changeDetectorRef.detectChanges();
   }
 
   /**
@@ -460,7 +460,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * so we can start calculating the widths
    */
   ngAfterViewInit(): void {
-    this._rowsChangedSubs = this._rows.changes.debounceTime(0).subscribe(() => {
+    this._rowsChangedSubs = debounceTime.call(this._rows.changes, 0).subscribe(() => {
       this._onResize.next();
     });
   }
