@@ -4,12 +4,6 @@ $checkbox-size: 18px;
 :host {
   display: block;
   overflow: hidden;
-  .td-data-table-fake-columns {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    visibility: collapse;
-  }
   .td-data-table-scrollable {
     position: relative;
     overflow: auto;
