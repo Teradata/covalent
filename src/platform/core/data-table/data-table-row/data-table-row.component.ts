@@ -11,8 +11,6 @@ import { TdDataTableColumnComponent } from '../data-table-column/data-table-colu
 })
 export class TdDataTableColumnRowComponent {
 
-  @ContentChildren(TdDataTableColumnComponent, {read: ElementRef}) _cols: QueryList<ElementRef>;
-
   constructor(protected _elementRef: ElementRef, protected _renderer: Renderer2) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column-row');
   }
@@ -28,8 +26,6 @@ export class TdDataTableColumnRowComponent {
 export class TdDataTableRowComponent {
 
   private _selected: boolean = false;
-
-  @ContentChildren(TdDataTableCellComponent, {read: ElementRef}) _cells: QueryList<ElementRef>;
 
   @Input('selected')
   set selected(selected: boolean) {

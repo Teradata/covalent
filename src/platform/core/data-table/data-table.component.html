@@ -16,9 +16,10 @@
       </md-checkbox>
     </th>
     <th td-data-table-column
+        #columnElement
         *ngFor="let column of columns; let i = index;"
-        [style.min-width.px]="getWidth(i)"
-        [style.max-width.px]="getWidth(i)"
+        [style.min-width.px]="getColumnWidth(i)"
+        [style.max-width.px]="getColumnWidth(i)"
         [name]="column.name"
         [numeric]="column.numeric"
         [active]="(column.sortable || sortable) && column === sortByColumn"
@@ -27,17 +28,6 @@
         [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
-    </th>
-  </tr>
-  <tr #fakeColumns class="td-data-table-fake-columns" td-data-table-column-row>
-    <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
-    </th>
-    <th td-data-table-column
-        *ngFor="let column of columns; let i = index;"
-        [name]="column.name"
-        [numeric]="column.numeric"
-        [hidden]="column.hidden">
-        <span>{{column.label}}</span>
     </th>
   </tr>
 </table>

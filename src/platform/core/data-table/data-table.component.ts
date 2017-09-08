@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 
-import { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-table-row/data-table-row.component';
+import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
@@ -180,17 +180,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
 
   @ViewChild('scrollableDiv') _scrollableDiv: ElementRef;
 
-  @ViewChild('fakeColumns') _colRow: TdDataTableColumnRowComponent;
-  get _fakeCols(): ElementRef[] {
-    if (this._colRow && this._colRow._cols) {
-      let cols: ElementRef[] = this._colRow._cols.toArray();
-      if (this.selectable) {
-        cols.splice(0, 1);
-      }
-      return cols;
-    }
-    return [];
-  }
+  @ViewChildren('columnElement', {read: ElementRef}) _colElements: QueryList<ElementRef>;
+
   @ViewChildren(TdDataTableRowComponent) _rows: QueryList<TdDataTableRowComponent>;
 
   /**
@@ -417,8 +408,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   ngOnInit(): void {
     // initialize observable for resize calculations
     this._resizeSubs = this._onResize.asObservable()
-      .debounceTime(10).subscribe(() => {
-      this._calculateWidths();
+    .debounceTime(10).subscribe(() => {
+        this._calculateWidths();
     });
     // initialize observable for scroll reposition
     this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
@@ -511,11 +502,21 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   }
 
   /**
-   * Returns the width needed for the columns and cells via index
+   * Returns the width needed for the columns via index
    */
-  getWidth(index: number): number {
+  getColumnWidth(index: number): number {
     if (this._widths[index]) {
       return this._widths[index].value;
+    }
+    return undefined;
+  }
+
+  /**
+   * Returns the width needed for the cells via index
+   */
+  getWidth(index: number): number {
+    if (this._colElements && this._colElements.toArray()[index]) {
+      return this._colElements.toArray()[index].nativeElement.getBoundingClientRect().width;
     }
     return undefined;
   }
@@ -850,9 +851,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * Calculates the widths for columns and cells depending on content
    */
   private _calculateWidths(): void {
-    if (this._fakeCols.length) {
+    if (this._colElements.length) {
       this._widths = [];
-      this._fakeCols.forEach((col: ElementRef, index: number) => {
+      this._colElements.forEach((col: ElementRef, index: number) => {
         this._adjustColumnWidth(index, this._calculateWidth());
       });
       this._adjustColumnWidhts();
@@ -924,8 +925,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         this._widths[index].limit = true;
       }
     }
-    if (this._widths[index].value < this._fakeCols[index].nativeElement.getBoundingClientRect().width) {
-      this._widths[index].value = this._fakeCols[index].nativeElement.getBoundingClientRect().width;
+    if (this._widths[index].value < 100) {
+      this._widths[index].value = 100;
       this._widths[index].min = true;
       this._widths[index].limit = false;
     }
