@@ -7,15 +7,17 @@
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-          <div layout="column" flex>
-            <md-input-container flex>
+          <div layout="row">
+            <md-form-field flex>
               <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-            </md-input-container>
-            <md-input-container flex>
+            </md-form-field>
+          </div>
+          <div layout="row">
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </div>
         <div layout="row">
@@ -23,18 +25,20 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
-              <div layout="column" flex>
-                <md-input-container flex>
+              <div layout="row">
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-                </md-input-container>
-                <md-input-container flex>
+                </md-form-field>
+              </div>
+              <div layout="row">
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </div>
             <div layout="row">
@@ -82,19 +86,17 @@
     <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
-          <div layout="column" flex>
-            <md-input-container flex>
+          <div layout="row">
+            <md-form-field flex>
               <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-            </md-input-container>
-            <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
-              <md-option [value]="1">Some type</md-option>
-              <md-option [value]="2">Another type</md-option>
-            </md-select>
-            <md-input-container flex>
+            </md-form-field>
+          </div>
+          <div layout="row">
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </ng-template>
         <div layout="row">
@@ -102,22 +104,20 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
-              <div layout="column" flex>
-                <md-input-container flex>
+              <div layout="row">
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-                </md-input-container>
-                <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
-                  <md-option [value]="1">Some type</md-option>
-                  <md-option [value]="2">Another type</md-option>
-                </md-select>
-                <md-input-container flex>
+                </md-form-field>
+              </div>
+              <div layout="row">
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </ng-template>
             <div layout="row">
@@ -166,12 +166,12 @@
     <h4 class="md-subhead">with accent [tdLoadingColor]</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div *tdLoading="let items until listObservable | async; color: 'accent'">
           <md-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
               <md-list-item>
-                <md-slide-toggle md-line [checked]="item.value">
+                <md-slide-toggle mdLine [checked]="item.value">
                   {{item.label}}
                 </md-slide-toggle>
               </md-list-item>
@@ -184,7 +184,7 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -192,7 +192,7 @@
               <md-list>
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
                   <md-list-item>
-                    <md-slide-toggle md-line [checked]="item.value">
+                    <md-slide-toggle mdLine [checked]="item.value">
                       { {item.label} }
                     </md-slide-toggle>
                   </md-list-item>
@@ -234,15 +234,17 @@
     <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-          <div layout="column" flex>
-            <md-input-container flex>
+          <div layout="row">
+            <md-form-field flex>
               <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-            </md-input-container>
-            <md-input-container flex>
+            </md-form-field>
+          </div>
+          <div layout="row">
+            <md-form-field flex>
               <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </md-form-field>
           </div>
         </ng-template>
         <div class="pad-sm">
@@ -250,18 +252,20 @@
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
-              <div layout="column" flex>
-                <md-input-container flex>
+              <div layout="row">
+                <md-form-field flex>
                   <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-                </md-input-container>
-                <md-input-container flex>
+                </md-form-field>
+              </div>
+              <div layout="row">
+                <md-form-field flex>
                   <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+                </md-form-field>
               </div>
             </ng-template>
             <div class="pad-sm">
@@ -293,13 +297,13 @@
     <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row">
           <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -339,13 +343,13 @@
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
-        <ng-template md-tab-label>Demo</ng-template>
+        <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row">
           <button md-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
       </md-tab>
       <md-tab>
-        <ng-template md-tab-label>Code</ng-template>
+        <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -390,15 +394,15 @@
     <h2><code>tdLoading</code></h2>
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
     <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<ng-template>]]></code> element.</p>
-    <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/docs/ts/latest/guide/template-syntax.html#!#star-template">here</a></p>
+    <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/guide/structural-directives#asterisk">here</a></p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
-          <p md-line *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
+          <p mdLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -419,7 +423,7 @@
           { {item} }
         </div>
       ]]>
-    </td-highlight>  
+    </td-highlight>
     <p>HTML <![CDATA[<ng-template>]]> syntax</p>
     <td-highlight lang="html">
       <![CDATA[
@@ -501,8 +505,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

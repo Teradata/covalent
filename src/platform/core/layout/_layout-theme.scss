@@ -8,7 +8,7 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  .mat-sidenav-container {
+  .mat-drawer-container {
     background-color: mat-color($background, status-bar);
   }
 
@@ -31,7 +31,7 @@
       z-index: 1;
     }
   }
-  .mat-sidenav-side.td-layout-sidenav {
+  .mat-drawer-side.td-layout-sidenav {
     @include mat-elevation(2);
   }
   .td-layout-footer {

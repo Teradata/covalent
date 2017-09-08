@@ -2,7 +2,7 @@
   <md-card-title>Minimum Demo</md-card-title>
   <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'200px'">
     <td-layout-manage-list opened="true" mode="side">
       <md-toolbar td-sidenav-content></md-toolbar>
       <div td-sidenav-content>
@@ -32,7 +32,7 @@
   <md-card-title>Basic Demo</md-card-title>
   <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <md-nav-list>
@@ -106,7 +106,7 @@
   <md-card-title>Full Demo</md-card-title>
   <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
   <md-divider></md-divider>
-  <md-card-content>
+  <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <md-nav-list>
@@ -139,7 +139,7 @@
           <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
             <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
               <a md-list-item>
-                <md-icon md-list-icon>{{item.icon}}</md-icon> {{item.title}}
+                <md-icon mdListIcon>{{item.icon}}</md-icon> {{item.title}}
               </a>
             </ng-template>
           </md-nav-list>
@@ -263,7 +263,7 @@
               <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
                   <a md-list-item>
-                    <md-icon md-list-icon>{ {item.icon} }</md-icon> { {item.title} }
+                    <md-icon mdListIcon>{ {item.icon} }</md-icon> { {item.title} }
                   </a>
                 </ng-template>
               </md-nav-list>
@@ -436,8 +436,10 @@
 
           ngAfterViewInit(): void {
             // broadcast to all listener observables when loading the page
-            this.media.broadcast();
-            this._changeDetectorRef.detectChanges();
+            setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+              this.media.broadcast();
+              this._changeDetectorRef.detectChanges();
+            });
           }
 
         }

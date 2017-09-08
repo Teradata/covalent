@@ -4,7 +4,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
         <md-card-content>
           <p>Change Event: </p>
           <div>
@@ -20,7 +20,7 @@
         </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -66,7 +66,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <md-card-content>
         <p>Change Event: </p>
         <div>
@@ -88,7 +88,7 @@
       </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -130,7 +130,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
         <md-card-content>
           <p>Change Event: </p>
           <div>
@@ -146,7 +146,7 @@
         </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -181,41 +181,41 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <md-card-content>
-          <p>Change Event: </p>
-          <div>
-            <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
-            <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
-            <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
-          </div>
-          <p>Total: {{eventInput?.total || '1345'}}</p>
-        </md-card-content>
-        <md-divider></md-divider>
-        <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
-          <p hide-xs>Go to:</p>
-          <md-input-container>
-            <input #goToInput
-                    mdInput
-                    type="number"
-                    [min]="1"
-                    [max]="pagingBarInput.maxPage"
-                    [value]="pagingBarInput.page"
-                    (blur)="goToInput.value = pagingBarInput.page"
-                    (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-          </md-input-container>
-          <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
-        </td-paging-bar>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
+          <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
+          <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventInput?.total || '1345'}}</p>
+      </md-card-content>
+      <md-divider></md-divider>
+      <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+        <p hide-xs>Go to:</p>
+        <md-form-field [style.width.px]="30">
+          <input #goToInput
+                  mdInput
+                  type="number"
+                  [min]="1"
+                  [max]="pagingBarInput.maxPage"
+                  [value]="pagingBarInput.page"
+                  (blur)="goToInput.value = pagingBarInput.page"
+                  (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+        </md-form-field>
+        <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
+      </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
               <p hide-xs>Go to:</p>
-              <md-input-container>
+              <md-form-field [style.width.px]="30">
                 <input #goToInput
                         mdInput
                         type="number"
@@ -224,7 +224,7 @@
                         [value]="pagingBarInput.page"
                         (blur)="goToInput.value = pagingBarInput.page"
                         (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-              </md-input-container>
+              </md-form-field>
               <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
             </td-paging-bar>
           ]]>
@@ -254,7 +254,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <md-card-content>
           <p>Change Event: </p>
           <div>
@@ -278,7 +278,7 @@
             </md-option>
           </md-select>
           <p hide-xs hide-sm hide-md>Go to:</p>
-          <md-input-container *ngIf="media.registerQuery('gt-sm') | async">
+          <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
             <input #goToResponsive
                     mdInput
                     type="number"
@@ -287,12 +287,12 @@
                     [value]="pagingBarResponsive.page"
                     (blur)="goToResponsive.value = pagingBarResponsive.page"
                     (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-          </md-input-container>
+          </md-form-field>
           <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
         </td-paging-bar>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -310,7 +310,7 @@
                 </md-option>
               </md-select>
               <p hide-xs hide-sm hide-md>Go to:</p>
-              <md-input-container *ngIf="media.registerQuery('gt-sm') | async">
+              <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
                 <input #goToResponsive
                         mdInput
                         type="number"
@@ -319,7 +319,7 @@
                         [value]="pagingBarResponsive.page"
                         (blur)="goToResponsive.value = pagingBarResponsive.page"
                         (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-              </md-input-container>
+              </md-form-field>
               <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
             </td-paging-bar>
           ]]>
@@ -337,8 +337,11 @@
                           public media: TdMediaService) {}
 
               ngAfterViewInit(): void {
-                this.media.broadcast();
-                this._changeDetectorRef.detectChanges();
+                // broadcast to all listener observables when loading the page
+                setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+                  this.media.broadcast();
+                  this._changeDetectorRef.detectChanges();
+                });
               }
 
               changeResponsive(event: IPageChangeEvent): void {

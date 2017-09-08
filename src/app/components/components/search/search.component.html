@@ -11,9 +11,11 @@
     </div>
     <h3>Search Input</h3>
     <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
-    <div layout="row" layout-align="start center">
-      <td-search-input *ngIf="debounce" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
-      <td-search-input *ngIf="!debounce" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+    <div layout-gt-xs="row">
+      <div flex-gt-xs="40">
+        <td-search-input *ngIf="debounce" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+        <td-search-input *ngIf="!debounce" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+      </div>
     </div>
     <h3>Search Box</h3>
     <p>Search Value: {{searchBoxTerm || 'Empty'}}</p>
@@ -52,8 +54,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -95,8 +97,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

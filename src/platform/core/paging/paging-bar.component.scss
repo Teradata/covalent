@@ -12,14 +12,13 @@
   font-weight: normal;
 }
 /deep/ md-select { 
-  & {
+  &.mat-select {
+    padding-top: 0px;
+  }
+  & {  
     .mat-select-trigger {
       min-width: 44px;
       font-size: 12px;
-    }
-    .mat-select-value {
-      top: auto;
-      position: static;
     }
     .mat-select-underline {
       display: none;

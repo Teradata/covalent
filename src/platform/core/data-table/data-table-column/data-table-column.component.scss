@@ -24,7 +24,7 @@
 
     &.td-data-table-sort-icon {
       opacity: 0;
-      transition: transform 0.25s, opacity 0.25s;
+      transition: transform 0.25s;
 
       &.mat-asc {
         transform: rotate(0deg);
@@ -55,9 +55,13 @@
       outline: none;
     }
   }
-
+  .td-data-table-heading {
+    display: inline-block;
+    position: relative;
+  }
   md-icon.td-data-table-sort-icon {
     position: absolute;
+    top: 0px;
   }
   &.mat-numeric {
   @include rtl(text-align, right, left);

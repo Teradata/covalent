@@ -4,7 +4,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
         <div class="md-padding">
           <h3 class="md-subhead">md-padding class</h3>
@@ -25,7 +25,7 @@
       </td-expansion-panel>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -77,7 +77,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <td-expansion-panel-group>
         <td-expansion-panel label="Label goes here">
           <div class="md-padding">
@@ -97,7 +97,7 @@
       </td-expansion-panel-group>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -132,7 +132,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
       <td-expansion-panel [expand]="true">
         <ng-template td-expansion-panel-label>
           <md-icon>star</md-icon>
@@ -144,32 +144,36 @@
         <td-expansion-summary>
           <md-list>
             <md-list-item>
-              <md-icon md-list-avatar>pin_drop</md-icon>
-              <h3 md-line>Google</h3>
-              <h4 md-line>Headquarters</h4>
-              <p md-line>
+              <md-icon mdListAvatar>pin_drop</md-icon>
+              <h3 mdLine>Google</h3>
+              <h4 mdLine>Headquarters</h4>
+              <p mdLine>
                 1600 Amphitheatre Pkwy<br/>Mountain View, CA 94043, USA
               </p>
             </md-list-item>
           </md-list>
         </td-expansion-summary>
-        <form class="md-padding" layout="column">
-          <md-input-container flex>
-            <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
-          </md-input-container>
-          <md-input-container flex>
-            <textarea mdInput placeholder="Description" rows="4"></textarea>
-          </md-input-container>
+        <form class="md-padding">
+          <div layout="row">
+            <md-form-field flex>
+              <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
+            </md-form-field>
+          </div>
+          <div layout="row">
+            <md-form-field flex>
+              <textarea mdInput placeholder="Description" rows="4"></textarea>
+            </md-form-field>
+          </div>
         </form>
         <md-divider></md-divider>
-        <div layout="row" layout-margin layout-align="end center">
-          <button md-button class="text-upper">Cancel</button>
+        <div layout="row" class="pad-sm">
           <button md-button color="accent" class="text-upper">Save</button>
+          <button md-button class="text-upper">Cancel</button>
         </div>
       </td-expansion-panel>
     </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -185,27 +189,31 @@
               <td-expansion-summary>
                 <md-list>
                   <md-list-item>
-                    <md-icon md-list-avatar>pin_drop</md-icon>
-                    <h3 md-line>Google</h3>
-                    <h4 md-line>Headquarters</h4>
-                    <p md-line>
+                    <md-icon mdListAvatar>pin_drop</md-icon>
+                    <h3 mdLine>Google</h3>
+                    <h4 mdLine>Headquarters</h4>
+                    <p mdLine>
                       1600 Amphitheatre Pkwy<br/>Mountain View, CA 94043, USA
                     </p>
                   </md-list-item>
                 </md-list>
               </td-expansion-summary>
-              <form class="md-padding" layout="column">
-                <md-input-container flex>
-                  <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
-                </md-input-container>
-                <md-input-container flex>
-                  <textarea mdInput placeholder="Description" rows="4"></textarea>
-                </md-input-container>
+              <form class="md-padding">
+                <div layout="row">
+                  <md-form-field flex>
+                    <input mdInput placeholder="Company (disabled)" disabled value="Google"/>
+                  </md-form-field>
+                </div>
+                <div layout="row">
+                  <md-form-field flex>
+                    <textarea mdInput placeholder="Description" rows="4"></textarea>
+                  </md-form-field>
+                </div>
               </form>
               <md-divider></md-divider>
-              <div layout="row" layout-margin layout-align="end center">
-                <button md-button class="text-upper">Cancel</button>
+              <div layout="row" class="pad-sm">
                 <button md-button color="accent" class="text-upper">Save</button>
+                <button md-button class="text-upper">Cancel</button>
               </div>
             </td-expansion-panel>
           ]]>
@@ -221,7 +229,7 @@
   <md-divider></md-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
-      <ng-template md-tab-label>Demo</ng-template>
+      <ng-template mdTabLabel>Demo</ng-template>
         <td-expansion-panel disableRipple>
           <ng-template td-expansion-panel-header>
             <md-toolbar color="accent">
@@ -245,27 +253,27 @@
           <md-list>
             <h3 md-subheader>Metadata</h3>
             <md-list-item>
-                <md-icon md-list-avatar>account_box</md-icon>
-                <h4 md-line>John Jameson</h4>
-                <p md-line>Owner</p>
+                <md-icon mdListAvatar>account_box</md-icon>
+                <h4 mdLine>John Jameson</h4>
+                <p mdLine>Owner</p>
             </md-list-item>
             <md-divider md-inset></md-divider>
             <md-list-item>
-                <md-icon md-list-avatar>description</md-icon>
-                <h4 md-line>An item description</h4>
-                <p md-line>Description</p>
+                <md-icon mdListAvatar>description</md-icon>
+                <h4 mdLine>An item description</h4>
+                <p mdLine>Description</p>
             </md-list-item>
             <md-divider md-inset></md-divider>
             <md-list-item>
-                <md-icon md-list-avatar>vpn_key</md-icon>
-                <h4 md-line>1141e8e8-8d24-4956-93c2</h4>
-                <p md-line>API Key</p>
+                <md-icon mdListAvatar>vpn_key</md-icon>
+                <h4 mdLine>1141e8e8-8d24-4956-93c2</h4>
+                <p mdLine>API Key</p>
             </md-list-item>
           </md-list>
         </td-expansion-panel>
       </md-tab>
     <md-tab>
-      <ng-template md-tab-label>Code</ng-template>
+      <ng-template mdTabLabel>Code</ng-template>
       <md-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -293,21 +301,21 @@
               <md-list>
                 <h3 md-subheader>Metadata</h3>
                 <md-list-item>
-                    <md-icon md-list-avatar>account_box</md-icon>
-                    <h4 md-line>John Jameson</h4>
-                    <p md-line>Owner</p>
+                    <md-icon mdListAvatar>account_box</md-icon>
+                    <h4 mdLine>John Jameson</h4>
+                    <p mdLine>Owner</p>
                 </md-list-item>
                 <md-divider md-inset></md-divider>
                 <md-list-item>
-                    <md-icon md-list-avatar>description</md-icon>
-                    <h4 md-line>An item description</h4>
-                    <p md-line>Description</p>
+                    <md-icon mdListAvatar>description</md-icon>
+                    <h4 mdLine>An item description</h4>
+                    <p mdLine>Description</p>
                 </md-list-item>
                 <md-divider md-inset></md-divider>
                 <md-list-item>
-                    <md-icon md-list-avatar>vpn_key</md-icon>
-                    <h4 md-line>1141e8e8-8d24-4956-93c2</h4>
-                    <p md-line>API Key</p>
+                    <md-icon mdListAvatar>vpn_key</md-icon>
+                    <h4 mdLine>1141e8e8-8d24-4956-93c2</h4>
+                    <p mdLine>API Key</p>
                 </md-list-item>
               </md-list>
             </td-expansion-panel>

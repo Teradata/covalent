@@ -1,6 +1,6 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, Host, Optional } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { NgModel } from '@angular/forms';
 
 @Directive({

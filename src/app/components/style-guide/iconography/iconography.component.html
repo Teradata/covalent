@@ -140,19 +140,88 @@
   </md-tab-group>
 </md-card>
 <md-card>
-  <md-card-title>Search Icons</md-card-title>
-  <md-card-subtitle>Current icons bundled with platform</md-card-subtitle>
-  <md-divider></md-divider>
-  <div layout="row" layout-align="center center" class="md-padding">
-    <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
-  </div>
+  <md-card-content>
+    <h3 class="md-title">Search Icons</h3>
+    <h4 class="md-subhead">Current icons bundled with Icon Service</h4>
+    <md-tab-group md-stretch-tabs>
+      <md-tab>
+        <ng-template mdTabLabel>Demo</ng-template>
+        <div layout="row" layout-align="center center" class="md-padding">
+          <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
+        </div>
+        <md-divider></md-divider>
+        <md-card-content>
+          <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
+            <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
+                <md-icon>{{icon}}</md-icon>
+                <p class="md-caption">{{icon}}</p>
+            </div>
+          </div>
+        </md-card-content>
+      </md-tab>
+      <md-tab>
+        <ng-template mdTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row" layout-align="center center" class="md-padding">
+              <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
+            </div>
+            <md-divider></md-divider>
+            <md-card-content>
+              <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
+                <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
+                    <md-icon>{ {icon} }</md-icon>
+                    <p class="md-caption">{ {icon} }</p>
+                </div>
+              </div>
+            </md-card-content>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IconService } from '../../../../platform/core/common/services/icon.service';
+
+            export class IconographyComponent implements OnInit {
+
+              icons: string[] = [];
+              query: string = '';
+              filteredList: string[] = [];
+
+              constructor(private _iconService: IconService) {}
+
+              ngOnInit(): void {
+                this.icons = this._iconService.icons;
+                this.filteredList = this.icons;
+              }
+
+              filter(): void {
+                this.filteredList = this._iconService.filter(this.query);
+              }
+            }
+        ]]>
+        </td-highlight>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>IconService</md-card-title>
+  <md-card-subtitle>How to use this service</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
-      <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
-          <md-icon>{{icon}}</md-icon>
-          <p class="md-caption">{{icon}}</p>
-      </div>
-    </div>
+     <p>Icon service provides an array of icon names & capability to serach through icons</p>
+    <h3>Methods:</h3>
+    <p>The <code><![CDATA[IconService]]></code> service comes with {{serviceAttrs.length}} methods:</p>
+    <md-list>
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
+        <a md-list-item layout-align="row">
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
+        </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </ng-template>
+    </md-list>
   </md-card-content>
 </md-card>

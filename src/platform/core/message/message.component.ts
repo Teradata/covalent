@@ -16,8 +16,8 @@ export class TdMessageContainerDirective {
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
   animations: [
-    TdCollapseAnimation(100),
-    TdFadeInOutAnimation(100),
+    TdCollapseAnimation({ duration: 100 }),
+    TdFadeInOutAnimation({ duration: 100 }),
   ],
 })
 export class TdMessageComponent implements AfterViewInit {

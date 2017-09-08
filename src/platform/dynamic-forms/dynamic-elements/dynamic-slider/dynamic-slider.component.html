@@ -1,5 +1,7 @@
-<div class="dynamic-slider-wrapper relative push-top" flex layout="column">
-  <label class="mat-input-placeholder mat-float td-slider-label" [class.mat-focused]="slider._isActive"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
+<div class="dynamic-slider-wrapper relative push-top-sm">
+  <span class="mat-form-field-placeholder-wrapper">
+    <label class="mat-form-field-placeholder mat-float mat-form-field-float td-slider-label" [class.mat-focused]="slider._isActive"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
+  </span>
   <div layout="row" layout-align="start center" flex>
     <md-slider #slider
                [(ngModel)]="value"

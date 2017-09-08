@@ -13,7 +13,7 @@ export class TdFadeDirective {
 
   /**
    * duration?: number
-   * Sets duration of fade animation in miliseconds.
+   * Sets duration of fade animation in milliseconds.
    * Defaults to 150 ms.
    */
   @Input() duration: number = 150;
