@@ -32,7 +32,7 @@ export class AlertsComponent {
 
   showSnackBar(): void {
     this._snackBarService
-      .open('Connection timed out.  Showing limited messages.', 'Retry',{ duration: 3000 });
+      .open('Connection timed out.  Showing limited messages.', 'Retry', { duration: 3000 });
   }
   openAlert(): void {
     this._dialogService.openAlert({
