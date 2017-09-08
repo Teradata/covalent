@@ -266,7 +266,7 @@
         </md-card-content>
         <md-divider></md-divider>
         <td-paging-bar #pagingBarResponsive
-                       [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
+                       [pageLinkCount]="(media.registerQuery('sm') | async) ? 0 : 3"
                        [firstLast]="media.registerQuery('gt-xs') | async"
                        [pageSize]="pageSizeResponsive"
                        [total]="1345"
