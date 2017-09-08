@@ -41,6 +41,28 @@ export class MyModule {}
 
 ## Usage
 
+The `ITdDataTableColumn` interface for columns has the following contract:
+
+```typescript
+export interface ITdDataTableColumn {
+  name: string;
+  label: string;
+  tooltip?: string; // used to add a tooltip into the column header
+  numeric?: boolean; // used to right align elements if they are numeric
+  format?: (value: any) => any; // used to format the cell values
+  nested?: boolean;
+  sortable?: boolean; // used to make a particular column sortable
+  hidden?: boolean; // used to hide the column in the data table on the fly
+  filter?: boolean;
+  width?: ITdDataTableColumnWidth | number; // used to configure the widhts of the columns, if omitted it will fill the rest of the space
+}
+
+export interface ITdDataTableColumnWidth {
+  min?: number;
+  max?: number;
+}
+```
+
 Example for HTML usage:
 
 ```html
@@ -76,8 +98,8 @@ export class Demo {
   ];
   private columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit', sortable: true },
-    { name: 'item', label: 'Item name' },
-    { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+    { name: 'item', label: 'Item name', width: 200 },
+    { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2), width: { min: 100, max: 400 } },
   ];
   compareWith(row: any: model: any): boolean {
     return row.id === model.id; // or any property you want to compare by.
