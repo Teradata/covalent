@@ -85,7 +85,7 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
+    { name: 'name',  label: 'Dessert (100g serving)', sortable: true, width: 200 },
     { name: 'type', label: 'Type', filter: true },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
