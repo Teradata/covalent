@@ -7,21 +7,21 @@ import { IAnimationOptions } from '../common/interfaces';
  *
  * params:
  * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation.
- * * duration: Duration the animation will run in miliseconds. Defaults to 500 ms.
+ * * duration: Duration the animation will run in milliseconds. Defaults to 500 ms.
  *
  * Returns an [AnimationTriggerMetadata] object with states for a boolean trigger based jello animation.
  *
  * usage: [@myAnchorName]="true|false"
  */
 export function TdJelloAnimation(jelloOptions: IAnimationOptions = {}): AnimationTriggerMetadata {
-  return trigger(jelloOptions.anchor || 'tdjello', [
+  return trigger(jelloOptions.anchor || 'tdJello', [
     state('0', style({
       transform: 'none',
     })),
     state('1',  style({
       transform: 'none',
     })),
-    transition('0 <=> 1', animate((jelloOptions.duration || 500) + 'ms', keyframes([
+    transition('0 <=> 1', animate((jelloOptions.duration || 500) + 'ms ' + (jelloOptions.delay || 0) + 'ms', keyframes([
         style({transform: 'none', offset: 0}),
         style({transform: 'none', offset: 0.011}),
         style({transform: 'skewX(-12.5deg) skewY(-12.5deg)', offset: 0.222}),

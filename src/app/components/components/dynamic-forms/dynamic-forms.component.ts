@@ -1,9 +1,14 @@
-import { Component, HostBinding, ViewChild, ViewRef, AfterViewInit } from '@angular/core';
-import { AbstractControl, ValidatorFn, FormGroup, Validators } from '@angular/forms';
+import { Component, HostBinding } from '@angular/core';
+import { AbstractControl, Validators } from '@angular/forms';
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { TdDynamicType, ITdDynamicElementConfig,
-  TdDynamicElement, ITdDynamicElementValidator, TdDynamicFormsComponent } from '@covalent/dynamic-forms';
+import {
+  ITdDynamicElementConfig,
+  ITdDynamicElementValidator,
+  TdDynamicElement,
+  TdDynamicFormsComponent,
+  TdDynamicType,
+} from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'dynamic-forms-demo',
@@ -28,15 +33,22 @@ export class DynamicFormsDemoComponent {
     required: true,
     flex: 50,
   }, {
-    name: 'textarea',
-    type: TdDynamicElement.Textarea,
-    required: false,
+    name: 'text-length',
+    label: 'Text Length',
+    type: TdDynamicElement.Input,
+    minLength: 4,
+    maxLength: 12,
+    flex: 50,
   }, {
     name: 'text',
     type: TdDynamicType.Text,
     required: false,
     default: 'Default',
-    flex: 100,
+    flex: 50,
+  }, {
+    name: 'textarea',
+    type: TdDynamicElement.Textarea,
+    required: false,
   }, {
     name: 'required-password',
     label: 'Password Label',
@@ -188,6 +200,10 @@ export class DynamicFormsDemoComponent {
 
   isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
     return type === TdDynamicElement.Slider || type === TdDynamicType.Number;
+  }
+
+  isMinMaxLengthSupported(type: TdDynamicElement | TdDynamicType): boolean {
+    return type === TdDynamicElement.Input || type === TdDynamicType.Text;
   }
 
   addElement(): void {
