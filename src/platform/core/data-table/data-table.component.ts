@@ -236,6 +236,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     this._data = data;
     Promise.resolve().then(() => {
       this.refresh();
+      this._scrollableDiv.nativeElement.scrollTop = 0;
     });
   }
   get data(): any[] {
