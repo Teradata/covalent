@@ -294,9 +294,11 @@ describe('Component: DataTable', () => {
             // select the first and last row with shift key also selected and should then select all checkboxes
             let clickEvent: MouseEvent = document.createEvent('MouseEvents');          
             // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
-            clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true/*shiftkey*/, false, 0, document.body.parentNode);
+            clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, document.body.parentNode);
             fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].nativeElement.dispatchEvent(clickEvent);
+            let shiftClickEvent: MouseEvent = document.createEvent('MouseEvents'); 
+            shiftClickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, document.body.parentNode);
+            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].nativeElement.dispatchEvent(shiftClickEvent);
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               // check to see if allSelected is true
