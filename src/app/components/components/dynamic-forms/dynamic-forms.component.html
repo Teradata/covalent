@@ -32,6 +32,8 @@
                   <span *ngIf="control.hasError('required')">Required</span>
                   <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
                   <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+                  <span *ngIf="control.hasError('minlength')">MinLength value: {{element.minLength}}</span>
+                  <span *ngIf="control.hasError('maxlength')">MaxLength value: {{element.maxLength}}</span>
                 </span>
               </ng-template>
             </ng-template>
@@ -101,6 +103,22 @@
                       name="max">
               </md-form-field>
             </div>
+            <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
+              <md-form-field class="pad-right-xs" flex>
+                <input mdInput
+                       type="text"
+                       placeholder="MinLength"
+                       [(ngModel)]="model.minLength"
+                       name="min">
+              </md-form-field>
+              <md-form-field flex="50">
+                <input mdInput
+                       type="text"
+                       placeholder="MaxLength"
+                       [(ngModel)]="model.maxLength"
+                       name="max">
+              </md-form-field>
+            </div>
             <div layout="row">
               <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>
               <span flex></span>
@@ -127,6 +145,14 @@
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="textElements">
+          <ng-template let-element ngFor [ngForOf]="textElements">
+            <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                <span *ngIf="control.touched || !control.pristine">
+                  <span *ngIf="control.hasError('minlength')">Min length value: {{element.minLength}}</span>
+                  <span *ngIf="control.hasError('maxlength')">Max length value: {{element.minLength}}</span>
+                </span>
+            </ng-template>
+          </ng-template>
         </td-dynamic-forms>
       </md-tab>
       <md-tab>
@@ -135,6 +161,14 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="textElements">
+              <ng-template let-element ngFor [ngForOf]="textElements">
+                <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                  <span *ngIf="control.touched || !control.pristine">
+                    <span *ngIf="control.hasError('minlength')">Min length value: { {element.minLength} }</span>
+                    <span *ngIf="control.hasError('maxlength')">Max length value: { {element.minLength} }</span>
+                  </span>
+                </ng-template>
+              </ng-template>
             </td-dynamic-forms>
           ]]>
         </td-highlight>
