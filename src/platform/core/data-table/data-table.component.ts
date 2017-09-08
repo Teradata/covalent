@@ -106,10 +106,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _onVerticalScroll: Subject<number> = new Subject<number>();
 
   get rowHeight(): number {
-    if (this._rows && this._rows.toArray()[0]) {
-      return this._rows.toArray()[0].height;
-    }
-    return 48;
+    return 49;
   }
 
   get offsetRows(): number {
