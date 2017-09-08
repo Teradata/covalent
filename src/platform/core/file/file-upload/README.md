@@ -48,7 +48,7 @@ export class Demo {
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
 | `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [mdButton] and defaults to 'accent'.
 | `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [mdButton] and defaults to 'warn'.
@@ -128,7 +128,7 @@ export class Demo {
 Methods:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
 
 

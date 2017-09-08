@@ -9,7 +9,7 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `data` | `any[]` | Rows of data to be displayed.
 | `columns` | `ITdDataTableColumn[]` | List of columns to be displayed.
 | `selectable?` | `boolean` | Enables row selection events, hover and selected row states.

@@ -9,7 +9,7 @@ This implementation supports all the Common languages in *highlight.js*.
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `lang` | `[any common language supported in highlight.js]` | Language of the code content to be parsed as highlighted html.
 | `content` | `string` | Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
 | `contentReady` | `function` |  Event emitted after the highlight content rendering is finished.

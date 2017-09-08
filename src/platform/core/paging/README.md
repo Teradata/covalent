@@ -20,7 +20,7 @@ export interface IPageChangeEvent {
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `initialPage` | `number` | Sets starting page for the paging bar. Defaults to 1.
 | `pageLinkCount?` | `number` | Amount of page navigation links for the paging bar. Defaults to 0.
 | `firstLast?` | `boolean` | Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'

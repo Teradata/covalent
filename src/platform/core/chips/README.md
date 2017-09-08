@@ -11,7 +11,7 @@ Leverage the templates to create your own chip or contact chip.
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `color?` | `'primary', 'accent' or 'warn'` | color for the input and focus state of the chips. Defaults to 'primary'
 | `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.

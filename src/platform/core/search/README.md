@@ -7,7 +7,7 @@
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
 | `placeholder?` | `string` | Placeholder for the underlying input component.
 | `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
@@ -33,7 +33,7 @@ Example for HTML usage:
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
 | `placeholder?` | `string` | Placeholder for the underlying input component.
 | `backIcon?` | `string` | The icon used to close the search toggle, only shown when [alwaysVisible] is false. Defaults to 'search' icon.
