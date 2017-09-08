@@ -1,0 +1,4 @@
+/* Set margin on all elements in td-paging-bar to 5px to prevent wrapping in examples */
+.td-paging-bar * {
+    margin: 0 5px; 
+}
