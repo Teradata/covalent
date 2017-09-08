@@ -413,7 +413,6 @@
           [columns]="nestedColumnsExample"
           [sortable]="true"
           [sortOrder]="sortOrder"
-          [sortBy]="nestedSortBy"
           (sortChange)="nestedSort($event)">
           <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
             <div layout="column">
@@ -452,7 +451,6 @@
               [columns]="nestedColumnsExample"
               [sortable]="true"
               [sortOrder]="sortOrder"
-              [sortBy]="nestedSortBy"
               (sortChange)="nestedSort($event)">
               <ng-template tdDataTableTemplate="score" let-value="value" let-row="row" let-column="column">
                 <div layout="column">
