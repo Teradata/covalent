@@ -182,13 +182,13 @@
     magic-string "^0.22.3"
     source-map "^0.5.6"
 
-"@ngx-translate/core@7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-7.0.0.tgz#5b6f63bd4042164d44cd85f68703af96e9392e7d"
+"@ngx-translate/core@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-8.0.0.tgz#751fd6b512d80f3a748d2de8dfc96dfefa29afe0"
 
-"@ngx-translate/http-loader@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-0.1.0.tgz#6029325561d7868fe325a419de2770e98ff1502e"
+"@ngx-translate/http-loader@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-1.0.2.tgz#cd4aa2cb73e400346dacaae2dac5d29dc58c298a"
 
 "@swimlane/ngx-charts@5.3.1":
   version "5.3.1"
