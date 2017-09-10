@@ -85,11 +85,11 @@
     "rxjs": "^5.2.0",
     "showdown": "1.6.4",
     "tslib": "^1.7.1",
-    "web-animations-js": "2.2.5",
-    "zone.js": "0.8.12"
+    "web-animations-js": "2.3.1",
+    "zone.js": "0.8.17"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.7",
+    "@angular/cli": "1.4.1",
     "@angular/compiler-cli": "^4.3.0",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
@@ -130,7 +130,7 @@
     "semver": "5.2.0",
     "ts-node": "^3.0.4",
     "tslint": "5.2.0",
-    "typescript": "2.4.2",
+    "typescript": "~2.3.2",
     "uglify-js": "^2.8.14"
   }
 }
