@@ -13,7 +13,7 @@
           <ng-template
             *ngIf="_chipTemplate?.templateRef"
             [ngTemplateOutlet]="_chipTemplate?.templateRef"
-            [ngOutletContext]="{ chip: chip }">
+            [ngTemplateOutletContext]="{ chip: chip }">
           </ng-template>
         </span>
         <md-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
@@ -45,7 +45,7 @@
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"
           [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
-          [ngOutletContext]="{ option: item }">
+          [ngTemplateOutletContext]="{ option: item }">
         </ng-template>
       </md-option>
     </ng-template>
