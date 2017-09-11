@@ -3,10 +3,6 @@
 
 This release will make sure we work properly with `@angular/material@1.0.0-beta.10`.
 
-Please check the angular material `beta.10` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta10-découpage-panjandrum-2017-08-29) for their [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes)
-
-Also please check their [deprecations](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecations), since those will be breaking changes in future material releases.
-
 We are also pleased to announce the release of the [`covalent/text-editor`](https://github.com/Teradata/covalent-text-editor) module which wraps the SimpleMDE lib for angular use.
 
 #### Highlights
@@ -19,6 +15,10 @@ We are also pleased to announce the release of the [`covalent/text-editor`](http
 - Basic [IE11](https://github.com/Teradata/covalent/blob/develop/docs/IE11.md) support (we aware that there might be issues, so please create an issue if you find one)
 
 ## Breaking Changes
+
+Please check the angular material `beta.10` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta10-découpage-panjandrum-2017-08-29) for their [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes)
+
+Also please check their [deprecations](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecations), since those will be breaking changes in future material releases.
 
 #### CovalentDynamicFormsModule
 
@@ -99,7 +99,7 @@ More information in [https://github.com/Teradata/covalent/pull/772](#772)
 * **code-editor:** introducing [`covalent-text-editor`](https://github.com/Teradata/covalent-text-editor) in our docs.
 * **data-table:** add fixed headers when scrolling body [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
 * **data-table:** add virtual scroll into data table [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
-* **data-table:** add configurable column widhts [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
+* **data-table:** add configurable column widths [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
 * **data-table:** make users provide all the pieces of an atomic data-table [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
 * **dependencies:** add basic support for angular 5 [e5fc929c193e46e89c36bbeb0a0333acc3dfb2a5](https://github.com/Teradata/covalent/commit/e5fc929c193e46e89c36bbeb0a0333acc3dfb2a5))
 * **dynamic-forms:** added dynamic file input [5993f7ec2892c56028076518f60dc93c26a0a24f](https://github.com/Teradata/covalent/commit/5993f7ec2892c56028076518f60dc93c26a0a24f))
