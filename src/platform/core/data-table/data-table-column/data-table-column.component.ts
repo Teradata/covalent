@@ -92,6 +92,9 @@ export class TdDataTableColumnComponent {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column');
   }
 
+  /**
+   * Listening to click event on host to throw a sort event
+   */
   @HostListener('click', ['event'])
   handleClick(): void {
     if (this.sortable) {

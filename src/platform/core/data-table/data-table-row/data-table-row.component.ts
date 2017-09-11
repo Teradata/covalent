@@ -40,17 +40,13 @@ export class TdDataTableRowComponent {
     return this._selected;
   }
 
-  get height(): number {
-    if (this._elementRef.nativeElement) {
-      return this._elementRef.nativeElement.getBoundingClientRect().height;
-    }
-    return 48;
-  }
-
   constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-row');
   }
 
+  /**
+   * Listening to click event to explicitly focus the row element.
+   */
   @HostListener('click', ['$event'])
   clickListener(): void {
     this.focus();

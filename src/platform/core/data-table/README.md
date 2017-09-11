@@ -50,11 +50,11 @@ export interface ITdDataTableColumn {
   tooltip?: string; // used to add a tooltip into the column header
   numeric?: boolean; // used to right align elements if they are numeric
   format?: (value: any) => any; // used to format the cell values
-  nested?: boolean;
+  nested?: boolean; // when this is true, the `.` characters will be taken as key separators for nested values
   sortable?: boolean; // used to make a particular column sortable
   hidden?: boolean; // used to hide the column in the data table on the fly
   filter?: boolean;
-  width?: ITdDataTableColumnWidth | number; // used to configure the widhts of the columns, if omitted it will fill the rest of the space
+  width?: ITdDataTableColumnWidth | number; // used to configure the widths of the columns, if omitted it will fill the rest of the space
 }
 
 export interface ITdDataTableColumnWidth {

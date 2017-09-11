@@ -88,6 +88,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _hostWidth: number = 0;
 
   get hostWidth(): number {
+    // if the checkboxes are rendered, we need to remove their width
+    // from the total width to calculate properly
     if (this.selectable) {
       return this._hostWidth - 42;
     }
@@ -107,14 +109,25 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _onHorizontalScroll: Subject<number> = new Subject<number>();
   private _onVerticalScroll: Subject<number> = new Subject<number>();
 
+  /**
+   * Returns the height of the row
+   * For now we assume thats 49px.
+   */
   get rowHeight(): number {
     return 49;
   }
 
+  /**
+   * Returns the number of rows that are rendered outside the viewport.
+   */
   get offsetRows(): number {
     return 2;
   }
 
+  /**
+   * Returns the offset style with a proper calculation on how much it should move
+   * over the y axis of the total height
+   */
   get offsetTransform(): SafeStyle {
     let offset: number = 0;
     if (this._scrollVerticalOffset > (this.offsetRows * this.rowHeight)) {
@@ -123,6 +136,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     return this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
   }
 
+  /**
+   * Returns the assumed total height of the rows
+   */
   get totalHeight(): number {
     if (this._data) {
       return this._data.length * this.rowHeight;
@@ -130,16 +146,24 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     return 0;
   }
 
+  /**
+   * Returns the initial row to render in the viewport
+   */
   get fromRow(): number {
     if (this._data) {
+      // we calculate how many rows would have been scrolled minus an offset
       let fromRow: number = Math.floor((this._scrollVerticalOffset / this.rowHeight)) - this.offsetRows;
       return fromRow > 0 ? fromRow : 0;
     }
     return 0;
   }
 
+  /**
+   * Returns the last row to render in the viewport
+   */
   get toRow(): number {
     if (this._data) {
+      // we calculate how many rows would fit in the viewport and add an offset
       let toRow: number = Math.floor((this._hostHeight / this.rowHeight)) + this.fromRow + (this.offsetRows * 2);
       if (toRow > this._data.length) {
         toRow = this._data.length;
@@ -229,6 +253,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     this._data = data;
     Promise.resolve().then(() => {
       this.refresh();
+      // scroll back to the top if the data has changed
       this._scrollableDiv.nativeElement.scrollTop = 0;
     });
   }
@@ -412,12 +437,13 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     this._resizeSubs = debounceTime.call(this._onResize.asObservable(), 10).subscribe(() => {
       this._calculateWidths();
     });
-    // initialize observable for scroll reposition
+    // initialize observable for scroll column header reposition
     this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
       .subscribe((horizontalScroll: number) => {
       this._scrollHorizontalOffset = horizontalScroll;
       this._changeDetectorRef.markForCheck();
     });
+    // initialize observable for virtual scroll rendering
     this._verticalScrollSubs = this._onVerticalScroll.asObservable()
       .subscribe((verticalScroll: number) => {
       this._scrollVerticalOffset = verticalScroll;
@@ -443,11 +469,15 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   ngAfterContentChecked(): void {
     if (this._elementRef.nativeElement) {
       let newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
+      // if the width has changed then we throw a resize event.
       if (this._hostWidth !== newHostWidth) {
         this._hostWidth = newHostWidth;
         this._onResize.next();
       }
-      let newHostHeight: number = this._elementRef.nativeElement.getBoundingClientRect().height - 56;
+    }
+    if (this._scrollableDiv.nativeElement) {
+      let newHostHeight: number = this._scrollableDiv.nativeElement.getBoundingClientRect().height;
+      // if the height of the viewport has changed, then we mark for check
       if (this._hostHeight !== newHostHeight) {
         this._hostHeight = newHostHeight;
         this._changeDetectorRef.markForCheck();
@@ -648,6 +678,8 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
           }
         }
         this._shiftPreviouslyPressed = true;
+      // if shift wasnt pressed, then we take the element checked as the first row
+      // incase the next click uses shift
       } else if (mouseEvent && !mouseEvent.shiftKey) {
         this._firstCheckboxValue = this._doSelection(row);
         this._shiftPreviouslyPressed = false;
@@ -866,6 +898,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   private _adjustColumnWidhts(): void {
     let fixedTotalWidth: number = 0;
+    // get the number of total columns that have flexible widths (not fixed or hidden)
     let flexibleWidths: number = this._widths.filter((width: IInternalColumnWidth, index: number) => {
       if (this.columns[index].hidden) {
         return false;
@@ -875,13 +908,18 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       }
       return !width.limit && !width.max && !width.min;
     }).length;
+    // calculate how much pixes are left that could be spread across
+    // the flexible columns
     let recalculateHostWidth: number = 0;
     if (fixedTotalWidth < this.hostWidth) {
       recalculateHostWidth = this.hostWidth - fixedTotalWidth;
     }
+    // if we have flexible columns and pixels to spare on them
+    // we try and spread the pixels across them
     if (flexibleWidths && recalculateHostWidth) {
       let newValue: number = Math.floor(recalculateHostWidth / flexibleWidths);
       let adjustedNumber: number = 0;
+      // adjust the column widths with the spread pixels
       this._widths.forEach((colWidth: IInternalColumnWidth) => {
         if (this._widths[colWidth.index].max && this._widths[colWidth.index].value > newValue ||
             this._widths[colWidth.index].min && this._widths[colWidth.index].value < newValue ||
@@ -890,6 +928,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
           adjustedNumber++;
         }
       });
+      // if there are still columns that need to be recalculated, we start over
       let newFlexibleWidths: number = this._widths.filter((width: IInternalColumnWidth) => {
         return !width.limit && !width.max;
       }).length;
@@ -911,6 +950,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       max: false,
     };
     if (this.columns[index]) {
+      // if the provided width has min/max, then we check to see if we need to set it
       if (typeof this.columns[index].width === 'object') {
         let widthOpts: ITdDataTableColumnWidth = <ITdDataTableColumnWidth>this.columns[index].width;
         if (widthOpts && widthOpts.min >= this._widths[index].value) {
@@ -920,11 +960,13 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
           this._widths[index].value = widthOpts.max;
           this._widths[index].max = true;
         }
+      // if it has a fixed width, then we just set it
       } else if (typeof this.columns[index].width === 'number') {
         this._widths[index].value = <number>this.columns[index].width;
         this._widths[index].limit = true;
       }
     }
+    // if there wasnt any width provided, we set a min of 100px
     if (this._widths[index].value < 100) {
       this._widths[index].value = 100;
       this._widths[index].min = true;
