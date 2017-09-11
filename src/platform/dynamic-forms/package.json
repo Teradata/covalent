@@ -1,8 +1,8 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Teradata UI Platform Dynamic Forms Module",
-  "main": "./dynamic-forms.umd.js",
+  "main": "./bundles/dynamic-forms.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "keywords": [
@@ -13,10 +13,6 @@
     "forms"
   ],
   "scripts": {
-  },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
   },
   "repository": {
     "type": "git",
@@ -37,6 +33,6 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/core": "1.0.0-beta.6"
+    "@covalent/core": "1.0.0-beta.7"
   }
 }

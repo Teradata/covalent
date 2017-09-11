@@ -69,6 +69,20 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
     @include angular-material-theme($theme-alt);
     @include covalent-theme($theme-alt);
+
+    .tc-primary {
+        color: mat-color($primary-alt);
+    }
+    .tc-accent,
+    a {
+        color: mat-color($accent-alt);
+    }
+    a:hover {
+        color: darken(mat-color($accent-alt), 10%);
+    }
+    .tc-warn {
+        color: mat-color($warn-alt);
+    }
 }
 
 // Dark theme
@@ -79,6 +93,20 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
     @include angular-material-theme($theme-dark);
     @include covalent-theme($theme-dark);
+
+    .tc-primary {
+        color: mat-color($primary-dark);
+    }
+    .tc-accent,
+    a {
+        color: mat-color($accent-dark);
+    }
+    a:hover {
+        color: darken(mat-color($accent-dark), 10%);
+    }
+    .tc-warn {
+        color: mat-color($warn-dark);
+    }
 }
 
 // Subpage themes
@@ -89,6 +117,20 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
     @include angular-material-theme($theme-docs);
     @include covalent-theme($theme-docs);
+
+    .tc-primary {
+        color: mat-color($primary-docs);
+    }
+    .tc-accent,
+    a {
+        color: mat-color($accent-docs);
+    }
+    a:hover {
+        color: darken(mat-color($accent-docs), 10%);
+    }
+    .tc-warn {
+        color: mat-color($warn-docs);
+    }
 }
 
 // Custom theme examples
@@ -123,11 +165,11 @@ $background: map-get($theme, background);
 // Active icon color in list nav
 md-nav-list {
     [md-list-item].active {
-        md-icon[md-list-avatar] {
+        md-icon[mdListAvatar] {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }
-        md-icon[md-list-icon] {
+        md-icon[mdListIcon] {
             color: mat-color($accent);
         }
     }
@@ -168,4 +210,9 @@ nav {
             border-bottom: 1px solid mat-color($accent);
         }
     }
+}
+
+// Links
+a {
+    text-decoration: none;
 }

@@ -1,11 +1,14 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
+
+import { MdChip} from '@angular/material';
 
 @Component({
   selector: 'chips-demo',
   styleUrls: ['./chips.component.scss'],
   templateUrl: './chips.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [slideInDownAnimation],
 })
 export class ChipsDemoComponent implements OnInit {
@@ -16,6 +19,7 @@ export class ChipsDemoComponent implements OnInit {
   disabled: boolean = false;
   chipAddition: boolean = true;
   chipRemoval: boolean = true;
+  events: string[] = [];
 
   filteringAsync: boolean = false;
 
@@ -57,9 +61,35 @@ export class ChipsDemoComponent implements OnInit {
 
   stackedStringsModel: string[] = this.strings.slice(0, 2);
 
+  get logTime(): string {
+    return new Date().toISOString().split('T')[1].split('.')[0];
+  }
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   ngOnInit(): void {
     this.filterStrings('');
     this.filterObjects('');
+  }
+
+  handleChipBlur(value: any): void {
+    this.events.push(this.logTime + ': Blur Event received from ' + value);
+    this._changeDetectorRef.markForCheck();
+  }
+
+  handleChipFocus(value: any): void {
+    this.events.push(this.logTime + ': Focus Event received from ' + value);
+    this._changeDetectorRef.markForCheck();
+  }
+
+  handleAdd(value: any): void {
+    this.events.push(this.logTime + ': Add Event received from ' + value);
+    this._changeDetectorRef.markForCheck();
+  }
+
+  handleRemove(value: any): void {
+    this.events.push(this.logTime + ': Remove Event received from ' + value);
+    this._changeDetectorRef.markForCheck();
   }
 
   filterStrings(value: string): void {
@@ -98,6 +128,7 @@ export class ChipsDemoComponent implements OnInit {
           return this.asyncModel ? this.asyncModel.indexOf(filteredItem) < 0 : true;
         });
         this.filteringAsync = false;
+        this._changeDetectorRef.markForCheck();
       }, 2000);
     }
   }

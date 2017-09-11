@@ -2,18 +2,20 @@
   <td-dialog-title *ngIf="title">
     {{title}}
   </td-dialog-title>
-  <td-dialog-content layout="column" class="md-subhead tc-grey-700">
+  <td-dialog-content class="md-subhead tc-grey-700">
     {{message}}
-    <form #form="ngForm" layout="row" novalidate flex>
-      <md-input-container flex>
-        <input mdInput
-               #input
-               (focus)="handleInputFocus()"
-               (keydown.enter)="$event.preventDefault(); form.valid && accept()"
-               [(ngModel)]="value"
-               name="value"
-               required/>
-      </md-input-container>
+    <form #form="ngForm" novalidate>
+      <div layout="row">
+        <md-form-field flex>
+          <input mdInput
+                #input
+                (focus)="handleInputFocus()"
+                (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+                [(ngModel)]="value"
+                name="value"
+                required/>
+        </md-form-field>
+      </div>
     </form>
   </td-dialog-content>
   <td-dialog-actions>

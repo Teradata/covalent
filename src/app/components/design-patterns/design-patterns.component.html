@@ -1,0 +1,36 @@
+<td-layout-nav-list #navList
+                    logo="assets:teradata"
+                    toolbarTitle="Covalent"
+                    navigationRoute="/"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
+  <md-nav-list td-sidenav-content>
+    <h3 md-subheader>Design Patterns</h3>
+    <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+      <a md-list-item 
+          [routerLink]="[item.route]" 
+          [routerLinkActive]="['active']" 
+          [routerLinkActiveOptions]="{exact:true}"
+          [tdLayoutNavListClose]="!media.query('gt-sm')">
+        <md-icon mdListAvatar>{{item.icon}}</md-icon>
+        <h3 mdLine> {{item.title}} </h3>
+        <p mdLine> {{item.description}} </p>
+      </a>
+      <md-divider *ngIf="!last" md-inset></md-divider>
+    </ng-template>
+  </md-nav-list>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
+    </button>
+    <span hide-gt-sm>Design Patterns</span>
+    <td-toolbar flex layout="row"></td-toolbar>
+  </div>
+  <div class="theme-alt">
+    <router-outlet></router-outlet>
+  </div>
+</td-layout-nav-list>

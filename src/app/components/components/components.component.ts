@@ -61,6 +61,11 @@ export class ComponentsComponent implements AfterViewInit {
     route: 'data-table',
     title: 'Data Table',
   }, {
+    description: 'Scroll virtually on a set of items',
+    icon: 'format_line_spacing',
+    route: 'virtual-scroll',
+    title: 'Virtual Scroll',
+  }, {
     description: 'JSON object tree with collapsible nodes',
     icon: 'format_indent_increase',
     route: 'json-formatter',
@@ -100,6 +105,11 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'filter_list',
     route: 'pipes',
     title: 'Pipes',
+  }, {
+    description: 'Custom Angular animation utilities',
+    icon: 'theaters',
+    route: 'animations',
+    title: 'Animations',
   }];
 
   optional: Object[] = [{
@@ -111,7 +121,7 @@ export class ComponentsComponent implements AfterViewInit {
     description: 'Parse markdown code',
     icon: 'chrome_reader_mode',
     route: 'markdown',
-    title: 'Markdown',
+    title: 'Markdown Parser',
   }, {
     description: 'Build forms from a JS object',
     icon: 'format_align_center',
@@ -122,6 +132,11 @@ export class ComponentsComponent implements AfterViewInit {
     icon: 'featured_play_list',
     route: 'code-editor',
     title: 'Code Editor',
+  }, {
+    description: 'Text and Markdown editor component',
+    icon: 'keyboard',
+    route: 'text-editor',
+    title: 'Markdown Text Editor',
   }, {
     description: 'Http wrappers and helpers',
     icon: 'http',
@@ -146,7 +161,9 @@ export class ComponentsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    this._changeDetectorRef.detectChanges();
+    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+      this.media.broadcast();
+      this._changeDetectorRef.detectChanges();
+    });
   }
 }

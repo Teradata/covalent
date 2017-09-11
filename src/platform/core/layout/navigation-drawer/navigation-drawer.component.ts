@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MdSidenavToggleResult } from '@angular/material';
+import { MdDrawerToggleResult } from '@angular/material';
 
 import { TdLayoutComponent } from '../layout.component';
 
@@ -14,6 +14,13 @@ import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.a
   selector: '[td-navigation-drawer-menu]',
 })
 export class TdNavigationDrawerMenuDirective {
+
+}
+
+@Directive({
+  selector: '[td-navigation-drawer-toolbar]',
+})
+export class TdNavigationDrawerToolbarDirective {
 
 }
 
@@ -35,11 +42,20 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 
   @ContentChildren(TdNavigationDrawerMenuDirective) _drawerMenu: QueryList<TdNavigationDrawerMenuDirective>;
 
+  @ContentChildren(TdNavigationDrawerToolbarDirective) _toolbar: QueryList<TdNavigationDrawerToolbarDirective>;
+
   /**
-   * Checks if there is a [TdNavigationDrawerMenuDirective] as content.
+   * Checks if there is a [TdNavigationDrawerMenuDirective] has content.
    */
   get isMenuAvailable(): boolean {
-    return this._drawerMenu.length > 0;
+    return this._drawerMenu ? this._drawerMenu.length > 0 : false;
+  }
+
+  /**
+   * Checks if there is a [TdNavigationDrawerToolbarDirective] has content.
+   */
+  get isCustomToolbar(): boolean {
+    return this._toolbar ? this._toolbar.length > 0 : false;
   }
 
   /**
@@ -160,21 +176,21 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdSidenavToggleResult> {
+  public toggle(): Promise<MdDrawerToggleResult> {
     return this._layout.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdSidenavToggleResult> {
+  public open(): Promise<MdDrawerToggleResult> {
     return this._layout.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdSidenavToggleResult> {
+  public close(): Promise<MdDrawerToggleResult> {
     return this._layout.close();
   }
 }

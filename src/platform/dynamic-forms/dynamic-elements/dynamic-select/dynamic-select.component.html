@@ -3,6 +3,6 @@
              [placeholder]="label"
              [required]="required"
              flex="100">
-    <md-option *ngFor="let selection of selections" [value]="selection">{{selection}}</md-option>
+    <md-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</md-option>
   </md-select>
 </div>

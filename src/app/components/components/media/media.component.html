@@ -7,8 +7,8 @@
     <md-list>
       <ng-template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
         <a md-list-item layout-align="row">
-          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" md-line> {{demo.query}}</h3>
-          <p md-line> matches: {{demo.value}} </p>
+          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" mdLine> {{demo.query}}</h3>
+          <p mdLine> matches: {{demo.value}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -28,8 +28,8 @@
     <md-list>
       <ng-template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{bpoint.breakpoint}}</h3>
-          <p md-line> {{bpoint.query}} </p>
+          <h3 mdLine> {{bpoint.breakpoint}}</h3>
+          <p mdLine> {{bpoint.query}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -39,8 +39,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>
@@ -116,8 +116,8 @@
     <md-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
         <a md-list-item layout-align="row">
-          <h3 md-line> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p md-line> {{attr.description}} </p>
+          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p mdLine> {{attr.description}} </p>
         </a>
         <md-divider *ngIf="!last"></md-divider>
       </ng-template>

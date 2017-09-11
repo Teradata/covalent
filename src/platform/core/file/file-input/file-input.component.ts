@@ -1,6 +1,7 @@
 import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
          ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/cdk';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
@@ -72,10 +73,10 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements Contr
    * Sets if multiple files can be dropped/selected at once in [TdFileInputComponent].
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): string | boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 

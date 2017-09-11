@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
@@ -47,10 +48,10 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
    * Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
-  get multiple(): string | boolean {
+  get multiple(): boolean {
     return this._multiple;
   }
 

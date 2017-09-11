@@ -1,19 +1,34 @@
 <form [formGroup]="dynamicForm" novalidate>
-  <div layout="row" 
-         layout-wrap 
-         layout-margin 
-         layout-align="start center">
+  <div layout="row"
+       layout-wrap
+       layout-align="start center">
     <ng-template let-element ngFor [ngForOf]="elements">
-      <td-dynamic-element [formControlName]="element.name"
-                          [dynamicControl]="dynamicForm.controls[element.name]"
-                          [id]="element.name"
-                          [label]="element.label || element.name" 
-                          [type]="element.type"
-                          [required]="element.required"
-                          [min]="element.min"
-                          [max]="element.max"
-                          [selections]="element.selections">
-      </td-dynamic-element>
+      <div class="pad-xs" [style.position]="'relative'" [attr.flex]="element.flex ? element.flex : 100">
+        <td-dynamic-element
+          #dynamicElement
+          *ngIf="dynamicForm.controls[element.name]"
+          [formControlName]="element.name"
+          [dynamicControl]="dynamicForm.controls[element.name]"
+          [id]="element.name"
+          [label]="element.label || element.name"
+          [type]="element.type"
+          [required]="element.required"
+          [min]="element.min"
+          [max]="element.max"
+          [minLength]="element.minLength"
+          [maxLength]="element.maxLength"
+          [selections]="element.selections">
+        </td-dynamic-element>
+        <div class="tc-red-600 md-caption text-sm"
+             [style.position]="'absolute'"
+             [style.bottom.px]="'10'"
+              *ngIf="getErrorTemplateRef(element.name) && dynamicForm.controls[element.name]?.errors">
+          <ng-template
+            [ngTemplateOutlet]="getErrorTemplateRef(element.name)"
+            [ngTemplateOutletContext]="{control: dynamicForm.controls[element.name], errors: dynamicForm.controls[element.name]?.errors}">
+          </ng-template>
+        </div>
+      </div>
     </ng-template>
   </div>
   <ng-content></ng-content>

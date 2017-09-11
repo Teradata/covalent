@@ -44,17 +44,17 @@
       }
     }
     &.mat-primary {
-      .mat-input-underline .mat-input-ripple {
+      .mat-form-field-underline .mat-form-field-ripple {
         background-color: mat-color($primary);
       }
     }
     &.mat-accent {
-      .mat-input-underline .mat-input-ripple {
+      .mat-form-field-underline .mat-form-field-ripple {
         background-color: mat-color($accent);
       }
     }
     &.mat-warn {
-      .mat-input-underline .mat-input-ripple {
+      .mat-form-field-underline .mat-form-field-ripple {
         background-color: mat-color($warn);
       }
     }

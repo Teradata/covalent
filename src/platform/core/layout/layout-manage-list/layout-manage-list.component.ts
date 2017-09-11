@@ -1,6 +1,6 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
+import { MdSidenav, MdDrawerToggleResult } from '@angular/material';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
 
@@ -57,21 +57,21 @@ export class TdLayoutManageListComponent implements ILayoutTogglable {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdSidenavToggleResult> {
+  public toggle(): Promise<MdDrawerToggleResult> {
     return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdSidenavToggleResult> {
+  public open(): Promise<MdDrawerToggleResult> {
     return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdSidenavToggleResult> {
+  public close(): Promise<MdDrawerToggleResult> {
     return this.sidenav.close();
   }
 

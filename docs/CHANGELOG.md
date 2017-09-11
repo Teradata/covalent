@@ -1,3 +1,136 @@
+<a name="1.0.0-beta.7"></a>
+# [1.0.0-beta.7 One Step Closer](https://github.com/Teradata/covalent/tree/v1.0.0-beta.7) (2017-09-11)
+
+This release will make sure Covalent works properly with `@angular/material@1.0.0-beta.10`.
+
+We are also pleased to announce the release of the [`covalent/text-editor`](https://github.com/Teradata/covalent-text-editor) module which wraps the SimpleMDE lib for Angular use.
+
+#### Highlights
+
+- Virtual scroll module
+- Text Editor module
+- Dynamic forms features and bug fixes
+- Data table sticky headers, configurable column widths and virtual scroll
+- Pre-canned animations!
+- Initial [IE11](https://github.com/Teradata/covalent/blob/develop/docs/IE11.md) support (there may be issues, so please [create an issue](https://github.com/Teradata/covalent/issues/new) if you find one)
+
+## Breaking Changes
+
+Please check the Angular Material `beta.10` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta10-découpage-panjandrum-2017-08-29) for [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes) and [deprecations](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecations), since those will be breaking changes in future material releases.
+
+#### CovalentDynamicFormsModule
+
+In order to ensure proper i18n support, all error messages mut be provided by the developer.
+
+e.g.
+
+```html
+<td-dynamic-forms #dynamicForm [elements]="dynamicElements">
+  <ng-template let-element ngFor [ngForOf]="dynamicElements">
+    <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+      <span *ngIf="control.touched || !control.pristine">
+        <span *ngIf="control.hasError('required')">Required</span>
+        <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
+        <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+      </span>
+    </ng-template>
+  </ng-template>
+</td-dynamic-forms>
+```
+
+#### CovalentPagingModule
+
+The `md-select` component has been abstracted from the paging bar, so that it could be easily added by devs.
+
+The following inputs are:
+
+- `[pageSizes]`, `[pageSizeAll]`, `[pageSizeAllText]`.
+
+Before:
+
+```html
+<td-paging-bar #pagingBar
+                       [pageSizes]="[50,100,200,500,1000]"
+                       [pageSize]="pageSize"
+                       [total]="1345"
+                       (change)="change($event)">
+  <span td-paging-bar-label hide-xs>Rows per page:</span>
+  <span>{{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span></span>
+</td-paging-bar>
+```
+
+After:
+
+```html
+<td-paging-bar #pagingBar
+                       [pageSize]="pageSize"
+                       [total]="1345"
+                       (change)="change($event)">
+  <span hide-xs>Rows per page:</span>
+  <md-select [(ngModel)]="pageSize">
+    <md-option *ngFor="let size of [50,100,200,500,1000]" [value]="size">
+      {{size}}
+    </md-option>
+  </md-select>
+  <span>{{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span></span>
+</td-paging-bar>
+```
+
+More information in [https://github.com/Teradata/covalent/pull/772](#772)
+
+## Bug Fixes
+* **chips:** close manually autocomplete menu on mousedown [08937b57b82691bf47d674c283406b3cef8897a3](https://github.com/Teradata/covalent/commit/08937b57b82691bf47d674c283406b3cef8897a3))
+* **dynamic-forms:** dynamically add, edit, remove Form Controls [e7be2a8b506de83cf63420f0842ba4f5170d9446](https://github.com/Teradata/covalent/commit/e7be2a8b506de83cf63420f0842ba4f5170d9446))
+* **flex-layout:** fixed breakpoints limits [2e3b35f72d7d39860b0241128f68b0e097c0eb0c](https://github.com/Teradata/covalent/commit/2e3b35f72d7d39860b0241128f68b0e097c0eb0c))
+* **layout:** fix layout directives not hidden element in certain scenarios [d3c8d1b57668d22383316a2daedc7275e43381f0](https://github.com/Teradata/covalent/commit/d3c8d1b57668d22383316a2daedc7275e43381f0))
+* **demos:** fix snackbar demos to be more inline with Angular Material [2342dea1e906b9934e9b3264b07f2f792c877290](https://github.com/Teradata/covalent/commit/2342dea1e906b9934e9b3264b07f2f792c877290))
+* **sass:** missing scss variables for scss compilation [0a22bbabf053423e586d06d1d6744e118f4c426c](https://github.com/Teradata/covalent/commit/0a22bbabf053423e586d06d1d6744e118f4c426c))
+
+
+## Features
+* **animations:** added pre-canned animation docs [e182bc5e4dcdcc3f9d43eb340ff58f5097e1e777](https://github.com/Teradata/covalent/commit/e182bc5e4dcdcc3f9d43eb340ff58f5097e1e777))
+* **animations:** added rotate animation [e182bc5e4dcdcc3f9d43eb340ff58f5097e1e777](https://github.com/Teradata/covalent/commit/e182bc5e4dcdcc3f9d43eb340ff58f5097e1e777))
+* **animations:** added attention seekers animations [f106ccf8204d54a95312636aa961c199221fc538](https://github.com/Teradata/covalent/commit/f106ccf8204d54a95312636aa961c199221fc538))
+* **animations:** added collapse and fade in/out animations [6906c7557070647f8685445a180a82489c649344](https://github.com/Teradata/covalent/commit/6906c7557070647f8685445a180a82489c649344))
+* **browser:** base platform & docs support for IE11 [fee4182540a60ae5a86ffdf4fc5a87216ac30226](https://github.com/Teradata/covalent/commit/fee4182540a60ae5a86ffdf4fc5a87216ac30226))
+* **chips:** add chipBlur and chipFocus events to chips [ee7f40f2b2f21ee7cb6401535710621ea5449a46](https://github.com/Teradata/covalent/commit/ee7f40f2b2f21ee7cb6401535710621ea5449a46))
+* **code-editor:** introducing [`covalent-text-editor`](https://github.com/Teradata/covalent-text-editor) in our docs.
+* **data-table:** add fixed headers when scrolling body [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
+* **data-table:** add virtual scroll into data table [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
+* **data-table:** add configurable column widths [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
+* **data-table:** make users provide all the pieces of an atomic data-table [c5f065a3c779eb1b0891efb60748fd3c85ff7035](https://github.com/Teradata/covalent/commit/c5f065a3c779eb1b0891efb60748fd3c85ff7035))
+* **dependencies:** add basic support for Angular v5 [e5fc929c193e46e89c36bbeb0a0333acc3dfb2a5](https://github.com/Teradata/covalent/commit/e5fc929c193e46e89c36bbeb0a0333acc3dfb2a5))
+* **dynamic-forms:** added dynamic file input [5993f7ec2892c56028076518f60dc93c26a0a24f](https://github.com/Teradata/covalent/commit/5993f7ec2892c56028076518f60dc93c26a0a24f))
+* **dynamic-forms:** make flex width % configurable via element interface [e7be2a8b506de83cf63420f0842ba4f5170d9446](https://github.com/Teradata/covalent/commit/e7be2a8b506de83cf63420f0842ba4f5170d9446))
+* **dynamic-forms:** support OnPush change detection [e7be2a8b506de83cf63420f0842ba4f5170d9446](https://github.com/Teradata/covalent/commit/e7be2a8b506de83cf63420f0842ba4f5170d9446))
+* **dynamic-forms:** add demo to build your own dynamic forms [e7be2a8b506de83cf63420f0842ba4f5170d9446](https://github.com/Teradata/covalent/commit/e7be2a8b506de83cf63420f0842ba4f5170d9446))
+* **dynamic-forms:** add minLength and maxLength validations [be37ea1250e8ebb927120ed0244d2c8a10cfcf14](https://github.com/Teradata/covalent/commit/be37ea1250e8ebb927120ed0244d2c8a10cfcf14))
+* **dynamic-forms:** ability to add value/label selection values to dynamic select [8cc52a03f499e46761ddcb70c65a582fe106f8c2](https://github.com/Teradata/covalent/commit/8cc52a03f499e46761ddcb70c65a582fe106f8c2))
+* **dynamic-forms:** add custom validation capability and error message template [9050f96be192233c0e9a7c87518c653d7a23b32e](https://github.com/Teradata/covalent/commit/9050f96be192233c0e9a7c87518c653d7a23b32e))
+* **docs:** added dedicated Design Patterns section [e586d71f7042023e813af6dd6006d1a68e5fe472](https://github.com/Teradata/covalent/commit/e586d71f7042023e813af6dd6006d1a68e5fe472))
+* **navigation-drawer:** ability to override toolbar content [1a7c71ba14b4c10c75a039105c6da83483b63b30](https://github.com/Teradata/covalent/commit/1a7c71ba14b4c10c75a039105c6da83483b63b30))
+* **paging:** new demo for input `go to` usage with paging bar leveraging exposed API's [846a4b4ac9403f6a07b582170cfca52b46361a34](https://github.com/Teradata/covalent/commit/846a4b4ac9403f6a07b582170cfca52b46361a34)), closes [#743](https://github.com/Teradata/covalent/issues/743)
+* **text-editor:** demo for Covalent text/markdown editor [3127d76856362d84794c0ace1448580eb8f7eb8a](https://github.com/Teradata/covalent/commit/3127d76856362d84794c0ace1448580eb8f7eb8a))
+* **virtual-scroll:** initial implementation of virtual scroll module [7bb723dc81f5e5afb6ca77cbc4f6fda3cb8ffe14](https://github.com/Teradata/covalent/commit/7bb723dc81f5e5afb6ca77cbc4f6fda3cb8ffe14))
+
+
+## Refactor
+* **all:** leverage coerceBooleanProperty from `@angular/cdk` [707d0774431eb1832fd9f929abb0d0bde0524bbf](https://github.com/Teradata/covalent/commit/707d0774431eb1832fd9f929abb0d0bde0524bbf))
+* **rxjs:** remove uses of rxjs patch operators [9394017896ccdd63ea7a2ec73345f6fd2e3058f7](https://github.com/Teradata/covalent/commit/9394017896ccdd63ea7a2ec73345f6fd2e3058f7))
+* **all:** abstract disableRipple inputs and create mixin for reuse [df4fbf167682aef8987a7bdcbe817c7e624d9819](https://github.com/Teradata/covalent/commit/df4fbf167682aef8987a7bdcbe817c7e624d9819))
+* **paging:** refactor paging bar to allow devs leverage API for multiple usages [7f2815d8f20eb59eba026a4ce8980c109f68e5e7](https://github.com/Teradata/covalent/commit/7f2815d8f20eb59eba026a4ce8980c109f68e5e7))
+
+## Performance
+* **build:** leverage tslib to reduce bundle size and create minified UMD bundle [3ab2fa02d16d33fb032e9efce84a06521b046573](https://github.com/Teradata/covalent/commit/3ab2fa02d16d33fb032e9efce84a06521b046573))
+* **data-table:** make checkbox state check more performant [3d2a1abaca6b1f919c208f6e785e9cd36e701d5b](https://github.com/Teradata/covalent/commit/3d2a1abaca6b1f919c208f6e785e9cd36e701d5b))
+
+## Internal
+* **all:** set fixed dependencies to zone.js and tslint [d3c8d1b57668d22383316a2daedc7275e43381f0](https://github.com/Teradata/covalent/commit/d3c8d1b57668d22383316a2daedc7275e43381f0))
+* **dependencies:** upgrade to @angular/cli@1.4.1 [6fec819e8ad4a98111b482ad0766edd645a070c6](https://github.com/Teradata/covalent/commit/6fec819e8ad4a98111b482ad0766edd645a070c6))
+* **dependencies:** upgrade to material/cdk@beta.10 [d53ef53bff710eb0e9447880d55cef4951f3c8b5](https://github.com/Teradata/covalent/commit/d53ef53bff710eb0e9447880d55cef4951f3c8b5))
+* **node:** update node engine to 6.11.1 [c3a056bc750422e44602dbca4e3a47b3230f716c](https://github.com/Teradata/covalent/commit/c3a056bc750422e44602dbca4e3a47b3230f716c))
+* **ssr:** first iteration on kitchen sink for server-side rendering test script [d88d0be8ade25ca7b9170586ce15762ea5da7de0](https://github.com/Teradata/covalent/commit/d88d0be8ade25ca7b9170586ce15762ea5da7de0))
+
 <a name="1.0.0-beta.6"></a>
 # [1.0.0-beta.6 Midnight Rider](https://github.com/Teradata/covalent/tree/v1.0.0-beta.6) (2017-07-07)
 
@@ -132,11 +265,11 @@ After:
 ```html
 <td-layout-manage-list>
   <md-toolbar td-sidenav-content></md-toolbar>
-  <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
+  <div td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
     Sidenav Content
   </div>
   <md-toolbar>
-    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+    <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
   </md-toolbar>

@@ -1,14 +1,18 @@
 $backdrop-index: 80;
 $checkbox-size: 18px;
 
-.mat-table-container {
+:host {
   display: block;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  .td-data-table-scrollable {
+    position: relative;
+    overflow: auto;
+    height: calc(100% - 56px)
+  }
 }
 
 table.td-data-table {
+  width: auto !important;
   &.mat-selectable tbody > tr.td-data-table-row {
     transition: background-color 0.2s;
   }
@@ -16,15 +20,16 @@ table.td-data-table {
   &.mat-selectable .td-data-table-column,
   &.mat-selectable th.td-data-table-column,
   &.mat-selectable td.td-data-table-cell {
-    &:first-child {
-      width: 20px;
+    &:first-child > .td-data-table-column-content-wrapper {
+      width: 18px;
+      min-width: 18px;
       padding: 0 24px;
     }
-    &:nth-child(2) {
+    &:nth-child(2) > .td-data-table-column-content-wrapper {
       padding-left: 0px;
     }
     [dir='rtl'] & {
-      &:nth-child(2){
+      &:nth-child(2) > .td-data-table-column-content-wrapper {
         padding-right: 0px;
         padding-left: 28px;
       }
@@ -33,7 +38,7 @@ table.td-data-table {
 
   td.mat-checkbox-cell,
   th.mat-checkbox-column {
-    width: $checkbox-size;
+    width: 42px;
     font-size: 0 !important;
     md-pseudo-checkbox {
       width: $checkbox-size;

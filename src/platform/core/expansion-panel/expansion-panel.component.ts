@@ -1,9 +1,11 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild,
          ElementRef, Renderer2 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/cdk';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { TdCollapseAnimation, ICanDisable, mixinDisabled } from '../common/common.module';
+import { TdCollapseAnimation, ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { TdRotateAnimation } from '../common/common.module';
 
 @Directive({
   selector: '[td-expansion-panel-header]ng-template',
@@ -41,20 +43,20 @@ export class TdExpansionPanelSummaryComponent {}
 export class TdExpansionPanelBase {}
 
 /* tslint:disable-next-line */
-export const _TdExpansionPanelMixinBase = mixinDisabled(TdExpansionPanelBase);
+export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExpansionPanelBase));
 
 @Component({
   selector: 'td-expansion-panel',
   styleUrls: ['./expansion-panel.component.scss' ],
   templateUrl: './expansion-panel.component.html',
-  inputs: ['disabled'],
+  inputs: ['disabled', 'disableRipple'],
   animations: [
     TdCollapseAnimation(),
+    TdRotateAnimation({ anchor: 'tdRotate' }),
   ],
 })
-export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable  {
+export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {
 
-  private _disableRipple: boolean = false;
   private _expand: boolean = false;
 
   @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
@@ -75,24 +77,12 @@ export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implem
   @Input() sublabel: string;
 
   /**
-   * disableRipple?: string
-   * Whether the ripple effect for this component is disabled.
-   */
-  @Input('disableRipple')
-  set disableRipple(disableRipple: boolean) {
-    this._disableRipple = <any>disableRipple !== '' ? (<any>disableRipple === 'true' || disableRipple === true) : true;
-  }
-  get disableRipple(): boolean {
-    return this._disableRipple;
-  }
-
-  /**
    * expand?: boolean
    * Toggles [TdExpansionPanelComponent] between expand/collapse.
    */
   @Input('expand')
   set expand(expand: boolean) {
-    this._setExpand(<any>expand === 'true' || expand === true);
+    this._setExpand(coerceBooleanProperty(expand));
   }
   get expand(): boolean {
     return this._expand;

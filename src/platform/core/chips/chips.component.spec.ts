@@ -9,8 +9,9 @@ import {
   FormControl, FormsModule, ReactiveFormsModule,
 } from '@angular/forms';
 
-import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk';
-import { OverlayContainer, MdInputDirective, MdChip } from '@angular/material';
+import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { MdChip } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
 
@@ -44,6 +45,7 @@ describe('Component: Chips', () => {
         TdChipsObjectsRequireMatchTestComponent,
         TdChipsStackedTestComponent,
         TdChipRemovalTestComponent,
+        TdChipsEventsTestComponent,
       ],
       providers: [
         {provide: OverlayContainer, useFactory: () => {
@@ -473,6 +475,72 @@ describe('Component: Chips', () => {
 
   });
 
+  describe('events: ', () => {
+    let fixture: ComponentFixture<TdChipsEventsTestComponent>;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsEventsTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+    });
+
+    it('should right arrow on a chip and see the chipFocus event', (done: DoneFn) => {
+        let focusEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipFocusEvent');
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(focusEventSpy.calls.count()).toBe(0);
+          chips.nativeElement.focus();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            chips.triggerEventHandler('focus', new Event('focus'));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.debugElement.queryAll(By.directive(MdChip))[0]
+                .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                expect(focusEventSpy.calls.count()).toBe(1);
+                done();
+              });
+            });
+          });
+        });
+    });
+
+    it('should right arrow on a chip twice and see the chipBlur event', (done: DoneFn) => {
+        let blurEventSpy: jasmine.Spy = spyOn(fixture.componentInstance, 'chipBlurEvent');
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(blurEventSpy.calls.count()).toBe(0);
+          chips.nativeElement.focus();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            chips.triggerEventHandler('focus', new Event('focus'));
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+              fixture.debugElement.queryAll(By.directive(MdChip))[0]
+                .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                  .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  expect(blurEventSpy.calls.count()).toBe(1);
+                  done();
+                });
+              });
+            });
+          });
+        });
+    });
+
+  });
+
   describe('chip removal usage, requires disabled to be false: ', () => {
     let fixture: ComponentFixture<TdChipRemovalTestComponent>;
     let input: DebugElement;
@@ -797,4 +865,26 @@ class TdChipRemovalTestComponent {
     'sushi',
   ];
   selectedItems: string[] = this.items.slice(0, 3);
+}
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" (chipFocus)="chipFocusEvent()" (chipBlur)="chipBlurEvent()">
+      </td-chips>`,
+})
+class TdChipsEventsTestComponent {
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+  ];
+  selectedItems: string[] = this.items.slice(0, 2);
+
+  chipFocusEvent(): void {
+    /* noop */
+  }
+
+  chipBlurEvent(): void {
+    /* noop */
+  }
 }

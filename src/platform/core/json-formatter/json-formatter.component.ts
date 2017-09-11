@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, Optional } from '@angular/core';
-import { Dir } from '@angular/cdk';
+import { Dir } from '@angular/cdk/bidi';
 import { TdCollapseAnimation } from '../common/common.module';
 
 @Component({

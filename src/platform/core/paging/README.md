@@ -4,7 +4,7 @@
 
 The `(change)` event throws an event with the following interface:
 
-```typscript
+```typescript
 export interface IPageChangeEvent {
   page: number;
   maxPage: number;
@@ -20,13 +20,11 @@ export interface IPageChangeEvent {
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
-| `initialPage` | `number` | Sets starting page for the paging bar. Defaults to '1'
-| `pageSizes?` | `number[]` | Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000].
-| `pageSize?` | `number` | Selected page size for the pagination. Defaults to first element of the [pageSizes] array.
+| --- | --- | 650--- |
+| `initialPage` | `number` | Sets starting page for the paging bar. Defaults to 1.
+| `pageLinkCount?` | `number` | Amount of page navigation links for the paging bar. Defaults to 0.
 | `firstLast?` | `boolean` | Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
-| `pageSizeAll?` | `boolean` | Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
-| `pageSizeAllText?` | `string` | Text for the 'all' menu item in the page size menu. Defaults to 'All'
+| `pageSize?` | `number` | Selected page size for the pagination. Defaults to 50.
 | `total` | `number` | Total rows for the pagination.
 | `change` | `function($event: IPageChangeEvent)` | Method to be executed when page size changes or any button is clicked in the paging bar.
 | `navigateToPage` | `function(page: number): boolean` | Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
@@ -49,12 +47,84 @@ export class MyModule {}
 
 ## Usage
 
-Example for HTML usage:
+Example with page links for navigation:
 
- ```html
-<td-paging-bar #pagingBar pageSizeAllText="allText" [firstLast]="true|false" [pageSizeAll]="true|false" [pageSizes]="[100,200,500,1000,2000]"
-                       [initialPage]="1" [pageSize]="100" [total]="1345" (change)="change($event)">
-  <span td-paging-bar-label hide-xs>Row per page:</span>
+```html
+<td-paging-bar #pagingBar
+                [pageLinkCount]="5"
+                [pageSize]="100"
+                [total]="1345"
+                (change)="change($event)">
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
- ```
+```
+
+Example with material select for dynamic page sizes:
+
+```html
+<td-paging-bar #pagingBar
+                [pageSize]="pageSize"
+                [total]="1345"
+                (change)="change($event)">
+  <span hide-xs>Rows per page:</span>
+  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+    <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
+      {{size}}
+    </md-option>
+  </md-select>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>
+```
+
+Example with material input for navigation: 
+
+```html
+<td-paging-bar #pagingBar
+                [pageSize]="100"
+                [total]="1345"
+                (change)="change($event)">
+  <p hide-xs>Go to:</p>
+  <md-form-field>
+    <input #goToInput
+            mdInput
+            type="number"
+            [min]="1"
+            [max]="pagingBar.maxPage"
+            [value]="pagingBar.page"
+            (blur)="goToInput.value = pagingBar.page"
+            (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
+  </md-form-field>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+  
+</td-paging-bar>
+```
+
+Example with dynamic page sizes, input and page links for navigation:
+
+```html
+<td-paging-bar #pagingBar
+                [firstLast]="true"
+                [pageLinkCount]="5"
+                [pageSize]="pageSize"
+                [total]="1345"
+                (change)="change($event)">
+  <span hide-xs>Rows per page:</span>
+  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+    <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
+      {{size}}
+    </md-option>
+  </md-select>
+  <p hide-xs>Go to:</p>
+  <md-form-field>
+    <input #goToInput
+            mdInput
+            type="number"
+            [min]="1"
+            [max]="pagingBar.maxPage"
+            [value]="pagingBar.page"
+            (blur)="goToInput.value = pagingBar.page"
+            (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
+  </md-form-field>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>
+```

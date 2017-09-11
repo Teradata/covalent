@@ -1,8 +1,8 @@
 {
   "name": "@covalent/http",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Teradata UI Platform Http Helper Module",
-  "main": "./http.umd.js",
+  "main": "./bundles/http.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "keywords": [
@@ -14,10 +14,6 @@
     "interceptor"
   ],
   "scripts": {
-  },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
   },
   "repository": {
     "type": "git",
@@ -37,8 +33,11 @@
     "Jeremy Smartt <jeremy.smartt@teradata.com>",
     "Steven Ov <steven.ov@teradata.com>"
   ],
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
   "peerDependencies": {
-    "@angular/core": "^4.2.0",
-    "@angular/http": "^4.2.0"
+    "@angular/core": "^4.3.0",
+    "@angular/http": "^4.3.0"
   }
 }

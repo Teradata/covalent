@@ -4,16 +4,19 @@
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
-  padding: 0 28px 0 28px;
   position: relative;
+  padding: 0;
+  > .td-data-table-heading {
+    padding: 0 28px 0 28px;
+  }
 
-  &:first-child {
+  &:first-child > .td-data-table-heading {
     @include rtl(padding-left, 24px, initial);
     @include rtl(padding-right, initial, 24px);
   }
-  &:last-child {
-    @include rtl(padding-left, initial, 24px);
-    @include rtl(padding-right, 24px, initial);
+  &:last-child > .td-data-table-heading {
+    @include rtl(padding-left, 28px, 24px);
+    @include rtl(padding-right, 24px, 28px);
   }
 
   md-icon {
@@ -24,7 +27,7 @@
 
     &.td-data-table-sort-icon {
       opacity: 0;
-      transition: transform 0.25s, opacity 0.25s;
+      transition: transform 0.25s;
 
       &.mat-asc {
         transform: rotate(0deg);
@@ -55,21 +58,25 @@
       outline: none;
     }
   }
-
+  .td-data-table-heading {
+    display: inline-block;
+    position: relative;
+  }
   md-icon.td-data-table-sort-icon {
     position: absolute;
+    top: 0px;
   }
   &.mat-numeric {
   @include rtl(text-align, right, left);
     md-icon.td-data-table-sort-icon {
-        @include rtl(margin-left, -22px, initial);
-        @include rtl(margin-right, initial, -22px);
+      @include rtl(margin-left, -22px, initial);
+      @include rtl(margin-right, initial, -22px);
     }
   }
   &:not(.mat-numeric) {
     md-icon.td-data-table-sort-icon {
-        @include rtl(margin-left, 6px, initial);
-        @include rtl(margin-right, initial, 6px);
+      @include rtl(margin-left, 6px, initial);
+      @include rtl(margin-right, initial, 6px);
     }
   }
 }

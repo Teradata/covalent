@@ -1,7 +1,8 @@
 import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
-import { Validators, ValidatorFn, FormControl } from '@angular/forms';
+import { Validators, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
+import { TdDynamicFileInputComponent } from '../dynamic-elements/dynamic-file-input/dynamic-file-input.component';
 import { TdDynamicTextareaComponent } from '../dynamic-elements/dynamic-textarea/dynamic-textarea.component';
 import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
@@ -23,6 +24,11 @@ export enum TdDynamicElement {
   SlideToggle = <any>'slide-toggle',
   Checkbox = <any>'checkbox',
   Select = <any>'select',
+  FileInput = <any>'file-input',
+}
+
+export interface ITdDynamicElementValidator {
+  validator: ValidatorFn;
 }
 
 export interface ITdDynamicElementConfig {
@@ -32,8 +38,12 @@ export interface ITdDynamicElementConfig {
   required?: boolean;
   min?: any;
   max?: any;
-  selections?: any[];
+  minLength?: any;
+  maxLength?: any;
+  selections?: string[] | { value: any, label: string }[];
   default?: any;
+  flex?: number;
+  validators?: ITdDynamicElementValidator[];
 }
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
@@ -74,31 +84,8 @@ export class TdDynamicFormsService {
       case TdDynamicType.Array:
       case TdDynamicElement.Select:
         return TdDynamicSelectComponent;
-      default:
-        throw new Error(`Error: type ${element} does not exist or not supported.`);
-    }
-  }
-
-  /**
-   * Gets default flex for element depending on [TdDynamicElement | TdDynamicType].
-   * Throws error if it does not exists or not supported.
-   */
-  getDefaultElementFlex(element: TdDynamicElement | TdDynamicType): any {
-    switch (element) {
-      case TdDynamicType.Text:
-      case TdDynamicType.Number:
-      case TdDynamicElement.Slider:
-      case TdDynamicElement.Input:
-      case TdDynamicElement.Password:
-      case TdDynamicType.Array:
-      case TdDynamicElement.Select:
-        return 45;
-      case TdDynamicElement.Textarea:
-        return 95;
-      case TdDynamicType.Boolean:
-      case TdDynamicElement.Checkbox:
-      case TdDynamicElement.SlideToggle:
-        return 20;
+      case TdDynamicElement.FileInput:
+        return TdDynamicFileInputComponent;
       default:
         throw new Error(`Error: type ${element} does not exist or not supported.`);
     }
@@ -126,12 +113,24 @@ export class TdDynamicFormsService {
     if (config.min || config.min === 0) {
       validator = Validators.compose([validator, Validators.min(parseFloat(config.min))]);
     }
+    if (config.maxLength || config.maxLength === 0) {
+      validator = Validators.compose([validator, Validators.maxLength(parseFloat(config.maxLength))]);
+    }
+    if (config.minLength || config.minLength === 0) {
+      validator = Validators.compose([validator, Validators.minLength(parseFloat(config.minLength))]);
+    }
+    // Add provided custom validators to the validator function
+    if (config.validators) {
+      config.validators.forEach((validatorConfig: ITdDynamicElementValidator) => {
+        validator = Validators.compose([validator, validatorConfig.validator]);
+      });
+    }
     return validator;
   }
 }
 
 export function DYNAMIC_FORMS_PROVIDER_FACTORY(
-    parent: TdDynamicFormsService): TdDynamicFormsService {
+  parent: TdDynamicFormsService): TdDynamicFormsService {
   return parent || new TdDynamicFormsService();
 }
 

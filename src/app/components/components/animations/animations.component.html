@@ -1,0 +1,402 @@
+<md-card>
+  <md-card-title>Animations</md-card-title>
+  <md-card-subtitle>Core Covalent animation utilities</md-card-subtitle>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p>Utilities to help add simple reusable animations and reduce boilerplate code. For custom and complex animations look into the Angular animations doc.</p>
+
+    <h3>Setup:</h3>
+    <p>Import individual animation utilities as needed into the component that will contain the elements you want to animate.</p>
+    <p>Replace the "TdAnimationUtility" stub variable in code setup below with the respective animation utilities you decide to equip.</p>
+    <p>
+      Every utility function has default animation properties that can be modified. One of which is a default anchor name that
+      can be used implicitly or overridden with your own custom name. The anchor name is used to attach the animation to an arbitrary
+      element in the template.
+    </p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { TdAnimationUtility_A, TdAnimationUtility_B } from '@covalent/core';
+
+        @Component({
+          ...
+          animations: [
+            TdAnimationUtility_A(), // using implicit anchor name in template
+            TdAnimationUtility_B({ anchor: 'myAnchor' }), // using custom anchor name in template
+          ],
+        })
+        export class MyComponent {
+          triggerState_A: boolean = false;
+          triggerState_B: boolean = false;
+          ...
+        }
+      ]]>
+    </td-highlight>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <a md-button color="primary" href="https://angular.io/guide/animations" target="_blank" class="text-upper">Animations Docs</a>
+  </md-card-actions>
+</md-card>
+
+<md-card>
+  <md-card-title>Rotate Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button [@tdRotate]="rotateState1" (click)="rotateState1 = !rotateState1" color="accent">
+        Rotate 180&deg;<md-icon>mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdRotateAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdRotateAnimation(), // using implicit anchor name 'tdRotate' in template
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdRotate]="triggerState" (click)="triggerState = !triggerState" color="accent">
+            Rotate 180&deg;<md-icon>mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div>
+      <h3>Demo 2:</h3>
+      <button md-raised-button [@tdRotateNeg45]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
+        Rotate -45&deg;<md-icon [@tdRotate545]="rotateState2">mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdRotateAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
+            TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdRotateNeg45]="triggerState" (click)="triggerState = !triggerState" color="accent">
+            Rotate -45&deg;<md-icon [@tdRotate545]="triggerState">mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 mdLine>anchor?: string</h3>
+          <p mdLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdRotate'.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 mdLine>duration?: number</h3>
+          <p mdLine> Duration the animation will run in milliseconds. Defaults to 250 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>degrees?: number</h3>
+          <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>ease?: string</h3>
+          <p md-line>Animation accelerates and decelerates when rotation. Defaults to ease-in.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Collapse Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
+      <div [@tdCollapse]="collapseState1">
+        <md-card>
+          <md-card-title>Collapse card</md-card-title>
+          <md-card-content>Collapse card with a click!</md-card-content>
+          <md-card-actions><button md-raised-button color="primary" (click)="collapseState1 = !collapseState1">Collapse</button></md-card-actions>
+        </md-card>
+      </div>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdCollapseAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdCollapseAnimation(), // using implicit anchor name 'tdCollapse' in template
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = true;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
+          <div [@tdCollapse]="triggerState">
+            <md-card>
+              <md-card-title>Collapse card</md-card-title>
+              <md-card-content>Collapse card with a click!</md-card-content>
+              <md-card-actions><button md-raised-button color="primary" (click)="triggerState = !triggerState">Collapse</button></md-card-actions>
+            </md-card>
+          </div>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdCollapse'.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+         <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnClose?: string</h3>
+          <p md-line>Animation accelerates and decelerates when closing. Defaults to ease-in.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnOpen?: string</h3>
+          <p md-line>Animation accelerates and decelerates when opening. Defaults to ease-out.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Fade in/out Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <p class="md-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
+    <div>
+      <h3>Demo 1:</h3>
+
+      <button md-raised-button color="accent" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button>
+      <div [@tdFadeInOut]="fadeInOutState1">
+        <md-card>
+          <md-card-title>Fade Card</md-card-title>
+          <md-card-content>Fade in or out with a click!</md-card-content>
+          <md-card-actions><button md-raised-button color="primary" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button></md-card-actions>
+        </md-card>
+      </div>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import { TdFadeInOutAnimation } from '@covalent/core';
+          ...
+          animations: [
+            TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
+          ],
+          ...
+          class MyDemo {
+            triggerState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+           <button md-raised-button color="accent" (click)="triggerState = !triggerState">Fade In</button>
+            <div [@tdFadeInOut]="triggerState">
+              <md-card>
+                <md-card-title>Fade Card</md-card-title>
+                <md-card-content>Fade in or out with a click!</md-card-content>
+                <md-card-actions><button md-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></md-card-actions>
+              </md-card>
+            </div>
+        ]]>
+      </td-highlight>
+    </div>
+
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdFadeInOut'.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+         <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnIn?: string</h3>
+          <p md-line>Animation accelerates and decelerates when fading in. Defaults to ease-in.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>easeOnOut?: string</h3>
+          <p md-line>Animation accelerates and decelerates when fading out. Defaults to ease-out.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Attention Seekers Animation</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div>
+      <h3>Demos:</h3>
+
+      <button md-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
+        @tdBounce <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
+        @tdFlash <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+        @tdHeadshake <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+        @tdJello <md-icon>mood</md-icon>
+      </button>
+
+      <button md-raised-button [@tdPulse]="pulseState" (click)="pulseState = !pulseState" color="accent">
+        @tdPulse <md-icon>mood</md-icon>
+      </button>
+
+      <p>Typescript:</p>
+      <td-highlight lang="typescript">
+        <![CDATA[
+          import {
+            TdBounceAnimation,
+            TdFlashAnimation,
+            TdHeadshakeAnimation,
+            TdJelloAnimation,
+            TdPulseAnimation,
+          } from '@covalent/core';
+          ...
+          animations: [
+            TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
+            TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
+            TdHeadshakeAnimation(), // using implicit anchor name 'tdHeadshake' in template
+            TdJelloAnimation(), // using implicit anchor name 'tdJello' in template
+            TdPulseAnimation(), // using implicit anchor name 'tdPulse' in template
+          ],
+          ...
+          class MyDemo {
+            bounceState: boolean = false;
+            flashState: boolean = false;
+            headshakeState: boolean = false;
+            jelloState: boolean = false;
+            pulseState: boolean = false;
+          }
+        ]]>
+      </td-highlight>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <button md-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
+            @tdBounce <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdFlash]="flashState" (click)="flashState = !flashState" color="accent">
+            @tdFlash <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdHeadshake]="headshakeState" (click)="headshakeState = !headshakeState" color="accent">
+            @tdHeadshake <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdJello]="jelloState" (click)="jelloState = !jelloState" color="accent">
+            @tdJello <md-icon>mood</md-icon>
+          </button>
+          <button md-raised-button [@tdPulse]="pulseState" (click)="pulseState = !pulseState" color="accent">
+            @tdPulse <md-icon>mood</md-icon>
+          </button>
+        ]]>
+      </td-highlight>
+    </div>
+    <md-divider></md-divider>
+    <div>
+      <h2>API:</h2>
+      <md-list>
+        <md-list-item>
+          <h3 md-line>anchor?: string</h3>
+          <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template.</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>duration?: number</h3>
+          <p md-line> Duration the animation will run in milliseconds. Defaults to 500 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <h3 md-line>delay?: number</h3>
+          <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </div>
+  </md-card-content>
+</md-card>

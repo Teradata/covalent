@@ -11,7 +11,7 @@ Leverage the templates to create your own chip or contact chip.
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `color?` | `'primary', 'accent' or 'warn'` | color for the input and focus state of the chips. Defaults to 'primary'
 | `items?` | `any[]` | Renders the `md-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
@@ -23,6 +23,8 @@ Properties:
 | `debounce` | `string` | Debounce timeout between keypresses. Defaults to 200.
 | `add?` | `function` | Method to be executed when a chip is added. Sends chip value as event.
 | `remove?` | `function` | Method to be executed when a chip is removed. Sends chip value as event.
+| `chipBlur?` | `function` | Method to be executed when a chip is blurred. Sends chip value as event.
+| `chipFocus?` | `function` | Method to be executed when a chip is focused. Sends chip value as event.
 | `inputChange?` | `function` | Method to be executed when the value in the autocomplete input changes. Sends string value as event.
 
 ## Setup
@@ -55,6 +57,8 @@ Example for HTML usage:
           [chipRemoval]="chipRemoval"
           (add)="addEvent($event)"
           (remove)="removeEvent($event)"
+          (chipBlur)="handleChipBlur($event)"
+          (chipFocus)="handleChipFocus($event)"
           (inputChange)="inputChange($event)"
           requireMatch
           stacked>

@@ -2,7 +2,7 @@ import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core'
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/observable/fromEvent';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 
 @Injectable()
 export class TdMediaService {
@@ -30,7 +30,7 @@ export class TdMediaService {
     this._resizing = false;
     // we make sure that the resize checking happend outside of angular since it happens often
     this._globalSubscription = this._ngZone.runOutsideAngular(() => {
-      return Observable.fromEvent(window, 'resize').subscribe(() => {
+      return fromEvent(window, 'resize').subscribe(() => {
         // way to prevent the resize event from triggering the match media if there is already one event running already.
         if (!this._resizing) {
           this._resizing = true;

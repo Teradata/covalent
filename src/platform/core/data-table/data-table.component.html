@@ -1,62 +1,78 @@
-<div class="mat-table-container" title>
-  <table td-data-table
-         [class.mat-selectable]="isSelectable"
-         [class.mat-clickable]="isClickable">
-    <th td-data-table-column class="mat-checkbox-column" *ngIf="isSelectable">
+<table td-data-table
+        [style.left.px]="columnsLeftScroll"
+        [class.mat-selectable]="selectable">
+  <tr td-data-table-column-row>
+    <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
       <md-checkbox
         #checkBoxAll
-        *ngIf="isMultiple"
+        *ngIf="multiple"
         [disabled]="!hasData"
         [indeterminate]="indeterminate && !allSelected && hasData"
         [checked]="allSelected && hasData"
-        (click)="selectAll(!checkBoxAll.checked)"
+        (click)="blockEvent($event); selectAll(!checkBoxAll.checked)"
         (keyup.enter)="selectAll(!checkBoxAll.checked)"
         (keyup.space)="selectAll(!checkBoxAll.checked)"
         (keydown.space)="blockEvent($event)">
       </md-checkbox>
     </th>
     <th td-data-table-column
-        *ngFor="let column of columns"
+        #columnElement
+        *ngFor="let column of columns; let i = index;"
+        [style.min-width.px]="getColumnWidth(i)"
+        [style.max-width.px]="getColumnWidth(i)"
         [name]="column.name"
         [numeric]="column.numeric"
-        [active]="(column.sortable || isSortable) && column === sortByColumn"
-        [sortable]="column.sortable ||  isSortable"
+        [active]="(column.sortable || sortable) && column === sortByColumn"
+        [sortable]="column.sortable || sortable"
         [sortOrder]="sortOrderEnum"
         [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
         <span [mdTooltip]="column.tooltip">{{column.label}}</span>
     </th>
+  </tr>
+</table>
+<div #scrollableDiv class="td-data-table-scrollable"
+      (scroll)="handleScroll($event)">
+  <div [style.height.px]="totalHeight"></div>
+  <table td-data-table
+          [style.transform]="offsetTransform"
+          [style.position]="'absolute'"
+          [class.mat-selectable]="selectable"
+          [class.mat-clickable]="clickable">
     <tr td-data-table-row
         #dtRow
-        [tabIndex]="isSelectable ? 0 : -1"
-        [selected]="(isClickable || isSelectable) && isRowSelected(row)"
-        *ngFor="let row of data; let rowIndex = index"
+        [tabIndex]="selectable ? 0 : -1"
+        [selected]="(clickable || selectable) && isRowSelected(row)"
+        *ngFor="let row of data | slice:fromRow:toRow; let rowIndex = index"
         (click)="handleRowClick(row, $event)"
-        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
+        (keyup)="selectable && _rowKeyup($event, row, rowIndex)"
         (keydown.space)="blockEvent($event)"
         (keydown.shift.space)="blockEvent($event)"
         (keydown.shift)="disableTextSelection()"
         (keyup.shift)="enableTextSelection()">
-      <td td-data-table-cell class="mat-checkbox-cell" *ngIf="isSelectable">
+      <td td-data-table-cell class="mat-checkbox-cell" *ngIf="selectable">
         <md-pseudo-checkbox
           [state]="dtRow.selected ? 'checked' : 'unchecked'"
           (mousedown)="disableTextSelection()"
           (mouseup)="enableTextSelection()"
           stopRowClick
-          (click)="select(row, $event, rowIndex)">
+          (click)="select(row, $event, fromRow + rowIndex)">
         </md-pseudo-checkbox>
       </td>
       <td td-data-table-cell
           [numeric]="column.numeric"
           [hidden]="column.hidden"
-          *ngFor="let column of columns">
+          *ngFor="let column of columns; let i = index"
+          [style.min-width.px]="getWidth(i)"
+          [style.max-width.px]="getWidth(i)">
         <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
         <ng-template
           *ngIf="getTemplateRef(column.name)"
           [ngTemplateOutlet]="getTemplateRef(column.name)"
-          [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
+          [ngTemplateOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
         </ng-template>
       </td>
     </tr>
   </table>
 </div>
+<ng-content></ng-content>

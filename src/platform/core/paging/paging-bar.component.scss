@@ -3,7 +3,7 @@
 }
 .td-paging-bar {
   height: 48px;
-  > * {
+  /deep/ > * {
     margin: 0 10px;
   }
 }
@@ -11,15 +11,14 @@
   font-size: 12px;
   font-weight: normal;
 }
-md-select { 
-  & /deep/ {
+/deep/ md-select { 
+  &.mat-select {
+    padding-top: 0px;
+  }
+  & {  
     .mat-select-trigger {
       min-width: 44px;
       font-size: 12px;
-    }
-    .mat-select-value {
-      top: auto;
-      position: static;
     }
     .mat-select-underline {
       display: none;

@@ -1,5 +1,6 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, Host, Optional } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { NgModel } from '@angular/forms';
 
 @Directive({
@@ -15,8 +16,8 @@ export class TdFileSelectDirective {
    * Can also be 'multiple' native attribute.
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
 
   /**

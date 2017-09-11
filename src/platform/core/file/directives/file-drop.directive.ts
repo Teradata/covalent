@@ -1,5 +1,6 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
 
@@ -22,8 +23,8 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
    * Can also be 'multiple' native attribute.
    */
   @Input('multiple')
-  set multiple(multiple: string | boolean) {
-    this._multiple = multiple !== '' ? (multiple === 'true' || multiple === true) : true;
+  set multiple(multiple: boolean) {
+    this._multiple = coerceBooleanProperty(multiple);
   }
 
   /**

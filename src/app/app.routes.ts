@@ -18,6 +18,9 @@ const routes: Routes = [{
     path: '', data: { preload: false, }, loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
   }, {
     // preload: true loads the module immediately
+    path: '', data: { preload: false, }, loadChildren: './components/design-patterns/design-patterns.module#DesignPatternsModule',
+  }, {
+    // preload: true loads the module immediately
     path: '', data: { preload: false, }, loadChildren: './components/layouts/layouts.module#LayoutsModule',
   }, {
     // preload: true loads the module immediately

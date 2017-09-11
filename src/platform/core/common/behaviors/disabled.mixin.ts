@@ -1,7 +1,5 @@
 import { Constructor } from './constructor';
-
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 /** Interface to implement when applying the disabled mixin */
 export interface ICanDisable {
@@ -22,7 +20,7 @@ export function mixinDisabled<T extends Constructor<{}>>(base: T): Constructor<I
       return this._disabled;
     }
     set disabled(value: boolean) {
-      let newValue: boolean = <any>value !== '' ? (<any>value === 'true' || value === true) : true;
+      let newValue: boolean = coerceBooleanProperty(value);
       if (this._disabled !== newValue) {
         this._disabled = newValue;
         this.onDisabledChange(this._disabled);
