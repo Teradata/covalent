@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -23,6 +23,6 @@ export function getSelectedLanguage(translateService: TranslateService): string 
 /**
  * Crate custom TranslateLoader since we have a diff dir structure for our json files
  */
-export function createTranslateLoader(http: Http): TranslateLoader {
-  return new TranslateHttpLoader(http, 'app/assets/i18n/', '.json');
+export function createTranslateLoader(httpClient: HttpClient): TranslateLoader {
+  return new TranslateHttpLoader(httpClient, 'app/assets/i18n/', '.json');
 }

@@ -10,7 +10,7 @@
     <div #rowElement>
       <ng-template *ngIf="_rowTemplate"
                   [ngTemplateOutlet]="_rowTemplate.templateRef"
-                  [ngOutletContext]="{row: row,
+                  [ngTemplateOutletContext]="{row: row,
                                       index: (fromRow + index),
                                       first: (fromRow + index) === 0,
                                       last: (fromRow + index) === (data.length - 1),

@@ -25,7 +25,7 @@
               *ngIf="getErrorTemplateRef(element.name) && dynamicForm.controls[element.name]?.errors">
           <ng-template
             [ngTemplateOutlet]="getErrorTemplateRef(element.name)"
-            [ngOutletContext]="{control: dynamicForm.controls[element.name], errors: dynamicForm.controls[element.name]?.errors}">
+            [ngTemplateOutletContext]="{control: dynamicForm.controls[element.name], errors: dynamicForm.controls[element.name]?.errors}">
           </ng-template>
         </div>
       </div>

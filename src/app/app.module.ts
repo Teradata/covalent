@@ -1,7 +1,8 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Http, HttpModule, JsonpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
@@ -38,6 +39,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     FormsModule,
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     JsonpModule,
     /** Material Modules */
     MdCoreModule,
@@ -65,7 +67,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [Http],
+        deps: [HttpClient],
       },
     }),
     appRoutes,
