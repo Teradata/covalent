@@ -953,9 +953,11 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // if the provided width has min/max, then we check to see if we need to set it
       if (typeof this.columns[index].width === 'object') {
         let widthOpts: ITdDataTableColumnWidth = <ITdDataTableColumnWidth>this.columns[index].width;
+        // if the column width is less than the configured min, we override it
         if (widthOpts && widthOpts.min >= this._widths[index].value) {
           this._widths[index].value = widthOpts.min;
           this._widths[index].min = true;
+        // if the column width is more than the configured max, we override it
         } else if (widthOpts && widthOpts.max <= this._widths[index].value) {
           this._widths[index].value = widthOpts.max;
           this._widths[index].max = true;
