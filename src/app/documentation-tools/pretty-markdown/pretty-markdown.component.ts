@@ -5,7 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MdCheckbox } from '@angular/material';
 import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent } from '@covalent/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent } from '@covalent/core';
+import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core';
 
 @Directive({
   selector: '[tdPrettyMarkdownContainer]',
@@ -150,10 +150,22 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
                               .map((s: string) => { return s.trim(); });
       let alignment: string[] = dataTableLines[1].split('|').filter((v: string) => { return v; }).map((s: string) => { return s.trim(); });
       componentRef.instance.columns = columns.map((col: string, index: number) => {
+        let widths: string[] = alignment[index].split('---');
+        let min: number = parseInt(widths[0], 10);
+        let max: number = parseInt(widths[1], 10);
+        let width: ITdDataTableColumnWidth = {min: min, max: max};
+        if (isNaN(min) && isNaN(max)) {
+          width = undefined;
+        } else if (isNaN(max)) {
+          width.max = undefined;
+        } else if (isNaN(min)) {
+          width.min = undefined;
+        }
         return {
           label: col,
           name: col.toLowerCase().trim(),
           numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
+          width: width,
         };
       });
 

@@ -3,15 +3,19 @@
   font-size: 13px;
   vertical-align: middle;
   @include rtl(text-align, left, right);
-  padding: 0 28px 0 28px;
+  padding: 0;
+  > .td-data-table-cell-content-wrapper {
+    padding: 0 28px 0 28px;
+    height: 48px;
+  }
 
-  &:first-child {
+  &:first-child > .td-data-table-cell-content-wrapper {
     @include rtl(padding-left, 24px, initial);
     @include rtl(padding-right, initial, 24px);
   }
-  &:last-child {
-    @include rtl(padding-left, initial, 24px);
-    @include rtl(padding-right, 24px, initial);
+  &:last-child  > .td-data-table-cell-content-wrapper {
+    @include rtl(padding-left, 28px, 24px);
+    @include rtl(padding-right, 24px, 28px);
   }
 
   > * {

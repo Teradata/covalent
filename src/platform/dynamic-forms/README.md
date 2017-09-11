@@ -5,7 +5,7 @@
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `elements?` | `ITdDynamicElementConfig[]` | JS Object that will render the elements depending on its config. [name] property is required.
 | `form` | `get(): FormGroup` | Getter property for dynamic [FormGroup].
 | `valid` | `get(): boolean` | Getter property for [valid] of dynamic [FormGroup].
