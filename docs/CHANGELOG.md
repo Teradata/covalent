@@ -1,7 +1,7 @@
 <a name="1.0.0-beta.7"></a>
 # [1.0.0-beta.7 One Step Closer](https://github.com/Teradata/covalent/tree/v1.0.0-beta.7) (2017-09-11)
 
-This release will make sure we work properly with `@angular/material@1.0.0-beta.10`.
+This release will make sure Covalent works properly with `@angular/material@1.0.0-beta.10`.
 
 We are also pleased to announce the release of the [`covalent/text-editor`](https://github.com/Teradata/covalent-text-editor) module which wraps the SimpleMDE lib for angular use.
 
@@ -16,13 +16,11 @@ We are also pleased to announce the release of the [`covalent/text-editor`](http
 
 ## Breaking Changes
 
-Please check the angular material `beta.10` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta10-découpage-panjandrum-2017-08-29) for their [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes)
-
-Also please check their [deprecations](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecations), since those will be breaking changes in future material releases.
+Please check the Angular Material `beta.10` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta10-découpage-panjandrum-2017-08-29) for [breaking changes](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes) and [deprecations](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecations), since those will be breaking changes in future material releases.
 
 #### CovalentDynamicFormsModule
 
-Now all error messages need to be provided by the developer.. this is to ensure proper i18n support.
+In order to ensure proper i18n support, all error messages mut be provided by the developer.
 
 e.g.
 
@@ -42,7 +40,7 @@ e.g.
 
 #### CovalentPagingModule
 
-We abstracted the `md-select` component from the paging bar and made it easier to be added by the developers
+The `md-select` component has been abstracted from the paging bar, so that it could be easily added by devs.
 
 The following inputs are:
 
