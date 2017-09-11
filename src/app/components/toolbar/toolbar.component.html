@@ -4,12 +4,12 @@
 -->
 <div layout="row" layout-align="end center" flex>
     <span flex></span>
-    <nav hide-xs hide-sm hide-md class="text-upper text-sm" layout="row">
+    <nav hide-xs hide-sm class="text-upper text-sm" layout="row">
       <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
       <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
       <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style Guide</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']">Design Patterns</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style <span hide-md>Guide</span></a>
+      <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
     <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
@@ -31,7 +31,7 @@
           </ng-template>
           <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
             <md-icon mdListAvatar>change_history</md-icon>
-            <h4 mdLine><span class="text-wrap">cdk and material@beta.10 support</span></h4>
+            <h4 mdLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
             <p mdLine>Dependencies updated</p>
           </a>
         </md-nav-list>
