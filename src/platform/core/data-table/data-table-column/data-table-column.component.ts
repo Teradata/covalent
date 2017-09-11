@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, Renderer2, ElementRef, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Renderer2, ElementRef, HostBinding, HostListener } from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
@@ -92,8 +92,14 @@ export class TdDataTableColumnComponent {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-column');
   }
 
-  handleSortBy(): void {
-    this.onSortChange.emit({name: this.name, order: this._sortOrder});
+  /**
+   * Listening to click event on host to throw a sort event
+   */
+  @HostListener('click', ['event'])
+  handleClick(): void {
+    if (this.sortable) {
+      this.onSortChange.emit({name: this.name, order: this._sortOrder});
+    }
   }
 
   isAscending(): boolean {

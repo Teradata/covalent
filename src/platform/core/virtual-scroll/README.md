@@ -9,7 +9,7 @@
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `data` | `any[]` | List of items to virtually iterate on.
 | `trackBy?` | `TrackByFunction` | This accepts the same trackBy function [ngFor] does. https://angular.io/api/core/TrackByFunction
 | `refresh` | `function()` | Method to refresh and recalculate the virtual rows

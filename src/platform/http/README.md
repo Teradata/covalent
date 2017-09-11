@@ -5,7 +5,7 @@
 Methods:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `delete` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a DELETE method to a URL, executing the interceptors as part of the request pipeline.
 | `get` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a GET method to a URL, executing the interceptors as part of the request pipeline.
 | `head` | `function(url: string, options: RequestOptionsArgs)` | Uses underlying @angular [http] to request a HEAD method to a URL, executing the interceptors as part of the request pipeline.
@@ -168,7 +168,7 @@ Example 4
 Methods:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `query` | `function(query?: IRestQuery, transform?: IRestTransform)` | Creates a GET request to the generated endpoint URL.
 | `get` | `function(id: string | number, transform?: IRestTransform)` | Creates a GET request to the generated endpoint URL, adding the ID at the end.
 | `create` | `function(obj: T, transform?: IRestTransform)` | Creates a POST request to the generated endpoint URL.
