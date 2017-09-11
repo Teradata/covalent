@@ -35,6 +35,7 @@ export interface ITdDataTableColumn {
   sortable?: boolean;
   hidden?: boolean;
   filter?: boolean;
+  sortBy?: string;
 }
 
 export interface ITdDataTableSelectEvent {
@@ -85,7 +86,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
   private _sortable: boolean = false;
   private _sortBy: ITdDataTableColumn;
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-
+  private _tableList: QueryList<TdDataTableComponent>;
   /** shift select */
   private _lastSelectedIndex: number = -1;
   private _selectedBeforeLastIndex: number = -1;
@@ -227,7 +228,7 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
     if (!columnName) {
       return;
     }
-    const column: ITdDataTableColumn = this.columns.find((c: any) => c.name === columnName);
+    const column: ITdDataTableColumn = this.columns.find((c: any) => c.sortBy === columnName || c.name === columnName);
     if (!column) {
       throw new Error('[sortBy] must be a valid column name');
     }
@@ -474,7 +475,11 @@ export class TdDataTableComponent implements ControlValueAccessor, AfterContentI
       this._sortBy = column;
       this._sortOrder = TdDataTableSortingOrder.Ascending;
     }
-    this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder });
+    if (this._sortBy.sortBy) {
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.sortBy });
+    } else {
+      this.onSortChange.next({ name: this._sortBy.name, order: this._sortOrder, sortBy: this._sortBy.name });
+    }
   }
 
   /**
