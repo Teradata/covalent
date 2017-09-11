@@ -12,7 +12,7 @@ We are also pleased to announce the release of the [`covalent/text-editor`](http
 - Dynamic forms features and bug fixes
 - Data table sticky headers, configurable column widths and virtual scroll
 - Pre-canned animations!
-- Basic [IE11](https://github.com/Teradata/covalent/blob/develop/docs/IE11.md) support (we aware that there might be issues, so please create an issue if you find one)
+- Initial [IE11](https://github.com/Teradata/covalent/blob/develop/docs/IE11.md) support (there may be issues, so please [create an issue](https://github.com/Teradata/covalent/issues/new) if you find one)
 
 ## Breaking Changes
 
