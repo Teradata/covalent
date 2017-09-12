@@ -20,7 +20,7 @@ Please check the Angular Material `beta.10` [changelog](https://github.com/angul
 
 #### CovalentDynamicFormsModule
 
-In order to ensure proper i18n support, all error messages mut be provided by the developer.
+In order to ensure proper i18n support, all error messages must be provided by the developer.
 
 e.g.
 
