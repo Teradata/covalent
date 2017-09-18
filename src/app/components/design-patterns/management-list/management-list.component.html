@@ -42,13 +42,13 @@
         <md-card-content>
           <p>This example contains a variety of components including:</p>
           <md-nav-list>
-            <a md-list-item href="/#/components/search" target="_blank">
+            <a md-list-item [routerLink]="['/components', 'search']" target="_blank">
               <md-icon>launch</md-icon>
               <span mdLine>Covalent Search</span>
               <p mdLine>td-search</p>
             </a>
             <md-divider></md-divider>
-            <a md-list-item href="/#/components/paging" target="_blank">
+            <a md-list-item [routerLink]="['/components', 'paging']" target="_blank">
               <md-icon>launch</md-icon>
               <span mdLine>Covalent Paging</span>
               <p mdLine>td-paging-bar</p>
