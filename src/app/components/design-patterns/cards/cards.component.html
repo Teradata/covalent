@@ -118,7 +118,7 @@
         <md-card-title>Login Card</md-card-title>
         <md-card-subtitle>Card with form</md-card-subtitle>
         <md-card-content>
-          <p>In special cases, cards may contain form elements, like the login card.  However, in most sitautions, we recommend using the <a href="/#/layouts/card-over" target="_blank">Card Over</a> full page layout for forms.</p>
+          <p>In special cases, cards may contain form elements, like the login card.  However, in most sitautions, we recommend using the <a [routerLink]="['/layouts', 'card-over']" target="_blank">Card Over</a> full page layout for forms.</p>
         </md-card-content>
       </div>
       <div flex>
@@ -219,7 +219,7 @@
         <md-card-title>Metadata List Card</md-card-title>
         <md-card-subtitle>Card with metadata for an item detail</md-card-subtitle>
         <md-card-content>
-          <p>Cards support many rich components, including our <a href="/#/style-guide/management-list" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using md-divider and consider adding md-subheader.</p>
+          <p>Cards support many rich components, including our <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using md-divider and consider adding md-subheader.</p>
         </md-card-content>
       </div> 
       <div flex>
@@ -333,7 +333,7 @@
         <md-card-title>CRUD Manage List Card</md-card-title>
         <md-card-subtitle>Card with faux-columns & search</md-card-subtitle>
         <md-card-content>
-          <p>In this example, notice the <a href="/#/components/search" target="_blank">search component</a> in the top left.  Also, using the flex model, you can simulate columns by using the same layout on each row.  See the <a href="/#/style-guide/management-list" target="_blank">management list</a> for more implementation details.</p>
+          <p>In this example, notice the <a [routerLink]="['/components', 'search']" target="_blank">search component</a> in the top left.  Also, using the flex model, you can simulate columns by using the same layout on each row.  See the <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a> for more implementation details.</p>
         </md-card-content>
       </div>
       <div flex>
