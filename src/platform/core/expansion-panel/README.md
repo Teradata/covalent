@@ -9,7 +9,7 @@ It also contains an optional summary to display anything in collapsed state.
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `label?` | `string` | Sets label of component header.
 | `sublabel?` | `string` | Sets sublabel of component header.
 | `expand?` | `boolean` | Toggles component between expand/collapse state.

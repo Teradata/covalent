@@ -1,0 +1,156 @@
+<div layout-sm="row" layout-gt-md="row">
+  <md-card flex-sm="70" flex-gt-md="70">
+    <md-card-title>Navigation Drawers Patterns</md-card-title>
+    <md-divider></md-divider>
+    <md-card-content>
+      <h3>Problem</h3>
+      <p>Need a means of navigation that is familiar and consistent.</p>
+      <h3>Solution</h3>
+      <p>The navigation drawer provides a familiar means of navigation along with access to additional account features, for example, the ability to switch accounts, access settings, and sign out.</p>
+    </md-card-content>
+  </md-card>
+  <md-card flex-sm flex-gt-md>
+    <md-card-title>Resources</md-card-title>
+    <md-divider></md-divider>
+    <md-nav-list>
+      <a md-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Nav Drawer</span>
+      </a>
+    </md-nav-list>
+  </md-card>
+</div>
+<md-card>
+  <md-card-title>Examples</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout-sm="row" layout-gt-md="row">
+      <div flex-sm="35" flex-gt-md="35">
+        <md-card-title>Side Navigation</md-card-title>
+        <md-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</md-card-subtitle>
+        <md-card-content>
+          <p>In addition to the Material Design Navigation Drawer component, this example leverages the following components:</p>
+          <md-nav-list>
+            <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design List</span>
+              <p mdLine>md-list</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design Icon</span>
+              <p mdLine>md-icons</p>
+            </a>
+          </md-nav-list>
+        </md-card-content>
+      </div>
+      <div flex>
+        <md-card class="pad-bottom-lg">
+          <md-card-subtitle class="bgc-grey-100 push-none">
+            <div layout="row">
+              <span flex></span>
+              <button md-icon-button mdTooltip="View Source" (click)="toggle('example1')">
+                <md-icon class="tc-grey-700">code</md-icon>
+              </button>
+            </div>
+          </md-card-subtitle>
+          <div [tdToggle]="example1">
+            <div>
+              <md-tab-group md-stretch-tabs dynamicHeight>
+                  <md-tab>
+                    <ng-template mdTabLabel>HTML</ng-template>
+                      <td-highlight lang="html">
+                          <![CDATA[
+                            <td-layout #layout>
+                              <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+                                <md-nav-list>
+                                  <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                </md-nav-list>
+                                <div td-navigation-drawer-menu>
+                                  <md-nav-list>
+                                    <a *ngFor="let item of usermenu" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                  </md-nav-list>
+                                </div>
+                              </td-navigation-drawer>
+                              <div td-sidenav-content class="td-layout-footer pad">
+                                &copy; 2017 Your Company, Inc.
+                              </div>
+                              <router-outlet></router-outlet>
+                            </td-layout>
+                          ]]>
+                      </td-highlight>
+                  </md-tab>
+                  <md-tab>
+                    <ng-template mdTabLabel>Typescript</ng-template>
+                      <td-highlight lang="typescript">
+                          <![CDATA[
+                            ...
+                            export class MainComponent {
+                              routes: Object[] = [{
+                                  icon: 'home',
+                                  route: '.',
+                                  title: 'Home',
+                                }, {
+                                  icon: 'library_books',
+                                  route: '.',
+                                  title: 'Documentation',
+                                }, {
+                                  icon: 'color_lens',
+                                  route: '.',
+                                  title: 'Style Guide',
+                                }, {
+                                  icon: 'view_quilt',
+                                  route: '.',
+                                  title: 'Layouts',
+                                }, {
+                                  icon: 'picture_in_picture',
+                                  route: '.',
+                                  title: 'Components & Addons',
+                                },
+                              ];
+
+                              usermenu: Object[] = [{
+                                  icon: 'swap_horiz',
+                                  route: '.',
+                                  title: 'Switch account',
+                                }, {
+                                  icon: 'tune',
+                                  route: '.',
+                                  title: 'Account settings',
+                                }, {
+                                  icon: 'exit_to_app',
+                                  route: '.',
+                                  title: 'Sign out',
+                                },
+                              ];
+                            }
+                          ]]>
+                      </td-highlight>
+                  </md-tab>
+              </md-tab-group>
+            </div>
+            <md-divider></md-divider>
+          </div>
+          <div class="push-md border">
+            <td-layout>
+              <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+                <md-nav-list>
+                  <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                </md-nav-list>
+                <div td-navigation-drawer-menu>
+                  <md-nav-list>
+                    <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                  </md-nav-list>
+                </div>
+              </td-navigation-drawer>
+              <div td-sidenav-content class="td-layout-footer pad">
+                &copy; 2017 Your Company, Inc.
+              </div>
+            </td-layout>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

@@ -6,7 +6,7 @@
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { Dir } from '@angular/cdk';
+import { Dir } from '@angular/cdk/bidi';
 
 import { getDirection, setDirection } from '../../utilities/direction';
 
@@ -17,25 +17,30 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: '[readOnly] deprecation in favor of [disabled] input',
-      icon: 'label',
-      route: '/components/chips',
-      title: 'Chips feature',
+      description: 'Virtual scroll component',
+      icon: 'format_line_spacing',
+      route: '/components/virtual-scroll',
+      title: 'New component',
     }, {
-      description: 'Layout directives and new demos',
-      icon: 'view_quilt',
-      route: '/layouts',
-      title: 'Layouts feature',
+      description: 'Markdown text editor component',
+      icon: 'keyboard',
+      route: '/components/text-editor',
+      title: 'New component',
     }, {
-      description: '[compareWith] input',
+      description: 'Sticky headers, virtual scroll & configurable widths',
       icon: 'grid_on',
       route: '/components/data-table',
-      title: 'Data table feature',
+      title: 'Data table updates',
     }, {
-      description: 'introducing covalent/code-editor',
-      icon: 'featured_play_list',
-      route: '/components/code-editor',
-      title: 'New component',
+      description: 'New form features & bugfixes',
+      icon: 'format_align_center',
+      route: '/components/dynamic-forms',
+      title: 'Dynamic forms updates',
+    }, {
+      description: 'New pre-canned animations!',
+      icon: 'theaters',
+      route: '/components/animations',
+      title: 'New utility',
     },
   ];
 

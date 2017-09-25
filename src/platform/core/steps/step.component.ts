@@ -1,9 +1,10 @@
 import { Component, Directive, Input, Output, TemplateRef, ViewChild,
          ViewContainerRef, ContentChild, OnInit } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { coerceBooleanProperty, TemplatePortalDirective, TemplatePortal } from '@angular/cdk';
+import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable, mixinDisabled } from '../common/common.module';
+import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
 
 export enum StepState {
   None = <any>'none',
@@ -41,21 +42,20 @@ export class TdStepSummaryDirective extends TemplatePortalDirective {
 export class TdStepBase {}
 
 /* tslint:disable-next-line */
-export const _TdStepMixinBase = mixinDisabled(TdStepBase);
+export const _TdStepMixinBase = mixinDisableRipple(mixinDisabled(TdStepBase));
 
 @Component({
   selector: 'td-step',
-  inputs: ['disabled'],
+  inputs: ['disabled', 'disableRipple'],
   templateUrl: './step.component.html',
 })
-export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDisable {
+export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDisable, ICanDisableRipple {
 
-  private _disableRipple: boolean = false;
   private _active: boolean = false;
   private _state: StepState = StepState.None;
 
-  private _contentPortal: TemplatePortal;
-  get stepContent(): TemplatePortal {
+  private _contentPortal: TemplatePortal<any>;
+  get stepContent(): TemplatePortal<any> {
     return this._contentPortal;
   }
 
@@ -76,18 +76,6 @@ export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDis
    * Sets sublabel of [TdStepComponent] header.
    */
   @Input('sublabel') sublabel: string;
-
-  /**
-   * disableRipple?: string
-   * Whether the ripple effect for this component is disabled.
-   */
-  @Input('disableRipple')
-  set disableRipple(disableRipple: boolean) {
-    this._disableRipple = coerceBooleanProperty(disableRipple);
-  }
-  get disableRipple(): boolean {
-    return this._disableRipple;
-  }
 
   /**
    * active?: boolean

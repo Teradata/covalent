@@ -4,14 +4,15 @@
 -->
 <div layout="row" layout-align="end center" flex>
     <span flex></span>
-    <nav hide show-gt-md class="text-upper text-sm" layout="row">
+    <nav hide-xs hide-sm class="text-upper text-sm" layout="row">
       <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
       <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
       <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style Guide</a>
+      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style <span hide-md>Guide</span></a>
+      <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
-    <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+    <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 1">
         <md-icon>notifications</md-icon>
       </td-notification-count>
@@ -22,16 +23,16 @@
         <md-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a md-list-item [routerLink]="[item.route]">
-              <md-icon md-list-avatar>{{item.icon}}</md-icon>
-              <h4 md-line><span class="text-wrap">{{item.description}}</span></h4>
-              <p md-line>{{item.title}}</p>
+              <md-icon mdListAvatar>{{item.icon}}</md-icon>
+              <h4 mdLine><span class="text-wrap">{{item.description}}</span></h4>
+              <p mdLine>{{item.title}}</p>
             </a>
             <md-divider></md-divider>
           </ng-template>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L58-L69" target="_blank">
-            <md-icon md-list-avatar>change_history</md-icon>
-            <h4 md-line><span class="text-wrap">cdk dependency and material@beta.8 support</span></h4>
-            <p md-line>Dependencies updated</p>
+          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
+            <md-icon mdListAvatar>change_history</md-icon>
+            <h4 mdLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
+            <p mdLine>Dependencies updated</p>
           </a>
         </md-nav-list>
         <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">

@@ -1,16 +1,15 @@
-import { NgModule, ModuleWithProviders, Type } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectionModule } from '@angular/material';
+import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdPseudoCheckboxModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
-import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+import { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-table-row/data-table-row.component';
 import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-import { TdDataTableService, DATA_TABLE_PROVIDER } from './services/data-table.service';
+import { DATA_TABLE_PROVIDER } from './services/data-table.service';
 
 const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableComponent,
@@ -19,16 +18,17 @@ const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableColumnComponent,
   TdDataTableCellComponent,
   TdDataTableRowComponent,
+  TdDataTableColumnRowComponent,
   TdDataTableTableComponent,
 ];
 
-export { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableRowClickEvent,
+export { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableRowClickEvent, ITdDataTableColumnWidth,
          ITdDataTableColumn, ITdDataTableSelectEvent, ITdDataTableSelectAllEvent } from './data-table.component';
 export { TdDataTableService } from './services/data-table.service';
 export { TdDataTableColumnComponent,
          ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
 export { TdDataTableCellComponent } from './data-table-cell/data-table-cell.component';
-export { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
+export { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-table-row/data-table-row.component';
 export { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 
 @NgModule({
@@ -37,7 +37,7 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
     MdCheckboxModule,
     MdTooltipModule,
     MdIconModule,
-    MdSelectionModule,
+    MdPseudoCheckboxModule,
   ],
   declarations: [
     TD_DATA_TABLE,

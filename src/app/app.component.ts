@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Dir } from '@angular/cdk';
+import { Dir } from '@angular/cdk/bidi';
 import { MdIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -31,6 +31,10 @@ export class DocsAppComponent implements AfterViewInit {
       icon: 'color_lens',
       route: 'style-guide',
       title: 'Style Guide',
+    }, {
+      icon: 'extension',
+      route: 'design-patterns',
+      title: 'Design Patterns',
     }, {
       icon: 'view_carousel',
       route: 'templates',
@@ -84,8 +88,11 @@ export class DocsAppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.media.broadcast();
-    this._changeDetectorRef.detectChanges();
+    // broadcast to all listener observables when loading the page
+    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+      this.media.broadcast();
+      this._changeDetectorRef.detectChanges();
+    });
   }
 
 }

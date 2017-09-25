@@ -6,7 +6,7 @@
 ## API Summary
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | cardTitle | string | Title set in card.
 | cardSubtitle | string | subtitle set in card.
 | cardWidth | string | Card flex width in %. Defaults to 70.

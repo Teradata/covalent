@@ -16,9 +16,9 @@
           [routerLinkActive]="['active']" 
           [routerLinkActiveOptions]="{exact:true}"
           [tdLayoutNavListClose]="!media.query('gt-sm')">
-        <md-icon md-list-avatar>{{item.icon}}</md-icon>
-        <h3 md-line> {{item.title}} </h3>
-        <p md-line> {{item.description}} </p>
+        <md-icon mdListAvatar>{{item.icon}}</md-icon>
+        <h3 mdLine> {{item.title}} </h3>
+        <p mdLine> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
     </ng-template>
@@ -29,9 +29,9 @@
           [routerLinkActive]="['active']" 
           [routerLinkActiveOptions]="{exact:true}"
           [tdLayoutNavListClose]="!media.query('gt-sm')">
-        <md-icon md-list-avatar>{{item.icon}}</md-icon>
-        <h3 md-line> {{item.title}} </h3>
-        <p md-line> {{item.description}} </p>
+        <md-icon mdListAvatar>{{item.icon}}</md-icon>
+        <h3 mdLine> {{item.title}} </h3>
+        <p mdLine> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
     </ng-template>
@@ -39,9 +39,9 @@
     <a md-list-item 
         href="https://material.angular.io/components"
         target="_blank">
-      <md-icon md-list-avatar>layers</md-icon>
-      <h3 md-line> Angular Material </h3>
-      <p md-line> Material Design components </p>
+      <md-icon mdListAvatar>layers</md-icon>
+      <h3 mdLine> Angular Material </h3>
+      <p mdLine> Material Design components </p>
       <md-icon mdTooltip="External docs" class="text-md tc-grey-600">launch</md-icon>
     </a>
     <md-divider md-inset></md-divider>
@@ -51,9 +51,9 @@
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{exact:true}"
           [tdLayoutNavListClose]="!media.query('gt-sm')">
-        <md-icon md-list-avatar>{{item.icon}}</md-icon>
-        <h3 md-line> {{item.title}} </h3>
-        <p md-line> {{item.description}} </p>
+        <md-icon mdListAvatar>{{item.icon}}</md-icon>
+        <h3 mdLine> {{item.title}} </h3>
+        <p mdLine> {{item.description}} </p>
       </a>
       <md-divider *ngIf="!last" md-inset></md-divider>
     </ng-template>
@@ -62,8 +62,8 @@
     <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
-    <span hide-gt-md flex>Components &amp; Addons</span>
-    <td-toolbar hide-xs hide-sm hide-md flex layout="row"></td-toolbar>
+    <span hide-gt-sm flex>Components &amp; Addons</span>
+    <td-toolbar flex layout="row"></td-toolbar>
   </div>
   <div class="theme-alt">
     <router-outlet></router-outlet>

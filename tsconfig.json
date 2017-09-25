@@ -25,6 +25,7 @@
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
-    "pretty": true
+    "pretty": true,
+    "importHelpers": true
   }
 }

@@ -1,7 +1,5 @@
 import { Constructor } from './constructor';
-import { coerceBooleanProperty } from '@angular/cdk';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 /** Interface to implement when applying the disabled mixin */
 export interface ICanDisable {

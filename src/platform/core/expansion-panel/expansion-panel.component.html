@@ -1,6 +1,6 @@
 <div class="td-expansion-panel-header"
       [class.mat-disabled]="disabled"
-      md-ripple
+      mdRipple
       [mdRippleDisabled]="disabled || disableRipple"
       [tabIndex]="disabled? -1 : 0"
       (keydown.enter)="clickEvent()"
@@ -9,8 +9,8 @@
   <div class="td-expansion-panel-header-content"
         [class.mat-disabled]="disabled"
         *ngIf="!expansionPanelHeader"
-        layout="row" 
-        layout-align="start center" 
+        layout="row"
+        layout-align="start center"
         flex>
     <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label" [attr.flex-gt-xs]="(sublabel || expansionPanelSublabel) ? 40 : null">
       <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
@@ -21,8 +21,7 @@
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>
     <span flex></span>
-    <md-icon class="td-expand-icon" *ngIf="!expand && !disabled">keyboard_arrow_down</md-icon>
-    <md-icon class="td-expand-icon" *ngIf="expand">keyboard_arrow_up</md-icon>
+    <md-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</md-icon>
   </div>
 </div>
 <div class="td-expansion-content"

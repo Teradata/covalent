@@ -1,0 +1,327 @@
+<div layout-sm="row" layout-gt-md="row">
+  <md-card flex-sm="70" flex-gt-md="70">
+    <md-card-title>Alert Patterns</md-card-title>
+    <md-divider></md-divider>
+    <md-card-content>
+      <h3>Problem</h3>
+      <p>Need to provide information or feedback to the user and potentially prompt them to take action.
+        <h3>Solution</h3>
+        <p>Notifications have a signifigant impact on the user's overall impression of the application.  This is how the app communicates directly with the user, so it is important to consider the form of notification.  For exmaple, dialogs are most useful in situations where the user most take some action or the app needs to communicate critical information.  On the other hand, toasts and snackbars are passive and do not require any user action or interruption to the user's workflow.  Inline errors are useful for forms validation while guiding the user through the form.</p>
+    </md-card-content>
+  </md-card>
+  <!-- Resources -->
+  <md-card flex-sm flex-gt-md>
+    <md-card-title>Resources</md-card-title>
+    <md-divider></md-divider>
+    <md-nav-list>
+      <a md-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Dialogs</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Toasts & Snackbars</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Errors</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Angular Material Dialogs</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Angular Material Snackbars</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item [routerLink]="['/components', 'dialogs']" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Covalent Dialogs</span>
+      </a>
+    </md-nav-list>
+  </md-card>
+</div>
+<!-- Examples -->
+<md-card>
+  <md-card-title>Examples</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <!-- Dialogs -->
+    <div layout-sm="row" layout-gt-md="row">
+      <div flex-sm="35" flex-gt-md="35">
+        <md-card-title>Dialogs</md-card-title>
+        <md-card-subtitle>Notification with call to action</md-card-subtitle>
+        <md-card-content>
+          <p>Since dialogs are disruptive, reserve use to inform users about a specific task or critical information, such as
+            a verbose/critical error, alert or a confirmation of an action. </p>
+        </md-card-content>
+      </div>
+      <div flex>
+        <md-card class="pad-bottom-lg">
+          <md-card-subtitle class="bgc-grey-100 push-none">
+            <div layout="row">
+              <span flex></span>
+              <button md-icon-button mdTooltip="View Source" (click)="toggle('example1')">
+                <md-icon class="tc-grey-700">code</md-icon>
+              </button>
+            </div>
+          </md-card-subtitle>
+          <div [tdToggle]="example1">
+            <!-- View Source -->
+            <div>
+              <md-tab-group md-stretch-tabs dynamicHeight>
+                <md-tab>
+                  <ng-template mdTabLabel>HTML</ng-template>
+                    <td-highlight lang="html">
+                      <![CDATA[
+                          <button md-raised-button color="warn" (click)="openAlert()">View Error</button>
+                          <button md-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
+                        ]]>
+                    </td-highlight>
+                </md-tab>
+                  <md-tab>
+                  <ng-template mdTabLabel>Typescript</ng-template>
+                    <td-highlight lang="typescript">
+                      <![CDATA[
+                          import { TdDialogService } from '@covalent/core';
+                          ...
+                          constructor(private _dialogService: TdDialogService) {
+                          }
+                          openAlert(): void {
+                            this._dialogService.openAlert({
+                              message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
+                              title: '401 Permissions Error',
+                              closeButton: 'Ok',
+                            });
+                          }
+                          openConfirm(): void {
+                            this._dialogService.openConfirm({
+                              message: 'Are you sure you want to delete this item? It\'s used on other items.',
+                              title: 'Confirm',
+                              cancelButton: 'Cancel',
+                              acceptButton: 'Delete',
+                            }).afterClosed().subscribe((accept: boolean) => {
+                              if (accept) {
+                                // DO SOMETHING
+                              } else {
+                                // DO SOMETHING ELSE
+                              }
+                            });
+                          }
+                        ]]>
+                    </td-highlight>
+                </md-tab>
+              </md-tab-group>
+            </div>
+            <md-divider></md-divider>
+          </div>
+          <md-card-content class="push-md">
+            <button md-raised-button color="warn" (click)="openAlert()">View Error</button>
+            <button md-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div> 
+    <!-- Toasts & Snackbars -->
+    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
+      <div flex-sm="35" flex-gt-md="35">
+        <md-card-title>Toast</md-card-title>
+        <md-card-subtitle>Brief, floating notification with optional user interaction</md-card-subtitle>
+        <md-card-content>
+        <p>Toasts &amp; snackbars provide brief feedback about an operation through a message at the bottom of the screen. This  information is transient and will go away momentarily.</p>
+        </md-card-content>
+      </div>
+      <div flex>
+        <md-card class="pad-bottom-lg">
+          <md-card-subtitle class="bgc-grey-100 push-none">
+            <div layout="row">
+              <span flex></span>
+              <button md-icon-button mdTooltip="View Source" (click)="toggle('example2')">
+                <md-icon class="tc-grey-700">code</md-icon>
+              </button>
+            </div>
+          </md-card-subtitle>
+          <div [tdToggle]="example2">
+            <!-- View Source -->
+            <div>
+              <md-tab-group md-stretch-tabs dynamicHeight>
+                <md-tab>
+                  <ng-template mdTabLabel>HTML</ng-template>
+                    <td-highlight lang="html">
+                      <![CDATA[
+                        <button md-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
+                        ]]>
+                    </td-highlight>
+                </md-tab>
+                  <md-tab>
+                  <ng-template mdTabLabel>Typescript</ng-template>
+                    <td-highlight lang="typescript">
+                      <![CDATA[
+                        import { MdSnackBar } from '@angular/material';
+                        ...
+                        export class ToastsComponent {
+                          constructor(private _snackBarService: MdSnackBar) {
+                          }
+                          showSnackBar(): void {
+                            this._snackBarService.open('Connection timed out.  Showing limited messages.', 'Retry', { duration: 3000 });
+                          }
+                        }
+                      ]]>
+                    </td-highlight>
+                </md-tab>
+              </md-tab-group>
+            </div>
+            <md-divider></md-divider>
+          </div>
+          <md-card-content class="push-md">
+            <button md-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+    <!-- Inline errors -->
+    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
+      <div flex-sm="35" flex-gt-md="35">
+        <md-card-title>Inline Errors</md-card-title>
+        <md-card-subtitle>For forms and inputs use inline errors for contextual feedback.</md-card-subtitle>
+        <md-card-content>
+        <p>Inline errors are useful in forms for validation, warnings and errors.</p>
+        </md-card-content>
+      </div>
+      <div flex>
+        <md-card class="pad-bottom-lg">
+          <md-card-subtitle class="bgc-grey-100 push-none">
+            <div layout="row">
+              <span flex></span>
+              <button md-icon-button mdTooltip="View Source" (click)="toggle('example3')">
+                <md-icon class="tc-grey-700">code</md-icon>
+              </button>
+            </div>
+          </md-card-subtitle>
+          <div [tdToggle]="example3">
+            <!-- View Source -->
+            <div>
+              <td-highlight lang="html">
+                <![CDATA[
+                  <form #myForm="ngForm">
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-form-field flex>
+                          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                        </md-form-field>
+                        <md-form-field flex>
+                          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                        </md-form-field>
+                      </div>
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-form-field flex="40">
+                          <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+                          </md-hint>
+                          <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
+                        </md-form-field>
+                        <md-form-field flex="35">
+                          <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+                        </md-form-field>
+                      </div>
+                      <div layout-gt-xs="row" layout-margin>
+                        <md-form-field flex="20">
+                          <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
+                          <md-hint>
+                            <span [hidden]="stateForm.pristine" class="tc-red-600">
+                              <span [hidden]="!stateForm.errors?.required">Required</span>
+                              <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+                            </span>
+                          </md-hint>
+                          <md-hint align="end">e.g CA</md-hint>
+                        </md-form-field>
+                        <md-form-field flex="25">
+                          <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+                          <md-hint>
+                            <span [hidden]="zipForm.pristine" class="tc-red-600">
+                              <span [hidden]="!zipForm.errors?.required">Required</span>
+                              <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+                            </span>
+                          </md-hint>
+                          <md-hint align="end">e.g 92101</md-hint>
+                        </md-form-field>
+                      </div>
+                      <md-divider></md-divider>
+                      <div class="inset">
+                        <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
+                      </div>
+                    </form>
+                  ]]>
+              </td-highlight>
+            </div>
+            <md-divider></md-divider>
+          </div>
+          <!-- example -->
+          <form #myForm="ngForm">
+            <div layout-gt-xs="row" layout-margin>
+              <md-form-field flex>
+                <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
+                <md-hint>
+                  <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+                </md-hint>
+              </md-form-field>
+              <md-form-field flex>
+                <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
+                <md-hint>
+                  <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+                </md-hint>
+              </md-form-field>
+            </div>
+            <div layout-gt-xs="row" layout-margin>
+              <md-form-field flex="40">
+                <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50"
+                  tdAutoTrim/>
+                <md-hint>
+                  <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+                </md-hint>
+                <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
+              </md-form-field>
+              <md-form-field flex="35">
+                <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+              </md-form-field>
+            </div>
+            <div layout-gt-xs="row" layout-margin>
+              <md-form-field flex="20">
+                <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2"
+                  required tdAutoTrim/>
+                <md-hint>
+                  <span [hidden]="stateForm.pristine" class="tc-red-600">
+                    <span [hidden]="!stateForm.errors?.required">Required</span>
+                  <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+                  </span>
+                </md-hint>
+                <md-hint align="end">e.g CA</md-hint>
+              </md-form-field>
+              <md-form-field flex="25">
+                <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+                <md-hint>
+                  <span [hidden]="zipForm.pristine" class="tc-red-600">
+                    <span [hidden]="!zipForm.errors?.required">Required</span>
+                  <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+                  </span>
+                </md-hint>
+                <md-hint align="end">e.g 92101</md-hint>
+              </md-form-field>
+            </div>
+          </form>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

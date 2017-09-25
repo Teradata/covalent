@@ -54,6 +54,11 @@ export class ComponentsOverviewComponent {
       route: 'data-table',
       title: 'Data Table',
     }, {
+      color: 'orange-A700',
+      icon: 'format_line_spacing',
+      route: 'virtual-scroll',
+      title: 'Virtual Scroll',
+    }, {
       color: 'teal-A700',
       icon: 'format_indent_increase',
       route: 'json-formatter',
@@ -94,6 +99,12 @@ export class ComponentsOverviewComponent {
       route: 'pipes',
       title: 'Pipes',
     },
+    {
+      color: 'amber-A700',
+      icon: 'theaters',
+      route: 'animations',
+      title: 'Animations',
+    },
   ];
   optional: Object[] = [{
       color: 'pink-A700',
@@ -104,7 +115,7 @@ export class ComponentsOverviewComponent {
       color: 'orange-A700',
       icon: 'chrome_reader_mode',
       route: 'markdown',
-      title: 'Markdown',
+      title: 'Markdown Parser',
     }, {
       color: 'green-A700',
       icon: 'format_align_center',
@@ -115,6 +126,11 @@ export class ComponentsOverviewComponent {
       icon: 'featured_play_list',
       route: 'code-editor',
       title: 'Code Editor',
+    }, {
+      color: 'cyan-A700',
+      icon: 'keyboard',
+      route: 'text-editor',
+      title: 'Markdown Text Editor',
     }, {
       color: 'indigo-A700',
       icon: 'http',

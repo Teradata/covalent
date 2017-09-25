@@ -26,9 +26,9 @@ $caption-font-size-base: rem(1.200) !default;
 // Layout
 $baseline-grid: 8px !default;
 $layout-breakpoint-xs: 600px !default;
-$layout-breakpoint-sm: 600px !default;
-$layout-breakpoint-md: 960px !default;
-$layout-breakpoint-lg: 1280px !default;
+$layout-breakpoint-sm: 960px !default;
+$layout-breakpoint-md: 1280px !default;
+$layout-breakpoint-lg: 1920px !default;
 $layout-gutter-width: ($baseline-grid * 2) !default;
 
 // Typography
@@ -75,9 +75,9 @@ $z-index-progress-circular: 2 !default; // Used to fix animation bug in Chrome
 // Easing Curves
 
 // The default animation curves used by material design.
-$md-linear-out-slow-in-timing-function: cubic-bezier(0.0, 0.0, 0.2, 0.1) !default;
-$md-fast-out-slow-in-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1) !default;
-$md-fast-out-linear-in-timing-function: cubic-bezier(0.4, 0.0, 1, 1) !default;
+$mat-linear-out-slow-in-timing-function: cubic-bezier(0.0, 0.0, 0.2, 0.1) !default;
+$mat-fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$mat-fast-out-linear-in-timing-function: cubic-bezier(0.4, 0.0, 1, 1) !default;
 
 $ease-in-out-curve-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
 

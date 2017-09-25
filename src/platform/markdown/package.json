@@ -1,8 +1,8 @@
 {
   "name": "@covalent/markdown",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Teradata UI Platform Markdown Module",
-  "main": "./markdown.umd.js",
+  "main": "./bundles/markdown.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "keywords": [
@@ -11,10 +11,6 @@
     "reusable"
   ],
   "scripts": {
-  },
-  "engines": {
-    "node": ">=6.9",
-    "npm": ">= 3"
   },
   "repository": {
     "type": "git",
@@ -35,10 +31,11 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
+    "tslib": "^1.7.1",
     "showdown": "1.6.4"
   },
   "peerDependencies": {
-    "@angular/common": "^4.2.0",
-    "@angular/core": "^4.2.0"
+    "@angular/common": "^4.3.0",
+    "@angular/core": "^4.3.0"
   }
 }

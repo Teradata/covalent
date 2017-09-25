@@ -25,7 +25,7 @@ export class HomeComponent implements AfterViewInit {
       title: 'Documentation',
     }, {
       color: 'teal-A700',
-      description: 'Covalent Components, Directives, Pipes & Services',
+      description: 'Covalent Components, Directives, Pipes, & Services',
       icon: 'picture_in_picture',
       route: 'components',
       title: 'Components',
@@ -41,6 +41,12 @@ export class HomeComponent implements AfterViewInit {
       icon: 'color_lens',
       route: 'style-guide',
       title: 'Style Guide',
+    }, {
+      color: 'yellow-800',
+      description: 'Solutions for commonly occuring problems',
+      icon: 'extension',
+      route: 'design-patterns',
+      title: 'Design Patterns',
     }, {
       color: 'green-A700',
       description: 'Gallery of example applications and usages',

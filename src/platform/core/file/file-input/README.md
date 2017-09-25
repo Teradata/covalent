@@ -36,7 +36,7 @@ export class Demo {
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | color | string | Sets button color. Uses same color palette accepted as [mdButton].
 | multiple | boolean | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
 | accept | string | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
@@ -83,7 +83,7 @@ Example for usage:
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | multiple | boolean | Sets whether multiple files can be selected at once in host element, or just a single file. Can also be "multiple" native attribute.
 | fileSelect | function($event) | Event emitted when a file or files are selected in host [HTMLInputElement]. Emits a [FileList or File] object. Alternative to not use [(ngModel)].
 
@@ -112,7 +112,7 @@ Example for usage:
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | multiple | boolean | Sets whether multiple files can be dropped at once in host element, or just a single file. Can also be "multiple" native attribute.
 | disabled | boolean | Disabled drop events for host element.
 | fileDrop | function($event) | Event emitted when a file or files are dropped in host element after being validated. Emits a [FileList or File] object.

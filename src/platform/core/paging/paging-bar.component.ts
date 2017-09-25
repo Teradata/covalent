@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
-import { Dir } from '@angular/cdk';
+import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { Dir } from '@angular/cdk/bidi';
 
 export interface IPageChangeEvent {
   page: number;
@@ -17,7 +18,6 @@ export interface IPageChangeEvent {
 })
 export class TdPagingBarComponent implements OnInit {
 
-  private _pageSizes: number[] = [50, 100, 200, 500, 1000];
   private _pageSize: number = 50;
   private _total: number = 0;
   private _page: number = 1;
@@ -26,23 +26,10 @@ export class TdPagingBarComponent implements OnInit {
   private _initialized: boolean = false;
   private _pageLinks: number[] = [];
   private _pageLinkCount: number = 0;
-  private _id: string;
   // special case when 2 pageLinks, detect when hit end of pages so can lead in correct direction
   private _hitEnd: boolean = false;
     // special case when 2 pageLinks, detect when hit start of pages so can lead in correct direction
   private _hitStart: boolean = false;
-
-  /**
-   * pageSizeAll?: boolean
-   * Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'
-   */
-  @Input('pageSizeAll') pageSizeAll: boolean = false;
-
-  /**
-   * pageSizeAllText?: string
-   * Text for the 'all' menu item in the page size menu. Defaults to 'All'
-   */
-  @Input('pageSizeAllText') pageSizeAllText: string = 'All';
 
   /**
    * firstLast?: boolean
@@ -58,11 +45,11 @@ export class TdPagingBarComponent implements OnInit {
 
   /**
    * pageLinkCount?: number
-   * Amount of page jump to links for the paging bar. Defaults to '0'
+   * Amount of page navigation links for the paging bar. Defaults to '0'
    */
   @Input('pageLinkCount')
   set pageLinkCount(pageLinkCount: number) {
-    this._pageLinkCount = pageLinkCount;
+    this._pageLinkCount = coerceNumberProperty(pageLinkCount);
     this._calculatePageLinks();
   }
   get pageLinkCount(): number {
@@ -70,33 +57,15 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   /**
-   * pageSizes?: number[]
-   * Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]
-   */
-  @Input('pageSizes')
-  set pageSizes(pageSizes: number[]) {
-    if (!(pageSizes instanceof Array)) {
-      throw new Error('[pageSizes] needs to be an number array.');
-    }
-    this._pageSizes = pageSizes;
-    this._pageSize = this._pageSizes[0];
-  }
-  get pageSizes(): number[] {
-    return this._pageSizes;
-  }
-
-  /**
    * pageSize?: number
-   * Selected page size for the pagination. Defaults to first element of the [pageSizes] array.
+   * Selected page size for the pagination. Defaults 50.
    */
   @Input('pageSize')
   set pageSize(pageSize: number) {
-    if ((this._pageSizes.indexOf(pageSize) > -1 || this.total === pageSize) && this._pageSize !== pageSize) {
-      this._pageSize = pageSize;
-      this._page = 1;
-      if (this._initialized) {
-        this._handleOnChange();
-      }
+    this._pageSize = coerceNumberProperty(pageSize);
+    this._page = 1;
+    if (this._initialized) {
+      this._handleOnChange();
     }
   }
   get pageSize(): number {
@@ -109,7 +78,7 @@ export class TdPagingBarComponent implements OnInit {
    */
   @Input('total')
   set total(total: number) {
-    this._total = total;
+    this._total = coerceNumberProperty(total);
     this._calculateRows();
     this._calculatePageLinks();
   }
@@ -150,14 +119,6 @@ export class TdPagingBarComponent implements OnInit {
   }
 
   /**
-   * id: string
-   * Returns the guid id for this paginator
-   */
-  get id(): string {
-    return this._id;
-  }
-
-  /**
    * change?: function
    * Method to be executed when page size changes or any button is clicked in the paging bar.
    * Emits an [IPageChangeEvent] implemented object.
@@ -171,12 +132,10 @@ export class TdPagingBarComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {
-    this._id = this.guid();
-  }
+  constructor(@Optional() private _dir: Dir) {}
 
   ngOnInit(): void {
-    this._page = this.initialPage;
+    this._page = coerceNumberProperty(this.initialPage);
     this._calculateRows();
     this._calculatePageLinks();
     this._initialized = true;
@@ -188,7 +147,7 @@ export class TdPagingBarComponent implements OnInit {
    */
   navigateToPage(page: number): boolean {
     if (page === 1 || (page >= 1 && page <= this.maxPage)) {
-      this._page = page;
+      this._page = coerceNumberProperty(Math.floor(page));
       this._handleOnChange();
       return true;
     }
@@ -298,18 +257,6 @@ export class TdPagingBarComponent implements OnInit {
       toRow: this._toRow,
     };
     this.onChange.emit(event);
-  }
-
-  /**
-   * guid?: function
-   * Returns RFC4122 random ("version 4") GUIDs
-   */
-  private guid(): string {
-    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
-  }
-
-  private s4(): string {
-    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
 
 }

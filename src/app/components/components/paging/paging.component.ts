@@ -1,4 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { TdMediaService } from '../../../../platform/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -10,68 +11,53 @@ import { IPageChangeEvent } from '../../../../platform/core';
   templateUrl: './paging.component.html',
   animations: [slideInDownAnimation],
 })
-export class PagingDemoComponent {
+export class PagingDemoComponent implements AfterViewInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
-  pagingBarAttrs: Object[] = [{
-    description: `Array that populates page size menu. Defaults to [50, 100, 200, 500, 1000]`,
-    name: 'pageSizes?',
-    type: 'number[]',
-  }, {
-    description: `Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'`,
-    name: 'firstLast?',
-    type: 'boolean',
-  }, {
-    description: `Shows or hides the 'all' menu item in the page size menu. Defaults to 'false'`,
-    name: 'pageSizeAll?',
-    type: 'boolean',
-  }, {
-    description: `Text for the 'all' menu item in the page size menu. Defaults to 'All'`,
-    name: 'pageSizeAllText?',
-    type: 'boolean',
-  }, {
-    description: `Selected page size for the pagination. Defaults to first element of the [pageSizes] array.`,
-    name: 'pageSize?',
-    type: 'number',
-  }, {
-    description: `Defines the number of PageLinks to display. PageLinks are used to jump to a specific page, default is 0.`,
-    name: 'pageLinkCount?',
-    type: 'number',
-  }, {
-    description: `ets starting page for the paging bar. Defaults to '1'`,
-    name: 'initialPage?',
-    type: 'number',
-  }, {
-    description: `Total rows for the pagination.`,
-    name: 'total',
-    type: 'number',
-  }, {
-    description: `Method to be executed when page size changes or any button is clicked in the paging bar.`,
-    name: 'change',
-    type: 'function($event: IPageChangeEvent)',
-  }, {
-    description: `Navigates to a specific valid page.
-                  Returns 'true' if page is valid, else 'false'.`,
-    name: 'navigateToPage',
-    type: 'function(page: number): boolean',
-  }];
-
+    
   event: IPageChangeEvent;
-  firstLast: boolean = false;
-  pageSizeAll: boolean = false;
+  eventPageSize: IPageChangeEvent;
+  eventLinks: IPageChangeEvent;
+  eventInput: IPageChangeEvent;
+  eventResponsive: IPageChangeEvent;
+  pageSize: number = 100;
+  pageSizeResponsive: number = 100;
+  firstLast: boolean = true;
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef,
+              public media: TdMediaService) {}
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+      this.media.broadcast();
+      this._changeDetectorRef.detectChanges();
+    });
+  }
 
   change(event: IPageChangeEvent): void {
     this.event = event;
   }
 
-  toggleFirstLast(): void {
-    this.firstLast = !this.firstLast;
+  changePageSize(event: IPageChangeEvent): void {
+    this.eventPageSize = event;
   }
 
-  togglePageSizeAll(): void {
-    this.pageSizeAll = !this.pageSizeAll;
+  changeLinks(event: IPageChangeEvent): void {
+    this.eventLinks = event;
+  }
+
+  changeInput(event: IPageChangeEvent): void {
+    this.eventInput = event;
+  }
+
+  changeResponsive(event: IPageChangeEvent): void {
+    this.eventResponsive = event;
+  }
+
+  toggleFirstLast(): void {
+    this.firstLast = !this.firstLast;
   }
 
 }

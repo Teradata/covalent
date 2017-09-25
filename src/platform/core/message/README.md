@@ -10,7 +10,7 @@ But you can also set a `color` from our lib and it can be applied in the compone
 Properties:
 
 | Name | Type | Description |
-| --- | --- | --- |
+| --- | --- | 650--- |
 | `label?` | `string` | Sets the label of the message.
 | `sublabel?` | `string` | Sets the sublabel of the message.
 | `icon?` | `string` | The icon to be displayed before the title. Defaults to `info_outline` icon

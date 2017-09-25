@@ -77,8 +77,15 @@ export class DataTableDemoComponent implements OnInit {
     type: `function(data: any[], fromRow: number, toRow: number): any[]`,
   }];
 
+  configWidthColumns: ITdDataTableColumn[] = [
+    { name: 'name',  label: 'Dessert (100g serving)', width: 300 },
+    { name: 'type', label: 'Type', width: { min: 150, max: 250 } },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT},
+    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT},
+  ];
+
   columns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', sortable: true },
+    { name: 'name',  label: 'Dessert (100g serving)', sortable: true, width: 200 },
     { name: 'type', label: 'Type', filter: true },
     { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
     { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
@@ -227,7 +234,7 @@ export class DataTableDemoComponent implements OnInit {
   searchTerm: string = '';
   fromRow: number = 1;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 10;
   sortBy: string = 'name';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 

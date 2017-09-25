@@ -1,0 +1,280 @@
+<div layout-sm="row" layout-gt-md="row">
+  <md-card flex-sm="70" flex-gt-md="70">
+    <md-card-title>Management Lists Patterns</md-card-title>
+    <md-divider></md-divider>
+    <md-card-content>
+      <h3>Problem</h3>
+      <p>Need to display collection of data with a similar data type and a minimal amount of metadata.</p>
+      <h3>Solution</h3>
+      <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with
+        faux-columns and sorting instead.</p>
+    </md-card-content>
+  </md-card>
+  <md-card flex-sm flex-gt-md>
+    <md-card-title>Resources</md-card-title>
+    <md-divider></md-divider>
+    <md-nav-list>
+      <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Lists</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.io/guidelines/components/lists-controls.html" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Material Design Lists Controls</span>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://material.angular.io/components/list/overview" target="_blank">
+        <md-icon>launch</md-icon>
+        <span mdLine>Angular Material Lists</span>
+      </a>
+    </md-nav-list>
+  </md-card>
+</div>
+<md-card>
+  <md-card-title>Examples</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout-sm="row" layout-gt-md="row">
+      <div flex-sm="35" flex-gt-md="35">
+        <md-card-title>Management List with Menu</md-card-title>
+        <md-card-subtitle>Supports sorting & filtering</md-card-subtitle>
+        <md-card-content>
+          <p>This example contains a variety of components including:</p>
+          <md-nav-list>
+            <a md-list-item [routerLink]="['/components', 'search']" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Covalent Search</span>
+              <p mdLine>td-search</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item [routerLink]="['/components', 'paging']" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Covalent Paging</span>
+              <p mdLine>td-paging-bar</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design List</span>
+              <p mdLine>md-list</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/components/menus.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design Menu</span>
+              <p mdLine>md-menu</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design Icons</span>
+              <p mdLine>md-icon</p>
+            </a>
+            <md-divider></md-divider>
+            <a md-list-item href="https://material.angular.io/components/select/overview" target="_blank">
+              <md-icon>launch</md-icon>
+              <span mdLine>Material Design Select</span>
+              <p mdLine>md-select</p>
+            </a>
+          </md-nav-list>
+        </md-card-content>
+      </div>
+      <div flex>
+        <md-card class="pad-bottom-lg">
+          <md-card-subtitle class="bgc-grey-100 push-none">
+            <div layout="row">
+              <span flex></span>
+              <button md-icon-button mdTooltip="View Source" (click)="toggle('example1')">
+                <md-icon class="tc-grey-700">code</md-icon>
+              </button>
+            </div>
+          </md-card-subtitle>
+          <div [tdToggle]="example1">
+            <div>
+              <md-tab-group md-stretch-tabs dynamicHeight>
+                <md-tab>
+                  <ng-template mdTabLabel>HTML</ng-template>
+                  <td-highlight lang="html">
+                    <![CDATA[
+                            <md-card>
+                              <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+                                <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                                  <span class="md-title">Title here</span>
+                                </span>
+                                <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+                                </td-search-box>
+                                <span>
+                                  <button md-icon-button [mdMenuTriggerFor]="toolbarMenu"><md-icon>more_vert</md-icon></button>
+                                  <md-menu #toolbarMenu="mdMenu">
+                                    <button md-menu-item>
+                                      <md-icon>settings</md-icon>
+                                      <span>Settings</span>
+                                    </button>
+                                  </md-menu>
+                                </span>
+                              </div>
+                              <md-divider></md-divider>
+                              <md-list>
+                                <md-list-item>
+                                  <md-icon mdListAvatar>apps</md-icon>
+                                  <h3 mdLine>App Name</h3>
+                                  <span flex></span>
+                                  <span hide-xs flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
+                                  <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+                                    <md-select flex="90" [(ngModel)]="sortKey">
+                                      <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+                                        { {option.name}}
+                                      </md-option>
+                                    </md-select>
+                                  </span>
+                                  <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
+                                    <span layout="row" layout-align="start center" flex>
+                                      <md-icon class="md-sort-icon">{ {isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                                    </span>
+                                  </a>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                                <ng-template let-item let-last="last" ngFor [ngForOf]="data">
+                                  <md-list-item>
+                                    <md-icon mdListAvatar>desktop_mac</md-icon>
+                                    <h3 mdLine> { {item.name}} </h3>
+                                    <span flex></span>
+                                    <span hide-xs flex="10">
+                                      { {item.owner}}
+                                    </span>
+                                    <span hide-xs flex="60" class="text-right md-body-1 tc-grey-500 pad-right">
+                                      { {item[sortKey] | date:'short'}}
+                                    </span>
+                                  </md-list-item>
+                                  <md-divider *ngIf="!last" md-inset></md-divider>
+                                </ng-template>
+                              </md-list>
+                              <md-divider></md-divider>
+                              <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
+                                <span hide-xs>Rows per page:</span>
+                                <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                                  <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                                    { {size} }
+                                  </md-option>
+                                </md-select>
+                                { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
+                              </td-paging-bar>
+                            </md-card>
+                          ]]>
+                  </td-highlight>
+                </md-tab>
+                <md-tab>
+                  <ng-template mdTabLabel>Typescript</ng-template>
+                  <td-highlight lang="typescript">
+                    <![CDATA[
+                            ...
+                            export class ManagementListComponent implements OnInit {
+                              data: any[];
+                              columnOptions: any[] = [{
+                                name: 'Updated',
+                                value: 'updated_at',
+                              }, {
+                                name: 'Created',
+                                value: 'created_at',
+                              }];
+                              sortKey: string = this.columnOptions[0].value;
+                              headers: IHeaders = {};
+                              pageSize: number = 5;
+
+                              ngOnInit(): void {
+                                this.columnOptions.forEach((option: any) => {
+                                  this.headers[option.value] = OrderBy.ASC;
+                                });
+                              }
+                              isASC(sortKey: string): boolean {
+                                return this.headers[sortKey] === OrderBy.ASC;
+                              }
+                              sortBy(sortKey: string): void {
+                                let sortedData: any[];
+                                if (this.headers[sortKey] === OrderBy.ASC) {
+                                  this.headers[sortKey] = OrderBy.DESC;
+                                } else {
+                                  this.headers[sortKey] = OrderBy.ASC;
+                                }
+                                ... // Sorting algorithm goes here to populate [sortedData]
+                                this.data = sortedData;
+                              }
+                            }
+                          ]]>
+                  </td-highlight>
+                </md-tab>
+              </md-tab-group>
+            </div>
+            <md-divider></md-divider>
+          </div>
+          <md-card class="push-md">
+            <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+              <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                <span class="md-title">Title here</span>
+              </span>
+              <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()"
+                flex>
+              </td-search-box>
+              <span>
+                <button md-icon-button [mdMenuTriggerFor]="toolbarMenu"><md-icon>more_vert</md-icon></button>
+                <md-menu #toolbarMenu="mdMenu">
+                  <button md-menu-item>
+                    <md-icon>settings</md-icon>
+                    <span>Settings</span>
+              </button>
+              </md-menu>
+              </span>
+            </div>
+            <md-divider></md-divider>
+            <md-list>
+              <md-list-item>
+                <md-icon mdListAvatar>apps</md-icon>
+                <h3 mdLine>App Name</h3>
+                <span flex></span>
+                <span hide-sm flex="40" class="pad-left md-body-1 tc-grey-500">Owner</span>
+                <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+                  <md-select flex="90" [(ngModel)]="sortKey">
+                    <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+                      {{option.name}}
+                    </md-option>
+                  </md-select>
+                </span>
+                <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
+                  <span layout="row" layout-align="start center" flex>
+                    <md-icon class="md-sort-icon">{{isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</md-icon>
+                  </span>
+                </a>
+              </md-list-item>
+              <md-divider></md-divider>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="data">
+                <md-list-item>
+                  <md-icon mdListAvatar>desktop_mac</md-icon>
+                  <h3 mdLine> {{item.name}} </h3>
+                  <span flex></span>
+                  <span hide-sm flex="10">
+                    {{item.owner}}
+                  </span>
+                  <span hide-xs flex="60" class="text-right md-body-1 tc-grey-500 pad-right">
+                    {{item[sortKey] | date:'short'}}
+                  </span>
+                </md-list-item>
+                <md-divider *ngIf="!last" md-inset></md-divider>
+              </ng-template>
+            </md-list>
+            <md-divider></md-divider>
+            <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
+              <span hide-xs>Rows per page:</span>
+              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                  {{size}}
+                </md-option>
+              </md-select>
+              {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+            </td-paging-bar>
+          </md-card>
+        </md-card>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
