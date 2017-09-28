@@ -19,12 +19,12 @@
           <td-notification-count color="primary" [notifications]="false">
             <mat-icon>messages</mat-icon>
           </td-notification-count>
-          <button class="overflow-visible" mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
+          <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
             <td-notification-count [notifications]="101">
               <mat-icon>notifications</mat-icon>
             </td-notification-count>
           </button>
-          <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
+          <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
             <td-menu>
               <div td-menu-header class="md-subhead">Notifications</div>
               <mat-nav-list dense>
@@ -41,18 +41,18 @@
                 See All Notifications
               </button>
             </td-menu>
-          </md-menu>
-          <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
-          <md-menu #toolbarMenu1="mdMenu">
-            <button md-menu-item>
+          </mat-menu>
+          <button mat-icon-button [matMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
+          <mat-menu #toolbarMenu1="matMenu">
+            <button mat-menu-item>
               <mat-icon>settings</mat-icon>
               <span>Settings</span>
             </button>
-            <button md-menu-item>
+            <button mat-menu-item>
               <mat-icon>exit_to_app</mat-icon>
               <span>Sign out</span>
             </button>
-          </md-menu>
+          </mat-menu>
         </mat-toolbar>
       </md-tab>
       <md-tab>
@@ -72,12 +72,12 @@
               <td-notification-count color="primary" [notifications]="false">
                 <mat-icon>messages</mat-icon>
               </td-notification-count>
-              <button class="overflow-visible" mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
+              <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
                 <td-notification-count [notifications]="101">
                   <mat-icon>notifications</mat-icon>
                 </td-notification-count>
               </button>
-              <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
+              <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
                 <td-menu>
                   <div td-menu-header class="md-subhead">Notifications</div>
                   <mat-nav-list dense>
@@ -94,18 +94,18 @@
                     See All Notifications
                   </button>
                 </td-menu>
-              </md-menu>
-              <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
-              <md-menu #toolbarMenu1="mdMenu">
-                <button md-menu-item>
+              </mat-menu>
+              <button mat-icon-button [matMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
+              <mat-menu #toolbarMenu1="matMenu">
+                <button mat-menu-item>
                   <mat-icon>settings</mat-icon>
                   <span>Settings</span>
                 </button>
-                <button md-menu-item>
+                <button mat-menu-item>
                   <mat-icon>exit_to_app</mat-icon>
                   <span>Sign out</span>
                 </button>
-              </md-menu>
+              </mat-menu>
             </mat-toolbar>
           ]]>
         </td-highlight>

@@ -18,7 +18,7 @@ import { MockDataComponent } from './mock-data/mock-data.component';
 import { DocumentationToolsModule } from '../../documentation-tools';
 
 import { MatButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule,
-         MdMenuModule } from '@angular/material';
+         MatMenuModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
@@ -48,7 +48,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatIconModule,
     MdCardModule,
     MatToolbarModule,
-    MdMenuModule,
+    MatMenuModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,

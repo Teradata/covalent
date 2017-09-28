@@ -63,7 +63,7 @@
             <a mat-list-item href="https://material.io/guidelines/components/menus.html" target="_blank">
               <mat-icon>launch</mat-icon>
               <span matLine>Material Design Menu</span>
-              <p matLine>md-menu</p>
+              <p matLine>mat-menu</p>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
@@ -105,13 +105,13 @@
                                 <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
                                 </td-search-box>
                                 <span>
-                                  <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
-                                  <md-menu #toolbarMenu="mdMenu">
-                                    <button md-menu-item>
+                                  <button mat-icon-button [matMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
+                                  <mat-menu #toolbarMenu="matMenu">
+                                    <button mat-menu-item>
                                       <mat-icon>settings</mat-icon>
                                       <span>Settings</span>
                                     </button>
-                                  </md-menu>
+                                  </mat-menu>
                                 </span>
                               </div>
                               <mat-divider></mat-divider>
@@ -217,13 +217,13 @@
                 flex>
               </td-search-box>
               <span>
-                <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
-                <md-menu #toolbarMenu="mdMenu">
-                  <button md-menu-item>
+                <button mat-icon-button [matMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
+                <mat-menu #toolbarMenu="matMenu">
+                  <button mat-menu-item>
                     <mat-icon>settings</mat-icon>
                     <span>Settings</span>
               </button>
-              </md-menu>
+              </mat-menu>
               </span>
             </div>
             <mat-divider></mat-divider>

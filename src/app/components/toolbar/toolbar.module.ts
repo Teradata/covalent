@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar.component';
 
-import { MatButtonModule, MatListModule, MatIconModule, MdMenuModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MatMenuModule } from '@angular/material';
 
 import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platform/core';
 
@@ -14,7 +14,7 @@ import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platfo
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MdMenuModule,
+    MatMenuModule,
     CovalentMenuModule,
     CovalentNotificationsModule,
     RouterModule,
