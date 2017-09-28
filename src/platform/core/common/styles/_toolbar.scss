@@ -1,5 +1,5 @@
 mat-toolbar {
-    [md-button] {
+    [mat-button] {
         &:first-of-type:not(:last-child) {
             
             margin-left: -6px;

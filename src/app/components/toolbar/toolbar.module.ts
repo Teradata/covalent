@@ -4,14 +4,14 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar.component';
 
-import { MdButtonModule, MatListModule, MatIconModule, MdMenuModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MdMenuModule } from '@angular/material';
 
 import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platform/core';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdButtonModule,
+    MatButtonModule,
     MatListModule,
     MatIconModule,
     MdMenuModule,

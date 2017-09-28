@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MdDialogModule, MdInputModule, MdButtonModule } from '@angular/material';
+import { MdDialogModule, MdInputModule, MatButtonModule } from '@angular/material';
 
 import { TdDialogComponent, TdDialogTitleDirective,
          TdDialogActionsDirective, TdDialogContentDirective } from './dialog.component';
@@ -38,7 +38,7 @@ export { TdDialogService, TdDialogComponent, TdDialogTitleDirective,
     CommonModule,
     MdDialogModule,
     MdInputModule,
-    MdButtonModule,
+    MatButtonModule,
   ],
   declarations: [
     TD_DIALOGS,

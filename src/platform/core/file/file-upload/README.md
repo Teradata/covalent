@@ -49,9 +49,9 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | 650--- |
-| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
-| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [mdButton] and defaults to 'accent'.
-| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [mdButton] and defaults to 'warn'.
+| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
+| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
+| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
 | `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
 | `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.

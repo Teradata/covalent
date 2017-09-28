@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MdInputModule, MdSelectModule, MdCheckboxModule, MdSliderModule, MdSlideToggleModule, MatIconModule,
-   MdButtonModule } from '@angular/material';
+   MatButtonModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../core';
 import { CovalentFileModule } from '../core';
@@ -55,7 +55,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     MdSliderModule,
     MdSlideToggleModule,
     MatIconModule,
-    MdButtonModule,
+    MatButtonModule,
     CovalentCommonModule,
     CovalentFileModule,
   ],

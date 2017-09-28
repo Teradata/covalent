@@ -6,7 +6,7 @@
     <p>For your entire app or for different sections of your app, select one of these Material Design layout options:</p>
     <div layout="row" layout-padding>
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-        <a md-button flex [routerLink]="[item.route]">
+        <a mat-button flex [routerLink]="[item.route]">
           <img src="app/assets/images/{{item.route}}.png" alt="{{item.title}}">
           <div class="md-subtitle">{{item.title}}</div>
           <div class="md-body-1 text-wrap text-left">{{item.description}}</div>

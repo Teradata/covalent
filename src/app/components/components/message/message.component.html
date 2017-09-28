@@ -11,7 +11,7 @@
         <p class="md-body-1">Message in a card with action</p>
         <md-card>
           <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
-            <button td-message-actions md-button>VIEW MORE</button>
+            <button td-message-actions mat-button>VIEW MORE</button>
           </td-message>
         </md-card>
         <p class="md-body-1">Message in a card content:</p>
@@ -40,7 +40,7 @@
             <p class="md-body-1">Message in a card with action</p>
             <md-card>
               <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
-                <button td-message-actions md-button>VIEW MORE</button>
+                <button td-message-actions mat-button>VIEW MORE</button>
               </td-message>
             </md-card>
             <p class="md-body-1">Message in a card content:</p>
@@ -56,7 +56,7 @@
             <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
               <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
             </td-message>
-            <button md-button color="accent" (click)="messageDemo.toggle()">
+            <button mat-button color="accent" (click)="messageDemo.toggle()">
               Toggle Visibility
             </button>
           ]]>
@@ -66,7 +66,7 @@
   </md-tab-group>
   <mat-divider></mat-divider>
   <md-card-actions>
-    <button md-button color="accent" class="text-upper" (click)="messageDemo.toggle()">
+    <button mat-button color="accent" class="text-upper" (click)="messageDemo.toggle()">
       Toggle Visibility
     </button>
   </md-card-actions>
@@ -81,11 +81,11 @@
       <md-card-content>
         <p class="md-body-1">Using <code>color</code>:</p>
         <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
-          <button td-message-actions md-button>VIEW MORE</button>
+          <button td-message-actions mat-button>VIEW MORE</button>
         </td-message>
         <p class="md-body-1">Using <code>class</code>:</p>
         <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
-          <button td-message-actions md-button>VIEW MORE</button>
+          <button td-message-actions mat-button>VIEW MORE</button>
         </td-message>
       </md-card-content>
     </md-tab>
@@ -97,11 +97,11 @@
           <![CDATA[
             <p class="md-body-1">Using <code>color</code>:</p>
             <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
-              <button td-message-actions md-button>VIEW MORE</button>
+              <button td-message-actions mat-button>VIEW MORE</button>
             </td-message>
             <p class="md-body-1">Using <code>class</code>:</p>
             <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
-              <button td-message-actions md-button>VIEW MORE</button>
+              <button td-message-actions mat-button>VIEW MORE</button>
             </td-message>
           ]]>
         </td-highlight>
@@ -110,7 +110,7 @@
   </md-tab-group>
   <mat-divider></mat-divider>
   <md-card-actions>
-    <a md-button color="accent" class="text-upper" [routerLink]="['/style-guide/colors']">
+    <a mat-button color="accent" class="text-upper" [routerLink]="['/style-guide/colors']">
       Color Guide
     </a>
   </md-card-actions>

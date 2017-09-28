@@ -6,11 +6,11 @@
     {{message}}
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button
+    <button mat-button
             #closeBtn 
             (keydown.arrowright)="acceptBtn.focus()"
             (click)="cancel()">{{cancelButton}}</button>
-    <button md-button
+    <button mat-button
             color="accent"
             #acceptBtn
             (keydown.arrowleft)="closeBtn.focus()"

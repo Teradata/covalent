@@ -14,8 +14,8 @@
             </div>
             <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
             <div class="push-top-xl" hide-xs></div>
-            <button md-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
-            <a md-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+            <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
+            <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
               <mat-icon svgIcon="assets:github" class="pad-right-xs"></mat-icon>
               <span *ngIf="starCount"><mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}</span>
             </a>
@@ -47,7 +47,7 @@
             <div layout="row" layout-wrap hide-xs hide-sm hide-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <div flex-gt-sm="33" class="pad-sm">
-                  <a [routerLink]="[item.route]" md-button class="pad">
+                  <a [routerLink]="[item.route]" mat-button class="pad">
                     <div layout="row" layout-align="start center" class="push-bottom-xs">
                       <mat-icon class="push-right-sm">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
@@ -98,7 +98,7 @@
             <div layout="row" layout-wrap hide-xs hide-sm>
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
                 <div flex-gt-sm="33" class="pad-sm">
-                  <a href="{{item.link}}" target="_blank" md-button class="pad">
+                  <a href="{{item.link}}" target="_blank" mat-button class="pad">
                     <div layout="row">
                       <mat-icon class="mat-icon-md" tdMediaToggle="gt-sm" [mediaClasses]="['push-right-sm']">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
@@ -289,7 +289,7 @@
                 Covalent is a UI Platform that combines proven design language with a comprehensive web framework, built on Angular & Angular-Material (Design).
                 Electron is a framework for creating native desktop applications with web technologies like JavaScript, HTML, and CSS.
                 Covalent Electron is the Electron Platform to build desktop apps using Covalent and Electron
-                <a md-button color="primary" href="https://github.com/Teradata/covalent-electron" target="_blank">View Repo</a>
+                <a mat-button color="primary" href="https://github.com/Teradata/covalent-electron" target="_blank">View Repo</a>
               </div>
             </td-expansion-panel>
             <td-expansion-panel label="Is a backend API required?" sublabel="Mock API endpoints with Covalent Data">
@@ -297,7 +297,7 @@
                 Covalent Data is a Mock API server for rapid prototyping and API standards
                 Built on Golang
                 Allows for quick prototyping for your Covalent Applications with an easy to mock http backend server
-                <a md-button color="primary" href="https://github.com/Teradata/covalent-data" target="_blank">View Repo</a>
+                <a mat-button color="primary" href="https://github.com/Teradata/covalent-data" target="_blank">View Repo</a>
               </div>
             </td-expansion-panel>
           </td-expansion-panel-group>
@@ -311,8 +311,8 @@
       <div class="md-caption">Copyright &copy; 2016 - 2017 Teradata. All rights reserved</div>
       <span flex></span>
       <div layout-gt-xs="row">
-        <a href="https://gitter.im/Teradata/covalent" target="_blank" md-button class="text-upper">Gitter Chat</a>
-        <a href="https://github.com/teradata/covalent/issues" target="_blank" md-button class="text-upper">Feature Request</a>
+        <a href="https://gitter.im/Teradata/covalent" target="_blank" mat-button class="text-upper">Gitter Chat</a>
+        <a href="https://github.com/teradata/covalent/issues" target="_blank" mat-button class="text-upper">Feature Request</a>
       </div>
     </div>
   </td-layout-footer>

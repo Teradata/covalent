@@ -10,9 +10,9 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule, MdSnackBarModule,
+import { MatButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule, MdSnackBarModule,
          MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MatSidenavModule,
-         MdTooltipModule, MdProgressBarModule, MdButtonToggleModule } from '@angular/material';
+         MdTooltipModule, MdProgressBarModule, MatButtonToggleModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
@@ -33,7 +33,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CommonModule,
     FormsModule,
     /** Material Modules */
-    MdButtonModule,
+    MatButtonModule,
     MatListModule,
     MatIconModule,
     MdCardModule,
@@ -46,7 +46,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdSnackBarModule,
     MdTooltipModule,
     MdProgressBarModule,
-    MdButtonToggleModule,
+    MatButtonToggleModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,

@@ -1,6 +1,6 @@
 <div>
   <div *ngIf="!files">
-    <button md-raised-button
+    <button mat-raised-button
             class="td-file-browse"
             type="button"
             [color]="defaultColor" 
@@ -26,7 +26,7 @@
   <div *ngIf="files" layout="row">
     <button #fileUpload
             class="td-file-upload"
-            md-raised-button
+            mat-raised-button
             type="button"
             [color]="activeColor"
             (keyup.delete)="cancel()"

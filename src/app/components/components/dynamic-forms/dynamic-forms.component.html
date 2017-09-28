@@ -40,7 +40,7 @@
           </td-dynamic-forms>
         </div>
         <md-card-actions>
-          <button md-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">
+          <button mat-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">
             Submit
           </button>
         </md-card-actions>
@@ -60,7 +60,7 @@
               {{ option }}
             </md-option>
           </md-select>
-          <button mdTooltip="Add this element" md-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
+          <button mdTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
             <mat-icon>add</mat-icon>
           </button>
         </div>
@@ -130,7 +130,7 @@
         </td-expansion-panel>
       </ng-template>
       <div class="push-top" layout="row">
-        <button md-raised-button color="primary" class="text-upper" (click)="dynamicForm.refresh()">
+        <button mat-raised-button color="primary" class="text-upper" (click)="dynamicForm.refresh()">
           Update Form
         </button>
       </div>

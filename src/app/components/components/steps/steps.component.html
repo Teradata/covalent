@@ -8,11 +8,11 @@
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
-          <md-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-            <md-button-toggle mdTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></md-button-toggle>
-            <md-button-toggle mdTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></md-button-toggle>
-            <md-button-toggle mdTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></md-button-toggle>
-          </md-button-toggle-group>
+          <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
+            <mat-button-toggle mdTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
+            <mat-button-toggle mdTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle>
+            <mat-button-toggle mdTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle>
+          </mat-button-toggle-group>
         </div>
         <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
         <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
@@ -24,8 +24,8 @@
           <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
             This step is required!
             <ng-template td-step-actions>
-              <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
-              <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
+              <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+              <button mat-button (click)="step2.active = false" class="text-upper">Cancel</button>
             </ng-template>
           </td-step>
           <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
@@ -34,8 +34,8 @@
               Use an optional step summary to summarize the info in this step
             </ng-template>
             <ng-template td-step-actions>
-              <button md-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
-              <button md-button (click)="step3.active = false" class="text-upper">Cancel</button>
+              <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+              <button mat-button (click)="step3.active = false" class="text-upper">Cancel</button>
             </ng-template>
           </td-step>
         </td-steps>
@@ -53,8 +53,8 @@
               <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
                 This step is required!
                 <ng-template td-step-actions>
-                  <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
-                  <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
+                  <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+                  <button mat-button (click)="step2.active = false" class="text-upper">Cancel</button>
                 </ng-template>
               </td-step>
               <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
@@ -63,8 +63,8 @@
                   Use an optional step summary to summarize the info in this step
                 </ng-template>
                 <ng-template td-step-actions>
-                  <button md-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
-                  <button md-button (click)="step3.active = false" class="text-upper">Cancel</button>
+                  <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+                  <button mat-button (click)="step3.active = false" class="text-upper">Cancel</button>
                 </ng-template>
               </td-step>
             </td-steps>
@@ -105,8 +105,8 @@
   </md-card-content>
   <mat-divider></mat-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
-    <button md-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
+    <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+    <button mat-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
   </md-card-actions>
 </md-card>
 <md-card>

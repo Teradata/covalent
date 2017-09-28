@@ -4,10 +4,10 @@
   <mat-divider></mat-divider>
   <md-card-content>
     <div layout="row" layout-align="start center">
-      <md-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
-        <md-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</md-button-toggle>
-        <md-button-toggle mdTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</md-button-toggle>
-      </md-button-toggle-group>
+      <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
+        <mat-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</mat-button-toggle>
+        <mat-button-toggle mdTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
     <h3>Search Input</h3>
     <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
@@ -39,7 +39,7 @@
   </md-card-content>
   <mat-divider></mat-divider>
   <md-card-actions>
-    <button md-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
+    <button mat-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
   </md-card-actions>
 </md-card>
 <md-card>

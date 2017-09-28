@@ -25,7 +25,7 @@
   </md-card-content>
   <mat-divider></mat-divider>
   <md-card-actions>
-    <a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" class="text-upper">Directives Docs</a>
+    <a mat-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" class="text-upper">Directives Docs</a>
   </md-card-actions>
 </md-card>
 
@@ -57,18 +57,18 @@
   <md-card-content>
     <p class="md-body-1">Use <code>[tdToggle]="variable"</code> on an element to toggle it open or closed (used in Stepper &amp; Expansion Panels).</p>
     <p>Click on this to open a div:</p>
-    <button md-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
+    <button mat-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
     <div [tdToggle]="toggleDiv">
       <md-card>
         <md-card-title>Toggle Card</md-card-title>
         <md-card-content>Reveal or hide with a toggle click!</md-card-content>
-        <md-card-actions><button md-raised-button color="primary" (click)="toggle()">Toggle Out</button></md-card-actions>
+        <md-card-actions><button mat-raised-button color="primary" (click)="toggle()">Toggle Out</button></md-card-actions>
       </md-card>
     </div>
     <p>HTML:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
+          <button mat-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
           <div [tdToggle]="toggleDiv">
             Reveal or hide with a toggle click!
           </div>
@@ -91,18 +91,18 @@
   <md-card-content>
     <p class="md-body-1">Use <code>[tdFade]="variable"</code> on an element to fade it in and out.</p>
     <p>Click on this to open a div:</p>
-    <button md-raised-button color="accent" (click)="fade()" class="text-upper">Fade</button>
+    <button mat-raised-button color="accent" (click)="fade()" class="text-upper">Fade</button>
     <div [tdFade]="fadeDiv">
       <md-card>
         <md-card-title>Fade Card</md-card-title>
         <md-card-content>Fade in or out with a click!</md-card-content>
-        <md-card-actions><button md-raised-button color="primary" (click)="fade()">Fade Out</button></md-card-actions>
+        <md-card-actions><button mat-raised-button color="primary" (click)="fade()">Fade Out</button></md-card-actions>
       </md-card>
     </div>
     <p>HTML:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button color="accent" (click)="fade()" class="text-upper">Toggle</button>
+          <button mat-raised-button color="accent" (click)="fade()" class="text-upper">Toggle</button>
           <div [tdFade]="fadeDiv">
             This one fades in and out!
           </div>

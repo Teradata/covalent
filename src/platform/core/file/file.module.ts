@@ -6,7 +6,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { PortalModule } from '@angular/cdk/portal';
-import { MatIconModule, MdButtonModule } from '@angular/material';
+import { MatIconModule, MatButtonModule } from '@angular/material';
 
 import { TdFileSelectDirective } from './directives/file-select.directive';
 import { TdFileDropDirective } from './directives/file-drop.directive';
@@ -35,7 +35,7 @@ export { TdFileService, IUploadOptions } from './services/file.service';
     FormsModule,
     CommonModule,
     MatIconModule,
-    MdButtonModule,
+    MatButtonModule,
     PortalModule,
   ],
   declarations: [
