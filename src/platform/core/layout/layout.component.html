@@ -1,5 +1,5 @@
-<md-sidenav-container fullscreen>
-  <md-sidenav #sidenav
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav
               class="td-layout-sidenav"
               [mode]="mode"
               [opened]="opened"
@@ -8,6 +8,6 @@
               [disableClose]="disableClose">
     <ng-content select="td-navigation-drawer"></ng-content>
     <ng-content select="[td-sidenav-content]"></ng-content>
-  </md-sidenav>
+  </mat-sidenav>
   <ng-content></ng-content>
-</md-sidenav-container>
+</mat-sidenav-container>

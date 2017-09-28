@@ -1,7 +1,7 @@
 <div layout="column" layout-fill>
   <div flex layout="column" class="content md-content">
-    <md-sidenav-container fullscreen class="td-layout-nav-list" layout="row" flex>
-      <md-sidenav #sidenav
+    <mat-sidenav-container fullscreen class="td-layout-nav-list" layout="row" flex>
+      <mat-sidenav #sidenav
                   position="start"
                   [mode]="mode"
                   [opened]="opened"
@@ -27,7 +27,7 @@
         <div flex class="list md-content" cdkScrollable>
           <ng-content select="[td-sidenav-content]"></ng-content>
         </div>
-      </md-sidenav>
+      </mat-sidenav>
       <div layout="column" layout-fill class="md-content">
         <md-toolbar [color]="color" class="md-whiteframe-z1">
           <ng-content select="[td-toolbar-content]"></ng-content>
@@ -37,7 +37,7 @@
         </div>
         <ng-content select="td-layout-footer-inner"></ng-content>
       </div>
-    </md-sidenav-container>
+    </mat-sidenav-container>
   </div>
   <ng-content select="td-layout-footer"></ng-content>
 </div>

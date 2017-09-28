@@ -30,7 +30,7 @@ export class PagingDemoComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+    setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
       this.media.broadcast();
       this._changeDetectorRef.detectChanges();
     });
