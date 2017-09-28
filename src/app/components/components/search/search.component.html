@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Search</md-card-title>
-  <md-card-subtitle>Search and filter items</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Search</mat-card-title>
+  <mat-card-subtitle>Search and filter items</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div layout="row" layout-align="start center">
       <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
         <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</mat-button-toggle>
@@ -20,7 +20,7 @@
     <h3>Search Box</h3>
     <p>Search Value: {{searchBoxTerm || 'Empty'}}</p>
     <div layout-gt-xs="row">
-      <md-card flex-gt-xs="60">
+      <mat-card flex-gt-xs="60">
         <div layout="row" layout-align="start center" class="push-left push-right">
           <span class="md-title">Card</span>
           <span flex></span>
@@ -28,25 +28,25 @@
           <td-search-box *ngIf="!debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (search)="searchBoxTerm = $event" (clear)="searchBoxTerm = ''" flex></td-search-box>
         </div>
         <mat-divider></mat-divider>
-        <md-card-content>card content</md-card-content>
-      </md-card>
+        <mat-card-content>card content</mat-card-content>
+      </mat-card>
     </div>
     <h3>Search Box in Toolbar</h3>
     <mat-toolbar color="primary">
       <td-search-box backIcon="arrow_back" placeholder="Search here" [alwaysVisible]="alwaysVisible" flex></td-search-box>
       <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
     </mat-toolbar>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <button mat-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>TdSearchInputComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdSearchInputComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-search-input>]]></code></h2>
     <p>Use <code><![CDATA[<td-search-input>]]></code> element to generate a search input with its animated cancel button.</p>
     <h3>Properties:</h3>
@@ -83,13 +83,13 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdSearchBoxComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdSearchBoxComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-search-box>]]></code></h2>
     <p>Use <code><![CDATA[<td-search-box>]]></code> element to generate a search box with animations.</p>
     <h3>Properties:</h3>
@@ -111,5 +111,5 @@
         </td-search-box>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

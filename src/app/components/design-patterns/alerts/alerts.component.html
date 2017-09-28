@@ -1,17 +1,17 @@
 <div layout-sm="row" layout-gt-md="row">
-  <md-card flex-sm="70" flex-gt-md="70">
-    <md-card-title>Alert Patterns</md-card-title>
+  <mat-card flex-sm="70" flex-gt-md="70">
+    <mat-card-title>Alert Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <md-card-content>
+    <mat-card-content>
       <h3>Problem</h3>
       <p>Need to provide information or feedback to the user and potentially prompt them to take action.
         <h3>Solution</h3>
         <p>Notifications have a signifigant impact on the user's overall impression of the application.  This is how the app communicates directly with the user, so it is important to consider the form of notification.  For exmaple, dialogs are most useful in situations where the user most take some action or the app needs to communicate critical information.  On the other hand, toasts and snackbars are passive and do not require any user action or interruption to the user's workflow.  Inline errors are useful for forms validation while guiding the user through the form.</p>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
   <!-- Resources -->
-  <md-card flex-sm flex-gt-md>
-    <md-card-title>Resources</md-card-title>
+  <mat-card flex-sm flex-gt-md>
+    <mat-card-title>Resources</mat-card-title>
     <mat-divider></mat-divider>
     <mat-nav-list>
       <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
@@ -44,33 +44,33 @@
         <span matLine>Covalent Dialogs</span>
       </a>
     </mat-nav-list>
-  </md-card>
+  </mat-card>
 </div>
 <!-- Examples -->
-<md-card>
-  <md-card-title>Examples</md-card-title>
+<mat-card>
+  <mat-card-title>Examples</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <!-- Dialogs -->
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Dialogs</md-card-title>
-        <md-card-subtitle>Notification with call to action</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Dialogs</mat-card-title>
+        <mat-card-subtitle>Notification with call to action</mat-card-subtitle>
+        <mat-card-content>
           <p>Since dialogs are disruptive, reserve use to inform users about a specific task or critical information, such as
             a verbose/critical error, alert or a confirmation of an action. </p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example1">
             <!-- View Source -->
             <div>
@@ -120,32 +120,32 @@
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card-content class="push-md">
+          <mat-card-content class="push-md">
             <button mat-raised-button color="warn" (click)="openAlert()">View Error</button>
             <button mat-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div> 
     <!-- Toasts & Snackbars -->
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Toast</md-card-title>
-        <md-card-subtitle>Brief, floating notification with optional user interaction</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Toast</mat-card-title>
+        <mat-card-subtitle>Brief, floating notification with optional user interaction</mat-card-subtitle>
+        <mat-card-content>
         <p>Toasts &amp; snackbars provide brief feedback about an operation through a message at the bottom of the screen. This  information is transient and will go away momentarily.</p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example2')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example2">
             <!-- View Source -->
             <div>
@@ -178,31 +178,31 @@
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card-content class="push-md">
+          <mat-card-content class="push-md">
             <button mat-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
     <!-- Inline errors -->
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Inline Errors</md-card-title>
-        <md-card-subtitle>For forms and inputs use inline errors for contextual feedback.</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Inline Errors</mat-card-title>
+        <mat-card-subtitle>For forms and inputs use inline errors for contextual feedback.</mat-card-subtitle>
+        <mat-card-content>
         <p>Inline errors are useful in forms for validation, warnings and errors.</p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example3')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example3">
             <!-- View Source -->
             <div>
@@ -320,8 +320,8 @@
               </md-form-field>
             </div>
           </form>
-        </md-card>
+        </mat-card>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

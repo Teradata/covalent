@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Layout Options</md-card-title>
-  <md-card-subtitle>We offer 4 Material Design layouts for you</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Layout Options</mat-card-title>
+  <mat-card-subtitle>We offer 4 Material Design layouts for you</mat-card-subtitle>
   <mat-divider></mat-divider> 
-  <md-card-content hide-xs hide-sm>
+  <mat-card-content hide-xs hide-sm>
     <p>For your entire app or for different sections of your app, select one of these Material Design layout options:</p>
     <div layout="row" layout-padding>
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
@@ -13,7 +13,7 @@
         </a>
       </ng-template>
     </div>
-  </md-card-content>
+  </mat-card-content>
   <mat-nav-list hide-gt-sm>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
       <a mat-list-item [routerLink]="[item.route]">
@@ -24,10 +24,10 @@
       <mat-divider *ngIf="!last" matInset></mat-divider>
     </ng-template>
   </mat-nav-list>  
-</md-card>
+</mat-card>
 <td-readme-loader td-after-card resourceUrl="platform/core/layout/README.md"></td-readme-loader>
-<md-card>
-  <md-card-title>Flexbox Layout (&quot;grid&quot;)</md-card-title>
+<mat-card>
+  <mat-card-title>Flexbox Layout (&quot;grid&quot;)</mat-card-title>
   <td-expansion-panel-group>
     <td-expansion-panel expand="true" label="Flexbox Introduction" sublabel="what powers this layout?">
       <div class="md-padding">
@@ -169,4 +169,4 @@
       </div>
     </td-expansion-panel>
   </td-expansion-panel-group>
-</md-card>
+</mat-card>

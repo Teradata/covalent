@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Data Table</md-card-title>
-  <md-card-subtitle>Display sets of raw data</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Data Table</mat-card-title>
+  <mat-card-subtitle>Display sets of raw data</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
     <mat-divider></mat-divider>
@@ -156,10 +156,10 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Basic Data Table</h3>
     <h4 class="md-subhead">with nested data, formatting, configurable width columns and templates</h4>
     <mat-divider></mat-divider>
@@ -253,10 +253,10 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
     <mat-divider></mat-divider>
@@ -552,9 +552,9 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="selectable">
         Selectable rows
@@ -581,16 +581,16 @@
         Type column is searchable (search for <code>candy</code>)
       </md-slide-toggle>
     </div>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
 
-<md-card>
-  <md-card-title>TdDataTableService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
+<mat-card>
+  <mat-card-title>TdDataTableService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
      <p>Service provided with methods for sorting/paging/searching the data table.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
@@ -603,13 +603,13 @@
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
     </mat-list>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Data Table (Atomic) Components</md-card-title>
-  <md-card-subtitle>How to use these components</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Data Table (Atomic) Components</mat-card-title>
+  <mat-card-subtitle>How to use these components</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
     <p>Use <code><![CDATA[<tr td-data-table-column-row>]]></code> element to generate wrapper atomic column row.</p>
     <p>Use <code><![CDATA[<tr td-data-table-row>]]></code> element to generate wrapper atomic row.</p>
@@ -665,5 +665,5 @@
         </table>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

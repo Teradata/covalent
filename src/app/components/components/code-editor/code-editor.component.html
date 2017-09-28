@@ -1,21 +1,21 @@
-<md-card>
-  <md-card-title>Code Editor</md-card-title>
-  <md-card-subtitle>Multi-language code editor for Browser and Electron</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Code Editor</mat-card-title>
+  <mat-card-subtitle>Multi-language code editor for Browser and Electron</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>With this component you can utilize the Monaco Editor as an Angular Component in a Browser or Electron.</p>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="accent" href="https://github.com/Teradata/covalent-code-editor" target="_blank" class="text-upper">Github Repo</a>
     <a mat-button color="accent" href="https://www.npmjs.com/package/@covalent/code-editor" target="_blank" class="text-upper">npm Module</a>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>Basic example</md-card-title>
-  <md-card-subtitle>Editor running in browser <br>(change language, theme, right click context menu, syntax highlighting, and more)</md-card-subtitle>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic example</mat-card-title>
+  <mat-card-subtitle>Editor running in browser <br>(change language, theme, right click context menu, syntax highlighting, and more)</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div layout="row" layout-align="start center">
       <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
     </div>
@@ -23,9 +23,9 @@
     <div layout="row" layout-align="start center">
       <td-highlight flex [content]="editorVal" [lang]="editorLanguage"></td-highlight>
     </div>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <div layout="row" layout-align="start center" class="pad-sm">
       <span flex="none" hide-xs class="push-right md-body-1">Editor Language</span>
       <md-select floatPlaceholder="never" [(ngModel)]="editorLanguage" (change)="changeLanguage()" placeholder="Editor Language">
@@ -43,8 +43,8 @@
         <md-option value="hc-black">High Contrast</md-option>
       </md-select>
     </div>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md">
 </td-readme-loader>

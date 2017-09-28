@@ -1,6 +1,6 @@
-<md-card>
-  <md-card-title>Chips &amp; Autocomplete with strings</md-card-title>
-  <md-card-subtitle>Autocomplete with chips and no custom inputs</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Chips &amp; Autocomplete with strings</mat-card-title>
+  <mat-card-subtitle>Autocomplete with chips and no custom inputs</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -20,7 +20,7 @@
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -79,11 +79,11 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="disabled">
         Disabled
@@ -101,11 +101,11 @@
         Chip removal
       </md-slide-toggle>
     </div>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>Chips &amp; Autocomplete with objects</md-card-title>
-  <md-card-subtitle>Autocomplete with chips and templates and accent color</md-card-subtitle>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Chips &amp; Autocomplete with objects</mat-card-title>
+  <mat-card-subtitle>Autocomplete with chips and templates and accent color</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -131,7 +131,7 @@
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -186,13 +186,13 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-title>Chips &amp; async Autocomplete with template chip avatar</md-card-title>
-  <md-card-subtitle>Load autocomplete items asynchronous when typing in the input</md-card-subtitle>
+</mat-card>
+<mat-card>
+  <mat-card-title>Chips &amp; async Autocomplete with template chip avatar</mat-card-title>
+  <mat-card-subtitle>Load autocomplete items asynchronous when typing in the input</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -214,7 +214,7 @@
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -273,13 +273,13 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-title>Stacked chips and Autocomplete with custom inputs</md-card-title>
-  <md-card-subtitle>Autocomplete demo allowing custom inputs and stacked chips</md-card-subtitle>
+</mat-card>
+<mat-card>
+  <mat-card-title>Stacked chips and Autocomplete with custom inputs</mat-card-title>
+  <mat-card-subtitle>Autocomplete demo allowing custom inputs and stacked chips</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -299,7 +299,7 @@
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -347,13 +347,13 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-title>Custom chips</md-card-title>
-  <md-card-subtitle>Demo allowing custom inputs for tags and warn color</md-card-subtitle>
+</mat-card>
+<mat-card>
+  <mat-card-title>Custom chips</mat-card-title>
+  <mat-card-subtitle>Demo allowing custom inputs for tags and warn color</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -365,7 +365,7 @@
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -380,13 +380,13 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-title>Chip Events</md-card-title>
-  <md-card-subtitle>Demo showing chip events</md-card-subtitle>
+</mat-card>
+<mat-card>
+  <mat-card-title>Chip Events</mat-card-title>
+  <mat-card-subtitle>Demo showing chip events</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs dynamicHeight>
     <md-tab>
@@ -404,16 +404,16 @@
                   requireMatch>
         </td-chips>
       </div>
-      <md-card-content>
+      <mat-card-content>
         <p>Event Log: </p>
         <td-highlight language="bash" [style.height.px]="200" [style.overflow]="'auto'" [content]="events.reverse().join('\n')">
           {{ 'No Event Logs' }}
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -457,9 +457,9 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
+</mat-card>
    
 <td-readme-loader resourceUrl="platform/core/chips/README.md"></td-readme-loader>

@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdCheckbox, MdCardModule, MdCheckboxModule } from '@angular/material';
+import { MdCheckbox, MatCardModule, MdCheckboxModule } from '@angular/material';
 
 import { CovalentDataTableModule, TdDataTableComponent } from '../../platform/core';
 import { CovalentHighlightModule, TdHighlightComponent } from '../../platform/highlight';
@@ -13,7 +13,7 @@ import { TdReadmeLoaderComponent } from './readme-loader/readme-loader.component
 @NgModule({
   imports: [
     CommonModule,
-    MdCardModule,
+    MatCardModule,
     MdCheckboxModule,
     CovalentDataTableModule,
     CovalentHighlightModule,

@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>NGX-Charts (External library)</md-card-title>
-  <md-card-subtitle>Declarative Charting Framework for Angular</md-card-subtitle>
+<mat-card>
+  <mat-card-title>NGX-Charts (External library)</mat-card-title>
+  <mat-card-subtitle>Declarative Charting Framework for Angular</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>Rather than building &amp; maintaining our own td-charts D3 component, we've opted instead to partner with an external open-source library. 
     Charts components are a massive undertaking and would have detracted from the features &amp; support of Covalent.</p>
     <p>The NGX-Charts team took the exact approach we would have and did a fantastic job building a framework that can be extended. We therefor are an official partner and will be contributing massive additions.</p>
@@ -14,17 +14,17 @@
       <li>Easily add new chart components in a modular fashion</li>
       <li>Everything is styled via SCSS</li>
     </ul>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="accent" href="https://swimlane.gitbooks.io/ngx-charts/content/" target="_blank" class="text-upper">NGX-Charts Docs</a>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>Example Charts</md-card-title>
-  <md-card-subtitle>Samples of various available charts</md-card-subtitle>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Example Charts</mat-card-title>
+  <mat-card-subtitle>Samples of various available charts</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div class="pad-sm bgc-grey-200">
       <div layout="row" class="pull-bottom-md pull-right-md">
         <ngx-charts-number-card
@@ -34,8 +34,8 @@
       </div>
       <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Gauge</md-card-title>
+          <mat-card>
+            <mat-card-title>Gauge</mat-card-title>
             <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-gauge
@@ -49,11 +49,11 @@
                 [valueFormatting]="axisDigits">
               </ngx-charts-gauge>
             </div>
-          </md-card>
+          </mat-card>
         </div>
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Stacked Horizontal Bars</md-card-title>
+          <mat-card>
+            <mat-card-title>Stacked Horizontal Bars</mat-card-title>
             <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-bar-horizontal-stacked
@@ -69,13 +69,13 @@
                 [xAxisTickFormatting]="axisDigits">
               </ngx-charts-bar-horizontal-stacked>
             </div>
-          </md-card>
+          </mat-card>
         </div>
       </div>
       <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Vertical Grouped Bars</md-card-title>
+          <mat-card>
+            <mat-card-title>Vertical Grouped Bars</mat-card-title>
             <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-bar-vertical-2d
@@ -94,11 +94,11 @@
                 [groupPadding]="8">
               </ngx-charts-bar-vertical-2d>
             </div>
-          </md-card>
+          </mat-card>
         </div>
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Lines</md-card-title>
+          <mat-card>
+            <mat-card-title>Lines</mat-card-title>
             <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-line-chart
@@ -116,18 +116,18 @@
                 [yAxisTickFormatting]="axisDigits">
               </ngx-charts-line-chart>
             </div>
-          </md-card>
+          </mat-card>
         </div>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Code</md-card-title>
-  <md-card-subtitle>Demo html, typescript, data  &amp; theme</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Code</mat-card-title>
+  <mat-card-subtitle>Demo html, typescript, data  &amp; theme</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>HTML</ng-template>
@@ -142,8 +142,8 @@
               </div>
               <div layout-gt-xs="row">
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Gauge</md-card-title>
+                  <mat-card>
+                    <mat-card-title>Gauge</mat-card-title>
                     <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-gauge
@@ -157,11 +157,11 @@
                         [valueFormatting]="axisDigits">
                       </ngx-charts-gauge>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Stacked Horizontal Bars</md-card-title>
+                  <mat-card>
+                    <mat-card-title>Stacked Horizontal Bars</mat-card-title>
                     <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-bar-horizontal-stacked
@@ -177,13 +177,13 @@
                         [xAxisTickFormatting]="axisDigits">
                       </ngx-charts-bar-horizontal-stacked>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
               </div>
               <div layout-gt-xs="row">
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Vertical Grouped Bars</md-card-title>
+                  <mat-card>
+                    <mat-card-title>Vertical Grouped Bars</mat-card-title>
                     <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-bar-vertical-2d
@@ -202,11 +202,11 @@
                         [groupPadding]="8">
                       </ngx-charts-bar-vertical-2d>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Lines</md-card-title>
+                  <mat-card>
+                    <mat-card-title>Lines</mat-card-title>
                     <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-line-chart
@@ -224,7 +224,7 @@
                         [yAxisTickFormatting]="axisDigits">
                       </ngx-charts-line-chart>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
               </div>
             </div>
@@ -450,13 +450,13 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Recommended Color Palettes</md-card-title>
+<mat-card>
+  <mat-card-title>Recommended Color Palettes</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>Since our apps largely span from Orange / Blue / Grey families, here's some recommended palettes:</p>
     <h3 class="md-title">Blues</h3>
     <div layout="row" class="push-bottom-sm">
@@ -512,7 +512,7 @@
       ]]>
     </td-highlight>
     <mat-divider></mat-divider>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
 <td-readme-loader resourceUrl="https://raw.githubusercontent.com/swimlane/ngx-charts/master/docs/intro/installing.md"></td-readme-loader>

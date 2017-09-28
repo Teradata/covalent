@@ -1,4 +1,4 @@
-<md-card>
+<mat-card>
   <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
     <span flex></span>
     <button mat-icon-button
@@ -7,12 +7,12 @@
       <mat-icon class="tc-grey-700">code</mat-icon>
     </button>
   </div>
-  <md-card-title>Virtual Scroll</md-card-title>
-  <md-card-subtitle>
+  <mat-card-title>Virtual Scroll</mat-card-title>
+  <mat-card-subtitle>
     Scroll virtually on a set of items
-  </md-card-subtitle>
+  </mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div [tdToggle]="!toggleDemoCode">
       <md-tab-group md-stretch-tabs dynamicHeight>
         <md-tab>
@@ -76,9 +76,9 @@
         </ng-template>
       </td-virtual-scroll-container>
     </mat-list>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <button mat-button class="text-upper" (click)="virtualScroll.scrollToStart()">
       Scroll to first
     </button>
@@ -88,7 +88,7 @@
     <button mat-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
       Scroll to 400th row
     </button>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>

@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Media Queries</md-card-title>
-  <md-card-subtitle>Responsive service & directive (for attributes)</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Media Queries</mat-card-title>
+  <mat-card-subtitle>Responsive service & directive (for attributes)</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>Media Queries:</p>
     <mat-list>
       <ng-template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
@@ -13,13 +13,13 @@
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
     </mat-list>    
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdMediaService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdMediaService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code>TdMediaService</code></h2>
     <p>This service is designed to provide basic media query evaluation for responsive applications.</p>
     <p>It has pre-programmed support for media queries that match the layout 
@@ -102,13 +102,13 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdMediaToggleDirective</md-card-title>
-  <md-card-subtitle>How to use this directive</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdMediaToggleDirective</mat-card-title>
+  <mat-card-subtitle>How to use this directive</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code>tdMediaToggle</code></h2>
     <p>Simply add the <code>tdMediaToggle</code> attibute with a "media query" value to the element you want to modify depending on screen size.</p>
     <h3>Properties:</h3>
@@ -132,5 +132,5 @@
         </div>
       ]]>
     </td-highlight>
-  </md-card-content>
- </md-card>
+  </mat-card-content>
+ </mat-card>

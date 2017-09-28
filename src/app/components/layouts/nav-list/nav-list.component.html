@@ -1,17 +1,17 @@
-<md-card>
-  <md-card-title>Minimum Demo</md-card-title>
-  <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Minimum Demo</mat-card-title>
+  <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'">
     <td-layout-nav-list logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
       <div td-sidenav-content>
         Sidenav content here
       </div>
       Content goes here
     </td-layout-nav-list>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout-nav-list logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
@@ -22,13 +22,13 @@
         </td-layout-nav-list>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Basic Demo</md-card-title>
-  <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic Demo</mat-card-title>
+  <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -55,9 +55,9 @@
         Content goes here
       </td-layout-nav-list>
     </td-layout>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
@@ -88,13 +88,13 @@
         </td-layout>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Full Demo</md-card-title>
-  <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Full Demo</mat-card-title>
+  <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -138,20 +138,20 @@
           </ng-template>
         </mat-nav-list>
         <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-          <md-card>
-            <md-card-title>Main Content</md-card-title>
-            <md-card-subtitle>content area</md-card-subtitle>
+          <mat-card>
+            <mat-card-title>Main Content</mat-card-title>
+            <mat-card-subtitle>content area</mat-card-subtitle>
             <mat-divider></mat-divider>
-            <md-card-content>
+            <mat-card-content>
               card content
-            </md-card-content>
+            </mat-card-content>
             <mat-divider></mat-divider>
-            <md-card-actions>
+            <mat-card-actions>
               <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                 <span>View More</span>
               </a>
-            </md-card-actions>
-          </md-card>
+            </mat-card-actions>
+          </mat-card>
         </div>
         <td-layout-footer-inner>
           Optional inner footer
@@ -163,9 +163,9 @@
         </td-layout-footer>
       </td-layout-nav-list>
     </td-layout>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
@@ -211,20 +211,20 @@
               </ng-template>
             </mat-nav-list>
             <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-              <md-card>
-                <md-card-title>Main Content</md-card-title>
-                <md-card-subtitle>content area</md-card-subtitle>
+              <mat-card>
+                <mat-card-title>Main Content</mat-card-title>
+                <mat-card-subtitle>content area</mat-card-subtitle>
                 <mat-divider></mat-divider>
-                <md-card-content>
+                <mat-card-content>
                   card content
-                </md-card-content>
+                </mat-card-content>
                 <mat-divider></mat-divider>
-                <md-card-actions>
+                <mat-card-actions>
                   <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                     <span>View More</span>
                   </a>
-                </md-card-actions>
-              </md-card>
+                </mat-card-actions>
+              </mat-card>
             </div>
             <td-layout-footer-inner>
               Optional inner footer
@@ -330,6 +330,6 @@
         }
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 <td-readme-loader resourceUrl="platform/core/layout/layout-nav-list/README.md"></td-readme-loader>

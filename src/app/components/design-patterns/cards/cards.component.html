@@ -1,17 +1,17 @@
 <div layout-sm="row" layout-gt-md="row">
-  <md-card flex-sm="70" flex-gt-md="70">
-    <md-card-title>Card Patterns</md-card-title>
+  <mat-card flex-sm="70" flex-gt-md="70">
+    <mat-card-title>Card Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <md-card-content>
+    <mat-card-content>
       <h3>Problem</h3>
       <p>Need to display item or set of content composed of different elements whose size or supported actions vary.</p>
       <h3>Solution</h3>
       <p>Cards are a convenient means of displaying content composed of different elements. They’re also well-suited for showcasing
         elements whose size or supported actions vary, like photos with captions of variable length.</p>
-    </md-card-content>
-  </md-card>
-  <md-card flex-sm flex-gt-md>
-    <md-card-title>Resources</md-card-title>
+    </mat-card-content>
+  </mat-card>
+  <mat-card flex-sm flex-gt-md>
+    <mat-card-title>Resources</mat-card-title>
     <mat-divider></mat-divider>
     <mat-nav-list>
       <a mat-list-item href="https://material.google.com/components/cards.html" target="_blank">
@@ -29,17 +29,17 @@
         <span matLine>Google Now Cards</span>
       </a>
     </mat-nav-list>
-  </md-card>
+  </mat-card>
 </div>
-<md-card>
-  <md-card-title>Examples</md-card-title>
+<mat-card>
+  <mat-card-title>Examples</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Standard Card</md-card-title>
-        <md-card-subtitle>Card with standard card elements</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Standard Card</mat-card-title>
+        <mat-card-subtitle>Card with standard card elements</mat-card-subtitle>
+        <mat-card-content>
           <p>A card can be used with any of the optional card sub-elements including:</p>
           <mat-list>
             <a mat-list-item>
@@ -55,90 +55,90 @@
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item>
-              <span matLine>md-card-content</span>
+              <span matLine>mat-card-content</span>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item>
-              <span matLine>md-card-actions</span>
+              <span matLine>mat-card-actions</span>
             </a>
           </mat-list>
           <p>Additionally, a card may contain other components such as search, lists, icons, and images.</p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example1">
             <div>
                   <td-highlight lang="html">
                       <![CDATA[
-                        <md-card>
-                          <md-card-title>Standard Card</md-card-title>
-                          <md-card-subtitle>Subtitle</md-card-subtitle>
+                        <mat-card>
+                          <mat-card-title>Standard Card</mat-card-title>
+                          <mat-card-subtitle>Subtitle</mat-card-subtitle>
                           <mat-divider></mat-divider>
-                          <md-card-content>
+                          <mat-card-content>
                             <p>Standard card with content</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-                          </md-card-content>
+                          </mat-card-content>
                           <mat-divider></mat-divider>
-                          <md-card-actions>
+                          <mat-card-actions>
                             <button mat-button color="accent" class="text-upper">Action</button>
                             <button mat-button class="text-upper">Cancel</button>
-                          </md-card-actions>
-                        </md-card>
+                          </mat-card-actions>
+                        </mat-card>
                       ]]>
                   </td-highlight>
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card class="push-md">
-            <md-card-title>Title</md-card-title>
-            <md-card-subtitle>Subtitle</md-card-subtitle>
+          <mat-card class="push-md">
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>Subtitle</mat-card-subtitle>
             <mat-divider></mat-divider>
-            <md-card-content>
-            </md-card-content>
+            <mat-card-content>
+            </mat-card-content>
             <mat-divider></mat-divider>
-            <md-card-actions>
+            <mat-card-actions>
               <button mat-button color="accent" class="text-upper">Action</button>
               <button mat-button class="text-upper">Cancel</button>
-            </md-card-actions>
-          </md-card>
-        </md-card>
+            </mat-card-actions>
+          </mat-card>
+        </mat-card>
       </div>
     </div>
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Login Card</md-card-title>
-        <md-card-subtitle>Card with form</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Login Card</mat-card-title>
+        <mat-card-subtitle>Card with form</mat-card-subtitle>
+        <mat-card-content>
           <p>In special cases, cards may contain form elements, like the login card.  However, in most sitautions, we recommend using the <a [routerLink]="['/layouts', 'card-over']" target="_blank">Card Over</a> full page layout for forms.</p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example2')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example2">
             <div>
               <td-highlight lang="html">
                   <![CDATA[
-                    <md-card-title layout="row" layout-align="start center"><mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="md-title">Login</span></md-card-title>
-                      <md-card-subtitle>Sign In with Your Credentials</md-card-subtitle>
+                    <mat-card-title layout="row" layout-align="start center"><mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="md-title">Login</span></mat-card-title>
+                      <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
                       <mat-divider></mat-divider>
-                      <md-card-content class="push-bottom-none">
+                      <mat-card-content class="push-bottom-none">
                         <form #loginForm="ngForm">
                           <div layout="row">
                             <md-form-field flex> 
@@ -160,26 +160,26 @@
                           </div>
                         </form>
                         <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
-                      </md-card-content>
+                      </mat-card-content>
                       <mat-divider></mat-divider>
-                      <md-card-actions>
+                      <mat-card-actions>
                         <div layout="row">
                           <button flex mat-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
                         </div>
-                      </md-card-actions>
-                    </md-card>
+                      </mat-card-actions>
+                    </mat-card>
                   ]]>
               </td-highlight>
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card class="push-md">
-            <md-card-title layout="row" layout-align="start center">
+          <mat-card class="push-md">
+            <mat-card-title layout="row" layout-align="start center">
               <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="md-title">Login</span>
-            </md-card-title>
-            <md-card-subtitle>Sign In with Your Credentials</md-card-subtitle>
+            </mat-card-title>
+            <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
             <mat-divider></mat-divider>
-            <md-card-content class="push-bottom-none">
+            <mat-card-content class="push-bottom-none">
               <form #loginForm="ngForm">
                 <div layout="row">
                   <md-form-field flex>
@@ -203,42 +203,42 @@
                 </div>
               </form>
               <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
-            </md-card-content>
+            </mat-card-content>
             <mat-divider></mat-divider>
-            <md-card-actions>
+            <mat-card-actions>
               <div layout="row">
                 <button flex mat-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
               </div>
-            </md-card-actions>
-          </md-card>
-        </md-card>
+            </mat-card-actions>
+          </mat-card>
+        </mat-card>
       </div>
     </div>
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Metadata List Card</md-card-title>
-        <md-card-subtitle>Card with metadata for an item detail</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Metadata List Card</mat-card-title>
+        <mat-card-subtitle>Card with metadata for an item detail</mat-card-subtitle>
+        <mat-card-content>
           <p>Cards support many rich components, including our <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using mat-divider and consider adding md-subheader.</p>
-        </md-card-content>
+        </mat-card-content>
       </div> 
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example3')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example3">
             <div>
               <td-highlight lang="html">
                   <![CDATA[
-                    <md-card>
-                      <md-card-title>Item Info</md-card-title>
-                      <md-card-subtitle>Info About This Item</md-card-subtitle>
+                    <mat-card>
+                      <mat-card-title>Item Info</mat-card-title>
+                      <mat-card-subtitle>Info About This Item</mat-card-subtitle>
                       <mat-divider></mat-divider>
                       <mat-list>
                         <h3 md-subheader>Metadata</h3>
@@ -274,18 +274,18 @@
                         </mat-list-item>
                       </mat-list>
                       <mat-divider></mat-divider>
-                      <md-card-actions>
+                      <mat-card-actions>
                         <button mat-button color="accent" class="text-upper">Edit</button>
-                      </md-card-actions>
-                    </md-card>
+                      </mat-card-actions>
+                    </mat-card>
                   ]]>
               </td-highlight>
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card class="push-md" flex>
-            <md-card-title>Item Info</md-card-title>
-            <md-card-subtitle>Info About This Item</md-card-subtitle>
+          <mat-card class="push-md" flex>
+            <mat-card-title>Item Info</mat-card-title>
+            <mat-card-subtitle>Info About This Item</mat-card-subtitle>
             <mat-divider></mat-divider>
             <mat-list>
               <h3 md-subheader>Metadata</h3>
@@ -321,42 +321,42 @@
               </mat-list-item>
             </mat-list>
             <mat-divider></mat-divider>
-            <md-card-actions>
+            <mat-card-actions>
               <button mat-button color="accent" class="text-upper">Edit</button>
-            </md-card-actions>
-          </md-card>
-        </md-card>
+            </mat-card-actions>
+          </mat-card>
+        </mat-card>
       </div>
     </div>
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>CRUD Manage List Card</md-card-title>
-        <md-card-subtitle>Card with faux-columns & search</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>CRUD Manage List Card</mat-card-title>
+        <mat-card-subtitle>Card with faux-columns & search</mat-card-subtitle>
+        <mat-card-content>
           <p>In this example, notice the <a [routerLink]="['/components', 'search']" target="_blank">search component</a> in the top left.  Also, using the flex model, you can simulate columns by using the same layout on each row.  See the <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a> for more implementation details.</p>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example4')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example4">
             <div>
               <td-highlight lang="html">
                   <![CDATA[
-                    <md-card>
-                      <md-card-title layout>
+                    <mat-card>
+                      <mat-card-title layout>
                         <md-form-field class="text-sm" flex>
                           <input mdInput placeholder="Search Items"/>
                           <span mdPrefix><mat-icon>search</mat-icon></span>
                         </md-form-field>
-                      </md-card-title>
+                      </mat-card-title>
                       <mat-list class="pull-top">
                         <mat-list-item>
                           <mat-icon matListAvatar>apps</mat-icon>
@@ -377,19 +377,19 @@
                           <mat-divider *ngIf="!last" matInset></mat-divider>
                         </ng-template>
                       </mat-list>
-                    </md-card>
+                    </mat-card>
                   ]]>
               </td-highlight>
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card class="push-md">
-              <md-card-title layout>
+          <mat-card class="push-md">
+              <mat-card-title layout>
                 <md-form-field class="text-sm" flex>
                   <input mdInput placeholder="Search Items"/>
                   <span mdPrefix><mat-icon>search</mat-icon></span>
                 </md-form-field>
-              </md-card-title>
+              </mat-card-title>
               <mat-list class="pull-top">
                 <mat-list-item>
                   <mat-icon matListAvatar>apps</mat-icon>
@@ -410,79 +410,79 @@
                   <mat-divider *ngIf="!last" matInset></mat-divider>
                 </ng-template>
               </mat-list>
-            </md-card>
-        </md-card>
+            </mat-card>
+        </mat-card>
       </div>
     </div>
     <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Card with Image Variations</md-card-title>
-        <md-card-subtitle>Card with sepcial image elements</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Card with Image Variations</mat-card-title>
+        <mat-card-subtitle>Card with sepcial image elements</mat-card-subtitle>
+        <mat-card-content>
           <p>Images displayed within cards inherit styling which removes margin and padding, depending on where the imgae is positioned within the card. Notice if the image is first it has proper rounded corners.</p>
           <p>Examples are leveraging the following special image elements:</p>
           <mat-list>
             <a mat-list-item>
               <span matLine>Card Small Image</span>
-              <p matLine>md-card-sm-image</p>
+              <p matLine>mat-card-sm-image</p>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item>
               <span matLine>Card Medium Image</span>
-              <p matLine>md-card-md-image</p>
+              <p matLine>mat-card-md-image</p>
             </a>
           </mat-list>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example5')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example5">
             <div>
               <td-highlight lang="html">
                 <![CDATA[
                   <div layout-gt-xs="row">
-                    <md-card>
-                      <img md-card-image src="https://placekitten.com/g/600/200">
-                      <md-card-title>Card with Image First</md-card-title>
-                      <md-card-subtitle>100% Width Image</md-card-subtitle>
-                      <md-card-content>
-                      </md-card-content>
-                    </md-card>
+                    <mat-card>
+                      <img mat-card-image src="https://placekitten.com/g/600/200">
+                      <mat-card-title>Card with Image First</mat-card-title>
+                      <mat-card-subtitle>100% Width Image</mat-card-subtitle>
+                      <mat-card-content>
+                      </mat-card-content>
+                    </mat-card>
                   </div>
                   <div layout-gt-xs="row">
-                    <md-card>
-                      <md-card-title-group>
-                        <md-card-title class="text-xl">Card with Small Image</md-card-title>
-                        <md-card-subtitle>80px x 80px Image</md-card-subtitle>
-                        <img md-card-sm-image src="https://placekitten.com/g/200/200">
-                      </md-card-title-group>
-                    </md-card>
+                    <mat-card>
+                      <mat-card-title-group>
+                        <mat-card-title class="text-xl">Card with Small Image</mat-card-title>
+                        <mat-card-subtitle>80px x 80px Image</mat-card-subtitle>
+                        <img mat-card-sm-image src="https://placekitten.com/g/200/200">
+                      </mat-card-title-group>
+                    </mat-card>
                   </div>
                   <div layout-gt-xs="row">
-                    <md-card>
-                      <md-card-title-group>
-                        <md-card-title class="text-xxl">Card with Medium Image</md-card-title>
-                        <md-card-subtitle>112px x 112px Image</md-card-subtitle>
-                        <img md-card-md-image src="https://placekitten.com/g/300/300">
-                      </md-card-title-group>
-                    </md-card>
+                    <mat-card>
+                      <mat-card-title-group>
+                        <mat-card-title class="text-xxl">Card with Medium Image</mat-card-title>
+                        <mat-card-subtitle>112px x 112px Image</mat-card-subtitle>
+                        <img mat-card-md-image src="https://placekitten.com/g/300/300">
+                      </mat-card-title-group>
+                    </mat-card>
                   </div>
                   <div layout-gt-xs="row">
-                    <md-card>
-                      <md-card-title-group>
-                        <md-card-title>Card with Large Image</md-card-title>
-                        <md-card-subtitle>152px x 152px image</md-card-subtitle>
-                        <img md-card-lg-image src="https://placekitten.com/g/400/200">
-                      </md-card-title-group>
-                    </md-card>
+                    <mat-card>
+                      <mat-card-title-group>
+                        <mat-card-title>Card with Large Image</mat-card-title>
+                        <mat-card-subtitle>152px x 152px image</mat-card-subtitle>
+                        <img mat-card-lg-image src="https://placekitten.com/g/400/200">
+                      </mat-card-title-group>
+                    </mat-card>
                   </div>
                   ]]>
               </td-highlight>
@@ -491,44 +491,44 @@
           </div>
           <div class="push-md">
             <div layout-gt-xs="row">
-              <md-card>
-                <img alt="kitten" md-card-image src="https://placekitten.com/g/600/200">
-                <md-card-title>Card with Image First</md-card-title>
-                <md-card-subtitle>100% Width Image</md-card-subtitle>
-                <md-card-content>
-                </md-card-content>
-              </md-card>
+              <mat-card>
+                <img alt="kitten" mat-card-image src="https://placekitten.com/g/600/200">
+                <mat-card-title>Card with Image First</mat-card-title>
+                <mat-card-subtitle>100% Width Image</mat-card-subtitle>
+                <mat-card-content>
+                </mat-card-content>
+              </mat-card>
             </div>
             <div layout-gt-xs="row">
-              <md-card>
-                <md-card-title-group>
-                  <md-card-title class="text-xl">Card with Small Image</md-card-title>
-                  <md-card-subtitle>80px x 80px Image</md-card-subtitle>
-                  <img alt="kitten" md-card-sm-image src="https://placekitten.com/g/200/200">
-                </md-card-title-group>
-              </md-card>
+              <mat-card>
+                <mat-card-title-group>
+                  <mat-card-title class="text-xl">Card with Small Image</mat-card-title>
+                  <mat-card-subtitle>80px x 80px Image</mat-card-subtitle>
+                  <img alt="kitten" mat-card-sm-image src="https://placekitten.com/g/200/200">
+                </mat-card-title-group>
+              </mat-card>
             </div>
             <div layout-gt-xs="row">
-              <md-card>
-                <md-card-title-group>
-                  <md-card-title class="text-xxl">Card with Medium Image</md-card-title>
-                  <md-card-subtitle>112px x 112px Image</md-card-subtitle>
-                  <img alt="kitten" md-card-md-image src="https://placekitten.com/g/300/300">
-                </md-card-title-group>
-              </md-card>
+              <mat-card>
+                <mat-card-title-group>
+                  <mat-card-title class="text-xxl">Card with Medium Image</mat-card-title>
+                  <mat-card-subtitle>112px x 112px Image</mat-card-subtitle>
+                  <img alt="kitten" mat-card-md-image src="https://placekitten.com/g/300/300">
+                </mat-card-title-group>
+              </mat-card>
             </div>
             <div layout-gt-xs="row">
-              <md-card>
-                <md-card-title-group>
-                  <md-card-title>Card with Large Image</md-card-title>
-                  <md-card-subtitle>152px x 152px Image</md-card-subtitle>
-                  <img alt="kitten" md-card-lg-image src="https://placekitten.com/g/400/200">
-                </md-card-title-group>
-              </md-card>
+              <mat-card>
+                <mat-card-title-group>
+                  <mat-card-title>Card with Large Image</mat-card-title>
+                  <mat-card-subtitle>152px x 152px Image</mat-card-subtitle>
+                  <img alt="kitten" mat-card-lg-image src="https://placekitten.com/g/400/200">
+                </mat-card-title-group>
+              </mat-card>
             </div>
           </div>
-        </md-card>
+        </mat-card>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

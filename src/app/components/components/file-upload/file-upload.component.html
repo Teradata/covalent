@@ -1,11 +1,11 @@
-<md-card>
-  <md-card-title>File Upload Button</md-card-title>
-  <md-card-subtitle>Single upload input button</md-card-subtitle>
+<mat-card>
+  <mat-card-title>File Upload Button</mat-card-title>
+  <mat-card-subtitle>Single upload input button</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <h3 class="md-title">Single file selection or drop:</h3>
         <p>Select Event: {{fileSelectMsg}}</p>
         <p>Upload Event: {{fileUploadMsg}}</p>
@@ -15,15 +15,15 @@
             <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
           </ng-template>
         </td-file-upload>
-      </md-card-content>
+      </mat-card-content>
       <mat-divider></mat-divider>
-      <md-card-actions>
+      <mat-card-actions>
         <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
-      </md-card-actions>
+      </mat-card-actions>
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -66,17 +66,17 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-title>Multiple File Upload Button</md-card-title>
+</mat-card>
+<mat-card>
+  <mat-card-title>Multiple File Upload Button</mat-card-title>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
         <p>Select Event: {{fileSelectMultipleMsg}}</p>
         <p>Upload Event: {{fileUploadMultipleMsg}}</p>
@@ -88,15 +88,15 @@
             <mat-icon>attach_file</mat-icon><span>Choose multiple .sql files...</span>
           </ng-template>
         </td-file-upload>
-      </md-card-content>
+      </mat-card-content>
       <mat-divider></mat-divider>
-      <md-card-actions>
+      <mat-card-actions>
         <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
-      </md-card-actions>
+      </mat-card-actions>
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -152,8 +152,8 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
+</mat-card>
 <td-readme-loader resourceUrl="platform/core/file/file-upload/README.md"></td-readme-loader>

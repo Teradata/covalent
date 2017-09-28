@@ -1,10 +1,10 @@
-<md-card>
-  <md-card-title>Covalent Charts (deprecated)</md-card-title>
-  <md-card-subtitle>use ngx-charts instead</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Covalent Charts (deprecated)</mat-card-title>
+  <mat-card-subtitle>use ngx-charts instead</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
-  <md-card-title>Time Series Line Chart</md-card-title>
-  <md-card-subtitle>x-axis grid hidden, shadow disabled</md-card-subtitle>
+  <mat-card-content>
+  <mat-card-title>Time Series Line Chart</mat-card-title>
+  <mat-card-subtitle>x-axis grid hidden, shadow disabled</mat-card-subtitle>
   <td-charts title="Prices Trend"
               [margin]="{top: 60, bottom: 100}">
     <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
@@ -21,8 +21,8 @@
     </td-chart-line>
   </td-charts>
   <mat-divider></mat-divider>
-  <md-card-title>Sparkline Chart</md-card-title>
-  <md-card-subtitle>x-axis hidden completely, shadow enabled</md-card-subtitle>
+  <mat-card-title>Sparkline Chart</mat-card-title>
+  <mat-card-subtitle>x-axis hidden completely, shadow enabled</mat-card-subtitle>
   <td-charts title="Prices Trend"
               [shadow]="true"
               chartHeight="150">
@@ -39,8 +39,8 @@
     </td-chart-line>
   </td-charts>
   <mat-divider></mat-divider>
-  <md-card-title>Bar Chart</md-card-title>
-  <md-card-subtitle>y-axis grid  &amp; ticks hidden</md-card-subtitle>
+  <mat-card-title>Bar Chart</mat-card-title>
+  <mat-card-subtitle>y-axis grid  &amp; ticks hidden</mat-card-subtitle>
   <td-charts title="Sales Bar Chart"
               [shadow]="true"
               fillOpacity="0.95">
@@ -57,8 +57,8 @@
       </td-chart-bar>
     </td-charts>
     <mat-divider></mat-divider>
-    <md-card-title>Single/Multi Line Chart</md-card-title>
-    <md-card-subtitle>x-axis ticks &amp; grid hidden, y-axis grid hidden</md-card-subtitle>
+    <mat-card-title>Single/Multi Line Chart</mat-card-title>
+    <mat-card-subtitle>x-axis ticks &amp; grid hidden, y-axis grid hidden</mat-card-subtitle>
     <td-charts title="Temperature Trend"
                 [shadow]="true">
       <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
@@ -74,8 +74,8 @@
       </td-chart-line>
     </td-charts>
     <mat-divider></mat-divider>
-    <md-card-title>Area Chart</md-card-title>
-    <md-card-subtitle>right y-axis used, x-axis grid hidden</md-card-subtitle>
+    <mat-card-title>Area Chart</mat-card-title>
+    <mat-card-subtitle>right y-axis used, x-axis grid hidden</mat-card-subtitle>
     <td-charts title="Area Chart"
                 [shadow]="true"
                 fillOpacity="0.75">
@@ -91,8 +91,8 @@
       </td-chart-area>
     </td-charts>
     <mat-divider></mat-divider>
-  <md-card-title>Combo Chart</md-card-title>
-  <md-card-subtitle>dual y-axis, x-axis grid hidden</md-card-subtitle>
+  <mat-card-title>Combo Chart</mat-card-title>
+  <mat-card-subtitle>dual y-axis, x-axis grid hidden</mat-card-subtitle>
   <td-charts title="Sales Bar/Line Chart"
               [shadow]="true"
               fillOpacity="0.95">
@@ -120,13 +120,13 @@
                       transitionDelay="5000">
       </td-chart-line>
     </td-charts>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdChartsComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdChartsComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-charts>]]></code></h2>
     <p>Use <code><![CDATA[<td-charts>]]></code> element to wrap individual chart elements</p>
     <h3>Properties:</h3>
@@ -192,13 +192,13 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdAxisComponent</md-card-title>
-  <md-card-subtitle>How to use the individual axes components</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdAxisComponent</mat-card-title>
+  <mat-card-subtitle>How to use the individual axes components</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
      <h2><code><![CDATA[<td-axis-x>]]></code></h2>
      <p>Use <code><![CDATA[<td-axis-x>]]></code> element to control the x-axis</p>
      <p>Use <code><![CDATA[<td-axis-y-left>]]></code> element to control the left y-axis</p>
@@ -224,13 +224,13 @@
         <td-axis-y-right [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true" legend="Sales Bar"></td-axis-y-right>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdChartBarComponent</md-card-title>
-  <md-card-subtitle>Use this component to draw Bar Chart</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdChartBarComponent</mat-card-title>
+  <mat-card-subtitle>Use this component to draw Bar Chart</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-chart-bar>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-bar>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to create a Bar Chart.</p>
     <h3>Properties:</h3>
@@ -280,13 +280,13 @@
       {'x': 'Dec', 'y': 260}];
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdChartLineComponent</md-card-title>
-  <md-card-subtitle>Use this component to draw Line Chart</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdChartLineComponent</mat-card-title>
+  <mat-card-subtitle>Use this component to draw Line Chart</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-chart-line>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-line>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to draw a single or multi line chart</p>
     <h3>Properties:</h3>
@@ -332,9 +332,9 @@
       30-Apr-07,99.80
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2>Sparkline example:</h2>
     <td-highlight lang="html">
       <![CDATA[
@@ -351,9 +351,9 @@
       </td-chart-line>
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2>Multi Line example:</h2>
     <td-highlight lang="html">
       <![CDATA[
@@ -368,13 +368,13 @@
       </td-chart-line>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdChartAreaComponent</md-card-title>
-  <md-card-subtitle>Use this component to draw Area Chart</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdChartAreaComponent</mat-card-title>
+  <mat-card-subtitle>Use this component to draw Area Chart</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-chart-area>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-area>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to draw an area chart</p>
     <h3>Properties:</h3>
@@ -424,13 +424,13 @@
         }]
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Combo Charts Example</md-card-title>
-  <md-card-subtitle>Use multiple chart and axes components</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Combo Charts Example</mat-card-title>
+  <mat-card-subtitle>Use multiple chart and axes components</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h3>Example:</h3>
     <p>HTML</p>
 
@@ -466,5 +466,5 @@
     </td-charts>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

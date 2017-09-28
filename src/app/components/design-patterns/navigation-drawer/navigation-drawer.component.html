@@ -1,16 +1,16 @@
 <div layout-sm="row" layout-gt-md="row">
-  <md-card flex-sm="70" flex-gt-md="70">
-    <md-card-title>Navigation Drawers Patterns</md-card-title>
+  <mat-card flex-sm="70" flex-gt-md="70">
+    <mat-card-title>Navigation Drawers Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <md-card-content>
+    <mat-card-content>
       <h3>Problem</h3>
       <p>Need a means of navigation that is familiar and consistent.</p>
       <h3>Solution</h3>
       <p>The navigation drawer provides a familiar means of navigation along with access to additional account features, for example, the ability to switch accounts, access settings, and sign out.</p>
-    </md-card-content>
-  </md-card>
-  <md-card flex-sm flex-gt-md>
-    <md-card-title>Resources</md-card-title>
+    </mat-card-content>
+  </mat-card>
+  <mat-card flex-sm flex-gt-md>
+    <mat-card-title>Resources</mat-card-title>
     <mat-divider></mat-divider>
     <mat-nav-list>
       <a mat-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
@@ -18,17 +18,17 @@
         <span matLine>Material Design Nav Drawer</span>
       </a>
     </mat-nav-list>
-  </md-card>
+  </mat-card>
 </div>
-<md-card>
-  <md-card-title>Examples</md-card-title>
+<mat-card>
+  <mat-card-title>Examples</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Side Navigation</md-card-title>
-        <md-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Side Navigation</mat-card-title>
+        <mat-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</mat-card-subtitle>
+        <mat-card-content>
           <p>In addition to the Material Design Navigation Drawer component, this example leverages the following components:</p>
           <mat-nav-list>
             <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
@@ -43,18 +43,18 @@
               <p matLine>mat-icons</p>
             </a>
           </mat-nav-list>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example1">
             <div>
               <md-tab-group md-stretch-tabs dynamicHeight>
@@ -149,8 +149,8 @@
               </div>
             </td-layout>
           </div>
-        </md-card>
+        </mat-card>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

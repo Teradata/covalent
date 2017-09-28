@@ -1,7 +1,7 @@
-<md-card>
-  <md-card-title>Including Your Logo</md-card-title>
+<mat-card>
+  <mat-card-title>Including Your Logo</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p class="md-body-1">Your company logo can be implemented with <code>mat-icon</code>.</p>
     
     <p class="md-body-1">For example:</p>
@@ -19,18 +19,18 @@
         mat-toolbar .mat-icon.mat-icon-logo { width: 100px; height: 100px; }
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="primary" [routerLink]="['/docs/icons']" class="text-upper">Icon Docs</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
-<md-card>
-  <md-card-title>Toolbar Logo Placement</md-card-title>
-  <md-card-subtitle>place the logo in the top toolbar next to the title</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Toolbar Logo Placement</mat-card-title>
+  <mat-card-subtitle>place the logo in the top toolbar next to the title</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
     </td-layout-nav>
     <mat-divider class="push-top push-bottom"></mat-divider>
@@ -39,18 +39,18 @@
         <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="primary" [routerLink]="['/layouts']" class="text-upper">Layout Docs</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
-<md-card>
-  <md-card-title>Navigation Drawer (Sidenav) Logo Placement</md-card-title>
-  <md-card-subtitle>place the logo in the sidenav toolbar next to the title, above the user info</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Navigation Drawer (Sidenav) Logo Placement</mat-card-title>
+  <mat-card-subtitle>place the logo in the sidenav toolbar next to the title, above the user info</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div class="md-padding bgc-grey-200">
       <td-layout mode="side" opened="true">
         <td-navigation-drawer flex logo="assets:teradata" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
@@ -74,9 +74,9 @@
         </td-layout>
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="primary" [routerLink]="['navigation-drawer']" class="text-upper">Navigation Drawer</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>

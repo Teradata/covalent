@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Animations</md-card-title>
-  <md-card-subtitle>Core Covalent animation utilities</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Animations</mat-card-title>
+  <mat-card-subtitle>Core Covalent animation utilities</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p>Utilities to help add simple reusable animations and reduce boilerplate code. For custom and complex animations look into the Angular animations doc.</p>
 
     <h3>Setup:</h3>
@@ -31,17 +31,17 @@
         }
       ]]>
     </td-highlight>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <a mat-button color="primary" href="https://angular.io/guide/animations" target="_blank" class="text-upper">Animations Docs</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
-<md-card>
-  <md-card-title>Rotate Animation</md-card-title>
+<mat-card>
+  <mat-card-title>Rotate Animation</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p class="md-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
@@ -138,24 +138,24 @@
       </mat-list>
     </div>
 
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Collapse Animation</md-card-title>
+<mat-card>
+  <mat-card-title>Collapse Animation</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p class="md-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
       <div [@tdCollapse]="collapseState1">
-        <md-card>
-          <md-card-title>Collapse card</md-card-title>
-          <md-card-content>Collapse card with a click!</md-card-content>
-          <md-card-actions><button mat-raised-button color="primary" (click)="collapseState1 = !collapseState1">Collapse</button></md-card-actions>
-        </md-card>
+        <mat-card>
+          <mat-card-title>Collapse card</mat-card-title>
+          <mat-card-content>Collapse card with a click!</mat-card-content>
+          <mat-card-actions><button mat-raised-button color="primary" (click)="collapseState1 = !collapseState1">Collapse</button></mat-card-actions>
+        </mat-card>
       </div>
 
       <p>Typescript:</p>
@@ -177,11 +177,11 @@
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
           <div [@tdCollapse]="triggerState">
-            <md-card>
-              <md-card-title>Collapse card</md-card-title>
-              <md-card-content>Collapse card with a click!</md-card-content>
-              <md-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Collapse</button></md-card-actions>
-            </md-card>
+            <mat-card>
+              <mat-card-title>Collapse card</mat-card-title>
+              <mat-card-content>Collapse card with a click!</mat-card-content>
+              <mat-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Collapse</button></mat-card-actions>
+            </mat-card>
           </div>
         ]]>
       </td-highlight>
@@ -218,24 +218,24 @@
       </mat-list>
     </div>
 
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Fade in/out Animation</md-card-title>
+<mat-card>
+  <mat-card-title>Fade in/out Animation</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <p class="md-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button>
       <div [@tdFadeInOut]="fadeInOutState1">
-        <md-card>
-          <md-card-title>Fade Card</md-card-title>
-          <md-card-content>Fade in or out with a click!</md-card-content>
-          <md-card-actions><button mat-raised-button color="primary" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button></md-card-actions>
-        </md-card>
+        <mat-card>
+          <mat-card-title>Fade Card</mat-card-title>
+          <mat-card-content>Fade in or out with a click!</mat-card-content>
+          <mat-card-actions><button mat-raised-button color="primary" (click)="fadeInOutState1 = !fadeInOutState1">Fade</button></mat-card-actions>
+        </mat-card>
       </div>
 
       <p>Typescript:</p>
@@ -257,11 +257,11 @@
         <![CDATA[
            <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Fade In</button>
             <div [@tdFadeInOut]="triggerState">
-              <md-card>
-                <md-card-title>Fade Card</md-card-title>
-                <md-card-content>Fade in or out with a click!</md-card-content>
-                <md-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></md-card-actions>
-              </md-card>
+              <mat-card>
+                <mat-card-title>Fade Card</mat-card-title>
+                <mat-card-content>Fade in or out with a click!</mat-card-content>
+                <mat-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></mat-card-actions>
+              </mat-card>
             </div>
         ]]>
       </td-highlight>
@@ -298,13 +298,13 @@
         <mat-divider></mat-divider>
       </mat-list>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Attention Seekers Animation</md-card-title>
+<mat-card>
+  <mat-card-title>Attention Seekers Animation</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div>
       <h3>Demos:</h3>
 
@@ -398,5 +398,5 @@
         <mat-divider></mat-divider>
       </mat-list>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

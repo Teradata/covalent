@@ -1,17 +1,17 @@
 <div layout-sm="row" layout-gt-md="row">
-  <md-card flex-sm="70" flex-gt-md="70">
-    <md-card-title>Management Lists Patterns</md-card-title>
+  <mat-card flex-sm="70" flex-gt-md="70">
+    <mat-card-title>Management Lists Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <md-card-content>
+    <mat-card-content>
       <h3>Problem</h3>
       <p>Need to display collection of data with a similar data type and a minimal amount of metadata.</p>
       <h3>Solution</h3>
       <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with
         faux-columns and sorting instead.</p>
-    </md-card-content>
-  </md-card>
-  <md-card flex-sm flex-gt-md>
-    <md-card-title>Resources</md-card-title>
+    </mat-card-content>
+  </mat-card>
+  <mat-card flex-sm flex-gt-md>
+    <mat-card-title>Resources</mat-card-title>
     <mat-divider></mat-divider>
     <mat-nav-list>
       <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
@@ -29,17 +29,17 @@
         <span matLine>Angular Material Lists</span>
       </a>
     </mat-nav-list>
-  </md-card>
+  </mat-card>
 </div>
-<md-card>
-  <md-card-title>Examples</md-card-title>
+<mat-card>
+  <mat-card-title>Examples</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
-        <md-card-title>Management List with Menu</md-card-title>
-        <md-card-subtitle>Supports sorting & filtering</md-card-subtitle>
-        <md-card-content>
+        <mat-card-title>Management List with Menu</mat-card-title>
+        <mat-card-subtitle>Supports sorting & filtering</mat-card-subtitle>
+        <mat-card-content>
           <p>This example contains a variety of components including:</p>
           <mat-nav-list>
             <a mat-list-item [routerLink]="['/components', 'search']" target="_blank">
@@ -78,18 +78,18 @@
               <p matLine>md-select</p>
             </a>
           </mat-nav-list>
-        </md-card-content>
+        </mat-card-content>
       </div>
       <div flex>
-        <md-card class="pad-bottom-lg">
-          <md-card-subtitle class="bgc-grey-100 push-none">
+        <mat-card class="pad-bottom-lg">
+          <mat-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
               <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
                 <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
-          </md-card-subtitle>
+          </mat-card-subtitle>
           <div [tdToggle]="example1">
             <div>
               <md-tab-group md-stretch-tabs dynamicHeight>
@@ -97,7 +97,7 @@
                   <ng-template mdTabLabel>HTML</ng-template>
                   <td-highlight lang="html">
                     <![CDATA[
-                            <md-card>
+                            <mat-card>
                               <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                                 <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
                                   <span class="md-title">Title here</span>
@@ -160,7 +160,7 @@
                                 </md-select>
                                 { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
                               </td-paging-bar>
-                            </md-card>
+                            </mat-card>
                           ]]>
                   </td-highlight>
                 </md-tab>
@@ -208,7 +208,7 @@
             </div>
             <mat-divider></mat-divider>
           </div>
-          <md-card class="push-md">
+          <mat-card class="push-md">
             <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
                 <span class="md-title">Title here</span>
@@ -272,9 +272,9 @@
               </md-select>
               {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
             </td-paging-bar>
-          </md-card>
-        </md-card>
+          </mat-card>
+        </mat-card>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

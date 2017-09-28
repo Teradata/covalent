@@ -1,11 +1,11 @@
-<md-card>
-  <md-card-title>File Input</md-card-title>
-  <md-card-subtitle>single or multiple selection/drop</md-card-subtitle>
+<mat-card>
+  <mat-card-title>File Input</mat-card-title>
+  <mat-card-subtitle>single or multiple selection/drop</mat-card-subtitle>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <div layout="row">
           <md-form-field tdFileDrop
                               [disabled]="disabled"
@@ -32,15 +32,15 @@
             <button mat-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
           </span>
         </div>
-      </md-card-content>
+      </mat-card-content>
       <mat-divider></mat-divider>
-      <md-card-actions>
+      <mat-card-actions>
         <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
-      </md-card-actions>
+      </mat-card-actions>
     </md-tab>
     <md-tab>
       <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -96,9 +96,9 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/file/file-input/README.md"></td-readme-loader>

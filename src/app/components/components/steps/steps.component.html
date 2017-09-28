@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Stepper (Wizard)</md-card-title>
-  <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Stepper (Wizard)</mat-card-title>
+  <mat-card-subtitle>A sequence of logical & numbered steps</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h3 class="md-title">Basic Stepper</h3>
     <md-tab-group md-stretch-tabs>
       <md-tab>
@@ -102,18 +102,18 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions>
+  <mat-card-actions>
     <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
     <button mat-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>TdStepsComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdStepsComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-steps>]]></code></h2>
     <p>Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a <code><![CDATA[<td-steps>]]></code> element.</p>
     <h3>Properties:</h3>
@@ -167,13 +167,13 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
- </md-card>
- <md-card>
-  <md-card-title>TdStepComponent</md-card-title>
-  <md-card-subtitle>How to use this component</md-card-subtitle>
+  </mat-card-content>
+ </mat-card>
+ <mat-card>
+  <mat-card-title>TdStepComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h2><code><![CDATA[<td-step>]]></code></h2>
     <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
     <p>Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>, <code>StepState.Required</code> and <code>StepState.Complete</code>].</p>
@@ -232,5 +232,5 @@
         }
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

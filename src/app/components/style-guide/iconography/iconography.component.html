@@ -1,7 +1,7 @@
-<md-card>
-  <md-card-title>Icons</md-card-title>
+<mat-card>
+  <mat-card-title>Icons</mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <h3 class="md-title">Ligature Material Icons</h3>
     <p class="md-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
     <p class="md-body-1">
@@ -19,20 +19,20 @@
     <p>Which renders:</p>
     <mat-icon class="tc-green-700">thumb_up</mat-icon>
     <mat-icon>thumb_down</mat-icon>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-actions> 
+  <mat-card-actions> 
     <a mat-button color="primary" href="https://design.google.com/icons" target="_blank">
       Material Icons Library
     </a>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>CSS Icon (Font or SVG) Colors</md-card-title>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>CSS Icon (Font or SVG) Colors</mat-card-title>
   <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab label="Default Colors">
-      <md-card-content>
+      <mat-card-content>
         <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple tc utility class:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -46,7 +46,7 @@
         <p>choose from any of the material colors, in hues from 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 (and A100, A200, A400, A700 for all except brown, grey &amp; blue-grey)</p>
         <div layout-gt-sm="row" layout-wrap>
           <div flex-gt-sm="20" *ngFor="let color of colors">
-            <md-card>
+            <mat-card>
               <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
               <div class="bgc-{{color}}-50">
                 <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
@@ -70,10 +70,10 @@
                 <mat-icon><span class="tc-{{color}}-A400">palette</span></mat-icon>
                 <mat-icon><span class="tc-{{color}}-A700">palette</span></mat-icon>
               </div>
-            </md-card>
+            </mat-card>
           </div>
           <div flex-gt-sm="20" *ngFor="let color of neutrals">
-            <md-card>
+            <mat-card>
               <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
               <div class="bgc-{{color}}-50">
                 <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
@@ -89,13 +89,13 @@
                 <mat-icon><span class="tc-{{color}}-800">palette</span></mat-icon>
                 <mat-icon><span class="tc-{{color}}-900">palette</span></mat-icon>
               </div>
-            </md-card>
+            </mat-card>
           </div>
         </div>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
     <md-tab label="Dark Colors">
-      <md-card-content>
+      <mat-card-content>
         <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple tc utility class:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -109,7 +109,7 @@
         <p>choose from any of the dark material colors, in hues from 500, B100, B65, B40, B30 &amp; B15</p>
         <div layout-gt-sm="row" layout-wrap>
           <div flex-gt-sm="20" *ngFor="let color of colors">
-            <md-card>
+            <mat-card>
               <div class="md-caption pad-xs">class="tc-dark-{{color}}-"</div>
               <div class="bgc-{{color}}-100">
                 <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
@@ -119,10 +119,10 @@
                 <mat-icon><span class="tc-dark-{{color}}-B30">palette</span></mat-icon>
                 <mat-icon><span class="tc-dark-{{color}}-B15">palette</span></mat-icon>
               </div>
-            </md-card>
+            </mat-card>
           </div>
           <div flex-gt-sm="20" *ngFor="let color of neutrals">
-            <md-card>
+            <mat-card>
               <div class="md-caption pad-xs">class="tc-dark-{{color}}-"</div>
               <div class="bgc-{{color}}-100">
                 <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
@@ -132,15 +132,15 @@
                 <mat-icon><span class="tc-dark-{{color}}-B30">palette</span></mat-icon>
                 <mat-icon><span class="tc-dark-{{color}}-B15">palette</span></mat-icon>
               </div>
-            </md-card>
+            </mat-card>
           </div>
         </div>
-      </md-card-content>
+      </mat-card-content>
     </md-tab>
   </md-tab-group>
-</md-card>
-<md-card>
-  <md-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Search Icons</h3>
     <h4 class="md-subhead">Current icons bundled with Icon Service</h4>
     <md-tab-group md-stretch-tabs>
@@ -150,14 +150,14 @@
           <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
         </div>
         <mat-divider></mat-divider>
-        <md-card-content>
+        <mat-card-content>
           <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
             <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
                 <mat-icon>{{icon}}</mat-icon>
                 <p class="md-caption">{{icon}}</p>
             </div>
           </div>
-        </md-card-content>
+        </mat-card-content>
       </md-tab>
       <md-tab>
         <ng-template mdTabLabel>Code</ng-template>
@@ -168,14 +168,14 @@
               <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
             </div>
             <mat-divider></mat-divider>
-            <md-card-content>
+            <mat-card-content>
               <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
                 <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
                     <mat-icon>{ {icon} }</mat-icon>
                     <p class="md-caption">{ {icon} }</p>
                 </div>
               </div>
-            </md-card-content>
+            </mat-card-content>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
@@ -204,13 +204,13 @@
         </td-highlight>
       </md-tab>
     </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>IconService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>IconService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
      <p>Icon service provides an array of icon names & capability to serach through icons</p>
     <h3>Methods:</h3>
     <p>The <code><![CDATA[IconService]]></code> service comes with {{serviceAttrs.length}} methods:</p>
@@ -223,5 +223,5 @@
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
     </mat-list>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

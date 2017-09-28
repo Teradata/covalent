@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Minimum Demo</md-card-title>
-  <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
+<mat-card>
+  <mat-card-title>Minimum Demo</mat-card-title>
+  <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'200px'">
+  <mat-card-content [style.height]="'200px'">
     <td-layout-manage-list opened="true" mode="side">
       <mat-toolbar td-sidenav-content></mat-toolbar>
       <div td-sidenav-content>
@@ -11,9 +11,9 @@
       <mat-toolbar></mat-toolbar>
       Content goes here
     </td-layout-manage-list>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout-manage-list opened="true" mode="side">
@@ -26,13 +26,13 @@
         </td-layout-manage-list>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Basic Demo</md-card-title>
-  <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic Demo</mat-card-title>
+  <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -63,9 +63,9 @@
         </td-layout-manage-list>
       </td-layout-nav>
     </td-layout>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
@@ -100,13 +100,13 @@
         </td-layout>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Full Demo</md-card-title>
-  <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Full Demo</mat-card-title>
+  <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -155,64 +155,64 @@
           </mat-toolbar>
           <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
             <div flex-gt-sm="60">
-              <md-card>
-                <md-card-title>Products Sales</md-card-title>
-                <md-card-subtitle>usage stats for our products</md-card-subtitle>
+              <mat-card>
+                <mat-card-title>Products Sales</mat-card-title>
+                <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
                 <mat-divider></mat-divider>
-                <md-card-content>
+                <mat-card-content>
                   card content
-                </md-card-content>
+                </mat-card-content>
                 <mat-divider></mat-divider>
-                <md-card-actions>
+                <mat-card-actions>
                   <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                     <span>View More</span>
                   </a>
-                </md-card-actions>
-              </md-card>
-              <md-card>
-                <md-card-title>Customer Activity</md-card-title>
-                <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+                </mat-card-actions>
+              </mat-card>
+              <mat-card>
+                <mat-card-title>Customer Activity</mat-card-title>
+                <mat-card-subtitle>Recent activity from select members</mat-card-subtitle>
                 <mat-divider></mat-divider>
-                <md-card-content>
+                <mat-card-content>
                   card content
-                </md-card-content>
+                </mat-card-content>
                 <mat-divider></mat-divider>
-                <md-card-actions>
+                <mat-card-actions>
                   <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                     <span>View More</span>
                   </a>
-                </md-card-actions>
-              </md-card>
+                </mat-card-actions>
+              </mat-card>
             </div>
             <div flex-gt-sm="40">
-              <md-card>
-                <md-card-title>Alerts</md-card-title>
-                <md-card-subtitle>Items requiring attention</md-card-subtitle>
+              <mat-card>
+                <mat-card-title>Alerts</mat-card-title>
+                <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
                 <mat-divider></mat-divider>
-                <md-card-content>
+                <mat-card-content>
                   card content
-                </md-card-content>
+                </mat-card-content>
                 <mat-divider></mat-divider>
-                <md-card-actions>
+                <mat-card-actions>
                   <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                     <span>View More</span>
                   </a>
-                </md-card-actions>
-              </md-card>
-              <md-card>
-                <md-card-title>Favorites</md-card-title>
-                <md-card-subtitle>Your favorite products</md-card-subtitle>
+                </mat-card-actions>
+              </mat-card>
+              <mat-card>
+                <mat-card-title>Favorites</mat-card-title>
+                <mat-card-subtitle>Your favorite products</mat-card-subtitle>
                 <mat-divider></mat-divider>
-                <md-card-content>
+                <mat-card-content>
                   card content
-                </md-card-content>
+                </mat-card-content>
                 <mat-divider></mat-divider>
-                <md-card-actions>
+                <mat-card-actions>
                   <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                     <span>View More</span>
                   </a>
-                </md-card-actions>
-              </md-card>
+                </mat-card-actions>
+              </mat-card>
             </div>
           </div>
           <td-layout-footer-inner>
@@ -226,9 +226,9 @@
         </td-layout-footer>
       </td-layout-nav>
     </td-layout>
-  </md-card-content>
+  </mat-card-content>
   <mat-divider></mat-divider>
-  <md-card-content>
+  <mat-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
@@ -279,64 +279,64 @@
               </mat-toolbar>
               <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
                 <div flex-gt-sm="60">
-                  <md-card>
-                    <md-card-title>Products Sales</md-card-title>
-                    <md-card-subtitle>usage stats for our products</md-card-subtitle>
+                  <mat-card>
+                    <mat-card-title>Products Sales</mat-card-title>
+                    <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
                     <mat-divider></mat-divider>
-                    <md-card-content>
+                    <mat-card-content>
                       card content
-                    </md-card-content>
+                    </mat-card-content>
                     <mat-divider></mat-divider>
-                    <md-card-actions>
+                    <mat-card-actions>
                       <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                         <span>View More</span>
                       </a>
-                    </md-card-actions>
-                  </md-card>
-                  <md-card>
-                    <md-card-title>Customer Activity</md-card-title>
-                    <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+                    </mat-card-actions>
+                  </mat-card>
+                  <mat-card>
+                    <mat-card-title>Customer Activity</mat-card-title>
+                    <mat-card-subtitle>Recent activity from select members</mat-card-subtitle>
                     <mat-divider></mat-divider>
-                    <md-card-content>
+                    <mat-card-content>
                       card content
-                    </md-card-content>
+                    </mat-card-content>
                     <mat-divider></mat-divider>
-                    <md-card-actions>
+                    <mat-card-actions>
                       <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                         <span>View More</span>
                       </a>
-                    </md-card-actions>
-                  </md-card>
+                    </mat-card-actions>
+                  </mat-card>
                 </div>
                 <div flex-gt-sm="40">
-                  <md-card>
-                    <md-card-title>Alerts</md-card-title>
-                    <md-card-subtitle>Items requiring attention</md-card-subtitle>
+                  <mat-card>
+                    <mat-card-title>Alerts</mat-card-title>
+                    <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
                     <mat-divider></mat-divider>
-                    <md-card-content>
+                    <mat-card-content>
                       card content
-                    </md-card-content>
+                    </mat-card-content>
                     <mat-divider></mat-divider>
-                    <md-card-actions>
+                    <mat-card-actions>
                       <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                         <span>View More</span>
                       </a>
-                    </md-card-actions>
-                  </md-card>
-                  <md-card>
-                    <md-card-title>Favorites</md-card-title>
-                    <md-card-subtitle>Your favorite products</md-card-subtitle>
+                    </mat-card-actions>
+                  </mat-card>
+                  <mat-card>
+                    <mat-card-title>Favorites</mat-card-title>
+                    <mat-card-subtitle>Your favorite products</mat-card-subtitle>
                     <mat-divider></mat-divider>
-                    <md-card-content>
+                    <mat-card-content>
                       card content
-                    </md-card-content>
+                    </mat-card-content>
                     <mat-divider></mat-divider>
-                    <md-card-actions>
+                    <mat-card-actions>
                       <a mat-button color="accent" class="text-upper" [routerLink]="['/']">
                         <span>View More</span>
                       </a>
-                    </md-card-actions>
-                  </md-card>
+                    </mat-card-actions>
+                  </mat-card>
                 </div>
               </div>
               <td-layout-footer-inner>
@@ -446,6 +446,6 @@
 
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 <td-readme-loader resourceUrl="platform/core/layout/layout-manage-list/README.md"></td-readme-loader>
