@@ -1,11 +1,11 @@
 <md-card>
   <md-card-title>Markdown Text Editor</md-card-title>
   <md-card-subtitle>Simple markdown text editor component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p>With this component you can utilize SimpleMDE as an Angular Component.</p>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <a md-button color="accent" href="https://github.com/Teradata/covalent-text-editor" target="_blank" class="text-upper">Github Repo</a>
     <a md-button color="accent" href="https://www.npmjs.com/package/@covalent/text-editor" target="_blank" class="text-upper">npm Module</a>
@@ -14,14 +14,14 @@
 <md-card>
   <md-card-title>Demo</md-card-title>
   <md-card-subtitle>Edit the markdown in the left editor for a real-time preview</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-toolbar hide show-gt-md>
     <div layout="row" flex>
       <span flex="55">Editor</span>
       <span flex="45">Preview</span>
     </div>
   </md-toolbar>
-  <md-divider hide show-gt-md></md-divider>
+  <mat-divider hide show-gt-md></mat-divider>
   <div layout-gt-md="row" class="bgc-grey-50" tdMediaToggle="gt-md" [mediaStyles]="{height: '650px'}">
     <div flex-gt-md="55" layout-gt-md="column" class="pad-sm">
       <td-text-editor flex-gt-md [(ngModel)]="editorVal"></td-text-editor>

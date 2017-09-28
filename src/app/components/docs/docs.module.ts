@@ -17,7 +17,7 @@ import { MockDataComponent } from './mock-data/mock-data.component';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule,
+import { MdButtonModule, MatListModule, MdIconModule, MdCardModule, MdToolbarModule,
          MdMenuModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
@@ -44,7 +44,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CommonModule,
     /** Material Modules */
     MdButtonModule,
-    MdListModule,
+    MatListModule,
     MdIconModule,
     MdCardModule,
     MdToolbarModule,

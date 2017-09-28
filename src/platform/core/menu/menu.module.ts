@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MdMenuModule, MdListModule } from '@angular/material';
+import { MdMenuModule, MatListModule } from '@angular/material';
 
 import { TdMenuComponent } from './menu.component';
 
@@ -16,7 +16,7 @@ export { TdMenuComponent } from './menu.component';
   imports: [
     CommonModule,
     MdMenuModule,
-    MdListModule,
+    MatListModule,
   ],
   declarations: [
     TD_MENU,

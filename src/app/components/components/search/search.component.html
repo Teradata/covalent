@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Search</md-card-title>
   <md-card-subtitle>Search and filter items</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div layout="row" layout-align="start center">
       <md-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
@@ -27,7 +27,7 @@
           <td-search-box *ngIf="debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (searchDebounce)="searchBoxTerm = $event" flex></td-search-box>
           <td-search-box *ngIf="!debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (search)="searchBoxTerm = $event" (clear)="searchBoxTerm = ''" flex></td-search-box>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <md-card-content>card content</md-card-content>
       </md-card>
     </div>
@@ -37,7 +37,7 @@
       <button md-icon-button><md-icon>more_vert</md-icon></button>
     </md-toolbar>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
   </md-card-actions>
@@ -45,21 +45,21 @@
 <md-card>
   <md-card-title>TdSearchInputComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-search-input>]]></code></h2>
     <p>Use <code><![CDATA[<td-search-input>]]></code> element to generate a search input with its animated cancel button.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-search-input>]]></code> component has {{searchInputAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">
@@ -88,21 +88,21 @@
 <md-card>
   <md-card-title>TdSearchBoxComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-search-box>]]></code></h2>
     <p>Use <code><![CDATA[<td-search-box>]]></code> element to generate a search box with animations.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-search-box>]]></code> component has {{searchBoxAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">

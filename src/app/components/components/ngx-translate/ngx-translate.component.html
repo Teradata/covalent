@@ -1,11 +1,11 @@
 <md-card>
   <md-card-title>NGX-Translate (External library)</md-card-title>
   <md-card-subtitle>i18n library for Angular</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     An implementation of angular translate for Angular.
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
@@ -13,23 +13,23 @@
 </md-card>
 <md-card>
   <md-card-title>Resources</md-card-title>
-  <md-divider></md-divider>
-  <md-nav-list>
-    <a md-list-item href="https://github.com/ngx-translate/core" target="_blank">
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item href="https://github.com/ngx-translate/core" target="_blank">
       <md-icon>launch</md-icon>
-      <span mdLine>View <code>@ngx-translate/core</code> documentation</span>
+      <span matLine>View <code>@ngx-translate/core</code> documentation</span>
     </a>
-    <md-divider></md-divider>
-    <a md-list-item href="https://github.com/ngx-translate/http-loader" target="_blank">
+    <mat-divider></mat-divider>
+    <a mat-list-item href="https://github.com/ngx-translate/http-loader" target="_blank">
       <md-icon>launch</md-icon>
-      <span mdLine>View <code>@ngx-translate/http-loader</code> documentation</span>
+      <span matLine>View <code>@ngx-translate/http-loader</code> documentation</span>
     </a>
-  </md-nav-list>
+  </mat-nav-list>
 </md-card>
 <md-card>
   <md-card-title>{{ 'DEMO_BASIC.TITLE' | translate }}</md-card-title>
   <md-card-subtitle>{{ 'DEMO_BASIC.SUBTITLE' | translate }}</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
@@ -93,7 +93,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
@@ -102,7 +102,7 @@
 <md-card>
   <md-card-title>{{ 'DEMO_ONE.TITLE' | translate }}</md-card-title>
   <md-card-subtitle>{{ 'DEMO_ONE.SUBTITLE' | translate }}</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
@@ -204,7 +204,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
@@ -213,43 +213,43 @@
 <md-card>
   <md-card-title>{{ 'DEMO_TWO.TITLE' | translate }}</md-card-title>
   <md-card-subtitle>{{ 'DEMO_TWO.SUBTITLE' | translate }}</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
-        <md-list>
-          <md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h4 mdLine>Any person</h4>
-            <p translate [translateParams]="{value: (123000020 | number)}" mdLine>DEMO_TWO.BALANCE</p>
+        <mat-list>
+          <mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
+            <h4 matLine>Any person</h4>
+            <p translate [translateParams]="{value: (123000020 | number)}" matLine>DEMO_TWO.BALANCE</p>
             <span flex="50">{{dateToFormat | date:'medium'}}</span>
-          </md-list-item>
-          <md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h4 mdLine>Another person</h4>
-            <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" mdLine>DEMO_TWO.BALANCE</p>
+          </mat-list-item>
+          <mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
+            <h4 matLine>Another person</h4>
+            <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" matLine>DEMO_TWO.BALANCE</p>
             <span flex="50">{{dateToFormat | date:'medium'}}</span>
-          </md-list-item>
-        </md-list>
+          </mat-list-item>
+        </mat-list>
       </md-tab>
       <md-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <md-list>
-              <md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h4 mdLine>Any person</h4>
-                <p translate [translateParams]="{value: (123000020 | number)}" mdLine>DEMO_TWO.BALANCE</p>
+            <mat-list>
+              <mat-list-item>
+                <md-icon matListAvatar>person</md-icon>
+                <h4 matLine>Any person</h4>
+                <p translate [translateParams]="{value: (123000020 | number)}" matLine>DEMO_TWO.BALANCE</p>
                 <span flex="50">{ {dateToFormat | date:'medium'} }</span>
-              </md-list-item>
-              <md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h4 mdLine>Another person</h4>
-                <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" mdLine>DEMO_TWO.BALANCE</p>
+              </mat-list-item>
+              <mat-list-item>
+                <md-icon matListAvatar>person</md-icon>
+                <h4 matLine>Another person</h4>
+                <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" matLine>DEMO_TWO.BALANCE</p>
                 <span flex="50">{ {dateToFormat | date:'medium'} }</span>
-              </md-list-item>
-            </md-list>
+              </mat-list-item>
+            </mat-list>
           ]]>
         </td-highlight>
         <p>Typescript (NgModule):</p>
@@ -291,7 +291,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>
@@ -300,7 +300,7 @@
 <md-card>
   <md-card-title>{{ 'DEMO_THREE.TITLE' | translate }}</md-card-title>
   <md-card-subtitle>{{ 'DEMO_THREE.SUBTITLE' | translate }}</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <md-tab-group md-stretch-tabs>
       <md-tab [label]="'DEMO_TAB' | translate">
@@ -376,7 +376,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in spanish</button>
     <button md-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in english</button>

@@ -5,11 +5,11 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  md-list-item,
+  mat-list-item,
   .mat-list-item-content {
         md-icon {
         color: mat-color($foreground, icon);
-        &[mdListAvatar] {
+        &[matListAvatar] {
             background-color: mat-color($background, hover);
         }
     }

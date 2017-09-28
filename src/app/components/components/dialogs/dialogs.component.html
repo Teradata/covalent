@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Simple Dialogs</md-card-title>
   <md-card-subtitle>Quick way to use alert, confirm and prompt dialogs</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="openAlert()" class="text-upper">Open Alert</button>
     <button md-button color="primary" (click)="openConfirm()" class="text-upper">Open Confirm</button>
@@ -11,22 +11,22 @@
 <md-card>
   <md-card-title>TdDialogService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>TdDialogService</code></h2>
     <p>Service provided with methods that wrap the @angular/material [MdDialog] service and provide an easier experience for simple dialogs.</p>
     <p>Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an error.</p>
     <h3>Methods:</h3>
     <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example(after setup):</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">

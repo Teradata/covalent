@@ -1,12 +1,12 @@
 <md-card>
   <md-card-title>JSON Formatter</md-card-title>
   <md-card-subtitle>JSON object tree with collapsible nodes</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">Object using JSON Formatting:</h3>
     <p>(Use mouse or keyboard to expand/collapse nodes)</p>
     <td-json-formatter [data]="data" [levelsOpen]="2"></td-json-formatter>
-    <md-divider class="push-top"></md-divider>
+    <mat-divider class="push-top"></mat-divider>
     <h3 class="md-title">Original JSON Object:</h3>
     <td-highlight lang="json">
       {{data | json}}
@@ -16,7 +16,7 @@
 <md-card>
   <md-card-title>TdJsonFormatterComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-json-formatter>]]></code></h2>
     <p>Simply add the <code><![CDATA[<td-json-formatter>]]></code> element and pass the object to be formatted as a <code>[data]</code> input.</p>
@@ -24,15 +24,15 @@
     <p>The tree is collapsable/expandable so you can navigate through its nodes.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-json-formatter>]]></code> component has {{jsonFormatterAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="jsonFormatterAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">

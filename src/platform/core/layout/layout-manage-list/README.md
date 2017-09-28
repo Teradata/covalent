@@ -55,9 +55,9 @@ Example for Manage List Layout / Nav Layout combo:
     <md-toolbar td-sidenav-content>
       ... toolbar in sidenav
     </md-toolbar>
-    <md-nav-list td-sidenav-content>
+    <mat-nav-list td-sidenav-content>
       ... sidenav content
-    </md-nav-list>
+    </mat-nav-list>
     <md-toolbar>
       <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>

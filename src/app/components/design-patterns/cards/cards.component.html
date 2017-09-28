@@ -1,7 +1,7 @@
 <div layout-sm="row" layout-gt-md="row">
   <md-card flex-sm="70" flex-gt-md="70">
     <md-card-title>Card Patterns</md-card-title>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-content>
       <h3>Problem</h3>
       <p>Need to display item or set of content composed of different elements whose size or supported actions vary.</p>
@@ -12,28 +12,28 @@
   </md-card>
   <md-card flex-sm flex-gt-md>
     <md-card-title>Resources</md-card-title>
-    <md-divider></md-divider>
-    <md-nav-list>
-      <a md-list-item href="https://material.google.com/components/cards.html" target="_blank">
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="https://material.google.com/components/cards.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Material Design Cards</span>
+        <span matLine>Material Design Cards</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://material.angular.io/components/component/card" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://material.angular.io/components/component/card" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Angular Material Cards</span>
+        <span matLine>Angular Material Cards</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://www.google.com/search/about/learn-more/now/" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://www.google.com/search/about/learn-more/now/" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Google Now Cards</span>
+        <span matLine>Google Now Cards</span>
       </a>
-    </md-nav-list>
+    </mat-nav-list>
   </md-card>
 </div>
 <md-card>
   <md-card-title>Examples</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
@@ -41,27 +41,27 @@
         <md-card-subtitle>Card with standard card elements</md-card-subtitle>
         <md-card-content>
           <p>A card can be used with any of the optional card sub-elements including:</p>
-          <md-list>
-            <a md-list-item>
-              <span mdLine>md-title</span>
+          <mat-list>
+            <a mat-list-item>
+              <span matLine>md-title</span>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item>
-              <span mdLine>md-subtitle</span>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+              <span matLine>md-subtitle</span>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item>
-              <span mdLine>md-divider</span>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+              <span matLine>mat-divider</span>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item>
-              <span mdLine>md-card-content</span>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+              <span matLine>md-card-content</span>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item>
-              <span mdLine>md-card-actions</span>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+              <span matLine>md-card-actions</span>
             </a>
-          </md-list>
+          </mat-list>
           <p>Additionally, a card may contain other components such as search, lists, icons, and images.</p>
         </md-card-content>
       </div>
@@ -82,12 +82,12 @@
                         <md-card>
                           <md-card-title>Standard Card</md-card-title>
                           <md-card-subtitle>Subtitle</md-card-subtitle>
-                          <md-divider></md-divider>
+                          <mat-divider></mat-divider>
                           <md-card-content>
                             <p>Standard card with content</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
                           </md-card-content>
-                          <md-divider></md-divider>
+                          <mat-divider></mat-divider>
                           <md-card-actions>
                             <button md-button color="accent" class="text-upper">Action</button>
                             <button md-button class="text-upper">Cancel</button>
@@ -96,15 +96,15 @@
                       ]]>
                   </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card class="push-md">
             <md-card-title>Title</md-card-title>
             <md-card-subtitle>Subtitle</md-card-subtitle>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <md-card-content>
             </md-card-content>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <md-card-actions>
               <button md-button color="accent" class="text-upper">Action</button>
               <button md-button class="text-upper">Cancel</button>
@@ -137,7 +137,7 @@
                   <![CDATA[
                     <md-card-title layout="row" layout-align="start center"><md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon> <span class="md-title">Login</span></md-card-title>
                       <md-card-subtitle>Sign In with Your Credentials</md-card-subtitle>
-                      <md-divider></md-divider>
+                      <mat-divider></mat-divider>
                       <md-card-content class="push-bottom-none">
                         <form #loginForm="ngForm">
                           <div layout="row">
@@ -161,7 +161,7 @@
                         </form>
                         <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
                       </md-card-content>
-                      <md-divider></md-divider>
+                      <mat-divider></mat-divider>
                       <md-card-actions>
                         <div layout="row">
                           <button flex md-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
@@ -171,14 +171,14 @@
                   ]]>
               </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card class="push-md">
             <md-card-title layout="row" layout-align="start center">
               <md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon> <span class="md-title">Login</span>
             </md-card-title>
             <md-card-subtitle>Sign In with Your Credentials</md-card-subtitle>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <md-card-content class="push-bottom-none">
               <form #loginForm="ngForm">
                 <div layout="row">
@@ -204,7 +204,7 @@
               </form>
               <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
             </md-card-content>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <md-card-actions>
               <div layout="row">
                 <button flex md-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
@@ -219,7 +219,7 @@
         <md-card-title>Metadata List Card</md-card-title>
         <md-card-subtitle>Card with metadata for an item detail</md-card-subtitle>
         <md-card-content>
-          <p>Cards support many rich components, including our <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using md-divider and consider adding md-subheader.</p>
+          <p>Cards support many rich components, including our <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using mat-divider and consider adding md-subheader.</p>
         </md-card-content>
       </div> 
       <div flex>
@@ -239,41 +239,41 @@
                     <md-card>
                       <md-card-title>Item Info</md-card-title>
                       <md-card-subtitle>Info About This Item</md-card-subtitle>
-                      <md-divider></md-divider>
-                      <md-list>
+                      <mat-divider></mat-divider>
+                      <mat-list>
                         <h3 md-subheader>Metadata</h3>
-                        <md-list-item>
-                          <md-icon mdListAvatar>account_box</md-icon>
-                          <h4 mdLine>John Jameson</h4>
-                          <p mdLine>Owner</p>
-                        </md-list-item>
-                        <md-divider md-inset></md-divider>
-                        <md-list-item>
-                          <md-icon mdListAvatar>description</md-icon>
-                          <h4 mdLine>An Item Description</h4>
-                          <p mdLine>Description</p>
-                        </md-list-item>
-                        <md-divider md-inset></md-divider>
-                        <md-list-item>
-                          <md-icon mdListAvatar>vpn_key</md-icon>
-                          <h4 mdLine>1141e8e8-8d24-4956-93c2</h4>
-                          <p mdLine>API Key</p>
-                        </md-list-item>
-                        <md-divider></md-divider>
+                        <mat-list-item>
+                          <md-icon matListAvatar>account_box</md-icon>
+                          <h4 matLine>John Jameson</h4>
+                          <p matLine>Owner</p>
+                        </mat-list-item>
+                        <mat-divider matInset></mat-divider>
+                        <mat-list-item>
+                          <md-icon matListAvatar>description</md-icon>
+                          <h4 matLine>An Item Description</h4>
+                          <p matLine>Description</p>
+                        </mat-list-item>
+                        <mat-divider matInset></mat-divider>
+                        <mat-list-item>
+                          <md-icon matListAvatar>vpn_key</md-icon>
+                          <h4 matLine>1141e8e8-8d24-4956-93c2</h4>
+                          <p matLine>API Key</p>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
                         <h3 md-subheader>Dates</h3>
-                        <md-list-item>
-                          <md-icon mdListAvatar>access_time</md-icon>
-                          <h4 mdLine>Wed, July 6, 2016 11:13 AM</h4>
-                          <p mdLine>Last Updated</p>
-                        </md-list-item>
-                        <md-divider md-inset></md-divider>
-                        <md-list-item>
-                          <md-icon mdListAvatar>today</md-icon>
-                          <h4 mdLine>Wed, July 4, 2016 09:11 AM</h4>
-                          <p mdLine>Created</p>
-                        </md-list-item>
-                      </md-list>
-                      <md-divider></md-divider>
+                        <mat-list-item>
+                          <md-icon matListAvatar>access_time</md-icon>
+                          <h4 matLine>Wed, July 6, 2016 11:13 AM</h4>
+                          <p matLine>Last Updated</p>
+                        </mat-list-item>
+                        <mat-divider matInset></mat-divider>
+                        <mat-list-item>
+                          <md-icon matListAvatar>today</md-icon>
+                          <h4 matLine>Wed, July 4, 2016 09:11 AM</h4>
+                          <p matLine>Created</p>
+                        </mat-list-item>
+                      </mat-list>
+                      <mat-divider></mat-divider>
                       <md-card-actions>
                         <button md-button color="accent" class="text-upper">Edit</button>
                       </md-card-actions>
@@ -281,46 +281,46 @@
                   ]]>
               </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card class="push-md" flex>
             <md-card-title>Item Info</md-card-title>
             <md-card-subtitle>Info About This Item</md-card-subtitle>
-            <md-divider></md-divider>
-            <md-list>
+            <mat-divider></mat-divider>
+            <mat-list>
               <h3 md-subheader>Metadata</h3>
-              <md-list-item>
-                <md-icon mdListAvatar>account_box</md-icon>
-                <h4 mdLine>John Jameson</h4>
-                <p mdLine>Owner</p>
-              </md-list-item>
-              <md-divider md-inset></md-divider>
-              <md-list-item>
-                <md-icon mdListAvatar>description</md-icon>
-                <h4 mdLine>An Item Description</h4>
-                <p mdLine>Description</p>
-              </md-list-item>
-              <md-divider md-inset></md-divider>
-              <md-list-item>
-                <md-icon mdListAvatar>vpn_key</md-icon>
-                <h4 mdLine>1141e8e8-8d24-4956-93c2</h4>
-                <p mdLine>API Key</p>
-              </md-list-item>
-              <md-divider></md-divider>
+              <mat-list-item>
+                <md-icon matListAvatar>account_box</md-icon>
+                <h4 matLine>John Jameson</h4>
+                <p matLine>Owner</p>
+              </mat-list-item>
+              <mat-divider matInset></mat-divider>
+              <mat-list-item>
+                <md-icon matListAvatar>description</md-icon>
+                <h4 matLine>An Item Description</h4>
+                <p matLine>Description</p>
+              </mat-list-item>
+              <mat-divider matInset></mat-divider>
+              <mat-list-item>
+                <md-icon matListAvatar>vpn_key</md-icon>
+                <h4 matLine>1141e8e8-8d24-4956-93c2</h4>
+                <p matLine>API Key</p>
+              </mat-list-item>
+              <mat-divider></mat-divider>
               <h3 md-subheader>Dates</h3>
-              <md-list-item>
-                <md-icon mdListAvatar>access_time</md-icon>
-                <h4 mdLine>Wed, July 6, 2016 11:13 AM</h4>
-                <p mdLine>Last Updated</p>
-              </md-list-item>
-              <md-divider md-inset></md-divider>
-              <md-list-item>
-                <md-icon mdListAvatar>today</md-icon>
-                <h4 mdLine>Wed, July 4, 2016 09:11 AM</h4>
-                <p mdLine>Created</p>
-              </md-list-item>
-            </md-list>
-            <md-divider></md-divider>
+              <mat-list-item>
+                <md-icon matListAvatar>access_time</md-icon>
+                <h4 matLine>Wed, July 6, 2016 11:13 AM</h4>
+                <p matLine>Last Updated</p>
+              </mat-list-item>
+              <mat-divider matInset></mat-divider>
+              <mat-list-item>
+                <md-icon matListAvatar>today</md-icon>
+                <h4 matLine>Wed, July 4, 2016 09:11 AM</h4>
+                <p matLine>Created</p>
+              </mat-list-item>
+            </mat-list>
+            <mat-divider></mat-divider>
             <md-card-actions>
               <button md-button color="accent" class="text-upper">Edit</button>
             </md-card-actions>
@@ -357,31 +357,31 @@
                           <span mdPrefix><md-icon>search</md-icon></span>
                         </md-form-field>
                       </md-card-title>
-                      <md-list class="pull-top">
-                        <md-list-item>
-                          <md-icon mdListAvatar>apps</md-icon>
-                          <h3 mdLine>App Name</h3>
+                      <mat-list class="pull-top">
+                        <mat-list-item>
+                          <md-icon matListAvatar>apps</md-icon>
+                          <h3 matLine>App Name</h3>
                           <span flex></span>
                           <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
                           <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
-                        </md-list-item>
+                        </mat-list-item>
                         <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
-                          <a md-list-item>
-                            <md-icon mdListAvatar>dns</md-icon>
-                            <h3 mdLine> Item { {i} } </h3>
-                            <p mdLine> Item Description </p>
+                          <a mat-list-item>
+                            <md-icon matListAvatar>dns</md-icon>
+                            <h3 matLine> Item { {i} } </h3>
+                            <p matLine> Item Description </p>
                             <span flex></span>
                             <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
                             <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
                           </a>
-                          <md-divider *ngIf="!last" md-inset></md-divider>
+                          <mat-divider *ngIf="!last" matInset></mat-divider>
                         </ng-template>
-                      </md-list>
+                      </mat-list>
                     </md-card>
                   ]]>
               </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card class="push-md">
               <md-card-title layout>
@@ -390,26 +390,26 @@
                   <span mdPrefix><md-icon>search</md-icon></span>
                 </md-form-field>
               </md-card-title>
-              <md-list class="pull-top">
-                <md-list-item>
-                  <md-icon mdListAvatar>apps</md-icon>
-                  <h3 mdLine>App Name</h3>
+              <mat-list class="pull-top">
+                <mat-list-item>
+                  <md-icon matListAvatar>apps</md-icon>
+                  <h3 matLine>App Name</h3>
                   <span flex></span>
                   <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
                   <span flex="30" class="md-body-1 tc-grey-500" hide-md hide-sm hide-xs>Modified</span>
-                </md-list-item>
+                </mat-list-item>
                 <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
-                  <a md-list-item>
-                    <md-icon mdListAvatar>dns</md-icon>
-                    <h3 mdLine> Item {{i}} </h3>
-                    <p mdLine> Item Description </p>
+                  <a mat-list-item>
+                    <md-icon matListAvatar>dns</md-icon>
+                    <h3 matLine> Item {{i}} </h3>
+                    <p matLine> Item Description </p>
                     <span flex></span>
                     <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
                     <span flex="30" class="md-body-1 tc-grey-500" hide-md hide-sm hide-xs>Apr 14, 2016 12:32 PM</span>
                   </a>
-                  <md-divider *ngIf="!last" md-inset></md-divider>
+                  <mat-divider *ngIf="!last" matInset></mat-divider>
                 </ng-template>
-              </md-list>
+              </mat-list>
             </md-card>
         </md-card>
       </div>
@@ -421,17 +421,17 @@
         <md-card-content>
           <p>Images displayed within cards inherit styling which removes margin and padding, depending on where the imgae is positioned within the card. Notice if the image is first it has proper rounded corners.</p>
           <p>Examples are leveraging the following special image elements:</p>
-          <md-list>
-            <a md-list-item>
-              <span mdLine>Card Small Image</span>
-              <p mdLine>md-card-sm-image</p>
+          <mat-list>
+            <a mat-list-item>
+              <span matLine>Card Small Image</span>
+              <p matLine>md-card-sm-image</p>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item>
-              <span mdLine>Card Medium Image</span>
-              <p mdLine>md-card-md-image</p>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+              <span matLine>Card Medium Image</span>
+              <p matLine>md-card-md-image</p>
             </a>
-          </md-list>
+          </mat-list>
         </md-card-content>
       </div>
       <div flex>
@@ -487,7 +487,7 @@
                   ]]>
               </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <div class="push-md">
             <div layout-gt-xs="row">

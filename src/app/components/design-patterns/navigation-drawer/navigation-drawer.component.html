@@ -1,7 +1,7 @@
 <div layout-sm="row" layout-gt-md="row">
   <md-card flex-sm="70" flex-gt-md="70">
     <md-card-title>Navigation Drawers Patterns</md-card-title>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-content>
       <h3>Problem</h3>
       <p>Need a means of navigation that is familiar and consistent.</p>
@@ -11,18 +11,18 @@
   </md-card>
   <md-card flex-sm flex-gt-md>
     <md-card-title>Resources</md-card-title>
-    <md-divider></md-divider>
-    <md-nav-list>
-      <a md-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Material Design Nav Drawer</span>
+        <span matLine>Material Design Nav Drawer</span>
       </a>
-    </md-nav-list>
+    </mat-nav-list>
   </md-card>
 </div>
 <md-card>
   <md-card-title>Examples</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div layout-sm="row" layout-gt-md="row">
       <div flex-sm="35" flex-gt-md="35">
@@ -30,19 +30,19 @@
         <md-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</md-card-subtitle>
         <md-card-content>
           <p>In addition to the Material Design Navigation Drawer component, this example leverages the following components:</p>
-          <md-nav-list>
-            <a md-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
+          <mat-nav-list>
+            <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
               <md-icon>launch</md-icon>
-              <span mdLine>Material Design List</span>
-              <p mdLine>md-list</p>
+              <span matLine>Material Design List</span>
+              <p matLine>mat-list</p>
             </a>
-            <md-divider></md-divider>
-            <a md-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+            <mat-divider></mat-divider>
+            <a mat-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
               <md-icon>launch</md-icon>
-              <span mdLine>Material Design Icon</span>
-              <p mdLine>md-icons</p>
+              <span matLine>Material Design Icon</span>
+              <p matLine>md-icons</p>
             </a>
-          </md-nav-list>
+          </mat-nav-list>
         </md-card-content>
       </div>
       <div flex>
@@ -64,13 +64,13 @@
                           <![CDATA[
                             <td-layout #layout>
                               <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-                                <md-nav-list>
-                                  <a *ngFor="let item of routes" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
-                                </md-nav-list>
+                                <mat-nav-list>
+                                  <a *ngFor="let item of routes" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                </mat-nav-list>
                                 <div td-navigation-drawer-menu>
-                                  <md-nav-list>
-                                    <a *ngFor="let item of usermenu" md-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
-                                  </md-nav-list>
+                                  <mat-nav-list>
+                                    <a *ngFor="let item of usermenu" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                  </mat-nav-list>
                                 </div>
                               </td-navigation-drawer>
                               <div td-sidenav-content class="td-layout-footer pad">
@@ -130,18 +130,18 @@
                   </md-tab>
               </md-tab-group>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <div class="push-md border">
             <td-layout>
               <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-                <md-nav-list>
-                  <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
-                </md-nav-list>
+                <mat-nav-list>
+                  <a *ngFor="let item of routes" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                </mat-nav-list>
                 <div td-navigation-drawer-menu>
-                  <md-nav-list>
-                    <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
-                  </md-nav-list>
+                  <mat-nav-list>
+                    <a *ngFor="let item of usermenu" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                  </mat-nav-list>
                 </div>
               </td-navigation-drawer>
               <div td-sidenav-content class="td-layout-footer pad">

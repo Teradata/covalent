@@ -11,7 +11,7 @@
   <md-card-subtitle>
     Scroll virtually on a set of items
   </md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div [tdToggle]="!toggleDemoCode">
       <md-tab-group md-stretch-tabs dynamicHeight>
@@ -19,22 +19,22 @@
           <ng-template mdTabLabel>HTML</ng-template>
           <td-highlight lang="html">
             <![CDATA[
-              <md-list>
-                <md-list-item>
+              <mat-list>
+                <mat-list-item>
                   Column Header
-                </md-list-item>
-                <md-divider></md-divider>
+                </mat-list-item>
+                <mat-divider></mat-divider>
                 <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
                   <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-                    <md-list-item>
-                      <md-icon mdListAvatar>person</md-icon>
+                    <mat-list-item>
+                      <md-icon matListAvatar>person</md-icon>
                       <h4 md-line>{ {row.name} }</h4>
                       <p md-line>Row: { {row.index} }</p>
-                    </md-list-item>
-                    <md-divider *ngIf="!last" md-inset></md-divider>
+                    </mat-list-item>
+                    <mat-divider *ngIf="!last" matInset></mat-divider>
                   </ng-template>
                 </td-virtual-scroll-container>
-              </md-list>
+              </mat-list>
             ]]>
           </td-highlight>
         </md-tab>
@@ -58,26 +58,26 @@
           </td-highlight>
         </md-tab>
       </md-tab-group>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
     </div>
-    <md-list>
-      <md-list-item>
+    <mat-list>
+      <mat-list-item>
         Column Header
-      </md-list-item>
-      <md-divider></md-divider>
+      </mat-list-item>
+      <mat-divider></mat-divider>
       <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-          <md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
+          <mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
             <h4 md-line>{{row.name}}</h4>
             <p md-line>Row: {{row.index}}</p>
-          </md-list-item>
-          <md-divider *ngIf="!last" md-inset></md-divider>
+          </mat-list-item>
+          <mat-divider *ngIf="!last" matInset></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
-    </md-list>
+    </mat-list>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button class="text-upper" (click)="virtualScroll.scrollToStart()">
       Scroll to first

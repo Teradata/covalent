@@ -34,16 +34,16 @@
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-md" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push']">
-            <md-nav-list hide-gt-md>
+            <mat-nav-list hide-gt-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
-                <a md-list-item [routerLink]="[item.route]">
-                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
-                  <h3 class="tc-blue-grey-900" mdLine> {{item.title}} </h3>
-                  <p class="tc-blue-grey-700" mdLine> {{item.description}} </p>
+                <a mat-list-item [routerLink]="[item.route]">
+                  <md-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <h3 class="tc-blue-grey-900" matLine> {{item.title}} </h3>
+                  <p class="tc-blue-grey-700" matLine> {{item.description}} </p>
                 </a>
-                <md-divider *ngIf="!last" md-inset></md-divider>
+                <mat-divider *ngIf="!last" matInset></mat-divider>
               </ng-template>
-            </md-nav-list>
+            </mat-nav-list>
             <div layout="row" layout-wrap hide-xs hide-sm hide-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <div flex-gt-sm="33" class="pad-sm">
@@ -85,16 +85,16 @@
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-xl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-md']">
-            <md-nav-list hide-gt-sm class="theme-dark">
+            <mat-nav-list hide-gt-sm class="theme-dark">
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
-                <a md-list-item href="{{item.link}}" target="_blank">
-                  <md-icon mdListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
-                  <h3 class="tc-white" mdLine> {{item.title}} </h3>
-                  <p class="tc-white" mdLine> {{item.description}} </p>
+                <a mat-list-item href="{{item.link}}" target="_blank">
+                  <md-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <h3 class="tc-white" matLine> {{item.title}} </h3>
+                  <p class="tc-white" matLine> {{item.description}} </p>
                 </a>
-                <md-divider *ngIf="!last" md-inset></md-divider>
+                <mat-divider *ngIf="!last" matInset></mat-divider>
               </ng-template>
-            </md-nav-list>
+            </mat-nav-list>
             <div layout="row" layout-wrap hide-xs hide-sm>
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
                 <div flex-gt-sm="33" class="pad-sm">
@@ -264,25 +264,25 @@
                   Remember, we're agile so our roadmap is iterative & bite sized for frequent, rapid releases.
                 </div>
               </div>
-              <md-nav-list>
-                <a md-list-item href="https://github.com/teradata/covalent/releases" target="_blank">
+              <mat-nav-list>
+                <a mat-list-item href="https://github.com/teradata/covalent/releases" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 mdLine>Releases</h3>
-                  <p mdLine>Our latest version you can use today!</p>
+                  <h3 matLine>Releases</h3>
+                  <p matLine>Our latest version you can use today!</p>
                 </a>
-                <md-divider></md-divider>
-                <a md-list-item href="https://github.com/teradata/covalent/milestones" target="_blank">
+                <mat-divider></mat-divider>
+                <a mat-list-item href="https://github.com/teradata/covalent/milestones" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 mdLine>Milestones</h3>
-                  <p mdLine>Rough time estimates</p>
+                  <h3 matLine>Milestones</h3>
+                  <p matLine>Rough time estimates</p>
                 </a>
-                <md-divider></md-divider>
-                <a md-list-item href="https://github.com/teradata/covalent/issues" target="_blank">
+                <mat-divider></mat-divider>
+                <a mat-list-item href="https://github.com/teradata/covalent/issues" target="_blank">
                   <md-icon>launch</md-icon>
-                  <h3 mdLine>Feature Requests & Bugs</h3>
-                  <p mdLine>Priotized by demand</p>
+                  <h3 matLine>Feature Requests & Bugs</h3>
+                  <p matLine>Priotized by demand</p>
                 </a>
-              </md-nav-list>
+              </mat-nav-list>
             </td-expansion-panel>
             <td-expansion-panel label="Does Covalent support desktop apps?" sublabel="Build desktop apps with Covalent Electron">
               <div class="md-padding">

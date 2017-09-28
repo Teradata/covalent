@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Minimum Demo</md-card-title>
   <md-card-subtitle>Minimum code for this layout with no wrapper</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content [style.height]="'200px'">
     <td-layout>
       <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
@@ -9,7 +9,7 @@
       </td-layout-nav>
     </td-layout>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <td-highlight lang="html">
       <![CDATA[
@@ -23,17 +23,17 @@
 <md-card>
   <md-card-title>Basic Demo</md-card-title>
   <md-card-subtitle>Basic layout wrapper &amp; nav drawer</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-        <md-nav-list>
-          <a md-list-item><md-icon>home</md-icon>Home</a>
-        </md-nav-list>
+        <mat-nav-list>
+          <a mat-list-item><md-icon>home</md-icon>Home</a>
+        </mat-nav-list>
         <div td-navigation-drawer-menu>
-          <md-nav-list>
-            <a md-list-item><md-icon>account_box</md-icon>Profile</a>
-          </md-nav-list>
+          <mat-nav-list>
+            <a mat-list-item><md-icon>account_box</md-icon>Profile</a>
+          </mat-nav-list>
         </div>
       </td-navigation-drawer>
       <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
@@ -44,19 +44,19 @@
       </td-layout-nav>
     </td-layout>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-            <md-nav-list>
-              <a md-list-item><md-icon>home</md-icon>Home</a>
-            </md-nav-list>
+            <mat-nav-list>
+              <a mat-list-item><md-icon>home</md-icon>Home</a>
+            </mat-nav-list>
             <div td-navigation-drawer-menu>
-              <md-nav-list>
-                <a md-list-item><md-icon>account_box</md-icon>Profile</a>
-              </md-nav-list>
+              <mat-nav-list>
+                <a mat-list-item><md-icon>account_box</md-icon>Profile</a>
+              </mat-nav-list>
             </div>
           </td-navigation-drawer>
           <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
@@ -73,17 +73,17 @@
 <md-card>
   <md-card-title>Full Demo</md-card-title>
   <md-card-subtitle>Full working code with all options and templates</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content [style.height]="'400px'">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-        <md-nav-list>
-          <a *ngFor="let item of routes" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
-        </md-nav-list>
+        <mat-nav-list>
+          <a *ngFor="let item of routes" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+        </mat-nav-list>
         <div td-navigation-drawer-menu>
-          <md-nav-list>
-            <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
-          </md-nav-list>
+          <mat-nav-list>
+            <a *ngFor="let item of usermenu" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+          </mat-nav-list>
         </div>
       </td-navigation-drawer>
       <td-layout-nav color="accent">
@@ -102,11 +102,11 @@
             <md-card>
               <md-card-title>Products Sales</md-card-title>
               <md-card-subtitle>usage stats for our products</md-card-subtitle>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-content>
                 card content
               </md-card-content>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent" class="text-upper" [routerLink]="['/']">
                   <span>View More</span>
@@ -116,11 +116,11 @@
             <md-card>
               <md-card-title>Customer Activity</md-card-title>
               <md-card-subtitle>Recent activity from select members</md-card-subtitle>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-content>
                 card content
               </md-card-content>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent" class="text-upper" [routerLink]="['/']">
                   <span>View More</span>
@@ -132,11 +132,11 @@
             <md-card>
               <md-card-title>Alerts</md-card-title>
               <md-card-subtitle>Items requiring attention</md-card-subtitle>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-content>
                 card content
               </md-card-content>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent" class="text-upper" [routerLink]="['/']">
                   <span>View More</span>
@@ -146,11 +146,11 @@
             <md-card>
               <md-card-title>Favorites</md-card-title>
               <md-card-subtitle>Your favorite products</md-card-subtitle>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-content>
                 card content
               </md-card-content>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent" class="text-upper" [routerLink]="['/']">
                   <span>View More</span>
@@ -167,19 +167,19 @@
       </td-layout-nav>
     </td-layout>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <td-highlight lang="html">
       <![CDATA[
       <td-layout>
         <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-          <md-nav-list>
-            <a *ngFor="let item of routes" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
-          </md-nav-list>
+          <mat-nav-list>
+            <a *ngFor="let item of routes" mat-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+          </mat-nav-list>
           <div td-navigation-drawer-menu>
-            <md-nav-list>
-              <a *ngFor="let item of usermenu" md-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
-            </md-nav-list>
+            <mat-nav-list>
+              <a *ngFor="let item of usermenu" mat-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+            </mat-nav-list>
           </div>
         </td-navigation-drawer>
         <td-layout-nav color="accent">
@@ -198,7 +198,7 @@
               <md-card>
                 <md-card-title>Products Sales</md-card-title>
                 <md-card-subtitle>usage stats for our products</md-card-subtitle>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <md-card-content>
                   card content
                 </md-card-content>
@@ -206,7 +206,7 @@
               <md-card>
                 <md-card-title>Customer Activity</md-card-title>
                 <md-card-subtitle>Recent activity from select members</md-card-subtitle>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <md-card-content>
                   card content
                 </md-card-content>
@@ -216,11 +216,11 @@
               <md-card>
                 <md-card-title>Alerts</md-card-title>
                 <md-card-subtitle>Items requiring attention</md-card-subtitle>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <md-card-content>
                   card content
                 </md-card-content>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <md-card-actions>
                   <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
                     <span>View More</span>
@@ -230,7 +230,7 @@
               <md-card>
                 <md-card-title>Favorites</md-card-title>
                 <md-card-subtitle>Your favorite products</md-card-subtitle>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <md-card-content>
                   card content
                 </md-card-content>

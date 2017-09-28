@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Stepper (Wizard)</md-card-title>
   <md-card-subtitle>A sequence of logical & numbered steps</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">Basic Stepper</h3>
     <md-tab-group md-stretch-tabs>
@@ -103,7 +103,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
     <button md-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
@@ -112,21 +112,21 @@
 <md-card>
   <md-card-title>TdStepsComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-steps>]]></code></h2>
     <p>Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a <code><![CDATA[<td-steps>]]></code> element.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-steps>]]></code> component has {{stepsAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepsAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">
@@ -172,7 +172,7 @@
  <md-card>
   <md-card-title>TdStepComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-step>]]></code></h2>
     <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
@@ -182,15 +182,15 @@
     <p>You can keep it in sync with the (activated/deactivated) events if there is a need to do it.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-step>]]></code> component has {{stepAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">

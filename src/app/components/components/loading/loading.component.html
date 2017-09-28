@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Loading</md-card-title>
   <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
@@ -168,16 +168,16 @@
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
         <div *tdLoading="let items until listObservable | async; color: 'accent'">
-          <md-list>
+          <mat-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-              <md-list-item>
-                <md-slide-toggle mdLine [checked]="item.value">
+              <mat-list-item>
+                <md-slide-toggle matLine [checked]="item.value">
                   {{item.label}}
                 </md-slide-toggle>
-              </md-list-item>
-              <md-divider *ngIf="!last"></md-divider>
+              </mat-list-item>
+              <mat-divider *ngIf="!last"></mat-divider>
             </ng-template>
-          </md-list>
+          </mat-list>
         </div>
         <div layout="row">
           <button md-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
@@ -189,16 +189,16 @@
         <td-highlight lang="html">
           <![CDATA[
             <div *tdLoading="let items until listObservable | async; type: circle; color: accent">
-              <md-list>
+              <mat-list>
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                  <md-list-item>
-                    <md-slide-toggle mdLine [checked]="item.value">
+                  <mat-list-item>
+                    <md-slide-toggle matLine [checked]="item.value">
                       { {item.label} }
                     </md-slide-toggle>
-                  </md-list-item>
-                  <md-divider *ngIf="!last"></md-divider>
+                  </mat-list-item>
+                  <mat-divider *ngIf="!last"></mat-divider>
                 </ng-template>
-              </md-list>
+              </mat-list>
             </div>
             <div layout="row">
               <button md-button color="primary" (click)="createObservableList()" class="text-upper">Create observable</button>
@@ -389,7 +389,7 @@
 <md-card>
   <md-card-title>TdLoadingDirective</md-card-title>
   <md-card-subtitle>How to use this directive</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>tdLoading</code></h2>
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
@@ -397,16 +397,16 @@
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/guide/structural-directives#asterisk">here</a></p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
-          <p mdLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
+          <p matLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example(after setup):</h3>
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
@@ -486,7 +486,7 @@
  <md-card>
   <md-card-title>TdLoadingService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>TdLoadingService</code></h2>
     <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
@@ -502,15 +502,15 @@
     </td-highlight>
     <h3>Methods:</h3>
     <p>The <code>TdLoadingService</code> service has {{loadingServiceMethods.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example(after setup):</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">

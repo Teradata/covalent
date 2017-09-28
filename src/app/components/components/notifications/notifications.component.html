@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Notifications</md-card-title>
   <md-card-subtitle>Notification count &amp; menu for toolbar</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">Toolbar notification &amp; menu</h3>
     <md-tab-group md-stretch-tabs dynamicHeight>
@@ -27,16 +27,16 @@
           <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
             <td-menu>
               <div td-menu-header class="md-subhead">Notifications</div>
-              <md-nav-list dense>
+              <mat-nav-list dense>
                 <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                  <a md-list-item>
-                    <md-icon mdListAvatar>today</md-icon>
-                    <h4 mdLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                    <p mdLine>22 minutes ago</p>
+                  <a mat-list-item>
+                    <md-icon matListAvatar>today</md-icon>
+                    <h4 matLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                    <p matLine>22 minutes ago</p>
                   </a>
-                  <md-divider *ngIf="!last"></md-divider>
+                  <mat-divider *ngIf="!last"></mat-divider>
                 </ng-template>
-              </md-nav-list>
+              </mat-nav-list>
               <button md-button color="accent" td-menu-footer>
                 See All Notifications
               </button>
@@ -80,16 +80,16 @@
               <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
                 <td-menu>
                   <div td-menu-header class="md-subhead">Notifications</div>
-                  <md-nav-list dense>
+                  <mat-nav-list dense>
                     <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                      <a md-list-item>
-                        <md-icon mdListAvatar>today</md-icon>
-                        <h4 mdLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                        <p mdLine>22 minutes ago</p>
+                      <a mat-list-item>
+                        <md-icon matListAvatar>today</md-icon>
+                        <h4 matLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                        <p matLine>22 minutes ago</p>
                       </a>
-                      <md-divider *ngIf="!last"></md-divider>
+                      <mat-divider *ngIf="!last"></mat-divider>
                     </ng-template>
-                  </md-nav-list>
+                  </mat-nav-list>
                   <button md-button color="accent" td-menu-footer>
                     See All Notifications
                   </button>
@@ -195,68 +195,68 @@
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
-        <md-nav-list dense flex>
-          <a md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h3 mdLine> Jyn Erso stole the plans to the Death Star </h3>
-            <p mdLine> 10 mins ago </p>
+        <mat-nav-list dense flex>
+          <a mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
+            <h3 matLine> Jyn Erso stole the plans to the Death Star </h3>
+            <p matLine> 10 mins ago </p>
             <span></span>
             <td-notification-count color="accent" [notifications]="1">
             </td-notification-count>
           </a>
-          <md-divider md-inset></md-divider>
-          <a md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h3 mdLine> Something something something.. dark side. </h3>
-            <p mdLine> 9 hours ago </p>
+          <mat-divider matInset></mat-divider>
+          <a mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
+            <h3 matLine> Something something something.. dark side. </h3>
+            <p matLine> 9 hours ago </p>
             <span></span>
             <td-notification-count color="primary" [notifications]="0">
             </td-notification-count>
           </a>
-          <md-divider md-inset></md-divider>
-          <a md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h3 mdLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-            <p mdLine> 2 days ago </p>
+          <mat-divider matInset></mat-divider>
+          <a mat-list-item>
+            <md-icon matListAvatar>person</md-icon>
+            <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
+            <p matLine> 2 days ago </p>
             <span></span>
             <td-notification-count [notifications]="true">
             </td-notification-count>
           </a>
-        </md-nav-list>
+        </mat-nav-list>
       </md-tab>
       <md-tab>
         <ng-template mdTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <md-nav-list dense flex>
-              <a md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h3 mdLine> Jyn Erso stole the plans to the Death Star </h3>
-                <p mdLine> 10 mins ago </p>
+            <mat-nav-list dense flex>
+              <a mat-list-item>
+                <md-icon matListAvatar>person</md-icon>
+                <h3 matLine> Jyn Erso stole the plans to the Death Star </h3>
+                <p matLine> 10 mins ago </p>
                 <span></span>
                 <td-notification-count color="accent" [notifications]="1">
                 </td-notification-count>
               </a>
-              <md-divider md-inset></md-divider>
-              <a md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h3 mdLine> Something something something.. dark side. </h3>
-                <p mdLine> 9 hours ago </p>
+              <mat-divider matInset></mat-divider>
+              <a mat-list-item>
+                <md-icon matListAvatar>person</md-icon>
+                <h3 matLine> Something something something.. dark side. </h3>
+                <p matLine> 9 hours ago </p>
                 <span></span>
                 <td-notification-count color="primary" [notifications]="0">
                 </td-notification-count>
               </a>
-              <md-divider md-inset></md-divider>
-              <a md-list-item>
-                <md-icon mdListAvatar>person</md-icon>
-                <h3 mdLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-                <p mdLine> 2 days ago </p>
+              <mat-divider matInset></mat-divider>
+              <a mat-list-item>
+                <md-icon matListAvatar>person</md-icon>
+                <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
+                <p matLine> 2 days ago </p>
                 <span></span>
                 <td-notification-count [notifications]="true">
                 </td-notification-count>
               </a>
-            </md-nav-list>
+            </mat-nav-list>
           ]]>
         </td-highlight>
       </md-tab>

@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Covalent Charts (deprecated)</md-card-title>
   <md-card-subtitle>use ngx-charts instead</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
   <md-card-title>Time Series Line Chart</md-card-title>
   <md-card-subtitle>x-axis grid hidden, shadow disabled</md-card-subtitle>
@@ -20,7 +20,7 @@
                   transitionDelay="1000">
     </td-chart-line>
   </td-charts>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-title>Sparkline Chart</md-card-title>
   <md-card-subtitle>x-axis hidden completely, shadow enabled</md-card-subtitle>
   <td-charts title="Prices Trend"
@@ -38,7 +38,7 @@
                   transitionDelay="1000">
     </td-chart-line>
   </td-charts>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-title>Bar Chart</md-card-title>
   <md-card-subtitle>y-axis grid  &amp; ticks hidden</md-card-subtitle>
   <td-charts title="Sales Bar Chart"
@@ -56,7 +56,7 @@
                     transitionDelay="3000">
       </td-chart-bar>
     </td-charts>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-title>Single/Multi Line Chart</md-card-title>
     <md-card-subtitle>x-axis ticks &amp; grid hidden, y-axis grid hidden</md-card-subtitle>
     <td-charts title="Temperature Trend"
@@ -73,7 +73,7 @@
                    transitionDelay="2000">
       </td-chart-line>
     </td-charts>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-title>Area Chart</md-card-title>
     <md-card-subtitle>right y-axis used, x-axis grid hidden</md-card-subtitle>
     <td-charts title="Area Chart"
@@ -90,7 +90,7 @@
                      transitionDelay="4000">
       </td-chart-area>
     </td-charts>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
   <md-card-title>Combo Chart</md-card-title>
   <md-card-subtitle>dual y-axis, x-axis grid hidden</md-card-subtitle>
   <td-charts title="Sales Bar/Line Chart"
@@ -125,21 +125,21 @@
 <md-card>
   <md-card-title>TdChartsComponent</md-card-title>
   <md-card-subtitle>How to use this component</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-charts>]]></code></h2>
     <p>Use <code><![CDATA[<td-charts>]]></code> element to wrap individual chart elements</p>
     <h3>Properties:</h3>
     <p>This component has {{chartsAttr.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="chartsAttr">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML</p>
     <td-highlight lang="html">
@@ -197,7 +197,7 @@
 <md-card>
   <md-card-title>TdAxisComponent</md-card-title>
   <md-card-subtitle>How to use the individual axes components</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
      <h2><code><![CDATA[<td-axis-x>]]></code></h2>
      <p>Use <code><![CDATA[<td-axis-x>]]></code> element to control the x-axis</p>
@@ -205,15 +205,15 @@
      <p>Use <code><![CDATA[<td-axis-y-right>]]></code> element to control the right y-axis</p>
      <h3>Properties:</h3>
       <p>This component has {{axisAttrs.length}} properties:</p>
-      <md-list>
+      <mat-list>
         <ng-template let-attr let-last="attr" ngFor [ngForOf]="axisAttrs">
-          <a md-list-item layout-align="row">
-            <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-            <p mdLine> {{attr.description}} </p>
+          <a mat-list-item layout-align="row">
+            <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+            <p matLine> {{attr.description}} </p>
           </a>
-          <md-divider *ngIf="!last"></md-divider>
+          <mat-divider *ngIf="!last"></mat-divider>
         </ng-template>
-      </md-list>
+      </mat-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-axis-x>]]></code>, <code><![CDATA[<td-axis-y-left>]]></code>, or <code><![CDATA[<td-axis-y-right>]]></code> elements</p>
     <h3>Example:</h3>
     <p>HTML</p>
@@ -229,21 +229,21 @@
 <md-card>
   <md-card-title>TdChartBarComponent</md-card-title>
   <md-card-subtitle>Use this component to draw Bar Chart</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-chart-bar>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-bar>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to create a Bar Chart.</p>
     <h3>Properties:</h3>
     <p>This component has {{barChartAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="barChartAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-bar>]]></code> element</p>
     <h3>Example:</h3>
     <p>HTML</p>
@@ -285,21 +285,21 @@
 <md-card>
   <md-card-title>TdChartLineComponent</md-card-title>
   <md-card-subtitle>Use this component to draw Line Chart</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-chart-line>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-line>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to draw a single or multi line chart</p>
     <h3>Properties:</h3>
     <p>This component has {{lineChartAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="lineChartAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
     <h3>Example:</h3>
     <p>HTML</p>
@@ -333,7 +333,7 @@
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2>Sparkline example:</h2>
     <td-highlight lang="html">
@@ -352,7 +352,7 @@
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2>Multi Line example:</h2>
     <td-highlight lang="html">
@@ -373,21 +373,21 @@
 <md-card>
   <md-card-title>TdChartAreaComponent</md-card-title>
   <md-card-subtitle>Use this component to draw Area Chart</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code><![CDATA[<td-chart-area>]]></code></h2>
     <p>Use <code><![CDATA[<td-chart-area>]]></code> element wrapped inside <code><![CDATA[<td-charts>]]></code> element to draw an area chart</p>
     <h3>Properties:</h3>
     <p>This component has {{areaChartAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="areaChartAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>Use above propeties as attributes with <code><![CDATA[<td-chart-line>]]></code> element </p>
     <h3>Example:</h3>
     <p>HTML</p>
@@ -429,7 +429,7 @@
 <md-card>
   <md-card-title>Combo Charts Example</md-card-title>
   <md-card-subtitle>Use multiple chart and axes components</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3>Example:</h3>
     <p>HTML</p>

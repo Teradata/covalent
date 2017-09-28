@@ -5,7 +5,7 @@
     <md-card>
       <md-card-title *ngIf="cardTitle">{{cardTitle}}</md-card-title>
       <md-card-subtitle *ngIf="cardSubtitle">{{cardSubtitle}}</md-card-subtitle>
-      <md-divider *ngIf="cardTitle || cardSubtitle"></md-divider>
+      <mat-divider *ngIf="cardTitle || cardSubtitle"></mat-divider>
       <ng-content></ng-content>
     </md-card>
     <ng-content select="[td-after-card]"></ng-content>

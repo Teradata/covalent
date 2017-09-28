@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Paging</md-card-title>
   <md-card-subtitle>Paging bar for lists and tables</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
@@ -14,7 +14,7 @@
           </div>
           <p>Total: {{event?.total || '1345'}}</p>
         </md-card-content>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
           {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
@@ -52,7 +52,7 @@
       </md-card-content>
     </md-tab>
   </md-tab-group>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <div layout="row" layout-align="start center">
       <button md-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
@@ -63,7 +63,7 @@
 <md-card>
   <md-card-title>Paging with dynamic page size</md-card-title>
   <md-card-subtitle>Set a select to change the page size on the fly</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
@@ -76,7 +76,7 @@
         </div>
         <p>Total: {{eventPageSize?.total || '1345'}}</p>
       </md-card-content>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
         <span hide-xs>Rows per page:</span>
         <md-select [style.width.px]="50" [(ngModel)]="pageSize">
@@ -127,7 +127,7 @@
 <md-card>
   <md-card-title>Paging using page links</md-card-title>
   <md-card-subtitle>Navigate to pages with button links</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
@@ -140,7 +140,7 @@
           </div>
           <p>Total: {{eventLinks?.total || '1345'}}</p>
         </md-card-content>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
           <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
         </td-paging-bar>
@@ -178,7 +178,7 @@
 <md-card>
   <md-card-title>Paging using input</md-card-title>
   <md-card-subtitle>Navigate to a specific page</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
@@ -191,7 +191,7 @@
         </div>
         <p>Total: {{eventInput?.total || '1345'}}</p>
       </md-card-content>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
         <p hide-xs>Go to:</p>
         <md-form-field [style.width.px]="30">
@@ -251,7 +251,7 @@
 <md-card>
   <md-card-title>Paging with everything</md-card-title>
   <md-card-subtitle>All the previous things + reponsiveness leveraging the `CovalentMediaModule`</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab>
       <ng-template mdTabLabel>Demo</ng-template>
@@ -264,7 +264,7 @@
           </div>
           <p>Total: {{eventResponsive?.total || '1345'}}</p>
         </md-card-content>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBarResponsive
                        [pageLinkCount]="(media.registerQuery('sm') | async) ? 0 : 3"
                        [firstLast]="media.registerQuery('gt-xs') | async"

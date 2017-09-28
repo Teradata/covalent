@@ -37,7 +37,7 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
+import { MdButtonModule, MatListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
          MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdAutocompleteModule,
          MdProgressBarModule } from '@angular/material';
 
@@ -93,7 +93,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     FormsModule,
     /** Material Modules */
     MdButtonModule,
-    MdListModule,
+    MatListModule,
     MdIconModule,
     MdCardModule,
     MdMenuModule,

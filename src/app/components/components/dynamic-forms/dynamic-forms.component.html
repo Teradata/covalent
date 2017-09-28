@@ -1,14 +1,14 @@
 <md-card>
   <md-card-title>Dynamic Forms</md-card-title>
   <md-card-subtitle>Build forms from a JS object</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-toolbar hide show-gt-md>
     <div layout="row" flex>
       <span flex="50">Generated Form</span>
       <span flex="50">Form Builder</span>
     </div>
   </md-toolbar>
-  <md-divider hide show-gt-md></md-divider>
+  <mat-divider hide show-gt-md></mat-divider>
   <div layout-gt-md="row">
     <div layout-gt-md="column" class="bgc-grey-100 pad-sm" flex-gt-md="50">
       <md-card flex>
@@ -20,7 +20,7 @@
             </button>
           </div>
         </md-card-title>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <div [tdToggle]="!showDynamicCode">
           <td-highlight language="json" [content]="dynamicElements | json"></td-highlight>
         </div>
@@ -52,7 +52,7 @@
           <div flex class="text-md">Select a type, add element then update</div>
         </div>
       </md-card-title>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <form #addForm="ngForm">
         <div layout="row" layout-align="start center" class="pad-sm">
           <md-select class="pad-right" placeholder="Select element type" floatPlaceholder="never" [(ngModel)]="type" name="type" required>
@@ -68,7 +68,7 @@
       <h4>Form elements</h4>
       <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
         <td-expansion-panel [label]="model.name">
-          <md-divider></md-divider>
+          <mat-divider></mat-divider>
           <div class="pad" layout="column">
             <div layout="row">
               <md-form-field class="pad-right-xs" flex>
@@ -140,7 +140,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic Text Elements</h3>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -183,7 +183,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic Number Elements</h3>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -226,7 +226,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic Boolean Elements</h3>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -255,7 +255,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic Array Elements</h3>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -283,7 +283,7 @@
 <md-card>
   <md-card-content>
     <h3 class="md-title">Dynamic File Input Element</h3>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs dynamicHeight>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -312,7 +312,7 @@
   <md-card-content>
     <h3 class="md-title">Custom Validation</h3>
     <h4>Using custom validator functions to create your own</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -380,7 +380,7 @@
     </md-tab-group>
 
     <h4>Multiple Validators</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -442,7 +442,7 @@
     </md-tab-group>
 
     <h4>Angular Validators</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>

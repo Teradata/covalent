@@ -1,6 +1,6 @@
 <md-card>
   <md-card-title>Icons</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">Ligature Material Icons</h3>
     <p class="md-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
@@ -20,7 +20,7 @@
     <md-icon class="tc-green-700">thumb_up</md-icon>
     <md-icon>thumb_down</md-icon>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions> 
     <a md-button color="primary" href="https://design.google.com/icons" target="_blank">
       Material Icons Library
@@ -29,7 +29,7 @@
 </md-card>
 <md-card>
   <md-card-title>CSS Icon (Font or SVG) Colors</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-tab-group md-stretch-tabs>
     <md-tab label="Default Colors">
       <md-card-content>
@@ -149,7 +149,7 @@
         <div layout="row" layout-align="center center" class="md-padding">
           <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <md-card-content>
           <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
             <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
@@ -167,7 +167,7 @@
             <div layout="row" layout-align="center center" class="md-padding">
               <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <md-card-content>
               <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
                 <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
@@ -209,19 +209,19 @@
 <md-card>
   <md-card-title>IconService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
      <p>Icon service provides an array of icon names & capability to serach through icons</p>
     <h3>Methods:</h3>
     <p>The <code><![CDATA[IconService]]></code> service comes with {{serviceAttrs.length}} methods:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
   </md-card-content>
 </md-card>

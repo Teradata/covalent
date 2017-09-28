@@ -8,20 +8,20 @@
   <button md-icon-button td-menu-button tdLayoutToggle>
     <md-icon>menu</md-icon>
   </button>
-  <md-nav-list td-sidenav-content>
+  <mat-nav-list td-sidenav-content>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-        <a md-list-item 
+        <a mat-list-item 
            [routerLink]="[item.route]" 
            [routerLinkActive]="['active']" 
            [routerLinkActiveOptions]="{exact:true}"
            [tdLayoutNavListClose]="!media.query('gt-sm')">
-          <md-icon mdListAvatar>{{item.icon}}</md-icon>
-          <h3 mdLine> {{item.title}} </h3>
-          <p mdLine> {{item.description}} </p>
+          <md-icon matListAvatar>{{item.icon}}</md-icon>
+          <h3 matLine> {{item.title}} </h3>
+          <p matLine> {{item.description}} </p>
         </a>
-        <md-divider *ngIf="!last" md-inset></md-divider>
+        <mat-divider *ngIf="!last" matInset></mat-divider>
       </ng-template>
-  </md-nav-list>
+  </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>

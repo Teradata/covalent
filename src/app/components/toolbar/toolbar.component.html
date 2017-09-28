@@ -20,21 +20,21 @@
     <md-menu #notificationsMenu="mdMenu">
       <td-menu>
         <div td-menu-header class="md-subhead">Updates</div>
-        <md-nav-list dense>
+        <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
-            <a md-list-item [routerLink]="[item.route]">
-              <md-icon mdListAvatar>{{item.icon}}</md-icon>
-              <h4 mdLine><span class="text-wrap">{{item.description}}</span></h4>
-              <p mdLine>{{item.title}}</p>
+            <a mat-list-item [routerLink]="[item.route]">
+              <md-icon matListAvatar>{{item.icon}}</md-icon>
+              <h4 matLine><span class="text-wrap">{{item.description}}</span></h4>
+              <p matLine>{{item.title}}</p>
             </a>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </ng-template>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
-            <md-icon mdListAvatar>change_history</md-icon>
-            <h4 mdLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
-            <p mdLine>Dependencies updated</p>
+          <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
+            <md-icon matListAvatar>change_history</md-icon>
+            <h4 matLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
+            <p matLine>Dependencies updated</p>
           </a>
-        </md-nav-list>
+        </mat-nav-list>
         <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
           View Full Changelog
         </a>

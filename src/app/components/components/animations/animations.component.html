@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>Animations</md-card-title>
   <md-card-subtitle>Core Covalent animation utilities</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p>Utilities to help add simple reusable animations and reduce boilerplate code. For custom and complex animations look into the Angular animations doc.</p>
 
@@ -32,7 +32,7 @@
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <a md-button color="primary" href="https://angular.io/guide/animations" target="_blank" class="text-upper">Animations Docs</a>
   </md-card-actions>
@@ -40,7 +40,7 @@
 
 <md-card>
   <md-card-title>Rotate Animation</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p class="md-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
     <div>
@@ -74,7 +74,7 @@
       </td-highlight>
     </div>
 
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
 
     <div>
       <h3>Demo 2:</h3>
@@ -106,36 +106,36 @@
         ]]>
       </td-highlight>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div>
       <h2>API:</h2>
-      <md-list>
-        <md-list-item>
-          <h3 mdLine>anchor?: string</h3>
-          <p mdLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdRotate'.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
-          <h3 mdLine>duration?: number</h3>
-          <p mdLine> Duration the animation will run in milliseconds. Defaults to 250 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+      <mat-list>
+        <mat-list-item>
+          <h3 matLine>anchor?: string</h3>
+          <p matLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdRotate'.</p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>duration?: number</h3>
+          <p matLine> Duration the animation will run in milliseconds. Defaults to 250 ms. </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>delay?: number</h3>
           <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>degrees?: number</h3>
           <p md-line> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>ease?: string</h3>
           <p md-line>Animation accelerates and decelerates when rotation. Defaults to ease-in.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
     </div>
 
   </md-card-content>
@@ -143,7 +143,7 @@
 
 <md-card>
   <md-card-title>Collapse Animation</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p class="md-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
     <div>
@@ -186,36 +186,36 @@
         ]]>
       </td-highlight>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div>
       <h2>API:</h2>
-      <md-list>
-        <md-list-item>
+      <mat-list>
+        <mat-list-item>
           <h3 md-line>anchor?: string</h3>
           <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdCollapse'.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>duration?: number</h3>
           <p md-line> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-         <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+         <mat-list-item>
           <h3 md-line>delay?: number</h3>
           <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>easeOnClose?: string</h3>
           <p md-line>Animation accelerates and decelerates when closing. Defaults to ease-in.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>easeOnOpen?: string</h3>
           <p md-line>Animation accelerates and decelerates when opening. Defaults to ease-out.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
     </div>
 
   </md-card-content>
@@ -223,7 +223,7 @@
 
 <md-card>
   <md-card-title>Fade in/out Animation</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p class="md-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
     <div>
@@ -267,43 +267,43 @@
       </td-highlight>
     </div>
 
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div>
       <h2>API:</h2>
-      <md-list>
-        <md-list-item>
+      <mat-list>
+        <mat-list-item>
           <h3 md-line>anchor?: string</h3>
           <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdFadeInOut'.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>duration?: number</h3>
           <p md-line> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-         <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+         <mat-list-item>
           <h3 md-line>delay?: number</h3>
           <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>easeOnIn?: string</h3>
           <p md-line>Animation accelerates and decelerates when fading in. Defaults to ease-in.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>easeOnOut?: string</h3>
           <p md-line>Animation accelerates and decelerates when fading out. Defaults to ease-out.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
     </div>
   </md-card-content>
 </md-card>
 
 <md-card>
   <md-card-title>Attention Seekers Animation</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div>
       <h3>Demos:</h3>
@@ -377,26 +377,26 @@
         ]]>
       </td-highlight>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div>
       <h2>API:</h2>
-      <md-list>
-        <md-list-item>
+      <mat-list>
+        <mat-list-item>
           <h3 md-line>anchor?: string</h3>
           <p md-line> The anchor name is used to attach the animation to an arbitrary element in the template.</p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>duration?: number</h3>
           <p md-line> Duration the animation will run in milliseconds. Defaults to 500 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
           <h3 md-line>delay?: number</h3>
           <p md-line> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
     </div>
   </md-card-content>
 </md-card>

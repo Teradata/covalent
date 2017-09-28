@@ -1,7 +1,7 @@
 <div layout-sm="row" layout-gt-md="row">
   <md-card flex-sm="70" flex-gt-md="70">
     <md-card-title>Alert Patterns</md-card-title>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-content>
       <h3>Problem</h3>
       <p>Need to provide information or feedback to the user and potentially prompt them to take action.
@@ -12,44 +12,44 @@
   <!-- Resources -->
   <md-card flex-sm flex-gt-md>
     <md-card-title>Resources</md-card-title>
-    <md-divider></md-divider>
-    <md-nav-list>
-      <a md-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Material Design Dialogs</span>
+        <span matLine>Material Design Dialogs</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Material Design Toasts & Snackbars</span>
+        <span matLine>Material Design Toasts & Snackbars</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Material Design Errors</span>
+        <span matLine>Material Design Errors</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Angular Material Dialogs</span>
+        <span matLine>Angular Material Dialogs</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Angular Material Snackbars</span>
+        <span matLine>Angular Material Snackbars</span>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item [routerLink]="['/components', 'dialogs']" target="_blank">
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/components', 'dialogs']" target="_blank">
         <md-icon>launch</md-icon>
-        <span mdLine>Covalent Dialogs</span>
+        <span matLine>Covalent Dialogs</span>
       </a>
-    </md-nav-list>
+    </mat-nav-list>
   </md-card>
 </div>
 <!-- Examples -->
 <md-card>
   <md-card-title>Examples</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <!-- Dialogs -->
     <div layout-sm="row" layout-gt-md="row">
@@ -118,7 +118,7 @@
                 </md-tab>
               </md-tab-group>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card-content class="push-md">
             <button md-raised-button color="warn" (click)="openAlert()">View Error</button>
@@ -176,7 +176,7 @@
                 </md-tab>
               </md-tab-group>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <md-card-content class="push-md">
             <button md-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
@@ -257,7 +257,7 @@
                           <md-hint align="end">e.g 92101</md-hint>
                         </md-form-field>
                       </div>
-                      <md-divider></md-divider>
+                      <mat-divider></mat-divider>
                       <div class="inset">
                         <button md-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
                       </div>
@@ -265,7 +265,7 @@
                   ]]>
               </td-highlight>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </div>
           <!-- example -->
           <form #myForm="ngForm">

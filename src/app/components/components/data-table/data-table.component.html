@@ -1,11 +1,11 @@
 <md-card>
   <md-card-title>Data Table</md-card-title>
   <md-card-subtitle>Display sets of raw data</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -162,7 +162,7 @@
   <md-card-content>
     <h3 class="md-title">Basic Data Table</h3>
     <h4 class="md-subhead">with nested data, formatting, configurable width columns and templates</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -259,7 +259,7 @@
   <md-card-content>
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-tab-group md-stretch-tabs>
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
@@ -274,7 +274,7 @@
             <md-icon>more_vert</md-icon>
           </button>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-data-table
           #dataTable
           [data]="filteredData"
@@ -319,7 +319,7 @@
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
               </td-search-box>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <td-data-table
               #dataTable
               [data]="filteredData"
@@ -553,7 +553,7 @@
       </md-tab>
     </md-tab-group>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="selectable">
@@ -566,13 +566,13 @@
         Multiple rows (shift + click for range selection)
       </md-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
       <md-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
       </md-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
       <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
         Hide calories
@@ -589,26 +589,26 @@
 <md-card>
   <md-card-title>TdDataTableService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
      <p>Service provided with methods for sorting/paging/searching the data table.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
   </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>Data Table (Atomic) Components</md-card-title>
   <md-card-subtitle>How to use these components</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
     <p>Use <code><![CDATA[<tr td-data-table-column-row>]]></code> element to generate wrapper atomic column row.</p>
@@ -617,25 +617,25 @@
     <p>Use <code><![CDATA[<th td-data-table-column>]]></code> element to generate wrapper atomic column.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">

@@ -1,7 +1,7 @@
 <md-card>
   <md-card-title>HttpInterceptorService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>HttpInterceptorService</code></h2>
     <p>Service provided with methods that wrap the @angular [Http] service and provide an easier experience for interceptor implementation.</p>
@@ -18,15 +18,15 @@
     </td-highlight>
     <h3>Methods:</h3>
     <p>The [HttpInterceptorService] service has {{interceptorServiceMethods.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="interceptorServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Setup:</h3>
     <p>Create your custom interceptors by implementing [IHttpInterceptor]:</p>
     <td-highlight lang="typescript">
@@ -165,21 +165,21 @@ Example 4
 <md-card>
   <md-card-title>RESTService</md-card-title>
   <md-card-subtitle>How to use this class</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>RESTService</code></h2>
     <p>Abstract class provided with methods that wraps http services to facilitate REST API calls.</p>
     <h3>Methods:</h3>
     <p>The <code>RESTService</code> class has {{restServiceMethods.length}} methods:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="restServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">

@@ -1,50 +1,50 @@
 <md-card>
   <md-card-title>Media Queries</md-card-title>
   <md-card-subtitle>Responsive service & directive (for attributes)</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p>Media Queries:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
-        <a md-list-item layout-align="row">
-          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" mdLine> {{demo.query}}</h3>
-          <p mdLine> matches: {{demo.value}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" matLine> {{demo.query}}</h3>
+          <p matLine> matches: {{demo.value}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>    
+    </mat-list>    
   </md-card-content>
 </md-card>
 <md-card>
   <md-card-title>TdMediaService</md-card-title>
   <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>TdMediaService</code></h2>
     <p>This service is designed to provide basic media query evaluation for responsive applications.</p>
     <p>It has pre-programmed support for media queries that match the layout 
       <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
     </p>
-    <md-list>
+    <mat-list>
       <ng-template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{bpoint.breakpoint}}</h3>
-          <p mdLine> {{bpoint.query}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{bpoint.breakpoint}}</h3>
+          <p matLine> {{bpoint.query}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Methods:</h3>
     <p>The <code>TdMediaService</code> service has {{mediaServiceMethods.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
@@ -107,21 +107,21 @@
 <md-card>
   <md-card-title>TdMediaToggleDirective</md-card-title>
   <md-card-subtitle>How to use this directive</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <h2><code>tdMediaToggle</code></h2>
     <p>Simply add the <code>tdMediaToggle</code> attibute with a "media query" value to the element you want to modify depending on screen size.</p>
     <h3>Properties:</h3>
     <p>The <code>tdMediaToggle</code> directive has {{mediaAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">

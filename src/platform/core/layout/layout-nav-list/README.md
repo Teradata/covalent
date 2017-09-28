@@ -65,12 +65,12 @@ Example for Nav List Layout:
   <div td-sidenav-toolbar-content>
     ... left toolbar content
   </div>
-  <md-nav-list td-sidenav-content>
+  <mat-nav-list td-sidenav-content>
     <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
       <md-icon>arrow_back</md-icon>
     </button>
     ... sidenav content
-  </md-nav-list>
+  </mat-nav-list>
   <div td-toolbar-content>
     ... right toolbar content
   </div>

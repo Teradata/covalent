@@ -1,6 +1,6 @@
 <md-card>
   <md-card-title>Including Your Logo</md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <p class="md-body-1">Your company logo can be implemented with <code>md-icon</code>.</p>
     
@@ -12,7 +12,7 @@
     </td-highlight>
     <p class="md-body-1">The code above will output an inline SVG with 100px width and auto height:</p>
     <md-icon class="md-icon-logo" svgIcon="assets:teradata"></md-icon>
-    <md-divider class="push-top push-bottom"></md-divider>
+    <mat-divider class="push-top push-bottom"></mat-divider>
     <td-message class="push-bottom" sublabel="Tip: if you need a custom logo size use this snippet with your logo size in /src/styles.scss" color="light-blue" icon="info"></td-message>
     <td-highlight lang="css">
       <![CDATA[
@@ -20,7 +20,7 @@
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <a md-button color="primary" [routerLink]="['/docs/icons']" class="text-upper">Icon Docs</a>
   </md-card-actions>
@@ -29,18 +29,18 @@
 <md-card>
   <md-card-title>Toolbar Logo Placement</md-card-title>
   <md-card-subtitle>place the logo in the top toolbar next to the title</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
     </td-layout-nav>
-    <md-divider class="push-top push-bottom"></md-divider>
+    <mat-divider class="push-top push-bottom"></mat-divider>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <a md-button color="primary" [routerLink]="['/layouts']" class="text-upper">Layout Docs</a>
   </md-card-actions>
@@ -49,7 +49,7 @@
 <md-card>
   <md-card-title>Navigation Drawer (Sidenav) Logo Placement</md-card-title>
   <md-card-subtitle>place the logo in the sidenav toolbar next to the title, above the user info</md-card-subtitle>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content>
     <div class="md-padding bgc-grey-200">
       <td-layout mode="side" opened="true">
@@ -63,7 +63,7 @@
         </div>
       </td-layout>
     </div>
-    <md-divider class="push-top push-bottom"></md-divider>
+    <mat-divider class="push-top push-bottom"></mat-divider>
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
@@ -75,7 +75,7 @@
       ]]>
     </td-highlight>
   </md-card-content>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-actions>
     <a md-button color="primary" [routerLink]="['navigation-drawer']" class="text-upper">Navigation Drawer</a>
   </md-card-actions>

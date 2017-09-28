@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdVirtualScrollContainerComponent } from './virtual-scroll-container.component';
 import { CovalentVirtualScrollModule } from './virtual-scroll.module';
-import { MdListModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,7 +19,7 @@ describe('Component: VirtualScrollContainer', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
-        MdListModule,
+        MatListModule,
         CovalentVirtualScrollModule,
       ],
       declarations: [
@@ -81,16 +81,16 @@ describe('Component: VirtualScrollContainer', () => {
 
 @Component({
   template: `
-    <md-list>
+    <mat-list>
       <td-virtual-scroll-container [style.height.px]="height" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-          <md-list-item>
+          <mat-list-item>
             <h4 md-line>{{row}}</h4>
-          </md-list-item>
-          <md-divider *ngIf="!last"></md-divider>
+          </mat-list-item>
+          <mat-divider *ngIf="!last"></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
-    </md-list>`,
+    </mat-list>`,
 })
 class TestBasicVirtualScrollComponent {
   height: number = 200;
