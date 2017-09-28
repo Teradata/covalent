@@ -13,7 +13,7 @@ import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdTabsModule,
-         MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
+         MdToolbarModule, MdGridListModule, MdTooltipModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -79,6 +79,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },
     SelectivePreloadingStrategyService,
+    {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ DocsAppComponent ],
