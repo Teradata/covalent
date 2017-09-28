@@ -12,11 +12,11 @@
           [placeholder]="label"
           readonly/>
   </md-form-field>
-  <button md-icon-button *ngIf="value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
-    <md-icon>cancel</md-icon>
+  <button mat-icon-button *ngIf="value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+    <mat-icon>cancel</mat-icon>
   </button>
   <td-file-input class="td-file-input" #fileInput [(ngModel)]="value">
-    <md-icon>folder</md-icon>
+    <mat-icon>folder</mat-icon>
     <span>{{ label }}</span>
   </td-file-input>
 </div>

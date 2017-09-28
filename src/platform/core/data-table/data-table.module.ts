@@ -1,6 +1,6 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdPseudoCheckboxModule } from '@angular/material';
+import { MdCheckboxModule, MdTooltipModule, MatIconModule, MdPseudoCheckboxModule } from '@angular/material';
 
 import { TdDataTableComponent } from './data-table.component';
 import { TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
@@ -36,7 +36,7 @@ export { TdDataTableTableComponent } from './data-table-table/data-table-table.c
     CommonModule,
     MdCheckboxModule,
     MdTooltipModule,
-    MdIconModule,
+    MatIconModule,
     MdPseudoCheckboxModule,
   ],
   declarations: [

@@ -9,11 +9,11 @@
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>
   </md-form-field>
-  <button md-icon-button
+  <button mat-icon-button
           type="button"
           [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
           (click)="clearSearch()"
           flex="none">
-    <md-icon>cancel</md-icon>
+    <mat-icon>cancel</mat-icon>
   </button>
 </div>

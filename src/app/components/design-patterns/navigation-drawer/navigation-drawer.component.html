@@ -14,7 +14,7 @@
     <mat-divider></mat-divider>
     <mat-nav-list>
       <a mat-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
-        <md-icon>launch</md-icon>
+        <mat-icon>launch</mat-icon>
         <span matLine>Material Design Nav Drawer</span>
       </a>
     </mat-nav-list>
@@ -32,15 +32,15 @@
           <p>In addition to the Material Design Navigation Drawer component, this example leverages the following components:</p>
           <mat-nav-list>
             <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
-              <md-icon>launch</md-icon>
+              <mat-icon>launch</mat-icon>
               <span matLine>Material Design List</span>
               <p matLine>mat-list</p>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
-              <md-icon>launch</md-icon>
+              <mat-icon>launch</mat-icon>
               <span matLine>Material Design Icon</span>
-              <p matLine>md-icons</p>
+              <p matLine>mat-icons</p>
             </a>
           </mat-nav-list>
         </md-card-content>
@@ -50,8 +50,8 @@
           <md-card-subtitle class="bgc-grey-100 push-none">
             <div layout="row">
               <span flex></span>
-              <button md-icon-button mdTooltip="View Source" (click)="toggle('example1')">
-                <md-icon class="tc-grey-700">code</md-icon>
+              <button mat-icon-button mdTooltip="View Source" (click)="toggle('example1')">
+                <mat-icon class="tc-grey-700">code</mat-icon>
               </button>
             </div>
           </md-card-subtitle>
@@ -65,11 +65,11 @@
                             <td-layout #layout>
                               <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
                                 <mat-nav-list>
-                                  <a *ngFor="let item of routes" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                  <a *ngFor="let item of routes" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
                                 </mat-nav-list>
                                 <div td-navigation-drawer-menu>
                                   <mat-nav-list>
-                                    <a *ngFor="let item of usermenu" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                                    <a *ngFor="let item of usermenu" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
                                   </mat-nav-list>
                                 </div>
                               </td-navigation-drawer>
@@ -136,11 +136,11 @@
             <td-layout>
               <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
                 <mat-nav-list>
-                  <a *ngFor="let item of routes" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                  <a *ngFor="let item of routes" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
                 </mat-nav-list>
                 <div td-navigation-drawer-menu>
                   <mat-nav-list>
-                    <a *ngFor="let item of usermenu" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+                    <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
                   </mat-nav-list>
                 </div>
               </td-navigation-drawer>

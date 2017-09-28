@@ -35,13 +35,13 @@
       * {
         vertical-align: middle;
       }
-      md-icon {
+      mat-icon {
         &.td-data-table-sort-icon {
           color: mat-color($foreground, disabled);
         }
       }
       &.mat-active,
-      &.mat-active md-icon {
+      &.mat-active mat-icon {
         color: mat-color($foreground, base);
       }
     }

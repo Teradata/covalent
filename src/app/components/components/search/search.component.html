@@ -5,8 +5,8 @@
   <md-card-content>
     <div layout="row" layout-align="start center">
       <md-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
-        <md-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><md-icon>search</md-icon> Enter/Clear</md-button-toggle>
-        <md-button-toggle mdTooltip="Debounce Events" [value]="1"><md-icon>keyboard</md-icon> Debounce</md-button-toggle>
+        <md-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</md-button-toggle>
+        <md-button-toggle mdTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</md-button-toggle>
       </md-button-toggle-group>
     </div>
     <h3>Search Input</h3>
@@ -34,7 +34,7 @@
     <h3>Search Box in Toolbar</h3>
     <md-toolbar color="primary">
       <td-search-box backIcon="arrow_back" placeholder="Search here" [alwaysVisible]="alwaysVisible" flex></td-search-box>
-      <button md-icon-button><md-icon>more_vert</md-icon></button>
+      <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
     </md-toolbar>
   </md-card-content>
   <mat-divider></mat-divider>

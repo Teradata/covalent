@@ -12,9 +12,9 @@
       <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
-    <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+    <button class="overflow-visible" mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 1">
-        <md-icon>notifications</md-icon>
+        <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
     <md-menu #notificationsMenu="mdMenu">
@@ -23,14 +23,14 @@
         <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a mat-list-item [routerLink]="[item.route]">
-              <md-icon matListAvatar>{{item.icon}}</md-icon>
+              <mat-icon matListAvatar>{{item.icon}}</mat-icon>
               <h4 matLine><span class="text-wrap">{{item.description}}</span></h4>
               <p matLine>{{item.title}}</p>
             </a>
             <mat-divider></mat-divider>
           </ng-template>
           <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
-            <md-icon matListAvatar>change_history</md-icon>
+            <mat-icon matListAvatar>change_history</mat-icon>
             <h4 matLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
             <p matLine>Dependencies updated</p>
           </a>
@@ -40,12 +40,12 @@
         </a>
       </td-menu>
     </md-menu>
-    <button hide-xs md-icon-button [mdMenuTriggerFor]="settingsMenu">
-      <md-icon>more_vert</md-icon>
+    <button hide-xs mat-icon-button [mdMenuTriggerFor]="settingsMenu">
+      <mat-icon>more_vert</mat-icon>
     </button>
     <md-menu #settingsMenu="mdMenu">
       <button md-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
-        <md-icon>swap_horiz</md-icon>
+        <mat-icon>swap_horiz</mat-icon>
         <span>{{dir.toUpperCase()}}</span>
       </button>
     </md-menu>

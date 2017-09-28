@@ -18,8 +18,8 @@
                 (click)="handleNavigationClick()"
                 layout="row"
                 layout-align="start center">
-            <md-icon *ngIf="icon">{{icon}}</md-icon>
-            <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+            <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+            <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
             <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
           </span>
           <ng-content select="[td-sidenav-toolbar-content]"></ng-content>

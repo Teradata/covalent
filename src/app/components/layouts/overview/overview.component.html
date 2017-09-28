@@ -17,7 +17,7 @@
   <mat-nav-list hide-gt-sm>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
       <a mat-list-item [routerLink]="[item.route]">
-        <md-icon matListAvatar>{{item.icon}}</md-icon>
+        <mat-icon matListAvatar>{{item.icon}}</mat-icon>
         <h3 matLine> {{item.title}} </h3>
         <p matLine> {{item.description}} </p>
       </a>

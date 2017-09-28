@@ -16,9 +16,9 @@
             [ngTemplateOutletContext]="{ chip: chip }">
           </ng-template>
         </span>
-        <md-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
+        <mat-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
           cancel
-        </md-icon>
+        </mat-icon>
       </div>
     </md-basic-chip>
   </ng-template>

@@ -11,7 +11,7 @@ Example for usage:
 ```html
 <td-file-input [(ngModel)]="files" color="primary" (select)="selectEvent($event)"
                accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>attach_file</md-icon><span>Choose a file...</span>
+  <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
 </td-file-input>
 ```
  

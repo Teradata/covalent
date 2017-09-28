@@ -9,9 +9,9 @@ Example for usage:
 ```html
 <td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
+  <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
   <ng-template td-file-input-label>
-    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
   </ng-template>
 </td-file-upload>
 ```

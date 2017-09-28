@@ -36,17 +36,17 @@
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
-          <a mat-list-item><md-icon>home</md-icon>Home</a>
+          <a mat-list-item><mat-icon>home</mat-icon>Home</a>
         </mat-nav-list>
         <div td-navigation-drawer-menu>
           <mat-nav-list>
-            <a mat-list-item><md-icon>account_box</md-icon>Profile</a>
+            <a mat-list-item><mat-icon>account_box</mat-icon>Profile</a>
           </mat-nav-list>
         </div>
       </td-navigation-drawer>
       <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-        <button md-icon-button td-menu-button tdLayoutToggle>
-          <md-icon>menu</md-icon>
+        <button mat-icon-button td-menu-button tdLayoutToggle>
+          <mat-icon>menu</mat-icon>
         </button>
         <td-layout-manage-list opened="true" mode="side">
           <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
@@ -71,17 +71,17 @@
         <td-layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
             <mat-nav-list>
-              <a mat-list-item><md-icon>home</md-icon>Home</a>
+              <a mat-list-item><mat-icon>home</mat-icon>Home</a>
             </mat-nav-list>
             <div td-navigation-drawer-menu>
               <mat-nav-list>
-                <a mat-list-item><md-icon>account_box</md-icon>Profile</a>
+                <a mat-list-item><mat-icon>account_box</mat-icon>Profile</a>
               </mat-nav-list>
             </div>
           </td-navigation-drawer>
           <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
-            <button md-icon-button td-menu-button tdLayoutToggle>
-              <md-icon>menu</md-icon>
+            <button mat-icon-button td-menu-button tdLayoutToggle>
+              <mat-icon>menu</mat-icon>
             </button>
             <td-layout-manage-list opened="true" mode="side">
               <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
@@ -110,24 +110,24 @@
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
-          <a *ngFor="let item of routes" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+          <a *ngFor="let item of routes" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
         </mat-nav-list>
         <div td-navigation-drawer-menu>
           <mat-nav-list>
-            <a *ngFor="let item of usermenu" mat-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+            <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
           </mat-nav-list>
         </div>
       </td-navigation-drawer>
       <td-layout-nav color="accent">
         <div td-toolbar-content layout="row" layout-align="start center" flex>
-          <button md-icon-button td-menu-button tdLayoutToggle>
-            <md-icon>menu</md-icon>
+          <button mat-icon-button td-menu-button tdLayoutToggle>
+            <mat-icon>menu</mat-icon>
           </button>
-          <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+          <mat-icon [routerLink]="['/']" class="mat-icon-logo cursor-pointer" svgIcon="assets:teradata"></mat-icon>
           <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
           <span flex></span>
-          <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-          <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+          <a mat-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+          <a mat-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
         </div>
         <td-layout-manage-list #manageList 
                 [opened]="media.registerQuery('gt-sm') | async"
@@ -139,18 +139,18 @@
           <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
             <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
               <a mat-list-item>
-                <md-icon matListIcon>{{item.icon}}</md-icon> {{item.title}}
+                <mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
               </a>
             </ng-template>
           </mat-nav-list>
           <md-toolbar>
             <div layout="row" layout-align="start center" flex>
-              <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-                <md-icon>arrow_back</md-icon>
+              <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+                <mat-icon>arrow_back</mat-icon>
               </button>
               <span>Content Title</span>
               <span flex></span>
-              <button md-icon-button><md-icon>settings</md-icon></button>
+              <button mat-icon-button><mat-icon>settings</mat-icon></button>
             </div>
           </md-toolbar>
           <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
@@ -234,24 +234,24 @@
         <td-layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
             <mat-nav-list>
-              <a *ngFor="let item of routes" mat-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+              <a *ngFor="let item of routes" mat-list-item><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
             </mat-nav-list>
             <div td-navigation-drawer-menu>
               <mat-nav-list>
-                <a *ngFor="let item of usermenu" mat-list-item><md-icon>{ {item.icon} }</md-icon>{ {item.title} }</a>
+                <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
               </mat-nav-list>
             </div>
           </td-navigation-drawer>
           <td-layout-nav color="accent">
             <div td-toolbar-content layout="row" layout-align="start center" flex>
-              <button md-icon-button td-menu-button tdLayoutToggle>
-                <md-icon>menu</md-icon>
+              <button mat-icon-button td-menu-button tdLayoutToggle>
+                <mat-icon>menu</mat-icon>
               </button>
-              <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+              <mat-icon [routerLink]="['/']" class="mat-icon-logo cursor-pointer" svgIcon="assets:teradata"></mat-icon>
               <span [routerLink]="['/']" class="cursor-pointer">Covalent</span>
               <span flex></span>
-              <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-              <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+              <a mat-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+              <a mat-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
             </div>
             <td-layout-manage-list #manageList 
                     [opened]="media.registerQuery('gt-sm') | async"
@@ -263,18 +263,18 @@
               <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
                   <a mat-list-item>
-                    <md-icon matListIcon>{ {item.icon} }</md-icon> { {item.title} }
+                    <mat-icon matListIcon>{ {item.icon} }</mat-icon> { {item.title} }
                   </a>
                 </ng-template>
               </mat-nav-list>
               <md-toolbar>
                 <div layout="row" layout-align="start center" flex>
-                  <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-                    <md-icon>arrow_back</md-icon>
+                  <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+                    <mat-icon>arrow_back</mat-icon>
                   </button>
                   <span>Content Title</span>
                   <span flex></span>
-                  <button md-icon-button><md-icon>settings</md-icon></button>
+                  <button mat-icon-button><mat-icon>settings</mat-icon></button>
                 </div>
               </md-toolbar>
               <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">

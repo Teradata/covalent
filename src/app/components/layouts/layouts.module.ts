@@ -10,7 +10,7 @@ import { NavListComponent } from './nav-list/nav-list.component';
 import { CardOverComponent } from './card-over/card-over.component';
 import { ManageListComponent } from './manage-list/manage-list.component';
 
-import { MdButtonModule, MatListModule, MdIconModule, MdCardModule, MdToolbarModule } from '@angular/material';
+import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MdToolbarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule,
          CovalentCommonModule } from '../../../platform/core';
@@ -35,7 +35,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     /** Material Modules */
     MdButtonModule,
     MatListModule,
-    MdIconModule,
+    MatIconModule,
     MdCardModule,
     MdToolbarModule,
     /** Covalent Modules */

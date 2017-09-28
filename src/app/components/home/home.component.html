@@ -1,6 +1,6 @@
 <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
   <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
   <div>
@@ -16,14 +16,14 @@
             <div class="push-top-xl" hide-xs></div>
             <button md-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
             <a md-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
-              <md-icon svgIcon="assets:github" class="pad-right-xs"></md-icon>
-              <span *ngIf="starCount"><md-icon class="text-md tc-orange-A700">star</md-icon> {{starCount}}</span>
+              <mat-icon svgIcon="assets:github" class="pad-right-xs"></mat-icon>
+              <span *ngIf="starCount"><mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}</span>
             </a>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
         <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-          <md-icon class="mat-icon-svg-xxl" svgIcon="assets:covalent" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
+          <mat-icon class="mat-icon-svg-xxl" svgIcon="assets:covalent" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></mat-icon>
         </div>
       </div>
     </section>
@@ -37,7 +37,7 @@
             <mat-nav-list hide-gt-md>
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a mat-list-item [routerLink]="[item.route]">
-                  <md-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <mat-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></mat-icon>
                   <h3 class="tc-blue-grey-900" matLine> {{item.title}} </h3>
                   <p class="tc-blue-grey-700" matLine> {{item.description}} </p>
                 </a>
@@ -49,9 +49,9 @@
                 <div flex-gt-sm="33" class="pad-sm">
                   <a [routerLink]="[item.route]" md-button class="pad">
                     <div layout="row" layout-align="start center" class="push-bottom-xs">
-                      <md-icon class="push-right-sm">
+                      <mat-icon class="push-right-sm">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
-                      </md-icon>
+                      </mat-icon>
                       <div class="md-title text-xxl tc-blue-grey-900">{{item.title}}</div>
                     </div>
                     <div class="md-subhead tc-blue-grey-700 text-wrap text-left" hide-sm hide-md> {{item.description}} </div>   
@@ -69,14 +69,14 @@
         <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xxl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
-            <h2 class="md-display-1 tc-red-500 push-top-xs push-bottom-sm">Built with <md-icon>favorite</md-icon> on Angular</h2>
+            <h2 class="md-display-1 tc-red-500 push-top-xs push-bottom-sm">Built with <mat-icon>favorite</mat-icon> on Angular</h2>
             <h3 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm">Teradata is one of the largest enterprise consumers of Angular. Currently the entire product suite is being built or revamped on Angular v4.</h3>
             <h4 class="md-headline tc-blue-grey-200 push-top-xs push-bottom-sm" hide-xs>As Angular unites Teradata developers across the organization, they are able to contribute back to the open-source community with the powerful new tools being developed internally.</h4>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
         <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
-          <md-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
+          <mat-icon class="mat-icon-svg-xxl fill-red-500" svgIcon="assets:angular-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></mat-icon>
         </div>
       </div>
     </section>
@@ -88,7 +88,7 @@
             <mat-nav-list hide-gt-sm class="theme-dark">
               <ng-template let-item let-last="last" ngFor [ngForOf]="repos">
                 <a mat-list-item href="{{item.link}}" target="_blank">
-                  <md-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></md-icon>
+                  <mat-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></mat-icon>
                   <h3 class="tc-white" matLine> {{item.title}} </h3>
                   <p class="tc-white" matLine> {{item.description}} </p>
                 </a>
@@ -100,9 +100,9 @@
                 <div flex-gt-sm="33" class="pad-sm">
                   <a href="{{item.link}}" target="_blank" md-button class="pad">
                     <div layout="row">
-                      <md-icon class="mat-icon-md" tdMediaToggle="gt-sm" [mediaClasses]="['push-right-sm']">
+                      <mat-icon class="mat-icon-md" tdMediaToggle="gt-sm" [mediaClasses]="['push-right-sm']">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
-                      </md-icon>
+                      </mat-icon>
                       <div class="tc-white text-left text-wrap">
                         <div class="md-title push-bottom-xs">{{item.title}}</div>
                         <div class="md-subhead" hide-sm hide-md> {{item.description}} </div>   
@@ -129,7 +129,7 @@
           <div class="push-bottom-xl" hide-xs></div>
         </div>
         <div flex="40" flex-xs="20" flex-order="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-left-xl']">
-          <md-icon class="mat-icon-svg-xxl fill-green-A700" svgIcon="assets:material-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></md-icon>
+          <mat-icon class="mat-icon-svg-xxl fill-green-A700" svgIcon="assets:material-outline" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></mat-icon>
         </div>
       </div>
     </section>
@@ -266,19 +266,19 @@
               </div>
               <mat-nav-list>
                 <a mat-list-item href="https://github.com/teradata/covalent/releases" target="_blank">
-                  <md-icon>launch</md-icon>
+                  <mat-icon>launch</mat-icon>
                   <h3 matLine>Releases</h3>
                   <p matLine>Our latest version you can use today!</p>
                 </a>
                 <mat-divider></mat-divider>
                 <a mat-list-item href="https://github.com/teradata/covalent/milestones" target="_blank">
-                  <md-icon>launch</md-icon>
+                  <mat-icon>launch</mat-icon>
                   <h3 matLine>Milestones</h3>
                   <p matLine>Rough time estimates</p>
                 </a>
                 <mat-divider></mat-divider>
                 <a mat-list-item href="https://github.com/teradata/covalent/issues" target="_blank">
-                  <md-icon>launch</md-icon>
+                  <mat-icon>launch</mat-icon>
                   <h3 matLine>Feature Requests & Bugs</h3>
                   <p matLine>Priotized by demand</p>
                 </a>

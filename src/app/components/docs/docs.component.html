@@ -5,8 +5,8 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
   <mat-nav-list td-sidenav-content>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
@@ -15,7 +15,7 @@
            [routerLinkActive]="['active']" 
            [routerLinkActiveOptions]="{exact:true}"
            [tdLayoutNavListClose]="!media.query('gt-sm')">
-          <md-icon matListAvatar>{{item.icon}}</md-icon>
+          <mat-icon matListAvatar>{{item.icon}}</mat-icon>
           <h3 matLine> {{item.title}} </h3>
           <p matLine> {{item.description}} </p>
         </a>
@@ -23,8 +23,8 @@
       </ng-template>
   </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
-      <md-icon>arrow_back</md-icon>
+    <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <mat-icon>arrow_back</mat-icon>
     </button>
     <span hide-gt-sm flex>Documentation</span>
     <td-toolbar flex layout="row"></td-toolbar>

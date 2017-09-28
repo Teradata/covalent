@@ -21,11 +21,11 @@
                    [disabled]="disabled"
                    readonly/>
           </md-form-field>
-          <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
-            <md-icon>cancel</md-icon>
+          <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+            <mat-icon>cancel</mat-icon>
           </button>
           <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
-            <md-icon>folder</md-icon>
+            <mat-icon>folder</mat-icon>
             <span class="text-upper">Browse...</span>
           </td-file-input>
           <span>
@@ -59,11 +59,11 @@
                       [disabled]="disabled"
                       readonly/>
               </md-form-field>
-              <button md-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
-                <md-icon>cancel</md-icon>
+              <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+                <mat-icon>cancel</mat-icon>
               </button>
               <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
-                <md-icon>folder</md-icon>
+                <mat-icon>folder</mat-icon>
                 <span class="text-upper">Browse...</span>
               </td-file-input>
               <span>

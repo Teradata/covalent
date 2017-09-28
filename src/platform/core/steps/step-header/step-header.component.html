@@ -15,12 +15,12 @@
       <span *ngIf="(active || !isComplete())">{{number || ''}}</span>
     </div>
     <div class="td-complete" *ngIf="isComplete()">
-      <md-icon class="mat-complete">check_circle</md-icon>
+      <mat-icon class="mat-complete">check_circle</mat-icon>
     </div>
     <div class="td-triangle"
         [class.bg-muted]="disabled"
         *ngIf="isRequired()">
-      <md-icon class="mat-warn">warning</md-icon>
+      <mat-icon class="mat-warn">warning</mat-icon>
     </div>
     <div class="td-step-label-wrapper"
           [class.mat-inactive]="(!active && !isComplete()) || disabled"
@@ -33,6 +33,6 @@
       </div>
     </div>
     <span flex></span>
-    <md-icon class="td-edit-icon" *ngIf="isComplete() && !active && !disabled">mode_edit</md-icon>
+    <mat-icon class="td-edit-icon" *ngIf="isComplete() && !active && !disabled">mode_edit</mat-icon>
   </div>
 </div>

@@ -8,20 +8,20 @@
       <md-tab>
         <ng-template mdTabLabel>Demo</ng-template>
         <md-toolbar color="accent">
-          <button md-icon-button>
-            <md-icon>menu</md-icon>
+          <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
           </button>
           <span>Toolbar</span>
           <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
           <td-notification-count color="primary" positionX="before" [notifications]="true">
-            <md-icon>person</md-icon>
+            <mat-icon>person</mat-icon>
           </td-notification-count>
           <td-notification-count color="primary" [notifications]="false">
-            <md-icon>messages</md-icon>
+            <mat-icon>messages</mat-icon>
           </td-notification-count>
-          <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+          <button class="overflow-visible" mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
             <td-notification-count [notifications]="101">
-              <md-icon>notifications</md-icon>
+              <mat-icon>notifications</mat-icon>
             </td-notification-count>
           </button>
           <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
@@ -30,7 +30,7 @@
               <mat-nav-list dense>
                 <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                   <a mat-list-item>
-                    <md-icon matListAvatar>today</md-icon>
+                    <mat-icon matListAvatar>today</mat-icon>
                     <h4 matLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
                     <p matLine>22 minutes ago</p>
                   </a>
@@ -42,14 +42,14 @@
               </button>
             </td-menu>
           </md-menu>
-          <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
+          <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
           <md-menu #toolbarMenu1="mdMenu">
             <button md-menu-item>
-              <md-icon>settings</md-icon>
+              <mat-icon>settings</mat-icon>
               <span>Settings</span>
             </button>
             <button md-menu-item>
-              <md-icon>exit_to_app</md-icon>
+              <mat-icon>exit_to_app</mat-icon>
               <span>Sign out</span>
             </button>
           </md-menu>
@@ -61,20 +61,20 @@
         <td-highlight lang="html">
           <![CDATA[
             <md-toolbar color="accent">
-              <button md-icon-button>
-                <md-icon>menu</md-icon>
+              <button mat-icon-button>
+                <mat-icon>menu</mat-icon>
               </button>
               <span>Toolbar</span>
               <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
               <td-notification-count color="primary" positionX="before" [notifications]="true">
-                <md-icon>person</md-icon>
+                <mat-icon>person</mat-icon>
               </td-notification-count>
               <td-notification-count color="primary" [notifications]="false">
-                <md-icon>messages</md-icon>
+                <mat-icon>messages</mat-icon>
               </td-notification-count>
-              <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+              <button class="overflow-visible" mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
                 <td-notification-count [notifications]="101">
-                  <md-icon>notifications</md-icon>
+                  <mat-icon>notifications</mat-icon>
                 </td-notification-count>
               </button>
               <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
@@ -83,7 +83,7 @@
                   <mat-nav-list dense>
                     <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                       <a mat-list-item>
-                        <md-icon matListAvatar>today</md-icon>
+                        <mat-icon matListAvatar>today</mat-icon>
                         <h4 matLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
                         <p matLine>22 minutes ago</p>
                       </a>
@@ -95,14 +95,14 @@
                   </button>
                 </td-menu>
               </md-menu>
-              <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
+              <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
               <md-menu #toolbarMenu1="mdMenu">
                 <button md-menu-item>
-                  <md-icon>settings</md-icon>
+                  <mat-icon>settings</mat-icon>
                   <span>Settings</span>
                 </button>
                 <button md-menu-item>
-                  <md-icon>exit_to_app</md-icon>
+                  <mat-icon>exit_to_app</mat-icon>
                   <span>Sign out</span>
                 </button>
               </md-menu>
@@ -197,7 +197,7 @@
         <ng-template mdTabLabel>Demo</ng-template>
         <mat-nav-list dense flex>
           <a mat-list-item>
-            <md-icon matListAvatar>person</md-icon>
+            <mat-icon matListAvatar>person</mat-icon>
             <h3 matLine> Jyn Erso stole the plans to the Death Star </h3>
             <p matLine> 10 mins ago </p>
             <span></span>
@@ -206,7 +206,7 @@
           </a>
           <mat-divider matInset></mat-divider>
           <a mat-list-item>
-            <md-icon matListAvatar>person</md-icon>
+            <mat-icon matListAvatar>person</mat-icon>
             <h3 matLine> Something something something.. dark side. </h3>
             <p matLine> 9 hours ago </p>
             <span></span>
@@ -215,7 +215,7 @@
           </a>
           <mat-divider matInset></mat-divider>
           <a mat-list-item>
-            <md-icon matListAvatar>person</md-icon>
+            <mat-icon matListAvatar>person</mat-icon>
             <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
             <p matLine> 2 days ago </p>
             <span></span>
@@ -231,7 +231,7 @@
           <![CDATA[
             <mat-nav-list dense flex>
               <a mat-list-item>
-                <md-icon matListAvatar>person</md-icon>
+                <mat-icon matListAvatar>person</mat-icon>
                 <h3 matLine> Jyn Erso stole the plans to the Death Star </h3>
                 <p matLine> 10 mins ago </p>
                 <span></span>
@@ -240,7 +240,7 @@
               </a>
               <mat-divider matInset></mat-divider>
               <a mat-list-item>
-                <md-icon matListAvatar>person</md-icon>
+                <mat-icon matListAvatar>person</mat-icon>
                 <h3 matLine> Something something something.. dark side. </h3>
                 <p matLine> 9 hours ago </p>
                 <span></span>
@@ -249,7 +249,7 @@
               </a>
               <mat-divider matInset></mat-divider>
               <a mat-list-item>
-                <md-icon matListAvatar>person</md-icon>
+                <mat-icon matListAvatar>person</mat-icon>
                 <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
                 <p matLine> 2 days ago </p>
                 <span></span>

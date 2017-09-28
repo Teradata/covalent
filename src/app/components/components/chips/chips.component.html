@@ -119,11 +119,11 @@
                   (inputChange)="filterObjects($event)"
                   requireMatch>
           <ng-template td-chip let-chip="chip">
-            <md-icon>location_city</md-icon> {{chip.city}}, (Pop: {{chip.population}})
+            <mat-icon>location_city</mat-icon> {{chip.city}}, (Pop: {{chip.population}})
           </ng-template>
           <ng-template td-autocomplete-option let-option="option">
             <div layout="row" layout-align="start center">
-              <md-icon>location_city</md-icon> {{option.city}}
+              <mat-icon>location_city</mat-icon> {{option.city}}
             </div>
           </ng-template>
         </td-chips>
@@ -142,11 +142,11 @@
                       (inputChange)="filterObjects($event)"
                       requireMatch>
               <ng-template td-chip let-chip="chip">
-                <md-icon>location_city</md-icon> { {chip.city} }, (Pop: { {chip.population} })
+                <mat-icon>location_city</mat-icon> { {chip.city} }, (Pop: { {chip.population} })
               </ng-template>
               <ng-template td-autocomplete-option let-option="option">
                 <div layout="row" layout-align="start center">
-                  <md-icon>location_city</md-icon> { {option.city} }
+                  <mat-icon>location_city</mat-icon> { {option.city} }
                 </div>
               </ng-template>
             </td-chips>

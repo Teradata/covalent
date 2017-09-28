@@ -1,10 +1,10 @@
 <md-card>
   <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
     <span flex></span>
-    <button md-icon-button
+    <button mat-icon-button
             mdTooltip="View Source"
             (click)="toggleDemoCode = !toggleDemoCode">
-      <md-icon class="tc-grey-700">code</md-icon>
+      <mat-icon class="tc-grey-700">code</mat-icon>
     </button>
   </div>
   <md-card-title>Virtual Scroll</md-card-title>
@@ -27,7 +27,7 @@
                 <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
                   <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
                     <mat-list-item>
-                      <md-icon matListAvatar>person</md-icon>
+                      <mat-icon matListAvatar>person</mat-icon>
                       <h4 md-line>{ {row.name} }</h4>
                       <p md-line>Row: { {row.index} }</p>
                     </mat-list-item>
@@ -68,7 +68,7 @@
       <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
           <mat-list-item>
-            <md-icon matListAvatar>person</md-icon>
+            <mat-icon matListAvatar>person</mat-icon>
             <h4 md-line>{{row.name}}</h4>
             <p md-line>Row: {{row.index}}</p>
           </mat-list-item>

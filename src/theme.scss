@@ -165,11 +165,11 @@ $background: map-get($theme, background);
 // Active icon color in list nav
 mat-nav-list {
     [mat-list-item].active {
-        md-icon[matListAvatar] {
+        mat-icon[matListAvatar] {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }
-        md-icon[matListIcon] {
+        mat-icon[matListIcon] {
             color: mat-color($accent);
         }
     }
