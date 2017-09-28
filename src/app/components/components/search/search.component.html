@@ -5,8 +5,8 @@
   <md-card-content>
     <div layout="row" layout-align="start center">
       <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
-        <mat-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</mat-button-toggle>
-        <mat-button-toggle mdTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</mat-button-toggle>
+        <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</mat-button-toggle>
+        <mat-button-toggle matTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
     <h3>Search Input</h3>

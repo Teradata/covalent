@@ -15,7 +15,7 @@ import { ResourcesComponent } from './resources/resources.component';
 
 import { MatButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule, MdSnackBarModule,
          MdInputModule, MatMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MatSidenavModule,
-         MdTooltipModule, MdProgressBarModule } from '@angular/material';
+         MatTooltipModule, MdProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
@@ -51,7 +51,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdTabsModule,
     MatSidenavModule,
     MdSnackBarModule,
-    MdTooltipModule,
+    MatTooltipModule,
     MdProgressBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,

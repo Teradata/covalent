@@ -9,9 +9,9 @@
         <ng-template mdTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
           <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-            <mat-button-toggle mdTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
-            <mat-button-toggle mdTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle>
-            <mat-button-toggle mdTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle>
           </mat-button-toggle-group>
         </div>
         <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>

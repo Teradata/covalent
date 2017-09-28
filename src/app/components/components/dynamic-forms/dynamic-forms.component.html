@@ -15,7 +15,7 @@
         <md-card-title>
           <div layout="row" layout-align="start center" flex>
             <div flex class="text-md">Toggle to reveal form JSON object</div>
-            <button mat-icon-button mdTooltip="See JSON elements code" (click)="showDynamicCode = !showDynamicCode">
+            <button mat-icon-button matTooltip="See JSON elements code" (click)="showDynamicCode = !showDynamicCode">
               <mat-icon>code</mat-icon>
             </button>
           </div>
@@ -60,7 +60,7 @@
               {{ option }}
             </md-option>
           </md-select>
-          <button mdTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
+          <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
             <mat-icon>add</mat-icon>
           </button>
         </div>
@@ -122,7 +122,7 @@
             <div layout="row">
               <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>
               <span flex></span>
-              <button mat-icon-button mdTooltip="Delete element" (click)="deleteElement(index)">
+              <button mat-icon-button matTooltip="Delete element" (click)="deleteElement(index)">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>

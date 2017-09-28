@@ -13,7 +13,7 @@ import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MatButtonModule, MatListModule, MatIconModule, MdCardModule, MatMenuModule, MdTabsModule,
-         MatToolbarModule, MdGridListModule, MdTooltipModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
+         MatToolbarModule, MdGridListModule, MatTooltipModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -50,7 +50,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MdTabsModule,
     MatToolbarModule,
     MdGridListModule,
-    MdTooltipModule,
+    MatTooltipModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,

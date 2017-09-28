@@ -15,7 +15,7 @@
             <h2 class="md-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
             <div class="push-top-xl" hide-xs></div>
             <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
-            <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" mdTooltip="Star us on Github!" mdTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+            <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" matTooltip="Star us on Github!" matTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
               <mat-icon svgIcon="assets:github" class="pad-right-xs"></mat-icon>
               <span *ngIf="starCount"><mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}</span>
             </a>
