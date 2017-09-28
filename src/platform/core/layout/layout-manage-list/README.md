@@ -52,18 +52,18 @@ Example for Manage List Layout / Nav Layout combo:
     .. main toolbar content
   </div>
   <td-layout-manage-list opened="true" mode="side" sidenavWidth="257px">
-    <md-toolbar td-sidenav-content>
+    <mat-toolbar td-sidenav-content>
       ... toolbar in sidenav
-    </md-toolbar>
+    </mat-toolbar>
     <mat-nav-list td-sidenav-content>
       ... sidenav content
     </mat-nav-list>
-    <md-toolbar>
+    <mat-toolbar>
       <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <mat-icon>arrow_back</mat-icon>
       </button>
       ... sub toolbar content
-    </md-toolbar>
+    </mat-toolbar>
     ... main content
     <td-layout-footer-inner>
       ... sub footer content

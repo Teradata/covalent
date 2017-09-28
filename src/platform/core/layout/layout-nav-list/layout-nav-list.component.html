@@ -11,7 +11,7 @@
                   layout="column" 
                   layout-fill
                   class="md-whiteframe-z1">
-        <md-toolbar [color]="color" class="md-whiteframe-z1">
+        <mat-toolbar [color]="color" class="md-whiteframe-z1">
           <ng-content select="[td-menu-button]"></ng-content>
           <span *ngIf="icon || logo || toolbarTitle"
                 [class.cursor-pointer]="routerEnabled"
@@ -23,15 +23,15 @@
             <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
           </span>
           <ng-content select="[td-sidenav-toolbar-content]"></ng-content>
-        </md-toolbar>
+        </mat-toolbar>
         <div flex class="list md-content" cdkScrollable>
           <ng-content select="[td-sidenav-content]"></ng-content>
         </div>
       </mat-sidenav>
       <div layout="column" layout-fill class="md-content">
-        <md-toolbar [color]="color" class="md-whiteframe-z1">
+        <mat-toolbar [color]="color" class="md-whiteframe-z1">
           <ng-content select="[td-toolbar-content]"></ng-content>
-        </md-toolbar>
+        </mat-toolbar>
         <div class="md-content" flex cdkScrollable>
           <ng-content></ng-content>
         </div>

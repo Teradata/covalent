@@ -10,7 +10,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MdToolbarModule, MdSnackBarModule,
+import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule, MdSnackBarModule,
          MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MatSidenavModule,
          MdTooltipModule, MdProgressBarModule, MdButtonToggleModule } from '@angular/material';
 

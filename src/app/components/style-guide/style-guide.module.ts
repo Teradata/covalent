@@ -13,7 +13,7 @@ import { ColorsComponent } from './colors/colors.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
 
-import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MdToolbarModule, MdSnackBarModule,
+import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MatToolbarModule, MdSnackBarModule,
          MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MatSidenavModule,
          MdTooltipModule, MdProgressBarModule } from '@angular/material';
 
@@ -43,7 +43,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatListModule,
     MatIconModule,
     MdCardModule,
-    MdToolbarModule,
+    MatToolbarModule,
     MdInputModule,
     MdMenuModule,
     MdSelectModule,

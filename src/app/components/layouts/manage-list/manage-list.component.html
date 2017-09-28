@@ -4,11 +4,11 @@
   <mat-divider></mat-divider>
   <md-card-content [style.height]="'200px'">
     <td-layout-manage-list opened="true" mode="side">
-      <md-toolbar td-sidenav-content></md-toolbar>
+      <mat-toolbar td-sidenav-content></mat-toolbar>
       <div td-sidenav-content>
         Sidenav content here
       </div>
-      <md-toolbar></md-toolbar>
+      <mat-toolbar></mat-toolbar>
       Content goes here
     </td-layout-manage-list>
   </md-card-content>
@@ -17,11 +17,11 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-layout-manage-list opened="true" mode="side">
-          <md-toolbar td-sidenav-content></md-toolbar>
+          <mat-toolbar td-sidenav-content></mat-toolbar>
           <div td-sidenav-content>
             Sidenav content here
           </div>
-          <md-toolbar></md-toolbar>
+          <mat-toolbar></mat-toolbar>
           Content goes here
         </td-layout-manage-list>
       ]]>
@@ -49,16 +49,16 @@
           <mat-icon>menu</mat-icon>
         </button>
         <td-layout-manage-list opened="true" mode="side">
-          <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
+          <mat-toolbar td-sidenav-content>Nav Title</mat-toolbar>
           <div td-sidenav-content>
             Sidenav content here
           </div>
-          <md-toolbar>
+          <mat-toolbar>
             <button md-button tdLayoutManageListToggle>
               Toggle
             </button>
             Content Title
-          </md-toolbar>
+          </mat-toolbar>
           Content goes here
         </td-layout-manage-list>
       </td-layout-nav>
@@ -84,16 +84,16 @@
               <mat-icon>menu</mat-icon>
             </button>
             <td-layout-manage-list opened="true" mode="side">
-              <md-toolbar td-sidenav-content>Nav Title</md-toolbar>
+              <mat-toolbar td-sidenav-content>Nav Title</mat-toolbar>
               <div td-sidenav-content>
                 Sidenav content here
               </div>
-              <md-toolbar>
+              <mat-toolbar>
                 <button md-button tdLayoutManageListToggle>
                   Toggle
                 </button>
                 Content Title
-              </md-toolbar>
+              </mat-toolbar>
               Content goes here
             </td-layout-manage-list>
           </td-layout-nav>
@@ -133,9 +133,9 @@
                 [opened]="media.registerQuery('gt-sm') | async"
                 [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                 [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-          <md-toolbar td-sidenav-content>
+          <mat-toolbar td-sidenav-content>
             <span>Optional Title</span>
-          </md-toolbar>
+          </mat-toolbar>
           <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
             <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
               <a mat-list-item>
@@ -143,7 +143,7 @@
               </a>
             </ng-template>
           </mat-nav-list>
-          <md-toolbar>
+          <mat-toolbar>
             <div layout="row" layout-align="start center" flex>
               <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
                 <mat-icon>arrow_back</mat-icon>
@@ -152,7 +152,7 @@
               <span flex></span>
               <button mat-icon-button><mat-icon>settings</mat-icon></button>
             </div>
-          </md-toolbar>
+          </mat-toolbar>
           <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
             <div flex-gt-sm="60">
               <md-card>
@@ -257,9 +257,9 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-              <md-toolbar td-sidenav-content>
+              <mat-toolbar td-sidenav-content>
                 <span>Optional Title</span>
-              </md-toolbar>
+              </mat-toolbar>
               <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
                   <a mat-list-item>
@@ -267,7 +267,7 @@
                   </a>
                 </ng-template>
               </mat-nav-list>
-              <md-toolbar>
+              <mat-toolbar>
                 <div layout="row" layout-align="start center" flex>
                   <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
                     <mat-icon>arrow_back</mat-icon>
@@ -276,7 +276,7 @@
                   <span flex></span>
                   <button mat-icon-button><mat-icon>settings</mat-icon></button>
                 </div>
-              </md-toolbar>
+              </mat-toolbar>
               <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
                 <div flex-gt-sm="60">
                   <md-card>

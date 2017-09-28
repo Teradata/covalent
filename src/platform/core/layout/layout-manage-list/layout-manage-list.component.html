@@ -9,13 +9,13 @@
               layout="column"
               layout-fill
               class="md-whiteframe-z1">
-    <ng-content select="md-toolbar[td-sidenav-content]"></ng-content>
+    <ng-content select="mat-toolbar[td-sidenav-content]"></ng-content>
     <div flex class="list md-content" cdkScrollable>
       <ng-content select="[td-sidenav-content]"></ng-content>
     </div>
   </mat-sidenav>
   <div layout="column" layout-fill class="md-content">
-    <ng-content select="md-toolbar"></ng-content>
+    <ng-content select="mat-toolbar"></ng-content>
     <div class="md-content" flex cdkScrollable>
       <ng-content></ng-content>
     </div>

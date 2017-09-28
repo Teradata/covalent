@@ -38,7 +38,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MdButtonModule, MatListModule, MatIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
-         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdAutocompleteModule,
+         MdSelectModule, MatToolbarModule, MdTabsModule, MdTooltipModule, MdAutocompleteModule,
          MdProgressBarModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
@@ -101,7 +101,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MdSelectModule,
     MdButtonToggleModule,
     MdSlideToggleModule,
-    MdToolbarModule,
+    MatToolbarModule,
     MdTabsModule,
     MdTooltipModule,
     MdProgressBarModule,

@@ -1,4 +1,4 @@
-<md-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
+<mat-toolbar [color]="color" [style.background-image]="backgroundImage" [class.td-toolbar-background]="!!isBackgroundAvailable">
   <div flex>
     <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
     <ng-container *ngIf="!isCustomToolbar">
@@ -21,7 +21,7 @@
       </div>
     </ng-container>
   </div>
-</md-toolbar>
+</mat-toolbar>
 <div [@tdCollapse]="menuToggled">
   <ng-content></ng-content>
 </div>

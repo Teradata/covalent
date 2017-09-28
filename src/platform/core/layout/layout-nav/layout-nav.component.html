@@ -1,5 +1,5 @@
 <div layout="column" layout-fill>
-  <md-toolbar [color]="color">
+  <mat-toolbar [color]="color">
     <ng-content select="[td-menu-button]"></ng-content>
     <span *ngIf="icon || logo || toolbarTitle"
           [class.cursor-pointer]="routerEnabled"
@@ -11,7 +11,7 @@
       <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
     </span>
     <ng-content select="[td-toolbar-content]"></ng-content>
-  </md-toolbar>
+  </mat-toolbar>
   <div flex layout="column" class="content md-content" cdkScrollable>
     <ng-content></ng-content>
   </div>
