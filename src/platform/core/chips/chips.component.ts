@@ -9,7 +9,7 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
 import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
-import { MdChip, MatInput, MatOption, MatAutocompleteTrigger } from '@angular/material';
+import { MatChip, MatInput, MatOption, MatAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -85,7 +85,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MatInput) _inputChild: MatInput;
   @ViewChild(MatAutocompleteTrigger) _autocompleteTrigger: MatAutocompleteTrigger;
-  @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
+  @ViewChildren(MatChip) _chipsChildren: QueryList<MatChip>;
 
   @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
   @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
@@ -684,7 +684,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Get total of chips
    */
   get _totalChips(): number {
-    let chips: MdChip[] = this._chipsChildren.toArray();
+    let chips: MatChip[] = this._chipsChildren.toArray();
     return chips.length;
   }
 

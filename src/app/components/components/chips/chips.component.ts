@@ -2,7 +2,7 @@ import { Component, HostBinding, OnInit, ChangeDetectionStrategy, ChangeDetector
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { MdChip} from '@angular/material';
+import { MatChip} from '@angular/material';
 
 @Component({
   selector: 'chips-demo',
