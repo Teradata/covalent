@@ -162,10 +162,10 @@
                   <ng-template matTabLabel>Typescript</ng-template>
                     <td-highlight lang="typescript">
                       <![CDATA[
-                        import { MdSnackBar } from '@angular/material';
+                        import { MatSnackBar } from '@angular/material';
                         ...
                         export class ToastsComponent {
-                          constructor(private _snackBarService: MdSnackBar) {
+                          constructor(private _snackBarService: MatSnackBar) {
                           }
                           showSnackBar(): void {
                             this._snackBarService.open('Connection timed out.  Showing limited messages.', 'Retry', { duration: 3000 });

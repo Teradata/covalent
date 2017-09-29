@@ -10,7 +10,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MdSnackBarModule,
+import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MatSnackBarModule,
          MatInputModule, MatMenuModule, MatSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
          MatTooltipModule, MdProgressBarModule, MatButtonToggleModule } from '@angular/material';
 
@@ -43,7 +43,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatGridListModule,
     MatTabsModule,
     MatSidenavModule,
-    MdSnackBarModule,
+    MatSnackBarModule,
     MatTooltipModule,
     MdProgressBarModule,
     MatButtonToggleModule,
