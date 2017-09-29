@@ -556,30 +556,30 @@
   <mat-divider></mat-divider>
   <mat-card-actions>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="selectable">
+      <mat-slide-toggle color="accent" [(ngModel)]="selectable">
         Selectable rows
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="clickable">
         Clickable rows
-      </md-slide-toggle>
-      <md-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
         Multiple rows (shift + click for range selection)
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
     <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" (change)="toggleTooltips()">
+      <mat-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
     <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
         Hide calories
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
         Type column is searchable (search for <code>candy</code>)
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
   </mat-card-actions>
 </mat-card>

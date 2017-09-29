@@ -171,9 +171,9 @@
           <mat-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
               <mat-list-item>
-                <md-slide-toggle matLine [checked]="item.value">
+                <mat-slide-toggle matLine [checked]="item.value">
                   {{item.label}}
-                </md-slide-toggle>
+                </mat-slide-toggle>
               </mat-list-item>
               <mat-divider *ngIf="!last"></mat-divider>
             </ng-template>
@@ -192,9 +192,9 @@
               <mat-list>
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
                   <mat-list-item>
-                    <md-slide-toggle matLine [checked]="item.value">
+                    <mat-slide-toggle matLine [checked]="item.value">
                       { {item.label} }
-                    </md-slide-toggle>
+                    </mat-slide-toggle>
                   </mat-list-item>
                   <mat-divider *ngIf="!last"></mat-divider>
                 </ng-template>
@@ -248,7 +248,7 @@
           </div>
         </ng-template>
         <div class="pad-sm">
-          <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle>
         </div>
       </mat-tab>
       <mat-tab>
@@ -269,7 +269,7 @@
               </div>
             </ng-template>
             <div class="pad-sm">
-              <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+              <mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle>
             </div>
           ]]>
         </td-highlight>
