@@ -208,7 +208,7 @@
           <ng-template td-chip let-chip="chip">
             <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div> {{chip}}
           </ng-template>
-          <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+          <mat-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></mat-progress-bar>
         </td-chips>
       </div>
     </mat-tab>
@@ -227,7 +227,7 @@
               <ng-template td-chip let-chip="chip">
                 <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{ {chip.substring(0, 1).toUpperCase()} }</div> { {chip} }
               </ng-template>
-              <md-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></md-progress-bar>
+              <mat-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></mat-progress-bar>
             </td-chips>
           ]]>
         </td-highlight>
