@@ -18,22 +18,22 @@ export class DialogsDemoComponent {
   dialogServiceMethods: Object[] = [{
     description: `Opens an alert dialog with the provided config.`,
     name: 'openAlert',
-    type: 'function(IAlertConfig): MdDialogRef<TdAlertDialogComponent>',
+    type: 'function(IAlertConfig): MatDialogRef<TdAlertDialogComponent>',
   }, {
     description: `Opens a confirm dialog with the provided config.`,
     name: 'openConfirm',
-    type: 'function(IConfirmConfig): MdDialogRef<TdConfirmDialogComponent>',
+    type: 'function(IConfirmConfig): MatDialogRef<TdConfirmDialogComponent>',
   }, {
     description: `Opens a prompt dialog with the provided config.`,
     name: 'openPrompt',
-    type: 'function(IPromptConfig): MdDialogRef<TdPromptDialogComponent>',
+    type: 'function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>',
   }, {
-    description: `Wrapper function over the open() method in MdDialog.
+    description: `Wrapper function over the open() method in MatDialog.
                   Opens a modal dialog containing the given component.`,
     name: 'open',
-    type: 'function<T>(component: ComponentType<T>, config: MdDialogConfig): MdDialogRef<T>',
+    type: 'function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>',
   }, {
-    description: `Wrapper function over the closeAll() method in MdDialog.
+    description: `Wrapper function over the closeAll() method in MatDialog.
                   Closes all of the currently-open dialogs.`,
     name: 'closeAll',
     type: 'function()',
