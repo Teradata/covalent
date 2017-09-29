@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentJsonFormatterModule, TdJsonFormatterComponent } from './json-formatter.module';
 import { By } from '@angular/platform-browser';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: JsonFormatter', () => {
 
@@ -19,6 +20,9 @@ describe('Component: JsonFormatter', () => {
       imports: [
         NoopAnimationsModule,
         CovalentJsonFormatterModule,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

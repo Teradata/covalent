@@ -16,6 +16,7 @@ import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
 import { MatCheckbox, MatPseudoCheckbox } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: DataTable', () => {
 
@@ -35,6 +36,7 @@ describe('Component: DataTable', () => {
         TdDataTableCompareWithTestComponent,
       ],
       providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
         TdDataTableService,
       ],
     });

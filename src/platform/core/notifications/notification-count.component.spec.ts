@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material';
 import { CovalentNotificationsModule,
          TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
 import { By } from '@angular/platform-browser';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: NotificationCount', () => {
 
@@ -23,6 +24,9 @@ describe('Component: NotificationCount', () => {
       imports: [
         MatIconModule,
         CovalentNotificationsModule,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

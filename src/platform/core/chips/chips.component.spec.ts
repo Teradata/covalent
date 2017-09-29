@@ -14,6 +14,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { MatChip } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 function createFakeKeyboardEvent(keyCode: number): any {
   return {
@@ -48,6 +49,7 @@ describe('Component: Chips', () => {
         TdChipsEventsTestComponent,
       ],
       providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
         {provide: OverlayContainer, useFactory: () => {
           overlayContainerElement = document.createElement('div') as HTMLElement;
           overlayContainerElement.classList.add('cdk-overlay-container');
