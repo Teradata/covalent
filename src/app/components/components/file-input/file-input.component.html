@@ -7,7 +7,7 @@
       <ng-template mdTabLabel>Demo</ng-template>
       <mat-card-content>
         <div layout="row">
-          <md-form-field tdFileDrop
+          <mat-form-field tdFileDrop
                               [disabled]="disabled"
                               (fileDrop)="files = $event"
                               (click)="fileInput.inputElement.click()"
@@ -15,12 +15,12 @@
                               (keyup.delete)="fileInput.clear()"
                               (keyup.backspace)="fileInput.clear()"
                               flex>
-            <input mdInput
+            <input matInput
                    placeholder="select or drop files"
                    [value]="files?.length ? (files?.length + ' files') : files?.name"
                    [disabled]="disabled"
                    readonly/>
-          </md-form-field>
+          </mat-form-field>
           <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
             <mat-icon>cancel</mat-icon>
           </button>
@@ -45,7 +45,7 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <md-form-field tdFileDrop
+              <mat-form-field tdFileDrop
                                   [disabled]="disabled"
                                   (fileDrop)="files = $event"
                                   (click)="fileInput.inputElement.click()"
@@ -53,12 +53,12 @@
                                   (keyup.delete)="fileInput.clear()"
                                   (keyup.backspace)="fileInput.clear()"
                                   flex>
-                <input mdInput
+                <input matInput
                       placeholder="select or drop files"
                       [value]="files?.length ? (files?.length + ' files') : files?.name"
                       [disabled]="disabled"
                       readonly/>
-              </md-form-field>
+              </mat-form-field>
               <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
                 <mat-icon>cancel</mat-icon>
               </button>

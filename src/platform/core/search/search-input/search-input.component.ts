@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } f
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
-import { MdInput } from '@angular/material';
+import { MatInput } from '@angular/material';
 import { debounceTime } from 'rxjs/operator/debounceTime';
 import { skip } from 'rxjs/operator/skip';
 
@@ -31,7 +31,7 @@ import { skip } from 'rxjs/operator/skip';
 })
 export class TdSearchInputComponent implements OnInit {
 
-  @ViewChild(MdInput) _input: MdInput;
+  @ViewChild(MatInput) _input: MatInput;
 
   value: string;
 

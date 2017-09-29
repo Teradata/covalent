@@ -22,11 +22,11 @@
       </div>
     </md-basic-chip>
   </ng-template>
-  <md-form-field floatPlaceholder="never"
+  <mat-form-field floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"
                       [style.height.px]="canAddChip ? null : 0"
                       [color]="color">
-    <input mdInput
+    <input matInput
             #input
             [tabIndex]="-1"
             [mdAutocomplete]="autocomplete"
@@ -35,7 +35,7 @@
             (keydown)="_inputKeydown($event)"
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">
-  </md-form-field>
+  </mat-form-field>
   <md-autocomplete #autocomplete="mdAutocomplete"
                    [displayWith]="_removeInputDisplay"
                    (optionSelected)="addChip($event.option.value)">

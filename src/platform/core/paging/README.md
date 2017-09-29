@@ -84,16 +84,16 @@ Example with material input for navigation:
                 [total]="1345"
                 (change)="change($event)">
   <p hide-xs>Go to:</p>
-  <md-form-field>
+  <mat-form-field>
     <input #goToInput
-            mdInput
+            matInput
             type="number"
             [min]="1"
             [max]="pagingBar.maxPage"
             [value]="pagingBar.page"
             (blur)="goToInput.value = pagingBar.page"
             (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-  </md-form-field>
+  </mat-form-field>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
   
 </td-paging-bar>
@@ -115,16 +115,16 @@ Example with dynamic page sizes, input and page links for navigation:
     </md-option>
   </md-select>
   <p hide-xs>Go to:</p>
-  <md-form-field>
+  <mat-form-field>
     <input #goToInput
-            mdInput
+            matInput
             type="number"
             [min]="1"
             [max]="pagingBar.maxPage"
             [value]="pagingBar.page"
             (blur)="goToInput.value = pagingBar.page"
             (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-  </md-form-field>
+  </mat-form-field>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
 ```

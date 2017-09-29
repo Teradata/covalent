@@ -71,53 +71,53 @@
           <mat-divider></mat-divider>
           <div class="pad" layout="column">
             <div layout="row">
-              <md-form-field class="pad-right-xs" flex>
-                <input mdInput
+              <mat-form-field class="pad-right-xs" flex>
+                <input matInput
                       placeholder="Label"
                       [(ngModel)]="model.label"
                       name="label">
-              </md-form-field>
-              <md-form-field flex="30">
-                <input mdInput
+              </mat-form-field>
+              <mat-form-field flex="30">
+                <input matInput
                       type="number"
                       min="0"
                       max="100"
                       placeholder="Flex (width in %)"
                       [(ngModel)]="model.flex"
                       name="flex">
-              </md-form-field>
+              </mat-form-field>
             </div>
             <div *ngIf="isMinMaxSupported(model.type)" layout="row">
-              <md-form-field class="pad-right-xs" flex>
-                <input mdInput
+              <mat-form-field class="pad-right-xs" flex>
+                <input matInput
                       type="number"
                       placeholder="Min"
                       [(ngModel)]="model.min"
                       name="min">
-              </md-form-field>
-              <md-form-field flex="50">
-                <input mdInput
+              </mat-form-field>
+              <mat-form-field flex="50">
+                <input matInput
                       type="number"
                       placeholder="Max"
                       [(ngModel)]="model.max"
                       name="max">
-              </md-form-field>
+              </mat-form-field>
             </div>
             <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
-              <md-form-field class="pad-right-xs" flex>
-                <input mdInput
+              <mat-form-field class="pad-right-xs" flex>
+                <input matInput
                        type="text"
                        placeholder="MinLength"
                        [(ngModel)]="model.minLength"
                        name="min">
-              </md-form-field>
-              <md-form-field flex="50">
-                <input mdInput
+              </mat-form-field>
+              <mat-form-field flex="50">
+                <input matInput
                        type="text"
                        placeholder="MaxLength"
                        [(ngModel)]="model.maxLength"
                        name="max">
-              </md-form-field>
+              </mat-form-field>
             </div>
             <div layout="row">
               <md-slide-toggle [(ngModel)]="model.required" name="required">Required</md-slide-toggle>

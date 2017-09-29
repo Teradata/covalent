@@ -194,16 +194,16 @@
       <mat-divider></mat-divider>
       <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
         <p hide-xs>Go to:</p>
-        <md-form-field [style.width.px]="30">
+        <mat-form-field [style.width.px]="30">
           <input #goToInput
-                  mdInput
+                  matInput
                   type="number"
                   [min]="1"
                   [max]="pagingBarInput.maxPage"
                   [value]="pagingBarInput.page"
                   (blur)="goToInput.value = pagingBarInput.page"
                   (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-        </md-form-field>
+        </mat-form-field>
         <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
       </td-paging-bar>
     </md-tab>
@@ -215,16 +215,16 @@
           <![CDATA[
             <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
               <p hide-xs>Go to:</p>
-              <md-form-field [style.width.px]="30">
+              <mat-form-field [style.width.px]="30">
                 <input #goToInput
-                        mdInput
+                        matInput
                         type="number"
                         [min]="1"
                         [max]="pagingBarInput.maxPage"
                         [value]="pagingBarInput.page"
                         (blur)="goToInput.value = pagingBarInput.page"
                         (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-              </md-form-field>
+              </mat-form-field>
               <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
             </td-paging-bar>
           ]]>
@@ -278,16 +278,16 @@
             </md-option>
           </md-select>
           <p hide-xs hide-sm hide-md>Go to:</p>
-          <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-xs') | async">
+          <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-xs') | async">
             <input #goToResponsive
-                    mdInput
+                    matInput
                     type="number"
                     [min]="1"
                     [max]="pagingBarResponsive.maxPage"
                     [value]="pagingBarResponsive.page"
                     (blur)="goToResponsive.value = pagingBarResponsive.page"
                     (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-          </md-form-field>
+          </mat-form-field>
           <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
         </td-paging-bar>
     </md-tab>
@@ -310,16 +310,16 @@
                 </md-option>
               </md-select>
               <p hide-xs hide-sm hide-md>Go to:</p>
-              <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
+              <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
                 <input #goToResponsive
-                        mdInput
+                        matInput
                         type="number"
                         [min]="1"
                         [max]="pagingBarResponsive.maxPage"
                         [value]="pagingBarResponsive.page"
                         (blur)="goToResponsive.value = pagingBarResponsive.page"
                         (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-              </md-form-field>
+              </mat-form-field>
               <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
             </td-paging-bar>
           ]]>

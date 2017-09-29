@@ -1,5 +1,5 @@
 <div class="dynamic-file-input-wrapper" layout="row">
-  <md-form-field tdFileDrop
+  <mat-form-field tdFileDrop
                       floatPlaceholder="never"
                       (fileDrop)="value = $event"
                       (click)="fileInput.inputElement.click()"
@@ -7,11 +7,11 @@
                       (keyup.delete)="fileInput.clear()"
                       (keyup.backspace)="fileInput.clear()"
                       flex>
-    <input mdInput
+    <input matInput
           [value]="value?.name"
           [placeholder]="label"
           readonly/>
-  </md-form-field>
+  </mat-form-field>
   <button mat-icon-button *ngIf="value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
     <mat-icon>cancel</mat-icon>
   </button>

@@ -210,52 +210,52 @@
                 <![CDATA[
                   <form #myForm="ngForm">
                       <div layout-gt-xs="row" layout-margin>
-                        <md-form-field flex>
-                          <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
-                          <md-hint>
+                        <mat-form-field flex>
+                          <input matInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
+                          <mat-hint>
                             <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
-                          </md-hint>
-                        </md-form-field>
-                        <md-form-field flex>
-                          <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
-                          <md-hint>
+                          </mat-hint>
+                        </mat-form-field>
+                        <mat-form-field flex>
+                          <input matInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
+                          <mat-hint>
                             <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
-                          </md-hint>
-                        </md-form-field>
+                          </mat-hint>
+                        </mat-form-field>
                       </div>
                       <div layout-gt-xs="row" layout-margin>
-                        <md-form-field flex="40">
-                          <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
-                          <md-hint>
+                        <mat-form-field flex="40">
+                          <input matInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
+                          <mat-hint>
                             <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
-                          </md-hint>
-                          <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
-                        </md-form-field>
-                        <md-form-field flex="35">
-                          <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-                        </md-form-field>
+                          </mat-hint>
+                          <mat-hint align="end">{{addressEl.value.length}} / 50</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field flex="35">
+                          <input matInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+                        </mat-form-field>
                       </div>
                       <div layout-gt-xs="row" layout-margin>
-                        <md-form-field flex="20">
-                          <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
-                          <md-hint>
+                        <mat-form-field flex="20">
+                          <input matInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
+                          <mat-hint>
                             <span [hidden]="stateForm.pristine" class="tc-red-600">
                               <span [hidden]="!stateForm.errors?.required">Required</span>
                               <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
                             </span>
-                          </md-hint>
-                          <md-hint align="end">e.g CA</md-hint>
-                        </md-form-field>
-                        <md-form-field flex="25">
-                          <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
-                          <md-hint>
+                          </mat-hint>
+                          <mat-hint align="end">e.g CA</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field flex="25">
+                          <input matInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+                          <mat-hint>
                             <span [hidden]="zipForm.pristine" class="tc-red-600">
                               <span [hidden]="!zipForm.errors?.required">Required</span>
                               <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
                             </span>
-                          </md-hint>
-                          <md-hint align="end">e.g 92101</md-hint>
-                        </md-form-field>
+                          </mat-hint>
+                          <mat-hint align="end">e.g 92101</mat-hint>
+                        </mat-form-field>
                       </div>
                       <mat-divider></mat-divider>
                       <div class="inset">
@@ -270,54 +270,54 @@
           <!-- example -->
           <form #myForm="ngForm">
             <div layout-gt-xs="row" layout-margin>
-              <md-form-field flex>
-                <input mdInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
-                <md-hint>
+              <mat-form-field flex>
+                <input matInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
+                <mat-hint>
                   <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
-                </md-hint>
-              </md-form-field>
-              <md-form-field flex>
-                <input mdInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
-                <md-hint>
+                </mat-hint>
+              </mat-form-field>
+              <mat-form-field flex>
+                <input matInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
+                <mat-hint>
                   <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
-                </md-hint>
-              </md-form-field>
+                </mat-hint>
+              </mat-form-field>
             </div>
             <div layout-gt-xs="row" layout-margin>
-              <md-form-field flex="40">
-                <input mdInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50"
+              <mat-form-field flex="40">
+                <input matInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50"
                   tdAutoTrim/>
-                <md-hint>
+                <mat-hint>
                   <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
-                </md-hint>
-                <md-hint align="end">{{addressEl.value.length}} / 50</md-hint>
-              </md-form-field>
-              <md-form-field flex="35">
-                <input mdInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-              </md-form-field>
+                </mat-hint>
+                <mat-hint align="end">{{addressEl.value.length}} / 50</mat-hint>
+              </mat-form-field>
+              <mat-form-field flex="35">
+                <input matInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
+              </mat-form-field>
             </div>
             <div layout-gt-xs="row" layout-margin>
-              <md-form-field flex="20">
-                <input mdInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2"
+              <mat-form-field flex="20">
+                <input matInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2"
                   required tdAutoTrim/>
-                <md-hint>
+                <mat-hint>
                   <span [hidden]="stateForm.pristine" class="tc-red-600">
                     <span [hidden]="!stateForm.errors?.required">Required</span>
                   <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
                   </span>
-                </md-hint>
-                <md-hint align="end">e.g CA</md-hint>
-              </md-form-field>
-              <md-form-field flex="25">
-                <input mdInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
-                <md-hint>
+                </mat-hint>
+                <mat-hint align="end">e.g CA</mat-hint>
+              </mat-form-field>
+              <mat-form-field flex="25">
+                <input matInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
+                <mat-hint>
                   <span [hidden]="zipForm.pristine" class="tc-red-600">
                     <span [hidden]="!zipForm.errors?.required">Required</span>
                   <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
                   </span>
-                </md-hint>
-                <md-hint align="end">e.g 92101</md-hint>
-              </md-form-field>
+                </mat-hint>
+                <mat-hint align="end">e.g 92101</mat-hint>
+              </mat-form-field>
             </div>
           </form>
         </mat-card>

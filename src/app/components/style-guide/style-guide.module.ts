@@ -14,7 +14,7 @@ import { UtilityStylesComponent } from './utility-styles/utility-styles.componen
 import { ResourcesComponent } from './resources/resources.component';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MdSnackBarModule,
-         MdInputModule, MatMenuModule, MdSelectModule, MatGridListModule, MdTabsModule, MatSidenavModule,
+         MatInputModule, MatMenuModule, MdSelectModule, MatGridListModule, MdTabsModule, MatSidenavModule,
          MatTooltipModule, MdProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
@@ -44,7 +44,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
-    MdInputModule,
+    MatInputModule,
     MatMenuModule,
     MdSelectModule,
     MatGridListModule,

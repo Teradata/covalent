@@ -9,7 +9,7 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
 import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
-import { MdChip, MdInput, MdOption, MdAutocompleteTrigger } from '@angular/material';
+import { MdChip, MatInput, MdOption, MdAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -83,7 +83,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _internalClick: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
-  @ViewChild(MdInput) _inputChild: MdInput;
+  @ViewChild(MatInput) _inputChild: MatInput;
   @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
@@ -100,7 +100,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   /**
-   * FormControl for the mdInput element.
+   * FormControl for the matInput element.
    */
   inputControl: FormControl = new FormControl();
 

@@ -141,22 +141,22 @@
                       <mat-card-content class="push-bottom-none">
                         <form #loginForm="ngForm">
                           <div layout="row">
-                            <md-form-field flex> 
-                              <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
-                              <md-hint align="start">
+                            <mat-form-field flex> 
+                              <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
+                              <mat-hint align="start">
                                 <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
-                              </md-hint>
-                              <md-hint align="end">{ {userElement.value.length} } / 30</md-hint>
-                            </md-form-field>
+                              </mat-hint>
+                              <mat-hint align="end">{ {userElement.value.length} } / 30</mat-hint>
+                            </mat-form-field>
                           </div>
                           <div layout="row" class="push-top-sm">
-                            <md-form-field flex> 
-                              <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
-                              <md-hint align="start">
+                            <mat-form-field flex> 
+                              <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                              <mat-hint align="start">
                                 <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
-                              </md-hint>
-                              <md-hint align="end">Something hard to guess</md-hint>
-                            </md-form-field>
+                              </mat-hint>
+                              <mat-hint align="end">Something hard to guess</mat-hint>
+                            </mat-form-field>
                           </div>
                         </form>
                         <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
@@ -182,24 +182,24 @@
             <mat-card-content class="push-bottom-none">
               <form #loginForm="ngForm">
                 <div layout="row">
-                  <md-form-field flex>
-                    <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
+                  <mat-form-field flex>
+                    <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
                       required>
-                    <md-hint align="start">
+                    <mat-hint align="start">
                       <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
-                    </md-hint>
-                    <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
-                  </md-form-field>
+                    </mat-hint>
+                    <mat-hint align="end">{{userElement.value.length}} / 30</mat-hint>
+                  </mat-form-field>
                 </div>
                 <div layout="row" class="push-top-sm">
-                  <md-form-field flex>
-                    <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
+                  <mat-form-field flex>
+                    <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
                       required>
-                    <md-hint align="start">
+                    <mat-hint align="start">
                       <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
-                    </md-hint>
-                    <md-hint align="end">Something hard to guess</md-hint>
-                  </md-form-field>
+                    </mat-hint>
+                    <mat-hint align="end">Something hard to guess</mat-hint>
+                  </mat-form-field>
                 </div>
               </form>
               <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
@@ -352,10 +352,10 @@
                   <![CDATA[
                     <mat-card>
                       <mat-card-title layout>
-                        <md-form-field class="text-sm" flex>
-                          <input mdInput placeholder="Search Items"/>
-                          <span mdPrefix><mat-icon>search</mat-icon></span>
-                        </md-form-field>
+                        <mat-form-field class="text-sm" flex>
+                          <input matInput placeholder="Search Items"/>
+                          <span matPrefix><mat-icon>search</mat-icon></span>
+                        </mat-form-field>
                       </mat-card-title>
                       <mat-list class="pull-top">
                         <mat-list-item>
@@ -385,10 +385,10 @@
           </div>
           <mat-card class="push-md">
               <mat-card-title layout>
-                <md-form-field class="text-sm" flex>
-                  <input mdInput placeholder="Search Items"/>
-                  <span mdPrefix><mat-icon>search</mat-icon></span>
-                </md-form-field>
+                <mat-form-field class="text-sm" flex>
+                  <input matInput placeholder="Search Items"/>
+                  <span matPrefix><mat-icon>search</mat-icon></span>
+                </mat-form-field>
               </mat-card-title>
               <mat-list class="pull-top">
                 <mat-list-item>
