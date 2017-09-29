@@ -40,14 +40,14 @@
                    [displayWith]="_removeInputDisplay"
                    (optionSelected)="addChip($event.option.value)">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
-      <md-option (click)="_setInternalClick()" [value]="item">
+      <mat-option (click)="_setInternalClick()" [value]="item">
         <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
         <ng-template
           *ngIf="_autocompleteOptionTemplate?.templateRef"
           [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
           [ngTemplateOutletContext]="{ option: item }">
         </ng-template>
-      </md-option>
+      </mat-option>
     </ng-template>
   </md-autocomplete>
 </div>

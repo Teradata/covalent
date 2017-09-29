@@ -9,7 +9,7 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
 import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
-import { MdChip, MatInput, MdOption, MdAutocompleteTrigger } from '@angular/material';
+import { MdChip, MatInput, MatOption, MdAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -90,7 +90,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
   @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
-  @ViewChildren(MdOption) _options: QueryList<MdOption>;
+  @ViewChildren(MatOption) _options: QueryList<MatOption>;
 
   /**
    * Flag that is true when autocomplete is focused.
@@ -399,7 +399,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _handleAddChip(): boolean {
     let value: any;
     if (this.requireMatch) {
-      let selectedOptions: MdOption[] = this._options.toArray().filter((option: MdOption) => {
+      let selectedOptions: MatOption[] = this._options.toArray().filter((option: MatOption) => {
         return option.active;
       });
       if (selectedOptions.length > 0) {
@@ -731,7 +731,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
       toPromise.call(timer()).then(() => {
         if (this.focused && this._options && this._options.length > 0) {
           // clean up of previously active options
-          this._options.toArray().forEach((option: MdOption) => {
+          this._options.toArray().forEach((option: MatOption) => {
             option.setInactiveStyles();
           });
           // set the first one as active

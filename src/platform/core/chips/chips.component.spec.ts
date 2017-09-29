@@ -276,7 +276,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -292,7 +292,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -314,7 +314,7 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -432,7 +432,7 @@ describe('Component: Chips', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
           option.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {

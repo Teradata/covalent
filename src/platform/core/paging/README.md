@@ -67,11 +67,11 @@ Example with material select for dynamic page sizes:
                 [total]="1345"
                 (change)="change($event)">
   <span hide-xs>Rows per page:</span>
-  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-    <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
+  <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+    <mat-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
       {{size}}
-    </md-option>
-  </md-select>
+    </mat-option>
+  </mat-select>
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
 ```
@@ -109,11 +109,11 @@ Example with dynamic page sizes, input and page links for navigation:
                 [total]="1345"
                 (change)="change($event)">
   <span hide-xs>Rows per page:</span>
-  <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-    <md-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
+  <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+    <mat-option *ngFor="let size of [50,100,200,500,100]" [value]="size">
       {{size}}
-    </md-option>
-  </md-select>
+    </mat-option>
+  </mat-select>
   <p hide-xs>Go to:</p>
   <mat-form-field>
     <input #goToInput

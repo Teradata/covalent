@@ -11,7 +11,7 @@ import { ManagementListComponent } from './management-list/management-list.compo
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MdSnackBarModule,
-         MatInputModule, MatMenuModule, MdSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
+         MatInputModule, MatMenuModule, MatSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
          MatTooltipModule, MdProgressBarModule, MatButtonToggleModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
@@ -39,7 +39,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatCardModule,
     MatInputModule,
     MatMenuModule,
-    MdSelectModule,
+    MatSelectModule,
     MatGridListModule,
     MatTabsModule,
     MatSidenavModule,

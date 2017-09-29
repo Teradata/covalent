@@ -75,7 +75,7 @@
             <a mat-list-item href="https://material.angular.io/components/select/overview" target="_blank">
               <mat-icon>launch</mat-icon>
               <span matLine>Material Design Select</span>
-              <p matLine>md-select</p>
+              <p matLine>mat-select</p>
             </a>
           </mat-nav-list>
         </mat-card-content>
@@ -122,11 +122,11 @@
                                   <span flex></span>
                                   <span hide-xs flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
                                   <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
-                                    <md-select flex="90" [(ngModel)]="sortKey">
-                                      <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+                                    <mat-select flex="90" [(ngModel)]="sortKey">
+                                      <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
                                         { {option.name}}
-                                      </md-option>
-                                    </md-select>
+                                      </mat-option>
+                                    </mat-select>
                                   </span>
                                   <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
                                     <span layout="row" layout-align="start center" flex>
@@ -153,11 +153,11 @@
                               <mat-divider></mat-divider>
                               <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
                                 <span hide-xs>Rows per page:</span>
-                                <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                                  <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                                <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                                  <mat-option *ngFor="let size of [5,10,15,20]" [value]="size">
                                     { {size} }
-                                  </md-option>
-                                </md-select>
+                                  </mat-option>
+                                </mat-select>
                                 { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
                               </td-paging-bar>
                             </mat-card>
@@ -234,11 +234,11 @@
                 <span flex></span>
                 <span hide-sm flex="40" class="pad-left md-body-1 tc-grey-500">Owner</span>
                 <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
-                  <md-select flex="90" [(ngModel)]="sortKey">
-                    <md-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
+                  <mat-select flex="90" [(ngModel)]="sortKey">
+                    <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
                       {{option.name}}
-                    </md-option>
-                  </md-select>
+                    </mat-option>
+                  </mat-select>
                 </span>
                 <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
                   <span layout="row" layout-align="start center" flex>
@@ -265,11 +265,11 @@
             <mat-divider></mat-divider>
             <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
               <span hide-xs>Rows per page:</span>
-              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <mat-option *ngFor="let size of [5,10,15,20]" [value]="size">
                   {{size}}
-                </md-option>
-              </md-select>
+                </mat-option>
+              </mat-select>
               {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
             </td-paging-bar>
           </mat-card>

@@ -55,11 +55,11 @@
       <mat-divider></mat-divider>
       <form #addForm="ngForm">
         <div layout="row" layout-align="start center" class="pad-sm">
-          <md-select class="pad-right" placeholder="Select element type" floatPlaceholder="never" [(ngModel)]="type" name="type" required>
-            <md-option *ngFor="let option of elementOptions" [value]="option">
+          <mat-select class="pad-right" placeholder="Select element type" floatPlaceholder="never" [(ngModel)]="type" name="type" required>
+            <mat-option *ngFor="let option of elementOptions" [value]="option">
               {{ option }}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
           <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
             <mat-icon>add</mat-icon>
           </button>

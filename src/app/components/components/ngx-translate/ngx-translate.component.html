@@ -107,14 +107,14 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab [label]="'DEMO_TAB' | translate">
         <div layout="row" layout-align="start center" layout-padding>
-          <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+          <mat-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
                       [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
                       [(ngModel)]="valueCountForPlural" flex="40">
-            <md-option [value]="0">0</md-option>
-            <md-option [value]="1">1</md-option>
-            <md-option [value]="4">4</md-option>
-            <md-option [value]="10">10</md-option>
-          </md-select>
+            <mat-option [value]="0">0</mat-option>
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="4">4</mat-option>
+            <mat-option [value]="10">10</mat-option>
+          </mat-select>
           <span flex="5"></span>
           <div [ngPlural]="valueCountForPlural">
             <ng-template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</ng-template>
@@ -128,14 +128,14 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-align="start center" layout-padding>
-              <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+              <mat-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
                           [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
                           [(ngModel)]="valueCountForPlural" flex="40">
-                <md-option [value]="0">0</md-option>
-                <md-option [value]="1">1</md-option>
-                <md-option [value]="4">4</md-option>
-                <md-option [value]="10">10</md-option>
-              </md-select>
+                <mat-option [value]="0">0</mat-option>
+                <mat-option [value]="1">1</mat-option>
+                <mat-option [value]="4">4</mat-option>
+                <mat-option [value]="10">10</mat-option>
+              </mat-select>
               <span flex="5"></span>
               <div [ngPlural]="valueCountForPlural">
                 <ng-template ngPluralCase="=undefined">{ { 'DEMO_ONE.COUNT.NONE' | translate } }</ng-template>
