@@ -9,7 +9,7 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
 import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
-import { MdChip, MatInput, MatOption, MdAutocompleteTrigger } from '@angular/material';
+import { MdChip, MatInput, MatOption, MatAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -84,7 +84,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
 
   @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MatInput) _inputChild: MatInput;
-  @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
+  @ViewChild(MatAutocompleteTrigger) _autocompleteTrigger: MatAutocompleteTrigger;
   @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
 
   @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
@@ -106,7 +106,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
 
   /**
    * items?: any[]
-   * Renders the `md-autocomplete` with the provided list to display as options.
+   * Renders the `mat-autocomplete` with the provided list to display as options.
    */
   @Input('items')
   set items(items: any[]) {

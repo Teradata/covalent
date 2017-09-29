@@ -29,14 +29,14 @@
     <input matInput
             #input
             [tabIndex]="-1"
-            [mdAutocomplete]="autocomplete"
+            [matAutocomplete]="autocomplete"
             [formControl]="inputControl"
             [placeholder]="canAddChip? placeholder : ''"
             (keydown)="_inputKeydown($event)"
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">
   </mat-form-field>
-  <md-autocomplete #autocomplete="mdAutocomplete"
+  <mat-autocomplete #autocomplete="matAutocomplete"
                    [displayWith]="_removeInputDisplay"
                    (optionSelected)="addChip($event.option.value)">
     <ng-template let-item let-first="first" ngFor [ngForOf]="items">
@@ -49,7 +49,7 @@
         </ng-template>
       </mat-option>
     </ng-template>
-  </md-autocomplete>
+  </mat-autocomplete>
 </div>
 <div *ngIf="chipAddition" class="mat-form-field-underline"
       [class.mat-disabled]="disabled">
