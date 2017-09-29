@@ -1,6 +1,6 @@
 <div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
-    <md-basic-chip [class.td-chip-disabled]="disabled"
+    <mat-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
                    [disabled]="true"
@@ -20,7 +20,7 @@
           cancel
         </mat-icon>
       </div>
-    </md-basic-chip>
+    </mat-basic-chip>
   </ng-template>
   <mat-form-field floatPlaceholder="never"
                       [style.width.px]="canAddChip ? null : 0"

@@ -105,7 +105,7 @@
           <mat-divider></mat-divider>
           <mat-card-content>
             <mat-list>
-              <h3 md-subheader>Metadata</h3>
+              <h3 matSubheader>Metadata</h3>
               <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
                 <mat-list-item>
                   <mat-icon matListAvatar>{{item.icon}}</mat-icon>
@@ -115,7 +115,7 @@
                 <mat-divider matInset *ngIf="!last"></mat-divider>
               </ng-template>
               <mat-divider></mat-divider>
-              <h3 md-subheader>Dates</h3>
+              <h3 matSubheader>Dates</h3>
               <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
                 <mat-list-item>
                   <mat-icon matListAvatar>{{item.icon}}</mat-icon>
@@ -166,7 +166,7 @@
               <mat-divider></mat-divider>
               <mat-card-content>
                 <mat-list>
-                  <h3 md-subheader>Metadata</h3>
+                  <h3 matSubheader>Metadata</h3>
                   <ng-template let-item let-last="last" ngFor [ngForOf]="cardlist">
                     <mat-list-item>
                       <mat-icon matListAvatar>{ {item.icon} }</mat-icon>
@@ -176,7 +176,7 @@
                     <mat-divider matInset *ngIf="!last"></mat-divider>
                   </ng-template>
                   <mat-divider></mat-divider>
-                  <h3 md-subheader>Dates</h3>
+                  <h3 matSubheader>Dates</h3>
                   <ng-template let-item let-last="last" ngFor [ngForOf]="carddates">
                     <mat-list-item>
                       <mat-icon matListAvatar>{ {item.icon} }</mat-icon>
