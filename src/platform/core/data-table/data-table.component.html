@@ -3,7 +3,7 @@
         [class.mat-selectable]="selectable">
   <tr td-data-table-column-row>
     <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
-      <md-checkbox
+      <mat-checkbox
         #checkBoxAll
         *ngIf="multiple"
         [disabled]="!hasData"
@@ -13,7 +13,7 @@
         (keyup.enter)="selectAll(!checkBoxAll.checked)"
         (keyup.space)="selectAll(!checkBoxAll.checked)"
         (keydown.space)="blockEvent($event)">
-      </md-checkbox>
+      </mat-checkbox>
     </th>
     <th td-data-table-column
         #columnElement

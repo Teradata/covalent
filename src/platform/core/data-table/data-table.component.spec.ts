@@ -14,7 +14,7 @@ import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { MdCheckbox, MdPseudoCheckbox } from '@angular/material';
+import { MatCheckbox, MdPseudoCheckbox } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {
@@ -182,14 +182,14 @@ describe('Component: DataTable', () => {
             expect(dataTableComponent.indeterminate).toBeTruthy();
             expect(dataTableComponent.allSelected).toBeFalsy();
             // select the rest of the rows by clicking in selectAll
-            fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+            fixture.debugElement.query(By.directive(MatCheckbox)).triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               // check to see if its in indeterminate state and allSelected
               expect(dataTableComponent.indeterminate).toBeTruthy();
               expect(dataTableComponent.allSelected).toBeTruthy();
               // unselect all rows by clicking in unselect all
-              fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+              fixture.debugElement.query(By.directive(MatCheckbox)).triggerEventHandler('click', new Event('click'));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
                 // check to see if its not in indeterminate state and not allSelected
