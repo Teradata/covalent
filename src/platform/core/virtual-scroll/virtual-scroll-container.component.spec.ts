@@ -85,7 +85,7 @@ describe('Component: VirtualScrollContainer', () => {
       <td-virtual-scroll-container [style.height.px]="height" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
           <mat-list-item>
-            <h4 md-line>{{row}}</h4>
+            <h4 matLine>{{row}}</h4>
           </mat-list-item>
           <mat-divider *ngIf="!last"></mat-divider>
         </ng-template>
