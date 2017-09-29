@@ -40,7 +40,7 @@ table.td-data-table {
   th.mat-checkbox-column {
     width: 42px;
     font-size: 0 !important;
-    md-pseudo-checkbox {
+    mat-pseudo-checkbox {
       width: $checkbox-size;
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {

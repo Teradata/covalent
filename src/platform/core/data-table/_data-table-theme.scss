@@ -14,7 +14,7 @@
     .mat-checkbox-cell,
     .mat-checkbox-column {
       color: mat-color($foreground, secondary-text);
-      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+      mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
         background-color: mat-color($accent);
       }
     }
