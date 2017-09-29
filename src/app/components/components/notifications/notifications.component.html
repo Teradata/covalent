@@ -4,9 +4,9 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h3 class="md-title">Toolbar notification &amp; menu</h3>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <mat-toolbar color="accent">
           <button mat-icon-button>
             <mat-icon>menu</mat-icon>
@@ -54,9 +54,9 @@
             </button>
           </mat-menu>
         </mat-toolbar>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -109,92 +109,92 @@
             </mat-toolbar>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Tabs notification</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
-        <md-tab-group md-stretch-tabs>
-          <md-tab>
-            <ng-template mdTabLabel>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <mat-tab-group mat-stretch-tabs>
+          <mat-tab>
+            <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
                 Activities
                 <td-notification-count color="primary" [notifications]="true">
                 </td-notification-count>
               </div>
             </ng-template>
-          </md-tab>
-          <md-tab>
-            <ng-template mdTabLabel>
+          </mat-tab>
+          <mat-tab>
+            <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
                 Logs
                 <td-notification-count color="warn" [notifications]="0">
                 </td-notification-count>
               </div>
             </ng-template>
-          </md-tab>
-          <md-tab>
-            <ng-template mdTabLabel>
+          </mat-tab>
+          <mat-tab>
+            <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
                 Chats 
                 <td-notification-count color="accent" [notifications]="12">
                 </td-notification-count>
               </div>
             </ng-template>
-          </md-tab>
-        </md-tab-group>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <md-tab-group md-stretch-tabs>
-              <md-tab>
-                <ng-template mdTabLabel>
+            <mat-tab-group mat-stretch-tabs>
+              <mat-tab>
+                <ng-template matTabLabel>
                   <div layout="row" layout-align="center center">
                     Activities
                     <td-notification-count color="primary" [notifications]="true">
                     </td-notification-count>
                   </div>
                 </ng-template>
-              </md-tab>
-              <md-tab>
-                <ng-template mdTabLabel>
+              </mat-tab>
+              <mat-tab>
+                <ng-template matTabLabel>
                   <div layout="row" layout-align="center center">
                     Logs
                     <td-notification-count color="warn" [notifications]="0">
                     </td-notification-count>
                   </div>
                 </ng-template>
-              </md-tab>
-              <md-tab>
-                <ng-template mdTabLabel>
+              </mat-tab>
+              <mat-tab>
+                <ng-template matTabLabel>
                   <div layout="row" layout-align="center center">
                     Chats 
                     <td-notification-count color="accent" [notifications]="12">
                     </td-notification-count>
                   </div>
                 </ng-template>
-              </md-tab>
-            </md-tab-group>
+              </mat-tab>
+            </mat-tab-group>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">List item notification</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <mat-nav-list dense flex>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
@@ -223,9 +223,9 @@
             </td-notification-count>
           </a>
         </mat-nav-list>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -259,8 +259,8 @@
             </mat-nav-list>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 

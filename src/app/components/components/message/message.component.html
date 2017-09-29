@@ -2,9 +2,9 @@
   <mat-card-title>Messages &amp; Alerts</mat-card-title>
   <mat-card-subtitle>Info, warning &amp; alert messages</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
         <p class="md-body-1">Standalone message:</p>
         <td-message label="Error!" sublabel="You did something wrong!" color="warn" icon="error"></td-message>
@@ -28,9 +28,9 @@
           <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
         </td-message>
       </mat-card-content>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -62,8 +62,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <button mat-button color="accent" class="text-upper" (click)="messageDemo.toggle()">
@@ -75,9 +75,9 @@
   <mat-card-title>Material Colored Messages</mat-card-title>
   <mat-card-subtitle>Use the full Material Design color palette</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
         <p class="md-body-1">Using <code>color</code>:</p>
         <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
@@ -88,9 +88,9 @@
           <button td-message-actions mat-button>VIEW MORE</button>
         </td-message>
       </mat-card-content>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -106,8 +106,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <a mat-button color="accent" class="text-upper" [routerLink]="['/style-guide/colors']">

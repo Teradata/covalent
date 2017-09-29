@@ -2,9 +2,9 @@
   <mat-card-title>File Input</mat-card-title>
   <mat-card-subtitle>single or multiple selection/drop</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
         <div layout="row">
           <mat-form-field tdFileDrop
@@ -37,9 +37,9 @@
       <mat-card-actions>
         <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
       </mat-card-actions>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -97,8 +97,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <td-readme-loader resourceUrl="platform/core/file/file-input/README.md"></td-readme-loader>

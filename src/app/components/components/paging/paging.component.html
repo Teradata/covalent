@@ -2,9 +2,9 @@
   <mat-card-title>Paging</mat-card-title>
   <mat-card-subtitle>Paging bar for lists and tables</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
         <mat-card-content>
           <p>Change Event: </p>
           <div>
@@ -18,9 +18,9 @@
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
           {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -50,8 +50,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <div layout="row" layout-align="start center">
@@ -64,9 +64,9 @@
   <mat-card-title>Paging with dynamic page size</mat-card-title>
   <mat-card-subtitle>Set a select to change the page size on the fly</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
         <p>Change Event: </p>
         <div>
@@ -86,9 +86,9 @@
         </md-select>
         <span>{{pagingBarPageSize.range}} <span hide-xs>of {{pagingBarPageSize.total}}</span></span>
       </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -120,17 +120,17 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Paging using page links</mat-card-title>
   <mat-card-subtitle>Navigate to pages with button links</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
         <mat-card-content>
           <p>Change Event: </p>
           <div>
@@ -144,9 +144,9 @@
         <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
           <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -171,17 +171,17 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Paging using input</mat-card-title>
   <mat-card-subtitle>Navigate to a specific page</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
         <p>Change Event: </p>
         <div>
@@ -206,9 +206,9 @@
         </mat-form-field>
         <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
       </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -244,17 +244,17 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Paging with everything</mat-card-title>
   <mat-card-subtitle>All the previous things + reponsiveness leveraging the `CovalentMediaModule`</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
           <p>Change Event: </p>
           <div>
@@ -290,9 +290,9 @@
           </mat-form-field>
           <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -351,8 +351,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <td-readme-loader resourceUrl="platform/core/paging/README.md"></td-readme-loader>

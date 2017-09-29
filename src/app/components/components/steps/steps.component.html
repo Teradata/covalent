@@ -4,9 +4,9 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h3 class="md-title">Basic Stepper</h3>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
           <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
             <mat-button-toggle matTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
@@ -39,9 +39,9 @@
             </ng-template>
           </td-step>
         </td-steps>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -100,8 +100,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>

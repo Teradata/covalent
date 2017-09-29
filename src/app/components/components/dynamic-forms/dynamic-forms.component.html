@@ -141,9 +141,9 @@
   <mat-card-content>
     <h3 class="md-title">Dynamic Text Elements</h3>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="textElements">
           <ng-template let-element ngFor [ngForOf]="textElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -154,9 +154,9 @@
             </ng-template>
           </ng-template>
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -176,17 +176,17 @@
         <td-highlight lang="typescript">
           {{textElements | json}}
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Dynamic Number Elements</h3>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="numberElements">
           <ng-template let-element ngFor [ngForOf]="numberElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -197,9 +197,9 @@
             </ng-template>
           </ng-template>
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -219,24 +219,24 @@
         <td-highlight lang="typescript">
           {{numberElements | json}}
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Dynamic Boolean Elements</h3>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div class="pad-sm">
           <td-dynamic-forms [elements]="booleanElements">
           </td-dynamic-forms>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -248,22 +248,22 @@
         <td-highlight lang="typescript">
           {{booleanElements | json}}
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Dynamic Array Elements</h3>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="arrayElements">
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -275,8 +275,8 @@
         <td-highlight lang="typescript">
           {{arrayElements | json}}
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 
@@ -284,14 +284,14 @@
   <mat-card-content>
     <h3 class="md-title">Dynamic File Input Element</h3>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="fileElements">
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -303,8 +303,8 @@
         <td-highlight lang="typescript">
           {{fileElements | json}}
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 
@@ -313,9 +313,9 @@
     <h3 class="md-title">Custom Validation</h3>
     <h4>Using custom validator functions to create your own</h4>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms [elements]="customValidationElements">
           <ng-template let-element ngFor [ngForOf]="customValidationElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
@@ -328,9 +328,9 @@
             </ng-template>
           </ng-template>
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -376,14 +376,14 @@
             }];
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
 
     <h4>Multiple Validators</h4>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
           <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
             <span *ngIf="control.touched || !control.pristine">
@@ -393,9 +393,9 @@
             </span>
           </ng-template>
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -438,14 +438,14 @@
             }];
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
 
     <h4>Angular Validators</h4>
     <mat-divider></mat-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-dynamic-forms #customValidateForm [elements]="angularValidators">
           <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
             <span *ngIf="control.touched || !control.pristine">
@@ -453,9 +453,9 @@
             </span>
           </ng-template>
         </td-dynamic-forms>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -481,8 +481,8 @@
             }];
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 

@@ -5,9 +5,9 @@
   <mat-card-content>
     <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
           <div layout="row">
             <mat-form-field flex>
@@ -23,9 +23,9 @@
         <div layout="row">
           <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -76,17 +76,17 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">[tdLoading] directive with template syntax</h3>
     <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
           <div layout="row">
             <mat-form-field flex>
@@ -102,9 +102,9 @@
         <div layout="row">
           <button mat-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -156,17 +156,17 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">[tdLoading] until star syntax with variable reference and observables</h3>
     <h4 class="md-subhead">with accent [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div *tdLoading="let items until listObservable | async; color: 'accent'">
           <mat-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
@@ -182,9 +182,9 @@
         <div layout="row">
           <button mat-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -224,17 +224,17 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">[tdLoading] until template syntax with booleans</h3>
     <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
           <div layout="row">
             <mat-form-field flex>
@@ -250,9 +250,9 @@
         <div class="pad-sm">
           <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -287,23 +287,23 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Preloaded [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
           <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -333,23 +333,23 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-content>
    <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
           <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -382,8 +382,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>

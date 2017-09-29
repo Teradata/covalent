@@ -74,18 +74,18 @@
           <div [tdToggle]="example1">
             <!-- View Source -->
             <div>
-              <md-tab-group md-stretch-tabs dynamicHeight>
-                <md-tab>
-                  <ng-template mdTabLabel>HTML</ng-template>
+              <mat-tab-group mat-stretch-tabs dynamicHeight>
+                <mat-tab>
+                  <ng-template matTabLabel>HTML</ng-template>
                     <td-highlight lang="html">
                       <![CDATA[
                           <button mat-raised-button color="warn" (click)="openAlert()">View Error</button>
                           <button mat-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
                         ]]>
                     </td-highlight>
-                </md-tab>
-                  <md-tab>
-                  <ng-template mdTabLabel>Typescript</ng-template>
+                </mat-tab>
+                  <mat-tab>
+                  <ng-template matTabLabel>Typescript</ng-template>
                     <td-highlight lang="typescript">
                       <![CDATA[
                           import { TdDialogService } from '@covalent/core';
@@ -115,8 +115,8 @@
                           }
                         ]]>
                     </td-highlight>
-                </md-tab>
-              </md-tab-group>
+                </mat-tab>
+              </mat-tab-group>
             </div>
             <mat-divider></mat-divider>
           </div>
@@ -149,17 +149,17 @@
           <div [tdToggle]="example2">
             <!-- View Source -->
             <div>
-              <md-tab-group md-stretch-tabs dynamicHeight>
-                <md-tab>
-                  <ng-template mdTabLabel>HTML</ng-template>
+              <mat-tab-group mat-stretch-tabs dynamicHeight>
+                <mat-tab>
+                  <ng-template matTabLabel>HTML</ng-template>
                     <td-highlight lang="html">
                       <![CDATA[
                         <button mat-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
                         ]]>
                     </td-highlight>
-                </md-tab>
-                  <md-tab>
-                  <ng-template mdTabLabel>Typescript</ng-template>
+                </mat-tab>
+                  <mat-tab>
+                  <ng-template matTabLabel>Typescript</ng-template>
                     <td-highlight lang="typescript">
                       <![CDATA[
                         import { MdSnackBar } from '@angular/material';
@@ -173,8 +173,8 @@
                         }
                       ]]>
                     </td-highlight>
-                </md-tab>
-              </md-tab-group>
+                </mat-tab>
+              </mat-tab-group>
             </div>
             <mat-divider></mat-divider>
           </div>

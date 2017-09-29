@@ -30,8 +30,8 @@
 <mat-card>
   <mat-card-title>CSS Icon (Font or SVG) Colors</mat-card-title>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab label="Default Colors">
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Default Colors">
       <mat-card-content>
         <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple tc utility class:</p>
         <td-highlight lang="html">
@@ -93,8 +93,8 @@
           </div>
         </div>
       </mat-card-content>
-    </md-tab>
-    <md-tab label="Dark Colors">
+    </mat-tab>
+    <mat-tab label="Dark Colors">
       <mat-card-content>
         <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple tc utility class:</p>
         <td-highlight lang="html">
@@ -136,16 +136,16 @@
           </div>
         </div>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">Search Icons</h3>
     <h4 class="md-subhead">Current icons bundled with Icon Service</h4>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="center center" class="md-padding">
           <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
         </div>
@@ -158,9 +158,9 @@
             </div>
           </div>
         </mat-card-content>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -202,8 +202,8 @@
             }
         ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 <mat-card>

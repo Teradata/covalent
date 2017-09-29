@@ -2,9 +2,9 @@
   <mat-card-title>Expansion panels</mat-card-title>
   <mat-card-subtitle>Use single or multiple expansion panels</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
         <div class="md-padding">
           <h3 class="md-subhead">md-padding class</h3>
@@ -23,9 +23,9 @@
           <div>Demo 8</div>
         </div>
       </td-expansion-panel>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -59,8 +59,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <div class="pad-sm">
@@ -75,9 +75,9 @@
   <mat-card-title>Grouped Expansion panels</mat-card-title>
   <mat-card-subtitle>Add margin animation between grouped expansion panels</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <td-expansion-panel-group>
         <td-expansion-panel label="Label goes here">
           <div class="md-padding">
@@ -95,9 +95,9 @@
           </div>
         </td-expansion-panel>
       </td-expansion-panel-group>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -122,17 +122,17 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Expansion panel with summary and templates</mat-card-title>
   <mat-card-subtitle>Expand to view form, collapse to view summary</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
       <td-expansion-panel [expand]="true">
         <ng-template td-expansion-panel-label>
           <mat-icon>star</mat-icon>
@@ -171,9 +171,9 @@
           <button mat-button class="text-upper">Cancel</button>
         </div>
       </td-expansion-panel>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -219,17 +219,17 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Expansion panel with header template</mat-card-title>
   <mat-card-subtitle>replace the entire header as needed and disable ripple</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <md-tab-group md-stretch-tabs dynamicHeight>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
         <td-expansion-panel disableRipple>
           <ng-template td-expansion-panel-header>
             <mat-toolbar color="accent">
@@ -271,9 +271,9 @@
             </mat-list-item>
           </mat-list>
         </td-expansion-panel>
-      </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
@@ -322,8 +322,8 @@
           ]]>
         </td-highlight>
       </mat-card-content>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <td-readme-loader resourceUrl="platform/core/expansion-panel/README.md"></td-readme-loader>

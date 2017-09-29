@@ -14,9 +14,9 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <div [tdToggle]="!toggleDemoCode">
-      <md-tab-group md-stretch-tabs dynamicHeight>
-        <md-tab>
-          <ng-template mdTabLabel>HTML</ng-template>
+      <mat-tab-group mat-stretch-tabs dynamicHeight>
+        <mat-tab>
+          <ng-template matTabLabel>HTML</ng-template>
           <td-highlight lang="html">
             <![CDATA[
               <mat-list>
@@ -37,9 +37,9 @@
               </mat-list>
             ]]>
           </td-highlight>
-        </md-tab>
-        <md-tab>
-          <ng-template mdTabLabel>TS</ng-template>
+        </mat-tab>
+        <mat-tab>
+          <ng-template matTabLabel>TS</ng-template>
           <td-highlight lang="typescript">
             <![CDATA[
               import { Component, OnInit } from '@angular/core';
@@ -56,8 +56,8 @@
               }
             ]]>
           </td-highlight>
-        </md-tab>
-      </md-tab-group>
+        </mat-tab>
+      </mat-tab-group>
       <mat-divider></mat-divider>
     </div>
     <mat-list>

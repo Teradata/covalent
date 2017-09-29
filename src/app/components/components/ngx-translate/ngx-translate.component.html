@@ -31,14 +31,14 @@
   <mat-card-subtitle>{{ 'DEMO_BASIC.SUBTITLE' | translate }}</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab [label]="'DEMO_TAB' | translate">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab [label]="'DEMO_TAB' | translate">
         <div layout="column" layout-padding>
           <h3>{{ 'DEMO_BASIC.PIPE_MESSAGE' | translate }}</h3>
           <h3 translate>DEMO_BASIC.DIRECTIVE_MESSAGE</h3>
         </div>
-      </md-tab>
-      <md-tab [label]="'CODE_TAB' | translate">
+      </mat-tab>
+      <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -90,8 +90,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
@@ -104,8 +104,8 @@
   <mat-card-subtitle>{{ 'DEMO_ONE.SUBTITLE' | translate }}</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab [label]="'DEMO_TAB' | translate">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab [label]="'DEMO_TAB' | translate">
         <div layout="row" layout-align="start center" layout-padding>
           <md-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
                       [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
@@ -122,8 +122,8 @@
             <ng-template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</ng-template>
           </div>
         </div>
-      </md-tab>
-      <md-tab [label]="'CODE_TAB' | translate">
+      </mat-tab>
+      <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -201,8 +201,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
@@ -215,8 +215,8 @@
   <mat-card-subtitle>{{ 'DEMO_TWO.SUBTITLE' | translate }}</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab [label]="'DEMO_TAB' | translate">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab [label]="'DEMO_TAB' | translate">
         <mat-list>
           <mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
@@ -231,8 +231,8 @@
             <span flex="50">{{dateToFormat | date:'medium'}}</span>
           </mat-list-item>
         </mat-list>
-      </md-tab>
-      <md-tab [label]="'CODE_TAB' | translate">
+      </mat-tab>
+      <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -288,8 +288,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
@@ -302,13 +302,13 @@
   <mat-card-subtitle>{{ 'DEMO_THREE.SUBTITLE' | translate }}</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab [label]="'DEMO_TAB' | translate">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab [label]="'DEMO_TAB' | translate">
         <div class="pad">
           <button mat-raised-button color="accent" (click)="openAlert()" class="text-upper">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
         </div>
-      </md-tab>
-      <md-tab [label]="'CODE_TAB' | translate">
+      </mat-tab>
+      <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -373,8 +373,8 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
