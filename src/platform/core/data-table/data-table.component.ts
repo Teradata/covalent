@@ -15,7 +15,7 @@ import { Subject } from 'rxjs/Subject';
 import { debounceTime } from 'rxjs/operator/debounceTime';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
-import { ITdDataTableSortChangeEvent } from './data-table-column/data-table-column.component';
+import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
 const noop: any = () => {
@@ -206,7 +206,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
 
   @ViewChild('scrollableDiv') _scrollableDiv: ElementRef;
 
-  @ViewChildren('columnElement', {read: ElementRef}) _colElements: QueryList<ElementRef>;
+  @ViewChildren('columnElement') _colElements: QueryList<TdDataTableColumnComponent>;
 
   @ViewChildren(TdDataTableRowComponent) _rows: QueryList<TdDataTableRowComponent>;
 
@@ -537,16 +537,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   getColumnWidth(index: number): number {
     if (this._widths[index]) {
       return this._widths[index].value;
-    }
-    return undefined;
-  }
-
-  /**
-   * Returns the width needed for the cells via index
-   */
-  getWidth(index: number): number {
-    if (this._colElements && this._colElements.toArray()[index]) {
-      return this._colElements.toArray()[index].nativeElement.getBoundingClientRect().width;
     }
     return undefined;
   }
@@ -885,7 +875,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _calculateWidths(): void {
     if (this._colElements && this._colElements.length) {
       this._widths = [];
-      this._colElements.forEach((col: ElementRef, index: number) => {
+      this._colElements.forEach((col: TdDataTableColumnComponent, index: number) => {
         this._adjustColumnWidth(index, this._calculateWidth());
       });
       this._adjustColumnWidhts();
@@ -968,9 +958,11 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         this._widths[index].limit = true;
       }
     }
-    // if there wasnt any width provided, we set a min of 100px
-    if (this._widths[index].value < 100) {
-      this._widths[index].value = 100;
+    // if there wasnt any width or min width provided, we set a min to what the column width min should be
+    if (!this._widths[index].limit &&
+        !(this.columns[index].width && (<ITdDataTableColumnWidth>this.columns[index].width).min) &&
+        this._widths[index].value < this._colElements.toArray()[index].projectedWidth) {
+      this._widths[index].value = this._colElements.toArray()[index].projectedWidth;
       this._widths[index].min = true;
       this._widths[index].limit = false;
     }
