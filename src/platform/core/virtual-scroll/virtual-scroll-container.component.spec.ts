@@ -77,6 +77,36 @@ describe('Component: VirtualScrollContainer', () => {
       });
     });
   });
+
+  it('should render rows, clear them and render them again', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
+
+    component.height = 100;
+    let data: any[] = component.data;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+        expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(6);
+        component.data = [];
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+          expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(0);
+          component.data = data;
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+            expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(6);
+            done();
+          });
+        });
+      });
+    });
+  });
 });
 
 @Component({
