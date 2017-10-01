@@ -41,4 +41,22 @@ export class InternalDocsService {
     });
   }
 
+  queryData(): Observable<any[]> {
+    return new Observable<ITemplate[]>((subscriber: Subscriber<ITemplate[]>) => {
+      this._http.get(INTERNAL_DOCS_URL + '/data.json').subscribe((response: Response) => {
+        let data: ITemplate[];
+        try {
+          data = response.json();
+        } catch (e) {
+          data = [];
+          subscriber.error();
+        }
+        subscriber.next(data);
+        subscriber.complete();
+      }, (error: any) => {
+        subscriber.error();
+      });
+    });
+  }
+
 }
