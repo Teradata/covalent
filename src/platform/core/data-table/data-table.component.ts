@@ -73,6 +73,8 @@ export interface IInternalColumnWidth {
   max?: boolean;
 }
 
+const TD_VIRTUAL_OFFSET: number = 2;
+
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-data-table',
@@ -103,74 +105,46 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _verticalScrollSubs: Subscription;
   private _horizontalScrollSubs: Subscription;
   private _scrollHorizontalOffset: number = 0;
-  private _scrollVerticalOffset: number = 0;
-  private _hostHeight: number = 0;
 
   private _onHorizontalScroll: Subject<number> = new Subject<number>();
   private _onVerticalScroll: Subject<number> = new Subject<number>();
 
-  /**
-   * Returns the height of the row
-   * For now we assume thats 49px.
-   */
-  get rowHeight(): number {
-    return 49;
-  }
+  private _rowHeightCache: number[] = [];
+  private _totalHeight: number = 0;
+  private _hostHeight: number = 0;
+  private _scrollVerticalOffset: number = 0;
+  private _offsetTransform: SafeStyle;
 
-  /**
-   * Returns the number of rows that are rendered outside the viewport.
-   */
-  get offsetRows(): number {
-    return 2;
-  }
+  private _fromRow: number = 0;
+  private _toRow: number = 0;
 
   /**
    * Returns the offset style with a proper calculation on how much it should move
    * over the y axis of the total height
    */
   get offsetTransform(): SafeStyle {
-    let offset: number = 0;
-    if (this._scrollVerticalOffset > (this.offsetRows * this.rowHeight)) {
-      offset = this.fromRow * this.rowHeight;
-    }
-    return this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
+    return this._offsetTransform;
   }
 
   /**
    * Returns the assumed total height of the rows
    */
   get totalHeight(): number {
-    if (this._data) {
-      return this._data.length * this.rowHeight;
-    }
-    return 0;
+    return this._totalHeight;
   }
 
   /**
    * Returns the initial row to render in the viewport
    */
   get fromRow(): number {
-    if (this._data) {
-      // we calculate how many rows would have been scrolled minus an offset
-      let fromRow: number = Math.floor((this._scrollVerticalOffset / this.rowHeight)) - this.offsetRows;
-      return fromRow > 0 ? fromRow : 0;
-    }
-    return 0;
+    return this._fromRow;
   }
 
   /**
    * Returns the last row to render in the viewport
    */
   get toRow(): number {
-    if (this._data) {
-      // we calculate how many rows would fit in the viewport and add an offset
-      let toRow: number = Math.floor((this._hostHeight / this.rowHeight)) + this.fromRow + (this.offsetRows * 2);
-      if (toRow > this._data.length) {
-        toRow = this._data.length;
-      }
-      return toRow;
-    }
-    return 0;
+    return this._toRow;
   }
 
   /**
@@ -182,6 +156,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
 
   /** internal attributes */
   private _data: any[];
+  private _virtualData: any[];
   private _columns: ITdDataTableColumn[];
   private _selectable: boolean = false;
   private _clickable: boolean = false;
@@ -251,6 +226,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   @Input('data')
   set data(data: any[]) {
     this._data = data;
+    this._rowHeightCache = [];
     Promise.resolve().then(() => {
       this.refresh();
       // scroll back to the top if the data has changed
@@ -259,6 +235,10 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   }
   get data(): any[] {
     return this._data;
+  }
+
+  get virtualData(): any[] {
+    return this._virtualData;
   }
 
   /**
@@ -434,8 +414,14 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   ngOnInit(): void {
     // initialize observable for resize calculations
-    this._resizeSubs = debounceTime.call(this._onResize.asObservable(), 10).subscribe(() => {
+    this._resizeSubs = this._onResize.asObservable().subscribe(() => {
+      if (this._rows) {
+        this._rows.toArray().forEach((row: TdDataTableRowComponent, index: number) => {
+          this._rowHeightCache[this.fromRow + index] = row.height + 1;
+        });
+      }
       this._calculateWidths();
+      this._calculateVirtualRows();
     });
     // initialize observable for scroll column header reposition
     this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
@@ -447,6 +433,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     this._verticalScrollSubs = this._onVerticalScroll.asObservable()
       .subscribe((verticalScroll: number) => {
       this._scrollVerticalOffset = verticalScroll;
+      this._calculateVirtualRows();
       this._changeDetectorRef.markForCheck();
     });
   }
@@ -480,6 +467,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // if the height of the viewport has changed, then we mark for check
       if (this._hostHeight !== newHostHeight) {
         this._hostHeight = newHostHeight;
+        this._calculateVirtualRows();
         this._changeDetectorRef.markForCheck();
       }
     }
@@ -493,6 +481,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     this._rowsChangedSubs = debounceTime.call(this._rows.changes, 0).subscribe(() => {
       this._onResize.next();
     });
+    this._calculateVirtualRows();
   }
 
   /**
@@ -576,6 +565,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * Refreshes data table and rerenders [data] and [columns]
    */
   refresh(): void {
+    this._calculateVirtualRows();
     this._calculateWidths();
     this._calculateCheckboxState();
     this._changeDetectorRef.markForCheck();
@@ -755,17 +745,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       case UP_ARROW:
         /**
          * if users presses the up arrow, we focus the prev row
-         * unless its the first row, then we move to the last row
+         * unless its the first row
          */
-        if (index === 0) {
-          if (!event.shiftKey) {
-            this._scrollableDiv.nativeElement.scrollTop = this.totalHeight;
-            let subs: Subscription = this._rows.changes.subscribe(() => {
-              subs.unsubscribe();
-              this._rows.toArray()[this._rows.toArray().length - 1].focus();
-            });
-          }
-        } else {
+        if (index > 0) {
           this._rows.toArray()[index - 1].focus();
         }
         this.blockEvent(event);
@@ -776,17 +758,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       case DOWN_ARROW:
         /**
          * if users presses the down arrow, we focus the next row
-         * unless its the last row, then we move to the first row
+         * unless its the last row
          */
-        if (index === (this._rows.toArray().length - 1)) {
-          if (!event.shiftKey) {
-            this._scrollableDiv.nativeElement.scrollTop = 0;
-            let subs: Subscription = this._rows.changes.subscribe(() => {
-              subs.unsubscribe();
-              this._rows.toArray()[0].focus();
-            });
-          }
-        } else {
+        if (index < (this._rows.toArray().length - 1)) {
           this._rows.toArray()[index + 1].focus();
         }
         this.blockEvent(event);
@@ -982,5 +956,69 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _calculateWidth(): number {
     let renderedColumns: ITdDataTableColumn[] = this.columns.filter((col: ITdDataTableColumn) => !col.hidden);
     return Math.floor(this.hostWidth / renderedColumns.length);
+  }
+
+  /**
+   * Method to calculate the rows to be rendered in the viewport
+   */
+  private _calculateVirtualRows(): void {
+    let scrolledRows: number = 0;
+    if (this._data) {
+      this._totalHeight = 0;
+      let rowHeightSum: number = 0;
+      // loop through all rows to see if we have their height cached
+      // and sum them all to calculate the total height
+      this._data.forEach((d: any, index: number) => {
+        if (!this._rowHeightCache[index]) {
+          this._rowHeightCache[index] = this._rowHeightCache[0] || 48;
+        }
+        rowHeightSum += this._rowHeightCache[index];
+        // check how many rows have been scrolled
+        if (this._scrollVerticalOffset - rowHeightSum > 0) {
+          scrolledRows++;
+        }
+      });
+      this._totalHeight = rowHeightSum;
+      let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
+      this._fromRow = fromRow > 0 ? fromRow : 0;
+      
+      let hostHeight: number = this._hostHeight;
+      let index: number = 0;
+      // calculate how many rows can fit in the viewport
+      while (hostHeight > 0) {
+        hostHeight -= this._rowHeightCache[this.fromRow + index];
+        index++;
+      }
+      let range: number = (index - 1) + (TD_VIRTUAL_OFFSET * 2);
+      let toRow: number = range + this.fromRow;
+      if (isFinite(toRow) && toRow > this._data.length) {
+        toRow = this._data.length;
+      } else if (!isFinite(toRow)) {
+        toRow = TD_VIRTUAL_OFFSET;
+      }
+      this._toRow = toRow;
+    } else {
+      this._totalHeight = 0;
+      this._fromRow = 0;
+      this._toRow = 0;
+    }
+  
+    let offset: number = 0;
+    // calculate the proper offset depending on how many rows have been scrolled
+    if (scrolledRows > TD_VIRTUAL_OFFSET) {
+      for (let index: number = 0; index < this.fromRow; index++) {
+        offset += this._rowHeightCache[index];
+      }
+    }
+
+    this._offsetTransform = this._domSanitizer.bypassSecurityTrustStyle('translateY(' + (offset - this.totalHeight) + 'px)');
+    if (this._data) {
+      this._virtualData = this.data.slice(this.fromRow, this.toRow);
+    }
+    // mark for check at the end of the queue so we are sure
+    // that the changes will be marked
+    Promise.resolve().then(() => {
+      this._changeDetectorRef.markForCheck();
+    });
   }
 }
