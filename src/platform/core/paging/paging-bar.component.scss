@@ -1,27 +1,27 @@
 :host {
   display: block;
-}
-.td-paging-bar {
-  height: 48px;
-  /deep/ > * {
-    margin: 0 10px;
-  }
-}
-[mat-icon-button] {
-  font-size: 12px;
-  font-weight: normal;
-}
-/deep/ mat-select { 
-  &.mat-select {
-    padding-top: 0px;
-  }
-  & {  
-    .mat-select-trigger {
-      min-width: 44px;
-      font-size: 12px;
+  .td-paging-bar {
+    height: 48px;
+    /deep/ > * {
+      margin: 0 10px;
     }
-    .mat-select-underline {
-      display: none;
+    [mat-icon-button] {
+      font-size: 12px;
+      font-weight: normal;
+    }
+    /deep/ mat-select { 
+      &.mat-select {
+        padding-top: 0px;
+      }
+      & {  
+        .mat-select-trigger {
+          min-width: 44px;
+          font-size: 12px;
+        }
+        .mat-select-underline {
+          display: none;
+        }
+      }
     }
   }
 }
