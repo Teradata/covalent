@@ -63,8 +63,8 @@
           [numeric]="column.numeric"
           [hidden]="column.hidden"
           *ngFor="let column of columns; let i = index"
-          [style.min-width.px]="getWidth(i)"
-          [style.max-width.px]="getWidth(i)">
+          [style.min-width.px]="getColumnWidth(i)"
+          [style.max-width.px]="getColumnWidth(i)">
         <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
         <ng-template
           *ngIf="getTemplateRef(column.name)"

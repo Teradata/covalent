@@ -38,6 +38,7 @@ table.td-data-table {
 
   td.mat-checkbox-cell,
   th.mat-checkbox-column {
+    min-width: 42px;
     width: 42px;
     font-size: 0 !important;
     md-pseudo-checkbox {
