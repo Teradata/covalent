@@ -841,10 +841,10 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   private _doSelection(row: any): boolean {
     let wasSelected: boolean = this.isRowSelected(row);
-    if (!this._multiple) {
-      this.clearModel();
-    }
     if (!wasSelected) {
+      if (!this._multiple) {
+        this.clearModel();
+      }
       this._value.push(row);
     } else {
       // compare items by [compareWith] function
