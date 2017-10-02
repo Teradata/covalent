@@ -43,7 +43,7 @@
         #dtRow
         [tabIndex]="selectable ? 0 : -1"
         [selected]="(clickable || selectable) && isRowSelected(row)"
-        *ngFor="let row of data | slice:fromRow:toRow; let rowIndex = index"
+        *ngFor="let row of virtualData; let rowIndex = index"
         (click)="handleRowClick(row, $event)"
         (keyup)="selectable && _rowKeyup($event, row, rowIndex)"
         (keydown.space)="blockEvent($event)"
