@@ -7,6 +7,10 @@ import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
+import { InternalDocsService } from '../../../services';
+
+import { toPromise } from 'rxjs/operator/toPromise';
+
 const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
@@ -78,167 +82,41 @@ export class DataTableDemoComponent implements OnInit {
   }];
 
   configWidthColumns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', width: 300 },
-    { name: 'type', label: 'Type', width: { min: 150, max: 250 } },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT},
-    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT},
+    { name: 'first_name',  label: 'First name', width: 150 },
+    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
+    { name: 'gender', label: 'Gender'},
+    { name: 'email', label: 'Email', width: 250},
+    { name: 'img', label: '', width: 100},
   ];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'name',  label: 'Dessert (100g serving)', sortable: true, width: 200 },
-    { name: 'type', label: 'Type', filter: true },
-    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
-    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
-    { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
-    { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
-    { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
+    { name: 'last_name', label: 'Last Name', filter: true },
+    { name: 'gender', label: 'Gender', hidden: false },
+    { name: 'email', label: 'Email', sortable: true, width: 250 },
+    { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];
 
-  data: any[] = [
-    {
-        'id': 1,
-        'name': 'Frozen yogurt',
-        'type': 'Ice cream',
-        'calories': 159.0,
-        'fat': 6.0,
-        'carbs': 24.0,
-        'protein': 4.0,
-        'sodium': 87.0,
-        'calcium': 14.0,
-        'iron': 1.0,
-        'comments': 'I love froyo!',
-      }, {
-        'id': 2,
-        'name': 'Ice cream sandwich',
-        'type': 'Ice cream',
-        'calories': 237.0,
-        'fat': 9.0,
-        'carbs': 37.0,
-        'protein': 4.3,
-        'sodium': 129.0,
-        'calcium': 8.0,
-        'iron': 1.0,
-      }, {
-        'id': 3,
-        'name': 'Eclair',
-        'type': 'Pastry',
-        'calories':  262.0,
-        'fat': 16.0,
-        'carbs': 24.0,
-        'protein':  6.0,
-        'sodium': 337.0,
-        'calcium':  6.0,
-        'iron': 7.0,
-      }, {
-        'id': 4,
-        'name': 'Cupcake',
-        'type': 'Pastry',
-        'calories':  305.0,
-        'fat': 3.7,
-        'carbs': 67.0,
-        'protein': 4.3,
-        'sodium': 413.0,
-        'calcium': 3.0,
-        'iron': 8.0,
-      }, {
-        'id': 5,
-        'name': 'Jelly bean',
-        'type': 'Candy',
-        'calories':  375.0,
-        'fat': 0.0,
-        'carbs': 94.0,
-        'protein': 0.0,
-        'sodium': 50.0,
-        'calcium': 0.0,
-        'iron': 0.0,
-      }, {
-        'id': 6,
-        'name': 'Lollipop',
-        'type': 'Candy',
-        'calories': 392.0,
-        'fat': 0.2,
-        'carbs': 98.0,
-        'protein': 0.0,
-        'sodium': 38.0,
-        'calcium': 0.0,
-        'iron': 2.0,
-      }, {
-        'id': 7,
-        'name': 'Honeycomb',
-        'type': 'Other',
-        'calories': 408.0,
-        'fat': 3.2,
-        'carbs': 87.0,
-        'protein': 6.5,
-        'sodium': 562.0,
-        'calcium': 0.0,
-        'iron': 45.0,
-      }, {
-        'id': 8,
-        'name': 'Donut',
-        'type': 'Pastry',
-        'calories': 452.0,
-        'fat': 25.0,
-        'carbs': 51.0,
-        'protein': 4.9,
-        'sodium': 326.0,
-        'calcium': 2.0,
-        'iron': 22.0,
-      }, {
-        'id': 9,
-        'name': 'KitKat',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
-      }, {
-        'id': 10,
-        'name': 'Chocolate',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
-      }, {
-        'id': 11,
-        'name': 'Chamoy',
-        'type': 'Candy',
-        'calories': 518.0,
-        'fat': 26.0,
-        'carbs': 65.0,
-        'protein': 7.0,
-        'sodium': 54.0,
-        'calcium': 12.0,
-        'iron': 6.0,
-      },
-    ];
-  basicData: any[] = this.data.slice(0, 4);
+  data: any[];
+  basicData: any[];
   selectable: boolean = true;
   clickable: boolean = false;
   multiple: boolean = true;
   filterColumn: boolean = true;
 
-  filteredData: any[] = this.data;
-  filteredTotal: number = this.data.length;
+  filteredData: any[];
+  filteredTotal: number ;
   selectedRows: any[] = [];
 
   searchTerm: string = '';
   fromRow: number = 1;
   currentPage: number = 1;
-  pageSize: number = 10;
-  sortBy: string = 'name';
+  pageSize: number = 50;
+  sortBy: string = 'first_name';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
+              private _internalDocsService: InternalDocsService,
               private _dialogService: TdDialogService) {}
 
   openPrompt(row: any, name: string): void {
@@ -252,7 +130,9 @@ export class DataTableDemoComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.data = await toPromise.call(this._internalDocsService.queryData());
+    this.basicData = this.data.slice(0, 10);
     this.filter();
   }
 

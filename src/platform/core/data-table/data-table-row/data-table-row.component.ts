@@ -40,6 +40,14 @@ export class TdDataTableRowComponent {
     return this._selected;
   }
 
+  get height(): number {
+    let height: number = 48;
+    if (this._elementRef.nativeElement) {
+      height = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height;
+    }
+    return height;
+  }
+
   constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-data-table-row');
   }
