@@ -73,7 +73,15 @@ export interface IInternalColumnWidth {
   max?: boolean;
 }
 
+/**
+ * Constant to set the rows offset before and after the viewport
+ */
 const TD_VIRTUAL_OFFSET: number = 2;
+
+/**
+ * Constant to set default row height if none is provided
+ */
+const TD_VIRTUAL_DEFAULT_ROW_HEIGHT: number = 48;
 
 @Component({
   providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
@@ -109,12 +117,18 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _onHorizontalScroll: Subject<number> = new Subject<number>();
   private _onVerticalScroll: Subject<number> = new Subject<number>();
 
+  // Array of cached row heights to allow dynamic row heights
   private _rowHeightCache: number[] = [];
+  // Total pseudo height of all the elements
   private _totalHeight: number = 0;
+  // Total host height for the viewport
   private _hostHeight: number = 0;
+  // Scrolled vertical pixels
   private _scrollVerticalOffset: number = 0;
+  // Style to move the content a certain offset depending on scrolled offset
   private _offsetTransform: SafeStyle;
 
+  // Variables that set from and to which rows will be rendered
   private _fromRow: number = 0;
   private _toRow: number = 0;
 
@@ -156,6 +170,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
 
   /** internal attributes */
   private _data: any[];
+  // data virtually iterated by component
   private _virtualData: any[];
   private _columns: ITdDataTableColumn[];
   private _selectable: boolean = false;
@@ -201,7 +216,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
 
   /**
    * Returns true if all values are not deselected
-   * and atleast one is.
+   * and at least one is.
    */
   get indeterminate(): boolean {
     return this._indeterminate;
@@ -969,8 +984,10 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // loop through all rows to see if we have their height cached
       // and sum them all to calculate the total height
       this._data.forEach((d: any, index: number) => {
+        // iterate through all rows at first and assume all
+        // rows are the same height as the first one
         if (!this._rowHeightCache[index]) {
-          this._rowHeightCache[index] = this._rowHeightCache[0] || 48;
+          this._rowHeightCache[index] = this._rowHeightCache[0] || TD_VIRTUAL_DEFAULT_ROW_HEIGHT;
         }
         rowHeightSum += this._rowHeightCache[index];
         // check how many rows have been scrolled
@@ -979,6 +996,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         }
       });
       this._totalHeight = rowHeightSum;
+      // set the initial row to be rendered taking into account the row offset
       let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
       
@@ -989,8 +1007,10 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         hostHeight -= this._rowHeightCache[this.fromRow + index];
         index++;
       }
+      // set the last row to be rendered taking into account the row offset
       let range: number = (index - 1) + (TD_VIRTUAL_OFFSET * 2);
       let toRow: number = range + this.fromRow;
+      // if last row is greater than the total length, then we use the total length
       if (isFinite(toRow) && toRow > this._data.length) {
         toRow = this._data.length;
       } else if (!isFinite(toRow)) {
