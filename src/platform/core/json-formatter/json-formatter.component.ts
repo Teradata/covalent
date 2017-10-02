@@ -137,6 +137,8 @@ export class TdJsonFormatterComponent {
       return value.toString()
           .replace(/[\r\n]/g, '')
           .replace(/\{.*\}/, '') + '{…}';
+    } else if (Array.isArray(value)) {
+      return this.getObjectName() + ' [' + value.length + ']';
     }
     return value;
   }
@@ -149,6 +151,9 @@ export class TdJsonFormatterComponent {
     if (typeof object === 'object') {
       if (!object) {
         return 'null';
+      }
+      if (Array.isArray(object)) {
+        return 'object';
       }
       let date: Date = new Date(object);
       if (Object.prototype.toString.call(date) === '[object Date]') {
