@@ -41,7 +41,7 @@ table.td-data-table {
     min-width: 42px;
     width: 42px;
     font-size: 0 !important;
-    md-pseudo-checkbox {
+    mat-pseudo-checkbox {
       width: $checkbox-size;
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {
@@ -49,7 +49,7 @@ table.td-data-table {
         height: 4px !important;
       }
     }
-    md-checkbox {
+    mat-checkbox {
       /deep/ .mat-checkbox-inner-container {
         width: $checkbox-size;
         height: $checkbox-size;

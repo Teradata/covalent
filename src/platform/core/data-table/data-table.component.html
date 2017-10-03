@@ -3,7 +3,7 @@
         [class.mat-selectable]="selectable">
   <tr td-data-table-column-row>
     <th td-data-table-column class="mat-checkbox-column" *ngIf="selectable">
-      <md-checkbox
+      <mat-checkbox
         #checkBoxAll
         *ngIf="multiple"
         [disabled]="!hasData"
@@ -13,7 +13,7 @@
         (keyup.enter)="selectAll(!checkBoxAll.checked)"
         (keyup.space)="selectAll(!checkBoxAll.checked)"
         (keydown.space)="blockEvent($event)">
-      </md-checkbox>
+      </mat-checkbox>
     </th>
     <th td-data-table-column
         #columnElement
@@ -27,7 +27,7 @@
         [sortOrder]="sortOrderEnum"
         [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
-        <span [mdTooltip]="column.tooltip">{{column.label}}</span>
+        <span [matTooltip]="column.tooltip">{{column.label}}</span>
     </th>
   </tr>
 </table>
@@ -51,13 +51,13 @@
         (keydown.shift)="disableTextSelection()"
         (keyup.shift)="enableTextSelection()">
       <td td-data-table-cell class="mat-checkbox-cell" *ngIf="selectable">
-        <md-pseudo-checkbox
+        <mat-pseudo-checkbox
           [state]="dtRow.selected ? 'checked' : 'unchecked'"
           (mousedown)="disableTextSelection()"
           (mouseup)="enableTextSelection()"
           stopRowClick
           (click)="select(row, $event, fromRow + rowIndex)">
-        </md-pseudo-checkbox>
+        </mat-pseudo-checkbox>
       </td>
       <td td-data-table-cell
           [numeric]="column.numeric"

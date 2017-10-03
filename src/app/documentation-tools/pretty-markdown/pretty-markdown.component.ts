@@ -2,7 +2,7 @@ import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer2, Secu
          ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { MdCheckbox } from '@angular/material';
+import { MatCheckbox } from '@angular/material';
 import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent } from '@covalent/markdown';
 import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core';
@@ -119,13 +119,13 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
 
   private _replaceCheckbox(markdown: string): string {
     let checkboxRegExp: RegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
-    return this._replaceComponent(markdown, MdCheckbox, checkboxRegExp,
-                                  (componentRef: ComponentRef<MdCheckbox>, match: string, checked: string, label: string) => {
+    return this._replaceComponent(markdown, MatCheckbox, checkboxRegExp,
+                                  (componentRef: ComponentRef<MatCheckbox>, match: string, checked: string, label: string) => {
       componentRef.instance.checked = !!checked.trim();
       componentRef.instance.disabled = true;
       componentRef.instance.labelPosition = 'after';
       this._renderer.setProperty((<HTMLElement>componentRef.instance._inputElement.nativeElement)
-                                        .getElementsByClassName('md-checkbox-label')[0], 'innerHTML', label);
+                                        .getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
     });
   }
 

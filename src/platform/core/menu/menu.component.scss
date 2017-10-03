@@ -9,12 +9,12 @@ $td-menu-spacing: 8px !default;
     padding: $td-menu-spacing;
     text-align: center;
   }
-  md-list,
-  md-list[dense],
-  md-nav-list,
-  md-nav-list[dense], {
-    a[md-list-item].mat-2-line .mat-list-item-content,
-    md-list-item.mat-2-line .mat-list-item-content {
+  mat-list,
+  mat-list[dense],
+  mat-nav-list,
+  mat-nav-list[dense], {
+    a[mat-list-item].mat-2-line .mat-list-item-content,
+    mat-list-item.mat-2-line .mat-list-item-content {
       height: auto;
       padding: $td-menu-spacing;
       .mat-list-text {
@@ -24,7 +24,7 @@ $td-menu-spacing: 8px !default;
           padding-right: 16px;
         }
       }
-      [mdLine] + [mdLine] {
+      [matLine] + [matLine] {
         margin-top: $td-menu-spacing / 2;
       }
     }

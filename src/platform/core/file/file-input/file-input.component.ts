@@ -64,7 +64,7 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements Contr
 
   /**
    * color?: string
-   * Sets button color. Uses same color palette accepted as [mdButton].
+   * Sets button color. Uses same color palette accepted as [MatButton].
    */
   @Input('color') color: string;
 

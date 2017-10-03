@@ -37,9 +37,9 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdMenuModule, MdInputModule, MdButtonToggleModule, MdSlideToggleModule,
-         MdSelectModule, MdToolbarModule, MdTabsModule, MdTooltipModule, MdCoreModule, MdAutocompleteModule,
-         MdProgressBarModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+         MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
+         MatProgressBarModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -92,21 +92,20 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CommonModule,
     FormsModule,
     /** Material Modules */
-    MdCoreModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule,
-    MdCardModule,
-    MdMenuModule,
-    MdInputModule,
-    MdSelectModule,
-    MdButtonToggleModule,
-    MdSlideToggleModule,
-    MdToolbarModule,
-    MdTabsModule,
-    MdTooltipModule,
-    MdProgressBarModule,
-    MdAutocompleteModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatMenuModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatProgressBarModule,
+    MatAutocompleteModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,

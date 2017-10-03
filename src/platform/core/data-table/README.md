@@ -81,7 +81,7 @@ Example for HTML usage:
   <ng-template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
     <div layout="row">
       <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
-      <md-icon>star</md-icon>
+      <mat-icon>star</mat-icon>
     </div>
   </ng-template>
 </td-data-table>

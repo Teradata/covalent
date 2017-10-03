@@ -9,10 +9,10 @@ $step-circle: 24px;
   .td-step-header-content {
     height: 72px;
   }
-  md-icon.td-edit-icon {
+  mat-icon.td-edit-icon {
     margin: 0 8px;
   }
-  md-icon {
+  mat-icon {
     &.mat-warn {
       font-size: $step-circle;
       height: $step-circle;
@@ -34,13 +34,13 @@ $step-circle: 24px;
     border-radius: 99%;
     text-align: center;
     flex: none;
-    & md-icon {
+    & mat-icon {
       margin-top: 2px;
       font-weight: bold;
     }
   }
   .td-triangle {
-    & > md-icon {
+    & > mat-icon {
       font-size: 25px;
     }
   }

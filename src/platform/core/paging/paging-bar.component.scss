@@ -5,22 +5,22 @@
     /deep/ > * {
       margin: 0 10px;
     }
-  }
-  [md-icon-button] {
-    font-size: 12px;
-    font-weight: normal;
-  }
-  /deep/ md-select { 
-    &.mat-select {
-      padding-top: 0px;
+    [mat-icon-button] {
+      font-size: 12px;
+      font-weight: normal;
     }
-    & {  
-      .mat-select-trigger {
-        min-width: 44px;
-        font-size: 12px;
+    /deep/ mat-select { 
+      &.mat-select {
+        padding-top: 0px;
       }
-      .mat-select-underline {
-        display: none;
+      & {  
+        .mat-select-trigger {
+          min-width: 44px;
+          font-size: 12px;
+        }
+        .mat-select-underline {
+          display: none;
+        }
       }
     }
   }

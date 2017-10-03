@@ -39,7 +39,7 @@ $md-font-url: './' !default;
 }
 
 // Ensure our size prevails over material
-md-icon.material-icons {
+mat-icon.material-icons {
     &,&.mat-icon {
         width: 1em;
         height: 1em;

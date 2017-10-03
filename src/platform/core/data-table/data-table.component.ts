@@ -92,7 +92,7 @@ const TD_VIRTUAL_DEFAULT_ROW_HEIGHT: number = 48;
 })
 export class TdDataTableComponent implements ControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
 
-  /** reponsive width calculations */
+  /** responsive width calculations */
   private _resizeSubs: Subscription;
   private _rowsChangedSubs: Subscription;
   private _hostWidth: number = 0;

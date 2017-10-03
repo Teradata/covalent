@@ -1,19 +1,19 @@
 <span #columnContent class="td-data-table-heading">
-  <md-icon 
+  <mat-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && numeric"
     [class.mat-asc]="(!(active) || isAscending())"
     [class.mat-desc]="(active && isDescending())">
     arrow_upward
-  </md-icon>
+  </mat-icon>
   <span>
     <ng-content></ng-content>
   </span>
-  <md-icon 
+  <mat-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && !numeric"
     [class.mat-asc]="(!(active) || isAscending())"
     [class.mat-desc]="(active && isDescending())">
     arrow_upward
-  </md-icon>
+  </mat-icon>
 </span>

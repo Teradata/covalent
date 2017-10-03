@@ -1,6 +1,6 @@
 <div>
   <div *ngIf="!files">
-    <button md-raised-button
+    <button mat-raised-button
             class="td-file-browse"
             type="button"
             [color]="defaultColor" 
@@ -11,7 +11,7 @@
             (fileDrop)="files = $event"
             tdFileDrop> 
       <label>   
-        <md-icon>attachment</md-icon>Choose a File...
+        <mat-icon>attachment</mat-icon>Choose a File...
       </label>
     </button>
     <input #fileBrowse 
@@ -26,7 +26,7 @@
   <div *ngIf="files" layout="row">
     <button #fileUpload
             class="td-file-upload"
-            md-raised-button
+            mat-raised-button
             type="button"
             [color]="activeColor"
             (keyup.delete)="cancel()"
@@ -34,16 +34,16 @@
             (keyup.escape)="cancel()"
             (click)="uploadPressed()">
       <label>   
-        <md-icon>file_upload</md-icon>
+        <mat-icon>file_upload</mat-icon>
         {{ files.name || files.length }} <span *ngIf="files.length">files selected</span> 
       </label>
     </button>
-    <button md-icon-button
+    <button mat-icon-button
             type="button"
             class="td-file-cancel"
             [color]="cancelColor"            
             (click)="cancel()">
-      <md-icon>cancel</md-icon>
+      <mat-icon>cancel</mat-icon>
     </button>
   </div>
 </div>

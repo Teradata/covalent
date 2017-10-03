@@ -1,14 +1,14 @@
-<md-card>
-  <md-card-title>Data Table</md-card-title>
-  <md-card-subtitle>Display sets of raw data</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Data Table</mat-card-title>
+  <mat-card-subtitle>Display sets of raw data</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
             <thead>
@@ -19,7 +19,7 @@
                   {{column.label}}
                 </th>
                 <th td-data-table-column>
-                  <md-icon>comment</md-icon>
+                  <mat-icon>comment</mat-icon>
                   <span>Comments</span>
                 </th>
               </tr>
@@ -30,15 +30,15 @@
                   {{column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
+                  <button mat-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -51,7 +51,7 @@
                     { {column.label}}
                   </th>
                   <th td-data-table-column>
-                    <md-icon>comment</md-icon>
+                    <mat-icon>comment</mat-icon>
                     <span>Comments</span>
                   </th>
                 </tr>
@@ -62,7 +62,7 @@
                     { {column.format ? column.format(row[column.name]) : row[column.name]}}
                   </td>
                   <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                    <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
+                    <button mat-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                   </td>
                 </tr>
               </tbody>
@@ -107,18 +107,18 @@
         <p>Data:</p>
         <td-highlight lang="json" [content]="basicData | json">
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Basic Data Table</h3>
     <h4 class="md-subhead">with formatting, configurable width columns and templates</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="configWidthColumns">
@@ -126,9 +126,9 @@
             <img [src]="value"/>
           </ng-template>
         </td-data-table>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -155,7 +155,7 @@
                 { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
                 { name: 'gender', label: 'Gender'},
                 { name: 'email', label: 'Email', width: 250},
-                { name: 'img', label: 'Avatar', width: 50},
+                { name: 'img', label: '', width: 100},
               ];
 
               basicData: any[] = [...]; // see data json
@@ -165,18 +165,18 @@
         <p>Data:</p>
         <td-highlight lang="json" [content]="basicData | json">
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
@@ -184,11 +184,11 @@
           </span>
           <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
           </td-search-box>
-          <button md-icon-button>
-            <md-icon>more_vert</md-icon>
+          <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
           </button>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-data-table
           #dataTable
           [data]="filteredData"
@@ -209,16 +209,16 @@
         </div>
         <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
           <span hide-xs>Rows per page:</span>
-          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-            <md-option *ngFor="let size of [50,100,200,500]" [value]="size">
+          <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+            <mat-option *ngFor="let size of [50,100,200,500]" [value]="size">
               {{size}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
           {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
         </td-paging-bar>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -233,7 +233,7 @@
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
               </td-search-box>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <td-data-table
               #dataTable
               [data]="filteredData"
@@ -253,11 +253,11 @@
             </div>
             <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                <md-option *ngFor="let size of [50,100,200,500]" [value]="size">
+              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <mat-option *ngFor="let size of [50,100,200,500]" [value]="size">
                   { {size} }
-                </md-option>
-              </md-select>
+                </mat-option>
+              </mat-select>
               { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
             </td-paging-bar>
           ]]>
@@ -338,66 +338,66 @@
         <p>Data:</p>
         <td-highlight lang="json" [content]="basicData | json">
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="selectable">
+      <mat-slide-toggle color="accent" [(ngModel)]="selectable">
         Selectable rows
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="clickable">
         Clickable rows
-      </md-slide-toggle>
-      <md-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
         Multiple rows (shift + click for range selection)
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" (change)="toggleTooltips()">
+      <mat-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
-        Hide gender
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
+        Hide calories
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
         Type column is searchable (search for <code>lifsey</code>)
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
 
-<md-card>
-  <md-card-title>TdDataTableService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>TdDataTableService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
      <p>Service provided with methods for sorting/paging/searching the data table.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Data Table (Atomic) Components</md-card-title>
-  <md-card-subtitle>How to use these components</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Data Table (Atomic) Components</mat-card-title>
+  <mat-card-subtitle>How to use these components</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
     <p>Use <code><![CDATA[<tr td-data-table-column-row>]]></code> element to generate wrapper atomic column row.</p>
     <p>Use <code><![CDATA[<tr td-data-table-row>]]></code> element to generate wrapper atomic row.</p>
@@ -405,25 +405,25 @@
     <p>Use <code><![CDATA[<th td-data-table-column>]]></code> element to generate wrapper atomic column.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">
@@ -453,5 +453,5 @@
         </table>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

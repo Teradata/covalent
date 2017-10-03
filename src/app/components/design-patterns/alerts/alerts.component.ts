@@ -4,7 +4,7 @@ import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
 
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-alerts',
@@ -28,7 +28,7 @@ export class AlertsComponent {
   example3: boolean = true;
 
   constructor(private _dialogService: TdDialogService,
-              private _snackBarService: MdSnackBar) {}
+              private _snackBarService: MatSnackBar) {}
 
   showSnackBar(): void {
     this._snackBarService

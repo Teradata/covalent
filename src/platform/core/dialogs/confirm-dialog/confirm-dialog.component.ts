@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-confirm-dialog',
@@ -12,7 +12,7 @@ export class TdConfirmDialogComponent {
   cancelButton: string = 'CANCEL';
   acceptButton: string = 'ACCEPT';
 
-  constructor(private _dialogRef: MdDialogRef<TdConfirmDialogComponent>) {}
+  constructor(private _dialogRef: MatDialogRef<TdConfirmDialogComponent>) {}
 
   cancel(): void {
     this._dialogRef.close(false);
