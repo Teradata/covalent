@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
-import { MdIconModule, MdRippleModule } from '@angular/material';
+import { MatIconModule, MatRippleModule } from '@angular/material';
 
 import { CovalentCommonModule } from '../common/common.module';
 
@@ -32,8 +32,8 @@ export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component'
 @NgModule({
   imports: [
     CommonModule,
-    MdIconModule,
-    MdRippleModule,
+    MatIconModule,
+    MatRippleModule,
     PortalModule,
     ScrollDispatchModule,
     CovalentCommonModule,

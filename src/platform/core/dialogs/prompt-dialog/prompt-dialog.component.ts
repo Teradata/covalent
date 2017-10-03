@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-prompt-dialog',
@@ -15,7 +15,7 @@ export class TdPromptDialogComponent implements AfterViewInit {
 
   @ViewChild('input') _input: ElementRef;
 
-  constructor(private _dialogRef: MdDialogRef<TdPromptDialogComponent>) {}
+  constructor(private _dialogRef: MatDialogRef<TdPromptDialogComponent>) {}
 
   ngAfterViewInit(): void {
     // focus input once everything is rendered and good to go

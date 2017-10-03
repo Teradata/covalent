@@ -14,29 +14,29 @@
       background: mat-color($background, status-bar);
       color: mat-color($foreground, text);
       &:focus:not(.td-chip-disabled) {
-        md-icon:hover {
+        mat-icon:hover {
           color: mat-color($foreground, icon);
         }
         &.mat-primary {
           background: mat-color($primary);
-          &, md-icon {
+          &, mat-icon {
             color: mat-color($primary, default-contrast);
           }
         }
         &.mat-accent {
           background: mat-color($accent);
-          &, md-icon {
+          &, mat-icon {
             color: mat-color($accent, default-contrast);
           }
         }
         &.mat-warn {
           background: mat-color($warn);
-          &, md-icon {
+          &, mat-icon {
             color: mat-color($warn, default-contrast);
           }
         }
       }
-      md-icon.td-chip-removal {
+      mat-icon.td-chip-removal {
         color: mat-color($foreground, hint-text);
         &:hover {
           color: mat-color($foreground, icon);

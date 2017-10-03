@@ -1,13 +1,13 @@
-<md-toolbar [color]="color">
-</md-toolbar>
+<mat-toolbar [color]="color">
+</mat-toolbar>
 <div class="margin" layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill>
   <div [attr.flex-gt-xs]="cardWidth">
-    <md-card>
-      <md-card-title *ngIf="cardTitle">{{cardTitle}}</md-card-title>
-      <md-card-subtitle *ngIf="cardSubtitle">{{cardSubtitle}}</md-card-subtitle>
-      <md-divider *ngIf="cardTitle || cardSubtitle"></md-divider>
+    <mat-card>
+      <mat-card-title *ngIf="cardTitle">{{cardTitle}}</mat-card-title>
+      <mat-card-subtitle *ngIf="cardSubtitle">{{cardSubtitle}}</mat-card-subtitle>
+      <mat-divider *ngIf="cardTitle || cardSubtitle"></mat-divider>
       <ng-content></ng-content>
-    </md-card>
+    </mat-card>
     <ng-content select="[td-after-card]"></ng-content>
   </div>
 </div>

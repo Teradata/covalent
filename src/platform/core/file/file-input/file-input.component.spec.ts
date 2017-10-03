@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CovalentFileModule, TdFileInputComponent } from '../file.module';
 import { By } from '@angular/platform-browser';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: FileInput', () => {
 
@@ -20,6 +21,9 @@ describe('Component: FileInput', () => {
       imports: [
         FormsModule,
         CovalentFileModule,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

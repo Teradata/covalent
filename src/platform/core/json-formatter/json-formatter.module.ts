@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdTooltipModule, MdIconModule } from '@angular/material';
+import { MatTooltipModule, MatIconModule } from '@angular/material';
 
 import { TdJsonFormatterComponent } from './json-formatter.component';
 
@@ -10,8 +10,8 @@ export { TdJsonFormatterComponent } from './json-formatter.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdTooltipModule,
-    MdIconModule,
+    MatTooltipModule,
+    MatIconModule,
   ],
   declarations: [
     TdJsonFormatterComponent,

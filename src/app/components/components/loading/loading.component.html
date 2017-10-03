@@ -1,48 +1,48 @@
-<md-card>
-  <md-card-title>Loading</md-card-title>
-  <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Loading</mat-card-title>
+  <mat-card-subtitle>Circular or linear progress loader</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3 class="md-title">[tdLoading] directive with (*) syntax</h3>
     <h4 class="md-subhead">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
           <div layout="row">
-            <md-form-field flex>
-              <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-            </md-form-field>
+            <mat-form-field flex>
+              <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
+            </mat-form-field>
           </div>
           <div layout="row">
-            <md-form-field flex>
-              <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-form-field>
+            <mat-form-field flex>
+              <textarea matInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
+            </mat-form-field>
           </div>
         </div>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
               <div layout="row">
-                <md-form-field flex>
-                  <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-                </md-form-field>
+                <mat-form-field flex>
+                  <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
+                </mat-form-field>
               </div>
               <div layout="row">
-                <md-form-field flex>
-                  <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-form-field>
+                <mat-form-field flex>
+                  <textarea matInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
+                </mat-form-field>
               </div>
             </div>
             <div layout="row">
-              <button md-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
+              <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -76,52 +76,52 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">[tdLoading] directive with template syntax</h3>
     <h4 class="md-subhead">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
           <div layout="row">
-            <md-form-field flex>
-              <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-            </md-form-field>
+            <mat-form-field flex>
+              <input matInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
+            </mat-form-field>
           </div>
           <div layout="row">
-            <md-form-field flex>
-              <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-form-field>
+            <mat-form-field flex>
+              <textarea matInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
+            </mat-form-field>
           </div>
         </ng-template>
         <div layout="row">
-          <button md-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
               <div layout="row">
-                <md-form-field flex>
-                  <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-                </md-form-field>
+                <mat-form-field flex>
+                  <input matInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
+                </mat-form-field>
               </div>
               <div layout="row">
-                <md-form-field flex>
-                  <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-form-field>
+                <mat-form-field flex>
+                  <textarea matInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
+                </mat-form-field>
               </div>
             </ng-template>
             <div layout="row">
-              <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+              <button mat-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -156,52 +156,52 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">[tdLoading] until star syntax with variable reference and observables</h3>
     <h4 class="md-subhead">with accent [tdLoadingColor]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div *tdLoading="let items until listObservable | async; color: 'accent'">
-          <md-list>
+          <mat-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-              <md-list-item>
-                <md-slide-toggle mdLine [checked]="item.value">
+              <mat-list-item>
+                <mat-slide-toggle matLine [checked]="item.value">
                   {{item.label}}
-                </md-slide-toggle>
-              </md-list-item>
-              <md-divider *ngIf="!last"></md-divider>
+                </mat-slide-toggle>
+              </mat-list-item>
+              <mat-divider *ngIf="!last"></mat-divider>
             </ng-template>
-          </md-list>
+          </mat-list>
         </div>
         <div layout="row">
-          <button md-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
+          <button mat-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div *tdLoading="let items until listObservable | async; type: circle; color: accent">
-              <md-list>
+              <mat-list>
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                  <md-list-item>
-                    <md-slide-toggle mdLine [checked]="item.value">
+                  <mat-list-item>
+                    <mat-slide-toggle matLine [checked]="item.value">
                       { {item.label} }
-                    </md-slide-toggle>
-                  </md-list-item>
-                  <md-divider *ngIf="!last"></md-divider>
+                    </mat-slide-toggle>
+                  </mat-list-item>
+                  <mat-divider *ngIf="!last"></mat-divider>
                 </ng-template>
-              </md-list>
+              </mat-list>
             </div>
             <div layout="row">
-              <button md-button color="primary" (click)="createObservableList()" class="text-upper">Create observable</button>
+              <button mat-button color="primary" (click)="createObservableList()" class="text-upper">Create observable</button>
             </div>
           ]]>
         </td-highlight>
@@ -224,52 +224,52 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">[tdLoading] until template syntax with booleans</h3>
     <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
           <div layout="row">
-            <md-form-field flex>
-              <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-            </md-form-field>
+            <mat-form-field flex>
+              <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
+            </mat-form-field>
           </div>
           <div layout="row">
-            <md-form-field flex>
-              <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-form-field>
+            <mat-form-field flex>
+              <textarea matInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
+            </mat-form-field>
           </div>
         </ng-template>
         <div class="pad-sm">
-          <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
               <div layout="row">
-                <md-form-field flex>
-                  <input mdInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
-                </md-form-field>
+                <mat-form-field flex>
+                  <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
+                </mat-form-field>
               </div>
               <div layout="row">
-                <md-form-field flex>
-                  <textarea mdInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
-                </md-form-field>
+                <mat-form-field flex>
+                  <textarea matInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
+                </mat-form-field>
               </div>
             </ng-template>
             <div class="pad-sm">
-              <md-slide-toggle [(ngModel)]="loading">Loading Mask</md-slide-toggle>
+              <mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle>
             </div>
           ]]>
         </td-highlight>
@@ -287,28 +287,28 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Preloaded [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
+              <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -333,28 +333,28 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
    <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
-    <md-tab-group md-stretch-tabs dynamicHeight>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
-              <button md-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
+              <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
             </div>
           ]]>
         </td-highlight>
@@ -382,31 +382,31 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>TdLoadingDirective</md-card-title>
-  <md-card-subtitle>How to use this directive</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdLoadingDirective</mat-card-title>
+  <mat-card-subtitle>How to use this directive</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h2><code>tdLoading</code></h2>
     <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
     <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<ng-template>]]></code> element.</p>
     <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/guide/structural-directives#asterisk">here</a></p>
     <h3>Properties:</h3>
     <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
-          <p mdLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
+          <p matLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example(after setup):</h3>
     <p>HTML (*) syntax:</p>
     <td-highlight lang="html">
@@ -481,13 +481,13 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
- </md-card>
- <md-card>
-  <md-card-title>TdLoadingService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-content>
+ </mat-card>
+ <mat-card>
+  <mat-card-title>TdLoadingService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h2><code>TdLoadingService</code></h2>
     <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
     <p>Simply add this service as a provider to be able to use it in a component.</p>
@@ -502,15 +502,15 @@
     </td-highlight>
     <h3>Methods:</h3>
     <p>The <code>TdLoadingService</code> service has {{loadingServiceMethods.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example(after setup):</h3>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
@@ -537,5 +537,5 @@
         }
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

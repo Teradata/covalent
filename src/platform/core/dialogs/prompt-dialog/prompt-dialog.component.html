@@ -6,24 +6,24 @@
     {{message}}
     <form #form="ngForm" novalidate>
       <div layout="row">
-        <md-form-field flex>
-          <input mdInput
+        <mat-form-field flex>
+          <input matInput
                 #input
                 (focus)="handleInputFocus()"
                 (keydown.enter)="$event.preventDefault(); form.valid && accept()"
                 [(ngModel)]="value"
                 name="value"
                 required/>
-        </md-form-field>
+        </mat-form-field>
       </div>
     </form>
   </td-dialog-content>
   <td-dialog-actions>
-    <button md-button
+    <button mat-button
             #closeBtn 
             (keydown.arrowright)="acceptBtn.focus()"
             (click)="cancel()">{{cancelButton}}</button>
-    <button md-button
+    <button mat-button
             color="accent"
             #acceptBtn
             (keydown.arrowleft)="closeBtn.focus()"

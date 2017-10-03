@@ -177,7 +177,7 @@ export class TdLoadingComponent {
   startOutAnimation(): Observable<any> {
     this.animation = false;
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
-    * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
+    * inside mat-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */
     this._mode = LoadingMode.Determinate;
     // Check for changes for `OnPush` change detection

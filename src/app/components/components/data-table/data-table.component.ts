@@ -86,7 +86,7 @@ export class DataTableDemoComponent implements OnInit {
     { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
     { name: 'gender', label: 'Gender'},
     { name: 'email', label: 'Email', width: 250},
-    { name: 'img', label: 'Avatar', width: 50},
+    { name: 'img', label: '', width: 100},
   ];
 
   columns: ITdDataTableColumn[] = [

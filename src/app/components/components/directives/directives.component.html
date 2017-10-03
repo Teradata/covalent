@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Directives</md-card-title>
-  <md-card-subtitle>Core Covalent directives &amp; utilities</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Directives</mat-card-title>
+  <mat-card-subtitle>Core Covalent directives &amp; utilities</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p>A directive is essentially like a component functionally without a template. There are structural and attribute directives.</p>
     <p>Structural directives can change the DOM layout by adding and removing DOM elements. NgFor and NgIf are two familiar examples.</p>
     <p>An Attribute directive can change the appearance or behavior of an element. The built-in NgStyle directive, for example, can change several element styles at the same time.</p>
@@ -22,53 +22,53 @@
         export class MyModule {}
       ]]>
     </td-highlight>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <a md-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" class="text-upper">Directives Docs</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="primary" href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" class="text-upper">Directives Docs</a>
+  </mat-card-actions>
+</mat-card>
 
-<md-card>
-  <md-card-title>Autotrim directive</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Autotrim directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p class="md-body-1">Use <code>tdAutoTrim</code> on an input to automatically trim the characters.</p>
     <p>Try entering white spaces before or after a word this input:</p>
     <div layout="row">
-      <md-form-field flex>
-        <input mdInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
-      </md-form-field>
+      <mat-form-field flex>
+        <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+      </mat-form-field>
     </div>
     <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <md-form-field>
-            <input mdInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
-          </md-form-field>
+          <mat-form-field>
+            <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+          </mat-form-field>
         ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Toggle directive</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Toggle directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p class="md-body-1">Use <code>[tdToggle]="variable"</code> on an element to toggle it open or closed (used in Stepper &amp; Expansion Panels).</p>
     <p>Click on this to open a div:</p>
-    <button md-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
+    <button mat-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
     <div [tdToggle]="toggleDiv">
-      <md-card>
-        <md-card-title>Toggle Card</md-card-title>
-        <md-card-content>Reveal or hide with a toggle click!</md-card-content>
-        <md-card-actions><button md-raised-button color="primary" (click)="toggle()">Toggle Out</button></md-card-actions>
-      </md-card>
+      <mat-card>
+        <mat-card-title>Toggle Card</mat-card-title>
+        <mat-card-content>Reveal or hide with a toggle click!</mat-card-content>
+        <mat-card-actions><button mat-raised-button color="primary" (click)="toggle()">Toggle Out</button></mat-card-actions>
+      </mat-card>
     </div>
     <p>HTML:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
+          <button mat-raised-button color="accent" (click)="toggle()" class="text-upper">Toggle</button>
           <div [tdToggle]="toggleDiv">
             Reveal or hide with a toggle click!
           </div>
@@ -82,27 +82,27 @@
           this.toggleDiv = !this.toggleDiv;
         {{ '}' }}
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Fade directive</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Fade directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p class="md-body-1">Use <code>[tdFade]="variable"</code> on an element to fade it in and out.</p>
     <p>Click on this to open a div:</p>
-    <button md-raised-button color="accent" (click)="fade()" class="text-upper">Fade</button>
+    <button mat-raised-button color="accent" (click)="fade()" class="text-upper">Fade</button>
     <div [tdFade]="fadeDiv">
-      <md-card>
-        <md-card-title>Fade Card</md-card-title>
-        <md-card-content>Fade in or out with a click!</md-card-content>
-        <md-card-actions><button md-raised-button color="primary" (click)="fade()">Fade Out</button></md-card-actions>
-      </md-card>
+      <mat-card>
+        <mat-card-title>Fade Card</mat-card-title>
+        <mat-card-content>Fade in or out with a click!</mat-card-content>
+        <mat-card-actions><button mat-raised-button color="primary" (click)="fade()">Fade Out</button></mat-card-actions>
+      </mat-card>
     </div>
     <p>HTML:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <button md-raised-button color="accent" (click)="fade()" class="text-upper">Toggle</button>
+          <button mat-raised-button color="accent" (click)="fade()" class="text-upper">Toggle</button>
           <div [tdFade]="fadeDiv">
             This one fades in and out!
           </div>
@@ -116,5 +116,5 @@
           this.fadeDiv = !this.fadeDiv;
         {{ '}' }}
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

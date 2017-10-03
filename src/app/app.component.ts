@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -44,7 +44,7 @@ export class DocsAppComponent implements AfterViewInit {
 
   dir: string;
 
-  constructor(private _iconRegistry: MdIconRegistry,
+  constructor(private _iconRegistry: MatIconRegistry,
               private _domSanitizer: DomSanitizer,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService,
@@ -89,7 +89,7 @@ export class DocsAppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+    setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
       this.media.broadcast();
       this._changeDetectorRef.detectChanges();
     });

@@ -12,7 +12,7 @@
     background-color: mat-color($background, status-bar);
   }
 
-  [md-icon-button].td-layout-menu-button {
+  [mat-icon-button].td-layout-menu-button {
     margin-left: 0px;
     /deep/ [dir='rtl'] & { 
       margin-right: 0px;
@@ -26,7 +26,7 @@
   td-layout-card-over,
   td-navigation-drawer,
   td-layout {
-    md-toolbar {
+    mat-toolbar {
       @include mat-elevation(1);
       z-index: 1;
     }
@@ -40,19 +40,19 @@
     @include mat-elevation(2);
     &.mat-primary {
       background: mat-color($primary);
-      &, md-icon {
+      &, mat-icon {
         color: mat-color($primary, default-contrast);
       }
     }
     &.mat-accent {
       background: mat-color($accent);
-      &, md-icon {
+      &, mat-icon {
         color: mat-color($accent, default-contrast);
       }
     }
     &.mat-warn {
       background: mat-color($warn);
-      &, md-icon {
+      &, mat-icon {
         color: mat-color($warn, default-contrast);
       }
     }

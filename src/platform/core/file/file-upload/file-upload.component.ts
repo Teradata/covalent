@@ -29,19 +29,19 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
 
   /**
    * defaultColor?: string
-   * Sets browse button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
+   * Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
    */
   @Input('defaultColor') defaultColor: string = 'primary';
 
   /**
    * activeColor?: string
-   * Sets upload button color. Uses same color palette accepted as [mdButton] and defaults to 'accent'.
+   * Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
    */
   @Input('activeColor') activeColor: string = 'accent';
 
   /**
    * cancelColor?: string
-   * Sets cancel button color. Uses same color palette accepted as [mdButton] and defaults to 'warn'.
+   * Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
    */
   @Input('cancelColor') cancelColor: string = 'warn';
 

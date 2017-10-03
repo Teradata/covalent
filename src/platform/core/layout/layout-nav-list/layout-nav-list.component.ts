@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MdSidenav, MdDrawerToggleResult } from '@angular/material';
+import { MatSidenav, MatDrawerToggleResult } from '@angular/material';
 
 import { ILayoutTogglable } from '../layout-toggle.class';
 
@@ -12,7 +12,7 @@ import { ILayoutTogglable } from '../layout-toggle.class';
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
 
-  @ViewChild(MdSidenav) sidenav: MdSidenav;
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   /**
    * toolbarTitle?: string
@@ -48,7 +48,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    *
    * The mode or styling of the sidenav.
    * Defaults to "side".
-   * See "MdSidenav" documentation for more info.
+   * See "MatSidenav" documentation for more info.
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
@@ -59,7 +59,7 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
    * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
    * Defaults to "true".
    *
-   * See "MdSidenav" documentation for more info.
+   * See "MatSidenav" documentation for more info.
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
@@ -108,21 +108,21 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdDrawerToggleResult> {
+  public toggle(): Promise<MatDrawerToggleResult> {
     return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdDrawerToggleResult> {
+  public open(): Promise<MatDrawerToggleResult> {
     return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdDrawerToggleResult> {
+  public close(): Promise<MatDrawerToggleResult> {
     return this.sidenav.close();
   }
 

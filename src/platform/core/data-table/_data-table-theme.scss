@@ -14,7 +14,7 @@
     .mat-checkbox-cell,
     .mat-checkbox-column {
       color: mat-color($foreground, secondary-text);
-      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+      mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
         background-color: mat-color($accent);
       }
     }
@@ -23,7 +23,7 @@
       font-weight: 400;
       letter-spacing: 0.010em;
       line-height: 20px;
-      md-form-field {
+      mat-form-field {
         .mat-form-field-underline {
           display: none;
         }
@@ -35,13 +35,13 @@
       * {
         vertical-align: middle;
       }
-      md-icon {
+      mat-icon {
         &.td-data-table-sort-icon {
           color: mat-color($foreground, disabled);
         }
       }
       &.mat-active,
-      &.mat-active md-icon {
+      &.mat-active mat-icon {
         color: mat-color($foreground, base);
       }
     }

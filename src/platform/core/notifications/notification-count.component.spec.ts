@@ -5,10 +5,11 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { MdIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 import { CovalentNotificationsModule,
          TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
 import { By } from '@angular/platform-browser';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: NotificationCount', () => {
 
@@ -21,8 +22,11 @@ describe('Component: NotificationCount', () => {
         TdNotificationCountPositionContentTestComponent,
       ],
       imports: [
-        MdIconModule,
+        MatIconModule,
         CovalentNotificationsModule,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();
@@ -122,7 +126,7 @@ describe('Component: NotificationCount', () => {
       fixture.whenStable().then(() => {
 
         expect(fixture.debugElement.query(By.css('.td-notification-content'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-icon'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-icon'))).toBeTruthy();
       });
   })));
 
@@ -188,7 +192,7 @@ class TdNotificationCountBasicTestComponent {
   selector: 'td-notification-count-content-test',
   template: `
   <td-notification-count>
-    <md-icon>notifications</md-icon>
+    <mat-icon>notifications</mat-icon>
   </td-notification-count>
   `,
 })
@@ -214,7 +218,7 @@ class TdNotificationCountPositionTestComponent {
   selector: 'td-notification-count-position-content-test',
   template: `
   <td-notification-count [positionX]="positionX" [positionY]="positionY" [notifications]="notifications">
-    <md-icon>notifications</md-icon>
+    <mat-icon>notifications</mat-icon>
   </td-notification-count>
   `,
 })

@@ -1,8 +1,8 @@
-<md-card>
-  <md-card-title>Custom Theme</md-card-title>
-  <md-card-subtitle>SCSS variables to customize the color scheme</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Custom Theme</mat-card-title>
+  <mat-card-subtitle>SCSS variables to customize the color scheme</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3>SCSS Variables</h3>
     <p>Simply edit the /theme.scss file and update these SCSS variables:</p>
     <td-highlight lang="scss">
@@ -39,22 +39,22 @@
     <p>
       Color palettes and hues follow the official <a href="https://material.google.com/style/color.html" target="_blank">Material Design Spec</a>.
     </p>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://material.angular.io/guide/theming" class="text-upper">Theming Docs</a>
-    <a md-button [routerLink]="['../../style-guide','colors']" class="text-upper">Color Guide</a>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>Multiple color themes</md-card-title>
-  <md-card-subtitle>Choose a primary, accent and warn color from the official Material color palette.</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="accent" target="_blank" href="https://material.angular.io/guide/theming" class="text-upper">Theming Docs</a>
+    <a mat-button [routerLink]="['../../style-guide','colors']" class="text-upper">Color Guide</a>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Multiple color themes</mat-card-title>
+  <mat-card-subtitle>Choose a primary, accent and warn color from the official Material color palette.</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     Add the custom CSS class with custom SCSS variables to your /theme.scss file
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3 class="md-title"><span class="tc-blue-700">Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
     <div layout-gt-xs="row" layout-margin>
       <div flex-gt-xs="50" class="pad-top-sm">
@@ -72,18 +72,18 @@
         </td-highlight>
       </div>
       <div flex-gt-xs="50">
-        <md-card class="top-toolbar blue-orange">
-          <md-toolbar color="primary">
-            <md-toolbar-row>
+        <mat-card class="top-toolbar blue-orange">
+          <mat-toolbar color="primary">
+            <mat-toolbar-row>
               <span></span>
-            </md-toolbar-row>
-            <md-toolbar-row>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
               <span>Toolbar</span>
-            </md-toolbar-row>
-          </md-toolbar>
-          <md-card-content>
-            <button md-fab class="md-fab md-fab-position-bottom-right">
-              <md-icon>add</md-icon>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-card-content>
+            <button mat-fab class="mat-fab mat-fab-position-bottom-right">
+              <mat-icon>add</mat-icon>
             </button>
             <h3>View title</h3>
             <p>
@@ -92,11 +92,11 @@
             <p>
               Palettes with a secondary color may use this color to indicate a related action or information.
             </p>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <h3 class="md-title"><span class="tc-blue-grey-700">Blue Grey Primary</span> / <span class="tc-deep-orange-700">Deep Orange Accent</span></h3>
     <div layout-gt-xs="row" layout-margin>
       <div flex-gt-xs="50" class="pad-top-sm">
@@ -114,18 +114,18 @@
         </td-highlight>
       </div>
       <div flex-gt-xs="50">
-        <md-card class="top-toolbar blue-grey-deep-orange">
-          <md-toolbar color="primary">
-            <md-toolbar-row>
+        <mat-card class="top-toolbar blue-grey-deep-orange">
+          <mat-toolbar color="primary">
+            <mat-toolbar-row>
               <span></span>
-            </md-toolbar-row>
-            <md-toolbar-row>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
               <span>Toolbar</span>
-            </md-toolbar-row>
-          </md-toolbar>
-          <md-card-content>
-            <button md-fab class="md-fab md-fab-position-bottom-right">
-              <md-icon>add</md-icon>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-card-content>
+            <button mat-fab class="mat-fab mat-fab-position-bottom-right">
+              <mat-icon>add</mat-icon>
             </button>
             <h3>View title</h3>
             <p>
@@ -134,9 +134,9 @@
             <p>
               Palettes with a secondary color may use this color to indicate a related action or information.
             </p>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
