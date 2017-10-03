@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
@@ -22,6 +22,8 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
   private _multiple: boolean = false;
 
   files: FileList | File;
+
+  @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
 
   @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
 
@@ -111,6 +113,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
   cancel(): void {
     this.files = undefined;
     this.onCancel.emit(undefined);
+    this.fileInput.clear();
     this._changeDetectorRef.markForCheck();
   }
 
