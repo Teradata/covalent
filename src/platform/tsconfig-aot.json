@@ -4,10 +4,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "lib": ["es6", "es2015", "dom"],
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": true,

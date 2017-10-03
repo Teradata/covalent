@@ -1,8 +1,18 @@
 <h1>Combat training app</h1>
 
- <h2> Covalent Message</h2>
-
- <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+<h2> Covalent Message Component Combat Training</h2>
+<td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
   <button td-message-actions md-icon-button (click)="messageDemo.close()">Close</button>
 </td-message>
 
+<h2> Covalent Paging Component Combat Training</h2>
+<td-paging-bar #pagingBar
+                [pageLinkCount]="5"
+                [pageSize]="100"
+                [total]="1345"
+                (change)="pagingChange($event)">
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>
+
+<h2> Angular Slider Combat Training</h2>
+ <md-slider></md-slider>
