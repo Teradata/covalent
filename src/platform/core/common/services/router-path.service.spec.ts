@@ -30,7 +30,7 @@ describe('Service: RouterPath', () => {
            FakeComponent,
       ],
       providers: [
-          RouterPathService,
+        RouterPathService,
       ],
     });
     TestBed.compileComponents();

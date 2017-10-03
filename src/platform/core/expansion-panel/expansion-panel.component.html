@@ -1,7 +1,7 @@
 <div class="td-expansion-panel-header"
       [class.mat-disabled]="disabled"
-      mdRipple
-      [mdRippleDisabled]="disabled || disableRipple"
+      matRipple
+      [matRippleDisabled]="disabled || disableRipple"
       [tabIndex]="disabled? -1 : 0"
       (keydown.enter)="clickEvent()"
       (click)="clickEvent()">
@@ -21,7 +21,7 @@
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>
     <span flex></span>
-    <md-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</md-icon>
+    <mat-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</mat-icon>
   </div>
 </div>
 <div class="td-expansion-content"

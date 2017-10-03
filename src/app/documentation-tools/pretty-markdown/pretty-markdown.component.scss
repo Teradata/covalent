@@ -11,13 +11,13 @@ $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monos
   }
   td-data-table,
   td-highlight,
-  md-checkbox {
+  mat-checkbox {
     display: block;
   }
 
   td-data-table,
   td-highlight,
-  md-checkbox:last-of-type {
+  mat-checkbox:last-of-type {
     margin-bottom: 16px;
   }
 

@@ -30,7 +30,7 @@ export class CovalentTests {
   * function that can be changed for all places needing this.
   */
   public static clickDialogButton(component: any, buttonText: string): void {
-      let elements: NodeList = document.querySelectorAll('[md-button]');
+      let elements: NodeList = document.querySelectorAll('[mat-button]');
       for (let index: number = 0; index < elements.length; index++) {
           // try to click share on any buttons found with share as the text content.  If there is an error trying to click one just
           // hide the error as it may not be clickable yet in the DOM or something

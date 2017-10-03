@@ -6,18 +6,18 @@
      layout="row"
      layout-align="center center"
      flex>
-    <md-progress-spinner *ngIf="isCircular()" 
+    <mat-progress-spinner *ngIf="isCircular()" 
                         [mode]="mode"
                         [value]="value" 
                         [color]="color" 
                         [style.height]="getCircleDiameter()"
                         [style.width]="getCircleDiameter()">
-    </md-progress-spinner>
-    <md-progress-bar *ngIf="isLinear()" 
+    </mat-progress-spinner>
+    <mat-progress-bar *ngIf="isLinear()" 
                      [mode]="mode"
                      [value]="value"
                      [color]="color">
-    </md-progress-bar>
+    </mat-progress-bar>
   </div>
   <ng-template [cdkPortalHost]="content"></ng-template>
 </div>

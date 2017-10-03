@@ -1,83 +1,83 @@
-<md-card>
-  <md-card-title>Core Components</md-card-title>
-  <md-card-subtitle>Core Covalent Components, Directives, Pipes &amp; Services</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Core Components</mat-card-title>
+  <mat-card-subtitle>Core Covalent Components, Directives, Pipes &amp; Services</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
      <div layout-gt-xs="row" layout-wrap>
        <ng-template let-item let-last="last" ngFor [ngForOf]="items">
           <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
-              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
-              </md-toolbar>
-              <md-card-content>
+            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
+              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
+              </mat-toolbar>
+              <mat-card-content>
                 <div layout="column" layout-padding>
                   <div class="md-subhead">{{item.title}}</div>
                 </div>
-              </md-card-content>
-            </md-card>
+              </mat-card-content>
+            </mat-card>
           </div>
         </ng-template>
      </div>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Optional Components</md-card-title>
-  <md-card-subtitle>Extra components &amp; services not required</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Optional Components</mat-card-title>
+  <mat-card-subtitle>Extra components &amp; services not required</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
      <div layout-gt-xs="row" layout-wrap>
        <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
           <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
-              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
-              </md-toolbar>
-              <md-card-content>
+            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
+              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
+              </mat-toolbar>
+              <mat-card-content>
                 <div layout="column" layout-padding>
                   <div class="md-subhead">{{item.title}}</div>
                 </div>
-              </md-card-content>
-            </md-card>
+              </mat-card-content>
+            </mat-card>
           </div>
         </ng-template>
      </div>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>External Components</md-card-title>
-  <md-card-subtitle>Recommended but not maintained by Covalent</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>External Components</mat-card-title>
+  <mat-card-subtitle>Recommended but not maintained by Covalent</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
      <div layout-gt-xs="row" layout-wrap>
         <div flex-sm="50" flex-md="50" flex-gt-md="25">
           <a href="https://material.angular.io/components" target="_blank" class="text-nodecoration tc-inherit">
-            <md-card href class="md-card-colored" flex>
-              <md-toolbar class="bgc-cyan-500" layout="column" layout-align="center center" layout-padding>
-                <md-icon class="md-icon-font-xl tc-white">layers</md-icon>
-              </md-toolbar>
-              <md-card-content>
+            <mat-card href class="mat-card-colored" flex>
+              <mat-toolbar class="bgc-cyan-500" layout="column" layout-align="center center" layout-padding>
+                <mat-icon class="mat-icon-font-xl tc-white">layers</mat-icon>
+              </mat-toolbar>
+              <mat-card-content>
                 <div layout="column" layout-padding>
-                  <div class="md-subhead">Angular Material <md-icon class="text-md tc-grey-600" title="External docs">launch</md-icon></div>
+                  <div class="md-subhead">Angular Material <mat-icon class="text-md tc-grey-600" title="External docs">launch</mat-icon></div>
                 </div>
-              </md-card-content>
-            </md-card>
+              </mat-card-content>
+            </mat-card>
           </a>
         </div>
        <ng-template let-item let-last="last" ngFor [ngForOf]="external">
           <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
-              <md-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <md-icon class="md-icon-font-xl tc-white">{{item.icon}}</md-icon>
-              </md-toolbar>
-              <md-card-content>
+            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
+              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
+                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
+              </mat-toolbar>
+              <mat-card-content>
                 <div layout="column" layout-padding>
                   <div class="md-subhead">{{item.title}}</div>
                 </div>
-              </md-card-content>
-            </md-card>
+              </mat-card-content>
+            </mat-card>
           </div>
         </ng-template>
      </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

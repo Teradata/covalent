@@ -1,26 +1,26 @@
-<md-card>
-  <md-card-title>Material Design Icons</md-card-title>
-  <md-card-subtitle>Access 750+ SVG or Font icons</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Material Design Icons</mat-card-title>
+  <mat-card-subtitle>Access 750+ SVG or Font icons</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3>Font Icons</h3>
     <p>Font icons using ligatures are the default option and simple to use:</p>
     <td-highlight lang="html">
-    <![CDATA[ <md-icon>home</md-icon> ]]>
+    <![CDATA[ <mat-icon>home</mat-icon> ]]>
     </td-highlight>
     <p>
-      which renders <md-icon>home</md-icon>
+      which renders <mat-icon>home</mat-icon>
     </p>
     <h3>SVG Icons (from Safe URLS)</h3>
-    <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MdIconRegistry] so it can be referred later on:</p>
+    <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MatIconRegistry] so it can be referred later on:</p>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
      <![CDATA[
        import { DomSanitizer } from '@angular/platform-browser';
-       import { MdIconRegistry } from '@angular/material';
+       import { MatIconRegistry } from '@angular/material';
        ...
        ...
-       constructor(private _iconRegistry: MdIconRegistry,
+       constructor(private _iconRegistry: MatIconRegistry,
                    private _domSanitizer: DomSanitizer) {
          this._iconRegistry.addSvgIconInNamespace('assets', 'sun',
            this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/sun.svg'));
@@ -29,12 +29,12 @@
     </td-highlight>
     <p>HTML:</p>
     <td-highlight lang="html">
-      <![CDATA[ <md-icon svgIcon="assets:sun"></md-icon> ]]>
+      <![CDATA[ <mat-icon svgIcon="assets:sun"></mat-icon> ]]>
     </td-highlight>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <a md-button color="accent" target="_blank" href="https://material.io/icons/" class="text-upper">Search Icons</a>
-    <a md-button [routerLink]="['../../style-guide','iconography']" class="text-upper">Icon Guide</a>
-  </md-card-actions>
-</md-card>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="accent" target="_blank" href="https://material.io/icons/" class="text-upper">Search Icons</a>
+    <a mat-button [routerLink]="['../../style-guide','iconography']" class="text-upper">Icon Guide</a>
+  </mat-card-actions>
+</mat-card>

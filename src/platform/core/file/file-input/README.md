@@ -11,7 +11,7 @@ Example for usage:
 ```html
 <td-file-input [(ngModel)]="files" color="primary" (select)="selectEvent($event)"
                accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>attach_file</md-icon><span>Choose a file...</span>
+  <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
 </td-file-input>
 ```
  
@@ -37,7 +37,7 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | 650--- |
-| color | string | Sets button color. Uses same color palette accepted as [mdButton].
+| color | string | Sets button color. Uses same color palette accepted as [MatButton].
 | multiple | boolean | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
 | accept | string | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | disabled | boolean | Disables [TdFileUploadComponent] and clears selected/dropped files.

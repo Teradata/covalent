@@ -4,17 +4,17 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar.component';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdMenuModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MatMenuModule } from '@angular/material';
 
 import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platform/core';
 
 @NgModule({
   imports: [
     CommonModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule,
-    MdMenuModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatMenuModule,
     CovalentMenuModule,
     CovalentNotificationsModule,
     RouterModule,
