@@ -66,7 +66,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
 
   /**
    * select?: function
-   * Event emitted when a file is selecte.
+   * Event emitted when a file is selected.
    * Emits a [File | FileList] object.
    */
   @Output('select') onSelect: EventEmitter<File | FileList> = new EventEmitter<File | FileList>();
@@ -113,7 +113,10 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
   cancel(): void {
     this.files = undefined;
     this.onCancel.emit(undefined);
-    this.fileInput.clear();
+    // check if the file input is rendered before clearing it
+    if (this.fileInput) {
+      this.fileInput.clear();
+    }
     this._changeDetectorRef.markForCheck();
   }
 
