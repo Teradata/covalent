@@ -28,7 +28,8 @@ You can see their braking changes and more info in the `@angular/material` [chan
 * **material:** upgrade to material@beta.11 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
 
 ## Internal
-* **material:** upgrade to angular@4.4.3 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
+* **docs:** update resources layout & add Illustrator [00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe](https://github.com/Teradata/covalent/commit/00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe))
+* **angular:** upgrade to angular@4.4.3 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
 
 
 <a name="1.0.0-beta.7"></a>
