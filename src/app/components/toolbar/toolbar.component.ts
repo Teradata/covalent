@@ -17,30 +17,10 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Virtual scroll component',
-      icon: 'format_line_spacing',
-      route: '/components/virtual-scroll',
-      title: 'New component',
-    }, {
-      description: 'Markdown text editor component',
-      icon: 'keyboard',
-      route: '/components/text-editor',
-      title: 'New component',
-    }, {
-      description: 'Sticky headers, virtual scroll & configurable widths',
+      description: 'Bugfixes, enhancements and demo improvements',
       icon: 'grid_on',
       route: '/components/data-table',
       title: 'Data table updates',
-    }, {
-      description: 'New form features & bugfixes',
-      icon: 'format_align_center',
-      route: '/components/dynamic-forms',
-      title: 'Dynamic forms updates',
-    }, {
-      description: 'New pre-canned animations!',
-      icon: 'theaters',
-      route: '/components/animations',
-      title: 'New utility',
     },
   ];
 
