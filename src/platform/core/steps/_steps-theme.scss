@@ -30,7 +30,7 @@
         background: mat-color($background, 'hover');
       }
       .td-step-label-wrapper {
-        .md-caption {
+        .td-step-sublabel {
           color: mat-color($foreground, secondary-text);
         }
         &.mat-inactive {
