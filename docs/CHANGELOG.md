@@ -1,5 +1,5 @@
 <a name="1.0.0-beta.8"></a>
-# [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-08-05)
+# [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-10-05)
 
 The main focus of this release is support for `@angular/material@1.0.0-beta.11` and rename all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed on `@angular/material`'s following release.
 
