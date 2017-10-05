@@ -6,7 +6,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 import { HttpInterceptorService } from '@covalent/http';
 
 export interface ITemplate {
-  name: string;
+  title: string;
   description: string;
   plnkr: string;
   img: string;
