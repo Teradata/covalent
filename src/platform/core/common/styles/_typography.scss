@@ -73,22 +73,22 @@ body {
   }
 
   .md-title {
-    @include md-title();
+    @include mat-title();
   }
 
   .md-subhead {
-    @include md-subhead();
+    @include mat-subhead();
   }
 
   /************
   * Body Copy
   ************/
   .md-body-1 {
-    @include md-body-1();
+    @include mat-body-1();
   }
 
   .md-body-2 {
-    @include md-body-2();
+    @include mat-body-2();
   }
 
   .md-caption {
@@ -96,7 +96,7 @@ body {
     letter-spacing: 0.020em;
   }
 
-  .md-button {
+  .mat-button {
     letter-spacing: 0.010em;
   }
 }

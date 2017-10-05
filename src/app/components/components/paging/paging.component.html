@@ -1,11 +1,11 @@
-<md-card>
-  <md-card-title>Paging</md-card-title>
-  <md-card-subtitle>Paging bar for lists and tables</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
-        <md-card-content>
+<mat-card>
+  <mat-card-title>Paging</mat-card-title>
+  <mat-card-subtitle>Paging bar for lists and tables</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+        <mat-card-content>
           <p>Change Event: </p>
           <div>
             <p>Page Size: {{event?.pageSize || '100'}}</p>
@@ -13,15 +13,15 @@
             <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
           </div>
           <p>Total: {{event?.total || '1345'}}</p>
-        </md-card-content>
-        <md-divider></md-divider>
+        </mat-card-content>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
           {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -49,25 +49,25 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
-    </md-tab>
-  </md-tab-group>
-  <md-divider></md-divider>
-  <md-card-actions>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
     <div layout="row" layout-align="start center">
-      <button md-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
+      <button mat-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
     </div>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
-<md-card>
-  <md-card-title>Paging with dynamic page size</md-card-title>
-  <md-card-subtitle>Set a select to change the page size on the fly</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+<mat-card>
+  <mat-card-title>Paging with dynamic page size</mat-card-title>
+  <mat-card-subtitle>Set a select to change the page size on the fly</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
         <p>Change Event: </p>
         <div>
           <p>Page Size: {{eventPageSize?.pageSize || '100'}}</p>
@@ -75,31 +75,31 @@
           <p>Rows: {{eventPageSize?.fromRow || '1'}} to {{eventPageSize?.toRow || '100'}}</p>
         </div>
         <p>Total: {{eventPageSize?.total || '1345'}}</p>
-      </md-card-content>
-      <md-divider></md-divider>
+      </mat-card-content>
+      <mat-divider></mat-divider>
       <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
         <span hide-xs>Rows per page:</span>
-        <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-          <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+        <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+          <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
             {{size}}
-          </md-option>
-        </md-select>
+          </mat-option>
+        </mat-select>
         <span>{{pagingBarPageSize.range}} <span hide-xs>of {{pagingBarPageSize.total}}</span></span>
       </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
                   { {size} }
-                </md-option>
-              </md-select>
+                </mat-option>
+              </mat-select>
               <span>{ {pagingBarPageSize.range} } <span hide-xs>of { {pagingBarPageSize.total} }</span></span>
             </td-paging-bar>
           ]]>
@@ -119,19 +119,19 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
-<md-card>
-  <md-card-title>Paging using page links</md-card-title>
-  <md-card-subtitle>Navigate to pages with button links</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
-        <md-card-content>
+<mat-card>
+  <mat-card-title>Paging using page links</mat-card-title>
+  <mat-card-subtitle>Navigate to pages with button links</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+        <mat-card-content>
           <p>Change Event: </p>
           <div>
             <p>Page Size: {{eventLinks?.pageSize || '100'}}</p>
@@ -139,15 +139,15 @@
             <p>Rows: {{eventLinks?.fromRow || '1'}} to {{eventLinks?.toRow || '100'}}</p>
           </div>
           <p>Total: {{eventLinks?.total || '1345'}}</p>
-        </md-card-content>
-        <md-divider></md-divider>
+        </mat-card-content>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
           <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -170,19 +170,19 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
-<md-card>
-  <md-card-title>Paging using input</md-card-title>
-  <md-card-subtitle>Navigate to a specific page</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+<mat-card>
+  <mat-card-title>Paging using input</mat-card-title>
+  <mat-card-subtitle>Navigate to a specific page</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
         <p>Change Event: </p>
         <div>
           <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
@@ -190,41 +190,41 @@
           <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
         </div>
         <p>Total: {{eventInput?.total || '1345'}}</p>
-      </md-card-content>
-      <md-divider></md-divider>
+      </mat-card-content>
+      <mat-divider></mat-divider>
       <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
         <p hide-xs>Go to:</p>
-        <md-form-field [style.width.px]="30">
+        <mat-form-field [style.width.px]="30">
           <input #goToInput
-                  mdInput
+                  matInput
                   type="number"
                   [min]="1"
                   [max]="pagingBarInput.maxPage"
                   [value]="pagingBarInput.page"
                   (blur)="goToInput.value = pagingBarInput.page"
                   (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-        </md-form-field>
+        </mat-form-field>
         <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
       </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
               <p hide-xs>Go to:</p>
-              <md-form-field [style.width.px]="30">
+              <mat-form-field [style.width.px]="30">
                 <input #goToInput
-                        mdInput
+                        matInput
                         type="number"
                         [min]="1"
                         [max]="pagingBarInput.maxPage"
                         [value]="pagingBarInput.page"
                         (blur)="goToInput.value = pagingBarInput.page"
                         (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
-              </md-form-field>
+              </mat-form-field>
               <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
             </td-paging-bar>
           ]]>
@@ -243,19 +243,19 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
-<md-card>
-  <md-card-title>Paging with everything</md-card-title>
-  <md-card-subtitle>All the previous things + reponsiveness leveraging the `CovalentMediaModule`</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-tab-group md-stretch-tabs>
-    <md-tab>
-      <ng-template mdTabLabel>Demo</ng-template>
-      <md-card-content>
+<mat-card>
+  <mat-card-title>Paging with everything</mat-card-title>
+  <mat-card-subtitle>All the previous things + responsiveness leveraging the `CovalentMediaModule`</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
           <p>Change Event: </p>
           <div>
             <p>Page Size: {{eventResponsive?.pageSize || '100'}}</p>
@@ -263,8 +263,8 @@
             <p>Rows: {{eventResponsive?.fromRow || '1'}} to {{eventResponsive?.toRow || '100'}}</p>
           </div>
           <p>Total: {{eventResponsive?.total || '1345'}}</p>
-        </md-card-content>
-        <md-divider></md-divider>
+        </mat-card-content>
+        <mat-divider></mat-divider>
         <td-paging-bar #pagingBarResponsive
                        [pageLinkCount]="(media.registerQuery('sm') | async) ? 0 : 3"
                        [firstLast]="media.registerQuery('gt-xs') | async"
@@ -272,28 +272,28 @@
                        [total]="1345"
                        (change)="changeResponsive($event)">
           <span hide-xs>Rows per page:</span>
-          <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
-            <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+          <mat-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+            <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
               {{size}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
           <p hide-xs hide-sm hide-md>Go to:</p>
-          <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-xs') | async">
+          <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-xs') | async">
             <input #goToResponsive
-                    mdInput
+                    matInput
                     type="number"
                     [min]="1"
                     [max]="pagingBarResponsive.maxPage"
                     [value]="pagingBarResponsive.page"
                     (blur)="goToResponsive.value = pagingBarResponsive.page"
                     (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-          </md-form-field>
+          </mat-form-field>
           <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
         </td-paging-bar>
-    </md-tab>
-    <md-tab>
-      <ng-template mdTabLabel>Code</ng-template>
-      <md-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -304,22 +304,22 @@
                           [total]="1345"
                           (change)="changeResponsive($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
-                <md-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+              <mat-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+                <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
                   { {size} }
-                </md-option>
-              </md-select>
+                </mat-option>
+              </mat-select>
               <p hide-xs hide-sm hide-md>Go to:</p>
-              <md-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
+              <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
                 <input #goToResponsive
-                        mdInput
+                        matInput
                         type="number"
                         [min]="1"
                         [max]="pagingBarResponsive.maxPage"
                         [value]="pagingBarResponsive.page"
                         (blur)="goToResponsive.value = pagingBarResponsive.page"
                         (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
-              </md-form-field>
+              </mat-form-field>
               <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
             </td-paging-bar>
           ]]>
@@ -338,7 +338,7 @@
 
               ngAfterViewInit(): void {
                 // broadcast to all listener observables when loading the page
-                setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
+                setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
                   this.media.broadcast();
                   this._changeDetectorRef.detectChanges();
                 });
@@ -350,9 +350,9 @@
             }
           ]]>
         </td-highlight>
-      </md-card-content>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/paging/README.md"></td-readme-loader>

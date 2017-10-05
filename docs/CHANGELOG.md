@@ -1,3 +1,44 @@
+<a name="1.0.0-beta.8"></a>
+# [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-08-05)
+
+The main focus of this release is support for `@angular/material@1.0.0-beta.11` and rename all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed on `@angular/material`'s following release.
+
+The material team created a tool to update it automatically if you want to give it a test. [angular-material-prefix-updater](https://www.npmjs.com/package/angular-material-prefix-updater)
+
+#### Material Breaking Changes
+
+The material team decided to change their prefix from `md` to `mat`. Read more on the reasons in the `@angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta11-carapace-parapet-2017-09-21)
+
+#### Steps to rename md to mat
+
+We structured our commits in this [PR](https://github.com/Teradata/covalent/pull/890/commits) with the specific steps needed for the `md`/`mat` conversion.
+
+#### Highlights
+
+- `@angular/material@1.0.0-beta.11` support
+- Bugfixes and improvements
+
+## Bug Fixes
+* **data-table:** replace hardcoded 100px min width with projected width and way to override it [025ead6e6383f6faafd51decda28511cd30b9e44](https://github.com/Teradata/covalent/commit/025ead6e6383f6faafd51decda28511cd30b9e44)), closes [#891](https://github.com/Teradata/covalent/issues/891)
+* **data-table:** show which column was deselected when using single selection mode [013df521bc55818ee7bfe7cf318862ab02787abd](https://github.com/Teradata/covalent/commit/013df521bc55818ee7bfe7cf318862ab02787abd)), closes [#881](https://github.com/Teradata/covalent/issues/881)
+* **file-upload:** clear internal file input on cancel [6220b2a7a867f66fd6892888a2e3b21a9a645c74](https://github.com/Teradata/covalent/commit/6220b2a7a867f66fd6892888a2e3b21a9a645c74))
+* **json-formatter:** represent array of arrays properly [42c83987ef3498c52fa990ef974e819d1d606621](https://github.com/Teradata/covalent/commit/42c83987ef3498c52fa990ef974e819d1d606621)), closes [#852](https://github.com/Teradata/covalent/issues/852)
+* **paging:** stop css bleed to all md-selects from paging scss [8a9b4db4ee89869a5f02b906b07c30f8d49a7bff](https://github.com/Teradata/covalent/commit/8a9b4db4ee89869a5f02b906b07c30f8d49a7bff)), closes [#872](https://github.com/Teradata/covalent/issues/872)
+* **virtual-scroll:** re-render rows with proper height when replacing the data set [6590cf2497868d1151c36492f3fc75c4a3b53d8c](https://github.com/Teradata/covalent/commit/6590cf2497868d1151c36492f3fc75c4a3b53d8c)), closes [#878](https://github.com/Teradata/covalent/issues/878)
+
+## Features
+* **data-table:** allow dynamic row heights in data table even when using its virtual scroll impl [33790243daf55b265061b175bd092ec0063fc315](https://github.com/Teradata/covalent/commit/33790243daf55b265061b175bd092ec0063fc315)), closes [#868](https://github.com/Teradata/covalent/issues/868)
+* **data-table:** update demo and docs with better examples and load data from service [33790243daf55b265061b175bd092ec0063fc315](https://github.com/Teradata/covalent/commit/33790243daf55b265061b175bd092ec0063fc315)), closes [#868](https://github.com/Teradata/covalent/issues/868)
+
+## Refactor
+* **material:** upgrade to material@beta.11 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
+* **styles:** add mat- prefixes to all our md- prefixed classes (ignoring typography) [658680a03ba6fa7f4b7e3361e2404b5588743d99](https://github.com/Teradata/covalent/commit/658680a03ba6fa7f4b7e3361e2404b5588743d99))
+
+## Internal
+* **docs:** update resources layout & add Illustrator [00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe](https://github.com/Teradata/covalent/commit/00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe))
+* **angular:** upgrade to angular@4.4.3 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
+
+
 <a name="1.0.0-beta.7"></a>
 # [1.0.0-beta.7 One Step Closer](https://github.com/Teradata/covalent/tree/v1.0.0-beta.7) (2017-09-11)
 
@@ -20,7 +61,7 @@ Please check the Angular Material `beta.10` [changelog](https://github.com/angul
 
 #### CovalentDynamicFormsModule
 
-In order to ensure proper i18n support, all error messages mut be provided by the developer.
+In order to ensure proper i18n support, all error messages must be provided by the developer.
 
 e.g.
 
@@ -1151,7 +1192,7 @@ ngAfterViewInit(): void {
 * **steps:** Support for ngFor and ngIf usage on td-step components and register/de-register steps automatically. ([6486eb527ae845224a170b8c7dda2dc92a089c3a](https://github.com/Teradata/covalent/commit/6486eb527ae845224a170b8c7dda2dc92a089c3a)), closes [#200](https://github.com/Teradata/covalent/issues/200)
 * **dependencies:** Upgrade to @angular@2.4.1 and @material@beta.1. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
 * **deployment:** Initial AoT support. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15)), closes [#149](https://github.com/Teradata/covalent/issues/149)
-* **paging:** Usage of `md-select` as `perPage` selection insteaf of `md-icon-button` and `md-menu`. ([63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e](https://github.com/Teradata/covalent/commit/63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e))
+* **paging:** Usage of `md-select` as `perPage` selection insteaf of `md-icon-button` and `mat-menu`. ([63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e](https://github.com/Teradata/covalent/commit/63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e))
 * **layouts:** Added optional sticky footer (and footer-inner). ([59253bef91c354cb85ddd9f1d9622ec76241d13e](https://github.com/Teradata/covalent/commit/59253bef91c354cb85ddd9f1d9622ec76241d13e))
 
   Usage:

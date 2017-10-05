@@ -9,9 +9,10 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdPagingBarComponent } from './paging-bar.component';
 import { CovalentPagingModule } from './paging.module';
-import { MdInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: PagingBar', () => {
 
@@ -19,7 +20,7 @@ describe('Component: PagingBar', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
-        MdInputModule,
+        MatInputModule,
         CovalentPagingModule,
       ],
       declarations: [
@@ -28,6 +29,9 @@ describe('Component: PagingBar', () => {
         TestFirstLastComponent,
         TestPageLinkCountComponent,
         TestGoToComponent,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();
@@ -242,16 +246,16 @@ class TestPageLinkCountComponent {
   template: `
     <td-paging-bar #pagingBar [pageSize]="100" [total]="650">
       <p>Go to:</p>
-      <md-form-field>
+      <mat-form-field>
         <input #goToInput
-                mdInput
+                matInput
                 type="number"
                 [min]="1"
                 [max]="pagingBar.maxPage"
                 [value]="pagingBar.page"
                 (blur)="goToInput.value = pagingBar.page"
                 (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
-      </md-form-field>
+      </mat-form-field>
       
     </td-paging-bar>`,
 })

@@ -1,45 +1,45 @@
-<md-card>
+<mat-card>
   <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
     <span flex></span>
-    <button md-icon-button
-            mdTooltip="View Source"
+    <button mat-icon-button
+            matTooltip="View Source"
             (click)="toggleDemoCode = !toggleDemoCode">
-      <md-icon class="tc-grey-700">code</md-icon>
+      <mat-icon class="tc-grey-700">code</mat-icon>
     </button>
   </div>
-  <md-card-title>Virtual Scroll</md-card-title>
-  <md-card-subtitle>
+  <mat-card-title>Virtual Scroll</mat-card-title>
+  <mat-card-subtitle>
     Scroll virtually on a set of items
-  </md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <div [tdToggle]="!toggleDemoCode">
-      <md-tab-group md-stretch-tabs dynamicHeight>
-        <md-tab>
-          <ng-template mdTabLabel>HTML</ng-template>
+      <mat-tab-group mat-stretch-tabs dynamicHeight>
+        <mat-tab>
+          <ng-template matTabLabel>HTML</ng-template>
           <td-highlight lang="html">
             <![CDATA[
-              <md-list>
-                <md-list-item>
+              <mat-list>
+                <mat-list-item>
                   Column Header
-                </md-list-item>
-                <md-divider></md-divider>
+                </mat-list-item>
+                <mat-divider></mat-divider>
                 <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
                   <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-                    <md-list-item>
-                      <md-icon mdListAvatar>person</md-icon>
-                      <h4 md-line>{ {row.name} }</h4>
-                      <p md-line>Row: { {row.index} }</p>
-                    </md-list-item>
-                    <md-divider *ngIf="!last" md-inset></md-divider>
+                    <mat-list-item>
+                      <mat-icon matListAvatar>person</mat-icon>
+                      <h4 matLine>{ {row.name} }</h4>
+                      <p matLine>Row: { {row.index} }</p>
+                    </mat-list-item>
+                    <mat-divider *ngIf="!last" matInset></mat-divider>
                   </ng-template>
                 </td-virtual-scroll-container>
-              </md-list>
+              </mat-list>
             ]]>
           </td-highlight>
-        </md-tab>
-        <md-tab>
-          <ng-template mdTabLabel>TS</ng-template>
+        </mat-tab>
+        <mat-tab>
+          <ng-template matTabLabel>TS</ng-template>
           <td-highlight lang="typescript">
             <![CDATA[
               import { Component, OnInit } from '@angular/core';
@@ -56,39 +56,39 @@
               }
             ]]>
           </td-highlight>
-        </md-tab>
-      </md-tab-group>
-      <md-divider></md-divider>
+        </mat-tab>
+      </mat-tab-group>
+      <mat-divider></mat-divider>
     </div>
-    <md-list>
-      <md-list-item>
+    <mat-list>
+      <mat-list-item>
         Column Header
-      </md-list-item>
-      <md-divider></md-divider>
+      </mat-list-item>
+      <mat-divider></mat-divider>
       <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-          <md-list-item>
-            <md-icon mdListAvatar>person</md-icon>
-            <h4 md-line>{{row.name}}</h4>
-            <p md-line>Row: {{row.index}}</p>
-          </md-list-item>
-          <md-divider *ngIf="!last" md-inset></md-divider>
+          <mat-list-item>
+            <mat-icon matListAvatar>person</mat-icon>
+            <h4 matLine>{{row.name}}</h4>
+            <p matLine>Row: {{row.index}}</p>
+          </mat-list-item>
+          <mat-divider *ngIf="!last" matInset></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
-    </md-list>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button class="text-upper" (click)="virtualScroll.scrollToStart()">
+    </mat-list>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollToStart()">
       Scroll to first
     </button>
-    <button md-button class="text-upper" (click)="virtualScroll.scrollToEnd()">
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollToEnd()">
       Scroll to last
     </button>
-    <button md-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
       Scroll to 400th row
     </button>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>

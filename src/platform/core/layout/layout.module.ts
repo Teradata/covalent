@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
-import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule, MdCardModule, MdListModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, MatCardModule, MatListModule } from '@angular/material';
 
 import { TdLayoutComponent } from './layout.component';
 import { TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective } from './layout.directives';
@@ -60,12 +60,12 @@ export { TdLayoutComponent, TdLayoutToggleDirective, TdLayoutCloseDirective, TdL
   imports: [
     CommonModule,
     ScrollDispatchModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdIconModule,
-    MdCardModule,
-    MdListModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
   ],
   declarations: [
     TD_LAYOUTS,

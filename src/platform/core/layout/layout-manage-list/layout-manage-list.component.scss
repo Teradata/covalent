@@ -5,8 +5,8 @@
   min-height: 100%;
   height: 100%;
   overflow: hidden;
-  md-sidenav-container.td-layout-manage-list {
-    & > md-sidenav {
+  mat-sidenav-container.td-layout-manage-list {
+    & > mat-sidenav {
       &.mat-drawer-opened,
       &.mat-drawer-opening,
       &.mat-drawer-closed,
@@ -20,12 +20,12 @@
   }
 }
 :host /deep/ {
-  md-sidenav-container.td-layout-manage-list {
+  mat-sidenav-container.td-layout-manage-list {
     & > .mat-drawer-content {
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
-    & > md-sidenav {
+    & > mat-sidenav {
       box-sizing: border-box;
       display: -webkit-box;
       display: -webkit-flex;
@@ -35,7 +35,7 @@
       flex-direction: column;
     }
   }
-  md-nav-list a[md-list-item] .mat-list-item-content {
+  mat-nav-list a[mat-list-item] .mat-list-item-content {
     font-size: 14px;
   }
   .mat-toolbar {

@@ -11,9 +11,10 @@ import {
 
 import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { MdChip } from '@angular/material';
+import { MatChip } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { CovalentChipsModule, TdChipsComponent } from './chips.module';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 function createFakeKeyboardEvent(keyCode: number): any {
   return {
@@ -48,6 +49,7 @@ describe('Component: Chips', () => {
         TdChipsEventsTestComponent,
       ],
       providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
         {provide: OverlayContainer, useFactory: () => {
           overlayContainerElement = document.createElement('div') as HTMLElement;
           overlayContainerElement.classList.add('cdk-overlay-container');
@@ -148,7 +150,7 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
             done();
           });
@@ -166,25 +168,25 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
-            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+            fixture.debugElement.queryAll(By.directive(MatChip))[0]
               .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[2].nativeElement)
                 .toBe(document.activeElement);
-              fixture.debugElement.queryAll(By.directive(MdChip))[2]
+              fixture.debugElement.queryAll(By.directive(MatChip))[2]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+                expect(fixture.debugElement.queryAll(By.directive(MatChip))[1].nativeElement)
                   .toBe(document.activeElement);
-                fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                fixture.debugElement.queryAll(By.directive(MatChip))[1]
                   .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
-                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                  expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
                     .toBe(document.activeElement);
                   done();
                 });
@@ -205,25 +207,25 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
-            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+            fixture.debugElement.queryAll(By.directive(MatChip))[0]
               .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[1].nativeElement)
                 .toBe(document.activeElement);
-              fixture.debugElement.queryAll(By.directive(MdChip))[1]
+              fixture.debugElement.queryAll(By.directive(MatChip))[1]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+                expect(fixture.debugElement.queryAll(By.directive(MatChip))[2].nativeElement)
                   .toBe(document.activeElement);
-                fixture.debugElement.queryAll(By.directive(MdChip))[2]
+                fixture.debugElement.queryAll(By.directive(MatChip))[2]
                   .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
-                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                  expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
                     .toBe(document.activeElement);
                   done();
                 });
@@ -262,8 +264,8 @@ describe('Component: Chips', () => {
             // set tiemout
             setTimeout(() => {
               expect(chips.componentInstance.value.length).toBe(1);
-              expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
-              expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement.textContent).toContain('test');
+              expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement.textContent).toContain('test');
               done();
             }, 200);
           });
@@ -276,12 +278,12 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect(chips.componentInstance.value.length).toBe(1);
-          expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
+          expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
           done();
         });
       });
@@ -292,17 +294,17 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect(chips.componentInstance.value.length).toBe(1);
-          expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
-          fixture.debugElement.queryAll(By.directive(MdChip))[0].triggerEventHandler('keydown', createFakeKeyboardEvent(BACKSPACE));
+          expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
+          fixture.debugElement.queryAll(By.directive(MatChip))[0].triggerEventHandler('keydown', createFakeKeyboardEvent(BACKSPACE));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(chips.componentInstance.value.length).toBe(0);
-            expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(0);
+            expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(0);
             done();
           });
         });
@@ -314,17 +316,17 @@ describe('Component: Chips', () => {
       chips.triggerEventHandler('focus', new Event('focus'));
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+        const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
         option.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect(chips.componentInstance.value.length).toBe(1);
-          expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
+          expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
           fixture.debugElement.queryAll(By.css('.td-chip-removal'))[0].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(chips.componentInstance.value.length).toBe(0);
-            expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(0);
+            expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(0);
             done();
           });
         });
@@ -432,12 +434,12 @@ describe('Component: Chips', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('md-option');
+          const option: HTMLElement = <HTMLElement>overlayContainerElement.querySelector('mat-option');
           option.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(chips.componentInstance.value.length).toBe(1);
-            expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
+            expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
             done();
           });
         });
@@ -498,7 +500,7 @@ describe('Component: Chips', () => {
             chips.triggerEventHandler('focus', new Event('focus'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              fixture.debugElement.queryAll(By.directive(MdChip))[0]
+              fixture.debugElement.queryAll(By.directive(MatChip))[0]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
@@ -522,11 +524,11 @@ describe('Component: Chips', () => {
             chips.triggerEventHandler('focus', new Event('focus'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              fixture.debugElement.queryAll(By.directive(MdChip))[0]
+              fixture.debugElement.queryAll(By.directive(MatChip))[0]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                fixture.debugElement.queryAll(By.directive(MatChip))[1]
                   .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
@@ -596,13 +598,13 @@ describe('Component: Chips', () => {
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             expect(chips.componentInstance.value.length).toBe(3);
-            expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(3);
+            expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(3);
             fixture.debugElement.queryAll(By.css('.td-chip-removal'))[0]
               .triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
               expect(chips.componentInstance.value.length).toBe(2);
-              expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(2);
+              expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(2);
               done();
             });
           });
@@ -621,25 +623,25 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              fixture.debugElement.queryAll(By.directive(MdChip))[0]
+              fixture.debugElement.queryAll(By.directive(MatChip))[0]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(BACKSPACE));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
                 expect(chips.componentInstance.value.length).toBe(2);
-                expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(2);
+                expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(2);
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
                   expect(chips.componentInstance.value.length).toBe(2);
-                  fixture.debugElement.queryAll(By.directive(MdChip))[0]
+                  fixture.debugElement.queryAll(By.directive(MatChip))[0]
                     .triggerEventHandler('keydown', createFakeKeyboardEvent(DELETE));
                   fixture.detectChanges();
                   fixture.whenStable().then(() => {
                     expect(chips.componentInstance.value.length).toBe(1);
-                    expect(fixture.debugElement.queryAll(By.directive(MdChip)).length).toBe(1);
+                    expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
                     done();
                   });
                 });
@@ -661,25 +663,25 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
-            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+            fixture.debugElement.queryAll(By.directive(MatChip))[0]
               .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[2].nativeElement)
                 .toBe(document.activeElement);
-              fixture.debugElement.queryAll(By.directive(MdChip))[2]
+              fixture.debugElement.queryAll(By.directive(MatChip))[2]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+                expect(fixture.debugElement.queryAll(By.directive(MatChip))[1].nativeElement)
                   .toBe(document.activeElement);
-                fixture.debugElement.queryAll(By.directive(MdChip))[1]
+                fixture.debugElement.queryAll(By.directive(MatChip))[1]
                   .triggerEventHandler('keydown', createFakeKeyboardEvent(LEFT_ARROW));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
-                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                  expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
                     .toBe(document.activeElement);
                   done();
                 });
@@ -701,25 +703,25 @@ describe('Component: Chips', () => {
           chips.triggerEventHandler('focus', new Event('focus'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+            expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
               .toBe(document.activeElement);
-            fixture.debugElement.queryAll(By.directive(MdChip))[0]
+            fixture.debugElement.queryAll(By.directive(MatChip))[0]
               .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              expect(fixture.debugElement.queryAll(By.directive(MdChip))[1].nativeElement)
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[1].nativeElement)
                 .toBe(document.activeElement);
-              fixture.debugElement.queryAll(By.directive(MdChip))[1]
+              fixture.debugElement.queryAll(By.directive(MatChip))[1]
                 .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                expect(fixture.debugElement.queryAll(By.directive(MdChip))[2].nativeElement)
+                expect(fixture.debugElement.queryAll(By.directive(MatChip))[2].nativeElement)
                   .toBe(document.activeElement);
-                fixture.debugElement.queryAll(By.directive(MdChip))[2]
+                fixture.debugElement.queryAll(By.directive(MatChip))[2]
                   .triggerEventHandler('keydown', createFakeKeyboardEvent(RIGHT_ARROW));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
-                  expect(fixture.debugElement.queryAll(By.directive(MdChip))[0].nativeElement)
+                  expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement)
                     .toBe(document.activeElement);
                   done();
                 });

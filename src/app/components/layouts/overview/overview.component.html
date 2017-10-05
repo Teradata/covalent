@@ -1,33 +1,33 @@
-<md-card>
-  <md-card-title>Layout Options</md-card-title>
-  <md-card-subtitle>We offer 4 Material Design layouts for you</md-card-subtitle>
-  <md-divider></md-divider> 
-  <md-card-content hide-xs hide-sm>
+<mat-card>
+  <mat-card-title>Layout Options</mat-card-title>
+  <mat-card-subtitle>We offer 4 Material Design layouts for you</mat-card-subtitle>
+  <mat-divider></mat-divider> 
+  <mat-card-content hide-xs hide-sm>
     <p>For your entire app or for different sections of your app, select one of these Material Design layout options:</p>
     <div layout="row" layout-padding>
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-        <a md-button flex [routerLink]="[item.route]">
+        <a mat-button flex [routerLink]="[item.route]">
           <img src="app/assets/images/{{item.route}}.png" alt="{{item.title}}">
           <div class="md-subtitle">{{item.title}}</div>
           <div class="md-body-1 text-wrap text-left">{{item.description}}</div>
         </a>
       </ng-template>
     </div>
-  </md-card-content>
-  <md-nav-list hide-gt-sm>
+  </mat-card-content>
+  <mat-nav-list hide-gt-sm>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-      <a md-list-item [routerLink]="[item.route]">
-        <md-icon mdListAvatar>{{item.icon}}</md-icon>
-        <h3 mdLine> {{item.title}} </h3>
-        <p mdLine> {{item.description}} </p>
+      <a mat-list-item [routerLink]="[item.route]">
+        <mat-icon matListAvatar>{{item.icon}}</mat-icon>
+        <h3 matLine> {{item.title}} </h3>
+        <p matLine> {{item.description}} </p>
       </a>
-      <md-divider *ngIf="!last" md-inset></md-divider>
+      <mat-divider *ngIf="!last" matInset></mat-divider>
     </ng-template>
-  </md-nav-list>  
-</md-card>
+  </mat-nav-list>  
+</mat-card>
 <td-readme-loader td-after-card resourceUrl="platform/core/layout/README.md"></td-readme-loader>
-<md-card>
-  <md-card-title>Flexbox Layout (&quot;grid&quot;)</md-card-title>
+<mat-card>
+  <mat-card-title>Flexbox Layout (&quot;grid&quot;)</mat-card-title>
   <td-expansion-panel-group>
     <td-expansion-panel expand="true" label="Flexbox Introduction" sublabel="what powers this layout?">
       <div class="md-padding">
@@ -50,7 +50,7 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
@@ -60,14 +60,14 @@
             </div>
           ]]>
         </td-highlight>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <p>Vertical column container:</p>
         <div layout="column">
           <div flex class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="column">
@@ -87,7 +87,7 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-margin>
@@ -97,14 +97,14 @@
             </div>
           ]]>
         </td-highlight>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <p>Layout padding</p>
         <div layout="row" layout-padding>
           <div flex class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -124,7 +124,7 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex="30" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -134,14 +134,14 @@
             </div>
           ]]>
         </td-highlight>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <p>Responsive widths (will change as you resize browser):</p>
         <div layout="row" layout-padding>
           <div flex-gt-xs="40" flex-md="50" class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex-gt-xs="30" flex-md="20" flex-lg="10" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -151,13 +151,13 @@
             </div>
           ]]>
         </td-highlight>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <p>Typical responsive layout (just collapse on xs which is mobile)</p>
         <div layout-gt-xs="row">
           <div flex-gt-xs="60" class="bgc-teal-600 tc-teal-50">child</div>
           <div flex-gt-xs="40" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <md-divider class="push-top push-bottom"></md-divider>
+        <mat-divider class="push-top push-bottom"></mat-divider>
         <td-highlight lang="html">
           <![CDATA[
             <div layout-gt-xs="row">
@@ -169,4 +169,4 @@
       </div>
     </td-expansion-panel>
   </td-expansion-panel-group>
-</md-card>
+</mat-card>

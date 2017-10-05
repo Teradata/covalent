@@ -1,19 +1,19 @@
-<md-card>
-  <md-card-title>Markdown</md-card-title>
-  <md-card-subtitle>Parse markdown code</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Markdown</mat-card-title>
+  <mat-card-subtitle>Parse markdown code</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     With this component you can easily write inline markdown, or alternatively you can sanitize and load external markdown (.md) files.
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Basic example</md-card-title>
-  <md-card-subtitle>Headings, lists &amp; paragraphs</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Basic example</mat-card-title>
+  <mat-card-subtitle>Headings, lists &amp; paragraphs</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-markdown>
           # Heading (H1) 
 
@@ -35,9 +35,9 @@
 
           Combined emphasis with **asterisks and _underscores_**.
         </td-markdown>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
             <td-markdown>
@@ -63,18 +63,18 @@
             </td-markdown>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Links &amp; Images</md-card-title>
-  <md-card-subtitle>There are two ways to create links, inline &amp; reference</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Links &amp; Images</mat-card-title>
+  <mat-card-subtitle>There are two ways to create links, inline &amp; reference</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <h3>Links &amp; Images</h3>
         <p>There are two ways to create links. Inline & reference:</p>
         <td-markdown>
@@ -92,9 +92,9 @@
 
           [logo]: app/assets/icons/teradata.svg "Teradata Labs"
         </td-markdown>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
             <td-markdown>
@@ -114,19 +114,19 @@
             </td-markdown>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Inline Code &amp; Snippets</md-card-title>
-  <md-card-subtitle>Code blocks</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+<mat-card>
+  <mat-card-title>Inline Code &amp; Snippets</mat-card-title>
+  <mat-card-subtitle>Code blocks</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <p>Inline has `back-ticks` around it.</p>
         <p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. </p>
         <td-markdown>
@@ -142,9 +142,9 @@
           print s
           ```
         </td-markdown>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
             <td-markdown>
@@ -162,18 +162,18 @@
             </td-markdown>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Block Quotes &amp; Dividers</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+<mat-card>
+  <mat-card-title>Block Quotes &amp; Dividers</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <h3>Blockquotes</h3>
         <td-markdown>
           > Blockquotes are very handy in email to emulate reply text.
@@ -199,9 +199,9 @@
 
           Underscores
         </td-markdown>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
             <td-markdown>
@@ -234,9 +234,9 @@
             </td-markdown>
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/markdown/README.md"></td-readme-loader>

@@ -3,9 +3,9 @@ $mat-chip-horizontal-padding: 12px;
 $mat-chips-chip-margin: $mat-chip-horizontal-padding / 4;
 
 // Fix from material
-md-chip-list {
+mat-chip-list {
     &:not(.mat-chip-list-stacked) {
-            .md-chip-list-wrapper {
+            .mat-chip-list-wrapper {
                 .mat-chip:not(.mat-basic-chip) {
                     margin: 0 $mat-chips-chip-margin 0 $mat-chips-chip-margin;
 
@@ -27,7 +27,7 @@ md-chip-list {
             }
     }
     &.mat-chip-list-stacked {
-        .md-chip-list-wrapper {
+        .mat-chip-list-wrapper {
             display: block;
 
             .mat-chip:not(.mat-basic-chip) {

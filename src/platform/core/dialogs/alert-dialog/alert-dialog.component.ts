@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'td-alert-dialog',
@@ -11,7 +11,7 @@ export class TdAlertDialogComponent {
   message: string;
   closeButton: string = 'CLOSE';
 
-  constructor(private _dialogRef: MdDialogRef<TdAlertDialogComponent>) {}
+  constructor(private _dialogRef: MatDialogRef<TdAlertDialogComponent>) {}
 
   close(): void {
     this._dialogRef.close();

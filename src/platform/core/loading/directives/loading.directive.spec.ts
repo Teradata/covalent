@@ -12,6 +12,7 @@ import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
 import { of } from 'rxjs/observable/of';
 import { _catch } from 'rxjs/operator/catch';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Directive: Loading', () => {
 
@@ -29,6 +30,9 @@ describe('Directive: Loading', () => {
         NoopAnimationsModule,
         CovalentLoadingModule,
       ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
+      ],
     });
     TestBed.compileComponents();
   }));
@@ -43,7 +47,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-spinner'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
@@ -73,7 +77,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-bar'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-accent'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
@@ -108,7 +112,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-spinner'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-warn'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
@@ -155,7 +159,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-bar'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-bar'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-overlay'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.td-fullscreen'))).toBeFalsy();
@@ -169,17 +173,17 @@ describe('Directive: Loading', () => {
 
           loadingService.setValue('name', 20);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
           .toEqual({transform: 'scaleX(0.2)'});
 
           loadingService.setValue('name', 50);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
           .toEqual({transform: 'scaleX(0.5)'});
 
           loadingService.setValue('name', 100);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('md-progress-bar')).componentInstance._primaryTransform())
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
           .toEqual({transform: 'scaleX(1)'});
 
           loadingService.resolve('name');
@@ -232,7 +236,7 @@ describe('Directive: Loading', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-spinner'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-accent'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
         component.sendResult('success');
@@ -259,7 +263,7 @@ describe('Directive: Loading', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-spinner'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
         component.sendError('error');
@@ -286,7 +290,7 @@ describe('Directive: Loading', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-        expect(fixture.debugElement.query(By.css('md-progress-spinner'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('mat-progress-spinner'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.mat-primary'))).toBeTruthy();
         expect(fixture.debugElement.query(By.css('.content'))).toBeFalsy();
         component.loading = false;

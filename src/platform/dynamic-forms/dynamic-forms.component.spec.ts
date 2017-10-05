@@ -11,6 +11,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { TdDynamicType, TdDynamicElement, ITdDynamicElementConfig,
          TdDynamicElementComponent, TdDynamicFormsComponent, CovalentDynamicFormsModule } from './';
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: TdDynamicForms', () => {
 
@@ -22,6 +23,9 @@ describe('Component: TdDynamicForms', () => {
       ],
       declarations: [
         TdDynamicFormsTestComponent,
+      ],
+      providers: [
+        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

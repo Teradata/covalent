@@ -13,9 +13,9 @@ import { ColorsComponent } from './colors/colors.component';
 import { UtilityStylesComponent } from './utility-styles/utility-styles.component';
 import { ResourcesComponent } from './resources/resources.component';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdToolbarModule, MdCoreModule, MdSnackBarModule,
-         MdInputModule, MdMenuModule, MdSelectModule, MdGridListModule, MdTabsModule, MdSidenavModule,
-         MdTooltipModule, MdProgressBarModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MatSnackBarModule,
+         MatInputModule, MatMenuModule, MatSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
+         MatTooltipModule, MatProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
@@ -39,21 +39,20 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     CommonModule,
     FormsModule,
     /** Material Modules */
-    MdCoreModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule,
-    MdCardModule,
-    MdToolbarModule,
-    MdInputModule,
-    MdMenuModule,
-    MdSelectModule,
-    MdGridListModule,
-    MdTabsModule,
-    MdSidenavModule,
-    MdSnackBarModule,
-    MdTooltipModule,
-    MdProgressBarModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatProgressBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentMediaModule,
