@@ -1,11 +1,17 @@
 <a name="1.0.0-beta.8"></a>
-# [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-08-04)
+# [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-08-05)
 
-This release focuses for the most part on adding support for `@angular/material@1.0.0-beta.11` and renaming all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed in their following release.
+The main focus of this release is support for `@angular/material@1.0.0-beta.11` and rename all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed on `@angular/material`'s following release.
 
 The material team created a tool to update it automatically if you want to give it a test. [angular-material-prefix-updater](https://www.npmjs.com/package/angular-material-prefix-updater)
 
-You can see their braking changes and more info in the `@angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta11-carapace-parapet-2017-09-21) and see how we did all the changes for `covalent` [here](https://github.com/Teradata/covalent/pull/890/commits)
+#### Material Breaking Changes
+
+The material team decided to change their prefix from `md` to `mat`. Read more on the reasons in the `@angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta11-carapace-parapet-2017-09-21)
+
+#### Steps to rename md to mat
+
+We structured our commits in this [PR](https://github.com/Teradata/covalent/pull/890/commits) with the specific steps needed for the `md`/`mat` conversion.
 
 #### Highlights
 
@@ -26,6 +32,7 @@ You can see their braking changes and more info in the `@angular/material` [chan
 
 ## Refactor
 * **material:** upgrade to material@beta.11 [5ffb36432ee155caf706c43aa88f42754e776d64](https://github.com/Teradata/covalent/commit/5ffb36432ee155caf706c43aa88f42754e776d64))
+* **styles:** add mat- prefixes to all our md- prefixed classes (ignoring typography) [658680a03ba6fa7f4b7e3361e2404b5588743d99](https://github.com/Teradata/covalent/commit/658680a03ba6fa7f4b7e3361e2404b5588743d99))
 
 ## Internal
 * **docs:** update resources layout & add Illustrator [00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe](https://github.com/Teradata/covalent/commit/00fcf66f2bbe0b86f488ae7ba2bffdd163ac32fe))
