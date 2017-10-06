@@ -12,7 +12,6 @@ import { CovalentVirtualScrollModule } from './virtual-scroll.module';
 import { MatListModule } from '@angular/material';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: VirtualScrollContainer', () => {
 
@@ -25,9 +24,6 @@ describe('Component: VirtualScrollContainer', () => {
       ],
       declarations: [
         TestBasicVirtualScrollComponent,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

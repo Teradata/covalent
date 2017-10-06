@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
+import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import {
@@ -14,7 +15,10 @@ import {
   selector: 'dynamic-forms-demo',
   styleUrls: ['./dynamic-forms.component.scss'],
   templateUrl: './dynamic-forms.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class DynamicFormsDemoComponent {
 

@@ -12,7 +12,6 @@ import { CovalentPagingModule } from './paging.module';
 import { MatInputModule } from '@angular/material';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: PagingBar', () => {
 
@@ -29,9 +28,6 @@ describe('Component: PagingBar', () => {
         TestFirstLastComponent,
         TestPageLinkCountComponent,
         TestGoToComponent,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

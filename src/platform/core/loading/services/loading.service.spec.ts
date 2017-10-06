@@ -9,7 +9,6 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Service: Loading', () => {
   let overlayContainerElement: HTMLElement;
@@ -24,7 +23,6 @@ describe('Service: Loading', () => {
         CovalentLoadingModule,
       ],
       providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
         {provide: OverlayContainer, useFactory: () => {
           overlayContainerElement = document.createElement('div');
           return {getContainerElement: () => overlayContainerElement};

@@ -1,12 +1,16 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'design-patterns-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class NavigationDrawerComponent {
 
