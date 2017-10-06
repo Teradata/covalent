@@ -1,3 +1,24 @@
+<a name="1.0.0-beta.8-1"></a>
+# [1.0.0-beta.8-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8-1) (2017-10-06)
+
+Small patch release to support `@angular/material@1.0.0-beta.12`
+
+#### Material Breaking Changes
+
+The most important breaking change with this latest material release is that `mat-select` will need to be inside a `mat-form-field` if you want the placeholder and underline.
+
+This does give an advantage that now `matInput` and `mat-select` will follow the same API's around hints, errors, prefix, suffix and placeholders.
+
+Read more in the @angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta12-marble-mustache-2017-10-05)
+
+#### Highlights
+
+- `@angular/material@1.0.0-beta.12` support
+
+## Features
+* **material:** upgrade to material@beta.12 [f728be364e05cb032102c8f79a611bc1d52d8ec6](https://github.com/Teradata/covalent/commit/f728be364e05cb032102c8f79a611bc1d52d8ec6)), closes [#913](https://github.com/Teradata/covalent/issues/913)
+
+
 <a name="1.0.0-beta.8"></a>
 # [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-10-05)
 
