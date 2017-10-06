@@ -1,6 +1,6 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0-beta.8-1",
   "description": "Teradata UI Platform Dynamic Forms Module",
   "main": "./bundles/dynamic-forms.umd.js",
   "module": "./index.js",
