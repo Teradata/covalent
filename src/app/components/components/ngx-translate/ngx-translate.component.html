@@ -107,10 +107,10 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab [label]="'DEMO_TAB' | translate">
         <div layout="row" layout-align="start center" layout-padding>
-          <mat-form-field>
+          <mat-form-field flex="40">
             <mat-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
                         [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
-                        [(ngModel)]="valueCountForPlural" flex="40">
+                        [(ngModel)]="valueCountForPlural" flex>
               <mat-option [value]="0">0</mat-option>
               <mat-option [value]="1">1</mat-option>
               <mat-option [value]="4">4</mat-option>
@@ -130,10 +130,10 @@
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-align="start center" layout-padding>
-              <mat-form-field>
+              <mat-form-field flex="40">
                 <mat-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
                             [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
-                            [(ngModel)]="valueCountForPlural" flex="40">
+                            [(ngModel)]="valueCountForPlural" flex>
                   <mat-option [value]="0">0</mat-option>
                   <mat-option [value]="1">1</mat-option>
                   <mat-option [value]="4">4</mat-option>
