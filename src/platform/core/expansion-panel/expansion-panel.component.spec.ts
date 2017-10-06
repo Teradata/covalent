@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './expansion-panel.module';
 import { By } from '@angular/platform-browser';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: ExpansionPanel', () => {
 
@@ -21,9 +20,6 @@ describe('Component: ExpansionPanel', () => {
       imports: [
         NoopAnimationsModule,
         CovalentExpansionPanelModule,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

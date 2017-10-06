@@ -12,7 +12,6 @@ import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
 import { of } from 'rxjs/observable/of';
 import { _catch } from 'rxjs/operator/catch';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Directive: Loading', () => {
 
@@ -29,9 +28,6 @@ describe('Directive: Loading', () => {
       imports: [
         NoopAnimationsModule,
         CovalentLoadingModule,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

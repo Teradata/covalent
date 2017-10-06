@@ -7,7 +7,6 @@ import {
 import { Component } from '@angular/core';
 import { CovalentFileModule, TdFileUploadComponent } from '../file.module';
 import { By } from '@angular/platform-browser';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: FileUpload', () => {
 
@@ -18,9 +17,6 @@ describe('Component: FileUpload', () => {
       ],
       imports: [
         CovalentFileModule,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();
