@@ -28,20 +28,24 @@
   <mat-card-actions>
     <div layout="row" layout-align="start center" class="pad-sm">
       <span flex="none" hide-xs class="push-right md-body-1">Editor Language</span>
-      <mat-select floatPlaceholder="never" [(ngModel)]="editorLanguage" (change)="changeLanguage()" placeholder="Editor Language">
-        <mat-option value="sql">SQL</mat-option>
-        <mat-option value="javascript">JavaScript</mat-option>
-        <mat-option value="html">HTML</mat-option>
-      </mat-select>
+      <mat-form-field floatPlaceholder="never">
+        <mat-select [(ngModel)]="editorLanguage" (change)="changeLanguage()" placeholder="Editor Language">
+          <mat-option value="sql">SQL</mat-option>
+          <mat-option value="javascript">JavaScript</mat-option>
+          <mat-option value="html">HTML</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <mat-divider></mat-divider>
     <div layout="row" layout-align="start center" class="pad-sm">
       <span flex="none" hide-xs class="push-right md-body-1">Editor Theme</span>
-      <mat-select floatPlaceholder="never" [(ngModel)]="editorTheme" (change)="changeTheme()" placeholder="Editor Theme">
-        <mat-option value="vs">Light</mat-option>
-        <mat-option value="vs-dark">Dark</mat-option>
-        <mat-option value="hc-black">High Contrast</mat-option>
-      </mat-select>
+      <mat-form-field floatPlaceholder="never">
+        <mat-select [(ngModel)]="editorTheme" (change)="changeTheme()" placeholder="Editor Theme">
+          <mat-option value="vs">Light</mat-option>
+          <mat-option value="vs-dark">Dark</mat-option>
+          <mat-option value="hc-black">High Contrast</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </mat-card-actions>
 </mat-card>

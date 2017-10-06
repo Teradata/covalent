@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 
+import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 export enum OrderBy {
@@ -15,7 +16,10 @@ export interface IHeaders {
   selector: 'design-patterns-management-list',
   styleUrls: ['./management-list.component.scss'],
   templateUrl: './management-list.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class ManagementListComponent implements OnInit {
 

@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
+import { TdCollapseAnimation } from '@covalent/core';
 
 import { MatSnackBar } from '@angular/material';
 
@@ -10,7 +11,10 @@ import { MatSnackBar } from '@angular/material';
   selector: 'design-patterns-alerts',
   styleUrls: ['./alerts.component.scss'],
   templateUrl: './alerts.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class AlertsComponent {
 

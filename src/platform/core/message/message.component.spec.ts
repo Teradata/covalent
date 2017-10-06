@@ -11,7 +11,6 @@ import { TdMessageComponent } from './message.component';
 import { CovalentMessageModule } from './message.module';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 describe('Component: Message', () => {
 
@@ -25,9 +24,6 @@ describe('Component: Message', () => {
         TdMessageBasicTestComponent,
         TdMessageContentTestComponent,
         TdMessageOpenedTestComponent,
-      ],
-      providers: [
-        {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true},
       ],
     });
     TestBed.compileComponents();

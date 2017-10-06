@@ -1,12 +1,16 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'design-patterns-cards',
   styleUrls: ['./cards.component.scss'],
   templateUrl: './cards.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class CardsComponent {
 
