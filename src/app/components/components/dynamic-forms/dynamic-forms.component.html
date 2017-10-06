@@ -21,7 +21,7 @@
           </div>
         </mat-card-title>
         <mat-divider></mat-divider>
-        <div [tdToggle]="!showDynamicCode">
+        <div [@tdCollapse]="!showDynamicCode">
           <td-highlight language="json" [content]="dynamicElements | json"></td-highlight>
         </div>
         <div class="pad">
