@@ -2,7 +2,10 @@
 mat-sidenav-container {
   & > md-content,
   & > [md-content],
-  & > .md-content {
+  & > .md-content,
+  & > mat-content,
+  & > [mat-content],
+  & > .mat-content {
     height: 100%;
     overflow: hidden;
   }
@@ -10,18 +13,24 @@ mat-sidenav-container {
 
 md-content,
 [md-content],
-.md-content {
+.md-content,
+mat-content,
+[mat-content],
+.mat-content,
+ {
 
   display: block;
   position: relative;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
-  &[md-scroll-y] {
+  &[md-scroll-y],
+  &.mat-scroll-y {
     overflow-y: auto;
     overflow-x: hidden;
   }
-  &[md-scroll-x] {
+  &[md-scroll-x],
+  &.mat-scroll-x {
     overflow-x: auto;
     overflow-y: hidden;
   }

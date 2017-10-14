@@ -9,19 +9,5 @@
       font-size: 12px;
       font-weight: normal;
     }
-    /deep/ mat-select { 
-      &.mat-select {
-        padding-top: 0px;
-      }
-      & {  
-        .mat-select-trigger {
-          min-width: 44px;
-          font-size: 12px;
-        }
-        .mat-select-underline {
-          display: none;
-        }
-      }
-    }
   }
 }

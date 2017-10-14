@@ -21,7 +21,7 @@
           </div>
         </mat-card-title>
         <mat-divider></mat-divider>
-        <div [tdToggle]="!showDynamicCode">
+        <div [@tdCollapse]="!showDynamicCode">
           <td-highlight language="json" [content]="dynamicElements | json"></td-highlight>
         </div>
         <div class="pad">
@@ -55,11 +55,13 @@
       <mat-divider></mat-divider>
       <form #addForm="ngForm">
         <div layout="row" layout-align="start center" class="pad-sm">
-          <mat-select class="pad-right" placeholder="Select element type" floatPlaceholder="never" [(ngModel)]="type" name="type" required>
-            <mat-option *ngFor="let option of elementOptions" [value]="option">
-              {{ option }}
-            </mat-option>
-          </mat-select>
+          <mat-form-field class="pad-right" floatPlaceholder="never">
+            <mat-select placeholder="Select element type" [(ngModel)]="type" name="type" required>
+              <mat-option *ngFor="let option of elementOptions" [value]="option">
+                {{ option }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
           <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
             <mat-icon>add</mat-icon>
           </button>

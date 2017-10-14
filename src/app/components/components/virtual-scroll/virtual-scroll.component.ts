@@ -1,12 +1,16 @@
 import { Component, OnInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
+import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'virtual-scroll-demo',
   styleUrls: ['./virtual-scroll.component.scss'],
   templateUrl: './virtual-scroll.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VirtualScrollDemoComponent implements OnInit {
