@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // import your components here for combat-training and see if they can survive the battle
 import { CovalentMessageModule, CovalentPagingModule, IPageChangeEvent } from '@covalent/core';
-import { MdSliderModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material';
 
 /**
  * This component is used to test whether or if the supplied Covalent components can be
@@ -32,7 +32,7 @@ export class CombatTrainingComponent {
     BrowserModule.withServerTransition({ appId: 'combat-training' }),
     CovalentMessageModule,
     CovalentPagingModule,
-    MdSliderModule,
+    MatSliderModule,
     // Add additional Covalent components here and within the template
   ],
   bootstrap: [CombatTrainingComponent],
