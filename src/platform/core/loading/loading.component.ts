@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs/Subject';
@@ -95,7 +95,8 @@ export class TdLoadingComponent {
    */
   color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   getHeight(): string {
     // Ignore height if style is `overlay` or `fullscreen`.
@@ -107,14 +108,25 @@ export class TdLoadingComponent {
     }
   }
 
-  getCircleDiameter(): string {
+  getCircleDiameter(): number {
+    let diameter: number = 100;
+    // if height is provided, then we take that as diameter
     if (this.height) {
-      let diameter: number = this.height * (2 / 3);
-      if (diameter < 80) {
-        return `${diameter}px`;
-      }
+      diameter = this.height;
+    // else if its not provided, then we take the host height
+    } else if (this.height === undefined) {
+      diameter = this._hostHeight();
     }
-    return '80px';
+    // if the diameter is over 100, we return 100
+    if (!!diameter && diameter <= 100) {
+      return diameter;
+    }
+    return 100;
+  }
+
+  getCircleStrokeWidth(): number {
+    let strokeWidth: number = this.getCircleDiameter() / 10;
+    return Math.abs(strokeWidth);
   }
 
   isCircular(): boolean {
@@ -183,5 +195,15 @@ export class TdLoadingComponent {
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     return this._animationOut.asObservable();
+  }
+
+  /**
+   * Returns the host height of the loading component
+   */
+  private _hostHeight(): number {
+    if (<HTMLElement>this._elementRef.nativeElement) {
+      return (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height;
+    }
+    return 0;
   }
 }
