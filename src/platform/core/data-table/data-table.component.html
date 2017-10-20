@@ -23,7 +23,7 @@
         [name]="column.name"
         [numeric]="column.numeric"
         [active]="(column.sortable || sortable) && column === sortByColumn"
-        [sortable]="column.sortable || sortable"
+        [sortable]="column.sortable || (sortable && column.sortable !== false)"
         [sortOrder]="sortOrderEnum"
         [hidden]="column.hidden"
         (sortChange)="handleSort(column)">
