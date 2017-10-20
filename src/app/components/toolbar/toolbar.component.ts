@@ -37,4 +37,11 @@ export class ToolbarComponent {
     this._dir.dir = dir;
     setDirection(dir);
   }
+
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
+  }
 }
