@@ -48,5 +48,13 @@
         <mat-icon>swap_horiz</mat-icon>
         <span>{{dir.toUpperCase()}}</span>
       </button>
+      <button mat-menu-item *ngIf="activeTheme === 'theme-dark'" (click)="theme('default-theme')">
+        <mat-icon>brightness_high</mat-icon>
+        <span>Light Mode</span>
+      </button>
+      <button mat-menu-item *ngIf="activeTheme != 'theme-dark'" (click)="theme('theme-dark')">
+        <mat-icon>brightness_low</mat-icon>
+        <span>Dark Mode</span>
+      </button>
     </mat-menu>
   </div>
