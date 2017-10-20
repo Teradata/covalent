@@ -34,6 +34,10 @@ export class SearchDemoComponent {
     name: 'search',
     type: 'function($event)',
   }, {
+    description: `The icon used to clear the search input. Defaults to 'cancel' icon.`,
+    name: 'clearIcon?',
+    type: 'string',
+  }, {
     description: `Event emitted after the clear icon has been clicked.`,
     name: 'clear',
     type: 'function($event)',
@@ -51,6 +55,15 @@ export class SearchDemoComponent {
     description: `The icon used to close the search toggle, only shown when [alwaysVisible] is false.
                   Defaults to 'search' icon.`,
     name: 'backIcon?',
+    type: 'string',
+  }, {
+    description: `The icon used to open the search toggle, only shown when [searchVisible] is false or [alwaysVisible] is true.
+                  Defaults to 'search' icon.`,
+    name: 'searchIcon?',
+    type: 'string',
+  }, {
+    description: `The icon used to clear the search input. Defaults to 'cancel' icon.`,
+    name: 'clearIcon?',
     type: 'string',
   }, {
     description: `Sets if the input underline should be visible. Defaults to 'false'.`,

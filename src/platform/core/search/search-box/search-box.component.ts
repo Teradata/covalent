@@ -70,6 +70,20 @@ export class TdSearchBoxComponent {
   @Input('placeholder') placeholder: string;
 
   /**
+   * searchIcon?: string
+   * The icon used to open the search toggle, only shown when [searchVisible] is false or [alwaysVisible] is true.
+   * Defaults to 'search' icon.
+   */
+  @Input('searchIcon') searchIcon: string = 'search';
+
+  /**
+   * clearIcon?: string
+   * The icon used to clear the search input.
+   * Defaults to 'cancel' icon.
+   */
+  @Input('clearIcon') clearIcon: string = 'cancel';
+
+  /**
    * searchDebounce: function($event)
    * Event emitted after the [debounce] timeout.
    */
