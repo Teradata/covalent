@@ -5,11 +5,17 @@
   <mat-card-content>
     <p>Media Queries:</p>
     <mat-list>
-      <ng-template let-demo let-last="demo" ngFor [ngForOf]="mediaDemo">
-        <a mat-list-item layout-align="row">
-          <h3 [tdMediaToggle]="demo.query" [mediaStyles]="{color: 'red'}" [mediaAttributes]="{title: 'It matches!!!'}" matLine> {{demo.query}}</h3>
+      <ng-template let-demo let-last="last" ngFor [ngForOf]="mediaDemo">
+        <mat-list-item>
+          <mat-icon [@tdJello]="demo.value" matListAvatar>
+            <span *ngIf="demo.value; else offStateIcon" class="tc-primary">check_circle</span>
+            <ng-template #offStateIcon>
+              <span>highlight_off</span>
+            </ng-template>
+          </mat-icon>
+          <h3 [tdMediaToggle]="demo.query" [mediaClasses]="['tc-primary']" [mediaAttributes]="{title: 'It matches!!!'}" matLine> {{demo.query}}</h3>
           <p matLine> matches: {{demo.value}} </p>
-        </a>
+        </mat-list-item>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
     </mat-list>    
@@ -26,7 +32,7 @@
       <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
     </p>
     <mat-list>
-      <ng-template let-bpoint let-last="bpoint" ngFor [ngForOf]="mediaBreakpoints">
+      <ng-template let-bpoint let-last="last" ngFor [ngForOf]="mediaBreakpoints">
         <a mat-list-item layout-align="row">
           <h3 matLine> {{bpoint.breakpoint}}</h3>
           <p matLine> {{bpoint.query}} </p>
@@ -37,7 +43,7 @@
     <h3>Methods:</h3>
     <p>The <code>TdMediaService</code> service has {{mediaServiceMethods.length}} properties:</p>
     <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaServiceMethods">
+      <ng-template let-attr let-last="last" ngFor [ngForOf]="mediaServiceMethods">
         <a mat-list-item layout-align="row">
           <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p matLine> {{attr.description}} </p>
