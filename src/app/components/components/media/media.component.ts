@@ -2,13 +2,16 @@ import { Component, OnInit, NgZone, OnDestroy, HostBinding } from '@angular/core
 import { slideInDownAnimation } from '../../../app.animations';
 import { Subscription } from 'rxjs/Subscription';
 
-import { TdMediaService } from '../../../../platform/core';
+import { TdMediaService, TdJelloAnimation } from '../../../../platform/core';
 
 @Component({
   selector: 'media-demo',
   styleUrls: ['./media.component.scss' ],
   templateUrl: './media.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    TdJelloAnimation(),
+    slideInDownAnimation,
+  ],
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 
