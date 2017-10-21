@@ -3,19 +3,19 @@
 // --------------------------------------------------
 body {
 	.pull {
-		margin: -24px;
+		margin: -16px;
 	}
 	.pull-xxl {
-		margin: -48px;
+		margin: -56px;
 	}
 	.pull-xl {
-		margin: -32px;
+		margin: -48px;
 	}
 	.pull-lg {
-		margin: -24px;
+		margin: -32px;
 	}
 	.pull-md {
-		margin: -16px;
+		margin: -24px;
 	}
 	.pull-sm {
 		margin: -8px;
@@ -28,19 +28,19 @@ body {
 	}
 
 	.pull-top {
-		margin-top: -24px;
+		margin-top: -16px;
 	}
 	.pull-top-xxl {
-		margin-top: -48px;
+		margin-top: -56px;
 	}
 	.pull-top-xl {
-		margin-top: -32px;
+		margin-top: -48px;
 	}
 	.pull-top-lg {
-		margin-top: -24px;
+		margin-top: -32px;
 	}
 	.pull-top-md {
-		margin-top: -16px;
+		margin-top: -24px;
 	}
 	.pull-top-sm {
 		margin-top: -8px;
@@ -52,17 +52,20 @@ body {
 		margin-top: -0px;
 	}
 
+  .pull-right {
+    margin-right: -16px;
+  }
 	.pull-right-xxl {
-		margin-right: -48px;
+		margin-right: -56px;
 	}
 	.pull-right-xl {
-		margin-right: -32px;
+		margin-right: -48px;
 	}
 	.pull-right-lg {
-		margin-right: -24px;
+		margin-right: -32px;
 	}
 	.pull-right-md {
-		margin-right: -16px;
+		margin-right: -24px;
 	}
 	.pull-right-sm {
 		margin-right: -8px;
@@ -75,22 +78,19 @@ body {
 	}
 
 	.pull-bottom {
-		margin-bottom: -24px;
-	}
-	.pull-bottom-xxxl {
-		margin-bottom: -100px;
+		margin-bottom: -16px;
 	}
 	.pull-bottom-xxl {
-		margin-bottom: -48px;
+		margin-bottom: -56px;
 	}
 	.pull-bottom-xl {
-		margin-bottom: -32px;
+		margin-bottom: -48px;
 	}
 	.pull-bottom-lg {
-		margin-bottom: -24px;
+		margin-bottom: -32px;
 	}
 	.pull-bottom-md {
-		margin-bottom: -16px;
+		margin-bottom: -24px;
 	}
 	.pull-bottom-sm {
 		margin-bottom: -8px;
@@ -102,17 +102,20 @@ body {
 		margin-bottom: -0px;
 	}
 
+  .pull-left {
+    margin-left: -16px;
+  }
 	.pull-left-xxl {
-		margin-left: -48px;
+		margin-left: -56px;
 	}
 	.pull-left-xl {
-		margin-left: -32px;
+		margin-left: -48px;
 	}
 	.pull-left-lg {
-		margin-left: -24px;
+		margin-left: -32px;
 	}
 	.pull-left-md {
-		margin-left: -16px;
+		margin-left: -24px;
 	}
 	.pull-left-sm {
 		margin-left: -8px;
