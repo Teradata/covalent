@@ -292,11 +292,11 @@
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">[tdLoading] until template syntax with booleans</h3>
-    <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
+    <h4 class="md-subhead">with overlay [tdLoadingStrategy], linear [tdLoadingType]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+        <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay" tdLoadingType="linear">
           <div layout="row">
             <mat-form-field flex>
               <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
@@ -317,7 +317,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+            <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay" tdLoadingType="linear">
               <div layout="row">
                 <mat-form-field flex>
                   <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
@@ -400,7 +400,7 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-   <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
+   <h3 class="md-title">Custom [TdLoading] linear at top of page</h3>
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
