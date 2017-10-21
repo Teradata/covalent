@@ -70,7 +70,7 @@ export class TdLoadingFactory {
   /**
    * Creates a loading component dynamically and attaches it into the given viewContainerRef.
    * Leverages TemplatePortals from material to inject the template inside of it so it fits
-   * perfecly when overlaying it.
+   * perfectly when overlaying it.
    *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */

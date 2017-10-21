@@ -87,6 +87,13 @@ export class DocsAppComponent implements AfterViewInit {
     this.dir = getDirection();
   }
 
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
+  }
+
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
     setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
