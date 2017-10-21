@@ -14,8 +14,8 @@
                         [mode]="mode"
                         [value]="value" 
                         [color]="color" 
-                        [style.height]="getCircleDiameter()"
-                        [style.width]="getCircleDiameter()">
+                        [diameter]="getCircleDiameter()"
+                        [strokeWidth]="getCircleStrokeWidth()">
     </mat-progress-spinner>
     <mat-progress-bar *ngIf="isLinear()" 
                      [mode]="mode"
