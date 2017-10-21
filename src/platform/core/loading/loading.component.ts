@@ -27,6 +27,8 @@ export enum LoadingStyle {
 
 import { TdFadeInOutAnimation } from '../common/common.module';
 
+export const TD_CIRCLE_DIAMETER: number = 100;
+
 @Component({
   selector: 'td-loading',
   styleUrls: ['./loading.component.scss' ],
@@ -109,7 +111,8 @@ export class TdLoadingComponent {
   }
 
   getCircleDiameter(): number {
-    let diameter: number = 100;
+    // we set a default diameter of 100 since this is the default in material
+    let diameter: number = TD_CIRCLE_DIAMETER;
     // if height is provided, then we take that as diameter
     if (this.height) {
       diameter = this.height;
@@ -117,14 +120,15 @@ export class TdLoadingComponent {
     } else if (this.height === undefined) {
       diameter = this._hostHeight();
     }
-    // if the diameter is over 100, we return 100
-    if (!!diameter && diameter <= 100) {
+    // if the diameter is over TD_CIRCLE_DIAMETER, we return TD_CIRCLE_DIAMETER
+    if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
       return diameter;
     }
-    return 100;
+    return TD_CIRCLE_DIAMETER;
   }
 
   getCircleStrokeWidth(): number {
+    // we calculate the stroke width by setting it as 10% of its diameter
     let strokeWidth: number = this.getCircleDiameter() / 10;
     return Math.abs(strokeWidth);
   }
