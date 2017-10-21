@@ -1,130 +1,38 @@
 //
 // Push (margins)
 // --------------------------------------------------
+
+@mixin push($direction: "") {
+  .push#{$direction} {
+    margin#{$direction}: 16px;
+  }
+	.push#{$direction}-xxl {
+		margin#{$direction}: 56px;
+	}
+	.push#{$direction}-xl {
+		margin#{$direction}: 48px;
+	}
+	.push#{$direction}-lg {
+		margin#{$direction}: 32px;
+	}
+	.push#{$direction}-md {
+		margin#{$direction}: 24px;
+	}
+	.push#{$direction}-sm {
+		margin#{$direction}: 8px;
+	}
+	.push#{$direction}-xs {
+		margin#{$direction}: 4px;
+	}
+	.push#{$direction}-none {
+		margin#{$direction}: 0px;
+	}
+}
+
 body {
-	.push {
-		margin: 16px;
-	}
-	.push-xxl {
-		margin: 56px;
-	}
-	.push-xl {
-		margin: 48px;
-	}
-	.push-lg {
-		margin: 32px;
-	}
-	.push-md {
-		margin: 24px;
-	}
-	.push-sm {
-		margin: 8px;
-	}
-	.push-xs {
-		margin: 4px;
-	}
-	.push-none {
-		margin: 0px;
-	}
-
-	.push-top {
-		margin-top: 16px;
-	}
-	.push-top-xxl {
-		margin-top: 56px;
-	}
-	.push-top-xl {
-		margin-top: 48px;
-	}
-	.push-top-lg {
-		margin-top: 32px;
-	}
-	.push-top-md {
-		margin-top: 24px;
-	}
-	.push-top-sm {
-		margin-top: 8px;
-	}
-	.push-top-xs {
-		margin-top: 4px;
-	}
-	.push-top-none {
-		margin-top: 0px;
-	}
-
-	.push-right {
-		margin-right: 16px;
-	}
-	.push-right-xxl {
-		margin-right: 56px;
-	}
-	.push-right-xl {
-		margin-right: 48px;
-	}
-	.push-right-lg {
-		margin-right: 32px;
-	}
-	.push-right-md {
-		margin-right: 24px;
-	}
-	.push-right-sm {
-		margin-right: 8px;
-	}
-	.push-right-xs {
-		margin-right: 4px;
-	}
-	.push-right-none {
-		margin-right: 0px;
-	}
-
-	.push-bottom {
-		margin-bottom: 16px;
-	}
-	.push-bottom-xxl {
-		margin-bottom: 56px;
-	}
-	.push-bottom-xl {
-		margin-bottom: 48px;
-	}
-	.push-bottom-lg {
-		margin-bottom: 32px;
-	}
-	.push-bottom-md {
-		margin-bottom: 24px;
-	}
-	.push-bottom-sm {
-		margin-bottom: 8px;
-	}
-	.push-bottom-xs {
-		margin-bottom: 4px;
-	}
-	.push-bottom-none {
-		margin-bottom: 0px;
-	}
-
-	.push-left {
-		margin-left: 16px;
-	}
-	.push-left-xxl {
-		margin-left: 56px;
-	}
-	.push-left-xl {
-		margin-left: 48px;
-	}
-	.push-left-lg {
-		margin-left: 32px;
-	}
-	.push-left-md {
-		margin-left: 24px;
-	}
-	.push-left-sm {
-		margin-left: 8px;
-	}
-	.push-left-xs {
-		margin-left: 4px;
-	}
-	.push-left-none {
-		margin-left: 0px;
-	}
-
+  @include push();
+  @include push(-bottom);
+  @include push(-top);
+  @include push(-left);
+  @include push(-right);
 }

@@ -1,143 +1,38 @@
 //
 // Pad (padding)
 // --------------------------------------------------
+
+@mixin pad($direction: "") {
+  .pad#{$direction} {
+    padding#{$direction}: 16px;
+  }
+	.pad#{$direction}-xxl {
+		padding#{$direction}: 56px;
+	}
+	.pad#{$direction}-xl {
+		padding#{$direction}: 48px;
+	}
+	.pad#{$direction}-lg {
+		padding#{$direction}: 32px;
+	}
+	.pad#{$direction}-md {
+		padding#{$direction}: 24px;
+	}
+	.pad#{$direction}-sm {
+		padding#{$direction}: 8px;
+	}
+	.pad#{$direction}-xs {
+		padding#{$direction}: 4px;
+	}
+	.pad#{$direction}-none {
+		padding#{$direction}: 0px;
+	}
+}
+
 body {
-	.pad {
-		padding: 16px;
-	}
-	.pad-xxl {
-		padding: 56px;
-	}
-	.pad-xl {
-		padding: 48px;
-	}
-	.pad-lg {
-		padding: 32px;
-	}
-	.pad-md {
-		padding: 24px;
-	}
-	.pad-sm {
-		padding: 8px;
-	}
-	.pad-xs {
-		padding: 4px;
-	}
-	.pad-none {
-		padding: 0px;
-	}
-
-	.pad-top {
-		padding-top: 16px;
-	}
-	.pad-top-xxl {
-		padding-top: 56px;
-	}
-	.pad-top-xl {
-		padding-top: 48px;
-	}
-	.pad-top-lg {
-		padding-top: 32px;
-	}
-	.pad-top-md {
-		padding-top: 24px;
-	}
-	.pad-top-sm {
-		padding-top: 8px;
-	}
-	.pad-top-xs {
-		padding-top: 4px;
-	}
-	.pad-top-none {
-		padding-top: 0px;
-	}
-
-	.pad-right {
-    padding-right: 16px;
-	}
-
-	.pad-right-xxl {
-    padding-right: 56px;
-	}
-
-	.pad-right-xl {
-    padding-right: 48px;
-	}
-
-	.pad-right-lg {
-    padding-right: 32px;
-	}
-
-	.pad-right-md {
-    padding-right: 24px;
-	}
-
-	.pad-right-sm {
-    padding-right: 8px;
-	}
-
-	.pad-right-xs {
-    padding-right: 4px;
-	}
-
-	.pad-right-none {
-    padding-right: 0px;
-	}
-
-	.pad-bottom {
-		padding-bottom: 16px;
-	}
-	.pad-bottom-xxl {
-		padding-bottom: 56px;
-	}
-	.pad-bottom-xl {
-		padding-bottom: 48px;
-	}
-	.pad-bottom-lg {
-		padding-bottom: 32px;
-	}
-	.pad-bottom-md {
-		padding-bottom: 24px;
-	}
-	.pad-bottom-sm {
-		padding-bottom: 8px;
-	}
-	.pad-bottom-xs {
-		padding-bottom: 4px;
-	}
-	.pad-bottom-none {
-		padding-bottom: 0px;
-	}
-
-	.pad-left {
-    padding-left: 16px;
-	}
-
-	.pad-left-xxl {
-    padding-left: 56px;
-	}
-
-	.pad-left-xl {
-    padding-left: 48px;
-	}
-
-	.pad-left-lg {
-    padding-left: 32px;
-	}
-
-	.pad-left-md {
-    padding-left: 24px;
-	}
-
-	.pad-left-sm {
-    padding-left: 8px;
-	}
-
-	.pad-left-xs {
-    padding-left: 4px;
-	}
-
-	.pad-left-none {
-    padding-left: 0px;
-	}
+  @include pad();
+  @include pad(-bottom);
+  @include pad(-top);
+  @include pad(-left);
+  @include pad(-right);
 }
