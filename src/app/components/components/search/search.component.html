@@ -95,7 +95,7 @@
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-search-box>]]></code> component has {{searchBoxAttrs.length}} properties:</p>
     <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchBoxAttrs">
+      <ng-template let-attr let-last="last" ngFor [ngForOf]="searchBoxAttrs">
         <a mat-list-item layout-align="row">
           <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
           <p matLine> {{attr.description}} </p>

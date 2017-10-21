@@ -57,7 +57,7 @@ export class SearchDemoComponent {
     name: 'backIcon?',
     type: 'string',
   }, {
-    description: `The icon used to open the search toggle, only shown when [searchVisible] is false or [alwaysVisible] is true.
+    description: `The icon used to open/focus the search toggle.
                   Defaults to 'search' icon.`,
     name: 'searchIcon?',
     type: 'string',
