@@ -79,6 +79,11 @@ export class LoadingDemoComponent implements OnInit {
     type: 'function(options: ITdLoadingConfig)',
   }];
 
+  itemList: any[] = [
+    {label: 'Light', value: true},
+    {label: 'Console', value: false},
+    {label: 'T.V.', value: true}];
+
   loading: boolean = false;
   listObservable: Observable<any[]>;
 
@@ -113,7 +118,6 @@ export class LoadingDemoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.toggleDefaultFullscreenDemo();
     this.startDirectives();
   }
 
@@ -166,7 +170,7 @@ export class LoadingDemoComponent implements OnInit {
     this.listObservableDisabled = true;
     this.listObservable = new Observable<any[]>((subscriber: Subscriber<any[]>) => {
       setTimeout(() => {
-        subscriber.next([{label: 'Light', value: true}, {label: 'Console', value: false}, {label: 'T.V.', value: true}]);
+        subscriber.next(this.itemList);
         this.listObservableDisabled = false;
       }, 3000);
     });
