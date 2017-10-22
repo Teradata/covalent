@@ -318,6 +318,12 @@
                 this.filter();
               }
 
+              showAlert(event: any): void {
+                this._dialogService.openAlert({
+                  message: JSON.stringify('You clicked on row: ' + event.row.name),
+                });
+              }
+
               filter(): void {
                 let newData: any[] = this.data;
                 let excludedColumns: string[] = this.columns
