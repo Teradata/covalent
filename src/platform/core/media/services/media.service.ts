@@ -23,8 +23,8 @@ export class TdMediaService {
     this._queryMap.set('lg', '(min-width: 1280px) and (max-width: 1919px)');
     this._queryMap.set('gt-lg', '(min-width: 1920px)');
     this._queryMap.set('xl', '(min-width: 1920px)');
-    this._queryMap.set('landscape', 'landscape');
-    this._queryMap.set('portrait', 'portrait');
+    this._queryMap.set('landscape', '(orientation: landscape)');
+    this._queryMap.set('portrait', '(orientation: portrait)');
     this._queryMap.set('print', 'print');
 
     this._resizing = false;
