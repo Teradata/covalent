@@ -1,7 +1,7 @@
 <a name="1.0.0-beta.8-1"></a>
 # [1.0.0-beta.8-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8-1) (2017-10-06)
 
-Small patch release to support `@angular/material@1.0.0-beta.12`
+Small patch release to support `@angular/material@2.0.0-beta.12`
 
 #### Material Breaking Changes
 
@@ -13,7 +13,7 @@ Read more in the @angular/material` [changelog](https://github.com/angular/mater
 
 #### Highlights
 
-- `@angular/material@1.0.0-beta.12` support
+- `@angular/material@2.0.0-beta.12` support
 
 ## Features
 * **material:** upgrade to material@beta.12 [f728be364e05cb032102c8f79a611bc1d52d8ec6](https://github.com/Teradata/covalent/commit/f728be364e05cb032102c8f79a611bc1d52d8ec6)), closes [#913](https://github.com/Teradata/covalent/issues/913)
@@ -22,7 +22,7 @@ Read more in the @angular/material` [changelog](https://github.com/angular/mater
 <a name="1.0.0-beta.8"></a>
 # [1.0.0-beta.8 Free Fallin](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8) (2017-10-05)
 
-The main focus of this release is support for `@angular/material@1.0.0-beta.11` and rename all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed on `@angular/material`'s following release.
+The main focus of this release is support for `@angular/material@2.0.0-beta.11` and rename all `md` references from our selectors and inputs to `mat` for future support since the `md` prefixes are gonna be removed on `@angular/material`'s following release.
 
 The material team created a tool to update it automatically if you want to give it a test. [angular-material-prefix-updater](https://www.npmjs.com/package/angular-material-prefix-updater)
 
@@ -36,7 +36,7 @@ We structured our commits in this [PR](https://github.com/Teradata/covalent/pull
 
 #### Highlights
 
-- `@angular/material@1.0.0-beta.11` support
+- `@angular/material@2.0.0-beta.11` support
 - Bugfixes and improvements
 
 ## Bug Fixes
@@ -63,7 +63,7 @@ We structured our commits in this [PR](https://github.com/Teradata/covalent/pull
 <a name="1.0.0-beta.7"></a>
 # [1.0.0-beta.7 One Step Closer](https://github.com/Teradata/covalent/tree/v1.0.0-beta.7) (2017-09-11)
 
-This release will make sure Covalent works properly with `@angular/material@1.0.0-beta.10`.
+This release will make sure Covalent works properly with `@angular/material@2.0.0-beta.10`.
 
 We are also pleased to announce the release of the [`covalent/text-editor`](https://github.com/Teradata/covalent-text-editor) module which wraps the SimpleMDE lib for Angular use.
 
@@ -196,7 +196,7 @@ More information in [https://github.com/Teradata/covalent/pull/772](#772)
 <a name="1.0.0-beta.6"></a>
 # [1.0.0-beta.6 Midnight Rider](https://github.com/Teradata/covalent/tree/v1.0.0-beta.6) (2017-07-07)
 
-This release will make sure we work properly with `@angular/material@1.0.0-beta.8` + usage of the `cdk` module + some layout structure changes to add more flexibility and better  examples for each layout.
+This release will make sure we work properly with `@angular/material@2.0.0-beta.8` + usage of the `cdk` module + some layout structure changes to add more flexibility and better  examples for each layout.
 
 Please check the angular material `beta.7` and `beta.8` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta8-plasma-abacus-2017-07-06)
 
@@ -536,7 +536,7 @@ e.g.
 * **chips:** ability to use object lists and set templates for both autocomplete and chips ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184))
 * **chips:** abstract the autocomplete filtering and add debounce input (local vs server) ([22d4342c4072560e3903820c4009f8129ec0d184](https://github.com/Teradata/covalent/commit/22d4342c4072560e3903820c4009f8129ec0d184)), closes [#252](https://github.com/Teradata/covalent/issues/252), [#359](https://github.com/Teradata/covalent/issues/252), [#359](https://github.com/Teradata/covalent/issues/601)
 * **chips:** add `td-chip-avatar` when using template `td-chip` to mimic a contact chip ([fe9daccb5fd436a3ca527d4e694cc2e02e26f79d](https://github.com/Teradata/covalent/commit/fe9daccb5fd436a3ca527d4e694cc2e02e26f79d))
-* **dependencies:** upgrade to `@angular/material@1.0.0-beta.6` ([629d06f161c00f99218708570d6085acbf58ee4f](https://github.com/Teradata/covalent/commit/629d06f161c00f99218708570d6085acbf58ee4f))
+* **dependencies:** upgrade to `@angular/material@2.0.0-beta.6` ([629d06f161c00f99218708570d6085acbf58ee4f](https://github.com/Teradata/covalent/commit/629d06f161c00f99218708570d6085acbf58ee4f))
 * **dialog:**  improve `prompt-dialog` a11y by selection text in input when focused ([e9427aaee1520a83326cd242850b525915b7c5fe](https://github.com/Teradata/covalent/commit/e9427aaee1520a83326cd242850b525915b7c5fe)), closes [#616](https://github.com/Teradata/covalent/issues/616)
 * **expansion-panel:** introducing `td-expansion-panel-group` to only give margin to expansion panels when grouped ([9ae0ba532bbabde6eca8d1b4315667333e83ae35](https://github.com/Teradata/covalent/commit/9ae0ba532bbabde6eca8d1b4315667333e83ae35))
 * **expansion-panel:** add `[disableRipple]` input to disable ripple effect on demand ([33810ce86915c6d1e948e426a6056500d88e6827](https://github.com/Teradata/covalent/commit/33810ce86915c6d1e948e426a6056500d88e6827))
@@ -787,7 +787,7 @@ These selectors were deprecated a few releases back so it should be ok to remove
 * **data-table:** leverage the `md-pseudo-checkbox` to render the selectable rows more efficiently. ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07))
 * **dependencies:** add documentation on how to use `ngx-translate` and `LOCALE_ID`. ([776331bb5bc4098a4264a36e1275b3c83727e61a](https://github.com/Teradata/covalent/commit/776331bb5bc4098a4264a36e1275b3c83727e61a))
 * **dependencies:** add `@angular/flex-layout` as a `@covalent/core` dependency. ([171a69dbc77e3cb02fee2cd38db314670015f3fe](https://github.com/Teradata/covalent/commit/171a69dbc77e3cb02fee2cd38db314670015f3fe)), closes [#239](https://github.com/Teradata/covalent/issues/239)
-* **dependencies:** support [@angular/material@1.0.0-beta.2](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta2-flannel-papaya-2017-02-15). ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07)), closes [#346](https://github.com/Teradata/covalent/issues/346)
+* **dependencies:** support [@angular/material@2.0.0-beta.2](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta2-flannel-papaya-2017-02-15). ([717d309d0a31f21c0dc9870ea3f3f3b40f248a07](https://github.com/Teradata/covalent/commit/717d309d0a31f21c0dc9870ea3f3f3b40f248a07)), closes [#346](https://github.com/Teradata/covalent/issues/346)
 * **deployment:** make every `@angular` dependency a `peerDependency` except for `material` since its still beta. ([c05c45c2d83cc008233f81889ed5e873f9b98dde](https://github.com/Teradata/covalent/commit/c05c45c2d83cc008233f81889ed5e873f9b98dde))
 * **docs:** add browser support. ([0e2bb25ccc86388dbe4c4e42c68399f29c4ff05d](https://github.com/Teradata/covalent/commit/0e2bb25ccc86388dbe4c4e42c68399f29c4ff05d))
 * **file-input:** introducing `file-input` component as part of the `file` module with `ngModel` support. ([c91d3cdd61358a1af2ad459cd67f56d62070c3c7](https://github.com/Teradata/covalent/commit/c91d3cdd61358a1af2ad459cd67f56d62070c3c7)), closes [#326](https://github.com/Teradata/covalent/issues/326)
