@@ -91,7 +91,7 @@ export class DataTableDemoComponent implements OnInit {
 
   columns: ITdDataTableColumn[] = [
     { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
-    { name: 'last_name', label: 'Last Name', filter: true },
+    { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
     { name: 'gender', label: 'Gender', hidden: false },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },

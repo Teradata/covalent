@@ -162,6 +162,67 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
+    <h3 class="md-title">[tdLoading] until usage with icons</h3>
+    <h4 class="md-subhead">using the template syntax</h4>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <mat-list>
+          <ng-template let-item let-last="last" ngFor [ngForOf]="itemList">
+            <mat-list-item>
+              <div matListAvatar>
+                <ng-template tdLoading [tdLoadingUntil]="!item.value" tdLoadingStrategy="overlay">
+                  <mat-icon matListAvatar>
+                    settings_backup_restore
+                  </mat-icon>
+                </ng-template>
+              </div>
+              <h3 matLine>{{item.label}}</h3>
+            </mat-list-item>
+            <mat-divider *ngIf="!last"></mat-divider>
+          </ng-template>
+        </mat-list>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <mat-list>
+              <ng-template let-item let-last="last" ngFor [ngForOf]="itemList">
+                <mat-list-item>
+                  <div matListAvatar>
+                    <ng-template tdLoading [tdLoadingUntil]="!item.value" tdLoadingStrategy="overlay">
+                      <mat-icon matListAvatar>
+                        settings_backup_restore
+                      </mat-icon>
+                    </ng-template>
+                  </div>
+                  <h3 matLine>{ {item.label} }</h3>
+                </mat-list-item>
+                <mat-divider *ngIf="!last"></mat-divider>
+              </ng-template>
+            </mat-list>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            ...
+            export class Demo {
+              items: any[] = [
+                {label: 'Light', value: true},
+                {label: 'Console', value: false},
+                {label: 'T.V.', value: true}];
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">[tdLoading] until star syntax with variable reference and observables</h3>
     <h4 class="md-subhead">with accent [tdLoadingColor]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
@@ -231,11 +292,11 @@
 <mat-card>
   <mat-card-content>
     <h3 class="md-title">[tdLoading] until template syntax with booleans</h3>
-    <h4 class="md-subhead">with overlay [tdLoadingStrategy]</h4>
+    <h4 class="md-subhead">with overlay [tdLoadingStrategy], linear [tdLoadingType]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+        <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay" tdLoadingType="linear">
           <div layout="row">
             <mat-form-field flex>
               <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
@@ -256,7 +317,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay">
+            <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay" tdLoadingType="linear">
               <div layout="row">
                 <mat-form-field flex>
                   <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
@@ -339,7 +400,7 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-   <h3 class="md-title">Custom [TdLoading] fullscreen mask</h3>
+   <h3 class="md-title">Custom [TdLoading] linear at top of page</h3>
     <h4 class="md-subhead">with indeterminate [mode], linear [type], accent [color]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
