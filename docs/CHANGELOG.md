@@ -9,7 +9,7 @@ The most important breaking change with this latest material release is that `ma
 
 This does give an advantage that now `matInput` and `mat-select` will follow the same API's around hints, errors, prefix, suffix and placeholders.
 
-Read more in the @angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta12-marble-mustache-2017-10-05)
+Read more in the `@angular/material` [changelog](https://github.com/angular/material2/blob/master/CHANGELOG.md#200-beta12-marble-mustache-2017-10-05)
 
 #### Highlights
 
