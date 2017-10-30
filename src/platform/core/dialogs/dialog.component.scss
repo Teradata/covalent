@@ -20,6 +20,14 @@
 :host {
   display: block;
   .td-dialog-actions {
+    // [layout="row"]
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    .td-dialog-spacer {
+      // flex
+      flex: 1;
+    }
     /deep/ button {
       text-transform: uppercase;
       margin-left: 8px;
