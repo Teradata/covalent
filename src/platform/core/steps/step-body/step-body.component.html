@@ -5,7 +5,7 @@
     <div #contentRef cdkScrollable [class.td-step-content]="contentRef.children.length || contentRef.textContent.trim()">
       <ng-content select="[td-step-body-content]"></ng-content>
     </div>
-    <div #actionsRef layout="row" [class.td-step-actions]="actionsRef.children.length || actionsRef.textContent.trim()">
+    <div #actionsRef [class.td-step-actions]="actionsRef.children.length || actionsRef.textContent.trim()">
       <ng-content select="[td-step-body-actions]"></ng-content>
     </div>
   </div>

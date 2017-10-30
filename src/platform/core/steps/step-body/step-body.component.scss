@@ -12,5 +12,12 @@
     .td-step-content {
       overflow-x: auto; 
     }
+    .td-step-actions {
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout="row"
+      flex-direction: row;
+    }
   }
 }
