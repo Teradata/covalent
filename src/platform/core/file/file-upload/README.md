@@ -7,11 +7,15 @@ Perfect component for file selection and upload in simple flows. Uses `TdFileInp
 Example for usage:
 
 ```html
-<td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
+<td-file-upload #fileUpload [(ngModel)]="files" required defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
   <ng-template td-file-input-label>
-    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon>
+    <span>
+      Choose a file...
+      <span [hidden]="!fileUpload?.required" class="mat-placeholder-required">*</span>
+    </span>
   </ng-template>
 </td-file-upload>
 ```
@@ -58,6 +62,7 @@ Properties:
 | `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
 | `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
 | `cancel` | `function()` | Event emitted when cancel button is clicked.
+| `required` | `boolean` | Sets if at least one file should be dropped/selected in [TdFileUploadComponent].
 
 ## Setup
 
