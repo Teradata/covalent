@@ -7,8 +7,8 @@
                    (keydown)="_chipKeydown($event, index)"
                    (blur)="_handleChipBlur($event, chip)"
                    (focus)="_handleChipFocus($event, chip)">
-      <div class="td-chip" layout="row" [attr.layout-align]="stacked ? 'space-between center' : 'start center'" >
-        <span class="td-chip-content" layout="row" layout-align="start center">
+      <div class="td-chip" [class.td-chip-stacked]="stacked">
+        <span class="td-chip-content">
           <span *ngIf="!_chipTemplate?.templateRef">{{chip}}</span>
           <ng-template
             *ngIf="_chipTemplate?.templateRef"

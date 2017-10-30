@@ -14,6 +14,24 @@
       width: 100%;
     }
   }
+  .td-chip {
+    &, > .td-chip-content {
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout row
+      flex-direction: row;
+      // layout-align start center
+      max-width: 100%;
+      align-items: center;
+      align-content: center;
+      justify-content: start;
+      &.td-chip-stacked {
+        // layout-align space-between center
+        justify-content: space-between;
+      }
+    }
+  }
   /deep/ {
     .mat-form-field-wrapper {
       padding-bottom: 2px;
