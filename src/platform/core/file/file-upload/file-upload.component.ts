@@ -1,25 +1,51 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef,
+  forwardRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-
 import { ICanDisable, mixinDisabled } from '../../common/common.module';
-
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+
+const noop: any = () => {
+  // empty method
+};
 
 export class TdFileUploadBase {}
 
 /* tslint:disable-next-line */
 export const _TdFileUploadMixinBase = mixinDisabled(TdFileUploadBase);
 
+export const FILE_UPLOAD_CONTROL_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => TdFileUploadComponent),
+  multi: true,
+};
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ FILE_UPLOAD_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-file-upload',
   inputs: ['disabled'],
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
 })
-export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICanDisable {
+export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ControlValueAccessor, ICanDisable {
 
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  private _value: FileList | File = undefined;
+  
+    // get/set accessor (needed for ControlValueAccessor)
+    get value(): FileList | File { return this._value; }
+    set value(v: FileList | File) {
+      if (v !== this._value) {
+        this._value = v;
+        this.onChange(v);
+      }
+    }
+  
   private _multiple: boolean = false;
+  private _required: boolean = false;
 
   files: FileList | File;
 
@@ -55,6 +81,19 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
   }
   get multiple(): boolean {
     return this._multiple;
+  }
+
+  /**
+   * required?: boolean
+   * Forces at least one file upload.
+   * Defaults to 'false'
+   */
+  @Input('required')
+  set required(required: boolean) {
+    this._required = coerceBooleanProperty(required);
+  }
+  get required(): boolean {
+    return this._required;
   }
 
   /**
@@ -126,4 +165,23 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
       this.cancel();
     }
   }
+
+  /**
+   * Implemented as part of ControlValueAccessor.
+   */
+  writeValue(value: any): void {
+    this.value = value;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  onChange = (_: any) => noop;
+  onTouched = () => noop;
 }
