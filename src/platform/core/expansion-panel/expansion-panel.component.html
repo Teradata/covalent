@@ -8,11 +8,8 @@
   <ng-template [cdkPortalHost]="expansionPanelHeader"></ng-template>
   <div class="td-expansion-panel-header-content"
         [class.mat-disabled]="disabled"
-        *ngIf="!expansionPanelHeader"
-        layout="row"
-        layout-align="start center"
-        flex>
-    <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label" [attr.flex-gt-xs]="(sublabel || expansionPanelSublabel) ? 40 : null">
+        *ngIf="!expansionPanelHeader">
+    <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label">
       <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
     </div>

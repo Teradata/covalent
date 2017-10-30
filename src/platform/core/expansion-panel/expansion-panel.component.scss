@@ -10,6 +10,22 @@
     .td-expansion-panel-header-content {
       height: 48px;
       padding: 0 16px;
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout row
+      flex-direction: row;
+      // flex
+      flex: 1;
+      // layout-align start center
+      justify-content: start;
+      align-items: center;
+      align-content: center;
+      max-width: 100%;
+      .td-expansion-label {
+        // flex
+        flex: 1;
+      }
     }
   }
 }
