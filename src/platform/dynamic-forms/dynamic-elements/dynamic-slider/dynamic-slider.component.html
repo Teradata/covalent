@@ -1,16 +1,17 @@
-<div class="dynamic-slider-wrapper relative push-top-sm">
-  <span class="mat-form-field-placeholder-wrapper">
-    <label class="mat-form-field-placeholder mat-float mat-form-field-float td-slider-label" [class.mat-focused]="slider._isActive"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
-  </span>
-  <div layout="row" layout-align="start center" flex>
+<div class="td-dynamic-slider-wrapper relative push-top-sm">
+  <div class="mat-form-field-placeholder-wrapper mat-form-field-can-float mat-form-field-should-float"
+       [class.mat-focused]="slider._isActive">
+    <label class="mat-form-field-placeholder mat-float mat-form-field-float td-slider-label"> {{label}} <span *ngIf="required" class="mat-placeholder-required">*</span></label>
+  </div>
+  <div class="td-dynamic-slider-field">
     <mat-slider #slider
+               class="td-dynamic-slider"
                [(ngModel)]="value"
                 [min]="min"
                 [max]="max"
                 thumbLabel
                 tickInterval="auto"
-                [required]="required"
-                flex>
+                [required]="required">
     </mat-slider>
   </div>  
 </div>
