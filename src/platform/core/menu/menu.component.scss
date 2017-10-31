@@ -3,6 +3,11 @@ $td-menu-spacing: 8px !default;
   display: block;
   margin-top: -$td-menu-spacing;
   margin-bottom: -$td-menu-spacing;
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="column"]
+  flex-direction: column;
 }
 :host /deep/ {
   [td-menu-header] {
