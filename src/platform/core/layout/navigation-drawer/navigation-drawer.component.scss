@@ -2,6 +2,17 @@
   width: 100%;
   mat-toolbar {
     padding: 16px;
+    .td-navigation-drawer-toolbar-content {
+      // [layout="row"]
+      flex-direction: row;
+      box-sizing: border-box;
+      display: flex;
+      // [layout-align="start center"]
+      align-items: center;
+      align-content: center;
+      max-width: 100%;
+      justify-content: start;
+    }
     &.td-toolbar-background {
       background-repeat: no-repeat;
       background-size: cover;

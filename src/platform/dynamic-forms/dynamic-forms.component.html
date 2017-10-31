@@ -1,9 +1,12 @@
 <form [formGroup]="dynamicForm" novalidate>
-  <div layout="row"
-       layout-wrap
-       layout-align="start center">
+  <div class="td-dynamic-form-wrapper">
     <ng-template let-element ngFor [ngForOf]="elements">
-      <div class="pad-xs" [style.position]="'relative'" [attr.flex]="element.flex ? element.flex : 100">
+      <div class="pad-xs td-dynamic-element-wrapper"
+          [style.position]="'relative'"
+          [style.max-width.%]="element.flex ? element.flex : 100"
+          [style.flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+          [style.-ms-flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+          [style.-webkit-box-flex]="1">
         <td-dynamic-element
           #dynamicElement
           *ngIf="dynamicForm.controls[element.name]"

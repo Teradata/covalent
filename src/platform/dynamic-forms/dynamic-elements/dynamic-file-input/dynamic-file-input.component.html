@@ -1,12 +1,12 @@
-<div class="dynamic-file-input-wrapper" layout="row">
+<div class="td-dynamic-file-input-wrapper">
   <mat-form-field tdFileDrop
-                      floatPlaceholder="never"
-                      (fileDrop)="value = $event"
-                      (click)="fileInput.inputElement.click()"
-                      (keyup.enter)="fileInput.inputElement.click()"
-                      (keyup.delete)="fileInput.clear()"
-                      (keyup.backspace)="fileInput.clear()"
-                      flex>
+                  class="td-dynamic-file-input-field"
+                  floatPlaceholder="never"
+                  (fileDrop)="value = $event"
+                  (click)="fileInput.inputElement.click()"
+                  (keyup.enter)="fileInput.inputElement.click()"
+                  (keyup.delete)="fileInput.clear()"
+                  (keyup.backspace)="fileInput.clear()">
     <input matInput
           [value]="value?.name"
           [placeholder]="label"
