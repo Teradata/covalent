@@ -5,8 +5,8 @@
   <div class="td-dialog-content" *ngIf="dialogContent.length > 0">
     <ng-content select="td-dialog-content"></ng-content>
   </div>
-  <div class="td-dialog-actions" *ngIf="dialogActions.length > 0" layout="row">
-    <span flex></span>
+  <div class="td-dialog-actions" *ngIf="dialogActions.length > 0">
+    <span class="td-dialog-spacer"></span>
     <ng-content select="td-dialog-actions"></ng-content>
   </div>
 </div>
