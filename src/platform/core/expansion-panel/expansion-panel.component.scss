@@ -22,7 +22,8 @@
       align-items: center;
       align-content: center;
       max-width: 100%;
-      .td-expansion-label {
+      .td-expansion-label,
+      .td-expansion-panel-spacer {
         // flex
         flex: 1;
       }

@@ -2,6 +2,10 @@
   width: 100%;
   mat-toolbar {
     padding: 16px;
+    &.td-toolbar-background {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
     .td-navigation-drawer-toolbar-content {
       // [layout="row"]
       flex-direction: row;
@@ -13,9 +17,15 @@
       max-width: 100%;
       justify-content: start;
     }
-    &.td-toolbar-background {
-      background-repeat: no-repeat;
-      background-size: cover;
+    .td-navigation-drawer-menu-toggle {
+      // [layout="row"]
+      flex-direction: row;
+      box-sizing: border-box;
+      display: flex;
+      .td-navigation-drawer-label{
+        // [flex]
+        flex: 1;
+      }
     }
     /deep/ > .mat-toolbar-layout > mat-toolbar-row {
       height: auto !important;

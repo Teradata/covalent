@@ -17,7 +17,7 @@
       <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>
-    <span flex></span>
+    <span class="td-expansion-panel-spacer"></span>
     <mat-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</mat-icon>
   </div>
 </div>
