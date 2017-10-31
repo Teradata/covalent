@@ -1,7 +1,11 @@
 <mat-toolbar [color]="color">
 </mat-toolbar>
-<div class="margin" layout-gt-xs="row" layout-align-gt-xs="center start" layout-fill>
-  <div [attr.flex-gt-xs]="cardWidth">
+<div class="td-layout-card-over-wrapper">
+  <div class="td-layout-card-over"
+        [style.max-width.%]="cardWidth"
+        [style.flex]="'1 1 ' + cardWidth + '%'"
+        [style.-ms-flex]="'1 1 ' + cardWidth + '%'"
+        [style.-webkit-box-flex]="1">
     <mat-card>
       <mat-card-title *ngIf="cardTitle">{{cardTitle}}</mat-card-title>
       <mat-card-subtitle *ngIf="cardSubtitle">{{cardSubtitle}}</mat-card-subtitle>

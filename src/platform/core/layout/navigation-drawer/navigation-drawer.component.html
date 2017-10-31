@@ -3,10 +3,9 @@
     <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
     <ng-container *ngIf="!isCustomToolbar">
       <span *ngIf="icon || logo || sidenavTitle"
+            class="td-navigation-drawer-toolbar-content"
             [class.cursor-pointer]="routerEnabled"
-            (click)="handleNavigationClick()"
-            layout="row"
-            layout-align="start center">
+            (click)="handleNavigationClick()">
         <mat-icon *ngIf="icon">{{icon}}</mat-icon>
         <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
         <span *ngIf="sidenavTitle" class="md-subhead">{{sidenavTitle}}</span>
