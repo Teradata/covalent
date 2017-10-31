@@ -4,6 +4,20 @@
   &.td-fullscreen {
     position: inherit;
   }
+  .td-loading {
+    // layout
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="center center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: center;
+    // flex
+    flex: 1;
+  }
   &.td-overlay {
     .td-loading {
       position: absolute;
