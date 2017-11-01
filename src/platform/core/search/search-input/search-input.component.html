@@ -1,5 +1,7 @@
-<div class="td-search-input" layout="row" layout-align="end center">
-  <mat-form-field [class.mat-hide-underline]="!showUnderline" floatPlaceholder="never" flex>
+<div class="td-search-input">
+  <mat-form-field class="td-search-input-field"
+                  [class.mat-hide-underline]="!showUnderline"
+                  floatPlaceholder="never">
     <input matInput
             #searchElement
             type="search"
@@ -10,10 +12,10 @@
             (keyup.enter)="handleSearch($event)"/>
   </mat-form-field>
   <button mat-icon-button
+          class="td-search-input-clear"
           type="button"
           [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
-          (click)="clearSearch()"
-          flex="none">
+          (click)="clearSearch()">
     <mat-icon>{{clearIcon}}</mat-icon>
   </button>
 </div>
