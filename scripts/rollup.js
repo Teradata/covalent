@@ -75,8 +75,14 @@ gulp.task('rollup-code', '', function() {
 
   // Build all of them asynchronously.
   return components.reduce((previous, name) => {
-    let outputPath = path.join(config.paths.deployed, name, `bundles/${name}.umd.js`);
-    let outputMinPath = path.join(config.paths.deployed, name, `bundles/${name}.umd.min.js`);
+    /**
+     * (REMOVE ME - IF YOU SEE ME)
+     * NOTE: Removing the bundles file path resolves the issue with the incorrect './' reference
+     * which should be '../' if the references in the core.umd.js files are put into the '/bundles'
+     */
+    let outputPath = path.join(config.paths.deployed, name, `${name}.umd.js`);
+    let outputMinPath = path.join(config.paths.deployed, name, `${name}.umd.min.js`);
+
     const writeOptions = {
       // Keep the moduleId empty because we don't want to force developers to a specific moduleId.
       moduleId: '',
