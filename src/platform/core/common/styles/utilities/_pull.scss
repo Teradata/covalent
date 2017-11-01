@@ -1,11 +1,4 @@
-//
-// Pulls (negative margins)
-// --------------------------------------------------
-
 @mixin pull($direction: "") {
-  .pull#{$direction} {
-    margin#{$direction}: -16px;
-  }
 	.pull#{$direction}-xxl {
 		margin#{$direction}: -56px;
 	}
@@ -18,6 +11,9 @@
 	.pull#{$direction}-md {
 		margin#{$direction}: -24px;
 	}
+	.pull#{$direction} {
+    margin#{$direction}: -16px;
+  }
 	.pull#{$direction}-sm {
 		margin#{$direction}: -8px;
 	}
@@ -29,10 +25,12 @@
 	}
 }
 
-body {
-  @include pull();
-  @include pull(-bottom);
-  @include pull(-top);
-  @include pull(-left);
-  @include pull(-right);
+@mixin td-pulling-utilities() {
+	body {
+		@include pull();
+		@include pull(-bottom);
+		@include pull(-top);
+		@include pull(-left);
+		@include pull(-right);
+	}
 }
