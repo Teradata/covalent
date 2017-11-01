@@ -27,22 +27,6 @@ npm i -save @covalent/markdown
 
 ## Setup
 
-`showdown.js` needs to be added as script in the `.angular-cli.json` OR referenced in `index.html` (installed as a `markdown` dependency).
-
-**.angular-cli.json**:
-
-```json
-"scripts": [
-  "path/to/node_modules/showdown/dist/showdown.js"
-]
-```
-
-**index.html**:
-
-```html
-<script src="path/to/node_modules/showdown/dist/showdown.js"></script>
-```
-
 Then, import the **[CovalentMarkdownModule]** in your NgModule:
 
 ```typescript
@@ -74,12 +58,6 @@ $warn:    mat-palette($mat-red, 600);
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include markdown-markdown-theme($theme);
-```
-
-Or by loading them in the `index.html` file:
-
-```html
-<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css">
 ```
 
 ## Example
