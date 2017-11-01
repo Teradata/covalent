@@ -94,10 +94,13 @@ You only need this single Sass file; you do not need to use Sass to style the re
 
 If you are using the Angular CLI, support for compiling Sass to css is built-in but you have to add a new entry to the "styles" list in .angular-cli.json pointing to the theme file and the platform.css as follows:
 
-### Using platform.css:
+## Covalent Utility Classes
 
-- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json
-load the Material Design font in your `index.html`.  
+This is an **optional** set of CSS classes that will help to speed up development and standardize  your application. 
+
+### Add via platform.css
+
+The covalent utility CSS classes can be included via `platform.css` file either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json 
        
 **src/index.html**
 ```html
@@ -112,6 +115,40 @@ or
   "../node_modules/@covalent/core/common/platform.scss"
 ],
 ```
+
+This also includes the `material icons` by default.
+
+### Add via Covalent SASS Mixins
+
+Alternately, you can cherry pick the `utility` classes that fit your needs with our `scss` mixins instead of including everything with the `platform.css`.
+
+e.g.
+
+```css
+@import '~@covalent/core/theming/all-theme';
+
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include pre-bundled material-icons
+$mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
+@include covalent-material-icons();
+// Alternative way to include material-icons
+// @import '../node_modules/@covalent/core/common/material-icons.css';
+
+// Include covalent utility classes
+@include covalent-utilities();
+
+// Include flex layout classes
+@include covalent-layout();
+
+// Include covalent typography classes
+@include covalent-typography();
+
+// Include covalent color classes
+@include covalent-colors();
+```
+
 ### Other build tools
 
 If you're not using the Angular CLI, you can use any existing Sass tooling to build the file (such as gulp-sass or grunt-sass). The simplest approach is to use the node-sass CLI; you simply run:
