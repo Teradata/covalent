@@ -1,5 +1,5 @@
-@import 'theme-functions';
-@import 'mixins';
+@import '../theme-functions';
+@import '../rtl';
 
 // Standard button sizing.
 $mat-button-padding: 0 rem(0.600) !default;
@@ -39,19 +39,20 @@ $mat-icon-border-radius: $mat-fab-border-radius;
   }
 }
 
+@mixin td-button-utilities() {
+  $mat-fab-pos-offset: ($mat-fab-size - $mat-fab-padding) / 2;
+  @include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, $mat-fab-pos-offset, auto);
+  @include mat-fab-position(bottom-left, auto, auto, $mat-fab-pos-offset, $mat-fab-pos-offset);
+  @include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);
+  @include mat-fab-position(top-left, $mat-fab-pos-offset, auto, auto, $mat-fab-pos-offset);
 
-$mat-fab-pos-offset: ($mat-fab-size - $mat-fab-padding) / 2;
-@include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, $mat-fab-pos-offset, auto);
-@include mat-fab-position(bottom-left, auto, auto, $mat-fab-pos-offset, $mat-fab-pos-offset);
-@include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);
-@include mat-fab-position(top-left, $mat-fab-pos-offset, auto, auto, $mat-fab-pos-offset);
-
-button {
-  &[mat-icon-button] {
-    &.mat-icon-button-mini {
-      height: 24px;
-      line-height: 24px;
-      width: 24px;
+  button {
+    &[mat-icon-button] {
+      &.mat-icon-button-mini {
+        height: 24px;
+        line-height: 24px;
+        width: 24px;
+      }
     }
   }
 }
