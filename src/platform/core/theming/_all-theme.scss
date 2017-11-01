@@ -10,6 +10,8 @@
 @import '../paging/paging-bar-theme';
 @import '../notifications/notification-count-theme';
 @import '../message/message-theme';
+// import the covalent mixins
+@import '../common/styles/styles';
 
 // Create a theme.
 @mixin covalent-theme($theme) {
