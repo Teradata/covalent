@@ -1,7 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { BrowserModule } from '@angular/platform-browser';
-import { CovalentMessageModule } from '@covalent/core';
+
+// import your components here for combat-training and see if they can survive the battle
+import { CovalentPagingModule } from '@covalent/core';
+import { MatSliderModule } from '@angular/material';
 
 /**
  * This component is used to test whether or if the supplied Covalent components can be
@@ -15,7 +18,8 @@ import { CovalentMessageModule } from '@covalent/core';
   templateUrl: './combat-training.html',
   styleUrls: ['./combat-training.css'],
 })
-export class CombatTrainingComponent { }
+export class CombatTrainingComponent {
+}
 
 /**
  * Client side module
@@ -23,7 +27,8 @@ export class CombatTrainingComponent { }
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'combat-training' }),
-    CovalentMessageModule,
+    CovalentPagingModule,
+    MatSliderModule,
     // Add additional Covalent components here and within the template
   ],
   bootstrap: [CombatTrainingComponent],
