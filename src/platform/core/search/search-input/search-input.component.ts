@@ -3,8 +3,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { FormControl } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material';
-import { debounceTime } from 'rxjs/operator/debounceTime';
-import { skip } from 'rxjs/operator/skip';
+
+import { debounceTime } from 'rxjs/operators/debounceTime';
+import { skip } from 'rxjs/operators/skip';
 
 @Component({
   selector: 'td-search-input',
@@ -95,12 +96,12 @@ export class TdSearchInputComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debounceTime.call(
-      skip.call(this._input.ngControl.valueChanges, 1), // skip first change when value is set to undefined
-      this.debounce)
-      .subscribe((value: string) => {
-        this._searchTermChanged(value);
-      });
+    this._input.ngControl.valueChanges.pipe(
+      skip(1), // skip first change when value is set to undefined
+      debounceTime(this.debounce),
+    ).subscribe((value: string) => {
+      this._searchTermChanged(value);
+    });
   }
 
   /**

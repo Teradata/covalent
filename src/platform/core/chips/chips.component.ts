@@ -8,7 +8,6 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/f
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
-import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
 import { MatChip, MatInput, MatOption, MatAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
@@ -17,6 +16,8 @@ import { timer } from 'rxjs/observable/timer';
 import { merge } from 'rxjs/observable/merge';
 import { toPromise } from 'rxjs/operator/toPromise';
 import { fromEvent } from 'rxjs/observable/fromEvent';
+import { filter } from 'rxjs/operators/filter';
+import { debounceTime } from 'rxjs/operators/debounceTime';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -354,7 +355,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   ngOnInit(): void {
-    RxChain.from(this.inputControl.valueChanges).call(debounceTime, this.debounce)
+    this.inputControl.valueChanges.pipe(debounceTime(this.debounce))
       .subscribe((value: string) => {
         this.onInputChange.emit(value ? value : '');
       });
@@ -749,12 +750,11 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(
-        merge(
-          fromEvent(this._document, 'click'),
-          fromEvent(this._document, 'touchend'),
-        ),
-      ).call(filter, (event: MouseEvent) => {
+      merge(
+        fromEvent(this._document, 'click'),
+        fromEvent(this._document, 'touchend'),
+      ).pipe(
+        filter((event: MouseEvent) => {
         const clickTarget: HTMLElement = <HTMLElement>event.target;
         setTimeout(() => {
           this._internalClick = false;
@@ -762,7 +762,8 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
         return this.focused &&
                (clickTarget !== this._elementRef.nativeElement) &&
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
-      }).subscribe(() => { 
+        })
+      ).subscribe(() => { 
         if (this.focused) {
           this._autocompleteTrigger.closePanel();
           this.removeFocusedState();

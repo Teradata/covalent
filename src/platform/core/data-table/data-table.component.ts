@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 
-import { debounceTime } from 'rxjs/operator/debounceTime';
+import { debounceTime } from 'rxjs/operators/debounceTime';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
@@ -493,7 +493,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * so we can start calculating the widths
    */
   ngAfterViewInit(): void {
-    this._rowsChangedSubs = debounceTime.call(this._rows.changes, 0).subscribe(() => {
+    this._rowsChangedSubs = this._rows.changes.pipe(
+      debounceTime(0)
+    ).subscribe(() => {
       this._onResize.next();
     });
     this._calculateVirtualRows();
