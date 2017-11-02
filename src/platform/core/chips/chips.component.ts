@@ -355,10 +355,11 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   ngOnInit(): void {
-    this.inputControl.valueChanges.pipe(debounceTime(this.debounce))
-      .subscribe((value: string) => {
-        this.onInputChange.emit(value ? value : '');
-      });
+    this.inputControl.valueChanges.pipe(
+      debounceTime(this.debounce),
+    ).subscribe((value: string) => {
+      this.onInputChange.emit(value ? value : '');
+    });
     this._changeDetectorRef.markForCheck();
   }
 
