@@ -1,7 +1,6 @@
 <td-layout #layout
             [class]="activeTheme"
             [dir]="dir"
-            [mode]="(media.registerQuery('gt-md') | async) ? 'side' : 'over'"
             [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
   <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/" flex color="primary">
     <mat-nav-list flex>
