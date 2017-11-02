@@ -1,7 +1,3 @@
-//
-// Push (margins)
-// --------------------------------------------------
-
 @mixin push($direction: "") {
   .push#{$direction} {
     margin#{$direction}: 16px;
@@ -29,10 +25,12 @@
 	}
 }
 
-body {
-  @include push();
-  @include push(-bottom);
-  @include push(-top);
-  @include push(-left);
-  @include push(-right);
+@mixin td-pushing-utilities() {
+	body {
+		@include push();
+		@include push(-bottom);
+		@include push(-top);
+		@include push(-left);
+		@include push(-right);
+	}
 }

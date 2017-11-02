@@ -15,10 +15,15 @@ export class DocsComponent implements AfterViewInit {
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
-    description: 'Forking & setup for dev',
+    description: 'Installing Covalent & dependencies',
     icon: 'chrome_reader_mode',
     route: '.',
     title: 'Getting Started',
+  }, {
+    description: 'Sample app to get started',
+    icon: 'flash_on',
+    route: 'quickstart',
+    title: 'Quickstart Repo',
   }, {
     description: 'Familiarize yourself with Angular',
     icon: 'change_history',
@@ -54,6 +59,11 @@ export class DocsComponent implements AfterViewInit {
     icon: 'palette',
     route: 'theme',
     title: 'Custom Theme',
+  }, {
+    description: 'Include individual styles',
+    icon: 'gradient',
+    route: 'utility-sass-mixins',
+    title: 'Utility SASS Mixins',
   }, {
     description: 'Mock data API prototyping server',
     icon: 'wifi_tethering',

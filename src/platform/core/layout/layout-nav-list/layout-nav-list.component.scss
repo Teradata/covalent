@@ -1,4 +1,4 @@
-@import '../../common/styles/whiteframe';
+@import '../../common/styles/core/whiteframe';
 
 :host {
   display: flex;
@@ -89,6 +89,7 @@
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > mat-sidenav {
+      box-shadow: $whiteframe-shadow-1dp;
       box-sizing: border-box;
       display: -webkit-box;
       display: -webkit-flex;

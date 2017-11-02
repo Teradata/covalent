@@ -2,7 +2,7 @@
   <mat-card-title>Minimum Demo</mat-card-title>
   <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'200px'">
+  <div [style.height]="'200px'" class="relative">
     <td-layout-manage-list opened="true" mode="side">
       <mat-toolbar td-sidenav-content></mat-toolbar>
       <div td-sidenav-content>
@@ -11,7 +11,7 @@
       <mat-toolbar></mat-toolbar>
       Content goes here
     </td-layout-manage-list>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -32,7 +32,7 @@
   <mat-card-title>Basic Demo</mat-card-title>
   <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -63,7 +63,7 @@
         </td-layout-manage-list>
       </td-layout-nav>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -106,7 +106,7 @@
   <mat-card-title>Full Demo</mat-card-title>
   <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -226,7 +226,7 @@
         </td-layout-footer>
       </td-layout-nav>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">

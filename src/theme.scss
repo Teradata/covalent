@@ -8,6 +8,26 @@
 // have to load a single css file for Angular Material in your app.
 @include mat-core();
 
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include material icons
+$mat-font-url: 'platform/core/common/styles/font/';
+@include covalent-material-icons();
+
+// Include covalent utility classes
+@include covalent-utilities();
+
+// Include flex layout classes
+@include covalent-layout();
+
+// Include covalent typography classes
+@include covalent-typography();
+
+// Include covalent color classes
+@include covalent-colors();
+
+
 // Custom orange contrast
 $mat-orange-custom: ( 50: #FFF3E0,
                     100: #FFE0B2,

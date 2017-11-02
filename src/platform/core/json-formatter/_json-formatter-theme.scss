@@ -13,6 +13,9 @@
         &:hover {
           background-color: mat-color($background, hover);
         }
+        .td-node-icon {
+          color:  mat-color($foreground, secondary-text);
+        }
       }
     }
     .key {

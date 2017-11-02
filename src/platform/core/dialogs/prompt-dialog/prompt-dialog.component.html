@@ -2,8 +2,8 @@
   <td-dialog-title *ngIf="title">
     {{title}}
   </td-dialog-title>
-  <td-dialog-content class="md-subhead tc-grey-700">
-    {{message}}
+  <td-dialog-content>
+    <span class="td-dialog-message md-subhead">{{message}}</span>
     <form #form="ngForm" novalidate>
       <div class="td-dialog-input-wrapper">
         <mat-form-field class="td-dialog-input">

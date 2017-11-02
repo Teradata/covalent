@@ -1,7 +1,3 @@
-//
-// Pad (padding)
-// --------------------------------------------------
-
 @mixin pad($direction: "") {
   .pad#{$direction} {
     padding#{$direction}: 16px;
@@ -29,10 +25,12 @@
 	}
 }
 
-body {
-  @include pad();
-  @include pad(-bottom);
-  @include pad(-top);
-  @include pad(-left);
-  @include pad(-right);
+@mixin td-padding-utilities() {
+	body {
+		@include pad();
+		@include pad(-bottom);
+		@include pad(-top);
+		@include pad(-left);
+		@include pad(-right);
+	}
 }

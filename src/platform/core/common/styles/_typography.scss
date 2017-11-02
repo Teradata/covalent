@@ -1,102 +1,110 @@
 @import 'theme-functions';
 @import 'variables';
-@import 'mixins';
 
-// Global page styles
-//
-// [2] Ensure the page always fills at least the entire height of the viewport.
-// [3] Prevent iOS text size adjust after orientation change, without disabling user zoom
-// [4] Fonts on OSX will look more consistent with other systems that do not
-// render text using sub-pixel anti-aliasing.
+@mixin covalent-typography() {
+  // Global page styles
+  //
+  // [2] Ensure the page always fills at least the entire height of the viewport.
+  // [3] Prevent iOS text size adjust after orientation change, without disabling user zoom
+  // [4] Fonts on OSX will look more consistent with other systems that do not
+  // render text using sub-pixel anti-aliasing.
 
-html, body {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
+  html, body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
 
-  min-height: 100%; // [2]
+    min-height: 100%; // [2]
 
-  -webkit-text-size-adjust: 100%; // [3]
-  -ms-text-size-adjust: 100%; // [3]
+    -webkit-text-size-adjust: 100%; // [3]
+    -ms-text-size-adjust: 100%; // [3]
 
-  -webkit-font-smoothing: antialiased; // [4]
-  -moz-osx-font-smoothing: grayscale; // [4]
-}
-/************
-* Defaults
-************/
+    -webkit-font-smoothing: antialiased; // [4]
+    -moz-osx-font-smoothing: grayscale; // [4]
+  }
+  /************
+  * Defaults
+  ************/
 
-html  {
-  font-family: $font-family;
-}
-
-body {
-  select,
-  button,
-  textarea,
-  input {
+  html  {
     font-family: $font-family;
-    font-size: 100%;
-  }
-  /************
-  * Headings
-  ************/
-  .md-display-4 {
-    font-size: $display-4-font-size-base;
-    font-weight: 300;
-    letter-spacing: -0.010em;
-    line-height: $display-4-font-size-base;
   }
 
-  .md-display-3 {
-    font-size: $display-3-font-size-base;
-    font-weight: 400;
-    letter-spacing: -0.005em;
-    line-height: $display-3-font-size-base;
-  }
+  body {
+    select,
+    button,
+    textarea,
+    input {
+      font-family: $font-family;
+      font-size: 100%;
+    }
+    /************
+    * Headings
+    ************/
+    .md-display-4 {
+      font-size: $display-4-font-size-base;
+      font-weight: 300;
+      letter-spacing: -0.010em;
+      line-height: $display-4-font-size-base;
+    }
 
-  .md-display-2 {
-    font-size: $display-2-font-size-base;
-    font-weight: 400;
-    line-height: rem(6.4);
-  }
+    .md-display-3 {
+      font-size: $display-3-font-size-base;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      line-height: $display-3-font-size-base;
+    }
 
-  .md-display-1 {
-    font-size: $display-1-font-size-base;
-    font-weight: 400;
-    line-height: rem(4);
-  }
+    .md-display-2 {
+      font-size: $display-2-font-size-base;
+      font-weight: 400;
+      line-height: rem(6.4);
+    }
 
-  .md-headline {
-    font-size: $headline-font-size-base;
-    font-weight: 400;
-    line-height: rem(3.2);
-  }
+    .md-display-1 {
+      font-size: $display-1-font-size-base;
+      font-weight: 400;
+      line-height: rem(4);
+    }
 
-  .md-title {
-    @include mat-title();
-  }
+    .md-headline {
+      font-size: $headline-font-size-base;
+      font-weight: 400;
+      line-height: rem(3.2);
+    }
 
-  .md-subhead {
-    @include mat-subhead();
-  }
+    .md-title {
+      font-size: $title-font-size-base;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+    }
 
-  /************
-  * Body Copy
-  ************/
-  .md-body-1 {
-    @include mat-body-1();
-  }
+    .md-subhead {
+      font-size: $subhead-font-size-base;
+      font-weight: 400;
+      letter-spacing: 0.010em;
+      line-height: rem(2.4);
+    }
 
-  .md-body-2 {
-    @include mat-body-2();
-  }
+    /************
+    * Body Copy
+    ************/
+    .md-body-1 {
+      font-size: $body-font-size-base;
+      font-weight: 400;
+      letter-spacing: 0.010em;
+      line-height: rem(2);
+    }
 
-  .md-caption {
-    font-size: $caption-font-size-base;
-    letter-spacing: 0.020em;
-  }
+    .md-body-2 {
+      font-size: $body-font-size-base;
+      font-weight: 500;
+      letter-spacing: 0.010em;
+      line-height: rem(2.4);
+    }
 
-  .mat-button {
-    letter-spacing: 0.010em;
+    .md-caption {
+      font-size: $caption-font-size-base;
+      letter-spacing: 0.020em;
+    }
   }
 }

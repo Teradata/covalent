@@ -26,6 +26,11 @@
         // [flex]
         flex: 1;
       }
+      .td-navigation-drawer-menu-button {
+        height: 24px;
+        line-height: 24px;
+        width: 24px;
+      }
     }
     /deep/ > .mat-toolbar-layout > mat-toolbar-row {
       height: auto !important;

@@ -6,15 +6,15 @@ See the  [material getting started](https://github.com/angular/material2/blob/ma
 
 ## Install the CLI
  
- ```bash
- npm install -g @angular/cli@latest
- ```
+```bash
+npm install -g @angular/cli@latest
+```
  
 ## Create a new project
  
- ```bash
- ng new my-project
- ```
+```bash
+ng new my-project
+```
 
 The new command creates a project with a build system for your Angular app.
 
@@ -26,7 +26,7 @@ npm install --save @covalent/core
 npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms 
 ```
 
-Playing with the latest changes from develop is also possible (for now, only the `core` module has a nightly build)
+To test (__only for testing!__) the latest changes from develop, install the nightly build: **(only the core module has a nightly build)**
 
 ```bash
 npm install --save https://github.com/Teradata/covalent-nightly.git
@@ -75,10 +75,10 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 
 @include mat-core();
 
-$primary: mat-palette($mat-orange, 800);
-$accent:  mat-palette($mat-light-blue, 600, A100, A400);
+$primary: mat-palette($mat-orange, 800, 100, 900);
+$accent:  mat-palette($mat-light-blue, 600, 100, 900);
 
-$warn:    mat-palette($mat-red, 600);
+$warn:    mat-palette($mat-red, 600, 100, 900);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
@@ -94,10 +94,13 @@ You only need this single Sass file; you do not need to use Sass to style the re
 
 If you are using the Angular CLI, support for compiling Sass to css is built-in but you have to add a new entry to the "styles" list in .angular-cli.json pointing to the theme file and the platform.css as follows:
 
-### Using platform.css:
+## Covalent Utility Classes
 
-- The core covalent styles need to be included either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json
-load the Material Design font in your `index.html`.  
+This is an **optional** set of CSS classes that will help to speed up development and standardize  your application. 
+
+### Add via platform.css
+
+The covalent utility CSS classes can be included via `platform.css` file either in your `index.html` or as a new entry to the "styles" list in .angular-cli.json 
        
 **src/index.html**
 ```html
@@ -112,6 +115,15 @@ or
   "../node_modules/@covalent/core/common/platform.scss"
 ],
 ```
+
+This also includes the `material icons` by default.
+
+#### Not interested in using ALL the CSS?
+
+Click [here](https://teradata.github.io/covalent/#/docs/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
+
+----
+
 ### Other build tools
 
 If you're not using the Angular CLI, you can use any existing Sass tooling to build the file (such as gulp-sass or grunt-sass). The simplest approach is to use the node-sass CLI; you simply run:
