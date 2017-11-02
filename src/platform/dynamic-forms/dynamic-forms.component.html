@@ -2,7 +2,6 @@
   <div class="td-dynamic-form-wrapper">
     <ng-template let-element ngFor [ngForOf]="elements">
       <div class="td-dynamic-element-wrapper"
-          [style.position]="'relative'"
           [style.max-width.%]="element.flex ? element.flex : 100"
           [style.flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
           [style.-ms-flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"

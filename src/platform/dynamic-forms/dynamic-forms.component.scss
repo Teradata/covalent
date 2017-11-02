@@ -1,5 +1,4 @@
 .td-dynamic-form-wrapper {
-  padding: 4px;
   // [layout-wrap]
   flex-wrap: wrap;
   // [layout]
@@ -15,5 +14,7 @@
   .td-dynamic-element-wrapper {
     max-height: 100%;
     box-sizing: border-box;
+    position: relative;
+    padding: 4px 4px 8px 4px;
   }
 }
