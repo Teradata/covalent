@@ -11,7 +11,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
 import { of } from 'rxjs/observable/of';
-import { _catch } from 'rxjs/operator/catch';
+import { catchError } from 'rxjs/operators/catchError';
 
 describe('Directive: Loading', () => {
 
@@ -382,10 +382,12 @@ class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   constructor(private _loadingService: TdLoadingService) {}
 
   createObservable(): void {
-    this.observable = _catch.call(this._subject.asObservable(), () => {
-      this._loadingService.resolveAll('name1');
-      return of(undefined);
-    });
+    this.observable = this._subject.asObservable().pipe(
+      catchError(() => {
+        this._loadingService.resolveAll('name1');
+        return of(undefined);
+      }),
+    );
   }
 
   sendError(error: any): void {
