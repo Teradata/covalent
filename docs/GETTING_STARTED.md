@@ -118,36 +118,7 @@ or
 
 This also includes the `material icons` by default.
 
-### Add via Covalent SASS Mixins
-
-Alternately, you can cherry pick the `utility` classes that fit your needs with our `scss` mixins instead of including everything with the `platform.css`.
-
-e.g.
-
-```css
-@import '~@covalent/core/theming/all-theme';
-
-// Include the core styles for Covalent
-@include covalent-core();
-
-// Include pre-bundled material-icons
-$mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
-@include covalent-material-icons();
-// Alternative way to include material-icons
-// @import '../node_modules/@covalent/core/common/material-icons.css';
-
-// Include covalent utility classes
-@include covalent-utilities();
-
-// Include flex layout classes
-@include covalent-layout();
-
-// Include covalent typography classes
-@include covalent-typography();
-
-// Include covalent color classes
-@include covalent-colors();
-```
+Click [here](https://teradata.github.io/covalent/#/docs/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
 
 ### Other build tools
 
