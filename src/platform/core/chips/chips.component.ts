@@ -754,15 +754,17 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
         fromEvent(this._document, 'click'),
         fromEvent(this._document, 'touchend'),
       ).pipe(
-        filter((event: MouseEvent) => {
-        const clickTarget: HTMLElement = <HTMLElement>event.target;
-        setTimeout(() => {
-          this._internalClick = false;
-        });
-        return this.focused &&
-               (clickTarget !== this._elementRef.nativeElement) &&
-               !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
-        })
+        filter(
+          (event: MouseEvent) => {
+            const clickTarget: HTMLElement = <HTMLElement>event.target;
+            setTimeout(() => {
+              this._internalClick = false;
+            });
+            return this.focused &&
+                  (clickTarget !== this._elementRef.nativeElement) &&
+                  !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
+          },
+        ),
       ).subscribe(() => { 
         if (this.focused) {
           this._autocompleteTrigger.closePanel();

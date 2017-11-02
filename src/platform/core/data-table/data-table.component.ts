@@ -494,7 +494,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   ngAfterViewInit(): void {
     this._rowsChangedSubs = this._rows.changes.pipe(
-      debounceTime(0)
+      debounceTime(0),
     ).subscribe(() => {
       this._onResize.next();
     });
