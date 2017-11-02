@@ -11,11 +11,15 @@ import { IconsComponent } from './icons/icons.component';
 import { TestingComponent } from './testing/testing.component';
 import { ThemeComponent } from './theme/theme.component';
 import { MockDataComponent } from './mock-data/mock-data.component';
+import { UtilitySASSMixinsComponent } from './utility-sass-mixins/utility-sass-mixins.component';
 
 const routes: Routes = [{
   children: [{
       component: DocsOverviewComponent,
       path: '',
+    }, {
+      component: UtilitySASSMixinsComponent,
+      path: 'utility-sass-mixins',
     }, {
       component: AngularComponent,
       path: 'angular',

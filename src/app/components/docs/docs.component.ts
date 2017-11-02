@@ -20,6 +20,11 @@ export class DocsComponent implements AfterViewInit {
     route: '.',
     title: 'Getting Started',
   }, {
+    description: 'Pick and choose utilities',
+    icon: 'filter_list',
+    route: 'utility-sass-mixins',
+    title: 'Utility SASS Mixins',
+  }, {
     description: 'Familiarize yourself with Angular',
     icon: 'change_history',
     route: 'angular',
