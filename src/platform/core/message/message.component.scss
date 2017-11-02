@@ -1,6 +1,7 @@
 :host {
   display: block;
   .td-message-wrapper {
+    padding: 8px 16px;
     min-height: 52px;
     // [layout]
     box-sizing: border-box;
@@ -12,6 +13,9 @@
     align-content: center;
     max-width: 100%;
     justify-content: start;
+    .td-message-icon {
+      margin-right: 16px;
+    }
     .td-message-labels {
       // [flex]
       flex: 1;
