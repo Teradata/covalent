@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DocsComponent } from './docs.component';
 import { DocsOverviewComponent } from './overview/overview.component';
+import { DocsQuickstartComponent } from './quickstart/quickstart.component';
 import { CreatingComponent } from './creating/creating.component';
 import { AngularMaterialComponent } from './angular-material/angular-material.component';
 import { AngularComponent } from './angular/angular.component';
@@ -18,8 +19,8 @@ const routes: Routes = [{
       component: DocsOverviewComponent,
       path: '',
     }, {
-      component: UtilitySASSMixinsComponent,
-      path: 'utility-sass-mixins',
+      component: DocsQuickstartComponent,
+      path: 'quickstart',
     }, {
       component: AngularComponent,
       path: 'angular',
@@ -44,6 +45,9 @@ const routes: Routes = [{
     }, {
       component: ThemeComponent,
       path: 'theme',
+    }, {
+      component: UtilitySASSMixinsComponent,
+      path: 'utility-sass-mixins',
     }, {
       component: MockDataComponent,
       path: 'mock-data',

@@ -5,6 +5,7 @@ import { docsRoutes } from './docs.routes';
 
 import { DocsComponent } from './docs.component';
 import { DocsOverviewComponent } from './overview/overview.component';
+import { DocsQuickstartComponent } from './quickstart/quickstart.component';
 import { CreatingComponent } from './creating/creating.component';
 import { AngularMaterialComponent } from './angular-material/angular-material.component';
 import { AngularComponent } from './angular/angular.component';
@@ -30,6 +31,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
   declarations: [
     DocsComponent,
     DocsOverviewComponent,
+    DocsQuickstartComponent,
     CreatingComponent,
     AngularMaterialComponent,
     AngularComponent,
