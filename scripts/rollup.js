@@ -40,7 +40,6 @@ gulp.task('rollup-code', '', function() {
     '@angular/cdk/keycodes': 'ng.cdk.keycodes',
     '@angular/cdk/bidi': 'ng.cdk.bidi',
     '@angular/cdk/coercion': 'ng.cdk.coercion',
-    '@angular/cdk/rxjs': 'ng.cdk.rxjs',
     '@angular/cdk/scrolling': 'ng.cdk.scrolling',
 
     // Rxjs dependencies
@@ -49,17 +48,14 @@ gulp.task('rollup-code', '', function() {
     'rxjs/observable/forkJoin': 'Rx.Observable',
     'rxjs/observable/of': 'Rx.Observable',
     'rxjs/observable/timer': 'Rx.Observable',
-    'rxjs/operator/pairwise': 'Rx.Observable.prototype',
+    'rxjs/observable/fromEvent': 'Rx.Observable',
     'rxjs/operator/toPromise': 'Rx.Observable.prototype',
-    'rxjs/operator/map': 'Rx.Observable.prototype',
-    'rxjs/operator/filter': 'Rx.Observable.prototype',
-    'rxjs/observable/fromEvent': 'Rx.Observable.prototype',
-    'rxjs/operator/do': 'Rx.Observable.prototype',
-    'rxjs/operator/share': 'Rx.Observable.prototype',
-    'rxjs/operator/finally': 'Rx.Observable.prototype',
-    'rxjs/operator/catch': 'Rx.Observable.prototype',
-    'rxjs/operator/debounceTime': 'Rx.Observable.prototype',
-    'rxjs/operator/skip': 'Rx.Observable.prototype',
+    'rxjs/operators/pairwise': 'Rx.Observable',
+    'rxjs/operators/map': 'Rx.Observable',
+    'rxjs/operators/filter': 'Rx.Observable',
+    'rxjs/operators/catchError': 'Rx.Observable',
+    'rxjs/operators/debounceTime': 'Rx.Observable',
+    'rxjs/operators/skip': 'Rx.Observable',
     'rxjs/Observable': 'Rx',
 
     // Covalent
