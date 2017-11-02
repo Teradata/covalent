@@ -1,4 +1,4 @@
-## Covalent SASS Mixins
+## Utility SASS Mixins
 
 You can cherry pick the `utility` classes that fit your needs with our `scss` mixins instead of including everything with the `platform.css`.
 
@@ -65,7 +65,7 @@ To include the [typography classes](https://teradata.github.io/covalent/#/style-
 
 ### Example including every single mixin
 
-If you want to include everything, include the following snippet
+If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](http://localhost:4200/#/docs) docs)
 
 ```css
 @import '~@covalent/core/theming/all-theme';
