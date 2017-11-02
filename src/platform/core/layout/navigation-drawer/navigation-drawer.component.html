@@ -15,7 +15,7 @@
          *ngIf="email || name"
          (click)="toggleMenu()">
       <span class="td-navigation-drawer-label">{{email || name}}</span>
-      <button mat-icon-button class="mat-icon-button-mini" *ngIf="isMenuAvailable">
+      <button mat-icon-button class="td-navigation-drawer-menu-button" *ngIf="isMenuAvailable">
         <mat-icon *ngIf="!menuToggled">arrow_drop_down</mat-icon>
         <mat-icon *ngIf="menuToggled">arrow_drop_up</mat-icon>
       </button>
