@@ -1,9 +1,5 @@
 @import 'styles/styles';
 
-body {
-  font-family: $font-family;
-}
-
 @include covalent-core();
 @include covalent-material-icons();
 @include covalent-utilities();

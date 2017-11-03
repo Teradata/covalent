@@ -34,6 +34,9 @@
     $config: td-typography-config();
   }
 
+  body {
+    font-family: td-font-family($config);
+  }
   @include td-chips-typography($config);
   @include td-data-table-typography($config);
   @include td-dialog-typography($config);
