@@ -20,10 +20,10 @@
   <div class="td-step-label-wrapper"
         [class.mat-inactive]="(!active && !isComplete()) || disabled"
         [class.mat-warn]="isRequired() && !disabled">
-    <div class="md-body-2 td-step-label">
+    <div class="td-step-label">
       <ng-content select="[td-step-header-label]"></ng-content>
     </div>
-    <div class="md-caption td-step-sublabel">
+    <div class="td-step-sublabel">
       <ng-content select="[td-step-header-sublabel]"></ng-content>
     </div>
   </div>
