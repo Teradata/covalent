@@ -7,7 +7,6 @@
     * Headings
     ************/
     .md-display-4 {
-      font-family: $font-family;
       font-size: $display-4-font-size-base;
       font-weight: 300;
       letter-spacing: -0.010em;
@@ -15,7 +14,6 @@
     }
 
     .md-display-3 {
-      font-family: $font-family;
       font-size: $display-3-font-size-base;
       font-weight: 400;
       letter-spacing: -0.005em;
@@ -23,35 +21,30 @@
     }
 
     .md-display-2 {
-      font-family: $font-family;
       font-size: $display-2-font-size-base;
       font-weight: 400;
       line-height: rem(6.4);
     }
 
     .md-display-1 {
-      font-family: $font-family;
       font-size: $display-1-font-size-base;
       font-weight: 400;
       line-height: rem(4);
     }
 
     .md-headline {
-      font-family: $font-family;
       font-size: $headline-font-size-base;
       font-weight: 400;
       line-height: rem(3.2);
     }
 
     .md-title {
-      font-family: $font-family;
       font-size: $title-font-size-base;
       font-weight: 500;
       letter-spacing: 0.005em;
     }
 
     .md-subhead {
-      font-family: $font-family;
       font-size: $subhead-font-size-base;
       font-weight: 400;
       letter-spacing: 0.010em;
@@ -62,7 +55,6 @@
     * Body Copy
     ************/
     .md-body-1 {
-      font-family: $font-family;
       font-size: $body-font-size-base;
       font-weight: 400;
       letter-spacing: 0.010em;
@@ -70,7 +62,6 @@
     }
 
     .md-body-2 {
-      font-family: $font-family;
       font-size: $body-font-size-base;
       font-weight: 500;
       letter-spacing: 0.010em;
@@ -78,7 +69,6 @@
     }
 
     .md-caption {
-      font-family: $font-family;
       font-size: $caption-font-size-base;
       letter-spacing: 0.020em;
     }
