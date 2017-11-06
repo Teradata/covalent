@@ -9,11 +9,11 @@
   <div class="td-expansion-panel-header-content"
         [class.mat-disabled]="disabled"
         *ngIf="!expansionPanelHeader">
-    <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label">
+    <div *ngIf="label || expansionPanelLabel" class="td-expansion-label">
       <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
     </div>
-    <div *ngIf="sublabel || expansionPanelSublabel" class="md-body-1 td-expansion-sublabel">
+    <div *ngIf="sublabel || expansionPanelSublabel" class="td-expansion-sublabel">
       <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>

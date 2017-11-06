@@ -3,8 +3,8 @@
   <div class="td-message-wrapper">
     <mat-icon class="td-message-icon">{{icon}}</mat-icon>
     <div class="td-message-labels">
-      <div *ngIf="label" class="td-message-label md-body-2">{{label}}</div>
-      <div *ngIf="sublabel" class="td-message-sublabel md-body-1">{{sublabel}}</div>
+      <div *ngIf="label" class="td-message-label">{{label}}</div>
+      <div *ngIf="sublabel" class="td-message-sublabel">{{sublabel}}</div>
     </div>
     <ng-content select="[td-message-actions]"></ng-content>
   </div>

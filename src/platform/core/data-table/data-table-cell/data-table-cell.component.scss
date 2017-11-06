@@ -1,6 +1,5 @@
 @import '../../common/styles/rtl';
 :host {
-  font-size: 13px;
   vertical-align: middle;
   @include rtl(text-align, left, right);
   padding: 0;

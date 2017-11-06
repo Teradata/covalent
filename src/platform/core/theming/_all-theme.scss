@@ -13,9 +13,11 @@
 @import '../message/message-theme';
 // import the covalent mixins
 @import '../common/styles/styles';
+@import '../typography/all-typography';
 
 // Create a theme.
-@mixin covalent-theme($theme) {
+@mixin covalent-theme($theme, $config: null) {
+  @include td-typography($config);
   @include td-common-theme($theme);
   @include td-layout-theme($theme);
   @include td-steps-theme($theme);

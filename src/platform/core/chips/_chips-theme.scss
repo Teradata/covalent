@@ -1,4 +1,14 @@
 @import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-chips-typography($config) {
+  .td-chip-content {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+    }
+  }
+}
 
 @mixin td-chips-theme($theme) {
   $primary: map-get($theme, primary);

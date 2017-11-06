@@ -58,10 +58,10 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 export class AppModule { }
 ```
 
-## Include the core and theme styles:
-This is **required** to apply all of the core and theme styles to your application. 
+## Include the core, theme and typography:
+This is **required** to apply all of the core, theme and typography styles to your application. 
 
-See the [material theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) for instructions.
+See the [material theming guide](https://github.com/angular/material2/blob/master/guides/theming.md) and the [material typography guide](https://github.com/angular/material2/blob/master/guides/typography.md) for instructions.
 
 A theme file is a simple Sass file that defines your palettes and passes them to mixins that output the corresponding styles. A typical theme file will look something like this:
 
@@ -71,9 +71,16 @@ A theme file is a simple Sass file that defines your palettes and passes them to
 
 // (optional) Additional themes
 @import '~@covalent/markdown/markdown-theme';
-@import '~@covalent/highlight/highlight-theme';\
+@import '~@covalent/highlight/highlight-theme';
 
-@include mat-core();
+// Define a custom typography config that overrides the font-family
+// or any typography level.
+$typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700)
+);
+
+@include mat-core($typography); // $typography is an **optional** argument for the mat-core
 
 $primary: mat-palette($mat-orange, 800, 100, 900);
 $accent:  mat-palette($mat-light-blue, 600, 100, 900);
@@ -83,7 +90,7 @@ $warn:    mat-palette($mat-red, 600, 100, 900);
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
-@include covalent-theme($theme);
+@include covalent-theme($theme, $typography); // $typography is an **optional** argument for the covalent-theme
 
 // (optional) Additional themes
 @include covalent-markdown-theme($theme);
