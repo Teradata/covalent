@@ -146,8 +146,10 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
               private _sanitize: DomSanitizer) {}
 
   ngOnInit(): void {
-    this._closeSubscription = this._layout.sidenav.onClose.subscribe(() => {
-      this._menuToggled = false;
+    this._closeSubscription = this._layout.sidenav.openedChange.subscribe((opened: boolean) => {
+      if (!opened) {
+        this._menuToggled = false;
+      }
     });
   }
 

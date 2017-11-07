@@ -1,7 +1,7 @@
 import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
-import { Overlay, OverlayConfig, OverlayRef, OverlayOrigin } from '@angular/cdk/overlay';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
