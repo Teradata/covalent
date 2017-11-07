@@ -7,6 +7,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+// register 'es' locale
+registerLocaleData(localeEs);
+
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TemplatesComponent } from './components/templates/templates.component';
