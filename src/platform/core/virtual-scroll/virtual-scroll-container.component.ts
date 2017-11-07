@@ -1,6 +1,6 @@
 import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
-         Renderer2, AfterViewChecked, OnDestroy } from '@angular/core';
+         Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs/Subscription';
@@ -112,7 +112,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
    * This accepts the same trackBy function [ngFor] does.
    * https://angular.io/api/core/TrackByFunction
    */
-  @Input('trackBy') trackBy: any =  (index: number, item: any) => {
+  @Input('trackBy') trackBy: TrackByFunction<any> =  (index: number, item: any) => {
     return item;
   }
 
