@@ -20,4 +20,4 @@
 - [ ] `npm test` passes and code coverage is not lower.
 - [ ] `npm run build` still works.
 
-##### Screenshots or link to CodePen/Plunker/JSfiddle
+##### Screenshots or link to StackBlitz/Plunker
