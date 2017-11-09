@@ -32,6 +32,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * [Releasing](docs/RELEASE.md)
 * [Changelog](docs/CHANGELOG.md)
 * [Quickstart](docs/QUICKSTART.md)
+* [StackBlitz Template](https://stackblitz.com/edit/covalent)
 * [Plunker Template](http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd)
 * [Nightly Build Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
 * [Covalent Electron](https://github.com/Teradata/covalent-electron)
