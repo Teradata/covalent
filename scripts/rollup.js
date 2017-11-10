@@ -44,6 +44,7 @@ gulp.task('rollup-code', '', function() {
 
     // Rxjs dependencies
     'rxjs/Subject': 'Rx',
+    'rxjs/BehaviorSubject': 'Rx.BehaviorSubject',
     'rxjs/observable/merge': 'Rx.Observable',
     'rxjs/observable/forkJoin': 'Rx.Observable',
     'rxjs/observable/of': 'Rx.Observable',
