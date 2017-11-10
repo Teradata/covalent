@@ -6,6 +6,11 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+    &.td-nagivation-drawer-toolbar {
+      flex-direction: column;
+      height: auto !important;
+      display: block !important;
+    }
     .td-navigation-drawer-toolbar-content {
       // [layout="row"]
       flex-direction: row;
@@ -31,10 +36,6 @@
         line-height: 24px;
         width: 24px;
       }
-    }
-    /deep/ > .mat-toolbar-layout > mat-toolbar-row {
-      height: auto !important;
-      display: block !important;
     }
   }
   > div {
