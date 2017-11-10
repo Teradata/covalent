@@ -1,5 +1,5 @@
 import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { fromEvent } from 'rxjs/observable/fromEvent';
@@ -10,7 +10,7 @@ export class TdMediaService {
   private _resizing: boolean = false;
   private _globalSubscription: Subscription;
   private _queryMap: Map<string, string> = new Map<string, string>();
-  private _querySources: {[key: string]: Subject<boolean>} = {};
+  private _querySources: { [key: string]: BehaviorSubject<boolean>} = {};
   private _queryObservables: {[key: string]: Observable<boolean>} = {};
 
   constructor(private _ngZone: NgZone) {
@@ -77,7 +77,7 @@ export class TdMediaService {
       query = this._queryMap.get(query.toLowerCase());
     }
     if (!this._querySources[query]) {
-      this._querySources[query] = new Subject<boolean>();
+      this._querySources[query] = new BehaviorSubject<boolean>(matchMedia(query).matches);
       this._queryObservables[query] = this._querySources[query].asObservable();
     }
     return this._queryObservables[query];
