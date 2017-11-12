@@ -1,3 +1,22 @@
+@import '../common/styles/typography-functions';
+
+@mixin td-data-table-typography($config) {
+  .td-data-table-cell {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+      weight: td-font-weight($config, body-1);
+    }
+    line-height: td-line-height($config, body-1);
+  }
+  .td-data-table-column {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+      weight: 600;
+    }
+  }
+}
 
 @mixin td-data-table-theme($theme) {
   $primary: map-get($theme, primary);
@@ -5,7 +24,10 @@
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  
+
+  .td-data-table-scrollable {
+    border-top: 1px solid mat-color($foreground, divider);
+  }
   table[td-data-table] {
     .td-data-table-column-row,
     .td-data-table-row {
@@ -19,10 +41,6 @@
       }
     }
     .td-data-table-cell {
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.010em;
-      line-height: 20px;
       mat-form-field {
         .mat-form-field-underline {
           display: none;
@@ -30,7 +48,6 @@
       }
     }
     .td-data-table-column {
-      font-size: 12px;
       color: mat-color($foreground, secondary-text);
       * {
         vertical-align: middle;

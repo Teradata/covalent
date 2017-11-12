@@ -8,19 +8,16 @@
   <ng-template [cdkPortalHost]="expansionPanelHeader"></ng-template>
   <div class="td-expansion-panel-header-content"
         [class.mat-disabled]="disabled"
-        *ngIf="!expansionPanelHeader"
-        layout="row"
-        layout-align="start center"
-        flex>
-    <div *ngIf="label || expansionPanelLabel" class="md-subhead td-expansion-label" [attr.flex-gt-xs]="(sublabel || expansionPanelSublabel) ? 40 : null">
+        *ngIf="!expansionPanelHeader">
+    <div *ngIf="label || expansionPanelLabel" class="td-expansion-label">
       <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
     </div>
-    <div *ngIf="sublabel || expansionPanelSublabel" class="md-body-1 td-expansion-sublabel">
+    <div *ngIf="sublabel || expansionPanelSublabel" class="td-expansion-sublabel">
       <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>
-    <span flex></span>
+    <span class="td-expansion-panel-spacer"></span>
     <mat-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</mat-icon>
   </div>
 </div>

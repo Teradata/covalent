@@ -1,6 +1,24 @@
 @import '../common/styles/variables';
 @import '../common/styles/elevation';
 @import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-steps-typography($config) {
+  .td-step-label {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-2);
+      weight: td-font-weight($config, body-2);
+    }
+  }
+  .td-step-sublabel {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+    }
+    line-height: td-line-height($config, body-1);
+  }
+}
 
 @mixin td-steps-theme($theme) {
   $accent: map-get($theme, accent);

@@ -12,9 +12,14 @@
       @import '~@covalent/highlight/highlight-theme';
       // Plus imports for other components in your app.
 
-      // Include the base styles for Angular Material core. We include this here so that you only
-      // have to load a single css file for Angular Material in your app.
-      @include mat-core();
+      // Define a custom typography config that overrides the font-family
+      // or any typography level.
+      $typography: mat-typography-config(
+        $font-family: 'Roboto, monospace',
+        $headline: mat-typography-level(32px, 48px, 700)
+      );
+
+      @include mat-core($typography); // $typography is an **optional** argument for the mat-core
 
       // Define the palettes for your theme using the Material Design palettes available in palette.scss
       // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -32,7 +37,7 @@
       // Alternatively, you can import and @include the theme mixins for each component
       // that you are using.
       @include angular-material-theme($theme);
-      @include covalent-theme($theme);
+      @include covalent-theme($theme, $typography); // $typography is an **optional** argument for the covalent-theme
       @include covalent-markdown-theme($theme);
       @include covalent-highlight-theme();
     </td-highlight>

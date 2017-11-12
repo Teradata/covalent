@@ -1,5 +1,5 @@
-<div class="dynamic-input-wrapper" layout="row">
-  <mat-form-field flex>
+<div class="td-dynamic-input-wrapper">
+  <mat-form-field class="td-dynamic-input-field">
     <input #elementInput
             matInput
             [(ngModel)]="value"
@@ -10,7 +10,6 @@
             [attr.min]="min"
             [attr.max]="max"
             [attr.minLength]="minLength"
-            [attr.maxLength]="maxLength"
-            flex/>
+            [attr.maxLength]="maxLength"/>
   </mat-form-field>
 </div>

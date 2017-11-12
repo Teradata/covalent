@@ -1,9 +1,8 @@
-<div class="dynamic-select-wrapper" layout="row">
-  <mat-form-field flex="100">
+<div class="td-dynamic-select-wrapper">
+  <mat-form-field class="td-dynamic-select-field">
     <mat-select [(ngModel)]="value"
               [placeholder]="label"
-              [required]="required"
-              flex="100">
+              [required]="required">
       <mat-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
     </mat-select>
   </mat-form-field>

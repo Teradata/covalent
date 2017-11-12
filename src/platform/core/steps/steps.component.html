@@ -1,21 +1,21 @@
-<div *ngIf="isHorizontal()" class="td-steps-header" layout="row" title>
+<div *ngIf="isHorizontal()" class="td-steps-header">
   <ng-template let-step let-index="index" let-last="last" ngFor [ngForOf]="steps">
     <td-step-header class="td-step-horizontal-header"
-                    (keydown.enter)="step.toggle()"
+                    (keydown.enter)="step.open()"
                     [number]="index + 1"
                     [active]="step.active"
                     [disableRipple]="step.disableRipple"
                     [disabled]="step.disabled" 
                     [state]="step.state"
-                    (click)="step.toggle()">
+                    (click)="step.open()">
       <ng-template td-step-header-label [cdkPortalHost]="step.stepLabel"></ng-template>
       <ng-template td-step-header-label [ngIf]="!step.stepLabel">{{step.label}}</ng-template>
       <ng-template td-step-header-sublabel [ngIf]="true">{{step.sublabel | truncate:30}}</ng-template>
     </td-step-header>
-    <span *ngIf="!last" class="td-horizontal-line" flex></span>
+    <span *ngIf="!last" class="td-horizontal-line"></span>
   </ng-template>
 </div>
-<div *ngFor="let step of steps; let index = index; let last = last" class="td-step" layout="column">
+<div *ngFor="let step of steps; let index = index; let last = last" class="td-step">
   <td-step-header class="td-step-vertical-header"
                   (keydown.enter)="step.toggle()"
                   [number]="index + 1"

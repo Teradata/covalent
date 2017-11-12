@@ -2,7 +2,7 @@
   <mat-card-title>Minimum Demo</mat-card-title>
   <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <mat-card-content [style.height]="'400px'" class="relative pad-none">
     <td-layout-nav-list logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
       <div td-sidenav-content>
         Sidenav content here
@@ -28,7 +28,7 @@
   <mat-card-title>Basic Demo</mat-card-title>
   <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -55,7 +55,7 @@
         Content goes here
       </td-layout-nav-list>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -94,7 +94,7 @@
   <mat-card-title>Full Demo</mat-card-title>
   <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -163,7 +163,7 @@
         </td-layout-footer>
       </td-layout-nav-list>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -241,7 +241,7 @@
     <h3 class="md-title">TypeScript:</h3>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { Component, HostBinding, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+        import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
         import { TdMediaService } from '@covalent/core';
 
         @Component({
@@ -250,7 +250,7 @@
           styleUrls: ['./nav-list.component.scss'],
           templateUrl: './nav-list.component.html',
         })
-        export class NavListComponent implements AfterViewInit {
+        export class NavListComponent {
 
           routes: Object[] = [{
               icon: 'home',
@@ -316,16 +316,7 @@
             },
           ];
 
-          constructor(private _changeDetectorRef: ChangeDetectorRef,
-                      public media: TdMediaService) {}
-
-          ngAfterViewInit(): void {
-            // broadcast to all listener observables when loading the page
-            setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
-              this.media.broadcast();
-              this._changeDetectorRef.detectChanges();
-            });
-          }
+          constructor(public media: TdMediaService) {}
 
         }
       ]]>

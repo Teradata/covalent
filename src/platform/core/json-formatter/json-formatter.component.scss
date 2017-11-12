@@ -5,6 +5,16 @@
   padding-top: 2px;
   padding-bottom: 2px;
   .td-key {
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="start center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: start;
     &.td-key-node {
       &:hover {
         cursor: pointer;

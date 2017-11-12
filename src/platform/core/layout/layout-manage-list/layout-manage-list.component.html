@@ -1,22 +1,19 @@
-<mat-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
+<mat-sidenav-container fullscreen class="td-layout-manage-list">
   <mat-sidenav #sidenav
               position="start"
               [mode]="mode"
               [opened]="opened"
               [disableClose]="disableClose"
               [style.max-width]="sidenavWidth"
-              [style.min-width]="sidenavWidth"
-              layout="column"
-              layout-fill
-              class="md-whiteframe-z1">
+              [style.min-width]="sidenavWidth">
     <ng-content select="mat-toolbar[td-sidenav-content]"></ng-content>
-    <div flex class="list md-content" cdkScrollable>
+    <div class="td-layout-manage-list-sidenav" cdkScrollable>
       <ng-content select="[td-sidenav-content]"></ng-content>
     </div>
   </mat-sidenav>
-  <div layout="column" layout-fill class="md-content">
+  <div class="td-layout-manage-list-main">
     <ng-content select="mat-toolbar"></ng-content>
-    <div class="md-content" flex cdkScrollable>
+    <div class="td-layout-manage-list-content" cdkScrollable>
       <ng-content></ng-content>
     </div>
     <ng-content select="td-layout-footer-inner"></ng-content>

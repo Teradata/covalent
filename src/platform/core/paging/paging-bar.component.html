@@ -1,4 +1,4 @@
-<div layout="row" layout-align="end center" class="md-caption td-paging-bar" (change)="$event.stopPropagation()" >
+<div class="td-paging-bar" (change)="$event.stopPropagation()" >
   <ng-content></ng-content>
   <div class="td-paging-bar-navigation">
     <button mat-icon-button class="td-paging-bar-first-page" type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">

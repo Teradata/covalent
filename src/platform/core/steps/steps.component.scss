@@ -3,6 +3,14 @@
   position: relative;
 }
 
+.td-steps-header {
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // layout="row"
+  flex-direction: row;
+}
+
 .td-line-wrapper {
   width: 24px;
   min-height: 1px;
@@ -23,6 +31,9 @@
     right: -6px;
   }
   min-width: 15px;
+  // flex
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .td-vertical-line {

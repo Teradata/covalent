@@ -1,14 +1,11 @@
 <div tdMessageContainer></div>
 <ng-template>
-  <div layout="column">
-    <div class="pad-top-sm pad-right pad-bottom-sm pad-left td-message-wrapper" layout="row" layout-align="center center">
-      <mat-icon class="push-right">{{icon}}</mat-icon>
-      <div>
-        <div *ngIf="label" class="td-message-label md-body-2">{{label}}</div>
-        <div *ngIf="sublabel" class="td-message-sublabel md-body-1">{{sublabel}}</div>
-      </div>
-      <span flex></span>
-      <ng-content select="[td-message-actions]"></ng-content>
+  <div class="td-message-wrapper">
+    <mat-icon class="td-message-icon">{{icon}}</mat-icon>
+    <div class="td-message-labels">
+      <div *ngIf="label" class="td-message-label">{{label}}</div>
+      <div *ngIf="sublabel" class="td-message-sublabel">{{sublabel}}</div>
     </div>
+    <ng-content select="[td-message-actions]"></ng-content>
   </div>
 </ng-template>
