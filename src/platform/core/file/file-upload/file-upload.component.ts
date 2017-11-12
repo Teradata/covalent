@@ -35,19 +35,25 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements Con
    */
   private _value: FileList | File = undefined;
   
-    // get/set accessor (needed for ControlValueAccessor)
-    get value(): FileList | File { return this._value; }
-    set value(v: FileList | File) {
-      if (v !== this._value) {
-        this._value = v;
-        this.onChange(v);
-      }
+  // get/set accessor (needed for ControlValueAccessor)
+  get value(): FileList | File { return this._value; }
+  set value(v: FileList | File) {
+    if (v !== this._value) {
+      this._value = v;
+      this.onChange(v);
+      this._changeDetectorRef.markForCheck();
     }
+  }
   
   private _multiple: boolean = false;
   private _required: boolean = false;
 
-  files: FileList | File;
+  /**
+   * @deprecated use value property instead
+   */
+  get files(): FileList | File {
+    return this.value;
+  }
 
   @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
 
@@ -131,18 +137,17 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements Con
    * Method executed when upload button is clicked.
    */
   uploadPressed(): void {
-    if (this.files) {
-      this.onUpload.emit(this.files);
+    if (this.value) {
+      this.onUpload.emit(this.value);
     }
   }
 
   /**
    * Method executed when a file is selected.
    */
-  handleSelect(files: File | FileList): void {
-    this.files = files;
-    this.onSelect.emit(files);
-    this._changeDetectorRef.markForCheck();
+  handleSelect(value: File | FileList): void {
+    this.value = value;
+    this.onSelect.emit(value);
   }
 
   /**
@@ -150,13 +155,12 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements Con
    * Clears files.
    */
   cancel(): void {
-    this.files = undefined;
+    this.value = undefined;
     this.onCancel.emit(undefined);
     // check if the file input is rendered before clearing it
     if (this.fileInput) {
       this.fileInput.clear();
     }
-    this._changeDetectorRef.markForCheck();
   }
 
   /** Method executed when the disabled value changes */
