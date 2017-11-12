@@ -86,7 +86,7 @@
         <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
         <p>Select Event: {{fileSelectMultipleMsg}}</p>
         <p>Upload Event: {{fileUploadMultipleMsg}}</p>
-        <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" [(ngModel)]="files" required (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
+        <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                         accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
           <mat-icon>file_upload</mat-icon>
           <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
@@ -94,7 +94,6 @@
             <mat-icon>attach_file</mat-icon>
             <span>
               Choose multiple .sql files...
-              <span [hidden]="!fileMultipleUpload?.required" class="mat-placeholder-required">*</span>
             </span>
           </ng-template>
         </td-file-upload>
@@ -112,7 +111,7 @@
           <![CDATA[
             <p>Select Event: { {fileSelectMultipleMsg} }</p>
             <p>Upload Event: { {fileUploadMultipleMsg} }</p>
-            <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" [(ngModel)]="files" required (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
+            <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                             accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
               <mat-icon>file_upload</mat-icon>
               <span>
@@ -122,7 +121,6 @@
                 <mat-icon>attach_file</mat-icon>
                 <span>
                   Choose multiple .sql files...
-                  <span [hidden]="!fileMultipleUpload?.required" class="mat-placeholder-required">*</span>
                 </span>
               </ng-template>
             </td-file-upload>
