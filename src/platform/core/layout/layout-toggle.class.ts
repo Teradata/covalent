@@ -5,6 +5,7 @@ import { MatSidenav } from '@angular/material';
 import { Subscription } from 'rxjs/Subscription';
 
 export interface ILayoutTogglable {
+  opened: boolean;
   sidenav: MatSidenav;
   toggle(): Promise<void>;
   open(): Promise<void>;
@@ -50,6 +51,11 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
     // execute toggleVisibility since the onOpenStart and onCloseStart
     // methods might not be executed always when the element is rendered
     this._toggleVisibility();
+    // Force the view to be toggled again since the animation may not be triggered
+    // properly if its a child route
+    Promise.resolve().then(() => {
+      this._layout.sidenav.toggle(this._layout.opened);
+    });
   }
 
   ngOnDestroy(): void {
