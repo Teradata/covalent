@@ -180,7 +180,7 @@ export class DataTableDemoComponent implements OnInit {
 
   showAlert(event: any): void {
     this._dialogService.openAlert({
-      message: 'You clicked on row: ' + event.row.name,
+      message: 'You clicked on row: ' + event.row.first_name + ' ' + event.row.last_name,
     });
   }
 }
