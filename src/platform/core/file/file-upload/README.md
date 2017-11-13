@@ -7,11 +7,14 @@ Perfect component for file selection and upload in simple flows. Uses `TdFileInp
 Example for usage:
 
 ```html
-<td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
+<td-file-upload #fileUpload [(ngModel)]="files" defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
   <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
   <ng-template td-file-input-label>
-    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon>
+    <span>
+      Choose a file...
+    </span>
   </ng-template>
 </td-file-upload>
 ```
@@ -19,6 +22,7 @@ Example for usage:
 ```typescript
 export class Demo {
 
+  files: File | FileList;
   disabled: boolean = false;
 
   selectEvent(files: FileList | File): void {
