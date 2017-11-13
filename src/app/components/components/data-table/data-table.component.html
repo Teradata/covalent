@@ -294,7 +294,7 @@
               selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
-              constructor(private _dataTableService: TdDataTableService) {}
+               constructor(private _dataTableService: TdDataTableService) {}
 
               ngOnInit(): void {
                 this.filter();
@@ -319,9 +319,8 @@
               }
 
               showAlert(event: any): void {
-                this._dialogService.openAlert({
-                  message: JSON.stringify('You clicked on row: ' + event.row.name),
-                });
+                let row: any = event.row;
+                // .. do something with event.row
               }
 
               filter(): void {
