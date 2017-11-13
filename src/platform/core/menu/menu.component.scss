@@ -18,19 +18,22 @@ $td-menu-spacing: 8px !default;
   mat-list[dense],
   mat-nav-list,
   mat-nav-list[dense], {
-    a[mat-list-item].mat-2-line .mat-list-item-content,
-    mat-list-item.mat-2-line .mat-list-item-content {
+    a[mat-list-item].mat-2-line,
+    mat-list-item.mat-2-line {
       height: auto;
-      padding: $td-menu-spacing;
-      .mat-list-text {
-        padding-right: 0px;
-        [dir='rtl'] & { 
-          padding-left: 0px;
-          padding-right: 16px;
+      & .mat-list-item-content {
+        height: auto;
+        padding: $td-menu-spacing;
+        .mat-list-text {
+          padding-right: 0px;
+          [dir='rtl'] & { 
+            padding-left: 0px;
+            padding-right: 16px;
+          }
         }
-      }
-      [matLine] + [matLine] {
-        margin-top: $td-menu-spacing / 2;
+        [matLine] + [matLine] {
+          margin-top: $td-menu-spacing / 2;
+        }
       }
     }
   }
