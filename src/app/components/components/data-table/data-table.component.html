@@ -246,6 +246,7 @@
               [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)"
+              (rowClick)="showAlert($event)"
               [style.height.px]="200">
             </td-data-table>
             <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
@@ -315,6 +316,12 @@
                 this.currentPage = pagingEvent.page;
                 this.pageSize = pagingEvent.pageSize;
                 this.filter();
+              }
+
+              showAlert(event: any): void {
+                this._dialogService.openAlert({
+                  message: JSON.stringify('You clicked on row: ' + event.row.name),
+                });
               }
 
               filter(): void {
