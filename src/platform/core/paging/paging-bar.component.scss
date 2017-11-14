@@ -12,7 +12,7 @@
     align-content: center;
     max-width: 100%;
     justify-content: flex-end;
-    /deep/ > * {
+    ::ng-deep > * {
       margin: 0 10px;
     }
     [mat-icon-button] {

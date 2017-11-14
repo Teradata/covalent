@@ -82,7 +82,7 @@
     }
   }
 }
-:host /deep/ {
+:host ::ng-deep {
   mat-sidenav-container.td-layout-nav-list {
     & > .mat-drawer-content {
       flex-grow: 1;

@@ -22,11 +22,11 @@
   height: 1px;
   position: relative;
   top: 36px;
-  /deep/ :not([dir='rtl']) & {
+  ::ng-deep :not([dir='rtl']) & {
     left: -6px;
     right: -3px;
   }
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     left: -3px;
     right: -6px;
   }
@@ -38,11 +38,11 @@
 
 .td-vertical-line {
   position: absolute;
-  /deep/ :not([dir='rtl']) & {
+  ::ng-deep :not([dir='rtl']) & {
     left: 20px;
     right: auto;
   }
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     left: auto;
     right: 20px;
   }

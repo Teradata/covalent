@@ -9,7 +9,7 @@ $td-menu-spacing: 8px !default;
   // [layout="column"]
   flex-direction: column;
 }
-:host /deep/ {
+:host ::ng-deep {
   [td-menu-header] {
     padding: $td-menu-spacing;
     text-align: center;

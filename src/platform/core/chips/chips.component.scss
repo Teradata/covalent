@@ -32,7 +32,7 @@
       }
     }
   }
-  /deep/ {
+  ::ng-deep {
     .mat-form-field-wrapper {
       padding-bottom: 2px;
     }
@@ -107,7 +107,7 @@
 }
 
 :host {
-   /deep/ mat-form-field {
+   ::ng-deep mat-form-field {
     .mat-form-field-underline {
       display: none;
     }
