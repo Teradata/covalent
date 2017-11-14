@@ -1,3 +1,44 @@
+<a name="1.0.0-rc.0"></a>
+# [1.0.0-rc.0 Name Here](https://github.com/Teradata/covalent/tree/v1.0.0-rc.0) (2017-11-14)
+
+The main focus of this release is support both `@angular@5.0.0` and `@angular/material@5.0.0-rc0`, also making our modules really stand alone so they dont depend on the `platform.scss` styles and configurable typography following the angular material usage.
+
+#### Highlights
+
+- `@angular@5.0.0` support
+- `@angular/material@5.0.0-rc.0` support
+- Real stand alone modules with no dependency to external css styles
+- Create style mixins to pick and choose which utility classes you want
+- Configurable typography for all Covalent components
+- More templates and migration to StackBlitz
+- Bugfixes and improvements
+
+## Bug Fixes
+* **docs:** add missing (rowClick) event to data-table documentation [b2d8cc229895aef88fe35df1580fc3c9e7a5beef](https://github.com/Teradata/covalent/commit/b2d8cc229895aef88fe35df1580fc3c9e7a5beef))
+* **docs:** fix broken URL for material docs [5488a099f42995455b8e7dbe9c48060b6657554d](https://github.com/Teradata/covalent/commit/5488a099f42995455b8e7dbe9c48060b6657554d))
+* **loading:** get proper heights for overlay strategy [da0221b6c0d79e56af908e3b7c9ded9e78dc1342](https://github.com/Teradata/covalent/commit/da0221b6c0d79e56af908e3b7c9ded9e78dc1342)), closes [#934](https://github.com/Teradata/covalent/issues/934)
+* **media:** fix for `TdMediaService` doesn't trigger Portrait or Landscape [3c7c5a154fa5fad007192bf257085239285d9f28](https://github.com/Teradata/covalent/commit/3c7c5a154fa5fad007192bf257085239285d9f28)), closes [#922](https://github.com/Teradata/covalent/issues/922)
+* **virtual-scroll:** fix issue with virtual scroll not respecting the parent's width [8849b00bcf8634d676c38ad85e5e1b77353afea1](https://github.com/Teradata/covalent/commit/8849b00bcf8634d676c38ad85e5e1b77353afea1))
+
+## Features
+* **all:** stop depending on layout.scss so modules are stand alone (too many commits to list), closes [#659](https://github.com/Teradata/covalent/issues/659)
+* **all:** ability to override typography in components [f8d2e0049b793b244c4ce10dd82ab9ea443ead15](https://github.com/Teradata/covalent/commit/f8d2e0049b793b244c4ce10dd82ab9ea443ead15))
+* **data-table:** prioritize column setting for sortable [d92726550928b1c692c5ade45f5ff4bff4bd6f59](https://github.com/Teradata/covalent/commit/d92726550928b1c692c5ade45f5ff4bff4bd6f59))
+* **docs:** Add menu button to switch between dark and light themes [4e80434f23f84e0a7ad7554c3f85d48da024c59c](https://github.com/Teradata/covalent/commit/4e80434f23f84e0a7ad7554c3f85d48da024c59c))
+* **docs:** switch templates to StackBlitz [d135e1e1754d45586b04997730fbade0a9aa0d6a](https://github.com/Teradata/covalent/commit/d135e1e1754d45586b04997730fbade0a9aa0d6a))
+* **file-upload:** ngModel support added [f62c4edca56169b8c0977993af956c107a02c274](https://github.com/Teradata/covalent/commit/f62c4edca56169b8c0977993af956c107a02c274))
+* **loading:** remove blocking background from linear loader [5bdf4a488893bbf2dd0f8029723d7244d7cd7a2f](https://github.com/Teradata/covalent/commit/5bdf4a488893bbf2dd0f8029723d7244d7cd7a2f)), closes [#823](https://github.com/Teradata/covalent/issues/823)
+* **media:** change to BehaviorSubject to stop the use of broadcast method on page load [0177a9a13db0bc2e7d34a72b1f946f6a47517385](https://github.com/Teradata/covalent/commit/0177a9a13db0bc2e7d34a72b1f946f6a47517385))
+* **search:** Make icons of 'Search Box' and 'Search Input' customizable [798800b1480f0867386a31562b612ad76d798549](https://github.com/Teradata/covalent/commit/798800b1480f0867386a31562b612ad76d798549)), closes [#420](https://github.com/Teradata/covalent/issues/420)
+* **utilities:** change push/pad/pull utility baselines to be based on 4px [d6e36138f1fe80d4790713aa5f1a321d39fcd2fd](https://github.com/Teradata/covalent/commit/d6e36138f1fe80d4790713aa5f1a321d39fcd2fd))
+* **utilities:** chore(): create covalent mixins for alternative way to consume our css classes [a76fde6283c7f13a53de5aeedf49c418237cce8e](https://github.com/Teradata/covalent/commit/a76fde6283c7f13a53de5aeedf49c418237cce8e))
+
+## Internal
+* **all:** replace deprecated /deep/ with ::ng-deep [7b9f72f1dc00dc24ab46aa64e2eab9c51053f532](https://github.com/Teradata/covalent/commit/7b9f72f1dc00dc24ab46aa64e2eab9c51053f532))
+* **dependencies:**  upgrade to rxjs@5.5.0 and switch to lettable operators [69e4cb476f6fa8e53f179c10e067576390d7017e](https://github.com/Teradata/covalent/commit/69e4cb476f6fa8e53f179c10e067576390d7017e))
+* **dependencies:** upgrade to angular@5.0.0 and material@5.0.0.rc [ba18ef5629efc5ae61cb5d0045a91a0a8932fde1](https://github.com/Teradata/covalent/commit/ba18ef5629efc5ae61cb5d0045a91a0a8932fde1))
+
+
 <a name="1.0.0-beta.8-1"></a>
 # [1.0.0-beta.8-1](https://github.com/Teradata/covalent/tree/v1.0.0-beta.8-1) (2017-10-06)
 
