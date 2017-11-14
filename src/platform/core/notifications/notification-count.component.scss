@@ -60,7 +60,7 @@ $td-notification-content-size: 40px !default;
       right: 8px;
     }
   }
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     &.td-notification-before {
       right: 0px;
       left: auto;
@@ -83,7 +83,7 @@ $td-notification-content-size: 40px !default;
 }
 
 .td-notification-content {
-  &, /deep/ > * {
+  &, ::ng-deep > * {
     line-height: $td-notification-content-size;
   }
 }

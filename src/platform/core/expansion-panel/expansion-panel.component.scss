@@ -37,7 +37,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 5px;
-  /deep/ [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & { 
     margin-left: 5px;
     margin-right: inherit;
   }

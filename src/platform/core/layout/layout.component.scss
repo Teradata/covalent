@@ -6,7 +6,7 @@
   height: 100%;
   overflow: hidden;
 
-  /deep/ {
+  ::ng-deep {
     // Ensuring sidenav content has flex column properties
     & > mat-sidenav-container > mat-sidenav {
       display: -webkit-box;
