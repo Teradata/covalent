@@ -17,10 +17,20 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Bugfixes, enhancements and demo improvements',
-      icon: 'grid_on',
-      route: '/components/data-table',
-      title: 'Data table updates',
+      description: 'Pick and choose the styles you need',
+      icon: 'gradient',
+      route: '/docs/utility-sass-mixins',
+      title: 'Utility Style Mixins',
+    }, {
+      description: 'Override the typography',
+      icon: 'font_download',
+      route: '/docs',
+      title: 'Custom Typography',
+    }, {
+      description: 'New ones and now using StackBlitz',
+      icon: 'view_carousel',
+      route: '/templates',
+      title: 'Templates',
     },
   ];
 
