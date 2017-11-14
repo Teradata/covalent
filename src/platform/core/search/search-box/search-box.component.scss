@@ -18,7 +18,7 @@
   }
   td-search-input {
     margin-left: 12px;
-    /deep/ [dir='rtl'] & { 
+    ::ng-deep [dir='rtl'] & { 
       margin-right: 12px;
       margin-left: 0px !important;
     }
