@@ -2,14 +2,14 @@
   <mat-card-title>Minimum Demo</mat-card-title>
   <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'" class="relative pad-none">
+  <div [style.height]="'400px'" class="relative">
     <td-layout-nav-list logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
       <div td-sidenav-content>
         Sidenav content here
       </div>
       Content goes here
     </td-layout-nav-list>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
