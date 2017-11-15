@@ -27,7 +27,7 @@ export class ToolbarComponent {
       route: '/docs',
       title: 'Custom Typography',
     }, {
-      description: 'New ones and now using StackBlitz',
+      description: 'New templates and now using StackBlitz',
       icon: 'view_carousel',
       route: '/templates',
       title: 'Templates',
