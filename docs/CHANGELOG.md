@@ -1,5 +1,5 @@
 <a name="1.0.0-rc.0"></a>
-# [1.0.0-rc.0 Name Here](https://github.com/Teradata/covalent/tree/v1.0.0-rc.0) (2017-11-14)
+# [1.0.0-rc.0 Responsive Skinnyjeans](https://github.com/Teradata/covalent/tree/v1.0.0-rc.0) (2017-11-14)
 
 The main focus of this release is support both `@angular@5.0.0` and `@angular/material@5.0.0-rc0`, also making our modules really stand alone so they dont depend on the `platform.scss` styles and configurable typography following the angular material usage.
 
