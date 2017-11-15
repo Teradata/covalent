@@ -6,7 +6,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 import { HttpInterceptorService } from '@covalent/http';
 
 export interface ITemplate {
-  name: string;
+  title: string;
   description: string;
   plnkr: string;
   img: string;
@@ -26,6 +26,24 @@ export class InternalDocsService {
   queryTemplates(): Observable<ITemplate[]> {
     return new Observable<ITemplate[]>((subscriber: Subscriber<ITemplate[]>) => {
       this._http.get(INTERNAL_DOCS_URL + '/templates.json').subscribe((response: Response) => {
+        let data: ITemplate[];
+        try {
+          data = response.json();
+        } catch (e) {
+          data = [];
+          subscriber.error();
+        }
+        subscriber.next(data);
+        subscriber.complete();
+      }, (error: any) => {
+        subscriber.error();
+      });
+    });
+  }
+
+  queryData(): Observable<any[]> {
+    return new Observable<ITemplate[]>((subscriber: Subscriber<ITemplate[]>) => {
+      this._http.get(INTERNAL_DOCS_URL + '/data.json').subscribe((response: Response) => {
         let data: ITemplate[];
         try {
           data = response.json();

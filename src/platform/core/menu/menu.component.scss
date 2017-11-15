@@ -3,29 +3,37 @@ $td-menu-spacing: 8px !default;
   display: block;
   margin-top: -$td-menu-spacing;
   margin-bottom: -$td-menu-spacing;
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="column"]
+  flex-direction: column;
 }
-:host /deep/ {
+:host ::ng-deep {
   [td-menu-header] {
     padding: $td-menu-spacing;
     text-align: center;
   }
-  md-list,
-  md-list[dense],
-  md-nav-list,
-  md-nav-list[dense], {
-    a[md-list-item].mat-2-line .mat-list-item-content,
-    md-list-item.mat-2-line .mat-list-item-content {
+  mat-list,
+  mat-list[dense],
+  mat-nav-list,
+  mat-nav-list[dense], {
+    a[mat-list-item].mat-2-line,
+    mat-list-item.mat-2-line {
       height: auto;
-      padding: $td-menu-spacing;
-      .mat-list-text {
-        padding-right: 0px;
-        [dir='rtl'] & { 
-          padding-left: 0px;
-          padding-right: 16px;
+      & .mat-list-item-content {
+        height: auto;
+        padding: $td-menu-spacing;
+        .mat-list-text {
+          padding-right: 0px;
+          [dir='rtl'] & { 
+            padding-left: 0px;
+            padding-right: 16px;
+          }
         }
-      }
-      [mdLine] + [mdLine] {
-        margin-top: $td-menu-spacing / 2;
+        [matLine] + [matLine] {
+          margin-top: $td-menu-spacing / 2;
+        }
       }
     }
   }

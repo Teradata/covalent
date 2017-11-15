@@ -5,6 +5,16 @@
   padding-top: 2px;
   padding-bottom: 2px;
   .td-key {
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="start center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: start;
     &.td-key-node {
       &:hover {
         cursor: pointer;
@@ -15,13 +25,13 @@
     & .td-key,
     & .td-object-children {
       padding-left: 24px;
-      /deep/ [dir='rtl'] & {
+      ::ng-deep [dir='rtl'] & {
         padding-right: 24px;
         padding-left: 0;
       }
       &.td-key-leaf {
         padding-left: 48px;
-        /deep/ [dir='rtl'] & {
+        ::ng-deep [dir='rtl'] & {
           padding-right: 48px;
           padding-left: 0;
         }
@@ -30,7 +40,7 @@
   }
   .value {
     margin-left: 5px;
-    /deep/ [dir='rtl'] & {
+    ::ng-deep [dir='rtl'] & {
       padding-right: 5px;
       padding-left: 0;
     }

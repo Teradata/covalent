@@ -8,11 +8,11 @@
   position: relative;
   top: 24px;
   left: -12px;
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     right: -12px;
     left: 0;
   }
-  md-icon {
+  mat-icon {
     border-radius: 12px;
     vertical-align: baseline;
   }

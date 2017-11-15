@@ -7,13 +7,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+// register 'es' locale
+registerLocaleData(localeEs);
+
 import { DocsAppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TemplatesComponent } from './components/templates/templates.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { MdButtonModule, MdListModule, MdIconModule, MdCardModule, MdCoreModule, MdMenuModule, MdTabsModule,
-         MdToolbarModule, MdGridListModule, MdTooltipModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatTabsModule,
+         MatToolbarModule, MatGridListModule, MatTooltipModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
          CovalentMediaModule } from '../platform/core';
@@ -42,16 +48,15 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     HttpClientModule,
     JsonpModule,
     /** Material Modules */
-    MdCoreModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule,
-    MdCardModule,
-    MdMenuModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdGridListModule,
-    MdTooltipModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatTooltipModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,

@@ -8,8 +8,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/f
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UP_ARROW, DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, DELETE, BACKSPACE, ENTER, SPACE, TAB, HOME } from '@angular/cdk/keycodes';
-import { RxChain, debounceTime, filter } from '@angular/cdk/rxjs';
-import { MdChip, MdInput, MdOption, MdAutocompleteTrigger } from '@angular/material';
+import { MatChip, MatInput, MatOption, MatAutocompleteTrigger } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -17,6 +16,8 @@ import { timer } from 'rxjs/observable/timer';
 import { merge } from 'rxjs/observable/merge';
 import { toPromise } from 'rxjs/operator/toPromise';
 import { fromEvent } from 'rxjs/observable/fromEvent';
+import { filter } from 'rxjs/operators/filter';
+import { debounceTime } from 'rxjs/operators/debounceTime';
 
 import { ICanDisable, mixinDisabled } from '../common/common.module';
 
@@ -83,14 +84,14 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _internalClick: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
-  @ViewChild(MdInput) _inputChild: MdInput;
-  @ViewChild(MdAutocompleteTrigger) _autocompleteTrigger: MdAutocompleteTrigger;
-  @ViewChildren(MdChip) _chipsChildren: QueryList<MdChip>;
+  @ViewChild(MatInput) _inputChild: MatInput;
+  @ViewChild(MatAutocompleteTrigger) _autocompleteTrigger: MatAutocompleteTrigger;
+  @ViewChildren(MatChip) _chipsChildren: QueryList<MatChip>;
 
   @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
   @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
-  @ViewChildren(MdOption) _options: QueryList<MdOption>;
+  @ViewChildren(MatOption) _options: QueryList<MatOption>;
 
   /**
    * Flag that is true when autocomplete is focused.
@@ -100,13 +101,13 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   /**
-   * FormControl for the mdInput element.
+   * FormControl for the matInput element.
    */
   inputControl: FormControl = new FormControl();
 
   /**
    * items?: any[]
-   * Renders the `md-autocomplete` with the provided list to display as options.
+   * Renders the `mat-autocomplete` with the provided list to display as options.
    */
   @Input('items')
   set items(items: any[]) {
@@ -354,10 +355,11 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   ngOnInit(): void {
-    RxChain.from(this.inputControl.valueChanges).call(debounceTime, this.debounce)
-      .subscribe((value: string) => {
-        this.onInputChange.emit(value ? value : '');
-      });
+    this.inputControl.valueChanges.pipe(
+      debounceTime(this.debounce),
+    ).subscribe((value: string) => {
+      this.onInputChange.emit(value ? value : '');
+    });
     this._changeDetectorRef.markForCheck();
   }
 
@@ -399,7 +401,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _handleAddChip(): boolean {
     let value: any;
     if (this.requireMatch) {
-      let selectedOptions: MdOption[] = this._options.toArray().filter((option: MdOption) => {
+      let selectedOptions: MatOption[] = this._options.toArray().filter((option: MatOption) => {
         return option.active;
       });
       if (selectedOptions.length > 0) {
@@ -684,7 +686,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Get total of chips
    */
   get _totalChips(): number {
-    let chips: MdChip[] = this._chipsChildren.toArray();
+    let chips: MatChip[] = this._chipsChildren.toArray();
     return chips.length;
   }
 
@@ -731,7 +733,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
       toPromise.call(timer()).then(() => {
         if (this.focused && this._options && this._options.length > 0) {
           // clean up of previously active options
-          this._options.toArray().forEach((option: MdOption) => {
+          this._options.toArray().forEach((option: MatOption) => {
             option.setInactiveStyles();
           });
           // set the first one as active
@@ -749,20 +751,22 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      this._outsideClickSubs = RxChain.from(
-        merge(
-          fromEvent(this._document, 'click'),
-          fromEvent(this._document, 'touchend'),
+      merge(
+        fromEvent(this._document, 'click'),
+        fromEvent(this._document, 'touchend'),
+      ).pipe(
+        filter(
+          (event: MouseEvent) => {
+            const clickTarget: HTMLElement = <HTMLElement>event.target;
+            setTimeout(() => {
+              this._internalClick = false;
+            });
+            return this.focused &&
+                  (clickTarget !== this._elementRef.nativeElement) &&
+                  !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
+          },
         ),
-      ).call(filter, (event: MouseEvent) => {
-        const clickTarget: HTMLElement = <HTMLElement>event.target;
-        setTimeout(() => {
-          this._internalClick = false;
-        });
-        return this.focused &&
-               (clickTarget !== this._elementRef.nativeElement) &&
-               !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
-      }).subscribe(() => { 
+      ).subscribe(() => { 
         if (this.focused) {
           this._autocompleteTrigger.closePanel();
           this.removeFocusedState();

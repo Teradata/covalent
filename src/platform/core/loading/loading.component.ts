@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs/Subject';
@@ -26,6 +26,8 @@ export enum LoadingStyle {
 }
 
 import { TdFadeInOutAnimation } from '../common/common.module';
+
+export const TD_CIRCLE_DIAMETER: number = 100;
 
 @Component({
   selector: 'td-loading',
@@ -95,7 +97,8 @@ export class TdLoadingComponent {
    */
   color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   getHeight(): string {
     // Ignore height if style is `overlay` or `fullscreen`.
@@ -107,14 +110,27 @@ export class TdLoadingComponent {
     }
   }
 
-  getCircleDiameter(): string {
+  getCircleDiameter(): number {
+    // we set a default diameter of 100 since this is the default in material
+    let diameter: number = TD_CIRCLE_DIAMETER;
+    // if height is provided, then we take that as diameter
     if (this.height) {
-      let diameter: number = this.height * (2 / 3);
-      if (diameter < 80) {
-        return `${diameter}px`;
-      }
+      diameter = this.height;
+    // else if its not provided, then we take the host height
+    } else if (this.height === undefined) {
+      diameter = this._hostHeight();
     }
-    return '80px';
+    // if the diameter is over TD_CIRCLE_DIAMETER, we return TD_CIRCLE_DIAMETER
+    if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
+      return diameter;
+    }
+    return TD_CIRCLE_DIAMETER;
+  }
+
+  getCircleStrokeWidth(): number {
+    // we calculate the stroke width by setting it as 10% of its diameter
+    let strokeWidth: number = this.getCircleDiameter() / 10;
+    return Math.abs(strokeWidth);
   }
 
   isCircular(): boolean {
@@ -177,11 +193,21 @@ export class TdLoadingComponent {
   startOutAnimation(): Observable<any> {
     this.animation = false;
     /* need to switch back and forth from determinate/indeterminate so the setInterval()
-    * inside md-progress-spinner stops and protractor doesnt timeout waiting to sync.
+    * inside mat-progress-spinner stops and protractor doesnt timeout waiting to sync.
     */
     this._mode = LoadingMode.Determinate;
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     return this._animationOut.asObservable();
+  }
+
+  /**
+   * Returns the host height of the loading component
+   */
+  private _hostHeight(): number {
+    if (<HTMLElement>this._elementRef.nativeElement) {
+      return (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height;
+    }
+    return 0;
   }
 }

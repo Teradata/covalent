@@ -7,11 +7,14 @@ Perfect component for file selection and upload in simple flows. Uses `TdFileInp
 Example for usage:
 
 ```html
-<td-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
+<td-file-upload #fileUpload [(ngModel)]="files" defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
+  <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
   <ng-template td-file-input-label>
-    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon>
+    <span>
+      Choose a file...
+    </span>
   </ng-template>
 </td-file-upload>
 ```
@@ -19,6 +22,7 @@ Example for usage:
 ```typescript
 export class Demo {
 
+  files: File | FileList;
   disabled: boolean = false;
 
   selectEvent(files: FileList | File): void {
@@ -49,9 +53,9 @@ Properties:
 
 | Name | Type | Description |
 | --- | --- | 650--- |
-| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [mdButton] and defaults to 'primary'.
-| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [mdButton] and defaults to 'accent'.
-| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [mdButton] and defaults to 'warn'.
+| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
+| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
+| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
 | `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
 | `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
 | `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.

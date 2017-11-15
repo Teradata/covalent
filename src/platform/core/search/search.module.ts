@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
@@ -15,9 +15,9 @@ export { TdSearchInputComponent } from './search-input/search-input.component';
   imports: [
     FormsModule,
     CommonModule,
-    MdInputModule,
-    MdIconModule,
-    MdButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   declarations: [
     TdSearchInputComponent,

@@ -1,6 +1,8 @@
-<div class="td-search-input" layout="row" layout-align="end center">
-  <md-form-field [class.mat-hide-underline]="!showUnderline" floatPlaceholder="never" flex>
-    <input mdInput
+<div class="td-search-input">
+  <mat-form-field class="td-search-input-field"
+                  [class.mat-hide-underline]="!showUnderline"
+                  floatPlaceholder="never">
+    <input matInput
             #searchElement
             type="search"
             [(ngModel)]="value"
@@ -8,12 +10,12 @@
             (blur)="handleBlur()"
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>
-  </md-form-field>
-  <button md-icon-button
+  </mat-form-field>
+  <button mat-icon-button
+          class="td-search-input-clear"
           type="button"
           [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
-          (click)="clearSearch()"
-          flex="none">
-    <md-icon>cancel</md-icon>
+          (click)="clearSearch()">
+    <mat-icon>{{clearIcon}}</mat-icon>
   </button>
 </div>

@@ -3,6 +3,14 @@
   position: relative;
 }
 
+.td-steps-header {
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // layout="row"
+  flex-direction: row;
+}
+
 .td-line-wrapper {
   width: 24px;
   min-height: 1px;
@@ -14,24 +22,27 @@
   height: 1px;
   position: relative;
   top: 36px;
-  /deep/ :not([dir='rtl']) & {
+  ::ng-deep :not([dir='rtl']) & {
     left: -6px;
     right: -3px;
   }
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     left: -3px;
     right: -6px;
   }
   min-width: 15px;
+  // flex
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .td-vertical-line {
   position: absolute;
-  /deep/ :not([dir='rtl']) & {
+  ::ng-deep :not([dir='rtl']) & {
     left: 20px;
     right: auto;
   }
-  /deep/ [dir='rtl'] & {
+  ::ng-deep [dir='rtl'] & {
     left: auto;
     right: 20px;
   }

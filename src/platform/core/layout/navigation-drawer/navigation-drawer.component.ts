@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MdDrawerToggleResult } from '@angular/material';
-
 import { TdLayoutComponent } from '../layout.component';
 
 import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.animation';
@@ -148,8 +146,10 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
               private _sanitize: DomSanitizer) {}
 
   ngOnInit(): void {
-    this._closeSubscription = this._layout.sidenav.onClose.subscribe(() => {
-      this._menuToggled = false;
+    this._closeSubscription = this._layout.sidenav.openedChange.subscribe((opened: boolean) => {
+      if (!opened) {
+        this._menuToggled = false;
+      }
     });
   }
 
@@ -176,21 +176,21 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdDrawerToggleResult> {
+  public toggle(): Promise<void> {
     return this._layout.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdDrawerToggleResult> {
+  public open(): Promise<void> {
     return this._layout.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdDrawerToggleResult> {
+  public close(): Promise<void> {
     return this._layout.close();
   }
 }

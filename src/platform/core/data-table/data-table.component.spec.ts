@@ -14,7 +14,7 @@ import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { MdCheckbox, MdPseudoCheckbox } from '@angular/material';
+import { MatCheckbox, MatPseudoCheckbox } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {
@@ -168,34 +168,37 @@ describe('Component: DataTable', () => {
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
-          // check to see checkboxes states
-          expect(dataTableComponent.indeterminate).toBeFalsy();
-          expect(dataTableComponent.allSelected).toBeFalsy();
-          // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            // check to see if its in indeterminate state
-            expect(dataTableComponent.indeterminate).toBeTruthy();
+            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+            // check how many rows were rendered
+            expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
+            // check to see checkboxes states
+            expect(dataTableComponent.indeterminate).toBeFalsy();
             expect(dataTableComponent.allSelected).toBeFalsy();
-            // select the rest of the rows by clicking in selectAll
-            fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+            // select a row with a click event
+            fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              // check to see if its in indeterminate state and allSelected
+              // check to see if its in indeterminate state
               expect(dataTableComponent.indeterminate).toBeTruthy();
-              expect(dataTableComponent.allSelected).toBeTruthy();
-              // unselect all rows by clicking in unselect all
-              fixture.debugElement.query(By.directive(MdCheckbox)).triggerEventHandler('click', new Event('click'));
+              expect(dataTableComponent.allSelected).toBeFalsy();
+              // select the rest of the rows by clicking in selectAll
+              fixture.debugElement.query(By.directive(MatCheckbox)).triggerEventHandler('click', new Event('click'));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                // check to see if its not in indeterminate state and not allSelected
-                expect(dataTableComponent.indeterminate).toBeFalsy();
-                expect(dataTableComponent.allSelected).toBeFalsy();
-                done();
+                // check to see if its in indeterminate state and allSelected
+                expect(dataTableComponent.indeterminate).toBeTruthy();
+                expect(dataTableComponent.allSelected).toBeTruthy();
+                // unselect all rows by clicking in unselect all
+                fixture.debugElement.query(By.directive(MatCheckbox)).triggerEventHandler('click', new Event('click'));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  // check to see if its not in indeterminate state and not allSelected
+                  expect(dataTableComponent.indeterminate).toBeFalsy();
+                  expect(dataTableComponent.allSelected).toBeFalsy();
+                  done();
+                });
               });
             });
           });
@@ -221,39 +224,41 @@ describe('Component: DataTable', () => {
                           { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
                           { sku: '1452-1', item: 'Sirlone', price: 22.11 },
                           { sku: '1421-3', item: 'T-Bone', price: 51.15 }];
-
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
-          // check to see checkboxes states
-          expect(dataTableComponent.indeterminate).toBeFalsy();
-          expect(dataTableComponent.allSelected).toBeFalsy();
-          // select a row with a click event
-          fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            // check to see if its in indeterminate state
-            expect(dataTableComponent.indeterminate).toBeTruthy();
+            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+            // check how many rows were rendered
+            expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
+            // check to see checkboxes states
+            expect(dataTableComponent.indeterminate).toBeFalsy();
             expect(dataTableComponent.allSelected).toBeFalsy();
-            // select the rest of the rows
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].triggerEventHandler('click', new Event('click'));
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].triggerEventHandler('click', new Event('click'));
+            // select a row with a click event
+            fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              // check to see if its in indeterminate state and allSelected
+              // check to see if its in indeterminate state
               expect(dataTableComponent.indeterminate).toBeTruthy();
-              expect(dataTableComponent.allSelected).toBeTruthy();
-              // unselect one of the rows
-              fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
+              expect(dataTableComponent.allSelected).toBeFalsy();
+              // select the rest of the rows
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].triggerEventHandler('click', new Event('click'));
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].triggerEventHandler('click', new Event('click'));
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[3].triggerEventHandler('click', new Event('click'));
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                // check to see if its in indeterminate state and not allSelected
+                // check to see if its in indeterminate state and allSelected
                 expect(dataTableComponent.indeterminate).toBeTruthy();
-                expect(dataTableComponent.allSelected).toBeFalsy();
-                done();
+                expect(dataTableComponent.allSelected).toBeTruthy();
+                // unselect one of the rows
+                fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[2].triggerEventHandler('click', new Event('click'));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                  // check to see if its in indeterminate state and not allSelected
+                  expect(dataTableComponent.indeterminate).toBeTruthy();
+                  expect(dataTableComponent.allSelected).toBeFalsy();
+                  done();
+                });
               });
             });
           });
@@ -282,28 +287,31 @@ describe('Component: DataTable', () => {
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
-          // check how many rows were rendered
-          expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
-          // check to see checkboxes states
-          expect(dataTableComponent.indeterminate).toBeFalsy();
-          expect(dataTableComponent.allSelected).toBeFalsy();
-
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            // select the first and last row with shift key also selected and should then select all checkboxes
-            let clickEvent: MouseEvent = document.createEvent('MouseEvents');          
-            // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
-            clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, document.body.parentNode);
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
-            let shiftClickEvent: MouseEvent = document.createEvent('MouseEvents'); 
-            shiftClickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, document.body.parentNode);
-            fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[3].nativeElement.dispatchEvent(shiftClickEvent);
+            let dataTableComponent: TdDataTableComponent = fixture.debugElement.query(By.directive(TdDataTableComponent)).componentInstance;
+            // check how many rows were rendered
+            expect(fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent)).length).toBe(4);
+            // check to see checkboxes states
+            expect(dataTableComponent.indeterminate).toBeFalsy();
+            expect(dataTableComponent.allSelected).toBeFalsy();
+
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              // check to see if allSelected is true
-              expect(dataTableComponent.allSelected).toBeTruthy();
-              done();
+              // select the first and last row with shift key also selected and should then select all checkboxes
+              let clickEvent: MouseEvent = document.createEvent('MouseEvents');          
+              // the 12th parameter below 'true' sets the shift key to be clicked at the same time as as the mouse click
+              clickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, document.body.parentNode);
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.dispatchEvent(clickEvent);
+              let shiftClickEvent: MouseEvent = document.createEvent('MouseEvents'); 
+              shiftClickEvent.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, document.body.parentNode);
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[3].nativeElement.dispatchEvent(shiftClickEvent);
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                // check to see if allSelected is true
+                expect(dataTableComponent.allSelected).toBeTruthy();
+                done();
+              });
             });
           });
         });
@@ -358,7 +366,7 @@ describe('Component: DataTable', () => {
 
             fixture.detectChanges();
             fixture.whenStable().then(() => {
-              fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].nativeElement.click();
+              fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.click();
               fixture.detectChanges();
               fixture.whenStable().then(() => {
                 expect(clickEventSpy.calls.count()).toBe(1);
@@ -379,8 +387,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('checked');
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe('checked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
         });
     })));
 
@@ -394,8 +402,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('unchecked');
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe('unchecked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
         });
     })));
 
@@ -409,8 +417,8 @@ describe('Component: DataTable', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[0].componentInstance.state).toBe('checked');
-          expect(fixture.debugElement.queryAll(By.directive(MdPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].componentInstance.state).toBe('checked');
+          expect(fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[1].componentInstance.state).toBe('unchecked');
         });
     })));
   });
@@ -441,7 +449,8 @@ class TdDataTableBasicTestComponent {
         [data]="data"
         [columns]="columns"
         [selectable]="selectable"
-        [multiple]="multiple">
+        [multiple]="multiple"
+        [style.height.px]="200">
     </td-data-table>`,
 })
 class TdDataTableSelectableTestComponent {

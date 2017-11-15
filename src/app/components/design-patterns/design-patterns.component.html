@@ -5,27 +5,27 @@
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : ((media.registerQuery('sm') | async) ? 'push' : 'over')"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
-  <md-nav-list td-sidenav-content>
-    <h3 md-subheader>Design Patterns</h3>
+  <mat-nav-list td-sidenav-content>
+    <h3 matSubheader>Design Patterns</h3>
     <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-      <a md-list-item 
+      <a mat-list-item 
           [routerLink]="[item.route]" 
           [routerLinkActive]="['active']" 
           [routerLinkActiveOptions]="{exact:true}"
           [tdLayoutNavListClose]="!media.query('gt-sm')">
-        <md-icon mdListAvatar>{{item.icon}}</md-icon>
-        <h3 mdLine> {{item.title}} </h3>
-        <p mdLine> {{item.description}} </p>
+        <mat-icon matListAvatar>{{item.icon}}</mat-icon>
+        <h3 matLine> {{item.title}} </h3>
+        <p matLine> {{item.description}} </p>
       </a>
-      <md-divider *ngIf="!last" md-inset></md-divider>
+      <mat-divider *ngIf="!last" matInset></mat-divider>
     </ng-template>
-  </md-nav-list>
+  </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
-    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
-      <md-icon>arrow_back</md-icon>
+    <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <mat-icon>arrow_back</mat-icon>
     </button>
     <span hide-gt-sm>Design Patterns</span>
     <td-toolbar flex layout="row"></td-toolbar>

@@ -1,20 +1,20 @@
-<div layout="row" layout-align="end center" class="md-caption td-paging-bar" (change)="$event.stopPropagation()" >
+<div class="td-paging-bar" (change)="$event.stopPropagation()" >
   <ng-content></ng-content>
   <div class="td-paging-bar-navigation">
-    <button md-icon-button class="td-paging-bar-first-page" type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
-      <md-icon>{{ isRTL ? 'skip_next' : 'skip_previous' }}</md-icon>
+    <button mat-icon-button class="td-paging-bar-first-page" type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">
+      <mat-icon>{{ isRTL ? 'skip_next' : 'skip_previous' }}</mat-icon>
     </button>
-    <button md-icon-button class="td-paging-bar-prev-page" type="button" [disabled]="isMinPage()" (click)="prevPage()">
-      <md-icon>{{ isRTL ? 'navigate_next' : 'navigate_before' }}</md-icon>
+    <button mat-icon-button class="td-paging-bar-prev-page" type="button" [disabled]="isMinPage()" (click)="prevPage()">
+      <mat-icon>{{ isRTL ? 'navigate_next' : 'navigate_before' }}</mat-icon>
     </button>
     <ng-template *ngIf="pageLinkCount > 0" let-link let-index="index" ngFor [ngForOf]="pageLinks">
-      <button class="td-paging-bar-link-page" md-icon-button type="button" [color]="page === link ? 'accent' : ''" (click)="navigateToPage(link)">{{link}}</button>
+      <button class="td-paging-bar-link-page" mat-icon-button type="button" [color]="page === link ? 'accent' : ''" (click)="navigateToPage(link)">{{link}}</button>
     </ng-template>
-    <button md-icon-button class="td-paging-bar-next-page" type="button" [disabled]="isMaxPage()" (click)="nextPage()">
-      <md-icon>{{ isRTL ? 'navigate_before' : 'navigate_next' }}</md-icon>
+    <button mat-icon-button class="td-paging-bar-next-page" type="button" [disabled]="isMaxPage()" (click)="nextPage()">
+      <mat-icon>{{ isRTL ? 'navigate_before' : 'navigate_next' }}</mat-icon>
     </button>
-    <button md-icon-button class="td-paging-bar-last-page" type="button" *ngIf="firstLast" [disabled]="isMaxPage()" (click)="lastPage()">
-      <md-icon>{{ isRTL ? 'skip_previous' : 'skip_next' }}</md-icon>
+    <button mat-icon-button class="td-paging-bar-last-page" type="button" *ngIf="firstLast" [disabled]="isMaxPage()" (click)="lastPage()">
+      <mat-icon>{{ isRTL ? 'skip_previous' : 'skip_next' }}</mat-icon>
     </button>
   </div>
 </div>

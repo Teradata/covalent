@@ -1,4 +1,4 @@
-@import '../common/styles/mixins';
+@import '../common/styles/rtl';
 
 :host {
   display: block;
@@ -14,7 +14,25 @@
       width: 100%;
     }
   }
-  /deep/ {
+  .td-chip {
+    &, > .td-chip-content {
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout row
+      flex-direction: row;
+      // layout-align start center
+      max-width: 100%;
+      align-items: center;
+      align-content: center;
+      justify-content: start;
+      &.td-chip-stacked {
+        // layout-align space-between center
+        justify-content: space-between;
+      }
+    }
+  }
+  ::ng-deep {
     .mat-form-field-wrapper {
       padding-bottom: 2px;
     }
@@ -47,7 +65,7 @@
       &.td-chip-after-pad {
         @include rtl(padding, 0 12px 0 0, 0 0 0 12px);
       }
-      md-icon.td-chip-removal {
+      mat-icon.td-chip-removal {
         margin: 0 4px;
         font-size: 21px;
         line-height: 22px;
@@ -89,7 +107,7 @@
 }
 
 :host {
-   /deep/ md-form-field {
+   ::ng-deep mat-form-field {
     .mat-form-field-underline {
       display: none;
     }

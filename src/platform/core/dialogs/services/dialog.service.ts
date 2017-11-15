@@ -1,5 +1,6 @@
 import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional } from '@angular/core';
-import { MdDialog, MdDialogRef, MdDialogConfig, ComponentType } from '@angular/material';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
+import { ComponentType } from '@angular/cdk/portal';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -28,21 +29,21 @@ export interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
 
-  constructor(private _dialogService: MdDialog) {}
+  constructor(private _dialogService: MatDialog) {}
 
   /**
    * params:
    * - component: ComponentType<T>
-   * - config: MdDialogConfig
-   * Wrapper function over the open() method in MdDialog.
+   * - config: MatDialogConfig
+   * Wrapper function over the open() method in MatDialog.
    * Opens a modal dialog containing the given component.
    */
-  public open<T>(component: ComponentType<T>, config?: MdDialogConfig): MdDialogRef<T> {
+  public open<T>(component: ComponentType<T>, config?: MatDialogConfig): MatDialogRef<T> {
     return this._dialogService.open(component, config);
   }
 
   /**
-   * Wrapper function over the closeAll() method in MdDialog.
+   * Wrapper function over the closeAll() method in MatDialog.
    * Closes all of the currently-open dialogs.
    */
   public closeAll(): void {
@@ -59,11 +60,11 @@ export class TdDialogService {
    * }
    *
    * Opens an alert dialog with the provided config.
-   * Returns an MdDialogRef<TdAlertDialogComponent> object.
+   * Returns an MatDialogRef<TdAlertDialogComponent> object.
    */
-  public openAlert(config: IAlertConfig): MdDialogRef<TdAlertDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config);
-    let dialogRef: MdDialogRef<TdAlertDialogComponent> =
+  public openAlert(config: IAlertConfig): MatDialogRef<TdAlertDialogComponent> {
+    let dialogConfig: MatDialogConfig = this._createConfig(config);
+    let dialogRef: MatDialogRef<TdAlertDialogComponent> =
       this._dialogService.open(TdAlertDialogComponent, dialogConfig);
     let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
     alertDialogComponent.title = config.title;
@@ -85,11 +86,11 @@ export class TdDialogService {
    * }
    *
    * Opens a confirm dialog with the provided config.
-   * Returns an MdDialogRef<TdConfirmDialogComponent> object.
+   * Returns an MatDialogRef<TdConfirmDialogComponent> object.
    */
-  public openConfirm(config: IConfirmConfig): MdDialogRef<TdConfirmDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config);
-    let dialogRef: MdDialogRef<TdConfirmDialogComponent> =
+  public openConfirm(config: IConfirmConfig): MatDialogRef<TdConfirmDialogComponent> {
+    let dialogConfig: MatDialogConfig = this._createConfig(config);
+    let dialogRef: MatDialogRef<TdConfirmDialogComponent> =
       this._dialogService.open(TdConfirmDialogComponent, dialogConfig);
     let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
     confirmDialogComponent.title = config.title;
@@ -115,11 +116,11 @@ export class TdDialogService {
    * }
    *
    * Opens a prompt dialog with the provided config.
-   * Returns an MdDialogRef<TdPromptDialogComponent> object.
+   * Returns an MatDialogRef<TdPromptDialogComponent> object.
    */
-  public openPrompt(config: IPromptConfig): MdDialogRef<TdPromptDialogComponent> {
-    let dialogConfig: MdDialogConfig = this._createConfig(config);
-    let dialogRef: MdDialogRef<TdPromptDialogComponent> =
+  public openPrompt(config: IPromptConfig): MatDialogRef<TdPromptDialogComponent> {
+    let dialogConfig: MatDialogConfig = this._createConfig(config);
+    let dialogRef: MatDialogRef<TdPromptDialogComponent> =
       this._dialogService.open(TdPromptDialogComponent, dialogConfig);
     let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
     promptDialogComponent.title = config.title;
@@ -134,8 +135,8 @@ export class TdDialogService {
     return dialogRef;
   }
 
-  private _createConfig(config: MdDialogConfig): MdDialogConfig {
-    let dialogConfig: MdDialogConfig = new MdDialogConfig();
+  private _createConfig(config: MatDialogConfig): MatDialogConfig {
+    let dialogConfig: MatDialogConfig = new MatDialogConfig();
     dialogConfig.viewContainerRef = config.viewContainerRef;
     dialogConfig.disableClose = config.disableClose;
     return dialogConfig;
@@ -144,13 +145,13 @@ export class TdDialogService {
 }
 
 export function DIALOG_PROVIDER_FACTORY(
-    parent: TdDialogService, dialog: MdDialog): TdDialogService {
+    parent: TdDialogService, dialog: MatDialog): TdDialogService {
   return parent || new TdDialogService(dialog);
 }
 
 export const DIALOG_PROVIDER: Provider = {
   // If there is already service available, use that. Otherwise, provide a new one.
   provide: TdDialogService,
-  deps: [[new Optional(), new SkipSelf(), TdDialogService], MdDialog],
+  deps: [[new Optional(), new SkipSelf(), TdDialogService], MatDialog],
   useFactory: DIALOG_PROVIDER_FACTORY,
 };

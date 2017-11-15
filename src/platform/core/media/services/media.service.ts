@@ -1,5 +1,5 @@
 import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { fromEvent } from 'rxjs/observable/fromEvent';
@@ -10,7 +10,7 @@ export class TdMediaService {
   private _resizing: boolean = false;
   private _globalSubscription: Subscription;
   private _queryMap: Map<string, string> = new Map<string, string>();
-  private _querySources: {[key: string]: Subject<boolean>} = {};
+  private _querySources: { [key: string]: BehaviorSubject<boolean>} = {};
   private _queryObservables: {[key: string]: Observable<boolean>} = {};
 
   constructor(private _ngZone: NgZone) {
@@ -23,8 +23,8 @@ export class TdMediaService {
     this._queryMap.set('lg', '(min-width: 1280px) and (max-width: 1919px)');
     this._queryMap.set('gt-lg', '(min-width: 1920px)');
     this._queryMap.set('xl', '(min-width: 1920px)');
-    this._queryMap.set('landscape', 'landscape');
-    this._queryMap.set('portrait', 'portrait');
+    this._queryMap.set('landscape', '(orientation: landscape)');
+    this._queryMap.set('portrait', '(orientation: portrait)');
     this._queryMap.set('print', 'print');
 
     this._resizing = false;
@@ -77,7 +77,7 @@ export class TdMediaService {
       query = this._queryMap.get(query.toLowerCase());
     }
     if (!this._querySources[query]) {
-      this._querySources[query] = new Subject<boolean>();
+      this._querySources[query] = new BehaviorSubject<boolean>(matchMedia(query).matches);
       this._queryObservables[query] = this._querySources[query].asObservable();
     }
     return this._queryObservables[query];

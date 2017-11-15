@@ -1,12 +1,24 @@
-@import '../../common/styles/mixins';
+@import '../../common/styles/rtl';
 :host {
-  font-size: 13px;
   vertical-align: middle;
   @include rtl(text-align, left, right);
   padding: 0;
   > .td-data-table-cell-content-wrapper {
     padding: 0 28px 0 28px;
-    height: 48px;
+    // [layout]
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="start center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: start;
+    &.td-data-table-cell-numeric {
+      // [layout-align="end center"]
+      justify-content: flex-end;
+    }
   }
 
   &:first-child > .td-data-table-cell-content-wrapper {

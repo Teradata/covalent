@@ -12,41 +12,56 @@
       <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
-    <button class="overflow-visible" md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+    <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 1">
-        <md-icon>notifications</md-icon>
+        <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
-    <md-menu #notificationsMenu="mdMenu">
+    <mat-menu #notificationsMenu="matMenu">
       <td-menu>
         <div td-menu-header class="md-subhead">Updates</div>
-        <md-nav-list dense>
+        <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
-            <a md-list-item [routerLink]="[item.route]">
-              <md-icon mdListAvatar>{{item.icon}}</md-icon>
-              <h4 mdLine><span class="text-wrap">{{item.description}}</span></h4>
-              <p mdLine>{{item.title}}</p>
+            <a mat-list-item [routerLink]="[item.route]">
+              <mat-icon matListAvatar>{{item.icon}}</mat-icon>
+              <h4 matLine><span class="text-wrap">{{item.description}}</span></h4>
+              <p matLine>{{item.title}}</p>
             </a>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
           </ng-template>
-          <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L63-L74" target="_blank">
-            <md-icon mdListAvatar>change_history</md-icon>
-            <h4 mdLine><span class="text-wrap">CDK and material@beta.10 support</span></h4>
-            <p mdLine>Dependencies updated</p>
+          <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
+            <mat-icon matListAvatar>receipt</mat-icon>
+            <h4 matLine>
+              <span class="text-wrap">Bugfixes, improvements and features</span>
+            </h4>
+            <p matLine>Changelog updated</p>
           </a>
-        </md-nav-list>
-        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
+          <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L64-L76" target="_blank">
+            <mat-icon matListAvatar>change_history</mat-icon>
+            <h4 matLine><span class="text-wrap">Angular 5, CDK and material@5.rc0 support</span></h4>
+            <p matLine>Dependencies updated</p>
+          </a>
+        </mat-nav-list>
+        <a mat-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent/blob/develop/docs/CHANGELOG.md" target="_blank">
           View Full Changelog
         </a>
       </td-menu>
-    </md-menu>
-    <button hide-xs md-icon-button [mdMenuTriggerFor]="settingsMenu">
-      <md-icon>more_vert</md-icon>
+    </mat-menu>
+    <button hide-xs mat-icon-button [matMenuTriggerFor]="settingsMenu">
+      <mat-icon>more_vert</mat-icon>
     </button>
-    <md-menu #settingsMenu="mdMenu">
-      <button md-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
-        <md-icon>swap_horiz</md-icon>
+    <mat-menu #settingsMenu="matMenu">
+      <button mat-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
+        <mat-icon>swap_horiz</mat-icon>
         <span>{{dir.toUpperCase()}}</span>
       </button>
-    </md-menu>
+      <button mat-menu-item *ngIf="activeTheme === 'theme-dark'" (click)="theme('default-theme')">
+        <mat-icon>brightness_high</mat-icon>
+        <span>Light Mode</span>
+      </button>
+      <button mat-menu-item *ngIf="activeTheme != 'theme-dark'" (click)="theme('theme-dark')">
+        <mat-icon>brightness_low</mat-icon>
+        <span>Dark Mode</span>
+      </button>
+    </mat-menu>
   </div>

@@ -1,9 +1,9 @@
-<md-card>
-  <md-card-title>NGX-Charts (External library)</md-card-title>
-  <md-card-subtitle>Declarative Charting Framework for Angular</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <p>Rather than building &amp; maintaining our own td-charts D3 component, we've opted instead to partner with an external open-source library. 
+<mat-card>
+  <mat-card-title>NGX-Charts (External library)</mat-card-title>
+  <mat-card-subtitle>Declarative Charting Framework for Angular</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p>Rather than building &amp; maintaining our own td-charts D3 component, we've opted instead to partner with an external open-source library.
     Charts components are a massive undertaking and would have detracted from the features &amp; support of Covalent.</p>
     <p>The NGX-Charts team took the exact approach we would have and did a fantastic job building a framework that can be extended. We therefor are an official partner and will be contributing massive additions.</p>
     <p>These are the key decision points in selecting NGX-Charts:</p>
@@ -14,19 +14,19 @@
       <li>Easily add new chart components in a modular fashion</li>
       <li>Everything is styled via SCSS</li>
     </ul>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <a md-button color="accent" href="https://swimlane.gitbooks.io/ngx-charts/content/" target="_blank" class="text-upper">NGX-Charts Docs</a>
-  </md-card-actions>
-</md-card>
-<md-card>
-  <md-card-title>Example Charts</md-card-title>
-  <md-card-subtitle>Samples of various available charts</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <div class="pad-sm bgc-grey-200">
-      <div layout="row" class="pull-bottom-md pull-right-md">
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="accent" href="https://swimlane.gitbooks.io/ngx-charts/content/" target="_blank" class="text-upper">NGX-Charts Docs</a>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Example Charts</mat-card-title>
+  <mat-card-subtitle>Samples of various available charts</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="pad-sm bgc-grey-200" layout="column">
+      <div style="height:150px;" layout="row" class="pull-bottom pull-right">
         <ngx-charts-number-card
             [scheme]="colorScheme"
             [results]="single">
@@ -34,9 +34,9 @@
       </div>
       <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Gauge</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Gauge</mat-card-title>
+            <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-gauge
                 [scheme]="colorScheme"
@@ -49,12 +49,12 @@
                 [valueFormatting]="axisDigits">
               </ngx-charts-gauge>
             </div>
-          </md-card>
+          </mat-card>
         </div>
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Stacked Horizontal Bars</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Stacked Horizontal Bars</mat-card-title>
+            <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-bar-horizontal-stacked
                 [scheme]="colorScheme"
@@ -69,14 +69,14 @@
                 [xAxisTickFormatting]="axisDigits">
               </ngx-charts-bar-horizontal-stacked>
             </div>
-          </md-card>
+          </mat-card>
         </div>
       </div>
       <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Vertical Grouped Bars</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Vertical Grouped Bars</mat-card-title>
+            <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-bar-vertical-2d
                 [scheme]="colorScheme"
@@ -94,12 +94,12 @@
                 [groupPadding]="8">
               </ngx-charts-bar-vertical-2d>
             </div>
-          </md-card>
+          </mat-card>
         </div>
         <div flex-gt-xs="50">
-          <md-card>
-            <md-card-title>Lines</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Lines</mat-card-title>
+            <mat-divider></mat-divider>
             <div style="height:250px;">
               <ngx-charts-line-chart
                 [scheme]="colorScheme"
@@ -116,25 +116,25 @@
                 [yAxisTickFormatting]="axisDigits">
               </ngx-charts-line-chart>
             </div>
-          </md-card>
+          </mat-card>
         </div>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Code</md-card-title>
-  <md-card-subtitle>Demo html, typescript, data  &amp; theme</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>HTML</ng-template>
+<mat-card>
+  <mat-card-title>Code</mat-card-title>
+  <mat-card-subtitle>Demo html, typescript, data  &amp; theme</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>HTML</ng-template>
         <td-highlight lang="html">
           <![CDATA[
             <div>
-              <div layout="row" class="pull-bottom-md pull-right-md">
+              <div layout="row" class="pull-bottom pull-right">
                 <ngx-charts-number-card
                     [scheme]="colorScheme"
                     [results]="single">
@@ -142,9 +142,9 @@
               </div>
               <div layout-gt-xs="row">
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Gauge</md-card-title>
-                    <md-divider></md-divider>
+                  <mat-card>
+                    <mat-card-title>Gauge</mat-card-title>
+                    <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-gauge
                         [scheme]="colorScheme"
@@ -157,12 +157,12 @@
                         [valueFormatting]="axisDigits">
                       </ngx-charts-gauge>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Stacked Horizontal Bars</md-card-title>
-                    <md-divider></md-divider>
+                  <mat-card>
+                    <mat-card-title>Stacked Horizontal Bars</mat-card-title>
+                    <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-bar-horizontal-stacked
                         [scheme]="colorScheme"
@@ -177,14 +177,14 @@
                         [xAxisTickFormatting]="axisDigits">
                       </ngx-charts-bar-horizontal-stacked>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
               </div>
               <div layout-gt-xs="row">
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Vertical Grouped Bars</md-card-title>
-                    <md-divider></md-divider>
+                  <mat-card>
+                    <mat-card-title>Vertical Grouped Bars</mat-card-title>
+                    <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-bar-vertical-2d
                         [scheme]="colorScheme"
@@ -202,12 +202,12 @@
                         [groupPadding]="8">
                       </ngx-charts-bar-vertical-2d>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
                 <div flex-gt-xs="50">
-                  <md-card>
-                    <md-card-title>Lines</md-card-title>
-                    <md-divider></md-divider>
+                  <mat-card>
+                    <mat-card-title>Lines</mat-card-title>
+                    <mat-divider></mat-divider>
                     <div style="height:250px;">
                       <ngx-charts-line-chart
                         [scheme]="colorScheme"
@@ -224,15 +224,15 @@
                         [yAxisTickFormatting]="axisDigits">
                       </ngx-charts-line-chart>
                     </div>
-                  </md-card>
+                  </mat-card>
                 </div>
               </div>
             </div>
           ]]>
         </td-highlight>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>TypeScript</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>TypeScript</ng-template>
         <td-highlight lang="typescript">
           <![CDATA[
             import { Component } from '@angular/core';
@@ -290,9 +290,9 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Data</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Data</ng-template>
         <td-highlight lang="typescript">
           <![CDATA[
             export let single: any = [
@@ -419,9 +419,9 @@
 
           ]]>
         </td-highlight>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>theme.scss</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>theme.scss</ng-template>
         <td-highlight lang="scss">
           <![CDATA[
           /* ------------------------------------------------------------------------------- */
@@ -448,24 +448,24 @@
           }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 
-<md-card>
-  <md-card-title>Recommended Color Palettes</md-card-title>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Recommended Color Palettes</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p>Since our apps largely span from Orange / Blue / Grey families, here's some recommended palettes:</p>
     <h3 class="md-title">Blues</h3>
     <div layout="row" class="push-bottom-sm">
-      <span class="bgc-blue-900 pad"></span>
-      <span class="bgc-blue-700 pad"></span>
-      <span class="bgc-light-blue-600 pad"></span>
-      <span class="bgc-light-blue-400 pad"></span>
-      <span class="bgc-light-blue-200 pad"></span>
-      <span class="bgc-cyan-100 pad"></span>
+      <span class="bgc-blue-900 pad-md"></span>
+      <span class="bgc-blue-700 pad-md"></span>
+      <span class="bgc-light-blue-600 pad-md"></span>
+      <span class="bgc-light-blue-400 pad-md"></span>
+      <span class="bgc-light-blue-200 pad-md"></span>
+      <span class="bgc-cyan-100 pad-md"></span>
     </div>
     <td-highlight lang="typescript">
       <![CDATA[
@@ -474,15 +474,15 @@
         };
       ]]>
     </td-highlight>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <h3 class="md-title">Oranges</h3>
     <div layout="row" class="push-bottom-sm">
-      <span class="bgc-deep-orange-900 pad"></span>
-      <span class="bgc-orange-800 pad"></span>
-      <span class="bgc-orange-600 pad"></span>
-      <span class="bgc-amber-600 pad"></span>
-      <span class="bgc-amber-400 pad"></span>
-      <span class="bgc-yellow-300 pad"></span>
+      <span class="bgc-deep-orange-900 pad-md"></span>
+      <span class="bgc-orange-800 pad-md"></span>
+      <span class="bgc-orange-600 pad-md"></span>
+      <span class="bgc-amber-600 pad-md"></span>
+      <span class="bgc-amber-400 pad-md"></span>
+      <span class="bgc-yellow-300 pad-md"></span>
     </div>
     <td-highlight lang="typescript">
       <![CDATA[
@@ -491,18 +491,18 @@
         };
       ]]>
     </td-highlight>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <h3 class="md-title">Blue to Orange</h3>
     <div layout="row" class="push-bottom-sm">
-      <span class="bgc-blue-900 pad"></span>
-      <span class="bgc-light-blue-900 pad"></span>
-      <span class="bgc-blue-700 pad"></span>
-      <span class="bgc-light-blue-600 pad"></span>
-      <span class="bgc-cyan-400 pad"></span>
-      <span class="bgc-orange-600 pad"></span>
-      <span class="bgc-orange-400 pad"></span>
-      <span class="bgc-orange-200 pad"></span>
-      <span class="bgc-amber-100 pad"></span>
+      <span class="bgc-blue-900 pad-md"></span>
+      <span class="bgc-light-blue-900 pad-md"></span>
+      <span class="bgc-blue-700 pad-md"></span>
+      <span class="bgc-light-blue-600 pad-md"></span>
+      <span class="bgc-cyan-400 pad-md"></span>
+      <span class="bgc-orange-600 pad-md"></span>
+      <span class="bgc-orange-400 pad-md"></span>
+      <span class="bgc-orange-200 pad-md"></span>
+      <span class="bgc-amber-100 pad-md"></span>
     </div>
     <td-highlight lang="typescript">
       <![CDATA[
@@ -511,8 +511,8 @@
         };
       ]]>
     </td-highlight>
-    <md-divider></md-divider>
-  </md-card-content>
-</md-card>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+</mat-card>
 
 <td-readme-loader resourceUrl="https://raw.githubusercontent.com/swimlane/ngx-charts/master/docs/intro/installing.md"></td-readme-loader>

@@ -45,7 +45,7 @@ describe('Service: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-        expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('mat-progress-spinner')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
@@ -73,7 +73,7 @@ describe('Service: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-        expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('mat-progress-bar')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
@@ -101,7 +101,7 @@ describe('Service: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-        expect(overlayContainerElement.querySelector('md-progress-bar')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('mat-progress-bar')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.mat-accent')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();
@@ -172,7 +172,7 @@ describe('Service: Loading', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(overlayContainerElement.querySelector('td-loading')).toBeTruthy();
-        expect(overlayContainerElement.querySelector('md-progress-spinner')).toBeTruthy();
+        expect(overlayContainerElement.querySelector('mat-progress-spinner')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.mat-primary')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-overlay')).toBeTruthy();
         expect(overlayContainerElement.querySelector('.td-fullscreen')).toBeTruthy();

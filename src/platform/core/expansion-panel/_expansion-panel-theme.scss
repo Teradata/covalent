@@ -1,6 +1,24 @@
 @import '../common/styles/variables';
 @import '../common/styles/elevation';
 @import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-expansion-panel-typography($config) {
+  .td-expansion-label {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, subheading-2);
+      weight: td-font-weight($config, subheading-2);
+    }
+  }
+  .td-expansion-sublabel {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+      weight: td-font-weight($config, body-1);
+    }
+  }
+}
 
 @mixin td-expansion-panel-theme($theme) {
   $accent: map-get($theme, accent);
@@ -33,7 +51,7 @@
         background: mat-color($background, 'hover');
       }
       .td-expansion-panel-header-content {
-        md-icon.td-expand-icon {
+        mat-icon.td-expand-icon {
           color: mat-color($foreground, icon);
         }
         &.mat-disabled {
@@ -43,7 +61,7 @@
         }
       }
     }
-    md-icon.td-expand-icon {
+    mat-icon.td-expand-icon {
       color: mat-color($foreground, icon);
     }
     .td-expansion-label,

@@ -1,8 +1,6 @@
-@import '../../common/styles/mixins';
+@import '../../common/styles/rtl';
 
 :host {
-  font-size: 12px;
-  font-weight: bold;
   white-space: nowrap;
   position: relative;
   padding: 0;
@@ -19,7 +17,7 @@
     @include rtl(padding-right, 24px, 28px);
   }
 
-  md-icon {
+  mat-icon {
     height: 16px;
     width: 16px;
     font-size: 16px !important;
@@ -39,8 +37,8 @@
     }
   }
 
-  &:hover.mat-sortable md-icon.td-data-table-sort-icon,
-  &.mat-active.mat-sortable md-icon.td-data-table-sort-icon {
+  &:hover.mat-sortable mat-icon.td-data-table-sort-icon,
+  &.mat-active.mat-sortable mat-icon.td-data-table-sort-icon {
     opacity: 1;
   }
 
@@ -62,19 +60,19 @@
     display: inline-block;
     position: relative;
   }
-  md-icon.td-data-table-sort-icon {
+  mat-icon.td-data-table-sort-icon {
     position: absolute;
     top: 0px;
   }
   &.mat-numeric {
   @include rtl(text-align, right, left);
-    md-icon.td-data-table-sort-icon {
+    mat-icon.td-data-table-sort-icon {
       @include rtl(margin-left, -22px, initial);
       @include rtl(margin-right, initial, -22px);
     }
   }
   &:not(.mat-numeric) {
-    md-icon.td-data-table-sort-icon {
+    mat-icon.td-data-table-sort-icon {
       @include rtl(margin-left, 6px, initial);
       @include rtl(margin-right, initial, 6px);
     }

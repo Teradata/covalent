@@ -17,30 +17,20 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Virtual scroll component',
-      icon: 'format_line_spacing',
-      route: '/components/virtual-scroll',
-      title: 'New component',
+      description: 'Pick and choose the styles you need',
+      icon: 'gradient',
+      route: '/docs/utility-sass-mixins',
+      title: 'Utility Style Mixins',
     }, {
-      description: 'Markdown text editor component',
-      icon: 'keyboard',
-      route: '/components/text-editor',
-      title: 'New component',
+      description: 'Override the typography',
+      icon: 'font_download',
+      route: '/docs',
+      title: 'Custom Typography',
     }, {
-      description: 'Sticky headers, virtual scroll & configurable widths',
-      icon: 'grid_on',
-      route: '/components/data-table',
-      title: 'Data table updates',
-    }, {
-      description: 'New form features & bugfixes',
-      icon: 'format_align_center',
-      route: '/components/dynamic-forms',
-      title: 'Dynamic forms updates',
-    }, {
-      description: 'New pre-canned animations!',
-      icon: 'theaters',
-      route: '/components/animations',
-      title: 'New utility',
+      description: 'New templates and now using StackBlitz',
+      icon: 'view_carousel',
+      route: '/templates',
+      title: 'Templates',
     },
   ];
 
@@ -56,5 +46,12 @@ export class ToolbarComponent {
     this._renderer.setAttribute(this._document.querySelector('html'), 'dir', dir);
     this._dir.dir = dir;
     setDirection(dir);
+  }
+
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
   }
 }

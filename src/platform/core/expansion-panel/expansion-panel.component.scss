@@ -10,6 +10,23 @@
     .td-expansion-panel-header-content {
       height: 48px;
       padding: 0 16px;
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout row
+      flex-direction: row;
+      // flex
+      flex: 1;
+      // layout-align start center
+      justify-content: start;
+      align-items: center;
+      align-content: center;
+      max-width: 100%;
+      .td-expansion-label,
+      .td-expansion-panel-spacer {
+        // flex
+        flex: 1;
+      }
     }
   }
 }
@@ -20,7 +37,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 5px;
-  /deep/ [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & { 
     margin-left: 5px;
     margin-right: inherit;
   }

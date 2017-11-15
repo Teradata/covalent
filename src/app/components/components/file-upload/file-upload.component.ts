@@ -19,6 +19,7 @@ export class FileUploadDemoComponent {
   fileSelectMultipleMsg: string = 'No file(s) selected yet.';
   fileUploadMultipleMsg: string = 'No file(s) uploaded yet.';
   disabled: boolean = false;
+  files: FileList | File;
 
   cancelEvent(): void {
     this.fileSelectMsg = 'No file selected yet.';

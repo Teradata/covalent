@@ -1,13 +1,14 @@
 <div [style.height.px]="totalHeight"></div>
 <div [style.transform]="offsetTransform"
       [style.position]="'absolute'"
-      [style.min-width.%]="100">
+      [style.width.%]="100">
   <ng-template let-row
                 let-index="index"
                 ngFor
                 [ngForOf]="virtualData"
                 [ngForTrackBy]="trackBy">
-    <div #rowElement>
+    <div #rowElement
+         [style.width.%]="100">
       <ng-template *ngIf="_rowTemplate"
                   [ngTemplateOutlet]="_rowTemplate.templateRef"
                   [ngTemplateOutletContext]="{row: row,

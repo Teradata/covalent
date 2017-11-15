@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '../../../../platform/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
@@ -11,7 +11,7 @@ import { IPageChangeEvent } from '../../../../platform/core';
   templateUrl: './paging.component.html',
   animations: [slideInDownAnimation],
 })
-export class PagingDemoComponent implements AfterViewInit {
+export class PagingDemoComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -27,14 +27,6 @@ export class PagingDemoComponent implements AfterViewInit {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
-      this.media.broadcast();
-      this._changeDetectorRef.detectChanges();
-    });
-  }
 
   change(event: IPageChangeEvent): void {
     this.event = event;

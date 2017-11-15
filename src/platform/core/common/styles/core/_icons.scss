@@ -1,0 +1,26 @@
+@mixin td-icon-utilities() {
+    mat-list-item,
+    .mat-list-item-content {
+        mat-icon {
+            &[matListAvatar] {
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-align-content: center;
+                -ms-flex-line-pack: center;
+                align-content: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+    .mat-icon.mat-icon-logo {
+        height: 24px;
+        width: 100px;
+    }
+    .mat-icon {
+        flex-shrink: 0;
+    }
+}

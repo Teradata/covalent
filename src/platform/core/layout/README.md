@@ -32,16 +32,16 @@ To toggle/close/open the main sidenav from child layouts/components, you can use
 Example:
 
 ```html
-<button md-icon-button [tdLayoutToggle]="true"> // or tdLayoutOpen / tdLayoutClose
-  <md-icon>menu</md-icon>
+<button mat-icon-button [tdLayoutToggle]="true"> // or tdLayoutOpen / tdLayoutClose
+  <mat-icon>menu</mat-icon>
 </button>
 ```
 
 To disable the sidenav action, just set the input to false.
 
 ```html
-<button md-icon-button [tdLayoutToggle]="false">
-  <md-icon>menu</md-icon>
+<button mat-icon-button [tdLayoutToggle]="false">
+  <mat-icon>menu</mat-icon>
 </button>
 ```
 

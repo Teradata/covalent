@@ -1,68 +1,68 @@
-<md-card>
-  <md-card-title>Data Table</md-card-title>
-  <md-card-subtitle>Display sets of raw data</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Data Table</mat-card-title>
+  <mat-card-subtitle>Display sets of raw data</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <h3 class="md-title">Custom Data Table</h3>
     <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
           <div class="mat-table-container">
           <table td-data-table>
             <thead>
               <tr td-data-table-column-row>
-                <th td-data-table-column>
-                  <md-icon>comment</md-icon>
-                  <span>Comments</span>
-                </th>
                 <th td-data-table-column
                     *ngFor="let column of columns"
                     [numeric]="column.numeric">
                   {{column.label}}
                 </th>
+                <th td-data-table-column>
+                  <mat-icon>comment</mat-icon>
+                  <span>Comments</span>
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr td-data-table-row *ngFor="let row of basicData">
-                <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                  <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
-                </td>
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                   {{column.format ? column.format(row[column.name]) : row[column.name]}}
+                </td>
+                <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                  <button mat-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <table td-data-table>
               <thead>
                 <tr td-data-table-column-row>
-                  <th td-data-table-column>
-                    <md-icon>comment</md-icon>
-                    <span>Comments</span>
-                  </th>
                   <th td-data-table-column
                       *ngFor="let column of columns"
                       [numeric]="column.numeric">
                     { {column.label}}
                   </th>
+                  <th td-data-table-column>
+                    <mat-icon>comment</mat-icon>
+                    <span>Comments</span>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr td-data-table-row *ngFor="let row of basicData">
-                  <td td-data-table-cell (click)="openPrompt(row, 'comments')">
-                    <button md-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
-                  </td>
                   <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                     { {column.format ? column.format(row[column.name]) : row[column.name]}}
+                  </td>
+                  <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                    <button mat-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                   </td>
                 </tr>
               </tbody>
@@ -75,7 +75,6 @@
             import { ITdDataTableColumn } from '@covalent/core';
             import { TdDialogService } from '@covalent/core';
             ...
-            const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
             const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
             ...
             })
@@ -88,63 +87,14 @@
 =======
 >>>>>>> release/v1.0.0-beta.7
               columns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)' },
-                { name: 'type', label: 'Type', filter: true },
-                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
-                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
-                { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
-                { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
+                { name: 'first_name',  label: 'First Name' },
+                { name: 'last_name', label: 'Last Name' },
+                { name: 'gender', label: 'Gender' },
+                { name: 'email', label: 'Email' },
+                { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
               ];
 
-              data: any[] = {
-                'id': 1,
-                'name': 'Frozen yogurt',
-                'type': 'Ice cream',
-                'calories': 159.0,
-                'fat': 6.0,
-                'carbs': 24.0,
-                'protein': 4.0,
-                'sodium': 87.0,
-                'calcium': 14.0,
-                'iron': 1.0,
-                'comments': 'I love froyo!',
-              }, {
-                'id': 2,
-                'name': 'Ice cream sandwich',
-                'type': 'Ice cream',
-                'calories': 237.0,
-                'fat': 9.0,
-                'carbs': 37.0,
-                'protein': 4.3,
-                'sodium': 129.0,
-                'calcium': 8.0,
-                'iron': 1.0,
-              }, {
-                'id': 3,
-                'name': 'Eclair',
-                'type': 'Pastry',
-                'calories':  262.0,
-                'fat': 16.0,
-                'carbs': 24.0,
-                'protein':  6.0,
-                'sodium': 337.0,
-                'calcium':  6.0,
-                'iron': 7.0,
-              }, {
-                'id': 4,
-                'name': 'Cupcake',
-                'type': 'Pastry',
-                'calories':  305.0,
-                'fat': 3.7,
-                'carbs': 67.0,
-                'protein': 4.3,
-                'sodium': 413.0,
-                'calcium': 3.0,
-                'iron': 8.0,
-              }];
+              basicData: any[] = [...]; // see data json
 
               constructor(private _dialogService: TdDialogService) {}
 
@@ -161,44 +111,39 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="basicData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Basic Data Table</h3>
-    <h4 class="md-subhead">with nested data, formatting, configurable width columns and templates</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <h4 class="md-subhead">with formatting, configurable width columns and templates</h4>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <td-data-table
           [data]="basicData"
           [columns]="configWidthColumns">
-          <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
-            <div layout="row">
-              <span>{{value}}</span>
-              <span flex></span>
-              <md-icon>star</md-icon>
-            </div>
+          <ng-template tdDataTableTemplate="img" let-value="value">
+            <img [src]="value"/>
           </ng-template>
         </td-data-table>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
             <td-data-table
               [data]="basicData"
               [columns]="configWidthColumns">
-              <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
-                <div layout="row">
-                  <span>{ {value}}</span> // or <span flex>{ {row[column]}}</span>
-                  <span flex></span>
-                  <md-icon>star</md-icon>
-                </div>
+              <ng-template tdDataTableTemplate="img" let-value="value">
+                <img [src]="value"/>
               </ng-template>
             </td-data-table>
           ]]>
@@ -208,68 +153,37 @@
           <![CDATA[
             import { ITdDataTableColumn } from '@covalent/core';
             ...
-            const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
             const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
             ...
             })
-            export class Demo {
+            export class Demo implements OnInit {
               configWidthColumns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)', width: 300 },
-                { name: 'type', label: 'Type', width: { min: 150, max: 250 } },
-                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT},
-                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT},
+                { name: 'first_name',  label: 'First name', width: 150 },
+                { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
+                { name: 'gender', label: 'Gender'},
+                { name: 'email', label: 'Email', width: 250},
+                { name: 'img', label: '', width: 100},
               ];
 
-              basicData: any[] = [
-                  {
-                    'id': 1,
-                    'food': {
-                      'name': 'Frozen yogurt',
-                      'type': 'Ice cream',
-                    },
-                    'calories': 159.0,
-                    'fat': 6.0,
-                  }, {
-                    'id': 2,
-                    'food': {
-                      'name': 'Ice cream sandwich',
-                      'type': 'Ice cream',
-                    },
-                    'calories': 237.0,
-                    'fat': 9.0,
-                  }, {
-                    'id': 3,
-                    'food': {
-                      'name': 'Eclair',
-                      'type': 'Pastry',
-                    },
-                    'calories':  262.0,
-                    'fat': 16.0,
-                  }, {
-                    'id': 4,
-                    'food': {
-                      'name': 'Cupcake',
-                      'type': 'Pastry',
-                    },
-                    'calories':  305.0,
-                    'fat': 3.7,
-                  }
-                ];
+              basicData: any[] = [...]; // see data json
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="basicData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="md-title">Data Table with components</h3>
     <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
-    <md-divider></md-divider>
-    <md-tab-group md-stretch-tabs>
-      <md-tab>
-        <ng-template mdTabLabel>Demo</ng-template>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
@@ -277,11 +191,11 @@
           </span>
           <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
           </td-search-box>
-          <button md-icon-button>
-            <md-icon>more_vert</md-icon>
+          <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
           </button>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <td-data-table
           #dataTable
           [data]="filteredData"
@@ -302,16 +216,16 @@
         </div>
         <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
           <span hide-xs>Rows per page:</span>
-          <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-            <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+          <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+            <mat-option *ngFor="let size of [50,100,200,500]" [value]="size">
               {{size}}
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
           {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
         </td-paging-bar>
-      </md-tab>
-      <md-tab>
-        <ng-template mdTabLabel>Code</ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -326,7 +240,7 @@
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
               </td-search-box>
             </div>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <td-data-table
               #dataTable
               [data]="filteredData"
@@ -339,6 +253,7 @@
               [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)"
+              (rowClick)="showAlert($event)"
               [style.height.px]="200">
             </td-data-table>
             <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
@@ -346,11 +261,11 @@
             </div>
             <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
               <span hide-xs>Rows per page:</span>
-              <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <mat-option *ngFor="let size of [50,100,200,500]" [value]="size">
                   { {size} }
-                </md-option>
-              </md-select>
+                </mat-option>
+              </mat-select>
               { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
             </td-paging-bar>
           ]]>
@@ -361,148 +276,19 @@
             import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
             import { IPageChangeEvent } from '@covalent/core';
             ...
-            const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
             const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
             ...
             })
             export class Demo {
               columns: ITdDataTableColumn[] = [
-                { name: 'name',  label: 'Dessert (100g serving)', sortable: true, width: 200 },
-                { name: 'type', label: 'Type', filter: true },
-                { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT, sortable: true, hidden: false },
-                { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT, sortable: true },
-                { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
-                { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
-                { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
+                { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
+                { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+                { name: 'gender', label: 'Gender', hidden: false },
+                { name: 'email', label: 'Email', sortable: true, width: 250 },
+                { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
               ];
           
-              data: any[] = [
-                {
-                  'id': 1,
-                  'name': 'Frozen yogurt',
-                  'type': 'Ice cream',
-                  'calories': 159.0,
-                  'fat': 6.0,
-                  'carbs': 24.0,
-                  'protein': 4.0,
-                  'sodium': 87.0,
-                  'calcium': 14.0,
-                  'iron': 1.0,
-                  'comments': 'I love froyo!',
-                }, {
-                  'id': 2,
-                  'name': 'Ice cream sandwich',
-                  'type': 'Ice cream',
-                  'calories': 237.0,
-                  'fat': 9.0,
-                  'carbs': 37.0,
-                  'protein': 4.3,
-                  'sodium': 129.0,
-                  'calcium': 8.0,
-                  'iron': 1.0,
-                }, {
-                  'id': 3,
-                  'name': 'Eclair',
-                  'type': 'Pastry',
-                  'calories':  262.0,
-                  'fat': 16.0,
-                  'carbs': 24.0,
-                  'protein':  6.0,
-                  'sodium': 337.0,
-                  'calcium':  6.0,
-                  'iron': 7.0,
-                }, {
-                  'id': 4,
-                  'name': 'Cupcake',
-                  'type': 'Pastry',
-                  'calories':  305.0,
-                  'fat': 3.7,
-                  'carbs': 67.0,
-                  'protein': 4.3,
-                  'sodium': 413.0,
-                  'calcium': 3.0,
-                  'iron': 8.0,
-                }, {
-                  'id': 5,
-                  'name': 'Jelly bean',
-                  'type': 'Candy',
-                  'calories':  375.0,
-                  'fat': 0.0,
-                  'carbs': 94.0,
-                  'protein': 0.0,
-                  'sodium': 50.0,
-                  'calcium': 0.0,
-                  'iron': 0.0,
-                }, {
-                  'id': 6,
-                  'name': 'Lollipop',
-                  'type': 'Candy',
-                  'calories': 392.0,
-                  'fat': 0.2,
-                  'carbs': 98.0,
-                  'protein': 0.0,
-                  'sodium': 38.0,
-                  'calcium': 0.0,
-                  'iron': 2.0,
-                }, {
-                  'id': 7,
-                  'name': 'Honeycomb',
-                  'type': 'Other',
-                  'calories': 408.0,
-                  'fat': 3.2,
-                  'carbs': 87.0,
-                  'protein': 6.5,
-                  'sodium': 562.0,
-                  'calcium': 0.0,
-                  'iron': 45.0,
-                }, {
-                  'id': 8,
-                  'name': 'Donut',
-                  'type': 'Pastry',
-                  'calories': 452.0,
-                  'fat': 25.0,
-                  'carbs': 51.0,
-                  'protein': 4.9,
-                  'sodium': 326.0,
-                  'calcium': 2.0,
-                  'iron': 22.0,
-                }, {
-                  'id': 9,
-                  'name': 'KitKat',
-                  'type': 'Candy',
-                  'calories': 518.0,
-                  'fat': 26.0,
-                  'carbs': 65.0,
-                  'protein': 7.0,
-                  'sodium': 54.0,
-                  'calcium': 12.0,
-                  'iron': 6.0,
-                }, {
-                  'id': 10,
-                  'name': 'Chocolate',
-                  'type': 'Candy',
-                  'calories': 518.0,
-                  'fat': 26.0,
-                  'carbs': 65.0,
-                  'protein': 7.0,
-                  'sodium': 54.0,
-                  'calcium': 12.0,
-                  'iron': 6.0,
-                }, {
-                  'id': 11,
-                  'name': 'Chamoy',
-                  'type': 'Candy',
-                  'calories': 518.0,
-                  'fat': 26.0,
-                  'carbs': 65.0,
-                  'protein': 7.0,
-                  'sodium': 54.0,
-                  'calcium': 12.0,
-                  'iron': 6.0,
-                },
-              ];
+              data: any[] = [...]; // see json data
 
               filteredData: any[] = this.data;
               filteredTotal: number = this.data.length;
@@ -510,12 +296,12 @@
               searchTerm: string = '';
               fromRow: number = 1;
               currentPage: number = 1;
-              pageSize: number = 10;
-              sortBy: string = 'name';
+              pageSize: number = 50;
+              sortBy: string = 'first_name';
               selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
-              constructor(private _dataTableService: TdDataTableService) {}
+               constructor(private _dataTableService: TdDataTableService) {}
 
               ngOnInit(): void {
                 this.filter();
@@ -539,6 +325,11 @@
                 this.filter();
               }
 
+              showAlert(event: any): void {
+                let row: any = event.row;
+                // .. do something with event.row
+              }
+
               filter(): void {
                 let newData: any[] = this.data;
                 let excludedColumns: string[] = this.columns
@@ -557,66 +348,69 @@
             }
           ]]>
         </td-highlight>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="basicData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="selectable">
+      <mat-slide-toggle color="accent" [(ngModel)]="selectable">
         Selectable rows
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="clickable">
         Clickable rows
-      </md-slide-toggle>
-      <md-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
+      </mat-slide-toggle>
+      <mat-slide-toggle class="push-left" color="accent" [(ngModel)]="multiple" [disabled]="!selectable && !clickable">
         Multiple rows (shift + click for range selection)
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" (change)="toggleTooltips()">
+      <mat-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="pad-sm">
-      <md-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[2].hidden" (ngModelChange)="dataTable.refresh()">
         Hide calories
-      </md-slide-toggle>
-      <md-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
-        Type column is searchable (search for <code>candy</code>)
-      </md-slide-toggle>
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="columns[1].filter">
+        Type column is searchable (search for <code>lifsey</code>)
+      </mat-slide-toggle>
     </div>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
 
 <td-readme-loader resourceUrl="platform/core/data-table/README.md"></td-readme-loader>
 
-<md-card>
-  <md-card-title>TdDataTableService</md-card-title>
-  <md-card-subtitle>How to use this service</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>TdDataTableService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
      <p>Service provided with methods for sorting/paging/searching the data table.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="serviceAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-title>Data Table (Atomic) Components</md-card-title>
-  <md-card-subtitle>How to use these components</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Data Table (Atomic) Components</mat-card-title>
+  <mat-card-subtitle>How to use these components</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p>Use <code><![CDATA[<table td-data-table>]]></code> element to generate wrapper atomic table.</p>
     <p>Use <code><![CDATA[<tr td-data-table-column-row>]]></code> element to generate wrapper atomic column row.</p>
     <p>Use <code><![CDATA[<tr td-data-table-row>]]></code> element to generate wrapper atomic row.</p>
@@ -624,25 +418,25 @@
     <p>Use <code><![CDATA[<th td-data-table-column>]]></code> element to generate wrapper atomic column.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td td-data-table-cell>]]></code> component has {{cellAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="cellAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <p>The <code><![CDATA[<th td-data-table-column>]]></code> component has {{columnAttrs.length}} properties:</p>
-    <md-list>
+    <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="columnAttrs">
-        <a md-list-item layout-align="row">
-          <h3 mdLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p mdLine> {{attr.description}} </p>
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
         </a>
-        <md-divider *ngIf="!last"></md-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </md-list>
+    </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
     <td-highlight lang="html">
@@ -672,5 +466,5 @@
         </table>
       ]]>
     </td-highlight>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

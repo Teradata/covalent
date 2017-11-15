@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -9,7 +9,7 @@ import { fadeAnimation } from '../../app.animations';
   templateUrl: './design-patterns.component.html',
   animations: [fadeAnimation],
 })
-export class DesignPatternsComponent implements AfterViewInit {
+export class DesignPatternsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
@@ -38,12 +38,4 @@ export class DesignPatternsComponent implements AfterViewInit {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
-      this.media.broadcast();
-      this._changeDetectorRef.detectChanges();
-    });
-  }
 }

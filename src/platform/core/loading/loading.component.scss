@@ -4,6 +4,20 @@
   &.td-fullscreen {
     position: inherit;
   }
+  .td-loading {
+    // layout
+    box-sizing: border-box;
+    display: flex;
+    // [layout="row"]
+    flex-direction: row;
+    // [layout-align="center center"]
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: center;
+    // flex
+    flex: 1;
+  }
   &.td-overlay {
     .td-loading {
       position: absolute;
@@ -11,14 +25,18 @@
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
       z-index: 1000;
-      md-progress-bar {
+      mat-progress-bar {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
       }
+    }
+  }
+  &.td-overlay-circular {
+    .td-loading {
+      bottom: 0;
     }
   }
 }

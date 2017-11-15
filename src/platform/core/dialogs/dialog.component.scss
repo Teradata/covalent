@@ -11,7 +11,7 @@
   position: relative;
   top: 16px;
   left: 16px;
-  /deep/ [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & { 
     right: 16px;
     left: auto;
   }
@@ -20,7 +20,15 @@
 :host {
   display: block;
   .td-dialog-actions {
-    /deep/ button {
+    // [layout="row"]
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    .td-dialog-spacer {
+      // flex
+      flex: 1;
+    }
+    ::ng-deep button {
       text-transform: uppercase;
       margin-left: 8px;
       [dir='rtl'] & { 

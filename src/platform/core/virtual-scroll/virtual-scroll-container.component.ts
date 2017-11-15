@@ -1,6 +1,6 @@
 import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
-         Renderer2, AfterViewChecked } from '@angular/core';
+         Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs/Subscription';
@@ -15,8 +15,9 @@ const TD_VIRTUAL_OFFSET: number = 2;
   templateUrl: './virtual-scroll-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked {
+export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
 
+  private _rowChangeSubs: Subscription;
   private _initialized: boolean = false;
 
   private _totalHeight: number = 0;
@@ -83,8 +84,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
               private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    let subs: Subscription = this._rows.changes.subscribe(() => {
-      subs.unsubscribe();
+    this._rowChangeSubs = this._rows.changes.subscribe(() => {
       this._calculateVirtualRows();
     });
     this._initialized = true;
@@ -101,12 +101,18 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     }
   }
 
+  ngOnDestroy(): void {
+    if (this._rowChangeSubs) {
+      this._rowChangeSubs.unsubscribe();
+    }
+  }
+
   /**
    * trackBy?: TrackByFunction
    * This accepts the same trackBy function [ngFor] does.
    * https://angular.io/api/core/TrackByFunction
    */
-  @Input('trackBy') trackBy: any =  (index: number, item: any) => {
+  @Input('trackBy') trackBy: TrackByFunction<any> =  (index: number, item: any) => {
     return item;
   }
 

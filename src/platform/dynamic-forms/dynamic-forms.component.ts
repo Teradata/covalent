@@ -11,6 +11,7 @@ import { toPromise } from 'rxjs/operator/toPromise';
 @Component({
   selector: 'td-dynamic-forms',
   templateUrl: './dynamic-forms.component.html',
+  styleUrls: ['./dynamic-forms.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdDynamicFormsComponent implements AfterContentInit {

@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdVirtualScrollContainerComponent } from './virtual-scroll-container.component';
 import { CovalentVirtualScrollModule } from './virtual-scroll.module';
-import { MdListModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,7 +19,7 @@ describe('Component: VirtualScrollContainer', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
-        MdListModule,
+        MatListModule,
         CovalentVirtualScrollModule,
       ],
       declarations: [
@@ -77,20 +77,50 @@ describe('Component: VirtualScrollContainer', () => {
       });
     });
   });
+
+  it('should render rows, clear them and render them again', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
+
+    component.height = 100;
+    let data: any[] = component.data;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+        expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(6);
+        component.data = [];
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+          expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(0);
+          component.data = data;
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            expect(virtualScrollComponent.componentInstance.fromRow).toBe(0);
+            expect(virtualScrollComponent.componentInstance.virtualData.length).toBe(6);
+            done();
+          });
+        });
+      });
+    });
+  });
 });
 
 @Component({
   template: `
-    <md-list>
+    <mat-list>
       <td-virtual-scroll-container [style.height.px]="height" [data]="data">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-          <md-list-item>
-            <h4 md-line>{{row}}</h4>
-          </md-list-item>
-          <md-divider *ngIf="!last"></md-divider>
+          <mat-list-item>
+            <h4 matLine>{{row}}</h4>
+          </mat-list-item>
+          <mat-divider *ngIf="!last"></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
-    </md-list>`,
+    </mat-list>`,
 })
 class TestBasicVirtualScrollComponent {
   height: number = 200;

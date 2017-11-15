@@ -1,7 +1,7 @@
 import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
-import { Overlay, OverlayState, OverlayRef, OverlayOrigin } from '@angular/cdk/overlay';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -70,7 +70,7 @@ export class TdLoadingFactory {
   /**
    * Creates a loading component dynamically and attaches it into the given viewContainerRef.
    * Leverages TemplatePortals from material to inject the template inside of it so it fits
-   * perfecly when overlaying it.
+   * perfectly when overlaying it.
    *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
@@ -144,7 +144,7 @@ export class TdLoadingFactory {
    * Creates a fullscreen overlay for the loading usage.
    */
   private _createOverlay(): OverlayRef {
-    let state: OverlayState = new OverlayState();
+    let state: OverlayConfig = new OverlayConfig();
     state.hasBackdrop = false;
     state.positionStrategy = this._overlay.position().global().centerHorizontally().centerVertically();
     return this._overlay.create(state);

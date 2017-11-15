@@ -1,4 +1,4 @@
-import { Component, HostBinding, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 import { fadeAnimation } from '../../app.animations';
@@ -9,16 +9,21 @@ import { fadeAnimation } from '../../app.animations';
   templateUrl: './docs.component.html',
   animations: [fadeAnimation],
 })
-export class DocsComponent implements AfterViewInit {
+export class DocsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
-    description: 'Forking & setup for dev',
+    description: 'Installing Covalent & dependencies',
     icon: 'chrome_reader_mode',
     route: '.',
     title: 'Getting Started',
+  }, {
+    description: 'Sample app to get started',
+    icon: 'flash_on',
+    route: 'quickstart',
+    title: 'Quickstart Repo',
   }, {
     description: 'Familiarize yourself with Angular',
     icon: 'change_history',
@@ -55,6 +60,11 @@ export class DocsComponent implements AfterViewInit {
     route: 'theme',
     title: 'Custom Theme',
   }, {
+    description: 'Include individual styles',
+    icon: 'gradient',
+    route: 'utility-sass-mixins',
+    title: 'Utility SASS Mixins',
+  }, {
     description: 'Mock data API prototyping server',
     icon: 'wifi_tethering',
     route: 'mock-data',
@@ -68,13 +78,5 @@ export class DocsComponent implements AfterViewInit {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
-      this.media.broadcast();
-      this._changeDetectorRef.detectChanges();
-    });
-  }
 
 }

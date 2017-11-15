@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
 $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 
-:host /deep/ {
+:host ::ng-deep {
   td-markdown:first-of-type > div:first-of-type {
     &  > h1:first-of-type,
     &  > h2:first-of-type {
@@ -11,13 +11,13 @@ $code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monos
   }
   td-data-table,
   td-highlight,
-  md-checkbox {
+  mat-checkbox {
     display: block;
   }
 
   td-data-table,
   td-highlight,
-  md-checkbox:last-of-type {
+  mat-checkbox:last-of-type {
     margin-bottom: 16px;
   }
 

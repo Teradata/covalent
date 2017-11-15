@@ -3,14 +3,18 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
+import { TdCollapseAnimation } from '@covalent/core';
 
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'design-patterns-alerts',
   styleUrls: ['./alerts.component.scss'],
   templateUrl: './alerts.component.html',
-  animations: [slideInDownAnimation],
+  animations: [
+    slideInDownAnimation,
+    TdCollapseAnimation(),
+  ],
 })
 export class AlertsComponent {
 
@@ -28,7 +32,7 @@ export class AlertsComponent {
   example3: boolean = true;
 
   constructor(private _dialogService: TdDialogService,
-              private _snackBarService: MdSnackBar) {}
+              private _snackBarService: MatSnackBar) {}
 
   showSnackBar(): void {
     this._snackBarService

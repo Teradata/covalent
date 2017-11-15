@@ -1,7 +1,7 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,7 +13,7 @@ import { getDirection } from './utilities/direction';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class DocsAppComponent implements AfterViewInit {
+export class DocsAppComponent {
 
   routes: Object[] = [{
       icon: 'library_books',
@@ -44,7 +44,7 @@ export class DocsAppComponent implements AfterViewInit {
 
   dir: string;
 
-  constructor(private _iconRegistry: MdIconRegistry,
+  constructor(private _iconRegistry: MatIconRegistry,
               private _domSanitizer: DomSanitizer,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService,
@@ -87,12 +87,11 @@ export class DocsAppComponent implements AfterViewInit {
     this.dir = getDirection();
   }
 
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MdSidenav has issues redrawing at the beggining
-      this.media.broadcast();
-      this._changeDetectorRef.detectChanges();
-    });
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
   }
 
 }

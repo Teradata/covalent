@@ -1,6 +1,6 @@
 {
   "name": "@covalent/core",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-rc.0",
   "description": "Teradata UI Platform built on Angular Material",
   "main": "./bundles/core.umd.js",
   "module": "./index.js",
@@ -37,12 +37,12 @@
     "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/common": "^4.3.0",
-    "@angular/core": "^4.3.0",
-    "@angular/forms": "^4.3.0",
-    "@angular/http": "^4.3.0",
-    "@angular/router": "^4.3.0",
-    "@angular/cdk": "^2.0.0-beta.10",
-    "@angular/material": "^2.0.0-beta.10"
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "@angular/cdk": "^5.0.0-rc0",
+    "@angular/material": "^5.0.0-rc0"
   }
 }

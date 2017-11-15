@@ -20,6 +20,7 @@ Properties:
 | `compareWith` | `function(row, model)` | Allows custom comparison between row and model to see if row is selected or not.
 | `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
 | `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
+| `rowClick` | `function` | Event emitted when a row is clicked. [clickable] needs to be enabled. Emits an [ITdDataTableRowClickEvent] implemented object.
 | `selectAll` | `function` | Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled. Emits an [ITdDataTableSelectAllEvent] implemented object.
 | `refresh` | `function` |  Refreshes data table and rerenders [data] and [columns]
 
@@ -81,7 +82,7 @@ Example for HTML usage:
   <ng-template tdDataTableTemplate="columnName" let-value="value" let-row="row" let-column="column">
     <div layout="row">
       <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
-      <md-icon>star</md-icon>
+      <mat-icon>star</mat-icon>
     </div>
   </ng-template>
 </td-data-table>

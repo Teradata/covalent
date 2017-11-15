@@ -23,12 +23,10 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-        "theme.scss",
-        "platform/core/common/platform.scss"
+        "theme.scss"
       ],
       "scripts": [
-        "../node_modules/hammerjs/hammer.min.js",
-        "../node_modules/showdown/dist/showdown.js"
+        "../node_modules/hammerjs/hammer.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

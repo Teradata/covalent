@@ -38,18 +38,19 @@ table.td-data-table {
 
   td.mat-checkbox-cell,
   th.mat-checkbox-column {
+    min-width: 42px;
     width: 42px;
     font-size: 0 !important;
-    md-pseudo-checkbox {
+    mat-pseudo-checkbox {
       width: $checkbox-size;
       height: $checkbox-size;
-      /deep/ &.mat-pseudo-checkbox-checked::after {
+      ::ng-deep &.mat-pseudo-checkbox-checked::after {
         width: 11px !important;
         height: 4px !important;
       }
     }
-    md-checkbox {
-      /deep/ .mat-checkbox-inner-container {
+    mat-checkbox {
+      ::ng-deep .mat-checkbox-inner-container {
         width: $checkbox-size;
         height: $checkbox-size;
         margin: 0;

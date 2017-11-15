@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav, MdDrawerToggleResult } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 
 import { ILayoutTogglable } from './layout-toggle.class';
 
@@ -11,14 +11,14 @@ import { ILayoutTogglable } from './layout-toggle.class';
 })
 export class TdLayoutComponent implements ILayoutTogglable {
 
-  @ViewChild(MdSidenav) sidenav: MdSidenav;
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   /**
    * mode?: 'side', 'push' or 'over'
    *
    * The mode or styling of the sidenav.
    * Defaults to "over".
-   * See "MdSidenav" documentation for more info.
+   * See "MatSidenav" documentation for more info.
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
@@ -30,7 +30,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    * Whether or not the sidenav is opened. Use this binding to open/close the sidenav.
    * Defaults to "false".
    *
-   * See "MdSidenav" documentation for more info.
+   * See "MatSidenav" documentation for more info.
    *
    * https://github.com/angular/material2/tree/master/src/lib/sidenav
    */
@@ -57,21 +57,21 @@ export class TdLayoutComponent implements ILayoutTogglable {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdDrawerToggleResult> {
+  public toggle(): Promise<void> {
     return this.sidenav.toggle(!this.sidenav.opened);
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdDrawerToggleResult> {
+  public open(): Promise<void> {
     return this.sidenav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdDrawerToggleResult> {
+  public close(): Promise<void> {
     return this.sidenav.close();
   }
 
