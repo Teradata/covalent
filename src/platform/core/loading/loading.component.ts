@@ -44,6 +44,7 @@ export class TdLoadingComponent {
   private _mode: LoadingMode = LoadingMode.Indeterminate;
   private _defaultMode: LoadingMode = LoadingMode.Indeterminate;
   private _value: number = 0;
+  private _circleDiameter: number = TD_CIRCLE_DIAMETER;
 
   /**
    * Flag for animation
@@ -111,20 +112,7 @@ export class TdLoadingComponent {
   }
 
   getCircleDiameter(): number {
-    // we set a default diameter of 100 since this is the default in material
-    let diameter: number = TD_CIRCLE_DIAMETER;
-    // if height is provided, then we take that as diameter
-    if (this.height) {
-      diameter = this.height;
-    // else if its not provided, then we take the host height
-    } else if (this.height === undefined) {
-      diameter = this._hostHeight();
-    }
-    // if the diameter is over TD_CIRCLE_DIAMETER, we return TD_CIRCLE_DIAMETER
-    if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
-      return diameter;
-    }
-    return TD_CIRCLE_DIAMETER;
+    return this._circleDiameter;
   }
 
   getCircleStrokeWidth(): number {
@@ -181,6 +169,8 @@ export class TdLoadingComponent {
     *  and then recover it. (issue with protractor)
     */
     this._mode = this._defaultMode;
+    // Set values before the animations starts
+    this._setCircleDiameter();
     // Check for changes for `OnPush` change detection
     this.animation = true;
     this._changeDetectorRef.markForCheck();
@@ -199,6 +189,27 @@ export class TdLoadingComponent {
     // Check for changes for `OnPush` change detection
     this._changeDetectorRef.markForCheck();
     return this._animationOut.asObservable();
+  }
+
+  /**
+   * Calculate the proper diameter for the circle and set it
+   */
+  private _setCircleDiameter(): void {
+    // we set a default diameter of 100 since this is the default in material
+    let diameter: number = TD_CIRCLE_DIAMETER;
+    // if height is provided, then we take that as diameter
+    if (this.height) {
+      diameter = this.height;
+      // else if its not provided, then we take the host height
+    } else if (this.height === undefined) {
+      diameter = this._hostHeight();
+    }
+    // if the diameter is over TD_CIRCLE_DIAMETER, we set TD_CIRCLE_DIAMETER
+    if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
+      this._circleDiameter = Math.floor(diameter);
+    } else {
+      this._circleDiameter = TD_CIRCLE_DIAMETER;
+    }
   }
 
   /**
