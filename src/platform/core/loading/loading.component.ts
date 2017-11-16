@@ -204,9 +204,9 @@ export class TdLoadingComponent {
     } else if (this.height === undefined) {
       diameter = this._hostHeight();
     }
-    // if the diameter is over TD_CIRCLE_DIAMETER, we return TD_CIRCLE_DIAMETER
+    // if the diameter is over TD_CIRCLE_DIAMETER, we set TD_CIRCLE_DIAMETER
     if (!!diameter && diameter <= TD_CIRCLE_DIAMETER) {
-      this._circleDiameter = diameter;
+      this._circleDiameter = Math.floor(diameter);
     } else {
       this._circleDiameter = TD_CIRCLE_DIAMETER;
     }
