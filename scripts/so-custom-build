@@ -43,6 +43,5 @@ cp -r dist/packages/core dist/packages/universal-app/core
 $(npm bin)/ngc -p dist/packages/universal-app/tsconfig-battle-zone.json
 $(npm bin)/tsc -p dist/packages/universal-app/tsconfig-battle-royale.json
 
-TS_NODE_PROJECT=/Users/so186021/dropbox/project/github/stevenov7/covalent_folders/covalent-ssr-sandbox/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js
-
-
+# TS_NODE_PROJECT=/Users/so186021/dropbox/project/github/stevenov7/covalent_folders/covalent-ssr-sandbox/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js
+TS_NODE_PROJECT=$(pwd)/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js
