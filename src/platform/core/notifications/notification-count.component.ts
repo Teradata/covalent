@@ -120,7 +120,7 @@ export class TdNotificationCountComponent implements AfterContentInit {
   private _hasContent(): boolean {
     if (this.content) {
       let contentElement: HTMLElement = this.content.nativeElement;
-      return contentElement && (contentElement.children.length > 0 || !!contentElement.textContent.trim());
+      return contentElement && (contentElement.children!.length > 0 || !!contentElement.textContent!.trim());
     }
     return false;
   }

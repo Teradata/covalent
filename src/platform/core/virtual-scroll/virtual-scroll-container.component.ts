@@ -1,13 +1,23 @@
 import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
-         Renderer2, AfterViewChecked, OnDestroy } from '@angular/core';
+         Renderer2, AfterViewChecked, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
+
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { TdVirtualScrollRowDirective } from './virtual-scroll-row.directive';
-
 const TD_VIRTUAL_OFFSET: number = 2;
+
+@Directive({selector: '[tdVirtualScrollRow]'})
+export class TdVirtualScrollRowDirective extends TemplatePortalDirective {
+
+  constructor(templateRef: TemplateRef<any>,
+              viewContainerRef: ViewContainerRef) {
+    super(templateRef, viewContainerRef);
+  }
+
+}
 
 @Component({
   selector: 'td-virtual-scroll-container',
@@ -27,7 +37,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
 
   private _fromRow: number = 0;
   private _toRow: number = 0;
-  
+
   private _data: any[];
   private _virtualData: any[];
 
@@ -112,7 +122,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
    * This accepts the same trackBy function [ngFor] does.
    * https://angular.io/api/core/TrackByFunction
    */
-  @Input('trackBy') trackBy: any =  (index: number, item: any) => {
+  @Input('trackBy') trackBy: any =  ({} , item: any) => {
     return item;
   }
 
@@ -129,7 +139,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
       }
     }
   }
-  
+
   /**
    * Method to refresh and recalculate the virtual rows
    * e.g. after changing the [data] content
@@ -180,7 +190,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
       this._fromRow = 0;
       this._toRow = 0;
     }
-  
+
     let offset: number = 0;
     if (this._scrollVerticalOffset > (TD_VIRTUAL_OFFSET * this.rowHeight)) {
       offset = this.fromRow * this.rowHeight;

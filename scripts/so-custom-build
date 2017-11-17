@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+rm -rf ./dist
+
+$(npm bin)/ngc -p src/platform/core/paging/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/virtual-scroll/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/notifications/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/common/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/message/secondary-build.json
+
+# change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
+gulp core-replace-ngc-generated-metadata-scss-css
+
+$(npm bin)/ngc -p src/platform/core/primary-entry.json
+
+cp src/platform/core/package.json dist/packages/core
+
+gulp compile-paging-sass
+cp src/platform/core/paging/paging-bar.component.html dist/packages/core/paging
+cp src/platform/core/paging/package.json dist/packages/core/paging
+
+gulp compile-virtual-scroll-sass
+cp src/platform/core/virtual-scroll/virtual-scroll-container.component.html dist/packages/core/virtual-scroll
+cp src/platform/core/virtual-scroll/package.json dist/packages/core/virtual-scroll
+
+gulp compile-notifications-sass
+cp src/platform/core/notifications/notification-count.component.html dist/packages/core/notifications
+cp src/platform/core/notifications/package.json dist/packages/core/notifications
+
+gulp compile-common-sass
+cp src/platform/core/common/package.json dist/packages/core/common
+
+gulp compile-message-sass
+cp src/platform/core/message/message.component.html dist/packages/core/message
+cp src/platform/core/message/package.json dist/packages/core/message
+
+gulp so-custom-rollup-secondary-code
+gulp so-custom-rollup-primary-code
+
+cp -r src/universal-app/ dist/packages/universal-app
+cp -r dist/packages/core dist/packages/universal-app/core
+
+$(npm bin)/ngc -p dist/packages/universal-app/tsconfig-battle-zone.json
+$(npm bin)/tsc -p dist/packages/universal-app/tsconfig-battle-royale.json
+
+TS_NODE_PROJECT=/Users/so186021/dropbox/project/github/stevenov7/covalent_folders/covalent-ssr-sandbox/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js
+
+

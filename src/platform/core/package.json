@@ -4,7 +4,7 @@
   "description": "Teradata UI Platform built on Angular Material",
   "main": "./bundles/core.umd.js",
   "module": "./index.js",
-  "typings": "./index.d.ts",
+  "typings": "./public-api.d.ts",
   "keywords": [
     "angular",
     "material",

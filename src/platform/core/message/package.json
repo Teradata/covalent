@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/message",
+  "main": "./bundles/message.umd.js",
+  "typings": "./index.d.ts"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/notifications",
+  "main": "./bundles/notifications.umd.js",
+  "typings": "./index.d.ts"
+}

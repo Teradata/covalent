@@ -6,8 +6,6 @@ import { MatIconModule, MatButtonModule } from '@angular/material';
 
 import { TdPagingBarComponent } from './paging-bar.component';
 
-export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
-
 @NgModule({
   imports: [
     CommonModule,

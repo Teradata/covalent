@@ -30,7 +30,8 @@
     "ghpages-deploy": "./node_modules/.bin/ng build --base-href /covalent/ --aot -prod --sourcemap=false && bash scripts/ghpages-deploy",
     "start-release": "bash scripts/start-release",
     "finish-release": "bash scripts/finish-release",
-    "combat-training": "bash scripts/combat-training"
+    "combat-training": "bash scripts/combat-training",
+    "so-custom-build": "bash scripts/so-custom-build"
   },
   "engines": {
     "node": ">=6.11.1 < 7",
@@ -129,6 +130,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "semver": "5.2.0",
     "ts-node": "^3.0.4",
+    "tsconfig-paths": "^2.3.0",
     "tslint": "5.2.0",
     "typescript": "~2.3.2",
     "uglify-js": "^2.8.14"

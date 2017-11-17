@@ -1,8 +1,8 @@
 import { Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 
 export class CovalentValidators {
-  static min(minValue: any): ValidatorFn {
-    let func: ValidatorFn = (c: AbstractControl): {[key: string]: any} => {
+  static min(minValue: any): (c: AbstractControl) => {[key: string]: any} | undefined {
+    let func = (c: AbstractControl): {[key: string]: any} | undefined => {
       if (!!Validators.required(c) || (!minValue && minValue !== 0)) {
         return undefined;
       }
@@ -14,8 +14,8 @@ export class CovalentValidators {
     return func;
   }
 
-  static max(maxValue: any): ValidatorFn {
-    let func: ValidatorFn = (c: AbstractControl): {[key: string]: any} => {
+  static max(maxValue: any): (c: AbstractControl) => {[key: string]: any} | undefined {
+    let func = (c: AbstractControl): {[key: string]: any} | undefined => {
       if (!!Validators.required(c) || (!maxValue && maxValue !== 0)) {
         return undefined;
       }
@@ -27,7 +27,7 @@ export class CovalentValidators {
     return func;
   }
 
-  static numberRequired(c: AbstractControl): {[key: string]: any} {
+  static numberRequired(c: AbstractControl): {[key: string]: any} | undefined {
     return (Number.isNaN(c.value)) ?
         { required: true } :
         undefined;

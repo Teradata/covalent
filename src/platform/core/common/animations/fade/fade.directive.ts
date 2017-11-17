@@ -8,8 +8,8 @@ export class TdFadeDirective {
 
   private _state: boolean;
   private _defaultDisplay: string;
-  private _animationFadeInPlayer: AnimationPlayer;
-  private _animationFadeOutPlayer: AnimationPlayer;
+  private _animationFadeInPlayer: AnimationPlayer | undefined;
+  private _animationFadeOutPlayer: AnimationPlayer | undefined;
 
   /**
    * duration?: number

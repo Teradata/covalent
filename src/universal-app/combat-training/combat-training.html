@@ -1,11 +1,6 @@
 <h1>Combat training app</h1>
 
-<!-- <h2> Covalent Message Component Combat Training</h2>
-<td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
-  <button td-message-actions mat-icon-button (click)="messageDemo.close()">Close</button>
-</td-message> -->
-
-<h2> Covalent Paging Component Combat Training</h2>
+<h2> Covalent Paging Component Combat Training Grounds</h2>
 <td-paging-bar #pagingBar
                 [pageLinkCount]="5"
                 [pageSize]="100"
@@ -13,5 +8,72 @@
   {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
 </td-paging-bar>
 
-<h2> Angular Slider Combat Training</h2>
+<h2> Covalent Virtual Scroll Component Combat Training Grounds</h2>
+<td-virtual-scroll-container [style.height.px]="400" [data]="data">
+  <ng-template let-row="row"
+               let-index="index"
+               let-first="first"
+               let-last="last"
+               let-odd="odd"
+               let-even="even"
+               tdVirtualScrollRow>
+    {{row}}
+  </ng-template>
+</td-virtual-scroll-container>
+
+<h2> Covalent Notification Component Combat Training Grounds</h2>
+<td-notification-count color="warn" [notifications]="0"></td-notification-count>
+
+<td-notification-count positionX="center" positionY="center" [notifications]="1"></td-notification-count>
+
+<td-notification-count positionX="after" positionY="top" [notifications]="1">
+  <mat-icon>notifications</mat-icon>
+</td-notification-count>
+
+<td-notification-count positionX="after" positionY="top" [notifications]="true">
+  <mat-icon>notifications</mat-icon>
+</td-notification-count>
+
+<h2> Covalent Common Module - digits pipe - Combat Training Grounds</h2>
+<!-- <mat-form-field>
+  <input matInput tdAutoTrim placeholder="This will be autotrimmed"/>
+</mat-form-field> -->
+<p matLine>Converted: {{ testDigit | digits:3 }}</p>
+
+<h2> Covalent Common Module - TdFadeInOutAnimation - Combat Training Grounds</h2>
+<button mat-raised-button color="accent" (click)="triggerState = !triggerState">Fade In</button>
+<div [@tdFadeInOut]="triggerState">
+  <mat-card>
+    <mat-card-title>Fade Card</mat-card-title>
+    <mat-card-content>Fade in or out with a click!</mat-card-content>
+    <mat-card-actions><button mat-raised-button color="primary" (click)="triggerState = !triggerState">Fade Out</button></mat-card-actions>
+  </mat-card>
+</div>
+
+<h2> Covalent Message Component Combat Training</h2>
+<td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+  <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+</td-message>
+<button mat-button color="accent" (click)="messageDemo.toggle()">
+  Toggle Visibility
+</button>
+
+<h2> Angular Slider Combat Training Grounds</h2>
  <mat-slider></mat-slider>
+
+<h2> Toybox Combat Training Zone</h2>
+<p>data raw display's </p>
+{{ data }}
+
+<p>json pipped display's </p>
+{{ data| json }}
+
+<p>*ngFor raw display's </p>
+<div *ngFor="let i of data">
+  {{ i.name }}
+</div>
+
+<p>*ngFor json pipped display's </p>
+<div *ngFor="let i of data">
+  {{ i | json }}
+</div>
