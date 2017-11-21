@@ -100,7 +100,7 @@
                             <mat-card>
                               <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                                 <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                                  <span class="md-title">Title here</span>
+                                  <span class="mat-title">Title here</span>
                                 </span>
                                 <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
                                 </td-search-box>
@@ -120,8 +120,8 @@
                                   <mat-icon matListAvatar>apps</mat-icon>
                                   <h3 matLine>App Name</h3>
                                   <span flex></span>
-                                  <span hide-xs flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
-                                  <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+                                  <span hide-xs flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
+                                  <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left mat-body-1 tc-grey-500">
                                     <mat-select flex="90" [(ngModel)]="sortKey">
                                       <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
                                         { {option.name}}
@@ -143,7 +143,7 @@
                                     <span hide-xs flex="10">
                                       { {item.owner}}
                                     </span>
-                                    <span hide-xs flex="60" class="text-right md-body-1 tc-grey-500 pad-right">
+                                    <span hide-xs flex="60" class="text-right mat-body-1 tc-grey-500 pad-right">
                                       { {item[sortKey] | date:'short'}}
                                     </span>
                                   </mat-list-item>
@@ -211,7 +211,7 @@
           <mat-card class="push-md">
             <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                <span class="md-title">Title here</span>
+                <span class="mat-title">Title here</span>
               </span>
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()"
                 flex>
@@ -232,8 +232,8 @@
                 <mat-icon matListAvatar>apps</mat-icon>
                 <h3 matLine>App Name</h3>
                 <span flex></span>
-                <span hide-sm flex="40" class="pad-left md-body-1 tc-grey-500">Owner</span>
-                <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left md-body-1 tc-grey-500">
+                <span hide-sm flex="40" class="pad-left mat-body-1 tc-grey-500">Owner</span>
+                <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left mat-body-1 tc-grey-500">
                   <mat-select flex="90" [(ngModel)]="sortKey">
                     <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
                       {{option.name}}
@@ -255,7 +255,7 @@
                   <span hide-sm flex="10">
                     {{item.owner}}
                   </span>
-                  <span hide-xs flex="60" class="text-right md-body-1 tc-grey-500 pad-right">
+                  <span hide-xs flex="60" class="text-right mat-body-1 tc-grey-500 pad-right">
                     {{item[sortKey] | date:'short'}}
                   </span>
                 </mat-list-item>

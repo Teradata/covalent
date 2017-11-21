@@ -22,7 +22,7 @@
     <div layout-gt-xs="row">
       <mat-card flex-gt-xs="60">
         <div layout="row" layout-align="start center" class="push-left push-right">
-          <span class="md-title">Card</span>
+          <span class="mat-title">Card</span>
           <span flex></span>
           <td-search-box *ngIf="debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (searchDebounce)="searchBoxTerm = $event" flex></td-search-box>
           <td-search-box *ngIf="!debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (search)="searchBoxTerm = $event" (clear)="searchBoxTerm = ''" flex></td-search-box>

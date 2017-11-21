@@ -3,7 +3,7 @@
   <mat-card-subtitle>Notification count &amp; menu for toolbar</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="md-title">Toolbar notification &amp; menu</h3>
+    <h3 class="mat-title">Toolbar notification &amp; menu</h3>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
@@ -26,7 +26,7 @@
           </button>
           <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
             <td-menu>
-              <div td-menu-header class="md-subhead">Notifications</div>
+              <div td-menu-header class="mat-subheading-2">Notifications</div>
               <mat-nav-list dense>
                 <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                   <a mat-list-item>
@@ -79,7 +79,7 @@
               </button>
               <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
                 <td-menu>
-                  <div td-menu-header class="md-subhead">Notifications</div>
+                  <div td-menu-header class="mat-subheading-2">Notifications</div>
                   <mat-nav-list dense>
                     <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                       <a mat-list-item>
@@ -115,7 +115,7 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-    <h3 class="md-title">Tabs notification</h3>
+    <h3 class="mat-title">Tabs notification</h3>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
@@ -191,7 +191,7 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-    <h3 class="md-title">List item notification</h3>
+    <h3 class="mat-title">List item notification</h3>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
