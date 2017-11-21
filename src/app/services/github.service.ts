@@ -5,10 +5,6 @@ import { Subscriber } from 'rxjs/Subscriber';
 
 import { map, catchError } from 'rxjs/operators';
 
-export interface IGithubRepository {
-  stargazers_count: number;
-}
-
 const GITHUB_URL: string = 'https://api.github.com';
 
 @Injectable()
