@@ -1,9 +1,3 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
-import { HttpModule, JsonpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-
 /**
  * COMMON
  */
