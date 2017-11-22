@@ -3,11 +3,11 @@
   <mat-card-subtitle>JSON object tree with collapsible nodes</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="md-title">Object using JSON Formatting:</h3>
+    <h3 class="mat-title">Object using JSON Formatting:</h3>
     <p>(Use mouse or keyboard to expand/collapse nodes)</p>
     <td-json-formatter [data]="data" [levelsOpen]="2"></td-json-formatter>
     <mat-divider class="push-top"></mat-divider>
-    <h3 class="md-title">Original JSON Object:</h3>
+    <h3 class="mat-title">Original JSON Object:</h3>
     <td-highlight lang="json">
       {{data | json}}
     </td-highlight>

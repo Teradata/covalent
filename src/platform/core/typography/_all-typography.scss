@@ -45,4 +45,5 @@
   @include td-message-typography($config);
   @include td-paging-bar-typography($config);
   @include td-steps-typography($config);
+  @include td-layout-typography($config);
 }

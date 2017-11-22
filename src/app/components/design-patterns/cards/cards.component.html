@@ -43,11 +43,11 @@
           <p>A card can be used with any of the optional card sub-elements including:</p>
           <mat-list>
             <a mat-list-item>
-              <span matLine>md-title</span>
+              <span matLine>mat-card-title</span>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item>
-              <span matLine>md-subtitle</span>
+              <span matLine>mat-card-subtitle</span>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item>
@@ -135,7 +135,7 @@
             <div>
               <td-highlight lang="html">
                   <![CDATA[
-                    <mat-card-title layout="row" layout-align="start center"><mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="md-title">Login</span></mat-card-title>
+                    <mat-card-title layout="row" layout-align="start center"><mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="mat-title">Login</span></mat-card-title>
                       <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
                       <mat-divider></mat-divider>
                       <mat-card-content class="push-bottom-none">
@@ -175,7 +175,7 @@
           </div>
           <mat-card class="push-md">
             <mat-card-title layout="row" layout-align="start center">
-              <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="md-title">Login</span>
+              <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="mat-title">Login</span>
             </mat-card-title>
             <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
             <mat-divider></mat-divider>
@@ -362,8 +362,8 @@
                           <mat-icon matListAvatar>apps</mat-icon>
                           <h3 matLine>App Name</h3>
                           <span flex></span>
-                          <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
-                          <span flex="30" class="md-body-1 tc-grey-500">Modified</span>
+                          <span flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
+                          <span flex="30" class="mat-body-1 tc-grey-500">Modified</span>
                         </mat-list-item>
                         <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
                           <a mat-list-item>
@@ -371,8 +371,8 @@
                             <h3 matLine> Item { {i} } </h3>
                             <p matLine> Item Description </p>
                             <span flex></span>
-                            <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
-                            <span flex="30" class="md-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
+                            <span flex="30" class="mat-body-1 tc-grey-500">Firstname Lastname</span>
+                            <span flex="30" class="mat-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
                           </a>
                           <mat-divider *ngIf="!last" matInset></mat-divider>
                         </ng-template>
@@ -395,8 +395,8 @@
                   <mat-icon matListAvatar>apps</mat-icon>
                   <h3 matLine>App Name</h3>
                   <span flex></span>
-                  <span flex="30" class="pad-left md-body-1 tc-grey-500">Owner</span>
-                  <span flex="30" class="md-body-1 tc-grey-500" hide-md hide-sm hide-xs>Modified</span>
+                  <span flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
+                  <span flex="30" class="mat-body-1 tc-grey-500" hide-md hide-sm hide-xs>Modified</span>
                 </mat-list-item>
                 <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
                   <a mat-list-item>
@@ -404,8 +404,8 @@
                     <h3 matLine> Item {{i}} </h3>
                     <p matLine> Item Description </p>
                     <span flex></span>
-                    <span flex="30" class="md-body-1 tc-grey-500">Firstname Lastname</span>
-                    <span flex="30" class="md-body-1 tc-grey-500" hide-md hide-sm hide-xs>Apr 14, 2016 12:32 PM</span>
+                    <span flex="30" class="mat-body-1 tc-grey-500">Firstname Lastname</span>
+                    <span flex="30" class="mat-body-1 tc-grey-500" hide-md hide-sm hide-xs>Apr 14, 2016 12:32 PM</span>
                   </a>
                   <mat-divider *ngIf="!last" matInset></mat-divider>
                 </ng-template>
