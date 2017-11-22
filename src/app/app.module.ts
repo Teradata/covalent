@@ -1,7 +1,6 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,9 +43,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CommonModule,
     FormsModule,
     BrowserModule,
-    HttpModule,
     HttpClientModule,
-    JsonpModule,
     /** Material Modules */
     MatButtonModule,
     MatListModule,

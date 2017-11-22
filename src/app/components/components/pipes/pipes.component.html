@@ -3,9 +3,9 @@
   <mat-card-subtitle>Custom Angular pipes (filters)</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <blockquote class="md-subhead pull-left-none">Every application starts out with what seems like a simple task: get data, transform them, and show them to users. Getting data could be as simple as creating a local variable or as complex as streaming data over a Websocket.</blockquote>
+    <blockquote class="mat-subheading-2 pull-left-none">Every application starts out with what seems like a simple task: get data, transform them, and show them to users. Getting data could be as simple as creating a local variable or as complex as streaming data over a Websocket.</blockquote>
 
-    <blockquote class="md-subhead pull-left-none">A pipe takes in data as input and transforms it to a desired output.</blockquote>
+    <blockquote class="mat-subheading-2 pull-left-none">A pipe takes in data as input and transforms it to a desired output.</blockquote>
 
     <h3>Setup:</h3>
     <p>Import the [CovalentCommonModule] in your NgModule:</p>
@@ -33,7 +33,7 @@
   <mat-card-title>Digits Conversion</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">The <code>digits</code> pipe takes a number and converts the output to an appropriate numerical measurement with an optional <code>precision</code> argument.</p>
+    <p class="mat-body-1">The <code>digits</code> pipe takes a number and converts the output to an appropriate numerical measurement with an optional <code>precision</code> argument.</p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original output -->
@@ -66,7 +66,7 @@
   <mat-card-title>Byte Conversion</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">The <code>bytes</code> pipe takes a number and converts the output to an appropriate data measurement with an optional <code>precision</code> argument.</p>
+    <p class="mat-body-1">The <code>bytes</code> pipe takes a number and converts the output to an appropriate data measurement with an optional <code>precision</code> argument.</p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original output -->
@@ -99,7 +99,7 @@
   <mat-card-title>Time Ago</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29T17:59:59.000Z</code>) and tranforms it to the amount of time that has gone by. </p>
+    <p class="mat-body-1">The <code>timeAgo</code> pipe takes a string, number or Date timestamp (example: <code>2016-01-29T17:59:59.000Z</code>) and tranforms it to the amount of time that has gone by. </p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <h3 matLine>Timestamp: {{ log.timestamp }} | {{ log.timestamp | timeAgo:log.reference }}</h3>
@@ -126,7 +126,7 @@
   <mat-card-title>Time Difference</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29T17:59:59.000Z</code>).</p>
+    <p class="mat-body-1">The <code>timeDifference</code> pipe outputs the difference between two times. Strings, Numbers or Date timestamps are acceptable types. (example: <code>2016-01-29T17:59:59.000Z</code>).</p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- Start and end time output -->
@@ -137,7 +137,7 @@
         <p matLine>Difference relative to current time: {{ log.timestamp | timeDifference }}</p>
       </mat-list-item>
     </mat-list>
-    <p class="md-body-1"><strong>Note: </strong> Using this pipe without arguments outputs the time difference relative to the current time. </p>
+    <p class="mat-body-1"><strong>Note: </strong> Using this pipe without arguments outputs the time difference relative to the current time. </p>
   <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
@@ -160,7 +160,7 @@
   <mat-card-title>Truncate</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">The <code>truncate</code> pipe limits a string to a specified <code>length</code> and adds an ellipsis.</p>
+    <p class="mat-body-1">The <code>truncate</code> pipe limits a string to a specified <code>length</code> and adds an ellipsis.</p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original value output -->
@@ -182,7 +182,7 @@
           </mat-list>
         ]]>
     </td-highlight>
-    <p class="md-body-1"><strong>Note: </strong>  If the last character in a returned output is a space, then that space is removed.</p>
+    <p class="mat-body-1"><strong>Note: </strong>  If the last character in a returned output is a space, then that space is removed.</p>
     <td-highlight lang="html">
         <![CDATA[
           <!-- Both have the same output because -->

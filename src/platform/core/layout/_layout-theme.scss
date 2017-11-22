@@ -1,5 +1,33 @@
 @import '../common/styles/elevation';
 @import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-layout-typography($config) {
+  td-navigation-drawer {
+    .td-navigation-drawer-title {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, subheading-2);
+      }
+    }
+    .td-navigation-drawer-name {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, body-1);
+        weight: 500;
+      }
+      line-height: td-line-height($config, body-1);
+    }
+    .td-navigation-drawer-menu-toggle {
+      font: {
+        family: td-font-family($config);
+        size: td-font-size($config, body-2);
+        weight: 400;
+      }
+      line-height: td-line-height($config, body-2);
+    }
+  }
+}
 
 @mixin td-layout-theme($theme) {
   $primary: map-get($theme, primary);

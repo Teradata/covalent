@@ -27,6 +27,7 @@ gulp.task('rollup-code', '', function() {
     '@angular/animations/browser': 'ng.animations.browser',
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
+    '@angular/common/http': 'ng.common.http',
     '@angular/forms': 'ng.forms',
     '@angular/http': 'ng.http',
     '@angular/router': 'ng.router',
