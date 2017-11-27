@@ -19,12 +19,6 @@ export class EmptyStatesComponent {
 
   username: string;
   password: string;
-  fadeDiv: boolean = true;
-  example1: boolean = true;
-  example2: boolean = true;
-  example3: boolean = true;
-  example4: boolean = true;
-  example5: boolean = true;
   height: number = 500;
   
   invalidError: boolean = false;
