@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { PortalModule } from '@angular/cdk/portal';
@@ -30,8 +29,6 @@ export { TdFileService, IUploadOptions } from './services/file.service';
 
 @NgModule({
   imports: [
-    HttpModule,
-    JsonpModule,
     FormsModule,
     CommonModule,
     MatIconModule,

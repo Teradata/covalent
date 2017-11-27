@@ -49,11 +49,9 @@ Properties:
 Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
-import { HttpModule } from '@angular/http';
 import { CovalentFileModule } from '@covalent/core';
 @NgModule({
   imports: [
-    HttpModule,
     CovalentFileModule,
     ...
   ],
