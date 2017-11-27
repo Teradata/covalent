@@ -19,7 +19,7 @@ export class EmptyStatesComponent {
 
   username: string;
   password: string;
-  height: number = 500;
+  height:number = 1000; //todo replace this with actual height (get top offset)
   
   invalidError: boolean = false;
 
