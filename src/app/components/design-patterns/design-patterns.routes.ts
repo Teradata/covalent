@@ -23,6 +23,7 @@ const routes: Routes = [{
     }, {
       component: EmptyStatesComponent,
       path: 'empty-states',
+    },
   ],
   component: DesignPatternsComponent,
   path: 'design-patterns',
