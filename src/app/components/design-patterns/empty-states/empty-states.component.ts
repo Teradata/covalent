@@ -1,6 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-
-import { TdCollapseAnimation } from '@covalent/core';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
@@ -9,7 +8,6 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './empty-states.component.html',
   animations: [
     slideInDownAnimation,
-    TdCollapseAnimation(),
   ],
 })
 export class EmptyStatesComponent {
@@ -17,20 +15,9 @@ export class EmptyStatesComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  username: string;
-  password: string;
-  height:number = 1000; //todo replace this with actual height (get top offset)
-  
-  invalidError: boolean = false;
+  source: any = '';
 
-  login(): void {
-    this.invalidError = true;
-    setTimeout(() => {
-      this.invalidError = false;
-    }, 500);
-  }
-  
-  toggle(div: string): void {
-    this[div] = !this[div];
+  constructor(private sanitizer: DomSanitizer) {
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://empty-states.stackblitz.io/');
   }
 }
