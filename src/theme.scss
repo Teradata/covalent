@@ -93,15 +93,17 @@ $theme: mat-light-theme($primary, $accent, $warn);
     .tc-primary {
         color: mat-color($primary-alt);
     }
-    .tc-accent,
-    a {
+    .tc-accent {
         color: mat-color($accent-alt);
-    }
-    a:hover {
-        color: darken(mat-color($accent-alt), 10%);
     }
     .tc-warn {
         color: mat-color($warn-alt);
+    }
+    a:not(.mat-button, .mat-icon-button) {
+        color: mat-color($accent-alt);
+        &:hover {
+            color: darken(mat-color($accent-alt), 10%);
+        }
     }
 }
 
