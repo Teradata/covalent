@@ -41,6 +41,7 @@ export class TdDataTableService {
    */
   sortData(data: any[], sortBy: string, sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending): any[] {
     if (sortBy) {
+      data = Array.from(data); // Change the array reference to trigger OnPush and not mutate original array
       data.sort((a: any, b: any) => {
         let compA: any = a[sortBy];
         let compB: any = b[sortBy];
@@ -56,7 +57,6 @@ export class TdDataTableService {
         }
         return direction * (sortOrder === TdDataTableSortingOrder.Descending ? -1 : 1);
       });
-      data = Array.from(data); // Change the array reference to trigger OnPush
     }
     return data;
   }
