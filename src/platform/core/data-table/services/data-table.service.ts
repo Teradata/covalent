@@ -56,6 +56,7 @@ export class TdDataTableService {
         }
         return direction * (sortOrder === TdDataTableSortingOrder.Descending ? -1 : 1);
       });
+      data = Array.from(data); // Change the array reference to trigger OnPush
     }
     return data;
   }
