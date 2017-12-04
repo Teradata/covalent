@@ -198,6 +198,7 @@
           [multiple]="multiple"
           [sortable]="true"
           [sortBy]="sortBy"
+          [resizableColumns]="resizableColumns"
           [(ngModel)]="selectedRows"
           [sortOrder]="sortOrder"
           (sortChange)="sort($event)"
@@ -243,6 +244,7 @@
               [multiple]="multiple"
               [sortable]="true"
               [sortBy]="sortBy"
+              [resizableColumns]="resizableColumns"
               [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)"
@@ -364,6 +366,9 @@
     <div class="pad-sm">
       <mat-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="resizableColumns">
+        Resizable columns
       </mat-slide-toggle>
     </div>
     <mat-divider></mat-divider>

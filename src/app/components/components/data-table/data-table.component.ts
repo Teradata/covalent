@@ -102,6 +102,7 @@ export class DataTableDemoComponent implements OnInit {
   selectable: boolean = true;
   clickable: boolean = false;
   multiple: boolean = true;
+  resizableColumns: boolean = false;
   filterColumn: boolean = true;
 
   filteredData: any[];

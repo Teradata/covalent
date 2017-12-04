@@ -97,6 +97,17 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   private _rowsChangedSubs: Subscription;
   private _hostWidth: number = 0;
 
+  /** manually resizable columns */
+  private _resizableColumns: boolean = false;
+  private _columnClientX: number = 0;
+  private _columnResizeSubs: Subscription;
+  private _resizingColumn: number;
+  private _onColumnResize: Subject<number> = new Subject<number>();
+
+  get resizingColumn(): number {
+    return this._resizingColumn;
+  }
+
   get hostWidth(): number {
     // if the checkboxes are rendered, we need to remove their width
     // from the total width to calculate properly
@@ -286,6 +297,19 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   }
 
   /**
+   * resizableColumns?: boolean
+   * Enables manual column resize.
+   * Defaults to 'false'
+   */
+  @Input('resizableColumns')
+  set resizableColumns(resizableColumns: boolean) {
+    this._resizableColumns = coerceBooleanProperty(resizableColumns);
+  }
+  get resizableColumns(): boolean {
+    return this._resizableColumns;
+  }
+
+  /**
    * selectable?: boolean
    * Enables row selection events, hover and selected row states.
    * Defaults to 'false'
@@ -438,6 +462,15 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._calculateWidths();
       this._calculateVirtualRows();
     });
+
+    // initialize observable for column resize calculations
+    this._columnResizeSubs = this._onColumnResize.asObservable().pipe(
+      debounceTime(0),
+    ).subscribe((clientX: number) => {
+      this._columnClientX = clientX;
+      this._calculateWidths();
+      this._changeDetectorRef.markForCheck();
+    });
     // initialize observable for scroll column header reposition
     this._horizontalScrollSubs = this._onHorizontalScroll.asObservable()
       .subscribe((horizontalScroll: number) => {
@@ -507,6 +540,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   ngOnDestroy(): void {
     if (this._resizeSubs) {
       this._resizeSubs.unsubscribe();
+    }
+    if (this._columnResizeSubs) {
+      this._columnResizeSubs.unsubscribe();
     }
     if (this._horizontalScrollSubs) {
       this._horizontalScrollSubs.unsubscribe();
@@ -778,6 +814,36 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       default:
         // default
     }
+  }
+
+  /**
+   * Sets column index of the dragged column and initial clientX of column
+   */
+  _handleStartColumnDrag(index: number, event: MouseEvent): void {
+    this._columnClientX = event.clientX;
+    this._resizingColumn = index;
+  }
+
+  /**
+   * Calculates new width depending on new clientX of dragger column
+   */
+  _handleColumnDrag(column: ITdDataTableColumn, index: number, event: DragEvent): void {
+    if (event.clientX > 0 && this._columnClientX > 0 && (event.clientX - this._columnClientX) !== 0) {
+      let proposedManualWidth: number = this._widths[index].value + (event.clientX - this._columnClientX);
+      if (proposedManualWidth < this._colElements.toArray()[index].projectedWidth) {
+        proposedManualWidth = this._colElements.toArray()[index].projectedWidth;
+      }
+      column.width = proposedManualWidth;
+      this._onColumnResize.next(event.clientX);
+    }
+  }
+
+  /**
+   * Ends dragged flags
+   */
+  _handleEndColumnDrag(): void {
+    this._columnClientX = undefined;
+    this._resizingColumn = undefined;
   }
 
   /**

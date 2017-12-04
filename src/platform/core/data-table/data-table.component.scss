@@ -11,6 +11,21 @@ $checkbox-size: 18px;
   }
 }
 
+.td-data-table-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 4px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  &.td-resizing {
+    cursor: -webkit-grabbing;
+  }
+}
+
 table.td-data-table {
   width: auto !important;
   &.mat-selectable tbody > tr.td-data-table-row {

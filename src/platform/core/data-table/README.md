@@ -15,6 +15,7 @@ Properties:
 | `selectable?` | `boolean` | Enables row selection events, hover and selected row states.
 | `multiple?` | `boolean` | Enables multiple row selection. [selectable] needs to be enabled.
 | `sortable?` | `boolean` | Enables sorting events, sort icons and active column states.
+| `resizableColumns?` | `boolean` | Enables manual column resize.
 | `sortBy?` | `string` | Sets the active sort column. [sortable] needs to be enabled.
 | `sortOrder?` | TdDataTableSortingOrder | Sets the sort order of the [sortBy] column. [sortable] needs to be enabled. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
 | `compareWith` | `function(row, model)` | Allows custom comparison between row and model to see if row is selected or not.
