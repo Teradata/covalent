@@ -361,6 +361,7 @@ describe('Component: DataTable', () => {
           fixture.debugElement.queryAll(By.directive(TdDataTableRowComponent))[1].nativeElement.click();
           fixture.detectChanges();
           fixture.whenStable().then(() => {
+            expect(clickEventSpy.calls.argsFor(0)[0].index).toBe(1);
             expect(clickEventSpy.calls.count()).toBe(1);
             expect(selectEventSpy.calls.count()).toBe(0);
 
@@ -369,6 +370,7 @@ describe('Component: DataTable', () => {
               fixture.debugElement.queryAll(By.directive(MatPseudoCheckbox))[0].nativeElement.click();
               fixture.detectChanges();
               fixture.whenStable().then(() => {
+                expect(selectEventSpy.calls.argsFor(0)[0].index).toBe(0);
                 expect(clickEventSpy.calls.count()).toBe(1);
                 expect(selectEventSpy.calls.count()).toBe(1);
               });
@@ -492,8 +494,8 @@ class TdDataTableRowClickTestComponent {
         [columns]="columns"
         [selectable]="selectable"
         [clickable]="clickable"
-        (rowClick)="clickEvent()"
-        (rowSelect)="selectEvent()">
+        (rowClick)="clickEvent($event)"
+        (rowSelect)="selectEvent($event)">
     </td-data-table>`,
 })
 class TdDataTableSelectableRowClickTestComponent {
@@ -508,10 +510,10 @@ class TdDataTableSelectableRowClickTestComponent {
   ];
   selectable: boolean = false;
   clickable: boolean = false;
-  clickEvent(): void {
+  clickEvent(event: any): void {
     /* noop */
   }
-  selectEvent(): void {
+  selectEvent(event: any): void {
     /* noop */
   }
 }

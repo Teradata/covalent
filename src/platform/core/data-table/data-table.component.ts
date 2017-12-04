@@ -54,6 +54,7 @@ export interface ITdDataTableColumn {
 export interface ITdDataTableSelectEvent {
   row: any;
   selected: boolean;
+  index: number;
 }
 
 export interface ITdDataTableSelectAllEvent {
@@ -63,6 +64,7 @@ export interface ITdDataTableSelectAllEvent {
 
 export interface ITdDataTableRowClickEvent {
   row: any;
+  index: number;
 }
 
 export interface IInternalColumnWidth {
@@ -646,7 +648,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
            (this._firstSelectedIndex <= currentSelected && this._lastSelectedIndex < this._firstSelectedIndex)) {
           for (let i: number = firstIndex; i <= lastIndex; i++) {
             if (this._firstSelectedIndex !== i) {
-              this._doSelection(this._data[i]);
+              this._doSelection(this._data[i], i);
             }
           }
         } else if ((this._firstSelectedIndex > currentSelected) || (this._firstSelectedIndex < currentSelected)) {
@@ -663,13 +665,13 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
             // we ignore the toggle
             if ((this._firstCheckboxValue && !rowSelected) ||
                 (!this._firstCheckboxValue && rowSelected)) {
-              this._doSelection(this._data[i]);
+              this._doSelection(this._data[i], i);
             } else if (this._shiftPreviouslyPressed) {
               // else if the checkbox selected was in the middle of the last selection and the first selection
               // then we undo the selections
               if ((currentSelected >= this._firstSelectedIndex && currentSelected <= this._lastSelectedIndex) ||
                   (currentSelected <= this._firstSelectedIndex && currentSelected >= this._lastSelectedIndex)) {
-                this._doSelection(this._data[i]);
+                this._doSelection(this._data[i], i);
               }
             }
           }
@@ -678,7 +680,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // if shift wasnt pressed, then we take the element checked as the first row
       // incase the next click uses shift
       } else if (mouseEvent && !mouseEvent.shiftKey) {
-        this._firstCheckboxValue = this._doSelection(row);
+        this._firstCheckboxValue = this._doSelection(row, currentSelected);
         this._shiftPreviouslyPressed = false;
         this._firstSelectedIndex = currentSelected;
       }
@@ -711,14 +713,17 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * emits the onRowClickEvent when a row is clicked
    * if clickable is true and selectable is false then select the row
    */
-  handleRowClick(row: any, event: Event): void {
+  handleRowClick(row: any, index: number, event: Event): void {
     if (this.clickable) {
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
       const srcElement: any = event.srcElement || event.currentTarget;
       /* tslint:disable-next-line */
       if (srcElement.getAttribute('stopRowClick') === null) {
-        this.onRowClick.emit({row: row});
+        this.onRowClick.emit({
+          row: row,
+          index: index,
+        });
       }
     }
   }
@@ -746,7 +751,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       case SPACE:
         /** if user presses enter or space, the row should be selected */
         if (this.selectable) {
-          this._doSelection(this._data[this.fromRow + index]);
+          this._doSelection(this._data[this.fromRow + index], this.fromRow + index);
         }
         break;
       case UP_ARROW:
@@ -759,7 +764,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         }
         this.blockEvent(event);
         if (this.selectable && this.multiple && event.shiftKey && this.fromRow + index >= 0) {
-          this._doSelection(this._data[this.fromRow + index]);
+          this._doSelection(this._data[this.fromRow + index], this.fromRow + index);
         }
         break;
       case DOWN_ARROW:
@@ -772,7 +777,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         }
         this.blockEvent(event);
         if (this.selectable && this.multiple && event.shiftKey && this.fromRow + index < this._data.length) {
-          this._doSelection(this._data[this.fromRow + index]);
+          this._doSelection(this._data[this.fromRow + index], this.fromRow + index);
         }
         break;
       default:
@@ -820,7 +825,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   /**
    * Does the actual Row Selection
    */
-  private _doSelection(row: any): boolean {
+  private _doSelection(row: any, rowIndex: number): boolean {
     let wasSelected: boolean = this.isRowSelected(row);
     if (!wasSelected) {
       if (!this._multiple) {
@@ -838,7 +843,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       }
     }
     this._calculateCheckboxState();
-    this.onRowSelect.emit({row: row, selected: !wasSelected});
+    this.onRowSelect.emit({row: row, index: rowIndex, selected: !wasSelected});
     this.onChange(this._value);
     return !wasSelected;
   }
