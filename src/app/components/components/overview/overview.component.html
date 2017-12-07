@@ -3,7 +3,9 @@
   <mat-card-subtitle>Core Covalent Components, Directives, Pipes &amp; Services</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <mat-grid-list cols="3" rowHeight="150px" gutterSize="10px">
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
       <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
         <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
@@ -20,7 +22,9 @@
   <mat-card-subtitle>Extra components &amp; services not required</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <mat-grid-list cols="3" rowHeight="150px" gutterSize="10px">
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
       <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
         <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
           <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
@@ -37,13 +41,17 @@
   <mat-card-subtitle>Recommended but not maintained by Covalent</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <mat-grid-list cols="3" rowHeight="150px" gutterSize="10px">
-      <mat-grid-tile ngClass="bgc-cyan-500" class="cursor-pointer" href="https://material.angular.io/components" target="_blank">
-        <mat-icon class="text-super tc-white">layers</mat-icon>
-        <mat-grid-tile-footer>
-          <h3 mat-line>Angular Material</h3>
-        </mat-grid-tile-footer>
-      </mat-grid-tile>
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
+      <a href="https://material.angular.io/components" target="_blank">
+        <mat-grid-tile ngClass="bgc-cyan-500" class="cursor-pointer">
+          <mat-icon class="text-super tc-white">layers</mat-icon>
+          <mat-grid-tile-footer>
+            <h3 mat-line>Angular Material</h3>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </a>
       <ng-template let-item let-last="last" ngFor [ngForOf]="external">
         <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
           <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
