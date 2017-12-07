@@ -9,6 +9,7 @@ import { CardsComponent } from './cards/cards.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { SteppersComponent } from './steppers/steppers.component';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MatSnackBarModule,
          MatInputModule, MatMenuModule, MatSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
@@ -27,6 +28,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     AlertsComponent,
     ManagementListComponent,
     NavigationDrawerComponent,
+    SteppersComponent,
   ],
   imports: [
     /** Angular Modules */

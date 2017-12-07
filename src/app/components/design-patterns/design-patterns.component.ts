@@ -34,6 +34,11 @@ export class DesignPatternsComponent {
     icon: 'kitchen',
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
+  }, {
+    description: 'Description',
+    icon: 'filter_none',
+    route: 'steppers',
+    title: 'Stepper Patterns',
   }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
