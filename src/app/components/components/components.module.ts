@@ -39,7 +39,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
          MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
-         MatProgressBarModule } from '@angular/material';
+         MatProgressBarModule, MatGridListModule } from '@angular/material';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -106,6 +106,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatTooltipModule,
     MatProgressBarModule,
     MatAutocompleteModule,
+    MatGridListModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
