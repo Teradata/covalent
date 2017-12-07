@@ -13,7 +13,7 @@
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div [@tdCollapse]="!toggleDemoCode">
+    <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
       <mat-tab-group mat-stretch-tabs dynamicHeight>
         <mat-tab>
           <ng-template matTabLabel>HTML</ng-template>

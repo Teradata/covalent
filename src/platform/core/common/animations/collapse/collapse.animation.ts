@@ -40,7 +40,7 @@ export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): A
     transition('1 => 0', [
       animate((collapseOptions.duration || 150) + 'ms ' +
               (collapseOptions.delay || 0) + 'ms ' +
-              (collapseOptions.easeOnOpen || 'ease-out')),
+              (collapseOptions.easeOnOpen || 'ease-in')),
     ]),
   ]);
 }

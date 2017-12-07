@@ -25,9 +25,9 @@
     </div>
   </ng-container>
 </mat-toolbar>
-<div [@tdCollapse]="menuToggled">
+<div class="td-navigation-drawer-content" [@tdCollapse]="menuToggled">
   <ng-content></ng-content>
 </div>
-<div [@tdCollapse]="!menuToggled">
+<div class="td-navigation-drawer-menu-content" [@tdCollapse]="!menuToggled">
   <ng-content select="[td-navigation-drawer-menu]"></ng-content>
 </div>
