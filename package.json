@@ -25,6 +25,7 @@
     "bump-minor": "gulp bump-version --ver minor",
     "bump-major": "gulp bump-version --ver major",
     "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json && tsc -p src/platform/tsconfig-aot.json",
+    "serve": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve",
     "serve:prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve --aot --prod --sourcemap=false --build-optimizer",
     "build": "bash scripts/build-release",
     "npm-publish": "npm run build && bash scripts/npm-publish",
