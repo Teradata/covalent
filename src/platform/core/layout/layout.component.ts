@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 
 import { ILayoutTogglable } from './layout-toggle.class';
 

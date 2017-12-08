@@ -1,5 +1,5 @@
 import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';

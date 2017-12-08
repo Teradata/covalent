@@ -19,8 +19,12 @@ import { MockDataComponent } from './mock-data/mock-data.component';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
-import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule,
-         MatMenuModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';

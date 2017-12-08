@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
-import { MatIconModule, MatRippleModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
 
 import { CovalentCommonModule } from '../common/common.module';
 

@@ -10,9 +10,22 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
-import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule, MatSnackBarModule,
-         MatInputModule, MatMenuModule, MatSelectModule, MatGridListModule, MatTabsModule, MatSidenavModule,
-         MatTooltipModule, MatProgressBarModule, MatButtonToggleModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
          CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';

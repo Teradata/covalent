@@ -2,8 +2,13 @@ import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatInputModule, MatSelectModule, MatCheckboxModule, MatSliderModule, MatSlideToggleModule, MatIconModule,
-   MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { CovalentCommonModule } from '../core';
 import { CovalentFileModule } from '../core';

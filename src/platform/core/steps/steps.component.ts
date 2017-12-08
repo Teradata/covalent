@@ -1,7 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { OnDestroy, AfterContentInit } from '@angular/core';
 import { EventEmitter, ContentChildren, QueryList } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 
 import { TdStepComponent } from './step.component';
 

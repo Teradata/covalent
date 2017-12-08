@@ -14,7 +14,8 @@ import { TdDataTableComponent, ITdDataTableColumn } from './data-table.component
 import { TdDataTableService } from './services/data-table.service';
 import { CovalentDataTableModule } from './data-table.module';
 import { NgModule, DebugElement } from '@angular/core';
-import { MatCheckbox, MatPseudoCheckbox } from '@angular/material';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { MatPseudoCheckbox } from '@angular/material/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DataTable', () => {
