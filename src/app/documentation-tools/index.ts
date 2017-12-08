@@ -1,7 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCheckbox, MatCardModule, MatCheckboxModule } from '@angular/material';
+import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 import { CovalentDataTableModule, TdDataTableComponent } from '../../platform/core';
 import { CovalentHighlightModule, TdHighlightComponent } from '../../platform/highlight';

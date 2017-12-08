@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } f
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
-import { MatInput } from '@angular/material';
+import { MatInput } from '@angular/material/input';
 
 import { debounceTime } from 'rxjs/operators/debounceTime';
 import { skip } from 'rxjs/operators/skip';
