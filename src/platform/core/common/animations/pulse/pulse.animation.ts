@@ -1,5 +1,6 @@
 
-import { trigger, state, style, keyframes, transition, animate, AnimationTriggerMetadata, AUTO_STYLE } from '@angular/animations';
+import { trigger, state, style, keyframes, transition, animate,
+         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 /**
@@ -21,10 +22,17 @@ export function TdPulseAnimation(pulseOptions: IAnimationOptions = {}): Animatio
     state('1',  style({
       transform: 'scale3d(1, 1, 1)',
     })),
-    transition('0 <=> 1', animate((pulseOptions.duration || 500) + 'ms ' + (pulseOptions.delay || 0) + 'ms', keyframes([
-        style({transform: 'scale3d(1, 1, 1)', offset: 0}),
-        style({transform: 'scale3d(1.05, 1.05, 1.05)', offset: 0.5}),
-        style({transform: 'scale3d(1, 1, 1)', offset: 1.0}),
-    ]))),
+    transition('0 <=> 1', [
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((pulseOptions.duration || 500) + 'ms ' + (pulseOptions.delay || 0) + 'ms',
+          keyframes([
+            style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
+            style({ transform: 'scale3d(1.05, 1.05, 1.05)', offset: 0.5 }),
+            style({ transform: 'scale3d(1, 1, 1)', offset: 1.0 }),
+          ]),
+        ),
+      ]),
+    ]),
   ]);
 }

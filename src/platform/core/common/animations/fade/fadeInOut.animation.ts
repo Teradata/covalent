@@ -1,4 +1,5 @@
-import { trigger, state, style, transition, animate, AnimationTriggerMetadata, AUTO_STYLE } from '@angular/animations';
+import { trigger, state, style, transition, animate,
+         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group  } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 export interface IFadeInOutAnimation extends IAnimationOptions {
@@ -30,13 +31,21 @@ export function TdFadeInOutAnimation(fadeInOut: IFadeInOutAnimation = {}): Anima
       opacity: AUTO_STYLE,
       display: AUTO_STYLE,
     })),
-    transition('0 => 1',
-      animate((fadeInOut.duration || 150) + 'ms ' +
-              (fadeInOut.delay || 0) + 'ms ' +
-              (fadeInOut.easeOnIn || 'ease-in'))),
-    transition('1 => 0',
-      animate((fadeInOut.duration || 150) + 'ms ' +
-              (fadeInOut.delay || 0) + 'ms ' +
-              (fadeInOut.easeOnOut || 'ease-out'))),
+    transition('0 => 1', [
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((fadeInOut.duration || 150) + 'ms ' +
+                (fadeInOut.delay || 0) + 'ms ' +
+                (fadeInOut.easeOnIn || 'ease-in')),
+      ]),
+    ]),
+    transition('1 => 0', [
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((fadeInOut.duration || 150) + 'ms ' +
+                (fadeInOut.delay || 0) + 'ms ' +
+                (fadeInOut.easeOnOut || 'ease-out')),
+      ]),
+    ]),
   ]);
 }

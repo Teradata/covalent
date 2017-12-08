@@ -1,19 +1,13 @@
 import { Component, HostBinding, AfterViewInit } from '@angular/core';
 import { GitHubService } from '../../services';
 
-import { fadeAnimation } from '../../app.animations';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [fadeAnimation],
 })
 
 export class HomeComponent implements AfterViewInit {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   starCount: number = 0;
 

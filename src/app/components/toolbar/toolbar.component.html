@@ -19,7 +19,7 @@
     </button>
     <mat-menu #notificationsMenu="matMenu">
       <td-menu>
-        <div td-menu-header class="mat-subheading-2">Updates</div>
+        <div td-menu-header class="mat-subheading-2 push-none">Updates</div>
         <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a mat-list-item [routerLink]="[item.route]">

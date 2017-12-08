@@ -1,4 +1,5 @@
-import { trigger, state, style, transition, animate, AnimationTriggerMetadata, AUTO_STYLE } from '@angular/animations';
+import { trigger, state, style, transition, animate,
+         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 export interface ICollapseAnimation extends IAnimationOptions {
@@ -25,22 +26,26 @@ export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): A
     state('1', style({
       height: '0',
       display: 'none',
-      overflow: 'hidden',
     })),
     state('0',  style({
       height: AUTO_STYLE,
       display: AUTO_STYLE,
-      overflow: 'hidden',
     })),
     transition('0 => 1', [
-      animate((collapseOptions.duration || 150) + 'ms ' +
-              (collapseOptions.delay || 0) + 'ms ' +
-              (collapseOptions.easeOnClose || 'ease-in')),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((collapseOptions.duration || 150) + 'ms ' +
+                (collapseOptions.delay || 0) + 'ms ' +
+                (collapseOptions.easeOnClose || 'ease-in')),
+      ]),
     ]),
     transition('1 => 0', [
-      animate((collapseOptions.duration || 150) + 'ms ' +
-              (collapseOptions.delay || 0) + 'ms ' +
-              (collapseOptions.easeOnOpen || 'ease-in')),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((collapseOptions.duration || 150) + 'ms ' +
+                (collapseOptions.delay || 0) + 'ms ' +
+                (collapseOptions.easeOnOpen || 'ease-out')),
+      ]),
     ]),
   ]);
 }

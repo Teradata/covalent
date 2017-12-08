@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate, AnimationTriggerMetadata, AUTO_STYLE } from '@angular/animations';
+import { trigger, state, style, transition, animate, AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 export interface IRotateAnimation extends IAnimationOptions {
@@ -29,9 +29,12 @@ export function TdRotateAnimation(rotateOptions: IRotateAnimation = {}): Animati
       transform: 'rotate(' + (rotateOptions.degrees || 180) + 'deg)',
     })),
     transition('0 <=> 1', [
-      animate((rotateOptions.duration || 250) + 'ms ' +
-              (rotateOptions.delay || 0) + 'ms ' +
-              (rotateOptions.ease || 'ease-in')),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate((rotateOptions.duration || 250) + 'ms ' +
+          (rotateOptions.delay || 0) + 'ms ' +
+          (rotateOptions.ease || 'ease-in')),
+      ]),
     ]),
   ]);
 }
