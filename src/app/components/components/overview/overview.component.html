@@ -7,8 +7,8 @@
                     rowHeight="150px"
                     gutterSize="10px">
       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-      <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
-        <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
+      <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+        <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
         <mat-grid-tile-footer>
           <h3 mat-line>{{item.title}}</h3>
         </mat-grid-tile-footer>
@@ -26,8 +26,8 @@
                     rowHeight="150px"
                     gutterSize="10px">
       <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
-        <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
-          <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
+        <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+          <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
           <mat-grid-tile-footer>
             <h3 mat-line>{{item.title}}</h3>
           </mat-grid-tile-footer>
@@ -45,16 +45,17 @@
                     rowHeight="150px"
                     gutterSize="10px">
       <a href="https://material.angular.io/components" target="_blank">
-        <mat-grid-tile ngClass="bgc-cyan-500" class="cursor-pointer">
-          <mat-icon class="text-super tc-white">layers</mat-icon>
+        <mat-grid-tile matRipple ngClass="bgc-cyan-500" class="cursor-pointer">
+          <mat-icon class="icon-component tc-white">layers</mat-icon>
           <mat-grid-tile-footer>
             <h3 mat-line>Angular Material</h3>
+            <mat-icon>launch</mat-icon>
           </mat-grid-tile-footer>
         </mat-grid-tile>
       </a>
       <ng-template let-item let-last="last" ngFor [ngForOf]="external">
-        <mat-grid-tile ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
-          <mat-icon class="text-super tc-white">{{item.icon}}</mat-icon>
+        <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+          <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
           <mat-grid-tile-footer>
             <h3 mat-line>{{item.title}}</h3>
           </mat-grid-tile-footer>
