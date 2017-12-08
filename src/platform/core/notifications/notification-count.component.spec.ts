@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { CovalentNotificationsModule,
          TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
 import { By } from '@angular/platform-browser';

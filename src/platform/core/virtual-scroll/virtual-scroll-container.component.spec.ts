@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdVirtualScrollContainerComponent } from './virtual-scroll-container.component';
 import { CovalentVirtualScrollModule } from './virtual-scroll.module';
-import { MatListModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
