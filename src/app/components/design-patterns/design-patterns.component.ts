@@ -1,18 +1,12 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
-import { fadeAnimation } from '../../app.animations';
-
 @Component({
   selector: 'app-design-patterns',
   styleUrls: ['./design-patterns.component.scss'],
   templateUrl: './design-patterns.component.html',
-  animations: [fadeAnimation],
 })
 export class DesignPatternsComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Various cards',

@@ -1,18 +1,12 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
-import { fadeAnimation } from '../../app.animations';
-
 @Component({
   selector: 'app-docs',
   styleUrls: ['./docs.component.scss'],
   templateUrl: './docs.component.html',
-  animations: [fadeAnimation],
 })
 export class DocsComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Installing Covalent & dependencies',
