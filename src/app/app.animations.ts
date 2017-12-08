@@ -1,25 +1,5 @@
-import { animate, AnimationTriggerMetadata, state, style, transition, trigger } from '@angular/animations';
+import { animate, AnimationTriggerMetadata, state, style, transition, trigger, group, animateChild, query } from '@angular/animations';
 
-// Component transition animations
-export const fadeAnimation: AnimationTriggerMetadata =
-  trigger('routeAnimation', [
-    state('*',
-      style({
-        opacity: 1,
-      }),
-    ),
-    transition(':enter', [
-      style({
-        opacity: 0,
-      }),
-      animate('0.3s ease-in'),
-    ]),
-    transition(':leave', [
-      animate('0.5s ease-out', style({
-        opacity: 0,
-      })),
-    ]),
-  ]);
 export const slideInLeftAnimation: AnimationTriggerMetadata =
   trigger('routeAnimation', [
     state('*',
@@ -29,17 +9,23 @@ export const slideInLeftAnimation: AnimationTriggerMetadata =
       }),
     ),
     transition(':enter', [
-      style({
-        opacity: 0,
-        transform: 'translateX(-100%)',
-      }),
-      animate('0.3s ease-in'),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)',
+        }),
+        animate('0.3s ease-in'),
+      ]),
     ]),
     transition(':leave', [
-      animate('0.5s ease-out', style({
-        opacity: 0,
-        transform: 'translateX(100%)',
-      })),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate('0.5s ease-out', style({
+          opacity: 0,
+          transform: 'translateX(100%)',
+        })),
+      ]),
     ]),
   ]);
 export const slideInDownAnimation: AnimationTriggerMetadata =
@@ -51,16 +37,22 @@ export const slideInDownAnimation: AnimationTriggerMetadata =
       }),
     ),
     transition(':enter', [
-      style({
-        opacity: 0,
-        transform: 'translateY(-100%)',
-      }),
-      animate('0.3s ease-in'),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        style({
+          opacity: 0,
+          transform: 'translateY(-100%)',
+        }),
+        animate('0.3s ease-in'),
+      ]),
     ]),
     transition(':leave', [
-      animate('0.5s ease-out', style({
-        opacity: 0,
-        transform: 'translateY(100%)',
-      })),
+      group([
+        query('@*', animateChild(), { optional: true }),
+        animate('0.5s ease-out', style({
+          opacity: 0,
+          transform: 'translateY(100%)',
+        })),
+      ]),
     ]),
   ]);

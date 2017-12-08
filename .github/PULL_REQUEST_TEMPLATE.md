@@ -9,13 +9,13 @@
 
 #### Test Steps
 <!-- Add instructions on how to test your changes -->
-- [ ] do this
+- [ ] `npm run serve`
 - [ ] then this
 - [ ] finally this
 
 #### General Tests for Every PR
 
-- [ ] `ng serve --aot` still works.
+- [ ] `npm run serve:prod` still works.
 - [ ] `npm run lint` passes.
 - [ ] `npm test` passes and code coverage is not lower.
 - [ ] `npm run build` still works.

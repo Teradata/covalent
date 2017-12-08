@@ -150,7 +150,7 @@
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
-      <div [@tdCollapse]="collapseState1">
+      <div [style.overflow]="'hidden'" [@tdCollapse]="collapseState1">
         <mat-card>
           <mat-card-title>Collapse card</mat-card-title>
           <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -176,7 +176,7 @@
       <td-highlight lang="html">
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
-          <div [@tdCollapse]="triggerState">
+          <div [style.overflow]="'hidden'" [@tdCollapse]="triggerState">
             <mat-card>
               <mat-card-title>Collapse card</mat-card-title>
               <mat-card-content>Collapse card with a click!</mat-card-content>
