@@ -29,6 +29,12 @@
       }
     }
   }
+  .td-expansion-content,
+  .td-expansion-summary {
+    &.ng-animating {
+      overflow: hidden;
+    }
+  }
 }
 
 .td-expansion-label,
