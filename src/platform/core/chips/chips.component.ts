@@ -22,11 +22,7 @@ import { fromEvent } from 'rxjs/observable/fromEvent';
 import { filter } from 'rxjs/operators/filter';
 import { debounceTime } from 'rxjs/operators/debounceTime';
 
-import { ICanDisable, mixinDisabled } from '../common/common.module';
-
-const noop: any = () => {
-  // empty method
-};
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../common/common.module';
 
 @Directive({
   selector: '[td-chip]ng-template',
@@ -46,10 +42,12 @@ export class TdAutocompleteOptionDirective extends TemplatePortalDirective {
   }
 }
 
-export class TdChipsBase {}
+export class TdChipsBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
 
 /* tslint:disable-next-line */
-export const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
+export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChipsBase), []);
 
 @Component({
   providers: [{
@@ -58,21 +56,16 @@ export const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
     multi: true,
   }],
   selector: 'td-chips',
-  inputs: ['disabled'],
+  inputs: ['disabled', 'value'],
   styleUrls: ['./chips.component.scss' ],
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
+export class TdChipsComponent extends _TdChipsMixinBase implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
 
   private _outsideClickSubs: Subscription;
 
   private _isMousedown: boolean = false;
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  private _value: any[] = [];
 
   private _items: any[];
   private _length: number = 0;
@@ -265,18 +258,6 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @Output('chipBlur') onChipBlur: EventEmitter<any> = new EventEmitter<any>();
 
   /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  @Input() set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
-      this._length = this._value ? this._value.length : 0;
-      this._changeDetectorRef.markForCheck();
-    }
-  }
-  get value(): any { return this._value; }
-
-  /**
    * Hostbinding to set the a11y of the TdChipsComponent depending on its state
    */
   @HostBinding('attr.tabindex')
@@ -286,9 +267,9 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
 
   constructor(private _elementRef: ElementRef, 
               private _renderer: Renderer2,
-              private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() @Inject(DOCUMENT) private _document: any) {
-    super();
+              @Optional() @Inject(DOCUMENT) private _document: any,
+              _changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
     this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._color);
   }
 
@@ -373,9 +354,9 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
 
   ngDoCheck(): void {
     // Throw onChange event only if array changes size.
-    if (this._value && this._value.length !== this._length) {
-      this._length = this._value.length;
-      this.onChange(this._value);
+    if (this.value && this.value.length !== this._length) {
+      this._length = this.value.length;
+      this.onChange(this.value);
     }
   }
 
@@ -448,13 +429,13 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
 
     this.inputControl.setValue('');
     // check if value is already part of the model
-    if (this._value.indexOf(value) > -1) {
+    if (this.value.indexOf(value) > -1) {
       return false;
     }
 
-    this._value.push(value);
+    this.value.push(value);
     this.onAdd.emit(value);
-    this.onChange(this._value);
+    this.onChange(this.value);
     this._changeDetectorRef.markForCheck();
     return true;
   }
@@ -464,7 +445,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * returns 'true' if successful, 'false' if it fails.
    */
   removeChip(index: number): boolean {
-    let removedValues: any[] = this._value.splice(index, 1);
+    let removedValues: any[] = this.value.splice(index, 1);
     if (removedValues.length === 0) {
       return false;
     }
@@ -482,7 +463,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     }
 
     this.onRemove.emit(removedValues[0]);
-    this.onChange(this._value);
+    this.onChange(this.value);
     this.inputControl.setValue('');
     this._changeDetectorRef.markForCheck();
     return true;
@@ -666,24 +647,6 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
       this._changeDetectorRef.markForCheck();
     }
   }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  writeValue(value: any): void {
-    this.value = value;
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  onChange = (_: any) => noop;
-  onTouched = () => noop;
 
   /**
    * Get total of chips
