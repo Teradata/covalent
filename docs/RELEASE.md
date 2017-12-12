@@ -44,7 +44,7 @@ Execute `npm run publish:npm` from develop branch to start the automatic publish
 #### Post Release Checklist
 
 1. Deploy to ghpages using `npm run ghpages:deploy`
-2. Update release `plnkr` (and nightly release `plnkr` if needed)
+2. Update release `plnkr` and `stackblitz` if needed
 3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
 4. Update UPGRADE.md as necessary.
 5. Throw party~
