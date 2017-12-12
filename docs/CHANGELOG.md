@@ -3,23 +3,44 @@
 
 #### Highlights
 
-- `@angular/material@5.0.0` upgrade
-- Use material secondary entry points to load only whats needed.
-- New logo approaching stable release
-- Moving to the @angular/material typography and deprecating the covalent one
-- Bugfixes and improvements
+> - `@angular/material@5.0.0` upgrade
+> - Use material **secondary entry points** to load only required material modules
+> - New logo to celebrate the march to 1.0 Stable
+> - Moving to the @angular/material typography and deprecating Covalent typography
+> - Bugfixes and improvements
 
 ## Breaking Changes
 
 ### Typography
 
-The current covalent typography will be deprecated in favor of the angular/material typography. Click [here](https://material.angular.io/guide/typography) for more information.
+Covalent typography will be deprecated in favor of the angular/material typography. Click [here](https://material.angular.io/guide/typography) for more information.
 
 #### Migration steps
 
-Just replace `md-` with `mat-` in the typography classes with the exception of:
+1. Replace `md-` with `mat-` in the typography classes with the exception of `md-subhead`
+2. Replace `md-subhead` with `mat-subheading-1`
+3. Import the Roboto font in index.html `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">`
+4. Customized the typography for proper font weights by replacing
+```
+@include mat-core();
+```
+with
+```
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400)
+);
+$custom-toolbar-typography: mat-typography-config(
+  $title: mat-typography-level(20px, 32px, 400)
+);
 
-`md-subhead` gets replaced with `mat-subheading-1`
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+```
 
 
 ## Bug Fixes
