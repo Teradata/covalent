@@ -30,7 +30,7 @@ export class DesignPatternsComponent {
     title: 'Navigation Drawer Patterns',
   }, {
     description: 'Feedback for empty elements',
-    icon: 'filter_none',
+    icon: 'space_bar',
     route: 'empty-states',
     title: 'Empty State Patterns',
   }];
