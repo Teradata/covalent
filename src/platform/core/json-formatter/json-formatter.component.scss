@@ -22,6 +22,9 @@
     }
   }
   .td-object-children {
+    &.ng-animating {
+      overflow: hidden;
+    }
     & .td-key,
     & .td-object-children {
       padding-left: 24px;

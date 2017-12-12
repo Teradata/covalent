@@ -2,13 +2,13 @@
   <mat-card-title>Icons</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="md-title">Ligature Material Icons</h3>
-    <p class="md-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
-    <p class="md-body-1">
+    <h3 class="mat-title">Ligature Material Icons</h3>
+    <p class="mat-body-1">The UI Platform ships with 750+ icons as Font (Ligature) icons.</p>
+    <p class="mat-body-1">
       Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
     </p>
     <p>This entire library of icons is licensed under Creative Common Attribution 4.0 International License (CC-BY 4.0) and can be used within Teradata products with no attribution (the icon library just can't be sold standalone).</p>
-    <h3 class="md-title">Usage</h3>
+    <h3 class="mat-title">Usage</h3>
     <p>Using font icon within the Teradata UI Plaform is extremely simple:</p>
     <td-highlight lang="html">
       <![CDATA[
@@ -47,7 +47,7 @@
         <div layout-gt-sm="row" layout-wrap>
           <div flex-gt-sm="20" *ngFor="let color of colors">
             <mat-card>
-              <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
               <div class="bgc-{{color}}-50">
                 <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
                 <mat-icon><span class="tc-{{color}}-100">palette</span></mat-icon>
@@ -74,7 +74,7 @@
           </div>
           <div flex-gt-sm="20" *ngFor="let color of neutrals">
             <mat-card>
-              <div class="md-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
               <div class="bgc-{{color}}-50">
                 <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
                 <mat-icon><span class="tc-{{color}}-100">palette</span></mat-icon>
@@ -110,7 +110,7 @@
         <div layout-gt-sm="row" layout-wrap>
           <div flex-gt-sm="20" *ngFor="let color of colors">
             <mat-card>
-              <div class="md-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
               <div class="bgc-{{color}}-100">
                 <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
                 <mat-icon><span class="tc-dark-{{color}}-B100">palette</span></mat-icon>
@@ -123,7 +123,7 @@
           </div>
           <div flex-gt-sm="20" *ngFor="let color of neutrals">
             <mat-card>
-              <div class="md-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
               <div class="bgc-{{color}}-100">
                 <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
                 <mat-icon><span class="tc-dark-{{color}}-B100">palette</span></mat-icon>
@@ -141,8 +141,8 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-    <h3 class="md-title">Search Icons</h3>
-    <h4 class="md-subhead">Current icons bundled with Icon Service</h4>
+    <h3 class="mat-title">Search Icons</h3>
+    <h4 class="mat-subheading-2">Current icons bundled with Icon Service</h4>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
@@ -154,7 +154,7 @@
           <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
             <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
                 <mat-icon>{{icon}}</mat-icon>
-                <p class="md-caption">{{icon}}</p>
+                <p class="mat-caption">{{icon}}</p>
             </div>
           </div>
         </mat-card-content>
@@ -172,7 +172,7 @@
               <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
                 <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
                     <mat-icon>{ {icon} }</mat-icon>
-                    <p class="md-caption">{ {icon} }</p>
+                    <p class="mat-caption">{ {icon} }</p>
                 </div>
               </div>
             </mat-card-content>

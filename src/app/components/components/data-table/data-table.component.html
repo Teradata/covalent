@@ -3,8 +3,8 @@
   <mat-card-subtitle>Display sets of raw data</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="md-title">Custom Data Table</h3>
-    <h4 class="md-subhead">with custom headings, columns, and inline editing</h4>
+    <h3 class="mat-title">Custom Data Table</h3>
+    <h4 class="mat-subheading-2">with custom headings, columns, and inline editing</h4>
     <mat-divider></mat-divider>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
@@ -120,8 +120,8 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-    <h3 class="md-title">Basic Data Table</h3>
-    <h4 class="md-subhead">with formatting, configurable width columns and templates</h4>
+    <h3 class="mat-title">Basic Data Table</h3>
+    <h4 class="mat-subheading-2">with formatting, configurable width columns and templates</h4>
     <mat-divider></mat-divider>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
@@ -178,16 +178,16 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-    <h3 class="md-title">Data Table with components</h3>
-    <h4 class="md-subhead">Paging Bar / Search Box / Sortable components</h4>
+    <h3 class="mat-title">Data Table with components</h3>
+    <h4 class="mat-subheading-2">Paging Bar / Search Box / Sortable components</h4>
     <mat-divider></mat-divider>
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
           <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-            <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
-            <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+            <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="mat-title">Title here</span>
+            <span *ngIf="selectedRows.length && selectable" class="mat-body-1">{{selectedRows.length}} item(s) selected</span>
           </span>
           <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
           </td-search-box>
@@ -231,11 +231,11 @@
           <![CDATA[
             <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                <span class="md-title">Title here</span>
+                <span class="mat-title">Title here</span>
               </span>
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title">Title here</span>
-                <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+                <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="mat-title">Title here</span>
+                <span *ngIf="selectedRows.length && selectable" class="mat-body-1">{{selectedRows.length}} item(s) selected</span>
               </span>
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
               </td-search-box>

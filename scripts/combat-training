@@ -9,7 +9,7 @@ cd $(git rev-parse --show-toplevel)
 # This is so we can interact with the latest changes we made locally to any Covalent components and see if any
 # new changes made are not compatiable with server side rendering.
 rm -rf ./node_modules/@covalent/core
-npm run build
+npm run build:release
 cp -r ./deploy/platform/core ./node_modules/@covalent/core
 
 # Compile the combat-training app to generate the ngfactories which are used for rendering our components on the

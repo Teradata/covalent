@@ -6,7 +6,7 @@
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
-        <h3 class="md-title">Single file selection or drop:</h3>
+        <h3 class="mat-title">Single file selection or drop:</h3>
         <p>Select Event: {{fileSelectMsg}}</p>
         <p>Upload Event: {{fileUploadMsg}}</p>
         <td-file-upload #singleFileUpload [(ngModel)]="files" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" [disabled]="disabled" required>
@@ -83,7 +83,7 @@
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
       <mat-card-content>
-        <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
+        <h3 class="mat-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
         <p>Select Event: {{fileSelectMultipleMsg}}</p>
         <p>Upload Event: {{fileUploadMultipleMsg}}</p>
         <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"

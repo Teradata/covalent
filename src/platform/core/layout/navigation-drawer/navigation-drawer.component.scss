@@ -1,5 +1,11 @@
 :host {
   width: 100%;
+  .td-navigation-drawer-content,
+  .td-navigation-drawer-menu-content {
+    &.ng-animating {
+      overflow: hidden;
+    }
+  }
   mat-toolbar {
     padding: 16px;
     &.td-toolbar-background {
