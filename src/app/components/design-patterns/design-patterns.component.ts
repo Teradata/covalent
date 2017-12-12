@@ -35,8 +35,8 @@ export class DesignPatternsComponent {
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
   }, {
-    description: 'Description',
-    icon: 'filter_none',
+    description: 'Wizard-like pattern',
+    icon: 'looks_one',
     route: 'steppers',
     title: 'Stepper Patterns',
   }];
