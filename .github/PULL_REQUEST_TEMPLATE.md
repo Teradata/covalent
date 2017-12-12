@@ -18,6 +18,6 @@
 - [ ] `npm run serve:prod` still works.
 - [ ] `npm run lint` passes.
 - [ ] `npm test` passes and code coverage is not lower.
-- [ ] `npm run build` still works.
+- [ ] `npm run build:release` still works.
 
 ##### Screenshots or link to StackBlitz/Plunker
