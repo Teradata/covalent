@@ -18,6 +18,6 @@ export class EmptyStatesComponent {
   source: any = '';
 
   constructor(private sanitizer: DomSanitizer) {
-    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://empty-states.stackblitz.io/');
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://empty-state-patterns.stackblitz.io/');
   }
 }
