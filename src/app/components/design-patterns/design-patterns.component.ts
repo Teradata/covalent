@@ -29,7 +29,7 @@ export class DesignPatternsComponent {
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
   }, {
-    description: 'Description',
+    description: 'Feedback for empty elements',
     icon: 'filter_none',
     route: 'empty-states',
     title: 'Empty State Patterns',
