@@ -15,7 +15,7 @@ please provide steps to reproduce and if possible screenhots, animated Gifs and/
 you can easily create animated Gif with this free PC/OSX App: http://www.cockos.com/licecap/ and a StackBlitz or Plunker to help us reproduce it
 -->
 StackBlitz template: https://stackblitz.com/edit/covalent
-Plunker template: http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd
+Plunker template: http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn
 
 ##### Screenshots or link to CodePen/Plunker/JSfiddle
 

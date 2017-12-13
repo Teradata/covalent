@@ -14,14 +14,14 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 6.11.1 or up and NPM 3+ installed.
-* Install Angular CLI `npm i -g @angular/cli@latest`
+* Ensure you have Node 6.12.0 or up and NPM 3+ installed.
+* Install Angular CLI `npm i -g @angular/cli`
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm install -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
 * Install Node packages `npm i`
 * Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
-* Run local build `ng serve` or `ng serve --aot`
+* Run local build `npm run serve` or `npm run serve:prod`
 * If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 ---
 
@@ -33,8 +33,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * [Changelog](docs/CHANGELOG.md)
 * [Quickstart](docs/QUICKSTART.md)
 * [StackBlitz Template](https://stackblitz.com/edit/covalent)
-* [Plunker Template](http://plnkr.co/edit/7uZQn4mLNJkL6XN9WSNd)
-* [Nightly Build Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
+* [Plunker Template](http://plnkr.co/edit/XhSrUWBw2RhCkXPoE4fn)
 * [Covalent Electron](https://github.com/Teradata/covalent-electron)
 * [Covalent Mock Data Server](https://github.com/Teradata/covalent-data)
 
