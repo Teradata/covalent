@@ -148,16 +148,6 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   }
 
   /**
-   * @deprecated 1.0.0@beta.6
-   * readOnly?: boolean
-   * Disables the chips input and chip removal icon.
-   */
-  @Input('readOnly')
-  set readOnly(readOnly: boolean) {
-    this.disabled = readOnly;
-  }
-
-  /**
    * chipAddition?: boolean
    * Disables the ability to add chips. When setting disabled as true, this will be overriden.
    * Defaults to true.
