@@ -48,13 +48,6 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements Con
   private _multiple: boolean = false;
   private _required: boolean = false;
 
-  /**
-   * @deprecated use value property instead
-   */
-  get files(): FileList | File {
-    return this.value;
-  }
-
   @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
 
   @ContentChild(TdFileInputLabelDirective) inputLabel: TdFileInputLabelDirective;
