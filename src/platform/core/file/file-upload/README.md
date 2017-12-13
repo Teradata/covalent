@@ -9,7 +9,7 @@ Example for usage:
 ```html
 <td-file-upload #fileUpload [(ngModel)]="files" defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
+  <mat-icon>file_upload</mat-icon><span>{{ files?.name }}</span>
   <ng-template td-file-input-label>
     <mat-icon>attach_file</mat-icon>
     <span>
