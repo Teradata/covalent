@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
+import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
@@ -11,6 +11,7 @@ import { skip } from 'rxjs/operators/skip';
   selector: 'td-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('searchState', [
       state('hide-left', style({
@@ -92,7 +93,8 @@ export class TdSearchInputComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {
+  constructor(@Optional() private _dir: Dir,
+              private _changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -126,6 +128,7 @@ export class TdSearchInputComponent implements OnInit {
 
   clearSearch(): void {
     this.value = '';
+    this._changeDetectorRef.markForCheck();
     this.onClear.emit(undefined);
   }
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
@@ -7,6 +7,7 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
   selector: 'td-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('inputState', [
       state('0', style({
@@ -29,6 +30,7 @@ export class TdSearchBoxComponent {
 
   set value(value: any) {
     this._searchInput.value = value;
+    this._changeDetectorRef.markForCheck();
   }
   get value(): any {
     return this._searchInput.value;
@@ -101,6 +103,8 @@ export class TdSearchBoxComponent {
    */
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
   /**
    * Method executed when the search icon is clicked.
    */
@@ -113,6 +117,7 @@ export class TdSearchBoxComponent {
 
   toggleVisibility(): void {
     this._searchVisible = !this._searchVisible;
+    this._changeDetectorRef.markForCheck();
   }
 
   handleSearchDebounce(value: string): void {
