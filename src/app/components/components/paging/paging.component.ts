@@ -1,4 +1,4 @@
-import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
+import { Component, HostBinding, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { TdMediaService } from '../../../../platform/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
@@ -6,6 +6,7 @@ import { slideInDownAnimation } from '../../../app.animations';
 import { IPageChangeEvent } from '../../../../platform/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'paging-demo',
   styleUrls: ['./paging.component.scss'],
   templateUrl: './paging.component.html',
