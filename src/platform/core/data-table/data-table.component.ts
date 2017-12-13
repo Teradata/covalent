@@ -18,15 +18,7 @@ import { TdDataTableRowComponent } from './data-table-row/data-table-row.compone
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-const noop: any = () => {
-  // empty method
-};
-
-export const TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdDataTableComponent),
-  multi: true,
-};
+import { IControlValueAccessor, mixinControlValueAccessor } from '../common/common.module';
 
 export enum TdDataTableSortingOrder {
   Ascending = <any>'ASC',
@@ -85,14 +77,27 @@ const TD_VIRTUAL_OFFSET: number = 2;
  */
 const TD_VIRTUAL_DEFAULT_ROW_HEIGHT: number = 48;
 
+export class TdDataTableBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
+
+/* tslint:disable-next-line */
+export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, []);
+
 @Component({
-  providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdDataTableComponent),
+    multi: true,
+  }],
   selector: 'td-data-table',
   styleUrls: ['./data-table.component.scss' ],
   templateUrl: './data-table.component.html',
+  inputs: ['value'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent implements ControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+export class TdDataTableComponent extends _TdDataTableMixinBase implements IControlValueAccessor, OnInit,
+                                          AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
 
   /** responsive width calculations */
   private _resizeSubs: Subscription;
@@ -163,13 +168,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     return this._toRow;
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  private _value: any[] = [];
-  /** Callback registered via registerOnChange (ControlValueAccessor) */
-  private _onChangeCallback: (_: any) => void = noop;
-
+  private _valueChangesSubs: Subscription;
   /** internal attributes */
   private _data: any[];
   // data virtually iterated by component
@@ -223,18 +222,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   get indeterminate(): boolean {
     return this._indeterminate;
   }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  @Input() set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
-      this._onChangeCallback(v);
-      this.refresh();
-    }
-  }
-  get value(): any { return this._value; }
 
   /**
    * data?: {[key: string]: any}[]
@@ -415,7 +402,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   constructor(@Optional() @Inject(DOCUMENT) private _document: any,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer,
-              private _changeDetectorRef: ChangeDetectorRef) {}
+              _changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
+  }
 
   /**
    * compareWith?: function(row, model): boolean
@@ -452,6 +441,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._scrollVerticalOffset = verticalScroll;
       this._calculateVirtualRows();
       this._changeDetectorRef.markForCheck();
+    });
+    this._valueChangesSubs = this.valueChanges.subscribe((value: any) => {
+      this.refresh();
     });
   }
 
@@ -519,6 +511,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     if (this._rowsChangedSubs) {
       this._rowsChangedSubs.unsubscribe();
     }
+    if (this._valueChangesSubs) {
+      this._valueChangesSubs.unsubscribe();
+    }
   }
 
   /**
@@ -567,7 +562,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * Clears model (ngModel) of component by removing all values in array.
    */
   clearModel(): void {
-    this._value.splice(0, this._value.length);
+    this.value.splice(0, this.value.length);
   }
 
   /**
@@ -589,7 +584,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._data.forEach((row: any) => {
         // skiping already selected rows
         if (!this.isRowSelected(row)) {
-          this._value.push(row);
+          this.value.push(row);
           // checking which ones are being toggled
           toggledRows.push(row);
         }
@@ -601,12 +596,12 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         // checking which ones are being toggled
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
-          let modelRow: any = this._value.filter((val: any) => {
+          let modelRow: any = this.value.filter((val: any) => {
             return this.compareWith(row, val);
           })[0];
-          let index: number = this._value.indexOf(modelRow);
+          let index: number = this.value.indexOf(modelRow);
           if (index > -1) {
-            this._value.splice(index, 1);
+            this.value.splice(index, 1);
           }
         }
       });
@@ -621,7 +616,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   isRowSelected(row: any): boolean {
     // compare items by [compareWith] function
-    return this._value ? this._value.filter((val: any) => {
+    return this.value ? this.value.filter((val: any) => {
       return this.compareWith(row, val);
     }).length > 0 : false;
   }
@@ -792,24 +787,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     event.preventDefault();
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  writeValue(value: any): void {
-    this.value = value;
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  onChange = (_: any) => noop;
-  onTouched = () => noop;
-
   private _getNestedValue(name: string, value: any): string {
     if (!(value instanceof Object) || !name) {
       return value;
@@ -831,20 +808,20 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       if (!this._multiple) {
         this.clearModel();
       }
-      this._value.push(row);
+      this.value.push(row);
     } else {
       // compare items by [compareWith] function
-      row = this._value.filter((val: any) => {
+      row = this.value.filter((val: any) => {
         return this.compareWith(row, val);
       })[0];
-      let index: number = this._value.indexOf(row);
+      let index: number = this.value.indexOf(row);
       if (index > -1) {
-        this._value.splice(index, 1);
+        this.value.splice(index, 1);
       }
     }
     this._calculateCheckboxState();
     this.onRowSelect.emit({row: row, index: rowIndex, selected: !wasSelected});
-    this.onChange(this._value);
+    this.onChange(this.value);
     return !wasSelected;
   }
 
