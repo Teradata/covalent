@@ -1,6 +1,6 @@
 // Applies Shadow DOM styles to the root app component
 
-// :host /deep/ lets you travel down the Shadow DOM tree to change web component styles
-:host /deep/ {
+// :host ::ng-deep lets you travel down the Shadow DOM tree to change web component styles
+:host ::ng-deep {
 
 }

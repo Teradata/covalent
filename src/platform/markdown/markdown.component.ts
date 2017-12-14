@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-declare var showdown: any;
+/* tslint:disable-next-line */
+let showdown: any = require('showdown/dist/showdown.js');
 
 @Component({
   selector: 'td-markdown',

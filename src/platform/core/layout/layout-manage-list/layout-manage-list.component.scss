@@ -1,4 +1,4 @@
-@import '../../common/styles/whiteframe';
+@import '../../common/styles/core/whiteframe';
 
 :host {
   display: flex;
@@ -8,11 +8,8 @@
   height: 100%;
   overflow: hidden;
   mat-sidenav-container.td-layout-manage-list {
-    // [md-content]
-    display: block;
-    position: relative;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    // [flex]
+    flex: 1;
     & > mat-sidenav {
       &.mat-drawer-opened,
       &.mat-drawer-opening,
@@ -54,13 +51,14 @@
     }
   }
 }
-:host /deep/ {
+:host ::ng-deep {
   mat-sidenav-container.td-layout-manage-list {
     & > .mat-drawer-content {
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
     & > mat-sidenav {
+      box-shadow: $whiteframe-shadow-1dp;
       box-sizing: border-box;
       display: -webkit-box;
       display: -webkit-flex;

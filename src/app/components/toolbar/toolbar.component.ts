@@ -16,13 +16,7 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [{
-      description: 'Bugfixes, enhancements and demo improvements',
-      icon: 'grid_on',
-      route: '/components/data-table',
-      title: 'Data table updates',
-    },
-  ];
+  updates: Object[] = [];
 
   dir: 'ltr' | 'rtl' = getDirection();
 

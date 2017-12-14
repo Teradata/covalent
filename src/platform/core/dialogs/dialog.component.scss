@@ -11,7 +11,7 @@
   position: relative;
   top: 16px;
   left: 16px;
-  /deep/ [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & { 
     right: 16px;
     left: auto;
   }
@@ -28,7 +28,7 @@
       // flex
       flex: 1;
     }
-    /deep/ button {
+    ::ng-deep button {
       text-transform: uppercase;
       margin-left: 8px;
       [dir='rtl'] & { 

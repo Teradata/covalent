@@ -333,16 +333,7 @@
               eventResponsive: IPageChangeEvent;
               pageSizeResponsive: number = 100;
 
-              constructor(private _changeDetectorRef: ChangeDetectorRef,
-                          public media: TdMediaService) {}
-
-              ngAfterViewInit(): void {
-                // broadcast to all listener observables when loading the page
-                setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
-                  this.media.broadcast();
-                  this._changeDetectorRef.detectChanges();
-                });
-              }
+              constructor(public media: TdMediaService) {}
 
               changeResponsive(event: IPageChangeEvent): void {
                 this.eventResponsive = event;

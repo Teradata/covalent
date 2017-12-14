@@ -2,9 +2,23 @@
   display: block;
 }
 .td-search-box {
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="row"]
+  flex-direction: row;
+  // [layout-align="end center"]
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  justify-content: flex-end;
+  .td-search-icon {
+    // [flex="none"]
+    flex: 0 0 auto;
+  }
   td-search-input {
     margin-left: 12px;
-    /deep/ [dir='rtl'] & { 
+    ::ng-deep [dir='rtl'] & { 
       margin-right: 12px;
       margin-left: 0px !important;
     }

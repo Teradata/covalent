@@ -1,8 +1,7 @@
 <form [formGroup]="dynamicForm" novalidate>
   <div class="td-dynamic-form-wrapper">
     <ng-template let-element ngFor [ngForOf]="elements">
-      <div class="pad-xs td-dynamic-element-wrapper"
-          [style.position]="'relative'"
+      <div class="td-dynamic-element-wrapper"
           [style.max-width.%]="element.flex ? element.flex : 100"
           [style.flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
           [style.-ms-flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
@@ -22,7 +21,8 @@
           [maxLength]="element.maxLength"
           [selections]="element.selections">
         </td-dynamic-element>
-        <div class="tc-red-600 md-caption text-sm"
+        <div class="tc-red-600"
+             [style.font-size.%]="'70'"
              [style.position]="'absolute'"
              [style.bottom.px]="'10'"
               *ngIf="getErrorTemplateRef(element.name) && dynamicForm.controls[element.name]?.errors">

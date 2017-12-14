@@ -2,13 +2,13 @@
   <mat-card-title>Minimum Demo</mat-card-title>
   <mat-card-subtitle>Minimum code for this layout with no wrapper</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'200px'">
+  <div [style.height]="'200px'" class="relative">
     <td-layout>
       <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/">
         Content goes here
       </td-layout-nav>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -24,7 +24,7 @@
   <mat-card-title>Basic Demo</mat-card-title>
   <mat-card-subtitle>Basic layout wrapper &amp; nav drawer</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -43,7 +43,7 @@
         Content goes here
       </td-layout-nav>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -74,7 +74,7 @@
   <mat-card-title>Full Demo</mat-card-title>
   <mat-card-subtitle>Full working code with all options and templates</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content [style.height]="'400px'">
+  <div [style.height]="'400px'" class="relative">
     <td-layout>
       <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
         <mat-nav-list>
@@ -161,12 +161,12 @@
         </div>
         <td-layout-footer>
           <div layout="row" layout-align="start center">
-            <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+            <span class="mat-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
           </div>
         </td-layout-footer>
       </td-layout-nav>
     </td-layout>
-  </mat-card-content>
+  </div>
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-highlight lang="html">
@@ -244,14 +244,14 @@
           </div>
           <td-layout-footer>
             <div layout="row" layout-align="start center">
-              <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+              <span class="mat-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
             </div>
           </td-layout-footer>
         </td-layout-nav>
       </td-layout>
       ]]>
     </td-highlight>
-    <h3 class="md-title">TypeScript:</h3>
+    <h3 class="mat-title">TypeScript:</h3>
     <td-highlight lang="typescript">
       <![CDATA[
         import { Component, ChangeDetectionStrategy } from '@angular/core';

@@ -42,7 +42,7 @@
   <mat-card-title>Rotate Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
@@ -145,12 +145,12 @@
   <mat-card-title>Collapse Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
-      <div [@tdCollapse]="collapseState1">
+      <div [style.overflow]="'hidden'" [@tdCollapse]="collapseState1">
         <mat-card>
           <mat-card-title>Collapse card</mat-card-title>
           <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -176,7 +176,7 @@
       <td-highlight lang="html">
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
-          <div [@tdCollapse]="triggerState">
+          <div [style.overflow]="'hidden'" [@tdCollapse]="triggerState">
             <mat-card>
               <mat-card-title>Collapse card</mat-card-title>
               <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -225,7 +225,7 @@
   <mat-card-title>Fade in/out Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="md-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>TdFadeInOutAnimation</code> to fade in/out any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 

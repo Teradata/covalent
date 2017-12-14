@@ -17,7 +17,6 @@ export class TdMessageContainerDirective {
   styleUrls: ['./message.component.scss'],
   animations: [
     TdCollapseAnimation({ duration: 100 }),
-    TdFadeInOutAnimation({ duration: 100 }),
   ],
 })
 export class TdMessageComponent implements AfterViewInit {
@@ -30,14 +29,6 @@ export class TdMessageComponent implements AfterViewInit {
 
   @ViewChild(TdMessageContainerDirective) _childElement: TdMessageContainerDirective;
   @ViewChild(TemplateRef) _template: TemplateRef<any>;
-
-  /**
-   * Binding host to tdFadeInOut animation
-   */
-  @HostBinding('@tdFadeInOut')
-  get fadeAnimation(): boolean {
-    return this._opened;
-  }
 
   /**
    * Binding host to tdCollapse animation

@@ -5,7 +5,7 @@ import { slideInDownAnimation } from '../../../app.animations';
 import { TdDialogService } from '../../../../platform/core';
 import { TdCollapseAnimation } from '@covalent/core';
 
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'design-patterns-alerts',

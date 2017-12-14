@@ -30,6 +30,13 @@
       true,
       "always-prefix"
     ],
+    "import-blacklist": [
+      true,
+      "rxjs",
+      "rxjs/operators",
+      "@angular/cdk",
+      "@angular/material"
+    ],
     "jsdoc-format": true,
     "label-position": true,
     "max-line-length": [true, 150],

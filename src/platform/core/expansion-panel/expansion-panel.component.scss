@@ -22,10 +22,17 @@
       align-items: center;
       align-content: center;
       max-width: 100%;
-      .td-expansion-label {
+      .td-expansion-label,
+      .td-expansion-panel-spacer {
         // flex
         flex: 1;
       }
+    }
+  }
+  .td-expansion-content,
+  .td-expansion-summary {
+    &.ng-animating {
+      overflow: hidden;
     }
   }
 }
@@ -36,7 +43,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 5px;
-  /deep/ [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & { 
     margin-left: 5px;
     margin-right: inherit;
   }

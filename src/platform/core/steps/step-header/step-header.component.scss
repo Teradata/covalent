@@ -61,13 +61,13 @@ $step-circle: 24px;
   .td-circle,
   .td-triangle,
   .td-complete {
-    /deep/ :not([dir='rtl']) & {
+    ::ng-deep :not([dir='rtl']) & {
       margin: {
         left: 8px;
         right: 0px;
       }
     }
-    /deep/ [dir='rtl'] & {
+    ::ng-deep [dir='rtl'] & {
       margin: {
         left: 0px;
         right: 8px;
@@ -81,10 +81,6 @@ $step-circle: 24px;
   .td-step-label-wrapper {
     padding-left: 8px;
     padding-right: 8px;
-  }
-  .td-step-sublabel {
-    line-height: 14px;
-    font-weight: normal;
   }
   .td-step-header-separator {
     flex: 1;

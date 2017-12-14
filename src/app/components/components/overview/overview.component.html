@@ -3,22 +3,18 @@
   <mat-card-subtitle>Core Covalent Components, Directives, Pipes &amp; Services</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-     <div layout-gt-xs="row" layout-wrap>
-       <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-          <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
-              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
-              </mat-toolbar>
-              <mat-card-content>
-                <div layout="column" layout-padding>
-                  <div class="md-subhead">{{item.title}}</div>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </ng-template>
-     </div>
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+      <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+        <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
+        <mat-grid-tile-footer>
+          <h3 mat-line>{{item.title}}</h3>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -26,22 +22,18 @@
   <mat-card-subtitle>Extra components &amp; services not required</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-     <div layout-gt-xs="row" layout-wrap>
-       <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
-          <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
-              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
-              </mat-toolbar>
-              <mat-card-content>
-                <div layout="column" layout-padding>
-                  <div class="md-subhead">{{item.title}}</div>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </ng-template>
-     </div>
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
+        <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+          <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
+          <mat-grid-tile-footer>
+            <h3 mat-line>{{item.title}}</h3>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -49,35 +41,26 @@
   <mat-card-subtitle>Recommended but not maintained by Covalent</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-     <div layout-gt-xs="row" layout-wrap>
-        <div flex-sm="50" flex-md="50" flex-gt-md="25">
-          <a href="https://material.angular.io/components" target="_blank" class="text-nodecoration tc-inherit">
-            <mat-card href class="mat-card-colored" flex>
-              <mat-toolbar class="bgc-cyan-500" layout="column" layout-align="center center" layout-padding>
-                <mat-icon class="mat-icon-font-xl tc-white">layers</mat-icon>
-              </mat-toolbar>
-              <mat-card-content>
-                <div layout="column" layout-padding>
-                  <div class="md-subhead">Angular Material <mat-icon class="text-md tc-grey-600" title="External docs">launch</mat-icon></div>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </a>
-        </div>
-       <ng-template let-item let-last="last" ngFor [ngForOf]="external">
-          <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <mat-card href [routerLink]="[item.route]" class="mat-card-colored" flex>
-              <mat-toolbar class="bgc-{{item.color}} " layout="column" layout-align="center center" layout-padding>
-                <mat-icon class="mat-icon-font-xl tc-white">{{item.icon}}</mat-icon>
-              </mat-toolbar>
-              <mat-card-content>
-                <div layout="column" layout-padding>
-                  <div class="md-subhead">{{item.title}}</div>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </ng-template>
-     </div>
+    <mat-grid-list [cols]="(media.registerQuery('gt-md') | async) ? 4 : ((media.registerQuery('gt-xs') | async) ? 3 : 2)"
+                    rowHeight="150px"
+                    gutterSize="10px">
+      <a href="https://material.angular.io/components" target="_blank">
+        <mat-grid-tile matRipple ngClass="bgc-cyan-500" class="cursor-pointer">
+          <mat-icon class="icon-component tc-white">layers</mat-icon>
+          <mat-grid-tile-footer>
+            <h3 mat-line>Angular Material</h3>
+            <mat-icon>launch</mat-icon>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </a>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="external">
+        <mat-grid-tile matRipple ngClass="bgc-{{item.color}}" class="cursor-pointer" [routerLink]="[item.route]">
+          <mat-icon class="icon-component tc-white">{{item.icon}}</mat-icon>
+          <mat-grid-tile-footer>
+            <h3 mat-line>{{item.title}}</h3>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>

@@ -1,7 +1,7 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,7 +13,7 @@ import { getDirection } from './utilities/direction';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class DocsAppComponent implements AfterViewInit {
+export class DocsAppComponent {
 
   routes: Object[] = [{
       icon: 'library_books',
@@ -92,14 +92,6 @@ export class DocsAppComponent implements AfterViewInit {
   }
   theme(theme: string): void {
     localStorage.setItem('theme', theme);
-  }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    setTimeout(() => { // workaround since MatSidenav has issues redrawing at the beggining
-      this.media.broadcast();
-      this._changeDetectorRef.detectChanges();
-    });
   }
 
 }

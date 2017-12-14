@@ -1,29 +1,30 @@
 import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
-import { MatDrawerToggleResult, MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 
-import { Observable } from 'rxjs/Observable';
+import { ICanDisable, mixinDisabled } from '../common/common.module';
+
 import { Subscription } from 'rxjs/Subscription';
-import { merge } from 'rxjs/observable/merge';
 
 export interface ILayoutTogglable {
+  opened: boolean;
   sidenav: MatSidenav;
-  toggle(): Promise<MatDrawerToggleResult>;
-  open(): Promise<MatDrawerToggleResult>;
-  close(): Promise<MatDrawerToggleResult>;
+  toggle(): Promise<void>;
+  open(): Promise<void>;
+  close(): Promise<void>;
 }
 
-export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
+export class LayoutToggleBase { }
+
+/* tslint:disable-next-line */
+export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
+
+export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements AfterViewInit, OnDestroy, ICanDisable {
 
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;
-  private _disabled: boolean = false;
   private _hideWhenOpened: boolean = false;
-
-  set disabled(disabled: boolean) {
-    this._disabled = disabled;
-  }
 
   /**
    * hideWhenOpened?: boolean
@@ -41,6 +42,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
   constructor(protected _layout: ILayoutTogglable,
               private _renderer: Renderer2,
               private _elementRef: ElementRef) {
+    super();
     this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-menu-button');
   }
 
@@ -67,7 +69,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
     event.preventDefault();
-    if (!this._disabled) {
+    if (!this.disabled) {
       this.onClick();
     }
   }
