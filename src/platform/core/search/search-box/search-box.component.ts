@@ -1,13 +1,28 @@
-import { Component, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
+import { IControlValueAccessor, mixinControlValueAccessor } from '../../common/common.module';
+
+export class TdSearchBoxBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) { }
+}
+
+/* tslint:disable-next-line */
+export const _TdSearchBoxMixinBase = mixinControlValueAccessor(TdSearchBoxBase);
 
 @Component({
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdSearchBoxComponent),
+    multi: true,
+  }],
   selector: 'td-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: ['value'],
   animations: [
     trigger('inputState', [
       state('0', style({
@@ -23,18 +38,10 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
     ]),
   ],
 })
-export class TdSearchBoxComponent {
+export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements IControlValueAccessor {
 
   private _searchVisible: boolean = false;
   @ViewChild(TdSearchInputComponent) _searchInput: TdSearchInputComponent;
-
-  set value(value: any) {
-    this._searchInput.value = value;
-    this._changeDetectorRef.markForCheck();
-  }
-  get value(): any {
-    return this._searchInput.value;
-  }
 
   get searchVisible(): boolean {
     return this._searchVisible;
@@ -103,7 +110,9 @@ export class TdSearchBoxComponent {
    */
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(_changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
+  }
 
   /**
    * Method executed when the search icon is clicked.
