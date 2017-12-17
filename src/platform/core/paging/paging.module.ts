@@ -7,8 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { TdPagingBarComponent } from './paging-bar.component';
 
-export { TdPagingBarComponent, IPageChangeEvent } from './paging-bar.component';
-
 @NgModule({
   imports: [
     CommonModule,

@@ -42,7 +42,7 @@ export class TdMessageComponent implements AfterViewInit {
    * Binding host to display style when hidden
    */
   @HostBinding('style.display')
-  get hidden(): string {
+  get hidden(): string | undefined {
     return this._hidden ? 'none' : undefined;
   }
 

@@ -27,7 +27,7 @@ export function mixinDisableRipple<T extends Constructor<{}>>(base: T): Construc
       }
     }
 
-    onDisableRippleChange(v: boolean): void {
+    onDisableRippleChange(_v: boolean): void {
       /** NOT IMPLEMENTED, this needs to be overriden by subclasses if needed */
     }
   };

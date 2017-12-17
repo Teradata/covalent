@@ -5,7 +5,13 @@ module.exports = {
     packagejson: [
       'src/**/**/package.json'
     ],
-    deployed: 'deploy/platform/',
+    deployed: 'dist/packages',
+    deployedCore: 'dist/packages/core',
+    /**
+     * Enter blob for ssr metadata here per @covalent/* distributed project and
+     * consume it in the gulp replace-scss-css task.
+     */
+    distCoreNgcGeneratedMetadataForSSR: 'dist/packages/core/**/index.metadata.json',
     styles: [
       '!src/theme.scss',
       '!src/styles.scss',
@@ -14,6 +20,10 @@ module.exports = {
       'src/**/**.css',
       '!src/app/**/**.css',
       '!src/**/universal-app/**/*',
+      '!src/platform/dynamic-forms/**/*',
+      '!src/platform/highlight/**/*',
+      '!src/platform/http/**/*',
+      '!src/platform/markdown/**/*',
     ],
     requiredfiles: [
       'src/**/codepoints',
@@ -30,6 +40,7 @@ module.exports = {
       'src/**/**.md',
       'src/**/**.js',
       'src/**/**.ts',
+      'src/**/tsconfig-build.json',
       '!src/**/**.spec.ts',
       'src/**/**/package.json',
       'src/**/tsconfig-aot.json',
@@ -44,6 +55,11 @@ module.exports = {
       'src/typings.d.ts',
       '!src/index.html',
       '!src/**/universal-app/**/*',
+      // temporary to test only core
+      '!src/platform/dynamic-forms/**/*',
+      '!src/platform/highlight/**/*',
+      '!src/platform/http/**/*',
+      '!src/platform/markdown/**/*',
     ]
   }
 };

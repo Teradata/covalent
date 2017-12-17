@@ -14,7 +14,7 @@ export class TdDigitsPipe implements PipeTransform {
   }
 
   /* `digits` needs to be type `digits: any` or TypeScript complains */
-  transform(digits: any, precision: number = 1): string {
+  transform(digits: any, precision: number = 1): string | null {
     if (digits === 0) {
       return '0';
     } else if (isNaN(parseInt(digits, 10))) {

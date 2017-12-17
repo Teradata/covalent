@@ -27,7 +27,7 @@ export function mixinDisabled<T extends Constructor<{}>>(base: T): Constructor<I
       }
     }
 
-    onDisabledChange(v: boolean): void {
+    onDisabledChange(_v: boolean): void {
       /** NOT IMPLEMENTED, this needs to be overriden by subclasses if needed */
     }
   };

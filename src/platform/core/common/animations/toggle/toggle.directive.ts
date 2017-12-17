@@ -9,8 +9,8 @@ export class TdToggleDirective {
   private _state: boolean;
   private _defaultOverflow: string;
   private _defaultDisplay: string;
-  private _animationShowPlayer: AnimationPlayer;
-  private _animationHidePlayer: AnimationPlayer;
+  private _animationShowPlayer: AnimationPlayer | undefined;
+  private _animationHidePlayer: AnimationPlayer | undefined;
 
   /**
    * duration?: number

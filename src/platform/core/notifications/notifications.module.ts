@@ -1,27 +1,17 @@
-import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
-
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CovalentCommonModule } from '../common/common.module';
-
-import { TdNotificationCountComponent, TdNotificationCountPositionX, TdNotificationCountPositionY } from './notification-count.component';
-
-const TD_NOTIFICATIONS: Type<any>[] = [
-  TdNotificationCountComponent,
-];
-
-export { TdNotificationCountComponent, TdNotificationCountPositionX, TdNotificationCountPositionY } from './notification-count.component';
+import { TdNotificationCountComponent } from './notification-count.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    TD_NOTIFICATIONS,
+    TdNotificationCountComponent,
   ],
   exports: [
-    TD_NOTIFICATIONS,
+    TdNotificationCountComponent,
   ],
 })
 export class CovalentNotificationsModule {

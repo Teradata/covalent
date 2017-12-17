@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/virtual-scroll",
+  "main": "./bundles/virtual-scroll.umd.js",
+  "typings": "./index.d.ts"
+}
