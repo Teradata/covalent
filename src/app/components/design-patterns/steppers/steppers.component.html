@@ -12,7 +12,7 @@
       <div layout="row" layout-align="start center">
         <span>Example</span>
         <span flex></span>
-        <a href="https://stackblitz.com/edit/stepper-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+        <a href="https://stackblitz.com/edit/stepper" target="_blank" matTooltip="View Code" mat-icon-button>
           <mat-icon>launch</mat-icon>
         </a>
       </div>
@@ -32,6 +32,9 @@
         <mat-divider class="push-bottom"></mat-divider>
         <h3>Step Contents</h3>
         <p>Each step should be fully self-contained and complete before moving to the next step.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Step Summary</h3>
+        <p>Optional summary displayed when step is complete.</p>
       </div>
       <iframe flex-gt-xs class="iframe" [src]="source"></iframe>
     </div>
@@ -47,6 +50,14 @@
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
             <h3 matLine>Use vertical orientation</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Use proceed & cancel buttons on each step</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Use complete status</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
