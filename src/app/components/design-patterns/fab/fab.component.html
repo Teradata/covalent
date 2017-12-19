@@ -1,0 +1,92 @@
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+    <mat-card-title>Floating Action Button (FAB) Patterns</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="mat-typography">
+      <h3>When to use</h3>
+      <p>The floating action button (FAB) provides . . . .</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/fab" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div layout-gt-xs="row">
+      <div flex-gt-xs="25" class="mat-typography pad">
+        <h2>Usage</h2>
+        <h3>FAB Component</h3>
+        <p>Follow component guidelines.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Label</h3>
+        <p>Follow Material Design guidelines.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Sublabel</h3>
+        <p>Follow Material Design guidelines.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Step Contents</h3>
+        <p>Each step should be fully self-contained and complete before moving to the next step.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Step Summary</h3>
+        <p>Optional summary displayed when step is complete.</p>
+      </div>
+      <iframe flex-gt-xs class="iframe" [src]="source"></iframe>
+    </div>
+  </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do.</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>blah</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>blah</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>blah</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't.</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Use for negative or distructive actions.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Use custom sizes.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Embelish with shadows, gradients, or other custom styles</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Add more than six options</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>
