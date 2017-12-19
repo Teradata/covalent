@@ -18,6 +18,6 @@ export class SteppersComponent {
   source: any = '';
 
   constructor(private sanitizer: DomSanitizer) {
-    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://stepper.stackblitz.io/');
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://stepper-pattern.stackblitz.io/');
   }
 }
