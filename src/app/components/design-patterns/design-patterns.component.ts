@@ -33,7 +33,7 @@ export class DesignPatternsComponent {
     icon: 'add_circle',
     route: 'fab',
     title: 'FAB Patterns',
-  }]];
+  }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
