@@ -5,6 +5,7 @@ import { CardsComponent } from './cards/cards.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { FABComponent } from './fab/fab.component';
 
 const routes: Routes = [{
   children: [{
@@ -19,6 +20,9 @@ const routes: Routes = [{
     }, {
       component: NavigationDrawerComponent,
       path: 'navigation-drawer',
+    },{
+      component: FABComponent,
+      path: 'fab',
     },
   ],
   component: DesignPatternsComponent,
