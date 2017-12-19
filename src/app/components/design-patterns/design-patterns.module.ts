@@ -9,6 +9,7 @@ import { CardsComponent } from './cards/cards.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { FABComponent } from './fab/fab.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -40,6 +41,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     AlertsComponent,
     ManagementListComponent,
     NavigationDrawerComponent,
+    FABComponent,
   ],
   imports: [
     /** Angular Modules */

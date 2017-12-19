@@ -28,7 +28,12 @@ export class DesignPatternsComponent {
     icon: 'kitchen',
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
-  }];
+  }, {
+    description: 'Floating primary action button',
+    icon: 'add_circle',
+    route: 'fab',
+    title: 'FAB Patterns',
+  }]];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
