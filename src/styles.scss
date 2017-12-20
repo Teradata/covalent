@@ -11,7 +11,7 @@
 
 .cdk-overlay-pane {
   direction: ltr;
-  html[dir="rtl"] & {
+  html[dir='rtl'] & {
     direction: rtl;
   }
 }

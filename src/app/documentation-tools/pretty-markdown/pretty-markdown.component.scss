@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
-$code-font: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+$code-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 
 :host ::ng-deep {
   td-markdown:first-of-type > div:first-of-type {
-    &  > h1:first-of-type,
-    &  > h2:first-of-type {
+    & > h1:first-of-type,
+    & > h2:first-of-type {
       margin-top: 0;
       font-weight: 400;
     }
