@@ -16,7 +16,7 @@
 #### General Tests for Every PR
 
 - [ ] `npm run serve:prod` still works.
-- [ ] `npm run lint` passes.
+- [ ] `npm run tslint` passes.
 - [ ] `npm test` passes and code coverage is not lower.
 - [ ] `npm run build:release` still works.
 
