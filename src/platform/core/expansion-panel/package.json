@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/expansion-panel",
+  "main": "./bundles/expansion-panel.umd.js",
+  "typings": "./index.d.ts"
+}

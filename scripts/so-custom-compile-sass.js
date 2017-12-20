@@ -169,3 +169,21 @@ gulp.task('compile-dialogs-sass', 'Build the module styles', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/packages/core/dialogs'));
 });
+
+gulp.task('compile-expansion-panel-sass', 'Build the module styles', function() {
+  return gulp
+    .src(['src/platform/core/expansion-panel/**/**.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      importer: sassImporter,
+    }))
+    .pipe(postcss([autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie 11'
+        ]
+      })]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/packages/core/expansion-panel'));
+});
