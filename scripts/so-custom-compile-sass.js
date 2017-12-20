@@ -223,3 +223,21 @@ gulp.task('compile-json-formatter-sass', 'Build the module styles', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/packages/core/json-formatter'));
 });
+
+gulp.task('compile-layout-sass', 'Build the module styles', function() {
+  return gulp
+    .src(['src/platform/core/layout/**/**.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      importer: sassImporter,
+    }))
+    .pipe(postcss([autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie 11'
+        ]
+      })]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/packages/core/layout'));
+});

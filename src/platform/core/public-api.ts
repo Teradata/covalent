@@ -9,3 +9,4 @@ export * from './dialogs';
 export * from './expansion-panel';
 export * from './file';
 export * from './json-formatter';
+export * from './layout';

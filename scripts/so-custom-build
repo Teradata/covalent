@@ -13,6 +13,7 @@ $(npm bin)/ngc -p src/platform/core/dialogs/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/expansion-panel/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/file/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/json-formatter/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/layout/secondary-build.json
 
 # change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
 gulp core-replace-ngc-generated-metadata-scss-css
@@ -72,6 +73,16 @@ cp src/platform/core/file/package.json dist/packages/core/file
 gulp compile-json-formatter-sass
 cp src/platform/core/json-formatter/json-formatter.component.html dist/packages/core/json-formatter
 cp src/platform/core/json-formatter/package.json dist/packages/core/json-formatter
+
+gulp compile-layout-sass
+cp src/platform/core/layout/layout.component.html dist/packages/core/layout
+cp src/platform/core/layout/navigation-drawer/navigation-drawer.component.html dist/packages/core/layout/navigation-drawer
+cp src/platform/core/layout/layout-nav-list/layout-nav-list.component.html dist/packages/core/layout/layout-nav-list
+cp src/platform/core/layout/layout-nav/layout-nav.component.html dist/packages/core/layout/layout-nav
+cp src/platform/core/layout/layout-manage-list/layout-manage-list.component.html dist/packages/core/layout/layout-manage-list
+cp src/platform/core/layout/layout-footer/layout-footer.component.html dist/packages/core/layout/layout-footer
+cp src/platform/core/layout/layout-card-over/layout-card-over.component.html dist/packages/core/layout/layout-card-over
+cp src/platform/core/layout/package.json dist/packages/core/layout
 
 gulp so-custom-rollup-secondary-code
 gulp so-custom-rollup-primary-code

@@ -25,6 +25,7 @@ import {
   CovalentExpansionPanelModule,
   CovalentFileModule,
   CovalentJsonFormatterModule,
+  CovalentLayoutModule,
 } from '@covalent/core';
 
 import {
@@ -149,6 +150,7 @@ export class CombatTrainingComponent implements OnInit {
     CovalentExpansionPanelModule,
     CovalentFileModule,
     CovalentJsonFormatterModule,
+    CovalentLayoutModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],

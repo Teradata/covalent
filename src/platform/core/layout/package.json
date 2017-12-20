@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/layout",
+  "main": "./bundles/layout.umd.js",
+  "typings": "./index.d.ts"
+}
