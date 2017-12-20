@@ -58,6 +58,15 @@
   Toggle Visibility
 </button>
 
+<h2> Covalent Chips Component Combat Training</h2>
+<td-chips [items]="filteredStrings"
+  [(ngModel)]="stringsModel"
+  placeholder="Enter autocomplete strings"
+  (inputChange)="filterStrings($event)"
+  requireMatch>
+</td-chips>
+
+
 <h2> Angular Slider Combat Training Grounds</h2>
  <mat-slider></mat-slider>
 

@@ -7,6 +7,7 @@ $(npm bin)/ngc -p src/platform/core/virtual-scroll/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/notifications/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/common/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/message/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/chips/secondary-build.json
 
 # change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
 gulp core-replace-ngc-generated-metadata-scss-css
@@ -33,6 +34,10 @@ cp src/platform/core/common/package.json dist/packages/core/common
 gulp compile-message-sass
 cp src/platform/core/message/message.component.html dist/packages/core/message
 cp src/platform/core/message/package.json dist/packages/core/message
+
+gulp compile-chips-sass
+cp src/platform/core/chips/chips.component.html dist/packages/core/chips
+cp src/platform/core/chips/package.json dist/packages/core/chips
 
 gulp so-custom-rollup-secondary-code
 gulp so-custom-rollup-primary-code

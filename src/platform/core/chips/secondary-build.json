@@ -26,7 +26,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@covalent/core/common",
+    "flatModuleId": "@covalent/core/chips",
     "skipTemplateCodegen": true
   }
 }

@@ -3,7 +3,7 @@
     "declaration": true,
     "stripInternal": false,
     "experimentalDecorators": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "strictNullChecks": true,
     "importHelpers": true,
     "newLine": "lf",

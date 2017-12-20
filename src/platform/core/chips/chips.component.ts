@@ -18,7 +18,7 @@ import { merge } from 'rxjs/observable/merge';
 import { toPromise } from 'rxjs/operator/toPromise';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 
-import { ICanDisable, mixinDisabled } from '../common/common.module';
+import { ICanDisable, mixinDisabled } from '../common';
 
 const noop: any = () => {
   // empty method
@@ -61,7 +61,7 @@ export const _TdChipsMixinBase = mixinDisabled(TdChipsBase);
 })
 export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
 
-  private _outsideClickSubs: Subscription;
+  private _outsideClickSubs: Subscription | undefined;
 
   private _isMousedown: boolean = false;
 
@@ -130,7 +130,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   get stacked(): boolean {
     return this._stacked;
   }
-  
+
   /**
    * requireMatch?: boolean
    * Blocks custom inputs and only allows selections from the autocomplete list.
@@ -213,7 +213,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
    * Sets the color for the input and focus/selected state of the chips.
    * Defaults to 'primary'
    */
-  @Input('color') 
+  @Input('color')
   set color(color: 'primary' | 'accent' | 'warn') {
     if (color) {
       this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
@@ -280,7 +280,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
     return this.disabled ? -1 : this._tabIndex;
   }
 
-  constructor(private _elementRef: ElementRef, 
+  constructor(private _elementRef: ElementRef,
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
               @Optional() @Inject(DOCUMENT) private _document: any) {
@@ -319,7 +319,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
     const clickTarget: HTMLElement = <HTMLElement>event.target;
-    if (clickTarget === this._elementRef.nativeElement || 
+    if (clickTarget === this._elementRef.nativeElement ||
         clickTarget.className.indexOf('td-chips-wrapper') > -1) {
       this.focus();
       event.preventDefault();
@@ -542,7 +542,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
   _inputKeydown(event: KeyboardEvent): void {
     switch (event.keyCode) {
       case UP_ARROW:
-        /** 
+        /**
          * Since the first item is highlighted on [requireMatch], we need to inactivate it
          * when pressing the up key
          */
@@ -762,7 +762,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements ControlValueA
         return this.focused &&
                (clickTarget !== this._elementRef.nativeElement) &&
                !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
-      }).subscribe(() => { 
+      }).subscribe(() => {
         if (this.focused) {
           this._autocompleteTrigger.closePanel();
           this.removeFocusedState();

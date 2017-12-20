@@ -115,3 +115,21 @@ gulp.task('compile-message-sass', 'Build the module styles', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/packages/core/message'));
 });
+
+gulp.task('compile-chips-sass', 'Build the module styles', function() {
+  return gulp
+    .src(['src/platform/core/chips/**/**.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      importer: sassImporter,
+    }))
+    .pipe(postcss([autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie 11'
+        ]
+      })]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/packages/core/chips'));
+});

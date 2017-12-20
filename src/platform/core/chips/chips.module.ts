@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule, MatIconModule, MatAutocompleteModule, MatChipsModule } from '@angular/material';
 
 import { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
-export { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 
 @NgModule({
   imports: [

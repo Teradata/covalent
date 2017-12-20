@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,7 @@ import {
   CovalentCommonModule,
   TdFadeInOutAnimation,
   CovalentMessageModule,
+  CovalentChipsModule,
 } from '@covalent/core';
 
 import {
@@ -42,7 +43,7 @@ import {
     TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
   ],
 })
-export class CombatTrainingComponent {
+export class CombatTrainingComponent implements OnInit {
   data: any[] = [
     {index: 0, name: 'element-0' },
     {index: 1, name: 'element-1' },
@@ -53,6 +54,39 @@ export class CombatTrainingComponent {
   testDigit: number = 3.975086;
 
   triggerState: boolean = false;
+
+  strings: string[] = [
+    'stepper',
+    'expansion-panel',
+    'markdown',
+    'highlight',
+    'loading',
+    'media',
+    'chips',
+    'http',
+    'json-formatter',
+    'pipes',
+    'need more?',
+  ];
+
+  filteredStrings: string[];
+  stringsModel: string[] = this.strings.slice(0, 6);
+
+  filterStrings(value: string): void {
+    this.filteredStrings = this.strings.filter((item: any) => {
+      if (value) {
+        return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+      } else {
+        return false;
+      }
+    }).filter((filteredItem: any) => {
+      return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+    });
+  }
+
+  ngOnInit(): void {
+    this.filterStrings('');
+  }
 
 }
 
@@ -76,6 +110,7 @@ export class CombatTrainingComponent {
 
     CovalentCommonModule,
     CovalentMessageModule,
+    CovalentChipsModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],
