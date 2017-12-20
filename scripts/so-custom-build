@@ -11,6 +11,7 @@ $(npm bin)/ngc -p src/platform/core/chips/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/data-table/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/dialogs/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/expansion-panel/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/file/secondary-build.json
 
 # change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
 gulp core-replace-ngc-generated-metadata-scss-css
@@ -61,6 +62,11 @@ gulp compile-expansion-panel-sass
 cp src/platform/core/expansion-panel/expansion-panel.component.html dist/packages/core/expansion-panel
 cp src/platform/core/expansion-panel/expansion-panel-group.component.html dist/packages/core/expansion-panel
 cp src/platform/core/expansion-panel/package.json dist/packages/core/expansion-panel
+
+gulp compile-file-sass
+cp src/platform/core/file/file-input/file-input.component.html dist/packages/core/file/file-input
+cp src/platform/core/file/file-upload/file-upload.component.html dist/packages/core/file/file-upload
+cp src/platform/core/file/package.json dist/packages/core/file
 
 gulp so-custom-rollup-secondary-code
 gulp so-custom-rollup-primary-code

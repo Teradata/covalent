@@ -4,7 +4,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ICanDisable, mixinDisabled } from '../../common/common.module';
+import { ICanDisable, mixinDisabled } from '../../common';
 
 const noop: any = () => {
   // empty method

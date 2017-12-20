@@ -22,7 +22,8 @@ import {
   CovalentDataTableModule,
   ITdDataTableColumn,
   CovalentDialogsModule,
-  CovalentExpansionPanelModule
+  CovalentExpansionPanelModule,
+  CovalentFileModule,
 } from '@covalent/core';
 
 import {
@@ -108,6 +109,8 @@ export class CombatTrainingComponent implements OnInit {
     },
   ];
 
+  files: File | FileList;
+
   ngOnInit(): void {
     this.filterStrings('');
   }
@@ -136,7 +139,8 @@ export class CombatTrainingComponent implements OnInit {
     CovalentChipsModule,
     CovalentDataTableModule,
     CovalentDialogsModule,
-    CovalentExpansionPanelModule
+    CovalentExpansionPanelModule,
+    CovalentFileModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],

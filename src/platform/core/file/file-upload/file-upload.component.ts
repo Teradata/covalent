@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable, mixinDisabled } from '../../common/common.module';
+import { ICanDisable, mixinDisabled } from '../../common';
 
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 

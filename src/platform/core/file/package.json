@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/file",
+  "main": "./bundles/file.umd.js",
+  "typings": "./index.d.ts"
+}
