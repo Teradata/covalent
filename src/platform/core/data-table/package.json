@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/data-table",
+  "main": "./bundles/data-table.umd.js",
+  "typings": "./index.d.ts"
+}

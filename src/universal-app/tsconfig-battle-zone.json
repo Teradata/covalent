@@ -4,7 +4,7 @@
     "stripInternal": false,
     "experimentalDecorators": true,
     "noUnusedParameters": false,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": ".",

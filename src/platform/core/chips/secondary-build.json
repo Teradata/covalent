@@ -5,7 +5,7 @@
     "stripInternal": false,
     "experimentalDecorators": true,
     "noUnusedParameters": false,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "importHelpers": true,
     "newLine": "lf",
     "module": "es2015",

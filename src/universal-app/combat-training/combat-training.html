@@ -66,6 +66,14 @@
   requireMatch>
 </td-chips>
 
+<h2> Covalent Data Table Component Combat Training</h2>
+<td-data-table
+  [data]="basicData"
+  [columns]="configWidthColumns">
+  <ng-template tdDataTableTemplate="img" let-value="value">
+    <img [src]="value"/>
+  </ng-template>
+</td-data-table>
 
 <h2> Angular Slider Combat Training Grounds</h2>
  <mat-slider></mat-slider>

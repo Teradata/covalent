@@ -19,6 +19,8 @@ import {
   TdFadeInOutAnimation,
   CovalentMessageModule,
   CovalentChipsModule,
+  CovalentDataTableModule,
+  ITdDataTableColumn,
 } from '@covalent/core';
 
 import {
@@ -84,6 +86,26 @@ export class CombatTrainingComponent implements OnInit {
     });
   }
 
+  configWidthColumns: ITdDataTableColumn[] = [
+    { name: 'first_name',  label: 'First name', width: 150 },
+    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 }},
+    { name: 'gender', label: 'Gender'},
+    { name: 'email', label: 'Email', width: 250},
+    { name: 'img', label: '', width: 100},
+  ];
+
+  basicData: any[] = [
+    {
+      "balance": 7454.6,
+      "email": "sclutterham0@123-reg.co.uk",
+      "first_name": "Sully",
+      "gender": "Male",
+      "img": "https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1",
+      "ip_address": "158.0.165.138",
+      "last_name": "Clutterham"
+    },
+  ];
+
   ngOnInit(): void {
     this.filterStrings('');
   }
@@ -111,6 +133,7 @@ export class CombatTrainingComponent implements OnInit {
     CovalentCommonModule,
     CovalentMessageModule,
     CovalentChipsModule,
+    CovalentDataTableModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],

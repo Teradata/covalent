@@ -8,6 +8,7 @@ $(npm bin)/ngc -p src/platform/core/notifications/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/common/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/message/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/chips/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/data-table/secondary-build.json
 
 # change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
 gulp core-replace-ngc-generated-metadata-scss-css
@@ -38,6 +39,14 @@ cp src/platform/core/message/package.json dist/packages/core/message
 gulp compile-chips-sass
 cp src/platform/core/chips/chips.component.html dist/packages/core/chips
 cp src/platform/core/chips/package.json dist/packages/core/chips
+
+gulp compile-data-table-sass
+cp src/platform/core/data-table/data-table.component.html dist/packages/core/data-table
+cp src/platform/core/data-table/data-table-cell/data-table-cell.component.html dist/packages/core/data-table/data-table-cell
+cp src/platform/core/data-table/data-table-column/data-table-column.component.html dist/packages/core/data-table/data-table-column
+cp src/platform/core/data-table/data-table-row/data-table-row.component.html dist/packages/core/data-table/data-table-row
+cp src/platform/core/data-table/data-table-table/data-table-table.component.html dist/packages/core/data-table/data-table-table
+cp src/platform/core/data-table/package.json dist/packages/core/data-table
 
 gulp so-custom-rollup-secondary-code
 gulp so-custom-rollup-primary-code

@@ -994,7 +994,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // set the initial row to be rendered taking into account the row offset
       let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
-      
+
       let hostHeight: number = this._hostHeight;
       let index: number = 0;
       // calculate how many rows can fit in the viewport
@@ -1017,7 +1017,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._fromRow = 0;
       this._toRow = 0;
     }
-  
+
     let offset: number = 0;
     // calculate the proper offset depending on how many rows have been scrolled
     if (scrolledRows > TD_VIRTUAL_OFFSET) {

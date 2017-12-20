@@ -6,7 +6,7 @@
     "rootDir": ".",
     "sourceMap": true,
     "noUnusedParameters": false,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "target": "es2015",
     "lib": ["es2015", "dom"],
     "skipLibCheck": true,
