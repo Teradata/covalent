@@ -24,6 +24,7 @@ import {
   CovalentDialogsModule,
   CovalentExpansionPanelModule,
   CovalentFileModule,
+  CovalentJsonFormatterModule,
 } from '@covalent/core';
 
 import {
@@ -110,6 +111,12 @@ export class CombatTrainingComponent implements OnInit {
   ];
 
   files: File | FileList;
+  file: File;
+
+  object: any = {
+    property: 'value',
+    array: [1, 2, 3]
+  };
 
   ngOnInit(): void {
     this.filterStrings('');
@@ -141,6 +148,7 @@ export class CombatTrainingComponent implements OnInit {
     CovalentDialogsModule,
     CovalentExpansionPanelModule,
     CovalentFileModule,
+    CovalentJsonFormatterModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],

@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/json-formatter",
+  "main": "./bundles/json-formatter.umd.js",
+  "typings": "./index.d.ts"
+}

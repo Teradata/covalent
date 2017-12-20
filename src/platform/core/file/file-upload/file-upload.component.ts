@@ -22,6 +22,7 @@ export class TdFileUploadComponent extends _TdFileUploadMixinBase implements ICa
   private _multiple: boolean = false;
 
   files: FileList | File;
+  file: File;
 
   @ViewChild(TdFileInputComponent) fileInput: TdFileInputComponent;
 

@@ -98,6 +98,21 @@
   <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
 </td-file-input>
 
+<h2> Covalent File Upload Button Component Combat Training</h2>
+<td-file-upload #singleFileUpload [(ngModel)]="file">
+  <mat-icon>file_upload</mat-icon><span>{{ singleFileUpload.value?.name }}</span>
+  <ng-template td-file-input-label>
+    <mat-icon>attach_file</mat-icon>
+    <span>
+      Choose a file...
+    </span>
+  </ng-template>
+</td-file-upload>
+
+<h2> Covalent json formatter directive Combat Training</h2>
+<td-json-formatter [data]="object" [levelsOpen]="1">
+</td-json-formatter>
+
 <h2> Angular Slider Combat Training Grounds</h2>
  <mat-slider></mat-slider>
 
