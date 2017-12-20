@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/dialogs",
+  "main": "./bundles/dialogs.umd.js",
+  "typings": "./index.d.ts"
+}

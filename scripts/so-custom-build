@@ -9,6 +9,7 @@ $(npm bin)/ngc -p src/platform/core/common/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/message/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/chips/secondary-build.json
 $(npm bin)/ngc -p src/platform/core/data-table/secondary-build.json
+$(npm bin)/ngc -p src/platform/core/dialogs/secondary-build.json
 
 # change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
 gulp core-replace-ngc-generated-metadata-scss-css
@@ -47,6 +48,13 @@ cp src/platform/core/data-table/data-table-column/data-table-column.component.ht
 cp src/platform/core/data-table/data-table-row/data-table-row.component.html dist/packages/core/data-table/data-table-row
 cp src/platform/core/data-table/data-table-table/data-table-table.component.html dist/packages/core/data-table/data-table-table
 cp src/platform/core/data-table/package.json dist/packages/core/data-table
+
+gulp compile-dialogs-sass
+cp src/platform/core/dialogs/dialog.component.html dist/packages/core/dialogs
+cp src/platform/core/dialogs/alert-dialog/alert-dialog.component.html dist/packages/core/dialogs/alert-dialog
+cp src/platform/core/dialogs/confirm-dialog/confirm-dialog.component.html dist/packages/core/dialogs/confirm-dialog
+cp src/platform/core/dialogs/prompt-dialog/prompt-dialog.component.html dist/packages/core/dialogs/prompt-dialog
+cp src/platform/core/dialogs/package.json dist/packages/core/dialogs
 
 gulp so-custom-rollup-secondary-code
 gulp so-custom-rollup-primary-code

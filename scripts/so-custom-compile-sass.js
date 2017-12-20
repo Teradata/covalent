@@ -151,3 +151,21 @@ gulp.task('compile-data-table-sass', 'Build the module styles', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/packages/core/data-table'));
 });
+
+gulp.task('compile-dialogs-sass', 'Build the module styles', function() {
+  return gulp
+    .src(['src/platform/core/dialogs/**/**.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      importer: sassImporter,
+    }))
+    .pipe(postcss([autoprefixer({
+        browsers: [
+          'last 2 versions',
+          'ie 11'
+        ]
+      })]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/packages/core/dialogs'));
+});

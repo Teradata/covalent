@@ -21,6 +21,8 @@ import {
   CovalentChipsModule,
   CovalentDataTableModule,
   ITdDataTableColumn,
+  CovalentDialogsModule,
+  TdDialogService,
 } from '@covalent/core';
 
 import {
@@ -106,10 +108,16 @@ export class CombatTrainingComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
-    this.filterStrings('');
+  constructor(private _dialogService: TdDialogService) {
+
   }
 
+  ngOnInit(): void {
+    this.filterStrings('');
+    this._dialogService.openAlert({
+      message: 'This is how simple it is to create an alert with this wrapper service.',
+    });
+  }
 }
 
 /**
@@ -134,6 +142,7 @@ export class CombatTrainingComponent implements OnInit {
     CovalentMessageModule,
     CovalentChipsModule,
     CovalentDataTableModule,
+    CovalentDialogsModule,
   ],
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],
