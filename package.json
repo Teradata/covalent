@@ -11,7 +11,7 @@
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
-    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' --config .stylelintrc.json --syntax scss",
+    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "postinstall": "webdriver-manager update",
     "reinstall": "rm -rf node_modules tmp deploy dist && yarn install && npm rebuild node-sass",
     "reinstall:latest": "rm -rf node_modules tmp deploy dist && npm install",
