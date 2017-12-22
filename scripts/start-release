@@ -19,5 +19,8 @@ git flow release publish v$version
 echo "Executed tslint test"
 npm run tslint
 
+echo "Executed stylelint test"
+npm run stylelint
+
 echo "Executed unit tests"
 npm run test
