@@ -5,7 +5,7 @@
   position: relative;
   padding: 0;
   > .td-data-table-heading {
-    padding: 0 28px 0 28px;
+    padding: 0 28px;
   }
 
   &:first-child > .td-data-table-heading {
@@ -26,6 +26,8 @@
     &.td-data-table-sort-icon {
       opacity: 0;
       transition: transform 0.25s;
+      position: absolute;
+      top: 0;
 
       &.mat-asc {
         transform: rotate(0deg);
@@ -60,12 +62,8 @@
     display: inline-block;
     position: relative;
   }
-  mat-icon.td-data-table-sort-icon {
-    position: absolute;
-    top: 0px;
-  }
   &.mat-numeric {
-  @include rtl(text-align, right, left);
+    @include rtl(text-align, right, left);
     mat-icon.td-data-table-sort-icon {
       @include rtl(margin-left, -22px, initial);
       @include rtl(margin-right, initial, -22px);

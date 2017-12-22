@@ -11,7 +11,7 @@
   position: relative;
   top: 16px;
   left: 16px;
-  ::ng-deep [dir='rtl'] & { 
+  ::ng-deep [dir='rtl'] & {
     right: 16px;
     left: auto;
   }
@@ -31,7 +31,7 @@
     ::ng-deep button {
       text-transform: uppercase;
       margin-left: 8px;
-      [dir='rtl'] & { 
+      [dir='rtl'] & {
         margin-right: 8px;
         margin-left: inherit;
       }

@@ -7,7 +7,7 @@ $checkbox-size: 18px;
   .td-data-table-scrollable {
     position: relative;
     overflow: auto;
-    height: calc(100% - 56px)
+    height: calc(100% - 56px);
   }
 }
 
@@ -26,11 +26,11 @@ table.td-data-table {
       padding: 0 24px;
     }
     &:nth-child(2) > .td-data-table-column-content-wrapper {
-      padding-left: 0px;
+      padding-left: 0;
     }
     [dir='rtl'] & {
       &:nth-child(2) > .td-data-table-column-content-wrapper {
-        padding-right: 0px;
+        padding-right: 0;
         padding-left: 28px;
       }
     }

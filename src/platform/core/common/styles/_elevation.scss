@@ -140,8 +140,8 @@ $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function
   }
 
   #{$mat-elevation-property}: #{map-get($_umbra-elevation-map, $zValue)},
-                             #{map-get($_penumbra-elevation-map, $zValue)},
-                             #{map-get($_ambient-elevation-map, $zValue)};
+    #{map-get($_penumbra-elevation-map, $zValue)},
+    #{map-get($_ambient-elevation-map, $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.
