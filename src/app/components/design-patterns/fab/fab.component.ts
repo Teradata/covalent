@@ -18,6 +18,6 @@ export class FABComponent {
   source: any = '';
 
   constructor(private sanitizer: DomSanitizer) {
-    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://fab.stackblitz.io/');
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://fab-patterns.stackblitz.io/');
   }
 }
