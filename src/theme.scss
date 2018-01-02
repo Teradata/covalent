@@ -104,34 +104,14 @@ $theme: mat-light-theme($primary, $accent, $warn);
   .tc-primary {
     color: mat-color($primary-alt);
   }
-  .tc-accent,
-  a {
-    color: mat-color($accent-alt);
-  }
-  a:hover {
-    color: darken(mat-color($accent-alt), 10%);
-  }
-  .tc-warn {
-    color: mat-color($warn-alt);
-  }
-=======
-  $primary-alt: mat-palette($mat-orange, 800);
-  $accent-alt:  mat-palette($mat-light-blue, 700);
-  $warn-alt:    mat-palette($mat-red, 600);
-  $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
-  @include angular-material-theme($theme-alt);
-  @include covalent-theme($theme-alt);
-
-  .tc-primary {
-    color: mat-color($primary-alt);
-  }
   .tc-accent {
     color: mat-color($accent-alt);
   }
   .tc-warn {
     color: mat-color($warn-alt);
   }
-  a:not(.mat-button, .mat-icon-button) {
+  a:not(.mat-button),
+  a:not(.mat-icon-button) {
     color: mat-color($accent-alt);
     &:hover {
       color: darken(mat-color($accent-alt), 10%);
