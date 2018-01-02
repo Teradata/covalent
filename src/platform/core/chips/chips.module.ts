@@ -3,7 +3,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { MatInputModule, MatIconModule, MatAutocompleteModule, MatChipsModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 export { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';

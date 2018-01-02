@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, Optional } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, Optional, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { Dir } from '@angular/cdk/bidi';
 
@@ -12,6 +12,7 @@ export interface IPageChangeEvent {
 }
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-paging-bar',
   templateUrl: './paging-bar.component.html',
   styleUrls: ['./paging-bar.component.scss' ],
@@ -51,6 +52,7 @@ export class TdPagingBarComponent implements OnInit {
   set pageLinkCount(pageLinkCount: number) {
     this._pageLinkCount = coerceNumberProperty(pageLinkCount);
     this._calculatePageLinks();
+    this._changeDetectorRef.markForCheck();
   }
   get pageLinkCount(): number {
     return this._pageLinkCount;
@@ -67,6 +69,7 @@ export class TdPagingBarComponent implements OnInit {
     if (this._initialized) {
       this._handleOnChange();
     }
+    this._changeDetectorRef.markForCheck();
   }
   get pageSize(): number {
     return this._pageSize;
@@ -81,6 +84,7 @@ export class TdPagingBarComponent implements OnInit {
     this._total = coerceNumberProperty(total);
     this._calculateRows();
     this._calculatePageLinks();
+    this._changeDetectorRef.markForCheck();
   }
   get total(): number {
     return this._total;
@@ -132,13 +136,15 @@ export class TdPagingBarComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {}
+  constructor(@Optional() private _dir: Dir,
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this._page = coerceNumberProperty(this.initialPage);
     this._calculateRows();
     this._calculatePageLinks();
     this._initialized = true;
+    this._changeDetectorRef.markForCheck();
   }
 
   /**
@@ -256,6 +262,7 @@ export class TdPagingBarComponent implements OnInit {
       fromRow: this._fromRow,
       toRow: this._toRow,
     };
+    this._changeDetectorRef.markForCheck();
     this.onChange.emit(event);
   }
 

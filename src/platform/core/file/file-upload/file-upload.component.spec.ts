@@ -53,7 +53,7 @@ describe('Component: FileUpload', () => {
           fixture.whenStable().then(() => {
             expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.files)
+            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value)
             .toBeUndefined();
           });
         });
@@ -81,7 +81,7 @@ describe('Component: FileUpload', () => {
           fixture.whenStable().then(() => {
             expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.files).toBeUndefined();
+            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value).toBeUndefined();
           });
         });
       });
@@ -196,7 +196,7 @@ describe('Component: FileUpload', () => {
   template: `
   <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectEvent($event)"
                   (upload)="uploadEvent($event)" (cancel)="cancelEvent()">
-    <span>{{ fileUpload.files?.name }}</span>
+    <span>{{ fileUpload.value?.name }}</span>
     <ng-template td-file-input-label>
       <span>Choose a file...</span>
     </ng-template>

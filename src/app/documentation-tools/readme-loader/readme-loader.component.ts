@@ -2,7 +2,7 @@ import { Component, Input, HostBinding, Sanitizer, SecurityContext, ChangeDetect
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-import { catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators/catchError';
 
 @Component({
   selector: 'td-readme-loader',

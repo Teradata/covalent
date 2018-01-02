@@ -1,5 +1,11 @@
 :host {
   display: block;
+  .function:after,
+  .date:after,
+  .td-object-name:after,
+  .td-array-length:after {
+    content: "\200E‎";
+  }
 }
 .td-json-formatter-wrapper {
   padding-top: 2px;
