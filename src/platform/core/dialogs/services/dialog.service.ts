@@ -6,11 +6,9 @@ import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
 
-export interface IDialogConfig {
+export interface IDialogConfig extends MatDialogConfig {
   title?: string;
   message: string;
-  viewContainerRef?: ViewContainerRef;
-  disableClose?: boolean;
 }
 
 export interface IAlertConfig extends IDialogConfig {
@@ -137,8 +135,9 @@ export class TdDialogService {
 
   private _createConfig(config: MatDialogConfig): MatDialogConfig {
     let dialogConfig: MatDialogConfig = new MatDialogConfig();
-    dialogConfig.viewContainerRef = config.viewContainerRef;
-    dialogConfig.disableClose = config.disableClose;
+    for (let key in config) {
+      dialogConfig[key] = config[key];
+    }
     return dialogConfig;
   }
 

@@ -46,6 +46,7 @@ export class DialogsDemoComponent {
       title: 'Alert',
       disableClose: true,
       message: 'This is how simple it is to create an alert with this wrapper service.',
+      width: '400px',
     });
   }
 
@@ -55,6 +56,7 @@ export class DialogsDemoComponent {
       message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
       cancelButton: 'Disagree',
       acceptButton: 'Agree',
+      width: '400px',
     });
   }
 
@@ -65,6 +67,7 @@ export class DialogsDemoComponent {
       value: 'Populated value',
       cancelButton: 'Cancel',
       acceptButton: 'Ok',
+      width: '400px',
     });
   }
 }
