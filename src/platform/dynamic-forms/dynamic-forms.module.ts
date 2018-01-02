@@ -9,6 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { CovalentCommonModule } from '../core';
 import { CovalentFileModule } from '../core';
@@ -28,6 +29,7 @@ import {
 } from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';
+import { TdDynamicDatepickerComponent } from './dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
@@ -44,6 +46,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   TdDynamicCheckboxComponent,
   TdDynamicSliderComponent,
   TdDynamicSelectComponent,
+  TdDynamicDatepickerComponent,
 ];
 
 @NgModule({
@@ -61,6 +64,7 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
     MatSlideToggleModule,
     MatIconModule,
     MatButtonModule,
+    MatDatepickerModule,
     CovalentCommonModule,
     CovalentFileModule,
   ],
