@@ -4,7 +4,7 @@ const isStandardSyntaxSelector = require('stylelint/lib/utils/isStandardSyntaxSe
 
 const ruleName = 'td/selector-no-deprecated-deep';
 const messages = stylelint.utils.ruleMessages(ruleName, {
-  expected: selector => `Usage of the /deep/ in "${selector}" is not allowed`,
+  expected: selector => `Usage of the /deep/ in "${selector}" is not allowed. Please use ng-deep instead`,
 });
 
 
