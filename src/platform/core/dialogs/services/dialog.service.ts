@@ -135,6 +135,7 @@ export class TdDialogService {
 
   private _createConfig(config: MatDialogConfig): MatDialogConfig {
     let dialogConfig: MatDialogConfig = new MatDialogConfig();
+    dialogConfig.width = '400px';
     for (let key in config) {
       dialogConfig[key] = config[key];
     }
