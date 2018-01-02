@@ -35,7 +35,7 @@ Example for HTML count usage:
 
 ```html
 <td-notification-count positionX="after" positionY="top" [notifications]="1">
-  <mat-icon>notifications<mat-icon>
+  <mat-icon>notifications</mat-icon>
 </td-notification-count>
 ```
 
@@ -43,7 +43,7 @@ Example for HTML count usage:
 
 ```html
 <td-notification-count positionX="after" positionY="top" [notifications]="true">
-  <mat-icon>notifications<mat-icon>
+  <mat-icon>notifications</mat-icon>
 </td-notification-count>
 ```
 
