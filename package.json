@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
-    "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
+    "lint": "npm run tslint && npm run stylelint",
+    "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
+    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "postinstall": "webdriver-manager update",
     "reinstall": "rm -rf node_modules tmp deploy dist && yarn install && npm rebuild node-sass",
     "reinstall:latest": "rm -rf node_modules tmp deploy dist && npm install",
@@ -131,6 +133,7 @@
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "semver": "5.2.0",
+    "stylelint": "^8.4.0",
     "ts-node": "^3.0.4",
     "tslint": "5.2.0",
     "typescript": "~2.4.2",

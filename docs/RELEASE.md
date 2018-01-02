@@ -22,7 +22,7 @@ Execute `npm run release:start -- [version]` to start the automatic release proc
   1. Creating a `release/v[version]` branch using `git flow release`.
   2. Bumping its version to [version] release and commiting bumped version files.
   3. Publishing `release/v[version]` branch into repository. 
-  4. Executes `npm run lint` and `npm run test`.
+  4. Executes `npm run tslint`, `npm run stylelint` and `npm run test`.
 
 The release is published in case there is a need for any additional tests, version fixes or bug fixes. This can be added before it is actually released.
 

@@ -1,10 +1,10 @@
 :host {
   display: block;
-  .function:after,
-  .date:after,
-  .td-object-name:after,
-  .td-array-length:after {
-    content: "\200E‎";
+  .function::after,
+  .date::after,
+  .td-object-name::after,
+  .td-array-length::after {
+    content: '\200E‎';
   }
 }
 .td-json-formatter-wrapper {
@@ -54,13 +54,13 @@
       padding-left: 0;
     }
     .td-empty {
-      opacity: .5;
+      opacity: 0.5;
       text-decoration: line-through;
     }
     .string {
       word-break: break-word;
     }
-    .date { 
+    .date {
       word-break: break-word;
     }
   }
