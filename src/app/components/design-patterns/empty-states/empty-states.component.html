@@ -1,0 +1,97 @@
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+    <mat-card-title>Empty States Patterns</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="mat-typography">
+      <h3>When to use</h3>
+      <p>When no content is avaiable for a section and the user needs addtional instruction or feedback.</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/empty-state-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad">
+        <h2>Usage</h2>
+        <h3>Icon</h3>
+        <p>Use the content type icon if possible.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Language</h3>
+        <p>Follow the Material Design spec for language &amp; text.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Primary Action</h3>
+        <p>Optionally include a primary action button (raised with accent color).</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Secondary Action</h3>
+        <p>Optionally include a secondary action button (not raised).</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h2 class="push-bottom-none">Guidelines</h2>
+        <mat-nav-list class="pull-left pull-right">
+          <a mat-list-item href="https://material.io/guidelines/patterns/empty-states.html" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>Empty State Guidelines</p>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source">
+        </iframe>
+      </div>
+    </div>
+  </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Use inside a card</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Use contextual icon &amp; message</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Use action buttons when possible</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Don't change background color</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use generic icon &amp; message</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Don't use more than 1 raised button</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>
