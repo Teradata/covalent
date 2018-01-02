@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
+    "lint": "npm run tslint && rpm run stylelint",
     "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "postinstall": "webdriver-manager update",
