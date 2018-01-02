@@ -20,7 +20,7 @@ const routes: Routes = [{
     }, {
       component: NavigationDrawerComponent,
       path: 'navigation-drawer',
-    },{
+    }, {
       component: FABComponent,
       path: 'fab',
     },
