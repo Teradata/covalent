@@ -1,4 +1,6 @@
-<div class="td-chips-wrapper" [class.td-chips-stacked]="stacked">
+<div class="td-chips-wrapper"
+     [class.td-chips-stacked]="stacked"
+     [class.td-chips-input-before-position]="inputPosition === 'before'">
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
     <mat-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
@@ -23,9 +25,10 @@
     </mat-basic-chip>
   </ng-template>
   <mat-form-field floatPlaceholder="never"
-                      [style.width.px]="canAddChip ? null : 0"
-                      [style.height.px]="canAddChip ? null : 0"
-                      [color]="color">
+                  class="td-chips-form-field"
+                  [style.width.px]="canAddChip ? null : 0"
+                  [style.height.px]="canAddChip ? null : 0"
+                  [color]="color">
     <input matInput
             #input
             [tabIndex]="-1"
