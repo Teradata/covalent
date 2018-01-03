@@ -53,6 +53,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -121,6 +123,8 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatAutocompleteModule,
     MatGridListModule,
     MatRippleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,

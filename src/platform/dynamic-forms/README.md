@@ -110,6 +110,12 @@ export class Demo {
     name: 'file-input',
     label: 'Label',
     type: TdDynamicElement.FileInput,
+  }, {
+    name: 'datepicker',
+    label: 'Date',
+    type: TdDynamicElement.Datepicker,
   }];
 }
 ```
+
+Note: To use the datepicker you need to provide an implementation of `DateAdapter`.. click [here] for more information on the material datepicker(https://material.angular.io/components/datepicker/overview#choosing-a-date-implementation-and-date-format-settings)

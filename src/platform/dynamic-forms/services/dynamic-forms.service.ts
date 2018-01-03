@@ -8,16 +8,19 @@ import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
+import { TdDynamicDatepickerComponent } from '../dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
 
 export enum TdDynamicType {
   Text = <any>'text',
   Boolean = <any>'boolean',
   Number = <any>'number',
   Array = <any>'array',
+  Date = <any>'date',
 }
 
 export enum TdDynamicElement {
   Input = <any>'input',
+  Datepicker = <any>'datepicker',
   Password = <any>'password',
   Textarea = <any>'textarea',
   Slider = <any>'slider',
@@ -86,6 +89,9 @@ export class TdDynamicFormsService {
         return TdDynamicSelectComponent;
       case TdDynamicElement.FileInput:
         return TdDynamicFileInputComponent;
+      case TdDynamicElement.Datepicker:
+      case TdDynamicType.Date:
+        return TdDynamicDatepickerComponent;
       default:
         throw new Error(`Error: type ${element} does not exist or not supported.`);
     }

@@ -1,0 +1,15 @@
+<div class="td-dynamic-datepicker-wrapper">
+  <mat-form-field class="td-dynamic-datepicker-field">
+    <input #elementInput
+            matInput
+            [matDatepicker]="dynamicDatePicker"
+            [(ngModel)]="value"
+            [formControl]="control"
+            [placeholder]="label"
+            [required]="required"
+            [min]="min"
+            [max]="max"/>
+    <mat-datepicker-toggle matSuffix [for]="dynamicDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #dynamicDatePicker></mat-datepicker>
+  </mat-form-field>
+</div>
