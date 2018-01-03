@@ -16,23 +16,7 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [{
-      description: 'Pick and choose the styles you need',
-      icon: 'gradient',
-      route: '/docs/utility-sass-mixins',
-      title: 'Utility Style Mixins',
-    }, {
-      description: 'Override the typography',
-      icon: 'font_download',
-      route: '/docs',
-      title: 'Custom Typography',
-    }, {
-      description: 'New templates and now using StackBlitz',
-      icon: 'view_carousel',
-      route: '/templates',
-      title: 'Templates',
-    },
-  ];
+  updates: Object[] = [];
 
   dir: 'ltr' | 'rtl' = getDirection();
 

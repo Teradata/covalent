@@ -1,8 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'search-demo',
   styleUrls: ['./search.component.scss'],
   templateUrl: './search.component.html',

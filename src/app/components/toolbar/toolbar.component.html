@@ -13,13 +13,13 @@
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="updates.length + 1">
+      <td-notification-count color="accent" [notifications]="updates.length + 2">
         <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
     <mat-menu #notificationsMenu="matMenu">
       <td-menu>
-        <div td-menu-header class="mat-subheading-2">Updates</div>
+        <div td-menu-header class="mat-subheading-2 push-none">Updates</div>
         <mat-nav-list dense>
           <ng-template let-item let-last="last" ngFor [ngForOf]="updates">
             <a mat-list-item [routerLink]="[item.route]">
@@ -38,7 +38,7 @@
           </a>
           <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L64-L76" target="_blank">
             <mat-icon matListAvatar>change_history</mat-icon>
-            <h4 matLine><span class="text-wrap">Angular 5, CDK and material@5.rc0 support</span></h4>
+            <h4 matLine><span class="text-wrap">CDK and material@5 support</span></h4>
             <p matLine>Dependencies updated</p>
           </a>
         </mat-nav-list>

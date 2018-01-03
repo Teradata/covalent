@@ -3,7 +3,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TdDialogComponent, TdDialogTitleDirective,
          TdDialogActionsDirective, TdDialogContentDirective } from './dialog.component';
