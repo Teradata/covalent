@@ -29,6 +29,11 @@ export class DesignPatternsComponent {
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
   }, {
+    description: 'Wizard-like pattern',
+    icon: 'looks_one',
+    route: 'steppers',
+    title: 'Stepper Patterns',
+  }, {
     description: 'Feedback for empty elements',
     icon: 'space_bar',
     route: 'empty-states',
