@@ -1,6 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { TdCollapseAnimation } from '@covalent/core';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
@@ -16,15 +17,8 @@ export class CardsComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
-  username: string;
-  password: string;
-  fadeDiv: boolean = true;
-  example1: boolean = true;
-  example2: boolean = true;
-  example3: boolean = true;
-  example4: boolean = true;
-  example5: boolean = true;
+  
+  source: any = '';
   
   invalidError: boolean = false;
 
@@ -37,5 +31,9 @@ export class CardsComponent {
   
   toggle(div: string): void {
     this[div] = !this[div];
+  }
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://cards-patterns.stackblitz.io/');
   }
 }
