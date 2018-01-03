@@ -18,8 +18,8 @@
       </div>
     </mat-card-title>
     <mat-divider></mat-divider>
-    <div layout-gt-xs="row">
-      <div flex-gt-xs="25" class="mat-typography pad">
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad">
         <h2>Usage</h2>
         <h3>Stepper Component</h3>
         <p>Follow component guidelines.  Vertical mode prefered.</p>
@@ -52,7 +52,7 @@
         </mat-nav-list>
       </div>
       <div layout="row" flex-gt-sm>
-        <iframe flex-gt-xs class="iframe" [src]="source"></iframe>
+        <iframe flex class="iframe" [src]="source"></iframe>
       </div>
     </div>
   </mat-card>
@@ -66,15 +66,19 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Use vertical orientation</h3>
+            <h3 matLine>Group logical fields together</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Use proceed & cancel buttons on each step</h3>
+            <h3 matLine>Use proceed &amp; cancel buttons</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_3</mat-icon>
-            <h3 matLine>Use complete status</h3>
+            <h3 matLine>Save asynchronously when possible</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Use raised Continue buttons</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
@@ -88,7 +92,19 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Use horiztonal stepper as navigation.</h3>
+            <h3 matLine>Don't include nested steppers</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use overly complex steppers</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use outside a card</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use horizontal for more than 3 steps</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
