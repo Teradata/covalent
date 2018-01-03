@@ -2,24 +2,24 @@
 @import '../rtl';
 
 // Standard button sizing.
-$mat-button-padding: 0 rem(0.600) !default;
-$mat-button-min-width: rem(8.800) !default;
-$mat-button-margin: rem(0.600) rem(0.800) !default;
-$mat-button-line-height: rem(3.60) !default;
+$mat-button-padding: 0 rem(0.6) !default;
+$mat-button-min-width: rem(8.8) !default;
+$mat-button-margin: rem(0.6) rem(0.8) !default;
+$mat-button-line-height: rem(3.6) !default;
 $mat-button-border-radius: 3px !default;
 
 // FAB sizing.
 $mat-fab-border-radius: 50%;
-$mat-fab-size: rem(5.600) !default;
-$mat-fab-line-height: rem(5.600) !default;
-$mat-fab-padding: rem(1.60) !default;
-$mat-fab-mini-size: rem(4.00) !default;
-$mat-fab-mini-line-height: rem(4.00) !default;
+$mat-fab-size: rem(5.6) !default;
+$mat-fab-line-height: rem(5.6) !default;
+$mat-fab-padding: rem(1.6) !default;
+$mat-fab-mini-size: rem(4) !default;
+$mat-fab-mini-line-height: rem(4) !default;
 
 // Icon button sizing.
-$mat-icon-button-height: rem(4.000) !default;
-$mat-icon-button-width: rem(4.000) !default;
-$mat-icon-button-margin: rem(0.600) !default;
+$mat-icon-button-height: rem(4) !default;
+$mat-icon-button-width: rem(4) !default;
+$mat-icon-button-margin: rem(0.6) !default;
 $mat-icon-border-radius: $mat-fab-border-radius;
 
 /** Mixin to create distinct classes for fab positions, e.g. ".mat-fab-position-bottom-right". */

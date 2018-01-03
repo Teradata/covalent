@@ -115,6 +115,13 @@ export class DynamicFormsDemoComponent {
     type: TdDynamicElement.FileInput,
   }];
 
+  dateElements: ITdDynamicElementConfig[] = [{
+    name: 'date-input',
+    label: 'Select a date',
+    type: TdDynamicElement.Datepicker,
+    min: new Date(2018, 1, 1).setHours(0, 0, 0, 0),
+  }];
+
   dynamicElements: ITdDynamicElementConfig[] = [{
     name: 'element-0',
     type: TdDynamicType.Text,
@@ -131,6 +138,7 @@ export class DynamicFormsDemoComponent {
   elementOptions: any[] = [
     TdDynamicElement.Input,
     TdDynamicType.Number,
+    TdDynamicElement.Datepicker,
     TdDynamicElement.Password,
     TdDynamicElement.Textarea,
     TdDynamicElement.Slider,
@@ -203,7 +211,11 @@ export class DynamicFormsDemoComponent {
   }];
 
   isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
-    return type === TdDynamicElement.Slider || type === TdDynamicType.Number;
+    return type === TdDynamicElement.Slider || type === TdDynamicType.Number || this.isDate(type);
+  }
+
+  isDate(type: TdDynamicElement | TdDynamicType): boolean {
+    return type === TdDynamicElement.Datepicker;
   }
 
   isMinMaxLengthSupported(type: TdDynamicElement | TdDynamicType): boolean {

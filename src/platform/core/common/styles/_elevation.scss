@@ -1,6 +1,5 @@
 @import 'variables';
 
-
 // A collection of mixins and CSS classes that can be used to apply elevation to a material
 // element.
 // See: https://www.google.com/design/spec/what-is-material/elevation-shadows.html
@@ -119,7 +118,6 @@ $_ambient-elevation-map: (
   24: '0px 9px 46px 8px #{$_ambient-color}'
 );
 
-
 // The css property used for elevation. In most cases this should not be changed. It is exposed
 // as a variable for abstraction / easy use when needing to reference the property directly, for
 // example in a will-change rule.
@@ -142,8 +140,8 @@ $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function
   }
 
   #{$mat-elevation-property}: #{map-get($_umbra-elevation-map, $zValue)},
-                             #{map-get($_penumbra-elevation-map, $zValue)},
-                             #{map-get($_ambient-elevation-map, $zValue)};
+    #{map-get($_penumbra-elevation-map, $zValue)},
+    #{map-get($_ambient-elevation-map, $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.
@@ -155,8 +153,8 @@ $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function
 //   will-change: $mat-elevation-property, opacity;
 // }
 @function mat-elevation-transition-property-value(
-    $duration: $mat-elevation-transition-duration,
-    $easing: $mat-elevation-transition-timing-function) {
+  $duration: $mat-elevation-transition-duration,
+  $easing: $mat-elevation-transition-timing-function) {
   @return #{$mat-elevation-property} #{$duration} #{$easing};
 }
 
@@ -167,8 +165,8 @@ $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function
 // NOTE(traviskaufman): Both this mixin and the above function use default parameters so they can
 // be used in the same way by clients.
 @mixin mat-elevation-transition(
-    $duration: $mat-elevation-transition-duration,
-    $easing: $mat-elevation-transition-timing-function) {
+  $duration: $mat-elevation-transition-duration,
+  $easing: $mat-elevation-transition-timing-function) {
   transition: mat-elevation-transition-property-value($duration, $easing);
   will-change: $mat-elevation-property;
 }
