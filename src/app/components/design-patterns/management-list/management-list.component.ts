@@ -1,6 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-
-import { TdCollapseAnimation } from '@covalent/core';
+import { Component, HostBinding } from '@angular/core';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
