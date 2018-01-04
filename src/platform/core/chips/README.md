@@ -16,6 +16,7 @@ Properties:
 | `items?` | `any[]` | Renders the `mat-autocomplete` with the provided list to display as options.
 | `requireMatch?` | `boolean` | Blocks custom inputs and only allows selections from the autocomplete list.
 | `stacked?` | `boolean` | Set stacked or horizontal chips depending on value. Defaults to false.
+| `inputPosition?` | 'before' or 'after' | Set input position before or after the chips. Defaults to 'after'.
 | `placeholder?` | `string` | Placeholder for the autocomplete input.
 | `disabled?` | `boolean` | Sets disabled state and disabled addition/removal of chips.
 | `chipAddition` | `boolean` | Disables the ability to add chips. When setting disabled as true, this will be overriden. Defaults to true.
@@ -51,6 +52,7 @@ Example for HTML usage:
 <td-chips placeholder="placeholder"
           color="primary"
           [items]="items"
+          [inputPosition]="'before'"
           [(ngModel)]="model"
           [disabled]="disabled" 
           [chipAddition]="chipAddition"

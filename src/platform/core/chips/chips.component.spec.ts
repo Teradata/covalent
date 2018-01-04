@@ -44,6 +44,7 @@ describe('Component: Chips', () => {
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
         TdChipsStackedTestComponent,
+        TdChipsBeforeAfterTestComponent,
         TdChipRemovalTestComponent,
         TdChipsEventsTestComponent,
       ],
@@ -475,6 +476,35 @@ describe('Component: Chips', () => {
 
   });
 
+  describe('position usage: ', () => {
+    let fixture: ComponentFixture<TdChipsBeforeAfterTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsBeforeAfterTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+    });
+
+    it('should rendered input before the list of chips at all times', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        
+        expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-input-before-position'))
+          .toBeFalsy();
+        fixture.componentInstance.position = 'before';
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-input-before-position'))
+            .toBeTruthy();
+          done();
+        });
+      });
+    });
+  });
+
   describe('events: ', () => {
     let fixture: ComponentFixture<TdChipsEventsTestComponent>;
     let chips: DebugElement;
@@ -833,6 +863,26 @@ class TdChipsObjectsRequireMatchTestComponent {
       </td-chips>`,
 })
 class TdChipsStackedTestComponent {
+  stacked: boolean = false;
+  items: string[] = [
+    'steak',
+    'pizza',
+    'tacos',
+    'sandwich',
+    'chips',
+    'pasta',
+    'sushi',
+  ];
+  selectedItems: string[] = this.items.slice(0, 3);
+}
+
+@Component({
+  template: `
+      <td-chips [items]="items" [(ngModel)]="selectedItems" [stacked]="stacked" [inputPosition]="position">
+      </td-chips>`,
+})
+class TdChipsBeforeAfterTestComponent {
+  position: string = 'after';
   stacked: boolean = false;
   items: string[] = [
     'steak',
