@@ -129,8 +129,6 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
     return this._stacked;
   }
 
-<<<<<<< HEAD
-=======
   /**
    * inputPosition?: 'before' | 'after'
    * Set input position before or after the chips.
@@ -143,8 +141,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   get inputPosition(): 'before' | 'after' {
     return this._inputPosition;
   }
-  
->>>>>>> develop
+
   /**
    * requireMatch?: boolean
    * Blocks custom inputs and only allows selections from the autocomplete list.
