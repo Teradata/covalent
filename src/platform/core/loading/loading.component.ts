@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef, DoCheck } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs/Subject';
@@ -37,7 +37,7 @@ export const TD_CIRCLE_DIAMETER: number = 100;
     TdFadeInOutAnimation(),
   ],
 })
-export class TdLoadingComponent {
+export class TdLoadingComponent implements DoCheck {
 
   private _animationIn: Subject<any> = new Subject<any>();
   private _animationOut: Subject<any> = new Subject<any>();
@@ -100,6 +100,17 @@ export class TdLoadingComponent {
 
   constructor(private _elementRef: ElementRef,
               private _changeDetectorRef: ChangeDetectorRef) {}
+
+  ngDoCheck(): void {
+    // When overlay is used and the host width has a value greater than 1px
+    // set the circle diameter when possible incase the loading component was rendered in a hidden state
+    if (this.isOverlay() && this._hostHeight() > 1) {
+      if (this.animation) {
+        this._setCircleDiameter();
+        this._changeDetectorRef.markForCheck();
+      }
+    }
+  }
 
   getHeight(): string {
     // Ignore height if style is `overlay` or `fullscreen`.
