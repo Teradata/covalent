@@ -31,13 +31,13 @@ if [[ ${fileDiff} =~ ^(.*\.md\s*)*$ ]]; then
   exit 0
 fi
 
-if "${MODE}" = lint; then
+if [ "${MODE}" = "lint" ]; then
   npm run lint
-elif "${MODE}" = aot; then
+elif [ "${MODE}" = "aot" ]; then
   npm run build:docs
-elif "${MODE}" = release; then
+elif [ "${MODE}" = "release" ]; then
   npm run build:release
-elif "${MODE}" = unit; then
+elif [ "${MODE}" = "unit" ]; then
   npm run test
 fi
 
