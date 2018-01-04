@@ -48,6 +48,7 @@
               viewContainerRef: this._viewContainerRef, //OPTIONAL
               title: 'Alert', //OPTIONAL, hides if not provided
               closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
+              width: '400px', //OPTIONAL, defaults to 400px
             });
           }
 
@@ -59,6 +60,7 @@
               title: 'Confirm', //OPTIONAL, hides if not provided
               cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
               acceptButton: 'Agree', //OPTIONAL, defaults to 'ACCEPT'
+              width: '500px', //OPTIONAL, defaults to 400px
             }).afterClosed().subscribe((accept: boolean) => {
               if (accept) {
                 // DO SOMETHING
@@ -77,6 +79,7 @@
               value: 'Prepopulated value', //OPTIONAL
               cancelButton: 'Cancel', //OPTIONAL, defaults to 'CANCEL'
               acceptButton: 'Ok', //OPTIONAL, defaults to 'ACCEPT'
+              width: '400px', //OPTIONAL, defaults to 400px
             }).afterClosed().subscribe((newValue: string) => {
               if (newValue) {
                 // DO SOMETHING
