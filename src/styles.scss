@@ -11,7 +11,13 @@
 
 .cdk-overlay-pane {
   direction: ltr;
-  html[dir="rtl"] & {
+  html[dir='rtl'] & {
     direction: rtl;
   }
+}
+
+// iframe styles
+.iframe {
+  border: 0;
+  min-height: 700px;
 }

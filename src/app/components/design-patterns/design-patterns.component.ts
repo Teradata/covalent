@@ -28,6 +28,16 @@ export class DesignPatternsComponent {
     icon: 'kitchen',
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
+  }, {
+    description: 'Wizard-like pattern',
+    icon: 'looks_one',
+    route: 'steppers',
+    title: 'Stepper Patterns',
+  }, {
+    description: 'Feedback for empty elements',
+    icon: 'space_bar',
+    route: 'empty-states',
+    title: 'Empty State Patterns',
   }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,

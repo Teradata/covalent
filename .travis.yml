@@ -18,7 +18,8 @@ install:
 - npm install
 - npm rebuild node-sass # Workaround for https://github.com/yarnpkg/yarn/issues/1981
 script:
-- npm run lint
+- npm run tslint
+- npm run stylelint
 - npm run test
 after_script:
 - npm run coveralls

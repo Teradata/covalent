@@ -6,6 +6,7 @@ import {
 } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
+import { MatNativeDateModule } from '@angular/material/core';
 import { Validators, AbstractControl } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ describe('Component: TdDynamicForms', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
+        MatNativeDateModule,
         CovalentDynamicFormsModule,
       ],
       declarations: [
@@ -65,10 +67,13 @@ describe('Component: TdDynamicForms', () => {
       name: 'sex',
       type: TdDynamicType.Array,
       selections: ['M', 'F'],
+    }, {
+      name: 'dob',
+      type: TdDynamicElement.Datepicker,
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(7);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(8);
     });
   })));
 
@@ -131,6 +136,7 @@ describe('Component: TdDynamicForms', () => {
     let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
 
     expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
+    let dob: Date = new Date();
     component.elements = [{
       name: 'first_name',
       type: TdDynamicType.Text,
@@ -142,15 +148,20 @@ describe('Component: TdDynamicForms', () => {
       default: 20,
       min: 18,
       max: 30,
+    }, {
+      name: 'dob',
+      type: TdDynamicType.Date,
+      default: dob,
+      required: true,
     }];
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(3);
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
       /* tslint:disable-next-line */
-      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20}));
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20, dob: dob}));
     });
   })));
 

@@ -1,34 +1,34 @@
 .margin {
-    margin: -60px;
+  margin: -60px;
 }
 .mat-icon-logo {
-    width: 88px;
+  width: 88px;
 }
 .mat-icon-svg-lg {
-    height: 60px;
-    width: 60px;
-    margin-left: 16px;
+  height: 60px;
+  width: 60px;
+  margin-left: 16px;
 }
 .mat-icon-svg-xxl {
-    width: 90%;
-    height: 90%;
+  width: 90%;
+  height: 90%;
 }
 .mat-icon-ux {
-    width: 165px;
+  width: 165px;
 }
 @media (max-width: 799px) {
-    .mat-icon-md {
-        font-size: 50px;
-    }
-    .mat-icon-xl {
-        font-size: 120px;
-    }
+  .mat-icon-md {
+    font-size: 50px;
+  }
+  .mat-icon-xl {
+    font-size: 120px;
+  }
 }
 @media (min-width: 800px) {
-    .mat-icon-md {
-        font-size: 70px;
-    }
-    .mat-icon-xl {
-        font-size: 160px;
-    }
+  .mat-icon-md {
+    font-size: 70px;
+  }
+  .mat-icon-xl {
+    font-size: 160px;
+  }
 }

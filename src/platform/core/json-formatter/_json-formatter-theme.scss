@@ -35,20 +35,20 @@
       .string {
         color: mat-color($warn);
       }
-      .number { 
+      .number {
         color: mat-color($accent);
       }
-      .boolean { 
+      .boolean {
         color: mat-color($accent);
       }
       .null,
-      .undefined { 
+      .undefined {
         color: mat-color($foreground, disabled-text);
       }
-      .function { 
+      .function {
         color: mat-color($primary);
       }
-      .date { 
+      .date {
         color: mat-color($foreground, text);
       }
     }

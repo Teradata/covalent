@@ -38,39 +38,39 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // Include covalent color classes
 @include covalent-colors();
 
-
 // Custom orange contrast
-$mat-orange-custom: ( 50: #FFF3E0,
-                    100: #FFE0B2,
-                    200: #FFCC80,
-                    300: #FFB74D,
-                    400: #FFA726,
-                    500: #FF9800,
-                    600: #FB8C00,
-                    700: #F57C00,
-                    800: #EF6C00,
-                    900: #E65100,
-                    A100: #FFD180,
-                    A200: #FFAB40,
-                    A400: #FF9100,
-                    A700: #FF6D00,
-                    contrast: (
-                        50: $black-87-opacity,
-                        100: $black-87-opacity,
-                        200: $black-87-opacity,
-                        300: $black-87-opacity,
-                        400: $black-87-opacity,
-                        500: white,
-                        600: white,
-                        700: white,
-                        800: $white-87-opacity,
-                        900: $white-87-opacity,
-                        A100: $black-87-opacity,
-                        A200: $black-87-opacity,
-                        A400: $black-87-opacity,
-                        A700: $white-87-opacity,
-                        )
-                    );
+$mat-orange-custom: (
+  50: #fff3e0,
+  100: #ffe0b2,
+  200: #ffcc80,
+  300: #ffb74d,
+  400: #ffa726,
+  500: #ff9800,
+  600: #fb8c00,
+  700: #f57c00,
+  800: #ef6c00,
+  900: #e65100,
+  A100: #ffd180,
+  A200: #ffab40,
+  A400: #ff9100,
+  A700: #ff6d00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $white-87-opacity,
+  )
+);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -94,97 +94,100 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 // Alt theme
 .theme-alt {
-    $primary-alt: mat-palette($mat-orange, 800);
-    $accent-alt:  mat-palette($mat-light-blue, 700);
-    $warn-alt:    mat-palette($mat-red, 600);
-    $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
-    @include angular-material-theme($theme-alt);
-    @include covalent-theme($theme-alt);
+  $primary-alt: mat-palette($mat-orange, 800);
+  $accent-alt:  mat-palette($mat-light-blue, 700);
+  $warn-alt:    mat-palette($mat-red, 600);
+  $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
+  @include angular-material-theme($theme-alt);
+  @include covalent-theme($theme-alt);
 
-    .tc-primary {
-        color: mat-color($primary-alt);
+  .tc-primary {
+    color: mat-color($primary-alt);
+  }
+  .tc-accent {
+    color: mat-color($accent-alt);
+  }
+  .tc-warn {
+    color: mat-color($warn-alt);
+  }
+  a:not(.mat-button),
+  a:not(.mat-icon-button) {
+    color: mat-color($accent-alt);
+    &:hover {
+      color: darken(mat-color($accent-alt), 10%);
     }
-    .tc-accent,
-    a {
-        color: mat-color($accent-alt);
-    }
-    a:hover {
-        color: darken(mat-color($accent-alt), 10%);
-    }
-    .tc-warn {
-        color: mat-color($warn-alt);
-    }
+  }
 }
 
 // Dark theme
 .theme-dark {
-    $primary-dark: mat-palette($mat-blue-grey, 900);
-    $accent-dark:  mat-palette($mat-deep-orange, A400);
-    $warn-dark:    mat-palette($mat-red, 600);
-    $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
-    @include angular-material-theme($theme-dark);
-    @include covalent-theme($theme-dark);
+  $primary-dark: mat-palette($mat-blue-grey, 900);
+  $accent-dark:  mat-palette($mat-deep-orange, A400);
+  $warn-dark:    mat-palette($mat-red, 600);
+  $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  @include angular-material-theme($theme-dark);
+  @include covalent-theme($theme-dark);
 
-    .tc-primary {
-        color: mat-color($primary-dark);
-    }
-    .tc-accent,
-    a {
-        color: mat-color($accent-dark);
-    }
-    a:hover {
-        color: darken(mat-color($accent-dark), 10%);
-    }
-    .tc-warn {
-        color: mat-color($warn-dark);
-    }
+  .tc-primary {
+    color: mat-color($primary-dark);
+  }
+  .tc-accent,
+  a {
+    color: mat-color($accent-dark);
+  }
+  a:hover {
+    color: darken(mat-color($accent-dark), 10%);
+  }
+  .tc-warn {
+    color: mat-color($warn-dark);
+  }
 }
 
 // Subpage themes
 .theme-docs {
-    $primary-docs: mat-palette($mat-deep-purple, 700);
-    $accent-docs:  mat-palette($mat-cyan, A400);
-    $warn-docs:    mat-palette($mat-red, 600);
-    $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
-    @include angular-material-theme($theme-docs);
-    @include covalent-theme($theme-docs);
+  $primary-docs: mat-palette($mat-deep-purple, 700);
+  $accent-docs:  mat-palette($mat-cyan, A400);
+  $warn-docs:    mat-palette($mat-red, 600);
+  $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
+  @include angular-material-theme($theme-docs);
+  @include covalent-theme($theme-docs);
 
-    .tc-primary {
-        color: mat-color($primary-docs);
-    }
-    .tc-accent,
-    a {
-        color: mat-color($accent-docs);
-    }
-    a:hover {
-        color: darken(mat-color($accent-docs), 10%);
-    }
-    .tc-warn {
-        color: mat-color($warn-docs);
-    }
+  .tc-primary {
+    color: mat-color($primary-docs);
+  }
+  .tc-accent,
+  a {
+    color: mat-color($accent-docs);
+  }
+  a:hover {
+    color: darken(mat-color($accent-docs), 10%);
+  }
+  .tc-warn {
+    color: mat-color($warn-docs);
+  }
 }
 
 // Custom theme examples
 .blue-orange {
-    $primary2: mat-palette($mat-blue, 700);
-    $accent2:  mat-palette($mat-orange, 800);
-    $warn2:    mat-palette($mat-red, 600);
+  $primary2: mat-palette($mat-blue, 700);
+  $accent2:  mat-palette($mat-orange, 800);
+  $warn2:    mat-palette($mat-red, 600);
 
-    $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
+  $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
-    @include angular-material-theme($blue-orange);
-    @include covalent-theme($blue-orange);
+  @include angular-material-theme($blue-orange);
+  @include covalent-theme($blue-orange);
 }
 
 .blue-grey-deep-orange {
-    $primary3: mat-palette($mat-blue-grey, 700);
-    $accent3:  mat-palette($mat-deep-orange);
-    $warn3:    mat-palette($mat-red, 600);
+  $primary3: mat-palette($mat-blue-grey, 700);
+  $accent3:  mat-palette($mat-deep-orange);
+  $warn3:    mat-palette($mat-red, 600);
 
-    $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
+  $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
-    @include angular-material-theme($blue-grey-deep-orange);
-    @include covalent-theme($blue-grey-deep-orange);
+  @include angular-material-theme($blue-grey-deep-orange);
+  @include covalent-theme($blue-grey-deep-orange);
 }
 
 /* ------------------------------------------------------------------------------- */
@@ -195,55 +198,55 @@ $background: map-get($theme, background);
 
 // Active icon color in list nav
 mat-nav-list {
-    [mat-list-item].active {
-        mat-icon[matListAvatar] {
-            background-color: mat-color($accent);
-            color: mat-color($accent, default-contrast)
-        }
-        mat-icon[matListIcon] {
-            color: mat-color($accent);
-        }
+  [mat-list-item].active {
+    mat-icon[matListAvatar] {
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
     }
+    mat-icon[matListIcon] {
+      color: mat-color($accent);
+    }
+  }
 }
 
 // NGX Charts
 [ngx-charts-axis-label] text {
-    fill: mat-color($foreground, secondary-text);
+  fill: mat-color($foreground, secondary-text);
 }
 .tick text {
-    fill: mat-color($foreground, disabled);
+  fill: mat-color($foreground, disabled);
 }
 .gridline-path {
-    &.gridline-path-horizontal,
-    &.gridline-path-vertical {
-        stroke: rgba(black, 0.06);
-    }
+  &.gridline-path-horizontal,
+  &.gridline-path-vertical {
+    stroke: rgba(black, 0.06);
+  }
 }
 .legend-title-text {
-    color: mat-color($foreground, secondary-text);
+  color: mat-color($foreground, secondary-text);
 }
 
 // Expansion panels
 .theme-dark .td-expansion-panel {
-    background-color: mat-color($mat-blue-grey, 800);
+  background-color: mat-color($mat-blue-grey, 800);
 }
 
 // Active top nav
 nav {
-    a {
-        line-height: 4;
-        display: block;
-        &:not(.active) {
-            color: rgba(255, 255, 255, 0.56);
-        }
-        &.active {
-            color: mat-color($accent);
-            border-bottom: 1px solid mat-color($accent);
-        }
+  a {
+    line-height: 4;
+    display: block;
+    &:not(.active) {
+      color: rgba(255, 255, 255, 0.56);
     }
+    &.active {
+      color: mat-color($accent);
+      border-bottom: 1px solid mat-color($accent);
+    }
+  }
 }
 
 // Links
 a {
-    text-decoration: none;
+  text-decoration: none;
 }

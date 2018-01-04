@@ -1,14 +1,13 @@
-@import "button";
-@import "card";
-@import "content";
-@import "divider";
-@import "icons";
-@import "list";
-@import "sidenav";
-@import "structure";
-@import "toolbar";
-@import "whiteframe";
-
+@import 'button';
+@import 'card';
+@import 'content';
+@import 'divider';
+@import 'icons';
+@import 'list';
+@import 'sidenav';
+@import 'structure';
+@import 'toolbar';
+@import 'whiteframe';
 
 @mixin covalent-core() {
   @include td-button-utilities();

@@ -64,12 +64,12 @@ $step-circle: 24px;
     ::ng-deep :not([dir='rtl']) & {
       margin: {
         left: 8px;
-        right: 0px;
+        right: 0;
       }
     }
     ::ng-deep [dir='rtl'] & {
       margin: {
-        left: 0px;
+        left: 0;
         right: 8px;
       }
     }

@@ -41,9 +41,9 @@
   }
 
   [mat-icon-button].td-layout-menu-button {
-    margin-left: 0px;
-    ::ng-deep [dir='rtl'] & { 
-      margin-right: 0px;
+    margin-left: 0;
+    ::ng-deep [dir='rtl'] & {
+      margin-right: 0;
       margin-left: 6px;
     }
   }

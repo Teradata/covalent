@@ -1,25 +1,11 @@
 @mixin td-content-utilities() {
-  // Overall app layout height
-  mat-sidenav-container {
-    & > md-content,
-    & > [md-content],
-    & > .md-content,
-    & > mat-content,
-    & > [mat-content],
-    & > .mat-content {
-      height: 100%;
-      overflow: hidden;
-    }
-  }
 
   md-content,
   [md-content],
   .md-content,
   mat-content,
   [mat-content],
-  .mat-content,
-  {
-
+  .mat-content {
     display: block;
     position: relative;
     overflow: auto;
@@ -39,6 +25,19 @@
     // @see issue #2640.
     &.autoScroll {
       -webkit-overflow-scrolling: auto;
+    }
+  }
+  
+  // Overall app layout height
+  mat-sidenav-container {
+    & > md-content,
+    & > [md-content],
+    & > .md-content,
+    & > mat-content,
+    & > [mat-content],
+    & > .mat-content {
+      height: 100%;
+      overflow: hidden;
     }
   }
 }
