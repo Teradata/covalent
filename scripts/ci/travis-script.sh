@@ -37,7 +37,7 @@ elif [ "${MODE}" = "aot" ]; then
   npm run build:docs
 elif [ "${MODE}" = "release" ]; then
   npm run build:release
-elif [ "${MODE}" = "unit" ]; then
+elif [ "${MODE}" = "unit-test" ]; then
   npm run test
 fi
 
