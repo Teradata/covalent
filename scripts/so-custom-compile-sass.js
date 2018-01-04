@@ -5,7 +5,6 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var config = require('../build.conf');
 var sassImporter = require('./sass-importer');
 
 gulp.task('compile-common-sass', 'compile some common sass to css to be distributed', function() {
