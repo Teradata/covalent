@@ -10,8 +10,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    &.td-chips-stacked .mat-basic-chip {
+    &.td-chips-stacked .mat-basic-chip,
+    &.td-chips-stacked .td-chips-form-field {
       width: 100%;
+    }
+    &.td-chips-input-before-position {
+      .td-chips-form-field {
+        order: -1;
+      }
     }
   }
   .td-chip {
@@ -71,6 +77,17 @@
         line-height: 22px;
         &:hover {
           cursor: pointer;
+        }
+      }
+    }
+    .td-chips-stacked {
+      .mat-basic-chip {
+        margin: 4px 0;
+        &:first-of-type {
+          margin: 8px 0 4px;
+        }
+        &:last-of-type {
+          margin: 4px 0 8px;
         }
       }
     }
