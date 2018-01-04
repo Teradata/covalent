@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# build and test ssr in universal app
+npm run so-custom-build
+
+cd dist/core
+npm pack
+cd ../..
+
+cp -r src/universal-app dist
+cd dist/universal-app
+npm install
+npm install ../core/covalent-core-*.tgz
+../../node_modules/.bin/ngc -p tsconfig-battle-zone.json
+../../node_modules/.bin/tsc -p tsconfig-battle-royale.json
+
+node battle-royale.js

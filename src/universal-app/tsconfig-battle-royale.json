@@ -16,11 +16,7 @@
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "types": [],
-    "paths": {
-      "@covalent/core": ["./core"],
-      "@covalent/core/*": ["./core/*"]
-    }
+    "types": []
   },
   "files": ["battle-royale.ts"]
 }

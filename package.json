@@ -36,7 +36,10 @@
     "release:finish": "bash scripts/finish-release",
     "combat-training": "bash scripts/combat-training",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
-    "so-custom-build": "bash scripts/so-custom-build"
+
+    "ng-packagr-core": "./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.json",
+    "so-custom-build": "bash scripts/so-custom-build",
+    "so-custom-test-ssr": "bash scripts/so-custom-test-ssr"
   },
   "engines": {
     "node": ">=6.11.1 < 7",

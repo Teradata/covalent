@@ -13,10 +13,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // import { CovalentMessageModule } from '@covalent/core';
 import {
   CovalentPagingModule,
-  // CovalentVirtualScrollModule,
-  // CovalentNotificationsModule,
-  // CovalentCommonModule,
-  // TdFadeInOutAnimation,
+  CovalentVirtualScrollModule,
+  CovalentNotificationsModule,
+  CovalentCommonModule,
+  TdFadeInOutAnimation,
   // CovalentMessageModule,
   // CovalentChipsModule,
   // CovalentDataTableModule,
@@ -50,9 +50,9 @@ import {
   selector: 'combat-training',
   templateUrl: './combat-training.html',
   styleUrls: ['./combat-training.css'],
-  // animations: [
-  //   TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
-  // ],
+  animations: [
+    TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
+  ],
 })
 export class CombatTrainingComponent implements OnInit {
   data: any[] = [
@@ -62,9 +62,9 @@ export class CombatTrainingComponent implements OnInit {
     {index: 3, name: 'element-3' },
   ];
 
-  // testDigit: number = 3.975086;
+  testDigit: number = 3.975086;
 
-  // triggerState: boolean = false;
+  triggerState: boolean = false;
 
   // strings: string[] = [
   //   'stepper',
@@ -143,10 +143,10 @@ export class CombatTrainingComponent implements OnInit {
 
     // Add additional Covalent components here and within the template
     CovalentPagingModule,
-    // CovalentVirtualScrollModule,
-    // CovalentNotificationsModule,
+    CovalentVirtualScrollModule,
+    CovalentNotificationsModule,
 
-    // CovalentCommonModule,
+    CovalentCommonModule,
     // CovalentMessageModule,
     // CovalentChipsModule,
     // CovalentDataTableModule,

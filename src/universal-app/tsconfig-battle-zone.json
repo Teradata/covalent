@@ -7,17 +7,14 @@
     "strictNullChecks": false,
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "../../..",
+    "outDir": ".",
+    "rootDir": ".",
     "sourceMap": true,
     "target": "es2015",
     "lib": ["es2015", "dom"],
     "skipLibCheck": true,
     "types": [],
-    "baseUrl": ".",
-    "paths": {
-      "@covalent/core": ["./core"],
-      "@covalent/core/*": ["./core/*"]
-    }
+    "baseUrl": "."
   },
   "files": [
     "main.ts"
