@@ -133,12 +133,10 @@ export class TdDialogService {
     return dialogRef;
   }
 
-  private _createConfig(config: MatDialogConfig): MatDialogConfig {
+  private _createConfig(config: IDialogConfig): MatDialogConfig {
     let dialogConfig: MatDialogConfig = new MatDialogConfig();
     dialogConfig.width = '400px';
-    for (let key in config) {
-      dialogConfig[key] = config[key];
-    }
+    Object.assign(dialogConfig, config);
     return dialogConfig;
   }
 
