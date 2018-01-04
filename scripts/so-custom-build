@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+rm -rf ./dist
+
+$(npm bin)/ngc -p src/platform/core/paging/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/virtual-scroll/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/notifications/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/common/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/message/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/chips/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/data-table/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/dialogs/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/expansion-panel/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/file/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/json-formatter/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/layout/secondary-build.json
+# $(npm bin)/ngc -p src/platform/core/loading/secondary-build.json
+
+# change components index.metadata.json scss to css (TODO: script to inline it) so when the factory is created it uses css rather than scss b/c the browser doesn't understand scss
+gulp core-replace-ngc-generated-metadata-scss-css
+
+$(npm bin)/ngc -p src/platform/core/primary-entry.json
+
+cp src/platform/core/package.json dist/packages/core
+
+gulp compile-paging-sass
+cp src/platform/core/paging/paging-bar.component.html dist/packages/core/paging
+cp src/platform/core/paging/package.json dist/packages/core/paging
+
+# gulp compile-virtual-scroll-sass
+# cp src/platform/core/virtual-scroll/virtual-scroll-container.component.html dist/packages/core/virtual-scroll
+# cp src/platform/core/virtual-scroll/package.json dist/packages/core/virtual-scroll
+
+# gulp compile-notifications-sass
+# cp src/platform/core/notifications/notification-count.component.html dist/packages/core/notifications
+# cp src/platform/core/notifications/package.json dist/packages/core/notifications
+
+# gulp compile-common-sass
+# cp src/platform/core/common/package.json dist/packages/core/common
+
+# gulp compile-message-sass
+# cp src/platform/core/message/message.component.html dist/packages/core/message
+# cp src/platform/core/message/package.json dist/packages/core/message
+
+# gulp compile-chips-sass
+# cp src/platform/core/chips/chips.component.html dist/packages/core/chips
+# cp src/platform/core/chips/package.json dist/packages/core/chips
+
+# gulp compile-data-table-sass
+# cp src/platform/core/data-table/data-table.component.html dist/packages/core/data-table
+# cp src/platform/core/data-table/data-table-cell/data-table-cell.component.html dist/packages/core/data-table/data-table-cell
+# cp src/platform/core/data-table/data-table-column/data-table-column.component.html dist/packages/core/data-table/data-table-column
+# cp src/platform/core/data-table/data-table-row/data-table-row.component.html dist/packages/core/data-table/data-table-row
+# cp src/platform/core/data-table/data-table-table/data-table-table.component.html dist/packages/core/data-table/data-table-table
+# cp src/platform/core/data-table/package.json dist/packages/core/data-table
+
+# gulp compile-dialogs-sass
+# cp src/platform/core/dialogs/dialog.component.html dist/packages/core/dialogs
+# cp src/platform/core/dialogs/alert-dialog/alert-dialog.component.html dist/packages/core/dialogs/alert-dialog
+# cp src/platform/core/dialogs/confirm-dialog/confirm-dialog.component.html dist/packages/core/dialogs/confirm-dialog
+# cp src/platform/core/dialogs/prompt-dialog/prompt-dialog.component.html dist/packages/core/dialogs/prompt-dialog
+# cp src/platform/core/dialogs/package.json dist/packages/core/dialogs
+
+# gulp compile-expansion-panel-sass
+# cp src/platform/core/expansion-panel/expansion-panel.component.html dist/packages/core/expansion-panel
+# cp src/platform/core/expansion-panel/expansion-panel-group.component.html dist/packages/core/expansion-panel
+# cp src/platform/core/expansion-panel/package.json dist/packages/core/expansion-panel
+
+# gulp compile-file-sass
+# cp src/platform/core/file/file-input/file-input.component.html dist/packages/core/file/file-input
+# cp src/platform/core/file/file-upload/file-upload.component.html dist/packages/core/file/file-upload
+# cp src/platform/core/file/package.json dist/packages/core/file
+
+# gulp compile-json-formatter-sass
+# cp src/platform/core/json-formatter/json-formatter.component.html dist/packages/core/json-formatter
+# cp src/platform/core/json-formatter/package.json dist/packages/core/json-formatter
+
+# gulp compile-layout-sass
+# cp src/platform/core/layout/layout.component.html dist/packages/core/layout
+# cp src/platform/core/layout/navigation-drawer/navigation-drawer.component.html dist/packages/core/layout/navigation-drawer
+# cp src/platform/core/layout/layout-nav-list/layout-nav-list.component.html dist/packages/core/layout/layout-nav-list
+# cp src/platform/core/layout/layout-nav/layout-nav.component.html dist/packages/core/layout/layout-nav
+# cp src/platform/core/layout/layout-manage-list/layout-manage-list.component.html dist/packages/core/layout/layout-manage-list
+# cp src/platform/core/layout/layout-footer/layout-footer.component.html dist/packages/core/layout/layout-footer
+# cp src/platform/core/layout/layout-card-over/layout-card-over.component.html dist/packages/core/layout/layout-card-over
+# cp src/platform/core/layout/package.json dist/packages/core/layout
+
+# gulp compile-loading-sass
+# cp src/platform/core/loading/loading.component.html dist/packages/core/loading
+# cp src/platform/core/loading/package.json dist/packages/core/loading
+
+# gulp so-custom-rollup-secondary-code
+gulp so-custom-rollup-primary-code
+# echo "done primary rollup"
+cp -r src/universal-app/ dist/packages/universal-app
+cp -r dist/packages/core dist/packages/universal-app/core
+
+echo ">> start"
+$(npm bin)/ngc -p dist/packages/universal-app/tsconfig-battle-zone.json
+echo ">> middle"
+$(npm bin)/tsc -p dist/packages/universal-app/tsconfig-battle-royale.json
+echo ">> end"
+
+# # TS_NODE_PROJECT=/Users/so186021/dropbox/project/github/stevenov7/covalent_folders/covalent-ssr-sandbox/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js
+TS_NODE_PROJECT=$(pwd)/dist/packages/universal-app/tsconfig-battle-royale.json node -r tsconfig-paths/register ./dist/packages/universal-app/battle-royale.js

@@ -1,15 +1,26 @@
 {
   "compilerOptions": {
+    "declaration": false,
+    "stripInternal": false,
+    "outDir": ".",
+    "rootDir": ".",
+    "sourceMap": true,
+    "noUnusedParameters": false,
+    "strictNullChecks": false,
+    "target": "es2015",
     "lib": ["es2015", "dom"],
-    "target": "es6",
+    "skipLibCheck": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
     "noEmitOnError": true,
     "noImplicitAny": true,
-    "sourceMap": false,
     "experimentalDecorators": true,
-    "types": ["node"]
+    "baseUrl": ".",
+    "types": [],
+    "paths": {
+      "@covalent/core": ["./core"],
+      "@covalent/core/*": ["./core/*"]
+    }
   },
   "files": ["battle-royale.ts"]
 }

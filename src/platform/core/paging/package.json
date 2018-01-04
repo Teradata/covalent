@@ -1,0 +1,5 @@
+{
+  "name": "@covalent/core/paging",
+  "main": "../bundles/core.umd.js",
+  "typings": "./index.d.ts"
+}
