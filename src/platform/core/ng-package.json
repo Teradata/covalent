@@ -74,6 +74,7 @@
       "@covalent/core/paging": "td.core.paging",
       "@covalent/core/virtual-scroll": "td.core.virtual-scroll",
       "@covalent/core/notifications": "td.core.notifications",
+      "@covalent/core/common": "td.core.common",
 
       "@covalent/dynamic-forms": "td.dynamicForms",
       "@covalent/highlight": "td.highlight",

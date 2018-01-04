@@ -2,8 +2,7 @@
  * COMMON
  */
 
-import { CovalentCommonModule } from './common/common.module';
-export * from './common/common.module';
+export * from './common/public-api';
 
 /**
  * CHIPS

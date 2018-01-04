@@ -4,7 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/public-api';
 
 export enum StepState {
   None = <any>'none',

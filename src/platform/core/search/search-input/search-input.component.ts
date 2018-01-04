@@ -8,7 +8,7 @@ import { MatInput } from '@angular/material/input';
 import { debounceTime } from 'rxjs/operators/debounceTime';
 import { skip } from 'rxjs/operators/skip';
 
-import { IControlValueAccessor, mixinControlValueAccessor } from '../../common/common.module';
+import { IControlValueAccessor, mixinControlValueAccessor } from '../../common/public-api';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) { }

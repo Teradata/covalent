@@ -25,7 +25,7 @@ export enum LoadingStyle {
   None = <any>'none',
 }
 
-import { TdFadeInOutAnimation } from '../common/common.module';
+import { TdFadeInOutAnimation } from '../common/public-api';
 
 export const TD_CIRCLE_DIAMETER: number = 100;
 

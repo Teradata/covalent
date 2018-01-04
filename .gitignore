@@ -2,6 +2,7 @@
 
 # compiled output
 /**/dist
+/**/.ng_pkg_build
 /deploy
 /tmp
 

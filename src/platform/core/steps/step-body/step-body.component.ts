@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 
 import { StepState } from '../step.component';
 
-import { TdCollapseAnimation } from '../../common/common.module';
+import { TdCollapseAnimation } from '../../common/public-api';
 
 @Component({
   selector: 'td-step-body',

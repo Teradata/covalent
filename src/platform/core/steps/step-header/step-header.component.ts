@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../../common/common.module';
+import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../../common/public-api';
 
 import { StepState } from '../step.component';
 
