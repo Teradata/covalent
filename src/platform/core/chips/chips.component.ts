@@ -72,6 +72,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _stacked: boolean = false;
   private _requireMatch: boolean = false;
   private _color: 'primary' | 'accent' | 'warn' = 'primary';
+  private _inputPosition: 'before' | 'after' = 'after';
   private _chipAddition: boolean = true;
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
@@ -128,6 +129,22 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
     return this._stacked;
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * inputPosition?: 'before' | 'after'
+   * Set input position before or after the chips.
+   * Defaults to 'after'.
+   */
+  @Input('inputPosition')
+  set inputPosition(inputPosition: 'before' | 'after') {
+    this._inputPosition = inputPosition;
+  }
+  get inputPosition(): 'before' | 'after' {
+    return this._inputPosition;
+  }
+  
+>>>>>>> develop
   /**
    * requireMatch?: boolean
    * Blocks custom inputs and only allows selections from the autocomplete list.
