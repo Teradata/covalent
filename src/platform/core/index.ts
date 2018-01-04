@@ -86,15 +86,13 @@ export * from './message/message.module';
  * NOTIFICATIONS
  */
 
-import { CovalentNotificationsModule } from './notifications/notifications.module';
-export * from './notifications/notifications.module';
+export * from './notifications/public-api';
 
 /**
  * PAGING
  */
 
-import { CovalentPagingModule } from './paging/paging.module';
-export * from './paging/paging.module';
+export * from './paging/public-api';
 
 /**
  * SEARCH
@@ -114,5 +112,4 @@ export * from './steps/steps.module';
  * VIRTUAL SCROLL
  */
 
-import { CovalentVirtualScrollModule } from './virtual-scroll/virtual-scroll.module';
-export * from './virtual-scroll/virtual-scroll.module';
+export * from './virtual-scroll/public-api';

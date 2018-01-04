@@ -1,6 +1,6 @@
-export * from './paging';
-// export * from './virtual-scroll';
-// export * from './notifications';
+export * from './paging/public-api';
+export * from './virtual-scroll/public-api';
+export * from './notifications/public-api';
 // export * from './common';
 // export * from './message';
 // export * from './chips';
