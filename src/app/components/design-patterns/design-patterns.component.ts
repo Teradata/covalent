@@ -33,6 +33,16 @@ export class DesignPatternsComponent {
     icon: 'add_circle',
     route: 'fab',
     title: 'FAB Patterns',
+  }, {
+    description: 'Wizard-like pattern',
+    icon: 'looks_one',
+    route: 'steppers',
+    title: 'Stepper Patterns',
+  }, {
+    description: 'Feedback for empty elements',
+    icon: 'space_bar',
+    route: 'empty-states',
+    title: 'Empty State Patterns',
   }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,

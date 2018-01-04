@@ -23,26 +23,26 @@ $td-notification-content-size: 40px !default;
   &.td-notification-center-x {
     margin-left: auto;
     margin-right: auto;
-    left: 0px;
-    right: 0px
+    left: 0;
+    right: 0;
   }
   &.td-notification-center-y {
     margin-top: auto;
     margin-bottom: auto;
-    top: 0px;
-    bottom: 0px;
+    top: 0;
+    bottom: 0;
   }
   &.td-notification-top {
-    top: 0px;
+    top: 0;
   }
   &.td-notification-bottom {
-    bottom: 0px;
+    bottom: 0;
   }
   &.td-notification-before {
-    left: 0px
+    left: 0;
   }
   &.td-notification-after {
-    right: 0px;
+    right: 0;
   }
   &.td-notification-no-count {
     width: 8px;
@@ -62,14 +62,14 @@ $td-notification-content-size: 40px !default;
   }
   ::ng-deep [dir='rtl'] & {
     &.td-notification-before {
-      right: 0px;
+      right: 0;
       left: auto;
     }
     &.td-notification-after {
-      left: 0px;
+      left: 0;
       right: auto;
     }
-     &.td-notification-no-count {
+    &.td-notification-no-count {
       &.td-notification-before {
         right: 8px;
         left: auto;

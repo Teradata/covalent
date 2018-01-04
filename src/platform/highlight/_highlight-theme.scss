@@ -5,7 +5,7 @@
 */
 @mixin covalent-highlight-theme() {
   td-highlight {
-    background: #1E1E21;
+    background: #1e1e21;
     .highlight {
       color: mat-color($mat-grey, 50);
     }
@@ -18,12 +18,12 @@
     .hljs-tag,
     .hljs-name,
     .hljs-selector-tag,
-    .hljs-literal{
+    .hljs-literal {
       color: #569cd6;
     }
 
     .hljs-keyword {
-      color: #C288BF;
+      color: #c288bf;
     }
 
     .hljs-attr,
@@ -35,7 +35,7 @@
     .hljs-string,
     .hljs-selector-attr,
     .hljs-regexp,
-    .hljs-link  {
+    .hljs-link {
       color: #ce9178;
     }
     
@@ -46,7 +46,7 @@
     }
 
     .hljs-meta {
-      color: #DCDCAA;
+      color: #dcdcaa;
     }
 
     .hljs-built_in,
@@ -56,7 +56,7 @@
     .hljs-class .hljs-title,
     .hljs-symbol,
     .hljs-bullet {
-      color: #4EC9B0
+      color: #4ec9b0;
     }
 
     .hljs-number {
@@ -65,7 +65,7 @@
 
     .hljs-variable,
     .hljs-template-variable {
-      color: #9FDDFC;
+      color: #9fddfc;
     }
 
     .hljs-deletion {

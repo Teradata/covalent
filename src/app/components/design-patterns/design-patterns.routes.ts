@@ -6,6 +6,8 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { FABComponent } from './fab/fab.component';
+import { SteppersComponent } from './steppers/steppers.component';
+import { EmptyStatesComponent } from './empty-states/empty-states.component';
 
 const routes: Routes = [{
   children: [{
@@ -23,6 +25,12 @@ const routes: Routes = [{
     }, {
       component: FABComponent,
       path: 'fab',
+    }, {
+      component: SteppersComponent,
+      path: 'steppers',
+    }, {
+      component: EmptyStatesComponent,
+      path: 'empty-states',
     },
   ],
   component: DesignPatternsComponent,

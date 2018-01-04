@@ -16,8 +16,11 @@ git commit -a -m "Version bump"
 echo "Publishing release v$version"
 git flow release publish v$version
 
-echo "Executed lint test"
-npm run lint
+echo "Executed tslint test"
+npm run tslint
+
+echo "Executed stylelint test"
+npm run stylelint
 
 echo "Executed unit tests"
 npm run test

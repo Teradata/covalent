@@ -90,19 +90,29 @@
               </mat-form-field>
             </div>
             <div *ngIf="isMinMaxSupported(model.type)" layout="row">
-              <mat-form-field class="pad-right-xs" flex>
+              <mat-form-field *ngIf="!isDate(model.type)" class="pad-right-xs" flex>
+                <input matInput type="number" placeholder="Min" [(ngModel)]="model.min" name="min">
+              </mat-form-field>
+              <mat-form-field *ngIf="isDate(model.type)" class="pad-right-xs" flex>
                 <input matInput
-                      type="number"
+                      [matDatepicker]="minDatepicker"
                       placeholder="Min"
                       [(ngModel)]="model.min"
                       name="min">
+                <mat-datepicker-toggle matSuffix [for]="minDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #minDatepicker></mat-datepicker>
               </mat-form-field>
-              <mat-form-field flex="50">
+              <mat-form-field *ngIf="!isDate(model.type)" flex="50">
+                <input matInput type="number" placeholder="Max" [(ngModel)]="model.max" name="max">
+              </mat-form-field>
+              <mat-form-field *ngIf="isDate(model.type)" flex="50">
                 <input matInput
-                      type="number"
-                      placeholder="Max"
-                      [(ngModel)]="model.max"
-                      name="max">
+                       [matDatepicker]="maxDatepicker"
+                       placeholder="Max"
+                       [(ngModel)]="model.max"
+                       name="max">
+                <mat-datepicker-toggle matSuffix [for]="maxDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #maxDatepicker></mat-datepicker>
               </mat-form-field>
             </div>
             <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
@@ -254,6 +264,35 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">Dynamic Datepicker Element</h3>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-dynamic-forms [elements]="dateElements">
+        </td-dynamic-forms>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="dateElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          {{dateElements | json}}
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
 <mat-card>
   <mat-card-content>
     <h3 class="mat-title">Dynamic Array Elements</h3>
