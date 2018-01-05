@@ -39,8 +39,8 @@
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular"
   },
   "engines": {
-    "node": ">=6.11.1 < 7",
-    "npm": ">3"
+    "node": ">=8.9.4 < 9",
+    "npm": ">5"
   },
   "repository": {
     "type": "git",
@@ -130,7 +130,7 @@
     "node-sass": "3.8.0",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "~5.1.0",
-    "require-dir": "0.3.0",
+    "require-dir": "0.3.2",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
