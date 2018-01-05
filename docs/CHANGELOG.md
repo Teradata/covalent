@@ -1,5 +1,5 @@
 <a name="1.0.0-rc.2"></a>
-# [1.0.0-rc.2 Transpiled Suspenders](https://github.com/teradata/covalent/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-06)
+# [1.0.0-rc.2 Transpiled Suspenders](https://github.com/teradata/covalent/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-05)
 
 Kicking off the year with our RC.2 release!
 

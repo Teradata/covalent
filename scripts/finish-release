@@ -19,7 +19,8 @@ git push origin develop
 
 echo "Pushing changes into master"
 git checkout master
-git merge --no-ff develop
+git merge develop
+git push origin master
 
 echo "Return to develop branch"
 git checkout develop
