@@ -23,7 +23,8 @@ echo "Execute unit tests"
 npm run test
 
 echo "Execute release build test"
-npm run build:release && rm -rf deploy
+npm run build:release
+rm -rf deploy
 
 echo "Bump to version v$version"
 gulp bump-version --ver $version
