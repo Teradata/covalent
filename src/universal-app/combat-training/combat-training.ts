@@ -7,34 +7,27 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // import your components here for combat-training and see if they can survive the battle
 
-// import { CovalentPagingModule } from '@covalent/core/paging';
-// import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
-// import { CovalentNotificationsModule } from '@covalent/core';
-// import { CovalentMessageModule } from '@covalent/core';
-import {
-  CovalentPagingModule,
-  CovalentVirtualScrollModule,
-  CovalentNotificationsModule,
-  CovalentCommonModule,
-  TdFadeInOutAnimation,
-  // CovalentMessageModule,
-  // CovalentChipsModule,
-  // CovalentDataTableModule,
-  // ITdDataTableColumn,
-  // CovalentDialogsModule,
-  // CovalentExpansionPanelModule,
-  // CovalentFileModule,
-  // CovalentJsonFormatterModule,
-  // CovalentLayoutModule,
-  // CovalentLoadingModule,
-} from '@covalent/core';
+import { CovalentPagingModule } from '@covalent/core/paging';
+import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
+import { CovalentNotificationsModule } from '@covalent/core/notifications';
+import { CovalentCommonModule, TdFadeInOutAnimation } from '@covalent/core/common';
+// import {
+//   CovalentMessageModule,
+//   CovalentChipsModule,
+//   CovalentDataTableModule,
+//   ITdDataTableColumn,
+//   CovalentDialogsModule,
+//   CovalentExpansionPanelModule,
+//   CovalentFileModule,
+//   CovalentJsonFormatterModule,
+//   CovalentLayoutModule,
+//   CovalentLoadingModule,
+// } from '@covalent/core';
 
-import {
-  MatSliderModule,
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-} from '@angular/material';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 // The issue is that anytime i import anything from @angular/material i always get the Illegal issue, need to figure out why that is happening there.
 // when i remove rootDir config from the tsconfig-battle-zone.json it works but it produces an odd output in the dist/universal/core/paging
