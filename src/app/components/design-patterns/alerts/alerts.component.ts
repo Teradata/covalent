@@ -7,7 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./alerts.component.scss'],
   templateUrl: './alerts.component.html',
   animations: [
-    slideInDownAnimation
+    slideInDownAnimation,
   ],
 })
 export class AlertsComponent {

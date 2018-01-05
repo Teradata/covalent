@@ -7,7 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./cards.component.scss'],
   templateUrl: './cards.component.html',
   animations: [
-    slideInDownAnimation
+    slideInDownAnimation,
   ],
 })
 export class CardsComponent {

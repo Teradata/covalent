@@ -7,7 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./management-list.component.scss'],
   templateUrl: './management-list.component.html',
   animations: [
-    slideInDownAnimation
+    slideInDownAnimation,
   ],
 })
 

@@ -1,111 +1,111 @@
 <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
-      <mat-card-title>Alert Patterns</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content class="mat-typography">
-        <h3>When to use</h3>
-        <p>Dialogs are most useful in situations where the user most take some action or the app needs to communicate critical information.  On the other hand, toasts and snackbars are passive and do not require any user action or interruption to the user's workflow.  Inline errors are useful for forms validation while guiding the user through the form.</p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card>
-      <mat-card-title>
-        <div layout="row" layout-align="start center">
-          <span>Example</span>
-          <span flex></span>
-          <a href="https://stackblitz.com/edit/alert-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
-            <mat-icon>launch</mat-icon>
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+    <mat-card-title>Alert Patterns</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="mat-typography">
+      <h3>When to use</h3>
+      <p>Dialogs, toasts, and inline errors all provide a means to communicate with the user to provide feedback or a call to action.</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/alert-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad">
+        <h2>Usage</h2>
+        <h3>Dialogs</h3>
+        <p>Inform users about a specific task or critical information, such as
+          a verbose/critical error, alert or a confirmation of an action.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Toasts & Snackbars</h3>
+        <p>Toasts and snackbars provide brief feedback about an operation through a message at the bottom of the screen.  Unlike toasts, snackbars do not contain actions and cannot be swiped off screen.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h3>Inline Errors</h3>
+        <p>Use warning color and position on the left.</p>
+        <mat-divider class="push-bottom"></mat-divider>
+        <h2 class="push-bottom-none">Guidelines</h2>
+        <mat-nav-list class="pull-left pull-right">
+          <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>Dialogs</p>
           </a>
-        </div>
-      </mat-card-title>
-      <mat-divider></mat-divider>
-      <div layout-gt-sm="row">
-        <div flex-gt-sm="25" class="mat-typography pad">
-          <h2>Usage</h2>
-          <h3>Dialogs</h3>
-          <p>Since dialogs are disruptive, reserve use to inform users about a specific task or critical information, such as a verbose/critical error, alert or a confirmation of an action.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h3>Toasts & Snackbars</h3>
-          <p>Toasts and snackbars are similar, except snackbars but do not contain actions and cannot be swiped off screen.  Both provide brief feedback about an operation through a message at the bottom of the screen.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h3>Inline Errors</h3>
-          <p>Inline errors are useful in forms for validation, warnings and errors.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h2 class="push-bottom-none">Guidelines</h2>
-          <mat-nav-list class="pull-left pull-right">
-            <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Material Design</span>
-              <p matLine>Dialogs</p>
-            </a>
-            <mat-divider class="push-left push-right"></mat-divider>
-            <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Angular Material</span>
-              <p matLine>Dialogs</p>
-            </a>
-            <mat-divider class="push-left push-right"></mat-divider>
-            <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Material Design</span>
-              <p matLine>Snackbars</p>
-            </a>
-            <mat-divider class="push-left push-right"></mat-divider>
-            <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Angular Material</span>
-              <p matLine>Snackbars</p>
-            </a>
-            <mat-divider class="push-left push-right"></mat-divider>
-            <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Material Design</span>
-              <p matLine>Errors</p>
-            </a>
-          </mat-nav-list>
-        </div>
-        <div layout="row" flex-gt-sm>
-          <iframe flex class="iframe" [src]="source">
-          </iframe>
-        </div>
+          <mat-divider class="push-left push-right"></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Angular Material</span>
+            <p matLine>Dialogs</p>
+          </a>
+          <mat-divider class="push-left push-right"></mat-divider>
+          <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>Snackbars</p>
+          </a>
+          <mat-divider class="push-left push-right"></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Angular Material</span>
+            <p matLine>Snackbars</p>
+          </a>
+          <mat-divider class="push-left push-right"></mat-divider>
+          <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>Errors</p>
+          </a>
+        </mat-nav-list>
       </div>
-    </mat-card>
-    <div layout-gt-xs="row">
-      <div flex-gt-xs="50">
-        <mat-card>
-          <mat-card-title>
-            <span class="tc-green-600">Do</span>
-          </mat-card-title>
-          <mat-divider></mat-divider>
-          <mat-list>
-            <mat-list-item>
-              <mat-icon matListIcon>looks_one</mat-icon>
-              <h3 matLine>Float buttons to the right.</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-icon matListIcon>looks_two</mat-icon>
-              <h3 matLine>Keep dialogs simple.</h3>
-            </mat-list-item>
-          </mat-list>
-        </mat-card>
-      </div>
-      <div flex-gt-xs="50">
-        <mat-card>
-          <mat-card-title>
-            <span class="tc-red-600">Don't</span>
-          </mat-card-title>
-          <mat-divider></mat-divider>
-          <mat-list>
-            <mat-list-item>
-              <mat-icon matListIcon>looks_one</mat-icon>
-              <h3 matLine>Don't use dialogs with forms.</h3>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-icon matListIcon>looks_two</mat-icon>
-              <h3 matLine>Don't include unnessary buttons like dismiss.</h3>
-            </mat-list-item>
-          </mat-list>
-        </mat-card>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source">
+        </iframe>
       </div>
     </div>
+  </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Float buttons to the right.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Keep dialogs simple.</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Don't use dialogs with forms.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't include unnecessary buttons like dismiss.</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
   </div>
-  
+</div>
