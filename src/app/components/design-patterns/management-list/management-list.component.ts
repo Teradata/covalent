@@ -19,6 +19,6 @@ export class ManagementListComponent {
   source: any = '';
   
   constructor(private sanitizer: DomSanitizer) {
-    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://manage-list-pattern.stackblitz.io/');
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://manage-list-patterns.stackblitz.io/');
   }
 }

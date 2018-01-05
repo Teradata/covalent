@@ -1,5 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { TdCollapseAnimation } from '@covalent/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -58,5 +58,12 @@ export class NavigationDrawerComponent {
 
   toggle(div: string ): void {
     this[div] = !this[div];
+  }
+
+
+  source: any = '';
+  
+  constructor(private sanitizer: DomSanitizer) {
+    this.source = sanitizer.bypassSecurityTrustResourceUrl('https://nav-drawer-patterns.stackblitz.io');
   }
 }
