@@ -74,6 +74,7 @@ gulp.task('rollup-code', '', function() {
 
     'rxjs/operator/toPromise': 'Rx.Observable.prototype',
 
+    'rxjs/observable/defer': 'Rx.Observable',
     'rxjs/operators/pairwise': 'Rx.Observable',
     'rxjs/operators/map': 'Rx.Observable',
     'rxjs/operators/filter': 'Rx.Observable',
