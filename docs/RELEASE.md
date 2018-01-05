@@ -10,11 +10,10 @@
 
 #### Pre Release Checklist
 
-1. Changelog needs to be updated with all release features/fixes/enhancements.
-2. Notifications need to be updated in the covalent `home` screen.
-3. Make sure the `platform` `package.json`s point to the correct versions.
-4. `ng serve --aot` works fine.
-5. `npm run build:release` works fine.
+1. Notifications need to be updated in the covalent `home` screen.
+2. Make sure the `platform` `package.json`s point to the correct versions.
+3. `ng serve --aot` works fine.
+4. `npm run build:release` works fine.
 
 #### Start Release
 
