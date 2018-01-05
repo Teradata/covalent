@@ -25,6 +25,7 @@ Execute `npm run release:start -- [version]` to start the automatic release proc
   4. Executes a sass linting test.
   5. Executes unit tests.
   6. Executes a build release test.
+  7. Bumps its version to [version] release
 
 The release is published in case there is a need for any additional tests, version fixes or bug fixes. This can be added before it is actually released.
 
