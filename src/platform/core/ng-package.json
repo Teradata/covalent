@@ -68,18 +68,7 @@
       "rxjs/operators/switchMap": "Rx.Observable",
       "rxjs/operators/startWith": "Rx.Observable",
       "rxjs/operators/skip": "Rx.Observable",
-      "rxjs/operators/takeUntil": "Rx.Observable",
-
-      "@covalent/core": "td.core",
-      "@covalent/core/paging": "td.core.paging",
-      "@covalent/core/virtual-scroll": "td.core.virtual-scroll",
-      "@covalent/core/notifications": "td.core.notifications",
-      "@covalent/core/common": "td.core.common",
-
-      "@covalent/dynamic-forms": "td.dynamicForms",
-      "@covalent/highlight": "td.highlight",
-      "@covalent/markdown": "td.markdown",
-      "@covalent/http": "td.http"
+      "rxjs/operators/takeUntil": "Rx.Observable"
     }
   }
 }
