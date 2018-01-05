@@ -6,12 +6,12 @@ set -e
 echo "Started release v$version"
 
 echo "Making sure master is up to date"
-git checkout origin master
+git checkout master
 
 git pull origin master
 
 echo "Checking out develop branch"
-git checkout origin develop
+git checkout develop
 
 echo "Execute tslint test"
 npm run tslint
