@@ -1,3 +1,51 @@
+<a name="1.0.0-rc.2"></a>
+# [1.0.0-rc.2 Transpiled Suspenders](https://github.com/teradata/covalent/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-06)
+
+Kicking off the year with our RC.2 release!
+
+The Covalent team wishes everybody a Happy New Year and we want to thank everybody for their support. We will continue delivering new features and improvements this 2018.
+
+More information of our roadmap [here](https://github.com/Teradata/covalent/wiki/Covalent-Roadmap). Note: This is subject to change depending on the `Material Repo`'s roadmap.
+
+#### Highlights
+
+- Datepicker support for `dynamic-forms`.
+- `inputPosition` input for `chips`.
+- Simple Dialogs are more flexible and you can pass any `MatDialogConfig`.
+- More RTL and OnPush support.
+- More bug fixes and improvements!
+
+### Breaking Changes
+
+* **chips:** remove deprecated `readOnly` input ([#1027](https://github.com/teradata/covalent/issues/1027)) ([9f3712d](https://github.com/teradata/covalent/commit/9f3712d))
+
+
+### Bug Fixes
+
+* **docs:** close sidenav properly when clicking on it in any scenario ([#1030](https://github.com/teradata/covalent/issues/1030)) ([ba2b5ed](https://github.com/teradata/covalent/commit/ba2b5ed))
+* **expansion-panel:** let label flex without sublabel and follow MD spec better ([#1068](https://github.com/teradata/covalent/issues/1068)) ([251abb8](https://github.com/teradata/covalent/commit/251abb8))
+* **loading:** update circle height incase loader is rendered hidden ([#1066](https://github.com/teradata/covalent/issues/1066)) ([f26bd4e](https://github.com/teradata/covalent/commit/f26bd4e))
+* **notifications:** fix menu header margin in demo ([#1060](https://github.com/teradata/covalent/issues/1060)) ([55cb101](https://github.com/teradata/covalent/commit/55cb101))
+
+
+### Features
+
+* **behavior:** add ngModel mixin for reuse (control value accessor) ([#1024](https://github.com/teradata/covalent/issues/1024)) ([7a30cb5593a6afdcdc2327c557553e373288bbae](https://github.com/teradata/covalent/commit/7a30cb5593a6afdcdc2327c557553e373288bbae))
+* **chips:** add `inputPosition` input to change its position to before or after (closes [#990](https://github.com/teradata/covalent/issues/990)) ([#1061](https://github.com/teradata/covalent/issues/1061)) ([70887dc](https://github.com/teradata/covalent/commit/70887dc))
+* **data-table:** make table header and body distinguishable ([#1046](https://github.com/teradata/covalent/issues/1046)) ([e6bb7fc](https://github.com/teradata/covalent/commit/e6bb7fc))
+* **dialogs:** extend MatDialogConfig to leverage all the dialog config (closes [#1011](https://github.com/teradata/covalent/issues/1011)) ([#1059](https://github.com/teradata/covalent/issues/1059)) ([eb2ca43](https://github.com/teradata/covalent/commit/eb2ca43))
+* **dynamic-forms:** add datepicker support ([#1058](https://github.com/teradata/covalent/issues/1058)) ([b92a6dc](https://github.com/teradata/covalent/commit/b92a6dc))
+* **file:** remove `files` variable since it was deprecated in a prev release ([#1028](https://github.com/teradata/covalent/issues/1028)) ([cff2b7a](https://github.com/teradata/covalent/commit/cff2b7a))
+* **json-formatter:** support properly RTL ([#1033](https://github.com/teradata/covalent/issues/1033)) ([90903d0](https://github.com/teradata/covalent/commit/90903d0))
+* **message:** support RTL ([#1034](https://github.com/teradata/covalent/issues/1034)) ([e006105](https://github.com/teradata/covalent/commit/e006105))
+* **paging:** support OnPush change detection strat ([#1031](https://github.com/teradata/covalent/issues/1031)) ([857425d](https://github.com/teradata/covalent/commit/857425d))
+* **patterns:** empty state design pattern ([#997](https://github.com/teradata/covalent/issues/997)) ([1ca8db9](https://github.com/teradata/covalent/commit/1ca8db9))
+* **patterns:** stepper design pattern ([#1048](https://github.com/teradata/covalent/issues/1048)) ([23dbc5f](https://github.com/teradata/covalent/commit/23dbc5f))
+* **search:** add ngModel support to search-input and search-box ([#1041](https://github.com/teradata/covalent/issues/1041)) ([8b4cb18](https://github.com/teradata/covalent/commit/8b4cb18))
+* **search:** add OnPush support ([#1032](https://github.com/teradata/covalent/issues/1032)) ([5e35c5e](https://github.com/teradata/covalent/commit/5e35c5e))
+* **layout:** make LayoutToggle class reuse disable mixin ([#1022](https://github.com/teradata/covalent/issues/1022)) ([d42825f](https://github.com/teradata/covalent/commit/d42825f))
+
+
 <a name="1.0.0-rc.1"></a>
 # [1.0.0-rc.1 Obfuscated Mustache](https://github.com/Teradata/covalent/tree/v1.0.0-rc.1) (2017-12-12)
 
