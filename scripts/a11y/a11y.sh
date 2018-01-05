@@ -46,6 +46,9 @@ shift $((OPTIND-1))
 
 [ "$1" = "--" ] && shift
 
+# run install.
+npm run reinstall
+
 # Run ng serve in the background and save the process ID.
 npm run serve &
 NPM_PID=$!
