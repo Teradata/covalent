@@ -30,7 +30,7 @@ The release is published in case there is a need for any additional tests, versi
 
 #### Generate Changelog
 
-Execute `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. After its generated it need to be double checked and modified if needed.
+Execute `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. NOTE: It need to be double checked and modified as needed.
 
 #### Finish Release
 
