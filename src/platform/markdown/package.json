@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Teradata UI Platform Markdown Module",
   "main": "./bundles/markdown.umd.js",
   "module": "./index.js",

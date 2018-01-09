@@ -4,35 +4,40 @@
 
 * [Pre Release Checklist](#pre-release-checklist)
 * [Start Release](#start-release)
+* [Generate Changelog](#generate-changelog)
 * [Finish Release](#finish-release) 
 * [Publish Release](#publish-release)
 * [Post Release Checklist](#post-release-checklist)
 
 #### Pre Release Checklist
 
-1. Changelog needs to be updated with all release features/fixes/enhancements.
-2. Notifications need to be updated in the covalent `home` screen.
-3. Make sure the `platform` `package.json`s point to the correct versions.
-4. `ng serve --aot` works fine.
-5. `npm run build:release` works fine.
+1. Notifications need to be updated in the covalent `home` screen.
+2. Make sure the `platform` `package.json`s point to the correct versions.
+3. `ng serve --aot` works fine.
+4. `npm run build:release` works fine.
 
 #### Start Release
 
 Execute `npm run release:start -- [version]` to start the automatic release process. The steps executed are:
-  1. Creating a `release/v[version]` branch using `git flow release`.
-  2. Bumping its version to [version] release and commiting bumped version files.
-  3. Publishing `release/v[version]` branch into repository. 
-  4. Executes `npm run tslint`, `npm run stylelint` and `npm run test`.
+  1. Checks out the `master` branch and pulls the latest.
+  2. Checks out the `develop` branch.
+  3. Executes a typescript linting test.
+  4. Executes a sass linting test.
+  5. Executes unit tests.
+  6. Executes a build release test.
+  7. Bumps its version to [version] release
 
-The release is published in case there is a need for any additional tests, version fixes or bug fixes. This can be added before it is actually released.
+#### Generate Changelog
+
+Execute `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. NOTE: It need to be double checked and modified as needed.
 
 #### Finish Release
 
-Execute `git flow release finish v[version]` and `npm run release:finish` to finish the release process. The steps executed are:
-  1. Finishes, tags and deletes the `release/[version]` branch.
-  2. Pushes the new `[version]` tag into the repository.
-  3. Merges release into `develop` and pushes changes to repository.
-  4. Merges release into `master` and pushes changes to repository.
+Execute `npm run release:finish -- [version]` to finish the release process. The steps executed are:
+  1. Adds, commits all changes (changelog changes, bump, etc etc).
+  2. Creates new `[version]` tag
+  3. Pushes commit and new tag into the repository (`develop`).
+  5. Merges `develop` into `master` and pushes changes to repository.
   5. Returns to `develop` branch.
 
 #### Publish Release
