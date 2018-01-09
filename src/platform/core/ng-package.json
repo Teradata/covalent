@@ -76,7 +76,8 @@
       "@covalent/core/virtual-scroll": "core/virtual-scroll",
       "@covalent/core/notifications": "core/notifications",
       "@covalent/core/common": "core/common",
-      "@covalent/core/message": "core/message"
+      "@covalent/core/message": "core/message",
+      "@covalent/core/chips": "core/chips"
     }
   }
 }

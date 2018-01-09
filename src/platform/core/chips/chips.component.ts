@@ -22,7 +22,7 @@ import { fromEvent } from 'rxjs/observable/fromEvent';
 import { filter } from 'rxjs/operators/filter';
 import { debounceTime } from 'rxjs/operators/debounceTime';
 
-import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../common/public-api';
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 @Directive({
   selector: '[td-chip]ng-template',
