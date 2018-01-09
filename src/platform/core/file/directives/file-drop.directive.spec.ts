@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentFileModule, TdFileDropDirective } from '../file.module';
+import { CovalentFileModule, TdFileDropDirective } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileDrop', () => {
@@ -217,10 +217,10 @@ describe('Directive: FileDrop', () => {
   selector: 'td-file-drop-basic-test',
   template: `
   <div tdFileDrop
-       [multiple]="multiple" 
+       [multiple]="multiple"
        [disabled]="disabled"
        (fileDrop)="files = $event">
-  
+
   </div>
   `,
 })

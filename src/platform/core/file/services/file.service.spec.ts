@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { TdFileService, IUploadOptions } from '../file.module';
+import { TdFileService, IUploadOptions } from '../public-api';
 
 describe('Service: File', () => {
     let service: TdFileService;
@@ -17,7 +17,7 @@ describe('Service: File', () => {
         };
 
         spyOn(XMLHttpRequest.prototype, 'send');
-        
+
         service.upload(options).subscribe(
             () => {
                 fail('Should throw error');
@@ -46,12 +46,12 @@ describe('Service: File', () => {
             method: 'post',
             formData: formData,
         };
-        
+
         let mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
             XMLHttpRequest.prototype.abort();
             expect(XMLHttpRequest.prototype.open).toHaveBeenCalledWith('post', 'test.url', true);
             expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
-            expect(mySpy.calls.first().args[0].get('file').name).toEqual(file.name);            
+            expect(mySpy.calls.first().args[0].get('file').name).toEqual(file.name);
             expect(XMLHttpRequest.prototype.setRequestHeader).toHaveBeenCalledWith('X-Requested-With', 'XMLHttpRequest');
             expect(XMLHttpRequest.prototype.setRequestHeader).toHaveBeenCalledTimes(1);
         });
@@ -63,7 +63,7 @@ describe('Service: File', () => {
         let file: File = new File(['content'], 'myfile.name');
         let formData: FormData = new FormData();
         formData.append('extraData', 'data');
-        formData.append('myfile', file); 
+        formData.append('myfile', file);
         let options: IUploadOptions = {
             url: 'test.url',
             method: 'post',
@@ -72,13 +72,13 @@ describe('Service: File', () => {
         };
 
         let mySpy: jasmine.Spy = spyOn(XMLHttpRequest.prototype, 'send').and.callFake(() => {
-            XMLHttpRequest.prototype.abort();           
-            expect(XMLHttpRequest.prototype.send).toHaveBeenCalledWith(formData);            
+            XMLHttpRequest.prototype.abort();
+            expect(XMLHttpRequest.prototype.send).toHaveBeenCalledWith(formData);
             expect(XMLHttpRequest.prototype.send).toHaveBeenCalledTimes(1);
             let sentData: FormData = mySpy.calls.first().args[0];
-            expect(sentData.get('file')).toBeNull();      
+            expect(sentData.get('file')).toBeNull();
             expect((sentData.get('myfile') as File).name).toEqual(file.name);
-            expect(sentData.get('extraData')).toEqual('data');                 
+            expect(sentData.get('extraData')).toEqual('data');
             expect(XMLHttpRequest.prototype.setRequestHeader).toHaveBeenCalledWith('X-Requested-With', 'XMLHttpRequest');
             expect(XMLHttpRequest.prototype.setRequestHeader).toHaveBeenCalledWith('My-Header', 'my-val');
             expect(XMLHttpRequest.prototype.setRequestHeader).toHaveBeenCalledTimes(2);
