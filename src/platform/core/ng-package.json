@@ -79,7 +79,8 @@
       "@covalent/core/message": "core/message",
       "@covalent/core/chips": "core/chips",
       "@covalent/core/data-table": "core/data-table",
-      "@covalent/core/dialogs": "core/dialogs"
+      "@covalent/core/dialogs": "core/dialogs",
+      "@covalent/core/expansion-panel": "core/expansion-panel"
     }
   }
 }

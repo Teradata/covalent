@@ -26,8 +26,7 @@ export * from './dialogs';
  * EXPANSION PANEL
  */
 
-import { CovalentExpansionPanelModule } from './expansion-panel/expansion-panel.module';
-export * from './expansion-panel/expansion-panel.module';
+export * from './expansion-panel';
 
 /**
  * FILE
