@@ -5,7 +5,7 @@ export * from './common';
 export * from './message';
 export * from './chips';
 export * from './data-table';
-// export * from './dialogs';
+export * from './dialogs';
 // export * from './expansion-panel';
 // export * from './file';
 // export * from './json-formatter';
