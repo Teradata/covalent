@@ -18,7 +18,7 @@ import { TdDataTableRowComponent } from './data-table-row/data-table-row.compone
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-import { IControlValueAccessor, mixinControlValueAccessor } from '../common/public-api';
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export enum TdDataTableSortingOrder {
   Ascending = <any>'ASC',

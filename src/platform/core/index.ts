@@ -15,8 +15,7 @@ export * from './chips/chips.module';
  * DATA TABLE
  */
 
-import { CovalentDataTableModule } from './data-table/data-table.module';
-export * from './data-table/data-table.module';
+export * from './data-table';
 
 /**
  * DIALOGS
