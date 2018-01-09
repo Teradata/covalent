@@ -20,8 +20,7 @@ export * from './data-table';
  * DIALOGS
  */
 
-import { CovalentDialogsModule } from './dialogs/dialogs.module';
-export * from './dialogs/dialogs.module';
+export * from './dialogs';
 
 /**
  * EXPANSION PANEL

@@ -78,7 +78,8 @@
       "@covalent/core/common": "core/common",
       "@covalent/core/message": "core/message",
       "@covalent/core/chips": "core/chips",
-      "@covalent/core/data-table": "core/data-table"
+      "@covalent/core/data-table": "core/data-table",
+      "@covalent/core/dialogs": "core/dialogs"
     }
   }
 }
