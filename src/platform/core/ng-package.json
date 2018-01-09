@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../../dist/core",
   "src": ".",
+  "dest": "../../../dist/core",
   "lib": {
     "entryFile": "public-api.ts",
     "externals": {
@@ -68,7 +68,14 @@
       "rxjs/operators/switchMap": "Rx.Observable",
       "rxjs/operators/startWith": "Rx.Observable",
       "rxjs/operators/skip": "Rx.Observable",
-      "rxjs/operators/takeUntil": "Rx.Observable"
+      "rxjs/operators/takeUntil": "Rx.Observable",
+
+      "@covalent/core": "core",
+      "@covalent/core/paging": "core/paging",
+      "@covalent/core/virtual-scroll": "core/virtual-scroll",
+      "@covalent/core/notifications": "core/notifications",
+      "@covalent/core/common": "core/common",
+      "@covalent/core/message": "core/message"
     }
   }
 }

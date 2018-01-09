@@ -2,7 +2,7 @@
  * COMMON
  */
 
-export * from './common/public-api';
+export * from './common';
 
 /**
  * CHIPS
@@ -78,20 +78,19 @@ export * from './menu/menu.module';
  * MESSAGE
  */
 
-import { CovalentMessageModule } from './message/message.module';
-export * from './message/message.module';
+export * from './message';
 
 /**
  * NOTIFICATIONS
  */
 
-export * from './notifications/public-api';
+export * from './notifications';
 
 /**
  * PAGING
  */
 
-export * from './paging/public-api';
+export * from './paging';
 
 /**
  * SEARCH
@@ -111,4 +110,4 @@ export * from './steps/steps.module';
  * VIRTUAL SCROLL
  */
 
-export * from './virtual-scroll/public-api';
+export * from './virtual-scroll';

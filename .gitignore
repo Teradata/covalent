@@ -3,6 +3,7 @@
 # compiled output
 /**/dist
 /**/.ng_pkg_build
+/**/.td_build_common
 /deploy
 /tmp
 

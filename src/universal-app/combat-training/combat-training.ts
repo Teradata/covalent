@@ -11,8 +11,9 @@ import { CovalentPagingModule } from '@covalent/core/paging';
 import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 import { CovalentNotificationsModule } from '@covalent/core/notifications';
 import { CovalentCommonModule, TdFadeInOutAnimation } from '@covalent/core/common';
+import { CovalentMessageModule } from '@covalent/core/message';
+
 // import {
-//   CovalentMessageModule,
 //   CovalentChipsModule,
 //   CovalentDataTableModule,
 //   ITdDataTableColumn,
@@ -140,7 +141,7 @@ export class CombatTrainingComponent implements OnInit {
     CovalentNotificationsModule,
 
     CovalentCommonModule,
-    // CovalentMessageModule,
+    CovalentMessageModule,
     // CovalentChipsModule,
     // CovalentDataTableModule,
     // CovalentDialogsModule,
