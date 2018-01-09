@@ -4,6 +4,7 @@
 /**/dist
 /**/.ng_pkg_build
 /**/.td_build_common
+/**/.td_test_universal
 /deploy
 /tmp
 

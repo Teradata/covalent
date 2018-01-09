@@ -6,7 +6,7 @@
   # https://github.com/dherges/ng-packagr/issues/379 && https://github.com/dherges/ng-packagr/issues/256
   # Reason for hack: we need these missing features because we use '/common' between multiple entry points both primary and secondary
   # and ng-packagr currently doesn't support it. So for now we are going to create/build the package that contains
-  # @covalent/core/common just by itself, we will then copy the generated './dist/core' that was generated into
+  # @covalent/core/common just by itself, we will then copy the generated './deploy/platform' that was generated into
   # our projects root './node_modules' and then in the respective modules/components under /core we will replaces '../common/*'
   # with '@covalent/core/common'. Now when we run ng-packagr on the whole /core suit when it see's '@covalent/core/common' it will
   # take it from our root's './node_modules' instead of trying to find its intra-package dependency '../common' like before (which is
@@ -30,11 +30,11 @@ echo '{ "name": "@covalent/core" }' > package.json
 echo "export * from './common';" > public-api.ts
 
 # regex replace as needed for specific build of @covalent/core/common
-sed -i '' 's/..\/..\/..\/dist\/core/.\/dist\/core/' ng-package.json
+sed -i '' 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.json
 ../../../../node_modules/.bin/ng-packagr -p ng-package.json
 
 # move completed build over to root node_modules as @covalent/core/*
-cp -r ./dist/core ../../../../node_modules/@covalent/
+cp -r ./deploy/platform/core ../../../../node_modules/@covalent/
 
 # kill build station don't need it anymore
 rm -rf ../.td_build_common
@@ -42,16 +42,16 @@ cd ../../../..
 echo 'Completed @covalent/core/common secondary entrypoint hack'
 # HACK END - common
 
-rm -rf ./dist
+rm -rf ./deploy
 # Steps to package '@covalent/core' and it's children '@covalent/core/*'
 echo 'Creating @covalent/core @covalent/core/* build'
 ./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.json
 # move over styles manually ng-packagr doesn't do it automatically
 echo 'Building and moving @covalent/core sass/css'
-cp -r ./src/platform/core/common/styles ./dist/core/common
-cp ./src/platform/core/common/_common-theme.scss ./dist/core/common
-cp ./src/platform/core/common/material-icons.scss ./dist/core/common
-cp ./src/platform/core/common/platform.scss ./dist/core/common
+cp -r ./src/platform/core/common/styles ./deploy/platform/core/common
+cp ./src/platform/core/common/_common-theme.scss ./deploy/platform/core/common
+cp ./src/platform/core/common/material-icons.scss ./deploy/platform/core/common
+cp ./src/platform/core/common/platform.scss ./deploy/platform/core/common
 gulp compile-common-sass
 echo 'Completed building and moving @covalent/core sass/css'
 

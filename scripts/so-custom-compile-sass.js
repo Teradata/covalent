@@ -6,10 +6,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var sassImporter = require('./sass-importer');
-
 gulp.task('compile-common-sass', 'compile some common sass to css to be distributed', function() {
   return gulp
-    .src(['dist/core/common/material-icons.scss', 'dist/core/common/platform.scss'])
+    .src(['deploy/platform/core/common/material-icons.scss', 'deploy/platform/core/common/platform.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
@@ -22,5 +21,5 @@ gulp.task('compile-common-sass', 'compile some common sass to css to be distribu
         ]
       })]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/core/common'));
+    .pipe(gulp.dest('deploy/platform/core/common'));
 });
