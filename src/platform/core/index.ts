@@ -32,8 +32,7 @@ export * from './expansion-panel';
  * FILE
  */
 
-import { CovalentFileModule } from './file/file.module';
-export * from './file/file.module';
+export * from './file';
 
 /**
  * JSON FORMATTER

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef,
   forwardRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../../common/public-api';
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
