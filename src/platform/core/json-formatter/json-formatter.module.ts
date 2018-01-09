@@ -6,8 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { TdJsonFormatterComponent } from './json-formatter.component';
 
-export { TdJsonFormatterComponent } from './json-formatter.component';
-
 @NgModule({
   imports: [
     CommonModule,

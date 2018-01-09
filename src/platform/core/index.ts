@@ -38,8 +38,7 @@ export * from './file';
  * JSON FORMATTER
  */
 
-import { CovalentJsonFormatterModule } from './json-formatter/json-formatter.module';
-export * from './json-formatter/json-formatter.module';
+export * from './json-formatter';
 
 /**
  * LAYOUT
