@@ -8,8 +8,7 @@ export * from './common';
  * CHIPS
  */
 
-import { CovalentChipsModule } from './chips/chips.module';
-export * from './chips/chips.module';
+export * from './chips';
 
 /**
  * DATA TABLE
