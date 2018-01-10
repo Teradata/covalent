@@ -56,8 +56,7 @@ export * from './loading';
  * MEDIA
  */
 
-import { CovalentMediaModule } from './media/media.module';
-export * from './media/media.module';
+export * from './media';
 
 /**
  * MENU
