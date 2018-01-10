@@ -6,9 +6,17 @@ var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var sassImporter = require('./sass-importer');
-gulp.task('compile-common-sass', 'compile some common sass to css to be distributed', function() {
+const config = require('../build.conf');
+
+gulp.task('move-required-core-files', 'Move required sass files', function() {
   return gulp
-    .src(['deploy/platform/core/common/material-icons.scss', 'deploy/platform/core/common/platform.scss'])
+    .src(config.paths.ngPackngrBuildRequiredFiles)
+    .pipe(gulp.dest('deploy/platform/core'));
+});
+
+gulp.task('compile-core-sass', 'compile some core sass to css', function() {
+  return gulp
+    .src(config.paths.ngPackngrCompileStyles)
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
@@ -21,5 +29,5 @@ gulp.task('compile-common-sass', 'compile some common sass to css to be distribu
         ]
       })]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('deploy/platform/core/common'));
+    .pipe(gulp.dest('deploy/platform/core'));
 });

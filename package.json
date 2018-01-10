@@ -36,10 +36,10 @@
     "release:finish": "bash scripts/finish-release",
     "combat-training": "bash scripts/combat-training",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
 
     "so-custom-build": "bash scripts/so-custom-build",
-    "so-custom-test-ssr": "bash scripts/so-custom-test-ssr",
-    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular"
+    "so-custom-test-ssr": "bash scripts/so-custom-test-ssr"
   },
   "engines": {
     "node": ">=6.11.1 < 7",
