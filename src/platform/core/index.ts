@@ -50,8 +50,7 @@ export * from './layout';
  * LOADING
  */
 
-import { CovalentLoadingModule } from './loading/loading.module';
-export * from './loading/loading.module';
+export * from './loading';
 
 /**
  * MEDIA

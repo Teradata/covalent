@@ -10,5 +10,5 @@ export * from './expansion-panel';
 export * from './file';
 export * from './json-formatter';
 export * from './layout';
-// export * from './loading';
+export * from './loading';
 // export * from './media';

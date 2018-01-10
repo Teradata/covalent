@@ -82,7 +82,8 @@
       "@covalent/core/expansion-panel": "core/expansion-panel",
       "@covalent/core/file": "core/file",
       "@covalent/core/json-formatter": "core/json-formatter",
-      "@covalent/core/layout": "core/layout"
+      "@covalent/core/layout": "core/layout",
+      "@covalent/core/loading": "core/loading"
     }
   }
 }

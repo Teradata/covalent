@@ -21,9 +21,6 @@ const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
 
-export { LoadingType, LoadingMode, LoadingStrategy } from './loading.component';
-export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
-
 @NgModule({
   imports: [
     CommonModule,
