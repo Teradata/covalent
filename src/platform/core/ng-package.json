@@ -84,7 +84,8 @@
       "@covalent/core/json-formatter": "core/json-formatter",
       "@covalent/core/layout": "core/layout",
       "@covalent/core/loading": "core/loading",
-      "@covalent/core/media": "core/media"
+      "@covalent/core/media": "core/media",
+      "@covalent/core/menu": "core/menu"
     }
   }
 }

@@ -11,8 +11,6 @@ const TD_MENU: Type<any>[] = [
   TdMenuComponent,
 ];
 
-export { TdMenuComponent } from './menu.component';
-
 @NgModule({
   imports: [
     CommonModule,

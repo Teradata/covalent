@@ -62,8 +62,7 @@ export * from './media';
  * MENU
  */
 
-import { CovalentMenuModule } from './menu/menu.module';
-export * from './menu/menu.module';
+export * from './menu';
 
 /**
  * MESSAGE
