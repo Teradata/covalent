@@ -86,7 +86,8 @@
       "@covalent/core/loading": "core/loading",
       "@covalent/core/media": "core/media",
       "@covalent/core/menu": "core/menu",
-      "@covalent/core/search": "core/search"
+      "@covalent/core/search": "core/search",
+      "@covalent/core/steps": "core/steps"
     }
   }
 }

@@ -92,8 +92,7 @@ export * from './search';
  * STEPS
  */
 
-import { CovalentStepsModule } from './steps/steps.module';
-export * from './steps/steps.module';
+export * from './steps';
 
 /**
  * VIRTUAL SCROLL
