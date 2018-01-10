@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
-import { IControlValueAccessor, mixinControlValueAccessor } from '../../common/public-api';
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export class TdSearchBoxBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) { }

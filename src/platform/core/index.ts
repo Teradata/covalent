@@ -86,8 +86,7 @@ export * from './paging';
  * SEARCH
  */
 
-import { CovalentSearchModule } from './search/search.module';
-export * from './search/search.module';
+export * from './search';
 
 /**
  * STEPS
