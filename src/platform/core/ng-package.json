@@ -4,7 +4,7 @@
 
   "dest": "../../../deploy/platform/core",
   "lib": {
-    "entryFile": "public-api.ts",
+    "entryFile": "index.ts",
     "externals": {
 
       "@angular/animations": "ng.animations",
@@ -32,8 +32,8 @@
       "@angular/material/slide-toggle": "ng.material.slideToggle",
       "@angular/material/slider": "ng.material.slider",
       "@angular/material/checkbox": "ng.material.checkbox",
-      "@angular/material/progress-bar": "ng.material.progress-bar",
-      "@angular/material/progress-spinner": "ng.material.progress-spinner",
+      "@angular/material/progress-bar": "ng.material.progressBar",
+      "@angular/material/progress-spinner": "ng.material.progressSpinner",
       "@angular/material/tooltip": "ng.material.tooltip",
 
       "@angular/cdk": "ng.cdk",

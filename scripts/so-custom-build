@@ -23,6 +23,7 @@ mkdir .td_build_common
 # move files to build only '@covalent/core/common' into its own build station to not cause other secondary entry points to build
 cp -r ./common .td_build_common/
 cp ng-package.json .td_build_common/
+cp index.ts .td_build_common/
 cd .td_build_common
 
 # create necessary files for building @covalent/core/common
