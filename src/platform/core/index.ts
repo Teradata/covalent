@@ -44,8 +44,7 @@ export * from './json-formatter';
  * LAYOUT
  */
 
-import { CovalentLayoutModule } from './layout/layout.module';
-export * from './layout/layout.module';
+export * from './layout';
 
 /**
  * LOADING

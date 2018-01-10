@@ -6,7 +6,6 @@
   "lib": {
     "entryFile": "public-api.ts",
     "externals": {
-      "tslib": "tslib",
 
       "@angular/animations": "ng.animations",
       "@angular/animations/browser": "ng.animations.browser",
@@ -82,7 +81,8 @@
       "@covalent/core/dialogs": "core/dialogs",
       "@covalent/core/expansion-panel": "core/expansion-panel",
       "@covalent/core/file": "core/file",
-      "@covalent/core/json-formatter": "core/json-formatter"
+      "@covalent/core/json-formatter": "core/json-formatter",
+      "@covalent/core/layout": "core/layout"
     }
   }
 }

@@ -2,7 +2,7 @@ import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit,
 
 import { MatSidenav } from '@angular/material/sidenav';
 
-import { ICanDisable, mixinDisabled } from '../common/public-api';
+import { ICanDisable, mixinDisabled } from '@covalent/core/common';
 
 import { Subscription } from 'rxjs/Subscription';
 

@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { TdLayoutComponent } from '../layout.component';
 
-import { TdCollapseAnimation } from '../../common/animations/collapse/collapse.animation';
+import { TdCollapseAnimation } from '@covalent/core/common';
 
 @Directive({
   selector: '[td-navigation-drawer-menu]',
