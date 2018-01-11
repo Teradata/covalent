@@ -79,8 +79,10 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.json
 # BUILD: @covalent/highlight primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.json
+# BUILD: @covalent/http primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.json
 
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
-rm -rf src/platform/node_modules/@covalent
+rm -rf src/platform/node_modules
 # Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
 gulp move-additional-platform-files
