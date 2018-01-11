@@ -23,6 +23,14 @@ module.exports = {
       'deploy/platform/core/**/platform.scss',
       'deploy/platform/core/**/theming/prebuilt/**/*.scss'
     ],
+    ngPackngrPostAdditionalFiles: [
+      '!src/platform/core/**/*.component.scss',
+      '!src/platform/core/**/*.scss',
+      '!src/platform/**/*.component.scss',
+      'src/platform/**/*.scss',
+      '!src/platform/core/**/*.md',
+      'src/platform/**/*.md',
+    ],
     styles: [
       '!src/theme.scss',
       '!src/styles.scss',

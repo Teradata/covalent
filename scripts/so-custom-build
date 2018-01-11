@@ -19,10 +19,14 @@
   # we also had to add inside the roots tsconfig.json a new path for the core's secondary entrypoints '"@covalent/core/*": ["./platform/core/*"],'
   # because we are not using a relative path anymore '../common'.
 
+# clean up first if building again
 rm -rf ./node_modules/@covalent/core
+rm -rf ./src/platform/node_modules
+rm -rf ./deploy
+rm -rf ./src/platform/core/.td_build_common
+
 echo 'Creating @covalent/core/common secondary entrypoint hack'
 cd ./src/platform/core
-rm -rf .td_build_common
 mkdir .td_build_common
 # move files to build only '@covalent/core/common' into its own build station to not cause other secondary entry points to build
 cp -r ./common .td_build_common/
@@ -47,7 +51,6 @@ cd ../../../..
 echo 'Completed @covalent/core/common secondary entrypoint hack'
 # HACK END - common
 
-rm -rf ./deploy
 # Steps to package '@covalent/core' and it's children '@covalent/core/*'
 echo 'Creating @covalent/core @covalent/core/* build'
 ./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.json
@@ -66,19 +69,18 @@ echo 'Completed @covalent/core @covalent/core/* build'
 ###################
 
 
-###################
-# START: BUILD @covalent/dynamic-forms primary and secondary entrypoints
-###################
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between entry points && ability to override tsconfig:
 # HACK START
 mkdir -p src/platform/node_modules/@covalent
 cp -r deploy/platform/core src/platform/node_modules/@covalent
 # HACK END
 
+# BUILD: @covalent/dynamic-forms primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.json
+# BUILD: @covalent/highlight primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.json
 
-# HACK (Remove in future): remove remnants of platform/node_modules for building purposes
-# rm -r src/platform/node_modules/@covalent
-###################
-# END: BUILD @covalent/dynamic-forms primary and secondary entrypoints
-###################
+# HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
+rm -rf src/platform/node_modules/@covalent
+# Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
+gulp move-additional-platform-files

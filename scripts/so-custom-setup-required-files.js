@@ -14,6 +14,12 @@ gulp.task('move-required-core-files', 'Move required sass files', function() {
     .pipe(gulp.dest('deploy/platform/core'));
 });
 
+gulp.task('move-additional-platform-files', 'Move additional platform files', function() {
+  return gulp
+    .src(config.paths.ngPackngrPostAdditionalFiles)
+    .pipe(gulp.dest('deploy/platform'));
+});
+
 gulp.task('compile-core-sass', 'compile some core sass to css', function() {
   return gulp
     .src(config.paths.ngPackngrCompileStyles)
