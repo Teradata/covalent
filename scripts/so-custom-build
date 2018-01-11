@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+###################
+# START: BUILD @covalent/core primary and secondary entrypoints
+###################
+
 # HACK START - common
   # (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between entry points && ability to override tsconfig:
   # this hack builds common using ng-packagr to generate @covalent/core/common and puts it into the projects root 'node_modules'
@@ -56,3 +60,25 @@ echo 'Completed compiling and moving moving some requried files not handled by n
 # HACK (Remove in future): remove remnants of @covalent/core/common see script/ng-packagr-common for details
 rm -rf ./node_modules/@covalent/core
 echo 'Completed @covalent/core @covalent/core/* build'
+
+###################
+# END: BUILD @covalent/core primary and secondary entrypoints
+###################
+
+
+###################
+# START: BUILD @covalent/dynamic-forms primary and secondary entrypoints
+###################
+# HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between entry points && ability to override tsconfig:
+# HACK START
+mkdir -p src/platform/node_modules/@covalent
+cp -r deploy/platform/core src/platform/node_modules/@covalent
+# HACK END
+
+./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.json
+
+# HACK (Remove in future): remove remnants of platform/node_modules for building purposes
+# rm -r src/platform/node_modules/@covalent
+###################
+# END: BUILD @covalent/dynamic-forms primary and secondary entrypoints
+###################
