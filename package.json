@@ -130,7 +130,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "1.0.1",
     "merge2": "1.0.2",
-    "ng-packagr": "2.0.0-rc.6",
+    "ng-packagr": "2.0.0-rc.7",
     "node-sass": "3.8.0",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "~5.1.0",

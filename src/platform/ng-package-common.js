@@ -1,8 +1,6 @@
+module.exports =
 {
-  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "src": ".",
-
-  "dest": "../../../deploy/platform/highlight",
   "lib": {
     "entryFile": "index.ts",
     "externals": {
@@ -94,4 +92,4 @@
       "@covalent/markdown": "covalent.markdown"
     }
   }
-}
+};
