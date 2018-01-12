@@ -23,7 +23,7 @@
 rm -rf ./node_modules/@covalent/core
 rm -rf ./src/platform/node_modules
 rm -rf ./deploy
-rm -rf ./src/platform/core/.td_build_common
+rm -rf ./src/platform/.td_build_common
 
 echo 'Creating @covalent/core/common secondary entrypoint hack'
 cd ./src/platform

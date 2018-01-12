@@ -37,7 +37,6 @@
     "combat-training": "bash scripts/combat-training",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
-
     "so-custom-build": "bash scripts/so-custom-build",
     "so-custom-test-ssr": "bash scripts/so-custom-test-ssr"
   },
@@ -130,7 +129,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "1.0.1",
     "merge2": "1.0.2",
-    "ng-packagr": "2.0.0-rc.7",
+    "ng-packagr": "2.0.0-rc.8",
     "node-sass": "3.8.0",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "~5.1.0",
