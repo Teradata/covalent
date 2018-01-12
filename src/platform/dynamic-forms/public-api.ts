@@ -2,7 +2,6 @@ export * from './dynamic-forms.module';
 export * from './dynamic-forms.component';
 export * from './dynamic-element.component';
 export * from './services/dynamic-forms.service';
-export * from './dynamic-elements/abstract-control-value-accesor';
 export * from './dynamic-elements/dynamic-textarea/dynamic-textarea.component';
 export * from './dynamic-elements/dynamic-slider/dynamic-slider.component';
 export * from './dynamic-elements/dynamic-slide-toggle/dynamic-slide-toggle.component';
