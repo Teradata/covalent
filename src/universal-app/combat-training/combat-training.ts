@@ -72,6 +72,38 @@ export class CombatTrainingComponent implements OnInit {
   filteredStrings: string[];
   stringsModel: string[] = this.strings.slice(0, 6);
 
+  configWidthColumns: ITdDataTableColumn[] = [
+    { name: 'first_name',  label: 'First name', width: 150 },
+    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 }},
+    { name: 'gender', label: 'Gender'},
+    { name: 'email', label: 'Email', width: 250},
+    { name: 'img', label: '', width: 100},
+  ];
+
+  basicData: any[] = [
+    {
+      'balance': 7454.6,
+      'email': 'sclutterham0@123-reg.co.uk',
+      'first_name': 'Sully',
+      'gender': 'Male',
+      'img': 'https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1',
+      'ip_address': '158.0.165.138',
+      'last_name': 'Clutterham',
+    },
+  ];
+
+  files: File | FileList;
+  file: File;
+
+  object: any = {
+    property: 'value',
+    array: [1, 2, 3],
+  };
+
+  ngOnInit(): void {
+    this.filterStrings('');
+  }
+
   filterStrings(value: string): void {
     this.filteredStrings = this.strings.filter((item: any) => {
       if (value) {
@@ -84,37 +116,6 @@ export class CombatTrainingComponent implements OnInit {
     });
   }
 
-  configWidthColumns: ITdDataTableColumn[] = [
-    { name: 'first_name',  label: 'First name', width: 150 },
-    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 }},
-    { name: 'gender', label: 'Gender'},
-    { name: 'email', label: 'Email', width: 250},
-    { name: 'img', label: '', width: 100},
-  ];
-
-  basicData: any[] = [
-    {
-      "balance": 7454.6,
-      "email": "sclutterham0@123-reg.co.uk",
-      "first_name": "Sully",
-      "gender": "Male",
-      "img": "https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1",
-      "ip_address": "158.0.165.138",
-      "last_name": "Clutterham"
-    },
-  ];
-
-  files: File | FileList;
-  file: File;
-
-  object: any = {
-    property: 'value',
-    array: [1, 2, 3]
-  };
-
-  ngOnInit(): void {
-    this.filterStrings('');
-  }
 }
 
 /**
