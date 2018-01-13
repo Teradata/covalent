@@ -29,16 +29,14 @@
     "serve:prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve --aot --prod --sourcemap=false --build-optimizer",
     "build:docs": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --aot --prod --sourcemap=false --build-optimizer",
     "build:release": "bash scripts/build-release",
+    "build:universal": "bash scripts/build-universal",
     "publish:npm": "npm run build:release && bash scripts/npm-publish",
     "publish:nightly": "npm run build:release && bash scripts/nightly-publish",
     "ghpages:deploy": "npm run build:docs -- --base-href /covalent/ && bash scripts/ghpages-deploy",
     "release:start": "bash scripts/start-release",
     "release:finish": "bash scripts/finish-release",
-    "combat-training": "bash scripts/combat-training",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
-    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
-    "so-custom-build": "bash scripts/so-custom-build",
-    "so-custom-test-ssr": "bash scripts/so-custom-test-ssr"
+    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular"
   },
   "engines": {
     "node": ">=6.11.1 < 7",

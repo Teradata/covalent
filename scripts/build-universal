@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # build and test ssr in universal app
-npm run so-custom-build
+npm run build:release
 rm -rf .td_test_universal
 rm deploy/platform/core/covalent-core-*.tgz
 

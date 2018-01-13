@@ -2,9 +2,6 @@
   "name": "@covalent/core",
   "version": "1.0.0-rc.2",
   "description": "Teradata UI Platform built on Angular Material",
-  "main": "./bundles/core.umd.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
   "keywords": [
     "angular",
     "material",
