@@ -1,2 +1,1 @@
-export { TdMarkdownComponent } from './markdown.component';
-export { CovalentMarkdownModule } from './markdown.module';
+export * from './public-api';

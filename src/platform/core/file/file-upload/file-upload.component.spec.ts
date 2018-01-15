@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { CovalentFileModule, TdFileUploadComponent } from '../file.module';
+import { CovalentFileModule, TdFileUploadComponent } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: FileUpload', () => {

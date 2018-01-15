@@ -10,9 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
 
-export { TdSearchBoxComponent } from './search-box/search-box.component';
-export { TdSearchInputComponent } from './search-input/search-input.component';
-
 @NgModule({
   imports: [
     FormsModule,

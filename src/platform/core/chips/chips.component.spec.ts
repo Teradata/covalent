@@ -13,7 +13,7 @@ import { DELETE, BACKSPACE, ENTER, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { MatChip } from '@angular/material/chips';
 import { By } from '@angular/platform-browser';
-import { CovalentChipsModule, TdChipsComponent } from './chips.module';
+import { CovalentChipsModule, TdChipsComponent } from './public-api';
 
 function createFakeKeyboardEvent(keyCode: number): any {
   return {
@@ -491,7 +491,7 @@ describe('Component: Chips', () => {
     it('should rendered input before the list of chips at all times', (done: DoneFn) => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        
+
         expect((<HTMLElement>chips.query(By.css('.td-chips-wrapper')).nativeElement).classList.contains('td-chips-input-before-position'))
           .toBeFalsy();
         fixture.componentInstance.position = 'before';
@@ -679,7 +679,7 @@ describe('Component: Chips', () => {
         });
       });
     });
-    
+
     it('should focus around the chips going left', (done: DoneFn) => {
       fixture.componentInstance.chipRemoval = true;
       fixture.componentInstance.chipAddition = false;
