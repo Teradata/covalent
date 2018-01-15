@@ -4,7 +4,7 @@ set -e
 # build and test ssr in universal app
 npm run build:release
 rm -rf .td_test_universal
-rm deploy/platform/core/covalent-core-*.tgz
+rm -f deploy/platform/core/covalent-core-*.tgz
 
 cd deploy/platform/core
 npm pack
