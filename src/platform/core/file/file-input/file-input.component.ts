@@ -4,7 +4,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../../common/common.module';
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 @Directive({
   selector: '[td-file-input-label]ng-template',

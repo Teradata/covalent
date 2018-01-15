@@ -1,23 +1,25 @@
 {
   "compilerOptions": {
-    "module": "es2015",
-    "moduleResolution": "node",
-    "target": "es6",
-    "noImplicitAny": false,
-    "sourceMap": false,
-    "experimentalDecorators": true,
-    "outDir": "dist",
     "declaration": true,
-    "typeRoots": ["node_modules/@types"]
+    "stripInternal": false,
+    "experimentalDecorators": true,
+    "noUnusedParameters": false,
+    "strictNullChecks": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": ".",
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es2015",
+    "lib": ["es2015", "dom"],
+    "skipLibCheck": true,
+    "types": [],
+    "baseUrl": "."
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "battle-royale.ts"
+  "files": [
+    "main.ts"
   ],
   "angularCompilerOptions": {
-    "annotationsAs": "static fields",
-    "annotateForClosureCompiler": true,
-    "genDir": "./dist/aot"
+    "annotateForClosureCompiler": true
   }
 }

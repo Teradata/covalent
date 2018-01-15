@@ -2,11 +2,14 @@
 
 # compiled output
 /**/dist
+/**/.ng_pkg_build
+/**/.td_build_common
+/**/.td_test_universal
 /deploy
 /tmp
 
 # dependencies
-/node_modules
+/**/node_modules
 /bower_components
 
 # IDEs and editors

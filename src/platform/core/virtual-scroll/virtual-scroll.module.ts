@@ -9,8 +9,6 @@ const TD_VIRTUAL_SCROLL: Type<any>[] = [
   TdVirtualScrollContainerComponent,
 ];
 
-export { TdVirtualScrollRowDirective, TdVirtualScrollContainerComponent };
-
 @NgModule({
   imports: [
     CommonModule,

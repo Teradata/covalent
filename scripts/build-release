@@ -1,33 +1,98 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
-set -o errexit
+###################
+# START: BUILD @covalent/core primary and secondary entrypoints
+###################
 
-# Clear deploy/ so that we guarantee there are no stale artifacts.
-echo "Cleaning deploy/"
+# HACK START - common
+  # (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between entry points && ability to override tsconfig:
+  # this hack builds common using ng-packagr to generate @covalent/core/common and puts it into the projects root 'node_modules'
+  # https://github.com/dherges/ng-packagr/issues/379 && https://github.com/dherges/ng-packagr/issues/256
+  # Reason for hack: we need these missing features because we use '/common' between multiple entry points both primary and secondary
+  # and ng-packagr currently doesn't support it. So for now we are going to create/build the package that contains
+  # @covalent/core/common just by itself, we will then copy the generated './deploy/platform' that was generated into
+  # our projects root './node_modules' and then in the respective modules/components under /core we will replaces '../common/*'
+  # with '@covalent/core/common'. Now when we run ng-packagr on the whole /core suit when it see's '@covalent/core/common' it will
+  # take it from our root's './node_modules' instead of trying to find its intra-package dependency '../common' like before (which is
+  # not there because of ng-packagr build alogrithm changing the filepath). So this hack resolve
+  # the issue for ng-packagr but it bring up an issue when trying to serve the app with 'npm run serve'
+  # we also had to add inside the roots tsconfig.json a new path for the core's secondary entrypoints '"@covalent/core/*": ["./platform/core/*"],'
+  # because we are not using a relative path anymore '../common'.
+
+# clean up first if building again
+rm -rf ./node_modules/@covalent/core
+rm -rf ./src/platform/node_modules
 rm -rf ./deploy
+rm -rf ./src/platform/.td_build_common
 
-# Perform a build.
-gulp build
-echo "SASS compiled..."
+echo 'Creating @covalent/core/common secondary entrypoint hack'
+cd ./src/platform
+mkdir .td_build_common
+# move files to build only '@covalent/core/common' into its own build station to not cause other secondary entry points to build
+cp -r ./core/common .td_build_common/
+cp ./core/ng-package.js .td_build_common/
+cp ./core/index.ts .td_build_common/
+cd .td_build_common
 
-# Prepare for aot
-gulp prepare-aot
-echo "Preparing files for AoT build"
+# create necessary files for building @covalent/core/common
+echo '{ "name": "@covalent/core" }' > package.json
+echo "export * from './common';" > public-api.ts
+echo "export * from './public-api';" > index.ts
 
-# AoT compilation
-npm run aot
-echo "Compiled TS and generated *.metadata.json files..."
+# regex replace as needed for specific build of @covalent/core/common
+if [ "$(uname)" == "Darwin" ]; then
+    # Do under Mac OS X platform
+    sed -i '' 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.js
+else
+    sed -i 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.js
+fi
 
-# Clean source .ts files
-cd deploy/
-find . -name "*.ts" ! -name "*.d.ts" -type f -delete
-cd ..
-echo "Remove source .ts files so they arent published"
+../../../node_modules/.bin/ng-packagr -p ng-package.js
 
-# Inline the css and html into the component files.
-gulp inline-resource-files
-echo "Resources inlined..."
+# move completed build over to root node_modules as @covalent/core/*
+cp -r ./deploy/platform/core ../../../node_modules/@covalent/
 
-# Bundle
-gulp rollup-code
-echo "Bundled..."
+# kill build station don't need it anymore
+rm -rf ../.td_build_common
+cd ../../..
+echo 'Completed @covalent/core/common secondary entrypoint hack'
+# HACK END - common
+
+# Steps to package '@covalent/core' and it's children '@covalent/core/*'
+echo 'Creating @covalent/core @covalent/core/* build'
+./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.js
+# move over additional required files manually that ng-packagr doesn't do automatically
+echo 'Compiling and moving moving some requried files not handled by ng-packagr files'
+gulp move-required-core-files
+gulp compile-core-sass
+echo 'Completed compiling and moving moving some requried files not handled by ng-packagr files'
+
+# HACK (Remove in future): remove remnants of @covalent/core/common see script/ng-packagr-common for details
+rm -rf ./node_modules/@covalent/core
+echo 'Completed @covalent/core @covalent/core/* build'
+
+###################
+# END: BUILD @covalent/core primary and secondary entrypoints
+###################
+
+
+# HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between entry points && ability to override tsconfig:
+# HACK START
+mkdir -p src/platform/node_modules/@covalent
+cp -r deploy/platform/core src/platform/node_modules/@covalent
+# HACK END
+
+# BUILD: @covalent/dynamic-forms primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.js
+# BUILD: @covalent/highlight primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
+# BUILD: @covalent/http primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
+# BUILD: @covalent/markdown primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
+
+# HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
+rm -rf src/platform/node_modules
+# Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
+gulp move-additional-platform-files

@@ -11,8 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { CovalentCommonModule } from '../core';
-import { CovalentFileModule } from '../core';
+import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentFileModule } from '@covalent/core/file';
 
 import { TdDynamicFormsComponent } from './dynamic-forms.component';
 import { TdDynamicElementComponent, TdDynamicElementDirective, TdDynamicFormsErrorTemplate } from './dynamic-element.component';

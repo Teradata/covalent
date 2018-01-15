@@ -19,9 +19,6 @@ const TD_EXPANSION_PANEL: Type<any>[] = [
   TdExpansionPanelSummaryComponent,
 ];
 
-export { TdExpansionPanelComponent } from './expansion-panel.component';
-export { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
-
 @NgModule({
   imports: [
     CommonModule,

@@ -4,9 +4,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
-import { TdMarkdownComponent } from '@covalent/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core';
+import { TdHighlightComponent } from '../../../platform/highlight';
+import { TdMarkdownComponent } from '../../../platform/markdown';
+import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '../../../platform/core';
 
 @Directive({
   selector: '[tdPrettyMarkdownContainer]',

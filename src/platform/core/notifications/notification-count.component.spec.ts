@@ -7,7 +7,9 @@ import {
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CovalentNotificationsModule,
-         TdNotificationCountPositionX, TdNotificationCountPositionY } from './notifications.module';
+         TdNotificationCountPositionX,
+         TdNotificationCountPositionY,
+        } from './public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: NotificationCount', () => {

@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './expansion-panel.module';
+import { CovalentExpansionPanelModule, TdExpansionPanelComponent } from './public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: ExpansionPanel', () => {
@@ -101,9 +101,9 @@ describe('Component: ExpansionPanel', () => {
 @Component({
   selector: 'td-expansion-panel-basic-test',
   template: `
-  <td-expansion-panel [label]="label" 
-                          [sublabel]="sublabel" 
-                          [expand]="expansion1" 
+  <td-expansion-panel [label]="label"
+                          [sublabel]="sublabel"
+                          [expand]="expansion1"
                           [disabled]="disabled">
   `,
 })
@@ -117,9 +117,9 @@ class TdExpansionPanelBasicTestComponent {
 @Component({
   selector: 'td-expansion-summary-test',
   template: `
-  <td-expansion-panel label="label" 
-                      sublabel="sublabel" 
-                      [expand]="expansion1" 
+  <td-expansion-panel label="label"
+                      sublabel="sublabel"
+                      [expand]="expansion1"
                       [disabled]="disabled">
     <td-expansion-summary>
       Summary
