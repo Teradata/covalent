@@ -49,19 +49,30 @@ export class Demo {
 
 ## API Summary
 
-Properties:
-
-| Name | Type | Description |
-| --- | --- | 650--- |
 | `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
-| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
-| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
-| `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-| `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
-| `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
-| `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
-| `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
-| `cancel` | `function()` | Event emitted when cancel button is clicked.
+#### Inputs
+
++ defaultColor: string
+  + Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
++ activeColor: string
+  + Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
++ cancelColor: string
+  + Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
++ multiple: boolean
+  + Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
++ accept: string
+  + Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
++ disabled: boolean
+  + Disables [TdFileUploadComponent] and clears selected/dropped files.
+
+##### Events
+
++ upload: function($event)
+  + Event emitted when upload button is clicked. Emits a [File or FileList] object.
++ select: function($event)
+  + Event emitted when a file is selected. Emits a [File or FileList] object.
++ cancel: function
+  + Event emitted when cancel button is clicked.
 
 ## Setup
 
