@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # build and test ssr in universal app
 npm run build:release
