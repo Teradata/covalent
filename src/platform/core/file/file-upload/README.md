@@ -49,7 +49,6 @@ export class Demo {
 
 ## API Summary
 
-| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
 #### Inputs
 
 + defaultColor: string
