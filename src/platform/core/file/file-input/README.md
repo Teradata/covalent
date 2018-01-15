@@ -33,16 +33,27 @@ export class Demo {
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| color | string | Sets button color. Uses same color palette accepted as [MatButton].
-| multiple | boolean | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-| accept | string | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
-| disabled | boolean | Disables [TdFileUploadComponent] and clears selected/dropped files.
-| select | function($event) | Event emitted when a file is selected. Emits a [File or FileList] object.
-| clear | function() | Used to clear the selected files from the [TdFileInputComponent].
++ color: string
+  + Sets button color. Uses same color palette accepted as [MatButton].
++ multiple: boolean
+  + Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
++ accept: string
+  + Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
++ disabled: boolean
+  + Disables [TdFileUploadComponent] and clears selected/dropped files.
+
+#### Events
+
++ select: function($event)
+  + Event emitted when a file is selected. 
+  + Emits a [File or FileList] object.
+
+#### Methods
+
++ clear: function
+  + Used to clear the selected files from the [TdFileInputComponent].
 
 ## Setup
 
