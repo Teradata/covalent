@@ -41,7 +41,15 @@ echo "export * from './common';" > public-api.ts
 echo "export * from './public-api';" > index.ts
 
 # regex replace as needed for specific build of @covalent/core/common
-sed -i '' 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.js
+if [ "$(uname)" == "Darwin" ]; then
+    # Do under Mac OS X platform
+    sed -i '' 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.js
+    echo 'test-1';
+else
+    sed -i 's/..\/..\/..\/deploy\/platform/.\/deploy\/platform/' ng-package.js
+    echo 'test-2';
+fi
+
 ../../../node_modules/.bin/ng-packagr -p ng-package.js
 
 # move completed build over to root node_modules as @covalent/core/*
