@@ -89,14 +89,17 @@ Example for usage:
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| multiple | boolean | Sets whether multiple files can be selected at once in host element, or just a single file. Can also be "multiple" native attribute.
-| fileSelect | function($event) | Event emitted when a file or files are selected in host [HTMLInputElement]. Emits a [FileList or File] object. Alternative to not use [(ngModel)].
++ multiple: boolean
+  + Sets whether multiple files can be selected at once in host element, or just a single file. 
+  + Can also be "multiple" native attribute.
 
----
+#### Events
+
++ fileSelect: function($event)
+  + Event emitted when a file or files are selected in host [HTMLInputElement]. 
+  + Emits a [FileList or File] object. Alternative to not use [(ngModel)].
 
 ## TdFileDropDirective: tdFileDrop
 
@@ -118,13 +121,16 @@ Example for usage:
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| multiple | boolean | Sets whether multiple files can be dropped at once in host element, or just a single file. Can also be "multiple" native attribute.
-| disabled | boolean | Disabled drop events for host element.
-| fileDrop | function($event) | Event emitted when a file or files are dropped in host element after being validated. Emits a [FileList or File] object.
++ multiple: boolean
+  + Sets whether multiple files can be dropped at once in host element, or just a single file. 
+  + Can also be "multiple" native attribute.
++ disabled: boolean
+  + Disabled drop events for host element.
 
+#### Events
 
----
++ fileDrop: function($event)
+  + Event emitted when a file or files are dropped in host element after being validated. 
+  + Emits a [FileList or File] object.
