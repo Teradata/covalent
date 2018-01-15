@@ -64,7 +64,7 @@ export class Demo {
 + disabled: boolean
   + Disables [TdFileUploadComponent] and clears selected/dropped files.
 
-##### Events
+#### Events
 
 + upload: function($event)
   + Event emitted when upload button is clicked. Emits a [File or FileList] object.
@@ -72,12 +72,6 @@ export class Demo {
   + Event emitted when a file is selected. Emits a [File or FileList] object.
 + cancel: function
   + Event emitted when cancel button is clicked.
-
-##### Methods
-
-+ upload: function(IUploadState)
-  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
-  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
 
 ## Setup
 
@@ -140,3 +134,13 @@ export class Demo {
   
 }
 ```
+
+## API Summary
+
+#### Methods
+
++ upload: function(IUploadState)
+  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
+  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
+
+  &nbsp;
