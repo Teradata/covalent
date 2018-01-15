@@ -73,6 +73,12 @@ export class Demo {
 + cancel: function
   + Event emitted when cancel button is clicked.
 
+##### Methods
+
++ upload: function(IUploadState)
+  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
+  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
+
 ## Setup
 
 Import the [CovalentFileModule] in your NgModule:
@@ -134,14 +140,3 @@ export class Demo {
   
 }
 ```
-
-## API Summary
-
-Methods:
-
-| Name | Type | Description |
-| --- | --- | 650--- |
-| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
-
-
----
