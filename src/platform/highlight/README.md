@@ -8,7 +8,7 @@ This implementation supports all the Common languages in *highlight.js*.
 
 By default, `--dev` build will log the following message in the console to let you know:
 
-`WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).
+`WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).`
 
 ## API Summary
 
