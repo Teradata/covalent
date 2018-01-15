@@ -132,5 +132,7 @@ Example for usage:
 #### Events
 
 + fileDrop: function($event)
-  + Event emitted when a file or files are dropped in host element after being validated. 
+  + Event emitted when a file or files are dropped in host element after being validated.  
   + Emits a [FileList or File] object.
+
+&nbsp;
