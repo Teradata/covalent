@@ -22,7 +22,7 @@ export interface IPageChangeEvent {
 + initialPage?: number
   + Sets starting page for the paging bar. Defaults to 1.
 + pagingLinkCount?: number
-  + Amount of page navigation links for the paging bar. Defaults t
+  + Amount of page navigation links for the paging bar. Defaults to 0
 + firstLast?: boolean
   + Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
 + pageSize?: number
@@ -37,7 +37,7 @@ export interface IPageChangeEvent {
 
 #### Methods
 
-+ navigateToPage: function(page: number): boolea
++ navigateToPage: function(page: number)
   + Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
 
 ## Setup
