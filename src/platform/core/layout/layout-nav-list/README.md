@@ -19,7 +19,7 @@
   + Defaults to primary.
 + navigationRoute: string
   + option to set the combined route for the icon, logo, and toolbarTitle.
-+ mode: 'over', 'side' or 'push'
++ mode: 'over' | 'side' | 'push'
   + The mode or styling of the sidenav. 
   + Defaults to 'side'.
 + opened: boolean

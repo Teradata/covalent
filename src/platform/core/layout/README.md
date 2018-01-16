@@ -7,7 +7,7 @@
 
 #### Inputs
 
-+ mode: 'over', 'side' or 'push'
++ mode: 'over' | 'side' | 'push'
   + The mode or styling of the sidenav. Defaults to 'over'.
 + opened: boolean
   + Whether or not the sidenav is opened. Use this binding to open/close the sidenav. 
