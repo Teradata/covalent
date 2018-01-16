@@ -59,7 +59,7 @@ npm i -save @covalent/core
 Import the **[CovalentLayoutModule]** in your NgModule:
 
 ```typescript
-import { CovalentLayoutModule } from '@covalent/core';
+import { CovalentLayoutModule } from '@covalent/core/layout';
 @NgModule({
   imports: [
     CovalentLayoutModule,

@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { TdDialogService } from '@covalent/core';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
 

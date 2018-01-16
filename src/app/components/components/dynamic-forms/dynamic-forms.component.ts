@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
-import { TdCollapseAnimation } from '@covalent/core';
+import { TdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import {

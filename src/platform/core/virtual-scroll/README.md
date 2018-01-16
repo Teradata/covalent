@@ -22,7 +22,7 @@ Properties:
 Import the [CovalentVirtualScrollModule] in your NgModule:
 
 ```typescript
-import { CovalentVirtualScrollModule } from '@covalent/core';
+import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 @NgModule({
   imports: [
     CovalentVirtualScrollModule,

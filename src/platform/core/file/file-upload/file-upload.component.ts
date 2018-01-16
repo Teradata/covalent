@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ContentChild, ChangeDetectorRef,
   forwardRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../../common/common.module';
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 import { TdFileInputComponent, TdFileInputLabelDirective } from '../file-input/file-input.component';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -25,7 +25,7 @@ export const _TdFileUploadMixinBase = mixinControlValueAccessor(mixinDisabled(Td
   templateUrl: './file-upload.component.html',
 })
 export class TdFileUploadComponent extends _TdFileUploadMixinBase implements IControlValueAccessor, ICanDisable {
-  
+
   private _multiple: boolean = false;
   private _required: boolean = false;
 

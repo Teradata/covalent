@@ -55,12 +55,6 @@ const TD_LAYOUTS: Type<any>[] = [
   TdNavigationDrawerToolbarDirective,
 ];
 
-export { TdLayoutComponent, TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective,
-         TdLayoutNavComponent, TdLayoutNavListComponent, TdLayoutNavListToggleDirective, TdLayoutNavListCloseDirective, TdLayoutNavListOpenDirective,
-         TdLayoutCardOverComponent, TdLayoutManageListComponent, TdLayoutManageListToggleDirective,
-         TdLayoutManageListCloseDirective, TdLayoutManageListOpenDirective,
-         TdLayoutFooterComponent, TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective, TdNavigationDrawerToolbarDirective };
-
 @NgModule({
   imports: [
     CommonModule,

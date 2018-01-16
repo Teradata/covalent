@@ -25,7 +25,7 @@ Properties:
 Import the [CovalentMessageModule] in your NgModule:
 
 ```typescript
-import { CovalentMessageModule } from '@covalent/core';
+import { CovalentMessageModule } from '@covalent/core/message';
 @NgModule({
   imports: [
     CovalentMessageModule,

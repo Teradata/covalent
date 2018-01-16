@@ -16,25 +16,6 @@ const TD_ANIMATIONS: Type<any>[] = [
   TdToggleDirective,
   TdFadeDirective,
 ];
-export { TdToggleDirective, TdFadeDirective };
-
-// Utility functions
-export { TdRotateAnimation, IRotateAnimation } from './animations/rotate/rotate.animation';
-export { TdCollapseAnimation, ICollapseAnimation } from './animations/collapse/collapse.animation';
-export { TdFadeInOutAnimation, IFadeInOutAnimation } from './animations/fade/fadeInOut.animation';
-export { TdBounceAnimation } from './animations/bounce/bounce.animation';
-export { TdFlashAnimation } from './animations/flash/flash.animation';
-export { TdHeadshakeAnimation } from './animations/headshake/headshake.animation';
-export { TdJelloAnimation } from './animations/jello/jello.animation';
-export { TdPulseAnimation } from './animations/pulse/pulse.animation';
-
-/**
- * BEHAVIORS
- */
-
-export { IControlValueAccessor, mixinControlValueAccessor } from './behaviors/control-value-accesor.mixin';
-export { ICanDisable, mixinDisabled } from './behaviors/disabled.mixin';
-export { ICanDisableRipple, mixinDisableRipple } from './behaviors/disable-ripple.mixin';
 
 /**
  * FORMS
@@ -47,13 +28,9 @@ const TD_FORMS: Type<any>[] = [
   TdAutoTrimDirective,
 ];
 
-export { TdAutoTrimDirective };
-
 // Validators
 const TD_VALIDATORS: Type<any>[] = [
 ];
-
-export { CovalentValidators } from './forms/validators/validators';
 
 /**
  * PIPES
@@ -71,9 +48,6 @@ const TD_PIPES: Type<any>[] = [
   TdDigitsPipe,
   TdTruncatePipe,
 ];
-
-export { TdTimeAgoPipe, TdTimeDifferencePipe,
-         TdBytesPipe, TdDigitsPipe, TdTruncatePipe };
 
 /**
  * Services

@@ -2,7 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
 import { MatIconRegistry } from '@angular/material/icon';
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 import { TranslateService } from '@ngx-translate/core';
 
 import { getSelectedLanguage } from './utilities/translate';

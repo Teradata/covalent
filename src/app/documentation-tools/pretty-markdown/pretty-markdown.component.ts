@@ -3,9 +3,10 @@ import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer2, Secu
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { MatCheckbox } from '@angular/material/checkbox';
-import { TdHighlightComponent } from '@covalent/highlight';
-import { TdMarkdownComponent } from '@covalent/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core';
+import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
+import { TdHighlightComponent } from '../../../platform/highlight';
+import { TdMarkdownComponent } from '../../../platform/markdown';
+import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '../../../platform/core';
 
 @Directive({
   selector: '[tdPrettyMarkdownContainer]',
@@ -75,6 +76,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       markdown = lines.join('\n');
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
+      markdown = this._replaceLists(markdown);
       markdown = this._replaceCodeBlocks(markdown);
       let keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
@@ -203,5 +205,25 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
         componentRef.instance.refresh();
       });
     });
+  }
+
+  private _replaceLists(markdown: string): string {
+    let listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
+    return this._replaceComponent(markdown, TdFlavoredListComponent, listRegExp,
+      (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
+        let lineTexts: string[] = match.split(new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'));
+        lineTexts.shift();
+        let lines: IFlavoredListItem[] = [];
+        lineTexts.forEach((text: string, index: number) => {
+          let sublineTexts: string[] = text.split(/\n *\+ /);
+          lines.push({
+            line: sublineTexts.shift(),
+            sublines: sublineTexts.map((subline: string) => {
+              return subline.trim();
+            }),
+          });
+        });
+        componentRef.instance.lines = lines;
+      });
   }
 }

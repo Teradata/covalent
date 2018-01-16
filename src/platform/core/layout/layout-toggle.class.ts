@@ -2,7 +2,7 @@ import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit,
 
 import { MatSidenav } from '@angular/material/sidenav';
 
-import { ICanDisable, mixinDisabled } from '../common/common.module';
+import { ICanDisable, mixinDisabled } from '@covalent/core/common';
 
 import { Subscription } from 'rxjs/Subscription';
 
@@ -31,7 +31,7 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
    * When this is set to true, the host will be hidden when
    * the sidenav is opened.
    */
-  @Input('hideWhenOpened') 
+  @Input('hideWhenOpened')
   set hideWhenOpened(hideWhenOpened: boolean) {
     this._hideWhenOpened = hideWhenOpened;
     if (this._initialized) {
