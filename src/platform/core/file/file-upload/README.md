@@ -68,7 +68,7 @@ Properties:
 Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
-import { CovalentFileModule } from '@covalent/core';
+import { CovalentFileModule } from '@covalent/core/file';
 @NgModule({
   imports: [
     CovalentFileModule,
@@ -100,7 +100,7 @@ interface IUploadOptions {
 Example for usage:
 
 ```typescript
-import { TdFileService, IUploadOptions } from '@covalent/core';
+import { TdFileService, IUploadOptions } from '@covalent/core/file';
 ...
   providers: [ TdFileService ]
 })
