@@ -73,6 +73,11 @@ export class Demo {
 + cancel: function
   + Event emitted when cancel button is clicked.
 
+#### Methods
+
++ cancel: function
+  + Method used to clear the files selected.
+
 ## Setup
 
 Import the [CovalentFileModule] in your NgModule:
@@ -91,9 +96,17 @@ export class MyModule {}
 
 ## tdFileService
 
-## Usage
-
 Service provided with methods that wrap complexity for as easier file upload experience.
+
+## API Summary
+
+#### Methods
+
++ upload: function(IUploadState)
+  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
+  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
+
+## Usage
 
 Recieves as parameter an object that implements the [IUploadOptions] interface. You have to assign a value either to `[file]` or to `[formData]`. If `[file]` is assigned then `[formData]` will be ignored; when only `[formData]` is assigned then it will be sent as form data.
 
@@ -134,13 +147,3 @@ export class Demo {
   
 }
 ```
-
-## API Summary
-
-#### Methods
-
-+ upload: function(IUploadState)
-  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
-  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
-
-  &nbsp;
