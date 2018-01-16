@@ -49,7 +49,7 @@ Properties:
 Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
-import { CovalentFileModule } from '@covalent/core';
+import { CovalentFileModule } from '@covalent/core/file';
 @NgModule({
   imports: [
     CovalentFileModule,

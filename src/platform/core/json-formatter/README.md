@@ -27,7 +27,7 @@ The tree is collapsable/expandable so you can navigate through its nodes.
 Import the [CovalentJsonFormatterModule] in your NgModule:
 
 ```typescript
-import { CovalentJsonFormatterModule } from '@covalent/core';
+import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
 @NgModule({
   imports: [
     CovalentJsonFormatterModule,
