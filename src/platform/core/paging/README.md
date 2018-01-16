@@ -34,7 +34,7 @@ Properties:
 Import the [CovalentPagingModule] in your NgModule:
 
 ```typescript
-import { CovalentPagingModule } from '@covalent/core';
+import { CovalentPagingModule } from '@covalent/core/paging';
 @NgModule({
   imports: [
     CovalentPagingModule,

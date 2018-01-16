@@ -39,7 +39,7 @@ It also contains an optional summary to display anything in collapsed state.
 Import the [CovalentExpansionPanelModule] in your NgModule:
 
 ```typescript
-import { CovalentExpansionPanelModule } from '@covalent/core';
+import { CovalentExpansionPanelModule } from '@covalent/core/expansion-panel';
 @NgModule({
   imports: [
     CovalentExpansionPanelModule,

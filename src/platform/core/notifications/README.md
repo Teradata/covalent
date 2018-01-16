@@ -18,7 +18,7 @@ Properties:
 Import the [CovalentNotificationsModule] in your NgModule:
 
 ```typescript
-import { CovalentNotificationsModule } from '@covalent/core';
+import { CovalentNotificationsModule } from '@covalent/core/notifications';
 @NgModule({
   imports: [
     CovalentNotificationsModule,

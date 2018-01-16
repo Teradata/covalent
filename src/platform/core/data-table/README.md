@@ -52,7 +52,7 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 Import the [CovalentDataTableModule] in your NgModule:
 
 ```typescript
-import { CovalentDataTableModule } from '@covalent/core';
+import { CovalentDataTableModule } from '@covalent/core/data-table';
 @NgModule({
   imports: [
     CovalentDataTableModule,
@@ -112,7 +112,7 @@ Example for HTML usage:
 ```
 
 ```typescript
-import { ITdDataTableColumn } from '@covalent/core';
+import { ITdDataTableColumn } from '@covalent/core/data-table';
 ...
 })
 export class Demo {
