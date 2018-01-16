@@ -1,6 +1,6 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'app-components',

@@ -57,7 +57,7 @@ Example for HTML usage:
 Import the [CovalentSearchModule] in your NgModule:
 
 ```typescript
-import { CovalentSearchModule } from '@covalent/core';
+import { CovalentSearchModule } from '@covalent/core/search';
 @NgModule({
   imports: [
     CovalentSearchModule,

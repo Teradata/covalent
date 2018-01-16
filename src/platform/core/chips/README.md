@@ -49,7 +49,7 @@ Leverage the templates to create your own chip or contact chip.
 Import the [CovalentChipsModule] in your NgModule:
 
 ```typescript
-import { CovalentChipsModule } from '@covalent/core';
+import { CovalentChipsModule } from '@covalent/core/chips';
 @NgModule({
   imports: [
     CovalentChipsModule,

@@ -3,7 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDialogService } from '../../../../platform/core';
-import { TdCollapseAnimation } from '@covalent/core';
+import { TdCollapseAnimation } from '@covalent/core/common';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
