@@ -4,16 +4,36 @@
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
-| `placeholder?` | `string` | Placeholder for the underlying input component.
-| `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
-| `searchDebounce` | `function($event)` | Event emitted after the [debounce] timeout.
-| `search` | `function($event)` | Event emitted after the key enter has been pressed.
-| `clear?` | `function` | Event emitted after the clear icon has been clicked.
++ debounce?: number
+  + Debounce timeout between keypresses. Defaults to 400.
++ placeholder?: string
+  + Placeholder for the underlying input component.
++ showUnderline?: boolean
+  + Sets if the input underline should be visible. Defaults to 'false'.
++ clearIcon: function
+  + The icon used to clear the search input. Defaults to 'cancel' icon.
+
+#### Events
++ searchDebounce: function
+  + Event emitted after the [debounce] timeout.
+  + Emits a [string].
++ search: function
+  + Event emitted after the key enter has been pressed.
+  + Emits a [string].
++ clear: function
+  + Event emitted after the clear icon has been clicked.
+  + Emits [void].
++ blur: function
+  + Event emitted after the blur event has been called in underlying input.
+  + Emits [void].
+
+#### Methods
++ focus: function
+  + Method to focus to underlying input.
++ clearSearch: function
+  + Method to clear the underlying input.
 
 ## Usage
 
@@ -29,6 +49,35 @@ Example for HTML usage:
 `td-search-box` element to generate a search box with animations.
 
 ## API Summary
+
+#### Inputs
+
++ backIcon?: string
+  + The icon used to close the search toggle, only shown when [alwaysVisible] is false. Defaults to 'search' icon.
++ searchIcon?: string
+  + The icon used to open/focus the search toggle. Defaults to 'search' icon.
++ clearIcon?: string
+  + The icon used to clear the search input. Defaults to 'cancel' icon.
++ showUnderline?: boolean
+  + Sets if the input underline should be visible. Defaults to 'false'.
++ debounce?: number
+  + Debounce timeout between keypresses. Defaults to 400.
++ alwaysVisible?: boolean
+  + Sets if the input should always be visible. Defaults to 'false'.
++ placeholder?: string
+  + Placeholder for the underlying input component.
+
+#### Events
+
++ searchDebounce?: string
+  + Event emitted after the [debounce] timeout.
+  + Emits a [string].
++ search?: string
+  + Event emitted after the key enter has been pressed.
+  + Emits a [string].
++ clear?: string
+  + Event emitted after the clear icon has been clicked.
+  + Emits [void].
 
 Properties:
 
