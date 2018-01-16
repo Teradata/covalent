@@ -79,19 +79,6 @@ Example for HTML usage:
   + Event emitted after the clear icon has been clicked.
   + Emits [void].
 
-Properties:
-
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `debounce?` | `number` | Debounce timeout between keypresses. Defaults to 400.
-| `placeholder?` | `string` | Placeholder for the underlying input component.
-| `backIcon?` | `string` | The icon used to close the search toggle, only shown when [alwaysVisible] is false. Defaults to 'search' icon.
-| `showUnderline?` | `boolean` | Sets if the input underline should be visible. Defaults to 'false'.
-| `alwaysVisible?` | `boolean` | Sets if the input should always be visible. Defaults to 'false'.
-| `searchDebounce` | `function($event)` | Event emitted after the [debounce] timeout.
-| `search` | `function($event)` | Event emitted after the key enter has been pressed.
-| `clear?` | `function` | Event emitted after the clear icon has been clicked.
-
 ## Usage
 
 Example for HTML usage:
