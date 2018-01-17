@@ -1,4 +1,4 @@
-import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
+import { Component, Directive, Input, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
          Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
@@ -27,7 +27,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
 
   private _fromRow: number = 0;
   private _toRow: number = 0;
-  
+
   private _data: any[];
   private _virtualData: any[];
 
@@ -129,7 +129,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
       }
     }
   }
-  
+
   /**
    * Method to refresh and recalculate the virtual rows
    * e.g. after changing the [data] content
@@ -180,7 +180,7 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
       this._fromRow = 0;
       this._toRow = 0;
     }
-  
+
     let offset: number = 0;
     if (this._scrollVerticalOffset > (TD_VIRTUAL_OFFSET * this.rowHeight)) {
       offset = this.fromRow * this.rowHeight;

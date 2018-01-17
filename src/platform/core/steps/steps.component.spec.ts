@@ -7,7 +7,7 @@ import {
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentStepsModule, StepState, StepMode } from './steps.module';
+import { CovalentStepsModule, StepState, StepMode } from './public-api';
 
 describe('Component: Steps', () => {
 

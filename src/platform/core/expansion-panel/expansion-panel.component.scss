@@ -9,7 +9,7 @@
     }
     .td-expansion-panel-header-content {
       height: 48px;
-      padding: 0 16px;
+      padding: 0 24px;
       // layout
       box-sizing: border-box;
       display: flex;
@@ -23,7 +23,7 @@
       align-content: center;
       max-width: 100%;
       .td-expansion-label,
-      .td-expansion-panel-spacer {
+      .td-expansion-sublabel {
         // flex
         flex: 1;
       }
@@ -42,9 +42,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 5px;
+  margin-right: 16px;
   ::ng-deep [dir='rtl'] & {
-    margin-left: 5px;
+    margin-left: 16px;
     margin-right: inherit;
   }
 }

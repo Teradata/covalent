@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+# build and test ssr in universal app
+npm run build:release
+rm -rf .td_test_universal
+rm -f deploy/platform/core/covalent-core-*.tgz
+
+cd deploy/platform/core
+npm pack
+cd ../../..
+
+cp -r src/universal-app .td_test_universal
+cd .td_test_universal
+npm install
+npm install ../deploy/platform/core/covalent-core-*.tgz
+../node_modules/.bin/ngc -p tsconfig-battle-zone.json
+../node_modules/.bin/tsc -p tsconfig-battle-royale.json
+
+node battle-royale.js
+
+cd ..
+rm -rf .td_test_universal
+rm deploy/platform/core/covalent-core-*.tgz

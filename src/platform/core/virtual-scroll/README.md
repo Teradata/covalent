@@ -6,23 +6,30 @@
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `data` | `any[]` | List of items to virtually iterate on.
-| `trackBy?` | `TrackByFunction` | This accepts the same trackBy function [ngFor] does. https://angular.io/api/core/TrackByFunction
-| `refresh` | `function()` | Method to refresh and recalculate the virtual rows
-| `scrollTo` | `function(row)` | Method to scroll to a specific row of the list.
-| `scrollToStart` | `function()` | Method to scroll to the start of the list.
-| `scrollToEnd` | `function()` | Method to scroll to the end of the list.
++ data?: any[]
+  + List of items to virtually iterate on.
++ trackBy?: TrackByFunction
+  + This accepts the same trackBy function [ngFor] does.
+
+#### Methods
+
++ refresh?: function()
+  + Method to refresh and recalculate the virtual rows
++ scrollTo?: function(row: number)
+  + Method to scroll to a specific row of the list.
++ scrollToStart?: function()
+  + Method to scroll to the start of the list.
++ scrollToEnd?: function()
+  + Method to scroll to the end of the list.
 
 ## Setup
 
 Import the [CovalentVirtualScrollModule] in your NgModule:
 
 ```typescript
-import { CovalentVirtualScrollModule } from '@covalent/core';
+import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 @NgModule({
   imports: [
     CovalentVirtualScrollModule,

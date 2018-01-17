@@ -2,7 +2,7 @@ import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import { HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable, mixinDisabled } from '../../common/common.module';
+import { ICanDisable, mixinDisabled } from '@covalent/core/common';
 
 export class TdFileDropBase {}
 

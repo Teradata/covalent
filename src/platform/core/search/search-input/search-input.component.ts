@@ -8,7 +8,7 @@ import { MatInput } from '@angular/material/input';
 import { debounceTime } from 'rxjs/operators/debounceTime';
 import { skip } from 'rxjs/operators/skip';
 
-import { IControlValueAccessor, mixinControlValueAccessor } from '../../common/common.module';
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export class TdSearchInputBase {
   constructor(public _changeDetectorRef: ChangeDetectorRef) { }
@@ -141,6 +141,9 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
     this.onSearch.emit(this.value);
   }
 
+  /**
+   * Method to clear the underlying input.
+   */
   clearSearch(): void {
     this.value = '';
     this._changeDetectorRef.markForCheck();

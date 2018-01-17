@@ -35,7 +35,8 @@
       "rxjs",
       "rxjs/operators",
       "@angular/cdk",
-      "@angular/material"
+      "@angular/material",
+      "@covalent/core"
     ],
     "jsdoc-format": true,
     "label-position": true,

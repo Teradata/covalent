@@ -17,6 +17,7 @@ export class ChipsDemoComponent implements OnInit {
   disabled: boolean = false;
   chipAddition: boolean = true;
   chipRemoval: boolean = true;
+  before: boolean = false;
   events: string[] = [];
 
   filteringAsync: boolean = false;

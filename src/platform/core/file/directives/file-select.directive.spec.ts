@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
-import { CovalentFileModule, TdFileSelectDirective } from '../file.module';
+import { CovalentFileModule, TdFileSelectDirective } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileSelect', () => {
@@ -55,7 +55,7 @@ describe('Directive: FileSelect', () => {
   template: `
   <input tdFileSelect
          type="file"
-         [multiple]="multiple" 
+         [multiple]="multiple"
          (fileSelect)="files = $event">
   `,
 })

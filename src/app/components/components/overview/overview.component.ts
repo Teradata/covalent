@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 
 import { slideInDownAnimation } from '../../../app.animations';
 

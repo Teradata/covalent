@@ -1,5 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({

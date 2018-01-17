@@ -49,26 +49,41 @@ export class Demo {
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `defaultColor` | `string` | Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
-| `activeColor` | `string` | Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
-| `cancelColor` | `string` | Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
-| `multiple` | `boolean` | Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
-| `accept` | `string` | Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
-| `disabled` | `boolean` | Disables [TdFileUploadComponent] and clears selected/dropped files.
-| `upload` | `function($event)` | Event emitted when upload button is clicked. Emits a [File or FileList] object.
-| `select` | `function($event)` | Event emitted when a file is selected. Emits a [File or FileList] object.
-| `cancel` | `function()` | Event emitted when cancel button is clicked.
++ defaultColor: string
+  + Sets browse button color. Uses same color palette accepted as [MatButton] and defaults to 'primary'.
++ activeColor: string
+  + Sets upload button color. Uses same color palette accepted as [MatButton] and defaults to 'accent'.
++ cancelColor: string
+  + Sets cancel button color. Uses same color palette accepted as [MatButton] and defaults to 'warn'.
++ multiple: boolean
+  + Sets if multiple files can be dropped/selected at once in [TdFileUploadComponent].
++ accept: string
+  + Sets files accepted when opening the file browser dialog. Same as "accept" attribute in `<input/>` element.
++ disabled: boolean
+  + Disables [TdFileUploadComponent] and clears selected/dropped files.
+
+#### Events
+
++ upload: function($event)
+  + Event emitted when upload button is clicked. Emits a [File or FileList] object.
++ select: function($event)
+  + Event emitted when a file is selected. Emits a [File or FileList] object.
++ cancel: function
+  + Event emitted when cancel button is clicked.
+
+#### Methods
+
++ cancel: function
+  + Method used to clear the files selected.
 
 ## Setup
 
 Import the [CovalentFileModule] in your NgModule:
 
 ```typescript
-import { CovalentFileModule } from '@covalent/core';
+import { CovalentFileModule } from '@covalent/core/file';
 @NgModule({
   imports: [
     CovalentFileModule,
@@ -81,9 +96,17 @@ export class MyModule {}
 
 ## tdFileService
 
-## Usage
-
 Service provided with methods that wrap complexity for as easier file upload experience.
+
+## API Summary
+
+#### Methods
+
++ upload: function(IUploadState)
+  + Uses underlying [XMLHttpRequest] to upload a file to a url. 
+  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
+
+## Usage
 
 Recieves as parameter an object that implements the [IUploadOptions] interface. You have to assign a value either to `[file]` or to `[formData]`. If `[file]` is assigned then `[formData]` will be ignored; when only `[formData]` is assigned then it will be sent as form data.
 
@@ -100,7 +123,7 @@ interface IUploadOptions {
 Example for usage:
 
 ```typescript
-import { TdFileService, IUploadOptions } from '@covalent/core';
+import { TdFileService, IUploadOptions } from '@covalent/core/file';
 ...
   providers: [ TdFileService ]
 })
@@ -124,14 +147,3 @@ export class Demo {
   
 }
 ```
-
-## API Summary
-
-Methods:
-
-| Name | Type | Description |
-| --- | --- | 650--- |
-| upload | function(IUploadState) | Uses underlying [XMLHttpRequest] to upload a file to a url. Will be depricated when angular fixes [Http] to allow [FormData] as body.
-
-
----

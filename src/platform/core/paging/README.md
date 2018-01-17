@@ -17,24 +17,35 @@ export interface IPageChangeEvent {
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `initialPage` | `number` | Sets starting page for the paging bar. Defaults to 1.
-| `pageLinkCount?` | `number` | Amount of page navigation links for the paging bar. Defaults to 0.
-| `firstLast?` | `boolean` | Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
-| `pageSize?` | `number` | Selected page size for the pagination. Defaults to 50.
-| `total` | `number` | Total rows for the pagination.
-| `change` | `function($event: IPageChangeEvent)` | Method to be executed when page size changes or any button is clicked in the paging bar.
-| `navigateToPage` | `function(page: number): boolean` | Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
++ initialPage?: number
+  + Sets starting page for the paging bar. Defaults to 1.
++ pagingLinkCount?: number
+  + Amount of page navigation links for the paging bar. Defaults to 0
++ firstLast?: boolean
+  + Shows or hides the first and last page buttons of the paging bar. Defaults to 'false'
++ pageSize?: number
+  + Selected page size for the pagination. Defaults to 50.
++ total: number
+  + Total rows for the pagination.
+
+#### Events
+
++ change: function($event: IPageChangeEvent)
+  + Method to be executed when page size changes or any button is clicked in the paging bar.
+
+#### Methods
+
++ navigateToPage: function(page: number)
+  + Navigates to a specific valid page. Returns 'true' if page is valid, else 'false'.
 
 ## Setup
 
 Import the [CovalentPagingModule] in your NgModule:
 
 ```typescript
-import { CovalentPagingModule } from '@covalent/core';
+import { CovalentPagingModule } from '@covalent/core/paging';
 @NgModule({
   imports: [
     CovalentPagingModule,

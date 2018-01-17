@@ -1,5 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+
+import { TdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({

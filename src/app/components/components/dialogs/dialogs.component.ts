@@ -55,6 +55,7 @@ export class DialogsDemoComponent {
       message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
       cancelButton: 'Disagree',
       acceptButton: 'Agree',
+      width: '500px',
     });
   }
 

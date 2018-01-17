@@ -3,24 +3,28 @@ version=$1
 
 set -e
 
-echo "Started release $version"
+echo "Started release v$version"
 
-git flow release start v$version develop
+echo "Making sure master is up to date"
+git checkout master
 
-gulp bump-version --ver $version
+git pull origin master
 
-git add -A .
+echo "Checking out develop branch"
+git checkout develop
 
-git commit -a -m "Version bump"
-
-echo "Publishing release v$version"
-git flow release publish v$version
-
-echo "Executed tslint test"
+echo "Execute tslint test"
 npm run tslint
 
-echo "Executed stylelint test"
+echo "Execute stylelint test"
 npm run stylelint
 
-echo "Executed unit tests"
+echo "Execute unit tests"
 npm run test
+
+echo "Execute release build test"
+npm run build:release
+rm -rf deploy
+
+echo "Bump to version v$version"
+gulp bump-version --ver $version
