@@ -1,19 +1,22 @@
+# TdSearchInputComponent: td-search-input
 
 `td-search-input` element to generate a search input with its animated cancel button.
 
 ## API Summary
 
 #### Inputs
+
 + debounce?: number
   + Debounce timeout between keypresses. Defaults to 400.
 + placeholder?: string
   + Placeholder for the underlying input component.
 + showUnderline?: boolean
   + Sets if the input underline should be visible. Defaults to 'false'.
-+ clearIcon: function
++ clearIcon?: string
   + The icon used to clear the search input. Defaults to 'cancel' icon.
 
 #### Events
+
 + searchDebounce: function
   + Event emitted after the [debounce] timeout.
   + Emits a [string].

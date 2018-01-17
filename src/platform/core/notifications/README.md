@@ -4,21 +4,26 @@
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `color?` | `'primary', 'accent' or 'warn'` | Sets the theme color of the notification tip. Defaults to 'warn'
-| `notifications?` | `number or boolean` | Number for the notification count. Shows number if the input is a positive number or its no count state if boolean 'true'
-| `positionX?` | `TdNotificationCountPositionX or 'before', 'after' or 'center'` | Sets the X position of the notification tip. Defaults to 'after' if it has content, else 'center'.
-| `positionY?` | `TdNotificationCountPositionY or 'top', 'bottom' or 'center'` | Sets the Y position of the notification tip. Defaults to 'top' if it has content, else 'center'.
++ color?: 'primary' | 'accent' | 'warn'
+  + Sets the theme color of the notification tip. 
+  + Defaults to 'warn'
++ notifications?: number | boolean
+  + Number for the notification count. 
+  + Shows number if the input is a positive number or its no count state if boolean 'true'.
++ positionX?: TdNotificationCountPositionX or 'before' | 'after' | 'center'
+  + Sets the X position of the notification tip. 
+  + Defaults to 'after' if it has content, else 'center'.
++ positionY?: TdNotificationCountPositionY or 'top' | 'bottom' | 'center'
+  + Sets the Y position of the notification tip. Defaults to 'top' if it has content, else 'center'.
 
 ## Setup
 
 Import the [CovalentNotificationsModule] in your NgModule:
 
 ```typescript
-import { CovalentNotificationsModule } from '@covalent/core';
+import { CovalentNotificationsModule } from '@covalent/core/notifications';
 @NgModule({
   imports: [
     CovalentNotificationsModule,

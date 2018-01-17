@@ -11,12 +11,13 @@
 + data?: any[]
   + List of items to virtually iterate on.
 + trackBy?: TrackByFunction
-  + List of items to virtually iterate on.
+  + This accepts the same trackBy function [ngFor] does.
 
 #### Methods
+
 + refresh?: function()
   + Method to refresh and recalculate the virtual rows
-+ scrollTo?: function(row)
++ scrollTo?: function(row: number)
   + Method to scroll to a specific row of the list.
 + scrollToStart?: function()
   + Method to scroll to the start of the list.
@@ -28,7 +29,7 @@
 Import the [CovalentVirtualScrollModule] in your NgModule:
 
 ```typescript
-import { CovalentVirtualScrollModule } from '@covalent/core';
+import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 @NgModule({
   imports: [
     CovalentVirtualScrollModule,

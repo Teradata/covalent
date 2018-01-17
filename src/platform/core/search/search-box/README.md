@@ -1,10 +1,11 @@
-# td-search-box
+# TdSearchBoxComponent: td-search-box
 
 `td-search-box` element to generate a search box with animations.
 
 ## API Summary
 
 #### Inputs
+
 + backIcon?: string
   + The icon used to close the search toggle, only shown when [alwaysVisible] is false. Defaults to 'search' icon.
 + searchIcon?: string
@@ -21,6 +22,7 @@
   + Placeholder for the underlying input component.
 
 #### Events
+
 + searchDebounce?: string
   + Event emitted after the [debounce] timeout.
   + Emits a [string].
