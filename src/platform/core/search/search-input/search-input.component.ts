@@ -141,6 +141,9 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
     this.onSearch.emit(this.value);
   }
 
+  /**
+   * Method to clear the underlying input.
+   */
   clearSearch(): void {
     this.value = '';
     this._changeDetectorRef.markForCheck();
