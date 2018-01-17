@@ -66,7 +66,7 @@
   <mat-card-title>Byte Conversion</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="mat-body-1">The <code>bytes</code> pipe takes a number and converts the output to an appropriate data measurement with an optional <code>precision</code> argument.</p>
+    <p class="mat-body-1">The <code>bytes</code> pipe takes a number and converts the output to an appropriate base 1024 data measurement with an optional <code>precision</code> argument.</p>
     <mat-list>
       <mat-list-item *ngFor="let log of logs">
         <!-- original output -->
@@ -88,6 +88,39 @@
               <p matLine>Converted: { { log.bytes | bytes } }</p>
               <!-- output with precision aurgument -->
               <p matLine>With precision argument: { { log.bytes | bytes:log.precision } } </p>
+            </mat-list-item>
+          </mat-list>
+        ]]>
+    </td-highlight>
+  </mat-card-content>
+ </mat-card>
+
+ <mat-card>
+  <mat-card-title>Decimal Bytes Conversion</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">The <code>decimalBytes</code> pipe takes a number and converts the output to an appropriate base 1000 data measurement with an optional <code>precision</code> argument.</p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <!-- original output -->
+        <h3 matLine>Bytes: {{ log.bytes }}</h3>
+        <!-- output with bytes pipe -->
+        <p matLine>Converted: {{ log.bytes | decimalBytes }}</p>
+        <!-- output with precision aurgument -->
+        <p *ngIf="log.precision" matLine>With precision argument: {{ log.bytes | decimalBytes:log.precision }} </p>
+      </mat-list-item>
+    </mat-list>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <mat-list>
+            <mat-list-item *ngFor="let log of logs">
+              <!-- original output -->
+              <h3 matLine>Bytes: { { log.bytes } }</h3>
+              <!-- output with bytes pipe -->
+              <p matLine>Converted: { { log.bytes | decimalBytes } }</p>
+              <!-- output with precision aurgument -->
+              <p matLine>With precision argument: { { log.bytes | decimalBytes:log.precision } } </p>
             </mat-list-item>
           </mat-list>
         ]]>

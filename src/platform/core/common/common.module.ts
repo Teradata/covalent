@@ -38,6 +38,7 @@ const TD_VALIDATORS: Type<any>[] = [
 import { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
 import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
+import { TdDecimalBytesPipe } from './pipes/decimal-bytes/decimal-bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
 import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 
@@ -45,9 +46,15 @@ const TD_PIPES: Type<any>[] = [
   TdTimeAgoPipe,
   TdTimeDifferencePipe,
   TdBytesPipe,
+  TdDecimalBytesPipe,
   TdDigitsPipe,
   TdTruncatePipe,
 ];
+
+export {
+  TdTimeAgoPipe, TdTimeDifferencePipe,
+  TdDecimalBytesPipe, TdBytesPipe, TdDigitsPipe, TdTruncatePipe,
+};
 
 /**
  * Services
