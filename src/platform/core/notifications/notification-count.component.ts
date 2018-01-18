@@ -2,15 +2,15 @@ import { Component, Input, HostBinding, ChangeDetectionStrategy,
          ViewChild, ElementRef, AfterContentInit } from '@angular/core';
 
 export enum TdNotificationCountPositionY {
-  Top = <any>'top',
-  Bottom = <any>'bottom',
-  Center = <any>'center',
+  Top = 'top',
+  Bottom = 'bottom',
+  Center = 'center',
 }
 
 export enum TdNotificationCountPositionX {
-  Before = <any>'before',
-  After = <any>'after',
-  Center = <any>'center',
+  Before = 'before',
+  After = 'after',
+  Center = 'center',
 }
 
 @Component({

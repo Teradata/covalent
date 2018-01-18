@@ -5,24 +5,24 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 export enum LoadingType {
-  Circular = <any>'circular',
-  Linear = <any>'linear',
+  Circular = 'circular',
+  Linear = 'linear',
 }
 
 export enum LoadingMode {
-  Determinate = <any>'determinate',
-  Indeterminate = <any>'indeterminate',
+  Determinate = 'determinate',
+  Indeterminate = 'indeterminate',
 }
 
 export enum LoadingStrategy {
-  Overlay = <any>'overlay',
-  Replace = <any>'replace',
+  Overlay = 'overlay',
+  Replace = 'replace',
 }
 
 export enum LoadingStyle {
-  FullScreen = <any>'fullscreen',
-  Overlay = <any>'overlay',
-  None = <any>'none',
+  FullScreen = 'fullscreen',
+  Overlay = 'overlay',
+  None = 'none',
 }
 
 import { TdFadeInOutAnimation } from '@covalent/core/common';
