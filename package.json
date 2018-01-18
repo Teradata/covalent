@@ -35,11 +35,12 @@
     "release:start": "bash scripts/start-release",
     "release:finish": "bash scripts/finish-release",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
-    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular"
+    "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
+    "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt"
   },
   "engines": {
-    "node": ">=6.11.1 < 7",
-    "npm": ">3"
+    "node": ">=8.9.4 < 9",
+    "npm": ">5"
   },
   "repository": {
     "type": "git",
@@ -128,9 +129,10 @@
     "merge2": "1.0.2",
     "ng-packagr": "2.0.0-rc.10",
     "node-sass": "3.8.0",
+    "pa11y": "^5.0.0-beta.5",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "~5.1.0",
-    "require-dir": "0.3.0",
+    "require-dir": "0.3.2",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
