@@ -19,7 +19,7 @@
           <h3 matLine> {{item.title}} </h3>
           <p matLine> {{item.description}} </p>
         </a>
-        <mat-divider *ngIf="!last" matInset></mat-divider>
+        <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
       </ng-template>
   </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>

@@ -31,7 +31,7 @@
                       <h4 matLine>{ {row.name} }</h4>
                       <p matLine>Row: { {row.index} }</p>
                     </mat-list-item>
-                    <mat-divider *ngIf="!last" matInset></mat-divider>
+                    <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
                   </ng-template>
                 </td-virtual-scroll-container>
               </mat-list>
@@ -72,7 +72,7 @@
             <h4 matLine>{{row.name}}</h4>
             <p matLine>Row: {{row.index}}</p>
           </mat-list-item>
-          <mat-divider *ngIf="!last" matInset></mat-divider>
+          <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
         </ng-template>
       </td-virtual-scroll-container>
     </mat-list>
