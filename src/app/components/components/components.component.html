@@ -20,7 +20,7 @@
         <h3 matLine> {{item.title}} </h3>
         <p matLine> {{item.description}} </p>
       </a>
-      <mat-divider *ngIf="!last" matInset></mat-divider>
+      <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
     <h3 matSubheader>Optional Components</h3>
     <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
@@ -33,7 +33,7 @@
         <h3 matLine> {{item.title}} </h3>
         <p matLine> {{item.description}} </p>
       </a>
-      <mat-divider *ngIf="!last" matInset></mat-divider>
+      <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
     <h3 matSubheader>External Components</h3>
     <a mat-list-item 
@@ -44,7 +44,7 @@
       <p matLine> Material Design components </p>
       <mat-icon matTooltip="External docs" class="text-md tc-grey-600">launch</mat-icon>
     </a>
-    <mat-divider matInset></mat-divider>
+    <mat-divider [inset]="true"></mat-divider>
     <ng-template let-item let-last="last" ngFor [ngForOf]="external">
       <a mat-list-item
           [routerLink]="[item.route]"
@@ -55,7 +55,7 @@
         <h3 matLine> {{item.title}} </h3>
         <p matLine> {{item.description}} </p>
       </a>
-      <mat-divider *ngIf="!last" matInset></mat-divider>
+      <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
   </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>

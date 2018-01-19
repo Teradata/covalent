@@ -41,7 +41,7 @@
                   <h3 class="tc-blue-grey-900" matLine> {{item.title}} </h3>
                   <p class="tc-blue-grey-700" matLine> {{item.description}} </p>
                 </a>
-                <mat-divider *ngIf="!last" matInset></mat-divider>
+                <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
             </mat-nav-list>
             <div layout="row" layout-wrap hide-xs hide-sm>
@@ -92,7 +92,7 @@
                   <h3 class="tc-white" matLine> {{item.title}} </h3>
                   <p class="tc-white" matLine> {{item.description}} </p>
                 </a>
-                <mat-divider *ngIf="!last" matInset></mat-divider>
+                <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
             </mat-nav-list>
             <div layout="row" layout-wrap hide-xs hide-sm>

@@ -32,7 +32,7 @@
     "showdown": "1.6.4"
   },
   "peerDependencies": {
-    "@angular/common": "^5.0.0",
-    "@angular/core": "^5.0.0"
+    "@angular/common": "^5.1.0",
+    "@angular/core": "^5.1.0"
   }
 }

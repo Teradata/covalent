@@ -147,7 +147,7 @@
                                       { {item[sortKey] | date:'short'}}
                                     </span>
                                   </mat-list-item>
-                                  <mat-divider *ngIf="!last" matInset></mat-divider>
+                                  <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
                                 </ng-template>
                               </mat-list>
                               <mat-divider></mat-divider>
@@ -259,7 +259,7 @@
                     {{item[sortKey] | date:'short'}}
                   </span>
                 </mat-list-item>
-                <mat-divider *ngIf="!last" matInset></mat-divider>
+                <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
             </mat-list>
             <mat-divider></mat-divider>

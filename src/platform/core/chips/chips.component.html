@@ -5,7 +5,6 @@
     <mat-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
                    [color]="color"
-                   [disabled]="true"
                    (keydown)="_chipKeydown($event, index)"
                    (blur)="_handleChipBlur($event, chip)"
                    (focus)="_handleChipFocus($event, chip)">
