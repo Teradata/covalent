@@ -62,6 +62,9 @@ $color: rgba(0, 0, 0, 0.01);
         margin-bottom: 0;
         padding-bottom: 8px;
       }
+      .mat-divider.relative {
+        position: relative;
+      }
     }
     &[dir='rtl'] {
       .mat-card-title-group {

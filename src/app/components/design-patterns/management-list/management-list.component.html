@@ -1,280 +1,106 @@
-<div layout-sm="row" layout-gt-md="row">
-  <mat-card flex-sm="70" flex-gt-md="70">
-    <mat-card-title>Management Lists Patterns</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <h3>Problem</h3>
-      <p>Need to display collection of data with a similar data type and a minimal amount of metadata.</p>
-      <h3>Solution</h3>
-      <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with
-        faux-columns and sorting instead.</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card flex-sm flex-gt-md>
-    <mat-card-title>Resources</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Lists</span>
-      </a>
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+      <mat-card-title>Management List Patterns</mat-card-title>
       <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.io/guidelines/components/lists-controls.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Lists Controls</span>
-      </a>
+      <mat-card-content class="mat-typography">
+        <h3>When to use</h3>
+        <p>If the amount of data or structure of the data does not justify a data grid, consider using a management list with
+            faux-columns and sorting instead.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        <div layout="row" layout-align="start center">
+          <span>Example</span>
+          <span flex></span>
+          <a href="https://stackblitz.com/edit/manage-list-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+            <mat-icon>launch</mat-icon>
+          </a>
+        </div>
+      </mat-card-title>
       <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.angular.io/components/list/overview" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Angular Material Lists</span>
-      </a>
-    </mat-nav-list>
-  </mat-card>
-</div>
-<mat-card>
-  <mat-card-title>Examples</mat-card-title>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <div layout-sm="row" layout-gt-md="row">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Management List with Menu</mat-card-title>
-        <mat-card-subtitle>Supports sorting & filtering</mat-card-subtitle>
-        <mat-card-content>
-          <p>This example contains a variety of components including:</p>
-          <mat-nav-list>
-            <a mat-list-item [routerLink]="['/components', 'search']" target="_blank">
-              <mat-icon>launch</mat-icon>
-              <span matLine>Covalent Search</span>
-              <p matLine>td-search</p>
-            </a>
+      <div layout-gt-sm="row">
+        <div flex-gt-sm="25" class="mat-typography pad relative">
+          <h2>Usage</h2>
+          <mat-list class="pull-left pull-right">
+            <mat-list-item>
+              <h3 matLine>Toolbar</h3>
+              <p matLine>Secondary toolbar with title &amp; actions</p>
+            </mat-list-item>
             <mat-divider></mat-divider>
-            <a mat-list-item [routerLink]="['/components', 'paging']" target="_blank">
-              <mat-icon>launch</mat-icon>
-              <span matLine>Covalent Paging</span>
-              <p matLine>td-paging-bar</p>
-            </a>
+            <mat-list-item>
+              <h3 matLine>Left nav</h3>
+              <p matLine>Subnavigation for items</p>
+            </mat-list-item>
             <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Search</h3>
+              <p matLine>Place search in card header</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Sorting</h3>
+              <p matLine>Display sorting in toolbar</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>List or Datatable</h3>
+              <p matLine>Select best option for metadata</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+          <h2 class="push-top push-bottom-none">Guidelines</h2>
+          <mat-nav-list class="pull-left pull-right">
             <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
               <mat-icon>launch</mat-icon>
-              <span matLine>Material Design List</span>
-              <p matLine>mat-list</p>
+              <h3 matLine>Material Design </h3>
+              <p matLine>Lists Guidelines</p>
             </a>
             <mat-divider></mat-divider>
-            <a mat-list-item href="https://material.io/guidelines/components/menus.html" target="_blank">
+            <a mat-list-item href="https://material.angular.io/components/list/overview" target="_blank">
               <mat-icon>launch</mat-icon>
-              <span matLine>Material Design Menu</span>
-              <p matLine>mat-menu</p>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
-              <mat-icon>launch</mat-icon>
-              <span matLine>Material Design Icons</span>
-              <p matLine>mat-icon</p>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item href="https://material.angular.io/components/select/overview" target="_blank">
-              <mat-icon>launch</mat-icon>
-              <span matLine>Material Design Select</span>
-              <p matLine>mat-select</p>
+              <h3 matLine>Angular Material</h3>
+              <p matLine>Lists Guidelines</p>
             </a>
           </mat-nav-list>
-        </mat-card-content>
+        </div>
+        <div layout="row" flex-gt-sm>
+          <iframe flex class="iframe" [src]="source"></iframe>
+        </div>
       </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example1">
-            <div>
-              <mat-tab-group mat-stretch-tabs dynamicHeight>
-                <mat-tab>
-                  <ng-template matTabLabel>HTML</ng-template>
-                  <td-highlight lang="html">
-                    <![CDATA[
-                            <mat-card>
-                              <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
-                                <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                                  <span class="mat-title">Title here</span>
-                                </span>
-                                <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
-                                </td-search-box>
-                                <span>
-                                  <button mat-icon-button [matMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
-                                  <mat-menu #toolbarMenu="matMenu">
-                                    <button mat-menu-item>
-                                      <mat-icon>settings</mat-icon>
-                                      <span>Settings</span>
-                                    </button>
-                                  </mat-menu>
-                                </span>
-                              </div>
-                              <mat-divider></mat-divider>
-                              <mat-list>
-                                <mat-list-item>
-                                  <mat-icon matListAvatar>apps</mat-icon>
-                                  <h3 matLine>App Name</h3>
-                                  <span flex></span>
-                                  <span hide-xs flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
-                                  <span hide-xs class="md-sort-header" flex="40" layout="row" layout-align="center center" class="pad-left mat-body-1 tc-grey-500">
-                                    <mat-select flex="90" [(ngModel)]="sortKey">
-                                      <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
-                                        { {option.name}}
-                                      </mat-option>
-                                    </mat-select>
-                                  </span>
-                                  <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
-                                    <span layout="row" layout-align="start center" flex>
-                                      <mat-icon class="md-sort-icon">{ {isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</mat-icon>
-                                    </span>
-                                  </a>
-                                </mat-list-item>
-                                <mat-divider></mat-divider>
-                                <ng-template let-item let-last="last" ngFor [ngForOf]="data">
-                                  <mat-list-item>
-                                    <mat-icon matListAvatar>desktop_mac</mat-icon>
-                                    <h3 matLine> { {item.name}} </h3>
-                                    <span flex></span>
-                                    <span hide-xs flex="10">
-                                      { {item.owner}}
-                                    </span>
-                                    <span hide-xs flex="60" class="text-right mat-body-1 tc-grey-500 pad-right">
-                                      { {item[sortKey] | date:'short'}}
-                                    </span>
-                                  </mat-list-item>
-                                  <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-                                </ng-template>
-                              </mat-list>
-                              <mat-divider></mat-divider>
-                              <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
-                                <span hide-xs>Rows per page:</span>
-                                <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
-                                  <mat-option *ngFor="let size of [5,10,15,20]" [value]="size">
-                                    { {size} }
-                                  </mat-option>
-                                </mat-select>
-                                { {pagingBar.range} } <span hide-xs>of { {pagingBar.total} }</span>
-                              </td-paging-bar>
-                            </mat-card>
-                          ]]>
-                  </td-highlight>
-                </mat-tab>
-                <mat-tab>
-                  <ng-template matTabLabel>Typescript</ng-template>
-                  <td-highlight lang="typescript">
-                    <![CDATA[
-                            ...
-                            export class ManagementListComponent implements OnInit {
-                              data: any[];
-                              columnOptions: any[] = [{
-                                name: 'Updated',
-                                value: 'updated_at',
-                              }, {
-                                name: 'Created',
-                                value: 'created_at',
-                              }];
-                              sortKey: string = this.columnOptions[0].value;
-                              headers: IHeaders = {};
-                              pageSize: number = 5;
-
-                              ngOnInit(): void {
-                                this.columnOptions.forEach((option: any) => {
-                                  this.headers[option.value] = OrderBy.ASC;
-                                });
-                              }
-                              isASC(sortKey: string): boolean {
-                                return this.headers[sortKey] === OrderBy.ASC;
-                              }
-                              sortBy(sortKey: string): void {
-                                let sortedData: any[];
-                                if (this.headers[sortKey] === OrderBy.ASC) {
-                                  this.headers[sortKey] = OrderBy.DESC;
-                                } else {
-                                  this.headers[sortKey] = OrderBy.ASC;
-                                }
-                                ... // Sorting algorithm goes here to populate [sortedData]
-                                this.data = sortedData;
-                              }
-                            }
-                          ]]>
-                  </td-highlight>
-                </mat-tab>
-              </mat-tab-group>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card class="push-md">
-            <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
-              <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                <span class="mat-title">Title here</span>
-              </span>
-              <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search()"
-                flex>
-              </td-search-box>
-              <span>
-                <button mat-icon-button [matMenuTriggerFor]="toolbarMenu"><mat-icon>more_vert</mat-icon></button>
-                <mat-menu #toolbarMenu="matMenu">
-                  <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>
-                    <span>Settings</span>
-              </button>
-              </mat-menu>
-              </span>
-            </div>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <mat-list-item>
-                <mat-icon matListAvatar>apps</mat-icon>
-                <h3 matLine>App Name</h3>
-                <span flex></span>
-                <span hide-sm flex="40" class="pad-left mat-body-1 tc-grey-500">Owner</span>
-                <span hide-xs class="md-sort-header" flex="30" layout="row" layout-align="center center" class="pad-left mat-body-1 tc-grey-500">
-                  <mat-select flex="90" [(ngModel)]="sortKey">
-                    <mat-option *ngFor="let option of columnOptions" [value]="option.value" (click)="sortBy(sortKey)">
-                      {{option.name}}
-                    </mat-option>
-                  </mat-select>
-                </span>
-                <a hide-xs class="md-sort-header" (click)="sortBy(sortKey)">
-                  <span layout="row" layout-align="start center" flex>
-                    <mat-icon class="md-sort-icon">{{isASC(sortKey)? 'arrow_upward' : 'arrow_downward'}}</mat-icon>
-                  </span>
-                </a>
-              </mat-list-item>
-              <mat-divider></mat-divider>
-              <ng-template let-item let-last="last" ngFor [ngForOf]="data">
-                <mat-list-item>
-                  <mat-icon matListAvatar>desktop_mac</mat-icon>
-                  <h3 matLine> {{item.name}} </h3>
-                  <span flex></span>
-                  <span hide-sm flex="10">
-                    {{item.owner}}
-                  </span>
-                  <span hide-xs flex="60" class="text-right mat-body-1 tc-grey-500 pad-right">
-                    {{item[sortKey] | date:'short'}}
-                  </span>
-                </mat-list-item>
-                <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-              </ng-template>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <td-paging-bar #pagingBar [pageSize]="pageSize" total="20">
-              <span hide-xs>Rows per page:</span>
-              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
-                <mat-option *ngFor="let size of [5,10,15,20]" [value]="size">
-                  {{size}}
-                </mat-option>
-              </mat-select>
-              {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
-            </td-paging-bar>
-          </mat-card>
+    </mat-card>
+    <div layout-gt-xs="row">
+      <div flex-gt-xs="50">
+        <mat-card>
+          <mat-card-title>
+            <span class="tc-green-600">Do</span>
+          </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_one</mat-icon>
+              <h3 matLine>Adjust content with media queries</h3>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_two</mat-icon>
+              <h3 matLine>Limit number of columns</h3>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+      <div flex-gt-xs="50">
+        <mat-card>
+          <mat-card-title>
+            <span class="tc-red-600">Don't</span>
+          </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_one</mat-icon>
+              <h3 matLine>Don't add too many columns</h3>
+            </mat-list-item>
+          </mat-list>
         </mat-card>
       </div>
     </div>
-  </mat-card-content>
-</mat-card>
+  </div>
