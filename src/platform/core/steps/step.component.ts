@@ -7,9 +7,9 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '@covalent/core/common';
 
 export enum StepState {
-  None = <any>'none',
-  Required = <any>'required',
-  Complete = <any>'complete',
+  None = 'none',
+  Required = 'required',
+  Complete = 'complete',
 }
 
 @Directive({

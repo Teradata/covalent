@@ -21,7 +21,7 @@
         <h3 matLine> {{item.title}} </h3>
         <p matLine> {{item.description}} </p>
       </a>
-      <mat-divider *ngIf="!last" matInset></mat-divider>
+      <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
   </mat-nav-list>  
 </mat-card>
@@ -50,7 +50,9 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row">
@@ -60,14 +62,18 @@
             </div>
           ]]>
         </td-highlight>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <p>Vertical column container:</p>
         <div layout="column">
           <div flex class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="column">
@@ -87,7 +93,9 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-margin>
@@ -97,14 +105,18 @@
             </div>
           ]]>
         </td-highlight>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <p>Layout padding</p>
         <div layout="row" layout-padding>
           <div flex class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -124,7 +136,9 @@
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex="30" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -134,14 +148,18 @@
             </div>
           ]]>
         </td-highlight>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <p>Responsive widths (will change as you resize browser):</p>
         <div layout="row" layout-padding>
           <div flex-gt-xs="40" flex-md="50" class="bgc-teal-600 tc-teal-50">child</div>
           <div flex class="bgc-indigo-600 tc-indigo-50">child</div>
           <div flex-gt-xs="30" flex-md="20" flex-lg="10" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout="row" layout-padding>
@@ -151,13 +169,17 @@
             </div>
           ]]>
         </td-highlight>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <p>Typical responsive layout (just collapse on xs which is mobile)</p>
         <div layout-gt-xs="row">
           <div flex-gt-xs="60" class="bgc-teal-600 tc-teal-50">child</div>
           <div flex-gt-xs="40" class="bgc-purple-600 tc-purple-50">child</div>
         </div>
-        <mat-divider class="push-top push-bottom"></mat-divider>
+        <div class="pad-top pad-bottom">
+          <mat-divider></mat-divider>
+        </div>
         <td-highlight lang="html">
           <![CDATA[
             <div layout-gt-xs="row">

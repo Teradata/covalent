@@ -2,9 +2,6 @@
 
 module.exports = {
   paths: {
-    packagejson: [
-      'src/**/**/package.json'
-    ],
     deployed: 'deploy/platform/',
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',

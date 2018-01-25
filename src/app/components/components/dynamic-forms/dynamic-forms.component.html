@@ -46,106 +46,109 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    <div class="pad" flex-gt-md="50">
+    <div class="pad" flex-gt-md="50" class="relative">
       <mat-card-title class="push-top-sm push-bottom-sm">
         <div layout="row" layout-align="start center" flex>
           <div flex class="text-md">Select a type, add element then update</div>
         </div>
       </mat-card-title>
       <mat-divider></mat-divider>
-      <form #addForm="ngForm">
-        <div layout="row" layout-align="start center" class="pad-sm">
-          <mat-form-field class="pad-right" floatPlaceholder="never">
-            <mat-select placeholder="Select element type" [(ngModel)]="type" name="type" required>
-              <mat-option *ngFor="let option of elementOptions" [value]="option">
-                {{ option }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
-            <mat-icon>add</mat-icon>
-          </button>
-        </div>
-      </form>
-      <h4>Form elements</h4>
-      <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
-        <td-expansion-panel [label]="model.name">
-          <mat-divider></mat-divider>
-          <div class="pad" layout="column">
-            <div layout="row">
-              <mat-form-field class="pad-right-xs" flex>
-                <input matInput
-                      placeholder="Label"
-                      [(ngModel)]="model.label"
-                      name="label">
-              </mat-form-field>
-              <mat-form-field flex="30">
-                <input matInput
-                      type="number"
-                      min="0"
-                      max="100"
-                      placeholder="Flex (width in %)"
-                      [(ngModel)]="model.flex"
-                      name="flex">
-              </mat-form-field>
-            </div>
-            <div *ngIf="isMinMaxSupported(model.type)" layout="row">
-              <mat-form-field *ngIf="!isDate(model.type)" class="pad-right-xs" flex>
-                <input matInput type="number" placeholder="Min" [(ngModel)]="model.min" name="min">
-              </mat-form-field>
-              <mat-form-field *ngIf="isDate(model.type)" class="pad-right-xs" flex>
-                <input matInput
-                      [matDatepicker]="minDatepicker"
-                      placeholder="Min"
-                      [(ngModel)]="model.min"
-                      name="min">
-                <mat-datepicker-toggle matSuffix [for]="minDatepicker"></mat-datepicker-toggle>
-                <mat-datepicker #minDatepicker></mat-datepicker>
-              </mat-form-field>
-              <mat-form-field *ngIf="!isDate(model.type)" flex="50">
-                <input matInput type="number" placeholder="Max" [(ngModel)]="model.max" name="max">
-              </mat-form-field>
-              <mat-form-field *ngIf="isDate(model.type)" flex="50">
-                <input matInput
-                       [matDatepicker]="maxDatepicker"
-                       placeholder="Max"
-                       [(ngModel)]="model.max"
-                       name="max">
-                <mat-datepicker-toggle matSuffix [for]="maxDatepicker"></mat-datepicker-toggle>
-                <mat-datepicker #maxDatepicker></mat-datepicker>
-              </mat-form-field>
-            </div>
-            <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
-              <mat-form-field class="pad-right-xs" flex>
-                <input matInput
-                       type="text"
-                       placeholder="MinLength"
-                       [(ngModel)]="model.minLength"
-                       name="min">
-              </mat-form-field>
-              <mat-form-field flex="50">
-                <input matInput
-                       type="text"
-                       placeholder="MaxLength"
-                       [(ngModel)]="model.maxLength"
-                       name="max">
-              </mat-form-field>
-            </div>
-            <div layout="row">
-              <mat-slide-toggle [(ngModel)]="model.required" name="required">Required</mat-slide-toggle>
-              <span flex></span>
-              <button mat-icon-button matTooltip="Delete element" (click)="deleteElement(index)">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </div>
+      <mat-card-content>
+        <form #addForm="ngForm">
+          <div layout="row" layout-align="start center" class="pad-sm">
+            <mat-form-field class="pad-right" floatPlaceholder="never">
+              <mat-select placeholder="Select element type" [(ngModel)]="type" name="type" required>
+                <mat-option *ngFor="let option of elementOptions" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
+              <mat-icon>add</mat-icon>
+            </button>
           </div>
-        </td-expansion-panel>
-      </ng-template>
-      <div class="push-top" layout="row">
+        </form>
+        <h4>Form elements</h4>
+        <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
+          <td-expansion-panel [label]="model.name">
+            <mat-divider></mat-divider>
+            <div class="pad" layout="column">
+              <div layout="row">
+                <mat-form-field class="pad-right-xs" flex>
+                  <input matInput
+                        placeholder="Label"
+                        [(ngModel)]="model.label"
+                        name="label">
+                </mat-form-field>
+                <mat-form-field flex="30">
+                  <input matInput
+                        type="number"
+                        min="0"
+                        max="100"
+                        placeholder="Flex (width in %)"
+                        [(ngModel)]="model.flex"
+                        name="flex">
+                </mat-form-field>
+              </div>
+              <div *ngIf="isMinMaxSupported(model.type)" layout="row">
+                <mat-form-field *ngIf="!isDate(model.type)" class="pad-right-xs" flex>
+                  <input matInput type="number" placeholder="Min" [(ngModel)]="model.min" name="min">
+                </mat-form-field>
+                <mat-form-field *ngIf="isDate(model.type)" class="pad-right-xs" flex>
+                  <input matInput
+                        [matDatepicker]="minDatepicker"
+                        placeholder="Min"
+                        [(ngModel)]="model.min"
+                        name="min">
+                  <mat-datepicker-toggle matSuffix [for]="minDatepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #minDatepicker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field *ngIf="!isDate(model.type)" flex="50">
+                  <input matInput type="number" placeholder="Max" [(ngModel)]="model.max" name="max">
+                </mat-form-field>
+                <mat-form-field *ngIf="isDate(model.type)" flex="50">
+                  <input matInput
+                        [matDatepicker]="maxDatepicker"
+                        placeholder="Max"
+                        [(ngModel)]="model.max"
+                        name="max">
+                  <mat-datepicker-toggle matSuffix [for]="maxDatepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #maxDatepicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
+                <mat-form-field class="pad-right-xs" flex>
+                  <input matInput
+                        type="text"
+                        placeholder="MinLength"
+                        [(ngModel)]="model.minLength"
+                        name="min">
+                </mat-form-field>
+                <mat-form-field flex="50">
+                  <input matInput
+                        type="text"
+                        placeholder="MaxLength"
+                        [(ngModel)]="model.maxLength"
+                        name="max">
+                </mat-form-field>
+              </div>
+              <div layout="row">
+                <mat-slide-toggle [(ngModel)]="model.required" name="required">Required</mat-slide-toggle>
+                <span flex></span>
+                <button mat-icon-button matTooltip="Delete element" (click)="deleteElement(index)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </td-expansion-panel>
+        </ng-template>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
         <button mat-raised-button color="primary" class="text-upper" (click)="dynamicForm.refresh()">
           Update Form
         </button>
-      </div>
+      </mat-card-actions>
     </div>
   </div>
 </mat-card>

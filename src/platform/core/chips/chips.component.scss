@@ -112,9 +112,11 @@
       transform-origin: 50%;
       transform: scaleX(0.5);
       visibility: hidden;
+      opacity: 0;
       transition: background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
       &.mat-focused {
         visibility: visible;
+        opacity: 1;
         transform: scaleX(1);
         transition: transform 150ms linear, background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
       }

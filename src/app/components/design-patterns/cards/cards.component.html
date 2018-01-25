@@ -3,8 +3,8 @@
     <mat-card-title>Cards Patterns</mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content class="mat-typography">
-      <h3>When to use</h3>
-      <p>Use a card layout when displaying collections of multiple data types such as images, movies, and text.  Also useful when content has variable length and a grid list is not suitable.</p>
+        <h3>When to use</h3>
+        <p>Use a card layout when displaying collections of multiple data types such as images, movies, and text.  Also useful when content has variable length and a grid list is not suitable.</p>
     </mat-card-content>
   </mat-card>
   <mat-card>
@@ -12,12 +12,11 @@
       <div layout="row" layout-align="start center">
         <span>Example</span>
         <span flex></span>
-        <a href="https://stackblitz.com/edit/cards-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+        <a href="https://stackblitz.com/edit/alert-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
           <mat-icon>launch</mat-icon>
         </a>
       </div>
     </mat-card-title>
-    <mat-divider></mat-divider>
     <div layout-gt-sm="row">
       <div flex-gt-sm="25" class="mat-typography pad relative">
         <h2>Usage</h2>
@@ -60,7 +59,6 @@
             <h3 matLine>Material Design</h3>
             <p matLine>Cards Guidelines</p>
           </a>
-          <mat-divider></mat-divider>
           <a mat-list-item href="https://material.angular.io/components/component/card" target="_blank">
             <mat-icon>launch</mat-icon>
             <h3 matLine>Angular Material</h3>
@@ -69,8 +67,7 @@
         </mat-nav-list>
       </div>
       <div layout="row" flex-gt-sm>
-        <iframe flex class="iframe" [src]="source">
-        </iframe>
+        <iframe flex class="iframe" [src]="source"></iframe>
       </div>
     </div>
   </mat-card>
@@ -81,17 +78,17 @@
           <span class="tc-green-600">Do</span>
         </mat-card-title>
         <mat-divider></mat-divider>
-        <mat-list>
-          <mat-list-item>
-            <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Use flexbox for responsiveness.</h3>
-          </mat-list-item>
-          <mat-list-item>
+         <mat-list>
+           <mat-list-item>
+             <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Use flexbox for responsiveness</h3>
+           </mat-list-item>
+           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Set tab-index for accessibility.</h3>
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
+            <h3 matLine>Set tab-index for accessibility</h3>
+           </mat-list-item>
+         </mat-list>
+       </mat-card>
     </div>
     <div flex-gt-xs="50">
       <mat-card>
@@ -102,11 +99,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Don't overload cards with unnecessary information.</h3>
+            <h3 matLine>Don't overload cards with unnecessary information</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Don't use in place of galleries or lists.</h3>
+            <h3 matLine>Don't use in place of galleries or lists</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
