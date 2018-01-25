@@ -1,10 +1,10 @@
 <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
   <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
-    <mat-card-title>Steppers Patterns</mat-card-title>
+    <mat-card-title>FAB Patterns</mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content class="mat-typography">
       <h3>When to use</h3>
-      <p>The stepper provides a wizard-like workflow by dividing content into logical steps.  This approach is most useful when each step is linear and complete before moving to the next step.</p>
+      <p>The floating action button (FAB) provides access to the primary action for the current view.</p>
     </mat-card-content>
   </mat-card>
   <mat-card>
@@ -12,7 +12,7 @@
       <div layout="row" layout-align="start center">
         <span>Example</span>
         <span flex></span>
-        <a href="https://stackblitz.com/edit/stepper-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+        <a href="https://stackblitz.com/edit/fab-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
           <mat-icon>launch</mat-icon>
         </a>
       </div>
@@ -23,43 +23,33 @@
         <h2>Usage</h2>
         <mat-list class="pull-left pull-right">
           <mat-list-item>
-            <h3 matLine>Stepper Component</h3>
-            <p matLine>Group related tasks in steps</p>
+            <h3 matLine>Position</h3>
+            <p matLine>Bottom right for lists</p>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
-            <h3 matLine>Label</h3>
-            <p matLine>Brief step introduction</p>
+            <h3 matLine>Color</h3>
+            <p matLine>Use theme accent color</p>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
-            <h3 matLine>Sublabel</h3>
-            <p matLine>More detailed explaination</p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-            <h3 matLine>Step Contents</h3>
-            <p matLine>Self-contained, related tasks</p>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-            <h3 matLine>Step Summary</h3>
-            <p matLine>Summary of completed task</p>
+            <h3 matLine>Tooltip</h3>
+            <p matLine>Include a tooltip for a11y</p>
           </mat-list-item>
           <mat-divider></mat-divider>
         </mat-list>
         <h2 class="push-top push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
-          <a mat-list-item href="https://material.io/guidelines/components/steppers.html" target="_blank">
+          <a mat-list-item href="https://material.io/guidelines/components/buttons-floating-action-button.html" target="_blank">
             <mat-icon>launch</mat-icon>
             <h3 matLine>Material Design</h3>
-            <p matLine>Stepper Guidelines</p>
+            <p matLine>FAB Guidelines</p>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item href="https://material.angular.io/components/stepper/overview" target="_blank">
-            <mat-icon class="mat-caption">launch</mat-icon>
+          <a mat-list-item href="https://material.angular.io/components/button/overview" target="_blank">
+            <mat-icon>launch</mat-icon>
             <h3 matLine>Angular Material</h3>
-            <p matLine>Stepper Guidelines</p>
+            <p matLine>Button Component</p>
           </a>
         </mat-nav-list>
       </div>
@@ -78,19 +68,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Group logical fields together</h3>
+            <h3 matLine>Only one FAB per page</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Use Continue &amp; Cancel buttons</h3>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon matListIcon>looks_3</mat-icon>
-            <h3 matLine>Save asynchronously when possible</h3>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon matListIcon>looks_3</mat-icon>
-            <h3 matLine>Use raised Continue buttons</h3>
+            <h3 matLine>Contextual primary action</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
@@ -104,19 +86,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Don't include nested steppers</h3>
+            <h3 matLine>Don't use for negative actions like delete</h3>
           </mat-list-item>
           <mat-list-item>
-            <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Don't use overly complex steppers</h3>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Don't use outside a card</h3>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Don't use horizontal for more than 3 steps</h3>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Don't embellish with custom styles</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
