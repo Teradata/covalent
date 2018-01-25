@@ -18,32 +18,33 @@
       </div>
     </mat-card-title>
     <mat-divider></mat-divider>
-    <div layout-gt-xs="row">
-      <div flex-gt-xs="25" class="mat-typography pad">
-      <h2>Usage</h2>
-      <h3>Position</h3>
-      <p>Float to bottom-right for most common use case: adding a new</p>
-      <mat-divider class="push-bottom"></mat-divider>
-      <h3>Color</h3>
-      <p>Use theme's accent color</p>
-      <mat-divider class="push-bottom"></mat-divider>
-      <h2 class="push-bottom-none">Guidelines</h2>
-      <mat-nav-list>
-        <a mat-list-item href="https://material.io/guidelines/components/buttons-floating-action-button.html" target="_blank">
-          <mat-icon style="font-size: 15px">launch</mat-icon>
-          <span matLine>Material Design</span>
-          <p matLine>FAB Guidelines</p>
-        </a>
-        <mat-divider></mat-divider>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad relative">
+        <h2>Usage</h2>
+        <h3>Position</h3>
+        <p>Float to bottom-right for most common use case: adding a new</p>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
+        <h3>Color</h3>
+        <p>Use theme's accent color</p>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
+        <h2 class="push-bottom-none">Guidelines</h2>
+        <mat-nav-list>
+          <a mat-list-item href="https://material.io/guidelines/components/buttons-floating-action-button.html" target="_blank">
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>FAB Guidelines</p>
+          </a>
           <a mat-list-item href="https://material.angular.io/components/button/overview" target="_blank">
-          <mat-icon style="font-size: 15px">launch</mat-icon>
-          <span matLine>Angular Material</span>
-          <p matLine>Button Component</p>
-        </a>
-      </mat-nav-list>
+            <mat-icon style="font-size: 15px">launch</mat-icon>
+            <span matLine>Angular Material</span>
+            <p matLine>Button Component</p>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source"></iframe>
+      </div>
     </div>
-    <iframe flex-gt-xs class="iframe" [src]="source"></iframe>
-  </div>
   </mat-card>
   <div layout-gt-xs="row">
     <div flex-gt-xs="50">
@@ -73,11 +74,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Use for negative actions like delete</h3>
+            <h3 matLine>Don't use for negative actions like delete</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_3</mat-icon>
-            <h3 matLine>Embelish with custom styles</h3>
+            <h3 matLine>Don't embellish with custom styles</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>

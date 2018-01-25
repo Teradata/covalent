@@ -29,7 +29,7 @@ export class DesignPatternsComponent {
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
   }, {
-    description: 'Floating primary action button',
+    description: 'Floating action button',
     icon: 'add_circle',
     route: 'fab',
     title: 'FAB Patterns',
