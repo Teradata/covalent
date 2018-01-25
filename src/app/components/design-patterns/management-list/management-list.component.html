@@ -20,31 +20,46 @@
       </mat-card-title>
       <mat-divider></mat-divider>
       <div layout-gt-sm="row">
-        <div flex-gt-sm="25" class="mat-typography pad">
+        <div flex-gt-sm="25" class="mat-typography pad relative">
           <h2>Usage</h2>
-          <h3>Search</h3>
-          <p>A search component can be added to the card header.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h3>Sorting</h3>
-          <p>Consider sorting columns.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h3>Paging</h3>
-          <p>For long lists, add pagination.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h3>Faux Columns</h3>
-          <p>Using the flex model, you can simulate columns.</p>
-          <mat-divider class="push-bottom"></mat-divider>
-          <h2 class="push-bottom-none">Guidelines</h2>
+          <mat-list class="pull-left pull-right">
+            <mat-list-item>
+              <h3 matLine>Toolbar</h3>
+              <p matLine>Secondary toolbar with title &amp; actions</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Left nav</h3>
+              <p matLine>Subnavigation for items</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Search</h3>
+              <p matLine>Place search in card header</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Sorting</h3>
+              <p matLine>Display sorting in toolbar</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>List or Datatable</h3>
+              <p matLine>Select best option for metadata</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+          <h2 class="push-top push-bottom-none">Guidelines</h2>
           <mat-nav-list class="pull-left pull-right">
             <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Material Design </span>
+              <mat-icon>launch</mat-icon>
+              <h3 matLine>Material Design </h3>
               <p matLine>Lists Guidelines</p>
             </a>
-            <mat-divider class="push-left push-right"></mat-divider>
+            <mat-divider></mat-divider>
             <a mat-list-item href="https://material.angular.io/components/list/overview" target="_blank">
-              <mat-icon style="font-size: 15px">launch</mat-icon>
-              <span matLine>Angular Material</span>
+              <mat-icon>launch</mat-icon>
+              <h3 matLine>Angular Material</h3>
               <p matLine>Lists Guidelines</p>
             </a>
           </mat-nav-list>
