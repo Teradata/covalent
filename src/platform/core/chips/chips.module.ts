@@ -9,7 +9,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 
 import { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
-export { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 
 @NgModule({
   imports: [

@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { TdLayoutComponent } from './layout.component';
 import { TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective } from './layout.directives';
@@ -55,12 +55,6 @@ const TD_LAYOUTS: Type<any>[] = [
   TdNavigationDrawerToolbarDirective,
 ];
 
-export { TdLayoutComponent, TdLayoutToggleDirective, TdLayoutCloseDirective, TdLayoutOpenDirective,
-         TdLayoutNavComponent, TdLayoutNavListComponent, TdLayoutNavListToggleDirective, TdLayoutNavListCloseDirective, TdLayoutNavListOpenDirective,
-         TdLayoutCardOverComponent, TdLayoutManageListComponent, TdLayoutManageListToggleDirective,
-         TdLayoutManageListCloseDirective, TdLayoutManageListOpenDirective,
-         TdLayoutFooterComponent, TdNavigationDrawerComponent, TdNavigationDrawerMenuDirective, TdNavigationDrawerToolbarDirective };
-
 @NgModule({
   imports: [
     CommonModule,
@@ -70,7 +64,7 @@ export { TdLayoutComponent, TdLayoutToggleDirective, TdLayoutCloseDirective, TdL
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatListModule,
+    MatDividerModule,
   ],
   declarations: [
     TD_LAYOUTS,

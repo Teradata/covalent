@@ -11,8 +11,6 @@ const TD_MESSAGE: Type<any>[] = [
   TdMessageContainerDirective,
 ];
 
-export { TdMessageComponent } from './message.component';
-
 @NgModule({
   imports: [
     CommonModule,

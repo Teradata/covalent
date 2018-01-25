@@ -6,7 +6,6 @@ var gulpif = require('gulp-if');
 var util = require('gulp-util');
 var semver = require('semver');
 var merge = require('merge2');
-var config = require('../build.conf');
 
 var minimist = require('minimist');
 
@@ -30,9 +29,9 @@ gulp.task('bump-version', function(){
   .pipe(gulpif(isVerType, bump({type: options.ver}), bump({version: options.ver})))
   .pipe(gulp.dest('.'));
 
-  var platformPackageJsons = gulp.src(config.paths.packagejson)
+  var platformPackageJsons = gulp.src(['src/platform/*/package.json'])
   .pipe(gulpif(isVerType, bump({type: options.ver}), bump({version: options.ver})))
-  .pipe(gulp.dest('src/'))
+  .pipe(gulp.dest('src/platform/'))
 
   return merge(mainPackageJson, platformPackageJsons);
 });

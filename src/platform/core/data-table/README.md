@@ -6,30 +6,53 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `data` | `any[]` | Rows of data to be displayed.
-| `columns` | `ITdDataTableColumn[]` | List of columns to be displayed.
-| `selectable?` | `boolean` | Enables row selection events, hover and selected row states.
-| `multiple?` | `boolean` | Enables multiple row selection. [selectable] needs to be enabled.
-| `sortable?` | `boolean` | Enables sorting events, sort icons and active column states.
-| `sortBy?` | `string` | Sets the active sort column. [sortable] needs to be enabled.
-| `sortOrder?` | TdDataTableSortingOrder | Sets the sort order of the [sortBy] column. [sortable] needs to be enabled. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
-| `compareWith` | `function(row, model)` | Allows custom comparison between row and model to see if row is selected or not.
-| `sortChange` | `function` | Event emitted when the column headers are clicked. [sortable] needs to be enabled. Emits an [ITdDataTableSortEvent] implemented object.
-| `rowSelect` | `function` | Event emitted when a row is selected/deselected. [selectable] needs to be enabled. Emits an [ITdDataTableSelectEvent] implemented object.
-| `rowClick` | `function` | Event emitted when a row is clicked. [clickable] needs to be enabled. Emits an [ITdDataTableRowClickEvent] implemented object.
-| `selectAll` | `function` | Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled. Emits an [ITdDataTableSelectAllEvent] implemented object.
-| `refresh` | `function` |  Refreshes data table and rerenders [data] and [columns]
++ data: any[]
+  + Rows of data to be displayed.
++ columns?: ITdDataTableColumn[]
+  + List of columns to be displayed.
++ selectable?: boolean
+  + Enables row selection events, hover and selected row states.
++ multiple?: boolean
+  + Enables multiple row selection. [selectable] needs to be enabled.
++ sortable?: boolean
+  + Enables sorting events, sort icons and active column states.
++ sortBy?: string
+  + Sets the active sort column. [sortable] needs to be enabled.
++ sortOrder?: TdDataTableSortingOrder
+  + Sets the sort order of the [sortBy] column. [sortable] needs to be enabled.
+  + Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
++ compareWith: function(row, model)
+  + Allows custom comparison between row and model to see if row is selected or not.
+
+#### Events
+
++ sortChange: function
+  + Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+  + Emits an [ITdDataTableSortEvent] implemented object.
++ rowSelect: function
+  + Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
+  + Emits an [ITdDataTableSelectEvent] implemented object.
++ rowClick: function
+  + Event emitted when a row is clicked. [clickable] needs to be enabled.
+  + Emits an [ITdDataTableRowClickEvent] implemented object.
++ selectAll: function
+  + Event emitted when all rows are selected/deselected by the all checkbox. [selectable] needs to be enabled.
+  + Emits an [ITdDataTableSelectAllEvent] implemented object.
+
+#### Methods
+
++ refresh: function
+  + Refreshes data table and rerenders [data] and [columns]
+
 
 ## Setup
 
 Import the [CovalentDataTableModule] in your NgModule:
 
 ```typescript
-import { CovalentDataTableModule } from '@covalent/core';
+import { CovalentDataTableModule } from '@covalent/core/data-table';
 @NgModule({
   imports: [
     CovalentDataTableModule,
@@ -89,7 +112,7 @@ Example for HTML usage:
 ```
 
 ```typescript
-import { ITdDataTableColumn } from '@covalent/core';
+import { ITdDataTableColumn } from '@covalent/core/data-table';
 ...
 })
 export class Demo {

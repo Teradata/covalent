@@ -22,7 +22,7 @@ import { fromEvent } from 'rxjs/observable/fromEvent';
 import { filter } from 'rxjs/operators/filter';
 import { debounceTime } from 'rxjs/operators/debounceTime';
 
-import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '../common/common.module';
+import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 @Directive({
   selector: '[td-chip]ng-template',
@@ -72,12 +72,14 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _stacked: boolean = false;
   private _requireMatch: boolean = false;
   private _color: 'primary' | 'accent' | 'warn' = 'primary';
+  private _inputPosition: 'before' | 'after' = 'after';
   private _chipAddition: boolean = true;
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
   private _tabIndex: number = 0;
 
   _internalClick: boolean = false;
+  _internalActivateOption: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MatInput) _inputChild: MatInput;
@@ -127,7 +129,20 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   get stacked(): boolean {
     return this._stacked;
   }
-  
+
+  /**
+   * inputPosition?: 'before' | 'after'
+   * Set input position before or after the chips.
+   * Defaults to 'after'.
+   */
+  @Input('inputPosition')
+  set inputPosition(inputPosition: 'before' | 'after') {
+    this._inputPosition = inputPosition;
+  }
+  get inputPosition(): 'before' | 'after' {
+    return this._inputPosition;
+  }
+
   /**
    * requireMatch?: boolean
    * Blocks custom inputs and only allows selections from the autocomplete list.
@@ -200,7 +215,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    * Sets the color for the input and focus/selected state of the chips.
    * Defaults to 'primary'
    */
-  @Input('color') 
+  @Input('color')
   set color(color: 'primary' | 'accent' | 'warn') {
     if (color) {
       this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
@@ -255,7 +270,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
     return this.disabled ? -1 : this._tabIndex;
   }
 
-  constructor(private _elementRef: ElementRef, 
+  constructor(private _elementRef: ElementRef,
               private _renderer: Renderer2,
               @Optional() @Inject(DOCUMENT) private _document: any,
               _changeDetectorRef: ChangeDetectorRef) {
@@ -294,7 +309,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
     const clickTarget: HTMLElement = <HTMLElement>event.target;
-    if (clickTarget === this._elementRef.nativeElement || 
+    if (clickTarget === this._elementRef.nativeElement ||
         clickTarget.className.indexOf('td-chips-wrapper') > -1) {
       this.focus();
       event.preventDefault();
@@ -518,14 +533,15 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   _inputKeydown(event: KeyboardEvent): void {
     switch (event.keyCode) {
       case UP_ARROW:
-        /** 
+        /**
          * Since the first item is highlighted on [requireMatch], we need to inactivate it
          * when pressing the up key
          */
         if (this.requireMatch) {
           let length: number = this._options.length;
-          if (length > 0 && this._options.toArray()[0].active) {
+          if (length > 1 && this._options.toArray()[0].active && this._internalActivateOption) {
             this._options.toArray()[0].setInactiveStyles();
+            this._internalActivateOption = false;
             // prevent default window scrolling
             event.preventDefault();
           }
@@ -694,6 +710,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
           });
           // set the first one as active
           this._options.toArray()[0].setActiveStyles();
+          this._internalActivateOption = true;
           this._changeDetectorRef.markForCheck();
         }
       });
@@ -722,7 +739,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
                   !this._elementRef.nativeElement.contains(clickTarget) && !this._internalClick;
           },
         ),
-      ).subscribe(() => { 
+      ).subscribe(() => {
         if (this.focused) {
           this._autocompleteTrigger.closePanel();
           this.removeFocusedState();

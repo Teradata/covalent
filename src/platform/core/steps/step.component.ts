@@ -4,12 +4,12 @@ import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '../common/common.module';
+import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '@covalent/core/common';
 
 export enum StepState {
-  None = <any>'none',
-  Required = <any>'required',
-  Complete = <any>'complete',
+  None = 'none',
+  Required = 'required',
+  Complete = 'complete',
 }
 
 @Directive({

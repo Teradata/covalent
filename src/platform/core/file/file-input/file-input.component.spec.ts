@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CovalentFileModule, TdFileInputComponent } from '../file.module';
+import { CovalentFileModule, TdFileInputComponent } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: FileInput', () => {

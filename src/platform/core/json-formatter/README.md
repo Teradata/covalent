@@ -8,21 +8,26 @@ The tree is collapsable/expandable so you can navigate through its nodes.
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `key?` | `string` | Tag to be displayed as root of formatted object.
-| `data` | `any` | JS object to be formatted.
-| `levelsOpen?` | `number` | Levels opened by default when JS object is formatted and rendered.
-| `refresh?` | `function()` | Refreshes json-formatter and rerenders [data]
++ key?: string
+  + Tag to be displayed as root of formatted object.
++ data: any
+  + JS object to be formatted.
++ levelsOpen?: number
+  + Levels opened by default when JS object is formatted and rendered.
+
+#### Methods
+
++ refresh: function
+  + Refreshes json-formatter and rerenders [data]
 
 ## Setup
 
 Import the [CovalentJsonFormatterModule] in your NgModule:
 
 ```typescript
-import { CovalentJsonFormatterModule } from '@covalent/core';
+import { CovalentJsonFormatterModule } from '@covalent/core/json-formatter';
 @NgModule({
   imports: [
     CovalentJsonFormatterModule,

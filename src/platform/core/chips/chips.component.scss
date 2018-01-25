@@ -10,8 +10,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    &.td-chips-stacked .mat-basic-chip {
+    &.td-chips-stacked .mat-basic-chip,
+    &.td-chips-stacked .td-chips-form-field {
       width: 100%;
+    }
+    &.td-chips-input-before-position {
+      .td-chips-form-field {
+        order: -1;
+      }
     }
   }
   .td-chip {
@@ -74,6 +80,17 @@
         }
       }
     }
+    .td-chips-stacked {
+      .mat-basic-chip {
+        margin: 4px 0;
+        &:first-of-type {
+          margin: 8px 0 4px;
+        }
+        &:last-of-type {
+          margin: 4px 0 8px;
+        }
+      }
+    }
   }
   .mat-form-field-underline {
     position: relative;
@@ -95,9 +112,11 @@
       transform-origin: 50%;
       transform: scaleX(0.5);
       visibility: hidden;
+      opacity: 0;
       transition: background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
       &.mat-focused {
         visibility: visible;
+        opacity: 1;
         transform: scaleX(1);
         transition: transform 150ms linear, background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
       }

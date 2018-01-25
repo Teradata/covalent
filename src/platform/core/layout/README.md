@@ -5,12 +5,16 @@
 
 ## API Summary
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| mode | 'over', 'side' or 'push' | The mode or styling of the sidenav. Defaults to 'over'.
-| opened | boolean | Whether or not the sidenav is opened. Use this binding to open/close the sidenav. Defaults to 'false'.
-| sidenavWidth | string | Sets the 'width' of the sidenav in either 'px' or '%'. Defaults to '320px'.
+#### Inputs
 
++ mode: 'over' | 'side' | 'push'
+  + The mode or styling of the sidenav. Defaults to 'over'.
++ opened: boolean
+  + Whether or not the sidenav is opened. Use this binding to open/close the sidenav. 
+  + Defaults to 'false'.
++ sidenavWidth: string
+  + Sets the 'width' of the sidenav in either 'px' or '%'. 
+  + Defaults to '320px'.
 
 ## Usage
 
@@ -59,7 +63,7 @@ npm i -save @covalent/core
 Import the **[CovalentLayoutModule]** in your NgModule:
 
 ```typescript
-import { CovalentLayoutModule } from '@covalent/core';
+import { CovalentLayoutModule } from '@covalent/core/layout';
 @NgModule({
   imports: [
     CovalentLayoutModule,
@@ -83,17 +87,28 @@ See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent 
 
 ## API Summary
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| sidenavTitle | string | Title set in toolbar.
-| icon | string | icon name to be displayed before the title
-| logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
-| color | string | optional sidenav toolbar color.
-| navigationRoute | string | option to set the combined route for the icon, logo, and sidenavTitle.
-| backgroundUrl | SafeResourceUrl | image to be displayed as the background of the toolbar. URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
-| name | string | string to be displayed as part of the navigation drawer sublabel. if [email] is not set, then [name] will be the toggle menu text.
-| email | string | string to be displayed as part of the navigation drawer sublabel in the [toggle] menu text. if [email] and [name] are not set, then the toggle menu is not rendered.
+#### Inputs
 
++ sidenavTitle: string
+  + Title set in toolbar.
++ icon: string
+  + Icon name to be displayed before the title.
++ logo: string
+  + Logo icon name to be displayed before the title. 
+  + If [icon] is set, then this will not be shown.
++ color: string
+  + Optional sidenav toolbar color.
++ navigationRoute: string
+  + Option to set the combined route for the icon, logo, and sidenavTitle.
++ backgroundUrl: SafeResourceUrl
+  + Image to be displayed as the background of the toolbar. 
+  + URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
++ name: string
+  + String to be displayed as part of the navigation drawer sublabel.
+  + If [email] is not set, then [name] will be the toggle menu text.
++ email: string
+  + String to be displayed as part of the navigation drawer sublabel in the [toggle] menu text. 
+  + If [email] and [name] are not set, then the toggle menu is not rendered.
 
 ## Usage
 

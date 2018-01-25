@@ -6,26 +6,40 @@ It also contains an optional summary to display anything in collapsed state.
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `label?` | `string` | Sets label of component header.
-| `sublabel?` | `string` | Sets sublabel of component header.
-| `expand?` | `boolean` | Toggles component between expand/collapse state.
-| `disableRipple?` | `boolean` | Whether the ripple effect for this component is disabled.
-| `expanded?` | `function` | Event emitted when component is expanded.
-| `collapsed?` | `function` | Event emitted when component is collapsed.
-| `toggle?` | `function` | Toggle state of component. Returns "true" if successful, else "false".
-| `open?` | `function` | Opens component and sets state to expanded. Retuns "true" if successful, else "false".
-| `close?` | `function` | Closes component and sets state to collapsed. Retuns "true" if successful, else "false".
++ label?: string
+  + Sets label of component header.
++ sublabel?: string
+  + Sets sublabel of component header.
++ expand?: boolean
+  + Toggles component between expand/collapse state.
++ disableRipple?: boolean
+  + Whether the ripple effect for this component is disabled.
+
+#### Events
+
++ expanded: function
+  + Event emitted when component is expanded.
++ collapsed: function
+  + Event emitted when component is collapsed.
+
+#### Methods
+
++ toggle: function
+  + Toggle state of component. Returns "true" if successful, else "false".
++ open: function
+  + Opens component and sets state to expanded. Retuns "true" if successful, else "false".
++ close: function
+  + Closes component and sets state to collapsed. Retuns "true" if successful, else "false".
+
 
 ## Setup
 
 Import the [CovalentExpansionPanelModule] in your NgModule:
 
 ```typescript
-import { CovalentExpansionPanelModule } from '@covalent/core';
+import { CovalentExpansionPanelModule } from '@covalent/core/expansion-panel';
 @NgModule({
   imports: [
     CovalentExpansionPanelModule,

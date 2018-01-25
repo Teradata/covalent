@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CovalentCommonModule } from '@covalent/core';
+import { CovalentCommonModule } from '@covalent/core/common';
  
 import { designPatternsRoutes } from './design-patterns.routes';
 import { DesignPatternsComponent } from './design-patterns.component';

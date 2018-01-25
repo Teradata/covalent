@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
 import { of } from 'rxjs/observable/of';
 import { catchError } from 'rxjs/operators/catchError';
 
@@ -378,7 +378,7 @@ class TdLoadingStarUntilAsyncTestComponent {
 class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   private _subject: Subject<any> = new Subject<any>();
   observable: Observable<any>;
-  
+
   constructor(private _loadingService: TdLoadingService) {}
 
   createObservable(): void {

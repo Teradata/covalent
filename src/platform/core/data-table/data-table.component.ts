@@ -18,11 +18,11 @@ import { TdDataTableRowComponent } from './data-table-row/data-table-row.compone
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-import { IControlValueAccessor, mixinControlValueAccessor } from '../common/common.module';
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export enum TdDataTableSortingOrder {
-  Ascending = <any>'ASC',
-  Descending = <any>'DESC',
+  Ascending = 'ASC',
+  Descending = 'DESC',
 }
 
 export interface ITdDataTableColumnWidth {
@@ -978,7 +978,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       // set the initial row to be rendered taking into account the row offset
       let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
-      
+
       let hostHeight: number = this._hostHeight;
       let index: number = 0;
       // calculate how many rows can fit in the viewport
@@ -1001,7 +1001,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       this._fromRow = 0;
       this._toRow = 0;
     }
-  
+
     let offset: number = 0;
     // calculate the proper offset depending on how many rows have been scrolled
     if (scrolledRows > TD_VIRTUAL_OFFSET) {

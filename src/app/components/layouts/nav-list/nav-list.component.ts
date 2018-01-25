@@ -1,5 +1,5 @@
 import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

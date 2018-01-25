@@ -49,7 +49,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdLoadingService } from '@covalent/core';
+            import { TdLoadingService } from '@covalent/core/loading';
             ...
             export class Demo implements OnInit {
               overlayStarSyntax: boolean = false;
@@ -128,7 +128,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdLoadingService } from '@covalent/core';
+            import { TdLoadingService } from '@covalent/core/loading';
             ...
             export class Demo {
               replaceDemo: any = {
@@ -376,7 +376,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdLoadingService } from '@covalent/core';
+            import { TdLoadingService } from '@covalent/core/loading';
             ...
             export class Demo implements OnInit {
               constructor(private _loadingService: TdLoadingService) {}
@@ -422,7 +422,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdLoadingService } from '@covalent/core';
+            import { TdLoadingService } from '@covalent/core/loading';
             ...
             export class Demo {
               constructor(private _loadingService: TdLoadingService) {
@@ -447,156 +447,5 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
-<mat-card>
-  <mat-card-title>TdLoadingDirective</mat-card-title>
-  <mat-card-subtitle>How to use this directive</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h2><code>tdLoading</code></h2>
-    <p>Simply add the <code>tdLoading</code> attibute with a "name" value to the element you want to mask.</p>
-    <p>Dont forget to add the asterisk syntax before the <code>tdLoading</code> directive if its not used in a <code><![CDATA[<ng-template>]]></code> element.</p>
-    <p>More info on the asterisk (*) syntax <a target="_blank" href="https://angular.io/guide/structural-directives#asterisk">here</a></p>
-    <h3>Properties:</h3>
-    <p>The <code>tdLoading</code> directive has {{loadingAttrs.length}} properties:</p>
-    <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingAttrs">
-        <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
-          <p matLine *ngIf="attr.additionalDescription"> {{attr.additionalDescription}} </p>
-        </a>
-        <mat-divider *ngIf="!last"></mat-divider>
-      </ng-template>
-    </mat-list>
-    <h3>Example(after setup):</h3>
-    <p>HTML (*) syntax:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">
-          ...
-        </div>
-      ]]>
-    </td-highlight>
-    <p>HTML (*) until async syntax:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <div *tdLoading="let item until observable | async; type:'circular'; color:'primary'">
-          { {item} }
-        </div>
-      ]]>
-    </td-highlight>
-    <p>HTML <![CDATA[<ng-template>]]> syntax</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <ng-template tdLoading="stringName" tdLoadingType="circular" tdLoadingMode="indeterminate" tdLoadingStrategy="replace" tdLoadingColor="primary">
-          ...
-        </ng-template>
-      ]]>
-    </td-highlight>
-    <p>HTML <![CDATA[<ng-template>]]> until syntax</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <ng-template tdLoading [tdLoadingUntil]="boolean">
-          ...
-        </ng-template>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdLoadingService } from '@covalent/core';
-        ...
-        })
-        export class Demo {
-          constructor(private _loadingService: TdLoadingService) {
-            ...
-          }
 
-          registerLoading(): void {
-            this._loadingService.register('stringName');
-          }
-
-          resolveLoading(): void {
-            this._loadingService.resolve('stringName');
-          }
-
-          changeValue(value: number): void { // Usage only enabled on [LoadingMode.Determinate] mode.
-            this._loadingService.setValue('stringName', value);
-          }
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentLoadingModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentLoadingModule } from '@covalent/core';
-
-        @NgModule({
-          imports: [
-            CovalentLoadingModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </mat-card-content>
- </mat-card>
- <mat-card>
-  <mat-card-title>TdLoadingService</mat-card-title>
-  <mat-card-subtitle>How to use this service</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h2><code>TdLoadingService</code></h2>
-    <p>This service is designed to be a factory of loading masks and serves as a facade for their usage.</p>
-    <p>Simply add this service as a provider to be able to use it in a component.</p>
-    <p>TdLoadingService.create() method recieves as parameter an object that implements the [ITdLoadingConfig] interface.</p>
-    <td-highlight lang="typescript">
-      interface ITdLoadingConfig {{'{'}}
-        name: string;
-        type?: LoadingType;
-        mode?: LoadingMode;
-        color?: 'primary' | 'accent' | 'warn';
-      }
-    </td-highlight>
-    <h3>Methods:</h3>
-    <p>The <code>TdLoadingService</code> service has {{loadingServiceMethods.length}} properties:</p>
-    <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="loadingServiceMethods">
-        <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
-        </a>
-        <mat-divider *ngIf="!last"></mat-divider>
-      </ng-template>
-    </mat-list>
-    <h3>Example(after setup):</h3>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdLoadingService, LoadingType, LoadingMode } from '@covalent/core';
-        ...
-        export class Demo {
-          constructor(private _loadingService: TdLoadingService) {
-            this._loadingService.create({
-              name: 'stringName',
-              type: LoadingType.Circular,
-              mode: LoadingMode.Indeterminate,
-              color: 'accent',
-            });
-          }
-
-          registerLoading(): void {
-            this._loadingService.register('stringName');
-          }
-
-          resolveLoading(): void {
-            this._loadingService.resolve('stringName'); // or this._loadingService.resolveAll('stringName');
-          }
-        }
-      ]]>
-    </td-highlight>
-  </mat-card-content>
-</mat-card>
+<td-readme-loader resourceUrl="platform/core/loading/README.md"></td-readme-loader>

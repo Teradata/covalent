@@ -1,11 +1,11 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 
-import { TdCollapseAnimation } from '@covalent/core';
+import { TdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 export enum OrderBy {
-  ASC = <any>'asc',
-  DESC = <any>'desc',
+  ASC = 'asc',
+  DESC = 'desc',
 }
 
 export interface IHeaders {

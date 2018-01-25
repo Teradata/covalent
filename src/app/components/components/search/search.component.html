@@ -42,74 +42,7 @@
     <button mat-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
   </mat-card-actions>
 </mat-card>
-<mat-card>
-  <mat-card-title>TdSearchInputComponent</mat-card-title>
-  <mat-card-subtitle>How to use this component</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h2><code><![CDATA[<td-search-input>]]></code></h2>
-    <p>Use <code><![CDATA[<td-search-input>]]></code> element to generate a search input with its animated cancel button.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-search-input>]]></code> component has {{searchInputAttrs.length}} properties:</p>
-    <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="searchInputAttrs">
-        <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
-        </a>
-        <mat-divider *ngIf="!last"></mat-divider>
-      </ng-template>
-    </mat-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-search-input placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
-        </td-search-input>
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentSearchModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentSearchModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            CovalentSearchModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </mat-card-content>
-</mat-card>
-<mat-card>
-  <mat-card-title>TdSearchBoxComponent</mat-card-title>
-  <mat-card-subtitle>How to use this component</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h2><code><![CDATA[<td-search-box>]]></code></h2>
-    <p>Use <code><![CDATA[<td-search-box>]]></code> element to generate a search box with animations.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-search-box>]]></code> component has {{searchBoxAttrs.length}} properties:</p>
-    <mat-list>
-      <ng-template let-attr let-last="last" ngFor [ngForOf]="searchBoxAttrs">
-        <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
-        </a>
-        <mat-divider *ngIf="!last"></mat-divider>
-      </ng-template>
-    </mat-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-search-box backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
-        </td-search-box>
-      ]]>
-    </td-highlight>
-  </mat-card-content>
-</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/search/search-input/README.md"></td-readme-loader>
+
+<td-readme-loader resourceUrl="platform/core/search/search-box/README.md"></td-readme-loader>
