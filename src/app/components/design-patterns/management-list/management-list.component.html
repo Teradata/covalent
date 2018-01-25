@@ -24,16 +24,16 @@
           <h2>Usage</h2>
           <h3>Search</h3>
           <p>A search component can be added to the card header.</p>
-          <mat-divider class="push-bottom"></mat-divider>
+          <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
           <h3>Sorting</h3>
           <p>Consider sorting columns.</p>
-          <mat-divider class="push-bottom"></mat-divider>
+          <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
           <h3>Paging</h3>
           <p>For long lists, add pagination.</p>
-          <mat-divider class="push-bottom"></mat-divider>
+          <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
           <h3>Faux Columns</h3>
           <p>Using the flex model, you can simulate columns.</p>
-          <mat-divider class="push-bottom"></mat-divider>
+          <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
           <h2 class="push-bottom-none">Guidelines</h2>
           <mat-nav-list class="pull-left pull-right">
             <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
@@ -41,7 +41,6 @@
               <span matLine>Material Design </span>
               <p matLine>Lists Guidelines</p>
             </a>
-            <mat-divider class="push-left push-right"></mat-divider>
             <a mat-list-item href="https://material.angular.io/components/list/overview" target="_blank">
               <mat-icon style="font-size: 15px">launch</mat-icon>
               <span matLine>Angular Material</span>
@@ -50,8 +49,7 @@
           </mat-nav-list>
         </div>
         <div layout="row" flex-gt-sm>
-          <iframe flex class="iframe" [src]="source">
-          </iframe>
+          <iframe flex class="iframe" [src]="source"></iframe>
         </div>
       </div>
     </mat-card>
@@ -65,15 +63,28 @@
           <mat-list>
             <mat-list-item>
               <mat-icon matListIcon>looks_one</mat-icon>
-              <h3 matLine>Adjust content with media queries.</h3>
+              <h3 matLine>Adjust content with media queries</h3>
             </mat-list-item>
             <mat-list-item>
               <mat-icon matListIcon>looks_two</mat-icon>
-              <h3 matLine>Limit number of columns.</h3>
+              <h3 matLine>Limit number of columns</h3>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+      <div flex-gt-xs="50">
+        <mat-card>
+          <mat-card-title>
+            <span class="tc-red-600">Don't</span>
+          </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_one</mat-icon>
+              <h3 matLine>Don't add too many columns</h3>
             </mat-list-item>
           </mat-list>
         </mat-card>
       </div>
     </div>
   </div>
-  

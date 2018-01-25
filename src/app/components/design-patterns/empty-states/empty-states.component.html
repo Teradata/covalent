@@ -25,14 +25,10 @@
         <p>Use the content type icon if possible.</p>
         <h3>Primary Action</h3>
         <p>Optionally include a primary action button (raised with accent color).</p>
-        <div class="pad-bottom">
-          <mat-divider></mat-divider>
-        </div>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
         <h3>Secondary Action</h3>
         <p>Optionally include a secondary action button (not raised).</p>
-        <div class="pad-bottom">
-          <mat-divider></mat-divider>
-        </div>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
         <h2 class="push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
           <a mat-list-item href="https://material.io/guidelines/patterns/empty-states.html" target="_blank">
@@ -43,8 +39,7 @@
         </mat-nav-list>
       </div>
       <div layout="row" flex-gt-sm>
-        <iframe flex class="iframe" [src]="source">
-        </iframe>
+        <iframe flex class="iframe" [src]="source"></iframe>
       </div>
     </div>
   </mat-card>

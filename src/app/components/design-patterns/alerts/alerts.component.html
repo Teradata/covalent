@@ -24,13 +24,13 @@
         <h3>Dialogs</h3>
         <p>Inform users about a specific task or critical information, such as
           a verbose/critical error, alert or a confirmation of an action.</p>
-        <mat-divider class="push-bottom"></mat-divider>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
         <h3>Toasts & Snackbars</h3>
         <p>Toasts and snackbars provide brief feedback about an operation through a message at the bottom of the screen.  Unlike toasts, snackbars do not contain actions and cannot be swiped off screen.</p>
-        <mat-divider class="push-bottom"></mat-divider>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
         <h3>Inline Errors</h3>
         <p>Use warning color and position on the left.</p>
-        <mat-divider class="push-bottom"></mat-divider>
+        <mat-divider class="pad-bottom" [inset]="true"></mat-divider>
         <h2 class="push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
           <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
@@ -38,25 +38,21 @@
             <span matLine>Material Design</span>
             <p matLine>Dialogs</p>
           </a>
-          <mat-divider class="push-left push-right"></mat-divider>
           <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
             <mat-icon style="font-size: 15px">launch</mat-icon>
             <span matLine>Angular Material</span>
             <p matLine>Dialogs</p>
           </a>
-          <mat-divider class="push-left push-right"></mat-divider>
-          <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
+         <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
             <mat-icon style="font-size: 15px">launch</mat-icon>
             <span matLine>Material Design</span>
             <p matLine>Snackbars</p>
           </a>
-          <mat-divider class="push-left push-right"></mat-divider>
           <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
             <mat-icon style="font-size: 15px">launch</mat-icon>
             <span matLine>Angular Material</span>
             <p matLine>Snackbars</p>
           </a>
-          <mat-divider class="push-left push-right"></mat-divider>
           <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
             <mat-icon style="font-size: 15px">launch</mat-icon>
             <span matLine>Material Design</span>
@@ -65,8 +61,7 @@
         </mat-nav-list>
       </div>
       <div layout="row" flex-gt-sm>
-        <iframe flex class="iframe" [src]="source">
-        </iframe>
+        <iframe flex class="iframe" [src]="source"></iframe>
       </div>
     </div>
   </mat-card>
@@ -80,11 +75,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Float buttons to the right.</h3>
+            <h3 matLine>Float buttons to the right</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Keep dialogs simple.</h3>
+            <h3 matLine>Keep dialogs simple</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
@@ -98,11 +93,11 @@
         <mat-list>
           <mat-list-item>
             <mat-icon matListIcon>looks_one</mat-icon>
-            <h3 matLine>Don't use dialogs with forms.</h3>
+            <h3 matLine>Don't use dialogs with forms</h3>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>looks_two</mat-icon>
-            <h3 matLine>Don't include unnecessary buttons like dismiss.</h3>
+            <h3 matLine>Don't include unnecessary buttons like dismiss</h3>
           </mat-list-item>
         </mat-list>
       </mat-card>
