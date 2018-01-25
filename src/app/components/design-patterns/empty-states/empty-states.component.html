@@ -4,7 +4,7 @@
     <mat-divider></mat-divider>
     <mat-card-content class="mat-typography">
       <h3>When to use</h3>
-      <p>When no content is avaiable for a section and the user needs addtional instruction or feedback.</p>
+      <p>When no content is available for a section and the user needs additional instruction or feedback.</p>
     </mat-card-content>
   </mat-card>
   <mat-card>
@@ -21,38 +21,34 @@
     <div layout-gt-sm="row">
       <div flex-gt-sm="25" class="mat-typography pad relative">
         <h2>Usage</h2>
-        <h3>Icon</h3>
-        <p>Use the content type icon if possible.</p>
-        <div class="pad-bottom">
+        <mat-list class="pull-left pull-right">
+          <mat-list-item>
+            <h3 matLine>Icon</h3>
+            <p matLine>Content type icon</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Language</h3>
-        <p>Follow the Material Design spec for language &amp; text.</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Primary Action</h3>
+            <p matLine>Raised accent button</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Primary Action</h3>
-        <p>Optionally include a primary action button (raised with accent color).</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Secondary Action</h3>
+            <p matLine>Grey standard button</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Secondary Action</h3>
-        <p>Optionally include a secondary action button (not raised).</p>
-        <div class="pad-bottom">
-          <mat-divider></mat-divider>
-        </div>
-        <h2 class="push-bottom-none">Guidelines</h2>
+        </mat-list>
+        <h2 class="push-top push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
           <a mat-list-item href="https://material.io/guidelines/patterns/empty-states.html" target="_blank">
-            <mat-icon style="font-size: 15px">launch</mat-icon>
-            <span matLine>Material Design</span>
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
             <p matLine>Empty State Guidelines</p>
           </a>
         </mat-nav-list>
       </div>
       <div layout="row" flex-gt-sm>
-        <iframe flex class="iframe" [src]="source">
-        </iframe>
+        <iframe flex class="iframe" [src]="source"></iframe>
       </div>
     </div>
   </mat-card>
