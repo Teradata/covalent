@@ -79,6 +79,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _tabIndex: number = 0;
 
   _internalClick: boolean = false;
+  _internalActivateOption: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MatInput) _inputChild: MatInput;
@@ -538,8 +539,9 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
          */
         if (this.requireMatch) {
           let length: number = this._options.length;
-          if (length > 0 && this._options.toArray()[0].active) {
+          if (length > 1 && this._options.toArray()[0].active && this._internalActivateOption) {
             this._options.toArray()[0].setInactiveStyles();
+            this._internalActivateOption = false;
             // prevent default window scrolling
             event.preventDefault();
           }
@@ -708,6 +710,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
           });
           // set the first one as active
           this._options.toArray()[0].setActiveStyles();
+          this._internalActivateOption = true;
           this._changeDetectorRef.markForCheck();
         }
       });

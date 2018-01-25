@@ -11,8 +11,8 @@ export interface IStepChangeEvent {
 }
 
 export enum StepMode {
-  Vertical = <any>'vertical',
-  Horizontal = <any>'horizontal',
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
 }
 
 @Component({

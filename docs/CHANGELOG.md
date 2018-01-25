@@ -1,3 +1,43 @@
+<a name="1.0.0-rc.3"></a>
+# [1.0.0-rc.3 Cranberry Zombie](https://github.com/teradata/covalent/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2018-01-19)
+
+Almost stable! This release centered around adding `list` support for our documentation renderer and making sure Covalent has the proper `Angular build format` leveraging `ng-packagr`.
+
+This means you can now import directly from our secondary entry points, so you can minimize your build size by cherry picking what you need.
+
+e.g.
+
+```
+import { CovalentLoadingModule } from '@covalent/core/loading';
+import { CovalentSearchModule } from '@covalent/core/search';
+```
+
+In addition, following the `Angular build format` allows for SSR builds.
+
+So start testing and let us know your issues!
+
+### Features
+
+* **build:** change to Covalent Angular package format build w/ ng-packagr ([#1065](https://github.com/teradata/covalent/issues/1065)) ([cb2fd30](https://github.com/teradata/covalent/commit/cb2fd30))
+* **dependencies:** upgrade covalent dependencies [@angular](https://github.com/angular)@5.1 ([#1096](https://github.com/teradata/covalent/issues/1096)) ([bffb143](https://github.com/teradata/covalent/commit/bffb143))
+* **docs:** change data-table API from tables to lists in README ([#1076](https://github.com/teradata/covalent/issues/1076)) ([9322d9e](https://github.com/teradata/covalent/commit/9322d9e))
+* **docs:** add README for loading docs ([#1092](https://github.com/teradata/covalent/issues/1092)) ([a6d3de6](https://github.com/teradata/covalent/commit/a6d3de6))
+* **docs:** change file-input API from tables to lists in README ([#1082](https://github.com/teradata/covalent/issues/1082)) ([c492976](https://github.com/teradata/covalent/commit/c492976))
+* **docs:** change file-upload API from tables to lists in README ([#1085](https://github.com/teradata/covalent/issues/1085)) ([308b626](https://github.com/teradata/covalent/commit/308b626))
+* **docs:** change layout API from tables to lists in README ([#1086](https://github.com/teradata/covalent/issues/1086)) ([14d0e7a](https://github.com/teradata/covalent/commit/14d0e7a))
+* **docs:** change markdown API from tables to lists in README ([#1081](https://github.com/teradata/covalent/issues/1081)) ([d9a0c03](https://github.com/teradata/covalent/commit/d9a0c03))
+* **docs:** change messages API from tables to lists in README ([#1091](https://github.com/teradata/covalent/issues/1091)) ([d86d5cf](https://github.com/teradata/covalent/commit/d86d5cf))
+* **docs:** change notifications API from tables to lists in README ([#1090](https://github.com/teradata/covalent/issues/1090)) ([b82fed7](https://github.com/teradata/covalent/commit/b82fed7))
+* **docs:** change paging API from data-table to list in README ([#1089](https://github.com/teradata/covalent/issues/1089)) ([08fb421](https://github.com/teradata/covalent/commit/08fb421))
+* **docs:** properly load README into http docs ([#1088](https://github.com/teradata/covalent/issues/1088)) ([8bcfdf4](https://github.com/teradata/covalent/commit/8bcfdf4))
+* **docs:** replace dynamic-forms API with list API in README ([#1084](https://github.com/teradata/covalent/issues/1084)) ([1041d1f](https://github.com/teradata/covalent/commit/1041d1f))
+* **docs:** search and virtual scroll README refactor ([#1093](https://github.com/teradata/covalent/issues/1093)) ([0b4cb6d](https://github.com/teradata/covalent/commit/0b4cb6d))
+* **docs:** support list in pretty markdown to showcase API's better ([#1073](https://github.com/teradata/covalent/issues/1073)) ([ac260e3](https://github.com/teradata/covalent/commit/ac260e3))
+* **expansion-panel:** change API from table to lists in README ([#1078](https://github.com/teradata/covalent/issues/1078)) ([44cd9a9](https://github.com/teradata/covalent/commit/44cd9a9))
+* **highlight:** change component API from tables to lists in README ([#1080](https://github.com/teradata/covalent/issues/1080)) ([5b29a0a](https://github.com/teradata/covalent/commit/5b29a0a))
+* **json-formatter:** render README in docs ([#1079](https://github.com/teradata/covalent/issues/1079)) ([a75c61f](https://github.com/teradata/covalent/commit/a75c61f))
+
+
 <a name="1.0.0-rc.2"></a>
 # [1.0.0-rc.2 Transpiled Suspenders](https://github.com/teradata/covalent/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-05)
 

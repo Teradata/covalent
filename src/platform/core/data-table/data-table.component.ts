@@ -21,8 +21,8 @@ import { TdDataTableTemplateDirective } from './directives/data-table-template.d
 import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export enum TdDataTableSortingOrder {
-  Ascending = <any>'ASC',
-  Descending = <any>'DESC',
+  Ascending = 'ASC',
+  Descending = 'DESC',
 }
 
 export interface ITdDataTableColumnWidth {

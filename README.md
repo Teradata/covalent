@@ -13,13 +13,12 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 6.12.0 or up and NPM 3+ installed.
+* Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
 * Install Angular CLI `npm i -g @angular/cli`
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm install -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
-* Install Node packages `npm i`
-* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
+* Install Node packages `npm run reinstall` (or `npm run reinstall:latest`)
 * Run local build `npm run serve` or `npm run serve:prod`
 * If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 ---

@@ -112,7 +112,7 @@
                   <h3 matLine> {{item.title}} </h3>
                   <p matLine> {{item.description}} </p>
                 </mat-list-item>
-                <mat-divider matInset *ngIf="!last"></mat-divider>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
               </ng-template>
               <mat-divider></mat-divider>
               <h3 matSubheader>Dates</h3>
@@ -122,7 +122,7 @@
                   <h3 matLine> {{item.date | timeAgo}} </h3>
                   <p matLine> {{item.description}} </p>
                 </mat-list-item>
-                <mat-divider matInset *ngIf="!last"></mat-divider>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
               </ng-template>
             </mat-list>
           </mat-card-content>
@@ -173,7 +173,7 @@
                       <h3 matLine> { {item.title} } </h3>
                       <p matLine> { {item.description} } </p>
                     </mat-list-item>
-                    <mat-divider matInset *ngIf="!last"></mat-divider>
+                    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
                   </ng-template>
                   <mat-divider></mat-divider>
                   <h3 matSubheader>Dates</h3>
@@ -183,7 +183,7 @@
                       <h3 matLine> { {item.date | timeAgo} } </h3>
                       <p matLine> { {item.description} } </p>
                     </mat-list-item>
-                    <mat-divider matInset *ngIf="!last"></mat-divider>
+                    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
                   </ng-template>
                 </mat-list>
               </mat-card-content>
