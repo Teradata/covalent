@@ -1,3 +1,23 @@
+<a name="1.0.0-rc.4"></a>
+# [1.0.0-rc.4 Recursive Fedora](https://github.com/teradata/covalent/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2018-01-26)
+
+The focus of this release is fixing an introduced issue with `AoT` when we changed our build process to use `ng-packagr`.
+
+We also updated our `Design Patterns` to use stackblitz and added a few more.
+
+
+### Bug Fixes
+
+* **build:** library not working in AoT mode ([#1104](https://github.com/teradata/covalent/issues/1104)) ([fe3153d](https://github.com/teradata/covalent/commit/fe3153d)), closes [#1099](https://github.com/teradata/covalent/issues/1099)
+
+
+### Features
+
+* **patterns:** add FAB design pattern ([#1056](https://github.com/teradata/covalent/issues/1056)) ([5d5cac1](https://github.com/teradata/covalent/commit/5d5cac1))
+* **patterns:** update design patterns to use stackblitz ([#1064](https://github.com/teradata/covalent/pull/1064)) ([eb72cc41dbb8620d6a95a29875cb9d2dbfaeee1b](https://github.com/teradata/covalent/commit/eb72cc41dbb8620d6a95a29875cb9d2dbfaeee1b))
+
+
+
 <a name="1.0.0-rc.3"></a>
 # [1.0.0-rc.3 Cranberry Zombie](https://github.com/teradata/covalent/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2018-01-19)
 
