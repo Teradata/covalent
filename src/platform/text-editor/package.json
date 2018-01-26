@@ -1,6 +1,6 @@
 {
   "name": "@covalent/text-editor",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-rc.1",
   "private": false,
   "description": "Covalent text and markdown editor component for Angular based on SimpleMDE",
   "main": "./text-editor.umd.js",
@@ -40,7 +40,7 @@
     "simplemde": "^1.11.2"
   },
   "peerDependencies": {
-    "@angular/common": "^4.2.0",
-    "@angular/core": "^4.2.0"
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0"
   }
 }

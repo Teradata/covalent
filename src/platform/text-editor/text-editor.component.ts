@@ -5,8 +5,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import * as SimpleMDECss from 'simplemde/dist/simplemde.min.css';
 import * as SimpleMDE from 'simplemde';
+// using 'import * as' not working in Angular 5 for some reason
+/* tslint:disable-next-line */
+let SimpleMDECss = require('simplemde/dist/simplemde.min.css');
 
 const noop: any = () => {
   // empty method

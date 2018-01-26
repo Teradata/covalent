@@ -106,7 +106,7 @@ describe('Component: TextEditor', () => {
 @Component({
   template: `
     <div>
-      <td-text-editor #editor1></td-text-editor>  
+      <td-text-editor #editor1></td-text-editor>
     </div>`,
 })
 class TestTextEditorComponent {
@@ -116,7 +116,7 @@ class TestTextEditorComponent {
 @Component({
   template: `
     <div>
-      <td-text-editor #editor1 [value]="Something"></td-text-editor>  
+      <td-text-editor #editor1 [value]="Something"></td-text-editor>
     </div>`,
 })
 class TestTextEditorResetComponent {
@@ -126,7 +126,7 @@ class TestTextEditorResetComponent {
 @Component({
   template: `
     <div>
-      <td-text-editor #editor1 [options]="opts"></td-text-editor>  
+      <td-text-editor #editor1 [options]="opts"></td-text-editor>
     </div>`,
 })
 class TestTextEditorOptionsComponent {
