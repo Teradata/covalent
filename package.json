@@ -99,7 +99,7 @@
     "merge2": "1.0.2",
     "node-sass": "3.8.0",
     "protractor": "~5.1.0",
-    "require-dir": "0.3.0",
+    "require-dir": "0.3.2",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
