@@ -1,534 +1,114 @@
-<div layout-sm="row" layout-gt-md="row">
-  <mat-card flex-sm="70" flex-gt-md="70">
-    <mat-card-title>Card Patterns</mat-card-title>
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+    <mat-card-title>Cards Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <mat-card-content>
-      <h3>Problem</h3>
-      <p>Need to display item or set of content composed of different elements whose size or supported actions vary.</p>
-      <h3>Solution</h3>
-      <p>Cards are a convenient means of displaying content composed of different elements. They’re also well-suited for showcasing
-        elements whose size or supported actions vary, like photos with captions of variable length.</p>
+    <mat-card-content class="mat-typography">
+        <h3>When to use</h3>
+        <p>Use a card layout when displaying collections of multiple data types such as images, movies, and text.  Also useful when content has variable length and a grid list is not suitable.</p>
     </mat-card-content>
   </mat-card>
-  <mat-card flex-sm flex-gt-md>
-    <mat-card-title>Resources</mat-card-title>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/card-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
     <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item href="https://material.google.com/components/cards.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Cards</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.angular.io/components/component/card" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Angular Material Cards</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://www.google.com/search/about/learn-more/now/" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Google Now Cards</span>
-      </a>
-    </mat-nav-list>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad relative">
+        <h2>Usage</h2>
+        <mat-list class="pull-left pull-right">
+          <mat-list-item>
+            <h3 matLine>Card Title</h3>
+            <p matLine>Brief content header</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Card subtitle</h3>
+            <p matLine>More detailed description</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Dividers</h3>
+            <p matLine>Use dividers around content</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Actions</h3>
+            <p matLine>Left aligned action buttons</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Lists</h3>
+            <p matLine>Use lists inside cards</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Images</h3>
+            <p matLine>Various size &amp; location options</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+        <h2 class="push-top push-bottom-none">Guidelines</h2>
+        <mat-nav-list class="pull-left pull-right">
+          <a mat-list-item href="https://material.google.com/components/cards.html" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
+            <p matLine>Cards Guidelines</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/component/card" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Angular Material</h3>
+            <p matLine>Cards Guidelines</p>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source"></iframe>
+      </div>
+    </div>
   </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+         <mat-list>
+           <mat-list-item>
+             <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Use flexbox for responsiveness</h3>
+           </mat-list-item>
+           <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Set tab-index for accessibility</h3>
+           </mat-list-item>
+         </mat-list>
+       </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Don't overload cards with unnecessary information</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use in place of galleries or lists</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
 </div>
-<mat-card>
-  <mat-card-title>Examples</mat-card-title>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <div layout-sm="row" layout-gt-md="row">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Standard Card</mat-card-title>
-        <mat-card-subtitle>Card with standard card elements</mat-card-subtitle>
-        <mat-card-content>
-          <p>A card can be used with any of the optional card sub-elements including:</p>
-          <mat-list>
-            <a mat-list-item>
-              <span matLine>mat-card-title</span>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item>
-              <span matLine>mat-card-subtitle</span>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item>
-              <span matLine>mat-divider</span>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item>
-              <span matLine>mat-card-content</span>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item>
-              <span matLine>mat-card-actions</span>
-            </a>
-          </mat-list>
-          <p>Additionally, a card may contain other components such as search, lists, icons, and images.</p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example1">
-            <div>
-                  <td-highlight lang="html">
-                      <![CDATA[
-                        <mat-card>
-                          <mat-card-title>Standard Card</mat-card-title>
-                          <mat-card-subtitle>Subtitle</mat-card-subtitle>
-                          <mat-divider></mat-divider>
-                          <mat-card-content>
-                            <p>Standard card with content</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-                          </mat-card-content>
-                          <mat-divider></mat-divider>
-                          <mat-card-actions>
-                            <button mat-button color="accent" class="text-upper">Action</button>
-                            <button mat-button class="text-upper">Cancel</button>
-                          </mat-card-actions>
-                        </mat-card>
-                      ]]>
-                  </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card class="push-md">
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <button mat-button color="accent" class="text-upper">Action</button>
-              <button mat-button class="text-upper">Cancel</button>
-            </mat-card-actions>
-          </mat-card>
-        </mat-card>
-      </div>
-    </div>
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Login Card</mat-card-title>
-        <mat-card-subtitle>Card with form</mat-card-subtitle>
-        <mat-card-content>
-          <p>In special cases, cards may contain form elements, like the login card.  However, in most sitautions, we recommend using the <a [routerLink]="['/layouts', 'card-over']" target="_blank">Card Over</a> full page layout for forms.</p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example2')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example2">
-            <div>
-              <td-highlight lang="html">
-                  <![CDATA[
-                    <mat-card-title layout="row" layout-align="start center"><mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="mat-title">Login</span></mat-card-title>
-                      <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
-                      <mat-divider></mat-divider>
-                      <mat-card-content class="push-bottom-none">
-                        <form #loginForm="ngForm">
-                          <div layout="row">
-                            <mat-form-field flex> 
-                              <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
-                              <mat-hint align="start">
-                                <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
-                              </mat-hint>
-                              <mat-hint align="end">{ {userElement.value.length} } / 30</mat-hint>
-                            </mat-form-field>
-                          </div>
-                          <div layout="row" class="push-top-sm">
-                            <mat-form-field flex> 
-                              <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
-                              <mat-hint align="start">
-                                <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
-                              </mat-hint>
-                              <mat-hint align="end">Something hard to guess</mat-hint>
-                            </mat-form-field>
-                          </div>
-                        </form>
-                        <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
-                      </mat-card-content>
-                      <mat-divider></mat-divider>
-                      <mat-card-actions>
-                        <div layout="row">
-                          <button flex mat-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
-                        </div>
-                      </mat-card-actions>
-                    </mat-card>
-                  ]]>
-              </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card class="push-md">
-            <mat-card-title layout="row" layout-align="start center">
-              <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon> <span class="mat-title">Login</span>
-            </mat-card-title>
-            <mat-card-subtitle>Sign In with Your Credentials</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-card-content class="push-bottom-none">
-              <form #loginForm="ngForm">
-                <div layout="row">
-                  <mat-form-field flex>
-                    <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
-                      required>
-                    <mat-hint align="start">
-                      <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
-                    </mat-hint>
-                    <mat-hint align="end">{{userElement.value.length}} / 30</mat-hint>
-                  </mat-form-field>
-                </div>
-                <div layout="row" class="push-top-sm">
-                  <mat-form-field flex>
-                    <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
-                      required>
-                    <mat-hint align="start">
-                      <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
-                    </mat-hint>
-                    <mat-hint align="end">Something hard to guess</mat-hint>
-                  </mat-form-field>
-                </div>
-              </form>
-              <div id="invalid-auth-msg" *ngIf="invalidError" class="tc-red-600 text-center" flex>The username or password is incorrect. Please try again.</div>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <div layout="row">
-                <button flex mat-raised-button color="accent" [disabled]="!loginForm.form.valid" (click)="login()" class="text-upper">Sign In</button>
-              </div>
-            </mat-card-actions>
-          </mat-card>
-        </mat-card>
-      </div>
-    </div>
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Metadata List Card</mat-card-title>
-        <mat-card-subtitle>Card with metadata for an item detail</mat-card-subtitle>
-        <mat-card-content>
-          <p>Cards support many rich components, including our <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a>.  When adding multiple lists to a card, seperate them using mat-divider and consider adding matSubheader.</p>
-        </mat-card-content>
-      </div> 
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example3')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example3">
-            <div>
-              <td-highlight lang="html">
-                  <![CDATA[
-                    <mat-card>
-                      <mat-card-title>Item Info</mat-card-title>
-                      <mat-card-subtitle>Info About This Item</mat-card-subtitle>
-                      <mat-divider></mat-divider>
-                      <mat-list>
-                        <h3 matSubheader>Metadata</h3>
-                        <mat-list-item>
-                          <mat-icon matListAvatar>account_box</mat-icon>
-                          <h4 matLine>John Jameson</h4>
-                          <p matLine>Owner</p>
-                        </mat-list-item>
-                        <mat-divider [inset]="true"></mat-divider>
-                        <mat-list-item>
-                          <mat-icon matListAvatar>description</mat-icon>
-                          <h4 matLine>An Item Description</h4>
-                          <p matLine>Description</p>
-                        </mat-list-item>
-                        <mat-divider [inset]="true"></mat-divider>
-                        <mat-list-item>
-                          <mat-icon matListAvatar>vpn_key</mat-icon>
-                          <h4 matLine>1141e8e8-8d24-4956-93c2</h4>
-                          <p matLine>API Key</p>
-                        </mat-list-item>
-                        <mat-divider></mat-divider>
-                        <h3 matSubheader>Dates</h3>
-                        <mat-list-item>
-                          <mat-icon matListAvatar>access_time</mat-icon>
-                          <h4 matLine>Wed, July 6, 2016 11:13 AM</h4>
-                          <p matLine>Last Updated</p>
-                        </mat-list-item>
-                        <mat-divider [inset]="true"></mat-divider>
-                        <mat-list-item>
-                          <mat-icon matListAvatar>today</mat-icon>
-                          <h4 matLine>Wed, July 4, 2016 09:11 AM</h4>
-                          <p matLine>Created</p>
-                        </mat-list-item>
-                      </mat-list>
-                      <mat-divider></mat-divider>
-                      <mat-card-actions>
-                        <button mat-button color="accent" class="text-upper">Edit</button>
-                      </mat-card-actions>
-                    </mat-card>
-                  ]]>
-              </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card class="push-md" flex>
-            <mat-card-title>Item Info</mat-card-title>
-            <mat-card-subtitle>Info About This Item</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <h3 matSubheader>Metadata</h3>
-              <mat-list-item>
-                <mat-icon matListAvatar>account_box</mat-icon>
-                <h4 matLine>John Jameson</h4>
-                <p matLine>Owner</p>
-              </mat-list-item>
-              <mat-divider [inset]="true"></mat-divider>
-              <mat-list-item>
-                <mat-icon matListAvatar>description</mat-icon>
-                <h4 matLine>An Item Description</h4>
-                <p matLine>Description</p>
-              </mat-list-item>
-              <mat-divider [inset]="true"></mat-divider>
-              <mat-list-item>
-                <mat-icon matListAvatar>vpn_key</mat-icon>
-                <h4 matLine>1141e8e8-8d24-4956-93c2</h4>
-                <p matLine>API Key</p>
-              </mat-list-item>
-              <mat-divider></mat-divider>
-              <h3 matSubheader>Dates</h3>
-              <mat-list-item>
-                <mat-icon matListAvatar>access_time</mat-icon>
-                <h4 matLine>Wed, July 6, 2016 11:13 AM</h4>
-                <p matLine>Last Updated</p>
-              </mat-list-item>
-              <mat-divider [inset]="true"></mat-divider>
-              <mat-list-item>
-                <mat-icon matListAvatar>today</mat-icon>
-                <h4 matLine>Wed, July 4, 2016 09:11 AM</h4>
-                <p matLine>Created</p>
-              </mat-list-item>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <button mat-button color="accent" class="text-upper">Edit</button>
-            </mat-card-actions>
-          </mat-card>
-        </mat-card>
-      </div>
-    </div>
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>CRUD Manage List Card</mat-card-title>
-        <mat-card-subtitle>Card with faux-columns & search</mat-card-subtitle>
-        <mat-card-content>
-          <p>In this example, notice the <a [routerLink]="['/components', 'search']" target="_blank">search component</a> in the top left.  Also, using the flex model, you can simulate columns by using the same layout on each row.  See the <a [routerLink]="['/design-patterns', 'management-list']" target="_blank">management list</a> for more implementation details.</p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example4')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example4">
-            <div>
-              <td-highlight lang="html">
-                  <![CDATA[
-                    <mat-card>
-                      <mat-card-title layout>
-                        <mat-form-field class="text-sm" flex>
-                          <input matInput placeholder="Search Items"/>
-                          <span matPrefix><mat-icon>search</mat-icon></span>
-                        </mat-form-field>
-                      </mat-card-title>
-                      <mat-list class="pull-top">
-                        <mat-list-item>
-                          <mat-icon matListAvatar>apps</mat-icon>
-                          <h3 matLine>App Name</h3>
-                          <span flex></span>
-                          <span flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
-                          <span flex="30" class="mat-body-1 tc-grey-500">Modified</span>
-                        </mat-list-item>
-                        <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
-                          <a mat-list-item>
-                            <mat-icon matListAvatar>dns</mat-icon>
-                            <h3 matLine> Item { {i} } </h3>
-                            <p matLine> Item Description </p>
-                            <span flex></span>
-                            <span flex="30" class="mat-body-1 tc-grey-500">Firstname Lastname</span>
-                            <span flex="30" class="mat-body-1 tc-grey-500">Apr 14, 2016 12:32 PM</span>
-                          </a>
-                          <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-                        </ng-template>
-                      </mat-list>
-                    </mat-card>
-                  ]]>
-              </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card class="push-md">
-              <mat-card-title layout>
-                <mat-form-field class="text-sm" flex>
-                  <input matInput placeholder="Search Items"/>
-                  <span matPrefix><mat-icon>search</mat-icon></span>
-                </mat-form-field>
-              </mat-card-title>
-              <mat-list class="pull-top">
-                <mat-list-item>
-                  <mat-icon matListAvatar>apps</mat-icon>
-                  <h3 matLine>App Name</h3>
-                  <span flex></span>
-                  <span flex="30" class="pad-left mat-body-1 tc-grey-500">Owner</span>
-                  <span flex="30" class="mat-body-1 tc-grey-500" hide-md hide-sm hide-xs>Modified</span>
-                </mat-list-item>
-                <ng-template let-item="$implicit" let-i="index" let-last="last" ngFor [ngForOf]="[1, 2, 3, 4]">
-                  <a mat-list-item>
-                    <mat-icon matListAvatar>dns</mat-icon>
-                    <h3 matLine> Item {{i}} </h3>
-                    <p matLine> Item Description </p>
-                    <span flex></span>
-                    <span flex="30" class="mat-body-1 tc-grey-500">Firstname Lastname</span>
-                    <span flex="30" class="mat-body-1 tc-grey-500" hide-md hide-sm hide-xs>Apr 14, 2016 12:32 PM</span>
-                  </a>
-                  <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-                </ng-template>
-              </mat-list>
-            </mat-card>
-        </mat-card>
-      </div>
-    </div>
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Card with Image Variations</mat-card-title>
-        <mat-card-subtitle>Card with sepcial image elements</mat-card-subtitle>
-        <mat-card-content>
-          <p>Images displayed within cards inherit styling which removes margin and padding, depending on where the imgae is positioned within the card. Notice if the image is first it has proper rounded corners.</p>
-          <p>Examples are leveraging the following special image elements:</p>
-          <mat-list>
-            <a mat-list-item>
-              <span matLine>Card Small Image</span>
-              <p matLine>mat-card-sm-image</p>
-            </a>
-            <mat-divider></mat-divider>
-            <a mat-list-item>
-              <span matLine>Card Medium Image</span>
-              <p matLine>mat-card-md-image</p>
-            </a>
-          </mat-list>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example5')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example5">
-            <div>
-              <td-highlight lang="html">
-                <![CDATA[
-                  <div layout-gt-xs="row">
-                    <mat-card>
-                      <img mat-card-image src="https://placekitten.com/g/600/200">
-                      <mat-card-title>Card with Image First</mat-card-title>
-                      <mat-card-subtitle>100% Width Image</mat-card-subtitle>
-                      <mat-card-content>
-                      </mat-card-content>
-                    </mat-card>
-                  </div>
-                  <div layout-gt-xs="row">
-                    <mat-card>
-                      <mat-card-title-group>
-                        <mat-card-title class="text-xl">Card with Small Image</mat-card-title>
-                        <mat-card-subtitle>80px x 80px Image</mat-card-subtitle>
-                        <img mat-card-sm-image src="https://placekitten.com/g/200/200">
-                      </mat-card-title-group>
-                    </mat-card>
-                  </div>
-                  <div layout-gt-xs="row">
-                    <mat-card>
-                      <mat-card-title-group>
-                        <mat-card-title class="text-xxl">Card with Medium Image</mat-card-title>
-                        <mat-card-subtitle>112px x 112px Image</mat-card-subtitle>
-                        <img mat-card-md-image src="https://placekitten.com/g/300/300">
-                      </mat-card-title-group>
-                    </mat-card>
-                  </div>
-                  <div layout-gt-xs="row">
-                    <mat-card>
-                      <mat-card-title-group>
-                        <mat-card-title>Card with Large Image</mat-card-title>
-                        <mat-card-subtitle>152px x 152px image</mat-card-subtitle>
-                        <img mat-card-lg-image src="https://placekitten.com/g/400/200">
-                      </mat-card-title-group>
-                    </mat-card>
-                  </div>
-                  ]]>
-              </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <div class="push-md">
-            <div layout-gt-xs="row">
-              <mat-card>
-                <img alt="kitten" mat-card-image src="https://placekitten.com/g/600/200">
-                <mat-card-title>Card with Image First</mat-card-title>
-                <mat-card-subtitle>100% Width Image</mat-card-subtitle>
-                <mat-card-content>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div layout-gt-xs="row">
-              <mat-card>
-                <mat-card-title-group>
-                  <mat-card-title class="text-xl">Card with Small Image</mat-card-title>
-                  <mat-card-subtitle>80px x 80px Image</mat-card-subtitle>
-                  <img alt="kitten" mat-card-sm-image src="https://placekitten.com/g/200/200">
-                </mat-card-title-group>
-              </mat-card>
-            </div>
-            <div layout-gt-xs="row">
-              <mat-card>
-                <mat-card-title-group>
-                  <mat-card-title class="text-xxl">Card with Medium Image</mat-card-title>
-                  <mat-card-subtitle>112px x 112px Image</mat-card-subtitle>
-                  <img alt="kitten" mat-card-md-image src="https://placekitten.com/g/300/300">
-                </mat-card-title-group>
-              </mat-card>
-            </div>
-            <div layout-gt-xs="row">
-              <mat-card>
-                <mat-card-title-group>
-                  <mat-card-title>Card with Large Image</mat-card-title>
-                  <mat-card-subtitle>152px x 152px Image</mat-card-subtitle>
-                  <img alt="kitten" mat-card-lg-image src="https://placekitten.com/g/400/200">
-                </mat-card-title-group>
-              </mat-card>
-            </div>
-          </div>
-        </mat-card>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>

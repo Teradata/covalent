@@ -110,8 +110,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   .tc-warn {
     color: mat-color($warn-alt);
   }
-  a:not(.mat-button),
-  a:not(.mat-icon-button) {
+  a:not([class^='mat-']) {
     color: mat-color($accent-alt);
     &:hover {
       color: darken(mat-color($accent-alt), 10%);

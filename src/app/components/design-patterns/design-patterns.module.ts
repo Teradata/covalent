@@ -9,6 +9,7 @@ import { CardsComponent } from './cards/cards.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ManagementListComponent } from './management-list/management-list.component';
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { FABComponent } from './fab/fab.component';
 import { SteppersComponent } from './steppers/steppers.component';
 import { EmptyStatesComponent } from './empty-states/empty-states.component';
 
@@ -42,6 +43,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     AlertsComponent,
     ManagementListComponent,
     NavigationDrawerComponent,
+    FABComponent,
     SteppersComponent,
     EmptyStatesComponent,
   ],

@@ -21,42 +21,44 @@
     <div layout-gt-sm="row">
       <div flex-gt-sm="25" class="mat-typography pad relative">
         <h2>Usage</h2>
-        <h3>Stepper Component</h3>
-        <p>Follow component guidelines.  Vertical mode prefered.</p>
-        <div class="pad-bottom">
+        <mat-list class="pull-left pull-right">
+          <mat-list-item>
+            <h3 matLine>Stepper Component</h3>
+            <p matLine>Group related tasks in steps</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Label</h3>
-        <p>Follow Material Design guidelines.</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Label</h3>
+            <p matLine>Brief step introduction</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Sublabel</h3>
-        <p>Follow Material Design guidelines.</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Sublabel</h3>
+            <p matLine>More detailed explaination</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Step Contents</h3>
-        <p>Each step should be fully self-contained and complete before moving to the next step.</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Step Contents</h3>
+            <p matLine>Self-contained, related tasks</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h3>Step Summary</h3>
-        <p>Optional summary displayed when step is complete.</p>
-        <div class="pad-bottom">
+          <mat-list-item>
+            <h3 matLine>Step Summary</h3>
+            <p matLine>Summary of completed task</p>
+          </mat-list-item>
           <mat-divider></mat-divider>
-        </div>
-        <h2 class="push-bottom-none">Guidelines</h2>
+        </mat-list>
+        <h2 class="push-top push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
           <a mat-list-item href="https://material.io/guidelines/components/steppers.html" target="_blank">
-            <mat-icon style="font-size: 15px">launch</mat-icon>
-            <span matLine>Material Design</span>
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
             <p matLine>Stepper Guidelines</p>
           </a>
           <mat-divider></mat-divider>
           <a mat-list-item href="https://material.angular.io/components/stepper/overview" target="_blank">
-            <mat-icon style="font-size: 15px">launch</mat-icon>
-            <span matLine>Angular Material</span>
+            <mat-icon class="mat-caption">launch</mat-icon>
+            <h3 matLine>Angular Material</h3>
             <p matLine>Stepper Guidelines</p>
           </a>
         </mat-nav-list>
