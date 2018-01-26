@@ -373,7 +373,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             <head>
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-                <link rel="stylesheet" data-name="vs/editor/editor.main" 
+                <link rel="stylesheet" data-name="vs/editor/editor.main"
                     href="file://${this._editorNodeModuleDirOverride}/assets/monaco/vs/editor/editor.main.css">
             </head>
             <body style="height:100%;width: 100%;margin: 0;padding: 0;overflow: hidden;">

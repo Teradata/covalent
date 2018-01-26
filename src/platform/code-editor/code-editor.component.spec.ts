@@ -235,13 +235,13 @@ describe('Component: App', () => {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor1 automaticLayout style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>  
+      <td-code-editor #editor1 automaticLayout style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
     </div>
     <div>
-      <td-code-editor #editor2 automaticLayout style="height: 200px" theme="vs" flex language="HTML"></td-code-editor>  
+      <td-code-editor #editor2 automaticLayout style="height: 200px" theme="vs" flex language="HTML"></td-code-editor>
     </div>
     <div>
-      <td-code-editor #editor3 automaticLayout style="height: 200px" theme="vs" flex language="css"></td-code-editor>  
+      <td-code-editor #editor3 automaticLayout style="height: 200px" theme="vs" flex language="css"></td-code-editor>
     </div>`,
 })
 class TestMultipleEditorsComponent {
@@ -253,7 +253,7 @@ class TestMultipleEditorsComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor1 [editorOptions]="{readOnly:true}" style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>  
+      <td-code-editor #editor1 [editorOptions]="{readOnly:true}" style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
     </div>
 `,
 })

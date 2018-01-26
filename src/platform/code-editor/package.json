@@ -1,6 +1,6 @@
 {
   "name": "@covalent/code-editor",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-rc.1",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "main": "./code-editor.umd.js",
@@ -37,10 +37,10 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "monaco-editor": "^0.8.0"
+    "monaco-editor": "^0.10.1"
   },
   "peerDependencies": {
-    "@angular/common": "^4.2.0",
-    "@angular/core": "^4.2.0"
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0"
   }
 }
