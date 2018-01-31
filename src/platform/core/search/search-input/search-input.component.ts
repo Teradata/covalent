@@ -114,8 +114,8 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
 
   ngOnInit(): void {
     this._input.ngControl.valueChanges.pipe(
-      skip(1), // skip first change when value is set to undefined
       debounceTime(this.debounce),
+      skip(1), // skip first change when value is set to undefined
     ).subscribe((value: string) => {
       this._searchTermChanged(value);
     });
