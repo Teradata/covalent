@@ -96,7 +96,7 @@ Covalent uses [ng-packagr](https://github.com/dherges/ng-packagr) to package the
 
     * Create Feature's **Secondary** Entry Point
         1. Add a new directory `./src/platform/[my-primary-entry-name]/[my-secondary-entry-name]` (EX: `@covalent/core/data-table`)
-          1. Add a new file `package.json` with the minimum content below. If this secondary entry point uses any inter-dependencies you will have to add those inter-dependencies to the `umdModuleIds` see `./src/platform/ng-package-common.js` as an example.
+          1. Add a new file `package.json` with the minimum content below. If this secondary entry point uses any inter-dependencies you will have to add those inter-dependencies to the `umdModuleIds` see `./src/platform/core/data-table/package.json` as an example. You can also reference the `umdModuleIds` in `./src/platform/ng-package-common.js`.
               ```
               {
                 "ngPackage": {
