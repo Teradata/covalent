@@ -1,7 +1,7 @@
 # Developer Guide for the Platform
 
 * [Source Structure](#source-structure)
-* [Adding a new platform component](#adding-a-new-platform-component) 
+* [Adding a new platform feature (component/module/utility)](#adding-a-new-platform-feature-componentmoduleutility) 
 * [Adding a new documentation component](#adding-a-new-documentation-component) 
 
 ## Source Structure
