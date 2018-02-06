@@ -14,7 +14,7 @@
 1. Notifications need to be updated in the covalent `home` screen.
 2. Make sure the `platform` `package.json`s point to the correct versions.
 3. `ng serve --aot` works fine.
-4. `npm run build:release` works fine.
+4. `npm run build:lib` works fine.
 
 #### Start Release
 
@@ -43,7 +43,7 @@ Execute `npm run release:finish -- [version]` to finish the release process. The
 #### Publish Release
 
 Execute `npm run publish:npm` from develop branch to start the automatic publishing process. The steps executed are:
-  1. Executes `npm run build:release` process.
+  1. Executes `npm run build:lib` process.
   2. Executes `bash scripts/npm-publish` process.
 
 #### Post Release Checklist

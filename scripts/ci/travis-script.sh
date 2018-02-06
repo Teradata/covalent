@@ -36,7 +36,7 @@ if [ "${MODE}" = "lint" ]; then
 elif [ "${MODE}" = "aot" ]; then
   npm run build:docs
 elif [ "${MODE}" = "release" ]; then
-  npm run build:release
+  npm run build:lib
 elif [ "${MODE}" = "unit-test" ]; then
   npm run test
 elif [ "${MODE}" = "a11y" ]; then
