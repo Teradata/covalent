@@ -2,7 +2,7 @@
 set -e
 
 # build and test ssr in universal app
-npm run build:release
+npm run build:lib
 rm -rf .td_test_universal
 rm -f deploy/platform/core/covalent-core-*.tgz
 
