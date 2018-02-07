@@ -1,3 +1,16 @@
+<a name="1.0.0-rc.5"></a>
+# [1.0.0-rc.5 Compiled Typewritter](https://github.com/teradata/covalent/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2018-02-07)
+
+We were going to release stable, but we wanted to do one final thing before that.. and that is bump `ng-packagr` to its stable release and make sure `Covalent` can be used with `fullTemplateTypeCheck` in apps.
+
+
+### Bug Fixes
+
+* **lib:** fix covalent build in case typeCheck is used in apps ([#1117](https://github.com/teradata/covalent/issues/1117)) ([71c79a7](https://github.com/teradata/covalent/commit/71c79a7))
+* **search-input:** make sure initializing ngModel doesnt trigger a debounce ([#1109](https://github.com/teradata/covalent/issues/1109)) ([0bc5be6](https://github.com/teradata/covalent/commit/0bc5be6))
+
+
+
 <a name="1.0.0-rc.4"></a>
 # [1.0.0-rc.4 Recursive Fedora](https://github.com/teradata/covalent/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2018-01-26)
 
