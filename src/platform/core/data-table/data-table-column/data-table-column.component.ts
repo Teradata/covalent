@@ -104,7 +104,7 @@ export class TdDataTableColumnComponent {
   /**
    * Listening to click event on host to throw a sort event
    */
-  @HostListener('click', ['event'])
+  @HostListener('click')
   handleClick(): void {
     if (this.sortable) {
       this.onSortChange.emit({name: this.name, order: this._sortOrder});

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class TdTimeDifferencePipe implements PipeTransform {
-  transform(start: any, end: any): string {
+  transform(start: any, end?: any): string {
     let startTime: Date = new Date(start);
     let endTime: Date;
 

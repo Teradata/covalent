@@ -55,7 +55,7 @@ export class TdDataTableRowComponent {
   /**
    * Listening to click event to explicitly focus the row element.
    */
-  @HostListener('click', ['$event'])
+  @HostListener('click')
   clickListener(): void {
     this.focus();
   }

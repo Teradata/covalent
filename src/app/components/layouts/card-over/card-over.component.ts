@@ -8,7 +8,7 @@ import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CardOverComponent {
 
-  routes: Object[] = [{
+  routes: any[] = [{
       icon: 'home',
       route: '.',
       title: 'Home',
