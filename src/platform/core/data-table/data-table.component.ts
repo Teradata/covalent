@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
 import { DOCUMENT, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { coerceBooleanProperty} from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 
 import { Observable } from 'rxjs/Observable';
@@ -962,13 +962,13 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       let rowHeightSum: number = 0;
       // loop through all rows to see if we have their height cached
       // and sum them all to calculate the total height
-      this._data.forEach((d: any, index: number) => {
+      this._data.forEach((d: any, i: number) => {
         // iterate through all rows at first and assume all
         // rows are the same height as the first one
-        if (!this._rowHeightCache[index]) {
-          this._rowHeightCache[index] = this._rowHeightCache[0] || TD_VIRTUAL_DEFAULT_ROW_HEIGHT;
+        if (!this._rowHeightCache[i]) {
+          this._rowHeightCache[i] = this._rowHeightCache[0] || TD_VIRTUAL_DEFAULT_ROW_HEIGHT;
         }
-        rowHeightSum += this._rowHeightCache[index];
+        rowHeightSum += this._rowHeightCache[i];
         // check how many rows have been scrolled
         if (this._scrollVerticalOffset - rowHeightSum > 0) {
           scrolledRows++;

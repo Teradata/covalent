@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import 'zone.js';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
-import {join} from 'path';
+import { join } from 'path';
 
 import { CombatTrainingServerModuleNgFactory } from './combat-training/combat-training.ngfactory';
 import { readFileSync } from 'fs-extra';
