@@ -1,0 +1,15 @@
+.td-dynamic-file-input-wrapper {
+  // [layout="row"]
+  flex-direction: row;
+  // [layout]
+  display: flex;
+  box-sizing: border-box;
+  .td-dynamic-file-input-field {
+    // [flex]
+    flex: 1;
+    box-sizing: border-box;
+  }
+}
+.td-file-input {
+  margin-left: 10px;
+}

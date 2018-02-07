@@ -1,0 +1,53 @@
+@import '../../../node_modules/@angular/material/theming';
+
+@mixin covalent-markdown-theme($theme) {
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  td-markdown {
+    a {
+      color: mat-color($accent);
+    }
+    h1, h2 {
+      border-bottom-color: mat-color($foreground, divider);
+    }
+    h3,h4,h5,h6 {
+      color: mat-color($foreground, secondary-text);
+    }
+    hr {
+      border-color: mat-color($foreground, divider);
+    }
+    blockquote {
+      color: mat-color($foreground, secondary-text);
+      border-left-color: mat-color($foreground, divider);
+    }
+    table {
+      th,
+      td {
+        border-color: mat-color($foreground, dividers);
+      }
+      tr {
+        border-top-color: mat-color($foreground, dividers);
+        &:nth-child(2n) {
+          background-color: mat-color($foreground, dividers);
+        }
+      }
+    }
+    img {
+      background-color: mat-color($background, card);
+    }
+    code {
+      background-color: mat-color($background, hover);
+    }
+    .highlight pre,
+    pre {
+      background-color: mat-color($background, app-bar);
+    }
+    kbd {
+      color: mat-color($foreground, secondary-text);
+      background-color: mat-color($background, app-bar);
+      border-color: mat-color($foreground, divider);
+      border-bottom-color: mat-color($foreground, disabled);
+    }
+  }
+}

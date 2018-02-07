@@ -1,0 +1,76 @@
+@import 'theme-functions';
+@import 'variables';
+
+@mixin covalent-typography() {
+  body {
+    /************
+    * Headings
+    ************/
+    .md-display-4 {
+      font-size: $display-4-font-size-base;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: $display-4-font-size-base;
+    }
+
+    .md-display-3 {
+      font-size: $display-3-font-size-base;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      line-height: $display-3-font-size-base;
+    }
+
+    .md-display-2 {
+      font-size: $display-2-font-size-base;
+      font-weight: 400;
+      line-height: rem(6.4);
+    }
+
+    .md-display-1 {
+      font-size: $display-1-font-size-base;
+      font-weight: 400;
+      line-height: rem(4);
+    }
+
+    .md-headline {
+      font-size: $headline-font-size-base;
+      font-weight: 400;
+      line-height: rem(3.2);
+    }
+
+    .md-title {
+      font-size: $title-font-size-base;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+    }
+
+    .md-subhead {
+      font-size: $subhead-font-size-base;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: rem(2.4);
+    }
+
+    /************
+    * Body Copy
+    ************/
+    .md-body-1 {
+      font-size: $body-font-size-base;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: rem(2);
+    }
+
+    .md-body-2 {
+      font-size: $body-font-size-base;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: rem(2.4);
+    }
+
+    .md-caption {
+      font-size: $caption-font-size-base;
+      letter-spacing: 0.02em;
+    }
+  }
+}

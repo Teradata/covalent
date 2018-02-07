@@ -1,0 +1,60 @@
+$backdrop-index: 80;
+$checkbox-size: 18px;
+
+:host {
+  display: block;
+  overflow: hidden;
+  .td-data-table-scrollable {
+    position: relative;
+    overflow: auto;
+    height: calc(100% - 56px);
+  }
+}
+
+table.td-data-table {
+  width: auto !important;
+  &.mat-selectable tbody > tr.td-data-table-row {
+    transition: background-color 0.2s;
+  }
+
+  &.mat-selectable .td-data-table-column,
+  &.mat-selectable th.td-data-table-column,
+  &.mat-selectable td.td-data-table-cell {
+    &:first-child > .td-data-table-column-content-wrapper {
+      width: 18px;
+      min-width: 18px;
+      padding: 0 24px;
+    }
+    &:nth-child(2) > .td-data-table-column-content-wrapper {
+      padding-left: 0;
+    }
+    [dir='rtl'] & {
+      &:nth-child(2) > .td-data-table-column-content-wrapper {
+        padding-right: 0;
+        padding-left: 28px;
+      }
+    }
+  }
+
+  td.mat-checkbox-cell,
+  th.mat-checkbox-column {
+    min-width: 42px;
+    width: 42px;
+    font-size: 0 !important;
+    mat-pseudo-checkbox {
+      width: $checkbox-size;
+      height: $checkbox-size;
+      ::ng-deep &.mat-pseudo-checkbox-checked::after {
+        width: 11px !important;
+        height: 4px !important;
+      }
+    }
+    mat-checkbox {
+      ::ng-deep .mat-checkbox-inner-container {
+        width: $checkbox-size;
+        height: $checkbox-size;
+        margin: 0;
+      }
+    }
+  }
+}

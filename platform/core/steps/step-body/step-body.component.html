@@ -1,0 +1,18 @@
+<ng-content></ng-content>
+<div class="td-step-body">
+  <div class="td-step-content-wrapper"
+       [@tdCollapse]="!active">
+    <div #contentRef cdkScrollable [class.td-step-content]="hasContent">
+      <ng-content select="[td-step-body-content]"></ng-content>
+    </div>
+    <div #actionsRef
+         [class.td-step-actions]="hasActions">
+      <ng-content select="[td-step-body-actions]"></ng-content>
+    </div>
+  </div>
+  <div #summaryRef
+       [@tdCollapse]="active || !isComplete()"
+       [class.td-step-summary]="hasSummary">
+    <ng-content select="[td-step-body-summary]"></ng-content>
+  </div>
+</div>

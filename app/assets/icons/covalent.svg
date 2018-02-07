@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Covalent</title>
+    <desc>Copyright 2017 Teradata</desc>
+    <defs></defs>
+    <g id="covalent" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="covalent-inner">
+            <g id="Group-2" transform="translate(36.000000, 2.000000)">
+                <polygon id="Polygon-1" fill="#FB8C00" points="220.217795 0 440.43559 127.142803 425.397194 381.42841 220.217795 508.571213 13.6712692 381.42841 -3.60176777e-16 127.142803"></polygon>
+                <path d="M220.267949,0.0289565105 L440.43559,127.142803 L425.397194,381.42841 L220.267949,508.540134 L220.267949,0.0289565105 Z" id="Combined-Shape" fill="#EF6C00"></path>
+            </g>
+            <g id="Group-3" transform="translate(72.800003, 44.000000)">
+                <path d="M183.5,0 L367,106 L354.469016,318 L183.5,424 L11.3918037,318 L4.47018738e-14,106 L183.5,0 Z M183.5,21.1640078 L18.3188464,116.582004 L29.7106501,307.417996 L183.5,402.835992 L337.28935,307.417996 L348.681154,116.582004 L183.5,21.1640078 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <g id="Group-3-2" transform="translate(58.000000, 100.000000)">
+                    <path d="M58,150.511111 L0,117 L2.21525301e-14,39 L67.5,0 L125.5,33.5111111 L183.5,0 L251,39 L251,117 L193,150.511111 L193,217 L125.5,256 L58,217 L58,150.511111 Z M77,150.511111 L77,205.25 L125.5,233 L174,205.25 L174,150.511111 L125.5,122.488889 L77,150.511111 Z M135,105.822165 L182.5,133 L231,105.25 L231,49.75 L182.5,22 L135,49.1778351 L135,105.822165 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                    <polygon id="Rectangle" fill="#F57C01" transform="translate(125.488429, 150.486382) rotate(-315.000000) translate(-125.488429, -150.486382) " points="105.645117 130.301508 159.781832 116.19298 144.01169 169.325305 91.1950268 184.779785"></polygon>
+                    <polygon id="Rectangle-2" fill="#F57C01" transform="translate(182.999371, 49.451626) rotate(-315.000000) translate(-182.999371, -49.451626) " points="163.235712 30.3944639 217.127747 15.7063222 201.404709 68.5634613 148.870995 83.1969289"></polygon>
+                    <polygon id="Rectangle-3" fill="#FB8C00" transform="translate(158.797121, 91.264622) rotate(-315.000000) translate(-158.797121, -91.264622) " points="152.718584 118.832614 205.378176 104.325024 164.749781 63.6966293 112.216067 78.3300969"></polygon>
+                </g>
+            </g>
+            <polygon id="Rectangle-4" fill="#FFF6EA" transform="translate(198.143700, 192.993939) rotate(-315.000000) translate(-198.143700, -192.993939) " points="178.38004 173.936777 232.272076 159.248636 216.549038 212.105775 164.015323 226.739242"></polygon>
+            <polygon id="Rectangle-5" fill="#FFE3BF" transform="translate(221.554883, 235.431294) rotate(-315.000000) translate(-221.554883, -235.431294) " points="249.524842 228.950789 234.213318 282.414315 193.584923 241.785921 209.022325 188.448272"></polygon>
+        </g>
+    </g>
+</svg>

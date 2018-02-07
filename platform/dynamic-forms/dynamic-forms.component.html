@@ -1,0 +1,38 @@
+<form [formGroup]="dynamicForm" novalidate>
+  <div class="td-dynamic-form-wrapper">
+    <ng-template let-element ngFor [ngForOf]="elements">
+      <div class="td-dynamic-element-wrapper"
+          [style.max-width.%]="element.flex ? element.flex : 100"
+          [style.flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+          [style.-ms-flex]="'1 1 ' + (element.flex ? element.flex : 100) + '%'"
+          [style.-webkit-box-flex]="1">
+        <td-dynamic-element
+          #dynamicElement
+          *ngIf="dynamicForm.controls[element.name]"
+          [formControlName]="element.name"
+          [dynamicControl]="dynamicForm.controls[element.name]"
+          [id]="element.name"
+          [label]="element.label || element.name"
+          [type]="element.type"
+          [required]="element.required"
+          [min]="element.min"
+          [max]="element.max"
+          [minLength]="element.minLength"
+          [maxLength]="element.maxLength"
+          [selections]="element.selections">
+        </td-dynamic-element>
+        <div class="tc-red-600"
+             [style.font-size.%]="'70'"
+             [style.position]="'absolute'"
+             [style.bottom.px]="'10'"
+              *ngIf="getErrorTemplateRef(element.name) && dynamicForm.controls[element.name]?.errors">
+          <ng-template
+            [ngTemplateOutlet]="getErrorTemplateRef(element.name)"
+            [ngTemplateOutletContext]="{control: dynamicForm.controls[element.name], errors: dynamicForm.controls[element.name]?.errors}">
+          </ng-template>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <ng-content></ng-content>
+</form>

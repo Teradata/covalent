@@ -1,0 +1,30 @@
+@mixin td-toolbar-utilities() {
+  mat-toolbar {
+    [mat-button] {
+      &:first-of-type:not(:last-child) {
+        margin-left: -6px;
+        [dir='rtl'] & {
+          margin-right: -6px;
+          margin-left: 0;
+        }
+      }
+      &:last-of-type:not(:first-child) {
+        margin-right: -6px;
+        [dir='rtl'] & {
+          margin-left: -6px;
+          margin-right: 0;
+        }
+      }
+    }
+    .mat-icon-logo {
+      margin-right: 10px;
+      [dir='rtl'] & {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+    }
+    [mat-icon-button] {
+      margin: 0 6px;
+    }
+  }
+}

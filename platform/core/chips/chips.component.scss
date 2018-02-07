@@ -1,0 +1,130 @@
+@import '../common/styles/rtl';
+
+:host {
+  display: block;
+  padding: 0 5px;
+  min-height: 48px;
+  .td-chips-wrapper {
+    min-height: 42px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    &.td-chips-stacked .mat-basic-chip,
+    &.td-chips-stacked .td-chips-form-field {
+      width: 100%;
+    }
+    &.td-chips-input-before-position {
+      .td-chips-form-field {
+        order: -1;
+      }
+    }
+  }
+  .td-chip {
+    &, > .td-chip-content {
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout row
+      flex-direction: row;
+      // layout-align start center
+      max-width: 100%;
+      align-items: center;
+      align-content: center;
+      justify-content: start;
+      &.td-chip-stacked {
+        // layout-align space-between center
+        justify-content: space-between;
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 2px;
+    }
+    /* TODO see if we can make styles more abstract to future proof for contact chips */
+    .mat-basic-chip {
+      display: inline-block;
+      cursor: default;
+      border-radius: 16px;
+      @include rtl(margin, 8px 8px 0 0, 8px 0 0 8px);
+      .td-chip {
+        min-height: 32px;
+        line-height: 32px;
+        font-size: 13px;
+        @include rtl(padding, 0 0 0 12px, 0 12px 0 0);
+        [td-chip-avatar] {
+          display: inline-block;
+          order: -20;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 32px;
+          width: 32px;
+          @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
+          border-radius: 50%;
+        }
+      }
+      box-sizing: border-box;
+      max-width: 100%;
+      position: relative;
+      &.td-chip-after-pad {
+        @include rtl(padding, 0 12px 0 0, 0 0 0 12px);
+      }
+      mat-icon.td-chip-removal {
+        margin: 0 4px;
+        font-size: 21px;
+        line-height: 22px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .td-chips-stacked {
+      .mat-basic-chip {
+        margin: 4px 0;
+        &:first-of-type {
+          margin: 8px 0 4px;
+        }
+        &:last-of-type {
+          margin: 4px 0 8px;
+        }
+      }
+    }
+  }
+  .mat-form-field-underline {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+
+    &.mat-disabled {
+      background-position: 0;
+      bottom: -4px;
+      background-color: transparent;
+    }
+
+    .mat-form-field-ripple {
+      position: absolute;
+      height: 2px;
+      top: 0;
+      width: 100%;
+      transform-origin: 50%;
+      transform: scaleX(0.5);
+      visibility: hidden;
+      opacity: 0;
+      transition: background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+      &.mat-focused {
+        visibility: visible;
+        opacity: 1;
+        transform: scaleX(1);
+        transition: transform 150ms linear, background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+      }
+    }
+  }
+  ::ng-deep mat-form-field {
+    .mat-form-field-underline {
+      display: none;
+    }
+  }
+}

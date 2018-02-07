@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Covalent</title>
+<desc>Copyright 2017 Teradata</desc>
+<g id="covalent-outline" transform="translate(-496 -233)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 496 233L 1008 233L 1008 745L 496 745L 496 233Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="covalent-outline-inner" clip-path="url(#clip-0)">
+<g id="covalent-outline-shape0">
+<use xlink:href="#path0_fill" transform="translate(587.119 298.164)"/>
+</g>
+<g id="covalent-outline-shape1">
+<use xlink:href="#path1_fill" transform="translate(532 235)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path2_fill" fill-rule="evenodd" d="M 330.362 95.418L 165.181 0L 0 95.418L 11.3918 286.254L 165.181 381.672L 318.971 286.254L 330.362 95.418ZM 290.681 195.836L 232.681 229.347L 232.681 295.836L 165.181 334.836L 97.6812 295.836L 97.6812 229.347L 39.6812 195.836L 39.6812 117.836L 107.181 78.836L 165.181 112.347L 223.181 78.836L 290.681 117.836L 290.681 195.836ZM 222.181 100.836L 270.681 128.586L 270.681 184.086L 222.181 211.836L 173.681 184.086L 173.681 128.586L 222.181 100.836ZM 213.681 228.586L 165.181 200.836L 116.681 228.586L 116.681 284.086L 165.181 311.836L 213.681 284.086L 213.681 228.586Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 220.218 0L 440.436 127.143L 425.397 381.428L 220.218 508.571L 13.6713 381.428L 0 127.143L 220.218 0ZM 220.3 42L 403.8 148L 391.269 360L 220.3 466L 48.1918 360L 36.8 148L 220.3 42Z"/>
+</defs>
+</svg>

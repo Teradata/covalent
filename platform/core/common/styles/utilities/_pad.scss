@@ -1,0 +1,36 @@
+@mixin pad($direction: '') {
+  .pad#{$direction} {
+    padding#{$direction}: 16px;
+  }
+  .pad#{$direction}-xxl {
+    padding#{$direction}: 56px;
+  }
+  .pad#{$direction}-xl {
+    padding#{$direction}: 48px;
+  }
+  .pad#{$direction}-lg {
+    padding#{$direction}: 32px;
+  }
+  .pad#{$direction}-md {
+    padding#{$direction}: 24px;
+  }
+  .pad#{$direction}-sm {
+    padding#{$direction}: 8px;
+  }
+  .pad#{$direction}-xs {
+    padding#{$direction}: 4px;
+  }
+  .pad#{$direction}-none {
+    padding#{$direction}: 0;
+  }
+}
+
+@mixin td-padding-utilities() {
+  body {
+    @include pad();
+    @include pad(-bottom);
+    @include pad(-top);
+    @include pad(-left);
+    @include pad(-right);
+  }
+}

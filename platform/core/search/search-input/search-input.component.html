@@ -1,0 +1,21 @@
+<div class="td-search-input">
+  <mat-form-field class="td-search-input-field"
+                  [class.mat-hide-underline]="!showUnderline"
+                  floatPlaceholder="never">
+    <input matInput
+            #searchElement
+            type="search"
+            [(ngModel)]="value"
+            [placeholder]="placeholder"
+            (blur)="handleBlur()"
+            (search)="stopPropagation($event)"
+            (keyup.enter)="handleSearch($event)"/>
+  </mat-form-field>
+  <button mat-icon-button
+          class="td-search-input-clear"
+          type="button"
+          [@searchState]="(searchElement.value ?  'show' : (isRTL ? 'hide-left' : 'hide-right'))"
+          (click)="clearSearch()">
+    <mat-icon>{{clearIcon}}</mat-icon>
+  </button>
+</div>

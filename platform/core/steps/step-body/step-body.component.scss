@@ -1,0 +1,29 @@
+:host {
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // layout="row"
+  flex-direction: row;
+  .td-step-body {
+    overflow-x: hidden;
+    // flex
+    flex: 1;
+    box-sizing: border-box;
+    .td-step-summary,
+    .td-step-content-wrapper {
+      &.ng-animating {
+        overflow: hidden;
+      }
+    }
+    .td-step-content {
+      overflow-x: auto;
+    }
+    .td-step-actions {
+      // layout
+      box-sizing: border-box;
+      display: flex;
+      // layout="row"
+      flex-direction: row;
+    }
+  }
+}

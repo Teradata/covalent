@@ -1,0 +1,18 @@
+<div class="td-layout-nav-wrapper">
+  <mat-toolbar [color]="color">
+    <ng-content select="[td-menu-button]"></ng-content>
+    <span *ngIf="icon || logo || toolbarTitle"
+          [class.cursor-pointer]="routerEnabled"
+          (click)="handleNavigationClick()"
+          class="td-layout-nav-toolbar-content">
+      <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+      <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+      <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
+    </span>
+    <ng-content select="[td-toolbar-content]"></ng-content>
+  </mat-toolbar>
+  <div class="td-layout-nav-content" cdkScrollable>
+    <ng-content></ng-content>
+  </div>
+  <ng-content select="td-layout-footer"></ng-content>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <button mat-raised-button
+          class="td-file-input"
+          type="button"
+          [color]="color" 
+          [multiple]="multiple" 
+          [disabled]="disabled"
+          (keyup.enter)="fileInput.click()"
+          (click)="fileInput.click()"
+          (fileDrop)="handleSelect($event)"
+          tdFileDrop>
+    <ng-content></ng-content>
+  </button>
+  <input #fileInput 
+          class="td-file-input-hidden" 
+          type="file"
+          [attr.accept]="accept"                
+          (fileSelect)="handleSelect($event)"
+          [multiple]="multiple" 
+          [disabled]="disabled"
+          tdFileSelect>
+</div>

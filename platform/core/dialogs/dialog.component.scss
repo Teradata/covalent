@@ -1,0 +1,43 @@
+.td-dialog-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.td-dialog-content {
+  margin-bottom: 16px;
+}
+
+.td-dialog-actions {
+  position: relative;
+  top: 16px;
+  left: 16px;
+  ::ng-deep [dir='rtl'] & {
+    right: 16px;
+    left: auto;
+  }
+}
+
+:host {
+  display: block;
+  .td-dialog-actions {
+    // [layout="row"]
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    .td-dialog-spacer {
+      // flex
+      flex: 1;
+    }
+    ::ng-deep button {
+      text-transform: uppercase;
+      margin-left: 8px;
+      [dir='rtl'] & {
+        margin-right: 8px;
+        margin-left: inherit;
+      }
+      padding-left: 8px;
+      padding-right: 8px;
+      min-width: 64px;
+    }
+  }
+}

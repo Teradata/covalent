@@ -1,0 +1,15 @@
+.td-dialog-input-wrapper {
+  // layout row
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  .td-dialog-input {
+    // flex
+    flex: 1;
+    box-sizing: border-box;
+  }
+}
+
+.td-dialog-message {
+  word-break: break-word;
+}

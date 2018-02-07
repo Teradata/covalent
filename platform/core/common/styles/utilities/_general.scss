@@ -1,0 +1,51 @@
+@mixin td-general-utilities() {
+  body {
+    // Angular 4 added tabindex to everything, this style removes the outline:
+    [tabindex]:focus {
+      outline: none;
+    }
+    .radius-none {
+      border-radius: 0;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    .overflow-auto {
+      overflow: auto;
+    }
+    .overflow-visible {
+      overflow: visible;
+    }
+    .block {
+      display: block;
+    }
+    .inline-block {
+      display: inline-block;
+    }
+    .relative {
+      position: relative;
+    }
+    .fixed {
+      position: fixed;
+    }
+    .height-auto {
+      min-height: 0;
+    }
+    .z-3 {
+      z-index: 3;
+    }
+    .z-2 {
+      z-index: 2;
+    }
+    .z-1 {
+      z-index: 1;
+    }
+    .focus-weight:focus {
+      outline: 0;
+      font-weight: 700;
+    }
+    .cursor-pointer:hover {
+      cursor: pointer;
+    }
+  }
+}

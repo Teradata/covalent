@@ -1,0 +1,25 @@
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-paging-bar-typography($config) {
+  .td-paging-bar {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, caption);
+    }
+  }
+}
+
+@mixin td-paging-bar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  td-paging-bar {
+    &, & mat-select .mat-select-value {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+}

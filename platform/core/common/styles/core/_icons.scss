@@ -1,0 +1,20 @@
+@mixin td-icon-utilities() {
+  mat-list-item,
+  .mat-list-item-content {
+    mat-icon {
+      &[matListAvatar] {
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        display: flex;
+      }
+    }
+  }
+  .mat-icon.mat-icon-logo {
+    height: 24px;
+    width: 100px;
+  }
+  .mat-icon {
+    flex-shrink: 0;
+  }
+}

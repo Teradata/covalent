@@ -1,0 +1,43 @@
+$td-menu-spacing: 8px !default;
+:host {
+  margin-top: -$td-menu-spacing;
+  margin-bottom: -$td-menu-spacing;
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="column"]
+  flex-direction: column;
+}
+:host ::ng-deep {
+  [td-menu-header] {
+    padding: $td-menu-spacing;
+    text-align: center;
+  }
+  mat-list,
+  mat-list[dense],
+  mat-nav-list,
+  mat-nav-list[dense], {
+    a[mat-list-item].mat-2-line,
+    mat-list-item.mat-2-line {
+      height: auto;
+      & .mat-list-item-content {
+        height: auto;
+        padding: $td-menu-spacing;
+        .mat-list-text {
+          padding-right: 0;
+          [dir='rtl'] & {
+            padding-left: 0;
+            padding-right: 16px;
+          }
+        }
+        [matLine] + [matLine] {
+          margin-top: $td-menu-spacing / 2;
+        }
+      }
+    }
+  }
+}
+.td-menu-content {
+  max-height: calc(50vh);
+  overflow-y: auto;
+}

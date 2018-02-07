@@ -1,0 +1,39 @@
+// Utility for fetching a nested value from a typography config.
+@function _td-get-type-value($config, $level, $name) {
+  @return map-get(map-get($config, $level), $name);
+}
+
+// Gets the font size for a level inside a typography config.
+@function td-font-size($config, $level) {
+  @return _td-get-type-value($config, $level, font-size);
+}
+
+// Gets the line height for a level inside a typography config.
+@function td-line-height($config, $level) {
+  @return _td-get-type-value($config, $level, line-height);
+}
+
+// Gets the font weight for a level inside a typography config.
+@function td-font-weight($config, $level) {
+  @return _td-get-type-value($config, $level, font-weight);
+}
+
+// Gets the font-family from a typography config and removes the quotes around it.
+@function td-font-family($config, $level: null) {
+  $font-family: map-get($config, font-family);
+
+  @if $level != null {
+    $font-family: _td-get-type-value($config, $level, font-family);
+  }
+
+  @return unquote($font-family);
+}
+
+// Represents a typography level from the Material design spec.
+@function td-typography-level($font-size, $line-height: $font-size, $font-weight: 400) {
+  @return (
+    font-size: $font-size,
+    line-height: $line-height,
+    font-weight: $font-weight
+  );
+}

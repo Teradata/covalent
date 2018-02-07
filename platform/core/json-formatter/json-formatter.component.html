@@ -1,0 +1,23 @@
+<div class="td-json-formatter-wrapper">
+  <a class="td-key"
+     [class.td-key-node]="hasChildren()"
+     [class.td-key-leaf]="!hasChildren()"
+     [tabIndex]="isObject()? 0 : -1"
+     (keydown.enter)="toggle()"
+     (click)="toggle()">
+    <mat-icon class="td-node-icon" *ngIf="hasChildren()">{{open? 'keyboard_arrow_down' : (isRTL ? 'keyboard_arrow_left' : 'keyboard_arrow_right')}}</mat-icon>
+    <span *ngIf="key" class="key">{{key}}:</span>
+    <span class="value">
+      <span [class.td-empty]="!hasChildren()" *ngIf="isObject()" [matTooltip]="getPreview()" matTooltipPosition="after">
+        <span class="td-object-name">{{getObjectName()}}</span>
+        <span class="td-array-length" *ngIf="isArray()">[{{data.length}}]</span>
+      </span>
+      <span *ngIf="!isObject()" [class]="getType(data)">{{getValue(data)}}</span>
+    </span>
+  </a>
+  <div class="td-object-children" [@tdCollapse]="!(hasChildren() && open)">
+    <ng-template let-key ngFor [ngForOf]="children">
+      <td-json-formatter [key]="key" [data]="data[key]" [levelsOpen]="levelsOpen - 1"></td-json-formatter>
+    </ng-template>
+  </div>
+</div>

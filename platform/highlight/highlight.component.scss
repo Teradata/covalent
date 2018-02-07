@@ -1,0 +1,42 @@
+$code-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+$padding: 16px;
+
+:host ::ng-deep {
+  display: block;
+  overflow-x: auto;
+  padding: $padding;
+  pre,
+  code,
+  .highlight {
+    font-family: $code-font;
+  }
+  pre {
+    display: block;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-family: $code-font;
+    line-height: 1.45;
+    tab-size: 2;
+    -webkit-font-smoothing: auto;
+    -webkit-text-size-adjust: none;
+    position: relative;
+    border-radius: 2px;
+    font-size: 0.8rem;
+  }
+
+  code {
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  .highlight {
+    display: block;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    margin: 0;
+  }
+}

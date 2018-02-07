@@ -1,0 +1,22 @@
+@import './styles/theme-functions';
+
+@mixin td-common-theme($theme) {
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  mat-list-item,
+  .mat-list-item-content {
+    mat-icon {
+      color: mat-color($foreground, icon);
+      &[matListAvatar] {
+        background-color: mat-color($background, hover);
+      }
+    }
+  }
+  .mat-list-text {
+    p {
+      color: mat-color($foreground, disabled);
+    }
+  }
+}

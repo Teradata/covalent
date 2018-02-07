@@ -1,0 +1,61 @@
+<div class="td-chips-wrapper"
+     [class.td-chips-stacked]="stacked"
+     [class.td-chips-input-before-position]="inputPosition === 'before'">
+  <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
+    <mat-basic-chip [class.td-chip-disabled]="disabled"
+                   [class.td-chip-after-pad]="!canRemoveChip"
+                   [color]="color"
+                   (keydown)="_chipKeydown($event, index)"
+                   (blur)="_handleChipBlur($event, chip)"
+                   (focus)="_handleChipFocus($event, chip)">
+      <div class="td-chip" [class.td-chip-stacked]="stacked">
+        <span class="td-chip-content">
+          <span *ngIf="!_chipTemplate?.templateRef">{{chip}}</span>
+          <ng-template
+            *ngIf="_chipTemplate?.templateRef"
+            [ngTemplateOutlet]="_chipTemplate?.templateRef"
+            [ngTemplateOutletContext]="{ chip: chip }">
+          </ng-template>
+        </span>
+        <mat-icon *ngIf="canRemoveChip" class="td-chip-removal" (click)="_internalClick = removeChip(index)">
+          cancel
+        </mat-icon>
+      </div>
+    </mat-basic-chip>
+  </ng-template>
+  <mat-form-field floatPlaceholder="never"
+                  class="td-chips-form-field"
+                  [style.width.px]="canAddChip ? null : 0"
+                  [style.height.px]="canAddChip ? null : 0"
+                  [color]="color">
+    <input matInput
+            #input
+            [tabIndex]="-1"
+            [matAutocomplete]="autocomplete"
+            [formControl]="inputControl"
+            [placeholder]="canAddChip? placeholder : ''"
+            (keydown)="_inputKeydown($event)"
+            (keyup.enter)="_handleAddChip()"
+            (focus)="_handleFocus()">
+  </mat-form-field>
+  <mat-autocomplete #autocomplete="matAutocomplete"
+                   [displayWith]="_removeInputDisplay"
+                   (optionSelected)="addChip($event.option.value)">
+    <ng-template let-item let-first="first" ngFor [ngForOf]="items">
+      <mat-option (click)="_setInternalClick()" [value]="item">
+        <span *ngIf="!_autocompleteOptionTemplate?.templateRef">{{item}}</span>
+        <ng-template
+          *ngIf="_autocompleteOptionTemplate?.templateRef"
+          [ngTemplateOutlet]="_autocompleteOptionTemplate?.templateRef"
+          [ngTemplateOutletContext]="{ option: item }">
+        </ng-template>
+      </mat-option>
+    </ng-template>
+  </mat-autocomplete>
+</div>
+<div *ngIf="chipAddition" class="mat-form-field-underline"
+      [class.mat-disabled]="disabled">
+  <span class="mat-form-field-ripple"
+        [class.mat-focused]="focused"></span>
+</div>
+<ng-content></ng-content>

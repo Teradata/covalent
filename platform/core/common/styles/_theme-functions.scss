@@ -1,0 +1,25 @@
+@function rem($multiplier) {
+  $font-size: 10px;
+  @return $multiplier * $font-size;
+}
+
+// Gets a color from a theme palette (the output of mat-palette).
+// The hue can be one of the standard values (500, A400, etc.), one of the three preconfigured
+// hues (default, lighter, darker), or any of the aforementioned prefixed with "-contrast".
+//
+// @param $color-map The theme palette (output of mat-palette).
+// @param $hue The hue from the palette to use. If this is a value between 0 and 1, it will
+//     be treated as opacity.
+// @param $opacity The alpha channel value for the color.
+@function mat-color($palette, $hue: default, $opacity: null) {
+  // If hueKey is a number between zero and one, then it actually contains an
+  // opacity value, so recall this function with the default hue and that given opacity.
+  @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+    @return mat-color($palette, default, $hue);
+  }
+
+  $color: map-get($palette, $hue);
+  $opacity: if($opacity == null, opacity($color), $opacity);
+
+  @return rgba($color, $opacity);
+}

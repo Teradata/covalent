@@ -1,0 +1,79 @@
+$mat-font-url: 'styles/font/' !default;
+
+@mixin covalent-material-icons() {
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url($mat-font-url + 'MaterialIcons-Regular.eot'); /* For IE6-8 */
+    src: local($mat-font-url + 'Material Icons'),
+      local($mat-font-url + 'MaterialIcons-Regular'),
+      url($mat-font-url + 'MaterialIcons-Regular.woff2') format('woff2'),
+      url($mat-font-url + 'MaterialIcons-Regular.woff') format('woff'),
+      url($mat-font-url + 'MaterialIcons-Regular.ttf') format('truetype');
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+  // Ensure our size prevails over material
+  mat-icon.material-icons {
+    &,&.mat-icon {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  // Rules for sizing the icon.
+  .material-icons.md-18, .material-icons.mat-18 {
+    font-size: 18px;
+    height:18px;
+    width: 18px;
+  }
+  .material-icons.md-24, .material-icons.mat-24 {
+    font-size: 24px;
+    height:24px;
+    width: 24px;
+  }
+  .material-icons.md-36, .material-icons.mat-36 {
+    font-size: 36px;
+    height:36px;
+    width: 36px;
+  }
+  .material-icons.md-48, .material-icons.mat-48 {
+    font-size: 48px;
+    height:48px;
+    width: 48px;
+  }
+
+  // Rules for using icons as black on a light background.
+  .material-icons.md-dark, .material-icons.mat-dark { color: rgba(0, 0, 0, 0.54); }
+  .material-icons.md-dark.md-inactive, .material-icons.mat-dark.mat-inactive { color: rgba(0, 0, 0, 0.26); }
+
+  // Rules for using icons as white on a dark background.
+  .material-icons.md-light, .material-icons.mat-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive, .material-icons.mat-light.mat-inactive { color: rgba(255, 255, 255, 0.3); }
+}

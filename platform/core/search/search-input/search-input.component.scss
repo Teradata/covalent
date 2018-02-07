@@ -1,0 +1,25 @@
+.td-search-input {
+  overflow-x: hidden;
+  // [layout]
+  box-sizing: border-box;
+  display: flex;
+  // [layout="row"]
+  flex-direction: row;
+  // [layout-align="end center"]
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  justify-content: flex-end;
+  .td-search-input-field {
+    flex: 1;
+  }
+  ::ng-deep mat-form-field.mat-hide-underline {
+    .mat-form-field-underline {
+      display: none;
+    }
+  }
+  .td-search-input-clear {
+    // [flex="none"]
+    flex: 0 0 auto;
+  }
+}

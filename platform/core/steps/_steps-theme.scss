@@ -1,0 +1,88 @@
+@import '../common/styles/variables';
+@import '../common/styles/elevation';
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin td-steps-typography($config) {
+  .td-step-label {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-2);
+      weight: td-font-weight($config, body-2);
+    }
+  }
+  .td-step-sublabel {
+    font: {
+      family: td-font-family($config);
+      size: td-font-size($config, body-1);
+    }
+    line-height: td-line-height($config, body-1);
+  }
+}
+
+@mixin td-steps-theme($theme) {
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  td-steps {
+    .td-steps-header {
+      @include mat-elevation(1);
+    }
+    .td-step-content,
+    .td-step-summary,
+    .td-step-actions {
+      margin: $margin;
+    }
+    // steps
+    .td-horizontal-line {
+      border-bottom-color: mat-color($foreground, divider);
+    }
+    .td-vertical-line {
+      border-left-color: mat-color($foreground, divider);
+    }
+    // header
+    .td-step-header {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        background: mat-color($background, 'hover');
+      }
+      .td-step-label-wrapper {
+        .td-step-sublabel {
+          color: mat-color($foreground, secondary-text);
+        }
+        &.mat-inactive {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+        &.mat-warn {
+          &, & * {
+            color: mat-color($warn);
+          }
+        }
+      }
+      .mat-complete {
+        color: mat-color($accent);
+      }
+    }
+    .td-circle {
+      color: mat-color($background, card);
+      &.mat-active {
+        background-color: mat-color($accent);
+      }
+      &.mat-inactive {
+        background-color: mat-color($foreground, disabled);
+      }
+      & mat-icon {
+        fill: mat-color($foreground, text);
+      }
+    }
+    .td-triangle {
+      color: mat-color($warn);
+    }
+    .td-edit-icon {
+      color: mat-color($foreground, icon);
+    }
+  }
+}

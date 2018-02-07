@@ -1,0 +1,23 @@
+@import 'button';
+@import 'card';
+@import 'content';
+@import 'divider';
+@import 'icons';
+@import 'list';
+@import 'sidenav';
+@import 'structure';
+@import 'toolbar';
+@import 'whiteframe';
+
+@mixin covalent-core() {
+  @include td-button-utilities();
+  @include td-card-utilities();
+  @include td-content-utilities();
+  @include td-divider-utilities();
+  @include td-icon-utilities();
+  @include td-list-utilities();
+  @include td-sidenav-utilities();
+  @include td-structure-utilities();
+  @include td-toolbar-utilities();
+  @include td-whiteframe-utilities();
+}
