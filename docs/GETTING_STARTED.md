@@ -152,12 +152,14 @@ System.config({
   // existing configuration options
   map: {
     ...,
-    '@covalent/core': 'npm:@covalent/core/core.umd.js',
+    '@covalent/core/loading': 'npm:@covalent/core/bundles/covalent-core-loading.umd.min.js',
+    '@covalent/core/chips': 'npm:@covalent/core/bundles/covalent-core-chips.umd.min.js',
+    // and any other module you need from @covalent/core/*
     // (optional) Additional configuration options
-    '@covalent/http': 'npm:@covalent/http/http.umd.js',
-    '@covalent/highlight': 'npm:@covalent/highlight/highlight.umd.js',
-    '@covalent/markdown': 'npm:@covalent/markdown/markdown.umd.js',
-    '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/dynamic-forms.umd.js'
+    '@covalent/http': 'npm:@covalent/http/bundles/covalent-http.umd.min.js',
+    '@covalent/highlight': 'npm:@covalent/highlight/bundles/covalent-highlight.umd.min.js',
+    '@covalent/markdown': 'npm:@covalent/markdown/bundles/covalent-markdown.min.umd.js',
+    '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/bundles/covalent-dynamic-forms.umd.min.js'
   }
 });
 ```
