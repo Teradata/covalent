@@ -131,7 +131,7 @@ export class Demo {
 
   file: File;
   
-  constructor(private fileUploadService: TdFileService){ 
+  constructor(private fileUploadService: TdFileService) { 
   };
   
   uploadEvent1(file: File) {    

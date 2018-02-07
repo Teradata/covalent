@@ -137,7 +137,7 @@ Example for **Typescript**:
       private _sources: {[key : string]: Subject<any>} = {};
       private _observables: {[key: string]: Observable<any>} = {};
 
-      constructor(){
+      constructor() {
 
       }
 
@@ -148,7 +148,7 @@ Example for **Typescript**:
       }
 
       public emit(name: string): void {
-        if(this._sources[name]){
+        if(this._sources[name]) {
           this._sources[name].next(null);
         }
       }

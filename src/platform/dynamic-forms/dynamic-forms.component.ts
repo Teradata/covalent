@@ -28,7 +28,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
    * [name] property is required.
    */
   @Input('elements')
-  set elements(elements: ITdDynamicElementConfig[]){
+  set elements(elements: ITdDynamicElementConfig[]) {
     if (elements) {
       this._elements = elements;
     } else {
