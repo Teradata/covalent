@@ -1,3 +1,14 @@
+<a name="1.0.0"></a>
+# [1.0.0 Covalently Bond](https://github.com/teradata/covalent/compare/v1.0.0-rc.5...v1.0.0) (2018-02-11)
+
+We are pleased to announce `covalent@1.0.0` stable!
+
+Thanks to the community for helping us improve Covalent more as each day passes by. 
+
+Now that we are stable, the team will focus on improving our components and adding more and more features going forward.
+
+
+
 <a name="1.0.0-rc.5"></a>
 # [1.0.0-rc.5 Compiled Typewritter](https://github.com/teradata/covalent/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2018-02-07)
 

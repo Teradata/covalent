@@ -1,6 +1,6 @@
 {
   "name": "@covalent/dynamic-forms",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0",
   "description": "Teradata UI Platform Dynamic Forms Module",
   "keywords": [
     "angular",
