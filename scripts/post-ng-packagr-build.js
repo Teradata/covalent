@@ -11,14 +11,14 @@ const config = require('../build.conf');
 gulp.task('move-required-core-files', 'Move required sass files', function() {
   return gulp
     .src(config.paths.PostNgPackngrBuildRequiredFiles)
-    .pipe(gulp.dest(config.paths.deployed + 'core'));
+    .pipe(gulp.dest(config.deployed + 'core'));
 });
 
 
 gulp.task('move-additional-platform-files', 'Move additional platform files', function() {
   return gulp
     .src(config.paths.PostNgPackngrAdditionalFiles)
-    .pipe(gulp.dest(config.paths.deployed));
+    .pipe(gulp.dest(config.deployed));
 });
 
 gulp.task('compile-core-sass', 'compile some core sass to css', function() {
@@ -36,5 +36,5 @@ gulp.task('compile-core-sass', 'compile some core sass to css', function() {
         ]
       })]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.paths.deployed + 'core'));
+    .pipe(gulp.dest(config.deployed + 'core'));
 });

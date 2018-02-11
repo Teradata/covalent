@@ -1,8 +1,10 @@
 'use strict';
 
 module.exports = {
+  deployed: 'deploy/platform/',
+  angularVersion: '5.1.0',
+  materialVersion: '5.1.0',
   paths: {
-    deployed: 'deploy/platform/',
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
       'src/platform/core/**/*.scss',

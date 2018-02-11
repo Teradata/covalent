@@ -1,6 +1,6 @@
 {
   "name": "@covalent/core",
-  "version": "1.0.0",
+  "version": "0.0.0-COVALENT",
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
     "angular",
@@ -34,11 +34,11 @@
     "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/common": "^5.1.0",
-    "@angular/core": "^5.1.0",
-    "@angular/forms": "^5.1.0",
-    "@angular/router": "^5.1.0",
-    "@angular/cdk": "^5.1.0",
-    "@angular/material": "^5.1.0"
+    "@angular/common": "^0.0.0-NG",
+    "@angular/core": "^0.0.0-NG",
+    "@angular/forms": "^0.0.0-NG",
+    "@angular/router": "^0.0.0-NG",
+    "@angular/cdk": "^0.0.0-MATERIAL",
+    "@angular/material": "^0.0.0-MATERIAL"
   }
 }
