@@ -65,7 +65,7 @@ To include the [typography classes](https://teradata.github.io/covalent/#/style-
 
 ### Example including every single mixin
 
-If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](http://localhost:4200/#/docs) docs)
+If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](https://teradata.github.io/covalent/#/docs) docs)
 
 ```css
 @import '~@covalent/core/theming/all-theme';
