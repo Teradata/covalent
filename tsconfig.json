@@ -15,6 +15,9 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
+    "paths": {
+      "@covalent/code-editor/*": ["./platform/code-editor/*"]
+    },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,

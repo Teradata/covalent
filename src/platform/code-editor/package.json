@@ -1,6 +1,6 @@
 {
   "name": "@covalent/code-editor",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "main": "./code-editor.umd.js",

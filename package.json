@@ -1,6 +1,6 @@
 {
   "name": "@covalent/code-editor",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "keywords": [
@@ -97,6 +97,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "merge2": "1.0.2",
+    "ng-packagr": "2.0.0",
     "node-sass": "3.8.0",
     "protractor": "~5.1.0",
     "require-dir": "0.3.2",

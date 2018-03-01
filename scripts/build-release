@@ -1,41 +1,11 @@
 #!/bin/bash
 
-set -o errexit
-
-# Clear deploy/ so that we guarantee there are no stale artifacts.
-echo "Cleaning deploy/"
+echo 'Clean up'
 rm -rf ./deploy
 
-# Perform a build.
-gulp build
-echo "SASS compiled..."
-
-# Prepare for aot
-gulp prepare-aot
-echo "Preparing files for AoT build"
-
-# AoT compilation
-npm run aot
-echo "Compiled TS and generated *.metadata.json files..."
-
-# copy README.md into deploy
-cp -rf README.md deploy/platform/code-editor/
+./node_modules/.bin/ng-packagr -p ./src/platform/code-editor/ng-package.js
 
 # copy Monaco
 mkdir deploy/platform/code-editor/assets
 mkdir deploy/platform/code-editor/assets/monaco
 cp -rf node_modules/monaco-editor/min/* deploy/platform/code-editor/assets/monaco/
-
-# Clean source .ts files
-cd deploy/
-find . -name "*.ts" ! -name "*.d.ts" -type f -delete
-cd ..
-echo "Remove source .ts files so they arent published"
-
-# Inline the css and html into the component files.
-gulp inline-resource-files
-echo "Resources inlined..."
-
-# Bundle
-gulp rollup-code
-echo "Bundled..."
