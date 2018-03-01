@@ -173,17 +173,19 @@
   dependencies:
     tslib "^1.7.1"
 
-"@covalent/code-editor@^1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-1.0.0-beta.2.tgz#b678fb2bd4fcf59d917c17971ab5a6a7ea0bff29"
+"@covalent/code-editor@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-1.0.0.tgz#dd88560223796292fac903d3df8560c28d7ef34b"
   dependencies:
-    monaco-editor "^0.8.0"
+    monaco-editor "^0.10.1"
+    tslib "^1.7.1"
 
-"@covalent/text-editor@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-1.0.0-beta.1.tgz#c1fe6e027a86b56de285ad430c3dc282b8e66386"
+"@covalent/text-editor@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-1.0.0.tgz#716f5c327c264452db244617a01c9596346d4a97"
   dependencies:
     simplemde "^1.11.2"
+    tslib "^1.7.1"
 
 "@ngtools/json-schema@1.1.0", "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
@@ -5445,9 +5447,9 @@ moment@2.18.1:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
-monaco-editor@^0.8.0:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.8.3.tgz#523bdf2d1524db2c2dfc3cae0a7b6edc48d6dea6"
+monaco-editor@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.10.1.tgz#8c96c4f15b6b5258bf92cbde93cad8a7e3007e14"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
