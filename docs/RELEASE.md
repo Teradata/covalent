@@ -37,7 +37,7 @@ Execute `npm run release:finish -- [version]` to finish the release process. The
   1. Adds, commits all changes (changelog changes, bump, etc etc).
   2. Creates new `[version]` tag
   3. Pushes commit and new tag into the repository (`develop`).
-  5. Merges `develop` into `master` and pushes changes to repository.
+  5. Rebases `master` with `develop` and pushes changes to repository.
   5. Returns to `develop` branch.
 
 #### Publish Release
