@@ -4,7 +4,6 @@
 
 * [Pre Release Checklist](#pre-release-checklist)
 * [Start Release](#start-release)
-* [Generate Changelog](#generate-changelog)
 * [Finish Release](#finish-release) 
 * [Publish Release](#publish-release)
 * [Post Release Checklist](#post-release-checklist)
@@ -12,8 +11,8 @@
 #### Pre Release Checklist
 
 1. Notifications need to be updated in the covalent `home` screen.
-2. Make sure the `platform` `package.json`s point to the correct versions.
-3. `ng serve --aot` works fine.
+2. Make sure the `build.conf.js` points to the correct versions.
+3. `ng serve --prod` works fine.
 4. `npm run build:lib` works fine.
 
 #### Start Release
@@ -26,15 +25,12 @@ Execute `npm run release:start -- [version]` to start the automatic release proc
   5. Executes unit tests.
   6. Executes a build release test.
   7. Bumps its version to [version] release
-
-#### Generate Changelog
-
-Execute `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. NOTE: It need to be double checked and modified as needed.
+  8. Executes `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. NOTE: It need to be double checked and modified as needed.
 
 #### Finish Release
 
 Execute `npm run release:finish -- [version]` to finish the release process. The steps executed are:
-  1. Adds, commits all changes (changelog changes, bump, etc etc).
+  1. Adds and commits all changes (changelog changes, bump, etc etc).
   2. Creates new `[version]` tag
   3. Pushes commit and new tag into the repository (`develop`).
   5. Rebases `master` with `develop` and pushes changes to repository.

@@ -1,6 +1,6 @@
 {
   "name": "@covalent/highlight",
-  "version": "1.0.0",
+  "version": "0.0.0-COVALENT",
   "description": "Teradata UI Platform Highlight Module",
   "keywords": [
     "angular",
@@ -34,7 +34,7 @@
     "highlight.js": "9.11.0"
   },
   "peerDependencies": {
-    "@angular/common": "^5.1.0",
-    "@angular/core": "^5.1.0"
+    "@angular/common": "^0.0.0-NG",
+    "@angular/core": "^0.0.0-NG"
   }
 }

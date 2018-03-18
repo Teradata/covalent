@@ -1,6 +1,6 @@
 {
   "name": "@covalent/http",
-  "version": "1.0.0",
+  "version": "0.0.0-COVALENT",
   "description": "Teradata UI Platform Http Helper Module",
   "keywords": [
     "angular",
@@ -34,7 +34,7 @@
     "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": "^5.1.0",
-    "@angular/http": "^5.1.0"
+    "@angular/core": "^0.0.0-NG",
+    "@angular/http": "^0.0.0-NG"
   }
 }
