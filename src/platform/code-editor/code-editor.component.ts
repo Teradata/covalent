@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 
 const noop: any = () => {
   // empty method
