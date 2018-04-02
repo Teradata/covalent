@@ -5,14 +5,12 @@ import {
 } from '@angular/core/testing';
 import { Injector, Injectable, Type } from '@angular/core';
 import { Headers, XHRBackend, Response, ResponseOptions, RequestOptionsArgs } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable, forkJoin } from 'rxjs';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpModule, Http } from '@angular/http';
 import { HttpInterceptorService, HttpConfig, CovalentHttpModule, IHttpInterceptor } from '../';
 import { URLRegExpInterceptorMatcher } from './url-regexp-interceptor-matcher.class';
-import { map } from 'rxjs/operators/map';
-import { toPromise } from 'rxjs/operator/toPromise';
-import { forkJoin } from 'rxjs/observable/forkJoin';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ResponseOverrideInterceptor {
@@ -396,10 +394,10 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      toPromise.call(service.post('testurl', {}).pipe(
+      service.post('testurl', {}).toPromise().pipe(
         map(
           (res: Response) => res.json(),
-        ))).then((data: string) => {
+        )).then((data: string) => {
           expect(data).toBe('success');
           success = true;
         }, () => {
@@ -419,10 +417,10 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      toPromise.call(service.post('testurl', {}).pipe(
+      service.post('testurl', {}).toPromise().pipe(
         map(
           (res: Response) => res.json(),
-        ))).then(() => {
+        )).then(() => {
           success = true;
         }, (err: Error) => {
           expect(err.message).toBe('error');

@@ -3,7 +3,7 @@ import { Component, Directive, Input, EventEmitter, ContentChild, AfterViewInit,
          Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { TdVirtualScrollRowDirective } from './virtual-scroll-row.directive';
 

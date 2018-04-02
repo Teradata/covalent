@@ -1,7 +1,7 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core/media';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { InternalDocsService, ITemplate } from '../../services';
 

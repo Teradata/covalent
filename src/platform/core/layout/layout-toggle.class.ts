@@ -4,7 +4,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { ICanDisable, mixinDisabled } from '@covalent/core/common';
 
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 export interface ILayoutTogglable {
   opened: boolean;

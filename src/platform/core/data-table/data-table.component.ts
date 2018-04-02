@@ -8,11 +8,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
-
-import { debounceTime } from 'rxjs/operators/debounceTime';
+import { Observable, Subscription, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';

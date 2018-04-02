@@ -2,7 +2,7 @@ import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwar
          QueryList, SecurityContext, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { TdLayoutComponent } from '../layout.component';
 

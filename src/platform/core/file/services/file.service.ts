@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { Subscriber } from 'rxjs/Subscriber';
+import { Observable, Subject, Subscriber } from 'rxjs';
 
 export interface IUploadOptions {
   url: string;

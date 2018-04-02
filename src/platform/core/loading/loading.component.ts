@@ -1,8 +1,7 @@
 import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy, ElementRef, DoCheck } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs';
 
 export enum LoadingType {
   Circular = 'circular',

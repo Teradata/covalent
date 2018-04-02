@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, NgZone, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { StepState, TdMediaService } from '../../../../platform/core';
 
