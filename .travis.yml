@@ -14,8 +14,8 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 install:
-- npm i process-nextick-args util-deprecate buffer-shims
 - npm install
+- npm i process-nextick-args util-deprecate buffer-shims
 - npm rebuild node-sass # Workaround for https://github.com/yarnpkg/yarn/issues/1981
 script:
 - npm run lint
