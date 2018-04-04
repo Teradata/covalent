@@ -17,7 +17,6 @@
     "e2e": "protractor",
     "e2e-test": "protractor ./protractor.conf.js",
     "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
-    "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
     "preinstall": "rm -rf node_modules tmp deploy dist",
     "postinstall": "npm rebuild node-sass",
     "test": "rm -rf ./dist && ng build && ng test --code-coverage --single-run",
