@@ -56,7 +56,7 @@
       <mat-card-content>
         <form #addForm="ngForm">
           <div layout="row" layout-align="start center" class="pad-sm">
-            <mat-form-field class="pad-right" floatPlaceholder="never">
+            <mat-form-field class="pad-right" floatLabel="never">
               <mat-select placeholder="Select element type" [(ngModel)]="type" name="type" required>
                 <mat-option *ngFor="let option of elementOptions" [value]="option">
                   {{ option }}
