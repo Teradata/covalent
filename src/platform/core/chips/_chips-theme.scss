@@ -16,6 +16,7 @@
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
 
   // chips
   td-chips {
@@ -52,6 +53,9 @@
           color: mat-color($foreground, icon);
         }
       }
+    }
+    .mat-form-field-underline {
+      background-color: mat-color($foreground, divider, if($is-dark-theme, 0.7, 0.42));
     }
     &.mat-primary {
       .mat-form-field-underline .mat-form-field-ripple {

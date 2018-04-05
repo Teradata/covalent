@@ -4,6 +4,7 @@
   <ng-template let-chip let-first="first" let-index="index" ngFor [ngForOf]="value">
     <mat-basic-chip [class.td-chip-disabled]="disabled"
                    [class.td-chip-after-pad]="!canRemoveChip"
+                   [disableRipple]="true"
                    [color]="color"
                    (keydown)="_chipKeydown($event, index)"
                    (blur)="_handleChipBlur($event, chip)"
