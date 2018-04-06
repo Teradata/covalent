@@ -394,10 +394,10 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      service.post('testurl', {}).toPromise().pipe(
+      service.post('testurl', {}).pipe(
         map(
           (res: Response) => res.json(),
-        )).then((data: string) => {
+        )).toPromise().then((data: string) => {
           expect(data).toBe('success');
           success = true;
         }, () => {
@@ -417,10 +417,10 @@ describe('Service: HttpInterceptor', () => {
       });
       let success: boolean = false;
       let error: boolean = false;
-      service.post('testurl', {}).toPromise().pipe(
+      service.post('testurl', {}).pipe(
         map(
           (res: Response) => res.json(),
-        )).then(() => {
+        )).toPromise().then(() => {
           success = true;
         }, (err: Error) => {
           expect(err.message).toBe('error');
