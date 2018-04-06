@@ -63,8 +63,8 @@ import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, Covale
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
-import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
-import { CovalentTextEditorModule } from '../../../../node_modules/@covalent/text-editor';
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { CovalentTextEditorModule } from '@covalent/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
