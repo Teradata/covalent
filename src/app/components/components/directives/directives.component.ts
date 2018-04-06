@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./directives.component.scss' ],
   templateUrl: './directives.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DirectivesComponent {
 

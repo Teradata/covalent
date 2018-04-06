@@ -19,6 +19,7 @@ import {
     slideInDownAnimation,
     TdCollapseAnimation(),
   ],
+  preserveWhitespaces: true,
 })
 export class DynamicFormsDemoComponent {
 

@@ -11,6 +11,7 @@ import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
   selector: 'ngx-translate-demo',
   styleUrls: ['./ngx-translate.component.scss'],
   templateUrl: './ngx-translate.component.html',
+  preserveWhitespaces: true,
 })
 export class NgxTranslateDemoComponent {
 

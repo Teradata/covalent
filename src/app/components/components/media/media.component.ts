@@ -12,6 +12,7 @@ import { TdMediaService, TdJelloAnimation } from '../../../../platform/core';
     TdJelloAnimation(),
     slideInDownAnimation,
   ],
+  preserveWhitespaces: true,
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 

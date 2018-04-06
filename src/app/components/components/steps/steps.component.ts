@@ -9,6 +9,7 @@ import { StepState, TdMediaService } from '../../../../platform/core';
   styleUrls: ['./steps.component.scss' ],
   templateUrl: './steps.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
 

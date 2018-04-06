@@ -8,6 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class FileInputDemoComponent {
 

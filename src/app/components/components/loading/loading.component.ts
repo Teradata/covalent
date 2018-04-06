@@ -12,6 +12,7 @@ import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '..
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class LoadingDemoComponent implements OnInit {
 
