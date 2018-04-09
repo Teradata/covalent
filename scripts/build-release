@@ -8,10 +8,10 @@ rm -rf ./deploy
 # BUILD: @covalent/core primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.js
 
-echo 'Compiling and moving moving some requried files not handled by ng-packagr files'
+echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
 gulp compile-core-sass
-echo 'Completed compiling and moving moving some requried files not handled by ng-packagr files'
+echo 'Completed compiling and moving moving some requried files not handled by ng-packagr'
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points 
 # HACK START
