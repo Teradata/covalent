@@ -22,7 +22,6 @@ jobs:
     - env: "MODE=unit-test"
     - env: "MODE=a11y"
 install:
-- rm -rf node_modules tmp deploy dist
 - npm install
 script:
 - ./scripts/ci/travis-script.sh
