@@ -36,6 +36,8 @@ if [ "${MODE}" = "lint" ]; then
 elif [ "${MODE}" = "aot" ]; then
   npm run build:docs
 elif [ "${MODE}" = "release" ]; then
+  rm -rf node_modules
+  yarn install
   npm run build:lib
 elif [ "${MODE}" = "unit-test" ]; then
   npm run test
