@@ -22,7 +22,7 @@ jobs:
     - env: "MODE=unit-test"
     - env: "MODE=a11y"
 install:
-- yarn install
+- npm install
 script:
 - ./scripts/ci/travis-script.sh
 cache:
