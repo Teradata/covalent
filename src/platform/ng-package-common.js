@@ -27,5 +27,6 @@ module.exports =
       "@covalent/http": "covalent.http",
       "@covalent/markdown": "covalent.markdown"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies":  ["."],
 };
