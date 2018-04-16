@@ -104,7 +104,7 @@ Service provided with methods that wrap complexity for as easier file upload exp
 
 + upload: function(IUploadState)
   + Uses underlying [XMLHttpRequest] to upload a file to a url. 
-  + Will be depricated when angular fixes [Http] to allow [FormData] as body.
+  + Will be depricated when Angular fixes [Http] to allow [FormData] as body.
 
 ## Usage
 

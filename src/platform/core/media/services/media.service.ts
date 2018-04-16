@@ -25,7 +25,7 @@ export class TdMediaService {
     this._queryMap.set('print', 'print');
 
     this._resizing = false;
-    // we make sure that the resize checking happend outside of angular since it happens often
+    // we make sure that the resize checking happend outside of Angular since it happens often
     this._globalSubscription = this._ngZone.runOutsideAngular(() => {
       return fromEvent(window, 'resize').subscribe(() => {
         // way to prevent the resize event from triggering the match media if there is already one event running already.
