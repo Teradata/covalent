@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 
-import { filter } from 'rxjs/operators/filter';
-import { pairwise } from 'rxjs/operators/pairwise';
+import { filter, pairwise } from 'rxjs/operators';
 
 @Injectable()
 export class RouterPathService {

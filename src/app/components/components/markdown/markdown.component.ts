@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class MarkdownDemoComponent {
 

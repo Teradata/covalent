@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./expansion-panel.component.scss'],
   templateUrl: './expansion-panel.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class ExpansionPanelDemoComponent {
 

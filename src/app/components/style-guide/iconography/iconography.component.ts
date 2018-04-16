@@ -8,6 +8,7 @@ import { IconService } from '../../../../platform/core/common/services/icon.serv
   styleUrls: ['./iconography.component.scss'],
   templateUrl: './iconography.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class IconographyComponent implements OnInit {
 

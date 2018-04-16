@@ -6,6 +6,7 @@ import { TdMediaService } from '@covalent/core/media';
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
   templateUrl: './nav-list.component.html',
+  preserveWhitespaces: true,
 })
 export class NavListComponent {
 

@@ -9,8 +9,6 @@ import { TdDialogService } from '../../../../platform/core';
 
 import { InternalDocsService } from '../../../services';
 
-import { toPromise } from 'rxjs/operator/toPromise';
-
 const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
@@ -19,6 +17,7 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DataTableDemoComponent implements OnInit {
 
@@ -131,7 +130,7 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.data = await toPromise.call(this._internalDocsService.queryData());
+    this.data = await this._internalDocsService.queryData().toPromise();
     this.basicData = this.data.slice(0, 10);
     this.filter();
   }

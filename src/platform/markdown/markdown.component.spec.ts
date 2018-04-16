@@ -226,6 +226,7 @@ class TdMarkdownEmptyStaticContentTestRenderingComponent { }
 
         * list item
       </td-markdown>`,
+  preserveWhitespaces: true,
 })
 class TdMarkdownStaticContentTestRenderingComponent { }
 
@@ -255,6 +256,7 @@ class TdMarkdownEmptyStaticContentTestEventsComponent {
 
         * list item
       </td-markdown>`,
+  preserveWhitespaces: true,
 })
 class TdMarkdownStaticContentTestEventsComponent {
   tdMarkdownContentIsReady(): void { /* Stub */ }

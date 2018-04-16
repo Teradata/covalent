@@ -11,6 +11,7 @@ import { IPageChangeEvent } from '../../../../platform/core';
   styleUrls: ['./paging.component.scss'],
   templateUrl: './paging.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class PagingDemoComponent {
 

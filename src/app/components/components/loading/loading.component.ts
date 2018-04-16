@@ -1,7 +1,6 @@
 import { Component, ViewContainerRef, OnInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
+import { Observable, Subscriber } from 'rxjs';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -13,6 +12,7 @@ import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '..
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class LoadingDemoComponent implements OnInit {
 

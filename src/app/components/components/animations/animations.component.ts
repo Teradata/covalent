@@ -27,6 +27,7 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
     TdJelloAnimation(),
     TdPulseAnimation(),
   ],
+  preserveWhitespaces: true,
 })
 export class AnimationsComponent {
 

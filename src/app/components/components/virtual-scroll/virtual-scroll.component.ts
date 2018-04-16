@@ -12,6 +12,7 @@ import { slideInDownAnimation } from '../../../app.animations';
     TdCollapseAnimation(),
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  preserveWhitespaces: true,
 })
 export class VirtualScrollDemoComponent implements OnInit {
 

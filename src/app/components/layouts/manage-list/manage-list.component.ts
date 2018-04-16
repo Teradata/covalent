@@ -6,6 +6,7 @@ import { TdMediaService } from '@covalent/core/media';
   selector: 'layouts-manage-list',
   styleUrls: ['./manage-list.component.scss'],
   templateUrl: './manage-list.component.html',
+  preserveWhitespaces: true,
 })
 export class ManageListComponent {
 

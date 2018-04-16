@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
-
-import { map } from 'rxjs/operators/map';
-import { catchError } from 'rxjs/operators/catchError';
+import { Observable, Subscriber } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 export interface ITemplate {
   title: string;
