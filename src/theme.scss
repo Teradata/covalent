@@ -75,7 +75,7 @@ $mat-orange-custom: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-blue-grey, 900);
+$primary: mat-palette($mat-blue-grey, 900, 100, 900);
 $accent:  mat-palette($mat-orange-custom, A700, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -120,8 +120,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 // Dark theme
 .theme-dark {
-  $primary-dark: mat-palette($mat-blue-grey, 900);
-  $accent-dark:  mat-palette($mat-deep-orange, A400);
+  $primary-dark: mat-palette($mat-blue-grey, 900, 100, 900);
+  $accent-dark:  mat-palette($mat-orange-custom, A700, A100, A400);
   $warn-dark:    mat-palette($mat-red, 600);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
@@ -226,7 +226,7 @@ mat-nav-list {
 }
 
 // Expansion panels
-.theme-dark .td-expansion-panel {
+.home .theme-dark .td-expansion-panel {
   background-color: mat-color($mat-blue-grey, 800);
 }
 
