@@ -97,7 +97,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "merge2": "1.0.2",
-    "ng-packagr": "2.0.0",
+    "ng-packagr": "2.4.2",
     "node-sass": "3.8.0",
     "protractor": "~5.1.0",
     "require-dir": "0.3.2",

@@ -6,6 +6,8 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import * as SimpleMDE from 'simplemde';
+// get access to the marked class under simplemde
+import * as marked from 'marked';
 // using 'import * as' not working in Angular 5 for some reason
 /* tslint:disable-next-line */
 let SimpleMDECss = require('simplemde/dist/simplemde.min.css');
@@ -87,6 +89,9 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       this._document.head.appendChild(styleElement);
     }
     this.options.element = this.textarea.nativeElement;
+
+    // If content entered is html then don't evaluate it, prevent xss vulnerabilities
+    marked.setOptions({ sanitize: true });
     this._simpleMDE = new SimpleMDE(this.options);
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
