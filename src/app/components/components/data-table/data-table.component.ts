@@ -17,6 +17,7 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DataTableDemoComponent implements OnInit {
 
