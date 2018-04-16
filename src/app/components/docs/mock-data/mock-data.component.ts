@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./mock-data.component.scss'],
   templateUrl: './mock-data.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class MockDataComponent {
 

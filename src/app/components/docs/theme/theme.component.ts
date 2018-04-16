@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './theme.component.html',
   styleUrls: ['./theme.component.scss'],
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class ThemeComponent {
 
