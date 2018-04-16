@@ -263,7 +263,7 @@ describe('Component: TdDynamicForms', () => {
     });
   })));
 
-  it('should render dynamic elements and show form invalid with angular validation', async(inject([], () => {
+  it('should render dynamic elements and show form invalid with Angular validation', async(inject([], () => {
 
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
     let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;

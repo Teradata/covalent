@@ -108,7 +108,7 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
    * URL used will be sanitized, but it should be always from a trusted source to avoid XSS.
    */
   @Input('backgroundUrl')
-  // TODO angular complains with warnings if this is type [SafeResourceUrl].. so we will make it <any> until its fixed.
+  // TODO Angular complains with warnings if this is type [SafeResourceUrl].. so we will make it <any> until its fixed.
   // https://github.com/webpack/webpack/issues/2977
   set backgroundUrl(backgroundUrl: any) {
     if (backgroundUrl) {
