@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./icons.component.scss'],
   templateUrl: './icons.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class IconsComponent {
 
