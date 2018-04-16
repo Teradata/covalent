@@ -1,3 +1,18 @@
+<a name="2.0.0-beta.1"></a>
+# [2.0.0-beta.1](https://github.com/teradata/covalent/compare/v1.0.0...v2.0.0-beta.1) (2018-04-16)
+
+Highlights:
+
+- Added support for angular@6!
+
+### Features
+
+* add support for angular@6 ([#1136](https://github.com/teradata/covalent/issues/1136)) ([91687bd](https://github.com/teradata/covalent/commit/91687bd))
+
+### Internal
+
+* upgrade from ng-packager v2.0.0 to v2.4.1 ([6d2d741eee10367091afaf0e42f8bc5462510550](https://github.com/teradata/covalent/commit/6d2d741eee10367091afaf0e42f8bc5462510550))
+
 <a name="1.0.0"></a>
 # [1.0.0 Covalently Bond](https://github.com/teradata/covalent/compare/v1.0.0-rc.5...v1.0.0) (2018-02-11)
 
