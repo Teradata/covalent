@@ -87,7 +87,7 @@
     "rxjs": "6.0.0-rc.0",
     "rxjs-compat": "6.0.0-rc.0",
     "showdown": "1.6.4",
-    "tslib": "^1.7.1",
+    "tslib": "^1.9.0",
     "web-animations-js": "2.3.1",
     "zone.js": "^0.8.17"
   },
