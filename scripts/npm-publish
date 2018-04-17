@@ -1,5 +1,8 @@
 #!/bin/bash
 scope=@covalent
+tag=latest
+
+[[ $1 = 'next' ]] && tag=next || tag=latest
 
 #login into private registry
 npm login --scope=$scope
@@ -8,7 +11,7 @@ for package in ./deploy/platform/*
 do
   if [ -d ${package} ]
   then
-    npm publish ${package} --access=public
+    npm publish ${package} --access=public --tag=$tag
   fi
 done
 
