@@ -38,9 +38,15 @@ Execute `npm run release:finish -- [version]` to finish the release process. The
 
 #### Publish Release
 
+##### Stable Release
+
 Execute `npm run publish:npm` from develop branch to start the automatic publishing process. The steps executed are:
   1. Executes `npm run build:lib` process.
   2. Executes `bash scripts/npm-publish` process.
+
+##### Beta/RC Release
+
+Execute `npm run publish:npm -- next` to publish a beta/RC Release.
 
 #### Post Release Checklist
 
