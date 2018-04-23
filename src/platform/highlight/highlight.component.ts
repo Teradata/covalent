@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
 
