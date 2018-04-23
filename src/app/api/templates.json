@@ -1,0 +1,50 @@
+[  
+   {  
+      "color":"red-600",
+      "description":"email app template",
+      "icon":"email",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Femail-template.png?alt=media&token=71939419-fa18-4e49-b4e4-66b2fc79209f",
+      "plnkr":"https://stackblitz.com/edit/covalent-email-app-template",
+      "title":"Email"
+   },
+   {  
+      "color":"light-blue-700",
+      "description":"contacts app template",
+      "icon":"people",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Fcontacts-template.png?alt=media&token=f1a39208-616f-4e74-8fd3-93cee7e1972c",
+      "plnkr":"https://stackblitz.com/edit/covalent-contacts-template",
+      "title":"Contacts"
+   },
+   {  
+      "color":"purple-900",
+      "description":"chat app template",
+      "icon":"message",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Fchat-template.png?alt=media&token=af671e0f-d131-4ae8-8383-f51e9183a9f9",
+      "plnkr":"https://stackblitz.com/edit/covalent-chat-template",
+      "title":"Slack Chat"
+   },
+   {  
+      "color":"blue-A700",
+      "description":"landing page template",
+      "icon":"landing",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Flanding-page-template.png?alt=media&token=8b3961df-e87e-4d33-8068-74ee28dea184",
+      "plnkr":"https://stackblitz.com/edit/covalent-landing-page",
+      "title":"Landing Page"
+   },
+   {  
+      "color":"orange-700",
+      "description":"empty starter template",
+      "icon":"space_bar",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Fstarter-template.png?alt=media&token=8b3961df-e87e-4d33-8068-74ee28dea184",
+      "plnkr":"https://stackblitz.com/edit/covalent",
+      "title":"Starter Template"
+   },
+   {  
+      "color":"blue-grey-600",
+      "description":"dashboard template",
+      "icon":"dashboard",
+      "img":"https://firebasestorage.googleapis.com/v0/b/covalent-docs.appspot.com/o/templates%2Fdashboard-template.png?alt=media&token=f1a39208-616f-4e74-8fd3-93cee7e1972c",
+      "plnkr":"https://stackblitz.com/edit/covalent-dashboard",
+      "title":"Dashboard"
+   }
+]
