@@ -121,7 +121,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "1.0.1",
     "ng-packagr": "2.4.2",
-    "node-sass": "3.8.0",
+    "node-sass": "^4.8.3",
     "pa11y": "^5.0.0-beta.5",
     "protractor": "~5.1.0",
     "require-dir": "0.3.2",

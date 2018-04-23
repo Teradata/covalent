@@ -12,7 +12,8 @@
         { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" },
         "app/assets",
         "platform",
-        "favicon.ico"
+        "favicon.ico",
+        "app/api"
       ],
       "index": "index.html",
       "main": "main.ts",
