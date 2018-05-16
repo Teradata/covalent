@@ -24,5 +24,5 @@ export function getSelectedLanguage(translateService: TranslateService): string 
  * Crate custom TranslateLoader since we have a diff dir structure for our json files
  */
 export function createTranslateLoader(httpClient: HttpClient): TranslateLoader {
-  return new TranslateHttpLoader(httpClient, 'app/assets/i18n/', '.json');
+  return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
 }
