@@ -18,7 +18,7 @@ describe('TdDigitsPipe', () => {
 
   it('should return with an empty or invalid input', () => {
     expect(pipe.transform('notanumber', undefined)).toEqual('notanumber');
-    expect(pipe.transform(NaN, undefined)).toEqual(NaN);
+    expect(<any>pipe.transform(NaN, undefined)).toEqual(NaN);
     expect(pipe.transform(undefined, undefined)).toEqual(undefined);
   });
 

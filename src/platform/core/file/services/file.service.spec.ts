@@ -22,7 +22,7 @@ describe('Service: File', () => {
             () => {
                 fail('Should throw error');
             },
-            (error: Error) => {
+            (error: any) => {
                 expect(error).toEqual('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
             },
         );
