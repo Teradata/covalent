@@ -108,8 +108,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     this._webview.send('setEditorContent', value);
                 }
                 this.onEditorValueChange.emit(undefined);
-                this.onChange.emit(undefined);
                 this.propagateChange(this._value);
+                this.onChange.emit(undefined);
                 this._fromEditor = false;
             } else {
                 // Editor is not loaded yet, try again in half a second
@@ -124,8 +124,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     this._editor.setValue(value);
                 }
                 this.onEditorValueChange.emit(undefined);
-                this.onChange.emit(undefined);
                 this.propagateChange(this._value);
+                this.onChange.emit(undefined);
                 this._fromEditor = false;
                 this.zone.run(() => this._value = value);
             }
