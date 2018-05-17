@@ -32,9 +32,6 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // Include flex layout classes
 @include covalent-layout();
 
-// Include covalent typography classes
-@include covalent-typography();
-
 // Include covalent color classes
 @include covalent-colors();
 
@@ -110,7 +107,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   .tc-warn {
     color: mat-color($warn-alt);
   }
-  a:not([class^='mat-']) {
+  a:not([class*='mat-']) {
     color: mat-color($accent-alt);
     &:hover {
       color: darken(mat-color($accent-alt), 10%);
