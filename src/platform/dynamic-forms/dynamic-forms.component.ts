@@ -133,7 +133,6 @@ export class TdDynamicFormsComponent implements AfterContentInit {
     this._renderedElements = [];
     let duplicates: string[] = [];
     this._elements.forEach((elem: ITdDynamicElementConfig) => {
-      this._dynamicFormsService.validateDynamicElementName(elem.name);
       if (duplicates.indexOf(elem.name) > -1) {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }

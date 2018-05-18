@@ -16,39 +16,6 @@ describe('Service: TdDynamicFormsService', () => {
     });
   }));
 
-  it('expect to validate element names correctly',
-    async(inject([TdDynamicFormsService], (service: TdDynamicFormsService) => {
-      try {
-        service.validateDynamicElementName('normal-name');
-      } catch (e) {
-        expect(e).toBeFalsy('name should be validated correctly');
-      }
-
-      try {
-        service.validateDynamicElementName('normal_22_name');
-      } catch (e) {
-        expect(e).toBeFalsy('name should be validated correctly');
-      }
-
-      try {
-        service.validateDynamicElementName('normal_22-name_22');
-      } catch (e) {
-        expect(e).toBeFalsy('name should be validated correctly');
-      }
-
-      try {
-        service.validateDynamicElementName('2normal_22-name_22');
-        expect(false).toBeTruthy('2normal_22-name_22 name should not be validated correctly');
-      } catch (e) { /* */ }
-
-      try {
-        service.validateDynamicElementName('normal@22-name_22');
-        expect(false).toBeTruthy('normal@22-name_22 name should not be validated correctly');
-      } catch (e) { /* */ }
-
-    }),
-  ));
-
   it('expect to return components depending on type | element',
     async(inject([TdDynamicFormsService], (service: TdDynamicFormsService) => {
 

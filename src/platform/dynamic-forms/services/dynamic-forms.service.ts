@@ -49,20 +49,8 @@ export interface ITdDynamicElementConfig {
   validators?: ITdDynamicElementValidator[];
 }
 
-export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
-
 @Injectable()
 export class TdDynamicFormsService {
-
-  /**
-   * Method to validate if the [name] is a proper element name.
-   * Throws error if name is not valid.
-   */
-  validateDynamicElementName(name: string): void {
-    if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
-      throw new Error(`Dynamic element name: "${name}" is not valid.`);
-    }
-  }
 
   /**
    * Gets component to be rendered depending on [TdDynamicElement | TdDynamicType]
