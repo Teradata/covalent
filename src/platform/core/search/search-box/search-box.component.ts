@@ -118,7 +118,9 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
    * Method executed when the search icon is clicked.
    */
   searchClicked(): void {
-    if (this.alwaysVisible || !this._searchVisible) {
+    if (!this.alwaysVisible && this._searchVisible) {
+      this.handleClear();
+    } else if (this.alwaysVisible || !this._searchVisible) {
       this._searchInput.focus();
     }
     this.toggleVisibility();
