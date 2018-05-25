@@ -115,7 +115,7 @@ export class Demo {
     name: 'select',
     type: TdDynamicElement.Select,
     required: true,
-    selections: ['A','B','C']
+    selections: ['A','B','C'],
     default: 'A',
   }, {
     name: 'file-input',
