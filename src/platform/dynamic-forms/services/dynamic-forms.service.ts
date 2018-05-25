@@ -49,7 +49,7 @@ export interface ITdDynamicElementConfig {
   validators?: ITdDynamicElementValidator[];
 }
 
-export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
+export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
 
 @Injectable()
 export class TdDynamicFormsService {
@@ -60,7 +60,7 @@ export class TdDynamicFormsService {
    */
   validateDynamicElementName(name: string): void {
     if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
-      throw new Error(`Dynamic element name: "${name}" is not valid.`);
+      throw new Error('Dynamic element name: "${name}" is not valid.');
     }
   }
 
