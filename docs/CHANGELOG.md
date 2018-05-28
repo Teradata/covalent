@@ -18,6 +18,17 @@
 
 
 
+<a name="1.0.1"></a>
+# [1.0.1](https://github.com/teradata/covalent/compare/v1.0.0...v1.0.1) (2018-05-28)
+
+### Bug Fixes
+
+* **docs:** fixed markdown include in docs ([#1156](https://github.com/teradata/covalent/issues/1156)) ([7e217df](https://github.com/teradata/covalent/commit/7e217df))
+* **dynamic-forms:** made regex for name less restrictive ([#1155](https://github.com/teradata/covalent/issues/1155)) ([ddf8a6b](https://github.com/teradata/covalent/commit/ddf8a6b))
+* **search-box:** back arrow clears search (closes [#1157](https://github.com/teradata/covalent/issues/1157)) ([#1158](https://github.com/teradata/covalent/issues/1158)) ([4aa601f](https://github.com/teradata/covalent/commit/4aa601f))
+
+
+
 <a name="2.0.0-beta.1"></a>
 # [2.0.0-beta.1](https://github.com/teradata/covalent/compare/v1.0.0...v2.0.0-beta.1) (2018-04-16)
 
