@@ -1,0 +1,16 @@
+{
+  "name": "@covalent/experimental",
+  "description": "Teradata UI Platform Experimental Module",
+  "version": "0.0.0-EXPERIMENTAL",
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>",
+    "Jenn Medellin <jennifer.medellin@teradata.com>",
+    "Julie Knowles <julie.knowles@teradata.com>"
+  ]
+}
