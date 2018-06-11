@@ -1,5 +1,5 @@
 # Experimental 
-This experimental entrypoint is a sandbox zone for Covalent. It is used to conduct experiments on potential features that may or may not become incorporated into Covalent. To set the correct expectations, if you decided to use anything in this experimental entrypoint please do not expect any support. We would still love any feedback from the community :) as this is a growing and living project.
+This experimental entrypoint is a sandbox zone for Covalent. It is used to conduct experiments on potential features that may or may not become incorporated into Covalent. We want to set the correct expectations for how the community should view this experimental entrypoint. We do not plan to provide long or short term support for any items created in the experimental entrypoint unless the experiment is promoted into the rest of the Covalent ecosystem making it no longer an experiment. We would love any feedback on these experiments from the community :).
 
 ## How to create a new experiment module aka (import { myNewExperiment } from @covalent/experimental)
 (based on demand we can look into writing a cross platform script to create a new experiment rather then doing these steps below manually)
