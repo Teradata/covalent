@@ -1,7 +1,9 @@
 ## Experimental 
 This experimental entrypoint is a sandbox zone for Covalent. It is used to conduct experiments on potential features that may or may not become incorporated into Covalent. We want to set the correct expectations for how the community should view this experimental entrypoint. We do not plan to provide long or short term support for any items created in the experimental entrypoint unless the experiment is promoted into the rest of the Covalent ecosystem making it no longer an experiment. We would love any feedback on these experiments from the community :).
 
-### How to create a new experiment module (aka import { myNewExperiment } from @covalent/experimental)
+___
+
+### How to create a new Angular experiment module (aka import { myNewExperiment } from @covalent/experimental)
 Side note: based on demand we can look into writing a cross platform script or Angular schematic to create a new experiment rather then doing the steps below manually
 
 **Step 1:** 
@@ -18,7 +20,19 @@ Side note: based on demand we can look into writing a cross platform script or A
 
 **Step 4:** Your almost ready to become that mad scientist you always dreamed of, but some minor notes to leave you with.
 1. By following the template your experiment will be compiled into standard complient Angular Package Format (APF) via [ng-packagr](https://github.com/dherges/ng-packagr). If you would like to learn more about the benefits of APF you can reference this [link](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit)
-2. Don't forget to update your experiments `public-api.ts` and your experiments `*.module.ts` files as you decide what parts of your new experiment/feature you want to publicly expose to developers using it. If you don't your fellow developers won't be able to use it after it gets all bundled up :(.
-3. After you create your experiment test it out on a new angular project to verify that that your fellow developers can use your experiments as you intended. Do this by running `npm run build:lib`, and npm installing the generated `deploy/experimental.tgz` respective of file path from the new project that you create. To find out more about how to `npm  --save install` your .tgz file check this [link](https://docs.npmjs.com/cli/install)
+2. Don't forget to update your experiments `public-api.ts` and your experiments `*.module.ts` files as you decide what parts of your new experiment/feature you want to publicly expose to your fellow developers using it.
+3. After you create your experiment test it out on a new angular project to verify that you can use your experiment as designed. Do this by running `npm run build:lib`, and npm installing the generated `deploy/experimental.tgz` respective of file path from the new project that you create. To find out more about how to `npm  --save install` your .tgz file check this [link](https://docs.npmjs.com/cli/install)
+4. If you experiment starts to become a serious project, fill out your experiments `README.md` and provide detailed instructions on how to use your new experiment. 
 
-## How to create a new experiment NOT a module 
+___
+
+### How to create a new experiment that is NOT an Angular module 
+
+**Step 1:** 
+* Make you have already cloned the Covalent repo onto you computer.
+
+**Step 2:** 
+* In the `src/platform/experimental` folder create a new folder and name it after your experiment (keep it short and use dashes) (EX: my-new-experiment)
+
+**Step 3:** 
+* Add anything you need to conduct your experiment in your new experiment's folder. Add respective documation for your fellow developer as needed.
