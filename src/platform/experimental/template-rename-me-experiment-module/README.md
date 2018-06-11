@@ -1,5 +1,5 @@
-// TODO: add respective info about your component here when it feels serious
-# renameMe.component
+// TODO: add respective info about your component here
+# TdRenameMeComponent
 
 **NOTE:** 
 
