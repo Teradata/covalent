@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TdRenameMeComponent } from './renameMe.component';
+import { TdRenameMeComponent } from './rename-me.component';
 
 @NgModule({
   imports: [
