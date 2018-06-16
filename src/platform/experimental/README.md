@@ -1,6 +1,5 @@
-## Experimental 
-This experimental entrypoint is a sandbox zone for Covalent. It is used to conduct experiments on potential features that may or may not become incorporated into Covalent. We want to set the correct expectations for how the community should view this experimental entrypoint. We do not plan to provide long or short term support for any items created in the experimental entrypoint unless the experiment is promoted into the rest of the Covalent ecosystem making it no longer an experiment. We would love any feedback on these experiments from the community :).
-
+## Experimental Sandbox
+This `experimental` entrypoint is a sandbox zone for Covalent. It is used to conduct experiments on potential features that may or may not become incorporated into Covalent. We want to set the correct expectations for how the community should view this experimental entrypoint. We do not plan to provide long or short term support for any items created in the experimental entrypoint unless the experiment is promoted into the rest of the Covalent ecosystem making it no longer an experiment. We would love any feedback on these experiments from the community :).
 ___
 
 ### How to create a new Angular experiment module (aka import { myNewExperiment } from @covalent/experimental)
@@ -29,10 +28,11 @@ ___
 ### How to create a new experiment that is NOT an Angular module 
 
 **Step 1:** 
-* Make you have already cloned the Covalent repo onto you computer.
+* Make sure you have already cloned the Covalent repo onto you computer.
 
 **Step 2:** 
 * In the `src/platform/experimental` folder create a new folder and name it after your experiment (keep it short and use dashes) (EX: my-new-experiment)
 
 **Step 3:** 
-* Add anything you need to conduct your experiment in your new experiment's folder. Add respective documation for your fellow developer as needed.
+* Add anything you need to conduct your experiment in your new experiment's folder. Add respective documation for your fellow developer as needed. If you have question please don't hesitate to ask us by either opening a GitHub issue or connecting with us in the Covalent Slack channel.
+
