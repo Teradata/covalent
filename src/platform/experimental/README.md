@@ -17,9 +17,12 @@ ___
 2. `cp -R template-rename-me-experiment-module <my-new-experiment>` Change my-new-experiment to the name of your experiment (keep it short and use dashes)
 
 **Step 3:** Renaming the templates contents
-1. Rename the copied folder to your experiments name (keep it short and use dashes) (EX: my-new-experiment)
-2. Everywhere in your new experiment folder (filenames and file content) where you see `rename-me` `renameMe` or `RenameMe` replace it with your experiments name, respective of the convention shown.
-3. Last but not least, update the `src/platform/experimental/public-api.ts` to include your experiment too. Follow the same convention as the example template `export * from './template-rename-me-experiment-module/index';` and rename it to respectivly to match your experiments name.
+1. `cd <my-new-experiment>` (Replace above my-new-experiment to the name of your experiment)
+2. List out the directory contents with command: ls
+3. Notice all the filenames with `rename-me` in them for example `rename-me.component.html`
+4. Change all filenames with `rename-me` to `<my-new-experiment>` for example: my-new-experiment.component.html. (Replace above my-new-experiment to the name of your experiment)
+5. Open all the files in the directory with a text editor and anywhere you see `rename-me` `renameMe` or `RenameMe` replace it with your experiments name.
+6. In a text editor open `src/platform/experimental/public-api.ts` and include your experiment by adding the following line to the end of the file: `export * from './<my-new-experiment>/index';` (Replace above my-new-experiment to the name of your experiment)
 
 **Notes:** 
 1. By following the template your experiment will be compiled into standard compliant Angular Package Format (APF) via [ng-packagr](https://github.com/dherges/ng-packagr). If you would like to learn more about the benefits of APF you can reference this [link](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit).
