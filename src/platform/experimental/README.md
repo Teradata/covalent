@@ -1,5 +1,7 @@
 
-## Experimental 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/24550592/41626750-1c5e3278-73d2-11e8-9725-7e6b41a773da.png" alt="covalent-experimental-logo" width="450px"/>
+</p>
 
 The experimental area is a sandboxed repository used to conduct experiments on potential features that may or may not become part of a fully supported Covalent release. We want to set the correct expectations of how the community should view this experimental area. We do not plan to provide support for any items created in the experimental area unless the experiment is promoted into the non-experimental area of Covalent github repository. We would love any feedback on these experiments from the community :).
 ___
