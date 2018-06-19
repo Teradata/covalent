@@ -8,10 +8,11 @@ ___
 
 **Step 1:** Clone Covalent repo
 
-* Verify you have already cloned the Covalent repo onto you computer.
+1. `git clone https://github.com/Teradata/covalent`
 
 **Step 2:** Copy the template experiment
-* Go inside the `src/platform/experimental` folder and copy/paste the `template-rename-me-experiment-module` folder into the same directory.
+1. `cd src/platform/experimental`
+2. `cp -R template-rename-me-experiment-module <my-new-experiment>` Change my-new-experiment to the name of your experiment (keep it short and use dashes)
 
 **Step 3:** Renaming the templates contents
 1. Rename the copied folder to your experiments name (keep it short and use dashes) (EX: my-new-experiment)
