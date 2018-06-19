@@ -6,7 +6,7 @@
 The experimental area is a sandboxed repository used to conduct experiments on potential features that may or may not become part of a fully supported Covalent release. We want to set the correct expectations of how the community should view this experimental area. We do not plan to provide support for any items created in the experimental area unless the experiment is promoted into the non-experimental area of Covalent github repository. We would love any feedback on these experiments from the community :).
 ___
 
-### How to create a new experiment (import { myNewExperiment } from @covalent/experimental)
+### How to create a new experiment
 
 **Step 1:** Clone Covalent repo
 
@@ -18,10 +18,10 @@ ___
 
 **Step 3:** Renaming the templates contents
 1. `cd <my-new-experiment>` (Replace above my-new-experiment to the name of your experiment)
-2. List out the directory contents with command: ls
+2. List out the directory contents with command: `ls`
 3. Notice all the filenames with `rename-me` in them for example `rename-me.component.html`
 4. Change all filenames with `rename-me` to `<my-new-experiment>` for example: my-new-experiment.component.html. (Replace above my-new-experiment to the name of your experiment)
-5. Open all the files in the directory with a text editor and anywhere you see `rename-me` `renameMe` or `RenameMe` replace it with your experiments name.
+5. Open all the files in the directory with a text editor and anywhere you see `rename-me` `renameMe` or `RenameMe` replace it with your experiments name. Respective of casing style.
 6. In a text editor open `src/platform/experimental/public-api.ts` and include your experiment by adding the following line to the end of the file: `export * from './<my-new-experiment>/index';` (Replace above my-new-experiment to the name of your experiment)
 
 **Notes:** 
