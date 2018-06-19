@@ -6,7 +6,7 @@
 The experimental area is a sandboxed repository used to conduct experiments on potential features that may or may not become part of a fully supported Covalent release. We want to set the correct expectations of how the community should view this experimental area. We do not plan to provide support for any items created in the experimental area unless the experiment is promoted into the non-experimental area of Covalent github repository. We would love any feedback on these experiments from the community :).
 ___
 
-### How to create a new Angular experiment module (aka import { myNewExperiment } from @covalent/experimental)
+### How to create a new experiment (import { myNewExperiment } from @covalent/experimental)
 
 **Step 1:** Clone Covalent repo
 
