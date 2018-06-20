@@ -25,7 +25,9 @@ module.exports =
       "@covalent/dynamic-forms": "covalent.dynamic-forms",
       "@covalent/highlight": "covalent.highlight",
       "@covalent/http": "covalent.http",
-      "@covalent/markdown": "covalent.markdown"
+      "@covalent/markdown": "covalent.markdown",
+
+      "@covalent/experimental": "covalent.experimental"
     }
   },
   "whitelistedNonPeerDependencies":  ["."],
