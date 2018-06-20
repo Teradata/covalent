@@ -15,7 +15,7 @@ The source has two parts, the platform and a documentation app.
 
 ## Adding a new platform feature (component/module/utility)
 
-Please reference these [docs](https://github.com/Teradata/covalent/blob/93c5a064d1aa19fab5015f5def2b300f48671de2/src/platform/experimental/README.md). 
+Please reference these [docs](https://github.com/Teradata/covalent/blob/develop/src/platform/experimental/README.md). 
 
 
 
