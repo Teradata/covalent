@@ -8,36 +8,32 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 })
 export class TdBreadcrumbsComponent implements AfterViewInit {
 
-  // Array to hold all the text labels of the breadcrumbs in order left to right
-  // private _breadcrumbs: string[];
-
+  // all the sub components, which are the individual breadcrumbs
   @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
 
-  title: string = '';
-
   ngAfterViewInit(): void {
-    this.setIcons();
+    this.setStyles();
   }
 
   /**
-   * Returns the array of breadcrumbs
+   * The total count of individual breadcrumbs
    */
-  // get breadcrumbs(): string[] {
-    // return this._breadcrumbs;
-  // }
-
   get count(): number {
     return this._breadcrumbs ? this._breadcrumbs.length : 0;
   }
 
-  setIcons(): void {
-    this._breadcrumbs.forEach((breadcrumb: TdBreadcrumbComponent, index: number) => {
-      if (index === 0) {
-        breadcrumb.displayIcon = false;
-      } else if (index === (this._breadcrumbs.length - 1)) {
-        this.title = breadcrumb.title;
-      }
-    });
+  /**
+   * Set prebaked styles on the crumbs depending on if 
+   * they are the first or last crumb
+   */
+  setStyles(): void {
+    let breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
+    if (breadcrumbArray && breadcrumbArray.length > 0) {
+      // don't show the right chevron on the first breadcrumb
+      breadcrumbArray[0].displayIcon = false;
+      // make the last breadcrumb grayed out
+      breadcrumbArray[this._breadcrumbs.length - 1].additionalStyles = 'tc-grey-500';
+    }
   }
 
 }

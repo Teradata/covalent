@@ -3,7 +3,7 @@
     height: 48px;
     // [layout]
     box-sizing: border-box;
-    display: flex;
+    //display: flex;
     // [layout="row"]
     flex-direction: row;
     // [layout-align="end center"]
@@ -14,5 +14,9 @@
     ::ng-deep > * {
       margin: 0 10px;
     }
+  }
+  mat-icon.material-icons.mat-icon {
+    display: inline-flex;
+    vertical-align: middle;
   }
 }

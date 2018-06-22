@@ -1,29 +1,31 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
   styleUrls: ['./breadcrumb.component.scss'],
   templateUrl: './breadcrumb.component.html',
 })
-export class TdBreadcrumbComponent implements AfterViewInit {
+export class TdBreadcrumbComponent {
 
+  // Should show the right chevron or not before the label
   private _displayIcon: boolean = true;
-  title: string = '';
+  // Any additional styles on the breadcrumb, like graying out the last one
+  private _additionalStyles: string = '';
 
-  @ViewChild('breadcrumbContent', { read: ElementRef }) breadcrumbContent: ElementRef;
-
-  constructor(private elt: ElementRef) {}
-
-  ngAfterViewInit(): void {
-    this.title = this.elt.nativeElement.childNodes[0].childNodes[2].nodeValue;
-  }
-  
   get displayIcon(): boolean {
     return this._displayIcon;
   }
 
   set displayIcon(shouldDisplay: boolean) {
     this._displayIcon = shouldDisplay;
+  }
+
+  get additionalStyles(): string {
+    return this._additionalStyles;
+  }
+
+  set additionalStyles(style: string) {
+    this._additionalStyles = style;
   }
 
 }
