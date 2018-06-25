@@ -1,16 +1,44 @@
 #!/bin/bash
 
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -e|--entrypoint)
+    ENTRYPOINT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+if [[ -n $1 ]]; then
+    echo "Last line of file specified as non-opt/last argument:"
+    tail -1 "$1"
+fi
+
 set -o errexit -o nounset
 
-buildDir="deploy/platform/core"
+if [ $ENTRYPOINT = "core" ]
+then
+  buildDir="deploy/platform/core"
+  repoName="covalent-nightly"
+  repoUrl="https://github.com/Teradata/covalent-nightly.git"
+elif [ $ENTRYPOINT = "experimental" ]
+then
+  buildDir="deploy/platform/experimental"
+  repoName="covalent-experimental-nightly"
+  repoUrl="https://github.com/Teradata/covalent-experimental-nightly.git"
+fi
+
 
 commitSha=$(git rev-parse --short HEAD)
 commitAuthorName=$(git --no-pager show -s --format='%an' HEAD)
 commitAuthorEmail=$(git --no-pager show -s --format='%ae' HEAD)
 commitMessage=$(git log --oneline -n 1)
 
-repoName="covalent-nightly"
-repoUrl="https://github.com/Teradata/covalent-nightly.git"
 repoDir="deploy/$repoName"
 
 echo "Cloning $repoUrl into $repoDir"
@@ -18,7 +46,7 @@ git clone $repoUrl $repoDir
 
 echo "Cleaning nightly repo and moving release files into it"
 rm -rf $repoDir/*
-cp -r $buildDir/* $repoDir
+cp -rf $buildDir/* $repoDir
 cd $repoDir
 
 # Prepare Git for pushing the artifacts to the repository.
