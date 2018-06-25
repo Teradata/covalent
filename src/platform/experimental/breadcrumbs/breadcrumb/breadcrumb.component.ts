@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
@@ -9,8 +9,6 @@ export class TdBreadcrumbComponent {
 
   // Should show the right chevron or not before the label
   private _displayIcon: boolean = true;
-  // Any additional styles on the breadcrumb, like graying out the last one
-  private _additionalStyles: string = '';
 
   get displayIcon(): boolean {
     return this._displayIcon;
@@ -20,12 +18,8 @@ export class TdBreadcrumbComponent {
     this._displayIcon = shouldDisplay;
   }
 
-  get additionalStyles(): string {
-    return this._additionalStyles;
-  }
-
-  set additionalStyles(style: string) {
-    this._additionalStyles = style;
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-button');
   }
 
 }

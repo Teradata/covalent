@@ -1,12 +1,8 @@
 :host {
   .td-breadcrumb {
     height: 48px;
-    // [layout]
     box-sizing: border-box;
-    //display: flex;
-    // [layout="row"]
     flex-direction: row;
-    // [layout-align="end center"]
     align-items: center;
     align-content: center;
     max-width: 100%;

@@ -31,8 +31,6 @@ export class TdBreadcrumbsComponent implements AfterViewInit {
     if (breadcrumbArray && breadcrumbArray.length > 0) {
       // don't show the right chevron on the first breadcrumb
       breadcrumbArray[0].displayIcon = false;
-      // make the last breadcrumb grayed out
-      breadcrumbArray[this._breadcrumbs.length - 1].additionalStyles = 'tc-grey-500';
     }
   }
 
