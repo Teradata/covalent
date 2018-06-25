@@ -154,6 +154,13 @@
             </div>
           </mat-toolbar>
           <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+            <td-breadcrumbs>
+              <a td-breadcrumb [routerLink]="'/'">Home</a>
+              <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+              <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+            </td-breadcrumbs>
+          </div>
+          <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
             <div flex-gt-sm="60">
               <mat-card>
                 <mat-card-title>Products Sales</mat-card-title>
