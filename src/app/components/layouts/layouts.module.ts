@@ -24,8 +24,6 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
-import { CovalentBreadcrumbsModule } from '../../../platform/experimental';
-
 @NgModule({
   declarations: [
     LayoutsComponent,
@@ -54,7 +52,6 @@ import { CovalentBreadcrumbsModule } from '../../../platform/experimental';
     DocumentationToolsModule,
     layoutsRoutes,
     ToolbarModule,
-    CovalentBreadcrumbsModule,
   ],
 })
 export class LayoutsModule {}

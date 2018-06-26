@@ -15,4 +15,8 @@
     display: inline-flex;
     vertical-align: middle;
   }
+  &.mat-button {
+    min-width: 0;
+    padding: 0;
+  }
 }
