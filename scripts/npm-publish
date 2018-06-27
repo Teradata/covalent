@@ -11,10 +11,14 @@ for package in ./deploy/platform/*
 do
   if [ -d ${package} ]
   then
-    npm publish ${package} --access=public --tag=$tag
+    # ignore experimental package
+    if [[ !(${package} =~ "experimental") ]]
+    then
+      npm publish ${package} --access=public --tag=$tag
+    fi
   fi
 done
 
 #logout when finished
-npm logout 
+npm logout
 echo "Published successfully [scope: $scope]. Use 'npm install [package-name]' in the project you want to use it."
