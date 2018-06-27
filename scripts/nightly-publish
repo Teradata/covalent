@@ -1,44 +1,24 @@
 #!/bin/bash
 
-POSITIONAL=()
-while [[ $# -gt 0 ]]
-do
-key="$1"
-
-case $key in
-    -e|--entrypoint)
-    ENTRYPOINT="$2"
-    shift # past argument
-    shift # past value
-    ;;
-esac
-done
-set -- "${POSITIONAL[@]}" # restore positional parameters
-if [[ -n $1 ]]; then
-    echo "Last line of file specified as non-opt/last argument:"
-    tail -1 "$1"
-fi
-
 set -o errexit -o nounset
 
-if [ $ENTRYPOINT = "core" ]
-then
-  buildDir="deploy/platform/core"
-  repoName="covalent-nightly"
-  repoUrl="https://github.com/Teradata/covalent-nightly.git"
-elif [ $ENTRYPOINT = "experimental" ]
-then
-  buildDir="deploy/platform/experimental"
-  repoName="covalent-experimental-nightly"
-  repoUrl="https://github.com/Teradata/covalent-experimental-nightly.git"
-fi
+package=$1
 
+buildDir="deploy/platform/${package}"
 
 commitSha=$(git rev-parse --short HEAD)
 commitAuthorName=$(git --no-pager show -s --format='%an' HEAD)
 commitAuthorEmail=$(git --no-pager show -s --format='%ae' HEAD)
 commitMessage=$(git log --oneline -n 1)
 
+if [ $package = "core" ]
+then
+  repoName="covalent-nightly"
+  repoUrl="https://github.com/Teradata/covalent-nightly.git"
+else
+  repoName="covalent-${package}-nightly"
+  repoUrl="https://github.com/Teradata/covalent-${package}-nightly.git"
+fi
 repoDir="deploy/$repoName"
 
 echo "Cloning $repoUrl into $repoDir"
@@ -57,9 +37,12 @@ git config credential.helper "store --file=.git/credentials"
 
 echo "https://${COVALENT_NIGHTLY_TOKEN}:@github.com" > .git/credentials
 
-git add -A
-git commit -m "$commitMessage"
-git tag "$commitSha"
-git push origin master --tags
-
-echo "Finished publishing nightly build"
+if [ -n "$(git status --porcelain)" ]; then
+  git add -A
+  git commit -m "$commitMessage"
+  git tag "$commitSha"
+  git push origin master --tags
+  echo "Finished publishing nightly build for ${package}"
+else
+  echo "No changes to commit for ${package}";
+fi
