@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 
+import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
+
 @NgModule({
   declarations: [TestBedComponent],
   imports: [
@@ -14,6 +16,7 @@ import { TestBedComponent } from './test-bed/test-bed.component';
     BrowserAnimationsModule,
     FormsModule,
     /** Experimental Modules */
+    CovalentTabSelectModule,
   ],
   bootstrap: [TestBedComponent],
 })
