@@ -14,7 +14,7 @@
   + Disables ripple effect on component.
 + color?: ThemePalette
   + Color of the tab group.
-+ backgroundColor: ThemePalette
++ backgroundColor?: ThemePalette
   + Background color of the tab group.
 
 #### Events
