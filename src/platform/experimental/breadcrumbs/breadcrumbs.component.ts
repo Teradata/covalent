@@ -1,4 +1,4 @@
-import { Component, ContentChildren, QueryList, AfterViewInit, DoCheck, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, ContentChildren, QueryList, AfterViewInit, AfterContentChecked, DoCheck, ChangeDetectorRef, ElementRef } from '@angular/core';
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { Subscription, Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { merge } from 'rxjs/observable/merge';
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
 })
-export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck {
+export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterContentChecked {
 
   private _resizeSubscription: Subscription;
   private _widthSubject: Subject<number> = new Subject<number>();
@@ -26,8 +26,6 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck {
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
-    this.setStyles();
-    this.displayWidthAvailableCrumbs();
     this._resizeSubscription = merge(
       fromEvent(window, 'resize').pipe(
         debounceTime(10),
@@ -50,6 +48,13 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck {
   ngDoCheck(): void {
     if (this._elementRef && this._elementRef.nativeElement) {
       this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+    }
+  }
+
+  ngAfterContentChecked(): void {
+    if (this._breadcrumbs) {
+      this.setStyles();
+      this.displayWidthAvailableCrumbs();
     }
   }
 
