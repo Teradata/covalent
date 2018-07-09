@@ -155,6 +155,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
       this.value = this._values.length ? this._values[0] : undefined;
       this._selectedIndex = 0;
     }
+    this._changeDetectorRef.markForCheck();
   }
 
 }
