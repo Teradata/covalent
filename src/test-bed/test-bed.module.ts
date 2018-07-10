@@ -12,6 +12,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
 import { MainComponent } from './main/main.component';
 import { BreadcrumbDemoComponent } from './sandbox/breadcrumbs/breadcrumbs.component';
 import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
+import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-  ], // additional providers needed for this module
+    CovalentTabSelectModule,
+  ],
   bootstrap: [TestBedComponent],
 })
 export class TestBedModule { }
