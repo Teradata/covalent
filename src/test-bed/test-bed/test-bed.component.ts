@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class TestBedComponent {
 
+  value: string = 'test3';
+  formValue: string = 'test2';
+
 }
