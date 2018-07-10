@@ -12,6 +12,8 @@
   + Sets disabled state of the component.
 + disabledRipple?: boolean
   + Disables ripple effect on component.
++ stretchTabs?: boolean
+  + Makes the tabs stretch to fit the parent container.
 + color?: ThemePalette
   + Color of the tab group.
 + backgroundColor?: ThemePalette
@@ -82,6 +84,7 @@ Example with all inputs/outputs:
                 [color]="'accent'"
                 [disabled]="false"
                 [disabledRipple]="false"
+                [stretchTabs]="true"
                 (valueChange)="myValue = $event">
   <td-tab-option [value]="1" [disabled]="false">Label 1</td-tab-option>
   <td-tab-option [value]="2">Label 2</td-tab-option>
