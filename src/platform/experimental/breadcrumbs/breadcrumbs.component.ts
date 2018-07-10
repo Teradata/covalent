@@ -1,4 +1,5 @@
-import { Component, ContentChildren, QueryList, AfterViewInit, AfterContentChecked, DoCheck, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, ContentChildren, QueryList, AfterViewInit,
+         AfterContentChecked, DoCheck, ChangeDetectorRef, ElementRef, Input } from '@angular/core';
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { Subscription, Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -22,6 +23,11 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
   @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
   hiddenBreadcrumbs: TdBreadcrumbComponent[] = new Array();
+
+  /**
+   * Sets the icon url shown between breadcrumbs. Defaults to right chevron.
+   */
+  @Input('separatorIcon') separatorIcon: string = 'navigate_next';
 
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
@@ -69,12 +75,15 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
    * Set prebaked styles on the crumbs depending on if 
    * they are the first or last crumb
    */
-  setStyles(): void {
+  private setStyles(): void {
     let breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
     if (breadcrumbArray && breadcrumbArray.length > 0) {
       // don't show the right chevron on the first breadcrumb
       breadcrumbArray[0].displayIcon = false;
     }
+    breadcrumbArray.map((breadcrumb: TdBreadcrumbComponent) => {
+      breadcrumb.separatorIcon = this.separatorIcon;
+    });
   }
 
   private displayWidthAvailableCrumbs(): void {

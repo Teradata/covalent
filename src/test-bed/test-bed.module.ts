@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDividerModule } from '@angular/material/divider';
 import { CovalentMediaModule } from '../platform/core';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
@@ -24,6 +25,7 @@ import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/
     BrowserAnimationsModule,
     CovalentMediaModule,
     FormsModule,
+    MatDividerModule,
     appRoutes,
     /** Experimental Modules */
     CovalentBreadcrumbsModule,

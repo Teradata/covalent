@@ -1,5 +1,5 @@
 <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-  <h4>BreadCrumbs!</h4>
+  <h4>Basic Breadcrumbs</h4>
 </div>
 <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
   <td-breadcrumbs class="pad-left">
@@ -10,3 +10,34 @@
     <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
   </td-breadcrumbs>
 </div>
+<mat-divider></mat-divider>
+<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <h4>Breadcrumbs with all inputs/outputs</h4>
+</div>
+<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
+    <a td-breadcrumb [routerLink]="'/'">Home</a>
+    <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+    <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+    <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+    <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+  </td-breadcrumbs>
+</div>
+<mat-divider></mat-divider>
+<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  Total Breadcrumbs Count: {{breadcrumbs.count}}
+</div>
+<mat-divider></mat-divider>
+<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  Hidden Breadcrumbs Count (shrink window to see):
+</div>
+<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  {{breadcrumbs.hiddenBreadcrumbs.length}}
+</div>
+<ng-template let-breadcrumb let-index="index" ngFor [ngForOf]="breadcrumbs.hiddenBreadcrumbs">
+  <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <p>Breadcrumb Number: {{index}}</p>
+    <p>Breadcrumb Width: {{breadcrumb?.width}}</p>
+    <mat-divider></mat-divider>
+  </div>
+</ng-template>

@@ -13,6 +13,8 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   private _displayCrumb: boolean = true;
   // Width of the DOM element of the crumb
   private _width: number = 0;
+  // Sets the icon url shown between breadcrumbs. Defaults to right chevron
+  separatorIcon: string = 'navigate_next';
 
   get displayIcon(): boolean {
     return this._displayIcon;
@@ -37,7 +39,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   // Set the display to none on the component, just in case the end user is hiding
   // and showing them instead of the component doing itself for reasons like responsive
   @HostBinding('style.display')
-  get displayBinding(): string {
+  private get displayBinding(): string {
     return this._displayCrumb ? undefined : 'none';
   }
 
