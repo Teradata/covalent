@@ -73,6 +73,9 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
     return this._tabOptions ? this._tabOptions.toArray() : undefined;
   }
 
+  /**
+   * Makes the tabs stretch to fit the parent container.
+   */
   @Input('stretchTabs')
   set stretchTabs(stretchTabs: boolean) {
     this._stretchTabs = coerceBooleanProperty(stretchTabs);
