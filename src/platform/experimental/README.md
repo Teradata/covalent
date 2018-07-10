@@ -24,6 +24,10 @@ ___
 5. Open all the files in the directory with a text editor and anywhere you see `rename-me` `renameMe` or `RenameMe` replace it with your experiments name. Respective of casing style.
 6. In a text editor open `src/platform/experimental/public-api.ts` and include your experiment by adding the following line to the end of the file: `export * from './<my-new-experiment>/index';` (Replace above my-new-experiment to the name of your experiment)
 
+**Step 4:** Run test-bed application
+
+1. `npm run serve:experimental`
+
 **Notes:** 
 1. By following the template your experiment will be compiled into standard compliant Angular Package Format (APF) via [ng-packagr](https://github.com/dherges/ng-packagr). If you would like to learn more about the benefits of APF you can reference this [link](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit).
 2. Don't forget to update your experiments `public-api.ts` and your experiments `*.module.ts` files as you decide what parts of your new experiment/feature you want to publicly expose to your fellow developers using it.
@@ -31,3 +35,27 @@ ___
 4. If you experiment starts to become a serious project: (1) fill out your experiments `README.md` and (2) write unit tests for it.
 5. If you have question please don't hesitate to ask us by either opening a GitHub issue or connecting with us in the [Covalent Gitter channel](https://gitter.im/Teradata/covalent).
 
+
+### How to install experimental modules
+
+To use (__be aware that its experimental and contracts might change!__) our experimental package, install the experimental nightly build:
+
+```bash
+npm install --save https://github.com/Teradata/covalent-experimental-nightly.git
+```
+
+#### Import the Covalent Experimental NgModules
+  
+**src/app/app.module.ts**
+```ts
+import { CovalentTabSelectModule } from '@covalent/experimental/tab-select';
+...
+// other imports 
+@NgModule({
+  imports: [
+    CovalentTabSelectModule,
+  ],
+  ...
+})
+export class AppModule { }
+```
