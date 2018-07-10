@@ -38,7 +38,9 @@ ___
 
 ### How to install experimental modules
 
-To use (__be aware that its experimental and contracts might change!__) our experimental package, install the experimental nightly build:
+WARNING: Experimental features are prone to change or be removed at any time. Do not use in production as these features are unsupported!
+
+#### Installation
 
 ```bash
 npm install --save https://github.com/Teradata/covalent-experimental-nightly.git
