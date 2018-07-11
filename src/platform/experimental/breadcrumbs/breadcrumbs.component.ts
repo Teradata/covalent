@@ -93,7 +93,7 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
     for (let i: number = this.hiddenBreadcrumbs.length; i < crumbsArray.length; i++) {
       curTotCrumbWidth += crumbsArray[i].width;
     }
-    let winWidth: number = window.innerWidth - this._windowWidthPadding;
+    let winWidth: number = this._elementRef.nativeElement.parentElement.offsetWidth - this._windowWidthPadding;
     // hide the first bread crumb if window size is smaller than all the crumb sizes
     if (winWidth < curTotCrumbWidth) {
       crumbsArray[this.hiddenBreadcrumbs.length].displayCrumb = false;
