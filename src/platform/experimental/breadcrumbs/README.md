@@ -27,10 +27,6 @@
 
 #### Methods
 
-+ displayIcon: function(): boolean 
-  + Getter for whether to display the spacer icon for the individual breadcrumb or not
-+ displayIcon: function(shouldDisplay: boolean): void 
-  + Setter for whether to display the spacer icon for the individual breadcrumb or not
 + displayCrumb: function(): boolean 
   + Getter for whether to display the individual breadcrumb or not
 + displayCrumb: function(shouldDisplay: boolean): void 
@@ -71,15 +67,13 @@ Basic Example:
 Example with all inputs/outputs: 
 
 ```html
-<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-  <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
-    <a td-breadcrumb [routerLink]="'/'">Home</a>
-    <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
-    <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
-    <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-    <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
-  </td-breadcrumbs>
-</div>
+<td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
+  <a td-breadcrumb [routerLink]="'/'">Home</a>
+  <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+  <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+  <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+  <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+</td-breadcrumbs>
 <mat-divider></mat-divider>
 <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
   Total Breadcrumbs Count: {{breadcrumbs.count}}

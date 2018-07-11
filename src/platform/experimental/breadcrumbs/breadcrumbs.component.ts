@@ -1,5 +1,6 @@
-import { Component, ContentChildren, QueryList, AfterViewInit,
-         AfterContentChecked, DoCheck, ChangeDetectorRef, ElementRef, Input } from '@angular/core';
+import {
+  Component, ContentChildren, QueryList, OnInit, OnDestroy, ChangeDetectionStrategy,
+         AfterContentInit, DoCheck, ChangeDetectorRef, ElementRef, Input } from '@angular/core';
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { Subscription, Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -10,14 +11,13 @@ import { merge } from 'rxjs/observable/merge';
   selector: 'td-breadcrumbs',
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterContentChecked {
+export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
 
   private _resizeSubscription: Subscription;
   private _widthSubject: Subject<number> = new Subject<number>();
   private _resizing: boolean = false;
-  // Padding on the window when calculating the full size
-  private _windowWidthPadding: number = 20;
 
   // all the sub components, which are the individual breadcrumbs
   @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
@@ -31,7 +31,7 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
 
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._resizeSubscription = merge(
       fromEvent(window, 'resize').pipe(
         debounceTime(10),
@@ -53,16 +53,27 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
 
   ngDoCheck(): void {
     if (this._elementRef && this._elementRef.nativeElement) {
-      this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+      this._widthSubject.next(this.nativeElementWidth);
     }
   }
 
-  ngAfterContentChecked(): void {
-    if (this._breadcrumbs) {
-      this.setStyles();
-      this.displayWidthAvailableCrumbs();
+  ngAfterContentInit(): void {
+    this.setCrumbIcons();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  ngOnDestroy(): void {
+    if (this._resizeSubscription) {
+      this._resizeSubscription.unsubscribe();
     }
   }
+
+  /*
+  * Current width of the element container
+  */
+  get nativeElementWidth(): number {
+    return (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
+  } 
 
   /**
    * The total count of individual breadcrumbs
@@ -72,16 +83,15 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
   }
 
   /**
-   * Set prebaked styles on the crumbs depending on if 
-   * they are the first or last crumb
+   * Set the crumb icon separators
    */
-  private setStyles(): void {
+  private setCrumbIcons(): void {
     let breadcrumbArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
-    if (breadcrumbArray && breadcrumbArray.length > 0) {
-      // don't show the right chevron on the first breadcrumb
-      breadcrumbArray[0].displayIcon = false;
+    if (breadcrumbArray.length > 0) {
+      // don't show the icon on the last breadcrumb
+      breadcrumbArray[breadcrumbArray.length - 1]._displayIcon = false;
     }
-    breadcrumbArray.map((breadcrumb: TdBreadcrumbComponent) => {
+    breadcrumbArray.forEach((breadcrumb: TdBreadcrumbComponent) => {
       breadcrumb.separatorIcon = this.separatorIcon;
     });
   }
@@ -93,21 +103,20 @@ export class TdBreadcrumbsComponent implements AfterViewInit, DoCheck, AfterCont
     for (let i: number = this.hiddenBreadcrumbs.length; i < crumbsArray.length; i++) {
       curTotCrumbWidth += crumbsArray[i].width;
     }
-    let winWidth: number = this._elementRef.nativeElement.parentElement.offsetWidth - this._windowWidthPadding;
     // hide the first bread crumb if window size is smaller than all the crumb sizes
-    if (winWidth < curTotCrumbWidth) {
+    if (this.nativeElementWidth < curTotCrumbWidth) {
       crumbsArray[this.hiddenBreadcrumbs.length].displayCrumb = false;
-      crumbsArray[this.hiddenBreadcrumbs.length + 1].displayIcon = false;
       this.hiddenBreadcrumbs.push(crumbsArray[this.hiddenBreadcrumbs.length]);
+      this.displayWidthAvailableCrumbs();
     } else {
       // loop over all the hidden crumbs and see if adding them back in will 
       // fit in the current window size
       let totalHidden: number = this.hiddenBreadcrumbs.length - 1;
       for (let i: number = totalHidden; i >= 0; i--) {
         let hiddenCrumbWidth: number = crumbsArray[i].width;
-        if ((curTotCrumbWidth + hiddenCrumbWidth) < winWidth) {
+        if ((curTotCrumbWidth + hiddenCrumbWidth) < this.nativeElementWidth) {
           crumbsArray[i].displayCrumb = true;
-          crumbsArray[i + 1].displayIcon = true;
+          crumbsArray[i + 1]._displayIcon = true;
           this.hiddenBreadcrumbs.pop();
           // recalculate the total width based on adding back in a crumb
           let newTotCrumbWidth: number = 0;
