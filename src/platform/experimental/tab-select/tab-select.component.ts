@@ -17,6 +17,7 @@ import {
 } from '@angular/forms';
 
 import { ThemePalette } from '@angular/material/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { ICanDisable,
           mixinDisabled,
@@ -57,6 +58,7 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
 
   private _values: any[] = [];
   private _selectedIndex: number = 0;
+  private _stretchTabs: boolean = false;
 
   get selectedIndex(): number {
     return this._selectedIndex;
@@ -69,6 +71,17 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
 
   get tabOptions(): TdTabOptionComponent[] {
     return this._tabOptions ? this._tabOptions.toArray() : undefined;
+  }
+
+  /**
+   * Makes the tabs stretch to fit the parent container.
+   */
+  @Input('stretchTabs')
+  set stretchTabs(stretchTabs: boolean) {
+    this._stretchTabs = coerceBooleanProperty(stretchTabs);
+  }
+  get stretchTabs(): boolean {
+    return this._stretchTabs;
   }
 
   /**
