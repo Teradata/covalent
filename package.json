@@ -20,7 +20,7 @@
     "coverage:mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
     "serve": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve",
-    "serve:test-bed": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve covalent-test-bed",
+    "serve:experimental": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve covalent-test-bed",
     "serve:prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve --aot --prod --source-map=false --optimization",
     "build:docs": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --aot --prod --source-map=false --optimization",
     "build:lib": "bash scripts/build-release && gulp version-placeholder",
