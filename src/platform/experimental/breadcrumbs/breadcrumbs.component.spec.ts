@@ -75,7 +75,7 @@ describe('Component: Breadcrumbs', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.debugElement.query(By.directive(TdBreadcrumbsComponent)).nativeElement.parentElement.style.width = '50px';
+        fixture.debugElement.query(By.directive(TdBreadcrumbsComponent)).nativeElement.parentElement.style.width = '300px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
