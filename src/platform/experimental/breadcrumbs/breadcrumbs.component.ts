@@ -15,7 +15,7 @@ import { merge } from 'rxjs/observable/merge';
 })
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
 
-  private _resizeSubscription: Subscription;
+  private _resizeSubscription: Subscription = Subscription.EMPTY;
   private _widthSubject: Subject<number> = new Subject<number>();
   private _resizing: boolean = false;
 
@@ -32,6 +32,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    console.log(this._resizeSubscription);
     this._resizeSubscription = merge(
       fromEvent(window, 'resize').pipe(
         debounceTime(10),
@@ -63,9 +64,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   }
 
   ngOnDestroy(): void {
-    if (this._resizeSubscription) {
-      this._resizeSubscription.unsubscribe();
-    }
+    this._resizeSubscription.unsubscribe();
   }
 
   /*
