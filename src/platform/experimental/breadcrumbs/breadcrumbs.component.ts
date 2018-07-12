@@ -32,7 +32,6 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    console.log(this._resizeSubscription);
     this._resizeSubscription = merge(
       fromEvent(window, 'resize').pipe(
         debounceTime(10),
