@@ -4,16 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
-import { CovalentMediaModule } from '../platform/core';
+
+import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
+import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
-
-import { appRoutes, appRoutingProviders } from './test-bed.routes';
 import { MainComponent } from './main/main.component';
 import { BreadcrumbDemoComponent } from './sandbox/breadcrumbs/breadcrumbs.component';
-import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { TabSelectDemoComponent } from './sandbox/tab-select/tab-select.component';
-import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
+import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
-    CovalentMediaModule,
     FormsModule,
     MatDividerModule,
     appRoutes,

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'breadcrumbs-demo',
@@ -8,5 +7,4 @@ import { TdMediaService } from '@covalent/core/media';
 })
 export class BreadcrumbDemoComponent {
 
-  constructor(public media: TdMediaService) { }
 }
