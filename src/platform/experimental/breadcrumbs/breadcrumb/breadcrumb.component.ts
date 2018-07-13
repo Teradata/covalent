@@ -61,4 +61,12 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     this._changeDetectorRef.markForCheck();
   }
 
+  /**
+   * Stop click propagation when clicking on icon
+   */
+  _handleIconClick(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
 }
