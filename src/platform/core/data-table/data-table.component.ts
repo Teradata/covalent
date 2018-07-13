@@ -609,6 +609,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       this._indeterminate = false;
     }
     this.onSelectAll.emit({rows: toggledRows, selected: checked});
+    this.onChange(this.value);
   }
 
   /**
