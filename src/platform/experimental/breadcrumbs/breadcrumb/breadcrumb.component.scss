@@ -1,0 +1,22 @@
+:host {
+  .td-breadcrumb {
+    height: 48px;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: flex-end;
+    ::ng-deep > * {
+      margin: 0 10px;
+    }
+  }
+  mat-icon.material-icons.mat-icon {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  &.mat-button {
+    min-width: 0;
+    padding: 0;
+  }
+}
