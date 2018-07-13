@@ -11,8 +11,8 @@
 
 #### Methods
 
-+ count: function(): number
-  + The total count of individual breadcrumbs
++ count: number
+  + The total count of individual breadcrumbs (read only)
 
 #### Attributes
 
@@ -27,12 +27,10 @@
 
 #### Methods
 
-+ displayCrumb: function(): boolean 
-  + Getter for whether to display the individual breadcrumb or not
-+ displayCrumb: function(shouldDisplay: boolean): void 
-  + Setter for whether to display the individual breadcrumb or not
-+ width: function(): number 
-  + The current width of the individual breadcrumb
++ displayCrumb: boolean 
+  + Whether to display the individual breadcrumb or not
++ width: number 
+  + The current width of the individual breadcrumb (read only)
 
 ## Setup
 
@@ -67,7 +65,7 @@ Basic Example:
 Example with all inputs/outputs: 
 
 ```html
-<td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
+<td-breadcrumbs #breadcrumbs separatorIcon="motorcycle">
   <a td-breadcrumb [routerLink]="'/'">Home</a>
   <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
   <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
@@ -75,18 +73,14 @@ Example with all inputs/outputs:
   <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
 </td-breadcrumbs>
 <mat-divider></mat-divider>
-<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+<div>
   Total Breadcrumbs Count: {{breadcrumbs.count}}
 </div>
-<mat-divider></mat-divider>
-<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-  Hidden Breadcrumbs Count (shrink window to see):
-</div>
-<div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
-  {{breadcrumbs.hiddenBreadcrumbs.length}}
+<div>
+  Hidden Breadcrumbs Count (shrink window to see): {{breadcrumbs.hiddenBreadcrumbs.length}}
 </div>
 <ng-template let-breadcrumb let-index="index" ngFor [ngForOf]="breadcrumbs.hiddenBreadcrumbs">
-  <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <div>
     <p>Breadcrumb Number: {{index}}</p>
     <p>Breadcrumb Width: {{breadcrumb?.width}}</p>
     <mat-divider></mat-divider>

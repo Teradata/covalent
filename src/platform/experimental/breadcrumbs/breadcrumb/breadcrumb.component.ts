@@ -1,4 +1,12 @@
-import { Component, ElementRef, Renderer2, HostBinding, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Renderer2,
+  HostBinding,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 @Component({
   selector: 'td-breadcrumb, a[td-breadcrumb]',
@@ -8,9 +16,7 @@ import { Component, ElementRef, Renderer2, HostBinding, AfterViewInit, ChangeDet
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
 
-  // Whether to display the crumb or not
   private _displayCrumb: boolean = true;
-  // Width of the DOM element of the crumb
   private _width: number = 0;
   // Sets the icon url shown between breadcrumbs. Defaults to right chevron
   separatorIcon: string = 'navigate_next';
@@ -21,11 +27,17 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb;
   }
 
+  /**
+   * Whether to display the crumb or not
+   */
   set displayCrumb(shouldDisplay: boolean) {
     this._displayCrumb = shouldDisplay;
     this._changeDetectorRef.markForCheck();
   }
 
+  /**
+   * Width of the DOM element of the crumb
+   */
   get width(): number {
     return this._width;
   }
@@ -37,7 +49,9 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(private _elementRef: ElementRef,
+              private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'mat-button');
   }
 

@@ -1,11 +1,29 @@
 import {
-  Component, ContentChildren, QueryList, OnInit, OnDestroy, ChangeDetectionStrategy,
-         AfterContentInit, DoCheck, ChangeDetectorRef, ElementRef, Input } from '@angular/core';
-import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { Subscription, Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+  Component,
+  ContentChildren,
+  QueryList,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  AfterContentInit,
+  DoCheck,
+  ChangeDetectorRef,
+  ElementRef,
+  Input,
+} from '@angular/core';
+
+import {
+  Subscription,
+  Subject,
+} from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+} from 'rxjs/operators';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { merge } from 'rxjs/observable/merge';
+
+import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'td-breadcrumbs',
