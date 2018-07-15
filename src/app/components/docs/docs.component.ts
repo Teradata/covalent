@@ -39,10 +39,10 @@ export class DocsComponent {
     route: 'creating',
     title: 'Creating new views',
   }, {
-    description: 'Deploy your UI',
-    icon: 'local_shipping',
+    description: 'Build your UI',
+    icon: 'cached',
     route: 'deployment',
-    title: 'Deployment',
+    title: 'Building',
   }, {
     description: 'Access 750+ Material Design icons',
     icon: 'photo_size_select_actual',
