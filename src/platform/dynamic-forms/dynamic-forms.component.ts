@@ -5,8 +5,7 @@ import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 import { TdDynamicFormsService, ITdDynamicElementConfig } from './services/dynamic-forms.service';
 import { TdDynamicFormsErrorTemplate } from './dynamic-element.component';
 
-import { timer } from 'rxjs/observable/timer';
-import { toPromise } from 'rxjs/operator/toPromise';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'td-dynamic-forms',
@@ -28,7 +27,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
    * [name] property is required.
    */
   @Input('elements')
-  set elements(elements: ITdDynamicElementConfig[]){
+  set elements(elements: ITdDynamicElementConfig[]) {
     if (elements) {
       this._elements = elements;
     } else {
@@ -149,7 +148,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
     });
     // call a change detection since the whole form might change
     this._changeDetectorRef.detectChanges();
-    toPromise.call(timer()).then(() => {
+    timer().toPromise().then(() => {
       // call a markForCheck so elements are rendered correctly in OnPush
       this._changeDetectorRef.markForCheck();
     });

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timeAgo',
 })
 export class TdTimeAgoPipe implements PipeTransform {
-  transform(time: any, reference: any): string {
+  transform(time: any, reference?: any): string {
     // Convert time to date object if not already
     time = new Date(time);
     let ref: Date = new Date(reference);

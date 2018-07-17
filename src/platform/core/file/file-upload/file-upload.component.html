@@ -5,7 +5,7 @@
                [accept]="accept"
                [color]="defaultColor"
                (select)="handleSelect($event)">
-  <ng-template [cdkPortalHost]="inputLabel" [ngIf]="true"></ng-template>
+  <ng-template [cdkPortalOutlet]="inputLabel" [ngIf]="true"></ng-template>
 </td-file-input>
 <div *ngIf="value">
   <button #fileUpload

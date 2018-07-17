@@ -9,6 +9,7 @@ import { TdDialogService } from '../../../../platform/core';
   styleUrls: ['./dialogs.component.scss'],
   templateUrl: './dialogs.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DialogsDemoComponent {
 

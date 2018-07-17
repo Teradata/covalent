@@ -2,8 +2,7 @@ import { Constructor } from './constructor';
 import { ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 
 const noop: any = () => {
   // empty method

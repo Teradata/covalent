@@ -32,8 +32,6 @@
     ],
     "import-blacklist": [
       true,
-      "rxjs",
-      "rxjs/operators",
       "@angular/cdk",
       "@angular/material",
       "@covalent/core"

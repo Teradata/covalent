@@ -3,7 +3,7 @@ sudo: required
 dist: trusty
 
 node_js:
-- '6.12.0'
+- '8.9.4'
 branches:
   only:
     - master
@@ -20,6 +20,7 @@ jobs:
     - env: "MODE=aot"
     - env: "MODE=release"
     - env: "MODE=unit-test"
+    - env: "MODE=a11y"
 install:
 - npm install
 script:

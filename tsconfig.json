@@ -1,11 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
     ],
     "moduleResolution": "node",

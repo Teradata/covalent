@@ -62,7 +62,7 @@ $warn:    mat-palette($mat-red, 600);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
-@include markdown-markdown-theme($theme);
+@include covalent-markdown-theme($theme);
 ```
 
 ## Example

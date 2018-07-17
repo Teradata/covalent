@@ -1,0 +1,11 @@
+
+@mixin td-breadcrumb-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  td-breadcrumb {
+    &:last-of-type {
+      color: mat-color($foreground, disabled);
+      cursor: default;
+    }
+  }
+}

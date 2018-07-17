@@ -17,9 +17,9 @@ git push --tags
 echo "Pushing changes into develop"
 git push origin develop
 
-echo "Pushing changes into master"
+echo "Rebasing and pushing changes into master"
 git checkout master
-git merge develop
+git rebase develop
 git push origin master
 
 echo "Return to develop branch"

@@ -1,156 +1,95 @@
-<div layout-sm="row" layout-gt-md="row">
-  <mat-card flex-sm="70" flex-gt-md="70">
-    <mat-card-title>Navigation Drawers Patterns</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <h3>Problem</h3>
-      <p>Need a means of navigation that is familiar and consistent.</p>
-      <h3>Solution</h3>
-      <p>The navigation drawer provides a familiar means of navigation along with access to additional account features, for example, the ability to switch accounts, access settings, and sign out.</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card flex-sm flex-gt-md>
-    <mat-card-title>Resources</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Nav Drawer</span>
-      </a>
-    </mat-nav-list>
-  </mat-card>
-</div>
-<mat-card>
-  <mat-card-title>Examples</mat-card-title>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <div layout-sm="row" layout-gt-md="row">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Side Navigation</mat-card-title>
-        <mat-card-subtitle>Sidenav toolbar &amp; list from the Material Design spec</mat-card-subtitle>
-        <mat-card-content>
-          <p>In addition to the Material Design Navigation Drawer component, this example leverages the following components:</p>
-          <mat-nav-list>
-            <a mat-list-item href="https://material.io/guidelines/components/lists.html" target="_blank">
-              <mat-icon>launch</mat-icon>
-              <span matLine>Material Design List</span>
-              <p matLine>mat-list</p>
-            </a>
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+      <mat-card-title>Navigation Drawer Patterns</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content class="mat-typography">
+        <h3>When to use</h3>
+        <p>The navigation drawer provides a familiar means of navigation along with access to additional account features, for example, the ability to switch accounts, access settings, and sign out.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        <div layout="row" layout-align="start center">
+          <span>Example</span>
+          <span flex></span>
+          <a href="https://stackblitz.com/edit/nav-drawer-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+            <mat-icon>launch</mat-icon>
+          </a>
+        </div>
+      </mat-card-title>
+      <mat-divider></mat-divider>
+      <div layout-gt-sm="row">
+        <div flex-gt-sm="25" class="mat-typography pad relative">
+          <h2>Usage</h2>
+          <mat-list class="pull-left pull-right">
+            <mat-list-item>
+              <h3 matLine>Logo &amp; Title</h3>
+              <p matLine>Display your brand in nav drawer</p>
+            </mat-list-item>
             <mat-divider></mat-divider>
-            <a mat-list-item href="https://material.io/guidelines/style/icons.html" target="_blank">
+            <mat-list-item>
+              <h3 matLine>Name &amp; Email</h3>
+              <p matLine>Display your user info</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Main navigation</h3>
+              <p matLine>Top level routes</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <h3 matLine>Toggle user nav</h3>
+              <p matLine>Click on user info to display nav</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+          <h2 class="push-top push-bottom-none">Guidelines</h2>
+          <mat-nav-list class="pull-left pull-right">
+            <a mat-list-item href="https://material.io/guidelines/patterns/navigation-drawer.html" target="_blank">
               <mat-icon>launch</mat-icon>
-              <span matLine>Material Design Icon</span>
-              <p matLine>mat-icons</p>
+              <h3 matLine>Material Design</h3>
+              <p matLine>Nav Drawer</p>
             </a>
           </mat-nav-list>
-        </mat-card-content>
+        </div>
+        <div layout="row" flex-gt-sm>
+          <iframe flex class="iframe" [src]="source"></iframe>
+        </div>
       </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example1">
-            <div>
-              <mat-tab-group mat-stretch-tabs dynamicHeight>
-                  <mat-tab>
-                    <ng-template matTabLabel>HTML</ng-template>
-                      <td-highlight lang="html">
-                          <![CDATA[
-                            <td-layout #layout>
-                              <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-                                <mat-nav-list>
-                                  <a *ngFor="let item of routes" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
-                                </mat-nav-list>
-                                <div td-navigation-drawer-menu>
-                                  <mat-nav-list>
-                                    <a *ngFor="let item of usermenu" mat-list-item (click)="layout.close()" [routerLink]="[item.route]"><mat-icon>{ {item.icon} }</mat-icon>{ {item.title} }</a>
-                                  </mat-nav-list>
-                                </div>
-                              </td-navigation-drawer>
-                              <div td-sidenav-content class="td-layout-footer pad">
-                                &copy; 2017 Your Company, Inc.
-                              </div>
-                              <router-outlet></router-outlet>
-                            </td-layout>
-                          ]]>
-                      </td-highlight>
-                  </mat-tab>
-                  <mat-tab>
-                    <ng-template matTabLabel>Typescript</ng-template>
-                      <td-highlight lang="typescript">
-                          <![CDATA[
-                            ...
-                            export class MainComponent {
-                              routes: Object[] = [{
-                                  icon: 'home',
-                                  route: '.',
-                                  title: 'Home',
-                                }, {
-                                  icon: 'library_books',
-                                  route: '.',
-                                  title: 'Documentation',
-                                }, {
-                                  icon: 'color_lens',
-                                  route: '.',
-                                  title: 'Style Guide',
-                                }, {
-                                  icon: 'view_quilt',
-                                  route: '.',
-                                  title: 'Layouts',
-                                }, {
-                                  icon: 'picture_in_picture',
-                                  route: '.',
-                                  title: 'Components & Addons',
-                                },
-                              ];
-
-                              usermenu: Object[] = [{
-                                  icon: 'swap_horiz',
-                                  route: '.',
-                                  title: 'Switch account',
-                                }, {
-                                  icon: 'tune',
-                                  route: '.',
-                                  title: 'Account settings',
-                                }, {
-                                  icon: 'exit_to_app',
-                                  route: '.',
-                                  title: 'Sign out',
-                                },
-                              ];
-                            }
-                          ]]>
-                      </td-highlight>
-                  </mat-tab>
-              </mat-tab-group>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <div class="push-md border">
-            <td-layout>
-              <td-navigation-drawer flex sidenavTitle="Covalent" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
-                <mat-nav-list>
-                  <a *ngFor="let item of routes" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-                </mat-nav-list>
-                <div td-navigation-drawer-menu>
-                  <mat-nav-list>
-                    <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-                  </mat-nav-list>
-                </div>
-              </td-navigation-drawer>
-              <div td-sidenav-content class="td-layout-footer pad">
-                &copy; 2017 Your Company, Inc.
-              </div>
-            </td-layout>
-          </div>
+    </mat-card>
+    <div layout-gt-xs="row">
+      <div flex-gt-xs="50">
+        <mat-card>
+          <mat-card-title>
+            <span class="tc-green-600">Do</span>
+          </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_one</mat-icon>
+              <h3 matLine>Use standard layouts</h3>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_two</mat-icon>
+              <h3 matLine>Be consistent</h3>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+      <div flex-gt-xs="50">
+        <mat-card>
+          <mat-card-title>
+            <span class="tc-red-600">Don't</span>
+          </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>looks_one</mat-icon>
+              <h3 matLine>Don't use nested navigation</h3>
+            </mat-list-item>
+          </mat-list>
         </mat-card>
       </div>
     </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+  

@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class HighlightDemoComponent {
 

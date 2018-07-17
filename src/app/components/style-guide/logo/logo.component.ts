@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./logo.component.scss'],
   templateUrl: './logo.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class LogoComponent {
 

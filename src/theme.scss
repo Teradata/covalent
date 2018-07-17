@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import './platform/core/theming/all-theme';
+@import './platform/experimental/theming/all-theme';
 @import './platform/markdown/markdown-theme';
 @import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
@@ -31,9 +32,6 @@ $mat-font-url: 'platform/core/common/styles/font/';
 
 // Include flex layout classes
 @include covalent-layout();
-
-// Include covalent typography classes
-@include covalent-typography();
 
 // Include covalent color classes
 @include covalent-colors();
@@ -75,7 +73,7 @@ $mat-orange-custom: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-blue-grey, 900);
+$primary: mat-palette($mat-blue-grey, 900, 100, 900);
 $accent:  mat-palette($mat-orange-custom, A700, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -89,6 +87,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+@include experimental-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 
@@ -110,8 +109,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   .tc-warn {
     color: mat-color($warn-alt);
   }
-  a:not(.mat-button),
-  a:not(.mat-icon-button) {
+  a:not([class*='mat-']) {
     color: mat-color($accent-alt);
     &:hover {
       color: darken(mat-color($accent-alt), 10%);
@@ -121,8 +119,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 // Dark theme
 .theme-dark {
-  $primary-dark: mat-palette($mat-blue-grey, 900);
-  $accent-dark:  mat-palette($mat-deep-orange, A400);
+  $primary-dark: mat-palette($mat-blue-grey, 900, 100, 900);
+  $accent-dark:  mat-palette($mat-orange-custom, A700, A100, A400);
   $warn-dark:    mat-palette($mat-red, 600);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
@@ -227,7 +225,7 @@ mat-nav-list {
 }
 
 // Expansion panels
-.theme-dark .td-expansion-panel {
+.home .theme-dark .td-expansion-panel {
   background-color: mat-color($mat-blue-grey, 800);
 }
 

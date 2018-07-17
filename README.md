@@ -1,9 +1,12 @@
 ## Covalent: UI Platform based on Angular-Material
 
 [![Build Status](https://travis-ci.org/Teradata/covalent.svg?branch=develop)](https://travis-ci.org/Teradata/covalent)
-[![npm version](https://badge.fury.io/js/%40covalent%2Fcore.svg)](https://badge.fury.io/js/%40covalent%2Fcore)
+[![npm](https://img.shields.io/npm/v/%40covalent/core.svg)](https://www.npmjs.com/package/@covalent/core)
+[![npm](https://img.shields.io/npm/v/%40covalent/core/next.svg)](https://www.npmjs.com/package/@covalent/core/v/next)
 [![Join the chat at https://gitter.im/Teradata/covalent](https://badges.gitter.im/Teradata/covalent.svg)](https://gitter.im/Teradata/covalent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Coverage Status](https://coveralls.io/repos/github/Teradata/covalent/badge.svg)](https://coveralls.io/github/Teradata/covalent)
+[![npm](https://img.shields.io/npm/l/@covalent/core.svg)](LICENSE)
 
 <img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
 
@@ -13,13 +16,12 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 
 ## Setup
 
-* Ensure you have Node 6.12.0 or up and NPM 3+ installed.
+* Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
 * Install Angular CLI `npm i -g @angular/cli`
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm install -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
-* Install Node packages `npm i`
-* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
+* Install Node packages `npm run reinstall` (or `npm run reinstall:latest`)
 * Run local build `npm run serve` or `npm run serve:prod`
 * If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 ---

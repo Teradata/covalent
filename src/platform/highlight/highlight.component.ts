@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+declare const require: any;
 /* tslint:disable-next-line */
 let hljs: any = require('highlight.js/lib');
 
@@ -101,7 +103,7 @@ export class TdHighlightComponent implements AfterViewInit {
 
     let codeToParse: string =  lines.join('\n')
     .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
-    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in angular
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in Angular
 
     // Parse code with highlight.js depending on language
     let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);

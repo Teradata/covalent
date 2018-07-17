@@ -5,8 +5,7 @@ import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
 
-import { debounceTime } from 'rxjs/operators/debounceTime';
-import { skip } from 'rxjs/operators/skip';
+import { debounceTime, skip } from 'rxjs/operators';
 
 import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
@@ -114,8 +113,8 @@ export class TdSearchInputComponent extends _TdSearchInputMixinBase implements I
 
   ngOnInit(): void {
     this._input.ngControl.valueChanges.pipe(
-      skip(1), // skip first change when value is set to undefined
       debounceTime(this.debounce),
+      skip(1), // skip first change when value is set to undefined
     ).subscribe((value: string) => {
       this._searchTermChanged(value);
     });

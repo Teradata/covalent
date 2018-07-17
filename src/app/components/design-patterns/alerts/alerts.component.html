@@ -1,327 +1,140 @@
-<div layout-sm="row" layout-gt-md="row">
-  <mat-card flex-sm="70" flex-gt-md="70">
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
     <mat-card-title>Alert Patterns</mat-card-title>
     <mat-divider></mat-divider>
-    <mat-card-content>
-      <h3>Problem</h3>
-      <p>Need to provide information or feedback to the user and potentially prompt them to take action.
-        <h3>Solution</h3>
-        <p>Notifications have a signifigant impact on the user's overall impression of the application.  This is how the app communicates directly with the user, so it is important to consider the form of notification.  For exmaple, dialogs are most useful in situations where the user most take some action or the app needs to communicate critical information.  On the other hand, toasts and snackbars are passive and do not require any user action or interruption to the user's workflow.  Inline errors are useful for forms validation while guiding the user through the form.</p>
+    <mat-card-content class="mat-typography">
+      <h3>When to use</h3>
+      <p>Dialogs, toasts, and inline errors all provide a means to communicate with the user to provide feedback or a call to action.</p>
     </mat-card-content>
   </mat-card>
-  <!-- Resources -->
-  <mat-card flex-sm flex-gt-md>
-    <mat-card-title>Resources</mat-card-title>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/alert-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
     <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Dialogs</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Toasts & Snackbars</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Material Design Errors</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Angular Material Dialogs</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Angular Material Snackbars</span>
-      </a>
-      <mat-divider></mat-divider>
-      <a mat-list-item [routerLink]="['/components', 'dialogs']" target="_blank">
-        <mat-icon>launch</mat-icon>
-        <span matLine>Covalent Dialogs</span>
-      </a>
-    </mat-nav-list>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad relative">
+        <h2>Usage</h2>
+        <mat-list class="pull-left pull-right">
+          <mat-list-item>
+            <h3 matLine>Dialogs</h3>
+            <p matLine>Catastrophic errors &amp; confirmations</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Snackbars (Toasts)</h3>
+            <p matLine>Passive temporary confirmations</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Form Errors &amp; Hints</h3>
+            <p matLine>Informative inline tips</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Messages</h3>
+            <p matLine>Priority info or errors</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Lists</h3>
+            <p matLine>Use lists inside cards</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Images</h3>
+            <p matLine>Various size &amp; location options</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+        <h2 class="push-top push-bottom-none">Guidelines</h2>
+        <mat-nav-list class="pull-left pull-right">
+          <a mat-list-item href="https://material.io/guidelines/components/dialogs.html" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
+            <p matLine>Dialogs</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/dialog/overview" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Angular Material</h3>
+            <p matLine>Dialogs</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.io/guidelines/components/snackbars-toasts.html" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
+            <p matLine>Snackbars</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/snack-bar/overview" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <span matLine>Angular Material</span>
+            <p matLine>Snackbars</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.io/guidelines/patterns/errors.html" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <span matLine>Material Design</span>
+            <p matLine>Errors</p>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source"></iframe>
+      </div>
+    </div>
   </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Align action buttons to the right.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Keep dialogs simple</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Give informative error messages.</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Don't use dialogs for complex forms.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Don't use a dismiss button in snackbar.</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Don't use a snackbar for important info.</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
 </div>
-<!-- Examples -->
-<mat-card>
-  <mat-card-title>Examples</mat-card-title>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <!-- Dialogs -->
-    <div layout-sm="row" layout-gt-md="row">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Dialogs</mat-card-title>
-        <mat-card-subtitle>Notification with call to action</mat-card-subtitle>
-        <mat-card-content>
-          <p>Since dialogs are disruptive, reserve use to inform users about a specific task or critical information, such as
-            a verbose/critical error, alert or a confirmation of an action. </p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example1')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example1">
-            <!-- View Source -->
-            <div>
-              <mat-tab-group mat-stretch-tabs dynamicHeight>
-                <mat-tab>
-                  <ng-template matTabLabel>HTML</ng-template>
-                    <td-highlight lang="html">
-                      <![CDATA[
-                          <button mat-raised-button color="warn" (click)="openAlert()">View Error</button>
-                          <button mat-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
-                        ]]>
-                    </td-highlight>
-                </mat-tab>
-                  <mat-tab>
-                  <ng-template matTabLabel>Typescript</ng-template>
-                    <td-highlight lang="typescript">
-                      <![CDATA[
-                          import { TdDialogService } from '@covalent/core/dialogs';
-                          ...
-                          constructor(private _dialogService: TdDialogService) {
-                          }
-                          openAlert(): void {
-                            this._dialogService.openAlert({
-                              message: 'You don\'t have the required permissions to view this item! Contact an administrator!',
-                              title: '401 Permissions Error',
-                              closeButton: 'Ok',
-                            });
-                          }
-                          openConfirm(): void {
-                            this._dialogService.openConfirm({
-                              message: 'Are you sure you want to delete this item? It\'s used on other items.',
-                              title: 'Confirm',
-                              cancelButton: 'Cancel',
-                              acceptButton: 'Delete',
-                            }).afterClosed().subscribe((accept: boolean) => {
-                              if (accept) {
-                                // DO SOMETHING
-                              } else {
-                                // DO SOMETHING ELSE
-                              }
-                            });
-                          }
-                        ]]>
-                    </td-highlight>
-                </mat-tab>
-              </mat-tab-group>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card-content class="push-md">
-            <button mat-raised-button color="warn" (click)="openAlert()">View Error</button>
-            <button mat-raised-button color="accent" (click)="openConfirm()">Request Confirmation</button>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div> 
-    <!-- Toasts & Snackbars -->
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Toast</mat-card-title>
-        <mat-card-subtitle>Brief, floating notification with optional user interaction</mat-card-subtitle>
-        <mat-card-content>
-        <p>Toasts &amp; snackbars provide brief feedback about an operation through a message at the bottom of the screen. This  information is transient and will go away momentarily.</p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example2')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example2">
-            <!-- View Source -->
-            <div>
-              <mat-tab-group mat-stretch-tabs dynamicHeight>
-                <mat-tab>
-                  <ng-template matTabLabel>HTML</ng-template>
-                    <td-highlight lang="html">
-                      <![CDATA[
-                        <button mat-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
-                        ]]>
-                    </td-highlight>
-                </mat-tab>
-                  <mat-tab>
-                  <ng-template matTabLabel>Typescript</ng-template>
-                    <td-highlight lang="typescript">
-                      <![CDATA[
-                        import { MatSnackBar } from '@angular/material/snack-bar';
-                        ...
-                        export class ToastsComponent {
-                          constructor(private _snackBarService: MatSnackBar) {
-                          }
-                          showSnackBar(): void {
-                            this._snackBarService.open('Connection timed out.  Showing limited messages.', 'Retry', { duration: 3000 });
-                          }
-                        }
-                      ]]>
-                    </td-highlight>
-                </mat-tab>
-              </mat-tab-group>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <mat-card-content class="push-md">
-            <button mat-raised-button color="primary" (click)="showSnackBar()">Send toast</button>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-    <!-- Inline errors -->
-    <div layout-sm="row" layout-gt-md="row" class="pad-top-xxl">
-      <div flex-sm="35" flex-gt-md="35">
-        <mat-card-title>Inline Errors</mat-card-title>
-        <mat-card-subtitle>For forms and inputs use inline errors for contextual feedback.</mat-card-subtitle>
-        <mat-card-content>
-        <p>Inline errors are useful in forms for validation, warnings and errors.</p>
-        </mat-card-content>
-      </div>
-      <div flex>
-        <mat-card class="pad-bottom-lg">
-          <mat-card-subtitle class="bgc-grey-100 push-none">
-            <div layout="row">
-              <span flex></span>
-              <button mat-icon-button matTooltip="View Source" (click)="toggle('example3')">
-                <mat-icon class="tc-grey-700">code</mat-icon>
-              </button>
-            </div>
-          </mat-card-subtitle>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="example3">
-            <!-- View Source -->
-            <div>
-              <td-highlight lang="html">
-                <![CDATA[
-                  <form #myForm="ngForm">
-                      <div layout-gt-xs="row" layout-margin>
-                        <mat-form-field flex>
-                          <input matInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name" required tdAutoTrim/>
-                          <mat-hint>
-                            <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
-                          </mat-hint>
-                        </mat-form-field>
-                        <mat-form-field flex>
-                          <input matInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name" required tdAutoTrim/>
-                          <mat-hint>
-                            <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
-                          </mat-hint>
-                        </mat-form-field>
-                      </div>
-                      <div layout-gt-xs="row" layout-margin>
-                        <mat-form-field flex="40">
-                          <input matInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50" tdAutoTrim/>
-                          <mat-hint>
-                            <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
-                          </mat-hint>
-                          <mat-hint align="end">{{addressEl.value.length}} / 50</mat-hint>
-                        </mat-form-field>
-                        <mat-form-field flex="35">
-                          <input matInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-                        </mat-form-field>
-                      </div>
-                      <div layout-gt-xs="row" layout-margin>
-                        <mat-form-field flex="20">
-                          <input matInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2" required tdAutoTrim/>
-                          <mat-hint>
-                            <span [hidden]="stateForm.pristine" class="tc-red-600">
-                              <span [hidden]="!stateForm.errors?.required">Required</span>
-                              <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
-                            </span>
-                          </mat-hint>
-                          <mat-hint align="end">e.g CA</mat-hint>
-                        </mat-form-field>
-                        <mat-form-field flex="25">
-                          <input matInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
-                          <mat-hint>
-                            <span [hidden]="zipForm.pristine" class="tc-red-600">
-                              <span [hidden]="!zipForm.errors?.required">Required</span>
-                              <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
-                            </span>
-                          </mat-hint>
-                          <mat-hint align="end">e.g 92101</mat-hint>
-                        </mat-form-field>
-                      </div>
-                      <mat-divider></mat-divider>
-                      <div class="inset">
-                        <button mat-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
-                      </div>
-                    </form>
-                  ]]>
-              </td-highlight>
-            </div>
-            <mat-divider></mat-divider>
-          </div>
-          <!-- example -->
-          <form #myForm="ngForm">
-            <div layout-gt-xs="row" layout-margin>
-              <mat-form-field flex>
-                <input matInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="firstName" name="first_name" required tdAutoTrim/>
-                <mat-hint>
-                  <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
-                </mat-hint>
-              </mat-form-field>
-              <mat-form-field flex>
-                <input matInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="lastName" name="last_name" required tdAutoTrim/>
-                <mat-hint>
-                  <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
-                </mat-hint>
-              </mat-form-field>
-            </div>
-            <div layout-gt-xs="row" layout-margin>
-              <mat-form-field flex="40">
-                <input matInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address" required maxlength="50"
-                  tdAutoTrim/>
-                <mat-hint>
-                  <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
-                </mat-hint>
-                <mat-hint align="end">{{addressEl.value.length}} / 50</mat-hint>
-              </mat-form-field>
-              <mat-form-field flex="35">
-                <input matInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim/>
-              </mat-form-field>
-            </div>
-            <div layout-gt-xs="row" layout-margin>
-              <mat-form-field flex="20">
-                <input matInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}" maxlength="2"
-                  required tdAutoTrim/>
-                <mat-hint>
-                  <span [hidden]="stateForm.pristine" class="tc-red-600">
-                    <span [hidden]="!stateForm.errors?.required">Required</span>
-                  <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
-                  </span>
-                </mat-hint>
-                <mat-hint align="end">e.g CA</mat-hint>
-              </mat-form-field>
-              <mat-form-field flex="25">
-                <input matInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}" maxlength="5" required/>
-                <mat-hint>
-                  <span [hidden]="zipForm.pristine" class="tc-red-600">
-                    <span [hidden]="!zipForm.errors?.required">Required</span>
-                  <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
-                  </span>
-                </mat-hint>
-                <mat-hint align="end">e.g 92101</mat-hint>
-              </mat-form-field>
-            </div>
-          </form>
-        </mat-card>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>

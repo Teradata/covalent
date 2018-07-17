@@ -1,8 +1,6 @@
 import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';

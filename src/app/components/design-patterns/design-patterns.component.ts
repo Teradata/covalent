@@ -29,6 +29,11 @@ export class DesignPatternsComponent {
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
   }, {
+    description: 'Floating action button',
+    icon: 'add_circle',
+    route: 'fab',
+    title: 'FAB Patterns',
+  }, {
     description: 'Wizard-like pattern',
     icon: 'looks_one',
     route: 'steppers',

@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './utility-styles.component.html',
   styleUrls: ['./utility-styles.component.scss'],
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class UtilityStylesComponent {
 

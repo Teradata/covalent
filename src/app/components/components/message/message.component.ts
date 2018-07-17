@@ -6,6 +6,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./message.component.scss' ],
   templateUrl: './message.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class MessageDemoComponent {
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { TdMediaService, TdJelloAnimation } from '../../../../platform/core';
 
@@ -12,6 +12,7 @@ import { TdMediaService, TdJelloAnimation } from '../../../../platform/core';
     TdJelloAnimation(),
     slideInDownAnimation,
   ],
+  preserveWhitespaces: true,
 })
 export class MediaDemoComponent implements OnInit, OnDestroy {
 

@@ -1,7 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { OnDestroy, AfterContentInit } from '@angular/core';
 import { EventEmitter, ContentChildren, QueryList } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { TdStepComponent } from './step.component';
 
@@ -11,8 +11,8 @@ export interface IStepChangeEvent {
 }
 
 export enum StepMode {
-  Vertical = <any>'vertical',
-  Horizontal = <any>'horizontal',
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
 }
 
 @Component({

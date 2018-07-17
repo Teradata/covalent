@@ -1,0 +1,99 @@
+<div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+  <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-bottom']">
+    <mat-card-title>FAB Patterns</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="mat-typography">
+      <h3>When to use</h3>
+      <p>The floating action button (FAB) provides access to the primary action for the current view.</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span>Example</span>
+        <span flex></span>
+        <a href="https://stackblitz.com/edit/fab-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
+          <mat-icon>launch</mat-icon>
+        </a>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div layout-gt-sm="row">
+      <div flex-gt-sm="25" class="mat-typography pad relative">
+        <h2>Usage</h2>
+        <mat-list class="pull-left pull-right">
+          <mat-list-item>
+            <h3 matLine>Position</h3>
+            <p matLine>Bottom right for lists</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Color</h3>
+            <p matLine>Use theme accent color</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <h3 matLine>Tooltip</h3>
+            <p matLine>Include a tooltip for a11y</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+        <h2 class="push-top push-bottom-none">Guidelines</h2>
+        <mat-nav-list class="pull-left pull-right">
+          <a mat-list-item href="https://material.io/guidelines/components/buttons-floating-action-button.html" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Material Design</h3>
+            <p matLine>FAB Guidelines</p>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="https://material.angular.io/components/button/overview" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <h3 matLine>Angular Material</h3>
+            <p matLine>Button Component</p>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div layout="row" flex-gt-sm>
+        <iframe flex class="iframe" [src]="source"></iframe>
+      </div>
+    </div>
+  </mat-card>
+  <div layout-gt-xs="row">
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-green-600">Do.</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Only one FAB per page</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_two</mat-icon>
+            <h3 matLine>Contextual primary action</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div flex-gt-xs="50">
+      <mat-card>
+        <mat-card-title>
+          <span class="tc-red-600">Don't.</span>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_one</mat-icon>
+            <h3 matLine>Don't use for negative actions like delete</h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>looks_3</mat-icon>
+            <h3 matLine>Don't embellish with custom styles</h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,11 @@ import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
   selector: 'layouts-card-over',
   styleUrls: ['./card-over.component.scss'],
   templateUrl: './card-over.component.html',
+  preserveWhitespaces: true,
 })
 export class CardOverComponent {
 
-  routes: Object[] = [{
+  routes: any[] = [{
       icon: 'home',
       route: '.',
       title: 'Home',

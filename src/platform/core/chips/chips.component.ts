@@ -13,14 +13,8 @@ import { MatInput } from '@angular/material/input';
 import { MatOption } from '@angular/material/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { timer } from 'rxjs/observable/timer';
-import { merge } from 'rxjs/observable/merge';
-import { toPromise } from 'rxjs/operator/toPromise';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { filter } from 'rxjs/operators/filter';
-import { debounceTime } from 'rxjs/operators/debounceTime';
+import { Observable, Subscription, timer, merge, fromEvent } from 'rxjs';
+import { filter, debounceTime } from 'rxjs/operators';
 
 import { ICanDisable, mixinDisabled, IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
@@ -79,6 +73,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _tabIndex: number = 0;
 
   _internalClick: boolean = false;
+  _internalActivateOption: boolean = false;
 
   @ViewChild('input') _nativeInput: ElementRef;
   @ViewChild(MatInput) _inputChild: MatInput;
@@ -296,7 +291,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   mousedownListener(event: FocusEvent): void {
      // sets a flag to know if there was a mousedown and then it returns it back to false
     this._isMousedown = true;
-    toPromise.call(timer()).then(() => {
+    timer().toPromise().then(() => {
       this._isMousedown = false;
     });
   }
@@ -324,7 +319,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
     switch (event.keyCode) {
       case TAB:
         // if tabing out, then unfocus the component
-        toPromise.call(timer()).then(() => {
+        timer().toPromise().then(() => {
           this.removeFocusedState();
         });
         break;
@@ -425,7 +420,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * to rerender the next list and at the correct spot
      */
     this._closeAutocomplete();
-    toPromise.call(timer(this.debounce)).then(() => {
+    timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
       this._setFirstOptionActive();
       this._openAutocomplete();
@@ -538,8 +533,9 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
          */
         if (this.requireMatch) {
           let length: number = this._options.length;
-          if (length > 0 && this._options.toArray()[0].active) {
+          if (length > 1 && this._options.toArray()[0].active && this._internalActivateOption) {
             this._options.toArray()[0].setInactiveStyles();
+            this._internalActivateOption = false;
             // prevent default window scrolling
             event.preventDefault();
           }
@@ -700,7 +696,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _setFirstOptionActive(): void {
     if (this.requireMatch) {
       // need to use a timer here to wait until the autocomplete has been opened (end of queue)
-      toPromise.call(timer()).then(() => {
+      timer().toPromise().then(() => {
         if (this.focused && this._options && this._options.length > 0) {
           // clean up of previously active options
           this._options.toArray().forEach((option: MatOption) => {
@@ -708,6 +704,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
           });
           // set the first one as active
           this._options.toArray()[0].setActiveStyles();
+          this._internalActivateOption = true;
           this._changeDetectorRef.markForCheck();
         }
       });

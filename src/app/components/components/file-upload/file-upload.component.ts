@@ -8,6 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./file-upload.component.scss'],
   templateUrl: './file-upload.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class FileUploadDemoComponent {
 

@@ -7,6 +7,7 @@ import { TdDigitsPipe } from '@covalent/core/common';
   selector: 'ngx-charts-demo',
   styleUrls: ['./ngx-charts.component.scss'],
   templateUrl: './ngx-charts.component.html',
+  preserveWhitespaces: true,
 })
 export class NgxChartsDemoComponent {
 

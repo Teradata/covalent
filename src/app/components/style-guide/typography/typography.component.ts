@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./typography.component.scss'],
   templateUrl: './typography.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class TypographyComponent {
 

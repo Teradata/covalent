@@ -128,8 +128,7 @@ Example for **Typescript**:
 <td-highlight lang="typescript">
   <![CDATA[
     import { Injectable } from '@angular/core';
-    import { Subject } from 'rxjs/Subject';
-    import { Observable } from 'rxjs/Observable';
+    import { Observable, Subject } from 'rxjs';
 
     @Injectable()
     export class Service {
@@ -137,7 +136,7 @@ Example for **Typescript**:
       private _sources: {[key : string]: Subject<any>} = {};
       private _observables: {[key: string]: Observable<any>} = {};
 
-      constructor(){
+      constructor() {
 
       }
 
@@ -148,7 +147,7 @@ Example for **Typescript**:
       }
 
       public emit(name: string): void {
-        if(this._sources[name]){
+        if(this._sources[name]) {
           this._sources[name].next(null);
         }
       }

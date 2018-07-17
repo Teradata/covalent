@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./pipes.component.scss' ],
   templateUrl: './pipes.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class PipesComponent {
 

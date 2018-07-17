@@ -59,29 +59,29 @@ export class DocsAppComponent {
 
     // Register svgs
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/teradata.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'github',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/github.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'covalent',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/covalent.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'covalent-stroke',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent-stroke.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/covalent-stroke.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'covalent-outline',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/covalent-outline.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/covalent-outline.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'angular',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/angular.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/angular.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'angular-outline',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/angular-outline.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/angular-outline.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'material-outline',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/material-outline.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/material-outline.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-ux',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/teradata-ux.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-ux.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'appcenter',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/appcenter.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/appcenter.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'listener',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/listener.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/querygrid.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/querygrid.svg'));
 
     // set direction
     this.dir = getDirection();

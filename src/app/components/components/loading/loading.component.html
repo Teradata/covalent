@@ -210,7 +210,7 @@
           <![CDATA[
             ...
             export class Demo {
-              items: any[] = [
+              itemList: any[] = [
                 {label: 'Light', value: true},
                 {label: 'Console', value: false},
                 {label: 'T.V.', value: true}];
@@ -269,8 +269,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { Observable } from 'rxjs/Observable';
-            import { Subscriber } from 'rxjs/Subscriber';
+            import { Observable, Subscriber } from 'rxjs';
             ...
             export class Demo {
               listObservable: Observable<any[]>;

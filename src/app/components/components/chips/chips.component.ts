@@ -8,6 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class ChipsDemoComponent implements OnInit {
 
