@@ -714,8 +714,9 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
       const srcElement: any = event.srcElement || event.currentTarget;
+      let element: HTMLElement = event.target as HTMLElement;
       /* tslint:disable-next-line */
-      if (srcElement.getAttribute('stopRowClick') === null) {
+      if (srcElement.getAttribute('stopRowClick') === null && element.tagName.toLowerCase() !== 'mat-pseudo-checkbox') {
         this.onRowClick.emit({
           row: row,
           index: index,
