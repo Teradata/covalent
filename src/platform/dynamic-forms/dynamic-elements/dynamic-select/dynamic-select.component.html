@@ -2,8 +2,9 @@
   <mat-form-field class="td-dynamic-select-field">
     <mat-select [(ngModel)]="value"
               [placeholder]="label"
-              [required]="required">
-      <mat-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
+              [required]="required"
+              [multiple]="selections.multi || false">
+      <mat-option *ngFor="let selection of (!!(selections.multi || selections.labels) ? selections.labels : selections)" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

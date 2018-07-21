@@ -30,7 +30,6 @@ import {
 import { TdDynamicSliderComponent } from './dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from './dynamic-elements/dynamic-select/dynamic-select.component';
 import { TdDynamicDatepickerComponent } from './dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
-import { TdDynamicMultiselectComponent } from './dynamic-elements/dynamic-multiselect/dynamic-multiselect.component';
 
 const TD_DYNAMIC_FORMS: Type<any>[] = [
   TdDynamicFormsComponent,
@@ -48,7 +47,6 @@ const TD_DYNAMIC_FORMS_ENTRY_COMPONENTS: Type<any>[] = [
   TdDynamicSliderComponent,
   TdDynamicSelectComponent,
   TdDynamicDatepickerComponent,
-  TdDynamicMultiselectComponent,
 ];
 
 @NgModule({
