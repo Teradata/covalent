@@ -10,4 +10,3 @@ export * from './dynamic-elements/dynamic-input/dynamic-input.component';
 export * from './dynamic-elements/dynamic-file-input/dynamic-file-input.component';
 export * from './dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
 export * from './dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
-export * from './dynamic-elements/dynamic-multiselect/dynamic-multiselect.component';

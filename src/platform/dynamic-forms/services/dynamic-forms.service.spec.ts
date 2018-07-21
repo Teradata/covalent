@@ -75,7 +75,6 @@ describe('Service: TdDynamicFormsService', () => {
       expect(service.getDynamicElement(TdDynamicElement.Slider)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.SlideToggle)).toBeTruthy();
       expect(service.getDynamicElement(TdDynamicElement.Select)).toBeTruthy();
-      expect(service.getDynamicElement(TdDynamicElement.Multiselect)).toBeTruthy();
 
       try {
         expect(service.getDynamicElement(undefined)).toBeFalsy('expect not to return a component');
