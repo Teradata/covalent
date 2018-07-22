@@ -3,8 +3,8 @@
     <mat-select [(ngModel)]="value"
               [placeholder]="label"
               [required]="required"
-              [multiple]="selections.multi || false">
-      <mat-option *ngFor="let selection of (!!(selections.multi || selections.labels) ? selections.labels : selections)" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
+              [multiple]="multi">
+      <mat-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

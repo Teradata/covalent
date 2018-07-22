@@ -43,7 +43,8 @@ export interface ITdDynamicElementConfig {
   max?: any;
   minLength?: any;
   maxLength?: any;
-  selections?: string[] | { value: any, label: string }[] | { multi?: boolean, labels: { value: any, label: string }[] | string[] };
+  selections?: string[] | { value: any, label: string }[];
+  multi?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];

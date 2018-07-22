@@ -100,6 +100,11 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
    */
   @Input() selections: any[] = undefined;
 
+  /**
+   * Sets multiple property for array elements (if supported by element).
+   */
+  @Input() multi: boolean = undefined;
+
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
@@ -133,6 +138,7 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     this._instance.minLength = this.minLength;
     this._instance.maxLength = this.maxLength;
     this._instance.selections = this.selections;
+    this._instance.multi = this.multi;
     this._instance.registerOnChange((value: any) => {
       this.value = value;
     });

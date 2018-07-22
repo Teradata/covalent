@@ -23,46 +23,17 @@ export class MultiSelectDemoComponent {
       type: TdDynamicElement.Select,
       name: 'multifield2',
       label: 'Multiselect',
-      selections: {
-        multi: true,
-        labels: ['A', 'B', 'C'],
-      },
+      multi: true,
+      selections: ['A', 'B', 'C'],
       flex: 50,
     },
     {
       type: TdDynamicElement.Select,
       name: 'multifield3',
       label: 'Multiselect',
-      selections: {
-        multi: false,
-        labels: ['A', 'B', 'C'],
-      },
-      flex: 50,
-    },
-    {
-      type: TdDynamicElement.Select,
-      name: 'multifield4',
-      label: 'Multiselect',
-      selections: {
-        labels: [
-          {
-            label: 'A',
-            value: 10,
-          },
-          {
-            label: 'B',
-            value: 1,
-          },
-          {
-            label: 'C',
-            value: 2,
-          },
-          {
-            label: 'D',
-            value: 3,
-          },
-        ],
-      },
+      multi: true,
+      selections: ['A', 'B', 'C'],
+      default: ['A', 'C'],
       flex: 50,
     },
   ];
