@@ -1,0 +1,7 @@
+<div class="pad">
+    <h2>Navigational Stepper</h2>
+    <nav td-step-nav>
+      <a td-step-link [routerLink]="['/page1']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Label1</a>
+      <a td-step-link [routerLink]="['/page2']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Label2</a>
+    </nav>
+  </div>
