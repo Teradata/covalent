@@ -7,11 +7,14 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
+import { CovalentStepNavModule } from '../platform/experimental/step-nav';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
 import { BreadcrumbDemoComponent } from './sandbox/breadcrumbs/breadcrumbs.component';
 import { TabSelectDemoComponent } from './sandbox/tab-select/tab-select.component';
+import { StepNavDemoComponent } from './sandbox/step-nav/step-nav.component';
+
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
@@ -19,6 +22,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     TestBedComponent,
     BreadcrumbDemoComponent,
     TabSelectDemoComponent,
+    StepNavDemoComponent,
     MainComponent,
   ],
   imports: [
@@ -31,6 +35,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     /** Experimental Modules */
     CovalentBreadcrumbsModule,
     CovalentTabSelectModule,
+    CovalentStepNavModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
