@@ -69,7 +69,6 @@
     "@angular/core": "6.0.2",
     "@angular/forms": "6.0.2",
     "@angular/http": "6.0.2",
-    "@angular/material": "6.0.1",
     "@angular/platform-browser": "6.0.2",
     "@angular/platform-browser-dynamic": "6.0.2",
     "@angular/platform-server": "6.0.2",

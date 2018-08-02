@@ -33,8 +33,6 @@
     "@angular/common": "^0.0.0-NG",
     "@angular/core": "^0.0.0-NG",
     "@angular/forms": "^0.0.0-NG",
-    "@angular/router": "^0.0.0-NG",
-    "@angular/cdk": "^0.0.0-MATERIAL",
-    "@angular/material": "^0.0.0-MATERIAL"
+    "@angular/cdk": "^0.0.0-MATERIAL"
   }
 }
