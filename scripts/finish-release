@@ -1,0 +1,26 @@
+#!/bin/bash
+version=$1
+
+set -e
+
+echo "Create commit for bump and changelog"
+git add -A .
+
+git commit -a -m "chore(): generate changelog and bump to version v$version"
+
+echo "Create tag"
+git tag -a v$version
+
+echo "Pushed tag to main repo"
+git push --tags
+
+echo "Pushing changes into develop"
+git push origin develop
+
+echo "Rebasing and pushing changes into master"
+git checkout master
+git rebase develop
+git push origin master
+
+echo "Return to develop branch"
+git checkout develop

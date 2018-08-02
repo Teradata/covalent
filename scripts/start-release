@@ -1,0 +1,30 @@
+#!/bin/bash
+version=$1
+
+set -e
+
+echo "Started release v$version"
+
+echo "Making sure master is up to date"
+git checkout master
+
+git pull origin master
+
+echo "Checking out develop branch"
+git checkout develop
+
+echo "Execute tslint test"
+npm run tslint
+
+echo "Execute stylelint test"
+npm run stylelint
+
+echo "Execute unit tests"
+npm run test
+
+echo "Execute release build test"
+npm run build:lib
+rm -rf deploy
+
+echo "Bump to version v$version"
+gulp bump-version --ver $version
