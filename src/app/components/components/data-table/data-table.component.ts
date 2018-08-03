@@ -1,9 +1,9 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
+  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -23,6 +23,8 @@ export class DataTableDemoComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
+  @ViewChild(TdPagingBarComponent) pagingBar: TdPagingBarComponent;
 
   cellAttrs: Object[] = [{
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
@@ -143,6 +145,7 @@ export class DataTableDemoComponent implements OnInit {
 
   search(searchTerm: string): void {
     this.searchTerm = searchTerm;
+    this.pagingBar.navigateToPage(1);
     this.filter();
   }
 
