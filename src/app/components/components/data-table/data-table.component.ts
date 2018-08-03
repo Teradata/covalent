@@ -154,19 +154,19 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
-  filter(): void {
+  async filter(): Promise<void> {
     let newData: any[] = this.data;
-    let excludedColumns: string[] = this.columns
+    let excludedColumns: string[] = await this.columns
     .filter((column: ITdDataTableColumn) => {
       return ((column.filter === undefined && column.hidden === true) || 
               (column.filter !== undefined && column.filter === false));
     }).map((column: ITdDataTableColumn) => {
       return column.name;
     });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    newData = await this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
-    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
-    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
+    newData = await this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
+    newData = await this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
   }
 
