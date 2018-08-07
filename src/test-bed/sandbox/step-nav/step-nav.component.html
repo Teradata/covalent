@@ -1,7 +1,13 @@
 <div class="pad">
-    <h2>Navigational Stepper</h2>
-    <nav td-step-nav>
-      <a td-step-link [routerLink]="['/page1']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Label1</a>
-      <a td-step-link [routerLink]="['/page2']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Label2</a>
-    </nav>
-  </div>
+  <h2>Navigational Stepper</h2>
+  <td-step-nav [mode]="horizontal">
+    <a td-step-link *ngFor="let routeLink of routeLinks; let i = index"
+    [routerLink]="routeLink.link"
+    [active]="activeLinkIndex === i">
+    {{routeLink.label}}
+    </a>
+    <a td-step-link disabled>
+      Nav Stepper
+    </a>
+  </td-step-nav>
+</div>

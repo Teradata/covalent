@@ -5,6 +5,7 @@ import {
   QueryList,
   ChangeDetectionStrategy,
   AfterContentInit,
+  AfterContentChecked,
   ChangeDetectorRef,
   ElementRef,
 } from '@angular/core';
@@ -18,7 +19,14 @@ import {
   distinctUntilChanged,
 } from 'rxjs/operators';
 
+import { mixinColor, mixinDisableRipple, } from '@angular/material/core';
+
 import { TdStepLinkComponent } from './step-link/step-link.component';
+
+export class TdStepNavBase {
+  constructor(public _elementRef: ElementRef) {}
+}
+export const _TDStepNavMixinBase = mixinDisableRipple(mixinColor(TdStepNavBase, 'primary'));
 
 export enum StepMode {
   Vertical = 'vertical',
@@ -31,15 +39,16 @@ export enum StepMode {
   templateUrl: './step-nav.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdStepNavComponent implements AfterContentInit {
+export class TdStepNavComponent extends _TDStepNavMixinBase implements AfterContentInit, AfterContentChecked {
 
   private _activeLinkChanged: boolean;
+  private _activeLinkElement: ElementRef | null;
   private _mode: StepMode = StepMode.Vertical;
 
-  // step links
+  /** 
+   * Query list of all links of the step nav 
+   */
   @ContentChildren(TdStepLinkComponent) _stepLinks: QueryList<TdStepLinkComponent>;
-  
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
 
   /**
    * Mode of StepNav
@@ -58,6 +67,10 @@ export class TdStepNavComponent implements AfterContentInit {
     return this._mode;
   }
 
+  constructor(elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { 
+    super(elementRef);
+  }
+
   /**
    * Horizontal nav stepper mode
    */
@@ -70,6 +83,15 @@ export class TdStepNavComponent implements AfterContentInit {
    */
   isVertical(): boolean {
     return this._mode === StepMode.Vertical;
+  }
+
+  ngAfterContentChecked(): void {
+    if (this._activeLinkChanged) {
+      const activeStep = this._stepLinks.find(step => step.active);
+
+      this._activeLinkElement = activeStep ? activeStep.elementRef : null;
+      this._activeLinkChanged = false;
+    }
   }
 
   ngAfterContentInit(): void {
