@@ -33,7 +33,9 @@
   }
   .td-data-table-column-resizer {
     &:hover, &.td-resizing {
-      border-right: 1px solid mat-color($foreground, divider);
+      .td-data-table-column-separator {
+        border-right: 1px solid mat-color($foreground, divider);
+      }
     }
   }
   table[td-data-table] {

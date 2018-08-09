@@ -36,7 +36,9 @@
               [class.td-resizing]="i === resizingColumn"
               (mousedown)="_handleStartColumnDrag(i, $event)"
               (drag)="_handleColumnDrag(column, i, $event)"
-              (dragend)="_handleEndColumnDrag()">
+              (dragend)="_handleEndColumnDrag()"
+              (mouseup)="_handleEndColumnDrag()">
+          <span class="td-data-table-column-separator"></span>
         </span>
       </th>
     </tr>
