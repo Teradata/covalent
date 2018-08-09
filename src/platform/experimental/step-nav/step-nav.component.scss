@@ -1,1 +1,17 @@
 
+.td-line-wrapper, .td-step-link {
+  position: relative;
+}
+
+.td-step-nav-header {
+  // layout
+  box-sizing: border-box;
+  display: flex;
+  // layout="row"
+  flex-direction: row;
+}
+
+.td-line-wrapper {
+  width: 24px;
+  min-height: 1px;
+}
