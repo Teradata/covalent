@@ -38,7 +38,7 @@
       border-left-color: mat-color($foreground, divider);
     }
   
-    .td-step-link-header {
+    .td-step-link {
       &:focus:not(.mat-disabled),
       &:hover:not(.mat-disabled) {
         background: mat-color($background, 'hover');
