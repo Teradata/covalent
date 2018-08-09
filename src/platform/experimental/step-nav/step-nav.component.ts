@@ -4,20 +4,12 @@ import {
   ContentChildren,
   QueryList,
   ChangeDetectionStrategy,
-  AfterContentInit,
-  AfterContentChecked,
-  ChangeDetectorRef,
   ElementRef,
 } from '@angular/core';
 
 import {
   Subscription,
-  Subject,
 } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-} from 'rxjs/operators';
 
 import { mixinColor, mixinDisableRipple, } from '@angular/material/core';
 
@@ -39,10 +31,8 @@ export enum StepMode {
   templateUrl: './step-nav.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdStepNavComponent extends _TDStepNavMixinBase implements AfterContentInit, AfterContentChecked {
+export class TdStepNavComponent extends _TDStepNavMixinBase {
 
-  private _activeLinkChanged: boolean;
-  private _activeLinkElement: ElementRef | null;
   private _mode: StepMode = StepMode.Vertical;
 
   /** 
@@ -67,7 +57,7 @@ export class TdStepNavComponent extends _TDStepNavMixinBase implements AfterCont
     return this._mode;
   }
 
-  constructor(elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { 
+  constructor(elementRef: ElementRef) { 
     super(elementRef);
   }
 
@@ -85,25 +75,11 @@ export class TdStepNavComponent extends _TDStepNavMixinBase implements AfterCont
     return this._mode === StepMode.Vertical;
   }
 
-  ngAfterContentChecked(): void {
-    if (this._activeLinkChanged) {
-      const activeStep = this._stepLinks.find(step => step.active);
-
-      this._activeLinkElement = activeStep ? activeStep.elementRef : null;
-      this._activeLinkChanged = false;
-    }
-  }
-
-  ngAfterContentInit(): void {
-    this._changeDetectorRef.markForCheck();
-  }
-
   /**
    * The total number of step links
    */
   get count(): number {
     return this._stepLinks ? this._stepLinks.length : 0;
   }
-
 
 }
