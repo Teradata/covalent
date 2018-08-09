@@ -134,7 +134,7 @@
               <h3 matLine> {{item.title}} </h3>
               <p matLine> {{item.description}} </p>
             </a>
-            <mat-divider matInset *ngIf="!last"></mat-divider>
+            <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
           </ng-template>
         </mat-nav-list>
         <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
@@ -207,7 +207,7 @@
                   <h3 matLine> { {item.title} } </h3>
                   <p matLine> { {item.description} } </p>
                 </a>
-                <mat-divider matInset *ngIf="!last"></mat-divider>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
               </ng-template>
             </mat-nav-list>
             <div tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
@@ -242,7 +242,7 @@
     <td-highlight lang="typescript">
       <![CDATA[
         import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
-        import { TdMediaService } from '@covalent/core';
+        import { TdMediaService } from '@covalent/core/media';
 
         @Component({
           changeDetection: ChangeDetectionStrategy.OnPush,

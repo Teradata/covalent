@@ -3,14 +3,12 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
-import { TdMediaService, MEDIA_PROVIDER } from './services/media.service';
+import { MEDIA_PROVIDER } from './services/media.service';
 import { TdMediaToggleDirective } from './directives/media-toggle.directive';
 
 const TD_MEDIA: Type<any>[] = [
   TdMediaToggleDirective,
 ];
-
-export { TdMediaService, TdMediaToggleDirective };
 
 @NgModule({
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, NgZone, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { StepState, TdMediaService } from '../../../../platform/core';
 
@@ -9,6 +9,7 @@ import { StepState, TdMediaService } from '../../../../platform/core';
   styleUrls: ['./steps.component.scss' ],
   templateUrl: './steps.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
 

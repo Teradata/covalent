@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'notifications-demo',
   styleUrls: ['./notifications.component.scss'],
   templateUrl: './notifications.component.html',
+  preserveWhitespaces: true,
 })
 export class NotificationsDemoComponent {
 

@@ -5,14 +5,20 @@
 
 ## API Summary
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| toolbarTitle | string | Title set in toolbar.
-| icon | string | icon name to be displayed before the title
-| logo | string | logo icon name to be displayed before the title. If [icon] is set, then this will not be shown.
-| color | string | optional toolbar color. Defaults to primary.
-| navigationRoute | string | option to set the combined route for the icon, logo, and toolbarTitle.
+#### Inputs
 
++ toolbarTitle: string
+  + Title set in toolbar.
++ icon: string
+  + Icon name to be displayed before the title.
++ logo: string
+  + Logo icon name to be displayed before the title. 
+  + If [icon] is set, then this will not be shown.
++ color: string
+  + Optional toolbar color. 
+  + Defaults to primary.
++ navigationRoute: string 
+  + Option to set the combined route for the icon, logo, and toolbarTitle.
 
 ## Usage
 

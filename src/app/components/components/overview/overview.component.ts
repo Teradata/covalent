@@ -1,5 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { TdMediaService } from '@covalent/core/media';
+
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
@@ -150,4 +152,6 @@ export class ComponentsOverviewComponent {
       title: 'NGX-Translate',
     },
   ];
+
+  constructor(public media: TdMediaService) {}
 }

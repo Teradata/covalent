@@ -9,8 +9,8 @@
     <span *ngIf="key" class="key">{{key}}:</span>
     <span class="value">
       <span [class.td-empty]="!hasChildren()" *ngIf="isObject()" [matTooltip]="getPreview()" matTooltipPosition="after">
-        <span>{{getObjectName()}}</span>
-        <span *ngIf="isArray()">[{{data.length}}]</span>
+        <span class="td-object-name">{{getObjectName()}}</span>
+        <span class="td-array-length" *ngIf="isArray()">[{{data.length}}]</span>
       </span>
       <span *ngIf="!isObject()" [class]="getType(data)">{{getValue(data)}}</span>
     </span>

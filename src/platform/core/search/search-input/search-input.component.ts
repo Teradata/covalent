@@ -1,16 +1,32 @@
-import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
+import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional,
+         ChangeDetectionStrategy, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { FormControl } from '@angular/forms';
+import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
-import { MatInput } from '@angular/material';
+import { MatInput } from '@angular/material/input';
 
-import { debounceTime } from 'rxjs/operators/debounceTime';
-import { skip } from 'rxjs/operators/skip';
+import { debounceTime, skip } from 'rxjs/operators';
+
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
+
+export class TdSearchInputBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) { }
+}
+
+/* tslint:disable-next-line */
+export const _TdSearchInputMixinBase = mixinControlValueAccessor(TdSearchInputBase);
 
 @Component({
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdSearchInputComponent),
+    multi: true,
+  }],
   selector: 'td-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: ['value'],
   animations: [
     trigger('searchState', [
       state('hide-left', style({
@@ -30,11 +46,9 @@ import { skip } from 'rxjs/operators/skip';
     ]),
   ],
 })
-export class TdSearchInputComponent implements OnInit {
+export class TdSearchInputComponent extends _TdSearchInputMixinBase implements IControlValueAccessor, OnInit {
 
   @ViewChild(MatInput) _input: MatInput;
-
-  value: string;
 
   /**
    * showUnderline?: boolean
@@ -92,13 +106,15 @@ export class TdSearchInputComponent implements OnInit {
     return false;
   }
 
-  constructor(@Optional() private _dir: Dir) {
+  constructor(@Optional() private _dir: Dir,
+              _changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
     this._input.ngControl.valueChanges.pipe(
-      skip(1), // skip first change when value is set to undefined
       debounceTime(this.debounce),
+      skip(1), // skip first change when value is set to undefined
     ).subscribe((value: string) => {
       this._searchTermChanged(value);
     });
@@ -124,8 +140,12 @@ export class TdSearchInputComponent implements OnInit {
     this.onSearch.emit(this.value);
   }
 
+  /**
+   * Method to clear the underlying input.
+   */
   clearSearch(): void {
     this.value = '';
+    this._changeDetectorRef.markForCheck();
     this.onClear.emit(undefined);
   }
 

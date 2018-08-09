@@ -7,25 +7,34 @@ But you can also set a `color` from our lib and it can be applied in the compone
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `label?` | `string` | Sets the label of the message.
-| `sublabel?` | `string` | Sets the sublabel of the message.
-| `icon?` | `string` | The icon to be displayed before the title. Defaults to `info_outline` icon
-| `color?` | `'primary', 'accent' or 'warn'` | Sets the color of the message. Can also use any material color: `purple`, `light-blue`, etc.
-| `opened?` | `boolean` | Shows or hiddes the message depending on its value. Defaults to 'true'.
-| `open` | `function()` | Renders the message on screen.
-| `close` | `function()` | Removes the message content from screen.
-| `toggle` | `function()` | Toggles between open and close depending on state.
++ label?: string
+  + Sets the label of the message.
++ sublabel?: string
+  + Sets the sublabel of the message.
++ icon?: string
+  + The icon to be displayed before the title. Defaults to `info_outline` icon.
++ color?: 'primary' | 'accent' | 'warn'
+  + Sets the color of the message. Can also use any material color: `purple`, `light-blue`, etc.
++ opened?: boolean
+  + Shows or hides the message depending on its value. Defaults to 'true'.
+
+#### Methods
+
++ open: function 
+  + Renders the message on screen.
++ close: function
+  +  Removes the message content from screen.
++ toggle: function
+  +  Toggles between open and close depending on state.
 
 ## Setup
 
 Import the [CovalentMessageModule] in your NgModule:
 
 ```typescript
-import { CovalentMessageModule } from '@covalent/core';
+import { CovalentMessageModule } from '@covalent/core/message';
 @NgModule({
   imports: [
     CovalentMessageModule,

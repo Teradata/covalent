@@ -1,35 +1,37 @@
 import { Input, HostBinding, HostListener, Renderer2, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatDrawerToggleResult } from '@angular/material/sidenav';
 
-import { Subscription } from 'rxjs/Subscription';
+import { ICanDisable, mixinDisabled } from '@covalent/core/common';
+
+import { Subscription } from 'rxjs';
 
 export interface ILayoutTogglable {
   opened: boolean;
   sidenav: MatSidenav;
-  toggle(): Promise<void>;
-  open(): Promise<void>;
-  close(): Promise<void>;
+  toggle(): Promise<MatDrawerToggleResult>;
+  open(): Promise<MatDrawerToggleResult>;
+  close(): Promise<MatDrawerToggleResult>;
 }
 
-export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
+export class LayoutToggleBase { }
+
+/* tslint:disable-next-line */
+export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
+
+export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements AfterViewInit, OnDestroy, ICanDisable {
 
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;
-  private _disabled: boolean = false;
   private _hideWhenOpened: boolean = false;
-
-  set disabled(disabled: boolean) {
-    this._disabled = disabled;
-  }
 
   /**
    * hideWhenOpened?: boolean
    * When this is set to true, the host will be hidden when
    * the sidenav is opened.
    */
-  @Input('hideWhenOpened') 
+  @Input('hideWhenOpened')
   set hideWhenOpened(hideWhenOpened: boolean) {
     this._hideWhenOpened = hideWhenOpened;
     if (this._initialized) {
@@ -40,6 +42,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
   constructor(protected _layout: ILayoutTogglable,
               private _renderer: Renderer2,
               private _elementRef: ElementRef) {
+    super();
     this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-menu-button');
   }
 
@@ -51,11 +54,6 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
     // execute toggleVisibility since the onOpenStart and onCloseStart
     // methods might not be executed always when the element is rendered
     this._toggleVisibility();
-    // Force the view to be toggled again since the animation may not be triggered
-    // properly if its a child route
-    Promise.resolve().then(() => {
-      this._layout.sidenav.toggle(this._layout.opened);
-    });
   }
 
   ngOnDestroy(): void {
@@ -71,7 +69,7 @@ export abstract class LayoutToggle implements AfterViewInit, OnDestroy {
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
     event.preventDefault();
-    if (!this._disabled) {
+    if (!this.disabled) {
       this.onClick();
     }
   }

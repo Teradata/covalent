@@ -2,18 +2,29 @@
 
 ## API Summary
 
-Properties:
+#### Inputs
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `elements?` | `ITdDynamicElementConfig[]` | JS Object that will render the elements depending on its config. [name] property is required.
-| `form` | `get(): FormGroup` | Getter property for dynamic [FormGroup].
-| `valid` | `get(): boolean` | Getter property for [valid] of dynamic [FormGroup].
-| `value` | `get(): any` | Getter property for [value] of dynamic [FormGroup].
-| `errors` | `get(): {[name: string]: any}` | Getter property for [errors] of dynamic [FormGroup].
-| `controls` | `get(): {[key: string]: AbstractControl}` | Getter property for [controls] of dynamic [FormGroup].
-| `refresh` | `function` |  Refreshes the form and rerenders all validator/element modifications.
++ elements: ITdDynamicElementConfig[]
+  + JS Object that will render the elements depending on its config.
+  + [name] property is required.
 
+#### Properties (Read only)
+
++ form: FormGroup
+  + Getter property for dynamic [FormGroup].
++ valid: boolean
+  + Getter property for [valid] of dynamic [FormGroup].
++ value: any
+  + Getter property for [value] of dynamic [FormGroup].
++ errors: {[name: string]: any}
+  + Getter property for [errors] of dynamic [FormGroup].
++ controls: {[key: string]: AbstractControl}
+  + Getter property for [controls] of dynamic [FormGroup].
+
+#### Methods
+
++ refresh: function
+  + Refreshes the form and rerenders all validator/element modifications
 
 ## Setup
 
@@ -104,12 +115,18 @@ export class Demo {
     name: 'select',
     type: TdDynamicElement.Select,
     required: true,
-    selections: ['A','B','C']
+    selections: ['A','B','C'],
     default: 'A',
   }, {
     name: 'file-input',
     label: 'Label',
     type: TdDynamicElement.FileInput,
+  }, {
+    name: 'datepicker',
+    label: 'Date',
+    type: TdDynamicElement.Datepicker,
   }];
 }
 ```
+
+Note: To use the datepicker you need to provide an implementation of `DateAdapter`.. click [here] for more information on the material datepicker(https://material.angular.io/components/datepicker/overview#choosing-a-date-implementation-and-date-format-settings)

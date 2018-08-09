@@ -9,6 +9,7 @@ import { TdDialogService } from '../../../../platform/core';
   styleUrls: ['./dialogs.component.scss'],
   templateUrl: './dialogs.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DialogsDemoComponent {
 
@@ -55,6 +56,7 @@ export class DialogsDemoComponent {
       message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
       cancelButton: 'Disagree',
       acceptButton: 'Agree',
+      width: '500px',
     });
   }
 

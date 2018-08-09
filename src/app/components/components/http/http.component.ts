@@ -7,6 +7,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   styleUrls: ['./http.component.scss' ],
   templateUrl: './http.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class HttpDemoComponent {
 

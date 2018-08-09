@@ -5,32 +5,21 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
 import { DOCUMENT, DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { coerceBooleanProperty} from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
-
-import { debounceTime } from 'rxjs/operators/debounceTime';
+import { Observable, Subscription, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-const noop: any = () => {
-  // empty method
-};
-
-export const TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdDataTableComponent),
-  multi: true,
-};
+import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export enum TdDataTableSortingOrder {
-  Ascending = <any>'ASC',
-  Descending = <any>'DESC',
+  Ascending = 'ASC',
+  Descending = 'DESC',
 }
 
 export interface ITdDataTableColumnWidth {
@@ -85,14 +74,27 @@ const TD_VIRTUAL_OFFSET: number = 2;
  */
 const TD_VIRTUAL_DEFAULT_ROW_HEIGHT: number = 48;
 
+export class TdDataTableBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
+
+/* tslint:disable-next-line */
+export const _TdDataTableMixinBase = mixinControlValueAccessor(TdDataTableBase, []);
+
 @Component({
-  providers: [ TD_DATA_TABLE_CONTROL_VALUE_ACCESSOR ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdDataTableComponent),
+    multi: true,
+  }],
   selector: 'td-data-table',
   styleUrls: ['./data-table.component.scss' ],
   templateUrl: './data-table.component.html',
+  inputs: ['value'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdDataTableComponent implements ControlValueAccessor, OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+export class TdDataTableComponent extends _TdDataTableMixinBase implements IControlValueAccessor, OnInit,
+                                          AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
 
   /** responsive width calculations */
   private _resizeSubs: Subscription;
@@ -174,13 +176,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     return this._toRow;
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  private _value: any[] = [];
-  /** Callback registered via registerOnChange (ControlValueAccessor) */
-  private _onChangeCallback: (_: any) => void = noop;
-
+  private _valueChangesSubs: Subscription;
   /** internal attributes */
   private _data: any[];
   // data virtually iterated by component
@@ -234,18 +230,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   get indeterminate(): boolean {
     return this._indeterminate;
   }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  @Input() set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
-      this._onChangeCallback(v);
-      this.refresh();
-    }
-  }
-  get value(): any { return this._value; }
 
   /**
    * data?: {[key: string]: any}[]
@@ -439,7 +423,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
   constructor(@Optional() @Inject(DOCUMENT) private _document: any,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer,
-              private _changeDetectorRef: ChangeDetectorRef) {}
+              _changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
+  }
 
   /**
    * compareWith?: function(row, model): boolean
@@ -485,6 +471,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._scrollVerticalOffset = verticalScroll;
       this._calculateVirtualRows();
       this._changeDetectorRef.markForCheck();
+    });
+    this._valueChangesSubs = this.valueChanges.subscribe((value: any) => {
+      this.refresh();
     });
   }
 
@@ -555,6 +544,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     if (this._rowsChangedSubs) {
       this._rowsChangedSubs.unsubscribe();
     }
+    if (this._valueChangesSubs) {
+      this._valueChangesSubs.unsubscribe();
+    }
   }
 
   /**
@@ -603,7 +595,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    * Clears model (ngModel) of component by removing all values in array.
    */
   clearModel(): void {
-    this._value.splice(0, this._value.length);
+    this.value.splice(0, this.value.length);
   }
 
   /**
@@ -625,7 +617,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._data.forEach((row: any) => {
         // skiping already selected rows
         if (!this.isRowSelected(row)) {
-          this._value.push(row);
+          this.value.push(row);
           // checking which ones are being toggled
           toggledRows.push(row);
         }
@@ -637,12 +629,12 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
         // checking which ones are being toggled
         if (this.isRowSelected(row)) {
           toggledRows.push(row);
-          let modelRow: any = this._value.filter((val: any) => {
+          let modelRow: any = this.value.filter((val: any) => {
             return this.compareWith(row, val);
           })[0];
-          let index: number = this._value.indexOf(modelRow);
+          let index: number = this.value.indexOf(modelRow);
           if (index > -1) {
-            this._value.splice(index, 1);
+            this.value.splice(index, 1);
           }
         }
       });
@@ -650,6 +642,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._indeterminate = false;
     }
     this.onSelectAll.emit({rows: toggledRows, selected: checked});
+    this.onChange(this.value);
   }
 
   /**
@@ -657,7 +650,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
    */
   isRowSelected(row: any): boolean {
     // compare items by [compareWith] function
-    return this._value ? this._value.filter((val: any) => {
+    return this.value ? this.value.filter((val: any) => {
       return this.compareWith(row, val);
     }).length > 0 : false;
   }
@@ -754,8 +747,9 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // ignoring linting rules here because attribute it actually null or not there
       // can't check for undefined
       const srcElement: any = event.srcElement || event.currentTarget;
+      let element: HTMLElement = event.target as HTMLElement;
       /* tslint:disable-next-line */
-      if (srcElement.getAttribute('stopRowClick') === null) {
+      if (srcElement.getAttribute('stopRowClick') === null && element.tagName.toLowerCase() !== 'mat-pseudo-checkbox') {
         this.onRowClick.emit({
           row: row,
           index: index,
@@ -858,24 +852,6 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
     event.preventDefault();
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  writeValue(value: any): void {
-    this.value = value;
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  onChange = (_: any) => noop;
-  onTouched = () => noop;
-
   private _getNestedValue(name: string, value: any): string {
     if (!(value instanceof Object) || !name) {
       return value;
@@ -897,20 +873,20 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       if (!this._multiple) {
         this.clearModel();
       }
-      this._value.push(row);
+      this.value.push(row);
     } else {
       // compare items by [compareWith] function
-      row = this._value.filter((val: any) => {
+      row = this.value.filter((val: any) => {
         return this.compareWith(row, val);
       })[0];
-      let index: number = this._value.indexOf(row);
+      let index: number = this.value.indexOf(row);
       if (index > -1) {
-        this._value.splice(index, 1);
+        this.value.splice(index, 1);
       }
     }
     this._calculateCheckboxState();
     this.onRowSelect.emit({row: row, index: rowIndex, selected: !wasSelected});
-    this.onChange(this._value);
+    this.onChange(this.value);
     return !wasSelected;
   }
 
@@ -1051,13 +1027,13 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       let rowHeightSum: number = 0;
       // loop through all rows to see if we have their height cached
       // and sum them all to calculate the total height
-      this._data.forEach((d: any, index: number) => {
+      this._data.forEach((d: any, i: number) => {
         // iterate through all rows at first and assume all
         // rows are the same height as the first one
-        if (!this._rowHeightCache[index]) {
-          this._rowHeightCache[index] = this._rowHeightCache[0] || TD_VIRTUAL_DEFAULT_ROW_HEIGHT;
+        if (!this._rowHeightCache[i]) {
+          this._rowHeightCache[i] = this._rowHeightCache[0] || TD_VIRTUAL_DEFAULT_ROW_HEIGHT;
         }
-        rowHeightSum += this._rowHeightCache[index];
+        rowHeightSum += this._rowHeightCache[i];
         // check how many rows have been scrolled
         if (this._scrollVerticalOffset - rowHeightSum > 0) {
           scrolledRows++;
@@ -1067,7 +1043,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       // set the initial row to be rendered taking into account the row offset
       let fromRow: number = scrolledRows - TD_VIRTUAL_OFFSET;
       this._fromRow = fromRow > 0 ? fromRow : 0;
-      
+
       let hostHeight: number = this._hostHeight;
       let index: number = 0;
       // calculate how many rows can fit in the viewport
@@ -1090,7 +1066,7 @@ export class TdDataTableComponent implements ControlValueAccessor, OnInit, After
       this._fromRow = 0;
       this._toRow = 0;
     }
-  
+
     let offset: number = 0;
     // calculate the proper offset depending on how many rows have been scrolled
     if (scrolledRows > TD_VIRTUAL_OFFSET) {

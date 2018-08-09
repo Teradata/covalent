@@ -6,68 +6,14 @@
     <h3 class="mat-title">Object using JSON Formatting:</h3>
     <p>(Use mouse or keyboard to expand/collapse nodes)</p>
     <td-json-formatter [data]="data" [levelsOpen]="2"></td-json-formatter>
-    <mat-divider class="push-top"></mat-divider>
+    <div class="pad-top pad-bottom">
+      <mat-divider></mat-divider>
+    </div>
     <h3 class="mat-title">Original JSON Object:</h3>
     <td-highlight lang="json">
       {{data | json}}
     </td-highlight>
   </mat-card-content>
 </mat-card>
-<mat-card>
-  <mat-card-title>TdJsonFormatterComponent</mat-card-title>
-  <mat-card-subtitle>How to use this component</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h2><code><![CDATA[<td-json-formatter>]]></code></h2>
-    <p>Simply add the <code><![CDATA[<td-json-formatter>]]></code> element and pass the object to be formatted as a <code>[data]</code> input.</p>
-    <p>Hovering on nodes will bring out a preview tooltip of the first 5 objects/properties of the node.</p>
-    <p>The tree is collapsable/expandable so you can navigate through its nodes.</p>
-    <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-json-formatter>]]></code> component has {{jsonFormatterAttrs.length}} properties:</p>
-    <mat-list>
-      <ng-template let-attr let-last="attr" ngFor [ngForOf]="jsonFormatterAttrs">
-        <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
-        </a>
-        <mat-divider *ngIf="!last"></mat-divider>
-      </ng-template>
-    </mat-list>
-    <h3>Example:</h3>
-    <p>HTML:</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <td-json-formatter [data]="object" [levelsOpen]="1">
-        </td-json-formatter>
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        ...
-        })
-        export class Demo {
-          object: any = {
-            property: 'value',
-            array: [1, 2, 3]
-          };
-        }
-      ]]>
-    </td-highlight>
-    <h3>Setup:</h3>
-    <p>Import the [CovalentJsonFormatterModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { CovalentJsonFormatterModule } from '@covalent/core';
-        @NgModule({
-          imports: [
-            CovalentJsonFormatterModule,
-            ...
-          ],
-          ...
-        })
-        export class MyModule {}
-      ]]>
-    </td-highlight>
-  </mat-card-content>
- </mat-card>
+
+<td-readme-loader resourceUrl="platform/core/json-formatter/README.md"></td-readme-loader>

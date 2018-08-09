@@ -1,18 +1,12 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
-
-import { fadeAnimation } from '../../app.animations';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'app-style-guide',
   styleUrls: ['./style-guide.component.scss'],
   templateUrl: './style-guide.component.html',
-  animations: [fadeAnimation],
 })
 export class StyleGuideComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Teradata logo usage',

@@ -1,18 +1,12 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
-
-import { fadeAnimation } from '../../app.animations';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'app-docs',
   styleUrls: ['./docs.component.scss'],
   templateUrl: './docs.component.html',
-  animations: [fadeAnimation],
 })
 export class DocsComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Installing Covalent & dependencies',
@@ -45,10 +39,10 @@ export class DocsComponent {
     route: 'creating',
     title: 'Creating new views',
   }, {
-    description: 'Deploy your UI',
-    icon: 'local_shipping',
+    description: 'Build your UI',
+    icon: 'cached',
     route: 'deployment',
-    title: 'Deployment',
+    title: 'Building',
   }, {
     description: 'Access 750+ Material Design icons',
     icon: 'photo_size_select_actual',

@@ -2,14 +2,13 @@ import { Component, HostBinding, OnInit, ChangeDetectionStrategy, ChangeDetector
 
 import { slideInDownAnimation } from '../../../app.animations';
 
-import { MatChip} from '@angular/material';
-
 @Component({
   selector: 'chips-demo',
   styleUrls: ['./chips.component.scss'],
   templateUrl: './chips.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class ChipsDemoComponent implements OnInit {
 
@@ -19,6 +18,7 @@ export class ChipsDemoComponent implements OnInit {
   disabled: boolean = false;
   chipAddition: boolean = true;
   chipRemoval: boolean = true;
+  before: boolean = false;
   events: string[] = [];
 
   filteringAsync: boolean = false;

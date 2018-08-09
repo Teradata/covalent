@@ -5,9 +5,10 @@ import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
-import { MatIconModule, MatRippleModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
 
-import { CovalentCommonModule } from '../common/common.module';
+import { CovalentCommonModule } from '@covalent/core/common';
 
 // Steps
 import { TdStepsComponent } from './steps.component';
@@ -25,9 +26,6 @@ const TD_STEPS: Type<any>[] = [
   TdStepActionsDirective,
   TdStepSummaryDirective,
 ];
-
-export { TdStepComponent, StepState  } from './step.component';
-export { TdStepsComponent, IStepChangeEvent, StepMode } from './steps.component';
 
 @NgModule({
   imports: [

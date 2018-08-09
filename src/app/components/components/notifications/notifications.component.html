@@ -26,7 +26,7 @@
           </button>
           <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
             <td-menu>
-              <div td-menu-header class="mat-subheading-2">Notifications</div>
+              <div td-menu-header class="mat-subheading-2 push-none">Notifications</div>
               <mat-nav-list dense>
                 <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                   <a mat-list-item>
@@ -79,7 +79,7 @@
               </button>
               <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
                 <td-menu>
-                  <div td-menu-header class="mat-subheading-2">Notifications</div>
+                  <div td-menu-header class="mat-subheading-2 push-none">Notifications</div>
                   <mat-nav-list dense>
                     <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
                       <a mat-list-item>
@@ -204,7 +204,7 @@
             <td-notification-count color="accent" [notifications]="1">
             </td-notification-count>
           </a>
-          <mat-divider matInset></mat-divider>
+          <mat-divider [inset]="true"></mat-divider>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
             <h3 matLine> Something something something.. dark side. </h3>
@@ -213,7 +213,7 @@
             <td-notification-count color="primary" [notifications]="0">
             </td-notification-count>
           </a>
-          <mat-divider matInset></mat-divider>
+          <mat-divider [inset]="true"></mat-divider>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
             <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
@@ -238,7 +238,7 @@
                 <td-notification-count color="accent" [notifications]="1">
                 </td-notification-count>
               </a>
-              <mat-divider matInset></mat-divider>
+              <mat-divider [inset]="true"></mat-divider>
               <a mat-list-item>
                 <mat-icon matListAvatar>person</mat-icon>
                 <h3 matLine> Something something something.. dark side. </h3>
@@ -247,7 +247,7 @@
                 <td-notification-count color="primary" [notifications]="0">
                 </td-notification-count>
               </a>
-              <mat-divider matInset></mat-divider>
+              <mat-divider [inset]="true"></mat-divider>
               <a mat-list-item>
                 <mat-icon matListAvatar>person</mat-icon>
                 <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>

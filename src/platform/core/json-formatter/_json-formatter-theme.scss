@@ -17,6 +17,12 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
   .td-json-formatter-wrapper {
+    .function::after,
+    .date::after,
+    .td-object-name::after,
+    .td-array-length::after {
+      content: '\200E';
+    }
     .td-key {
       &.td-key-node {
         &:focus,
@@ -35,20 +41,20 @@
       .string {
         color: mat-color($warn);
       }
-      .number { 
+      .number {
         color: mat-color($accent);
       }
-      .boolean { 
+      .boolean {
         color: mat-color($accent);
       }
       .null,
-      .undefined { 
+      .undefined {
         color: mat-color($foreground, disabled-text);
       }
-      .function { 
+      .function {
         color: mat-color($primary);
       }
-      .date { 
+      .date {
         color: mat-color($foreground, text);
       }
     }

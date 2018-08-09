@@ -73,7 +73,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { StepState } from '@covalent/core';
+            import { StepState } from '@covalent/core/steps';
             ...
             })
             export class Demo {
@@ -142,7 +142,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { IStepChangeEvent } from '@covalent/core';
+        import { IStepChangeEvent } from '@covalent/core/steps';
         ...
         })
         export class Demo {
@@ -156,7 +156,7 @@
     <p>Import the [CovalentStepsModule] in your NgModule:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { CovalentStepsModule } from '@covalent/core';
+        import { CovalentStepsModule } from '@covalent/core/steps';
         @NgModule({
           imports: [
             CovalentStepsModule,
@@ -178,7 +178,7 @@
     <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
     <p>Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>, <code>StepState.Required</code> and <code>StepState.Complete</code>].</p>
     <p>Enum values can be replaced with strings ["none", "required" and "complete"].</p>
-    <p>Note: Components in angular do not have 2-way binding, so the active variable might be off sync with its [TdStepComponent] sometimes.</p>
+    <p>Note: Components in Angular do not have 2-way binding, so the active variable might be off sync with its [TdStepComponent] sometimes.</p>
     <p>You can keep it in sync with the (activated/deactivated) events if there is a need to do it.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[<td-step>]]></code> component has {{stepAttrs.length}} properties:</p>
@@ -213,7 +213,7 @@
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { StepState } from '@covalent/core';
+        import { StepState } from '@covalent/core/steps';
         ...
         })
         export class Demo {

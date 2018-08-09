@@ -1,8 +1,7 @@
 import { Component, Directive, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef, ViewChild,
          HostBinding, HostListener, ChangeDetectorRef } from '@angular/core';
 
-import { TdCollapseAnimation } from '../common/animations/collapse/collapse.animation';
-import { TdFadeInOutAnimation } from '../common/animations/fade/fadeInOut.animation';
+import { TdCollapseAnimation, TdFadeInOutAnimation } from '@covalent/core/common';
 
 @Directive({
   selector: '[tdMessageContainer]',

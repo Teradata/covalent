@@ -1,0 +1,6 @@
+@import '../breadcrumbs/breadcrumb/breadcrumb-theme';
+
+// Create a theme.
+@mixin experimental-theme($theme, $config: null) {
+  @include td-breadcrumb-theme($theme);
+}

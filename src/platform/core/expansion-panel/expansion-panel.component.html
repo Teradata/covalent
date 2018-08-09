@@ -5,19 +5,18 @@
       [tabIndex]="disabled? -1 : 0"
       (keydown.enter)="clickEvent()"
       (click)="clickEvent()">
-  <ng-template [cdkPortalHost]="expansionPanelHeader"></ng-template>
+  <ng-template [cdkPortalOutlet]="expansionPanelHeader"></ng-template>
   <div class="td-expansion-panel-header-content"
         [class.mat-disabled]="disabled"
         *ngIf="!expansionPanelHeader">
     <div *ngIf="label || expansionPanelLabel" class="td-expansion-label">
-      <ng-template [cdkPortalHost]="expansionPanelLabel"></ng-template>
+      <ng-template [cdkPortalOutlet]="expansionPanelLabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelLabel">{{label}}</ng-template>
     </div>
     <div *ngIf="sublabel || expansionPanelSublabel" class="td-expansion-sublabel">
-      <ng-template [cdkPortalHost]="expansionPanelSublabel"></ng-template>
+      <ng-template [cdkPortalOutlet]="expansionPanelSublabel"></ng-template>
       <ng-template [ngIf]="!expansionPanelSublabel">{{sublabel}}</ng-template>
     </div>
-    <span class="td-expansion-panel-spacer"></span>
     <mat-icon class="td-expand-icon" *ngIf="!disabled" [@tdRotate]="expand">keyboard_arrow_down</mat-icon>
   </div>
 </div>

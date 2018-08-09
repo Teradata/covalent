@@ -2,9 +2,7 @@ import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, Skip
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';

@@ -8,23 +8,26 @@ import { TdDynamicSlideToggleComponent } from '../dynamic-elements/dynamic-slide
 import { TdDynamicCheckboxComponent } from '../dynamic-elements/dynamic-checkbox/dynamic-checkbox.component';
 import { TdDynamicSliderComponent } from '../dynamic-elements/dynamic-slider/dynamic-slider.component';
 import { TdDynamicSelectComponent } from '../dynamic-elements/dynamic-select/dynamic-select.component';
+import { TdDynamicDatepickerComponent } from '../dynamic-elements/dynamic-datepicker/dynamic-datepicker.component';
 
 export enum TdDynamicType {
-  Text = <any>'text',
-  Boolean = <any>'boolean',
-  Number = <any>'number',
-  Array = <any>'array',
+  Text = 'text',
+  Boolean = 'boolean',
+  Number = 'number',
+  Array = 'array',
+  Date = 'date',
 }
 
 export enum TdDynamicElement {
-  Input = <any>'input',
-  Password = <any>'password',
-  Textarea = <any>'textarea',
-  Slider = <any>'slider',
-  SlideToggle = <any>'slide-toggle',
-  Checkbox = <any>'checkbox',
-  Select = <any>'select',
-  FileInput = <any>'file-input',
+  Input = 'input',
+  Datepicker = 'datepicker',
+  Password = 'password',
+  Textarea = 'textarea',
+  Slider = 'slider',
+  SlideToggle = 'slide-toggle',
+  Checkbox = 'checkbox',
+  Select = 'select',
+  FileInput = 'file-input',
 }
 
 export interface ITdDynamicElementValidator {
@@ -46,7 +49,7 @@ export interface ITdDynamicElementConfig {
   validators?: ITdDynamicElementValidator[];
 }
 
-export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[a-zA-Z]+[a-zA-Z0-9-_]*$/;
+export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
 
 @Injectable()
 export class TdDynamicFormsService {
@@ -57,7 +60,7 @@ export class TdDynamicFormsService {
    */
   validateDynamicElementName(name: string): void {
     if (!DYNAMIC_ELEMENT_NAME_REGEX.test(name)) {
-      throw new Error(`Dynamic element name: "${name}" is not valid.`);
+      throw new Error('Dynamic element name: "${name}" is not valid.');
     }
   }
 
@@ -86,6 +89,9 @@ export class TdDynamicFormsService {
         return TdDynamicSelectComponent;
       case TdDynamicElement.FileInput:
         return TdDynamicFileInputComponent;
+      case TdDynamicElement.Datepicker:
+      case TdDynamicType.Date:
+        return TdDynamicDatepickerComponent;
       default:
         throw new Error(`Error: type ${element} does not exist or not supported.`);
     }

@@ -3,13 +3,12 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TdSearchInputComponent } from './search-input/search-input.component';
 import { TdSearchBoxComponent } from './search-box/search-box.component';
-
-export { TdSearchBoxComponent } from './search-box/search-box.component';
-export { TdSearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   imports: [

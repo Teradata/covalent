@@ -1,6 +1,5 @@
 $td-menu-spacing: 8px !default;
 :host {
-  display: block;
   margin-top: -$td-menu-spacing;
   margin-bottom: -$td-menu-spacing;
   // [layout]
@@ -25,9 +24,9 @@ $td-menu-spacing: 8px !default;
         height: auto;
         padding: $td-menu-spacing;
         .mat-list-text {
-          padding-right: 0px;
-          [dir='rtl'] & { 
-            padding-left: 0px;
+          padding-right: 0;
+          [dir='rtl'] & {
+            padding-left: 0;
             padding-right: 16px;
           }
         }

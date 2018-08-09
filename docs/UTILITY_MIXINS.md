@@ -54,15 +54,6 @@ To include the [color classes](https://teradata.github.io/covalent/#/style-guide
 @include covalent-colors();
 ```
 
-### Typography Mixin
-
-To include the [typography classes](https://teradata.github.io/covalent/#/style-guide/typography), add the following:
-
-```css
-// Include covalent typography classes
-@include covalent-typography();
-```
-
 ### Example including every single mixin
 
 If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](http://localhost:4200/#/docs) docs)
@@ -84,9 +75,6 @@ $mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
 
 // Include flex layout classes
 @include covalent-layout();
-
-// Include covalent typography classes
-@include covalent-typography();
 
 // Include covalent color classes
 @include covalent-colors();

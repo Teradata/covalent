@@ -1,3 +1,248 @@
+<a name="2.0.0-beta.2"></a>
+# [2.0.0-beta.2](https://github.com/teradata/covalent/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-05-28)
+
+### Bug Fixes
+
+* **docs:** fixed markdown include in docs ([#1156](https://github.com/teradata/covalent/issues/1156)) ([7e217df](https://github.com/teradata/covalent/commit/7e217df))
+* **dynamic-forms:** made regex for name less restrictive ([#1155](https://github.com/teradata/covalent/issues/1155)) ([ddf8a6b](https://github.com/teradata/covalent/commit/ddf8a6b))
+* **search-box:** back arrow clears search (closes [#1157](https://github.com/teradata/covalent/issues/1157)) ([#1158](https://github.com/teradata/covalent/issues/1158)) ([4aa601f](https://github.com/teradata/covalent/commit/4aa601f))
+
+### Features
+
+* **cli:** upgrade to @angular/cli@6 ([#1145](https://github.com/teradata/covalent/issues/1145)) ([1a91272](https://github.com/teradata/covalent/commit/1a91272))
+
+### BREAKING CHANGES
+
+* **typography:** fully remove deprecated covalent typography ([#1146](https://github.com/teradata/covalent/issues/1146)) ([9301848](https://github.com/teradata/covalent/commit/9301848))
+* **typography:** removal of _typography.scss
+
+
+
+<a name="1.0.1"></a>
+# [1.0.1](https://github.com/teradata/covalent/compare/v1.0.0...v1.0.1) (2018-05-28)
+
+### Bug Fixes
+
+* **docs:** fixed markdown include in docs ([#1156](https://github.com/teradata/covalent/issues/1156)) ([7e217df](https://github.com/teradata/covalent/commit/7e217df))
+* **dynamic-forms:** made regex for name less restrictive ([#1155](https://github.com/teradata/covalent/issues/1155)) ([ddf8a6b](https://github.com/teradata/covalent/commit/ddf8a6b))
+* **search-box:** back arrow clears search (closes [#1157](https://github.com/teradata/covalent/issues/1157)) ([#1158](https://github.com/teradata/covalent/issues/1158)) ([4aa601f](https://github.com/teradata/covalent/commit/4aa601f))
+
+
+
+<a name="2.0.0-beta.1"></a>
+# [2.0.0-beta.1](https://github.com/teradata/covalent/compare/v1.0.0...v2.0.0-beta.1) (2018-04-16)
+
+Highlights:
+
+- Added support for angular@6!
+
+### Features
+
+* add support for angular@6 ([#1136](https://github.com/teradata/covalent/issues/1136)) ([91687bd](https://github.com/teradata/covalent/commit/91687bd))
+
+### Internal
+
+* upgrade from ng-packager v2.0.0 to v2.4.1 ([6d2d741eee10367091afaf0e42f8bc5462510550](https://github.com/teradata/covalent/commit/6d2d741eee10367091afaf0e42f8bc5462510550))
+
+<a name="1.0.0"></a>
+# [1.0.0 Covalently Bond](https://github.com/teradata/covalent/compare/v1.0.0-rc.5...v1.0.0) (2018-02-11)
+
+We are pleased to announce `covalent@1.0.0` stable!
+
+Thanks to the community for helping us improve Covalent more as each day passes by. 
+
+Now that we are stable, the team will focus on improving our components and adding more and more features going forward.
+
+
+
+<a name="1.0.0-rc.5"></a>
+# [1.0.0-rc.5 Compiled Typewritter](https://github.com/teradata/covalent/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2018-02-07)
+
+We were going to release stable, but we wanted to do one final thing before that.. and that is bump `ng-packagr` to its stable release and make sure `Covalent` can be used with `fullTemplateTypeCheck` in apps.
+
+
+### Bug Fixes
+
+* **lib:** fix covalent build in case typeCheck is used in apps ([#1117](https://github.com/teradata/covalent/issues/1117)) ([71c79a7](https://github.com/teradata/covalent/commit/71c79a7))
+* **search-input:** make sure initializing ngModel doesnt trigger a debounce ([#1109](https://github.com/teradata/covalent/issues/1109)) ([0bc5be6](https://github.com/teradata/covalent/commit/0bc5be6))
+
+
+
+<a name="1.0.0-rc.4"></a>
+# [1.0.0-rc.4 Recursive Fedora](https://github.com/teradata/covalent/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2018-01-26)
+
+The focus of this release is fixing an introduced issue with `AoT` when we changed our build process to use `ng-packagr`.
+
+We also updated our `Design Patterns` to use stackblitz and added a few more.
+
+
+### Bug Fixes
+
+* **build:** library not working in AoT mode ([#1104](https://github.com/teradata/covalent/issues/1104)) ([fe3153d](https://github.com/teradata/covalent/commit/fe3153d)), closes [#1099](https://github.com/teradata/covalent/issues/1099)
+
+
+### Features
+
+* **patterns:** add FAB design pattern ([#1056](https://github.com/teradata/covalent/issues/1056)) ([5d5cac1](https://github.com/teradata/covalent/commit/5d5cac1))
+* **patterns:** update design patterns to use stackblitz ([#1064](https://github.com/teradata/covalent/pull/1064)) ([eb72cc41dbb8620d6a95a29875cb9d2dbfaeee1b](https://github.com/teradata/covalent/commit/eb72cc41dbb8620d6a95a29875cb9d2dbfaeee1b))
+
+
+
+<a name="1.0.0-rc.3"></a>
+# [1.0.0-rc.3 Cranberry Zombie](https://github.com/teradata/covalent/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2018-01-19)
+
+Almost stable! This release centered around adding `list` support for our documentation renderer and making sure Covalent has the proper `Angular build format` leveraging `ng-packagr`.
+
+This means you can now import directly from our secondary entry points, so you can minimize your build size by cherry picking what you need.
+
+e.g.
+
+```
+import { CovalentLoadingModule } from '@covalent/core/loading';
+import { CovalentSearchModule } from '@covalent/core/search';
+```
+
+In addition, following the `Angular build format` allows for SSR builds.
+
+So start testing and let us know your issues!
+
+### Features
+
+* **build:** change to Covalent Angular package format build w/ ng-packagr ([#1065](https://github.com/teradata/covalent/issues/1065)) ([cb2fd30](https://github.com/teradata/covalent/commit/cb2fd30))
+* **dependencies:** upgrade covalent dependencies [@angular](https://github.com/angular)@5.1 ([#1096](https://github.com/teradata/covalent/issues/1096)) ([bffb143](https://github.com/teradata/covalent/commit/bffb143))
+* **docs:** change data-table API from tables to lists in README ([#1076](https://github.com/teradata/covalent/issues/1076)) ([9322d9e](https://github.com/teradata/covalent/commit/9322d9e))
+* **docs:** add README for loading docs ([#1092](https://github.com/teradata/covalent/issues/1092)) ([a6d3de6](https://github.com/teradata/covalent/commit/a6d3de6))
+* **docs:** change file-input API from tables to lists in README ([#1082](https://github.com/teradata/covalent/issues/1082)) ([c492976](https://github.com/teradata/covalent/commit/c492976))
+* **docs:** change file-upload API from tables to lists in README ([#1085](https://github.com/teradata/covalent/issues/1085)) ([308b626](https://github.com/teradata/covalent/commit/308b626))
+* **docs:** change layout API from tables to lists in README ([#1086](https://github.com/teradata/covalent/issues/1086)) ([14d0e7a](https://github.com/teradata/covalent/commit/14d0e7a))
+* **docs:** change markdown API from tables to lists in README ([#1081](https://github.com/teradata/covalent/issues/1081)) ([d9a0c03](https://github.com/teradata/covalent/commit/d9a0c03))
+* **docs:** change messages API from tables to lists in README ([#1091](https://github.com/teradata/covalent/issues/1091)) ([d86d5cf](https://github.com/teradata/covalent/commit/d86d5cf))
+* **docs:** change notifications API from tables to lists in README ([#1090](https://github.com/teradata/covalent/issues/1090)) ([b82fed7](https://github.com/teradata/covalent/commit/b82fed7))
+* **docs:** change paging API from data-table to list in README ([#1089](https://github.com/teradata/covalent/issues/1089)) ([08fb421](https://github.com/teradata/covalent/commit/08fb421))
+* **docs:** properly load README into http docs ([#1088](https://github.com/teradata/covalent/issues/1088)) ([8bcfdf4](https://github.com/teradata/covalent/commit/8bcfdf4))
+* **docs:** replace dynamic-forms API with list API in README ([#1084](https://github.com/teradata/covalent/issues/1084)) ([1041d1f](https://github.com/teradata/covalent/commit/1041d1f))
+* **docs:** search and virtual scroll README refactor ([#1093](https://github.com/teradata/covalent/issues/1093)) ([0b4cb6d](https://github.com/teradata/covalent/commit/0b4cb6d))
+* **docs:** support list in pretty markdown to showcase API's better ([#1073](https://github.com/teradata/covalent/issues/1073)) ([ac260e3](https://github.com/teradata/covalent/commit/ac260e3))
+* **expansion-panel:** change API from table to lists in README ([#1078](https://github.com/teradata/covalent/issues/1078)) ([44cd9a9](https://github.com/teradata/covalent/commit/44cd9a9))
+* **highlight:** change component API from tables to lists in README ([#1080](https://github.com/teradata/covalent/issues/1080)) ([5b29a0a](https://github.com/teradata/covalent/commit/5b29a0a))
+* **json-formatter:** render README in docs ([#1079](https://github.com/teradata/covalent/issues/1079)) ([a75c61f](https://github.com/teradata/covalent/commit/a75c61f))
+
+
+<a name="1.0.0-rc.2"></a>
+# [1.0.0-rc.2 Transpiled Suspenders](https://github.com/teradata/covalent/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-05)
+
+Kicking off the year with our RC.2 release!
+
+The Covalent team wishes everybody a Happy New Year and we want to thank everybody for their support. We will continue delivering new features and improvements this 2018.
+
+More information of our roadmap [here](https://github.com/Teradata/covalent/wiki/Covalent-Roadmap). Note: This is subject to change depending on the `Material Repo`'s roadmap.
+
+#### Highlights
+
+- Datepicker support for `dynamic-forms`.
+- `inputPosition` input for `chips`.
+- Simple Dialogs are more flexible and you can pass any `MatDialogConfig`.
+- More RTL and OnPush support.
+- More bug fixes and improvements!
+
+### Breaking Changes
+
+* **chips:** remove deprecated `readOnly` input ([#1027](https://github.com/teradata/covalent/issues/1027)) ([9f3712d](https://github.com/teradata/covalent/commit/9f3712d))
+
+
+### Bug Fixes
+
+* **docs:** close sidenav properly when clicking on it in any scenario ([#1030](https://github.com/teradata/covalent/issues/1030)) ([ba2b5ed](https://github.com/teradata/covalent/commit/ba2b5ed))
+* **expansion-panel:** let label flex without sublabel and follow MD spec better ([#1068](https://github.com/teradata/covalent/issues/1068)) ([251abb8](https://github.com/teradata/covalent/commit/251abb8))
+* **loading:** update circle height incase loader is rendered hidden ([#1066](https://github.com/teradata/covalent/issues/1066)) ([f26bd4e](https://github.com/teradata/covalent/commit/f26bd4e))
+* **notifications:** fix menu header margin in demo ([#1060](https://github.com/teradata/covalent/issues/1060)) ([55cb101](https://github.com/teradata/covalent/commit/55cb101))
+
+
+### Features
+
+* **behavior:** add ngModel mixin for reuse (control value accessor) ([#1024](https://github.com/teradata/covalent/issues/1024)) ([7a30cb5593a6afdcdc2327c557553e373288bbae](https://github.com/teradata/covalent/commit/7a30cb5593a6afdcdc2327c557553e373288bbae))
+* **chips:** add `inputPosition` input to change its position to before or after (closes [#990](https://github.com/teradata/covalent/issues/990)) ([#1061](https://github.com/teradata/covalent/issues/1061)) ([70887dc](https://github.com/teradata/covalent/commit/70887dc))
+* **data-table:** make table header and body distinguishable ([#1046](https://github.com/teradata/covalent/issues/1046)) ([e6bb7fc](https://github.com/teradata/covalent/commit/e6bb7fc))
+* **dialogs:** extend MatDialogConfig to leverage all the dialog config (closes [#1011](https://github.com/teradata/covalent/issues/1011)) ([#1059](https://github.com/teradata/covalent/issues/1059)) ([eb2ca43](https://github.com/teradata/covalent/commit/eb2ca43))
+* **dynamic-forms:** add datepicker support ([#1058](https://github.com/teradata/covalent/issues/1058)) ([b92a6dc](https://github.com/teradata/covalent/commit/b92a6dc))
+* **file:** remove `files` variable since it was deprecated in a prev release ([#1028](https://github.com/teradata/covalent/issues/1028)) ([cff2b7a](https://github.com/teradata/covalent/commit/cff2b7a))
+* **json-formatter:** support properly RTL ([#1033](https://github.com/teradata/covalent/issues/1033)) ([90903d0](https://github.com/teradata/covalent/commit/90903d0))
+* **message:** support RTL ([#1034](https://github.com/teradata/covalent/issues/1034)) ([e006105](https://github.com/teradata/covalent/commit/e006105))
+* **paging:** support OnPush change detection strat ([#1031](https://github.com/teradata/covalent/issues/1031)) ([857425d](https://github.com/teradata/covalent/commit/857425d))
+* **patterns:** empty state design pattern ([#997](https://github.com/teradata/covalent/issues/997)) ([1ca8db9](https://github.com/teradata/covalent/commit/1ca8db9))
+* **patterns:** stepper design pattern ([#1048](https://github.com/teradata/covalent/issues/1048)) ([23dbc5f](https://github.com/teradata/covalent/commit/23dbc5f))
+* **search:** add ngModel support to search-input and search-box ([#1041](https://github.com/teradata/covalent/issues/1041)) ([8b4cb18](https://github.com/teradata/covalent/commit/8b4cb18))
+* **search:** add OnPush support ([#1032](https://github.com/teradata/covalent/issues/1032)) ([5e35c5e](https://github.com/teradata/covalent/commit/5e35c5e))
+* **layout:** make LayoutToggle class reuse disable mixin ([#1022](https://github.com/teradata/covalent/issues/1022)) ([d42825f](https://github.com/teradata/covalent/commit/d42825f))
+
+
+<a name="1.0.0-rc.1"></a>
+# [1.0.0-rc.1 Obfuscated Mustache](https://github.com/Teradata/covalent/tree/v1.0.0-rc.1) (2017-12-12)
+
+#### Highlights
+
+> - `@angular/material@5.0.0` upgrade
+> - Use material **secondary entry points** to load only required material modules
+> - New logo to celebrate the march to 1.0 Stable
+> - Moving to the @angular/material typography and deprecating Covalent typography
+> - Bugfixes and improvements
+
+## Breaking Changes
+
+### Typography
+
+Covalent typography will be deprecated in favor of the angular/material typography. Click [here](https://material.angular.io/guide/typography) for more information.
+
+#### Migration steps
+
+1. Replace `md-` with `mat-` in the typography classes with the exception of `md-subhead`
+2. Replace `md-subhead` with `mat-subheading-1`
+3. Import the Roboto font in index.html `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">`
+4. Customized the typography for proper font weights by replacing
+```
+@include mat-core();
+```
+with
+```
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400)
+);
+$custom-toolbar-typography: mat-typography-config(
+  $title: mat-typography-level(20px, 32px, 400)
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+```
+
+
+## Bug Fixes
+* **animations:** allow child animations by default in our pre-canned animations ([94a9c64c8156475af174f9e0c6ea6edf1b51b077](https://github.com/Teradata/covalent/commit/94a9c64c8156475af174f9e0c6ea6edf1b51b077))
+* **animations:** add overflow only when animating collapse ([bd50947d8960f7273c0618a7159d4319e9ab5694](https://github.com/Teradata/covalent/commit/bd50947d8960f7273c0618a7159d4319e9ab5694))
+* **loading:** change detection error in overlay mode ([b9a4588092d76086f66486616599959668f0a2d9](https://github.com/Teradata/covalent/commit/b9a4588092d76086f66486616599959668f0a2d9))
+* **message:** remove second host animation since it makes ngIf duplicate the component ([7ef2d795a882d4f454629f46529d8fe67b8cc26a](https://github.com/Teradata/covalent/commit/7ef2d795a882d4f454629f46529d8fe67b8cc26a))
+* **stepper:** fix change detection issue when number of step content children changed ([c9d24d62263c9ca04b48f12fddedf5e84224d4d8](https://github.com/Teradata/covalent/commit/c9d24d62263c9ca04b48f12fddedf5e84224d4d8))
+* **data-table:** copy of the array on sort to ensure data-table gets updated properly ([78948c15f1d5a74a3e29cb3b059484a2dfcf377e](https://github.com/Teradata/covalent/commit/78948c15f1d5a74a3e29cb3b059484a2dfcf377e))
+
+## Features
+* **data-table:** add index to row select and row click outputs ([7d4d87bd52fb240aafd3c4da10e01363ec209ddf](https://github.com/Teradata/covalent/commit/7d4d87bd52fb240aafd3c4da10e01363ec209ddf))
+* **http:** stop using angular/http since it has been deprecated ([f9a2d93292d47ff5e372ec52ae2a57b0e18b2b52](https://github.com/Teradata/covalent/commit/f9a2d93292d47ff5e372ec52ae2a57b0e18b2b52))
+* **dependencies:** upgrade to material stable ([a0359466db29775e0714c208c53f8058a17fff52](https://github.com/Teradata/covalent/commit/a0359466db29775e0714c208c53f8058a17fff52))
+* **imports:** use secondary entry points for @angular/material and rxjs so we can cherry pick modules ([261d40d9f95f6eabbafb83d1aade8d901f332e34](https://github.com/Teradata/covalent/commit/261d40d9f95f6eabbafb83d1aade8d901f332e34))
+
+## Internal
+* **docs:** add roboto font to docs site ([50e4d7951bbdefa02e2ba6c83b09d1c8479e7829](https://github.com/Teradata/covalent/commit/50e4d7951bbdefa02e2ba6c83b09d1c8479e7829))
+* **docs:** make component overview a gridlist ([a0359466db29775e0714c208c53f8058a17fff52](https://github.com/Teradata/covalent/commit/a0359466db29775e0714c208c53f8058a17fff52))
+* **docs:** migrate to material typography ([45797ed586f7e0fee29dfadde9e9587019eea2c4](https://github.com/Teradata/covalent/commit/45797ed586f7e0fee29dfadde9e9587019eea2c4))
+* **logo:** new Covalent logo! ([b82dff195e83703bfaef360b4adcad877e73a53e](https://github.com/Teradata/covalent/commit/b82dff195e83703bfaef360b4adcad877e73a53e))
+* **npm:** rename some of the aliases so they are more intuitive and grouped properly ([d0b66c123de17d4d22ce3f1813cecf56ca4dba83](https://github.com/Teradata/covalent/commit/d0b66c123de17d4d22ce3f1813cecf56ca4dba83))
+
+
 <a name="1.0.0-rc.0"></a>
 # [1.0.0-rc.0 Responsive Skinnyjeans](https://github.com/Teradata/covalent/tree/v1.0.0-rc.0) (2017-11-14)
 

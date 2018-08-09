@@ -3,7 +3,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
-import { MatRippleModule, MatIconModule } from '@angular/material';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TdExpansionPanelComponent, TdExpansionPanelHeaderDirective, TdExpansionPanelLabelDirective,
          TdExpansionPanelSublabelDirective, TdExpansionPanelSummaryComponent } from './expansion-panel.component';
@@ -17,9 +18,6 @@ const TD_EXPANSION_PANEL: Type<any>[] = [
   TdExpansionPanelSublabelDirective,
   TdExpansionPanelSummaryComponent,
 ];
-
-export { TdExpansionPanelComponent } from './expansion-panel.component';
-export { TdExpansionPanelGroupComponent } from './expansion-panel-group.component';
 
 @NgModule({
   imports: [

@@ -1,33 +1,38 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
-set -o errexit
-
-# Clear deploy/ so that we guarantee there are no stale artifacts.
-echo "Cleaning deploy/"
+# clean up first if building again
+rm -rf ./src/platform/node_modules
 rm -rf ./deploy
 
-# Perform a build.
-gulp build
-echo "SASS compiled..."
+# BUILD: @covalent/core primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.js
 
-# Prepare for aot
-gulp prepare-aot
-echo "Preparing files for AoT build"
+echo 'Compiling and moving moving some requried files not handled by ng-packagr'
+gulp move-required-core-files
+gulp compile-core-sass
+echo 'Completed compiling and moving moving some requried files not handled by ng-packagr'
 
-# AoT compilation
-npm run aot
-echo "Compiled TS and generated *.metadata.json files..."
+# HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
+# HACK START
+mkdir -p src/platform/node_modules/@covalent
+cp -r deploy/platform/core src/platform/node_modules/@covalent
+# HACK END
 
-# Clean source .ts files
-cd deploy/
-find . -name "*.ts" ! -name "*.d.ts" -type f -delete
-cd ..
-echo "Remove source .ts files so they arent published"
+# BUILD: @covalent/dynamic-forms primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.js
+# BUILD: @covalent/highlight primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
+# BUILD: @covalent/http primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
+# BUILD: @covalent/markdown primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
 
-# Inline the css and html into the component files.
-gulp inline-resource-files
-echo "Resources inlined..."
+# BUILD: @covalent/experimental primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/experimental/ng-package.js
 
-# Bundle
-gulp rollup-code
-echo "Bundled..."
+# HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
+rm -rf src/platform/node_modules
+
+# Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
+gulp move-additional-platform-files

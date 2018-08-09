@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TdPagingBarComponent } from './paging-bar.component';
 import { CovalentPagingModule } from './paging.module';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
 import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 

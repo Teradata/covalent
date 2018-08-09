@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentJsonFormatterModule, TdJsonFormatterComponent } from './json-formatter.module';
+import { CovalentJsonFormatterModule, TdJsonFormatterComponent } from './public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: JsonFormatter', () => {

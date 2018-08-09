@@ -1,9 +1,9 @@
-@import "general";
-@import "pad";
-@import "pull";
-@import "push";
-@import "size";
-@import "text";
+@import 'general';
+@import 'pad';
+@import 'pull';
+@import 'push';
+@import 'size';
+@import 'text';
 
 @mixin covalent-utilities() {
   @include td-general-utilities();

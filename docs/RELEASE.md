@@ -10,41 +10,48 @@
 
 #### Pre Release Checklist
 
-1. Changelog needs to be updated with all release features/fixes/enhancements.
-2. Notifications need to be updated in the covalent `home` screen.
-3. Make sure the `platform` `package.json`s point to the correct versions.
-4. `ng serve --aot` works fine.
-5. `npm run build` works fine.
+1. Notifications need to be updated in the covalent `home` screen.
+2. Make sure the `build.conf.js` points to the correct versions.
+3. `ng serve --prod` works fine.
+4. `npm run build:lib` works fine.
 
 #### Start Release
 
-Execute `npm run start-release -- [version]` to start the automatic release process. The steps executed are:
-  1. Creating a `release/v[version]` branch using `git flow release`.
-  2. Bumping its version to [version] release and commiting bumped version files.
-  3. Publishing `release/v[version]` branch into repository. 
-  4. Executes `npm run lint` and `npm run test`.
-
-The release is published in case there is a need for any additional tests, version fixes or bug fixes. This can be added before it is actually released.
+Execute `npm run release:start -- [version]` to start the automatic release process. The steps executed are:
+  1. Checks out the `master` branch and pulls the latest.
+  2. Checks out the `develop` branch.
+  3. Executes a typescript linting test.
+  4. Executes a sass linting test.
+  5. Executes unit tests.
+  6. Executes a build release test.
+  7. Bumps its version to [version] release
+  8. Executes `npm run generate:changelog` to generate a draft of the changelog with the commits that happened between the last tagged release and the last commit. NOTE: It need to be double checked and modified as needed.
 
 #### Finish Release
 
-Execute `git flow release finish v[version]` and `npm run finish-release` to finish the release process. The steps executed are:
-  1. Finishes, tags and deletes the `release/[version]` branch.
-  2. Pushes the new `[version]` tag into the repository.
-  3. Merges release into `develop` and pushes changes to repository.
-  4. Merges release into `master` and pushes changes to repository.
+Execute `npm run release:finish -- [version]` to finish the release process. The steps executed are:
+  1. Adds and commits all changes (changelog changes, bump, etc etc).
+  2. Creates new `[version]` tag
+  3. Pushes commit and new tag into the repository (`develop`).
+  5. Rebases `master` with `develop` and pushes changes to repository.
   5. Returns to `develop` branch.
 
 #### Publish Release
 
-Execute `npm run npm-publish` from develop branch to start the automatic publishing process. The steps executed are:
-  1. Executes `npm run build` process.
+##### Stable Release
+
+Execute `npm run publish:npm` from develop branch to start the automatic publishing process. The steps executed are:
+  1. Executes `npm run build:lib` process.
   2. Executes `bash scripts/npm-publish` process.
+
+##### Beta/RC Release
+
+Execute `npm run publish:npm -- next` to publish a beta/RC Release.
 
 #### Post Release Checklist
 
-1. Deploy to ghpages using `npm run ghpages-deploy`
-2. Update release `plnkr` (and nightly release `plnkr` if needed)
+1. Deploy to ghpages using `npm run ghpages:deploy`
+2. Update `stackblitz` if needed
 3. Update Covalent Quickstart (or Seed) with small commits to show step by step the upgrade process
 4. Update UPGRADE.md as necessary.
 5. Throw party~

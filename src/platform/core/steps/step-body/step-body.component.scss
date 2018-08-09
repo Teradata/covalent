@@ -9,8 +9,14 @@
     // flex
     flex: 1;
     box-sizing: border-box;
+    .td-step-summary,
+    .td-step-content-wrapper {
+      &.ng-animating {
+        overflow: hidden;
+      }
+    }
     .td-step-content {
-      overflow-x: auto; 
+      overflow-x: auto;
     }
     .td-step-actions {
       // layout

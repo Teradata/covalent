@@ -11,6 +11,7 @@
   <mat-divider></mat-divider>
   <mat-card-actions>
     <a mat-button color="primary" href="https://material.io/guidelines/style/typography.html" target="_blank" class="text-upper">Typography Spec</a>
+    <a mat-button color="primary" href="https://material.angular.io/guide/typography" target="_blank" class="text-upper">Material Typography</a>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -20,54 +21,45 @@
     <p class="mat-body-1">To preserve semantic structures, you can optionally style the <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> heading tags with the styling classes shown below:</p>
     <div layout-align="center end">
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-display-4</code>
-        <span class="md-display-4">Light 112px</span>
+        <code flex="15">.mat-display-4</code>
+        <span class="mat-display-4 push-bottom-none">X-Large Header</span>
       </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-display-3</code>
-        <span class="md-display-3">Regular 56px</span>
+        <code flex="15">.mat-display-3</code>
+        <span class="mat-display-3 push-bottom-none">Large Header</span>
       </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-display-2</code>
-         <span class="md-display-2">Regular 45px</span>
+        <code flex="15">.mat-display-2</code>
+        <span class="mat-display-2 push-bottom-none">Medium Header</span>
        </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-display-1</code>
-         <span class="md-display-1">Regular 34px</span>
+        <code flex="15">.mat-display-1</code>
+         <span class="mat-display-1 push-bottom-none">Small Header</span>
        </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-headline</code>
-         <span class="md-headline">Regular 24px</span>
+        <code flex="15">.mat-headline</code>
+         <span class="mat-headline push-bottom-none"><![CDATA[<h1>]]> Header</span>
        </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-title</code>
-         <span class="md-title">Medium 20px</span>
+        <code flex="15">.mat-title</code>
+         <span class="mat-title push-bottom-none"><![CDATA[<h2>]]> Header</span>
        </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-subhead</code>
-         <span class="md-subhead">Regular 16px</span>
+        <code flex="15">.mat-subheading-2</code>
+         <span class="mat-subheading-2 push-bottom-none"><![CDATA[<h3>]]> Header</span>
        </div>
-      <mat-divider></mat-divider>
+       <mat-divider></mat-divider>
+       <div layout="row" layout-align="start center">
+         <code flex="15">.mat-subheading-1</code>
+          <span class="mat-subheading-1 push-bottom-none"><![CDATA[<h4>]]> Header</span>
+        </div>
     </div>
-    <h3 class="mat-title">Usage</h3>
-    <td-highlight lang="html"> 
-    <![CDATA[
-      <!-- Large Heading -->
-      <h1 class="md-display-4">Roboto is the standard typeface on Android.</h1>
-      <h2 class="md-display-3">Roboto and Noto are the standard typefaces on Android and Chrome.</h2>
-      <h3 class="md-display-2">Noto is the standard typeface for all languages on Chrome and Android for all languages not covered by Roboto.</h3>
-      <!-- Medium Heading -->
-      <h1 class="md-display-1">Roboto is the standard typeface on Android.</h1>
-      <h2 class="md-headline">Roboto and Noto are the standard typefaces on Android and Chrome.</h2>
-      <h3 class="md-subhead">Noto is the standard typeface for all languages on Chrome and Android for all languages not covered by Roboto.</h3>
-    ]]>
-    </td-highlight>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -76,36 +68,31 @@
   <mat-card-content>
     <div layout-align="center end">
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-body-1</code>
-        <span class="md-body-1">Regular 14px</span>
+        <code flex="15">.mat-body-1</code>
+        <span class="mat-body-1">Base body text</span>
       </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-body-2</code>
-        <span class="md-body-2">Medium 14px</span>
+        <code flex="15">.mat-body-2</code>
+        <span class="mat-body-2">Bolder body text</span>
+      </div>
+      <mat-divider></mat-divider>
+      <div layout="row" layout-align="start center">
+        <code flex="15">.mat-caption</code>
+        <span class="mat-caption">Smaller body and hint text</span>
       </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
         <code flex="15">.mat-button</code>
-        <span class="mat-button md-raised">Medium 14px</span>
+        <span class="mat-button pad-none">Buttons and anchors</span>
       </div>
       <mat-divider></mat-divider>
       <div layout="row" layout-align="start center">
-        <code flex="15">.md-caption</code>
-        <span class="md-caption">Regular 12px</span>
+        <code flex="15">.mat-input</code>
+        <span class="mat-input">Form input fields</span>
       </div>
       <mat-divider></mat-divider>
     </div>
-    <h3 class="mat-title">Usage</h3>
-    <td-highlight lang="html"> 
-    <![CDATA[
-      <!-- body copy -->
-      <p class="md-body-1">Roboto is the standard typeface on Android.</p>
-      <p class="md-body-2">Roboto and Noto are the standard typefaces on Android and Chrome.</p>
-      <p class="mat-button">Roboto and Noto are the standard typefaces on Android and Chrome.</p>
-      <p class="md-caption">Noto is the standard typeface for all languages on Chrome and Android for all languages not covered by Roboto.</p>
-    ]]>
-    </td-highlight>
   </mat-card-content>
 </mat-card>
 <mat-card>

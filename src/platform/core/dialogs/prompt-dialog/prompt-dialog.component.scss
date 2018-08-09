@@ -1,13 +1,3 @@
-@media (min-width: 600px) {
-  td-dialog {
-    width: 400px;
-  }
-}
-@media (max-width: 599px) {
-  td-dialog {
-    width: 250px;
-  }
-}
 .td-dialog-input-wrapper {
   // layout row
   flex-direction: row;
@@ -18,4 +8,8 @@
     flex: 1;
     box-sizing: border-box;
   }
+}
+
+.td-dialog-message {
+  word-break: break-word;
 }

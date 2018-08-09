@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { single, multi } from './data';
 
-import { TdDigitsPipe } from '@covalent/core';
+import { TdDigitsPipe } from '@covalent/core/common';
 
 @Component({
   selector: 'ngx-charts-demo',
   styleUrls: ['./ngx-charts.component.scss'],
   templateUrl: './ngx-charts.component.html',
+  preserveWhitespaces: true,
 })
 export class NgxChartsDemoComponent {
 

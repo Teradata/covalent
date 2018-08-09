@@ -1,8 +1,7 @@
 import { Injectable, Type, Injector } from '@angular/core';
 import { Http, RequestOptionsArgs, Response, Request, RequestMethod } from '@angular/http';
 
-import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
+import { Observable, Subscriber } from 'rxjs';
 
 import { IHttpInterceptor } from './http-interceptor.interface';
 import { IHttpInterceptorMatcher } from './http-interceptor-matcher.interface';

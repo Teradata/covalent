@@ -1,8 +1,6 @@
 import { Headers, RequestOptionsArgs, Response, Request } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
-import { map } from 'rxjs/operators/map';
-import { catchError } from 'rxjs/operators/catchError';
+import { map, catchError } from 'rxjs/operators';
+import { Observable, Subscriber } from 'rxjs';
 
 export interface IRestTransform {
   (response: Response): any;

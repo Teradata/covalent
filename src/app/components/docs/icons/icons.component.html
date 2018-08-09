@@ -17,13 +17,13 @@
     <td-highlight lang="typescript">
      <![CDATA[
        import { DomSanitizer } from '@angular/platform-browser';
-       import { MatIconRegistry } from '@angular/material';
+       import { MatIconRegistry } from '@angular/material/icon';
        ...
        ...
        constructor(private _iconRegistry: MatIconRegistry,
                    private _domSanitizer: DomSanitizer) {
          this._iconRegistry.addSvgIconInNamespace('assets', 'sun',
-           this._domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/sun.svg'));
+           this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/sun.svg'));
        }
      ]]>
     </td-highlight>

@@ -37,9 +37,24 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
-         MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
-         MatProgressBarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -48,8 +63,8 @@ import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, Covale
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
-import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
-import { CovalentTextEditorModule } from '../../../../node_modules/@covalent/text-editor';
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { CovalentTextEditorModule } from '@covalent/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
@@ -106,6 +121,10 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     MatTooltipModule,
     MatProgressBarModule,
     MatAutocompleteModule,
+    MatGridListModule,
+    MatRippleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,

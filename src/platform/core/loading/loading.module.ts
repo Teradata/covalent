@@ -4,7 +4,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortalModule } from '@angular/cdk/portal';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { MatProgressBarModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { TdLoadingService, LOADING_PROVIDER } from './services/loading.service';
 import { TdLoadingFactory, LOADING_FACTORY_PROVIDER } from './services/loading.factory';
@@ -19,9 +20,6 @@ const TD_LOADING: Type<any>[] = [
 const TD_LOADING_ENTRY_COMPONENTS: Type<any>[] = [
   TdLoadingComponent,
 ];
-
-export { LoadingType, LoadingMode, LoadingStrategy } from './loading.component';
-export { TdLoadingService, ITdLoadingConfig } from './services/loading.service';
 
 @NgModule({
   imports: [

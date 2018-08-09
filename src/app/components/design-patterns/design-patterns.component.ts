@@ -1,18 +1,12 @@
 import { Component, HostBinding, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
-
-import { fadeAnimation } from '../../app.animations';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'app-design-patterns',
   styleUrls: ['./design-patterns.component.scss'],
   templateUrl: './design-patterns.component.html',
-  animations: [fadeAnimation],
 })
 export class DesignPatternsComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   items: Object[] = [{
     description: 'Various cards',
@@ -34,6 +28,21 @@ export class DesignPatternsComponent {
     icon: 'kitchen',
     route: 'navigation-drawer',
     title: 'Navigation Drawer Patterns',
+  }, {
+    description: 'Floating action button',
+    icon: 'add_circle',
+    route: 'fab',
+    title: 'FAB Patterns',
+  }, {
+    description: 'Wizard-like pattern',
+    icon: 'looks_one',
+    route: 'steppers',
+    title: 'Stepper Patterns',
+  }, {
+    description: 'Feedback for empty elements',
+    icon: 'space_bar',
+    route: 'empty-states',
+    title: 'Empty State Patterns',
   }];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,

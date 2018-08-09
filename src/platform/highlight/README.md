@@ -4,21 +4,25 @@
 
 This implementation supports all the Common languages in *highlight.js*.
 
-## API Summary
-
-Properties:
-
-| Name | Type | Description |
-| --- | --- | 650--- |
-| `lang` | `[any common language supported in highlight.js]` | Language of the code content to be parsed as highlighted html.
-| `content` | `string` | Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
-| `contentReady` | `function` |  Event emitted after the highlight content rendering is finished.
-
 **Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `highlight.js` lib to avoid **XSS** issues.
 
 By default, `--dev` build will log the following message in the console to let you know:
 
 `WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).`
+
+## API Summary
+
+#### Inputs
+
++ lang: string
+  + Language of the code content to be parsed as highlighted html.
++ content: string
+  + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
+
+#### Events
+
++ contentReady: function
+  + Event emitted after the highlight content rendering is finished.
 
 ## Installation
 
@@ -124,8 +128,7 @@ Example for **Typescript**:
 <td-highlight lang="typescript">
   <![CDATA[
     import { Injectable } from '@angular/core';
-    import { Subject } from 'rxjs/Subject';
-    import { Observable } from 'rxjs/Observable';
+    import { Observable, Subject } from 'rxjs';
 
     @Injectable()
     export class Service {
@@ -133,7 +136,7 @@ Example for **Typescript**:
       private _sources: {[key : string]: Subject<any>} = {};
       private _observables: {[key: string]: Observable<any>} = {};
 
-      constructor(){
+      constructor() {
 
       }
 
@@ -144,7 +147,7 @@ Example for **Typescript**:
       }
 
       public emit(name: string): void {
-        if(this._sources[name]){
+        if(this._sources[name]) {
           this._sources[name].next(null);
         }
       }

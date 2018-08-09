@@ -1,0 +1,17 @@
+<mat-tab-group [attr.mat-stretch-tabs]="stretchTabs ? true : undefined"
+                [backgroundColor]="backgroundColor"
+                [color]="color"
+                [disableRipple]="disableRipple"
+                [selectedIndex]="selectedIndex"
+                (selectedIndexChange)="selectedIndexChange($event)">
+  <ng-template let-tabOption
+                ngFor
+                [ngForOf]="tabOptions">
+    <mat-tab [disabled]="tabOption.disabled || disabled">
+      <ng-template matTabLabel>
+        <ng-template [cdkPortalOutlet]="tabOption.content">
+        </ng-template>
+      </ng-template>
+    </mat-tab>
+  </ng-template>
+</mat-tab-group>

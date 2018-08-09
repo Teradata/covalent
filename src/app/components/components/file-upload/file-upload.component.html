@@ -89,7 +89,7 @@
         <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                         accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
           <mat-icon>file_upload</mat-icon>
-          <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
+          <span>{{ fileMultipleUpload.value?.name || fileMultipleUpload.value?.length }} <span *ngIf="fileMultipleUpload.value?.length">files selected</span></span>
           <ng-template td-file-input-label>
             <mat-icon>attach_file</mat-icon>
             <span>
@@ -115,7 +115,7 @@
                             accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
               <mat-icon>file_upload</mat-icon>
               <span>
-                { { fileMultipleUpload.files?.name || fileMultipleUpload.files?.length } } <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
+                { { fileMultipleUpload.value?.name || fileMultipleUpload.value?.length } } <span *ngIf="fileMultipleUpload.value?.length">files selected</span>
               </span>
               <ng-template td-file-input-label>
                 <mat-icon>attach_file</mat-icon>

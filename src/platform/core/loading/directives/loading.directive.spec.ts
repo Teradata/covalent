@@ -5,13 +5,11 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../loading.module';
-import { of } from 'rxjs/observable/of';
-import { catchError } from 'rxjs/operators/catchError';
+import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoadingService } from '../public-api';
+import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {
 
@@ -378,7 +376,7 @@ class TdLoadingStarUntilAsyncTestComponent {
 class TdLoadingNamedErrorStarUntilAsyncTestComponent {
   private _subject: Subject<any> = new Subject<any>();
   observable: Observable<any>;
-  
+
   constructor(private _loadingService: TdLoadingService) {}
 
   createObservable(): void {

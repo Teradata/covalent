@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { PortalModule } from '@angular/cdk/portal';
-import { MatIconModule, MatButtonModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TdFileSelectDirective } from './directives/file-select.directive';
 import { TdFileDropDirective } from './directives/file-drop.directive';
@@ -20,12 +21,6 @@ const TD_FILE: Type<any>[] = [
   TdFileInputComponent,
   TdFileInputLabelDirective,
 ];
-
-export { TdFileUploadComponent } from './file-upload/file-upload.component';
-export { TdFileInputComponent, TdFileInputLabelDirective } from './file-input/file-input.component';
-export { TdFileSelectDirective } from './directives/file-select.directive';
-export { TdFileDropDirective } from './directives/file-drop.directive';
-export { TdFileService, IUploadOptions } from './services/file.service';
 
 @NgModule({
   imports: [

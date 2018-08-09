@@ -1,19 +1,14 @@
 import { Component, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { TdMediaService } from '@covalent/core';
-
-import { fadeAnimation } from '../../../app.animations';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'layouts-nav-list',
   styleUrls: ['./nav-list.component.scss'],
   templateUrl: './nav-list.component.html',
-  animations: [fadeAnimation],
+  preserveWhitespaces: true,
 })
 export class NavListComponent {
-
-  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
-  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   routes: Object[] = [{
       icon: 'home',

@@ -1,15 +1,13 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-         ITdDataTableSortChangeEvent, ITdDataTableColumn } from '../../../../platform/core';
+  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
 import { InternalDocsService } from '../../../services';
-
-import { toPromise } from 'rxjs/operator/toPromise';
 
 const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
@@ -19,11 +17,14 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
   animations: [slideInDownAnimation],
+  preserveWhitespaces: true,
 })
 export class DataTableDemoComponent implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
+  @ViewChild(TdPagingBarComponent) pagingBar: TdPagingBarComponent;
 
   cellAttrs: Object[] = [{
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
@@ -132,7 +133,7 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.data = await toPromise.call(this._internalDocsService.queryData());
+    this.data = await this._internalDocsService.queryData().toPromise();
     this.basicData = this.data.slice(0, 10);
     this.filter();
   }
@@ -145,6 +146,7 @@ export class DataTableDemoComponent implements OnInit {
 
   search(searchTerm: string): void {
     this.searchTerm = searchTerm;
+    this.pagingBar.navigateToPage(1);
     this.filter();
   }
 
@@ -155,19 +157,19 @@ export class DataTableDemoComponent implements OnInit {
     this.filter();
   }
 
-  filter(): void {
+  async filter(): Promise<void> {
     let newData: any[] = this.data;
-    let excludedColumns: string[] = this.columns
+    let excludedColumns: string[] = await this.columns
     .filter((column: ITdDataTableColumn) => {
       return ((column.filter === undefined && column.hidden === true) || 
               (column.filter !== undefined && column.filter === false));
     }).map((column: ITdDataTableColumn) => {
       return column.name;
     });
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
+    newData = await this._dataTableService.filterData(newData, this.searchTerm, true, excludedColumns);
     this.filteredTotal = newData.length;
-    newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
-    newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
+    newData = await this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
+    newData = await this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
   }
 

@@ -13,12 +13,17 @@
     align-content: center;
     max-width: 100%;
     justify-content: start;
-    .td-message-icon {
-      margin-right: 16px;
-    }
     .td-message-labels {
       // [flex]
       flex: 1;
     }
+  }
+}
+
+.td-message-icon {
+  margin-right: 16px;
+  ::ng-deep [dir='rtl'] & {
+    margin-left: 16px;
+    margin-right: 0;
   }
 }

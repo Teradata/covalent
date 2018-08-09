@@ -5,13 +5,18 @@
 
 ## API Summary
 
-| Name | Type | Description |
-| --- | --- | 650--- |
-| cardTitle | string | Title set in card.
-| cardSubtitle | string | subtitle set in card.
-| cardWidth | string | Card flex width in %. Defaults to 70.
-| color | string | optional toolbar color. Defaults to primary.
+#### Inputs
 
++ cardTitle: string 
+  + Title set in card.
++ cardSubtitle: string 
+  + Subtitle set in card.
++ cardWidth: string 
+  + Card flex width in %. 
+  + Defaults to 70.
++ color: string 
+  + Optional toolbar color. 
+  + Defaults to primary.
 
 ## Usage
 
