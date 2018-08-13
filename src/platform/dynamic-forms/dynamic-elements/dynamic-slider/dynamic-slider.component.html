@@ -6,7 +6,7 @@
   <div class="td-dynamic-slider-field">
     <mat-slider #slider
                class="td-dynamic-slider"
-               [(ngModel)]="value"
+               [formControl]="control"
                 [min]="min"
                 [max]="max"
                 thumbLabel

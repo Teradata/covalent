@@ -1,21 +1,26 @@
-import { Component, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
+import { Component, forwardRef, ChangeDetectorRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 
-import { AbstractControlValueAccessor } from '../abstract-control-value-accesor';
+import { mixinControlValueAccessor, IControlValueAccessor } from '@covalent/core/common';
 
-export const SLIDER_INPUT_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdDynamicSliderComponent),
-  multi: true,
-};
+export class TdDynamicSliderBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
+
+/* tslint:disable-next-line */
+export const _TdDynamicSliderMixinBase = mixinControlValueAccessor(TdDynamicSliderBase);
 
 @Component({
-  providers: [ SLIDER_INPUT_CONTROL_VALUE_ACCESSOR ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdDynamicSliderComponent),
+    multi: true,
+  }],
   selector: 'td-dynamic-slider',
   styleUrls: [ './dynamic-slider.component.scss' ],
   templateUrl: './dynamic-slider.component.html',
 })
-export class TdDynamicSliderComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
+export class TdDynamicSliderComponent extends _TdDynamicSliderMixinBase implements IControlValueAccessor {
 
   control: FormControl;
 
