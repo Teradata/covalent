@@ -1,5 +1,5 @@
-<div *ngIf="isHorizontal()" class="td-step-nav-header">
+<div [class]="isHorizontal() ? 'td-step-nav-header' : ''">
   <ng-content></ng-content>
-</div> 
+</div>
 
 
