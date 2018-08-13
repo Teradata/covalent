@@ -11,6 +11,19 @@ import {
   TdDynamicType,
 } from '@covalent/dynamic-forms';
 
+import { FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'td-dynamic-input-test',
+  template: `<td-chips [items]="selections" [formControl]="control"></td-chips>`,
+})
+export class TdTestDynamicComponent {
+
+  control: FormControl;
+  selections: string[] = [];
+
+}
+
 @Component({
   selector: 'dynamic-forms-demo',
   styleUrls: ['./dynamic-forms.component.scss'],
@@ -134,6 +147,14 @@ export class DynamicFormsDemoComponent {
     required: false,
     max: 30,
     flex: 20,
+  }];
+
+  customElements: ITdDynamicElementConfig[] = [{
+    name: 'custom',
+    type: TdTestDynamicComponent,
+    default: ['list1'],
+    selections: ['list1', 'list2', 'list3'],
+    flex: 100,
   }];
 
   elementOptions: any[] = [

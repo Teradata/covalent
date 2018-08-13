@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { componentsRoutes } from './components.routes';
 
@@ -70,6 +70,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
+import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
+
 @NgModule({
   declarations: [
     ComponentsComponent,
@@ -101,11 +103,13 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     // External Dependencies
     NgxChartsDemoComponent,
     NgxTranslateDemoComponent,
+    TdTestDynamicComponent,
   ],
   imports: [
     /** Angular Modules */
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     /** Material Modules */
     MatButtonModule,
     MatListModule,
@@ -153,6 +157,9 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     TranslateModule,
     componentsRoutes,
     ToolbarModule,
+  ],
+  entryComponents: [
+    TdTestDynamicComponent,
   ],
 })
 export class ComponentsModule {}

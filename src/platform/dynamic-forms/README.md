@@ -52,7 +52,7 @@ Pass an array of javascript objects that implement [ITdDynamicElementConfig] wit
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
-  type: TdDynamicType | TdDynamicElement;
+  type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   min?: any;
   max?: any;
@@ -63,6 +63,8 @@ export interface ITdDynamicElementConfig {
   validators?: ITdDynamicElementValidator[];
 }
 ```
+
+NOTE: For cystom types, you need to implement a `[control]` property and use it in your underlying element.
 
 Example for HTML usage:
 
@@ -84,6 +86,14 @@ Example for HTML usage:
 
 ```typescript
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
+...
+/* CUSTOM TYPE */
+  template: '<label>{{label}}</label><input [formControl]="control">',
+})
+export class DynamicCustomComponent {
+  control: FormControl;
+  label: string;
+}
 ...
 })
 export class Demo {
@@ -125,6 +135,10 @@ export class Demo {
     name: 'datepicker',
     label: 'Date',
     type: TdDynamicElement.Datepicker,
+  }, {
+    name: 'custom',
+    label: 'Custom',
+    type: DynamicCustomComponent,
   }];
 }
 ```
