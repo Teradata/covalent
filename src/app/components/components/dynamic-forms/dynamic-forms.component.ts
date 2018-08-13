@@ -50,6 +50,7 @@ export class DynamicFormsDemoComponent {
     required: false,
     default: 'Default',
     flex: 50,
+    disabled: true,
   }, {
     name: 'textarea',
     type: TdDynamicElement.Textarea,
