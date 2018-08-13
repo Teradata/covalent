@@ -1,6 +1,6 @@
 
 import { trigger, state, style, keyframes, transition, animate,
-         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
+         AnimationTriggerMetadata, query, animateChild, group } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 /**
