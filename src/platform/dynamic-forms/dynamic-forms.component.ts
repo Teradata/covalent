@@ -143,6 +143,8 @@ export class TdDynamicFormsComponent implements AfterContentInit {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
       } else {
         dynamicElement.setValue(elem.default);
+        dynamicElement.markAsPristine();
+        dynamicElement.markAsUntouched();
         if (elem.disabled) {
           dynamicElement.disable();
         } else {

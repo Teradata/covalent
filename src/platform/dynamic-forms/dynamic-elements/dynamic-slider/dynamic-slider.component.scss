@@ -1,6 +1,10 @@
+:host {
+  .td-dynamic-slider-wrapper {
+    display: block;
+  }
+}
 .td-dynamic-slider-field {
   position: relative;
-  margin-top: 8px;
   // [layout="row"]
   flex-direction: row;
   // [layout]
