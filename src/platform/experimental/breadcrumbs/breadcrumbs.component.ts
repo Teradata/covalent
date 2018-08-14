@@ -15,13 +15,13 @@ import {
 import {
   Subscription,
   Subject,
+  fromEvent,
+  merge,
 } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
 } from 'rxjs/operators';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { merge } from 'rxjs/observable/merge';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -89,7 +89,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   */
   get nativeElementWidth(): number {
     return (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
-  } 
+  }
 
   /**
    * The total count of individual breadcrumbs
@@ -125,7 +125,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
       this.hiddenBreadcrumbs.push(crumbsArray[this.hiddenBreadcrumbs.length]);
       this.displayWidthAvailableCrumbs();
     } else {
-      // loop over all the hidden crumbs and see if adding them back in will 
+      // loop over all the hidden crumbs and see if adding them back in will
       // fit in the current window size
       let totalHidden: number = this.hiddenBreadcrumbs.length - 1;
       for (let i: number = totalHidden; i >= 0; i--) {
