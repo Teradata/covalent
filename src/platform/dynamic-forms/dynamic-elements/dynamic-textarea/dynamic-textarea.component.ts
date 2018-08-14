@@ -12,6 +12,8 @@ export class TdDynamicTextareaComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   required: boolean = undefined;
 
 }

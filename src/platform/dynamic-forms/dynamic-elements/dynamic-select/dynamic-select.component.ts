@@ -12,6 +12,8 @@ export class TdDynamicSelectComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   required: boolean = undefined;
 
   selections: any[] = undefined;

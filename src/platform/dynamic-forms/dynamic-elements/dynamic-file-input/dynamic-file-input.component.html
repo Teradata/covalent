@@ -11,6 +11,7 @@
           [value]="control?.value?.name"
           [placeholder]="label"
           readonly/>
+    <mat-hint>{{hint}}</mat-hint>
   </mat-form-field>
   <button mat-icon-button *ngIf="control.value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
     <mat-icon>cancel</mat-icon>

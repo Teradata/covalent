@@ -56,6 +56,11 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   @Input() label: string = '';
 
   /**
+   * Sets hint to be displayed.
+   */
+  @Input() hint: string = '';
+
+  /**
    * Sets type or element of element to be rendered.
    * Throws error if does not exist or no supported.
    */
@@ -118,6 +123,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     this._instance = ref.instance;
     this._instance.control = this.dynamicControl;
     this._instance.label = this.label;
+    this._instance.hint = this.hint;
     this._instance.type = this.type;
     this._instance.value = this.value;
     this._instance.required = this.required;
