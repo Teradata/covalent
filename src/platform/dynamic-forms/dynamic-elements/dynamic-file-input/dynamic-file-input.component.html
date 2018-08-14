@@ -4,8 +4,8 @@
                   floatLabel="never"
                   [disabled]="control?.disabled"
                   (fileDrop)="_handlefileDrop($event)"
-                  (click)="fileInput.inputElement.click()"
-                  (keyup.enter)="fileInput.inputElement.click()"
+                  (click)="!control?.disabled && fileInput.inputElement.click()"
+                  (keyup.enter)="!control?.disabled && fileInput.inputElement.click()"
                   (keyup.delete)="fileInput.clear()"
                   (keyup.backspace)="fileInput.clear()">
     <input matInput
