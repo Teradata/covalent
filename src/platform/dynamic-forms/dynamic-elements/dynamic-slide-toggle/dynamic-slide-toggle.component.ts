@@ -1,21 +1,12 @@
-import { Component, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
-
-import { AbstractControlValueAccessor } from '../abstract-control-value-accesor';
-
-export const SLIDE_TOGGLE_INPUT_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdDynamicSlideToggleComponent),
-  multi: true,
-};
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
-  providers: [ SLIDE_TOGGLE_INPUT_CONTROL_VALUE_ACCESSOR ],
   selector: 'td-dynamic-slide-toggle',
   styleUrls: [ './dynamic-slide-toggle.component.scss' ],
   templateUrl: './dynamic-slide-toggle.component.html',
 })
-export class TdDynamicSlideToggleComponent extends AbstractControlValueAccessor implements ControlValueAccessor {
+export class TdDynamicSlideToggleComponent {
 
   control: FormControl;
 
