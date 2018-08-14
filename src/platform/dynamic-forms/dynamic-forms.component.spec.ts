@@ -99,7 +99,7 @@ describe('Component: TdDynamicForms', () => {
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
       /* tslint:disable-next-line */
-      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: null, on_it: true}));
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({on_it: true}));
     });
   })));
 
@@ -126,7 +126,7 @@ describe('Component: TdDynamicForms', () => {
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
       /* tslint:disable-next-line */
-      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: null, age: 17}));
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({age: 17}));
     });
   })));
 
@@ -322,6 +322,34 @@ describe('Component: TdDynamicForms', () => {
       expect(dynamicFormsComponent.valid).toBeTruthy();
       /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1', number: 22}));
+    });
+  })));
+
+  it('should render dynamic elements with one element disabled', async(inject([], () => {
+
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+    let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+
+    expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
+    component.elements = [{
+      name: 'hexColor',
+      type: TdDynamicType.Text,
+      required: true,
+      default: '#F1F1F1',
+    }, {
+      name: 'number',
+      type: TdDynamicType.Number,
+      disabled: true,
+      required: true,
+    }];
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(2);
+      let dynamicFormsComponent: TdDynamicFormsComponent =
+          fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
+      expect(dynamicFormsComponent.valid).toBeTruthy();
+      /* tslint:disable-next-line */
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1'}));
     });
   })));
 });

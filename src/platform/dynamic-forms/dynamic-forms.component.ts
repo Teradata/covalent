@@ -138,10 +138,17 @@ export class TdDynamicFormsComponent implements AfterContentInit {
         throw new Error(`Dynamic element name: "${elem.name}" is duplicated`);
       }
       duplicates.push(elem.name);
-      if (!this.dynamicForm.get(elem.name)) {
+      let dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
+      if (!dynamicElement) {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
       } else {
-        this.dynamicForm.get(elem.name).setValidators(this._dynamicFormsService.createValidators(elem));
+        dynamicElement.setValue(elem.default);
+        if (elem.disabled) {
+          dynamicElement.disable();
+        } else {
+          dynamicElement.enable();
+        }
+        dynamicElement.setValidators(this._dynamicFormsService.createValidators(elem));
       }
       // copy objects so they are only changes when calling this method
       this._renderedElements.push(Object.assign({}, elem));
