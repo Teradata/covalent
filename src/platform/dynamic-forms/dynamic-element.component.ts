@@ -1,4 +1,4 @@
-import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef, ChangeDetectorRef, Type } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
@@ -110,8 +110,9 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   }
 
   ngOnInit(): void {
+    let component: any = <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
     let ref: ComponentRef<any> = this._componentFactoryResolver.
-      resolveComponentFactory(this._dynamicFormsService.getDynamicElement(this.type))
+      resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     this._instance = ref.instance;
