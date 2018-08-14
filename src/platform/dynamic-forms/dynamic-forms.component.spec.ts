@@ -161,7 +161,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20, dob: dob}));
     });
   })));
@@ -184,7 +183,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'mypwd'}));
     });
   })));
@@ -207,7 +205,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'myVeryLongString'}));
     });
   })));
@@ -231,7 +228,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'mySuperSecretPw'}));
     });
   })));
@@ -259,7 +255,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({number: 15}));
     });
   })));
@@ -285,7 +280,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#ZZZZZZ'}));
     });
   })));
@@ -321,7 +315,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1', number: 22}));
     });
   })));
@@ -343,7 +336,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({custom: 'value'}));
     });
   })));

@@ -64,7 +64,7 @@ export interface ITdDynamicElementConfig {
 }
 ```
 
-NOTE: For cystom types, you need to implement a `[control]` property and use it in your underlying element.
+NOTE: For custom types, you need to implement a `[control]` property and use it in your underlying element.
 
 Example for HTML usage:
 
