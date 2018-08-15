@@ -71,8 +71,28 @@
         <h4>Form elements</h4>
         <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
           <td-expansion-panel [label]="model.name">
-            <mat-divider></mat-divider>
+            <mat-divider [inset]="true"></mat-divider>
             <div class="pad" layout="column">
+              <div layout="row">
+                <mat-form-field *ngIf="!isMinMaxSupported(model.type)"class="pad-right-xs" flex>
+                  <input matInput
+                        placeholder="Default"
+                        [(ngModel)]="model.default"
+                        name="default">
+                </mat-form-field>
+                <mat-form-field *ngIf="!isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
+                  <input matInput type="number" placeholder="Default" [(ngModel)]="model.default" name="default">
+                </mat-form-field>
+                <mat-form-field *ngIf="isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
+                  <input matInput
+                        [matDatepicker]="defaultDatepicker"
+                        placeholder="Default"
+                        [(ngModel)]="model.default"
+                        name="default">
+                  <mat-datepicker-toggle matSuffix [for]="defaultDatepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #defaultDatepicker></mat-datepicker>
+                </mat-form-field>
+              </div>
               <div layout="row">
                 <mat-form-field class="pad-right-xs" flex>
                   <input matInput
@@ -134,6 +154,7 @@
               </div>
               <div layout="row">
                 <mat-slide-toggle [(ngModel)]="model.required" name="required">Required</mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="model.disabled" name="disabled">Disabled</mat-slide-toggle>
                 <span flex></span>
                 <button mat-icon-button matTooltip="Delete element" (click)="deleteElement(index)">
                   <mat-icon>delete</mat-icon>

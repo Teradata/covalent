@@ -55,6 +55,7 @@ export interface ITdDynamicElementConfig {
   hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
+  disabled?: boolean;
   min?: any;
   max?: any;
   minLength?: any;
@@ -139,6 +140,7 @@ export class Demo {
     name: 'boolean',
     type: TdDynamicType.Boolean,
     default: false,
+    disabled: true,
   }, {
     name: 'select',
     type: TdDynamicElement.Select,

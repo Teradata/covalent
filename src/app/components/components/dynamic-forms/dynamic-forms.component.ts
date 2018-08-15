@@ -73,6 +73,7 @@ export class DynamicFormsDemoComponent {
     required: false,
     default: 'Default',
     flex: 50,
+    disabled: true,
   }, {
     name: 'textarea',
     hint: 'this is a textarea hint',
