@@ -12,6 +12,12 @@
           [placeholder]="label"
           readonly/>
     <mat-hint>{{hint}}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+      </ng-template>
+    </mat-error>
   </mat-form-field>
   <button mat-icon-button *ngIf="control.value" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
     <mat-icon>cancel</mat-icon>

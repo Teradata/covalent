@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -21,5 +21,7 @@ export class TdDynamicDatepickerComponent {
   min: number = undefined;
 
   max: number = undefined;
+
+  errorMessageTemplate: TemplateRef<any> = undefined;
 
 }

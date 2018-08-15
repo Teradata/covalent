@@ -90,11 +90,26 @@ Example for HTML usage:
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 ...
 /* CUSTOM TYPE */
-  template: '<label>{{label}}</label><input [formControl]="control">',
+  template: `<label>{{label}}</label>
+              <input [formControl]="control">
+              <div *ngIf="errorMessageTemplate && control?.errors"
+                  class="tc-red-600"
+                  [style.font-size.%]="'70'">
+                <ng-template
+                  [ngTemplateOutlet]="errorMessageTemplate"
+                  [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+                </ng-template>
+              </div>`,
 })
 export class DynamicCustomComponent {
+  /* control property needed to properly bind the underlying element */
   control: FormControl;
+
+  /* map any of the properties you passed in the config */
   label: string;
+
+  /* map the error message template and use it anywhere you need to */
+  errorMessageTemplate: TemplateRef<any>;
 }
 ...
 })
@@ -142,6 +157,7 @@ export class Demo {
     name: 'custom',
     label: 'Custom',
     type: DynamicCustomComponent,
+    required: true,
   }];
 }
 ```
