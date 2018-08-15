@@ -97,6 +97,11 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
   @Input() selections: any[] = undefined;
 
   /**
+   * Sets multiple property for array elements (if supported by element).
+   */
+  @Input() multiple: boolean = undefined;
+
+  /**
    * Sets error message template so it can be injected into dynamic components.
    */
   @Input() errorMessageTemplate: TemplateRef<any> = undefined;
@@ -137,6 +142,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     this._instance.minLength = this.minLength;
     this._instance.maxLength = this.maxLength;
     this._instance.selections = this.selections;
+    this._instance.multiple = this.multiple;
     this._instance.errorMessageTemplate = this.errorMessageTemplate;
   }
 

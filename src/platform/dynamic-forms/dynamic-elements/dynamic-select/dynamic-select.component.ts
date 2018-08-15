@@ -18,6 +18,8 @@ export class TdDynamicSelectComponent {
 
   selections: any[] = undefined;
 
+  multiple: boolean = undefined;
+
   errorMessageTemplate: TemplateRef<any> = undefined;
 
 }

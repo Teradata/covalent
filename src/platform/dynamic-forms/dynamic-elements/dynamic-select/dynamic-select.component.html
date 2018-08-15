@@ -2,7 +2,8 @@
   <mat-form-field class="td-dynamic-select-field">
     <mat-select [formControl]="control"
                 [placeholder]="label"
-                [required]="required">
+                [required]="required"
+                [multiple]="multiple">
       <mat-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
     </mat-select>
     <mat-hint>{{hint}}</mat-hint>
