@@ -51,11 +51,6 @@ const TD_PIPES: Type<any>[] = [
   TdTruncatePipe,
 ];
 
-export {
-  TdTimeAgoPipe, TdTimeDifferencePipe,
-  TdDecimalBytesPipe, TdBytesPipe, TdDigitsPipe, TdTruncatePipe,
-};
-
 /**
  * Services
  */
