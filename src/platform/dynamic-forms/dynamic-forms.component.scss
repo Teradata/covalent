@@ -1,4 +1,9 @@
 .td-dynamic-form-wrapper {
+  ::ng-deep {
+    .mat-form-field-infix {
+      width: auto;
+    }
+  }
   // [layout-wrap]
   flex-wrap: wrap;
   // [layout]

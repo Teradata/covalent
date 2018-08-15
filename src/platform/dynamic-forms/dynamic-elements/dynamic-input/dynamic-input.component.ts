@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -25,5 +25,7 @@ export class TdDynamicInputComponent {
   minLength: number = undefined;
 
   maxLength: number = undefined;
+
+  errorMessageTemplate: TemplateRef<any> = undefined;
 
 }
