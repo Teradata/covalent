@@ -52,14 +52,16 @@ Pass an array of javascript objects that implement [ITdDynamicElementConfig] wit
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
+  hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   min?: any;
   max?: any;
-  minLength?: string;
-  maxLength?: string;
-  selections?: any[];
+  minLength?: any;
+  maxLength?: any;
+  selections?: any[] | { value: any, label: string }[];
   default?: any;
+  flex?: number;
   validators?: ITdDynamicElementValidator[];
 }
 ```
@@ -99,6 +101,7 @@ export class DynamicCustomComponent {
 export class Demo {
   elements: ITdDynamicElementConfig[] = [{
     name: 'input',
+    hint: 'hint',
     type: TdDynamicElement.Input,
     required: true,
   }, {

@@ -41,6 +41,7 @@ export class DynamicFormsDemoComponent {
 
   textElements: ITdDynamicElementConfig[] = [{
     name: 'input',
+    hint: 'this is an input hint',
     type: TdDynamicElement.Input,
     required: false,
     flex: 50,
@@ -65,6 +66,7 @@ export class DynamicFormsDemoComponent {
     flex: 50,
   }, {
     name: 'textarea',
+    hint: 'this is a textarea hint',
     type: TdDynamicElement.Textarea,
     required: false,
   }, {
@@ -114,6 +116,7 @@ export class DynamicFormsDemoComponent {
     required: true,
   }, {
     name: 'value-label-select',
+    hint: 'this is a select hint',
     type: TdDynamicElement.Select,
     selections: [
       {label: 'Test1', value: 1},
@@ -126,12 +129,14 @@ export class DynamicFormsDemoComponent {
   fileElements: ITdDynamicElementConfig[] = [{
     name: 'file-input',
     label: 'Browse a file',
+    hint: 'this is a file input hint',
     type: TdDynamicElement.FileInput,
   }];
 
   dateElements: ITdDynamicElementConfig[] = [{
     name: 'date-input',
     label: 'Select a date',
+    hint: 'this is a datepicker hint',
     type: TdDynamicElement.Datepicker,
     min: new Date(2018, 1, 1).setHours(0, 0, 0, 0),
   }];

@@ -14,6 +14,8 @@ export class TdDynamicFileInputComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   _handlefileDrop(value: File): void {
     this.control.setValue(value);
   }

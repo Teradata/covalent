@@ -37,6 +37,7 @@ export interface ITdDynamicElementValidator {
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
+  hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   min?: any;

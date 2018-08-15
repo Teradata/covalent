@@ -12,6 +12,8 @@ export class TdDynamicInputComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   type: string = undefined;
 
   required: boolean = undefined;
