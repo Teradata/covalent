@@ -46,7 +46,6 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 + refresh: function
   + Refreshes data table and rerenders [data] and [columns]
 
-
 ## Setup
 
 Import the [CovalentDataTableModule] in your NgModule:

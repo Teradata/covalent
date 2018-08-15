@@ -25,8 +25,22 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
+  td-data-table {
+    border-bottom: 1px solid mat-color($foreground, divider);
+  }
   .td-data-table-scrollable {
     border-top: 1px solid mat-color($foreground, divider);
+  }
+  .td-data-table-column-resizer {
+    .td-data-table-column-separator {
+      border-right: 2px solid mat-color($foreground, divider);
+      opacity: 0.3;
+    }
+    &:hover, &.td-resizing {
+      .td-data-table-column-separator {
+        opacity: 1;
+      }
+    }
   }
   table[td-data-table] {
     .td-data-table-column-row,
