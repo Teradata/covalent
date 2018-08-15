@@ -40,11 +40,13 @@ export interface ITdDynamicElementConfig {
   hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
+  disabled?: boolean;
   min?: any;
   max?: any;
   minLength?: any;
   maxLength?: any;
   selections?: string[] | { value: any, label: string }[];
+  multiple?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
@@ -103,7 +105,7 @@ export class TdDynamicFormsService {
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
     let validator: ValidatorFn = this.createValidators(config);
-    return new FormControl(config.default, validator);
+    return new FormControl({ value: config.default, disabled: config.disabled }, validator);
   }
 
   /**

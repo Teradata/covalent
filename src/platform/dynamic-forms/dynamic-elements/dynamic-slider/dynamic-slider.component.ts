@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -18,4 +18,11 @@ export class TdDynamicSliderComponent {
 
   max: number = undefined;
 
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
+
+  _handleBlur(): void {
+    setTimeout(() => {
+      this._changeDetectorRef.markForCheck();
+    });
+  }
 }
