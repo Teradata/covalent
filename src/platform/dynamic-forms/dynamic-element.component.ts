@@ -101,6 +101,11 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   @Input() multiple: boolean = undefined;
 
+  /**
+   * Sets error message template so it can be injected into dynamic components.
+   */
+  @Input() errorMessageTemplate: TemplateRef<any> = undefined;
+
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
@@ -138,6 +143,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     this._instance.maxLength = this.maxLength;
     this._instance.selections = this.selections;
     this._instance.multiple = this.multiple;
+    this._instance.errorMessageTemplate = this.errorMessageTemplate;
   }
 
   /**
