@@ -14,15 +14,11 @@ import { BreadcrumbDemoComponent } from './sandbox/breadcrumbs/breadcrumbs.compo
 import { TabSelectDemoComponent } from './sandbox/tab-select/tab-select.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-import { MultiSelectDemoComponent } from './sandbox/multiselect/multiselect.component';
-
 @NgModule({
   declarations: [
     TestBedComponent,
     BreadcrumbDemoComponent,
     TabSelectDemoComponent,
-    MultiSelectDemoComponent,
     MainComponent,
   ],
   imports: [
@@ -32,14 +28,12 @@ import { MultiSelectDemoComponent } from './sandbox/multiselect/multiselect.comp
     FormsModule,
     MatDividerModule,
     appRoutes,
-    CovalentDynamicFormsModule,
     /** Experimental Modules */
     CovalentBreadcrumbsModule,
     CovalentTabSelectModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    CovalentTabSelectModule,
   ],
   bootstrap: [TestBedComponent],
 })

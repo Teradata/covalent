@@ -60,6 +60,7 @@ export interface ITdDynamicElementConfig {
   minLength?: any;
   maxLength?: any;
   selections?: any[] | { value: any, label: string }[];
+  multiple?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
@@ -143,6 +144,7 @@ export class Demo {
     name: 'select',
     type: TdDynamicElement.Select,
     required: true,
+    multiple: false,
     selections: ['A','B','C'],
     default: 'A',
   }, {
