@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
+import { tdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
 import { TdCollapseAnimation } from '../../../../platform/core/common/animations/collapse/collapse.animation';
 import { TdFadeInOutAnimation } from '../../../../platform/core/common/animations/fade/fadeInOut.animation';
 import { TdBounceAnimation } from '../../../../platform/core/common/animations/bounce/bounce.animation';
@@ -16,9 +16,7 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
-    TdRotateAnimation(),
-    TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
-    TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
+    tdRotateAnimation,
     TdCollapseAnimation(),
     TdFadeInOutAnimation(),
     TdBounceAnimation(),
