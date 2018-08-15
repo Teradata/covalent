@@ -5,9 +5,9 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import 'hammerjs';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
-import { Validators, AbstractControl } from '@angular/forms';
+import { Validators, AbstractControl, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { TdDynamicType, TdDynamicElement, ITdDynamicElementConfig,
@@ -21,6 +21,7 @@ describe('Component: TdDynamicForms', () => {
         NoopAnimationsModule,
         MatNativeDateModule,
         CovalentDynamicFormsModule,
+        TdDynamicTestModule,
       ],
       declarations: [
         TdDynamicFormsTestComponent,
@@ -160,7 +161,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({first_name: 'name', age: 20, dob: dob}));
     });
   })));
@@ -183,7 +183,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'mypwd'}));
     });
   })));
@@ -206,7 +205,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'myVeryLongString'}));
     });
   })));
@@ -230,7 +228,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
         fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({password: 'mySuperSecretPw'}));
     });
   })));
@@ -258,7 +255,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({number: 15}));
     });
   })));
@@ -284,7 +280,6 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeFalsy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#ZZZZZZ'}));
     });
   })));
@@ -320,8 +315,28 @@ describe('Component: TdDynamicForms', () => {
       let dynamicFormsComponent: TdDynamicFormsComponent =
           fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
       expect(dynamicFormsComponent.valid).toBeTruthy();
-      /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1', number: 22}));
+    });
+  })));
+
+  it('should render dynamic custom element', async(inject([], () => {
+
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+    let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+
+    expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
+    component.elements = [{
+      name: 'custom',
+      type: TdDynamicTestComponent,
+      default: 'value',
+    }];
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(1);
+      let dynamicFormsComponent: TdDynamicFormsComponent =
+          fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
+      expect(dynamicFormsComponent.valid).toBeTruthy();
+      expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({custom: 'value'}));
     });
   })));
 });
@@ -334,3 +349,29 @@ describe('Component: TdDynamicForms', () => {
 class TdDynamicFormsTestComponent {
   elements: ITdDynamicElementConfig[];
 }
+
+@Component({
+  selector: 'td-dynamic-input-test',
+  template: `<input [formControl]="control">`,
+})
+export class TdDynamicTestComponent {
+
+  control: FormControl;
+
+}
+
+@NgModule({
+  declarations: [
+    TdDynamicTestComponent,
+  ],
+  imports: [
+    ReactiveFormsModule,
+  ],
+  exports: [
+    TdDynamicTestComponent,
+  ],
+  entryComponents: [
+    TdDynamicTestComponent,
+  ],
+})
+export class TdDynamicTestModule {}
