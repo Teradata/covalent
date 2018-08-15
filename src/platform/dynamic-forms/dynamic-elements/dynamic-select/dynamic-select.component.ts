@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -12,8 +12,14 @@ export class TdDynamicSelectComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   required: boolean = undefined;
 
   selections: any[] = undefined;
+
+  multiple: boolean = undefined;
+
+  errorMessageTemplate: TemplateRef<any> = undefined;
 
 }

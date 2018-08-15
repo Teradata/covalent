@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -13,6 +13,10 @@ export class TdDynamicFileInputComponent {
   required: boolean = undefined;
 
   label: string = '';
+
+  hint: string = '';
+
+  errorMessageTemplate: TemplateRef<any> = undefined;
 
   _handlefileDrop(value: File): void {
     this.control.setValue(value);

@@ -8,6 +8,13 @@
             [required]="required"
             [min]="min"
             [max]="max"/>
+    <mat-hint>{{hint}}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+      </ng-template>
+    </mat-error>
     <mat-datepicker-toggle matSuffix [for]="dynamicDatePicker"></mat-datepicker-toggle>
     <mat-datepicker #dynamicDatePicker></mat-datepicker>
   </mat-form-field>

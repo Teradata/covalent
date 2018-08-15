@@ -7,5 +7,12 @@
             [required]="required"
             rows="4">
     </textarea>
+    <mat-hint>{{hint}}</mat-hint>
+    <mat-error>
+      <ng-template
+        [ngTemplateOutlet]="errorMessageTemplate"
+        [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+      </ng-template>
+    </mat-error>
   </mat-form-field>
 </div>

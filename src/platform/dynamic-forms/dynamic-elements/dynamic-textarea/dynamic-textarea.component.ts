@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,10 @@ export class TdDynamicTextareaComponent {
 
   label: string = '';
 
+  hint: string = '';
+
   required: boolean = undefined;
+
+  errorMessageTemplate: TemplateRef<any> = undefined;
 
 }

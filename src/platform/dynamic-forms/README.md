@@ -52,15 +52,17 @@ Pass an array of javascript objects that implement [ITdDynamicElementConfig] wit
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
+  hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   disabled?: boolean;
   min?: any;
   max?: any;
-  minLength?: string;
-  maxLength?: string;
-  selections?: any[];
+  minLength?: any;
+  maxLength?: any;
+  selections?: any[] | { value: any, label: string }[];
   default?: any;
+  flex?: number;
   validators?: ITdDynamicElementValidator[];
 }
 ```
@@ -89,17 +91,33 @@ Example for HTML usage:
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 ...
 /* CUSTOM TYPE */
-  template: '<label>{{label}}</label><input [formControl]="control">',
+  template: `<label>{{label}}</label>
+              <input [formControl]="control">
+              <div *ngIf="errorMessageTemplate && control?.errors"
+                  class="tc-red-600"
+                  [style.font-size.%]="'70'">
+                <ng-template
+                  [ngTemplateOutlet]="errorMessageTemplate"
+                  [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+                </ng-template>
+              </div>`,
 })
 export class DynamicCustomComponent {
+  /* control property needed to properly bind the underlying element */
   control: FormControl;
+
+  /* map any of the properties you passed in the config */
   label: string;
+
+  /* map the error message template and use it anywhere you need to */
+  errorMessageTemplate: TemplateRef<any>;
 }
 ...
 })
 export class Demo {
   elements: ITdDynamicElementConfig[] = [{
     name: 'input',
+    hint: 'hint',
     type: TdDynamicElement.Input,
     required: true,
   }, {
@@ -141,6 +159,7 @@ export class Demo {
     name: 'custom',
     label: 'Custom',
     type: DynamicCustomComponent,
+    required: true,
   }];
 }
 ```

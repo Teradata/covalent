@@ -37,6 +37,7 @@ export interface ITdDynamicElementValidator {
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
+  hint?: string;
   type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   disabled?: boolean;
@@ -45,6 +46,7 @@ export interface ITdDynamicElementConfig {
   minLength?: any;
   maxLength?: any;
   selections?: string[] | { value: any, label: string }[];
+  multiple?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
