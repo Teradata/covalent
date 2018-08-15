@@ -125,7 +125,7 @@ export class DynamicFormsDemoComponent {
     selections: ['Test1', 'Test2', 'Test3', 'Test4'],
     required: true,
   }, {
-    name: 'required-miltiple-select',
+    name: 'required-multiple-select',
     type: TdDynamicElement.Select,
     multiple: true,
     selections: ['Test1', 'Test2', 'Test3', 'Test4'],
