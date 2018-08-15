@@ -530,4 +530,83 @@
   </mat-card-content>
 </mat-card>
 
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">Custom Dynamic Elements</h3>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-dynamic-forms [elements]="customElements">
+        </td-dynamic-forms>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <h4>Setup</h4>
+        <p>Custom Component:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component } from '@angular/core';
+            import { FormControl } from '@angular/forms';
+
+            @Component({
+              selector: 'td-dynamic-input-test',
+              template: `<td-chips [items]="selections" [formControl]="control"></td-chips>`,
+            })
+            export class TdTestDynamicComponent {
+
+              /* control property needed to properly bind the underlying element */
+              control: FormControl;
+
+              /* map any of the properties you passed in the config */
+              selections: string[] = [];
+
+            }
+          ]]>
+        </td-highlight>
+        <p>Module imports:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            @NgModule({
+              declarations: [
+                ...
+                TdTestDynamicComponent,
+              ],
+              imports: [
+                ...
+                CommonModule,
+                ReactiveFormsModule,
+                CovalentDynamicFormsModule,
+              ],
+              entryComponents: [
+                TdTestDynamicComponent,
+              ],
+            })
+            export class ComponentsModule {}
+          ]]>          
+        </td-highlight>
+        <h4>Usage:</h4>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="customElements">
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            customElements: ITdDynamicElementConfig[] = [{
+              name: 'custom',
+              type: TdTestDynamicComponent,
+              default: ['list1'],
+              selections: ['list1', 'list2', 'list3'],
+              flex: 100,
+            }];
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 <td-readme-loader resourceUrl="platform/dynamic-forms/README.md"></td-readme-loader>

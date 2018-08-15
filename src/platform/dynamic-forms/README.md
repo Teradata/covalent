@@ -52,17 +52,21 @@ Pass an array of javascript objects that implement [ITdDynamicElementConfig] wit
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
-  type: TdDynamicType | TdDynamicElement;
+  hint?: string;
+  type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
   min?: any;
   max?: any;
-  minLength?: string;
-  maxLength?: string;
-  selections?: any[];
+  minLength?: any;
+  maxLength?: any;
+  selections?: any[] | { value: any, label: string }[];
   default?: any;
+  flex?: number;
   validators?: ITdDynamicElementValidator[];
 }
 ```
+
+NOTE: For custom types, you need to implement a `[control]` property and use it in your underlying element.
 
 Example for HTML usage:
 
@@ -85,10 +89,19 @@ Example for HTML usage:
 ```typescript
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 ...
+/* CUSTOM TYPE */
+  template: '<label>{{label}}</label><input [formControl]="control">',
+})
+export class DynamicCustomComponent {
+  control: FormControl;
+  label: string;
+}
+...
 })
 export class Demo {
   elements: ITdDynamicElementConfig[] = [{
     name: 'input',
+    hint: 'hint',
     type: TdDynamicElement.Input,
     required: true,
   }, {
@@ -125,6 +138,10 @@ export class Demo {
     name: 'datepicker',
     label: 'Date',
     type: TdDynamicElement.Datepicker,
+  }, {
+    name: 'custom',
+    label: 'Custom',
+    type: DynamicCustomComponent,
   }];
 }
 ```

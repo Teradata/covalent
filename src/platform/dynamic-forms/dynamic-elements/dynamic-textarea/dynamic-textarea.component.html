@@ -2,10 +2,11 @@
   <mat-form-field class="td-dynamic-textarea-field">
     <textarea #elementInput
             matInput
-            [(ngModel)]="value"
+            [formControl]="control"
             [placeholder]="label"
             [required]="required"
             rows="4">
     </textarea>
+    <mat-hint>{{hint}}</mat-hint>
   </mat-form-field>
 </div>
