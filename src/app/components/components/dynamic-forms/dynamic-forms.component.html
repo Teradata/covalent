@@ -71,8 +71,28 @@
         <h4>Form elements</h4>
         <ng-template let-model let-last="last" let-index="index" ngFor [ngForOf]="dynamicElements">
           <td-expansion-panel [label]="model.name">
-            <mat-divider></mat-divider>
+            <mat-divider [inset]="true"></mat-divider>
             <div class="pad" layout="column">
+              <div layout="row">
+                <mat-form-field *ngIf="!isMinMaxSupported(model.type)"class="pad-right-xs" flex>
+                  <input matInput
+                        placeholder="Default"
+                        [(ngModel)]="model.default"
+                        name="default">
+                </mat-form-field>
+                <mat-form-field *ngIf="!isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
+                  <input matInput type="number" placeholder="Default" [(ngModel)]="model.default" name="default">
+                </mat-form-field>
+                <mat-form-field *ngIf="isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
+                  <input matInput
+                        [matDatepicker]="defaultDatepicker"
+                        placeholder="Default"
+                        [(ngModel)]="model.default"
+                        name="default">
+                  <mat-datepicker-toggle matSuffix [for]="defaultDatepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #defaultDatepicker></mat-datepicker>
+                </mat-form-field>
+              </div>
               <div layout="row">
                 <mat-form-field class="pad-right-xs" flex>
                   <input matInput
@@ -134,6 +154,7 @@
               </div>
               <div layout="row">
                 <mat-slide-toggle [(ngModel)]="model.required" name="required">Required</mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="model.disabled" name="disabled">Disabled</mat-slide-toggle>
                 <span flex></span>
                 <button mat-icon-button matTooltip="Delete element" (click)="deleteElement(index)">
                   <mat-icon>delete</mat-icon>
@@ -530,4 +551,114 @@
   </mat-card-content>
 </mat-card>
 
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">Custom Dynamic Elements</h3>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-dynamic-forms [elements]="customElements">
+          <ng-template let-element ngFor [ngForOf]="customElements">
+            <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+              <span *ngIf="control.touched || !control.pristine">
+                <span *ngIf="control.hasError('invalidChips')">No more than 2 chips</span>
+              </span>
+            </ng-template>
+          </ng-template>
+        </td-dynamic-forms>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <h4>Setup</h4>
+        <p>Custom Component:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component, TemplateRef } from '@angular/core';
+            import { FormControl } from '@angular/forms';
+
+            @Component({
+              selector: 'td-dynamic-input-test',
+              template: `<td-chips [items]="selections" [formControl]="control"></td-chips>
+                          <div *ngIf="errorMessageTemplate && control?.errors"
+                              class="tc-red-600"
+                              [style.font-size.%]="'70'">
+                            <ng-template
+                              [ngTemplateOutlet]="errorMessageTemplate"
+                              [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+                            </ng-template>
+                          </div>`,
+            })
+            export class TdTestDynamicComponent {
+
+              /* control property needed to properly bind the underlying element */
+              control: FormControl;
+
+              /* map any of the properties you passed in the config */
+              selections: string[] = [];
+
+              /* map the error message template and use it anywhere you need to */
+              errorMessageTemplate: TemplateRef<any>;
+
+            }
+          ]]>
+        </td-highlight>
+        <p>Module imports:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            @NgModule({
+              declarations: [
+                ...
+                TdTestDynamicComponent,
+              ],
+              imports: [
+                ...
+                CommonModule,
+                ReactiveFormsModule,
+                CovalentDynamicFormsModule,
+              ],
+              entryComponents: [
+                TdTestDynamicComponent,
+              ],
+            })
+            export class ComponentsModule {}
+          ]]>          
+        </td-highlight>
+        <h4>Usage:</h4>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms [elements]="customElements">
+              <ng-template let-element ngFor [ngForOf]="customElements">
+                <ng-template let-control="control" [tdDynamicFormsError]="element.name">
+                  <span *ngIf="control.touched || !control.pristine">
+                    <span *ngIf="control.hasError('invalidChips')">No more than 2 chips</span>
+                  </span>
+                </ng-template>
+              </ng-template>
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            customElements: ITdDynamicElementConfig[] = [{
+              name: 'custom',
+              type: TdTestDynamicComponent,
+              default: ['list1'],
+              selections: ['list1', 'list2', 'list3'],
+              flex: 100,
+              validators: [{
+                validator: (control: AbstractControl) => {
+                  let isValid: boolean = control.value.length <= 2;
+                  return !isValid ? {invalidChips: true} : undefined;
+                },
+              }],
+            }];
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
 <td-readme-loader resourceUrl="platform/dynamic-forms/README.md"></td-readme-loader>
