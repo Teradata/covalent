@@ -25,6 +25,6 @@ export class TdDynamicSelectComponent extends AbstractControlValueAccessor imple
 
   selections: any[] = undefined;
 
-  multi: boolean = undefined;
+  multiple: boolean = undefined;
 
 }

@@ -15,7 +15,7 @@ export class MultiSelectDemoComponent {
     {
       type: TdDynamicElement.Select,
       name: 'multifield',
-      label: 'Multiselect',
+      label: 'No Multiselect',
       selections: ['A', 'B', 'C', 'D'],
       flex: 50,
     },
@@ -23,15 +23,15 @@ export class MultiSelectDemoComponent {
       type: TdDynamicElement.Select,
       name: 'multifield2',
       label: 'Multiselect',
-      multi: true,
+      multiple: true,
       selections: ['A', 'B', 'C'],
       flex: 50,
     },
     {
       type: TdDynamicElement.Select,
       name: 'multifield3',
-      label: 'Multiselect',
-      multi: true,
+      label: 'Multiselect Alt',
+      multiple: true,
       selections: ['A', 'B', 'C'],
       default: ['A', 'C'],
       flex: 50,
@@ -41,7 +41,6 @@ export class MultiSelectDemoComponent {
   @ViewChild(TdDynamicFormsComponent) public form: TdDynamicFormsComponent;
 
   public submit(): void {
-    console.log(this.form.controls); // tslint:disable-line
     this.form.refresh();
   }
 }
