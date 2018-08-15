@@ -828,7 +828,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
    */
   _handleColumnDrag(event: MouseEvent | DragEvent): void {
     // check if there was been a separator clicked for resize
-    if (this._resizingColumn && event.clientX > 0) {
+    if (this._resizingColumn !== undefined && event.clientX > 0) {
       let xPosition: number = event.clientX;
       // checks if the separator is being moved to try and resize the column, else dont do anything
       if (xPosition > 0 && this._columnClientX > 0 && (xPosition - this._columnClientX) !== 0) {
