@@ -827,12 +827,16 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
    * Calculates new width depending on new clientX of dragger column
    */
   _handleColumnDrag(column: ITdDataTableColumn, index: number, event: DragEvent): void {
+    // checks if the separator is being moved to try and resize the column, else dont do anything
     if (event.clientX > 0 && this._columnClientX > 0 && (event.clientX - this._columnClientX) !== 0) {
+      // calculate the new width depending if making the column bigger or smaller
       let proposedManualWidth: number = this._widths[index].value + (event.clientX - this._columnClientX);
+      // if the proposed new width is less than the projected min width of the column, use projected min width
       if (proposedManualWidth < this._colElements.toArray()[index].projectedWidth) {
         proposedManualWidth = this._colElements.toArray()[index].projectedWidth;
       }
       column.width = proposedManualWidth;
+      // update new x position for the resized column
       this._onColumnResize.next(event.clientX);
     }
   }

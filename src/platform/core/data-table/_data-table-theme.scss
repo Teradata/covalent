@@ -32,9 +32,13 @@
     border-top: 1px solid mat-color($foreground, divider);
   }
   .td-data-table-column-resizer {
+    .td-data-table-column-separator {
+      border-right: 2px solid mat-color($foreground, divider);
+      opacity: 0.3;
+    }
     &:hover, &.td-resizing {
       .td-data-table-column-separator {
-        border-right: 1px solid mat-color($foreground, divider);
+        opacity: 1;
       }
     }
   }
