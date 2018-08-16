@@ -16,11 +16,15 @@
       "../node_modules/@types"
     ],
     "paths": {
-      "@covalent/code-editor/*": ["./platform/code-editor/*"]
+      "@covalent/code-editor/*": [
+        "./platform/code-editor/*"
+      ]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
-    "pretty": true
+    "pretty": true,
+    "module": "es2015",
+    "baseUrl": "./"
   }
 }

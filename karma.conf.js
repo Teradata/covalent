@@ -8,7 +8,7 @@ process.env['NODE_MODULE_DIR'] = __dirname.replace(new RegExp('\\' + path.sep, '
 module.exports = function (config) {
   var configuration = {
     basePath: '.',
-    frameworks: ['jasmine', '@angular/cli'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
       require('karma-electron'),
@@ -16,7 +16,7 @@ module.exports = function (config) {
       require('karma-firefox-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma')
     ],
     client:{
       useIframe: false, // can't run in iframe if using Electron Webview
@@ -35,18 +35,16 @@ module.exports = function (config) {
     },
     files: [
       { pattern: "./karma.shim.js", watched: true, included: true, served: true},
-      { pattern: './src/test.ts', watched: false }
+      
     ],
     preprocessors: {
-      './src/test.ts': ['@angular/cli']
+      
     },
      coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
    },
-    angularCli: {
-      environment: 'dev'
-    },
+    
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
