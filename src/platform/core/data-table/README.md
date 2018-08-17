@@ -23,6 +23,9 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 + sortOrder?: TdDataTableSortingOrder
   + Sets the sort order of the [sortBy] column. [sortable] needs to be enabled.
   + Defaults to 'ASC' or TdDataTableSortingOrder.Ascending
++ clickable?: boolean
+  + Enables row click events, hover.
+  + Defaults to 'false'
 + compareWith: function(row, model)
   + Allows custom comparison between row and model to see if row is selected or not.
 
@@ -45,7 +48,6 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 
 + refresh: function
   + Refreshes data table and rerenders [data] and [columns]
-
 
 ## Setup
 

@@ -39,7 +39,6 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    CovalentTabSelectModule,
   ],
   bootstrap: [TestBedComponent],
 })

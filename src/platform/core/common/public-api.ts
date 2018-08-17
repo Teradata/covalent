@@ -37,3 +37,4 @@ export * from './pipes/time-difference/time-difference.pipe';
 export * from './pipes/bytes/bytes.pipe';
 export * from './pipes/digits/digits.pipe';
 export * from './pipes/truncate/truncate.pipe';
+export * from './pipes/decimal-bytes/decimal-bytes.pipe';

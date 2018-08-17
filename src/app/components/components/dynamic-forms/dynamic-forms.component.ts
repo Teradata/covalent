@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, TemplateRef } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
 import { TdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
@@ -10,6 +10,28 @@ import {
   TdDynamicFormsComponent,
   TdDynamicType,
 } from '@covalent/dynamic-forms';
+
+import { FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'td-dynamic-input-test',
+  template: `<td-chips [items]="selections" [formControl]="control"></td-chips>
+              <div *ngIf="errorMessageTemplate && control?.errors"
+                  class="tc-red-600"
+                  [style.font-size.%]="'70'">
+                <ng-template
+                  [ngTemplateOutlet]="errorMessageTemplate"
+                  [ngTemplateOutletContext]="{control: control, errors: control?.errors}">
+                </ng-template>
+              </div>`,
+})
+export class TdTestDynamicComponent {
+
+  control: FormControl;
+  selections: string[] = [];
+  errorMessageTemplate: TemplateRef<any>;
+
+}
 
 @Component({
   selector: 'dynamic-forms-demo',
@@ -28,6 +50,7 @@ export class DynamicFormsDemoComponent {
 
   textElements: ITdDynamicElementConfig[] = [{
     name: 'input',
+    hint: 'this is an input hint',
     type: TdDynamicElement.Input,
     required: false,
     flex: 50,
@@ -50,8 +73,10 @@ export class DynamicFormsDemoComponent {
     required: false,
     default: 'Default',
     flex: 50,
+    disabled: true,
   }, {
     name: 'textarea',
+    hint: 'this is a textarea hint',
     type: TdDynamicElement.Textarea,
     required: false,
   }, {
@@ -65,6 +90,7 @@ export class DynamicFormsDemoComponent {
     name: 'number',
     label: 'Number',
     type: TdDynamicType.Number,
+    hint: 'this is an input hint',
     required: true,
     min: 18,
     max: 70,
@@ -100,7 +126,14 @@ export class DynamicFormsDemoComponent {
     selections: ['Test1', 'Test2', 'Test3', 'Test4'],
     required: true,
   }, {
+    name: 'required-multiple-select',
+    type: TdDynamicElement.Select,
+    multiple: true,
+    selections: ['Test1', 'Test2', 'Test3', 'Test4'],
+    required: true,
+  }, {
     name: 'value-label-select',
+    hint: 'this is a select hint',
     type: TdDynamicElement.Select,
     selections: [
       {label: 'Test1', value: 1},
@@ -113,12 +146,14 @@ export class DynamicFormsDemoComponent {
   fileElements: ITdDynamicElementConfig[] = [{
     name: 'file-input',
     label: 'Browse a file',
+    hint: 'this is a file input hint',
     type: TdDynamicElement.FileInput,
   }];
 
   dateElements: ITdDynamicElementConfig[] = [{
     name: 'date-input',
     label: 'Select a date',
+    hint: 'this is a datepicker hint',
     type: TdDynamicElement.Datepicker,
     min: new Date(2018, 1, 1).setHours(0, 0, 0, 0),
   }];
@@ -134,6 +169,20 @@ export class DynamicFormsDemoComponent {
     required: false,
     max: 30,
     flex: 20,
+  }];
+
+  customElements: ITdDynamicElementConfig[] = [{
+    name: 'custom',
+    type: TdTestDynamicComponent,
+    default: ['list1'],
+    selections: ['list1', 'list2', 'list3'],
+    flex: 100,
+    validators: [{
+      validator: (control: AbstractControl) => {
+        let isValid: boolean = control.value.length <= 2;
+        return !isValid ? {invalidChips: true} : undefined;
+      },
+    }],
   }];
 
   elementOptions: any[] = [

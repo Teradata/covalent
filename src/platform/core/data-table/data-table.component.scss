@@ -11,6 +11,23 @@ $checkbox-size: 18px;
   }
 }
 
+.td-data-table-column-resizer {
+  &, .td-data-table-column-separator {
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+  .td-data-table-column-separator {
+    left: 2px;
+  }
+  right: 0;
+  width: 6px;
+  cursor: col-resize;
+  &.td-resizing {
+    cursor: -webkit-grabbing;
+  }
+}
+
 table.td-data-table {
   width: auto !important;
   &.mat-selectable tbody > tr.td-data-table-row {
