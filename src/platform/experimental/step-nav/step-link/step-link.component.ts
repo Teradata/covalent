@@ -14,15 +14,6 @@ import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } fro
 import { Router } from '@angular/router';
 import { StepState } from '../../../core/steps';
 
-@Directive({
-  selector: '[td-step-link-label]ng-template',
-})
-export class TdStepLinkLabelDirective extends TemplatePortalDirective {
-  constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
-    super(templateRef, viewContainerRef);
-  }
-}
-
 export class TdStepLink {}
 
 /* tslint:disable-next-line */
@@ -54,8 +45,6 @@ export class TdStepLinkComponent extends _TdStepLinkMixinBase implements ICanDis
   private _isActive: boolean = false;
   private _state: StepState = StepState.None;
 
-  @ContentChild(TdStepLinkLabelDirective) stepLabel: TdStepLinkLabelDirective;
-  
   constructor(public elementRef: ElementRef,
               private _changeDetectorRef: ChangeDetectorRef,
               private _router: Router,) { 
