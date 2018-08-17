@@ -1,7 +1,6 @@
 import {
   Component,
   Input,
-  Output,
   Directive,
   TemplateRef,
   ViewContainerRef,
@@ -13,12 +12,7 @@ import {
 import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
 import { ICanDisable, mixinDisabled, ICanDisableRipple, mixinDisableRipple } from '@covalent/core/common';
 import { Router } from '@angular/router';
-
-export enum StepLinkState {
-  None = 'none',
-  Required = 'required',
-  Complete = 'complete',
-}
+import { StepState } from '../../../core/steps';
 
 @Directive({
   selector: '[td-step-link-label]ng-template',
@@ -53,12 +47,12 @@ export class TdStepLinkComponent extends _TdStepLinkMixinBase implements ICanDis
    * Returns 'true' if [state] equals to [StepState.Required | 'required'], else 'false'.
    */
   isRequired(): boolean {
-    return this.state === StepLinkState.Required;
+    return this.state === StepState.Required;
   }
 
   /** Whether the step link is active or not. */
   private _isActive: boolean = false;
-  private _state: StepLinkState = StepLinkState.None;
+  private _state: StepState = StepState.None;
 
   @ContentChild(TdStepLinkLabelDirective) stepLabel: TdStepLinkLabelDirective;
   
@@ -102,25 +96,25 @@ export class TdStepLinkComponent extends _TdStepLinkMixinBase implements ICanDis
 
   /** Step link state as Complete, Required, None. */
   @Input('state')
-  set state(state: StepLinkState) {
+  set state(state: StepState) {
     switch (state) {
-      case StepLinkState.Complete:
-        this._state = StepLinkState.Complete;
+      case StepState.Complete:
+        this._state = StepState.Complete;
         break;
-      case StepLinkState.Required:
-        this._state = StepLinkState.Required;
+      case StepState.Required:
+        this._state = StepState.Required;
         break;
       default:
-        this._state = StepLinkState.None;
+        this._state = StepState.None;
         break;
     }
   }
-  get state(): StepLinkState {
+  get state(): StepState {
     return this._state;
   }
 
   isComplete(): boolean {
-    return this._state === StepLinkState.Complete;
+    return this._state === StepState.Complete;
   }
 
 }

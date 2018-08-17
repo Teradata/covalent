@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 
 import { TdStepNavComponent } from './step-nav.component';
-import { TdStepLinkComponent, TdStepLinkLabelDirective } from './step-link/step-link.component';
+import { TdStepLinkComponent } from './step-link/step-link.component';
 
 @NgModule({
   imports: [
@@ -15,12 +15,10 @@ import { TdStepLinkComponent, TdStepLinkLabelDirective } from './step-link/step-
   declarations: [
     TdStepNavComponent,
     TdStepLinkComponent,
-    TdStepLinkLabelDirective,
   ],
   exports: [
     TdStepNavComponent,
     TdStepLinkComponent,
-    TdStepLinkLabelDirective,
   ],
 })
 export class CovalentStepNavModule {
