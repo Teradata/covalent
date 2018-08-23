@@ -137,12 +137,12 @@
   <mat-card-title>Collapse Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="mat-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>tdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
-      <div [style.overflow]="'hidden'" [@tdCollapse]="collapseState1">
+      <div [style.overflow]="'hidden'" [@tdCollapse]="{ value: collapseState1, params: { duration: 500 }}">
         <mat-card>
           <mat-card-title>Collapse card</mat-card-title>
           <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -153,10 +153,10 @@
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdCollapseAnimation } from '@covalent/core/common';
+          import { tdCollapseAnimation } from '@covalent/core/common';
           ...
           animations: [
-            TdCollapseAnimation(), // using implicit anchor name 'tdCollapse' in template
+            tdCollapseAnimation, // using implicit anchor name 'tdCollapse' in template
           ],
           ...
           class MyDemo {
@@ -168,7 +168,7 @@
       <td-highlight lang="html">
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="triggerState">
+          <div [style.overflow]="'hidden'" [@tdCollapse]="{ value: triggerState, params: { duration: 500 }}">
             <mat-card>
               <mat-card-title>Collapse card</mat-card-title>
               <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -180,13 +180,8 @@
     </div>
     <mat-divider></mat-divider>
     <div>
-      <h2>API:</h2>
+      <h2>Acceptable params options:</h2>
       <mat-list>
-        <mat-list-item>
-          <h3 matLine>anchor?: string</h3>
-          <p matLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdCollapse'.</p>
-        </mat-list-item>
-        <mat-divider></mat-divider>
         <mat-list-item>
           <h3 matLine>duration?: number</h3>
           <p matLine> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
