@@ -8,18 +8,17 @@ export interface ICollapseAnimation extends IAnimationOptions {
 }
 
 /**
- * Function TdCollapseAnimation
+ * const tdCollapseAnimation
  *
- * params:
- * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation. Defaults to tdCollapse.
+ * Parameter Options:
  * * duration: Duration the animation will run in milliseconds. Defaults to 150 ms.
  * * delay: Delay before the animation will run in milliseconds. Defaults to 0 ms.
  * * easeOnClose: Animation accelerates and decelerates when closing. Defaults to ease-in.
  * * easeOnOpen: Animation accelerates and decelerates when opening. Defaults to ease-out.
  *
- * Returns an [AnimationTriggerMetadata] object with states for a collapse/expand animation.
+ * Returns an [AnimationTriggerMetadata] object with boolean states for a collapse/expand animation.
  *
- * usage: [@tdCollapse]="true|false"
+ * usage: [@tdCollapse]="{ value: true | false, params: { duration: 500 }}"
  */
 export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse', [
     state('1', style({
