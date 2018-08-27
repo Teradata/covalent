@@ -158,6 +158,14 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/material@^6.4.6":
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-6.4.6.tgz#30c3dd83173f42a1df28db084930f242706d323a"
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/platform-browser-dynamic@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.2.tgz#755689df9f02bbcb270c7872a75a2ffe7e0b0c33"
@@ -181,6 +189,12 @@
 "@angular/router@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.0.2.tgz#a7c925751accede6c5b4a8369170a53f3a48b940"
+  dependencies:
+    tslib "^1.9.0"
+
+"@covalent/core@2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.0-beta.2.tgz#1059bc3e2e78a9210ccaad7a2508ecda35c88764"
   dependencies:
     tslib "^1.9.0"
 
@@ -6328,6 +6342,10 @@ parse-passwd@^1.0.0:
 parse5@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
 
 parsejson@0.0.3:
   version "0.0.3"

@@ -5,5 +5,5 @@ set -e
 rm -rf ./src/platform/node_modules
 rm -rf ./deploy
 
-# BUILD: @covalent/core primary entrypoint
+# BUILD: @covalent/echarts primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/echarts/ng-package.js

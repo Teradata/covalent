@@ -11,7 +11,12 @@ import localeEs from '@angular/common/locales/es';
 // register 'es' locale
 registerLocaleData(localeEs);
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'; 
+
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
+import { CovalentLineEchartsModule } from '@covalent/echarts/line';
+import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 
 import { DocsAppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
@@ -28,8 +33,12 @@ import { appRoutes, appRoutingProviders } from './app.routes';
     FormsModule,
     BrowserModule,
     HttpClientModule,
+    MatIconModule,
+    MatButtonModule,
     /** Covalent Modules */
     CovalentBaseEchartsModule,
+    CovalentLineEchartsModule,
+    CovalentBarEchartsModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

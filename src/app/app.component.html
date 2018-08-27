@@ -1,7 +1,86 @@
-<h3>TEST</h3>
-<td-chart [style.height.px]="300"
+<h3>Bar Test</h3>
+<td-base-chart [style.height.px]="300"
           [yAxisType]="'value'"
           [xAxisType]="'category'"
           [dataZoom]="false"
-          [data]="plot">
-</td-chart>
+          [data]="barPlot">
+  <td-chart-tooltip [trigger]="'item'">
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <mat-icon>
+            <span class="tc-blue-300">person</span>
+          </mat-icon>
+          <span class="mat-caption pad-left-sm">
+            {{params.seriesName + ': ' + params.value}}
+          </span>
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+</td-base-chart>
+<h3>Bar Test 2</h3>
+<td-chart-bar [style.height.px]="300"
+              [data]="barPlot">
+  <td-chart-tooltip [trigger]="'item'">
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <mat-icon>
+            <span class="tc-blue-300">person</span>
+          </mat-icon>
+          <span class="mat-caption pad-left-sm">
+            {{params.seriesName + ': ' + params.value}}
+          </span>
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+</td-chart-bar>
+<h3>Line Test</h3>
+<div layout="row">
+  <button mat-button (click)="showTooltip = !showTooltip">
+    Show/Hide Tooltip
+  </button>
+</div>
+<td-base-chart [style.height.px]="300"
+                [data]="linePlot">
+  <td-chart-tooltip [show]="showTooltip">
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <mat-icon>
+            <span class="tc-blue-300">update_time</span>
+          </mat-icon>
+          <span class="mat-caption pad-left-sm">
+            {{params[0].seriesName + ': ' + params[0].value[1]}}
+          </span>
+        </div>
+        <div class="mat-caption">
+          at {{(params[0].name | date:'medium')}}
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+</td-base-chart>
+<h3>Line Test 2</h3>
+<td-chart-line [style.height.px]="300"
+                [data]="linePlot">
+  <td-chart-tooltip>
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <mat-icon>
+            <span class="tc-blue-300">update_time</span>
+          </mat-icon>
+          <span class="mat-caption pad-left-sm">
+            {{params[0].seriesName + ': ' + params[0].value[1]}}
+          </span>
+        </div>
+        <div class="mat-caption">
+          at {{(params[0].name | date:'medium')}}
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+</td-chart-line>

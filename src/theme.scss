@@ -1,0 +1,51 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+// Plus imports for other components in your app.
+
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400)
+);
+$custom-toolbar-typography: mat-typography-config(
+  $title: mat-typography-level(20px, 32px, 400)
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include pre-bundled material-icons
+@import '~@covalent/core/common/material-icons.css';
+
+// Include covalent utility classes
+@include covalent-utilities();
+
+// Include flex layout classes
+@include covalent-layout();
+
+// Include covalent color classes
+@include covalent-colors();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$primary: mat-palette($mat-blue-grey, 900, 100, 900);
+$accent:  mat-palette($mat-deep-orange, A700, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$warn:    mat-palette($mat-red, 600);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+@include covalent-theme($theme);

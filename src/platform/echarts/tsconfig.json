@@ -5,7 +5,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@covalent/core/*": ["./*"]
+      "@covalent/echarts/*": ["./*"]
     }
   },
   "include": ["./**/*.ts"]
