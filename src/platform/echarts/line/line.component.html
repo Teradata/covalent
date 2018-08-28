@@ -1,4 +1,17 @@
 <td-base-chart [style.height.%]="100"
                 [data]="data">
   <ng-content></ng-content>
+  <td-chart-x-axis [show]="true"
+                    [position]="'bottom'"
+                    [type]="'time'"
+                    [boundaryGap]="false"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-x-axis>
+  <td-chart-y-axis [show]="true"
+                    [type]="'value'"
+                    [axisLabel]="{inside: true}"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-y-axis>
 </td-base-chart>

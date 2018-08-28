@@ -16,13 +16,13 @@ export class DocsAppComponent {
     opacity: 0.75,
     name: 'Historical Model',
     type: 'bar',
-    data: [3002403],
+    data: [100],
   }, {
     color: '#00E5FF',
     opacity: 0.75,
     name: 'Today',
     type: 'bar',
-    data: [2432433],
+    data: [80],
   }];
 
   showTooltip: boolean = true;

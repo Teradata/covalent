@@ -26,6 +26,7 @@ import 'echarts/lib/component/markArea';
 import 'echarts/lib/component/dataZoom';
 
 import { TdChartOptionsService, BASE_CHART_PROVIDER } from './base.service';
+import { assignDefined } from './utils';
 
 @Component({
   selector: 'td-base-chart',
@@ -60,16 +61,7 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
   @Input('data') data: any[];
   @Input('max') max: number;
   @Input('chartGroup') chartGroup: string;
-  @Input('yAxisFormatter') yAxisFormatter: (value: any, index?: number) => string;
-  @Input('xAxisFormatter') xAxisFormatter: (value: any, index?: number) => string;
-  @Input('yAxisType') yAxisType: string = 'value';
-  @Input('xAxisType') xAxisType: string = 'time';
   @Input('dataZoom') dataZoom: boolean = true;
-  @Input('xAxis') xAxis: any[];
-  @Input('yAxis') yAxis: any[];
-  @Input('showXAxis') showXAxis: boolean = true;
-  @Input('showYAxis') showYAxis: boolean = true;
-  @Input('yAxisSplitNumber') yAxisSplitNumber: number;
 
   @Output('markAreaClick') markAreaClick: EventEmitter<any> = new EventEmitter<any>();
 
@@ -114,7 +106,7 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
     });
     this.render();
     this._optionsService.listen().subscribe((options: any) => {
-      Object.assign(this._options, options);
+      assignDefined(this._options, options);
       this.render();
     });
   }
@@ -141,12 +133,6 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
 
   render(): void {
     if (this._instance) {
-      let option: any = {};
-      if (this.chartTitle) {
-        option.title = {
-          text: this.chartTitle,
-        };
-      }
       if (this.data && this.data instanceof Array ) {
         this._series = this.data.map((d: any) => {
           return {
@@ -209,59 +195,8 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
           zoomOnMouseWheel: 'shift',
         }] : undefined,
         legend: this._legend,
-        xAxis : [{
-          show: this.showXAxis,
-          // name: 'xAxis',
-          // nameLocation: 'middle',
-          // nameGap: 25,
-          // splitNumber: 5,
-          // minInterval: 3600 * 1000 * 24,
-          position: 'bottom',
-          type : this.xAxisType,
-          boundaryGap : false,
-          axisLabel: {
-            // showMinLabel: false,
-            formatter: this.xAxisFormatter,
-            inside: !this.showXAxis,
-          },
-          axisLine: {
-            show: false,
-            lineStyle: {
-              color: '#777777',
-            },
-          },
-          data: this.xAxis,
-          splitLine: {
-            show: false,
-            lineStyle: {
-              color: '#ECECEC',
-            },
-          },
-        }],
-        yAxis : [{
-          show: this.showYAxis,
-          // min : 0,
-          max: this.max,
-          type : this.yAxisType,
-          axisLabel: {
-            inside: true,
-            showMinLabel: false,
-            formatter: this.yAxisFormatter,
-          },
-          splitNumber: this.yAxisSplitNumber,
-          axisLine: {
-            show: false,
-            lineStyle: {
-              color: '#777777',
-            },
-          },
-          data: this.yAxis,
-          splitLine: {
-            lineStyle: {
-              color: '#ECECEC',
-            },
-          },
-        }],
+        xAxis : [{}], // throws error if its empty
+        yAxis : [{}], // throws error if its empty
         series: this._series,
       }, this._options), true);
       this._changeDetectorRef.markForCheck();

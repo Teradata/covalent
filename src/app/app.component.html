@@ -1,7 +1,6 @@
 <h3>Bar Test</h3>
 <td-base-chart [style.height.px]="300"
           [yAxisType]="'value'"
-          [xAxisType]="'category'"
           [dataZoom]="false"
           [data]="barPlot">
   <td-chart-tooltip [trigger]="'item'">
@@ -18,6 +17,21 @@
       </ng-container>
     </ng-template>
   </td-chart-tooltip>
+  <td-chart-x-axis [show]="true"
+                    [position]="'top'"
+                    [type]="'category'"
+                    [boundaryGap]="true"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-x-axis>
+  <td-chart-y-axis [show]="true"
+                    [type]="'value'"
+                    [position]="'right'"
+                    [axisLabel]="{inside: true}"
+                    [axisLine]="{show: true}"
+                    [max]="120"
+                    [splitLine]="{show: true}">
+  </td-chart-y-axis>
 </td-base-chart>
 <h3>Bar Test 2</h3>
 <td-chart-bar [style.height.px]="300"
@@ -62,6 +76,19 @@
       </ng-container>
     </ng-template>
   </td-chart-tooltip>
+  <td-chart-x-axis [show]="true"
+                    [position]="'bottom'"
+                    [type]="'time'"
+                    [boundaryGap]="false"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-x-axis>
+  <td-chart-y-axis [show]="true"
+                    [type]="'value'"
+                    [axisLabel]="{inside: true}"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-y-axis>
 </td-base-chart>
 <h3>Line Test 2</h3>
 <td-chart-line [style.height.px]="300"

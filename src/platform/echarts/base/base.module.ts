@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { TdBaseChartComponent } from './base.component';
 import { TdChartTooltipComponent, TdChartTooltipFormatterDirective } from './tooltip/tooltip.component';
+import { TdChartXAxisComponent } from './axis/x-axis.component';
+import { TdChartYAxisComponent } from './axis/y-axis.component';
 
 export const BASE_MODULE_COMPONENTS: Type<any>[] = [
   TdBaseChartComponent,
   TdChartTooltipComponent,
   TdChartTooltipFormatterDirective,
+  TdChartXAxisComponent,
+  TdChartYAxisComponent,
 ];
 
 @NgModule({

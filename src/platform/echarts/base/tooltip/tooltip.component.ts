@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 
 import { TdChartOptionsService } from '../base.service';
+import { assignDefined } from '../utils';
 
 export class TdTooltipContext {
   $implicit: any;
@@ -33,6 +34,8 @@ export class TdChartTooltipFormatterDirective {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
+  
+  private _state: any = {};
 
   _context: TdTooltipContext = new TdTooltipContext();
 
@@ -80,7 +83,7 @@ export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = Object.assign({}, this.config ? this.config : {}, {
+    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
       show: this.show,
       trigger: this.trigger,
       axisPointer: this.axisPointer,
