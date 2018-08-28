@@ -21,6 +21,7 @@ describe('Component: NotificationCount', () => {
         TdNotificationCountContentTestComponent,
         TdNotificationCountPositionTestComponent,
         TdNotificationCountPositionContentTestComponent,
+        TdNotificationCountLimitTestComponent,
       ],
       imports: [
         MatIconModule,
@@ -102,7 +103,7 @@ describe('Component: NotificationCount', () => {
       });
   })));
 
-  it('should render component notification tip with count and 99+',
+  it('should render component notification tip with defaultLimit+ when limit is not set and when count exceeds the default',
     async(inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
       let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
@@ -114,6 +115,53 @@ describe('Component: NotificationCount', () => {
         expect(fixture.debugElement.query(By.css('.td-notification-no-count'))).toBeFalsy();
         expect(fixture.debugElement.query(By.css('.td-notification-count'))
                .nativeElement.textContent.trim()).toContain('99+');
+      });
+  })));
+
+  it('should render component notification tip with count when limit is not set and when count does not exceed default',
+  async(inject([], () => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountBasicTestComponent);
+    let component: TdNotificationCountBasicTestComponent = fixture.debugElement.componentInstance;
+    component.notifications = 20;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.td-notification-count'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('.td-notification-no-count'))).toBeFalsy();
+      expect(fixture.debugElement.query(By.css('.td-notification-count'))
+             .nativeElement.textContent.trim()).toContain('20');
+    });
+})));
+
+  it('should render component notification tip with limit+ when limit is set',
+  async(inject([], () => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
+    let component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
+    component.notifications = 100;
+    component.limit = 50;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.td-notification-count'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('.td-notification-no-count'))).toBeFalsy();
+      expect(fixture.debugElement.query(By.css('.td-notification-count'))
+             .nativeElement.textContent.trim()).toContain('50+');
+    });
+})));
+
+  it('should render component notification tip with notifications when it is less than the limit',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdNotificationCountLimitTestComponent);
+      let component: TdNotificationCountLimitTestComponent = fixture.debugElement.componentInstance;
+      component.notifications = 20;
+      component.limit = 50;
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        expect(fixture.debugElement.query(By.css('.td-notification-count'))).toBeTruthy();
+        expect(fixture.debugElement.query(By.css('.td-notification-no-count'))).toBeFalsy();
+        expect(fixture.debugElement.query(By.css('.td-notification-count'))
+              .nativeElement.textContent.trim()).toContain('20');
       });
   })));
 
@@ -226,4 +274,16 @@ class TdNotificationCountPositionContentTestComponent {
   positionY: TdNotificationCountPositionY | string;
   notifications: any;
 
+}
+
+@Component({
+  selector: 'td-notification-count-limit-test',
+  template: `
+  <td-notification-count [notifications]="notifications" [limit]="limit">
+  </td-notification-count>
+  `,
+})
+class TdNotificationCountLimitTestComponent {
+  notifications: any;
+  limit: number;
 }

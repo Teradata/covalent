@@ -17,6 +17,9 @@
   + Defaults to 'after' if it has content, else 'center'.
 + positionY?: TdNotificationCountPositionY or 'top' | 'bottom' | 'center'
   + Sets the Y position of the notification tip. Defaults to 'top' if it has content, else 'center'.
++ limit?: number
+  + Limit for the notification count. 
+  + When the notification count exceeds this limit, it will be displayed as limit+. Defaults to 99.
 
 ## Setup
 
@@ -56,5 +59,11 @@ Example for HTML stand alone count usage:
 
 ```html
 <td-notification-count positionX="center" positionY="center" [notifications]="1">
+</td-notification-count>
+```
+Example for HTML limit usage:
+
+```html
+<td-notification-count [notifications]="100" [limit]=50>
 </td-notification-count>
 ```
