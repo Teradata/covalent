@@ -5,7 +5,7 @@ import { tdRotateAnimation } from '../../../../platform/core/common/animations/r
 import { tdCollapseAnimation } from '../../../../platform/core/common/animations/collapse/collapse.animation';
 import { TdFadeInOutAnimation } from '../../../../platform/core/common/animations/fade/fadeInOut.animation';
 import { tdBounceAnimation } from '../../../../platform/core/common/animations/bounce/bounce.animation';
-import { TdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
+import { tdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
 import { TdHeadshakeAnimation } from '../../../../platform/core/common/animations/headshake/headshake.animation';
 import { TdJelloAnimation } from '../../../../platform/core/common/animations/jello/jello.animation';
 import { TdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
@@ -20,7 +20,7 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
     tdCollapseAnimation,
     TdFadeInOutAnimation(),
     tdBounceAnimation,
-    TdFlashAnimation(),
+    tdFlashAnimation,
     TdHeadshakeAnimation(),
     TdJelloAnimation(),
     TdPulseAnimation(),

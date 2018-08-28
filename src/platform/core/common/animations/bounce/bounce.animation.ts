@@ -4,13 +4,14 @@ import { trigger, state, style, keyframes, transition, animate,
 import { IAnimationOptions } from '../common/interfaces';
 
 /**
- * const tdCollapseAnimation
+ * const tdBounceAnimation
  *
  * Parameter Options:
  * * duration: Duration the animation will run in milliseconds. Defaults to 0 ms.
  * * delay: Delay before the animation will run in milliseconds. Defaults to 0 ms.
- * * ease: Animation accelerate and decelerate style. Defaults to ease-in.
- * Returns an [AnimationTriggerMetadata] object with boolean states for a collapse/expand animation.
+ * * ease: Animation accelerate and decelerate style. Defaults to ease-out.
+ *
+ * Returns an [AnimationTriggerMetadata] object with boolean states for a bounce animation.
  *
  * usage: [@tdBounce]="{ value: true | false, params: { duration: 500 }}"
  */
