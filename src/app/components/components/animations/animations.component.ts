@@ -8,7 +8,7 @@ import { tdBounceAnimation } from '../../../../platform/core/common/animations/b
 import { tdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
 import { tdHeadshakeAnimation } from '../../../../platform/core/common/animations/headshake/headshake.animation';
 import { tdJelloAnimation } from '../../../../platform/core/common/animations/jello/jello.animation';
-import { TdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
+import { tdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
 
 @Component({
   selector: 'animations-demo',
@@ -23,7 +23,7 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
     tdFlashAnimation,
     tdHeadshakeAnimation,
     tdJelloAnimation,
-    TdPulseAnimation(),
+    tdPulseAnimation,
   ],
   preserveWhitespaces: true,
 })
