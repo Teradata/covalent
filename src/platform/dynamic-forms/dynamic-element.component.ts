@@ -1,21 +1,19 @@
-import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef } from '@angular/core';
+import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef, ChangeDetectorRef, Type } from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 
+import { mixinControlValueAccessor, IControlValueAccessor } from '@covalent/core/common';
+
 import { TdDynamicElement, TdDynamicType, TdDynamicFormsService } from './services/dynamic-forms.service';
-import { AbstractControlValueAccessor } from './dynamic-elements/abstract-control-value-accesor';
 
-const noop: any = () => {
-  // empty method
-};
+export class TdDynamicElementBase {
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
+}
 
-export const ELEMENT_INPUT_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TdDynamicElementComponent),
-  multi: true,
-};
+/* tslint:disable-next-line */
+export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicElementBase);
 
 @Directive({selector: '[tdDynamicFormsError]ng-template'})
 export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
@@ -34,25 +32,18 @@ export class TdDynamicElementDirective {
 }
 
 @Component({
-  providers: [ TdDynamicFormsService, ELEMENT_INPUT_CONTROL_VALUE_ACCESSOR ],
+  providers: [TdDynamicFormsService, {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TdDynamicElementComponent),
+    multi: true,
+  }],
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
 })
-export class TdDynamicElementComponent extends AbstractControlValueAccessor
-                                       implements ControlValueAccessor, OnInit, OnChanges {
+export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
+                                       implements IControlValueAccessor, OnInit, OnChanges {
 
   private _instance: any;
-
-  set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
-      this.onChange(v);
-      this.onModelChange(v);
-    }
-  }
-  get value(): any {
-    return this._value;
-  }
 
   /**
    * Sets form control of the element.
@@ -63,6 +54,11 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
    * Sets label to be displayed.
    */
   @Input() label: string = '';
+
+  /**
+   * Sets hint to be displayed.
+   */
+  @Input() hint: string = '';
 
   /**
    * Sets type or element of element to be rendered.
@@ -100,6 +96,16 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
    */
   @Input() selections: any[] = undefined;
 
+  /**
+   * Sets multiple property for array elements (if supported by element).
+   */
+  @Input() multiple: boolean = undefined;
+
+  /**
+   * Sets error message template so it can be injected into dynamic components.
+   */
+  @Input() errorMessageTemplate: TemplateRef<any> = undefined;
+
   @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
@@ -113,18 +119,21 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
   }
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _dynamicFormsService: TdDynamicFormsService) {
-    super();
+              private _dynamicFormsService: TdDynamicFormsService,
+              _changeDetectorRef: ChangeDetectorRef) {
+    super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
+    let component: any = <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
     let ref: ComponentRef<any> = this._componentFactoryResolver.
-      resolveComponentFactory(this._dynamicFormsService.getDynamicElement(this.type))
+      resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     this._instance = ref.instance;
     this._instance.control = this.dynamicControl;
     this._instance.label = this.label;
+    this._instance.hint = this.hint;
     this._instance.type = this.type;
     this._instance.value = this.value;
     this._instance.required = this.required;
@@ -133,16 +142,8 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
     this._instance.minLength = this.minLength;
     this._instance.maxLength = this.maxLength;
     this._instance.selections = this.selections;
-    this._instance.registerOnChange((value: any) => {
-      this.value = value;
-    });
-    this.registerOnModelChange((value: any) => {
-      // fix to check if value is NaN (type=number)
-      if (!Number.isNaN(value)) {
-        this._instance.value = value;
-      }
-
-    });
+    this._instance.multiple = this.multiple;
+    this._instance.errorMessageTemplate = this.errorMessageTemplate;
   }
 
   /**
@@ -155,13 +156,4 @@ export class TdDynamicElementComponent extends AbstractControlValueAccessor
       }
     }
   }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   */
-  registerOnModelChange(fn: any): void {
-    this.onModelChange = fn;
-  }
-
-  onModelChange = (_: any) => noop;
 }

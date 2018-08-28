@@ -1,4 +1,4 @@
-import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable, Provider, SkipSelf, Optional, Type } from '@angular/core';
 import { Validators, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
 
 import { TdDynamicInputComponent } from '../dynamic-elements/dynamic-input/dynamic-input.component';
@@ -37,13 +37,16 @@ export interface ITdDynamicElementValidator {
 export interface ITdDynamicElementConfig {
   label?: string;
   name: string;
-  type: TdDynamicType | TdDynamicElement;
+  hint?: string;
+  type: TdDynamicType | TdDynamicElement | Type<any>;
   required?: boolean;
+  disabled?: boolean;
   min?: any;
   max?: any;
   minLength?: any;
   maxLength?: any;
   selections?: string[] | { value: any, label: string }[];
+  multiple?: boolean;
   default?: any;
   flex?: number;
   validators?: ITdDynamicElementValidator[];
@@ -102,7 +105,7 @@ export class TdDynamicFormsService {
    */
   createFormControl(config: ITdDynamicElementConfig): FormControl {
     let validator: ValidatorFn = this.createValidators(config);
-    return new FormControl(config.default, validator);
+    return new FormControl({ value: config.default, disabled: config.disabled }, validator);
   }
 
   /**

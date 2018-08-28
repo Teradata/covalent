@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'bytes',
+  name: 'decimalBytes',
 })
 
-export class TdBytesPipe implements PipeTransform {
+export class TdDecimalBytesPipe implements PipeTransform {
   /* `bytes` needs to be `any` or TypeScript complains
   Tried both `number` and `number | string` */
   transform(bytes: any, precision: number = 2): string {
@@ -14,8 +14,8 @@ export class TdBytesPipe implements PipeTransform {
       /* If not a valid number, return 'Invalid Number' */
       return 'Invalid Number';
     }
-    let k: number = 1024;
-    let sizes: string[] = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+    let k: number = 1000;
+    let sizes: string[] = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
     let i: number = Math.floor(Math.log(bytes) / Math.log(k));
     // if less than 1
     if (i < 0) {

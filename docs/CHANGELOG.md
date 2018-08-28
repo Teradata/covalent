@@ -1,3 +1,57 @@
+<a name="2.0.0-beta.3"></a>
+# [2.0.0-beta.3](https://github.com/teradata/covalent/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2018-08-23)
+
+Highlights:
+
+- Experimental Module and Nightly Build
+- Tab Select and Breadcrumbs experimental modules!
+- Bugfixes for data-table and dynamic forms
+- Enhancements for dynamic forms like custom types and new properties.
+
+We are pleased to annouce our experimental area where we test all our new components before we move them into the a production package.
+
+You can start using these components at any point by installing our nightly experimental build:
+
+```bash
+npm install --save https://github.com/Teradata/covalent-experimental-nightly.git
+```
+
+NOTE: Beware breaking changes since this particular area will typically change as we encounter bugs or add features to suit the use cases we encounter.
+
+Initial experimental components:
+
+- Breadcrumbs
+- Tab Select
+
+Please try and use our components and help us improve them even more!
+
+### Bug Fixes
+
+* **breadcrumbs:** clean up imports of observable creation methods ([#1209](https://github.com/teradata/covalent/issues/1209)) ([3197c50](https://github.com/teradata/covalent/commit/3197c50)), closes [#1208](https://github.com/teradata/covalent/issues/1208)
+* **datatable:** change detection error on datatable demo with pagination ([#1198](https://github.com/teradata/covalent/issues/1198)) ([419396b](https://github.com/teradata/covalent/commit/419396b))
+* **datatable:** row selection checkbox incorrectly fires row click event in firefox ([#1195](https://github.com/teradata/covalent/issues/1195)) ([1db63f6](https://github.com/teradata/covalent/commit/1db63f6))
+* **datatable:** selectAllRows doesn't trigger ngModelChange ([#1194](https://github.com/teradata/covalent/issues/1194)) ([59055f4](https://github.com/teradata/covalent/commit/59055f4))
+* **docs:** Add documentation about clickable input on datatable ([#1224](https://github.com/teradata/covalent/issues/1224)) ([95425ef](https://github.com/teradata/covalent/commit/95425ef))
+* **docs:** Add documentation about custom sort on datatable ([#1225](https://github.com/teradata/covalent/issues/1225)) ([be754dd](https://github.com/teradata/covalent/commit/be754dd)) closes [#674](https://github.com/teradata/covalent/issues/674), closes [#461](https://github.com/teradata/covalent/issues/461), closes [#521](https://github.com/teradata/covalent/issues/521)
+* **docs:** github deployment docs out of date ([#1196](https://github.com/teradata/covalent/issues/1196)) ([61686f2](https://github.com/teradata/covalent/commit/61686f2))
+* **dynamic-forms:** make sure hints and errors dont overlap ([#1222](https://github.com/teradata/covalent/issues/1222)) ([cf0439d](https://github.com/teradata/covalent/commit/cf0439d))
+* **paging:** Fix paging demo with search to jump to page 1 after searching ([#1203](https://github.com/teradata/covalent/issues/1203)) ([44f2212](https://github.com/teradata/covalent/commit/44f2212))
+
+
+### Features
+
+* **breadcrumbs:** initial implementation *experimental* ([#1183](https://github.com/teradata/covalent/issues/1183)) ([256491e](https://github.com/teradata/covalent/commit/256491e))
+* install covalent tools as dependency ([#1199](https://github.com/teradata/covalent/issues/1199)) ([2c74ee6](https://github.com/teradata/covalent/commit/2c74ee6))
+* setup of the experimental primary entry point ([#1173](https://github.com/teradata/covalent/issues/1173)) ([09756b5](https://github.com/teradata/covalent/commit/09756b5))
+* **dynamic-forms:** add support for Materials multiselect form field (closes [#820](https://github.com/teradata/covalent/issues/820)) ([95c773d](https://github.com/teradata/covalent/commit/95c773d))
+* **dynamic-forms:** adds hints to elements that allow mat-hints ([#1221](https://github.com/teradata/covalent/issues/1221)) ([955e598](https://github.com/teradata/covalent/commit/955e598))
+* **dynamic-forms:** allow elements to be disabled via configuration ([#1219](https://github.com/teradata/covalent/issues/1219)) ([2e2b8a0](https://github.com/teradata/covalent/commit/2e2b8a0))
+* **tab-select:** add stretchTabs input to stretch tabs on mat-tab-group ([#1191](https://github.com/teradata/covalent/issues/1191)) ([d0f5fa5](https://github.com/teradata/covalent/commit/d0f5fa5))
+* **tab-select:** initial implementation for tab select *experimental* ([#1187](https://github.com/teradata/covalent/issues/1187)) ([66503a9](https://github.com/teradata/covalent/commit/66503a9))
+* **test-bed:** add test-bed project to test experimental components or new features ([#1186](https://github.com/teradata/covalent/issues/1186)) ([6f8a3bf](https://github.com/teradata/covalent/commit/6f8a3bf))
+
+
+
 <a name="2.0.0-beta.2"></a>
 # [2.0.0-beta.2](https://github.com/teradata/covalent/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-05-28)
 

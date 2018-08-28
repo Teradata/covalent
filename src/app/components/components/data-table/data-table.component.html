@@ -171,6 +171,93 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
+    <h3 class="mat-title">Data Table with custom sort</h3>
+    <h4 class="mat-subheading-2">sorting on a date column</h4>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-data-table
+          [data]="dateSortData"
+          [sortable]="true"
+          [sortBy]="'date'"
+          [sortOrder]="sortOrder"
+          (sortChange)="sortDates($event)"
+          [columns]="dateColumns">
+          <ng-template tdDataTableTemplate="img" let-value="value">
+            <img [src]="value"/>
+          </ng-template>
+        </td-data-table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-data-table
+              [data]="dateSortData"
+              [sortable]="true"
+              [sortBy]="'date'"
+              [sortOrder]="sortOrder"
+              (sortChange)="sortDates($event)"
+              [columns]="dateColumns">
+              <ng-template tdDataTableTemplate="img" let-value="value">
+                <img [src]="value"/>
+              </ng-template>
+            </td-data-table>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { ITdDataTableColumn } from '@covalent/core/data-table';
+            ...
+            export class Demo implements OnInit {
+              dateColumns: ITdDataTableColumn[] = [
+                { name: 'date', label: 'Date', sortable: true, width: 275 },
+                { name: 'first_name', label: 'First Name', sortable: false, width: 150 },
+                { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+              ];
+
+              ...
+
+              sortDates(sortEvent: ITdDataTableSortChangeEvent): void {
+                this.dateSortOrder = sortEvent.order;
+                this.filterDateData();
+              }
+
+              ...
+
+              filterDateData(): void {
+                this.dateSortData = Array.from(this.dateSortData); // Change the array reference to trigger OnPush
+                this.dateSortData = this.dateSortData.sort((a: any, b: any) => {
+                  let direction: number = 0;
+                  if (this.dateSortOrder === TdDataTableSortingOrder.Descending) {
+                    direction = 1;
+                  } else if (this.dateSortOrder === TdDataTableSortingOrder.Ascending) {
+                    direction = -1;
+                  }
+                  if (a.date < b.date) {
+                    return direction;
+                  } else if (a.date > b.date) {
+                    return -direction;
+                  } else {
+                    return direction;
+                  }
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="dateSortData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="mat-title">Data Table with components</h3>
     <h4 class="mat-subheading-2">Paging Bar / Search Box / Sortable components</h4>
     <mat-divider></mat-divider>
@@ -198,6 +285,7 @@
           [multiple]="multiple"
           [sortable]="true"
           [sortBy]="sortBy"
+          [resizableColumns]="resizableColumns"
           [(ngModel)]="selectedRows"
           [sortOrder]="sortOrder"
           (sortChange)="sort($event)"
@@ -243,6 +331,7 @@
               [multiple]="multiple"
               [sortable]="true"
               [sortBy]="sortBy"
+              [resizableColumns]="resizableColumns"
               [(ngModel)]="selectedRows"
               [sortOrder]="sortOrder"
               (sortChange)="sort($event)"
@@ -365,6 +454,9 @@
     <div class="pad-sm">
       <mat-slide-toggle color="accent" (change)="toggleTooltips()">
         Tooltips on column headers
+      </mat-slide-toggle>
+      <mat-slide-toggle color="accent" [(ngModel)]="resizableColumns">
+        Resizable columns
       </mat-slide-toggle>
     </div>
     <mat-divider></mat-divider>
