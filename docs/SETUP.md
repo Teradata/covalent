@@ -10,7 +10,11 @@ npm install @covalent/code-editor
   "apps": [
     {
       "assets": [
-        { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" }
+        {
+          "glob": "**/*",
+          "input": "node_modules/@covalent/code-editor/assets/monaco",
+          "output": "/assets/monaco"
+        }
       ],
 ```
 * Add the following tag to html file
