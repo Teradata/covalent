@@ -4,7 +4,7 @@
 ```
 npm install @covalent/code-editor
 ```
-* **Important**: Add the glob to assets in .angular-cli.json (to make monaco-editor javascript available to the app)
+* **Important**: Add the glob to assets in angular.json (to make monaco-editor javascript available to the app)
 ```json
 {
   "apps": [
