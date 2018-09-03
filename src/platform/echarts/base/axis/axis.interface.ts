@@ -1,6 +1,6 @@
 import {
   TdAlign,
-  TdfontStyle,
+  TdFontStyle,
   TdFontWeight,
   TdVerticalAlign,
   TdFontFamily,
@@ -28,7 +28,7 @@ interface IAxisLabel {
   showMinLabel?: boolean;
   showMaxLabel?: boolean;
   color?: any;
-  fontStyle?: TdfontStyle;
+  fontStyle?: TdFontStyle;
   fontWeight?: TdFontWeight;
   fontFamily?: TdFontFamily;
   fontSize?: number;
@@ -114,7 +114,7 @@ interface IAxisPointerLabel {
   formatter: any;
   margin: number;
   color: string;
-  fontStyle: TdfontStyle;
+  fontStyle: TdFontStyle;
   fontWeight: TdFontWeight;
   fontFamily: TdFontFamily;
   fontSize: number;
@@ -139,7 +139,7 @@ interface IAxisPointerLabel {
 
 interface INameAxisTextStyle {
   color?: string | object;
-  fontStyle?: TdfontStyle;
+  fontStyle?: TdFontStyle;
   fontWeight?: TdFontWeight;
   fontFamily?: TdFontFamily;
   fontSize?: number; // Defaults to 12

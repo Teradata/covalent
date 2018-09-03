@@ -13,7 +13,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { TdChartOptionsService } from '../base.service';
+import { TdChartOptionsService } from '../chart.service';
 import { assignDefined } from '../utils';
 
 export class TdTooltipContext {

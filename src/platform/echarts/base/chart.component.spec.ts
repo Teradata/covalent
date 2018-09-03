@@ -34,11 +34,7 @@ describe('Component: BaseEchart', () => {
 @Component({
   selector: 'td-base-echarts-basic-test',
   template: `
-  <td-chart [style.height.px]="300"
-          [yAxisType]="'value'"
-          [xAxisType]="'category'"
-          [dataZoom]="false"
-          [data]="plot">
+  <td-chart [style.height.px]="300">
   </td-chart>
   `,
 })

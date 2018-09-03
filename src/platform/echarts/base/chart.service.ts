@@ -45,14 +45,14 @@ export class TdChartOptionsService {
 
 }
 
-export function BASE_CHART_PROVIDER_FACTORY(
+export function CHART_PROVIDER_FACTORY(
   parent: TdChartOptionsService): TdChartOptionsService {
   return parent || new TdChartOptionsService();
 }
 
-export const BASE_CHART_PROVIDER: Provider = {
+export const CHART_PROVIDER: Provider = {
   // If there is already a service available, use that. Otherwise, provide a new one.
   provide: TdChartOptionsService,
   deps: [[new Optional(), new SkipSelf(), TdChartOptionsService]],
-  useFactory: BASE_CHART_PROVIDER_FACTORY,
+  useFactory: CHART_PROVIDER_FACTORY,
 };

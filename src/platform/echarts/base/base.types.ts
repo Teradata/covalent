@@ -30,7 +30,7 @@ enum TdFontFamily {
   Mono = 'monospace',
 }
 
-enum TdfontStyle {
+enum TdFontStyle {
   Normal = 'normal',
   Italic = 'italic',
   Oblique = 'oblique',
@@ -43,7 +43,7 @@ enum TdStatus {
 
 export {
   TdAlign,
-  TdfontStyle,
+  TdFontStyle,
   TdFontWeight,
   TdVerticalAlign,
   TdFontFamily,

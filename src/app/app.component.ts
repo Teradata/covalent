@@ -4,7 +4,7 @@ import { IAxisLine, IAxisLabel, ISplitLine, TdXAxisPosition, TdYAxisPosition, Td
 export const NOW: Date = new Date();
 
 import 'echarts/lib/component/tooltip';
-import { TdFontFamily, TdfontStyle, TdFontWeight } from '@covalent/echarts/base/base.types';
+import { TdFontFamily, TdFontStyle, TdFontWeight } from '@covalent/echarts/base/base.types';
 
 @Component({
   selector: 'docs-covalent',
@@ -14,29 +14,34 @@ import { TdFontFamily, TdfontStyle, TdFontWeight } from '@covalent/echarts/base/
 export class DocsAppComponent {
 
   barPlot: any = [{
-    color: '#575757',
-    opacity: 0.75,
+    itemStyle: {
+      opacity: 0.75,
+      color: '#575757',
+    },
     name: 'Historical Model',
-    type: 'bar',
     data: [100],
   }, {
-    color: '#00E5FF',
-    opacity: 0.75,
+    itemStyle: {
+      opacity: 0.75,
+      color: '#00E5FF',
+    },
     name: 'Today',
-    type: 'bar',
     data: [80],
   }];
 
   showTooltip: boolean = true;
   linePlot: any[] = [{
     name: 'Line Test',
-    color: '#575757',
-    shadowBlur: 5,
-    shadowColor: 'rgba(0, 0, 0, 0.15)',
-    shadowOffsetX: 0,
-    shadowOffsetY: 5,
-    width: 2,
-    opacity: 0.75,
+    type: 'line',
+    lineStyle: {
+      color: '#575757',
+      width: 2,
+      shadowBlur: 5,
+      shadowColor: 'rgba(0, 0, 0, 0.15)',
+      shadowOffsetX: 0,
+      shadowOffsetY: 5,
+      opacity: 0.75,
+    },
     data: [{
       name: NOW.toISOString(),
       value: [NOW.toISOString(), 200],
@@ -49,6 +54,17 @@ export class DocsAppComponent {
     }],
   }];
 
+  lineConfig: any = {
+    xAxis: [{show: true, type: 'time', boundaryGap: false, axisLine: {show: false}, splitLine: {show: false}}],
+    yAxis: [{show: true, type: 'value', axisLabel: {inside: true}}],
+    series: this.linePlot,
+    tooltip: {
+      show: true,
+      trigger: 'axis',
+      showContent: true,
+    },
+  };
+
   yLine: IAxisLine = { 
     show: true, 
     lineStyle: 
@@ -58,7 +74,7 @@ export class DocsAppComponent {
   yAxisLabel: IAxisLabel = { 
     show: true, 
     inside: false,
-    fontStyle: TdfontStyle.Italic,
+    fontStyle: TdFontStyle.Italic,
     fontWeight: TdFontWeight.Bold,
     formatter: '${value}',
   };
@@ -72,7 +88,7 @@ export class DocsAppComponent {
   xAxisLabel: IAxisLabel = { 
     show: true, 
     inside: false,
-    fontStyle: TdfontStyle.Italic,
+    fontStyle: TdFontStyle.Italic,
     fontWeight: TdFontWeight.Bold,
   };
 

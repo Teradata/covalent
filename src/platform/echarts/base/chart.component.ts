@@ -25,41 +25,38 @@ import 'echarts/lib/component/legendScroll';
 import 'echarts/lib/component/markArea';
 import 'echarts/lib/component/dataZoom';
 
-import { TdChartOptionsService, BASE_CHART_PROVIDER } from './base.service';
+import { TdChartOptionsService, CHART_PROVIDER } from './chart.service';
 import { assignDefined } from './utils';
 
 @Component({
-  selector: 'td-base-chart',
-  templateUrl: './base.component.html',
-  styleUrls: ['./base.component.scss'],
+  selector: 'td-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [BASE_CHART_PROVIDER],
+  providers: [CHART_PROVIDER],
 })
-export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
+export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
 
   private _resizeSubscription: Subscription;
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
   private _resizing: boolean = false;
 
-  private _series: any[];
   private _legend: any;
 
   private _instance: any;
-  private _options: any = {};
 
   get instance(): any {
     return this._instance;
   }
 
-  get options(): any {
-    return this._options;
-  }
+  private _state: any = {};
+  private _options: any = {};
+
+  @Input('config') config: any = {};
 
   @Input('chartTitle') chartTitle: string;
   @Input('showLegend') showLegend: boolean = true;
-  @Input('data') data: any[];
-  @Input('max') max: number;
   @Input('chartGroup') chartGroup: string;
   @Input('dataZoom') dataZoom: boolean = true;
 
@@ -133,43 +130,6 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
 
   render(): void {
     if (this._instance) {
-      if (this.data && this.data instanceof Array ) {
-        this._series = this.data.map((d: any) => {
-          return {
-            name: d.name,
-            id: d.id,
-            type: d.type ? d.type : 'line',
-            stack: d.stack,
-            data: d.data,
-            color: d.color,
-            connectNulls: false,
-            barWidth: d.barWidth,
-            barGap: d.barGap,
-            z: d.z,
-            lineStyle: {
-              opacity: d.opacity,
-              width: d.width,
-              shadowBlur: d.shadowBlur,
-              shadowColor: d.shadowColor,
-              shadowOffsetX: d.shadowOffsetX,
-              shadowOffsetY: d.shadowOffsetY,
-            },
-            itemStyle: {
-              opacity: d.opacity,
-            },
-            showSymbol: false,
-            areaStyle: d.area ? {opacity: d.opacity} : undefined,
-            markArea: {
-              data: d.markArea,
-              itemStyle: {
-                borderColor: '#464646',
-                borderWidth: 1,
-                opacity: d.markAreaOpacity ? d.markAreaOpacity : 0.1,
-              },
-            },
-          };
-        });
-      }
       this._legend = {
         show: this.showLegend,
         type: 'scroll',
@@ -177,9 +137,8 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
         orient: 'horizontal', // 'vertical'
         right: '5',
         bottom: '5',
-        data: this.data && this.data instanceof Array ? this.data.map((d: any) => d.name) : [],
       },
-      this._instance.setOption(Object.assign({}, {
+      this._instance.setOption(assignDefined(this._state, {
         grid: {
           show: true,
           left: '20',
@@ -197,8 +156,8 @@ export class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, 
         legend: this._legend,
         xAxis : [{}], // throws error if its empty
         yAxis : [{}], // throws error if its empty
-        series: this._series,
-      }, this._options), true);
+        series: [],
+      }, this.config ? this.config : {}, this._options), true);
       this._changeDetectorRef.markForCheck();
     }
   }
