@@ -4,6 +4,7 @@ import {
   Input,
 } from '@angular/core';
 
+import { TdYAxisPosition  } from './axis.interface';
 import { TdChartOptionsService } from '../base.service';
 import { TdChartAxisComponent } from './axis.component';
 
@@ -14,7 +15,7 @@ import { TdChartAxisComponent } from './axis.component';
 })
 export class TdChartYAxisComponent extends TdChartAxisComponent {
 
-  @Input('position') position: 'left' | 'right';
+  @Input('position') position: TdYAxisPosition;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('yAxis', _optionsService);

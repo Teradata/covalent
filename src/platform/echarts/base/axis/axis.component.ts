@@ -7,7 +7,18 @@ import {
 
 import { TdChartOptionsService } from '../base.service';
 import { assignDefined } from '../utils';
-
+import { 
+  IAxisLine,
+  IAxisLabel,
+  IAxisTick,
+  ISplitLine,
+  ISplitArea,
+  IAxisPointer,
+  TdAxisType,
+  TdNameLocation,
+  TdXAxisPosition,
+  TdYAxisPosition } from './axis.interface';
+  
 export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
 
   private _state: any = {};
@@ -18,10 +29,10 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   @Input('show') show: boolean = true;
   @Input('gridIndex') gridIndex: number;
   @Input('offset') offset: number;
-  abstract position: any;
-  @Input('type') type: 'category' | 'value' | 'time' | 'logs';
+  abstract position: TdXAxisPosition | TdYAxisPosition ;
+  @Input('type') type: TdAxisType;
   @Input('name') name: string;
-  @Input('nameLocation') nameLocation: 'start' | 'middle' | 'center' | 'end';
+  @Input('nameLocation') nameLocation: TdNameLocation;
   @Input('nameTextStyle') nameTextStyle: any;
   @Input('nameGap') nameGap: number;
   @Input('nameRotate') nameRotate: number;
@@ -35,13 +46,13 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   @Input('logBase') logBase: number;
   @Input('silent') silent: boolean;
   @Input('triggerEvent') triggerEvent: boolean;
-  @Input('axisLine') axisLine: any;
-  @Input('axisTick') axisTick: any;
-  @Input('axisLabel') axisLabel: any;
-  @Input('splitLine') splitLine: any;
-  @Input('splitArea') splitArea: any;
+  @Input('axisLine') axisLine: IAxisLine;
+  @Input('axisTick') axisTick: IAxisTick;
+  @Input('axisLabel') axisLabel: IAxisLabel;
+  @Input('splitLine') splitLine: ISplitLine;
+  @Input('splitArea') splitArea: ISplitArea;
   @Input('data') data: any;
-  @Input('axisPointer') axisPointer: any;
+  @Input('axisPointer') axisPointer: IAxisPointer;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
 

@@ -1,8 +1,10 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
+import { IAxisLine, IAxisLabel, ISplitLine, TdXAxisPosition, TdYAxisPosition, TdAxisLineType } from '../platform/echarts';
 
 export const NOW: Date = new Date();
 
 import 'echarts/lib/component/tooltip';
+import { TdFontFamily, TdfontStyle, TdFontWeight } from '@covalent/echarts/base/base.types';
 
 @Component({
   selector: 'docs-covalent',
@@ -47,8 +49,49 @@ export class DocsAppComponent {
     }],
   }];
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  yLine: IAxisLine = { 
+    show: true, 
+    lineStyle: 
+    { color: '#777777', width: 2 },
+  };
 
+  yAxisLabel: IAxisLabel = { 
+    show: true, 
+    inside: false,
+    fontStyle: TdfontStyle.Italic,
+    fontWeight: TdFontWeight.Bold,
+    formatter: '${value}',
+  };
+
+  xLine: IAxisLine = { 
+    show: true, 
+    lineStyle: 
+    { color: '#777777', width: 2 },
+  };
+
+  xAxisLabel: IAxisLabel = { 
+    show: true, 
+    inside: false,
+    fontStyle: TdfontStyle.Italic,
+    fontWeight: TdFontWeight.Bold,
+  };
+
+  splitLineBar: ISplitLine = {
+    lineStyle: {
+      type: TdAxisLineType.Dotted,
+    },
+  };
+
+  splitLine: ISplitLine = {
+    lineStyle: {
+      type: TdAxisLineType.Dashed,
+    },
+  };
+
+  barYaxisPosition: TdYAxisPosition = TdYAxisPosition.Right;
+  lineXAxisPosition: TdXAxisPosition = TdXAxisPosition.Top;
+
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
   }
 
 }
