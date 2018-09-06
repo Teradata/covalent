@@ -22,7 +22,7 @@ Dont forget to add the asterisk syntax before the `tdLoading` directive if its n
 + tdLoadingColor?: "primary" | "accent" | "warn"
   + Sets the theme color of the loading component. 
   + Defaults to "primary"
-+ tdLoadingUtil?: any
++ tdLoadingUntil?: any
   + If its null, undefined or false it will be used to register requests to the mask.
   + Else if its any value that can be resolved as true, it will resolve the mask.
   + [name] is optional when using [until], but can still be used to register/resolve it manually.
