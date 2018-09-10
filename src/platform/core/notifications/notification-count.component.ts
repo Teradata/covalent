@@ -13,6 +13,8 @@ export enum TdNotificationCountPositionX {
   Center = 'center',
 }
 
+export const DEFAULT_NOTIFICATION_LIMIT: number = 99;
+
 @Component({
   selector: 'td-notification-count',
   styleUrls: ['./notification-count.component.scss' ],
@@ -24,6 +26,7 @@ export class TdNotificationCountComponent implements AfterContentInit {
   private _notifications: number | boolean = 0;
   private _positionY: TdNotificationCountPositionY;
   private _positionX: TdNotificationCountPositionX;
+  private _limit: number = DEFAULT_NOTIFICATION_LIMIT;
 
   /**
    * Div content wrapper of `ng-content`.
@@ -71,6 +74,15 @@ export class TdNotificationCountComponent implements AfterContentInit {
     this._notifications = notifications;
   }
 
+   /**
+    * limit?: number
+    * Limit for notification count. If the number of notifications is greater than limit, then + will be added. Defaults to 99.
+    */
+  @Input()
+  set limit(limit: number) {
+    this._limit = limit;
+  }
+
   @HostBinding('class.td-notification-hidden')
   get hideHost(): boolean {
     return !this.show && !this._hasContent();
@@ -89,8 +101,8 @@ export class TdNotificationCountComponent implements AfterContentInit {
    * Anything over 99 gets set as 99+
    */
   get notificationsDisplay(): string {
-    if (this._notifications > 99) {
-      return '99+';
+    if (this._notifications > this._limit) {
+      return `${this._limit}+`;
     }
     return this._notifications.toString();
   }
