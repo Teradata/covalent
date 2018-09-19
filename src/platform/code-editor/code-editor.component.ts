@@ -325,6 +325,14 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   @Input('editorOptions')
   set editorOptions(editorOptions: any) {
       this._editorOptions = editorOptions;
+      if (this._componentInitialized) {
+        if (this._webview) {
+          this._webview.send('setEditorOptions', editorOptions);
+        } else {
+          this._editor.updateOptions(editorOptions);
+          this.onEditorConfigurationChanged.emit(undefined);
+        }
+      }
   }
   get editorOptions(): any {
     return this._editorOptions;
