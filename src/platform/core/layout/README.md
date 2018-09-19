@@ -15,6 +15,9 @@
 + sidenavWidth: string
   + Sets the 'width' of the sidenav in either 'px' or '%'. 
   + Defaults to '320px'.
++ containerAutosize: boolean
+  + Sets 'autosize' of the sidenav-container.
+  + Defaults to 'false'.
 
 ## Usage
 
