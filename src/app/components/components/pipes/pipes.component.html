@@ -155,6 +155,33 @@
   </mat-card-content>
  </mat-card>
 
+ <mat-card>
+  <mat-card-title>Time Until</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">The <code>timeUntil</code> pipe takes a string, number or Date timestamp (example: <code>{{currentTimeStamp}}</code>) and tranforms it to the amount of time until that timestamp will be reached. </p>
+    <mat-list>
+      <mat-list-item *ngFor="let log of logs">
+        <h3 matLine>Timestamp: {{ log.expiration_date }} | {{ log.expiration_date | timeUntil:log.reference }}</h3>
+        <p *ngIf="log.reference" matLine>Reference: {{ log.reference }} </p>
+      </mat-list-item>
+    </mat-list>
+  <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <mat-list>
+            <mat-list-item *ngFor="let log of logs">
+              <!-- original output -->
+              { { log.timestamp } } | 
+              <!-- output with timeUntil pipe -->
+              { { log.timestamp | timeUntil:reference } } //reference is optional
+            </mat-list-item>
+          </mat-list>
+        ]]>
+    </td-highlight>
+  </mat-card-content>
+ </mat-card>
+
   <mat-card>
   <mat-card-title>Time Difference</mat-card-title>
   <mat-divider></mat-divider>
