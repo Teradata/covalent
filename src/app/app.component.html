@@ -1,7 +1,7 @@
 <td-layout #layout
             [class]="activeTheme"
             [dir]="dir">
-  <td-navigation-drawer sidenavTitle="Covalent" logo="teradata-dark" navigationRoute="/" flex color="none">
+  <td-navigation-drawer sidenavTitle="Covalent" [logo]="activeTheme === 'theme-dark' ? 'teradata' : 'teradata-dark'" navigationRoute="/" flex color="none">
     <mat-nav-list flex>
       <a mat-list-item
           tdLayoutClose
