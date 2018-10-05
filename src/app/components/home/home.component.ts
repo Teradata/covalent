@@ -9,6 +9,9 @@ import { GitHubService } from '../../services';
 
 export class HomeComponent implements AfterViewInit {
 
+  // Current date
+  year: any = new Date().getFullYear();
+
   starCount: number = 0;
 
   sections: Object[] = [{
