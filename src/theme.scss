@@ -20,6 +20,9 @@ $custom-toolbar-typography: mat-typography-config(
 // Setting the toolbar to the proper spec weight
 @include mat-toolbar-typography($custom-toolbar-typography);
 
+// Teradata brand
+@import './teradata-branding';
+
 // Include the core styles for Covalent
 @include covalent-core();
 
@@ -36,48 +39,14 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // Include covalent color classes
 @include covalent-colors();
 
-// Custom orange contrast
-$mat-orange-custom: (
-  50: #fff3e0,
-  100: #ffe0b2,
-  200: #ffcc80,
-  300: #ffb74d,
-  400: #ffa726,
-  500: #ff9800,
-  600: #fb8c00,
-  700: #f57c00,
-  800: #ef6c00,
-  900: #e65100,
-  A100: #ffd180,
-  A200: #ffab40,
-  A400: #ff9100,
-  A700: #ff6d00,
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: $black-87-opacity,
-    A400: $black-87-opacity,
-    A700: $white-87-opacity,
-  )
-);
-
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-blue-grey, 900, 100, 900);
-$accent:  mat-palette($mat-orange-custom, A700, A100, A400);
+$primary: mat-palette($td-slate, 700, 100, 900);
+$accent:  mat-palette($td-orange, 800, 200, 900);
 
 // The warn palette is optional (defaults to red).
-$warn:    mat-palette($mat-red, 600);
+$warn:    mat-palette($mat-red, 600, 200, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -90,12 +59,13 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include experimental-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+@include teradata-brand($theme);
 
 // Alt theme
 .theme-alt {
-  $primary-alt: mat-palette($mat-orange, 800);
-  $accent-alt:  mat-palette($mat-light-blue, 700);
-  $warn-alt:    mat-palette($mat-red, 600);
+  $primary-alt: mat-palette($td-orange, 800, 200, 900);
+  $accent-alt:  mat-palette($td-slate, 700, 100, 900);
+  $warn-alt:    mat-palette($mat-red, 600, 200, 900);
   $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
   @include angular-material-theme($theme-alt);
   @include covalent-theme($theme-alt);
@@ -119,9 +89,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 // Dark theme
 .theme-dark {
-  $primary-dark: mat-palette($mat-blue-grey, 900, 100, 900);
-  $accent-dark:  mat-palette($mat-orange-custom, A700, A100, A400);
-  $warn-dark:    mat-palette($mat-red, 600);
+  $primary-dark: mat-palette($td-slate, 800, 200, 900);
+  $accent-dark:  mat-palette($td-orange, 800, 200, 900);
+  $warn-dark:    mat-palette($mat-red, 600, 200, 900);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
@@ -138,6 +108,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
   }
   .tc-warn {
     color: mat-color($warn-dark);
+  }
+  .bgc-contrast {
+    background-color: #111111;
   }
 }
 
@@ -193,6 +166,9 @@ $foreground: map-get($theme, foreground);
 $background: map-get($theme, background);
 
 // Apply theme for this app
+.bgc-contrast {
+  background-color: #ececec;
+}
 
 // Active icon color in list nav
 mat-nav-list {
@@ -226,7 +202,7 @@ mat-nav-list {
 
 // Expansion panels
 .home .theme-dark .td-expansion-panel {
-  background-color: mat-color($mat-blue-grey, 800);
+  background-color: mat-color($td-slate, 800);
 }
 
 // Active top nav
@@ -235,7 +211,7 @@ nav {
     line-height: 4;
     display: block;
     &:not(.active) {
-      color: rgba(255, 255, 255, 0.56);
+      color: rgba(255, 255, 255, 0.75);
     }
     &.active {
       color: mat-color($accent);

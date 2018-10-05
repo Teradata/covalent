@@ -4,7 +4,7 @@
   </button>
   <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
   <div>
-    <section class="bgc-blue-grey-800">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate'">
       <div layout="row">
         <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xs', 'pad-left-xl']">
           <div class="push-top-xl" hide-xs></div>
@@ -29,7 +29,7 @@
     </section>
     <mat-toolbar color="primary">
     </mat-toolbar>
-    <section class="bgc-blue-grey-100">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate-100'">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-md" hide-xs></div>
@@ -38,8 +38,8 @@
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a mat-list-item [routerLink]="[item.route]">
                   <mat-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></mat-icon>
-                  <h3 class="tc-blue-grey-900" matLine> {{item.title}} </h3>
-                  <p class="tc-blue-grey-700" matLine> {{item.description}} </p>
+                  <h3 matLine> {{item.title}} </h3>
+                  <p matLine> {{item.description}} </p>
                 </a>
                 <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
@@ -52,9 +52,9 @@
                       <mat-icon class="push-right-sm">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
                       </mat-icon>
-                      <div class="mat-title push-none text-xxl tc-blue-grey-900">{{item.title}}</div>
+                      <div class="mat-title push-none text-xxl">{{item.title}}</div>
                     </div>
-                    <div class="mat-subheading-2 tc-blue-grey-700 text-wrap text-left"> {{item.description}} </div>   
+                    <div class="mat-subheading-2 text-wrap text-left"> {{item.description}} </div>   
                   </a>
                 </div>
               </ng-template>
@@ -64,7 +64,7 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-800 tc-white">
+    <section class="bgc-td-slate-700 tc-white">
       <div layout="row">
         <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xxl" hide-xs></div>
@@ -80,7 +80,7 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-900">
+    <section class="bgc-td-slate-900">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-xl" hide-xs></div>
@@ -117,14 +117,14 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-100">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate-100'">
       <div layout="row">
         <div flex flex-order="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xxl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
             <h2 class="mat-display-1 tc-green-A700 push-top-xs push-bottom-sm">Following the Material Design spec</h2>
-            <h3 class="mat-headline tc-blue-grey-700 push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
-            <h4 class="mat-headline tc-blue-grey-600 push-top-xs push-bottom-sm" hide-xs>Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
+            <h3 class="mat-headline push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
+            <h4 class="mat-headline push-top-xs push-bottom-sm" hide-xs>Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
@@ -133,7 +133,7 @@
         </div>
       </div>
     </section>
-    <section class="theme-dark tc-white bgc-blue-grey-900">
+    <section class="theme-dark tc-white bgc-td-slate-700">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xl" hide-xs></div>

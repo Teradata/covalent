@@ -80,4 +80,8 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
+  }
+
 }
