@@ -1,220 +1,22 @@
 <mat-card>
-  <mat-card-title>Color Palette</mat-card-title>
+  <mat-card-title>Color Palette &amp; Utilities</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
     <p>
       Color in material design is inspired by bold hues juxtaposed with muted environments, deep shadows, and bright highlights.
     </p>
     <p>
-      Teradata product usage recommends selecting primary and accent colors from these Material Design colors:
+      Covalent comes with CSS utility styles for background, type and SVG fill colors.
     </p>
-    <mat-list dense>
-      <mat-list-item>
-        <mat-icon class="tc-orange-700">label</mat-icon>
-        Orange
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon class="tc-deep-orange-700">label</mat-icon>
-        Deep Orange
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon class="tc-blue-700">label</mat-icon>
-        Blue
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon class="tc-light-blue-700">label</mat-icon>
-        Light Blue
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon class="tc-grey-700">label</mat-icon>
-        Grey
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon class="tc-blue-grey-700">label</mat-icon>
-        Blue Grey
-      </mat-list-item>
-    </mat-list>
-    <div class="bgc-grey-100 mat-caption" layout="row" layout-align="center center" layout-padding>
-      <mat-icon class="push-right-sm">info</mat-icon> <span>NOTE: as always, rules are meant to be bent so if you veer from these colors, just have a good justification!</span>
-    </div>
-    <h3>Hues</h3>
-    <p>
-      Each Material Design color has several available hues. It's recommended to use 3 hues for your primary and 1 for your accent, like:
-    </p>
-    <mat-grid-list cols="4">
-     <mat-grid-tile class="bgc-orange-700">
-       <mat-grid-tile-footer>
-          <h3 matLine>Orange 700</h3>
-        </mat-grid-tile-footer>
-     </mat-grid-tile>
-     <mat-grid-tile class="bgc-orange-800">
-       <mat-grid-tile-footer>
-          <h3 matLine>Orange 800</h3>
-        </mat-grid-tile-footer>
-     </mat-grid-tile>
-     <mat-grid-tile class="bgc-orange-900">
-       <mat-grid-tile-footer>
-          <h3 matLine>Orange 900</h3>
-        </mat-grid-tile-footer>
-     </mat-grid-tile>
-     <mat-grid-tile class="bgc-blue-700">
-       <mat-grid-tile-footer>
-          <h3 matLine>Blue 700</h3>
-        </mat-grid-tile-footer>
-     </mat-grid-tile>
-  </mat-grid-list>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <a mat-button color="primary" href="https://material.io/guidelines/style/color.html" target="_blank" class="text-upper">Color Spec</a>
   </mat-card-actions>
 </mat-card>
+
 <mat-card>
-  <mat-card-title>Example Product Color Schemes</mat-card-title>
-  <mat-card-subtitle>Products may select colors from the material design color palette. Limit your selection of colors to three hues from the primary palette and one accent color from the secondary palette.</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <h3 class="mat-title"><span class="tc-blue-700">Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
-    <div layout-gt-xs="row" layout-margin>
-      <div flex-gt-xs="50" class="pad-top-sm">
-        <mat-toolbar class="bgc-blue-700 tc-white">
-          <mat-toolbar-row>
-            <span>Primary</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 700</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-toolbar class="bgc-orange-800 tc-white push-top">
-          <mat-toolbar-row>
-            <span>Accent</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 800</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-      </div>
-      <div flex-gt-xs="50">
-        <mat-card class="top-toolbar blue-orange">
-          <mat-toolbar color="primary">
-            <mat-toolbar-row>
-              <span></span>
-            </mat-toolbar-row>
-            <mat-toolbar-row class="relative">
-              <span>App Usage</span>
-              <button mat-fab [style.bottom.px]="-20" class="mat-fab mat-fab-position-bottom-right">
-                <mat-icon>add</mat-icon>
-              </button>
-            </mat-toolbar-row>
-          </mat-toolbar>
-          <mat-card-content>
-            <h3 class="mat-title tc-blue-600">View title</h3>
-            <p>
-              When using a primary color in your palette, this color should be the most widely used across all screens and components.
-            </p>
-            <p>
-              Palettes with a secondary color may use this color to indicate a related action or information.
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-    <mat-divider></mat-divider>
-    <h3 class="mat-title"><span class="tc-orange-700">Orange Primary</span> / <span class="tc-light-blue-700">Light Blue Accent</span></h3>
-    <div layout-gt-xs="row" layout-margin>
-      <div flex-gt-xs="50" class="pad-top-sm">
-        <mat-toolbar class="bgc-orange-800 tc-white">
-          <mat-toolbar-row>
-            <span>Primary</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 800</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-toolbar class="bgc-light-blue-700 tc-white push-top">
-          <mat-toolbar-row>
-            <span>Accent</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 700</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-      </div>
-      <div flex-gt-xs="50">
-        <mat-card class="top-toolbar">
-          <mat-toolbar color="primary">
-            <mat-toolbar-row>
-              <span></span>
-            </mat-toolbar-row>
-            <mat-toolbar-row class="relative">
-              <span>App Usage</span>
-              <button mat-fab [style.bottom.px]="-20" class="mat-fab mat-fab-position-bottom-right">
-                <mat-icon>add</mat-icon>
-              </button>
-            </mat-toolbar-row>
-          </mat-toolbar>
-          <mat-card-content>
-            <h3 class="mat-title tc-orange-800">View title</h3>
-            <p>
-              When using a primary color in your palette, this color should be the most widely used across all screens and components.
-            </p>
-            <p>
-              Palettes with a secondary color may use this color to indicate a related action or information.
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-    <mat-divider></mat-divider>
-    <h3 class="mat-title"><span class="tc-blue-grey-700">Blue-Grey Primary</span> / <span class="tc-deep-orange-700">Deep Orange Accent</span></h3>
-    <div layout-gt-xs="row" layout-margin>
-      <div flex-gt-xs="50" class="pad-top-sm">
-        <mat-toolbar class="bgc-blue-grey-700 tc-white">
-          <mat-toolbar-row>
-            <span>Primary</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 700</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-toolbar class="bgc-deep-orange-700 tc-white push-top">
-          <mat-toolbar-row>
-            <span>Accent</span>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <span>Hue: 700</span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-      </div>
-      <div flex-gt-xs="50">
-        <mat-card class="top-toolbar blue-grey-deep-orange">
-          <mat-toolbar color="primary">
-            <mat-toolbar-row>
-              <span></span>
-            </mat-toolbar-row>
-            <mat-toolbar-row class="relative">
-              <span>App Usage</span>
-              <button mat-fab [style.bottom.px]="-20" class="mat-fab mat-fab-position-bottom-right">
-                <mat-icon>add</mat-icon>
-              </button>
-            </mat-toolbar-row>
-          </mat-toolbar>
-          <mat-card-content>
-            <h3 class="mat-title tc-blue-grey-700">View title</h3>
-            <p>
-              When using a primary color in your palette, this color should be the most widely used across all screens and components.
-            </p>
-            <p>
-              Palettes with a secondary color may use this color to indicate a related action or information.
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
-<mat-card>
-  <mat-card-title>CSS Background Colors</mat-card-title>
+  <mat-card-title>Background Color Utilities</mat-card-title>
   <mat-divider></mat-divider>
   <mat-tab-group mat-stretch-tabs>
     <mat-tab label="Default Colors">
@@ -317,6 +119,229 @@
     </mat-tab>
   </mat-tab-group>
 </mat-card>
+
+<mat-card>
+  <mat-card-title>CSS Font Colors</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Default Colors">
+      <mat-card-content>
+        <p>To manually color a font color, use our simple tc utility class:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div class="tc-green-700">green font</div>
+          ]]>
+        </td-highlight>
+        <p>choose from any of the material colors, in hues from 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 (and
+          A100, A200, A400, A700 for all except brown, grey &amp; blue-grey)</p>
+        <div layout-gt-sm="row" layout-wrap>
+          <div flex-gt-sm="20" *ngFor="let color of colors">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="bgc-grey-800">
+                <div class="tc-{{color}}-50 pad-xs">50</div>
+                <div class="tc-{{color}}-100 pad-xs">100</div>
+                <div class="tc-{{color}}-200 pad-xs">200</div>
+                <div class="tc-{{color}}-300 pad-xs">300</div>
+                <div class="tc-{{color}}-400 pad-xs">400</div>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <div class="tc-{{color}}-500 pad-xs">500</div>
+                <div class="tc-{{color}}-600 pad-xs">600</div>
+                <div class="tc-{{color}}-700 pad-xs">700</div>
+                <div class="tc-{{color}}-800 pad-xs">800</div>
+                <div class="tc-{{color}}-900 pad-xs">900</div>
+              </div>
+              <div class="bgc-grey-800">
+                <div class="tc-{{color}}-A100 pad-xs">A100</div>
+                <div class="tc-{{color}}-A200 pad-xs">A200</div>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <div class="tc-{{color}}-A400 pad-xs">A400</div>
+                <div class="tc-{{color}}-A700 pad-xs">A700</div>
+              </div>
+            </mat-card>
+          </div>
+          <div flex-gt-sm="20" *ngFor="let color of neutrals">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="bgc-grey-800">
+                <div class="tc-{{color}}-50 pad-xs">50</div>
+                <div class="tc-{{color}}-100 pad-xs">100</div>
+                <div class="tc-{{color}}-200 pad-xs">200</div>
+                <div class="tc-{{color}}-300 pad-xs">300</div>
+                <div class="tc-{{color}}-400 pad-xs">400</div>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <div class="tc-{{color}}-500 pad-xs">500</div>
+                <div class="tc-{{color}}-600 pad-xs">600</div>
+                <div class="tc-{{color}}-700 pad-xs">700</div>
+                <div class="tc-{{color}}-800 pad-xs">800</div>
+                <div class="tc-{{color}}-900 pad-xs">900</div>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab label="Dark Colors">
+      <mat-card-content>
+        <p>To manually color a font color, use our simple tc utility class:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div class="tc-dark-green-700">dark green font</div>
+          ]]>
+        </td-highlight>
+        <p>choose from any of the dark material colors, in hues from 500, B100, B65, B40, B30 &amp; B15</p>
+        <div layout-gt-sm="row" layout-wrap>
+          <div flex-gt-sm="20" *ngFor="let color of colors">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="bgc-{{color}}-100">
+                <div class="tc-dark-{{color}}-500 pad-xs">500</div>
+                <div class="tc-dark-{{color}}-B100 pad-xs">B100</div>
+                <div class="tc-dark-{{color}}-B65 pad-xs">B65</div>
+                <div class="tc-dark-{{color}}-B40 pad-xs">B40</div>
+                <div class="tc-dark-{{color}}-B30 pad-xs">B30</div>
+                <div class="tc-dark-{{color}}-B15 pad-xs">B15</div>
+              </div>
+            </mat-card>
+          </div>
+          <div flex-gt-sm="20" *ngFor="let color of neutrals">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="bgc-{{color}}-100">
+                <div class="tc-dark-{{color}}-500 pad-xs">500</div>
+                <div class="tc-dark-{{color}}-B100 pad-xs">B100</div>
+                <div class="tc-dark-{{color}}-B65 pad-xs">B65</div>
+                <div class="tc-dark-{{color}}-B40 pad-xs">B40</div>
+                <div class="tc-dark-{{color}}-B30 pad-xs">B30</div>
+                <div class="tc-dark-{{color}}-B15 pad-xs">B15</div>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Icon (Font or SVG) Colors</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Default Colors">
+      <mat-card-content>
+        <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple
+          tc utility class:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            /* this will be a green font icon */
+            <mat-icon class="tc-green-700">palette</mat-icon>
+
+            /* this will be a green filled SVG icon */
+            <mat-icon class="fill-green-700" svgIcon="svgIconName"></mat-icon>
+          ]]>
+        </td-highlight>
+        <p>choose from any of the material colors, in hues from 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 (and
+          A100, A200, A400, A700 for all except brown, grey &amp; blue-grey)</p>
+        <div layout-gt-sm="row" layout-wrap>
+          <div flex-gt-sm="20" *ngFor="let color of colors">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-100">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-200">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-300">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-400">palette</span></mat-icon>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-500">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-600">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-700">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-800">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-900">palette</span></mat-icon>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-A100">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-A200">palette</span></mat-icon>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-A400">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-A700">palette</span></mat-icon>
+              </div>
+            </mat-card>
+          </div>
+          <div flex-gt-sm="20" *ngFor="let color of neutrals">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-{{color}}-"</div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-50">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-100">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-200">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-300">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-400">palette</span></mat-icon>
+              </div>
+              <div class="bgc-{{color}}-50">
+                <mat-icon><span class="tc-{{color}}-500">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-600">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-700">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-800">palette</span></mat-icon>
+                <mat-icon><span class="tc-{{color}}-900">palette</span></mat-icon>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab label="Dark Colors">
+      <mat-card-content>
+        <p>To manually color a fill or font color (depending if you're using a font icon or SVV icon), use our simple
+          tc utility class:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            /* this will be a dark green font icon */
+            <mat-icon class="tc-dark-green-700">palette</mat-icon>
+
+            /* this will be a dark green filled SVG icon */
+            <mat-icon class="fill-dark-green-700" svgIcon="svgIconName"></mat-icon>
+          ]]>
+        </td-highlight>
+        <p>choose from any of the dark material colors, in hues from 500, B100, B65, B40, B30 &amp; B15</p>
+        <div layout-gt-sm="row" layout-wrap>
+          <div flex-gt-sm="20" *ngFor="let color of colors">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="bgc-{{color}}-100">
+                <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B100">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B65">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B40">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B30">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B15">palette</span></mat-icon>
+              </div>
+            </mat-card>
+          </div>
+          <div flex-gt-sm="20" *ngFor="let color of neutrals">
+            <mat-card>
+              <div class="mat-caption pad-xs">class="tc-dark-{{color}}-"</div>
+              <div class="bgc-{{color}}-100">
+                <mat-icon><span class="tc-dark-{{color}}-500">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B100">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B65">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B40">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B30">palette</span></mat-icon>
+                <mat-icon><span class="tc-dark-{{color}}-B15">palette</span></mat-icon>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
 <mat-card>
   <mat-card-title>Material Design Color Resources</mat-card-title>
   <mat-divider></mat-divider>
