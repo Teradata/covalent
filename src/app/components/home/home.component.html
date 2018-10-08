@@ -10,19 +10,28 @@
           <div class="push-top-xl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
             <div layout="row" layout-align="start center">
-              <h1 class="mat-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['mat-headline']">Covalent UI Platform for <span hide-xs>building</span> enterprise <span hide-xs>desktop</span> web apps</h1>
+              <mat-icon class="mat-icon-svg-lg pull-left push-right-sm" svgIcon="assets:covalent" hide-gt-xs></mat-icon>
+              <h1 class="mat-title tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="gt-xs" [mediaClasses]="['mat-display-1']">Covalent UI Platform for <span hide-xs>building</span> enterprise <span hide-xs>desktop</span> web apps</h1>
             </div>
             <h2 class="mat-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
             <div class="push-top-xl" hide-xs></div>
-            <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
-            <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" matTooltip="Star us on Github!" matTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
-              <mat-icon svgIcon="assets:github" class="pad-right-xs"></mat-icon>
-              <span *ngIf="starCount"><mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}</span>
-            </a>
+            <div layout="row" layout-align="start center">
+              <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']"
+                [routerLink]="['/docs']">View Docs</button>
+              <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" matTooltip="Star us on Github!"
+                matTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+                <div layout="row" layout-align="start center">
+                  <mat-icon svgIcon="assets:github" class="pull-top-xs pad-right-xs"></mat-icon>
+                  <span *ngIf="starCount">
+                    <mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
-        <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
+        <div flex="40" hide-xs layout="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
           <mat-icon class="mat-icon-svg-xxl" svgIcon="assets:covalent" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></mat-icon>
         </div>
       </div>
