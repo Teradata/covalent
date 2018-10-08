@@ -107,7 +107,6 @@
         </div>
       </td-navigation-drawer>
       <td-layout-nav-list #navList
-            color="accent"
             [opened]="media.registerQuery('gt-sm') | async"
             [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
             [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
@@ -180,7 +179,6 @@
             </div>
           </td-navigation-drawer>
           <td-layout-nav-list #navList
-                color="accent"
                 [opened]="media.registerQuery('gt-sm') | async"
                 [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
                 [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
