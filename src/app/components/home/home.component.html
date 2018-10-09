@@ -4,32 +4,41 @@
   </button>
   <td-toolbar td-toolbar-content flex layout="row"></td-toolbar>
   <div>
-    <section class="bgc-blue-grey-800">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate'">
       <div layout="row">
         <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xs', 'pad-left-xl']">
           <div class="push-top-xl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
             <div layout="row" layout-align="start center">
-              <h1 class="mat-display-1 tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['mat-headline']">Covalent UI Platform for <span hide-xs>building</span> enterprise <span hide-xs>desktop</span> web apps</h1>
+              <mat-icon class="mat-icon-svg-lg pull-left push-right-sm" svgIcon="assets:covalent" hide-gt-xs></mat-icon>
+              <h1 class="mat-title tc-blue-grey-50 push-top-xs push-bottom-sm" tdMediaToggle="gt-xs" [mediaClasses]="['mat-display-1']">Covalent UI Platform for <span hide-xs>building</span> enterprise <span hide-xs>desktop</span> web apps</h1>
             </div>
             <h2 class="mat-headline tc-blue-grey-100 push-top-xs push-bottom-sm" tdMediaToggle="xs" [mediaClasses]="['text-lg']">An open-source UI Platform from Teradata that combines a comprehensive design language with a powerful web framework, built on Angular &amp; Angular Material (Design).</h2>
             <div class="push-top-xl" hide-xs></div>
-            <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" [routerLink]="['/docs']">View Docs</button>
-            <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" matTooltip="Star us on Github!" matTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
-              <mat-icon svgIcon="assets:github" class="pad-right-xs"></mat-icon>
-              <span *ngIf="starCount"><mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}</span>
-            </a>
+            <div layout="row" layout-align="start center">
+              <button mat-raised-button color="accent" class="text-upper" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']"
+                [routerLink]="['/docs']">View Docs</button>
+              <a mat-raised-button color="primary" class="push-left" tdMediaToggle="gt-xs" [mediaClasses]="['text-xxl']" matTooltip="Star us on Github!"
+                matTooltipPosition="below" href="https://github.com/Teradata/covalent/stargazers" target="_blank">
+                <div layout="row" layout-align="start center">
+                  <mat-icon svgIcon="assets:github" class="pull-top-xs pad-right-xs"></mat-icon>
+                  <span *ngIf="starCount">
+                    <mat-icon class="text-md tc-orange-A700">star</mat-icon> {{starCount}}
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
-        <div flex="40" flex-xs="20" flex-order-xs="1" layout-gt-xs="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
+        <div flex="40" hide-xs layout="column" layout-align="center start" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl', 'pad-right-xl']">
           <mat-icon class="mat-icon-svg-xxl" svgIcon="assets:covalent" tdMediaToggle="xs" [mediaClasses]="['push-top', 'push-left']"></mat-icon>
         </div>
       </div>
     </section>
     <mat-toolbar color="primary">
     </mat-toolbar>
-    <section class="bgc-blue-grey-100">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate-100'">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-md" hide-xs></div>
@@ -38,8 +47,8 @@
               <ng-template let-item let-last="last" ngFor [ngForOf]="sections">
                 <a mat-list-item [routerLink]="[item.route]">
                   <mat-icon matListAvatar><span class="tc-{{item.color}}">{{item.icon}}</span></mat-icon>
-                  <h3 class="tc-blue-grey-900" matLine> {{item.title}} </h3>
-                  <p class="tc-blue-grey-700" matLine> {{item.description}} </p>
+                  <h3 matLine> {{item.title}} </h3>
+                  <p matLine> {{item.description}} </p>
                 </a>
                 <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
               </ng-template>
@@ -52,9 +61,9 @@
                       <mat-icon class="push-right-sm">
                         <span class="tc-{{item.color}}">{{item.icon}}</span>
                       </mat-icon>
-                      <div class="mat-title push-none text-xxl tc-blue-grey-900">{{item.title}}</div>
+                      <div class="mat-title push-none text-xxl">{{item.title}}</div>
                     </div>
-                    <div class="mat-subheading-2 tc-blue-grey-700 text-wrap text-left"> {{item.description}} </div>   
+                    <div class="mat-subheading-2 text-wrap text-left"> {{item.description}} </div>   
                   </a>
                 </div>
               </ng-template>
@@ -64,7 +73,7 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-800 tc-white">
+    <section class="bgc-td-slate-700 tc-white">
       <div layout="row">
         <div flex flex-order-xs="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xxl" hide-xs></div>
@@ -80,7 +89,7 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-900">
+    <section class="bgc-td-slate-900">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad']">
           <div class="push-top-xl" hide-xs></div>
@@ -117,14 +126,14 @@
         </div>
       </div>
     </section>
-    <section class="bgc-blue-grey-100">
+    <section [class]="activeTheme === 'theme-dark' ? 'bgc-black' : 'bgc-td-slate-100'">
       <div layout="row">
         <div flex flex-order="2" class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xxl" hide-xs></div>
           <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
             <h2 class="mat-display-1 tc-green-A700 push-top-xs push-bottom-sm">Following the Material Design spec</h2>
-            <h3 class="mat-headline tc-blue-grey-700 push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
-            <h4 class="mat-headline tc-blue-grey-600 push-top-xs push-bottom-sm" hide-xs>Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
+            <h3 class="mat-headline push-top-xs push-bottom-sm">Covalent follows the Material Design specification as closely as possible through the construction of all components.</h3>
+            <h4 class="mat-headline push-top-xs push-bottom-sm" hide-xs>Adopting Material Design as our own spec allows our UI/UX staff to adopt and share powerful open-source resources, while Covalent end users enjoy the immediate familiarity and affordance of this global deign spec.</h4>
           </div>
           <div class="push-bottom-xl" hide-xs></div>
         </div>
@@ -133,7 +142,7 @@
         </div>
       </div>
     </section>
-    <section class="theme-dark tc-white bgc-blue-grey-900">
+    <section class="theme-dark tc-white bgc-td-slate-700">
       <div layout-gt-xs="row">
         <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
           <div class="push-top-xl" hide-xs></div>
@@ -308,7 +317,7 @@
   </div>
   <td-layout-footer color="primary" tdMediaToggle="xs" [mediaClasses]="['text-center']">
     <div layout-gt-xs="row" layout-align="start center">
-      <div class="mat-caption">Copyright &copy; 2016 - 2017 Teradata. All rights reserved</div>
+      <div class="mat-caption">©2016 - {{year}} Teradata. All Rights Reserved</div>
       <span flex></span>
       <div layout-gt-xs="row">
         <a href="https://gitter.im/Teradata/covalent" target="_blank" mat-button class="text-upper">Gitter Chat</a>

@@ -14,4 +14,7 @@ export class LogoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  // Current date
+  year: any = new Date().getFullYear();
+
 }
