@@ -26,6 +26,7 @@ interface ITdLineSeries {
     type?: TdSeriesType;
     id?: string;
     name?: string;
+    color?: string;
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
     yAxisIndex?: number;
@@ -47,7 +48,6 @@ interface ITdLineSeries {
     label?: ITdLabel;
     itemStyle?: ITdItemStyle;
     lineStyle?: ITdLineStyle;
-    color?: any;
     width?: number;
     shadowBlur?: number;
     shadowColor?: number;
