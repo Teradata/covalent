@@ -32,6 +32,8 @@
       align-items: center;
       align-content: center;
       justify-content: start;
+      // truncate content on flexbox children
+      min-width: 0;
       &.td-chip-stacked {
         // layout-align space-between center
         justify-content: space-between;
@@ -63,6 +65,9 @@
           width: 32px;
           @include rtl(margin, 0 8px 0 -12px, 0 -12px 0 8px);
           border-radius: 50%;
+          // emulate flex="none"
+          flex: 0 0 auto;
+          box-sizing: border-box;
         }
       }
       box-sizing: border-box;
