@@ -71,6 +71,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
   private _tabIndex: number = 0;
+  private _touchendDebounce: number = 100;
 
   _internalClick: boolean = false;
   _internalActivateOption: boolean = false;
@@ -722,6 +723,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
         fromEvent(this._document, 'click'),
         fromEvent(this._document, 'touchend'),
       ).pipe(
+        debounceTime(this._touchendDebounce),
         filter(
           (event: MouseEvent) => {
             const clickTarget: HTMLElement = <HTMLElement>event.target;
