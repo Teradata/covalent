@@ -18,7 +18,6 @@ import { Subscription, Subject, fromEvent, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import * as echarts from 'echarts/lib/echarts';
-
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/legendScroll';

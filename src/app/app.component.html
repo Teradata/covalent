@@ -1,5 +1,5 @@
 <h3>Bar Test</h3>
-<td-chart [style.height.px]="300"
+<td-chart [style.height.px]="600"
                 [dataZoom]="false">
   <td-chart-tooltip [trigger]="'item'">
     <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
@@ -16,8 +16,9 @@
     </ng-template>
   </td-chart-tooltip>
   <td-chart-x-axis [show]="true"
-                    [position]="'top'"
+                    [position]="'bottom'"
                     [type]="'category'"
+                    [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
                     [boundaryGap]="true"
                     [axisLine]="xLine"
                     [splitLine]="{show: false}">
@@ -27,15 +28,21 @@
                     [position]="barYaxisPosition"
                     [axisLabel]="yAxisLabel"
                     [axisLine]="yLine"
-                    [max]="120"
+                    [max]="200"
                     [splitLine]="splitLineBar">
   </td-chart-y-axis>
   <td-chart-series td-bar
                    *ngFor="let series of barPlot"
                    [data]="series.data"
                    [name]="series.name"
+                   [markPoint]="series.markPoint"
+                   [markLine]="series.markLine"
                    [itemStyle]="series.itemStyle">
   </td-chart-series>
+</td-chart>
+<h3>Bar Test (config object)</h3>
+<td-chart [style.height.px]="300"
+          [config]="barConfig">
 </td-chart>
 <h3>Line Test (atomic)</h3>
 <div layout="row">
@@ -43,7 +50,7 @@
     Show/Hide Tooltip
   </button>
 </div>
-<td-chart [style.height.px]="300" [config]="{series: linePlot}">
+<td-chart [style.height.px]="300">
   <td-chart-tooltip [show]="showTooltip">
     <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
       <ng-container *ngIf="params">
@@ -77,8 +84,10 @@
   </td-chart-y-axis>
   <td-chart-series td-line
                     *ngFor="let series of linePlot"
+                    [symbolSize]="14"
                     [data]="series.data"
                     [name]="series.name"
+                    [symbol]="roundRectMarkPointSymbol"
                     [lineStyle]="series.lineStyle">
   </td-chart-series>
 </td-chart>
@@ -86,3 +95,50 @@
 <td-chart [style.height.px]="300"
           [config]="lineConfig">
 </td-chart>
+<h3>Combination (config object)</h3>
+<td-chart [style.height.px]="300"
+          [config]="comboConfig">
+</td-chart>
+<h3>Scatter (atomic)</h3>
+<td-chart [style.height.px]="300"
+                [dataZoom]="false">
+  <td-chart-tooltip [trigger]="'item'">
+    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+      <ng-container *ngIf="params">
+        <div layout="row" layout-align="start center">
+          <mat-icon>
+            <span class="tc-blue-300">person</span>
+          </mat-icon>
+          <span class="mat-caption pad-left-sm">
+            {{params.seriesName + ': ' + params.value}}
+          </span>
+        </div>
+      </ng-container>
+    </ng-template>
+  </td-chart-tooltip>
+  <td-chart-x-axis [show]="true"
+                    [position]="'bottom'"
+                    [type]="'value'"
+                    [boundaryGap]="true"
+                    [axisLine]="xLine"
+                    [splitLine]="{show: false}">
+  </td-chart-x-axis>
+  <td-chart-y-axis [show]="true"
+                    [type]="'value'"
+                    [axisLine]="yLine"
+                    [splitLine]="splitLineBar">
+  </td-chart-y-axis>
+  <td-chart-series td-scatter
+                   *ngFor="let series of configScatter.series"
+                   [data]="series.data"
+                   [name]="series.name"
+                   [symbolSize]="series.symbolSize"
+                   [markPoint]="series.markPoint"
+                   [markLine]="series.markLine"
+                   [itemStyle]="series.itemStyle">
+  </td-chart-series>
+</td-chart>
+<h3>Scatter (config Object)</h3>
+<td-chart [style.height.px]="300"
+          [config]="configScatter">
+</td-chart>  

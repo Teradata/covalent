@@ -8,12 +8,12 @@ import {
 import { TdChartOptionsService } from '../chart.service';
 import { assignDefined } from '../utils';
 import { 
-  IAxisLine,
-  IAxisLabel,
-  IAxisTick,
-  ISplitLine,
-  ISplitArea,
-  IAxisPointer,
+  ITdAxisLine,
+  ITdAxisLabel,
+  ITdAxisTick,
+  ITdSplitLine,
+  ITdSplitArea,
+  ITdAxisPointer,
   TdAxisType,
   TdNameLocation,
   TdXAxisPosition,
@@ -46,13 +46,13 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   @Input('logBase') logBase: number;
   @Input('silent') silent: boolean;
   @Input('triggerEvent') triggerEvent: boolean;
-  @Input('axisLine') axisLine: IAxisLine;
-  @Input('axisTick') axisTick: IAxisTick;
-  @Input('axisLabel') axisLabel: IAxisLabel;
-  @Input('splitLine') splitLine: ISplitLine;
-  @Input('splitArea') splitArea: ISplitArea;
+  @Input('axisLine') axisLine: ITdAxisLine;
+  @Input('axisTick') axisTick: ITdAxisTick;
+  @Input('axisLabel') axisLabel: ITdAxisLabel;
+  @Input('splitLine') splitLine: ITdSplitLine;
+  @Input('splitArea') splitArea: ITdSplitArea;
   @Input('data') data: any;
-  @Input('axisPointer') axisPointer: IAxisPointer;
+  @Input('axisPointer') axisPointer: ITdAxisPointer;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
 

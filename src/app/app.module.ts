@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
+import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
 
 import { DocsAppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
@@ -39,6 +40,7 @@ import { appRoutes, appRoutingProviders } from './app.routes';
     CovalentBaseEchartsModule,
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
+    CovalentScatterEchartsModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

@@ -7,40 +7,38 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
-import 'echarts/lib/chart/line';
+import 'echarts/lib/chart/scatter';
 
 import { 
   TdChartOptionsService,
   assignDefined,
+  TdSeriesType,
   TdCoordinateSystem,
   TdMarkPointSymbol,
-  ITdLabel,
-  ITdItemStyle,
-  ITdLineStyle,
-  ITdAreaStyle,
-  TdSeriesLayoutBy,
   ITdMarkPoint,
+  ITdItemStyle,
+  ITdLabel,
+  ITdEmphasis,
+  TdSeriesLayoutBy,
   ITdMarkLine,
   ITdMarkArea,
-  ITdSeriesTooltip, 
-  TdSeriesType,
-  ITdEmphasis,
+  ITdSeriesTooltip,
 } from '@covalent/echarts/base';
 
-import { ITdLineConfig } from './line-config.interface';
-
+import { ITdScatterConfig } from './scatter-config.interface';
+  
 @Component({
-  selector: 'td-chart-series[td-line]',
+  selector: 'td-chart-series[td-scatter]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy {
+export class TdChartSeriesScatterComponent implements OnChanges, OnInit, OnDestroy {
 
-  private _type: TdSeriesType = TdSeriesType.Line;
+  private _type: TdSeriesType = TdSeriesType.Scatter;
 
   private _state: any = {};
 
-  @Input('config') config: ITdLineConfig = {};
+  @Input('config') config: ITdScatterConfig = {};
 
   @Input('id') id: string;
   @Input('name') name: string;
@@ -48,28 +46,23 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
   @Input('polarIndex') polarIndex: number;
+  @Input('geoIndex') geoIndex: number;
+  @Input('calendarIndex') calendarIndex: number;
+  @Input('hoverAnimation') hoverAnimation: boolean;
+  @Input('legendHoverLink') legendHoverLink: boolean;
   @Input('symbol') symbol: TdMarkPointSymbol | string;
   @Input('symbolSize') symbolSize: number | any[] | Function;
   @Input('symbolRotate') symbolRotate: number;
   @Input('symbolKeepAspect') symbolKeepAspect: boolean;
   @Input('symbolOffset') symbolOffset: any[];
-  @Input('showSymbol') showSymbol: boolean;
-  @Input('showAllSymbol') showAllSymbol: boolean;
-  @Input('hoverAnimation') hoverAnimation: boolean;
-  @Input('legendHoverLink') legendHoverLink: boolean;
-  @Input('stack') stack: string;
+  @Input('large') large: boolean;
+  @Input('largeThreshold') largeThreshold: number;
   @Input('cursor') cursor: string;
-  @Input('connectNulls') connectNulls: boolean;
-  @Input('clipOverflow') clipOverflow: boolean;
-  @Input('step') step: string | boolean;
   @Input('label') label: ITdLabel;
   @Input('itemStyle') itemStyle: ITdItemStyle;
-  @Input('lineStyle') lineStyle: ITdLineStyle;
-  @Input('areaStyle') areaStyle: ITdAreaStyle;
   @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('smooth') smooth: boolean | number;
-  @Input('smoothMonotone') smoothMonotone: string;
-  @Input('sampling') sampling: string;
+  @Input('progressive') progressive: number;
+  @Input('progressiveThreshold') progressiveThreshold: number;
   @Input('dimensions') dimensions: any[];
   @Input('encode') encode: any;
   @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
@@ -109,34 +102,29 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
   private _setOptions(): void {
     let config: any = assignDefined(this._state, this.config, {
       id: this.id,
-      type: this._type,
       name: this.name,
+      type: this._type,
       coordinateSystem: this.coordinateSystem,
       xAxisIndex: this.xAxisIndex,
       yAxisIndex: this.yAxisIndex,
       polarIndex: this.polarIndex,
+      geoIndex: this.geoIndex,
+      calendarIndex: this.calendarIndex,
+      hoverAnimation: this.hoverAnimation,
+      legendHoverLink: this.legendHoverLink,
       symbol: this.symbol,
       symbolSize: this.symbolSize,
       symbolRotate: this.symbolRotate,
       symbolKeepAspect: this.symbolKeepAspect,
       symbolOffset: this.symbolOffset,
-      showSymbol: this.showSymbol,
-      showAllSymbol: this.showAllSymbol,
-      hoverAnimation: this.hoverAnimation,
-      legendHoverLink: this.legendHoverLink,
-      stack: this.stack,
+      large: this.large,
+      largeThreshold: this.largeThreshold,
       cursor: this.cursor,
-      connectNulls: this.connectNulls,
-      clipOverflow: this.clipOverflow,
-      step: this.step,
       label: this.label,
       itemStyle: this.itemStyle,
-      lineStyle: this.lineStyle,
-      areaStyle: this.areaStyle,
       emphasis: this.emphasis,
-      smooth: this.smooth,
-      smoothMonotone: this.smoothMonotone,
-      sampling: this.sampling,
+      progressive: this.progressive,
+      progressiveThreshold: this.progressiveThreshold,
       dimensions: this.dimensions,
       encode: this.encode,
       seriesLayoutBy: this.seriesLayoutBy,

@@ -9,7 +9,18 @@ import {
 
 import 'echarts/lib/chart/bar';
 
-import { TdChartOptionsService, assignDefined } from '@covalent/echarts/base';
+import { 
+  TdChartOptionsService,
+  assignDefined,
+  TdCoordinateSystem,
+  ITdItemStyle,
+  ITdEmphasis,
+  TdSeriesLayoutBy,
+  ITdMarkPoint,
+  ITdMarkLine,
+  ITdMarkArea,
+  ITdSeriesTooltip,
+} from '@covalent/echarts/base';
 
 @Component({
   selector: 'td-chart-series[td-bar]',
@@ -26,15 +37,15 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
 
   @Input('id') id: string;
   @Input('name') name: string;
-  @Input('coordinateSystem') coordinateSystem: string;
+  @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
   @Input('legendHoverLink') legendHoverLink: boolean;
   @Input('stack') stack: string;
   @Input('cursor') cursor: string;
   @Input('label') label: any;
-  @Input('itemStyle') itemStyle: any;
-  @Input('emphasis') emphasis: any;
+  @Input('itemStyle') itemStyle: ITdItemStyle;
+  @Input('emphasis') emphasis: ITdEmphasis;
   @Input('barWidth') barWidth: number;
   @Input('barMaxWidth') barMaxWidth: number;
   @Input('barMinHeight') barMinHeight: number;
@@ -47,12 +58,12 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
   @Input('progressiveChunkMode') progressiveChunkMode: string;
   @Input('dimensions') dimensions: any[];
   @Input('encode') encode: any;
-  @Input('seriesLayoutBy') seriesLayoutBy: string;
+  @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
   @Input('datasetIndex') datasetIndex: number;
   @Input('data') data: any[];
-  @Input('markPoint') markPoint: any;
-  @Input('markLine') markLine: any;
-  @Input('markArea') markArea: any;
+  @Input('markPoint') markPoint: ITdMarkPoint;
+  @Input('markLine') markLine: ITdMarkLine;
+  @Input('markArea') markArea: ITdMarkArea;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('animation') animation: boolean;
@@ -63,7 +74,7 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
   @Input('animationDurationUpdate') animationDurationUpdate: number | Function;
   @Input('animationEasingUpdate') animationEasingUpdate: string;
   @Input('animationDelayUpdate') animationDelayUpdate: number | Function;
-  @Input('tooltip') tooltip: any;
+  @Input('tooltip') tooltip: ITdSeriesTooltip;
 
   constructor(private _optionsService: TdChartOptionsService) {
   }
@@ -130,5 +141,4 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
   private _removeOption(): void {
     this._optionsService.clearOption('series');
   }
-
 }

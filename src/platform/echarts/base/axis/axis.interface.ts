@@ -6,19 +6,24 @@ import {
   TdFontFamily,
   TdPointerType,
   TdStatus,
+  ITdLineStyle,
+  TdLineType,
+  ITdTextStyle,
+  ITdAxisPointerLabel,
+  ITdBaseStyle,
 } from '../base.types';
 
-interface IAxisLine {
+interface ITdAxisLine {
   show: boolean;
   onZero?: boolean;
   onZeroAxisIndex?: number;
   symbol?: string | string[];
   symbolSize?: number | number[];
   symbolOffset?: number | number[];
-  lineStyle?: ITdStyle;
+  lineStyle?: ITdLineStyle;
 }
 
-interface IAxisLabel {
+interface ITdAxisLabel {
   show?: boolean;
   interval?: any;
   inside?: boolean;
@@ -54,53 +59,34 @@ interface IAxisLabel {
   textShadowOffsetY?: number;
 }
 
-interface IAxisTick {
+interface ITdAxisTick {
   alignWithLabel?: boolean;
   interval?: any;
   inside?: boolean;
   length?: number;
-  lineStyle?: ITdStyle;
+  lineStyle?: ITdLineStyle;
 }
 
-interface ISplitLine {
+interface ITdSplitLine {
+  type?: TdLineType;
   show?: boolean;
   interval?: any;
-  lineStyle?: ITdStyle;
+  lineStyle?: ITdLineStyle;
 }
 
-interface ISplitArea {
+interface ITdSplitArea {
   show?: boolean;
   interval?: any;
   areaStyle?: ITdBaseStyle;
 }
 
-interface ITdBaseStyle {
-  color?: any;
-  shadowBlur?: number;
-  shadowColor?: any;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
-  opacity?: number;
-}
-
-interface ITdStyle {
-  color?: any;
-  width?: number;
-  type?: TdAxisLineType;
-  shadowBlur?: number;
-  shadowColor?: any;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
-  opacity?: number;
-}
-
-interface IAxisPointer {
+interface ITdAxisPointer {
   show?: boolean;
   type?: TdPointerType;
   snap?: boolean;
   z?: number;
-  label?: IAxisPointerLabel;
-  lineStyle?: ITdStyle;
+  label?: ITdAxisPointerLabel;
+  lineStyle?: ITdLineStyle;
   shadowStyle?: ITdBaseStyle;
   triggerTooltip?: boolean;
   value?: number;
@@ -108,36 +94,7 @@ interface IAxisPointer {
   handle?: object; // TODO Look into this more
 }
 
-interface IAxisPointerLabel {
-  show: boolean;
-  precision: string | number;
-  formatter: any;
-  margin: number;
-  color: string;
-  fontStyle: TdFontStyle;
-  fontWeight: TdFontWeight;
-  fontFamily: TdFontFamily;
-  fontSize: number;
-  lineHeight: number;
-  width: number | string;
-  height: number | string;
-  textBorderColor: string;
-  textBorderWidth: number;
-  textShadowColor: string;
-  textShadowBlur: number;
-  textShadowOffsetX: number;
-  textShadowOffsetY: number;
-  padding: number | number[];
-  backgroundColor: string;
-  borderColor: string;
-  borderWidth: number;
-  shadowBlur: number;
-  shadowColor: any;
-  shadowOffsetX: number;
-  shadowOffsetY: number;
-}
-
-interface INameAxisTextStyle {
+interface ITdNameAxisTextStyle {
   color?: string | object;
   fontStyle?: TdFontStyle;
   fontWeight?: TdFontWeight;
@@ -170,6 +127,76 @@ interface INameAxisTextStyle {
   rich: object;
 }
 
+interface ITdXAxisConfig {
+  id?: string;
+  show?: boolean ;
+  gridIndex?: number ;
+  position?: TdXAxisPosition;
+  offset?: number ;
+  type?: TdAxisType;
+  name?: string;
+  nameLocation?: TdNameLocation;
+  nameTextStyle?: ITdTextStyle;
+  nameGap?: number;
+  nameRotate?: number;
+  inverse?: boolean;
+  boundaryGap?: boolean |  any[];
+  min?: number | string | Function;
+  max?: number | string;
+  scale?: boolean;
+  splitNumber?: number;
+  minInterval?: number;
+  maxInterval?: number;
+  interval?: number;
+  logBase?: number;
+  silent?: false;
+  triggerEvent?: boolean;
+  axisLine?: ITdAxisLine;
+  axisTick?: ITdAxisTick;
+  axisLabel?: ITdAxisLabel;
+  splitLine?: ITdSplitLine;
+  splitArea?: ITdSplitArea;
+  data?: any[];
+  axisPointer?: ITdAxisPointer;
+  zlevel?: number;
+  z?: number;
+}
+
+interface ITdYAxisConfig {
+  id?: string;
+  show?: boolean ;
+  gridIndex?: number ;
+  position?: TdYAxisPosition;
+  offset?: number ;
+  type?: TdAxisType;
+  name?: string;
+  nameLocation?: TdNameLocation;
+  nameTextStyle?: ITdTextStyle;
+  nameGap?: number;
+  nameRotate?: number;
+  inverse?: boolean;
+  boundaryGap?: boolean |  any[];
+  min?: number | string | Function;
+  max?: number | string;
+  scale?: boolean;
+  splitNumber?: number;
+  minInterval?: number;
+  maxInterval?: number;
+  interval?: number;
+  logBase?: number;
+  silent?: false;
+  triggerEvent?: boolean;
+  axisLine?: ITdAxisLine;
+  axisTick?: ITdAxisTick;
+  axisLabel?: ITdAxisLabel;
+  splitLine?: ITdSplitLine;
+  splitArea?: ITdSplitArea;
+  data?: any[];
+  axisPointer?: ITdAxisPointer;
+  zlevel?: number;
+  z?: number;
+}
+
 enum TdNameLocation {
   Start = 'start',
   Middle = 'middle',
@@ -194,26 +221,18 @@ enum TdXAxisPosition {
   Bottom = 'bottom',
 }
 
-enum TdAxisLineType {
-  Solid = 'solid',
-  Dashed = 'dashed',
-  Dotted = 'dotted',
-}
-
 export {
-  IAxisLine,
-  IAxisLabel,
-  IAxisTick,
-  ISplitLine,
-  IAxisPointerLabel,
-  INameAxisTextStyle,
-  ISplitArea,
-  IAxisPointer,
-  ITdBaseStyle,
-  ITdStyle,
+  ITdAxisLine,
+  ITdAxisLabel,
+  ITdAxisTick,
+  ITdSplitLine,
+  ITdNameAxisTextStyle,
+  ITdSplitArea,
+  ITdAxisPointer,
   TdYAxisPosition,
   TdXAxisPosition,
-  TdAxisLineType,
   TdNameLocation,
   TdAxisType,
+  ITdXAxisConfig,
+  ITdYAxisConfig,
 };
