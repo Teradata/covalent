@@ -42,6 +42,7 @@ export class TdChartSeriesScatterComponent implements OnChanges, OnInit, OnDestr
 
   @Input('id') id: string;
   @Input('name') name: string;
+  @Input('color') color: string;
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
@@ -102,8 +103,9 @@ export class TdChartSeriesScatterComponent implements OnChanges, OnInit, OnDestr
   private _setOptions(): void {
     let config: any = assignDefined(this._state, this.config, {
       id: this.id,
-      name: this.name,
       type: this._type,
+      name: this.name,
+      color: this.color,
       coordinateSystem: this.coordinateSystem,
       xAxisIndex: this.xAxisIndex,
       yAxisIndex: this.yAxisIndex,

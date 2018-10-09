@@ -44,6 +44,7 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
 
   @Input('id') id: string;
   @Input('name') name: string;
+  @Input('color') color: string;
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
@@ -111,6 +112,7 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
       id: this.id,
       type: this._type,
       name: this.name,
+      color: this.color,
       coordinateSystem: this.coordinateSystem,
       xAxisIndex: this.xAxisIndex,
       yAxisIndex: this.yAxisIndex,
