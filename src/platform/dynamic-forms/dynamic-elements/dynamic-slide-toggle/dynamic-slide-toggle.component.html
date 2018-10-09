@@ -1,6 +1,7 @@
 <div class="td-dynamic-slide-toggle-wrapper">
   <mat-slide-toggle [formControl]="control"
-                   [required]="required">
+                    [attr.name]="name"
+                    [required]="required">
     {{label}}
   </mat-slide-toggle>
 </div>
