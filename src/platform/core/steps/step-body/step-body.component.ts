@@ -2,14 +2,14 @@ import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 
 import { StepState } from '../step.component';
 
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 
 @Component({
   selector: 'td-step-body',
   styleUrls: ['./step-body.component.scss' ],
   templateUrl: './step-body.component.html',
   animations: [
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
   ],
 })
 export class TdStepBodyComponent {
