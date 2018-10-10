@@ -30,11 +30,9 @@ import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
-import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 // External Dependencies
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -55,6 +53,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -101,7 +100,6 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     NotificationsDemoComponent,
     VirtualScrollDemoComponent,
     // External Dependencies
-    NgxChartsDemoComponent,
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
   ],
@@ -129,6 +127,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     MatRippleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDividerModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -153,7 +152,6 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentCodeEditorModule,
     CovalentTextEditorModule,
     DocumentationToolsModule,
-    NgxChartsModule,
     TranslateModule,
     componentsRoutes,
     ToolbarModule,

@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 
 import { TdLayoutComponent } from '../layout.component';
 
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 
 @Directive({
   selector: '[td-navigation-drawer-menu]',
@@ -28,7 +28,7 @@ export class TdNavigationDrawerToolbarDirective {
   selector: 'td-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss' ],
   templateUrl: './navigation-drawer.component.html',
-  animations: [ TdCollapseAnimation() ],
+  animations: [ tdCollapseAnimation ],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
 

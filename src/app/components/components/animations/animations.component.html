@@ -7,21 +7,15 @@
 
     <h3>Setup:</h3>
     <p>Import individual animation utilities as needed into the component that will contain the elements you want to animate.</p>
-    <p>Replace the "TdAnimationUtility" stub variable in code setup below with the respective animation utilities you decide to equip.</p>
-    <p>
-      Every utility function has default animation properties that can be modified. One of which is a default anchor name that
-      can be used implicitly or overridden with your own custom name. The anchor name is used to attach the animation to an arbitrary
-      element in the template.
-    </p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { TdAnimationUtility_A, TdAnimationUtility_B } from '@covalent/core/common';
+        import { tdAnimationUtility_A, tdAnimationUtility_B } from '@covalent/core/common';
 
         @Component({
           ...
           animations: [
-            TdAnimationUtility_A(), // using implicit anchor name in template
-            TdAnimationUtility_B({ anchor: 'myAnchor' }), // using custom anchor name in template
+            tdAnimationUtility_A,
+            tdAnimationUtility_B,
           ],
         })
         export class MyComponent {
@@ -42,7 +36,7 @@
   <mat-card-title>Rotate Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="mat-body-1">Use <code>TdRotateAnimation</code> to rotate any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>tdRotateAnimation</code> to rotate any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
@@ -53,10 +47,10 @@
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdRotateAnimation } from '@covalent/core/common';
+          import { tdRotateAnimation } from '@covalent/core/common';
           ...
           animations: [
-            TdRotateAnimation(), // using implicit anchor name 'tdRotate' in template
+            tdRotateAnimation, // using implicit anchor name '@tdRotate' in template
           ],
           ...
           class MyDemo {
@@ -78,18 +72,17 @@
 
     <div>
       <h3>Demo 2:</h3>
-      <button mat-raised-button [@tdRotateNeg45]="rotateState2" (click)="rotateState2 = !rotateState2" color="accent">
-        Rotate -45&deg;<mat-icon [@tdRotate545]="rotateState2">mood</mat-icon>
+      <button mat-raised-button [@tdRotate]="{ value: rotateState2, params: { duration: 500, degreesEnd: -45 } }" (click)="rotateState2 = !rotateState2" color="accent">
+        Rotate -45&deg;<mat-icon [@tdRotate]="{ value: rotateState2, params: { duration: 750, degreesEnd: 545 } }">mood</mat-icon>
       </button>
 
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdRotateAnimation } from '@covalent/core/common';
+          import { tdRotateAnimation } from '@covalent/core/common';
           ...
           animations: [
-            TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
-            TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
+            tdRotateAnimation,
           ],
           ...
           class MyDemo {
@@ -100,19 +93,24 @@
       <p>HTML:</p>
       <td-highlight lang="html">
         <![CDATA[
-          <button mat-raised-button [@tdRotateNeg45]="triggerState" (click)="triggerState = !triggerState" color="accent">
-            Rotate -45&deg;<mat-icon [@tdRotate545]="triggerState">mood</mat-icon>
+          <button mat-raised-button [@tdRotate]="{ value: rotateState2, params: { duration: 500, degreesEnd: -45 } }" (click)="triggerState = !triggerState" color="accent">
+            Rotate -45&deg;<mat-icon [@tdRotate]="{ value: rotateState2, params: { duration: 750, degreesEnd: 545 } }">mood</mat-icon>
           </button>
         ]]>
       </td-highlight>
     </div>
     <mat-divider></mat-divider>
     <div>
-      <h2>API:</h2>
+      <h2>Parameter Options:</h2>
       <mat-list>
         <mat-list-item>
-          <h3 matLine>anchor?: string</h3>
-          <p matLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdRotate'.</p>
+          <h3 matLine>degressStart?: number</h3>
+          <p matLine> Degrees of rotation that the dom object will end up in during the "false" state </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>degreesEnd?: number</h3>
+          <p matLine> Degrees of rotation that the dom object will end up in during the "true" state </p>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
@@ -126,15 +124,9 @@
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <h3 matLine>degrees?: number</h3>
-          <p matLine> Degrees of rotation the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise. Defaults to 180 degrees. </p>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
           <h3 matLine>ease?: string</h3>
-          <p matLine>Animation accelerates and decelerates when rotation. Defaults to ease-in.</p>
+          <p matLine>Animation accelerate and decelerate style. Defaults to ease-in.</p>
         </mat-list-item>
-        <mat-divider></mat-divider>
       </mat-list>
     </div>
 
@@ -145,12 +137,12 @@
   <mat-card-title>Collapse Animation</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p class="mat-body-1">Use <code>TdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
+    <p class="mat-body-1">Use <code>tdCollapseAnimation</code> to collapse any element based on a boolean state.</p>
     <div>
       <h3>Demo 1:</h3>
 
       <button mat-raised-button color="accent" (click)="collapseState1 = !collapseState1">Collapse</button>
-      <div [style.overflow]="'hidden'" [@tdCollapse]="collapseState1">
+      <div [style.overflow]="'hidden'" [@tdCollapse]="{ value: collapseState1, params: { duration: 500 }}">
         <mat-card>
           <mat-card-title>Collapse card</mat-card-title>
           <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -161,10 +153,10 @@
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdCollapseAnimation } from '@covalent/core/common';
+          import { tdCollapseAnimation } from '@covalent/core/common';
           ...
           animations: [
-            TdCollapseAnimation(), // using implicit anchor name 'tdCollapse' in template
+            tdCollapseAnimation, // using implicit anchor name 'tdCollapse' in template
           ],
           ...
           class MyDemo {
@@ -176,7 +168,7 @@
       <td-highlight lang="html">
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
-          <div [style.overflow]="'hidden'" [@tdCollapse]="triggerState">
+          <div [style.overflow]="'hidden'" [@tdCollapse]="{ value: triggerState, params: { duration: 500 }}">
             <mat-card>
               <mat-card-title>Collapse card</mat-card-title>
               <mat-card-content>Collapse card with a click!</mat-card-content>
@@ -188,19 +180,14 @@
     </div>
     <mat-divider></mat-divider>
     <div>
-      <h2>API:</h2>
+      <h2>Parameter Options:</h2>
       <mat-list>
-        <mat-list-item>
-          <h3 matLine>anchor?: string</h3>
-          <p matLine> The anchor name is used to attach the animation to an arbitrary element in the template. Defaults to 'tdCollapse'.</p>
-        </mat-list-item>
-        <mat-divider></mat-divider>
         <mat-list-item>
           <h3 matLine>duration?: number</h3>
           <p matLine> Duration the animation will run in milliseconds. Defaults to 150 ms. </p>
         </mat-list-item>
         <mat-divider></mat-divider>
-         <mat-list-item>
+        <mat-list-item>
           <h3 matLine>delay?: number</h3>
           <p matLine> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
         </mat-list-item>
@@ -214,7 +201,6 @@
           <h3 matLine>easeOnOpen?: string</h3>
           <p matLine>Animation accelerates and decelerates when opening. Defaults to ease-out.</p>
         </mat-list-item>
-        <mat-divider></mat-divider>
       </mat-list>
     </div>
 
@@ -241,10 +227,10 @@
       <p>Typescript:</p>
       <td-highlight lang="typescript">
         <![CDATA[
-          import { TdFadeInOutAnimation } from '@covalent/core/common';
+          import { tdFadeInOutAnimation } from '@covalent/core/common';
           ...
           animations: [
-            TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
+            tdFadeInOutAnimation, // using implicit anchor name 'tdFadeInOut' in template
           ],
           ...
           class MyDemo {
@@ -295,7 +281,6 @@
           <h3 matLine>easeOnOut?: string</h3>
           <p matLine>Animation accelerates and decelerates when fading out. Defaults to ease-out.</p>
         </mat-list-item>
-        <mat-divider></mat-divider>
       </mat-list>
     </div>
   </mat-card-content>
@@ -332,19 +317,19 @@
       <td-highlight lang="typescript">
         <![CDATA[
           import {
-            TdBounceAnimation,
-            TdFlashAnimation,
-            TdHeadshakeAnimation,
-            TdJelloAnimation,
-            TdPulseAnimation,
+            tdBounceAnimation,
+            tdFlashAnimation,
+            tdHeadshakeAnimation,
+            tdJelloAnimation,
+            tdPulseAnimation,
           } from '@covalent/core/common';
           ...
           animations: [
-            TdBounceAnimation(), // using implicit anchor name 'tdBounce' in template
-            TdFlashAnimation(), // using implicit anchor name 'tdFlash' in template
-            TdHeadshakeAnimation(), // using implicit anchor name 'tdHeadshake' in template
-            TdJelloAnimation(), // using implicit anchor name 'tdJello' in template
-            TdPulseAnimation(), // using implicit anchor name 'tdPulse' in template
+            tdBounceAnimation, // using implicit anchor name 'tdBounce' in template
+            tdFlashAnimation, // using implicit anchor name 'tdFlash' in template
+            tdHeadshakeAnimation, // using implicit anchor name 'tdHeadshake' in template
+            tdJelloAnimation, // using implicit anchor name 'tdJello' in template
+            tdPulseAnimation, // using implicit anchor name 'tdPulse' in template
           ],
           ...
           class MyDemo {
@@ -381,10 +366,6 @@
     <div>
       <h2>API:</h2>
       <mat-list>
-        <mat-list-item>
-          <h3 matLine>anchor?: string</h3>
-          <p matLine> The anchor name is used to attach the animation to an arbitrary element in the template.</p>
-        </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
           <h3 matLine>duration?: number</h3>
@@ -396,6 +377,10 @@
           <p matLine> Delay before the animation will run in milliseconds. Defaults to 0 ms. </p>
         </mat-list-item>
         <mat-divider></mat-divider>
+        <mat-list-item>
+          <h3 matLine>ease?: number</h3>
+          <p matLine> Animation accelerate and decelerate style. Defaults to ease-out. </p>
+        </mat-list-item>
       </mat-list>
     </div>
   </mat-card-content>

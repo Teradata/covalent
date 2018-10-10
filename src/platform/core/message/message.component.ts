@@ -1,7 +1,7 @@
 import { Component, Directive, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef, ViewChild,
          HostBinding, HostListener, ChangeDetectorRef } from '@angular/core';
 
-import { TdCollapseAnimation, TdFadeInOutAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 
 @Directive({
   selector: '[tdMessageContainer]',
@@ -15,7 +15,7 @@ export class TdMessageContainerDirective {
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
   animations: [
-    TdCollapseAnimation({ duration: 100 }),
+    tdCollapseAnimation,
   ],
 })
 export class TdMessageComponent implements AfterViewInit {
@@ -33,8 +33,8 @@ export class TdMessageComponent implements AfterViewInit {
    * Binding host to tdCollapse animation
    */
   @HostBinding('@tdCollapse')
-  get collapsedAnimation(): boolean {
-    return !this._opened;
+  get collapsedAnimation(): any {
+    return { value: !this._opened, duration: 100 };
   }
 
   /**

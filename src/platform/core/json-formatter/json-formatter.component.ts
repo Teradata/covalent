@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, Optional } from '@angular/core';
 import { Dir } from '@angular/cdk/bidi';
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,7 +8,7 @@ import { TdCollapseAnimation } from '@covalent/core/common';
   styleUrls: ['./json-formatter.component.scss' ],
   templateUrl: './json-formatter.component.html',
   animations: [
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
   ],
 })
 export class TdJsonFormatterComponent {

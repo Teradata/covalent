@@ -14,6 +14,8 @@ export class TdDynamicTextareaComponent {
 
   hint: string = '';
 
+  name: string = '';
+
   required: boolean = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
