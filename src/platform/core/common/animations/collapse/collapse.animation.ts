@@ -27,7 +27,7 @@ export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse
     })),
     state('0',  style({
       height: AUTO_STYLE,
-      display: AUTO_STYLE,
+      visibility: AUTO_STYLE,
     })),
     transition('0 => 1', [
       group([
