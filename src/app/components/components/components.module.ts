@@ -53,6 +53,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
@@ -126,6 +127,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     MatRippleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDividerModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
