@@ -14,6 +14,8 @@ export class TdDynamicFileInputComponent {
 
   label: string = '';
 
+  name: string = '';
+
   hint: string = '';
 
   errorMessageTemplate: TemplateRef<any> = undefined;

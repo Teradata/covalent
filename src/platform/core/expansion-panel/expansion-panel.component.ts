@@ -10,7 +10,7 @@ import {
   mixinDisabled,
   ICanDisableRipple,
   mixinDisableRipple,
-  TdRotateAnimation,
+  tdRotateAnimation,
 } from '@covalent/core/common';
 
 @Directive({
@@ -58,7 +58,7 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
   inputs: ['disabled', 'disableRipple'],
   animations: [
     TdCollapseAnimation(),
-    TdRotateAnimation({ anchor: 'tdRotate' }),
+    tdRotateAnimation,
   ],
 })
 export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {
