@@ -81,6 +81,7 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
   @HostListener('dragover', ['$event'])
   onDragOver(event: Event): void {
     let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
+    // @ts-ignore
     transfer.dropEffect = this._typeCheck(transfer.types);
     if (this.disabled || (!this._multiple &&
       ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
