@@ -34,7 +34,7 @@
             [tabIndex]="-1"
             [matAutocomplete]="autocomplete"
             [formControl]="inputControl"
-            [placeholder]="canAddChip? placeholder : ''"
+            [placeholder]="displayPlaceHolder"
             (keydown)="_inputKeydown($event)"
             (keyup.enter)="_handleAddChip()"
             (focus)="_handleFocus()">

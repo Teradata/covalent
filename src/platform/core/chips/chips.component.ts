@@ -70,6 +70,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _chipAddition: boolean = true;
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
+  private _required: boolean = false;
   private _tabIndex: number = 0;
 
   _internalClick: boolean = false;
@@ -150,6 +151,19 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   /**
+   * required?: boolean
+   * Value is set to true if atleast one chip is needed
+   * Defaults to false
+   */
+  @Input('required')
+  set required(required: boolean) {
+    this._required = coerceBooleanProperty(required);
+  }
+  get required(): boolean {
+    return this._required;
+  }
+
+  /**
    * chipAddition?: boolean
    * Disables the ability to add chips. When setting disabled as true, this will be overriden.
    * Defaults to true.
@@ -190,6 +204,16 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    */
   get canRemoveChip(): boolean {
     return this.chipRemoval && !this.disabled;
+  }
+
+  /**
+   * returns the display placeholder
+   */
+  get displayPlaceHolder(): string {
+    if (!this.canAddChip) {
+      return '';
+    }
+    return (this._required) ? `${this.placeholder} *` :  this.placeholder;
   }
 
   /**
@@ -419,6 +443,9 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
+    // Reset the color to primary
+    this.color = 'primary';
+    
     this._closeAutocomplete();
     timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
@@ -455,6 +482,11 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      */
     if (index === (this._totalChips - 1) && index === 0) {
       this._inputChild.focus();
+
+      // set the input field to warn color when the last chip is deleted when the required attribute is set
+      if (this._required) {
+        this.color = 'warn';
+      }      
     } else if (index < (this._totalChips - 1)) {
       this._focusChip(index + 1);
     } else if (index > 0) {
