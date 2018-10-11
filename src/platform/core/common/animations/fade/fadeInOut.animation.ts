@@ -23,11 +23,11 @@ export interface IFadeInOutAnimation extends IAnimationOptions {
 export const tdFadeInOutAnimation: AnimationTriggerMetadata = trigger('tdFadeInOut', [
     state('0', style({
       opacity: '0',
-      display: 'none',
+      visibility: 'hidden',
     })),
     state('1',  style({
       opacity: AUTO_STYLE,
-      display: AUTO_STYLE,
+      visibility: AUTO_STYLE,
     })),
     transition('0 => 1', [
       group([
@@ -48,11 +48,11 @@ export function TdFadeInOutAnimation(fadeInOut: IFadeInOutAnimation = {}): Anima
   return trigger((fadeInOut.anchor || 'tdFadeInOut'), [
     state('0', style({
       opacity: '0',
-      display: 'none',
+      visibility: 'hidden',
     })),
     state('1',  style({
       opacity: AUTO_STYLE,
-      display: AUTO_STYLE,
+      visibility: AUTO_STYLE,
     })),
     transition('0 => 1', [
       group([
