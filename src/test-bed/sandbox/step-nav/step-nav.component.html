@@ -1,0 +1,33 @@
+<div class="pad">
+  <h2>Navigational Stepper</h2>
+  <h3>Horizontal Stepper</h3>
+  <td-step-nav mode="horizontal">
+    <ng-template let-stepLink let-index="index" let-last="last" ngFor [ngForOf]="routeLinks">
+      <a td-step-link class="td-step-horizontal-header" 
+        [routerLink]="stepLink.link"
+        [active]="activeLinkIndex === index"
+        [label]="stepLink.label"
+        [sublabel]="stepLink.sublabel"
+        [state]="stepLink.state"
+        [number]="index + 1"
+        [disabled]="stepLink.disabled">
+      </a>
+      <span *ngIf="!last" class="td-horizontal-line"></span>
+    </ng-template>
+  </td-step-nav>
+  <mat-divider></mat-divider>
+  <h3>Vertical Stepper</h3>
+  <td-step-nav mode="vertical">
+    <ng-template let-stepLink let-index="index" let-last="last" ngFor [ngForOf]="routeLinks">
+      <a td-step-link class="td-step-vertical-header" 
+        [routerLink]="stepLink.link"
+        [active]="activeLinkIndex === index"
+        [label]="stepLink.label"
+        [sublabel]="stepLink.sublabel"
+        [state]="stepLink.state"
+        [number]="index + 1"
+        [disabled]="stepLink.disabled">
+      </a>
+    </ng-template>
+  </td-step-nav>
+</div>

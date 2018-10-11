@@ -1,6 +1,8 @@
 @import '../breadcrumbs/breadcrumb/breadcrumb-theme';
+@import '../step-nav/step-nav-theme';
 
 // Create a theme.
 @mixin experimental-theme($theme, $config: null) {
   @include td-breadcrumb-theme($theme);
+  @include td-step-nav-theme($theme);
 }

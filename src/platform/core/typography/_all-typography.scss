@@ -6,6 +6,7 @@
 @import '../message/message-theme';
 @import '../paging/paging-bar-theme';
 @import '../steps/steps-theme';
+@import '../../experimental/step-nav/step-nav-theme';
 
 @function td-typography-config(
   $font-family:   'Roboto, "Helvetica Neue", sans-serif',
@@ -46,4 +47,5 @@
   @include td-paging-bar-typography($config);
   @include td-steps-typography($config);
   @include td-layout-typography($config);
+  @include td-step-nav-typography($config);
 }
