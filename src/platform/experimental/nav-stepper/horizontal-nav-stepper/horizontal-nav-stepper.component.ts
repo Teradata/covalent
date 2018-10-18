@@ -89,6 +89,20 @@ export class TdHorizontalStepperComponent implements OnInit, DoCheck, AfterConte
   }
 
   /**
+   * Should we show the left Arrow
+   */
+  get showLeftArrow(): boolean {
+    return this._showLeftArrow;
+  }
+
+  /**
+   * Should we show the right Arrow
+   */
+  get showRightArrow(): boolean {
+    return this._showRightArrow;
+  }
+
+  /**
    * Set the step line separators and display numbers
    */
   private setStepSettings(): void {

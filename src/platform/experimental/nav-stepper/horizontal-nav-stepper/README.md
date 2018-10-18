@@ -11,6 +11,10 @@
 
 + count: number
   + The total count of individual steps (read only)
++ showLeftArrow: boolean
+  + Should we show the left Arrow (read only)
++ showRightArrow: boolean
+  + Should we show the right Arrow (read only)
 
 #### Attributes
 
