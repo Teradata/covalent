@@ -1,0 +1,14 @@
+:host {
+  .td-nav-step {
+    height: 48px;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    justify-content: flex-end;
+    ::ng-deep > * {
+      margin: 0 10px;
+    }
+  }
+}

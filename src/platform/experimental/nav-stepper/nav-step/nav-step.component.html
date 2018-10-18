@@ -1,0 +1,8 @@
+<td-nav-step-header class="td-step-horizontal-header"
+                [number]="number"
+                [active]="active"
+                [state]="state"
+                [displayLine]="displayLine">
+  <ng-template td-nav-step-header-label [ngIf]="true"><ng-content></ng-content></ng-template>
+  <ng-template td-nav-step-header-sublabel class="td-nav-step-sublabel" [ngIf]="sublabel">{{sublabel}}</ng-template>
+</td-nav-step-header>
