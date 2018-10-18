@@ -23,7 +23,7 @@ Leverage the templates to create your own chip or contact chip.
 + placeholder?: string
   + Placeholder for the autocomplete input.
 + required?: boolean
-  + Mandates atleast one chip to be available in the component. Appends * to the placeholder text. 
+  + Mandates at least one chip to be available in the component. Appends * to the placeholder text. 
   + It does not prevent the deletion of last chip but instead sets the input field to warn state
   + Defaults to false
 + disabled?: boolean
@@ -69,7 +69,7 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-chips placeholder="placeholder" required="true"
+<td-chips placeholder="placeholder" required
           color="primary"
           [items]="items"
           [inputPosition]="'before'"

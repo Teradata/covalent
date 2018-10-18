@@ -152,7 +152,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
 
   /**
    * required?: boolean
-   * Value is set to true if atleast one chip is needed
+   * Value is set to true if at least one chip is needed
    * Defaults to false
    */
   @Input('required')
