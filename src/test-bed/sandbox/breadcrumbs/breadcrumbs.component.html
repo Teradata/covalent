@@ -10,7 +10,7 @@
   </td-breadcrumbs>
   <mat-divider></mat-divider>
   <h3>Breadcrumbs with all inputs/outputs</h3>
-  <td-breadcrumbs #breadcrumbs separatorIcon="motorcycle">
+  <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
     <a td-breadcrumb [routerLink]="'/'">Home</a>
     <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
     <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
@@ -31,3 +31,19 @@
     </div>
   </ng-template>
 </div>
+
+<h3>Breadcrumbs in a mat-toolbar with padding</h3>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #breadcrumbsPadded class="pad-left">
+      <a td-breadcrumb routerLink="/">Home</a>
+      <a td-breadcrumb routerLink="/layouts">Layouts</a>
+      <a td-breadcrumb routerLink="/layouts2">Layouts2</a>
+      <a td-breadcrumb routerLink="/layouts3">Layouts3</a>
+      <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    Display: {{ breadcrumbsPadded.count }} Hidden: {{ breadcrumbsPadded.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
