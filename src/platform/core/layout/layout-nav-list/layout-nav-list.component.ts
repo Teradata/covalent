@@ -76,6 +76,18 @@ export class TdLayoutNavListComponent implements ILayoutTogglable {
   @Input('sidenavWidth') sidenavWidth: string = '350px';
 
   /**
+   * containerAutosize?: boolean
+   *
+   * Sets "autosize" of the sidenav-container.
+   * Defaults to "false".
+   *
+   * See documentation for more info and potential performance risks.
+   * 
+   * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
+   */
+  @Input('containerAutosize') containerAutosize: boolean = false;
+  
+  /**
    * navigationRoute?: string
    *
    * option to set the combined route for the icon, logo, and toolbarTitle.

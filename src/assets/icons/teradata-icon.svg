@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Teradata</title>
+    <desc>Copyright Teradata</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <path d="M512,257.7 C512,401.6 405.1,512 256,512 C106.9,512 0,401.6 0,257.7 C0,120.5 106.9,0 256,0 C405.1,0 512,120.5 512,257.7 Z M328.8,356.7 C317.5,361 305.5,363.6 296.6,363.6 C271.7,363.6 255.3,348.9 255.3,315 L255.3,203.7 L331.8,203.7 L331.8,142.7 L255.3,142.7 L255.3,73.4 L180.7,73.4 L180.7,203.7 L180.7,320.7 C180.7,398.1 224.8,433.2 291.5,433.2 C315.1,433.2 337.6,428.2 366.6,412.6 C351.1,397.3 336.9,378.2 328.8,356.7 Z" id="teradata-icon" fill-rule="nonzero"></path>
+    </g>
+</svg>

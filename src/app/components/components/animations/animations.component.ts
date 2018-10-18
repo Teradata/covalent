@@ -1,14 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
-import { TdCollapseAnimation } from '../../../../platform/core/common/animations/collapse/collapse.animation';
-import { TdFadeInOutAnimation } from '../../../../platform/core/common/animations/fade/fadeInOut.animation';
-import { TdBounceAnimation } from '../../../../platform/core/common/animations/bounce/bounce.animation';
-import { TdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
-import { TdHeadshakeAnimation } from '../../../../platform/core/common/animations/headshake/headshake.animation';
-import { TdJelloAnimation } from '../../../../platform/core/common/animations/jello/jello.animation';
-import { TdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
+import { tdRotateAnimation } from '../../../../platform/core/common/animations/rotate/rotate.animation';
+import { tdCollapseAnimation } from '../../../../platform/core/common/animations/collapse/collapse.animation';
+import { tdFadeInOutAnimation } from '../../../../platform/core/common/animations/fade/fadeInOut.animation';
+import { tdBounceAnimation } from '../../../../platform/core/common/animations/bounce/bounce.animation';
+import { tdFlashAnimation } from '../../../../platform/core/common/animations/flash/flash.animation';
+import { tdHeadshakeAnimation } from '../../../../platform/core/common/animations/headshake/headshake.animation';
+import { tdJelloAnimation } from '../../../../platform/core/common/animations/jello/jello.animation';
+import { tdPulseAnimation } from '../../../../platform/core/common/animations/pulse/pulse.animation';
 
 @Component({
   selector: 'animations-demo',
@@ -16,16 +16,14 @@ import { TdPulseAnimation } from '../../../../platform/core/common/animations/pu
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
-    TdRotateAnimation(),
-    TdRotateAnimation({ anchor: 'tdRotate545', duration: 750, degrees: 545, ease: 'ease-in' }),
-    TdRotateAnimation({ anchor: 'tdRotateNeg45', duration: 500, degrees: -45 }),
-    TdCollapseAnimation(),
-    TdFadeInOutAnimation(),
-    TdBounceAnimation(),
-    TdFlashAnimation(),
-    TdHeadshakeAnimation(),
-    TdJelloAnimation(),
-    TdPulseAnimation(),
+    tdRotateAnimation,
+    tdCollapseAnimation,
+    tdFadeInOutAnimation,
+    tdBounceAnimation,
+    tdFlashAnimation,
+    tdHeadshakeAnimation,
+    tdJelloAnimation,
+    tdPulseAnimation,
   ],
   preserveWhitespaces: true,
 })

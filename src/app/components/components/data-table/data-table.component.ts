@@ -98,8 +98,15 @@ export class DataTableDemoComponent implements OnInit {
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];
 
+  dateColumns: ITdDataTableColumn[] = [
+    { name: 'date', label: 'Date', sortable: true, width: 275 },
+    { name: 'first_name', label: 'First Name', sortable: false, width: 150 },
+    { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+  ];
+
   data: any[];
   basicData: any[];
+  dateSortData: any[];
   selectable: boolean = true;
   clickable: boolean = false;
   multiple: boolean = true;
@@ -116,6 +123,7 @@ export class DataTableDemoComponent implements OnInit {
   pageSize: number = 50;
   sortBy: string = 'first_name';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+  dateSortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _dataTableService: TdDataTableService,
               private _internalDocsService: InternalDocsService,
@@ -136,12 +144,25 @@ export class DataTableDemoComponent implements OnInit {
     this.data = await this._internalDocsService.queryData().toPromise();
     this.basicData = this.data.slice(0, 10);
     this.filter();
+
+    this.dateSortData = this.data.slice(0, 5);
+    this.dateSortData = this.dateSortData.map((row: any) => {
+      let randomDate: Date = new Date(new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()));
+      row.date = randomDate;
+      return row;
+    });
+    this.filterDateData();
   }
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sortBy = sortEvent.name;
     this.sortOrder = sortEvent.order;
     this.filter();
+  }
+
+  sortDates(sortEvent: ITdDataTableSortChangeEvent): void {
+    this.dateSortOrder = sortEvent.order;
+    this.filterDateData();
   }
 
   search(searchTerm: string): void {
@@ -171,6 +192,25 @@ export class DataTableDemoComponent implements OnInit {
     newData = await this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = await this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
+  }
+
+  filterDateData(): void {
+    this.dateSortData = Array.from(this.dateSortData); // Change the array reference to trigger OnPush
+    this.dateSortData = this.dateSortData.sort((a: any, b: any) => {
+      let direction: number = 0;
+      if (this.dateSortOrder === TdDataTableSortingOrder.Descending) {
+        direction = 1;
+      } else if (this.dateSortOrder === TdDataTableSortingOrder.Ascending) {
+        direction = -1;
+      }
+      if (a.date < b.date) {
+        return direction;
+      } else if (a.date > b.date) {
+        return -direction;
+      } else {
+        return direction;
+      }
+    });
   }
 
   toggleTooltips(): void {

@@ -9,6 +9,9 @@ import { GitHubService } from '../../services';
 
 export class HomeComponent implements AfterViewInit {
 
+  // Current date
+  year: any = new Date().getFullYear();
+
   starCount: number = 0;
 
   sections: Object[] = [{
@@ -78,6 +81,10 @@ export class HomeComponent implements AfterViewInit {
     this._gitHubService.queryStartCount().subscribe((starsCount: number) => {
       this.starCount = starsCount;
     });
+  }
+
+  get activeTheme(): string {
+    return localStorage.getItem('theme');
   }
 
 }

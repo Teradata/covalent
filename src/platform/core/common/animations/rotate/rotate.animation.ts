@@ -1,4 +1,8 @@
-import { trigger, state, style, transition, animate, AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group } from '@angular/animations';
+import {
+  trigger, state, style, transition, animate, AnimationTriggerMetadata,
+  query, animateChild, group,
+} from '@angular/animations';
+
 import { IAnimationOptions } from '../common/interfaces';
 
 export interface IRotateAnimation extends IAnimationOptions {
@@ -7,19 +11,36 @@ export interface IRotateAnimation extends IAnimationOptions {
 }
 
 /**
- * Function TdRotateAnimation
+ * const tdRotateAnimation
  *
- * params:
- * * anchor: Name of the anchor that will attach to a dom element in the components template that will contain the animation. Defaults to tdRotate.
- * * duration: Duration the animation will run in milliseconds. Defaults to 250 ms.
+ * Parameter Options:
+ * * degressStart: Degrees of rotation that the dom object will end up in during the "false" state
+ * * degreesEnd: Degrees of rotation that the dom object will end up in during the "true" state
+ * * duration: Duration the animation will run in milliseconds. Defaults to 150 ms.
  * * delay: Delay before the animation will run in milliseconds. Defaults to 0 ms.
- * * degrees: Degrees of rotation that the dom object will animation. A negative value will cause the animation to initially rotate counter-clockwise.
- * * ease: Animation accelerates and decelerates when rotation. Defaults to ease-in.
+ * * ease: Animation accelerates and decelerates. Defaults to ease-in.
  *
- * Returns an [AnimationTriggerMetadata] object with states for a boolean trigger based rotation animation.
+ * Returns an [AnimationTriggerMetadata] object with boolean states for a rotation animation.
  *
- * usage: [@myAnchorName]="true|false"
+ * usage: [@tdRotate]="{ value: true | false, params: { degreesEnd: 90 }}"
  */
+
+export const tdRotateAnimation: AnimationTriggerMetadata = trigger('tdRotate', [
+  state('0', style({
+    transform: 'rotate({{ degressStart }}deg)',
+  }), { params: { degressStart: 0 }}),
+  state('1',  style({
+    transform: 'rotate({{ degreesEnd }}deg)',
+  }), { params: { degreesEnd: 180 }}),
+  transition('0 <=> 1', [
+    group([
+      query('@*', animateChild(), { optional: true }),
+      animate('{{ duration }}ms {{ delay }}ms {{ ease }}'),
+    ]),
+  ], { params: { duration: 250, delay: '0', ease: 'ease-in' }}),
+]);
+
+/** @deprecated see tdRotateAnimation */
 export function TdRotateAnimation(rotateOptions: IRotateAnimation = {}): AnimationTriggerMetadata {
   return trigger(rotateOptions.anchor || 'tdRotate', [
     state('0', style({

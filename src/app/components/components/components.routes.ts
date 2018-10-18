@@ -26,7 +26,6 @@ import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
-import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 const routes: Routes = [{
@@ -105,9 +104,6 @@ const routes: Routes = [{
     }, {
       component: TextEditorDemoComponent,
       path: 'text-editor',
-    }, {
-      component: NgxChartsDemoComponent,
-      path: 'ngx-charts',
     }, {
       component: NgxTranslateDemoComponent,
       path: 'ngx-translate',
