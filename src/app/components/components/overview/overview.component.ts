@@ -141,11 +141,6 @@ export class ComponentsOverviewComponent {
     },
   ];
   external: Object[] = [{
-      color: 'purple-A700',
-      icon: 'insert_chart',
-      route: 'ngx-charts',
-      title: 'NGX-Charts',
-    }, {
       color: 'blue-A700',
       icon: 'language',
       route: 'ngx-translate',

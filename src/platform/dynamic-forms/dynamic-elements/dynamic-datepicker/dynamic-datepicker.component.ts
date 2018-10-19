@@ -14,6 +14,8 @@ export class TdDynamicDatepickerComponent {
 
   hint: string = '';
 
+  name: string = '';
+
   type: string = undefined;
 
   required: boolean = undefined;

@@ -11,6 +11,7 @@
     <input matInput
           [value]="control?.value?.name"
           [placeholder]="label"
+          [attr.name]="name"
           [disabled]="control?.disabled"
           readonly/>
     <mat-hint>{{hint}}</mat-hint>

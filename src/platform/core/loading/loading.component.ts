@@ -24,7 +24,7 @@ export enum LoadingStyle {
   None = 'none',
 }
 
-import { TdFadeInOutAnimation } from '@covalent/core/common';
+import { tdFadeInOutAnimation } from '@covalent/core/common';
 
 export const TD_CIRCLE_DIAMETER: number = 100;
 
@@ -33,7 +33,7 @@ export const TD_CIRCLE_DIAMETER: number = 100;
   styleUrls: ['./loading.component.scss' ],
   templateUrl: './loading.component.html',
   animations: [
-    TdFadeInOutAnimation(),
+    tdFadeInOutAnimation,
   ],
 })
 export class TdLoadingComponent implements DoCheck {
