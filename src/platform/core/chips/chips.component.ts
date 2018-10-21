@@ -719,7 +719,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      merge(
+      this._outsideClickSubs = merge(
         fromEvent(this._document, 'click'),
         fromEvent(this._document, 'touchend'),
       ).pipe(
