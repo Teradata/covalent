@@ -29,7 +29,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   @Input('show') show: boolean = true;
   @Input('gridIndex') gridIndex: number;
   @Input('offset') offset: number;
-  abstract position: TdXAxisPosition | TdYAxisPosition ;
+  abstract position: TdXAxisPosition | TdYAxisPosition;
   @Input('type') type: TdAxisType;
   @Input('name') name: string;
   @Input('nameLocation') nameLocation: TdNameLocation;

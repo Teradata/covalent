@@ -25,7 +25,7 @@
   </td-chart-x-axis>
   <td-chart-y-axis [show]="true"
                     [type]="'value'"
-                    [position]="barYaxisPosition"
+                    [position]="'right'"
                     [axisLabel]="yAxisLabel"
                     [axisLine]="yLine"
                     [max]="200"
@@ -98,7 +98,7 @@
   </td-chart-x-axis>
   <td-chart-y-axis [show]="true"
                     [type]="'value'"
-                    [position]="barYaxisPosition"
+                    [position]="'right'"
                     [axisLabel]="yAxisLabel"
                     [axisLine]="yLine"
                     [max]="120"
@@ -172,7 +172,7 @@
     </ng-template>
   </td-chart-tooltip>
   <td-chart-x-axis [show]="true"
-                    [position]="lineXAxisPosition"
+                    [position]="'top'"
                     [axisLabel]="xAxisLabel"
                     [type]="'time'"
                     [boundaryGap]="false"
@@ -190,7 +190,7 @@
                     [symbolSize]="14"
                     [data]="series.data"
                     [name]="series.name"
-                    [symbol]="roundRectMarkPointSymbol"
+                    [symbol]="'roundRect'"
                     [lineStyle]="series.lineStyle">
   </td-chart-series>
   <td-chart-series-tooltip *ngFor="let tooltip of seriesToolTip; let i=index" [index]="i" [textStyle]="tooltip.textStyle" [backgroundColor]="tooltip.backgroundColor">
@@ -230,7 +230,7 @@
       </ng-template>
     </td-chart-tooltip>
     <td-chart-x-axis [show]="true"
-                      [position]="lineXAxisPositionNoSeries"
+                      [position]="'bottom'"
                       [axisLabel]="xAxisLabel"
                       [type]="'time'"
                       [boundaryGap]="false"

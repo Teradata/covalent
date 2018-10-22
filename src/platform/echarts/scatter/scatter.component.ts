@@ -24,8 +24,6 @@ import {
   ITdMarkArea,
   ITdSeriesTooltip,
 } from '@covalent/echarts/base';
-
-import { ITdScatterConfig } from './scatter-config.interface';
   
 @Component({
   selector: 'td-chart-series[td-scatter]',
@@ -38,7 +36,7 @@ export class TdChartSeriesScatterComponent implements OnChanges, OnInit, OnDestr
 
   private _state: any = {};
 
-  @Input('config') config: ITdScatterConfig = {};
+  @Input('config') config: any = {};
 
   @Input('id') id: string;
   @Input('name') name: string;

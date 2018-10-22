@@ -29,7 +29,7 @@ import { assignDefined } from './utils';
 
 @Component({
   selector: 'td-chart',
-  templateUrl: './chart.component.html',
+  template: '',
   styleUrls: ['./chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CHART_PROVIDER],

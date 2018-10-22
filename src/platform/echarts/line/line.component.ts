@@ -27,8 +27,6 @@ import {
   ITdEmphasis,
 } from '@covalent/echarts/base';
 
-import { ITdLineConfig } from './line-config.interface';
-
 @Component({
   selector: 'td-chart-series[td-line]',
   template: '',
@@ -40,7 +38,7 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
 
   private _state: any = {};
 
-  @Input('config') config: ITdLineConfig = {};
+  @Input('config') config: any = {};
 
   @Input('id') id: string;
   @Input('name') name: string;

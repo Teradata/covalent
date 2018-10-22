@@ -2,34 +2,27 @@ import {
   TdAreaOrigin,
   ITdLabel,
   TdMarkPointSymbol,
-  TdAnimationEasing,
   TdLineLabelPosition,
   ITdLineStyle,
   ITdLineCurveStyle,
   ITdTextStyle,
   TdTooltipPosition,
+  ITdAnimation,
+  ITdShadow,
 } from './base.types';
 
 // used in series, move to base.types if used elsewhere
-interface ITdItemStyle {
+interface ITdItemStyle extends ITdShadow {
   color?: any;
   borderColor?: string;
   borderWidth?: number;
   borderType?: string;
-  shadowBlur?: number;
-  shadowColor?: any;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
   opacity?: number;
 }
 
-interface ITdAreaStyle {
+interface ITdAreaStyle extends ITdShadow {
   color?: any;
   origin?: TdAreaOrigin;
-  shadowBlur?: number;
-  shadowColor?: any;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
   opacity?: number;
 }
 
@@ -38,7 +31,7 @@ interface ITdEmphasis {
   itemStyle?: ITdItemStyle;
 }
 
-interface ITdMarkPoint {
+interface ITdMarkPoint extends ITdAnimation {
   symbol?: TdMarkPointSymbol | string;
   symbolSize?: number;
   symbolRotate?: number;
@@ -49,14 +42,6 @@ interface ITdMarkPoint {
   itemStyle?: ITdItemStyle;
   emphasis?: ITdEmphasis;
   data?: any[];
-  animation?: boolean;
-  animationThreshold?: number;
-  animationDuration?: number;
-  animationEasing?: TdAnimationEasing;
-  animationDelay?: number;
-  animationDurationUpdate?: number;
-  animationEasingUpdate?: string;
-  animationDelayUpdate?: number;
 }
 
 interface ITdMarkLineEmphasis {
@@ -75,39 +60,23 @@ interface ITdLineLabel {
   formatter?: string | Function;
 }
 
-interface ITdMarkLine {
+interface ITdMarkLine extends ITdAnimation {
   silent?: boolean;
   symbol?: string | any[];
   symbolSize?: number;
   precision?: number;
   label?: ITdLineLabel;
-  lineStyle?: ITdLineCurveStyle;
+  lineStyle?: ITdLineStyle;
   emphasis?: ITdMarkLineEmphasis;
   data?: any[];
-  animation?: boolean;
-  animationThreshold?: number;
-  animationDuration?: number;
-  animationEasing?: TdAnimationEasing;
-  animationDelay?: number;
-  animationDurationUpdate?: number;
-  animationEasingUpdate?: TdAnimationEasing;
-  animationDelayUpdate?: number | Function;
 }
 
-interface ITdMarkArea {
+interface ITdMarkArea extends ITdAnimation {
   silent?: boolean;
   label?: ITdLabel;
   lineStyle?: ITdLineStyle;
   emphasis?: ITdMarkAreaEmphasis;
   data?: any[];
-  animation?: boolean;
-  animationThreshold?: number;
-  animationDuration?: number;
-  animationEasing?: TdAnimationEasing;
-  animationDelay?: number;
-  animationDurationUpdate?: number;
-  animationEasingUpdate?: TdAnimationEasing;
-  animationDelayUpdate?: number | Function;
 }
 
 interface ITdSeriesTooltip {
@@ -166,7 +135,7 @@ enum TdSeriesType {
   Custom = 'custom',
 }
 
-interface ITdScatterSeries {
+interface ITdScatterSeries extends ITdAnimation {
   type?: TdSeriesType;
   id?: string;
   name?: string;
@@ -205,14 +174,6 @@ interface ITdScatterSeries {
   zlevel?: number;
   z?: number;
   silent?: boolean;
-  Animation?: boolean;
-  animationThreshold?: number;
-  animationDuration?: number;
-  animationEasing?: TdAnimationEasing;
-  animationDelay?: 0;
-  animationDurationUpdate?: number;
-  animationEasingUpdate?: TdAnimationEasing;
-  animationDelayUpdate?: number;
   tooltip?: ITdSeriesTooltip;
 }
 

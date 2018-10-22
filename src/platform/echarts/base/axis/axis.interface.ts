@@ -1,9 +1,6 @@
 import {
   TdAlign,
-  TdFontStyle,
-  TdFontWeight,
   TdVerticalAlign,
-  TdFontFamily,
   TdPointerType,
   TdStatus,
   ITdLineStyle,
@@ -11,32 +8,61 @@ import {
   ITdTextStyle,
   ITdAxisPointerLabel,
   ITdBaseStyle,
+  ITdShadow,
+  ITdTextShadow,
+  ITdFont,
 } from '../base.types';
 
-interface ITdAxisLine {
+export interface ITdNameTextStyle extends ITdShadow, ITdTextShadow, ITdFont {
+  color?: string | any;
+  align?: TdAlign;
+  verticalAlign?: TdVerticalAlign;
+  lineHeight?: number;
+  backgroundColor?: string | any;
+  borderColor?: string; // Defaults to transparent
+  borderWidth?: number;
+  borderRadius?: number;
+  padding?: number | number[];
+  width?: number | string;
+  height?: number | string;
+  textBorderColor?: string; // Defaults to transparent
+  textBorderWidth?: number;
+  /**
+   * used to define rish text styles
+   * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Rich%20Text
+   */
+  rich: any;
+}
+
+export interface ITdAxisLine {
   show: boolean;
   onZero?: boolean;
   onZeroAxisIndex?: number;
-  symbol?: string | string[];
-  symbolSize?: number | number[];
+  symbol?: 'none' | 'arrow' | string[];
+  symbolSize?: number[];
   symbolOffset?: number | number[];
   lineStyle?: ITdLineStyle;
 }
 
-interface ITdAxisLabel {
+export interface ITdAxisTick {
   show?: boolean;
-  interval?: any;
+  alignWithLabel?: boolean;
+  interval?: number | Function;
+  inside?: boolean;
+  length?: number;
+  lineStyle?: ITdLineStyle;
+}
+
+export interface ITdAxisLabel extends ITdShadow, ITdTextShadow, ITdFont {
+  show?: boolean;
+  interval?: number | Function;
   inside?: boolean;
   rotate?: number;
   margin?: number;
-  formatter?: any;
+  formatter?: string | Function;
   showMinLabel?: boolean;
   showMaxLabel?: boolean;
-  color?: any;
-  fontStyle?: TdFontStyle;
-  fontWeight?: TdFontWeight;
-  fontFamily?: TdFontFamily;
-  fontSize?: number;
+  color?: string | Function;
   align?: TdAlign;
   verticalAlign?: TdVerticalAlign;
   lineHeight?: number;
@@ -45,42 +71,26 @@ interface ITdAxisLabel {
   borderWidth?: number;
   borderRadius?: number;
   padding?: number;
-  shadowColor?: string | object;
-  shadowBlur?: number;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
   width?: number | string;
   height?: number | string;
   textBorderColor?: string | object;
   textBorderWidth?: number;
-  textShadowColor?: string | object;
-  textShadowBlur?: number;
-  textShadowOffsetX?: number;
-  textShadowOffsetY?: number;
 }
 
-interface ITdAxisTick {
-  alignWithLabel?: boolean;
-  interval?: any;
-  inside?: boolean;
-  length?: number;
-  lineStyle?: ITdLineStyle;
-}
-
-interface ITdSplitLine {
+export interface ITdSplitLine {
   type?: TdLineType;
   show?: boolean;
   interval?: any;
   lineStyle?: ITdLineStyle;
 }
 
-interface ITdSplitArea {
+export interface ITdSplitArea {
   show?: boolean;
   interval?: any;
   areaStyle?: ITdBaseStyle;
 }
 
-interface ITdAxisPointer {
+export interface ITdAxisPointer {
   show?: boolean;
   type?: TdPointerType;
   snap?: boolean;
@@ -91,43 +101,10 @@ interface ITdAxisPointer {
   triggerTooltip?: boolean;
   value?: number;
   status?: TdStatus;
-  handle?: object; // TODO Look into this more
+  handle?: any; // TODO Look into this more
 }
 
-interface ITdNameAxisTextStyle {
-  color?: string | object;
-  fontStyle?: TdFontStyle;
-  fontWeight?: TdFontWeight;
-  fontFamily?: TdFontFamily;
-  fontSize?: number; // Defaults to 12
-  align?: TdAlign;
-  verticalAlign?: TdVerticalAlign;
-  lineHeight?: number;
-  backgroundColor?: string | object;
-  borderColor?: string; // Defaults to transparent
-  borderWidth?: number;
-  borderRadius?: number;
-  padding?: number;
-  shadowColor?: string; // Defaults to transparent
-  shadowBlur?: number;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
-  width?: number | string;
-  height?: number | string;
-  textBorderColor?: string; // Defaults to transparent
-  textBorderWidth?: number;
-  textShadowColor?: string; // Defaults to transparent
-  textShadowBlur?: number;
-  textShadowOffsetX?: number;
-  textShadowOffsetY?: number;
-  /*
-     * used to define rish text styles
-     * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Rich%20Text
-    */
-  rich: object;
-}
-
-interface ITdXAxisConfig {
+export interface ITdXAxisConfig {
   id?: string;
   show?: boolean ;
   gridIndex?: number ;
@@ -162,7 +139,7 @@ interface ITdXAxisConfig {
   z?: number;
 }
 
-interface ITdYAxisConfig {
+export interface ITdYAxisConfig {
   id?: string;
   show?: boolean ;
   gridIndex?: number ;
@@ -197,42 +174,10 @@ interface ITdYAxisConfig {
   z?: number;
 }
 
-enum TdNameLocation {
-  Start = 'start',
-  Middle = 'middle',
-  Center = 'center',
-  End = 'end',
-}
+export type TdNameLocation = 'start' | 'middle' | 'center' | 'end';
 
-enum TdAxisType {
-  Value = 'value',
-  Category = 'category',
-  Time = 'time',
-  Log = 'log',
-}
+export type TdAxisType = 'value' | 'category' | 'time' | 'log';
 
-enum TdYAxisPosition {
-  Left = 'left',
-  Right = 'right',
-}
+export type TdYAxisPosition = 'left' | 'right';
 
-enum TdXAxisPosition {
-  Top = 'top',
-  Bottom = 'bottom',
-}
-
-export {
-  ITdAxisLine,
-  ITdAxisLabel,
-  ITdAxisTick,
-  ITdSplitLine,
-  ITdNameAxisTextStyle,
-  ITdSplitArea,
-  ITdAxisPointer,
-  TdYAxisPosition,
-  TdXAxisPosition,
-  TdNameLocation,
-  TdAxisType,
-  ITdXAxisConfig,
-  ITdYAxisConfig,
-};
+export type TdXAxisPosition = 'top' | 'bottom';
