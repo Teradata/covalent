@@ -3,22 +3,9 @@ import {
   ITdAxisLine,
   ITdAxisLabel,
   ITdSplitLine,
-  TdXAxisPosition,
-  TdYAxisPosition,
-  TdLineType,
-  TdMarkPointSymbol,
-  ITdLineStyle,
   ITdBarSeries,
   ITdLineSeries,
-  TdFontStyle,
-  TdFontWeight,
   TdSeriesType,
-  TdLineLabelPosition,
-  ITdLineConfig,
-  ITdBarConfig,
-  TdAxisType,
-  TdToolTipTrigger,
-  ITdScatterConfig,
 } from '../platform/echarts';
 
 import 'echarts/lib/component/markPoint';
@@ -36,7 +23,7 @@ export const NOW: Date = new Date();
   styleUrls: ['./app.component.scss'],
 })
 export class DocsAppComponent {
-  configScatter: ITdScatterConfig = configScatterOption;
+  configScatter: any = configScatterOption;
 
   barPlot: ITdBarSeries[] = [
     {
@@ -144,7 +131,7 @@ export class DocsAppComponent {
     },
   ];
 
-  barConfig: ITdBarConfig = {
+  barConfig: any = {
     xAxis: [
       {
         data: [
@@ -180,7 +167,7 @@ export class DocsAppComponent {
     },
   };
 
-  lineConfig: ITdLineConfig = {
+  lineConfig: any = {
     xAxis: [
       {
         show: true,
@@ -201,7 +188,7 @@ export class DocsAppComponent {
     },
   };
 
-  comboConfig: ITdBarConfig = {
+  comboConfig: any = {
     xAxis: [
       {
         data: [

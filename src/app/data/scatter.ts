@@ -1,5 +1,5 @@
 import * as echarts from 'echarts/lib/echarts';
-import { ITdScatterConfig, TdSeriesType } from '../../platform/echarts';
+import { TdSeriesType } from '../../platform/echarts';
 
 const basicScatterData: any[] = [
   [
@@ -46,7 +46,7 @@ const basicScatterData: any[] = [
   ],
 ];
 
-export const configScatterOption: ITdScatterConfig = {
+export const configScatterOption: any = {
 tooltip: {borderColor: '#ddd', borderWidth: 10, show: true},
   backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
       offset: 0,

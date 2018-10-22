@@ -23,7 +23,51 @@ import {
   ITdMarkLine,
   ITdMarkArea,
   ITdSeriesTooltip,
+  ITdAnimation,
 } from '@covalent/echarts/base';
+
+export interface ITdScatterSeries extends ITdAnimation {
+  type?: TdSeriesType;
+  id?: string;
+  name?: string;
+  color?: string;
+  coordinateSystem?: TdCoordinateSystem;
+  xAxisIndex?: number;
+  yAxisIndex?: number;
+  polarIndex?: number;
+  geoIndex?: number;
+  calendarIndex?: number;
+  hoverAnimation?: boolean;
+  legendHoverLink?: boolean;
+  symbol?: TdMarkPointSymbol;
+  symbolSize?: number | Function;
+  symbolRotate?: number;
+  symbolKeepAspect?: boolean;
+  symbolOffset?: any[];
+  large?: boolean;
+  largeThreshold?: number;
+  cursor?: string;
+  connectNulls?: boolean;
+  clipOverflow?: boolean;
+  step?: boolean;
+  label?: ITdLabel;
+  itemStyle?: any;
+  Emphasis?: ITdEmphasis;
+  progressive?: number;
+  progressiveThreshold?: number;
+  dimensions?: any[];
+  encode?: any;
+  seriesLayoutBy?: TdSeriesLayoutBy;
+  datasetIndex?: 0;
+  data?: any[];
+  markPoint?: ITdMarkPoint;
+  markLine?: ITdMarkLine;
+  markArea?: ITdMarkArea;
+  zlevel?: number;
+  z?: number;
+  silent?: boolean;
+  tooltip?: ITdSeriesTooltip;
+}
   
 @Component({
   selector: 'td-chart-series[td-scatter]',
