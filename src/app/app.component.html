@@ -6,7 +6,7 @@
       <ng-container *ngIf="params">
         <div layout="row" layout-align="start center">
           <mat-icon>
-            <span class="tc-blue-300">person</span>
+            <span class="tc-blue-300">people</span>
           </mat-icon>
           <span class="mat-caption pad-left-sm">
             {{params.seriesName + ': ' + params.value}}
@@ -32,45 +32,28 @@
                     [splitLine]="splitLineBar">
   </td-chart-y-axis>
   <td-chart-series td-bar
-                   *ngFor="let series of barPlot"
+                   *ngFor="let series of barPlot; let i=index"
                    [data]="series.data"
                    [name]="series.name"
                    [markPoint]="series.markPoint"
                    [markLine]="series.markLine"
                    [itemStyle]="series.itemStyle">
+    <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                              [backgroundColor]="seriesToolTip[i].backgroundColor">
+      <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+        <ng-container *ngIf="params">
+          <div layout="row" layout-align="start center">
+            <mat-icon>
+              <span class="tc-blue-300">{{seriesToolTip[i].icon}}</span>
+            </mat-icon>
+            <span class="mat-caption pad-left-sm">
+              {{params.seriesName + ': ' + params.value}}
+            </span>
+          </div>
+        </ng-container>
+      </ng-template>
+    </td-chart-series-tooltip>
   </td-chart-series>
-  <!-- td-chart-series-tooltip -->
-  <td-chart-series-tooltip *ngFor="let tooltip of seriesToolTip; let i=index"
-  [index]="i"
-  [textStyle]="tooltip.textStyle"
-  [backgroundColor]="tooltip.backgroundColor">
-    <ng-template let-params let-ticket="ticket" tdSeriesTooltipFormatter>
-      <ng-container *ngIf="params">
-        <div layout="row" layout-align="start center">
-          <mat-icon>
-            <span class="tc-blue-300">{{tooltip.icon}}</span>
-          </mat-icon>
-          <span class="mat-caption pad-left-sm">
-            {{params.seriesName + ': ' + params.value}}
-          </span>
-        </div>
-      </ng-container>
-    </ng-template>
-  </td-chart-series-tooltip>
-  <!-- <td-chart-series-tooltip [configArray]="seriesToolTip">
-      <ng-template let-params let-ticket="ticket" tdSeriesTooltipFormatter>
-          <ng-container *ngIf="params">
-            <div layout="row" layout-align="start center">
-              <mat-icon>
-                <span class="tc-blue-300">{{tooltip.icon}}</span>
-              </mat-icon>
-              <span class="mat-caption pad-left-sm">
-                {{params.seriesName + ': ' + params.value}}
-              </span>
-            </div>
-          </ng-container>
-        </ng-template>
-    </td-chart-series-tooltip> -->
 </td-chart>
 <h3>Bar Test Config (atomic)</h3>
 <td-chart [style.height.px]="300"
@@ -110,38 +93,6 @@
                    [name]="series.name"
                    [itemStyle]="series.itemStyle">
   </td-chart-series>
-  <!-- td-chart-series-tooltip -->
-  <!-- <td-chart-series-tooltip *ngFor="let tooltip of seriesToolTip; let i=index"
-  [index]="i"
-  [textStyle]="tooltip.textStyle"
-  [backgroundColor]="tooltip.backgroundColor">
-    <ng-template let-params let-ticket="ticket" tdSeriesTooltipFormatter>
-      <ng-container *ngIf="params">
-        <div layout="row" layout-align="start center">
-          <mat-icon>
-            <span class="tc-blue-300">{{tooltip.icon}}</span>
-          </mat-icon>
-          <span class="mat-caption pad-left-sm">
-            {{params.seriesName + ': ' + params.value}}
-          </span>
-        </div>
-      </ng-container>
-    </ng-template>
-  </td-chart-series-tooltip> -->
-  <td-chart-series-tooltip [configArray]="seriesToolTip">
-      <ng-template let-params let-ticket="ticket" let-item="item" tdSeriesTooltipFormatter>
-          <ng-container *ngIf="params">
-            <div layout="row" layout-align="start center">
-              <mat-icon>
-                <span class="tc-blue-300">{{seriesToolTip[params?.seriesIndex]?.icon}}</span>
-              </mat-icon>
-              <span class="mat-caption pad-left-sm">
-                {{params.seriesName + ': ' + params.value}}
-              </span>
-            </div>
-          </ng-container>
-        </ng-template>
-    </td-chart-series-tooltip>
 </td-chart>
 <h3>Bar Test (config object)</h3>
 <td-chart [style.height.px]="300"
@@ -186,19 +137,19 @@
                     [splitLine]="splitLine">
   </td-chart-y-axis>
   <td-chart-series td-line
-                    *ngFor="let series of linePlot"
+                    *ngFor="let series of linePlot; let i=index"
                     [symbolSize]="14"
                     [data]="series.data"
                     [name]="series.name"
                     [symbol]="'roundRect'"
                     [lineStyle]="series.lineStyle">
-  </td-chart-series>
-  <td-chart-series-tooltip *ngFor="let tooltip of seriesToolTip; let i=index" [index]="i" [textStyle]="tooltip.textStyle" [backgroundColor]="tooltip.backgroundColor">
-      <ng-template let-params let-ticket="ticket" tdSeriesTooltipFormatter>
+    <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                              [backgroundColor]="seriesToolTip[i].backgroundColor">
+      <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
         <ng-container *ngIf="params">
           <div layout="row" layout-align="start center">
             <mat-icon>
-              <span class="tc-blue-300">{{tooltip.icon}}</span>
+              <span class="tc-blue-300">{{seriesToolTip[i].icon}}</span>
             </mat-icon>
             <span class="mat-caption pad-left-sm">
               {{params.seriesName + ': ' + params.value}}
@@ -207,8 +158,7 @@
         </ng-container>
       </ng-template>
     </td-chart-series-tooltip>
-    <!-- <td-chart-series-tooltip [configArray]="seriesToolTip">
-    </td-chart-series-tooltip> -->
+  </td-chart-series>
 </td-chart>
 <h3>Line Test - no series (atomic)</h3>
 <td-chart [style.height.px]="300">
@@ -288,16 +238,31 @@
                     [splitLine]="splitLineBar">
   </td-chart-y-axis>
   <td-chart-series td-scatter
-                   *ngFor="let series of configScatter.series"
+                   *ngFor="let series of configScatter.series; let i = index"
                    [data]="series.data"
                    [name]="series.name"
                    [symbolSize]="series.symbolSize"
                    [markPoint]="series.markPoint"
                    [markLine]="series.markLine"
                    [itemStyle]="series.itemStyle">
+    <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                              [backgroundColor]="seriesToolTip[i].backgroundColor">
+      <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+        <ng-container *ngIf="params">
+          <div layout="row" layout-align="start center">
+            <mat-icon>
+              <span class="tc-blue-300">{{seriesToolTip[i].icon}}</span>
+            </mat-icon>
+            <span class="mat-caption pad-left-sm">
+              {{params.seriesName + ': ' + params.value}}
+            </span>
+          </div>
+        </ng-container>
+      </ng-template>
+    </td-chart-series-tooltip>
   </td-chart-series>
 </td-chart>
 <h3>Scatter (config Object)</h3>
 <td-chart [style.height.px]="300"
           [config]="configScatter">
-</td-chart>  
+</td-chart> 

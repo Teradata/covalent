@@ -18,13 +18,8 @@ import { Subscription, Subject, fromEvent, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import * as echarts from 'echarts/lib/echarts';
-import 'echarts/lib/component/title';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/component/legendScroll';
-import 'echarts/lib/component/markArea';
-import 'echarts/lib/component/dataZoom';
 
-import { TdChartOptionsService, CHART_PROVIDER } from './chart.service';
+import { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 import { assignDefined } from './utils';
 
 @Component({

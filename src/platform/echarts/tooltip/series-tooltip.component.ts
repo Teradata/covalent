@@ -8,30 +8,17 @@ import {
   ChangeDetectorRef,
   ElementRef,
   ChangeDetectionStrategy,
-  Directive,
   OnChanges,
-  OnDestroy, 
-} 
-  from '@angular/core';
+  OnDestroy,
+} from '@angular/core';
 
-import { TdChartOptionsService } from '../chart.service';
-import { assignDefined } from '../utils';
+import { TdChartOptionsService, assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
 
-export class TdTooltipContext {
-  $implicit: any;
-  ticket: string;
-}
-
-@Directive({
-  selector: 'ng-template[tdSeriesTooltipFormatter]',
-})
-export class TdChartSeriesTooltipFormatterDirective {
-}
+import { TdChartTooltipFormatterDirective, TdTooltipContext } from './tooltip.component';
 
 @Component({
   selector: 'td-chart-series-tooltip',
-  templateUrl: './series-tooltip.component.html',
-  styleUrls: ['./series-tooltip.component.scss'],
+  templateUrl: './tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
@@ -41,8 +28,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
   _context: TdTooltipContext = new TdTooltipContext();
 
   @Input('config') config: any;
-  @Input('configArray') configArray: any[];
-  @Input('index') index: number = 0;
+
   @Input('formatter') formatter: any;
   // Parent tooltip trigger must be set to 'item' to render these properties
   @Input('position') position: string | string[] | number[];
@@ -55,12 +41,12 @@ export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
   };
   @Input('extraCssText') extraCssText: string;
 
-  @ContentChild(TdChartSeriesTooltipFormatterDirective, {read: TemplateRef}) formatterTemplate: TemplateRef<any>;
+  @ContentChild(TdChartTooltipFormatterDirective, {read: TemplateRef}) formatterTemplate: TemplateRef<any>;
   @ViewChild('tooltipContent') fullTemplate: TemplateRef<any>;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
-              private _optionsService: TdChartOptionsService) {
+              private _seriesComponent: TdSeriesComponent) {
   }
 
   ngOnInit(): void {
@@ -76,36 +62,18 @@ export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
   }
 
   private _setOptions(): void {
-      // const checkKeys: boolean = Object.keys(this.config).length === 0;
-      if (!this.configArray) {
-      let config: any = assignDefined(this._state, this.config ? this.config : {}, {
-        position: this.position,
-        backgroundColor: this.backgroundColor,
-        borderColor: this.borderColor,
-        borderWidth: this.borderWidth,
-        padding: this.padding,
-        textStyle: this.textStyle,
-        extraCssText: this.extraCssText,
-        formatter: this.formatter ? this.formatter : this._formatter(),
-      });
-      // set series tooltip configuration in parent chart and render new configurations
-      this._optionsService.setSeriesOption('tooltip', config, this.index);
-      } else {
-        this._setConfig();
-      }
-  }
-  /**
-   * processes configArray and updates
-   *
-   */
-  private _setConfig(): void {
-    let config: any = assignDefined(this._state, this.configArray);
-    for (const key of Object.keys(config)) {
-      if (!config[key].formatter) {
-        config[key].formatter = this._formatter();
-      }
-      this._optionsService.setSeriesOption('tooltip', config[key], parseInt(key, 0));
-    }
+    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+      position: this.position,
+      backgroundColor: this.backgroundColor,
+      borderColor: this.borderColor,
+      borderWidth: this.borderWidth,
+      padding: this.padding,
+      textStyle: this.textStyle,
+      extraCssText: this.extraCssText,
+      formatter: this.formatter ? this.formatter : this._formatter(),
+    });
+    // set series tooltip configuration in parent chart and render new configurations
+    this._seriesComponent.setStateOption('tooltip', config);
   }
   
   /**
@@ -129,7 +97,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
   }
 
   private _removeOption(): void {
-    this._optionsService.clearSeriesOption('tooltip');
+    this._seriesComponent.removeStateOption('tooltip');
   }
 
 }

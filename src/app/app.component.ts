@@ -5,13 +5,15 @@ import {
   ITdSplitLine,
   ITdBarSeries,
   ITdLineSeries,
-  TdSeriesType,
 } from '../platform/echarts';
 
 import 'echarts/lib/component/markPoint';
 import 'echarts/lib/component/markLine';
 import 'echarts/lib/component/markArea';
-import 'echarts/lib/component/tooltip';
+import 'echarts/lib/component/title';
+import 'echarts/lib/component/legend';
+import 'echarts/lib/component/legendScroll';
+import 'echarts/lib/component/dataZoom';
 
 import { configScatterOption } from './data/scatter';
 
@@ -27,7 +29,7 @@ export class DocsAppComponent {
 
   barPlot: ITdBarSeries[] = [
     {
-      type: TdSeriesType.Bar,
+      type: 'bar',
       itemStyle: {
         opacity: 0.75,
         color: '#575757',
@@ -39,7 +41,7 @@ export class DocsAppComponent {
       data: [150, 130, 150, 120, 150, 120],
     },
     {
-      type: TdSeriesType.Bar,
+      type: 'bar',
       markPoint: {
         data: [{ name: 'Target', value: 80, xAxis: 1, yAxis: 121 }],
       },
@@ -57,9 +59,9 @@ export class DocsAppComponent {
     },
   ];
 
-  comboPlot: ITdBarSeries[] = [
-    {
-      type: TdSeriesType.Bar,
+  comboPlot: any[] = [
+    <ITdBarSeries>{
+      type: 'bar',
       itemStyle: {
         opacity: 0.75,
         color: '#575757',
@@ -70,8 +72,8 @@ export class DocsAppComponent {
       name: 'Yesterday',
       data: [150, 130, 150, 120, 150, 120],
     },
-    {
-      type: TdSeriesType.Line,
+    <ITdLineSeries>{
+      type: 'line',
       markPoint: {
         data: [{ name: 'Target', value: 100, xAxis: 1, yAxis: 121 }],
         symbolRotate: 180,
@@ -96,7 +98,7 @@ export class DocsAppComponent {
   linePlot: ITdLineSeries[] = [
     {
       name: 'Line Test',
-      type: TdSeriesType.Line,
+      type: 'line',
       lineStyle: {
         color: '#575757',
         width: 2,

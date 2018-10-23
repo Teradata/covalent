@@ -18,6 +18,7 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
+import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 
 import { DocsAppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
@@ -41,6 +42,7 @@ import { appRoutes, appRoutingProviders } from './app.routes';
     CovalentLineEchartsModule,
     CovalentBarEchartsModule,
     CovalentScatterEchartsModule,
+    CovalentTooltipEchartsModule,
     appRoutes,
   ], // modules needed to run this module
   providers: [

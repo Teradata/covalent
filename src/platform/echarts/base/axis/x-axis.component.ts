@@ -4,7 +4,7 @@ import {
   Input,
 } from '@angular/core';
 
-import { TdChartOptionsService } from '../chart.service';
+import { TdChartOptionsService } from '../chart-options.service';
 import { TdXAxisPosition  } from './axis.interface';
 import { TdChartAxisComponent } from './axis.component';
 

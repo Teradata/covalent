@@ -1,6 +1,8 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import 'echarts/lib/chart/line';
+
 import { TdChartSeriesLineComponent } from './line.component';
 
 export const LINE_MODULE_COMPONENTS: Type<any>[] = [

@@ -1,6 +1,8 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import 'echarts/lib/chart/bar';
+
 import { TdChartSeriesBarComponent } from './bar.component';
 
 export const BAR_MODULE_COMPONENTS: Type<any>[] = [

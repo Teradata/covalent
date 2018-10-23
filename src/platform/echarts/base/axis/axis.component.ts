@@ -5,7 +5,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { TdChartOptionsService } from '../chart.service';
+import { TdChartOptionsService } from '../chart-options.service';
 import { assignDefined } from '../utils';
 import { 
   ITdAxisLine,

@@ -1,5 +1,4 @@
 import * as echarts from 'echarts/lib/echarts';
-import { TdSeriesType } from '../../platform/echarts';
 
 const basicScatterData: any[] = [
   [
@@ -80,7 +79,7 @@ tooltip: {borderColor: '#ddd', borderWidth: 10, show: true},
       tooltip: {borderColor: '#e26d7b', borderWidth: 3},
       name: '1990',
       data: basicScatterData[0],
-      type: TdSeriesType.Scatter,
+      type: 'scatter',
       symbolSize: function (data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
       },
@@ -108,7 +107,7 @@ tooltip: {borderColor: '#ddd', borderWidth: 10, show: true},
     tooltip: {borderColor: '#77d6e5', borderWidth: 3},
       name: '2015',
       data: basicScatterData[1],
-      type: TdSeriesType.Scatter,
+      type: 'scatter',
       symbolSize: function (data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
       },

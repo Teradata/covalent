@@ -1,13 +1,9 @@
 import {
   Component,
   Input,
-  OnChanges,
-  OnInit,
-  OnDestroy,
   ChangeDetectionStrategy,
+  forwardRef,
 } from '@angular/core';
-
-import 'echarts/lib/chart/line';
 
 import { 
   TdChartOptionsService,
@@ -22,26 +18,21 @@ import {
   ITdMarkPoint,
   ITdMarkLine,
   ITdMarkArea,
-  ITdSeriesTooltip, 
-  TdSeriesType,
   ITdEmphasis,
-  ITdAnimation,
+  ITdSeries,
   ITdShadow,
+  TdSeriesComponent,
 } from '@covalent/echarts/base';
 
 export type TdSampling = 'average' | 'max' | 'min' | 'sum';
 
-export interface ITdLineSeries extends ITdAnimation, ITdShadow {
-  type?: TdSeriesType;
-  id?: string;
-  name?: string;
-  color?: string;
+export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
   yAxisIndex?: number;
   polarIndex?: number;
-  symbol?: TdMarkPointSymbol;
-  symbolSize?: number;
+  symbol?: TdMarkPointSymbol | string;
+  symbolSize?: number | any[] | Function;
   symbolRotate?: number;
   symbolKeepAspect?: boolean;
   symbolOffset?: any[];
@@ -49,11 +40,11 @@ export interface ITdLineSeries extends ITdAnimation, ITdShadow {
   showAllSymbol?: boolean | 'auto';
   hoverAnimation?: boolean;
   legendHoverLink?: boolean;
-  stack?: boolean;
+  stack?: string;
   cursor?: string;
   connectNulls?: boolean;
   clipOverflow?: boolean;
-  step?: boolean;
+  step?: string | boolean;
   label?: ITdLabel;
   itemStyle?: ITdItemStyle;
   lineStyle?: ITdLineStyle;
@@ -61,13 +52,13 @@ export interface ITdLineSeries extends ITdAnimation, ITdShadow {
   opacity?: number;
   areaStyle?: ITdAreaStyle;
   emphasis?: ITdEmphasis;
-  smooth?: boolean;
+  smooth?: boolean | number;
   smoothMonotone?: string;
   sampling?: TdSampling;
   dimensions?: any[];
   encode?: any;
   seriesLayoutBy?: TdSeriesLayoutBy;
-  datasetIndex?: 0;
+  datasetIndex?: number;
   data?: any[];
   markPoint?: ITdMarkPoint;
   markLine?: ITdMarkLine;
@@ -75,25 +66,18 @@ export interface ITdLineSeries extends ITdAnimation, ITdShadow {
   zlevel?: number;
   z?: number;
   silent?: boolean;
-  tooltip?: ITdSeriesTooltip;
 }
 
 @Component({
   selector: 'td-chart-series[td-line]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [{
+    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesLineComponent),
+  }],
 })
-export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy {
+export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implements ITdLineSeries {
 
-  private _type: TdSeriesType = TdSeriesType.Line;
-
-  private _state: any = {};
-
-  @Input('config') config: any = {};
-
-  @Input('id') id: string;
-  @Input('name') name: string;
-  @Input('color') color: string;
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
@@ -119,7 +103,7 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
   @Input('emphasis') emphasis: ITdEmphasis;
   @Input('smooth') smooth: boolean | number;
   @Input('smoothMonotone') smoothMonotone: string;
-  @Input('sampling') sampling: string;
+  @Input('sampling') sampling: TdSampling;
   @Input('dimensions') dimensions: any[];
   @Input('encode') encode: any;
   @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
@@ -131,35 +115,15 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('silent') silent: boolean;
-  @Input('animation') animation: boolean;
-  @Input('animationThreshold') animationThreshold: number;
-  @Input('animationDuration') animationDuration: number | Function;
-  @Input('animationEasing') animationEasing: string;
-  @Input('animationDelay') animationDelay: number | Function;
-  @Input('animationDurationUpdate') animationDurationUpdate: number | Function;
-  @Input('animationEasingUpdate') animationEasingUpdate: string;
-  @Input('animationDelayUpdate') animationDelayUpdate: number | Function;
-  @Input('tooltip') tooltip: ITdSeriesTooltip;
 
-  constructor(private _optionsService: TdChartOptionsService) {
+  constructor(_optionsService: TdChartOptionsService) {
+    super('line', _optionsService);
   }
 
-  ngOnInit(): void {
-    this._setOptions();
-  }
-
-  ngOnChanges(): void {
-    this._setOptions();
-  }
-
-  ngOnDestroy(): void {
-    this._removeOption();
-  }
-
-  private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config, {
+  getConfig(): any {
+    return assignDefined(this._state, this.config ? this.config : {}, {
       id: this.id,
-      type: this._type,
+      type: this.type,
       name: this.name,
       color: this.color,
       coordinateSystem: this.coordinateSystem,
@@ -208,12 +172,7 @@ export class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy 
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    });
-    this._optionsService.setArrayOption('series', config);
-  }
-
-  private _removeOption(): void {
-    this._optionsService.clearOption('series');
+    }, this._options);
   }
 
 }

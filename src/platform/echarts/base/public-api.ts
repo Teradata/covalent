@@ -3,8 +3,7 @@ export { TdChartComponent } from './chart.component';
 export { TdChartAxisComponent } from './axis/axis.component';
 export { TdChartYAxisComponent } from './axis/y-axis.component';
 export { TdChartXAxisComponent } from './axis/x-axis.component';
-export { TdChartTooltipComponent } from './tooltip/tooltip.component';
-export { TdChartOptionsService, CHART_PROVIDER } from './chart.service';
+export { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 export * from './utils';
 export {
   ITdAxisLine,
@@ -32,10 +31,10 @@ export {
   TdPointerType,
   TdStatus,
   TdLineType,
-  TdToolTipTrigger,
+  TdTooltipTrigger,
   TdLabelPosition,
   TdAxisPointerType,
-  TdTooltopTriggerOn,
+  TdTooltipTriggerOn,
   ITdLineStyle,
   TdAreaOrigin,
   TdMarkPointSymbol,
@@ -51,8 +50,8 @@ export {
   TdAxisPointerAxis,
 } from './base.types';
 
+export * from './series/series.component';
 export {
-  TdSeriesType,
   ITdItemStyle,
   ITdAreaStyle,
   ITdEmphasis,
@@ -66,4 +65,4 @@ export {
   TdSeriesLayoutBy,
   TdProgressiveChunkMode,
   ITdMarkAreaEmphasis,
-} from './series.base.interface';
+} from './series/series.interface';

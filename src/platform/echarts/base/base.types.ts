@@ -44,11 +44,11 @@ export interface ITdFont {
 
 export interface ITdTooltip {
   show?: boolean;
-  trigger?: TdToolTipTrigger;
+  trigger?: TdTooltipTrigger;
   axisPointer?: ITdTooltipAxisPointer;
   showContent?: boolean;
   alwaysShowContent?: boolean;
-  triggerOn?: TdTooltopTriggerOn;
+  triggerOn?: TdTooltipTriggerOn;
   showDelay?: number;
   hideDelay?: number;
   enterable?: boolean;
@@ -133,9 +133,9 @@ export interface ITdAxisPointerLabel extends ITdShadow, ITdTextShadow, ITdFont {
 
 export type TdAxisPointerAxis = 'x' | 'y' | 'radius' | 'angle';
 
-export type TdToolTipTrigger = 'item' | 'axis' | 'none';
+export type TdTooltipTrigger = 'item' | 'axis' | 'none';
 
-export type TdTooltopTriggerOn = 'mousemove' | 'click' | 'none';
+export type TdTooltipTriggerOn = 'mousemove' | 'click' | 'none' | 'mousemove|click';
 
 export type TdAxisPointerType = 'line' | 'shadow' | 'cross';
 
@@ -150,7 +150,7 @@ export type TdAreaOrigin = 'auto' | 'start' | 'end';
 
 export type TdLineLabelPosition = 'middle' | 'start' | 'end';
 
-export type TdTooltipPosition  = 'inside' | 'top' | 'left' | 'right' | 'bottom';
+export type TdTooltipPosition  = 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[] | Function;
 
 export type TdFontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | number;
 

@@ -1,6 +1,8 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import 'echarts/lib/chart/scatter';
+
 import { TdChartSeriesScatterComponent } from './scatter.component';
 
 export const SCATTER_MODULE_COMPONENTS: Type<any>[] = [

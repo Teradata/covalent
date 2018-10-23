@@ -1,13 +1,9 @@
 import {
   Component,
   Input,
-  OnChanges,
-  OnInit,
-  OnDestroy,
   ChangeDetectionStrategy,
+  forwardRef,
 } from '@angular/core';
-
-import 'echarts/lib/chart/bar';
 
 import { 
   TdChartOptionsService,
@@ -19,18 +15,13 @@ import {
   ITdMarkPoint,
   ITdMarkLine,
   ITdMarkArea,
-  ITdSeriesTooltip,
-  ITdAnimation,
-  TdSeriesType,
+  ITdSeries,
   ITdLabel,
   TdProgressiveChunkMode,
+  TdSeriesComponent,
 } from '@covalent/echarts/base';
 
-export interface ITdBarSeries extends ITdAnimation {
-  type?: TdSeriesType;
-  id?: string;
-  name?: string;
-  color?: string;
+export interface ITdBarSeries extends ITdSeries<'bar'> {
   legendHoverLink?: boolean;
   coordinateSystem?: TdCoordinateSystem;
   xAxisIndex?: number;
@@ -38,13 +29,13 @@ export interface ITdBarSeries extends ITdAnimation {
   Label?: ITdLabel;
   itemStyle?: ITdItemStyle;
   emphasis?: ITdEmphasis;
-  stack?: boolean;
+  stack?: string;
   cursor?: string;
   barWidth?: number | string;
   barMaxWidth?: number | string;
   barMinHeight?: number;
   barGap?: string;
-  barCategoryGap?: 'string';
+  barCategoryGap?: string;
   large?: boolean;
   largeThreshold?: number;
   progressive?: number;
@@ -61,25 +52,18 @@ export interface ITdBarSeries extends ITdAnimation {
   Zlevel?: 0;
   z?: number;
   silent?: boolean;
-  tooltip?: ITdSeriesTooltip;
 }
 
 @Component({
   selector: 'td-chart-series[td-bar]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [{
+    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesBarComponent),
+  }],
 })
-export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
+export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
 
-  private _type: string = 'bar';
-
-  private _state: any = {};
-
-  @Input('config') config: any = {};
-
-  @Input('id') id: string;
-  @Input('name') name: string;
-  @Input('color') color: string;
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
@@ -98,7 +82,7 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
   @Input('largeThreshold') largeThreshold: number;
   @Input('progressive') progressive: number;
   @Input('progressiveThreshold') progressiveThreshold: number;
-  @Input('progressiveChunkMode') progressiveChunkMode: string;
+  @Input('progressiveChunkMode') progressiveChunkMode: TdProgressiveChunkMode;
   @Input('dimensions') dimensions: any[];
   @Input('encode') encode: any;
   @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
@@ -109,35 +93,15 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
   @Input('markArea') markArea: ITdMarkArea;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
-  @Input('animation') animation: boolean;
-  @Input('animationThreshold') animationThreshold: number;
-  @Input('animationDuration') animationDuration: number | Function;
-  @Input('animationEasing') animationEasing: string;
-  @Input('animationDelay') animationDelay: number | Function;
-  @Input('animationDurationUpdate') animationDurationUpdate: number | Function;
-  @Input('animationEasingUpdate') animationEasingUpdate: string;
-  @Input('animationDelayUpdate') animationDelayUpdate: number | Function;
-  @Input('tooltip') tooltip: ITdSeriesTooltip;
 
-  constructor(private _optionsService: TdChartOptionsService) {
+  constructor(_optionsService: TdChartOptionsService) {
+    super('bar', _optionsService);
   }
 
-  ngOnInit(): void {
-    this._setOptions();
-  }
-
-  ngOnChanges(): void {
-    this._setOptions();
-  }
-
-  ngOnDestroy(): void {
-    this._removeOption();
-  }
-
-  private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config, {
+  getConfig(): any {
+    return assignDefined(this._state, this.config ? this.config : {}, {
       id: this.id,
-      type: this._type,
+      type: this.type,
       name: this.name,
       color: this.color,
       coordinateSystem: this.coordinateSystem,
@@ -178,11 +142,6 @@ export class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    });
-    this._optionsService.setArrayOption('series', config);
-  }
-
-  private _removeOption(): void {
-    this._optionsService.clearOption('series');
+    }, this._options);
   }
 }

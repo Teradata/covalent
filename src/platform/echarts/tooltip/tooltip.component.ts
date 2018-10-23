@@ -13,8 +13,13 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { TdChartOptionsService } from '../chart.service';
-import { assignDefined } from '../utils';
+import {
+  TdChartOptionsService,
+  assignDefined,
+  TdTooltipTrigger,
+  TdTooltipTriggerOn,
+  TdTooltipPosition,
+} from '@covalent/echarts/base';
 
 export class TdTooltipContext {
   $implicit: any;
@@ -30,7 +35,6 @@ export class TdChartTooltipFormatterDirective {
 @Component({
   selector: 'td-chart-tooltip',
   templateUrl: './tooltip.component.html',
-  styleUrls: ['./tooltip.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
@@ -42,25 +46,27 @@ export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
   @Input('config') config: any = {};
 
   @Input('show') show: boolean = true;
-  @Input('trigger') trigger: 'axis' | 'item' | 'none' =  'axis';
+  @Input('trigger') trigger: TdTooltipTrigger =  'axis';
   @Input('axisPointer') axisPointer: any;
   @Input('showContent') showContent: boolean = true;
   @Input('alwaysShowContent') alwaysShowContent: boolean = false;
-  @Input('triggerOn') triggerOn: 'mousemove' | 'click' | 'mousemove|click' | 'none' = 'mousemove|click';
+  @Input('triggerOn') triggerOn: TdTooltipTriggerOn = 'mousemove|click';
   @Input('showDelay') showDelay: number = 0;
   @Input('hideDelay') hideDelay: number = 0;
   @Input('enterable') enterable: boolean = false;
+  @Input('renderMode') renderMode: 'html' | 'richText';
   @Input('confine') confine: boolean = false;
   @Input('transitionDuration') transitionDuration: number = 0.5;
-  @Input('position') position: string | string[] | number[];
-  @Input('backgroundColor') backgroundColor: string = 'rgba(50,50,50,0.7)';
-  @Input('borderColor') borderColor: string = '#333';
-  @Input('borderWidth') borderWidth: number = 0;
-  @Input('padding') padding: number = 5;
-  @Input('textStyle') textStyle: any = {
+  @Input('position') position: TdTooltipPosition; // series
+  @Input('formatter') formatter: string | Function; // series
+  @Input('backgroundColor') backgroundColor: string = 'rgba(50,50,50,0.7)'; // series
+  @Input('borderColor') borderColor: string = '#333'; // series
+  @Input('borderWidth') borderWidth: number = 0; // series
+  @Input('padding') padding: number = 5; // series
+  @Input('textStyle') textStyle: any = { // series
     color: '#FFF',
   };
-  @Input('extraCssText') extraCssText: string;
+  @Input('extraCssText') extraCssText: string; // series
 
   @ContentChild(TdChartTooltipFormatterDirective, {read: TemplateRef}) formatterTemplate: TemplateRef<any>;
   @ViewChild('tooltipContent') fullTemplate: TemplateRef<any>;
@@ -96,19 +102,7 @@ export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
       confine: this.confine,
       transitionDuration: this.transitionDuration,
       position: this.position,
-      formatter: (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
-        this._context = {
-          $implicit: params,
-          ticket: ticket,
-        };
-        // timeout set since we need to set the HTML at the end of the angular lifecycle when
-        // the tooltip delay is more than 0
-        setTimeout(() => {
-          callback(ticket, (<HTMLElement>this._elementRef.nativeElement).innerHTML);
-        });
-        this._changeDetectorRef.markForCheck();
-        return (<HTMLElement>this._elementRef.nativeElement).innerHTML;
-      },
+      formatter: this.formatter ? this.formatter : this._formatter(),
       backgroundColor: this.backgroundColor,
       borderColor: this.borderColor,
       borderWidth: this.borderWidth,
@@ -122,6 +116,22 @@ export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
 
   private _removeOption(): void {
     this._optionsService.clearOption('tooltip');
+  }
+
+  private _formatter(): Function {
+    return (params: any, ticket: any, callback: (ticket: string, html: string) => void) => {
+      this._context = {
+        $implicit: params,
+        ticket: ticket,
+      };
+      // timeout set since we need to set the HTML at the end of the angular lifecycle when
+      // the tooltip delay is more than 0
+      setTimeout(() => {
+        callback(ticket, (<HTMLElement>this._elementRef.nativeElement).innerHTML);
+      });
+      this._changeDetectorRef.markForCheck();
+      return (<HTMLElement>this._elementRef.nativeElement).innerHTML;
+    };
   }
 
 }
