@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {
   CovalentBreadcrumbsModule,
 } from './public-api';
@@ -31,10 +32,12 @@ describe('Component: Breadcrumbs', () => {
     TestBed.configureTestingModule({
       declarations: [
         TdBreadcrumbsTestComponent,
+        TdBreadcrumbsToolbarTestComponent,
         FakeComponent,
       ],
       imports: [
         NoopAnimationsModule,
+        MatToolbarModule,
         RouterTestingModule.withRoutes([
           { path: '', component: FakeComponent },
           { path: 'layouts', component: FakeComponent },
@@ -75,7 +78,7 @@ describe('Component: Breadcrumbs', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        fixture.debugElement.query(By.directive(TdBreadcrumbsComponent)).nativeElement.parentElement.style.width = '300px';
+        document.body.style.width = '300px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
@@ -85,6 +88,23 @@ describe('Component: Breadcrumbs', () => {
       });
     }),
   ));
+
+  it('should resize window and hide breadcrumbs with breadcrumb in mat-toolbar with padding',
+    async(inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdBreadcrumbsToolbarTestComponent);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        document.body.style.width = '300px';
+        window.dispatchEvent(new Event('resize'));
+        fixture.detectChanges();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let breadcrumbs: TdBreadcrumbsComponent = fixture.debugElement.query(By.directive(TdBreadcrumbsComponent)).componentInstance;
+          expect(breadcrumbs.hiddenBreadcrumbs.length).toBe(3);
+        });
+      });
+    }),
+    ));
 });
 
 @Component({
@@ -102,5 +122,25 @@ describe('Component: Breadcrumbs', () => {
   `,
 })
 class TdBreadcrumbsTestComponent {
+  separatorIcon: string = 'motorcycle';
+}
+
+@Component({
+  selector: 'td-breadcrumbs-test-toolbar',
+  template: `
+  <mat-toolbar class="dense-toolbar push-top" color="primary">
+    <mat-toolbar-row>
+      <td-breadcrumbs #breadcrumbsPadded class="pad-left">
+        <a td-breadcrumb routerLink="/">Home</a>
+        <a td-breadcrumb routerLink="/layouts">Layouts</a>
+        <a td-breadcrumb routerLink="/layouts2">Layouts2</a>
+        <a td-breadcrumb routerLink="/layouts3">Layouts3</a>
+        <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+      </td-breadcrumbs>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  `,
+})
+class TdBreadcrumbsToolbarTestComponent {
   separatorIcon: string = 'motorcycle';
 }
