@@ -61,9 +61,9 @@ describe('Component: Steps', () => {
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          // check if content is hidden
+          // check if content is 0px in height
           expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
-          .style.display).toBe('none');
+          .style.height).toBe('0px');
         });
       });
   })));
@@ -191,9 +191,9 @@ describe('Component: Steps', () => {
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          // check if content is hidden
+          // check if content is 0px in height;
           expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
-                .style.display).toBe('none');
+                .style.height).toBe('0px');
 
           fixture.detectChanges();
           fixture.whenStable().then(() => {
