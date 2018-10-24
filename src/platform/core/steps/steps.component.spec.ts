@@ -87,9 +87,9 @@ describe('Component: Steps', () => {
         // check if header is not active
         expect(fixture.debugElement.query(By.css('.td-circle.mat-active'))).toBeTruthy();
 
-        // check if content is hidden
+        // check if content has default height
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-step-content-wrapper')).nativeElement)
-        .style.display).toBe('');
+        .style.height).toBe('');
       });
   })));
 
