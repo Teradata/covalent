@@ -1,5 +1,6 @@
 import { Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
 
+import { assignDefined } from '../utils/assign-defined';
 import { TdChartOptionsService } from '../chart-options.service';
 import { ITdSeriesTooltip } from '../series/series.interface';
 import { ITdAnimation } from '../base.types';
@@ -69,7 +70,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   abstract getConfig(): any;
 
   private _setOptions(): void {
-    let config: any = this.getConfig();
+    let config: any = assignDefined(this._state, this.config ? this.config : {}, this.getConfig(), this._options);
     this.optionsService.setArrayOption('series', config);
   }
 

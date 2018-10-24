@@ -73,7 +73,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config, {
+    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
       id: this.id,
       show: this.show,
       gridIndex: this.gridIndex,

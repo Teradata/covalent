@@ -7,7 +7,6 @@ import {
 
 import { 
   TdChartOptionsService,
-  assignDefined,
   TdCoordinateSystem,
   ITdItemStyle,
   ITdEmphasis,
@@ -99,7 +98,7 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
   }
 
   getConfig(): any {
-    return assignDefined(this._state, this.config ? this.config : {}, {
+    return {
       id: this.id,
       type: this.type,
       name: this.name,
@@ -142,6 +141,6 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    }, this._options);
+    };
   }
 }

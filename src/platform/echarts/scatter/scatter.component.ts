@@ -7,7 +7,6 @@ import {
 
 import { 
   TdChartOptionsService,
-  assignDefined,
   TdCoordinateSystem,
   TdMarkPointSymbol,
   ITdMarkPoint,
@@ -43,7 +42,7 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   step?: boolean;
   label?: ITdLabel;
   itemStyle?: any;
-  Emphasis?: ITdEmphasis;
+  emphasis?: ITdEmphasis;
   progressive?: number;
   progressiveThreshold?: number;
   dimensions?: any[];
@@ -107,7 +106,7 @@ export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> 
   }
 
   getConfig(): any {
-    return assignDefined(this._state, this.config ? this.config : {}, {
+    return {
       id: this.id,
       type: this.type,
       name: this.name,
@@ -153,6 +152,6 @@ export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> 
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    }, this._options);
+    };
   }
 }

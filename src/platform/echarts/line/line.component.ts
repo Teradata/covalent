@@ -7,7 +7,6 @@ import {
 
 import { 
   TdChartOptionsService,
-  assignDefined,
   TdCoordinateSystem,
   TdMarkPointSymbol,
   ITdLabel,
@@ -121,7 +120,7 @@ export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implem
   }
 
   getConfig(): any {
-    return assignDefined(this._state, this.config ? this.config : {}, {
+    return {
       id: this.id,
       type: this.type,
       name: this.name,
@@ -172,7 +171,7 @@ export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implem
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    }, this._options);
+    };
   }
 
 }

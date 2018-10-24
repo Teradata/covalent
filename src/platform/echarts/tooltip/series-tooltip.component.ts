@@ -12,7 +12,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { TdChartOptionsService, assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
+import { assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
 
 import { TdChartTooltipFormatterDirective, TdTooltipContext } from './tooltip.component';
 
