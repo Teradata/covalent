@@ -145,9 +145,10 @@ $mat-elevation-opacity: 1 !default;
     @error '$zValue must be between 0 and 24';
   }
 
-  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
-              #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
-              #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+  box-shadow:
+    #{map-get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.
