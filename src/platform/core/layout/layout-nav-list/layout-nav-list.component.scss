@@ -1,6 +1,11 @@
 @import '../../common/styles/core/whiteframe';
 
 :host {
+  .td-layout-nav-list-wrapper > .mat-sidenav-container {
+    > mat-sidenav.mat-drawer-side {
+      border-right: 0;
+    }
+  }
   // [layout-fill]
   margin: 0;
   width: 100%;
