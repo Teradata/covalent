@@ -10,7 +10,7 @@
   mat-sidenav-container.td-layout-manage-list {
     // [flex]
     flex: 1;
-    & > mat-sidenav {
+    & > .mat-drawer > .mat-drawer-inner-container {
       &.mat-drawer-opened,
       &.mat-drawer-opening,
       &.mat-drawer-closed,
@@ -57,7 +57,7 @@
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
-    & > mat-sidenav {
+    & > .mat-drawer > .mat-drawer-inner-container {
       box-shadow: $whiteframe-shadow-1dp;
       box-sizing: border-box;
       display: -webkit-box;

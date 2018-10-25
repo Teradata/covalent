@@ -129,9 +129,15 @@ $mat-elevation-transition-duration: 280ms !default;
 // The default easing value for elevation transitions.
 $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function;
 
+// The default color for elevation shadows.
+$mat-elevation-color: black !default;
+
+// The default opacity scaling value for elevation shadows.
+$mat-elevation-opacity: 1 !default;
+
 // Applies the correct css rules to an element to give it the elevation specified by $zValue.
 // The $zValue must be between 0 and 24.
-@mixin mat-elevation($zValue) {
+@mixin mat-elevation($zValue, $color: $mat-elevation-color, $opacity: $mat-elevation-opacity) {
   @if type-of($zValue) != number or not unitless($zValue) {
     @error '$zValue must be a unitless number';
   }
@@ -139,9 +145,10 @@ $mat-elevation-transition-timing-function: $mat-fast-out-slow-in-timing-function
     @error '$zValue must be between 0 and 24';
   }
 
-  #{$mat-elevation-property}: #{map-get($_umbra-elevation-map, $zValue)},
-    #{map-get($_penumbra-elevation-map, $zValue)},
-    #{map-get($_ambient-elevation-map, $zValue)};
+  box-shadow:
+    #{map-get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.
