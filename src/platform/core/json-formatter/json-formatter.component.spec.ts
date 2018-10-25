@@ -115,7 +115,7 @@ describe('Component: JsonFormatter', () => {
         expect(fixture.debugElement.queryAll(By.css('.td-key-leaf')).length).toBe(6);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('none');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.height).toBe('0px');
         });
       });
   })));
@@ -132,7 +132,7 @@ describe('Component: JsonFormatter', () => {
         /* tslint:disable-next-line */
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('none');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.height).toBe('0px');
           fixture.debugElement.query(By.css('.td-key-node')).triggerEventHandler('click', new Event('click'));
           fixture.detectChanges();
           fixture.whenStable().then(() => {
@@ -140,7 +140,7 @@ describe('Component: JsonFormatter', () => {
             fixture.whenStable().then(() => {
               fixture.detectChanges();
               fixture.whenStable().then(() => {
-                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('');
+                expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.height).toBe('');
               });
             });
           });
@@ -158,7 +158,7 @@ describe('Component: JsonFormatter', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.display).toBe('');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-object-children')).nativeElement).style.height).toBe('');
         });
       });
   })));
