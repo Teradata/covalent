@@ -1,6 +1,6 @@
 import { Component, HostBinding, TemplateRef } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import {
@@ -39,7 +39,7 @@ export class TdTestDynamicComponent {
   templateUrl: './dynamic-forms.component.html',
   animations: [
     slideInDownAnimation,
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
   ],
   preserveWhitespaces: true,
 })
