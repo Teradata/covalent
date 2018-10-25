@@ -405,7 +405,7 @@
       <ng-template matTabLabel>Demo</ng-template>
       <div class="push">
         <div class="mat-body-1">Type any text and press enter:</div>
-        <td-chips placeholder="Enter any string" required></td-chips>
+        <td-chips placeholder="Enter any string" required [(ngModel)]="stackedStringsModel"></td-chips>
       </div>
     </mat-tab>
     <mat-tab>
@@ -414,7 +414,7 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-          <td-chips placeholder="Enter any string" required></td-chips>
+          <td-chips placeholder="Enter any string" required [(ngModel)]="stackedStringsModel"></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>

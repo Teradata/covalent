@@ -443,8 +443,6 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
-    // Reset the color to primary
-    this.color = 'primary';
     
     this._closeAutocomplete();
     timer(this.debounce).toPromise().then(() => {
@@ -481,12 +479,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * Else check if its not the last chip of the list to focus the next one.
      */
     if (index === (this._totalChips - 1) && index === 0) {
-      this._inputChild.focus();
-
-      // set the input field to warn color when the last chip is deleted when the required attribute is set
-      if (this._required) {
-        this.color = 'warn';
-      }      
+      this._inputChild.focus();     
     } else if (index < (this._totalChips - 1)) {
       this._focusChip(index + 1);
     } else if (index > 0) {

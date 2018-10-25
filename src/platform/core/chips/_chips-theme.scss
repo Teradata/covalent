@@ -72,5 +72,14 @@
         background-color: mat-color($warn);
       }
     }
+    &.ng-invalid {
+      .mat-form-field-underline .mat-form-field-ripple {
+        background-color: mat-color($warn);
+      }
+
+      mat-form-field label {
+        color: mat-color($warn) !important;
+      }
+    }
   }
 }
