@@ -1,6 +1,14 @@
 @import '../../common/styles/core/whiteframe';
 
 :host {
+  .td-layout-nav-list-wrapper > .mat-sidenav-container {
+    > mat-sidenav.mat-drawer-side {
+      border-right: 0;
+      [dir='rtl'] & {
+        border-left: 0;
+      }
+    }
+  }
   // [layout-fill]
   margin: 0;
   width: 100%;
@@ -87,7 +95,7 @@
       flex-grow: 1;
     }
     /* Ensure the left sidenav is a flex column & 100% height */
-    & > mat-sidenav {
+    & > .mat-drawer > .mat-drawer-inner-container {
       box-shadow: $whiteframe-shadow-1dp;
       box-sizing: border-box;
       display: -webkit-box;

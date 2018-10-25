@@ -8,7 +8,7 @@
 
   ::ng-deep {
     // Ensuring sidenav content has flex column properties
-    & > mat-sidenav-container > mat-sidenav {
+    & > mat-sidenav-container .mat-drawer > .mat-drawer-inner-container {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
