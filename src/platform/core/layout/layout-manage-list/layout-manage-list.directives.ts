@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
+import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutManageListComponent } from './layout-manage-list.component';
 import { LayoutToggle } from '../layout-toggle.class';
 
@@ -12,14 +12,10 @@ export class TdLayoutManageListToggleDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutManageListToggle === '' || tdLayoutManageListToggle);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
-  }
-
-  onClick(): void {
-    this._layout.toggle();
   }
 }
 
@@ -33,14 +29,10 @@ export class TdLayoutManageListCloseDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutManageListClose === '' || tdLayoutManageListClose);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
-  }
-
-  onClick(): void {
-    this._layout.close();
   }
 }
 
@@ -54,13 +46,9 @@ export class TdLayoutManageListOpenDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
-  }
-
-  onClick(): void {
-    this._layout.open();
   }
 }
