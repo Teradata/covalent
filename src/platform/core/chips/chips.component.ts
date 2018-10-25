@@ -57,7 +57,7 @@ export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChips
 })
 export class TdChipsComponent extends _TdChipsMixinBase implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
 
-  private _outsideClickSubs: Subscription;
+  private _outsideClickSubs: Subscription = Subscription.EMPTY;
 
   private _isMousedown: boolean = false;
 
@@ -72,6 +72,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _focused: boolean = false;
   private _required: boolean = false;
   private _tabIndex: number = 0;
+  private _touchendDebounce: number = 100;
 
   _internalClick: boolean = false;
   _internalActivateOption: boolean = false;
@@ -384,10 +385,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   ngOnDestroy(): void {
-    if (this._outsideClickSubs) {
       this._outsideClickSubs.unsubscribe();
-      this._outsideClickSubs = undefined;
-    }
   }
 
   _setInternalClick(): void {
@@ -743,10 +741,11 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      merge(
+      this._outsideClickSubs = merge(
         fromEvent(this._document, 'click'),
         fromEvent(this._document, 'touchend'),
       ).pipe(
+        debounceTime(this._touchendDebounce),
         filter(
           (event: MouseEvent) => {
             const clickTarget: HTMLElement = <HTMLElement>event.target;

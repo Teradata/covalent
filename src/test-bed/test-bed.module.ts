@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
@@ -27,6 +28,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     BrowserAnimationsModule,
     FormsModule,
     MatDividerModule,
+    MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
     CovalentBreadcrumbsModule,

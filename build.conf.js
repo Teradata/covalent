@@ -2,8 +2,8 @@
 
 module.exports = {
   deployed: 'deploy/platform/',
-  angularVersion: '6.0.0',
-  materialVersion: '6.0.0',
+  angularVersion: '7.0.0',
+  materialVersion: '7.0.0',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',

@@ -14,6 +14,8 @@ export class TdDynamicSliderComponent {
 
   required: boolean = undefined;
 
+  name: string = '';
+
   min: number = undefined;
 
   max: number = undefined;

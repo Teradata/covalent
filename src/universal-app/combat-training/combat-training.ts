@@ -10,7 +10,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentPagingModule } from '@covalent/core/paging';
 import { CovalentVirtualScrollModule } from '@covalent/core/virtual-scroll';
 import { CovalentNotificationsModule } from '@covalent/core/notifications';
-import { CovalentCommonModule, TdFadeInOutAnimation } from '@covalent/core/common';
+import { CovalentCommonModule, tdFadeInOutAnimation } from '@covalent/core/common';
 import { CovalentMessageModule } from '@covalent/core/message';
 import { CovalentChipsModule } from '@covalent/core/chips';
 import { CovalentDataTableModule } from '@covalent/core/data-table';
@@ -40,7 +40,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   templateUrl: './combat-training.html',
   styleUrls: ['./combat-training.css'],
   animations: [
-    TdFadeInOutAnimation(), // using implicit anchor name 'tdFadeInOut' in template
+    tdFadeInOutAnimation, // using implicit anchor name 'tdFadeInOut' in template
   ],
 })
 export class CombatTrainingComponent implements OnInit {

@@ -128,7 +128,8 @@
                   (inputChange)="filterObjects($event)"
                   requireMatch>
           <ng-template td-chip let-chip="chip">
-            <mat-icon>location_city</mat-icon> {{chip.city}}, (Pop: {{chip.population}})
+            <mat-icon>location_city</mat-icon>
+            <span class="text-truncate">{{chip.city}}, (Pop: {{chip.population}})</span>
           </ng-template>
           <ng-template td-autocomplete-option let-option="option">
             <div layout="row" layout-align="start center">
@@ -151,7 +152,8 @@
                       (inputChange)="filterObjects($event)"
                       requireMatch>
               <ng-template td-chip let-chip="chip">
-                <mat-icon>location_city</mat-icon> { {chip.city} }, (Pop: { {chip.population} })
+                <mat-icon>location_city</mat-icon>
+                <span class="text-truncate">{ {chip.city} }, (Pop: { {chip.population} })</span>
               </ng-template>
               <ng-template td-autocomplete-option let-option="option">
                 <div layout="row" layout-align="start center">
@@ -215,7 +217,8 @@
                   (inputChange)="filterAsync($event)"
                   requireMatch>
           <ng-template td-chip let-chip="chip">
-            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div> {{chip}}
+            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div>
+            <span class="text-truncate">{{chip}}</span>
           </ng-template>
           <mat-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></mat-progress-bar>
         </td-chips>
@@ -234,7 +237,8 @@
                       (inputChange)="filterAsync($event)"
                       requireMatch>
               <ng-template td-chip let-chip="chip">
-                <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{ {chip.substring(0, 1).toUpperCase()} }</div> { {chip} }
+                <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{ {chip.substring(0, 1).toUpperCase()} }</div>
+                <span class="text-truncate">{ {chip} }</span>
               </ng-template>
               <mat-progress-bar [style.height.px]="2" *ngIf="filteringAsync" mode="indeterminate"></mat-progress-bar>
             </td-chips>
@@ -302,7 +306,8 @@
                   inputPosition="before"
                   stacked>
           <ng-template td-chip let-chip="chip">
-            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div> {{chip}}
+            <div class="tc-grey-100 bgc-teal-700" td-chip-avatar>{{chip.substring(0, 1).toUpperCase()}}</div>
+            <span class="text-truncate">{{chip}}</span>
           </ng-template>
         </td-chips>
       </div>
