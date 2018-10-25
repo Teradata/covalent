@@ -15,3 +15,4 @@ export * from './media/index';
 export * from './menu/index';
 export * from './search/index';
 export * from './steps/index';
+export * from './tab-select/index';
