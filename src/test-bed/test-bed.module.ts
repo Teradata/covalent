@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
-import { CovalentHorizontalStepperModule } from '../platform/experimental/nav-stepper/horizontal-nav-stepper';
+import { CovalentHorizontalStepperModule } from '../platform/experimental/nav-stepper';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
