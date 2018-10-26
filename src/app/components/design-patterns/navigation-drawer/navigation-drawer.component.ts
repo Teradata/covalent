@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
@@ -10,7 +10,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './navigation-drawer.component.html',
   animations: [
     slideInDownAnimation,
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
   ],
 })
 export class NavigationDrawerComponent {
