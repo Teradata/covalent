@@ -27,6 +27,7 @@ import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
+import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 
 const routes: Routes = [{
   children: [{
@@ -95,6 +96,9 @@ const routes: Routes = [{
     }, {
       component: VirtualScrollDemoComponent,
       path: 'virtual-scroll',
+    }, {
+      component: TabSelectDemoComponent,
+      path: 'tab-select',
     }, {
       component: DynamicFormsDemoComponent,
       path: 'dynamic-forms',

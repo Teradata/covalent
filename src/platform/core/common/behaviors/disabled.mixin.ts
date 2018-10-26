@@ -1,5 +1,6 @@
-import { Constructor } from './constructor';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
+
+type Constructor<T> = new (...args: any[]) => T;
 
 /** Interface to implement when applying the disabled mixin */
 export interface ICanDisable {

@@ -23,11 +23,11 @@ export interface ICollapseAnimation extends IAnimationOptions {
 export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse', [
     state('1', style({
       height: '0',
-      display: 'none',
+      visibility: 'hidden',
     })),
     state('0',  style({
       height: AUTO_STYLE,
-      display: AUTO_STYLE,
+      visibility: AUTO_STYLE,
     })),
     transition('0 => 1', [
       group([
@@ -48,11 +48,11 @@ export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): A
   return trigger(collapseOptions.anchor || 'tdCollapse', [
     state('1', style({
       height: '0',
-      display: 'none',
+      visibility: 'hidden',
     })),
     state('0',  style({
       height: AUTO_STYLE,
-      display: AUTO_STYLE,
+      visibility: AUTO_STYLE,
     })),
     transition('0 => 1', [
       group([

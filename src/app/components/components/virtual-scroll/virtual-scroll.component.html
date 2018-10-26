@@ -12,71 +12,69 @@
     Scroll virtually on a set of items
   </mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content>
-    <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
-      <mat-tab-group mat-stretch-tabs dynamicHeight>
-        <mat-tab>
-          <ng-template matTabLabel>HTML</ng-template>
-          <td-highlight lang="html">
-            <![CDATA[
-              <mat-list>
-                <mat-list-item>
-                  Column Header
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
-                  <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-                    <mat-list-item>
-                      <mat-icon matListAvatar>person</mat-icon>
-                      <h4 matLine>{ {row.name} }</h4>
-                      <p matLine>Row: { {row.index} }</p>
-                    </mat-list-item>
-                    <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-                  </ng-template>
-                </td-virtual-scroll-container>
-              </mat-list>
-            ]]>
-          </td-highlight>
-        </mat-tab>
-        <mat-tab>
-          <ng-template matTabLabel>TS</ng-template>
-          <td-highlight lang="typescript">
-            <![CDATA[
-              import { Component, OnInit } from '@angular/core';
-              ...
-              export class Demo implements OnInit {
-              
-                data: any[] = [];
-              
-                ngOnInit(): void {
-                  for (let index: number = 1; index <= 1500; index++) {
-                    this.data.push({index: index, name: 'element-' + index});
-                  }
+  <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>HTML</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <mat-list>
+              <mat-list-item>
+                Column Header
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+                <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+                  <mat-list-item>
+                    <mat-icon matListAvatar>person</mat-icon>
+                    <h4 matLine>{ {row.name} }</h4>
+                    <p matLine>Row: { {row.index} }</p>
+                  </mat-list-item>
+                  <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+                </ng-template>
+              </td-virtual-scroll-container>
+            </mat-list>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>TS</ng-template>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component, OnInit } from '@angular/core';
+            ...
+            export class Demo implements OnInit {
+            
+              data: any[] = [];
+            
+              ngOnInit(): void {
+                for (let index: number = 1; index <= 1500; index++) {
+                  this.data.push({index: index, name: 'element-' + index});
                 }
               }
-            ]]>
-          </td-highlight>
-        </mat-tab>
-      </mat-tab-group>
-      <mat-divider></mat-divider>
-    </div>
-    <mat-list>
-      <mat-list-item>
-        Column Header
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
-        <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
-          <mat-list-item>
-            <mat-icon matListAvatar>person</mat-icon>
-            <h4 matLine>{{row.name}}</h4>
-            <p matLine>Row: {{row.index}}</p>
-          </mat-list-item>
-          <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
-        </ng-template>
-      </td-virtual-scroll-container>
-    </mat-list>
-  </mat-card-content>
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+  </div>
+  <mat-list>
+    <mat-list-item>
+      Column Header
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
+      <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+        <mat-list-item>
+          <mat-icon matListAvatar>person</mat-icon>
+          <h4 matLine>{{row.name}}</h4>
+          <p matLine>Row: {{row.index}}</p>
+        </mat-list-item>
+        <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+      </ng-template>
+    </td-virtual-scroll-container>
+  </mat-list>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <button mat-button class="text-upper" (click)="virtualScroll.scrollToStart()">
