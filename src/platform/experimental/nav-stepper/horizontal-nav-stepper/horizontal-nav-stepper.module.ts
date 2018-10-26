@@ -8,14 +8,12 @@ import { PortalModule } from '@angular/cdk/portal';
 import { TdHorizontalStepperComponent } from './horizontal-nav-stepper.component';
 import { TdNavStepComponent } from '../nav-step/nav-step.component';
 import { TdNavStepHeaderComponent } from '../nav-step-header/nav-step-header.component';
-import { CovalentStepsModule } from '@covalent/core/steps/steps.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MatIconModule,
     MatRippleModule,
-    CovalentStepsModule,
     PortalModule,
   ],
   declarations: [
