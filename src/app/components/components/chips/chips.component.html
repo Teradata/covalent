@@ -375,7 +375,7 @@
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
       <div class="push">
-        <div class="mat-body-1">Type any test and press enter:</div>
+        <div class="mat-body-1">Type any text and press enter:</div>
         <td-chips color="warn" placeholder="Enter any string"></td-chips>
       </div>
     </mat-tab>
@@ -400,6 +400,41 @@
     </mat-tab>
   </mat-tab-group>
 </mat-card>
+<!-- chip with required attribute -->
+<mat-card>
+  <mat-card-title>Chips with required attribute</mat-card-title>
+  <mat-card-subtitle>"required" attribute is set to true when we need at least one chip to be available. When the last chip is deleted, input field will be displayed in warn color</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <div class="push">
+        <div class="mat-body-1">Type any text and press enter:</div>
+        <td-chips placeholder="Enter any string" required [(ngModel)]="stackedStringsModel"></td-chips>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-chips placeholder="Enter any string" required [(ngModel)]="stackedStringsModel"></td-chips>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class ChipsDemoComponent {
+              
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<!-- End -- chip with required attribute -->
 <mat-card>
   <mat-card-title>Chip Events</mat-card-title>
   <mat-card-subtitle>Demo showing chip events</mat-card-subtitle>

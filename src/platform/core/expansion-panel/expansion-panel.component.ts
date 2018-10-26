@@ -5,7 +5,7 @@ import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import {
-  TdCollapseAnimation,
+  tdCollapseAnimation,
   ICanDisable,
   mixinDisabled,
   ICanDisableRipple,
@@ -57,7 +57,7 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
   templateUrl: './expansion-panel.component.html',
   inputs: ['disabled', 'disableRipple'],
   animations: [
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
     tdRotateAnimation,
   ],
 })

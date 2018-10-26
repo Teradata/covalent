@@ -127,6 +127,14 @@
       }
     }
   }
+  &.ng-invalid {
+    .mat-form-field-underline .mat-form-field-ripple {
+      visibility: visible;
+      opacity: 1;
+      transform: scaleX(1);
+      transition: transform 150ms linear, background-color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    }
+  }
   ::ng-deep mat-form-field {
     .mat-form-field-underline {
       display: none;

@@ -100,8 +100,6 @@ describe('Directive: Loading', () => {
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
       expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
       .style.opacity).toBe('0');
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-      .style.display).toBe('none');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -122,8 +120,6 @@ describe('Directive: Loading', () => {
           fixture.whenStable().then(() => {
             expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
             .style.opacity).toBe('0');
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.display).toBe('none');
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();
@@ -147,8 +143,6 @@ describe('Directive: Loading', () => {
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
       expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
         .style.opacity).toBe('0');
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-      .style.display).toBe('none');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -185,8 +179,6 @@ describe('Directive: Loading', () => {
           fixture.whenStable().then(() => {
             expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
             .style.opacity).toBe('0');
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.display).toBe('none');
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();

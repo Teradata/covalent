@@ -1,21 +1,8 @@
 import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-/**
- * ANIMATIONS
- */
-
-// Directives
-import { TdToggleDirective } from './animations/toggle/toggle.directive';
-import { TdFadeDirective } from './animations/fade/fade.directive';
-
-const TD_ANIMATIONS: Type<any>[] = [
-  TdToggleDirective,
-  TdFadeDirective,
-];
 
 /**
  * FORMS
@@ -68,7 +55,6 @@ import { IconService } from './services/icon.service';
   declarations: [
     TD_FORMS,
     TD_PIPES,
-    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
   exports: [
@@ -76,7 +62,6 @@ import { IconService } from './services/icon.service';
     CommonModule,
     TD_FORMS,
     TD_PIPES,
-    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
   providers: [

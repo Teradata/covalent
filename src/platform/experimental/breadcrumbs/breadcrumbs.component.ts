@@ -88,7 +88,17 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   * Current width of the element container
   */
   get nativeElementWidth(): number {
-    return (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
+    let element: HTMLElement = (<HTMLElement>this._elementRef.nativeElement);
+    // Need to take into account border, margin and padding that might be around all the crumbs
+    let style: CSSStyleDeclaration = window.getComputedStyle(element);
+    let borderLeft: number = parseInt(style.borderLeft, 10);
+    let borderRight: number = parseInt(style.borderRight, 10);
+    let marginLeft: number = parseInt(style.marginLeft, 10);
+    let marginRight: number = parseInt(style.marginRight, 10);
+    let paddingLeft: number = parseInt(style.paddingLeft, 10);
+    let paddingRight: number = parseInt(style.paddingRight, 10);
+
+    return element.getBoundingClientRect().width - borderLeft - borderRight - marginLeft - marginRight - paddingLeft - paddingRight;
   }
 
   /**

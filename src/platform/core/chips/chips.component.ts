@@ -57,7 +57,7 @@ export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChips
 })
 export class TdChipsComponent extends _TdChipsMixinBase implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
 
-  private _outsideClickSubs: Subscription;
+  private _outsideClickSubs: Subscription = Subscription.EMPTY;
 
   private _isMousedown: boolean = false;
 
@@ -70,6 +70,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   private _chipAddition: boolean = true;
   private _chipRemoval: boolean = true;
   private _focused: boolean = false;
+  private _required: boolean = false;
   private _tabIndex: number = 0;
   private _touchendDebounce: number = 100;
 
@@ -151,6 +152,19 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   /**
+   * required?: boolean
+   * Value is set to true if at least one chip is needed
+   * Defaults to false
+   */
+  @Input('required')
+  set required(required: boolean) {
+    this._required = coerceBooleanProperty(required);
+  }
+  get required(): boolean {
+    return this._required;
+  }
+
+  /**
    * chipAddition?: boolean
    * Disables the ability to add chips. When setting disabled as true, this will be overriden.
    * Defaults to true.
@@ -191,6 +205,16 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    */
   get canRemoveChip(): boolean {
     return this.chipRemoval && !this.disabled;
+  }
+
+  /**
+   * returns the display placeholder
+   */
+  get displayPlaceHolder(): string {
+    if (!this.canAddChip) {
+      return '';
+    }
+    return (this._required) ? `${this.placeholder} *` :  this.placeholder;
   }
 
   /**
@@ -361,10 +385,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   ngOnDestroy(): void {
-    if (this._outsideClickSubs) {
       this._outsideClickSubs.unsubscribe();
-      this._outsideClickSubs = undefined;
-    }
   }
 
   _setInternalClick(): void {
@@ -420,6 +441,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
+    
     this._closeAutocomplete();
     timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
@@ -455,7 +477,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * Else check if its not the last chip of the list to focus the next one.
      */
     if (index === (this._totalChips - 1) && index === 0) {
-      this._inputChild.focus();
+      this._inputChild.focus();     
     } else if (index < (this._totalChips - 1)) {
       this._focusChip(index + 1);
     } else if (index > 0) {
@@ -719,7 +741,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
    */
   private _watchOutsideClick(): void {
     if (this._document) {
-      merge(
+      this._outsideClickSubs = merge(
         fromEvent(this._document, 'click'),
         fromEvent(this._document, 'touchend'),
       ).pipe(

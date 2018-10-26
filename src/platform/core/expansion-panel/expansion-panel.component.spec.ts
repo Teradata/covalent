@@ -48,7 +48,7 @@ describe('Component: ExpansionPanel', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-          .style.display).toBe('none');
+          .style.height).toBe('0px');
         });
 
       });
@@ -67,7 +67,7 @@ describe('Component: ExpansionPanel', () => {
         fixture.whenStable().then(() => {
           // check if content is hidden
           expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-          .style.display).toBe('none');
+          .style.height).toBe('0px');
           // check if summary was rendered
           expect(fixture.debugElement.query(By.css('.td-expansion-summary'))).toBeTruthy();
         });
@@ -87,10 +87,10 @@ describe('Component: ExpansionPanel', () => {
         expect(fixture.debugElement.query(By.css('.td-expansion-content'))).toBeTruthy();
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-content')).nativeElement)
-        .style.display).toBe('none');
+        .style.height).toBe('0px');
 
         expect((<HTMLElement>fixture.debugElement.query(By.css('.td-expansion-summary')).nativeElement)
-        .style.display).toBe('');
+        .style.height).toBe('');
 
         });
       });
