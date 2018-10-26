@@ -14,4 +14,5 @@ export * from './loading/index';
 export * from './media/index';
 export * from './menu/index';
 export * from './search/index';
+export * from './breadcrumbs/index';
 export * from './steps/index';

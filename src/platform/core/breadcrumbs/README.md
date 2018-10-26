@@ -1,4 +1,4 @@
-# td-breadcrumbs (experimental)
+# td-breadcrumbs
 
 `td-breadcrumbs` element generates breadcrumbs for navigation.  Handles Responsive by removing breadcrumbs from the beginning of the list as allowable space decreases.
 
@@ -37,7 +37,7 @@
 Import the [CovalentBreadcrumbsModule] in your NgModule:
 
 ```typescript
-import { CovalentBreadcrumbsModule } from '@covalent/experimental/breadcrumbs';
+import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 @NgModule({
   imports: [
     CovalentBreadcrumbsModule,

@@ -1,0 +1,103 @@
+<mat-card>
+  <mat-card-title>Breadcrumbs</mat-card-title>
+  <mat-card-subtitle>Basic Breadcrumbs (shrink width of page to see responsive behavior)</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <td-breadcrumbs class="pad-left">
+          <a td-breadcrumb [routerLink]="'/'">Home</a>
+          <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+          <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+          <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+          <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+        </td-breadcrumbs>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-breadcrumbs class="pad-left">
+              <a td-breadcrumb [routerLink]="'/'">Home</a>
+              <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+              <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+              <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+              <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+            </td-breadcrumbs>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component } from '@angular/core';
+
+            @Component({
+              selector: 'breadcrumbs-demo',
+              styleUrls: [ './breadcrumbs.component.scss' ],
+              templateUrl: './breadcrumbs.component.html',
+            })
+            export class BreadcrumbDemoComponent {
+
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">Custom Separator Icon</h3>
+    <h4 class="mat-subheading-2">separatorIcon="motorcycle"</h4>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+          <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
+            <a td-breadcrumb [routerLink]="'/'">Home</a>
+            <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+            <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+            <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+            <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+          </td-breadcrumbs>
+        <mat-divider></mat-divider>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+          <p>HTML:</p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <td-breadcrumbs #breadcrumbs class="pad-left" separatorIcon="motorcycle">
+                <a td-breadcrumb [routerLink]="'/'">Home</a>
+                <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+                <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+                <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+                <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+              </td-breadcrumbs>
+            ]]>
+          </td-highlight>
+          <p>Typescript:</p>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              import { Component } from '@angular/core';
+
+              @Component({
+                selector: 'breadcrumbs-demo',
+                styleUrls: [ './breadcrumbs.component.scss' ],
+                templateUrl: './breadcrumbs.component.html',
+              })
+              export class BreadcrumbDemoComponent {
+
+              }
+            ]]>
+          </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/breadcrumbs/README.md"></td-readme-loader>

@@ -40,6 +40,11 @@ export class ComponentsComponent {
     route: 'chips',
     title: 'Chips & Autocomplete',
   }, {
+    description: 'Navigate routes with breadcrumbs',
+    icon: 'more_horiz',
+    route: 'breadcrumbs',
+    title: 'Breadcrumbs',
+  }, {
     description: 'Circular or linear progress loader',
     icon: 'hourglass_empty',
     route: 'loading',
