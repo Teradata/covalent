@@ -1,9 +1,5 @@
 export * from './common.module';
 
-// Directives
-export * from './animations/toggle/toggle.directive';
-export * from './animations/fade/fade.directive';
-
 // Utility functions
 export * from './animations/rotate/rotate.animation';
 export * from './animations/collapse/collapse.animation';
