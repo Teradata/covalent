@@ -1,13 +1,15 @@
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
+@import '~@covalent/markdown/markdown-theme';
+@import '~@covalent/highlight/highlight-theme';
 // Plus imports for other components in your app.
 
 // Custom typography
 $custom-typography: mat-typography-config(
-  $button: mat-typography-level(14px, 14px, 400)
+  $button: mat-typography-level(14px, 14px, 400),
 );
 $custom-toolbar-typography: mat-typography-config(
-  $title: mat-typography-level(20px, 32px, 400)
+  $title: mat-typography-level(20px, 32px, 400),
 );
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -17,11 +19,15 @@ $custom-toolbar-typography: mat-typography-config(
 // Setting the toolbar to the proper spec weight
 @include mat-toolbar-typography($custom-toolbar-typography);
 
+// Teradata brand
+@import './teradata-branding';
+
 // Include the core styles for Covalent
 @include covalent-core();
 
-// Include pre-bundled material-icons
-@import '~@covalent/core/common/material-icons.css';
+// Include material icons
+$mat-font-url: '~@covalent/core/common/styles/font/';
+@include covalent-material-icons();
 
 // Include covalent utility classes
 @include covalent-utilities();
@@ -35,11 +41,11 @@ $custom-toolbar-typography: mat-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-blue-grey, 900, 100, 900);
-$accent:  mat-palette($mat-deep-orange, A700, A100, A400);
+$primary: mat-palette($td-slate, 700, 100, 900);
+$accent: mat-palette($td-orange, 800, 200, 900);
 
 // The warn palette is optional (defaults to red).
-$warn:    mat-palette($mat-red, 600);
+$warn: mat-palette($mat-red, 600, 200, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -49,3 +55,159 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
+@include covalent-markdown-theme($theme);
+@include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+@include teradata-brand($theme);
+
+// Alt theme
+.theme-alt {
+  $primary-alt: mat-palette($td-orange, 800, 200, 900);
+  $accent-alt: mat-palette($td-slate, 700, 100, 900);
+  $warn-alt: mat-palette($mat-red, 600, 200, 900);
+  $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
+  @include angular-material-theme($theme-alt);
+  @include covalent-theme($theme-alt);
+
+  .tc-primary {
+    color: mat-color($primary-alt);
+  }
+  .tc-accent {
+    color: mat-color($accent-alt);
+  }
+  .tc-warn {
+    color: mat-color($warn-alt);
+  }
+  a:not([class*='mat-']) {
+    color: mat-color($accent-alt);
+    &:hover {
+      color: darken(mat-color($accent-alt), 10%);
+    }
+  }
+}
+
+// Dark theme
+.theme-dark {
+  $primary-dark: mat-palette($td-slate, 800, 200, 900);
+  $accent-dark: mat-palette($td-orange, 800, 200, 900);
+  $warn-dark: mat-palette($mat-red, 600, 200, 900);
+  $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+  @include angular-material-theme($theme-dark);
+  @include covalent-theme($theme-dark);
+
+  .tc-primary {
+    color: mat-color($primary-dark);
+  }
+  .tc-accent,
+  a {
+    color: mat-color($accent-dark);
+  }
+  a:hover {
+    color: darken(mat-color($accent-dark), 10%);
+  }
+  .tc-warn {
+    color: mat-color($warn-dark);
+  }
+  .bgc-contrast {
+    background-color: #111111;
+  }
+  .td-layout-manage-list-sidenav::-webkit-scrollbar {
+    width: 8px;
+  }
+  .td-layout-manage-list-sidenav::-webkit-scrollbar-thumb {
+    background-color: mat-color($td-slate, 600);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 2px solid mat-color($td-slate, 800);
+  }
+  .nav-subheader {
+    background-color: mat-color($td-slate, 600);
+  }
+  .custom-icon {
+    fill: white;
+  }
+}
+
+// Subpage themes
+.theme-docs {
+  $primary-docs: mat-palette($mat-deep-purple, 700);
+  $accent-docs: mat-palette($mat-cyan, A400);
+  $warn-docs: mat-palette($mat-red, 600);
+  $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
+  @include angular-material-theme($theme-docs);
+  @include covalent-theme($theme-docs);
+
+  .tc-primary {
+    color: mat-color($primary-docs);
+  }
+  .tc-accent,
+  a {
+    color: mat-color($accent-docs);
+  }
+  a:hover {
+    color: darken(mat-color($accent-docs), 10%);
+  }
+  .tc-warn {
+    color: mat-color($warn-docs);
+  }
+}
+
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Apply theme for this app
+.bgc-contrast {
+  background-color: #ececec;
+}
+
+// Active icon color in list nav
+mat-nav-list {
+  [mat-list-item].active {
+    mat-icon[matListAvatar] {
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
+    }
+    mat-icon[matListIcon] {
+      color: mat-color($accent);
+    }
+  }
+}
+
+// Expansion panels
+.home .theme-dark .td-expansion-panel {
+  background-color: mat-color($td-slate, 800);
+}
+
+// Active top nav
+nav {
+  a {
+    line-height: 4;
+    display: block;
+    &:not(.active) {
+      color: rgba(255, 255, 255, 0.75);
+    }
+    &.active {
+      color: mat-color($accent);
+      border-bottom: 1px solid mat-color($accent);
+    }
+  }
+}
+
+// Links
+a {
+  text-decoration: none;
+}
+
+.td-layout-manage-list-sidenav::-webkit-scrollbar {
+  width: 8px;
+}
+.td-layout-manage-list-sidenav::-webkit-scrollbar-thumb {
+  background-color: mat-color($td-slate, 300);
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+}
+
+.nav-subheader {
+  background-color: mat-color($td-slate, 50);
+}

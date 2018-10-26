@@ -1,0 +1,127 @@
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title>Scatter (atomic)</mat-card-title>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+          <td-chart [style.height.px]="300"
+                    [dataZoom]="false">
+            <td-chart-tooltip [trigger]="'item'">
+              <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                <ng-container *ngIf="params">
+                  <div layout="row" layout-align="start center">
+                    <mat-icon>
+                      <span class="tc-blue-300">person</span>
+                    </mat-icon>
+                    <span class="mat-caption pad-left-sm">
+                      {{params.seriesName + ': ' + params.value}}
+                    </span>
+                  </div>
+                </ng-container>
+              </ng-template>
+            </td-chart-tooltip>
+            <td-chart-x-axis [show]="true"
+                              [position]="'bottom'"
+                              [type]="'value'"
+                              [boundaryGap]="true"
+                              [axisLine]="xLine"
+                              [splitLine]="{show: false}">
+            </td-chart-x-axis>
+            <td-chart-y-axis [show]="true"
+                              [type]="'value'"
+                              [axisLine]="yLine"
+                              [splitLine]="splitLine">
+            </td-chart-y-axis>
+            <td-chart-series td-scatter 
+                              *ngFor="let series of configScatter.series" 
+                              [data]="series.data"
+                              [name]="series.name"
+                              [symbolSize]="series.symbolSize"
+                              [markPoint]="series.markPoint"
+                              [markLine]="series.markLine"
+                              [itemStyle]="series.itemStyle">
+            </td-chart-series>
+          </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+          <td-highlight lang="html">
+            <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [dataZoom]="false">
+              <td-chart-tooltip [trigger]="'item'">
+                <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                  <ng-container *ngIf="params">
+                    <div layout="row" layout-align="start center">
+                      <mat-icon>
+                        <span class="tc-blue-300">person</span>
+                      </mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        { {params.seriesName + ': ' + params.value} }
+                      </span>
+                    </div>
+                  </ng-container>
+                </ng-template>
+              </td-chart-tooltip>
+              <td-chart-x-axis [show]="true"
+                                [position]="'bottom'"
+                                [type]="'value'"
+                                [boundaryGap]="true"
+                                [axisLine]="xLine"
+                                [splitLine]="{show: false}">
+              </td-chart-x-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [axisLine]="yLine"
+                                [splitLine]="splitLine">
+              </td-chart-y-axis>
+              <td-chart-series td-scatter 
+                                *ngFor="let series of configScatter.series" 
+                                [data]="series.data"
+                                [name]="series.name"
+                                [symbolSize]="series.symbolSize"
+                                [markPoint]="series.markPoint"
+                                [markLine]="series.markLine"
+                                [itemStyle]="series.itemStyle">
+              </td-chart-series>
+            </td-chart>
+            ]]>
+          </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title>Scatter (config Object)</mat-card-title>
+    <mat-card-subtitle>Configuration object, acts just like the atomic version but using one [config] @Input
+      property</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+          <td-chart [style.height.px]="300" 
+                    [config]="configScatter">
+          </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+          <p>HTML: </p>
+          <td-highlight lang="html">
+            <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [config]="configScatter">
+            </td-chart>
+            ]]>
+          </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

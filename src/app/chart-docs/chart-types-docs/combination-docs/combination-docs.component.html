@@ -1,0 +1,26 @@
+  <mat-card>
+    <mat-card-title>Combination (config object)</mat-card-title>
+    <mat-card-subtitle>Configuration object, using [config] @Input property</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="300"
+                  [config]="comboConfig">
+        </td-chart>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <p>HTML: </p>
+      <td-highlight lang="html">
+          <![CDATA[
+          <td-chart [style.height.px]="300"
+                    [config]="comboConfig">
+          </td-chart>
+          ]]>          
+        </td-highlight> 
+    </mat-tab>
+    </mat-tab-group>
+    </mat-card-content>
+  </mat-card>

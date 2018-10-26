@@ -86,9 +86,9 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               {
-                "input": "styles.scss"
+                "input": "src/styles.scss"
               }, {
-                "input": "theme.scss"
+                "input": "src/theme.scss"
               }, {
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               }

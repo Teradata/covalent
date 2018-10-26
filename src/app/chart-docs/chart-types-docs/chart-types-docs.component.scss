@@ -1,0 +1,8 @@
+::ng-deep {
+  .td-layout-manage-list-sidenav {
+    overflow-x: hidden !important;
+  }
+  .mat-sidenav {
+    transition: width 0.33s ease-in-out;
+  }
+}

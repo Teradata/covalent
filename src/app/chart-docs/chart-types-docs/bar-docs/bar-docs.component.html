@@ -1,0 +1,167 @@
+<div>
+  <mat-card flex>
+    <mat-card-title>Bar Chart (atomic)</mat-card-title>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-tab-group mat-stretch-tabs dynamicHeight>
+        <mat-tab>
+          <ng-template matTabLabel>Demo</ng-template>
+          <div layout-gt-md="row" #parent>
+            <div flex>
+              <td-chart [style.height.px]="300"
+                        [dataZoom]="false">
+                <td-chart-tooltip [trigger]="'item'">
+                  <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                    <ng-container *ngIf="params">
+                      <div layout="row" layout-align="start center">
+                        <mat-icon>
+                          <span class="tc-blue-300">people</span>
+                        </mat-icon>
+                        <span class="mat-caption pad-left-sm">
+                          {{params.seriesName + ': ' + params.value}}
+                        </span>
+                      </div>
+                    </ng-container>
+                  </ng-template>
+                </td-chart-tooltip>
+                <td-chart-x-axis [show]="true"
+                                  [position]="'bottom'"
+                                  [type]="'category'"
+                                  [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+                                  [boundaryGap]="true"
+                                  [axisLine]="xLine"
+                                  [splitLine]="{show: false}">
+                </td-chart-x-axis>
+                <td-chart-y-axis [show]="true"
+                                  [type]="'value'"
+                                  [position]="'right'"
+                                  [axisLabel]="yAxisLabel"
+                                  [axisLine]="yLine"
+                                  [max]="200"
+                                  [splitLine]="splitLineBar">
+                </td-chart-y-axis>
+                <td-chart-series td-bar
+                                *ngFor="let series of barPlot; let i=index"
+                                [data]="series.data"
+                                [name]="series.name"
+                                [markPoint]="series.markPoint"
+                                [markLine]="series.markLine"
+                                [itemStyle]="series.itemStyle">
+                  <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                                            [backgroundColor]="seriesToolTip[i].backgroundColor">
+                    <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                      <ng-container *ngIf="params">
+                        <div layout="row" layout-align="start center">
+                          <mat-icon>
+                            <span class="tc-blue-300">{{i === 0 ? 'person' : 'dashboard'}}</span>
+                          </mat-icon>
+                          <span class="mat-caption pad-left-sm">
+                            {{params.seriesName + ': ' + params.value}}
+                          </span>
+                        </div>
+                      </ng-container>
+                    </ng-template>
+                  </td-chart-series-tooltip>
+                </td-chart-series>
+              </td-chart>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template matTabLabel>Code</ng-template>
+          <p>HTML: </p>
+          <td-highlight lang="html">
+            <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [dataZoom]="false">
+              <td-chart-tooltip [trigger]="'item'">
+                <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                  <ng-container *ngIf="params">
+                    <div layout="row" layout-align="start center">
+                      <mat-icon>
+                        <span class="tc-blue-300">people</span>
+                      </mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        { {params.seriesName + ': ' + params.value} }
+                      </span>
+                    </div>
+                  </ng-container>
+                </ng-template>
+              </td-chart-tooltip>
+              <td-chart-x-axis [show]="true"
+                                [position]="'bottom'"
+                                [type]="'category'"
+                                [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+                                [boundaryGap]="true"
+                                [axisLine]="xLine"
+                                [splitLine]="{show: false}">
+              </td-chart-x-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [position]="'right'"
+                                [axisLabel]="yAxisLabel"
+                                [axisLine]="yLine"
+                                [max]="200"
+                                [splitLine]="splitLineBar">
+              </td-chart-y-axis>
+              <td-chart-series td-bar
+                              *ngFor="let series of barPlot; let i=index"
+                              [data]="series.data"
+                              [name]="series.name"
+                              [markPoint]="series.markPoint"
+                              [markLine]="series.markLine"
+                              [itemStyle]="series.itemStyle">
+                <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                                          [backgroundColor]="seriesToolTip[i].backgroundColor">
+                  <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                    <ng-container *ngIf="params">
+                      <div layout="row" layout-align="start center">
+                        <mat-icon>
+                          <span class="tc-blue-300">{ {i === 0 ? 'person' : 'dashboard'} }</span>
+                        </mat-icon>
+                        <span class="mat-caption pad-left-sm">
+                          { {params.seriesName + ': ' + params.value} }
+                        </span>
+                      </div>
+                    </ng-container>
+                  </ng-template>
+                </td-chart-series-tooltip>
+              </td-chart-series>
+            </td-chart>
+            ]]>
+          </td-highlight>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-card>
+  <mat-card-title>Bar Chart (config object)</mat-card-title>
+  <mat-card-subtitle>Configuration object, acts just like the atomic version but using one configuration @Input
+    property</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+          <td-chart [style.height.px]="300" 
+                    [config]="barConfig">
+          </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <mat-card-content>
+          <td-highlight lang="html">
+            <![CDATA[
+                <td-chart [style.height.px]="300" 
+                          [config]="barConfig">
+                </td-chart>
+                ]]>
+          </td-highlight>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

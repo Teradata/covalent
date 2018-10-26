@@ -1,0 +1,175 @@
+<mat-card flex>
+  <div layout="row" layout="center center">
+    <div flex>
+        <mat-card-title>Line Test (atomic)</mat-card-title>
+        <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+    </div>
+    <div layout="column" layout-align="center center" class="push-right-sm">
+        <button class="text-upper" mat-raised-button color="primary" (click)="showTooltip = !showTooltip">
+            <ng-container *ngIf="showTooltip; else hideText">Hide</ng-container> Tooltips
+            <ng-template #hideText>Show</ng-template>
+          </button>
+    </div>
+</div>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+          <td-chart [style.height.px]="300">
+              <td-chart-tooltip [show]="showTooltip" [trigger]="'item'">
+                <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                  <ng-container *ngIf="params">
+                    <div layout="row" layout-align="start center">
+                      <mat-icon>
+                        <span class="tc-blue-300">update_time</span>
+                      </mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        {{params.seriesName + ': ' + params.value[1]}}
+                      </span>
+                    </div>
+                    <div class="mat-caption">
+                      at {{(params.name | date:'medium')}}
+                    </div>
+                  </ng-container>
+                </ng-template>
+              </td-chart-tooltip>
+              <td-chart-x-axis [show]="true"
+                                [position]="'top'"
+                                [axisLabel]="xAxisLabel"
+                                [type]="'time'"
+                                [boundaryGap]="false"
+                                [axisLine]="xLine"
+                                [splitLine]="splitLine">
+              </td-chart-x-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [axisLabel]="yAxisLabel"
+                                [axisLine]="yLine"
+                                [splitLine]="splitLine">
+              </td-chart-y-axis>
+              <td-chart-series td-line
+                                *ngFor="let series of linePlot; let i=index"
+                                [symbolSize]="14"
+                                [data]="series.data"
+                                [name]="series.name"
+                                [symbol]="'roundRect'"
+                                [lineStyle]="series.lineStyle">
+                <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                                          [backgroundColor]="seriesToolTip[i].backgroundColor">
+                  <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                    <ng-container *ngIf="params">
+                      <div layout="row" layout-align="start center">
+                        <mat-icon>
+                          <span class="tc-blue-300">{{i === 0 ? 'person' : 'dashboard'}}</span>
+                        </mat-icon>
+                        <span class="mat-caption pad-left-sm">
+                          {{params.seriesName + ': ' + params.value[1]}}
+                        </span>
+                      </div>
+                      <div class="mat-caption">
+                          at {{(params.name | date:'medium')}}
+                        </div>
+                    </ng-container>
+                  </ng-template>
+                </td-chart-series-tooltip>
+              </td-chart-series>
+            </td-chart>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <p>HTML: </p>
+      <td-highlight lang="html">
+          <![CDATA[
+          <td-chart [style.height.px]="300">
+            <td-chart-tooltip [show]="showTooltip" [trigger]="'item'">
+              <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                <ng-container *ngIf="params">
+                  <div layout="row" layout-align="start center">
+                    <mat-icon>
+                      <span class="tc-blue-300">update_time</span>
+                    </mat-icon>
+                    <span class="mat-caption pad-left-sm">
+                      { {params.seriesName + ': ' + params.value[1]} }
+                    </span>
+                  </div>
+                  <div class="mat-caption">
+                    at { {(params.name | date:'medium')} }
+                  </div>
+                </ng-container>
+              </ng-template>
+            </td-chart-tooltip>
+            <td-chart-x-axis [show]="true"
+                              [position]="'top'"
+                              [axisLabel]="xAxisLabel"
+                              [type]="'time'"
+                              [boundaryGap]="false"
+                              [axisLine]="xLine"
+                              [splitLine]="splitLine">
+            </td-chart-x-axis>
+            <td-chart-y-axis [show]="true"
+                              [type]="'value'"
+                              [axisLabel]="yAxisLabel"
+                              [axisLine]="yLine"
+                              [splitLine]="splitLine">
+            </td-chart-y-axis>
+            <td-chart-series td-line
+                              *ngFor="let series of linePlot; let i=index"
+                              [symbolSize]="14"
+                              [data]="series.data"
+                              [name]="series.name"
+                              [symbol]="'roundRect'"
+                              [lineStyle]="series.lineStyle">
+              <td-chart-series-tooltip [textStyle]="seriesToolTip[i].textStyle"
+                                        [backgroundColor]="seriesToolTip[i].backgroundColor">
+                <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                  <ng-container *ngIf="params">
+                    <div layout="row" layout-align="start center">
+                      <mat-icon>
+                        <span class="tc-blue-300">{ {i === 0 ? 'person' : 'dashboard'} }</span>
+                      </mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        { {params.seriesName + ': ' + params.value[1]} }
+                      </span>
+                    </div>
+                    <div class="mat-caption">
+                        at { {(params.name | date:'medium')} }
+                      </div>
+                  </ng-container>
+                </ng-template>
+              </td-chart-series-tooltip>
+            </td-chart-series>
+          </td-chart>
+          ]]>
+      </td-highlight>
+
+    </mat-tab>
+  </mat-tab-group>
+</mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Line (config object)</mat-card-title>
+  <mat-card-subtitle>Configuration object, acts just like the atomic version but using one [config] @Input property</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+
+      <td-chart [style.height.px]="300"
+                [config]="lineConfig">
+      </td-chart>
+  </mat-tab>
+  <mat-tab>
+    <ng-template matTabLabel>Code</ng-template>
+    <p>HTML: </p>
+    <td-highlight lang="html">
+        <![CDATA[
+        <td-chart [style.height.px]="300"
+        [config]="lineConfig"></td-chart>
+        ]]>          
+      </td-highlight> 
+  </mat-tab>
+  </mat-tab-group>
+</mat-card-content>
+</mat-card>
