@@ -7,7 +7,7 @@
 #### Inputs
 
 + separatorIcon?: string
-  + Sets the icon url shown between breadcrumbs. Defaults to right chevron.
+  + Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
 
 #### Methods
 
