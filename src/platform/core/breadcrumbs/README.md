@@ -53,12 +53,12 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-breadcrumbs class="pad-left">
+<td-breadcrumbs>
   <a td-breadcrumb [routerLink]="'/'">Home</a>
   <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
   <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
   <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-  <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+  <td-breadcrumb>Manage List</td-breadcrumb>
 </td-breadcrumbs>
 ```
 
@@ -70,7 +70,7 @@ Example with all inputs/outputs:
   <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
   <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
   <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-  <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+  <td-breadcrumb>Manage List</td-breadcrumb>
 </td-breadcrumbs>
 <mat-divider></mat-divider>
 <div>
