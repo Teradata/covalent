@@ -1,4 +1,5 @@
 @import '../breadcrumbs/breadcrumb/breadcrumb-theme';
+@import '../nav-stepper/nav-step/nav-step-theme';
 
 // Create a theme.
 @mixin experimental-theme($theme, $config: null) {

@@ -63,7 +63,7 @@ describe('Component: Horizontal Nav Stepper', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdHorizontalStepperTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        document.body.style.width = '400px';
+        document.body.style.width = '150px';
         window.dispatchEvent(new Event('resize'));
         fixture.detectChanges();
         fixture.whenStable().then(() => {
