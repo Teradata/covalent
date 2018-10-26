@@ -102,6 +102,46 @@ export class TdHorizontalStepperComponent implements OnInit, DoCheck, AfterConte
     return this._showRightArrow;
   }
 
+  public showHiddenLeftStep(): void {
+    let stepsArray: TdNavStepComponent[] = this._steps.toArray();
+    // show the left one
+    stepsArray[this._leftHidden - 1].displayStep = true;
+    this.hiddenSteps.splice(this._leftHidden - 1, 1);
+    this._leftHidden--;
+    // If no more hidden steps then hide left arrow
+    if (this._leftHidden === 0) {
+      this._showLeftArrow = false;
+    }
+
+    // hide the right one
+    stepsArray[stepsArray.length - (this._rightHidden + 1)].displayStep = false;
+    stepsArray[stepsArray.length - (this._rightHidden + 2)].displayLine = false;
+    this.hiddenSteps.push(stepsArray[stepsArray.length - 1]);
+    this._rightHidden++;
+
+    this._showRightArrow = true;
+  }
+
+  public showHiddenRightStep(): void {
+    let stepsArray: TdNavStepComponent[] = this._steps.toArray();
+    // show the right one
+    stepsArray[stepsArray.length - this._rightHidden].displayStep = true;
+    stepsArray[stepsArray.length - (this._rightHidden + 1)].displayLine = true;
+    this.hiddenSteps.pop();
+    this._rightHidden--;
+    // If no more hidden steps then hide right arrow
+    if (this._rightHidden === 0) {
+      this._showRightArrow = false;
+    }
+
+    // hide the left one
+    stepsArray[this._leftHidden].displayStep = false;
+    this.hiddenSteps.push(stepsArray[this._leftHidden]);
+    this._leftHidden++;
+
+    this._showLeftArrow = true;
+  }
+
   /**
    * Set the step line separators and display numbers
    */
@@ -195,46 +235,6 @@ export class TdHorizontalStepperComponent implements OnInit, DoCheck, AfterConte
         }
       }
     }
-  }
-
-  private showHiddenLeftStep(): void {
-    let stepsArray: TdNavStepComponent[] = this._steps.toArray();
-    // show the left one
-    stepsArray[this._leftHidden - 1].displayStep = true;
-    this.hiddenSteps.splice(this._leftHidden - 1, 1);
-    this._leftHidden--;
-    // If no more hidden steps then hide left arrow
-    if (this._leftHidden === 0) {
-      this._showLeftArrow = false;
-    }
-
-    // hide the right one
-    stepsArray[stepsArray.length - (this._rightHidden + 1)].displayStep = false;
-    stepsArray[stepsArray.length - (this._rightHidden + 2)].displayLine = false;
-    this.hiddenSteps.push(stepsArray[stepsArray.length - 1]);
-    this._rightHidden++;
-
-    this._showRightArrow = true;
-  }
-
-  private showHiddenRightStep(): void {
-    let stepsArray: TdNavStepComponent[] = this._steps.toArray();
-    // show the right one
-    stepsArray[stepsArray.length - this._rightHidden].displayStep = true;
-    stepsArray[stepsArray.length - (this._rightHidden + 1)].displayLine = true;
-    this.hiddenSteps.pop();
-    this._rightHidden--;
-    // If no more hidden steps then hide right arrow
-    if (this._rightHidden === 0) {
-      this._showRightArrow = false;
-    }
-
-    // hide the left one
-    stepsArray[this._leftHidden].displayStep = false;
-    this.hiddenSteps.push(stepsArray[this._leftHidden]);
-    this._leftHidden++;
-
-    this._showLeftArrow = true;
   }
 
 }
