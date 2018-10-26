@@ -1,8 +1,9 @@
-import { Constructor } from './constructor';
 import { ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 import { Observable, Subject } from 'rxjs';
+
+type Constructor<T> = new (...args: any[]) => T;
 
 const noop: any = () => {
   // empty method
