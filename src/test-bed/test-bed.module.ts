@@ -19,7 +19,6 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
   declarations: [
     TestBedComponent,
     BreadcrumbDemoComponent,
-    TabSelectDemoComponent,
     NavStepperDemoComponent,
     MainComponent,
   ],
