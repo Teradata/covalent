@@ -16,3 +16,4 @@ export * from './menu/index';
 export * from './search/index';
 export * from './breadcrumbs/index';
 export * from './steps/index';
+export * from './tab-select/index';

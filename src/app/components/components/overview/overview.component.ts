@@ -26,6 +26,11 @@ export class ComponentsOverviewComponent {
       route: 'expansion-panel',
       title: 'Expansion Panel',
     }, {
+      color: 'orange-A700',
+      icon: 'tab',
+      route: 'tab-select',
+      title: 'Tab Select',
+    }, {
       color: 'pink-A700',
       icon: 'space_bar',
       route: 'file-input',

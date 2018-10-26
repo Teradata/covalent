@@ -26,6 +26,7 @@ import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { SearchDemoComponent } from './search/search.component';
+import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
@@ -59,7 +60,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule } from '../../../platform/core';
+         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule, CovalentTabSelectModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -101,6 +102,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
+    TabSelectDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
@@ -155,6 +157,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentTextEditorModule,
     CovalentBreadcrumbsModule,
     DocumentationToolsModule,
+    CovalentTabSelectModule,
     TranslateModule,
     componentsRoutes,
     ToolbarModule,

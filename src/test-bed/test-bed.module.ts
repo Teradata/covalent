@@ -6,17 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
-
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
-import { TabSelectDemoComponent } from './sandbox/tab-select/tab-select.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
     TestBedComponent,
-    TabSelectDemoComponent,
     MainComponent,
   ],
   imports: [
@@ -28,7 +24,6 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
-    CovalentTabSelectModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,

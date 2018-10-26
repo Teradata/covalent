@@ -28,6 +28,7 @@ import { NotificationsDemoComponent } from './notifications/notifications.compon
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
+import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 
 const routes: Routes = [{
   children: [{
@@ -99,6 +100,9 @@ const routes: Routes = [{
     }, {
       component: VirtualScrollDemoComponent,
       path: 'virtual-scroll',
+    }, {
+      component: TabSelectDemoComponent,
+      path: 'tab-select',
     }, {
       component: DynamicFormsDemoComponent,
       path: 'dynamic-forms',

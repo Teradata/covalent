@@ -25,6 +25,11 @@ export class ComponentsComponent {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
+    description: 'Filter lists and items',
+    icon: 'tab',
+    route: 'tab-select',
+    title: 'Tab Select',
+  }, {
     description: 'Text input for files',
     icon: 'space_bar',
     route: 'file-input',
