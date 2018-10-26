@@ -1,11 +1,13 @@
-import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional, EmbeddedViewRef } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
+
 import { Observable, Subject, Subscription } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 import { TdLoadingContext } from '../directives/loading.directive';
-import { TdLoadingComponent, LoadingType, LoadingMode, LoadingStrategy, LoadingStyle } from '../loading.component';
+import { TdLoadingComponent, LoadingStyle } from '../loading.component';
 import { ITdLoadingConfig } from './loading.service';
 
 export interface IInternalLoadingOptions extends ITdLoadingConfig {
@@ -43,8 +45,9 @@ export class TdLoadingFactory {
     let loadingRef: ILoadingRef = this._initializeContext();
     let loading: boolean = false;
     let overlayRef: OverlayRef;
-    loadingRef.observable
-    .subscribe((registered: number) => {
+    loadingRef.observable.pipe(
+      distinctUntilChanged(),
+    ).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
         overlayRef = this._createOverlay();
@@ -81,8 +84,9 @@ export class TdLoadingFactory {
     loadingRef.componentRef.instance.content = new TemplatePortal(templateRef, viewContainerRef);
     viewContainerRef.clear();
     viewContainerRef.insert(loadingRef.componentRef.hostView, 0);
-    loadingRef.observable
-    .subscribe((registered: number) => {
+    loadingRef.observable.pipe(
+      distinctUntilChanged(),
+    ).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
         loadingRef.componentRef.instance.startInAnimation();
@@ -108,14 +112,17 @@ export class TdLoadingFactory {
     (<IInternalLoadingOptions>options).style = LoadingStyle.None;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
-    viewContainerRef.createEmbeddedView(templateRef, context);
-    loadingRef.observable
-    .subscribe((registered: number) => {
+    // passing context so when the template is attached, we can keep the reference of the variables
+    let contentRef: EmbeddedViewRef<Object> = viewContainerRef.createEmbeddedView(templateRef, context);
+    loadingRef.observable.pipe(
+      distinctUntilChanged(),
+    ).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
+        // detach the content and attach the loader if loader is there
         let index: number = viewContainerRef.indexOf(loadingRef.componentRef.hostView);
         if (index < 0) {
-          viewContainerRef.clear();
+          viewContainerRef.detach(viewContainerRef.indexOf(contentRef));
           viewContainerRef.insert(loadingRef.componentRef.hostView, 0);
         }
         loadingRef.componentRef.instance.startInAnimation();
@@ -123,15 +130,18 @@ export class TdLoadingFactory {
         loading = false;
         let subs: Subscription = loadingRef.componentRef.instance.startOutAnimation().subscribe(() => {
           subs.unsubscribe();
-          // passing context so when the template is re-attached, we can keep the reference of the variables
-          let cdr: ChangeDetectorRef = viewContainerRef.createEmbeddedView(templateRef, context);
-          viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
+          // detach loader and attach the content if content is there
+          let index: number = viewContainerRef.indexOf(contentRef);
+          if (index < 0) {
+            viewContainerRef.detach(viewContainerRef.indexOf(loadingRef.componentRef.hostView));
+            viewContainerRef.insert(contentRef, 0);
+          }
           /**
            * Need to call "markForCheck" and "detectChanges" on attached template, so its detected by parent component when attached
            * with "OnPush" change detection
            */
-          cdr.detectChanges();
-          cdr.markForCheck();
+          contentRef.detectChanges();
+          contentRef.markForCheck();
         });
       }
     });
