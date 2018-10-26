@@ -21,6 +21,7 @@ module.exports =
       "@covalent/core/menu": "covalent.core.menu",
       "@covalent/core/search": "covalent.core.search",
       "@covalent/core/steps": "covalent.core.steps",
+      "@covalent/core/tab-select": "covalent.core.tab-select",
 
       "@covalent/dynamic-forms": "covalent.dynamic-forms",
       "@covalent/highlight": "covalent.highlight",

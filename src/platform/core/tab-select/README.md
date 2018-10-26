@@ -1,4 +1,4 @@
-# td-tab-select (experimental)
+# td-tab-select
 
 `td-tab-select` element generates a tab group component that behaves like a `mat-select`.
 
@@ -43,7 +43,7 @@
 Import the [CovalentTabSelectModule] in your NgModule:
 
 ```typescript
-import { CovalentTabSelectModule } from '@covalent/experimental/tab-select';
+import { CovalentTabSelectModule } from '@covalent/core/tab-select';
 @NgModule({
   imports: [
     CovalentTabSelectModule,
