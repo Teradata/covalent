@@ -12,7 +12,7 @@ import {
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import {
-  CovalentHorizontalStepperModule,
+  CovalentNavStepperModule,
 } from '../public-api';
 import {
   TdHorizontalStepperComponent,
@@ -41,7 +41,7 @@ describe('Component: Horizontal Nav Stepper', () => {
           { path: 'layouts2', component: FakeComponent },
           { path: 'layouts3', component: FakeComponent },
         ]),
-        CovalentHorizontalStepperModule,
+        CovalentNavStepperModule,
       ],
     });
     TestBed.compileComponents();

@@ -5,9 +5,9 @@ import { MatRippleModule } from '@angular/material/core';
 
 import { PortalModule } from '@angular/cdk/portal';
 
-import { TdHorizontalStepperComponent } from './horizontal-nav-stepper.component';
-import { TdNavStepComponent } from '../nav-step/nav-step.component';
-import { TdNavStepHeaderComponent } from '../nav-step-header/nav-step-header.component';
+import { TdHorizontalStepperComponent } from './horizontal-nav-stepper/horizontal-nav-stepper.component';
+import { TdNavStepComponent } from './nav-step/nav-step.component';
+import { TdNavStepHeaderComponent } from './nav-step-header/nav-step-header.component';
 
 @NgModule({
   imports: [
@@ -26,6 +26,6 @@ import { TdNavStepHeaderComponent } from '../nav-step-header/nav-step-header.com
     TdNavStepComponent,
   ],
 })
-export class CovalentHorizontalStepperModule {
+export class CovalentNavStepperModule {
 
 }

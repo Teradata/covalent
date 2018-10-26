@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { CovalentTabSelectModule } from '../platform/experimental/tab-select';
-import { CovalentHorizontalStepperModule } from '../platform/experimental/nav-stepper';
+import { CovalentNavStepperModule } from '../platform/experimental/nav-stepper';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
@@ -36,7 +36,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     /** Experimental Modules */
     CovalentBreadcrumbsModule,
     CovalentTabSelectModule,
-    CovalentHorizontalStepperModule,
+    CovalentNavStepperModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,

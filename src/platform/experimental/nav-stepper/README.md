@@ -53,13 +53,13 @@
 
 ## Setup
 
-Import the [CovalentHorizontalStepperModule] in your NgModule:
+Import the [CovalentNavStepperModule] in your NgModule:
 
 ```typescript
-import { CovalentHorizontalStepperModule } from '@covalent/experimental/nav-stepper/horizontal-nav-stepper';
+import { CovalentNavStepperModule } from '@covalent/experimental/nav-stepper';
 @NgModule({
   imports: [
-    CovalentHorizontalStepperModule,
+    CovalentNavStepperModule,
     ...
   ],
   ...
