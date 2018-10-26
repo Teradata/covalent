@@ -27,6 +27,7 @@
   </button>
   <td-file-input class="td-file-input"
                   #fileInput
+                  [disabled]="control?.disabled"
                   [formControl]="control">
     <mat-icon>folder</mat-icon>
     <span>{{ label }}</span>
