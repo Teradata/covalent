@@ -13,7 +13,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import {
   CovalentHorizontalStepperModule,
-} from './public-api';
+} from '../public-api';
 import {
   TdHorizontalStepperComponent,
 } from './horizontal-nav-stepper.component';
