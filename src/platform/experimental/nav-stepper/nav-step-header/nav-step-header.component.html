@@ -1,0 +1,31 @@
+<div class="td-step-header"
+      matRipple
+      [matRippleDisabled]="disableRipple"
+      [tabIndex]="0">
+  <div class="td-circle"
+      [class.mat-inactive]="(!active && !isComplete())"
+      [class.mat-active]="active"
+      *ngIf="!isRequired() && !isComplete()">
+    <span *ngIf="(active || !isComplete())">{{number || ''}}</span>
+  </div>
+  <div class="td-complete" *ngIf="isComplete()">
+    <mat-icon class="mat-complete">check_circle</mat-icon>
+  </div>
+  <div class="td-triangle"
+      *ngIf="isRequired()">
+    <mat-icon class="mat-warn">warning</mat-icon>
+  </div>
+  <div class="td-nav-step-label-wrapper"
+        [class.mat-inactive]="(!active && !isComplete())"
+        [class.mat-warn]="isRequired()">
+    <div class="td-step-label">
+      <ng-content select="[td-nav-step-header-label]"></ng-content>
+    </div>
+    <div class="td-nav-step-sublabel">
+      <ng-content select="[td-nav-step-header-sublabel]"></ng-content>
+    </div>
+  </div>
+  <span class="td-nav-step-header-separator"></span>
+  <mat-icon class="td-edit-icon" *ngIf="isComplete() && !active">mode_edit</mat-icon>
+  <span *ngIf="displayLine" class="td-horizontal-line"></span>
+</div>
