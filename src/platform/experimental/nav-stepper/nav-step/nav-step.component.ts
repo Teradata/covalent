@@ -110,8 +110,10 @@ export class TdNavStepComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
-    this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
-    this._changeDetectorRef.markForCheck();
+    Promise.resolve().then(() => {
+      this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   ngOnInit(): void {
