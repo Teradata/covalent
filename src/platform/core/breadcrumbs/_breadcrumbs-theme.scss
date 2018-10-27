@@ -1,5 +1,5 @@
 
-@mixin td-breadcrumb-theme($theme) {
+@mixin td-breadcrumbs-theme($theme) {
   $foreground: map-get($theme, foreground);
 
   td-breadcrumb {
