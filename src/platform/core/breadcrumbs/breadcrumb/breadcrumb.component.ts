@@ -60,10 +60,10 @@ export class TdBreadcrumbComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
-    setTimeout(() => {
+    Promise.resolve().then(() => {
       this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
       this._changeDetectorRef.markForCheck();
-    }, 100);
+    });
   }
 
   /**
