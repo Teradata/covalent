@@ -17,6 +17,10 @@ export class TdLayoutNavListToggleDirective extends LayoutToggle {
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
+
+  onClick(): void {
+    this._layout.toggle();
+  }
 }
 
 @Directive({
@@ -34,6 +38,10 @@ export class TdLayoutNavListCloseDirective extends LayoutToggle {
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
   }
+
+  onClick(): void {
+    this._layout.close();
+  }
 }
 
 @Directive({
@@ -50,5 +58,9 @@ export class TdLayoutNavListOpenDirective extends LayoutToggle {
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
+  }
+
+  onClick(): void {
+    this._layout.open();
   }
 }

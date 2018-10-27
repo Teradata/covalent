@@ -77,17 +77,13 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
   clickListener(event: Event): void {
     event.preventDefault();
     if (!this.disabled) {
-      this._open();
-    }
-  }
-
-  private _open(): void {
-    // if layout has been provided, try opening it
-    // else show warn message
-    if (this._layout && this._layout.open) {
-      this._layout.open();
-    } else {
-      this._noLayoutMessage();
+      // if layout has been provided, try triggering the click on it
+      // else show warn message
+      if (this._layout && this._layout.open) {
+        this.onClick();
+      } else {
+        this._noLayoutMessage();
+      }
     }
   }
 
