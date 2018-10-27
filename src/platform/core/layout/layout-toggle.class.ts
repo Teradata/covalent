@@ -87,6 +87,8 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
     }
   }
 
+  abstract onClick(): void;
+
   private _toggleVisibility(): void {
     if (this._layout) {
       if (this._layout.sidenav.opened && this._hideWhenOpened) {
