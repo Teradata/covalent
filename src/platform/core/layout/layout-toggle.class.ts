@@ -43,14 +43,21 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
               private _renderer: Renderer2,
               private _elementRef: ElementRef) {
     super();
+    // if layout has not been provided
+    // show warn message
+    if (!this._layout) {
+      this._noLayoutMessage();
+    }
     this._renderer.addClass(this._elementRef.nativeElement, 'td-layout-menu-button');
   }
 
   ngAfterViewInit(): void {
     this._initialized = true;
-    this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(() => {
-      this._toggleVisibility();
-    });
+    if (this._layout && this._layout.sidenav) {
+      this._toggleSubs = this._layout.sidenav._animationStarted.subscribe(() => {
+        this._toggleVisibility();
+      });
+    }
     // execute toggleVisibility since the onOpenStart and onCloseStart
     // methods might not be executed always when the element is rendered
     this._toggleVisibility();
@@ -70,18 +77,31 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
   clickListener(event: Event): void {
     event.preventDefault();
     if (!this.disabled) {
-      this.onClick();
+      // if layout has been provided, try triggering the click on it
+      // else show warn message
+      if (this._layout && this._layout.open) {
+        this.onClick();
+      } else {
+        this._noLayoutMessage();
+      }
     }
   }
 
   abstract onClick(): void;
 
   private _toggleVisibility(): void {
-    if (this._layout.sidenav.opened && this._hideWhenOpened) {
-      this._renderer.setStyle(this._elementRef.nativeElement, 'display', 'none');
-    } else {
-      this._renderer.setStyle(this._elementRef.nativeElement, 'display', '');
+    if (this._layout) {
+      if (this._layout.sidenav.opened && this._hideWhenOpened) {
+        this._renderer.setStyle(this._elementRef.nativeElement, 'display', 'none');
+      } else {
+        this._renderer.setStyle(this._elementRef.nativeElement, 'display', '');
+      }
     }
+  }
+
+  private _noLayoutMessage(): void {
+    /* tslint:disable-next-line */
+    console.warn('Covalent: Parent layout not found for layout toggle directive');
   }
 
 }
