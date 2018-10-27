@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
+import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutNavListComponent } from './layout-nav-list.component';
 import { LayoutToggle } from '../layout-toggle.class';
 
@@ -12,7 +12,7 @@ export class TdLayoutNavListToggleDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
@@ -33,7 +33,7 @@ export class TdLayoutNavListCloseDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutNavListClose === '' || tdLayoutNavListClose);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
@@ -54,7 +54,7 @@ export class TdLayoutNavListOpenDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutNavListOpen === '' || tdLayoutNavListOpen);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);

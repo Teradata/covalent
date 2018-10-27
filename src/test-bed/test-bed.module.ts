@@ -6,19 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { CovalentBreadcrumbsModule } from '../platform/experimental/breadcrumbs/breadcrumbs.module';
 import { CovalentNavStepperModule } from '../platform/experimental/nav-stepper';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
-import { BreadcrumbDemoComponent } from './sandbox/breadcrumbs/breadcrumbs.component';
 import { NavStepperDemoComponent } from './sandbox/nav-stepper/nav-stepper.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
     TestBedComponent,
-    BreadcrumbDemoComponent,
     NavStepperDemoComponent,
     MainComponent,
   ],
@@ -31,7 +28,6 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
-    CovalentBreadcrumbsModule,
     CovalentNavStepperModule,
   ], // modules needed to run this module
   providers: [

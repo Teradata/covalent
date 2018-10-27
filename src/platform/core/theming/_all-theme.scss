@@ -1,3 +1,4 @@
+@import '../breadcrumbs/breadcrumbs-theme';
 @import '../common/common-theme';
 @import '../chips/chips-theme';
 @import '../data-table/data-table-theme';
@@ -18,6 +19,7 @@
 // Create a theme.
 @mixin covalent-theme($theme, $config: null) {
   @include td-typography($config);
+  @include td-breadcrumbs-theme($theme);
   @include td-common-theme($theme);
   @include td-layout-theme($theme);
   @include td-steps-theme($theme);

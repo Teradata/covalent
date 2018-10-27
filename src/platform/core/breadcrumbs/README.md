@@ -1,4 +1,4 @@
-# td-breadcrumbs (experimental)
+# td-breadcrumbs
 
 `td-breadcrumbs` element generates breadcrumbs for navigation.  Handles Responsive by removing breadcrumbs from the beginning of the list as allowable space decreases.
 
@@ -7,7 +7,7 @@
 #### Inputs
 
 + separatorIcon?: string
-  + Sets the icon url shown between breadcrumbs. Defaults to right chevron.
+  + Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
 
 #### Methods
 
@@ -37,7 +37,7 @@
 Import the [CovalentBreadcrumbsModule] in your NgModule:
 
 ```typescript
-import { CovalentBreadcrumbsModule } from '@covalent/experimental/breadcrumbs';
+import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 @NgModule({
   imports: [
     CovalentBreadcrumbsModule,
@@ -53,12 +53,12 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-breadcrumbs class="pad-left">
+<td-breadcrumbs>
   <a td-breadcrumb [routerLink]="'/'">Home</a>
   <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
   <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
   <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-  <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+  <td-breadcrumb>Manage List</td-breadcrumb>
 </td-breadcrumbs>
 ```
 
@@ -70,7 +70,7 @@ Example with all inputs/outputs:
   <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
   <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
   <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
-  <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+  <td-breadcrumb>Manage List</td-breadcrumb>
 </td-breadcrumbs>
 <mat-divider></mat-divider>
 <div>

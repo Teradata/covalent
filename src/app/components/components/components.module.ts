@@ -24,6 +24,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { AnimationsComponent } from './animations/animations.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
+import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { SearchDemoComponent } from './search/search.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
@@ -59,7 +60,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentMessageModule, CovalentVirtualScrollModule, CovalentTabSelectModule } from '../../../platform/core';
+         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule, CovalentTabSelectModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -99,6 +100,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
     NotificationsDemoComponent,
+    BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
     TabSelectDemoComponent,
     // External Dependencies
@@ -153,6 +155,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentVirtualScrollModule,
     CovalentCodeEditorModule,
     CovalentTextEditorModule,
+    CovalentBreadcrumbsModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
     TranslateModule,

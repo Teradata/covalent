@@ -26,6 +26,7 @@ import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
+import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 
@@ -93,6 +94,9 @@ const routes: Routes = [{
     }, {
       component: NotificationsDemoComponent,
       path: 'notifications',
+    }, {
+      component: BreadcrumbDemoComponent,
+      path: 'breadcrumbs',
     }, {
       component: VirtualScrollDemoComponent,
       path: 'virtual-scroll',

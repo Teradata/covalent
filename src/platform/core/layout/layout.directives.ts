@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
+import { Optional, Directive, Input, Renderer2, ElementRef, Inject, forwardRef } from '@angular/core';
 import { TdLayoutComponent } from './layout.component';
 import { LayoutToggle } from './layout-toggle.class';
 
@@ -12,7 +12,7 @@ export class TdLayoutToggleDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutToggle === '' || tdLayoutToggle);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
@@ -33,7 +33,7 @@ export class TdLayoutCloseDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutClose === '' || tdLayoutClose);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
@@ -54,7 +54,7 @@ export class TdLayoutOpenDirective extends LayoutToggle {
     this.disabled = !(<any>tdLayoutOpen === '' || tdLayoutOpen);
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
               renderer: Renderer2,
               elementRef: ElementRef) {
     super(layout, renderer, elementRef);
