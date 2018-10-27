@@ -18,8 +18,8 @@ export class TdBreadcrumbComponent implements AfterViewInit {
 
   private _displayCrumb: boolean = true;
   private _width: number = 0;
-  // Sets the icon url shown between breadcrumbs. Defaults to right chevron
-  separatorIcon: string = 'navigate_next';
+  // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
+  separatorIcon: string = 'chevron_right';
   // Should show the right chevron or not before the label
   _displayIcon: boolean = true;
 
