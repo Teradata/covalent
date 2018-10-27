@@ -18,8 +18,8 @@ export class TdBreadcrumbComponent implements AfterViewInit {
 
   private _displayCrumb: boolean = true;
   private _width: number = 0;
-  // Sets the icon url shown between breadcrumbs. Defaults to right chevron
-  separatorIcon: string = 'navigate_next';
+  // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
+  separatorIcon: string = 'chevron_right';
   // Should show the right chevron or not before the label
   _displayIcon: boolean = true;
 
@@ -60,8 +60,10 @@ export class TdBreadcrumbComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
-    this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
-    this._changeDetectorRef.markForCheck();
+    Promise.resolve().then(() => {
+      this._width = (<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width;
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   /**
