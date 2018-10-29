@@ -28,3 +28,6 @@ rm -rf deploy
 
 echo "Bump to version v$version"
 gulp bump-version --ver $version
+
+echo "Generate changelog"
+npm run generate:changelog
