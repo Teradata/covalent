@@ -5,8 +5,7 @@ echo 'Created and Checked out gh-pages branch'
 
 git reset --hard origin/develop
 
-cp -r dist/* .
-echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/covalent/"> in index.html'
+cp -r dist/covalent-docs/* .
 
 echo 'Tracking files'
 git add -A .
