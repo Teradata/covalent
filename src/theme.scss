@@ -95,6 +95,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
+  @include covalent-markdown-theme($theme-dark);
+  @include teradata-brand($theme-dark);
 
   .tc-primary {
     color: mat-color($primary-dark);
