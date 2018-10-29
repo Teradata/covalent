@@ -63,7 +63,8 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   }
 
   removeStateOption(option: string): void {
-    this._options[option] = undefined;
+    /* tslint:disable-next-line */
+    this._options[option] = null;
     this._setOptions();
   }
 

@@ -1,0 +1,131 @@
+<mat-card flex>
+  <mat-card-title>Combination Line + Bar</mat-card-title>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="300"
+                  [config]="{tooltip: {show: true}}">
+          <td-chart-x-axis [show]="true"
+                            [data]="[
+                              'Electronics',
+                              'Toys',
+                              'Grocery',
+                              'Appliances',
+                              'Automotive',
+                              'Sports'
+                            ]">
+          </td-chart-x-axis>
+          <td-chart-y-axis [show]="true"
+                            [type]="'value'"
+                            [min]="0"
+                            [max]="300">
+          </td-chart-y-axis>
+          <td-chart-series td-bar
+                            [data]="[150, 130, 150, 120, 150, 120]"
+                            [name]="'Yesterday'"
+                            [color]="'#F2724B'">
+          </td-chart-series>
+          <td-chart-series td-line
+                            [data]="[80, 122, 80, 120, 80, 120]"
+                            [name]="'Today'"
+                            [color]="'#3A4950'">
+          </td-chart-series>
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [config]="{tooltip: {show: true}}">
+              <td-chart-x-axis [show]="true"
+                                [data]="[
+                                  'Electronics',
+                                  'Toys',
+                                  'Grocery',
+                                  'Appliances',
+                                  'Automotive',
+                                  'Sports'
+                                ]">
+              </td-chart-x-axis>
+              <td-chart-x-axis [show]="true"
+                                [position]="'bottom'"
+                                [type]="'time'"
+                                [splitLine]="{show: false}"
+                                [boundaryGap]="false">
+              </td-chart-x-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [min]="0"
+                                [max]="300">
+              </td-chart-y-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [position]="'right'"
+                                [min]="0"
+                                [max]="100">
+              </td-chart-y-axis>
+              <td-chart-series td-bar
+                                [data]="[150, 130, 150, 120, 150, 120]"
+                                [name]="'Yesterday'"
+                                [color]="'#F2724B'">
+              </td-chart-series>
+              <td-chart-series td-line
+                                [data]="[80, 122, 80, 120, 80, 120]"
+                                [name]="'Today'"
+                                [color]="'#3A4950'">
+              </td-chart-series>
+            </td-chart>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Combination Line + Bar (JS Object)</mat-card-title>
+  <mat-card-subtitle>Configuration object used to render a chart</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="300"
+                  [config]="config">
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [config]="config">
+            </td-chart>
+          ]]>          
+        </td-highlight> 
+        <p>config JSON: </p>
+        <td-highlight [content]="config | json" lang="json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Resources</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item [routerLink]="['..', 'bar']">
+      Bar Series docs
+      <mat-divider></mat-divider>
+    </a>
+    <a mat-list-item [routerLink]="['..', 'line']">
+      Line Series docs
+    </a>
+  </mat-nav-list>
+</mat-card>

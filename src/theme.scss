@@ -59,30 +59,83 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 @include teradata-brand($theme);
 
-// Alt theme
-.theme-alt {
-  $primary-alt: mat-palette($td-orange, 800, 200, 900);
-  $accent-alt: mat-palette($td-slate, 700, 100, 900);
-  $warn-alt: mat-palette($mat-red, 600, 200, 900);
-  $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
-  @include angular-material-theme($theme-alt);
-  @include covalent-theme($theme-alt);
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
 
-  .tc-primary {
-    color: mat-color($primary-alt);
-  }
-  .tc-accent {
-    color: mat-color($accent-alt);
-  }
-  .tc-warn {
-    color: mat-color($warn-alt);
-  }
-  a:not([class*='mat-']) {
-    color: mat-color($accent-alt);
-    &:hover {
-      color: darken(mat-color($accent-alt), 10%);
-    }
-  }
+// Default theme
+.tc-primary {
+  color: mat-color($primary);
+}
+.tc-accent {
+  color: mat-color($accent);
+}
+.tc-warn {
+  color: mat-color($warn);
+}
+.bgc-primary {
+  background-color: mat-color($primary);
+}
+.bgc-accent {
+  background-color: mat-color($accent);
+}
+.bgc-warn {
+  background-color: mat-color($warn);
+}
+.bgc-white,
+.bgc {
+  background-color: white;
+}
+.tc-faded {
+  color: rgba(0, 0, 0, 0.5);
+}
+.bgc-dark {
+  background-color: mat-color($background, app-bar);
+}
+.bgc-contrast {
+  background-color: #ececec;
+}
+// Teradata.com websites white theme
+.mat-toolbar.mat-white {
+  background-color: white;
+  color: mat-color($td-slate, 800);
+}
+// State colors
+.tc-positive {
+  color: map-get($td-positive, foreground-light) !important;
+}
+.tc-caution {
+  color: map-get($td-caution, foreground-light) !important;
+}
+.tc-negative {
+  color: map-get($td-negative, foreground-light) !important;
+}
+.tc-neutral {
+  color: map-get($td-neutral, foreground-light) !important;
+}
+.tc-emphasis-1 {
+  color: map-get($td-emphasis1, foreground-light) !important;
+}
+.tc-emphasis-2 {
+  color: map-get($td-emphasis2, foreground-light) !important;
+}
+.bgc-positive {
+  background-color: map-get($td-positive, background-light) !important;
+}
+.bgc-caution {
+  background-color: map-get($td-caution, background-light) !important;
+}
+.bgc-negative {
+  background-color: map-get($td-negative, background-light) !important;
+}
+.bgc-neutral {
+  background-color: map-get($td-neutral, background-light) !important;
+}
+.bgc-emphasis-1 {
+  background-color: map-get($td-emphasis1, background-light) !important;
+}
+.bgc-emphasis-2 {
+  background-color: map-get($td-emphasis2, background-light) !important;
 }
 
 // Dark theme
@@ -93,6 +146,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
+  @include covalent-markdown-theme($theme-dark);
+  @include teradata-brand($theme-dark);
 
   .tc-primary {
     color: mat-color($primary-dark);
@@ -127,38 +182,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
   }
 }
 
-// Subpage themes
-.theme-docs {
-  $primary-docs: mat-palette($mat-deep-purple, 700);
-  $accent-docs: mat-palette($mat-cyan, A400);
-  $warn-docs: mat-palette($mat-red, 600);
-  $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
-  @include angular-material-theme($theme-docs);
-  @include covalent-theme($theme-docs);
-
-  .tc-primary {
-    color: mat-color($primary-docs);
-  }
-  .tc-accent,
-  a {
-    color: mat-color($accent-docs);
-  }
-  a:hover {
-    color: darken(mat-color($accent-docs), 10%);
-  }
-  .tc-warn {
-    color: mat-color($warn-docs);
-  }
-}
-
 /* ------------------------------------------------------------------------------- */
 $foreground: map-get($theme, foreground);
 $background: map-get($theme, background);
-
-// Apply theme for this app
-.bgc-contrast {
-  background-color: #ececec;
-}
 
 // Active icon color in list nav
 mat-nav-list {

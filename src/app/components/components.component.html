@@ -1,0 +1,88 @@
+<td-layout-nav toolbarTitle="Covalent ECharts"
+                logo="teradata"
+                navigationRoute="/">
+  <button mat-icon-button td-menu-button (click)="manageList.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <td-toolbar flex></td-toolbar>
+  </div>
+  <td-layout-manage-list #manageList
+                          [containerAutosize]="true"
+                          [opened]="media.registerQuery('gt-sm') | async"
+                          [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
+                          [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? (miniNav ? '64px' : '257px') : '100%'">
+    <div td-sidenav-content layout="column" layout-fill>
+      <mat-nav-list flex
+                    [tdLayoutManageListClose]="!media.query('gt-sm')"
+                    layout="column"
+                    layout-align="center center">
+        <a mat-list-item
+            color="accent"
+            [routerLinkActiveOptions]="{exact:true}"
+            [routerLink]="['/components']"
+            routerLinkActive="active">
+          <mat-icon matListIcon
+                    [matTooltip]="miniNav ? 'Overview' : ''"
+                    matTooltipPosition="after">apps</mat-icon>
+          <span *ngIf="!miniNav">Overview</span>
+        </a>
+        <a mat-list-item
+            color="accent"
+            [routerLinkActiveOptions]="{exact:true}"
+            [routerLink]="['/components', 'getting-started']"
+            routerLinkActive="active">
+          <mat-icon matListIcon
+                    [matTooltip]="miniNav ? 'Getting Started' : ''"
+                    matTooltipPosition="after">chrome_reader_mode</mat-icon>
+          <span *ngIf="!miniNav">Getting Started</span>
+        </a>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>
+          <span *ngIf="!miniNav">Charts</span>
+          <mat-icon *ngIf="miniNav"
+                    matTooltip="Charts"
+                    matTooltipPosition="after"
+                    class="pad-left-xs tc-grey-600">collections</mat-icon>
+        </h3>
+        <mat-divider></mat-divider>
+        <ng-template let-route let-i="index" let-last="last" ngFor [ngForOf]="routes">
+          <a mat-list-item [routerLinkActiveOptions]="{exact:true}" [routerLink]="route.route" routerLinkActive="active">
+            <mat-icon matListIcon [matTooltip]="miniNav ? route.title : ''" matTooltipPosition="after">{{
+              route.icon }}</mat-icon>
+            <span *ngIf="!miniNav">{{ route.title }}</span>
+          </a>
+          <mat-divider *ngIf="last"></mat-divider>
+        </ng-template>
+        <h3 matSubheader>
+            <span *ngIf="!miniNav">Atomic Components</span>
+            <mat-icon *ngIf="miniNav"
+                      matTooltip="Atomic Components"
+                      matTooltipPosition="after"
+                      class="pad-left-xs tc-grey-600">widgets</mat-icon>
+          </h3>
+        <mat-divider></mat-divider>
+        <ng-template let-route let-i="index" let-last="last" ngFor [ngForOf]="atomicComponentRoutes">
+          <span layout="column" layout-align="center center">
+          </span>
+          <a mat-list-item [routerLinkActiveOptions]="{exact:true}" [routerLink]="route.route" routerLinkActive="active">
+            <mat-icon matListIcon [matTooltip]="miniNav ? route.title : ''" matTooltipPosition="after">{{
+              route.icon }}</mat-icon>
+            <span *ngIf="!miniNav">{{ route.title }}</span>
+          </a>
+          <mat-divider *ngIf="last"></mat-divider>
+        </ng-template>
+      </mat-nav-list>
+      <div layout="row" class="pad-sm">
+        <button mat-icon-button (click)="toggleMiniNav()">
+          <mat-icon [@tdRotate]="!miniNav" [matTooltip]="miniNav ? 'Open Menu' : 'Close Menu'" matTooltipPosition="right">keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+    <mat-sidenav-container flex layout="column" layout-align="end start">
+      <div class="theme-alt">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-container>
+  </td-layout-manage-list>
+</td-layout-nav>

@@ -13,8 +13,6 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 import { DocsAppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-// import {  } from '../platform/core';
-
 @NgModule({
   declarations: [
     DocsAppComponent,

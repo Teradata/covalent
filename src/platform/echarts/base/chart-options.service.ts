@@ -36,7 +36,8 @@ export class TdChartOptionsService {
     if (prevValue) {
       let index: number = prevValue.indexOf(value);
       if (index > -1 ) {
-        prevValue[index] = undefined;
+        /* tslint:disable-next-line */
+        prevValue[index] = null;
       } else {
         prevValue = [];
       }
@@ -49,8 +50,8 @@ export class TdChartOptionsService {
   }
 
   clearOption(option: string): void {
-    this.setOption(option, undefined);
-
+    /* tslint:disable-next-line */
+    this.setOption(option, null);
   }
 
   listen(): Observable<any> {

@@ -1,13 +1,12 @@
 export function assignDefined(target: any, ...sources: any[]): any {
-  for (const key of Object.keys(target)) {
-    delete target[key];
-  }
   for (const source of sources) {
     for (const key of Object.keys(source)) {
       const val: any = source[key];
-      if (val !== undefined) {
+      /* tslint:disable-next-line */
+      if (val !== undefined && val !== null) {
         target[key] = val;
-      } else {
+        /* tslint:disable-next-line */
+      } else if (val === null) {
         delete target[key];
       }
     }

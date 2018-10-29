@@ -1,0 +1,39 @@
+@import '~@angular/material/theming';
+$code-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+
+:host ::ng-deep {
+  td-markdown:first-of-type > div:first-of-type {
+    & > h1:first-of-type,
+    & > h2:first-of-type {
+      margin-top: 0;
+      font-weight: 400;
+    }
+  }
+  td-data-table,
+  td-highlight,
+  mat-checkbox {
+    display: block;
+  }
+
+  td-data-table,
+  td-highlight,
+  mat-checkbox:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  :not(pre) > code {
+    background: #1e1e21;
+    color: mat-color($mat-grey, 50);
+    font-family: $code-font;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .mat-checkbox-disabled {
+    &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
+      .mat-checkbox-background {
+        background-color: #03a9f4 !important;
+      }
+    }
+  }
+}

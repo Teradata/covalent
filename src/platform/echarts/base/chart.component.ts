@@ -8,13 +8,11 @@ import {
   ChangeDetectorRef,
   AfterViewInit,
   OnChanges,
-  NgZone,
   OnDestroy,
   DoCheck,
-  ContentChild,
 } from '@angular/core';
 
-import { Subscription, Subject, fromEvent, merge } from 'rxjs';
+import { Subscription, Subject, fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import * as echarts from 'echarts/lib/echarts';
@@ -31,12 +29,9 @@ import { assignDefined } from './utils';
 })
 export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
 
-  private _resizeSubscription: Subscription;
+  private _subs: Subscription[] = [];
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
-  private _resizing: boolean = false;
-
-  private _legend: any;
 
   private _instance: any;
 
@@ -49,12 +44,11 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
 
   @Input('config') config: any = {};
 
-  @Input('chartTitle') chartTitle: string;
-  @Input('showLegend') showLegend: boolean = true;
-  @Input('chartGroup') chartGroup: string;
-  @Input('dataZoom') dataZoom: boolean = true;
+  @Input('group') group: string;
 
-  @Output('markAreaClick') markAreaClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output('click') click: EventEmitter<any> = new EventEmitter<any>();
+  @Output('dblclick') dblclick: EventEmitter<any> = new EventEmitter<any>();
+  @Output('contextmenu') contextmenu: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
@@ -63,38 +57,44 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
 
   ngAfterViewInit(): void {
     this._instance = echarts.init(this._elementRef.nativeElement);
-    fromEvent(this._instance, 'click').subscribe((params: any) => {
-      if (params.componentType === 'markArea') {
-        this.markAreaClick.next(params);
-      }
-    });
-    if (this.chartGroup) {
-      this._instance.group = this.chartGroup;
-      echarts.connect(this.chartGroup);
+    this._subs.push(
+      fromEvent(this._instance, 'click').subscribe((params: any) => {
+        this.click.next(params);
+      }),
+    );
+    this._subs.push(
+      fromEvent(this._instance, 'dblclick').subscribe((params: any) => {
+        this.dblclick.next(params);
+      }),
+    );
+    this._subs.push(
+      fromEvent(this._instance, 'contextmenu').subscribe((params: any) => {
+        this.contextmenu.next(params);
+      }),
+    );
+    if (this.group) {
+      this._instance.group = this.group;
+      echarts.connect(this.group);
       this._changeDetectorRef.markForCheck();
     }
-    this._resizeSubscription = merge(
-      fromEvent(window, 'resize').pipe(
-        debounceTime(10),
-      ),
-      this._widthSubject.asObservable().pipe(
-        debounceTime(0),
-        distinctUntilChanged(),
-      ),
-      this._heightSubject.asObservable().pipe(
-        debounceTime(0),
-        distinctUntilChanged(),
-      ),
-    ).subscribe(() => {
-      if (!this._resizing) {
-        this._resizing = true;
-        setTimeout(() => {
-          this._instance.resize();
-          this._resizing = false;
-          this._changeDetectorRef.markForCheck();
-        }, 100);
-      }
-    });
+    this._subs.push(
+      merge(
+        fromEvent(window, 'resize').pipe(
+          debounceTime(100),
+        ),
+        this._widthSubject.asObservable().pipe(
+          debounceTime(100),
+        ),
+        this._heightSubject.asObservable().pipe(
+          debounceTime(100),
+        ),
+      ).pipe(
+        debounceTime(100),
+      ).subscribe(() => {
+        this._instance.resize();
+        this._changeDetectorRef.markForCheck();
+      }),
+    );
     this.render();
     this._optionsService.listen().subscribe((options: any) => {
       assignDefined(this._options, options);
@@ -117,37 +117,25 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
   }
 
   ngOnDestroy(): void {
-    if (this._resizeSubscription) {
-      this._resizeSubscription.unsubscribe();
+    if (this._subs) {
+      this._subs.forEach((sub: Subscription) => {
+        sub.unsubscribe();
+      });
     }
   }
 
   render(): void {
     if (this._instance) {
-      this._legend = {
-        show: this.showLegend,
-        type: 'scroll',
-        selectedMode: 'multiple',
-        orient: 'horizontal', // 'vertical'
-        right: '5',
-        bottom: '5',
-      },
       this._instance.setOption(assignDefined(this._state, {
         grid: {
           show: true,
           left: '20',
           right: '20',
-          bottom: this.showLegend ? '30' : '10',
+          bottom: '10',
           top: '10',
           containLabel: true,
           borderColor: '#FCFCFC',
         },
-        dataZoom: this.dataZoom ? [{
-          type: 'inside',
-          throttle: 50,
-          zoomOnMouseWheel: 'shift',
-        }] : undefined,
-        legend: this._legend,
         xAxis : [{}], // throws error if its empty
         yAxis : [{}], // throws error if its empty
         series: [],

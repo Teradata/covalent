@@ -1,0 +1,135 @@
+<div>
+  <mat-card flex>
+    <mat-card-title>Bar</mat-card-title>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-tab-group mat-stretch-tabs dynamicHeight>
+        <mat-tab>
+          <ng-template matTabLabel>Demo</ng-template>
+          <td-chart [style.height.px]="300">
+            <td-chart-tooltip [trigger]="'item'"
+                              [textStyle]="{ color: '#818181' }"
+                              [backgroundColor]="'#ffffff'">
+              <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                <ng-container *ngIf="params">
+                  <div layout="row" layout-align="start center">
+                    <mat-icon>
+                      <span [style.color]="params.color">people</span>
+                    </mat-icon>
+                    <span class="mat-caption pad-left-sm">
+                      {{params.seriesName + ': ' + params.value}}
+                    </span>
+                  </div>
+                </ng-container>
+              </ng-template>
+            </td-chart-tooltip>
+            <td-chart-x-axis [show]="true"
+                              [position]="'bottom'"
+                              [type]="'category'"
+                              [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+                              [boundaryGap]="true">
+            </td-chart-x-axis>
+            <td-chart-y-axis [show]="true"
+                              [type]="'value'"
+                              [position]="'right'"
+                              [max]="200"
+                              [splitLine]="{ lineStyle: { type: 'dotted' } }">
+            </td-chart-y-axis>
+            <td-chart-series td-bar
+                            [data]="[150, 130, 150, 120, 150, 120]"
+                            [name]="'Today'"
+                            [color]="'#F2724B'">
+            </td-chart-series>
+            <td-chart-series td-bar
+                            [data]="[80, 122, 80, 120, 80, 120]"
+                            [name]="'Yesterday'"
+                            [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
+                            [color]="'#3A4950'">
+            </td-chart-series>
+          </td-chart>
+        </mat-tab>
+        <mat-tab>
+          <ng-template matTabLabel>Code</ng-template>
+          <p>HTML: </p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <td-chart [style.height.px]="300">
+                <td-chart-tooltip [trigger]="'item'"
+                                  [textStyle]="{ color: '#818181' }"
+                                  [backgroundColor]="'#ffffff'">
+                  <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                    <ng-container *ngIf="params">
+                      <div layout="row" layout-align="start center">
+                        <mat-icon>
+                          <span [style.color]="params.color">people</span>
+                        </mat-icon>
+                        <span class="mat-caption pad-left-sm">
+                          { {params.seriesName + ': ' + params.value} }
+                        </span>
+                      </div>
+                    </ng-container>
+                  </ng-template>
+                </td-chart-tooltip>
+                <td-chart-x-axis [show]="true"
+                                  [position]="'bottom'"
+                                  [type]="'category'"
+                                  [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+                                  [boundaryGap]="true">
+                </td-chart-x-axis>
+                <td-chart-y-axis [show]="true"
+                                  [type]="'value'"
+                                  [position]="'right'"
+                                  [max]="200"
+                                  [splitLine]="{ lineStyle: { type: 'dotted' } }">
+                </td-chart-y-axis>
+                <td-chart-series td-bar
+                                [data]="[150, 130, 150, 120, 150, 120]"
+                                [name]="'Today'"
+                                [color]="'#F2724B'">
+                </td-chart-series>
+                <td-chart-series td-bar
+                                [data]="[80, 122, 80, 120, 80, 120]"
+                                [name]="'Yesterday'"
+                                [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
+                                [color]="'#3A4950'">
+                </td-chart-series>
+              </td-chart>
+            ]]>
+          </td-highlight>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-card>
+  <mat-card-title>Bar (JS Object)</mat-card-title>
+  <mat-card-subtitle>Configuration object used to render a chart</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="300" 
+                  [config]="config">
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chart [style.height.px]="300" 
+                      [config]="config">
+            </td-chart>
+          ]]>
+        </td-highlight>
+        <p>config JSON: </p>
+        <td-highlight [content]="config | json" lang="json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/echarts/bar/README.md"></td-readme-loader>

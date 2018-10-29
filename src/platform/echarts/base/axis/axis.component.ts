@@ -21,7 +21,18 @@ import {
   
 export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
 
-  private _state: any = {};
+  private _state: any = {
+    axisLine: {
+      lineStyle: {
+        color: '#ABABAB',
+      },
+    },
+    splitLine: {
+      lineStyle: {
+        color: '#ABABAB',
+      },
+    },
+  };
 
   @Input('config') config: any = {};
 
