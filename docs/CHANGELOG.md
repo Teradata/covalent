@@ -23,6 +23,30 @@ For more information go to the [covalent echarts repo](https://github.com/Terada
 
 * **animation:** deprecate function animations ([#1213](https://github.com/teradata/covalent/issues/1213)) ([1855676](https://github.com/teradata/covalent/commit/1855676)), closes [#1214](https://github.com/teradata/covalent/issues/1214) [#1228](https://github.com/teradata/covalent/issues/1228) [#1214](https://github.com/teradata/covalent/issues/1214)
 
+We are favoring our pre-canned animations instead of the directives. The migration steps are the following:
+
+Before:
+```
+<div [tdToggle]="boolean">
+<div [tdFade]="boolean">
+```
+
+After:
+typescript:
+```
+import { tdCollapseAnimation, tdFadeInOutAnimation } from '@covalent/core/common'
+...
+  animations: [ tdCollapseAnimation, tdFadeInOutAnimation ],
+})
+```
+html:
+```
+<div [@tdCollapse]="boolean">
+<div [@tdFadeInOut]="boolean">
+```
+
+more information about animations [here](https://teradata.github.io/covalent/#/components/animations)
+
 ### Bug Fixes
 
 * **breadcrumbs:** consistently align separator icons independent of their font-set class ([#1255](https://github.com/teradata/covalent/issues/1255)) ([55f7485](https://github.com/teradata/covalent/commit/55f7485)), closes [#1254](https://github.com/teradata/covalent/issues/1254)
