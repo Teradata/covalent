@@ -1,13 +1,15 @@
-import { Component, Directive, Input, EventEmitter, ContentChild, AfterViewInit, ViewChild,
+import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
          Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 import { TdVirtualScrollRowDirective } from './virtual-scroll-row.directive';
 
 const TD_VIRTUAL_OFFSET: number = 2;
+const SCROLL_DEBOUNCE: number = 200;
 
 @Component({
   selector: 'td-virtual-scroll-container',
@@ -17,6 +19,7 @@ const TD_VIRTUAL_OFFSET: number = 2;
 })
 export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
 
+  private _bottom: Subject<any> = new Subject();
   private _rowChangeSubs: Subscription;
   private _initialized: boolean = false;
 
@@ -50,6 +53,12 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   get virtualData(): any[] {
     return this._virtualData;
   }
+
+  /**
+   * bottom: function
+   * Method to be executed when user scrolled to the last item of the list. No value is emitted.
+   */
+  @Output() bottom: EventEmitter<any> = new EventEmitter();
 
   @ViewChildren('rowElement') _rows: QueryList<ElementRef>;
 
@@ -89,6 +98,12 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     });
     this._initialized = true;
     this._calculateVirtualRows();
+
+    this._bottom.pipe(
+      debounceTime(SCROLL_DEBOUNCE),
+    ).subscribe(() => {
+      this.bottom.emit();
+    });
   }
 
   ngAfterViewChecked(): void {
@@ -190,6 +205,9 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     if (this._data) {
       this._virtualData = this.data.slice(this.fromRow, this.toRow);
     }
+
+    this.bottomCheck();
+
     // mark for check at the end of the queue so we are sure
     // that the changes will be marked
     Promise.resolve().then(() => {
@@ -197,4 +215,22 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     });
   }
 
+  /**
+   * Method to emit bottom event if scrolled to the end of the list.
+   */
+  private bottomCheck(): void {
+    const lastVirtualDataItem: any = this._virtualData[this._virtualData.length - 1];
+    const lastDataItem: any = this.data[this.data.length - 1];
+
+    if (!lastDataItem || !lastDataItem) {
+      return;
+    }
+
+    const virtualItemIndex: number = this._virtualData.indexOf(lastVirtualDataItem);
+    const dataItemIndex: number = this.data.indexOf(lastDataItem);
+
+    if (this.trackBy(virtualItemIndex, lastVirtualDataItem) === this.trackBy(dataItemIndex, lastDataItem)) {
+      this._bottom.next();
+    }
+  }
 }
