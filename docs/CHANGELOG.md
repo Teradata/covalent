@@ -1,3 +1,90 @@
+<a name="2.0.0-beta.4"></a>
+# [2.0.0-beta.4](https://github.com/teradata/covalent/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2018-10-29)
+
+Highlights:
+
+- Angular 7 Support!
+- Parameterized Animations
+- Tab Select graduation from experimental to core
+- Breadcrumbs graduation from experimental to core
+- Lots of bug fixes!
+
+We are pleased to announce our initial Covalent Echarts Release!
+
+You can start using these components for echarts by installing `@covalent/echarts`:
+
+```bash
+npm install --save @covalent/echarts
+```
+
+For more information go to the [covalent echarts repo](https://github.com/Teradata/covalent-echarts)
+
+### Breaking Changes
+
+* **animation:** deprecate function animations ([#1213](https://github.com/teradata/covalent/issues/1213)) ([1855676](https://github.com/teradata/covalent/commit/1855676)), closes [#1214](https://github.com/teradata/covalent/issues/1214) [#1228](https://github.com/teradata/covalent/issues/1228) [#1214](https://github.com/teradata/covalent/issues/1214)
+
+We are favoring our pre-canned animations instead of the directives. The migration steps are the following:
+
+Before:
+```
+<div [tdToggle]="boolean">
+<div [tdFade]="boolean">
+```
+
+After:
+typescript:
+```
+import { tdCollapseAnimation, tdFadeInOutAnimation } from '@covalent/core/common'
+...
+  animations: [ tdCollapseAnimation, tdFadeInOutAnimation ],
+})
+```
+html:
+```
+<div [@tdCollapse]="boolean">
+<div [@tdFadeInOut]="boolean">
+```
+
+more information about animations [here](https://teradata.github.io/covalent/#/components/animations)
+
+### Bug Fixes
+
+* **breadcrumbs:** consistently align separator icons independent of their font-set class ([#1255](https://github.com/teradata/covalent/issues/1255)) ([55f7485](https://github.com/teradata/covalent/commit/55f7485)), closes [#1254](https://github.com/teradata/covalent/issues/1254)
+* **breadcrumbs:** responsive calculations with border, margin and padding ([#1251](https://github.com/teradata/covalent/issues/1251)) ([7f6a9ca](https://github.com/teradata/covalent/commit/7f6a9ca))
+* **breadcrumbs:** increase visibility of bounded getter ([#1238](https://github.com/teradata/covalent/issues/1238)) ([0df63be](https://github.com/teradata/covalent/commit/0df63be)), closes [#1237](https://github.com/teradata/covalent/issues/1237)
+* dark logo in logo style-guide ([21156c3](https://github.com/teradata/covalent/commit/21156c3))
+* ghpages deploy output path ([3bbf970](https://github.com/teradata/covalent/commit/3bbf970))
+* **dynamic-forms:** added name to dynamic elements ([#1244](https://github.com/teradata/covalent/issues/1244)) ([b0924fc](https://github.com/teradata/covalent/commit/b0924fc))
+* ghpages deployment script was not working ([c389682](https://github.com/teradata/covalent/commit/c389682))
+* **build:** Constructor was breaking the build in common entry d file ([949b79d](https://github.com/teradata/covalent/commit/949b79d))
+* **chips:** add proper sass so invalid color remains even without focus ([8f27cc0](https://github.com/teradata/covalent/commit/8f27cc0))
+* **chips:** long texts ([#1248](https://github.com/teradata/covalent/issues/1248)) ([b104c85](https://github.com/teradata/covalent/commit/b104c85))
+* **chips:** mobile select ([#1247](https://github.com/teradata/covalent/issues/1247)) ([1b57feb](https://github.com/teradata/covalent/commit/1b57feb)), closes [#1044](https://github.com/teradata/covalent/issues/1044)
+* **chips:** td-chips has memory leaks ([#1257](https://github.com/teradata/covalent/issues/1257)) ([#1258](https://github.com/teradata/covalent/issues/1258)) ([7163ff1](https://github.com/teradata/covalent/commit/7163ff1))
+* **dark-mode:** fix markdown/branding theme ([#1268](https://github.com/teradata/covalent/issues/1268)) ([5620ab0](https://github.com/teradata/covalent/commit/5620ab0))
+* **docs:** Fix sample code not up to date with demo code ([#1239](https://github.com/teradata/covalent/issues/1239)) ([dabe2ac](https://github.com/teradata/covalent/commit/dabe2ac))
+* **layout:** make layout provided optional and show warn message if not provided ([#1262](https://github.com/teradata/covalent/issues/1262)) ([dd5db2e](https://github.com/teradata/covalent/commit/dd5db2e))
+* **loading:** make sure we check before attaching the content on replace (closes [#1263](https://github.com/teradata/covalent/issues/1263)) ([#1266](https://github.com/teradata/covalent/issues/1266)) ([0bff41b](https://github.com/teradata/covalent/commit/0bff41b))
+* **search:** align text in search box ([#1265](https://github.com/teradata/covalent/issues/1265)) ([1a8ccc6](https://github.com/teradata/covalent/commit/1a8ccc6))
+
+
+### Features
+
+* **animation:** parameterized animations ([#1213](https://github.com/teradata/covalent/issues/1213)) ([1855676](https://github.com/teradata/covalent/commit/1855676)), closes [#1214](https://github.com/teradata/covalent/issues/1214) [#1228](https://github.com/teradata/covalent/issues/1228) [#1214](https://github.com/teradata/covalent/issues/1214)
+* **brand:** new brand & logo ([#1246](https://github.com/teradata/covalent/issues/1246)) ([6f07516](https://github.com/teradata/covalent/commit/6f07516))
+* **breadcrumbs:** graduation from experimental to core ([#1264](https://github.com/teradata/covalent/issues/1264)) ([bca08bb](https://github.com/teradata/covalent/commit/bca08bb))
+* **chips:** added required attribute support ([#1250](https://github.com/teradata/covalent/issues/1250)) ([e722c50](https://github.com/teradata/covalent/commit/e722c50))
+* **docs:** add covalent echarts in out optional components section ([0830e86](https://github.com/teradata/covalent/commit/0830e86))
+* Add timeUntil pipe ([#1240](https://github.com/teradata/covalent/issues/1240)) ([a7f3b9b](https://github.com/teradata/covalent/commit/a7f3b9b))
+* **docs:** remove ngx-charts from docs ([#1249](https://github.com/teradata/covalent/issues/1249)) ([c817e6d](https://github.com/teradata/covalent/commit/c817e6d))
+* **layout:** support autosize in layout [#1230](https://github.com/teradata/covalent/issues/1230) ([#1234](https://github.com/teradata/covalent/issues/1234)) ([c6e201a](https://github.com/teradata/covalent/commit/c6e201a))
+* **navigational stepper:** *experimental* ([#1256](https://github.com/teradata/covalent/issues/1256)) ([fa764cf](https://github.com/teradata/covalent/commit/fa764cf))
+* **notification:** add configurable limit for notification count ([#1231](https://github.com/teradata/covalent/issues/1231)) ([5981b14](https://github.com/teradata/covalent/commit/5981b14))
+* **tab-select:** graduation from experimental to core ([#1261](https://github.com/teradata/covalent/issues/1261)) ([68b17f0](https://github.com/teradata/covalent/commit/68b17f0))
+* **upgrade:** upgrade to us angular 7 ([#1252](https://github.com/teradata/covalent/issues/1252)) ([a9a067d](https://github.com/teradata/covalent/commit/a9a067d))
+
+
+
 <a name="2.0.0-beta.3"></a>
 # [2.0.0-beta.3](https://github.com/teradata/covalent/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2018-08-23)
 

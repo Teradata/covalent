@@ -1,6 +1,5 @@
 @import '~@angular/material/theming';
 @import './platform/core/theming/all-theme';
-@import './platform/experimental/theming/all-theme';
 @import './platform/markdown/markdown-theme';
 @import './platform/highlight/highlight-theme';
 // Plus imports for other components in your app.
@@ -56,7 +55,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
-@include experimental-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 @include teradata-brand($theme);
@@ -95,6 +93,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
+  @include covalent-markdown-theme($theme-dark);
+  @include teradata-brand($theme-dark);
 
   .tc-primary {
     color: mat-color($primary-dark);

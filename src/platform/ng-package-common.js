@@ -20,6 +20,7 @@ module.exports =
       "@covalent/core/media": "covalent.core.media",
       "@covalent/core/menu": "covalent.core.menu",
       "@covalent/core/search": "covalent.core.search",
+      "@covalent/core/breadcrumbs": "covalent.core.breadcrumbs",
       "@covalent/core/steps": "covalent.core.steps",
       "@covalent/core/tab-select": "covalent.core.tab-select",
 

@@ -46,6 +46,11 @@ export class ComponentsOverviewComponent {
       route: 'chips',
       title: 'Chips',
     }, {
+      color: 'green-A700',
+      icon: 'more_horiz',
+      route: 'breadcrumbs',
+      title: 'Breadcrumbs',
+    }, {
       color: 'lime-A700',
       icon: 'hourglass_empty',
       route: 'loading',

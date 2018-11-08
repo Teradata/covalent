@@ -1,0 +1,67 @@
+@import '../../../core/common/styles/variables';
+@import '../../../core/common/styles/elevation';
+@import '../../../core/common/styles/theme-functions';
+@import '../../../core/common/styles/typography-functions';
+
+@mixin td-steps-theme($theme) {
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .td-horizontal-line {
+    border-bottom-color: mat-color($foreground, divider);
+  }
+  td-nav-step-header {
+    .td-nav-steps-header {
+      @include mat-elevation(1);
+    }
+    .td-step-content,
+    .td-step-summary,
+    .td-step-actions {
+      margin: $margin;
+    }
+    // header
+    .td-nav-step-header {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        background: mat-color($background, 'hover');
+      }
+      .td-nav-step-label-wrapper {
+        .td-nav-step-sublabel {
+          color: mat-color($foreground, secondary-text);
+        }
+        &.mat-inactive {
+          &, & * {
+            color: mat-color($foreground, disabled);
+          }
+        }
+        &.mat-warn {
+          &, & * {
+            color: mat-color($warn);
+          }
+        }
+      }
+      .mat-complete {
+        color: mat-color($accent);
+      }
+    }
+    .td-circle {
+      color: mat-color($background, card);
+      &.mat-active {
+        background-color: mat-color($accent);
+      }
+      &.mat-inactive {
+        background-color: mat-color($foreground, disabled);
+      }
+      & mat-icon {
+        fill: mat-color($foreground, text);
+      }
+    }
+    .td-triangle {
+      color: mat-color($warn);
+    }
+    .td-edit-icon {
+      color: mat-color($foreground, icon);
+    }
+  }
+}
