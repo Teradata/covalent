@@ -56,6 +56,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'mat-button');
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-breadcrumb');
   }
 
   ngAfterViewInit(): void {

@@ -1,4 +1,4 @@
-<span *ngIf="displayCrumb" class="td-breadcrumb">
+<ng-container *ngIf="displayCrumb">
   <ng-content></ng-content>
   <mat-icon *ngIf="_displayIcon"
             class="td-breadcrumb-separator-icon"
@@ -6,4 +6,4 @@
             (click)="_handleIconClick($event)">
     {{separatorIcon}}
   </mat-icon>
-</span>
+</ng-container>

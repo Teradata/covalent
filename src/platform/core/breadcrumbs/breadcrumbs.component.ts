@@ -10,6 +10,7 @@ import {
   ChangeDetectorRef,
   ElementRef,
   Input,
+  Renderer2,
 } from '@angular/core';
 
 import {
@@ -47,7 +48,11 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    */
   @Input('separatorIcon') separatorIcon: string = 'navigate_next';
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private _elementRef: ElementRef,
+              private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef) {
+    this._renderer.addClass(this._elementRef.nativeElement, 'td-breadcrumbs');
+  }
 
   ngOnInit(): void {
     this._resizeSubscription = merge(

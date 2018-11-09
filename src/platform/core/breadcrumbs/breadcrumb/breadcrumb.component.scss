@@ -1,6 +1,6 @@
 :host {
-  .td-breadcrumb {
-    height: 48px;
+  &.td-breadcrumb {
+    display: inline-block;
     box-sizing: border-box;
     flex-direction: row;
     align-items: center;
