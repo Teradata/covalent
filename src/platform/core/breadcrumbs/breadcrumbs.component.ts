@@ -10,7 +10,6 @@ import {
   ChangeDetectorRef,
   ElementRef,
   Input,
-  Renderer2,
 } from '@angular/core';
 
 import {
@@ -30,6 +29,10 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   selector: 'td-breadcrumbs',
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'td-breadcrumbs',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
@@ -49,9 +52,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   @Input('separatorIcon') separatorIcon: string = 'navigate_next';
 
   constructor(private _elementRef: ElementRef,
-              private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef) {
-    this._renderer.addClass(this._elementRef.nativeElement, 'td-breadcrumbs');
   }
 
   ngOnInit(): void {

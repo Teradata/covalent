@@ -1,7 +1,6 @@
 import {
   Component,
   ElementRef,
-  Renderer2,
   HostBinding,
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -12,6 +11,10 @@ import {
   selector: 'td-breadcrumb, a[td-breadcrumb]',
   styleUrls: ['./breadcrumb.component.scss'],
   templateUrl: './breadcrumb.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'mat-button td-breadcrumb',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
@@ -53,10 +56,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
   }
 
   constructor(private _elementRef: ElementRef,
-              private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef) {
-    this._renderer.addClass(this._elementRef.nativeElement, 'mat-button');
-    this._renderer.addClass(this._elementRef.nativeElement, 'td-breadcrumb');
   }
 
   ngAfterViewInit(): void {
