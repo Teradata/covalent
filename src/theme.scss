@@ -2,6 +2,7 @@
 @import './platform/core/theming/all-theme';
 @import './platform/markdown/markdown-theme';
 @import './platform/highlight/highlight-theme';
+@import './platform/flavored-markdown/flavored-markdown-theme';
 // Plus imports for other components in your app.
 
 // Custom typography
@@ -57,6 +58,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+@include covalent-flavored-markdown-theme($theme);
 @include teradata-brand($theme);
 
 // Alt theme
@@ -94,6 +96,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   @include angular-material-theme($theme-dark);
   @include covalent-theme($theme-dark);
   @include covalent-markdown-theme($theme-dark);
+  @include covalent-flavored-markdown-theme($theme-dark);
   @include teradata-brand($theme-dark);
 
   .tc-primary {
