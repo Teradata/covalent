@@ -1,0 +1,152 @@
+<mat-card>
+  <mat-card-title>Flavored Markdown</mat-card-title>
+  <mat-card-subtitle>Parse markdown code with a Material Design flavor</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    Render material design components from markdown language. Perfect for documentation or help sites.
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Checkboxes and Lists</mat-card-title>
+  <mat-card-subtitle>Actions and tasks</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-flavored-markdown>
+          ## Checkboxes
+
+          - [x] My checkbox
+          - [x] My second checkbox
+          - [ ] My empty checkbox
+
+          ## List
+
+          + One
+            + subline
+          + Two
+          + Three
+            + subline
+            + second subline
+        </td-flavored-markdown>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-flavored-markdown>
+              ## Checkboxes
+
+              - [x] My checkbox
+              - [x] My second checkbox
+              - [ ] My empty checkbox
+    
+              ## List
+    
+              + One
+                + subline
+              + Two
+              + Three
+                + subline
+                + second subline
+            </td-flavored-markdown>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Inline Code &amp; Snippets</mat-card-title>
+  <mat-card-subtitle>Code blocks</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-flavored-markdown>
+          <![CDATA[
+            ## Inline
+
+            Inline piece of code `var obj: Type = bla;`
+
+            ## Snippet
+
+            ```typescript
+              @Component({
+                selector: 'demo',
+                styleUrls: ['./demo.component.scss'],
+                templateUrl: './demo.component.html',
+              })
+              export class DemoComponent {
+                property: Type;
+              }
+            ```
+          ]]>
+        </td-flavored-markdown>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-flavored-markdown>
+              ## Inline
+  
+              Inline piece of code `var obj: Type = bla;`
+  
+              ## Snippet
+  
+              ```typescript
+                @Component({
+                  selector: 'demo',
+                  styleUrls: ['./demo.component.scss'],
+                  templateUrl: './demo.component.html',
+                })
+                export class DemoComponent {
+                  property: Type;
+                }
+              ```
+            </td-flavored-markdown>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Tables</mat-card-title>
+  <mat-card-subtitle>render tabular data</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-flavored-markdown>
+          | Tables   |      Are      |  Cool |
+          |----------|--------------:|------:|
+          | col 1 is | left-aligned  | $1600 |
+          | col 2 is | right-aligned |   $12 |
+          | col 3 is | right-aligned |    $1 |
+        </td-flavored-markdown>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-flavored-markdown>
+              | Tables   |      Are      |  Cool |
+              |----------|--------------:|------:|
+              | col 1 is | left-aligned  | $1600 |
+              | col 2 is | right-aligned |   $12 |
+              | col 3 is | right-aligned |    $1 |
+            </td-flavored-markdown>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/flavored-markdown/README.md"></td-readme-loader>

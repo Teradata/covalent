@@ -32,6 +32,7 @@ import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
+import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 // External Dependencies
@@ -64,6 +65,7 @@ import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, Covale
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+import { CovalentFlavoredMarkdownModule } from '../../../platform/flavored-markdown';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { CovalentTextEditorModule } from '@covalent/text-editor';
 
@@ -102,6 +104,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
+    FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
@@ -156,6 +159,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentCodeEditorModule,
     CovalentTextEditorModule,
     CovalentBreadcrumbsModule,
+    CovalentFlavoredMarkdownModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
     TranslateModule,
