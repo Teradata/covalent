@@ -7,7 +7,7 @@
       <p *ngFor="let subline of line.sublines" matLine>
         {{subline}}
       </p>
+      <mat-divider *ngIf="!last"></mat-divider>
     </mat-list-item>
-    <mat-divider *ngIf="!last"></mat-divider>
   </ng-template>
 </mat-list>

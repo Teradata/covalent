@@ -1,0 +1,47 @@
+{
+  "name": "@covalent/flavored-markdown",
+  "version": "0.0.0-COVALENT",
+  "description": "Teradata UI Platform Flavored Markdown Module",
+  "keywords": [
+    "angular",
+    "components",
+    "reusable",
+    "highlight",
+    "highlightjs",
+    "material",
+    "markdown"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "dependencies": {
+    "highlight.js": "9.11.0",
+    "showdown": "1.6.4"
+  },
+  "peerDependencies": {
+    "@angular/common": "^0.0.0-NG",
+    "@angular/core": "^0.0.0-NG",
+    "@angular/cdk": "^0.0.0-MATERIAL",
+    "@angular/material": "^0.0.0-MATERIAL",
+    "@covalent/core": "^0.0.0-COVALENT",
+    "@covalent/highlight": "^0.0.0-COVALENT",
+    "@covalent/markdown": "^0.0.0-COVALENT"
+  }
+}
