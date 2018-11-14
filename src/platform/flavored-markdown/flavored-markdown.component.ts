@@ -4,14 +4,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '../../../platform/highlight';
-import { TdMarkdownComponent } from '../../../platform/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '../../../platform/core';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { TdMarkdownComponent } from '@covalent/markdown';
+import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core/data-table';
 
 @Directive({
-  selector: '[tdPrettyMarkdownContainer]',
+  selector: '[tdFlavoredMarkdownContainer]',
 })
-export class TdPrettyMarkdownContainerDirective {
+export class TdFlavoredMarkdownContainerDirective {
 
   constructor(public viewContainerRef: ViewContainerRef,
               private _renderer: Renderer2) { }
@@ -27,11 +27,11 @@ export interface IReplacerFunc<T> {
 }
 
 @Component({
-  selector: 'td-pretty-markdown',
-  styleUrls: ['./pretty-markdown.component.scss'],
-  templateUrl: './pretty-markdown.component.html',
+  selector: 'td-flavored-markdown',
+  styleUrls: ['./flavored-markdown.component.scss'],
+  templateUrl: './flavored-markdown.component.html',
 })
-export class TdPrettyMarkdownComponent implements AfterViewInit {
+export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
   private _content: string;
 
@@ -43,7 +43,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
     this._loadContent(this._content);
   }
 
-  @ViewChild(TdPrettyMarkdownContainerDirective) container: TdPrettyMarkdownContainerDirective;
+  @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _renderer: Renderer2,
@@ -126,7 +126,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       componentRef.instance.checked = !!checked.trim();
       componentRef.instance.disabled = true;
       componentRef.instance.labelPosition = 'after';
-      this._renderer.setProperty((<HTMLElement>componentRef.instance._inputElement.nativeElement)
+      this._renderer.setProperty((<HTMLElement>componentRef.instance._elementRef.nativeElement)
                                         .getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
     });
   }
