@@ -29,6 +29,10 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   selector: 'td-breadcrumbs',
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'td-breadcrumbs',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
@@ -47,7 +51,9 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    */
   @Input('separatorIcon') separatorIcon: string = 'navigate_next';
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
     this._resizeSubscription = merge(
