@@ -1,6 +1,5 @@
-import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext, Type, ComponentFactory,
-         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef,
+         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
@@ -30,6 +29,7 @@ export interface IReplacerFunc<T> {
   selector: 'td-flavored-markdown',
   styleUrls: ['./flavored-markdown.component.scss'],
   templateUrl: './flavored-markdown.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
@@ -41,17 +41,22 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   set content(content: string) {
     this._content = content;
     this._loadContent(this._content);
+    this._changeDetectorRef.markForCheck();
   }
 
   @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef,
               private _injector: Injector) {}
 
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
+      Promise.resolve().then(() => {
+        this._changeDetectorRef.markForCheck();
+      });
     }
   }
 
@@ -73,7 +78,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
       });
 
       // Join lines again with line characters
-      markdown = lines.join('\n');
+      markdown = [...lines, '', ''].join('\n');
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
@@ -84,6 +89,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+      Promise.resolve().then(() => {
+        this._changeDetectorRef.markForCheck();
+      });
     }
   }
 
@@ -145,7 +153,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   private _replaceTables(markdown: string): string {
     let tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(markdown, TdDataTableComponent, tableRgx,
-                                  (componentRef: ComponentRef<TdDataTableComponent>, match: string, language: string, codeblock: string) => {
+                                  (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
       let dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
       let columns: string[] = dataTableLines[0].split('|')
                               .filter((col: string) => { return col; })

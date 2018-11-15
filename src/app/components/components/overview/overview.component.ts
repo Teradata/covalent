@@ -129,6 +129,11 @@ export class ComponentsOverviewComponent {
       route: 'markdown',
       title: 'Markdown Parser',
     }, {
+      color: 'deep-orange-A700',
+      icon: 'layers',
+      route: 'flavored-markdown',
+      title: 'Flavored Markdown Parser',
+    }, {
       color: 'green-A700',
       icon: 'format_align_center',
       route: 'dynamic-forms',
