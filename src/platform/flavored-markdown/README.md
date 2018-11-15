@@ -1,6 +1,6 @@
 ## TdFlavoredMarkdownComponent: td-flavored-markdown
 
-`<td-flavored-markdown>` is an @angular component for Material/Covalent flavored Javascript Markdown. It is parses markdown into material design / covalent elements for a more appealing look.
+`<td-flavored-markdown>` is an @angular component for Material/Covalent flavored Markdown. It is parses markdown into material design / covalent elements for a more appealing look.
 
 **Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` to avoid **XSS** issues.
 
