@@ -1,0 +1,9 @@
+<span class="td-steps-header">
+  <button *ngIf="showLeftArrow" mat-icon-button (click)="showHiddenLeftStep()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <ng-content></ng-content>
+  <button *ngIf="showRightArrow" mat-icon-button (click)="showHiddenRightStep()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</span>

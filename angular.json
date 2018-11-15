@@ -85,18 +85,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "styles.scss"
-              }, {
-                "input": "theme.scss"
-              }, {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              }
+              "src/styles.scss",
+              "src/theme.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": [
-              {
-               "input": "node_modules/hammerjs/hammer.min.js"
-              }
+              "node_modules/hammerjs/hammer.min.js"
             ],
             "assets": [
               {

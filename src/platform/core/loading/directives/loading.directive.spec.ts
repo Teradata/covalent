@@ -100,8 +100,6 @@ describe('Directive: Loading', () => {
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
       expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
       .style.opacity).toBe('0');
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-      .style.display).toBe('none');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -122,8 +120,6 @@ describe('Directive: Loading', () => {
           fixture.whenStable().then(() => {
             expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
             .style.opacity).toBe('0');
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.display).toBe('none');
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();
@@ -147,8 +143,6 @@ describe('Directive: Loading', () => {
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
       expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
         .style.opacity).toBe('0');
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-      .style.display).toBe('none');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -185,8 +179,6 @@ describe('Directive: Loading', () => {
           fixture.whenStable().then(() => {
             expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
             .style.opacity).toBe('0');
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.display).toBe('none');
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();
@@ -294,6 +286,31 @@ describe('Directive: Loading', () => {
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
           done();
         });
+      });
+    })();
+  });
+
+  it('should inject the content once even if we register/resolve quickly', (done: DoneFn) => {
+    inject([TdLoadingService], (loadingService: TdLoadingService) => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdLoadingDefaultTestComponent);
+      fixture.detectChanges();
+      expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+      loadingService.register('name');
+      fixture.detectChanges();
+      loadingService.resolve('name');
+      fixture.detectChanges();
+      loadingService.register('name');
+      fixture.detectChanges();
+      loadingService.resolve('name');
+      fixture.detectChanges();
+      loadingService.register('name');
+      fixture.detectChanges();
+      loadingService.resolve('name');
+      fixture.whenStable().then(() => {
+        expect(fixture.debugElement.queryAll(By.css('.content')).length).not.toBeGreaterThan(1);
+        expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
+        done();
       });
     })();
   });

@@ -1,21 +1,8 @@
 import { Type } from '@angular/core';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-/**
- * ANIMATIONS
- */
-
-// Directives
-import { TdToggleDirective } from './animations/toggle/toggle.directive';
-import { TdFadeDirective } from './animations/fade/fade.directive';
-
-const TD_ANIMATIONS: Type<any>[] = [
-  TdToggleDirective,
-  TdFadeDirective,
-];
 
 /**
  * FORMS
@@ -37,6 +24,7 @@ const TD_VALIDATORS: Type<any>[] = [
  */
 import { TdTimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 import { TdTimeDifferencePipe } from './pipes/time-difference/time-difference.pipe';
+import { TdTimeUntilPipe } from './pipes/time-until/time-until.pipe';
 import { TdBytesPipe } from './pipes/bytes/bytes.pipe';
 import { TdDecimalBytesPipe } from './pipes/decimal-bytes/decimal-bytes.pipe';
 import { TdDigitsPipe } from './pipes/digits/digits.pipe';
@@ -45,6 +33,7 @@ import { TdTruncatePipe } from './pipes/truncate/truncate.pipe';
 const TD_PIPES: Type<any>[] = [
   TdTimeAgoPipe,
   TdTimeDifferencePipe,
+  TdTimeUntilPipe,
   TdBytesPipe,
   TdDecimalBytesPipe,
   TdDigitsPipe,
@@ -66,7 +55,6 @@ import { IconService } from './services/icon.service';
   declarations: [
     TD_FORMS,
     TD_PIPES,
-    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
   exports: [
@@ -74,7 +62,6 @@ import { IconService } from './services/icon.service';
     CommonModule,
     TD_FORMS,
     TD_PIPES,
-    TD_ANIMATIONS,
     TD_VALIDATORS,
   ],
   providers: [

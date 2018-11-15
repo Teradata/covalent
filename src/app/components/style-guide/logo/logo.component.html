@@ -7,11 +7,11 @@
     <p class="mat-body-1">For example:</p>
     <td-highlight lang="html">
       <![CDATA[
-        <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon>
+        <mat-icon class="mat-icon-logo" svgIcon="teradata"></mat-icon>
       ]]>
     </td-highlight>
     <p class="mat-body-1">The code above will output an inline SVG with 100px width and auto height:</p>
-    <mat-icon class="mat-icon-logo" svgIcon="assets:teradata"></mat-icon>
+    <mat-icon class="mat-icon-logo" svgIcon="teradata-dark"></mat-icon>
     <div class="pad-top pad-bottom">
       <mat-divider></mat-divider>
     </div>
@@ -33,14 +33,21 @@
   <mat-card-subtitle>place the logo in the top toolbar next to the title</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
+    <td-layout-nav logo="teradata" color="accent" toolbarTitle="App Title">
+      <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+      </button>
     </td-layout-nav>
     <div class="pad-top pad-bottom">
       <mat-divider></mat-divider>
     </div>
     <td-highlight lang="html">
       <![CDATA[
-        <td-layout-nav logo="assets:teradata" toolbarTitle="App Title">
+        <td-layout-nav logo="teradata" toolbarTitle="App Title">
+          <button mat-icon-button td-menu-button tdLayoutToggle>
+            <mat-icon>menu</mat-icon>
+          </button>
+        </td-layout-nav>
       ]]>
     </td-highlight>
   </mat-card-content>
@@ -57,11 +64,14 @@
   <mat-card-content>
     <div class="md-padding bgc-grey-200">
       <td-layout mode="side" opened="true">
-        <td-navigation-drawer flex logo="assets:teradata" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
+        <td-navigation-drawer flex logo="teradata-dark" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
           <div class="pad">
             sidenav content
           </div>
         </td-navigation-drawer>
+        <div td-sidenav-content class="td-layout-footer pad">
+          <span class="mat-caption tc-grey-500">&copy;{{year}} Teradata. All Rights Reserved</span>
+        </div>
         <div class="pad">
           main content
         </div>
@@ -73,9 +83,12 @@
     <td-highlight lang="html">
       <![CDATA[
         <td-layout>
-          <td-navigation-drawer flex logo="assets:teradata" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
+          <td-navigation-drawer flex logo="teradata-dark" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
             sidenav content
           </td-navigation-drawer>
+          <div td-sidenav-content class="td-layout-footer pad">
+            <span class="mat-caption tc-grey-500">&copy;{ {year} } Teradata. All Rights Reserved</span>
+          </div>
           main content
         </td-layout>
       ]]>
@@ -83,6 +96,6 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <a mat-button color="primary" [routerLink]="['navigation-drawer']" class="text-upper">Navigation Drawer</a>
+    <a mat-button color="primary" [routerLink]="['/design-patterns', 'navigation-drawer']" class="text-upper">Navigation Drawer</a>
   </mat-card-actions>
 </mat-card>

@@ -10,6 +10,7 @@
     <mat-slider #slider
                 class="td-dynamic-slider"
                 [formControl]="control"
+                [attr.name]="name"
                 [min]="min"
                 [max]="max"
                 thumbLabel
@@ -18,4 +19,5 @@
                 (blur)="_handleBlur()">
     </mat-slider>
   </div>  
+  <span class="mat-hint td-dynamic-element-hint">{{hint}}</span>
 </div>

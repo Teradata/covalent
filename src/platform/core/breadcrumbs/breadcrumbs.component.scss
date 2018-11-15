@@ -1,0 +1,7 @@
+:host {
+  display: block;
+  width: 100%;
+  &.td-breadcrumbs {
+    white-space: nowrap;
+  }
+}

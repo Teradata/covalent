@@ -43,6 +43,7 @@ describe('Component: Chips', () => {
         TdChipsA11yTestComponent,
         TdChipsBasicTestComponent,
         TdChipsObjectsRequireMatchTestComponent,
+        TdChipsRequiredTestComponent,
         TdChipsStackedTestComponent,
         TdChipsBeforeAfterTestComponent,
         TdChipRemovalTestComponent,
@@ -110,6 +111,44 @@ describe('Component: Chips', () => {
       });
     });
 
+  });
+
+  describe('should test required attribute: ', () => {
+    let fixture: ComponentFixture<TdChipsRequiredTestComponent>;
+    let input: DebugElement;
+    let chips: DebugElement;
+
+    beforeEach(() => {
+      fixture = TestBed.createComponent(TdChipsRequiredTestComponent);
+      fixture.detectChanges();
+
+      chips = fixture.debugElement.query(By.directive(TdChipsComponent));
+      input = chips.query(By.css('input'));
+    });
+
+    it('should have primary color', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {        
+        expect((<HTMLElement>chips.nativeElement).classList.contains('mat-primary')).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should have required attribute set to true', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<TdChipsComponent>chips.componentInstance).required).toBeTruthy();
+        done();
+      });
+    });
+
+    it('should have placeholder text appended with *', (done: DoneFn) => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect((<TdChipsComponent>chips.componentInstance).displayPlaceHolder).toEqual('placeholder *');
+        done();
+      });
+    });
   });
 
   describe('a11y keyboard in chips and input: ', () => {
@@ -839,6 +878,20 @@ class TdChipsBasicTestComponent {
       return this.selectedItems ? this.selectedItems.indexOf(filteredItem) < 0 : true;
     });
   }
+}
+
+@Component({
+  template: `
+      <td-chips [placeholder]="placeholder" [required]="true" [items]="items" 
+          [(ngModel)]="items">
+      </td-chips>`,
+})
+class TdChipsRequiredTestComponent {
+  placeholder: string = 'placeholder';
+  required: boolean = false;
+  items: string[] = [
+    'steak',
+  ];
 }
 
 @Component({

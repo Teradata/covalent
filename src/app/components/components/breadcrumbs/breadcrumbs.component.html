@@ -1,0 +1,104 @@
+<mat-card>
+  <mat-card-title>Breadcrumbs</mat-card-title>
+  <mat-card-subtitle>Basic Breadcrumbs (shrink width of page to see responsive behavior)</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <div class="pad">
+        <td-breadcrumbs>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 1}">Home</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 2}">Breadcrumb 1</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 3}">Breadcrumb 2</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 4}">Breadcrumb 3</a>
+          <td-breadcrumb>Current</td-breadcrumb>
+        </td-breadcrumbs>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-breadcrumbs>
+              <a td-breadcrumb
+                  [routerLink]="['/components', 'breadcrumbs']"
+                  [queryParams]="{query: 1}">Home</a>
+              <a td-breadcrumb
+                  [routerLink]="['/components', 'breadcrumbs']"
+                  [queryParams]="{query: 2}">Breadcrumb 1</a>
+              <a td-breadcrumb
+                  [routerLink]="['/components', 'breadcrumbs']"
+                  [queryParams]="{query: 3}">Breadcrumb 2</a>
+              <a td-breadcrumb
+                  [routerLink]="['/components', 'breadcrumbs']"
+                  [queryParams]="{query: 4}">Breadcrumb 3</a>
+              <td-breadcrumb>Current</td-breadcrumb>
+            </td-breadcrumbs>
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<mat-card>
+  <mat-card-title>Custom Separator Icon</mat-card-title>
+  <mat-card-subtitle>using "motorcycle" icon as [separatorIcon]</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <div class="pad">
+        <td-breadcrumbs separatorIcon="motorcycle">
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 1}">Home</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 2}">Breadcrumb 1</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 3}">Breadcrumb 2</a>
+          <a td-breadcrumb
+              [routerLink]="['/components', 'breadcrumbs']"
+              [queryParams]="{query: 4}">Breadcrumb 3</a>
+          <td-breadcrumb>Current</td-breadcrumb>
+        </td-breadcrumbs>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <p>HTML:</p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <td-breadcrumbs separatorIcon="motorcycle">
+            <a td-breadcrumb
+                [routerLink]="['/components', 'breadcrumbs']"
+                [queryParams]="{query: 1}">Home</a>
+            <a td-breadcrumb
+                [routerLink]="['/components', 'breadcrumbs']"
+                [queryParams]="{query: 2}">Breadcrumb 1</a>
+            <a td-breadcrumb
+                [routerLink]="['/components', 'breadcrumbs']"
+                [queryParams]="{query: 3}">Breadcrumb 2</a>
+            <a td-breadcrumb
+                [routerLink]="['/components', 'breadcrumbs']"
+                [queryParams]="{query: 4}">Breadcrumb 3</a>
+            <td-breadcrumb>Current</td-breadcrumb>
+          </td-breadcrumbs>
+        ]]>
+      </td-highlight>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/breadcrumbs/README.md"></td-readme-loader>

@@ -26,6 +26,11 @@ export class ComponentsOverviewComponent {
       route: 'expansion-panel',
       title: 'Expansion Panel',
     }, {
+      color: 'orange-A700',
+      icon: 'tab',
+      route: 'tab-select',
+      title: 'Tab Select',
+    }, {
       color: 'pink-A700',
       icon: 'space_bar',
       route: 'file-input',
@@ -40,6 +45,11 @@ export class ComponentsOverviewComponent {
       icon: 'label',
       route: 'chips',
       title: 'Chips',
+    }, {
+      color: 'green-A700',
+      icon: 'more_horiz',
+      route: 'breadcrumbs',
+      title: 'Breadcrumbs',
     }, {
       color: 'lime-A700',
       icon: 'hourglass_empty',
@@ -119,6 +129,11 @@ export class ComponentsOverviewComponent {
       route: 'markdown',
       title: 'Markdown Parser',
     }, {
+      color: 'deep-orange-A700',
+      icon: 'layers',
+      route: 'flavored-markdown',
+      title: 'Flavored Markdown Parser',
+    }, {
       color: 'green-A700',
       icon: 'format_align_center',
       route: 'dynamic-forms',
@@ -141,11 +156,6 @@ export class ComponentsOverviewComponent {
     },
   ];
   external: Object[] = [{
-      color: 'purple-A700',
-      icon: 'insert_chart',
-      route: 'ngx-charts',
-      title: 'NGX-Charts',
-    }, {
       color: 'blue-A700',
       icon: 'language',
       route: 'ngx-translate',

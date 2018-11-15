@@ -1,0 +1,9 @@
+:host {
+  .td-steps-header {
+    // layout
+    box-sizing: border-box;
+    display: flex;
+    // layout="row"
+    flex-direction: row;
+  }
+}

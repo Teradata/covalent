@@ -24,17 +24,18 @@ import { PipesComponent } from './pipes/pipes.component';
 import { AnimationsComponent } from './animations/animations.component';
 import { DataTableDemoComponent } from './data-table/data-table.component';
 import { PagingDemoComponent } from './paging/paging.component';
+import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { SearchDemoComponent } from './search/search.component';
+import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
-import { NgxChartsDemoComponent } from './ngx-charts/ngx-charts.component';
+import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 // External Dependencies
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -55,14 +56,16 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentMessageModule, CovalentVirtualScrollModule } from '../../../platform/core';
+         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule, CovalentTabSelectModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+import { CovalentFlavoredMarkdownModule } from '../../../platform/flavored-markdown';
 import { CovalentCodeEditorModule } from '@covalent/code-editor';
 import { CovalentTextEditorModule } from '@covalent/text-editor';
 
@@ -99,9 +102,11 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
     NotificationsDemoComponent,
+    BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
+    FlavoredMarkdownDemoComponent,
+    TabSelectDemoComponent,
     // External Dependencies
-    NgxChartsDemoComponent,
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
   ],
@@ -129,6 +134,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     MatRippleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDividerModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -152,8 +158,10 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentVirtualScrollModule,
     CovalentCodeEditorModule,
     CovalentTextEditorModule,
+    CovalentBreadcrumbsModule,
+    CovalentFlavoredMarkdownModule,
     DocumentationToolsModule,
-    NgxChartsModule,
+    CovalentTabSelectModule,
     TranslateModule,
     componentsRoutes,
     ToolbarModule,

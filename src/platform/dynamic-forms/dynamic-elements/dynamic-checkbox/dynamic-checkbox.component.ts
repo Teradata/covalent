@@ -12,6 +12,10 @@ export class TdDynamicCheckboxComponent {
 
   label: string = '';
 
+  name: string = '';
+
+  hint: string = '';
+
   required: boolean = false;
 
 }

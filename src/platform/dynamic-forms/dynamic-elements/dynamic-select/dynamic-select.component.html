@@ -3,6 +3,7 @@
     <mat-select [formControl]="control"
                 [placeholder]="label"
                 [required]="required"
+                [attr.name]="name"
                 [multiple]="multiple">
       <mat-option *ngFor="let selection of selections" [value]="selection.value || selection">{{selection.label || selection}}</mat-option>
     </mat-select>

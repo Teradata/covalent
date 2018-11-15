@@ -1,8 +1,0 @@
-<span *ngIf="displayCrumb" class="td-breadcrumb">
-  <ng-content></ng-content>
-  <mat-icon *ngIf="_displayIcon"
-            [style.cursor]="'default'"
-            (click)="_handleIconClick($event)">
-    {{separatorIcon}}
-  </mat-icon>
-</span>

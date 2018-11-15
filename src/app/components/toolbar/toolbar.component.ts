@@ -16,7 +16,18 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [];
+  updates: Object[] = [{
+      description: 'initial release!',
+      icon: 'more_horiz',
+      route: '/components/breadcrumbs',
+      title: 'Breadcrums',
+    }, {
+      description: 'initial release!',
+      icon: 'tab',
+      route: '/components/tab-select',
+      title: 'Tab Select',
+    },
+  ];
 
   dir: 'ltr' | 'rtl' = getDirection();
 

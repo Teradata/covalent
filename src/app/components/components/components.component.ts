@@ -25,6 +25,11 @@ export class ComponentsComponent {
     route: 'expansion-panel',
     title: 'Expansion Panels',
   }, {
+    description: 'Filter lists and items',
+    icon: 'tab',
+    route: 'tab-select',
+    title: 'Tab Select',
+  }, {
     description: 'Text input for files',
     icon: 'space_bar',
     route: 'file-input',
@@ -39,6 +44,11 @@ export class ComponentsComponent {
     icon: 'label_outline',
     route: 'chips',
     title: 'Chips & Autocomplete',
+  }, {
+    description: 'Navigate routes with breadcrumbs',
+    icon: 'more_horiz',
+    route: 'breadcrumbs',
+    title: 'Breadcrumbs',
   }, {
     description: 'Circular or linear progress loader',
     icon: 'hourglass_empty',
@@ -117,6 +127,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown Parser',
   }, {
+    description: 'Parse markdown code to MD elements',
+    icon: 'layers',
+    route: 'flavored-markdown',
+    title: 'Flavored Markdown Parser',
+  }, {
     description: 'Build forms from a JS object',
     icon: 'format_align_center',
     route: 'dynamic-forms',
@@ -139,11 +154,6 @@ export class ComponentsComponent {
   }];
 
   external: Object[] = [{
-    description: 'Declarative D3 framework',
-    icon: 'insert_chart',
-    route: 'ngx-charts',
-    title: 'NGX-Charts',
-  }, {
     description: 'i18n library',
     icon: 'language',
     route: 'ngx-translate',

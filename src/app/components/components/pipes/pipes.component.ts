@@ -14,6 +14,9 @@ export class PipesComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
+  currentDate: Date = new Date();
+  currentTimeStamp: string = this.currentDate.toISOString();
+
   public logs: Object[] = [
     {
       bytes: 72452903343,
@@ -22,6 +25,7 @@ export class PipesComponent {
       reference: '2016-06-17T12:59:59.000Z',
       timestamp: '2016-01-29T17:59:59.000Z',
       timestampend: '2016-01-29T18:59:59.000Z',
+      expiration_date: '2016-06-17T13:00:02.000Z',
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 5,
     }, {
@@ -31,6 +35,7 @@ export class PipesComponent {
       reference: new Date(2016, 4, 17),
       timestamp: '2016-06-10T17:59:59.000Z',
       timestampend: '2016-11-29T18:59:59.000Z',
+      expiration_date: new Date(new Date(2016, 4, 17).getTime() + 120000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 10,
     }, {
@@ -39,6 +44,7 @@ export class PipesComponent {
       reference: new Date(2016, 4, 17).getTime(),
       timestamp: '2016-06-17T12:59:59.000Z',
       timestampend: '2016-06-17T13:00:00.000Z',
+      expiration_date: new Date(new Date(2016, 4, 17).getTime() + 7200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 15,
     }, {
@@ -47,6 +53,7 @@ export class PipesComponent {
       reference: 'invalid',
       timestamp: '2016-06-17T12:59:59.000Z',
       timestampend: '2016-06-18T13:00:00.000Z',
+      expiration_date: new Date(this.currentDate.getTime() + 259200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 20,
     }, {
@@ -54,6 +61,7 @@ export class PipesComponent {
       digits: 'Invalid Number',
       timestamp: '2016-06-17T12:59:59.000Z',
       timestampend: '2016-06-20T13:00:00.000Z',
+      expiration_date: new Date(this.currentDate.getTime() + 10519200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 25,
     }, {
@@ -61,6 +69,7 @@ export class PipesComponent {
       digits: 3245234,
       timestamp: new Date(2016, 4, 17),
       timestampend: '2016-06-20T13:00:00.000Z',
+      expiration_date: new Date(this.currentDate.getTime() + 157788000000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 30,
     }, {
@@ -68,6 +77,7 @@ export class PipesComponent {
       digits: 3245234100.6,
       timestamp: new Date(2016, 4, 17).getTime(),
       timestampend: '2016-06-20T13:00:00.000Z',
+      expiration_date: new Date(this.currentDate.getTime() + 20000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 35,
     }, {
@@ -75,6 +85,7 @@ export class PipesComponent {
       digits: 3245234190076.9,
       timestamp: 'invalid',
       timestampend: '2016-06-20T13:00:00.000Z',
+      expiration_date: new Date(this.currentDate.getTime() + 30000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 40,
     },

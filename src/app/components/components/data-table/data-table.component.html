@@ -9,13 +9,11 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-          <div class="mat-table-container">
+        <div class="mat-table-container">
           <table td-data-table>
             <thead>
               <tr td-data-table-column-row>
-                <th td-data-table-column
-                    *ngFor="let column of columns"
-                    [numeric]="column.numeric">
+                <th td-data-table-column *ngFor="let column of columns" [numeric]="column.numeric">
                   {{column.label}}
                 </th>
                 <th td-data-table-column>
@@ -119,11 +117,9 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-data-table
-          [data]="basicData"
-          [columns]="configWidthColumns">
+        <td-data-table [data]="basicData" [columns]="configWidthColumns">
           <ng-template tdDataTableTemplate="img" let-value="value">
-            <img [src]="value"/>
+            <img [src]="value" />
           </ng-template>
         </td-data-table>
       </mat-tab>
@@ -171,6 +167,88 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
+    <h3 class="mat-title">Data Table with custom sort</h3>
+    <h4 class="mat-subheading-2">sorting on a date column</h4>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-data-table [data]="dateSortData" [sortable]="true" [sortBy]="'date'" [sortOrder]="sortOrder" (sortChange)="sortDates($event)"
+          [columns]="dateColumns">
+          <ng-template tdDataTableTemplate="img" let-value="value">
+            <img [src]="value" />
+          </ng-template>
+        </td-data-table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-data-table
+              [data]="dateSortData"
+              [sortable]="true"
+              [sortBy]="'date'"
+              [sortOrder]="sortOrder"
+              (sortChange)="sortDates($event)"
+              [columns]="dateColumns">
+              <ng-template tdDataTableTemplate="img" let-value="value">
+                <img [src]="value"/>
+              </ng-template>
+            </td-data-table>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { ITdDataTableColumn } from '@covalent/core/data-table';
+            ...
+            export class Demo implements OnInit {
+              dateColumns: ITdDataTableColumn[] = [
+                { name: 'date', label: 'Date', sortable: true, width: 275 },
+                { name: 'first_name', label: 'First Name', sortable: false, width: 150 },
+                { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+              ];
+
+              ...
+
+              sortDates(sortEvent: ITdDataTableSortChangeEvent): void {
+                this.dateSortOrder = sortEvent.order;
+                this.filterDateData();
+              }
+
+              ...
+
+              filterDateData(): void {
+                this.dateSortData = Array.from(this.dateSortData); // Change the array reference to trigger OnPush
+                this.dateSortData = this.dateSortData.sort((a: any, b: any) => {
+                  let direction: number = 0;
+                  if (this.dateSortOrder === TdDataTableSortingOrder.Descending) {
+                    direction = 1;
+                  } else if (this.dateSortOrder === TdDataTableSortingOrder.Ascending) {
+                    direction = -1;
+                  }
+                  if (a.date < b.date) {
+                    return direction;
+                  } else if (a.date > b.date) {
+                    return -direction;
+                  } else {
+                    return direction;
+                  }
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="dateSortData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="mat-title">Data Table with components</h3>
     <h4 class="mat-subheading-2">Paging Bar / Search Box / Sortable components</h4>
     <mat-divider></mat-divider>
@@ -182,28 +260,17 @@
             <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="mat-title">Title here</span>
             <span *ngIf="selectedRows.length && selectable" class="mat-body-1">{{selectedRows.length}} item(s) selected</span>
           </span>
-          <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+          <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)"
+            flex>
           </td-search-box>
           <button mat-icon-button>
             <mat-icon>more_vert</mat-icon>
           </button>
         </div>
         <mat-divider></mat-divider>
-        <td-data-table
-          #dataTable
-          [data]="filteredData"
-          [columns]="columns"
-          [selectable]="selectable"
-          [clickable]="clickable"
-          [multiple]="multiple"
-          [sortable]="true"
-          [sortBy]="sortBy"
-          [resizableColumns]="resizableColumns"
-          [(ngModel)]="selectedRows"
-          [sortOrder]="sortOrder"
-          (sortChange)="sort($event)"
-          (rowClick)="showAlert($event)"
-          [style.height.px]="200">
+        <td-data-table #dataTable [data]="filteredData" [columns]="columns" [selectable]="selectable" [clickable]="clickable" [multiple]="multiple"
+          [sortable]="true" [sortBy]="sortBy" [resizableColumns]="resizableColumns" [(ngModel)]="selectedRows" [sortOrder]="sortOrder"
+          (sortChange)="sort($event)" (rowClick)="showAlert($event)" [style.height.px]="200">
         </td-data-table>
         <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
           <h3>No results to display.</h3>
@@ -223,19 +290,19 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
-              <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                <span class="mat-title">Title here</span>
-              </span>
+            <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
                 <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="mat-title">Title here</span>
                 <span *ngIf="selectedRows.length && selectable" class="mat-body-1">{{selectedRows.length}} item(s) selected</span>
               </span>
               <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
               </td-search-box>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
             </div>
             <mat-divider></mat-divider>
-            <td-data-table
+            <td-data-table 
               #dataTable
               [data]="filteredData"
               [columns]="columns"
@@ -268,13 +335,98 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core/data-table';
+            import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
+
+            import { slideInDownAnimation } from '@covalent/core/common';
+
+            import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
+                     ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent } from '@covalent/core/data-table';
             import { IPageChangeEvent } from '@covalent/core/paging';
-            ...
+            import { TdDialogService } from '@covalent/core/dialogs';
+
+            import { InternalDocsService } from '../../../services';
+
+            const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
             const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
-            ...
+
+            @Component({
+              selector: 'data-table-demo',
+              styleUrls: ['./data-table.component.scss'],
+              templateUrl: './data-table.component.html',
+              animations: [slideInDownAnimation],
+              preserveWhitespaces: true,
             })
-            export class Demo {
+            export class DataTableDemoComponent implements OnInit {
+
+              @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+              @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+
+              @ViewChild(TdPagingBarComponent) pagingBar: TdPagingBarComponent;
+
+              cellAttrs: Object[] = [{
+                description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
+                name: 'numeric',
+                type: `boolean`,
+              }];
+
+              columnAttrs: Object[] = [{
+                description: `Sets unique column [name] for [sortable] events.`,
+                name: 'name',
+                type: `string`,
+              }, {
+                description: `Enables sorting events, sort icons and active column states. Defaults to 'false'`,
+                name: 'sortable',
+                type: `boolean`,
+              }, {
+                description: `Sets the sort order of column. Defaults to 'ASC' or TdDataTableSortingOrder.Ascending`,
+                name: 'sortOrder',
+                type: `['ASC' | 'DESC'] or TdDataTableSortingOrder`,
+              }, {
+                description: `Whether the column should be hidden or not. Defaults to 'false'`,
+                name: 'hidden',
+                type: `boolean`,
+              }, {
+                description: `When set to false this column will be excluded from searches using the filterData method.`,
+                name: 'filter?',
+                type: 'boolean',
+              }, {
+                description: `Sets column to active state when 'true'. Defaults to 'false'`,
+                name: 'active',
+                type: `boolean`,
+              }, {
+                description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
+                name: 'numeric',
+                type: `boolean`,
+              }, {
+                description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
+                              Emits an [ITdDataTableSortChangeEvent] implemented object.`,
+                name: 'sortChange',
+                type: `function`,
+              }];
+
+              serviceAttrs: Object[] = [{
+                description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+                              Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
+                name: 'filterData',
+                type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
+              }, {
+                description: `Sorts [data] parameter by [sortBy] and [sortOrder] and returns the sorted data.`,
+                name: 'sortData',
+                type: `function(data: any[], sortBy: string, sortOrder: TdDataTableSortingOrder): any[]`,
+              }, {
+                description: `Returns a section of the [data] parameter starting from [fromRow] and ending in [toRow].`,
+                name: 'pageData',
+                type: `function(data: any[], fromRow: number, toRow: number): any[]`,
+              }];
+
+              configWidthColumns: ITdDataTableColumn[] = [
+                { name: 'first_name',  label: 'First name', width: 150 },
+                { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
+                { name: 'gender', label: 'Gender'},
+                { name: 'email', label: 'Email', width: 250},
+                { name: 'img', label: '', width: 100},
+              ];
+
               columns: ITdDataTableColumn[] = [
                 { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
                 { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
@@ -282,30 +434,72 @@
                 { name: 'email', label: 'Email', sortable: true, width: 250 },
                 { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
               ];
-          
-              data: any[] = [...]; // see json data
 
-              filteredData: any[] = this.data;
-              filteredTotal: number = this.data.length;
+              dateColumns: ITdDataTableColumn[] = [
+                { name: 'date', label: 'Date', sortable: true, width: 275 },
+                { name: 'first_name', label: 'First Name', sortable: false, width: 150 },
+                { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
+              ];
+
+              data: any[];
+              basicData: any[];
+              dateSortData: any[];
+              selectable: boolean = true;
+              clickable: boolean = false;
+              multiple: boolean = true;
+              resizableColumns: boolean = false;
+              filterColumn: boolean = true;
+
+              filteredData: any[];
+              filteredTotal: number ;
+              selectedRows: any[] = [];
 
               searchTerm: string = '';
               fromRow: number = 1;
               currentPage: number = 1;
               pageSize: number = 50;
               sortBy: string = 'first_name';
-              selectedRows: any[] = [];
               sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+              dateSortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
-               constructor(private _dataTableService: TdDataTableService) {}
+              constructor(private _dataTableService: TdDataTableService,
+                          private _internalDocsService: InternalDocsService,
+                          private _dialogService: TdDialogService) {}
 
-              ngOnInit(): void {
+              openPrompt(row: any, name: string): void {
+                this._dialogService.openPrompt({
+                  message: 'Enter comment?',
+                  value: row[name],
+                }).afterClosed().subscribe((value: any) => {
+                  if (value !== undefined) {
+                    row[name] = value;
+                  }
+                });
+              }
+
+              async ngOnInit(): Promise<void> {
+                this.data = await this._internalDocsService.queryData().toPromise();
+                this.basicData = this.data.slice(0, 10);
                 this.filter();
+
+                this.dateSortData = this.data.slice(0, 5);
+                this.dateSortData = this.dateSortData.map((row: any) => {
+                  let randomDate: Date = new Date(new Date(2012, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2012, 0, 1).getTime()));
+                  row.date = randomDate;
+                  return row;
+                });
+                this.filterDateData();
               }
 
               sort(sortEvent: ITdDataTableSortChangeEvent): void {
                 this.sortBy = sortEvent.name;
                 this.sortOrder = sortEvent.order;
                 this.filter();
+              }
+
+              sortDates(sortEvent: ITdDataTableSortChangeEvent): void {
+                this.dateSortOrder = sortEvent.order;
+                this.filterDateData();
               }
 
               search(searchTerm: string): void {
@@ -319,11 +513,6 @@
                 this.currentPage = pagingEvent.page;
                 this.pageSize = pagingEvent.pageSize;
                 this.filter();
-              }
-
-              showAlert(event: any): void {
-                let row: any = event.row;
-                // .. do something with event.row
               }
 
               async filter(): Promise<void> {
@@ -341,11 +530,44 @@
                 newData = await this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
                 this.filteredData = newData;
               }
+
+              filterDateData(): void {
+                this.dateSortData = Array.from(this.dateSortData); // Change the array reference to trigger OnPush
+                this.dateSortData = this.dateSortData.sort((a: any, b: any) => {
+                  let direction: number = 0;
+                  if (this.dateSortOrder === TdDataTableSortingOrder.Descending) {
+                    direction = 1;
+                  } else if (this.dateSortOrder === TdDataTableSortingOrder.Ascending) {
+                    direction = -1;
+                  }
+                  if (a.date < b.date) {
+                    return direction;
+                  } else if (a.date > b.date) {
+                    return -direction;
+                  } else {
+                    return direction;
+                  }
+                });
+              }
+
+              toggleTooltips(): void {
+                if (this.columns[0].tooltip) {
+                  this.columns.forEach((c: any) => delete c.tooltip);
+                } else {
+                  this.columns.forEach((c: any) => c.tooltip = `This is ${c.label}!`);
+                }
+              }
+
+              showAlert(event: any): void {
+                this._dialogService.openAlert({
+                  message: 'You clicked on row: ' + event.row.first_name + ' ' + event.row.last_name,
+                });
+              }
             }
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="basicData | json">
+        <td-highlight lang="json" [content]="filteredData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -391,7 +613,7 @@
   <mat-card-subtitle>How to use this service</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-     <p>Service provided with methods for sorting/paging/searching the data table.</p>
+    <p>Service provided with methods for sorting/paging/searching the data table.</p>
     <h3>Properties:</h3>
     <p>The <code><![CDATA[TdDataTableService]]></code> service has {{serviceAttrs.length}} methods:</p>
     <mat-list>

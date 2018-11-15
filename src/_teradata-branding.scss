@@ -1,0 +1,629 @@
+/**
+* Colors
+*/
+
+// Customer Teradata brand palette
+// Custom orange contrast
+$td-orange: (
+  50: #fce3db,
+  100: #fce3db,
+  200: #fac7b7,
+  300: #fac7b7,
+  400: #f7aa93,
+  500: #f7aa93,
+  600: #f58e6f,
+  700: #f58e6f,
+  800: #f3753f,
+  900: #f3753f,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+  )
+);
+$td-slate: (
+  50: #d8dbdc,
+  100: #d8dbdc,
+  200: #b0b6b9,
+  300: #b0b6b9,
+  400: #899296,
+  500: #899296,
+  600: #616d73,
+  700: #616d73,
+  800: #394851,
+  900: #394851,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+  )
+);
+$td-yellow: (
+  50: #fff4df,
+  100: #fff4df,
+  200: #fee9c0,
+  300: #fee9c0,
+  400: #fedea0,
+  500: #fedea0,
+  600: #fdd381,
+  700: #fdd381,
+  800: #fec64d,
+  900: #fec64d,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+  )
+);
+$td-teal: (
+  50: #cff0ef,
+  100: #cff0ef,
+  200: #9fe1e0,
+  300: #9fe1e0,
+  400: #6fd2d0,
+  500: #6fd2d0,
+  600: #3fc3c1,
+  700: #3fc3c1,
+  800: #00b2b1,
+  900: #00b2b1,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+  )
+);
+$td-blue: (
+  50: #d1eaf4,
+  100: #d1eaf4,
+  200: #a4d6e8,
+  300: #a4d6e8,
+  400: #76c1dd,
+  500: #76c1dd,
+  600: #49add1,
+  700: #49add1,
+  800: #0098c9,
+  900: #0098c9,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+  )
+);
+
+$td-positive: (
+  foreground-light: mat-color($mat-green, 700),
+  foreground-dark: mat-color($mat-green, 300),
+  background-light: mat-color($mat-green, 300),
+  background-dark: mat-color($mat-green, 300),
+);
+$td-caution: (
+  foreground-light: mat-color($mat-amber, 800),
+  foreground-dark: mat-color($mat-orange, 300),
+  background-light: mat-color($mat-orange, 300),
+  background-dark: mat-color($mat-orange, 300),
+);
+$td-negative: (
+  foreground-light: mat-color($mat-red, 900),
+  foreground-dark: mat-color($mat-red, 300),
+  background-light: mat-color($mat-red, 300),
+  background-dark: mat-color($mat-red, 300),
+);
+$td-neutral: (
+  foreground-light: mat-color($mat-grey, 800),
+  foreground-dark: mat-color($mat-grey, 300),
+  background-light: mat-color($mat-grey, 300),
+  background-dark: mat-color($mat-grey, 300),
+);
+$td-emphasis1: (
+  foreground-light: mat-color($mat-cyan, 800),
+  foreground-dark: mat-color($mat-cyan, 200),
+  background-light: mat-color($mat-cyan, 200),
+  background-dark: mat-color($mat-cyan, 200),
+);
+$td-emphasis2: (
+  foreground-light: mat-color($mat-blue-grey, 600),
+  foreground-dark: mat-color($mat-blue-grey, 200),
+  background-light: mat-color($mat-blue-grey, 200),
+  background-dark: mat-color($mat-blue-grey, 200),
+);
+
+body { 
+  // Slate
+  .bgc-td-slate,
+  .bgc-td-slate-900,
+  .bgc-td-slate-800 {
+    background-color: mat-color($td-slate, 800);
+  }
+
+  .bgc-td-slate-700,
+  .bgc-td-slate-600 {
+    background-color: mat-color($td-slate, 600);
+  }
+
+  .bgc-td-slate-500,
+  .bgc-td-slate-400 {
+    background-color: mat-color($td-slate, 400);
+  }
+
+  .bgc-td-slate-300,
+  .bgc-td-slate-200 {
+    background-color: mat-color($td-slate, 200);
+  }
+
+  .bgc-td-slate-100,
+  .bgc-td-slate-50 {
+    background-color: mat-color($td-slate, 50);
+  }
+
+  .tc-td-slate,
+  .tc-td-slate-900,
+  .tc-td-slate-800 {
+    color: mat-color($td-slate, 800);
+  }
+
+  .tc-td-slate-700,
+  .tc-td-slate-600 {
+    color: mat-color($td-slate, 600);
+  }
+
+  .tc-td-slate-500,
+  .tc-td-slate-400 {
+    color: mat-color($td-slate, 400);
+  }
+
+  .tc-td-slate-300,
+  .tc-td-slate-200 {
+    color: mat-color($td-slate, 200);
+  }
+
+  .tc-td-slate-100,
+  .tc-td-slate-50 {
+    color: mat-color($td-slate, 50);
+  }
+
+  .fill-td-slate,
+  .fill-td-slate-900,
+  .fill-td-slate-800 {
+    fill: mat-color($td-slate, 800);
+  }
+
+  .fill-td-slate-700,
+  .fill-td-slate-600 {
+    fill: mat-color($td-slate, 600);
+  }
+
+  .fill-td-slate-500,
+  .fill-td-slate-400 {
+    fill: mat-color($td-slate, 400);
+  }
+
+  .fill-td-slate-300,
+  .fill-td-slate-200 {
+    fill: mat-color($td-slate, 200);
+  }
+
+  .fill-td-slate-100,
+  .fill-td-slate-50 {
+    fill: mat-color($td-slate, 50);
+  }
+  // Orange
+  .bgc-td-orange,
+  .bgc-td-orange-900,
+  .bgc-td-orange-800 {
+    background-color: mat-color($td-orange, 800);
+  }
+
+  .bgc-td-orange-700,
+  .bgc-td-orange-600 {
+    background-color: mat-color($td-orange, 600);
+  }
+
+  .bgc-td-orange-500,
+  .bgc-td-orange-400 {
+    background-color: mat-color($td-orange, 400);
+  }
+
+  .bgc-td-orange-300,
+  .bgc-td-orange-200 {
+    background-color: mat-color($td-orange, 200);
+  }
+
+  .bgc-td-orange-100,
+  .bgc-td-orange-50 {
+    background-color: mat-color($td-orange, 50);
+  }
+
+  .tc-td-orange,
+  .tc-td-orange-900,
+  .tc-td-orange-800 {
+    color: mat-color($td-orange, 800);
+  }
+
+  .tc-td-orange-700,
+  .tc-td-orange-600 {
+    color: mat-color($td-orange, 600);
+  }
+
+  .tc-td-orange-500,
+  .tc-td-orange-400 {
+    color: mat-color($td-orange, 400);
+  }
+
+  .tc-td-orange-300,
+  .tc-td-orange-200 {
+    color: mat-color($td-orange, 200);
+  }
+
+  .tc-td-orange-100,
+  .tc-td-orange-50 {
+    color: mat-color($td-orange, 50);
+  }
+  .fill-td-orange,
+  .fill-td-orange-900,
+  .fill-td-orange-800 {
+    fill: mat-color($td-orange, 800);
+  }
+
+  .fill-td-orange-700,
+  .fill-td-orange-600 {
+    fill: mat-color($td-orange, 600);
+  }
+
+  .fill-td-orange-500,
+  .fill-td-orange-400 {
+    fill: mat-color($td-orange, 400);
+  }
+
+  .fill-td-orange-300,
+  .fill-td-orange-200 {
+    fill: mat-color($td-orange, 200);
+  }
+
+  .fill-td-orange-100,
+  .fill-td-orange-50 {
+    fill: mat-color($td-orange, 50);
+  }
+  // Yellow
+  .bgc-td-yellow,
+  .bgc-td-yellow-900,
+  .bgc-td-yellow-800 {
+    background-color: mat-color($td-yellow, 800);
+  }
+
+  .bgc-td-yellow-700,
+  .bgc-td-yellow-600 {
+    background-color: mat-color($td-yellow, 600);
+  }
+
+  .bgc-td-yellow-500,
+  .bgc-td-yellow-400 {
+    background-color: mat-color($td-yellow, 400);
+  }
+
+  .bgc-td-yellow-300,
+  .bgc-td-yellow-200 {
+    background-color: mat-color($td-yellow, 200);
+  }
+
+  .bgc-td-yellow-100,
+  .bgc-td-yellow-50 {
+    background-color: mat-color($td-yellow, 50);
+  }
+
+  .tc-td-yellow,
+  .tc-td-yellow-900,
+  .tc-td-yellow-800 {
+    color: mat-color($td-yellow, 800);
+  }
+
+  .tc-td-yellow-700,
+  .tc-td-yellow-600 {
+    color: mat-color($td-yellow, 600);
+  }
+
+  .tc-td-yellow-500,
+  .tc-td-yellow-400 {
+    color: mat-color($td-yellow, 400);
+  }
+
+  .tc-td-yellow-300,
+  .tc-td-yellow-200 {
+    color: mat-color($td-yellow, 200);
+  }
+
+  .tc-td-yellow-100,
+  .tc-td-yellow-50 {
+    color: mat-color($td-yellow, 50);
+  }
+  .fill-td-yellow,
+  .fill-td-yellow-900,
+  .fill-td-yellow-800 {
+    fill: mat-color($td-yellow, 800);
+  }
+
+  .fill-td-yellow-700,
+  .fill-td-yellow-600 {
+    fill: mat-color($td-yellow, 600);
+  }
+
+  .fill-td-yellow-500,
+  .fill-td-yellow-400 {
+    fill: mat-color($td-yellow, 400);
+  }
+
+  .fill-td-yellow-300,
+  .fill-td-yellow-200 {
+    fill: mat-color($td-yellow, 200);
+  }
+
+  .fill-td-yellow-100,
+  .fill-td-yellow-50 {
+    fill: mat-color($td-yellow, 50);
+  }
+  // Teal
+  .bgc-td-teal,
+  .bgc-td-teal-900,
+  .bgc-td-teal-800 {
+    background-color: mat-color($td-teal, 800);
+  }
+
+  .bgc-td-teal-700,
+  .bgc-td-teal-600 {
+    background-color: mat-color($td-teal, 600);
+  }
+
+  .bgc-td-teal-500,
+  .bgc-td-teal-400 {
+    background-color: mat-color($td-teal, 400);
+  }
+
+  .bgc-td-teal-300,
+  .bgc-td-teal-200 {
+    background-color: mat-color($td-teal, 200);
+  }
+
+  .bgc-td-teal-100,
+  .bgc-td-teal-50 {
+    background-color: mat-color($td-teal, 50);
+  }
+
+  .tc-td-teal,
+  .tc-td-teal-900,
+  .tc-td-teal-800 {
+    color: mat-color($td-teal, 800);
+  }
+
+  .tc-td-teal-700,
+  .tc-td-teal-600 {
+    color: mat-color($td-teal, 600);
+  }
+
+  .tc-td-teal-500,
+  .tc-td-teal-400 {
+    color: mat-color($td-teal, 400);
+  }
+
+  .tc-td-teal-300,
+  .tc-td-teal-200 {
+    color: mat-color($td-teal, 200);
+  }
+
+  .tc-td-teal-100,
+  .tc-td-teal-50 {
+    color: mat-color($td-teal, 50);
+  }
+  .fill-td-teal,
+  .fill-td-teal-900,
+  .fill-td-teal-800 {
+    fill: mat-color($td-teal, 800);
+  }
+
+  .fill-td-teal-700,
+  .fill-td-teal-600 {
+    fill: mat-color($td-teal, 600);
+  }
+
+  .fill-td-teal-500,
+  .fill-td-teal-400 {
+    fill: mat-color($td-teal, 400);
+  }
+
+  .fill-td-teal-300,
+  .fill-td-teal-200 {
+    fill: mat-color($td-teal, 200);
+  }
+
+  .fill-td-teal-100,
+  .fill-td-teal-50 {
+    fill: mat-color($td-teal, 50);
+  }
+  // Blue
+  .bgc-td-blue,
+  .bgc-td-blue-900,
+  .bgc-td-blue-800 {
+    background-color: mat-color($td-blue, 800);
+  }
+
+  .bgc-td-blue-700,
+  .bgc-td-blue-600 {
+    background-color: mat-color($td-blue, 600);
+  }
+
+  .bgc-td-blue-500,
+  .bgc-td-blue-400 {
+    background-color: mat-color($td-blue, 400);
+  }
+
+  .bgc-td-blue-300,
+  .bgc-td-blue-200 {
+    background-color: mat-color($td-blue, 200);
+  }
+
+  .bgc-td-blue-100,
+  .bgc-td-blue-50 {
+    background-color: mat-color($td-blue, 50);
+  }
+
+  .tc-td-blue,
+  .tc-td-blue-900,
+  .tc-td-blue-800 {
+    color: mat-color($td-blue, 800);
+  }
+
+  .tc-td-blue-700,
+  .tc-td-blue-600 {
+    color: mat-color($td-blue, 600);
+  }
+
+  .tc-td-blue-500,
+  .tc-td-blue-400 {
+    color: mat-color($td-blue, 400);
+  }
+
+  .tc-td-blue-300,
+  .tc-td-blue-200 {
+    color: mat-color($td-blue, 200);
+  }
+
+  .tc-td-blue-100,
+  .tc-td-blue-50 {
+    color: mat-color($td-blue, 50);
+  }
+  .fill-td-blue,
+  .fill-td-blue-900,
+  .fill-td-blue-800 {
+    fill: mat-color($td-blue, 800);
+  }
+
+  .fill-td-blue-700,
+  .fill-td-blue-600 {
+    fill: mat-color($td-blue, 600);
+  }
+
+  .fill-td-blue-500,
+  .fill-td-blue-400 {
+    fill: mat-color($td-blue, 400);
+  }
+
+  .fill-td-blue-300,
+  .fill-td-blue-200 {
+    fill: mat-color($td-blue, 200);
+  }
+
+  .fill-td-blue-100,
+  .fill-td-blue-50 {
+    fill: mat-color($td-blue, 50);
+  }
+}
+
+@mixin teradata-brand($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
+  // Logo alignment
+  .mat-icon.mat-icon-logo {
+    position: relative;
+    top: -2px;
+    // Logo + title alignment
+    & + .mat-title,
+    & + span {
+      position: relative;
+      top: 1px;
+      text-transform: uppercase;
+    }
+    & + .td-navigation-drawer-title {
+      top: 2px;
+    }
+  }
+  // Spacing before logo in main toolbar
+  .mat-toolbar {
+    .mat-icon-button + .mat-icon-logo,
+    .mat-icon-button + span > .mat-icon-logo {
+      margin-left: 10px;
+    }
+    .mat-icon-logo {
+      margin-right: 16px;
+    }
+  }
+  // Logo in card title alignment
+  .mat-card-title {
+    .mat-icon-logo {
+      margin-right: 8px;
+    }
+  }
+
+  // Apply theme for this app
+  body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 999;
+    background-color: mat-color($accent);
+  }
+
+  // Active icon color in list nav
+  .mat-drawer {
+    mat-nav-list {
+      .mat-list-item {
+        &.active {
+          font-weight: bold;
+          color: mat-color($accent, darker) !important;
+          .mat-icon.mat-list-avatar {
+            background-color: mat-color($accent);
+            color: mat-color($accent, default-contrast);
+            fill: mat-color($accent, default-contrast);
+          }
+          .mat-icon.mat-list-icon {
+            color: mat-color($accent);
+            fill: mat-color($accent);
+          }
+        }
+      }
+      &[dense] {
+        .mat-icon.mat-list-avatar {
+          min-width: 36px;
+        }
+      }
+    }
+  }
+}

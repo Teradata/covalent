@@ -12,6 +12,10 @@ export class TdDynamicSlideToggleComponent {
 
   label: string = '';
 
+  name: string = '';
+
+  hint: string = '';
+
   required: boolean = false;
 
 }

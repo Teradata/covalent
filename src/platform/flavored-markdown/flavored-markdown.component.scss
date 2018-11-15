@@ -1,0 +1,27 @@
+$code-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+
+:host ::ng-deep {
+  td-markdown:first-of-type > div:first-of-type {
+    & > h1:first-of-type,
+    & > h2:first-of-type {
+      margin-top: 0;
+    }
+  }
+  td-data-table,
+  td-highlight,
+  mat-checkbox {
+    display: block;
+  }
+
+  td-data-table,
+  td-highlight,
+  mat-checkbox:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  :not(pre) > code {
+    font-family: $code-font;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, HostBinding, TemplateRef } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
-import { TdCollapseAnimation } from '@covalent/core/common';
+import { tdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import {
@@ -39,7 +39,7 @@ export class TdTestDynamicComponent {
   templateUrl: './dynamic-forms.component.html',
   animations: [
     slideInDownAnimation,
-    TdCollapseAnimation(),
+    tdCollapseAnimation,
   ],
   preserveWhitespaces: true,
 })
@@ -90,13 +90,13 @@ export class DynamicFormsDemoComponent {
     name: 'number',
     label: 'Number',
     type: TdDynamicType.Number,
-    hint: 'this is an input hint',
     required: true,
     min: 18,
     max: 70,
   }, {
     name: 'slider',
     type: TdDynamicElement.Slider,
+    hint: 'this is a slider hint',
     min: 18,
     max: 70,
   }];
@@ -105,14 +105,17 @@ export class DynamicFormsDemoComponent {
     name: 'boolean',
     label: 'Boolean Label',
     type: TdDynamicType.Boolean,
+    hint: 'this is a boolean',
     default: false,
   }, {
     name: 'slide-toggle',
     type: TdDynamicElement.SlideToggle,
+    hint: 'this is a slide toggle', 
     default: true,
   }, {
     name: 'checkbox',
     type: TdDynamicElement.Checkbox,
+    hint: 'this is a checkbox',
   }];
 
   arrayElements: ITdDynamicElementConfig[] = [{
