@@ -1,9 +1,7 @@
-<ng-container *ngIf="displayCrumb">
-  <ng-content></ng-content>
-  <mat-icon *ngIf="_displayIcon"
-            class="td-breadcrumb-separator-icon"
-            [style.cursor]="'default'"
-            (click)="_handleIconClick($event)">
-    {{separatorIcon}}
-  </mat-icon>
-</ng-container>
+<ng-content></ng-content>
+<mat-icon *ngIf="_displayIcon"
+          class="td-breadcrumb-separator-icon"
+          [style.cursor]="'default'"
+          (click)="_handleIconClick($event)">
+  {{separatorIcon}}
+</mat-icon>
