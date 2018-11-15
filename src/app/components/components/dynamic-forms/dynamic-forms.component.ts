@@ -90,13 +90,13 @@ export class DynamicFormsDemoComponent {
     name: 'number',
     label: 'Number',
     type: TdDynamicType.Number,
-    hint: 'this is an input hint',
     required: true,
     min: 18,
     max: 70,
   }, {
     name: 'slider',
     type: TdDynamicElement.Slider,
+    hint: 'this is a slider hint',
     min: 18,
     max: 70,
   }];
@@ -105,14 +105,17 @@ export class DynamicFormsDemoComponent {
     name: 'boolean',
     label: 'Boolean Label',
     type: TdDynamicType.Boolean,
+    hint: 'this is a boolean',
     default: false,
   }, {
     name: 'slide-toggle',
     type: TdDynamicElement.SlideToggle,
+    hint: 'this is a slide toggle', 
     default: true,
   }, {
     name: 'checkbox',
     type: TdDynamicElement.Checkbox,
+    hint: 'this is a checkbox',
   }];
 
   arrayElements: ITdDynamicElementConfig[] = [{
