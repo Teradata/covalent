@@ -14,6 +14,8 @@ export class TdDynamicCheckboxComponent {
 
   name: string = '';
 
+  hint: string = '';
+
   required: boolean = false;
 
 }

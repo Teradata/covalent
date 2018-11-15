@@ -1,17 +1,16 @@
-import { Component, Directive, AfterViewInit, ElementRef, Input, Renderer2, SecurityContext, Type, ComponentFactory,
-         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef,
+         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '../../../platform/highlight';
-import { TdMarkdownComponent } from '../../../platform/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '../../../platform/core';
+import { TdHighlightComponent } from '@covalent/highlight';
+import { TdMarkdownComponent } from '@covalent/markdown';
+import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core/data-table';
 
 @Directive({
-  selector: '[tdPrettyMarkdownContainer]',
+  selector: '[tdFlavoredMarkdownContainer]',
 })
-export class TdPrettyMarkdownContainerDirective {
+export class TdFlavoredMarkdownContainerDirective {
 
   constructor(public viewContainerRef: ViewContainerRef,
               private _renderer: Renderer2) { }
@@ -27,11 +26,12 @@ export interface IReplacerFunc<T> {
 }
 
 @Component({
-  selector: 'td-pretty-markdown',
-  styleUrls: ['./pretty-markdown.component.scss'],
-  templateUrl: './pretty-markdown.component.html',
+  selector: 'td-flavored-markdown',
+  styleUrls: ['./flavored-markdown.component.scss'],
+  templateUrl: './flavored-markdown.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdPrettyMarkdownComponent implements AfterViewInit {
+export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
   private _content: string;
 
@@ -41,17 +41,22 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
   set content(content: string) {
     this._content = content;
     this._loadContent(this._content);
+    this._changeDetectorRef.markForCheck();
   }
 
-  @ViewChild(TdPrettyMarkdownContainerDirective) container: TdPrettyMarkdownContainerDirective;
+  @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _renderer: Renderer2,
+              private _changeDetectorRef: ChangeDetectorRef,
               private _injector: Injector) {}
 
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
+      Promise.resolve().then(() => {
+        this._changeDetectorRef.markForCheck();
+      });
     }
   }
 
@@ -73,7 +78,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       });
 
       // Join lines again with line characters
-      markdown = lines.join('\n');
+      markdown = [...lines, '', ''].join('\n');
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
@@ -84,6 +89,9 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+      Promise.resolve().then(() => {
+        this._changeDetectorRef.markForCheck();
+      });
     }
   }
 
@@ -126,7 +134,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
       componentRef.instance.checked = !!checked.trim();
       componentRef.instance.disabled = true;
       componentRef.instance.labelPosition = 'after';
-      this._renderer.setProperty((<HTMLElement>componentRef.instance._inputElement.nativeElement)
+      this._renderer.setProperty((<HTMLElement>componentRef.instance._elementRef.nativeElement)
                                         .getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
     });
   }
@@ -145,7 +153,7 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
   private _replaceTables(markdown: string): string {
     let tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
     return this._replaceComponent(markdown, TdDataTableComponent, tableRgx,
-                                  (componentRef: ComponentRef<TdDataTableComponent>, match: string, language: string, codeblock: string) => {
+                                  (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
       let dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
       let columns: string[] = dataTableLines[0].split('|')
                               .filter((col: string) => { return col; })
@@ -202,6 +210,9 @@ export class TdPrettyMarkdownComponent implements AfterViewInit {
           }
           return direction * (event.order === TdDataTableSortingOrder.Descending ? -1 : 1);
         });
+        componentRef.instance.refresh();
+      });
+      setTimeout(() => {
         componentRef.instance.refresh();
       });
     });

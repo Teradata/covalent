@@ -29,6 +29,10 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   selector: 'td-breadcrumbs',
   styleUrls: ['./breadcrumbs.component.scss'],
   templateUrl: './breadcrumbs.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'td-breadcrumbs',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
@@ -40,14 +44,16 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   // all the sub components, which are the individual breadcrumbs
   @ContentChildren(TdBreadcrumbComponent) _breadcrumbs: QueryList<TdBreadcrumbComponent>;
   // the list of hidden breadcrumbs not shown right now (responsive)
-  hiddenBreadcrumbs: TdBreadcrumbComponent[] = new Array();
+  hiddenBreadcrumbs: TdBreadcrumbComponent[] = [];
 
   /**
-   * Sets the icon url shown between breadcrumbs. Defaults to right chevron.
+   * Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'.
    */
-  @Input('separatorIcon') separatorIcon: string = 'navigate_next';
+  @Input('separatorIcon') separatorIcon: string = 'chevron_right';
 
-  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private _elementRef: ElementRef,
+              private _changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
     this._resizeSubscription = merge(
@@ -61,7 +67,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
       if (!this._resizing) {
         this._resizing = true;
         setTimeout(() => {
-          this.displayWidthAvailableCrumbs();
+          this._calculateVisibility();
           this._resizing = false;
           this._changeDetectorRef.markForCheck();
         }, 100);
@@ -122,41 +128,26 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
     });
   }
 
-  private displayWidthAvailableCrumbs(): void {
-    let curTotCrumbWidth: number = 0;
+  private _calculateVisibility(): void {
     let crumbsArray: TdBreadcrumbComponent[] = this._breadcrumbs.toArray();
-    // calculate the current width of the shown breadcrumbs
-    for (let i: number = this.hiddenBreadcrumbs.length; i < crumbsArray.length; i++) {
-      curTotCrumbWidth += crumbsArray[i].width;
-    }
-    // hide the first bread crumb if window size is smaller than all the crumb sizes
-    if (this.nativeElementWidth < curTotCrumbWidth) {
-      crumbsArray[this.hiddenBreadcrumbs.length].displayCrumb = false;
-      this.hiddenBreadcrumbs.push(crumbsArray[this.hiddenBreadcrumbs.length]);
-      this.displayWidthAvailableCrumbs();
-    } else {
-      // loop over all the hidden crumbs and see if adding them back in will
-      // fit in the current window size
-      let totalHidden: number = this.hiddenBreadcrumbs.length - 1;
-      for (let i: number = totalHidden; i >= 0; i--) {
-        let hiddenCrumbWidth: number = crumbsArray[i].width;
-        if ((curTotCrumbWidth + hiddenCrumbWidth) < this.nativeElementWidth) {
-          crumbsArray[i].displayCrumb = true;
-          crumbsArray[i + 1]._displayIcon = true;
-          this.hiddenBreadcrumbs.pop();
-          // recalculate the total width based on adding back in a crumb
-          let newTotCrumbWidth: number = 0;
-          for (let j: number = this.hiddenBreadcrumbs.length; j < crumbsArray.length; j++) {
-            newTotCrumbWidth += crumbsArray[j].width;
-          }
-          curTotCrumbWidth = newTotCrumbWidth;
-        } else if (i === totalHidden) {
-          // need to break out of loop here because the first in the hidden
-          // list can't fit in current window size
-          break;
-        }
+    let crumbWidthSum: number = 0;
+    let hiddenCrumbs: TdBreadcrumbComponent[] = [];
+    // loop through crumbs in reverse order to calculate which ones should be removed
+    for (let i: number = crumbsArray.length - 1; i >= 0; i--) {
+      let breadcrumb: TdBreadcrumbComponent = crumbsArray[i];
+      // if crumb exceeds width, then we skip it from the sum and add it into the hiddencrumbs array
+      // and hide it
+      if ((crumbWidthSum + breadcrumb.width) > this.nativeElementWidth) {
+        breadcrumb.displayCrumb = false;
+        hiddenCrumbs.push(breadcrumb);
+      } else {
+        // else we show it
+        breadcrumb.displayCrumb = true;
       }
+      crumbWidthSum += breadcrumb.width;
     }
+    this.hiddenBreadcrumbs = hiddenCrumbs;
+    this._changeDetectorRef.markForCheck();
   }
 
 }

@@ -127,6 +127,11 @@ export class ComponentsComponent {
     route: 'markdown',
     title: 'Markdown Parser',
   }, {
+    description: 'Parse markdown code to MD elements',
+    icon: 'layers',
+    route: 'flavored-markdown',
+    title: 'Flavored Markdown Parser',
+  }, {
     description: 'Build forms from a JS object',
     icon: 'format_align_center',
     route: 'dynamic-forms',
