@@ -89,6 +89,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+      Promise.resolve().then(() => {
+        this._changeDetectorRef.markForCheck();
+      });
     }
   }
 

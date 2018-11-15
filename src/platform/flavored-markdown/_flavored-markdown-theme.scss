@@ -17,11 +17,6 @@
           color: currentColor;
         }
       }
-      &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
-        .mat-checkbox-background {
-          background-color: mat-color($accent) !important;
-        }
-      }
     }
   }
 }
