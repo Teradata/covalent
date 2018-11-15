@@ -1,4 +1,4 @@
-import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef,
+import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef, EventEmitter, Output,
          ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -37,12 +37,26 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
   private _components: {} = {};
 
+  /**
+   * content?: string
+   *
+   * Markdown format content to be parsed as material/covalent markup.
+   * Used to load data dynamically.
+   *
+   * e.g. README.md content.
+   */
   @Input('content')
   set content(content: string) {
     this._content = content;
     this._loadContent(this._content);
     this._changeDetectorRef.markForCheck();
   }
+
+  /**
+   * contentReady?: function
+   * Event emitted after the markdown content rendering is finished.
+   */
+  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
   @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
 
@@ -79,16 +93,17 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
       // Join lines again with line characters
       markdown = [...lines, '', ''].join('\n');
+      markdown = this._replaceCodeBlocks(markdown);
       markdown = this._replaceCheckbox(markdown);
       markdown = this._replaceTables(markdown);
       markdown = this._replaceLists(markdown);
-      markdown = this._replaceCodeBlocks(markdown);
       let keys: string[] = Object.keys(this._components);
       // need to sort the placeholders in order of encounter in markdown content
       keys = keys.sort((compA: string, compB: string) => {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+      this.onContentReady.emit();
       Promise.resolve().then(() => {
         this._changeDetectorRef.markForCheck();
       });
