@@ -227,6 +227,9 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
         });
         componentRef.instance.refresh();
       });
+      setTimeout(() => {
+        componentRef.instance.refresh();
+      });
     });
   }
 
