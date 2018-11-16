@@ -17,6 +17,7 @@
 
 + bottom?: function
   + Method to be executed when user scrolled to the last item of the list. No value is emitted.
+  + An [ITdVirtualScrollBottomEvent] event is emitted
 
 #### Methods
 
@@ -53,7 +54,7 @@ Example for HTML usage:
 <td-virtual-scroll-container [style.height.px]="400"
                              [data]="data"
                              [trackBy]="trackByFn"
-                             (bottom)="myEvent()">
+                             (bottom)="fetchMoreData()">
   <ng-template let-row="row"
                let-index="index"
                let-first="first"

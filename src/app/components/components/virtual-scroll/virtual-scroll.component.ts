@@ -58,7 +58,6 @@ export class VirtualScrollDemoComponent implements OnInit {
       )
       .subscribe((results: any[]) => {
         this.infiniteData = this.infiniteData.concat(results);
-        this._changeDetectorRef.detectChanges();
       });
   }
 }
