@@ -107,12 +107,33 @@ describe('Component: VirtualScrollContainer', () => {
       });
     });
   });
+
+  it('should emit bottom event', (done: DoneFn) => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TestBasicVirtualScrollComponent);
+    let component: TestBasicVirtualScrollComponent = fixture.debugElement.componentInstance;
+    let virtualScrollComponent: DebugElement = fixture.debugElement.query(By.directive(TdVirtualScrollContainerComponent));
+    let eventSpy: jasmine.Spy = spyOn(component, 'myBottom');
+
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        virtualScrollComponent.componentInstance.scrollToEnd();
+
+        setTimeout(() => {
+          expect(eventSpy.calls.count()).toBe(1);
+          done();
+        }, 250);
+      });
+    });
+  });
 });
 
 @Component({
   template: `
     <mat-list>
-      <td-virtual-scroll-container [style.height.px]="height" [data]="data">
+      <td-virtual-scroll-container [style.height.px]="height" [data]="data" (bottom)="myBottom()">
         <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
           <mat-list-item>
             <h4 matLine>{{row}}</h4>
@@ -144,4 +165,5 @@ class TestBasicVirtualScrollComponent {
     'Soda',
     'Tea',
   ];
+  myBottom: any = () => ({});
 }
