@@ -34,6 +34,12 @@ export class OverviewComponent {
     route: ['types', 'combination'],
     title: 'Combination Chart',
   },
+  {
+    color: 'amber-A700',
+    icon: 'share',
+    route: ['types', 'tree'],
+    title: 'Tree Chart',
+  },
 ];
 
 atomicComponents: Object[] = [

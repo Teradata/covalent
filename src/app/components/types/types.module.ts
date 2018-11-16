@@ -26,11 +26,13 @@ import { TypesBarComponent } from './bar/bar.component';
 import { TypesLineComponent } from './line/line.component';
 import { TypesScatterComponent } from './scatter/scatter.component';
 import { TypesCombinationComponent } from './combination/combination.component';
+import { TypesTreeComponent } from './tree/tree.component';
 
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentLineEchartsModule } from '@covalent/echarts/line';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
 import { CovalentScatterEchartsModule } from '@covalent/echarts/scatter';
+import { CovalentTreeEchartsModule } from '@covalent/echarts/tree';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { moduleRoutes } from './types.routes';
 
@@ -66,6 +68,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentBarEchartsModule,
     CovalentScatterEchartsModule,
     CovalentTooltipEchartsModule,
+    CovalentTreeEchartsModule,
     // internal
     DocumentationToolsModule,
     moduleRoutes,
@@ -75,6 +78,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     TypesLineComponent,
     TypesScatterComponent,
     TypesCombinationComponent,
+    TypesTreeComponent,
   ],
 })
 export class TypesModule {}

@@ -46,6 +46,12 @@ export class ComponentsComponent {
       route: ['types', 'combination'],
       title: 'Combination',
     },
+    {
+      description: 'Atomic and Config Options',
+      icon: 'share',
+      route: ['types', 'tree'],
+      title: 'Tree',
+    },
   ];
 
   atomicComponentRoutes: Object[] = [
