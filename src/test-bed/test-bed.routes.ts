@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { NavStepperDemoComponent } from './sandbox/nav-stepper/nav-stepper.component';
+import { TimepickerDemoComponent } from './sandbox/timepicker/timepicker.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     component: NavStepperDemoComponent,
     path: 'navstepper',
+  },
+  {
+    component: TimepickerDemoComponent,
+    path: 'timepicker',
   },
 ];
 
