@@ -90,9 +90,11 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       takeUntil(this._destroy),
       debounceTime(100),
     ).subscribe(() => {
-      this._instance.resize();
-      this._changeDetectorRef.markForCheck();
-    }),
+      if (this._instance) {
+        this._instance.resize();
+        this._changeDetectorRef.markForCheck();
+      }
+    });
     this.render();
     this._optionsService.listen().subscribe((options: any) => {
       assignDefined(this._options, options);
@@ -116,6 +118,10 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this._instance) {
+      this._instance.clear();
+      echarts.dispose(this._instance);
+    }
     this._destroy.next(true);
     this._destroy.unsubscribe();
   }
