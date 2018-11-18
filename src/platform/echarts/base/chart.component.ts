@@ -138,7 +138,6 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
         },
         xAxis : [{}], // throws error if its empty
         yAxis : [{}], // throws error if its empty
-        series: [],
       }, this.config ? this.config : {}, this._options), true);
       this._changeDetectorRef.markForCheck();
     }

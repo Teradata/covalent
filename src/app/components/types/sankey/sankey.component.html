@@ -1,0 +1,176 @@
+<mat-card flex>
+  <mat-card-title>Sankey</mat-card-title>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-chart [style.height.px]="300"
+                  [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">>
+          <td-chart-series td-sankey
+                            [focusNodeAdjacency]="'allEdges'"
+                            [right]="40"
+                            [left]="40"
+                            [data]="[{name: 'a'},
+                                    {name: 'b'},
+                                    {name: 'a1'},
+                                    {name: 'a2'},
+                                    {name: 'b1'},
+                                    {name: 'c'}]"
+                            [links]="[{
+                                        source: 'a',
+                                        target: 'a1',
+                                        value: 5
+                                      }, {
+                                        source: 'a',
+                                        target: 'a2',
+                                        value: 3
+                                      }, {
+                                        source: 'b',
+                                        target: 'b1',
+                                        value: 8
+                                      }, {
+                                        source: 'a',
+                                        target: 'b1',
+                                        value: 3
+                                      }, {
+                                        source: 'b1',
+                                        target: 'a1',
+                                        value: 1
+                                      }, {
+                                        source: 'b1',
+                                        target: 'c',
+                                        value: 2
+                                      }]">
+            <td-chart-tooltip [trigger]="'item'">
+              <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
+                <ng-container *ngIf="params">
+                  <div layout="row" layout-align="start center">
+                    <ng-container *ngIf="params.dataType === 'node'">
+                      <mat-icon [style.color]="params.color">device_hub</mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        {{params.data.name}}
+                      </span>
+                    </ng-container>
+                    <ng-container *ngIf="params.dataType === 'edge'">
+                      <span class="mat-caption pad-left-sm">
+                        {{params.data.source}}
+                      </span>
+                      <mat-icon>arrow_forward</mat-icon>
+                      <span class="mat-caption">
+                        {{params.data.target}} : {{params.value}}
+                      </span>
+                    </ng-container>
+                  </div>
+                </ng-container>
+              </ng-template>
+            </td-chart-tooltip>
+          </td-chart-series>
+        </td-chart>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML: </p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-chart [style.height.px]="300"
+                      [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">
+              <td-chart-series td-sankey
+                                [focusNodeAdjacency]="'allEdges'"
+                                [right]="40"
+                                [left]="40"
+                                [data]="[{name: 'a'},
+                                        {name: 'b'},
+                                        {name: 'a1'},
+                                        {name: 'a2'},
+                                        {name: 'b1'},
+                                        {name: 'c'}]"
+                                [links]="[{
+                                            source: 'a',
+                                            target: 'a1',
+                                            value: 5
+                                          }, {
+                                            source: 'a',
+                                            target: 'a2',
+                                            value: 3
+                                          }, {
+                                            source: 'b',
+                                            target: 'b1',
+                                            value: 8
+                                          }, {
+                                            source: 'a',
+                                            target: 'b1',
+                                            value: 3
+                                          }, {
+                                            source: 'b1',
+                                            target: 'a1',
+                                            value: 1
+                                          }, {
+                                            source: 'b1',
+                                            target: 'c',
+                                            value: 2
+                                          }]">
+                <td-chart-tooltip [trigger]="'item'">
+                  <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
+                    <ng-container *ngIf="params">
+                      <div layout="row" layout-align="start center">
+                        <ng-container *ngIf="params.dataType === 'node'">
+                          <mat-icon [style.color]="params.color">device_hub</mat-icon>
+                          <span class="mat-caption pad-left-sm">
+                            { {params.data.name} }
+                          </span>
+                        </ng-container>
+                        <ng-container *ngIf="params.dataType === 'edge'">
+                          <span class="mat-caption pad-left-sm">
+                            { {params.data.source} }
+                          </span>
+                          <mat-icon>arrow_forward</mat-icon>
+                          <span class="mat-caption">
+                            { {params.data.target} } : { {params.value} }
+                          </span>
+                        </ng-container>
+                      </div>
+                    </ng-container>
+                  </ng-template>
+                </td-chart-tooltip>
+              </td-chart-series>
+            </td-chart>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Sankey (JS Object)</mat-card-title>
+  <mat-card-subtitle>Configuration object used to render a chart</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+
+        <td-chart [style.height.px]="300"
+                  [config]="config">
+        </td-chart>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <p>HTML: </p>
+      <td-highlight lang="html">
+        <![CDATA[
+          <td-chart [style.height.px]="300"
+                    [config]="config">
+          </td-chart>
+        ]]>          
+      </td-highlight>
+      <p>config JSON: </p>
+      <td-highlight [content]="config | json" lang="json">
+      </td-highlight>
+    </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/echarts/sankey/README.md"></td-readme-loader>

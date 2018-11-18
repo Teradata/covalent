@@ -52,6 +52,12 @@ export class ComponentsComponent {
       route: ['types', 'tree'],
       title: 'Tree',
     },
+    {
+      description: 'Atomic and Config Options',
+      icon: 'call_split',
+      route: ['types', 'sankey'],
+      title: 'Sankey',
+    },
   ];
 
   atomicComponentRoutes: Object[] = [

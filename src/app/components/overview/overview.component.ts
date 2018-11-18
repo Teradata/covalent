@@ -40,6 +40,12 @@ export class OverviewComponent {
     route: ['types', 'tree'],
     title: 'Tree Chart',
   },
+  {
+    color: 'green-A700',
+    icon: 'call_split',
+    route: ['types', 'sankey'],
+    title: 'Sankey Chart',
+  },
 ];
 
 atomicComponents: Object[] = [
