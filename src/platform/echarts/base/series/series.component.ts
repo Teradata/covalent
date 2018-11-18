@@ -76,8 +76,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   }
 
   private _removeOption(): void {
-    let config: any = this.getConfig();
-    this.optionsService.removeArrayOption('series', config);
+    this.optionsService.removeArrayOption('series', this._state);
   }
 
 }
