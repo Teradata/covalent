@@ -9,7 +9,6 @@ import {
   OnChanges,
   ContentChild,
   ViewChild,
-  OnInit,
   OnDestroy,
 } from '@angular/core';
 
@@ -37,8 +36,8 @@ export class TdChartTooltipFormatterDirective {
   templateUrl: './tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
-  
+export class TdChartTooltipComponent implements OnChanges, OnDestroy {
+
   private _state: any = {};
 
   _context: TdTooltipContext = new TdTooltipContext();
@@ -74,10 +73,6 @@ export class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
               private _optionsService: TdChartOptionsService) {
-  }
-
-  ngOnInit(): void {
-    this._setOptions();
   }
 
   ngOnChanges(): void {

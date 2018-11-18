@@ -1,6 +1,5 @@
 import { 
   Component,
-  OnInit,
   Input,
   ContentChild,
   ViewChild,
@@ -21,7 +20,7 @@ import { TdChartTooltipFormatterDirective, TdTooltipContext } from './tooltip.co
   templateUrl: './tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
+export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
 
   private _state: any = {};
 
@@ -47,10 +46,6 @@ export class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDestroy {
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
               private _seriesComponent: TdSeriesComponent) {
-  }
-
-  ngOnInit(): void {
-    this._setOptions();
   }
 
   ngOnChanges(): void {
