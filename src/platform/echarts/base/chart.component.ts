@@ -9,11 +9,10 @@ import {
   AfterViewInit,
   OnChanges,
   OnDestroy,
-  DoCheck,
 } from '@angular/core';
 
-import { Subscription, Subject, fromEvent, merge, timer } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subject, fromEvent, merge, timer } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 import * as echarts from 'echarts/lib/echarts';
 
@@ -27,9 +26,9 @@ import { assignDefined } from './utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CHART_PROVIDER],
 })
-export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
+export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 
-  private _subs: Subscription[] = [];
+  private _destroy: Subject<boolean> = new Subject<boolean>();
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
 
@@ -57,56 +56,56 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
 
   ngAfterViewInit(): void {
     this._instance = echarts.init(this._elementRef.nativeElement);
-    this._subs.push(
-      fromEvent(this._instance, 'click').subscribe((params: any) => {
-        this.click.next(params);
-      }),
-    );
-    this._subs.push(
-      fromEvent(this._instance, 'dblclick').subscribe((params: any) => {
-        this.dblclick.next(params);
-      }),
-    );
-    this._subs.push(
-      fromEvent(this._instance, 'contextmenu').subscribe((params: any) => {
-        this.contextmenu.next(params);
-      }),
-    );
+    fromEvent(this._instance, 'click').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.click.next(params);
+    });
+    fromEvent(this._instance, 'dblclick').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.dblclick.next(params);
+    });
+    fromEvent(this._instance, 'contextmenu').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.contextmenu.next(params);
+    });
     if (this.group) {
       this._instance.group = this.group;
       echarts.connect(this.group);
       this._changeDetectorRef.markForCheck();
     }
-    this._subs.push(
-      merge(
-        fromEvent(window, 'resize').pipe(
-          debounceTime(100),
-        ),
-        this._widthSubject.asObservable().pipe(
-          debounceTime(100),
-        ),
-        this._heightSubject.asObservable().pipe(
-          debounceTime(100),
-        ),
-      ).pipe(
+    merge(
+      fromEvent(window, 'resize').pipe(
         debounceTime(100),
-      ).subscribe(() => {
-        this._instance.resize();
-        this._changeDetectorRef.markForCheck();
-      }),
-    );
+      ),
+      this._widthSubject.asObservable().pipe(
+        distinctUntilChanged(),
+      ),
+      this._heightSubject.asObservable().pipe(
+        distinctUntilChanged(),
+      ),
+    ).pipe(
+      takeUntil(this._destroy),
+      debounceTime(100),
+    ).subscribe(() => {
+      this._instance.resize();
+      this._changeDetectorRef.markForCheck();
+    }),
     this.render();
     this._optionsService.listen().subscribe((options: any) => {
       assignDefined(this._options, options);
       this.render();
     });
-  }
-
-  ngDoCheck(): void {
-    if (this._elementRef && this._elementRef.nativeElement) {
-      this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
-      this._heightSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height);
-    }
+    timer(500, 250).pipe(
+      takeUntil(this._destroy),
+    ).subscribe(() => {
+      if (this._elementRef && this._elementRef.nativeElement) {
+        this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+        this._heightSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height);
+      }
+    });
   }
 
   ngOnChanges(): void {
@@ -117,11 +116,8 @@ export class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDe
   }
 
   ngOnDestroy(): void {
-    if (this._subs) {
-      this._subs.forEach((sub: Subscription) => {
-        sub.unsubscribe();
-      });
-    }
+    this._destroy.next(true);
+    this._destroy.unsubscribe();
   }
 
   render(): void {
