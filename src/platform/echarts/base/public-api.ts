@@ -48,6 +48,7 @@ export {
   ITdBaseStyle,
   ITdTooltipAxisPointer,
   TdAxisPointerAxis,
+  ITdEdgeLabel,
 } from './base.types';
 
 export * from './series/series.component';

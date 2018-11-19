@@ -58,6 +58,11 @@ export class ComponentsComponent {
       route: ['types', 'sankey'],
       title: 'Sankey',
     },
+    {
+      icon: 'grain',
+      route: ['types', 'graph'],
+      title: 'Graph',
+    },
   ];
 
   atomicComponentRoutes: Object[] = [

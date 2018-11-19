@@ -46,6 +46,12 @@ export class OverviewComponent {
     route: ['types', 'sankey'],
     title: 'Sankey Chart',
   },
+  {
+    color: 'orange-A700',
+    icon: 'grain',
+    route: ['types', 'graph'],
+    title: 'Graph Chart',
+  },
 ];
 
 atomicComponents: Object[] = [
