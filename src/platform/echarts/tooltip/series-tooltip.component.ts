@@ -65,7 +65,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
       padding: this.padding,
       textStyle: this.textStyle,
       extraCssText: this.extraCssText,
-      formatter: this.formatter ? this.formatter : this._formatter(),
+      formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
     });
     // set series tooltip configuration in parent chart and render new configurations
     this._seriesComponent.setStateOption('tooltip', config);

@@ -97,7 +97,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
       confine: this.confine,
       transitionDuration: this.transitionDuration,
       position: this.position,
-      formatter: this.formatter ? this.formatter : this._formatter(),
+      formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
       backgroundColor: this.backgroundColor,
       borderColor: this.borderColor,
       borderWidth: this.borderWidth,
