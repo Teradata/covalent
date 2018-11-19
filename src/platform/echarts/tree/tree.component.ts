@@ -88,10 +88,6 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
 
 export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implements ITdTreeSeries {
 
-  @Input('config') config: any = {};
-  @Input('id') id: string;
-  @Input('name') name: string;
-  @Input('data') data: any;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('left') left: string | number;
@@ -114,7 +110,6 @@ export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implem
   @Input('lineStyle') lineStyle: ITdLineStyle;
   @Input('leaves') leaves: ITdTreeLeaves;
   @Input('emphasis') emphasis: ITdTreeEmphasis;
-  @Input('tooltip') tooltip: ITdSeriesTooltip;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('tree', _optionsService);
@@ -122,10 +117,6 @@ export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implem
 
   getConfig(): any {
     return {
-      id: this.id,
-      type: this.type,
-      name: this.name,
-      data: this.data,
       zlevel: this.zlevel,
       z: this.z,
       left: this.left,
@@ -148,7 +139,6 @@ export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implem
       lineStyle: this.lineStyle,
       leaves: this.leaves,
       emphasis: this.emphasis,
-      tooltip: this.tooltip,
     };
   }
 }

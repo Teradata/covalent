@@ -84,7 +84,6 @@ export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> im
   @Input('itemStyle') itemStyle: ITdItemStyle;
   @Input('lineStyle') lineStyle: ITdLineCurveStyle;
   @Input('emphasis') emphasis: ITdEmphasis;
-  @Input('data') data: any[];
   @Input('nodes') nodes: any[];
   @Input('links') links: any[];
   @Input('edges') edges: any[];
@@ -96,10 +95,6 @@ export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> im
 
   getConfig(): any {
     return {
-      id: this.id,
-      type: this.type,
-      name: this.name,
-      color: this.color,
       zlevel: this.zlevel,
       z: this.z,
       left: this.left,
@@ -118,20 +113,10 @@ export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> im
       itemStyle: this.itemStyle,
       lineStyle: this.lineStyle,
       emphasis: this.emphasis,
-      data: this.data,
       nodes: this.nodes,
       links: this.links,
       edges: this.edges,
       silent: this.silent,
-      animation: this.animation,
-      animationThreshold: this.animationThreshold,
-      animationDuration: this.animationDuration,
-      animationEasing: this.animationEasing,
-      animationDelay: this.animationDelay,
-      animationDurationUpdate: this.animationDurationUpdate,
-      animationEasingUpdate: this.animationEasingUpdate,
-      animationDelayUpdate: this.animationDelayUpdate,
-      tooltip: this.tooltip,
     };
   }
 

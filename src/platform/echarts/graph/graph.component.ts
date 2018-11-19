@@ -142,7 +142,6 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
 @Input('edgeLabel') edgeLabel: ITdEdgeLabel;
 @Input('emphasis') emphasis: ITdEmphasis;
 @Input('categories') categories: ITdCategories;
-@Input('data') data: any[];
 @Input('nodes') nodes: any[];
 @Input('links') links: any[];
 @Input('edges') edges: any[];
@@ -158,14 +157,6 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
 @Input('bottom') bottom: string | number;
 @Input('width') width: string | number;
 @Input('height') height: string | number;
-@Input('animation') animation: boolean;
-@Input('animationThreshold') animationThreshold: number;
-@Input('animationDuration') animationDuration: number | Function;
-@Input('animationEasing') animationEasing: string;
-@Input('animationDelay') animationDelay: number | Function;
-@Input('animationDurationUpdate') animationDurationUpdate: number | Function;
-@Input('animationEasingUpdate') animationEasingUpdate: string;
-@Input('animationDelayUpdate') animationDelayUpdate: number | Function;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('graph', _optionsService);
@@ -173,10 +164,6 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
 
   getConfig(): any {
     return {
-      id: this.id,
-      type: this.type,
-      name: this.name,
-      color: this.color,
       legendHoverLink: this.legendHoverLink,
       coordinateSystem: this.coordinateSystem,
       xAxisIndex: this.xAxisIndex,
@@ -206,7 +193,6 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
       edgeLabel: this.edgeLabel,
       emphasis: this.emphasis,
       categories: this.categories,
-      data: this.data,
       nodes: this.nodes,
       links: this.links,
       edges: this.edges,
@@ -222,15 +208,6 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
       bottom: this.bottom,
       width: this.width,
       height: this.height,
-      animation: this.animation,
-      animationThreshold: this.animationThreshold,
-      animationDuration: this.animationDuration,
-      animationEasing: this.animationEasing,
-      animationDelay: this.animationDelay,
-      animationDurationUpdate: this.animationDurationUpdate,
-      animationEasingUpdate: this.animationEasingUpdate,
-      animationDelayUpdate: this.animationDelayUpdate,
-      tooltip: this.tooltip,
     };
   }
 }

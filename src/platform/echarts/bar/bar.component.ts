@@ -86,7 +86,6 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
   @Input('encode') encode: any;
   @Input('seriesLayoutBy') seriesLayoutBy: TdSeriesLayoutBy;
   @Input('datasetIndex') datasetIndex: number;
-  @Input('data') data: any[];
   @Input('markPoint') markPoint: ITdMarkPoint;
   @Input('markLine') markLine: ITdMarkLine;
   @Input('markArea') markArea: ITdMarkArea;
@@ -99,10 +98,6 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
 
   getConfig(): any {
     return {
-      id: this.id,
-      type: this.type,
-      name: this.name,
-      color: this.color,
       coordinateSystem: this.coordinateSystem,
       xAxisIndex: this.xAxisIndex,
       yAxisIndex: this.yAxisIndex,
@@ -126,21 +121,11 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
       encode: this.encode,
       seriesLayoutBy: this.seriesLayoutBy,
       datasetIndex: this.datasetIndex,
-      data: this.data,
       markPoint: this.markPoint,
       markLine: this.markLine,
       markArea: this.markArea,
       zlevel: this.zlevel,
       z: this.z,
-      animation: this.animation,
-      animationThreshold: this.animationThreshold,
-      animationDuration: this.animationDuration,
-      animationEasing: this.animationEasing,
-      animationDelay: this.animationDelay,
-      animationDurationUpdate: this.animationDurationUpdate,
-      animationEasingUpdate: this.animationEasingUpdate,
-      animationDelayUpdate: this.animationDelayUpdate,
-      tooltip: this.tooltip,
     };
   }
 }

@@ -30,6 +30,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   @Input('id') id: string;
   @Input('name') name: string;
   @Input('color') color: string;
+  @Input('data') data: any[];
 
   @Input('animation') animation: boolean;
   @Input('animationThreshold') animationThreshold: number;
@@ -71,7 +72,22 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   abstract getConfig(): any;
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config ? this.config : {}, this.getConfig(), this._options);
+    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+      id: this.id,
+      type: this.type,
+      name: this.name,
+      color: this.color,
+      data: this.data,
+      animation: this.animation,
+      animationThreshold: this.animationThreshold,
+      animationDuration: this.animationDuration,
+      animationEasing: this.animationEasing,
+      animationDelay: this.animationDelay,
+      animationDurationUpdate: this.animationDurationUpdate,
+      animationEasingUpdate: this.animationEasingUpdate,
+      animationDelayUpdate: this.animationDelayUpdate,
+      tooltip: this.tooltip,
+    } , this.getConfig(), this._options);
     this.optionsService.setArrayOption('series', config);
   }
 
