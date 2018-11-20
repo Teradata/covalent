@@ -23,37 +23,36 @@ export class ComponentsComponent {
 
   routes: Object[] = [
     {
-      description: 'Atomic and Config Options',
       icon: 'insert_chart',
       route: ['types', 'bar'],
       title: 'Bar',
     },
     {
-      description: 'Atomic and Config Options',
       icon: 'show_chart',
       route: ['types', 'line'],
       title: 'Line',
     },
     {
-      description: 'Atomic and Config Options',
       icon: 'bubble_chart',
       route: ['types', 'scatter'],
       title: 'Scatter',
     },
     {
-      description: 'Example using line/bar and 2 y-axis',
       icon: 'multiline_chart',
       route: ['types', 'combination'],
       title: 'Combination',
     },
     {
-      description: 'Atomic and Config Options',
       icon: 'share',
       route: ['types', 'tree'],
       title: 'Tree',
     },
     {
-      description: 'Atomic and Config Options',
+      icon: 'dashboard',
+      route: ['types', 'treemap'],
+      title: 'Treemap',
+    },
+    {
       icon: 'call_split',
       route: ['types', 'sankey'],
       title: 'Sankey',

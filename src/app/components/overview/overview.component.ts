@@ -42,6 +42,12 @@ export class OverviewComponent {
   },
   {
     color: 'green-A700',
+    icon: 'dashboard',
+    route: ['types', 'treemap'],
+    title: 'Treemap Chart',
+  },
+  {
+    color: 'yellow-A700',
     icon: 'call_split',
     route: ['types', 'sankey'],
     title: 'Sankey Chart',
