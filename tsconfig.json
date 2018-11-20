@@ -22,6 +22,7 @@
       "@covalent/highlight": ["./platform/highlight"],
       "@covalent/http": ["./platform/http"],
       "@covalent/markdown": ["./platform/markdown"],
+      "@covalent/experimental/*": ["./platform/experimental/*"],
       "@covalent/flavored-markdown": ["./platform/flavored-markdown"]
     },
     "noUnusedParameters": false,
