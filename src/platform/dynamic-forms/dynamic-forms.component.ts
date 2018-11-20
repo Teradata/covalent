@@ -20,7 +20,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDynamicFormsErrorTemplate) _errorTemplates: QueryList<TdDynamicFormsErrorTemplate>;
   dynamicForm: FormGroup;
- 
+
   /**
    * elements: ITdDynamicElementConfig[]
    * JS Object that will render the elements depending on its config.
@@ -141,6 +141,7 @@ export class TdDynamicFormsComponent implements AfterContentInit {
       let dynamicElement: AbstractControl = this.dynamicForm.get(elem.name);
       if (!dynamicElement) {
         this.dynamicForm.addControl(elem.name, this._dynamicFormsService.createFormControl(elem));
+        this._subscribeToControlStatusChanges(elem.name);
       } else {
         dynamicElement.setValue(elem.default);
         dynamicElement.markAsPristine();
@@ -177,5 +178,11 @@ export class TdDynamicFormsComponent implements AfterContentInit {
     this._renderedElements.forEach((elem: ITdDynamicElementConfig) => {
       this.dynamicForm.removeControl(elem.name);
     });
+  }
+
+  // Updates component when manually adding errors to controls
+  private _subscribeToControlStatusChanges(elementName: string): void {
+    const control: AbstractControl = this.controls[elementName];
+    control.statusChanges.subscribe(() => this._changeDetectorRef.markForCheck());
   }
 }
