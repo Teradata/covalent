@@ -48,7 +48,7 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-chart [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">
+<td-chart>
   <td-chart-series td-sankey
                     [focusNodeAdjacency]="'allEdges'"
                     [right]="40"

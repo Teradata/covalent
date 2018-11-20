@@ -6,8 +6,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="800"
-        [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">
+        <td-chart [style.height.px]="800">
           <td-chart-tooltip [trigger]="'item'">
             <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
               <ng-container *ngIf="params">
@@ -319,8 +318,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-          <td-chart [style.height.px]="800"
-          [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">
+          <td-chart [style.height.px]="800">
             <td-chart-tooltip [trigger]="'item'">
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">

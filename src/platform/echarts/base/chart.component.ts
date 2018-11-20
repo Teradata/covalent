@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 
 import { Subject, fromEvent, merge, timer } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
 
 import * as echarts from 'echarts/lib/echarts';
 
@@ -95,9 +95,13 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
         this._changeDetectorRef.markForCheck();
       }
     });
-    this.render();
-    this._optionsService.listen().subscribe((options: any) => {
-      assignDefined(this._options, options);
+    this._optionsService.listen().pipe(
+      tap((options: any) => {
+        assignDefined(this._options, options);
+      }),
+      debounceTime(0),
+      takeUntil(this._destroy),
+    ).subscribe(() => {
       this.render();
     });
     timer(500, 250).pipe(
@@ -138,8 +142,6 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
           containLabel: true,
           borderColor: '#FCFCFC',
         },
-        xAxis : [{}], // throws error if its empty
-        yAxis : [{}], // throws error if its empty
       }, this.config ? this.config : {}, this._options), true);
       this._changeDetectorRef.markForCheck();
     }

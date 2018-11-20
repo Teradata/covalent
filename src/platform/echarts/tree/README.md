@@ -46,8 +46,7 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-chart [style.height.px]="800" 
-          [config]="{ xAxis: { show: false }, yAxis: { show: false }, grid: { borderColor: 'transparent' } }">
+<td-chart>
   <td-chart-series td-tree
                   [leaves]="{ label: { position: 'right' } }"
                   [label]="{ position: 'left' }"            

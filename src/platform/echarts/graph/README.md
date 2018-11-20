@@ -48,7 +48,7 @@ export class MyModule {}
 Basic Example:
 
 ```html
-<td-chart [config]="{ xAxis: { show: false }, yAxis: { show: false } }">
+<td-chart>
   <td-chart-series td-graph
                   [data]="[{ x: -739.36383, y: -404.26147, id: 'jquery', name: 'jquery',
                     symbolSize: 40.7252817, itemStyle: { normal: { color: '#4f19c7' } } },

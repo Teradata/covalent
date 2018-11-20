@@ -17,6 +17,8 @@ export class TypesScatterComponent {
       right: 10,
       data: ['1990', '2015'],
     },
+    xAxis: [{show: true}],
+    yAxis: [{show: true}],
     series: [
       {
         name: '1990',
