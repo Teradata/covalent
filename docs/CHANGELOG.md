@@ -1,3 +1,41 @@
+<a name="2.0.0-beta.5"></a>
+# [2.0.0-beta.5](https://github.com/teradata/covalent/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2018-11-21)
+
+Highlights:
+
+- (bottom) event added to Virtual Scroll for infinite scroll functionality
+- Covalent Flavored Markdown initial release!
+- Bug fixes
+- Performance improvements.
+
+Dont forget to check out beta.2 release of `@covalent/echarts`
+
+For more information go to the [covalent echarts docs](https://teradata.github.io/covalent-echarts)
+
+### Breaking Change Notice
+
+We will change change the HttpInterceptor and RESTService to use HttpClient under the covers over the next following days, so stay tuned on the migration steps and breaking changes.
+
+### Bug Fixes
+
+* ghpages deploy npm alias ([fb993fa](https://github.com/teradata/covalent/commit/fb993fa))
+* remove experimental theme from docs ([85a94f1](https://github.com/teradata/covalent/commit/85a94f1))
+* **dynamic-forms:**  added missing hints for checkboxes, slide-toggles and sliders ([#1277](https://github.com/teradata/covalent/issues/1277)) ([bd364fa](https://github.com/teradata/covalent/commit/bd364fa))
+
+### Features
+
+* **flavored-markdown:** initial commit for flavored markdown module ([#1276](https://github.com/teradata/covalent/issues/1276)) ([3537fac](https://github.com/teradata/covalent/commit/3537fac))
+* **virtual-scroll:** added bottom event for infinite scroll ([#1259](https://github.com/teradata/covalent/issues/1259)) ([ab10f9f](https://github.com/teradata/covalent/commit/ab10f9f))
+
+
+### Performance Improvements
+
+* **breadcrumbs:** remove not needed elements from breadcrumbs ([#1275](https://github.com/teradata/covalent/issues/1275)) ([ff4e81a](https://github.com/teradata/covalent/commit/ff4e81a))
+* **breadcrumbs:** simplify logic to show/hide breadcrumbs depending on host size ([#1278](https://github.com/teradata/covalent/issues/1278)) ([9e6b463](https://github.com/teradata/covalent/commit/9e6b463))
+* **virtual-scroll:** leverage scroll event to check bottom reached ([#1286](https://github.com/teradata/covalent/issues/1286)) ([798a73b](https://github.com/teradata/covalent/commit/798a73b))
+
+
+
 <a name="2.0.0-beta.4"></a>
 # [2.0.0-beta.4](https://github.com/teradata/covalent/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2018-10-29)
 
