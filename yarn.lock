@@ -219,22 +219,30 @@
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/core@git+https://github.com/Teradata/covalent-nightly":
-  version "2.0.0-beta.3"
-  resolved "git+https://github.com/Teradata/covalent-nightly#1345133cf8e9f53e20474104a6176dcdfc301e38"
+"@covalent/core@^2.0.0-beta.5":
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.0-beta.5.tgz#1a82895ae31cb75b6b1fd554119550b027216678"
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/highlight@^2.0.0-beta.2":
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-2.0.0-beta.3.tgz#d2586ef4b8c0cf8ffe024eaaf5b3ab7d453af9d8"
+"@covalent/flavored-markdown@2.0.0-beta.5":
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@covalent/flavored-markdown/-/flavored-markdown-2.0.0-beta.5.tgz#cffbe3a1e016fbb95406a795c3129be2f111d591"
+  dependencies:
+    highlight.js "9.11.0"
+    showdown "1.6.4"
+    tslib "^1.9.0"
+
+"@covalent/highlight@^2.0.0-beta.5":
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-2.0.0-beta.5.tgz#4ad6f16987d5d36e00ef5cbb2b1e335afc64a775"
   dependencies:
     highlight.js "9.11.0"
     tslib "^1.9.0"
 
-"@covalent/markdown@^2.0.0-beta.2":
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-2.0.0-beta.3.tgz#37a902904858162729a769f9451b3457990c3558"
+"@covalent/markdown@^2.0.0-beta.5":
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-2.0.0-beta.5.tgz#5c0a5b4040e1f7813ade7d2cade80785ba39644f"
   dependencies:
     showdown "1.6.4"
     tslib "^1.9.0"
