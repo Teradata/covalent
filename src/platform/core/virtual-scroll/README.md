@@ -13,6 +13,12 @@
 + trackBy?: TrackByFunction
   + This accepts the same trackBy function [ngFor] does.
 
+#### Events
+
++ bottom?: function
+  + Method to be executed when user scrolled to the last item of the list. No value is emitted.
+  + An [ITdVirtualScrollBottomEvent] event is emitted
+
 #### Methods
 
 + refresh?: function()
@@ -45,7 +51,10 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-<td-virtual-scroll-container [style.height.px]="400" [data]="data" [trackBy]="trackByFn">
+<td-virtual-scroll-container [style.height.px]="400"
+                             [data]="data"
+                             [trackBy]="trackByFn"
+                             (bottom)="fetchMoreData()">
   <ng-template let-row="row"
                let-index="index"
                let-first="first"

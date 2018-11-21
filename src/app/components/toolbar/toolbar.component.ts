@@ -18,14 +18,14 @@ import { getDirection, setDirection } from '../../utilities/direction';
 export class ToolbarComponent {
   updates: Object[] = [{
       description: 'initial release!',
-      icon: 'more_horiz',
-      route: '/components/breadcrumbs',
-      title: 'Breadcrums',
+      icon: 'layers',
+      route: '/components/flavored-markdown',
+      title: 'Flavored Markdown Parser',
     }, {
-      description: 'initial release!',
-      icon: 'tab',
-      route: '/components/tab-select',
-      title: 'Tab Select',
+      description: '(bottom) event added',
+      icon: 'format_line_spacing',
+      route: '/components/virtual-scroll',
+      title: 'Virtual Scroll',
     },
   ];
 

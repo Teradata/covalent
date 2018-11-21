@@ -89,4 +89,110 @@
   </mat-card-actions>
 </mat-card>
 
+<mat-card>
+  <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
+    <span flex></span>
+    <button mat-icon-button
+            matTooltip="View Source"
+            (click)="toggleDemoCode = !toggleDemoCode">
+      <mat-icon class="tc-grey-700">code</mat-icon>
+    </button>
+  </div>
+  <mat-card-title>Virtual Scroll with Infinite Scroll</mat-card-title>
+  <mat-card-subtitle>
+    Infinite scroll
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>HTML</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <mat-list>
+              <mat-list-item>
+                Column Header
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data" (bottom)="fetchMore()"">
+                <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+                  <mat-list-item>
+                    <mat-icon matListAvatar>person</mat-icon>
+                    <h4 matLine>{ {row.name} }</h4>
+                    <p matLine>Row: { {row.index} }</p>
+                  </mat-list-item>
+                  <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+                </ng-template>
+              </td-virtual-scroll-container>
+            </mat-list>
+            <div *tdLoading="'loading'; mode:'indeterminate'; type:'linear'; strategy:'overlay'"></div>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>TS</ng-template>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { Component, OnInit } from '@angular/core';
+            import { finalize } from 'rxjs/operators';
+            ...
+            export class Demo implements OnInit {
+
+              data: any[] = [];
+              page: number = 0;
+
+              ngOnInit(): void {
+                this.fetch();
+              }
+
+              fetchMore(): void {
+                this.page++;
+                this.fetch();
+              }
+
+              private fetch(): void {
+                this._loadingService.register('loading');
+                this._asyncService.get(this.page)
+                  .pipe(
+                    finalize(() => this._loadingService.resolve('loading')),
+                  )
+                  .subscribe((results: any[]) => {
+                    this.data = this.data.concat(results);
+                  });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+  </div>
+  <mat-list>
+    <mat-list-item>
+      Column Header
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <td-virtual-scroll-container #infiniteScroll [style.height.px]="400" [data]="infiniteData" (bottom)="fetchMore()">
+      <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+        <mat-list-item>
+          <mat-icon matListAvatar>person</mat-icon>
+          <h4 matLine>{{row.name}}</h4>
+          <p matLine>Row: {{row.index}}</p>
+        </mat-list-item>
+        <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+      </ng-template>
+    </td-virtual-scroll-container>
+  </mat-list>
+  <div *tdLoading="'loading'; mode:'indeterminate'; type:'linear'; strategy:'overlay'"></div>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToStart()">
+      Scroll to first
+    </button>
+    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToEnd()">
+      Scroll to last
+    </button>
+  </mat-card-actions>
+</mat-card>
+
 <td-readme-loader resourceUrl="platform/core/virtual-scroll/README.md"></td-readme-loader>

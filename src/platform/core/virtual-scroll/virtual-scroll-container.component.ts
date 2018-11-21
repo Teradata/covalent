@@ -1,13 +1,20 @@
-import { Component, Directive, Input, EventEmitter, ContentChild, AfterViewInit, ViewChild,
+import { Component, Directive, Input, Output, EventEmitter, ContentChild, AfterViewInit, ViewChild,
          ChangeDetectionStrategy, ChangeDetectorRef, QueryList, ViewChildren, ElementRef, HostListener,
          Renderer2, AfterViewChecked, OnDestroy, TrackByFunction } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 import { TdVirtualScrollRowDirective } from './virtual-scroll-row.directive';
 
 const TD_VIRTUAL_OFFSET: number = 2;
+const SCROLL_DEBOUNCE: number = 200;
+
+export interface ITdVirtualScrollBottomEvent {
+  lastRow: any;
+  lastIndex: number;
+}
 
 @Component({
   selector: 'td-virtual-scroll-container',
@@ -17,7 +24,8 @@ const TD_VIRTUAL_OFFSET: number = 2;
 })
 export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
 
-  private _rowChangeSubs: Subscription;
+  private _subs: Subscription[] = [];
+  private _bottom: Subject<any> = new Subject();
   private _initialized: boolean = false;
 
   private _totalHeight: number = 0;
@@ -50,6 +58,13 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   get virtualData(): any[] {
     return this._virtualData;
   }
+
+  /**
+   * bottom: function
+   * Method to be executed when user scrolled to the last item of the list.
+   * An [ITdVirtualScrollBottomEvent] event is emitted
+   */
+  @Output() bottom: EventEmitter<ITdVirtualScrollBottomEvent> = new EventEmitter<ITdVirtualScrollBottomEvent>();
 
   @ViewChildren('rowElement') _rows: QueryList<ElementRef>;
 
@@ -84,11 +99,20 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
               private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    this._rowChangeSubs = this._rows.changes.subscribe(() => {
+    this._subs.push(this._rows.changes.subscribe(() => {
       this._calculateVirtualRows();
-    });
+    }));
     this._initialized = true;
     this._calculateVirtualRows();
+
+    this._subs.push(this._bottom.pipe(
+      debounceTime(SCROLL_DEBOUNCE),
+    ).subscribe(() => {
+      this.bottom.emit({
+        lastRow: this._data[this._data.length - 1],
+        lastIndex: this.toRow,
+      });
+    }));
   }
 
   ngAfterViewChecked(): void {
@@ -102,8 +126,10 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
   }
 
   ngOnDestroy(): void {
-    if (this._rowChangeSubs) {
-      this._rowChangeSubs.unsubscribe();
+    if (this._subs) {
+      this._subs.forEach((sub: Subscription) => {
+        sub.unsubscribe();
+      });
     }
   }
 
@@ -125,6 +151,12 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
         this._scrollVerticalOffset = verticalScroll;
         if (this._initialized) {
           this._calculateVirtualRows();
+        }
+      }
+      if (this._initialized) {
+        // check to see if bottom was hit to throw the bottom event
+        if ((this._data.length * this.rowHeight) - (verticalScroll + this._hostHeight) === 0) {
+          this._bottom.next();
         }
       }
     }
@@ -190,11 +222,11 @@ export class TdVirtualScrollContainerComponent implements AfterViewInit, AfterVi
     if (this._data) {
       this._virtualData = this.data.slice(this.fromRow, this.toRow);
     }
+
     // mark for check at the end of the queue so we are sure
     // that the changes will be marked
     Promise.resolve().then(() => {
       this._changeDetectorRef.markForCheck();
     });
   }
-
 }
