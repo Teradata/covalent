@@ -39,23 +39,3 @@ export const tdRotateAnimation: AnimationTriggerMetadata = trigger('tdRotate', [
     ]),
   ], { params: { duration: 250, delay: '0', ease: 'ease-in' }}),
 ]);
-
-/** @deprecated see tdRotateAnimation */
-export function TdRotateAnimation(rotateOptions: IRotateAnimation = {}): AnimationTriggerMetadata {
-  return trigger(rotateOptions.anchor || 'tdRotate', [
-    state('0', style({
-      transform: 'rotate(0deg)',
-    })),
-    state('1',  style({
-      transform: 'rotate(' + (rotateOptions.degrees || 180) + 'deg)',
-    })),
-    transition('0 <=> 1', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((rotateOptions.duration || 250) + 'ms ' +
-          (rotateOptions.delay || 0) + 'ms ' +
-          (rotateOptions.ease || 'ease-in')),
-      ]),
-    ]),
-  ]);
-}

@@ -56,33 +56,3 @@ export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse
     ]),
   ], { params: { duration: 150, delay: '0', ease: 'ease-out' }}),
 ]);
-
-/** @deprecated see tdCollapseAnimation */
-export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): AnimationTriggerMetadata {
-  return trigger(collapseOptions.anchor || 'tdCollapse', [
-    state('1', style({
-      height: '0',
-      visibility: 'hidden',
-    })),
-    state('0',  style({
-      height: AUTO_STYLE,
-      visibility: AUTO_STYLE,
-    })),
-    transition('0 => 1', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((collapseOptions.duration || 150) + 'ms ' +
-                (collapseOptions.delay || 0) + 'ms ' +
-                (collapseOptions.easeOnClose || 'ease-in')),
-      ]),
-    ]),
-    transition('1 => 0', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((collapseOptions.duration || 150) + 'ms ' +
-                (collapseOptions.delay || 0) + 'ms ' +
-                (collapseOptions.easeOnOpen || 'ease-out')),
-      ]),
-    ]),
-  ]);
-}
