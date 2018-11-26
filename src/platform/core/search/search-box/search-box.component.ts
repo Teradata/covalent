@@ -110,6 +110,12 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
    */
   @Output('clear') onClear: EventEmitter<void> = new EventEmitter<void>();
 
+  /**
+   * blur: function()
+   * Event emitted after the blur event has been called in underlying input.
+   */
+  @Output('blur') onBlur: EventEmitter<void> = new EventEmitter<void>();
+
   constructor(_changeDetectorRef: ChangeDetectorRef) {
     super(_changeDetectorRef);
   }
@@ -144,4 +150,7 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
     this.onClear.emit(undefined);
   }
 
+  handleBlur(): void {
+    this.onBlur.emit(undefined);
+  }
 }
