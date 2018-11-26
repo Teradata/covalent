@@ -12,6 +12,9 @@
       <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
       <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
     </nav>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="updates.length + 3">
         <mat-icon>notifications</mat-icon>
