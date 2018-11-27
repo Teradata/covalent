@@ -18,18 +18,17 @@
     &.td-data-table-cell-numeric {
       // [layout-align="end center"]
       justify-content: flex-end;
-    };
-    &.td-data-table-cell-align-left{
+    }
+    &.td-data-table-cell-align-left {
       justify-content: start;
     }
-    &.td-data-table-cell-align-right{
+    &.td-data-table-cell-align-right {
       justify-content: flex-end;
     }
-    &.td-data-table-cell-align-center{
+    &.td-data-table-cell-align-center {
       justify-content: center;
     }
   }
-
 
   &:first-child > .td-data-table-cell-content-wrapper {
     @include rtl(padding-left, 24px, initial);
