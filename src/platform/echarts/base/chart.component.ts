@@ -116,7 +116,6 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   ngOnChanges(): void {
     if (this._instance) {
-      this._instance.clear();
       this.render();
     }
   }
