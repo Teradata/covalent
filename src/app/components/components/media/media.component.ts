@@ -2,14 +2,14 @@ import { Component, OnInit, NgZone, OnDestroy, HostBinding } from '@angular/core
 import { slideInDownAnimation } from '../../../app.animations';
 import { Subscription } from 'rxjs';
 
-import { TdMediaService, TdJelloAnimation } from '../../../../platform/core';
+import { TdMediaService, tdJelloAnimation } from '../../../../platform/core';
 
 @Component({
   selector: 'media-demo',
   styleUrls: ['./media.component.scss' ],
   templateUrl: './media.component.html',
   animations: [
-    TdJelloAnimation(),
+    tdJelloAnimation,
     slideInDownAnimation,
   ],
   preserveWhitespaces: true,

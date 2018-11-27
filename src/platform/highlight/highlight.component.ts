@@ -12,6 +12,8 @@ let hljs: any = require('highlight.js/lib');
 })
 export class TdHighlightComponent implements AfterViewInit {
 
+  private _initialized: boolean = false;
+
   private _content: string;
 
   /**
@@ -25,7 +27,9 @@ export class TdHighlightComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    this._loadContent(this._content);
+    if (this._initialized) {
+      this._loadContent(this._content);
+    }
   }
 
   /**
@@ -42,7 +46,7 @@ export class TdHighlightComponent implements AfterViewInit {
    * contentReady?: function
    * Event emitted after the highlight content rendering is finished.
    */
-  @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
+  @Output('contentReady') onContentReady: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
@@ -54,7 +58,10 @@ export class TdHighlightComponent implements AfterViewInit {
     }
     if (!this._content) {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+    } else {
+      this._loadContent(this._content);
     }
+    this._initialized = true;
   }
   /**
    * General method to parse a string of code into HTML Elements and load them into the container

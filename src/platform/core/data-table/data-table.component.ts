@@ -495,6 +495,11 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
    * Checks hosts native elements widths to see if it has changed (resize check)
    */
   ngAfterContentChecked(): void {
+    // check if the scroll has been reset when element is hidden
+    if (this._scrollVerticalOffset - this._scrollableDiv.nativeElement.scrollTop > 5) {
+      // scroll back to the top if element has been reset
+      this._onVerticalScroll.next(0);
+    }
     if (this._elementRef.nativeElement) {
       let newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
       // if the width has changed then we throw a resize event.
