@@ -127,7 +127,7 @@ export class HttpInterceptorService {
   }
 
   private _responseResolve(response: Response, interceptors: IHttpInterceptor[]): Response {
-    interceptors.forEach((interceptor: IHttpInterceptor) => {
+    interceptors.reverse().forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onResponse) {
         response = interceptor.onResponse(response);
       }
@@ -136,7 +136,7 @@ export class HttpInterceptorService {
   }
 
   private _responseErrorResolve(error: Response, interceptors: IHttpInterceptor[]): Response {
-    interceptors.forEach((interceptor: IHttpInterceptor) => {
+    interceptors.reverse().forEach((interceptor: IHttpInterceptor) => {
       if (interceptor.onResponseError) {
         error = interceptor.onResponseError(error);
       }

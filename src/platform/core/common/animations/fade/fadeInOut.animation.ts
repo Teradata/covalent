@@ -42,33 +42,3 @@ export const tdFadeInOutAnimation: AnimationTriggerMetadata = trigger('tdFadeInO
     ]),
   ], { params: { duration: 150, delay: '0', easeOnOut: 'ease-out' }}),
 ]);
-
-/** @deprecated see tdFadeInOutAnimation */
-export function TdFadeInOutAnimation(fadeInOut: IFadeInOutAnimation = {}): AnimationTriggerMetadata {
-  return trigger((fadeInOut.anchor || 'tdFadeInOut'), [
-    state('0', style({
-      opacity: '0',
-      visibility: 'hidden',
-    })),
-    state('1',  style({
-      opacity: AUTO_STYLE,
-      visibility: AUTO_STYLE,
-    })),
-    transition('0 => 1', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((fadeInOut.duration || 150) + 'ms ' +
-                (fadeInOut.delay || 0) + 'ms ' +
-                (fadeInOut.easeOnIn || 'ease-in')),
-      ]),
-    ]),
-    transition('1 => 0', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((fadeInOut.duration || 150) + 'ms ' +
-                (fadeInOut.delay || 0) + 'ms ' +
-                (fadeInOut.easeOnOut || 'ease-out')),
-      ]),
-    ]),
-  ]);
-}

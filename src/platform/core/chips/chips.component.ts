@@ -58,7 +58,7 @@ export const _TdChipsMixinBase = mixinControlValueAccessor(mixinDisabled(TdChips
 export class TdChipsComponent extends _TdChipsMixinBase implements IControlValueAccessor, DoCheck, OnInit, AfterViewInit, OnDestroy, ICanDisable {
 
   private _outsideClickSubs: Subscription = Subscription.EMPTY;
-
+  private _inputValueChangesSubs: Subscription = Subscription.EMPTY;
   private _isMousedown: boolean = false;
 
   private _items: any[];
@@ -363,7 +363,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   ngOnInit(): void {
-    this.inputControl.valueChanges.pipe(
+    this._inputValueChangesSubs = this.inputControl.valueChanges.pipe(
       debounceTime(this.debounce),
     ).subscribe((value: string) => {
       this.onInputChange.emit(value ? value : '');
@@ -386,6 +386,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
 
   ngOnDestroy(): void {
       this._outsideClickSubs.unsubscribe();
+      this._inputValueChangesSubs.unsubscribe();
   }
 
   _setInternalClick(): void {
