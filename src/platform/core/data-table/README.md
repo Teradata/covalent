@@ -75,6 +75,7 @@ export interface ITdDataTableColumn {
   label: string;
   tooltip?: string; // used to add a tooltip into the column header
   numeric?: boolean; // used to right align elements if they are numeric
+  cellAlign?: TdDataTableCellAlign | string // used to align cell content, overrides numeric property
   format?: (value: any) => any; // used to format the cell values
   nested?: boolean; // when this is true, the `.` characters will be taken as key separators for nested values
   sortable?: boolean; // used to make a particular column sortable
@@ -124,7 +125,7 @@ export class Demo {
   ];
   private columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit', sortable: true },
-    { name: 'item', label: 'Item name', width: 200 },
+    { name: 'item', label: 'Item name', width: 200, cellAlign: 'right' },
     { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2), width: { min: 100, max: 400 } },
   ];
   compareWith(row: any: model: any): boolean {

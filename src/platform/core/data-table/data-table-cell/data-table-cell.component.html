@@ -1,4 +1,8 @@
 <div class="td-data-table-cell-content-wrapper"
-     [class.td-data-table-cell-numeric]="numeric">
+     [class.td-data-table-cell-numeric]="numeric"
+     [class.td-data-table-cell-align-center]="cellAlign === 'center'"
+     [class.td-data-table-cell-align-right]="cellAlign === 'right'"
+     [class.td-data-table-cell-align-left]="cellAlign === 'left'"
+     >
   <ng-content></ng-content>
 </div>

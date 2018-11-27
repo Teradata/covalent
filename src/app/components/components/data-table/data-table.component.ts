@@ -3,7 +3,7 @@ import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent } from '../../../../platform/core';
+  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent, TdDataTableCellAlign } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -30,7 +30,13 @@ export class DataTableDemoComponent implements OnInit {
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
     name: 'numeric',
     type: `boolean`,
-  }];
+  },
+  {
+    description: `Aligns cell text/content to desired position. Defaults to 'left'. Overrides numeric property`,
+    name: 'cellAlign',
+    type: `['center' | 'left' | 'right'] or TdDataTableCellAlign`,
+  },
+];
 
   columnAttrs: Object[] = [{
     description: `Sets unique column [name] for [sortable] events.`,
@@ -60,7 +66,13 @@ export class DataTableDemoComponent implements OnInit {
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
     name: 'numeric',
     type: `boolean`,
-  }, {
+  }, 
+  {
+    description: `Aligns cell text/content to desired position. Defaults to 'left'. Overrides numeric property`,
+    name: 'cellAlign',
+    type: `['center' | 'left' | 'right'] or TdDataTableCellAlign`,
+  },
+  {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
                   Emits an [ITdDataTableSortChangeEvent] implemented object.`,
     name: 'sortChange',
@@ -91,9 +103,9 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
+    { name: 'first_name',  label: 'First Name', sortable: true, width: 150,  },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
-    { name: 'gender', label: 'Gender', hidden: false },
+    { name: 'gender', label: 'Gender', hidden: false, cellAlign: 'left' },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];
