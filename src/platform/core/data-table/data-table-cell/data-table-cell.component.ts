@@ -2,8 +2,8 @@ import { Component, Input, Renderer2, ElementRef, HostBinding } from '@angular/c
 
 export enum TdDataTableCellAlign {
   Center = 'center',
-  Left = 'left',
-  Right = 'right',
+  Start = 'start',
+  End = 'end',
 }
 
 @Component({
@@ -24,7 +24,7 @@ export class TdDataTableCellComponent {
   @Input('numeric') numeric: boolean = false;
 
   /**
-   * cellAlign?: 'center' | 'right' | 'left'
+   * cellAlign?: 'start' | 'center' | 'end'
    * Makes cell content align on demand
    * Defaults to 'left', overrides numeric
    */

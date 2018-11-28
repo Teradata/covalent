@@ -32,9 +32,9 @@ export class DataTableDemoComponent implements OnInit {
     type: `boolean`,
   },
   {
-    description: `Aligns cell text/content to desired position. Defaults to 'left'. Overrides numeric property`,
+    description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
     name: 'cellAlign',
-    type: `['center' | 'left' | 'right'] or TdDataTableCellAlign`,
+    type: `['start' | 'center' | 'end'] or TdDataTableCellAlign`,
   },
 ];
 
@@ -68,9 +68,9 @@ export class DataTableDemoComponent implements OnInit {
     type: `boolean`,
   }, 
   {
-    description: `Aligns cell text/content to desired position. Defaults to 'left'. Overrides numeric property`,
+    description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
     name: 'cellAlign',
-    type: `['center' | 'left' | 'right'] or TdDataTableCellAlign`,
+    type: `['start' | 'center' | 'end'] or TdDataTableCellAlign`,
   },
   {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
@@ -105,7 +105,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'first_name',  label: 'First Name', sortable: true, width: 150,  },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
-    { name: 'gender', label: 'Gender', hidden: false, cellAlign: 'left' },
+    { name: 'gender', label: 'Gender', hidden: false, cellAlign: 'start' },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];

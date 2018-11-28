@@ -19,10 +19,10 @@
       // [layout-align="end center"]
       justify-content: flex-end;
     }
-    &.td-data-table-cell-align-left {
+    &.td-data-table-cell-align-start {
       justify-content: start;
     }
-    &.td-data-table-cell-align-right {
+    &.td-data-table-cell-align-end {
       justify-content: flex-end;
     }
     &.td-data-table-cell-align-center {
