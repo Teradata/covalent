@@ -68,11 +68,6 @@ export class DataTableDemoComponent implements OnInit {
     type: `boolean`,
   }, 
   {
-    description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
-    name: 'align',
-    type: `'start' | 'center' | 'end'`,
-  },
-  {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
                   Emits an [ITdDataTableSortChangeEvent] implemented object.`,
     name: 'sortChange',
@@ -105,7 +100,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'first_name',  label: 'First Name', sortable: true, width: 150,  },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
-    { name: 'gender', label: 'Gender', hidden: false, align: 'start' },
+    { name: 'gender', label: 'Gender', hidden: false },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];

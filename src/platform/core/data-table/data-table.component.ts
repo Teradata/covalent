@@ -38,7 +38,6 @@ export interface ITdDataTableColumn {
   hidden?: boolean;
   filter?: boolean;
   width?: ITdDataTableColumnWidth | number;
-  align?: string;
 }
 
 export interface ITdDataTableSelectEvent {

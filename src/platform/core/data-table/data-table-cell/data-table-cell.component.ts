@@ -1,5 +1,7 @@
 import { Component, Input, Renderer2, ElementRef, HostBinding } from '@angular/core';
 
+export type TdDataTableCellAlign = 'start' | 'center' | 'end';
+
 @Component({
   /* tslint:disable-next-line */
   selector: 'td[td-data-table-cell]',
@@ -8,7 +10,7 @@ import { Component, Input, Renderer2, ElementRef, HostBinding } from '@angular/c
 })
 export class TdDataTableCellComponent {
 
-  private _align: 'start' | 'center' | 'end';
+  private _align: TdDataTableCellAlign;
 
   /**
    * numeric?: boolean
@@ -23,10 +25,10 @@ export class TdDataTableCellComponent {
    * Defaults to 'left', overrides numeric
    */
   @Input() 
-  set align(align: 'start' | 'center' | 'end') {
+  set align(align: TdDataTableCellAlign) {
     this._align = align;
   }
-  get align(): 'start' | 'center' | 'end' {
+  get align(): TdDataTableCellAlign {
     return this._align;    
   }
 

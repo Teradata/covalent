@@ -75,7 +75,6 @@ export interface ITdDataTableColumn {
   label: string;
   tooltip?: string; // used to add a tooltip into the column header
   numeric?: boolean; // used to right align elements if they are numeric
-  align?: string // used to align cell content, overrides numeric property
   format?: (value: any) => any; // used to format the cell values
   nested?: boolean; // when this is true, the `.` characters will be taken as key separators for nested values
   sortable?: boolean; // used to make a particular column sortable
