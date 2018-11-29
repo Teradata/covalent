@@ -1,11 +1,5 @@
 import { Component, Input, Renderer2, ElementRef, HostBinding } from '@angular/core';
 
-export enum TdDataTableCellAlign {
-  Center = 'center',
-  Start = 'start',
-  End = 'end',
-}
-
 @Component({
   /* tslint:disable-next-line */
   selector: 'td[td-data-table-cell]',
@@ -14,7 +8,7 @@ export enum TdDataTableCellAlign {
 })
 export class TdDataTableCellComponent {
 
-  private _cellAlign: TdDataTableCellAlign;
+  private _align: 'start' | 'center' | 'end';
 
   /**
    * numeric?: boolean
@@ -24,16 +18,16 @@ export class TdDataTableCellComponent {
   @Input('numeric') numeric: boolean = false;
 
   /**
-   * cellAlign?: 'start' | 'center' | 'end'
+   * align?: 'start' | 'center' | 'end'
    * Makes cell content align on demand
    * Defaults to 'left', overrides numeric
    */
   @Input() 
-  set cellAlign(cellAlign: TdDataTableCellAlign) {
-    this._cellAlign = cellAlign;
+  set align(align: 'start' | 'center' | 'end') {
+    this._align = align;
   }
-  get cellAlign(): TdDataTableCellAlign {
-    return this._cellAlign;    
+  get align(): 'start' | 'center' | 'end' {
+    return this._align;    
   }
 
   @HostBinding('class.mat-numeric')

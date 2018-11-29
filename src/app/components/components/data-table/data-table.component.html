@@ -24,7 +24,7 @@
             </thead>
             <tbody>
               <tr td-data-table-row *ngFor="let row of basicData">
-                <td td-data-table-cell [cellAlign]='column.cellAlign' *ngFor="let column of columns" [numeric]="column.numeric">
+                <td td-data-table-cell [align]='column.align' *ngFor="let column of columns" [numeric]="column.numeric">
                   {{column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
                 <td td-data-table-cell (click)="openPrompt(row, 'comments')">
@@ -80,7 +80,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'first_name',  label: 'First Name' },
                 { name: 'last_name', label: 'Last Name' },
-                { name: 'gender', label: 'Gender', cellAlign: 'start'},
+                { name: 'gender', label: 'Gender', align: 'start'},
                 { name: 'email', label: 'Email' },
                 { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
               ];
@@ -671,7 +671,7 @@
                   [sortOrder]="'ASC'|'DESC'"
                   [active]="true|false"
                   [numeric]="true|false"
-                  [cellAlign]="'start'|'center'|'end'"
+                  [align]="'start'|'center'|'end'"
                   (sortChange)="function($event)">
                 ...
               </th>
@@ -681,7 +681,7 @@
             <tr td-data-table-row>
               <td td-data-table-cell
                   [numeric]="true|false"
-                  [cellAlign]="'start'|'center'|'end'"
+                  [align]="'start'|'center'|'end'"
                   >
                 ...
               </td>

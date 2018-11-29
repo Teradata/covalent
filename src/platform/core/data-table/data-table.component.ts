@@ -11,7 +11,6 @@ import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 import { Observable, Subscription, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
-import { TdDataTableCellAlign } from './data-table-cell/data-table-cell.component';
 import { TdDataTableRowComponent } from './data-table-row/data-table-row.component';
 import { ITdDataTableSortChangeEvent, TdDataTableColumnComponent } from './data-table-column/data-table-column.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
@@ -39,7 +38,7 @@ export interface ITdDataTableColumn {
   hidden?: boolean;
   filter?: boolean;
   width?: ITdDataTableColumnWidth | number;
-  cellAlign?: TdDataTableCellAlign | string;
+  align?: string;
 }
 
 export interface ITdDataTableSelectEvent {

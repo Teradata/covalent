@@ -3,7 +3,7 @@ import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
 
 import { TdDataTableSortingOrder, TdDataTableService, TdDataTableComponent,
-  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent, TdDataTableCellAlign } from '../../../../platform/core';
+  ITdDataTableSortChangeEvent, ITdDataTableColumn, TdPagingBarComponent } from '../../../../platform/core';
 import { IPageChangeEvent } from '../../../../platform/core';
 import { TdDialogService } from '../../../../platform/core';
 
@@ -33,8 +33,8 @@ export class DataTableDemoComponent implements OnInit {
   },
   {
     description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
-    name: 'cellAlign',
-    type: `['start' | 'center' | 'end'] or TdDataTableCellAlign`,
+    name: 'align',
+    type: `'start' | 'center' | 'end'`,
   },
 ];
 
@@ -69,8 +69,8 @@ export class DataTableDemoComponent implements OnInit {
   }, 
   {
     description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
-    name: 'cellAlign',
-    type: `['start' | 'center' | 'end'] or TdDataTableCellAlign`,
+    name: 'align',
+    type: `'start' | 'center' | 'end'`,
   },
   {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
@@ -105,7 +105,7 @@ export class DataTableDemoComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'first_name',  label: 'First Name', sortable: true, width: 150,  },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
-    { name: 'gender', label: 'Gender', hidden: false, cellAlign: 'start' },
+    { name: 'gender', label: 'Gender', hidden: false, align: 'start' },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
     { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
   ];
