@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
@@ -10,9 +10,10 @@ let showdown: any = require('showdown/dist/showdown.js');
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
 })
-export class TdMarkdownComponent implements AfterViewInit {
+export class TdMarkdownComponent implements OnChanges, AfterViewInit {
 
   private _content: string;
+  private _simpleLineBreaks: boolean = false;
 
   /**
    * content?: string
@@ -25,7 +26,17 @@ export class TdMarkdownComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    this._loadContent(this._content);
+  }
+
+  /**
+   * simpleLineBreaks?: string
+   *
+   * Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+   * Defaults to false.
+   */
+  @Input('simpleLineBreaks')
+  set simpleLineBreaks(simpleLineBreaks: boolean) {
+    this._simpleLineBreaks = simpleLineBreaks;
   }
 
   /**
@@ -37,6 +48,10 @@ export class TdMarkdownComponent implements AfterViewInit {
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
+
+  ngOnChanges(): void {
+    this._loadContent(this._content);
+  }
 
   ngAfterViewInit(): void {
     if (!this._content) {
@@ -90,6 +105,7 @@ export class TdMarkdownComponent implements AfterViewInit {
     converter.setOption('ghCodeBlocks', true);
     converter.setOption('tasklists', true);
     converter.setOption('tables', true);
+    converter.setOption('simpleLineBreaks', this._simpleLineBreaks);
     let html: string = converter.makeHtml(markdownToParse);
     return html;
   }
