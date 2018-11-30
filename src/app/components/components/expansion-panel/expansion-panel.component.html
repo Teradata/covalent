@@ -78,7 +78,7 @@
   <mat-tab-group mat-stretch-tabs dynamicHeight>
     <mat-tab>
       <ng-template matTabLabel>Demo</ng-template>
-      <td-expansion-panel-group>
+      <td-expansion-panel-group [multi]="multi">
         <td-expansion-panel label="Label goes here">
           <div class="md-padding">
             <h3 class="mat-subheading-2">md-padding class</h3>
@@ -124,6 +124,14 @@
       </mat-card-content>
     </mat-tab>
   </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div class="pad-sm">
+      <mat-slide-toggle color="accent" [(ngModel)]="multi">
+        Multi
+      </mat-slide-toggle>
+    </div>
+  </mat-card-actions>
 </mat-card>
 
 <mat-card>
