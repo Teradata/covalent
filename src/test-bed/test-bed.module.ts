@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,12 +12,14 @@ import { CovalentNavStepperModule } from '../platform/experimental/nav-stepper';
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
 import { NavStepperDemoComponent } from './sandbox/nav-stepper/nav-stepper.component';
+import { HttpDemoComponent } from './sandbox/http/http.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
     TestBedComponent,
     NavStepperDemoComponent,
+    HttpDemoComponent,
     MainComponent,
   ],
   imports: [
@@ -24,6 +27,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatDividerModule,
     MatToolbarModule,
     appRoutes,
