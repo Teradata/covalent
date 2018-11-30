@@ -12,6 +12,7 @@
                    [clearIcon]="clearIcon"
                    (searchDebounce)="handleSearchDebounce($event)"
                    (search)="handleSearch($event)"
-                   (clear)="handleClear(); toggleVisibility()">
+                   (clear)="handleClear(); toggleVisibility()"
+                   (blur)="handleBlur()">
   </td-search-input>
 </div>

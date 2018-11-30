@@ -21,54 +21,38 @@ export interface ICollapseAnimation extends IAnimationOptions {
  * usage: [@tdCollapse]="{ value: true | false, params: { duration: 500 }}"
  */
 export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse', [
-    state('1', style({
-      height: '0',
-      visibility: 'hidden',
-    })),
-    state('0',  style({
+  state('1', style({
+    height: '0',
+    overflow: 'hidden',
+  })),
+  state('0',  style({
+    height: AUTO_STYLE,
+    overflow: AUTO_STYLE,
+  })),
+  transition('0 => 1', [
+    style({
+      overflow: 'hidden',
       height: AUTO_STYLE,
-      visibility: AUTO_STYLE,
-    })),
-    transition('0 => 1', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate('{{ duration }}ms {{ delay }}ms {{ ease }}'),
-      ]),
-    ], { params: { duration: 150, delay: '0', ease: 'ease-in' }}),
-    transition('1 => 0', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate('{{ duration }}ms {{ delay }}ms {{ ease }}'),
-      ]),
-    ], { params: { duration: 150, delay: '0', ease: 'ease-out' }}),
-  ]);
-
-/** @deprecated see tdCollapseAnimation */
-export function TdCollapseAnimation(collapseOptions: ICollapseAnimation = {}): AnimationTriggerMetadata {
-  return trigger(collapseOptions.anchor || 'tdCollapse', [
-    state('1', style({
+    }),
+    group([
+      query('@*', animateChild(), { optional: true }),
+      animate('{{ duration }}ms {{ delay }}ms {{ ease }}', style({
+        height: '0',
+        overflow: 'hidden',
+      })),
+    ]),
+  ], { params: { duration: 150, delay: '0', ease: 'ease-in' }}),
+  transition('1 => 0', [
+    style({
       height: '0',
-      visibility: 'hidden',
-    })),
-    state('0',  style({
-      height: AUTO_STYLE,
-      visibility: AUTO_STYLE,
-    })),
-    transition('0 => 1', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((collapseOptions.duration || 150) + 'ms ' +
-                (collapseOptions.delay || 0) + 'ms ' +
-                (collapseOptions.easeOnClose || 'ease-in')),
-      ]),
+      overflow: 'hidden',
+    }),
+    group([
+      query('@*', animateChild(), { optional: true }),
+      animate('{{ duration }}ms {{ delay }}ms {{ ease }}', style({
+        overflow: 'hidden',
+        height: AUTO_STYLE,
+      })),
     ]),
-    transition('1 => 0', [
-      group([
-        query('@*', animateChild(), { optional: true }),
-        animate((collapseOptions.duration || 150) + 'ms ' +
-                (collapseOptions.delay || 0) + 'ms ' +
-                (collapseOptions.easeOnOpen || 'ease-out')),
-      ]),
-    ]),
-  ]);
-}
+  ], { params: { duration: 150, delay: '0', ease: 'ease-out' }}),
+]);

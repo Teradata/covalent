@@ -1,4 +1,4 @@
-import { Component, HostBinding, TemplateRef } from '@angular/core';
+import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { AbstractControl, Validators } from '@angular/forms';
 import { tdCollapseAnimation } from '@covalent/core/common';
 import { slideInDownAnimation } from '../../../app.animations';
@@ -44,7 +44,7 @@ export class TdTestDynamicComponent {
   preserveWhitespaces: true,
 })
 export class DynamicFormsDemoComponent {
-
+  @ViewChild('manualValidateForm') manualValidateForm: TdDynamicFormsComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -262,6 +262,20 @@ export class DynamicFormsDemoComponent {
       validator: Validators.pattern(/^#[A-Fa-f0-9]{6}$/),
     }],
   }];
+
+  manualValidatorElement: ITdDynamicElementConfig[] = [{
+    name: 'vowelsElement',
+    label: 'Vowels only',
+    type: TdDynamicType.Text,
+    required: true,
+  }];
+
+  submitManualValidator(): void {
+    const control: AbstractControl = this.manualValidateForm.controls['vowelsElement'];
+    if (control.value.match(/[^aeiou]/)) {
+      this.manualValidateForm.controls['vowelsElement'].setErrors({ consonants: 'Only vowel characters. Do not use any consonants.' });
+    }
+  }
 
   isMinMaxSupported(type: TdDynamicElement | TdDynamicType): boolean {
     return type === TdDynamicElement.Slider || type === TdDynamicType.Number || this.isDate(type);

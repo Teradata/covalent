@@ -548,6 +548,68 @@
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
+
+    <h4>Manual Validators</h4>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
+          <ng-template let-control="control" tdDynamicFormsError="vowelsElement">
+            <span *ngIf="control.touched || !control.pristine">
+              <span *ngIf="control.hasError('consonants')">{{ control.errors['consonants'] }}</span>
+            </span>
+          </ng-template>
+
+          <mat-card-actions>
+            <button mat-raised-button (click)="submitManualValidator()" color="primary" class="text-upper" [disabled]="!manualValidateForm.valid">
+              Submit
+            </button>
+          </mat-card-actions>
+        </td-dynamic-forms>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
+              <ng-template let-control="control" tdDynamicFormsError="vowelsElement">
+                <span *ngIf="control.touched || !control.pristine">
+                  <span *ngIf="control.hasError('consonants')">{ { control.errors['consonants'] } }</span>
+                </span>
+              </ng-template>
+
+              <mat-card-actions>
+                <button mat-raised-button (click)="submitManualValidator()"
+                                          color="primary"
+                                          class="text-upper"
+                                          [disabled]="!manualValidateForm.valid">
+                  Submit
+                </button>
+              </mat-card-actions>
+            </td-dynamic-forms>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            manualValidatorElement: ITdDynamicElementConfig[] = [{
+              name: 'vowelsElement',
+              label: 'Vowels only',
+              type: TdDynamicType.Text,
+            }];
+
+            submitManualValidator(): void {
+              const control: AbstractControl = this.manualValidateForm.controls['vowelsElement'];
+              if (control.value.match(/[^aeiou]/)) {
+                this.manualValidateForm.controls['vowelsElement'].setErrors({ consonants: 'Only vowel characters. Do not use any consonants.' });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
 

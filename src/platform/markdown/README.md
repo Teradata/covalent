@@ -13,8 +13,12 @@ By default, `--dev` build will log the following message in the console to let y
 #### Inputs
 
 + content: string
-  + Markdown format content to be parsed as html markup. 
+  + Markdown format content to be parsed as html markup.
   + Used to load data dynamically. e.g. `README.md` content.
+
+ + simpleLineBreaks?: string
+   + Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+   + Defaults to false.
 
 #### Events
 
@@ -71,7 +75,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 ```html
 <td-markdown>
-  # Heading 
+  # Heading
   ## Sub Heading (H2)
   ### Steps (H2)
 </td-markdown>
@@ -79,7 +83,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 **Output:**
 
-# Heading 
+# Heading
 ## Sub Heading (H2)
 ### Steps (H2)
 

@@ -319,6 +319,35 @@ describe('Component: TdDynamicForms', () => {
     });
   })));
 
+  it('should render errors with manual validations', async(inject([], () => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+    let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+
+    component.elements = [{
+      name: 'customElement',
+      label: 'Custom Element',
+      type: TdDynamicType.Text,
+    }];
+
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      let dynamicFormsComponent: TdDynamicFormsComponent =
+          fixture.debugElement.query(By.directive(TdDynamicFormsComponent)).componentInstance;
+
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        dynamicFormsComponent.controls['customElement'].markAsTouched();
+        dynamicFormsComponent.controls['customElement'].setErrors({ customError: 'CUSTOM_ERROR' });
+
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(fixture.debugElement.queryAll(By.css('#custom-error')).length).toBe(1);
+          expect(fixture.debugElement.query(By.css('#custom-error')).nativeElement.textContent).toBe('CUSTOM_ERROR');
+        });
+      });
+    });
+  })));
+
   it('should render dynamic elements with one element disabled', async(inject([], () => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
     let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
@@ -345,7 +374,7 @@ describe('Component: TdDynamicForms', () => {
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1'}));
     });
   })));
-  
+
   it('should render dynamic custom element', async(inject([], () => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
     let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
@@ -370,6 +399,9 @@ describe('Component: TdDynamicForms', () => {
 @Component({
   template: `
     <td-dynamic-forms [elements]="elements">
+      <ng-template let-control="control" tdDynamicFormsError="customElement">
+        <span id="custom-error" *ngIf="control.hasError('customError')">{{ control.errors['customError'] }}</span>
+      </ng-template>
     </td-dynamic-forms>`,
 })
 class TdDynamicFormsTestComponent {
