@@ -21,7 +21,7 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
 
   /**
    * multi?: boolean
-   * Sets whether multiple panels can be expanded at a given time.
+   * Sets whether multiple panels can be opened at a given time.
    * Set to false for accordion mode.
    * Defaults to false.
    */
@@ -46,13 +46,61 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
     );
   }
 
-  _attachListeners(
+  public ngAfterContentInit(): void {
+    if (!this.multi) {
+      const openedPanels:
+        TdExpansionPanelComponent[]
+       = this.expansionPanels.filter(
+        (expansionPanel: TdExpansionPanelComponent) => expansionPanel.expand,
+      );
+      const numOpenedPanels: number = openedPanels.length;
+      if (numOpenedPanels > 1) {
+        this._closeAllExcept(openedPanels[numOpenedPanels - 1]);
+      }
+    }
+
+    this._attachListeners(this.expansionPanels);
+
+    this.expansionPanels.changes.subscribe(
+      (expansionPanels: QueryList<TdExpansionPanelComponent>) => {
+        this._attachListeners(expansionPanels);
+      },
+    );
+  }
+
+  /**
+   * Opens all expansion panels, only if multi set set to true.
+   */
+  public openAll(): void {
+    if (this._multi) {
+      this.expansionPanels.forEach(
+        (expansionPanel: TdExpansionPanelComponent) => {
+          expansionPanel.open();
+        },
+      );
+    }
+  }
+
+  /**
+   * Closes all expansion panels
+   */
+  public closeAll(): void {
+    this.expansionPanels.forEach(
+      (expansionPanel: TdExpansionPanelComponent) => {
+        expansionPanel.close();
+      },
+    );
+  }
+
+  private _attachListeners(
     expansionPanels: QueryList<TdExpansionPanelComponent>,
   ): void {
     this._lastOpenedPanels = [];
     expansionPanels.forEach((expansionPanel: TdExpansionPanelComponent) => {
       expansionPanel.expanded.subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(expansionPanel);
+        const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+          expansionPanel,
+        );
         if (indexOfPanel !== -1) {
           this._lastOpenedPanels.splice(indexOfPanel, 1);
         }
@@ -64,7 +112,9 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
       });
 
       expansionPanel.collapsed.subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(expansionPanel);
+        const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+          expansionPanel,
+        );
         if (indexOfPanel !== -1) {
           this._lastOpenedPanels.splice(indexOfPanel, 1);
         }
@@ -72,37 +122,7 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
     });
   }
 
-  ngAfterContentInit(): void {
-    this._attachListeners(this.expansionPanels);
-    this.expansionPanels.changes.subscribe(
-      (expansionPanels: QueryList<TdExpansionPanelComponent>) =>
-        this._attachListeners(expansionPanels),
-    );
-  }
-
-  /**
-   * Open all TdExpansionPanels
-   */
-  openAll(): void {
-    this.expansionPanels.forEach(
-      (expansionPanel: TdExpansionPanelComponent) => {
-        expansionPanel.open();
-      },
-    );
-  }
-
-  /**
-   * Close all TdExpansionPanels
-   */
-  closeAll(): void {
-    this.expansionPanels.forEach(
-      (expansionPanel: TdExpansionPanelComponent) => {
-        expansionPanel.close();
-      },
-    );
-  }
-
-  _closeAllExcept(expansionPanel: TdExpansionPanelComponent): void {
+  private _closeAllExcept(expansionPanel: TdExpansionPanelComponent): void {
     this.expansionPanels.forEach((panel: TdExpansionPanelComponent) => {
       if (panel !== expansionPanel) {
         panel.close();
