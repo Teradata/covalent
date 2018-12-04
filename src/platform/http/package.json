@@ -1,12 +1,12 @@
 {
   "name": "@covalent/http",
   "version": "0.0.0-COVALENT",
-  "description": "Teradata UI Platform Http Helper Module",
+  "description": "Teradata UI Platform HttpClient Helper Module",
   "keywords": [
     "angular",
     "components",
     "reusable",
-    "http",
+    "http-client",
     "rest",
     "interceptor"
   ],
@@ -32,6 +32,6 @@
   ],
   "peerDependencies": {
     "@angular/core": "^0.0.0-NG",
-    "@angular/http": "^0.0.0-NG"
+    "@angular/common": "^0.0.0-NG"
   }
 }

@@ -1,78 +1,88 @@
-# HttpInterceptorService
+# TdHttpService
 
-Service provided with methods that wrap the @angular [Http] service and provide an easier experience for interceptor implementation.
+Service provided with methods that extend the @angular [HttpClient] service and provide an additional layer of interceptor functionality.
 
 ## API Summary
 
 #### Methods
 
-+ delete: function(url: string, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a DELETE method to a URL, executing the interceptors as part of the request pipeline.
-+ get: function(url: string, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a GET method to a URL, executing the interceptors as part of the request pipeline.
-+ head: function(url: string, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a HEAD method to a URL, executing the interceptors as part of the request pipeline.
-+ patch: function(url: string, data: any, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a PATCH method to a URL, executing the interceptors as part of the request pipeline.
-+ post: function(url: string, data: any, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a POST method to a URL, executing the interceptors as part of the request pipeline.
-+ put: function(url: string, data: any, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a PUT method to a URL, executing the interceptors as part of the request pipeline.
-+ request: function(url: string | Request, options: RequestOptionsArgs)
-  + Uses underlying @angular [http] to request a generic request to a URL, executing the interceptors as part of the request pipeline.
++ delete: function(url: string, options?: { headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a DELETE method to a URL, executing the interceptors as part of the request pipeline.
++ get: function(url: string, options?: { headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a GET method to a URL, executing the interceptors as part of the request pipeline.
++ head: function(url: string, options?: { headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a HEAD method to a URL, executing the interceptors as part of the request pipeline.
++ jsonp: function(url: string, callbackParam: string)
+  + Provided via @angular [HttpClient] to request a JSONP method to a URL, executing the interceptors as part of the request pipeline.
++ options: function(url: string, options?: { headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request an OPTIONS method to a URL, executing the interceptors as part of the request pipeline.
++ patch: function(url: string, data: any, options?: { body?: any; headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a PATCH method to a URL, executing the interceptors as part of the request pipeline.
++ post: function(url: string, data: any, options?: { body?: any; headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a POST method to a URL, executing the interceptors as part of the request pipeline.
++ put: function(url: string, data: any, options?: { body?: any; headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a PUT method to a URL, executing the interceptors as part of the request pipeline.
++ request: function(method: string | HttpRequest, url: string, options?: { body?: any; headers?: HttpHeaders; observe?: "body";...)
+  + Provided via @angular [HttpClient] to request a generic request to a URL, executing the interceptors as part of the request pipeline.
+
+More information in [HttpClient](https://angular.io/api/common/http/HttpClient#methods)
 
 ## Usage
 
-To add a desired interceptor, it needs to implement the [IHttpInterceptor] interface.
+To add a desired interceptor, it needs to implement the [ITdHttpInterceptor] interface.
 
 ```typescript
-export interface IHttpInterceptor {
-  onRequest?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-  onRequestError?: (requestOptions: RequestOptionsArgs) => RequestOptionsArgs;
-  onResponse?: (response: Response) => Response;
-  onResponseError?: (error: Response) => Response;
+export interface ITdHttpInterceptor {
+  handleOptions?: (options: ITdHttpRESTOptionsWithBody) => ITdHttpRESTOptionsWithBody;
+  handleResponse?: (observable: Observable<any>) => Observable<any>;
 }
 ```
 Every method is optional, so you can just implement the ones that are needed.
 
 ## Setup
 
-Create your custom interceptors by implementing [IHttpInterceptor]:
+Create your custom interceptors by implementing [ITdHttpInterceptor]:
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { IHttpInterceptor } from '@covalent/http';
+import { ITdHttpInterceptor } from '@covalent/http';
 
 @Injectable()
-export class CustomInterceptor implements IHttpInterceptor {
+export class CustomInterceptor implements ITdHttpInterceptor {
 
-   onRequest(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-    ... // do something to requestOptions before a request
-    ... // if something is wrong, throw an error to execute onRequestError (if there is an onRequestError hook)
+   handleOptions(options: ITdHttpRESTOptionsWithBody): ITdHttpRESTOptionsWithBody {
+    ... // do something to options before a request
+    ... // if something is wrong, throw an error that will execute the error callback of the subscription
     if (/*somethingWrong*/) {
       throw new Error('error message for subscription error callback');
     }
-    return requestOptions;
-  }
-
-  onRequestError(requestOptions: RequestOptionsArgs): RequestOptionsArgs {
-    ... // do something to try and recover from an error thrown `onRequest` 
-    ... // and return the requestOptions needed for the request
-    ... // else return 'undefined' or throw an error to execute the error callback of the subscription
+    ... // you can also do something to try and recover from an error
+    ... // and return the options needed for the request
+    ... // else throw an error to execute the error callback of the subscription
     if (cantRecover) {
-      throw new Error('error message for subscription error callback'); // or return undefined;
+      throw new Error('error message for subscription error callback');
     }
-    return requestOptions;
+    return options;
   }
 
-  onResponse(response: Response): Response {
-    ... // check response status and do something
-    return response;
-  }
-
-  onResponseError(error: Response): Response {
-    ... // check error status and do something
-    return error;
+  handleResponse(observable: Observable<any>): Observable<any> {
+    ... // hook into the response observable with rxjs operators
+    return response.pipe(
+      map((res: any) => {
+        // check response status and do something
+        if (res instanceof HttpResponse<any>) {
+          return res.body;
+        } else {
+          return res;
+        }
+      }),
+      catchError((e: any) => {
+        // check error and do something
+        if (e instanceof HttpErrorResponse) {
+          // do something if its response error
+        }
+      })
+    );
   }
 }
 
@@ -82,18 +92,18 @@ Then, import the [CovalentHttpModule] using the forRoot() method with the desire
 
 ```typescript
 import { NgModule, Type } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
+import { HttpClientModule } from '@angular/common/http';
+import { CovalentHttpModule, ITdHttpInterceptor } from '@covalent/http';
 import { CustomInterceptor } from 'dir/to/interceptor';
 
-const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [
   CustomInterceptor,
   ...
 ];
 
 @NgModule({
   imports: [
-    HttpModule,
+    HttpClientModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: CustomInterceptor, paths: ['**'],
@@ -110,7 +120,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
 export class MyModule {}
 ```
 
-After that, just inject [HttpInterceptorService] and use it for your requests.
+After that, just inject [TdHttpService] and use it for your requests.
 
 ## Paths
 
