@@ -1,0 +1,10 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "@covalent/http": "covalent.http"
+      }
+    }
+  }
+}

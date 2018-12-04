@@ -27,7 +27,7 @@
                 <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                   {{column.format ? column.format(row[column.name]) : row[column.name]}}
                 </td>
-                <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                <td td-data-table-cell (click)="openPrompt(row, 'comments')" align="start">
                   <button mat-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
                 </td>
               </tr>
@@ -59,7 +59,7 @@
                   <td td-data-table-cell *ngFor="let column of columns" [numeric]="column.numeric">
                     { {column.format ? column.format(row[column.name]) : row[column.name]}}
                   </td>
-                  <td td-data-table-cell (click)="openPrompt(row, 'comments')">
+                  <td td-data-table-cell (click)="openPrompt(row, 'comments')" align="start">
                     <button mat-button [class.mat-accent]="!row['comments']">{ {row['comments'] || 'Add Comment'}}</button>
                   </td>
                 </tr>
@@ -80,7 +80,7 @@
               columns: ITdDataTableColumn[] = [
                 { name: 'first_name',  label: 'First Name' },
                 { name: 'last_name', label: 'Last Name' },
-                { name: 'gender', label: 'Gender' },
+                { name: 'gender', label: 'Gender'},
                 { name: 'email', label: 'Email' },
                 { name: 'balance', label: 'Balance', numeric: true, format: DECIMAL_FORMAT },
               ];
@@ -679,7 +679,9 @@
           <tbody>
             <tr td-data-table-row>
               <td td-data-table-cell
-                  [numeric]="true|false">
+                  [numeric]="true|false"
+                  [align]="'start'|'center'|'end'"
+                  >
                 ...
               </td>
             </tr>

@@ -34,4 +34,6 @@ Unordered lists can be started using the toolbar or by typing '* ', '- ', or '+ 
 ## What about images?
 ![Yes](https://i.imgur.com/sZlktY7.png)
 `;
+
+  simpleLineBreaks: boolean = true;
 }
