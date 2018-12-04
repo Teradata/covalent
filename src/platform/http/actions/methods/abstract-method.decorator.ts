@@ -1,6 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 
-import { TdHttpMethod, ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, NOOP_HTTP } from '../../http.mixin';
+import { NOOP_HTTP } from '../http.mixin';
+import { TdHttpMethod, ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody } from '../../http.interfaces';
 import { TdParamType, tdHttpRESTParam } from '../params/abstract-param.decorator';
 
 declare const Reflect: any;

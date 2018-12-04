@@ -6,3 +6,4 @@ export * from './interceptors/http-interceptor.interface';
 export * from './interceptors/http-interceptor-matcher.interface';
 export * from './interceptors/http-interceptor-mapping.interface';
 export * from './http.interfaces';
+export * from './actions';

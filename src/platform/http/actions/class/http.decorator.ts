@@ -1,4 +1,4 @@
-import { mixinHttp, ITdHttpRESTConfig } from '../../http.mixin';
+import { mixinHttp, ITdHttpRESTConfig } from '../http.mixin';
 
 /**
  * Decorator used to give a service http capabilities

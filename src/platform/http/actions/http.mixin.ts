@@ -1,15 +1,11 @@
 import { Type, Injectable, Injector, ɵReflectionCapabilities, InjectFlags, Optional,
   SkipSelf, Self, Inject, InjectionToken } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TdHttpService } from '@covalent/http';
 
 import { Observable, of } from 'rxjs';
 
-export type TdHttpMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE' | 'HEAD' | 'PUT' | 'OPTIONS';
-
-export type TdHttpRESTResponseType = 'arraybuffer' | 'blob' | 'json' | 'text';
-
-export type TdHttpRESTObserve = 'body' | 'response' | 'events';
+import { ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, TdHttpRESTResponseType, TdHttpRESTObserve, TdHttpMethod } from '../http.interfaces';
 
 export interface ITdHttpRESTConfig {
   baseHeaders?: HttpHeaders;
@@ -17,23 +13,6 @@ export interface ITdHttpRESTConfig {
   defaultObserve?: TdHttpRESTObserve;
   defaultResponseType?: TdHttpRESTResponseType;
   httpServiceType?: Type<HttpClient | TdHttpService>;
-}
-
-export interface ITdHttpRESTOptions {
-  headers?: HttpHeaders | {
-    [header: string]: string | string[];
-  };
-  observe?: TdHttpRESTObserve;
-  params?: HttpParams | {
-    [param: string]: string | string[];
-  };
-  responseType?: TdHttpRESTResponseType;
-  reportProgress?: boolean;
-  withCredentials?: boolean;
-}
-
-export interface ITdHttpRESTOptionsWithBody extends ITdHttpRESTOptions {
-  body?: any;
 }
 
 export const NOOP_HTTP: Observable<any> = of(undefined);
@@ -120,7 +99,7 @@ export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any
      * Method used to setup the configuration parameters and get an instance of the http service
      */
     buildConfig(): void {
-      this.http = this._injector.get(config.httpServiceType || HttpClient);
+      this.http = this._injector.get(config.httpServiceType || TdHttpService);
       this._baseUrl = config && config.baseUrl ? config.baseUrl.replace(/\/$/, '') : '';
       this._baseHeaders = config && config.baseHeaders ? config.baseHeaders : new HttpHeaders();
       this._defaultObserve = config && config.defaultObserve ? config.defaultObserve : 'body';
