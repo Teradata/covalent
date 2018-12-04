@@ -25,7 +25,7 @@
   $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  td-steps {
+  .td-steps {
     .td-steps-header {
       @include mat-elevation(1);
     }

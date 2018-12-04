@@ -12,6 +12,10 @@ export enum StepState {
   selector: 'td-nav-step, a[td-nav-step]',
   styleUrls: ['./nav-step.component.scss'],
   templateUrl: './nav-step.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'td-steps',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdNavStepComponent implements AfterViewInit, OnInit {
