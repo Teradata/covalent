@@ -1,4 +1,4 @@
-# td-horizontal-nav-stepper (experimental)
+# td-horizontal-nav-stepper
 
 `td-horizontal-nav-stepper` element generates a stepper to be used with Angular Router navigation.  Handles responsive by removing steps from the beginning of the list as allowable space decreases.  When steps are hidden right and left arrows appear allowing to control which steps are hidden and shown.  Steps can use an anchor with routerLinks to allow to navigate to new pages.
 
@@ -56,7 +56,7 @@
 Import the [CovalentNavStepperModule] in your NgModule:
 
 ```typescript
-import { CovalentNavStepperModule } from '@covalent/experimental/nav-stepper';
+import { CovalentNavStepperModule } from '@covalent/core/nav-stepper';
 @NgModule({
   imports: [
     CovalentNavStepperModule,
@@ -74,9 +74,9 @@ Example:
 ```html
 <td-horizontal-nav-stepper #horizontalRightNavStepper>
   <a td-nav-step [routerLink]="'/'" [state]="'complete'" [sublabel]="'1st step'">My Step A</a>
-  <a td-nav-step [routerLink]="'/breadcrumbs'" [state]="'complete'" [sublabel]="'2nd step'">My Step B</a>
-  <a td-nav-step [routerLink]="'/tabselect'" [state]="'complete'" [sublabel]="'3rd step'">My Step C</a>
-  <a td-nav-step [routerLink]="'/navstepper'" [state]="'required'" [sublabel]="'Almost done'">My Step D</a>
-  <a td-nav-step [routerLink]="'/breadcrumbs'" [state]="'none'" [sublabel]="'Last and final'">My Step E</a>
+  <a td-nav-step [routerLink]="'/components'" [state]="'complete'" [sublabel]="'2nd step'">My Step B</a>
+  <a td-nav-step [routerLink]="'/components/expansion-panel'" [state]="'complete'" [sublabel]="'3rd step'">My Step C</a>
+  <a td-nav-step [routerLink]="'/components/tab-select'" [state]="'required'" [sublabel]="'Almost done'">My Step D</a>
+  <a td-nav-step [routerLink]="'/components/file-input'" [state]="'none'" [sublabel]="'Last and final'">My Step E</a>
 </td-horizontal-nav-stepper>
 ```

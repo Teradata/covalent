@@ -30,6 +30,7 @@ import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-mark
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
+import { NavStepperDemoComponent } from './nav-stepper/nav-stepper.component';
 
 const routes: Routes = [{
   children: [{
@@ -41,6 +42,9 @@ const routes: Routes = [{
     }, {
       component: StepsDemoComponent,
       path: 'steps',
+    }, {
+      component: NavStepperDemoComponent,
+      path: 'navsteps',
     }, {
       component: ExpansionPanelDemoComponent,
       path: 'expansion-panel',

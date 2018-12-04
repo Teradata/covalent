@@ -22,6 +22,7 @@ module.exports =
       "@covalent/core/search": "covalent.core.search",
       "@covalent/core/breadcrumbs": "covalent.core.breadcrumbs",
       "@covalent/core/steps": "covalent.core.steps",
+      "@covalent/core/nav-stepper": "covalent.core.nav-stepper",
       "@covalent/core/tab-select": "covalent.core.tab-select",
 
       "@covalent/dynamic-forms": "covalent.dynamic-forms",

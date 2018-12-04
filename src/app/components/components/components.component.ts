@@ -20,6 +20,11 @@ export class ComponentsComponent {
     route: 'steps',
     title: 'Stepper (Wizard)',
   }, {
+      description: 'A sequence of steps that navigate to a particular route',
+      icon: 'format_line_spacing',
+      route: 'navsteps',
+      title: 'Navigational Stepper',
+  }, {
     description: 'Expand & collapse containers',
     icon: 'open_with',
     route: 'expansion-panel',
