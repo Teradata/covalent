@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
@@ -10,7 +10,7 @@ let showdown: any = require('showdown/dist/showdown.js');
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
 })
-export class TdMarkdownComponent implements OnChanges, AfterViewInit {
+export class TdMarkdownComponent implements OnInit, OnChanges, AfterViewInit {
 
   private _content: string;
   private _simpleLineBreaks: boolean = false;
@@ -48,6 +48,10 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
   constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef,
               private _domSanitizer: DomSanitizer) {}
+
+  ngOnInit(): void {
+    this._loadContent(this._content);
+  }
 
   ngOnChanges(): void {
     this._loadContent(this._content);
