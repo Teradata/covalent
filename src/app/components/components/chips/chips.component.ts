@@ -67,6 +67,10 @@ export class ChipsDemoComponent implements OnInit {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
+  compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
+    return o1.toUpperCase() === o2.toUpperCase();
+  }
+
   ngOnInit(): void {
     this.filterStrings('');
     this.filterObjects('');

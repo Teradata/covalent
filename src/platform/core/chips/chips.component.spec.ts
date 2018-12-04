@@ -128,7 +128,7 @@ describe('Component: Chips', () => {
 
     it('should have primary color', (done: DoneFn) => {
       fixture.detectChanges();
-      fixture.whenStable().then(() => {        
+      fixture.whenStable().then(() => {
         expect((<HTMLElement>chips.nativeElement).classList.contains('mat-primary')).toBeTruthy();
         done();
       });
@@ -306,6 +306,42 @@ describe('Component: Chips', () => {
               expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement.textContent).toContain('test');
               done();
             }, 200);
+          });
+        });
+      });
+    });
+
+    it('should use compareWith function if one is provided', (done: DoneFn) => {
+      chips.triggerEventHandler('focus', new Event('focus'));
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        (<TdChipsComponent>chips.componentInstance)._inputChild.value = 'test';
+
+        function ignoreCase(o1: any, o2: any): boolean {
+          return o1.toUpperCase() === o2.toUpperCase();
+        }
+
+        chips.componentInstance.compareWith = ignoreCase;
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          input.triggerEventHandler('keyup.enter', createFakeKeyboardEvent(ENTER));
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+              expect(chips.componentInstance.value.length).toBe(1);
+              expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
+              expect(fixture.debugElement.queryAll(By.directive(MatChip))[0].nativeElement.textContent).toContain('test');
+
+              (<TdChipsComponent>chips.componentInstance)._inputChild.value = 'TEST';
+              fixture.detectChanges();
+              fixture.whenStable().then(() => {
+                input.triggerEventHandler('keyup.enter', createFakeKeyboardEvent(ENTER));
+                fixture.detectChanges();
+                fixture.whenStable().then(() => {
+                    expect(chips.componentInstance.value.length).toBe(1);
+                    expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
+                    done();
+                });
+              });
           });
         });
       });
@@ -855,7 +891,13 @@ class TdChipsA11yTestComponent {
 
 @Component({
   template: `
-      <td-chips [placeholder]="placeholder" [items]="filteredItems" [(ngModel)]="selectedItems" (inputChange)="filter($event)">
+      <td-chips
+        [placeholder]="placeholder"
+        [items]="filteredItems"
+        [compareWith]="compareWith"
+        [(ngModel)]="selectedItems"
+        (inputChange)="filter($event)"
+      >
       </td-chips>`,
 })
 class TdChipsBasicTestComponent {
@@ -871,6 +913,11 @@ class TdChipsBasicTestComponent {
     'pasta',
     'sushi',
   ];
+
+  compareWith(o1: any: o2: any): boolean {
+    return o1 === o2;
+  }
+
   filter(value: string): void {
     this.filteredItems = this.items.filter((item: any) => {
       return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
@@ -882,7 +929,7 @@ class TdChipsBasicTestComponent {
 
 @Component({
   template: `
-      <td-chips [placeholder]="placeholder" [required]="true" [items]="items" 
+      <td-chips [placeholder]="placeholder" [required]="true" [items]="items"
           [(ngModel)]="items">
       </td-chips>`,
 })
