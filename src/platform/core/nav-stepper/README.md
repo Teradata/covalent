@@ -4,9 +4,6 @@
 
 ## API Summary
 
-#### Inputs
-
-
 #### Methods
 
 + count: number
