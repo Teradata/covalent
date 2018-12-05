@@ -12,7 +12,6 @@ export interface ITdHttpRESTConfig {
   baseUrl: string;
   defaultObserve?: TdHttpRESTObserve;
   defaultResponseType?: TdHttpRESTResponseType;
-  httpServiceType?: Type<HttpClient | TdHttpService>;
 }
 
 type Constructor<T> = new (...args: any[]) => T;
@@ -63,7 +62,9 @@ function injectArgs(types: (Type<any>| InjectionToken<any>| any[])[], injector: 
  * Mixin to augment a service with http helpers.
  * @internal
  */
-export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any> {
+export function mixinHttp(base: any,
+                          config: ITdHttpRESTConfig,
+                          httpInject: Type<HttpClient | TdHttpService> = TdHttpService): Constructor<any> {
   /**
    * Internal class used to get an instance of Injector for internal usage plus also
    * a way to inject services from the constructor of the underlying service
@@ -97,7 +98,7 @@ export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any
      * Method used to setup the configuration parameters and get an instance of the http service
      */
     buildConfig(): void {
-      this.http = this._injector.get(config.httpServiceType || TdHttpService);
+      this.http = this._injector.get(httpInject);
       this._baseUrl = config && config.baseUrl ? config.baseUrl.replace(/\/$/, '') : '';
       this._baseHeaders = config && config.baseHeaders ? config.baseHeaders : new HttpHeaders();
       this._defaultObserve = config && config.defaultObserve ? config.defaultObserve : 'body';

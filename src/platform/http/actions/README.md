@@ -23,10 +23,13 @@ import {
   TdQueryParams,
 } from '@covalent/http';
 
-@TdHttp({
+/**
+ * TdHttp uses TdHttpService and TdHttpClient uses HttpClient
+ */
+
+@TdHttp({ // or @TdHttpClient({
   baseUrl: 'www.mybaseurl.com',
   baseHeaders: new HttpHeaders({ 'Accept': 'application/json' }),
-  httpServiceType: HttpClient | TdHttpService, // defaults to TdHttpService
 })
 @Injectable()
 export class TestHttpService {
