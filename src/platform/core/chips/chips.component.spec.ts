@@ -914,7 +914,7 @@ class TdChipsBasicTestComponent {
     'sushi',
   ];
 
-  compareWith(o1: any: o2: any): boolean {
+  compareWith(o1: any, o2: any): boolean {
     return o1 === o2;
   }
 
