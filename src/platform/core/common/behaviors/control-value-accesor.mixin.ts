@@ -24,7 +24,7 @@ export interface IHasChangeDetectorRef {
 export function mixinControlValueAccessor<T extends Constructor<IHasChangeDetectorRef>>
                 (base: T, initialValue?: any): Constructor<IControlValueAccessor> & T {
   return class extends base {
-    private _value: any = initialValue;
+    private _value: any = initialValue instanceof Array ? Object.assign([], initialValue) : initialValue;
     private _subjectValueChanges: Subject<any>;
     valueChanges: Observable<any>;
 
