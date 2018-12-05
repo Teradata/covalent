@@ -25,6 +25,9 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
 # BUILD: @covalent/http primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
+# **DEPRECATED** TODO Remove on 3.0.0
+# BUILD: @covalent/http-deprec primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/http-deprec/ng-package.js
 # BUILD: @covalent/markdown primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
 
