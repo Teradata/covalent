@@ -126,6 +126,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
       let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
         .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
       contentRef.instance.content = markdown;
+      contentRef.instance.refresh();
       this.container.viewContainerRef.insert(contentRef.hostView, this.container.viewContainerRef.length);
     }
   }
