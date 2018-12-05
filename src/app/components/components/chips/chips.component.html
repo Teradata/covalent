@@ -392,7 +392,7 @@
         <td-highlight lang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
-              
+
             }
           ]]>
         </td-highlight>
@@ -400,6 +400,49 @@
     </mat-tab>
   </mat-tab-group>
 </mat-card>
+<mat-card>
+    <mat-card-title>Chips with a custom compareWith function</mat-card-title>
+    <mat-card-subtitle>Use a compareWith function to customize how chips are compared when attempting to add a new one</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <div class="push">
+          <div class="mat-body-1">Try to add 2 chips with same characters but with different casing, such as 'test' and 'TEST'</div>
+          <td-chips
+            placeholder="Type here"
+            [compareWith]="compareWith"
+          >
+          </td-chips>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <mat-card-content>
+          <p>HTML:</p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <td-chips
+                placeholder="Type here"
+                [compareWith]="compareWith"
+              >
+              </td-chips>
+            ]]>
+          </td-highlight>
+          <p>Typescript:</p>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              export class ChipsDemoComponent {
+                compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
+                  return o1.toUpperCase() === o2.toUpperCase();
+                }
+              }
+            ]]>
+          </td-highlight>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
 <!-- chip with required attribute -->
 <mat-card>
   <mat-card-title>Chips with required attribute</mat-card-title>
@@ -426,7 +469,7 @@
         <td-highlight lang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
-              
+
             }
           ]]>
         </td-highlight>
@@ -512,5 +555,5 @@
     </mat-tab>
   </mat-tab-group>
 </mat-card>
-   
+
 <td-readme-loader resourceUrl="platform/core/chips/README.md"></td-readme-loader>
