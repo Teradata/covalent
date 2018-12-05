@@ -1,9 +1,9 @@
 import { Type, Injectable, Injector, ɵReflectionCapabilities, InjectFlags, Optional,
   SkipSelf, Self, Inject, InjectionToken } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TdHttpService } from '@covalent/http';
+import { TdHttpService } from '../interceptors/http.service';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, TdHttpRESTResponseType, TdHttpRESTObserve, TdHttpMethod } from '../http.interfaces';
 
@@ -14,8 +14,6 @@ export interface ITdHttpRESTConfig {
   defaultResponseType?: TdHttpRESTResponseType;
   httpServiceType?: Type<HttpClient | TdHttpService>;
 }
-
-export const NOOP_HTTP: Observable<any> = of(undefined);
 
 type Constructor<T> = new (...args: any[]) => T;
 

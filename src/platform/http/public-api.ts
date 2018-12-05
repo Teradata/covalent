@@ -1,5 +1,4 @@
 export * from './http.module';
-export * from './http-rest.service';
 export * from './interceptors/url-regexp-interceptor-matcher.class';
 export * from './interceptors/http.service';
 export * from './interceptors/http-interceptor.interface';
