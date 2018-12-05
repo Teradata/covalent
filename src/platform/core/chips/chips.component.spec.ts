@@ -337,9 +337,11 @@ describe('Component: Chips', () => {
                 input.triggerEventHandler('keyup.enter', createFakeKeyboardEvent(ENTER));
                 fixture.detectChanges();
                 fixture.whenStable().then(() => {
+                  setTimeout(() => {
                     expect(chips.componentInstance.value.length).toBe(1);
                     expect(fixture.debugElement.queryAll(By.directive(MatChip)).length).toBe(1);
                     done();
+                  }, 200);
                 });
               });
           });
