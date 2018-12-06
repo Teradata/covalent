@@ -12,14 +12,12 @@ import { CovalentNavStepperModule } from '../platform/experimental/nav-stepper';
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
 import { NavStepperDemoComponent } from './sandbox/nav-stepper/nav-stepper.component';
-import { HttpDemoComponent } from './sandbox/http/http.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
     TestBedComponent,
     NavStepperDemoComponent,
-    HttpDemoComponent,
     MainComponent,
   ],
   imports: [

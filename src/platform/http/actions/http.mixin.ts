@@ -1,44 +1,18 @@
 import { Type, Injectable, Injector, ɵReflectionCapabilities, InjectFlags, Optional,
   SkipSelf, Self, Inject, InjectionToken } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Http, Response, Headers, URLSearchParams } from '@angular/http';
-import { HttpInterceptorService } from '@covalent/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TdHttpService } from '../interceptors/http.service';
 
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-export type TdHttpMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE' | 'HEAD' | 'PUT' | 'OPTIONS';
-
-export type TdHttpRESTResponseType = 'arraybuffer' | 'blob' | 'json' | 'text';
-
-export type TdHttpRESTObserve = 'body' | 'response' | 'events';
+import { ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, TdHttpRESTResponseType, TdHttpRESTObserve, TdHttpMethod } from '../http.interfaces';
 
 export interface ITdHttpRESTConfig {
   baseHeaders?: HttpHeaders;
   baseUrl: string;
   defaultObserve?: TdHttpRESTObserve;
   defaultResponseType?: TdHttpRESTResponseType;
-  httpServiceType?: Type<Http | HttpClient | HttpInterceptorService>;
 }
-
-export interface ITdHttpRESTOptions {
-  headers?: HttpHeaders | {
-    [header: string]: string | string[];
-  };
-  observe?: TdHttpRESTObserve;
-  params?: HttpParams | {
-    [param: string]: string | string[];
-  };
-  responseType?: TdHttpRESTResponseType;
-  reportProgress?: boolean;
-  withCredentials?: boolean;
-}
-
-export interface ITdHttpRESTOptionsWithBody extends ITdHttpRESTOptions {
-  body?: any;
-}
-
-export const NOOP_HTTP: Observable<any> = of(undefined);
 
 type Constructor<T> = new (...args: any[]) => T;
 
@@ -88,7 +62,9 @@ function injectArgs(types: (Type<any>| InjectionToken<any>| any[])[], injector: 
  * Mixin to augment a service with http helpers.
  * @internal
  */
-export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any> {
+export function mixinHttp(base: any,
+                          config: ITdHttpRESTConfig,
+                          httpInject: Type<HttpClient | TdHttpService> = TdHttpService): Constructor<any> {
   /**
    * Internal class used to get an instance of Injector for internal usage plus also
    * a way to inject services from the constructor of the underlying service
@@ -116,13 +92,13 @@ export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any
     private _defaultObserve?: TdHttpRESTObserve;
     private _defaultResponseType?: TdHttpRESTResponseType;
 
-    http: HttpClient | HttpInterceptorService | Http;
+    http: HttpClient | TdHttpService;
 
     /**
      * Method used to setup the configuration parameters and get an instance of the http service
      */
     buildConfig(): void {
-      this.http = this._injector.get(config.httpServiceType || HttpClient);
+      this.http = this._injector.get(httpInject);
       this._baseUrl = config && config.baseUrl ? config.baseUrl.replace(/\/$/, '') : '';
       this._baseHeaders = config && config.baseHeaders ? config.baseHeaders : new HttpHeaders();
       this._defaultObserve = config && config.defaultObserve ? config.defaultObserve : 'body';
@@ -139,17 +115,10 @@ export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any
       });
       return new HttpHeaders(headersObj);
     }
-
-    /* tslint:disable-next-line */
-    buildRequest<Response>(method: 'POST' | 'PUT' | 'PATCH', url: string, options?: ITdHttpRESTOptionsWithBody): Observable<Response>;
     /* tslint:disable-next-line */
     buildRequest<HttpResponse>(method: 'POST' | 'PUT' | 'PATCH', url: string, options?: ITdHttpRESTOptionsWithBody): Observable<HttpResponse>;
     /* tslint:disable-next-line */
-    buildRequest<Response>(method: 'GET' | 'DELETE', url: string, options?: ITdHttpRESTOptions): Observable<Response>;
-    /* tslint:disable-next-line */
     buildRequest<HttpResponse>(method: 'GET' | 'DELETE', url: string, options?: ITdHttpRESTOptions): Observable<HttpResponse>;
-    /* tslint:disable-next-line */
-    buildRequest<Response>(method: TdHttpMethod, url: string, options?: ITdHttpRESTOptionsWithBody): Observable<Response>;
     /* tslint:disable-next-line */
     buildRequest<HttpResponse>(method: TdHttpMethod, url: string, options?: ITdHttpRESTOptionsWithBody): Observable<HttpResponse> {
       return this._buildRequest(method, url, options);
@@ -180,54 +149,7 @@ export function mixinHttp(base: any, config: ITdHttpRESTConfig): Constructor<any
         }
         options.headers = headers;
       }
-      if (this.http instanceof HttpInterceptorService || this.http instanceof Http) {
-        let headers: Headers = new Headers();
-        (<HttpHeaders>options.headers).keys().forEach((key: any) => {
-          headers.set(key, (<HttpHeaders>options.headers).get(key));
-        });
-        let params: URLSearchParams = new URLSearchParams();
-        if (options.params) {
-          if (options.params instanceof HttpParams) {
-            options.params.keys().forEach((key: string) => {
-              params.set(key, (<HttpParams>options.params).get(key));
-            });
-          } else {
-            for (let key in options.params) {
-              params.set(key, <any>options.params[key]);
-            }
-          }
-        }
-        let observable: Observable<Response> = (<HttpInterceptorService>this.http).request(url, {
-          headers: headers,
-          method: method,
-          body: options.body ? options.body : undefined,
-          params: params,
-        });
-        if (options.observe === 'body') {
-          if (options.responseType === 'json') {
-            return <any>observable.pipe(
-              map((response: Response) => response.json()),
-            );
-          } else if (options.responseType === 'text') {
-            return <any>observable.pipe(
-              map((response: Response) => response.text()),
-            );
-          } else if (options.responseType === 'blob') {
-            return <any>observable.pipe(
-              map((response: Response) => response.blob()),
-            );
-          } else if (options.responseType === 'arraybuffer') {
-            return <any>observable.pipe(
-              map((response: Response) => response.arrayBuffer()),
-            );
-          }
-        } else if (options.observe === 'events') {
-          throw Error('"events" not suppported in @angular/http');
-        }
-        return observable;
-      } else {
-        return (<HttpClient>this.http).request(method, url, options);
-      }
+      return (<TdHttpService>this.http).request(method, url, options);
     }
   };
 }

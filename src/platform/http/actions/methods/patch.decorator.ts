@@ -2,13 +2,13 @@ import { ITdHttpRESTOptions } from '../../';
 import { TdAbstractMethod } from './abstract-method.decorator';
 
 /**
- * Decorator that adds GET request capabilities to a method
+ * Decorator that adds PATCH request capabilities to a method
  */
-export function GET(config: {
+export function TdPATCH(config: {
   path: string,
   options?: ITdHttpRESTOptions,
 }): Function {
   return TdAbstractMethod(<any>Object.assign({
-    method: 'GET',
+    method: 'PATCH',
   }, config));
 }
