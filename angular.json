@@ -198,7 +198,7 @@
         }
       }
     },
-    "highlight": {
+    "@covalent/highlight": {
       "root": "src/platform/highlight",
       "sourceRoot": "src/platform/highlight/src",
       "projectType": "library",
@@ -225,6 +225,41 @@
             "tsConfig": [
               "src/platform/highlight/tsconfig.lib.json",
               "src/platform/highlight/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@covalent/core": {
+      "root": "src/platform/core",
+      "sourceRoot": "src/platform/core",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/core/tsconfig.lib.json",
+            "project": "src/platform/core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/platform/core/test.ts",
+            "tsConfig": "src/platform/core/tsconfig.spec.json",
+            "karmaConfig": "src/platform/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/platform/core/tsconfig.lib.json",
+              "src/platform/core/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

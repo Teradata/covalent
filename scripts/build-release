@@ -6,7 +6,7 @@ rm -rf ./src/platform/node_modules
 rm -rf ./deploy
 
 # BUILD: @covalent/core primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.js
+./node_modules/@angular/cli/bin/ng build @covalent/core
 
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
@@ -22,7 +22,7 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # BUILD: @covalent/dynamic-forms primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.js
 # BUILD: @covalent/highlight primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
+./node_modules/@angular/cli/bin/ng build @covalent/highlight
 # BUILD: @covalent/http primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
 # BUILD: @covalent/markdown primary entrypoint
