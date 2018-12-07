@@ -36,7 +36,7 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/flavored-markdown/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
 # BUILD: @covalent/experimental primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-experimental
 
