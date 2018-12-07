@@ -1,6 +1,6 @@
-# RESTService
+# RESTService (deprecated)
 
-Abstract class provided with methods that wraps http services to facilitate REST API calls.
+Abstract class provided with methods that wraps http services to facilitate REST API calls with `@angular/http`.
 
 ## API Summary
 
@@ -26,7 +26,7 @@ Example:
 ```typescript
 import { Injectable } from '@angular/core';
 import { Response, Http, Headers } from '@angular/http';
-import { RESTService, HttpInterceptorService } from '@covalent/http';
+import { RESTService, HttpInterceptorService } from '@covalent/http-deprec';
 
 @Injectable()
 export class CustomRESTService extends RESTService<any> {

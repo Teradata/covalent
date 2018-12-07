@@ -50,11 +50,19 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
               private _domSanitizer: DomSanitizer) {}
 
   ngOnChanges(): void {
-    this._loadContent(this._content);
+    this.refresh();
   }
 
   ngAfterViewInit(): void {
     if (!this._content) {
+      this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
+    }
+  }
+
+  refresh(): void {
+    if (this._content) {
+      this._loadContent(this._content);
+    } else if (this._elementRef && !this._content) {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
   }

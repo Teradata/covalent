@@ -10,3 +10,5 @@ export * from './params/param.decorator';
 export * from './params/body.decorator';
 export * from './params/response.decorator';
 export * from './params/query-params.decorator';
+
+export * from './http.mixin';

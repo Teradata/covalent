@@ -25,6 +25,9 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/@angular/cli/bin/ng build covalent-highlight
 # BUILD: @covalent/http primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-http
+# **DEPRECATED** TODO Remove on 3.0.0
+# BUILD: @covalent/http-deprec primary entrypoint
+./node_modules/@angular/cli/bin/ng build covalent-http-deprec
 # BUILD: @covalent/markdown primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-markdown
 

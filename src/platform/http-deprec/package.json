@@ -1,14 +1,15 @@
 {
-  "name": "@covalent/http",
+  "name": "@covalent/http-deprec",
   "version": "0.0.0-COVALENT",
-  "description": "Teradata UI Platform HttpClient Helper Module",
+  "description": "Teradata UI Platform Http Helper Module (deprecated)",
   "keywords": [
     "angular",
     "components",
     "reusable",
-    "http-client",
+    "http",
     "rest",
-    "interceptor"
+    "interceptor",
+    "deprecated"
   ],
   "scripts": {
   },
@@ -32,6 +33,6 @@
   ],
   "peerDependencies": {
     "@angular/core": "^0.0.0-NG",
-    "@angular/common": "^0.0.0-NG"
+    "@angular/http": "^0.0.0-NG"
   }
 }

@@ -1,9 +1,13 @@
 import { HttpParams } from '@angular/common/http';
 
-import { TdHttpMethod, ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody, NOOP_HTTP } from '../../http.mixin';
+import { TdHttpMethod, ITdHttpRESTOptions, ITdHttpRESTOptionsWithBody } from '../../http.interfaces';
 import { TdParamType, tdHttpRESTParam } from '../params/abstract-param.decorator';
 
+import { Observable, of } from 'rxjs';
+
 declare const Reflect: any;
+
+export const NOOP_HTTP: Observable<any> = of(undefined);
 
 /**
  * Method used to copy parameters from an array or HttpParams object
