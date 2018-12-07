@@ -198,42 +198,7 @@
         }
       }
     },
-    "@covalent/highlight": {
-      "root": "src/platform/highlight",
-      "sourceRoot": "src/platform/highlight",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "src/platform/highlight/tsconfig.lib.json",
-            "project": "src/platform/highlight/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/platform/highlight/test.ts",
-            "tsConfig": "src/platform/highlight/tsconfig.spec.json",
-            "karmaConfig": "src/platform/highlight/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/platform/highlight/tsconfig.lib.json",
-              "src/platform/highlight/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "@covalent/core": {
+    "covalent-core": {
       "root": "src/platform/core",
       "sourceRoot": "src/platform/core",
       "projectType": "library",
@@ -243,7 +208,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "src/platform/core/tsconfig.lib.json",
-            "project": "src/platform/core/ng-package.json"
+            "project": "src/platform/core/ng-package.js"
           }
         },
         "test": {
@@ -268,7 +233,42 @@
         }
       }
     },
-    "@covalent/dynamic-forms": {
+    "covalent-highlight": {
+      "root": "src/platform/highlight",
+      "sourceRoot": "src/platform/highlight",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/highlight/tsconfig.lib.json",
+            "project": "src/platform/highlight/ng-package.js"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/platform/highlight/test.ts",
+            "tsConfig": "src/platform/highlight/tsconfig.spec.json",
+            "karmaConfig": "src/platform/highlight/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/platform/highlight/tsconfig.lib.json",
+              "src/platform/highlight/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "covalent-dynamic-forms": {
       "root": "src/platform/dynamic-forms",
       "sourceRoot": "src/platform/dynamic-forms",
       "projectType": "library",
