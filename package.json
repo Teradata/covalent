@@ -91,9 +91,10 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.2",
-    "@angular/cli": "7.0.2",
-    "@angular/compiler-cli": "7.0.0",
+    "@angular-devkit/build-angular": "^0.11.2",
+    "@angular-devkit/build-ng-packagr": "~0.11.2",
+    "@angular/cli": "7.1.2",
+    "@angular/compiler-cli": "7.1.2",
     "@covalent/tools": "2.0.0-beta.2",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
@@ -121,7 +122,7 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "4.4.0",
+    "ng-packagr": "4.4.5",
     "node-sass": "4.9.0",
     "pa11y": "^5.1.0",
     "protractor": "~5.3.0",

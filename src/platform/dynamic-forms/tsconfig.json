@@ -1,4 +1,5 @@
 // Configuration for IDEs only.
+// TODO: remove?
 {
   "extends": "../../tsconfig.app.json",
   "compilerOptions": {
