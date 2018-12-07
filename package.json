@@ -104,7 +104,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "merge2": "1.0.2",
     "ng-packagr": "4.4.5",
-    "node-sass": "3.8.0",
+    "node-sass": "4.11.0",
     "protractor": "~5.1.0",
     "require-dir": "0.3.2",
     "rollup": "^0.41.6",
