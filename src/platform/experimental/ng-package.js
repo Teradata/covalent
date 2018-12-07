@@ -1,3 +1,5 @@
-let ngPackageSettings = require('../ng-package-common.js');
-ngPackageSettings["dest"] = "../../../deploy/platform/experimental"
-module.exports = ngPackageSettings;
+const ngPackageSettings = require('../ng-package-common.js');
+module.exports = {
+  ...ngPackageSettings,
+  dest: '../../../deploy/platform/experimental',
+};

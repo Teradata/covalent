@@ -372,6 +372,41 @@
           }
         }
       }
+    },
+    "covalent-experimental": {
+      "root": "src/platform/experimental",
+      "sourceRoot": "src/platform/experimental",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/experimental/tsconfig.lib.json",
+            "project": "src/platform/experimental/ng-package.js"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/platform/experimental/test.ts",
+            "tsConfig": "src/platform/experimental/tsconfig.spec.json",
+            "karmaConfig": "src/platform/experimental/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/platform/experimental/tsconfig.lib.json",
+              "src/platform/experimental/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "schematics": {
