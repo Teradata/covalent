@@ -26,7 +26,7 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # BUILD: @covalent/http primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-http
 # BUILD: @covalent/markdown primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-markdown
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # HACK START
