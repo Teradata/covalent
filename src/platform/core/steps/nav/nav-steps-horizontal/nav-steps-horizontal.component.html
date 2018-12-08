@@ -1,0 +1,21 @@
+<div class="td-steps-header">
+  <div class="td-step-header-pagination td-step-header-pagination-before mat-elevation-z4"
+        aria-hidden="true"
+        mat-ripple [matRippleDisabled]="_disableScrollBefore"
+        [class.td-step-header-pagination-disabled]="_disableScrollBefore"
+        (click)="_scrollHeader('before')">
+    <div class="td-step-header-pagination-chevron"></div>
+  </div>
+  <div #stepListContainer class="td-steps-header-container" (keydown)="_handleKeydown($event)">
+    <div #stepList class="td-steps-header-list">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <div class="td-step-header-pagination td-step-header-pagination-after mat-elevation-z4"
+        aria-hidden="true"
+        mat-ripple [matRippleDisabled]="_disableScrollAfter"
+        [class.td-step-header-pagination-disabled]="_disableScrollAfter"
+        (click)="_scrollHeader('after')">
+    <div class="td-step-header-pagination-chevron"></div>
+  </div>
+</div>

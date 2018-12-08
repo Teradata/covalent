@@ -1,0 +1,18 @@
+.td-vertical-line-wrapper {
+  position: relative;
+  .td-vertical-line {
+    position: absolute;
+    top: -16px;
+    height: 34px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    ::ng-deep :not([dir='rtl']) & {
+      left: 20px;
+      right: auto;
+    }
+    ::ng-deep [dir='rtl'] & {
+      left: auto;
+      right: 20px;
+    }
+  }
+}
