@@ -6,18 +6,26 @@ import {
   ContentChildren,
   AfterContentInit,
   Input,
+  OnDestroy,
 } from '@angular/core';
 import { TdExpansionPanelComponent } from './expansion-panel.component';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'td-expansion-panel-group',
   styleUrls: ['./expansion-panel-group.component.scss'],
   templateUrl: './expansion-panel-group.component.html',
 })
-export class TdExpansionPanelGroupComponent implements AfterContentInit {
+export class TdExpansionPanelGroupComponent
+  implements AfterContentInit, OnDestroy {
   private _multi: boolean = false;
 
   private _lastOpenedPanels: TdExpansionPanelComponent[] = [];
+
+  private _destroyed: Subject<boolean> = new Subject<boolean>();
+  private _stopWatchingPanels: Subject<boolean> = new Subject<boolean>();
 
   /**
    * multi?: boolean
@@ -27,7 +35,7 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
    */
   @Input('multi')
   set multi(multi: boolean) {
-    this._multi = multi;
+    this._multi = coerceBooleanProperty(multi);
     if (this._multi === false && this._lastOpenedPanels.length > 0) {
       this._closeAllExcept(
         this._lastOpenedPanels[this._lastOpenedPanels.length - 1],
@@ -46,11 +54,16 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
     );
   }
 
+  ngOnDestroy(): void {
+    this._destroyed.next(true);
+    this._destroyed.unsubscribe();
+    this._stopWatchingPanels.next(true);
+    this._stopWatchingPanels.unsubscribe();
+  }
+
   public ngAfterContentInit(): void {
-    if (!this.multi) {
-      const openedPanels:
-        TdExpansionPanelComponent[]
-       = this.expansionPanels.filter(
+    if (!this._multi) {
+      const openedPanels: TdExpansionPanelComponent[] = this.expansionPanels.filter(
         (expansionPanel: TdExpansionPanelComponent) => expansionPanel.expand,
       );
       const numOpenedPanels: number = openedPanels.length;
@@ -61,11 +74,14 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
 
     this._attachListeners(this.expansionPanels);
 
-    this.expansionPanels.changes.subscribe(
-      (expansionPanels: QueryList<TdExpansionPanelComponent>) => {
+    this.expansionPanels.changes
+      .pipe(takeUntil(this._destroyed))
+      .subscribe((expansionPanels: QueryList<TdExpansionPanelComponent>) => {
+        this._stopWatchingPanels.next(true);
+        this._stopWatchingPanels.unsubscribe();
+        this._stopWatchingPanels = new Subject<boolean>();
         this._attachListeners(expansionPanels);
-      },
-    );
+      });
   }
 
   /**
@@ -97,28 +113,32 @@ export class TdExpansionPanelGroupComponent implements AfterContentInit {
   ): void {
     this._lastOpenedPanels = [];
     expansionPanels.forEach((expansionPanel: TdExpansionPanelComponent) => {
-      expansionPanel.expanded.subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(
-          expansionPanel,
-        );
-        if (indexOfPanel !== -1) {
-          this._lastOpenedPanels.splice(indexOfPanel, 1);
-        }
-        this._lastOpenedPanels.push(expansionPanel);
+      expansionPanel.expanded
+        .pipe(takeUntil(this._stopWatchingPanels))
+        .subscribe(() => {
+          const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+            expansionPanel,
+          );
+          if (indexOfPanel !== -1) {
+            this._lastOpenedPanels.splice(indexOfPanel, 1);
+          }
+          this._lastOpenedPanels.push(expansionPanel);
 
-        if (!this._multi) {
-          this._closeAllExcept(expansionPanel);
-        }
-      });
+          if (!this._multi) {
+            this._closeAllExcept(expansionPanel);
+          }
+        });
 
-      expansionPanel.collapsed.subscribe(() => {
-        const indexOfPanel: number = this._lastOpenedPanels.indexOf(
-          expansionPanel,
-        );
-        if (indexOfPanel !== -1) {
-          this._lastOpenedPanels.splice(indexOfPanel, 1);
-        }
-      });
+      expansionPanel.collapsed
+        .pipe(takeUntil(this._stopWatchingPanels))
+        .subscribe(() => {
+          const indexOfPanel: number = this._lastOpenedPanels.indexOf(
+            expansionPanel,
+          );
+          if (indexOfPanel !== -1) {
+            this._lastOpenedPanels.splice(indexOfPanel, 1);
+          }
+        });
     });
   }
 
