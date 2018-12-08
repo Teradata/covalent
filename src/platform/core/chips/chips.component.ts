@@ -298,6 +298,15 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
   }
 
   /**
+   * compareWith? function
+   * Function used to check whether a chip value already exists.
+   * Defaults to strict equality comparison ===
+   */
+  @Input('compareWith') compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
+    return o1 === o2;
+  }
+
+  /**
    * Listens to host focus event to act on it
    */
   @HostListener('focus', ['$event'])
@@ -442,7 +451,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * add a debounce ms delay when reopening the autocomplete to give it time
      * to rerender the next list and at the correct spot
      */
-    
+
     this._closeAutocomplete();
     timer(this.debounce).toPromise().then(() => {
       this.setFocusedState();
@@ -452,7 +461,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
 
     this.inputControl.setValue('');
     // check if value is already part of the model
-    if (this.value.indexOf(value) > -1) {
+    if (this.value.findIndex((item: any) => this.compareWith(item, value)) > -1) {
       return false;
     }
 
@@ -478,7 +487,7 @@ export class TdChipsComponent extends _TdChipsMixinBase implements IControlValue
      * Else check if its not the last chip of the list to focus the next one.
      */
     if (index === (this._totalChips - 1) && index === 0) {
-      this._inputChild.focus();     
+      this._inputChild.focus();
     } else if (index < (this._totalChips - 1)) {
       this._focusChip(index + 1);
     } else if (index > 0) {

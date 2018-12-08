@@ -9,13 +9,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
-import { HttpDemoComponent } from './sandbox/http/http.component';
+
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
   declarations: [
     TestBedComponent,
-    HttpDemoComponent,
     MainComponent,
   ],
   imports: [
