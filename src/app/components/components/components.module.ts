@@ -8,7 +8,8 @@ import { ComponentsComponent } from './components.component';
 import { ComponentsOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
-import { NavStepperDemoComponent } from './nav-stepper/nav-stepper.component';
+import { NavStepsDemoComponent, NavStepsRoute1DemoComponent,
+          NavStepsRoute3DemoComponent, NavStepsRoute4DemoComponent } from './nav-steps/nav-steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
 import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
@@ -63,7 +64,7 @@ import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, Covale
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
          CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule, 
-         CovalentTabSelectModule, CovalentNavStepperModule } from '../../../platform/core';
+         CovalentTabSelectModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
@@ -83,7 +84,10 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     ComponentsOverviewComponent,
     HighlightDemoComponent,
     StepsDemoComponent,
-    NavStepperDemoComponent,
+    NavStepsDemoComponent,
+    NavStepsRoute1DemoComponent,
+    NavStepsRoute3DemoComponent,
+    NavStepsRoute4DemoComponent,
     ExpansionPanelDemoComponent,
     FileInputDemoComponent,
     FileUploadDemoComponent,
@@ -144,7 +148,6 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentMediaModule,
     CovalentExpansionPanelModule,
     CovalentStepsModule,
-    CovalentNavStepperModule,
     CovalentDialogsModule,
     CovalentLoadingModule,
     CovalentSearchModule,

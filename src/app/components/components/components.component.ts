@@ -20,10 +20,10 @@ export class ComponentsComponent {
     route: 'steps',
     title: 'Stepper (Wizard)',
   }, {
-      description: 'A sequence of steps that navigate to a particular route',
-      icon: 'format_line_spacing',
-      route: 'navsteps',
-      title: 'Navigational Stepper',
+    description: 'A sequence of steps that navigate to a particular route',
+    icon: 'format_line_spacing',
+    route: 'nav-steps',
+    title: 'Stepper (Navigational)',
   }, {
     description: 'Expand & collapse containers',
     icon: 'open_with',

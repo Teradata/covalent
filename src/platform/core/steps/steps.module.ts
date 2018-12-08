@@ -17,6 +17,11 @@ import { TdStepBodyComponent } from './step-body/step-body.component';
 import { TdStepComponent, TdStepLabelDirective, TdStepActionsDirective,
          TdStepSummaryDirective } from './step.component';
 
+// Nav Steps
+import { TdNavStepsHorizontalComponent } from './nav/nav-steps-horizontal/nav-steps-horizontal.component';
+import { TdNavStepsVerticalComponent } from './nav/nav-steps-vertical/nav-steps-vertical.component';
+import { TdNavStepLinkComponent } from './nav/nav-step-link/nav-step-link.component';
+
 const TD_STEPS: Type<any>[] = [
   TdStepsComponent,
   TdStepComponent,
@@ -25,6 +30,10 @@ const TD_STEPS: Type<any>[] = [
   TdStepLabelDirective,
   TdStepActionsDirective,
   TdStepSummaryDirective,
+  TdNavStepsHorizontalComponent,
+  TdNavStepsVerticalComponent,
+  TdNavStepLinkComponent,
+
 ];
 
 @NgModule({
