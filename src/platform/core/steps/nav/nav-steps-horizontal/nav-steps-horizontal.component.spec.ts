@@ -65,9 +65,14 @@ describe('Component: Nav Steps Horizontal', () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdNavStepsHorizontalTestComponent);
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        let pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
-        expect(pagination.length).toBe(2);
-        expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeFalsy();
+        document.body.style.width = '900px';
+        window.dispatchEvent(new Event('resize'));
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          let pagination: DebugElement[] = fixture.debugElement.queryAll(By.css('.td-step-header-pagination'));
+          expect(pagination.length).toBe(2);
+          expect(fixture.debugElement.query(By.css('.td-step-header-pagination-controls-enabled'))).toBeFalsy();
+        });
       });
     }),
   ));
