@@ -25,6 +25,9 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
 # BUILD: @covalent/http primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
+# **DEPRECATED** TODO Remove on 3.0.0
+# BUILD: @covalent/http-deprec primary entrypoint
+./node_modules/.bin/ng-packagr -p src/platform/http-deprec/ng-package.js
 # BUILD: @covalent/markdown primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
 
@@ -32,11 +35,11 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # HACK START
 cp -r deploy/platform/markdown src/platform/node_modules/@covalent
 cp -r deploy/platform/highlight src/platform/node_modules/@covalent
+cp -r deploy/platform/http src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/flavored-markdown/ng-package.js
-
 # BUILD: @covalent/experimental primary entrypoint
 ./node_modules/.bin/ng-packagr -p src/platform/experimental/ng-package.js
 

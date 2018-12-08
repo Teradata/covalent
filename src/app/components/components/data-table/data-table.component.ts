@@ -30,7 +30,13 @@ export class DataTableDemoComponent implements OnInit {
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
     name: 'numeric',
     type: `boolean`,
-  }];
+  },
+  {
+    description: `Aligns cell text/content to desired position. Defaults to 'start'. Overrides numeric property`,
+    name: 'align',
+    type: `'start' | 'center' | 'end'`,
+  },
+];
 
   columnAttrs: Object[] = [{
     description: `Sets unique column [name] for [sortable] events.`,
@@ -60,7 +66,8 @@ export class DataTableDemoComponent implements OnInit {
     description: `Makes cell follow the numeric data-table specs. Defaults to 'false'`,
     name: 'numeric',
     type: `boolean`,
-  }, {
+  }, 
+  {
     description: `Event emitted when the column headers are clicked. [sortable] needs to be enabled.
                   Emits an [ITdDataTableSortChangeEvent] implemented object.`,
     name: 'sortChange',
@@ -91,7 +98,7 @@ export class DataTableDemoComponent implements OnInit {
   ];
 
   columns: ITdDataTableColumn[] = [
-    { name: 'first_name',  label: 'First Name', sortable: true, width: 150 },
+    { name: 'first_name',  label: 'First Name', sortable: true, width: 150,  },
     { name: 'last_name', label: 'Last Name', filter: true, sortable: false },
     { name: 'gender', label: 'Gender', hidden: false },
     { name: 'email', label: 'Email', sortable: true, width: 250 },
