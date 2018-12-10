@@ -271,9 +271,10 @@ export class DynamicFormsDemoComponent {
   }];
 
   submitManualValidator(): void {
-    const control: AbstractControl = this.manualValidateForm.controls['vowelsElement'];
+    let key: string = 'vowelsElement';
+    const control: AbstractControl = this.manualValidateForm.controls[key];
     if (control.value.match(/[^aeiou]/)) {
-      this.manualValidateForm.controls['vowelsElement'].setErrors({ consonants: 'Only vowel characters. Do not use any consonants.' });
+      this.manualValidateForm.controls[key].setErrors({ consonants: 'Only vowel characters. Do not use any consonants.' });
     }
   }
 
