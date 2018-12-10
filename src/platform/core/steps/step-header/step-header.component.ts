@@ -36,6 +36,12 @@ export class TdStepHeaderComponent extends _TdStepHeaderMixinBase implements ICa
   @Input('state') state: StepState = StepState.None;
 
   /**
+   * tabIndex?: number
+   * tabIndex of the step header for a11y
+   */
+  @Input('tabIndex') tabIndex: number;
+
+  /**
    * Returns 'true' if [state] equals to [StepState.Complete | 'complete'], else 'false'.
    */
   isComplete(): boolean {
