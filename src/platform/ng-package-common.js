@@ -5,5 +5,6 @@ module.exports =
     "umdModuleIds": {
       "@covalent/code-editor": "covalent.code-editor"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies":  ["."],
 };
