@@ -45,11 +45,11 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   @Input('group') group: string;
 
-  @Output('click') click: EventEmitter<any> = new EventEmitter<any>();
-  @Output('dblclick') dblclick: EventEmitter<any> = new EventEmitter<any>();
-  @Output('contextmenu') contextmenu: EventEmitter<any> = new EventEmitter<any>();
-  @Output('magictypechanged') magictypechanged: EventEmitter<any> = new EventEmitter<any>();
-  @Output('dataviewchanged') dataviewchanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output('chartClick') chartClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output('chartDblclick') chartDblclick: EventEmitter<any> = new EventEmitter<any>();
+  @Output('chartContextmenu') chartContextmenu: EventEmitter<any> = new EventEmitter<any>();
+  @Output('magicTypeChanged') magicTypeChanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output('dataViewChanged') dataViewChanged: EventEmitter<any> = new EventEmitter<any>();
   @Output('datazoom') datazoom: EventEmitter<any> = new EventEmitter<any>();
   @Output('restore') restore: EventEmitter<any> = new EventEmitter<any>();
 
@@ -63,27 +63,27 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     fromEvent(this._instance, 'click').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
-      this.click.next(params);
+      this.chartClick.next(params);
     });
     fromEvent(this._instance, 'dblclick').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
-      this.dblclick.next(params);
+      this.chartDblclick.next(params);
     });
     fromEvent(this._instance, 'contextmenu').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
-      this.contextmenu.next(params);
+      this.chartContextmenu.next(params);
     });
     fromEvent(this._instance, 'magictypechanged').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
-      this.magictypechanged.next(params);
+      this.magicTypeChanged.next(params);
     });
     fromEvent(this._instance, 'dataviewchanged').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
-      this.dataviewchanged.next(params);
+      this.dataViewChanged.next(params);
     });
     fromEvent(this._instance, 'datazoom').pipe(
       takeUntil(this._destroy),
