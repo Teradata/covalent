@@ -1,3 +1,27 @@
+<a name="2.0.0-rc.1"></a>
+# [2.0.0-rc.1](https://github.com/teradata/covalent-echarts/compare/v2.0.0-beta.2...v2.0.0-rc.1) (2018-12-10)
+
+Highlights:
+
+- Toolbar Atomic Module
+- Bugfixes
+
+Since we are quite happy with the base, we will add more atomic modules in upcoming minor releases.
+
+
+### Bug Fixes
+
+* **chart:** removed this._instance.clear() from ngOnChanges ([#40](https://github.com/teradata/covalent-echarts/issues/40)) ([5c1441b](https://github.com/teradata/covalent-echarts/commit/5c1441b))
+
+
+### Features
+
+* **docs:** use [@covalent](https://github.com/covalent)/flavored-markdown module ([8a7ae34](https://github.com/teradata/covalent-echarts/commit/8a7ae34))
+* **events:** rename outputs so they dont clash with native outputs ([46ce972](https://github.com/teradata/covalent-echarts/commit/46ce972))
+* **toolbox:** add toolbox atomic module and docs ([#45](https://github.com/teradata/covalent-echarts/issues/45)) ([654d120](https://github.com/teradata/covalent-echarts/commit/654d120))
+
+
+
 <a name="2.0.0-beta.2"></a>
 # [2.0.0-beta.2](https://github.com/teradata/covalent-echarts/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-11-20)
 
