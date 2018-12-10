@@ -1,3 +1,100 @@
+<a name="2.0.0-rc.1"></a>
+# [2.0.0-rc.1](https://github.com/teradata/covalent/compare/v2.0.0-beta.5...v2.0.0-rc.1) (2018-12-10)
+
+Highlights:
+
+- `@covalent/http` now uses `@angular/common/http` under the covers and has new Http Decorator Framework.
+- Previous Http Module is now `@covalent/http-deprec`
+- Covalent Navigational Steps added into `@covalent/core/steps`.
+- Expansion panel group has accordion mode now!
+- Moar Bug fixes
+- Performance improvements.
+
+Dont forget to check out `@covalent/echarts`
+
+For more information go to the [covalent echarts docs](https://teradata.github.io/covalent-echarts)
+
+### Breaking Changes
+
+As mentioned in our previous release, there are major changes with our http module since `@angular/http` will be removed soon from the angular framework so we are moving to `@angular/common/http`.
+
+If you still want to keep using the deprecated version of `http` that uses `@angular/http`, you can do so by installing `@covalent/http-deprec`.
+
+Before:
+
+```typescript
+import { HttpInterceptorService, CovalentHttpModule } from '@covalent/http';
+```
+
+After:
+
+```typescript
+import { HttpInterceptorService, CovalentHttpModule } from '@covalent/http-deprec';
+```
+
+Our new `http` module has a different usage and uses `@angular/common/http` under the covers. You can find more about it by clicking [here](https://teradata.github.io/covalent/#/components/http).
+
+* **animations:** remove deprecated animation functions ([#1297](https://github.com/teradata/covalent/issues/1297)) ([f37ce0c](https://github.com/teradata/covalent/commit/f37ce0c))
+
+Function animations will no longer be part of covalent, please use the animation constants moving foward. 
+
+Before:
+
+```typescript
+TdCollapseAnimation()
+```
+
+After:
+
+```typescript
+tdCollapseAnimation
+```
+
+Usage info [here](https://teradata.github.io/covalent/#/components/animations)
+
+* **expansion-panel:** add multi input, openAll(), and closeAll() ([#1306](https://github.com/teradata/covalent/issues/1306)) ([1521137](https://github.com/teradata/covalent/commit/1521137))
+
+With the new `multi` input in `td-expansion-panel-group`, the expansions will be accordion by default (`[multi]="false"`). So if you want to keep the same behavior, please add `multi` as an input.
+
+Before: 
+
+```html
+<td-expansion-panel-group>
+```
+
+After:
+
+```html
+<td-expansion-panel-group multi>
+```
+
+### Bug Fixes
+
+* **animations:** changing to overflow hidden instead of visibility hidden ([#1296](https://github.com/teradata/covalent/issues/1296)) ([bdc5628](https://github.com/teradata/covalent/commit/bdc5628))
+* **chips:** subscription memory leak for inputChanges ([#1298](https://github.com/teradata/covalent/issues/1298)) ([820569b](https://github.com/teradata/covalent/commit/820569b))
+* **data-table:** add align input to cells ([#1303](https://github.com/teradata/covalent/issues/1303)) ([641ece6](https://github.com/teradata/covalent/commit/641ece6))
+* **data-table:** reset scroll when hidding element ([#1299](https://github.com/teradata/covalent/issues/1299)) ([4036ab3](https://github.com/teradata/covalent/commit/4036ab3))
+* **dynamic-forms:** update template when manually adding errors to controls ([#1292](https://github.com/teradata/covalent/issues/1292)) ([9cfa197](https://github.com/teradata/covalent/commit/9cfa197))
+* **highlight:** wrong language loaded initially when using content input ([#1301](https://github.com/teradata/covalent/issues/1301)) ([3709e28](https://github.com/teradata/covalent/commit/3709e28))
+* **http:** reverse execution of interceptors for response and response error ([#1300](https://github.com/teradata/covalent/issues/1300)) ([4c4f5c9](https://github.com/teradata/covalent/commit/4c4f5c9))
+* **lint:** upgrade tslint to fix issue ([f724a5c](https://github.com/teradata/covalent/commit/f724a5c))
+* **markdown:** initial render was broken when using [content] input ([c1399a7](https://github.com/teradata/covalent/commit/c1399a7))
+
+
+### Features
+
+* **chips:** add compareWith input ([#1308](https://github.com/teradata/covalent/issues/1308)) ([93b9e2f](https://github.com/teradata/covalent/commit/93b9e2f))
+* **docs:** add link to github repo to toolbar ([#1295](https://github.com/teradata/covalent/issues/1295)) ([f8bc7a6](https://github.com/teradata/covalent/commit/f8bc7a6)), closes [#966](https://github.com/teradata/covalent/issues/966)
+* **expansion-panel:** add multi input, openAll(), and closeAll() ([#1306](https://github.com/teradata/covalent/issues/1306)) ([1521137](https://github.com/teradata/covalent/commit/1521137))
+* **http:** create http-deprec package for `[@angular](https://github.com/angular)/http` use ([#1305](https://github.com/teradata/covalent/issues/1305)) ([e44186a](https://github.com/teradata/covalent/commit/e44186a))
+* **http:** use HttpClient instead of Http and improve API usage + http decorators **BREAKING CHANGE** ([#1310](https://github.com/teradata/covalent/issues/1310)) ([886db98](https://github.com/teradata/covalent/commit/886db98))
+* **markdown:** add refresh method to rerender content ([04d8816](https://github.com/teradata/covalent/commit/04d8816))
+* **markdown:** add simpleLineBreaks input ([#1304](https://github.com/teradata/covalent/issues/1304)) ([e2f3c75](https://github.com/teradata/covalent/commit/e2f3c75)), closes [#1290](https://github.com/teradata/covalent/issues/1290)
+* **nav-steps:** graduation from experimental to core ([#1307](https://github.com/teradata/covalent/issues/1307)) ([fdb0df7](https://github.com/teradata/covalent/commit/fdb0df7))
+* **search:** added blur event on search-box ([#1302](https://github.com/teradata/covalent/issues/1302)) ([7778c58](https://github.com/teradata/covalent/commit/7778c58))
+
+
+
 <a name="2.0.0-beta.5"></a>
 # [2.0.0-beta.5](https://github.com/teradata/covalent/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2018-11-21)
 

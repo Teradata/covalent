@@ -16,7 +16,7 @@
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="updates.length + 3">
+      <td-notification-count color="accent" [notifications]="updates.length + 1">
         <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
@@ -32,18 +32,6 @@
             </a>
             <mat-divider></mat-divider>
           </ng-template>
-          <a mat-list-item href="https://github.com/Teradata/covalent/tree/develop/src/platform/experimental" target="_blank">
-            <mat-icon matListAvatar>view_list</mat-icon>
-            <h4 matLine><span class="text-wrap">Navigational Stepper</span></h4>
-            <p matLine>*experimental*</p>
-          </a>
-          <mat-divider></mat-divider>
-          <a mat-list-item href="https://github.com/Teradata/covalent/tree/develop/src/platform/experimental" target="_blank">
-            <mat-icon matListAvatar>http</mat-icon>
-            <h4 matLine><span class="text-wrap">Http Decorators</span></h4>
-            <p matLine>*experimental*</p>
-          </a>
-          <mat-divider></mat-divider>
           <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L66-L77" target="_blank">
             <mat-icon matListAvatar>change_history</mat-icon>
             <h4 matLine><span class="text-wrap">Dependencies</span></h4>

@@ -18,14 +18,19 @@ import { getDirection, setDirection } from '../../utilities/direction';
 export class ToolbarComponent {
   updates: Object[] = [{
       description: 'initial release!',
-      icon: 'layers',
-      route: '/components/flavored-markdown',
-      title: 'Flavored Markdown Parser',
-    }, {
-      description: '(bottom) event added',
       icon: 'format_line_spacing',
-      route: '/components/virtual-scroll',
-      title: 'Virtual Scroll',
+      route: '/components/nav-steps',
+      title: 'Stepper (Navigational)',
+    }, {
+      description: '[multi] input added',
+      icon: 'open_with',
+      route: '/components/expansion-panel',
+      title: 'Expansion Panels',
+    }, {
+      description: 'HttpClient usage and http decorators',
+      icon: 'http',
+      route: '/components/http',
+      title: 'Http',
     },
   ];
 
