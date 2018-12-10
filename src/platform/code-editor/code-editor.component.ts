@@ -599,6 +599,75 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     return loadPromise;
   }
 
+ /**
+  * showFullScreenEditor request for full screen of Code Editor based on its browser type.
+  */
+  public showFullScreenEditor(): void {
+    const codeEditorElement: HTMLDivElement = this._editorContainer.nativeElement as HTMLDivElement;
+    const fullScreenMap: Object = {
+       // Chrome
+      'requestFullscreen': () => codeEditorElement.requestFullscreen(),
+       // Safari
+      'webkitRequestFullscreen': () => codeEditorElement.webkitRequestFullscreen(),
+       // IE
+      'msRequestFullscreen': () => (<any>codeEditorElement).msRequestFullscreen(),
+       // Firefox
+      'mozRequestFullScreen': () => (<any>codeEditorElement).mozRequestFullScreen(),
+    };
+
+    for (const handler of Object.keys(fullScreenMap)) {
+      if (codeEditorElement[handler]) {
+          fullScreenMap[handler]();
+      }
+    }
+  }
+
+  /**
+   * exitFullScreenEditor request to exit full screen of Code Editor based on its browser type.
+   */
+  public exitFullScreenEditor(): void {
+    const exitFullScreenMap: object = {
+      // Chrome
+      'exitFullscreen': () => document.exitFullscreen(),
+      // Safari
+      'webkitExitFullscreen': () => document.webkitExitFullscreen(),
+      // Firefox
+      'mozCancelFullScreen': () => (<any>document).mozCancelFullScreen(),
+      // IE
+      'msExitFullscreen': () => (<any>document).msExitFullscreen(),
+    };
+
+    for (const handler of Object.keys(exitFullScreenMap)) {
+      if (document[handler]) {
+          exitFullScreenMap[handler]();
+      }
+    }
+  }
+
+  public getEditor(): any {
+    return this._editor;
+  }
+
+  public addFullScreenModeCommand(): void {
+    this._editor.addAction({
+        // An unique identifier of the contributed action.
+        id: 'fullScreen',
+       // A label of the action that will be presented to the user.
+        label: 'Full Screen',
+        // An optional array of keybindings for the action.
+        contextMenuGroupId: 'navigation',
+        keybindings: [
+            monaco.KeyCode.F11,
+        ],
+        contextMenuOrder: 1.5,
+        // Method that will be executed when the action is triggered.
+        // @param editor The editor instance is passed in as a convinience
+        run: (ed: any) => {
+            this.showFullScreenEditor();
+        },
+    });
+  }
+
   /**
    * initMonaco method creates the monaco editor into the @ViewChild('editorContainer')
    * and emit the onEditorInitialized event.  This is only used in the browser version.
@@ -624,5 +693,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     window.addEventListener('resize', () => {
         this._editor.layout();
     });
+    this.addFullScreenModeCommand();
   }
+
 }
