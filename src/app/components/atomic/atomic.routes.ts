@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AtomicTooltipComponent } from './tooltip/tooltip.component';
 import { AtomicAxisComponent } from './axis/axis.component';
+import { AtomicToolboxComponent } from './toolbox/toolbox.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     component: AtomicAxisComponent,
     path: 'axis',
+  },
+  {
+    component: AtomicToolboxComponent,
+    path: 'toolbox',
   },
 ];
 

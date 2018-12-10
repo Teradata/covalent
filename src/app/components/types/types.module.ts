@@ -20,6 +20,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentLoadingModule } from '@covalent/core/loading';
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentMenuModule } from '@covalent/core/menu';
+import { CovalentDataTableModule } from '@covalent/core/data-table';
 import { CovalentHighlightModule } from '@covalent/highlight';
 
 import { TypesBarComponent } from './bar/bar.component';
@@ -40,6 +41,7 @@ import { CovalentSankeyEchartsModule } from '@covalent/echarts/sankey';
 import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
 import { CovalentTreemapEchartsModule } from '@covalent/echarts/treemap';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
+import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
 import { moduleRoutes } from './types.routes';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
@@ -67,6 +69,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentLoadingModule,
     CovalentMediaModule,
     CovalentMenuModule,
+    CovalentDataTableModule,
     CovalentHighlightModule,
     // Covalent Echarts
     CovalentBaseEchartsModule,
@@ -78,6 +81,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     CovalentGraphEchartsModule,
     CovalentSankeyEchartsModule,
     CovalentTreemapEchartsModule,
+    CovalentToolboxEchartsModule,
     // internal
     DocumentationToolsModule,
     moduleRoutes,

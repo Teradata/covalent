@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AtomicTooltipComponent } from './tooltip/tooltip.component';
 import { AtomicAxisComponent } from './axis/axis.component';
+import { AtomicToolboxComponent } from './toolbox/toolbox.component';
 
 import { moduleRoutes } from './atomic.routes';
 
@@ -26,6 +27,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
   declarations: [
     AtomicTooltipComponent,
     AtomicAxisComponent,
+    AtomicToolboxComponent,
   ],
 })
 export class AtomicModule {}

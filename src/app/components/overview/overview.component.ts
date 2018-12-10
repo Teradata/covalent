@@ -73,6 +73,12 @@ atomicComponents: Object[] = [
     route: ['atomic', 'axis'],
     title: 'Axis',
   },
+  {
+    color: 'cyan-500',
+    icon: 'art_track',
+    route: ['atomic', 'toolbox'],
+    title: 'Toolbox',
+  },
 ];
 
   constructor(public media: TdMediaService) { }

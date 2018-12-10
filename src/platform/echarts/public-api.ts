@@ -4,3 +4,4 @@ export * from './line/index';
 export * from './scatter/index';
 export * from './tree/index';
 export * from './tooltip/index';
+export * from './toolbox/index';

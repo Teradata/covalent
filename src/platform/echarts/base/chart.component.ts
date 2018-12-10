@@ -48,6 +48,10 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Output('click') click: EventEmitter<any> = new EventEmitter<any>();
   @Output('dblclick') dblclick: EventEmitter<any> = new EventEmitter<any>();
   @Output('contextmenu') contextmenu: EventEmitter<any> = new EventEmitter<any>();
+  @Output('magictypechanged') magictypechanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output('dataviewchanged') dataviewchanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output('datazoom') datazoom: EventEmitter<any> = new EventEmitter<any>();
+  @Output('restore') restore: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
@@ -70,6 +74,26 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
       this.contextmenu.next(params);
+    });
+    fromEvent(this._instance, 'magictypechanged').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.magictypechanged.next(params);
+    });
+    fromEvent(this._instance, 'dataviewchanged').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.dataviewchanged.next(params);
+    });
+    fromEvent(this._instance, 'datazoom').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.datazoom.next(params);
+    });
+    fromEvent(this._instance, 'restore').pipe(
+      takeUntil(this._destroy),
+    ).subscribe((params: any) => {
+      this.restore.next(params);
     });
     if (this.group) {
       this._instance.group = this.group;
@@ -129,6 +153,10 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     this._destroy.unsubscribe();
   }
 
+  checkToolboxHeight(): string {
+    return this.config.toolbox.height ? this.config.toolbox.height : '40';
+  }
+
   render(): void {
     if (this._instance) {
       this._instance.setOption(assignDefined(this._state, {
@@ -136,8 +164,10 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
           show: true,
           left: '20',
           right: '20',
-          bottom: '10',
-          top: '10',
+          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') 
+          || (this.config.toolbox && this.config.toolbox.bottom) ? this.checkToolboxHeight() : '10',
+          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') 
+          || (this.config.toolbox && this.config.toolbox.top) ? this.checkToolboxHeight() : '10',
           containLabel: true,
           borderColor: '#FCFCFC',
         },

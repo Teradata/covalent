@@ -145,7 +145,11 @@ export type TdAxisPointerType = 'line' | 'shadow' | 'cross';
 export type TdLabelPosition = 'top' | 'left' | 'right' | 'bottom' | 'inside' | 'insideLeft' | 'insideRight' |
   'insideTop' | 'insideBottom' | 'insideTopLeft' | 'insideBottomLeft' | 'insideTopRight' | 'insideBottomRight' | string[];
 
+export type TdTextPosition = 'left' | 'right' | 'top' | 'bottom';
+
 export type TdAlign = 'left' | 'center' | 'right';
+
+export type TdTextAlign = 'left' | 'right';
 
 export type TdLineType = 'solid' | 'dashed' | 'dotted';
 

@@ -1,13 +1,46 @@
 <div>
   <mat-card flex>
     <mat-card-title>Bar</mat-card-title>
-    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, toolbox, x & y axis</mat-card-subtitle>
     <mat-divider></mat-divider>
     <mat-card-content>
       <mat-tab-group mat-stretch-tabs dynamicHeight>
         <mat-tab>
           <ng-template matTabLabel>Demo</ng-template>
-          <td-chart [style.height.px]="300">
+          <td-chart [style.height.px]="300" [config]="{toolbox: { top: '10'}}">
+            <td-chart-toolbox
+                        [show]="true"
+                        [right]="30"
+                        [feature]="{dataView: {readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh']},
+                                    dataZoom: {title: {zoom: 'Zoom', back: 'Back'}},
+                                    magicType: {type: ['line', 'bar', 'stack', 'tiled'], 
+                                                title: {line: 'Line', bar: 'Bar', stack: 'Stack', tiled: 'Tiled'}},
+                                    restore: {title: 'Restore'}}">
+              <ng-template tdViewDataFormatter>
+                <table td-data-table>
+                  <thead>
+                    <tr td-data-table-column-row>
+                      <th td-data-table-column>Category</th>
+                      <th td-data-table-column>{{config.series[0].name}}</th>
+                      <th td-data-table-column>{{config.series[1].name}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let item of ['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']; let i = index">
+                      <tr td-data-table-row>
+                        <td td-data-table-cell>{{item}}</td>
+                        <td td-data-table-cell *ngIf="[150, 130, 150, 120, 150, 120] as firstSeries">
+                          {{firstSeries[i]}}
+                        </td>
+                        <td td-data-table-cell *ngIf="[80, 122, 80, 120, 80, 120] as secondSeries">
+                          {{secondSeries[i]}}
+                        </td>
+                      </tr>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </ng-template>
+            </td-chart-toolbox>
             <td-chart-tooltip [trigger]="'item'"
                               [textStyle]="{ color: '#818181' }"
                               [backgroundColor]="'#ffffff'">
@@ -33,7 +66,7 @@
             <td-chart-y-axis [show]="true"
                               [type]="'value'"
                               [position]="'right'"
-                              [max]="200"
+                              [max]="300"
                               [splitLine]="{ lineStyle: { type: 'dotted' } }">
             </td-chart-y-axis>
             <td-chart-series td-bar
@@ -54,47 +87,80 @@
           <p>HTML: </p>
           <td-highlight lang="html">
             <![CDATA[
-              <td-chart [style.height.px]="300">
-                <td-chart-tooltip [trigger]="'item'"
-                                  [textStyle]="{ color: '#818181' }"
-                                  [backgroundColor]="'#ffffff'">
-                  <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
-                    <ng-container *ngIf="params">
-                      <div layout="row" layout-align="start center">
-                        <mat-icon>
-                          <span [style.color]="params.color">people</span>
-                        </mat-icon>
-                        <span class="mat-caption pad-left-sm">
-                          { {params.seriesName + ': ' + params.value} }
-                        </span>
-                      </div>
-                    </ng-container>
-                  </ng-template>
-                </td-chart-tooltip>
-                <td-chart-x-axis [show]="true"
-                                  [position]="'bottom'"
-                                  [type]="'category'"
-                                  [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
-                                  [boundaryGap]="true">
-                </td-chart-x-axis>
-                <td-chart-y-axis [show]="true"
-                                  [type]="'value'"
-                                  [position]="'right'"
-                                  [max]="200"
-                                  [splitLine]="{ lineStyle: { type: 'dotted' } }">
-                </td-chart-y-axis>
-                <td-chart-series td-bar
-                                [data]="[150, 130, 150, 120, 150, 120]"
-                                [name]="'Today'"
-                                [color]="'#F2724B'">
-                </td-chart-series>
-                <td-chart-series td-bar
-                                [data]="[80, 122, 80, 120, 80, 120]"
-                                [name]="'Yesterday'"
-                                [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
-                                [color]="'#3A4950'">
-                </td-chart-series>
-              </td-chart>
+            <td-chart [style.height.px]="300" [config]="{toolbox: { top: '10'}}">
+              <td-chart-toolbox
+                          [show]="true"
+                          [right]="30"
+                          [feature]="{dataView: {readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh']},
+                                      dataZoom: {title: {zoom: 'Zoom', back: 'Back'}},
+                                      magicType: {type: ['line', 'bar', 'stack', 'tiled'], 
+                                                  title: {line: 'Line', bar: 'Bar', stack: 'Stack', tiled: 'Tiled'}},
+                                      restore: {title: 'Restore'}}">
+                <ng-template tdViewDataFormatter>
+                  <table td-data-table>
+                    <thead>
+                      <tr td-data-table-column-row>
+                        <th td-data-table-column>Category</th>
+                        <th td-data-table-column>{{config.series[0].name}}</th>
+                        <th td-data-table-column>{{config.series[1].name}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let item of ['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']; let i = index">
+                        <tr td-data-table-row>
+                          <td td-data-table-cell>{ {item} }</td>
+                          <td td-data-table-cell *ngIf="[150, 130, 150, 120, 150, 120] as firstSeries">
+                            { {firstSeries[i]} }
+                          </td>
+                          <td td-data-table-cell *ngIf="[80, 122, 80, 120, 80, 120] as secondSeries">
+                            { {secondSeries[i]} }
+                          </td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                </ng-template>
+              </td-chart-toolbox>
+              <td-chart-tooltip [trigger]="'item'"
+                                [textStyle]="{ color: '#818181' }"
+                                [backgroundColor]="'#ffffff'">
+                <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
+                  <ng-container *ngIf="params">
+                    <div layout="row" layout-align="start center">
+                      <mat-icon>
+                        <span [style.color]="params.color">people</span>
+                      </mat-icon>
+                      <span class="mat-caption pad-left-sm">
+                        { {params.seriesName + ': ' + params.value} }
+                      </span>
+                    </div>
+                  </ng-container>
+                </ng-template>
+              </td-chart-tooltip>
+              <td-chart-x-axis [show]="true"
+                                [position]="'bottom'"
+                                [type]="'category'"
+                                [data]="['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports']"
+                                [boundaryGap]="true">
+              </td-chart-x-axis>
+              <td-chart-y-axis [show]="true"
+                                [type]="'value'"
+                                [position]="'right'"
+                                [max]="300"
+                                [splitLine]="{ lineStyle: { type: 'dotted' } }">
+              </td-chart-y-axis>
+              <td-chart-series td-bar
+                              [data]="[150, 130, 150, 120, 150, 120]"
+                              [name]="'Today'"
+                              [color]="'#F2724B'">
+              </td-chart-series>
+              <td-chart-series td-bar
+                              [data]="[80, 122, 80, 120, 80, 120]"
+                              [name]="'Yesterday'"
+                              [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
+                              [color]="'#3A4950'">
+              </td-chart-series>
+            </td-chart>
             ]]>
           </td-highlight>
         </mat-tab>

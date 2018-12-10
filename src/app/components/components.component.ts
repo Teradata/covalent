@@ -77,6 +77,12 @@ export class ComponentsComponent {
       route: ['atomic', 'axis'],
       title: 'Axis',
     },
+    {
+      description: 'Toolbox options for refreshing, saving chart as an image, data zoom, data view and on the fly chart types.',
+      icon: 'art_track',
+      route: ['atomic', 'toolbox'],
+      title: 'Toolbox',
+    },
   ];
 
   constructor(public media: TdMediaService,

@@ -1,7 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'types-bar',
@@ -11,9 +8,27 @@ import {
   preserveWhitespaces: true,
 })
 export class TypesBarComponent {
-
+  
   // Chart config
   config: any = {
+    toolbox: {
+      showTitle: true,
+      top: 0,
+      right: '30px',
+      show: true,
+      feature: {
+        dataView: {
+          title: 'View Data',
+          lang: ['Data View', 'Turn Off', 'Refresh'],
+        },
+        dataZoom: { title: { zoom: 'Zoom', back: 'Back' } },
+        magicType: {
+          type: ['line', 'bar', 'stack', 'tiled'],
+          title: { line: 'Line', bar: 'Bar', stack: 'Stack', tiled: 'Tiled' },
+        },
+        restore: {title: 'Restore'},
+      },
+    },
     xAxis: [
       {
         data: [
