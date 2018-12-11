@@ -4,6 +4,6 @@
     "baseUrl": "."
   },
   "angularCompilerOptions": {
-    "skipTemplateCodegen": true // not necessary for libraries
+    "skipTemplateCodegen": true
   }
 }
