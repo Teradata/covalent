@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true // not necessary for libraries
+  }
+}
