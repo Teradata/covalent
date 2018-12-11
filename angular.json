@@ -216,7 +216,8 @@
           "options": {
             "main": "src/platform/core/test.ts",
             "tsConfig": "src/platform/core/tsconfig.spec.json",
-            "karmaConfig": "src/platform/core/karma.conf.js"
+            "karmaConfig": "src/platform/core/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -251,7 +252,8 @@
           "options": {
             "main": "src/platform/highlight/test.ts",
             "tsConfig": "src/platform/highlight/tsconfig.spec.json",
-            "karmaConfig": "src/platform/highlight/karma.conf.js"
+            "karmaConfig": "src/platform/highlight/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -286,7 +288,8 @@
           "options": {
             "main": "src/platform/dynamic-forms/test.ts",
             "tsConfig": "src/platform/dynamic-forms/tsconfig.spec.json",
-            "karmaConfig": "src/platform/dynamic-forms/karma.conf.js"
+            "karmaConfig": "src/platform/dynamic-forms/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -321,7 +324,8 @@
           "options": {
             "main": "src/platform/http/test.ts",
             "tsConfig": "src/platform/http/tsconfig.spec.json",
-            "karmaConfig": "src/platform/http/karma.conf.js"
+            "karmaConfig": "src/platform/http/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -356,7 +360,8 @@
           "options": {
             "main": "src/platform/http-deprec/test.ts",
             "tsConfig": "src/platform/http-deprec/tsconfig.spec.json",
-            "karmaConfig": "src/platform/http-deprec/karma.conf.js"
+            "karmaConfig": "src/platform/http-deprec/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -391,7 +396,8 @@
           "options": {
             "main": "src/platform/markdown/test.ts",
             "tsConfig": "src/platform/markdown/tsconfig.spec.json",
-            "karmaConfig": "src/platform/markdown/karma.conf.js"
+            "karmaConfig": "src/platform/markdown/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -426,7 +432,8 @@
           "options": {
             "main": "src/platform/flavored-markdown/test.ts",
             "tsConfig": "src/platform/flavored-markdown/tsconfig.spec.json",
-            "karmaConfig": "src/platform/flavored-markdown/karma.conf.js"
+            "karmaConfig": "src/platform/flavored-markdown/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
@@ -436,7 +443,9 @@
               "src/platform/flavored-markdown/tsconfig.lib.json",
               "src/platform/flavored-markdown/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -459,7 +468,8 @@
           "options": {
             "main": "src/platform/experimental/test.ts",
             "tsConfig": "src/platform/experimental/tsconfig.spec.json",
-            "karmaConfig": "src/platform/experimental/karma.conf.js"
+            "karmaConfig": "src/platform/experimental/karma.conf.js",
+            "polyfills": "src/polyfills.ts"
           }
         },
         "lint": {
