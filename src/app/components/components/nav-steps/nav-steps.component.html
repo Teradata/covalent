@@ -1,0 +1,205 @@
+<mat-card>
+  <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
+    <span flex></span>
+    <button mat-icon-button
+            matTooltip="View Source"
+            (click)="toggleHorizontalDemoCode = !toggleHorizontalDemoCode">
+      <mat-icon class="tc-grey-700">code</mat-icon>
+    </button>
+  </div>
+  <mat-card-title>Stepper (Navigational)</mat-card-title>
+  <mat-card-subtitle>Navigate across a sequence of logical & numbered steps (shrink width of page to see responsive behavior)</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleHorizontalDemoCode">
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>HTML</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <nav td-steps horizontal>
+              <a td-step-link
+                  routerLinkActive
+                  #rla="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact:true}"
+                  [routerLink]="['/components', 'nav-steps']"
+                  [state]="'complete'"
+                  [label]="'1st step'"
+                  [sublabel]="'some description'"
+                  [active]="rla.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla2="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route2']"
+                  [state]="'complete'"
+                  [label]="'2nd step'"
+                  [disabled]="true"
+                  [active]="rla2.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla3="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route3']"
+                  [state]="'required'"
+                  [label]="'3rd step'"
+                  [active]="rla3.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla4="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route4']"
+                  [state]="'none'"
+                  [label]="'Optional step'"
+                  [sublabel]="'Last and final'"
+                  [active]="rla4.isActive"></a>
+            </nav>
+            <mat-divider inset></mat-divider>
+            <router-outlet></router-outlet>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+  </div>
+  <nav td-steps horizontal>
+    <a td-step-link
+        routerLinkActive
+        #rla="routerLinkActive"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/components', 'nav-steps']"
+        [state]="'complete'"
+        [label]="'1st step'"
+        [sublabel]="'some description'"
+        [active]="rla.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla2="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route2']"
+        [state]="'complete'"
+        [label]="'2nd step'"
+        [disabled]="true"
+        [active]="rla2.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla3="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route3']"
+        [state]="'required'"
+        [label]="'3rd step'"
+        [active]="rla3.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla4="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route4']"
+        [state]="'none'"
+        [label]="'Optional step'"
+        [sublabel]="'Last and final'"
+        [active]="rla4.isActive"></a>
+  </nav>
+  <mat-divider inset></mat-divider>
+  <router-outlet></router-outlet>
+</mat-card>
+
+<mat-card>
+  <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
+    <span flex></span>
+    <button mat-icon-button
+            matTooltip="View Source"
+            (click)="toggleVerticalDemoCode = !toggleVerticalDemoCode">
+      <mat-icon class="tc-grey-700">code</mat-icon>
+    </button>
+  </div>
+  <mat-card-title>Stepper (Vertical Navigational)</mat-card-title>
+  <mat-card-subtitle>great for tutorials or documentation</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleVerticalDemoCode">
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>HTML</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+            <nav td-steps vertical>
+              <a td-step-link
+                  routerLinkActive
+                  #rla="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact:true}"
+                  [routerLink]="['/components', 'nav-steps']"
+                  [state]="'complete'"
+                  [label]="'1st step'"
+                  [sublabel]="'some description'"
+                  [active]="rla.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla2="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route2']"
+                  [state]="'complete'"
+                  [label]="'2nd step'"
+                  [disabled]="true"
+                  [active]="rla2.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla3="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route3']"
+                  [state]="'required'"
+                  [label]="'3rd step'"
+                  [active]="rla3.isActive"></a>
+              <a td-step-link
+                  routerLinkActive
+                  #rla4="routerLinkActive"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  [routerLink]="['/components', 'nav-steps', 'route4']"
+                  [state]="'none'"
+                  [label]="'Optional step'"
+                  [sublabel]="'Last and final'"
+                  [active]="rla4.isActive"></a>
+            </nav>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+  </div>
+  <nav td-steps vertical>
+    <a td-step-link
+        routerLinkActive
+        #rla="routerLinkActive"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/components', 'nav-steps']"
+        [state]="'complete'"
+        [label]="'1st step'"
+        [sublabel]="'some description'"
+        [active]="rla.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla2="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route2']"
+        [state]="'complete'"
+        [label]="'2nd step'"
+        [disabled]="true"
+        [active]="rla2.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla3="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route3']"
+        [state]="'required'"
+        [label]="'3rd step'"
+        [active]="rla3.isActive"></a>
+    <a td-step-link
+        routerLinkActive
+        #rla4="routerLinkActive"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/components', 'nav-steps', 'route4']"
+        [state]="'none'"
+        [label]="'Optional step'"
+        [sublabel]="'Last and final'"
+        [active]="rla4.isActive"></a>
+  </nav>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/steps/nav/README.md"></td-readme-loader>

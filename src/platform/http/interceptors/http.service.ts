@@ -14,21 +14,34 @@ export interface ITdHttpInterceptorConfig {
   paths: string[];
 }
 
-export class TdHttpService extends HttpClient {
-
+export class TdInterceptorBehaviorService {
   private _requestInterceptors: ITdHttpInterceptorMapping[] = [];
 
-  constructor(private _handler: HttpHandler,
-              private _injector: Injector,
+  get requestInterceptors(): ITdHttpInterceptorMapping[] {
+    return this._requestInterceptors;
+  }
+
+  get httpInterceptorMatcher(): ITdHttpInterceptorMatcher {
+    return this._httpInterceptorMatcher;
+  }
+
+  constructor(private _injector: Injector,
               private _httpInterceptorMatcher: ITdHttpInterceptorMatcher,
               requestInterceptorConfigs: ITdHttpInterceptorConfig[]) {
-    super(_handler);
     requestInterceptorConfigs.forEach((config: ITdHttpInterceptorConfig) => {
       this._requestInterceptors.push({
         interceptor: <ITdHttpInterceptor>_injector.get(config.interceptor),
         paths: config.paths,
       });
     });
+  }
+}
+
+export class TdHttpService extends HttpClient {
+
+  constructor(private _handler: HttpHandler,
+              private _interceptorBehavior: TdInterceptorBehaviorService) {
+    super(_handler);
   }
 
   request(first: string|HttpRequest<any>, url?: string, options: {
@@ -40,8 +53,8 @@ export class TdHttpService extends HttpClient {
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
   } = {}): Observable<any> {
-    let interceptors: ITdHttpInterceptor[] = this._requestInterceptors.filter((mapping: ITdHttpInterceptorMapping) => {
-      return this._httpInterceptorMatcher.matches({url: url}, mapping);
+    let interceptors: ITdHttpInterceptor[] = this._interceptorBehavior.requestInterceptors.filter((mapping: ITdHttpInterceptorMapping) => {
+      return this._interceptorBehavior.httpInterceptorMatcher.matches({url: url}, mapping);
     }).map((mapping: ITdHttpInterceptorMapping) => {
       return mapping.interceptor;
     });

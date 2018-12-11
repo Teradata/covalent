@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
 import { HttpClientModule, HttpHandler } from '@angular/common/http';
 
-import { TdHttpService, ITdHttpInterceptorConfig } from './interceptors/http.service';
+import { TdHttpService, TdInterceptorBehaviorService, ITdHttpInterceptorConfig } from './interceptors/http.service';
 import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
 export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
@@ -9,7 +9,10 @@ export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpCo
 export type HttpConfig = {interceptors: ITdHttpInterceptorConfig[]};
 
 export function httpFactory(handler: HttpHandler, injector: Injector, config: HttpConfig): TdHttpService {
-  return new TdHttpService(handler, injector, new TdURLRegExpInterceptorMatcher(), config.interceptors);
+  return new TdHttpService(
+              handler,
+              new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
+            );
 }
 
 export const HTTP_INTERCEPTOR_PROVIDER: Provider = {

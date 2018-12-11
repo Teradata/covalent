@@ -336,8 +336,9 @@ describe('Component: TdDynamicForms', () => {
 
       fixture.detectChanges();
       fixture.whenStable().then(() => {
-        dynamicFormsComponent.controls['customElement'].markAsTouched();
-        dynamicFormsComponent.controls['customElement'].setErrors({ customError: 'CUSTOM_ERROR' });
+        let key: string = 'customElement';
+        dynamicFormsComponent.controls[key].markAsTouched();
+        dynamicFormsComponent.controls[key].setErrors({ customError: 'CUSTOM_ERROR' });
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {

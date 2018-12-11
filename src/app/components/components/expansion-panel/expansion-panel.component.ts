@@ -15,5 +15,6 @@ export class ExpansionPanelDemoComponent {
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   disabled: boolean = false;
+  multi: boolean = false;
 
 }
