@@ -21,6 +21,11 @@ export class ComponentsOverviewComponent {
       route: 'steps',
       title: 'Stepper',
     }, {
+      color: 'deep-orange-A700',
+      icon: 'format_line_spacing',
+      route: 'nav-steps',
+      title: 'Stepper (Navigational)',
+    }, {
       color: 'blue-A700',
       icon: 'open_with',
       route: 'expansion-panel',

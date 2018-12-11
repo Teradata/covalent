@@ -53,7 +53,7 @@
         <p>Typescript:</p>
         <td-highlight lang="typescript">
           <![CDATA[
-            export class ChipsDemoComponent {
+            export class ExpansionPanelDemoComponent {
               disabled: boolean = false;
             }
           ]]>
@@ -69,61 +69,6 @@
       </mat-slide-toggle>
     </div>
   </mat-card-actions>
-</mat-card>
-
-<mat-card>
-  <mat-card-title>Grouped Expansion panels</mat-card-title>
-  <mat-card-subtitle>Add margin animation between grouped expansion panels</mat-card-subtitle>
-  <mat-divider></mat-divider>
-  <mat-tab-group mat-stretch-tabs dynamicHeight>
-    <mat-tab>
-      <ng-template matTabLabel>Demo</ng-template>
-      <td-expansion-panel-group>
-        <td-expansion-panel label="Label goes here">
-          <div class="md-padding">
-            <h3 class="mat-subheading-2">md-padding class</h3>
-          </div>
-        </td-expansion-panel>
-        <td-expansion-panel label="Another label goes here">
-          <div class="md-padding">
-            <h3 class="mat-subheading-2">md-padding class</h3>
-          </div>
-        </td-expansion-panel>
-        <td-expansion-panel label="Yet another label goes here">
-          <div class="md-padding">
-            <h3 class="mat-subheading-2">md-padding class</h3>
-          </div>
-        </td-expansion-panel>
-      </td-expansion-panel-group>
-    </mat-tab>
-    <mat-tab>
-      <ng-template matTabLabel>Code</ng-template>
-      <mat-card-content>
-        <p>HTML:</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <td-expansion-panel-group>
-              <td-expansion-panel label="Label goes here">
-                <div class="md-padding">
-                  <h3 class="mat-subheading-2">md-padding class</h3>
-                </div>
-              </td-expansion-panel>
-              <td-expansion-panel label="Another label goes here">
-                <div class="md-padding">
-                  <h3 class="mat-subheading-2">md-padding class</h3>
-                </div>
-              </td-expansion-panel>
-              <td-expansion-panel label="Yet another label goes here">
-                <div class="md-padding">
-                  <h3 class="mat-subheading-2">md-padding class</h3>
-                </div>
-              </td-expansion-panel>
-            </td-expansion-panel-group>
-          ]]>
-        </td-highlight>
-      </mat-card-content>
-    </mat-tab>
-  </mat-tab-group>
 </mat-card>
 
 <mat-card>
@@ -325,5 +270,88 @@
     </mat-tab>
   </mat-tab-group>
 </mat-card>
+
+<mat-card>
+    <mat-card-title>Grouped Expansion panels</mat-card-title>
+    <mat-card-subtitle>Enable accordion mode and add margin animation between grouped expansion panels,</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-expansion-panel-group [multi]="multi" #panelGroup>
+          <td-expansion-panel label="Label goes here">
+            <div class="md-padding">
+              <h3 class="mat-subheading-2">md-padding class</h3>
+            </div>
+          </td-expansion-panel>
+          <td-expansion-panel label="Another label goes here">
+            <div class="md-padding">
+              <h3 class="mat-subheading-2">md-padding class</h3>
+            </div>
+          </td-expansion-panel>
+          <td-expansion-panel label="Yet another label goes here">
+            <div class="md-padding">
+              <h3 class="mat-subheading-2">md-padding class</h3>
+            </div>
+          </td-expansion-panel>
+        </td-expansion-panel-group>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <mat-card-content>
+          <p>HTML:</p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <td-expansion-panel-group [multi]="multi" #panelGroup>
+                <td-expansion-panel label="Label goes here">
+                  <div class="md-padding">
+                    <h3 class="mat-subheading-2">md-padding class</h3>
+                  </div>
+                </td-expansion-panel>
+                <td-expansion-panel label="Another label goes here">
+                  <div class="md-padding">
+                    <h3 class="mat-subheading-2">md-padding class</h3>
+                  </div>
+                </td-expansion-panel>
+                <td-expansion-panel label="Yet another label goes here">
+                  <div class="md-padding">
+                    <h3 class="mat-subheading-2">md-padding class</h3>
+                  </div>
+                </td-expansion-panel>
+              </td-expansion-panel-group>
+            ]]>
+          </td-highlight>
+          <p>Typescript:</p>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              export class ExpansionPanelDemoComponent {
+                multi: boolean = false;
+              }
+            ]]>
+          </td-highlight>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <div class="pad-sm">
+        <mat-slide-toggle [(ngModel)]="multi">Multi</mat-slide-toggle>
+        <button
+          mat-button
+          class="text-upper"
+          (click)="panelGroup.openAll()"
+        >
+          Open all
+        </button>
+        <button
+          mat-button
+          class="text-upper"
+          (click)="panelGroup.closeAll()"
+        >
+          Close all
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
 
 <td-readme-loader resourceUrl="platform/core/expansion-panel/README.md"></td-readme-loader>

@@ -19,6 +19,10 @@ export enum StepMode {
   selector: 'td-steps',
   styleUrls: ['./steps.component.scss' ],
   templateUrl: './steps.component.html',
+  /* tslint:disable-next-line */
+  host: {
+    class: 'td-steps',
+  },
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
 

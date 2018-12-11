@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.0-rc.1",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -129,7 +129,7 @@
     "stylelint": "^8.4.0",
     "ts-node": "~5.0.1",
     "tsickle": "0.33.1",
-    "tslint": "5.9.1",
+    "tslint": "5.11.0",
     "typescript": "~3.1.3",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-stats-plugin": "^0.1.5"

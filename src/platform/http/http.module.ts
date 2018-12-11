@@ -1,26 +1,29 @@
 import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpHandler } from '@angular/common/http';
 
-import { HttpInterceptorService, IHttpInterceptorConfig } from './interceptors/http-interceptor.service';
-import { URLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
+import { TdHttpService, TdInterceptorBehaviorService, ITdHttpInterceptorConfig } from './interceptors/http.service';
+import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
 export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
 
-export type HttpConfig = {interceptors: IHttpInterceptorConfig[]};
+export type HttpConfig = {interceptors: ITdHttpInterceptorConfig[]};
 
-export function httpFactory(http: Http, injector: Injector, config: HttpConfig): HttpInterceptorService {
-  return new HttpInterceptorService(http, injector, new URLRegExpInterceptorMatcher(), config.interceptors);
+export function httpFactory(handler: HttpHandler, injector: Injector, config: HttpConfig): TdHttpService {
+  return new TdHttpService(
+              handler,
+              new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
+            );
 }
 
 export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
-  provide: HttpInterceptorService,
+  provide: TdHttpService,
   useFactory: httpFactory,
-  deps: [Http, Injector, HTTP_CONFIG],
+  deps: [HttpHandler, Injector, HTTP_CONFIG],
 };
 
 @NgModule({
   imports: [
-    HttpModule,
+    HttpClientModule,
   ],
 })
 export class CovalentHttpModule {
