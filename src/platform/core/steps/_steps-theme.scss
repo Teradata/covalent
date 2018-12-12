@@ -38,6 +38,14 @@
       border-left-color: mat-color($foreground, divider);
     }
     // header
+    .td-step-link {
+      &:focus:not(.mat-disabled),
+      &:hover:not(.mat-disabled) {
+        .td-step-header {
+          background: mat-color($background, 'hover');
+        }
+      }
+    }
     .td-step-header {
       &.mat-disabled {
         cursor: default;

@@ -2,7 +2,7 @@
       [class.mat-disabled]="disabled"
       matRipple
       [matRippleDisabled]="disabled || disableRipple"
-      [tabIndex]="disabled ? -1 : 0">
+      [tabIndex]="disabled ? -1 : (tabIndex || 0)">
   <div class="td-circle"
       [class.mat-inactive]="(!active && !isComplete()) || disabled"
       [class.mat-active]="active && !disabled"
