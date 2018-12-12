@@ -1,12 +1,16 @@
-// Configuration for IDEs only.
 {
-  "extends": "../../tsconfig.app.json",
+  "extends": "../tsconfig.lib.json",
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
       "@covalent/echarts/*": ["./*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
   },
-  "include": ["./**/*.ts"]
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": false
+  }
 }

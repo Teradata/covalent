@@ -125,6 +125,21 @@
           }
         }
       }
+    },
+    "covalent-echarts": {
+      "root": "src/platform/echarts",
+      "sourceRoot": "src/platform/echarts",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/echarts/tsconfig.json",
+            "project": "src/platform/echarts/ng-package.js"
+          }
+        }
+      }
     }
   },
   "schematics": {
