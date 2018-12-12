@@ -5,12 +5,6 @@
     "baseUrl": ".",
     "paths": {
       "@covalent/echarts/*": ["./*"]
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-  },
-  "angularCompilerOptions": {
-    "annotateForClosureCompiler": false
+    }
   }
 }
