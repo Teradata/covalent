@@ -6,7 +6,7 @@ rm -rf ./src/platform/node_modules
 rm -rf ./deploy
 
 # BUILD: @covalent/core primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/core/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-core
 
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
@@ -20,16 +20,16 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/dynamic-forms primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/dynamic-forms/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-dynamic-forms
 # BUILD: @covalent/highlight primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/highlight/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-highlight
 # BUILD: @covalent/http primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/http/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-http
 # **DEPRECATED** TODO Remove on 3.0.0
 # BUILD: @covalent/http-deprec primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/http-deprec/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-http-deprec
 # BUILD: @covalent/markdown primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/markdown/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-markdown
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # HACK START
@@ -39,9 +39,9 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 # HACK END
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/flavored-markdown/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
 # BUILD: @covalent/experimental primary entrypoint
-./node_modules/.bin/ng-packagr -p src/platform/experimental/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-experimental
 
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
 rm -rf src/platform/node_modules

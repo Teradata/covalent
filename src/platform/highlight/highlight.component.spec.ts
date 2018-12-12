@@ -101,13 +101,13 @@ describe('Component: Highlight', () => {
   describe('Event bindings: ', () => {
 
     describe('contentReady event: ', () => {
-      
+
         it('should be fired only once after display renders empty static content', async(() => {
 
           let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightEmptyStaticTestEventsComponent);
           let component: TdHighlightEmptyStaticTestEventsComponent = fixture.debugElement.componentInstance;
           let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
-          
+
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             fixture.detectChanges();
@@ -120,7 +120,7 @@ describe('Component: Highlight', () => {
           let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightStaticHtmlTestEventsComponent);
           let component: TdHighlightStaticHtmlTestEventsComponent = fixture.debugElement.componentInstance;
           let eventSpy: jasmine.Spy = spyOn(component, 'tdHighlightContentIsReady');
-    
+
           fixture.detectChanges();
           fixture.whenStable().then(() => {
             fixture.detectChanges();

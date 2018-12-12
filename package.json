@@ -15,7 +15,8 @@
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "preinstall": "rm -rf node_modules tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
-    "test": "ng test --code-coverage --source-map=false --watch=false",
+    "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false",
+    "test:watch": "ng test --code-coverage --source-map=false --watch=true",
     "coverage:win": "start chrome ./coverage/index.html",
     "coverage:mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
@@ -56,7 +57,8 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>",
     "Jeremy Smartt <jeremy.smartt@teradata.com>",
     "Ilsun Park <ilsun.park@teradata.com>",
-    "Steven Ov <steven.ov@teradata.com>"
+    "Steven Ov <steven.ov@teradata.com>",
+    "Christian Memije <christian.memije@teradata.com>"
   ],
   "browserslist": [
     "last 2 versions",
@@ -90,9 +92,10 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.2",
-    "@angular/cli": "7.0.2",
-    "@angular/compiler-cli": "7.0.0",
+    "@angular-devkit/build-angular": "^0.11.2",
+    "@angular-devkit/build-ng-packagr": "~0.11.2",
+    "@angular/cli": "7.1.2",
+    "@angular/compiler-cli": "7.1.2",
     "@covalent/tools": "2.0.0-beta.2",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
@@ -120,7 +123,7 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "4.4.0",
+    "ng-packagr": "4.4.5",
     "node-sass": "4.9.0",
     "pa11y": "^5.1.0",
     "protractor": "~5.3.0",
