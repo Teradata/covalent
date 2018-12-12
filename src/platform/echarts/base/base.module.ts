@@ -11,6 +11,8 @@ export const BASE_MODULE_COMPONENTS: Type<any>[] = [
   TdChartYAxisComponent,
 ];
 
+import 'zrender/lib/svg/svg';
+
 @NgModule({
   imports: [
     CommonModule,

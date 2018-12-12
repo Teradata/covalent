@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OverviewComponent } from './overview/overview.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
+import { ChartComponent } from './chart/chart.component';
 import { ComponentsComponent } from './components.component';
 
 const routes: Routes = [
@@ -14,6 +15,9 @@ const routes: Routes = [
       }, {
         path: 'getting-started',
         component: GettingStartedComponent,
+      }, {
+        path: 'chart',
+        component: ChartComponent,
       }, {
         path: 'types',
         loadChildren: './types/types.module#TypesModule',

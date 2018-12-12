@@ -37,6 +37,16 @@
                     matTooltipPosition="after">chrome_reader_mode</mat-icon>
           <span *ngIf="!miniNav">Getting Started</span>
         </a>
+        <a mat-list-item
+            color="accent"
+            [routerLinkActiveOptions]="{exact:true}"
+            [routerLink]="['/components', 'chart']"
+            routerLinkActive="active">
+          <mat-icon matListIcon
+                    [matTooltip]="miniNav ? 'Chart' : ''"
+                    matTooltipPosition="after">satellite</mat-icon>
+          <span *ngIf="!miniNav">Chart</span>
+        </a>
         <mat-divider></mat-divider>
         <h3 matSubheader>
           <span *ngIf="!miniNav">Charts</span>

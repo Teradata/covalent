@@ -9,6 +9,7 @@ import {
   AfterViewInit,
   OnChanges,
   OnDestroy,
+  SimpleChanges,
 } from '@angular/core';
 
 import { Subject, fromEvent, merge, timer } from 'rxjs';
@@ -34,6 +35,9 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   private _instance: any;
 
+  /**
+   * returns the echarts instance
+   */
   get instance(): any {
     return this._instance;
   }
@@ -41,9 +45,35 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   private _state: any = {};
   private _options: any = {};
 
+  /**
+   * config?: any;
+   * Sets the JS config object if you choose to not use the property inputs.
+   * Note: property inputs override JS config conject properties.
+   * https://ecomfe.github.io/echarts-doc/public/en/option.html
+   */
   @Input('config') config: any = {};
 
+  /**
+   * group?: string
+   * group name in which the chart instance will be connected to
+   * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.connect
+   */
   @Input('group') group: string;
+
+  /**
+   * themeName?: string
+   * theme to be applied into chart instance
+   * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Overview%20of%20Style%20Customization
+   */
+  @Input('themeName') themeName: string;
+
+  /**
+   * renderer: 'svg' | 'canvas'
+   * sets the rendering mode for the chart.
+   * defaults to 'canvas'
+   * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+   */
+  @Input('renderer') renderer: 'canvas' | 'svg' = 'canvas';
 
   @Output('chartClick') chartClick: EventEmitter<any> = new EventEmitter<any>();
   @Output('chartDblclick') chartDblclick: EventEmitter<any> = new EventEmitter<any>();
@@ -59,7 +89,49 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this._instance = echarts.init(this._elementRef.nativeElement);
+    this._initializeChart();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this._instance) {
+      // destroy and reinitialize chart only when `renderer`, `themeName` and `group` changes
+      if (changes.renderer || changes.themeName || changes.group) {
+        this._disposeChart();
+        this._initializeChart();
+      } else {
+        this.render();
+      }
+    }
+  }
+
+  ngOnDestroy(): void {
+    this._disposeChart();
+    this._destroy.unsubscribe();
+  }
+
+  render(): void {
+    if (this._instance) {
+      this._instance.setOption(assignDefined(this._state, {
+        grid: {
+          show: true,
+          left: '20',
+          right: '20',
+          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') 
+          || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
+          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') 
+          || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+          containLabel: true,
+          borderColor: '#FCFCFC',
+        },
+      }, this.config ? this.config : {}, this._options), true);
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  private _initializeChart(): void {
+    this._instance = echarts.init(this._elementRef.nativeElement, this.themeName, {
+      renderer: this.renderer,
+    });
     fromEvent(this._instance, 'click').pipe(
       takeUntil(this._destroy),
     ).subscribe((params: any) => {
@@ -138,42 +210,16 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     });
   }
 
-  ngOnChanges(): void {
-    if (this._instance) {
-      this.render();
-    }
-  }
-
-  ngOnDestroy(): void {
+  private _disposeChart(): void {
     if (this._instance) {
       this._instance.clear();
       echarts.dispose(this._instance);
     }
     this._destroy.next(true);
-    this._destroy.unsubscribe();
   }
 
-  checkToolboxHeight(): string {
+  private _checkToolboxHeight(): string {
     return this.config.toolbox.height ? this.config.toolbox.height : '40';
-  }
-
-  render(): void {
-    if (this._instance) {
-      this._instance.setOption(assignDefined(this._state, {
-        grid: {
-          show: true,
-          left: '20',
-          right: '20',
-          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') 
-          || (this.config.toolbox && this.config.toolbox.bottom) ? this.checkToolboxHeight() : '10',
-          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') 
-          || (this.config.toolbox && this.config.toolbox.top) ? this.checkToolboxHeight() : '10',
-          containLabel: true,
-          borderColor: '#FCFCFC',
-        },
-      }, this.config ? this.config : {}, this._options), true);
-      this._changeDetectorRef.markForCheck();
-    }
   }
 
 }
