@@ -15,7 +15,7 @@
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "preinstall": "rm -rf node_modules tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
-    "test": "ng test --code-coverage --source-map=false --watch=false",
+    "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false",
     "test:watch": "ng test --code-coverage --source-map=false --watch=true",
     "coverage:win": "start chrome ./coverage/index.html",
     "coverage:mac": "open -a \"Google Chrome\" coverage/index.html",
