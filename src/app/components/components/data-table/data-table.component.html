@@ -249,6 +249,115 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
+    <h3 class="mat-title">Atomic Data Table</h3>
+    <h4 class="mat-subheading-2">sorting on a date or firt name column</h4>
+    <mat-divider></mat-divider>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <table td-data-table>
+          <thead>
+            <tr td-data-table-column-row>
+              <th td-data-table-column [name]="'date'"
+                                        [sortable]="true"
+                                        [active]="atomicSortBy == 'date'"
+                                        (sortChange)="sortAtomic($event)"
+                                        [sortOrder]="atomicSortOrder">Date</th>
+              <th td-data-table-column [name]="'first_name'"
+                                        [sortable]="true"
+                                        [active]="atomicSortBy == 'first_name'"
+                                        (sortChange)="sortAtomic($event)"
+                                        [sortOrder]="atomicSortOrder">First Name</th>
+              <th td-data-table-column [name]="'last_name'">Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr td-data-table-row *ngFor="let item of atomicData">
+              <td td-data-table-cell>{{item.date}}</td>
+              <td td-data-table-cell>{{item.first_name}}</td>
+              <td td-data-table-cell>{{item.last_name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <table td-data-table>
+              <thead>
+                <tr td-data-table-column-row>
+                  <th td-data-table-column [name]="'date'"
+                                            [sortable]="true"
+                                            [active]="atomicSortBy == 'date'"
+                                            (sortChange)="sortAtomic($event)"
+                                            [sortOrder]="atomicSortOrder">Date</th>
+                  <th td-data-table-column [name]="'first_name'"
+                                            [sortable]="true"
+                                            [active]="atomicSortBy == 'first_name'"
+                                            (sortChange)="sortAtomic($event)"
+                                            [sortOrder]="atomicSortOrder">First Name</th>
+                  <th td-data-table-column [name]="'last_name'">Last Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr td-data-table-row *ngFor="let item of atomicData">
+                  <td td-data-table-cell>{ {item.date} }</td>
+                  <td td-data-table-cell>{ {item.first_name} }</td>
+                  <td td-data-table-cell>{ {item.last_name} }</td>
+                </tr>
+              </tbody>
+            </table>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo implements OnInit {
+              atomicData: any[];
+              atomicSortBy: string = 'date';
+              atomicSortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+
+              sortAtomic(sortEvent: ITdDataTableSortChangeEvent): void {
+                this._sortOrder = this._sortOrder === TdDataTableSortingOrder.Ascending ?
+                  TdDataTableSortingOrder.Descending : TdDataTableSortingOrder.Ascending;
+                this.atomicSortBy = sortEvent.name;
+                this.filterAtomicData();
+              }
+
+              ...
+
+              filterAtomicData(): void {
+                this.atomicData = Array.from(this.atomicData); // Change the array reference to trigger OnPush
+                this.atomicData = this.atomicData.sort((a: any, b: any) => {
+                  let direction: number = 0;
+                  if (this.atomicSortOrder === TdDataTableSortingOrder.Descending) {
+                    direction = 1;
+                  } else if (this.atomicSortOrder === TdDataTableSortingOrder.Ascending) {
+                    direction = -1;
+                  }
+                  if (a[this.atomicSortBy] < b[this.atomicSortBy]) {
+                    return direction;
+                  } else if (a[this.atomicSortBy] > b[this.atomicSortBy]) {
+                    return -direction;
+                  } else {
+                    return direction;
+                  }
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>Data:</p>
+        <td-highlight lang="json" [content]="dateSortData | json">
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
     <h3 class="mat-title">Data Table with components</h3>
     <h4 class="mat-subheading-2">Paging Bar / Search Box / Sortable components</h4>
     <mat-divider></mat-divider>
