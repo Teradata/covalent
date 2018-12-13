@@ -2,8 +2,8 @@
   <mat-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && numeric"
-    [class.mat-asc]="(!(active) || isAscending())"
-    [class.mat-desc]="(active && isDescending())">
+    [class.mat-asc]="isAscending()"
+    [class.mat-desc]="isDescending()">
     arrow_upward
   </mat-icon>
   <span>
@@ -12,8 +12,8 @@
   <mat-icon 
     class="td-data-table-sort-icon" 
     *ngIf="sortable && !numeric"
-    [class.mat-asc]="(!(active) || isAscending())"
-    [class.mat-desc]="(active && isDescending())">
+    [class.mat-asc]="isAscending()"
+    [class.mat-desc]="isDescending()">
     arrow_upward
   </mat-icon>
 </span>
