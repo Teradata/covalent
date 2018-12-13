@@ -89,6 +89,20 @@
         }
       }
     },
+    "covalent-text-editor": {
+      "root": "src",
+      "sourceRoot": "src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "project": "src/platform/text-editor/ng-package.js"
+          }
+        }
+      }
+    }
   },
   "defaultProject": "covalent",
   "schematics": {

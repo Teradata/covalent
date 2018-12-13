@@ -1,4 +1,4 @@
 echo 'Clean up'
 rm -rf ./deploy
 
-./node_modules/.bin/ng-packagr -p ./src/platform/text-editor/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-text-editor
