@@ -267,7 +267,7 @@ describe('Component: App', () => {
 
           component.exitFullScreenEditor();
 
-          expect(document.webkitExitFullscreen).toBeDefined();
+          expect((<any>document).webkitExitFullscreen).toBeDefined();
           done();
         });
       });
@@ -292,7 +292,7 @@ describe('Component: App', () => {
 
           component.showFullScreenEditor();
 
-          expect(containerDiv.webkitRequestFullscreen).toHaveBeenCalled();
+          expect((<any>containerDiv).webkitRequestFullscreen).toHaveBeenCalled();
           done();
         });
       });

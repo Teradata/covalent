@@ -110,14 +110,22 @@
             "protractorConfig": "./protractor.conf.js",
             "devServerTarget": "covalent:serve"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+        }
+      }
+    },
+    "covalent-code-editor": {
+      "root": "src",
+      "sourceRoot": "src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": [],
-            "exclude": []
+            "project": "src/platform/code-editor/ng-package.js"
           }
         }
+
       }
     }
   },

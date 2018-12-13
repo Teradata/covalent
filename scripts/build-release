@@ -3,9 +3,8 @@
 echo 'Clean up'
 rm -rf ./deploy
 
-./node_modules/.bin/ng-packagr -p ./src/platform/code-editor/ng-package.js
+./node_modules/@angular/cli/bin/ng build covalent-code-editor
 
 # copy Monaco
-mkdir deploy/platform/code-editor/assets
-mkdir deploy/platform/code-editor/assets/monaco
+mkdir -p deploy/platform/code-editor/assets/monaco
 cp -rf node_modules/monaco-editor/min/* deploy/platform/code-editor/assets/monaco/

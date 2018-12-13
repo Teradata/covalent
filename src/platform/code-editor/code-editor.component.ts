@@ -608,7 +608,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
        // Chrome
       'requestFullscreen': () => codeEditorElement.requestFullscreen(),
        // Safari
-      'webkitRequestFullscreen': () => codeEditorElement.webkitRequestFullscreen(),
+      'webkitRequestFullscreen': () => (<any>codeEditorElement).webkitRequestFullscreen(),
        // IE
       'msRequestFullscreen': () => (<any>codeEditorElement).msRequestFullscreen(),
        // Firefox
@@ -630,7 +630,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       // Chrome
       'exitFullscreen': () => document.exitFullscreen(),
       // Safari
-      'webkitExitFullscreen': () => document.webkitExitFullscreen(),
+      'webkitExitFullscreen': () => (<any>document).webkitExitFullscreen(),
       // Firefox
       'mozCancelFullScreen': () => (<any>document).mozCancelFullScreen(),
       // IE
