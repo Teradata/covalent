@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.spec.json",
+  "files": [
+    "test.ts",
+    "../../polyfills.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}

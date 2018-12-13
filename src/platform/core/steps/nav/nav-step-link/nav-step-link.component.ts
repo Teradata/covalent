@@ -13,7 +13,8 @@ import { _TdStepMixinBase, StepState } from '../../step.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   /* tslint:disable-next-line */
   host: {
-    '[attr.tabindex]': 'disabled ? -1 : 0',
+    '[class.td-step-link]': 'true',
+    '[attr.tabindex]': 'disabled ? -1 : (tabIndex || 0)',
     '[attr.disabled]': 'disabled || null',
     '[class.mat-disabled]': 'disabled || null',
     '(click)': '_handleClick($event)',
@@ -76,6 +77,12 @@ export class TdNavStepLinkComponent extends _TdStepMixinBase implements ICanDisa
   get active(): boolean {
     return this._active;
   }
+
+  /**
+   * tabIndex?: number
+   * tabIndex for component
+   */
+  @Input('tabIndex') tabIndex: number;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public elementRef: ElementRef) {
