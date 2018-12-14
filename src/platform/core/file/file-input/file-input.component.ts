@@ -102,5 +102,10 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
       this.clear();
     }
   }
-
+  /**
+   * Sets disable to the component. Implemented as part of ControlValueAccessor.
+   */
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
 }

@@ -5,7 +5,7 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import 'hammerjs';
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, DebugElement } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Validators, AbstractControl, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -373,6 +373,26 @@ describe('Component: TdDynamicForms', () => {
       expect(dynamicFormsComponent.valid).toBeTruthy();
       /* tslint:disable-next-line */
       expect(JSON.stringify(dynamicFormsComponent.value)).toBe(JSON.stringify({hexColor: '#F1F1F1'}));
+    });
+  })));
+
+  it('should render disabled file input', async(inject([], () => {
+    let fixture: ComponentFixture<any> = TestBed.createComponent(TdDynamicFormsTestComponent);
+    let component: TdDynamicFormsTestComponent = fixture.debugElement.componentInstance;
+
+    expect(fixture.debugElement.queryAll(By.directive(TdDynamicElementComponent)).length).toBe(0);
+    component.elements = [{
+      name: 'file',
+      type: TdDynamicElement.FileInput,
+      disabled: true,
+    }];
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const button: DebugElement = fixture.debugElement.query(By.css('td-file-input button'));
+      const hiddenFileInput: DebugElement = fixture.debugElement.query(By.css('td-file-input .td-file-input-hidden'));
+
+      expect(button.attributes.disabled).not.toBeNull();
+      expect(hiddenFileInput.attributes.disabled).not.toBeNull();
     });
   })));
 
