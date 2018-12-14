@@ -502,8 +502,10 @@ export class TdDataTableComponent extends _TdDataTableMixinBase implements ICont
       let newHostWidth: number = this._elementRef.nativeElement.getBoundingClientRect().width;
       // if the width has changed then we throw a resize event.
       if (this._hostWidth !== newHostWidth) {
-        this._hostWidth = newHostWidth;
-        this._onResize.next();
+        setTimeout(() => {
+          this._hostWidth = newHostWidth;
+          this._onResize.next();
+        }, 0);
       }
     }
     if (this._scrollableDiv.nativeElement) {
