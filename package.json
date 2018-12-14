@@ -1,6 +1,6 @@
 {
   "name": "@covalent/code-editor",
-  "version": "2.0.0-beta.6",
+  "version": "2.0.0-rc.1",
   "private": false,
   "description": "Teradata Text and Code Editor built on Covalent and Angular Material",
   "keywords": [
@@ -23,6 +23,7 @@
     "coverage-win": "start chrome ./coverage/index.html",
     "coverage-mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
+    "serve": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve",
     "bump-dev": "gulp bump-version",
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",

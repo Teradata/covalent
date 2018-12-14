@@ -43,6 +43,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _fromEditor: boolean = false;
   private _automaticLayout: boolean = false;
   private _editorOptions: any = {};
+  private _isFullScreen: boolean = false;
+  private _keycode: any;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -318,6 +320,19 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
 
   /**
+   * fullScreenKeyBinding?: number
+   * See here for key bindings https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html
+   * Sets the KeyCode for shortcutting to Fullscreen mode
+   */
+  @Input('fullScreenKeyBinding')
+  set fullScreenKeyBinding(keycode: number[]) {
+    this._keycode = keycode;
+  }
+  get fullScreenKeyBinding(): number[] {
+    return this._keycode;
+  }
+
+  /**
    * editorOptions?: Object
    * Options used on editor instantiation. Available options listed here:
    * https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
@@ -356,6 +371,13 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   get isElectronApp(): boolean {
     return this._isElectronApp;
+  }
+
+  /**
+   * Returns if in Full Screen Mode or not
+   */
+  get isFullScreen(): boolean {
+    return this._isFullScreen;
   }
 
 /**
@@ -409,6 +431,38 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                     }, ${JSON.stringify(this.editorOptions)}));
                     editor.getModel().onDidChangeContent( (e)=> {
                         ipcRenderer.sendToHost("onEditorContentChange", editor.getValue());
+                    });
+                    editor.addAction({
+                      // An unique identifier of the contributed action.
+                      id: 'fullScreen',
+                      // A label of the action that will be presented to the user.
+                      label: 'Full Screen',
+                      // An optional array of keybindings for the action.
+                      contextMenuGroupId: 'navigation',
+                      keybindings: [${this._keycode}],
+                      contextMenuOrder: 1.5,
+                      // Method that will be executed when the action is triggered.
+                      // @param editor The editor instance is passed in as a convinience
+                      run: function(ed) {
+                        var editorDiv = document.getElementById('${this._editorInnerContainer}');
+                        editorDiv.webkitRequestFullscreen();
+                      }
+                    });
+                    editor.addAction({
+                      // An unique identifier of the contributed action.
+                      id: 'exitfullScreen',
+                      // A label of the action that will be presented to the user.
+                      label: 'Exit Full Screen',
+                      // An optional array of keybindings for the action.
+                      contextMenuGroupId: 'navigation',
+                      keybindings: [9],
+                      contextMenuOrder: 1.5,
+                      // Method that will be executed when the action is triggered.
+                      // @param editor The editor instance is passed in as a convinience
+                      run: function(ed) {
+                        var editorDiv = document.getElementById('${this._editorInnerContainer}');
+                        document.webkitExitFullscreen();
+                      }
                     });
                     ipcRenderer.sendToHost("onEditorInitialized", '');
                 });
@@ -498,6 +552,18 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 // Instruct the editor to remeasure its container
                 ipcRenderer.on('layout', function(){
                     editor.layout();
+                });
+
+                // Instruct the editor go to full screen mode
+                ipcRenderer.on('showFullScreenEditor', function() {
+                  var editorDiv = document.getElementById('${this._editorInnerContainer}');
+                  editorDiv.webkitRequestFullscreen();
+                });
+
+                // Instruct the editor exit full screen mode
+                ipcRenderer.on('exitFullScreenEditor', function() {
+                  var editorDiv = document.getElementById('${this._editorInnerContainer}');
+                  editorDiv.webkitExitFullscreen();
                 });
 
                 // need to manually resize the editor any time the window size
@@ -603,68 +669,76 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   * showFullScreenEditor request for full screen of Code Editor based on its browser type.
   */
   public showFullScreenEditor(): void {
-    const codeEditorElement: HTMLDivElement = this._editorContainer.nativeElement as HTMLDivElement;
-    const fullScreenMap: Object = {
-       // Chrome
-      'requestFullscreen': () => codeEditorElement.requestFullscreen(),
-       // Safari
-      'webkitRequestFullscreen': () => (<any>codeEditorElement).webkitRequestFullscreen(),
-       // IE
-      'msRequestFullscreen': () => (<any>codeEditorElement).msRequestFullscreen(),
-       // Firefox
-      'mozRequestFullScreen': () => (<any>codeEditorElement).mozRequestFullScreen(),
-    };
+    if (this._componentInitialized) {
+      if (this._webview) {
+        this._webview.send('showFullScreenEditor');
+      } else {
+        const codeEditorElement: HTMLDivElement = this._editorContainer.nativeElement as HTMLDivElement;
+        const fullScreenMap: Object = {
+          // Chrome
+          'requestFullscreen': () => codeEditorElement.requestFullscreen(),
+          // Safari
+          'webkitRequestFullscreen': () => (<any>codeEditorElement).webkitRequestFullscreen(),
+          // IE
+          'msRequestFullscreen': () => (<any>codeEditorElement).msRequestFullscreen(),
+          // Firefox
+          'mozRequestFullScreen': () => (<any>codeEditorElement).mozRequestFullScreen(),
+        };
 
-    for (const handler of Object.keys(fullScreenMap)) {
-      if (codeEditorElement[handler]) {
-          fullScreenMap[handler]();
+        for (const handler of Object.keys(fullScreenMap)) {
+          if (codeEditorElement[handler]) {
+              fullScreenMap[handler]();
+          }
+        }
       }
     }
+    this._isFullScreen = true;
   }
 
   /**
    * exitFullScreenEditor request to exit full screen of Code Editor based on its browser type.
    */
   public exitFullScreenEditor(): void {
-    const exitFullScreenMap: object = {
-      // Chrome
-      'exitFullscreen': () => document.exitFullscreen(),
-      // Safari
-      'webkitExitFullscreen': () => (<any>document).webkitExitFullscreen(),
-      // Firefox
-      'mozCancelFullScreen': () => (<any>document).mozCancelFullScreen(),
-      // IE
-      'msExitFullscreen': () => (<any>document).msExitFullscreen(),
-    };
+    if (this._componentInitialized) {
+      if (this._webview) {
+        this._webview.send('exitFullScreenEditor');
+      } else {
+        const exitFullScreenMap: object = {
+          // Chrome
+          'exitFullscreen': () => document.exitFullscreen(),
+          // Safari
+          'webkitExitFullscreen': () => (<any>document).webkitExitFullscreen(),
+          // Firefox
+          'mozCancelFullScreen': () => (<any>document).mozCancelFullScreen(),
+          // IE
+          'msExitFullscreen': () => (<any>document).msExitFullscreen(),
+        };
 
-    for (const handler of Object.keys(exitFullScreenMap)) {
-      if (document[handler]) {
-          exitFullScreenMap[handler]();
+        for (const handler of Object.keys(exitFullScreenMap)) {
+          if (document[handler]) {
+              exitFullScreenMap[handler]();
+          }
+        }
       }
     }
+    this._isFullScreen = false;
   }
 
-  public getEditor(): any {
-    return this._editor;
-  }
-
-  public addFullScreenModeCommand(): void {
+  private addFullScreenModeCommand(): void {
     this._editor.addAction({
-        // An unique identifier of the contributed action.
-        id: 'fullScreen',
-       // A label of the action that will be presented to the user.
-        label: 'Full Screen',
-        // An optional array of keybindings for the action.
-        contextMenuGroupId: 'navigation',
-        keybindings: [
-            monaco.KeyCode.F11,
-        ],
-        contextMenuOrder: 1.5,
-        // Method that will be executed when the action is triggered.
-        // @param editor The editor instance is passed in as a convinience
-        run: (ed: any) => {
-            this.showFullScreenEditor();
-        },
+      // An unique identifier of the contributed action.
+      id: 'fullScreen',
+      // A label of the action that will be presented to the user.
+      label: 'Full Screen',
+      // An optional array of keybindings for the action.
+      contextMenuGroupId: 'navigation',
+      keybindings: this._keycode,
+      contextMenuOrder: 1.5,
+      // Method that will be executed when the action is triggered.
+      // @param editor The editor instance is passed in as a convinience
+      run: (ed: any) => {
+        this.showFullScreenEditor();
+      },
     });
   }
 
