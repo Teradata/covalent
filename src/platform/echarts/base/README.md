@@ -8,7 +8,7 @@
 
 + config?: any
   + Sets the JS config object if you choose to not use the property inputs.
-  + Note: property inputs override JS config conject properties.
+  + Note: [config] input properties will override input values
 + themeName?: string
   + theme to be applied into chart instance
 + renderer?: 'svg' | 'canvas'

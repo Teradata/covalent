@@ -8,7 +8,7 @@
 
 + config?: any
   + Sets the JS config object if you choose to not use the property inputs.
-  + Note: property inputs override JS config conject properties.
+  + Note: [config] input properties will override input values
 
 There are also lots of property inputs like:
 
@@ -30,7 +30,7 @@ And so many more.. for more info [click here](https://ecomfe.github.io/echarts-d
 
 + config?: any
   + Sets the JS config object if you choose to not use the property inputs.
-  + Note: property inputs override JS config conject properties.
+  + Note: [config] input properties will override input values
 
 There are also lots of property inputs like:
 

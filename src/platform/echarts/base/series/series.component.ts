@@ -72,7 +72,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
   abstract getConfig(): any;
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+    let config: any = assignDefined(this._state, {
       id: this.id,
       type: this.type,
       name: this.name,
@@ -87,7 +87,7 @@ export abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChan
       animationEasingUpdate: this.animationEasingUpdate,
       animationDelayUpdate: this.animationDelayUpdate,
       tooltip: this.tooltip,
-    } , this.getConfig(), this._options);
+    }, this.getConfig(), this._options, this.config ? this.config : {});
     this.optionsService.setArrayOption('series', config);
   }
 

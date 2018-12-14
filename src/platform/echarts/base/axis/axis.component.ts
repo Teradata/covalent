@@ -84,7 +84,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+    let config: any = assignDefined(this._state, {
       id: this.id,
       show: this.show,
       gridIndex: this.gridIndex,
@@ -115,7 +115,7 @@ export abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestr
       axisPointer: this.axisPointer,
       zlevel: this.zlevel,
       z: this.z,
-    });
+    }, this.config ? this.config : {});
     this._optionsService.setArrayOption(this._axisOption, config);
   }
 

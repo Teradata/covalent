@@ -190,9 +190,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
     this._checkFormatterTemplate();
 
     let config: any = assignDefined(
-      this._state,
-      this.config ? this.config : {},
-      {
+      this._state, {
         show: this.show,
         name: this.trigger,
         orient: this.orient,
@@ -212,6 +210,7 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
         width: this.width,
         height: this.height,
       },
+      this.config ? this.config : {},
     );
     // set toolbox configuration in parent chart and render new configurations
     this._optionsService.setOption('toolbox', config);

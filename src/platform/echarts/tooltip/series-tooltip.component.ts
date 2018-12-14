@@ -57,7 +57,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+    let config: any = assignDefined(this._state, {
       position: this.position,
       backgroundColor: this.backgroundColor,
       borderColor: this.borderColor,
@@ -66,7 +66,7 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
       textStyle: this.textStyle,
       extraCssText: this.extraCssText,
       formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
-    });
+    }, this.config ? this.config : {});
     // set series tooltip configuration in parent chart and render new configurations
     this._seriesComponent.setStateOption('tooltip', config);
   }

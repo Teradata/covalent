@@ -84,7 +84,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, this.config ? this.config : {}, {
+    let config: any = assignDefined(this._state, {
       show: this.show,
       trigger: this.trigger,
       axisPointer: this.axisPointer,
@@ -104,7 +104,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
       padding: this.padding,
       textStyle: this.textStyle,
       extraCssText: this.extraCssText,
-    });
+    }, this.config ? this.config : {});
     // set tooltip configuration in parent chart and render new configurations
     this._optionsService.setOption('tooltip', config);
   }

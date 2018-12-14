@@ -48,7 +48,7 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   /**
    * config?: any;
    * Sets the JS config object if you choose to not use the property inputs.
-   * Note: property inputs override JS config conject properties.
+   * Note: [config] input properties will override input values
    * https://ecomfe.github.io/echarts-doc/public/en/option.html
    */
   @Input('config') config: any = {};
@@ -116,14 +116,14 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
           show: true,
           left: '20',
           right: '20',
-          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') 
-          || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
-          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') 
-          || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') ||
+                (this._options.toolbox && typeof this._options.toolbox.bottom  === 'number') ? '40' : '10',
+          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') ||
+                (this._options.toolbox && typeof this._options.toolbox.top  === 'number') ? '40' : '10',
           containLabel: true,
           borderColor: '#FCFCFC',
         },
-      }, this.config ? this.config : {}, this._options), true);
+      }, this._options, this.config ? this.config : {}), true);
       this._changeDetectorRef.markForCheck();
     }
   }
@@ -216,10 +216,6 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
       echarts.dispose(this._instance);
     }
     this._destroy.next(true);
-  }
-
-  private _checkToolboxHeight(): string {
-    return this.config.toolbox.height ? this.config.toolbox.height : '40';
   }
 
 }

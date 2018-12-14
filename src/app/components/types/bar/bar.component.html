@@ -7,10 +7,11 @@
       <mat-tab-group mat-stretch-tabs dynamicHeight>
         <mat-tab>
           <ng-template matTabLabel>Demo</ng-template>
-          <td-chart [style.height.px]="300" [config]="{toolbox: { top: '10'}}">
+          <td-chart [style.height.px]="300">
             <td-chart-toolbox
                         [show]="true"
                         [right]="30"
+                        [top]="10"
                         [feature]="{dataView: {readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh']},
                                     dataZoom: {title: {zoom: 'Zoom', back: 'Back'}},
                                     magicType: {type: ['line', 'bar', 'stack', 'tiled'], 
@@ -87,10 +88,11 @@
           <p>HTML: </p>
           <td-highlight lang="html">
             <![CDATA[
-            <td-chart [style.height.px]="300" [config]="{toolbox: { top: '10'}}">
+            <td-chart [style.height.px]="300">
               <td-chart-toolbox
                           [show]="true"
                           [right]="30"
+                          [top]="10"
                           [feature]="{dataView: {readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh']},
                                       dataZoom: {title: {zoom: 'Zoom', back: 'Back'}},
                                       magicType: {type: ['line', 'bar', 'stack', 'tiled'], 
