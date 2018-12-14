@@ -16,23 +16,7 @@ import { getDirection, setDirection } from '../../utilities/direction';
   styleUrls: ['././toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  updates: Object[] = [{
-      description: 'initial release!',
-      icon: 'format_line_spacing',
-      route: '/components/nav-steps',
-      title: 'Stepper (Navigational)',
-    }, {
-      description: '[multi] input added',
-      icon: 'open_with',
-      route: '/components/expansion-panel',
-      title: 'Expansion Panels',
-    }, {
-      description: 'HttpClient usage and http decorators',
-      icon: 'http',
-      route: '/components/http',
-      title: 'Http',
-    },
-  ];
+  updates: Object[] = [];
 
   dir: 'ltr' | 'rtl' = getDirection();
 

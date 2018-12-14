@@ -1,3 +1,20 @@
+<a name="2.0.0-rc.2"></a>
+# [2.0.0-rc.2](https://github.com/teradata/covalent/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2018-12-14)
+
+
+### Bug Fixes
+
+* **data-table:** remove unnecessary scrollbars ([#1318](https://github.com/teradata/covalent/issues/1318)) ([21ac1a3](https://github.com/teradata/covalent/commit/21ac1a3))
+* **dynamic-forms:** disable file inputs via config ([#1311](https://github.com/teradata/covalent/issues/1311)) ([7fe4241](https://github.com/teradata/covalent/commit/7fe4241))
+* **nav-steps:** fix a11y issue with tabs ([#1316](https://github.com/teradata/covalent/issues/1316)) ([ac701e8](https://github.com/teradata/covalent/commit/ac701e8))
+
+
+### Features
+
+* **data-table:** atomic sorting icon example demo ([#1317](https://github.com/teradata/covalent/issues/1317)) ([216c407](https://github.com/teradata/covalent/commit/216c407))
+
+
+
 <a name="2.0.0-rc.1"></a>
 # [2.0.0-rc.1](https://github.com/teradata/covalent/compare/v2.0.0-beta.5...v2.0.0-rc.1) (2018-12-10)
 
