@@ -1,6 +1,6 @@
 {
   "name": "covalent-echarts",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "private": true,
   "description": "Teradata Charts built on echarts",
   "keywords": [
