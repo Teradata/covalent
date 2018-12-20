@@ -202,9 +202,12 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
                                                       .map((s: string) => { return s.trim(); });
         let row: any = {};
         columns.forEach((col: string, index: number) => {
-          row[col.toLowerCase().trim()] = rowSplit[index].replace(/`(.*)`/, (m: string, value: string) => {
-            return value;
-          });
+          const rowSplitCell: string = rowSplit[index];
+          if (rowSplitCell) {
+            row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (m: string, value: string) => {
+              return value;
+            });
+          }
         });
         data.push(row);
       }
