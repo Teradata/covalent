@@ -10,9 +10,10 @@
 
 | Name | Description |
 | --- | --- |
-| `onEditorInitialized` | Emitted when Editor is finished initializing
+| `editorInitialized` | Emitted when Editor is finished initializing. Event passes a reference to the actual editor instance that can be used to call additional operations outside of the Angular component.  See usage example below.
 | `onEditorConfigurationChanged` | Emitted when configuration of the Editor changes
 | `onEditorLanguageChanged` | Emitted when the language of the Editor changes
+
 
 ### Properties
 
@@ -49,6 +50,31 @@ Example for HTML usage:
         [(ngModel)]="model"
         (change)="callBackFunc()">
 </td-code-editor>
+```
+Example of exposing editor instance
+
+```html
+<td-code-editor
+        [editorOptions]="editorOptions"
+        [(ngModel)]="model"
+        (editorInitialized)="onInit($event)">
+</td-code-editor>
+```
+
+```typescript
+export class AppComponent {
+  editorOptions = {theme: 'vs-dark', language: 'javascript'};
+  model: string= 'function x() {\nconsole.log("Hello world!");\n}';
+  column: number = 0;
+  lineNumber: number = 0;
+
+  async onEditorInitialized(editor: any): Promise<void> {
+    let line: any = await editor.getPosition();
+
+    this.column = line.column;
+    this.lineNumber = line.lineNumber;
+  }
+}
 ```
 
 ---

@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit,
+  ViewChild, ElementRef, forwardRef, NgZone, ChangeDetectorRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 
@@ -38,7 +39,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
   private _editorNodeModuleDirOverride: string = '';
-  private _editor: any;
+  private _editor: any = {};
+  private _editorProxy: any;
   private _componentInitialized: boolean = false;
   private _fromEditor: boolean = false;
   private _automaticLayout: boolean = false;
@@ -84,7 +86,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   /**
    * Set if using Electron mode when object is created
    */
-  constructor(private zone: NgZone) {
+  constructor(private zone: NgZone, private _changeDetectorRef: ChangeDetectorRef) {
     // since accessing the window object need this check so serverside rendering doesn't fail
     if (typeof document === 'object' && !!document) {
         /* tslint:disable-next-line */
@@ -464,7 +466,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                         document.webkitExitFullscreen();
                       }
                     });
-                    ipcRenderer.sendToHost("onEditorInitialized", '');
+                    ipcRenderer.sendToHost("onEditorInitialized", this._editor);
                 });
 
                 // return back the value in the editor to the mainview
@@ -593,20 +595,21 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         // Process the data from the webview
         this._webview.addEventListener('ipc-message', (event: any) => {
             if (event.channel === 'editorContent') {
-                this._fromEditor = true;
-                this.writeValue(event.args[0]);
-                this._subject.next(this._value);
-                this._subject.complete();
-                this._subject = new Subject();
+              this._fromEditor = true;
+              this.writeValue(event.args[0]);
+              this._subject.next(this._value);
+              this._subject.complete();
+              this._subject = new Subject();
             } else if (event.channel === 'onEditorContentChange') {
-                this._fromEditor = true;
-                this.writeValue(event.args[0]);
+              this._fromEditor = true;
+              this.writeValue(event.args[0]);
             } else if (event.channel === 'onEditorInitialized') {
-                this.onEditorInitialized.emit(undefined);
+              this._editorProxy = this.wrapEditorCalls(this._editor);
+              this.onEditorInitialized.emit(this._editorProxy);
             } else if (event.channel === 'onEditorConfigurationChanged') {
-                this.onEditorConfigurationChanged.emit(undefined);
+              this.onEditorConfigurationChanged.emit(undefined);
             } else if (event.channel === 'onEditorLanguageChanged') {
-                this.onEditorLanguageChanged.emit(undefined);
+              this.onEditorLanguageChanged.emit(undefined);
             }
         });
 
@@ -724,6 +727,9 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     this._isFullScreen = false;
   }
 
+  /**
+   * addFullScreenModeCommand used to add the fullscreen option to the context menu
+   */
   private addFullScreenModeCommand(): void {
     this._editor.addAction({
       // An unique identifier of the contributed action.
@@ -743,6 +749,39 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
 
   /**
+   * wrapEditorCalls used to proxy all the calls to the monaco editor
+   * For calls for Electron use this to call the editor inside the webview
+   */
+  private wrapEditorCalls(obj: any): any {
+    let that: any = this;
+    let handler: any = {
+      get(target: any, propKey: any, receiver: any): any {
+        return async (...args: any): Promise<any> => {
+          if (that._componentInitialized) {
+            if (that._webview) {
+              const executeJavaScript: Function = (code: string) =>
+                new Promise((resolve: any) => {
+                  that._webview.executeJavaScript(code, resolve);
+                });
+              let result: any = await executeJavaScript('editor.' + propKey + '(' + args + ')');
+              return result;
+            } else {
+              const origMethod: any = target[propKey];
+              let result: any = await origMethod.apply(that._editor, args);
+              // since running javascript code manually need to force Angular to detect changes
+              setTimeout(() => {
+                that.zone.run(() => that._changeDetectorRef.detectChanges());
+              });
+              return result;
+            }
+          }
+        };
+      },
+    };
+    return new Proxy(obj, handler);
+  }
+
+  /**
    * initMonaco method creates the monaco editor into the @ViewChild('editorContainer')
    * and emit the onEditorInitialized event.  This is only used in the browser version.
    */
@@ -756,7 +795,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         automaticLayout: this._automaticLayout,
     }, this.editorOptions));
     setTimeout(() => {
-        this.onEditorInitialized.emit(undefined);
+        this._editorProxy = this.wrapEditorCalls(this._editor);
+        this.onEditorInitialized.emit(this._editorProxy);
     });
     this._editor.getModel().onDidChangeContent( (e: any) => {
         this._fromEditor = true;

@@ -1,1 +1,4 @@
-<td-code-editor [fullScreenKeyBinding]="[68, 69]"></td-code-editor>
+<td-code-editor [fullScreenKeyBinding]="[68, 69]" (editorInitialized)="onEditorInitialized($event)"></td-code-editor>
+
+<div>Column: {{column}}</div>
+<div>Line Number: {{lineNumber}}</div>

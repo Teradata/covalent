@@ -271,6 +271,28 @@ describe('Component: App', () => {
     })();
   });
 
+  it('should expose editor instance on editorInitialized event', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdCodeEditorComponent);
+      let component: TdCodeEditorComponent = fixture.debugElement.componentInstance;
+      if (component.isElectronApp) {
+        component.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.onEditorInitialized.subscribe(async (editorInstance: any) => {
+          expect(editorInstance).toBeDefined();
+          let line: any = await editorInstance.getPosition();
+
+          expect(line.column).toBe(1);
+          expect(line.lineNumber).toBe(1);
+          done();
+        });
+      });
+    })();
+  });
+
 });
 
 @Component({
