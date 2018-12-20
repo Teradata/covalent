@@ -30,8 +30,7 @@
 | `editorOptions` | `Object` | Editor Options Object of valid Configurations listed here: <a href="https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html">https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html</a>
 | `layout` | `function()` | Instructs the editor to remeasure its container
 | `isFullScreen` | `boolean` | Is the editor currently in Full Screen mode
-| `fullScreenKeyBinding` | `number` | Sets the KeyCode for shortcutting to Fullscreen.  Options listed see here:
-<a href="https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html">https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html</a>
+| `fullScreenKeyBinding` | `number` | Sets the KeyCode for shortcutting to Fullscreen.  Options listed see here: <a href="https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html">https://microsoft.github.io/monaco-editor/api/enums/monaco.keycode.html</a>
 
 
 ### Usage
@@ -39,11 +38,11 @@
 Example for HTML usage:
 
 ```html
-<td-code-editor 
-        style="height: 200px" 
+<td-code-editor
+        style="height: 200px"
         editorStyle="border:0;"
-        flex 
-        theme="vs" 
+        flex
+        theme="vs"
         language="sql"
         automaticLayout
         [editorOptions]="{readOnly:true, fontSize:20}"
