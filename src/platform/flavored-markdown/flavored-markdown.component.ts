@@ -235,14 +235,14 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   }
 
   private _replaceLists(markdown: string): string {
-    let listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
+    let listRegExp: RegExp = /(?:^|\n)(( *([+-\\*]))[ |\t](.*)\n)+/g;
     return this._replaceComponent(markdown, TdFlavoredListComponent, listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
-        let lineTexts: string[] = match.split(new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'));
+        let lineTexts: string[] = match.split(new RegExp('\\n {' + '0' + '}[+-\\\\*][ |\\t]'));
         lineTexts.shift();
         let lines: IFlavoredListItem[] = [];
         lineTexts.forEach((text: string, index: number) => {
-          let sublineTexts: string[] = text.split(/\n *\+ /);
+          let sublineTexts: string[] = text.split(/\n *[+-\\*] /);
           lines.push({
             line: sublineTexts.shift(),
             sublines: sublineTexts.map((subline: string) => {
