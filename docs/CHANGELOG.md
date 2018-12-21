@@ -1,3 +1,19 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/teradata/covalent/compare/v2.0.0-rc.2...v2.0.0) (2018-12-21)
+
+We are pleased to announce @covalent stable release!
+
+A big thanks to our community that helped us every step of the way and drive us to make a better library every day.
+
+Stay tunned for new features coming soon in our [projects](https://github.com/orgs/Teradata/projects/2) page.
+
+
+### Bug Fixes
+
+* **flavored-markdown:** Prevent breakage from invalid table ([#1320](https://github.com/teradata/covalent/issues/1320)) ([ba6ceeb](https://github.com/teradata/covalent/commit/ba6ceeb))
+
+
+
 <a name="2.0.0-rc.2"></a>
 # [2.0.0-rc.2](https://github.com/teradata/covalent/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2018-12-14)
 
