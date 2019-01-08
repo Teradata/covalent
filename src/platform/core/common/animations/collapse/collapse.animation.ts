@@ -24,21 +24,25 @@ export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse
   state('1', style({
     height: '0',
     overflow: 'hidden',
+    display: 'none',
   })),
   state('0',  style({
     height: AUTO_STYLE,
     overflow: AUTO_STYLE,
+    display: AUTO_STYLE,
   })),
   transition('0 => 1', [
     style({
       overflow: 'hidden',
       height: AUTO_STYLE,
+      display: AUTO_STYLE,
     }),
     group([
       query('@*', animateChild(), { optional: true }),
       animate('{{ duration }}ms {{ delay }}ms {{ ease }}', style({
         height: '0',
         overflow: 'hidden',
+        display: 'none',
       })),
     ]),
   ], { params: { duration: 150, delay: '0', ease: 'ease-in' }}),
@@ -46,12 +50,14 @@ export const tdCollapseAnimation: AnimationTriggerMetadata = trigger('tdCollapse
     style({
       height: '0',
       overflow: 'hidden',
+      display: 'none',
     }),
     group([
       query('@*', animateChild(), { optional: true }),
       animate('{{ duration }}ms {{ delay }}ms {{ ease }}', style({
         overflow: 'hidden',
         height: AUTO_STYLE,
+        display: AUTO_STYLE,
       })),
     ]),
   ], { params: { duration: 150, delay: '0', ease: 'ease-out' }}),
