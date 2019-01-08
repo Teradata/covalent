@@ -122,7 +122,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 }, 500);
             }
         } else {
-            if (this._editor) {
+            if (this._editor && this._editor.setValue) {
                 // don't want to keep sending content if event came from the editor, infinite loop
                 if (!this._fromEditor) {
                     this._editor.setValue(value);
@@ -132,6 +132,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 this.onChange.emit(undefined);
                 this._fromEditor = false;
                 this.zone.run(() => this._value = value);
+            } else {
+              // Editor is not loaded yet, try again in half a second
+              setTimeout(() => {
+                this.value = value;
+              }, 500);
             }
         }
     }
