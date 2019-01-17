@@ -6,6 +6,7 @@ import {
 } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
+import { FormsModule } from '@angular/forms';
 
 declare var electron: any;
 declare const process: any;
@@ -26,8 +27,11 @@ describe('Component: App', () => {
         TdCodeEditorComponent,
         TestMultipleEditorsComponent,
         TestEditorOptionsComponent,
+        TestTwoWayBindingWithValueComponent,
+        TestTwoWayBindingWithNgModelComponent,
       ],
       imports: [
+        FormsModule,
       ],
     });
     TestBed.compileComponents();
@@ -293,6 +297,63 @@ describe('Component: App', () => {
     })();
   });
 
+  it('should work with 2 way binding via value', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithValueComponent);
+      let component: TestTwoWayBindingWithValueComponent = fixture.debugElement.componentInstance;
+      if (component.editor.isElectronApp) {
+        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      const newSampleCode: string = 'const val = 2;';
+      component.sampleCode = newSampleCode;
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.editor.onEditorInitialized.subscribe(() => {
+          fixture.changeDetectorRef.detectChanges();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            setTimeout(() => {
+              component.editor.getValue().subscribe((value: string) => {
+                expect(component.sampleCode).toBe(newSampleCode);
+                expect(value).toBe(newSampleCode);
+                done();
+              });
+            }, 1000); // wait for timeouts
+          });
+        });
+      });
+    })();
+  });
+
+  it('should work with 2 way binding via ngModel', (done: DoneFn) => {
+    inject([], () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TestTwoWayBindingWithNgModelComponent);
+      let component: TestTwoWayBindingWithNgModelComponent = fixture.debugElement.componentInstance;
+      if (component.editor.isElectronApp) {
+        component.editor.setEditorNodeModuleDirOverride(electron.remote.process.env.NODE_MODULE_DIR);
+      }
+      const newSampleCode: string = 'const val = 2;';
+      component.sampleCode = newSampleCode;
+      fixture.changeDetectorRef.detectChanges();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.editor.onEditorInitialized.subscribe(() => {
+          fixture.changeDetectorRef.detectChanges();
+          fixture.detectChanges();
+          fixture.whenStable().then(() => {
+            setTimeout(() => {
+              component.editor.getValue().subscribe((value: string) => {
+                expect(component.sampleCode).toBe(newSampleCode);
+                expect(value).toBe(newSampleCode);
+                done();
+              });
+            }, 1000); // wait for timeouts
+          });
+        });
+      });
+    })();
+  });
 });
 
 @Component({
@@ -322,4 +383,40 @@ class TestMultipleEditorsComponent {
 })
 class TestEditorOptionsComponent {
   @ViewChild('editor1') editor1: TdCodeEditorComponent;
+}
+
+@Component({
+  template: `
+    <div>
+      <td-code-editor
+        #editor
+        style="height: 200px"
+        language="javascript"
+        [(value)]="sampleCode"
+      >
+      </td-code-editor>
+    </div>
+  `,
+})
+class TestTwoWayBindingWithValueComponent {
+  @ViewChild('editor') editor: TdCodeEditorComponent;
+  sampleCode: string = `const val = 1;`;
+}
+
+@Component({
+  template: `
+    <div>
+      <td-code-editor
+        #editor
+        style="height: 200px"
+        language="javascript"
+        [(ngModel)]="sampleCode"
+      >
+      </td-code-editor>
+    </div>
+  `,
+})
+class TestTwoWayBindingWithNgModelComponent {
+  @ViewChild('editor') editor: TdCodeEditorComponent;
+  sampleCode: string = `const val = 1;`;
 }

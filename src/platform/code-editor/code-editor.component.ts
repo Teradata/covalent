@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit,
-  ViewChild, ElementRef, forwardRef, NgZone, ChangeDetectorRef } from '@angular/core';
+  ViewChild, ElementRef, forwardRef, NgZone, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 
@@ -27,7 +27,7 @@ declare const process: any;
     multi: true,
   }],
 })
-export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValueAccessor {
+export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValueAccessor, OnDestroy {
 
   private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
   private _appPath: string = '';
@@ -47,6 +47,8 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _editorOptions: any = {};
   private _isFullScreen: boolean = false;
   private _keycode: any;
+  private _setValueTimeout: any;
+  private initialContentChange: boolean = true;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
 
@@ -103,6 +105,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   @Input('value')
   set value(value: string) {
+    // Clear any timeout that might overwrite this value set in the future
+    if (this._setValueTimeout) {
+        clearTimeout(this._setValueTimeout);
+    }
     this._value = value;
     if (this._componentInitialized) {
         if (this._webview) {
@@ -117,7 +123,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 this._fromEditor = false;
             } else {
                 // Editor is not loaded yet, try again in half a second
-                setTimeout(() => {
+                this._setValueTimeout = setTimeout(() => {
                     this.value = value;
                 }, 500);
             }
@@ -134,11 +140,15 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                 this.zone.run(() => this._value = value);
             } else {
               // Editor is not loaded yet, try again in half a second
-              setTimeout(() => {
+              this._setValueTimeout = setTimeout(() => {
                 this.value = value;
               }, 500);
             }
         }
+    } else {
+        this._setValueTimeout = setTimeout(() => {
+            this.value = value;
+        }, 500);
     }
   }
 
@@ -150,7 +160,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    * Implemented as part of ControlValueAccessor.
    */
   writeValue(value: any): void {
-    this.value = value;
+    // do not write if null or undefined
+    // tslint:disable-next-line
+    if ( value != undefined) {
+      this.value = value;
+    }
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
@@ -608,7 +622,12 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             } else if (event.channel === 'onEditorContentChange') {
               this._fromEditor = true;
               this.writeValue(event.args[0]);
+              if (this.initialContentChange) {
+                this.initialContentChange = false;
+                this.layout();
+            }
             } else if (event.channel === 'onEditorInitialized') {
+              this._componentInitialized = true;
               this._editorProxy = this.wrapEditorCalls(this._editor);
               this.onEditorInitialized.emit(this._editorProxy);
             } else if (event.channel === 'onEditorConfigurationChanged') {
@@ -621,7 +640,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         // append the webview to the DOM
         this._editorContainer.nativeElement.appendChild(this._webview);
     }
-    this._componentInitialized = true;
   }
 
   /**
@@ -664,6 +682,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             });
         }
     }
+  }
+
+  ngOnDestroy(): void {
+    this._changeDetectorRef.detach();
   }
 
   /**
@@ -775,7 +797,12 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
               let result: any = await origMethod.apply(that._editor, args);
               // since running javascript code manually need to force Angular to detect changes
               setTimeout(() => {
-                that.zone.run(() => that._changeDetectorRef.detectChanges());
+                that.zone.run(() => {
+                    // tslint:disable-next-line
+                    if (!that._changeDetectorRef['destroyed']) {
+                        that._changeDetectorRef.detectChanges();
+                    }
+                });
               });
               return result;
             }
@@ -801,16 +828,21 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     }, this.editorOptions));
     setTimeout(() => {
         this._editorProxy = this.wrapEditorCalls(this._editor);
+        this._componentInitialized = true;
         this.onEditorInitialized.emit(this._editorProxy);
     });
     this._editor.getModel().onDidChangeContent( (e: any) => {
         this._fromEditor = true;
         this.writeValue(this._editor.getValue());
+        if (this.initialContentChange) {
+            this.initialContentChange = false;
+            this.layout();
+        }
     });
     // need to manually resize the editor any time the window size
     // changes. See: https://github.com/Microsoft/monaco-editor/issues/28
     window.addEventListener('resize', () => {
-        this._editor.layout();
+        this.layout();
     });
     this.addFullScreenModeCommand();
   }
