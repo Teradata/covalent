@@ -55,3 +55,5 @@ import 'core-js/es7/array';
 if (typeof SVGElement.prototype.contains === 'undefined') {
     SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
 }
+
+import 'core-js/es7/reflect';
