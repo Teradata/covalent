@@ -162,7 +162,7 @@ export function mixinHttp(base: any,
 @Injectable({providedIn: 'root'})
 export class InternalHttpService {
 
-  static _injector: Injector;
+  static _injector: Injector = undefined;
 
   constructor(_injector: Injector) {
     InternalHttpService._injector = _injector;
