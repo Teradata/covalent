@@ -94,12 +94,11 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.11.2",
     "@angular-devkit/build-ng-packagr": "~0.11.2",
+    "@angular-devkit/core": "^7.2.1",
     "@angular-devkit/schematics": "^7.2.1",
-    "@angular-devkit/schematics-cli": "^0.12.1",
     "@angular/cli": "7.1.2",
     "@angular/compiler-cli": "7.1.2",
     "@covalent/tools": "2.0.0-beta.2",
-    "@schematics/schematics": "^0.12.1",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "~2.8.6",
