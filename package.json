@@ -77,7 +77,7 @@
     "@angular/platform-browser-dynamic": "7.0.0",
     "@angular/platform-server": "7.0.0",
     "@angular/router": "7.0.0",
-    "@covalent/code-editor": "2.0.0",
+    "@covalent/code-editor": "2.0.3",
     "@covalent/text-editor": "2.0.0",
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
