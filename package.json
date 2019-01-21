@@ -6,7 +6,8 @@
   "keywords": [
     "angular",
     "components",
-    "reusable"
+    "reusable",
+    "schematics"
   ],
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
@@ -64,6 +65,7 @@
     "last 2 versions",
     "ie 11"
   ],
+  "schematics": "./src/platform/experimental/schematics/collection.json",
   "dependencies": {
     "@angular/animations": "7.0.0",
     "@angular/cdk": "7.0.1",
