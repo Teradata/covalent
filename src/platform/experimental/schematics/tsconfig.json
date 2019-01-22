@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "@covalent/schematics/*": ["./*"],
+    },
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true,
+    "importHelpers": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/*/files/**/*"
+  ]
+}
