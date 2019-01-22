@@ -82,7 +82,7 @@ export function mixinHttp(base: any,
    * @internal
    */
   abstract class HttpInternalClass extends base {
-    constructor(...args: any) {
+    constructor(args: any) {
       super(...(args && args.length > 0 ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())));
       this._injector = getInjector();
       this.buildConfig();
