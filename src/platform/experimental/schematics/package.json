@@ -17,7 +17,9 @@
   "dependencies": {
     "@angular/material": "7.0.1",
     "@angular-devkit/core": "^7.2.1",
-    "@angular-devkit/schematics": "^7.2.1",
+    "@angular-devkit/schematics": "^7.2.1"
+  },
+  "devDependencies": {
     "@covalent/tools": "2.0.0-beta.2",
     "@schematics/angular": "^7.2.1",
     "@types/jasmine": "^2.6.0",
