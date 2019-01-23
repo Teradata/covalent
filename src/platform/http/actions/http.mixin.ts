@@ -26,33 +26,35 @@ function injectArgs(types: (Type<any>| InjectionToken<any>| any[])[], injector: 
   const args: any[] = [];
   for (let i: number = 0; i < types.length; i++) {
     const arg: any = types[i];
-    if (Array.isArray(arg)) {
-      if (arg.length === 0) {
-        throw new Error('Arguments array must have arguments.');
-      }
-      let type: Type<any>|undefined = undefined;
-      let flags: InjectFlags = InjectFlags.Default;
-
-      for (let j: number = 0; j < arg.length; j++) {
-        const meta: any = arg[j];
-        if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
-          /* tslint:disable */
-          flags |= InjectFlags.Optional;
-        } else if (meta instanceof SkipSelf || meta.ngMetadataName === 'SkipSelf') {
-          flags |= InjectFlags.SkipSelf;
-        } else if (meta instanceof Self || meta.ngMetadataName === 'Self') {
-          flags |= InjectFlags.Self;
-        } else if (meta instanceof Inject) {
-          type = meta.token;
-        } else {
-          type = meta;
+    if (arg) {
+      if (Array.isArray(arg)) {
+        if (arg.length === 0) {
+          throw new Error('Arguments array must have arguments.');
         }
-        /* tslint:enable */
-      }
+        let type: Type<any>|undefined = undefined;
+        let flags: InjectFlags = InjectFlags.Default;
 
-      args.push(injector.get(type !, flags));
-    } else {
-      args.push(injector.get(arg));
+        for (let j: number = 0; j < arg.length; j++) {
+          const meta: any = arg[j];
+          if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
+            /* tslint:disable */
+            flags |= InjectFlags.Optional;
+          } else if (meta instanceof SkipSelf || meta.ngMetadataName === 'SkipSelf') {
+            flags |= InjectFlags.SkipSelf;
+          } else if (meta instanceof Self || meta.ngMetadataName === 'Self') {
+            flags |= InjectFlags.Self;
+          } else if (meta instanceof Inject) {
+            type = meta.token;
+          } else {
+            type = meta;
+          }
+          /* tslint:enable */
+        }
+
+        args.push(injector.get(type !, flags));
+      } else {
+        args.push(injector.get(arg));
+      }
     }
   }
   return args;
@@ -82,8 +84,8 @@ export function mixinHttp(base: any,
    * @internal
    */
   abstract class HttpInternalClass extends base {
-    constructor(args: any) {
-      super(...(args && args.length > 0 ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())));
+    constructor(...args: any[]) {
+      super(...(args && args.length ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())));
       this._injector = getInjector();
       this.buildConfig();
     }
