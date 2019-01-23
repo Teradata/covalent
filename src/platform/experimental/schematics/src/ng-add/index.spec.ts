@@ -1,6 +1,6 @@
 import { getFileContent } from '@schematics/angular/utility/test';
 import { Tree } from '@angular-devkit/schematics';
-import { covalentCoreVersion } from './version-names';
+import { covalentCoreVersion, materialVersion } from './version-names';
 import {
   SchematicTestRunner,
   UnitTestTree,
@@ -36,14 +36,31 @@ describe('ng-add schematic', () => {
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
 
-    let expectedVersion: string = `~${covalentCoreVersion}`;
-    expect(dependencies['@covalent/core']).toBeDefined();
-    expect(dependencies['@covalent/core']).toBe(expectedVersion,
-      'Expected the @covalent/core package to have ' + `~${expectedVersion}` + ' version.');
+    let expectedCovalentVersion: string = `~${covalentCoreVersion}`;
+    let expectedMaterialVersion: string = `~${materialVersion}`;
+
+    expectVersionToBe(dependencies, '@covalent/core', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/highlight', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/http', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/markdown', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@angular/material', expectedMaterialVersion);
 
     expect(Object.keys(dependencies)).toEqual(
       Object.keys(dependencies).sort(),
       'Expected the modified ' + dependencies + ' to be sorted alphabetically.',
     );
   });
+
+  it('should create theme.scss', () => {
+    const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
+    expect(tree.exists('src/theme.scss')).toBe(true);
+  });
+
+  function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {
+    expect(dependencies[name]).toBe(expectedVersion,
+      'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.');
+  }
+
 });
