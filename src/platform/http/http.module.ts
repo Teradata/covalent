@@ -1,6 +1,8 @@
 import { NgModule, ModuleWithProviders, Injector, InjectionToken, Provider } from '@angular/core';
 import { HttpClientModule, HttpHandler } from '@angular/common/http';
 
+import { InternalHttpService } from './actions/http.mixin';
+
 import { TdHttpService, TdInterceptorBehaviorService, ITdHttpInterceptorConfig } from './interceptors/http.service';
 import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interceptor-matcher.class';
 
@@ -25,8 +27,14 @@ export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
   imports: [
     HttpClientModule,
   ],
+  providers: [
+    InternalHttpService,
+  ],
 })
 export class CovalentHttpModule {
+
+  constructor(private _internalHttpService: InternalHttpService) {}
+
   static forRoot(config: HttpConfig = {interceptors: []}): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,

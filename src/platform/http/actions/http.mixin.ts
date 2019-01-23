@@ -73,7 +73,8 @@ export function mixinHttp(base: any,
   @Injectable()
   abstract class HttpInternalClass extends base {
     constructor(public _injector: Injector) {
-      super(...injectArgs(new ɵReflectionCapabilities().parameters(base), _injector));
+      super(...injectArgs(new ɵReflectionCapabilities().parameters(base), _injector || InternalHttpService._injector));
+      this._injector = _injector || InternalHttpService._injector;
       this.buildConfig();
     }
     abstract buildConfig(): void;
@@ -152,4 +153,18 @@ export function mixinHttp(base: any,
       return (<TdHttpService>this.http).request(method, url, options);
     }
   };
+}
+
+/** 
+ * @internal
+ * WORKAROUND until Ivy Renderer is ready
+ */
+@Injectable({providedIn: 'root'})
+export class InternalHttpService {
+
+  static _injector: Injector = undefined;
+
+  constructor(_injector: Injector) {
+    InternalHttpService._injector = _injector;
+  }
 }
