@@ -1,9 +1,9 @@
-import { Rule, chain, Tree, apply, mergeWith, url, FileVisitor, FilePredicate } from '@angular-devkit/schematics';
-import { addPackageToPackageJson } from './package-config';
+import { Rule, chain, Tree, mergeWith, url } from '@angular-devkit/schematics';
+import { addPackageToPackageJson } from '@angular/material/schematics/ng-add/package-config';
 import { ISchema } from './schema';
 import { covalentCoreVersion, materialVersion } from './version-names';
 
-export function addDepsAndFiles(options: ISchema): Rule {
+export function addDependenciesAndFiles(_options: ISchema): Rule {
   return chain([
     (host: Tree) => {
       addPackageToPackageJson(host, '@angular/material', `~${materialVersion}`);
