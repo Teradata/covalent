@@ -3,4 +3,4 @@ import { setupTestEnv } from './setupTestEnv';
 
 declare const require: any;
 
-setupTestEnv(require.context('./', true, /\.spec\.ts$/));
+setupTestEnv(require.context('./', true, /^(?!.*(\/schematics\/)).*\.spec\.ts/));
