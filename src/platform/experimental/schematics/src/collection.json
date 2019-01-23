@@ -3,7 +3,7 @@
     "schematics": {
       "ng-add": {
         "description": "Adds Covalent to the application without affecting any templates",
-        "factory": "./ng-add/index#addCoreDepsAndFiles",
+        "factory": "./ng-add/index#addDepsAndFiles",
         "schema": "./ng-add/schema.json",
         "aliases": ["covalent-shell", "install"]
       }
