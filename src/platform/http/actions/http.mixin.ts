@@ -1,5 +1,5 @@
 import { Type, Injectable, Injector, ɵReflectionCapabilities, InjectFlags, Optional,
-  SkipSelf, Self, Inject, InjectionToken } from '@angular/core';
+  SkipSelf, Self, Inject, InjectionToken, inject, INJECTOR } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TdHttpService } from '../interceptors/http.service';
 
@@ -26,36 +26,49 @@ function injectArgs(types: (Type<any>| InjectionToken<any>| any[])[], injector: 
   const args: any[] = [];
   for (let i: number = 0; i < types.length; i++) {
     const arg: any = types[i];
-    if (Array.isArray(arg)) {
-      if (arg.length === 0) {
-        throw new Error('Arguments array must have arguments.');
-      }
-      let type: Type<any>|undefined = undefined;
-      let flags: InjectFlags = InjectFlags.Default;
-
-      for (let j: number = 0; j < arg.length; j++) {
-        const meta: any = arg[j];
-        if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
-          /* tslint:disable */
-          flags |= InjectFlags.Optional;
-        } else if (meta instanceof SkipSelf || meta.ngMetadataName === 'SkipSelf') {
-          flags |= InjectFlags.SkipSelf;
-        } else if (meta instanceof Self || meta.ngMetadataName === 'Self') {
-          flags |= InjectFlags.Self;
-        } else if (meta instanceof Inject) {
-          type = meta.token;
-        } else {
-          type = meta;
+    if (arg) {
+      if (Array.isArray(arg)) {
+        if (arg.length === 0) {
+          throw new Error('Arguments array must have arguments.');
         }
-        /* tslint:enable */
-      }
+        let type: Type<any>|undefined = undefined;
+        let flags: InjectFlags = InjectFlags.Default;
 
-      args.push(injector.get(type !, flags));
-    } else {
-      args.push(injector.get(arg));
+        for (let j: number = 0; j < arg.length; j++) {
+          const meta: any = arg[j];
+          if (meta instanceof Optional || meta.ngMetadataName === 'Optional') {
+            /* tslint:disable */
+            flags |= InjectFlags.Optional;
+          } else if (meta instanceof SkipSelf || meta.ngMetadataName === 'SkipSelf') {
+            flags |= InjectFlags.SkipSelf;
+          } else if (meta instanceof Self || meta.ngMetadataName === 'Self') {
+            flags |= InjectFlags.Self;
+          } else if (meta instanceof Inject) {
+            type = meta.token;
+          } else {
+            type = meta;
+          }
+          /* tslint:enable */
+        }
+
+        args.push(injector.get(type !, flags));
+      } else {
+        args.push(injector.get(arg));
+      }
     }
   }
   return args;
+}
+
+export function getInjector(): Injector {
+  try {
+    return inject(INJECTOR);
+  } catch (e) {
+    if (!InternalHttpService._injector) {
+      throw new Error('Please add CovalentHttpModule into your imports.');
+    }
+    return InternalHttpService._injector;
+  }
 }
 
 /** 
@@ -70,11 +83,10 @@ export function mixinHttp(base: any,
    * a way to inject services from the constructor of the underlying service
    * @internal
    */
-  @Injectable()
   abstract class HttpInternalClass extends base {
-    constructor(public _injector: Injector) {
-      super(...injectArgs(new ɵReflectionCapabilities().parameters(base), _injector || InternalHttpService._injector));
-      this._injector = _injector || InternalHttpService._injector;
+    constructor(...args: any[]) {
+      super(...(args && args.length ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())));
+      this._injector = getInjector();
       this.buildConfig();
     }
     abstract buildConfig(): void;
