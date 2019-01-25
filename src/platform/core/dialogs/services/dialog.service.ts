@@ -141,15 +141,3 @@ export class TdDialogService {
   }
 
 }
-
-export function DIALOG_PROVIDER_FACTORY(
-    parent: TdDialogService, dialog: MatDialog): TdDialogService {
-  return parent || new TdDialogService(dialog);
-}
-
-export const DIALOG_PROVIDER: Provider = {
-  // If there is already service available, use that. Otherwise, provide a new one.
-  provide: TdDialogService,
-  deps: [[new Optional(), new SkipSelf(), TdDialogService], MatDialog],
-  useFactory: DIALOG_PROVIDER_FACTORY,
-};
