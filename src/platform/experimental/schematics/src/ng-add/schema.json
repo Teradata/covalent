@@ -10,6 +10,36 @@
       "$default": {
         "$source": "projectName"
       }
+    },
+    "dynamic-forms": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent dynamic-forms should be set up.",
+      "x-prompt": "Set up Covalent Dynamic Forms?"
+    },
+    "highlight": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent highlight should be set up.",
+      "x-prompt": "Set up Covalent Highlight for your code snippets?"
+    },
+    "http": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent http should be set up.",
+      "x-prompt": "Set up Covalent TdHttpService?"
+    },
+    "markdown": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent markdown parser should be set up.",
+      "x-prompt": "Set up Covalent Markdown Parser for writing md files?"
+    },
+    "flavored-markdown": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent flavored markdown should be set up.",
+      "x-prompt": "Set up Covalent Flavored Markdown for rendering material design components?"
     }
   },
   "required": []

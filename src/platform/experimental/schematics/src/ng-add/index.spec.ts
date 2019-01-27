@@ -32,7 +32,8 @@ describe('ng-add schematic', () => {
   });
 
   it('should update package.json', () => {
-    const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
+    const dependencyOptions: any = {'dynamic-forms': true, 'http': true, 'highlight': false, 'markdown': true, 'flavored-markdown': true};
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions,  appTree);
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
 
@@ -41,11 +42,11 @@ describe('ng-add schematic', () => {
 
     expectVersionToBe(dependencies, '@covalent/core', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/dynamic-forms', expectedCovalentVersion);
-    expectVersionToBe(dependencies, '@covalent/highlight', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/http', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@angular/material', expectedMaterialVersion);
+    expect(dependencies['@covalent/highlight']).not.toBeDefined();
 
     expect(Object.keys(dependencies)).toEqual(
       Object.keys(dependencies).sort(),
