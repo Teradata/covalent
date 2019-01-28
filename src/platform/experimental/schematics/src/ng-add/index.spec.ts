@@ -32,7 +32,7 @@ describe('ng-add schematic', () => {
   });
 
   it('should update package.json', () => {
-    const dependencyOptions: any = {'dynamic-forms': true, 'http': true, 'highlight': false, 'markdown': true, 'flavored-markdown': true};
+    const dependencyOptions: any = {'dynamicForms': true, 'http': true, 'highlight': false, 'markdown': true, 'flavoredMarkdown': true};
     const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions,  appTree);
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
@@ -57,6 +57,24 @@ describe('ng-add schematic', () => {
   it('should create theme.scss', () => {
     const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
     expect(tree.exists('src/theme.scss')).toBe(true);
+  });
+
+  it('should import component themes to theme.scss if selected', () => {
+    const dependencyOptions: any = {'highlight': true, 'markdown': true, 'flavoredMarkdown': true};
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    expect(fileContent).toContain('covalent-markdown-theme');
+    expect(fileContent).toContain('covalent-highlight-theme');
+    expect(fileContent).toContain('covalent-flavored-markdown-theme');
+  });
+
+  it('should not import component themes to theme.scss if not selected', () => {
+    const dependencyOptions: any = {'highlight': false, 'markdown': false, 'flavoredMarkdown': false};
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    expect(fileContent).not.toContain('covalent-markdown-theme');
+    expect(fileContent).not.toContain('covalent-highlight-theme');
+    expect(fileContent).not.toContain('covalent-flavored-markdown-theme');
   });
 
   function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {

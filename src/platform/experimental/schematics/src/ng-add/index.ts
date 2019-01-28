@@ -1,8 +1,9 @@
-import { Rule, chain, Tree, mergeWith, url } from '@angular-devkit/schematics';
+import { Rule, chain, Tree, mergeWith, url, apply, branchAndMerge, template } from '@angular-devkit/schematics';
 import { addPackageToPackageJson } from '@angular/material/schematics/ng-add/package-config';
 import { ISchema } from './schema';
 import { covalentCoreVersion, materialVersion } from './version-names';
 import { IComponent, DynamicForms, Http, Highlight, Markdown, FlavoredMarkdown } from './components';
+import { strings } from '@angular-devkit/core';
 
 export function addDependenciesAndFiles(options: ISchema): Rule {
   return chain([
@@ -18,6 +19,20 @@ export function addDependenciesAndFiles(options: ISchema): Rule {
         }
       });
     },
-    mergeWith(url('./files')),
+    mergeFiles(options),
   ]);
+}
+
+function mergeFiles(options: ISchema): Rule {
+  const templateSource: any = apply(
+    url('./files'),
+    [
+      template({
+        ...strings,
+        ...options,
+      }),
+    ],
+  );
+
+  return branchAndMerge(mergeWith(templateSource));
 }

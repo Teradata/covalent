@@ -11,7 +11,7 @@
         "$source": "projectName"
       }
     },
-    "dynamic-forms": {
+    "dynamicForms": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent dynamic-forms should be set up.",
@@ -35,7 +35,7 @@
       "description": "Whether covalent markdown parser should be set up.",
       "x-prompt": "Set up Covalent Markdown Parser for writing md files?"
     },
-    "flavored-markdown": {
+    "flavoredMarkdown": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent flavored markdown should be set up.",

@@ -1,7 +1,7 @@
 export interface ISchema {
 
   /** Whether covalent dynamic-forms should be set up. */
-  'dynamic-forms': boolean;
+  dynamicForms: boolean;
 
   /** Whether covalent highlight should be set up. */
   highlight: boolean;
@@ -13,5 +13,5 @@ export interface ISchema {
   markdown: boolean;
 
   /** Whether covalent flavored markdown should be set up. */
-  'flavored-markdown': boolean;
+  flavoredMarkdown: boolean;
 }

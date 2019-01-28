@@ -7,7 +7,7 @@ export interface IComponent {
 
 export class DynamicForms implements IComponent {
   public enabled(options: ISchema): boolean {
-    return options['dynamic-forms'];
+    return options.dynamicForms;
   }
 
   public dependency(): string {
@@ -47,7 +47,7 @@ export class Markdown implements IComponent {
 
 export class FlavoredMarkdown implements IComponent {
   public enabled(options: ISchema): boolean {
-    return options['flavored-markdown'];
+    return options.flavoredMarkdown;
   }
 
   public dependency(): string {
