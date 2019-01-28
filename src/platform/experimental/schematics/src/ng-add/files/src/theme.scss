@@ -30,14 +30,20 @@ $custom-toolbar-typography: mat-typography-config(
 $mat-font-url: 'platform/core/common/styles/font/';
 @include covalent-material-icons();
 
+<% if (styleSheetUtilities) { %>
 // Include covalent utility classes
 @include covalent-utilities();
+<% } %>
 
+<% if (styleSheetFlexLayout) { %>
 // Include flex layout classes
 @include covalent-layout();
+<% } %>
 
+<% if (styleSheetColors) { %>
 // Include covalent color classes
 @include covalent-colors();
+<% } %>
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker

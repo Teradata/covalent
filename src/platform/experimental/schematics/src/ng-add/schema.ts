@@ -14,4 +14,13 @@ export interface ISchema {
 
   /** Whether covalent flavored markdown should be set up. */
   flavoredMarkdown: boolean;
+
+  /** Whether covalent utilities stylesheet should be added. */
+  styleSheetUtilities: boolean;
+
+  /** Whether covalent flex layout stylesheet should be added. */
+  styleSheetFlexLayout: boolean;
+
+  /** Whether covalent colors stylesheet should be added. */
+  styleSheetColors: boolean;
 }

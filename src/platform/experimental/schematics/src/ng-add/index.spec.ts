@@ -77,6 +77,24 @@ describe('ng-add schematic', () => {
     expect(fileContent).not.toContain('covalent-flavored-markdown-theme');
   });
 
+  it('should include sass mixins to theme.scss if selected', () => {
+    const dependencyOptions: any = {'styleSheetUtilities': true, 'styleSheetFlexLayout': true, 'styleSheetColors': true};
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    expect(fileContent).toContain('covalent-utilities');
+    expect(fileContent).toContain('covalent-layout');
+    expect(fileContent).toContain('covalent-colors');
+  });
+
+  it('should not include sass mixins to theme.scss if selected', () => {
+    const dependencyOptions: any = {'styleSheetUtilities': false, 'styleSheetFlexLayout': false, 'styleSheetColors': false};
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const fileContent: string = getFileContent(tree, 'src/theme.scss');
+    expect(fileContent).not.toContain('covalent-utilities');
+    expect(fileContent).not.toContain('covalent-layout');
+    expect(fileContent).not.toContain('covalent-colors');
+  });
+
   function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {
     expect(dependencies[name]).toBe(expectedVersion,
       'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.');
