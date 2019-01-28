@@ -4,42 +4,35 @@
   "title": "Covalent core ng-add schematic",
   "type": "object",
   "properties": {
-    "project": {
-      "type": "string",
-      "description": "Name of the project.",
-      "$default": {
-        "$source": "projectName"
-      }
-    },
     "dynamicForms": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent dynamic-forms should be set up.",
-      "x-prompt": "Set up Covalent Dynamic Forms?"
+      "x-prompt": "Set up dynamic forms?"
     },
     "highlight": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent highlight should be set up.",
-      "x-prompt": "Set up Covalent Highlight for your code snippets?"
+      "x-prompt": "Set up highlight for code snippets?"
     },
     "http": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent http should be set up.",
-      "x-prompt": "Set up Covalent TdHttpService?"
+      "x-prompt": "Set up http service?"
     },
     "markdown": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent markdown parser should be set up.",
-      "x-prompt": "Set up Covalent Markdown Parser for writing md files?"
+      "x-prompt": "Set up markdown parser for writing md files?"
     },
     "flavoredMarkdown": {
       "type": "boolean",
       "default": true,
       "description": "Whether covalent flavored markdown should be set up.",
-      "x-prompt": "Set up Covalent Flavored Markdown for rendering material design components?"
+      "x-prompt": "Set up flavored markdown for rendering material design components?"
     }
   },
   "required": []
