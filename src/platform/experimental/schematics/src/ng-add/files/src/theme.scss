@@ -34,12 +34,10 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // Include covalent utility classes
 @include covalent-utilities();
 <% } %>
-
 <% if (styleSheetFlexLayout) { %>
 // Include flex layout classes
 @include covalent-layout();
 <% } %>
-
 <% if (styleSheetColors) { %>
 // Include covalent color classes
 @include covalent-colors();
