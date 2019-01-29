@@ -95,6 +95,12 @@ describe('ng-add schematic', () => {
     expect(fileContent).not.toContain('covalent-colors');
   });
 
+  it('should include theme.scss in angular config', () => {
+    const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
+    const angularJson: any = getFileContent(tree, '/angular.json');
+    expect(angularJson).toContain('src/theme.scss');
+  });
+
   function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {
     expect(dependencies[name]).toBe(expectedVersion,
       'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.');
