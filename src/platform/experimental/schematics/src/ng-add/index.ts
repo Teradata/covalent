@@ -8,7 +8,6 @@ import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/s
 import { getWorkspace } from '@schematics/angular/utility/config';
 import { WorkspaceSchema, WorkspaceProject } from '@angular-devkit/core/src/workspace';
 
-
 export function addDependenciesAndFiles(options: ISchema): Rule {
   return chain([
     (host: Tree) => {
