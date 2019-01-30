@@ -4,9 +4,10 @@ import { ISchema } from './schema';
 import { covalentCoreVersion, materialVersion } from './version-names';
 import { IComponent, DynamicForms, Http, Highlight, Markdown, FlavoredMarkdown } from './components';
 import { strings } from '@angular-devkit/core';
-import { getProjectFromWorkspace } from '@angular/cdk/schematics';
+import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
 import { getWorkspace } from '@schematics/angular/utility/config';
 import { WorkspaceSchema, WorkspaceProject } from '@angular-devkit/core/src/workspace';
+
 
 export function addDependenciesAndFiles(options: ISchema): Rule {
   return chain([
@@ -61,17 +62,9 @@ function addThemeToAngularJson(): Rule {
           targetOptions.styles.splice(index, 0);
         }
       }
-      targetOptions.styles.push(assetPath);
+      targetOptions.styles.unshift(assetPath);
     }
     host.overwrite('angular.json', JSON.stringify(workspace, undefined, 2));
     return host;
   };
-}
-
-export function getProjectTargetOptions(project: WorkspaceProject, buildTarget: string): any {
-  if (project.architect &&
-    project.architect[buildTarget] &&
-    project.architect[buildTarget].options) {
-      return project.architect[buildTarget].options;
-  }
 }
