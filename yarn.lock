@@ -211,9 +211,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/code-editor@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-2.0.0.tgz#64c1364efa4f3cbdb2462d821879d605863f2f60"
+"@covalent/code-editor@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-2.0.3.tgz#c0b1c29850e0ec657c4263e761d95c4ba78286bd"
+  integrity sha512-5RpbuaZsIBCSAEqAVd9m+i7Nva37iaDyWZEWhoDP1HKAYuMHEWSE9iXE2sJbuM94KmFTbmPKEZQSTmZFIdILAA==
   dependencies:
     monaco-editor "^0.10.1"
     tslib "^1.9.0"

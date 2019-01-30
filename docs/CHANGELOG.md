@@ -1,3 +1,16 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/teradata/covalent/compare/v2.0.0...v2.0.1) (2019-01-25)
+
+
+### Bug Fixes
+
+* **dialog:** make sure tdDialogService is not singleton ([#1338](https://github.com/teradata/covalent/issues/1338)) ([3510925](https://github.com/teradata/covalent/commit/3510925))
+* **http:** fix aot issue for http decorators ([#1332](https://github.com/teradata/covalent/issues/1332)) ([4e5b052](https://github.com/teradata/covalent/commit/4e5b052))
+* **http:** fix injection on aot (again) ([#1335](https://github.com/teradata/covalent/issues/1335)) ([9185963](https://github.com/teradata/covalent/commit/9185963))
+* **json-formatter:** property name should not be centered when value is large ([#1326](https://github.com/teradata/covalent/issues/1326)) ([cac48e7](https://github.com/teradata/covalent/commit/cac48e7))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/teradata/covalent/compare/v2.0.0-rc.2...v2.0.0) (2018-12-21)
 
