@@ -1,8 +1,8 @@
 @import '~@angular/material/theming';
-@import './platform/core/theming/all-theme';
-<% if (markdown) { %>@import './platform/markdown/markdown-theme';<% } %>
-<% if (highlight) { %>@import './platform/highlight/highlight-theme';<% } %>
-<% if (flavoredMarkdown) { %>@import './platform/flavored-markdown/flavored-markdown-theme';<% } %>
+@import '~@covalent/core/theming/all-theme';
+<% if (markdown) { %>@import '~@covalent/markdown/markdown-theme';<% } %>
+<% if (highlight) { %>@import '~@covalent/highlight/highlight-theme';<% } %>
+<% if (flavoredMarkdown) { %>@import '~@covalent/flavored-markdown/flavored-markdown-theme';<% } %>
 // Plus imports for other components in your app.
 
 // Custom typography
@@ -20,14 +20,11 @@ $custom-toolbar-typography: mat-typography-config(
 // Setting the toolbar to the proper spec weight
 @include mat-toolbar-typography($custom-toolbar-typography);
 
-// Teradata brand
-@import './teradata-branding';
-
 // Include the core styles for Covalent
 @include covalent-core();
 
 // Include material icons
-$mat-font-url: 'platform/core/common/styles/font/';
+$mat-font-url: '~@covalent/core/common/styles/font/';
 @include covalent-material-icons();
 
 <% if (styleSheetUtilities) { %>
@@ -46,8 +43,8 @@ $mat-font-url: 'platform/core/common/styles/font/';
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($td-slate, 700, 100, 900);
-$accent:  mat-palette($td-orange, 800, 200, 900);
+$primary: mat-palette($mat-indigo, 700, 300, 900);
+$accent:  mat-palette($mat-light-blue);
 
 // The warn palette is optional (defaults to red).
 $warn:    mat-palette($mat-red, 600, 200, 900);
@@ -65,5 +62,3 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 <% } %>
 <% if (flavoredMarkdown) { %>@include covalent-flavored-markdown-theme($theme);<% } %>
-@include teradata-brand($theme);
-
