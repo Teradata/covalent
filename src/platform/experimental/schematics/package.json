@@ -15,9 +15,10 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
-    "@angular/material": "7.0.1",
     "@angular-devkit/core": "^7.2.1",
-    "@angular-devkit/schematics": "^7.2.1"
+    "@angular-devkit/schematics": "^7.2.1",
+    "@angular/cdk": "^7.3.0",
+    "@angular/material": "7.0.1"
   },
   "devDependencies": {
     "@covalent/tools": "2.0.0-beta.2",
