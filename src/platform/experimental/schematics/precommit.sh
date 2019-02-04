@@ -17,4 +17,5 @@ ng g covalent-schematics:ng-add
 
 # Check generated files
 git status
+npm install
 
