@@ -1,4 +1,5 @@
-# Covalent schematics for users to easily create Covalent apps.
+# Covalent schematics
+Let users create Covalent apps with ease
 
 ## Install Core schematics
 Command to be used by end users after it's published to npm:
@@ -27,33 +28,36 @@ Angular CLI : 7.2.2
 ```
 
 ## Run this locally
-To run covalent core schematic locally, use the following commands:
+To run covalent core schematic locally, either run `./precommit.sh` from schematics folder or use the following commands:
 
 ### Run test and linter
+```
 npm run test
-
 tslint --format codeFrame -c ./tslint.json "./src/**/*.ts"
+```
 
 ### Link project
+```
 npm link
+```
 
 ### Create Angular base project
+```
 cd /tmp
-
 rm -rf testxyz
-
 ng new testxyz
+```
 
 ### Run covalent schematics
+```
 cd testxyz
-
 npm link covalent-schematics
-
 ng g covalent-schematics:ng-add
+```
 
 ### Check generated files
+```
 git status
-
 npm install
-
 ng serve
+```
