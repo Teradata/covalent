@@ -54,6 +54,7 @@ ng serve
 ```
 
 ## Covalent core `ng add` schematic
+*NOTE* This command does not work yet and will not work until after Covalent schematics is published to npm.  Most likely once it is out of the Covalent experimental area.  See above on how to build locally instead.
 ``` 
 ng add @covalent/core 
 ```
