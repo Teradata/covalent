@@ -13,11 +13,24 @@ Tslint : 5.12.1
 Angular CLI : 7.2.2
 ```
 
+## Covalent core `ng add` schematic
+*NOTE: This command does not work yet and will not work until after Covalent schematics is published to npm.  Most likely once it is out of the Covalent experimental area.  See above on how to build locally instead.*
+``` 
+ng add @covalent/core 
+```
+
+Running the Covalent core `ng add` schematic will include the following:
+
+- Ensure project dependencies are placed in package.json
+- Install all core components
+- Optionally install dynamic forms, http service, code highlight, markdown parser, flavored markdown parser
+- Add Covalent theme file to your src folder
+- Include theme.scss in angular config
+
 ## Install Covalent core schematics
 
 ## Build locally
 To run Covalent core schematic locally, run the following commands:
-
 
 (alternatively run `./precommit.sh` from schematics folder that includes the same commands)
 
@@ -52,17 +65,3 @@ git status
 npm install
 ng serve
 ```
-
-## Covalent core `ng add` schematic
-*NOTE: This command does not work yet and will not work until after Covalent schematics is published to npm.  Most likely once it is out of the Covalent experimental area.  See above on how to build locally instead.*
-``` 
-ng add @covalent/core 
-```
-
-Running the Covalent core `ng add` schematic will include the following:
-
-- Ensure project dependencies are placed in package.json
-- Install all core components
-- Optionally install dynamic forms, http service, code highlight, markdown parser, flavored markdown parser
-- Add Covalent theme file to your src folder
-- Include theme.scss in angular config
