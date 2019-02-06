@@ -17,6 +17,8 @@ Angular CLI : 7.2.2
 
 ## Build locally
 To run covalent core schematic locally, run the following commands:
+
+
 (alternatively run `./precommit.sh` from schematics folder that includes the same commands)
 
 ### Run test and linter
