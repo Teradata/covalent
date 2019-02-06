@@ -13,10 +13,11 @@ Tslint : 5.12.1
 Angular CLI : 7.2.2
 ```
 
-## Install Covalent Core Schematics
+## Install Covalent core schematics
 
 ## Build locally
-To run covalent core schematic locally, run the following commands or run `./precommit.sh` from schematics folder that includes the following commands:
+To run covalent core schematic locally, run the following commands:
+(alternatively run `./precommit.sh` from schematics folder that includes the same commands)
 
 ### Run test and linter
 ```
@@ -36,7 +37,7 @@ rm -rf testxyz
 ng new testxyz
 ```
 
-### Run covalent schematics
+### Run Covalent schematics
 ```
 cd testxyz
 npm link covalent-schematics
