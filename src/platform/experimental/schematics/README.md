@@ -3,7 +3,7 @@ Utilizes the Angular Schematics workflow tool to create Covalent applications
 
 ## Prerequisites
 
-Prerequisites to run covalent schematics in your project:
+Prerequisites to run Covalent schematics in your project:
 
 ```
 Node : v8.15.0
@@ -16,7 +16,7 @@ Angular CLI : 7.2.2
 ## Install Covalent core schematics
 
 ## Build locally
-To run covalent core schematic locally, run the following commands:
+To run Covalent core schematic locally, run the following commands:
 
 
 (alternatively run `./precommit.sh` from schematics folder that includes the same commands)
@@ -63,5 +63,5 @@ Running the Covalent core `ng add` schematic will include the following:
 - Ensure project dependencies are placed in package.json
 - Install all core components
 - Optionally install dynamic forms, http service, code highlight, markdown parser, flavored markdown parser
-- Add covalent theme file to your src folder
+- Add Covalent theme file to your src folder
 - Include theme.scss in angular config
