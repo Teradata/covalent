@@ -21,44 +21,44 @@ The following will:
 - Add Covalent theme file to your src folder
 - Include theme.scss in angular config
 
-## Build locally
+### Build locally
 To run Covalent core schematic locally, run the following commands:
 
 (alternatively run `./precommit.sh` from schematics folder that includes the same commands)
 
-### Run test and linter
+#### Run test and linter
 ```
 npm run test
 tslint --format codeFrame -c ./tslint.json "./src/**/*.ts"
 ```
 
-### Link project
+#### Link project
 ```
 npm link
 ```
 
-### Create Angular base project
+#### Create Angular base project
 ```
 cd /tmp
 rm -rf testxyz
 ng new testxyz
 ```
 
-### Run Covalent schematics
+#### Run Covalent schematics
 ```
 cd testxyz
 npm link covalent-schematics
 ng g covalent-schematics:ng-add
 ```
 
-### Check generated files
+#### Check generated files
 ```
 git status
 npm install
 ng serve
 ```
 
-## Covalent core `ng add` schematic
+### Covalent core `ng add` schematic
 *NOTE: This command does not work yet and will not work until after Covalent schematics is published to npm.  Most likely once it is out of the Covalent experimental area.  See above on how to build locally instead.*
 ``` 
 ng add @covalent/core 
