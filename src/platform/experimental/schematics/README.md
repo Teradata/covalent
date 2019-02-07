@@ -24,16 +24,17 @@ The following will:
 ### Build locally
 To run Covalent core schematic locally, run the following commands:
 
-(alternatively run `./precommit.sh` from schematics folder that includes the same commands)
+(alternatively run `./precommit-schematics.sh` from scripts folder that includes the same commands)
 
 #### Run test and linter
 ```
-npm run test
-tslint --format codeFrame -c ./tslint.json "./src/**/*.ts"
+npm run test-schematics
+npm run tslint
 ```
 
 #### Link project
 ```
+cd ../src/platform/experimental
 npm link
 ```
 
@@ -47,8 +48,8 @@ ng new testxyz
 #### Run Covalent schematics
 ```
 cd testxyz
-npm link covalent-schematics
-ng g covalent-schematics:ng-add
+npm link @covalent/experimental
+ng g @covalent/experimental:ng-add
 ```
 
 #### Check generated files
