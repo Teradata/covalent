@@ -8,7 +8,7 @@ Prerequisites to run Covalent schematics in your project:
 ```
 Node : v8.15.0
 Npm : 6.7.0
-Typescript : 3.3.1
+Typescript : 3.1.3
 Tslint : 5.12.1
 Angular CLI : 7.2.2
 ```
