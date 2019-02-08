@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./../../../../deploy/platform/experimental/schematics/src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
