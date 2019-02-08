@@ -1,5 +1,5 @@
 # Run test and linter
-npm run test-schematics
+npm run test:schematics
 npm run tslint
 
 # Link project
