@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./../../../../deploy/platform/experimental/schematics/src",
+    "baseUrl": "./src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,9 +15,6 @@
     "typeRoots": [
       "./../../../../node_modules/@types"
     ],
-    "paths": {
-      "@covalent/schematics/*": ["./*"],
-    },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
