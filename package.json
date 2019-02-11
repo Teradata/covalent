@@ -18,7 +18,7 @@
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
     "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false && npm run test:schematics",
     "test:watch": "ng test --code-coverage --source-map=false --watch=true",
-    "test:schematics": "jasmine src/platform/experimental/schematics/src/**/*.spec.js",
+    "test:schematics": "tsc -p src/platform/experimental/schematics/tsconfig.json && jasmine src/platform/experimental/schematics/src/**/*.spec.js",
     "coverage:win": "start chrome ./coverage/index.html",
     "coverage:mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
