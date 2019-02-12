@@ -1,7 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "rootDir": "./src",
     "baseUrl": "./src",
+    "outDir": "../../../../deploy/platform/experimental/schematics/src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -25,6 +27,7 @@
     "src/**/*"
   ],
   "exclude": [
+    "**/*.spec.ts",
     "src/*/files/**/*"
   ]
 }

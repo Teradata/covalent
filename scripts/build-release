@@ -40,6 +40,9 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
+
+# BUILD: Schematics
+gulp build-schematics-assets
 # BUILD: @covalent/experimental primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-experimental
 
