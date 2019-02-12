@@ -1,5 +1,4 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "lib": ["es6", "dom"],
