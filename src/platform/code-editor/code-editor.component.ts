@@ -587,6 +587,10 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
                   editorDiv.webkitExitFullscreen();
                 });
 
+                ipcRenderer.on('dispose', function(){
+                  editor.dispose();
+                });
+
                 // need to manually resize the editor any time the window size
                 // changes. See: https://github.com/Microsoft/monaco-editor/issues/28
                 window.addEventListener("resize", function resizeEditor() {
@@ -686,6 +690,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
 
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
+    this._webview ? this._webview.send('dispose') : this._editor.dispose();
   }
 
   /**
