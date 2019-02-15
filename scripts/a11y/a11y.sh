@@ -57,7 +57,7 @@ wait_for $server
 for route in $(cat ${routes});
 do
   route=$(echo $route|tr -d '\n')
-  ./node_modules/.bin/pa11y ${server}/\#/${route};
+  ./node_modules/.bin/pa11y ${server}/${route};
 done
 
 # stop the ng server process.
