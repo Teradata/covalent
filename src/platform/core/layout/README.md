@@ -26,7 +26,7 @@
 Example for Main Layout:
 
 ```html
-<td-layout [mode]="side" [opened]="true" [sidenavWidth]="257px">
+<td-layout [mode]="'side'" [opened]="true" [sidenavWidth]="'257px'">
   <div td-sidenav-content>
    .. more sidenav content
   </div>
