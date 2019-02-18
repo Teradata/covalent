@@ -1,4 +1,4 @@
-import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional, EmbeddedViewRef } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, EmbeddedViewRef } from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
@@ -25,7 +25,9 @@ export interface ILoadingRef {
 /**
  * NOTE: @internal usage only.
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdLoadingFactory {
 
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
@@ -201,15 +203,3 @@ export class TdLoadingFactory {
     }
   }
 }
-
-export function LOADING_FACTORY_PROVIDER_FACTORY(
-    parent: TdLoadingFactory, componentFactoryResolver: ComponentFactoryResolver, overlay: Overlay, injector: Injector): TdLoadingFactory {
-  return parent || new TdLoadingFactory(componentFactoryResolver, overlay, injector);
-}
-
-export const LOADING_FACTORY_PROVIDER: Provider = {
-  // If there is already a service available, use that. Otherwise, provide a new one.
-  provide: TdLoadingFactory,
-  deps: [[new Optional(), new SkipSelf(), TdLoadingFactory], ComponentFactoryResolver, Overlay, Injector],
-  useFactory: LOADING_FACTORY_PROVIDER_FACTORY,
-};

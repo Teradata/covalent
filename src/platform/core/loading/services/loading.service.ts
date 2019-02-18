@@ -1,6 +1,5 @@
-import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ViewContainerRef, TemplateRef } from '@angular/core';
-import { Observable, Subject, Subscription } from 'rxjs';
 
 import { TdLoadingContext } from '../directives/loading.directive';
 import { TdLoadingComponent, LoadingMode, LoadingStrategy, LoadingType } from '../loading.component';
@@ -46,7 +45,9 @@ export class TdLoadingDirectiveConfig extends TdLoadingConfig implements ITdLoad
   }
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdLoadingService {
 
   private _context: {[key: string]: ILoadingRef} = {};
@@ -228,15 +229,3 @@ export class TdLoadingService {
     delete this._timeouts[name];
   }
 }
-
-export function LOADING_PROVIDER_FACTORY(
-    parent: TdLoadingService, loadingFactory: TdLoadingFactory): TdLoadingService {
-  return parent || new TdLoadingService(loadingFactory);
-}
-
-export const LOADING_PROVIDER: Provider = {
-  // If there is already a service available, use that. Otherwise, provide a new one.
-  provide: TdLoadingService,
-  deps: [[new Optional(), new SkipSelf(), TdLoadingService], TdLoadingFactory],
-  useFactory: LOADING_PROVIDER_FACTORY,
-};
