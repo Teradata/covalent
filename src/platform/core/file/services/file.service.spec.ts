@@ -1,11 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { TdFileService, IUploadOptions } from '../public-api';
+import { TdFileService, IUploadOptions, CovalentFileModule } from '../public-api';
 
 describe('Service: File', () => {
     let service: TdFileService;
 
     beforeEach(() => {
-        service = new TdFileService();
+        TestBed.configureTestingModule({
+          imports: [
+            CovalentFileModule,
+          ],
+        });
+        service = TestBed.get(TdFileService);
         spyOn(XMLHttpRequest.prototype, 'open').and.callThrough();
         spyOn(XMLHttpRequest.prototype, 'setRequestHeader').and.callThrough();
     });
