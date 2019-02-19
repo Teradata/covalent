@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": ".",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "types": [
+      "jasmine", "hammerjs", "node"
+    ]
+  },
+  "include": [
+    "**/*",
+    "**/*.spec.ts"
+  ],
+  "exclude": [
+    "*/files/**/*"
+  ]
+}

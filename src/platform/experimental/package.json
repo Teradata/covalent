@@ -13,6 +13,10 @@
     "Jenn Medellin <jennifer.medellin@teradata.com>",
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
+  "keywords": [
+    "schematics"
+  ],
+  "schematics": "./schematics/src/collection.json",
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",
     "@angular/core": "^0.0.0-NG",
