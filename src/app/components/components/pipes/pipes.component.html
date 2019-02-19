@@ -9,7 +9,7 @@
 
     <h3>Setup:</h3>
     <p>Import the [CovalentCommonModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { CovalentCommonModule } from '@covalent/core/common';
         @NgModule({
@@ -45,7 +45,7 @@
       </mat-list-item>
     </mat-list>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
@@ -78,7 +78,7 @@
       </mat-list-item>
     </mat-list>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
@@ -111,7 +111,7 @@
       </mat-list-item>
     </mat-list>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
@@ -140,12 +140,12 @@
       </mat-list-item>
     </mat-list>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
               <!-- original output -->
-              { { log.timestamp } } | 
+              { { log.timestamp } } |
               <!-- output with timeAgo pipe -->
               { { log.timestamp | timeAgo:reference } } //reference is optional
             </mat-list-item>
@@ -167,12 +167,12 @@
       </mat-list-item>
     </mat-list>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
               <!-- original output -->
-              { { log.timestamp } } | 
+              { { log.timestamp } } |
               <!-- output with timeUntil pipe -->
               { { log.timestamp | timeUntil:reference } } //reference is optional
             </mat-list-item>
@@ -199,7 +199,7 @@
     </mat-list>
     <p class="mat-body-1"><strong>Note: </strong> Using this pipe without arguments outputs the time difference relative to the current time. </p>
   <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
@@ -230,7 +230,7 @@
       </mat-list-item>
     </mat-list>
     <p>Usage:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <mat-list>
             <mat-list-item *ngFor="let log of logs">
@@ -243,7 +243,7 @@
         ]]>
     </td-highlight>
     <p class="mat-body-1"><strong>Note: </strong>  If the last character in a returned output is a space, then that space is removed.</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
         <![CDATA[
           <!-- Both have the same output because -->
           <!-- the space is removed in the last example -->

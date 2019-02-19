@@ -5,7 +5,7 @@
   <mat-card-content>
     <h3>SCSS Variables</h3>
     <p>Simply edit the /theme.scss file and update these SCSS variables:</p>
-    <td-highlight lang="scss">
+    <td-highlight codeLang="scss">
       @import '~@angular/material/theming';
       @import '~@covalent/core/theming/all-theme';
       @import '~@covalent/markdown/markdown-theme';
@@ -63,7 +63,7 @@
     <h3 class="mat-title"><span class="tc-blue-700">Blue Primary</span> / <span class="tc-orange-700">Orange Accent</span></h3>
     <div layout-gt-xs="row" layout-margin>
       <div flex-gt-xs="50" class="pad-top-sm">
-        <td-highlight lang="scss">
+        <td-highlight codeLang="scss">
           .blue-orange {{ '{' }}
               $primary2: mat-palette($mat-blue, 700);
               $accent2:  mat-palette($mat-orange, 800);
@@ -105,7 +105,7 @@
     <h3 class="mat-title"><span class="tc-blue-grey-700">Blue Grey Primary</span> / <span class="tc-deep-orange-700">Deep Orange Accent</span></h3>
     <div layout-gt-xs="row" layout-margin>
       <div flex-gt-xs="50" class="pad-top-sm">
-        <td-highlight lang="scss">
+        <td-highlight codeLang="scss">
           .blue-grey-deep-orange {{ '{' }}
               $primary3: mat-palette($mat-blue-grey);
               $accent3:  mat-palette($mat-deep-orange);
@@ -114,7 +114,7 @@
               $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
               @include angular-material-theme($blue-grey-deep-orange);
-              @include covalent-theme($blue-grey-deep-orange); 
+              @include covalent-theme($blue-grey-deep-orange);
           {{ '}' }}
         </td-highlight>
       </div>

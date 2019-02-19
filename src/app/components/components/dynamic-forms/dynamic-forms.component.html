@@ -194,7 +194,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="textElements">
               <ng-template let-element ngFor [ngForOf]="textElements">
@@ -209,7 +209,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{textElements | json}}
         </td-highlight>
       </mat-tab>
@@ -237,7 +237,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="numberElements">
               <ng-template let-element ngFor [ngForOf]="numberElements">
@@ -252,7 +252,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{numberElements | json}}
         </td-highlight>
       </mat-tab>
@@ -274,14 +274,14 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="booleanElements">
             </td-dynamic-forms>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{booleanElements | json}}
         </td-highlight>
       </mat-tab>
@@ -302,14 +302,14 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="dateElements">
             </td-dynamic-forms>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{dateElements | json}}
         </td-highlight>
       </mat-tab>
@@ -330,14 +330,14 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="arrayElements">
             </td-dynamic-forms>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{arrayElements | json}}
         </td-highlight>
       </mat-tab>
@@ -358,14 +358,14 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="fileElements">
             </td-dynamic-forms>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           {{fileElements | json}}
         </td-highlight>
       </mat-tab>
@@ -397,7 +397,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="customValidationElements">
               <ng-template let-element ngFor [ngForOf]="customValidationElements">
@@ -414,7 +414,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             customValidationElements: ITdDynamicElementConfig[] = [{
               name: 'evenElement',
@@ -462,7 +462,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
               <ng-template let-control="control" [tdDynamicFormsError]="'passwordElement'">
@@ -476,7 +476,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             multipleValidatorTypes: ITdDynamicElementConfig[] = [{
               name: 'passwordElement',
@@ -522,7 +522,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms #customValidateForm [elements]="angularValidators">
               <ng-template let-control="control" tdDynamicFormsError="hexColorElement">
@@ -534,7 +534,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             angularValidators: ITdDynamicElementConfig[] = [{
               name: 'hexColorElement',
@@ -571,7 +571,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
               <ng-template let-control="control" tdDynamicFormsError="vowelsElement">
@@ -592,7 +592,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             manualValidatorElement: ITdDynamicElementConfig[] = [{
               name: 'vowelsElement',
@@ -634,7 +634,7 @@
         <ng-template matTabLabel>Code</ng-template>
         <h4>Setup</h4>
         <p>Custom Component:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { Component, TemplateRef } from '@angular/core';
             import { FormControl } from '@angular/forms';
@@ -666,7 +666,7 @@
           ]]>
         </td-highlight>
         <p>Module imports:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             @NgModule({
               declarations: [
@@ -684,11 +684,11 @@
               ],
             })
             export class ComponentsModule {}
-          ]]>          
+          ]]>
         </td-highlight>
         <h4>Usage:</h4>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="customElements">
               <ng-template let-element ngFor [ngForOf]="customElements">
@@ -702,7 +702,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             customElements: ITdDynamicElementConfig[] = [{
               name: 'custom',

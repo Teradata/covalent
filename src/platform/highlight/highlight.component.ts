@@ -33,14 +33,14 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   /**
-   * lang?: string
+   * codeLang?: string
    *
    * Language of the code content to be parsed as highlighted html.
    * Defaults to `typescript`
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input('lang') language: string = 'typescript';
+  @Input('codeLang') language: string = 'typescript';
 
   /**
    * contentReady?: function

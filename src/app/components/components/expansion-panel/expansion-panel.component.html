@@ -28,7 +28,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
               <div class="md-padding">
@@ -51,7 +51,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ExpansionPanelDemoComponent {
               disabled: boolean = false;
@@ -121,7 +121,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-expansion-panel [expand]="true">
               <ng-template td-expansion-panel-label>
@@ -221,7 +221,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-expansion-panel disableRipple>
               <ng-template td-expansion-panel-header>
@@ -300,7 +300,7 @@
         <ng-template matTabLabel>Code</ng-template>
         <mat-card-content>
           <p>HTML:</p>
-          <td-highlight lang="html">
+          <td-highlight codeLang="html">
             <![CDATA[
               <td-expansion-panel-group [multi]="multi" #panelGroup>
                 <td-expansion-panel label="Label goes here">
@@ -322,7 +322,7 @@
             ]]>
           </td-highlight>
           <p>Typescript:</p>
-          <td-highlight lang="typescript">
+          <td-highlight codeLang="typescript">
             <![CDATA[
               export class ExpansionPanelDemoComponent {
                 multi: boolean = false;

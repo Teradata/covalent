@@ -23,7 +23,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips [chipAddition]="chipAddition"
                       [chipRemoval]="chipRemoval"
@@ -38,7 +38,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
               disabled: boolean = false;
@@ -143,7 +143,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips color="accent"
                       [items]="filteredObjects"
@@ -164,7 +164,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
               objects: any[] = [
@@ -228,7 +228,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips [items]="filteredAsync"
                       [debounce]="500"
@@ -245,7 +245,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
               filteringAsync: boolean = false;
@@ -316,7 +316,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips [items]="filteredStackedStrings"
                       [(ngModel)]="stackedStringsModel"
@@ -328,7 +328,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
 
@@ -383,13 +383,13 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips color="warn" placeholder="Enter any string"></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
 
@@ -420,7 +420,7 @@
         <ng-template matTabLabel>Code</ng-template>
         <mat-card-content>
           <p>HTML:</p>
-          <td-highlight lang="html">
+          <td-highlight codeLang="html">
             <![CDATA[
               <td-chips
                 placeholder="Type here"
@@ -430,7 +430,7 @@
             ]]>
           </td-highlight>
           <p>Typescript:</p>
-          <td-highlight lang="typescript">
+          <td-highlight codeLang="typescript">
             <![CDATA[
               export class ChipsDemoComponent {
                 compareWith: (o1: any, o2: any) => boolean = (o1: any, o2: any) => {
@@ -460,13 +460,13 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
           <td-chips placeholder="Enter any string" required [(ngModel)]="stackedStringsModel"></td-chips>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
 
@@ -509,7 +509,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-chips [items]="filteredStrings"
                   [(ngModel)]="stringsModel"
@@ -524,7 +524,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class ChipsDemoComponent {
               events: string[] = [];

@@ -23,7 +23,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
               { {pagingBar.range} } of { {pagingBar.total} }
@@ -31,7 +31,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { IPageChangeEvent } from '@covalent/core/paging';
             ...
@@ -91,7 +91,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
               <span hide-xs>Rows per page:</span>
@@ -105,7 +105,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { IPageChangeEvent } from '@covalent/core/paging';
             ...
@@ -149,7 +149,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
               <span hide-xs>{ {pagingBarLinks.range} } of { {pagingBarLinks.total} }</span>
@@ -157,7 +157,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { IPageChangeEvent } from '@covalent/core/paging';
             ...
@@ -211,7 +211,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
               <p hide-xs>Go to:</p>
@@ -230,7 +230,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { IPageChangeEvent } from '@covalent/core/paging';
             ...
@@ -295,7 +295,7 @@
       <ng-template matTabLabel>Code</ng-template>
       <mat-card-content>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-paging-bar #pagingBarResponsive
                           [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
@@ -325,7 +325,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { IPageChangeEvent } from '@covalent/core/paging';
             ...

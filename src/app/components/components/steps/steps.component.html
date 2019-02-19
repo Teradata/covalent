@@ -43,7 +43,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-steps>
               <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
@@ -71,7 +71,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { StepState } from '@covalent/core/steps';
             ...
@@ -129,7 +129,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'">
           <td-step>
@@ -140,7 +140,7 @@
       ]]>
     </td-highlight>
     <p>Typescript:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { IStepChangeEvent } from '@covalent/core/steps';
         ...
@@ -154,7 +154,7 @@
     </td-highlight>
     <h3>Setup:</h3>
     <p>Import the [CovalentStepsModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { CovalentStepsModule } from '@covalent/core/steps';
         @NgModule({
@@ -193,7 +193,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()" [disableRipple]="false">
           <ng-template td-step-label>
@@ -211,7 +211,7 @@
       ]]>
     </td-highlight>
     <p>Typescript:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { StepState } from '@covalent/core/steps';
         ...

@@ -5,7 +5,7 @@
   <mat-card-content>
     <h3>Font Icons</h3>
     <p>Font icons using ligatures are the default option and simple to use:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
     <![CDATA[ <mat-icon>home</mat-icon> ]]>
     </td-highlight>
     <p>
@@ -14,7 +14,7 @@
     <h3>SVG Icons (from Safe URLS)</h3>
     <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MatIconRegistry] so it can be referred later on:</p>
     <p>Typescript:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
      <![CDATA[
        import { DomSanitizer } from '@angular/platform-browser';
        import { MatIconRegistry } from '@angular/material/icon';
@@ -28,7 +28,7 @@
      ]]>
     </td-highlight>
     <p>HTML:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[ <mat-icon svgIcon="assets:sun"></mat-icon> ]]>
     </td-highlight>
   </mat-card-content>

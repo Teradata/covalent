@@ -18,7 +18,7 @@
         </mat-list-item>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </mat-list>    
+    </mat-list>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -28,7 +28,7 @@
   <mat-card-content>
     <h2><code>TdMediaService</code></h2>
     <p>This service is designed to provide basic media query evaluation for responsive applications.</p>
-    <p>It has pre-programmed support for media queries that match the layout 
+    <p>It has pre-programmed support for media queries that match the layout
       <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
     </p>
     <mat-list>
@@ -53,7 +53,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>Typescript:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { Component, NgZone, OnInit, OnDestroy } from '@angular/core';
         import { TdMediaService } from '@covalent/core/media';
@@ -64,7 +64,7 @@
           isSmallScreen: boolean = false;
           private _querySubscription: Subscription;
 
-          constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) { 
+          constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {
           }
 
           checkScreen(): void {
@@ -95,7 +95,7 @@
     <p>A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy] interface.</p>
     <h3>Setup:</h3>
     <p>Import the [CovalentMediaModule] in your NgModule:</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { CovalentMediaModule } from '@covalent/core/media';
         @NgModule({
@@ -130,9 +130,9 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
-        <div tdMediaToggle="sm" [mediaClasses]="['classOne', 'classTwo']" 
+        <div tdMediaToggle="sm" [mediaClasses]="['classOne', 'classTwo']"
           [mediaAttributes]="{title: 'tooltip'}" [mediaStyles]="{color: 'red'}">
           ...
         </div>

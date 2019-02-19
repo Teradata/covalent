@@ -7,7 +7,7 @@
 
     <h3>Setup:</h3>
     <p>Import individual animation utilities as needed into the component that will contain the elements you want to animate.</p>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { tdAnimationUtility_A, tdAnimationUtility_B } from '@covalent/core/common';
 
@@ -45,7 +45,7 @@
       </button>
 
       <p>Typescript:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import { tdRotateAnimation } from '@covalent/core/common';
           ...
@@ -59,7 +59,7 @@
         ]]>
       </td-highlight>
       <p>HTML:</p>
-      <td-highlight lang="html">
+      <td-highlight codeLang="html">
         <![CDATA[
           <button mat-raised-button [@tdRotate]="triggerState" (click)="triggerState = !triggerState" color="accent">
             Rotate 180&deg;<mat-icon>mood</mat-icon>
@@ -77,7 +77,7 @@
       </button>
 
       <p>Typescript:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import { tdRotateAnimation } from '@covalent/core/common';
           ...
@@ -91,7 +91,7 @@
         ]]>
       </td-highlight>
       <p>HTML:</p>
-      <td-highlight lang="html">
+      <td-highlight codeLang="html">
         <![CDATA[
           <button mat-raised-button [@tdRotate]="{ value: rotateState2, params: { duration: 500, degreesEnd: -45 } }" (click)="triggerState = !triggerState" color="accent">
             Rotate -45&deg;<mat-icon [@tdRotate]="{ value: rotateState2, params: { duration: 750, degreesEnd: 545 } }">mood</mat-icon>
@@ -151,7 +151,7 @@
       </div>
 
       <p>Typescript:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import { tdCollapseAnimation } from '@covalent/core/common';
           ...
@@ -165,7 +165,7 @@
         ]]>
       </td-highlight>
       <p>HTML:</p>
-      <td-highlight lang="html">
+      <td-highlight codeLang="html">
         <![CDATA[
           <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Collapse</button>
           <div [style.overflow]="'hidden'" [@tdCollapse]="{ value: triggerState, params: { duration: 500 }}">
@@ -225,7 +225,7 @@
       </div>
 
       <p>Typescript:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import { tdFadeInOutAnimation } from '@covalent/core/common';
           ...
@@ -239,7 +239,7 @@
         ]]>
       </td-highlight>
       <p>HTML:</p>
-      <td-highlight lang="html">
+      <td-highlight codeLang="html">
         <![CDATA[
            <button mat-raised-button color="accent" (click)="triggerState = !triggerState">Fade In</button>
             <div [@tdFadeInOut]="triggerState">
@@ -314,7 +314,7 @@
       </button>
 
       <p>Typescript:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import {
             tdBounceAnimation,
@@ -342,7 +342,7 @@
         ]]>
       </td-highlight>
       <p>HTML:</p>
-      <td-highlight lang="html">
+      <td-highlight codeLang="html">
         <![CDATA[
           <button mat-raised-button [@tdBounce]="bounceState" (click)="bounceState = !bounceState" color="accent">
             @tdBounce <mat-icon>mood</mat-icon>

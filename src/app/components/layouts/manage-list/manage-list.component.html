@@ -14,7 +14,7 @@
   </div>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <td-layout-manage-list opened="true" mode="side">
           <mat-toolbar td-sidenav-content></mat-toolbar>
@@ -66,7 +66,7 @@
   </div>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <td-layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
@@ -129,7 +129,7 @@
           <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
           <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
         </div>
-        <td-layout-manage-list #manageList 
+        <td-layout-manage-list #manageList
                 [opened]="media.registerQuery('gt-sm') | async"
                 [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                 [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
@@ -229,7 +229,7 @@
   </div>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <td-layout>
           <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
@@ -253,7 +253,7 @@
               <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
               <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
             </div>
-            <td-layout-manage-list #manageList 
+            <td-layout-manage-list #manageList
                     [opened]="media.registerQuery('gt-sm') | async"
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
@@ -353,7 +353,7 @@
       ]]>
     </td-highlight>
     <h3 class="mat-title">TypeScript:</h3>
-    <td-highlight lang="typescript">
+    <td-highlight codeLang="typescript">
       <![CDATA[
         import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
         import { TdMediaService } from '@covalent/core/media';

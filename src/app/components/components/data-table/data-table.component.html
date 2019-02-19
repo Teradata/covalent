@@ -38,7 +38,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <table td-data-table>
               <thead>
@@ -68,7 +68,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { ITdDataTableColumn } from '@covalent/core/data-table';
             import { TdDialogService } from '@covalent/core/dialogs';
@@ -103,7 +103,7 @@
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="basicData | json">
+        <td-highlight codeLang="json" [content]="basicData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -126,7 +126,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-data-table
               [data]="basicData"
@@ -138,7 +138,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { ITdDataTableColumn } from '@covalent/core/data-table';
             ...
@@ -159,7 +159,7 @@
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="basicData | json">
+        <td-highlight codeLang="json" [content]="basicData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -183,7 +183,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <td-data-table
               [data]="dateSortData"
@@ -199,7 +199,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { ITdDataTableColumn } from '@covalent/core/data-table';
             ...
@@ -241,7 +241,7 @@
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="dateSortData | json">
+        <td-highlight codeLang="json" [content]="dateSortData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -283,7 +283,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <table td-data-table>
               <thead>
@@ -312,7 +312,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             export class Demo implements OnInit {
               atomicData: any[];
@@ -350,7 +350,7 @@
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="dateSortData | json">
+        <td-highlight codeLang="json" [content]="dateSortData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -397,7 +397,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [class.mat-selected-title]="selectedRows.length && selectable">
               <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
@@ -411,7 +411,7 @@
               </button>
             </div>
             <mat-divider></mat-divider>
-            <td-data-table 
+            <td-data-table
               #dataTable
               [data]="filteredData"
               [columns]="columns"
@@ -442,7 +442,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
@@ -514,7 +514,7 @@
               }];
 
               serviceAttrs: Object[] = [{
-                description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them. 
+                description: `Searches [data] parameter for [searchTerm] matches and returns a new array with them.
                               Any column names passed in with [nonSearchAbleColumns] will be excluded in the search.`,
                 name: 'filterData',
                 type: `function(data: any[], searchTerm: string, ignoreCase: boolean, nonSearchAbleColumns: string[])`,
@@ -628,7 +628,7 @@
                 let newData: any[] = this.data;
                 let excludedColumns: string[] = await this.columns
                 .filter((column: ITdDataTableColumn) => {
-                  return ((column.filter === undefined && column.hidden === true) || 
+                  return ((column.filter === undefined && column.hidden === true) ||
                           (column.filter !== undefined && column.filter === false));
                 }).map((column: ITdDataTableColumn) => {
                   return column.name;
@@ -676,7 +676,7 @@
           ]]>
         </td-highlight>
         <p>Data:</p>
-        <td-highlight lang="json" [content]="filteredData | json">
+        <td-highlight codeLang="json" [content]="filteredData | json">
         </td-highlight>
       </mat-tab>
     </mat-tab-group>
@@ -769,7 +769,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <![CDATA[
         <table td-data-table>
           <thead>

@@ -40,7 +40,7 @@
       </mat-tab>
       <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <div layout="column" layout-padding>
               <h3>{ { 'DEMO_BASIC.PIPE_MESSAGE' | translate } }</h3>
@@ -49,7 +49,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { TranslateService } from '@ngx-translate/core';
             ...
@@ -69,7 +69,7 @@
           ]]>
         </td-highlight>
         <p>JSON (en):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_BASIC": {
@@ -80,7 +80,7 @@
           ]]>
         </td-highlight>
         <p>JSON (es):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_BASIC": {
@@ -127,7 +127,7 @@
       </mat-tab>
       <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <div layout="row" layout-align="start center" layout-padding>
               <mat-form-field flex="40">
@@ -150,7 +150,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { TranslateService } from '@ngx-translate/core';
             ...
@@ -170,7 +170,7 @@
           ]]>
         </td-highlight>
         <p>JSON (en):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_ONE": {
@@ -188,7 +188,7 @@
           ]]>
         </td-highlight>
         <p>JSON (es):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_ONE": {
@@ -238,7 +238,7 @@
       </mat-tab>
       <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <mat-list>
               <mat-list-item>
@@ -257,7 +257,7 @@
           ]]>
         </td-highlight>
         <p>Typescript (NgModule):</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { LOCALE_ID } from '@angular/core';
             ...
@@ -269,11 +269,11 @@
                 // Configure LOCALE_ID depending on the language set in browser
                 provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
               },
-            ], 
+            ],
           ]]>
         </td-highlight>
         <p>JSON (en):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_TWO": {
@@ -283,7 +283,7 @@
           ]]>
         </td-highlight>
         <p>JSON (es):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             {
               "DEMO_TWO": {
@@ -314,13 +314,13 @@
       </mat-tab>
       <mat-tab [label]="'CODE_TAB' | translate">
         <p>HTML:</p>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
            <button mat-button color="accent" (click)="openAlert()" class="text-upper">{ {'DEMO_THREE.OPEN_ALERT' | translate} }</button>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { TranslateService } from '@ngx-translate/core';
             import { TdDialogService } from '@covalent/core/dialogs';
@@ -352,7 +352,7 @@
           ]]>
         </td-highlight>
         <p>JSON (en):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             "DEMO_THREE": {
               "OPEN_ALERT": "Open alert",
@@ -365,7 +365,7 @@
           ]]>
         </td-highlight>
         <p>JSON (es):</p>
-        <td-highlight lang="json">
+        <td-highlight codeLang="json">
           <![CDATA[
             "DEMO_THREE": {
               "OPEN_ALERT": "Abrir alerta",

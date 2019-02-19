@@ -5,7 +5,7 @@
   <mat-card-content>
      <h3>Generate Component</h3>
      <p>Using the CLI, nagivate into the directory you want the new component, then simply:</p>
-     <td-highlight lang="html">
+     <td-highlight codeLang="html">
        ng generate component new-view
       </td-highlight>
       <p>The CLI will do the heavy lifting and create the following with corresponding names:</p>
@@ -20,25 +20,25 @@
         It will also attempt to update your app module file. Double check and make sure your new component is imported into app.module.ts:
       </p>
       <p>for example in app.module.ts:</p>
-      <td-highlight lang="typescript">
+      <td-highlight codeLang="typescript">
         <![CDATA[
           import { NewViewComponent } from './new-view/new-view.component';
         ]]>
        </td-highlight>
        <p>And define those declarations/imports in @NgModule:</p>
-       <td-highlight lang="typescript">
+       <td-highlight codeLang="typescript">
          <![CDATA[
           imports: [ NewViewComponent ]
           ]]>
         </td-highlight>
         <p>next we'll need to create a route for this component, edit app.routes.ts:</p>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
           import { NewViewComponent } from './new-view/new-view.component';
           ]]>
        </td-highlight>
        <p>and add a new path with the url you desire for this route:</p>
-       <td-highlight lang="typescript">
+       <td-highlight codeLang="typescript">
          <![CDATA[
           { path: 'new-view', component: NewViewComponent },
         ]]>

@@ -16,7 +16,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>HTML</ng-template>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <mat-list>
               <mat-list-item>
@@ -39,14 +39,14 @@
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>TS</ng-template>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { Component, OnInit } from '@angular/core';
             ...
             export class Demo implements OnInit {
-            
+
               data: any[] = [];
-            
+
               ngOnInit(): void {
                 for (let index: number = 1; index <= 1500; index++) {
                   this.data.push({index: index, name: 'element-' + index});
@@ -107,7 +107,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>HTML</ng-template>
-        <td-highlight lang="html">
+        <td-highlight codeLang="html">
           <![CDATA[
             <mat-list>
               <mat-list-item>
@@ -131,7 +131,7 @@
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>TS</ng-template>
-        <td-highlight lang="typescript">
+        <td-highlight codeLang="typescript">
           <![CDATA[
             import { Component, OnInit } from '@angular/core';
             import { finalize } from 'rxjs/operators';

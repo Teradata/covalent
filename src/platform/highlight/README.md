@@ -14,7 +14,7 @@ By default, `--dev` build will log the following message in the console to let y
 
 #### Inputs
 
-+ lang: string
++ codeLang: string
   + Language of the code content to be parsed as highlighted html.
 + content: string
   + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
@@ -88,9 +88,9 @@ Also, to display model binding, add spaces between curly braces like: `{ { } }` 
 Example for **HTML** usage:
 
 ```html
-<td-highlight lang="html">
+<td-highlight codeLang="html">
   <![CDATA[
-    <td-highlight lang="html">
+    <td-highlight codeLang="html">
       <h1>hello world!</h1>
       <span>{ {property} }</span>
     </td-highlight>
@@ -101,7 +101,7 @@ Example for **HTML** usage:
 Example for **CSS** usage:
 
 ```html
-<td-highlight lang="css">    
+<td-highlight codeLang="css">    
   <![CDATA[   
     pre {
       display: block;
@@ -125,7 +125,7 @@ Example for **CSS** usage:
 Example for **Typescript**:
 
 ```html
-<td-highlight lang="typescript">
+<td-highlight codeLang="typescript">
   <![CDATA[
     import { Injectable } from '@angular/core';
     import { Observable, Subject } from 'rxjs';
