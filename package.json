@@ -6,17 +6,19 @@
   "keywords": [
     "angular",
     "components",
-    "reusable"
+    "reusable",
+    "schematics"
   ],
   "scripts": {
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "npm run tslint && npm run stylelint",
-    "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/environments/**\"",
+    "tslint": "./node_modules/.bin/tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" \"./src/platform/experimental/schematics/src/**/*.ts\" -e \"./src/environments/**\"",
     "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/_layout.scss' '!**/markdown.component.scss' --config .stylelintrc.json --syntax scss",
     "preinstall": "rm -rf node_modules tmp deploy dist",
     "postinstall": "npm rebuild node-sass && webdriver-manager update",
-    "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false",
+    "test": "ng test covalent-docs --code-coverage --source-map=false --watch=false && npm run test:schematics",
     "test:watch": "ng test --code-coverage --source-map=false --watch=true",
+    "test:schematics": "tsc -p src/platform/experimental/schematics/src/tsconfig.spec.json && jasmine src/platform/experimental/schematics/src/**/*.spec.js",
     "coverage:win": "start chrome ./coverage/index.html",
     "coverage:mac": "open -a \"Google Chrome\" coverage/index.html",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
@@ -65,6 +67,8 @@
     "ie 11"
   ],
   "dependencies": {
+    "@angular-devkit/core": "^7.2.1",
+    "@angular-devkit/schematics": "^7.2.1",
     "@angular/animations": "7.0.0",
     "@angular/cdk": "7.0.1",
     "@angular/common": "7.0.0",
@@ -132,7 +136,7 @@
     "stylelint": "^8.4.0",
     "ts-node": "~5.0.1",
     "tsickle": "0.33.1",
-    "tslint": "5.11.0",
+    "tslint": "5.12.1",
     "typescript": "~3.1.3",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-stats-plugin": "^0.1.5"
