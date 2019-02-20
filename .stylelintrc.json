@@ -1,3 +1,4 @@
 {
-  "extends": "./node_modules/@covalent/tools/lint/stylelint/.stylelintrc.json"
+  "extends": "./node_modules/@covalent/tools/lint/stylelint/.stylelintrc.json",
+  "ignoreFiles": "./src/platform/experimental/schematics/src/ng-add/files/**"
 }

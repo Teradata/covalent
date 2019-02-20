@@ -1,0 +1,11 @@
+{
+    "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+      "ng-add": {
+        "description": "Adds Covalent to the application without affecting any templates",
+        "factory": "./ng-add/index#addDependenciesAndFiles",
+        "schema": "./ng-add/schema.json",
+        "aliases": ["covalent-shell", "install"]
+      }
+    }
+}
