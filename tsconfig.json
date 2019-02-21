@@ -29,7 +29,6 @@
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "pretty": true,
-    "importHelpers": true,
-    "skipLibCheck": true
+    "importHelpers": true
   }
 }

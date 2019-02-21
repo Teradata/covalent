@@ -98,11 +98,30 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
+"@angular-devkit/core@7.3.2", "@angular-devkit/core@^7.2.1":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.2.tgz#67ac2cfcbe47f1e457929c19ab1b04c9e061b2e2"
+  integrity sha512-W5KjkHRNVBcZRUNJamAn52IAj9Gl1zUjPA2r75JJK7k199xOA8UZqcIukQOgM1N7rwKCWht08i4FsdcTDghMhQ==
+  dependencies:
+    ajv "6.9.1"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
 "@angular-devkit/schematics@7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.1.2.tgz#847639044417d044bf1bc87f64508a0c3f99fae2"
   dependencies:
     "@angular-devkit/core" "7.1.2"
+    rxjs "6.3.3"
+
+"@angular-devkit/schematics@^7.2.1":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.3.2.tgz#e9d3c1f2128a56f66ea846ce3f80c69d4c3a9ae9"
+  integrity sha512-pxPzMfgVNFq1V6aTrBRYKGATSHfzj67IFYOqKWYt6EnUQxHuAOdFqbB6vIKfZhsYko2anp9Q0dAs6mfesBThNQ==
+  dependencies:
+    "@angular-devkit/core" "7.3.2"
     rxjs "6.3.3"
 
 "@angular/animations@7.0.0":
@@ -311,6 +330,11 @@
 "@types/node@~8.9.4":
   version "8.9.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.9.5.tgz#162b864bc70be077e6db212b322754917929e976"
+
+"@types/parse5@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.0.tgz#9ae2106efc443d7c1e26570aa8247828c9c80f11"
+  integrity sha512-J5D3z703XTDIGQFYXsnU9uRCW9e9mMEFO0Kpe6kykyiboqziru/RlZ0hM2P+PKTG4NHG1SjLrqae/NrV2iJApQ==
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -570,6 +594,16 @@ ajv-keywords@^3.1.0:
 ajv@6.5.3:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.5.3.tgz#71a569d189ecf4f4f321224fecb166f071dd90f9"
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@6.9.1:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.9.1.tgz#a4d3683d74abc5670e75f0b16520f70a20ea8dc1"
+  integrity sha512-XDN92U311aINL77ieWHmqCcNlwjoP5cHXDxIxbf2MaPYuCXOHS7gHH8jktxeK5omgd52XbSTX6a4Piwd1pQmzA==
   dependencies:
     fast-deep-equal "^2.0.1"
     fast-json-stable-stringify "^2.0.0"
@@ -9341,9 +9375,10 @@ tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
-tslint@5.11.0:
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.11.0.tgz#98f30c02eae3cde7006201e4c33cb08b48581eed"
+tslint@5.12.1:
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
+  integrity sha512-sfodBHOucFg6egff8d1BvuofoOQ/nOeYNfbp7LDlKBcLNrL3lmS5zoiDGyOMdT7YsEXAwWpTdAHwOGOc8eRZAw==
   dependencies:
     babel-code-frame "^6.22.0"
     builtin-modules "^1.1.1"
