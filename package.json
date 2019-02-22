@@ -106,7 +106,6 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "@types/parse5": "^5.0.0",
     "@types/selenium-webdriver": "^2.52.0",
     "autoprefixer": "7.1.2",
     "codelyzer": "4.5.0",
