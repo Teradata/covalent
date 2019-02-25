@@ -1,0 +1,64 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+<% if (markdown) { %>@import '~@covalent/markdown/markdown-theme';<% } %>
+<% if (highlight) { %>@import '~@covalent/highlight/highlight-theme';<% } %>
+<% if (flavoredMarkdown) { %>@import '~@covalent/flavored-markdown/flavored-markdown-theme';<% } %>
+// Plus imports for other components in your app.
+
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400)
+);
+$custom-toolbar-typography: mat-typography-config(
+  $title: mat-typography-level(20px, 32px, 400)
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+// Setting the toolbar to the proper spec weight
+@include mat-toolbar-typography($custom-toolbar-typography);
+
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include material icons
+$mat-font-url: '~@covalent/core/common/styles/font/';
+@include covalent-material-icons();
+
+<% if (styleSheetUtilities) { %>
+// Include covalent utility classes
+@include covalent-utilities();
+<% } %>
+<% if (styleSheetFlexLayout) { %>
+// Include flex layout classes
+@include covalent-layout();
+<% } %>
+<% if (styleSheetColors) { %>
+// Include covalent color classes
+@include covalent-colors();
+<% } %>
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$primary: mat-palette($mat-indigo, 700, 300, 900);
+$accent:  mat-palette($mat-light-blue);
+
+// The warn palette is optional (defaults to red).
+$warn:    mat-palette($mat-red, 600, 200, 900);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+<% if (markdown) { %>@include covalent-markdown-theme($theme);<% } %>
+<% if (highlight) { %>
+@include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+<% } %>
+<% if (flavoredMarkdown) { %>@include covalent-flavored-markdown-theme($theme);<% } %>

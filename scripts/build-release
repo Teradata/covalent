@@ -40,11 +40,15 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 
 # BUILD: @covalent/flavored-markdown primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
+
 # BUILD: @covalent/experimental primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-experimental
 
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
 rm -rf src/platform/node_modules
+
+# BUILD: Schematics
+gulp build-schematics-assets
 
 # Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
 gulp move-additional-platform-files
