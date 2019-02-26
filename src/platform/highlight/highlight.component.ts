@@ -33,6 +33,12 @@ export class TdHighlightComponent implements AfterViewInit {
   }
 
   /**
+   * Deprecated: due to a11y issues reported by pa11y
+   * Please see @Input('codeLang') as its replacement
+   */
+  @Input('lang') languageDeprecated: string = 'typescript';
+
+  /**
    * codeLang?: string
    *
    * Language of the code content to be parsed as highlighted html.
@@ -40,7 +46,7 @@ export class TdHighlightComponent implements AfterViewInit {
    *
    * e.g. `typescript`, `html` , etc.
    */
-  @Input('codeLang') language: string = 'typescript';
+  @Input('codeLang') language: string = this.languageDeprecated;
 
   /**
    * contentReady?: function
