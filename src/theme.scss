@@ -200,8 +200,9 @@ nav.docs-nav {
       color: rgba(255, 255, 255, 0.75);
     }
     &.active {
-      color: mat-color($accent);
-      border-bottom: 1px solid mat-color($accent);
+      color: white;
+      border-bottom: 1px solid white;
+      font-weight: bolder;
     }
   }
 }
