@@ -46,7 +46,7 @@ $primary: mat-palette($td-slate, 700, 100, 900);
 $accent:  mat-palette($td-orange, 800, 200, 900);
 
 // The warn palette is optional (defaults to red).
-$warn:    mat-palette($mat-red, 600, 200, 900);
+$warn:    mat-palette($mat-red, 700, 100, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -65,7 +65,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 .theme-alt {
   $primary-alt: mat-palette($td-orange, 800, 200, 900);
   $accent-alt:  mat-palette($td-slate, 700, 100, 900);
-  $warn-alt:    mat-palette($mat-red, 600, 200, 900);
+  $warn-alt:    mat-palette($mat-red, 700, 200, 900);
   $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
   @include angular-material-theme($theme-alt);
   @include covalent-theme($theme-alt);
