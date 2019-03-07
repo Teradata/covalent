@@ -8,6 +8,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/Teradata/covalent-echarts/badge.svg)](https://coveralls.io/github/Teradata/covalent-echarts)
 [![npm](https://img.shields.io/npm/l/@covalent/echarts.svg)](LICENSE)
 
-<img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
+<img alt="Covalent" src="https://gitcdn.link/repo/Teradata/covalent/develop/src/assets/icons/covalent.svg" width="150">
 
 * [Getting Started](src/platform/echarts/README.md)
