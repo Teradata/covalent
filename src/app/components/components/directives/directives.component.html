@@ -50,3 +50,23 @@
     </td-highlight>
   </mat-card-content>
 </mat-card>
+
+<mat-card>
+  <mat-card-title>Fullscreen directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content #tdFullScreenView style="background-color: white;">
+    <p class="mat-body-1">Use <code>tdFullScreen</code> on an input to automatically trim the characters.</p>
+    <p>Try entering white spaces before or after a word this input:</p>
+    <div layout="row">
+      <button [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">This is a button</button>
+    </div>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+        <![CDATA[
+          <mat-form-field>
+            <input matInput tdFullScreen [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+          </mat-form-field>
+        ]]>
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
