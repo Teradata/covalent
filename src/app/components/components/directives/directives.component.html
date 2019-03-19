@@ -55,17 +55,17 @@
   <mat-card-title>Fullscreen directive</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content #tdFullScreenView style="background-color: white;">
-    <p class="mat-body-1">Use <code>tdFullScreen</code> on an input to automatically trim the characters.</p>
-    <p>Try entering white spaces before or after a word this input:</p>
+    <p class="mat-body-1">Assign a template reference variables to the element you want full screen. Use <code>tdFullScreen</code> on the fullscreen action button and input that template reference. Optionally, you can set an additional key to escape full screen by using the input <code>tdEscapeKey</code> and using the string value of the keydown event key.</p>
+    <p class="mat-line">Select the button below to view this div in fullscreen mode. Tab to escape.</p>
     <div layout="row">
-      <button [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">This is a button</button>
+      <button mat-raised-button color="primary" [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">Fullscreen</button>
     </div>
     <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <mat-form-field>
-            <input matInput tdFullScreen [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
-          </mat-form-field>
+          <div #tdFullScreenView>
+            <button mat-button color="primary" [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">Fullscreen</button>
+          </div>
         ]]>
     </td-highlight>
   </mat-card-content>

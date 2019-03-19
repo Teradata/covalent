@@ -7,7 +7,7 @@ export class TdFullscreenDirective {
   private _webview: any;
 
   @Input() tdFullScreen: HTMLDivElement;
-  @Input() tdEscapeKey: String;
+  @Input() tdEscapeKey?: String;
 
   @HostListener('click', ['$event']) onClick(event: MouseEvent): void {
     this.showFullScreenEditor();
