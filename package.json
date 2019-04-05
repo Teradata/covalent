@@ -113,7 +113,7 @@
     "coveralls": "^3.0.3",
     "fs-extra": "^4.0.0",
     "glob": "^6.0.4",
-    "gulp": "^4.0.0",
+    "gulp": "3.9.1",
     "gulp-bump": "2.1.0",
     "gulp-help": "1.6.1",
     "gulp-postcss": "7.0.0",
