@@ -38,7 +38,7 @@
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt"
   },
   "engines": {
-    "node": ">=8.9.4",
+    "node": ">=10.15.3",
     "npm": ">=6",
     "yarn": ">=1.12.1"
   },
