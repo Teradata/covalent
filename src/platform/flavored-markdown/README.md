@@ -15,6 +15,9 @@ By default, `--dev` build will log the following message in the console to let y
 + content: string
   + Markdown format content to be parsed as material/covalent markup. 
   + Used to load data dynamically. e.g. `README.md` content.
++ showCopyCodeAction: string
+  + Shows/hides the copy action button on top of code blocks
+  + Defaults to false.
 
 #### Events
 

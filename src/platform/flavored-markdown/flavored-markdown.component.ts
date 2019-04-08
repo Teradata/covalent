@@ -1,9 +1,9 @@
 import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef, EventEmitter, Output,
-         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy, OnChanges } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
-import { TdHighlightComponent } from '@covalent/highlight';
+import { TdFlavoredCodeBlockComponent } from './cfm-code-block/cfm-code-block.component';
 import { TdMarkdownComponent } from '@covalent/markdown';
 import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core/data-table';
 
@@ -31,7 +31,7 @@ export interface IReplacerFunc<T> {
   templateUrl: './flavored-markdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdFlavoredMarkdownComponent implements AfterViewInit {
+export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _content: string;
 
@@ -48,9 +48,16 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    this._loadContent(this._content);
     this._changeDetectorRef.markForCheck();
   }
+
+  /**
+   * showCopyCodeAction?: boolean
+   * 
+   * Shows/hides the copy action button on top of code blocks
+   * Defaults to false.
+   */
+  @Input('showCopyCodeAction') showCopyCodeAction: boolean = false;
 
   /**
    * contentReady?: function
@@ -64,6 +71,11 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
               private _injector: Injector) {}
+
+  ngOnChanges(): void {
+    this._loadContent(this._content);
+    this._changeDetectorRef.markForCheck();
+  }
 
   ngAfterViewInit(): void {
     if (!this._content) {
@@ -157,11 +169,12 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
 
   private _replaceCodeBlocks(markdown: string): string {
     let codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
-    return this._replaceComponent(markdown, TdHighlightComponent, codeBlockRegExp,
-                                  (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
+    return this._replaceComponent(markdown, TdFlavoredCodeBlockComponent, codeBlockRegExp,
+                                  (componentRef: ComponentRef<TdFlavoredCodeBlockComponent>, match: string, language: string, codeblock: string) => {
       if (language) {
         componentRef.instance.language = language;
       }
+      componentRef.instance.showCopyCodeAction = this.showCopyCodeAction;
       componentRef.instance.content = codeblock;
     });
   }

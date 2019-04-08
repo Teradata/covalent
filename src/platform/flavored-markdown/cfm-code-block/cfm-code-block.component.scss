@@ -1,0 +1,11 @@
+:host {
+  .td-code-block-toolbar {
+    > span {
+      flex: 1;
+      box-sizing: border-box;
+    }
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+  }
+}

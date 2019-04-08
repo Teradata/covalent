@@ -65,7 +65,7 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-flavored-markdown>
+        <td-flavored-markdown [showCopyCodeAction]="true">
           <![CDATA[
             ## Inline Code
 
@@ -90,7 +90,7 @@
         <ng-template matTabLabel>Code</ng-template>
         <td-highlight lang="html">
           <![CDATA[
-            <td-flavored-markdown>
+            <td-flavored-markdown [showCopyCodeAction]="true">
               ## Inline
   
               Inline piece of code `var obj: Type = bla;`

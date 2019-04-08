@@ -1,0 +1,7 @@
+<div class="td-code-block-toolbar" *ngIf="showCopyCodeAction">
+  <span></span>
+  <button mat-icon-button (click)="copyToClipboard(content)" [attr.title]="'copy'">
+    <mat-icon>content_copy</mat-icon>
+  </button>
+</div>
+<td-highlight [content]="content" [lang]="language"></td-highlight>
