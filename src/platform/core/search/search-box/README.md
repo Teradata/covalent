@@ -20,6 +20,8 @@
   + Sets if the input should always be visible. Defaults to 'false'.
 + placeholder?: string
   + Placeholder for the underlying input component.
++ appearance?: MatFormFieldAppearance
+  + Appearance style for the underlying input component.
 
 #### Events
 
@@ -57,6 +59,6 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-  <td-search-box backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''" (blur)="onBlurEvent()">
+  <td-search-box appearance="legacy|standard|fill|outline" backIcon="arrow_back" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" [alwaysVisible]="false|true" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''" (blur)="onBlurEvent()">
   </td-search-box>
 ```
