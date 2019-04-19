@@ -42,6 +42,10 @@ export class SearchDemoComponent {
     description: `Event emitted after the clear icon has been clicked.`,
     name: 'clear',
     type: 'function($event)',
+  }, {
+    description: 'Appearance style for the underlying input component.',
+    name: 'appearance',
+    type: 'MatFormFieldAppearance',
   }];
 
   searchBoxAttrs: Object[] = [{
@@ -86,6 +90,10 @@ export class SearchDemoComponent {
     description: `Event emitted after the clear icon has been clicked.`,
     name: 'clear',
     type: 'function($event)',
+  }, {
+    description: 'Appearance style for the underlying input component.',
+    name: 'appearance',
+    type: 'MatFormFieldAppearance',
   }];
 
   searchInputTerm: string = '';
