@@ -3,7 +3,6 @@
 
   td-breadcrumb {
     &:last-of-type {
-      color: mat-color($foreground, text);
       font-weight: bold;
       cursor: default;
     }
