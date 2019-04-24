@@ -59,11 +59,12 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
          CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
          CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule, 
+         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule,
          CovalentTabSelectModule } from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
@@ -142,6 +143,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
+    MatRadioModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,

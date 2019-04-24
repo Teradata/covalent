@@ -1,4 +1,5 @@
 import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -100,6 +101,8 @@ export class SearchDemoComponent {
   searchBoxTerm: string = '';
   debounce: number = 0;
   alwaysVisible: boolean = false;
+  appearanceOptions: MatFormFieldAppearance[] = ['fill', 'legacy', 'outline', 'standard'];
+  appearance: MatFormFieldAppearance = undefined;
 
   modeChange(): void {
     this.searchInputTerm = '';
