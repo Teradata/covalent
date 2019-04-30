@@ -29,7 +29,7 @@ $mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
 
 ### Covalent Utilities Mixin
 
-To include [utility classes](https://teradata.github.io/covalent/#/style-guide/utility-styles), add the following:
+To include [utility classes](https://teradata.github.io/covalent/style-guide/utility-styles), add the following:
 
 ```css
 // Include covalent utility classes
@@ -38,7 +38,7 @@ To include [utility classes](https://teradata.github.io/covalent/#/style-guide/u
 
 ### Flex Layout Mixin
 
-To include [flex layout v1](https://teradata.github.io/covalent/#/layouts), add the following:
+To include [flex layout v1](https://teradata.github.io/covalent/layouts), add the following:
 
 ```css
 // Include flex layout classes
@@ -47,7 +47,7 @@ To include [flex layout v1](https://teradata.github.io/covalent/#/layouts), add 
 
 ### Colors Mixin
 
-To include the [color classes](https://teradata.github.io/covalent/#/style-guide/colors), add the following:
+To include the [color classes](https://teradata.github.io/covalent/style-guide/colors), add the following:
 
 ```css
 // Include covalent color classes
@@ -56,7 +56,7 @@ To include the [color classes](https://teradata.github.io/covalent/#/style-guide
 
 ### Example including every single mixin
 
-If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](http://localhost:4200/#/docs) docs)
+If you want to include everything, include the following snippet (or just include the `platform.css` as described in the [getting started](http://localhost:4200/docs) docs)
 
 ```css
 @import '~@covalent/core/theming/all-theme';

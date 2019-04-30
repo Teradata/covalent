@@ -36,6 +36,6 @@ export class MyModule {}
 
 ## Styles, Icons and Theming
 
-See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent docs for more info
+See [theming](https://teradata.github.io/covalent/docs/theme) in the covalent docs for more info
 
 Core Teradata UI Platform comes with a base CSS file `@covalent/core/common/platform.css` (includes icons). 

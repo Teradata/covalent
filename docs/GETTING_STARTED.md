@@ -129,7 +129,7 @@ This also includes the `material icons` by default.
 
 #### Not interested in using ALL the CSS?
 
-Click [here](https://teradata.github.io/covalent/#/docs/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
+Click [here](https://teradata.github.io/covalent/docs/utility-sass-mixins) if you want to cherry pick the utility classes instead of loading the `platform.css`
 
 ----
 

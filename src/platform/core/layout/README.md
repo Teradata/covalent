@@ -80,7 +80,7 @@ export class MyModule {}
 
 ### Theming
 
-See [theming](https://teradata.github.io/covalent/#/docs/theme) in the covalent docs for more info.
+See [theming](https://teradata.github.io/covalent/docs/theme) in the covalent docs for more info.
 
 
 ## TdNavigationDrawerComponent - td-navigation-drawer
