@@ -20,12 +20,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { HelpComponent } from '@covalent/experimental/help/help/help.component';
 import { TdMarkdownComponent, CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
+import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
+
 @NgModule({
   declarations: [
     TestBedComponent,
     MainComponent,
     SampleComponent, // to test dialog
     HelpComponent,
+    HelpWindowComponent,
     // TdMarkdownComponent
   ],
   imports: [

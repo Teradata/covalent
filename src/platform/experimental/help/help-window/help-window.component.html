@@ -1,0 +1,18 @@
+<button
+*ngIf="showMinimizeButton"
+  (click)="minimize()"
+>Minimize</button>
+<button
+*ngIf="showMaximizeButton"
+(click)="maximize()"
+>Maximize</button>
+<button
+(click)="close()"
+>Close</button>
+<!-- TODO use an animation-->
+<td-help
+  class="td-help"
+  [style.height.px]="height"
+  [items]="items"
+>
+</td-help>

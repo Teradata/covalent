@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, SimpleChanges, OnChanges, } from '@angular/core';
 
 enum ItemType {
   Url = 'Url',
@@ -15,18 +15,12 @@ interface IHelpMenuDataItem {
 }
 
 @Component({
-  selector: 'app-help',
+  selector: 'td-help',
   templateUrl: './help.component.html',
   styleUrls: ['./help.component.scss'],
 })
 export class HelpComponent implements OnChanges {
   @Input() items: IHelpMenuDataItem[];
-
-  @Output() minimized: EventEmitter<any> = new EventEmitter();
-
-  // todo these would go outside
-  @Output() maximized: EventEmitter<any> = new EventEmitter();
-  @Output() closed: EventEmitter<any> = new EventEmitter();
 
   parentStack: IHelpMenuDataItem[][] = []; // parents
 
@@ -112,18 +106,5 @@ export class HelpComponent implements OnChanges {
 
   getTitle(item: IHelpMenuDataItem): string {
     return item.title;
-  }
-
-  // todo these go outside
-  minimize(): void {
-    // emit minimize event
-  }
-
-  maximize(): void {
-    // emit maximize event
-  }
-
-  close(): void {
-    // emit close event
   }
 }
