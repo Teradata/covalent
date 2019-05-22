@@ -1,7 +1,5 @@
 <td-flavored-markdown
-  tdLoading="loading"
-  tdLoadingType="linear"
-  tdLoadingStrategy="overlay"
+  *tdLoading="'loading'; type: 'linear'; strategy: 'overlay'; color: 'accent'"
   [content]="content"
   (contentReady)="emitContentReady($event)"
 >

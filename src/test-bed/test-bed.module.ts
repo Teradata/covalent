@@ -18,13 +18,11 @@ import { SampleComponent } from './main/sample/sample.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { HelpComponent } from '@covalent/experimental/help/help/help.component';
-import { TdMarkdownComponent, CovalentMarkdownModule } from '@covalent/markdown';
+import {  CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CovalentLoadingModule } from '@covalent/core/loading';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -53,7 +51,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatIconModule,
     CovalentMarkdownModule,
     CovalentFlavoredMarkdownModule,
-    CovalentLoadingModule,
 
   ], // modules needed to run this module
   providers: [

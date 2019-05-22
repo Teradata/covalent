@@ -33,8 +33,8 @@ export class TdMarkdownLoaderComponent implements OnChanges {
   async loadMarkdown(): Promise<void> {
     this._loadingService.register('loading');
     this.content = await this._markdownUrlLoaderService.load(this.url, this.httpOptions);
+    this._loadingService.resolve('loading');
     this._changeDetectorRef.markForCheck();
-    // this._loadingService.resolve('loading');
   }
 
   emitContentReady(event: any): void {
