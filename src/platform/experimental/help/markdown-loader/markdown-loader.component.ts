@@ -1,5 +1,6 @@
-import { Component, Input, ChangeDetectorRef, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
+import { Component, Input, ChangeDetectorRef, SimpleChanges, SimpleChange, OnChanges, Output, EventEmitter } from '@angular/core';
 import { MarkdownLoaderService } from './markdown-loader.service';
+import { TdLoadingService } from '@covalent/core/loading';
 
 @Component({
   selector: 'td-markdown-loader',
@@ -9,11 +10,15 @@ import { MarkdownLoaderService } from './markdown-loader.service';
 export class TdMarkdownLoaderComponent implements OnChanges {
   @Input() url: string;
   @Input() httpOptions: object;
+
+  @Output() contentReady: EventEmitter<any> = new EventEmitter();
+
   content: string;
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
     private _markdownUrlLoaderService: MarkdownLoaderService,
+    private _loadingService: TdLoadingService,
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -26,7 +31,13 @@ export class TdMarkdownLoaderComponent implements OnChanges {
   }
 
   async loadMarkdown(): Promise<void> {
+    this._loadingService.register('loading');
     this.content = await this._markdownUrlLoaderService.load(this.url, this.httpOptions);
     this._changeDetectorRef.markForCheck();
+    // this._loadingService.resolve('loading');
+  }
+
+  emitContentReady(event: any): void {
+    this.contentReady.emit(event);
   }
 }

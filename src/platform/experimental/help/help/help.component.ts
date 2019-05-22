@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, OnChanges, } from '@angular/core';
+import { Component, Input, SimpleChanges, OnChanges, ElementRef } from '@angular/core';
 
 enum ItemType {
   Url = 'Url',
@@ -13,6 +13,8 @@ interface IHelpMenuDataItem {
   anchor?: string;
   children?: IHelpMenuDataItem[];
 }
+
+const toKebabCase: (str: string) => string = (str: string) => str.replace(/\s+/g, '-').toLowerCase();
 
 @Component({
   selector: 'td-help',
@@ -61,7 +63,7 @@ export class HelpComponent implements OnChanges {
     }
   }
 
-  constructor() {}
+  constructor(private _elementRef: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.items.currentValue !== changes.items.previousValue) {
@@ -106,5 +108,30 @@ export class HelpComponent implements OnChanges {
 
   getTitle(item: IHelpMenuDataItem): string {
     return item.title;
+  }
+
+  handleContentReady(): void {
+    if (this.currentMarkdownItem.anchor) {
+      this.scrollToAnchor(this.currentMarkdownItem.anchor);
+    }
+  }
+
+  // TODO: should this be inside flavored-markdown?
+  // Also expose this to allow to be called from outside?
+  scrollToAnchor(anchor: string): void {
+    if (anchor) {
+      const headings: HTMLElement[] = Array.from(
+        this._elementRef.nativeElement.querySelectorAll('h1, h2, h3, h4, h5, h6'),
+      );
+      // TODO: Be more flexible?
+      const headingToJumpTo: HTMLElement = headings.find(
+        (heading: HTMLElement) => toKebabCase(heading.innerHTML) === toKebabCase(anchor),
+      );
+      if (headingToJumpTo) {
+        headingToJumpTo.scrollIntoView({ behavior: 'auto' });
+      } else {
+        console.warn(`Could not jump to heading '${anchor}'`);
+      }
+    }
   }
 }

@@ -23,6 +23,8 @@ import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CovalentLoadingModule } from '@covalent/core/loading';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     CovalentMarkdownModule,
     CovalentFlavoredMarkdownModule,
+    CovalentLoadingModule,
+
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,

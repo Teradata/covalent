@@ -92,6 +92,7 @@ export class MainComponent {
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
       title: 'API',
+      anchor: 'The component has 6 properties:',
     },
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
@@ -100,6 +101,7 @@ export class MainComponent {
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
       title: 'Loading',
+      anchor: 'usage',
     },
   ];
   constructor(

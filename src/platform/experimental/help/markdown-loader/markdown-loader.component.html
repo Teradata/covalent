@@ -1,4 +1,8 @@
 <td-flavored-markdown
+  tdLoading="loading"
+  tdLoadingType="linear"
+  tdLoadingStrategy="overlay"
   [content]="content"
+  (contentReady)="emitContentReady($event)"
 >
 </td-flavored-markdown>
