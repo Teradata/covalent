@@ -1,17 +1,60 @@
-<button
-*ngIf="showMinimizeButton"
-  (click)="minimize()"
->Minimize</button>
-<button
-*ngIf="showMaximizeButton"
-(click)="maximize()"
->Maximize</button>
-<button
-(click)="close()"
->Close</button>
+<mat-toolbar
+  color="accent"
+>
+  <mat-toolbar-row>
+    <div
+      layout="row"
+      layout-align="start center"
+      flex
+    >
+      <span
+        class="mat-title push-bottom-none"
+        flex
+      >
+        Help
+      </span>
+      <button
+        *ngIf="showMinimizeButton"
+        mat-icon-button
+        matTooltip="Minimize"
+        (click)="minimize()"
+      >
+        <mat-icon
+          aria-label="Minimize"
+        >
+          unfold_less
+        </mat-icon>
+      </button>
+
+      <button
+        *ngIf="showMaximizeButton"
+        mat-icon-button
+        matTooltip="Maximize"
+        (click)="maximize()"
+      >
+        <mat-icon
+          aria-label="Minimize"
+        >
+          unfold_more
+        </mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Close"
+        (click)="close()"
+      >
+        <mat-icon
+          aria-label="Close"
+        >
+          close
+        </mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <!-- TODO use an animation-->
 <td-help
-  class="td-help"
   [style.height.px]="height"
   [items]="items"
 >

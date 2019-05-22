@@ -1,13 +1,17 @@
 <button
   *ngIf="showGoBackButton"
   mat-icon-button
-  (click)="goUp()"
+  matTooltip="Go back"
+  (click)="goBack()"
 >
-  <mat-icon aria-label="Go up">
+  <mat-icon
+    aria-label="Go back"
+  >
     arrow_back
   </mat-icon>
 </button>
 
+<!-- TODO: Upgrade angular material to get hover states-->
 <mat-action-list
   *ngIf="showMenu"
 >
@@ -24,8 +28,13 @@
   *ngIf="showTdMarkdownLoader"
   [url]="url"
   [httpOptions]="httpOptions"
-></td-markdown-loader>
+  class="pad-sm scroll-md"
+>
+</td-markdown-loader>
+
 <td-flavored-markdown
   *ngIf="showTdMarkdown"
   [content]="markdownString"
-></td-flavored-markdown>
+  class="pad-sm scroll-md"
+>
+</td-flavored-markdown>

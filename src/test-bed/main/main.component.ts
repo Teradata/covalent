@@ -4,7 +4,8 @@
  */
 
 import { Component } from '@angular/core';
-// import { DraggableDialogService } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.service';
+import { DraggableDialogService } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.service';
+import { SampleComponent } from './sample/sample.component';
 
 interface IHelpMenuDataItem {
   title: string;
@@ -97,11 +98,15 @@ export class MainComponent {
       title: 'Developer Guide',
     },
     {
-      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/CHANGELOG.md',
-      title: 'CHANGELOG',
+      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
+      title: 'Loading',
     },
   ];
-  constructor() {}
+  constructor(
+    private draggableDialogService: DraggableDialogService,
+  ) {
+
+  }
 
   ngOnInit(): void {
     // TODO

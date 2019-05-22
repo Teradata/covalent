@@ -37,7 +37,7 @@ export class HelpWindowComponent {
   }
 
   get height(): number {
-    return this.currentState === MaximizedOrMinimized.Maximized ? 300 : 0;
+    return this.currentState === MaximizedOrMinimized.Maximized ? 475 : 0;
   }
 
   constructor() {}

@@ -96,7 +96,7 @@ export class HelpComponent implements OnChanges {
     }
   }
 
-  goUp(): void {
+  goBack(): void {
     if (this.parentStack.length > 0) {
       this.currentMenuItems = this.parentStack[this.parentStack.length - 1];
       this.parentStack = this.parentStack.slice(0, -1);

@@ -12,8 +12,8 @@ import { MainComponent } from './main/main.component';
 
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 import { TdMarkdownLoaderModule } from '@covalent/experimental/help/markdown-loader';
-// import { DraggableDialogService } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.service';
-// import { DraggableDialogModule } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.module';
+import { DraggableDialogService } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.service';
+import { DraggableDialogModule } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.module';
 import { SampleComponent } from './main/sample/sample.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +21,8 @@ import { HelpComponent } from '@covalent/experimental/help/help/help.component';
 import { TdMarkdownComponent, CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,11 @@ import { HelpWindowComponent } from '@covalent/experimental/help/help-window/hel
     MatDividerModule,
     MatToolbarModule,
     appRoutes,
+    MatButtonModule,
+    MatTooltipModule,
     /** Experimental Modules */
     TdMarkdownLoaderModule,
-    // DraggableDialogModule,
+    DraggableDialogModule,
     MatListModule,
     MatIconModule,
     CovalentMarkdownModule,
@@ -50,7 +54,7 @@ import { HelpWindowComponent } from '@covalent/experimental/help/help-window/hel
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
-    // DraggableDialogService,
+    DraggableDialogService,
   ],
   bootstrap: [TestBedComponent],
   entryComponents: [ SampleComponent],
