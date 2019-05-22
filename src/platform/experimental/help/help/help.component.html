@@ -1,0 +1,31 @@
+<button
+  *ngIf="showGoBackButton"
+  mat-icon-button
+  (click)="goUp()"
+>
+  <mat-icon aria-label="Go up">
+    arrow_back
+  </mat-icon>
+</button>
+
+<mat-action-list
+  *ngIf="showMenu"
+>
+  <button
+    *ngFor="let item of currentMenuItems"
+    (click)="handleItemSelected(item)"
+    mat-list-item
+  >
+    {{ getTitle(item) }}
+  </button>
+</mat-action-list>
+
+<td-markdown-loader
+  *ngIf="showTdMarkdownLoader"
+  [url]="url"
+  [httpOptions]="httpOptions"
+></td-markdown-loader>
+<td-flavored-markdown
+  *ngIf="showTdMarkdown"
+  [content]="markdownString"
+></td-flavored-markdown>
