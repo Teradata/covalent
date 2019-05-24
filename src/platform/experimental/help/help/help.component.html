@@ -29,6 +29,7 @@
   [url]="url"
   [httpOptions]="httpOptions"
   class="pad-sm scroll-md"
+  [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
 </td-markdown-loader>
@@ -37,6 +38,7 @@
   *ngIf="showTdMarkdown"
   [content]="markdownString"
   class="pad-sm scroll-md"
+  [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
 </td-flavored-markdown>

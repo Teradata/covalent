@@ -12,25 +12,31 @@ import { MainComponent } from './main/main.component';
 
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 import { TdMarkdownLoaderModule } from '@covalent/experimental/help/markdown-loader';
-import { DraggableDialogService } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.service';
-import { DraggableDialogModule } from '@covalent/experimental/help/draggable-dialog/draggable-dialog.module';
-import { SampleComponent } from './main/sample/sample.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { HelpComponent } from '@covalent/experimental/help/help/help.component';
-import {  CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DraggableHelpWindowComponent } from '@covalent/experimental/help/draggable-help-window/draggable-help-window.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DraggableHelpWindowDialogService } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.service';
+import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.component';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     TestBedComponent,
     MainComponent,
-    SampleComponent, // to test dialog
     HelpComponent,
     HelpWindowComponent,
+    DraggableHelpWindowComponent,
+    DraggableHelpWindowDialogComponent,
     // TdMarkdownComponent
   ],
   imports: [
@@ -46,18 +52,18 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
     /** Experimental Modules */
     TdMarkdownLoaderModule,
-    DraggableDialogModule,
     MatListModule,
     MatIconModule,
     CovalentMarkdownModule,
     CovalentFlavoredMarkdownModule,
-
+    DragDropModule,
+    MatDialogModule,
+    CovalentHighlightModule,
+    MatFormFieldModule,
+    MatInputModule,
   ], // modules needed to run this module
-  providers: [
-    appRoutingProviders,
-    DraggableDialogService,
-  ],
+  providers: [appRoutingProviders, DraggableHelpWindowDialogService],
   bootstrap: [TestBedComponent],
-  entryComponents: [ SampleComponent],
+  entryComponents: [DraggableHelpWindowDialogComponent, DraggableHelpWindowComponent],
 })
-export class TestBedModule { }
+export class TestBedModule {}

@@ -1,17 +1,9 @@
 import { Component, Input, SimpleChanges, OnChanges, ElementRef } from '@angular/core';
+import { IHelpMenuDataItem } from '../help-menu-data.interface';
 
 enum ItemType {
   Url = 'Url',
   Markdown = 'Markdown',
-}
-
-interface IHelpMenuDataItem {
-  title: string;
-  url?: string;
-  httpOptions?: object;
-  markdownString?: string; // raw markdown
-  anchor?: string;
-  children?: IHelpMenuDataItem[];
 }
 
 const toKebabCase: (str: string) => string = (str: string) => str.replace(/\s+/g, '-').toLowerCase();

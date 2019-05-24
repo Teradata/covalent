@@ -1,13 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-
-interface IHelpMenuDataItem {
-  title: string;
-  url?: string;
-  httpOptions?: object;
-  markdownString?: string; // raw markdown
-  anchor?: string;
-  children?: IHelpMenuDataItem[];
-}
+import { IHelpMenuDataItem } from '../help-menu-data.interface';
 
 enum MaximizedOrMinimized {
   Maximized = 'Maximized',
