@@ -1,27 +1,26 @@
 <!-- <td-markdown-loader [url]="url" [httpOptions]="httpOptions"></td-markdown-loader> -->
 
-<!-- <div class="sample-wrapper"> -->
-<!-- <td-help
-
-  [items]="listOfUrls"
-  >
-</td-help> -->
-<!-- </div> -->
-
-<!-- TODO -->
-<!-- <td-help [items]="items"></td-help> -->
+<!-- <div class="sample-wrapper" [style.height.px]="300">
+  <td-help
+    [items]="multipleItems"
+    >
+  </td-help>
+</div> -->
 
 <!-- <td-help-window
-  [items]="listOfUrls"
+  [items]="multipleItems"
+  [draggable]="false"
 >
 </td-help-window> -->
 
-<!-- <td-draggable-help-window
-  [items]="listOfUrls"
+<!--Cursor-->
+<td-help-window
+  [items]="multipleItems"
+  [draggable]="true"
 >
-</td-draggable-help-window> -->
+</td-help-window>
 
-<button
+<!-- <button
   *ngIf="showOpenButton"
   mat-icon-button
   color="accent"
@@ -63,4 +62,4 @@
   ></textarea>
 </mat-form-field>
 <br />
-<button mat-raised-button color="primary" (click)="tryUserInput()">Try</button>
+<button mat-raised-button color="primary" (click)="tryUserInput()">Try</button> -->

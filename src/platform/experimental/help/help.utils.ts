@@ -6,3 +6,8 @@ export interface IHelpMenuDataItem {
   anchor?: string;
   children?: IHelpMenuDataItem[];
 }
+
+export enum MaximizedOrMinimized {
+  Maximized = 'Maximized',
+  Minimized = 'Minimized',
+}

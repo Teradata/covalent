@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges, OnChanges, ElementRef } from '@angular/core';
-import { IHelpMenuDataItem } from '../help-menu-data.interface';
+import { IHelpMenuDataItem } from '../help.utils';
 
 enum ItemType {
   Url = 'Url',

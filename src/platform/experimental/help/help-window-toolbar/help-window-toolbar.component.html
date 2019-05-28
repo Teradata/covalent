@@ -1,0 +1,54 @@
+<mat-toolbar
+  color="primary"
+>
+  <mat-toolbar-row>
+    <div
+      layout="row"
+      layout-align="start center"
+      flex
+    >
+      <span
+        class="mat-title push-bottom-none"
+        flex
+      >
+        Help
+      </span>
+      <button
+        *ngIf="showMinimizeButton"
+        mat-icon-button
+        matTooltip="Minimize"
+        (click)="minimized.emit()"
+      >
+        <mat-icon
+          aria-label="Minimize"
+        >
+          unfold_less
+        </mat-icon>
+      </button>
+
+      <button
+        *ngIf="showMaximizeButton"
+        mat-icon-button
+        matTooltip="Maximize"
+        (click)="maximized.emit()"
+      >
+        <mat-icon
+          aria-label="Minimize"
+        >
+          unfold_more
+        </mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Close"
+        (click)="closed.emit()"
+      >
+        <mat-icon
+          aria-label="Close"
+        >
+          close
+        </mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

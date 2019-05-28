@@ -4,8 +4,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { IHelpMenuDataItem } from '@covalent/experimental/help/help-menu-data.interface';
-import { DraggableHelpWindowComponent } from '@covalent/experimental/help/draggable-help-window/draggable-help-window.component';
+import { IHelpMenuDataItem } from '@covalent/experimental/help/help.utils';
 import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.component';
 import { DraggableHelpWindowDialogService } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.service';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -73,7 +72,7 @@ export class MainComponent implements OnInit {
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 
   ngOnInit(): void {
-    this.use(this.multipleItems);
+    // this.use(this.multipleItems);
   }
 
   openDialog(): void {

@@ -1,6 +1,6 @@
 <td-flavored-markdown
   *tdLoading="'loading'; type: 'linear'; strategy: 'overlay'; color: 'accent'"
   [content]="content"
-  (contentReady)="emitContentReady($event)"
+  (contentReady)="contentReady.emit($event)"
 >
 </td-flavored-markdown>

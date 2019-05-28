@@ -20,7 +20,6 @@ import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { HelpWindowComponent } from '@covalent/experimental/help/help-window/help-window.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { DraggableHelpWindowComponent } from '@covalent/experimental/help/draggable-help-window/draggable-help-window.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DraggableHelpWindowDialogService } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.service';
@@ -28,6 +27,7 @@ import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help/
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HelpWindowToolbarComponent } from '@covalent/experimental/help/help-window-toolbar/help-window-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     MainComponent,
     HelpComponent,
     HelpWindowComponent,
-    DraggableHelpWindowComponent,
     DraggableHelpWindowDialogComponent,
+    HelpWindowToolbarComponent,
     // TdMarkdownComponent
   ],
   imports: [
@@ -61,9 +61,10 @@ import { MatInputModule } from '@angular/material/input';
     CovalentHighlightModule,
     MatFormFieldModule,
     MatInputModule,
+
   ], // modules needed to run this module
   providers: [appRoutingProviders, DraggableHelpWindowDialogService],
   bootstrap: [TestBedComponent],
-  entryComponents: [DraggableHelpWindowDialogComponent, DraggableHelpWindowComponent],
+  entryComponents: [DraggableHelpWindowDialogComponent],
 })
 export class TestBedModule {}

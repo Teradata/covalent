@@ -36,8 +36,4 @@ export class TdMarkdownLoaderComponent implements OnChanges {
     this._loadingService.resolve('loading');
     this._changeDetectorRef.markForCheck();
   }
-
-  emitContentReady(event: any): void {
-    this.contentReady.emit(event);
-  }
 }

@@ -1,62 +1,46 @@
-<mat-toolbar
-  color="primary"
-  cdkDragHandle
->
-  <mat-toolbar-row>
-    <div
-      layout="row"
-      layout-align="start center"
-      flex
-    >
-      <span
-        class="mat-title push-bottom-none"
-        flex
-      >
-        Help
-      </span>
-      <button
-        *ngIf="showMinimizeButton"
-        mat-icon-button
-        matTooltip="Minimize"
-        (click)="minimize()"
-      >
-        <mat-icon
-          aria-label="Minimize"
-        >
-          unfold_less
-        </mat-icon>
-      </button>
-
-      <button
-        *ngIf="showMaximizeButton"
-        mat-icon-button
-        matTooltip="Maximize"
-        (click)="maximize()"
-      >
-        <mat-icon
-          aria-label="Minimize"
-        >
-          unfold_more
-        </mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        matTooltip="Close"
-        (click)="close()"
-      >
-        <mat-icon
-          aria-label="Close"
-        >
-          close
-        </mat-icon>
-      </button>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
-
 <!-- TODO use an animation-->
-<td-help
-  [style.height.px]="height"
-  [items]="items"
+<div
+  *ngIf="draggable"
+
+  cdkDrag
+  cdkDragRootElement=".cdk-overlay-pane"
 >
-</td-help>
+  <td-help-window-toolbar
+    cdkDragHandle
+
+    class="td-draggable-help-window-toolbar"
+
+    [windowState]="windowState"
+
+    (minimized)="handleMinimized()"
+    (maximized)="handleMaximized()"
+    (closed)="closed.emit()"
+  >
+</td-help-window-toolbar>
+
+  <td-help
+    [items]="items"
+    [style.height.px]="height"
+  >
+  </td-help>
+</div>
+
+
+<div
+  *ngIf="!draggable"
+>
+  <td-help-window-toolbar
+    [windowState]="windowState"
+
+    (minimized)="handleMinimized()"
+    (maximized)="handleMaximized()"
+    (closed)="closed.emit()"
+  >
+</td-help-window-toolbar>
+
+  <td-help
+    [style.height.px]="height"
+    [items]="items"
+  >
+  </td-help>
+</div>

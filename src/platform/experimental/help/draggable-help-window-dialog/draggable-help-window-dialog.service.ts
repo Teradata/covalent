@@ -1,7 +1,7 @@
 import { Injectable, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog.component';
-import { IHelpMenuDataItem } from '../help-menu-data.interface';
+import { IHelpMenuDataItem } from '../help.utils';
 import { Overlay, NoopScrollStrategy } from '@angular/cdk/overlay';
 
 @Injectable()

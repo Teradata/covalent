@@ -1,10 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { IHelpMenuDataItem } from '../help-menu-data.interface';
-
-enum MaximizedOrMinimized {
-  Maximized = 'Maximized',
-  Minimized = 'Minimized',
-}
+import { IHelpMenuDataItem, MaximizedOrMinimized } from '../help.utils';
 
 @Component({
   selector: 'td-help-window',
@@ -13,38 +8,27 @@ enum MaximizedOrMinimized {
 })
 export class HelpWindowComponent {
   @Input() items: IHelpMenuDataItem[];
+  @Input() windowState: MaximizedOrMinimized = MaximizedOrMinimized.Maximized;
+  @Input() draggable: boolean = false;
 
+  // outputs only for non-draggable toolbar
+  @Output() closed: EventEmitter<any> = new EventEmitter();
   @Output() minimized: EventEmitter<any> = new EventEmitter();
   @Output() maximized: EventEmitter<any> = new EventEmitter();
-  @Output() closed: EventEmitter<any> = new EventEmitter();
-
-  currentState: MaximizedOrMinimized = MaximizedOrMinimized.Maximized;
-
-  get showMaximizeButton(): boolean {
-    return this.currentState === MaximizedOrMinimized.Minimized;
-  }
-
-  get showMinimizeButton(): boolean {
-    return this.currentState === MaximizedOrMinimized.Maximized;
-  }
 
   get height(): number {
-    return this.currentState === MaximizedOrMinimized.Maximized ? 475 : 0;
+    return this.windowState === MaximizedOrMinimized.Maximized ? 475 : 0;
   }
 
-  constructor() {}
-
-  minimize(): void {
-    this.currentState = MaximizedOrMinimized.Minimized;
+  handleMinimized(): void {
+    this.windowState = MaximizedOrMinimized.Minimized;
     this.minimized.emit();
   }
 
-  maximize(): void {
-    this.currentState = MaximizedOrMinimized.Maximized;
+  handleMaximized(): void {
+    this.windowState = MaximizedOrMinimized.Maximized;
     this.maximized.emit();
   }
 
-  close(): void {
-    this.closed.emit();
-  }
+
 }
