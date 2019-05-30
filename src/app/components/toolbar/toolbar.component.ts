@@ -4,7 +4,7 @@
  */
 
 import { Component, ElementRef, Inject, Renderer2, Output, EventEmitter } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 import { Dir } from '@angular/cdk/bidi';
 
