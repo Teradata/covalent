@@ -4,7 +4,7 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var chalk = require("chalk");
 
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 const config = require('../build.conf');
 
 const schematicsDir = path.join('src/platform/experimental', 'schematics');
@@ -14,11 +14,11 @@ const schematicsGlobs = [
     path.join(schematicsDir, '**/+(schema|collection|migration).json'),
 ];
 
-gulp.task(`compile-schematics-ts`, () => {
+gulp.task('compile-schematics-ts', () => {
     return tsCompile(['-p', path.join(schematicsDir, 'tsconfig.json')]);
 });
 
-gulp.task(`build-schematics-assets`, [`compile-schematics-ts`], () => {
+gulp.task('build-schematics-assets', gulp.series('compile-schematics-ts'), () => {
     return gulp.src(schematicsGlobs).pipe(gulp.dest(path.join(config.deployed, 'experimental/schematics')));
 });
 
