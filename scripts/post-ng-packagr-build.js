@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
@@ -8,20 +8,20 @@ var autoprefixer = require('autoprefixer');
 var sassImporter = require('./sass-importer');
 const config = require('../build.conf');
 
-gulp.task('move-required-core-files', 'Move required sass files', function() {
+gulp.task('move-required-core-files', function() {
   return gulp
     .src(config.paths.PostNgPackngrBuildRequiredFiles)
     .pipe(gulp.dest(config.deployed + 'core'));
 });
 
 
-gulp.task('move-additional-platform-files', 'Move additional platform files', function() {
+gulp.task('move-additional-platform-files', function() {
   return gulp
     .src(config.paths.PostNgPackngrAdditionalFiles)
     .pipe(gulp.dest(config.deployed));
 });
 
-gulp.task('compile-core-sass', 'compile some core sass to css', function() {
+gulp.task('compile-core-sass', function() {
   return gulp
     .src(config.paths.PostNgPackngrCompileStyles)
     .pipe(sourcemaps.init())

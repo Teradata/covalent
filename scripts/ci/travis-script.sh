@@ -39,6 +39,8 @@ elif [ "${MODE}" = "release" ]; then
   npm run build:lib
 elif [ "${MODE}" = "unit-test" ]; then
   npm run test
+elif [ "${MODE}" = "audit" ]; then
+  npm audit
 elif [ "${MODE}" = "a11y" ]; then
   npm run a11y
 fi
