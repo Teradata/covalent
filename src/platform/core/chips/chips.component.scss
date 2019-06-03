@@ -31,7 +31,7 @@
       max-width: 100%;
       align-items: center;
       align-content: center;
-      justify-content: start;
+      justify-content: flex-start;
       // truncate content on flexbox children
       min-width: 0;
       &.td-chip-stacked {
