@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 var bump = require('gulp-bump');
 var semver = require('semver');
 

@@ -4,12 +4,13 @@ var platform = require('os').platform;
 var readFileSync = require('fs').readFileSync;
 var writeFileSync = require('fs').writeFileSync;
 var spawnSync = require('child_process').spawnSync;
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 const buildConfig = require('../build.conf');
 const packageJson = require('../package.json');
 
-gulp.task('version-placeholder', function(){
+gulp.task('version-placeholder', function(cb){
   replaceVersionPlaceholders(buildConfig.deployed, packageJson.version);
+  cb();
 });
 
 /** Variable that is set to the string for version placeholders. */
