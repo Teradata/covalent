@@ -14,13 +14,13 @@
     align-items: center;
     align-content: center;
     max-width: 100%;
-    justify-content: start;
+    justify-content: flex-start;
     &.td-data-table-cell-numeric {
       // [layout-align="end center"]
       justify-content: flex-end;
     }
     &.td-data-table-cell-align-start {
-      justify-content: start;
+      justify-content: flex-start;
     }
     &.td-data-table-cell-align-end {
       justify-content: flex-end;
