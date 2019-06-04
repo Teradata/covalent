@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
   oneItem: IHelpMenuDataItem[] = [
     {
-      url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
+      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       title: 'API',
     },
   ];
@@ -38,7 +38,34 @@ export class MainComponent implements OnInit {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
       title: 'Loading',
     },
+    {
+      url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
+      title: 'Angular',
+    },
+    {
+      url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/README.md',
+      title: 'Covalent',
+    },
+    {
+      url: 'https://raw.githubusercontent.com/Teradata/covalent-tools/develop/docs/CLI.md',
+      title: 'up a level: E2E Code Coverage',
+    }
   ];
+
+  // multipleItems: IHelpMenuDataItem[] = [
+  //   {
+  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/IMC/Overview/EN/Overview.md',
+  //     title: 'Overview',
+  //   },
+  //   {
+  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/Unity/README.md',
+  //     title: 'Unity',
+  //   },
+  //   {
+  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/IMC/Overview/JP/README.md',
+  //     title: 'すべて',
+  //   },
+  // ];
 
   oneItemWithAnchor: IHelpMenuDataItem[] = [
     {
@@ -73,6 +100,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     // this.use(this.multipleItems);
+    // this.use([{url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/CONTRIBUTING.md'}]);
+    this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
+
   }
 
   openDialog(): void {

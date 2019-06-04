@@ -28,6 +28,7 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HelpWindowToolbarComponent } from '@covalent/experimental/help/help-window-toolbar/help-window-toolbar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { HelpWindowToolbarComponent } from '@covalent/experimental/help/help-win
     CovalentHighlightModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressBarModule,
 
   ], // modules needed to run this module
   providers: [appRoutingProviders, DraggableHelpWindowDialogService],

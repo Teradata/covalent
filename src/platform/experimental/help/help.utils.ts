@@ -1,5 +1,5 @@
 export interface IHelpMenuDataItem {
-  title: string;
+  title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown

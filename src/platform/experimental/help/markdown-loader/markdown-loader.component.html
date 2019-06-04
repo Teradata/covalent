@@ -1,5 +1,11 @@
+<mat-progress-bar
+  *ngIf="loading"
+  mode="indeterminate"
+  color="accent"
+>
+</mat-progress-bar>
 <td-flavored-markdown
-  *tdLoading="'loading'; type: 'linear'; strategy: 'overlay'; color: 'accent'"
+  *ngIf="!loading"
   [content]="content"
   (contentReady)="contentReady.emit($event)"
 >

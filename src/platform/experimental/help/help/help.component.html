@@ -1,4 +1,16 @@
 <button
+  mat-icon-button
+  matTooltip="Go home"
+  (click)="reset()"
+>
+  <mat-icon
+    aria-label="Go home"
+  >
+    home
+  </mat-icon>
+</button>
+
+<button
   *ngIf="showGoBackButton"
   mat-icon-button
   matTooltip="Go back"
@@ -11,7 +23,6 @@
   </mat-icon>
 </button>
 
-<!-- TODO: Upgrade angular material to get hover states-->
 <mat-action-list
   *ngIf="showMenu"
 >
@@ -20,15 +31,27 @@
     (click)="handleItemSelected(item)"
     mat-list-item
   >
+    <mat-icon
+      matListIcon
+    >
+      subject
+    </mat-icon>
     {{ getTitle(item) }}
   </button>
 </mat-action-list>
+
+<mat-progress-bar
+  *ngIf="loading"
+  mode="indeterminate"
+  color="accent"
+>
+</mat-progress-bar>
 
 <td-markdown-loader
   *ngIf="showTdMarkdownLoader"
   [url]="url"
   [httpOptions]="httpOptions"
-  class="pad-sm scroll-md"
+  class="pad scroll-md"
   [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
@@ -37,7 +60,7 @@
 <td-flavored-markdown
   *ngIf="showTdMarkdown"
   [content]="markdownString"
-  class="pad-sm scroll-md"
+  class="pad scroll-md"
   [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
