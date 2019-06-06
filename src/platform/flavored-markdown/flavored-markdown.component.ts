@@ -1,10 +1,10 @@
 import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef, EventEmitter, Output,
-         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy, OnChanges, SimpleChanges, ElementRef } from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
 import { TdHighlightComponent } from '@covalent/highlight';
-import { TdMarkdownComponent } from '@covalent/markdown';
+import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
 import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core/data-table';
 
 @Directive({
@@ -31,9 +31,12 @@ export interface IReplacerFunc<T> {
   templateUrl: './flavored-markdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TdFlavoredMarkdownComponent implements AfterViewInit {
+export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _content: string;
+  private _simpleLineBreaks: boolean = false;
+  private _url: string;
+  private _anchor: string;
 
   private _components: {} = {};
 
@@ -48,8 +51,39 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   @Input('content')
   set content(content: string) {
     this._content = content;
-    this._loadContent(this._content);
-    this._changeDetectorRef.markForCheck();
+  }
+
+  /**
+   * simpleLineBreaks?: string
+   *
+   * Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+   * Defaults to false.
+   */
+  @Input('simpleLineBreaks')
+  set simpleLineBreaks(simpleLineBreaks: boolean) {
+    this._simpleLineBreaks = simpleLineBreaks;
+  }
+
+  /**
+   * url?: string
+   *
+   * If markdown contains relative paths, this is required to generate correct paths
+   *
+   */
+  @Input('url')
+  set url(url: string) {
+    this._url = url;
+  }
+
+  /**
+   * anchor?: string
+   *
+   * Anchor to jump to
+   *
+   */
+  @Input('anchor')
+  set anchor(anchor: string) {
+    this._anchor = anchor;
   }
 
   /**
@@ -63,7 +97,17 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
   constructor(private _componentFactoryResolver: ComponentFactoryResolver,
               private _renderer: Renderer2,
               private _changeDetectorRef: ChangeDetectorRef,
-              private _injector: Injector) {}
+              private _injector: Injector,
+              private _elementRef: ElementRef) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // only anchor changed
+    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.url)) {
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+    } else {
+      this.refresh();
+    }
+  }
 
   ngAfterViewInit(): void {
     if (!this._content) {
@@ -72,6 +116,15 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
         this._changeDetectorRef.markForCheck();
       });
     }
+  }
+
+  refresh(): void {
+    if (this._content) {
+      this._loadContent(this._content);
+    } else if (this.container && !this._content) {
+      this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
+    }
+    this._changeDetectorRef.markForCheck();
   }
 
   private _loadContent(markdown: string): void {
@@ -103,6 +156,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
       this.onContentReady.emit();
       Promise.resolve().then(() => {
         this._changeDetectorRef.markForCheck();
@@ -126,6 +180,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
       let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
         .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
       contentRef.instance.content = markdown;
+      contentRef.instance.url = this._url;
+      contentRef.instance.simpleLineBreaks = this._simpleLineBreaks;
       contentRef.instance.refresh();
       this.container.viewContainerRef.insert(contentRef.hostView, this.container.viewContainerRef.length);
     }

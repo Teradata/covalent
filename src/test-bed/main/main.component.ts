@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       title: 'API',
+      anchor: 'Adding a new documentation component',
     },
   ];
 
@@ -95,13 +96,18 @@ export class MainComponent implements OnInit {
   currentItems: IHelpMenuDataItem[];
   ref: MatDialogRef<DraggableHelpWindowDialogComponent>;
   userInput: string = '';
+  anchor: string = 'Adding-a-new-documentation-component';
 
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 
   ngOnInit(): void {
     // this.use(this.multipleItems);
     // this.use([{url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/CONTRIBUTING.md'}]);
-    this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
+    // this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
+    // this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
+    setTimeout(() => {
+      this.anchor = 'Source Structure';
+    }, 1000);
 
   }
 

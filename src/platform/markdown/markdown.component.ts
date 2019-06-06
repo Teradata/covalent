@@ -1,20 +1,126 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { scrollToAnchor, normalize, isAnchorLink } from './markdown-utils';
 
 declare const require: any;
 /* tslint:disable-next-line */
 let showdown: any = require('showdown/dist/showdown.js');
+
+// TODO: assumes it is a github url
+// allow override somehow
+function generateAbsoluteHref(currentHref: string, relativeHref: string): string {
+  if (currentHref && relativeHref) {
+    // TODO: this assumes it is on github
+
+    const currentUrl: URL = new URL(currentHref);
+    const path: string = currentUrl.pathname
+      .split('/')
+      .slice(1, -1)
+      .join('/');
+    const correctUrl: URL = new URL(currentHref);
+
+    if (relativeHref.startsWith('/')) {
+      // url is relative to top level
+      const orgAndRepo: string = path
+        .split('/')
+        .slice(0, 3)
+        .join('/');
+      correctUrl.pathname = `${orgAndRepo}${relativeHref}`;
+    } else {
+      correctUrl.pathname = `${path}/${relativeHref}`;
+    }
+    return correctUrl.href;
+  }
+  return undefined;
+}
+
+function rawGithubHref(githubHref: string): string {
+  if (githubHref) {
+    const url: URL = new URL(githubHref);
+    if (url.pathname.startsWith('/raw/')) {
+      return githubHref;
+    } else {
+      url.hostname = 'raw.githubusercontent.com';
+      url.pathname = url.pathname.split('/blob', 2).join('');
+      return url.href;
+    }
+  }
+  return undefined;
+}
+
+function normalizeHtmlHrefs(html: string, currentHref: string): string {
+  if (currentHref) {
+    const document: Document = new DOMParser().parseFromString(html, 'text/html');
+    document.querySelectorAll('a[href]').forEach((link: HTMLAnchorElement) => {
+      const url: URL = new URL(link.href);
+      if (url.host === window.location.host) {
+        // hosts match, meaning URL MIGHT have been malformed by showdown
+        // url is either an anchor, a relative url, or just a link to a part of the application
+
+        if (url.pathname === '/') {
+          // url is just an anchor, leave alone
+          if (url.hash) {
+            url.hash = normalize(url.hash);
+            link.href = url.hash;
+          }
+        } else {
+          // url is relative
+          if (url.href.endsWith('.md')) {
+            // only check .md urls
+            // assumes github
+            link.href = generateAbsoluteHref(currentHref, link.getAttribute('href'));
+            if (url.hash) {
+              url.hash = normalize(url.hash);
+            }
+          }
+          link.target = '_blank';
+        }
+      } else {
+        // url is absolute
+        if (url.href.endsWith('.md')) {
+          // only check .md urls
+          if (url.hostname === 'github.com') {
+            // if github try to get raw github url
+            link.href = rawGithubHref(url.href);
+          } else {
+            link.href = url.href;
+          }
+          if (url.hash) {
+            url.hash = normalize(url.hash);
+          }
+        }
+        link.target = '_blank';
+      }
+    });
+
+    return new XMLSerializer().serializeToString(document);
+  }
+  return html;
+}
+
+function addIdsToHeadings(html: string): string {
+  if (html) {
+    const document: Document = new DOMParser().parseFromString(html, 'text/html');
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading: HTMLElement) => {
+      const id: string = normalize(heading.innerHTML);
+      heading.setAttribute('id', id);
+    });
+    return new XMLSerializer().serializeToString(document);
+  }
+  return html;
+}
 
 @Component({
   selector: 'td-markdown',
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
 })
-export class TdMarkdownComponent implements OnChanges, AfterViewInit {
-
+export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy {
   private _content: string;
   private _simpleLineBreaks: boolean = false;
-
+  private _url: string;
+  private _anchor: string;
+  private handleAnchorClicksBound: EventListenerOrEventListenerObject;
   /**
    * content?: string
    *
@@ -40,23 +146,54 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
   }
 
   /**
+   * url?: string
+   *
+   * If markdown contains relative paths, this is required to generate correct paths
+   *
+   */
+  // baseUrl
+  // TODO: better name
+  @Input('url')
+  set url(url: string) {
+    this._url = url;
+  }
+
+  /**
+   * url?: string
+   *
+   * If markdown contains relative paths, this is required to generate correct paths
+   *
+   */
+  @Input('anchor')
+  set anchor(anchor: string) {
+    this._anchor = anchor;
+  }
+
+  /**
    * contentReady?: function
    * Event emitted after the markdown content rendering is finished.
    */
   @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
-  constructor(private _renderer: Renderer2,
-              private _elementRef: ElementRef,
-              private _domSanitizer: DomSanitizer) {}
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
-  ngOnChanges(): void {
-    this.refresh();
+  ngOnChanges(changes: SimpleChanges): void {
+    // only anchor changed
+    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.url)) {
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+    } else {
+      this.refresh();
+    }
   }
 
   ngAfterViewInit(): void {
     if (!this._content) {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.removeAnchorListeners();
   }
 
   refresh(): void {
@@ -77,7 +214,32 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
+    this.removeAnchorListeners();
+    this.handleAnchorClicksBound = this.handleAnchorClicks.bind(this);
+    this.attachAnchorListeners();
+    // timeout required
+    // TODO: find cleaner solution
+    setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
     this.onContentReady.emit();
+  }
+
+  private async handleAnchorClicks(event: Event): Promise<void> {
+    event.preventDefault();
+    const url: URL = new URL((<HTMLAnchorElement>event.target).href);
+    scrollToAnchor(this._elementRef.nativeElement, url.hash);
+  }
+
+  private attachAnchorListeners(): void {
+    // TODO: rxjs fromEvent
+    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
+      .filter((link: HTMLAnchorElement) => isAnchorLink(link))
+      .forEach((link: HTMLAnchorElement) => link.addEventListener('click', this.handleAnchorClicksBound));
+  }
+
+  private removeAnchorListeners(): void {
+    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
+      .filter((link: HTMLAnchorElement) => isAnchorLink(link))
+      .forEach((link: HTMLAnchorElement) => link.removeEventListener('click', this.handleAnchorClicksBound));
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {
@@ -85,14 +247,16 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     // to parse the string into DOM element for now.
     const div: HTMLDivElement = this._renderer.createElement('div');
     this._renderer.appendChild(this._elementRef.nativeElement, div);
-    div.innerHTML = this._domSanitizer.sanitize(SecurityContext.HTML, markupStr);
+    const html: string = this._domSanitizer.sanitize(SecurityContext.HTML, markupStr);
+    const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(html, this._url);
+    const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteHrefs);
+    div.innerHTML = htmlWithHeadingIds;
     return div;
   }
 
   private _render(markdown: string): string {
     // Trim leading and trailing newlines
-    markdown = markdown.replace(/^(\s|\t)*\n+/g, '')
-                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+    markdown = markdown.replace(/^(\s|\t)*\n+/g, '').replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markdown by line characters
     let lines: string[] = markdown.split('\n');
 
@@ -106,7 +270,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     });
 
     // Join lines again with line characters
-    let markdownToParse: string =  lines.join('\n');
+    let markdownToParse: string = lines.join('\n');
 
     // Convert markdown into html
     let converter: any = new showdown.Converter();
@@ -117,5 +281,4 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     let html: string = converter.makeHtml(markdownToParse);
     return html;
   }
-
 }

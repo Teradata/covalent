@@ -51,6 +51,7 @@
   *ngIf="showTdMarkdownLoader"
   [url]="url"
   [httpOptions]="httpOptions"
+  [anchor]="anchor"
   class="pad scroll-md"
   [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
@@ -60,6 +61,8 @@
 <td-flavored-markdown
   *ngIf="showTdMarkdown"
   [content]="markdownString"
+  [url]="url"
+  [anchor]="anchor"
   class="pad scroll-md"
   [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"

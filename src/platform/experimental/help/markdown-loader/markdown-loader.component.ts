@@ -9,6 +9,7 @@ import { MarkdownLoaderService } from './markdown-loader.service';
 export class TdMarkdownLoaderComponent implements OnChanges {
   @Input() url: string;
   @Input() httpOptions: object;
+  @Input() anchor: string;
 
   @Output() contentReady: EventEmitter<any> = new EventEmitter();
   @Output() loadFailed: EventEmitter<any> = new EventEmitter();
@@ -22,10 +23,7 @@ export class TdMarkdownLoaderComponent implements OnChanges {
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (
-      changes.url.currentValue !== changes.url.previousValue ||
-      changes.httpOptions.currentValue !== changes.httpOptions.previousValue
-    ) {
+    if (changes.url || changes.httpOptions) {
       this.loadMarkdown();
     }
   }

@@ -7,6 +7,8 @@
 <td-flavored-markdown
   *ngIf="!loading"
   [content]="content"
+  [url]="url"
+  [anchor]="anchor"
   (contentReady)="contentReady.emit($event)"
 >
 </td-flavored-markdown>
