@@ -1,3 +1,17 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/teradata/covalent/compare/v2.0.1...v2.0.2) (2019-06-07)
+
+This patch release is meant to add support for angular 8 and `npm audit` fixes.
+
+Thanks for the PRs to people in the community!
+
+### Bug Fixes
+
+* **build:** Drop support for yarn in favor of package-lock.json ([#1350](https://github.com/teradata/covalent/issues/1350)) ([c0b2f52](https://github.com/teradata/covalent/commit/c0b2f52))
+* **usability-bug:** style updates to the last breadcrumb ([#1373](https://github.com/teradata/covalent/issues/1373)) ([75e0474](https://github.com/teradata/covalent/commit/75e0474))
+* **build:** add [@angular](https://github.com/angular)/platform-browser as a peerDependency to highlight and markdown packages ([#1383](https://github.com/teradata/covalent/issues/1383)) ([9420bc2](https://github.com/teradata/covalent/commit/9420bc2))
+* **build:** add angular 8 support [c7eabf91ea8df267391a2d272e7139442f6e8342](https://github.com/Teradata/covalent/commit/c7eabf91ea8df267391a2d272e7139442f6e8342)
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/teradata/covalent/compare/v2.0.0...v2.0.1) (2019-01-25)
 
