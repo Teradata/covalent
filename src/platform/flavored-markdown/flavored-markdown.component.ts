@@ -35,7 +35,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _content: string;
   private _simpleLineBreaks: boolean = false;
-  private _url: string;
+  private _hostedUrl: string;
   private _anchor: string;
 
   private _components: {} = {};
@@ -65,14 +65,14 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   }
 
   /**
-   * url?: string
+   * hostedUrl?: string
    *
-   * If markdown contains relative paths, this is required to generate correct paths
+   * If markdown contains relative paths, this is required to generate correct urls
    *
    */
-  @Input('url')
-  set url(url: string) {
-    this._url = url;
+  @Input('hostedUrl')
+  set hostedUrl(hostedUrl: string) {
+    this._hostedUrl = hostedUrl;
   }
 
   /**
@@ -102,7 +102,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
-    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.url)) {
+    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.hostedUrl)) {
       scrollToAnchor(this._elementRef.nativeElement, this._anchor);
     } else {
       this.refresh();
@@ -180,7 +180,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
         .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
       contentRef.instance.content = markdown;
-      contentRef.instance.url = this._url;
+      contentRef.instance.hostedUrl = this._hostedUrl;
       contentRef.instance.simpleLineBreaks = this._simpleLineBreaks;
       contentRef.instance.refresh();
       this.container.viewContainerRef.insert(contentRef.hostView, this.container.viewContainerRef.length);

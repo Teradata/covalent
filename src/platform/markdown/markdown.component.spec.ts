@@ -4,9 +4,23 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import 'hammerjs';
-import { Component } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CovalentMarkdownModule } from './';
+
+function anchorTestMarkdown(): string {
+  let str: string = '* **[Heading 1](#heading-1)** \n * **[Heading 2](#heading-2)** \n';
+  const arr: number[] = Array(100).fill(0);
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += '\n # Heading 1 \n';
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += '\n # Heading 2 \n';
+  return str;
+}
 
 describe('Component: Markdown', () => {
 
@@ -24,6 +38,7 @@ describe('Component: Markdown', () => {
         TdMarkdownEmptyStaticContentTestEventsComponent,
         TdMarkdownStaticContentTestEventsComponent,
         TdMarkdownDynamicContentTestEventsComponent,
+        TdMarkdownAnchorsTestEventsComponent,
       ],
     });
     TestBed.compileComponents();
@@ -161,6 +176,80 @@ describe('Component: Markdown', () => {
         expect(element.querySelector('td-markdown div h2')).toBeFalsy();
         expect(element.querySelector('td-markdown div').textContent.trim()).toContain('## subtitle');
       });
+    }));
+
+    it('should jump to anchor when anchor input is changed', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      component.anchor = 'heading 1';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading1ScrollPos: number = window.scrollY;
+      expect(heading1ScrollPos).toBeGreaterThan(originalScrollPos);
+
+      component.anchor = 'heading 2';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading2ScrollPos: number = window.scrollY;
+      expect(heading2ScrollPos).toBeGreaterThan(heading1ScrollPos);
+
+      component.anchor = 'heading 1';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(window.scrollY).toBeLessThan(heading2ScrollPos);
+    }));
+
+    it('should jump to anchor if an anchor link is clicked', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      const element: DebugElement = fixture.debugElement;
+      const headings: HTMLElement[] = element.nativeElement.querySelectorAll('a');
+      const heading1: HTMLElement = headings[0];
+      const heading2: HTMLElement = headings[1];
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading1ScrollPos: number = window.scrollY;
+      expect(heading1ScrollPos).toBeGreaterThanOrEqual(originalScrollPos);
+
+      heading2.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading2ScrollPos: number = window.scrollY;
+      expect(heading2ScrollPos).toBeGreaterThan(heading1ScrollPos);
+
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(window.scrollY).toBeLessThan(heading2ScrollPos);
     }));
   });
 
@@ -329,4 +418,13 @@ class TdMarkdownStaticContentTestEventsComponent {
 class TdMarkdownDynamicContentTestEventsComponent {
   content: string;
   tdMarkdownContentIsReady(): void { /* Stub */ }
+}
+
+@Component({
+  template: `
+      <td-markdown [anchor]="anchor" [content]="content"></td-markdown>`,
+})
+class TdMarkdownAnchorsTestEventsComponent {
+  content: string;
+  anchor: string;
 }
