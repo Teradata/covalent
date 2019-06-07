@@ -2,7 +2,8 @@ import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStra
          ChangeDetectorRef, ViewChild, OnDestroy, AfterViewInit,
          ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject,
          Optional, ViewChildren, ElementRef, OnInit, AfterContentChecked } from '@angular/core';
-import { DOCUMENT, DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
