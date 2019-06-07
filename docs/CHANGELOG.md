@@ -1,7 +1,9 @@
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/teradata/covalent/compare/v2.0.1...v2.0.2) (2019-06-07)
 
-This patch release is meant to add support for angular 8 and `npm audit` fixes.
+This patch release is meant to prepare the codebase to support angular 8 and `npm audit` fixes.
+
+There are some breaking changes in angular 8, so we might are deciding if we should do a major release or not.. expect PRs coming soon to add full support!
 
 Thanks for the PRs to people in the community!
 
