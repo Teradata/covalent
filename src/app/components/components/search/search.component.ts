@@ -1,4 +1,5 @@
 import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 import { slideInDownAnimation } from '../../../app.animations';
 
@@ -42,6 +43,10 @@ export class SearchDemoComponent {
     description: `Event emitted after the clear icon has been clicked.`,
     name: 'clear',
     type: 'function($event)',
+  }, {
+    description: 'Appearance style for the underlying input component.',
+    name: 'appearance',
+    type: 'MatFormFieldAppearance',
   }];
 
   searchBoxAttrs: Object[] = [{
@@ -86,12 +91,18 @@ export class SearchDemoComponent {
     description: `Event emitted after the clear icon has been clicked.`,
     name: 'clear',
     type: 'function($event)',
+  }, {
+    description: 'Appearance style for the underlying input component.',
+    name: 'appearance',
+    type: 'MatFormFieldAppearance',
   }];
 
   searchInputTerm: string = '';
   searchBoxTerm: string = '';
   debounce: number = 0;
   alwaysVisible: boolean = false;
+  appearanceOptions: MatFormFieldAppearance[] = ['fill', 'legacy', 'outline', 'standard'];
+  appearance: MatFormFieldAppearance = undefined;
 
   modeChange(): void {
     this.searchInputTerm = '';

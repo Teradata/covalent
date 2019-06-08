@@ -14,6 +14,8 @@
   + Sets if the input underline should be visible. Defaults to 'false'.
 + clearIcon?: string
   + The icon used to clear the search input. Defaults to 'cancel' icon.
++ appearance?: MatFormFieldAppearance
+  + Appearance style for the underlying input component.
 
 #### Events
 
@@ -31,12 +33,13 @@
   + Emits [void].
 
 #### Methods
+
 + focus: function
   + Method to focus to underlying input.
 + clearSearch: function
   + Method to clear the underlying input. 
 
-  ## Setup
+## Setup
 
 Import the [CovalentSearchModule] in your NgModule:
 
@@ -57,6 +60,6 @@ export class MyModule {}
 Example for HTML usage:
 
 ```html
-    <td-search-input placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
+    <td-search-input appearance="legacy|standard|fill|outline" placeholder="Search here" [(ngModel)]="searchInputTerm" [showUnderline]="false|true" [debounce]="500" (searchDebounce)="searchInputTerm = $event" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''">
     </td-search-input>
 ```
