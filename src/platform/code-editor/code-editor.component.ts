@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit,
   ViewChild, ElementRef, forwardRef, NgZone, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
+import { fromEvent, merge, timer } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 const noop: any = () => {
   // empty method
@@ -29,6 +31,10 @@ declare const process: any;
 })
 export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValueAccessor, OnDestroy {
 
+  private _destroy: Subject<boolean> = new Subject<boolean>();
+  private _widthSubject: Subject<number> = new Subject<number>();
+  private _heightSubject: Subject<number> = new Subject<number>();
+
   private _editorStyle: string = 'width:100%;height:100%;border:1px solid grey;';
   private _appPath: string = '';
   private _isElectronApp: boolean = false;
@@ -43,7 +49,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _editorProxy: any;
   private _componentInitialized: boolean = false;
   private _fromEditor: boolean = false;
-  private _automaticLayout: boolean = false;
   private _editorOptions: any = {};
   private _isFullScreen: boolean = false;
   private _keycode: any;
@@ -51,6 +56,16 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private initialContentChange: boolean = true;
 
   @ViewChild('editorContainer') _editorContainer: ElementRef;
+
+  /**
+   * automaticLayout?: boolean
+   * @deprecated in favor of our own resize implementation.
+   */
+  @Input('automaticLayout')
+  set automaticLayout(automaticLayout: boolean) {
+    // tslint:disable-next-line
+    console.warn('[automaticLayout] has been deprecated in favor of our own resize implementation and will be removed on 3.0.0');
+  }
 
  /**
   * editorInitialized: function($event)
@@ -88,7 +103,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   /**
    * Set if using Electron mode when object is created
    */
-  constructor(private zone: NgZone, private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(
+    private zone: NgZone,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _elementRef: ElementRef,
+  ) {
     // since accessing the window object need this check so serverside rendering doesn't fail
     if (typeof document === 'object' && !!document) {
         /* tslint:disable-next-line */
@@ -326,18 +345,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   }
   get theme(): string {
     return this._theme;
-  }
-
-  /**
-   * automaticLayout?: boolean
-   * Implemented via setInterval that constantly probes for the container's size
-   */
-  @Input('automaticLayout')
-  set automaticLayout(automaticLayout: any) {
-    this._automaticLayout = automaticLayout !== '' ? (automaticLayout === 'true' || automaticLayout === true) : true;
-  }
-  get automaticLayout(): any {
-    return this._automaticLayout;
   }
 
   /**
@@ -686,11 +693,38 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             });
         }
     }
+    merge(
+      fromEvent(window, 'resize').pipe(
+        debounceTime(100),
+      ),
+      this._widthSubject.asObservable().pipe(
+        distinctUntilChanged(),
+      ),
+      this._heightSubject.asObservable().pipe(
+        distinctUntilChanged(),
+      ),
+    ).pipe(
+      takeUntil(this._destroy),
+      debounceTime(100),
+    ).subscribe(() => {
+      this.layout();
+      this._changeDetectorRef.markForCheck();
+    });
+    timer(500, 250).pipe(
+      takeUntil(this._destroy),
+    ).subscribe(() => {
+      if (this._elementRef && this._elementRef.nativeElement) {
+        this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+        this._heightSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height);
+      }
+    });
   }
 
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
     this._webview ? this._webview.send('dispose') : this._editor.dispose();
+    this._destroy.next(true);
+    this._destroy.unsubscribe();
   }
 
   /**
@@ -829,7 +863,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         value: this._value,
         language: this.language,
         theme: this._theme,
-        automaticLayout: this._automaticLayout,
     }, this.editorOptions));
     setTimeout(() => {
         this._editorProxy = this.wrapEditorCalls(this._editor);
@@ -843,11 +876,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
             this.initialContentChange = false;
             this.layout();
         }
-    });
-    // need to manually resize the editor any time the window size
-    // changes. See: https://github.com/Microsoft/monaco-editor/issues/28
-    window.addEventListener('resize', () => {
-        this.layout();
     });
     this.addFullScreenModeCommand();
   }
