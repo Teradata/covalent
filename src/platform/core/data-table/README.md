@@ -124,8 +124,8 @@ export class Demo {
   ];
   private columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit', sortable: true },
-    { name: 'item', label: 'Item name', width: 200, align: 'start' },
-    { name: 'price', label 'Price (US$)', numeric: true, format: v => v.toFixed(2), width: { min: 100, max: 400 } },
+    { name: 'item', label: 'Item name', width: 200 },
+    { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), width: { min: 100, max: 400 } },
   ];
   compareWith(row: any: model: any): boolean {
     return row.id === model.id; // or any property you want to compare by.
