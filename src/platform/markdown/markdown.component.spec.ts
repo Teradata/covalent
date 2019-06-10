@@ -39,6 +39,7 @@ describe('Component: Markdown', () => {
         TdMarkdownStaticContentTestEventsComponent,
         TdMarkdownDynamicContentTestEventsComponent,
         TdMarkdownAnchorsTestEventsComponent,
+        TdMarkdownLinksTestEventsComponent
       ],
     });
     TestBed.compileComponents();
@@ -224,8 +225,7 @@ describe('Component: Markdown', () => {
 
       window.scrollTo(0, 0);
       const originalScrollPos: number = window.scrollY;
-      const element: DebugElement = fixture.debugElement;
-      const headings: HTMLElement[] = element.nativeElement.querySelectorAll('a');
+      const headings: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
       const heading1: HTMLElement = headings[0];
       const heading2: HTMLElement = headings[1];
       heading1.click();
@@ -250,6 +250,65 @@ describe('Component: Markdown', () => {
       await fixture.whenStable();
 
       expect(window.scrollY).toBeLessThan(heading2ScrollPos);
+    }));
+
+    it('should generate the proper urls', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent = fixture.debugElement.componentInstance;
+
+      const ANCHOR: string = '#anchor';
+      const CURRENT_MD_FILE: string = 'GETTING_STARTED.md';
+      const SIBLING_MD_FILE: string = 'CONTRIBUTING.md';
+      const ROOT_MD_FILE: string = 'README.md';
+      const NON_RAW_LINK: string = 'https://github.com/Teradata/covalent/blob/develop/';
+      const RAW_LINK: string = 'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+      const EXTERNAL_URL: string = 'https://angular.io/';
+      const SUB_DIRECTORY: string = 'docs/';
+      const links: string[][] =
+        [
+          [`${ANCHOR}`, `${ANCHOR}`],
+
+          [`./${SIBLING_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
+          [`${SIBLING_MD_FILE}`,`${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
+          [`../${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`./${SIBLING_MD_FILE}${ANCHOR}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}${ANCHOR}`],
+
+          [`./${CURRENT_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`],
+          [`${CURRENT_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`],
+          [`./${CURRENT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}${ANCHOR}`],
+
+          [`/${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`/${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+          [`${RAW_LINK}${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+
+          [`${EXTERNAL_URL}${ROOT_MD_FILE}`, `${EXTERNAL_URL}${ROOT_MD_FILE}`],
+          [`${EXTERNAL_URL}${ROOT_MD_FILE}${ANCHOR}`, `${EXTERNAL_URL}${ROOT_MD_FILE}${ANCHOR}`],
+          [`${EXTERNAL_URL}`, `${EXTERNAL_URL}`],
+          [`${EXTERNAL_URL}${ANCHOR}`, `${EXTERNAL_URL}${ANCHOR}`],
+        ];
+
+      let markdown: string = '';
+
+      links.forEach((link: string[]) => {
+        markdown += `* [${link[0]}](${link[0]}) \n`;
+      });
+      component.content = markdown;
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const anchorElements: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
+      Array.from(anchorElements).forEach((anchorElement: HTMLAnchorElement, index: number) => {
+        const href: string = anchorElement.getAttribute('href');
+        const expectedHref: string = links[index][1];
+        expect(href).toEqual(expectedHref);
+      });
     }));
   });
 
@@ -427,4 +486,13 @@ class TdMarkdownDynamicContentTestEventsComponent {
 class TdMarkdownAnchorsTestEventsComponent {
   content: string;
   anchor: string;
+}
+
+@Component({
+  template: `
+      <td-markdown [content]="content" [hostedUrl]="hostedUrl"></td-markdown>`,
+})
+class TdMarkdownLinksTestEventsComponent {
+  hostedUrl: string;
+  content: string;
 }

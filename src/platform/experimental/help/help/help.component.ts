@@ -1,13 +1,13 @@
 import { Component, Input, OnChanges, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { IHelpMenuDataItem } from '../help.utils';
 import { MarkdownLoaderService } from '../markdown-loader/markdown-loader.service';
-import { removeHash, isAnchorLink } from '@covalent/markdown';
+import { removeLeadingHash, isAnchorLink } from '@covalent/markdown';
 
 function getTitleFromUrl(url: string): string {
   if (url) {
     const temp: URL = new URL(url);
     if (temp.hash) {
-      return removeHash(temp.hash);
+      return removeLeadingHash(temp.hash);
     } else {
       const path: string[] = temp.pathname.split('/');
       const fileName: string = path[path.length - 1];
@@ -20,13 +20,13 @@ function getTitleFromUrl(url: string): string {
 function getTitleFromMarkdownString(markdownString: string): string {
   if (markdownString) {
     const firstLine: string = markdownString.split(/[\r\n]+/).find((line: string) => !!line);
-    return removeHash(firstLine).trim();
+    return removeLeadingHash(firstLine).trim();
   }
   return undefined;
 }
 
 function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
-  return !isAnchorLink(anchor) && anchor.href.endsWith('.md');
+  return !isAnchorLink(anchor) && anchor.pathname.endsWith('.md');
 }
 
 @Component({
@@ -141,7 +141,7 @@ export class HelpComponent implements OnChanges, OnDestroy {
   getTitle(item: IHelpMenuDataItem): string {
     return (
       item.title ||
-      removeHash(item.anchor) ||
+      removeLeadingHash(item.anchor) ||
       getTitleFromUrl(item.url) ||
       getTitleFromMarkdownString(item.markdownString)
     );

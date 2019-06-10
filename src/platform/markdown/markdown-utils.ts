@@ -1,19 +1,22 @@
 // TODO: DUPLICATED
-export function removeHash(str: string): string {
+export function removeLeadingHash(str: string): string {
   if (str) {
     return str.replace(/^#+/, '');
   }
   return undefined;
 }
 
+export function removeTrailingHash(str: string): string {
+  if (str) {
+    return str.replace(/\#.*/, '');
+  }
+  return undefined;
+}
+
 export function normalize(str: string): string {
   if (str) {
-    const PREFIX: string = 'tdmarkdownanchor';
-    const normalizedString: string = removeHash(str.replace(/\W+/g, '')).toLowerCase();
-    const removePrefix: RegExp = new RegExp(`^${PREFIX}`, 'g');
-    const unPrefixed: string = normalizedString.replace(removePrefix, '');
-    const prefixed: string = `${PREFIX}${unPrefixed}`;
-    return prefixed;
+    const normalizedString: string = removeLeadingHash(str.replace(/\W+/g, '')).toLowerCase();
+    return normalizedString;
   }
   return undefined;
 }
@@ -40,6 +43,7 @@ export function scrollToAnchor(element: HTMLElement, anchor: string): void {
 }
 
 export function isAnchorLink(anchor: HTMLAnchorElement): boolean {
-  const url: URL = new URL(anchor.href);
-  return url.host === window.location.host && url.pathname === '/';
+  if (anchor) {
+    return anchor.getAttribute('href').startsWith('#');
+  }
 }

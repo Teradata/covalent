@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { scrollToAnchor, normalize, isAnchorLink } from './markdown-utils';
+import { scrollToAnchor, normalize, isAnchorLink, removeTrailingHash } from './markdown-utils';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -53,41 +53,41 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
     const document: Document = new DOMParser().parseFromString(html, 'text/html');
     document.querySelectorAll('a[href]').forEach((link: HTMLAnchorElement) => {
       const url: URL = new URL(link.href);
-      if (url.host === window.location.host) {
-        // hosts match, meaning URL MIGHT have been malformed by showdown
-        // url is either an anchor, a relative url, or just a link to a part of the application
-
-        if (url.pathname === '/') {
-          // url is just an anchor, leave alone
-          if (url.hash) {
-            url.hash = normalize(url.hash);
-            link.href = url.hash;
-          }
-        } else {
-          // url is relative
-          if (url.href.endsWith('.md')) {
-            // only check .md urls
-            // assumes github
-            link.href = generateAbsoluteHref(currentHref, link.getAttribute('href'));
-            if (url.hash) {
-              url.hash = normalize(url.hash);
-            }
-          }
-          link.target = '_blank';
+      const originalHash: string = url.hash;
+      if (isAnchorLink(link)) {
+        if (originalHash) {
+          url.hash = normalize(originalHash);
+          link.href = url.hash;
         }
+      } else if (url.host === window.location.host) {
+        // hosts match, meaning URL MIGHT have been malformed by showdown
+        // url is a relative url or just a link to a part of the application
+        if (url.pathname.endsWith('.md')) {
+          // only check .md urls
+          // assumes github
+          const hrefWithoutHash: string = removeTrailingHash(link.getAttribute('href'));
+          url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
+          if (originalHash) {
+            url.hash = normalize(originalHash);
+          }
+          link.href = url.href;
+        }
+        link.target = '_blank';
       } else {
         // url is absolute
-        if (url.href.endsWith('.md')) {
+        if (url.pathname.endsWith('.md')) {
           // only check .md urls
           if (url.hostname === 'github.com') {
             // if github try to get raw github url
-            link.href = rawGithubHref(url.href);
+            const hrefWithoutHash: string = removeTrailingHash(url.href);
+            url.href = rawGithubHref(hrefWithoutHash);
           } else {
-            link.href = url.href;
+            url.href = url.href;
           }
-          if (url.hash) {
-            url.hash = normalize(url.hash);
+          if (originalHash) {
+            url.hash = normalize(originalHash);
           }
+          link.href = url.href;
         }
         link.target = '_blank';
       }
