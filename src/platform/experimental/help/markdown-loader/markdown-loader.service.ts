@@ -1,6 +1,5 @@
 import { Injectable, Sanitizer, SecurityContext } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -4,7 +4,9 @@ import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dial
 import { IHelpMenuDataItem } from '../help.utils';
 import { Overlay, NoopScrollStrategy } from '@angular/cdk/overlay';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class DraggableHelpWindowDialogService {
   scrollStrategy: NoopScrollStrategy;
 
