@@ -4,9 +4,11 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { IHelpMenuDataItem } from '@covalent/experimental/help/help.utils';
-import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help';
-import { DraggableHelpWindowDialogService } from '@covalent/experimental/help';
+import {
+  DraggableHelpWindowDialogComponent,
+  DraggableHelpWindowDialogService,
+  IHelpMenuDataItem,
+} from '@covalent/experimental/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -21,8 +23,6 @@ export class MainComponent implements OnInit {
   oneItem: IHelpMenuDataItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
-      title: 'API',
-      anchor: 'Adding a new documentation component',
     },
   ];
 
@@ -50,23 +50,8 @@ export class MainComponent implements OnInit {
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-tools/develop/docs/CLI.md',
       title: 'up a level: E2E Code Coverage',
-    }
+    },
   ];
-
-  // multipleItems: IHelpMenuDataItem[] = [
-  //   {
-  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/IMC/Overview/EN/Overview.md',
-  //     title: 'Overview',
-  //   },
-  //   {
-  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/Unity/README.md',
-  //     title: 'Unity',
-  //   },
-  //   {
-  //     url: 'https://raw.githubusercontent.com/Teradata/product-help/v1.0test/IMC/Overview/JP/README.md',
-  //     title: 'すべて',
-  //   },
-  // ];
 
   oneItemWithAnchor: IHelpMenuDataItem[] = [
     {
@@ -101,14 +86,7 @@ export class MainComponent implements OnInit {
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 
   ngOnInit(): void {
-    // this.use(this.multipleItems);
-    // this.use([{url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/CONTRIBUTING.md'}]);
-    // this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
-    // this.use([{url: 'https://raw.githubusercontent.com/christianmemije/markdown_paths/master/readme1.md'}]);
-    setTimeout(() => {
-      this.anchor = 'Source Structure';
-    }, 1000);
-
+    this.use(this.multipleItems);
   }
 
   openDialog(): void {
@@ -139,7 +117,6 @@ export class MainComponent implements OnInit {
   }
 
   tryUserInput(): void {
-    this.use(JSON.parse(this.userInput))
+    this.use(JSON.parse(this.userInput));
   }
-
 }

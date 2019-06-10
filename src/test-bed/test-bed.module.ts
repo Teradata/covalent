@@ -14,6 +14,7 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CovalentHelpModule } from '@covalent/experimental/help';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,17 @@ import { CovalentHelpModule } from '@covalent/experimental/help';
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
+
+    // for demo
+    MatButtonModule,
     MatIconModule,
-    CovalentHighlightModule,
     MatFormFieldModule,
     MatInputModule,
+    CovalentHighlightModule,
 
+    // help module
     CovalentHelpModule,
+
   ], // modules needed to run this module
   providers: [appRoutingProviders],
   bootstrap: [TestBedComponent],

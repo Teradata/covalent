@@ -5,3 +5,4 @@ export * from './draggable-help-window-dialog/draggable-help-window-dialog.compo
 export * from './draggable-help-window-dialog/draggable-help-window-dialog.service';
 export * from './markdown-loader/markdown-loader.component';
 export * from './markdown-loader/markdown-loader.service';
+export * from './help.utils';

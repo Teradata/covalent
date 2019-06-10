@@ -1,29 +1,15 @@
-<!-- <td-markdown-loader
-[url]="'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md'" [httpOptions]="httpOptions"
-[anchor]="anchor"
-></td-markdown-loader> -->
+<!-- <td-markdown-loader [url]="oneItem" [httpOptions]="httpOptions" [anchor]="anchor"></td-markdown-loader> -->
 
-<div class="sample-wrapper" [style.height.px]="300">
-  <td-help
-    [items]="multipleItems"
-    >
-  </td-help>
-</div>
+<!-- <div class="sample-wrapper" [style.height.px]="300">
+  <td-help [items]="multipleItems"></td-help>
+</div> -->
 
-<!-- <td-help-window
-  [items]="multipleItems"
-  [draggable]="false"
->
-</td-help-window> -->
+<!-- <td-help-window [items]="multipleItems" [draggable]="false"></td-help-window> -->
 
-<!--Cursor-->
-<!-- <td-help-window
-  [items]="multipleItems"
-  [draggable]="true"
->
-</td-help-window> -->
+<!-- <td-help-window [items]="multipleItems" [draggable]="true"></td-help-window> -->
 
-<!-- <button
+
+<button
   *ngIf="showOpenButton"
   mat-icon-button
   color="accent"
@@ -55,7 +41,7 @@
 <td-highlight [content]="prettyJson(nestedItems)"></td-highlight>
 
 <h2>Try your own</h2>
-<mat-form-field  [style.width]="'100%'">
+<mat-form-field [style.width]="'100%'">
   <textarea
     matInput
     cdkTextareaAutosize
@@ -65,4 +51,4 @@
   ></textarea>
 </mat-form-field>
 <br />
-<button mat-raised-button color="primary" (click)="tryUserInput()">Try</button> -->
+<button mat-raised-button color="primary" (click)="tryUserInput()">Try</button>
