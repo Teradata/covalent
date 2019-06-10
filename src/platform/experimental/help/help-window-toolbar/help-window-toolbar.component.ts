@@ -9,9 +9,9 @@ import { MaximizedOrMinimized } from '../help.utils';
 export class HelpWindowToolbarComponent {
   @Input() windowState: MaximizedOrMinimized;
 
-  @Output() minimized: EventEmitter<any> = new EventEmitter();
-  @Output() maximized: EventEmitter<any> = new EventEmitter();
-  @Output() closed: EventEmitter<any> = new EventEmitter();
+  @Output() minimized: EventEmitter<void> = new EventEmitter();
+  @Output() maximized: EventEmitter<void> = new EventEmitter();
+  @Output() closed: EventEmitter<void> = new EventEmitter();
 
   get showMinimizeButton(): boolean {
     return this.windowState === MaximizedOrMinimized.Maximized;

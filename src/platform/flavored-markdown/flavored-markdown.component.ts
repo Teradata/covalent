@@ -102,7 +102,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
-    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.hostedUrl)) {
+    if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
       scrollToAnchor(this._elementRef.nativeElement, this._anchor);
     } else {
       this.refresh();

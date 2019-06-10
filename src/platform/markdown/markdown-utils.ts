@@ -1,4 +1,3 @@
-// TODO: DUPLICATED
 export function removeLeadingHash(str: string): string {
   if (str) {
     return str.replace(/^#+/, '');
@@ -15,8 +14,7 @@ export function removeTrailingHash(str: string): string {
 
 export function normalize(str: string): string {
   if (str) {
-    const normalizedString: string = removeLeadingHash(str.replace(/\W+/g, '')).toLowerCase();
-    return normalizedString;
+    return removeLeadingHash(str.replace(/\W+/g, '')).toLowerCase();
   }
   return undefined;
 }
@@ -37,6 +35,7 @@ export function scrollToAnchor(element: HTMLElement, anchor: string): void {
     if (headingToJumpTo) {
       headingToJumpTo.scrollIntoView({ behavior: 'auto' });
     } else {
+      // TODO: leave this warning?
       console.warn(`Could not jump to heading '${anchor}'`);
     }
   }

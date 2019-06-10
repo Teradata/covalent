@@ -12,9 +12,9 @@ export class HelpWindowComponent {
   @Input() draggable: boolean = false;
 
   // outputs only for non-draggable toolbar
-  @Output() closed: EventEmitter<any> = new EventEmitter();
-  @Output() minimized: EventEmitter<any> = new EventEmitter();
-  @Output() maximized: EventEmitter<any> = new EventEmitter();
+  @Output() closed: EventEmitter<void> = new EventEmitter();
+  @Output() minimized: EventEmitter<void> = new EventEmitter();
+  @Output() maximized: EventEmitter<void> = new EventEmitter();
 
   get height(): number {
     return this.windowState === MaximizedOrMinimized.Maximized ? 475 : 0;

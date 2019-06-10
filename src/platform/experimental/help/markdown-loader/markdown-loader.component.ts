@@ -11,8 +11,8 @@ export class TdMarkdownLoaderComponent implements OnChanges {
   @Input() httpOptions: object;
   @Input() anchor: string;
 
-  @Output() contentReady: EventEmitter<any> = new EventEmitter();
-  @Output() loadFailed: EventEmitter<any> = new EventEmitter();
+  @Output() contentReady: EventEmitter<void> = new EventEmitter();
+  @Output() loadFailed: EventEmitter<void> = new EventEmitter();
 
   content: string;
   loading: boolean = true;

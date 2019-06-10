@@ -10,7 +10,6 @@ let showdown: any = require('showdown/dist/showdown.js');
 // allow override somehow
 function generateAbsoluteHref(currentHref: string, relativeHref: string): string {
   if (currentHref && relativeHref) {
-    // TODO: this assumes it is on github
 
     const currentUrl: URL = new URL(currentHref);
     const path: string = currentUrl.pathname
@@ -178,7 +177,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
-    if (changes.anchor && (!changes.content && !changes.simpleLineBreaks && !changes.hostedUrl)) {
+    if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
       scrollToAnchor(this._elementRef.nativeElement, this._anchor);
     } else {
       this.refresh();
@@ -216,8 +215,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
     this.removeAnchorListeners();
     this.handleAnchorClicksBound = this.handleAnchorClicks.bind(this);
     this.attachAnchorListeners();
-    // timeout required
-    // TODO: find cleaner solution
+    // TODO: timeout required,  find a cleaner solution
     setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
     this.onContentReady.emit();
   }
