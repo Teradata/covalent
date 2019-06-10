@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CovalentHelpModule } from '@covalent/experimental/help/help.module';
+import { CovalentHelpModule } from '@covalent/experimental/help';
 
 @NgModule({
   declarations: [

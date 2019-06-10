@@ -5,8 +5,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { IHelpMenuDataItem } from '@covalent/experimental/help/help.utils';
-import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.component';
-import { DraggableHelpWindowDialogService } from '@covalent/experimental/help/draggable-help-window-dialog/draggable-help-window-dialog.service';
+import { DraggableHelpWindowDialogComponent } from '@covalent/experimental/help';
+import { DraggableHelpWindowDialogService } from '@covalent/experimental/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
