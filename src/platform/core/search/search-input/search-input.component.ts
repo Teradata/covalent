@@ -1,9 +1,10 @@
 import { Component, ViewChild, OnInit, Input, Output, EventEmitter, Optional,
          ChangeDetectionStrategy, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dir } from '@angular/cdk/bidi';
 import { MatInput } from '@angular/material/input';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 import { debounceTime, skip } from 'rxjs/operators';
 
@@ -49,6 +50,12 @@ export const _TdSearchInputMixinBase = mixinControlValueAccessor(TdSearchInputBa
 export class TdSearchInputComponent extends _TdSearchInputMixinBase implements IControlValueAccessor, OnInit {
 
   @ViewChild(MatInput) _input: MatInput;
+
+  /**
+   * appearance?: MatFormFieldAppearance
+   * Appearance style for the underlying input component.
+   */
+  @Input('appearance') appearance: MatFormFieldAppearance;
 
   /**
    * showUnderline?: boolean
