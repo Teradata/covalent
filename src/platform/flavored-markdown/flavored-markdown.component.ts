@@ -168,7 +168,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     if (!markdown) {
       return;
     }
-    if (markdown.indexOf(key) > -1) {
+    if (key && markdown.indexOf(key) > -1) {
       let markdownParts: string[] = markdown.split(key);
       keys.shift();
       this._render(markdownParts[0], undefined, undefined);
