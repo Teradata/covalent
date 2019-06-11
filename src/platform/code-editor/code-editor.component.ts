@@ -5,19 +5,17 @@ import { Observable, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
+import { waitUntilMonacoReady } from './code-editor.utils';
+
 const noop: any = () => {
   // empty method
 };
 
 // counter for ids to allow for multiple editors on one page
 let uniqueCounter: number = 0;
-let loadedMonaco: boolean = false;
-let loadPromise: Promise<void>;
 // declare all the built in electron objects
 declare const electron: any;
 declare const monaco: any;
-declare const require: any;
-declare const process: any;
 
 @Component({
   selector: 'td-code-editor',
@@ -659,39 +657,33 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   ngAfterViewInit(): void {
     if (!this._isElectronApp) {
-        if (loadedMonaco) {
-            // Wait until monaco editor is available
-            this.waitForMonaco().then(() => {
-                this.initMonaco();
-            });
-        } else {
-            loadedMonaco = true;
-            loadPromise = new Promise<void>((resolve: any) => {
-                if (typeof((<any>window).monaco) === 'object') {
-                    resolve();
-                    return;
-                }
-                let onGotAmdLoader: any = () => {
-                    // Load monaco
-                    (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
-                    (<any>window).require(['vs/editor/editor.main'], () => {
-                        this.initMonaco();
-                        resolve();
-                    });
-                };
+      waitUntilMonacoReady().pipe(
+        takeUntil(this._destroy),
+      ).subscribe(() => {
+        this.initMonaco();
+      });
+      // check if the script tag has been created in case another code component has done this already
+      if (!document.getElementById('monaco-loader-script')) {
+        let onGotAmdLoader: any = () => {
+          // Load monaco
+          (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
+          (<any>window).require(['vs/editor/editor.main'], () => {
+            // TODO
+          });
+        };
 
-                // Load AMD loader if necessary
-                if (!(<any>window).require) {
-                    let loaderScript: HTMLScriptElement = document.createElement('script');
-                    loaderScript.type = 'text/javascript';
-                    loaderScript.src = 'assets/monaco/vs/loader.js';
-                    loaderScript.addEventListener('load', onGotAmdLoader);
-                    document.body.appendChild(loaderScript);
-                } else {
-                    onGotAmdLoader();
-                }
-            });
+        // Load AMD loader if necessary
+        if (!(<any>window).require) {
+          let loaderScript: HTMLScriptElement = document.createElement('script');
+          loaderScript.id = 'monaco-loader-script';
+          loaderScript.type = 'text/javascript';
+          loaderScript.src = 'assets/monaco/vs/loader.js';
+          loaderScript.addEventListener('load', onGotAmdLoader);
+          document.body.appendChild(loaderScript);
+        } else {
+          onGotAmdLoader();
         }
+      }
     }
     merge(
       fromEvent(window, 'resize').pipe(
@@ -725,13 +717,6 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     this._webview ? this._webview.send('dispose') : this._editor.dispose();
     this._destroy.next(true);
     this._destroy.unsubscribe();
-  }
-
-  /**
-   * waitForMonaco method Returns promise that will be fulfilled when monaco is available
-   */
-  waitForMonaco(): Promise<void> {
-    return loadPromise;
   }
 
  /**
