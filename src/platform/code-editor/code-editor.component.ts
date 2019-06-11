@@ -5,7 +5,7 @@ import { Observable, Subject } from 'rxjs';
 import { fromEvent, merge, timer } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { waitUntilMonacoReady } from './code-editor.utils';
+import { waitUntilMonacoReady, loadMonaco } from './code-editor.utils';
 
 const noop: any = () => {
   // empty method
@@ -43,7 +43,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _subject: Subject<string> = new Subject();
   private _editorInnerContainer: string = 'editorInnerContainer' + uniqueCounter++;
   private _editorNodeModuleDirOverride: string = '';
-  private _editor: any = {};
+  private _editor: any;
   private _editorProxy: any;
   private _componentInitialized: boolean = false;
   private _fromEditor: boolean = false;
@@ -199,7 +199,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
         if (this._webview) {
             this._webview.send('getEditorContent');
             return this._subject.asObservable();
-        } else {
+        } else if (this._editor) {
             this._value = this._editor.getValue();
             setTimeout(() => {
                 this._subject.next(this._value);
@@ -222,7 +222,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     if (this._componentInitialized) {
         if (this._webview) {
             this._webview.send('setLanguage', language);
-        } else {
+        } else if (this._editor) {
             let currentValue: string = this._editor.getValue();
             this._editor.dispose();
             let myDiv: HTMLDivElement = this._editorContainer.nativeElement;
@@ -252,7 +252,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       if (this._componentInitialized) {
         if (this._webview) {
             this._webview.send('registerLanguage', language);
-        } else {
+        } else if (this._editor) {
             let currentValue: string = this._editor.getValue();
             this._editor.dispose();
 
@@ -303,7 +303,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     if (this._componentInitialized) {
         if (this._webview) {
             this._webview.send('setEditorStyle', {language: this._language, theme: this._theme, style: editorStyle});
-        } else {
+        } else if (this._editor) {
             let containerDiv: HTMLDivElement = this._editorContainer.nativeElement;
             containerDiv.setAttribute('style', editorStyle);
             let currentValue: string = this._editor.getValue();
@@ -335,7 +335,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     if (this._componentInitialized) {
         if (this._webview) {
             this._webview.send('setEditorOptions', {'theme': theme});
-        } else {
+        } else if (this._editor) {
             this._editor.updateOptions({'theme': theme});
             this.onEditorConfigurationChanged.emit(undefined);
         }
@@ -369,7 +369,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
       if (this._componentInitialized) {
         if (this._webview) {
           this._webview.send('setEditorOptions', editorOptions);
-        } else {
+        } else if (this._editor) {
           this._editor.updateOptions(editorOptions);
           this.onEditorConfigurationChanged.emit(undefined);
         }
@@ -386,7 +386,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
     if (this._componentInitialized) {
         if (this._webview) {
             this._webview.send('layout');
-        } else {
+        } else if (this._editor) {
             this._editor.layout();
         }
     }
@@ -657,33 +657,12 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
    */
   ngAfterViewInit(): void {
     if (!this._isElectronApp) {
+      loadMonaco();
       waitUntilMonacoReady().pipe(
         takeUntil(this._destroy),
       ).subscribe(() => {
         this.initMonaco();
       });
-      // check if the script tag has been created in case another code component has done this already
-      if (!document.getElementById('monaco-loader-script')) {
-        let onGotAmdLoader: any = () => {
-          // Load monaco
-          (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
-          (<any>window).require(['vs/editor/editor.main'], () => {
-            // TODO
-          });
-        };
-
-        // Load AMD loader if necessary
-        if (!(<any>window).require) {
-          let loaderScript: HTMLScriptElement = document.createElement('script');
-          loaderScript.id = 'monaco-loader-script';
-          loaderScript.type = 'text/javascript';
-          loaderScript.src = 'assets/monaco/vs/loader.js';
-          loaderScript.addEventListener('load', onGotAmdLoader);
-          document.body.appendChild(loaderScript);
-        } else {
-          onGotAmdLoader();
-        }
-      }
     }
     merge(
       fromEvent(window, 'resize').pipe(
