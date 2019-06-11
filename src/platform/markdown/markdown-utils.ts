@@ -36,6 +36,7 @@ export function scrollToAnchor(element: HTMLElement, anchor: string): void {
       headingToJumpTo.scrollIntoView({ behavior: 'auto' });
     } else {
       // TODO: leave this warning?
+      // tslint:disable-next-line
       console.warn(`Could not jump to heading '${anchor}'`);
     }
   }

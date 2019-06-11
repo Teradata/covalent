@@ -1,5 +1,24 @@
-import { Component, Directive, AfterViewInit, Input, Renderer2, Type, ComponentFactory, ChangeDetectorRef, EventEmitter, Output,
-         ViewContainerRef, ComponentFactoryResolver, Injector, ComponentRef, ViewChild, ChangeDetectionStrategy, OnChanges, SimpleChanges, ElementRef } from '@angular/core';
+import {
+  Component,
+  Directive,
+  AfterViewInit,
+  Input,
+  Renderer2,
+  Type,
+  ComponentFactory,
+  ChangeDetectorRef,
+  EventEmitter,
+  Output,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Injector,
+  ComponentRef,
+  ViewChild,
+  ChangeDetectionStrategy,
+  OnChanges,
+  SimpleChanges,
+  ElementRef,
+} from '@angular/core';
 
 import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';

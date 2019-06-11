@@ -29,6 +29,4 @@ export class HelpWindowComponent {
     this.windowState = MaximizedOrMinimized.Maximized;
     this.maximized.emit();
   }
-
-
 }

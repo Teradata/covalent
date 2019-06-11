@@ -39,7 +39,7 @@ describe('Component: Markdown', () => {
         TdMarkdownStaticContentTestEventsComponent,
         TdMarkdownDynamicContentTestEventsComponent,
         TdMarkdownAnchorsTestEventsComponent,
-        TdMarkdownLinksTestEventsComponent
+        TdMarkdownLinksTestEventsComponent,
       ],
     });
     TestBed.compileComponents();
@@ -270,7 +270,7 @@ describe('Component: Markdown', () => {
           [`${ANCHOR}`, `${ANCHOR}`],
 
           [`./${SIBLING_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
-          [`${SIBLING_MD_FILE}`,`${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
+          [`${SIBLING_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
           [`../${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
           [`./${SIBLING_MD_FILE}${ANCHOR}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}${ANCHOR}`],
 

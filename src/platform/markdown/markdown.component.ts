@@ -1,4 +1,16 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+  SecurityContext,
+  OnChanges,
+  SimpleChanges,
+  OnDestroy,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { scrollToAnchor, normalize, isAnchorLink, removeTrailingHash } from './markdown-utils';
 
