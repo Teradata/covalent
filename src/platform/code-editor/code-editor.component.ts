@@ -714,7 +714,11 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
 
   ngOnDestroy(): void {
     this._changeDetectorRef.detach();
-    this._webview ? this._webview.send('dispose') : this._editor.dispose();
+    if (this._webview) {
+      this._webview.send('dispose');
+    } else if (this._editor) {
+      this._editor.dispose();
+    }
     this._destroy.next(true);
     this._destroy.unsubscribe();
   }
