@@ -227,7 +227,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
     this.removeAnchorListeners();
     this.handleAnchorClicksBound = this.handleAnchorClicks.bind(this);
     this.attachAnchorListeners();
-    // TODO: timeout required,  find a cleaner solution
+    // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
     setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
     this.onContentReady.emit();
   }

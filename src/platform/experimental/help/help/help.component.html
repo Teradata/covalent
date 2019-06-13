@@ -1,3 +1,4 @@
+<ng-container *ngIf="!showEmptyState">
 <button
   mat-icon-button
   matTooltip="Go home"
@@ -30,13 +31,18 @@
     *ngFor="let item of currentMenuItems"
     (click)="handleItemSelected(item)"
     mat-list-item
+    matTooltip="{{ getTitle(item) }}"
+    matTooltipPosition="before"
+    matTooltipShowDelay="500"
   >
     <mat-icon
       matListIcon
     >
       subject
     </mat-icon>
-    {{ getTitle(item) }}
+    <span class="text-truncate">
+      {{ getTitle(item) }}
+    </span>
   </button>
 </mat-action-list>
 
@@ -68,3 +74,14 @@
   (contentReady)="handleContentReady()"
 >
 </td-flavored-markdown>
+</ng-container>
+
+<div
+  *ngIf="showEmptyState"
+  layout="column"
+  layout-align="center center"
+  class="tc-grey-500 mat-typography pad-lg"
+>
+  <mat-icon matListAvatar class="text-super push-bottom">subject</mat-icon>
+  <h2>No item(s) to display</h2>
+</div>

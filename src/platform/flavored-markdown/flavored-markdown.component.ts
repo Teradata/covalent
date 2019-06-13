@@ -175,7 +175,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
-      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+       // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
+      setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
       this.onContentReady.emit();
       Promise.resolve().then(() => {
         this._changeDetectorRef.markForCheck();

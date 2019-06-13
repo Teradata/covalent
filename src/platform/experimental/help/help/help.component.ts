@@ -83,6 +83,10 @@ export class HelpComponent implements OnChanges, OnDestroy {
     }
   }
 
+  get showEmptyState(): boolean {
+    return !this.items || this.items.length < 1;
+  }
+
   constructor(private _elementRef: ElementRef, private _markdownUrlLoaderService: MarkdownLoaderService) {}
 
   ngOnChanges(): void {
