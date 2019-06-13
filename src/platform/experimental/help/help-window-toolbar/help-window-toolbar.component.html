@@ -11,18 +11,18 @@
         class="mat-title push-bottom-none"
         flex
       >
-        Help
+        {{ helpLabel }}
       </span>
       <!-- TODO: Resizing a drag-and-drop element was not working so disabled minimize for now-->
       <!--
       <button
         *ngIf="showMinimizeButton"
         mat-icon-button
-        matTooltip="Minimize"
+        [matTooltip]="minimizeLabel"
         (click)="minimized.emit()"
       >
         <mat-icon
-          aria-label="Minimize"
+          [attr.aria-label]="minimizeLabel"
         >
           unfold_less
         </mat-icon>
@@ -31,11 +31,11 @@
       <button
         *ngIf="showMaximizeButton"
         mat-icon-button
-        matTooltip="Maximize"
+        [matTooltip]="maximizeLabel"
         (click)="maximized.emit()"
       >
         <mat-icon
-          aria-label="Minimize"
+          [attr.aria-label]="maximizeLabel"
         >
           unfold_more
         </mat-icon>
@@ -47,7 +47,7 @@
         (click)="closed.emit()"
       >
         <mat-icon
-          aria-label="Close"
+          [attr.aria-label]="closeLabel"
         >
           close
         </mat-icon>

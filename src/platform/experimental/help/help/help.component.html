@@ -1,11 +1,11 @@
 <ng-container *ngIf="!showEmptyState">
 <button
   mat-icon-button
-  matTooltip="Go home"
+  [matTooltip]="goHomeLabel"
   (click)="reset()"
 >
   <mat-icon
-    aria-label="Go home"
+    [attr.aria-label]="goHomeLabel"
   >
     home
   </mat-icon>
@@ -14,11 +14,11 @@
 <button
   *ngIf="showGoBackButton"
   mat-icon-button
-  matTooltip="Go back"
+  [matTooltip]="goBackLabel"
   (click)="goBack()"
 >
   <mat-icon
-    aria-label="Go back"
+    [attr.aria-label]="goBackLabel"
   >
     arrow_back
   </mat-icon>
@@ -31,7 +31,7 @@
     *ngFor="let item of currentMenuItems"
     (click)="handleItemSelected(item)"
     mat-list-item
-    matTooltip="{{ getTitle(item) }}"
+    [matTooltip]="getTitle(item)"
     matTooltipPosition="before"
     matTooltipShowDelay="500"
   >
@@ -83,5 +83,5 @@
   class="tc-grey-500 mat-typography pad-lg"
 >
   <mat-icon matListAvatar class="text-super push-bottom">subject</mat-icon>
-  <h2>No item(s) to display</h2>
+  <h2>{{ emptyStateLabel }}</h2>
 </div>

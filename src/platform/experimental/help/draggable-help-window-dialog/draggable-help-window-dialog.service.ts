@@ -1,7 +1,7 @@
 import { Injectable, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog.component';
-import { IHelpMenuDataItem } from '../help.utils';
+import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
 import { Overlay, NoopScrollStrategy } from '@angular/cdk/overlay';
 
 @Injectable({
@@ -14,7 +14,11 @@ export class DraggableHelpWindowDialogService {
     this.scrollStrategy = overlay.scrollStrategies.noop();
   }
 
-  open(items: IHelpMenuDataItem[], config?: MatDialogConfig): MatDialogRef<DraggableHelpWindowDialogComponent> {
+  open(
+    items: IHelpMenuDataItem[],
+    config?: MatDialogConfig,
+    labels?: IHelpWindowComponentLabels,
+  ): MatDialogRef<DraggableHelpWindowDialogComponent> {
     let draggableDialog: MatDialogRef<DraggableHelpWindowDialogComponent> = this._dialog.open(
       DraggableHelpWindowDialogComponent,
       {
@@ -26,7 +30,7 @@ export class DraggableHelpWindowDialogService {
         ...config,
       },
     );
-    draggableDialog.componentInstance.data = items;
+    draggableDialog.componentInstance.data = { items, labels };
     return draggableDialog;
   }
 }

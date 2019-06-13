@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, ElementRef, ViewChild, OnDestroy } from '@angular/core';
-import { IHelpMenuDataItem } from '../help.utils';
+import { Component, Input, OnChanges, ElementRef, ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
+import { IHelpMenuDataItem, IHelpComponentLabels } from '../help.utils';
 import { MarkdownLoaderService } from '../markdown-loader/markdown-loader.service';
 import { removeLeadingHash, isAnchorLink } from '@covalent/markdown';
 
@@ -36,6 +36,7 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 })
 export class HelpComponent implements OnChanges, OnDestroy {
   @Input() items: IHelpMenuDataItem[];
+  @Input() labels: IHelpComponentLabels;
 
   historyStack: IHelpMenuDataItem[][] = []; // history
   currentMarkdownItem: IHelpMenuDataItem; // currently rendered
@@ -87,10 +88,24 @@ export class HelpComponent implements OnChanges, OnDestroy {
     return !this.items || this.items.length < 1;
   }
 
+  get goHomeLabel(): string {
+    return (this.labels && this.labels.goHome) || 'Go home';
+  }
+
+  get goBackLabel(): string {
+    return (this.labels && this.labels.goBack) || 'Go back';
+  }
+
+  get emptyStateLabel(): string {
+    return (this.labels && this.labels.emptyState) ||  'No item(s) to display';
+  }
+
   constructor(private _elementRef: ElementRef, private _markdownUrlLoaderService: MarkdownLoaderService) {}
 
-  ngOnChanges(): void {
-    this.reset();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.items) {
+      this.reset();
+    }
   }
 
   ngOnDestroy(): void {

@@ -12,6 +12,7 @@
     class="td-draggable-help-window-toolbar"
 
     [windowState]="windowState"
+    [labels]="labels"
 
     (minimized)="handleMinimized()"
     (maximized)="handleMaximized()"
@@ -21,6 +22,7 @@
 
   <td-help
     [items]="items"
+    [labels]="labels"
     [style.height.px]="height"
   >
   </td-help>
@@ -32,6 +34,7 @@
 >
   <td-help-window-toolbar
     [windowState]="windowState"
+    [labels]="labels"
 
     (minimized)="handleMinimized()"
     (maximized)="handleMaximized()"
@@ -42,6 +45,7 @@
   <td-help
     [style.height.px]="height"
     [items]="items"
+    [labels]="labels"
   >
   </td-help>
 </div>

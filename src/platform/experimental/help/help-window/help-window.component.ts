@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { IHelpMenuDataItem, MaximizedOrMinimized } from '../help.utils';
+import { IHelpMenuDataItem, MaximizedOrMinimized, IHelpWindowComponentLabels } from '../help.utils';
 
 @Component({
   selector: 'td-help-window',
@@ -10,6 +10,7 @@ export class HelpWindowComponent {
   @Input() items: IHelpMenuDataItem[];
   @Input() windowState: MaximizedOrMinimized = MaximizedOrMinimized.Maximized;
   @Input() draggable: boolean = false;
+  @Input() labels: IHelpWindowComponentLabels;
 
   // outputs only for non-draggable toolbar
   @Output() closed: EventEmitter<void> = new EventEmitter();
