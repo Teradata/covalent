@@ -58,6 +58,9 @@ function rawGithubHref(githubHref: string): string {
   }
   return undefined;
 }
+function isGithubHref(href: string): boolean {
+  return new URL(href).hostname === 'github.com';
+}
 
 function normalizeHtmlHrefs(html: string, currentHref: string): string {
   if (currentHref) {
@@ -77,7 +80,12 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
           // only check .md urls
           // assumes github
           const hrefWithoutHash: string = removeTrailingHash(link.getAttribute('href'));
-          url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
+
+          if (isGithubHref(currentHref)) {
+            url.href = generateAbsoluteHref(rawGithubHref(currentHref), hrefWithoutHash);
+          } else {
+            url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
+          }
           if (originalHash) {
             url.hash = normalize(originalHash);
           }
@@ -88,7 +96,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
         // url is absolute
         if (url.pathname.endsWith('.md')) {
           // only check .md urls
-          if (url.hostname === 'github.com') {
+          if (isGithubHref(url.href)) {
             // if github try to get raw github url
             const hrefWithoutHash: string = removeTrailingHash(url.href);
             url.href = rawGithubHref(hrefWithoutHash);

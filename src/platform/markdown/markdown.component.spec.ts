@@ -304,11 +304,21 @@ describe('Component: Markdown', () => {
       await fixture.whenStable();
 
       const anchorElements: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
-      Array.from(anchorElements).forEach((anchorElement: HTMLAnchorElement, index: number) => {
-        const href: string = anchorElement.getAttribute('href');
-        const expectedHref: string = links[index][1];
-        expect(href).toEqual(expectedHref);
-      });
+      function checkAnchors(): void {
+        Array.from(anchorElements).forEach((anchorElement: HTMLAnchorElement, index: number) => {
+          const href: string = anchorElement.getAttribute('href');
+          const expectedHref: string = links[index][1];
+          expect(href).toEqual(expectedHref);
+        });
+      }
+
+      checkAnchors();
+      component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      checkAnchors();
     }));
   });
 
