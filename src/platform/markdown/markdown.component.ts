@@ -12,7 +12,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { scrollToAnchor, normalize, isAnchorLink, removeTrailingHash } from './markdown-utils';
+import { scrollToAnchor, normalizeAnchor, isAnchorLink, removeTrailingHash, isGithubHref, rawGithubHref } from './markdown-utils';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -45,23 +45,6 @@ function generateAbsoluteHref(currentHref: string, relativeHref: string): string
   return undefined;
 }
 
-function rawGithubHref(githubHref: string): string {
-  if (githubHref) {
-    const url: URL = new URL(githubHref);
-    if (url.pathname.startsWith('/raw/')) {
-      return githubHref;
-    } else {
-      url.hostname = 'raw.githubusercontent.com';
-      url.pathname = url.pathname.split('/blob', 2).join('');
-      return url.href;
-    }
-  }
-  return undefined;
-}
-function isGithubHref(href: string): boolean {
-  return new URL(href).hostname === 'github.com';
-}
-
 function normalizeHtmlHrefs(html: string, currentHref: string): string {
   if (currentHref) {
     const document: Document = new DOMParser().parseFromString(html, 'text/html');
@@ -70,7 +53,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
       const originalHash: string = url.hash;
       if (isAnchorLink(link)) {
         if (originalHash) {
-          url.hash = normalize(originalHash);
+          url.hash = normalizeAnchor(originalHash);
           link.href = url.hash;
         }
       } else if (url.host === window.location.host) {
@@ -78,16 +61,13 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
         // url is a relative url or just a link to a part of the application
         if (url.pathname.endsWith('.md')) {
           // only check .md urls
-          // assumes github
+
           const hrefWithoutHash: string = removeTrailingHash(link.getAttribute('href'));
 
-          if (isGithubHref(currentHref)) {
-            url.href = generateAbsoluteHref(rawGithubHref(currentHref), hrefWithoutHash);
-          } else {
-            url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
-          }
+          url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
+
           if (originalHash) {
-            url.hash = normalize(originalHash);
+            url.hash = normalizeAnchor(originalHash);
           }
           link.href = url.href;
         }
@@ -95,16 +75,8 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
       } else {
         // url is absolute
         if (url.pathname.endsWith('.md')) {
-          // only check .md urls
-          if (isGithubHref(url.href)) {
-            // if github try to get raw github url
-            const hrefWithoutHash: string = removeTrailingHash(url.href);
-            url.href = rawGithubHref(hrefWithoutHash);
-          } else {
-            url.href = url.href;
-          }
           if (originalHash) {
-            url.hash = normalize(originalHash);
+            url.hash = normalizeAnchor(originalHash);
           }
           link.href = url.href;
         }
@@ -121,7 +93,7 @@ function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(html, 'text/html');
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading: HTMLElement) => {
-      const id: string = normalize(heading.innerHTML);
+      const id: string = normalizeAnchor(heading.innerHTML);
       heading.setAttribute('id', id);
     });
     return new XMLSerializer().serializeToString(document);

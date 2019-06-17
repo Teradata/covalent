@@ -12,7 +12,7 @@ export function removeTrailingHash(str: string): string {
   return undefined;
 }
 
-export function normalize(str: string): string {
+export function normalizeAnchor(str: string): string {
   if (str) {
     return removeLeadingHash(str.replace(/\W+/g, '')).toLowerCase();
   }
@@ -21,7 +21,7 @@ export function normalize(str: string): string {
 
 export function scrollToAnchor(element: HTMLElement, anchor: string): void {
   if (element && anchor) {
-    const normalizedAnchor: string = normalize(anchor);
+    const normalizedAnchor: string = normalizeAnchor(anchor);
     const parent: HTMLElement = element.parentElement;
 
     let headingToJumpTo: HTMLElement;
@@ -46,4 +46,22 @@ export function isAnchorLink(anchor: HTMLAnchorElement): boolean {
   if (anchor) {
     return anchor.getAttribute('href').startsWith('#');
   }
+}
+
+export function rawGithubHref(githubHref: string): string {
+  if (githubHref) {
+    const url: URL = new URL(githubHref);
+    if (url.pathname.startsWith('/raw/')) {
+      return githubHref;
+    } else {
+      url.hostname = 'raw.githubusercontent.com';
+      url.pathname = url.pathname.split('/blob', 2).join('');
+      return url.href;
+    }
+  }
+  return undefined;
+}
+
+export function isGithubHref(href: string): boolean {
+  return new URL(href).hostname === 'github.com';
 }

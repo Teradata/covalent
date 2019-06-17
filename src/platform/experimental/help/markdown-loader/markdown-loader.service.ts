@@ -1,5 +1,6 @@
 import { Injectable, Sanitizer, SecurityContext } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { isGithubHref, rawGithubHref } from '@covalent/markdown';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +10,13 @@ export class MarkdownLoaderService {
 
   async load(url: string, httpOptions: object = {}): Promise<string> {
     const sanitizedUrl: string = this._sanitizer.sanitize(SecurityContext.URL, url);
+    let urlToGet: string = sanitizedUrl;
+    if (isGithubHref(sanitizedUrl)) {
+      urlToGet = rawGithubHref(sanitizedUrl);
+    }
+
     const response: HttpResponse<string> = await this._http
-      .get(sanitizedUrl, { ...httpOptions, responseType: 'text', observe: 'response' })
+      .get(urlToGet, { ...httpOptions, responseType: 'text', observe: 'response' })
       .toPromise();
     const contentType: string = response.headers.get('Content-Type');
     if (contentType.includes('text/plain') || contentType.includes('text/markdown')) {

@@ -281,8 +281,8 @@ describe('Component: Markdown', () => {
           [`/${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
           [`/${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
 
-          [`${NON_RAW_LINK}${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
-          [`${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}`, `${NON_RAW_LINK}${ROOT_MD_FILE}`],
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
           [`${RAW_LINK}${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
           [`${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
 
