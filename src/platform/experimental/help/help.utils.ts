@@ -7,11 +7,6 @@ export interface IHelpMenuDataItem {
   children?: IHelpMenuDataItem[];
 }
 
-export enum MaximizedOrMinimized {
-  Maximized = 'Maximized',
-  Minimized = 'Minimized',
-}
-
 export interface IHelpComponentLabels {
   goHome?: string;
   goBack?: string;
@@ -20,8 +15,6 @@ export interface IHelpComponentLabels {
 
 export interface IHelpWindowToolbarComponentLabels {
   help?: string;
-  minimize?: string;
-  maximize?: string;
   close?: string;
 }
 

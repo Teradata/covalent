@@ -15,13 +15,4 @@ export class DraggableHelpWindowDialogComponent {
   handleClosed(): void {
     this.dialogRef.close();
   }
-
-  handleMinimized(): void {
-    // TODO: not working
-    this.dialogRef.updatePosition({bottom: '0', right: '0'});
-  }
-  handleMaximized(): void {
-    // TODO: not working
-    this.dialogRef.updatePosition({bottom: '0', right: '0'});
-  }
 }

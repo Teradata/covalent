@@ -1,4 +1,3 @@
-<!-- TODO use an animation-->
 <div
   *ngIf="draggable"
 
@@ -11,11 +10,8 @@
 
     class="td-draggable-help-window-toolbar"
 
-    [windowState]="windowState"
     [labels]="labels"
 
-    (minimized)="handleMinimized()"
-    (maximized)="handleMaximized()"
     (closed)="closed.emit()"
   >
 </td-help-window-toolbar>
@@ -33,11 +29,8 @@
   *ngIf="!draggable"
 >
   <td-help-window-toolbar
-    [windowState]="windowState"
     [labels]="labels"
 
-    (minimized)="handleMinimized()"
-    (maximized)="handleMaximized()"
     (closed)="closed.emit()"
   >
 </td-help-window-toolbar>
