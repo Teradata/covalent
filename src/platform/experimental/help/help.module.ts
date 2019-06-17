@@ -12,9 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { CovalentMarkdownModule } from '@covalent/markdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TdMarkdownLoaderComponent } from './markdown-loader/markdown-loader.component';
 
 @NgModule({
   imports: [
@@ -30,8 +28,6 @@ import { TdMarkdownLoaderComponent } from './markdown-loader/markdown-loader.com
     DragDropModule,
     MatToolbarModule,
 
-    // TODO: not used, but should be able to just use normal md comp
-    CovalentMarkdownModule,
     CovalentFlavoredMarkdownModule,
   ],
   declarations: [
@@ -39,13 +35,11 @@ import { TdMarkdownLoaderComponent } from './markdown-loader/markdown-loader.com
     HelpWindowComponent,
     HelpWindowToolbarComponent,
     DraggableHelpWindowDialogComponent,
-    TdMarkdownLoaderComponent,
   ],
   exports: [
     HelpComponent,
     HelpWindowComponent,
     DraggableHelpWindowDialogComponent,
-    TdMarkdownLoaderComponent,
   ],
   entryComponents: [DraggableHelpWindowDialogComponent],
 })

@@ -54,16 +54,15 @@
 >
 </mat-progress-bar>
 
-<td-markdown-loader
+<td-flavored-markdown-loader
   *ngIf="showTdMarkdownLoader"
   [url]="url"
   [httpOptions]="httpOptions"
   [anchor]="anchor"
   class="pad scroll-md"
-  [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
-</td-markdown-loader>
+</td-flavored-markdown-loader>
 
 <td-flavored-markdown
   *ngIf="showTdMarkdown"
@@ -71,7 +70,6 @@
   [hostedUrl]="url"
   [anchor]="anchor"
   class="pad scroll-md"
-  [class.scroll-md]="showGoBackButton"
   (contentReady)="handleContentReady()"
 >
 </td-flavored-markdown>

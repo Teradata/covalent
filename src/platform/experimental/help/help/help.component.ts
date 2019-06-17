@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges, ElementRef, ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
 import { IHelpMenuDataItem, IHelpComponentLabels } from '../help.utils';
-import { MarkdownLoaderService } from '../markdown-loader/markdown-loader.service';
-import { removeLeadingHash, isAnchorLink } from '@covalent/markdown';
+import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 function getTitleFromUrl(url: string): string {
   if (url) {

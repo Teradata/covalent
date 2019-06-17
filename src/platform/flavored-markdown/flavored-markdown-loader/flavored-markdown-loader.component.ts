@@ -1,12 +1,14 @@
 import { Component, Input, ChangeDetectorRef, SimpleChanges, OnChanges, Output, EventEmitter } from '@angular/core';
-import { MarkdownLoaderService } from './markdown-loader.service';
+import { MarkdownLoaderService } from '@covalent/markdown';
+
+// TODO: make a td-markdown-loader component
 
 @Component({
-  selector: 'td-markdown-loader',
-  styleUrls: ['./markdown-loader.component.scss'],
-  templateUrl: './markdown-loader.component.html',
+  selector: 'td-flavored-markdown-loader',
+  styleUrls: ['./flavored-markdown-loader.component.scss'],
+  templateUrl: './flavored-markdown-loader.component.html',
 })
-export class TdMarkdownLoaderComponent implements OnChanges {
+export class TdFlavoredMarkdownLoaderComponent implements OnChanges {
   @Input() url: string;
   @Input() httpOptions: object;
   @Input() anchor: string;
