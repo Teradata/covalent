@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, ElementRef, OnDestroy, SimpleChanges } from '@angular/core';
-import { IHelpMenuDataItem, IHelpComponentLabels } from '../help.utils';
+import { IHelpMenuDataItem, IHelpComponentLabels } from './help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 function getTitleFromUrl(url: string): string {
@@ -34,7 +34,19 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
   styleUrls: ['./help.component.scss'],
 })
 export class HelpComponent implements OnChanges, OnDestroy {
+
+  /**
+   * items: IHelpMenuDataItem[]
+   *
+   * List of IHelpMenuDataItems to be rendered
+   */
   @Input() items: IHelpMenuDataItem[];
+
+  /**
+   * labels?: IHelpComponentLabels
+   *
+   * Translated labels
+   */
   @Input() labels: IHelpComponentLabels;
 
   historyStack: IHelpMenuDataItem[][] = []; // history

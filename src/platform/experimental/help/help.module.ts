@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelpComponent } from './help/help.component';
+import { HelpComponent } from './help.component';
 import { HelpWindowComponent } from './help-window/help-window.component';
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog/draggable-help-window-dialog.component';
 import { HelpWindowToolbarComponent } from './help-window/help-window-toolbar/help-window-toolbar.component';
