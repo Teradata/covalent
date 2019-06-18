@@ -1,4 +1,4 @@
-import { Injectable, TemplateRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog.component';
 import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';

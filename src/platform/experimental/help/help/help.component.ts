@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, ElementRef, ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, ElementRef, OnDestroy, SimpleChanges } from '@angular/core';
 import { IHelpMenuDataItem, IHelpComponentLabels } from '../help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
