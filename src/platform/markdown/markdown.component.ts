@@ -112,11 +112,11 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   private _hostedUrl: string;
   private _anchor: string;
   private handleAnchorClicksBound: EventListenerOrEventListenerObject;
+  private _viewInit: boolean = false;
   /**
    * content?: string
    *
    * Markdown format content to be parsed as html markup.
-   * Used to load data dynamically.
    *
    * e.g. README.md content.
    */
@@ -139,10 +139,9 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   /**
    * hostedUrl?: string
    *
-   * If markdown contains relative paths, this is required to generate correct urls
+   * If markdown contains relative paths, this is required to generate correct urls.
    *
    */
-  // baseUrl
   @Input('hostedUrl')
   set hostedUrl(hostedUrl: string) {
     this._hostedUrl = hostedUrl;
@@ -151,7 +150,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   /**
    * anchor?: string
    *
-   * Anchor to jump to
+   * Anchor to jump to.
    *
    */
   @Input('anchor')
@@ -180,6 +179,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
     if (!this._content) {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
+    this._viewInit = true;
   }
 
   ngOnDestroy(): void {
@@ -189,7 +189,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   refresh(): void {
     if (this._content) {
       this._loadContent(this._content);
-    } else if (this._elementRef && !this._content) {
+    } else if (this._viewInit) {
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
   }

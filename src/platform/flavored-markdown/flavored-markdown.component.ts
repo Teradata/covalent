@@ -58,12 +58,12 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _anchor: string;
 
   private _components: {} = {};
+  private _viewInit: boolean = false;
 
   /**
    * content?: string
    *
    * Markdown format content to be parsed as material/covalent markup.
-   * Used to load data dynamically.
    *
    * e.g. README.md content.
    */
@@ -132,6 +132,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     if (!this._content) {
       this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
       Promise.resolve().then(() => {
+        this._viewInit = true;
         this._changeDetectorRef.markForCheck();
       });
     }
@@ -140,7 +141,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   refresh(): void {
     if (this._content) {
       this._loadContent(this._content);
-    } else if (this.container && !this._content) {
+    } else if (this._viewInit) {
       this._loadContent((<HTMLElement>this.container.viewContainerRef.element.nativeElement).textContent);
     }
     this._changeDetectorRef.markForCheck();

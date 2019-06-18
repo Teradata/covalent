@@ -1,24 +1,29 @@
 ## TdFlavoredMarkdownComponent: td-flavored-markdown
 
-`<td-flavored-markdown>` is an @angular component for Material/Covalent flavored Markdown. It is parses markdown into material design / covalent elements for a more appealing look.
+`<td-flavored-markdown>` is component that parses Markdown and renders markdown with Material/Covalent components for a more appealing look.
 
-**Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` to avoid **XSS** issues.
-
-By default, `--dev` build will log the following message in the console to let you know:
-
-`WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).`
+This component uses `<td-markdown>` to render the markdown. See `<td-markdown>`'s documentation for more details on the markdown rendering and various inputs.
 
 ## API Summary
 
 #### Inputs
 
-+ content: string
-  + Markdown format content to be parsed as material/covalent markup. 
-  + Used to load data dynamically. e.g. `README.md` content.
++ content?: string
+  + Markdown format content to be parsed as material/covalent markup.
+
++ simpleLineBreaks?: string
+  + Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
+  + Defaults to false.
+
++ hostedUrl?: string
+  + If markdown contains relative paths, this is required to generate correct urls.
+
++ anchor?: string
+  + Anchor to jump to.
 
 #### Events
 
-+ contentReady: function
++ contentReady: undefined
   + Event emitted after the markdown content rendering is finished.
 
 
@@ -37,7 +42,7 @@ npm i -save @covalent/flavored-markdown
 
 ## Setup
 
-Then, import the **[CovalentFlavoredMarkdownModule]** in your NgModule:
+Then, import the **CovalentFlavoredMarkdownModule** in your NgModule:
 
 ```typescript
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
@@ -53,9 +58,9 @@ export class MyModule {}
 
 ### Theming
 
-The `flavored-markdown` module comes with its own `covalent` theme which uses the material *theme* which is used by importing our theme scss file. It also depends on all the covalent themes since the components being rendered by this module are from other packages.
+This module comes with its own Covalent theme which uses the material theme which is used by importing our theme scss file. It also depends on all the covalent themes since the components being rendered by this module are from other packages.
 
-```css
+```scss
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
 @import '~@covalent/markdown/markdown-theme';
@@ -89,3 +94,39 @@ $theme: mat-light-theme($primary, $accent, $warn);
 </td-flavored-markdown>
 ```
 
+
+
+## TdFlavoredMarkdownLoaderComponent: td-flavored-markdown-loader
+
+A component that fetches markdown from a GitHub url and renders it using `<td-flavored-markdown>`.
+
+## API Summary
+
+#### Inputs
+
++ url: string
+  + The url of the markdown file.
+
++ httpOptions?: object
+  + HTTP options that can be part of the request.
+
++ anchor?: string
+  + Anchor to jump to.
+
+#### Events
+
++ contentReady: void
+  + Emitted when markdown rendering is finished.
+
++ loadFailed: Error
+  + Emitted when loading of markdown file fails.
+
+
+## Example
+
+```html
+<td-flavored-markdown-loader
+  [url]="'https://github.com/Teradata/covalent/blob/develop/README.md'"
+>
+</td-flavored-markdown-loader>
+```

@@ -63,5 +63,10 @@ export function rawGithubHref(githubHref: string): string {
 }
 
 export function isGithubHref(href: string): boolean {
-  return new URL(href).hostname === 'github.com';
+  try {
+    const temp: URL = new URL(href);
+    return temp.hostname === 'github.com';
+  } catch {
+    return false;
+  }
 }
