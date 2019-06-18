@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IHelpWindowToolbarComponentLabels } from '../help.utils';
+import { IHelpWindowToolbarComponentLabels } from '../../help.utils';
 
 @Component({
   selector: 'td-help-window-toolbar',

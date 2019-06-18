@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HelpComponent } from './help/help.component';
 import { HelpWindowComponent } from './help-window/help-window.component';
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog/draggable-help-window-dialog.component';
-import { HelpWindowToolbarComponent } from './help-window-toolbar/help-window-toolbar.component';
+import { HelpWindowToolbarComponent } from './help-window/help-window-toolbar/help-window-toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
