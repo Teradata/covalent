@@ -6,15 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { TestBedComponent } from './test-bed/test-bed.component';
 import { MainComponent } from './main/main.component';
+
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
-import { MatIconModule } from '@angular/material/icon';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { CovalentHelpModule } from '@covalent/experimental/help';
-import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -32,18 +28,10 @@ import { MatButtonModule } from '@angular/material/button';
     appRoutes,
     /** Experimental Modules */
 
-    // for demo
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    CovalentHighlightModule,
-
-    // help module
-    CovalentHelpModule,
-
   ], // modules needed to run this module
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders,
+  ],
   bootstrap: [TestBedComponent],
 })
-export class TestBedModule {}
+export class TestBedModule { }
