@@ -3,9 +3,10 @@ import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dial
 import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog.component';
 import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
 import { Overlay, NoopScrollStrategy } from '@angular/cdk/overlay';
+import { CovalentHelpModule } from '../help.module';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: CovalentHelpModule,
 })
 export class DraggableHelpWindowDialogService {
   scrollStrategy: NoopScrollStrategy;

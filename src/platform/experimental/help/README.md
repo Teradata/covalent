@@ -41,52 +41,42 @@ oneItem: IHelpMenuDataItem[] = [
   },
 ];
 
+itemWithRawMarkdown: IHelpMenuDataItem[] = [
+  {
+    markdownString: '# Heading',
+  },
+];
+
 multipleItems: IHelpMenuDataItem[] = [
   {
     url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
-    title: 'API',
-  },
-  {
-    url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
-    title: 'Developer Guide',
-  },
-  {
-    url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
-    title: 'Loading',
+    title: 'Code Editor API',
   },
   {
     url: 'https://raw.githubusercontent.com/angular/angular/master/README.md',
     title: 'Angular',
   },
-  {
-    url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/README.md',
-    title: 'Covalent',
-  },
-  {
-    url: 'https://raw.githubusercontent.com/Teradata/covalent-tools/develop/docs/CLI.md',
-    title: 'up a level: E2E Code Coverage',
-  },
 ];
 
 oneItemWithAnchor: IHelpMenuDataItem[] = [
   {
-    url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
-    title: 'API',
-    anchor: 'Properties',
+    url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
+    anchor: 'Adding a new documentation component',
   },
 ];
 
 nestedItems: IHelpMenuDataItem[] = [
   {
-    title: 'Nested Items',
+    title: 'Covalent Components',
     children: [
       {
-        url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
-        title: 'Loading',
-      },
-      {
-        url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
-        title: 'Developer Guide',
+        title: 'Markdown Components',
+        children: [
+          {
+            url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/src/platform/core/loading/README.md',
+            title: 'td-markdown',
+          },
+        ],
       },
     ],
   },

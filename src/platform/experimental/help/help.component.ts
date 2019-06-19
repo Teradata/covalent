@@ -34,7 +34,6 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
   styleUrls: ['./help.component.scss'],
 })
 export class HelpComponent implements OnChanges, OnDestroy {
-
   /**
    * items: IHelpMenuDataItem[]
    *
@@ -108,7 +107,7 @@ export class HelpComponent implements OnChanges, OnDestroy {
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) ||  'No item(s) to display';
+    return (this.labels && this.labels.emptyState) || 'No item(s) to display';
   }
 
   constructor(private _elementRef: ElementRef, private _markdownUrlLoaderService: MarkdownLoaderService) {}
@@ -143,7 +142,18 @@ export class HelpComponent implements OnChanges, OnDestroy {
     } else {
       this.historyStack = [...this.historyStack, this.currentMenuItems];
     }
-    if (item.children && item.children.length > 0) {
+
+    if (
+      item.children &&
+      item.children.length === 1 &&
+      (!item.children[0].children || item.children[0].children.length === 0)
+    ) {
+      // clicked on item with one child that has no children
+      // don't show menu
+      this.currentMenuItems = [];
+      // render markdown
+      this.currentMarkdownItem = item.children[0];
+    } else if (item.children && item.children.length > 0) {
       // has children, go inside
       this.currentMenuItems = item.children;
     } else {
