@@ -62,10 +62,6 @@
     "Steven Ov <steven.ov@teradata.com>",
     "Christian Memije <christian.memije@teradata.com>"
   ],
-  "browserslist": [
-    "last 2 versions",
-    "ie 11"
-  ],
   "dependencies": {
     "@angular-devkit/core": "^7.2.1",
     "@angular-devkit/schematics": "^7.2.1",
