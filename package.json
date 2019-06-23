@@ -85,6 +85,7 @@
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.13.1",
+    "monaco-editor": "^0.17.0",
     "rxjs": "6.3.3",
     "showdown": "1.6.4",
     "tslib": "^1.9.3",
