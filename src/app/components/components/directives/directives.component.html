@@ -50,23 +50,38 @@
     </td-highlight>
   </mat-card-content>
 </mat-card>
-
-<mat-card>
-  <mat-card-title>Fullscreen directive</mat-card-title>
+<mat-card tdFullScreen #tdFullScreen="tdFullScreen" tdEscapeKey="Tab">
+  <mat-card-header layout="row">
+    <mat-card-title flex>Fullscreen directive</mat-card-title>
+    <div flex></div>
+    <button *ngIf="tdFullScreen.fullScreenIsActive" mat-button color="primary" (click)="tdFullScreen.toggleFullScreen()">exit fullscreen</button>
+  </mat-card-header>
   <mat-divider></mat-divider>
-  <mat-card-content #tdFullScreenView style="background-color: white;">
-    <p class="mat-body-1">Assign a template reference variables to the element you want full screen. Use <code>tdFullScreen</code> on the fullscreen action button and input that template reference. Optionally, you can set an additional key to escape full screen by using the input <code>tdEscapeKey</code> and using the string value of the keydown event key.</p>
-    <p class="mat-line">Select the button below to view this div in fullscreen mode. Tab to escape.</p>
-    <div layout="row">
-      <button mat-raised-button color="primary" [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">Fullscreen</button>
+  <mat-card-content style="background-color: white;">
+    <p class="mat-body-1">Use <code>tdFullScreen</code> directive on any element you want full screen.</p>
+    <p>Assign <code>tdFullScreen</code> to a template reference variable <code>#myFullScreenElement="tdFullScreen"</code>.</p>
+    <p>Use the template reference variable to access properties and metheds of the directive:</p>
+    <ul>
+      <li><code>myFullScreenElement.fullScreenIsActive</code>, Check if fullscreen is activated</li>
+      <li><code>myFullScreenElement.toggleFullScreen()</code>, Use with event handlers to toggle fullscreen</li>
+      <li><code>myFullScreenElement.enter FullScreen()</code>, Use with event handlers to active fullscreen</li>
+      <li><code>myFullScreenElement.exitFullScreen()</code>, Use with event handlers to exit fullscreen</li>
+    </ul> 
+    <p>Optionally, you can set an additional key to escape full screen by using the input <code>tdEscapeKey</code> and using the string value of the keydown event key.</p>
+    <div layout="column" *ngIf="!tdFullScreen.fullScreenIsActive">
+      <p flex class="mat-line">Select the button below to view this div in fullscreen mode. Tab or Esc to exit fullscreen mode.</p>
+      <button flex mat-raised-button color="primary" (click)="tdFullScreen.toggleFullScreen()">Fullscreen</button>
     </div>
     <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
-          <div #tdFullScreenView>
-            <button mat-button color="primary" [tdFullScreen]="tdFullScreenView" tdEscapeKey="Tab">Fullscreen</button>
+          <div tdFullScreen #myDirective="tdFullScreen" tdEscapeKey="Tab">
+            <button mat-button color="primary" (click)="myDirective.toggleFullScreen">Fullscreen</button>
           </div>
         ]]>
     </td-highlight>
   </mat-card-content>
+  <mat-card-actions *ngIf="tdFullScreen.fullScreenIsActive">
+    <button mat-button color="primary" (click)="tdFullScreen.toggleFullScreen()">exit fullscreen</button>
+  </mat-card-actions>
 </mat-card>

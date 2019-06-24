@@ -1,71 +1,65 @@
-import { Directive, HostListener, Input } from '@angular/core';
-
+import { Directive, HostListener, Input, ElementRef, Inject } from '@angular/core';
+import { DOCUMENT } from "@angular/common";
 @Directive({
   selector: '[tdFullScreen]',
+  exportAs: 'tdFullScreen'
 })
 export class TdFullscreenDirective {
-  @Input() tdFullScreen: HTMLDivElement;
   @Input() tdEscapeKey?: String;
-
-  @HostListener('click', ['$event']) onClick(event: MouseEvent): void {
-    this.showFullScreenEditor();
-  }
+  fullScreenIsActive: boolean = false;
+  constructor(@Inject(DOCUMENT) private document: Document, private el: ElementRef){}
 
   @HostListener('document:keydown', ['$event']) onKeydownHandler(
     event: KeyboardEvent,
   ): void {
     if (event.key === this.tdEscapeKey) {
-      this.exitFullScreenEditor();
+      this.exitFullScreen();
     }
   }
 
-  private showFullScreenEditor(): void {
-    if (this.tdFullScreen) {
-      const codeEditorElement: HTMLDivElement = this
-        .tdFullScreen as HTMLDivElement;
-      const fullScreenMap: Object = {
-        // Chrome
-        requestFullscreen: () => codeEditorElement.requestFullscreen(),
-        // Safari
-        webkitRequestFullscreen: () =>
-          (<any>codeEditorElement).webkitRequestFullscreen(),
-        // IE
-        msRequestFullscreen: () =>
-          (<any>codeEditorElement).msRequestFullscreen(),
-        // Firefox
-        mozRequestFullScreen: () =>
-          (<any>codeEditorElement).mozRequestFullScreen(),
-      };
+  @HostListener('document:fullscreenchange') fsChangeHandler(): void {
+    this.fullScreenIsActive = !this.fullScreenIsActive;
+  }
 
-      for (const handler of Object.keys(fullScreenMap)) {
-        if (codeEditorElement[handler]) {
-          fullScreenMap[handler]();
-        }
+  public toggleFullScreen(): void {
+    this.fullScreenIsActive ? this.exitFullScreen() : this.enterFullScreen();
+  }
+
+  public enterFullScreen(): void {
+    const element: HTMLElement = this.el.nativeElement;
+    const enterFullScreenMap: Object = {
+      // Chrome
+      requestFullscreen: () => element.requestFullscreen(),
+      // Safari
+      webkitRequestFullscreen: () => (<any>element).webkitRequestFullscreen(),
+      // IE
+      msRequestFullscreen: () => (<any>element).msRequestFullscreen(),
+      // Firefox
+      mozRequestFullScreen: () => (<any>element).mozRequestFullScreen(),
+    };
+
+    for (const handler of Object.keys(enterFullScreenMap)) {
+      if (element[handler]) {
+        enterFullScreenMap[handler]();
       }
     }
   }
 
-  /**
-   * exitFullScreenEditor request to exit full screen of Code Editor based on its browser type.
-   */
+  private exitFullScreen(): void {
+    const exitFullScreenMap: object = {
+      // Chrome
+      exitFullscreen: () => this.document.exitFullscreen(),
+      // Safari
+      webkitExitFullscreen: () => (<any>this.document).webkitExitFullscreen(),
+      // Firefox
+      mozCancelFullScreen: () => (<any>this.document).mozCancelFullScreen(),
+      // IE
+      msExitFullscreen: () => (<any>this.document).msExitFullscreen(),
+    };
 
-  private exitFullScreenEditor(): void {
-    if (this.tdFullScreen) {
-      const exitFullScreenMap: object = {
-        // Chrome
-        exitFullscreen: () => document.exitFullscreen(),
-        // Safari
-        webkitExitFullscreen: () => (<any>document).webkitExitFullscreen(),
-        // Firefox
-        mozCancelFullScreen: () => (<any>document).mozCancelFullScreen(),
-        // IE
-        msExitFullscreen: () => (<any>document).msExitFullscreen(),
-      };
-
-      for (const handler of Object.keys(exitFullScreenMap)) {
-        if (document[handler]) {
-          exitFullScreenMap[handler]();
-        }
+    for (const handler of Object.keys(exitFullScreenMap)) {
+      if (this.document[handler]) {
+        exitFullScreenMap[handler]();
       }
     }
   }
