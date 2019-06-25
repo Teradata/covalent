@@ -101,6 +101,7 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
     document.querySelectorAll('img[src]').forEach((image: HTMLImageElement) => {
       const src: string = image.getAttribute('src');
       try {
+         /* tslint:disable-next-line:no-unused-expression */
         new URL(src);
       } catch {
         image.src = generateAbsoluteHref(rawGithubHref(currentHref), src);
