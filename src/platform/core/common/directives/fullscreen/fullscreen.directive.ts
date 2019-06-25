@@ -1,15 +1,15 @@
 import { Directive, HostListener, Input, ElementRef, Inject } from '@angular/core';
-import { DOCUMENT } from "@angular/common";
+import { DOCUMENT } from '@angular/common';
 @Directive({
   selector: '[tdFullScreen]',
-  exportAs: 'tdFullScreen'
+  exportAs: 'tdFullScreen',
 })
 export class TdFullscreenDirective {
   @Input() tdEscapeKey?: String;
   fullScreenIsActive: boolean = false;
-  constructor(@Inject(DOCUMENT) private document: Document, private el: ElementRef){}
+  constructor(@Inject(DOCUMENT) private document: Document, private el: ElementRef) {}
 
-  @HostListener('document:keydown', ['$event']) onKeydownHandler(
+  @HostListener('document:keydown', ['$event']) public onKeydownHandler(
     event: KeyboardEvent,
   ): void {
     if (event.key === this.tdEscapeKey) {
@@ -45,7 +45,7 @@ export class TdFullscreenDirective {
     }
   }
 
-  private exitFullScreen(): void {
+  public exitFullScreen(): void {
     const exitFullScreenMap: object = {
       // Chrome
       exitFullscreen: () => this.document.exitFullscreen(),
