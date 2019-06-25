@@ -12,7 +12,13 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { scrollToAnchor, normalizeAnchor, isAnchorLink, removeTrailingHash, isGithubHref, rawGithubHref } from './markdown-utils';
+import {
+  scrollToAnchor,
+  normalizeAnchor,
+  isAnchorLink,
+  removeTrailingHash,
+  rawGithubHref,
+} from './markdown-utils';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -81,6 +87,23 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
           link.href = url.href;
         }
         link.target = '_blank';
+      }
+    });
+
+    return new XMLSerializer().serializeToString(document);
+  }
+  return html;
+}
+
+function normalizeImageSrcs(html: string, currentHref: string): string {
+  if (currentHref) {
+    const document: Document = new DOMParser().parseFromString(html, 'text/html');
+    document.querySelectorAll('img[src]').forEach((image: HTMLImageElement) => {
+      const src: string = image.getAttribute('src');
+      try {
+        new URL(src);
+      } catch {
+        image.src = generateAbsoluteHref(rawGithubHref(currentHref), src);
       }
     });
 
@@ -238,7 +261,8 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
     this._renderer.appendChild(this._elementRef.nativeElement, div);
     const html: string = this._domSanitizer.sanitize(SecurityContext.HTML, markupStr);
     const htmlWithAbsoluteHrefs: string = normalizeHtmlHrefs(html, this._hostedUrl);
-    const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteHrefs);
+    const htmlWithAbsoluteImgSrcs: string = normalizeImageSrcs(htmlWithAbsoluteHrefs, this._hostedUrl);
+    const htmlWithHeadingIds: string = addIdsToHeadings(htmlWithAbsoluteImgSrcs);
     div.innerHTML = htmlWithHeadingIds;
     return div;
   }

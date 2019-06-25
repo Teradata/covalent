@@ -320,6 +320,56 @@ describe('Component: Markdown', () => {
 
       checkAnchors();
     }));
+    it('should generate the proper image urls', async(async () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent = fixture.debugElement.componentInstance;
+
+      const CURRENT_MD_FILE: string = 'readme.md';
+      const SIBLING_IMG: string = 'typescript.jpg';
+      const ROOT_IMG: string = 'angular.png';
+      const NON_RAW_LINK: string = 'https://github.com/Teradata/covalent/blob/develop/';
+      const RAW_LINK: string = 'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+      const EXTERNAL_IMG: string = 'https://angular.io/assets/images/logos/angular/angular.svg';
+      const SUB_DIRECTORY: string = 'dir/';
+      // these are not valid image urls
+      const images: string[][] =
+        [
+          [`./${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+          [`${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+          [`../${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`/${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`${RAW_LINK}${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`${EXTERNAL_IMG}`, `${EXTERNAL_IMG}`],
+        ];
+
+      let markdown: string = '';
+
+      images.forEach((link: string[]) => {
+        markdown += `* ![${link[0]}](${link[0]}) \n`;
+      });
+      component.content = markdown;
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const imageElements: HTMLImageElement[] = fixture.debugElement.nativeElement.querySelectorAll('img');
+      function checkImages(): void {
+        Array.from(imageElements).forEach((imageElement: HTMLImageElement, index: number) => {
+          const src: string = imageElement.getAttribute('src');
+          const expectedSrc: string = images[index][1];
+          expect(src).toEqual(expectedSrc);
+        });
+      }
+
+      checkImages();
+      component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      checkImages();
+    }));
   });
 
   describe('Event bindings: ', () => {
