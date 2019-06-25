@@ -62,10 +62,6 @@
     "Steven Ov <steven.ov@teradata.com>",
     "Christian Memije <christian.memije@teradata.com>"
   ],
-  "browserslist": [
-    "last 2 versions",
-    "ie 11"
-  ],
   "dependencies": {
     "@angular-devkit/core": "^7.2.1",
     "@angular-devkit/schematics": "^7.2.1",
@@ -89,6 +85,7 @@
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.13.1",
+    "monaco-editor": "^0.17.0",
     "rxjs": "6.3.3",
     "showdown": "1.6.4",
     "tslib": "^1.9.3",

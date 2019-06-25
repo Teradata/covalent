@@ -29,12 +29,7 @@ gulp.task('compile-core-sass', function() {
       errLogToConsole: true,
       importer: sassImporter,
     }))
-    .pipe(postcss([autoprefixer({
-        browsers: [
-          'last 2 versions',
-          'ie 11'
-        ]
-      })]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.deployed + 'core'));
 });
