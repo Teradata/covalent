@@ -340,6 +340,7 @@ describe('Component: Markdown', () => {
           [`/${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
           [`${RAW_LINK}${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
           [`${EXTERNAL_IMG}`, `${EXTERNAL_IMG}`],
+          [`${NON_RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
         ];
 
       let markdown: string = '';
