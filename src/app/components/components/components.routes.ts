@@ -32,6 +32,7 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { NavStepsDemoComponent, NavStepsRoute1DemoComponent,
   NavStepsRoute3DemoComponent, NavStepsRoute4DemoComponent } from './nav-steps/nav-steps.component';
+import { HelpDemoComponent } from './help/help.component';
 
 const routes: Routes = [{
   children: [{
@@ -134,6 +135,9 @@ const routes: Routes = [{
     }, {
       component: NgxTranslateDemoComponent,
       path: 'ngx-translate',
+    }, {
+      component: HelpDemoComponent,
+      path: 'help',
     },
   ],
   component: ComponentsComponent,

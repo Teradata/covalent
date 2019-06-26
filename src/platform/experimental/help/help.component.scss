@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  position: relative;
+  height: inherit;
+}
+
+.scroll-md {
+  position: absolute;
+  top: 40px; // back button
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sticky {
+  position: absolute;
+  top: 0;
+}

@@ -78,6 +78,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
+import { HelpDemoComponent } from './help/help.component';
+import { CovalentHelpModule } from '@covalent/experimental/help';
 
 @NgModule({
   declarations: [
@@ -114,6 +116,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     VirtualScrollDemoComponent,
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
+    HelpDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
@@ -171,6 +174,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
     CovalentFlavoredMarkdownModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
+    CovalentHelpModule,
     TranslateModule,
     componentsRoutes,
     ToolbarModule,

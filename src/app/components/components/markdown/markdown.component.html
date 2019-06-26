@@ -1,9 +1,9 @@
 <mat-card>
   <mat-card-title>Markdown</mat-card-title>
-  <mat-card-subtitle>Parse markdown code</mat-card-subtitle>
+  <mat-card-subtitle>Parse and render markdown code</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    With this component you can easily write inline markdown, or alternatively you can sanitize and load external markdown (.md) files.
+    With this component you can easily write inline markdown, or alternatively you can pass in a markdown string.
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -232,6 +232,117 @@
 
               Underscores
             </td-markdown>
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Anchor jumping</mat-card-title>
+  <mat-card-subtitle>
+    The anchor input is used to jump to a certain heading.
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <td-markdown [anchor]="anchor">
+          * [Heading 1](#heading-1)
+          * [Heading 2](#heading-2)
+
+          # Heading 1
+
+          ## Heading 2
+        </td-markdown>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-button
+          class="text-upper"
+          color="primary"
+          (click)="jumpToH1()"
+        >
+          Jump to heading 1
+        </button>
+        <button
+          mat-button
+          class="text-upper"
+          color="primary"
+          (click)="jumpToH2()"
+        >
+          Jump to heading 2
+        </button>
+      </mat-card-actions>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-markdown [anchor]="anchor">
+            * [Heading 1](#heading-1)
+            * [Heading 2](#heading-2)
+
+            # Heading 1
+
+            ## Heading 2
+          </td-markdown>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+          anchor: string;
+
+          jumpToH1(): void {
+            this.anchor = 'heading-1';
+          }
+
+          jumpToH2(): void {
+            this.anchor = 'heading-2';
+          }
+          ]]>
+          </td-highlight>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Hosted url</mat-card-title>
+  <mat-card-subtitle>
+    The hostedUrl input is used to generate absolute urls for markdown files with relative paths that are hosted externally.
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <td-markdown
+          hostedUrl="https://github.com/Teradata/covalent/blob/develop/README.md"
+        >
+          * [Relative path with a hostedUrl provided](docs/GETTING_STARTED.md)
+        </td-markdown>
+        <td-markdown>
+          * [Relative path without a hostedUrl provided](docs/GETTING_STARTED.md)
+        </td-markdown>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-markdown
+            hostedUrl="https://github.com/Teradata/covalent/blob/develop/README.md"
+          >
+            * [Relative path with a hostedUrl provided](docs/GETTING_STARTED.md)
+          </td-markdown>
+          <td-markdown>
+            * [Relative path without a hostedUrl provided]](docs/GETTING_STARTED.md)
+          </td-markdown>
           ]]>
         </td-highlight>
       </mat-tab>
