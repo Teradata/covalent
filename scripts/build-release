@@ -41,6 +41,12 @@ cp -r deploy/platform/http src/platform/node_modules/@covalent
 # BUILD: @covalent/flavored-markdown primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-flavored-markdown
 
+# HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
+# Help module within experimental depends on flavored-markdown
+# HACK START
+cp -r deploy/platform/flavored-markdown src/platform/node_modules/@covalent
+# HACK END
+
 # BUILD: @covalent/experimental primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-experimental
 
