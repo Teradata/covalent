@@ -19,7 +19,7 @@ describe('Component: Highlight', () => {
         TdHighlightEmptyStaticTestRenderingComponent,
         TdHighlightStaticHtmlTestRenderingComponent,
         TdHighlightDynamicCssTestRenderingComponent,
-        TdHighlightUndefinedLangTestRenderingComponent,
+        TdHighlightDynamicInputsTestRenderingComponent,
 
         TdHighlightEmptyStaticTestEventsComponent,
         TdHighlightStaticHtmlTestEventsComponent,
@@ -89,12 +89,68 @@ describe('Component: Highlight', () => {
       });
     }));
 
-    it('should throw error for undefined language', async(() => {
-      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightUndefinedLangTestRenderingComponent);
-      let component: TdHighlightUndefinedLangTestRenderingComponent = fixture.debugElement.componentInstance;
-      expect(function(): void {
-        fixture.detectChanges();
-      }).toThrowError();
+    it('should update code when the content input changes', async(async () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicInputsTestRenderingComponent);
+      let component: TdHighlightDynamicInputsTestRenderingComponent = fixture.debugElement.componentInstance;
+      const RED_BACKGROUND: string = 'background: red;';
+      const BLUE_BACKGROUND: string = 'background: blue;';
+      component.codeLang = 'css';
+      component.content = `
+        body {
+          ${RED_BACKGROUND}
+        }`;
+      const element: HTMLElement = fixture.debugElement.nativeElement;
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.textContent).toContain(RED_BACKGROUND);
+      component.content = `
+        body {
+          ${BLUE_BACKGROUND}
+        }`;
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.textContent).not.toContain(RED_BACKGROUND);
+      expect(element.textContent).toContain(BLUE_BACKGROUND);
+    }));
+
+    it('should update code when the codeLang input changes', async(async () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicInputsTestRenderingComponent);
+      let component: TdHighlightDynamicInputsTestRenderingComponent = fixture.debugElement.componentInstance;
+      component.content = `
+        body {
+          background: red;
+        }`;
+      component.codeLang = 'css';
+      let element: HTMLElement = fixture.nativeElement;
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.querySelectorAll('.hljs-selector-tag').length).toBe(1);
+      expect(element.querySelectorAll('.hljs-attribute').length).toBe(1);
+      component.codeLang = 'typescript';
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.querySelectorAll('.hljs-selector-tag').length).toBe(0);
+      expect(element.querySelectorAll('.hljs-attribute').length).toBe(0);
+    }));
+
+    it('should update code when the deprecated lang input changes', async(async () => {
+      let fixture: ComponentFixture<any> = TestBed.createComponent(TdHighlightDynamicInputsTestRenderingComponent);
+      let component: TdHighlightDynamicInputsTestRenderingComponent = fixture.debugElement.componentInstance;
+      component.content = `
+        body {
+          background: red;
+        }`;
+      component.lang = 'css';
+      let element: HTMLElement = fixture.nativeElement;
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.querySelectorAll('.hljs-selector-tag').length).toBe(1);
+      expect(element.querySelectorAll('.hljs-attribute').length).toBe(1);
+      component.lang = 'typescript';
+      fixture.detectChanges();
+      await fixture.whenStable();
+      expect(element.querySelectorAll('.hljs-selector-tag').length).toBe(0);
+      expect(element.querySelectorAll('.hljs-attribute').length).toBe(0);
     }));
   });
 
@@ -212,10 +268,16 @@ class TdHighlightDynamicCssTestRenderingComponent {
 
 @Component({
   template: `
-    <td-highlight [codeLang]="lang">
+    <td-highlight
+      [codeLang]="codeLang"
+      [lang]="lang"
+      [content]="content"
+    >
     </td-highlight>`,
 })
-class TdHighlightUndefinedLangTestRenderingComponent {
+class TdHighlightDynamicInputsTestRenderingComponent {
+  content: string;
+  codeLang: string;
   lang: string;
 }
 
