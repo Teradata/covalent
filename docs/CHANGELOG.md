@@ -78,7 +78,7 @@ After:
 import { HttpInterceptorService, CovalentHttpModule } from '@covalent/http-deprec';
 ```
 
-Our new `http` module has a different usage and uses `@angular/common/http` under the covers. You can find more about it by clicking [here](https://teradata.github.io/covalent/#/components/http).
+Our new `http` module has a different usage and uses `@angular/common/http` under the covers. You can find more about it by clicking [here](https://teradata.github.io/covalent/components/http).
 
 * **animations:** remove deprecated animation functions ([#1297](https://github.com/teradata/covalent/issues/1297)) ([f37ce0c](https://github.com/teradata/covalent/commit/f37ce0c))
 
@@ -96,7 +96,7 @@ After:
 tdCollapseAnimation
 ```
 
-Usage info [here](https://teradata.github.io/covalent/#/components/animations)
+Usage info [here](https://teradata.github.io/covalent/components/animations)
 
 * **expansion-panel:** add multi input, openAll(), and closeAll() ([#1306](https://github.com/teradata/covalent/issues/1306)) ([1521137](https://github.com/teradata/covalent/commit/1521137))
 
@@ -226,7 +226,7 @@ html:
 <div [@tdFadeInOut]="boolean">
 ```
 
-more information about animations [here](https://teradata.github.io/covalent/#/components/animations)
+more information about animations [here](https://teradata.github.io/covalent/components/animations)
 
 ### Bug Fixes
 
