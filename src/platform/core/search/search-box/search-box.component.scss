@@ -23,5 +23,10 @@
       margin-right: 12px;
       margin-left: 0 !important;
     }
+    ::ng-deep .mat-form.field.mat-form-field-appearance-legacy {
+      .mat-form-field-wrapper {
+        padding-bottom: 1em;
+      }
+    }
   }
 }
