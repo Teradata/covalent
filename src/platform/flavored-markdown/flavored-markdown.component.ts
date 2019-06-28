@@ -160,7 +160,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit {
     return this._replaceComponent(markdown, TdHighlightComponent, codeBlockRegExp,
                                   (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
       if (language) {
-        componentRef.instance.language = language;
+        componentRef.instance.codeLang = language;
       }
       componentRef.instance.content = codeblock;
     });
