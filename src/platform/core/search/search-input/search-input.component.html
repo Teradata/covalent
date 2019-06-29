@@ -11,7 +11,18 @@
             (blur)="handleBlur()"
             (search)="stopPropagation($event)"
             (keyup.enter)="handleSearch($event)"/>
+    <span matSuffix *ngIf="appearance === 'fill' || appearance === 'outline' || appearance === 'standard'">
+      <ng-template
+        [ngTemplateOutlet]="clearButton">
+      </ng-template>
+    </span>
   </mat-form-field>
+  <ng-template
+    *ngIf="!appearance || appearance === 'legacy'"
+    [ngTemplateOutlet]="clearButton">
+  </ng-template>
+</div>
+<ng-template #clearButton>
   <button mat-icon-button
           class="td-search-input-clear"
           type="button"
@@ -19,4 +30,4 @@
           (click)="clearSearch()">
     <mat-icon>{{clearIcon}}</mat-icon>
   </button>
-</div>
+</ng-template>
