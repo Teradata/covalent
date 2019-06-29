@@ -12,6 +12,7 @@ import { AtomicToolboxComponent } from './toolbox/toolbox.component';
 import { moduleRoutes } from './atomic.routes';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
+import { AtomicDatasetComponent } from './dataset/dataset.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { DocumentationToolsModule } from '../../documentation-tools';
     AtomicTooltipComponent,
     AtomicAxisComponent,
     AtomicToolboxComponent,
+    AtomicDatasetComponent,
   ],
 })
 export class AtomicModule {}

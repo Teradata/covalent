@@ -83,6 +83,13 @@ export class ComponentsComponent {
       route: ['atomic', 'toolbox'],
       title: 'Toolbox',
     },
+    {
+      description: `Dataset options, allows a convenient way to separate data and styles and enables reuse by different series. 
+      It also enables data encoding.`,
+      icon: 'view_list',
+      route: ['atomic', 'dataset'],
+      title: 'Dataset',
+    },
   ];
 
   constructor(public media: TdMediaService,

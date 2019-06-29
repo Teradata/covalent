@@ -3,6 +3,7 @@ export { TdChartComponent } from './chart.component';
 export { TdChartAxisComponent } from './axis/axis.component';
 export { TdChartYAxisComponent } from './axis/y-axis.component';
 export { TdChartXAxisComponent } from './axis/x-axis.component';
+export { TdDatasetComponent } from './dataset/dataset.component';
 export { TdChartOptionsService, CHART_PROVIDER } from './chart-options.service';
 export * from './utils';
 export {

@@ -79,6 +79,12 @@ atomicComponents: Object[] = [
     route: ['atomic', 'toolbox'],
     title: 'Toolbox',
   },
+  {
+    color: 'purple-500',
+    icon: 'view_list',
+    route: ['atomic', 'dataset'],
+    title: 'Dataset',
+  },
 ];
 
   constructor(public media: TdMediaService) { }
