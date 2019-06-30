@@ -72,6 +72,13 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
   @Input('sidenavTitle') sidenavTitle: string;
 
   /**
+   * avatar?: string
+   *
+   * avatar url to be displayed before the title
+   */
+  @Input('avatar') avatar: string;
+
+  /**
    * icon?: string
    *
    * icon name to be displayed before the title
