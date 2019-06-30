@@ -1,7 +1,6 @@
 import { Component, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 import { TdSearchInputComponent } from '../search-input/search-input.component';
 import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
@@ -47,12 +46,6 @@ export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements ICont
   get searchVisible(): boolean {
     return this._searchVisible;
   }
-
-  /**
-   * appearance?: MatFormFieldAppearance
-   * Appearance style for the underlying input component.
-   */
-  @Input('appearance') appearance: MatFormFieldAppearance;
 
   /**
    * backIcon?: string
