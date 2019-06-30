@@ -15,12 +15,18 @@
   .td-search-icon {
     // [flex="none"]
     flex: 0 0 auto;
+    align-self: center;
   }
   td-search-input {
     margin-left: 12px;
     ::ng-deep [dir='rtl'] & {
       margin-right: 12px;
       margin-left: 0 !important;
+    }
+    ::ng-deep .mat-form.field.mat-form-field-appearance-legacy {
+      .mat-form-field-wrapper {
+        padding-bottom: 1em;
+      }
     }
   }
 }
