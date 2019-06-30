@@ -102,7 +102,7 @@ export class SearchDemoComponent {
   debounce: number = 0;
   alwaysVisible: boolean = false;
   appearanceOptions: MatFormFieldAppearance[] = ['fill', 'legacy', 'outline', 'standard'];
-  appearance: MatFormFieldAppearance = undefined;
+  appearance: MatFormFieldAppearance = 'legacy';
 
   modeChange(): void {
     this.searchInputTerm = '';
