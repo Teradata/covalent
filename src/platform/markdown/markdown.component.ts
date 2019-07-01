@@ -239,7 +239,8 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   private async handleAnchorClicks(event: Event): Promise<void> {
     event.preventDefault();
     const url: URL = new URL((<HTMLAnchorElement>event.target).href);
-    scrollToAnchor(this._elementRef.nativeElement, url.hash);
+    const hash: string = decodeURI(url.hash);
+    scrollToAnchor(this._elementRef.nativeElement, hash);
   }
 
   private attachAnchorListeners(): void {

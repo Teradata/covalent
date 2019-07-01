@@ -14,7 +14,7 @@ export function removeTrailingHash(str: string): string {
 
 export function normalizeAnchor(str: string): string {
   if (str) {
-    return removeLeadingHash(str.replace(/\W+/g, '')).toLowerCase();
+    return removeLeadingHash(str.replace(/[^\p{Alphabetic}\p{Decimal_Number}]+/ug, '')).toLowerCase();
   }
   return undefined;
 }
