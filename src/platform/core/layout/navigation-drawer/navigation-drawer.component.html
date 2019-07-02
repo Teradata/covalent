@@ -4,12 +4,13 @@
              class="td-nagivation-drawer-toolbar">
   <ng-content select="[td-navigation-drawer-toolbar]"></ng-content>
   <ng-container *ngIf="!isCustomToolbar">
-    <div *ngIf="icon || logo || sidenavTitle"
+    <div *ngIf="icon || logo || sidenavTitle || avatar"
           class="td-navigation-drawer-toolbar-content"
           [class.cursor-pointer]="routerEnabled"
           (click)="handleNavigationClick()">
       <mat-icon *ngIf="icon">{{icon}}</mat-icon>
       <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+      <img *ngIf="avatar && !logo && !icon" class="td-nagivation-drawer-toolbar-avatar" [attr.src]="avatar" />
       <span *ngIf="sidenavTitle" class="td-navigation-drawer-title">{{sidenavTitle}}</span>
     </div>
     <div class="td-navigation-drawer-name" *ngIf="email && name">{{name}}</div>
