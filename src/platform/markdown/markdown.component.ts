@@ -18,6 +18,7 @@ import {
   isAnchorLink,
   removeTrailingHash,
   rawGithubHref,
+  isGithubHref,
 } from './markdown-utils';
 
 declare const require: any;
@@ -28,7 +29,6 @@ let showdown: any = require('showdown/dist/showdown.js');
 // allow override somehow
 function generateAbsoluteHref(currentHref: string, relativeHref: string): string {
   if (currentHref && relativeHref) {
-
     const currentUrl: URL = new URL(currentHref);
     const path: string = currentUrl.pathname
       .split('/')
@@ -101,10 +101,13 @@ function normalizeImageSrcs(html: string, currentHref: string): string {
     document.querySelectorAll('img[src]').forEach((image: HTMLImageElement) => {
       const src: string = image.getAttribute('src');
       try {
-         /* tslint:disable-next-line:no-unused-expression */
+        /* tslint:disable-next-line:no-unused-expression */
         new URL(src);
+        if (isGithubHref(src)) {
+          image.src = rawGithubHref(src);
+        }
       } catch {
-        image.src = generateAbsoluteHref(rawGithubHref(currentHref), src);
+        image.src = generateAbsoluteHref(isGithubHref(currentHref) ? rawGithubHref(currentHref) : currentHref, src);
       }
     });
 
