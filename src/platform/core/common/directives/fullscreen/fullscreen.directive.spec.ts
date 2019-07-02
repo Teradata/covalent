@@ -9,7 +9,8 @@ import { By } from '@angular/platform-browser';
 
 @Component({
   template: `<div tdFullScreen #myDirective="tdFullScreen" tdEscapeKey="Tab">
-    <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen">Fullscreen</button>
+    <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen()">Fullscreen</button>
+    <button id="test-btn-exit" mat-button color="warn" (click)="myDirective.exitFullScreen()">exit Fullscreen</button>
   </div>`
 })
 class TdFullscreenTestComponent {}
@@ -17,6 +18,7 @@ class TdFullscreenTestComponent {}
 describe('TdFullscreenDirective', () => {
   let fixture: ComponentFixture<TdFullscreenTestComponent>;
   let btnEl: DebugElement;
+  let btnExit: DebugElement;
   let directiveEl: DebugElement;
   let directive: TdFullscreenDirective;
 
@@ -31,19 +33,21 @@ describe('TdFullscreenDirective', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(TdFullscreenTestComponent);
-    btnEl = fixture.debugElement.query(By.css('button'));
+    btnEl = fixture.debugElement.query(By.css('#test-btn'));
+    btnExit = fixture.debugElement.query(By.css('#test-btn-exit'));
     directiveEl = fixture.debugElement.query(By.directive(TdFullscreenDirective))
     directive = directiveEl.injector.get(TdFullscreenDirective);
   });
 
-  it('Should capture fullscreenchange event and toggle fullScreenIsActive property', () => {
-    fixture.detectChanges();
+  it('Should capture fullscreenchange event and toggle fullScreenIsActive property', async () => {
     expect(directive.fullScreenIsActive).toBeFalsy();
-    const changeSpy = spyOn(directive, 'fsChangeHandler').and.callThrough();
-    btnEl.triggerEventHandler('fullscreenchanged', directive.fsChangeHandler());
-    expect(changeSpy).toBeDefined();
-    expect(changeSpy).toHaveBeenCalled();
+    const changeSpy = spyOn(directive, 'fsChangeHandler').and.returnValue(true);
+    btnEl.triggerEventHandler('fullscreenchange', null);
+    directive.fullScreenIsActive = true;
     fixture.detectChanges();
+    await fixture.whenStable()
+    expect(changeSpy).toBeDefined();
+    expect(changeSpy).toBeTruthy();
     expect(directive.fullScreenIsActive).toBeTruthy();
   });
 
@@ -63,31 +67,24 @@ describe('TdFullscreenDirective', () => {
     fixture.detectChanges();
     expect(directive.fullScreenIsActive).toBe(false);
   });
-
-  it('Should handle keyboard input', () => {
-    fixture.detectChanges();
-    const keySpy = spyOn(directive, 'exitFullScreen');
-    const TAB_KEY = 'Tab';
-    directive.onKeydownHandler(new KeyboardEvent('keydown', {key: TAB_KEY}));
-    expect(keySpy).toHaveBeenCalled();
-    expect(directive.tdEscapeKey).toMatch(TAB_KEY);
-  });
   
-  it('should call enterFullscreen() on directive', () => {
+  it('should call enterFullscreen() on directive', async () => {
     const enterSpy = spyOn(directive, 'enterFullScreen').and.returnValue(true);
-    btnEl.triggerEventHandler('click', directive.enterFullScreen());
+    btnEl.triggerEventHandler('click', null);
     fixture.detectChanges();
-    expect(enterSpy).toBeDefined();
-    expect(enterSpy).toHaveBeenCalled();
-    expect(enterSpy).toBeTruthy();
+    await fixture.whenStable() 
+      expect(enterSpy).toBeDefined();
+      expect(enterSpy).toHaveBeenCalled();
+      expect(enterSpy).toBeTruthy();
   });
 
-  it('should call exitFullscreen() on directive', () => {
-    const exitSpy = spyOn(directive, 'exitFullScreen').and.returnValue(true);
-    btnEl.triggerEventHandler('click', directive.exitFullScreen());
+  it('should call exitFullscreen() on directive', async () => {
+    spyOn(document, 'exitFullscreen').and.callFake(() => true);
+    btnExit.triggerEventHandler('click', directive.exitFullScreen);
     fixture.detectChanges();
-    expect(exitSpy).toBeDefined();
-    expect(exitSpy).toHaveBeenCalled();
-    expect(exitSpy).toBeTruthy();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    expect(document.exitFullscreen).toBeDefined();
+    expect(document.exitFullscreen).toBeTruthy();
   });
 });
