@@ -8,7 +8,7 @@ import {
 import { By } from '@angular/platform-browser';
 
 @Component({
-  template: `<div tdFullScreen #myDirective="tdFullScreen" tdEscapeKey="Tab">
+  template: `<div tdFullScreen #myDirective="tdFullScreen">
     <button id="test-btn" mat-button color="primary" (click)="myDirective.toggleFullScreen()">Fullscreen</button>
     <button id="test-btn-exit" mat-button color="warn" (click)="myDirective.exitFullScreen()">exit Fullscreen</button>
   </div>`

@@ -25,7 +25,7 @@ export class TdFullscreenDirective {
   }
 
   public enterFullScreen(): void {
-    const { _document: { fullscreenElement }, _el: { nativeElement } }: TdFullscreenDirective = this;
+    const { _el: { nativeElement } }: TdFullscreenDirective = this;
     const enterFullScreenMap: object = {
       requestFullscreen: () => nativeElement.requestFullscreen(), // Chrome
       webkitRequestFullscreen: () => nativeElement.webkitRequestFullscreen(), // Safari 
@@ -34,7 +34,7 @@ export class TdFullscreenDirective {
     };
 
     for (const handler of Object.keys(enterFullScreenMap)) {
-      if (nativeElement[handler] && !fullscreenElement) {
+      if (nativeElement[handler]) {
         enterFullScreenMap[handler]();
       }
     }
