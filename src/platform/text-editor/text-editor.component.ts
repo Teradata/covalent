@@ -1,7 +1,7 @@
 import { Component, Input, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone, Inject } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import * as SimpleMDE from 'simplemde';
 // get access to the marked class under simplemde
 import * as marked from 'marked';
