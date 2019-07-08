@@ -3,6 +3,9 @@ import { DOCUMENT } from '@angular/common';
 
 interface FsDocument extends HTMLDocument {
   fullscreenElement: Element;
+  webkitFullscreenElement: Element;
+  mozFullscreenElement: Element;
+  msFullscreenElement: Element;
   webkitExitFullscreen: () => void;
   mozCancelFullScreen: () => void;
   msExitFullscreen: () => void;
@@ -16,12 +19,16 @@ export class TdFullscreenDirective {
   fullScreenIsActive: boolean = false;
   constructor(@Inject(DOCUMENT) private _document: FsDocument, private _el: ElementRef) {}
 
-  @HostListener('document:fullscreenchange', ['$event']) public fsChangeHandler(event: Event): void {
-    this.fullScreenIsActive = event.srcElement === this._document.fullscreenElement ? true : false;
+  @HostListener('document:fullscreenchange', ['$event'])
+  @HostListener('document:webkitfullscreenchange', ['$event'])
+  @HostListener('document:mozfullscreenchange', ['$event'])
+  @HostListener('document:msfullscreenchange', ['$event'])
+  public fsChangeHandler(event: Event): void {
+    this.fullScreenIsActive = event.srcElement === this.tdFullScreenElement();
   }
 
   public toggleFullScreen(): void {
-    this._document.fullscreenElement === this._el.nativeElement ? this.exitFullScreen() : this.enterFullScreen();
+    this.tdFullScreenElement() === this._el.nativeElement ? this.exitFullScreen() : this.enterFullScreen();
   }
 
   public enterFullScreen(): void {
@@ -50,8 +57,23 @@ export class TdFullscreenDirective {
     };
 
     for (const handler of Object.keys(exitFullScreenMap)) {
-      if (_document[handler] && _document.fullscreenElement === nativeElement) {
+      if (_document[handler] && this.tdFullScreenElement() === nativeElement) {
         exitFullScreenMap[handler]();
+      }
+    }
+  }
+
+  public tdFullScreenElement() {
+    const { _document }: TdFullscreenDirective = this;
+    const tdFullScreenElementMap: object = {
+      fullscreenElement: () => _document.fullscreenElement, // Chrome, Opera
+      webkitFullscreenElement: () => _document.webkitFullscreenElement, // Safari
+      mozFullscreenElement: () => _document.mozFullscreenElement, // Firefox
+      msFullscreenElement: () => _document.msFullscreenElement // IE, Edge
+    }
+    for(const props of Object.keys(tdFullScreenElementMap)) {
+      if (_document[props]) {
+        return _document[props]
       }
     }
   }
