@@ -24,11 +24,11 @@ export class TdFullscreenDirective {
   @HostListener('document:mozfullscreenchange', ['$event'])
   @HostListener('document:msfullscreenchange', ['$event'])
   public fsChangeHandler(event: Event): void {
-    this.fullScreenIsActive = event.srcElement === this.tdFullScreenElement();
+    this.fullScreenIsActive = event.srcElement === this.getFullScreenElement();
   }
 
   public toggleFullScreen(): void {
-    this.tdFullScreenElement() === this._el.nativeElement ? this.exitFullScreen() : this.enterFullScreen();
+    this.getFullScreenElement() === this._el.nativeElement ? this.exitFullScreen() : this.enterFullScreen();
   }
 
   public enterFullScreen(): void {
@@ -57,13 +57,13 @@ export class TdFullscreenDirective {
     };
 
     for (const handler of Object.keys(exitFullScreenMap)) {
-      if (_document[handler] && this.tdFullScreenElement() === nativeElement) {
+      if (_document[handler] && this.getFullScreenElement() === nativeElement) {
         exitFullScreenMap[handler]();
       }
     }
   }
 
-  public tdFullScreenElement() {
+  private getFullScreenElement() {
     const { _document }: TdFullscreenDirective = this;
     const tdFullScreenElementMap: object = {
       fullscreenElement: () => _document.fullscreenElement, // Chrome, Opera

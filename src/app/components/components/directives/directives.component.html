@@ -53,8 +53,6 @@
 <mat-card tdFullScreen #tdFullScreen="tdFullScreen">
   <mat-card-header layout="row">
     <mat-card-title flex>Fullscreen directive</mat-card-title>
-    <div flex></div>
-    <button *ngIf="tdFullScreen.fullScreenIsActive" mat-button color="primary" (click)="tdFullScreen.exitFullScreen()">exit fullscreen</button>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content style="background-color: white;">
@@ -67,11 +65,6 @@
       <li><code>myFullScreenElement.enterFullScreen()</code>, Active fullscreen for this element</li>
       <li><code>myFullScreenElement.exitFullScreen()</code>, Exit fullscreen for this element</li>
     </ul> 
-
-    <div layout="column" *ngIf="!tdFullScreen.fullScreenIsActive">
-      <p flex class="mat-line">Select the button below to view this div in fullscreen mode. Press Esc to exit fullscreen mode.</p>
-      <button flex mat-raised-button color="primary" (click)="tdFullScreen.enterFullScreen()">Fullscreen</button>
-    </div>
     <p>Usage:</p>
     <td-highlight lang="html">
         <![CDATA[
@@ -80,8 +73,14 @@
           </div>
         ]]>
     </td-highlight>
+    <div layout="column">
+        <p *ngIf="!tdFullScreen.fullScreenIsActive" flex class="mat-line">Press the button below to view this card in fullscreen mode.</p>
+        <p *ngIf="tdFullScreen.fullScreenIsActive" flex class="mat-line">Select the button below or press the esc key to exit fullscreen mode.</p>
+      </div>
   </mat-card-content>
-  <mat-card-actions *ngIf="tdFullScreen.fullScreenIsActive">
-    <button mat-button color="primary" (click)="tdFullScreen.toggleFullScreen()">exit fullscreen</button>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button *ngIf="!tdFullScreen.fullScreenIsActive" mat-raised-button color="primary" (click)="tdFullScreen.toggleFullScreen()">enter fullscreen</button>
+    <button *ngIf="tdFullScreen.fullScreenIsActive" mat-raised-button color="primary" (click)="tdFullScreen.toggleFullScreen()">exit fullscreen</button>
   </mat-card-actions>
 </mat-card>
