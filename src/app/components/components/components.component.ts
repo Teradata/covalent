@@ -119,6 +119,11 @@ export class ComponentsComponent {
     icon: 'theaters',
     route: 'animations',
     title: 'Animations',
+  }, {
+    description: 'Quick way to create sidesheet content',
+    icon: 'view_array',
+    route: 'sidesheet',
+    title: 'Sidesheet Content',
   }];
 
   optional: Object[] = [{
