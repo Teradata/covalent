@@ -3,7 +3,7 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <p class="mat-body-1">Your company logo can be implemented with <code>mat-icon</code>.</p>
-    
+
     <p class="mat-body-1">For example:</p>
     <td-highlight lang="html">
       <![CDATA[
@@ -97,5 +97,53 @@
   <mat-divider></mat-divider>
   <mat-card-actions>
     <a mat-button color="primary" [routerLink]="['/design-patterns', 'navigation-drawer']" class="text-upper">Navigation Drawer</a>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Navigation Drawer (Sidenav) Avatar Placement</mat-card-title>
+  <mat-card-subtitle>place the avatar in the sidenav toolbar next to the title, above the user info</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="md-padding bgc-grey-200">
+      <td-layout mode="side" opened="true">
+        <td-navigation-drawer flex sidenavTitle="App Title" name="Firstname Lastname"
+                              email="firstname.lastname@company.com"
+                              avatar="assets/icons/covalent.svg">
+          <div class="pad">
+            sidenav content
+          </div>
+        </td-navigation-drawer>
+        <div td-sidenav-content class="td-layout-footer pad">
+          <span class="mat-caption tc-grey-500">&copy;{{year}} Teradata. All Rights Reserved</span>
+        </div>
+        <div class="pad">
+          main content
+        </div>
+      </td-layout>
+    </div>
+    <div class="pad-top pad-bottom">
+      <mat-divider></mat-divider>
+    </div>
+    <td-highlight lang="html">
+      <![CDATA[
+      <td-layout>
+        <td-navigation-drawer flex sidenavTitle="App Title" name="Firstname Lastname"
+                              email="firstname.lastname@company.com"
+                              avatar="assets/icons/covalent.svg">
+          sidenav content
+        </td-navigation-drawer>
+        <div td-sidenav-content class="td-layout-footer pad">
+          <span class="mat-caption tc-grey-500">&copy;{ {year} } Teradata. All Rights Reserved</span>
+        </div>
+        main content
+      </td-layout>
+      ]]>
+    </td-highlight>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="primary" [routerLink]="['/design-patterns', 'navigation-drawer']" class="text-upper">Navigation
+      Drawer</a>
   </mat-card-actions>
 </mat-card>
