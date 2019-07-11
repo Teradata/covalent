@@ -1,0 +1,86 @@
+<ng-container *ngIf="!showEmptyState">
+<button
+  mat-icon-button
+  [matTooltip]="goHomeLabel"
+  (click)="reset()"
+>
+  <mat-icon
+    [attr.aria-label]="goHomeLabel"
+  >
+    home
+  </mat-icon>
+</button>
+
+<button
+  *ngIf="showGoBackButton"
+  mat-icon-button
+  [matTooltip]="goBackLabel"
+  (click)="goBack()"
+>
+  <mat-icon
+    [attr.aria-label]="goBackLabel"
+  >
+    arrow_back
+  </mat-icon>
+</button>
+
+<mat-action-list
+  *ngIf="showMenu"
+>
+  <button
+    *ngFor="let item of currentMenuItems"
+    (click)="handleItemSelected(item)"
+    mat-list-item
+    [matTooltip]="getTitle(item)"
+    matTooltipPosition="before"
+    matTooltipShowDelay="500"
+  >
+    <mat-icon
+      matListIcon
+    >
+      subject
+    </mat-icon>
+    <span class="text-truncate">
+      {{ getTitle(item) }}
+    </span>
+  </button>
+</mat-action-list>
+
+<mat-progress-bar
+  *ngIf="loading"
+  mode="indeterminate"
+  color="accent"
+  class="sticky"
+>
+</mat-progress-bar>
+
+<td-flavored-markdown-loader
+  *ngIf="showTdMarkdownLoader"
+  [url]="url"
+  [httpOptions]="httpOptions"
+  [anchor]="anchor"
+  class="pad scroll-md"
+  (contentReady)="handleContentReady()"
+>
+</td-flavored-markdown-loader>
+
+<td-flavored-markdown
+  *ngIf="showTdMarkdown"
+  [content]="markdownString"
+  [hostedUrl]="url"
+  [anchor]="anchor"
+  class="pad scroll-md"
+  (contentReady)="handleContentReady()"
+>
+</td-flavored-markdown>
+</ng-container>
+
+<div
+  *ngIf="showEmptyState"
+  layout="column"
+  layout-align="center center"
+  class="tc-grey-500 mat-typography pad-lg"
+>
+  <mat-icon matListAvatar class="text-super push-bottom">subject</mat-icon>
+  <h2>{{ emptyStateLabel }}</h2>
+</div>

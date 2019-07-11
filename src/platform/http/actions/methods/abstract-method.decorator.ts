@@ -20,14 +20,30 @@ export function parseParams(target: HttpParams, source: HttpParams | {[key: stri
     source.keys().forEach((key: string) => {
       // skip if value is undefined
       if ((<HttpParams>source).get(key) !== undefined) {
-        queryParams = queryParams.set(key, (<HttpParams>source).get(key));
+        (<HttpParams>source).getAll(key).forEach((value: string, index: number) => {
+          if (index === 0) {
+            queryParams = queryParams.set(key, value);
+          } else {
+            queryParams = queryParams.append(key, value);
+          }
+        });
       }
     });
   } else {
     for (let key in source) {
       // skip if value is undefined
       if (<any>source[key] !== undefined) {
-        queryParams = queryParams.set(key, <any>source[key]);
+        if (source[key] instanceof Array) {
+          (<string[]>source[key]).forEach((value: string, index: number) => {
+            if (index === 0) {
+              queryParams = queryParams.set(key, value);
+            } else {
+              queryParams = queryParams.append(key, value);
+            }
+          });
+        } else {
+          queryParams = queryParams.set(key, <any>source[key]);
+        }
       }
     }
   }

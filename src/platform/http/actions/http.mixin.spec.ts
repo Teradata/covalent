@@ -127,7 +127,7 @@ describe('Decorators: Http', () => {
     }),
   ));
 
-  it('expect to do a query with parameters succesfully',
+  it('expect to do a query with HttpParams parameters succesfully',
     async(inject([BasicTestRESTService, HttpTestingController],
                  (service: BasicTestRESTService, httpTestingController: HttpTestingController) => {
       let success: boolean = false;
@@ -135,6 +135,7 @@ describe('Decorators: Http', () => {
       let queryParams: HttpParams = new HttpParams()
         .set('firstParam', '1')
         .set('second-Param', '2')
+        .append('second-Param', '3')
         .set('thirdParam', 'false');
       service.queryWithParams(queryParams).subscribe((data: string) => {
         expect(data).toBe('success');
@@ -148,6 +149,39 @@ describe('Decorators: Http', () => {
       let req: TestRequest = httpTestingController.match(() => true)[0];
       expect(req.request.method).toEqual('GET');
       expect(req.request.params).toEqual(queryParams);
+      expect(req.request.url).toEqual(TEST_URL + '/');
+      req.flush('success', {
+        status: 200,
+        statusText: 'OK',
+      });
+      httpTestingController.verify();
+
+      expect(success).toBe(true, 'on success didnt execute with observables');
+      expect(complete).toBe(true, 'on complete didnt execute with observables');
+    }),
+  ));
+
+  it('expect to do a query with object parameters succesfully',
+    async(inject([BasicTestRESTService, HttpTestingController],
+                 (service: BasicTestRESTService, httpTestingController: HttpTestingController) => {
+      let success: boolean = false;
+      let complete: boolean = false;
+      service.queryWithParams(<any>{
+        firstParam: 1,
+        secondParam: [2, 3],
+        thirdParam: false,
+      }).subscribe((data: string) => {
+        expect(data).toBe('success');
+        success = true;
+      }, () => {
+        fail('on error executed when it shouldnt have with observables');
+      }, () => {
+        complete = true;
+      });
+
+      let req: TestRequest = httpTestingController.match(() => true)[0];
+      expect(req.request.method).toEqual('GET');
+      expect(req.request.params.toString()).toEqual('firstParam=1&secondParam=2&secondParam=3&thirdParam=false');
       expect(req.request.url).toEqual(TEST_URL + '/');
       req.flush('success', {
         status: 200,

@@ -165,6 +165,13 @@ export class ComponentsComponent {
     title: 'NGX-Translate',
   }];
 
+  experimental: Object[] = [{
+    description: 'Render and navigate .md documentation',
+    icon: 'subject',
+    route: 'help',
+    title: 'Help',
+  }];
+
   constructor(private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
 }

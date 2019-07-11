@@ -1,8 +1,4 @@
-import { Component, Input, HostBinding, Sanitizer, SecurityContext, ChangeDetectorRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
-import { catchError } from 'rxjs/operators';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'td-readme-loader',
@@ -11,27 +7,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class TdReadmeLoaderComponent {
 
-  @Input()
-  set resourceUrl(resourceUrl: string) {
-    if (resourceUrl) {
-      this.loadResource(this._sanitizer.sanitize(SecurityContext.URL, resourceUrl));
-    }
-  }
-
-  content: string;
-
-  constructor(private _http: HttpClient,
-              private _sanitizer: Sanitizer,
-              private _changeDetectorRef: ChangeDetectorRef) {}
-
-  async loadResource(resourceUrl: string): Promise<void> {
-    try {
-      this.content = await this._http.get(resourceUrl, {responseType: 'text'}).toPromise();
-    } catch (error) {
-      this.content = 'Warning: Resource could not be loaded.';
-    } finally {
-      this._changeDetectorRef.markForCheck();
-    }
-  }
+  @Input() resourceUrl: string;
 
 }

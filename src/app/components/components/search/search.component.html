@@ -3,18 +3,26 @@
   <mat-card-subtitle>Search and filter items</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div layout="row" layout-align="start center">
+    <div class="field-container" layout="row" layout-align="start center">
       <mat-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
         <mat-button-toggle matTooltip="Enter/Clear Events" [value]="0"><mat-icon>search</mat-icon> Enter/Clear</mat-button-toggle>
         <mat-button-toggle matTooltip="Debounce Events" [value]="1"><mat-icon>keyboard</mat-icon> Debounce</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
+    <div class="field-container" layout="row" layout-align="start center">
+      <label class="push-right-xs">Appearance:</label>
+      <mat-radio-group name="appearance" [(ngModel)]="appearance">
+        <mat-radio-button *ngFor="let option of appearanceOptions" [value]="option">
+          {{option}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
     <h3>Search Input</h3>
     <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
     <div layout-gt-xs="row">
       <div flex-gt-xs="40">
-        <td-search-input *ngIf="debounce" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
-        <td-search-input *ngIf="!debounce" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+        <td-search-input *ngIf="debounce" [appearance]="appearance" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+        <td-search-input *ngIf="!debounce" [appearance]="appearance" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
       </div>
     </div>
     <h3>Search Box</h3>
@@ -36,6 +44,7 @@
       <td-search-box backIcon="arrow_back" placeholder="Search here" [alwaysVisible]="alwaysVisible" flex></td-search-box>
       <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
     </mat-toolbar>
+    <h3></h3>
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
