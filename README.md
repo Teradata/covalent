@@ -21,7 +21,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm install -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
-* Install Node packages `npm run reinstall` (or `npm run reinstall:latest`)
+* Install Node packages `npm install`
 * Run local build `npm run serve` or `npm run serve:prod`
 ---
 

@@ -4,9 +4,46 @@ import {
   ComponentFixture,
 } from '@angular/core/testing';
 import 'hammerjs';
-import { Component } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CovalentMarkdownModule } from './';
+
+function anchorTestMarkdown(): string {
+  const heading1: string = 'Heading 1';
+  const heading2: string = 'Heading 2';
+  let str: string = `* **[${heading1}](#heading-1)** \n * **[${heading2}](#heading-2)** \n`;
+  const arr: number[] = Array(100).fill(0);
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += `\n # ${heading1} \n`;
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += `\n # ${heading2} \n`;
+  return str;
+}
+
+function anchorTestNonEnglishMarkdown(): string {
+  const heading1: string = 'L10Nテスト';
+  const heading2: string = 'すべてが楽しいです!';
+  const heading3: string = '誰もが一生に一度ローカライズする必要があります。';
+  let str: string = `* **[${heading1}](#${heading1})** \n * **[${heading2}](#${heading2})** \n * **[${heading3}](#${heading3})** \n`;
+  const arr: number[] = Array(100).fill(0);
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += `\n # ${heading1} \n`;
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += `\n # ${heading2} \n`;
+  arr.forEach(() => {
+    str += '\n * item \n';
+  });
+  str += `\n # ${heading3} \n`;
+  return str;
+}
 
 describe('Component: Markdown', () => {
 
@@ -24,6 +61,8 @@ describe('Component: Markdown', () => {
         TdMarkdownEmptyStaticContentTestEventsComponent,
         TdMarkdownStaticContentTestEventsComponent,
         TdMarkdownDynamicContentTestEventsComponent,
+        TdMarkdownAnchorsTestEventsComponent,
+        TdMarkdownLinksTestEventsComponent,
       ],
     });
     TestBed.compileComponents();
@@ -161,6 +200,237 @@ describe('Component: Markdown', () => {
         expect(element.querySelector('td-markdown div h2')).toBeFalsy();
         expect(element.querySelector('td-markdown div').textContent.trim()).toContain('## subtitle');
       });
+    }));
+
+    it('should jump to anchor when anchor input is changed', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      component.anchor = 'heading 1';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading1ScrollPos: number = window.scrollY;
+      expect(heading1ScrollPos).toBeGreaterThan(originalScrollPos);
+
+      component.anchor = 'heading 2';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading2ScrollPos: number = window.scrollY;
+      expect(heading2ScrollPos).toBeGreaterThan(heading1ScrollPos);
+
+      component.anchor = 'heading 1';
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(window.scrollY).toBeLessThan(heading2ScrollPos);
+    }));
+
+    it('should jump to anchor if an anchor link is clicked', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      const headings: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
+      const heading1: HTMLElement = headings[0];
+      const heading2: HTMLElement = headings[1];
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading1ScrollPos: number = window.scrollY;
+      expect(heading1ScrollPos).toBeGreaterThanOrEqual(originalScrollPos);
+
+      heading2.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading2ScrollPos: number = window.scrollY;
+      expect(heading2ScrollPos).toBeGreaterThan(heading1ScrollPos);
+
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(window.scrollY).toBeLessThan(heading2ScrollPos);
+    }));
+
+    it('should jump to anchor if an anchor link is clicked regardless of lang', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownAnchorsTestEventsComponent);
+      const component: TdMarkdownAnchorsTestEventsComponent = fixture.debugElement.componentInstance;
+      component.content = anchorTestNonEnglishMarkdown();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      window.scrollTo(0, 0);
+      const originalScrollPos: number = window.scrollY;
+      const headings: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
+      const heading1: HTMLElement = headings[0];
+      const heading2: HTMLElement = headings[1];
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading1ScrollPos: number = window.scrollY;
+      expect(heading1ScrollPos).toBeGreaterThanOrEqual(originalScrollPos);
+
+      heading2.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const heading2ScrollPos: number = window.scrollY;
+      expect(heading2ScrollPos).toBeGreaterThan(heading1ScrollPos);
+
+      heading1.click();
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      expect(window.scrollY).toBeLessThan(heading2ScrollPos);
+    }));
+
+    it('should generate the proper urls', async(async () => {
+
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent = fixture.debugElement.componentInstance;
+
+      const ANCHOR: string = '#anchor';
+      const CURRENT_MD_FILE: string = 'GETTING_STARTED.md';
+      const SIBLING_MD_FILE: string = 'CONTRIBUTING.md';
+      const ROOT_MD_FILE: string = 'README.md';
+      const NON_RAW_LINK: string = 'https://github.com/Teradata/covalent/blob/develop/';
+      const RAW_LINK: string = 'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+      const EXTERNAL_URL: string = 'https://angular.io/';
+      const SUB_DIRECTORY: string = 'docs/';
+      const links: string[][] =
+        [
+          [`${ANCHOR}`, `${ANCHOR}`],
+
+          [`./${SIBLING_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
+          [`${SIBLING_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}`],
+          [`../${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`./${SIBLING_MD_FILE}${ANCHOR}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_MD_FILE}${ANCHOR}`],
+
+          [`./${CURRENT_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`],
+          [`${CURRENT_MD_FILE}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`],
+          [`./${CURRENT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}${ANCHOR}`],
+
+          [`/${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`/${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}`, `${NON_RAW_LINK}${ROOT_MD_FILE}`],
+          [`${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${NON_RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+          [`${RAW_LINK}${ROOT_MD_FILE}`, `${RAW_LINK}${ROOT_MD_FILE}`],
+          [`${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`, `${RAW_LINK}${ROOT_MD_FILE}${ANCHOR}`],
+
+          [`${EXTERNAL_URL}${ROOT_MD_FILE}`, `${EXTERNAL_URL}${ROOT_MD_FILE}`],
+          [`${EXTERNAL_URL}${ROOT_MD_FILE}${ANCHOR}`, `${EXTERNAL_URL}${ROOT_MD_FILE}${ANCHOR}`],
+          [`${EXTERNAL_URL}`, `${EXTERNAL_URL}`],
+          [`${EXTERNAL_URL}${ANCHOR}`, `${EXTERNAL_URL}${ANCHOR}`],
+        ];
+
+      let markdown: string = '';
+
+      links.forEach((link: string[]) => {
+        markdown += `* [${link[0]}](${link[0]}) \n`;
+      });
+      component.content = markdown;
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const anchorElements: HTMLElement[] = fixture.debugElement.nativeElement.querySelectorAll('a');
+      function checkAnchors(): void {
+        Array.from(anchorElements).forEach((anchorElement: HTMLAnchorElement, index: number) => {
+          const href: string = anchorElement.getAttribute('href');
+          const expectedHref: string = links[index][1];
+          expect(href).toEqual(expectedHref);
+        });
+      }
+
+      checkAnchors();
+      component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      checkAnchors();
+    }));
+    it('should generate the proper image urls', async(async () => {
+      const fixture: ComponentFixture<any> = TestBed.createComponent(TdMarkdownLinksTestEventsComponent);
+      const component: TdMarkdownLinksTestEventsComponent = fixture.debugElement.componentInstance;
+
+      const CURRENT_MD_FILE: string = 'readme.md';
+      const SIBLING_IMG: string = 'typescript.jpg';
+      const ROOT_IMG: string = 'angular.png';
+      const NON_RAW_LINK: string = 'https://github.com/Teradata/covalent/blob/develop/';
+      const RAW_LINK: string = 'https://raw.githubusercontent.com/Teradata/covalent/develop/';
+      const EXTERNAL_IMG: string = 'https://angular.io/assets/images/logos/angular/angular.svg';
+      const SUB_DIRECTORY: string = 'dir/';
+      // these are not valid image urls
+      const images: string[][] =
+        [
+          [`./${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+          [`${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+          [`../${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`/${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`${RAW_LINK}${ROOT_IMG}`, `${RAW_LINK}${ROOT_IMG}`],
+          [`${EXTERNAL_IMG}`, `${EXTERNAL_IMG}`],
+          [`${NON_RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`, `${RAW_LINK}${SUB_DIRECTORY}${SIBLING_IMG}`],
+        ];
+
+      let markdown: string = '';
+
+      images.forEach((link: string[]) => {
+        markdown += `* ![${link[0]}](${link[0]}) \n`;
+      });
+      component.content = markdown;
+      component.hostedUrl = `${RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      const imageElements: HTMLImageElement[] = fixture.debugElement.nativeElement.querySelectorAll('img');
+      function checkImages(): void {
+        Array.from(imageElements).forEach((imageElement: HTMLImageElement, index: number) => {
+          const src: string = imageElement.getAttribute('src');
+          const expectedSrc: string = images[index][1];
+          expect(src).toEqual(expectedSrc);
+        });
+      }
+
+      checkImages();
+      component.hostedUrl = `${NON_RAW_LINK}${SUB_DIRECTORY}${CURRENT_MD_FILE}`;
+
+      fixture.detectChanges();
+      await fixture.whenStable();
+
+      checkImages();
     }));
   });
 
@@ -329,4 +599,22 @@ class TdMarkdownStaticContentTestEventsComponent {
 class TdMarkdownDynamicContentTestEventsComponent {
   content: string;
   tdMarkdownContentIsReady(): void { /* Stub */ }
+}
+
+@Component({
+  template: `
+      <td-markdown [anchor]="anchor" [content]="content"></td-markdown>`,
+})
+class TdMarkdownAnchorsTestEventsComponent {
+  content: string;
+  anchor: string;
+}
+
+@Component({
+  template: `
+      <td-markdown [content]="content" [hostedUrl]="hostedUrl"></td-markdown>`,
+})
+class TdMarkdownLinksTestEventsComponent {
+  hostedUrl: string;
+  content: string;
 }

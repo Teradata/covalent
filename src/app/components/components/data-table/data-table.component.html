@@ -118,8 +118,8 @@
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <td-data-table [data]="basicData" [columns]="configWidthColumns">
-          <ng-template tdDataTableTemplate="img" let-value="value">
-            <img [src]="value" />
+          <ng-template tdDataTableTemplate="img" let-index="index" let-value="value">
+            <img [src]="value" [alt]="index" />
           </ng-template>
         </td-data-table>
       </mat-tab>
