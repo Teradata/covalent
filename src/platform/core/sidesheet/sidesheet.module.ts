@@ -1,8 +1,21 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { MatDividerModule } from '@angular/material/divider';
 
-import { TdSidesheetComponent, TdSidesheetTitle } from './sidesheet.component';
+import { TdSidesheetComponent, 
+         TdSidesheetHeaderComponent, 
+         TdSidesheetContentDirective, 
+         TdSidesheetTitleDirective, 
+         TdSidesheetActionsDirective } from './sidesheet.component';
+
+const TD_SIDESHEET: Type<any>[] = [
+  TdSidesheetComponent,
+  TdSidesheetHeaderComponent,
+  TdSidesheetContentDirective,
+  TdSidesheetTitleDirective,
+  TdSidesheetActionsDirective,
+];
 
 @NgModule({
   imports: [
@@ -10,12 +23,10 @@ import { TdSidesheetComponent, TdSidesheetTitle } from './sidesheet.component';
     MatDividerModule,
   ],
   declarations: [
-    TdSidesheetComponent, 
-    TdSidesheetTitle, 
+    TD_SIDESHEET,
   ],
   exports: [
-    TdSidesheetComponent, 
-    TdSidesheetTitle, 
+    TD_SIDESHEET,
   ],
 })
 export class CovalentSidesheetModule {

@@ -4,34 +4,22 @@
   <mat-divider></mat-divider>
   <div [style.height]="'400px'" class="relative">
     <td-layout>
-      <td-navigation-drawer flex sidenavTitle="Covalent" logo="teradata-dark" name="Firstname Lastname" email="firstname.lastname@company.com">
-        <mat-nav-list>
-          <a mat-list-item><mat-icon>home</mat-icon>Home</a>
-        </mat-nav-list>
-        <div td-navigation-drawer-menu>
-          <mat-nav-list>
-            <a mat-list-item><mat-icon>account_box</mat-icon>Profile</a>
-          </mat-nav-list>
-        </div>
-      </td-navigation-drawer>
       <td-layout-nav logo="assets:teradata" toolbarTitle="Covalent" navigationRoute="/" opened="true" mode="side">
-        <button mat-icon-button td-menu-button tdLayoutToggle>
-          <mat-icon>menu</mat-icon>
-        </button>
         <mat-sidenav position="end" mode="over" #sidesheet>
           <td-sidesheet>
-            <div td-sidesheet-header>
+            <td-sidesheet-header>
               <td-sidesheet-title>Sidesheet title</td-sidesheet-title>
-              <span flex></span>
               <button mat-icon-button td-sidesheet-header-action>
                 <mat-icon matTooltipPosition="before" matTooltip="Close" (click)="sidesheet.toggle()">close</mat-icon>
               </button>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.</p>
-            <div td-sidesheet-actions>
+            </td-sidesheet-header>
+            <td-sidesheet-content>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.</p>
+            </td-sidesheet-content>
+            <td-sidesheet-actions>
               <button mat-raised-button class="text-upper" color="accent">action</button>
               <button mat-button class="text-upper">cancel</button>
-            </div>
+            </td-sidesheet-actions>
           </td-sidesheet>  
         </mat-sidenav>
         <div td-toolbar-content layout="row" layout-align="start center" flex>
@@ -65,19 +53,20 @@
             </button>
             <mat-sidenav position="end" mode="over" #sidesheet>
               <td-sidesheet>
-                <div td-sidesheet-header>
+                <td-sidesheet-header>
                   <td-sidesheet-title>Sidesheet title</td-sidesheet-title>
-                  <span flex></span>
                   <button mat-icon-button td-sidesheet-header-action>
                     <mat-icon matTooltipPosition="before" matTooltip="Close" (click)="sidesheet.toggle()">close</mat-icon>
                   </button>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.</p>
-                <div td-sidesheet-actions>
+                </td-sidesheet-header>
+                <td-sidesheet-content>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat aliquet sem, a molestie dolor molestie placerat. Donec convallis sodales magna, nec varius tellus tincidunt lacinia. Vivamus sollicitudin finibus imperdiet. Quisque mattis quis mauris a facilisis. Maecenas tristique sem molestie diam varius viverra. Duis egestas mi neque, a posuere libero pellentesque quis. Sed ornare metus augue, vitae maximus lorem euismod vel. Curabitur finibus nisl ac purus efficitur tempor. Morbi fermentum lorem fermentum justo cursus, nec volutpat mi blandit. In nec accumsan quam, eget venenatis arcu.</p>
+                </td-sidesheet-content>
+                <td-sidesheet-actions>
                   <button mat-raised-button class="text-upper" color="accent">action</button>
                   <button mat-button class="text-upper">cancel</button>
-                </div>
-              </td-sidesheet>  
+                </td-sidesheet-actions>
+              </td-sidesheet> 
             </mat-sidenav>
             <div td-toolbar-content layout="row" layout-align="start center" flex>
               <span flex></span>

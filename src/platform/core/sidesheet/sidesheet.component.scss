@@ -1,28 +1,34 @@
 $td-sidesheet-side-padding: 16px !default;
 $td-sidesheet-top-padding: 20px !default;
 
-// base style for [layout="column" layout-fill]
-%layout-column-fill {
-  // [layout-fill]
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-  height: 100%;
-  // [layout=column]
-  flex-direction: column;
-  // [layout=column], [layout]
+// base style for [layout]
+%layout {
   box-sizing: border-box;
   display: flex;
 }
 
-// base style for [layout="row" layout-align="start center"]
-%layout-row-align-start-center {
-  // [layout="row"]
+// base stle for [layout="column"]
+%layout-column {
+  @extend %layout;
+  flex-direction: column;
+}
+
+// base stle for [layout="column"]
+%layout-row {
+  @extend %layout;
   flex-direction: row;
-  // [layout], [layout="row"]
-  box-sizing: border-box;
-  display: flex;
-  // [layout-align="start center"]
+}
+
+// base style for [layout-fill]
+%layout-fill {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
+// base style for [layout-align="start center"]
+%layout-align-start-center {
   align-items: center;
   align-content: center;
   max-width: 100%;
@@ -30,15 +36,15 @@ $td-sidesheet-top-padding: 20px !default;
 }
 
 td-sidesheet {
-  @extend %layout-column-fill;
+  @extend %layout-column, %layout-fill;
   
   .mat-divider-horizontal {
     position: static !important;
   }
 
   // HEADER STYLES
-  [td-sidesheet-header] {
-    @extend %layout-row-align-start-center;
+  td-sidesheet-header {
+    @extend %layout-row, %layout-align-start-center;
     width: 100%;
     padding: $td-sidesheet-top-padding $td-sidesheet-side-padding;
     font-size: 18px;
@@ -54,7 +60,7 @@ td-sidesheet {
   }
 
   // ACTION STYLES
-  [td-sidesheet-actions] {
+  td-sidesheet-actions {
     padding: ($td-sidesheet-side-padding / 2);
     display: block;
 
@@ -64,8 +70,8 @@ td-sidesheet {
   }
 
   // CONTENT STYLES
-  .td-sidesheet-content {
-    @extend %layout-row-align-start-center;
+  td-sidesheet-content {
+    @extend %layout-row, %layout-align-start-center;
     flex-direction: column;
     padding: $td-sidesheet-side-padding;
     flex: 1;
@@ -78,20 +84,22 @@ td-sidesheet {
 // FIRST/LAST CHILD ADJUSTMENTS
 // top els in td-sidesheet-content and td-sidesheet can't have their default margin-tops (e.g. <p> tags)
 // or they'll incorrectly add to card's top padding
-td-sidesheet > :first-child, .td-sidesheet-content > :first-child {
+td-sidesheet > :first-child, td-sidesheet-content > :first-child {
   margin-top: 0;
 }
 
 // last els in td-sidesheet-content and td-sidesheet can't have their default margin-bottoms (e.g. <p> tags)
 // or they'll incorrectly add to card's bottom padding
-td-sidesheet > :last-child, .td-sidesheet-content > :last-child {
+td-sidesheet > :last-child, td-sidesheet-content > :last-child {
   margin-bottom: 0;
 }
 
 // actions panel should always be 8px from sides,
-// so the first button in the actions panel can't add its own margins
-[td-sidesheet-actions] .mat-button:first-child,
-[td-sidesheet-actions] .mat-raised-button:first-child {
+// so the buttons in the actions panel can't add their own margins
+td-sidesheet-actions.align-start .mat-button:first-child,
+td-sidesheet-actions.align-start .mat-raised-button:first-child,
+td-sidesheet-actions.align-end .mat-button:last-child,
+td-sidesheet-actions.align-end .mat-raised-button:last-child {
   margin-left: 0;
   margin-right: 0;
 }
