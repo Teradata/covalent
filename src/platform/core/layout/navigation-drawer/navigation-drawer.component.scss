@@ -27,6 +27,13 @@
       align-content: center;
       max-width: 100%;
       justify-content: flex-start;
+
+      .td-nagivation-drawer-toolbar-avatar {
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        margin: 0 12px 12px 0;
+      }
     }
     .td-navigation-drawer-menu-toggle {
       // [layout="row"]

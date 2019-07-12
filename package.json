@@ -87,7 +87,7 @@
     "highlight.js": "9.13.1",
     "monaco-editor": "^0.17.0",
     "rxjs": "6.3.3",
-    "showdown": "1.6.4",
+    "showdown": "1.9.0",
     "tslib": "^1.9.3",
     "web-animations-js": "2.3.1",
     "zone.js": "^0.8.26"
