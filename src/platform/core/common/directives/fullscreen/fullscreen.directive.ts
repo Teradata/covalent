@@ -1,7 +1,7 @@
 import { Directive, HostListener, ElementRef, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-interface FsDocument extends HTMLDocument {
+interface IFsDocument extends HTMLDocument {
   fullscreenElement: Element;
   webkitFullscreenElement: Element;
   mozFullscreenElement: Element;
@@ -17,7 +17,7 @@ interface FsDocument extends HTMLDocument {
 })
 export class TdFullscreenDirective {
   fullScreenIsActive: boolean = false;
-  constructor(@Inject(DOCUMENT) private _document: FsDocument, private _el: ElementRef) {}
+  constructor(@Inject(DOCUMENT) private _document: IFsDocument, private _el: ElementRef) {}
 
   @HostListener('document:fullscreenchange', ['$event'])
   @HostListener('document:webkitfullscreenchange', ['$event'])
@@ -63,17 +63,17 @@ export class TdFullscreenDirective {
     }
   }
 
-  private _getFullScreenElement() {
+  private _getFullScreenElement(): Element {
     const { _document }: TdFullscreenDirective = this;
     const tdFullScreenElementMap: object = {
       fullscreenElement: () => _document.fullscreenElement, // Chrome, Opera
       webkitFullscreenElement: () => _document.webkitFullscreenElement, // Safari
       mozFullscreenElement: () => _document.mozFullscreenElement, // Firefox
-      msFullscreenElement: () => _document.msFullscreenElement // IE, Edge
-    }
-    for(const props of Object.keys(tdFullScreenElementMap)) {
+      msFullscreenElement: () => _document.msFullscreenElement, // IE, Edge
+    };
+    for (const props of Object.keys(tdFullScreenElementMap)) {
       if (_document[props]) {
-        return _document[props]
+        return _document[props];
       }
     }
   }
