@@ -42,6 +42,10 @@ td-sidesheet {
     position: static !important;
   }
 
+  td-sidesheet-title {
+    flex: 1;
+  }
+
   // HEADER STYLES
   td-sidesheet-header {
     @extend %layout-row, %layout-align-start-center;
@@ -70,14 +74,15 @@ td-sidesheet {
   }
 
   // CONTENT STYLES
-  td-sidesheet-content {
-    @extend %layout-row, %layout-align-start-center;
-    flex-direction: column;
-    padding: $td-sidesheet-side-padding;
+  .td-sidesheet-content-wrapper {
     flex: 1;
     // [.mat-content]
     position: relative;
     overflow-y: auto;
+  }
+  td-sidesheet-content {
+    display: block;
+    padding: $td-sidesheet-side-padding;
   }
 }
 

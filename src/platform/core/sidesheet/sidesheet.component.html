@@ -2,7 +2,9 @@
 <ng-template [ngIf]="headerExists">
   <mat-divider></mat-divider>
 </ng-template>
-<ng-content select="td-sidesheet-content"></ng-content>
+<div class="td-sidesheet-content-wrapper">
+  <ng-content></ng-content>
+</div>
 <ng-template [ngIf]="actionsExist">
   <mat-divider></mat-divider>
 </ng-template>

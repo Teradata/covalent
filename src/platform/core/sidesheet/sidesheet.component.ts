@@ -18,8 +18,7 @@ export class TdSidesheetTitleDirective {}
     '[class.align-start]': 'align === "start"',
   },
 })
-export class TdSidesheetActionsDirective {  
-  /** Position of the actions inside the card. */
+export class TdSidesheetActionsDirective {
   @Input() align: 'start' | 'end' = 'start';
 }
 
