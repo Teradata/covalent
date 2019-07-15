@@ -1,12 +1,12 @@
 <mat-card flex>
   <mat-card-title>Sankey</mat-card-title>
-  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip and theme</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="300">
+        <td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
           <td-chart-series td-sankey
                             [focusNodeAdjacency]="'allEdges'"
                             [right]="40"
@@ -73,7 +73,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chart [style.height.px]="300">
+            <td-chart [style.height.px]="300" [themeName]="'aqua-splash'">
               <td-chart-series td-sankey
                                 [focusNodeAdjacency]="'allEdges'"
                                 [right]="40"

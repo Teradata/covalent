@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-bar',
@@ -90,4 +91,8 @@ export class TypesBarComponent {
       showContent: true,
     },
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }

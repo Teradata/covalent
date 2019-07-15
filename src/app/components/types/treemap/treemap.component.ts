@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-treemap',
@@ -192,4 +193,8 @@ export class TypesTreemapComponent {
       },
     ],
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }

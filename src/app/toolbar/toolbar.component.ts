@@ -4,6 +4,9 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
 
 import { getDirection, setDirection } from '../utilities/direction';
+import { ChartThemeSelectorService } from '../utilities/theme';
+
+import { getThemes } from '@covalent/echarts/base';
 
 @Component({
   selector: 'td-toolbar',
@@ -16,11 +19,16 @@ export class ToolbarComponent {
   updates: Object[] = [];
 
   dir: 'ltr' | 'rtl' = getDirection();
+
+  themes: string[] = getThemes();
+  selectedTheme: string = this.themes[0];
   
   constructor(private _renderer: Renderer2,
               private _dir: Dir,
+              private _chartThemeSelectorService: ChartThemeSelectorService,
               @Inject(DOCUMENT) private _document: any) {
     this._dir.dir = this.dir;
+    this._chartThemeSelectorService.select(this.selectedTheme);
   }
 
   changeDir(dir: 'ltr' | 'rtl'): void {
@@ -36,4 +44,9 @@ export class ToolbarComponent {
   theme(theme: string): void {
     localStorage.setItem('theme', theme);
   }
+
+  selectChartTheme(theme: string): void {
+    this._chartThemeSelectorService.select(theme);
+  }
+
 }

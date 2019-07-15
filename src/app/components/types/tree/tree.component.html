@@ -1,12 +1,12 @@
 <mat-card flex>
   <mat-card-title>Tree</mat-card-title>
-  <mat-card-subtitle>Individual component configurations, series, tooltip</mat-card-subtitle>
+  <mat-card-subtitle>Individual component configurations, series, tooltip and theme</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="800">
+        <td-chart [style.height.px]="800" [themeName]="themeSelector.selected$ | async">
           <td-chart-tooltip [trigger]="'item'">
             <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
               <ng-container *ngIf="params">
@@ -307,9 +307,8 @@
                           { name: 'Visualization', value: 16540 } ] } ] }]"
                           [initialTreeDepth]="2"
                           [symbolSize]="10"
-                          [itemStyle]="{ borderColor: '#3A4950', color: '#3A4950' }"
-                          [leaves]="{ label: { padding: [2.5, 5], fontSize: 9, distance: 5, position: 'right', backgroundColor: 'transparent', color: '#616d73' } }"
-                          [label]="{ backgroundColor: '#3A4950', color: 'white', padding: [2.5, 5], borderRadius: 10, fontSize: 9, distance: 5, position: 'left' }">
+                          [leaves]="{ label: { padding: [2.5, 5], fontSize: 9, distance: 5, position: 'right' } }"
+                          [label]="{ padding: [2.5, 5], borderRadius: 10, fontSize: 9, distance: 5, position: 'left' }">
             </td-chart-series>
           </td-chart>
       </mat-tab>
@@ -318,7 +317,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-          <td-chart [style.height.px]="800">
+          <td-chart [style.height.px]="800" [themeName]="'aqua-splash'">
             <td-chart-tooltip [trigger]="'item'">
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
@@ -619,9 +618,8 @@
                             { name: 'Visualization', value: 16540 } ] } ] }]"
                             [initialTreeDepth]="2"
                             [symbolSize]="10"
-                            [itemStyle]="{ borderColor: '#3A4950', color: '#3A4950' }"
-                            [leaves]="{ label: { padding: [2.5, 5], fontSize: 9, distance: 5, position: 'right', backgroundColor: 'transparent', color: '#616d73' } }"
-                            [label]="{ backgroundColor: '#3A4950', color: 'white', padding: [2.5, 5], borderRadius: 10, fontSize: 9, distance: 5, position: 'left' }">
+                            [leaves]="{ label: { padding: [2.5, 5], fontSize: 9, distance: 5, position: 'right'} }"
+                            [label]="{ padding: [2.5, 5], borderRadius: 10, fontSize: 9, distance: 5, position: 'left' }">
               </td-chart-series>
             </td-chart>
           ]]>

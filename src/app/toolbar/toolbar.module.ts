@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 
 import { CovalentMenuModule, CovalentNotificationsModule } from '@covalent/core';
 
@@ -20,6 +21,7 @@ import { CovalentMenuModule, CovalentNotificationsModule } from '@covalent/core'
     MatMenuModule,
     CovalentMenuModule,
     CovalentNotificationsModule,
+    MatSelectModule,
     RouterModule,
   ],
   declarations: [

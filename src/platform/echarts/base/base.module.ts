@@ -6,6 +6,8 @@ import { TdChartXAxisComponent } from './axis/x-axis.component';
 import { TdChartYAxisComponent } from './axis/y-axis.component';
 import { TdDatasetComponent } from './dataset/dataset.component';
 
+import { registerDefaultThemes } from './utils';
+
 export const BASE_MODULE_COMPONENTS: Type<any>[] = [
   TdChartComponent,
   TdChartXAxisComponent,
@@ -14,6 +16,8 @@ export const BASE_MODULE_COMPONENTS: Type<any>[] = [
 ];
 
 import 'zrender/lib/svg/svg';
+
+registerDefaultThemes();
 
 @NgModule({
   imports: [

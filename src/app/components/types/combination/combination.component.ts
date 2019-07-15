@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-combination',
@@ -62,4 +63,7 @@ export class TypesCombinationComponent {
     },
   };
 
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }

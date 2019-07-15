@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import * as echarts from 'echarts/lib/echarts';
-import zrUtil from 'echarts/lib/echarts';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-tree',
@@ -430,7 +430,9 @@ export class TypesTreeComponent {
     ],
   };
 
-  constructor() {
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {
     echarts.util.each(this.data[0].children, (datum: any, index: number) => {
       return index % 2 === 0 && (datum.collapsed = true);
     });

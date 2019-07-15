@@ -1,12 +1,13 @@
 <mat-card flex>
   <mat-card-title>Combination Line + Bar</mat-card-title>
-  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip and theme</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <td-chart [style.height.px]="300"
+                  [themeName]="themeSelector.selected$ | async"
                   [config]="{tooltip: {show: true}}">
           <td-chart-x-axis [show]="true"
                             [data]="[
@@ -25,13 +26,11 @@
           </td-chart-y-axis>
           <td-chart-series td-bar
                             [data]="[150, 130, 150, 120, 150, 120]"
-                            [name]="'Yesterday'"
-                            [color]="'#F2724B'">
+                            [name]="'Yesterday'">
           </td-chart-series>
           <td-chart-series td-line
                             [data]="[80, 122, 80, 120, 80, 120]"
-                            [name]="'Today'"
-                            [color]="'#3A4950'">
+                            [name]="'Today'">
           </td-chart-series>
         </td-chart>
       </mat-tab>
@@ -41,6 +40,7 @@
         <td-highlight lang="html">
           <![CDATA[
             <td-chart [style.height.px]="300"
+                      [themeName]="'aqua-splash'"
                       [config]="{tooltip: {show: true}}">
               <td-chart-x-axis [show]="true"
                                 [data]="[
@@ -71,13 +71,11 @@
               </td-chart-y-axis>
               <td-chart-series td-bar
                                 [data]="[150, 130, 150, 120, 150, 120]"
-                                [name]="'Yesterday'"
-                                [color]="'#F2724B'">
+                                [name]="'Yesterday'">
               </td-chart-series>
               <td-chart-series td-line
                                 [data]="[80, 122, 80, 120, 80, 120]"
-                                [name]="'Today'"
-                                [color]="'#3A4950'">
+                                [name]="'Today'">
               </td-chart-series>
             </td-chart>
           ]]>

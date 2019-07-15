@@ -1,13 +1,13 @@
 <div>
   <mat-card flex>
     <mat-card-title>Bar</mat-card-title>
-    <mat-card-subtitle>Individual component configurations, series, tooltip, toolbox, dataset, x & y axis</mat-card-subtitle>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, toolbox, dataset, x & y axis and theme</mat-card-subtitle>
     <mat-divider></mat-divider>
     <mat-card-content>
       <mat-tab-group mat-stretch-tabs dynamicHeight>
         <mat-tab>
           <ng-template matTabLabel>Demo</ng-template>
-          <td-chart [style.height.px]="300">
+          <td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
             <td-chart-dataset [source]="[['Electronics', 150, 80], ['Toys', 130, 122], ['Grocery', 150, 80],
               ['Appliances', 120, 120], ['Automotive', 150, 80],
               ['Sports', 120, 120]]">
@@ -46,9 +46,7 @@
                 </table>
               </ng-template>
             </td-chart-toolbox>
-            <td-chart-tooltip [trigger]="'item'"
-                              [textStyle]="{ color: '#818181' }"
-                              [backgroundColor]="'#ffffff'">
+            <td-chart-tooltip [trigger]="'item'">
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
                   <div layout="row" layout-align="start center">
@@ -74,13 +72,11 @@
                               [splitLine]="{ lineStyle: { type: 'dotted' } }">
             </td-chart-y-axis>
             <td-chart-series td-bar
-                            [name]="'Today'"
-                            [color]="'#F2724B'">
+                            [name]="'Today'">
             </td-chart-series>
             <td-chart-series td-bar
                             [name]="'Yesterday'"
-                            [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
-                            [color]="'#3A4950'">
+                            [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }">
             </td-chart-series>
           </td-chart>
         </mat-tab>
@@ -89,7 +85,7 @@
           <p>HTML: </p>
           <td-highlight lang="html">
             <![CDATA[
-            <td-chart [style.height.px]="300">
+            <td-chart [style.height.px]="300" [themeName]="'aqua-splash'">
                 <td-chart-dataset [source]="[['Electronics', 150, 80], ['Toys', 130, 122], ['Grocery', 150, 80],
                   ['Appliances', 120, 120], ['Automotive', 150, 80],
                   ['Sports', 120, 120]]">
@@ -128,9 +124,7 @@
                     </table>
                   </ng-template>
                 </td-chart-toolbox>
-                <td-chart-tooltip [trigger]="'item'"
-                                  [textStyle]="{ color: '#818181' }"
-                                  [backgroundColor]="'#ffffff'">
+                <td-chart-tooltip [trigger]="'item'">
                   <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                     <ng-container *ngIf="params">
                       <div layout="row" layout-align="start center">
@@ -156,13 +150,11 @@
                                   [splitLine]="{ lineStyle: { type: 'dotted' } }">
                 </td-chart-y-axis>
                 <td-chart-series td-bar
-                                [name]="'Today'"
-                                [color]="'#F2724B'">
+                                [name]="'Today'">
                 </td-chart-series>
                 <td-chart-series td-bar
                                 [name]="'Yesterday'"
-                                [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"
-                                [color]="'#3A4950'">
+                                [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }">
                 </td-chart-series>
               </td-chart>
             ]]>

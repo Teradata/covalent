@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-graph',
@@ -68,4 +69,8 @@ export class TypesGraphComponent {
       },
     ],
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }

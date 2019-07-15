@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-scatter',
@@ -100,6 +101,10 @@ export class TypesScatterComponent {
       },
     ],
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 
   symbolSize(data: number[]): number {
     return Math.sqrt(data[2]) / 5e2;

@@ -1,14 +1,14 @@
 <mat-card>
   <mat-card-title-group>
     <mat-card-title>Scatter (atomic)</mat-card-title>
-    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+    <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip and theme</mat-card-subtitle>
   </mat-card-title-group>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="300">
+        <td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
           <td-chart-tooltip [trigger]="'item'">
             <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
               <ng-container *ngIf="params">
@@ -52,8 +52,7 @@
                               [37062, 75.4, 252847810, 'United States', 1990]
                             ]"
                             [name]="'1990'"
-                            [symbolSize]="symbolSize"
-                            [color]="'#F2724B'">
+                            [symbolSize]="symbolSize">
           </td-chart-series>
           <td-chart-series td-scatter
                             [data]="[
@@ -78,8 +77,7 @@
                               [53354, 79.1, 321773631, 'United States', 2015]
                             ]"
                             [name]="'2015'"
-                            [symbolSize]="symbolSize"
-                            [color]="'#3A4950'">
+                            [symbolSize]="symbolSize">
           </td-chart-series>
         </td-chart>
       </mat-tab>
@@ -88,7 +86,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chart [style.height.px]="300">
+            <td-chart [style.height.px]="300" [themeName]="'aqua-splash'">
               <td-chart-tooltip [trigger]="'item'">
                 <ng-template let-params let-i="index" let-ticket="ticket" tdTooltipFormatter>
                   <ng-container *ngIf="params">
@@ -132,8 +130,7 @@
                                   [37062, 75.4, 252847810, 'United States', 1990]
                                 ]"
                                 [name]="'1990'"
-                                [symbolSize]="symbolSize"
-                                [color]="'#F2724B'">
+                                [symbolSize]="symbolSize">
               </td-chart-series>
               <td-chart-series td-scatter
                                 [data]="[
@@ -158,8 +155,7 @@
                                   [53354, 79.1, 321773631, 'United States', 2015]
                                 ]"
                                 [name]="'2015'"
-                                [symbolSize]="symbolSize"
-                                [color]="'#3A4950'">
+                                [symbolSize]="symbolSize">
               </td-chart-series>
             </td-chart>
           ]]>

@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-sankey',
@@ -53,4 +54,8 @@ export class TypesSankeyComponent {
       },
     ],
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }

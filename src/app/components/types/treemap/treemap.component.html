@@ -1,12 +1,12 @@
 <mat-card flex>
   <mat-card-title>Treemap</mat-card-title>
-  <mat-card-subtitle>Individual component configurations, series, tooltip</mat-card-subtitle>
+  <mat-card-subtitle>Individual component configurations, series, tooltip and theme</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="600">
+        <td-chart [style.height.px]="600" [themeName]="themeSelector.selected$ | async">
           <td-chart-tooltip [trigger]="'item'">
             <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
               <ng-container *ngIf="params">
@@ -144,11 +144,6 @@
                             show: true,
                             formatter: '{b}'
                           }"
-                          [itemStyle]="{
-                            normal: {
-                              borderColor: '#fff'
-                            }
-                          }"
                           [leafDepth]="2"
                           [levels]="[{itemStyle: {normal: {borderWidth: 0, gapWidth: 5 }}},{itemStyle: {normal: {gapWidth: 1}}},{colorSaturation: [0.35, 0.5], itemStyle: {normal: {gapWidth: 1, borderColorSaturation: 0.6}}}]">
           </td-chart-series>
@@ -159,7 +154,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-          <td-chart [style.height.px]="600">
+          <td-chart [style.height.px]="600" [themeName]="'aqua-splash'">
             <td-chart-tooltip [trigger]="'item'">
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
@@ -296,11 +291,6 @@
                             [label] = "{
                               show: true,
                               formatter: '{b}'
-                            }"
-                            [itemStyle]="{
-                              normal: {
-                                borderColor: '#fff'
-                              }
                             }"
                             [leafDepth]="2"
                             [levels]="[{itemStyle: {normal: {borderWidth: 0, gapWidth: 5 }}},{itemStyle: {normal: {gapWidth: 1}}},{colorSaturation: [0.35, 0.5], itemStyle: {normal: {gapWidth: 1, borderColorSaturation: 0.6}}}]">

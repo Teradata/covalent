@@ -1,12 +1,12 @@
 <mat-card flex>
   <mat-card-title>Line</mat-card-title>
-  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip</mat-card-subtitle>
+  <mat-card-subtitle>Individual component configurations, series, tooltip, x & y axis, series tooltip and theme</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="300">
+        <td-chart [style.height.px]="300" [themeName]="themeSelector.selected$ | async">
           <td-chart-tooltip [trigger]="'item'">
           </td-chart-tooltip>
           <td-chart-x-axis [show]="true"
@@ -40,8 +40,7 @@
                               ]
                             }]"
                             [name]="'Revenue'"
-                            [symbol]="'roundRect'"
-                            [color]="'#F2724B'">
+                            [symbol]="'roundRect'">
             <td-chart-series-tooltip>
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
@@ -82,8 +81,7 @@
                               ]
                             }]"
                             [name]="'Sales'"
-                            [symbol]="'roundRect'"
-                            [color]="'#3A4950'">
+                            [symbol]="'roundRect'">
             <td-chart-series-tooltip>
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
@@ -109,7 +107,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chart [style.height.px]="300">
+            <td-chart [style.height.px]="300" [themeName]="'aqua-splash'">
               <td-chart-tooltip [trigger]="'item'">
               </td-chart-tooltip>
               <td-chart-x-axis [show]="true"
@@ -143,8 +141,7 @@
                                   ]
                                 }]"
                                 [name]="'Revenue'"
-                                [symbol]="'roundRect'"
-                                [color]="'#F2724B'">
+                                [symbol]="'roundRect'">
                 <td-chart-series-tooltip>
                   <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                     <ng-container *ngIf="params">
@@ -185,8 +182,7 @@
                                   ]
                                 }]"
                                 [name]="'Sales'"
-                                [symbol]="'roundRect'"
-                                [color]="'#3A4950'">
+                                [symbol]="'roundRect'">
                 <td-chart-series-tooltip>
                   <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                     <ng-container *ngIf="params">

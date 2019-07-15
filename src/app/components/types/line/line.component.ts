@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChartThemeSelectorService } from '../../../utilities/theme';
 
 @Component({
   selector: 'types-line',
@@ -78,4 +79,8 @@ export class TypesLineComponent {
       showContent: true,
     },
   };
+
+  constructor(
+    public themeSelector: ChartThemeSelectorService,
+  ) {}
 }
