@@ -1,3 +1,12 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/teradata/covalent-echarts/compare/v2.0.0...v2.1.0) (2019-07-15)
+
+### Features
+
+* add a set of default themes ([#59](https://github.com/teradata/covalent-echarts/issues/59)) ([1a7969a](https://github.com/teradata/covalent-echarts/commit/1a7969a))
+* add dataset component ([#54]https://github.com/Teradata/covalent-echarts/pull/54)
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/teradata/covalent-echarts/compare/v2.0.0-rc.2...v2.0.0) (2018-12-21)
 
