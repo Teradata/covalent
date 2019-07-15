@@ -67,10 +67,6 @@ td-sidesheet {
   td-sidesheet-actions {
     padding: ($td-sidesheet-side-padding / 2);
     display: block;
-
-    .mat-button, .mat-raised-button {
-      margin: 0 8px;
-    }
   }
 
   // CONTENT STYLES
@@ -97,14 +93,4 @@ td-sidesheet > :first-child, td-sidesheet-content > :first-child {
 // or they'll incorrectly add to card's bottom padding
 td-sidesheet > :last-child, td-sidesheet-content > :last-child {
   margin-bottom: 0;
-}
-
-// actions panel should always be 8px from sides,
-// so the buttons in the actions panel can't add their own margins
-td-sidesheet-actions.align-start .mat-button:first-child,
-td-sidesheet-actions.align-start .mat-raised-button:first-child,
-td-sidesheet-actions.align-end .mat-button:last-child,
-td-sidesheet-actions.align-end .mat-raised-button:last-child {
-  margin-left: 0;
-  margin-right: 0;
 }
