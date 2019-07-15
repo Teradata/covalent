@@ -10,6 +10,7 @@ import {
   OnChanges,
   SimpleChanges,
   OnDestroy,
+  HostBinding,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
@@ -140,6 +141,11 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   private _anchor: string;
   private handleAnchorClicksBound: EventListenerOrEventListenerObject;
   private _viewInit: boolean = false;
+  /**
+   * .td-markdown class added to host so ::ng-deep gets scoped.
+   */
+  @HostBinding('class') class: string = 'td-markdown';
+
   /**
    * content?: string
    *
