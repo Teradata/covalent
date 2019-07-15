@@ -38,6 +38,7 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
 
 import { GitHubService, InternalDocsService, SelectivePreloadingStrategyService } from './services';
 import { getSelectedLanguage, createTranslateLoader } from './utilities/translate';
+import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentSidesheetModule,
     ToolbarModule,
     TranslateModule.forRoot({
       loader: {
