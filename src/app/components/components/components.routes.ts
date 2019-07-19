@@ -28,6 +28,7 @@ import { NotificationsDemoComponent } from './notifications/notifications.compon
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
 import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
+import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { NavStepsDemoComponent, NavStepsRoute1DemoComponent,
@@ -138,6 +139,9 @@ const routes: Routes = [{
     }, {
       component: HelpDemoComponent,
       path: 'help',
+    }, {
+      component: SidesheetDemoComponent,
+      path: 'sidesheet',
     },
   ],
   component: ComponentsComponent,
