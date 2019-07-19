@@ -10,6 +10,7 @@ import {
   OnChanges,
   SimpleChanges,
   OnDestroy,
+  HostBinding,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
@@ -141,6 +142,11 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   private handleAnchorClicksBound: EventListenerOrEventListenerObject;
   private _viewInit: boolean = false;
   /**
+   * .td-markdown class added to host so ::ng-deep gets scoped.
+   */
+  @HostBinding('class') class: string = 'td-markdown';
+
+  /**
    * content?: string
    *
    * Markdown format content to be parsed as html markup.
@@ -242,7 +248,8 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
   private async handleAnchorClicks(event: Event): Promise<void> {
     event.preventDefault();
     const url: URL = new URL((<HTMLAnchorElement>event.target).href);
-    scrollToAnchor(this._elementRef.nativeElement, url.hash);
+    const hash: string = decodeURI(url.hash);
+    scrollToAnchor(this._elementRef.nativeElement, hash);
   }
 
   private attachAnchorListeners(): void {

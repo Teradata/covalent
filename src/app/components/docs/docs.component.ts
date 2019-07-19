@@ -14,11 +14,6 @@ export class DocsComponent {
     route: '.',
     title: 'Getting Started',
   }, {
-    description: 'Sample app to get started',
-    icon: 'flash_on',
-    route: 'quickstart',
-    title: 'Quickstart Repo',
-  }, {
     description: 'Familiarize yourself with Angular',
     icon: 'change_history',
     route: 'angular',

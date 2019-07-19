@@ -1,3 +1,39 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/teradata/covalent/compare/v2.0.2...v2.1.0) (2019-07-15)
+
+Hey all! this will be our final 2.X release and now the team will focus on 3.X roadmap to fully support angular 8 and ivy plus lots a new components and features.
+
+We will also focus on redesigning the documentation site, focusing more on the components and lots more.
+
+Check our issues to see what the team is working on for 3.X.
+
+### Bug Fixes
+
+* **documentaion:** minor updates to docs ([#1399](https://github.com/teradata/covalent/issues/1399)) ([129f709](https://github.com/teradata/covalent/commit/129f709)), closes [#1376](https://github.com/teradata/covalent/issues/1376) [#1386](https://github.com/teradata/covalent/issues/1386)
+* **help:** handle non raw image urls ([#1405](https://github.com/teradata/covalent/issues/1405)) ([78dc739](https://github.com/teradata/covalent/commit/78dc739))
+* **http:** make appended/duplicated params work ([#1394](https://github.com/teradata/covalent/issues/1394)) ([9d9276a](https://github.com/teradata/covalent/commit/9d9276a))
+* **markdown:** fix anchor id creation for non-latin chars ([#1410](https://github.com/teradata/covalent/issues/1410)) ([7f8e532](https://github.com/teradata/covalent/commit/7f8e532))
+* **markdown:** fix github image rendering issues ([#1411](https://github.com/teradata/covalent/issues/1411)) ([98157a7](https://github.com/teradata/covalent/commit/98157a7))
+* **markdown:** make sure styles dont bleed ([#1416](https://github.com/teradata/covalent/issues/1416)) ([6611efe](https://github.com/teradata/covalent/commit/6611efe))
+* **tab-select:** hide body to avoid height jump ([6f8876b](https://github.com/teradata/covalent/commit/6f8876b))
+* **tab-select:** make label render when needed ([65bb05e](https://github.com/teradata/covalent/commit/65bb05e))
+* **tab-select:** mark for check when number of tabs change ([#1408](https://github.com/teradata/covalent/issues/1408)) ([430088b](https://github.com/teradata/covalent/commit/430088b))
+* sidesheet action styling ([#1442](https://github.com/teradata/covalent/issues/1442)) ([08dc408](https://github.com/teradata/covalent/commit/08dc408))
+
+
+### Features
+
+* **common:** add fullscreen directive ([#1415](https://github.com/teradata/covalent/issues/1415)) ([0c9829a](https://github.com/teradata/covalent/commit/0c9829a))
+* **data-table:** expose tdDataTableTemplate rowIndex [#1379](https://github.com/teradata/covalent/issues/1379) ([#1380](https://github.com/teradata/covalent/issues/1380)) ([9da6803](https://github.com/teradata/covalent/commit/9da6803))
+* **monaco:** make sure we load installed version ([#1395](https://github.com/teradata/covalent/issues/1395)) ([add801b](https://github.com/teradata/covalent/commit/add801b))
+* **navigation-drawer:** add support for user avatar (closes [#998](https://github.com/teradata/covalent/issues/998)) ([#1409](https://github.com/teradata/covalent/issues/1409)) ([49c1b2b](https://github.com/teradata/covalent/commit/49c1b2b))
+* **search:** expose appearance property ([#1377](https://github.com/teradata/covalent/issues/1377)) ([dba922b](https://github.com/teradata/covalent/commit/dba922b))
+* **search:** tweak styles/layout on appearance ([#1396](https://github.com/teradata/covalent/issues/1396)) ([e49b38b](https://github.com/teradata/covalent/commit/e49b38b))
+* **sidesheet:** create simple sidesheet content ([#1413](https://github.com/teradata/covalent/issues/1413)) ([6b46a49](https://github.com/teradata/covalent/commit/6b46a49))
+* remove quickstar docs ([1f4637f](https://github.com/teradata/covalent/commit/1f4637f))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/teradata/covalent/compare/v2.0.1...v2.0.2) (2019-06-07)
 

@@ -100,6 +100,11 @@ export class ComponentsComponent {
     route: 'search',
     title: 'Search',
   }, {
+    description: 'Quick way to create sidesheet content',
+    icon: 'view_array',
+    route: 'sidesheet',
+    title: 'Sidesheet Content',
+  }, {
     description: 'Responsive service & directive',
     icon: 'devices',
     route: 'media',
