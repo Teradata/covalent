@@ -1,6 +1,6 @@
 import { Component, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdTextEditorComponent } from '@covalent/text-editor';
+import { TdTextEditorComponent } from '../../../../platform/text-editor';
 
 @Component({
   selector: 'text-editor-demo',
