@@ -114,6 +114,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco"
               }
             ]
           }
@@ -469,7 +474,14 @@
             "main": "src/platform/code-editor/test.ts",
             "tsConfig": "src/platform/code-editor/tsconfig.spec.json",
             "karmaConfig": "src/platform/code-editor/karma.conf.js",
-            "polyfills": "src/polyfills.ts"
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco"
+              }
+            ]
           }
         },
         "lint": {
