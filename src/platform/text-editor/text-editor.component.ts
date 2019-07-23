@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 import * as SimpleMDE from 'simplemde';
 // get access to the marked class under simplemde
 import * as marked from 'marked';
-// using 'import * as' not working in Angular 5 for some reason
+declare const require: any;
 /* tslint:disable-next-line */
 let SimpleMDECss = require('simplemde/dist/simplemde.min.css');
 

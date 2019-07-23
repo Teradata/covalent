@@ -498,6 +498,49 @@
         }
       }
     },
+    "covalent-text-editor": {
+      "root": "src/platform/text-editor",
+      "sourceRoot": "src/platform/text-editor",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/text-editor/tsconfig.lib.json",
+            "project": "src/platform/text-editor/ng-package.js"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/platform/text-editor/test.ts",
+            "tsConfig": "src/platform/text-editor/tsconfig.spec.json",
+            "karmaConfig": "src/platform/text-editor/karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/platform/text-editor/tsconfig.lib.json",
+              "src/platform/text-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "covalent-experimental": {
       "root": "src/platform/experimental",
       "sourceRoot": "src/platform/experimental",
