@@ -72,7 +72,7 @@ import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 import { CovalentFlavoredMarkdownModule } from '../../../platform/flavored-markdown';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { CovalentCodeEditorModule } from '../../../platform/code-editor';
 import { CovalentTextEditorModule } from '@covalent/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
