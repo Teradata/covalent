@@ -3,4 +3,3 @@ module.exports = {
   ...ngPackageSettings,
   dest: '../../../deploy/platform/code-editor',
 };
-

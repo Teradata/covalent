@@ -92,4 +92,3 @@ export class MyModule {}
         (ngModelChange)="callBackFunc()">
 </td-code-editor>
 ```
-
