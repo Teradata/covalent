@@ -1,0 +1,16 @@
+.td-skeleton-outer-container {
+  height: 400px;
+  width: 400px;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  .inner {
+    display: block;
+  }
+}
+
+.fast::after {
+  animation-duration: 1.3s !important;
+}
