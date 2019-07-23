@@ -114,6 +114,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco"
               }
             ]
           }
@@ -442,6 +447,49 @@
             "tsConfig": [
               "src/platform/flavored-markdown/tsconfig.lib.json",
               "src/platform/flavored-markdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "covalent-code-editor": {
+      "root": "src/platform/code-editor",
+      "sourceRoot": "src/platform/code-editor",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "src/platform/code-editor/tsconfig.lib.json",
+            "project": "src/platform/code-editor/ng-package.js"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/platform/code-editor/test.ts",
+            "tsConfig": "src/platform/code-editor/tsconfig.spec.json",
+            "karmaConfig": "src/platform/code-editor/karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/platform/code-editor/tsconfig.lib.json",
+              "src/platform/code-editor/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

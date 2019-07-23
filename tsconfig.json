@@ -23,7 +23,8 @@
       "@covalent/http": ["./platform/http"],
       "@covalent/markdown": ["./platform/markdown"],
       "@covalent/experimental/*": ["./platform/experimental/*"],
-      "@covalent/flavored-markdown": ["./platform/flavored-markdown"]
+      "@covalent/flavored-markdown": ["./platform/flavored-markdown"],
+      "@covalent/code-editor": ["./platform/code-editor"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
