@@ -5,15 +5,8 @@
     "outDir": ".",
     "lib": ["es6", "dom"],
     "module": "commonjs",
-    "types": [
-      "jasmine", "hammerjs", "node"
-    ]
+    "types": ["jasmine", "hammerjs", "node"]
   },
-  "include": [
-    "**/*",
-    "**/*.spec.ts"
-  ],
-  "exclude": [
-    "*/files/**/*"
-  ]
+  "include": ["**/*", "**/*.spec.ts"],
+  "exclude": ["*/files/**/*"]
 }

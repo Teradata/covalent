@@ -7,27 +7,17 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "typeRoots": [
-      "./../../../../node_modules/@types"
-    ],
+    "typeRoots": ["./../../../../node_modules/@types"],
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "pretty": true,
     "importHelpers": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "src/*/files/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts", "src/*/files/**/*"]
 }
