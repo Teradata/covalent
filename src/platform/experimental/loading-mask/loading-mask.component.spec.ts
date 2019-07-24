@@ -9,7 +9,7 @@ describe('TdLoadingMaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TdLoadingMaskComponent ]
+      declarations: [ TdLoadingMaskComponent ],
     })
     .compileComponents();
   }));
