@@ -535,6 +535,7 @@ describe('Component: Markdown', () => {
 class TdMarkdownEmptyStaticContentTestRenderingComponent { }
 
 @Component({
+  // prettier-ignore
   template: `
       <td-markdown>
         # title
@@ -555,6 +556,7 @@ class TdMarkdownDymanicContentTestRenderingComponent {
 }
 
 @Component({
+  // prettier-ignore
   template: `
       <td-markdown [simpleLineBreaks]="simpleLineBreaks">
         first line
@@ -579,6 +581,7 @@ class TdMarkdownEmptyStaticContentTestEventsComponent {
 }
 
 @Component({
+  // prettier-ignore
   template: `
       <td-markdown (contentReady)="tdMarkdownContentIsReady()">
         # title
