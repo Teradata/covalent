@@ -12,8 +12,6 @@ import { TdDataTableRowComponent, TdDataTableColumnRowComponent } from './data-t
 import { TdDataTableTableComponent } from './data-table-table/data-table-table.component';
 import { TdDataTableTemplateDirective } from './directives/data-table-template.directive';
 
-import { DATA_TABLE_PROVIDER } from './services/data-table.service';
-
 const TD_DATA_TABLE: Type<any>[] = [
   TdDataTableComponent,
   TdDataTableTemplateDirective,
@@ -38,9 +36,6 @@ const TD_DATA_TABLE: Type<any>[] = [
   ],
   exports: [
     TD_DATA_TABLE,
-  ],
-  providers: [
-    DATA_TABLE_PROVIDER,
   ],
 })
 export class CovalentDataTableModule {

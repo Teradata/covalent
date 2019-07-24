@@ -1,6 +1,6 @@
 {
   "name": "covalent",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "private": true,
   "description": "Teradata UI Platform built on Angular Material",
   "keywords": [
@@ -29,7 +29,7 @@
     "build:lib": "bash scripts/build-release && gulp version-placeholder",
     "build:universal": "bash scripts/build-universal",
     "publish:npm": "npm run build:lib && bash scripts/npm-publish",
-    "publish:nightly": "npm run build:lib && bash scripts/nightly-publish core && bash scripts/nightly-publish experimental",
+    "publish:nightly": "npm run build:lib && bash scripts/nightly-publish core && bash scripts/nightly-publish code-editor && bash scripts/nightly-publish text-editor && bash scripts/nightly-publish experimental",
     "ghpages:deploy": "npm run build:docs -- --base-href /covalent/ && bash scripts/ghpages-deploy",
     "release:start": "bash scripts/start-release",
     "release:finish": "bash scripts/finish-release",
@@ -77,8 +77,6 @@
     "@angular/platform-browser-dynamic": "7.2.12",
     "@angular/platform-server": "7.2.12",
     "@angular/router": "7.2.12",
-    "@covalent/code-editor": "2.0.3",
-    "@covalent/text-editor": "2.0.0",
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
     "classlist.js": "^1.1.20150312",
@@ -88,6 +86,7 @@
     "monaco-editor": "^0.17.0",
     "rxjs": "6.3.3",
     "showdown": "1.9.0",
+    "simplemde": "^1.11.2",
     "tslib": "^1.9.3",
     "web-animations-js": "2.3.1",
     "zone.js": "^0.8.26"

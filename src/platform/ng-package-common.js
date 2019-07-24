@@ -29,6 +29,8 @@ module.exports =
       "@covalent/highlight": "covalent.highlight",
       "@covalent/http": "covalent.http",
       "@covalent/markdown": "covalent.markdown",
+      "@covalent/code-editor": "covalent.code-editor",
+      "@covalent/text-editor": "covalent.text-editor",
 
       "@covalent/experimental": "covalent.experimental"
     }

@@ -1,0 +1,96 @@
+$td-sidesheet-side-padding: 16px !default;
+$td-sidesheet-top-padding: 20px !default;
+
+// base style for [layout]
+%layout {
+  box-sizing: border-box;
+  display: flex;
+}
+
+// base stle for [layout="column"]
+%layout-column {
+  @extend %layout;
+  flex-direction: column;
+}
+
+// base stle for [layout="column"]
+%layout-row {
+  @extend %layout;
+  flex-direction: row;
+}
+
+// base style for [layout-fill]
+%layout-fill {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
+// base style for [layout-align="start center"]
+%layout-align-start-center {
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  justify-content: flex-start;
+}
+
+td-sidesheet {
+  @extend %layout-column, %layout-fill;
+  
+  .mat-divider-horizontal {
+    position: static !important;
+  }
+
+  td-sidesheet-title {
+    flex: 1;
+  }
+
+  // HEADER STYLES
+  td-sidesheet-header {
+    @extend %layout-row, %layout-align-start-center;
+    width: 100%;
+    padding: $td-sidesheet-top-padding $td-sidesheet-side-padding;
+    font-size: 18px;
+
+    .mat-button-focus-overlay {
+      background-color: transparent !important;
+    }
+    .mat-icon-button {
+      width: 24px;
+      height: 24px;
+      line-height: 21px;
+    }
+  }
+
+  // ACTION STYLES
+  td-sidesheet-actions {
+    padding: ($td-sidesheet-side-padding / 2);
+    display: block;
+  }
+
+  // CONTENT STYLES
+  .td-sidesheet-content-wrapper {
+    flex: 1;
+    // [.mat-content]
+    position: relative;
+    overflow-y: auto;
+  }
+  td-sidesheet-content {
+    display: block;
+    padding: $td-sidesheet-side-padding;
+  }
+}
+
+// FIRST/LAST CHILD ADJUSTMENTS
+// top els in td-sidesheet-content and td-sidesheet can't have their default margin-tops (e.g. <p> tags)
+// or they'll incorrectly add to card's top padding
+td-sidesheet > :first-child, td-sidesheet-content > :first-child {
+  margin-top: 0;
+}
+
+// last els in td-sidesheet-content and td-sidesheet can't have their default margin-bottoms (e.g. <p> tags)
+// or they'll incorrectly add to card's bottom padding
+td-sidesheet > :last-child, td-sidesheet-content > :last-child {
+  margin-bottom: 0;
+}
