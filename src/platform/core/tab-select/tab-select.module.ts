@@ -10,10 +10,7 @@ import { TdTabSelectComponent } from './tab-select.component';
 import { TdTabOptionComponent } from './tab-option.component';
 
 @NgModule({
-  declarations: [
-    TdTabSelectComponent,
-    TdTabOptionComponent,
-  ], // directives, components, and pipes owned by this NgModule
+  declarations: [TdTabSelectComponent, TdTabOptionComponent], // directives, components, and pipes owned by this NgModule
   imports: [
     /** Angular Modules */
     CommonModule,
@@ -22,9 +19,6 @@ import { TdTabOptionComponent } from './tab-option.component';
     PortalModule,
     MatTabsModule,
   ], // modules needed to run this module
-  exports: [
-    TdTabSelectComponent,
-    TdTabOptionComponent,
-  ],
+  exports: [TdTabSelectComponent, TdTabOptionComponent],
 })
 export class CovalentTabSelectModule {}

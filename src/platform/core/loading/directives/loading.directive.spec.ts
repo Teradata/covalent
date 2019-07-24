@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +7,6 @@ import { CovalentLoadingModule, LoadingMode, LoadingType, LoadingStrategy, TdLoa
 import { catchError } from 'rxjs/operators';
 
 describe('Directive: Loading', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -23,10 +17,7 @@ describe('Directive: Loading', () => {
         TdLoadingNamedErrorStarUntilAsyncTestComponent,
         TdLoadingBooleanTemplateUntilTestComponent,
       ],
-      imports: [
-        NoopAnimationsModule,
-        CovalentLoadingModule,
-      ],
+      imports: [NoopAnimationsModule, CovalentLoadingModule],
     });
     TestBed.compileComponents();
   }));
@@ -98,8 +89,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-      .style.opacity).toBe('0');
+      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe('0');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -111,15 +101,14 @@ describe('Directive: Loading', () => {
         expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.opacity).toBe('');
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.display).toBe('');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe('');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.display).toBe('');
           loadingService.resolve('name');
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.opacity).toBe('0');
+            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe(
+              '0',
+            );
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();
@@ -141,8 +130,7 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-        .style.opacity).toBe('0');
+      expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe('0');
       loadingService.register('name');
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -154,31 +142,33 @@ describe('Directive: Loading', () => {
         expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.opacity).toBe('');
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-          .style.display).toBe('');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe('');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.display).toBe('');
 
           loadingService.setValue('name', 20);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
-          .toEqual({transform: 'scaleX(0.2)'});
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
+            transform: 'scaleX(0.2)',
+          });
 
           loadingService.setValue('name', 50);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
-          .toEqual({transform: 'scaleX(0.5)'});
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
+            transform: 'scaleX(0.5)',
+          });
 
           loadingService.setValue('name', 100);
           fixture.detectChanges();
-          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform())
-          .toEqual({transform: 'scaleX(1)'});
+          expect(fixture.debugElement.query(By.css('mat-progress-bar')).componentInstance._primaryTransform()).toEqual({
+            transform: 'scaleX(1)',
+          });
 
           loadingService.resolve('name');
           fixture.detectChanges();
           fixture.whenStable().then(() => {
-            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement)
-            .style.opacity).toBe('0');
+            expect((<HTMLElement>fixture.debugElement.query(By.css('.td-loading')).nativeElement).style.opacity).toBe(
+              '0',
+            );
             expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('td-loading'))).toBeTruthy();
             done();
@@ -217,7 +207,9 @@ describe('Directive: Loading', () => {
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
       expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-      expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).not.toContain('success');
+      expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).not.toContain(
+        'success',
+      );
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
@@ -230,7 +222,9 @@ describe('Directive: Loading', () => {
         fixture.whenStable().then(() => {
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).toContain('success');
+          expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent).toContain(
+            'success',
+          );
           done();
         });
       });
@@ -257,7 +251,9 @@ describe('Directive: Loading', () => {
         fixture.whenStable().then(() => {
           expect(fixture.debugElement.query(By.css('.content'))).toBeTruthy();
           expect(fixture.debugElement.query(By.css('td-loading'))).toBeFalsy();
-          expect((<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent.trim()).toBeFalsy();
+          expect(
+            (<HTMLElement>fixture.debugElement.query(By.css('.content')).nativeElement).textContent.trim(),
+          ).toBeFalsy();
           done();
         });
       });
@@ -319,21 +315,25 @@ describe('Directive: Loading', () => {
 @Component({
   selector: 'td-loading-default-test',
   template: `
-  <ng-template tdLoading="name">
-    <div class="content"></div>
-  </ng-template>
+    <ng-template tdLoading="name">
+      <div class="content"></div>
+    </ng-template>
   `,
 })
-class TdLoadingDefaultTestComponent {
-
-}
+class TdLoadingDefaultTestComponent {}
 
 @Component({
   selector: 'td-loading-basic-test',
   template: `
-  <ng-template [tdLoading]="name" [tdLoadingType]="type" [tdLoadingMode]="mode" [tdLoadingStrategy]="strategy" [tdLoadingColor]="color">
-    <div class="content"></div>
-  </ng-template>
+    <ng-template
+      [tdLoading]="name"
+      [tdLoadingType]="type"
+      [tdLoadingMode]="mode"
+      [tdLoadingStrategy]="strategy"
+      [tdLoadingColor]="color"
+    >
+      <div class="content"></div>
+    </ng-template>
   `,
 })
 class TdLoadingBasicTestComponent {
@@ -342,30 +342,27 @@ class TdLoadingBasicTestComponent {
   mode: LoadingMode;
   strategy: LoadingStrategy;
   color: string;
-
 }
 
 @Component({
   selector: 'td-loading-duplication-test',
   template: `
-  <ng-template tdLoading="name1">
-    <div class="content"></div>
-  </ng-template>
-  <ng-template tdLoading="name1">
-    <div class="content"></div>
-  </ng-template>
+    <ng-template tdLoading="name1">
+      <div class="content"></div>
+    </ng-template>
+    <ng-template tdLoading="name1">
+      <div class="content"></div>
+    </ng-template>
   `,
 })
-class TdLoadingDuplicationTestComponent {
-
-}
+class TdLoadingDuplicationTestComponent {}
 
 @Component({
   selector: 'td-loading-star-until-async-test',
   template: `
-  <div *tdLoading="let item until observable | async; color: color">
-    <div class="content">{{item}}</div>
-  </div>
+    <div *tdLoading="let item; until: observable | async; color: color">
+      <div class="content">{{ item }}</div>
+    </div>
   `,
 })
 class TdLoadingStarUntilAsyncTestComponent {
@@ -385,9 +382,9 @@ class TdLoadingStarUntilAsyncTestComponent {
 @Component({
   selector: 'td-loading-named-error-star-until-async-test',
   template: `
-  <div *tdLoading="'name1'; let item until observable | async; color: color">
-    <div class="content">{{item}}</div>
-  </div>
+    <div *tdLoading="'name1'; let item; until: observable | async; color: color">
+      <div class="content">{{ item }}</div>
+    </div>
   `,
 })
 class TdLoadingNamedErrorStarUntilAsyncTestComponent {
@@ -413,9 +410,9 @@ class TdLoadingNamedErrorStarUntilAsyncTestComponent {
 @Component({
   selector: 'td-loading-boolean-template-until-test',
   template: `
-  <ng-template tdLoading [tdLoadingUntil]="!loading">
-    <div class="content"></div>
-  </ng-template>
+    <ng-template tdLoading [tdLoadingUntil]="!loading">
+      <div class="content"></div>
+    </ng-template>
   `,
 })
 class TdLoadingBooleanTemplateUntilTestComponent {

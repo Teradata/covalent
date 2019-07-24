@@ -14,7 +14,6 @@ export const _TdFileDropMixinBase = mixinDisabled(TdFileDropBase);
   inputs: ['disabled'],
 })
 export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDisable {
-
   private _multiple: boolean = false;
 
   /**
@@ -82,8 +81,10 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
   onDragOver(event: Event): void {
     let transfer: DataTransfer = (<DragEvent>event).dataTransfer;
     transfer.dropEffect = this._typeCheck(transfer.types);
-    if (this.disabled || (!this._multiple &&
-      ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))) {
+    if (
+      this.disabled ||
+      (!this._multiple && ((transfer.items && transfer.items.length > 1) || (<any>transfer).mozItemCount > 1))
+    ) {
       transfer.dropEffect = 'none';
     } else {
       transfer.dropEffect = 'copy';
@@ -119,8 +120,10 @@ export class TdFileDropDirective extends _TdFileDropMixinBase implements ICanDis
   private _typeCheck(types: ReadonlyArray<string> | DOMStringList): string {
     let dropEffect: string = 'none';
     if (types) {
-      if (((<any>types).contains && (<any>types).contains('Files'))
-      || ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1)) {
+      if (
+        ((<any>types).contains && (<any>types).contains('Files')) ||
+        ((<any>types).indexOf && (<any>types).indexOf('Files') !== -1)
+      ) {
         dropEffect = 'copy';
       }
     }

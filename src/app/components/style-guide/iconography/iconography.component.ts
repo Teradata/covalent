@@ -11,7 +11,6 @@ import { IconService } from '../../../../platform/core/common/services/icon.serv
   preserveWhitespaces: true,
 })
 export class IconographyComponent implements OnInit {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -33,21 +32,20 @@ export class IconographyComponent implements OnInit {
     'orange',
     'deep-orange',
   ];
-  neutrals: string[] = [
-    'brown',
-    'grey',
-    'blue-grey',
-  ];
+  neutrals: string[] = ['brown', 'grey', 'blue-grey'];
 
-  serviceAttrs: Object[] = [{
-    description: `Searches query parameter and returns a new array with icons which match with the searched term.`,
-    name: 'filter',
-    type: `function(query: string): string[]`,
-  }, {
-    description: `Returns the complete icons array.`,
-    name: 'icons',
-    type: `function(): string[]`,
-  }];
+  serviceAttrs: Object[] = [
+    {
+      description: `Searches query parameter and returns a new array with icons which match with the searched term.`,
+      name: 'filter',
+      type: `function(query: string): string[]`,
+    },
+    {
+      description: `Returns the complete icons array.`,
+      name: 'icons',
+      type: `function(): string[]`,
+    },
+  ];
 
   icons: string[] = [];
   query: string = '';

@@ -14,14 +14,12 @@ import { TRANSLATE_STORAGE_KEY } from '../../../utilities/translate';
   preserveWhitespaces: true,
 })
 export class NgxTranslateDemoComponent {
-
   selectedLanguage: string;
   valueCountForPlural: string;
   value: string;
   dateToFormat: Date = new Date();
 
-  constructor(private _translateService: TranslateService,
-              private _dialogService: TdDialogService) {
+  constructor(private _translateService: TranslateService, private _dialogService: TdDialogService) {
     this.selectedLanguage = this._translateService.currentLang;
   }
 
@@ -39,5 +37,4 @@ export class NgxTranslateDemoComponent {
       });
     });
   }
-
 }

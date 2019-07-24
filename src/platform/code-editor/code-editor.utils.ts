@@ -22,7 +22,7 @@ export function waitUntilMonacoReady(): Observable<void> {
  * Check if monaco has been loaded
  */
 export function isMonacoLoaded(): boolean {
-  return typeof((<any>window).monaco) === 'object';
+  return typeof (<any>window).monaco === 'object';
 }
 
 /**
@@ -33,7 +33,7 @@ export function loadMonaco(): void {
   if (!document.getElementById('monaco-loader-script')) {
     const onGotAmdLoader: () => void = () => {
       // Load monaco
-      (<any>window).require.config({ paths: { 'vs': 'assets/monaco/vs' } });
+      (<any>window).require.config({ paths: { vs: 'assets/monaco/vs' } });
       (<any>window).require(['vs/editor/editor.main'], () => {
         // TODO
       });

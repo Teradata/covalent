@@ -20,9 +20,7 @@ export class ToolbarComponent {
 
   dir: 'ltr' | 'rtl' = getDirection();
 
-  constructor(private _renderer: Renderer2,
-              private _dir: Dir,
-              @Inject(DOCUMENT) private _document: any) {
+  constructor(private _renderer: Renderer2, private _dir: Dir, @Inject(DOCUMENT) private _document: any) {
     this._dir.dir = this.dir;
   }
 

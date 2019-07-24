@@ -23,23 +23,9 @@ const TD_FILE: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    PortalModule,
-  ],
-  declarations: [
-    TD_FILE,
-  ],
-  exports: [
-    TD_FILE,
-  ],
-  providers: [
-    TdFileService,
-  ],
+  imports: [FormsModule, CommonModule, MatIconModule, MatButtonModule, PortalModule],
+  declarations: [TD_FILE],
+  exports: [TD_FILE],
+  providers: [TdFileService],
 })
-export class CovalentFileModule {
-
-}
+export class CovalentFileModule {}

@@ -1,4 +1,13 @@
-import { Component, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, forwardRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  forwardRef,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { trigger, state, style, transition, animate, AUTO_STYLE } from '@angular/animations';
 
@@ -6,40 +15,47 @@ import { TdSearchInputComponent } from '../search-input/search-input.component';
 import { IControlValueAccessor, mixinControlValueAccessor } from '@covalent/core/common';
 
 export class TdSearchBoxBase {
-  constructor(public _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(public _changeDetectorRef: ChangeDetectorRef) {}
 }
 
 /* tslint:disable-next-line */
 export const _TdSearchBoxMixinBase = mixinControlValueAccessor(TdSearchBoxBase);
 
 @Component({
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdSearchBoxComponent),
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdSearchBoxComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-search-box',
   templateUrl: './search-box.component.html',
-  styleUrls: ['./search-box.component.scss' ],
+  styleUrls: ['./search-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   inputs: ['value'],
   animations: [
     trigger('inputState', [
-      state('0', style({
-        width: '0%',
-        margin: '0px',
-      })),
-      state('1',  style({
-        width: '100%',
-        margin: AUTO_STYLE,
-      })),
+      state(
+        '0',
+        style({
+          width: '0%',
+          margin: '0px',
+        }),
+      ),
+      state(
+        '1',
+        style({
+          width: '100%',
+          margin: AUTO_STYLE,
+        }),
+      ),
       transition('0 => 1', animate('200ms ease-in')),
       transition('1 => 0', animate('200ms ease-out')),
     ]),
   ],
 })
 export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements IControlValueAccessor {
-
   private _searchVisible: boolean = false;
   @ViewChild(TdSearchInputComponent) _searchInput: TdSearchInputComponent;
 

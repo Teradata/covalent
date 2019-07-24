@@ -6,7 +6,6 @@ import { TdDataTableSortingOrder } from '../data-table.component';
   providedIn: 'root',
 })
 export class TdDataTableService {
-
   /**
    * params:
    * - data: any[]
@@ -22,7 +21,7 @@ export class TdDataTableService {
       data = data.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {
           if (!excludedColumns || excludedColumns.indexOf(key) === -1) {
-            const preItemValue: string = ('' + item[key]);
+            const preItemValue: string = '' + item[key];
             const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
             return itemValue.indexOf(filter) > -1;
           }

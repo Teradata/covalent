@@ -48,9 +48,8 @@ export class TdLoadingDirectiveConfig extends TdLoadingConfig implements ITdLoad
 
 @Injectable()
 export class TdLoadingService {
-
-  private _context: {[key: string]: ILoadingRef} = {};
-  private _timeouts: {[key: string]: any} = {};
+  private _context: { [key: string]: ILoadingRef } = {};
+  private _timeouts: { [key: string]: any } = {};
 
   constructor(private _loadingFactory: TdLoadingFactory) {
     this.create({
@@ -69,16 +68,29 @@ export class TdLoadingService {
    *
    * NOTE: @internal usage only.
    */
-  createComponent(config: ITdLoadingDirectiveConfig, viewContainerRef: ViewContainerRef,
-                  templateRef: TemplateRef<Object>, context: TdLoadingContext): ILoadingRef {
+  createComponent(
+    config: ITdLoadingDirectiveConfig,
+    viewContainerRef: ViewContainerRef,
+    templateRef: TemplateRef<Object>,
+    context: TdLoadingContext,
+  ): ILoadingRef {
     let directiveConfig: TdLoadingDirectiveConfig = new TdLoadingDirectiveConfig(config);
     if (this._context[directiveConfig.name]) {
       throw Error(`Name duplication: [TdLoading] directive has a name conflict with ${directiveConfig.name}.`);
     }
     if (directiveConfig.strategy === LoadingStrategy.Overlay) {
-      this._context[directiveConfig.name] = this._loadingFactory.createOverlayComponent(directiveConfig, viewContainerRef, templateRef);
+      this._context[directiveConfig.name] = this._loadingFactory.createOverlayComponent(
+        directiveConfig,
+        viewContainerRef,
+        templateRef,
+      );
     } else {
-      this._context[directiveConfig.name] = this._loadingFactory.createReplaceComponent(directiveConfig, viewContainerRef, templateRef, context);
+      this._context[directiveConfig.name] = this._loadingFactory.createReplaceComponent(
+        directiveConfig,
+        viewContainerRef,
+        templateRef,
+        context,
+      );
     }
     return this._context[directiveConfig.name];
   }
@@ -229,8 +241,7 @@ export class TdLoadingService {
   }
 }
 
-export function LOADING_PROVIDER_FACTORY(
-    parent: TdLoadingService, loadingFactory: TdLoadingFactory): TdLoadingService {
+export function LOADING_PROVIDER_FACTORY(parent: TdLoadingService, loadingFactory: TdLoadingFactory): TdLoadingService {
   return parent || new TdLoadingService(loadingFactory);
 }
 
