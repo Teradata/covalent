@@ -5,17 +5,12 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    "typeRoots": ["./node_modules/@types"],
     "paths": {
       "@covalent/core/*": ["./platform/core/*"],
       "@covalent/dynamic-forms": ["./platform/dynamic-forms"],
@@ -24,7 +19,8 @@
       "@covalent/markdown": ["./platform/markdown"],
       "@covalent/experimental/*": ["./platform/experimental/*"],
       "@covalent/flavored-markdown": ["./platform/flavored-markdown"],
-      "@covalent/code-editor": ["./platform/code-editor"]
+      "@covalent/code-editor": ["./platform/code-editor"],
+      "@covalent/text-editor/*": ["./platform/text-editor/*"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,

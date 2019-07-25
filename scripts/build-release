@@ -32,6 +32,8 @@ cp -r deploy/platform/core src/platform/node_modules/@covalent
 ./node_modules/@angular/cli/bin/ng build covalent-markdown
 # BUILD: @covalent/code-editor primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-code-editor
+# BUILD: @covalent/text-editor primary entrypoint
+./node_modules/@angular/cli/bin/ng build covalent-text-editor
 
 # HACK (Remove in future): used to resolve ng-packagr current lack of support for Intra-package dependencies between primary entry points
 # HACK START

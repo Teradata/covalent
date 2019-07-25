@@ -29,7 +29,6 @@ export interface IHttp {
 }
 
 export abstract class RESTService<T> {
-
   private _path: string;
   private _base: string;
   private _baseHeaders: Headers;

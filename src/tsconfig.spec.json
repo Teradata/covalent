@@ -5,16 +5,8 @@
     "outDir": "../out-tsc/spec",
     "lib": ["es6", "dom"],
     "module": "commonjs",
-    "types": [
-      "jasmine", "hammerjs", "node"
-    ]
+    "types": ["jasmine", "hammerjs", "node"]
   },
-  "files": [
-    "test.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+  "files": ["test.ts", "polyfills.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

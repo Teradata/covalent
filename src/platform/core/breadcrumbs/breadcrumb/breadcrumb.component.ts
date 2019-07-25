@@ -18,7 +18,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbComponent implements AfterViewInit {
-
   private _displayCrumb: boolean = true;
   private _width: number = 0;
   // Sets the icon url shown between breadcrumbs. Defaults to 'chevron_right'
@@ -55,9 +54,7 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     return this._displayCrumb ? undefined : 'none';
   }
 
-  constructor(private _elementRef: ElementRef,
-              private _changeDetectorRef: ChangeDetectorRef) {
-  }
+  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     // set the width from the actual rendered DOM element
@@ -74,5 +71,4 @@ export class TdBreadcrumbComponent implements AfterViewInit {
     event.stopPropagation();
     event.preventDefault();
   }
-
 }

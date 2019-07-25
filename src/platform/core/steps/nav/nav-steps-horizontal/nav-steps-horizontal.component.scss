@@ -42,7 +42,8 @@
 }
 
 // The pagination control that is displayed on the left side of the tab header.
-.td-step-header-pagination-before, :host.td-step-header-rtl .td-step-header-pagination-after {
+.td-step-header-pagination-before,
+:host.td-step-header-rtl .td-step-header-pagination-after {
   padding-left: 4px;
   .td-step-header-pagination-chevron {
     transform: rotate(-135deg);
@@ -50,7 +51,8 @@
 }
 
 // The pagination control that is displayed on the right side of the tab header.
-:host.td-step-header-rtl .td-step-header-pagination-before, .td-step-header-pagination-after {
+:host.td-step-header-rtl .td-step-header-pagination-before,
+.td-step-header-pagination-after {
   padding-right: 4px;
   .td-step-header-pagination-chevron {
     transform: rotate(45deg);

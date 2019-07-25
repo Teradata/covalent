@@ -1,46 +1,19 @@
-<div
-  *ngIf="draggable"
-
-  cdkDrag
-  cdkDragRootElement=".cdk-overlay-pane"
-  cdkDragBoundary=".cdk-overlay-container"
->
+<div *ngIf="draggable" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragBoundary=".cdk-overlay-container">
   <td-help-window-toolbar
     cdkDragHandle
-
     class="td-draggable-help-window-toolbar"
-
     [labels]="labels"
     [toolbarColor]="toolbarColor"
-
     (closed)="closed.emit()"
   >
-</td-help-window-toolbar>
+  </td-help-window-toolbar>
 
-  <td-help
-    [items]="items"
-    [labels]="labels"
-    [style.height.px]="height"
-  >
-  </td-help>
+  <td-help [items]="items" [labels]="labels" [style.height.px]="height"> </td-help>
 </div>
 
+<div *ngIf="!draggable">
+  <td-help-window-toolbar [labels]="labels" [toolbarColor]="toolbarColor" (closed)="closed.emit()">
+  </td-help-window-toolbar>
 
-<div
-  *ngIf="!draggable"
->
-  <td-help-window-toolbar
-    [labels]="labels"
-    [toolbarColor]="toolbarColor"
-
-    (closed)="closed.emit()"
-  >
-</td-help-window-toolbar>
-
-  <td-help
-    [style.height.px]="height"
-    [items]="items"
-    [labels]="labels"
-  >
-  </td-help>
+  <td-help [style.height.px]="height" [items]="items" [labels]="labels"> </td-help>
 </div>

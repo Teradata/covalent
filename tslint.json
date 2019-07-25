@@ -1,4 +1,4 @@
 {
   "rulesDirectory": ["./node_modules/codelyzer"],
-  "extends": "./node_modules/@covalent/tools/lint/tslint/tslint.json"
+  "extends": ["./node_modules/@covalent/tools/lint/tslint/tslint.json", "tslint-config-prettier"]
 }

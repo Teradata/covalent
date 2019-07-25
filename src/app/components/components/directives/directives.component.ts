@@ -4,13 +4,12 @@ import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'directives-demo',
-  styleUrls: ['./directives.component.scss' ],
+  styleUrls: ['./directives.component.scss'],
   templateUrl: './directives.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
 export class DirectivesComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 

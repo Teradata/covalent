@@ -5,11 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { componentsRoutes } from './components.routes';
 
 import { ComponentsComponent } from './components.component';
-import { ComponentsOverviewComponent }  from './overview/overview.component';
+import { ComponentsOverviewComponent } from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
-import { NavStepsDemoComponent, NavStepsRoute1DemoComponent,
-          NavStepsRoute3DemoComponent, NavStepsRoute4DemoComponent } from './nav-steps/nav-steps.component';
+import {
+  NavStepsDemoComponent,
+  NavStepsRoute1DemoComponent,
+  NavStepsRoute3DemoComponent,
+  NavStepsRoute4DemoComponent,
+} from './nav-steps/nav-steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
 import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
@@ -63,17 +67,33 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
-         CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule,
-         CovalentTabSelectModule } from '../../../platform/core';
+import {
+  CovalentCommonModule,
+  CovalentLayoutModule,
+  CovalentMediaModule,
+  CovalentExpansionPanelModule,
+  CovalentFileModule,
+  CovalentStepsModule,
+  CovalentLoadingModule,
+  CovalentDialogsModule,
+  CovalentSearchModule,
+  CovalentPagingModule,
+  CovalentNotificationsModule,
+  CovalentMenuModule,
+  CovalentChipsModule,
+  CovalentDataTableModule,
+  CovalentJsonFormatterModule,
+  CovalentBreadcrumbsModule,
+  CovalentMessageModule,
+  CovalentVirtualScrollModule,
+  CovalentTabSelectModule,
+} from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 import { CovalentFlavoredMarkdownModule } from '../../../platform/flavored-markdown';
 import { CovalentCodeEditorModule } from '../../../platform/code-editor';
-import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { CovalentTextEditorModule } from '../../../platform/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
@@ -185,8 +205,6 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     componentsRoutes,
     ToolbarModule,
   ],
-  entryComponents: [
-    TdTestDynamicComponent,
-  ],
+  entryComponents: [TdTestDynamicComponent],
 })
 export class ComponentsModule {}

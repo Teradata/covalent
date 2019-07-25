@@ -1,5 +1,14 @@
-import { Component, Directive, Input, Output, TemplateRef, ViewChild,
-         ViewContainerRef, ContentChild, OnInit } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  Output,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+  ContentChild,
+  OnInit,
+} from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TemplatePortalDirective, TemplatePortal } from '@angular/cdk/portal';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -50,7 +59,6 @@ export const _TdStepMixinBase = mixinDisableRipple(mixinDisabled(TdStepBase));
   templateUrl: './step.component.html',
 })
 export class TdStepComponent extends _TdStepMixinBase implements OnInit, ICanDisable, ICanDisableRipple {
-
   private _active: boolean = false;
   private _state: StepState = StepState.None;
 

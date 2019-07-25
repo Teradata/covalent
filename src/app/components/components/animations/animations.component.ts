@@ -12,7 +12,7 @@ import { tdPulseAnimation } from '../../../../platform/core/common/animations/pu
 
 @Component({
   selector: 'animations-demo',
-  styleUrls: ['./animations.component.scss' ],
+  styleUrls: ['./animations.component.scss'],
   templateUrl: './animations.component.html',
   animations: [
     slideInDownAnimation,
@@ -28,7 +28,6 @@ import { tdPulseAnimation } from '../../../../platform/core/common/animations/pu
   preserveWhitespaces: true,
 })
 export class AnimationsComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -44,5 +43,4 @@ export class AnimationsComponent {
   headshakeState: boolean = false;
   jelloState: boolean = false;
   pulseState: boolean = false;
-
 }

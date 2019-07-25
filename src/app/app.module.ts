@@ -27,8 +27,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
-         CovalentMediaModule } from '../platform/core';
+import {
+  CovalentLayoutModule,
+  CovalentExpansionPanelModule,
+  CovalentNotificationsModule,
+  CovalentMenuModule,
+  CovalentMediaModule,
+} from '../platform/core';
 import { CovalentHighlightModule } from '../platform/highlight';
 import { CovalentHttpModule } from '../platform/http';
 import { CovalentMarkdownModule } from '../platform/markdown';
@@ -41,11 +46,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 
 @NgModule({
-  declarations: [
-    DocsAppComponent,
-    HomeComponent,
-    TemplatesComponent,
-  ], // directives, components, and pipes owned by this NgModule
+  declarations: [DocsAppComponent, HomeComponent, TemplatesComponent], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserAnimationsModule,
     CommonModule,
@@ -86,13 +87,16 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
   providers: [
     appRoutingProviders,
     GitHubService,
-    InternalDocsService, {
+    InternalDocsService,
+    {
       // Configure LOCALE_ID depending on the language set in browser
-      provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
+      provide: LOCALE_ID,
+      useFactory: getSelectedLanguage,
+      deps: [TranslateService],
     },
     SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
-  entryComponents: [ ],
-  bootstrap: [ DocsAppComponent ],
+  entryComponents: [],
+  bootstrap: [DocsAppComponent],
 })
 export class AppModule {}

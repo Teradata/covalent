@@ -10,8 +10,6 @@ import { slideInDownAnimation } from '../../../app.animations';
   preserveWhitespaces: true,
 })
 export class ThemeComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-
 }

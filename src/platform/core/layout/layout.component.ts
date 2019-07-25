@@ -6,11 +6,10 @@ import { ILayoutTogglable } from './layout-toggle.class';
 
 @Component({
   selector: 'td-layout',
-  styleUrls: ['./layout.component.scss' ],
+  styleUrls: ['./layout.component.scss'],
   templateUrl: './layout.component.html',
 })
 export class TdLayoutComponent implements ILayoutTogglable {
-
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   /**
@@ -53,7 +52,7 @@ export class TdLayoutComponent implements ILayoutTogglable {
    * Defaults to "false".
    *
    * See documentation for more info and potential performance risks.
-   * 
+   *
    * https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav.md#resizing-an-open-sidenav
    */
   @Input('containerAutosize') containerAutosize: boolean = false;
@@ -86,5 +85,4 @@ export class TdLayoutComponent implements ILayoutTogglable {
   public close(): Promise<MatDrawerToggleResult> {
     return this.sidenav.close();
   }
-
 }

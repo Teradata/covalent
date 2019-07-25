@@ -30,17 +30,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
     CovalentFlavoredMarkdownModule,
   ],
-  declarations: [
-    HelpComponent,
-    HelpWindowComponent,
-    HelpWindowToolbarComponent,
-    DraggableHelpWindowDialogComponent,
-  ],
-  exports: [
-    HelpComponent,
-    HelpWindowComponent,
-    DraggableHelpWindowDialogComponent,
-  ],
+  declarations: [HelpComponent, HelpWindowComponent, HelpWindowToolbarComponent, DraggableHelpWindowDialogComponent],
+  exports: [HelpComponent, HelpWindowComponent, DraggableHelpWindowDialogComponent],
   entryComponents: [DraggableHelpWindowDialogComponent],
 })
 export class CovalentHelpModule {}

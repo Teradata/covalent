@@ -1,5 +1,4 @@
 export interface ISchema {
-
   /** Whether covalent dynamic-forms should be set up. */
   dynamicForms: boolean;
 

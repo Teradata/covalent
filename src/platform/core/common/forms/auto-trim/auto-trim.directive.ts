@@ -6,7 +6,6 @@ import { NgModel } from '@angular/forms';
   selector: '[tdAutoTrim]',
 })
 export class TdAutoTrimDirective {
-
   constructor(@Optional() @Host() private _model: NgModel) {}
 
   /**
@@ -14,7 +13,7 @@ export class TdAutoTrimDirective {
    */
   @HostListener('blur', ['$event'])
   onBlur(event: Event): void {
-    if (this._model && this._model.value && typeof(this._model.value) === 'string') {
+    if (this._model && this._model.value && typeof this._model.value === 'string') {
       this._model.update.emit(this._model.value.trim());
     }
   }

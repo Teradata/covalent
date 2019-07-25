@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class IconService {
-
   private _icons: string[] = [
     'access_alarm',
     'access_alarms',

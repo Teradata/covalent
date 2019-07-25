@@ -1,15 +1,14 @@
 import { Component, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdTextEditorComponent } from '@covalent/text-editor';
+import { TdTextEditorComponent } from '../../../../platform/text-editor';
 
 @Component({
   selector: 'text-editor-demo',
-  styleUrls: [ './text-editor.component.scss' ],
+  styleUrls: ['./text-editor.component.scss'],
   templateUrl: './text-editor.component.html',
   animations: [slideInDownAnimation],
 })
 export class TextEditorDemoComponent {
-
   @ViewChild('editor') private _tdEditor: TdTextEditorComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;

@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -14,14 +9,9 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: PagingBar', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        MatInputModule,
-        CovalentPagingModule,
-      ],
+      imports: [NoopAnimationsModule, MatInputModule, CovalentPagingModule],
       declarations: [
         TestInitialPageComponent,
         TestPageSizeComponent,
@@ -37,7 +27,7 @@ describe('Component: PagingBar', () => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TestPageSizeComponent);
     let component: TestPageSizeComponent = fixture.debugElement.componentInstance;
     let pagingComponent: DebugElement = fixture.debugElement.query(By.directive(TdPagingBarComponent));
-    
+
     component.pageSize = 100;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -138,10 +128,10 @@ describe('Component: PagingBar', () => {
       expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Go to:');
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-      
+
       inputElement.nativeElement.value = '6';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-          'key': 'Enter',
+        key: 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -163,10 +153,10 @@ describe('Component: PagingBar', () => {
     fixture.whenStable().then(() => {
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-      
+
       inputElement.nativeElement.value = '8';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-          'key': 'Enter',
+        key: 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -188,10 +178,10 @@ describe('Component: PagingBar', () => {
     fixture.whenStable().then(() => {
       expect(fixture.debugElement.query(By.css('input')).nativeElement).toBeTruthy();
       expect(inputElement.nativeElement.value).toBe('1');
-      
+
       inputElement.nativeElement.value = '4.556';
       const event: KeyboardEvent = new KeyboardEvent('keyup', {
-          'key': 'Enter',
+        key: 'Enter',
       });
       inputElement.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
@@ -206,8 +196,8 @@ describe('Component: PagingBar', () => {
 
 @Component({
   template: `
-    <td-paging-bar [pageSize]="pageSize" [total]="9215">
-    </td-paging-bar>`,
+    <td-paging-bar [pageSize]="pageSize" [total]="9215"> </td-paging-bar>
+  `,
 })
 class TestPageSizeComponent {
   pageSize: number = 37;
@@ -215,7 +205,8 @@ class TestPageSizeComponent {
 
 @Component({
   template: `
-    <td-paging-bar [initialPage]="initialPage" [total]="9215"></td-paging-bar>`,
+    <td-paging-bar [initialPage]="initialPage" [total]="9215"></td-paging-bar>
+  `,
 })
 class TestInitialPageComponent {
   initialPage: number = 3;
@@ -223,7 +214,8 @@ class TestInitialPageComponent {
 
 @Component({
   template: `
-    <td-paging-bar [firstLast]="firstLast" [total]="9333"></td-paging-bar>`,
+    <td-paging-bar [firstLast]="firstLast" [total]="9333"></td-paging-bar>
+  `,
 })
 class TestFirstLastComponent {
   firstLast: boolean = true;
@@ -231,7 +223,8 @@ class TestFirstLastComponent {
 
 @Component({
   template: `
-    <td-paging-bar [pageLinkCount]="pageLinkCount" [pageSize]="pageSize" [total]="1345"></td-paging-bar>`,
+    <td-paging-bar [pageLinkCount]="pageLinkCount" [pageSize]="pageSize" [total]="1345"></td-paging-bar>
+  `,
 })
 class TestPageLinkCountComponent {
   pageLinkCount: number = 7;
@@ -243,17 +236,18 @@ class TestPageLinkCountComponent {
     <td-paging-bar #pagingBar [pageSize]="100" [total]="650">
       <p>Go to:</p>
       <mat-form-field>
-        <input #goToInput
-                matInput
-                type="number"
-                [min]="1"
-                [max]="pagingBar.maxPage"
-                [value]="pagingBar.page"
-                (blur)="goToInput.value = pagingBar.page"
-                (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"/>
+        <input
+          #goToInput
+          matInput
+          type="number"
+          [min]="1"
+          [max]="pagingBar.maxPage"
+          [value]="pagingBar.page"
+          (blur)="goToInput.value = pagingBar.page"
+          (keyup.enter)="pagingBar.navigateToPage(goToInput.value); goToInput.value = pagingBar.page"
+        />
       </mat-form-field>
-      
-    </td-paging-bar>`,
+    </td-paging-bar>
+  `,
 })
-class TestGoToComponent {
-}
+class TestGoToComponent {}
