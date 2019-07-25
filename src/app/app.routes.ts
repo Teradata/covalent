@@ -26,6 +26,9 @@ const routes: Routes = [{
     // preload: true loads the module immediately
     path: '', data: { preload: true, }, loadChildren: './components/components/components.module#ComponentsModule',
   }, {
+    // preload: true loads the module immediately
+    path: '', data: { preload: true, }, loadChildren: './components/echarts/components.module#ComponentsModule',
+  }, {
     path: '**', redirectTo: '/',
   },
 ];

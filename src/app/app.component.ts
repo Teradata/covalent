@@ -27,6 +27,10 @@ export class DocsAppComponent {
       route: 'components',
       title: 'Components & Addons',
     }, {
+      icon: 'show_chart',
+      route: 'echarts',
+      title: 'Echarts',
+    }, {
       icon: 'view_quilt',
       route: 'layouts',
       title: 'Layouts',

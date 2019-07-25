@@ -1,7 +1,7 @@
 {
   "name": "@covalent/echarts",
   "version": "0.0.0-COVALENT",
-  "description": "Teradata Charts built on echarts",
+  "description": "Teradata UI Platform Echarts Module",
   "keywords": [
     "angular",
     "echarts",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/teradata/covalent-echarts.git"
+    "url": "https://github.com/teradata/covalent.git"
   },
   "bugs": {
-    "url": "https://github.com/teradata/covalent-echarts/issues"
+    "url": "https://github.com/teradata/covalent/issues"
   },
   "license": "MIT",
   "author": "Teradata UX",
