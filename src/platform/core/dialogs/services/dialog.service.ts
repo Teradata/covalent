@@ -26,7 +26,6 @@ export interface IPromptConfig extends IConfirmConfig {
 
 @Injectable()
 export class TdDialogService {
-
   constructor(private _dialogService: MatDialog) {}
 
   /**
@@ -62,8 +61,10 @@ export class TdDialogService {
    */
   public openAlert(config: IAlertConfig): MatDialogRef<TdAlertDialogComponent> {
     let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdAlertDialogComponent> =
-      this._dialogService.open(TdAlertDialogComponent, dialogConfig);
+    let dialogRef: MatDialogRef<TdAlertDialogComponent> = this._dialogService.open(
+      TdAlertDialogComponent,
+      dialogConfig,
+    );
     let alertDialogComponent: TdAlertDialogComponent = dialogRef.componentInstance;
     alertDialogComponent.title = config.title;
     alertDialogComponent.message = config.message;
@@ -88,8 +89,10 @@ export class TdDialogService {
    */
   public openConfirm(config: IConfirmConfig): MatDialogRef<TdConfirmDialogComponent> {
     let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdConfirmDialogComponent> =
-      this._dialogService.open(TdConfirmDialogComponent, dialogConfig);
+    let dialogRef: MatDialogRef<TdConfirmDialogComponent> = this._dialogService.open(
+      TdConfirmDialogComponent,
+      dialogConfig,
+    );
     let confirmDialogComponent: TdConfirmDialogComponent = dialogRef.componentInstance;
     confirmDialogComponent.title = config.title;
     confirmDialogComponent.message = config.message;
@@ -118,8 +121,10 @@ export class TdDialogService {
    */
   public openPrompt(config: IPromptConfig): MatDialogRef<TdPromptDialogComponent> {
     let dialogConfig: MatDialogConfig = this._createConfig(config);
-    let dialogRef: MatDialogRef<TdPromptDialogComponent> =
-      this._dialogService.open(TdPromptDialogComponent, dialogConfig);
+    let dialogRef: MatDialogRef<TdPromptDialogComponent> = this._dialogService.open(
+      TdPromptDialogComponent,
+      dialogConfig,
+    );
     let promptDialogComponent: TdPromptDialogComponent = dialogRef.componentInstance;
     promptDialogComponent.title = config.title;
     promptDialogComponent.message = config.message;
@@ -139,5 +144,4 @@ export class TdDialogService {
     Object.assign(dialogConfig, config);
     return dialogConfig;
   }
-
 }

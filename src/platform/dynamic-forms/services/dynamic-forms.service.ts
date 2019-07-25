@@ -45,7 +45,7 @@ export interface ITdDynamicElementConfig {
   max?: any;
   minLength?: any;
   maxLength?: any;
-  selections?: string[] | { value: any, label: string }[];
+  selections?: string[] | { value: any; label: string }[];
   multiple?: boolean;
   default?: any;
   flex?: number;
@@ -56,7 +56,6 @@ export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
 
 @Injectable()
 export class TdDynamicFormsService {
-
   /**
    * Method to validate if the [name] is a proper element name.
    * Throws error if name is not valid.
@@ -138,8 +137,7 @@ export class TdDynamicFormsService {
   }
 }
 
-export function DYNAMIC_FORMS_PROVIDER_FACTORY(
-  parent: TdDynamicFormsService): TdDynamicFormsService {
+export function DYNAMIC_FORMS_PROVIDER_FACTORY(parent: TdDynamicFormsService): TdDynamicFormsService {
   return parent || new TdDynamicFormsService();
 }
 

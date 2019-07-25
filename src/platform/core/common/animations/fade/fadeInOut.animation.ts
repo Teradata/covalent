@@ -1,5 +1,15 @@
-import { trigger, state, style, transition, animate,
-         AnimationTriggerMetadata, AUTO_STYLE, query, animateChild, group  } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  AnimationTriggerMetadata,
+  AUTO_STYLE,
+  query,
+  animateChild,
+  group,
+} from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 
 export interface IFadeInOutAnimation extends IAnimationOptions {
@@ -21,24 +31,38 @@ export interface IFadeInOutAnimation extends IAnimationOptions {
  * usage: [@tdFadeInOut]="{ value: true | false, params: { duration: 200 }}"
  */
 export const tdFadeInOutAnimation: AnimationTriggerMetadata = trigger('tdFadeInOut', [
-    state('0', style({
+  state(
+    '0',
+    style({
       opacity: '0',
       visibility: 'hidden',
-    })),
-    state('1',  style({
+    }),
+  ),
+  state(
+    '1',
+    style({
       opacity: AUTO_STYLE,
       visibility: AUTO_STYLE,
-    })),
-    transition('0 => 1', [
+    }),
+  ),
+  transition(
+    '0 => 1',
+    [
       group([
         query('@*', animateChild(), { optional: true }),
         animate('{{ duration }}ms {{ delay }}ms {{ easeOnIn }}'),
       ]),
-    ], { params: { duration: 150, delay: '0', easeOnIn: 'ease-in' }}),
-    transition('1 => 0', [
+    ],
+    { params: { duration: 150, delay: '0', easeOnIn: 'ease-in' } },
+  ),
+  transition(
+    '1 => 0',
+    [
       group([
         query('@*', animateChild(), { optional: true }),
         animate('{{ duration }}ms {{ delay }}ms {{ easeOnOut }}'),
-    ]),
-  ], { params: { duration: 150, delay: '0', easeOnOut: 'ease-out' }}),
+      ]),
+    ],
+    { params: { duration: 150, delay: '0', easeOnOut: 'ease-out' } },
+  ),
 ]);

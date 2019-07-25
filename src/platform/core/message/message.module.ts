@@ -6,23 +6,11 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { TdMessageComponent, TdMessageContainerDirective } from './message.component';
 
-const TD_MESSAGE: Type<any>[] = [
-  TdMessageComponent,
-  TdMessageContainerDirective,
-];
+const TD_MESSAGE: Type<any>[] = [TdMessageComponent, TdMessageContainerDirective];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-  ],
-  declarations: [
-    TD_MESSAGE,
-  ],
-  exports: [
-    TD_MESSAGE,
-  ],
+  imports: [CommonModule, MatIconModule],
+  declarations: [TD_MESSAGE],
+  exports: [TD_MESSAGE],
 })
-export class CovalentMessageModule {
-
-}
+export class CovalentMessageModule {}

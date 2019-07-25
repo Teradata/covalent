@@ -12,19 +12,18 @@ import {
   EventEmitter,
   OnDestroy,
 } from '@angular/core';
-import {
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ThemePalette } from '@angular/material/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { ICanDisable,
-          mixinDisabled,
-          IControlValueAccessor,
-          mixinControlValueAccessor,
-          ICanDisableRipple,
-          mixinDisableRipple,
+import {
+  ICanDisable,
+  mixinDisabled,
+  IControlValueAccessor,
+  mixinControlValueAccessor,
+  ICanDisableRipple,
+  mixinDisableRipple,
 } from '@covalent/core/common';
 
 import { Subscription } from 'rxjs';
@@ -40,11 +39,13 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdTabSelectComponent),
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdTabSelectComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-tab-select',
   templateUrl: './tab-select.component.html',
   styleUrls: ['./tab-select.component.scss'],
@@ -52,8 +53,7 @@ export const _TdTabSelectMixinBase = mixinControlValueAccessor(mixinDisabled(mix
   inputs: ['value', 'disabled', 'disableRipple'],
 })
 export class TdTabSelectComponent extends _TdTabSelectMixinBase
-                                  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
-
+  implements IControlValueAccessor, ICanDisable, ICanDisableRipple, OnInit, AfterContentInit, OnDestroy {
   private _subs: Subscription[] = [];
 
   private _values: any[] = [];
@@ -171,5 +171,4 @@ export class TdTabSelectComponent extends _TdTabSelectMixinBase
     }
     this._changeDetectorRef.markForCheck();
   }
-
 }

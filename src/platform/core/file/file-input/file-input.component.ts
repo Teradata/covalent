@@ -1,5 +1,18 @@
-import { Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
-         ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  TemplateRef,
+  ViewContainerRef,
+  ChangeDetectorRef,
+  forwardRef,
+} from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -24,18 +37,19 @@ export const _TdFileInputMixinBase = mixinControlValueAccessor(mixinDisabled(TdF
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdFileInputComponent),
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdFileInputComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-file-input',
   inputs: ['disabled', 'value'],
   styleUrls: ['./file-input.component.scss'],
   templateUrl: './file-input.component.html',
 })
 export class TdFileInputComponent extends _TdFileInputMixinBase implements IControlValueAccessor, ICanDisable {
-
   private _multiple: boolean = false;
 
   /** The native `<input type="file"> element */

@@ -8,13 +8,12 @@ import { TdMediaService } from '../services/media.service';
   selector: '[tdMediaToggle]',
 })
 export class TdMediaToggleDirective implements OnInit, OnDestroy {
-
   private _subscription: Subscription;
 
   private _query: string;
   private _matches: boolean = false;
-  private _attributes: {[key: string]: string} = {};
-  private _styles: {[key: string]: string} = {};
+  private _attributes: { [key: string]: string } = {};
+  private _styles: { [key: string]: string } = {};
   private _classes: string[] = [];
 
   /**
@@ -57,7 +56,7 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
     this._styles = styles;
   }
 
-  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _mediaService: TdMediaService) { }
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _mediaService: TdMediaService) {}
 
   ngOnInit(): void {
     this._mediaChange(this._mediaService.query(this._query));
@@ -108,5 +107,4 @@ export class TdMediaToggleDirective implements OnInit, OnDestroy {
       }
     }
   }
-
 }
