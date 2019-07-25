@@ -12,7 +12,6 @@ A component for rendering and navigating through documentation. Supports github 
   + Optional
 + toolbarColor?: ThemePalette
   + Color palette for toolbar
-  + Defaults to 'primary'
 
 ## Setup
 
