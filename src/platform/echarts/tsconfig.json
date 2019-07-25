@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.lib.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@covalent/echarts/*": ["./*"]
+    }
+  }
+}

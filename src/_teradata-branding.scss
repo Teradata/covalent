@@ -26,7 +26,7 @@ $td-orange: (
     700: white,
     800: $white-87-opacity,
     900: $white-87-opacity,
-  )
+  ),
 );
 $td-slate: (
   50: #d8dbdc,
@@ -50,7 +50,7 @@ $td-slate: (
     700: white,
     800: $white-87-opacity,
     900: $white-87-opacity,
-  )
+  ),
 );
 $td-yellow: (
   50: #fff4df,
@@ -74,7 +74,7 @@ $td-yellow: (
     700: $black-87-opacity,
     800: $black-87-opacity,
     900: $black-87-opacity,
-  )
+  ),
 );
 $td-teal: (
   50: #cff0ef,
@@ -98,7 +98,7 @@ $td-teal: (
     700: $black-87-opacity,
     800: white,
     900: white,
-  )
+  ),
 );
 $td-blue: (
   50: #d1eaf4,
@@ -122,7 +122,7 @@ $td-blue: (
     700: white,
     800: $white-87-opacity,
     900: $white-87-opacity,
-  )
+  ),
 );
 
 $td-positive: (
@@ -162,7 +162,7 @@ $td-emphasis2: (
   background-dark: mat-color($mat-blue-grey, 200),
 );
 
-body { 
+body {
   // Slate
   .bgc-td-slate,
   .bgc-td-slate-900,

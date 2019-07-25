@@ -16,6 +16,7 @@ import 'core-js/es6/weak-map';
 import 'core-js/es6/set';
 import 'core-js/es6/reflect';
 
+import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
 // If you need to support the browsers/features below, uncomment the import
@@ -55,5 +56,3 @@ import 'core-js/es7/array';
 if (typeof SVGElement.prototype.contains === 'undefined') {
     SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
 }
-
-import 'core-js/es7/reflect';
