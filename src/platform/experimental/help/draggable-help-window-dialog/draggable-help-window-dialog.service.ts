@@ -38,7 +38,7 @@ export class DraggableHelpWindowDialogService {
     draggableDialog.componentInstance.data = {
       items: config.items,
       labels: config.labels,
-      toolbarColor: config.toolbarColor,
+      toolbarColor: 'toolbarColor' in config ?  config.toolbarColor : 'primary',
     };
     return draggableDialog;
   }
