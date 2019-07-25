@@ -9,7 +9,7 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class HelpWindowToolbarComponent {
   @Input() labels: IHelpWindowToolbarComponentLabels;
-  @Input() toolbarColor: ThemePalette;
+  @Input() toolbarColor: ThemePalette = 'primary';
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
 

@@ -11,7 +11,7 @@ export class HelpWindowComponent {
   @Input() items: IHelpMenuDataItem[];
   @Input() draggable: boolean = false;
   @Input() labels: IHelpWindowComponentLabels;
-  @Input() toolbarColor: ThemePalette;
+  @Input() toolbarColor: ThemePalette = 'primary';
 
   // outputs only for non-draggable toolbar
   @Output() closed: EventEmitter<void> = new EventEmitter();
