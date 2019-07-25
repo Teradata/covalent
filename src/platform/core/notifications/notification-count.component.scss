@@ -83,7 +83,8 @@ $td-notification-content-size: 40px !default;
 }
 
 .td-notification-content {
-  &, ::ng-deep > * {
+  &,
+  ::ng-deep > * {
     line-height: $td-notification-content-size;
   }
 }

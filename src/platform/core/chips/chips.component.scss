@@ -21,7 +21,8 @@
     }
   }
   .td-chip {
-    &, > .td-chip-content {
+    &,
+    > .td-chip-content {
       // layout
       box-sizing: border-box;
       display: flex;

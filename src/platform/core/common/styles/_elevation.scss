@@ -59,7 +59,7 @@ $_umbra-elevation-map: (
   21: '0px 10px 13px -6px #{$_umbra-color}',
   22: '0px 10px 14px -6px #{$_umbra-color}',
   23: '0px 11px 14px -7px #{$_umbra-color}',
-  24: '0px 11px 15px -7px #{$_umbra-color}'
+  24: '0px 11px 15px -7px #{$_umbra-color}',
 );
 
 $_penumbra-elevation-map: (
@@ -87,7 +87,7 @@ $_penumbra-elevation-map: (
   21: '0px 21px 33px 3px #{$_penumbra-color}',
   22: '0px 22px 35px 3px #{$_penumbra-color}',
   23: '0px 23px 36px 3px #{$_penumbra-color}',
-  24: '0px 24px 38px 3px #{$_penumbra-color}'
+  24: '0px 24px 38px 3px #{$_penumbra-color}',
 );
 
 $_ambient-elevation-map: (
@@ -115,7 +115,7 @@ $_ambient-elevation-map: (
   21: '0px 8px 40px 7px #{$_ambient-color}',
   22: '0px 8px 42px 7px #{$_ambient-color}',
   23: '0px 9px 44px 8px #{$_ambient-color}',
-  24: '0px 9px 46px 8px #{$_ambient-color}'
+  24: '0px 9px 46px 8px #{$_ambient-color}',
 );
 
 // The css property used for elevation. In most cases this should not be changed. It is exposed
@@ -145,10 +145,8 @@ $mat-elevation-opacity: 1 !default;
     @error '$zValue must be between 0 and 24';
   }
 
-  box-shadow:
-    #{map-get(_get-umbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-penumbra-map($color, $opacity), $zValue)}, #{map-get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Returns a string that can be used as the value for a transition property for elevation.
@@ -161,7 +159,8 @@ $mat-elevation-opacity: 1 !default;
 // }
 @function mat-elevation-transition-property-value(
   $duration: $mat-elevation-transition-duration,
-  $easing: $mat-elevation-transition-timing-function) {
+  $easing: $mat-elevation-transition-timing-function
+) {
   @return #{$mat-elevation-property} #{$duration} #{$easing};
 }
 
@@ -173,7 +172,8 @@ $mat-elevation-opacity: 1 !default;
 // be used in the same way by clients.
 @mixin mat-elevation-transition(
   $duration: $mat-elevation-transition-duration,
-  $easing: $mat-elevation-transition-timing-function) {
+  $easing: $mat-elevation-transition-timing-function
+) {
   transition: mat-elevation-transition-property-value($duration, $easing);
   will-change: $mat-elevation-property;
 }

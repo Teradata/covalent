@@ -30,19 +30,22 @@
         }
         &.mat-primary {
           background: mat-color($primary);
-          &, mat-icon {
+          &,
+          mat-icon {
             color: mat-color($primary, default-contrast);
           }
         }
         &.mat-accent {
           background: mat-color($accent);
-          &, mat-icon {
+          &,
+          mat-icon {
             color: mat-color($accent, default-contrast);
           }
         }
         &.mat-warn {
           background: mat-color($warn);
-          &, mat-icon {
+          &,
+          mat-icon {
             color: mat-color($warn, default-contrast);
           }
         }
