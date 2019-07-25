@@ -14,10 +14,9 @@ import { IPageChangeEvent } from '../../../../platform/core';
   preserveWhitespaces: true,
 })
 export class PagingDemoComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
-    
+
   event: IPageChangeEvent;
   eventPageSize: IPageChangeEvent;
   eventLinks: IPageChangeEvent;
@@ -27,8 +26,7 @@ export class PagingDemoComponent {
   pageSizeResponsive: number = 100;
   firstLast: boolean = true;
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
 
   change(event: IPageChangeEvent): void {
     this.event = event;
@@ -53,5 +51,4 @@ export class PagingDemoComponent {
   toggleFirstLast(): void {
     this.firstLast = !this.firstLast;
   }
-
 }

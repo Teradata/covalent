@@ -10,8 +10,7 @@
     "rest",
     "interceptor"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/teradata/covalent.git"

@@ -17,7 +17,7 @@ export enum StepMode {
 
 @Component({
   selector: 'td-steps',
-  styleUrls: ['./steps.component.scss' ],
+  styleUrls: ['./steps.component.scss'],
   templateUrl: './steps.component.html',
   /* tslint:disable-next-line */
   host: {
@@ -25,7 +25,6 @@ export enum StepMode {
   },
 })
 export class TdStepsComponent implements OnDestroy, AfterContentInit {
-
   private _subcriptions: Subscription[];
   private _mode: StepMode = StepMode.Vertical;
   private _steps: QueryList<TdStepComponent>;
@@ -98,9 +97,11 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
   }
 
   areStepsActive(): boolean {
-    return this._steps.filter((step: TdStepComponent) => {
-      return step.active;
-    }).length > 0;
+    return (
+      this._steps.filter((step: TdStepComponent) => {
+        return step.active;
+      }).length > 0
+    );
   }
 
   /**
@@ -124,10 +125,11 @@ export class TdStepsComponent implements OnDestroy, AfterContentInit {
    * Loops through [TdStepComponent] children elements and deactivates them ignoring the one passed as an argument.
    */
   private _deactivateAllBut(activeStep: TdStepComponent): void {
-    this._steps.filter((step: TdStepComponent) => step !== activeStep)
-    .forEach((step: TdStepComponent) => {
-      step.active = false;
-    });
+    this._steps
+      .filter((step: TdStepComponent) => step !== activeStep)
+      .forEach((step: TdStepComponent) => {
+        step.active = false;
+      });
   }
 
   private _registerSteps(): void {

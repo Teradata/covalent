@@ -35,7 +35,14 @@
     "release:finish": "bash scripts/finish-release",
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
-    "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt"
+    "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
+    "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,yml,html}'",
+    "prettier:check": "./node_modules/.bin/prettier --check './**/*.{ts,js,json,css,scss,yml,html}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --no-restage --bail --pattern '**/*.*(ts|js|json|css|scss|yml|html)'"
+    }
   },
   "engines": {
     "node": ">=10.15.3",
@@ -97,7 +104,7 @@
     "@angular-devkit/build-ng-packagr": "~0.11.2",
     "@angular/cli": "7.1.2",
     "@angular/compiler-cli": "^7.2.12",
-    "@covalent/tools": "2.0.0-beta.2",
+    "@covalent/tools": "2.0.1",
     "@types/fs-extra": "^4.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "~2.8.6",
@@ -116,6 +123,7 @@
     "gulp-postcss": "7.0.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "1.6.0",
+    "husky": "^3.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.0.1",
@@ -127,13 +135,17 @@
     "ng-packagr": "4.4.5",
     "node-sass": "^4.11.0",
     "pa11y": "^5.1.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "protractor": "^6.0.0",
     "require-dir": "0.3.2",
     "semver": "5.2.0",
     "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^5.2.0",
     "ts-node": "~5.0.1",
     "tsickle": "0.33.1",
     "tslint": "5.12.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.1.3",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-stats-plugin": "^0.1.5"

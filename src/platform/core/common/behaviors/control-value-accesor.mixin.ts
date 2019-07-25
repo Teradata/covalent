@@ -21,15 +21,17 @@ export interface IHasChangeDetectorRef {
 }
 
 /** Mixin to augment a component with ngModel support. */
-export function mixinControlValueAccessor<T extends Constructor<IHasChangeDetectorRef>>
-                (base: T, initialValue?: any): Constructor<IControlValueAccessor> & T {
+export function mixinControlValueAccessor<T extends Constructor<IHasChangeDetectorRef>>(
+  base: T,
+  initialValue?: any,
+): Constructor<IControlValueAccessor> & T {
   return class extends base {
     private _value: any = initialValue instanceof Array ? Object.assign([], initialValue) : initialValue;
     private _subjectValueChanges: Subject<any>;
     valueChanges: Observable<any>;
 
     constructor(...args: any[]) {
-      super(...args); 
+      super(...args);
       this._subjectValueChanges = new Subject<any>();
       this.valueChanges = this._subjectValueChanges.asObservable();
     }
@@ -61,6 +63,5 @@ export function mixinControlValueAccessor<T extends Constructor<IHasChangeDetect
 
     onChange = (_: any) => noop;
     onTouched = () => noop;
-
   };
 }

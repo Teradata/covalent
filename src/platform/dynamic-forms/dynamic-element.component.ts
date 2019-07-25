@@ -1,4 +1,15 @@
-import { Component, Directive, Input, HostBinding, OnInit, SimpleChanges, OnChanges, TemplateRef, ChangeDetectorRef, Type } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  HostBinding,
+  OnInit,
+  SimpleChanges,
+  OnChanges,
+  TemplateRef,
+  ChangeDetectorRef,
+  Type,
+} from '@angular/core';
 import { ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver, ComponentRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
@@ -15,9 +26,8 @@ export class TdDynamicElementBase {
 /* tslint:disable-next-line */
 export const _TdDynamicElementMixinBase = mixinControlValueAccessor(TdDynamicElementBase);
 
-@Directive({selector: '[tdDynamicFormsError]ng-template'})
+@Directive({ selector: '[tdDynamicFormsError]ng-template' })
 export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
-
   @Input() tdDynamicFormsError: string;
   constructor(templateRef: TemplateRef<any>, viewContainerRef: ViewContainerRef) {
     super(templateRef, viewContainerRef);
@@ -28,21 +38,23 @@ export class TdDynamicFormsErrorTemplate extends TemplatePortalDirective {
   selector: '[tdDynamicContainer]',
 })
 export class TdDynamicElementDirective {
-  constructor(public viewContainer: ViewContainerRef) { }
+  constructor(public viewContainer: ViewContainerRef) {}
 }
 
 @Component({
-  providers: [TdDynamicFormsService, {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdDynamicElementComponent),
-    multi: true,
-  }],
+  providers: [
+    TdDynamicFormsService,
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdDynamicElementComponent),
+      multi: true,
+    },
+  ],
   selector: 'td-dynamic-element',
   template: '<div tdDynamicContainer></div>',
 })
 export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
-                                       implements IControlValueAccessor, OnInit, OnChanges {
-
+  implements IControlValueAccessor, OnInit, OnChanges {
   private _instance: any;
 
   /**
@@ -123,16 +135,19 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
     return this.min;
   }
 
-  constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _dynamicFormsService: TdDynamicFormsService,
-              _changeDetectorRef: ChangeDetectorRef) {
+  constructor(
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _dynamicFormsService: TdDynamicFormsService,
+    _changeDetectorRef: ChangeDetectorRef,
+  ) {
     super(_changeDetectorRef);
   }
 
   ngOnInit(): void {
-    let component: any = <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
-    let ref: ComponentRef<any> = this._componentFactoryResolver.
-      resolveComponentFactory(component)
+    let component: any =
+      <any>this.type instanceof Type ? this.type : this._dynamicFormsService.getDynamicElement(this.type);
+    let ref: ComponentRef<any> = this._componentFactoryResolver
+      .resolveComponentFactory(component)
       .create(this.childElement.viewContainer.injector);
     this.childElement.viewContainer.insert(ref.hostView);
     this._instance = ref.instance;

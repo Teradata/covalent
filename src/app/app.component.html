@@ -1,28 +1,36 @@
-<td-layout #layout
-            [class]="activeTheme"
-            [dir]="dir">
-  <td-navigation-drawer sidenavTitle="Covalent" [logo]="activeTheme === 'theme-dark' ? 'teradata' : 'teradata-dark'" navigationRoute="/" flex color="none">
+<td-layout #layout [class]="activeTheme" [dir]="dir">
+  <td-navigation-drawer
+    sidenavTitle="Covalent"
+    [logo]="activeTheme === 'theme-dark' ? 'teradata' : 'teradata-dark'"
+    navigationRoute="/"
+    flex
+    color="none"
+  >
     <mat-nav-list flex>
-      <a mat-list-item
-          tdLayoutClose
-          [routerLink]="['/']"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{exact:true}">
-          <mat-icon matListIcon>home</mat-icon>
-          Home
+      <a
+        mat-list-item
+        tdLayoutClose
+        [routerLink]="['/']"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon matListIcon>home</mat-icon>
+        Home
       </a>
-      <a *ngFor="let item of routes" 
-          mat-list-item
-           tdLayoutClose
-          [routerLink]="[item.route]"
-          [routerLinkActive]="['active']">
-          <mat-icon matListIcon>{{item.icon}}</mat-icon>
-          {{item.title}}
+      <a
+        *ngFor="let item of routes"
+        mat-list-item
+        tdLayoutClose
+        [routerLink]="[item.route]"
+        [routerLinkActive]="['active']"
+      >
+        <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+        {{ item.title }}
       </a>
     </mat-nav-list>
   </td-navigation-drawer>
   <div td-sidenav-content class="td-layout-footer pad">
-    <span class="mat-caption tc-grey-500">&copy;{{year}} Teradata. All Rights Reserved</span>
+    <span class="mat-caption tc-grey-500">&copy;{{ year }} Teradata. All Rights Reserved</span>
   </div>
   <router-outlet></router-outlet>
 </td-layout>

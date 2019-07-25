@@ -1,29 +1,19 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentFileModule, TdFileDropDirective } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Directive: FileDrop', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdFileDropBasicTestComponent,
-      ],
-      imports: [
-        CovalentFileModule,
-      ],
+      declarations: [TdFileDropBasicTestComponent],
+      imports: [CovalentFileModule],
     });
     TestBed.compileComponents();
   }));
 
-  it('should add/remove class on dragenter and dragleave',
-    async(inject([], () => {
+  it('should add/remove class on dragenter and dragleave', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -41,10 +31,11 @@ describe('Directive: FileDrop', () => {
           });
         });
       });
-  })));
+    }),
+  ));
 
-  it('should disable element and not add class on dragenter',
-    async(inject([], () => {
+  it('should disable element and not add class on dragenter', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.disabled = true;
@@ -57,10 +48,11 @@ describe('Directive: FileDrop', () => {
           expect(directive.classes['drop-zone']).toBeFalsy();
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw dragover event and add copy dropEffect for a single file',
-    async(inject([], () => {
+  it('should throw dragover event and add copy dropEffect for a single file', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -79,10 +71,11 @@ describe('Directive: FileDrop', () => {
           expect(event.dataTransfer.dropEffect).toBe('copy');
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw dragover event and not add copy dropEffect for a multiple file',
-    async(inject([], () => {
+  it('should throw dragover event and not add copy dropEffect for a multiple file', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -101,10 +94,11 @@ describe('Directive: FileDrop', () => {
           expect(event.dataTransfer.dropEffect).toBe('none');
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw dragover event and add copy dropEffect for a multiple file',
-    async(inject([], () => {
+  it('should throw dragover event and add copy dropEffect for a multiple file', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = true;
@@ -123,10 +117,11 @@ describe('Directive: FileDrop', () => {
           expect(event.dataTransfer.dropEffect).toBe('copy');
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw dragover event and not add copy dropEffect on disabled state',
-    async(inject([], () => {
+  it('should throw dragover event and not add copy dropEffect on disabled state', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -146,10 +141,11 @@ describe('Directive: FileDrop', () => {
           expect(event.dataTransfer.dropEffect).toBe('none');
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw ondrop event for a single file',
-    async(inject([], () => {
+  it('should throw ondrop event for a single file', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -167,10 +163,11 @@ describe('Directive: FileDrop', () => {
           expect(component.files).toBeTruthy();
         });
       });
-  })));
+    }),
+  ));
 
-  it('should throw ondrop event for a multiple files',
-    async(inject([], () => {
+  it('should throw ondrop event for a multiple files', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = true;
@@ -188,10 +185,11 @@ describe('Directive: FileDrop', () => {
           expect((<FileList>component.files).length).toBe(2);
         });
       });
-  })));
+    }),
+  ));
 
-  it('should not throw ondrop event for disabled state',
-    async(inject([], () => {
+  it('should not throw ondrop event for disabled state', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileDropBasicTestComponent);
       let component: TdFileDropBasicTestComponent = fixture.debugElement.componentInstance;
       component.disabled = true;
@@ -209,19 +207,14 @@ describe('Directive: FileDrop', () => {
           expect(component.files).toBeFalsy();
         });
       });
-  })));
-
+    }),
+  ));
 });
 
 @Component({
   selector: 'td-file-drop-basic-test',
   template: `
-  <div tdFileDrop
-       [multiple]="multiple"
-       [disabled]="disabled"
-       (fileDrop)="files = $event">
-
-  </div>
+    <div tdFileDrop [multiple]="multiple" [disabled]="disabled" (fileDrop)="files = $event"></div>
   `,
 })
 class TdFileDropBasicTestComponent {

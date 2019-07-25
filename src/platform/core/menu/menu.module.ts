@@ -7,23 +7,11 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { TdMenuComponent } from './menu.component';
 
-const TD_MENU: Type<any>[] = [
-  TdMenuComponent,
-];
+const TD_MENU: Type<any>[] = [TdMenuComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatMenuModule,
-    MatDividerModule,
-  ],
-  declarations: [
-    TD_MENU,
-  ],
-  exports: [
-    TD_MENU,
-  ],
+  imports: [CommonModule, MatMenuModule, MatDividerModule],
+  declarations: [TD_MENU],
+  exports: [TD_MENU],
 })
-export class CovalentMenuModule {
-
-}
+export class CovalentMenuModule {}

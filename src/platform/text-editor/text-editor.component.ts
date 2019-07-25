@@ -16,15 +16,16 @@ const noop: any = () => {
 @Component({
   selector: 'td-text-editor',
   templateUrl: './text-editor.component.html',
-  styleUrls: [ './text-editor.component.scss' ],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TdTextEditorComponent),
-    multi: true,
-  }],
+  styleUrls: ['./text-editor.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TdTextEditorComponent),
+      multi: true,
+    },
+  ],
 })
 export class TdTextEditorComponent implements AfterViewInit, ControlValueAccessor {
-
   private _value: string = '';
   private _simpleMDE: any;
   private _fromEditor: boolean = false;
@@ -32,10 +33,12 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   @ViewChild('simplemde') textarea: ElementRef;
   @Input() options: any = {};
 
-  constructor(private _elementRef: ElementRef,
-              private _zone: NgZone,
-              private _domSanitizer: DomSanitizer,
-              @Inject(DOCUMENT) private _document: any) {}
+  constructor(
+    private _elementRef: ElementRef,
+    private _zone: NgZone,
+    private _domSanitizer: DomSanitizer,
+    @Inject(DOCUMENT) private _document: any,
+  ) {}
 
   /* tslint:disable-next-line */
   propagateChange = (_: any) => {};
@@ -54,12 +57,12 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       }
       this.propagateChange(this._value);
       this._fromEditor = false;
-      this._zone.run(() => this._value = value);
+      this._zone.run(() => (this._value = value));
     }
   }
 
   get value(): string {
-      return this._value;
+    return this._value;
   }
 
   get simpleMDE(): any {
@@ -70,7 +73,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
    * Implemented as part of ControlValueAccessor.
    */
   writeValue(value: any): void {
-    this.value = (!value) ? '' : value;
+    this.value = !value ? '' : value;
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;

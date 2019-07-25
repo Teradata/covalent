@@ -1,5 +1,16 @@
-import { Component, Directive, Input, ContentChildren, OnInit, OnDestroy, forwardRef, Inject,
-         QueryList, SecurityContext, Optional } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  ContentChildren,
+  OnInit,
+  OnDestroy,
+  forwardRef,
+  Inject,
+  QueryList,
+  SecurityContext,
+  Optional,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { MatDrawerToggleResult } from '@angular/material/sidenav';
@@ -13,25 +24,20 @@ import { tdCollapseAnimation } from '@covalent/core/common';
 @Directive({
   selector: '[td-navigation-drawer-menu]',
 })
-export class TdNavigationDrawerMenuDirective {
-
-}
+export class TdNavigationDrawerMenuDirective {}
 
 @Directive({
   selector: '[td-navigation-drawer-toolbar]',
 })
-export class TdNavigationDrawerToolbarDirective {
-
-}
+export class TdNavigationDrawerToolbarDirective {}
 
 @Component({
   selector: 'td-navigation-drawer',
-  styleUrls: ['./navigation-drawer.component.scss' ],
+  styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
-  animations: [ tdCollapseAnimation ],
+  animations: [tdCollapseAnimation],
 })
 export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
-
   private _closeSubscription: Subscription;
   private _menuToggled: boolean = false;
   private _backgroundImage: SafeStyle;
@@ -151,9 +157,11 @@ export class TdNavigationDrawerComponent implements OnInit, OnDestroy {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
-              @Optional() private _router: Router,
-              private _sanitize: DomSanitizer) {}
+  constructor(
+    @Inject(forwardRef(() => TdLayoutComponent)) private _layout: TdLayoutComponent,
+    @Optional() private _router: Router,
+    private _sanitize: DomSanitizer,
+  ) {}
 
   ngOnInit(): void {
     this._closeSubscription = this._layout.sidenav.openedChange.subscribe((opened: boolean) => {

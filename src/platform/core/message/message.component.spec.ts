@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -13,26 +8,18 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: Message', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        CovalentMessageModule,
-      ],
-      declarations: [
-        TdMessageBasicTestComponent,
-        TdMessageContentTestComponent,
-        TdMessageOpenedTestComponent,
-      ],
+      imports: [NoopAnimationsModule, CovalentMessageModule],
+      declarations: [TdMessageBasicTestComponent, TdMessageContentTestComponent, TdMessageOpenedTestComponent],
     });
     TestBed.compileComponents();
-  })); 
+  }));
 
   it('should set label, sublabel and color `primary`, `red` and then change to color `accent`', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageBasicTestComponent);
     let component: TdMessageBasicTestComponent = fixture.debugElement.componentInstance;
-    
+
     component.label = 'Label';
     component.sublabel = 'Sublabel';
     component.color = 'primary';
@@ -40,31 +27,54 @@ describe('Component: Message', () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       expect(fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement.textContent).toContain('Label');
-      expect(fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement.textContent).toContain('Sublabel');
-      expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('mat-primary'))
-      .toBeTruthy();
+      expect(fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement.textContent).toContain(
+        'Sublabel',
+      );
+      expect(
+        (<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains(
+          'mat-primary',
+        ),
+      ).toBeTruthy();
       expect(fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance.color).toBe('primary');
       component.color = 'red';
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('mat-primary'))
-        .toBeFalsy();
-        expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('bgc-red-100'))
-        .toBeTruthy();
-        expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('tc-red-700'))
-        .toBeTruthy();
+        expect(
+          (<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains(
+            'mat-primary',
+          ),
+        ).toBeFalsy();
+        expect(
+          (<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains(
+            'bgc-red-100',
+          ),
+        ).toBeTruthy();
+        expect(
+          (<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains(
+            'tc-red-700',
+          ),
+        ).toBeTruthy();
         expect(fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance.color).toBe('red');
         component.color = 'accent';
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           fixture.detectChanges();
-          expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('mat-accent'))
-          .toBeTruthy();
-          expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('bgc-red-100'))
-          .toBeFalsy();
-          expect((<HTMLElement>fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement).classList.contains('tc-red-700'))
-          .toBeFalsy();
+          expect(
+            (<HTMLElement>(
+              fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement
+            )).classList.contains('mat-accent'),
+          ).toBeTruthy();
+          expect(
+            (<HTMLElement>(
+              fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement
+            )).classList.contains('bgc-red-100'),
+          ).toBeFalsy();
+          expect(
+            (<HTMLElement>(
+              fixture.debugElement.query(By.directive(TdMessageComponent)).nativeElement
+            )).classList.contains('tc-red-700'),
+          ).toBeFalsy();
           expect(fixture.debugElement.query(By.directive(TdMessageComponent)).componentInstance.color).toBe('accent');
           done();
         });
@@ -180,7 +190,7 @@ describe('Component: Message', () => {
   it('should render the component, then [opened] to false', (done: DoneFn) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(TdMessageOpenedTestComponent);
     let component: TdMessageOpenedTestComponent = fixture.debugElement.componentInstance;
-    
+
     component.opened = true;
     component.label = 'Label';
     component.color = 'primary';
@@ -224,8 +234,8 @@ describe('Component: Message', () => {
 
 @Component({
   template: `
-    <td-message [label]="label" [sublabel]="sublabel" [color]="color">
-    </td-message>`,
+    <td-message [label]="label" [sublabel]="sublabel" [color]="color"> </td-message>
+  `,
 })
 class TdMessageBasicTestComponent {
   label: string;
@@ -237,7 +247,8 @@ class TdMessageBasicTestComponent {
   template: `
     <td-message [label]="label" [sublabel]="sublabel" [color]="color">
       <button td-message-actions>BUTTON</button>
-    </td-message>`,
+    </td-message>
+  `,
 })
 class TdMessageContentTestComponent {
   label: string = 'Label';
@@ -247,8 +258,8 @@ class TdMessageContentTestComponent {
 
 @Component({
   template: `
-    <td-message [label]="label" [color]="color" [opened]="opened">
-    </td-message>`,
+    <td-message [label]="label" [color]="color" [opened]="opened"> </td-message>
+  `,
 })
 class TdMessageOpenedTestComponent {
   label: string;

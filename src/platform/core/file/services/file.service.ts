@@ -5,13 +5,12 @@ export interface IUploadOptions {
   url: string;
   method: 'post' | 'put';
   file?: File;
-  headers?: {[key: string]: string};
+  headers?: { [key: string]: string };
   formData?: FormData;
 }
 
 @Injectable()
 export class TdFileService {
-
   private _progressSubject: Subject<number> = new Subject<number>();
   private _progressObservable: Observable<number>;
 
@@ -56,7 +55,7 @@ export class TdFileService {
       xhr.upload.onprogress = (event: ProgressEvent) => {
         let progress: number = 0;
         if (event.lengthComputable) {
-          progress = Math.round(event.loaded / event.total * 100);
+          progress = Math.round((event.loaded / event.total) * 100);
         }
         this._progressSubject.next(progress);
       };

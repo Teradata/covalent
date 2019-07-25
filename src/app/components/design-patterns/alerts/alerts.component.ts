@@ -6,12 +6,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   selector: 'design-patterns-alerts',
   styleUrls: ['./alerts.component.scss'],
   templateUrl: './alerts.component.html',
-  animations: [
-    slideInDownAnimation,
-  ],
+  animations: [slideInDownAnimation],
 })
 export class AlertsComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 

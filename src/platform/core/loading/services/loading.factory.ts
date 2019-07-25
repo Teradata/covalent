@@ -1,4 +1,12 @@
-import { Injectable, ComponentFactoryResolver, ChangeDetectorRef, Provider, SkipSelf, Optional, EmbeddedViewRef } from '@angular/core';
+import {
+  Injectable,
+  ComponentFactoryResolver,
+  ChangeDetectorRef,
+  Provider,
+  SkipSelf,
+  Optional,
+  EmbeddedViewRef,
+} from '@angular/core';
 import { Injector, ComponentRef, ViewContainerRef, TemplateRef } from '@angular/core';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
@@ -27,11 +35,11 @@ export interface ILoadingRef {
  */
 @Injectable()
 export class TdLoadingFactory {
-
-  constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _overlay: Overlay,
-              private _injector: Injector) {
-  }
+  constructor(
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _overlay: Overlay,
+    private _injector: Injector,
+  ) {}
 
   /**
    * Uses material `Overlay` services to create a DOM element and attach the loading component
@@ -45,9 +53,7 @@ export class TdLoadingFactory {
     let loadingRef: ILoadingRef = this._initializeContext();
     let loading: boolean = false;
     let overlayRef: OverlayRef;
-    loadingRef.observable.pipe(
-      distinctUntilChanged(),
-    ).subscribe((registered: number) => {
+    loadingRef.observable.pipe(distinctUntilChanged()).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
         overlayRef = this._createOverlay();
@@ -75,8 +81,11 @@ export class TdLoadingFactory {
    *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
-  public createOverlayComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
-                                templateRef: TemplateRef<Object>): ILoadingRef {
+  public createOverlayComponent(
+    options: ITdLoadingConfig,
+    viewContainerRef: ViewContainerRef,
+    templateRef: TemplateRef<Object>,
+  ): ILoadingRef {
     (<IInternalLoadingOptions>options).height = undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.Overlay;
     let loadingRef: ILoadingRef = this._createComponent(options);
@@ -84,9 +93,7 @@ export class TdLoadingFactory {
     loadingRef.componentRef.instance.content = new TemplatePortal(templateRef, viewContainerRef);
     viewContainerRef.clear();
     viewContainerRef.insert(loadingRef.componentRef.hostView, 0);
-    loadingRef.observable.pipe(
-      distinctUntilChanged(),
-    ).subscribe((registered: number) => {
+    loadingRef.observable.pipe(distinctUntilChanged()).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
         loadingRef.componentRef.instance.startInAnimation();
@@ -104,19 +111,22 @@ export class TdLoadingFactory {
    *
    * Saves a reference in context to be called when registering/resolving the loading element.
    */
-  public createReplaceComponent(options: ITdLoadingConfig, viewContainerRef: ViewContainerRef,
-                                templateRef: TemplateRef<Object>, context: TdLoadingContext): ILoadingRef {
+  public createReplaceComponent(
+    options: ITdLoadingConfig,
+    viewContainerRef: ViewContainerRef,
+    templateRef: TemplateRef<Object>,
+    context: TdLoadingContext,
+  ): ILoadingRef {
     let nativeElement: HTMLElement = <HTMLElement>templateRef.elementRef.nativeElement;
-    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling ?
-      nativeElement.nextElementSibling.scrollHeight : undefined;
+    (<IInternalLoadingOptions>options).height = nativeElement.nextElementSibling
+      ? nativeElement.nextElementSibling.scrollHeight
+      : undefined;
     (<IInternalLoadingOptions>options).style = LoadingStyle.None;
     let loadingRef: ILoadingRef = this._createComponent(options);
     let loading: boolean = false;
     // passing context so when the template is attached, we can keep the reference of the variables
     let contentRef: EmbeddedViewRef<Object> = viewContainerRef.createEmbeddedView(templateRef, context);
-    loadingRef.observable.pipe(
-      distinctUntilChanged(),
-    ).subscribe((registered: number) => {
+    loadingRef.observable.pipe(distinctUntilChanged()).subscribe((registered: number) => {
       if (registered > 0 && !loading) {
         loading = true;
         // detach the content and attach the loader if loader is there
@@ -154,7 +164,11 @@ export class TdLoadingFactory {
   private _createOverlay(): OverlayRef {
     let state: OverlayConfig = new OverlayConfig();
     state.hasBackdrop = false;
-    state.positionStrategy = this._overlay.position().global().centerHorizontally().centerVertically();
+    state.positionStrategy = this._overlay
+      .position()
+      .global()
+      .centerHorizontally()
+      .centerVertically();
     return this._overlay.create(state);
   }
 
@@ -164,7 +178,8 @@ export class TdLoadingFactory {
   private _createComponent(options: IInternalLoadingOptions): ILoadingRef {
     let compRef: ILoadingRef = this._initializeContext();
     compRef.componentRef = this._componentFactoryResolver
-    .resolveComponentFactory(TdLoadingComponent).create(this._injector);
+      .resolveComponentFactory(TdLoadingComponent)
+      .create(this._injector);
     this._mapOptions(options, compRef.componentRef.instance);
     return compRef;
   }
@@ -203,7 +218,11 @@ export class TdLoadingFactory {
 }
 
 export function LOADING_FACTORY_PROVIDER_FACTORY(
-    parent: TdLoadingFactory, componentFactoryResolver: ComponentFactoryResolver, overlay: Overlay, injector: Injector): TdLoadingFactory {
+  parent: TdLoadingFactory,
+  componentFactoryResolver: ComponentFactoryResolver,
+  overlay: Overlay,
+  injector: Injector,
+): TdLoadingFactory {
   return parent || new TdLoadingFactory(componentFactoryResolver, overlay, injector);
 }
 

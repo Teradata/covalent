@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'td-prompt-dialog',
   templateUrl: './prompt-dialog.component.html',
-  styleUrls: ['./prompt-dialog.component.scss' ],
+  styleUrls: ['./prompt-dialog.component.scss'],
 })
 export class TdPromptDialogComponent implements AfterViewInit {
   title: string;

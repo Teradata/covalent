@@ -31,9 +31,5 @@
 
 // Represents a typography level from the Material design spec.
 @function td-typography-level($font-size, $line-height: $font-size, $font-weight: 400) {
-  @return (
-    font-size: $font-size,
-    line-height: $line-height,
-    font-weight: $font-weight
-  );
+  @return (font-size: $font-size, line-height: $line-height, font-weight: $font-weight);
 }

@@ -1,29 +1,19 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { CovalentFileModule, TdFileUploadComponent } from '../public-api';
 import { By } from '@angular/platform-browser';
 
 describe('Component: FileUpload', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdFileUploadBasicTestComponent,
-      ],
-      imports: [
-        CovalentFileModule,
-      ],
+      declarations: [TdFileUploadBasicTestComponent],
+      imports: [CovalentFileModule],
     });
     TestBed.compileComponents();
   }));
 
-  it('should render content inside .td-file-input button',
-    async(inject([], () => {
+  it('should render content inside .td-file-input button', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -31,10 +21,11 @@ describe('Component: FileUpload', () => {
       fixture.whenStable().then(() => {
         expect(fixture.debugElement.query(By.css('.td-file-input span'))).toBeTruthy();
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection and then clear it',
-    async(inject([], () => {
+  it('should mimic file selection and then clear it', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -53,15 +44,17 @@ describe('Component: FileUpload', () => {
           fixture.whenStable().then(() => {
             expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value)
-            .toBeUndefined();
+            expect(
+              fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value,
+            ).toBeUndefined();
           });
         });
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection and then clear it by disabling it',
-    async(inject([], () => {
+  it('should mimic file selection and then clear it by disabling it', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -81,14 +74,17 @@ describe('Component: FileUpload', () => {
           fixture.whenStable().then(() => {
             expect(fixture.debugElement.query(By.css('td-file-input'))).toBeTruthy();
             expect(fixture.debugElement.query(By.css('.td-file-upload'))).toBeFalsy();
-            expect(fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value).toBeUndefined();
+            expect(
+              fixture.debugElement.query(By.directive(TdFileUploadComponent)).componentInstance.value,
+            ).toBeUndefined();
           });
         });
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection and then upload it',
-    async(inject([], () => {
+  it('should mimic file selection and then upload it', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
       component.multiple = false;
@@ -110,10 +106,11 @@ describe('Component: FileUpload', () => {
           });
         });
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection and throw (select) event',
-    async(inject([], () => {
+  it('should mimic file selection and throw (select) event', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
@@ -132,10 +129,11 @@ describe('Component: FileUpload', () => {
           expect(eventSpy.calls.count()).toBe(1);
         });
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection, upload click and throw (upload) event',
-    async(inject([], () => {
+  it('should mimic file selection, upload click and throw (upload) event', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
@@ -160,10 +158,11 @@ describe('Component: FileUpload', () => {
           });
         });
       });
-  })));
+    }),
+  ));
 
-  it('should mimic file selection, cancel click and throw (cancel) event',
-    async(inject([], () => {
+  it('should mimic file selection, cancel click and throw (cancel) event', async(
+    inject([], () => {
       let fixture: ComponentFixture<any> = TestBed.createComponent(TdFileUploadBasicTestComponent);
       let component: TdFileUploadBasicTestComponent = fixture.debugElement.componentInstance;
 
@@ -187,20 +186,26 @@ describe('Component: FileUpload', () => {
           });
         });
       });
-  })));
-
+    }),
+  ));
 });
 
 @Component({
   selector: 'td-file-upload-basic-test',
   template: `
-  <td-file-upload #fileUpload [multiple]="multiple" [disabled]="disabled" (select)="selectEvent($event)"
-                  (upload)="uploadEvent($event)" (cancel)="cancelEvent()">
-    <span>{{ fileUpload.value?.name }}</span>
-    <ng-template td-file-input-label>
-      <span>Choose a file...</span>
-    </ng-template>
-  </td-file-upload>
+    <td-file-upload
+      #fileUpload
+      [multiple]="multiple"
+      [disabled]="disabled"
+      (select)="selectEvent($event)"
+      (upload)="uploadEvent($event)"
+      (cancel)="cancelEvent()"
+    >
+      <span>{{ fileUpload.value?.name }}</span>
+      <ng-template td-file-input-label>
+        <span>Choose a file...</span>
+      </ng-template>
+    </td-file-upload>
   `,
 })
 class TdFileUploadBasicTestComponent {

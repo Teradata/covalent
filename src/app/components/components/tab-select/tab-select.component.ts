@@ -11,7 +11,6 @@ import { slideInDownAnimation } from '../../../app.animations';
   preserveWhitespaces: true,
 })
 export class TabSelectDemoComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -24,5 +23,4 @@ export class TabSelectDemoComponent {
     this.disabled = !this.disabled;
     this._changeDetectorRef.markForCheck();
   }
-
 }

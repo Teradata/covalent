@@ -37,7 +37,7 @@ $td-sidesheet-top-padding: 20px !default;
 
 td-sidesheet {
   @extend %layout-column, %layout-fill;
-  
+
   .mat-divider-horizontal {
     position: static !important;
   }
@@ -85,12 +85,14 @@ td-sidesheet {
 // FIRST/LAST CHILD ADJUSTMENTS
 // top els in td-sidesheet-content and td-sidesheet can't have their default margin-tops (e.g. <p> tags)
 // or they'll incorrectly add to card's top padding
-td-sidesheet > :first-child, td-sidesheet-content > :first-child {
+td-sidesheet > :first-child,
+td-sidesheet-content > :first-child {
   margin-top: 0;
 }
 
 // last els in td-sidesheet-content and td-sidesheet can't have their default margin-bottoms (e.g. <p> tags)
 // or they'll incorrectly add to card's bottom padding
-td-sidesheet > :last-child, td-sidesheet-content > :last-child {
+td-sidesheet > :last-child,
+td-sidesheet-content > :last-child {
   margin-bottom: 0;
 }

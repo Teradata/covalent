@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,18 +10,16 @@ describe('Service: Loading', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TdLoadingWrapperTestComponent,
-      ],
-      imports: [
-        NoopAnimationsModule,
-        CovalentLoadingModule,
-      ],
+      declarations: [TdLoadingWrapperTestComponent],
+      imports: [NoopAnimationsModule, CovalentLoadingModule],
       providers: [
-        {provide: OverlayContainer, useFactory: () => {
-          overlayContainerElement = document.createElement('div');
-          return {getContainerElement: () => overlayContainerElement};
-        }},
+        {
+          provide: OverlayContainer,
+          useFactory: () => {
+            overlayContainerElement = document.createElement('div');
+            return { getContainerElement: () => overlayContainerElement };
+          },
+        },
       ],
     });
     TestBed.compileComponents();
@@ -190,9 +183,7 @@ describe('Service: Loading', () => {
 @Component({
   selector: 'td-loading-wrapper-test',
   template: `
-  <div class="content"></div>
+    <div class="content"></div>
   `,
 })
-class TdLoadingWrapperTestComponent {
-
-}
+class TdLoadingWrapperTestComponent {}

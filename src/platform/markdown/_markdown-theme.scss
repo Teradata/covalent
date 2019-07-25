@@ -8,10 +8,14 @@
     a {
       color: mat-color($accent);
     }
-    h1, h2 {
+    h1,
+    h2 {
       border-bottom-color: mat-color($foreground, divider);
     }
-    h3,h4,h5,h6 {
+    h3,
+    h4,
+    h5,
+    h6 {
       color: mat-color($foreground, secondary-text);
     }
     hr {

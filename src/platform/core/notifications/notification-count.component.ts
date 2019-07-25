@@ -1,5 +1,12 @@
-import { Component, Input, HostBinding, ChangeDetectionStrategy,
-         ViewChild, ElementRef, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  HostBinding,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ElementRef,
+  AfterContentInit,
+} from '@angular/core';
 
 export enum TdNotificationCountPositionY {
   Top = 'top',
@@ -17,12 +24,11 @@ export const DEFAULT_NOTIFICATION_LIMIT: number = 99;
 
 @Component({
   selector: 'td-notification-count',
-  styleUrls: ['./notification-count.component.scss' ],
+  styleUrls: ['./notification-count.component.scss'],
   templateUrl: './notification-count.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdNotificationCountComponent implements AfterContentInit {
-
   private _notifications: number | boolean = 0;
   private _positionY: TdNotificationCountPositionY;
   private _positionX: TdNotificationCountPositionX;
@@ -74,10 +80,10 @@ export class TdNotificationCountComponent implements AfterContentInit {
     this._notifications = notifications;
   }
 
-   /**
-    * limit?: number
-    * Limit for notification count. If the number of notifications is greater than limit, then + will be added. Defaults to 99.
-    */
+  /**
+   * limit?: number
+   * Limit for notification count. If the number of notifications is greater than limit, then + will be added. Defaults to 99.
+   */
   @Input()
   set limit(limit: number) {
     this._limit = limit;
@@ -136,5 +142,4 @@ export class TdNotificationCountComponent implements AfterContentInit {
     }
     return false;
   }
-
 }

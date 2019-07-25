@@ -5,6 +5,4 @@ import { Component, HostBinding } from '@angular/core';
   styleUrls: ['./layouts.component.scss'],
   templateUrl: './layouts.component.html',
 })
-export class LayoutsComponent {
-
-}
+export class LayoutsComponent {}

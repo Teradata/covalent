@@ -1,4 +1,14 @@
-import { Component, Input, Output, EventEmitter, Renderer2, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 
 import { TdDataTableSortingOrder } from '../data-table.component';
 
@@ -10,14 +20,13 @@ export interface ITdDataTableSortChangeEvent {
 @Component({
   /* tslint:disable-next-line */
   selector: 'th[td-data-table-column]',
-  styleUrls: ['./data-table-column.component.scss' ],
+  styleUrls: ['./data-table-column.component.scss'],
   templateUrl: './data-table-column.component.html',
 })
 export class TdDataTableColumnComponent {
-
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
-  @ViewChild('columnContent', {read: ElementRef}) _columnContent: ElementRef;
+  @ViewChild('columnContent', { read: ElementRef }) _columnContent: ElementRef;
 
   get projectedWidth(): number {
     if (this._columnContent && this._columnContent.nativeElement) {
@@ -65,8 +74,7 @@ export class TdDataTableColumnComponent {
       throw new Error('[sortOrder] must be empty, ASC or DESC');
     }
 
-    this._sortOrder = sortOrder === 'ASC' ?
-      TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
+    this._sortOrder = sortOrder === 'ASC' ? TdDataTableSortingOrder.Ascending : TdDataTableSortingOrder.Descending;
   }
 
   /**
@@ -74,8 +82,9 @@ export class TdDataTableColumnComponent {
    * Event emitted when the column headers are clicked. [sortable] needs to be enabled.
    * Emits an [ITdDataTableSortChangeEvent] implemented object.
    */
-  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> =
-                        new EventEmitter<ITdDataTableSortChangeEvent>();
+  @Output('sortChange') onSortChange: EventEmitter<ITdDataTableSortChangeEvent> = new EventEmitter<
+    ITdDataTableSortChangeEvent
+  >();
 
   @HostBinding('class.mat-clickable')
   get bindClickable(): boolean {
@@ -107,7 +116,7 @@ export class TdDataTableColumnComponent {
   @HostListener('click')
   handleClick(): void {
     if (this.sortable) {
-      this.onSortChange.emit({name: this.name, order: this._sortOrder});
+      this.onSortChange.emit({ name: this.name, order: this._sortOrder });
     }
   }
 
@@ -118,5 +127,4 @@ export class TdDataTableColumnComponent {
   isDescending(): boolean {
     return this._sortOrder === TdDataTableSortingOrder.Descending;
   }
-
 }

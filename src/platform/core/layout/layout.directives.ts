@@ -6,15 +6,16 @@ import { LayoutToggle } from './layout-toggle.class';
   selector: '[tdLayoutToggle]',
 })
 export class TdLayoutToggleDirective extends LayoutToggle {
-
-  @Input('tdLayoutToggle') 
+  @Input('tdLayoutToggle')
   set tdLayoutToggle(tdLayoutToggle: boolean) {
     this.disabled = !(<any>tdLayoutToggle === '' || tdLayoutToggle);
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
-              renderer: Renderer2,
-              elementRef: ElementRef) {
+  constructor(
+    @Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+    renderer: Renderer2,
+    elementRef: ElementRef,
+  ) {
     super(layout, renderer, elementRef);
   }
 
@@ -27,15 +28,16 @@ export class TdLayoutToggleDirective extends LayoutToggle {
   selector: '[tdLayoutClose]',
 })
 export class TdLayoutCloseDirective extends LayoutToggle {
-  
-  @Input('tdLayoutClose') 
+  @Input('tdLayoutClose')
   set tdLayoutClose(tdLayoutClose: boolean) {
     this.disabled = !(<any>tdLayoutClose === '' || tdLayoutClose);
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
-              renderer: Renderer2,
-              elementRef: ElementRef) {
+  constructor(
+    @Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+    renderer: Renderer2,
+    elementRef: ElementRef,
+  ) {
     super(layout, renderer, elementRef);
   }
 
@@ -48,15 +50,16 @@ export class TdLayoutCloseDirective extends LayoutToggle {
   selector: '[tdLayoutOpen]',
 })
 export class TdLayoutOpenDirective extends LayoutToggle {
-
-  @Input('tdLayoutOpen') 
+  @Input('tdLayoutOpen')
   set tdLayoutClose(tdLayoutOpen: boolean) {
     this.disabled = !(<any>tdLayoutOpen === '' || tdLayoutOpen);
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
-              renderer: Renderer2,
-              elementRef: ElementRef) {
+  constructor(
+    @Optional() @Inject(forwardRef(() => TdLayoutComponent)) layout: TdLayoutComponent,
+    renderer: Renderer2,
+    elementRef: ElementRef,
+  ) {
     super(layout, renderer, elementRef);
   }
 

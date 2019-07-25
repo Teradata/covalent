@@ -14,13 +14,12 @@ export interface ILayoutTogglable {
   close(): Promise<MatDrawerToggleResult>;
 }
 
-export class LayoutToggleBase { }
+export class LayoutToggleBase {}
 
 /* tslint:disable-next-line */
 export const _TdLayoutToggleMixinBase = mixinDisabled(LayoutToggleBase);
 
 export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements AfterViewInit, OnDestroy, ICanDisable {
-
   private _toggleSubs: Subscription;
 
   private _initialized: boolean = false;
@@ -39,9 +38,7 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
     }
   }
 
-  constructor(protected _layout: ILayoutTogglable,
-              private _renderer: Renderer2,
-              private _elementRef: ElementRef) {
+  constructor(protected _layout: ILayoutTogglable, private _renderer: Renderer2, private _elementRef: ElementRef) {
     super();
     // if layout has not been provided
     // show warn message
@@ -103,5 +100,4 @@ export abstract class LayoutToggle extends _TdLayoutToggleMixinBase implements A
     /* tslint:disable-next-line */
     console.warn('Covalent: Parent layout not found for layout toggle directive');
   }
-
 }
