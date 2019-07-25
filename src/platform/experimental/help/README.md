@@ -9,7 +9,6 @@ A component for rendering and navigating through documentation. Supports github 
   + List of IHelpMenuDataItems to be rendered
 + labels?: IHelpComponentLabels
   + Translated labels
-  + Optional
 + toolbarColor?: ThemePalette
   + Color palette for toolbar
 
