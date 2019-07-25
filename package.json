@@ -41,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged --no-restage --bail"
+      "pre-commit": "pretty-quick --staged --no-restage --bail --pattern '**/*.*(ts|js|json|css|scss|yml|html)'"
     }
   },
   "engines": {
