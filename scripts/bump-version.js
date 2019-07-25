@@ -12,14 +12,15 @@ var knownOptions = {
 
 var options = minimist(process.argv.slice(2), knownOptions);
 
-gulp.task('bump-version', function(){
+gulp.task('bump-version', function() {
   if (!options.ver) {
     throw '--ver is required';
   }
-  if(!semver.valid(options.ver)){
+  if (!semver.valid(options.ver)) {
     throw '--ver selected as input is not supported.';
-  };
-  return gulp.src('package.json')
-  .pipe(bump({version: options.ver}))
-  .pipe(gulp.dest('.'));
+  }
+  return gulp
+    .src('package.json')
+    .pipe(bump({ version: options.ver }))
+    .pipe(gulp.dest('.'));
 });

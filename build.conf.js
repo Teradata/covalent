@@ -20,7 +20,7 @@ module.exports = {
     PostNgPackngrCompileStyles: [
       'deploy/platform/core/**/material-icons.scss',
       'deploy/platform/core/**/platform.scss',
-      'deploy/platform/core/**/theming/prebuilt/**/*.scss'
+      'deploy/platform/core/**/theming/prebuilt/**/*.scss',
     ],
     PostNgPackngrAdditionalFiles: [
       '!src/platform/core/**/*.component.scss',
@@ -30,5 +30,5 @@ module.exports = {
       '!src/platform/core/**/*.md',
       'src/platform/**/*.md',
     ],
-  }
+  },
 };
