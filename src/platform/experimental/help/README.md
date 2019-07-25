@@ -9,7 +9,10 @@ A component for rendering and navigating through documentation. Supports github 
   + List of IHelpMenuDataItems to be rendered
 + labels?: IHelpComponentLabels
   + Translated labels
-  * Optional
+  + Optional
++ toolbarColor?: ThemePalette
+  + Color palette for toolbar
+  + Defaults to 'primary'
 
 ## Setup
 
@@ -104,10 +107,18 @@ This is a service that opens a HelpWindowComponent inside a draggable dialog.
 
 #### Methods
 
-+ open: function( items: IHelpMenuDataItem[], config?: MatDialogConfig, labels?: IHelpWindowComponentLabels)
++ open: function(config: IDraggableHelpWindowDialogServiceConfig)
   + Opens a HelpWindowComponent inside a draggable dialog.
 
-
+For reference:
+```typescript
+interface IDraggableHelpWindowDialogServiceConfig {
+  items: IHelpMenuDataItem[];
+  dialogConfig?: MatDialogConfig;
+  labels?: IHelpWindowComponentLabels;
+  toolbarColor?: ThemePalette;
+}
+```
 
 ## Setup
 
@@ -143,7 +154,9 @@ export class SampleComponent{
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 
   ngOnInit(): void {
-    this.ref = this.draggableHelpWindowDialogService.open([{url: 'https://github.com/Teradata/covalent/blob/develop/README.md'}]);
+    this.ref = this.draggableHelpWindowDialogService.open({
+      items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
+    });
     this.ref.afterOpened().subscribe(() => {
 
     });
