@@ -25,13 +25,9 @@ else
   fileDiff=$(git diff --name-only $TRAVIS_BRANCH...HEAD)
 fi
 
-# Check if tests can be skipped
-if [[ ${fileDiff} =~ ^(.*\.md\s*)*$ ]]; then
-  echo "Skipping tests since only markdown files changed."
-  exit 0
-fi
-
-if [ "${MODE}" = "lint" ]; then
+if [ "${MODE}" = "prettier" ]; then
+    npm run prettier:check
+elif [ "${MODE}" = "lint" ]; then
   npm run lint
 elif [ "${MODE}" = "aot" ]; then
   npm run build:docs

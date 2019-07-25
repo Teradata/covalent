@@ -13,13 +13,14 @@ export interface IHttpInterceptorConfig {
 }
 
 export class HttpInterceptorService {
-
   private _requestInterceptors: IHttpInterceptorMapping[] = [];
 
-  constructor(private _http: Http,
-              private _injector: Injector,
-              private _httpInterceptorMatcher: IHttpInterceptorMatcher,
-              requestInterceptorConfigs: IHttpInterceptorConfig[]) {
+  constructor(
+    private _http: Http,
+    private _injector: Injector,
+    private _httpInterceptorMatcher: IHttpInterceptorMatcher,
+    requestInterceptorConfigs: IHttpInterceptorConfig[],
+  ) {
     requestInterceptorConfigs.forEach((config: IHttpInterceptorConfig) => {
       this._requestInterceptors.push({
         interceptor: <IHttpInterceptor>_injector.get(config.interceptor),
@@ -77,17 +78,21 @@ export class HttpInterceptorService {
     if (!requestOptions.url) {
       requestOptions.url = requestUrl;
     }
-    let interceptors: IHttpInterceptor[] = this._requestInterceptors.filter((mapping: IHttpInterceptorMapping) => {
-      return this._httpInterceptorMatcher.matches(requestOptions, mapping);
-    }).map((mapping: IHttpInterceptorMapping) => {
-      return mapping.interceptor;
-    });
+    let interceptors: IHttpInterceptor[] = this._requestInterceptors
+      .filter((mapping: IHttpInterceptorMapping) => {
+        return this._httpInterceptorMatcher.matches(requestOptions, mapping);
+      })
+      .map((mapping: IHttpInterceptorMapping) => {
+        return mapping.interceptor;
+      });
     return this._setupRequest(url, requestOptions, interceptors);
   }
 
-  private _setupRequest(url: string | Request,
-                        requestOptions: RequestOptionsArgs,
-                        interceptors: IHttpInterceptor[]): Observable<Response> {
+  private _setupRequest(
+    url: string | Request,
+    requestOptions: RequestOptionsArgs,
+    interceptors: IHttpInterceptor[],
+  ): Observable<Response> {
     try {
       requestOptions = this._requestResolve(requestOptions, interceptors);
     } catch (e) {
@@ -96,13 +101,15 @@ export class HttpInterceptorService {
       });
     }
     return new Observable<any>((subscriber: Subscriber<any>) => {
-      this._http.request(url, requestOptions)
-      .subscribe((response: Response) => {
-        subscriber.next(this._responseResolve(response, interceptors));
-        subscriber.complete();
-      }, (error: Response) => {
-        subscriber.error(this._responseErrorResolve(error, interceptors));
-      });
+      this._http.request(url, requestOptions).subscribe(
+        (response: Response) => {
+          subscriber.next(this._responseResolve(response, interceptors));
+          subscriber.complete();
+        },
+        (error: Response) => {
+          subscriber.error(this._responseErrorResolve(error, interceptors));
+        },
+      );
     });
   }
 
@@ -143,5 +150,4 @@ export class HttpInterceptorService {
     });
     return error;
   }
-
 }

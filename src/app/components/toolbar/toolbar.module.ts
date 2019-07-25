@@ -22,13 +22,7 @@ import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platfo
     CovalentNotificationsModule,
     RouterModule,
   ],
-  declarations: [
-    ToolbarComponent,
-  ],
-  exports: [
-    ToolbarComponent,
-  ],
+  declarations: [ToolbarComponent],
+  exports: [ToolbarComponent],
 })
-export class ToolbarModule {
-
-}
+export class ToolbarModule {}

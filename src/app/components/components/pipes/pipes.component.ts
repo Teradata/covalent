@@ -4,13 +4,12 @@ import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'pipes-demo',
-  styleUrls: ['./pipes.component.scss' ],
+  styleUrls: ['./pipes.component.scss'],
   templateUrl: './pipes.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
 export class PipesComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -28,7 +27,8 @@ export class PipesComponent {
       expiration_date: '2016-06-17T13:00:02.000Z',
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 5,
-    }, {
+    },
+    {
       bytes: 32452341,
       digits: 3.975086,
       precision: 4,
@@ -38,7 +38,8 @@ export class PipesComponent {
       expiration_date: new Date(new Date(2016, 4, 17).getTime() + 120000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 10,
-    }, {
+    },
+    {
       bytes: 4521903343000,
       digits: 4521,
       reference: new Date(2016, 4, 17).getTime(),
@@ -47,7 +48,8 @@ export class PipesComponent {
       expiration_date: new Date(new Date(2016, 4, 17).getTime() + 7200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 15,
-    }, {
+    },
+    {
       bytes: '5234190486500000',
       digits: '523468.86',
       reference: 'invalid',
@@ -56,7 +58,8 @@ export class PipesComponent {
       expiration_date: new Date(this.currentDate.getTime() + 259200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 20,
-    }, {
+    },
+    {
       bytes: 'Invalid Number',
       digits: 'Invalid Number',
       timestamp: '2016-06-17T12:59:59.000Z',
@@ -64,7 +67,8 @@ export class PipesComponent {
       expiration_date: new Date(this.currentDate.getTime() + 10519200000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 25,
-    }, {
+    },
+    {
       bytes: 3245234190334370000,
       digits: 3245234,
       timestamp: new Date(2016, 4, 17),
@@ -72,7 +76,8 @@ export class PipesComponent {
       expiration_date: new Date(this.currentDate.getTime() + 157788000000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 30,
-    }, {
+    },
+    {
       bytes: 3245234190334324400000,
       digits: 3245234100.6,
       timestamp: new Date(2016, 4, 17).getTime(),
@@ -80,7 +85,8 @@ export class PipesComponent {
       expiration_date: new Date(this.currentDate.getTime() + 20000).toISOString(),
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 35,
-    }, {
+    },
+    {
       bytes: 3245234190334300000000000,
       digits: 3245234190076.9,
       timestamp: 'invalid',
@@ -89,5 +95,5 @@ export class PipesComponent {
       text_value: 'https://test_source_cf433eb5_5a00_4f2b_afa4_4022b7b2aac3',
       truncate_length: 40,
     },
- ];
+  ];
 }

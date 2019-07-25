@@ -2,15 +2,12 @@ import { mixinControlValueAccessor } from './control-value-accesor.mixin';
 import { ChangeDetectorRef } from '@angular/core';
 
 describe('ControlValueAccessorMixin', () => {
-
   it('should augment an existing class with a writeValue property', () => {
     const classWithControlValueAccess: any = mixinControlValueAccessor(TestClass);
     const instance: any = new classWithControlValueAccess();
 
-    expect(instance.value)
-      .toBeUndefined();
-    expect(instance.writeValue)
-      .toBeTruthy();
+    expect(instance.value).toBeUndefined();
+    expect(instance.writeValue).toBeTruthy();
   });
 
   it('should agument and set an initial empty array', () => {
@@ -34,10 +31,10 @@ class TestClass {
     detectChanges: function(): void {
       /* empty */
     },
-    checkNoChanges: function (): void {
+    checkNoChanges: function(): void {
       /* empty */
     },
-    reattach: function (): void {
+    reattach: function(): void {
       /* empty */
     },
   };

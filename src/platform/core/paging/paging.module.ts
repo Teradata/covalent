@@ -8,18 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { TdPagingBarComponent } from './paging-bar.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
-  declarations: [
-    TdPagingBarComponent,
-  ],
-  exports: [
-    TdPagingBarComponent,
-  ],
+  imports: [CommonModule, MatIconModule, MatButtonModule],
+  declarations: [TdPagingBarComponent],
+  exports: [TdPagingBarComponent],
 })
-export class CovalentPagingModule {
-
-}
+export class CovalentPagingModule {}

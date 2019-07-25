@@ -27,8 +27,8 @@ describe('TdDecimalBytesPipe', () => {
     expect(pipe.transform(10000000, undefined)).toEqual('10 MB');
     expect(pipe.transform(10485760, undefined)).toEqual('10.49 MB');
     expect(pipe.transform(10201000, 3)).toEqual('10.201 MB');
-    expect(pipe.transform(3.81861e+10, undefined)).toEqual('38.19 GB');
-    expect(pipe.transform(1.890381861e+14, undefined)).toEqual('189.04 TB');
-    expect(pipe.transform(5.35765e+16, undefined)).toEqual('53.58 PB');
+    expect(pipe.transform(3.81861e10, undefined)).toEqual('38.19 GB');
+    expect(pipe.transform(1.890381861e14, undefined)).toEqual('189.04 TB');
+    expect(pipe.transform(5.35765e16, undefined)).toEqual('53.58 PB');
   });
 });

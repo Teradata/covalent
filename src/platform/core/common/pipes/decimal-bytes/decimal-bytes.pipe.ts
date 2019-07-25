@@ -3,7 +3,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'decimalBytes',
 })
-
 export class TdDecimalBytesPipe implements PipeTransform {
   /* `bytes` needs to be `any` or TypeScript complains
   Tried both `number` and `number | string` */

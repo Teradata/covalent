@@ -13,10 +13,7 @@ import { MainComponent } from './main/main.component';
 import { appRoutes, appRoutingProviders } from './test-bed.routes';
 
 @NgModule({
-  declarations: [
-    TestBedComponent,
-    MainComponent,
-  ],
+  declarations: [TestBedComponent, MainComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -27,11 +24,8 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
     MatToolbarModule,
     appRoutes,
     /** Experimental Modules */
-
   ], // modules needed to run this module
-  providers: [
-    appRoutingProviders,
-  ],
+  providers: [appRoutingProviders],
   bootstrap: [TestBedComponent],
 })
-export class TestBedModule { }
+export class TestBedModule {}

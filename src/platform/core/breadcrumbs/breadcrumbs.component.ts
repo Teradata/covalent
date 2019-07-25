@@ -12,16 +12,8 @@ import {
   Input,
 } from '@angular/core';
 
-import {
-  Subscription,
-  Subject,
-  fromEvent,
-  merge,
-} from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-} from 'rxjs/operators';
+import { Subscription, Subject, fromEvent, merge } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
@@ -36,7 +28,6 @@ import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit, OnDestroy {
-
   private _resizeSubscription: Subscription = Subscription.EMPTY;
   private _widthSubject: Subject<number> = new Subject<number>();
   private _resizing: boolean = false;
@@ -51,18 +42,12 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
    */
   @Input('separatorIcon') separatorIcon: string = 'chevron_right';
 
-  constructor(private _elementRef: ElementRef,
-              private _changeDetectorRef: ChangeDetectorRef) {
-  }
+  constructor(private _elementRef: ElementRef, private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this._resizeSubscription = merge(
-      fromEvent(window, 'resize').pipe(
-        debounceTime(10),
-      ),
-      this._widthSubject.asObservable().pipe(
-        distinctUntilChanged(),
-      ),
+      fromEvent(window, 'resize').pipe(debounceTime(10)),
+      this._widthSubject.asObservable().pipe(distinctUntilChanged()),
     ).subscribe(() => {
       if (!this._resizing) {
         this._resizing = true;
@@ -91,10 +76,10 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
   }
 
   /*
-  * Current width of the element container
-  */
+   * Current width of the element container
+   */
   get nativeElementWidth(): number {
-    let element: HTMLElement = (<HTMLElement>this._elementRef.nativeElement);
+    let element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
     // Need to take into account border, margin and padding that might be around all the crumbs
     let style: CSSStyleDeclaration = window.getComputedStyle(element);
     let borderLeft: number = parseInt(style.borderLeft, 10);
@@ -104,7 +89,15 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
     let paddingLeft: number = parseInt(style.paddingLeft, 10);
     let paddingRight: number = parseInt(style.paddingRight, 10);
 
-    return element.getBoundingClientRect().width - borderLeft - borderRight - marginLeft - marginRight - paddingLeft - paddingRight;
+    return (
+      element.getBoundingClientRect().width -
+      borderLeft -
+      borderRight -
+      marginLeft -
+      marginRight -
+      paddingLeft -
+      paddingRight
+    );
   }
 
   /**
@@ -137,7 +130,7 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
       let breadcrumb: TdBreadcrumbComponent = crumbsArray[i];
       // if crumb exceeds width, then we skip it from the sum and add it into the hiddencrumbs array
       // and hide it
-      if ((crumbWidthSum + breadcrumb.width) > this.nativeElementWidth) {
+      if (crumbWidthSum + breadcrumb.width > this.nativeElementWidth) {
         breadcrumb.displayCrumb = false;
         hiddenCrumbs.push(breadcrumb);
       } else {
@@ -149,5 +142,4 @@ export class TdBreadcrumbsComponent implements OnInit, DoCheck, AfterContentInit
     this.hiddenBreadcrumbs = hiddenCrumbs;
     this._changeDetectorRef.markForCheck();
   }
-
 }

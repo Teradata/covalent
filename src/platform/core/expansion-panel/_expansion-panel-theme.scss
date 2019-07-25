@@ -55,7 +55,8 @@
           color: mat-color($foreground, icon);
         }
         &.mat-disabled {
-          &, & * {
+          &,
+          & * {
             color: mat-color($foreground, disabled);
           }
         }
@@ -66,7 +67,8 @@
     }
     .td-expansion-label,
     .td-expansion-sublabel {
-      &, & * {
+      &,
+      & * {
         vertical-align: middle;
       }
     }

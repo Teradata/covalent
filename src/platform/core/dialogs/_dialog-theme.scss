@@ -25,6 +25,6 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
   .td-dialog-message {
-    color:  mat-color($foreground, secondary-text);
+    color: mat-color($foreground, secondary-text);
   }
 }

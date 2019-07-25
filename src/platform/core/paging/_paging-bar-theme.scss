@@ -18,7 +18,8 @@
   $foreground: map-get($theme, foreground);
 
   td-paging-bar {
-    &, & mat-select .mat-select-value {
+    &,
+    & mat-select .mat-select-value {
       color: mat-color($foreground, secondary-text);
     }
   }

@@ -6,12 +6,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   selector: 'empty-states',
   styleUrls: ['./empty-states.component.scss'],
   templateUrl: './empty-states.component.html',
-  animations: [
-    slideInDownAnimation,
-  ],
+  animations: [slideInDownAnimation],
 })
 export class EmptyStatesComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
