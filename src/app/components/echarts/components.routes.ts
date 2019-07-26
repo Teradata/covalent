@@ -24,11 +24,15 @@ const routes: Routes = [
       },
       {
         path: 'types',
-        loadChildren: () => import('./types/types.module').then((m: any) => m.TypesModule),
+        loadChildren: () =>
+          /* tslint:disable-next-line */
+          import('./types/types.module').then((m: any) => m.TypesModule),
       },
       {
         path: 'atomic',
-        loadChildren: () => import('./atomic/atomic.module').then((m: any) => m.AtomicModule),
+        loadChildren: () =>
+          /* tslint:disable-next-line */
+          import('./atomic/atomic.module').then((m: any) => m.AtomicModule),
       },
     ],
   },

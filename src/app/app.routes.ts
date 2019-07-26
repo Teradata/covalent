@@ -17,38 +17,49 @@ const routes: Routes = [
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: () => import('./components/docs/docs.module').then((m: any) => m.DocsModule),
-  },
-  {
-    // preload: true loads the module immediately
-    path: '',
-    data: { preload: false },
-    loadChildren: () => import('./components/style-guide/style-guide.module').then((m: any) => m.StyleGuideModule),
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/docs/docs.module').then((m) => m.DocsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
     loadChildren: () =>
-      import('./components/design-patterns/design-patterns.module').then((m: any) => m.DesignPatternsModule),
+      /* tslint:disable-next-line */
+      import('./components/style-guide/style-guide.module').then((m) => m.StyleGuideModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: () => import('./components/layouts/layouts.module').then((m: any) => m.LayoutsModule),
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/design-patterns/design-patterns.module').then((m) => m.DesignPatternsModule),
+  },
+  {
+    // preload: true loads the module immediately
+    path: '',
+    data: { preload: false },
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/layouts/layouts.module').then((m) => m.LayoutsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: true },
-    loadChildren: () => import('./components/components/components.module').then((m: any) => m.ComponentsModule),
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/components/components.module').then((m) => m.ComponentsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: () => import('./components/echarts/components.module').then((m: any) => m.ComponentsModule),
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/echarts/components.module').then((m) => m.ComponentsModule),
   },
   {
     path: '**',
