@@ -99,25 +99,11 @@ export function mixinHttp(
   httpInject: Type<HttpClient | TdHttpService> = TdHttpService,
 ): Constructor<any> {
   /**
-   * Internal class used to get an instance of Injector for internal usage plus also
-   * a way to inject services from the constructor of the underlying service
-   * @internal
-   */
-  abstract class HttpInternalClass extends base {
-    constructor(...args: any[]) {
-      super(
-        ...(args && args.length ? args : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())),
-      );
-      this._injector = getInjector();
-      this.buildConfig();
-    }
-    abstract buildConfig(): void;
-  }
-  /**
    * Actuall class being returned with all the hooks for http usage
    * @internal
    */
-  return class extends HttpInternalClass {
+  return class extends base {
+    private _injector: Injector;
     private _baseUrl: string;
     get baseUrl(): string {
       return (typeof this.basePath === 'string' ? this.basePath.replace(/\/$/, '') : '') + this._baseUrl;
@@ -127,6 +113,14 @@ export function mixinHttp(
     private _defaultResponseType?: TdHttpRESTResponseType;
 
     http: HttpClient | TdHttpService;
+
+    constructor() {
+      super(
+        ...(arguments && arguments.length ? arguments : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())),
+      );
+      this._injector = getInjector();
+      this.buildConfig();
+    }
 
     /**
      * Method used to setup the configuration parameters and get an instance of the http service

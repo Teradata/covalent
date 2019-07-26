@@ -1,4 +1,4 @@
-import { Type, Injector } from '@angular/core';
+import { Type, Injector, Injectable } from '@angular/core';
 import { HttpClient, HttpHandler, HttpResponse, HttpRequest, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, Subscriber } from 'rxjs';
@@ -39,6 +39,7 @@ export class TdInterceptorBehaviorService {
   }
 }
 
+@Injectable()
 export class TdHttpService extends HttpClient {
   constructor(private _handler: HttpHandler, private _interceptorBehavior: TdInterceptorBehaviorService) {
     super(_handler);
