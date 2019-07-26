@@ -6,7 +6,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './readme-loader.component.html',
 })
 export class TdReadmeLoaderComponent {
-
   @Input() resourceUrl: string;
-
 }

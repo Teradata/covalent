@@ -3,11 +3,10 @@ import { Input } from '@angular/core';
 
 @Component({
   selector: 'td-layout-card-over',
-  styleUrls: ['./layout-card-over.component.scss' ],
+  styleUrls: ['./layout-card-over.component.scss'],
   templateUrl: './layout-card-over.component.html',
 })
 export class TdLayoutCardOverComponent {
-
   /**
    * cardTitle?: string
    *
@@ -37,5 +36,4 @@ export class TdLayoutCardOverComponent {
    * If [color] is not set, primary is used.
    */
   @Input('color') color: string = 'primary';
-
 }

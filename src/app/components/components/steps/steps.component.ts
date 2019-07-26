@@ -6,75 +6,89 @@ import { StepState, TdMediaService } from '../../../../platform/core';
 
 @Component({
   selector: 'steps-demo',
-  styleUrls: ['./steps.component.scss' ],
+  styleUrls: ['./steps.component.scss'],
   templateUrl: './steps.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
 export class StepsDemoComponent implements OnInit, OnDestroy {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  stepsAttrs: Object[] = [{
-    description: `Method to be executed when [onStepChange] event is emitted.
+  stepsAttrs: Object[] = [
+    {
+      description: `Method to be executed when [onStepChange] event is emitted.
                   Emits an [IStepChangeEvent] implemented object.`,
-    name: 'stepChange?',
-    type: 'function($event)',
-  }, {
-    description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
-    name: 'mode?',
-    type: 'StepMode or ["vertical" | "horizontal"]',
-  }];
+      name: 'stepChange?',
+      type: 'function($event)',
+    },
+    {
+      description: 'Defines if the mode of the [TdStepsComponent].  Defaults to [StepMode.Vertical | "vertical"]',
+      name: 'mode?',
+      type: 'StepMode or ["vertical" | "horizontal"]',
+    },
+  ];
 
-  stepAttrs: Object[] = [{
-    description: 'Sets label of [TdStepComponent] header. Defaults to "Step #"',
-    name: 'label?',
-    type: 'string',
-  }, {
-    description: 'Sets sublabel of [TdStepComponent] header.',
-    name: 'sublabel?',
-    type: 'string',
-  }, {
-    description: 'Toggles [TdStepComponent] between active/deactive.',
-    name: 'active?',
-    type: 'boolean',
-  }, {
-    description: 'Disables icon and header, blocks click event and sets [TdStepComponent] to deactive if "true".',
-    name: 'disabled?',
-    type: 'boolean',
-  }, {
-    description: 'Sets state of [TdStepComponent] depending on value. Defaults to [StepState.None | "none"]',
-    name: 'state?',
-    type: 'StepState or ["none" | "required" | "complete"]',
-  }, {
-    description: ' Whether the ripple effect for this component is disabled',
-    name: 'disableRipple?',
-    type: 'boolean',
-  }, {
-    description: 'Event emitted when [TdStepComponent] is activated.',
-    name: 'activated?',
-    type: 'function()',
-  }, {
-    description: 'Event emitted when [TdStepComponent] is deactivated.',
-    name: 'deactivated?',
-    type: 'function()',
-  }, {
-    description: `Toggle active state of [TdStepComponent]. Retuns "true" if successful, else "false".
+  stepAttrs: Object[] = [
+    {
+      description: 'Sets label of [TdStepComponent] header. Defaults to "Step #"',
+      name: 'label?',
+      type: 'string',
+    },
+    {
+      description: 'Sets sublabel of [TdStepComponent] header.',
+      name: 'sublabel?',
+      type: 'string',
+    },
+    {
+      description: 'Toggles [TdStepComponent] between active/deactive.',
+      name: 'active?',
+      type: 'boolean',
+    },
+    {
+      description: 'Disables icon and header, blocks click event and sets [TdStepComponent] to deactive if "true".',
+      name: 'disabled?',
+      type: 'boolean',
+    },
+    {
+      description: 'Sets state of [TdStepComponent] depending on value. Defaults to [StepState.None | "none"]',
+      name: 'state?',
+      type: 'StepState or ["none" | "required" | "complete"]',
+    },
+    {
+      description: ' Whether the ripple effect for this component is disabled',
+      name: 'disableRipple?',
+      type: 'boolean',
+    },
+    {
+      description: 'Event emitted when [TdStepComponent] is activated.',
+      name: 'activated?',
+      type: 'function()',
+    },
+    {
+      description: 'Event emitted when [TdStepComponent] is deactivated.',
+      name: 'deactivated?',
+      type: 'function()',
+    },
+    {
+      description: `Toggle active state of [TdStepComponent]. Retuns "true" if successful, else "false".
                   Can be accessed by referencing element in local variable.`,
-    name: 'toggle',
-    type: 'function()',
-  }, {
-    description: `Opens [TdStepComponent]. Retuns "true" if successful, else "false".
+      name: 'toggle',
+      type: 'function()',
+    },
+    {
+      description: `Opens [TdStepComponent]. Retuns "true" if successful, else "false".
                   Can be accessed by referencing element in local variable.`,
-    name: 'open',
-    type: 'function()',
-  }, {
-    description: `Closes [TdStepComponent]. Retuns "true" if successful, else "false".
+      name: 'open',
+      type: 'function()',
+    },
+    {
+      description: `Closes [TdStepComponent]. Retuns "true" if successful, else "false".
                   Can be accessed by referencing element in local variable.`,
-    name: 'close',
-    type: 'function()',
-  }];
+      name: 'close',
+      type: 'function()',
+    },
+  ];
 
   querySubscription: Subscription;
   mode: number = 0;
@@ -85,8 +99,7 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
 
-  constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {
-  }
+  constructor(private _mediaService: TdMediaService, private _ngZone: NgZone) {}
 
   ngOnInit(): void {
     this.watchScreen();
@@ -118,11 +131,11 @@ export class StepsDemoComponent implements OnInit, OnDestroy {
   }
 
   toggleRequiredStep2(): void {
-    this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
+    this.stateStep2 = this.stateStep2 === StepState.Required ? StepState.None : StepState.Required;
   }
 
   toggleCompleteStep3(): void {
-    this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
+    this.stateStep3 = this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete;
   }
 
   toggleDisabled(): void {

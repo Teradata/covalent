@@ -1,5 +1,4 @@
 @mixin td-content-utilities() {
-
   md-content,
   [md-content],
   .md-content,
@@ -27,7 +26,7 @@
       -webkit-overflow-scrolling: auto;
     }
   }
-  
+
   // Overall app layout height
   mat-sidenav-container {
     & > md-content,

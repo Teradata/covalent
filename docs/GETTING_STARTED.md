@@ -23,13 +23,14 @@ The new command creates a project with a build system for your Angular app.
 ```bash
 npm install --save @covalent/core
 ## (optional) Additional Covalent Modules installs
-npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms 
+npm install --save @covalent/http @covalent/highlight @covalent/markdown @covalent/dynamic-forms @covalent/echarts
 ```
 
 To test (__only for testing!__) the latest changes from develop, install the nightly build: **(only the core module has a nightly build)**
 
 ```bash
 npm install --save https://github.com/Teradata/covalent-nightly.git
+npm install --save https://github.com/Teradata/covalent-echarts-nightly.git
 ```
 
 ## Import the Covalent Core NgModule
@@ -44,6 +45,7 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 // other imports 
 @NgModule({
   imports: [
@@ -54,6 +56,7 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentBaseEchartsModule,
   ],
   ...
 })
@@ -159,10 +162,8 @@ System.config({
     '@covalent/http': 'npm:@covalent/http/bundles/covalent-http.umd.min.js',
     '@covalent/highlight': 'npm:@covalent/highlight/bundles/covalent-highlight.umd.min.js',
     '@covalent/markdown': 'npm:@covalent/markdown/bundles/covalent-markdown.min.umd.js',
-    '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/bundles/covalent-dynamic-forms.umd.min.js'
+    '@covalent/dynamic-forms': 'npm:@covalent/dynamic-forms/bundles/covalent-dynamic-forms.umd.min.js',
+    '@covalent/echarts/base': 'npm:@covalent/core/bundles/covalent-echarts-base.umd.min.js'
   }
 });
 ```
-
-## Sample Covalent projects
-- [Covalent Quickstart](https://github.com/Teradata/covalent-quickstart)

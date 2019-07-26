@@ -5,21 +5,11 @@ import { CommonModule } from '@angular/common';
 
 import { TdNotificationCountComponent } from './notification-count.component';
 
-const TD_NOTIFICATIONS: Type<any>[] = [
-  TdNotificationCountComponent,
-];
+const TD_NOTIFICATIONS: Type<any>[] = [TdNotificationCountComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    TD_NOTIFICATIONS,
-  ],
-  exports: [
-    TD_NOTIFICATIONS,
-  ],
+  imports: [CommonModule],
+  declarations: [TD_NOTIFICATIONS],
+  exports: [TD_NOTIFICATIONS],
 })
-export class CovalentNotificationsModule {
-
-}
+export class CovalentNotificationsModule {}

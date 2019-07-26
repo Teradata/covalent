@@ -1,15 +1,14 @@
 import { Component, HostBinding, ViewChild } from '@angular/core';
 import { slideInDownAnimation } from '../../../app.animations';
-import { TdCodeEditorComponent } from '@covalent/code-editor';
+import { TdCodeEditorComponent } from '../../../../platform/code-editor';
 
 @Component({
   selector: 'code-editor-demo',
-  styleUrls: [ './code-editor.component.scss' ],
+  styleUrls: ['./code-editor.component.scss'],
   templateUrl: './code-editor.component.html',
   animations: [slideInDownAnimation],
 })
 export class CodeEditorDemoComponent {
-
   @ViewChild('editor') private _tdEditor: TdCodeEditorComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;

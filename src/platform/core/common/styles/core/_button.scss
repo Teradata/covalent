@@ -29,8 +29,8 @@ $mat-icon-border-radius: $mat-fab-border-radius;
   [mat-fab].mat-fab-#{$spot},
   .mat-fab.mat-fab-#{$spot} {
     top: $top;
-    @include rtl(right, $right,$left);
-    @include rtl(left, $left,$right);
+    @include rtl(right, $right, $left);
+    @include rtl(left, $left, $right);
     bottom: $bottom;
     position: absolute;
     &.fixed {

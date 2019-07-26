@@ -7,18 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { TdJsonFormatterComponent } from './json-formatter.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTooltipModule,
-    MatIconModule,
-  ],
-  declarations: [
-    TdJsonFormatterComponent,
-  ],
-  exports: [
-    TdJsonFormatterComponent,
-  ],
+  imports: [CommonModule, MatTooltipModule, MatIconModule],
+  declarations: [TdJsonFormatterComponent],
+  exports: [TdJsonFormatterComponent],
 })
-export class CovalentJsonFormatterModule {
-
-}
+export class CovalentJsonFormatterModule {}

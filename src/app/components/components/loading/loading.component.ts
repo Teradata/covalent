@@ -9,20 +9,20 @@ import { TdLoadingService, ITdLoadingConfig, LoadingType, LoadingMode } from '..
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'loading-demo',
-  styleUrls: ['./loading.component.scss' ],
+  styleUrls: ['./loading.component.scss'],
   templateUrl: './loading.component.html',
   animations: [slideInDownAnimation],
   preserveWhitespaces: true,
 })
 export class LoadingDemoComponent implements OnInit {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   itemList: any[] = [
-    {label: 'Light', value: true},
-    {label: 'Console', value: false},
-    {label: 'T.V.', value: true}];
+    { label: 'Light', value: true },
+    { label: 'Console', value: false },
+    { label: 'T.V.', value: true },
+  ];
 
   loading: boolean = false;
   listObservable: Observable<any[]>;

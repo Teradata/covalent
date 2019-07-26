@@ -5,11 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { componentsRoutes } from './components.routes';
 
 import { ComponentsComponent } from './components.component';
-import { ComponentsOverviewComponent }  from './overview/overview.component';
+import { ComponentsOverviewComponent } from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
-import { NavStepsDemoComponent, NavStepsRoute1DemoComponent,
-          NavStepsRoute3DemoComponent, NavStepsRoute4DemoComponent } from './nav-steps/nav-steps.component';
+import {
+  NavStepsDemoComponent,
+  NavStepsRoute1DemoComponent,
+  NavStepsRoute3DemoComponent,
+  NavStepsRoute4DemoComponent,
+} from './nav-steps/nav-steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
 import { FileInputDemoComponent } from './file-input/file-input.component';
 import { FileUploadDemoComponent } from './file-upload/file-upload.component';
@@ -35,6 +39,7 @@ import { TextEditorDemoComponent } from './text-editor/text-editor.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
+import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 
 // External Dependencies
@@ -60,18 +65,35 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
-import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
-         CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-         CovalentBreadcrumbsModule, CovalentMessageModule, CovalentVirtualScrollModule,
-         CovalentTabSelectModule } from '../../../platform/core';
+import {
+  CovalentCommonModule,
+  CovalentLayoutModule,
+  CovalentMediaModule,
+  CovalentExpansionPanelModule,
+  CovalentFileModule,
+  CovalentStepsModule,
+  CovalentLoadingModule,
+  CovalentDialogsModule,
+  CovalentSearchModule,
+  CovalentPagingModule,
+  CovalentNotificationsModule,
+  CovalentMenuModule,
+  CovalentChipsModule,
+  CovalentDataTableModule,
+  CovalentJsonFormatterModule,
+  CovalentBreadcrumbsModule,
+  CovalentMessageModule,
+  CovalentVirtualScrollModule,
+  CovalentTabSelectModule,
+} from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 import { CovalentMarkdownModule } from '../../../platform/markdown';
 import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
 import { CovalentFlavoredMarkdownModule } from '../../../platform/flavored-markdown';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
-import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { CovalentCodeEditorModule } from '../../../platform/code-editor';
+import { CovalentTextEditorModule } from '../../../platform/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 
@@ -80,6 +102,7 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component';
 import { HelpDemoComponent } from './help/help.component';
 import { CovalentHelpModule } from '@covalent/experimental/help';
+import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
 
 @NgModule({
   declarations: [
@@ -117,6 +140,7 @@ import { CovalentHelpModule } from '@covalent/experimental/help';
     FlavoredMarkdownDemoComponent,
     TabSelectDemoComponent,
     HelpDemoComponent,
+    SidesheetDemoComponent,
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
@@ -147,6 +171,7 @@ import { CovalentHelpModule } from '@covalent/experimental/help';
     MatNativeDateModule,
     MatDividerModule,
     MatRadioModule,
+    MatSidenavModule,
     /** Covalent Modules */
     CovalentCommonModule,
     CovalentLayoutModule,
@@ -172,6 +197,7 @@ import { CovalentHelpModule } from '@covalent/experimental/help';
     CovalentTextEditorModule,
     CovalentBreadcrumbsModule,
     CovalentFlavoredMarkdownModule,
+    CovalentSidesheetModule,
     DocumentationToolsModule,
     CovalentTabSelectModule,
     CovalentHelpModule,
@@ -179,8 +205,6 @@ import { CovalentHelpModule } from '@covalent/experimental/help';
     componentsRoutes,
     ToolbarModule,
   ],
-  entryComponents: [
-    TdTestDynamicComponent,
-  ],
+  entryComponents: [TdTestDynamicComponent],
 })
 export class ComponentsModule {}

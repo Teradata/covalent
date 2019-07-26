@@ -1,23 +1,19 @@
 import { getFileContent } from '@schematics/angular/utility/test';
 import { Tree } from '@angular-devkit/schematics';
 import { covalentCoreVersion, materialVersion } from './version-names';
-import {
-  SchematicTestRunner,
-  UnitTestTree,
-} from '@angular-devkit/schematics/testing';
+import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
 
 const collectionPath: string = require.resolve('../collection.json');
 
 describe('ng-add schematic', () => {
-
   const testRunner: SchematicTestRunner = new SchematicTestRunner('rocket', collectionPath);
 
   const workspaceOptions: WorkspaceOptions = {
-      name: 'workspace',
-      newProjectRoot: 'projects',
-      version: '6.0.0',
+    name: 'workspace',
+    newProjectRoot: 'projects',
+    version: '6.0.0',
   };
 
   const appOptions: ApplicationOptions = {
@@ -27,13 +23,23 @@ describe('ng-add schematic', () => {
   let appTree: UnitTestTree;
 
   beforeEach(() => {
-    let workspaceTree: UnitTestTree = testRunner.runExternalSchematic('@schematics/angular', 'workspace', workspaceOptions);
+    let workspaceTree: UnitTestTree = testRunner.runExternalSchematic(
+      '@schematics/angular',
+      'workspace',
+      workspaceOptions,
+    );
     appTree = testRunner.runExternalSchematic('@schematics/angular', 'application', appOptions, workspaceTree);
   });
 
   it('should update package.json', () => {
-    const dependencyOptions: any = {'dynamicForms': true, 'http': true, 'highlight': false, 'markdown': true, 'flavoredMarkdown': true};
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions,  appTree);
+    const dependencyOptions: any = {
+      dynamicForms: true,
+      http: true,
+      highlight: false,
+      markdown: true,
+      flavoredMarkdown: true,
+    };
+    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
 
@@ -60,7 +66,7 @@ describe('ng-add schematic', () => {
   });
 
   it('should import component themes to theme.scss if selected', () => {
-    const dependencyOptions: any = {'highlight': true, 'markdown': true, 'flavoredMarkdown': true};
+    const dependencyOptions: any = { highlight: true, markdown: true, flavoredMarkdown: true };
     const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).toContain('covalent-markdown-theme');
@@ -69,7 +75,7 @@ describe('ng-add schematic', () => {
   });
 
   it('should not import component themes to theme.scss if not selected', () => {
-    const dependencyOptions: any = {'highlight': false, 'markdown': false, 'flavoredMarkdown': false};
+    const dependencyOptions: any = { highlight: false, markdown: false, flavoredMarkdown: false };
     const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).not.toContain('covalent-markdown-theme');
@@ -78,7 +84,7 @@ describe('ng-add schematic', () => {
   });
 
   it('should include sass mixins to theme.scss if selected', () => {
-    const dependencyOptions: any = {'styleSheetUtilities': true, 'styleSheetFlexLayout': true, 'styleSheetColors': true};
+    const dependencyOptions: any = { styleSheetUtilities: true, styleSheetFlexLayout: true, styleSheetColors: true };
     const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).toContain('covalent-utilities');
@@ -87,7 +93,7 @@ describe('ng-add schematic', () => {
   });
 
   it('should not include sass mixins to theme.scss if selected', () => {
-    const dependencyOptions: any = {'styleSheetUtilities': false, 'styleSheetFlexLayout': false, 'styleSheetColors': false};
+    const dependencyOptions: any = { styleSheetUtilities: false, styleSheetFlexLayout: false, styleSheetColors: false };
     const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).not.toContain('covalent-utilities');
@@ -102,8 +108,9 @@ describe('ng-add schematic', () => {
   });
 
   function expectVersionToBe(dependencies: any, name: string, expectedVersion: string): void {
-    expect(dependencies[name]).toBe(expectedVersion,
-      'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.');
+    expect(dependencies[name]).toBe(
+      expectedVersion,
+      'Expected ' + name + ' package to have ' + `~${expectedVersion}` + ' version.',
+    );
   }
-
 });

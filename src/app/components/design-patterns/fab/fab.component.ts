@@ -6,12 +6,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   selector: 'fab',
   styleUrls: ['./fab.component.scss'],
   templateUrl: './fab.component.html',
-  animations: [
-    slideInDownAnimation,
-  ],
+  animations: [slideInDownAnimation],
 })
 export class FABComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
