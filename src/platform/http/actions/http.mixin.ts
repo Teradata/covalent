@@ -116,7 +116,9 @@ export function mixinHttp(
 
     constructor() {
       super(
-        ...(arguments && arguments.length ? arguments : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())),
+        ...(arguments && arguments.length
+          ? arguments
+          : injectArgs(new ɵReflectionCapabilities().parameters(base), getInjector())),
       );
       this._injector = getInjector();
       this.buildConfig();
