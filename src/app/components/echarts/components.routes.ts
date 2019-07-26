@@ -9,19 +9,24 @@ const routes: Routes = [
   {
     component: ComponentsComponent,
     path: 'echarts',
-    children: [{
+    children: [
+      {
         component: OverviewComponent,
         path: '',
-      }, {
+      },
+      {
         path: 'getting-started',
         component: GettingStartedComponent,
-      }, {
+      },
+      {
         path: 'chart',
         component: ChartComponent,
-      }, {
+      },
+      {
         path: 'types',
         loadChildren: './types/types.module#TypesModule',
-      }, {
+      },
+      {
         path: 'atomic',
         loadChildren: './atomic/atomic.module#AtomicModule',
       },

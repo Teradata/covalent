@@ -10,21 +10,13 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   preserveWhitespaces: true,
 })
 export class TypesCombinationComponent implements OnInit {
-
   themes: string[] = getThemes();
   selectedTheme: string;
 
   config: any = {
     xAxis: [
       {
-        data: [
-          'Electronics',
-          'Toys',
-          'Grocery',
-          'Appliances',
-          'Automotive',
-          'Sports',
-        ],
+        data: ['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports'],
       },
     ],
     yAxis: [
@@ -67,10 +59,7 @@ export class TypesCombinationComponent implements OnInit {
     },
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {}
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   ITdItemStyle,
   ITdSeriesTooltip,
@@ -117,12 +112,14 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
   selector: 'td-chart-series[td-treemap]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesTreemapComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesTreemapComponent),
+    },
+  ],
 })
 export class TdChartSeriesTreemapComponent extends TdSeriesComponent<'treemap'> implements ITdTreemapSeries {
-
   @Input('config') config: any = {};
   @Input('id') id: string;
   @Input('name') name: string;

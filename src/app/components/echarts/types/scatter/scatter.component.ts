@@ -7,10 +7,9 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   templateUrl: './scatter.component.html',
   styleUrls: ['./scatter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces:  true,
+  preserveWhitespaces: true,
 })
 export class TypesScatterComponent implements OnInit {
-
   themes: string[] = getThemes();
   selectedTheme: string;
 
@@ -22,8 +21,8 @@ export class TypesScatterComponent implements OnInit {
       right: 10,
       data: ['1990', '2015'],
     },
-    xAxis: [{show: true}],
-    yAxis: [{show: true}],
+    xAxis: [{ show: true }],
+    yAxis: [{ show: true }],
     series: [
       {
         name: '1990',
@@ -53,12 +52,12 @@ export class TypesScatterComponent implements OnInit {
           opacity: 0.75,
           color: '#007373',
         },
-        symbolSize: function (data: number[]): number {
+        symbolSize: function(data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
         },
         label: {
           show: true,
-          formatter: function (param: any): any {
+          formatter: function(param: any): any {
             return param.data[3];
           },
           position: 'top',
@@ -92,12 +91,12 @@ export class TypesScatterComponent implements OnInit {
           opacity: 0.75,
           color: '#1B98C6',
         },
-        symbolSize: function (data: number[]): number {
+        symbolSize: function(data: number[]): number {
           return Math.sqrt(data[2]) / 5e2;
         },
         label: {
           show: true,
-          formatter: function (param: any): any {
+          formatter: function(param: any): any {
             return param.data[3];
           },
           position: 'top',
@@ -106,10 +105,7 @@ export class TypesScatterComponent implements OnInit {
     ],
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {}
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

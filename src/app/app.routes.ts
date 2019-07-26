@@ -46,7 +46,7 @@ const routes: Routes = [
   {
     // preload: true loads the module immediately
     path: '',
-    data: { preload: true, },
+    data: { preload: true },
     loadChildren: './components/echarts/components.module#ComponentsModule',
   },
   {

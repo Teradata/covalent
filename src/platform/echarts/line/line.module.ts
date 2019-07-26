@@ -5,21 +5,11 @@ import 'echarts/lib/chart/line';
 
 import { TdChartSeriesLineComponent } from './line.component';
 
-export const LINE_MODULE_COMPONENTS: Type<any>[] = [
-  TdChartSeriesLineComponent,
-];
+export const LINE_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesLineComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    LINE_MODULE_COMPONENTS,
-  ],
-  exports: [
-    LINE_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [LINE_MODULE_COMPONENTS],
+  exports: [LINE_MODULE_COMPONENTS],
 })
-export class CovalentLineEchartsModule {
-
-}
+export class CovalentLineEchartsModule {}

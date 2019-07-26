@@ -28,8 +28,7 @@ export class TdTooltipContext {
 @Directive({
   selector: 'ng-template[tdTooltipFormatter]',
 })
-export class TdChartTooltipFormatterDirective {
-}
+export class TdChartTooltipFormatterDirective {}
 
 @Component({
   selector: 'td-chart-tooltip',
@@ -37,7 +36,6 @@ export class TdChartTooltipFormatterDirective {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartTooltipComponent implements OnChanges, OnDestroy {
-
   private _state: any = {};
 
   _context: TdTooltipContext = new TdTooltipContext();
@@ -45,7 +43,7 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   @Input('config') config: any = {};
 
   @Input('show') show: boolean = true;
-  @Input('trigger') trigger: TdTooltipTrigger =  'axis';
+  @Input('trigger') trigger: TdTooltipTrigger = 'axis';
   @Input('axisPointer') axisPointer: any;
   @Input('showContent') showContent: boolean = true;
   @Input('alwaysShowContent') alwaysShowContent: boolean = false;
@@ -62,18 +60,20 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   @Input('borderColor') borderColor: string = '#333'; // series
   @Input('borderWidth') borderWidth: number = 0; // series
   @Input('padding') padding: number = 5; // series
-  @Input('textStyle') textStyle: any = { // series
+  @Input('textStyle') textStyle: any = {
+    // series
     color: '#FFF',
   };
   @Input('extraCssText') extraCssText: string; // series
 
-  @ContentChild(TdChartTooltipFormatterDirective, {read: TemplateRef}) formatterTemplate: TemplateRef<any>;
+  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef }) formatterTemplate: TemplateRef<any>;
   @ViewChild('tooltipContent') fullTemplate: TemplateRef<any>;
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef,
-              private _optionsService: TdChartOptionsService) {
-  }
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _elementRef: ElementRef,
+    private _optionsService: TdChartOptionsService,
+  ) {}
 
   ngOnChanges(): void {
     this._setOptions();
@@ -84,27 +84,31 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, {
-      show: this.show,
-      trigger: this.trigger,
-      axisPointer: this.axisPointer,
-      showContent: this.showContent,
-      alwaysShowContent: this.alwaysShowContent,
-      triggerOn: this.triggerOn,
-      showDelay: this.showDelay,
-      hideDelay: this.hideDelay,
-      enterable: this.enterable,
-      confine: this.confine,
-      transitionDuration: this.transitionDuration,
-      position: this.position,
-      formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
-      backgroundColor: this.backgroundColor,
-      borderColor: this.borderColor,
-      borderWidth: this.borderWidth,
-      padding: this.padding,
-      textStyle: this.textStyle,
-      extraCssText: this.extraCssText,
-    }, this.config ? this.config : {});
+    let config: any = assignDefined(
+      this._state,
+      {
+        show: this.show,
+        trigger: this.trigger,
+        axisPointer: this.axisPointer,
+        showContent: this.showContent,
+        alwaysShowContent: this.alwaysShowContent,
+        triggerOn: this.triggerOn,
+        showDelay: this.showDelay,
+        hideDelay: this.hideDelay,
+        enterable: this.enterable,
+        confine: this.confine,
+        transitionDuration: this.transitionDuration,
+        position: this.position,
+        formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
+        backgroundColor: this.backgroundColor,
+        borderColor: this.borderColor,
+        borderWidth: this.borderWidth,
+        padding: this.padding,
+        textStyle: this.textStyle,
+        extraCssText: this.extraCssText,
+      },
+      this.config ? this.config : {},
+    );
     // set tooltip configuration in parent chart and render new configurations
     this._optionsService.setOption('tooltip', config);
   }
@@ -128,5 +132,4 @@ export class TdChartTooltipComponent implements OnChanges, OnDestroy {
       return (<HTMLElement>this._elementRef.nativeElement).innerHTML;
     };
   }
-
 }

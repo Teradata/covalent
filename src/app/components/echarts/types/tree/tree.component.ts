@@ -11,7 +11,6 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   preserveWhitespaces: true,
 })
 export class TypesTreeComponent implements OnInit {
-  
   themes: string[] = getThemes();
   selectedTheme: string;
 
@@ -221,10 +220,7 @@ export class TypesTreeComponent implements OnInit {
             { name: 'Geometry', value: 10993 },
             {
               name: 'heap',
-              children: [
-                { name: 'FibonacciHeap', value: 9354 },
-                { name: 'HeapNode', value: 1233 },
-              ],
+              children: [{ name: 'FibonacciHeap', value: 9354 }, { name: 'HeapNode', value: 1233 }],
             },
             { name: 'IEvaluable', value: 335 },
             { name: 'IPredicate', value: 383 },
@@ -435,10 +431,7 @@ export class TypesTreeComponent implements OnInit {
     ],
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {
     echarts.util.each(this.data[0].children, (datum: any, index: number) => {
       return index % 2 === 0 && (datum.collapsed = true);
     });

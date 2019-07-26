@@ -25,11 +25,6 @@ import { AtomicDatasetComponent } from './dataset/dataset.component';
     DocumentationToolsModule,
     moduleRoutes,
   ],
-  declarations: [
-    AtomicTooltipComponent,
-    AtomicAxisComponent,
-    AtomicToolboxComponent,
-    AtomicDatasetComponent,
-  ],
+  declarations: [AtomicTooltipComponent, AtomicAxisComponent, AtomicToolboxComponent, AtomicDatasetComponent],
 })
 export class AtomicModule {}

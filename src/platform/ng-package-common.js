@@ -31,14 +31,14 @@ module.exports = {
       '@covalent/code-editor': 'covalent.code-editor',
       '@covalent/text-editor': 'covalent.text-editor',
 
-      "@covalent/echarts": "covalent.echarts",
-      "@covalent/echarts/base": "covalent.echarts.base",
-      "@covalent/echarts/bar": "covalent.echarts.bar",
-      "@covalent/echarts/line": "covalent.echarts.line",
-      "@covalent/echarts/scatter": "covalent.echarts.scatter",
-      "@covalent/echarts/tooltip": "covalent.echarts.tooltip",
+      '@covalent/echarts': 'covalent.echarts',
+      '@covalent/echarts/base': 'covalent.echarts.base',
+      '@covalent/echarts/bar': 'covalent.echarts.bar',
+      '@covalent/echarts/line': 'covalent.echarts.line',
+      '@covalent/echarts/scatter': 'covalent.echarts.scatter',
+      '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
-      "@covalent/experimental": "covalent.experimental"
+      '@covalent/experimental': 'covalent.experimental',
     },
   },
   whitelistedNonPeerDependencies: ['.'],

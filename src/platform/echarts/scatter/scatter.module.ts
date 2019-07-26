@@ -5,19 +5,11 @@ import 'echarts/lib/chart/scatter';
 
 import { TdChartSeriesScatterComponent } from './scatter.component';
 
-export const SCATTER_MODULE_COMPONENTS: Type<any>[] = [
-  TdChartSeriesScatterComponent,
-];
+export const SCATTER_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesScatterComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    SCATTER_MODULE_COMPONENTS,
-  ],
-  exports: [
-    SCATTER_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [SCATTER_MODULE_COMPONENTS],
+  exports: [SCATTER_MODULE_COMPONENTS],
 })
-export class CovalentScatterEchartsModule { }
+export class CovalentScatterEchartsModule {}

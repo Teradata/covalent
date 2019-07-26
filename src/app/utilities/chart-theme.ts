@@ -3,9 +3,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
 
 import { getThemes } from '@covalent/echarts/base';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class ChartThemeSelectorService {
-
   selected: string = getThemes()[0];
 
   selectedSubject: BehaviorSubject<string> = new BehaviorSubject<string>(this.selected);
@@ -16,5 +15,4 @@ export class ChartThemeSelectorService {
     this.selected = theme;
     this.selectedSubject.next(theme);
   }
-
 }

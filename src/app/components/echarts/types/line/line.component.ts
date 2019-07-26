@@ -44,10 +44,7 @@ export class TypesLineComponent implements OnInit {
           },
           {
             name: new Date(this.today.getTime() + 2 * 24 * 3600 * 1000).toISOString(),
-            value: [
-              new Date(this.today.getTime() + 2 * 24 * 3600 * 1000).toISOString(),
-              100,
-            ],
+            value: [new Date(this.today.getTime() + 2 * 24 * 3600 * 1000).toISOString(), 100],
           },
         ],
       },
@@ -69,10 +66,7 @@ export class TypesLineComponent implements OnInit {
           },
           {
             name: new Date(this.today.getTime() + 3 * 24 * 3600 * 1000).toISOString(),
-            value: [
-              new Date(this.today.getTime() + 3 * 24 * 3600 * 1000).toISOString(),
-              100,
-            ],
+            value: [new Date(this.today.getTime() + 3 * 24 * 3600 * 1000).toISOString(), 100],
           },
         ],
       },
@@ -84,10 +78,7 @@ export class TypesLineComponent implements OnInit {
     },
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {}
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

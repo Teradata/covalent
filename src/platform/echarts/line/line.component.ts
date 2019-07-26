@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   TdCoordinateSystem,
   TdMarkPointSymbol,
@@ -71,12 +66,14 @@ export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
   selector: 'td-chart-series[td-line]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesLineComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesLineComponent),
+    },
+  ],
 })
 export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implements ITdLineSeries {
-
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;
@@ -158,5 +155,4 @@ export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implem
       silent: this.silent,
     };
   }
-
 }

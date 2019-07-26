@@ -186,11 +186,11 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-
     this._checkFormatterTemplate();
 
     let config: any = assignDefined(
-      this._state, {
+      this._state,
+      {
         show: this.show,
         name: this.trigger,
         orient: this.orient,

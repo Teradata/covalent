@@ -18,7 +18,6 @@ import { tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation } from '@c
   animations: [tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation],
 })
 export class ComponentsComponent {
-  
   miniNav: boolean = false;
 
   routes: Object[] = [
@@ -78,7 +77,8 @@ export class ComponentsComponent {
       title: 'Axis',
     },
     {
-      description: 'Toolbox options for refreshing, saving chart as an image, data zoom, data view and on the fly chart types.',
+      description:
+        'Toolbox options for refreshing, saving chart as an image, data zoom, data view and on the fly chart types.',
       icon: 'art_track',
       route: ['atomic', 'toolbox'],
       title: 'Toolbox',
@@ -92,9 +92,7 @@ export class ComponentsComponent {
     },
   ];
 
-  constructor(public media: TdMediaService,
-              private _changeDetectorRef: ChangeDetectorRef) {
-  }
+  constructor(public media: TdMediaService, private _changeDetectorRef: ChangeDetectorRef) {}
 
   toggleMiniNav(): void {
     this.miniNav = !this.miniNav;

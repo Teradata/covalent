@@ -106,10 +106,10 @@ export interface ITdAxisPointer {
 
 export interface ITdXAxisConfig {
   id?: string;
-  show?: boolean ;
-  gridIndex?: number ;
+  show?: boolean;
+  gridIndex?: number;
   position?: TdXAxisPosition;
-  offset?: number ;
+  offset?: number;
   type?: TdAxisType;
   name?: string;
   nameLocation?: TdNameLocation;
@@ -117,7 +117,7 @@ export interface ITdXAxisConfig {
   nameGap?: number;
   nameRotate?: number;
   inverse?: boolean;
-  boundaryGap?: boolean |  any[];
+  boundaryGap?: boolean | any[];
   min?: number | string | Function;
   max?: number | string;
   scale?: boolean;
@@ -141,10 +141,10 @@ export interface ITdXAxisConfig {
 
 export interface ITdYAxisConfig {
   id?: string;
-  show?: boolean ;
-  gridIndex?: number ;
+  show?: boolean;
+  gridIndex?: number;
   position?: TdYAxisPosition;
-  offset?: number ;
+  offset?: number;
   type?: TdAxisType;
   name?: string;
   nameLocation?: TdNameLocation;
@@ -152,7 +152,7 @@ export interface ITdYAxisConfig {
   nameGap?: number;
   nameRotate?: number;
   inverse?: boolean;
-  boundaryGap?: boolean |  any[];
+  boundaryGap?: boolean | any[];
   min?: number | string | Function;
   max?: number | string;
   scale?: boolean;

@@ -5,21 +5,11 @@ import 'echarts/lib/chart/sankey';
 
 import { TdChartSeriesSankeyComponent } from './sankey.component';
 
-export const SANKEY_MODULE_COMPONENTS: Type<any>[] = [
-  TdChartSeriesSankeyComponent,
-];
+export const SANKEY_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesSankeyComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    SANKEY_MODULE_COMPONENTS,
-  ],
-  exports: [
-    SANKEY_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [SANKEY_MODULE_COMPONENTS],
+  exports: [SANKEY_MODULE_COMPONENTS],
 })
-export class CovalentSankeyEchartsModule {
-
-}
+export class CovalentSankeyEchartsModule {}

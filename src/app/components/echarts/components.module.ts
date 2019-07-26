@@ -59,11 +59,6 @@ import { moduleRoutes } from './components.routes';
     DocumentationToolsModule,
     moduleRoutes,
   ],
-  declarations: [
-    ComponentsComponent,
-    OverviewComponent,
-    GettingStartedComponent,
-    ChartComponent,
-  ],
+  declarations: [ComponentsComponent, OverviewComponent, GettingStartedComponent, ChartComponent],
 })
 export class ComponentsModule {}
