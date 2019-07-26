@@ -5,21 +5,11 @@ import 'echarts/lib/chart/bar';
 
 import { TdChartSeriesBarComponent } from './bar.component';
 
-export const BAR_MODULE_COMPONENTS: Type<any>[] = [
-  TdChartSeriesBarComponent,
-];
+export const BAR_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesBarComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    BAR_MODULE_COMPONENTS,
-  ],
-  exports: [
-    BAR_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [BAR_MODULE_COMPONENTS],
+  exports: [BAR_MODULE_COMPONENTS],
 })
-export class CovalentBarEchartsModule {
-
-}
+export class CovalentBarEchartsModule {}

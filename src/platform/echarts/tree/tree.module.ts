@@ -5,21 +5,11 @@ import 'echarts/lib/chart/tree';
 
 import { TdChartSeriesTreeComponent } from './tree.component';
 
-export const TREE_MODULE_COMPONENTS: Type<any>[] = [
-  TdChartSeriesTreeComponent,
-];
+export const TREE_MODULE_COMPONENTS: Type<any>[] = [TdChartSeriesTreeComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    TREE_MODULE_COMPONENTS,
-  ],
-  exports: [
-    TREE_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [TREE_MODULE_COMPONENTS],
+  exports: [TREE_MODULE_COMPONENTS],
 })
-export class CovalentTreeEchartsModule {
-
-}
+export class CovalentTreeEchartsModule {}

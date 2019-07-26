@@ -10,10 +10,9 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   preserveWhitespaces: true,
 })
 export class TypesBarComponent implements OnInit {
-
   themes: string[] = getThemes();
   selectedTheme: string;
-  
+
   // Chart config
   config: any = {
     toolbox: {
@@ -31,19 +30,12 @@ export class TypesBarComponent implements OnInit {
           type: ['line', 'bar', 'stack', 'tiled'],
           title: { line: 'Line', bar: 'Bar', stack: 'Stack', tiled: 'Tiled' },
         },
-        restore: {title: 'Restore'},
+        restore: { title: 'Restore' },
       },
     },
     xAxis: [
       {
-        data: [
-          'Electronics',
-          'Toys',
-          'Grocery',
-          'Appliances',
-          'Automotive',
-          'Sports',
-        ],
+        data: ['Electronics', 'Toys', 'Grocery', 'Appliances', 'Automotive', 'Sports'],
       },
       {
         show: true,
@@ -96,10 +88,7 @@ export class TypesBarComponent implements OnInit {
     },
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {}
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;

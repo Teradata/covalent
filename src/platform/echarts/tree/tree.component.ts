@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   ITdItemStyle,
   ITdSeriesTooltip,
@@ -24,13 +19,13 @@ import {
  *
  */
 
-/** 
+/**
  * LR - from left to right
  * RL - from right to left
  * TB - from top to bottom
  * BT - from bottom to top
  */
-export type TdTreeOrient = 'LR' | 'RL'| 'TB' | 'BT';
+export type TdTreeOrient = 'LR' | 'RL' | 'TB' | 'BT';
 
 export type TdTreeLayout = 'orthogonal' | 'radial';
 
@@ -81,13 +76,14 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
   selector: 'td-chart-series[td-tree]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesTreeComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesTreeComponent),
+    },
+  ],
 })
-
 export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implements ITdTreeSeries {
-
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('left') left: string | number;

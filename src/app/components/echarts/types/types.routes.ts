@@ -9,22 +9,28 @@ import { TypesTreemapComponent } from './treemap/treemap.component';
 import { TypesSankeyComponent } from './sankey/sankey.component';
 import { TypesGraphComponent } from './graph/graph.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
     component: TypesBarComponent,
     path: 'bar',
-  }, {
+  },
+  {
     component: TypesLineComponent,
     path: 'line',
-  }, {
+  },
+  {
     component: TypesCombinationComponent,
     path: 'combination',
-  }, {
+  },
+  {
     component: TypesScatterComponent,
     path: 'scatter',
-  }, {
+  },
+  {
     component: TypesTreeComponent,
     path: 'tree',
-  }, {
+  },
+  {
     component: TypesSankeyComponent,
     path: 'sankey',
   },

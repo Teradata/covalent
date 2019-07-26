@@ -10,7 +10,6 @@ import { ChartThemeSelectorService } from '../../../../utilities/chart-theme';
   preserveWhitespaces: true,
 })
 export class TypesTreemapComponent implements OnInit {
-
   themes: string[] = getThemes();
   selectedTheme: string;
 
@@ -187,10 +186,11 @@ export class TypesTreemapComponent implements OnInit {
             borderColor: '#fff',
           },
         },
-        levels: [{ itemStyle: { normal: { borderWidth: 0, gapWidth: 5 } } }, 
-                 { itemStyle: { normal: { gapWidth: 1 } } },
-                 { colorSaturation: [0.35, 0.5], itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } } },
-                ],
+        levels: [
+          { itemStyle: { normal: { borderWidth: 0, gapWidth: 5 } } },
+          { itemStyle: { normal: { gapWidth: 1 } } },
+          { colorSaturation: [0.35, 0.5], itemStyle: { normal: { gapWidth: 1, borderColorSaturation: 0.6 } } },
+        ],
         label: {
           show: true,
           formatter: '{b}',
@@ -199,10 +199,7 @@ export class TypesTreemapComponent implements OnInit {
     ],
   };
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-    public themeSelector: ChartThemeSelectorService,
-  ) {}
+  constructor(private _cdr: ChangeDetectorRef, public themeSelector: ChartThemeSelectorService) {}
 
   async ngOnInit(): Promise<void> {
     this.selectedTheme = this.themeSelector.selected;
@@ -212,5 +209,4 @@ export class TypesTreemapComponent implements OnInit {
   selectChartTheme(theme: string): void {
     this.themeSelector.select(theme);
   }
-
 }

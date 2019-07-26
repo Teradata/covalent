@@ -28,7 +28,6 @@ import { assignDefined } from './utils';
   providers: [CHART_PROVIDER],
 })
 export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
-
   private _destroy: Subject<boolean> = new Subject<boolean>();
   private _widthSubject: Subject<number> = new Subject<number>();
   private _heightSubject: Subject<number> = new Subject<number>();
@@ -83,10 +82,11 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Output('datazoom') datazoom: EventEmitter<any> = new EventEmitter<any>();
   @Output('restore') restore: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef,
-              private _optionsService: TdChartOptionsService) {
-  }
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _elementRef: ElementRef,
+    private _optionsService: TdChartOptionsService,
+  ) {}
 
   ngAfterViewInit(): void {
     this._initializeChart();
@@ -111,18 +111,32 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   render(): void {
     if (this._instance) {
-      this._instance.setOption(assignDefined(this._state, {
-        grid: {
-          show: true,
-          left: '20',
-          right: '20',
-          bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') ||
-                (this._options.toolbox && typeof this._options.toolbox.bottom  === 'number') ? '40' : '10',
-          top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') ||
-                (this._options.toolbox && typeof this._options.toolbox.top  === 'number') ? '40' : '10',
-          containLabel: true,
-        },
-      }, this._options, this.config ? this.config : {}), true);
+      this._instance.setOption(
+        assignDefined(
+          this._state,
+          {
+            grid: {
+              show: true,
+              left: '20',
+              right: '20',
+              bottom:
+                (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') ||
+                (this._options.toolbox && typeof this._options.toolbox.bottom === 'number')
+                  ? '40'
+                  : '10',
+              top:
+                (this.config.toolbox && typeof this.config.toolbox.top === 'number') ||
+                (this._options.toolbox && typeof this._options.toolbox.top === 'number')
+                  ? '40'
+                  : '10',
+              containLabel: true,
+            },
+          },
+          this._options,
+          this.config ? this.config : {},
+        ),
+        true,
+      );
       this._changeDetectorRef.markForCheck();
     }
   }
@@ -131,82 +145,81 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     this._instance = echarts.init(this._elementRef.nativeElement, this.themeName, {
       renderer: this.renderer,
     });
-    fromEvent(this._instance, 'click').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.chartClick.next(params);
-    });
-    fromEvent(this._instance, 'dblclick').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.chartDblclick.next(params);
-    });
-    fromEvent(this._instance, 'contextmenu').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.chartContextmenu.next(params);
-    });
-    fromEvent(this._instance, 'magictypechanged').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.magicTypeChanged.next(params);
-    });
-    fromEvent(this._instance, 'dataviewchanged').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.dataViewChanged.next(params);
-    });
-    fromEvent(this._instance, 'datazoom').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.datazoom.next(params);
-    });
-    fromEvent(this._instance, 'restore').pipe(
-      takeUntil(this._destroy),
-    ).subscribe((params: any) => {
-      this.restore.next(params);
-    });
+    fromEvent(this._instance, 'click')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.chartClick.next(params);
+      });
+    fromEvent(this._instance, 'dblclick')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.chartDblclick.next(params);
+      });
+    fromEvent(this._instance, 'contextmenu')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.chartContextmenu.next(params);
+      });
+    fromEvent(this._instance, 'magictypechanged')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.magicTypeChanged.next(params);
+      });
+    fromEvent(this._instance, 'dataviewchanged')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.dataViewChanged.next(params);
+      });
+    fromEvent(this._instance, 'datazoom')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.datazoom.next(params);
+      });
+    fromEvent(this._instance, 'restore')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((params: any) => {
+        this.restore.next(params);
+      });
     if (this.group) {
       this._instance.group = this.group;
       echarts.connect(this.group);
       this._changeDetectorRef.markForCheck();
     }
     merge(
-      fromEvent(window, 'resize').pipe(
+      fromEvent(window, 'resize').pipe(debounceTime(100)),
+      this._widthSubject.asObservable().pipe(distinctUntilChanged()),
+      this._heightSubject.asObservable().pipe(distinctUntilChanged()),
+    )
+      .pipe(
+        takeUntil(this._destroy),
         debounceTime(100),
-      ),
-      this._widthSubject.asObservable().pipe(
-        distinctUntilChanged(),
-      ),
-      this._heightSubject.asObservable().pipe(
-        distinctUntilChanged(),
-      ),
-    ).pipe(
-      takeUntil(this._destroy),
-      debounceTime(100),
-    ).subscribe(() => {
-      if (this._instance) {
-        this._instance.resize();
-        this._changeDetectorRef.markForCheck();
-      }
-    });
-    this._optionsService.listen().pipe(
-      tap((options: any) => {
-        assignDefined(this._options, options);
-      }),
-      debounceTime(0),
-      takeUntil(this._destroy),
-    ).subscribe(() => {
-      this.render();
-    });
-    timer(500, 250).pipe(
-      takeUntil(this._destroy),
-    ).subscribe(() => {
-      if (this._elementRef && this._elementRef.nativeElement) {
-        this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
-        this._heightSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height);
-      }
-    });
+      )
+      .subscribe(() => {
+        if (this._instance) {
+          this._instance.resize();
+          this._changeDetectorRef.markForCheck();
+        }
+      });
+    this._optionsService
+      .listen()
+      .pipe(
+        tap((options: any) => {
+          assignDefined(this._options, options);
+        }),
+        debounceTime(0),
+        takeUntil(this._destroy),
+      )
+      .subscribe(() => {
+        this.render();
+      });
+    timer(500, 250)
+      .pipe(takeUntil(this._destroy))
+      .subscribe(() => {
+        if (this._elementRef && this._elementRef.nativeElement) {
+          this._widthSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().width);
+          this._heightSubject.next((<HTMLElement>this._elementRef.nativeElement).getBoundingClientRect().height);
+        }
+      });
   }
 
   private _disposeChart(): void {
@@ -216,5 +229,4 @@ export class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
     this._destroy.next(true);
   }
-
 }

@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   TdCoordinateSystem,
   TdMarkPointSymbol,
@@ -57,17 +52,19 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
   z?: number;
   silent?: boolean;
 }
-  
+
 @Component({
   selector: 'td-chart-series[td-scatter]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesScatterComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesScatterComponent),
+    },
+  ],
 })
 export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> implements ITdScatterSeries {
-
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;

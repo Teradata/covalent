@@ -20,16 +20,8 @@ import 'zrender/lib/svg/svg';
 registerDefaultThemes();
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    BASE_MODULE_COMPONENTS,
-  ],
-  exports: [
-    BASE_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [BASE_MODULE_COMPONENTS],
+  exports: [BASE_MODULE_COMPONENTS],
 })
-export class CovalentBaseEchartsModule {
-
-}
+export class CovalentBaseEchartsModule {}

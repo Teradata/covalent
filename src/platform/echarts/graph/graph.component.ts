@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   TdCoordinateSystem,
   ITdItemStyle,
@@ -55,7 +50,7 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   hoverAnimation?: boolean;
   circular?: object;
   force?: ITdGraphForce;
-  layout?: TdGraphLayout; 
+  layout?: TdGraphLayout;
   nodeScaleRatio?: boolean;
   draggable?: boolean;
   symbol?: TdMarkPointSymbol | string;
@@ -106,57 +101,59 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
   selector: 'td-chart-series[td-graph]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesGraphComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesGraphComponent),
+    },
+  ],
 })
 export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> implements ITdGraphSeries {
-
-@Input('legendHoverLink') legendHoverLink: boolean;
-@Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
-@Input('xAxisIndex') xAxisIndex: number;
-@Input('yAxisIndex') yAxisIndex: number;
-@Input('polarIndex') polarIndex: number;
-@Input('calendarIndex') calendarIndex: number;
-@Input('geoIndex') geoIndex: number;
-@Input('hoverAnimation') hoverAnimation: boolean;
-@Input('circular') circular: object;
-@Input('force') force: ITdGraphForce;
-@Input('layout') layout: TdGraphLayout; 
-@Input('nodeScaleRatio') nodeScaleRatio: boolean;
-@Input('draggable') draggable: boolean;
-@Input('symbol') symbol: TdMarkPointSymbol | string;
-@Input('symbolSize') symbolSize: number | any[] | Function;
-@Input('symbolRotate') symbolRotate: number;
-@Input('symbolKeepAspect') symbolKeepAspect: boolean;
-@Input('symbolOffset') symbolOffset: any[];
-@Input('focusNodeAdjacency') focusNodeAdjacency: boolean;
-@Input('edgeSymbol') edgeSymbol: any[] | string;
-@Input('edgeSymbolSize') edgeSymbolSize: number;
-@Input('cursor') cursor: string;
-@Input('roam') roam: boolean;
-@Input('initialTreeDepth') initialTreeDepth: number;
-@Input('itemStyle') itemStyle: ITdItemStyle;
-@Input('lineStyle') lineStyle: ITdLineStyle;
-@Input('label') label: ITdLabel;
-@Input('edgeLabel') edgeLabel: ITdEdgeLabel;
-@Input('emphasis') emphasis: ITdEmphasis;
-@Input('categories') categories: ITdCategories;
-@Input('nodes') nodes: any[];
-@Input('links') links: any[];
-@Input('edges') edges: any[];
-@Input('markPoint') markPoint: ITdMarkPoint;
-@Input('markLine') markLine: ITdMarkLine;
-@Input('markArea') markArea: ITdMarkArea;
-@Input('zlevel') zlevel: number;
-@Input('z') z: number;
-@Input('silent') silent: boolean;
-@Input('left') left: string | number;
-@Input('top') top: string | number;
-@Input('right') right: string | number;
-@Input('bottom') bottom: string | number;
-@Input('width') width: string | number;
-@Input('height') height: string | number;
+  @Input('legendHoverLink') legendHoverLink: boolean;
+  @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
+  @Input('xAxisIndex') xAxisIndex: number;
+  @Input('yAxisIndex') yAxisIndex: number;
+  @Input('polarIndex') polarIndex: number;
+  @Input('calendarIndex') calendarIndex: number;
+  @Input('geoIndex') geoIndex: number;
+  @Input('hoverAnimation') hoverAnimation: boolean;
+  @Input('circular') circular: object;
+  @Input('force') force: ITdGraphForce;
+  @Input('layout') layout: TdGraphLayout;
+  @Input('nodeScaleRatio') nodeScaleRatio: boolean;
+  @Input('draggable') draggable: boolean;
+  @Input('symbol') symbol: TdMarkPointSymbol | string;
+  @Input('symbolSize') symbolSize: number | any[] | Function;
+  @Input('symbolRotate') symbolRotate: number;
+  @Input('symbolKeepAspect') symbolKeepAspect: boolean;
+  @Input('symbolOffset') symbolOffset: any[];
+  @Input('focusNodeAdjacency') focusNodeAdjacency: boolean;
+  @Input('edgeSymbol') edgeSymbol: any[] | string;
+  @Input('edgeSymbolSize') edgeSymbolSize: number;
+  @Input('cursor') cursor: string;
+  @Input('roam') roam: boolean;
+  @Input('initialTreeDepth') initialTreeDepth: number;
+  @Input('itemStyle') itemStyle: ITdItemStyle;
+  @Input('lineStyle') lineStyle: ITdLineStyle;
+  @Input('label') label: ITdLabel;
+  @Input('edgeLabel') edgeLabel: ITdEdgeLabel;
+  @Input('emphasis') emphasis: ITdEmphasis;
+  @Input('categories') categories: ITdCategories;
+  @Input('nodes') nodes: any[];
+  @Input('links') links: any[];
+  @Input('edges') edges: any[];
+  @Input('markPoint') markPoint: ITdMarkPoint;
+  @Input('markLine') markLine: ITdMarkLine;
+  @Input('markArea') markArea: ITdMarkArea;
+  @Input('zlevel') zlevel: number;
+  @Input('z') z: number;
+  @Input('silent') silent: boolean;
+  @Input('left') left: string | number;
+  @Input('top') top: string | number;
+  @Input('right') right: string | number;
+  @Input('bottom') bottom: string | number;
+  @Input('width') width: string | number;
+  @Input('height') height: string | number;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('graph', _optionsService);
@@ -174,7 +171,7 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
       hoverAnimation: this.hoverAnimation,
       circular: this.circular,
       force: this.force,
-      layout: this.layout, 
+      layout: this.layout,
       nodeScaleRatio: this.nodeScaleRatio,
       draggable: this.draggable,
       symbol: this.symbol,

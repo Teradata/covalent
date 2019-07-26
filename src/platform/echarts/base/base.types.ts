@@ -142,8 +142,21 @@ export type TdTooltipTriggerOn = 'mousemove' | 'click' | 'none' | 'mousemove|cli
 
 export type TdAxisPointerType = 'line' | 'shadow' | 'cross';
 
-export type TdLabelPosition = 'top' | 'left' | 'right' | 'bottom' | 'inside' | 'insideLeft' | 'insideRight' |
-  'insideTop' | 'insideBottom' | 'insideTopLeft' | 'insideBottomLeft' | 'insideTopRight' | 'insideBottomRight' | string[];
+export type TdLabelPosition =
+  | 'top'
+  | 'left'
+  | 'right'
+  | 'bottom'
+  | 'inside'
+  | 'insideLeft'
+  | 'insideRight'
+  | 'insideTop'
+  | 'insideBottom'
+  | 'insideTopLeft'
+  | 'insideBottomLeft'
+  | 'insideTopRight'
+  | 'insideBottomRight'
+  | string[];
 
 export type TdTextPosition = 'left' | 'right' | 'top' | 'bottom';
 
@@ -157,7 +170,7 @@ export type TdAreaOrigin = 'auto' | 'start' | 'end';
 
 export type TdLineLabelPosition = 'middle' | 'start' | 'end';
 
-export type TdTooltipPosition  = 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[] | Function;
+export type TdTooltipPosition = 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[] | Function;
 
 export type TdFontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | number;
 

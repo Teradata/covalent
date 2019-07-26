@@ -1,4 +1,4 @@
-import { 
+import {
   Component,
   Input,
   ContentChild,
@@ -21,7 +21,6 @@ import { TdChartTooltipFormatterDirective, TdTooltipContext } from './tooltip.co
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
-
   private _state: any = {};
 
   _context: TdTooltipContext = new TdTooltipContext();
@@ -40,13 +39,14 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   };
   @Input('extraCssText') extraCssText: string;
 
-  @ContentChild(TdChartTooltipFormatterDirective, {read: TemplateRef}) formatterTemplate: TemplateRef<any>;
+  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef }) formatterTemplate: TemplateRef<any>;
   @ViewChild('tooltipContent') fullTemplate: TemplateRef<any>;
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef,
-              private _seriesComponent: TdSeriesComponent) {
-  }
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _elementRef: ElementRef,
+    private _seriesComponent: TdSeriesComponent,
+  ) {}
 
   ngOnChanges(): void {
     this._setOptions();
@@ -57,20 +57,24 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   }
 
   private _setOptions(): void {
-    let config: any = assignDefined(this._state, {
-      position: this.position,
-      backgroundColor: this.backgroundColor,
-      borderColor: this.borderColor,
-      borderWidth: this.borderWidth,
-      padding: this.padding,
-      textStyle: this.textStyle,
-      extraCssText: this.extraCssText,
-      formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
-    }, this.config ? this.config : {});
+    let config: any = assignDefined(
+      this._state,
+      {
+        position: this.position,
+        backgroundColor: this.backgroundColor,
+        borderColor: this.borderColor,
+        borderWidth: this.borderWidth,
+        padding: this.padding,
+        textStyle: this.textStyle,
+        extraCssText: this.extraCssText,
+        formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
+      },
+      this.config ? this.config : {},
+    );
     // set series tooltip configuration in parent chart and render new configurations
     this._seriesComponent.setStateOption('tooltip', config);
   }
-  
+
   /**
    * Formatter for tooltip
    *
@@ -94,5 +98,4 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   private _removeOption(): void {
     this._seriesComponent.removeStateOption('tooltip');
   }
-
 }

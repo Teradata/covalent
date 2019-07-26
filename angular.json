@@ -504,13 +504,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/platform/echarts/tsconfig.lib.json",
-              "src/platform/echarts/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/platform/echarts/tsconfig.lib.json", "src/platform/echarts/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

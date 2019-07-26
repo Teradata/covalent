@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   TdCoordinateSystem,
   ITdItemStyle,
@@ -57,12 +52,14 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
   selector: 'td-chart-series[td-bar]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesBarComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesBarComponent),
+    },
+  ],
 })
 export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
-
   @Input('coordinateSystem') coordinateSystem: TdCoordinateSystem;
   @Input('xAxisIndex') xAxisIndex: number;
   @Input('yAxisIndex') yAxisIndex: number;

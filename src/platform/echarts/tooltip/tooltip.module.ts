@@ -13,14 +13,8 @@ export const TOOLTIP_MODULE_COMPONENTS: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    TOOLTIP_MODULE_COMPONENTS,
-  ],
-  exports: [
-    TOOLTIP_MODULE_COMPONENTS,
-  ],
+  imports: [CommonModule],
+  declarations: [TOOLTIP_MODULE_COMPONENTS],
+  exports: [TOOLTIP_MODULE_COMPONENTS],
 })
-export class CovalentTooltipEchartsModule { }
+export class CovalentTooltipEchartsModule {}

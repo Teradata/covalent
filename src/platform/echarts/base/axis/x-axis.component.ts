@@ -1,11 +1,7 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  Input,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { TdChartOptionsService } from '../chart-options.service';
-import { TdXAxisPosition  } from './axis.interface';
+import { TdXAxisPosition } from './axis.interface';
 import { TdChartAxisComponent } from './axis.component';
 
 @Component({
@@ -14,11 +10,9 @@ import { TdChartAxisComponent } from './axis.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdChartXAxisComponent extends TdChartAxisComponent {
-
   @Input('position') position: TdXAxisPosition;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('xAxis', _optionsService);
   }
-
 }

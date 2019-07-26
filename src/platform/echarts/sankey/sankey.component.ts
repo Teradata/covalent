@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  forwardRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 
-import { 
+import {
   TdChartOptionsService,
   ITdLabel,
   ITdItemStyle,
@@ -60,12 +55,14 @@ export interface ITdSankeySeries extends ITdSeries<'sankey'> {
   selector: 'td-chart-series[td-sankey]',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
-  }],
+  providers: [
+    {
+      provide: TdSeriesComponent,
+      useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
+    },
+  ],
 })
 export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> implements ITdSankeySeries {
-
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('left') left: string | number;
@@ -119,5 +116,4 @@ export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> im
       silent: this.silent,
     };
   }
-
 }
