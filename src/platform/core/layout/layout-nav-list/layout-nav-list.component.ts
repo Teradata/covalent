@@ -11,7 +11,7 @@ import { ILayoutTogglable } from '../layout-toggle.class';
   templateUrl: './layout-nav-list.component.html',
 })
 export class TdLayoutNavListComponent implements ILayoutTogglable {
-  @ViewChild(MatSidenav) sidenav: MatSidenav;
+  @ViewChild(MatSidenav, { static: true }) sidenav: MatSidenav;
 
   /**
    * toolbarTitle?: string

@@ -226,7 +226,7 @@ export class TdDataTableComponent extends _TdDataTableMixinBase
   private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
   @ContentChildren(TdDataTableTemplateDirective) _templates: QueryList<TdDataTableTemplateDirective>;
 
-  @ViewChild('scrollableDiv') _scrollableDiv: ElementRef;
+  @ViewChild('scrollableDiv', { static: true }) _scrollableDiv: ElementRef;
 
   @ViewChildren('columnElement') _colElements: QueryList<TdDataTableColumnComponent>;
 

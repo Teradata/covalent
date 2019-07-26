@@ -57,7 +57,7 @@ export const _TdSearchBoxMixinBase = mixinControlValueAccessor(TdSearchBoxBase);
 })
 export class TdSearchBoxComponent extends _TdSearchBoxMixinBase implements IControlValueAccessor {
   private _searchVisible: boolean = false;
-  @ViewChild(TdSearchInputComponent) _searchInput: TdSearchInputComponent;
+  @ViewChild(TdSearchInputComponent, { static: true }) _searchInput: TdSearchInputComponent;
 
   get searchVisible(): boolean {
     return this._searchVisible;

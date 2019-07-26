@@ -10,7 +10,7 @@ import { ILayoutTogglable } from './layout-toggle.class';
   templateUrl: './layout.component.html',
 })
 export class TdLayoutComponent implements ILayoutTogglable {
-  @ViewChild(MatSidenav) sidenav: MatSidenav;
+  @ViewChild(MatSidenav, { static: true }) sidenav: MatSidenav;
 
   /**
    * mode?: 'side', 'push' or 'over'

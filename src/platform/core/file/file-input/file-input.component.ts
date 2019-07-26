@@ -53,7 +53,7 @@ export class TdFileInputComponent extends _TdFileInputMixinBase implements ICont
   private _multiple: boolean = false;
 
   /** The native `<input type="file"> element */
-  @ViewChild('fileInput') _inputElement: ElementRef;
+  @ViewChild('fileInput', { static: true }) _inputElement: ElementRef;
   get inputElement(): HTMLInputElement {
     return this._inputElement.nativeElement;
   }

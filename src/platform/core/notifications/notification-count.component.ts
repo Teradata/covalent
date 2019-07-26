@@ -37,7 +37,7 @@ export class TdNotificationCountComponent implements AfterContentInit {
   /**
    * Div content wrapper of `ng-content`.
    */
-  @ViewChild('content') content: ElementRef;
+  @ViewChild('content', { static: true }) content: ElementRef;
 
   /**
    * color?: "primary" | "accent" | "warn"

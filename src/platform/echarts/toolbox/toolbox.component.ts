@@ -167,9 +167,9 @@ export class TdChartToolboxComponent implements OnChanges, OnDestroy {
   @Input('width') width: string | number = 'auto';
   @Input('height') height: string | number = 'auto';
 
-  @ContentChild(TdChartViewDataFormatterDirective, { read: TemplateRef })
+  @ContentChild(TdChartViewDataFormatterDirective, { read: TemplateRef, static: false })
   formatterTemplate: TemplateRef<any>;
-  @ViewChild('toolboxContent') fullTemplate: TemplateRef<any>;
+  @ViewChild('toolboxContent', { static: true }) fullTemplate: TemplateRef<any>;
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,

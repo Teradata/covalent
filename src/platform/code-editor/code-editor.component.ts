@@ -66,7 +66,7 @@ export class TdCodeEditorComponent implements OnInit, AfterViewInit, ControlValu
   private _setValueTimeout: any;
   private initialContentChange: boolean = true;
 
-  @ViewChild('editorContainer') _editorContainer: ElementRef;
+  @ViewChild('editorContainer', { static: true }) _editorContainer: ElementRef;
 
   /**
    * automaticLayout?: boolean

@@ -123,7 +123,7 @@ export class TdDynamicElementComponent extends _TdDynamicElementMixinBase
    */
   @Input() errorMessageTemplate: TemplateRef<any> = undefined;
 
-  @ViewChild(TdDynamicElementDirective) childElement: TdDynamicElementDirective;
+  @ViewChild(TdDynamicElementDirective, { static: true }) childElement: TdDynamicElementDirective;
 
   @HostBinding('attr.max')
   get maxAttr(): any {

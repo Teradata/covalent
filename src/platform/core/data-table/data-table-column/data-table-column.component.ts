@@ -26,7 +26,7 @@ export interface ITdDataTableSortChangeEvent {
 export class TdDataTableColumnComponent {
   private _sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
 
-  @ViewChild('columnContent', { read: ElementRef }) _columnContent: ElementRef;
+  @ViewChild('columnContent', { read: ElementRef, static: true }) _columnContent: ElementRef;
 
   get projectedWidth(): number {
     if (this._columnContent && this._columnContent.nativeElement) {
