@@ -24,11 +24,11 @@ const routes: Routes = [
       },
       {
         path: 'types',
-        loadChildren: './types/types.module#TypesModule',
+        loadChildren: () => import('./types/types.module').then((m: any) => m.TypesModule),
       },
       {
         path: 'atomic',
-        loadChildren: './atomic/atomic.module#AtomicModule',
+        loadChildren: () => import('./atomic/atomic.module').then((m: any) => m.AtomicModule),
       },
     ],
   },

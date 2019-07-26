@@ -17,37 +17,38 @@ const routes: Routes = [
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/docs/docs.module#DocsModule',
+    loadChildren: () => import('./components/docs/docs.module').then((m: any) => m.DocsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
+    loadChildren: () => import('./components/style-guide/style-guide.module').then((m: any) => m.StyleGuideModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/design-patterns/design-patterns.module#DesignPatternsModule',
+    loadChildren: () =>
+      import('./components/design-patterns/design-patterns.module').then((m: any) => m.DesignPatternsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/layouts/layouts.module#LayoutsModule',
+    loadChildren: () => import('./components/layouts/layouts.module').then((m: any) => m.LayoutsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: true },
-    loadChildren: './components/components/components.module#ComponentsModule',
+    loadChildren: () => import('./components/components/components.module').then((m: any) => m.ComponentsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
-    data: { preload: true },
-    loadChildren: './components/echarts/components.module#ComponentsModule',
+    data: { preload: false },
+    loadChildren: () => import('./components/echarts/components.module').then((m: any) => m.ComponentsModule),
   },
   {
     path: '**',
