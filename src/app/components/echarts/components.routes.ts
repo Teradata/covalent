@@ -26,13 +26,13 @@ const routes: Routes = [
         path: 'types',
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./types/types.module').then((m: any) => m.TypesModule),
+          import('./types/types.module').then(m => m.TypesModule),
       },
       {
         path: 'atomic',
         loadChildren: () =>
           /* tslint:disable-next-line */
-          import('./atomic/atomic.module').then((m: any) => m.AtomicModule),
+          import('./atomic/atomic.module').then(m => m.AtomicModule),
       },
     ],
   },
