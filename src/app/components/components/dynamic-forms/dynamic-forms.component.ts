@@ -40,7 +40,7 @@ export class TdTestDynamicComponent {
   preserveWhitespaces: true,
 })
 export class DynamicFormsDemoComponent {
-  @ViewChild('manualValidateForm') manualValidateForm: TdDynamicFormsComponent;
+  @ViewChild('manualValidateForm', { static: true }) manualValidateForm: TdDynamicFormsComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 

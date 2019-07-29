@@ -113,13 +113,14 @@ export class TdChipsComponent extends _TdChipsMixinBase
   _internalClick: boolean = false;
   _internalActivateOption: boolean = false;
 
-  @ViewChild('input') _nativeInput: ElementRef;
-  @ViewChild(MatInput) _inputChild: MatInput;
-  @ViewChild(MatAutocompleteTrigger) _autocompleteTrigger: MatAutocompleteTrigger;
+  @ViewChild('input', { static: true }) _nativeInput: ElementRef;
+  @ViewChild(MatInput, { static: true }) _inputChild: MatInput;
+  @ViewChild(MatAutocompleteTrigger, { static: true }) _autocompleteTrigger: MatAutocompleteTrigger;
   @ViewChildren(MatChip) _chipsChildren: QueryList<MatChip>;
 
-  @ContentChild(TdChipDirective) _chipTemplate: TdChipDirective;
-  @ContentChild(TdAutocompleteOptionDirective) _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
+  @ContentChild(TdChipDirective, { static: false }) _chipTemplate: TdChipDirective;
+  @ContentChild(TdAutocompleteOptionDirective, { static: false })
+  _autocompleteOptionTemplate: TdAutocompleteOptionDirective;
 
   @ViewChildren(MatOption) _options: QueryList<MatOption>;
 

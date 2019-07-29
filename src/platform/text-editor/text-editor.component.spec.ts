@@ -103,7 +103,7 @@ describe('Component: TextEditor', () => {
   `,
 })
 class TestTextEditorComponent {
-  @ViewChild('editor1') editor1: TdTextEditorComponent;
+  @ViewChild('editor1', { static: true }) editor1: TdTextEditorComponent;
 }
 
 @Component({
@@ -114,7 +114,7 @@ class TestTextEditorComponent {
   `,
 })
 class TestTextEditorResetComponent {
-  @ViewChild('editor1') editor1: TdTextEditorComponent;
+  @ViewChild('editor1', { static: true }) editor1: TdTextEditorComponent;
 }
 
 @Component({
@@ -128,5 +128,5 @@ class TestTextEditorOptionsComponent {
   opts: any = {
     toolbar: false,
   };
-  @ViewChild('editor1') editor1: TdTextEditorComponent;
+  @ViewChild('editor1', { static: true }) editor1: TdTextEditorComponent;
 }

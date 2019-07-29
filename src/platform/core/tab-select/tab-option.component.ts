@@ -33,7 +33,7 @@ export class TdTabOptionComponent extends _TdTabOptionMixinBase implements ICanD
     return this._contentPortal;
   }
 
-  @ViewChild(TemplateRef) _content: TemplateRef<any>;
+  @ViewChild(TemplateRef, { static: true }) _content: TemplateRef<any>;
 
   /**
    * Value to which the option will be binded to.
