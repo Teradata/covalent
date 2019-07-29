@@ -35,6 +35,6 @@ export class TdSidesheetHeaderComponent {}
   encapsulation: ViewEncapsulation.None,
 })
 export class TdSidesheetComponent {
-  @ContentChild(TdSidesheetHeaderComponent) headerExists: TdSidesheetHeaderComponent;
-  @ContentChild(TdSidesheetActionsDirective) actionsExist: TdSidesheetActionsDirective;
+  @ContentChild(TdSidesheetHeaderComponent, { static: false }) headerExists: TdSidesheetHeaderComponent;
+  @ContentChild(TdSidesheetActionsDirective, { static: false }) actionsExist: TdSidesheetActionsDirective;
 }

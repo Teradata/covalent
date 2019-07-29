@@ -6,7 +6,7 @@ import { IComponent, DynamicForms, Http, Highlight, Markdown, FlavoredMarkdown }
 import { strings } from '@angular-devkit/core';
 import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
 import { getWorkspace } from '@schematics/angular/utility/config';
-import { WorkspaceSchema, WorkspaceProject } from '@angular-devkit/core/src/workspace';
+import { experimental } from '@angular-devkit/core';
 
 export function addDependenciesAndFiles(options: ISchema): Rule {
   return chain([
@@ -45,8 +45,8 @@ function mergeFiles(options: ISchema): Rule {
 
 function addThemeToAngularJson(): Rule {
   return (host: Tree) => {
-    const workspace: WorkspaceSchema = getWorkspace(host);
-    const project: WorkspaceProject = getProjectFromWorkspace(workspace);
+    const workspace: experimental.workspace.WorkspaceSchema = getWorkspace(host);
+    const project: experimental.workspace.WorkspaceProject = getProjectFromWorkspace(workspace);
     const targetOptions: any = getProjectTargetOptions(project, 'build');
     const assetPath: string = `src/theme.scss`;
     const prebuiltThemePathSegment: string = `src/styles.scss`;

@@ -39,8 +39,10 @@ export class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
   };
   @Input('extraCssText') extraCssText: string;
 
-  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef }) formatterTemplate: TemplateRef<any>;
-  @ViewChild('tooltipContent') fullTemplate: TemplateRef<any>;
+  @ContentChild(TdChartTooltipFormatterDirective, { read: TemplateRef, static: false }) formatterTemplate: TemplateRef<
+    any
+  >;
+  @ViewChild('tooltipContent', { static: true }) fullTemplate: TemplateRef<any>;
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,

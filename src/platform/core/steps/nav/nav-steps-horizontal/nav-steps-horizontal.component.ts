@@ -64,8 +64,8 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
   // all the sub components, which are the individual steps
   @ContentChildren(TdNavStepLinkComponent) _steps: QueryList<TdNavStepLinkComponent>;
 
-  @ViewChild('stepListContainer') _stepListContainer: ElementRef;
-  @ViewChild('stepList') _stepList: ElementRef;
+  @ViewChild('stepListContainer', { static: true }) _stepListContainer: ElementRef;
+  @ViewChild('stepList', { static: true }) _stepList: ElementRef;
 
   /*
    * Current width of the element container

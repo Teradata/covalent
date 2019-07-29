@@ -17,37 +17,49 @@ const routes: Routes = [
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/docs/docs.module#DocsModule',
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/docs/docs.module').then((m) => m.DocsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/style-guide/style-guide.module#StyleGuideModule',
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/style-guide/style-guide.module').then((m) => m.StyleGuideModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/design-patterns/design-patterns.module#DesignPatternsModule',
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/design-patterns/design-patterns.module').then((m) => m.DesignPatternsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: false },
-    loadChildren: './components/layouts/layouts.module#LayoutsModule',
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/layouts/layouts.module').then((m) => m.LayoutsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
     data: { preload: true },
-    loadChildren: './components/components/components.module#ComponentsModule',
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/components/components.module').then((m) => m.ComponentsModule),
   },
   {
     // preload: true loads the module immediately
     path: '',
-    data: { preload: true },
-    loadChildren: './components/echarts/components.module#ComponentsModule',
+    data: { preload: false },
+    loadChildren: () =>
+      /* tslint:disable-next-line */
+      import('./components/echarts/components.module').then((m) => m.ComponentsModule),
   },
   {
     path: '**',

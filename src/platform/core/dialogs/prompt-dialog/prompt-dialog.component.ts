@@ -13,7 +13,7 @@ export class TdPromptDialogComponent implements AfterViewInit {
   cancelButton: string = 'CANCEL';
   acceptButton: string = 'ACCEPT';
 
-  @ViewChild('input') _input: ElementRef;
+  @ViewChild('input', { static: true }) _input: ElementRef;
 
   constructor(private _dialogRef: MatDialogRef<TdPromptDialogComponent>) {}
 

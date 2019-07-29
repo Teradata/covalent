@@ -113,7 +113,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    */
   @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
-  @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
+  @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
   constructor(
     private _componentFactoryResolver: ComponentFactoryResolver,

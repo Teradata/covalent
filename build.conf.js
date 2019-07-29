@@ -2,9 +2,9 @@
 
 module.exports = {
   deployed: 'deploy/platform/',
-  echartsVersion: '4.1.0',
-  angularVersion: '7.0.0',
-  materialVersion: '7.0.0',
+  echartsVersion: '4.2.1',
+  angularVersion: '8.0.0',
+  materialVersion: '8.0.0',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
