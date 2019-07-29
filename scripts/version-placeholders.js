@@ -17,11 +17,13 @@ gulp.task('version-placeholder', function(cb) {
 const versionPlaceholderText = '0.0.0-COVALENT';
 const ngVersionPlaceholderText = '0.0.0-NG';
 const materialVersionPlaceholderText = '0.0.0-MATERIAL';
+const echartsVersionPlaceholderText = '0.0.0-ECHARTS';
 
 /** RegExp that matches version placeholders inside of a file. */
 const versionPlaceholderRegex = new RegExp(versionPlaceholderText, 'g');
 const ngVersionPlaceholderRegex = new RegExp(ngVersionPlaceholderText, 'g');
 const materialVersionPlaceholderRegex = new RegExp(materialVersionPlaceholderText, 'g');
+const echartsVersionPlaceholderRegex = new RegExp(echartsVersionPlaceholderText, 'g');
 
 /**
  * Walks through every file in a directory and replaces the version placeholders
@@ -37,6 +39,7 @@ function replaceVersionPlaceholders(packageDir, projectVersion) {
     const fileContent = readFileSync(filePath, 'utf-8')
       .replace(ngVersionPlaceholderRegex, buildConfig.angularVersion)
       .replace(materialVersionPlaceholderRegex, buildConfig.materialVersion)
+      .replace(echartsVersionPlaceholderRegex, buildConfig.echartsVersion)
       .replace(versionPlaceholderRegex, projectVersion);
 
     writeFileSync(filePath, fileContent);
@@ -59,7 +62,7 @@ function buildPlaceholderFindCommand(packageDir) {
       binary: 'findstr',
       args: [
         '/msi',
-        `${materialVersionPlaceholderText} ${ngVersionPlaceholderText} ${versionPlaceholderText}`,
+        `${materialVersionPlaceholderText} ${ngVersionPlaceholderText} ${echartsVersionPlaceholderText} ${versionPlaceholderText}`,
         `${packageDir}\\*`,
       ],
     };
@@ -68,7 +71,7 @@ function buildPlaceholderFindCommand(packageDir) {
       binary: 'grep',
       args: [
         '-ril',
-        `${materialVersionPlaceholderText}\\|${ngVersionPlaceholderText}\\|${versionPlaceholderText}`,
+        `${materialVersionPlaceholderText}\\|${echartsVersionPlaceholderText}\\|${ngVersionPlaceholderText}\\|${versionPlaceholderText}`,
         packageDir,
       ],
     };
