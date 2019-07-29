@@ -34,9 +34,9 @@ describe('TdDigitsPipe', () => {
     expect(pipe.transform(1571800, 3)).toEqual('1.572 M');
     expect(pipe.transform(10000000, undefined)).toEqual('10 M');
     expect(pipe.transform(10200000, undefined)).toEqual('10.2 M');
-    expect(pipe.transform(3.81861e+10, undefined)).toEqual('38.2 B');
-    expect(pipe.transform(1.890381861e+14, undefined)).toEqual('189 T');
-    expect(pipe.transform(5.35765e+16, undefined)).toEqual('53.6 Q');
+    expect(pipe.transform(3.81861e10, undefined)).toEqual('38.2 B');
+    expect(pipe.transform(1.890381861e14, undefined)).toEqual('189 T');
+    expect(pipe.transform(5.35765e16, undefined)).toEqual('53.6 Q');
 
     /* transformations in 'es'*/
     expect(l10nEsPipe.transform('34', undefined)).toEqual('34');
@@ -49,9 +49,9 @@ describe('TdDigitsPipe', () => {
     expect(l10nEsPipe.transform(1571800, 3)).toEqual('1,572 M');
     expect(l10nEsPipe.transform(10000000, undefined)).toEqual('10 M');
     expect(l10nEsPipe.transform(10200000, undefined)).toEqual('10,2 M');
-    expect(l10nEsPipe.transform(3.81861e+10, undefined)).toEqual('38,2 B');
-    expect(l10nEsPipe.transform(1.890381861e+14, undefined)).toEqual('189 T');
-    expect(l10nEsPipe.transform(5.35765e+16, undefined)).toEqual('53,6 Q');
+    expect(l10nEsPipe.transform(3.81861e10, undefined)).toEqual('38,2 B');
+    expect(l10nEsPipe.transform(1.890381861e14, undefined)).toEqual('189 T');
+    expect(l10nEsPipe.transform(5.35765e16, undefined)).toEqual('53,6 Q');
   });
 
   it('should fail since locale is not registered', () => {

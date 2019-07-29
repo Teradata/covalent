@@ -1,15 +1,9 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdTextEditorComponent } from './';
 import { By } from '@angular/platform-browser';
 
 describe('Component: TextEditor', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -18,8 +12,7 @@ describe('Component: TextEditor', () => {
         TestTextEditorResetComponent,
         TestTextEditorOptionsComponent,
       ],
-      imports: [
-      ],
+      imports: [],
     });
     TestBed.compileComponents();
   }));
@@ -100,14 +93,14 @@ describe('Component: TextEditor', () => {
       });
     })();
   });
-
 });
 
 @Component({
   template: `
     <div>
       <td-text-editor #editor1></td-text-editor>
-    </div>`,
+    </div>
+  `,
 })
 class TestTextEditorComponent {
   @ViewChild('editor1') editor1: TdTextEditorComponent;
@@ -117,7 +110,8 @@ class TestTextEditorComponent {
   template: `
     <div>
       <td-text-editor #editor1 [value]="Something"></td-text-editor>
-    </div>`,
+    </div>
+  `,
 })
 class TestTextEditorResetComponent {
   @ViewChild('editor1') editor1: TdTextEditorComponent;
@@ -127,7 +121,8 @@ class TestTextEditorResetComponent {
   template: `
     <div>
       <td-text-editor #editor1 [options]="opts"></td-text-editor>
-    </div>`,
+    </div>
+  `,
 })
 class TestTextEditorOptionsComponent {
   opts: any = {

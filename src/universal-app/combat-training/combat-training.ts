@@ -45,10 +45,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class CombatTrainingComponent implements OnInit {
   data: any[] = [
-    {index: 0, name: 'element-0' },
-    {index: 1, name: 'element-1' },
-    {index: 2, name: 'element-2' },
-    {index: 3, name: 'element-3' },
+    { index: 0, name: 'element-0' },
+    { index: 1, name: 'element-1' },
+    { index: 2, name: 'element-2' },
+    { index: 3, name: 'element-3' },
   ];
 
   testDigit: number = 3.975086;
@@ -73,22 +73,22 @@ export class CombatTrainingComponent implements OnInit {
   stringsModel: string[] = this.strings.slice(0, 6);
 
   configWidthColumns: ITdDataTableColumn[] = [
-    { name: 'first_name',  label: 'First name', width: 150 },
-    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 }},
-    { name: 'gender', label: 'Gender'},
-    { name: 'email', label: 'Email', width: 250},
-    { name: 'img', label: '', width: 100},
+    { name: 'first_name', label: 'First name', width: 150 },
+    { name: 'last_name', label: 'Last name', width: { min: 150, max: 250 } },
+    { name: 'gender', label: 'Gender' },
+    { name: 'email', label: 'Email', width: 250 },
+    { name: 'img', label: '', width: 100 },
   ];
 
   basicData: any[] = [
     {
-      'balance': 7454.6,
-      'email': 'sclutterham0@123-reg.co.uk',
-      'first_name': 'Sully',
-      'gender': 'Male',
-      'img': 'https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1',
-      'ip_address': '158.0.165.138',
-      'last_name': 'Clutterham',
+      balance: 7454.6,
+      email: 'sclutterham0@123-reg.co.uk',
+      first_name: 'Sully',
+      gender: 'Male',
+      img: 'https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1',
+      ip_address: '158.0.165.138',
+      last_name: 'Clutterham',
     },
   ];
 
@@ -105,17 +105,18 @@ export class CombatTrainingComponent implements OnInit {
   }
 
   filterStrings(value: string): void {
-    this.filteredStrings = this.strings.filter((item: any) => {
-      if (value) {
-        return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
-      } else {
-        return false;
-      }
-    }).filter((filteredItem: any) => {
-      return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
-    });
+    this.filteredStrings = this.strings
+      .filter((item: any) => {
+        if (value) {
+          return item.toLowerCase().indexOf(value.toLowerCase()) > -1;
+        } else {
+          return false;
+        }
+      })
+      .filter((filteredItem: any) => {
+        return this.stringsModel ? this.stringsModel.indexOf(filteredItem) < 0 : true;
+      });
   }
-
 }
 
 /**
@@ -151,7 +152,7 @@ export class CombatTrainingComponent implements OnInit {
   bootstrap: [CombatTrainingComponent],
   declarations: [CombatTrainingComponent],
 })
-export class CombatTrainingClientModule { }
+export class CombatTrainingClientModule {}
 
 /**
  * Server side module
@@ -160,4 +161,4 @@ export class CombatTrainingClientModule { }
   imports: [CombatTrainingClientModule, ServerModule],
   bootstrap: [CombatTrainingComponent],
 })
-export class CombatTrainingServerModule { }
+export class CombatTrainingServerModule {}

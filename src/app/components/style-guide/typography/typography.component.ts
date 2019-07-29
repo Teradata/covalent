@@ -10,7 +10,6 @@ import { slideInDownAnimation } from '../../../app.animations';
   preserveWhitespaces: true,
 })
 export class TypographyComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
@@ -32,9 +31,5 @@ export class TypographyComponent {
     'orange',
     'deep-orange',
   ];
-  neutrals: string[] = [
-    'brown',
-    'grey',
-    'blue-grey',
-  ];
+  neutrals: string[] = ['brown', 'grey', 'blue-grey'];
 }

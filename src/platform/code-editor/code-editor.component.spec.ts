@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { TdCodeEditorComponent } from './';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +15,6 @@ interface IFsDocumentElement extends HTMLDivElement {
 }
 
 describe('Component: App', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -30,9 +24,7 @@ describe('Component: App', () => {
         TestTwoWayBindingWithValueComponent,
         TestTwoWayBindingWithNgModelComponent,
       ],
-      imports: [
-        FormsModule,
-      ],
+      imports: [FormsModule],
     });
     TestBed.compileComponents();
   }));
@@ -123,7 +115,8 @@ describe('Component: App', () => {
               {
                 label: 'simpleText',
                 kind: 'monaco.languages.CompletionItemKind.Text',
-              }, {
+              },
+              {
                 label: 'testing',
                 kind: 'monaco.languages.CompletionItemKind.Keyword',
                 insertText: 'testing({{condition}})',
@@ -131,13 +124,7 @@ describe('Component: App', () => {
               {
                 label: 'ifelse',
                 kind: 'monaco.languages.CompletionItemKind.Snippet',
-                insertText: [
-                  'if ({{condition}}) {',
-                  '\t{{}}',
-                  '} else {',
-                  '\t',
-                  '}',
-                ].join('\n'),
+                insertText: ['if ({{condition}}) {', '\t{{}}', '} else {', '\t', '}'].join('\n'),
                 documentation: 'If-Else Statement',
               },
             ],
@@ -359,14 +346,22 @@ describe('Component: App', () => {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor1 automaticLayout style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
+      <td-code-editor
+        #editor1
+        automaticLayout
+        style="height: 200px"
+        theme="vs"
+        flex
+        language="javascript"
+      ></td-code-editor>
     </div>
     <div>
       <td-code-editor #editor2 automaticLayout style="height: 200px" theme="vs" flex language="HTML"></td-code-editor>
     </div>
     <div>
       <td-code-editor #editor3 automaticLayout style="height: 200px" theme="vs" flex language="css"></td-code-editor>
-    </div>`,
+    </div>
+  `,
 })
 class TestMultipleEditorsComponent {
   @ViewChild('editor1') editor1: TdCodeEditorComponent;
@@ -377,9 +372,16 @@ class TestMultipleEditorsComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor #editor1 [editorOptions]="{readOnly:true}" style="height: 200px" theme="vs" flex language="javascript"></td-code-editor>
+      <td-code-editor
+        #editor1
+        [editorOptions]="{ readOnly: true }"
+        style="height: 200px"
+        theme="vs"
+        flex
+        language="javascript"
+      ></td-code-editor>
     </div>
-`,
+  `,
 })
 class TestEditorOptionsComponent {
   @ViewChild('editor1') editor1: TdCodeEditorComponent;
@@ -388,13 +390,7 @@ class TestEditorOptionsComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor
-        #editor
-        style="height: 200px"
-        language="javascript"
-        [(value)]="sampleCode"
-      >
-      </td-code-editor>
+      <td-code-editor #editor style="height: 200px" language="javascript" [(value)]="sampleCode"> </td-code-editor>
     </div>
   `,
 })
@@ -406,13 +402,7 @@ class TestTwoWayBindingWithValueComponent {
 @Component({
   template: `
     <div>
-      <td-code-editor
-        #editor
-        style="height: 200px"
-        language="javascript"
-        [(ngModel)]="sampleCode"
-      >
-      </td-code-editor>
+      <td-code-editor #editor style="height: 200px" language="javascript" [(ngModel)]="sampleCode"> </td-code-editor>
     </div>
   `,
 })

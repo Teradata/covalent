@@ -14,10 +14,7 @@ import { appRoutes, appRoutingProviders } from './test-bed.routes';
 import { TdLoadingMaskModule } from '@covalent/experimental/loading-mask';
 
 @NgModule({
-  declarations: [
-    TestBedComponent,
-    MainComponent,
-  ],
+  declarations: [TestBedComponent, MainComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -30,9 +27,7 @@ import { TdLoadingMaskModule } from '@covalent/experimental/loading-mask';
     /** Experimental Modules */
     TdLoadingMaskModule,
   ], // modules needed to run this module
-  providers: [
-    appRoutingProviders,
-  ],
+  providers: [appRoutingProviders],
   bootstrap: [TestBedComponent],
 })
-export class TestBedModule { }
+export class TestBedModule {}

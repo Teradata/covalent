@@ -7,7 +7,6 @@ import { NgModel } from '@angular/forms';
   selector: '[tdFileSelect]',
 })
 export class TdFileSelectDirective {
-
   private _multiple: boolean = false;
 
   /**
@@ -36,8 +35,7 @@ export class TdFileSelectDirective {
     return this._multiple ? '' : undefined;
   }
 
-  constructor(@Optional() @Host() private model: NgModel) {
-  }
+  constructor(@Optional() @Host() private model: NgModel) {}
 
   /**
    * Listens to 'change' host event to get [HTMLInputElement] files.
@@ -47,7 +45,7 @@ export class TdFileSelectDirective {
   @HostListener('change', ['$event'])
   onChange(event: Event): void {
     if (event.target instanceof HTMLInputElement) {
-      let fileInputEl: HTMLInputElement = (<HTMLInputElement>event.target);
+      let fileInputEl: HTMLInputElement = <HTMLInputElement>event.target;
       let files: FileList = fileInputEl.files;
       if (files.length) {
         let value: FileList | File = this._multiple ? (files.length > 1 ? files : files[0]) : files[0];

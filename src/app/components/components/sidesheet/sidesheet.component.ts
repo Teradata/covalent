@@ -9,8 +9,5 @@ import { TdMediaService } from '@covalent/core/media';
   preserveWhitespaces: true,
 })
 export class SidesheetDemoComponent {
-
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {}
-
+  constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
 }

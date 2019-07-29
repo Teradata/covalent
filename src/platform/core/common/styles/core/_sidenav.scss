@@ -12,7 +12,9 @@
       }
     }
     [mat-list-item] {
-      &,&:active,&:focus {
+      &,
+      &:active,
+      &:focus {
         outline: none;
       }
     }

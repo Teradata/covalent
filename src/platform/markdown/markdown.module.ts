@@ -4,16 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TdMarkdownComponent } from './markdown.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    TdMarkdownComponent,
-  ],
-  exports: [
-    TdMarkdownComponent,
-  ],
+  imports: [CommonModule],
+  declarations: [TdMarkdownComponent],
+  exports: [TdMarkdownComponent],
 })
-export class CovalentMarkdownModule {
-
-}
+export class CovalentMarkdownModule {}

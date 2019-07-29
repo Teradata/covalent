@@ -11,25 +11,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective } from './chips.component';
 
 @NgModule({
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    MatInputModule,
-    MatIconModule,
-    MatChipsModule,
-    MatAutocompleteModule,
-  ],
-  declarations: [
-    TdChipsComponent,
-    TdChipDirective,
-    TdAutocompleteOptionDirective,
-  ],
-  exports: [
-    TdChipsComponent,
-    TdChipDirective,
-    TdAutocompleteOptionDirective,
-  ],
+  imports: [ReactiveFormsModule, CommonModule, MatInputModule, MatIconModule, MatChipsModule, MatAutocompleteModule],
+  declarations: [TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective],
+  exports: [TdChipsComponent, TdChipDirective, TdAutocompleteOptionDirective],
 })
-export class CovalentChipsModule {
-
-}
+export class CovalentChipsModule {}

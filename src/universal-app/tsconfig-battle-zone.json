@@ -16,9 +16,7 @@
     "types": [],
     "baseUrl": "."
   },
-  "files": [
-    "main.ts"
-  ],
+  "files": ["main.ts"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true
   }

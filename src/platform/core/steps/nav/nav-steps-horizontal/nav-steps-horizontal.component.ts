@@ -1,5 +1,17 @@
-import { Component, Optional, ContentChildren, ViewChild, QueryList, OnDestroy, ChangeDetectionStrategy, 
-         AfterContentInit, AfterContentChecked, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
+import {
+  Component,
+  Optional,
+  ContentChildren,
+  ViewChild,
+  QueryList,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  AfterContentInit,
+  AfterContentChecked,
+  ChangeDetectorRef,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 
 import { Subject, merge, of } from 'rxjs';
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
@@ -30,7 +42,6 @@ export type ScrollDirection = 'after' | 'before';
   },
 })
 export class TdNavStepsHorizontalComponent implements AfterContentChecked, AfterContentInit, OnDestroy {
-
   private _separators: HTMLElement[] = [];
 
   /** Emits when the component is destroyed. */
@@ -57,10 +68,10 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
   @ViewChild('stepList') _stepList: ElementRef;
 
   /*
-  * Current width of the element container
-  */
+   * Current width of the element container
+   */
   get nativeElementWidth(): number {
-    let element: HTMLElement = (<HTMLElement>this._elementRef.nativeElement);
+    let element: HTMLElement = <HTMLElement>this._elementRef.nativeElement;
 
     // Need to take into account border, margin and padding that might be around all the crumbs
     let style: CSSStyleDeclaration = window.getComputedStyle(element);
@@ -71,30 +82,38 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
     let paddingLeft: number = parseInt(style.paddingLeft, 10);
     let paddingRight: number = parseInt(style.paddingRight, 10);
 
-    return element.getBoundingClientRect().width - borderLeft - borderRight - marginLeft - marginRight - paddingLeft - paddingRight;
+    return (
+      element.getBoundingClientRect().width -
+      borderLeft -
+      borderRight -
+      marginLeft -
+      marginRight -
+      paddingLeft -
+      paddingRight
+    );
   }
 
-  constructor(private _elementRef: ElementRef,
-              private _viewportRuler: ViewportRuler,
-              @Optional() private _dir: Directionality,
-              private _renderer: Renderer2,
-              private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(
+    private _elementRef: ElementRef,
+    private _viewportRuler: ViewportRuler,
+    @Optional() private _dir: Directionality,
+    private _renderer: Renderer2,
+    private _changeDetectorRef: ChangeDetectorRef,
+  ) {}
 
   ngAfterContentInit(): void {
     merge(
-      this._widthSubject.asObservable().pipe(
-        distinctUntilChanged(),
-      ),
+      this._widthSubject.asObservable().pipe(distinctUntilChanged()),
       this._viewportRuler.change(150),
       this._dir ? this._dir.change : of(undefined),
       this._steps.changes,
-    ).pipe(
-      takeUntil(this._destroyed),
-    ).subscribe(() => {
-      this._configureSteps();
-      this.updatePagination();
-      this._changeDetectorRef.markForCheck();
-    });
+    )
+      .pipe(takeUntil(this._destroyed))
+      .subscribe(() => {
+        this._configureSteps();
+        this.updatePagination();
+        this._changeDetectorRef.markForCheck();
+      });
     this._configureSteps();
     this._changeDetectorRef.markForCheck();
   }
@@ -129,7 +148,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
         event.preventDefault();
         break;
       default:
-        // do something
+      // do something
     }
   }
 
@@ -147,7 +166,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
     return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
   }
 
-    /** Performs the CSS transformation on the step list that will cause the list to scroll. */
+  /** Performs the CSS transformation on the step list that will cause the list to scroll. */
   _updateStepScrollPosition(): void {
     const translateX: number = this._getLayoutDirection() === 'ltr' ? -this.scrollDistance : this.scrollDistance;
     // Move step list the amount of pixels scrolled
@@ -164,7 +183,9 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
   }
 
   /** Sets the distance in pixels that the step header should be transformed in the X-axis. */
-  get scrollDistance(): number { return this._scrollDistance; }
+  get scrollDistance(): number {
+    return this._scrollDistance;
+  }
   set scrollDistance(v: number) {
     this._scrollDistance = Math.max(0, Math.min(this._getMaxScrollDistance(), v));
 
@@ -180,7 +201,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
    */
   _scrollHeader(scrollDir: ScrollDirection): void {
     // Move the scroll distance one-half the length of the step list's viewport.
-    this.scrollDistance += (scrollDir === 'before' ? -1 : 1) * this._stepListContainer.nativeElement.offsetWidth / 2;
+    this.scrollDistance += ((scrollDir === 'before' ? -1 : 1) * this._stepListContainer.nativeElement.offsetWidth) / 2;
   }
 
   /**
@@ -189,8 +210,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
    * be shown.
    */
   _checkPaginationEnabled(): void {
-    const isEnabled: boolean =
-        this._stepList.nativeElement.scrollWidth > this._elementRef.nativeElement.offsetWidth;
+    const isEnabled: boolean = this._stepList.nativeElement.scrollWidth > this._elementRef.nativeElement.offsetWidth;
 
     if (!isEnabled) {
       this.scrollDistance = 0;
@@ -221,7 +241,7 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
    * is equal to the difference in width between the step list container and step header container.
    */
   _getMaxScrollDistance(): number {
-    return (this._stepList.nativeElement.scrollWidth - this._stepListContainer.nativeElement.offsetWidth) || 0;
+    return this._stepList.nativeElement.scrollWidth - this._stepListContainer.nativeElement.offsetWidth || 0;
   }
 
   /**
@@ -242,7 +262,5 @@ export class TdNavStepsHorizontalComponent implements AfterContentChecked, After
       }
       step.number = index + 1;
     });
-    
   }
-
 }
