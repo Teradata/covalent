@@ -9,7 +9,7 @@ import { TdTextEditorComponent } from '../../../../platform/text-editor';
   animations: [slideInDownAnimation],
 })
 export class TextEditorDemoComponent {
-  @ViewChild('editor') private _tdEditor: TdTextEditorComponent;
+  @ViewChild('editor', { static: false }) private _tdEditor: TdTextEditorComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 

@@ -42,7 +42,7 @@ export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy 
   // all the sub components, which are the individual steps
   @ContentChildren(TdNavStepLinkComponent) _steps: QueryList<TdNavStepLinkComponent>;
 
-  @ViewChild('stepList') _stepList: ElementRef;
+  @ViewChild('stepList', { static: true }) _stepList: ElementRef;
 
   constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {}
 

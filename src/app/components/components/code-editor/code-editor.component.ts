@@ -9,7 +9,7 @@ import { TdCodeEditorComponent } from '../../../../platform/code-editor';
   animations: [slideInDownAnimation],
 })
 export class CodeEditorDemoComponent {
-  @ViewChild('editor') private _tdEditor: TdCodeEditorComponent;
+  @ViewChild('editor', { static: true }) private _tdEditor: TdCodeEditorComponent;
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 

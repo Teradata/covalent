@@ -364,9 +364,9 @@ describe('Component: App', () => {
   `,
 })
 class TestMultipleEditorsComponent {
-  @ViewChild('editor1') editor1: TdCodeEditorComponent;
-  @ViewChild('editor2') editor2: TdCodeEditorComponent;
-  @ViewChild('editor3') editor3: TdCodeEditorComponent;
+  @ViewChild('editor1', { static: true }) editor1: TdCodeEditorComponent;
+  @ViewChild('editor2', { static: true }) editor2: TdCodeEditorComponent;
+  @ViewChild('editor3', { static: true }) editor3: TdCodeEditorComponent;
 }
 
 @Component({
@@ -384,7 +384,7 @@ class TestMultipleEditorsComponent {
   `,
 })
 class TestEditorOptionsComponent {
-  @ViewChild('editor1') editor1: TdCodeEditorComponent;
+  @ViewChild('editor1', { static: true }) editor1: TdCodeEditorComponent;
 }
 
 @Component({
@@ -395,7 +395,7 @@ class TestEditorOptionsComponent {
   `,
 })
 class TestTwoWayBindingWithValueComponent {
-  @ViewChild('editor') editor: TdCodeEditorComponent;
+  @ViewChild('editor', { static: true }) editor: TdCodeEditorComponent;
   sampleCode: string = `const val = 1;`;
 }
 
@@ -407,6 +407,6 @@ class TestTwoWayBindingWithValueComponent {
   `,
 })
 class TestTwoWayBindingWithNgModelComponent {
-  @ViewChild('editor') editor: TdCodeEditorComponent;
+  @ViewChild('editor', { static: true }) editor: TdCodeEditorComponent;
   sampleCode: string = `const val = 1;`;
 }
