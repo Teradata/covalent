@@ -54,9 +54,9 @@ describe('TdLoadingMaskComponent', () => {
 
     const styles: DebugElement['styles'] = fixture.debugElement.styles;
 
-    expect(component.borderRadius === styles.borderRadius &&
-      component.height === styles.height &&
-      component.width === styles.width).toBeTruthy();
+    expect(component.borderRadius === styles.borderRadius).toBeTruthy();
+    expect(component.height === styles.height).toBeTruthy();
+    expect(component.width === styles.width).toBeTruthy();
   });
 
 });

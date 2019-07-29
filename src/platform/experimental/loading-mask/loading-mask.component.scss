@@ -3,10 +3,6 @@ $dark-shade: rgba(0, 0, 0, 0.057);
 $animated-width: 130%;
 
 %hw-accel {
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
   transform: translateZ(0);
 }
 
@@ -21,8 +17,7 @@ $animated-width: 130%;
 
 %td-lm-animation {
   @extend %hw-accel;
-  &::after {
-    content: '';
+  & span {
     height: 100%;
     width: $animated-width;
     background: linear-gradient(to right, $light-shade, $dark-shade 45%);
