@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'td-help-window',
@@ -10,6 +11,7 @@ export class HelpWindowComponent {
   @Input() items: IHelpMenuDataItem[];
   @Input() draggable: boolean = false;
   @Input() labels: IHelpWindowComponentLabels;
+  @Input() toolbarColor: ThemePalette = 'primary';
 
   // outputs only for non-draggable toolbar
   @Output() closed: EventEmitter<void> = new EventEmitter();
