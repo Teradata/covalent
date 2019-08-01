@@ -112,7 +112,7 @@ export class HelpDemoComponent {
     if (this.windowOpen) {
       this.closeDialog();
     }
-    this.ref = this.draggableHelpWindowDialogService.open(this.currentItems);
+    this.ref = this.draggableHelpWindowDialogService.open({ items: this.currentItems });
     this.ref.afterOpened().subscribe(() => {
       this.windowOpen = true;
     });
