@@ -25,7 +25,9 @@ else
   fileDiff=$(git diff --name-only $TRAVIS_BRANCH...HEAD)
 fi
 
-if [ "${MODE}" = "prettier" ]; then
+if [ "${MODE}" = "commitlint" ]; then
+    npm run commitlint
+elif [ "${MODE}" = "prettier" ]; then
     npm run prettier:check
 elif [ "${MODE}" = "lint" ]; then
   npm run lint
