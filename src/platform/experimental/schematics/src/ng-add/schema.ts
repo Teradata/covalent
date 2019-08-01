@@ -14,6 +14,9 @@ export interface ISchema {
   /** Whether covalent flavored markdown should be set up. */
   flavoredMarkdown: boolean;
 
+  /** Whether covalent echarts should be set up. */
+  echarts: boolean;
+
   /** Whether covalent utilities stylesheet should be added. */
   styleSheetUtilities: boolean;
 

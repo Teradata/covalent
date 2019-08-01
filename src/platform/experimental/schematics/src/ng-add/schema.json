@@ -34,6 +34,12 @@
       "description": "Whether covalent flavored markdown should be set up.",
       "x-prompt": "Set up flavored markdown for rendering material design components?"
     },
+    "echarts": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent echarts should be set up.",
+      "x-prompt": "Set up covalent echarts?"
+    },
     "styleSheetUtilities": {
       "type": "boolean",
       "default": true,
