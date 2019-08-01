@@ -54,3 +54,13 @@ export class FlavoredMarkdown implements IComponent {
     return '@covalent/flavored-markdown';
   }
 }
+
+export class Echarts implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.echarts;
+  }
+
+  public dependency(): string {
+    return '@covalent/echarts';
+  }
+}
