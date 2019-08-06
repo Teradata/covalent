@@ -10,6 +10,7 @@ export class TdLayoutNavListToggleDirective extends LayoutToggle {
   set tdLayoutNavListToggle(tdLayoutNavListToggle: boolean) {
     this.disabled = !(<any>tdLayoutNavListToggle === '' || tdLayoutNavListToggle);
   }
+  @Input('hideWhenOpened') hideWhenOpened: boolean;
 
   constructor(
     @Optional() @Inject(forwardRef(() => TdLayoutNavListComponent)) layout: TdLayoutNavListComponent,
@@ -51,6 +52,8 @@ export class TdLayoutNavListCloseDirective extends LayoutToggle {
 })
 export class TdLayoutNavListOpenDirective extends LayoutToggle {
   @Input('tdLayoutNavListOpen')
+  @Input('hideWhenOpened')
+  hideWhenOpened: any;
   set tdLayoutNavListOpen(tdLayoutNavListOpen: boolean) {
     this.disabled = !(<any>tdLayoutNavListOpen === '' || tdLayoutNavListOpen);
   }

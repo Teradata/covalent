@@ -88,6 +88,8 @@ export class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implemen
   @Input('markArea') markArea: ITdMarkArea;
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
+  @Input('name') name: any;
+  @Input('data') data: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('bar', _optionsService);

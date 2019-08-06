@@ -11,6 +11,11 @@ import { TdChartAxisComponent } from './axis.component';
 })
 export class TdChartYAxisComponent extends TdChartAxisComponent {
   @Input('position') position: TdYAxisPosition;
+  @Input('show') show: any;
+  @Input('type') type: any;
+  @Input('max') max: any;
+  @Input('splitLine') splitLine: any;
+  @Input('min') min: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('yAxis', _optionsService);

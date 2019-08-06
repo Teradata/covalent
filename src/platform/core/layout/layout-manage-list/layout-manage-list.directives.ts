@@ -54,6 +54,7 @@ export class TdLayoutManageListOpenDirective extends LayoutToggle {
   set tdLayoutManageListOpen(tdLayoutManageListOpen: boolean) {
     this.disabled = !(<any>tdLayoutManageListOpen === '' || tdLayoutManageListOpen);
   }
+  @Input('hideWhenOpened') hideWhenOpened: boolean;
 
   constructor(
     @Optional() @Inject(forwardRef(() => TdLayoutManageListComponent)) layout: TdLayoutManageListComponent,

@@ -106,6 +106,7 @@ export class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implem
   @Input('lineStyle') lineStyle: ITdLineStyle;
   @Input('leaves') leaves: ITdTreeLeaves;
   @Input('emphasis') emphasis: ITdTreeEmphasis;
+  @Input('data') data: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('tree', _optionsService);

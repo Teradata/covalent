@@ -85,6 +85,7 @@ export class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> im
   @Input('links') links: any[];
   @Input('edges') edges: any[];
   @Input('silent') silent: boolean;
+  @Input('data') data: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('sankey', _optionsService);

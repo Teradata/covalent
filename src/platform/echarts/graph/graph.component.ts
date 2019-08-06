@@ -154,6 +154,7 @@ export class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> impl
   @Input('bottom') bottom: string | number;
   @Input('width') width: string | number;
   @Input('height') height: string | number;
+  @Input('data') data: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('graph', _optionsService);

@@ -8,5 +8,12 @@
   "angularCompilerOptions": {
     "enableIvy": true
   },
-  "exclude": ["universal-app/**", "**/test.ts", "**/*.spec.*", "test-bed/**", "platform/http-deprec/**"]
+  "exclude": [
+    "universal-app/**",
+    "**/test.ts",
+    "**/*.spec.*",
+    "test-bed/**",
+    "platform/http-deprec/**",
+    "platform/experimental/**"
+  ]
 }

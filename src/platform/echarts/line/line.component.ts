@@ -110,6 +110,8 @@ export class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implem
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('silent') silent: boolean;
+  @Input('data') data: any;
+  @Input('name') name: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('line', _optionsService);

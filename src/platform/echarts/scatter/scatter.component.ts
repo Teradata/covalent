@@ -96,6 +96,8 @@ export class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> 
   @Input('zlevel') zlevel: number;
   @Input('z') z: number;
   @Input('silent') silent: boolean;
+  @Input('data') data: any;
+  @Input('name') name: string;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('scatter', _optionsService);

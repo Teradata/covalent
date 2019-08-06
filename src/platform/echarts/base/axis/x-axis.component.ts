@@ -11,6 +11,11 @@ import { TdChartAxisComponent } from './axis.component';
 })
 export class TdChartXAxisComponent extends TdChartAxisComponent {
   @Input('position') position: TdXAxisPosition;
+  @Input('show') show: any;
+  @Input('type') type: any;
+  @Input('boundaryGap') boundaryGap: any;
+  @Input('splitLine') splitLine: any;
+  @Input('data') data: any;
 
   constructor(_optionsService: TdChartOptionsService) {
     super('xAxis', _optionsService);
