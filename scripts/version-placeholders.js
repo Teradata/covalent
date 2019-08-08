@@ -18,13 +18,20 @@ const versionPlaceholderText = '0.0.0-COVALENT';
 const ngVersionPlaceholderText = '0.0.0-NG';
 const materialVersionPlaceholderText = '0.0.0-MATERIAL';
 const echartsVersionPlaceholderText = '0.0.0-ECHARTS';
+const showdownVersionPlaceholderText = '0.0.0-SHOWDOWN';
+const highlightVersionPlaceholderText = '0.0.0-HIGHLIGHT';
+const monacoVersionPlaceholderText = '0.0.0-MONACO';
+const simplemdeVersionPlaceholderText = '0.0.0-SIMPLEMDE';
 
 /** RegExp that matches version placeholders inside of a file. */
 const versionPlaceholderRegex = new RegExp(versionPlaceholderText, 'g');
 const ngVersionPlaceholderRegex = new RegExp(ngVersionPlaceholderText, 'g');
 const materialVersionPlaceholderRegex = new RegExp(materialVersionPlaceholderText, 'g');
 const echartsVersionPlaceholderRegex = new RegExp(echartsVersionPlaceholderText, 'g');
-
+const showdownVersionPlaceholderRegex = new RegExp(showdownVersionPlaceholderText, 'g');
+const highlightVersionPlaceholderRegex = new RegExp(highlightVersionPlaceholderText, 'g');
+const monacoVersionPlaceholderRegex = new RegExp(monacoVersionPlaceholderText, 'g');
+const simplemdeVersionPlaceholderRegex = new RegExp(simplemdeVersionPlaceholderText, 'g');
 /**
  * Walks through every file in a directory and replaces the version placeholders
  */
@@ -40,6 +47,10 @@ function replaceVersionPlaceholders(packageDir, projectVersion) {
       .replace(ngVersionPlaceholderRegex, buildConfig.angularVersion)
       .replace(materialVersionPlaceholderRegex, buildConfig.materialVersion)
       .replace(echartsVersionPlaceholderRegex, buildConfig.echartsVersion)
+      .replace(showdownVersionPlaceholderRegex, buildConfig.showdownVersion)
+      .replace(highlightVersionPlaceholderRegex, buildConfig.highlightVersion)
+      .replace(monacoVersionPlaceholderRegex, buildConfig.monacoVersion)
+      .replace(simplemdeVersionPlaceholderRegex, buildConfig.simplemdeVersion)
       .replace(versionPlaceholderRegex, projectVersion);
 
     writeFileSync(filePath, fileContent);
