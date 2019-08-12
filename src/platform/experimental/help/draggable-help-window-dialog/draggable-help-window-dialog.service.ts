@@ -4,6 +4,14 @@ import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dial
 import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
 import { Overlay, NoopScrollStrategy } from '@angular/cdk/overlay';
 import { CovalentHelpModule } from '../help.module';
+import { ThemePalette } from '@angular/material/core';
+
+interface IDraggableHelpWindowDialogServiceConfig {
+  items: IHelpMenuDataItem[];
+  dialogConfig?: MatDialogConfig;
+  labels?: IHelpWindowComponentLabels;
+  toolbarColor?: ThemePalette;
+}
 
 @Injectable({
   providedIn: CovalentHelpModule,
@@ -15,11 +23,7 @@ export class DraggableHelpWindowDialogService {
     this.scrollStrategy = overlay.scrollStrategies.noop();
   }
 
-  open(
-    items: IHelpMenuDataItem[],
-    config?: MatDialogConfig,
-    labels?: IHelpWindowComponentLabels,
-  ): MatDialogRef<DraggableHelpWindowDialogComponent> {
+  open(config: IDraggableHelpWindowDialogServiceConfig): MatDialogRef<DraggableHelpWindowDialogComponent> {
     let draggableDialog: MatDialogRef<DraggableHelpWindowDialogComponent> = this._dialog.open(
       DraggableHelpWindowDialogComponent,
       {
@@ -28,10 +32,14 @@ export class DraggableHelpWindowDialogService {
         panelClass: 'draggable-dialog-wrapper',
         position: { bottom: '0', right: '0' },
         scrollStrategy: this.scrollStrategy,
-        ...config,
+        ...config.dialogConfig,
       },
     );
-    draggableDialog.componentInstance.data = { items, labels };
+    draggableDialog.componentInstance.data = {
+      items: config.items,
+      labels: config.labels,
+      toolbarColor: 'toolbarColor' in config ? config.toolbarColor : 'primary',
+    };
     return draggableDialog;
   }
 }

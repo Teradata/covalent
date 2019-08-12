@@ -11,7 +11,7 @@ import { tdCollapseAnimation } from '@covalent/core/common';
   animations: [tdCollapseAnimation],
 })
 export class TdStepBodyComponent {
-  @ViewChild('contentRef', { read: ElementRef }) contentRef: ElementRef;
+  @ViewChild('contentRef', { read: ElementRef, static: true }) contentRef: ElementRef;
 
   get hasContent(): boolean {
     return (
@@ -20,7 +20,7 @@ export class TdStepBodyComponent {
     );
   }
 
-  @ViewChild('actionsRef', { read: ElementRef }) actionsRef: ElementRef;
+  @ViewChild('actionsRef', { read: ElementRef, static: true }) actionsRef: ElementRef;
 
   get hasActions(): boolean {
     return (
@@ -29,7 +29,7 @@ export class TdStepBodyComponent {
     );
   }
 
-  @ViewChild('summaryRef', { read: ElementRef }) summaryRef: ElementRef;
+  @ViewChild('summaryRef', { read: ElementRef, static: true }) summaryRef: ElementRef;
 
   get hasSummary(): boolean {
     return (

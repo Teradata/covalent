@@ -70,9 +70,11 @@ export const _TdExpansionPanelMixinBase = mixinDisableRipple(mixinDisabled(TdExp
 export class TdExpansionPanelComponent extends _TdExpansionPanelMixinBase implements ICanDisable, ICanDisableRipple {
   private _expand: boolean = false;
 
-  @ContentChild(TdExpansionPanelHeaderDirective) expansionPanelHeader: TdExpansionPanelHeaderDirective;
-  @ContentChild(TdExpansionPanelLabelDirective) expansionPanelLabel: TdExpansionPanelLabelDirective;
-  @ContentChild(TdExpansionPanelSublabelDirective) expansionPanelSublabel: TdExpansionPanelSublabelDirective;
+  @ContentChild(TdExpansionPanelHeaderDirective, { static: false })
+  expansionPanelHeader: TdExpansionPanelHeaderDirective;
+  @ContentChild(TdExpansionPanelLabelDirective, { static: false }) expansionPanelLabel: TdExpansionPanelLabelDirective;
+  @ContentChild(TdExpansionPanelSublabelDirective, { static: false })
+  expansionPanelSublabel: TdExpansionPanelSublabelDirective;
 
   /**
    * label?: string

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IHelpWindowToolbarComponentLabels } from '../../help.utils';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'td-help-window-toolbar',
@@ -8,6 +9,7 @@ import { IHelpWindowToolbarComponentLabels } from '../../help.utils';
 })
 export class HelpWindowToolbarComponent {
   @Input() labels: IHelpWindowToolbarComponentLabels;
+  @Input() toolbarColor: ThemePalette = 'primary';
 
   @Output() closed: EventEmitter<void> = new EventEmitter();
 

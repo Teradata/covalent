@@ -22,16 +22,16 @@ describe('ng-add schematic', () => {
 
   let appTree: UnitTestTree;
 
-  beforeEach(() => {
-    let workspaceTree: UnitTestTree = testRunner.runExternalSchematic(
-      '@schematics/angular',
-      'workspace',
-      workspaceOptions,
-    );
-    appTree = testRunner.runExternalSchematic('@schematics/angular', 'application', appOptions, workspaceTree);
+  beforeEach(async () => {
+    let workspaceTree: UnitTestTree = await testRunner
+      .runExternalSchematicAsync('@schematics/angular', 'workspace', workspaceOptions)
+      .toPromise();
+    appTree = await testRunner
+      .runExternalSchematicAsync('@schematics/angular', 'application', appOptions, workspaceTree)
+      .toPromise();
   });
 
-  it('should update package.json', () => {
+  it('should update package.json', async () => {
     const dependencyOptions: any = {
       dynamicForms: true,
       http: true,
@@ -39,7 +39,7 @@ describe('ng-add schematic', () => {
       markdown: true,
       flavoredMarkdown: true,
     };
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies: any = packageJson.dependencies;
 
@@ -60,49 +60,49 @@ describe('ng-add schematic', () => {
     );
   });
 
-  it('should create theme.scss', () => {
-    const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
+  it('should create theme.scss', async () => {
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', {}, appTree).toPromise();
     expect(tree.exists('src/theme.scss')).toBe(true);
   });
 
-  it('should import component themes to theme.scss if selected', () => {
+  it('should import component themes to theme.scss if selected', async () => {
     const dependencyOptions: any = { highlight: true, markdown: true, flavoredMarkdown: true };
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).toContain('covalent-markdown-theme');
     expect(fileContent).toContain('covalent-highlight-theme');
     expect(fileContent).toContain('covalent-flavored-markdown-theme');
   });
 
-  it('should not import component themes to theme.scss if not selected', () => {
+  it('should not import component themes to theme.scss if not selected', async () => {
     const dependencyOptions: any = { highlight: false, markdown: false, flavoredMarkdown: false };
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).not.toContain('covalent-markdown-theme');
     expect(fileContent).not.toContain('covalent-highlight-theme');
     expect(fileContent).not.toContain('covalent-flavored-markdown-theme');
   });
 
-  it('should include sass mixins to theme.scss if selected', () => {
+  it('should include sass mixins to theme.scss if selected', async () => {
     const dependencyOptions: any = { styleSheetUtilities: true, styleSheetFlexLayout: true, styleSheetColors: true };
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).toContain('covalent-utilities');
     expect(fileContent).toContain('covalent-layout');
     expect(fileContent).toContain('covalent-colors');
   });
 
-  it('should not include sass mixins to theme.scss if selected', () => {
+  it('should not include sass mixins to theme.scss if selected', async () => {
     const dependencyOptions: any = { styleSheetUtilities: false, styleSheetFlexLayout: false, styleSheetColors: false };
-    const tree: Tree = testRunner.runSchematic('ng-add', dependencyOptions, appTree);
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const fileContent: string = getFileContent(tree, 'src/theme.scss');
     expect(fileContent).not.toContain('covalent-utilities');
     expect(fileContent).not.toContain('covalent-layout');
     expect(fileContent).not.toContain('covalent-colors');
   });
 
-  it('should include theme.scss in angular config', () => {
-    const tree: Tree = testRunner.runSchematic('ng-add', {}, appTree);
+  it('should include theme.scss in angular config', async () => {
+    const tree: Tree = await testRunner.runSchematicAsync('ng-add', {}, appTree).toPromise();
     const angularJson: any = getFileContent(tree, '/angular.json');
     expect(angularJson).toContain('src/theme.scss');
   });

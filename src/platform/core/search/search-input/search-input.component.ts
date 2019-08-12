@@ -69,7 +69,7 @@ export const _TdSearchInputMixinBase = mixinControlValueAccessor(TdSearchInputBa
   ],
 })
 export class TdSearchInputComponent extends _TdSearchInputMixinBase implements IControlValueAccessor, OnInit {
-  @ViewChild(MatInput) _input: MatInput;
+  @ViewChild(MatInput, { static: true }) _input: MatInput;
 
   /**
    * appearance?: MatFormFieldAppearance
