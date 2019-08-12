@@ -6,15 +6,14 @@ import { Component, Input, HostBinding, ViewChild, ElementRef, OnInit } from '@a
   templateUrl: './loading-mask.component.html',
 })
 export class TdLoadingMaskComponent implements OnInit {
-
   _defaultAnimationDuration: string = '1.3s';
 
   /**
-   * Bind style rules on input values
+   * Binding style rules on input values
    */
-  @HostBinding('style.borderRadius') @Input() borderRadius: string = '0';
+  @HostBinding('style.borderRadius') @Input() borderRadius: string = '4px';
   @HostBinding('style.width') @Input() width: string = '110px';
-  @HostBinding('style.height') @Input() height: string = '14px';
+  @HostBinding('style.height') @Input() height: string = '16px';
   @HostBinding('class.td-loading-mask-animated') @Input() animated: boolean = true;
 
   /**
@@ -27,7 +26,7 @@ export class TdLoadingMaskComponent implements OnInit {
   /**
    * Changing animation duration onInit
    * Binding animation onInit to prevent constant animation duration changes
-   * 
+   *
    */
   ngOnInit(): void {
     if (this.animationDuration !== this._defaultAnimationDuration) {
