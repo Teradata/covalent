@@ -28,7 +28,7 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "showdown": "1.6.4"
+    "showdown": "^0.0.0-SHOWDOWN"
   },
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",

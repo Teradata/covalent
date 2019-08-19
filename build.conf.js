@@ -4,6 +4,8 @@ module.exports = {
   deployed: 'deploy/platform/',
   angularVersion: '7.0.0',
   materialVersion: '7.0.0',
+  showdownVersion: '1.9.0',
+  highlightVersion: '9.13.1',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
