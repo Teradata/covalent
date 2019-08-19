@@ -33,7 +33,7 @@
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
   "dependencies": {
-    "simplemde": "^1.11.2"
+    "simplemde": "^0.0.0-SIMPLEMDE"
   },
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",
