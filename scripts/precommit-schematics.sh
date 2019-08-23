@@ -3,7 +3,7 @@ npm run test:schematics
 npm run tslint
 
 # Link project
-cd src/platform/experimental
+cd ../src/platform/experimental
 npm link
 
 # Create Angular base project
