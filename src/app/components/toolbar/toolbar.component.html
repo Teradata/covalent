@@ -4,16 +4,14 @@
 -->
 <div layout="row" layout-align="end center" flex>
     <span flex></span>
-    <nav hide-xs hide-sm class="text-upper text-sm docs-nav" layout="row">
-      <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/echarts']" [routerLinkActive]="['active']">Echarts</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">Layouts</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Style <span hide-md>Guide</span></a>
-      <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']"><span hide-md>Design</span> Patterns</a>
-      <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">Templates</a>
+    <nav hide-xs hide-sm class="text-upper text-sm docs-nav pad-right-xxl" layout="row">
+      <a class="push-right-md text-nodecoration " [routerLink]="['/docs']" [routerLinkActive]="['active']">Docs</a>
+      <a class="push-right-md text-nodecoration " [routerLink]="['/components']" [routerLinkActive]="['active']">Components</a>
+      <a class="push-right-md text-nodecoration " [routerLink]="['/echarts']" [routerLinkActive]="['active']">ECharts</a>
+      <a class="push-right-md text-nodecoration " [routerLink]="['/style-guide']" [routerLinkActive]="['active']">Utilities</a>
     </nav>
-    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+    <div>
+    <a class='push-left-xxl' mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
     <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
@@ -61,4 +59,5 @@
         <span>Dark Mode</span>
       </button>
     </mat-menu>
+    </div>
   </div>
