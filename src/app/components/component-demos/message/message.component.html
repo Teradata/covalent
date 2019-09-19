@@ -1,0 +1,118 @@
+<mat-card>
+  <mat-card-title>Messages &amp; Alerts</mat-card-title>
+  <mat-card-subtitle>Info, warning &amp; alert messages</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <p class="mat-body-1">Standalone message:</p>
+        <td-message label="Error!" sublabel="You did something wrong!" color="warn" icon="error"></td-message>
+        <p class="mat-body-1">Message in a card with action</p>
+        <mat-card>
+          <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
+            <button td-message-actions mat-button>VIEW MORE</button>
+          </td-message>
+        </mat-card>
+        <p class="mat-body-1">Message in a card content:</p>
+        <mat-card>
+          <mat-card-title>Card title</mat-card-title>
+          <mat-divider></mat-divider>
+          <td-message label="Info" sublabel="Maybe you want to know this" color="accent" icon="info"></td-message>
+          <mat-card-content>
+            content
+          </mat-card-content>
+        </mat-card>
+        <p class="mat-body-1">Toggle visibility:</p>
+        <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+          <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+        </td-message>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p class="mat-body-1">Standalone message:</p>
+            <td-message label="Error!" sublabel="You did something wrong!" color="warn" icon="error"></td-message>
+            <p class="mat-body-1">Message in a card with action</p>
+            <mat-card>
+              <td-message label="Warning!" sublabel="Your probably shouldn't do that!" color="primary" icon="warning">
+                <button td-message-actions mat-button>VIEW MORE</button>
+              </td-message>
+            </mat-card>
+            <p class="mat-body-1">Message in a card content:</p>
+            <mat-card>
+              <mat-card-title>Card title</mat-card-title>
+              <mat-divider></mat-divider>
+              <td-message label="Info" sublabel="Maybe you want to know this" color="accent" icon="info"></td-message>
+              <mat-card-content>
+                content
+              </mat-card-content>
+            </mat-card>
+            <p class="mat-body-1">Toggle visibility:</p>
+            <td-message #messageDemo color="primary" class="pad-sm" label="Hide me!" sublabel="You can toggle my visibility & add a class!">
+              <button td-message-actions mat-icon-button (click)="messageDemo.close()"><mat-icon>cancel</mat-icon></button>
+            </td-message>
+            <button mat-button color="accent" (click)="messageDemo.toggle()">
+              Toggle Visibility
+            </button>
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button color="accent" class="text-upper" (click)="messageDemo.toggle()">
+      Toggle Visibility
+    </button>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>Material Colored Messages</mat-card-title>
+  <mat-card-subtitle>Use the full Material Design color palette</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <p class="mat-body-1">Using <code>color</code>:</p>
+        <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
+          <button td-message-actions mat-button>VIEW MORE</button>
+        </td-message>
+        <p class="mat-body-1">Using <code>class</code>:</p>
+        <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
+          <button td-message-actions mat-button>VIEW MORE</button>
+        </td-message>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <p class="mat-body-1">Using <code>color</code>:</p>
+            <td-message label="Purple!" sublabel="Simply add color=blah" color="purple" icon="error">
+              <button td-message-actions mat-button>VIEW MORE</button>
+            </td-message>
+            <p class="mat-body-1">Using <code>class</code>:</p>
+            <td-message label="Cyan!" sublabel="Reference the Covalent style guide" class="bgc-cyan-800 tc-cyan-100" icon="error">
+              <button td-message-actions mat-button>VIEW MORE</button>
+            </td-message>
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a mat-button color="accent" class="text-upper" [routerLink]="['/style-guide/colors']">
+      Color Guide
+    </a>
+  </mat-card-actions>
+</mat-card>
+<td-readme-loader resourceUrl="platform/core/message/README.md"></td-readme-loader>

@@ -1,0 +1,112 @@
+<mat-card>
+  <mat-card-title>Simple Dialogs</mat-card-title>
+  <mat-card-subtitle>Quick way to use alert, confirm and prompt dialogs</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="openAlert()" class="text-upper">Open Alert</button>
+    <button mat-button color="primary" (click)="openConfirm()" class="text-upper">Open Confirm</button>
+    <button mat-button color="primary" (click)="openPrompt()" class="text-upper">Open Prompt</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdDialogService</mat-card-title>
+  <mat-card-subtitle>How to use this service</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h2><code>TdDialogService</code></h2>
+    <p>Service provided with methods that wrap the @angular/material [MatDialog] service and provide an easier experience for simple dialogs.</p>
+    <p>Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an error.</p>
+    <h3>Methods:</h3>
+    <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
+    <mat-list>
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
+        </a>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </ng-template>
+    </mat-list>
+    <h3>Example(after setup):</h3>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { ViewContainerRef } from '@angular/core';
+        import { TdDialogService } from '@covalent/core/dialogs';
+        ...
+        })
+        export class Demo {
+          constructor(private _dialogService: TdDialogService,
+                      private _viewContainerRef: ViewContainerRef) {
+            ...
+          }
+
+          openAlert(): void {
+            this._dialogService.openAlert({
+              message: 'This is how simple it is to create an alert with this wrapper service.',
+              disableClose: true | false, // defaults to false
+              viewContainerRef: this._viewContainerRef, //OPTIONAL
+              title: 'Alert', //OPTIONAL, hides if not provided
+              closeButton: 'Close', //OPTIONAL, defaults to 'CLOSE'
+              width: '400px', //OPTIONAL, defaults to 400px
+            });
+          }
+
+          openConfirm(): void {
+            this._dialogService.openConfirm({
+              message: 'This is how simple it is to create a confirm with this wrapper service. Do you agree?',
+              disableClose: true | false, // defaults to false
+              viewContainerRef: this._viewContainerRef, //OPTIONAL
+              title: 'Confirm', //OPTIONAL, hides if not provided
+              cancelButton: 'Disagree', //OPTIONAL, defaults to 'CANCEL'
+              acceptButton: 'Agree', //OPTIONAL, defaults to 'ACCEPT'
+              width: '500px', //OPTIONAL, defaults to 400px
+            }).afterClosed().subscribe((accept: boolean) => {
+              if (accept) {
+                // DO SOMETHING
+              } else {
+                // DO SOMETHING ELSE
+              }
+            });
+          }
+
+          openPrompt(): void {
+            this._dialogService.openPrompt({
+              message: 'This is how simple it is to create a prompt with this wrapper service. Prompt something.',
+              disableClose: true | false, // defaults to false
+              viewContainerRef: this._viewContainerRef, //OPTIONAL
+              title: 'Prompt', //OPTIONAL, hides if not provided
+              value: 'Prepopulated value', //OPTIONAL
+              cancelButton: 'Cancel', //OPTIONAL, defaults to 'CANCEL'
+              acceptButton: 'Ok', //OPTIONAL, defaults to 'ACCEPT'
+              width: '400px', //OPTIONAL, defaults to 400px
+            }).afterClosed().subscribe((newValue: string) => {
+              if (newValue) {
+                // DO SOMETHING
+              } else {
+                // DO SOMETHING ELSE
+              }
+            });
+          }
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentDialogsModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentDialogsModule } from '@covalent/core/dialogs';
+
+        @NgModule({
+          imports: [
+            CovalentDialogsModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+    <p>After that, just inject [TdDialogService] and use it for your dialogs.</p>
+  </mat-card-content>
+</mat-card>

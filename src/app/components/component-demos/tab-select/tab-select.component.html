@@ -1,0 +1,83 @@
+<mat-card>
+  <mat-card-title>Tab Select</mat-card-title>
+  <mat-card-subtitle>bind values to tabs and use them as filters</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <div class="mat-subheading-2">Selected value: {{value}}</div>
+        <td-tab-select [(ngModel)]="value"
+                        backgroundColor="accent"
+                        stretchTabs
+                        [disabled]="disabled">
+          <td-tab-option value="dogs">
+            Dogs
+          </td-tab-option>
+          <td-tab-option value="cats">
+            Cats
+          </td-tab-option>
+          <td-tab-option value="bunnies">
+            Bunnies
+          </td-tab-option>
+          <td-tab-option value="hamsters"
+                         disabled>
+            Hamsters
+          </td-tab-option>
+        </td-tab-select>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-button
+                color="primary"
+                class="text-upper"
+                (click)="toggleDisabled()">
+          Toggle Disable
+        </button>
+      </mat-card-actions>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+          <td-tab-select [(ngModel)]="value"
+                          backgroundColor="accent"
+                          stretchTabs
+                          [disabled]="disabled">
+            <td-tab-option value="dogs">
+              Dogs
+            </td-tab-option>
+            <td-tab-option value="cats">
+              Cats
+            </td-tab-option>
+            <td-tab-option value="bunnies">
+              Bunnies
+            </td-tab-option>
+            <td-tab-option value="hamsters"
+                            disabled>
+              Hamsters
+            </td-tab-option>
+          </td-tab-select>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              disabled: boolean = false;
+              value: string = '';
+
+              toggleDisabled(): void {
+                this.disabled = !this.disabled;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/tab-select/README.md"></td-readme-loader>
