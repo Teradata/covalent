@@ -1,0 +1,349 @@
+<mat-card>
+  <mat-card-title>Paging</mat-card-title>
+  <mat-card-subtitle>Paging bar for lists and tables</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+        <mat-card-content>
+          <p>Change Event: </p>
+          <div>
+            <p>Page Size: {{event?.pageSize || '100'}}</p>
+            <p>Page: {{event?.page || '1'}} of {{event?.maxPage || '14'}}</p>
+            <p>Rows: {{event?.fromRow || '1'}} to {{event?.toRow || '100'}}</p>
+          </div>
+          <p>Total: {{event?.total || '1345'}}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+          {{pagingBar.range}} of {{pagingBar.total}}
+        </td-paging-bar>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+              { {pagingBar.range} } of { {pagingBar.total} }
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core/paging';
+            ...
+            export class Demo {
+              event: IPageChangeEvent;
+              firstLast: boolean = true;
+
+              change(event: IPageChangeEvent): void {
+                this.event = event;
+              }
+
+              toggleFirstLast(): void {
+                this.firstLast = !this.firstLast;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div layout="row" layout-align="start center">
+      <button mat-button color="primary" (click)="toggleFirstLast()" class="text-upper">Toggle First/Last</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Paging with dynamic page size</mat-card-title>
+  <mat-card-subtitle>Set a select to change the page size on the fly</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventPageSize?.pageSize || '100'}}</p>
+          <p>Page: {{eventPageSize?.page || '1'}} of {{eventPageSize?.maxPage || '14'}}</p>
+          <p>Rows: {{eventPageSize?.fromRow || '1'}} to {{eventPageSize?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventPageSize?.total || '1345'}}</p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
+        <span hide-xs>Rows per page:</span>
+        <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+          <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+            {{size}}
+          </mat-option>
+        </mat-select>
+        <span>{{pagingBarPageSize.range}} <span hide-xs>of {{pagingBarPageSize.total}}</span></span>
+      </td-paging-bar>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarPageSize [firstLast]="true" [pageSize]="pageSize" [total]="1345" (change)="changePageSize($event)">
+              <span hide-xs>Rows per page:</span>
+              <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+                  { {size} }
+                </mat-option>
+              </mat-select>
+              <span>{ {pagingBarPageSize.range} } <span hide-xs>of { {pagingBarPageSize.total} }</span></span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core/paging';
+            ...
+            export class Demo {
+              eventPageSize: IPageChangeEvent;
+              pageSize: number = 100;
+
+              changePageSize(event: IPageChangeEvent): void {
+                this.eventPageSize = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Paging using page links</mat-card-title>
+  <mat-card-subtitle>Navigate to pages with button links</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+        <mat-card-content>
+          <p>Change Event: </p>
+          <div>
+            <p>Page Size: {{eventLinks?.pageSize || '100'}}</p>
+            <p>Page: {{eventLinks?.page || '1'}} of {{eventLinks?.maxPage || '14'}}</p>
+            <p>Rows: {{eventLinks?.fromRow || '1'}} to {{eventLinks?.toRow || '100'}}</p>
+          </div>
+          <p>Total: {{eventLinks?.total || '1345'}}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
+          <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
+        </td-paging-bar>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarLinks pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeLinks($event)">
+              <span hide-xs>{ {pagingBarLinks.range} } of { {pagingBarLinks.total} }</span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core/paging';
+            ...
+            export class Demo {
+              eventLinks: IPageChangeEvent;
+
+              changeLinks(event: IPageChangeEvent): void {
+                this.eventLinks = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Paging using input</mat-card-title>
+  <mat-card-subtitle>Navigate to a specific page</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <p>Change Event: </p>
+        <div>
+          <p>Page Size: {{eventInput?.pageSize || '100'}}</p>
+          <p>Page: {{eventInput?.page || '1'}} of {{eventInput?.maxPage || '14'}}</p>
+          <p>Rows: {{eventInput?.fromRow || '1'}} to {{eventInput?.toRow || '100'}}</p>
+        </div>
+        <p>Total: {{eventInput?.total || '1345'}}</p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+        <p hide-xs>Go to:</p>
+        <mat-form-field [style.width.px]="30">
+          <input #goToInput
+                  matInput
+                  type="number"
+                  [min]="1"
+                  [max]="pagingBarInput.maxPage"
+                  [value]="pagingBarInput.page"
+                  (blur)="goToInput.value = pagingBarInput.page"
+                  (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+        </mat-form-field>
+        <span hide-xs>{{pagingBarInput.range}} of {{pagingBarInput.total}}</span>
+      </td-paging-bar>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarInput pageLinkCount="5" [firstLast]="false" [pageSize]="100" [total]="1345" (change)="changeInput($event)">
+              <p hide-xs>Go to:</p>
+              <mat-form-field [style.width.px]="30">
+                <input #goToInput
+                        matInput
+                        type="number"
+                        [min]="1"
+                        [max]="pagingBarInput.maxPage"
+                        [value]="pagingBarInput.page"
+                        (blur)="goToInput.value = pagingBarInput.page"
+                        (keyup.enter)="pagingBarInput.navigateToPage(goToInput.value); goToInput.value = pagingBarInput.page"/>
+              </mat-form-field>
+              <span hide-xs>{ {pagingBarInput.range} } of { {pagingBarInput.total} }</span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core/paging';
+            ...
+            export class Demo {
+              eventInput: IPageChangeEvent;
+
+              changeInput(event: IPageChangeEvent): void {
+                this.eventInput = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Paging with everything</mat-card-title>
+  <mat-card-subtitle>All the previous things + responsiveness leveraging the `CovalentMediaModule`</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+          <p>Change Event: </p>
+          <div>
+            <p>Page Size: {{eventResponsive?.pageSize || '100'}}</p>
+            <p>Page: {{eventResponsive?.page || '1'}} of {{eventResponsive?.maxPage || '14'}}</p>
+            <p>Rows: {{eventResponsive?.fromRow || '1'}} to {{eventResponsive?.toRow || '100'}}</p>
+          </div>
+          <p>Total: {{eventResponsive?.total || '1345'}}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <td-paging-bar #pagingBarResponsive
+                       [pageLinkCount]="(media.registerQuery('sm') | async) ? 0 : 3"
+                       [firstLast]="media.registerQuery('gt-xs') | async"
+                       [pageSize]="pageSizeResponsive"
+                       [total]="1345"
+                       (change)="changeResponsive($event)">
+          <span hide-xs>Rows per page:</span>
+          <mat-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+            <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+              {{size}}
+            </mat-option>
+          </mat-select>
+          <p hide-xs hide-sm hide-md>Go to:</p>
+          <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-xs') | async">
+            <input #goToResponsive
+                    matInput
+                    type="number"
+                    [min]="1"
+                    [max]="pagingBarResponsive.maxPage"
+                    [value]="pagingBarResponsive.page"
+                    (blur)="goToResponsive.value = pagingBarResponsive.page"
+                    (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
+          </mat-form-field>
+          <span>{{pagingBarResponsive.range}} <span hide-xs hide-sm hide-md>of {{pagingBarResponsive.total}}</span></span>
+        </td-paging-bar>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-paging-bar #pagingBarResponsive
+                          [pageLinkCount]="(media.registerQuery('md') | async) ? 0 : 5"
+                          [firstLast]="media.registerQuery('gt-xs') | async"
+                          [pageSize]="pageSizeResponsive"
+                          [total]="1345"
+                          (change)="changeResponsive($event)">
+              <span hide-xs>Rows per page:</span>
+              <mat-select *ngIf="media.registerQuery('gt-xs') | async" [style.width.px]="50" [(ngModel)]="pageSizeResponsive">
+                <mat-option *ngFor="let size of [50,100,200,500,1000,2000]" [value]="size">
+                  { {size} }
+                </mat-option>
+              </mat-select>
+              <p hide-xs hide-sm hide-md>Go to:</p>
+              <mat-form-field [style.width.px]="30" *ngIf="media.registerQuery('gt-sm') | async">
+                <input #goToResponsive
+                        matInput
+                        type="number"
+                        [min]="1"
+                        [max]="pagingBarResponsive.maxPage"
+                        [value]="pagingBarResponsive.page"
+                        (blur)="goToResponsive.value = pagingBarResponsive.page"
+                        (keyup.enter)="pagingBarResponsive.navigateToPage(goToResponsive.value); goToResponsive.value = pagingBarResponsive.page"/>
+              </mat-form-field>
+              <span>{ {pagingBarResponsive.range} } <span hide-xs hide-sm hide-md>of { {pagingBarResponsive.total} }</span></span>
+            </td-paging-bar>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { IPageChangeEvent } from '@covalent/core/paging';
+            ...
+            export class Demo {
+              eventResponsive: IPageChangeEvent;
+              pageSizeResponsive: number = 100;
+
+              constructor(public media: TdMediaService) {}
+
+              changeResponsive(event: IPageChangeEvent): void {
+                this.eventResponsive = event;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/paging/README.md"></td-readme-loader>

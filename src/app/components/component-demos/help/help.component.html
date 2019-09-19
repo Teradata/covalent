@@ -1,0 +1,22 @@
+
+        <div layout="row">
+          <div flex='50'>
+            <mat-radio-group [(ngModel)]="selected" (change)="select()">
+              <mat-radio-button *ngFor="let option of options" [value]="option">
+                {{ option.name }}
+                <br />
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div flex='50'>
+              <!-- <td-code-editor 
+              [editorOptions]="{minimap:{enabled: false}}"
+              flex [language]="'json'" [(ngModel)]="userInput" [style.height.px]="200" flex></td-code-editor> -->
+          </div>
+        </div>
+      
+        <button mat-raised-button class="text-upper" color="none" (click)="openDialog()">
+          Open Draggable Help
+        </button>
+     
+

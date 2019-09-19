@@ -1,0 +1,236 @@
+<mat-card>
+  <mat-card-title>Stepper (Wizard)</mat-card-title>
+  <mat-card-subtitle>A sequence of logical & numbered steps</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3 class="mat-title">Basic Stepper</h3>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <div layout="row" layout-align="start center">
+          <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
+            <mat-button-toggle matTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+        <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
+        <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
+        <td-steps [mode]="horizontal ? 'horizontal' : 'vertical'">
+          <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+            <ng-template td-step-label><span>Basic Usage (template)</span></ng-template>
+            Include any content you like for an active stepper
+          </td-step>
+          <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
+            This step is required!
+            <ng-template td-step-actions>
+              <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+              <button mat-button (click)="step2.active = false" class="text-upper">Cancel</button>
+            </ng-template>
+          </td-step>
+          <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+            Mark this step complete and get a summary
+            <ng-template td-step-summary>
+              Use an optional step summary to summarize the info in this step
+            </ng-template>
+            <ng-template td-step-actions>
+              <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+              <button mat-button (click)="step3.active = false" class="text-upper">Cancel</button>
+            </ng-template>
+          </td-step>
+        </td-steps>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <td-steps>
+              <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+                <ng-template td-step-label><span>Basic Usage (template)</span></ng-template>
+                Include any content you like for an active stepper
+              </td-step>
+              <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
+                This step is required!
+                <ng-template td-step-actions>
+                  <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+                  <button mat-button (click)="step2.active = false" class="text-upper">Cancel</button>
+                </ng-template>
+              </td-step>
+              <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+                Mark this step complete and get a summary
+                <ng-template td-step-summary>
+                  Use an optional step summary to summarize the info in this step
+                </ng-template>
+                <ng-template td-step-actions>
+                  <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+                  <button mat-button (click)="step3.active = false" class="text-upper">Cancel</button>
+                </ng-template>
+              </td-step>
+            </td-steps>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { StepState } from '@covalent/core/steps';
+            ...
+            })
+            export class Demo {
+              activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
+              stateStep2: StepState = StepState.Required;
+              stateStep3: StepState = StepState.Complete;
+              disabled: boolean = false;
+
+              toggleRequiredStep2(): void {
+                this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
+              }
+
+              toggleCompleteStep3(): void {
+                this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
+              }
+
+              activeStep1Event(): void {
+                this.activeDeactiveStep1Msg = 'Active event emitted.';
+              }
+
+              deactiveStep1Event(): void {
+                this.activeDeactiveStep1Msg = 'Deactive event emitted.';
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+    <button mat-button color="primary" (click)="step1.toggle()" class="text-upper">Toggle First</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card>
+  <mat-card-title>TdStepsComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h2><code><![CDATA[<td-steps>]]></code></h2>
+    <p>Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a <code><![CDATA[<td-steps>]]></code> element.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-steps>]]></code> component has {{stepsAttrs.length}} properties:</p>
+    <mat-list>
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepsAttrs">
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
+        </a>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </ng-template>
+    </mat-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'">
+          <td-step>
+            ...
+          </td-step>
+          ...
+        </td-steps>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { IStepChangeEvent } from '@covalent/core/steps';
+        ...
+        })
+        export class Demo {
+          change(event: IStepChangeEvent): void {
+            ...
+          };
+        }
+      ]]>
+    </td-highlight>
+    <h3>Setup:</h3>
+    <p>Import the [CovalentStepsModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { CovalentStepsModule } from '@covalent/core/steps';
+        @NgModule({
+          imports: [
+            CovalentStepsModule,
+            ...
+          ],
+          ...
+        })
+        export class MyModule {}
+      ]]>
+    </td-highlight>
+  </mat-card-content>
+ </mat-card>
+ <mat-card>
+  <mat-card-title>TdStepComponent</mat-card-title>
+  <mat-card-subtitle>How to use this component</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h2><code><![CDATA[<td-step>]]></code></h2>
+    <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
+    <p>Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>, <code>StepState.Required</code> and <code>StepState.Complete</code>].</p>
+    <p>Enum values can be replaced with strings ["none", "required" and "complete"].</p>
+    <p>Note: Components in Angular do not have 2-way binding, so the active variable might be off sync with its [TdStepComponent] sometimes.</p>
+    <p>You can keep it in sync with the (activated/deactivated) events if there is a need to do it.</p>
+    <h3>Properties:</h3>
+    <p>The <code><![CDATA[<td-step>]]></code> component has {{stepAttrs.length}} properties:</p>
+    <mat-list>
+      <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepAttrs">
+        <a mat-list-item layout-align="row">
+          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
+          <p matLine> {{attr.description}} </p>
+        </a>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </ng-template>
+    </mat-list>
+    <h3>Example:</h3>
+    <p>HTML:</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()" [disableRipple]="false">
+          <ng-template td-step-label>
+            ... add label content (if not used, falls back to [label] input)
+          </ng-template>
+          ... add content that will be shown when the step is "active"
+          <ng-template td-step-actions>
+            <button (click)="step.close()">Close</button>
+            ... add button elements for the step content (optional)
+          </ng-template>
+          <ng-template td-step-summary>
+            ... add summary that will be shown when step in is "complete" state (optional)
+          </ng-template>
+        </td-step>
+      ]]>
+    </td-highlight>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { StepState } from '@covalent/core/steps';
+        ...
+        })
+        export class Demo {
+
+          active: boolean = false;
+          disabled: boolean = false;
+          state: StepState = StepState.Required; // or state: string = "required";
+
+          activeEvent(): void {
+            ...
+          };
+
+          deactiveEvent(): void {
+            ...
+          };
+        }
+      ]]>
+    </td-highlight>
+  </mat-card-content>
+</mat-card>

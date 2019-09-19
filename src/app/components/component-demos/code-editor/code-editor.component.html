@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title>Code Editor</mat-card-title>
+  <mat-card-subtitle>Multi-language code editor (change language, theme, right click context menu, syntax highlighting, and more)</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div layout="row" layout-align="start center">
+      <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
+    </div>
+    <p>Editor Output:</p>
+    <div layout="row" layout-align="start center">
+      <td-highlight flex [content]="editorVal" [lang]="editorLanguage"></td-highlight>
+    </div>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div layout="row" layout-align="start center" class="pad-sm">
+      <span flex="none" hide-xs class="push-right mat-body-1">Editor Language</span>
+      <mat-form-field floatLabel="never">
+        <mat-select [(ngModel)]="editorLanguage" (change)="changeLanguage()" placeholder="Editor Language">
+          <mat-option value="sql">SQL</mat-option>
+          <mat-option value="javascript">JavaScript</mat-option>
+          <mat-option value="html">HTML</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+    <div layout="row" layout-align="start center" class="pad-sm">
+      <span flex="none" hide-xs class="push-right mat-body-1">Editor Theme</span>
+      <mat-form-field floatLabel="never">
+        <mat-select [(ngModel)]="editorTheme" (change)="changeTheme()" placeholder="Editor Theme">
+          <mat-option value="vs">Light</mat-option>
+          <mat-option value="vs-dark">Dark</mat-option>
+          <mat-option value="hc-black">High Contrast</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/code-editor/README.md">
+</td-readme-loader>

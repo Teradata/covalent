@@ -1,0 +1,104 @@
+<mat-card>
+  <mat-card-title>File Input</mat-card-title>
+  <mat-card-subtitle>single or multiple selection/drop</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab>
+      <ng-template matTabLabel>Demo</ng-template>
+      <mat-card-content>
+        <div layout="row">
+          <mat-form-field tdFileDrop
+                              [disabled]="disabled"
+                              (fileDrop)="files = $event"
+                              (click)="fileInput.inputElement.click()"
+                              (keyup.enter)="fileInput.inputElement.click()"
+                              (keyup.delete)="fileInput.clear()"
+                              (keyup.backspace)="fileInput.clear()"
+                              flex>
+            <input matInput
+                   placeholder="select or drop files"
+                   [value]="files?.length ? (files?.length + ' files') : files?.name"
+                   [disabled]="disabled"
+                   readonly/>
+          </mat-form-field>
+          <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+            <mat-icon>cancel</mat-icon>
+          </button>
+          <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+            <mat-icon>folder</mat-icon>
+            <span class="text-upper">Browse...</span>
+          </td-file-input>
+          <span>
+            <button mat-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
+          </span>
+        </div>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+      </mat-card-actions>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Code</ng-template>
+      <mat-card-content>
+        <p>HTML:</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <div layout="row">
+              <mat-form-field tdFileDrop
+                                  [disabled]="disabled"
+                                  (fileDrop)="files = $event"
+                                  (click)="fileInput.inputElement.click()"
+                                  (keyup.enter)="fileInput.inputElement.click()"
+                                  (keyup.delete)="fileInput.clear()"
+                                  (keyup.backspace)="fileInput.clear()"
+                                  flex>
+                <input matInput
+                      placeholder="select or drop files"
+                      [value]="files?.length ? (files?.length + ' files') : files?.name"
+                      [disabled]="disabled"
+                      readonly/>
+              </mat-form-field>
+              <button mat-icon-button *ngIf="files" (click)="fileInput.clear()" (keyup.enter)="fileInput.clear()">
+                <mat-icon>cancel</mat-icon>
+              </button>
+              <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="files" multiple [disabled]="disabled">
+                <mat-icon>folder</mat-icon>
+                <span class="text-upper">Browse...</span>
+              </td-file-input>
+              <span>
+                <button mat-raised-button color="accent" [disabled]="!files" class="text-upper">Submit</button>
+              </span>
+            </div>
+          ]]>
+        </td-highlight>
+        <p>CSS:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            .drop-zone {
+              font-weight: 600;
+              ::ng-deep * {
+                pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+              }
+            }
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            export class Demo {
+              files: any;
+              disabled: boolean = false;
+
+              toggleDisabled(): void {
+                this.disabled = !this.disabled;
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/core/file/file-input/README.md"></td-readme-loader>
