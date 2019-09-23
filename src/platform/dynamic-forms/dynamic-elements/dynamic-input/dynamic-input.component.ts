@@ -3,11 +3,10 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-input',
-  styleUrls: [ './dynamic-input.component.scss' ],
+  styleUrls: ['./dynamic-input.component.scss'],
   templateUrl: './dynamic-input.component.html',
 })
 export class TdDynamicInputComponent {
-
   control: FormControl;
 
   label: string = '';
@@ -29,5 +28,4 @@ export class TdDynamicInputComponent {
   maxLength: number = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
-
 }

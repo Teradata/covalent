@@ -12,33 +12,38 @@ import { TdDialogService } from '../../../../platform/core';
   preserveWhitespaces: true,
 })
 export class DialogsDemoComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  dialogServiceMethods: Object[] = [{
-    description: `Opens an alert dialog with the provided config.`,
-    name: 'openAlert',
-    type: 'function(IAlertConfig): MatDialogRef<TdAlertDialogComponent>',
-  }, {
-    description: `Opens a confirm dialog with the provided config.`,
-    name: 'openConfirm',
-    type: 'function(IConfirmConfig): MatDialogRef<TdConfirmDialogComponent>',
-  }, {
-    description: `Opens a prompt dialog with the provided config.`,
-    name: 'openPrompt',
-    type: 'function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>',
-  }, {
-    description: `Wrapper function over the open() method in MatDialog.
+  dialogServiceMethods: Object[] = [
+    {
+      description: `Opens an alert dialog with the provided config.`,
+      name: 'openAlert',
+      type: 'function(IAlertConfig): MatDialogRef<TdAlertDialogComponent>',
+    },
+    {
+      description: `Opens a confirm dialog with the provided config.`,
+      name: 'openConfirm',
+      type: 'function(IConfirmConfig): MatDialogRef<TdConfirmDialogComponent>',
+    },
+    {
+      description: `Opens a prompt dialog with the provided config.`,
+      name: 'openPrompt',
+      type: 'function(IPromptConfig): MatDialogRef<TdPromptDialogComponent>',
+    },
+    {
+      description: `Wrapper function over the open() method in MatDialog.
                   Opens a modal dialog containing the given component.`,
-    name: 'open',
-    type: 'function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>',
-  }, {
-    description: `Wrapper function over the closeAll() method in MatDialog.
+      name: 'open',
+      type: 'function<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T>',
+    },
+    {
+      description: `Wrapper function over the closeAll() method in MatDialog.
                   Closes all of the currently-open dialogs.`,
-    name: 'closeAll',
-    type: 'function()',
-  }];
+      name: 'closeAll',
+      type: 'function()',
+    },
+  ];
 
   constructor(private _dialogService: TdDialogService) {}
 

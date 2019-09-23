@@ -1,14 +1,15 @@
-import { Injectable, NgZone, SkipSelf, Optional, Provider } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Observable, BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdMediaService {
-
   private _resizing: boolean = false;
   private _globalSubscription: Subscription;
   private _queryMap: Map<string, string> = new Map<string, string>();
-  private _querySources: { [key: string]: BehaviorSubject<boolean>} = {};
-  private _queryObservables: {[key: string]: Observable<boolean>} = {};
+  private _querySources: { [key: string]: BehaviorSubject<boolean> } = {};
+  private _queryObservables: { [key: string]: Observable<boolean> } = {};
 
   constructor(private _ngZone: NgZone) {
     this._queryMap.set('xs', '(max-width: 599px)');
@@ -99,15 +100,3 @@ export class TdMediaService {
     this._querySources[query].next(matchMedia(query).matches);
   }
 }
-
-export function MEDIA_PROVIDER_FACTORY(
-    parent: TdMediaService, ngZone: NgZone): TdMediaService {
-  return parent || new TdMediaService(ngZone);
-}
-
-export const MEDIA_PROVIDER: Provider = {
-  // If there is already a service available, use that. Otherwise, provide a new one.
-  provide: TdMediaService,
-  deps: [[new Optional(), new SkipSelf(), TdMediaService], NgZone],
-  useFactory: MEDIA_PROVIDER_FACTORY,
-};

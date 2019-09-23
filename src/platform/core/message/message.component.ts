@@ -1,5 +1,17 @@
-import { Component, Directive, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef, ViewChild,
-         HostBinding, HostListener, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  Directive,
+  Input,
+  Renderer2,
+  ElementRef,
+  AfterViewInit,
+  ViewContainerRef,
+  TemplateRef,
+  ViewChild,
+  HostBinding,
+  HostListener,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 import { tdCollapseAnimation } from '@covalent/core/common';
 
@@ -7,27 +19,24 @@ import { tdCollapseAnimation } from '@covalent/core/common';
   selector: '[tdMessageContainer]',
 })
 export class TdMessageContainerDirective {
-  constructor(public viewContainer: ViewContainerRef) { }
+  constructor(public viewContainer: ViewContainerRef) {}
 }
 
 @Component({
   selector: 'td-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
-  animations: [
-    tdCollapseAnimation,
-  ],
+  animations: [tdCollapseAnimation],
 })
 export class TdMessageComponent implements AfterViewInit {
-
   private _color: string;
   private _opened: boolean = true;
   private _hidden: boolean = false;
   private _animating: boolean = false;
   private _initialized: boolean = false;
 
-  @ViewChild(TdMessageContainerDirective) _childElement: TdMessageContainerDirective;
-  @ViewChild(TemplateRef) _template: TemplateRef<any>;
+  @ViewChild(TdMessageContainerDirective, { static: true }) _childElement: TdMessageContainerDirective;
+  @ViewChild(TemplateRef, { static: false }) _template: TemplateRef<any>;
 
   /**
    * Binding host to tdCollapse animation
@@ -113,9 +122,11 @@ export class TdMessageComponent implements AfterViewInit {
     return this._opened;
   }
 
-  constructor(private _renderer: Renderer2,
-              private _changeDetectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef) {
+  constructor(
+    private _renderer: Renderer2,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _elementRef: ElementRef,
+  ) {
     this._renderer.addClass(this._elementRef.nativeElement, 'td-message');
   }
 

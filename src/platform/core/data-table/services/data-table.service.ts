@@ -1,10 +1,11 @@
-import { Injectable, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { TdDataTableSortingOrder, ITdDataTableColumn } from '../data-table.component';
+import { TdDataTableSortingOrder } from '../data-table.component';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdDataTableService {
-
   /**
    * params:
    * - data: any[]
@@ -20,7 +21,7 @@ export class TdDataTableService {
       data = data.filter((item: any) => {
         const res: any = Object.keys(item).find((key: string) => {
           if (!excludedColumns || excludedColumns.indexOf(key) === -1) {
-            const preItemValue: string = ('' + item[key]);
+            const preItemValue: string = '' + item[key];
             const itemValue: string = ignoreCase ? preItemValue.toLowerCase() : preItemValue;
             return itemValue.indexOf(filter) > -1;
           }
@@ -76,15 +77,3 @@ export class TdDataTableService {
     return data;
   }
 }
-
-export function DATA_TABLE_PROVIDER_FACTORY(
-    parent: TdDataTableService): TdDataTableService {
-  return parent || new TdDataTableService();
-}
-
-export const DATA_TABLE_PROVIDER: Provider = {
-  // If there is already a service available, use that. Otherwise, provide a new one.
-  provide: TdDataTableService,
-  deps: [[new Optional(), new SkipSelf(), TdDataTableService]],
-  useFactory: DATA_TABLE_PROVIDER_FACTORY,
-};

@@ -20,7 +20,6 @@ let TD_LOADING_NEXT_ID: number = 0;
   selector: '[tdLoading]',
 })
 export class TdLoadingDirective implements OnInit, OnDestroy {
-
   private _context: TdLoadingContext = new TdLoadingContext();
   private _type: LoadingType;
   private _mode: LoadingMode;
@@ -117,9 +116,11 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
    */
   @Input('tdLoadingColor') color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  constructor(private _viewContainerRef: ViewContainerRef,
-              private _templateRef: TemplateRef<TdLoadingContext>,
-              private _loadingService: TdLoadingService) {}
+  constructor(
+    private _viewContainerRef: ViewContainerRef,
+    private _templateRef: TemplateRef<TdLoadingContext>,
+    private _loadingService: TdLoadingService,
+  ) {}
 
   /**
    * Registers component in the DOM, so it will be available when calling resolve/register.
@@ -147,13 +148,18 @@ export class TdLoadingDirective implements OnInit, OnDestroy {
     // Check if `TdLoadingComponent` has been created before trying to add one again.
     // There is a weird edge case when using `[routerLinkActive]` that calls the `ngOnInit` twice in a row
     if (!this._loadingRef) {
-      this._loadingRef = this._loadingService.createComponent({
-        name: this._name,
-        type: this._type,
-        mode: this._mode,
-        color: this.color,
-        strategy: this._strategy,
-      }, this._viewContainerRef, this._templateRef, this._context);
+      this._loadingRef = this._loadingService.createComponent(
+        {
+          name: this._name,
+          type: this._type,
+          mode: this._mode,
+          color: this.color,
+          strategy: this._strategy,
+        },
+        this._viewContainerRef,
+        this._templateRef,
+        this._context,
+      );
     }
   }
 }

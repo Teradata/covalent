@@ -1,5 +1,15 @@
-import { Component, ContentChildren, ViewChild, QueryList, OnDestroy, ChangeDetectionStrategy, 
-         AfterContentInit, Renderer2, ChangeDetectorRef, ElementRef } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  ViewChild,
+  QueryList,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  AfterContentInit,
+  Renderer2,
+  ChangeDetectorRef,
+  ElementRef,
+} from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -24,7 +34,6 @@ export type ScrollDirection = 'after' | 'before';
   },
 })
 export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy {
-
   private _separators: HTMLElement[] = [];
 
   /** Emits when the component is destroyed. */
@@ -33,15 +42,12 @@ export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy 
   // all the sub components, which are the individual steps
   @ContentChildren(TdNavStepLinkComponent) _steps: QueryList<TdNavStepLinkComponent>;
 
-  @ViewChild('stepList') _stepList: ElementRef;
+  @ViewChild('stepList', { static: true }) _stepList: ElementRef;
 
-  constructor(private _renderer: Renderer2,
-              private _changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private _renderer: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterContentInit(): void {
-    this._steps.changes.pipe(
-      takeUntil(this._destroyed),
-    ).subscribe(() => {
+    this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
       this._configureSteps();
       this._changeDetectorRef.markForCheck();
     });
@@ -75,7 +81,5 @@ export class TdNavStepsVerticalComponent implements AfterContentInit, OnDestroy 
       }
       step.number = index + 1;
     });
-    
   }
-
 }

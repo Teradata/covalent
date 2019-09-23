@@ -13,44 +13,57 @@ import { ThemeComponent } from './theme/theme.component';
 import { MockDataComponent } from './mock-data/mock-data.component';
 import { UtilitySASSMixinsComponent } from './utility-sass-mixins/utility-sass-mixins.component';
 
-const routes: Routes = [{
-  children: [{
-      component: DocsOverviewComponent,
-      path: '',
-    }, {
-      component: AngularComponent,
-      path: 'angular',
-    }, {
-      component: CreatingComponent,
-      path: 'creating',
-    }, {
-      component: AngularMaterialComponent,
-      path: 'angular-material',
-    }, {
-      component: BuildTasksComponent,
-      path: 'build-tasks',
-    }, {
-      component: DeploymentComponent,
-      path: 'deployment',
-    }, {
-      component: IconsComponent,
-      path: 'icons',
-    }, {
-      component: TestingComponent,
-      path: 'testing',
-    }, {
-      component: ThemeComponent,
-      path: 'theme',
-    }, {
-      component: UtilitySASSMixinsComponent,
-      path: 'utility-sass-mixins',
-    }, {
-      component: MockDataComponent,
-      path: 'mock-data',
-    },
-  ],
-  component: DocsComponent,
-  path: 'docs',
-}];
+const routes: Routes = [
+  {
+    children: [
+      {
+        component: DocsOverviewComponent,
+        path: '',
+      },
+      {
+        component: AngularComponent,
+        path: 'angular',
+      },
+      {
+        component: CreatingComponent,
+        path: 'creating',
+      },
+      {
+        component: AngularMaterialComponent,
+        path: 'angular-material',
+      },
+      {
+        component: BuildTasksComponent,
+        path: 'build-tasks',
+      },
+      {
+        component: DeploymentComponent,
+        path: 'deployment',
+      },
+      {
+        component: IconsComponent,
+        path: 'icons',
+      },
+      {
+        component: TestingComponent,
+        path: 'testing',
+      },
+      {
+        component: ThemeComponent,
+        path: 'theme',
+      },
+      {
+        component: UtilitySASSMixinsComponent,
+        path: 'utility-sass-mixins',
+      },
+      {
+        component: MockDataComponent,
+        path: 'mock-data',
+      },
+    ],
+    component: DocsComponent,
+    path: 'docs',
+  },
+];
 
 export const docsRoutes: any = RouterModule.forChild(routes);

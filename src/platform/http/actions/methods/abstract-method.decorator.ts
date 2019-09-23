@@ -14,7 +14,7 @@ export const NOOP_HTTP: Observable<any> = of(undefined);
  * into a centrilized HttpParams object
  * @internal
  */
-export function parseParams(target: HttpParams, source: HttpParams | {[key: string]: string | string[]}): HttpParams {
+export function parseParams(target: HttpParams, source: HttpParams | { [key: string]: string | string[] }): HttpParams {
   let queryParams: HttpParams = target;
   if (source instanceof HttpParams) {
     source.keys().forEach((key: string) => {
@@ -55,17 +55,21 @@ export function parseParams(target: HttpParams, source: HttpParams | {[key: stri
  * @internal
  */
 export function TdAbstractMethod(config: {
-  method: TdHttpMethod,
-  path: string,
-  options?: ITdHttpRESTOptions,
+  method: TdHttpMethod;
+  path: string;
+  options?: ITdHttpRESTOptions;
 }): Function {
-  return function (target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
+  return function(target: any, propertyName: string, descriptor: TypedPropertyDescriptor<Function>): any {
     let wrappedFunction: Function = descriptor.value;
     // replace method call with our own and proxy it
-    descriptor.value = function (): any {
+    descriptor.value = function(): any {
       try {
         let replacedPath: string = config.path;
-        let parameters: { index: number, param: string, type: TdParamType }[] = Reflect.getOwnMetadata(tdHttpRESTParam, target, propertyName);
+        let parameters: { index: number; param: string; type: TdParamType }[] = Reflect.getOwnMetadata(
+          tdHttpRESTParam,
+          target,
+          propertyName,
+        );
         let newArgs: any[] = [];
         let body: any;
         let queryParams: HttpParams = new HttpParams();
@@ -80,7 +84,7 @@ export function TdAbstractMethod(config: {
               body = arguments[parameter.index];
             } else if (parameter.type === 'queryParams') {
               newArgs[parameter.index] = arguments[parameter.index];
-              let qParams: HttpParams | {[key: string]: string | string[]} = arguments[parameter.index];
+              let qParams: HttpParams | { [key: string]: string | string[] } = arguments[parameter.index];
               if (config.options && config.options.params) {
                 queryParams = parseParams(queryParams, config.options.params);
               }

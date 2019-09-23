@@ -17,7 +17,7 @@ export function getSelectedLanguage(translateService: TranslateService): string 
     return translateService.getBrowserLang();
   }
   // If everything fails, then use default lang
-  return translateService.getDefaultLang();
+  return translateService.getDefaultLang() || 'en';
 }
 
 /**

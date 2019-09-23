@@ -1,4 +1,13 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+  SecurityContext,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
@@ -11,7 +20,6 @@ let hljs: any = require('highlight.js/lib');
   templateUrl: './highlight.component.html',
 })
 export class TdHighlightComponent implements AfterViewInit {
-
   private _initialized: boolean = false;
 
   private _content: string;
@@ -48,9 +56,7 @@ export class TdHighlightComponent implements AfterViewInit {
    */
   @Output('contentReady') onContentReady: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private _renderer: Renderer2,
-              private _elementRef: ElementRef,
-              private _domSanitizer: DomSanitizer) {}
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
   ngAfterViewInit(): void {
     if (!this.language) {
@@ -91,8 +97,7 @@ export class TdHighlightComponent implements AfterViewInit {
 
   private _render(contents: string): string {
     // Trim leading and trailing newlines
-    contents = contents.replace(/^(\s|\t)*\n+/g, '')
-                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+    contents = contents.replace(/^(\s|\t)*\n+/g, '').replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markup by line characters
     let lines: string[] = contents.split('\n');
 
@@ -108,9 +113,12 @@ export class TdHighlightComponent implements AfterViewInit {
         .replace(/\s+$/, ''); // remove trailing white spaces
     });
 
-    let codeToParse: string =  lines.join('\n')
-    .replace(/\{ \{/gi, '{{').replace(/\} \}/gi, '}}')
-    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');  // replace with < and > to render HTML in Angular
+    let codeToParse: string = lines
+      .join('\n')
+      .replace(/\{ \{/gi, '{{')
+      .replace(/\} \}/gi, '}}')
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>'); // replace with < and > to render HTML in Angular
 
     // Parse code with highlight.js depending on language
     let highlightedCode: any = hljs.highlight(this.language, codeToParse, true);

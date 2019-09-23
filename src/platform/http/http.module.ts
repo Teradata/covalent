@@ -8,13 +8,13 @@ import { TdURLRegExpInterceptorMatcher } from './interceptors/url-regexp-interce
 
 export const HTTP_CONFIG: InjectionToken<HttpConfig> = new InjectionToken<HttpConfig>('HTTP_CONFIG');
 
-export type HttpConfig = {interceptors: ITdHttpInterceptorConfig[]};
+export type HttpConfig = { interceptors: ITdHttpInterceptorConfig[] };
 
 export function httpFactory(handler: HttpHandler, injector: Injector, config: HttpConfig): TdHttpService {
   return new TdHttpService(
-              handler,
-              new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
-            );
+    handler,
+    new TdInterceptorBehaviorService(injector, new TdURLRegExpInterceptorMatcher(), config.interceptors),
+  );
 }
 
 export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
@@ -24,21 +24,17 @@ export const HTTP_INTERCEPTOR_PROVIDER: Provider = {
 };
 
 @NgModule({
-  imports: [
-    HttpClientModule,
-  ],
-  providers: [
-    InternalHttpService,
-  ],
+  imports: [HttpClientModule],
+  providers: [InternalHttpService],
 })
 export class CovalentHttpModule {
-
   constructor(private _internalHttpService: InternalHttpService) {}
 
-  static forRoot(config: HttpConfig = {interceptors: []}): ModuleWithProviders {
+  static forRoot(config: HttpConfig = { interceptors: [] }): ModuleWithProviders {
     return {
       ngModule: CovalentHttpModule,
-      providers: [{
+      providers: [
+        {
           provide: HTTP_CONFIG,
           useValue: config,
         },

@@ -8,42 +8,48 @@ import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core';
   preserveWhitespaces: true,
 })
 export class NavViewComponent {
-
-  routes: Object[] = [{
+  routes: Object[] = [
+    {
       icon: 'home',
       route: '.',
       title: 'Home',
-    }, {
+    },
+    {
       icon: 'library_books',
       route: '.',
       title: 'Documentation',
-    }, {
+    },
+    {
       icon: 'color_lens',
       route: '.',
       title: 'Style Guide',
-    }, {
+    },
+    {
       icon: 'view_quilt',
       route: '.',
       title: 'Layouts',
-    }, {
+    },
+    {
       icon: 'picture_in_picture',
       route: '.',
       title: 'Components & Addons',
     },
   ];
-  usermenu: Object[] = [{
+  usermenu: Object[] = [
+    {
       icon: 'swap_horiz',
       route: '.',
       title: 'Switch account',
-    }, {
+    },
+    {
       icon: 'tune',
       route: '.',
       title: 'Account settings',
-    }, {
+    },
+    {
       icon: 'exit_to_app',
       route: '.',
       title: 'Sign out',
     },
   ];
-
 }

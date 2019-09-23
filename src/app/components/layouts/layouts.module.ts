@@ -16,8 +16,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule,
-         CovalentCommonModule } from '../../../platform/core';
+import {
+  CovalentLayoutModule,
+  CovalentExpansionPanelModule,
+  CovalentStepsModule,
+  CovalentMediaModule,
+  CovalentCommonModule,
+} from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
