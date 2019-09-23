@@ -7,7 +7,7 @@ $animated-width: 130%;
 }
 
 %td-lm-base {
-  display: block;
+  display: inline-flex;
   background-color: rgba(0, 0, 0, 0.051);
   position: relative;
   overflow: hidden;
