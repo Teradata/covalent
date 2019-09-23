@@ -1,13 +1,16 @@
-.td-skeleton-outer-container {
-  height: 400px;
+.td-skeleton-container {
+  min-height: 400px;
   width: 400px;
   border: 1px solid lightgray;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  align-items: start;
+  margin: 0 auto 70px;
+  flex-direction: column;
   .inner {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
   }
 }
 

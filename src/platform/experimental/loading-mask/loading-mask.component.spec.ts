@@ -9,9 +9,8 @@ describe('TdLoadingMaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TdLoadingMaskComponent ],
-    })
-    .compileComponents();
+      declarations: [TdLoadingMaskComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -58,5 +57,4 @@ describe('TdLoadingMaskComponent', () => {
     expect(component.height === styles.height).toBeTruthy();
     expect(component.width === styles.width).toBeTruthy();
   });
-
 });
