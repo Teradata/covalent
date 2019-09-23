@@ -19,7 +19,7 @@ export class TdLoadingMaskComponent implements OnInit {
   /**
    * Referencing animation span to dynamically change animation duration
    */
-  @ViewChild('animSpan', {static: true}) animSpan: ElementRef;
+  @ViewChild('animSpan', { static: true }) animSpan: ElementRef;
 
   @Input() animationDuration: string = this._defaultAnimationDuration;
 

@@ -39,7 +39,8 @@ $animated-width: 130%;
   0% {
     left: -#{$animated-width};
   }
-  35%, 100% {
+  35%,
+  100% {
     left: #{$animated-width};
   }
 }
