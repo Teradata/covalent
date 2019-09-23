@@ -7,13 +7,17 @@ export type TdHttpRESTResponseType = 'arraybuffer' | 'blob' | 'json' | 'text';
 export type TdHttpRESTObserve = 'body' | 'response' | 'events';
 
 export interface ITdHttpRESTOptions {
-  headers?: HttpHeaders | {
-    [header: string]: string | string[];
-  };
+  headers?:
+    | HttpHeaders
+    | {
+        [header: string]: string | string[];
+      };
   observe?: TdHttpRESTObserve;
-  params?: HttpParams | {
-    [param: string]: string | string[];
-  };
+  params?:
+    | HttpParams
+    | {
+        [param: string]: string | string[];
+      };
   responseType?: TdHttpRESTResponseType;
   reportProgress?: boolean;
   withCredentials?: boolean;

@@ -12,11 +12,10 @@ export const _TdStepHeaderMixinBase = mixinDisableRipple(mixinDisabled(TdStepHea
 @Component({
   selector: 'td-step-header',
   inputs: ['disabled', 'disableRipple'],
-  styleUrls: ['./step-header.component.scss' ],
+  styleUrls: ['./step-header.component.scss'],
   templateUrl: './step-header.component.html',
 })
 export class TdStepHeaderComponent extends _TdStepHeaderMixinBase implements ICanDisable, ICanDisableRipple {
-
   /**
    * Number assigned to [TdStepHeaderComponent].
    */

@@ -1,9 +1,4 @@
-import {
-  TestBed,
-  inject,
-  async,
-  ComponentFixture,
-} from '@angular/core/testing';
+import { TestBed, inject, async, ComponentFixture } from '@angular/core/testing';
 import 'hammerjs';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,17 +9,10 @@ import { NgModule, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: SearchBox', () => {
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        FormsModule,
-        CovalentSearchModule,
-      ],
-      declarations: [
-        TestNgModelSupportComponent,
-      ],
+      imports: [NoopAnimationsModule, FormsModule, CovalentSearchModule],
+      declarations: [TestNgModelSupportComponent],
     });
     TestBed.compileComponents();
   }));
@@ -59,8 +47,8 @@ describe('Component: SearchBox', () => {
 
 @Component({
   template: `
-    <td-search-box [(ngModel)]="value">
-    </td-search-box>`,
+    <td-search-box [(ngModel)]="value"> </td-search-box>
+  `,
 })
 class TestNgModelSupportComponent {
   value: string;

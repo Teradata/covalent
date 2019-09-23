@@ -8,18 +8,14 @@ import { slideInDownAnimation } from '../../../app.animations';
   selector: 'design-patterns-navigation-drawer',
   styleUrls: ['./navigation-drawer.component.scss'],
   templateUrl: './navigation-drawer.component.html',
-  animations: [
-    slideInDownAnimation,
-    tdCollapseAnimation,
-  ],
+  animations: [slideInDownAnimation, tdCollapseAnimation],
 })
 export class NavigationDrawerComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
   source: any = '';
-  
+
   constructor(private sanitizer: DomSanitizer) {
     this.source = sanitizer.bypassSecurityTrustResourceUrl('https://nav-drawer-patterns.stackblitz.io');
   }

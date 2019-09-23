@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CovalentCommonModule } from '@covalent/core/common';
- 
+
 import { designPatternsRoutes } from './design-patterns.routes';
 import { DesignPatternsComponent } from './design-patterns.component';
 import { CardsComponent } from './cards/cards.component';
@@ -30,8 +30,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
+import {
+  CovalentLayoutModule,
+  CovalentMediaModule,
+  CovalentSearchModule,
+  CovalentPagingModule,
+  CovalentExpansionPanelModule,
+  CovalentDialogsModule,
+  CovalentMessageModule,
+} from '../../../platform/core';
 import { CovalentHighlightModule } from '../../../platform/highlight';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';

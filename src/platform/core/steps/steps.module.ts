@@ -14,8 +14,12 @@ import { CovalentCommonModule } from '@covalent/core/common';
 import { TdStepsComponent } from './steps.component';
 import { TdStepHeaderComponent } from './step-header/step-header.component';
 import { TdStepBodyComponent } from './step-body/step-body.component';
-import { TdStepComponent, TdStepLabelDirective, TdStepActionsDirective,
-         TdStepSummaryDirective } from './step.component';
+import {
+  TdStepComponent,
+  TdStepLabelDirective,
+  TdStepActionsDirective,
+  TdStepSummaryDirective,
+} from './step.component';
 
 // Nav Steps
 import { TdNavStepsHorizontalComponent } from './nav/nav-steps-horizontal/nav-steps-horizontal.component';
@@ -33,25 +37,11 @@ const TD_STEPS: Type<any>[] = [
   TdNavStepsHorizontalComponent,
   TdNavStepsVerticalComponent,
   TdNavStepLinkComponent,
-
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatRippleModule,
-    PortalModule,
-    ScrollDispatchModule,
-    CovalentCommonModule,
-  ],
-  declarations: [
-    TD_STEPS,
-  ],
-  exports: [
-    TD_STEPS,
-  ],
+  imports: [CommonModule, MatIconModule, MatRippleModule, PortalModule, ScrollDispatchModule, CovalentCommonModule],
+  declarations: [TD_STEPS],
+  exports: [TD_STEPS],
 })
-export class CovalentStepsModule {
-
-}
+export class CovalentStepsModule {}

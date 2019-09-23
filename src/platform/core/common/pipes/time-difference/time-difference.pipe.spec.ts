@@ -18,7 +18,7 @@ describe('TdTimeDifferencePipe', () => {
     expect(pipe.transform('this is not a valid date', 'not a valid date either')).toEqual('Invalid Date');
   });
 
-  it('should return a time ago string', () =>  {
+  it('should return a time ago string', () => {
     // 0 second
     expect(pipe.transform(start, end)).toEqual('00:00:00');
     expect(pipe.transform(new Date(start), end)).toEqual('00:00:00');

@@ -6,19 +6,8 @@ import { TdBreadcrumbsComponent } from './breadcrumbs.component';
 import { TdBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-  ],
-  declarations: [
-    TdBreadcrumbsComponent,
-    TdBreadcrumbComponent,
-  ],
-  exports: [
-    TdBreadcrumbsComponent,
-    TdBreadcrumbComponent,
-  ],
+  imports: [CommonModule, MatIconModule],
+  declarations: [TdBreadcrumbsComponent, TdBreadcrumbComponent],
+  exports: [TdBreadcrumbsComponent, TdBreadcrumbComponent],
 })
-export class CovalentBreadcrumbsModule {
-
-}
+export class CovalentBreadcrumbsModule {}

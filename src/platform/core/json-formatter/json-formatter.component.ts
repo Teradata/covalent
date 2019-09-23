@@ -5,14 +5,11 @@ import { tdCollapseAnimation } from '@covalent/core/common';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'td-json-formatter',
-  styleUrls: ['./json-formatter.component.scss' ],
+  styleUrls: ['./json-formatter.component.scss'],
   templateUrl: './json-formatter.component.html',
-  animations: [
-    tdCollapseAnimation,
-  ],
+  animations: [tdCollapseAnimation],
 })
 export class TdJsonFormatterComponent {
-
   /**
    * Max length for property names. Any names bigger than this get trunctated.
    */
@@ -91,9 +88,7 @@ export class TdJsonFormatterComponent {
     return false;
   }
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() private _dir: Dir) {
-  }
+  constructor(private _changeDetectorRef: ChangeDetectorRef, @Optional() private _dir: Dir) {}
 
   /**
    * Refreshes json-formatter and rerenders [data]
@@ -126,7 +121,7 @@ export class TdJsonFormatterComponent {
    */
   getValue(value: any): string {
     let type: string = this.getType(value);
-    if (type === 'undefined' || (type === 'null')) {
+    if (type === 'undefined' || type === 'null') {
       return type;
     } else if (type === 'date') {
       value = new Date(value).toString();
@@ -134,9 +129,12 @@ export class TdJsonFormatterComponent {
       value = '"' + value + '"';
     } else if (type === 'function') {
       // Remove content of the function
-      return value.toString()
+      return (
+        value
+          .toString()
           .replace(/[\r\n]/g, '')
-          .replace(/\{.*\}/, '') + '{…}';
+          .replace(/\{.*\}/, '') + '{…}'
+      );
     } else if (Array.isArray(value)) {
       return this.getObjectName() + ' [' + value.length + ']';
     }
@@ -172,10 +170,10 @@ export class TdJsonFormatterComponent {
   getObjectName(): string {
     let object: any = this._data;
     if (this.isObject() && !object.constructor) {
-        return 'Object';
+      return 'Object';
     }
     let funcNameRegex: RegExp = /function (.{1,})\(/;
-    let results: RegExpExecArray = (funcNameRegex).exec((object).constructor.toString());
+    let results: RegExpExecArray = funcNameRegex.exec(object.constructor.toString());
     if (results && results.length > 1) {
       return results[1];
     } else {
@@ -203,11 +201,15 @@ export class TdJsonFormatterComponent {
         return key + ': ' + this.getValue(this._data[key]);
       });
     }
-    let previewString: string =  previewData.join(', ');
-    let ellipsis: string = previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
-                           previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH ? '…' : '';
-    return startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) +
-           ellipsis + endChar;
+    let previewString: string = previewData.join(', ');
+    let ellipsis: string =
+      previewData.length >= TdJsonFormatterComponent.PREVIEW_LIMIT ||
+      previewString.length > TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH
+        ? '…'
+        : '';
+    return (
+      startChar + previewString.substring(0, TdJsonFormatterComponent.PREVIEW_STRING_MAX_LENGTH) + ellipsis + endChar
+    );
   }
 
   private parseChildren(): void {
@@ -218,5 +220,4 @@ export class TdJsonFormatterComponent {
       }
     }
   }
-
 }

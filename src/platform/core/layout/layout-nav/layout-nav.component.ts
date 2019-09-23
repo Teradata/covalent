@@ -4,11 +4,10 @@ import { TdLayoutComponent } from '../layout.component';
 
 @Component({
   selector: 'td-layout-nav',
-  styleUrls: ['./layout-nav.component.scss' ],
+  styleUrls: ['./layout-nav.component.scss'],
   templateUrl: './layout-nav.component.html',
 })
 export class TdLayoutNavComponent {
-
   /**
    * toolbarTitle?: string
    *

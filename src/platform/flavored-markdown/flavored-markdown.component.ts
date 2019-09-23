@@ -24,15 +24,18 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { TdFlavoredListComponent, IFlavoredListItem } from './cfm-list/cfm-list.component';
 import { TdHighlightComponent } from '@covalent/highlight';
 import { TdMarkdownComponent, scrollToAnchor } from '@covalent/markdown';
-import { TdDataTableComponent, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumnWidth } from '@covalent/core/data-table';
+import {
+  TdDataTableComponent,
+  TdDataTableSortingOrder,
+  ITdDataTableSortChangeEvent,
+  ITdDataTableColumnWidth,
+} from '@covalent/core/data-table';
 
 @Directive({
   selector: '[tdFlavoredMarkdownContainer]',
 })
 export class TdFlavoredMarkdownContainerDirective {
-
-  constructor(public viewContainerRef: ViewContainerRef,
-              private _renderer: Renderer2) { }
+  constructor(public viewContainerRef: ViewContainerRef, private _renderer: Renderer2) {}
 
   clear(): void {
     this._renderer.setProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');
@@ -41,7 +44,7 @@ export class TdFlavoredMarkdownContainerDirective {
 }
 
 export interface IReplacerFunc<T> {
-    (componentRef: ComponentRef<T>, ...args: any[]): void;
+  (componentRef: ComponentRef<T>, ...args: any[]): void;
 }
 
 @Component({
@@ -51,7 +54,6 @@ export interface IReplacerFunc<T> {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
-
   private _content: string;
   private _simpleLineBreaks: boolean = false;
   private _hostedUrl: string;
@@ -111,13 +113,15 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
    */
   @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
-  @ViewChild(TdFlavoredMarkdownContainerDirective) container: TdFlavoredMarkdownContainerDirective;
+  @ViewChild(TdFlavoredMarkdownContainerDirective, { static: true }) container: TdFlavoredMarkdownContainerDirective;
 
-  constructor(private _componentFactoryResolver: ComponentFactoryResolver,
-              private _renderer: Renderer2,
-              private _changeDetectorRef: ChangeDetectorRef,
-              private _injector: Injector,
-              private _elementRef: ElementRef) {}
+  constructor(
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _renderer: Renderer2,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _injector: Injector,
+    private _elementRef: ElementRef,
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
@@ -150,8 +154,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   private _loadContent(markdown: string): void {
     if (markdown && markdown.trim().length > 0) {
       this.container.clear();
-      markdown = markdown.replace(/^(\s|\t)*\n+/g, '')
-                      .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+      markdown = markdown.replace(/^(\s|\t)*\n+/g, '').replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
       // Split markdown by line characters
       let lines: string[] = markdown.split('\n');
 
@@ -176,7 +179,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
         return markdown.indexOf(compA) > markdown.indexOf(compB) ? 1 : -1;
       });
       this._render(markdown, keys[0], keys);
-       // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
+      // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
       setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
       this.onContentReady.emit();
       Promise.resolve().then(() => {
@@ -199,7 +202,8 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       this._render(markdownParts[1], keys[0], keys);
     } else {
       let contentRef: ComponentRef<TdMarkdownComponent> = this._componentFactoryResolver
-        .resolveComponentFactory(TdMarkdownComponent).create(this._injector);
+        .resolveComponentFactory(TdMarkdownComponent)
+        .create(this._injector);
       contentRef.instance.content = markdown;
       contentRef.instance.hostedUrl = this._hostedUrl;
       contentRef.instance.simpleLineBreaks = this._simpleLineBreaks;
@@ -208,7 +212,12 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
     }
   }
 
-  private _replaceComponent<T>(markdown: string, type: Type<T>, regExp: RegExp, replacerFunc: IReplacerFunc<T>): string {
+  private _replaceComponent<T>(
+    markdown: string,
+    type: Type<T>,
+    regExp: RegExp,
+    replacerFunc: IReplacerFunc<T>,
+  ): string {
     let componentIndex: number = 0;
     return markdown.replace(regExp, (...args: any[]) => {
       let componentFactory: ComponentFactory<T> = this._componentFactoryResolver.resolveComponentFactory(type);
@@ -222,103 +231,142 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
 
   private _replaceCheckbox(markdown: string): string {
     let checkboxRegExp: RegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
-    return this._replaceComponent(markdown, MatCheckbox, checkboxRegExp,
-                                  (componentRef: ComponentRef<MatCheckbox>, match: string, checked: string, label: string) => {
-      componentRef.instance.checked = !!checked.trim();
-      componentRef.instance.disabled = true;
-      componentRef.instance.labelPosition = 'after';
-      this._renderer.setProperty((<HTMLElement>componentRef.instance._elementRef.nativeElement)
-                                        .getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
-    });
+    return this._replaceComponent(
+      markdown,
+      MatCheckbox,
+      checkboxRegExp,
+      (componentRef: ComponentRef<MatCheckbox>, match: string, checked: string, label: string) => {
+        componentRef.instance.checked = !!checked.trim();
+        componentRef.instance.disabled = true;
+        componentRef.instance.labelPosition = 'after';
+        this._renderer.setProperty(
+          (<HTMLElement>componentRef.instance._elementRef.nativeElement).getElementsByClassName(
+            'mat-checkbox-label',
+          )[0],
+          'innerHTML',
+          label,
+        );
+      },
+    );
   }
 
   private _replaceCodeBlocks(markdown: string): string {
     let codeBlockRegExp: RegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
-    return this._replaceComponent(markdown, TdHighlightComponent, codeBlockRegExp,
-                                  (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
-      if (language) {
-        componentRef.instance.language = language;
-      }
-      componentRef.instance.content = codeblock;
-    });
+    return this._replaceComponent(
+      markdown,
+      TdHighlightComponent,
+      codeBlockRegExp,
+      (componentRef: ComponentRef<TdHighlightComponent>, match: string, language: string, codeblock: string) => {
+        if (language) {
+          componentRef.instance.language = language;
+        }
+        componentRef.instance.content = codeblock;
+      },
+    );
   }
 
   private _replaceTables(markdown: string): string {
     let tableRgx: RegExp = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
-    return this._replaceComponent(markdown, TdDataTableComponent, tableRgx,
-                                  (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
-      let dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
-      let columns: string[] = dataTableLines[0].split('|')
-                              .filter((col: string) => { return col; })
-                              .map((s: string) => { return s.trim(); });
-      let alignment: string[] = dataTableLines[1].split('|').filter((v: string) => { return v; }).map((s: string) => { return s.trim(); });
-      componentRef.instance.columns = columns.map((col: string, index: number) => {
-        let widths: string[] = alignment[index].split('---');
-        let min: number = parseInt(widths[0], 10);
-        let max: number = parseInt(widths[1], 10);
-        let width: ITdDataTableColumnWidth = {min: min, max: max};
-        if (isNaN(min) && isNaN(max)) {
-          width = undefined;
-        } else if (isNaN(max)) {
-          width.max = undefined;
-        } else if (isNaN(min)) {
-          width.min = undefined;
-        }
-        return {
-          label: col,
-          name: col.toLowerCase().trim(),
-          numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
-          width: width,
-        };
-      });
+    return this._replaceComponent(
+      markdown,
+      TdDataTableComponent,
+      tableRgx,
+      (componentRef: ComponentRef<TdDataTableComponent>, match: string) => {
+        let dataTableLines: string[] = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
+        let columns: string[] = dataTableLines[0]
+          .split('|')
+          .filter((col: string) => {
+            return col;
+          })
+          .map((s: string) => {
+            return s.trim();
+          });
+        let alignment: string[] = dataTableLines[1]
+          .split('|')
+          .filter((v: string) => {
+            return v;
+          })
+          .map((s: string) => {
+            return s.trim();
+          });
+        componentRef.instance.columns = columns.map((col: string, index: number) => {
+          let widths: string[] = alignment[index].split('---');
+          let min: number = parseInt(widths[0], 10);
+          let max: number = parseInt(widths[1], 10);
+          let width: ITdDataTableColumnWidth = { min: min, max: max };
+          if (isNaN(min) && isNaN(max)) {
+            width = undefined;
+          } else if (isNaN(max)) {
+            width.max = undefined;
+          } else if (isNaN(min)) {
+            width.min = undefined;
+          }
+          return {
+            label: col,
+            name: col.toLowerCase().trim(),
+            numeric: /^--*[ \t]*:[ \t]*$/.test(alignment[index]),
+            width: width,
+          };
+        });
 
-      let data: any[] = [];
-      for (let i: number = 2; i < dataTableLines.length; i++) {
-        let rowSplit: string[] = dataTableLines[i].split('|')
-                                                      .filter((cell: string) => { return cell; })
-                                                      .map((s: string) => { return s.trim(); });
-        let row: any = {};
-        columns.forEach((col: string, index: number) => {
-          const rowSplitCell: string = rowSplit[index];
-          if (rowSplitCell) {
-            row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (m: string, value: string) => {
-              return value;
+        let data: any[] = [];
+        for (let i: number = 2; i < dataTableLines.length; i++) {
+          let rowSplit: string[] = dataTableLines[i]
+            .split('|')
+            .filter((cell: string) => {
+              return cell;
+            })
+            .map((s: string) => {
+              return s.trim();
             });
-          }
-        });
-        data.push(row);
-      }
-      componentRef.instance.data = data;
-      componentRef.instance.sortable = true;
-      componentRef.instance.onSortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
-        componentRef.instance.data = data.sort((a: any, b: any) => {
-          let compA: any = a[event.name];
-          let compB: any = b[event.name];
-          let direction: number = 0;
-          if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
-            direction = Number.parseFloat(compA) - Number.parseFloat(compB);
-          } else {
-            if (compA < compB) {
-              direction = -1;
-            } else if (compA > compB) {
-              direction = 1;
+          let row: any = {};
+          columns.forEach((col: string, index: number) => {
+            const rowSplitCell: string = rowSplit[index];
+            if (rowSplitCell) {
+              row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (m: string, value: string) => {
+                return value;
+              });
             }
-          }
-          return direction * (event.order === TdDataTableSortingOrder.Descending ? -1 : 1);
+          });
+          data.push(row);
+        }
+        componentRef.instance.data = data;
+        componentRef.instance.sortable = true;
+        componentRef.instance.onSortChange.subscribe((event: ITdDataTableSortChangeEvent) => {
+          componentRef.instance.data = data.sort((a: any, b: any) => {
+            let compA: any = a[event.name];
+            let compB: any = b[event.name];
+            let direction: number = 0;
+            if (!Number.isNaN(Number.parseFloat(compA)) && !Number.isNaN(Number.parseFloat(compB))) {
+              direction = Number.parseFloat(compA) - Number.parseFloat(compB);
+            } else {
+              if (compA < compB) {
+                direction = -1;
+              } else if (compA > compB) {
+                direction = 1;
+              }
+            }
+            return direction * (event.order === TdDataTableSortingOrder.Descending ? -1 : 1);
+          });
+          componentRef.instance.refresh();
         });
-        componentRef.instance.refresh();
-      });
-      setTimeout(() => {
-        componentRef.instance.refresh();
-      });
-    });
+        setTimeout(() => {
+          componentRef.instance.refresh();
+        });
+      },
+    );
   }
 
   private _replaceLists(markdown: string): string {
     let listRegExp: RegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
-    return this._replaceComponent(markdown, TdFlavoredListComponent, listRegExp,
+    return this._replaceComponent(
+      markdown,
+      TdFlavoredListComponent,
+      listRegExp,
       (componentRef: ComponentRef<TdFlavoredListComponent>, match: string) => {
-        let lineTexts: string[] = match.split(new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'));
+        let lineTexts: string[] = match.split(
+          new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'),
+        );
         lineTexts.shift();
         let lines: IFlavoredListItem[] = [];
         lineTexts.forEach((text: string, index: number) => {
@@ -331,6 +379,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
           });
         });
         componentRef.instance.lines = lines;
-      });
+      },
+    );
   }
 }

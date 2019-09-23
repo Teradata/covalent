@@ -2,8 +2,13 @@
 
 module.exports = {
   deployed: 'deploy/platform/',
-  angularVersion: '7.0.0',
-  materialVersion: '7.0.0',
+  echartsVersion: '4.2.1',
+  angularVersion: '8.0.0',
+  materialVersion: '8.0.0',
+  showdownVersion: '1.9.0',
+  highlightVersion: '9.13.1',
+  monacoVersion: '0.17.0',
+  simplemdeVersion: '1.11.2',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
@@ -20,7 +25,7 @@ module.exports = {
     PostNgPackngrCompileStyles: [
       'deploy/platform/core/**/material-icons.scss',
       'deploy/platform/core/**/platform.scss',
-      'deploy/platform/core/**/theming/prebuilt/**/*.scss'
+      'deploy/platform/core/**/theming/prebuilt/**/*.scss',
     ],
     PostNgPackngrAdditionalFiles: [
       '!src/platform/core/**/*.component.scss',
@@ -30,5 +35,5 @@ module.exports = {
       '!src/platform/core/**/*.md',
       'src/platform/**/*.md',
     ],
-  }
+  },
 };

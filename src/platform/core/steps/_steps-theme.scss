@@ -62,12 +62,14 @@
           color: mat-color($foreground, secondary-text);
         }
         &.mat-inactive {
-          &, & * {
+          &,
+          & * {
             color: mat-color($foreground, disabled);
           }
         }
         &.mat-warn {
-          &, & * {
+          &,
+          & * {
             color: mat-color($warn);
           }
         }

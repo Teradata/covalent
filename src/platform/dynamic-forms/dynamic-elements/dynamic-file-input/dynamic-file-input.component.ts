@@ -3,11 +3,10 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'td-dynamic-file-input',
-  styleUrls: [ './dynamic-file-input.component.scss' ],
+  styleUrls: ['./dynamic-file-input.component.scss'],
   templateUrl: './dynamic-file-input.component.html',
 })
 export class TdDynamicFileInputComponent {
-
   control: FormControl;
 
   required: boolean = undefined;
@@ -23,5 +22,4 @@ export class TdDynamicFileInputComponent {
   _handlefileDrop(value: File): void {
     this.control.setValue(value);
   }
-
 }

@@ -7,7 +7,6 @@ import { FormControl } from '@angular/forms';
   templateUrl: './dynamic-datepicker.component.html',
 })
 export class TdDynamicDatepickerComponent {
-
   control: FormControl;
 
   label: string = '';
@@ -25,5 +24,4 @@ export class TdDynamicDatepickerComponent {
   max: number = undefined;
 
   errorMessageTemplate: TemplateRef<any> = undefined;
-
 }

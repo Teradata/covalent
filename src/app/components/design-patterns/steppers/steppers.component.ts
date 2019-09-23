@@ -6,12 +6,9 @@ import { slideInDownAnimation } from '../../../app.animations';
   selector: 'steppers',
   styleUrls: ['./steppers.component.scss'],
   templateUrl: './steppers.component.html',
-  animations: [
-    slideInDownAnimation,
-  ],
+  animations: [slideInDownAnimation],
 })
 export class SteppersComponent {
-
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
