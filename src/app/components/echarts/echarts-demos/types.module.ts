@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -43,13 +44,13 @@ import { CovalentGraphEchartsModule } from '@covalent/echarts/graph';
 import { CovalentTreemapEchartsModule } from '@covalent/echarts/treemap';
 import { CovalentTooltipEchartsModule } from '@covalent/echarts/tooltip';
 import { CovalentToolboxEchartsModule } from '@covalent/echarts/toolbox';
-import { moduleRoutes } from './types.routes';
 
 import { DocumentationToolsModule } from '../../../documentation-tools';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     // Material
     MatIconModule,
     MatDividerModule,
@@ -86,7 +87,6 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     CovalentToolboxEchartsModule,
     // internal
     DocumentationToolsModule,
-    moduleRoutes,
   ],
   declarations: [
     TypesBarComponent,
@@ -99,4 +99,4 @@ import { DocumentationToolsModule } from '../../../documentation-tools';
     TypesTreemapComponent,
   ],
 })
-export class TypesModule {}
+export class EchartsDemosModule {}
