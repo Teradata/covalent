@@ -31,8 +31,8 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "highlight.js": "9.11.0",
-    "showdown": "1.6.4"
+    "highlight.js": "^0.0.0-HIGHLIGHT",
+    "showdown": "^0.0.0-SHOWDOWN"
   },
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",
