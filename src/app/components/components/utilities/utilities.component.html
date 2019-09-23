@@ -1,0 +1,87 @@
+<!--
+  Copyright (C) 2019 by Teradata Corporation. All rights reserved.
+  TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
+-->
+<mat-card>
+  <mat-card-title>Utilities</mat-card-title>
+  <mat-card-subtitle>Helper functions</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3 class="mat-title">Copy to clipboard</h3>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+          <mat-card-content>
+          <form class="md-padding">
+            <div layout="row">
+              <mat-form-field flex>
+                <textarea matInput
+                  [(ngModel)]="copytext"
+                  placeholder="Text to be copied"
+                  rows="1"
+                  name="copytextinput">
+                </textarea>
+              </mat-form-field>
+            </div>
+          </form>
+          <button mat-button
+            color="primary"
+            (click)="doCopyToClipboard()"
+            class="text-upper">
+            Copy To Clipboard
+          </button>
+        </mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <mat-card-content>
+          <p>HTML:</p>
+          <td-highlight lang="html">
+            <![CDATA[
+              <form class="md-padding">
+                <div layout="row">
+                  <mat-form-field flex>
+                    <textarea matInput
+                      [(ngModel)]="copytext"
+                      placeholder="Text to be copied"
+                      rows="1"
+                      name="copytextinput">
+                    </textarea>
+                  </mat-form-field>
+                </div>
+              </form>
+              <button mat-button 
+                color="primary"
+                (click)="doCopyToClipboard()"
+                class="text-upper">
+                Copy To Clipboard
+              </button>
+            ]]>
+          </td-highlight>
+          <p>Typescript:</p>
+          <td-highlight lang="typescript">
+            <![CDATA[
+              export class UtilitiesDemoComponent {
+                copytext: string = 'Lorem Ipsum';
+          
+                constructor(private _snackBar: MatSnackBar) {}
+          
+                doCopyToClipboard(): void {
+                  // Invoke utility function to copy input text to clipboard
+                  copyToClipboard(this.copytext);
+          
+                  // Show snackbar to indicate task complete
+                  this._snackBar.open('Text copied!', undefined, {
+                    duration: 2000,
+                  });
+                }
+              }
+            ]]>
+          </td-highlight>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<td-readme-loader resourceUrl="platform/utilities/README.md"></td-readme-loader>

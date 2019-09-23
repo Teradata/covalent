@@ -19,12 +19,7 @@
   "license": "MIT",
   "author": "Teradata UX",
   "contributors": [
-    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
-    "Richa Vyas <richa.vyas@teradata.com>",
     "Ed Morales <eduardo.morales@teradata.com>",
-    "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Wilken <jeremy.wilken@teradata.com>",
-    "Jeremy Smartt <jeremy.smartt@teradata.com>",
-    "Steven Ov <steven.ov@teradata.com>"
+    "Tom Lennan <thomas.lennan@teradata.com>"
   ]
 }

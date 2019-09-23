@@ -26,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import {
   CovalentLayoutModule,
@@ -63,6 +64,7 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     MatToolbarModule,
     MatGridListModule,
     MatTooltipModule,
+    MatSnackBarModule,
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
