@@ -17,19 +17,19 @@ describe('Service: File', () => {
 
   it('should throw error for missing file and formData', () => {
     let options: IUploadOptions = {
-        url: 'test.url',
-        method: 'post',
+      url: 'test.url',
+      method: 'post',
     };
 
     spyOn(XMLHttpRequest.prototype, 'send');
 
     service.upload(options).subscribe(
-        () => {
-            fail('Should throw error');
-        },
-        (error: any) => {
-            expect(error).toEqual('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
-        },
+      () => {
+        fail('Should throw error');
+      },
+      (error: any) => {
+        expect(error).toEqual('For [IUploadOptions] you have to set either the [file] or the [formData] property.');
+      },
     );
 
     expect(XMLHttpRequest.prototype.open).not.toHaveBeenCalled();
@@ -72,7 +72,7 @@ describe('Service: File', () => {
     let options: IUploadOptions = {
       url: 'test.url',
       method: 'post',
-      headers: {'My-Header': 'my-val'},
+      headers: { 'My-Header': 'my-val' },
       formData: formData,
     };
 
@@ -91,5 +91,4 @@ describe('Service: File', () => {
 
     service.upload(options).subscribe();
   });
-
 });
