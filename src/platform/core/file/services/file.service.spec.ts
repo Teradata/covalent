@@ -6,9 +6,7 @@ describe('Service: File', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CovalentFileModule,
-      ],
+      imports: [CovalentFileModule],
     });
     service = TestBed.get(TdFileService);
     spyOn(XMLHttpRequest.prototype, 'open').and.callThrough();

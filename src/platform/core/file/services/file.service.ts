@@ -16,8 +16,8 @@ export interface IUploadOptions {
 }
 
 export interface IUploadExtras {
-  headers?: { [name: string]: string | string[]; };
-  params?: {[param: string]: string | string[]};
+  headers?: { [name: string]: string | string[] };
+  params?: { [param: string]: string | string[] };
 }
 
 @Injectable()
@@ -45,14 +45,19 @@ export class TdFileService {
   /**
    * Uploads a file to URL.
    */
-  send(url: string, method: string, body: File | FormData, {headers, params}: IUploadExtras = {}): Observable<HttpEvent<any>> {
+  send(
+    url: string,
+    method: string,
+    body: File | FormData,
+    { headers, params }: IUploadExtras = {},
+  ): Observable<HttpEvent<any>> {
     if (!this._http) {
       throw new Error('The HttpClient module needs to be imported at root module level');
     }
     const req: HttpRequest<File | FormData> = new HttpRequest(method.toUpperCase(), url, body, {
       reportProgress: true,
       headers: new HttpHeaders(headers || {}),
-      params: new HttpParams({fromObject: params || {}}),
+      params: new HttpParams({ fromObject: params || {} }),
     });
     return this._http.request(req).pipe(tap((event: HttpEvent<any>) => this.handleEvent(event)));
   }
@@ -121,7 +126,7 @@ export class TdFileService {
         this._progressSubject.next(0);
         break;
       case HttpEventType.UploadProgress:
-        this._progressSubject.next(Math.round(100 * event.loaded / event.total));
+        this._progressSubject.next(Math.round((100 * event.loaded) / event.total));
         break;
       case HttpEventType.Response:
         this._progressSubject.next(100);
