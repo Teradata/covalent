@@ -32,7 +32,7 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "monaco-editor": "^0.10.1"
+    "monaco-editor": "^0.0.0-MONACO"
   },
   "peerDependencies": {
     "@angular/common": "^0.0.0-NG",
