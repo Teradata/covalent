@@ -1,11 +1,12 @@
 <mat-card>
   <mat-card-title>Simple Dialogs</mat-card-title>
-  <mat-card-subtitle>Quick way to use alert, confirm and prompt dialogs</mat-card-subtitle>
+  <mat-card-subtitle>Quick way to use alert, confirm, prompt, and draggable dialogs</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-actions>
     <button mat-button color="primary" (click)="openAlert()" class="text-upper">Open Alert</button>
     <button mat-button color="primary" (click)="openConfirm()" class="text-upper">Open Confirm</button>
     <button mat-button color="primary" (click)="openPrompt()" class="text-upper">Open Prompt</button>
+    <button mat-button color="primary" (click)="openDraggable()" class="text-upper">Open draggable dialog</button>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -87,6 +88,14 @@
                 // DO SOMETHING ELSE
               }
             });
+          }
+
+          openDraggable(): void {
+            this._dialogService.openDraggable(
+              DraggableDemoComponent,
+              {height: '300px'},
+              ['.drag-handle'] // CSS selectors of element(s) inside the component meant to be drag handle(s)
+            );
           }
         }
       ]]>
