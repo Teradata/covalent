@@ -1,17 +1,13 @@
-/*
- * Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
- * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
- */
-
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { copyToClipboard } from '../../../../platform/utilities'
+import { copyToClipboard } from '../../../../platform/core/common/functions'
 
 @Component({
   selector: 'td-utilities',
   templateUrl: './utilities.component.html',
   styleUrls: ['./utilities.component.scss'],
+  preserveWhitespaces: true,
 })
 export class UtilitiesDemoComponent {
   copytext: string = 'Lorem Ipsum';
