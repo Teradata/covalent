@@ -1,10 +1,12 @@
-import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional } from '@angular/core';
+import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { ComponentType } from '@angular/cdk/portal';
+import { ComponentType, TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 
 import { TdAlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { TdConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { TdPromptDialogComponent } from '../prompt-dialog/prompt-dialog.component';
+import { DragDrop, DragRef } from '@angular/cdk/drag-drop';
+import { DOCUMENT } from '@angular/common';
 
 export interface IDialogConfig extends MatDialogConfig {
   title?: string;
@@ -26,7 +28,11 @@ export interface IPromptConfig extends IConfirmConfig {
 
 @Injectable()
 export class TdDialogService {
-  constructor(private _dialogService: MatDialog) {}
+  constructor(
+    @Inject(DOCUMENT) private _document: Document,
+    private _dialogService: MatDialog,
+    private _dragDrop: DragDrop,
+  ) {}
 
   /**
    * params:
@@ -135,6 +141,46 @@ export class TdDialogService {
     if (config.cancelButton) {
       promptDialogComponent.cancelButton = config.cancelButton;
     }
+    return dialogRef;
+  }
+
+  /**
+   * Opens a draggable dialog containing the given component.
+   */
+  public openDraggable<T>(
+    component: ComponentType<T>,
+    config?: MatDialogConfig,
+    dragHandleSelectors?: string[],
+  ): MatDialogRef<T> {
+    const dialogRef: MatDialogRef<T, any> = this._dialogService.open(component, config);
+
+    const CDK_OVERLAY_PANE_SELECTOR: string = '.cdk-overlay-pane';
+    const CDK_OVERLAY_CONTAINER_SELECTOR: string = '.cdk-overlay-container';
+
+    dialogRef.afterOpened().subscribe(() => {
+      const dialogElement: HTMLElement = <HTMLElement>this._document.getElementById(dialogRef.id);
+      const draggableElement: DragRef = this._dragDrop.createDrag(dialogElement);
+
+      if (dragHandleSelectors && dragHandleSelectors.length) {
+        const dragHandles: Element[] = dragHandleSelectors.reduce(
+          (acc: Element[], curr: string) => [...acc, ...Array.from(dialogElement.querySelectorAll(curr))],
+          [],
+        );
+        if (dragHandles.length > 0) {
+          draggableElement.withHandles(<HTMLElement[]>dragHandles);
+        }
+      }
+
+      const rootElement: Element = dialogElement.closest(CDK_OVERLAY_PANE_SELECTOR);
+      if (rootElement) {
+        draggableElement.withRootElement(<HTMLElement>rootElement);
+      }
+      const boundaryElement: Element = dialogElement.closest(CDK_OVERLAY_CONTAINER_SELECTOR);
+      if (boundaryElement) {
+        draggableElement.withBoundaryElement(<HTMLElement>boundaryElement);
+      }
+    });
+
     return dialogRef;
   }
 
