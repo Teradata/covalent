@@ -5,7 +5,7 @@
  * as a result of a user action (eg. user clicks a button in
  * the UI). Due to browser security restrictions, this method
  * will not succeed if executed strictly programmatically.
- * 
+ *
  * @param value text value to be assigned to clipboard.
  */
 export function copyToClipboard(value: string): void {

@@ -28,7 +28,7 @@ export * from './forms/validators/validators';
 /**
  * FUNCTIONS
  */
-export * from './functions';
+export * from './functions/clipboard';
 
 /**
  * PIPES

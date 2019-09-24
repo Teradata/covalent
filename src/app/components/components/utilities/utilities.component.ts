@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { copyToClipboard } from '../../../../platform/core/common/functions'
+import { copyToClipboard } from '../../../../platform/core/common/functions';
 
 @Component({
   selector: 'td-utilities',
