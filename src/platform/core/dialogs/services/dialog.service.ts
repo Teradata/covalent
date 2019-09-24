@@ -29,7 +29,7 @@ export interface IPromptConfig extends IConfirmConfig {
 @Injectable()
 export class TdDialogService {
   constructor(
-    @Inject(DOCUMENT) private _document: Document,
+    @Inject(DOCUMENT) private _document: any,
     private _dialogService: MatDialog,
     private _dragDrop: DragDrop,
   ) {}
