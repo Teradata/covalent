@@ -479,37 +479,6 @@
         }
       }
     },
-    "covalent-utilities": {
-      "root": "src/platform/utilities",
-      "sourceRoot": "src/platform/utilities",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "src/platform/utilities/tsconfig.lib.json",
-            "project": "src/platform/utilities/ng-package.js"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/platform/utilities/test.ts",
-            "tsConfig": "src/platform/utilities/tsconfig.spec.json",
-            "karmaConfig": "src/platform/utilities/karma.conf.js",
-            "polyfills": "src/polyfills.ts"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["src/platform/utilities/tsconfig.lib.json", "src/platform/utilities/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
     "covalent-experimental": {
       "root": "src/platform/experimental",
       "sourceRoot": "src/platform/experimental",
