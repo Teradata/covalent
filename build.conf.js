@@ -5,6 +5,10 @@ module.exports = {
   echartsVersion: '4.2.1',
   angularVersion: '8.0.0',
   materialVersion: '8.0.0',
+  showdownVersion: '1.9.0',
+  highlightVersion: '9.13.1',
+  monacoVersion: '0.17.0',
+  simplemdeVersion: '1.11.2',
   paths: {
     PostNgPackngrBuildRequiredFiles: [
       '!src/platform/core/**/*.component.scss',
