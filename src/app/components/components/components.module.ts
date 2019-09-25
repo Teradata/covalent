@@ -36,6 +36,7 @@ import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
+import { FunctionsDemoComponent } from './functions/functions.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
@@ -135,6 +136,7 @@ import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.
     DynamicFormsDemoComponent,
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
+    FunctionsDemoComponent,
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
