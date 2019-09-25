@@ -64,3 +64,13 @@ export class TextEditor implements IComponent {
     return '@covalent/text-editor';
   }
 }
+
+export class CodeEditor implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.codeEditor;
+  }
+
+  public dependency(): string {
+    return '@covalent/code-editor';
+  }
+}
