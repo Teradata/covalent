@@ -12,6 +12,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -22,14 +23,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTooltipModule,
     MatListModule,
     MatIconModule,
-    MatDialogModule,
     MatProgressBarModule,
-    DragDropModule,
     MatToolbarModule,
+
+    HttpClientModule,
 
     CovalentFlavoredMarkdownModule,
   ],
   declarations: [HelpComponent, HelpWindowComponent, HelpWindowToolbarComponent],
+  providers: [HttpClientModule],
   exports: [HelpComponent, HelpWindowComponent],
   entryComponents: [HelpWindowComponent],
 })
