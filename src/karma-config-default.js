@@ -18,6 +18,10 @@ module.exports = function(config) {
         base: 'Chrome',
         flags: ['--no-sandbox'],
       },
+      Chrome_allow_downloads: {
+        base: 'Chrome',
+        flags: ['--trusted-download-sources=localhost:9876']
+      }
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
@@ -29,12 +33,14 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome, Chrome_allow_downloads'],
     singleRun: false,
     failOnEmptyTestSuite: false,
   };
   if (process.env.TRAVIS) {
     configuration.browsers = ['Chrome_travis_ci'];
+  } else {
+    configuration.browsers = ['Chrome_allow_downloads'];
   }
   config.set(configuration);
 };
