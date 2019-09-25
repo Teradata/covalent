@@ -4,12 +4,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { copyToClipboard } from '../../../../platform/core/common/functions';
 
 @Component({
-  selector: 'td-utilities',
-  templateUrl: './utilities.component.html',
-  styleUrls: ['./utilities.component.scss'],
+  selector: 'td-functions',
+  templateUrl: './functions.component.html',
+  styleUrls: ['./functions.component.scss'],
   preserveWhitespaces: true,
 })
-export class UtilitiesDemoComponent {
+export class FunctionsDemoComponent {
   copytext: string = 'Lorem Ipsum';
 
   constructor(private _snackBar: MatSnackBar) {}

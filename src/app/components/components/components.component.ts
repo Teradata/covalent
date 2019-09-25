@@ -150,8 +150,8 @@ export class ComponentsComponent {
     {
       description: 'Helper functions',
       icon: 'build',
-      route: 'utilities',
-      title: 'Utilities',
+      route: 'functions',
+      title: 'Functions',
     },
   ];
 

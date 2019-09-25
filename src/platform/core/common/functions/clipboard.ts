@@ -8,7 +8,7 @@
  *
  * @param value text value to be assigned to clipboard.
  */
-export function copyToClipboard(value: string): void {
+export function copyToClipboard(value: string): boolean {
   // Create a temporary textarea element and append to DOM
   const fakeTextArea: HTMLTextAreaElement = document.createElement('textarea');
   document.body.appendChild(fakeTextArea);
@@ -18,8 +18,11 @@ export function copyToClipboard(value: string): void {
   fakeTextArea.select();
 
   // Copy to clipboard
-  document.execCommand('copy');
+  const success: boolean = document.execCommand('copy');
 
   // Remove temporary textarea
   document.body.removeChild(fakeTextArea);
+
+  // Return boolean indicating if exec command succeeded
+  return success;
 }
