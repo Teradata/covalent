@@ -17,6 +17,12 @@ export interface ISchema {
   /** Whether covalent echarts should be set up. */
   echarts: boolean;
 
+  /** Whether covalent text-editor should be set up. */
+  textEditor: boolean;
+
+  /** Whether covalent code editor should be set up. */
+  codeEditor: boolean;
+
   /** Whether covalent utilities stylesheet should be added. */
   styleSheetUtilities: boolean;
 

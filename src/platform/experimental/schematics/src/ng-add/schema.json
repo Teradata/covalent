@@ -40,6 +40,18 @@
       "description": "Whether covalent echarts should be set up.",
       "x-prompt": "Set up covalent echarts?"
     },
+    "textEditor": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent text-editor should be set up.",
+      "x-prompt": "Set up text editor?"
+    },
+    "codeEditor": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent code-editor should be set up.",
+      "x-prompt": "Set up code editor?"
+    },
     "styleSheetUtilities": {
       "type": "boolean",
       "default": true,

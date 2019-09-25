@@ -103,6 +103,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
 import { HelpDemoComponent } from './help/help.component';
 import { CovalentHelpModule } from '@covalent/experimental/help';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
+    DraggableDemoComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -205,6 +207,6 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     componentsRoutes,
     ToolbarModule,
   ],
-  entryComponents: [TdTestDynamicComponent],
+  entryComponents: [TdTestDynamicComponent, DraggableDemoComponent],
 })
 export class ComponentsModule {}
