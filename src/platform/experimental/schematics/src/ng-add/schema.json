@@ -34,6 +34,12 @@
       "description": "Whether covalent flavored markdown should be set up.",
       "x-prompt": "Set up flavored markdown for rendering material design components?"
     },
+    "codeEditor": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether covalent code-editor should be set up.",
+      "x-prompt": "Set up code editor?"
+    },
     "styleSheetUtilities": {
       "type": "boolean",
       "default": true,
