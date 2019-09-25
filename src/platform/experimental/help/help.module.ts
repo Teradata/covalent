@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HelpComponent } from './help.component';
 import { HelpWindowComponent } from './help-window/help-window.component';
-import { DraggableHelpWindowDialogComponent } from './draggable-help-window-dialog/draggable-help-window-dialog.component';
 import { HelpWindowToolbarComponent } from './help-window/help-window-toolbar/help-window-toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -30,8 +29,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
     CovalentFlavoredMarkdownModule,
   ],
-  declarations: [HelpComponent, HelpWindowComponent, HelpWindowToolbarComponent, DraggableHelpWindowDialogComponent],
-  exports: [HelpComponent, HelpWindowComponent, DraggableHelpWindowDialogComponent],
-  entryComponents: [DraggableHelpWindowDialogComponent],
+  declarations: [HelpComponent, HelpWindowComponent, HelpWindowToolbarComponent],
+  exports: [HelpComponent, HelpWindowComponent],
+  entryComponents: [HelpWindowComponent],
 })
 export class CovalentHelpModule {}

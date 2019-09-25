@@ -100,7 +100,7 @@ interface IHelpMenuDataItem {
 
 # DraggableHelpWindowDialogService
 
-This is a service that opens a HelpWindowComponent inside a draggable dialog.
+A service that opens a HelpWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
 
 ## API Summary
 
@@ -140,7 +140,7 @@ Example:
 
 ```typescript
 import {
-  DraggableHelpWindowDialogComponent,
+  HelpWindowComponent,
   DraggableHelpWindowDialogService,
   IHelpMenuDataItem,
 } from '@covalent/experimental/help';
@@ -148,7 +148,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent{
 
-  ref: MatDialogRef<DraggableHelpWindowDialogComponent>;
+  ref: MatDialogRef<HelpWindowComponent>;
 
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 
