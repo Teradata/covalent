@@ -147,6 +147,12 @@ export class ComponentsComponent {
       route: 'animations',
       title: 'Animations',
     },
+    {
+      description: 'Helper functions',
+      icon: 'build',
+      route: 'functions',
+      title: 'Functions',
+    },
   ];
 
   optional: Object[] = [

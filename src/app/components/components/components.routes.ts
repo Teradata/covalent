@@ -31,6 +31,8 @@ import { BreadcrumbDemoComponent } from './breadcrumbs/breadcrumbs.component';
 import { SidesheetDemoComponent } from './sidesheet/sidesheet.component';
 import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.component';
 import { TabSelectDemoComponent } from './tab-select/tab-select.component';
+import { FunctionsDemoComponent } from './functions/functions.component';
+
 import {
   NavStepsDemoComponent,
   NavStepsRoute1DemoComponent,
@@ -135,6 +137,10 @@ const routes: Routes = [
       {
         component: AnimationsComponent,
         path: 'animations',
+      },
+      {
+        component: FunctionsDemoComponent,
+        path: 'functions',
       },
       {
         component: DataTableDemoComponent,
