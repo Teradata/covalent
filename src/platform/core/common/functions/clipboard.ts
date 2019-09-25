@@ -7,6 +7,7 @@
  * will not succeed if executed strictly programmatically.
  *
  * @param value text value to be assigned to clipboard.
+ * @returns boolean indicating success/failure of copy operation.
  */
 export function copyToClipboard(value: string): boolean {
   // Create a temporary textarea element and append to DOM
