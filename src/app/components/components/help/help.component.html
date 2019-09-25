@@ -42,8 +42,7 @@
             <![CDATA[
           import {
             IHelpMenuDataItem,
-            DraggableHelpWindowDialogService,
-            DraggableHelpWindowDialogComponent,
+            DraggableHelpWindowDialogService
           } from '@covalent/experimental/help';
 
           oneItem: IHelpMenuDataItem[] = [
@@ -138,7 +137,7 @@
 <mat-card>
   <mat-card-title>Draggable Help Window Dialog Service</mat-card-title>
   <mat-card-subtitle>
-    A service that opens a HelpWindowComponent inside a draggable dialog.
+    A service that opens a HelpWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-tab-group mat-stretch-tabs>
@@ -165,11 +164,11 @@
           import {
             IHelpMenuDataItem,
             DraggableHelpWindowDialogService,
-            DraggableHelpWindowDialogComponent,
+            HelpWindowComponent,
           } from '@covalent/experimental/help';
 
           windowOpen: boolean = false;
-          ref: MatDialogRef<DraggableHelpWindowDialogComponent>;
+          ref: MatDialogRef<HelpWindowComponent>;
           currentItems: IHelpMenuDataItem[] = [
           {
             url: 'https://github.com/Teradata/covalent/blob/develop/README.md',

@@ -13,3 +13,11 @@ td-help {
 .td-draggable-help-window-toolbar {
   cursor: move;
 }
+
+::ng-deep {
+  &.draggable-dialog-wrapper {
+    > .mat-dialog-container {
+      padding: 0;
+    }
+  }
+}
