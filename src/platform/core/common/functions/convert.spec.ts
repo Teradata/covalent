@@ -1,4 +1,4 @@
-import { convertObjToCSV, convertCSVToJSON } from './convert';
+import { convertObjectsToCSV, convertCSVToJSON } from './convert';
 
 fdescribe('Convert', () => {
 
@@ -11,15 +11,15 @@ fdescribe('Convert', () => {
       const expectedStrCustomLineSeparator: string = 'name,id|user1,123|user2,234|'
       const expectedStrCustomKeyLineSeparator: string = 'name|id&user1|123&user2|234&'
 
-      expect(convertObjToCSV(undefined)).toEqual('');
-      expect(convertObjToCSV([])).toEqual('');
-      expect(convertObjToCSV(inputObjs, undefined)).toEqual(expectedStr);
-      expect(convertObjToCSV(inputObjs, '|', undefined)).toEqual(expectedStrCustomKeySeparator);
-      expect(convertObjToCSV(inputObjs, undefined, '|')).toEqual(expectedStrCustomLineSeparator);
-      expect(convertObjToCSV(inputObjs)).toEqual(expectedStr)
-      expect(convertObjToCSV(inputObjs, '|')).toEqual(expectedStrCustomKeySeparator)
-      expect(convertObjToCSV(inputObjs, ',', '|')).toEqual(expectedStrCustomLineSeparator)
-      expect(convertObjToCSV(inputObjs, '|', '&')).toEqual(expectedStrCustomKeyLineSeparator)
+      expect(convertObjectsToCSV(undefined)).toEqual('');
+      expect(convertObjectsToCSV([])).toEqual('');
+      expect(convertObjectsToCSV(inputObjs, undefined)).toEqual(expectedStr);
+      expect(convertObjectsToCSV(inputObjs, '|', undefined)).toEqual(expectedStrCustomKeySeparator);
+      expect(convertObjectsToCSV(inputObjs, undefined, '|')).toEqual(expectedStrCustomLineSeparator);
+      expect(convertObjectsToCSV(inputObjs)).toEqual(expectedStr)
+      expect(convertObjectsToCSV(inputObjs, '|')).toEqual(expectedStrCustomKeySeparator)
+      expect(convertObjectsToCSV(inputObjs, ',', '|')).toEqual(expectedStrCustomLineSeparator)
+      expect(convertObjectsToCSV(inputObjs, '|', '&')).toEqual(expectedStrCustomKeyLineSeparator)
     });
   });
 

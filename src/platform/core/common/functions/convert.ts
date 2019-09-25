@@ -8,7 +8,7 @@
  * @param lineSeparator optional parameter to specify custom end of line separator
  * @returns CSV formatted string
  */
-export function convertObjToCSV(inputObjects: any[], keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
+export function convertObjectsToCSV(inputObjects: any[], keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
   if (!inputObjects) {
     return '';
   }
