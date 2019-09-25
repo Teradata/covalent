@@ -51,6 +51,7 @@ describe('ng-add schematic', () => {
     expectVersionToBe(dependencies, '@covalent/http', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/code-editor', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@angular/material', expectedMaterialVersion);
     expect(dependencies['@covalent/highlight']).not.toBeDefined();
 
