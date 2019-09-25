@@ -54,3 +54,23 @@ export class FlavoredMarkdown implements IComponent {
     return '@covalent/flavored-markdown';
   }
 }
+
+export class TextEditor implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.textEditor;
+  }
+
+  public dependency(): string {
+    return '@covalent/text-editor';
+  }
+}
+
+export class CodeEditor implements IComponent {
+  public enabled(options: ISchema): boolean {
+    return options.codeEditor;
+  }
+
+  public dependency(): string {
+    return '@covalent/code-editor';
+  }
+}

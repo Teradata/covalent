@@ -36,6 +36,7 @@ import { TabSelectDemoComponent } from './tab-select/tab-select.component';
 import { DynamicFormsDemoComponent } from './dynamic-forms/dynamic-forms.component';
 import { CodeEditorDemoComponent } from './code-editor/code-editor.component';
 import { TextEditorDemoComponent } from './text-editor/text-editor.component';
+import { FunctionsDemoComponent } from './functions/functions.component';
 import { NotificationsDemoComponent } from './notifications/notifications.component';
 import { VirtualScrollDemoComponent } from './virtual-scroll/virtual-scroll.component';
 import { FlavoredMarkdownDemoComponent } from './flavored-markdown/flavored-markdown.component';
@@ -103,6 +104,7 @@ import { TdTestDynamicComponent } from './dynamic-forms/dynamic-forms.component'
 import { HelpDemoComponent } from './help/help.component';
 import { CovalentHelpModule } from '@covalent/experimental/help';
 import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
+import { DraggableDemoComponent } from './dialogs/draggable-demo/draggable-demo.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +136,7 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     DynamicFormsDemoComponent,
     CodeEditorDemoComponent,
     TextEditorDemoComponent,
+    FunctionsDemoComponent,
     NotificationsDemoComponent,
     BreadcrumbDemoComponent,
     VirtualScrollDemoComponent,
@@ -144,6 +147,7 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     // External Dependencies
     NgxTranslateDemoComponent,
     TdTestDynamicComponent,
+    DraggableDemoComponent,
   ],
   imports: [
     /** Angular Modules */
@@ -205,6 +209,6 @@ import { CovalentSidesheetModule } from '@covalent/core/sidesheet';
     componentsRoutes,
     ToolbarModule,
   ],
-  entryComponents: [TdTestDynamicComponent],
+  entryComponents: [TdTestDynamicComponent, DraggableDemoComponent],
 })
 export class ComponentsModule {}
