@@ -1,0 +1,10 @@
+:host ::ng-deep {
+  .mat-drawer-container[fullscreen] {
+    position: static;
+    width: 100%;
+    min-height: 200px;
+    .td-layout-sidenav {
+      min-height: 200px;
+    }
+  }
+}
