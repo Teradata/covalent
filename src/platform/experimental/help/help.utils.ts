@@ -13,15 +13,15 @@ export interface IHelpComponentLabels {
   emptyState?: string;
 }
 
-export const DEFAULT_LABELS: IHelpComponentLabels = {
-  goHome: 'Go home',
-  goBack: 'Go back',
-  emptyState: 'No item(s) to display',
-};
-
 export interface IHelpWindowToolbarComponentLabels {
   help?: string;
   close?: string;
 }
 
 export interface IHelpWindowComponentLabels extends IHelpComponentLabels, IHelpWindowToolbarComponentLabels {}
+
+export const DEFAULT_LABELS: IHelpComponentLabels = {
+  goHome: 'Go home',
+  goBack: 'Go back',
+  emptyState: 'No item(s) to display',
+};

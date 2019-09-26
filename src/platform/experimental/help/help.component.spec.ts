@@ -50,7 +50,7 @@ class TdHelpTestComponent {
   labels: IHelpComponentLabels;
 }
 
-fdescribe('HelpComponent', () => {
+describe('HelpComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TdHelpTestComponent],
