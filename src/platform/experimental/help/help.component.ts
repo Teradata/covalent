@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, ElementRef, OnDestroy, SimpleChanges } from '@angular/core';
-import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_LABELS } from './help.utils';
+import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 function getTitleFromUrl(url: string): string {
@@ -99,15 +99,15 @@ export class HelpComponent implements OnChanges, OnDestroy {
   }
 
   get goHomeLabel(): string {
-    return (this.labels && this.labels.goHome) || DEFAULT_LABELS.goHome;
+    return (this.labels && this.labels.goHome) || DEFAULT_HELP_COMP_LABELS.goHome;
   }
 
   get goBackLabel(): string {
-    return (this.labels && this.labels.goBack) || DEFAULT_LABELS.goBack;
+    return (this.labels && this.labels.goBack) || DEFAULT_HELP_COMP_LABELS.goBack;
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) || DEFAULT_LABELS.emptyState;
+    return (this.labels && this.labels.emptyState) || DEFAULT_HELP_COMP_LABELS.emptyState;
   }
 
   constructor(private _elementRef: ElementRef, private _markdownUrlLoaderService: MarkdownLoaderService) {}

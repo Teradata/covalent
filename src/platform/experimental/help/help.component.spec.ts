@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { HelpComponent } from './help.component';
-import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_LABELS } from './help.utils';
+import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentHelpModule } from './help.module';
@@ -165,7 +165,7 @@ describe('HelpComponent', () => {
     }),
   ));
 
-  it('should default to certain labels', async(
+  it('should use default labels if labels is undefined', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
       fixture.componentInstance.items = [];
@@ -174,14 +174,30 @@ describe('HelpComponent', () => {
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 
-      expect(help.goBackLabel).toContain(DEFAULT_LABELS.goBack);
-      expect(help.goHomeLabel).toContain(DEFAULT_LABELS.goHome);
-      expect(help.emptyStateLabel).toContain(DEFAULT_LABELS.emptyState);
-      expect(elem.nativeElement.textContent).toContain(DEFAULT_LABELS.emptyState);
+      expect(help.goBackLabel).toContain(DEFAULT_HELP_COMP_LABELS.goBack);
+      expect(help.goHomeLabel).toContain(DEFAULT_HELP_COMP_LABELS.goHome);
+      expect(help.emptyStateLabel).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
+      expect(elem.nativeElement.textContent).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
     }),
   ));
 
-  it('should accept labels as an input', async(
+  it('should use default labels if labels is an empty object', async(
+    inject([], async () => {
+      const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+      fixture.componentInstance.items = [];
+      fixture.componentInstance.labels = {};
+      await wait(fixture);
+      const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
+      const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
+
+      expect(help.goBackLabel).toContain(DEFAULT_HELP_COMP_LABELS.goBack);
+      expect(help.goHomeLabel).toContain(DEFAULT_HELP_COMP_LABELS.goHome);
+      expect(help.emptyStateLabel).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
+      expect(elem.nativeElement.textContent).toContain(DEFAULT_HELP_COMP_LABELS.emptyState);
+    }),
+  ));
+
+  it('should use labels if passed in', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
       const SAMPLE_LABELS: IHelpComponentLabels = {

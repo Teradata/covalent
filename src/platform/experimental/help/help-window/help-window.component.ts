@@ -1,5 +1,10 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { IHelpMenuDataItem, IHelpWindowComponentLabels, IHelpComponentLabels } from '../help.utils';
+import {
+  IHelpMenuDataItem,
+  IHelpWindowComponentLabels,
+  IHelpComponentLabels,
+  DEFAULT_HELP_WINDOW_COMP_LABELS,
+} from '../help.utils';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -31,10 +36,10 @@ export class HelpWindowComponent {
     }
   }
   get helpLabel(): string {
-    return (this.labels && this.labels.help) || 'Help';
+    return (this.labels && this.labels.help) || DEFAULT_HELP_WINDOW_COMP_LABELS.help;
   }
 
   get closeLabel(): string {
-    return (this.labels && this.labels.close) || 'Close';
+    return (this.labels && this.labels.close) || DEFAULT_HELP_WINDOW_COMP_LABELS.close;
   }
 }
