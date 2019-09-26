@@ -1,61 +1,64 @@
 /**
  * Conversion function that takes an array of objects and converts
- * them to a contiguous string in CSV format. Custom key and line
- * separators can be provided.
- * 
- * @param inputObjects list of strings in JSON format or actual objects
+ * them to CSV format. Custom key and line separators can be specified.
+ *
+ * @param objects list of strings in JSON format or actual objects
  * @param keySeparator optional parameter to specify custom value separator
  * @param lineSeparator optional parameter to specify custom end of line separator
  * @returns CSV formatted string
  */
-export function convertObjectsToCSV(inputObjects: any[], keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
-  if (!inputObjects) {
+export function convertObjectsToCSV(
+  objects: any[],
+  keySeparator: string = ',',
+  lineSeparator: string = '\r\n',
+): string {
+  if (!objects) {
     return '';
   }
 
   let outputString: string = '';
 
   // Iterate through array, creating one output line per object
-  inputObjects.forEach((value: object, key: number) => {
+  objects.forEach((value: object, key: number) => {
     let line: string = '';
-    for (const index in inputObjects[key]) {
+    for (const index in objects[key]) {
       if (line !== '') {
         line += keySeparator;
       }
-      if (inputObjects[key][index] === null || inputObjects[key][index] === undefined) {
-        inputObjects[key][index] = '';
+      if (objects[key][index] === null || objects[key][index] === undefined) {
+        objects[key][index] = '';
       }
-      line += inputObjects[key][index];
+      line += objects[key][index];
     }
     outputString += `${line}${lineSeparator}`;
   });
 
   // Append header row identifying keys into output
-  if (inputObjects[0]) {
-    const headers: string = Object.keys(inputObjects[0]).join(keySeparator);
+  if (objects[0]) {
+    const headers: string = Object.keys(objects[0]).join(keySeparator);
     outputString = `${headers}${lineSeparator}${outputString}`;
   }
 
   return outputString;
-};
+}
 
 /**
- * Conversion function that takes a CSV formatted string representation
- * of objects and converts them to a corresponding JSON string representation.
- * Assumption is that the first row in the input is the list of object keys.
- * Custom key and line separators can be provided.
- * 
- * @param inputCSV list of strings in JSON format or actual objects
+ * Conversion function that takes a CSV representation
+ * of objects and converts them to JSON.
+ * The first row in the input must be the object keys.
+ * Custom key separator and line separator can be specified.
+ *
+ * @param csv list of strings in JSON format or actual objects
  * @param keySeparator optional parameter to specify custom value separator
  * @param lineSeparator optional parameter to specify custom end of line separator
  * @returns JSON formatted string
  */
-export function convertCSVToJSON(inputCSV: string, keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
-  if (!inputCSV) {
+export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
+  if (!csv) {
     return '';
   }
 
-  const csvArray: string[] = inputCSV.split(lineSeparator);
+  const csvArray: string[] = csv.split(lineSeparator);
   // Input CSV must have a minimum of two rows
   if (csvArray.length < 2) {
     return '';
