@@ -1,5 +1,11 @@
 :host {
   display: inline-block;
+
+  &.td-draggable-help-window {
+    .td-help-window-toolbar {
+      cursor: move;
+    }
+  }
 }
 
 td-help {
@@ -10,12 +16,8 @@ td-help {
   overflow-y: auto;
 }
 
-.td-draggable-help-window-toolbar {
-  cursor: move;
-}
-
 ::ng-deep {
-  &.draggable-dialog-wrapper {
+  .td-draggable-help-window-wrapper {
     > .mat-dialog-container {
       padding: 0;
     }

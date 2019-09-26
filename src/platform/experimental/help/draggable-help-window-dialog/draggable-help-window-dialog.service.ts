@@ -21,18 +21,20 @@ export class DraggableHelpWindowDialogService {
   constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
 
   open(config: IDraggableHelpWindowDialogServiceConfig): MatDialogRef<HelpWindowComponent> {
-    const draggableDialog: MatDialogRef<HelpWindowComponent> = this._tdDialogService.openDraggable(
-      HelpWindowComponent,
-      {
+    const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-help-window-wrapper';
+    const draggableDialog: MatDialogRef<HelpWindowComponent> = this._tdDialogService.openDraggable({
+      component: HelpWindowComponent,
+      config: {
         hasBackdrop: false,
         closeOnNavigation: true,
-        panelClass: 'draggable-dialog-wrapper',
+        panelClass: CDK_OVERLAY_CUSTOM_CLASS,
         position: { bottom: '0', right: '0' },
         scrollStrategy: this._overlay.scrollStrategies.noop(),
         ...config.dialogConfig,
       },
-      ['.td-draggable-help-window-toolbar'],
-    );
+      dragHandleSelectors: ['.td-help-window-toolbar'],
+      draggableClass: 'td-draggable-help-window',
+    });
 
     draggableDialog.componentInstance.items = config.items;
     draggableDialog.componentInstance.labels = config.labels;

@@ -1,4 +1,13 @@
-import { Injectable, ViewContainerRef, Provider, SkipSelf, Optional, Inject } from '@angular/core';
+import {
+  Injectable,
+  ViewContainerRef,
+  Provider,
+  SkipSelf,
+  Optional,
+  Inject,
+  Renderer2,
+  RendererFactory2,
+} from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { ComponentType, TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
 
@@ -26,13 +35,27 @@ export interface IPromptConfig extends IConfirmConfig {
   value?: string;
 }
 
+export interface IDraggableConfig<T> {
+  component: ComponentType<T>;
+  config?: MatDialogConfig;
+  // CSS selectors of element(s) inside the component meant to be drag handle(s)
+  dragHandleSelectors?: string[];
+  // Class that will be added to the component signifying drag-ability
+  draggableClass?: string;
+}
+
 @Injectable()
 export class TdDialogService {
+  private _renderer2: Renderer2;
+
   constructor(
     @Inject(DOCUMENT) private _document: any,
     private _dialogService: MatDialog,
     private _dragDrop: DragDrop,
-  ) {}
+    private rendererFactory: RendererFactory2,
+  ) {
+    this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
+  }
 
   /**
    * params:
@@ -147,11 +170,12 @@ export class TdDialogService {
   /**
    * Opens a draggable dialog containing the given component.
    */
-  public openDraggable<T>(
-    component: ComponentType<T>,
-    config?: MatDialogConfig,
-    dragHandleSelectors?: string[],
-  ): MatDialogRef<T> {
+  public openDraggable<T>({
+    component,
+    config,
+    dragHandleSelectors,
+    draggableClass,
+  }: IDraggableConfig<T>): MatDialogRef<T> {
     const dialogRef: MatDialogRef<T, any> = this._dialogService.open(component, config);
 
     const CDK_OVERLAY_PANE_SELECTOR: string = '.cdk-overlay-pane';
@@ -160,6 +184,11 @@ export class TdDialogService {
     dialogRef.afterOpened().subscribe(() => {
       const dialogElement: HTMLElement = <HTMLElement>this._document.getElementById(dialogRef.id);
       const draggableElement: DragRef = this._dragDrop.createDrag(dialogElement);
+
+      if (draggableClass) {
+        const childComponent: Element = dialogElement.firstElementChild;
+        this._renderer2.addClass(childComponent, draggableClass);
+      }
 
       if (dragHandleSelectors && dragHandleSelectors.length) {
         const dragHandles: Element[] = dragHandleSelectors.reduce(
