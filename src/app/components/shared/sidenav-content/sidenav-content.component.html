@@ -1,68 +1,46 @@
 <div class='doc-nav'>
-    <td-expansion-panel  *ngFor='let routeGroup of combinedRoutes' (open)='notify()' #contentSections
-    >
-        <ng-template td-expansion-panel-label><span class='fw-500'
-            >{{routeGroup.name}}</span></ng-template>
-        <div class='doc-nav-section'>
-          <div *ngFor='let section of routeGroup.routeGroups'>
-            <div *ngIf='section.name' class='doc-nav-section-label text-upper tc-grey-500 mat-caption'>{{ section.name }}
+      <mat-expansion-panel class='mat-elevation-z0' [expanded]="router.isActive(routeGroup.rootRoute)" *ngFor='let routeGroup of combinedRoutes'
+      >
+          <mat-expansion-panel-header [collapsedHeight]="'38px'" [expandedHeight]="'56px'">
+            <span class='fw-500'>{{routeGroup.name}}</span>
+            </mat-expansion-panel-header>
+  
+          <div class='doc-nav-section push-bottom-sm'>
+            <ng-container *ngFor='let section of routeGroup.routeGroups'>
+  
+                <ng-container *ngIf='!section.nested; else nested'>
+                 <div *ngIf='section.name' class='doc-nav-section-label text-upper tc-grey-500 mat-caption'>
+                {{ section.name }}
+              </div>
+              <mat-nav-list td-sidenav-content disableRipple=true class='pad-top-xs'>
+                  <a *ngFor='let item of section.views' mat-list-item [routerLink]="item.route" [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{exact:item.name === 'Overview'}" class='tc-grey-700 doc-nav-link'>
+                    {{item.name}}
+                  </a>
+              </mat-nav-list>
+            </ng-container>
+
+
+              <ng-template #nested>
+                  <mat-expansion-panel class='mat-elevation-z0 nested-expansion-panel'
+                  >
+                  <mat-expansion-panel-header class='tc-grey-700' [collapsedHeight]="'34px'" [expandedHeight]="'40px'">
+                      {{section.name}}
+                  </mat-expansion-panel-header>
+                     
+                      <div class='doc-nav-section'>
+                          <mat-nav-list td-sidenav-content disableRipple=true>
+                              <a *ngFor='let view of section.views' mat-list-item [routerLink]="view.route" [routerLinkActive]="['active']"
+                                [routerLinkActiveOptions]="{exact:view.name === 'Overview'}" class='tc-grey-700 doc-nav-link'>
+                                {{view.name}}
+                              </a>
+                          </mat-nav-list>
+                      </div>
+                    </mat-expansion-panel>
+                </ng-template>
+      
+              </ng-container>
+
             </div>
-            <mat-nav-list td-sidenav-content disableRipple=true class='pad-top-xs'>
-              <ng-template let-item let-last="last" ngFor [ngForOf]="section.views">
-                <a mat-list-item [routerLink]="item.route" [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{exact:item.name === 'Overview'}" class='tc-grey-700 doc-nav-link'>
-                  {{item.name}}
-                </a>
-              </ng-template>
-            </mat-nav-list>
-          </div>
-    
-        </div>
-    
-      </td-expansion-panel>
-  
- <!-- <td-expansion-panel>
-
-        <ng-template td-expansion-panel-label ><span class='fw-500'>Documentation</span></ng-template>
-  <div class='doc-nav-section'>
-    <td-expansion-panel class='nav-expansion' *ngFor='let section of navSections' [label]='section'>
-<mat-nav-list td-sidenav-content class='pad-top-xs'>
-              <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                  <a mat-list-item 
-                    [routerLink]="[item.route]" 
-                    [routerLinkActive]="['active']" 
-                    [routerLinkActiveOptions]="{exact:true}"
-                   
-                    class='tc-grey-600 doc-nav-link'
-                    >
-                  {{item.title}}
-                  </a>
-                </ng-template>
-            </mat-nav-list>
-</td-expansion-panel>   
-  </div>
-
-</td-expansion-panel> -->
-  
-  <!-- <td-expansion-panel>
-
-        <ng-template td-expansion-panel-label ><span class='fw-500'>Utilities & Services</span></ng-template>
-  <div class='doc-nav-section'>
-    <td-expansion-panel class='nav-expansion' *ngFor='let section of navSections' [label]='section'>
-<mat-nav-list td-sidenav-content class='pad-top-xs'>
-              <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                  <a mat-list-item 
-                    [routerLink]="[item.route]" 
-                    [routerLinkActive]="['active']" 
-                    [routerLinkActiveOptions]="{exact:true}"
-                    class='tc-grey-600 doc-nav-link'
-                    >
-                  {{item.title}}
-                  </a>
-                </ng-template>
-            </mat-nav-list>
-</td-expansion-panel>   
-  </div>
-
-</td-expansion-panel>            -->
+          </mat-expansion-panel>
 </div>

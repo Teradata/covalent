@@ -1,0 +1,108 @@
+<mat-card>
+  <mat-card-title>Directives</mat-card-title>
+  <mat-card-subtitle>Core Covalent directives &amp; utilities</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p>
+      A directive is essentially like a component functionally without a template. There are structural and attribute
+      directives.
+    </p>
+    <p>
+      Structural directives can change the DOM layout by adding and removing DOM elements. NgFor and NgIf are two
+      familiar examples.
+    </p>
+    <p>
+      An Attribute directive can change the appearance or behavior of an element. The built-in NgStyle directive, for
+      example, can change several element styles at the same time.
+    </p>
+
+    <h3>Setup:</h3>
+    <p>Import the [CovalentCommonModule] in your NgModule:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[ import { CovalentCommonModule } from '@covalent/core/common'; @NgModule({ imports: [
+      CovalentCommonModule, ... ], ... }) export class MyModule {} ]]>
+    </td-highlight>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <a
+      mat-button
+      color="primary"
+      href="https://angular.io/docs/ts/latest/guide/attribute-directives.html"
+      target="_blank"
+      class="text-upper"
+      >Directives Docs</a
+    >
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Autotrim directive</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">Use <code>tdAutoTrim</code> on an input to automatically trim the characters.</p>
+    <p>Try entering white spaces before or after a word this input:</p>
+    <div layout="row">
+      <mat-form-field flex>
+        <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed" />
+      </mat-form-field>
+    </div>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+      <![CDATA[ <mat-form-field> <input matInput tdAutoTrim [(ngModel)]="trim" placeholder="This will be autotrimmed"/>
+      </mat-form-field> ]]>
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
+<mat-card tdFullScreen #tdFullScreen="tdFullScreen">
+  <mat-card-header layout="row">
+    <mat-card-title flex>Fullscreen directive</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p class="mat-body-1">Use <code>tdFullScreen</code> directive on any element you want full screen.</p>
+    <p>
+      Assign <code>tdFullScreen</code> to a template reference variable
+      <code>#myFullScreenElement="tdFullScreen"</code>.
+    </p>
+    <p>Use the template reference variable to access properties and metheds of the directive:</p>
+    <ul>
+      <li><code>myFullScreenElement.fullScreenIsActive</code>, Check if fullscreen is activated for this element</li>
+      <li><code>myFullScreenElement.toggleFullScreen()</code>, Toggle fullscreen for this element</li>
+      <li><code>myFullScreenElement.enterFullScreen()</code>, Active fullscreen for this element</li>
+      <li><code>myFullScreenElement.exitFullScreen()</code>, Exit fullscreen for this element</li>
+    </ul>
+    <p>Usage:</p>
+    <td-highlight lang="html">
+      <![CDATA[ <div tdFullScreen #myDirective="tdFullScreen"> <button mat-button color="primary"
+      (click)="myDirective.toggleFullScreen()">Fullscreen</button> </div> ]]>
+    </td-highlight>
+    <div layout="column">
+      <p *ngIf="!tdFullScreen.fullScreenIsActive" flex class="mat-line">
+        Press the button below to view this card in fullscreen mode.
+      </p>
+      <p *ngIf="tdFullScreen.fullScreenIsActive" flex class="mat-line">
+        Select the button below or press the esc key to exit fullscreen mode.
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button
+      *ngIf="!tdFullScreen.fullScreenIsActive"
+      mat-raised-button
+      color="primary"
+      (click)="tdFullScreen.toggleFullScreen()"
+    >
+      enter fullscreen
+    </button>
+    <button
+      *ngIf="tdFullScreen.fullScreenIsActive"
+      mat-raised-button
+      color="primary"
+      (click)="tdFullScreen.toggleFullScreen()"
+    >
+      exit fullscreen
+    </button>
+  </mat-card-actions>
+</mat-card>
