@@ -58,14 +58,15 @@ describe('HelpComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(() => {});
-
   it('should render empty state when an empty array is passed into items', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = [];
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
+
       expect(help.showEmptyState).toBeTruthy();
       expect(help.loading).toBeFalsy();
       expect(help.showGoBackButton).toBeFalsy();
@@ -78,9 +79,12 @@ describe('HelpComponent', () => {
   it('should render empty state when undefined is passed into items', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = undefined;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
+
       expect(help.showEmptyState).toBeTruthy();
       expect(help.loading).toBeFalsy();
       expect(help.showGoBackButton).toBeFalsy();
@@ -93,10 +97,11 @@ describe('HelpComponent', () => {
   it('should render one raw markdown item', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
-      const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 
       expect(help.showEmptyState).toBeFalsy();
       expect(help.loading).toBeFalsy();
@@ -104,18 +109,17 @@ describe('HelpComponent', () => {
       expect(help.showMenu).toBeFalsy();
       expect(help.showTdMarkdown).toBeTruthy();
       expect(help.showTdMarkdownLoader).toBeFalsy();
-
-      // expect(elem.nativeElement.textContent).toContain(RAW_MARKDOWN_HEADING);
     }),
   ));
 
   it('should render one url item from GitHub', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
-      const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 
       expect(help.showEmptyState).toBeFalsy();
       expect(help.loading).toBeFalsy();
@@ -123,15 +127,16 @@ describe('HelpComponent', () => {
       expect(help.showMenu).toBeFalsy();
       expect(help.showTdMarkdown).toBeFalsy();
       expect(help.showTdMarkdownLoader).toBeTruthy();
-      // expect(elem.nativeElement.textContent).toContain('Covalent');
     }),
   ));
 
   it('should render a flat list of items', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = FLAT_MIXED_ITEMS;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
@@ -148,8 +153,10 @@ describe('HelpComponent', () => {
   it('should render a nested list of items', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       fixture.componentInstance.items = NESTED_MIXED_ITEMS;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const listItems: DebugElement[] = fixture.debugElement.queryAll(By.css('mat-action-list button'));
 
@@ -160,7 +167,7 @@ describe('HelpComponent', () => {
       expect(help.showTdMarkdown).toBeFalsy();
       expect(help.showTdMarkdownLoader).toBeFalsy();
       expect(listItems.length).toBe(NESTED_MIXED_ITEMS.length);
-      expect(listItems[0].nativeElement.textContent).toContain(NESTED_MIXED_ITEMS[0].title); // todo maybe test in it's own component?
+      expect(listItems[0].nativeElement.textContent).toContain(NESTED_MIXED_ITEMS[0].title);
       expect(listItems[1].nativeElement.textContent).toContain(NESTED_MIXED_ITEMS[1].title);
     }),
   ));
@@ -168,9 +175,10 @@ describe('HelpComponent', () => {
   it('should use default labels if labels is undefined', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
-      fixture.componentInstance.items = [];
 
+      fixture.componentInstance.items = undefined;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 
@@ -184,9 +192,10 @@ describe('HelpComponent', () => {
   it('should use default labels if labels is an empty object', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
-      fixture.componentInstance.items = [];
+
       fixture.componentInstance.labels = {};
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 
@@ -200,14 +209,15 @@ describe('HelpComponent', () => {
   it('should use labels if passed in', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpTestComponent> = TestBed.createComponent(TdHelpTestComponent);
+
       const SAMPLE_LABELS: IHelpComponentLabels = {
         goHome: 'Vete pa tu casa',
         goBack: 'Regresa',
         emptyState: 'No hay nada',
       };
       fixture.componentInstance.labels = SAMPLE_LABELS;
-
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
       const elem: DebugElement = fixture.debugElement.query(By.directive(HelpComponent));
 

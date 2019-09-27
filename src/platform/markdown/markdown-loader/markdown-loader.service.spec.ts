@@ -24,24 +24,28 @@ describe('MarkdownLoaderService', () => {
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
+
   it('should fetch from a non-raw github url', async(
     inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(GH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
+
   it('should fetch from a raw branch github url', async(
     inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(RAW_GH_BRANCH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
+
   it('should fetch from a non-raw branch github url', async(
     inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
       const markdown: string = await _markdownLoaderService.load(BRANCH_GH_URL);
       expect(markdown).toContain(SAMPLE_HEADING);
     }),
   ));
+
   it('should throw error if content response type is not plain or markdown', async(
     inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
       let failed: boolean = false;
@@ -54,6 +58,7 @@ describe('MarkdownLoaderService', () => {
       }
     }),
   ));
+
   it('should throw error if url is not reachable', async(
     inject([MarkdownLoaderService], async (_markdownLoaderService: MarkdownLoaderService) => {
       let failed: boolean = false;
@@ -66,5 +71,6 @@ describe('MarkdownLoaderService', () => {
       }
     }),
   ));
+
   // TODO: test http params
 });

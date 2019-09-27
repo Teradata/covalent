@@ -70,12 +70,12 @@ describe('HelpWindowComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(() => {});
-
   it('should use default labels if labels is undefined', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       await wait(fixture);
+
       const helpWindow: HelpWindowComponent = fixture.debugElement.query(By.directive(HelpWindowComponent))
         .componentInstance;
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
@@ -92,7 +92,9 @@ describe('HelpWindowComponent', () => {
   it('should use default labels if labels is an empty object', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       await wait(fixture);
+
       const helpWindow: HelpWindowComponent = fixture.debugElement.query(By.directive(HelpWindowComponent))
         .componentInstance;
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
@@ -108,6 +110,7 @@ describe('HelpWindowComponent', () => {
   it('should use labels if passed in', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       const SAMPLE_LABELS: IHelpWindowComponentLabels = {
         help: 'Ayuda!',
         close: 'Cierra',
@@ -117,9 +120,9 @@ describe('HelpWindowComponent', () => {
       };
       fixture.componentInstance.labels = SAMPLE_LABELS;
       await wait(fixture);
+
       const helpWindow: HelpWindowComponent = fixture.debugElement.query(By.directive(HelpWindowComponent))
         .componentInstance;
-      const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
 
       expect(helpWindow.helpLabel).toBe(SAMPLE_LABELS.help);
       expect(helpWindow.closeLabel).toBe(SAMPLE_LABELS.close);
@@ -135,14 +138,17 @@ describe('HelpWindowComponent', () => {
   it('pass items to help component', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       fixture.componentInstance.items = URL_ITEM;
       await wait(fixture);
+
       const help: HelpComponent = fixture.debugElement.query(By.directive(HelpComponent)).componentInstance;
 
       expect(help.items).toEqual(URL_ITEM);
 
       fixture.componentInstance.items = RAW_MARKDOWN_ITEM;
       await wait(fixture);
+
       expect(help.items).toEqual(RAW_MARKDOWN_ITEM);
     }),
   ));
@@ -152,8 +158,11 @@ describe('HelpWindowComponent', () => {
       const fixture: ComponentFixture<TdHelpWindowWOColorTestComponent> = TestBed.createComponent(
         TdHelpWindowWOColorTestComponent,
       );
+
       await wait(fixture);
+
       const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
+
       expect(toolbar.color).toBe('primary');
     }),
   ));
@@ -161,18 +170,27 @@ describe('HelpWindowComponent', () => {
   it('use color if toolBar color is passed in', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       fixture.componentInstance.toolbarColor = 'accent';
       await wait(fixture);
+
       const toolbar: MatToolbar = fixture.debugElement.query(By.directive(MatToolbar)).componentInstance;
+
       expect(toolbar.color).toBe('accent');
+
       fixture.componentInstance.toolbarColor = 'primary';
       await wait(fixture);
+
       expect(toolbar.color).toBe('primary');
+
       fixture.componentInstance.toolbarColor = 'warn';
       await wait(fixture);
+
       expect(toolbar.color).toBe('warn');
+
       fixture.componentInstance.toolbarColor = undefined;
       await wait(fixture);
+
       expect(toolbar.color).toBe(undefined);
     }),
   ));
@@ -180,13 +198,18 @@ describe('HelpWindowComponent', () => {
   it('emit a close event ', async(
     inject([], async () => {
       const fixture: ComponentFixture<TdHelpWindowTestComponent> = TestBed.createComponent(TdHelpWindowTestComponent);
+
       await wait(fixture);
       const helpWindow: HelpWindowComponent = fixture.debugElement.query(By.directive(HelpWindowComponent))
         .componentInstance;
+
       spyOn(helpWindow.closed, 'emit');
+
       const closeButton: DebugElement = fixture.debugElement.query(By.css('.td-help-window-close'));
       closeButton.nativeElement.click();
+
       await wait(fixture);
+
       expect(helpWindow.closed.emit).toHaveBeenCalled();
     }),
   ));
