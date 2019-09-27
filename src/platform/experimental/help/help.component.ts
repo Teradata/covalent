@@ -54,6 +54,8 @@ export class HelpComponent implements OnChanges {
 
   loading: boolean = false;
 
+  constructor(private _markdownUrlLoaderService: MarkdownLoaderService) {}
+
   @HostListener('click', ['$event'])
   clickListener(event: Event): void {
     const element: HTMLElement = <HTMLElement>event.srcElement;
@@ -116,8 +118,6 @@ export class HelpComponent implements OnChanges {
   get emptyStateLabel(): string {
     return (this.labels && this.labels.emptyState) || DEFAULT_HELP_COMP_LABELS.emptyState;
   }
-
-  constructor(private _markdownUrlLoaderService: MarkdownLoaderService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.items) {
