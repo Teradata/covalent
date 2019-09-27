@@ -54,7 +54,9 @@ export interface ITdDynamicElementConfig {
 
 export const DYNAMIC_ELEMENT_NAME_REGEX: RegExp = /^[^0-9][^\@]*$/;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TdDynamicFormsService {
   /**
    * Method to validate if the [name] is a proper element name.
