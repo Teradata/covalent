@@ -30,6 +30,8 @@ export class DraggableHelpWindowDialogService {
         panelClass: CDK_OVERLAY_CUSTOM_CLASS,
         position: { bottom: '0', right: '0' },
         scrollStrategy: this._overlay.scrollStrategies.noop(),
+        height: '475px',
+        width: '360px',
         ...config.dialogConfig,
       },
       dragHandleSelectors: ['.td-help-window-toolbar'],

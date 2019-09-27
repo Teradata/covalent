@@ -17,13 +17,7 @@ export class HelpWindowComponent {
   @Input() labels: IHelpWindowComponentLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
 
-  // outputs only for non-draggable toolbar
-  // TODO: revisit this since comment makes no sense
   @Output() closed: EventEmitter<void> = new EventEmitter();
-
-  get height(): number {
-    return 475;
-  }
 
   get helpComponentLabels(): IHelpComponentLabels {
     if (this.labels) {
