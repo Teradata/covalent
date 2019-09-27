@@ -1,11 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import {
-  IHelpMenuDataItem,
-  DraggableHelpWindowDialogService,
-  DraggableHelpWindowDialogComponent,
-} from '@covalent/experimental/help';
+import { IHelpMenuDataItem, DraggableHelpWindowDialogService, HelpWindowComponent } from '@covalent/experimental/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -84,7 +80,7 @@ export class HelpDemoComponent {
   userInput: string = this.prettyJson(this.currentItems);
 
   windowOpen: boolean = false;
-  ref: MatDialogRef<DraggableHelpWindowDialogComponent>;
+  ref: MatDialogRef<HelpWindowComponent>;
 
   constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
 

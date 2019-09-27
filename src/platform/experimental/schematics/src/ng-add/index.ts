@@ -2,7 +2,17 @@ import { Rule, chain, Tree, mergeWith, url, apply, branchAndMerge, template } fr
 import { addPackageToPackageJson } from '@angular/material/schematics/ng-add/package-config';
 import { ISchema } from './schema';
 import { covalentCoreVersion, materialVersion } from './version-names';
-import { IComponent, DynamicForms, Http, Highlight, Markdown, FlavoredMarkdown } from './components';
+import {
+  IComponent,
+  DynamicForms,
+  Http,
+  Highlight,
+  Markdown,
+  FlavoredMarkdown,
+  Echarts,
+  TextEditor,
+  CodeEditor,
+} from './components';
 import { strings } from '@angular-devkit/core';
 import { getProjectFromWorkspace, getProjectTargetOptions } from '@angular/cdk/schematics';
 import { getWorkspace } from '@schematics/angular/utility/config';
@@ -20,6 +30,9 @@ export function addDependenciesAndFiles(options: ISchema): Rule {
         new Highlight(),
         new Markdown(),
         new FlavoredMarkdown(),
+        new Echarts(),
+        new TextEditor(),
+        new CodeEditor(),
       ];
 
       components.forEach((component: IComponent) => {

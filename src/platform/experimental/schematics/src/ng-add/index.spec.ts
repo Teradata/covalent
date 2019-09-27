@@ -38,6 +38,7 @@ describe('ng-add schematic', () => {
       highlight: false,
       markdown: true,
       flavoredMarkdown: true,
+      echarts: true,
     };
     const tree: Tree = await testRunner.runSchematicAsync('ng-add', dependencyOptions, appTree).toPromise();
     const packageJson: any = JSON.parse(getFileContent(tree, '/package.json'));
@@ -51,6 +52,9 @@ describe('ng-add schematic', () => {
     expectVersionToBe(dependencies, '@covalent/http', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/markdown', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@covalent/flavored-markdown', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/echarts', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/text-editor', expectedCovalentVersion);
+    expectVersionToBe(dependencies, '@covalent/code-editor', expectedCovalentVersion);
     expectVersionToBe(dependencies, '@angular/material', expectedMaterialVersion);
     expect(dependencies['@covalent/highlight']).not.toBeDefined();
 

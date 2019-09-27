@@ -70,7 +70,7 @@ export class ComponentsComponent {
       title: 'Loading',
     },
     {
-      description: 'Quick way to use alert, confirm and prompt dialogs',
+      description: 'Quick way to use alert, confirm, prompt, and draggable dialogs',
       icon: 'open_in_browser',
       route: 'dialogs',
       title: 'Simple Dialogs',
@@ -146,6 +146,12 @@ export class ComponentsComponent {
       icon: 'theaters',
       route: 'animations',
       title: 'Animations',
+    },
+    {
+      description: 'Helper functions',
+      icon: 'build',
+      route: 'functions',
+      title: 'Functions',
     },
   ];
 
