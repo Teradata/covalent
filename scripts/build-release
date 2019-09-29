@@ -8,6 +8,9 @@ rm -rf ./deploy
 # BUILD: @covalent/core primary entrypoint
 ./node_modules/@angular/cli/bin/ng build covalent-core
 
+tsc -p src/platform/core/migrations/tsconfig.json
+cp -r src/platform/core/migrations deploy/platform/core/migrations
+
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
 gulp compile-core-sass

@@ -20,6 +20,9 @@
   },
   "license": "MIT",
   "author": "Teradata UX",
+  "ng-update": {
+    "migrations": "./migrations/migration-collection.json"
+  },
   "contributors": [
     "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
     "Richa Vyas <richa.vyas@teradata.com>",
