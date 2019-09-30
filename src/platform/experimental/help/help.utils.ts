@@ -13,9 +13,18 @@ export interface IHelpComponentLabels {
   emptyState?: string;
 }
 
-export interface IHelpWindowToolbarComponentLabels {
+export interface IHelpWindowComponentLabels extends IHelpComponentLabels {
   help?: string;
   close?: string;
 }
 
-export interface IHelpWindowComponentLabels extends IHelpComponentLabels, IHelpWindowToolbarComponentLabels {}
+export const DEFAULT_HELP_COMP_LABELS: IHelpComponentLabels = {
+  goHome: 'Go home',
+  goBack: 'Go back',
+  emptyState: 'No item(s) to display',
+};
+
+export const DEFAULT_HELP_WINDOW_COMP_LABELS: IHelpWindowComponentLabels = {
+  help: 'Help',
+  close: 'Close',
+};

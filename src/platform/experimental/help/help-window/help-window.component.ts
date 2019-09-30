@@ -1,5 +1,10 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
+import {
+  IHelpMenuDataItem,
+  IHelpWindowComponentLabels,
+  IHelpComponentLabels,
+  DEFAULT_HELP_WINDOW_COMP_LABELS,
+} from '../help.utils';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -9,14 +14,26 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class HelpWindowComponent {
   @Input() items: IHelpMenuDataItem[];
-  @Input() draggable: boolean = false;
   @Input() labels: IHelpWindowComponentLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
 
-  // outputs only for non-draggable toolbar
   @Output() closed: EventEmitter<void> = new EventEmitter();
 
-  get height(): number {
-    return 475;
+  get helpComponentLabels(): IHelpComponentLabels {
+    if (this.labels) {
+      const { goHome, goBack, emptyState }: IHelpWindowComponentLabels = this.labels;
+      return {
+        goHome,
+        goBack,
+        emptyState,
+      };
+    }
+  }
+  get helpLabel(): string {
+    return (this.labels && this.labels.help) || DEFAULT_HELP_WINDOW_COMP_LABELS.help;
+  }
+
+  get closeLabel(): string {
+    return (this.labels && this.labels.close) || DEFAULT_HELP_WINDOW_COMP_LABELS.close;
   }
 }
