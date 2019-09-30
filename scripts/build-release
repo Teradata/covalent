@@ -9,8 +9,7 @@ rm -rf ./deploy
 ./node_modules/@angular/cli/bin/ng build covalent-core
 
 # BUILD: Schematics
-tsc -p src/platform/core/migrations/tsconfig.json
-cp -r src/platform/core/migrations/migration-collection.json deploy/platform/core/migrations
+gulp build-schematics
 
 echo 'Compiling and moving moving some requried files not handled by ng-packagr'
 gulp move-required-core-files
@@ -60,7 +59,7 @@ cp -r deploy/platform/flavored-markdown src/platform/node_modules/@covalent
 # HACK (Remove in future): remove remnants of platform/node_modules was used for building purposes
 rm -rf src/platform/node_modules
 
-# BUILD: Schematics
+# BUILD: Experimental Schematics
 gulp build-schematics-assets
 
 # Need to move required file after ng-packagr runs because ng-packagr overrides primary entrypoint folders
