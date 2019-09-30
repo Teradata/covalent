@@ -54,6 +54,7 @@ describe('Markdown utils', () => {
     expect(removeLeadingHash('#anchor')).toBe('anchor');
     expect(removeLeadingHash('##anchor')).toBe('anchor');
     expect(removeLeadingHash('#anchor#')).toBe('anchor#');
+    expect(removeLeadingHash('#before#anchor')).toBe('before#anchor');
   });
 
   it('removeTrailingHash should remove trailing hashes', () => {
@@ -131,6 +132,7 @@ describe('Markdown utils', () => {
     expect(isGithubHref('https://github.com')).toBe(true);
     expect(isGithubHref('https://github.com/something')).toBe(true);
     expect(isGithubHref('github.com')).toBe(false);
+    expect(isGithubHref('subdomain.github.com')).toBe(false);
   });
 
   it('scrollToAnchor should scroll to anchor within provided element, or parent if tryParent is true', async () => {
