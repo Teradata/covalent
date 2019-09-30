@@ -51,9 +51,10 @@ export function convertObjectsToCSV(
  * @param csv list of strings in JSON format or actual objects
  * @param keySeparator optional parameter to specify custom value separator
  * @param lineSeparator optional parameter to specify custom end of line separator
+ * @param indent optional parameter indicating space indentation for pretty output
  * @returns JSON formatted string
  */
-export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSeparator: string = '\r\n'): string {
+export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSeparator: string = '\r\n', indent: number = 2): string {
   if (!csv) {
     return '';
   }
@@ -82,5 +83,5 @@ export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSe
     newObjects.push(newObject);
   }
 
-  return JSON.stringify(newObjects);
+  return JSON.stringify(newObjects, undefined, indent);
 }

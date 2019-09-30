@@ -31,7 +31,7 @@ export class FunctionsDemoComponent {
   mimeType: string = 'text/plain';
 
   constructor(private _snackBar: MatSnackBar) {
-    this.objectsString = JSON.stringify(this.objects);
+    this.objectsString = JSON.stringify(this.objects, undefined, 2);
   }
 
   doCopyToClipboard(): void {

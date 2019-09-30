@@ -85,29 +85,29 @@
       <mat-card-content>
         <h3 class="mat-title">convertCSVToJSON</h3>
         <p>Conversion function that takes a CSV representation of objects and converts them to JSON. The first row in the input must be the object keys. Custom key separator and line separator can be specified.</p>
-        <h4>CSV:</h4>
+        <h4>Input CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-        <h4>JSON:</h4>
+        <div class="pad-top">
+          <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
+            Convert CSV
+          </button>
+        </div>
+        <h4>Output JSON:</h4>
         <td-highlight [content]="jsonOutput"></td-highlight>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
-          Convert CSV
-        </button>
-      </mat-card-actions>
       <mat-card-content>
         <h3 class="mat-title">convertObjectsToCSV</h3>
         <p>Conversion function that takes an array of objects and converts them to CSV format. Custom key and line separators can be specified.</p>
-        <h4>Objects:</h4>
+        <h4>Input Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <h4>CSV:</h4>
+        <div class="pad-top">
+          <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
+            Convert Objects
+          </button>
+        </div>
+        <h4>Output CSV:</h4>
         <td-highlight [content]="csvOutput"></td-highlight>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
-          Convert Objects
-        </button>
-      </mat-card-actions>
     </mat-tab>
     <mat-tab>
       <ng-template matTabLabel>Code</ng-template>
@@ -115,20 +115,20 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <h4>CSV:</h4>
+            <h4>Input CSV:</h4>
             <td-highlight [content]="csv"></td-highlight>
-            <h4>JSON:</h4>
-            <td-highlight [content]="jsonOutput"></td-highlight>
             <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
               Convert CSV
             </button>
-            <h4>Objects:</h4>
+            <h4>Output JSON:</h4>
+            <td-highlight [content]="jsonOutput"></td-highlight>
+            <h4>Input Objects:</h4>
             <td-highlight [content]="objectsString"></td-highlight>
-            <h4>CSV:</h4>
-            <td-highlight [content]="csvOutput"></td-highlight>
             <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
               Convert Objects
             </button>
+            <h4>Output CSV:</h4>
+            <td-highlight [content]="csvOutput"></td-highlight>
           ]]>
         </td-highlight>
         <p>Typescript:</p>
@@ -144,7 +144,7 @@
               csvOutput: string = '';
                         
               constructor(private _snackBar: MatSnackBar) {
-                this.objectsString = JSON.stringify(this.objects);
+                this.objectsString = JSON.stringify(this.objects, undefined, 2);
               }
                         
               doConvertCSVToJSON(): void {
@@ -312,7 +312,7 @@
               mimeType: string = 'text/plain';
 
               constructor(private _snackBar: MatSnackBar) {
-                this.objectsString = JSON.stringify(this.objects);
+                this.objectsString = JSON.stringify(this.objects, undefined, 2);
               }
                         
               doDownloadCSV(): void {
