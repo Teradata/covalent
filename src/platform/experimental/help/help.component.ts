@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, ElementRef, OnDestroy, SimpleChanges } from '@angular/core';
-import { IHelpMenuDataItem, IHelpComponentLabels } from './help.utils';
+import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 
 function getTitleFromUrl(url: string): string {
@@ -33,7 +33,7 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
   templateUrl: './help.component.html',
   styleUrls: ['./help.component.scss'],
 })
-export class HelpComponent implements OnChanges, OnDestroy {
+export class HelpComponent implements OnChanges {
   /**
    * items: IHelpMenuDataItem[]
    *
@@ -53,7 +53,16 @@ export class HelpComponent implements OnChanges, OnDestroy {
   currentMenuItems: IHelpMenuDataItem[] = []; // current menu items
 
   loading: boolean = false;
-  handleLinkClickBound: EventListenerOrEventListenerObject;
+
+  constructor(private _markdownUrlLoaderService: MarkdownLoaderService) {}
+
+  @HostListener('click', ['$event'])
+  clickListener(event: Event): void {
+    const element: HTMLElement = <HTMLElement>event.srcElement;
+    if (element.matches('a[href]') && isMarkdownHref(<HTMLAnchorElement>element)) {
+      this.handleLinkClick(event);
+    }
+  }
 
   get showGoBackButton(): boolean {
     return this.historyStack.length > 0;
@@ -99,18 +108,16 @@ export class HelpComponent implements OnChanges, OnDestroy {
   }
 
   get goHomeLabel(): string {
-    return (this.labels && this.labels.goHome) || 'Go home';
+    return (this.labels && this.labels.goHome) || DEFAULT_HELP_COMP_LABELS.goHome;
   }
 
   get goBackLabel(): string {
-    return (this.labels && this.labels.goBack) || 'Go back';
+    return (this.labels && this.labels.goBack) || DEFAULT_HELP_COMP_LABELS.goBack;
   }
 
   get emptyStateLabel(): string {
-    return (this.labels && this.labels.emptyState) || 'No item(s) to display';
+    return (this.labels && this.labels.emptyState) || DEFAULT_HELP_COMP_LABELS.emptyState;
   }
-
-  constructor(private _elementRef: ElementRef, private _markdownUrlLoaderService: MarkdownLoaderService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.items) {
@@ -118,12 +125,7 @@ export class HelpComponent implements OnChanges, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.removeLinkListeners();
-  }
-
   reset(): void {
-    this.removeLinkListeners();
     // if single item and no children
     if (this.items && this.items.length === 1 && (!this.items[0].children || this.items[0].children.length === 0)) {
       this.currentMenuItems = [];
@@ -185,25 +187,6 @@ export class HelpComponent implements OnChanges, OnDestroy {
       getTitleFromUrl(item.url) ||
       getTitleFromMarkdownString(item.markdownString)
     );
-  }
-
-  handleContentReady(): void {
-    this.removeLinkListeners();
-    this.handleLinkClickBound = this.handleLinkClick.bind(this);
-    this.attachLinkListeners();
-  }
-
-  attachLinkListeners(): void {
-    // TODO: rxjs fromEvent
-    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
-      .filter((link: HTMLAnchorElement) => isMarkdownHref(link))
-      .forEach((link: HTMLElement) => link.addEventListener('click', this.handleLinkClickBound));
-  }
-
-  removeLinkListeners(): void {
-    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
-      .filter((link: HTMLAnchorElement) => isMarkdownHref(link))
-      .forEach((link: HTMLElement) => link.removeEventListener('click', this.handleLinkClickBound));
   }
 
   async handleLinkClick(event: Event): Promise<void> {
