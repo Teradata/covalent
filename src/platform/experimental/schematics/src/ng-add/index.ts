@@ -9,6 +9,7 @@ import {
   Highlight,
   Markdown,
   FlavoredMarkdown,
+  Echarts,
   TextEditor,
   CodeEditor,
 } from './components';
@@ -29,6 +30,7 @@ export function addDependenciesAndFiles(options: ISchema): Rule {
         new Highlight(),
         new Markdown(),
         new FlavoredMarkdown(),
+        new Echarts(),
         new TextEditor(),
         new CodeEditor(),
       ];

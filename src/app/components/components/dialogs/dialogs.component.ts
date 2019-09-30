@@ -41,7 +41,7 @@ export class DialogsDemoComponent {
     {
       description: 'Opens a draggable dialog containing the given component',
       name: 'openDraggable',
-      type: '<T>(component: ComponentType<T>, config?: MatDialogConfig, dragHandleSelectors?: string[])',
+      type: 'function<T>(IDraggableConfig<T>): MatDialogRef<T>',
     },
     {
       description: `Wrapper function over the closeAll() method in MatDialog.
@@ -82,10 +82,13 @@ export class DialogsDemoComponent {
   }
 
   openDraggable(): void {
-    this._dialogService.openDraggable(
-      DraggableDemoComponent,
-      { height: '300px' },
-      ['.drag-handle'], // CSS selectors of element(s) inside the component meant to be drag handle(s)
-    );
+    this._dialogService.openDraggable({
+      component: DraggableDemoComponent,
+      config: { height: '300px' },
+      // CSS selectors of element(s) inside the component meant to be drag handle(s)
+      dragHandleSelectors: ['.drag-handle'],
+      // Class that will be added to the component signifying drag-ability
+      draggableClass: 'custom-class',
+    });
   }
 }
