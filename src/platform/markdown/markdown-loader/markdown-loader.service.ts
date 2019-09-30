@@ -1,6 +1,6 @@
 import { Injectable, Sanitizer, SecurityContext } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { isGithubHref, rawGithubHref } from './markdown-utils';
+import { isGithubHref, rawGithubHref } from '../markdown-utils/markdown-utils';
 
 @Injectable({
   providedIn: 'root',
