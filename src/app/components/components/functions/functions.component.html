@@ -85,9 +85,9 @@
       <mat-card-content>
         <h3 class="mat-title">convertCSVToJSON</h3>
         <p>Conversion function that takes a CSV representation of objects and converts them to JSON. The first row in the input must be the object keys. Custom key separator and line separator can be specified.</p>
-        <span>CSV:</span>
+        <h4>CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-        <span>JSON:</span>
+        <h4>JSON:</h4>
         <td-highlight [content]="jsonOutput"></td-highlight>
       </mat-card-content>
       <mat-card-actions>
@@ -98,9 +98,9 @@
       <mat-card-content>
         <h3 class="mat-title">convertObjectsToCSV</h3>
         <p>Conversion function that takes an array of objects and converts them to CSV format. Custom key and line separators can be specified.</p>
-        <span>Objects:</span>
+        <h4>Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <span>CSV:</span>
+        <h4>CSV:</h4>
         <td-highlight [content]="csvOutput"></td-highlight>
       </mat-card-content>
       <mat-card-actions>
@@ -115,16 +115,16 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <span>CSV:</span>
+            <h4>CSV:</h4>
             <td-highlight [content]="csv"></td-highlight>
-            <span>JSON:</span>
+            <h4>JSON:</h4>
             <td-highlight [content]="jsonOutput"></td-highlight>
             <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
               Convert CSV
             </button>
-            <span>Objects:</span>
+            <h4>Objects:</h4>
             <td-highlight [content]="objectsString"></td-highlight>
-            <span>CSV:</span>
+            <h4>CSV:</h4>
             <td-highlight [content]="csvOutput"></td-highlight>
             <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
               Convert Objects
@@ -187,7 +187,7 @@
       <mat-card-content>
         <h3 class="mat-title">downloadCSV</h3>
         <p>Download CSV content to the specified file with .csv extension appended to the provided base file name.</p>
-        <span>CSV:</span>
+        <h4>CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
       </mat-card-content>
       <mat-card-actions>
@@ -198,7 +198,7 @@
       <mat-card-content>
         <h3 class="mat-title">downloadJSON</h3>
         <p>Download JSON content to the specified file with .json extension appended to the provided base file name.</p>
-        <span>JSON:</span>
+        <h4>JSON:</h4>
         <td-highlight [content]="json"></td-highlight>
       </mat-card-content>
       <mat-card-actions>
@@ -209,7 +209,7 @@
       <mat-card-content>
         <h3 class="mat-title">downloadObjectsToCSV</h3>
         <p>Convert objects to CSV format and download to file with .csv extension appended to the provided base file name. Custom key separator and line separator can be specified.</p>
-        <span>Objects:</span>
+        <h4>Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
       </mat-card-content>
       <mat-card-actions>
@@ -220,7 +220,7 @@
       <mat-card-content>
           <h3 class="mat-title">downloadObjectsToJSON</h3>
           <p>Convert objects to JSON format and download to file with .json extension appended to the provided base file name.</p>
-          <span>Objects:</span>
+          <h4>Objects:</h4>
           <td-highlight [content]="objectsString"></td-highlight>
         </mat-card-content>
         <mat-card-actions>
@@ -234,16 +234,14 @@
         <form class="md-padding">
           <div layout="column">
             <mat-form-field flex>
-              <textarea matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
-              </textarea>
+              <input matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
             </mat-form-field>
             <mat-form-field flex>
               <textarea matInput [(ngModel)]="fileContent" placeholder="File content" rows="1" name="fileContentInput">
               </textarea>
             </mat-form-field>
             <mat-form-field flex>
-              <textarea matInput [(ngModel)]="mimeType" placeholder="Mime type" rows="1" name="mimeTypeInput">
-              </textarea>
+              <input matInput [(ngModel)]="mimeType" placeholder="Mime type" rows="1" name="mimeTypeInput">
             </mat-form-field>
           </div>
         </form>
@@ -260,22 +258,22 @@
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-            <span>CSV:</span>
+            <h4>CSV:</h4>
             <td-highlight [content]="csv"></td-highlight>
             <button mat-button color="primary" (click)="doDownloadCSV()" class="text-upper">
               Download CSV
             </button>
-            <span>JSON:</span>
+            <h4>JSON:</h4>
             <td-highlight [content]="json"></td-highlight>
             <button mat-button color="primary" (click)="doDownloadJSON()" class="text-upper">
               Download JSON
             </button>
-            <span>Objects:</span>
+            <h4>Objects:</h4>
             <td-highlight [content]="objectsString"></td-highlight>
             <button mat-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper">
               Download To CSV 
             </button>
-            <span>Objects:</span>
+            <h4>Objects:</h4>
             <td-highlight [content]="objectsString"></td-highlight>
             <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper">
               Download To JSON
@@ -283,16 +281,14 @@
             <form class="md-padding">
               <div layout="column">
                 <mat-form-field flex>
-                  <textarea matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
-                  </textarea>
+                  <input matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
                 </mat-form-field>
                 <mat-form-field flex>
                   <textarea matInput [(ngModel)]="fileContent" placeholder="File content" rows="1" name="fileContentInput">
                   </textarea>
                 </mat-form-field>
                 <mat-form-field flex>
-                  <textarea matInput [(ngModel)]="mimeType" placeholder="Mime type" rows="1" name="mimeTypeInput">
-                  </textarea>
+                  <input matInput [(ngModel)]="mimeType" placeholder="Mime type" rows="1" name="mimeTypeInput">
                 </mat-form-field>
               </div>
             </form>
