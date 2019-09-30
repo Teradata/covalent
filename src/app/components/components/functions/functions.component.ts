@@ -10,6 +10,7 @@ import {
   downloadObjectsToCSV,
   downloadObjectsToJSON,
   downloadFile,
+  formatJSON,
 } from '../../../../platform/core';
 
 @Component({
@@ -31,7 +32,7 @@ export class FunctionsDemoComponent {
   mimeType: string = 'text/plain';
 
   constructor(private _snackBar: MatSnackBar) {
-    this.objectsString = JSON.stringify(this.objects, undefined, 2);
+    this.objectsString = formatJSON(this.objects, 2);
   }
 
   doCopyToClipboard(): void {
@@ -59,8 +60,9 @@ export class FunctionsDemoComponent {
   doConvertCSVToJSON(): void {
     // Invoke utility function to convert CSV value using
     // comma as the key separator and carriage return line feed
-    // as the line separator into JSON format.
-    this.jsonOutput = convertCSVToJSON(this.csv, ',', '\r\n');
+    // as the line separator into JSON format. Use two space
+    // indent to pretty output JSON.
+    this.jsonOutput = convertCSVToJSON(this.csv, ',', '\r\n', 2);
 
     // Show snackbar to indicate task complete
     this._snackBar.open('CSV converted!', undefined, {
@@ -82,7 +84,8 @@ export class FunctionsDemoComponent {
   doDownloadJSON(): void {
     // Invoke utility function to download JSON into file
     // with 'application/json' mime type and '.json' extension.
-    downloadJSON('jsonsampledata', this.json);
+    // Request JSON to be prettied.
+    downloadJSON('jsonsampledata', this.json, true, 2);
 
     // Show snackbar to indicate task complete
     this._snackBar.open('JSON downloaded!', undefined, {

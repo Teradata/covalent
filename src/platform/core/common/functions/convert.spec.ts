@@ -27,7 +27,7 @@ fdescribe('Convert', () => {
       const csvCustomKeySeparator: string = 'name|id\r\nuser1|123\r\nuser2|234\r\n';
       const csvCustomLineSeparator: string = 'name,id|user1,123|user2,234|';
       const csvCustomKeyLineSeparator: string = 'name|id&user1|123&user2|234&';
-      const expectedJSON: string = '[{"name":"user1","id":"123"},{"name":"user2","id":"234"}]';
+      const expectedJSON: string = '[\n  {\n    "name": "user1",\n    "id": "123"\n  },\n  {\n    "name": "user2",\n    "id": "234"\n  }\n]';
 
       expect(convertCSVToJSON(undefined)).toEqual('');
       expect(convertCSVToJSON('')).toEqual('');

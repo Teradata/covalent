@@ -1,4 +1,4 @@
-import { convertObjectsToCSV } from './convert';
+import { convertObjectsToCSV, formatJSON } from './convert';
 
 /**
  * Download CSV content to the specified file with .csv extension
@@ -17,9 +17,11 @@ export function downloadCSV(fileBaseName: string, csv: string): void {
  *
  * @param fileBaseName base name of destination file
  * @param json JSON contents
+ * @param format indicates if JSON should be prettied
+ * @param indent optional parameter indicating space indentation for pretty output. Default is 2
  */
-export function downloadJSON(fileBaseName: string, json: string): void {
-  downloadFile(`${fileBaseName}.json`, json, 'application/json');
+export function downloadJSON(fileBaseName: string, json: string, format: boolean = false, indent: number = 2): void {
+  downloadFile(`${fileBaseName}.json`, format ? formatJSON(JSON.parse(json), indent) : json, 'application/json');
 }
 
 /**
@@ -49,9 +51,10 @@ export function downloadObjectsToCSV(
  * @param fileBaseName base name of destination file
  * @param objects object array to be converted to JSON format
  *   prior to writing to download destination
+ * @param indent optional parameter indicating space indentation for pretty output. Default is 2
  */
-export function downloadObjectsToJSON(fileBaseName: string, objects: any[]): void {
-  downloadFile(`${fileBaseName}.json`, JSON.stringify(objects), 'application/json');
+export function downloadObjectsToJSON(fileBaseName: string, objects: any[], indent: number = 2): void {
+  downloadFile(`${fileBaseName}.json`, formatJSON(objects, indent), 'application/json');
 }
 
 /**

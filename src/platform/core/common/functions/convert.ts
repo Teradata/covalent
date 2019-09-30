@@ -47,14 +47,20 @@ export function convertObjectsToCSV(
  * of objects and converts them to JSON.
  * The first row in the input must be the object keys.
  * Custom key separator and line separator can be specified.
+ * Indentation size for output JSON can be specified.
  *
  * @param csv list of strings in JSON format or actual objects
  * @param keySeparator optional parameter to specify custom value separator
  * @param lineSeparator optional parameter to specify custom end of line separator
- * @param indent optional parameter indicating space indentation for pretty output
+ * @param indent optional parameter indicating space indentation for pretty output. Default is 2.
  * @returns JSON formatted string
  */
-export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSeparator: string = '\r\n', indent: number = 2): string {
+export function convertCSVToJSON(
+  csv: string,
+  keySeparator: string = ',',
+  lineSeparator: string = '\r\n',
+  indent: number = 2,
+): string {
   if (!csv) {
     return '';
   }
@@ -83,5 +89,15 @@ export function convertCSVToJSON(csv: string, keySeparator: string = ',', lineSe
     newObjects.push(newObject);
   }
 
-  return JSON.stringify(newObjects, undefined, indent);
+  return formatJSON(newObjects, indent);
+}
+
+/**
+ * Convert object to JSON using stringify. Indentation size for output JSON can be specified.
+ *
+ * @param json object to be converted
+ * @param indent optional parameter indicating space indentation for pretty output. Default is 2.
+ */
+export function formatJSON(json: object, indent: number = 2): string {
+  return JSON.stringify(json, undefined, indent);
 }

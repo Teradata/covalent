@@ -2,13 +2,13 @@
   <mat-card-title>Clipboard</mat-card-title>
   <mat-card-subtitle>Clipboard function.</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-tab-group mat-stretch-tabs dynamicHeight>
-    <mat-tab>
-      <ng-template matTabLabel>Demo</ng-template>
-      <mat-card-content>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <h3 class="mat-title">copyToClipboard</h3>
         <p>Assign a text value to the system clipboard. Note: Due to browser security restrictions, the copy will only succeed if this method is invoked as a result of a user action (eg. user button click).</p>
-        <form class="md-padding">
+        <form>
           <div layout="row">
             <mat-form-field flex>
               <textarea matInput [(ngModel)]="copyText" placeholder="Text to be copied" rows="1" name="copyTextinput">
@@ -16,20 +16,16 @@
             </mat-form-field>
           </div>
         </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doCopyToClipboard()" class="text-upper">
+        <button mat-button color="primary" (click)="doCopyToClipboard()" class="text-upper pad-left-sm">
           Copy To Clipboard
         </button>
-      </mat-card-actions>
-    </mat-tab>
-    <mat-tab>
-      <ng-template matTabLabel>Code</ng-template>
-      <mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
-              <form class="md-padding">
+              <form>
                 <div layout="row">
                   <mat-form-field flex>
                     <textarea matInput
@@ -71,47 +67,39 @@
               }
             ]]>
         </td-highlight>
-      </mat-card-content>
-    </mat-tab>
-  </mat-tab-group>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-title>Convert</mat-card-title>
   <mat-card-subtitle>Type conversion functions.</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-tab-group mat-stretch-tabs dynamicHeight>
-    <mat-tab>
-      <ng-template matTabLabel>Demo</ng-template>
-      <mat-card-content>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <h3 class="mat-title">convertCSVToJSON</h3>
-        <p>Conversion function that takes a CSV representation of objects and converts them to JSON. The first row in the input must be the object keys. Custom key separator and line separator can be specified.</p>
+        <p>Conversion function that takes a CSV representation of objects and converts them to JSON. The first row in the input must be the object keys. Custom key separator and line separator can be specified. Space indentation size for output JSON can be specified.</p>
         <h4>Input CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-        <div class="pad-top">
-          <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper">
-            Convert CSV
-          </button>
-        </div>
+        <button mat-button color="primary" (click)="doConvertCSVToJSON()" class="text-upper pad-left-sm pad-top">
+          Convert CSV
+        </button>
         <h4>Output JSON:</h4>
         <td-highlight [content]="jsonOutput"></td-highlight>
-      </mat-card-content>
-      <mat-card-content>
-        <h3 class="mat-title">convertObjectsToCSV</h3>
+        <h3 class="mat-title pad-top-xl">convertObjectsToCSV</h3>
         <p>Conversion function that takes an array of objects and converts them to CSV format. Custom key and line separators can be specified.</p>
         <h4>Input Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-        <div class="pad-top">
-          <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper">
-            Convert Objects
-          </button>
-        </div>
+        <button mat-button color="primary" (click)="doConvertObjectsToCSV()" class="text-upper pad-left-sm pad-top">
+          Convert Objects
+        </button>
         <h4>Output CSV:</h4>
         <td-highlight [content]="csvOutput"></td-highlight>
-      </mat-card-content>
-    </mat-tab>
-    <mat-tab>
-      <ng-template matTabLabel>Code</ng-template>
-      <mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -150,8 +138,9 @@
               doConvertCSVToJSON(): void {
                 // Invoke utility function to CSV value using
                 // comma as the key separator and carriage return line feed
-                // as the line separator into JSON format.
-                this.jsonOutput = convertCSVToJSON(this.csv, ',', '\r\n');
+                // as the line separator into JSON format. Use two space
+                // indent to prettify output JSON.
+                this.jsonOutput = convertCSVToJSON(this.csv, ',', '\r\n', 2);
                           
                 // Show snackbar to indicate task complete
                 this._snackBar.open('Objects converted!', undefined, {
@@ -173,65 +162,49 @@
             }
           ]]>
         </td-highlight>
-      </mat-card-content>
-    </mat-tab>
-  </mat-tab-group>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-title>Download</mat-card-title>
   <mat-card-subtitle>Content download functions.</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-tab-group mat-stretch-tabs dynamicHeight>
-    <mat-tab>
-      <ng-template matTabLabel>Demo</ng-template>
-      <mat-card-content>
+  <mat-card-content>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
         <h3 class="mat-title">downloadCSV</h3>
         <p>Download CSV content to the specified file with .csv extension appended to the provided base file name.</p>
         <h4>CSV:</h4>
         <td-highlight [content]="csv"></td-highlight>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doDownloadCSV()" class="text-upper">
+        <button mat-button color="primary" (click)="doDownloadCSV()" class="text-upper pad-left-sm pad-top pad-bottom">
           Download CSV
         </button>
-      </mat-card-actions>
-      <mat-card-content>
-        <h3 class="mat-title">downloadJSON</h3>
+        <h3 class="mat-title pad-top-lg">downloadJSON</h3>
         <p>Download JSON content to the specified file with .json extension appended to the provided base file name.</p>
         <h4>JSON:</h4>
         <td-highlight [content]="json"></td-highlight>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doDownloadJSON()" class="text-upper">
+        <button mat-button color="primary" (click)="doDownloadJSON()" class="text-upper pad-left-sm pad-top pad-bottom">
           Download JSON
         </button>
-      </mat-card-actions>
-      <mat-card-content>
-        <h3 class="mat-title">downloadObjectsToCSV</h3>
+        <h3 class="mat-title pad-top-lg">downloadObjectsToCSV</h3>
         <p>Convert objects to CSV format and download to file with .csv extension appended to the provided base file name. Custom key separator and line separator can be specified.</p>
         <h4>Objects:</h4>
         <td-highlight [content]="objectsString"></td-highlight>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper">
+        <button mat-button color="primary" (click)="doDownloadObjectsToCSV()" class="text-upper pad-left-sm pad-top pad-bottom">
           Download To CSV
         </button>
-      </mat-card-actions>
-      <mat-card-content>
-          <h3 class="mat-title">downloadObjectsToJSON</h3>
-          <p>Convert objects to JSON format and download to file with .json extension appended to the provided base file name.</p>
-          <h4>Objects:</h4>
-          <td-highlight [content]="objectsString"></td-highlight>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper">
-            Download To JSON
-          </button>
-      </mat-card-actions>
-      <mat-card-content>
-        <h3 class="mat-title">download</h3>
+        <h3 class="mat-title pad-top-lg">downloadObjectsToJSON</h3>
+        <p>Convert objects to JSON format and download to file with .json extension appended to the provided base file name.</p>
+        <h4>Objects:</h4>
+        <td-highlight [content]="objectsString"></td-highlight>
+        <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper pad-left-sm pad-top pad-bottom">
+          Download To JSON
+        </button>
+        <h3 class="mat-title pad-top-lg">download</h3>
         <p>Download string content to the specified file with desired mime type.</p>
-        <form class="md-padding">
+        <form>
           <div layout="column">
             <mat-form-field flex>
               <input matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
@@ -245,16 +218,12 @@
             </mat-form-field>
           </div>
         </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="primary" (click)="doDownloadFile()" class="text-upper">
+        <button mat-button color="primary" (click)="doDownloadFile()" class="text-upper pad-left-sm pad-top">
           Download
         </button>
-      </mat-card-actions>
-    </mat-tab>
-    <mat-tab>
-      <ng-template matTabLabel>Code</ng-template>
-      <mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
         <td-highlight lang="html">
           <![CDATA[
@@ -278,7 +247,7 @@
             <button mat-button color="primary" (click)="doDownloadObjectsToJSON()" class="text-upper">
               Download To JSON
             </button>
-            <form class="md-padding">
+            <form>
               <div layout="column">
                 <mat-form-field flex>
                   <input matInput [(ngModel)]="fileName" placeholder="File name" rows="1" name="fileNameInput">
@@ -329,7 +298,8 @@
               doDownloadJSON(): void {
                 // Invoke utility function to download JSON into file
                 // with 'application/json' mime type and '.json' extension.
-                downloadJSON('jsonsampledata', this.json);
+                // Request JSON to be prettied.
+                downloadJSON('jsonsampledata', this.json, true, 2);
               
                 // Show snackbar to indicate task complete
                 this._snackBar.open('JSON downloaded!', undefined, {
@@ -374,7 +344,7 @@
             }
           ]]>
         </td-highlight>
-      </mat-card-content>
-    </mat-tab>
-  </mat-tab-group>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 </mat-card>
