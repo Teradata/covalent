@@ -126,7 +126,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
     if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
-      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor, false);
     } else {
       this.refresh();
     }
@@ -180,7 +180,7 @@ export class TdFlavoredMarkdownComponent implements AfterViewInit, OnChanges {
       });
       this._render(markdown, keys[0], keys);
       // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
-      setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
+      setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, false), 250);
       this.onContentReady.emit();
       Promise.resolve().then(() => {
         this._changeDetectorRef.markForCheck();
