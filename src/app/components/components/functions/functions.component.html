@@ -348,3 +348,36 @@
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
+<mat-card>
+  <mat-card-title>Upload</mat-card-title>
+  <mat-card-subtitle>Content upload function.</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3 class="mat-title">uploadFile</h3>
+    <p>Append blob with string content and specified mime type at tag name in request form data.</p>
+    <ng-template matTabLabel>Code</ng-template>
+    <p>Typescript:</p>
+    <td-highlight lang="typescript">
+      <![CDATA[
+        import { uploadFile } from '@covalent/core'
+  
+        doUpload(): void {
+          ...
+          // Sample contents
+          objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
+
+          // The form data
+          let formData: FormData = new FormData();
+
+          // Invoke utility function to append blob content to request
+          // form data with specified name and desired mime type.
+          uploadFile(formData, 'users', JSON.stringify(objects), 'application/json');
+
+          // Perform HTTP request, passing form data
+          request = this.http.patch('myurl', formData, ...);
+          ...
+        }
+      ]]>
+    </td-highlight>
+  </mat-card-content>
+</mat-card>
