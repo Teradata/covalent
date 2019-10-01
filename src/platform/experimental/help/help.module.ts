@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
 
     CovalentFlavoredMarkdownModule,
+    CovalentDialogsModule,
   ],
   declarations: [HelpComponent, HelpWindowComponent],
   exports: [HelpComponent, HelpWindowComponent],
