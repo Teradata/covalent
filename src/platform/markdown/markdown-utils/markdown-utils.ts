@@ -2,64 +2,79 @@ export function removeLeadingHash(str: string): string {
   if (str) {
     return str.replace(/^#+/, '');
   }
-  return undefined;
+  return '';
 }
 
 export function removeTrailingHash(str: string): string {
   if (str) {
     return str.replace(/\#.*/, '');
   }
-  return undefined;
+  return '';
 }
 
-export function normalizeAnchor(str: string): string {
+export function genHeadingId(str: string): string {
   if (str) {
-    return removeLeadingHash(str.replace(/(_|-|\s)+/g, '')).toLowerCase();
+    return removeLeadingHash(
+      str
+        .replace(/(_|-|\s)+/g, '')
+        // Remove certain special chars to create heading ids similar to those in github
+        // borrowed from showdown
+        // https://github.com/showdownjs/showdown/blob/develop/src/subParsers/makehtml/headers.js#L94
+        .replace(/[&+$,\/:;=?@"#{}|^¨~\[\]`\\*)(%.!'<>]/g, ''),
+    ).toLowerCase();
   }
-  return undefined;
+  return '';
 }
 
-export function scrollToAnchor(element: HTMLElement, anchor: string): void {
-  if (element && anchor) {
-    const normalizedAnchor: string = normalizeAnchor(anchor);
-    const parent: HTMLElement = element.parentElement;
-
+export function scrollToAnchor(scope: HTMLElement, anchor: string, tryParent: boolean): boolean {
+  if (scope && anchor) {
+    const normalizedAnchor: string = genHeadingId(anchor);
     let headingToJumpTo: HTMLElement;
-    const headingWithinComponent: HTMLElement = element.querySelector(`[id="${normalizedAnchor}"]`);
+    const headingWithinComponent: HTMLElement = scope.querySelector(`[id="${normalizedAnchor}"]`);
 
     if (headingWithinComponent) {
       headingToJumpTo = headingWithinComponent;
-    } else if (parent) {
-      headingToJumpTo = parent.querySelector(`[id="${normalizedAnchor}"]`);
+    } else if (tryParent) {
+      const parent: HTMLElement = scope.parentElement;
+      if (parent) {
+        headingToJumpTo = parent.querySelector(`[id="${normalizedAnchor}"]`);
+      }
     }
     if (headingToJumpTo) {
       headingToJumpTo.scrollIntoView({ behavior: 'auto' });
-    } else {
-      // TODO: leave this warning?
-      // tslint:disable-next-line
-      console.warn(`Could not jump to heading '${anchor}'`);
+      return true;
     }
   }
+  return false;
 }
 
 export function isAnchorLink(anchor: HTMLAnchorElement): boolean {
   if (anchor) {
-    return anchor.getAttribute('href').startsWith('#');
+    const href: string = anchor.getAttribute('href');
+    if (href) {
+      return href.startsWith('#');
+    }
   }
+  return false;
 }
 
 export function rawGithubHref(githubHref: string): string {
   if (githubHref) {
-    const url: URL = new URL(githubHref);
-    if (url.pathname.startsWith('/raw/')) {
-      return githubHref;
-    } else {
-      url.hostname = 'raw.githubusercontent.com';
-      url.pathname = url.pathname.split('/blob', 2).join('');
-      return url.href;
+    try {
+      const url: URL = new URL(githubHref);
+      const RAW_GITHUB_HOSTNAME: string = 'raw.githubusercontent.com';
+      if (url.hostname === RAW_GITHUB_HOSTNAME) {
+        return url.href;
+      } else if (isGithubHref(githubHref)) {
+        url.hostname = RAW_GITHUB_HOSTNAME;
+        url.pathname = url.pathname.split('/blob', 2).join('');
+        return url.href;
+      }
+    } catch {
+      return '';
     }
   }
-  return undefined;
+  return '';
 }
 
 export function isGithubHref(href: string): boolean {
