@@ -86,8 +86,6 @@ describe('Markdown utils', () => {
     expect(isAnchorLink(anchor)).toBe(false);
     anchor.setAttribute('href', undefined);
     expect(isAnchorLink(anchor)).toBe(false);
-    anchor.setAttribute('href', null);
-    expect(isAnchorLink(anchor)).toBe(false);
     anchor.setAttribute('href', '');
     expect(isAnchorLink(anchor)).toBe(false);
     anchor.setAttribute('href', 'github.com');
