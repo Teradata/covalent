@@ -30,21 +30,21 @@ export class TypesPieComponent {
       left: '0',
     },
 
-    xAxis: [
-      {
-        show: true,
-        type: 'time',
-        boundaryGap: false,
-      },
-    ],
-    yAxis: [
-      {
-        show: true,
-        type: 'value',
-        axisLabel: { inside: false },
-        max: 300,
-      },
-    ],
+    // xAxis: [
+    //   {
+    //     show: true,
+    //     type: 'time',
+    //     boundaryGap: false,
+    //   },
+    // ],
+    // yAxis: [
+    //   {
+    //     show: true,
+    //     type: 'value',
+    //     axisLabel: { inside: false },
+    //     max: 300,
+    //   },
+    // ],
     series: [
       {
         type: 'pie',

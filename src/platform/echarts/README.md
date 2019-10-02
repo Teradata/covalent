@@ -2,7 +2,7 @@
 
 ### What's Echarts?
 
-[Echarts](https://ecomfe.github.io/echarts-doc/public/en/index.html) is a massive visualization library built on canvas by Baidu and open-sourced under the Apache License as an official Apache Incubator.
+[Echarts](https://echarts.apache.org/en/index.html) is a massive visualization library built on canvas by Baidu and open-sourced under the Apache License as an official Apache Incubator.
 
 ### Why Covalent Echarts?
 
