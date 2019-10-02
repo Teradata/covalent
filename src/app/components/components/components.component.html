@@ -23,16 +23,6 @@
       <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
     </ng-template>
     <h3 matSubheader>Optional Components</h3>
-    <a mat-list-item
-        [routerLink]="['/echarts']"
-        [routerLinkActive]="['active']"
-        target="_blank">
-      <mat-icon matListAvatar>insert_chart</mat-icon>
-      <h3 matLine> Covalent Echarts </h3>
-      <p matLine> Powerful canvas based chart library </p>
-      <mat-icon matTooltip="External docs" class="tc-grey-600">launch</mat-icon>
-    </a>
-    <mat-divider [inset]="true"></mat-divider>
     <ng-template let-item let-last="last" ngFor [ngForOf]="optional">
       <a mat-list-item
           [routerLink]="[item.route]"
