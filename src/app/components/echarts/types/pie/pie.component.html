@@ -7,7 +7,7 @@
       <mat-tab-group mat-stretch-tabs dynamicHeight>
         <mat-tab>
           <ng-template matTabLabel>Demo</ng-template>
-           <td-chart [style.height.px]="400">
+          <td-chart [style.height.px]="400">
             <td-chart-dataset [source]=" {
               'product': ['Latte', 'Tea', 'Cocoa', 'Milk'],
               'count': [823, 235, 1042, 988],
@@ -19,7 +19,7 @@
                         [right]="30"
                         [top]="10"
                         [feature]="{dataView: {readOnly: true, title: 'View Data', lang: ['Data View', 'Turn Off', 'Refresh']}}">
-               <ng-template tdViewDataFormatter>
+              <ng-template tdViewDataFormatter>
                 <table td-data-table>
                   <thead>
                     <tr td-data-table-column-row>
@@ -33,10 +33,10 @@
                       <tr td-data-table-row>
                         <td td-data-table-cell>{{item}}</td>
                         <td td-data-table-cell *ngIf="[823, 235, 1042, 988] as firstSeries">
-                          {{firstSeries[i]}}
+                        {{firstSeries[i]}}
                         </td>
                         <td td-data-table-cell *ngIf="[95.8, 81.4, 91.2, 76.9] as secondSeries">
-                          {{secondSeries[i]}}
+                        {{secondSeries[i]}}
                         </td>
                       </tr>
                     </ng-container>
