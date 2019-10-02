@@ -30,7 +30,6 @@ const RAW_MARKDOWN_ITEM: IHelpMenuDataItem[] = [
 
 async function wait(fixture: ComponentFixture<any>): Promise<void> {
   fixture.detectChanges();
-  await fixture.whenRenderingDone();
   await fixture.whenStable();
 }
 

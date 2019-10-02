@@ -35,7 +35,6 @@ const NESTED_MIXED_ITEMS: IHelpMenuDataItem[] = [
 
 async function wait(fixture: ComponentFixture<any>): Promise<void> {
   fixture.detectChanges();
-  await fixture.whenRenderingDone();
   await fixture.whenStable();
 }
 

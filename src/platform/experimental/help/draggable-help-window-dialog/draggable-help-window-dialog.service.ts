@@ -22,16 +22,20 @@ export class DraggableHelpWindowDialogService {
 
   open(config: IDraggableHelpWindowDialogServiceConfig): MatDialogRef<HelpWindowComponent> {
     const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-help-window-wrapper';
+    const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
+      hasBackdrop: false,
+      closeOnNavigation: true,
+      panelClass: CDK_OVERLAY_CUSTOM_CLASS,
+      position: { bottom: '0', right: '0' },
+      height: '475px',
+      width: '360px',
+      scrollStrategy: this._overlay.scrollStrategies.noop(),
+    };
+
     const draggableDialog: MatDialogRef<HelpWindowComponent> = this._tdDialogService.openDraggable({
       component: HelpWindowComponent,
       config: {
-        hasBackdrop: false,
-        closeOnNavigation: true,
-        panelClass: CDK_OVERLAY_CUSTOM_CLASS,
-        position: { bottom: '0', right: '0' },
-        scrollStrategy: this._overlay.scrollStrategies.noop(),
-        height: '475px',
-        width: '360px',
+        ...DEFAULT_DRAGGABLE_DIALOG_CONFIG,
         ...config.dialogConfig,
       },
       dragHandleSelectors: ['.td-help-window-toolbar'],
