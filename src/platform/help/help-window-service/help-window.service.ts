@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { IHelpMenuDataItem, IHelpWindowComponentLabels } from '../help.utils';
+
 import { Overlay } from '@angular/cdk/overlay';
 import { CovalentHelpModule } from '../help.module';
 import { ThemePalette } from '@angular/material/core';
-import { HelpWindowComponent } from '../help-window/help-window.component';
+import { HelpWindowComponent, IHelpWindowComponentLabels } from '../help-window/help-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
+import { IHelpItem } from '../help.component';
 
-interface IDraggableHelpWindowDialogServiceConfig {
-  items: IHelpMenuDataItem[];
+export interface IHelpWindowServiceConfig {
+  items: IHelpItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IHelpWindowComponentLabels;
   toolbarColor?: ThemePalette;
@@ -17,10 +18,10 @@ interface IDraggableHelpWindowDialogServiceConfig {
 @Injectable({
   providedIn: CovalentHelpModule,
 })
-export class DraggableHelpWindowDialogService {
+export class HelpWindowService {
   constructor(private _overlay: Overlay, private _tdDialogService: TdDialogService) {}
 
-  open(config: IDraggableHelpWindowDialogServiceConfig): MatDialogRef<HelpWindowComponent> {
+  open(config: IHelpWindowServiceConfig): MatDialogRef<HelpWindowComponent> {
     const CDK_OVERLAY_CUSTOM_CLASS: string = 'td-draggable-help-window-wrapper';
     const DEFAULT_DRAGGABLE_DIALOG_CONFIG: MatDialogConfig = {
       hasBackdrop: false,

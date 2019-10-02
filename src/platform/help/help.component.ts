@@ -1,6 +1,26 @@
 import { Component, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
-import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
+
+export interface IHelpItem {
+  title?: string;
+  url?: string;
+  httpOptions?: object;
+  markdownString?: string; // raw markdown
+  anchor?: string;
+  children?: IHelpItem[];
+}
+
+export interface IHelpComponentLabels {
+  goHome?: string;
+  goBack?: string;
+  emptyState?: string;
+}
+
+export const DEFAULT_HELP_COMP_LABELS: IHelpComponentLabels = {
+  goHome: 'Go home',
+  goBack: 'Go back',
+  emptyState: 'No item(s) to display',
+};
 
 function getTitleFromUrl(url: string): string {
   if (url) {
@@ -35,11 +55,11 @@ function isMarkdownHref(anchor: HTMLAnchorElement): boolean {
 })
 export class HelpComponent implements OnChanges {
   /**
-   * items: IHelpMenuDataItem[]
+   * items: IHelpItem[]
    *
    * List of IHelpMenuDataItems to be rendered
    */
-  @Input() items: IHelpMenuDataItem[];
+  @Input() items: IHelpItem[];
 
   /**
    * labels?: IHelpComponentLabels
@@ -48,9 +68,9 @@ export class HelpComponent implements OnChanges {
    */
   @Input() labels: IHelpComponentLabels;
 
-  historyStack: IHelpMenuDataItem[][] = []; // history
-  currentMarkdownItem: IHelpMenuDataItem; // currently rendered
-  currentMenuItems: IHelpMenuDataItem[] = []; // current menu items
+  historyStack: IHelpItem[][] = []; // history
+  currentMarkdownItem: IHelpItem; // currently rendered
+  currentMenuItems: IHelpItem[] = []; // current menu items
 
   loading: boolean = false;
 
@@ -137,7 +157,7 @@ export class HelpComponent implements OnChanges {
     this.historyStack = [];
   }
 
-  handleItemSelected(item: IHelpMenuDataItem): void {
+  handleItemSelected(item: IHelpItem): void {
     if (this.currentMenuItems.length === 0) {
       // clicked on a markdown link within the current markdown file
       this.historyStack = [...this.historyStack, [this.currentMarkdownItem]];
@@ -168,7 +188,7 @@ export class HelpComponent implements OnChanges {
 
   goBack(): void {
     if (this.historyStack.length > 0) {
-      const parent: IHelpMenuDataItem[] = this.historyStack[this.historyStack.length - 1];
+      const parent: IHelpItem[] = this.historyStack[this.historyStack.length - 1];
       if (parent.length === 1 && (!parent[0].children || parent[0].children.length === 0)) {
         this.currentMenuItems = [];
         this.currentMarkdownItem = parent[0];
@@ -180,7 +200,7 @@ export class HelpComponent implements OnChanges {
     }
   }
 
-  getTitle(item: IHelpMenuDataItem): string {
+  getTitle(item: IHelpItem): string {
     return (
       item.title ||
       removeLeadingHash(item.anchor) ||

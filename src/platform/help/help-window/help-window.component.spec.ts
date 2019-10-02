@@ -2,27 +2,25 @@ import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing'
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  IHelpWindowComponentLabels,
-  IHelpMenuDataItem,
-  DEFAULT_HELP_WINDOW_COMP_LABELS,
-  DEFAULT_HELP_COMP_LABELS,
-} from '../help.utils';
 import { ThemePalette } from '@angular/material/core';
 import { CovalentHelpModule } from '../help.module';
-import { HelpWindowComponent } from './help-window.component';
-import { HelpComponent } from '../help.component';
 import { MatToolbar } from '@angular/material/toolbar';
+import {
+  IHelpWindowComponentLabels,
+  HelpWindowComponent,
+  DEFAULT_HELP_WINDOW_COMP_LABELS,
+} from './help-window.component';
+import { IHelpItem, HelpComponent, DEFAULT_HELP_COMP_LABELS } from '../help.component';
 
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
 
-const URL_ITEM: IHelpMenuDataItem[] = [
+const URL_ITEM: IHelpItem[] = [
   {
     url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
   },
 ];
-const RAW_MARKDOWN_ITEM: IHelpMenuDataItem[] = [
+const RAW_MARKDOWN_ITEM: IHelpItem[] = [
   {
     markdownString: RAW_MARKDOWN,
   },
@@ -45,7 +43,7 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
   `,
 })
 class TdHelpWindowTestComponent {
-  items: IHelpMenuDataItem[] = [];
+  items: IHelpItem[] = [];
   labels: IHelpWindowComponentLabels;
   toolbarColor: ThemePalette;
 }
@@ -57,7 +55,7 @@ class TdHelpWindowTestComponent {
   `,
 })
 class TdHelpWindowWOColorTestComponent {
-  items: IHelpMenuDataItem[] = [];
+  items: IHelpItem[] = [];
   labels: IHelpWindowComponentLabels;
 }
 

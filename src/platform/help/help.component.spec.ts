@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-import { HelpComponent } from './help.component';
-import { IHelpMenuDataItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.utils';
+import { HelpComponent, IHelpItem, IHelpComponentLabels, DEFAULT_HELP_COMP_LABELS } from './help.component';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { CovalentHelpModule } from './help.module';
@@ -9,20 +8,20 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 const RAW_MARKDOWN_HEADING: string = 'Heading';
 const RAW_MARKDOWN: string = `# ${RAW_MARKDOWN_HEADING}`;
 
-const URL_ITEM: IHelpMenuDataItem[] = [
+const URL_ITEM: IHelpItem[] = [
   {
     url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
   },
 ];
-const RAW_MARKDOWN_ITEM: IHelpMenuDataItem[] = [
+const RAW_MARKDOWN_ITEM: IHelpItem[] = [
   {
     markdownString: RAW_MARKDOWN,
   },
 ];
 
-const FLAT_MIXED_ITEMS: IHelpMenuDataItem[] = [...URL_ITEM, ...RAW_MARKDOWN_ITEM];
+const FLAT_MIXED_ITEMS: IHelpItem[] = [...URL_ITEM, ...RAW_MARKDOWN_ITEM];
 
-const NESTED_MIXED_ITEMS: IHelpMenuDataItem[] = [
+const NESTED_MIXED_ITEMS: IHelpItem[] = [
   {
     title: 'First item',
     children: URL_ITEM,
@@ -45,7 +44,7 @@ async function wait(fixture: ComponentFixture<any>): Promise<void> {
   `,
 })
 class TdHelpTestComponent {
-  items: IHelpMenuDataItem[] = [];
+  items: IHelpItem[] = [];
   labels: IHelpComponentLabels;
 }
 

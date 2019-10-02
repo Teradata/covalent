@@ -5,7 +5,7 @@ A component for rendering and navigating through documentation. Supports github 
 ## API Summary
 
 #### Inputs
-+ items: IHelpMenuDataItem[]
++ items: IHelpItem[]
   + List of IHelpMenuDataItems to be rendered
 + labels?: IHelpComponentLabels
   + Translated labels
@@ -37,19 +37,19 @@ export class MyModule {}
 #### Sample items
 
 ```typescript
-oneItem: IHelpMenuDataItem[] = [
+oneItem: IHelpItem[] = [
   {
     url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
   },
 ];
 
-itemWithRawMarkdown: IHelpMenuDataItem[] = [
+itemWithRawMarkdown: IHelpItem[] = [
   {
     markdownString: '# Heading',
   },
 ];
 
-multipleItems: IHelpMenuDataItem[] = [
+multipleItems: IHelpItem[] = [
   {
     url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
     title: 'Code Editor API',
@@ -60,14 +60,14 @@ multipleItems: IHelpMenuDataItem[] = [
   },
 ];
 
-oneItemWithAnchor: IHelpMenuDataItem[] = [
+oneItemWithAnchor: IHelpItem[] = [
   {
     url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
     anchor: 'Adding a new documentation component',
   },
 ];
 
-nestedItems: IHelpMenuDataItem[] = [
+nestedItems: IHelpItem[] = [
   {
     title: 'Covalent Components',
     children: [
@@ -88,17 +88,17 @@ nestedItems: IHelpMenuDataItem[] = [
 
 For reference:
 ```typescript
-interface IHelpMenuDataItem {
+interface IHelpItem {
   title?: string;
   url?: string;
   httpOptions?: object;
   markdownString?: string; // raw markdown
   anchor?: string;
-  children?: IHelpMenuDataItem[];
+  children?: IHelpItem[];
 }
 ```
 
-# DraggableHelpWindowDialogService
+# HelpWindowService
 
 A service that opens a HelpWindowComponent inside a draggable dialog. Uses the openDraggable method of the TdDialogService.
 
@@ -106,13 +106,13 @@ A service that opens a HelpWindowComponent inside a draggable dialog. Uses the o
 
 #### Methods
 
-+ open: function(config: IDraggableHelpWindowDialogServiceConfig)
++ open: function(config: IHelpWindowServiceConfig)
   + Opens a HelpWindowComponent inside a draggable dialog.
 
 For reference:
 ```typescript
-interface IDraggableHelpWindowDialogServiceConfig {
-  items: IHelpMenuDataItem[];
+interface IHelpWindowServiceConfig {
+  items: IHelpItem[];
   dialogConfig?: MatDialogConfig;
   labels?: IHelpWindowComponentLabels;
   toolbarColor?: ThemePalette;
@@ -141,8 +141,8 @@ Example:
 ```typescript
 import {
   HelpWindowComponent,
-  DraggableHelpWindowDialogService,
-  IHelpMenuDataItem,
+  HelpWindowService,
+  IHelpItem,
 } from '@covalent/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -150,10 +150,10 @@ export class SampleComponent{
 
   ref: MatDialogRef<HelpWindowComponent>;
 
-  constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
+  constructor(private _helpWindowService: HelpWindowService) {}
 
   ngOnInit(): void {
-    this.ref = this.draggableHelpWindowDialogService.open({
+    this.ref = this._helpWindowService.open({
       items: [{ url: 'https://github.com/Teradata/covalent/blob/develop/README.md' }]
     });
     this.ref.afterOpened().subscribe(() => {

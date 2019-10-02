@@ -1,11 +1,15 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import {
-  IHelpMenuDataItem,
-  IHelpWindowComponentLabels,
-  IHelpComponentLabels,
-  DEFAULT_HELP_WINDOW_COMP_LABELS,
-} from '../help.utils';
 import { ThemePalette } from '@angular/material/core';
+import { IHelpItem, IHelpComponentLabels } from '../help.component';
+
+export interface IHelpWindowComponentLabels extends IHelpComponentLabels {
+  help?: string;
+  close?: string;
+}
+export const DEFAULT_HELP_WINDOW_COMP_LABELS: IHelpWindowComponentLabels = {
+  help: 'Help',
+  close: 'Close',
+};
 
 @Component({
   selector: 'td-help-window',
@@ -13,7 +17,7 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['./help-window.component.scss'],
 })
 export class HelpWindowComponent {
-  @Input() items: IHelpMenuDataItem[];
+  @Input() items: IHelpItem[];
   @Input() labels: IHelpWindowComponentLabels;
   @Input() toolbarColor: ThemePalette = 'primary';
 

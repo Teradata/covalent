@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 import { slideInDownAnimation } from '../../../app.animations';
-import { IHelpMenuDataItem, DraggableHelpWindowDialogService, HelpWindowComponent } from '@covalent/help';
+import { IHelpItem, HelpWindowService, HelpWindowComponent } from '@covalent/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -15,19 +15,19 @@ export class HelpDemoComponent {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
 
-  oneItem: IHelpMenuDataItem[] = [
+  oneItem: IHelpItem[] = [
     {
       url: 'https://github.com/Teradata/covalent/blob/develop/README.md',
     },
   ];
 
-  itemWithRawMarkdown: IHelpMenuDataItem[] = [
+  itemWithRawMarkdown: IHelpItem[] = [
     {
       markdownString: '# Heading',
     },
   ];
 
-  multipleItems: IHelpMenuDataItem[] = [
+  multipleItems: IHelpItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent-code-editor/master/docs/API.md',
       title: 'Code Editor API',
@@ -38,14 +38,14 @@ export class HelpDemoComponent {
     },
   ];
 
-  oneItemWithAnchor: IHelpMenuDataItem[] = [
+  oneItemWithAnchor: IHelpItem[] = [
     {
       url: 'https://raw.githubusercontent.com/Teradata/covalent/develop/docs/DEVELOPER_GUIDE.md',
       anchor: 'Adding a new documentation component',
     },
   ];
 
-  nestedItems: IHelpMenuDataItem[] = [
+  nestedItems: IHelpItem[] = [
     {
       title: 'Covalent Components',
       children: [
@@ -62,7 +62,7 @@ export class HelpDemoComponent {
     },
   ];
 
-  options: { name: string; value: IHelpMenuDataItem[] }[] = [
+  options: { name: string; value: IHelpItem[] }[] = [
     {
       name: 'One item',
       value: this.oneItem,
@@ -75,20 +75,20 @@ export class HelpDemoComponent {
     { name: 'One item with anchor', value: this.oneItemWithAnchor },
     { name: 'Nested items', value: this.nestedItems },
   ];
-  selected: { name: string; value: IHelpMenuDataItem[] } = this.options[0];
-  currentItems: IHelpMenuDataItem[] = this.selected.value;
+  selected: { name: string; value: IHelpItem[] } = this.options[0];
+  currentItems: IHelpItem[] = this.selected.value;
   userInput: string = this.prettyJson(this.currentItems);
 
   windowOpen: boolean = false;
   ref: MatDialogRef<HelpWindowComponent>;
 
-  constructor(private draggableHelpWindowDialogService: DraggableHelpWindowDialogService) {}
+  constructor(private _helpWindowService: HelpWindowService) {}
 
   select(): void {
     this.use(this.selected.value);
   }
 
-  use(items: IHelpMenuDataItem[]): void {
+  use(items: IHelpItem[]): void {
     this.currentItems = items;
     this.userInput = this.prettyJson(this.currentItems);
     if (this.windowOpen) {
@@ -100,7 +100,7 @@ export class HelpDemoComponent {
     this.use(JSON.parse(this.userInput));
   }
 
-  prettyJson(items: IHelpMenuDataItem[]): string {
+  prettyJson(items: IHelpItem[]): string {
     return JSON.stringify(items, undefined, 4);
   }
 
@@ -108,7 +108,7 @@ export class HelpDemoComponent {
     if (this.windowOpen) {
       this.closeDialog();
     }
-    this.ref = this.draggableHelpWindowDialogService.open({ items: this.currentItems });
+    this.ref = this._helpWindowService.open({ items: this.currentItems });
     this.ref.afterOpened().subscribe(() => {
       this.windowOpen = true;
     });
