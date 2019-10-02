@@ -175,6 +175,12 @@ export class ComponentsComponent {
       title: 'Flavored Markdown Parser',
     },
     {
+      description: 'Render and navigate .md documentation',
+      icon: 'subject',
+      route: 'help',
+      title: 'Help',
+    },
+    {
       description: 'Build forms from a JS object',
       icon: 'format_align_center',
       route: 'dynamic-forms',
@@ -209,14 +215,7 @@ export class ComponentsComponent {
     },
   ];
 
-  experimental: Object[] = [
-    {
-      description: 'Render and navigate .md documentation',
-      icon: 'subject',
-      route: 'help',
-      title: 'Help',
-    },
-  ];
+  experimental: Object[] = [];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef, public media: TdMediaService) {}
 }

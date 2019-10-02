@@ -16,7 +16,7 @@ A component for rendering and navigating through documentation. Supports github 
 ## Setup
 
 ```typescript
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { CovalentHelpModule } from '@covalent/help';
 @NgModule({
   imports: [
     CovalentHelpModule,
@@ -122,7 +122,7 @@ interface IDraggableHelpWindowDialogServiceConfig {
 ## Setup
 
 ```typescript
-import { CovalentHelpModule } from '@covalent/experimental/help';
+import { CovalentHelpModule } from '@covalent/help';
 @NgModule({
   imports: [
     CovalentHelpModule,
@@ -143,7 +143,7 @@ import {
   HelpWindowComponent,
   DraggableHelpWindowDialogService,
   IHelpMenuDataItem,
-} from '@covalent/experimental/help';
+} from '@covalent/help';
 import { MatDialogRef } from '@angular/material/dialog';
 
 export class SampleComponent{

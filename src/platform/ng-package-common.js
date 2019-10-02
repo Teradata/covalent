@@ -38,6 +38,8 @@ module.exports = {
       '@covalent/echarts/scatter': 'covalent.echarts.scatter',
       '@covalent/echarts/tooltip': 'covalent.echarts.tooltip',
 
+      '@covalent/help': 'covalent.help',
+
       '@covalent/experimental': 'covalent.experimental',
     },
   },
