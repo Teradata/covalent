@@ -362,42 +362,8 @@
           Choose File
           <input #fileInput type="file" (change)="doReadFile($event)" style="display:none"/>
         </button>
-      <h4>File Content:</h4>
-        <td-highlight [content]="readFileContent"></td-highlight>
-        <h3 class="mat-title pad-top-lg">Read file and upload</h3>
-        <p>Using the readFile method in conjunction with the TdFileService can simplify forwarding content from disk to a backend service.</p>
-        <p>HTML</p>
-        <td-highlight lang="html">
-          <![CDATA[
-            <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
-              Choose File
-              <input #fileInput type="file" (change)="doUploadFile($event)" style="display:none"/>
-            </button>
-          ]]>
-        </td-highlight>
-        <p>Typescript:</p>
-        <td-highlight lang="typescript">
-          <![CDATA[
-            import { TdFileService, IUploadOptions } from '@covalent/core/file';
-            import { readFile } from '@covalent/core'
-  
-            constructor(_fileService: TdFileService) {}
-  
-            doUploadFile(event: any): void {
-              let file: File = event.srcElement.files[0];
-              readFile(file).then((content: string) => {
-                let options: IUploadOptions = {
-                  url: 'https://sample.url',
-                  method: 'post',
-                  file: file
-                };    
-                this._fileService.upload(options).subscribe((response) => {
-                  ...
-                });
-              });
-            }
-          ]]>
-        </td-highlight>
+        <h4>File Content:</h4>
+        <td-highlight class="filecontentmaxheight" [content]="readFileContent"></td-highlight>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -420,11 +386,9 @@
             export class FunctionsDemoComponent {
               readFileContent: string = '';
 
-              doReadFile(event: any): void {
+              async doReadFile(event: any): Promise<void> {
                 let file: File = event.srcElement.files[0];
-                readFile(file).then((content: string) => {
-                  this.readFileContent = content;
-                });
+                this.readFileContent = await readFile(file);
               }
             }
           ]]>

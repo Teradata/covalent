@@ -130,10 +130,8 @@ export class FunctionsDemoComponent {
     });
   }
 
-  doReadFile(event: any): void {
+  async doReadFile(event: any): Promise<void> {
     let file: File = event.srcElement.files[0];
-    readFile(file).then((content: string) => {
-      this.readFileContent = content;
-    });
+    this.readFileContent = await readFile(file);
   }
 }

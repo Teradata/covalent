@@ -8,7 +8,7 @@ export function readFile(file: File): Promise<string> {
   return new Promise<string>((resolve: (value: string) => void) => {
     const reader: FileReader = new FileReader();
     reader.readAsText(file, 'UTF-8');
-    reader.onload = (evt: Event) => {
+    reader.onload = () => {
       resolve(<string>reader.result);
     };
   });
