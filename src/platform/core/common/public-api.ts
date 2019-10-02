@@ -29,6 +29,8 @@ export * from './forms/validators/validators';
  * FUNCTIONS
  */
 export * from './functions/clipboard';
+export * from './functions/convert';
+export * from './functions/download';
 
 /**
  * PIPES

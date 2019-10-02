@@ -9,18 +9,18 @@ import {
   SecurityContext,
   OnChanges,
   SimpleChanges,
-  OnDestroy,
   HostBinding,
+  HostListener,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   scrollToAnchor,
-  normalizeAnchor,
+  genHeadingId,
   isAnchorLink,
   removeTrailingHash,
   rawGithubHref,
   isGithubHref,
-} from './markdown-utils';
+} from './markdown-utils/markdown-utils';
 
 declare const require: any;
 /* tslint:disable-next-line */
@@ -60,7 +60,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
       const originalHash: string = url.hash;
       if (isAnchorLink(link)) {
         if (originalHash) {
-          url.hash = normalizeAnchor(originalHash);
+          url.hash = genHeadingId(originalHash);
           link.href = url.hash;
         }
       } else if (url.host === window.location.host) {
@@ -74,7 +74,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
           url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
 
           if (originalHash) {
-            url.hash = normalizeAnchor(originalHash);
+            url.hash = genHeadingId(originalHash);
           }
           link.href = url.href;
         }
@@ -83,7 +83,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
         // url is absolute
         if (url.pathname.endsWith('.md')) {
           if (originalHash) {
-            url.hash = normalizeAnchor(originalHash);
+            url.hash = genHeadingId(originalHash);
           }
           link.href = url.href;
         }
@@ -121,7 +121,7 @@ function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(html, 'text/html');
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading: HTMLElement) => {
-      const id: string = normalizeAnchor(heading.innerHTML);
+      const id: string = genHeadingId(heading.innerHTML);
       heading.setAttribute('id', id);
     });
     return new XMLSerializer().serializeToString(document);
@@ -134,12 +134,11 @@ function addIdsToHeadings(html: string): string {
   styleUrls: ['./markdown.component.scss'],
   templateUrl: './markdown.component.html',
 })
-export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy {
+export class TdMarkdownComponent implements OnChanges, AfterViewInit {
   private _content: string;
   private _simpleLineBreaks: boolean = false;
   private _hostedUrl: string;
   private _anchor: string;
-  private handleAnchorClicksBound: EventListenerOrEventListenerObject;
   private _viewInit: boolean = false;
   /**
    * .td-markdown class added to host so ::ng-deep gets scoped.
@@ -199,10 +198,18 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
 
   constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
+  @HostListener('click', ['$event'])
+  clickListener(event: Event): void {
+    const element: HTMLElement = <HTMLElement>event.srcElement;
+    if (element.matches('a[href]') && isAnchorLink(<HTMLAnchorElement>element)) {
+      this.handleAnchorClicks(event);
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
     if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
-      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor, true);
     } else {
       this.refresh();
     }
@@ -213,10 +220,6 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
       this._loadContent((<HTMLElement>this._elementRef.nativeElement).textContent);
     }
     this._viewInit = true;
-  }
-
-  ngOnDestroy(): void {
-    this.removeAnchorListeners();
   }
 
   refresh(): void {
@@ -237,11 +240,8 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
       // Parse html string into actual HTML elements.
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
-    this.removeAnchorListeners();
-    this.handleAnchorClicksBound = this.handleAnchorClicks.bind(this);
-    this.attachAnchorListeners();
     // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
-    setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
+    setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, true), 250);
     this.onContentReady.emit();
   }
 
@@ -249,20 +249,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit, OnDestroy 
     event.preventDefault();
     const url: URL = new URL((<HTMLAnchorElement>event.target).href);
     const hash: string = decodeURI(url.hash);
-    scrollToAnchor(this._elementRef.nativeElement, hash);
-  }
-
-  private attachAnchorListeners(): void {
-    // TODO: rxjs fromEvent
-    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
-      .filter((link: HTMLAnchorElement) => isAnchorLink(link))
-      .forEach((link: HTMLAnchorElement) => link.addEventListener('click', this.handleAnchorClicksBound));
-  }
-
-  private removeAnchorListeners(): void {
-    Array.from(this._elementRef.nativeElement.querySelectorAll('a[href]'))
-      .filter((link: HTMLAnchorElement) => isAnchorLink(link))
-      .forEach((link: HTMLAnchorElement) => link.removeEventListener('click', this.handleAnchorClicksBound));
+    scrollToAnchor(this._elementRef.nativeElement, hash, true);
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {
