@@ -50,9 +50,6 @@
               <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                 <ng-container *ngIf="params">
                   <div layout="row" layout-align="start center">
-                    <mat-icon>
-                      <span [style.color]="params.color">product</span>
-                    </mat-icon>
                     <span class="mat-caption pad-left-sm">
                       {{params.seriesName ? params.seriesName : params.name}} : {{params.value}}
                     </span>
@@ -112,9 +109,6 @@
                   <ng-template let-params let-ticket="ticket" tdTooltipFormatter>
                     <ng-container *ngIf="params">
                       <div layout="row" layout-align="start center">
-                        <mat-icon>
-                          <span [style.color]="params.color">people</span>
-                        </mat-icon>
                         <span class="mat-caption pad-left-sm">
                           { {params.seriesName ?  params.seriesName : params.name} }: { {params.value} }
                         </span>
