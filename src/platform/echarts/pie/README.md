@@ -47,13 +47,6 @@ Basic Example:
 
 ```html
 <td-chart>
-  <td-chart-x-axis [show]="true"
-                    [type]="'category'"
-                    >
-  </td-chart-x-axis>
-  <td-chart-y-axis [show]="true"
-                    [type]="'value'">
-  </td-chart-y-axis>
   <td-chart-series td-pie
               [name]="'name'"
               [data]="[{ name: 'name1', value: 150},
