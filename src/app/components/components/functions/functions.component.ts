@@ -11,6 +11,7 @@ import {
   downloadObjectsToJSON,
   downloadFile,
   formatJSON,
+  readFile,
 } from '../../../../platform/core';
 
 @Component({
@@ -30,6 +31,7 @@ export class FunctionsDemoComponent {
   fileName: string = 'sample.txt';
   fileContent: string = 'Lorem Ipsum';
   mimeType: string = 'text/plain';
+  readFileContent: string = '';
 
   constructor(private _snackBar: MatSnackBar) {
     this.objectsString = formatJSON(this.objects, 2);
@@ -125,6 +127,13 @@ export class FunctionsDemoComponent {
     // Show snackbar to indicate task complete
     this._snackBar.open('Content downloaded!', undefined, {
       duration: 2000,
+    });
+  }
+
+  doReadFile(event: any): void {
+    let file: File = event.srcElement.files[0];
+    readFile(file).then((content: string) => {
+      this.readFileContent = content;
     });
   }
 }

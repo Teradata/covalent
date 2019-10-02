@@ -353,40 +353,83 @@
   <mat-card-subtitle>File handling functions.</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="mat-title">readFile</h3>
-    <p>Read file as UTF-8 text. Return string contents on read completion. Use this method in conjunction with the TdFileService to simplify forwarding content from disk to a backend service.</p>
-    <ng-template matTabLabel>Code</ng-template>
-    <p>HTML</p>
-    <td-highlight lang="html">
-      <![CDATA[
-        <input
-          #fileInput
-          type="file"
-          (fileSelect)="doUploadFile($event)">
-      ]]>
-    </td-highlight>
-    <p>Typescript:</p>
-    <td-highlight lang="typescript">
-      <![CDATA[
-        import { TdFileService, IUploadOptions } from '@covalent/core/file';
-        import {readFile } from '@covalent/core'
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+      <mat-tab>
+        <ng-template matTabLabel>Demo</ng-template>
+        <h3 class="mat-title">readFile</h3>
+        <p>Read file as UTF-8 text. Return string contents on read completion.</p>
+        <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
+          Choose File
+          <input #fileInput type="file" (change)="doReadFile($event)" style="display:none"/>
+        </button>
+      <h4>File Content:</h4>
+        <td-highlight [content]="readFileContent"></td-highlight>
+        <h3 class="mat-title pad-top-lg">Read file and upload</h3>
+        <p>Using the readFile method in conjunction with the TdFileService can simplify forwarding content from disk to a backend service.</p>
+        <p>HTML</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
+              Choose File
+              <input #fileInput type="file" (change)="doUploadFile($event)" style="display:none"/>
+            </button>
+          ]]>
+        </td-highlight>
+        <p>Typescript:</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { TdFileService, IUploadOptions } from '@covalent/core/file';
+            import { readFile } from '@covalent/core'
+  
+            constructor(_fileService: TdFileService) {}
+  
+            doUploadFile(event: any): void {
+              let file: File = event.srcElement.files[0];
+              readFile(file).then((content: string) => {
+                let options: IUploadOptions = {
+                  url: 'https://sample.url',
+                  method: 'post',
+                  file: file
+                };    
+                this._fileService.upload(options).subscribe((response) => {
+                  ...
+                });
+              });
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+      <mat-tab>
+        <ng-template matTabLabel>Code</ng-template>
+        <p>HTML</p>
+        <td-highlight lang="html">
+          <![CDATA[
+            <button mat-raised-button class="text-upper" color="primary" (click)="fileInput.click()">
+              Choose File
+              <input #fileInput type="file" (change)="doReadFile($event)" style="display:none"/>
+            </button>
+            <h4>File Content:</h4>
+            <td-highlight [content]="readFileContent"></td-highlight>
+          ]]>
+        </td-highlight>
+        <p>Typescript</p>
+        <td-highlight lang="typescript">
+          <![CDATA[
+            import { readFile } from '@covalent/core'
 
-        constructor(_fileService: TdFileService) {}
+            export class FunctionsDemoComponent {
+              readFileContent: string = '';
 
-        doUploadFile(file: File): void {
-          readFile(file).then((content: string) => {
-            let options: IUploadOptions = {
-              url: 'https://sample.url',
-              method: 'post',
-              file: file
-            };    
-            this._fileService.upload(options).subscribe((response) => {
-              ...
-            });
-        
-          });
-        }
-      ]]>
-    </td-highlight>
+              doReadFile(event: any): void {
+                let file: File = event.srcElement.files[0];
+                readFile(file).then((content: string) => {
+                  this.readFileContent = content;
+                });
+              }
+            }
+          ]]>
+        </td-highlight>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card-content>
 </mat-card>
