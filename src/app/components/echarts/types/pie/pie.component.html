@@ -60,20 +60,8 @@
                 </ng-container>
               </ng-template>
             </td-chart-tooltip>
-            <td-chart-x-axis [show]="false"
-                              [position]="'bottom'"
-                              [type]="product"
-                              [boundaryGap]="true">
-            </td-chart-x-axis>
-            <td-chart-y-axis [show]="false"
-                              [type]="'value'"
-                              [position]="'right'"
-                              [max]="500"
-                              [boundaryGap]="true">
-            </td-chart-y-axis>
             <td-chart-series td-pie
-                            [name]="'Product'"
-                            [radius]="[0, '70%']">
+                            [radius]="[0, '75%']">
             </td-chart-series>
           </td-chart>
         </mat-tab>
@@ -134,20 +122,9 @@
                     </ng-container>
                   </ng-template>
                 </td-chart-tooltip>
-                <td-chart-x-axis [show]="false"
-                              [position]="'bottom'"
-                              [type]="product"
-                              [boundaryGap]="true">
-                </td-chart-x-axis>
-                <td-chart-y-axis [show]="false"
-                                  [type]="'value'"
-                                  [position]="'right'"
-                                  [max]="500"
-                                  [boundaryGap]="true">
-                </td-chart-y-axis>
                 <td-chart-series td-pie
                                 [name]="'Product'"
-                                [radius]="[0, '70%']">
+                                [radius]="[0, '75%']">
                 </td-chart-series>
               </td-chart>
             ]]>
@@ -165,7 +142,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-chart [style.height.px]="300"
+        <td-chart [style.height.px]="400"
                   [config]="config">
         </td-chart>
       </mat-tab>
@@ -174,7 +151,7 @@
         <p>HTML: </p>
         <td-highlight lang="html">
           <![CDATA[
-            <td-chart [style.height.px]="300" 
+            <td-chart [style.height.px]="400" 
                       [config]="config">
             </td-chart>
           ]]>
