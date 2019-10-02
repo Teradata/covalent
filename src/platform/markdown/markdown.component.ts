@@ -15,7 +15,7 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   scrollToAnchor,
-  normalizeAnchor,
+  genHeadingId,
   isAnchorLink,
   removeTrailingHash,
   rawGithubHref,
@@ -60,7 +60,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
       const originalHash: string = url.hash;
       if (isAnchorLink(link)) {
         if (originalHash) {
-          url.hash = normalizeAnchor(originalHash);
+          url.hash = genHeadingId(originalHash);
           link.href = url.hash;
         }
       } else if (url.host === window.location.host) {
@@ -74,7 +74,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
           url.href = generateAbsoluteHref(currentHref, hrefWithoutHash);
 
           if (originalHash) {
-            url.hash = normalizeAnchor(originalHash);
+            url.hash = genHeadingId(originalHash);
           }
           link.href = url.href;
         }
@@ -83,7 +83,7 @@ function normalizeHtmlHrefs(html: string, currentHref: string): string {
         // url is absolute
         if (url.pathname.endsWith('.md')) {
           if (originalHash) {
-            url.hash = normalizeAnchor(originalHash);
+            url.hash = genHeadingId(originalHash);
           }
           link.href = url.href;
         }
@@ -121,7 +121,7 @@ function addIdsToHeadings(html: string): string {
   if (html) {
     const document: Document = new DOMParser().parseFromString(html, 'text/html');
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading: HTMLElement) => {
-      const id: string = normalizeAnchor(heading.innerHTML);
+      const id: string = genHeadingId(heading.innerHTML);
       heading.setAttribute('id', id);
     });
     return new XMLSerializer().serializeToString(document);
@@ -209,7 +209,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
   ngOnChanges(changes: SimpleChanges): void {
     // only anchor changed
     if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
-      scrollToAnchor(this._elementRef.nativeElement, this._anchor);
+      scrollToAnchor(this._elementRef.nativeElement, this._anchor, true);
     } else {
       this.refresh();
     }
@@ -241,7 +241,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
       let divElement: HTMLDivElement = this._elementFromString(this._render(markdown));
     }
     // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
-    setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor), 250);
+    setTimeout(() => scrollToAnchor(this._elementRef.nativeElement, this._anchor, true), 250);
     this.onContentReady.emit();
   }
 
@@ -249,7 +249,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     event.preventDefault();
     const url: URL = new URL((<HTMLAnchorElement>event.target).href);
     const hash: string = decodeURI(url.hash);
-    scrollToAnchor(this._elementRef.nativeElement, hash);
+    scrollToAnchor(this._elementRef.nativeElement, hash, true);
   }
 
   private _elementFromString(markupStr: string): HTMLDivElement {
