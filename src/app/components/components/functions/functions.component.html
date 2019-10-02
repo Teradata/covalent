@@ -349,33 +349,42 @@
   </mat-card-content>
 </mat-card>
 <mat-card>
-  <mat-card-title>Upload</mat-card-title>
-  <mat-card-subtitle>Content upload function.</mat-card-subtitle>
+  <mat-card-title>File</mat-card-title>
+  <mat-card-subtitle>File handling functions.</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h3 class="mat-title">uploadFile</h3>
-    <p>Append blob with string content and specified mime type at tag name in request form data.</p>
+    <h3 class="mat-title">readFile</h3>
+    <p>Read file as UTF-8 text. Return string contents on read completion. Use this method in conjunction with the TdFileService to simplify forwarding content from disk to a backend service.</p>
     <ng-template matTabLabel>Code</ng-template>
+    <p>HTML</p>
+    <td-highlight lang="html">
+      <![CDATA[
+        <input
+          #fileInput
+          type="file"
+          (fileSelect)="doUploadFile($event)">
+      ]]>
+    </td-highlight>
     <p>Typescript:</p>
     <td-highlight lang="typescript">
       <![CDATA[
-        import { uploadFile } from '@covalent/core'
-  
-        doUpload(): void {
-          ...
-          // Sample contents
-          objects: object[] = [{ name: 'user1', id: 123 }, { name: 'user2', id: 234 }];
+        import { TdFileService, IUploadOptions } from '@covalent/core/file';
+        import {readFile } from '@covalent/core'
 
-          // The form data
-          let formData: FormData = new FormData();
+        constructor(_fileService: TdFileService) {}
 
-          // Invoke utility function to append blob content to request
-          // form data with specified name and desired mime type.
-          uploadFile(formData, 'users', JSON.stringify(objects), 'application/json');
-
-          // Perform HTTP request, passing form data
-          request = this.http.patch('myurl', formData, ...);
-          ...
+        doUploadFile(file: File): void {
+          readFile(file).then((content: string) => {
+            let options: IUploadOptions = {
+              url: 'https://sample.url',
+              method: 'post',
+              file: file
+            };    
+            this._fileService.upload(options).subscribe((response) => {
+              ...
+            });
+        
+          });
         }
       ]]>
     </td-highlight>

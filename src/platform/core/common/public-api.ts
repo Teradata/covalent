@@ -31,7 +31,7 @@ export * from './forms/validators/validators';
 export * from './functions/clipboard';
 export * from './functions/convert';
 export * from './functions/download';
-export * from './functions/upload';
+export * from './functions/file';
 
 /**
  * PIPES
